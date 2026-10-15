@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_postal_address.dart';/// 
 @immutable final class TaxProductResourceShipFromDetails {const TaxProductResourceShipFromDetails({required this.address});
 
-factory TaxProductResourceShipFromDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceShipFromDetails(
+factory TaxProductResourceShipFromDetails.fromJson(Map<String, dynamic> json) {return TaxProductResourceShipFromDetails(
   address: TaxProductResourcePostalAddress.fromJson(json['address'] as Map<String, dynamic>),
-); }
+);}
 
 final TaxProductResourcePostalAddress address;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-TaxProductResourceShipFromDetails copyWith({TaxProductResourcePostalAddress? address}) { return TaxProductResourceShipFromDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address');}
+TaxProductResourceShipFromDetails copyWith({TaxProductResourcePostalAddress? address}) {return TaxProductResourceShipFromDetails(
   address: address ?? this.address,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceShipFromDetails &&
           address == other.address;
@@ -25,4 +25,4 @@ TaxProductResourceShipFromDetails copyWith({TaxProductResourcePostalAddress? add
 
 @override String toString() => 'TaxProductResourceShipFromDetails(address: $address)';
 
- }
+}

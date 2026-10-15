@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use a local computer environment.
 sealed class LocalEnvironmentParamType {const LocalEnvironmentParamType();
 
-factory LocalEnvironmentParamType.fromJson(String json) { return switch (json) {
+factory LocalEnvironmentParamType.fromJson(String json) {return switch (json) {
   'local' => local,
   _ => LocalEnvironmentParamType$Unknown(json),
-}; }
+};}
 
 static const LocalEnvironmentParamType local = LocalEnvironmentParamType$local._();
 
 static const List<LocalEnvironmentParamType> values = [local];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'local' => 'local',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LocalEnvironmentParamType$Unknown; } 
+bool get isUnknown {return this is LocalEnvironmentParamType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() local, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() local, required W Function(String value) $unknown, }) {return switch (this) {
       LocalEnvironmentParamType$local() => local(),
       LocalEnvironmentParamType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? local, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? local, W Function(String value)? $unknown, }) {return switch (this) {
       LocalEnvironmentParamType$local() => local != null ? local() : orElse(value),
       LocalEnvironmentParamType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LocalEnvironmentParamType($value)';
 
- }
+}
 @immutable final class LocalEnvironmentParamType$local extends LocalEnvironmentParamType {const LocalEnvironmentParamType$local._();
 
 @override String get value => 'local';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? local, W
 
 @override int get hashCode => 'local'.hashCode;
 
- }
+}
 @immutable final class LocalEnvironmentParamType$Unknown extends LocalEnvironmentParamType {const LocalEnvironmentParamType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? local, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

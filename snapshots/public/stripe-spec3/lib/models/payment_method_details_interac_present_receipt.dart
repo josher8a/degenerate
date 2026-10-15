@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account being debited or credited
 sealed class PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType();
 
-factory PaymentMethodDetailsInteracPresentReceiptAccountType.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsInteracPresentReceiptAccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'savings' => savings,
   'unknown' => unknown,
   _ => PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodDetailsInteracPresentReceiptAccountType checking = PaymentMethodDetailsInteracPresentReceiptAccountType$checking._();
 
@@ -20,33 +20,33 @@ static const PaymentMethodDetailsInteracPresentReceiptAccountType unknown = Paym
 static const List<PaymentMethodDetailsInteracPresentReceiptAccountType> values = [checking, savings, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'checking' => 'checking',
   'savings' => 'savings',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown; } 
+bool get isUnknown {return this is PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() checking, required W Function() savings, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() checking, required W Function() savings, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodDetailsInteracPresentReceiptAccountType$checking() => checking(),
       PaymentMethodDetailsInteracPresentReceiptAccountType$savings() => savings(),
       PaymentMethodDetailsInteracPresentReceiptAccountType$unknown() => unknown(),
       PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? savings, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? savings, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodDetailsInteracPresentReceiptAccountType$checking() => checking != null ? checking() : orElse(value),
       PaymentMethodDetailsInteracPresentReceiptAccountType$savings() => savings != null ? savings() : orElse(value),
       PaymentMethodDetailsInteracPresentReceiptAccountType$unknown() => unknown != null ? unknown() : orElse(value),
       PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodDetailsInteracPresentReceiptAccountType($value)';
 
- }
+}
 @immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType$checking extends PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType$checking._();
 
 @override String get value => 'checking';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'checking'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType$savings extends PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType$savings._();
 
 @override String get value => 'savings';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'savings'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType$unknown extends PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType$unknown._();
 
 @override String get value => 'unknown';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown extends PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown(this.value);
 
 @override final String value;
@@ -83,11 +83,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PaymentMethodDetailsInteracPresentReceipt {const PaymentMethodDetailsInteracPresentReceipt({this.accountType, this.applicationCryptogram = const Omittable.absent(), this.applicationPreferredName = const Omittable.absent(), this.authorizationCode = const Omittable.absent(), this.authorizationResponseCode = const Omittable.absent(), this.cardholderVerificationMethod = const Omittable.absent(), this.dedicatedFileName = const Omittable.absent(), this.terminalVerificationResults = const Omittable.absent(), this.transactionStatusInformation = const Omittable.absent(), });
 
-factory PaymentMethodDetailsInteracPresentReceipt.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsInteracPresentReceipt(
+factory PaymentMethodDetailsInteracPresentReceipt.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsInteracPresentReceipt(
   accountType: json['account_type'] != null ? PaymentMethodDetailsInteracPresentReceiptAccountType.fromJson(json['account_type'] as String) : null,
   applicationCryptogram: json.containsKey('application_cryptogram') ? Omittable(json['application_cryptogram'] as String?) : const Omittable.absent(),
   applicationPreferredName: json.containsKey('application_preferred_name') ? Omittable(json['application_preferred_name'] as String?) : const Omittable.absent(),
@@ -97,7 +97,7 @@ factory PaymentMethodDetailsInteracPresentReceipt.fromJson(Map<String, dynamic> 
   dedicatedFileName: json.containsKey('dedicated_file_name') ? Omittable(json['dedicated_file_name'] as String?) : const Omittable.absent(),
   terminalVerificationResults: json.containsKey('terminal_verification_results') ? Omittable(json['terminal_verification_results'] as String?) : const Omittable.absent(),
   transactionStatusInformation: json.containsKey('transaction_status_information') ? Omittable(json['transaction_status_information'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of account being debited or credited
 final PaymentMethodDetailsInteracPresentReceiptAccountType? accountType;
@@ -126,7 +126,7 @@ final Omittable<String?> terminalVerificationResults;
 /// An indication of which steps were completed during the card read process. Referenced from EMV Tag 9B.
 final Omittable<String?> transactionStatusInformation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountType != null) 'account_type': accountType?.toJson(),
   if (applicationCryptogram.isPresent) 'application_cryptogram': applicationCryptogram.value,
   if (applicationPreferredName.isPresent) 'application_preferred_name': applicationPreferredName.value,
@@ -136,10 +136,10 @@ Map<String, dynamic> toJson() { return {
   if (dedicatedFileName.isPresent) 'dedicated_file_name': dedicatedFileName.value,
   if (terminalVerificationResults.isPresent) 'terminal_verification_results': terminalVerificationResults.value,
   if (transactionStatusInformation.isPresent) 'transaction_status_information': transactionStatusInformation.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_type', 'application_cryptogram', 'application_preferred_name', 'authorization_code', 'authorization_response_code', 'cardholder_verification_method', 'dedicated_file_name', 'terminal_verification_results', 'transaction_status_information'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_type', 'application_cryptogram', 'application_preferred_name', 'authorization_code', 'authorization_response_code', 'cardholder_verification_method', 'dedicated_file_name', 'terminal_verification_results', 'transaction_status_information'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final applicationCryptogram$ = applicationCryptogram.value;
 if (applicationCryptogram$ != null) {
   if (applicationCryptogram$.runes.length > 5000) { errors.add('applicationCryptogram: length must be <= 5000'); }
@@ -172,8 +172,8 @@ final transactionStatusInformation$ = transactionStatusInformation.value;
 if (transactionStatusInformation$ != null) {
   if (transactionStatusInformation$.runes.length > 5000) { errors.add('transactionStatusInformation: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsInteracPresentReceipt copyWith({PaymentMethodDetailsInteracPresentReceiptAccountType? Function()? accountType, Omittable<String?>? applicationCryptogram, Omittable<String?>? applicationPreferredName, Omittable<String?>? authorizationCode, Omittable<String?>? authorizationResponseCode, Omittable<String?>? cardholderVerificationMethod, Omittable<String?>? dedicatedFileName, Omittable<String?>? terminalVerificationResults, Omittable<String?>? transactionStatusInformation, }) { return PaymentMethodDetailsInteracPresentReceipt(
+return errors;}
+PaymentMethodDetailsInteracPresentReceipt copyWith({PaymentMethodDetailsInteracPresentReceiptAccountType? Function()? accountType, Omittable<String?>? applicationCryptogram, Omittable<String?>? applicationPreferredName, Omittable<String?>? authorizationCode, Omittable<String?>? authorizationResponseCode, Omittable<String?>? cardholderVerificationMethod, Omittable<String?>? dedicatedFileName, Omittable<String?>? terminalVerificationResults, Omittable<String?>? transactionStatusInformation, }) {return PaymentMethodDetailsInteracPresentReceipt(
   accountType: accountType != null ? accountType() : this.accountType,
   applicationCryptogram: applicationCryptogram ?? this.applicationCryptogram,
   applicationPreferredName: applicationPreferredName ?? this.applicationPreferredName,
@@ -183,7 +183,7 @@ PaymentMethodDetailsInteracPresentReceipt copyWith({PaymentMethodDetailsInteracP
   dedicatedFileName: dedicatedFileName ?? this.dedicatedFileName,
   terminalVerificationResults: terminalVerificationResults ?? this.terminalVerificationResults,
   transactionStatusInformation: transactionStatusInformation ?? this.transactionStatusInformation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsInteracPresentReceipt &&
           accountType == other.accountType &&
@@ -200,4 +200,4 @@ PaymentMethodDetailsInteracPresentReceipt copyWith({PaymentMethodDetailsInteracP
 
 @override String toString() => 'PaymentMethodDetailsInteracPresentReceipt(\n  accountType: $accountType,\n  applicationCryptogram: $applicationCryptogram,\n  applicationPreferredName: $applicationPreferredName,\n  authorizationCode: $authorizationCode,\n  authorizationResponseCode: $authorizationResponseCode,\n  cardholderVerificationMethod: $cardholderVerificationMethod,\n  dedicatedFileName: $dedicatedFileName,\n  terminalVerificationResults: $terminalVerificationResults,\n  transactionStatusInformation: $transactionStatusInformation,\n)';
 
- }
+}

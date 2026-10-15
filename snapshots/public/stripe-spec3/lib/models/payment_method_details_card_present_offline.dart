@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method used to process this payment method offline. Only deferred is allowed.
 sealed class PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType();
 
-factory PaymentMethodDetailsCardPresentOfflineType.fromJson(String json) { return switch (json) {
+factory PaymentMethodDetailsCardPresentOfflineType.fromJson(String json) {return switch (json) {
   'deferred' => $deferred,
   _ => PaymentMethodDetailsCardPresentOfflineType$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodDetailsCardPresentOfflineType $deferred = PaymentMethodDetailsCardPresentOfflineType$$deferred._();
 
 static const List<PaymentMethodDetailsCardPresentOfflineType> values = [$deferred];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'deferred' => r'$deferred',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodDetailsCardPresentOfflineType$Unknown; } 
+bool get isUnknown {return this is PaymentMethodDetailsCardPresentOfflineType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $deferred, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $deferred, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodDetailsCardPresentOfflineType$$deferred() => $deferred(),
       PaymentMethodDetailsCardPresentOfflineType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $deferred, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $deferred, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodDetailsCardPresentOfflineType$$deferred() => $deferred != null ? $deferred() : orElse(value),
       PaymentMethodDetailsCardPresentOfflineType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodDetailsCardPresentOfflineType($value)';
 
- }
+}
 @immutable final class PaymentMethodDetailsCardPresentOfflineType$$deferred extends PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType$$deferred._();
 
 @override String get value => 'deferred';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $deferre
 
 @override int get hashCode => 'deferred'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDetailsCardPresentOfflineType$Unknown extends PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $deferre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PaymentMethodDetailsCardPresentOffline {const PaymentMethodDetailsCardPresentOffline({this.storedAt = const Omittable.absent(), this.type = const Omittable.absent(), });
 
-factory PaymentMethodDetailsCardPresentOffline.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresentOffline(
+factory PaymentMethodDetailsCardPresentOffline.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCardPresentOffline(
   storedAt: json.containsKey('stored_at') ? Omittable(json['stored_at'] != null ? (json['stored_at'] as num).toInt() : null) : const Omittable.absent(),
   type: json.containsKey('type') ? Omittable(json['type'] != null ? PaymentMethodDetailsCardPresentOfflineType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Time at which the payment was collected while offline
 final Omittable<int?> storedAt;
@@ -68,15 +68,15 @@ final Omittable<int?> storedAt;
 /// The method used to process this payment method offline. Only deferred is allowed.
 final Omittable<PaymentMethodDetailsCardPresentOfflineType?> type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (storedAt.isPresent) 'stored_at': storedAt.value,
   if (type.isPresent) 'type': type.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'stored_at', 'type'}.contains(key)); } 
-PaymentMethodDetailsCardPresentOffline copyWith({Omittable<int?>? storedAt, Omittable<PaymentMethodDetailsCardPresentOfflineType?>? type, }) { return PaymentMethodDetailsCardPresentOffline(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'stored_at', 'type'}.contains(key));}
+PaymentMethodDetailsCardPresentOffline copyWith({Omittable<int?>? storedAt, Omittable<PaymentMethodDetailsCardPresentOfflineType?>? type, }) {return PaymentMethodDetailsCardPresentOffline(
   storedAt: storedAt ?? this.storedAt,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCardPresentOffline &&
           storedAt == other.storedAt &&
@@ -86,4 +86,4 @@ PaymentMethodDetailsCardPresentOffline copyWith({Omittable<int?>? storedAt, Omit
 
 @override String toString() => 'PaymentMethodDetailsCardPresentOffline(storedAt: $storedAt, type: $type)';
 
- }
+}

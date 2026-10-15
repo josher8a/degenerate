@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/check_suite/check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_head_commit.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_triggering_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_completed/webhook_workflow_run_completed_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_completed/webhook_workflow_run_completed_workflow_run_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_requested/webhook_workflow_run_requested_workflow_run_pull_requests.dart';@immutable final class WebhookWorkflowRunRequestedWorkflowRun {const WebhookWorkflowRunRequestedWorkflowRun({required this.headSha, required this.artifactsUrl, required this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, required this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.headCommit, required this.headRepository, required this.actor, required this.htmlUrl, required this.id, required this.jobsUrl, required this.logsUrl, required this.name, required this.nodeId, required this.path, required this.previousAttemptUrl, required this.pullRequests, required this.displayTitle, required this.repository, required this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, required this.workflowUrl, required this.updatedAt, required this.url, required this.workflowId, required this.triggeringActor, this.referencedWorkflows = const Omittable.absent(), });
 
-factory WebhookWorkflowRunRequestedWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunRequestedWorkflowRun(
+factory WebhookWorkflowRunRequestedWorkflowRun.fromJson(Map<String, dynamic> json) {return WebhookWorkflowRunRequestedWorkflowRun(
   actor: json['actor'] != null ? WebhookDeploymentCreatedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   artifactsUrl: Uri.parse(json['artifacts_url'] as String),
   cancelUrl: Uri.parse(json['cancel_url'] as String),
@@ -39,7 +39,7 @@ factory WebhookWorkflowRunRequestedWorkflowRun.fromJson(Map<String, dynamic> jso
   workflowId: (json['workflow_id'] as num).toInt(),
   workflowUrl: Uri.parse(json['workflow_url'] as String),
   displayTitle: json['display_title'] as String,
-); }
+);}
 
 final WebhookDeploymentCreatedWorkflowRunActor? actor;
 
@@ -111,7 +111,7 @@ final Uri workflowUrl;
 
 final String displayTitle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actor': actor?.toJson(),
   'artifacts_url': artifactsUrl.toString(),
   'cancel_url': cancelUrl.toString(),
@@ -147,8 +147,8 @@ Map<String, dynamic> toJson() { return {
   'workflow_id': workflowId,
   'workflow_url': workflowUrl.toString(),
   'display_title': displayTitle,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actor') &&
       json.containsKey('artifacts_url') && json['artifacts_url'] is String &&
       json.containsKey('cancel_url') && json['cancel_url'] is String &&
       json.containsKey('check_suite_id') && json['check_suite_id'] is num &&
@@ -181,8 +181,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is num &&
       json.containsKey('workflow_url') && json['workflow_url'] is String &&
-      json.containsKey('display_title') && json['display_title'] is String; } 
-WebhookWorkflowRunRequestedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflowRunActor? Function()? actor, Uri? artifactsUrl, Uri? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, Uri? checkSuiteUrl, CheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? Function()? headBranch, CheckSuiteHeadCommit? headCommit, WebhookWorkflowRunCompletedWorkflowRunHeadRepository? headRepository, String? headSha, Uri? htmlUrl, int? id, Uri? jobsUrl, Uri? logsUrl, String? Function()? name, String? nodeId, String? path, Uri? Function()? previousAttemptUrl, List<WebhookWorkflowRunRequestedWorkflowRunPullRequests>? pullRequests, Omittable<List<ReferencedWorkflows>?>? referencedWorkflows, WebhookWorkflowRunCompletedWorkflowRunRepository? repository, Uri? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, CheckRunStatus? status, WebhookDeploymentCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, Uri? workflowUrl, String? displayTitle, }) { return WebhookWorkflowRunRequestedWorkflowRun(
+      json.containsKey('display_title') && json['display_title'] is String;}
+WebhookWorkflowRunRequestedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflowRunActor? Function()? actor, Uri? artifactsUrl, Uri? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, Uri? checkSuiteUrl, CheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? Function()? headBranch, CheckSuiteHeadCommit? headCommit, WebhookWorkflowRunCompletedWorkflowRunHeadRepository? headRepository, String? headSha, Uri? htmlUrl, int? id, Uri? jobsUrl, Uri? logsUrl, String? Function()? name, String? nodeId, String? path, Uri? Function()? previousAttemptUrl, List<WebhookWorkflowRunRequestedWorkflowRunPullRequests>? pullRequests, Omittable<List<ReferencedWorkflows>?>? referencedWorkflows, WebhookWorkflowRunCompletedWorkflowRunRepository? repository, Uri? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, CheckRunStatus? status, WebhookDeploymentCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, Uri? workflowUrl, String? displayTitle, }) {return WebhookWorkflowRunRequestedWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl ?? this.artifactsUrl,
   cancelUrl: cancelUrl ?? this.cancelUrl,
@@ -218,7 +218,7 @@ WebhookWorkflowRunRequestedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflo
   workflowId: workflowId ?? this.workflowId,
   workflowUrl: workflowUrl ?? this.workflowUrl,
   displayTitle: displayTitle ?? this.displayTitle,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowRunRequestedWorkflowRun &&
           actor == other.actor &&
@@ -262,4 +262,4 @@ WebhookWorkflowRunRequestedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflo
 
 @override String toString() => 'WebhookWorkflowRunRequestedWorkflowRun(\n  actor: $actor,\n  artifactsUrl: $artifactsUrl,\n  cancelUrl: $cancelUrl,\n  checkSuiteId: $checkSuiteId,\n  checkSuiteNodeId: $checkSuiteNodeId,\n  checkSuiteUrl: $checkSuiteUrl,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  event: $event,\n  headBranch: $headBranch,\n  headCommit: $headCommit,\n  headRepository: $headRepository,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  jobsUrl: $jobsUrl,\n  logsUrl: $logsUrl,\n  name: $name,\n  nodeId: $nodeId,\n  path: $path,\n  previousAttemptUrl: $previousAttemptUrl,\n  pullRequests: $pullRequests,\n  referencedWorkflows: $referencedWorkflows,\n  repository: $repository,\n  rerunUrl: $rerunUrl,\n  runAttempt: $runAttempt,\n  runNumber: $runNumber,\n  runStartedAt: $runStartedAt,\n  status: $status,\n  triggeringActor: $triggeringActor,\n  updatedAt: $updatedAt,\n  url: $url,\n  workflowId: $workflowId,\n  workflowUrl: $workflowUrl,\n  displayTitle: $displayTitle,\n)';
 
- }
+}

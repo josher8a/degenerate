@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of the categories along with their scores as predicted by model.
 @immutable final class CategoryScores {const CategoryScores({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
 
-factory CategoryScores.fromJson(Map<String, dynamic> json) { return CategoryScores(
+factory CategoryScores.fromJson(Map<String, dynamic> json) {return CategoryScores(
   hate: (json['hate'] as num).toDouble(),
   hateThreatening: (json['hate/threatening'] as num).toDouble(),
   harassment: (json['harassment'] as num).toDouble(),
@@ -18,7 +18,7 @@ factory CategoryScores.fromJson(Map<String, dynamic> json) { return CategoryScor
   sexualMinors: (json['sexual/minors'] as num).toDouble(),
   violence: (json['violence'] as num).toDouble(),
   violenceGraphic: (json['violence/graphic'] as num).toDouble(),
-); }
+);}
 
 /// The score for the category 'hate'.
 final double hate;
@@ -59,7 +59,7 @@ final double violence;
 /// The score for the category 'violence/graphic'.
 final double violenceGraphic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hate': hate,
   'hate/threatening': hateThreatening,
   'harassment': harassment,
@@ -73,8 +73,8 @@ Map<String, dynamic> toJson() { return {
   'sexual/minors': sexualMinors,
   'violence': violence,
   'violence/graphic': violenceGraphic,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate') && json['hate'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hate') && json['hate'] is num &&
       json.containsKey('hate/threatening') && json['hate/threatening'] is num &&
       json.containsKey('harassment') && json['harassment'] is num &&
       json.containsKey('harassment/threatening') && json['harassment/threatening'] is num &&
@@ -86,8 +86,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate'
       json.containsKey('sexual') && json['sexual'] is num &&
       json.containsKey('sexual/minors') && json['sexual/minors'] is num &&
       json.containsKey('violence') && json['violence'] is num &&
-      json.containsKey('violence/graphic') && json['violence/graphic'] is num; } 
-CategoryScores copyWith({double? hate, double? hateThreatening, double? harassment, double? harassmentThreatening, double? illicit, double? illicitViolent, double? selfHarm, double? selfHarmIntent, double? selfHarmInstructions, double? sexual, double? sexualMinors, double? violence, double? violenceGraphic, }) { return CategoryScores(
+      json.containsKey('violence/graphic') && json['violence/graphic'] is num;}
+CategoryScores copyWith({double? hate, double? hateThreatening, double? harassment, double? harassmentThreatening, double? illicit, double? illicitViolent, double? selfHarm, double? selfHarmIntent, double? selfHarmInstructions, double? sexual, double? sexualMinors, double? violence, double? violenceGraphic, }) {return CategoryScores(
   hate: hate ?? this.hate,
   hateThreatening: hateThreatening ?? this.hateThreatening,
   harassment: harassment ?? this.harassment,
@@ -101,7 +101,7 @@ CategoryScores copyWith({double? hate, double? hateThreatening, double? harassme
   sexualMinors: sexualMinors ?? this.sexualMinors,
   violence: violence ?? this.violence,
   violenceGraphic: violenceGraphic ?? this.violenceGraphic,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CategoryScores &&
           hate == other.hate &&
@@ -122,4 +122,4 @@ CategoryScores copyWith({double? hate, double? hateThreatening, double? harassme
 
 @override String toString() => 'CategoryScores(\n  hate: $hate,\n  hateThreatening: $hateThreatening,\n  harassment: $harassment,\n  harassmentThreatening: $harassmentThreatening,\n  illicit: $illicit,\n  illicitViolent: $illicitViolent,\n  selfHarm: $selfHarm,\n  selfHarmIntent: $selfHarmIntent,\n  selfHarmInstructions: $selfHarmInstructions,\n  sexual: $sexual,\n  sexualMinors: $sexualMinors,\n  violence: $violence,\n  violenceGraphic: $violenceGraphic,\n)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/collaborator/collaborator_permissions.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Repo Search Result Item
 @immutable final class RepoSearchResultItem {const RepoSearchResultItem({required this.assigneesUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.createdAt, required this.updatedAt, required this.pushedAt, required this.homepage, required this.size, required this.stargazersCount, required this.watchersCount, required this.language, required this.forksCount, required this.openIssuesCount, required this.license, required this.defaultBranch, required this.score, required this.forksUrl, required this.keysUrl, required this.collaboratorsUrl, required this.teamsUrl, required this.hooksUrl, required this.issueEventsUrl, required this.eventsUrl, required this.id, required this.branchesUrl, required this.tagsUrl, required this.blobsUrl, required this.gitTagsUrl, required this.gitRefsUrl, required this.treesUrl, required this.statusesUrl, required this.languagesUrl, required this.stargazersUrl, required this.contributorsUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.commitsUrl, required this.gitCommitsUrl, required this.commentsUrl, required this.issueCommentUrl, required this.contentsUrl, required this.compareUrl, required this.mergesUrl, required this.archiveUrl, required this.downloadsUrl, required this.issuesUrl, required this.pullsUrl, required this.milestonesUrl, required this.notificationsUrl, required this.labelsUrl, required this.releasesUrl, required this.deploymentsUrl, required this.gitUrl, required this.disabled, required this.cloneUrl, required this.svnUrl, required this.forks, required this.openIssues, required this.watchers, required this.archived, required this.mirrorUrl, required this.hasIssues, required this.hasProjects, required this.hasPages, required this.hasWiki, required this.sshUrl, required this.hasDownloads, this.hasPullRequests, this.pullRequestCreationPolicy, this.topics, this.webCommitSignoffRequired, this.visibility, this.masterBranch, this.permissions, this.textMatches, this.tempCloneToken, this.allowMergeCommit, this.allowSquashMerge, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowForking, this.isTemplate, this.hasDiscussions, });
 
-factory RepoSearchResultItem.fromJson(Map<String, dynamic> json) { return RepoSearchResultItem(
+factory RepoSearchResultItem.fromJson(Map<String, dynamic> json) {return RepoSearchResultItem(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -96,7 +96,7 @@ factory RepoSearchResultItem.fromJson(Map<String, dynamic> json) { return RepoSe
   allowForking: json['allow_forking'] as bool?,
   isTemplate: json['is_template'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
-); }
+);}
 
 final int id;
 
@@ -283,7 +283,7 @@ final bool? isTemplate;
 
 final bool? webCommitSignoffRequired;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -375,8 +375,8 @@ Map<String, dynamic> toJson() { return {
   'allow_forking': ?allowForking,
   'is_template': ?isTemplate,
   'web_commit_signoff_required': ?webCommitSignoffRequired,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('full_name') && json['full_name'] is String &&
@@ -449,8 +449,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('has_downloads') && json['has_downloads'] is bool &&
       json.containsKey('archived') && json['archived'] is bool &&
       json.containsKey('disabled') && json['disabled'] is bool &&
-      json.containsKey('license'); } 
-RepoSearchResultItem copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, DateTime? createdAt, DateTime? updatedAt, DateTime? pushedAt, Uri? Function()? homepage, int? size, int? stargazersCount, int? watchersCount, String? Function()? language, int? forksCount, int? openIssuesCount, String? Function()? masterBranch, String? defaultBranch, double? score, Uri? forksUrl, String? keysUrl, String? collaboratorsUrl, Uri? teamsUrl, Uri? hooksUrl, String? issueEventsUrl, Uri? eventsUrl, String? assigneesUrl, String? branchesUrl, Uri? tagsUrl, String? blobsUrl, String? gitTagsUrl, String? gitRefsUrl, String? treesUrl, String? statusesUrl, Uri? languagesUrl, Uri? stargazersUrl, Uri? contributorsUrl, Uri? subscribersUrl, Uri? subscriptionUrl, String? commitsUrl, String? gitCommitsUrl, String? commentsUrl, String? issueCommentUrl, String? contentsUrl, String? compareUrl, Uri? mergesUrl, String? archiveUrl, Uri? downloadsUrl, String? issuesUrl, String? pullsUrl, String? milestonesUrl, String? notificationsUrl, String? labelsUrl, String? releasesUrl, Uri? deploymentsUrl, String? gitUrl, String? sshUrl, String? cloneUrl, Uri? svnUrl, int? forks, int? openIssues, int? watchers, List<String>? Function()? topics, Uri? Function()? mirrorUrl, bool? hasIssues, bool? hasProjects, bool? hasPages, bool? hasWiki, bool? hasDownloads, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, PullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String? Function()? visibility, LicenseSimple? Function()? license, CollaboratorPermissions? Function()? permissions, List<SearchResultTextMatches2>? Function()? textMatches, String? Function()? tempCloneToken, bool? Function()? allowMergeCommit, bool? Function()? allowSquashMerge, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowForking, bool? Function()? isTemplate, bool? Function()? webCommitSignoffRequired, }) { return RepoSearchResultItem(
+      json.containsKey('license');}
+RepoSearchResultItem copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, DateTime? createdAt, DateTime? updatedAt, DateTime? pushedAt, Uri? Function()? homepage, int? size, int? stargazersCount, int? watchersCount, String? Function()? language, int? forksCount, int? openIssuesCount, String? Function()? masterBranch, String? defaultBranch, double? score, Uri? forksUrl, String? keysUrl, String? collaboratorsUrl, Uri? teamsUrl, Uri? hooksUrl, String? issueEventsUrl, Uri? eventsUrl, String? assigneesUrl, String? branchesUrl, Uri? tagsUrl, String? blobsUrl, String? gitTagsUrl, String? gitRefsUrl, String? treesUrl, String? statusesUrl, Uri? languagesUrl, Uri? stargazersUrl, Uri? contributorsUrl, Uri? subscribersUrl, Uri? subscriptionUrl, String? commitsUrl, String? gitCommitsUrl, String? commentsUrl, String? issueCommentUrl, String? contentsUrl, String? compareUrl, Uri? mergesUrl, String? archiveUrl, Uri? downloadsUrl, String? issuesUrl, String? pullsUrl, String? milestonesUrl, String? notificationsUrl, String? labelsUrl, String? releasesUrl, Uri? deploymentsUrl, String? gitUrl, String? sshUrl, String? cloneUrl, Uri? svnUrl, int? forks, int? openIssues, int? watchers, List<String>? Function()? topics, Uri? Function()? mirrorUrl, bool? hasIssues, bool? hasProjects, bool? hasPages, bool? hasWiki, bool? hasDownloads, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, PullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String? Function()? visibility, LicenseSimple? Function()? license, CollaboratorPermissions? Function()? permissions, List<SearchResultTextMatches2>? Function()? textMatches, String? Function()? tempCloneToken, bool? Function()? allowMergeCommit, bool? Function()? allowSquashMerge, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowForking, bool? Function()? isTemplate, bool? Function()? webCommitSignoffRequired, }) {return RepoSearchResultItem(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -542,7 +542,7 @@ RepoSearchResultItem copyWith({int? id, String? nodeId, String? name, String? fu
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   isTemplate: isTemplate != null ? isTemplate() : this.isTemplate,
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepoSearchResultItem &&
           id == other.id &&
@@ -641,4 +641,4 @@ RepoSearchResultItem copyWith({int? id, String? nodeId, String? name, String? fu
 
 @override String toString() => 'RepoSearchResultItem(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  fullName: $fullName,\n  owner: $owner,\n  private: $private,\n  htmlUrl: $htmlUrl,\n  description: $description,\n  fork: $fork,\n  url: $url,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  pushedAt: $pushedAt,\n  homepage: $homepage,\n  size: $size,\n  stargazersCount: $stargazersCount,\n  watchersCount: $watchersCount,\n  language: $language,\n  forksCount: $forksCount,\n  openIssuesCount: $openIssuesCount,\n  masterBranch: $masterBranch,\n  defaultBranch: $defaultBranch,\n  score: $score,\n  forksUrl: $forksUrl,\n  keysUrl: $keysUrl,\n  collaboratorsUrl: $collaboratorsUrl,\n  teamsUrl: $teamsUrl,\n  hooksUrl: $hooksUrl,\n  issueEventsUrl: $issueEventsUrl,\n  eventsUrl: $eventsUrl,\n  assigneesUrl: $assigneesUrl,\n  branchesUrl: $branchesUrl,\n  tagsUrl: $tagsUrl,\n  blobsUrl: $blobsUrl,\n  gitTagsUrl: $gitTagsUrl,\n  gitRefsUrl: $gitRefsUrl,\n  treesUrl: $treesUrl,\n  statusesUrl: $statusesUrl,\n  languagesUrl: $languagesUrl,\n  stargazersUrl: $stargazersUrl,\n  contributorsUrl: $contributorsUrl,\n  subscribersUrl: $subscribersUrl,\n  subscriptionUrl: $subscriptionUrl,\n  commitsUrl: $commitsUrl,\n  gitCommitsUrl: $gitCommitsUrl,\n  commentsUrl: $commentsUrl,\n  issueCommentUrl: $issueCommentUrl,\n  contentsUrl: $contentsUrl,\n  compareUrl: $compareUrl,\n  mergesUrl: $mergesUrl,\n  archiveUrl: $archiveUrl,\n  downloadsUrl: $downloadsUrl,\n  issuesUrl: $issuesUrl,\n  pullsUrl: $pullsUrl,\n  milestonesUrl: $milestonesUrl,\n  notificationsUrl: $notificationsUrl,\n  labelsUrl: $labelsUrl,\n  releasesUrl: $releasesUrl,\n  deploymentsUrl: $deploymentsUrl,\n  gitUrl: $gitUrl,\n  sshUrl: $sshUrl,\n  cloneUrl: $cloneUrl,\n  svnUrl: $svnUrl,\n  forks: $forks,\n  openIssues: $openIssues,\n  watchers: $watchers,\n  topics: $topics,\n  mirrorUrl: $mirrorUrl,\n  hasIssues: $hasIssues,\n  hasProjects: $hasProjects,\n  hasPages: $hasPages,\n  hasWiki: $hasWiki,\n  hasDownloads: $hasDownloads,\n  hasDiscussions: $hasDiscussions,\n  hasPullRequests: $hasPullRequests,\n  pullRequestCreationPolicy: $pullRequestCreationPolicy,\n  archived: $archived,\n  disabled: $disabled,\n  visibility: $visibility,\n  license: $license,\n  permissions: $permissions,\n  textMatches: $textMatches,\n  tempCloneToken: $tempCloneToken,\n  allowMergeCommit: $allowMergeCommit,\n  allowSquashMerge: $allowSquashMerge,\n  allowRebaseMerge: $allowRebaseMerge,\n  allowAutoMerge: $allowAutoMerge,\n  deleteBranchOnMerge: $deleteBranchOnMerge,\n  allowForking: $allowForking,\n  isTemplate: $isTemplate,\n  webCommitSignoffRequired: $webCommitSignoffRequired,\n)';
 
- }
+}

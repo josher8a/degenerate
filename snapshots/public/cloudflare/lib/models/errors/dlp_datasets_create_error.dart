@@ -2,19 +2,19 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure25.dart';sealed class DlpDatasetsCreateError {const DlpDatasetsCreateError();
 
-factory DlpDatasetsCreateError.fromResponse(ApiResponse response) {     try {
+factory DlpDatasetsCreateError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ when response.statusCode >= 400 && response.statusCode <= 499 => DlpDatasetsCreateError$4XX(ResponseCommonFailure25.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => DlpDatasetsCreateError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return DlpDatasetsCreateError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class DlpDatasetsCreateError$4XX extends DlpDatasetsCreateError {const DlpDatasetsCreateError$4XX(this.error, this.statusCode, );
 
 final ResponseCommonFailure25 error;
@@ -23,14 +23,14 @@ final ResponseCommonFailure25 error;
 
 @override Object get typedError => error;
 
- }
+}
 final class DlpDatasetsCreateError$Unknown extends DlpDatasetsCreateError {const DlpDatasetsCreateError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef DlpDatasetsCreateVersionError = DlpDatasetsCreateError;
 typedef DlpDatasetsDefineColumnsError = DlpDatasetsCreateError;
 typedef DlpDatasetsDeleteError = DlpDatasetsCreateError;

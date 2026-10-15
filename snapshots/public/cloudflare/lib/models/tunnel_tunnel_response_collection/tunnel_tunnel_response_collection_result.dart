@@ -7,11 +7,11 @@ const TunnelTunnelResponseCollectionResult({this.tunnelCfdTunnel = const Omittab
 const TunnelTunnelResponseCollectionResult._({required this.rawValue, required this.tunnelCfdTunnel, required this.tunnelWarpConnectorTunnel, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory TunnelTunnelResponseCollectionResult.fromJson(Object? json) { return TunnelTunnelResponseCollectionResult._(
+factory TunnelTunnelResponseCollectionResult.fromJson(Object? json) {return TunnelTunnelResponseCollectionResult._(
   rawValue: Omittable(json),
   tunnelCfdTunnel: json is Map<String, dynamic> && TunnelCfdTunnel.canParse(json) ? parseAnyOfVariant<TunnelCfdTunnel>(json, (value) => TunnelCfdTunnel.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   tunnelWarpConnectorTunnel: json is Map<String, dynamic> && TunnelWarpConnectorTunnel.canParse(json) ? parseAnyOfVariant<TunnelWarpConnectorTunnel>(json, (value) => TunnelWarpConnectorTunnel.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'TunnelTunnelResponseCollectionResult(${toJson()})';
 
- }
+}

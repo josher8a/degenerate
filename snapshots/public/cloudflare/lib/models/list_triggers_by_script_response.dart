@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_pagination_info.dart';import 'package:pub_cloudflare/models/builds_trigger_response.dart';import 'package:pub_cloudflare/models/cancel_build_by_uuid_response/cancel_build_by_uuid_response_errors.dart';@immutable final class ListTriggersByScriptResponse {const ListTriggersByScriptResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
-factory ListTriggersByScriptResponse.fromJson(Map<String, dynamic> json) { return ListTriggersByScriptResponse(
+factory ListTriggersByScriptResponse.fromJson(Map<String, dynamic> json) {return ListTriggersByScriptResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CancelBuildByUuidResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
   result: (json['result'] as List<dynamic>).map((e) => BuildsTriggerResponse.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: json['result_info'] != null ? BuildsPaginationInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
-); }
+);}
 
 final List<CancelBuildByUuidResponseErrors> errors;
 
@@ -22,24 +22,24 @@ final BuildsPaginationInfo? resultInfo;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages,
   'result': result.map((e) => e.toJson()).toList(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ListTriggersByScriptResponse copyWith({List<CancelBuildByUuidResponseErrors>? errors, List<String>? messages, List<BuildsTriggerResponse>? result, BuildsPaginationInfo? Function()? resultInfo, bool? success, }) { return ListTriggersByScriptResponse(
+      json.containsKey('success') && json['success'] is bool;}
+ListTriggersByScriptResponse copyWith({List<CancelBuildByUuidResponseErrors>? errors, List<String>? messages, List<BuildsTriggerResponse>? result, BuildsPaginationInfo? Function()? resultInfo, bool? success, }) {return ListTriggersByScriptResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListTriggersByScriptResponse &&
           listEquals(errors, other.errors) &&
@@ -52,4 +52,4 @@ ListTriggersByScriptResponse copyWith({List<CancelBuildByUuidResponseErrors>? er
 
 @override String toString() => 'ListTriggersByScriptResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_stream_options.dart';import 'package:pub_openai/models/create_completion_request/create_completion_request_model.dart';import 'package:pub_openai/models/create_completion_request/create_completion_request_prompt.dart';import 'package:pub_openai/models/stop_configuration.dart';@immutable final class CreateCompletionRequest {const CreateCompletionRequest({required this.model, required this.prompt, this.bestOf = const Omittable.absent(), this.echo = const Omittable.absent(), this.frequencyPenalty = const Omittable.absent(), this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxTokens = const Omittable.absent(), this.n = const Omittable.absent(), this.presencePenalty = const Omittable.absent(), this.seed = const Omittable.absent(), this.stop = const Omittable.absent(), this.stream = const Omittable.absent(), this.streamOptions = const Omittable.absent(), this.suffix = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, });
 
-factory CreateCompletionRequest.fromJson(Map<String, dynamic> json) { return CreateCompletionRequest(
+factory CreateCompletionRequest.fromJson(Map<String, dynamic> json) {return CreateCompletionRequest(
   model: CreateCompletionRequestModel.fromJson(json['model']),
   prompt: json['prompt'] != null ? OneOf4.parse(json['prompt'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(), fromD: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList(),) : null,
   bestOf: json.containsKey('best_of') ? Omittable(json['best_of'] != null ? (json['best_of'] as num).toInt() : null) : const Omittable.absent(),
@@ -22,7 +22,7 @@ factory CreateCompletionRequest.fromJson(Map<String, dynamic> json) { return Cre
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   user: json['user'] as String?,
-); }
+);}
 
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
 /// 
@@ -159,7 +159,7 @@ double? get temperatureOrDefault => temperature.valueOr(1.0);
 /// The value of `topP`, or its schema default when absent.
 double? get topPOrDefault => topP.valueOr(1.0);
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'model': model.toJson(),
   'prompt': prompt?.toJson(),
   if (bestOf.isPresent) 'best_of': bestOf.value,
@@ -178,11 +178,11 @@ Map<String, dynamic> toJson() { return {
   if (temperature.isPresent) 'temperature': temperature.value,
   if (topP.isPresent) 'top_p': topP.value,
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
-      json.containsKey('prompt'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model') &&
+      json.containsKey('prompt');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final bestOf$ = bestOf.value;
 if (bestOf$ != null) {
   if (bestOf$ < 0) { errors.add('bestOf: must be >= 0'); }
@@ -222,8 +222,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
-return errors; } 
-CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, Omittable<int?>? bestOf, Omittable<bool?>? echo, Omittable<double?>? frequencyPenalty, Omittable<Map<String,int>?>? logitBias, Omittable<int?>? logprobs, Omittable<int?>? maxTokens, Omittable<int?>? n, Omittable<double?>? presencePenalty, Omittable<int?>? seed, Omittable<StopConfiguration?>? stop, Omittable<bool?>? stream, Omittable<ChatCompletionStreamOptions?>? streamOptions, Omittable<String?>? suffix, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, }) { return CreateCompletionRequest(
+return errors;}
+CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, Omittable<int?>? bestOf, Omittable<bool?>? echo, Omittable<double?>? frequencyPenalty, Omittable<Map<String,int>?>? logitBias, Omittable<int?>? logprobs, Omittable<int?>? maxTokens, Omittable<int?>? n, Omittable<double?>? presencePenalty, Omittable<int?>? seed, Omittable<StopConfiguration?>? stop, Omittable<bool?>? stream, Omittable<ChatCompletionStreamOptions?>? streamOptions, Omittable<String?>? suffix, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, }) {return CreateCompletionRequest(
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,
   bestOf: bestOf ?? this.bestOf,
@@ -242,7 +242,7 @@ CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCom
   temperature: temperature ?? this.temperature,
   topP: topP ?? this.topP,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCompletionRequest &&
           model == other.model &&
@@ -268,4 +268,4 @@ CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCom
 
 @override String toString() => 'CreateCompletionRequest(\n  model: $model,\n  prompt: $prompt,\n  bestOf: $bestOf,\n  echo: $echo,\n  frequencyPenalty: $frequencyPenalty,\n  logitBias: $logitBias,\n  logprobs: $logprobs,\n  maxTokens: $maxTokens,\n  n: $n,\n  presencePenalty: $presencePenalty,\n  seed: $seed,\n  stop: $stop,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  suffix: $suffix,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n)';
 
- }
+}

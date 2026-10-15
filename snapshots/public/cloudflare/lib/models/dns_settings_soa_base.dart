@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of the zone's SOA record.
 @immutable final class DnsSettingsSoaBase {const DnsSettingsSoaBase({this.expire, this.minTtl, this.mname = const Omittable.absent(), this.refresh, this.retry, this.rname, this.ttl, });
 
-factory DnsSettingsSoaBase.fromJson(Map<String, dynamic> json) { return DnsSettingsSoaBase(
+factory DnsSettingsSoaBase.fromJson(Map<String, dynamic> json) {return DnsSettingsSoaBase(
   expire: json['expire'] != null ? (json['expire'] as num).toDouble() : null,
   minTtl: json['min_ttl'] != null ? (json['min_ttl'] as num).toDouble() : null,
   mname: json.containsKey('mname') ? Omittable(json['mname'] as String?) : const Omittable.absent(),
@@ -12,7 +12,7 @@ factory DnsSettingsSoaBase.fromJson(Map<String, dynamic> json) { return DnsSetti
   retry: json['retry'] != null ? (json['retry'] as num).toDouble() : null,
   rname: json['rname'] as String?,
   ttl: json['ttl'] != null ? (json['ttl'] as num).toDouble() : null,
-); }
+);}
 
 /// Time in seconds of being unable to query the primary server after which secondary servers should stop serving the zone.
 /// 
@@ -49,7 +49,7 @@ final String? rname;
 /// Example: `3600`
 final double? ttl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expire': ?expire,
   'min_ttl': ?minTtl,
   if (mname.isPresent) 'mname': mname.value,
@@ -57,10 +57,10 @@ Map<String, dynamic> toJson() { return {
   'retry': ?retry,
   'rname': ?rname,
   'ttl': ?ttl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expire', 'min_ttl', 'mname', 'refresh', 'retry', 'rname', 'ttl'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expire', 'min_ttl', 'mname', 'refresh', 'retry', 'rname', 'ttl'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final expire$ = expire;
 if (expire$ != null) {
   if (expire$ < 86400) { errors.add('expire: must be >= 86400'); }
@@ -86,8 +86,8 @@ if (ttl$ != null) {
   if (ttl$ < 300) { errors.add('ttl: must be >= 300'); }
   if (ttl$ > 86400) { errors.add('ttl: must be <= 86400'); }
 }
-return errors; } 
-DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? minTtl, Omittable<String?>? mname, double? Function()? refresh, double? Function()? retry, String? Function()? rname, double? Function()? ttl, }) { return DnsSettingsSoaBase(
+return errors;}
+DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? minTtl, Omittable<String?>? mname, double? Function()? refresh, double? Function()? retry, String? Function()? rname, double? Function()? ttl, }) {return DnsSettingsSoaBase(
   expire: expire != null ? expire() : this.expire,
   minTtl: minTtl != null ? minTtl() : this.minTtl,
   mname: mname ?? this.mname,
@@ -95,7 +95,7 @@ DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? min
   retry: retry != null ? retry() : this.retry,
   rname: rname != null ? rname() : this.rname,
   ttl: ttl != null ? ttl() : this.ttl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsSoaBase &&
           expire == other.expire &&
@@ -110,4 +110,4 @@ DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? min
 
 @override String toString() => 'DnsSettingsSoaBase(expire: $expire, minTtl: $minTtl, mname: $mname, refresh: $refresh, retry: $retry, rname: $rname, ttl: $ttl)';
 
- }
+}

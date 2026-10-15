@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_detection.dart';import 'package:pub_cloudflare/models/bundle_messages2.dart';@immutable final class BundleResponseCustomDetection {const BundleResponseCustomDetection({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory BundleResponseCustomDetection.fromJson(Map<String, dynamic> json) { return BundleResponseCustomDetection(
+factory BundleResponseCustomDetection.fromJson(Map<String, dynamic> json) {return BundleResponseCustomDetection(
   errors: (json['errors'] as List<dynamic>).map((e) => BundleMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => BundleMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: BundleCustomDetection.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<BundleMessages2> errors;
 
@@ -21,22 +21,22 @@ final BundleCustomDetection result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-BundleResponseCustomDetection copyWith({List<BundleMessages2>? errors, List<BundleMessages2>? messages, BundleCustomDetection? result, bool? success, }) { return BundleResponseCustomDetection(
+      json.containsKey('success') && json['success'] is bool;}
+BundleResponseCustomDetection copyWith({List<BundleMessages2>? errors, List<BundleMessages2>? messages, BundleCustomDetection? result, bool? success, }) {return BundleResponseCustomDetection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BundleResponseCustomDetection &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ BundleResponseCustomDetection copyWith({List<BundleMessages2>? errors, List<Bund
 
 @override String toString() => 'BundleResponseCustomDetection(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

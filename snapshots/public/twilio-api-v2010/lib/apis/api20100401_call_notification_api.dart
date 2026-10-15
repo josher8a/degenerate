@@ -12,7 +12,7 @@ final class Api20100401CallNotificationApi with ApiExecutor {const Api20100401Ca
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Notifications/{Sid}.json`
-Future<ApiResult<AccountCallCallNotificationInstance, Never>> fetchCallNotification({required String accountSid, required String callSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallCallNotificationInstance, Never>> fetchCallNotification({required String accountSid, required String callSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ return await execute(
     return AccountCallCallNotificationInstance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Notifications.json`
-Future<ApiResult<ListCallNotificationResponse, Never>> listCallNotification({required String accountSid, required String callSid, int? log, String? messageDate, String? messageDateBefore, String? messageDateAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListCallNotificationResponse, Never>> listCallNotification({required String accountSid, required String callSid, int? log, String? messageDate, String? messageDateBefore, String? messageDateAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (log != null) {
   queryParameters['Log'] = log.toString();
@@ -72,5 +72,5 @@ return await execute(
     return ListCallNotificationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

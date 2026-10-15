@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddedToProjectIssueEventProjectCard {const AddedToProjectIssueEventProjectCard({required this.id, required this.url, required this.projectId, required this.projectUrl, required this.columnName, this.previousColumnName, });
 
-factory AddedToProjectIssueEventProjectCard.fromJson(Map<String, dynamic> json) { return AddedToProjectIssueEventProjectCard(
+factory AddedToProjectIssueEventProjectCard.fromJson(Map<String, dynamic> json) {return AddedToProjectIssueEventProjectCard(
   id: (json['id'] as num).toInt(),
   url: Uri.parse(json['url'] as String),
   projectId: (json['project_id'] as num).toInt(),
   projectUrl: Uri.parse(json['project_url'] as String),
   columnName: json['column_name'] as String,
   previousColumnName: json['previous_column_name'] as String?,
-); }
+);}
 
 final int id;
 
@@ -24,27 +24,27 @@ final String columnName;
 
 final String? previousColumnName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'url': url.toString(),
   'project_id': projectId,
   'project_url': projectUrl.toString(),
   'column_name': columnName,
   'previous_column_name': ?previousColumnName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('project_id') && json['project_id'] is num &&
       json.containsKey('project_url') && json['project_url'] is String &&
-      json.containsKey('column_name') && json['column_name'] is String; } 
-AddedToProjectIssueEventProjectCard copyWith({int? id, Uri? url, int? projectId, Uri? projectUrl, String? columnName, String? Function()? previousColumnName, }) { return AddedToProjectIssueEventProjectCard(
+      json.containsKey('column_name') && json['column_name'] is String;}
+AddedToProjectIssueEventProjectCard copyWith({int? id, Uri? url, int? projectId, Uri? projectUrl, String? columnName, String? Function()? previousColumnName, }) {return AddedToProjectIssueEventProjectCard(
   id: id ?? this.id,
   url: url ?? this.url,
   projectId: projectId ?? this.projectId,
   projectUrl: projectUrl ?? this.projectUrl,
   columnName: columnName ?? this.columnName,
   previousColumnName: previousColumnName != null ? previousColumnName() : this.previousColumnName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddedToProjectIssueEventProjectCard &&
           id == other.id &&
@@ -58,4 +58,4 @@ AddedToProjectIssueEventProjectCard copyWith({int? id, Uri? url, int? projectId,
 
 @override String toString() => 'AddedToProjectIssueEventProjectCard(id: $id, url: $url, projectId: $projectId, projectUrl: $projectUrl, columnName: $columnName, previousColumnName: $previousColumnName)';
 
- }
+}

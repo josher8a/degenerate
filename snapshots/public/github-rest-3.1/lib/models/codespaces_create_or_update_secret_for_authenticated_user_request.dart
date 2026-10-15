@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest {const CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest({required this.keyId, this.encryptedValue, this.selectedRepositoryIds, });
 
-factory CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
+factory CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
   encryptedValue: json['encrypted_value'] as String?,
   keyId: json['key_id'] as String,
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e).toList(),
-); }
+);}
 
 /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/rest/codespaces/secrets#get-public-key-for-the-authenticated-user) endpoint.
 final String? encryptedValue;
@@ -18,24 +18,24 @@ final String keyId;
 /// An array of repository ids that can access the user secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Set selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#set-selected-repositories-for-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
 final List<dynamic>? selectedRepositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'encrypted_value': ?encryptedValue,
   'key_id': keyId,
   'selected_repository_ids': ?selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key_id') && json['key_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final encryptedValue$ = encryptedValue;
 if (encryptedValue$ != null) {
   if (!RegExp(r'^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$').hasMatch(encryptedValue$)) { errors.add(r'encryptedValue: must match pattern ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$'); }
 }
-return errors; } 
-CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String? Function()? encryptedValue, String? keyId, List<dynamic>? Function()? selectedRepositoryIds, }) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
+return errors;}
+CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String? Function()? encryptedValue, String? keyId, List<dynamic>? Function()? selectedRepositoryIds, }) {return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId ?? this.keyId,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest &&
           encryptedValue == other.encryptedValue &&
@@ -46,4 +46,4 @@ CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String? Func
 
 @override String toString() => 'CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(encryptedValue: $encryptedValue, keyId: $keyId, selectedRepositoryIds: $selectedRepositoryIds)';
 
- }
+}

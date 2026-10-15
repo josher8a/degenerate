@@ -10,20 +10,20 @@ String toJson() => value;
 }
 @immutable final class TlsCertificatesAndHostnamesUuidObject {const TlsCertificatesAndHostnamesUuidObject({this.uuid});
 
-factory TlsCertificatesAndHostnamesUuidObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesUuidObject(
+factory TlsCertificatesAndHostnamesUuidObject.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesUuidObject(
   uuid: json['uuid'] != null ? TlsCertificatesAndHostnamesUuid.fromJson(json['uuid'] as String) : null,
-); }
+);}
 
 /// The DCV Delegation unique identifier.
 final TlsCertificatesAndHostnamesUuid? uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (uuid != null) 'uuid': uuid?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'uuid'}.contains(key)); } 
-TlsCertificatesAndHostnamesUuidObject copyWith({TlsCertificatesAndHostnamesUuid? Function()? uuid}) { return TlsCertificatesAndHostnamesUuidObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'uuid'}.contains(key));}
+TlsCertificatesAndHostnamesUuidObject copyWith({TlsCertificatesAndHostnamesUuid? Function()? uuid}) {return TlsCertificatesAndHostnamesUuidObject(
   uuid: uuid != null ? uuid() : this.uuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesUuidObject &&
           uuid == other.uuid;
@@ -32,4 +32,4 @@ TlsCertificatesAndHostnamesUuidObject copyWith({TlsCertificatesAndHostnamesUuid?
 
 @override String toString() => 'TlsCertificatesAndHostnamesUuidObject(uuid: $uuid)';
 
- }
+}

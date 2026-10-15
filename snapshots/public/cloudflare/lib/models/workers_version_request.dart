@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values/pages_deployment_config_values_limits.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values_request/pages_deployment_config_values_request_usage_model.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_multiple_step_migrations.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item/workers_namespace_script_and_version_settings_item_migrations.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/smart.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted2.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted3.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted4.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant2.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant3.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant4.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item_request/workers_script_and_version_settings_item_request_annotations.dart';import 'package:pub_cloudflare/models/workers_single_step_migrations.dart';import 'package:pub_cloudflare/models/workers_version/assets.dart';import 'package:pub_cloudflare/models/workers_version/modules.dart';@immutable final class WorkersVersionRequest {const WorkersVersionRequest({this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.usageModel, });
 
-factory WorkersVersionRequest.fromJson(Map<String, dynamic> json) { return WorkersVersionRequest(
+factory WorkersVersionRequest.fromJson(Map<String, dynamic> json) {return WorkersVersionRequest(
   annotations: json['annotations'] != null ? WorkersScriptAndVersionSettingsItemRequestAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   assets: json['assets'] != null ? Assets.fromJson(json['assets'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
@@ -15,7 +15,7 @@ factory WorkersVersionRequest.fromJson(Map<String, dynamic> json) { return Worke
   modules: (json['modules'] as List<dynamic>?)?.map((e) => Modules.fromJson(e as Map<String, dynamic>)).toList(),
   placement: json['placement'] != null ? OneOf8.parse(json['placement'], fromA: (v) => Smart.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementInfoNoStatusVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementInfoNoStatusVariant3.fromJson(v as Map<String, dynamic>), fromD: (v) => WorkersPlacementInfoNoStatusVariant4.fromJson(v as Map<String, dynamic>), fromE: (v) => WorkersPlacementInfoNoStatusTargeted.fromJson(v as Map<String, dynamic>), fromF: (v) => WorkersPlacementInfoNoStatusTargeted2.fromJson(v as Map<String, dynamic>), fromG: (v) => WorkersPlacementInfoNoStatusTargeted3.fromJson(v as Map<String, dynamic>), fromH: (v) => WorkersPlacementInfoNoStatusTargeted4.fromJson(v as Map<String, dynamic>),) : null,
   usageModel: json['usage_model'] != null ? PagesDeploymentConfigValuesRequestUsageModel.fromJson(json['usage_model'] as String) : null,
-); }
+);}
 
 /// Metadata about the version.
 final WorkersScriptAndVersionSettingsItemRequestAnnotations? annotations;
@@ -67,7 +67,7 @@ final PagesDeploymentConfigValuesRequestUsageModel? usageModel;
 /// The value of `usageModel`, or its schema default when absent.
 PagesDeploymentConfigValuesRequestUsageModel get usageModelOrDefault => usageModel ?? PagesDeploymentConfigValuesRequestUsageModel.fromJson('standard');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (annotations != null) 'annotations': annotations?.toJson(),
   if (assets != null) 'assets': assets?.toJson(),
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
@@ -79,9 +79,9 @@ Map<String, dynamic> toJson() { return {
   if (modules != null) 'modules': modules?.map((e) => e.toJson()).toList(),
   if (placement != null) 'placement': placement?.toJson(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annotations', 'assets', 'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'main_module', 'migrations', 'modules', 'placement', 'usage_model'}.contains(key)); } 
-WorkersVersionRequest copyWith({WorkersScriptAndVersionSettingsItemRequestAnnotations? Function()? annotations, Assets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, PagesDeploymentConfigValuesLimits? Function()? limits, String? Function()? mainModule, WorkersNamespaceScriptAndVersionSettingsItemMigrations? Function()? migrations, List<Modules>? Function()? modules, WorkersPlacementInfoNoStatus? Function()? placement, PagesDeploymentConfigValuesRequestUsageModel? Function()? usageModel, }) { return WorkersVersionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'annotations', 'assets', 'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'main_module', 'migrations', 'modules', 'placement', 'usage_model'}.contains(key));}
+WorkersVersionRequest copyWith({WorkersScriptAndVersionSettingsItemRequestAnnotations? Function()? annotations, Assets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, PagesDeploymentConfigValuesLimits? Function()? limits, String? Function()? mainModule, WorkersNamespaceScriptAndVersionSettingsItemMigrations? Function()? migrations, List<Modules>? Function()? modules, WorkersPlacementInfoNoStatus? Function()? placement, PagesDeploymentConfigValuesRequestUsageModel? Function()? usageModel, }) {return WorkersVersionRequest(
   annotations: annotations != null ? annotations() : this.annotations,
   assets: assets != null ? assets() : this.assets,
   bindings: bindings != null ? bindings() : this.bindings,
@@ -93,7 +93,7 @@ WorkersVersionRequest copyWith({WorkersScriptAndVersionSettingsItemRequestAnnota
   modules: modules != null ? modules() : this.modules,
   placement: placement != null ? placement() : this.placement,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionRequest &&
           annotations == other.annotations &&
@@ -112,4 +112,4 @@ WorkersVersionRequest copyWith({WorkersScriptAndVersionSettingsItemRequestAnnota
 
 @override String toString() => 'WorkersVersionRequest(\n  annotations: $annotations,\n  assets: $assets,\n  bindings: $bindings,\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  limits: $limits,\n  mainModule: $mainModule,\n  migrations: $migrations,\n  modules: $modules,\n  placement: $placement,\n  usageModel: $usageModel,\n)';
 
- }
+}

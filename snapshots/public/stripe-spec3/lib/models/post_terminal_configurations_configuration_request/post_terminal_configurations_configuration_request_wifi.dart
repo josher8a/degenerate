@@ -8,11 +8,11 @@ const PostTerminalConfigurationsConfigurationRequestWifi({this.wifi = const Omit
 const PostTerminalConfigurationsConfigurationRequestWifi._({required this.rawValue, required this.wifi, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTerminalConfigurationsConfigurationRequestWifi.fromJson(Object? json) { return PostTerminalConfigurationsConfigurationRequestWifi._(
+factory PostTerminalConfigurationsConfigurationRequestWifi.fromJson(Object? json) {return PostTerminalConfigurationsConfigurationRequestWifi._(
   rawValue: Omittable(json),
   wifi: json is Map<String, dynamic> && Wifi.canParse(json) ? parseAnyOfVariant<Wifi>(json, (value) => Wifi.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTerminalConfigurationsConfigurationRequestWifi(${toJson()})';
 
- }
+}

@@ -14,7 +14,7 @@ final class ShieldEndpointManagementApi with ApiExecutor {const ShieldEndpointMa
 /// Lists all API operations tracked by API Shield for a zone with pagination. Returns operation details including method, path, and feature configurations.
 ///
 /// `GET /zones/{zone_id}/api_gateway/operations`
-Future<ApiResult<List<ShieldOperation?>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder? order, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection? direction, List<String>? host, List<String>? method, String? endpoint, List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldOperation?>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder? order, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection? direction, List<String>? host, List<String>? method, String? endpoint, List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature>? feature, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -66,13 +66,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Add operations to a zone
 ///
 /// Add one or more operations to a zone. Endpoints can contain path variables. Host, method, endpoint will be normalized to a canoncial form when creating an operation and must be unique on the zone. Inserting an operation that matches an existing one will return the record of the already existing operation and update its last_updated date.
 ///
 /// `POST /zones/{zone_id}/api_gateway/operations`
-Future<ApiResult<List<ShieldOperation?>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementAddOperationsToAZone({required ShieldIdentifier zoneId, required List<ShieldBasicOperation> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ShieldOperation?>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementAddOperationsToAZone({required ShieldIdentifier zoneId, required List<ShieldBasicOperation> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -91,13 +91,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Delete multiple operations
 ///
 /// Bulk removes multiple API operations from API Shield endpoint management in a single request. Efficient for cleaning up unused endpoints.
 ///
 /// `DELETE /zones/{zone_id}/api_gateway/operations`
-Future<ApiResult<ResponseCommon6, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementDeleteMultipleOperations({required ShieldIdentifier zoneId, required List<ShieldObjectWithOperationId> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon6, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementDeleteMultipleOperations({required ShieldIdentifier zoneId, required List<ShieldObjectWithOperationId> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,13 +115,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Retrieve information about an operation
 ///
 /// Gets detailed information about a specific API operation in API Shield, including its schema validation settings and traffic statistics.
 ///
 /// `GET /zones/{zone_id}/api_gateway/operations/{operation_id}`
-Future<ApiResult<ShieldOperation?, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementRetrieveInformationAboutAnOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, List<ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldOperation?, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementRetrieveInformationAboutAnOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, List<ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature>? feature, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (feature != null) {
 for (final item in feature) {
@@ -148,13 +148,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Delete an operation
 ///
 /// Removes a single API operation from API Shield endpoint management. The operation will no longer be tracked or protected by API Shield rules.
 ///
 /// `DELETE /zones/{zone_id}/api_gateway/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementDeleteAnOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon6, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementDeleteAnOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -170,13 +170,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Add one operation to a zone
 ///
 /// Add one operation to a zone. Endpoints can contain path variables. Host, method, endpoint will be normalized to a canoncial form when creating an operation and must be unique on the zone. Inserting an operation that matches an existing one will return the record of the already existing operation and update its last_updated date.
 ///
 /// `POST /zones/{zone_id}/api_gateway/operations/item`
-Future<ApiResult<ShieldOperation?, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementAddOperationToAZone({required ShieldIdentifier zoneId, required ShieldBasicOperation body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldOperation?, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementAddOperationToAZone({required ShieldIdentifier zoneId, required ShieldBasicOperation body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -195,11 +195,11 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Retrieve operations and features as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/schemas`
-Future<ApiResult<ShieldSchemaResponseWithThresholdsResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementRetrieveOperationsAndFeaturesAsOpenApiSchemas({required ShieldIdentifier zoneId, List<String>? host, List<SchemasFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldSchemaResponseWithThresholdsResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldEndpointManagementRetrieveOperationsAndFeaturesAsOpenApiSchemas({required ShieldIdentifier zoneId, List<String>? host, List<SchemasFeature>? feature, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (host != null) {
 for (final item in host) {
@@ -231,5 +231,5 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
- }
+}
+}

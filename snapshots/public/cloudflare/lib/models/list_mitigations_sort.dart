@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListMitigationsSort {const ListMitigationsSort();
 
-factory ListMitigationsSort.fromJson(String json) { return switch (json) {
+factory ListMitigationsSort.fromJson(String json) {return switch (json) {
   'type,asc' => typeasc,
   'type,desc' => typedesc,
   'effective_date,asc' => effectiveDateasc,
@@ -13,7 +13,7 @@ factory ListMitigationsSort.fromJson(String json) { return switch (json) {
   'entity_type,asc' => entityTypeasc,
   'entity_type,desc' => entityTypedesc,
   _ => ListMitigationsSort$Unknown(json),
-}; }
+};}
 
 static const ListMitigationsSort typeasc = ListMitigationsSort$typeasc._();
 
@@ -34,9 +34,9 @@ static const ListMitigationsSort entityTypedesc = ListMitigationsSort$entityType
 static const List<ListMitigationsSort> values = [typeasc, typedesc, effectiveDateasc, effectiveDatedesc, statusasc, statusdesc, entityTypeasc, entityTypedesc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'type,asc' => 'typeasc',
   'type,desc' => 'typedesc',
   'effective_date,asc' => 'effectiveDateasc',
@@ -46,11 +46,11 @@ String get name { return switch (value) {
   'entity_type,asc' => 'entityTypeasc',
   'entity_type,desc' => 'entityTypedesc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ListMitigationsSort$Unknown; } 
+bool get isUnknown {return this is ListMitigationsSort$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() typeasc, required W Function() typedesc, required W Function() effectiveDateasc, required W Function() effectiveDatedesc, required W Function() statusasc, required W Function() statusdesc, required W Function() entityTypeasc, required W Function() entityTypedesc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() typeasc, required W Function() typedesc, required W Function() effectiveDateasc, required W Function() effectiveDatedesc, required W Function() statusasc, required W Function() statusdesc, required W Function() entityTypeasc, required W Function() entityTypedesc, required W Function(String value) $unknown, }) {return switch (this) {
       ListMitigationsSort$typeasc() => typeasc(),
       ListMitigationsSort$typedesc() => typedesc(),
       ListMitigationsSort$effectiveDateasc() => effectiveDateasc(),
@@ -60,9 +60,9 @@ W when<W>({required W Function() typeasc, required W Function() typedesc, requir
       ListMitigationsSort$entityTypeasc() => entityTypeasc(),
       ListMitigationsSort$entityTypedesc() => entityTypedesc(),
       ListMitigationsSort$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc, W Function()? typedesc, W Function()? effectiveDateasc, W Function()? effectiveDatedesc, W Function()? statusasc, W Function()? statusdesc, W Function()? entityTypeasc, W Function()? entityTypedesc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc, W Function()? typedesc, W Function()? effectiveDateasc, W Function()? effectiveDatedesc, W Function()? statusasc, W Function()? statusdesc, W Function()? entityTypeasc, W Function()? entityTypedesc, W Function(String value)? $unknown, }) {return switch (this) {
       ListMitigationsSort$typeasc() => typeasc != null ? typeasc() : orElse(value),
       ListMitigationsSort$typedesc() => typedesc != null ? typedesc() : orElse(value),
       ListMitigationsSort$effectiveDateasc() => effectiveDateasc != null ? effectiveDateasc() : orElse(value),
@@ -72,10 +72,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
       ListMitigationsSort$entityTypeasc() => entityTypeasc != null ? entityTypeasc() : orElse(value),
       ListMitigationsSort$entityTypedesc() => entityTypedesc != null ? entityTypedesc() : orElse(value),
       ListMitigationsSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ListMitigationsSort($value)';
 
- }
+}
 @immutable final class ListMitigationsSort$typeasc extends ListMitigationsSort {const ListMitigationsSort$typeasc._();
 
 @override String get value => 'type,asc';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => 'type,asc'.hashCode;
 
- }
+}
 @immutable final class ListMitigationsSort$typedesc extends ListMitigationsSort {const ListMitigationsSort$typedesc._();
 
 @override String get value => 'type,desc';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => 'type,desc'.hashCode;
 
- }
+}
 @immutable final class ListMitigationsSort$effectiveDateasc extends ListMitigationsSort {const ListMitigationsSort$effectiveDateasc._();
 
 @override String get value => 'effective_date,asc';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => 'effective_date,asc'.hashCode;
 
- }
+}
 @immutable final class ListMitigationsSort$effectiveDatedesc extends ListMitigationsSort {const ListMitigationsSort$effectiveDatedesc._();
 
 @override String get value => 'effective_date,desc';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => 'effective_date,desc'.hashCode;
 
- }
+}
 @immutable final class ListMitigationsSort$statusasc extends ListMitigationsSort {const ListMitigationsSort$statusasc._();
 
 @override String get value => 'status,asc';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => 'status,asc'.hashCode;
 
- }
+}
 @immutable final class ListMitigationsSort$statusdesc extends ListMitigationsSort {const ListMitigationsSort$statusdesc._();
 
 @override String get value => 'status,desc';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => 'status,desc'.hashCode;
 
- }
+}
 @immutable final class ListMitigationsSort$entityTypeasc extends ListMitigationsSort {const ListMitigationsSort$entityTypeasc._();
 
 @override String get value => 'entity_type,asc';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => 'entity_type,asc'.hashCode;
 
- }
+}
 @immutable final class ListMitigationsSort$entityTypedesc extends ListMitigationsSort {const ListMitigationsSort$entityTypedesc._();
 
 @override String get value => 'entity_type,desc';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => 'entity_type,desc'.hashCode;
 
- }
+}
 @immutable final class ListMitigationsSort$Unknown extends ListMitigationsSort {const ListMitigationsSort$Unknown(this.value);
 
 @override final String value;
@@ -157,4 +157,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

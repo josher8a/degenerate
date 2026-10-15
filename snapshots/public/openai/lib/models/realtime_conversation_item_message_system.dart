@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_system/realtime_conversation_item_message_system_content.dart';/// The role of the message sender. Always `system`.
 sealed class RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole();
 
-factory RealtimeConversationItemMessageSystemRole.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageSystemRole.fromJson(String json) {return switch (json) {
   'system' => system,
   _ => RealtimeConversationItemMessageSystemRole$Unknown(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageSystemRole system = RealtimeConversationItemMessageSystemRole$system._();
 
 static const List<RealtimeConversationItemMessageSystemRole> values = [system];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'system' => 'system',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeConversationItemMessageSystemRole$Unknown; } 
+bool get isUnknown {return this is RealtimeConversationItemMessageSystemRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() system, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() system, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeConversationItemMessageSystemRole$system() => system(),
       RealtimeConversationItemMessageSystemRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeConversationItemMessageSystemRole$system() => system != null ? system() : orElse(value),
       RealtimeConversationItemMessageSystemRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeConversationItemMessageSystemRole($value)';
 
- }
+}
 @immutable final class RealtimeConversationItemMessageSystemRole$system extends RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole$system._();
 
 @override String get value => 'system';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, 
 
 @override int get hashCode => 'system'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemMessageSystemRole$Unknown extends RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A system message in a Realtime conversation can be used to provide additional context or instructions to the model. This is similar but distinct from the instruction prompt provided at the start of a conversation, as system messages can be added at any point in the conversation. For major changes to the conversation's behavior, use instructions, but for smaller updates (e.g. "the user is now asking about a different topic"), use system messages.
 @immutable final class RealtimeConversationItemMessageSystem {const RealtimeConversationItemMessageSystem({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
 
-factory RealtimeConversationItemMessageSystem.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageSystem(
+factory RealtimeConversationItemMessageSystem.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemMessageSystem(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
   status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
   role: RealtimeConversationItemMessageSystemRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageSystemContent.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The unique ID of the item. This may be provided by the client or generated by the server.
 final String? id;
@@ -84,25 +84,25 @@ final RealtimeConversationItemMessageSystemRole role;
 /// The content of the message.
 final List<RealtimeConversationItemMessageSystemContent> content;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
   'type': type,
   if (status != null) 'status': status?.toJson(),
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
-      json.containsKey('content'); } 
-RealtimeConversationItemMessageSystem copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputResourceStatus? Function()? status, RealtimeConversationItemMessageSystemRole? role, List<RealtimeConversationItemMessageSystemContent>? content, }) { return RealtimeConversationItemMessageSystem(
+      json.containsKey('content');}
+RealtimeConversationItemMessageSystem copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputResourceStatus? Function()? status, RealtimeConversationItemMessageSystemRole? role, List<RealtimeConversationItemMessageSystemContent>? content, }) {return RealtimeConversationItemMessageSystem(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
   status: status != null ? status() : this.status,
   role: role ?? this.role,
   content: content ?? this.content,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemMessageSystem &&
           id == other.id &&
@@ -116,4 +116,4 @@ RealtimeConversationItemMessageSystem copyWith({String? Function()? id, Realtime
 
 @override String toString() => 'RealtimeConversationItemMessageSystem(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)';
 
- }
+}

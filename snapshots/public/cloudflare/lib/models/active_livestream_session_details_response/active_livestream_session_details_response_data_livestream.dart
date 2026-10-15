@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class ActiveLivestreamSessionDetailsResponseDataLivestream {const ActiveLivestreamSessionDetailsResponseDataLivestream({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
-factory ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(Map<String, dynamic> json) { return ActiveLivestreamSessionDetailsResponseDataLivestream(
+factory ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(Map<String, dynamic> json) {return ActiveLivestreamSessionDetailsResponseDataLivestream(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   disabled: json['disabled'] as String?,
   id: json['id'] as String?,
@@ -14,7 +14,7 @@ factory ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(Map<String
   status: json['status'] != null ? RealtimekitLivestreamBaseStatus.fromJson(json['status'] as String) : null,
   streamKey: json['stream_key'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// Timestamp the object was created at. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -44,7 +44,7 @@ final String? streamKey;
 /// Timestamp the object was updated at. The time is returned in ISO format.
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'disabled': ?disabled,
   'id': ?id,
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key)); } 
-ActiveLivestreamSessionDetailsResponseDataLivestream copyWith({DateTime? Function()? createdAt, String? Function()? disabled, String? Function()? id, String? Function()? ingestServer, String? Function()? meetingId, String? Function()? name, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) { return ActiveLivestreamSessionDetailsResponseDataLivestream(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key));}
+ActiveLivestreamSessionDetailsResponseDataLivestream copyWith({DateTime? Function()? createdAt, String? Function()? disabled, String? Function()? id, String? Function()? ingestServer, String? Function()? meetingId, String? Function()? name, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) {return ActiveLivestreamSessionDetailsResponseDataLivestream(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,
@@ -68,7 +68,7 @@ ActiveLivestreamSessionDetailsResponseDataLivestream copyWith({DateTime? Functio
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActiveLivestreamSessionDetailsResponseDataLivestream &&
           createdAt == other.createdAt &&
@@ -86,4 +86,4 @@ ActiveLivestreamSessionDetailsResponseDataLivestream copyWith({DateTime? Functio
 
 @override String toString() => 'ActiveLivestreamSessionDetailsResponseDataLivestream(\n  createdAt: $createdAt,\n  disabled: $disabled,\n  id: $id,\n  ingestServer: $ingestServer,\n  meetingId: $meetingId,\n  name: $name,\n  playbackUrl: $playbackUrl,\n  status: $status,\n  streamKey: $streamKey,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

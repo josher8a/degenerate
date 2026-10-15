@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_response/radar_get_quality_index_timeseries_group_response_result_serie0.dart';@immutable final class RadarGetQualityIndexTimeseriesGroupResponseResult {const RadarGetQualityIndexTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
 
-factory RadarGetQualityIndexTimeseriesGroupResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetQualityIndexTimeseriesGroupResponseResult(
+factory RadarGetQualityIndexTimeseriesGroupResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetQualityIndexTimeseriesGroupResponseResult(
   meta: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   serie0: RadarGetQualityIndexTimeseriesGroupResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 
 final RadarGetQualityIndexTimeseriesGroupResponseResultSerie0 serie0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'serie_0': serie0.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('serie_0'); } 
-RadarGetQualityIndexTimeseriesGroupResponseResult copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta? meta, RadarGetQualityIndexTimeseriesGroupResponseResultSerie0? serie0, }) { return RadarGetQualityIndexTimeseriesGroupResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('serie_0');}
+RadarGetQualityIndexTimeseriesGroupResponseResult copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta? meta, RadarGetQualityIndexTimeseriesGroupResponseResultSerie0? serie0, }) {return RadarGetQualityIndexTimeseriesGroupResponseResult(
   meta: meta ?? this.meta,
   serie0: serie0 ?? this.serie0,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualityIndexTimeseriesGroupResponseResult &&
           meta == other.meta &&
@@ -32,4 +32,4 @@ RadarGetQualityIndexTimeseriesGroupResponseResult copyWith({RadarGetAiBotsTimese
 
 @override String toString() => 'RadarGetQualityIndexTimeseriesGroupResponseResult(meta: $meta, serie0: $serie0)';
 
- }
+}

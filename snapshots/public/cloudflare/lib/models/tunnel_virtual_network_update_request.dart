@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_is_default_network_optional.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_comment.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_name.dart';@immutable final class TunnelVirtualNetworkUpdateRequest {const TunnelVirtualNetworkUpdateRequest({this.comment, this.isDefaultNetwork, this.name, });
 
-factory TunnelVirtualNetworkUpdateRequest.fromJson(Map<String, dynamic> json) { return TunnelVirtualNetworkUpdateRequest(
+factory TunnelVirtualNetworkUpdateRequest.fromJson(Map<String, dynamic> json) {return TunnelVirtualNetworkUpdateRequest(
   comment: json['comment'] != null ? TunnelVirtualNetworkComment.fromJson(json['comment'] as String) : null,
   isDefaultNetwork: json['is_default_network'] != null ? TunnelIsDefaultNetworkOptional.fromJson(json['is_default_network'] as bool) : null,
   name: json['name'] != null ? TunnelVirtualNetworkName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// Optional remark describing the virtual network.
 final TunnelVirtualNetworkComment? comment;
@@ -18,17 +18,17 @@ final TunnelIsDefaultNetworkOptional? isDefaultNetwork;
 /// A user-friendly name for the virtual network.
 final TunnelVirtualNetworkName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (isDefaultNetwork != null) 'is_default_network': isDefaultNetwork?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'is_default_network', 'name'}.contains(key)); } 
-TunnelVirtualNetworkUpdateRequest copyWith({TunnelVirtualNetworkComment? Function()? comment, TunnelIsDefaultNetworkOptional? Function()? isDefaultNetwork, TunnelVirtualNetworkName? Function()? name, }) { return TunnelVirtualNetworkUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'is_default_network', 'name'}.contains(key));}
+TunnelVirtualNetworkUpdateRequest copyWith({TunnelVirtualNetworkComment? Function()? comment, TunnelIsDefaultNetworkOptional? Function()? isDefaultNetwork, TunnelVirtualNetworkName? Function()? name, }) {return TunnelVirtualNetworkUpdateRequest(
   comment: comment != null ? comment() : this.comment,
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelVirtualNetworkUpdateRequest &&
           comment == other.comment &&
@@ -39,4 +39,4 @@ TunnelVirtualNetworkUpdateRequest copyWith({TunnelVirtualNetworkComment? Functio
 
 @override String toString() => 'TunnelVirtualNetworkUpdateRequest(comment: $comment, isDefaultNetwork: $isDefaultNetwork, name: $name)';
 
- }
+}

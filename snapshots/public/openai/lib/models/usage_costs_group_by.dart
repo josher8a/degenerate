@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageCostsGroupBy {const UsageCostsGroupBy();
 
-factory UsageCostsGroupBy.fromJson(String json) { return switch (json) {
+factory UsageCostsGroupBy.fromJson(String json) {return switch (json) {
   'project_id' => projectId,
   'line_item' => lineItem,
   _ => UsageCostsGroupBy$Unknown(json),
-}; }
+};}
 
 static const UsageCostsGroupBy projectId = UsageCostsGroupBy$projectId._();
 
@@ -16,30 +16,30 @@ static const UsageCostsGroupBy lineItem = UsageCostsGroupBy$lineItem._();
 static const List<UsageCostsGroupBy> values = [projectId, lineItem];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'project_id' => 'projectId',
   'line_item' => 'lineItem',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UsageCostsGroupBy$Unknown; } 
+bool get isUnknown {return this is UsageCostsGroupBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() projectId, required W Function() lineItem, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() projectId, required W Function() lineItem, required W Function(String value) $unknown, }) {return switch (this) {
       UsageCostsGroupBy$projectId() => projectId(),
       UsageCostsGroupBy$lineItem() => lineItem(),
       UsageCostsGroupBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectId, W Function()? lineItem, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectId, W Function()? lineItem, W Function(String value)? $unknown, }) {return switch (this) {
       UsageCostsGroupBy$projectId() => projectId != null ? projectId() : orElse(value),
       UsageCostsGroupBy$lineItem() => lineItem != null ? lineItem() : orElse(value),
       UsageCostsGroupBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UsageCostsGroupBy($value)';
 
- }
+}
 @immutable final class UsageCostsGroupBy$projectId extends UsageCostsGroupBy {const UsageCostsGroupBy$projectId._();
 
 @override String get value => 'project_id';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectI
 
 @override int get hashCode => 'project_id'.hashCode;
 
- }
+}
 @immutable final class UsageCostsGroupBy$lineItem extends UsageCostsGroupBy {const UsageCostsGroupBy$lineItem._();
 
 @override String get value => 'line_item';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectI
 
 @override int get hashCode => 'line_item'.hashCode;
 
- }
+}
 @immutable final class UsageCostsGroupBy$Unknown extends UsageCostsGroupBy {const UsageCostsGroupBy$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectI
 
 @override int get hashCode => value.hashCode;
 
- }
+}

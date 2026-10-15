@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule();
 
-factory MandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
+factory MandateOptionsPaymentSchedule.fromJson(String json) {return switch (json) {
   '' => $empty,
   'adhoc' => adhoc,
   'annual' => annual,
@@ -14,7 +14,7 @@ factory MandateOptionsPaymentSchedule.fromJson(String json) { return switch (jso
   'semi_annual' => semiAnnual,
   'weekly' => weekly,
   _ => MandateOptionsPaymentSchedule$Unknown(json),
-}; }
+};}
 
 static const MandateOptionsPaymentSchedule $empty = MandateOptionsPaymentSchedule$$empty._();
 
@@ -37,9 +37,9 @@ static const MandateOptionsPaymentSchedule weekly = MandateOptionsPaymentSchedul
 static const List<MandateOptionsPaymentSchedule> values = [$empty, adhoc, annual, daily, fortnightly, monthly, quarterly, semiAnnual, weekly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'adhoc' => 'adhoc',
   'annual' => 'annual',
@@ -50,11 +50,11 @@ String get name { return switch (value) {
   'semi_annual' => 'semiAnnual',
   'weekly' => 'weekly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MandateOptionsPaymentSchedule$Unknown; } 
+bool get isUnknown {return this is MandateOptionsPaymentSchedule$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() adhoc, required W Function() annual, required W Function() daily, required W Function() fortnightly, required W Function() monthly, required W Function() quarterly, required W Function() semiAnnual, required W Function() weekly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() adhoc, required W Function() annual, required W Function() daily, required W Function() fortnightly, required W Function() monthly, required W Function() quarterly, required W Function() semiAnnual, required W Function() weekly, required W Function(String value) $unknown, }) {return switch (this) {
       MandateOptionsPaymentSchedule$$empty() => $empty(),
       MandateOptionsPaymentSchedule$adhoc() => adhoc(),
       MandateOptionsPaymentSchedule$annual() => annual(),
@@ -65,9 +65,9 @@ W when<W>({required W Function() $empty, required W Function() adhoc, required W
       MandateOptionsPaymentSchedule$semiAnnual() => semiAnnual(),
       MandateOptionsPaymentSchedule$weekly() => weekly(),
       MandateOptionsPaymentSchedule$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? adhoc, W Function()? annual, W Function()? daily, W Function()? fortnightly, W Function()? monthly, W Function()? quarterly, W Function()? semiAnnual, W Function()? weekly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? adhoc, W Function()? annual, W Function()? daily, W Function()? fortnightly, W Function()? monthly, W Function()? quarterly, W Function()? semiAnnual, W Function()? weekly, W Function(String value)? $unknown, }) {return switch (this) {
       MandateOptionsPaymentSchedule$$empty() => $empty != null ? $empty() : orElse(value),
       MandateOptionsPaymentSchedule$adhoc() => adhoc != null ? adhoc() : orElse(value),
       MandateOptionsPaymentSchedule$annual() => annual != null ? annual() : orElse(value),
@@ -78,10 +78,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
       MandateOptionsPaymentSchedule$semiAnnual() => semiAnnual != null ? semiAnnual() : orElse(value),
       MandateOptionsPaymentSchedule$weekly() => weekly != null ? weekly() : orElse(value),
       MandateOptionsPaymentSchedule$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MandateOptionsPaymentSchedule($value)';
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$$empty extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$$empty._();
 
 @override String get value => '';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$adhoc extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$adhoc._();
 
 @override String get value => 'adhoc';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'adhoc'.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$annual extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$annual._();
 
 @override String get value => 'annual';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'annual'.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$daily extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$daily._();
 
 @override String get value => 'daily';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'daily'.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$fortnightly extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$fortnightly._();
 
 @override String get value => 'fortnightly';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'fortnightly'.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$monthly extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$monthly._();
 
 @override String get value => 'monthly';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'monthly'.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$quarterly extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$quarterly._();
 
 @override String get value => 'quarterly';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'quarterly'.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$semiAnnual extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$semiAnnual._();
 
 @override String get value => 'semi_annual';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'semi_annual'.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$weekly extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$weekly._();
 
 @override String get value => 'weekly';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'weekly'.hashCode;
 
- }
+}
 @immutable final class MandateOptionsPaymentSchedule$Unknown extends MandateOptionsPaymentSchedule {const MandateOptionsPaymentSchedule$Unknown(this.value);
 
 @override final String value;
@@ -172,4 +172,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

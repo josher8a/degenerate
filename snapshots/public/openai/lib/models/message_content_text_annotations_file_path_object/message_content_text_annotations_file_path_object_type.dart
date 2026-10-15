@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `file_path`.
 sealed class MessageContentTextAnnotationsFilePathObjectType {const MessageContentTextAnnotationsFilePathObjectType();
 
-factory MessageContentTextAnnotationsFilePathObjectType.fromJson(String json) { return switch (json) {
+factory MessageContentTextAnnotationsFilePathObjectType.fromJson(String json) {return switch (json) {
   'file_path' => filePath,
   _ => MessageContentTextAnnotationsFilePathObjectType$Unknown(json),
-}; }
+};}
 
 static const MessageContentTextAnnotationsFilePathObjectType filePath = MessageContentTextAnnotationsFilePathObjectType$filePath._();
 
 static const List<MessageContentTextAnnotationsFilePathObjectType> values = [filePath];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'file_path' => 'filePath',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessageContentTextAnnotationsFilePathObjectType$Unknown; } 
+bool get isUnknown {return this is MessageContentTextAnnotationsFilePathObjectType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() filePath, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() filePath, required W Function(String value) $unknown, }) {return switch (this) {
       MessageContentTextAnnotationsFilePathObjectType$filePath() => filePath(),
       MessageContentTextAnnotationsFilePathObjectType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? filePath, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? filePath, W Function(String value)? $unknown, }) {return switch (this) {
       MessageContentTextAnnotationsFilePathObjectType$filePath() => filePath != null ? filePath() : orElse(value),
       MessageContentTextAnnotationsFilePathObjectType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MessageContentTextAnnotationsFilePathObjectType($value)';
 
- }
+}
 @immutable final class MessageContentTextAnnotationsFilePathObjectType$filePath extends MessageContentTextAnnotationsFilePathObjectType {const MessageContentTextAnnotationsFilePathObjectType$filePath._();
 
 @override String get value => 'file_path';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? filePath
 
 @override int get hashCode => 'file_path'.hashCode;
 
- }
+}
 @immutable final class MessageContentTextAnnotationsFilePathObjectType$Unknown extends MessageContentTextAnnotationsFilePathObjectType {const MessageContentTextAnnotationsFilePathObjectType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? filePath
 
 @override int get hashCode => value.hashCode;
 
- }
+}

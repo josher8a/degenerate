@@ -14,7 +14,7 @@ final class ContentScanningApi with ApiExecutor {const ContentScanningApi(this.a
 /// Disable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/disable`
-Future<ApiResult<ResponseCommon75Result?, WafContentScanningDisableError>> wafContentScanningDisable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon75Result?, WafContentScanningDisableError>> wafContentScanningDisable({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: WafContentScanningDisableError.fromResponse,
 );
- } 
+}
 /// Enable Content Scanning
 ///
 /// Enable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/enable`
-Future<ApiResult<ResponseCommon75Result?, WafContentScanningDisableError>> wafContentScanningEnable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon75Result?, WafContentScanningDisableError>> wafContentScanningEnable({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: WafContentScanningDisableError.fromResponse,
 );
- } 
+}
 /// List Existing Custom Scan Expressions
 ///
 /// Get a list of existing custom scan expressions for Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<List<BundleCustomScan>, WafContentScanningListCustomScanExpressionsError>> wafContentScanningListCustomScanExpressions({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>, WafContentScanningListCustomScanExpressionsError>> wafContentScanningListCustomScanExpressions({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -77,13 +77,13 @@ return await execute(
   },
   onError: WafContentScanningListCustomScanExpressionsError.fromResponse,
 );
- } 
+}
 /// Add Custom Scan Expressions
 ///
 /// Add custom scan expressions for Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<List<BundleCustomScan>, WafContentScanningAddCustomScanExpressionsError>> wafContentScanningAddCustomScanExpressions({required BundleIdentifier zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>, WafContentScanningAddCustomScanExpressionsError>> wafContentScanningAddCustomScanExpressions({required BundleIdentifier zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,13 +102,13 @@ return await execute(
   },
   onError: WafContentScanningAddCustomScanExpressionsError.fromResponse,
 );
- } 
+}
 /// Delete a Custom Scan Expression
 ///
 /// Delete a Content Scan Custom Expression.
 ///
 /// `DELETE /zones/{zone_id}/content-upload-scan/payloads/{expression_id}`
-Future<ApiResult<List<BundleCustomScan>, WafContentScanningDeleteCustomScanExpressionsError>> wafContentScanningDeleteCustomScanExpressions({required BundleIdentifier zoneId, required BundleIdentifier expressionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>, WafContentScanningDeleteCustomScanExpressionsError>> wafContentScanningDeleteCustomScanExpressions({required BundleIdentifier zoneId, required BundleIdentifier expressionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,13 +125,13 @@ return await execute(
   },
   onError: WafContentScanningDeleteCustomScanExpressionsError.fromResponse,
 );
- } 
+}
 /// Get Content Scanning Status
 ///
 /// Retrieve the current status of Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<BundleSchemasStatus, WafContentScanningDisableError>> wafContentScanningGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleSchemasStatus, WafContentScanningDisableError>> wafContentScanningGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -148,13 +148,13 @@ return await execute(
   },
   onError: WafContentScanningDisableError.fromResponse,
 );
- } 
+}
 /// Update Content Scanning Status
 ///
 /// Update the Content Scanning status.
 ///
 /// `PUT /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<BundleSchemasStatus, WafContentScanningDisableError>> wafContentScanningUpdateSettings({required BundleIdentifier zoneId, required WafContentScanningUpdateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleSchemasStatus, WafContentScanningDisableError>> wafContentScanningUpdateSettings({required BundleIdentifier zoneId, required WafContentScanningUpdateSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -173,5 +173,5 @@ return await execute(
   },
   onError: WafContentScanningDisableError.fromResponse,
 );
- } 
- }
+}
+}

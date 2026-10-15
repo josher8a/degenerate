@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_code_completions/copilot_ide_code_completions_editors_models.dart';/// Copilot code completion metrics for active editors.
 @immutable final class CopilotIdeCodeCompletionsEditors {const CopilotIdeCodeCompletionsEditors({this.name, this.totalEngagedUsers, this.models, this.additionalProperties = const {}, });
 
-factory CopilotIdeCodeCompletionsEditors.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletionsEditors(
+factory CopilotIdeCodeCompletionsEditors.fromJson(Map<String, dynamic> json) {return CopilotIdeCodeCompletionsEditors(
   name: json['name'] as String?,
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
   models: (json['models'] as List<dynamic>?)?.map((e) => CopilotIdeCodeCompletionsEditorsModels.fromJson(e as Map<String, dynamic>)).toList(),
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'name', 'total_engaged_users', 'models'}.contains(e.key))),
-); }
+);}
 
 /// Name of the given editor.
 final String? name;
@@ -22,19 +22,19 @@ final List<CopilotIdeCodeCompletionsEditorsModels>? models;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'total_engaged_users': ?totalEngagedUsers,
   if (models != null) 'models': models?.map((e) => e.toJson()).toList(),
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'total_engaged_users', 'models'}.contains(key)); } 
-CopilotIdeCodeCompletionsEditors copyWith({String? Function()? name, int? Function()? totalEngagedUsers, List<CopilotIdeCodeCompletionsEditorsModels>? Function()? models, Map<String, dynamic>? additionalProperties, }) { return CopilotIdeCodeCompletionsEditors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'total_engaged_users', 'models'}.contains(key));}
+CopilotIdeCodeCompletionsEditors copyWith({String? Function()? name, int? Function()? totalEngagedUsers, List<CopilotIdeCodeCompletionsEditorsModels>? Function()? models, Map<String, dynamic>? additionalProperties, }) {return CopilotIdeCodeCompletionsEditors(
   name: name != null ? name() : this.name,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   models: models != null ? models() : this.models,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotIdeCodeCompletionsEditors &&
           name == other.name &&
@@ -46,4 +46,4 @@ CopilotIdeCodeCompletionsEditors copyWith({String? Function()? name, int? Functi
 
 @override String toString() => 'CopilotIdeCodeCompletionsEditors(name: $name, totalEngagedUsers: $totalEngagedUsers, models: $models, additionalProperties: $additionalProperties)';
 
- }
+}

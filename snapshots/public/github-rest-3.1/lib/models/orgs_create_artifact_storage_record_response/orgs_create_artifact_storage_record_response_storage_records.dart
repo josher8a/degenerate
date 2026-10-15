@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsCreateArtifactStorageRecordResponseStorageRecords {const OrgsCreateArtifactStorageRecordResponseStorageRecords({this.id, this.name, this.digest, this.artifactUrl = const Omittable.absent(), this.registryUrl, this.repository = const Omittable.absent(), this.status, this.createdAt, this.updatedAt, });
 
-factory OrgsCreateArtifactStorageRecordResponseStorageRecords.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactStorageRecordResponseStorageRecords(
+factory OrgsCreateArtifactStorageRecordResponseStorageRecords.fromJson(Map<String, dynamic> json) {return OrgsCreateArtifactStorageRecordResponseStorageRecords(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   name: json['name'] as String?,
   digest: json['digest'] as String?,
@@ -13,7 +13,7 @@ factory OrgsCreateArtifactStorageRecordResponseStorageRecords.fromJson(Map<Strin
   status: json['status'] as String?,
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
-); }
+);}
 
 final int? id;
 
@@ -33,7 +33,7 @@ final String? createdAt;
 
 final String? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'name': ?name,
   'digest': ?digest,
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
   'created_at': ?createdAt,
   'updated_at': ?updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'digest', 'artifact_url', 'registry_url', 'repository', 'status', 'created_at', 'updated_at'}.contains(key)); } 
-OrgsCreateArtifactStorageRecordResponseStorageRecords copyWith({int? Function()? id, String? Function()? name, String? Function()? digest, Omittable<String?>? artifactUrl, String? Function()? registryUrl, Omittable<String?>? repository, String? Function()? status, String? Function()? createdAt, String? Function()? updatedAt, }) { return OrgsCreateArtifactStorageRecordResponseStorageRecords(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name', 'digest', 'artifact_url', 'registry_url', 'repository', 'status', 'created_at', 'updated_at'}.contains(key));}
+OrgsCreateArtifactStorageRecordResponseStorageRecords copyWith({int? Function()? id, String? Function()? name, String? Function()? digest, Omittable<String?>? artifactUrl, String? Function()? registryUrl, Omittable<String?>? repository, String? Function()? status, String? Function()? createdAt, String? Function()? updatedAt, }) {return OrgsCreateArtifactStorageRecordResponseStorageRecords(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   digest: digest != null ? digest() : this.digest,
@@ -55,7 +55,7 @@ OrgsCreateArtifactStorageRecordResponseStorageRecords copyWith({int? Function()?
   status: status != null ? status() : this.status,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateArtifactStorageRecordResponseStorageRecords &&
           id == other.id &&
@@ -72,4 +72,4 @@ OrgsCreateArtifactStorageRecordResponseStorageRecords copyWith({int? Function()?
 
 @override String toString() => 'OrgsCreateArtifactStorageRecordResponseStorageRecords(\n  id: $id,\n  name: $name,\n  digest: $digest,\n  artifactUrl: $artifactUrl,\n  registryUrl: $registryUrl,\n  repository: $repository,\n  status: $status,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

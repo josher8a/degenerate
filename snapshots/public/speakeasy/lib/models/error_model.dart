@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_type.dart';@immutable final class ErrorModel {const ErrorModel({this.code, this.message, this.type, this.additionalProperties = const {}, });
 
-factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
+factory ErrorModel.fromJson(Map<String, dynamic> json) {return ErrorModel(
   code: json['code'] as String?,
   message: json['message'] as String?,
   type: json['type'] != null ? ErrorType.fromJson(json['type'] as String) : null,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'code', 'message', 'type'}.contains(e.key))),
-); }
+);}
 
 final String? code;
 
@@ -18,19 +18,19 @@ final ErrorType? type;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': ?message,
   if (type != null) 'type': type?.toJson(),
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'type'}.contains(key)); } 
-ErrorModel copyWith({String? Function()? code, String? Function()? message, ErrorType? Function()? type, Map<String, dynamic>? additionalProperties, }) { return ErrorModel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'message', 'type'}.contains(key));}
+ErrorModel copyWith({String? Function()? code, String? Function()? message, ErrorType? Function()? type, Map<String, dynamic>? additionalProperties, }) {return ErrorModel(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   type: type != null ? type() : this.type,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorModel &&
           code == other.code &&
@@ -42,4 +42,4 @@ ErrorModel copyWith({String? Function()? code, String? Function()? message, Erro
 
 @override String toString() => 'ErrorModel(code: $code, message: $message, type: $type, additionalProperties: $additionalProperties)';
 
- }
+}

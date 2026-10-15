@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_available_phone_number_country_available_phone_number_local/capabilities.dart';@immutable final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine({this.friendlyName = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.lata = const Omittable.absent(), this.locality = const Omittable.absent(), this.rateCenter = const Omittable.absent(), this.latitude = const Omittable.absent(), this.longitude = const Omittable.absent(), this.region = const Omittable.absent(), this.postalCode = const Omittable.absent(), this.isoCountry = const Omittable.absent(), this.addressRequirements = const Omittable.absent(), this.beta = const Omittable.absent(), this.capabilities = const Omittable.absent(), });
 
-factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine.fromJson(Map<String, dynamic> json) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine(
+factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine.fromJson(Map<String, dynamic> json) {return AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine(
   friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
   phoneNumber: json.containsKey('phone_number') ? Omittable(json['phone_number'] as String?) : const Omittable.absent(),
   lata: json.containsKey('lata') ? Omittable(json['lata'] as String?) : const Omittable.absent(),
@@ -17,7 +17,7 @@ factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine.f
   addressRequirements: json.containsKey('address_requirements') ? Omittable(json['address_requirements'] as String?) : const Omittable.absent(),
   beta: json.containsKey('beta') ? Omittable(json['beta'] as bool?) : const Omittable.absent(),
   capabilities: json.containsKey('capabilities') ? Omittable(json['capabilities'] != null ? Capabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// A formatted version of the phone number.
 final Omittable<String?> friendlyName;
@@ -58,7 +58,7 @@ final Omittable<bool?> beta;
 /// The set of Boolean properties that indicate whether a phone number can receive calls or messages.  Capabilities are: `Voice`, `SMS`, and `MMS` and each capability can be: `true` or `false`.
 final Omittable<Capabilities?> capabilities;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
   if (phoneNumber.isPresent) 'phone_number': phoneNumber.value,
   if (lata.isPresent) 'lata': lata.value,
@@ -72,9 +72,9 @@ Map<String, dynamic> toJson() { return {
   if (addressRequirements.isPresent) 'address_requirements': addressRequirements.value,
   if (beta.isPresent) 'beta': beta.value,
   if (capabilities.isPresent) 'capabilities': capabilities.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'friendly_name', 'phone_number', 'lata', 'locality', 'rate_center', 'latitude', 'longitude', 'region', 'postal_code', 'iso_country', 'address_requirements', 'beta', 'capabilities'}.contains(key)); } 
-AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine copyWith({Omittable<String?>? friendlyName, Omittable<String?>? phoneNumber, Omittable<String?>? lata, Omittable<String?>? locality, Omittable<String?>? rateCenter, Omittable<double?>? latitude, Omittable<double?>? longitude, Omittable<String?>? region, Omittable<String?>? postalCode, Omittable<String?>? isoCountry, Omittable<String?>? addressRequirements, Omittable<bool?>? beta, Omittable<Capabilities?>? capabilities, }) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'friendly_name', 'phone_number', 'lata', 'locality', 'rate_center', 'latitude', 'longitude', 'region', 'postal_code', 'iso_country', 'address_requirements', 'beta', 'capabilities'}.contains(key));}
+AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine copyWith({Omittable<String?>? friendlyName, Omittable<String?>? phoneNumber, Omittable<String?>? lata, Omittable<String?>? locality, Omittable<String?>? rateCenter, Omittable<double?>? latitude, Omittable<double?>? longitude, Omittable<String?>? region, Omittable<String?>? postalCode, Omittable<String?>? isoCountry, Omittable<String?>? addressRequirements, Omittable<bool?>? beta, Omittable<Capabilities?>? capabilities, }) {return AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine(
   friendlyName: friendlyName ?? this.friendlyName,
   phoneNumber: phoneNumber ?? this.phoneNumber,
   lata: lata ?? this.lata,
@@ -88,7 +88,7 @@ AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine copyWith(
   addressRequirements: addressRequirements ?? this.addressRequirements,
   beta: beta ?? this.beta,
   capabilities: capabilities ?? this.capabilities,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine &&
           friendlyName == other.friendlyName &&
@@ -109,4 +109,4 @@ AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine copyWith(
 
 @override String toString() => 'AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine(\n  friendlyName: $friendlyName,\n  phoneNumber: $phoneNumber,\n  lata: $lata,\n  locality: $locality,\n  rateCenter: $rateCenter,\n  latitude: $latitude,\n  longitude: $longitude,\n  region: $region,\n  postalCode: $postalCode,\n  isoCountry: $isoCountry,\n  addressRequirements: $addressRequirements,\n  beta: $beta,\n  capabilities: $capabilities,\n)';
 
- }
+}

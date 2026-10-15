@@ -14,7 +14,7 @@ final class MagicSitesApi with ApiExecutor {const MagicSitesApi(this.apiConfig);
 /// Lists Sites associated with an account. Use connectorid query param to return sites where connectorid matches either site.ConnectorID or site.SecondaryConnectorID.
 ///
 /// `GET /accounts/{account_id}/magic/sites`
-Future<ApiResult<List<MagicSite>, MagicAccountAppsAddAppError>> magicSitesListSites({required MagicIdentifier accountId, MagicIdentifier? connectorid, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MagicSite>, MagicAccountAppsAddAppError>> magicSitesListSites({required MagicIdentifier accountId, MagicIdentifier? connectorid, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (connectorid != null) {
   queryParameters['connectorid'] = connectorid.toJson();
@@ -39,13 +39,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Create a new Site
 ///
 /// Creates a new Site
 ///
 /// `POST /accounts/{account_id}/magic/sites`
-Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesCreateSite({required MagicIdentifier accountId, required MagicSitesAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesCreateSite({required MagicIdentifier accountId, required MagicSitesAddSingleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,13 +64,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Site Details
 ///
 /// Get a specific Site.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesSiteDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesSiteDetails({required MagicIdentifier siteId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -90,13 +90,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Update Site
 ///
 /// Update a specific Site.
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesUpdateSite({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicSiteUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesUpdateSite({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicSiteUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,13 +115,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Patch Site
 ///
 /// Patch a specific Site.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesPatchSite({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicSiteUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesPatchSite({required MagicIdentifier siteId, required MagicIdentifier accountId, required MagicSiteUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,13 +140,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Delete Site
 ///
 /// Remove a specific Site.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}`
-Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesDeleteSite({required MagicIdentifier siteId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSite, MagicAccountAppsAddAppError>> magicSitesDeleteSite({required MagicIdentifier siteId, required MagicIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -163,5 +163,5 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
- }
+}
+}

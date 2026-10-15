@@ -18,7 +18,7 @@ String toJson() => value;
 /// Status of the latest snapshot uploaded
 sealed class LatestUploadStatus {const LatestUploadStatus();
 
-factory LatestUploadStatus.fromJson(String json) { return switch (json) {
+factory LatestUploadStatus.fromJson(String json) {return switch (json) {
   'Mirroring' => mirroring,
   'Unifying' => unifying,
   'Loading' => loading,
@@ -26,7 +26,7 @@ factory LatestUploadStatus.fromJson(String json) { return switch (json) {
   'Complete' => complete,
   'Error' => error,
   _ => LatestUploadStatus$Unknown(json),
-}; }
+};}
 
 static const LatestUploadStatus mirroring = LatestUploadStatus$mirroring._();
 
@@ -43,9 +43,9 @@ static const LatestUploadStatus error = LatestUploadStatus$error._();
 static const List<LatestUploadStatus> values = [mirroring, unifying, loading, provisioning, complete, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Mirroring' => 'mirroring',
   'Unifying' => 'unifying',
   'Loading' => 'loading',
@@ -53,11 +53,11 @@ String get name { return switch (value) {
   'Complete' => 'complete',
   'Error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LatestUploadStatus$Unknown; } 
+bool get isUnknown {return this is LatestUploadStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mirroring, required W Function() unifying, required W Function() loading, required W Function() provisioning, required W Function() complete, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mirroring, required W Function() unifying, required W Function() loading, required W Function() provisioning, required W Function() complete, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       LatestUploadStatus$mirroring() => mirroring(),
       LatestUploadStatus$unifying() => unifying(),
       LatestUploadStatus$loading() => loading(),
@@ -65,9 +65,9 @@ W when<W>({required W Function() mirroring, required W Function() unifying, requ
       LatestUploadStatus$complete() => complete(),
       LatestUploadStatus$error() => error(),
       LatestUploadStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirroring, W Function()? unifying, W Function()? loading, W Function()? provisioning, W Function()? complete, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirroring, W Function()? unifying, W Function()? loading, W Function()? provisioning, W Function()? complete, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       LatestUploadStatus$mirroring() => mirroring != null ? mirroring() : orElse(value),
       LatestUploadStatus$unifying() => unifying != null ? unifying() : orElse(value),
       LatestUploadStatus$loading() => loading != null ? loading() : orElse(value),
@@ -75,10 +75,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
       LatestUploadStatus$complete() => complete != null ? complete() : orElse(value),
       LatestUploadStatus$error() => error != null ? error() : orElse(value),
       LatestUploadStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LatestUploadStatus($value)';
 
- }
+}
 @immutable final class LatestUploadStatus$mirroring extends LatestUploadStatus {const LatestUploadStatus$mirroring._();
 
 @override String get value => 'Mirroring';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
 
 @override int get hashCode => 'Mirroring'.hashCode;
 
- }
+}
 @immutable final class LatestUploadStatus$unifying extends LatestUploadStatus {const LatestUploadStatus$unifying._();
 
 @override String get value => 'Unifying';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
 
 @override int get hashCode => 'Unifying'.hashCode;
 
- }
+}
 @immutable final class LatestUploadStatus$loading extends LatestUploadStatus {const LatestUploadStatus$loading._();
 
 @override String get value => 'Loading';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
 
 @override int get hashCode => 'Loading'.hashCode;
 
- }
+}
 @immutable final class LatestUploadStatus$provisioning extends LatestUploadStatus {const LatestUploadStatus$provisioning._();
 
 @override String get value => 'Provisioning';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
 
 @override int get hashCode => 'Provisioning'.hashCode;
 
- }
+}
 @immutable final class LatestUploadStatus$complete extends LatestUploadStatus {const LatestUploadStatus$complete._();
 
 @override String get value => 'Complete';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
 
 @override int get hashCode => 'Complete'.hashCode;
 
- }
+}
 @immutable final class LatestUploadStatus$error extends LatestUploadStatus {const LatestUploadStatus$error._();
 
 @override String get value => 'Error';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
 
 @override int get hashCode => 'Error'.hashCode;
 
- }
+}
 @immutable final class LatestUploadStatus$Unknown extends LatestUploadStatus {const LatestUploadStatus$Unknown(this.value);
 
 @override final String value;
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Example:
 /// ```json
 /// {
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirrorin
 /// ```
 @immutable final class CustomIndicatorFeedsIndicatorFeedMetadata {const CustomIndicatorFeedsIndicatorFeedMetadata({this.createdOn, this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.latestUploadStatus, this.modifiedOn, this.name, this.providerId, this.providerName, });
 
-factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedMetadata(
+factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsIndicatorFeedMetadata(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   description: json['description'] != null ? CustomIndicatorFeedsDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? CustomIndicatorFeedsId.fromJson(json['id'] as num) : null,
@@ -171,7 +171,7 @@ factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> 
   name: json['name'] != null ? CustomIndicatorFeedsName.fromJson(json['name'] as String) : null,
   providerId: json['provider_id'] != null ? CustomIndicatorFeedsProviderId.fromJson(json['provider_id'] as String) : null,
   providerName: json['provider_name'] != null ? CustomIndicatorFeedsProviderName.fromJson(json['provider_name'] as String) : null,
-); }
+);}
 
 /// The date and time when the data entry was created
 final DateTime? createdOn;
@@ -200,7 +200,7 @@ final CustomIndicatorFeedsProviderId? providerId;
 
 final CustomIndicatorFeedsProviderName? providerName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
   if (description != null) 'description': description?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -212,9 +212,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (providerId != null) 'provider_id': providerId?.toJson(),
   if (providerName != null) 'provider_name': providerName?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'latest_upload_status', 'modified_on', 'name', 'provider_id', 'provider_name'}.contains(key)); } 
-CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? createdOn, CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, LatestUploadStatus? Function()? latestUploadStatus, DateTime? Function()? modifiedOn, CustomIndicatorFeedsName? Function()? name, CustomIndicatorFeedsProviderId? Function()? providerId, CustomIndicatorFeedsProviderName? Function()? providerName, }) { return CustomIndicatorFeedsIndicatorFeedMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'latest_upload_status', 'modified_on', 'name', 'provider_id', 'provider_name'}.contains(key));}
+CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? createdOn, CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, LatestUploadStatus? Function()? latestUploadStatus, DateTime? Function()? modifiedOn, CustomIndicatorFeedsName? Function()? name, CustomIndicatorFeedsProviderId? Function()? providerId, CustomIndicatorFeedsProviderName? Function()? providerName, }) {return CustomIndicatorFeedsIndicatorFeedMetadata(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
@@ -226,7 +226,7 @@ CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? create
   name: name != null ? name() : this.name,
   providerId: providerId != null ? providerId() : this.providerId,
   providerName: providerName != null ? providerName() : this.providerName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsIndicatorFeedMetadata &&
           createdOn == other.createdOn &&
@@ -245,4 +245,4 @@ CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? create
 
 @override String toString() => 'CustomIndicatorFeedsIndicatorFeedMetadata(\n  createdOn: $createdOn,\n  description: $description,\n  id: $id,\n  isAttributable: $isAttributable,\n  isDownloadable: $isDownloadable,\n  isPublic: $isPublic,\n  latestUploadStatus: $latestUploadStatus,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  providerId: $providerId,\n  providerName: $providerName,\n)';
 
- }
+}

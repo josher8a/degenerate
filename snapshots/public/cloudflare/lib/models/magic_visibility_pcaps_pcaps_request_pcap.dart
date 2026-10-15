@@ -7,11 +7,11 @@ const MagicVisibilityPcapsPcapsRequestPcap({this.magicVisibilityPcapsPcapsReques
 const MagicVisibilityPcapsPcapsRequestPcap._({required this.rawValue, required this.magicVisibilityPcapsPcapsRequestSimple, required this.magicVisibilityPcapsPcapsRequestFull, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory MagicVisibilityPcapsPcapsRequestPcap.fromJson(Object? json) { return MagicVisibilityPcapsPcapsRequestPcap._(
+factory MagicVisibilityPcapsPcapsRequestPcap.fromJson(Object? json) {return MagicVisibilityPcapsPcapsRequestPcap._(
   rawValue: Omittable(json),
   magicVisibilityPcapsPcapsRequestSimple: json is Map<String, dynamic> && MagicVisibilityPcapsPcapsRequestSimple.canParse(json) ? parseAnyOfVariant<MagicVisibilityPcapsPcapsRequestSimple>(json, (value) => MagicVisibilityPcapsPcapsRequestSimple.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   magicVisibilityPcapsPcapsRequestFull: json is Map<String, dynamic> && MagicVisibilityPcapsPcapsRequestFull.canParse(json) ? parseAnyOfVariant<MagicVisibilityPcapsPcapsRequestFull>(json, (value) => MagicVisibilityPcapsPcapsRequestFull.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'MagicVisibilityPcapsPcapsRequestPcap(${toJson()})';
 
- }
+}

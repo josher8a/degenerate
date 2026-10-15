@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool being defined: `function`
 sealed class AssistantToolsFunctionType {const AssistantToolsFunctionType();
 
-factory AssistantToolsFunctionType.fromJson(String json) { return switch (json) {
+factory AssistantToolsFunctionType.fromJson(String json) {return switch (json) {
   'function' => function,
   _ => AssistantToolsFunctionType$Unknown(json),
-}; }
+};}
 
 static const AssistantToolsFunctionType function = AssistantToolsFunctionType$function._();
 
 static const List<AssistantToolsFunctionType> values = [function];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'function' => 'function',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AssistantToolsFunctionType$Unknown; } 
+bool get isUnknown {return this is AssistantToolsFunctionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() function, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() function, required W Function(String value) $unknown, }) {return switch (this) {
       AssistantToolsFunctionType$function() => function(),
       AssistantToolsFunctionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? function, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? function, W Function(String value)? $unknown, }) {return switch (this) {
       AssistantToolsFunctionType$function() => function != null ? function() : orElse(value),
       AssistantToolsFunctionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AssistantToolsFunctionType($value)';
 
- }
+}
 @immutable final class AssistantToolsFunctionType$function extends AssistantToolsFunctionType {const AssistantToolsFunctionType$function._();
 
 @override String get value => 'function';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? function
 
 @override int get hashCode => 'function'.hashCode;
 
- }
+}
 @immutable final class AssistantToolsFunctionType$Unknown extends AssistantToolsFunctionType {const AssistantToolsFunctionType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? function
 
 @override int get hashCode => value.hashCode;
 
- }
+}

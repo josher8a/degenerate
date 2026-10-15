@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_text_position.dart';/// 
 @immutable final class PaymentLinksResourceCustomText {const PaymentLinksResourceCustomText({this.afterSubmit = const Omittable.absent(), this.shippingAddress = const Omittable.absent(), this.submit = const Omittable.absent(), this.termsOfServiceAcceptance = const Omittable.absent(), });
 
-factory PaymentLinksResourceCustomText.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomText(
+factory PaymentLinksResourceCustomText.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceCustomText(
   afterSubmit: json.containsKey('after_submit') ? Omittable(json['after_submit'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['after_submit'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   shippingAddress: json.containsKey('shipping_address') ? Omittable(json['shipping_address'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['shipping_address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   submit: json.containsKey('submit') ? Omittable(json['submit'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['submit'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   termsOfServiceAcceptance: json.containsKey('terms_of_service_acceptance') ? Omittable(json['terms_of_service_acceptance'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Custom text that should be displayed after the payment confirmation button.
 final Omittable<PaymentLinksResourceCustomTextPosition?> afterSubmit;
@@ -23,19 +23,19 @@ final Omittable<PaymentLinksResourceCustomTextPosition?> submit;
 /// Custom text that should be displayed in place of the default terms of service agreement text.
 final Omittable<PaymentLinksResourceCustomTextPosition?> termsOfServiceAcceptance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (afterSubmit.isPresent) 'after_submit': afterSubmit.value?.toJson(),
   if (shippingAddress.isPresent) 'shipping_address': shippingAddress.value?.toJson(),
   if (submit.isPresent) 'submit': submit.value?.toJson(),
   if (termsOfServiceAcceptance.isPresent) 'terms_of_service_acceptance': termsOfServiceAcceptance.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after_submit', 'shipping_address', 'submit', 'terms_of_service_acceptance'}.contains(key)); } 
-PaymentLinksResourceCustomText copyWith({Omittable<PaymentLinksResourceCustomTextPosition?>? afterSubmit, Omittable<PaymentLinksResourceCustomTextPosition?>? shippingAddress, Omittable<PaymentLinksResourceCustomTextPosition?>? submit, Omittable<PaymentLinksResourceCustomTextPosition?>? termsOfServiceAcceptance, }) { return PaymentLinksResourceCustomText(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'after_submit', 'shipping_address', 'submit', 'terms_of_service_acceptance'}.contains(key));}
+PaymentLinksResourceCustomText copyWith({Omittable<PaymentLinksResourceCustomTextPosition?>? afterSubmit, Omittable<PaymentLinksResourceCustomTextPosition?>? shippingAddress, Omittable<PaymentLinksResourceCustomTextPosition?>? submit, Omittable<PaymentLinksResourceCustomTextPosition?>? termsOfServiceAcceptance, }) {return PaymentLinksResourceCustomText(
   afterSubmit: afterSubmit ?? this.afterSubmit,
   shippingAddress: shippingAddress ?? this.shippingAddress,
   submit: submit ?? this.submit,
   termsOfServiceAcceptance: termsOfServiceAcceptance ?? this.termsOfServiceAcceptance,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomText &&
           afterSubmit == other.afterSubmit &&
@@ -47,4 +47,4 @@ PaymentLinksResourceCustomText copyWith({Omittable<PaymentLinksResourceCustomTex
 
 @override String toString() => 'PaymentLinksResourceCustomText(afterSubmit: $afterSubmit, shippingAddress: $shippingAddress, submit: $submit, termsOfServiceAcceptance: $termsOfServiceAcceptance)';
 
- }
+}

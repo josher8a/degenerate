@@ -6,25 +6,25 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// If you populate 
 /// Single-use mandates are only valid for the following payment methods: `acss_debit`, `alipay`, `au_becs_debit`, `bacs_debit`, `bancontact`, `boleto`, `ideal`, `link`, `sepa_debit`, and `us_bank_account`.
 @immutable final class SingleUse {const SingleUse({required this.amount, required this.currency, });
 
-factory SingleUse.fromJson(Map<String, dynamic> json) { return SingleUse(
+factory SingleUse.fromJson(Map<String, dynamic> json) {return SingleUse(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
-); }
+);}
 
 final int amount;
 
 final String currency;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
-SingleUse copyWith({int? amount, String? currency, }) { return SingleUse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
+SingleUse copyWith({int? amount, String? currency, }) {return SingleUse(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SingleUse &&
           amount == other.amount &&
@@ -34,4 +34,4 @@ SingleUse copyWith({int? amount, String? currency, }) { return SingleUse(
 
 @override String toString() => 'SingleUse(amount: $amount, currency: $currency)';
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';sealed class ToolRole {const ToolRole();
 
-factory ToolRole.fromJson(String json) { return switch (json) {
+factory ToolRole.fromJson(String json) {return switch (json) {
   'tool' => tool,
   _ => ToolRole$Unknown(json),
-}; }
+};}
 
 static const ToolRole tool = ToolRole$tool._();
 
 static const List<ToolRole> values = [tool];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tool' => 'tool',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ToolRole$Unknown; } 
+bool get isUnknown {return this is ToolRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() tool, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() tool, required W Function(String value) $unknown, }) {return switch (this) {
       ToolRole$tool() => tool(),
       ToolRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? tool, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tool, W Function(String value)? $unknown, }) {return switch (this) {
       ToolRole$tool() => tool != null ? tool() : orElse(value),
       ToolRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ToolRole($value)';
 
- }
+}
 @immutable final class ToolRole$tool extends ToolRole {const ToolRole$tool._();
 
 @override String get value => 'tool';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tool, W 
 
 @override int get hashCode => 'tool'.hashCode;
 
- }
+}
 @immutable final class ToolRole$Unknown extends ToolRole {const ToolRole$Unknown(this.value);
 
 @override final String value;
@@ -52,14 +52,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? tool, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Tool {const Tool({required this.content, required this.role, required this.toolCallId, });
 
-factory Tool.fromJson(Map<String, dynamic> json) { return Tool(
+factory Tool.fromJson(Map<String, dynamic> json) {return Tool(
   content: DeveloperContent.fromJson(json['content']),
   role: ToolRole.fromJson(json['role'] as String),
   toolCallId: json['tool_call_id'] as String,
-); }
+);}
 
 final DeveloperContent content;
 
@@ -67,19 +67,19 @@ final ToolRole role;
 
 final String toolCallId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'role': role.toJson(),
   'tool_call_id': toolCallId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
       json.containsKey('role') && json['role'] == 'tool' &&
-      json.containsKey('tool_call_id') && json['tool_call_id'] is String; } 
-Tool copyWith({DeveloperContent? content, ToolRole? role, String? toolCallId, }) { return Tool(
+      json.containsKey('tool_call_id') && json['tool_call_id'] is String;}
+Tool copyWith({DeveloperContent? content, ToolRole? role, String? toolCallId, }) {return Tool(
   content: content ?? this.content,
   role: role ?? this.role,
   toolCallId: toolCallId ?? this.toolCallId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Tool &&
           content == other.content &&
@@ -90,4 +90,4 @@ Tool copyWith({DeveloperContent? content, ToolRole? role, String? toolCallId, })
 
 @override String toString() => 'Tool(content: $content, role: $role, toolCallId: $toolCallId)';
 
- }
+}

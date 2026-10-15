@@ -9,19 +9,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class RequestBodyPostApplicationJsonDeepCamelCaseResponse {const RequestBodyPostApplicationJsonDeepCamelCaseResponse({this.json});
 
-factory RequestBodyPostApplicationJsonDeepCamelCaseResponse.fromJson(Map<String, dynamic> json) { return RequestBodyPostApplicationJsonDeepCamelCaseResponse(
+factory RequestBodyPostApplicationJsonDeepCamelCaseResponse.fromJson(Map<String, dynamic> json) {return RequestBodyPostApplicationJsonDeepCamelCaseResponse(
   json: json['json'] != null ? DeepObjectCamelCase.fromJson(json['json'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DeepObjectCamelCase? json;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (json != null) 'json': json?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'json'}.contains(key)); } 
-RequestBodyPostApplicationJsonDeepCamelCaseResponse copyWith({DeepObjectCamelCase? Function()? json}) { return RequestBodyPostApplicationJsonDeepCamelCaseResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'json'}.contains(key));}
+RequestBodyPostApplicationJsonDeepCamelCaseResponse copyWith({DeepObjectCamelCase? Function()? json}) {return RequestBodyPostApplicationJsonDeepCamelCaseResponse(
   json: json != null ? json() : this.json,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestBodyPostApplicationJsonDeepCamelCaseResponse &&
           json == other.json;
@@ -30,4 +30,4 @@ RequestBodyPostApplicationJsonDeepCamelCaseResponse copyWith({DeepObjectCamelCas
 
 @override String toString() => 'RequestBodyPostApplicationJsonDeepCamelCaseResponse(json: $json)';
 
- }
+}

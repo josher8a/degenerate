@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_added/webhook_installation_repositories_added_action.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_added/webhook_installation_repositories_added_repositories_removed.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories_added2.dart';import 'package:pub_github_rest_3_1/models/webhooks_repository_selection.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookInstallationRepositoriesAdded {const WebhookInstallationRepositoriesAdded({required this.action, required this.installation, required this.repositoriesAdded, required this.repositoriesRemoved, required this.repositorySelection, required this.requester, required this.sender, this.enterprise, this.organization, this.repository, });
 
-factory WebhookInstallationRepositoriesAdded.fromJson(Map<String, dynamic> json) { return WebhookInstallationRepositoriesAdded(
+factory WebhookInstallationRepositoriesAdded.fromJson(Map<String, dynamic> json) {return WebhookInstallationRepositoriesAdded(
   action: WebhookInstallationRepositoriesAddedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
@@ -14,7 +14,7 @@ factory WebhookInstallationRepositoriesAdded.fromJson(Map<String, dynamic> json)
   repositorySelection: WebhooksRepositorySelection.fromJson(json['repository_selection'] as String),
   requester: json['requester'] != null ? WebhooksUser.fromJson(json['requester'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookInstallationRepositoriesAddedAction action;
 
@@ -39,7 +39,7 @@ final WebhooksUser? requester;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'installation': installation.toJson(),
@@ -50,15 +50,15 @@ Map<String, dynamic> toJson() { return {
   'repository_selection': repositorySelection.toJson(),
   'requester': requester?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('installation') &&
       json.containsKey('repositories_added') &&
       json.containsKey('repositories_removed') &&
       json.containsKey('repository_selection') &&
       json.containsKey('requester') &&
-      json.containsKey('sender'); } 
-WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAddedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositoriesAdded2>? repositoriesAdded, List<WebhookInstallationRepositoriesAddedRepositoriesRemoved>? repositoriesRemoved, RepositoryWebhooks? Function()? repository, WebhooksRepositorySelection? repositorySelection, WebhooksUser? Function()? requester, SimpleUser? sender, }) { return WebhookInstallationRepositoriesAdded(
+      json.containsKey('sender');}
+WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAddedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositoriesAdded2>? repositoriesAdded, List<WebhookInstallationRepositoriesAddedRepositoriesRemoved>? repositoriesRemoved, RepositoryWebhooks? Function()? repository, WebhooksRepositorySelection? repositorySelection, WebhooksUser? Function()? requester, SimpleUser? sender, }) {return WebhookInstallationRepositoriesAdded(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,
@@ -69,7 +69,7 @@ WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAd
   repositorySelection: repositorySelection ?? this.repositorySelection,
   requester: requester != null ? requester() : this.requester,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationRepositoriesAdded &&
           action == other.action &&
@@ -87,4 +87,4 @@ WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAd
 
 @override String toString() => 'WebhookInstallationRepositoriesAdded(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repositoriesAdded: $repositoriesAdded,\n  repositoriesRemoved: $repositoriesRemoved,\n  repository: $repository,\n  repositorySelection: $repositorySelection,\n  requester: $requester,\n  sender: $sender,\n)';
 
- }
+}

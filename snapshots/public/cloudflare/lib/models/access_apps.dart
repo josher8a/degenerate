@@ -7,7 +7,7 @@ const AccessApps({this.selfHostedApplication3 = const Omittable.absent(), this.s
 const AccessApps._({required this.rawValue, required this.selfHostedApplication3, required this.saaSApplication3, required this.browserSshApplication3, required this.browserVncApplication3, required this.appLauncherApplication3, required this.deviceEnrollmentPermissionsApplication3, required this.browserIsolationPermissionsApplication3, required this.bookmarkApplication3, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory AccessApps.fromJson(Object? json) { return AccessApps._(
+factory AccessApps.fromJson(Object? json) {return AccessApps._(
   rawValue: Omittable(json),
   selfHostedApplication3: json is Map<String, dynamic> && SelfHostedApplication3.canParse(json) ? parseAnyOfVariant<SelfHostedApplication3>(json, (value) => SelfHostedApplication3.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   saaSApplication3: json is Map<String, dynamic> && SaaSApplication3.canParse(json) ? parseAnyOfVariant<SaaSApplication3>(json, (value) => SaaSApplication3.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -17,7 +17,7 @@ factory AccessApps.fromJson(Object? json) { return AccessApps._(
   deviceEnrollmentPermissionsApplication3: json is Map<String, dynamic> && DeviceEnrollmentPermissionsApplication3.canParse(json) ? parseAnyOfVariant<DeviceEnrollmentPermissionsApplication3>(json, (value) => DeviceEnrollmentPermissionsApplication3.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   browserIsolationPermissionsApplication3: json is Map<String, dynamic> && BrowserIsolationPermissionsApplication3.canParse(json) ? parseAnyOfVariant<BrowserIsolationPermissionsApplication3>(json, (value) => BrowserIsolationPermissionsApplication3.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   bookmarkApplication3: json is Map<String, dynamic> && BookmarkApplication3.canParse(json) ? parseAnyOfVariant<BookmarkApplication3>(json, (value) => BookmarkApplication3.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -71,4 +71,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'AccessApps(${toJson()})';
 
- }
+}

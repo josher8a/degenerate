@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_aegis.dart';@immutable final class CacheRulesAegisResponseValue {const CacheRulesAegisResponseValue({this.result});
 
-factory CacheRulesAegisResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesAegisResponseValue(
+factory CacheRulesAegisResponseValue.fromJson(Map<String, dynamic> json) {return CacheRulesAegisResponseValue(
   result: json['result'] != null ? CacheRulesAegis.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final CacheRulesAegis? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-CacheRulesAegisResponseValue copyWith({CacheRulesAegis? Function()? result}) { return CacheRulesAegisResponseValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'result'}.contains(key));}
+CacheRulesAegisResponseValue copyWith({CacheRulesAegis? Function()? result}) {return CacheRulesAegisResponseValue(
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesAegisResponseValue &&
           result == other.result;
@@ -24,4 +24,4 @@ CacheRulesAegisResponseValue copyWith({CacheRulesAegis? Function()? result}) { r
 
 @override String toString() => 'CacheRulesAegisResponseValue(result: $result)';
 
- }
+}

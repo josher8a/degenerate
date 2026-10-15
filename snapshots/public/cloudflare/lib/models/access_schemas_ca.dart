@@ -10,11 +10,11 @@ String toJson() => value;
 }
 @immutable final class AccessSchemasCa {const AccessSchemasCa({this.aud, this.id, this.publicKey, });
 
-factory AccessSchemasCa.fromJson(Map<String, dynamic> json) { return AccessSchemasCa(
+factory AccessSchemasCa.fromJson(Map<String, dynamic> json) {return AccessSchemasCa(
   aud: json['aud'] != null ? AccessComponentsSchemasAud.fromJson(json['aud'] as String) : null,
   id: json['id'] != null ? AccessComponentsSchemasId.fromJson(json['id'] as String) : null,
   publicKey: json['public_key'] != null ? AccessPublicKey.fromJson(json['public_key'] as String) : null,
-); }
+);}
 
 /// The Application Audience (AUD) tag. Identifies the application associated with the CA.
 final AccessComponentsSchemasAud? aud;
@@ -25,17 +25,17 @@ final AccessComponentsSchemasId? id;
 /// The public key to add to your SSH server configuration.
 final AccessPublicKey? publicKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (publicKey != null) 'public_key': publicKey?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aud', 'id', 'public_key'}.contains(key)); } 
-AccessSchemasCa copyWith({AccessComponentsSchemasAud? Function()? aud, AccessComponentsSchemasId? Function()? id, AccessPublicKey? Function()? publicKey, }) { return AccessSchemasCa(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'aud', 'id', 'public_key'}.contains(key));}
+AccessSchemasCa copyWith({AccessComponentsSchemasAud? Function()? aud, AccessComponentsSchemasId? Function()? id, AccessPublicKey? Function()? publicKey, }) {return AccessSchemasCa(
   aud: aud != null ? aud() : this.aud,
   id: id != null ? id() : this.id,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasCa &&
           aud == other.aud &&
@@ -46,4 +46,4 @@ AccessSchemasCa copyWith({AccessComponentsSchemasAud? Function()? aud, AccessCom
 
 @override String toString() => 'AccessSchemasCa(aud: $aud, id: $id, publicKey: $publicKey)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error.dart';import 'package:pub_cloudflare/models/mcn_onramp.dart';@immutable final class McnGetOnrampResponse {const McnGetOnrampResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory McnGetOnrampResponse.fromJson(Map<String, dynamic> json) { return McnGetOnrampResponse(
+factory McnGetOnrampResponse.fromJson(Map<String, dynamic> json) {return McnGetOnrampResponse(
   messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   errors: (json['errors'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
   result: McnOnramp.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<McnError> messages;
 
@@ -18,22 +18,22 @@ final List<McnError> errors;
 
 final McnOnramp result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'errors': errors.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('errors') &&
-      json.containsKey('result'); } 
-McnGetOnrampResponse copyWith({List<McnError>? messages, bool? success, List<McnError>? errors, McnOnramp? result, }) { return McnGetOnrampResponse(
+      json.containsKey('result');}
+McnGetOnrampResponse copyWith({List<McnError>? messages, bool? success, List<McnError>? errors, McnOnramp? result, }) {return McnGetOnrampResponse(
   messages: messages ?? this.messages,
   success: success ?? this.success,
   errors: errors ?? this.errors,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnGetOnrampResponse &&
           listEquals(messages, other.messages) &&
@@ -45,4 +45,4 @@ McnGetOnrampResponse copyWith({List<McnError>? messages, bool? success, List<Mcn
 
 @override String toString() => 'McnGetOnrampResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

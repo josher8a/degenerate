@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_severity.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/references.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_vulnerability.dart';import 'package:pub_github_rest_3_1/models/security_advisory_epss.dart';/// Details for the GitHub Security Advisory.
 @immutable final class DependabotAlertSecurityAdvisory {const DependabotAlertSecurityAdvisory({required this.ghsaId, required this.cveId, required this.summary, required this.description, required this.vulnerabilities, required this.severity, required this.cvss, required this.cwes, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.withdrawnAt, this.cvssSeverities = const Omittable.absent(), this.epss = const Omittable.absent(), });
 
-factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisory(
+factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) {return DependabotAlertSecurityAdvisory(
   ghsaId: json['ghsa_id'] as String,
   cveId: json['cve_id'] as String?,
   summary: json['summary'] as String,
@@ -20,7 +20,7 @@ factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { re
   publishedAt: DateTime.parse(json['published_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   withdrawnAt: json['withdrawn_at'] != null ? DateTime.parse(json['withdrawn_at'] as String) : null,
-); }
+);}
 
 /// The unique GitHub Security Advisory ID assigned to the advisory.
 final String ghsaId;
@@ -65,7 +65,7 @@ final DateTime updatedAt;
 /// The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final DateTime? withdrawnAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ghsa_id': ghsaId,
   'cve_id': cveId,
   'summary': summary,
@@ -81,8 +81,8 @@ Map<String, dynamic> toJson() { return {
   'published_at': publishedAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'withdrawn_at': withdrawnAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -94,12 +94,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('references') &&
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String); } 
+      json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String);}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (summary.runes.length > 1024) { errors.add('summary: length must be <= 1024'); }
-return errors; } 
-DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<Cwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<References>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
+return errors;}
+DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<Cwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<References>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) {return DependabotAlertSecurityAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   summary: summary ?? this.summary,
@@ -115,7 +115,7 @@ DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cv
   publishedAt: publishedAt ?? this.publishedAt,
   updatedAt: updatedAt ?? this.updatedAt,
   withdrawnAt: withdrawnAt != null ? withdrawnAt() : this.withdrawnAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlertSecurityAdvisory &&
           ghsaId == other.ghsaId &&
@@ -138,4 +138,4 @@ DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cv
 
 @override String toString() => 'DependabotAlertSecurityAdvisory(\n  ghsaId: $ghsaId,\n  cveId: $cveId,\n  summary: $summary,\n  description: $description,\n  vulnerabilities: $vulnerabilities,\n  severity: $severity,\n  cvss: $cvss,\n  cvssSeverities: $cvssSeverities,\n  epss: $epss,\n  cwes: $cwes,\n  identifiers: $identifiers,\n  references: $references,\n  publishedAt: $publishedAt,\n  updatedAt: $updatedAt,\n  withdrawnAt: $withdrawnAt,\n)';
 
- }
+}

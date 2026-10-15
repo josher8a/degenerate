@@ -12,7 +12,7 @@ final class StatusApi with ApiExecutor {const StatusApi(this.apiConfig);
 /// Get service status
 ///
 /// `GET /status`
-Future<ApiResult<void, Never>> getStatus({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> getStatus({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,5 +25,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

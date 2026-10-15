@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType();
 
-factory RealtimeMcphttpErrorType.fromJson(String json) { return switch (json) {
+factory RealtimeMcphttpErrorType.fromJson(String json) {return switch (json) {
   'http_error' => httpError,
   _ => RealtimeMcphttpErrorType$Unknown(json),
-}; }
+};}
 
 static const RealtimeMcphttpErrorType httpError = RealtimeMcphttpErrorType$httpError._();
 
 static const List<RealtimeMcphttpErrorType> values = [httpError];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'http_error' => 'httpError',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeMcphttpErrorType$Unknown; } 
+bool get isUnknown {return this is RealtimeMcphttpErrorType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() httpError, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() httpError, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeMcphttpErrorType$httpError() => httpError(),
       RealtimeMcphttpErrorType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpError, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpError, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeMcphttpErrorType$httpError() => httpError != null ? httpError() : orElse(value),
       RealtimeMcphttpErrorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeMcphttpErrorType($value)';
 
- }
+}
 @immutable final class RealtimeMcphttpErrorType$httpError extends RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType$httpError._();
 
 @override String get value => 'http_error';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpErro
 
 @override int get hashCode => 'http_error'.hashCode;
 
- }
+}
 @immutable final class RealtimeMcphttpErrorType$Unknown extends RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType$Unknown(this.value);
 
 @override final String value;
@@ -52,14 +52,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpErro
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class RealtimeMcphttpError {const RealtimeMcphttpError({required this.type, required this.code, required this.message, });
 
-factory RealtimeMcphttpError.fromJson(Map<String, dynamic> json) { return RealtimeMcphttpError(
+factory RealtimeMcphttpError.fromJson(Map<String, dynamic> json) {return RealtimeMcphttpError(
   type: RealtimeMcphttpErrorType.fromJson(json['type'] as String),
   code: (json['code'] as num).toInt(),
   message: json['message'] as String,
-); }
+);}
 
 final RealtimeMcphttpErrorType type;
 
@@ -67,19 +67,19 @@ final int code;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'http_error' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'http_error' &&
       json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-RealtimeMcphttpError copyWith({RealtimeMcphttpErrorType? type, int? code, String? message, }) { return RealtimeMcphttpError(
+      json.containsKey('message') && json['message'] is String;}
+RealtimeMcphttpError copyWith({RealtimeMcphttpErrorType? type, int? code, String? message, }) {return RealtimeMcphttpError(
   type: type ?? this.type,
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeMcphttpError &&
           type == other.type &&
@@ -90,4 +90,4 @@ RealtimeMcphttpError copyWith({RealtimeMcphttpErrorType? type, int? code, String
 
 @override String toString() => 'RealtimeMcphttpError(type: $type, code: $code, message: $message)';
 
- }
+}

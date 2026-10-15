@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/invoice_metadata.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_remove_lines_request/post_invoices_invoice_remove_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceRemoveLinesRequest {const PostInvoicesInvoiceRemoveLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
 
-factory PostInvoicesInvoiceRemoveLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRemoveLinesRequest(
+factory PostInvoicesInvoiceRemoveLinesRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesInvoiceRemoveLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoiceMetadata: json['invoice_metadata'] != null ? InvoiceMetadata.fromJson(json['invoice_metadata']) : null,
   lines: (json['lines'] as List<dynamic>).map((e) => PostInvoicesInvoiceRemoveLinesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,17 +18,17 @@ final InvoiceMetadata? invoiceMetadata;
 /// The line items to remove.
 final List<PostInvoicesInvoiceRemoveLinesRequestLines> lines;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (invoiceMetadata != null) 'invoice_metadata': invoiceMetadata?.toJson(),
   'lines': lines.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('lines'); } 
-PostInvoicesInvoiceRemoveLinesRequest copyWith({List<String>? Function()? expand, InvoiceMetadata? Function()? invoiceMetadata, List<PostInvoicesInvoiceRemoveLinesRequestLines>? lines, }) { return PostInvoicesInvoiceRemoveLinesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('lines');}
+PostInvoicesInvoiceRemoveLinesRequest copyWith({List<String>? Function()? expand, InvoiceMetadata? Function()? invoiceMetadata, List<PostInvoicesInvoiceRemoveLinesRequestLines>? lines, }) {return PostInvoicesInvoiceRemoveLinesRequest(
   expand: expand != null ? expand() : this.expand,
   invoiceMetadata: invoiceMetadata != null ? invoiceMetadata() : this.invoiceMetadata,
   lines: lines ?? this.lines,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceRemoveLinesRequest &&
           listEquals(expand, other.expand) &&
@@ -39,4 +39,4 @@ PostInvoicesInvoiceRemoveLinesRequest copyWith({List<String>? Function()? expand
 
 @override String toString() => 'PostInvoicesInvoiceRemoveLinesRequest(expand: $expand, invoiceMetadata: $invoiceMetadata, lines: $lines)';
 
- }
+}

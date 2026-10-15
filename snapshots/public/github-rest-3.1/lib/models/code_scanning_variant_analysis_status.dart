@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The new status of the CodeQL variant analysis repository task.
 sealed class CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus();
 
-factory CodeScanningVariantAnalysisStatus.fromJson(String json) { return switch (json) {
+factory CodeScanningVariantAnalysisStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'in_progress' => inProgress,
   'succeeded' => succeeded,
@@ -12,7 +12,7 @@ factory CodeScanningVariantAnalysisStatus.fromJson(String json) { return switch 
   'canceled' => canceled,
   'timed_out' => timedOut,
   _ => CodeScanningVariantAnalysisStatus$Unknown(json),
-}; }
+};}
 
 static const CodeScanningVariantAnalysisStatus pending = CodeScanningVariantAnalysisStatus$pending._();
 
@@ -29,9 +29,9 @@ static const CodeScanningVariantAnalysisStatus timedOut = CodeScanningVariantAna
 static const List<CodeScanningVariantAnalysisStatus> values = [pending, inProgress, succeeded, failed, canceled, timedOut];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'in_progress' => 'inProgress',
   'succeeded' => 'succeeded',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'canceled' => 'canceled',
   'timed_out' => 'timedOut',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeScanningVariantAnalysisStatus$Unknown; } 
+bool get isUnknown {return this is CodeScanningVariantAnalysisStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() inProgress, required W Function() succeeded, required W Function() failed, required W Function() canceled, required W Function() timedOut, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() inProgress, required W Function() succeeded, required W Function() failed, required W Function() canceled, required W Function() timedOut, required W Function(String value) $unknown, }) {return switch (this) {
       CodeScanningVariantAnalysisStatus$pending() => pending(),
       CodeScanningVariantAnalysisStatus$inProgress() => inProgress(),
       CodeScanningVariantAnalysisStatus$succeeded() => succeeded(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() pending, required W Function() inProgress, requ
       CodeScanningVariantAnalysisStatus$canceled() => canceled(),
       CodeScanningVariantAnalysisStatus$timedOut() => timedOut(),
       CodeScanningVariantAnalysisStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? inProgress, W Function()? succeeded, W Function()? failed, W Function()? canceled, W Function()? timedOut, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? inProgress, W Function()? succeeded, W Function()? failed, W Function()? canceled, W Function()? timedOut, W Function(String value)? $unknown, }) {return switch (this) {
       CodeScanningVariantAnalysisStatus$pending() => pending != null ? pending() : orElse(value),
       CodeScanningVariantAnalysisStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       CodeScanningVariantAnalysisStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
       CodeScanningVariantAnalysisStatus$canceled() => canceled != null ? canceled() : orElse(value),
       CodeScanningVariantAnalysisStatus$timedOut() => timedOut != null ? timedOut() : orElse(value),
       CodeScanningVariantAnalysisStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeScanningVariantAnalysisStatus($value)';
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus$pending extends CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus$pending._();
 
 @override String get value => 'pending';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus$inProgress extends CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus$succeeded extends CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus$succeeded._();
 
 @override String get value => 'succeeded';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'succeeded'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus$failed extends CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus$failed._();
 
 @override String get value => 'failed';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus$canceled extends CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus$timedOut extends CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus$timedOut._();
 
 @override String get value => 'timed_out';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'timed_out'.hashCode;
 
- }
+}
 @immutable final class CodeScanningVariantAnalysisStatus$Unknown extends CodeScanningVariantAnalysisStatus {const CodeScanningVariantAnalysisStatus$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

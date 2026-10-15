@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_list_finetunes_response/workers_ai_list_finetunes_response_result.dart';@immutable final class WorkersAiListFinetunesResponse {const WorkersAiListFinetunesResponse({required this.result, required this.success, });
 
-factory WorkersAiListFinetunesResponse.fromJson(Map<String, dynamic> json) { return WorkersAiListFinetunesResponse(
+factory WorkersAiListFinetunesResponse.fromJson(Map<String, dynamic> json) {return WorkersAiListFinetunesResponse(
   result: WorkersAiListFinetunesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final WorkersAiListFinetunesResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-WorkersAiListFinetunesResponse copyWith({WorkersAiListFinetunesResponseResult? result, bool? success, }) { return WorkersAiListFinetunesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+WorkersAiListFinetunesResponse copyWith({WorkersAiListFinetunesResponseResult? result, bool? success, }) {return WorkersAiListFinetunesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiListFinetunesResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ WorkersAiListFinetunesResponse copyWith({WorkersAiListFinetunesResponseResult? r
 
 @override String toString() => 'WorkersAiListFinetunesResponse(result: $result, success: $success)';
 
- }
+}

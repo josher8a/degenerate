@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data/digital_experience_monitoring_device_dex_test_schemas_data_kind.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/target_policies.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/http_results.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/http_results_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/traceroute_results.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/traceroute_results_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class Tests {const Tests({required this.created, required this.description, required this.enabled, required this.host, required this.id, required this.interval, required this.kind, required this.name, required this.updated, this.httpResults = const Omittable.absent(), this.httpResultsByColo, this.method, this.targetPolicies = const Omittable.absent(), this.targeted, this.tracerouteResults = const Omittable.absent(), this.tracerouteResultsByColo, });
 
-factory Tests.fromJson(Map<String, dynamic> json) { return Tests(
+factory Tests.fromJson(Map<String, dynamic> json) {return Tests(
   created: json['created'] as String,
   description: json['description'] as String,
   enabled: json['enabled'] as bool,
@@ -20,7 +20,7 @@ factory Tests.fromJson(Map<String, dynamic> json) { return Tests(
   tracerouteResults: json.containsKey('tracerouteResults') ? Omittable(json['tracerouteResults'] != null ? TracerouteResults.fromJson(json['tracerouteResults'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tracerouteResultsByColo: (json['tracerouteResultsByColo'] as List<dynamic>?)?.map((e) => TracerouteResultsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   updated: json['updated'] as String,
-); }
+);}
 
 /// date the test was created.
 final String created;
@@ -61,7 +61,7 @@ final List<TracerouteResultsByColo>? tracerouteResultsByColo;
 
 final String updated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'description': description,
   'enabled': enabled,
@@ -78,8 +78,8 @@ Map<String, dynamic> toJson() { return {
   if (tracerouteResults.isPresent) 'tracerouteResults': tracerouteResults.value?.toJson(),
   if (tracerouteResultsByColo != null) 'tracerouteResultsByColo': tracerouteResultsByColo?.map((e) => e.toJson()).toList(),
   'updated': updated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('host') && json['host'] is String &&
@@ -87,8 +87,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('interval') && json['interval'] is String &&
       json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('updated') && json['updated'] is String; } 
-Tests copyWith({String? created, String? description, bool? enabled, String? host, Omittable<HttpResults?>? httpResults, List<HttpResultsByColo>? Function()? httpResultsByColo, DigitalExperienceMonitoringUuid? id, String? interval, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, String? Function()? method, String? name, Omittable<List<TargetPolicies>?>? targetPolicies, bool? Function()? targeted, Omittable<TracerouteResults?>? tracerouteResults, List<TracerouteResultsByColo>? Function()? tracerouteResultsByColo, String? updated, }) { return Tests(
+      json.containsKey('updated') && json['updated'] is String;}
+Tests copyWith({String? created, String? description, bool? enabled, String? host, Omittable<HttpResults?>? httpResults, List<HttpResultsByColo>? Function()? httpResultsByColo, DigitalExperienceMonitoringUuid? id, String? interval, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, String? Function()? method, String? name, Omittable<List<TargetPolicies>?>? targetPolicies, bool? Function()? targeted, Omittable<TracerouteResults?>? tracerouteResults, List<TracerouteResultsByColo>? Function()? tracerouteResultsByColo, String? updated, }) {return Tests(
   created: created ?? this.created,
   description: description ?? this.description,
   enabled: enabled ?? this.enabled,
@@ -105,7 +105,7 @@ Tests copyWith({String? created, String? description, bool? enabled, String? hos
   tracerouteResults: tracerouteResults ?? this.tracerouteResults,
   tracerouteResultsByColo: tracerouteResultsByColo != null ? tracerouteResultsByColo() : this.tracerouteResultsByColo,
   updated: updated ?? this.updated,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Tests &&
           created == other.created &&
@@ -130,4 +130,4 @@ Tests copyWith({String? created, String? description, bool? enabled, String? hos
 
 @override String toString() => 'Tests(\n  created: $created,\n  description: $description,\n  enabled: $enabled,\n  host: $host,\n  httpResults: $httpResults,\n  httpResultsByColo: $httpResultsByColo,\n  id: $id,\n  interval: $interval,\n  kind: $kind,\n  method: $method,\n  name: $name,\n  targetPolicies: $targetPolicies,\n  targeted: $targeted,\n  tracerouteResults: $tracerouteResults,\n  tracerouteResultsByColo: $tracerouteResultsByColo,\n  updated: $updated,\n)';
 
- }
+}

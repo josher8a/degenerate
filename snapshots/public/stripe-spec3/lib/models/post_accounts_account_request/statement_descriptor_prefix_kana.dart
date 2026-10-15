@@ -7,11 +7,11 @@ const StatementDescriptorPrefixKana({this.string = const Omittable.absent(), thi
 const StatementDescriptorPrefixKana._({required this.rawValue, required this.string, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory StatementDescriptorPrefixKana.fromJson(Object? json) { return StatementDescriptorPrefixKana._(
+factory StatementDescriptorPrefixKana.fromJson(Object? json) {return StatementDescriptorPrefixKana._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'StatementDescriptorPrefixKana(${toJson()})';
 
- }
+}

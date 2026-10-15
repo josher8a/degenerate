@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsPermissionsRequest {const CustomIndicatorFeedsPermissionsRequest({this.accountTag, this.feedId, });
 
-factory CustomIndicatorFeedsPermissionsRequest.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsPermissionsRequest(
+factory CustomIndicatorFeedsPermissionsRequest.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsPermissionsRequest(
   accountTag: json['account_tag'] as String?,
   feedId: json['feed_id'] != null ? (json['feed_id'] as num).toInt() : null,
-); }
+);}
 
 /// The Cloudflare account tag of the account to change permissions on
 /// 
@@ -18,15 +18,15 @@ final String? accountTag;
 /// Example: `1`
 final int? feedId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_tag': ?accountTag,
   'feed_id': ?feedId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tag', 'feed_id'}.contains(key)); } 
-CustomIndicatorFeedsPermissionsRequest copyWith({String? Function()? accountTag, int? Function()? feedId, }) { return CustomIndicatorFeedsPermissionsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tag', 'feed_id'}.contains(key));}
+CustomIndicatorFeedsPermissionsRequest copyWith({String? Function()? accountTag, int? Function()? feedId, }) {return CustomIndicatorFeedsPermissionsRequest(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   feedId: feedId != null ? feedId() : this.feedId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsPermissionsRequest &&
           accountTag == other.accountTag &&
@@ -36,4 +36,4 @@ CustomIndicatorFeedsPermissionsRequest copyWith({String? Function()? accountTag,
 
 @override String toString() => 'CustomIndicatorFeedsPermissionsRequest(accountTag: $accountTag, feedId: $feedId)';
 
- }
+}

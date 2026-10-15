@@ -14,7 +14,7 @@ final class DestinationsApi with ApiExecutor {const DestinationsApi(this.apiConf
 /// List your Workers Observability Telemetry Destinations.
 ///
 /// `GET /accounts/{account_id}/workers/observability/destinations`
-Future<ApiResult<List<DestinationListResponseResult>, DestinationListError>> destinationList({required String accountId, double? page, double? perPage, DestinationListOrder? order, DestinationListOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DestinationListResponseResult>, DestinationListError>> destinationList({required String accountId, double? page, double? perPage, DestinationListOrder? order, DestinationListOrderBy? orderBy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -48,13 +48,13 @@ return await execute(
   },
   onError: DestinationListError.fromResponse,
 );
- } 
+}
 /// Create Destination
 ///
 /// Create a new Workers Observability Telemetry Destination.
 ///
 /// `POST /accounts/{account_id}/workers/observability/destinations`
-Future<ApiResult<DestinationCreateResponseResult, DestinationCreateError>> destinationCreate({required String accountId, DestinationCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DestinationCreateResponseResult, DestinationCreateError>> destinationCreate({required String accountId, DestinationCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return await execute(
   },
   onError: DestinationCreateError.fromResponse,
 );
- } 
+}
 /// Update Destination
 ///
 /// Update an existing Workers Observability Telemetry Destination.
 ///
 /// `PATCH /accounts/{account_id}/workers/observability/destinations/{slug}`
-Future<ApiResult<DestinationCreateResponseResult, DestinationUpdateError>> destinationUpdate({required String accountId, required String slug, DestinationUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DestinationCreateResponseResult, DestinationUpdateError>> destinationUpdate({required String accountId, required String slug, DestinationUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,13 +98,13 @@ return await execute(
   },
   onError: DestinationUpdateError.fromResponse,
 );
- } 
+}
 /// Delete Destination
 ///
 /// Delete a Workers Observability Telemetry Destination.
 ///
 /// `DELETE /accounts/{account_id}/workers/observability/destinations/{slug}`
-Future<ApiResult<DestinationCreateResponseResult?, DestinationsDeleteError>> destinationsDelete({required String accountId, required String slug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DestinationCreateResponseResult?, DestinationsDeleteError>> destinationsDelete({required String accountId, required String slug, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -121,5 +121,5 @@ return await execute(
   },
   onError: DestinationsDeleteError.fromResponse,
 );
- } 
- }
+}
+}

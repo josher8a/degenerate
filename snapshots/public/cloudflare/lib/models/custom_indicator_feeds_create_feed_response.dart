@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_indicator_feed_item.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_schemas_messages2.dart';@immutable final class CustomIndicatorFeedsCreateFeedResponse {const CustomIndicatorFeedsCreateFeedResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory CustomIndicatorFeedsCreateFeedResponse.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsCreateFeedResponse(
+factory CustomIndicatorFeedsCreateFeedResponse.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsCreateFeedResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CustomIndicatorFeedsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CustomIndicatorFeedsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? CustomIndicatorFeedsIndicatorFeedItem.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<CustomIndicatorFeedsSchemasMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final CustomIndicatorFeedsIndicatorFeedItem? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-CustomIndicatorFeedsCreateFeedResponse copyWith({List<CustomIndicatorFeedsSchemasMessages2>? errors, List<CustomIndicatorFeedsSchemasMessages2>? messages, bool? success, CustomIndicatorFeedsIndicatorFeedItem? Function()? result, }) { return CustomIndicatorFeedsCreateFeedResponse(
+      json.containsKey('success') && json['success'] is bool;}
+CustomIndicatorFeedsCreateFeedResponse copyWith({List<CustomIndicatorFeedsSchemasMessages2>? errors, List<CustomIndicatorFeedsSchemasMessages2>? messages, bool? success, CustomIndicatorFeedsIndicatorFeedItem? Function()? result, }) {return CustomIndicatorFeedsCreateFeedResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsCreateFeedResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ CustomIndicatorFeedsCreateFeedResponse copyWith({List<CustomIndicatorFeedsSchema
 
 @override String toString() => 'CustomIndicatorFeedsCreateFeedResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

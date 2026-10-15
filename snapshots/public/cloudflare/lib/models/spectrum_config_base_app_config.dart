@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_timestamp.dart';@immutable final class SpectrumConfigBaseAppConfig {const SpectrumConfigBaseAppConfig({required this.createdOn, required this.id, required this.modifiedOn, });
 
-factory SpectrumConfigBaseAppConfig.fromJson(Map<String, dynamic> json) { return SpectrumConfigBaseAppConfig(
+factory SpectrumConfigBaseAppConfig.fromJson(Map<String, dynamic> json) {return SpectrumConfigBaseAppConfig(
   createdOn: SpectrumConfigTimestamp.fromJson(json['created_on'] as String),
   id: SpectrumConfigIdentifier.fromJson(json['id'] as String),
   modifiedOn: SpectrumConfigTimestamp.fromJson(json['modified_on'] as String),
-); }
+);}
 
 final SpectrumConfigTimestamp createdOn;
 
@@ -16,19 +16,19 @@ final SpectrumConfigIdentifier id;
 
 final SpectrumConfigTimestamp modifiedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toJson(),
   'id': id.toJson(),
   'modified_on': modifiedOn.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') &&
       json.containsKey('id') &&
-      json.containsKey('modified_on'); } 
-SpectrumConfigBaseAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, }) { return SpectrumConfigBaseAppConfig(
+      json.containsKey('modified_on');}
+SpectrumConfigBaseAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, }) {return SpectrumConfigBaseAppConfig(
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumConfigBaseAppConfig &&
           createdOn == other.createdOn &&
@@ -39,4 +39,4 @@ SpectrumConfigBaseAppConfig copyWith({SpectrumConfigTimestamp? createdOn, Spectr
 
 @override String toString() => 'SpectrumConfigBaseAppConfig(createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)';
 
- }
+}

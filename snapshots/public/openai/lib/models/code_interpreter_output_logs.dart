@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// The logs output from the code interpreter.
 @immutable final class CodeInterpreterOutputLogs {const CodeInterpreterOutputLogs({required this.type, required this.logs, });
 
-factory CodeInterpreterOutputLogs.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputLogs(
+factory CodeInterpreterOutputLogs.fromJson(Map<String, dynamic> json) {return CodeInterpreterOutputLogs(
   type: CodeInterpreterOutputLogsType.fromJson(json['type'] as String),
   logs: json['logs'] as String,
-); }
+);}
 
 /// The type of the output. Always `logs`.
 final CodeInterpreterOutputLogsType type;
@@ -15,16 +15,16 @@ final CodeInterpreterOutputLogsType type;
 /// The logs output from the code interpreter.
 final String logs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'logs': logs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('logs') && json['logs'] is String; } 
-CodeInterpreterOutputLogs copyWith({CodeInterpreterOutputLogsType? type, String? logs, }) { return CodeInterpreterOutputLogs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('logs') && json['logs'] is String;}
+CodeInterpreterOutputLogs copyWith({CodeInterpreterOutputLogsType? type, String? logs, }) {return CodeInterpreterOutputLogs(
   type: type ?? this.type,
   logs: logs ?? this.logs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterOutputLogs &&
           type == other.type &&
@@ -34,4 +34,4 @@ CodeInterpreterOutputLogs copyWith({CodeInterpreterOutputLogsType? type, String?
 
 @override String toString() => 'CodeInterpreterOutputLogs(type: $type, logs: $logs)';
 
- }
+}

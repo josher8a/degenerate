@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PrivateUserPlan {const PrivateUserPlan({required this.collaborators, required this.name, required this.space, required this.privateRepos, });
 
-factory PrivateUserPlan.fromJson(Map<String, dynamic> json) { return PrivateUserPlan(
+factory PrivateUserPlan.fromJson(Map<String, dynamic> json) {return PrivateUserPlan(
   collaborators: (json['collaborators'] as num).toInt(),
   name: json['name'] as String,
   space: (json['space'] as num).toInt(),
   privateRepos: (json['private_repos'] as num).toInt(),
-); }
+);}
 
 final int collaborators;
 
@@ -18,22 +18,22 @@ final int space;
 
 final int privateRepos;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'collaborators': collaborators,
   'name': name,
   'space': space,
   'private_repos': privateRepos,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('collaborators') && json['collaborators'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('collaborators') && json['collaborators'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('space') && json['space'] is num &&
-      json.containsKey('private_repos') && json['private_repos'] is num; } 
-PrivateUserPlan copyWith({int? collaborators, String? name, int? space, int? privateRepos, }) { return PrivateUserPlan(
+      json.containsKey('private_repos') && json['private_repos'] is num;}
+PrivateUserPlan copyWith({int? collaborators, String? name, int? space, int? privateRepos, }) {return PrivateUserPlan(
   collaborators: collaborators ?? this.collaborators,
   name: name ?? this.name,
   space: space ?? this.space,
   privateRepos: privateRepos ?? this.privateRepos,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PrivateUserPlan &&
           collaborators == other.collaborators &&
@@ -45,4 +45,4 @@ PrivateUserPlan copyWith({int? collaborators, String? name, int? space, int? pri
 
 @override String toString() => 'PrivateUserPlan(collaborators: $collaborators, name: $name, space: $space, privateRepos: $privateRepos)';
 
- }
+}

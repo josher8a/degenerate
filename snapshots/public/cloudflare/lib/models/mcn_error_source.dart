@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnErrorSource {const McnErrorSource({this.parameter, this.parameterValueIndex, this.pointer, });
 
-factory McnErrorSource.fromJson(Map<String, dynamic> json) { return McnErrorSource(
+factory McnErrorSource.fromJson(Map<String, dynamic> json) {return McnErrorSource(
   parameter: json['parameter'] as String?,
   parameterValueIndex: json['parameter_value_index'] != null ? (json['parameter_value_index'] as num).toInt() : null,
   pointer: json['pointer'] as String?,
-); }
+);}
 
 final String? parameter;
 
@@ -15,17 +15,17 @@ final int? parameterValueIndex;
 
 final String? pointer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'parameter': ?parameter,
   'parameter_value_index': ?parameterValueIndex,
   'pointer': ?pointer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'parameter', 'parameter_value_index', 'pointer'}.contains(key)); } 
-McnErrorSource copyWith({String? Function()? parameter, int? Function()? parameterValueIndex, String? Function()? pointer, }) { return McnErrorSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'parameter', 'parameter_value_index', 'pointer'}.contains(key));}
+McnErrorSource copyWith({String? Function()? parameter, int? Function()? parameterValueIndex, String? Function()? pointer, }) {return McnErrorSource(
   parameter: parameter != null ? parameter() : this.parameter,
   parameterValueIndex: parameterValueIndex != null ? parameterValueIndex() : this.parameterValueIndex,
   pointer: pointer != null ? pointer() : this.pointer,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnErrorSource &&
           parameter == other.parameter &&
@@ -36,4 +36,4 @@ McnErrorSource copyWith({String? Function()? parameter, int? Function()? paramet
 
 @override String toString() => 'McnErrorSource(parameter: $parameter, parameterValueIndex: $parameterValueIndex, pointer: $pointer)';
 
- }
+}

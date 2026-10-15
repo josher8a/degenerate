@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSipCredentialListMappingRequest {const CreateSipCredentialListMappingRequest({required this.credentialListSid});
 
-factory CreateSipCredentialListMappingRequest.fromJson(Map<String, dynamic> json) { return CreateSipCredentialListMappingRequest(
+factory CreateSipCredentialListMappingRequest.fromJson(Map<String, dynamic> json) {return CreateSipCredentialListMappingRequest(
   credentialListSid: json['CredentialListSid'] as String,
-); }
+);}
 
 /// A 34 character string that uniquely identifies the CredentialList resource to map to the SIP domain.
 final String credentialListSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'CredentialListSid': credentialListSid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('CredentialListSid') && json['CredentialListSid'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('CredentialListSid') && json['CredentialListSid'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (credentialListSid.runes.length < 34) { errors.add('credentialListSid: length must be >= 34'); }
 if (credentialListSid.runes.length > 34) { errors.add('credentialListSid: length must be <= 34'); }
 if (!RegExp(r'^CL[0-9a-fA-F]{32}$').hasMatch(credentialListSid)) { errors.add(r'credentialListSid: must match pattern ^CL[0-9a-fA-F]{32}$'); }
-return errors; } 
-CreateSipCredentialListMappingRequest copyWith({String? credentialListSid}) { return CreateSipCredentialListMappingRequest(
+return errors;}
+CreateSipCredentialListMappingRequest copyWith({String? credentialListSid}) {return CreateSipCredentialListMappingRequest(
   credentialListSid: credentialListSid ?? this.credentialListSid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSipCredentialListMappingRequest &&
           credentialListSid == other.credentialListSid;
@@ -31,4 +31,4 @@ CreateSipCredentialListMappingRequest copyWith({String? credentialListSid}) { re
 
 @override String toString() => 'CreateSipCredentialListMappingRequest(credentialListSid: $credentialListSid)';
 
- }
+}

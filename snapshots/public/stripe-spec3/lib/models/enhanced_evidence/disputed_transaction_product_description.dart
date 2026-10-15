@@ -7,11 +7,11 @@ const DisputedTransactionProductDescription({this.string = const Omittable.absen
 const DisputedTransactionProductDescription._({required this.rawValue, required this.string, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DisputedTransactionProductDescription.fromJson(Object? json) { return DisputedTransactionProductDescription._(
+factory DisputedTransactionProductDescription.fromJson(Object? json) {return DisputedTransactionProductDescription._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DisputedTransactionProductDescription(${toJson()})';
 
- }
+}

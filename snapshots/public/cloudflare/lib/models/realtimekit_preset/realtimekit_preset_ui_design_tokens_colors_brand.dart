@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetUiDesignTokensColorsBrand {const RealtimekitPresetUiDesignTokensColorsBrand({required this.$300, required this.$400, required this.$500, required this.$600, required this.$700, });
 
-factory RealtimekitPresetUiDesignTokensColorsBrand.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUiDesignTokensColorsBrand(
+factory RealtimekitPresetUiDesignTokensColorsBrand.fromJson(Map<String, dynamic> json) {return RealtimekitPresetUiDesignTokensColorsBrand(
   $300: json['300'] as String,
   $400: json['400'] as String,
   $500: json['500'] as String,
   $600: json['600'] as String,
   $700: json['700'] as String,
-); }
+);}
 
 final String $300;
 
@@ -21,25 +21,25 @@ final String $600;
 
 final String $700;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '300': $300,
   '400': $400,
   '500': $500,
   '600': $600,
   '700': $700,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('300') && json['300'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('300') && json['300'] is String &&
       json.containsKey('400') && json['400'] is String &&
       json.containsKey('500') && json['500'] is String &&
       json.containsKey('600') && json['600'] is String &&
-      json.containsKey('700') && json['700'] is String; } 
-RealtimekitPresetUiDesignTokensColorsBrand copyWith({String? $300, String? $400, String? $500, String? $600, String? $700, }) { return RealtimekitPresetUiDesignTokensColorsBrand(
+      json.containsKey('700') && json['700'] is String;}
+RealtimekitPresetUiDesignTokensColorsBrand copyWith({String? $300, String? $400, String? $500, String? $600, String? $700, }) {return RealtimekitPresetUiDesignTokensColorsBrand(
   $300: $300 ?? this.$300,
   $400: $400 ?? this.$400,
   $500: $500 ?? this.$500,
   $600: $600 ?? this.$600,
   $700: $700 ?? this.$700,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetUiDesignTokensColorsBrand &&
           $300 == other.$300 &&
@@ -52,4 +52,4 @@ RealtimekitPresetUiDesignTokensColorsBrand copyWith({String? $300, String? $400,
 
 @override String toString() => 'RealtimekitPresetUiDesignTokensColorsBrand(\$300: ${$300}, \$400: ${$400}, \$500: ${$500}, \$600: ${$600}, \$700: ${$700})';
 
- }
+}

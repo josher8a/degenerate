@@ -7,11 +7,11 @@ const WorkersObservabilityTelemetryEventSource({this.string = const Omittable.ab
 const WorkersObservabilityTelemetryEventSource._({required this.rawValue, required this.string, required this.mapStringdynamic, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory WorkersObservabilityTelemetryEventSource.fromJson(Object? json) { return WorkersObservabilityTelemetryEventSource._(
+factory WorkersObservabilityTelemetryEventSource.fromJson(Object? json) {return WorkersObservabilityTelemetryEventSource._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   mapStringdynamic: parseAnyOfVariant<Map<String, dynamic>>(json, (value) => value! as Map<String, dynamic>),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'WorkersObservabilityTelemetryEventSource(${toJson()})';
 
- }
+}

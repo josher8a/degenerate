@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest({this.expand});
 
-factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest(
+factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
-PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest copyWith({List<String>? Function()? expand}) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand'}.contains(key));}
+PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest copyWith({List<String>? Function()? expand}) {return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest(
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest &&
           listEquals(expand, other.expand);
@@ -25,4 +25,4 @@ PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateReque
 
 @override String toString() => 'PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest(expand: $expand)';
 
- }
+}

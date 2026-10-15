@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/file_commit/content_links.dart';@immutable final class FileCommitContent {const FileCommitContent({this.name, this.path, this.sha, this.size, this.url, this.htmlUrl, this.gitUrl, this.downloadUrl, this.type, this.links, });
 
-factory FileCommitContent.fromJson(Map<String, dynamic> json) { return FileCommitContent(
+factory FileCommitContent.fromJson(Map<String, dynamic> json) {return FileCommitContent(
   name: json['name'] as String?,
   path: json['path'] as String?,
   sha: json['sha'] as String?,
@@ -14,7 +14,7 @@ factory FileCommitContent.fromJson(Map<String, dynamic> json) { return FileCommi
   downloadUrl: json['download_url'] as String?,
   type: json['type'] as String?,
   links: json['_links'] != null ? ContentLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? name;
 
@@ -36,7 +36,7 @@ final String? type;
 
 final ContentLinks? links;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'path': ?path,
   'sha': ?sha,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'download_url': ?downloadUrl,
   'type': ?type,
   if (links != null) '_links': links?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'path', 'sha', 'size', 'url', 'html_url', 'git_url', 'download_url', 'type', '_links'}.contains(key)); } 
-FileCommitContent copyWith({String? Function()? name, String? Function()? path, String? Function()? sha, int? Function()? size, String? Function()? url, String? Function()? htmlUrl, String? Function()? gitUrl, String? Function()? downloadUrl, String? Function()? type, ContentLinks? Function()? links, }) { return FileCommitContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'path', 'sha', 'size', 'url', 'html_url', 'git_url', 'download_url', 'type', '_links'}.contains(key));}
+FileCommitContent copyWith({String? Function()? name, String? Function()? path, String? Function()? sha, int? Function()? size, String? Function()? url, String? Function()? htmlUrl, String? Function()? gitUrl, String? Function()? downloadUrl, String? Function()? type, ContentLinks? Function()? links, }) {return FileCommitContent(
   name: name != null ? name() : this.name,
   path: path != null ? path() : this.path,
   sha: sha != null ? sha() : this.sha,
@@ -60,7 +60,7 @@ FileCommitContent copyWith({String? Function()? name, String? Function()? path, 
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   type: type != null ? type() : this.type,
   links: links != null ? links() : this.links,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FileCommitContent &&
           name == other.name &&
@@ -78,4 +78,4 @@ FileCommitContent copyWith({String? Function()? name, String? Function()? path, 
 
 @override String toString() => 'FileCommitContent(\n  name: $name,\n  path: $path,\n  sha: $sha,\n  size: $size,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  gitUrl: $gitUrl,\n  downloadUrl: $downloadUrl,\n  type: $type,\n  links: $links,\n)';
 
- }
+}

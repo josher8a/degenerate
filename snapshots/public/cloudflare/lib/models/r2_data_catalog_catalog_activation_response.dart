@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains response from activating an R2 bucket as a catalog.
 @immutable final class R2DataCatalogCatalogActivationResponse {const R2DataCatalogCatalogActivationResponse({required this.id, required this.name, });
 
-factory R2DataCatalogCatalogActivationResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogActivationResponse(
+factory R2DataCatalogCatalogActivationResponse.fromJson(Map<String, dynamic> json) {return R2DataCatalogCatalogActivationResponse(
   id: json['id'] as String,
   name: json['name'] as String,
-); }
+);}
 
 /// Use this to uniquely identify the activated catalog.
 /// 
@@ -19,16 +19,16 @@ final String id;
 /// Example: `'account123_my-bucket'`
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-R2DataCatalogCatalogActivationResponse copyWith({String? id, String? name, }) { return R2DataCatalogCatalogActivationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+R2DataCatalogCatalogActivationResponse copyWith({String? id, String? name, }) {return R2DataCatalogCatalogActivationResponse(
   id: id ?? this.id,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCatalogActivationResponse &&
           id == other.id &&
@@ -38,4 +38,4 @@ R2DataCatalogCatalogActivationResponse copyWith({String? id, String? name, }) { 
 
 @override String toString() => 'R2DataCatalogCatalogActivationResponse(id: $id, name: $name)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/deleted_price/deleted_price_object.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/plan/plan_product.dart';import 'package:pub_stripe_spec3/models/plan/plan_tiers_mode.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';import 'package:pub_stripe_spec3/models/recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';/// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
 sealed class PriceType$1 {const PriceType$1();
 
-factory PriceType$1.fromJson(String json) { return switch (json) {
+factory PriceType$1.fromJson(String json) {return switch (json) {
   'one_time' => oneTime,
   'recurring' => recurring,
   _ => PriceType$1$Unknown(json),
-}; }
+};}
 
 static const PriceType$1 oneTime = PriceType$1$oneTime._();
 
@@ -17,30 +17,30 @@ static const PriceType$1 recurring = PriceType$1$recurring._();
 static const List<PriceType$1> values = [oneTime, recurring];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'one_time' => 'oneTime',
   'recurring' => 'recurring',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PriceType$1$Unknown; } 
+bool get isUnknown {return this is PriceType$1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() oneTime, required W Function() recurring, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() oneTime, required W Function() recurring, required W Function(String value) $unknown, }) {return switch (this) {
       PriceType$1$oneTime() => oneTime(),
       PriceType$1$recurring() => recurring(),
       PriceType$1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? recurring, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? recurring, W Function(String value)? $unknown, }) {return switch (this) {
       PriceType$1$oneTime() => oneTime != null ? oneTime() : orElse(value),
       PriceType$1$recurring() => recurring != null ? recurring() : orElse(value),
       PriceType$1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PriceType\$1($value)';
 
- }
+}
 @immutable final class PriceType$1$oneTime extends PriceType$1 {const PriceType$1$oneTime._();
 
 @override String get value => 'one_time';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => 'one_time'.hashCode;
 
- }
+}
 @immutable final class PriceType$1$recurring extends PriceType$1 {const PriceType$1$recurring._();
 
 @override String get value => 'recurring';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => 'recurring'.hashCode;
 
- }
+}
 @immutable final class PriceType$1$Unknown extends PriceType$1 {const PriceType$1$Unknown(this.value);
 
 @override final String value;
@@ -68,7 +68,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Prices define the unit cost, currency, and (optional) billing cycle for both recurring and one-time purchases of products.
 /// [Products](https://api.stripe.com#products) help you track inventory or provisioning, and prices help you track payment terms. Different physical goods or levels of service should be represented by products, and pricing options should be represented by prices. This approach lets you change prices without having to change your provisioning scheme.
 /// 
@@ -77,7 +77,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 /// Related guides: [Set up a subscription](https://docs.stripe.com/billing/subscriptions/set-up-subscription), [create an invoice](https://docs.stripe.com/billing/invoices/create), and more about [products and prices](https://docs.stripe.com/products-prices/overview).
 @immutable final class Price {const Price({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.product, required this.type, this.currencyOptions, this.customUnitAmount = const Omittable.absent(), this.lookupKey = const Omittable.absent(), this.nickname = const Omittable.absent(), this.recurring = const Omittable.absent(), this.taxBehavior = const Omittable.absent(), this.tiers, this.tiersMode = const Omittable.absent(), this.transformQuantity = const Omittable.absent(), this.unitAmount = const Omittable.absent(), this.unitAmountDecimal = const Omittable.absent(), });
 
-factory Price.fromJson(Map<String, dynamic> json) { return Price(
+factory Price.fromJson(Map<String, dynamic> json) {return Price(
   active: json['active'] as bool,
   billingScheme: BillingScheme.fromJson(json['billing_scheme'] as String),
   created: (json['created'] as num).toInt(),
@@ -99,7 +99,7 @@ factory Price.fromJson(Map<String, dynamic> json) { return Price(
   type: PriceType$1.fromJson(json['type'] as String),
   unitAmount: json.containsKey('unit_amount') ? Omittable(json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null) : const Omittable.absent(),
   unitAmountDecimal: json.containsKey('unit_amount_decimal') ? Omittable(json['unit_amount_decimal'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Whether the price can be used for new purchases.
 final bool active;
@@ -164,7 +164,7 @@ final Omittable<int?> unitAmount;
 /// The unit amount in cents (or local equivalent) to be charged, represented as a decimal string with at most 12 decimal places. Only set if `billing_scheme=per_unit`.
 final Omittable<String?> unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'billing_scheme': billingScheme.toJson(),
   'created': created,
@@ -186,8 +186,8 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (unitAmount.isPresent) 'unit_amount': unitAmount.value,
   if (unitAmountDecimal.isPresent) 'unit_amount_decimal': unitAmountDecimal.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('billing_scheme') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -196,9 +196,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('metadata') &&
       json.containsKey('object') && json['object'] == 'price' &&
       json.containsKey('product') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final lookupKey$ = lookupKey.value;
 if (lookupKey$ != null) {
@@ -208,8 +208,8 @@ final nickname$ = nickname.value;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
-return errors; } 
-Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption>? Function()? currencyOptions, Omittable<CustomUnitAmount?>? customUnitAmount, String? id, bool? livemode, Omittable<String?>? lookupKey, Map<String,String>? metadata, Omittable<String?>? nickname, DeletedPriceObject? object, PlanProduct? product, Omittable<Recurring?>? recurring, Omittable<CurrencyOptionTaxBehavior?>? taxBehavior, List<PriceTier>? Function()? tiers, Omittable<PlanTiersMode?>? tiersMode, Omittable<TransformQuantity?>? transformQuantity, PriceType$1? type, Omittable<int?>? unitAmount, Omittable<String?>? unitAmountDecimal, }) { return Price(
+return errors;}
+Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption>? Function()? currencyOptions, Omittable<CustomUnitAmount?>? customUnitAmount, String? id, bool? livemode, Omittable<String?>? lookupKey, Map<String,String>? metadata, Omittable<String?>? nickname, DeletedPriceObject? object, PlanProduct? product, Omittable<Recurring?>? recurring, Omittable<CurrencyOptionTaxBehavior?>? taxBehavior, List<PriceTier>? Function()? tiers, Omittable<PlanTiersMode?>? tiersMode, Omittable<TransformQuantity?>? transformQuantity, PriceType$1? type, Omittable<int?>? unitAmount, Omittable<String?>? unitAmountDecimal, }) {return Price(
   active: active ?? this.active,
   billingScheme: billingScheme ?? this.billingScheme,
   created: created ?? this.created,
@@ -231,7 +231,7 @@ Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String
   type: type ?? this.type,
   unitAmount: unitAmount ?? this.unitAmount,
   unitAmountDecimal: unitAmountDecimal ?? this.unitAmountDecimal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Price &&
           active == other.active &&
@@ -260,4 +260,4 @@ Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String
 
 @override String toString() => 'Price(\n  active: $active,\n  billingScheme: $billingScheme,\n  created: $created,\n  currency: $currency,\n  currencyOptions: $currencyOptions,\n  customUnitAmount: $customUnitAmount,\n  id: $id,\n  livemode: $livemode,\n  lookupKey: $lookupKey,\n  metadata: $metadata,\n  nickname: $nickname,\n  object: $object,\n  product: $product,\n  recurring: $recurring,\n  taxBehavior: $taxBehavior,\n  tiers: $tiers,\n  tiersMode: $tiersMode,\n  transformQuantity: $transformQuantity,\n  type: $type,\n  unitAmount: $unitAmount,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
- }
+}

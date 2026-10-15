@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';@immutable final class MqHttpConsumerRequest {const MqHttpConsumerRequest({required this.type, this.deadLetterQueue, this.settings, });
 
-factory MqHttpConsumerRequest.fromJson(Map<String, dynamic> json) { return MqHttpConsumerRequest(
+factory MqHttpConsumerRequest.fromJson(Map<String, dynamic> json) {return MqHttpConsumerRequest(
   deadLetterQueue: json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null,
   settings: json['settings'] != null ? MqHttpConsumerRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
-); }
+);}
 
 final MqQueueName? deadLetterQueue;
 
@@ -15,17 +15,17 @@ final MqHttpConsumerRequestSettings? settings;
 
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (deadLetterQueue != null) 'dead_letter_queue': deadLetterQueue?.toJson(),
   if (settings != null) 'settings': settings?.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-MqHttpConsumerRequest copyWith({MqQueueName? Function()? deadLetterQueue, MqHttpConsumerRequestSettings? Function()? settings, String? type, }) { return MqHttpConsumerRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+MqHttpConsumerRequest copyWith({MqQueueName? Function()? deadLetterQueue, MqHttpConsumerRequestSettings? Function()? settings, String? type, }) {return MqHttpConsumerRequest(
   deadLetterQueue: deadLetterQueue != null ? deadLetterQueue() : this.deadLetterQueue,
   settings: settings != null ? settings() : this.settings,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MqHttpConsumerRequest &&
           deadLetterQueue == other.deadLetterQueue &&
@@ -36,4 +36,4 @@ MqHttpConsumerRequest copyWith({MqQueueName? Function()? deadLetterQueue, MqHttp
 
 @override String toString() => 'MqHttpConsumerRequest(deadLetterQueue: $deadLetterQueue, settings: $settings, type: $type)';
 
- }
+}

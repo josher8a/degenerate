@@ -7,7 +7,7 @@ const RadarGetCtSummaryResponseResultSummary0({this.mapStringString = const Omit
 const RadarGetCtSummaryResponseResultSummary0._({required this.rawValue, required this.mapStringString, required this.summary0Variant2, required this.summary0Variant3, required this.summary0Variant4, required this.summary0Variant5, required this.summary0Variant6, required this.summary0Variant7, required this.summary0Variant8, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory RadarGetCtSummaryResponseResultSummary0.fromJson(Object? json) { return RadarGetCtSummaryResponseResultSummary0._(
+factory RadarGetCtSummaryResponseResultSummary0.fromJson(Object? json) {return RadarGetCtSummaryResponseResultSummary0._(
   rawValue: Omittable(json),
   mapStringString: parseAnyOfVariant<Map<String, String>>(json, (value) => (value! as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))),
   summary0Variant2: json is Map<String, dynamic> && Summary0Variant2.canParse(json) ? parseAnyOfVariant<Summary0Variant2>(json, (value) => Summary0Variant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -17,7 +17,7 @@ factory RadarGetCtSummaryResponseResultSummary0.fromJson(Object? json) { return 
   summary0Variant6: json is Map<String, dynamic> && Summary0Variant6.canParse(json) ? parseAnyOfVariant<Summary0Variant6>(json, (value) => Summary0Variant6.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   summary0Variant7: json is Map<String, dynamic> && Summary0Variant7.canParse(json) ? parseAnyOfVariant<Summary0Variant7>(json, (value) => Summary0Variant7.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   summary0Variant8: json is Map<String, dynamic> && Summary0Variant8.canParse(json) ? parseAnyOfVariant<Summary0Variant8>(json, (value) => Summary0Variant8.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -71,4 +71,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'RadarGetCtSummaryResponseResultSummary0(${toJson()})';
 
- }
+}

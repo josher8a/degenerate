@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/person/political_exposure.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kanji.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_dob.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_verification.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/registered_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/individual_full_name_aliases.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/individual_relationship.dart';/// Information about the person represented by the account. This field is null unless `business_type` is set to `individual`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
 @immutable final class PostAccountsAccountRequestIndividual {const PostAccountsAccountRequestIndividual({this.address, this.addressKana, this.addressKanji, this.dob, this.email, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.verification, });
 
-factory PostAccountsAccountRequestIndividual.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestIndividual(
+factory PostAccountsAccountRequestIndividual.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestIndividual(
   address: json['address'] != null ? PostAccountsAccountPeoplePersonRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
@@ -28,7 +28,7 @@ factory PostAccountsAccountRequestIndividual.fromJson(Map<String, dynamic> json)
   relationship: json['relationship'] != null ? IndividualRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
   ssnLast4: json['ssn_last_4'] as String?,
   verification: json['verification'] != null ? PostAccountsAccountPeoplePersonRequestVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountPeoplePersonRequestAddress? address;
 
@@ -76,7 +76,7 @@ final String? ssnLast4;
 
 final PostAccountsAccountPeoplePersonRequestVerification? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (addressKana != null) 'address_kana': addressKana?.toJson(),
   if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
@@ -100,10 +100,10 @@ Map<String, dynamic> toJson() { return {
   if (relationship != null) 'relationship': relationship?.toJson(),
   'ssn_last_4': ?ssnLast4,
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'dob', 'email', 'first_name', 'first_name_kana', 'first_name_kanji', 'full_name_aliases', 'gender', 'id_number', 'id_number_secondary', 'last_name', 'last_name_kana', 'last_name_kanji', 'maiden_name', 'metadata', 'phone', 'political_exposure', 'registered_address', 'relationship', 'ssn_last_4', 'verification'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'dob', 'email', 'first_name', 'first_name_kana', 'first_name_kanji', 'full_name_aliases', 'gender', 'id_number', 'id_number_secondary', 'last_name', 'last_name_kana', 'last_name_kanji', 'maiden_name', 'metadata', 'phone', 'political_exposure', 'registered_address', 'relationship', 'ssn_last_4', 'verification'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final firstName$ = firstName;
 if (firstName$ != null) {
   if (firstName$.runes.length > 100) { errors.add('firstName: length must be <= 100'); }
@@ -144,8 +144,8 @@ final ssnLast4$ = ssnLast4;
 if (ssnLast4$ != null) {
   if (ssnLast4$.runes.length > 5000) { errors.add('ssnLast4: length must be <= 5000'); }
 }
-return errors; } 
-PostAccountsAccountRequestIndividual copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, PostAccountsAccountPeoplePersonRequestDob? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, IndividualFullNameAliases? Function()? fullNameAliases, String? Function()? gender, String? Function()? idNumber, String? Function()? idNumberSecondary, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, Metadata? Function()? metadata, String? Function()? phone, PoliticalExposure? Function()? politicalExposure, RegisteredAddress? Function()? registeredAddress, IndividualRelationship? Function()? relationship, String? Function()? ssnLast4, PostAccountsAccountPeoplePersonRequestVerification? Function()? verification, }) { return PostAccountsAccountRequestIndividual(
+return errors;}
+PostAccountsAccountRequestIndividual copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, PostAccountsAccountPeoplePersonRequestDob? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, IndividualFullNameAliases? Function()? fullNameAliases, String? Function()? gender, String? Function()? idNumber, String? Function()? idNumberSecondary, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, Metadata? Function()? metadata, String? Function()? phone, PoliticalExposure? Function()? politicalExposure, RegisteredAddress? Function()? registeredAddress, IndividualRelationship? Function()? relationship, String? Function()? ssnLast4, PostAccountsAccountPeoplePersonRequestVerification? Function()? verification, }) {return PostAccountsAccountRequestIndividual(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
@@ -169,7 +169,7 @@ PostAccountsAccountRequestIndividual copyWith({PostAccountsAccountPeoplePersonRe
   relationship: relationship != null ? relationship() : this.relationship,
   ssnLast4: ssnLast4 != null ? ssnLast4() : this.ssnLast4,
   verification: verification != null ? verification() : this.verification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestIndividual &&
           address == other.address &&
@@ -200,4 +200,4 @@ PostAccountsAccountRequestIndividual copyWith({PostAccountsAccountPeoplePersonRe
 
 @override String toString() => 'PostAccountsAccountRequestIndividual(\n  address: $address,\n  addressKana: $addressKana,\n  addressKanji: $addressKanji,\n  dob: $dob,\n  email: $email,\n  firstName: $firstName,\n  firstNameKana: $firstNameKana,\n  firstNameKanji: $firstNameKanji,\n  fullNameAliases: $fullNameAliases,\n  gender: $gender,\n  idNumber: $idNumber,\n  idNumberSecondary: $idNumberSecondary,\n  lastName: $lastName,\n  lastNameKana: $lastNameKana,\n  lastNameKanji: $lastNameKanji,\n  maidenName: $maidenName,\n  metadata: $metadata,\n  phone: $phone,\n  politicalExposure: $politicalExposure,\n  registeredAddress: $registeredAddress,\n  relationship: $relationship,\n  ssnLast4: $ssnLast4,\n  verification: $verification,\n)';
 
- }
+}

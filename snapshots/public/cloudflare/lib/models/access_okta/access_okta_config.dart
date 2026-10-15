@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOktaConfig {const AccessOktaConfig({this.clientId, this.clientSecret, this.claims, this.emailClaimName, this.authorizationServerId, this.oktaAccount, });
 
-factory AccessOktaConfig.fromJson(Map<String, dynamic> json) { return AccessOktaConfig(
+factory AccessOktaConfig.fromJson(Map<String, dynamic> json) {return AccessOktaConfig(
   clientId: json['client_id'] as String?,
   clientSecret: json['client_secret'] as String?,
   claims: (json['claims'] as List<dynamic>?)?.map((e) => e as String).toList(),
   emailClaimName: json['email_claim_name'] as String?,
   authorizationServerId: json['authorization_server_id'] as String?,
   oktaAccount: json['okta_account'] as String?,
-); }
+);}
 
 /// Your OAuth Client ID
 /// 
@@ -42,23 +42,23 @@ final String? authorizationServerId;
 /// Example: `'https://dev-abc123.oktapreview.com'`
 final String? oktaAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'client_secret': ?clientSecret,
   'claims': ?claims,
   'email_claim_name': ?emailClaimName,
   'authorization_server_id': ?authorizationServerId,
   'okta_account': ?oktaAccount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'authorization_server_id', 'okta_account'}.contains(key)); } 
-AccessOktaConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authorizationServerId, String? Function()? oktaAccount, }) { return AccessOktaConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'authorization_server_id', 'okta_account'}.contains(key));}
+AccessOktaConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authorizationServerId, String? Function()? oktaAccount, }) {return AccessOktaConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,
   emailClaimName: emailClaimName != null ? emailClaimName() : this.emailClaimName,
   authorizationServerId: authorizationServerId != null ? authorizationServerId() : this.authorizationServerId,
   oktaAccount: oktaAccount != null ? oktaAccount() : this.oktaAccount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOktaConfig &&
           clientId == other.clientId &&
@@ -72,4 +72,4 @@ AccessOktaConfig copyWith({String? Function()? clientId, String? Function()? cli
 
 @override String toString() => 'AccessOktaConfig(clientId: $clientId, clientSecret: $clientSecret, claims: $claims, emailClaimName: $emailClaimName, authorizationServerId: $authorizationServerId, oktaAccount: $oktaAccount)';
 
- }
+}

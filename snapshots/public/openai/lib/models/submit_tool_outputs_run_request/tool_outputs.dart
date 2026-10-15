@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ToolOutputs {const ToolOutputs({this.toolCallId, this.output, });
 
-factory ToolOutputs.fromJson(Map<String, dynamic> json) { return ToolOutputs(
+factory ToolOutputs.fromJson(Map<String, dynamic> json) {return ToolOutputs(
   toolCallId: json['tool_call_id'] as String?,
   output: json['output'] as String?,
-); }
+);}
 
 /// The ID of the tool call in the `required_action` object within the run object the output is being submitted for.
 final String? toolCallId;
@@ -14,15 +14,15 @@ final String? toolCallId;
 /// The output of the tool call to be submitted to continue the run.
 final String? output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tool_call_id': ?toolCallId,
   'output': ?output,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tool_call_id', 'output'}.contains(key)); } 
-ToolOutputs copyWith({String? Function()? toolCallId, String? Function()? output, }) { return ToolOutputs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tool_call_id', 'output'}.contains(key));}
+ToolOutputs copyWith({String? Function()? toolCallId, String? Function()? output, }) {return ToolOutputs(
   toolCallId: toolCallId != null ? toolCallId() : this.toolCallId,
   output: output != null ? output() : this.output,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToolOutputs &&
           toolCallId == other.toolCallId &&
@@ -32,4 +32,4 @@ ToolOutputs copyWith({String? Function()? toolCallId, String? Function()? output
 
 @override String toString() => 'ToolOutputs(toolCallId: $toolCallId, output: $output)';
 
- }
+}

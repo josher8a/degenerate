@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_naver_pay/payment_method_naver_pay_funding.dart';/// 
 @immutable final class PaymentMethodNaverPay {const PaymentMethodNaverPay({required this.funding, this.buyerId = const Omittable.absent(), });
 
-factory PaymentMethodNaverPay.fromJson(Map<String, dynamic> json) { return PaymentMethodNaverPay(
+factory PaymentMethodNaverPay.fromJson(Map<String, dynamic> json) {return PaymentMethodNaverPay(
   buyerId: json.containsKey('buyer_id') ? Omittable(json['buyer_id'] as String?) : const Omittable.absent(),
   funding: PaymentMethodNaverPayFunding.fromJson(json['funding'] as String),
-); }
+);}
 
 /// Uniquely identifies this particular Naver Pay account. You can use this attribute to check whether two Naver Pay accounts are the same.
 final Omittable<String?> buyerId;
@@ -15,22 +15,22 @@ final Omittable<String?> buyerId;
 /// Whether to fund this transaction with Naver Pay points or a card.
 final PaymentMethodNaverPayFunding funding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buyerId.isPresent) 'buyer_id': buyerId.value,
   'funding': funding.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('funding'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('funding');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final buyerId$ = buyerId.value;
 if (buyerId$ != null) {
   if (buyerId$.runes.length > 5000) { errors.add('buyerId: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodNaverPay copyWith({Omittable<String?>? buyerId, PaymentMethodNaverPayFunding? funding, }) { return PaymentMethodNaverPay(
+return errors;}
+PaymentMethodNaverPay copyWith({Omittable<String?>? buyerId, PaymentMethodNaverPayFunding? funding, }) {return PaymentMethodNaverPay(
   buyerId: buyerId ?? this.buyerId,
   funding: funding ?? this.funding,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodNaverPay &&
           buyerId == other.buyerId &&
@@ -40,4 +40,4 @@ PaymentMethodNaverPay copyWith({Omittable<String?>? buyerId, PaymentMethodNaverP
 
 @override String toString() => 'PaymentMethodNaverPay(buyerId: $buyerId, funding: $funding)';
 
- }
+}

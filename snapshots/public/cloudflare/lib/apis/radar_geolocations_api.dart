@@ -14,7 +14,7 @@ final class RadarGeolocationsApi with ApiExecutor {const RadarGeolocationsApi(th
 /// Retrieves a list of geolocations.
 ///
 /// `GET /radar/geolocations`
-Future<ApiResult<RadarGetGeolocationsResponseResult, RadarGetGeolocationsError>> radarGetGeolocations({int? limit, int? offset, String? geoId, String? location, RadarGetGeolocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetGeolocationsResponseResult, RadarGetGeolocationsError>> radarGetGeolocations({int? limit, int? offset, String? geoId, String? location, RadarGetGeolocationsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -51,13 +51,13 @@ return await execute(
   },
   onError: RadarGetGeolocationsError.fromResponse,
 );
- } 
+}
 /// Get Geolocation details
 ///
 /// Retrieves the requested Geolocation information.
 ///
 /// `GET /radar/geolocations/{geo_id}`
-Future<ApiResult<RadarGetGeolocationDetailsResponseResult, RadarGetGeolocationDetailsError>> radarGetGeolocationDetails({required String geoId, RadarGetGeolocationDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetGeolocationDetailsResponseResult, RadarGetGeolocationDetailsError>> radarGetGeolocationDetails({required String geoId, RadarGetGeolocationDetailsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -82,5 +82,5 @@ return await execute(
   },
   onError: RadarGetGeolocationDetailsError.fromResponse,
 );
- } 
- }
+}
+}

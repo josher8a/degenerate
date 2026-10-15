@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class WebhookRealtimeCallIncomingData {const WebhookRealtimeCallIncomingData({required this.callId, required this.sipHeaders, });
 
-factory WebhookRealtimeCallIncomingData.fromJson(Map<String, dynamic> json) { return WebhookRealtimeCallIncomingData(
+factory WebhookRealtimeCallIncomingData.fromJson(Map<String, dynamic> json) {return WebhookRealtimeCallIncomingData(
   callId: json['call_id'] as String,
   sipHeaders: (json['sip_headers'] as List<dynamic>).map((e) => SipHeaders.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The unique ID of this call.
 /// 
@@ -18,16 +18,16 @@ final String callId;
 /// 
 final List<SipHeaders> sipHeaders;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'call_id': callId,
   'sip_headers': sipHeaders.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('call_id') && json['call_id'] is String &&
-      json.containsKey('sip_headers'); } 
-WebhookRealtimeCallIncomingData copyWith({String? callId, List<SipHeaders>? sipHeaders, }) { return WebhookRealtimeCallIncomingData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('call_id') && json['call_id'] is String &&
+      json.containsKey('sip_headers');}
+WebhookRealtimeCallIncomingData copyWith({String? callId, List<SipHeaders>? sipHeaders, }) {return WebhookRealtimeCallIncomingData(
   callId: callId ?? this.callId,
   sipHeaders: sipHeaders ?? this.sipHeaders,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRealtimeCallIncomingData &&
           callId == other.callId &&
@@ -37,4 +37,4 @@ WebhookRealtimeCallIncomingData copyWith({String? callId, List<SipHeaders>? sipH
 
 @override String toString() => 'WebhookRealtimeCallIncomingData(callId: $callId, sipHeaders: $sipHeaders)';
 
- }
+}

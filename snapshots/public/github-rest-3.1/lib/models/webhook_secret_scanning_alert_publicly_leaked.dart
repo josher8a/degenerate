@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction();
 
-factory WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(String json) { return switch (json) {
+factory WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(String json) {return switch (json) {
   'publicly_leaked' => publiclyLeaked,
   _ => WebhookSecretScanningAlertPubliclyLeakedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookSecretScanningAlertPubliclyLeakedAction publiclyLeaked = WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked._();
 
 static const List<WebhookSecretScanningAlertPubliclyLeakedAction> values = [publiclyLeaked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'publicly_leaked' => 'publiclyLeaked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookSecretScanningAlertPubliclyLeakedAction$Unknown; } 
+bool get isUnknown {return this is WebhookSecretScanningAlertPubliclyLeakedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() publiclyLeaked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() publiclyLeaked, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked() => publiclyLeaked(),
       WebhookSecretScanningAlertPubliclyLeakedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? publiclyLeaked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? publiclyLeaked, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked() => publiclyLeaked != null ? publiclyLeaked() : orElse(value),
       WebhookSecretScanningAlertPubliclyLeakedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookSecretScanningAlertPubliclyLeakedAction($value)';
 
- }
+}
 @immutable final class WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked extends WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked._();
 
 @override String get value => 'publicly_leaked';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publicly
 
 @override int get hashCode => 'publicly_leaked'.hashCode;
 
- }
+}
 @immutable final class WebhookSecretScanningAlertPubliclyLeakedAction$Unknown extends WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publicly
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookSecretScanningAlertPubliclyLeaked {const WebhookSecretScanningAlertPubliclyLeaked({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookSecretScanningAlertPubliclyLeaked.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertPubliclyLeaked(
+factory WebhookSecretScanningAlertPubliclyLeaked.fromJson(Map<String, dynamic> json) {return WebhookSecretScanningAlertPubliclyLeaked(
   action: WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(json['action'] as String),
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -63,7 +63,7 @@ factory WebhookSecretScanningAlertPubliclyLeaked.fromJson(Map<String, dynamic> j
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookSecretScanningAlertPubliclyLeakedAction action;
 
@@ -79,7 +79,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -87,11 +87,11 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
-      json.containsKey('repository'); } 
-WebhookSecretScanningAlertPubliclyLeaked copyWith({WebhookSecretScanningAlertPubliclyLeakedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookSecretScanningAlertPubliclyLeaked(
+      json.containsKey('repository');}
+WebhookSecretScanningAlertPubliclyLeaked copyWith({WebhookSecretScanningAlertPubliclyLeakedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookSecretScanningAlertPubliclyLeaked(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -99,7 +99,7 @@ WebhookSecretScanningAlertPubliclyLeaked copyWith({WebhookSecretScanningAlertPub
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertPubliclyLeaked &&
           action == other.action &&
@@ -114,4 +114,4 @@ WebhookSecretScanningAlertPubliclyLeaked copyWith({WebhookSecretScanningAlertPub
 
 @override String toString() => 'WebhookSecretScanningAlertPubliclyLeaked(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CachePurgeFlexPurgeByTags {const CachePurgeFlexPurgeByTags({this.tags});
 
-factory CachePurgeFlexPurgeByTags.fromJson(Map<String, dynamic> json) { return CachePurgeFlexPurgeByTags(
+factory CachePurgeFlexPurgeByTags.fromJson(Map<String, dynamic> json) {return CachePurgeFlexPurgeByTags(
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// For more information on cache tags and purging by tags, please refer to [purge by cache-tags documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-tags/).
 /// 
 /// Example: `[a-cache-tag, another-cache-tag]`
 final List<String>? tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tags': ?tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tags'}.contains(key)); } 
-CachePurgeFlexPurgeByTags copyWith({List<String>? Function()? tags}) { return CachePurgeFlexPurgeByTags(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tags'}.contains(key));}
+CachePurgeFlexPurgeByTags copyWith({List<String>? Function()? tags}) {return CachePurgeFlexPurgeByTags(
   tags: tags != null ? tags() : this.tags,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CachePurgeFlexPurgeByTags &&
           listEquals(tags, other.tags);
@@ -27,4 +27,4 @@ CachePurgeFlexPurgeByTags copyWith({List<String>? Function()? tags}) { return Ca
 
 @override String toString() => 'CachePurgeFlexPurgeByTags(tags: $tags)';
 
- }
+}

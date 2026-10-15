@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_messages2.dart';import 'package:pub_cloudflare/models/magic_routes_collection_response/magic_routes_collection_response_result.dart';@immutable final class MagicRoutesCollectionResponse {const MagicRoutesCollectionResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory MagicRoutesCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicRoutesCollectionResponse(
+factory MagicRoutesCollectionResponse.fromJson(Map<String, dynamic> json) {return MagicRoutesCollectionResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: MagicRoutesCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<MagicMessages2> errors;
 
@@ -21,22 +21,22 @@ final MagicRoutesCollectionResponseResult result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-MagicRoutesCollectionResponse copyWith({List<MagicMessages2>? errors, List<MagicMessages2>? messages, MagicRoutesCollectionResponseResult? result, bool? success, }) { return MagicRoutesCollectionResponse(
+      json.containsKey('success') && json['success'] is bool;}
+MagicRoutesCollectionResponse copyWith({List<MagicMessages2>? errors, List<MagicMessages2>? messages, MagicRoutesCollectionResponseResult? result, bool? success, }) {return MagicRoutesCollectionResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRoutesCollectionResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ MagicRoutesCollectionResponse copyWith({List<MagicMessages2>? errors, List<Magic
 
 @override String toString() => 'MagicRoutesCollectionResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

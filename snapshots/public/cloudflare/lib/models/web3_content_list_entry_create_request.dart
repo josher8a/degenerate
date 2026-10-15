@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_content.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_description.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_type.dart';@immutable final class Web3ContentListEntryCreateRequest {const Web3ContentListEntryCreateRequest({required this.content, required this.type, this.description, });
 
-factory Web3ContentListEntryCreateRequest.fromJson(Map<String, dynamic> json) { return Web3ContentListEntryCreateRequest(
+factory Web3ContentListEntryCreateRequest.fromJson(Map<String, dynamic> json) {return Web3ContentListEntryCreateRequest(
   content: Web3ContentListEntryContent.fromJson(json['content'] as String),
   description: json['description'] != null ? Web3ContentListEntryDescription.fromJson(json['description'] as String) : null,
   type: Web3ContentListEntryType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Specify the CID or content path of content to block.
 final Web3ContentListEntryContent content;
@@ -16,18 +16,18 @@ final Web3ContentListEntryDescription? description;
 
 final Web3ContentListEntryType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   if (description != null) 'description': description?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('type'); } 
-Web3ContentListEntryCreateRequest copyWith({Web3ContentListEntryContent? content, Web3ContentListEntryDescription? Function()? description, Web3ContentListEntryType? type, }) { return Web3ContentListEntryCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('type');}
+Web3ContentListEntryCreateRequest copyWith({Web3ContentListEntryContent? content, Web3ContentListEntryDescription? Function()? description, Web3ContentListEntryType? type, }) {return Web3ContentListEntryCreateRequest(
   content: content ?? this.content,
   description: description != null ? description() : this.description,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Web3ContentListEntryCreateRequest &&
           content == other.content &&
@@ -38,4 +38,4 @@ Web3ContentListEntryCreateRequest copyWith({Web3ContentListEntryContent? content
 
 @override String toString() => 'Web3ContentListEntryCreateRequest(content: $content, description: $description, type: $type)';
 
- }
+}

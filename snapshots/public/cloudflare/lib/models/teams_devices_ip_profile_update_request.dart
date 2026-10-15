@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_enabled.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_match.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_name.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_precedence.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_subnet_id.dart';@immutable final class TeamsDevicesIpProfileUpdateRequest {const TeamsDevicesIpProfileUpdateRequest({this.description, this.enabled, this.match, this.name, this.precedence, this.subnetId, });
 
-factory TeamsDevicesIpProfileUpdateRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesIpProfileUpdateRequest(
+factory TeamsDevicesIpProfileUpdateRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesIpProfileUpdateRequest(
   description: json['description'] as String?,
   enabled: json['enabled'] != null ? TeamsDevicesIpProfileEnabled.fromJson(json['enabled'] as bool) : null,
   match: json['match'] != null ? TeamsDevicesIpProfileMatch.fromJson(json['match'] as String) : null,
   name: json['name'] != null ? TeamsDevicesIpProfileName.fromJson(json['name'] as String) : null,
   precedence: json['precedence'] != null ? TeamsDevicesIpProfilePrecedence.fromJson(json['precedence'] as num) : null,
   subnetId: json['subnet_id'] != null ? TeamsDevicesIpProfileSubnetId.fromJson(json['subnet_id'] as String) : null,
-); }
+);}
 
 /// An optional description of the Device IP profile.
 /// 
@@ -32,23 +32,23 @@ final TeamsDevicesIpProfilePrecedence? precedence;
 /// The ID of the Subnet.
 final TeamsDevicesIpProfileSubnetId? subnetId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (match != null) 'match': match?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (precedence != null) 'precedence': precedence?.toJson(),
   if (subnetId != null) 'subnet_id': subnetId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'enabled', 'match', 'name', 'precedence', 'subnet_id'}.contains(key)); } 
-TeamsDevicesIpProfileUpdateRequest copyWith({String? Function()? description, TeamsDevicesIpProfileEnabled? Function()? enabled, TeamsDevicesIpProfileMatch? Function()? match, TeamsDevicesIpProfileName? Function()? name, TeamsDevicesIpProfilePrecedence? Function()? precedence, TeamsDevicesIpProfileSubnetId? Function()? subnetId, }) { return TeamsDevicesIpProfileUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'enabled', 'match', 'name', 'precedence', 'subnet_id'}.contains(key));}
+TeamsDevicesIpProfileUpdateRequest copyWith({String? Function()? description, TeamsDevicesIpProfileEnabled? Function()? enabled, TeamsDevicesIpProfileMatch? Function()? match, TeamsDevicesIpProfileName? Function()? name, TeamsDevicesIpProfilePrecedence? Function()? precedence, TeamsDevicesIpProfileSubnetId? Function()? subnetId, }) {return TeamsDevicesIpProfileUpdateRequest(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   match: match != null ? match() : this.match,
   name: name != null ? name() : this.name,
   precedence: precedence != null ? precedence() : this.precedence,
   subnetId: subnetId != null ? subnetId() : this.subnetId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIpProfileUpdateRequest &&
           description == other.description &&
@@ -62,4 +62,4 @@ TeamsDevicesIpProfileUpdateRequest copyWith({String? Function()? description, Te
 
 @override String toString() => 'TeamsDevicesIpProfileUpdateRequest(description: $description, enabled: $enabled, match: $match, name: $name, precedence: $precedence, subnetId: $subnetId)';
 
- }
+}

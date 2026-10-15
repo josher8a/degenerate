@@ -14,7 +14,7 @@ final class ZoneRatePlanApi with ApiExecutor {const ZoneRatePlanApi(this.apiConf
 /// Lists available plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans`
-Future<ApiResult<List<AvailableRatePlan>, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AvailableRatePlan>, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AccountSubscriptionsDeleteSubscriptionError.fromResponse,
 );
- } 
+}
 /// Available Plan Details
 ///
 /// Details of the available plan that the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans/{plan_identifier}`
-Future<ApiResult<AvailableRatePlan, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AvailableRatePlan, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: AccountSubscriptionsDeleteSubscriptionError.fromResponse,
 );
- } 
+}
 /// List Available Rate Plans
 ///
 /// Lists all rate plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_rate_plans`
-Future<ApiResult<List<RatePlan>, ZoneRatePlanListAvailableRatePlansError>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<RatePlan>, ZoneRatePlanListAvailableRatePlansError>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -77,5 +77,5 @@ return await execute(
   },
   onError: ZoneRatePlanListAvailableRatePlansError.fromResponse,
 );
- } 
- }
+}
+}

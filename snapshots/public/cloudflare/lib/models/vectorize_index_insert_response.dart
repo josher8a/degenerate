@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeIndexInsertResponse {const VectorizeIndexInsertResponse({this.count, this.ids, });
 
-factory VectorizeIndexInsertResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexInsertResponse(
+factory VectorizeIndexInsertResponse.fromJson(Map<String, dynamic> json) {return VectorizeIndexInsertResponse(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   ids: (json['ids'] as List<dynamic>?)?.map((e) => VectorizeVectorIdentifier.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Specifies the count of the vectors successfully inserted.
 /// 
@@ -16,15 +16,15 @@ final int? count;
 /// Array of vector identifiers of the vectors successfully inserted.
 final List<VectorizeVectorIdentifier>? ids;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   if (ids != null) 'ids': ids?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'ids'}.contains(key)); } 
-VectorizeIndexInsertResponse copyWith({int? Function()? count, List<VectorizeVectorIdentifier>? Function()? ids, }) { return VectorizeIndexInsertResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'ids'}.contains(key));}
+VectorizeIndexInsertResponse copyWith({int? Function()? count, List<VectorizeVectorIdentifier>? Function()? ids, }) {return VectorizeIndexInsertResponse(
   count: count != null ? count() : this.count,
   ids: ids != null ? ids() : this.ids,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexInsertResponse &&
           count == other.count &&
@@ -34,4 +34,4 @@ VectorizeIndexInsertResponse copyWith({int? Function()? count, List<VectorizeVec
 
 @override String toString() => 'VectorizeIndexInsertResponse(count: $count, ids: $ids)';
 
- }
+}

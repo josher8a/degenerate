@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonalAccessTokenRequestRepositories {const PersonalAccessTokenRequestRepositories({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private, });
 
-factory PersonalAccessTokenRequestRepositories.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequestRepositories(
+factory PersonalAccessTokenRequestRepositories.fromJson(Map<String, dynamic> json) {return PersonalAccessTokenRequestRepositories(
   fullName: json['full_name'] as String,
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   private: json['private'] as bool,
-); }
+);}
 
 final String fullName;
 
@@ -24,25 +24,25 @@ final String nodeId;
 /// Whether the repository is private or public.
 final bool private;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'full_name': fullName,
   'id': id,
   'name': name,
   'node_id': nodeId,
   'private': private,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('full_name') && json['full_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('full_name') && json['full_name'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('private') && json['private'] is bool; } 
-PersonalAccessTokenRequestRepositories copyWith({String? fullName, int? id, String? name, String? nodeId, bool? private, }) { return PersonalAccessTokenRequestRepositories(
+      json.containsKey('private') && json['private'] is bool;}
+PersonalAccessTokenRequestRepositories copyWith({String? fullName, int? id, String? name, String? nodeId, bool? private, }) {return PersonalAccessTokenRequestRepositories(
   fullName: fullName ?? this.fullName,
   id: id ?? this.id,
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
   private: private ?? this.private,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PersonalAccessTokenRequestRepositories &&
           fullName == other.fullName &&
@@ -55,4 +55,4 @@ PersonalAccessTokenRequestRepositories copyWith({String? fullName, int? id, Stri
 
 @override String toString() => 'PersonalAccessTokenRequestRepositories(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/create_assistant_request/create_assistant_request_model.dart';import 'package:pub_openai/models/create_assistant_request/create_assistant_request_tool_resources.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';@immutable final class CreateAssistantRequest {const CreateAssistantRequest({required this.model, this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.instructions = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.tools, this.toolResources = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
 
-factory CreateAssistantRequest.fromJson(Map<String, dynamic> json) { return CreateAssistantRequest(
+factory CreateAssistantRequest.fromJson(Map<String, dynamic> json) {return CreateAssistantRequest(
   model: CreateAssistantRequestModel.fromJson(json['model']),
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
@@ -15,7 +15,7 @@ factory CreateAssistantRequest.fromJson(Map<String, dynamic> json) { return Crea
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
 /// 
@@ -62,7 +62,7 @@ final Omittable<ResponseFormatOption?> responseFormat;
 /// The value of `tools`, or its schema default when absent.
 List<AssistantObjectTools> get toolsOrDefault => tools ?? const [];
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'model': model.toJson(),
   if (name.isPresent) 'name': name.value,
   if (description.isPresent) 'description': description.value,
@@ -74,10 +74,10 @@ Map<String, dynamic> toJson() { return {
   if (temperature.isPresent) 'temperature': temperature.value,
   if (topP.isPresent) 'top_p': topP.value,
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 256) { errors.add('name: length must be <= 256'); }
@@ -104,8 +104,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
-return errors; } 
-CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, Omittable<ReasoningEffort?>? reasoningEffort, List<AssistantObjectTools>? Function()? tools, Omittable<CreateAssistantRequestToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return CreateAssistantRequest(
+return errors;}
+CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, Omittable<ReasoningEffort?>? reasoningEffort, List<AssistantObjectTools>? Function()? tools, Omittable<CreateAssistantRequestToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) {return CreateAssistantRequest(
   model: model ?? this.model,
   name: name ?? this.name,
   description: description ?? this.description,
@@ -117,7 +117,7 @@ CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, Omittable<S
   temperature: temperature ?? this.temperature,
   topP: topP ?? this.topP,
   responseFormat: responseFormat ?? this.responseFormat,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateAssistantRequest &&
           model == other.model &&
@@ -136,4 +136,4 @@ CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, Omittable<S
 
 @override String toString() => 'CreateAssistantRequest(\n  model: $model,\n  name: $name,\n  description: $description,\n  instructions: $instructions,\n  reasoningEffort: $reasoningEffort,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  responseFormat: $responseFormat,\n)';
 
- }
+}

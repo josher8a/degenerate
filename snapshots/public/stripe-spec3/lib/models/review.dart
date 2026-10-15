@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_location.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_session.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 sealed class ClosedReason {const ClosedReason();
 
-factory ClosedReason.fromJson(String json) { return switch (json) {
+factory ClosedReason.fromJson(String json) {return switch (json) {
   'acknowledged' => acknowledged,
   'approved' => approved,
   'canceled' => canceled,
@@ -14,7 +14,7 @@ factory ClosedReason.fromJson(String json) { return switch (json) {
   'refunded' => refunded,
   'refunded_as_fraud' => refundedAsFraud,
   _ => ClosedReason$Unknown(json),
-}; }
+};}
 
 static const ClosedReason acknowledged = ClosedReason$acknowledged._();
 
@@ -35,9 +35,9 @@ static const ClosedReason refundedAsFraud = ClosedReason$refundedAsFraud._();
 static const List<ClosedReason> values = [acknowledged, approved, canceled, disputed, paymentNeverSettled, redacted, refunded, refundedAsFraud];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'acknowledged' => 'acknowledged',
   'approved' => 'approved',
   'canceled' => 'canceled',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'refunded' => 'refunded',
   'refunded_as_fraud' => 'refundedAsFraud',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ClosedReason$Unknown; } 
+bool get isUnknown {return this is ClosedReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() acknowledged, required W Function() approved, required W Function() canceled, required W Function() disputed, required W Function() paymentNeverSettled, required W Function() redacted, required W Function() refunded, required W Function() refundedAsFraud, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() acknowledged, required W Function() approved, required W Function() canceled, required W Function() disputed, required W Function() paymentNeverSettled, required W Function() redacted, required W Function() refunded, required W Function() refundedAsFraud, required W Function(String value) $unknown, }) {return switch (this) {
       ClosedReason$acknowledged() => acknowledged(),
       ClosedReason$approved() => approved(),
       ClosedReason$canceled() => canceled(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() acknowledged, required W Function() approved, r
       ClosedReason$refunded() => refunded(),
       ClosedReason$refundedAsFraud() => refundedAsFraud(),
       ClosedReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowledged, W Function()? approved, W Function()? canceled, W Function()? disputed, W Function()? paymentNeverSettled, W Function()? redacted, W Function()? refunded, W Function()? refundedAsFraud, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowledged, W Function()? approved, W Function()? canceled, W Function()? disputed, W Function()? paymentNeverSettled, W Function()? redacted, W Function()? refunded, W Function()? refundedAsFraud, W Function(String value)? $unknown, }) {return switch (this) {
       ClosedReason$acknowledged() => acknowledged != null ? acknowledged() : orElse(value),
       ClosedReason$approved() => approved != null ? approved() : orElse(value),
       ClosedReason$canceled() => canceled != null ? canceled() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
       ClosedReason$refunded() => refunded != null ? refunded() : orElse(value),
       ClosedReason$refundedAsFraud() => refundedAsFraud != null ? refundedAsFraud() : orElse(value),
       ClosedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ClosedReason($value)';
 
- }
+}
 @immutable final class ClosedReason$acknowledged extends ClosedReason {const ClosedReason$acknowledged._();
 
 @override String get value => 'acknowledged';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => 'acknowledged'.hashCode;
 
- }
+}
 @immutable final class ClosedReason$approved extends ClosedReason {const ClosedReason$approved._();
 
 @override String get value => 'approved';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => 'approved'.hashCode;
 
- }
+}
 @immutable final class ClosedReason$canceled extends ClosedReason {const ClosedReason$canceled._();
 
 @override String get value => 'canceled';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class ClosedReason$disputed extends ClosedReason {const ClosedReason$disputed._();
 
 @override String get value => 'disputed';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => 'disputed'.hashCode;
 
- }
+}
 @immutable final class ClosedReason$paymentNeverSettled extends ClosedReason {const ClosedReason$paymentNeverSettled._();
 
 @override String get value => 'payment_never_settled';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => 'payment_never_settled'.hashCode;
 
- }
+}
 @immutable final class ClosedReason$redacted extends ClosedReason {const ClosedReason$redacted._();
 
 @override String get value => 'redacted';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => 'redacted'.hashCode;
 
- }
+}
 @immutable final class ClosedReason$refunded extends ClosedReason {const ClosedReason$refunded._();
 
 @override String get value => 'refunded';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => 'refunded'.hashCode;
 
- }
+}
 @immutable final class ClosedReason$refundedAsFraud extends ClosedReason {const ClosedReason$refundedAsFraud._();
 
 @override String get value => 'refunded_as_fraud';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => 'refunded_as_fraud'.hashCode;
 
- }
+}
 @immutable final class ClosedReason$Unknown extends ClosedReason {const ClosedReason$Unknown(this.value);
 
 @override final String value;
@@ -158,41 +158,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowle
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class ReviewObject {const ReviewObject();
 
-factory ReviewObject.fromJson(String json) { return switch (json) {
+factory ReviewObject.fromJson(String json) {return switch (json) {
   'review' => review,
   _ => ReviewObject$Unknown(json),
-}; }
+};}
 
 static const ReviewObject review = ReviewObject$review._();
 
 static const List<ReviewObject> values = [review];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'review' => 'review',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReviewObject$Unknown; } 
+bool get isUnknown {return this is ReviewObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() review, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() review, required W Function(String value) $unknown, }) {return switch (this) {
       ReviewObject$review() => review(),
       ReviewObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? review, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? review, W Function(String value)? $unknown, }) {return switch (this) {
       ReviewObject$review() => review != null ? review() : orElse(value),
       ReviewObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReviewObject($value)';
 
- }
+}
 @immutable final class ReviewObject$review extends ReviewObject {const ReviewObject$review._();
 
 @override String get value => 'review';
@@ -201,7 +201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? review, 
 
 @override int get hashCode => 'review'.hashCode;
 
- }
+}
 @immutable final class ReviewObject$Unknown extends ReviewObject {const ReviewObject$Unknown(this.value);
 
 @override final String value;
@@ -211,15 +211,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? review, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The reason the review was opened. One of `rule` or `manual`.
 sealed class OpenedReason {const OpenedReason();
 
-factory OpenedReason.fromJson(String json) { return switch (json) {
+factory OpenedReason.fromJson(String json) {return switch (json) {
   'manual' => manual,
   'rule' => rule,
   _ => OpenedReason$Unknown(json),
-}; }
+};}
 
 static const OpenedReason manual = OpenedReason$manual._();
 
@@ -228,30 +228,30 @@ static const OpenedReason rule = OpenedReason$rule._();
 static const List<OpenedReason> values = [manual, rule];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'manual' => 'manual',
   'rule' => 'rule',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OpenedReason$Unknown; } 
+bool get isUnknown {return this is OpenedReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() manual, required W Function() rule, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() manual, required W Function() rule, required W Function(String value) $unknown, }) {return switch (this) {
       OpenedReason$manual() => manual(),
       OpenedReason$rule() => rule(),
       OpenedReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? manual, W Function()? rule, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? manual, W Function()? rule, W Function(String value)? $unknown, }) {return switch (this) {
       OpenedReason$manual() => manual != null ? manual() : orElse(value),
       OpenedReason$rule() => rule != null ? rule() : orElse(value),
       OpenedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OpenedReason($value)';
 
- }
+}
 @immutable final class OpenedReason$manual extends OpenedReason {const OpenedReason$manual._();
 
 @override String get value => 'manual';
@@ -260,7 +260,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? manual, 
 
 @override int get hashCode => 'manual'.hashCode;
 
- }
+}
 @immutable final class OpenedReason$rule extends OpenedReason {const OpenedReason$rule._();
 
 @override String get value => 'rule';
@@ -269,7 +269,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? manual, 
 
 @override int get hashCode => 'rule'.hashCode;
 
- }
+}
 @immutable final class OpenedReason$Unknown extends OpenedReason {const OpenedReason$Unknown(this.value);
 
 @override final String value;
@@ -279,14 +279,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? manual, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Reviews can be used to supplement automated fraud detection with human expertise.
 /// 
 /// Learn more about [Radar](/radar) and reviewing payments
 /// [here](https://docs.stripe.com/radar/reviews).
 @immutable final class Review {const Review({required this.created, required this.id, required this.livemode, required this.object, required this.open, required this.openedReason, required this.reason, this.billingZip = const Omittable.absent(), this.charge = const Omittable.absent(), this.closedReason = const Omittable.absent(), this.ipAddress = const Omittable.absent(), this.ipAddressLocation = const Omittable.absent(), this.paymentIntent, this.session = const Omittable.absent(), });
 
-factory Review.fromJson(Map<String, dynamic> json) { return Review(
+factory Review.fromJson(Map<String, dynamic> json) {return Review(
   billingZip: json.containsKey('billing_zip') ? Omittable(json['billing_zip'] as String?) : const Omittable.absent(),
   charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? ApplicationFeeCharge.fromJson(json['charge']) : null) : const Omittable.absent(),
   closedReason: json.containsKey('closed_reason') ? Omittable(json['closed_reason'] != null ? ClosedReason.fromJson(json['closed_reason'] as String) : null) : const Omittable.absent(),
@@ -301,7 +301,7 @@ factory Review.fromJson(Map<String, dynamic> json) { return Review(
   paymentIntent: json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent']) : null,
   reason: json['reason'] as String,
   session: json.containsKey('session') ? Omittable(json['session'] != null ? RadarReviewResourceSession.fromJson(json['session'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The ZIP or postal code of the card used, if applicable.
 final Omittable<String?> billingZip;
@@ -345,7 +345,7 @@ final String reason;
 /// Information related to the browsing session of the user who initiated the payment.
 final Omittable<RadarReviewResourceSession?> session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingZip.isPresent) 'billing_zip': billingZip.value,
   if (charge.isPresent) 'charge': charge.value?.toJson(),
   if (closedReason.isPresent) 'closed_reason': closedReason.value?.toJson(),
@@ -360,16 +360,16 @@ Map<String, dynamic> toJson() { return {
   if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
   'reason': reason,
   if (session.isPresent) 'session': session.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('open') && json['open'] is bool &&
       json.containsKey('opened_reason') &&
-      json.containsKey('reason') && json['reason'] is String; } 
+      json.containsKey('reason') && json['reason'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final billingZip$ = billingZip.value;
 if (billingZip$ != null) {
   if (billingZip$.runes.length > 5000) { errors.add('billingZip: length must be <= 5000'); }
@@ -380,8 +380,8 @@ if (ipAddress$ != null) {
   if (ipAddress$.runes.length > 5000) { errors.add('ipAddress: length must be <= 5000'); }
 }
 if (reason.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
-return errors; } 
-Review copyWith({Omittable<String?>? billingZip, Omittable<ApplicationFeeCharge?>? charge, Omittable<ClosedReason?>? closedReason, int? created, String? id, Omittable<String?>? ipAddress, Omittable<RadarReviewResourceLocation?>? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, OpenedReason? openedReason, ChargePaymentIntent? Function()? paymentIntent, String? reason, Omittable<RadarReviewResourceSession?>? session, }) { return Review(
+return errors;}
+Review copyWith({Omittable<String?>? billingZip, Omittable<ApplicationFeeCharge?>? charge, Omittable<ClosedReason?>? closedReason, int? created, String? id, Omittable<String?>? ipAddress, Omittable<RadarReviewResourceLocation?>? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, OpenedReason? openedReason, ChargePaymentIntent? Function()? paymentIntent, String? reason, Omittable<RadarReviewResourceSession?>? session, }) {return Review(
   billingZip: billingZip ?? this.billingZip,
   charge: charge ?? this.charge,
   closedReason: closedReason ?? this.closedReason,
@@ -396,7 +396,7 @@ Review copyWith({Omittable<String?>? billingZip, Omittable<ApplicationFeeCharge?
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   reason: reason ?? this.reason,
   session: session ?? this.session,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Review &&
           billingZip == other.billingZip &&
@@ -418,4 +418,4 @@ Review copyWith({Omittable<String?>? billingZip, Omittable<ApplicationFeeCharge?
 
 @override String toString() => 'Review(\n  billingZip: $billingZip,\n  charge: $charge,\n  closedReason: $closedReason,\n  created: $created,\n  id: $id,\n  ipAddress: $ipAddress,\n  ipAddressLocation: $ipAddressLocation,\n  livemode: $livemode,\n  object: $object,\n  open: $open,\n  openedReason: $openedReason,\n  paymentIntent: $paymentIntent,\n  reason: $reason,\n  session: $session,\n)';
 
- }
+}

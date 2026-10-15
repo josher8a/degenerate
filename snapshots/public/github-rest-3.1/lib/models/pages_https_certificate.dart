@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PagesHttpsCertificateState {const PagesHttpsCertificateState();
 
-factory PagesHttpsCertificateState.fromJson(String json) { return switch (json) {
+factory PagesHttpsCertificateState.fromJson(String json) {return switch (json) {
   'new' => $new,
   'authorization_created' => authorizationCreated,
   'authorization_pending' => authorizationPending,
@@ -17,7 +17,7 @@ factory PagesHttpsCertificateState.fromJson(String json) { return switch (json) 
   'destroy_pending' => destroyPending,
   'dns_changed' => dnsChanged,
   _ => PagesHttpsCertificateState$Unknown(json),
-}; }
+};}
 
 static const PagesHttpsCertificateState $new = PagesHttpsCertificateState$$new._();
 
@@ -46,9 +46,9 @@ static const PagesHttpsCertificateState dnsChanged = PagesHttpsCertificateState$
 static const List<PagesHttpsCertificateState> values = [$new, authorizationCreated, authorizationPending, authorized, authorizationRevoked, issued, uploaded, approved, errored, badAuthz, destroyPending, dnsChanged];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'new' => r'$new',
   'authorization_created' => 'authorizationCreated',
   'authorization_pending' => 'authorizationPending',
@@ -62,11 +62,11 @@ String get name { return switch (value) {
   'destroy_pending' => 'destroyPending',
   'dns_changed' => 'dnsChanged',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PagesHttpsCertificateState$Unknown; } 
+bool get isUnknown {return this is PagesHttpsCertificateState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $new, required W Function() authorizationCreated, required W Function() authorizationPending, required W Function() authorized, required W Function() authorizationRevoked, required W Function() issued, required W Function() uploaded, required W Function() approved, required W Function() errored, required W Function() badAuthz, required W Function() destroyPending, required W Function() dnsChanged, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $new, required W Function() authorizationCreated, required W Function() authorizationPending, required W Function() authorized, required W Function() authorizationRevoked, required W Function() issued, required W Function() uploaded, required W Function() approved, required W Function() errored, required W Function() badAuthz, required W Function() destroyPending, required W Function() dnsChanged, required W Function(String value) $unknown, }) {return switch (this) {
       PagesHttpsCertificateState$$new() => $new(),
       PagesHttpsCertificateState$authorizationCreated() => authorizationCreated(),
       PagesHttpsCertificateState$authorizationPending() => authorizationPending(),
@@ -80,9 +80,9 @@ W when<W>({required W Function() $new, required W Function() authorizationCreate
       PagesHttpsCertificateState$destroyPending() => destroyPending(),
       PagesHttpsCertificateState$dnsChanged() => dnsChanged(),
       PagesHttpsCertificateState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W Function()? authorizationCreated, W Function()? authorizationPending, W Function()? authorized, W Function()? authorizationRevoked, W Function()? issued, W Function()? uploaded, W Function()? approved, W Function()? errored, W Function()? badAuthz, W Function()? destroyPending, W Function()? dnsChanged, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W Function()? authorizationCreated, W Function()? authorizationPending, W Function()? authorized, W Function()? authorizationRevoked, W Function()? issued, W Function()? uploaded, W Function()? approved, W Function()? errored, W Function()? badAuthz, W Function()? destroyPending, W Function()? dnsChanged, W Function(String value)? $unknown, }) {return switch (this) {
       PagesHttpsCertificateState$$new() => $new != null ? $new() : orElse(value),
       PagesHttpsCertificateState$authorizationCreated() => authorizationCreated != null ? authorizationCreated() : orElse(value),
       PagesHttpsCertificateState$authorizationPending() => authorizationPending != null ? authorizationPending() : orElse(value),
@@ -96,10 +96,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
       PagesHttpsCertificateState$destroyPending() => destroyPending != null ? destroyPending() : orElse(value),
       PagesHttpsCertificateState$dnsChanged() => dnsChanged != null ? dnsChanged() : orElse(value),
       PagesHttpsCertificateState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PagesHttpsCertificateState($value)';
 
- }
+}
 @immutable final class PagesHttpsCertificateState$$new extends PagesHttpsCertificateState {const PagesHttpsCertificateState$$new._();
 
 @override String get value => 'new';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'new'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$authorizationCreated extends PagesHttpsCertificateState {const PagesHttpsCertificateState$authorizationCreated._();
 
 @override String get value => 'authorization_created';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'authorization_created'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$authorizationPending extends PagesHttpsCertificateState {const PagesHttpsCertificateState$authorizationPending._();
 
 @override String get value => 'authorization_pending';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'authorization_pending'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$authorized extends PagesHttpsCertificateState {const PagesHttpsCertificateState$authorized._();
 
 @override String get value => 'authorized';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'authorized'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$authorizationRevoked extends PagesHttpsCertificateState {const PagesHttpsCertificateState$authorizationRevoked._();
 
 @override String get value => 'authorization_revoked';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'authorization_revoked'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$issued extends PagesHttpsCertificateState {const PagesHttpsCertificateState$issued._();
 
 @override String get value => 'issued';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'issued'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$uploaded extends PagesHttpsCertificateState {const PagesHttpsCertificateState$uploaded._();
 
 @override String get value => 'uploaded';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'uploaded'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$approved extends PagesHttpsCertificateState {const PagesHttpsCertificateState$approved._();
 
 @override String get value => 'approved';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'approved'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$errored extends PagesHttpsCertificateState {const PagesHttpsCertificateState$errored._();
 
 @override String get value => 'errored';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'errored'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$badAuthz extends PagesHttpsCertificateState {const PagesHttpsCertificateState$badAuthz._();
 
 @override String get value => 'bad_authz';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'bad_authz'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$destroyPending extends PagesHttpsCertificateState {const PagesHttpsCertificateState$destroyPending._();
 
 @override String get value => 'destroy_pending';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'destroy_pending'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$dnsChanged extends PagesHttpsCertificateState {const PagesHttpsCertificateState$dnsChanged._();
 
 @override String get value => 'dns_changed';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => 'dns_changed'.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificateState$Unknown extends PagesHttpsCertificateState {const PagesHttpsCertificateState$Unknown(this.value);
 
 @override final String value;
@@ -217,15 +217,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PagesHttpsCertificate {const PagesHttpsCertificate({required this.state, required this.description, required this.domains, this.expiresAt, });
 
-factory PagesHttpsCertificate.fromJson(Map<String, dynamic> json) { return PagesHttpsCertificate(
+factory PagesHttpsCertificate.fromJson(Map<String, dynamic> json) {return PagesHttpsCertificate(
   state: PagesHttpsCertificateState.fromJson(json['state'] as String),
   description: json['description'] as String,
   domains: (json['domains'] as List<dynamic>).map((e) => e as String).toList(),
   expiresAt: json['expires_at'] as String?,
-); }
+);}
 
 final PagesHttpsCertificateState state;
 
@@ -236,21 +236,21 @@ final List<String> domains;
 
 final String? expiresAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'state': state.toJson(),
   'description': description,
   'domains': domains,
   'expires_at': ?expiresAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state') &&
       json.containsKey('description') && json['description'] is String &&
-      json.containsKey('domains'); } 
-PagesHttpsCertificate copyWith({PagesHttpsCertificateState? state, String? description, List<String>? domains, String? Function()? expiresAt, }) { return PagesHttpsCertificate(
+      json.containsKey('domains');}
+PagesHttpsCertificate copyWith({PagesHttpsCertificateState? state, String? description, List<String>? domains, String? Function()? expiresAt, }) {return PagesHttpsCertificate(
   state: state ?? this.state,
   description: description ?? this.description,
   domains: domains ?? this.domains,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesHttpsCertificate &&
           state == other.state &&
@@ -262,4 +262,4 @@ PagesHttpsCertificate copyWith({PagesHttpsCertificateState? state, String? descr
 
 @override String toString() => 'PagesHttpsCertificate(state: $state, description: $description, domains: $domains, expiresAt: $expiresAt)';
 
- }
+}

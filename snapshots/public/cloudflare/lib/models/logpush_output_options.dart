@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.
 sealed class OutputType {const OutputType();
 
-factory OutputType.fromJson(String json) { return switch (json) {
+factory OutputType.fromJson(String json) {return switch (json) {
   'ndjson' => ndjson,
   'csv' => csv,
   _ => OutputType$Unknown(json),
-}; }
+};}
 
 static const OutputType ndjson = OutputType$ndjson._();
 
@@ -17,30 +17,30 @@ static const OutputType csv = OutputType$csv._();
 static const List<OutputType> values = [ndjson, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ndjson' => 'ndjson',
   'csv' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OutputType$Unknown; } 
+bool get isUnknown {return this is OutputType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ndjson, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ndjson, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       OutputType$ndjson() => ndjson(),
       OutputType$csv() => csv(),
       OutputType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ndjson, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ndjson, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       OutputType$ndjson() => ndjson != null ? ndjson() : orElse(value),
       OutputType$csv() => csv != null ? csv() : orElse(value),
       OutputType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OutputType($value)';
 
- }
+}
 @immutable final class OutputType$ndjson extends OutputType {const OutputType$ndjson._();
 
 @override String get value => 'ndjson';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ndjson, 
 
 @override int get hashCode => 'ndjson'.hashCode;
 
- }
+}
 @immutable final class OutputType$csv extends OutputType {const OutputType$csv._();
 
 @override String get value => 'csv';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ndjson, 
 
 @override int get hashCode => 'csv'.hashCode;
 
- }
+}
 @immutable final class OutputType$Unknown extends OutputType {const OutputType$Unknown(this.value);
 
 @override final String value;
@@ -68,17 +68,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ndjson, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
 sealed class TimestampFormat {const TimestampFormat();
 
-factory TimestampFormat.fromJson(String json) { return switch (json) {
+factory TimestampFormat.fromJson(String json) {return switch (json) {
   'unixnano' => unixnano,
   'unix' => unix,
   'rfc3339' => rfc3339,
   'rfc3339nano' => rfc3339nano,
   _ => TimestampFormat$Unknown(json),
-}; }
+};}
 
 static const TimestampFormat unixnano = TimestampFormat$unixnano._();
 
@@ -91,36 +91,36 @@ static const TimestampFormat rfc3339nano = TimestampFormat$rfc3339nano._();
 static const List<TimestampFormat> values = [unixnano, unix, rfc3339, rfc3339nano];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'unixnano' => 'unixnano',
   'unix' => 'unix',
   'rfc3339' => 'rfc3339',
   'rfc3339nano' => 'rfc3339nano',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TimestampFormat$Unknown; } 
+bool get isUnknown {return this is TimestampFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() unixnano, required W Function() unix, required W Function() rfc3339, required W Function() rfc3339nano, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() unixnano, required W Function() unix, required W Function() rfc3339, required W Function() rfc3339nano, required W Function(String value) $unknown, }) {return switch (this) {
       TimestampFormat$unixnano() => unixnano(),
       TimestampFormat$unix() => unix(),
       TimestampFormat$rfc3339() => rfc3339(),
       TimestampFormat$rfc3339nano() => rfc3339nano(),
       TimestampFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? unixnano, W Function()? unix, W Function()? rfc3339, W Function()? rfc3339nano, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unixnano, W Function()? unix, W Function()? rfc3339, W Function()? rfc3339nano, W Function(String value)? $unknown, }) {return switch (this) {
       TimestampFormat$unixnano() => unixnano != null ? unixnano() : orElse(value),
       TimestampFormat$unix() => unix != null ? unix() : orElse(value),
       TimestampFormat$rfc3339() => rfc3339 != null ? rfc3339() : orElse(value),
       TimestampFormat$rfc3339nano() => rfc3339nano != null ? rfc3339nano() : orElse(value),
       TimestampFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TimestampFormat($value)';
 
- }
+}
 @immutable final class TimestampFormat$unixnano extends TimestampFormat {const TimestampFormat$unixnano._();
 
 @override String get value => 'unixnano';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unixnano
 
 @override int get hashCode => 'unixnano'.hashCode;
 
- }
+}
 @immutable final class TimestampFormat$unix extends TimestampFormat {const TimestampFormat$unix._();
 
 @override String get value => 'unix';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unixnano
 
 @override int get hashCode => 'unix'.hashCode;
 
- }
+}
 @immutable final class TimestampFormat$rfc3339 extends TimestampFormat {const TimestampFormat$rfc3339._();
 
 @override String get value => 'rfc3339';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unixnano
 
 @override int get hashCode => 'rfc3339'.hashCode;
 
- }
+}
 @immutable final class TimestampFormat$rfc3339nano extends TimestampFormat {const TimestampFormat$rfc3339nano._();
 
 @override String get value => 'rfc3339nano';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unixnano
 
 @override int get hashCode => 'rfc3339nano'.hashCode;
 
- }
+}
 @immutable final class TimestampFormat$Unknown extends TimestampFormat {const TimestampFormat$Unknown(this.value);
 
 @override final String value;
@@ -166,11 +166,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unixnano
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The structured replacement for `logpull_options`. When including this field, the `logpull_option` field will be ignored.
 @immutable final class LogpushOutputOptions {const LogpushOutputOptions({this.cve202144228 = const Omittable.absent(), this.batchPrefix = const Omittable.absent(), this.batchSuffix = const Omittable.absent(), this.fieldDelimiter = const Omittable.absent(), this.fieldNames, this.outputType, this.recordDelimiter = const Omittable.absent(), this.recordPrefix = const Omittable.absent(), this.recordSuffix = const Omittable.absent(), this.recordTemplate = const Omittable.absent(), this.sampleRate = const Omittable.absent(), this.timestampFormat, });
 
-factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) { return LogpushOutputOptions(
+factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) {return LogpushOutputOptions(
   cve202144228: json.containsKey('CVE-2021-44228') ? Omittable(json['CVE-2021-44228'] as bool?) : const Omittable.absent(),
   batchPrefix: json.containsKey('batch_prefix') ? Omittable(json['batch_prefix'] as String?) : const Omittable.absent(),
   batchSuffix: json.containsKey('batch_suffix') ? Omittable(json['batch_suffix'] as String?) : const Omittable.absent(),
@@ -183,7 +183,7 @@ factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) { return Logpus
   recordTemplate: json.containsKey('record_template') ? Omittable(json['record_template'] as String?) : const Omittable.absent(),
   sampleRate: json.containsKey('sample_rate') ? Omittable(json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null) : const Omittable.absent(),
   timestampFormat: json['timestamp_format'] != null ? TimestampFormat.fromJson(json['timestamp_format'] as String) : null,
-); }
+);}
 
 /// If set to true, will cause all occurrences of `${` in the generated files to be replaced with `x{`.
 final Omittable<bool?> cve202144228;
@@ -225,7 +225,7 @@ final Omittable<double?> sampleRate;
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
 final TimestampFormat? timestampFormat;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cve202144228.isPresent) 'CVE-2021-44228': cve202144228.value,
   if (batchPrefix.isPresent) 'batch_prefix': batchPrefix.value,
   if (batchSuffix.isPresent) 'batch_suffix': batchSuffix.value,
@@ -238,17 +238,17 @@ Map<String, dynamic> toJson() { return {
   if (recordTemplate.isPresent) 'record_template': recordTemplate.value,
   if (sampleRate.isPresent) 'sample_rate': sampleRate.value,
   if (timestampFormat != null) 'timestamp_format': timestampFormat?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CVE-2021-44228', 'batch_prefix', 'batch_suffix', 'field_delimiter', 'field_names', 'output_type', 'record_delimiter', 'record_prefix', 'record_suffix', 'record_template', 'sample_rate', 'timestamp_format'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'CVE-2021-44228', 'batch_prefix', 'batch_suffix', 'field_delimiter', 'field_names', 'output_type', 'record_delimiter', 'record_prefix', 'record_suffix', 'record_template', 'sample_rate', 'timestamp_format'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final sampleRate$ = sampleRate.value;
 if (sampleRate$ != null) {
   if (sampleRate$ < 0) { errors.add('sampleRate: must be >= 0'); }
   if (sampleRate$ > 1) { errors.add('sampleRate: must be <= 1'); }
 }
-return errors; } 
-LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?>? batchPrefix, Omittable<String?>? batchSuffix, Omittable<String?>? fieldDelimiter, List<String>? Function()? fieldNames, OutputType? Function()? outputType, Omittable<String?>? recordDelimiter, Omittable<String?>? recordPrefix, Omittable<String?>? recordSuffix, Omittable<String?>? recordTemplate, Omittable<double?>? sampleRate, TimestampFormat? Function()? timestampFormat, }) { return LogpushOutputOptions(
+return errors;}
+LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?>? batchPrefix, Omittable<String?>? batchSuffix, Omittable<String?>? fieldDelimiter, List<String>? Function()? fieldNames, OutputType? Function()? outputType, Omittable<String?>? recordDelimiter, Omittable<String?>? recordPrefix, Omittable<String?>? recordSuffix, Omittable<String?>? recordTemplate, Omittable<double?>? sampleRate, TimestampFormat? Function()? timestampFormat, }) {return LogpushOutputOptions(
   cve202144228: cve202144228 ?? this.cve202144228,
   batchPrefix: batchPrefix ?? this.batchPrefix,
   batchSuffix: batchSuffix ?? this.batchSuffix,
@@ -261,7 +261,7 @@ LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?
   recordTemplate: recordTemplate ?? this.recordTemplate,
   sampleRate: sampleRate ?? this.sampleRate,
   timestampFormat: timestampFormat != null ? timestampFormat() : this.timestampFormat,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushOutputOptions &&
           cve202144228 == other.cve202144228 &&
@@ -281,4 +281,4 @@ LogpushOutputOptions copyWith({Omittable<bool?>? cve202144228, Omittable<String?
 
 @override String toString() => 'LogpushOutputOptions(\n  cve202144228: $cve202144228,\n  batchPrefix: $batchPrefix,\n  batchSuffix: $batchSuffix,\n  fieldDelimiter: $fieldDelimiter,\n  fieldNames: $fieldNames,\n  outputType: $outputType,\n  recordDelimiter: $recordDelimiter,\n  recordPrefix: $recordPrefix,\n  recordSuffix: $recordSuffix,\n  recordTemplate: $recordTemplate,\n  sampleRate: $sampleRate,\n  timestampFormat: $timestampFormat,\n)';
 
- }
+}

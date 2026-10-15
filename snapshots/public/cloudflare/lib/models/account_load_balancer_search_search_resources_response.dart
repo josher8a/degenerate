@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';import 'package:pub_cloudflare/models/load_balancing_result_info.dart';import 'package:pub_cloudflare/models/load_balancing_search.dart';@immutable final class AccountLoadBalancerSearchSearchResourcesResponse {const AccountLoadBalancerSearchSearchResourcesResponse({required this.errors, required this.messages, required this.success, required this.resultInfo, required this.result, });
 
-factory AccountLoadBalancerSearchSearchResourcesResponse.fromJson(Map<String, dynamic> json) { return AccountLoadBalancerSearchSearchResourcesResponse(
+factory AccountLoadBalancerSearchSearchResourcesResponse.fromJson(Map<String, dynamic> json) {return AccountLoadBalancerSearchSearchResourcesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: LoadBalancingResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   result: LoadBalancingSearch.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<LoadBalancingMessages2> errors;
 
@@ -24,25 +24,25 @@ final LoadBalancingResultInfo resultInfo;
 
 final LoadBalancingSearch result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result_info': resultInfo.toJson(),
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result_info') &&
-      json.containsKey('result'); } 
-AccountLoadBalancerSearchSearchResourcesResponse copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingResultInfo? resultInfo, LoadBalancingSearch? result, }) { return AccountLoadBalancerSearchSearchResourcesResponse(
+      json.containsKey('result');}
+AccountLoadBalancerSearchSearchResourcesResponse copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingResultInfo? resultInfo, LoadBalancingSearch? result, }) {return AccountLoadBalancerSearchSearchResourcesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo ?? this.resultInfo,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountLoadBalancerSearchSearchResourcesResponse &&
           listEquals(errors, other.errors) &&
@@ -55,4 +55,4 @@ AccountLoadBalancerSearchSearchResourcesResponse copyWith({List<LoadBalancingMes
 
 @override String toString() => 'AccountLoadBalancerSearchSearchResourcesResponse(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_update_status_check_protection_request/repos_update_status_check_protection_request_checks.dart';@immutable final class ReposUpdateStatusCheckProtectionRequest {const ReposUpdateStatusCheckProtectionRequest({this.strict, this.contexts, this.checks, });
 
-factory ReposUpdateStatusCheckProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateStatusCheckProtectionRequest(
+factory ReposUpdateStatusCheckProtectionRequest.fromJson(Map<String, dynamic> json) {return ReposUpdateStatusCheckProtectionRequest(
   strict: json['strict'] as bool?,
   contexts: (json['contexts'] as List<dynamic>?)?.map((e) => e as String).toList(),
   checks: (json['checks'] as List<dynamic>?)?.map((e) => ReposUpdateStatusCheckProtectionRequestChecks.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Require branches to be up to date before merging.
 final bool? strict;
@@ -18,17 +18,17 @@ final List<String>? contexts;
 /// The list of status checks to require in order to merge into this branch.
 final List<ReposUpdateStatusCheckProtectionRequestChecks>? checks;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'strict': ?strict,
   'contexts': ?contexts,
   if (checks != null) 'checks': checks?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'strict', 'contexts', 'checks'}.contains(key)); } 
-ReposUpdateStatusCheckProtectionRequest copyWith({bool? Function()? strict, List<String>? Function()? contexts, List<ReposUpdateStatusCheckProtectionRequestChecks>? Function()? checks, }) { return ReposUpdateStatusCheckProtectionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'strict', 'contexts', 'checks'}.contains(key));}
+ReposUpdateStatusCheckProtectionRequest copyWith({bool? Function()? strict, List<String>? Function()? contexts, List<ReposUpdateStatusCheckProtectionRequestChecks>? Function()? checks, }) {return ReposUpdateStatusCheckProtectionRequest(
   strict: strict != null ? strict() : this.strict,
   contexts: contexts != null ? contexts() : this.contexts,
   checks: checks != null ? checks() : this.checks,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateStatusCheckProtectionRequest &&
           strict == other.strict &&
@@ -39,4 +39,4 @@ ReposUpdateStatusCheckProtectionRequest copyWith({bool? Function()? strict, List
 
 @override String toString() => 'ReposUpdateStatusCheckProtectionRequest(strict: $strict, contexts: $contexts, checks: $checks)';
 
- }
+}

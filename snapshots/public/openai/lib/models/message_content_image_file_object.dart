@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_image_file_object/message_content_image_file_object_image_file.dart';import 'package:pub_openai/models/message_content_image_file_object/message_content_image_file_object_type.dart';/// References an image [File](/docs/api-reference/files) in the content of a message.
 @immutable final class MessageContentImageFileObject {const MessageContentImageFileObject({required this.type, required this.imageFile, });
 
-factory MessageContentImageFileObject.fromJson(Map<String, dynamic> json) { return MessageContentImageFileObject(
+factory MessageContentImageFileObject.fromJson(Map<String, dynamic> json) {return MessageContentImageFileObject(
   type: MessageContentImageFileObjectType.fromJson(json['type'] as String),
   imageFile: MessageContentImageFileObjectImageFile.fromJson(json['image_file'] as Map<String, dynamic>),
-); }
+);}
 
 /// Always `image_file`.
 final MessageContentImageFileObjectType type;
 
 final MessageContentImageFileObjectImageFile imageFile;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'image_file': imageFile.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'image_file' &&
-      json.containsKey('image_file'); } 
-MessageContentImageFileObject copyWith({MessageContentImageFileObjectType? type, MessageContentImageFileObjectImageFile? imageFile, }) { return MessageContentImageFileObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'image_file' &&
+      json.containsKey('image_file');}
+MessageContentImageFileObject copyWith({MessageContentImageFileObjectType? type, MessageContentImageFileObjectImageFile? imageFile, }) {return MessageContentImageFileObject(
   type: type ?? this.type,
   imageFile: imageFile ?? this.imageFile,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentImageFileObject &&
           type == other.type &&
@@ -33,4 +33,4 @@ MessageContentImageFileObject copyWith({MessageContentImageFileObjectType? type,
 
 @override String toString() => 'MessageContentImageFileObject(type: $type, imageFile: $imageFile)';
 
- }
+}

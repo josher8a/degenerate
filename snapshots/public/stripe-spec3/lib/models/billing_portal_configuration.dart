@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/portal_business_profile.dart';import 'package:pub_stripe_spec3/models/portal_features.dart';import 'package:pub_stripe_spec3/models/portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class BillingPortalConfigurationObject {const BillingPortalConfigurationObject();
 
-factory BillingPortalConfigurationObject.fromJson(String json) { return switch (json) {
+factory BillingPortalConfigurationObject.fromJson(String json) {return switch (json) {
   'billing_portal.configuration' => billingPortalConfiguration,
   _ => BillingPortalConfigurationObject$Unknown(json),
-}; }
+};}
 
 static const BillingPortalConfigurationObject billingPortalConfiguration = BillingPortalConfigurationObject$billingPortalConfiguration._();
 
 static const List<BillingPortalConfigurationObject> values = [billingPortalConfiguration];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'billing_portal.configuration' => 'billingPortalConfiguration',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingPortalConfigurationObject$Unknown; } 
+bool get isUnknown {return this is BillingPortalConfigurationObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() billingPortalConfiguration, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() billingPortalConfiguration, required W Function(String value) $unknown, }) {return switch (this) {
       BillingPortalConfigurationObject$billingPortalConfiguration() => billingPortalConfiguration(),
       BillingPortalConfigurationObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingPortalConfiguration, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingPortalConfiguration, W Function(String value)? $unknown, }) {return switch (this) {
       BillingPortalConfigurationObject$billingPortalConfiguration() => billingPortalConfiguration != null ? billingPortalConfiguration() : orElse(value),
       BillingPortalConfigurationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingPortalConfigurationObject($value)';
 
- }
+}
 @immutable final class BillingPortalConfigurationObject$billingPortalConfiguration extends BillingPortalConfigurationObject {const BillingPortalConfigurationObject$billingPortalConfiguration._();
 
 @override String get value => 'billing_portal.configuration';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingP
 
 @override int get hashCode => 'billing_portal.configuration'.hashCode;
 
- }
+}
 @immutable final class BillingPortalConfigurationObject$Unknown extends BillingPortalConfigurationObject {const BillingPortalConfigurationObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingP
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A portal configuration describes the functionality and behavior you embed in a portal session. Related guide: [Configure the customer portal](/customer-management/configure-portal).
 @immutable final class BillingPortalConfiguration {const BillingPortalConfiguration({required this.active, required this.businessProfile, required this.created, required this.features, required this.id, required this.isDefault, required this.livemode, required this.loginPage, required this.object, required this.updated, this.application = const Omittable.absent(), this.defaultReturnUrl = const Omittable.absent(), this.metadata = const Omittable.absent(), this.name = const Omittable.absent(), });
 
-factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return BillingPortalConfiguration(
+factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) {return BillingPortalConfiguration(
   active: json['active'] as bool,
   application: json.containsKey('application') ? Omittable(json['application'] != null ? BillingPortalConfigurationApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   businessProfile: PortalBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>),
@@ -72,7 +72,7 @@ factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return 
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: BillingPortalConfigurationObject.fromJson(json['object'] as String),
   updated: (json['updated'] as num).toInt(),
-); }
+);}
 
 /// Whether the configuration is active and can be used to create portal sessions.
 final bool active;
@@ -113,7 +113,7 @@ final BillingPortalConfigurationObject object;
 /// Time at which the object was last updated. Measured in seconds since the Unix epoch.
 final int updated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   if (application.isPresent) 'application': application.value?.toJson(),
   'business_profile': businessProfile.toJson(),
@@ -128,8 +128,8 @@ Map<String, dynamic> toJson() { return {
   if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
   'updated': updated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('business_profile') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('features') &&
@@ -138,9 +138,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('login_page') &&
       json.containsKey('object') &&
-      json.containsKey('updated') && json['updated'] is num; } 
+      json.containsKey('updated') && json['updated'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final defaultReturnUrl$ = defaultReturnUrl.value;
 if (defaultReturnUrl$ != null) {
   if (defaultReturnUrl$.runes.length > 5000) { errors.add('defaultReturnUrl: length must be <= 5000'); }
@@ -150,8 +150,8 @@ final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-return errors; } 
-BillingPortalConfiguration copyWith({bool? active, Omittable<BillingPortalConfigurationApplication?>? application, PortalBusinessProfile? businessProfile, int? created, Omittable<String?>? defaultReturnUrl, PortalFeatures? features, String? id, bool? isDefault, bool? livemode, PortalLoginPage? loginPage, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, BillingPortalConfigurationObject? object, int? updated, }) { return BillingPortalConfiguration(
+return errors;}
+BillingPortalConfiguration copyWith({bool? active, Omittable<BillingPortalConfigurationApplication?>? application, PortalBusinessProfile? businessProfile, int? created, Omittable<String?>? defaultReturnUrl, PortalFeatures? features, String? id, bool? isDefault, bool? livemode, PortalLoginPage? loginPage, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, BillingPortalConfigurationObject? object, int? updated, }) {return BillingPortalConfiguration(
   active: active ?? this.active,
   application: application ?? this.application,
   businessProfile: businessProfile ?? this.businessProfile,
@@ -166,7 +166,7 @@ BillingPortalConfiguration copyWith({bool? active, Omittable<BillingPortalConfig
   name: name ?? this.name,
   object: object ?? this.object,
   updated: updated ?? this.updated,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingPortalConfiguration &&
           active == other.active &&
@@ -188,4 +188,4 @@ BillingPortalConfiguration copyWith({bool? active, Omittable<BillingPortalConfig
 
 @override String toString() => 'BillingPortalConfiguration(\n  active: $active,\n  application: $application,\n  businessProfile: $businessProfile,\n  created: $created,\n  defaultReturnUrl: $defaultReturnUrl,\n  features: $features,\n  id: $id,\n  isDefault: $isDefault,\n  livemode: $livemode,\n  loginPage: $loginPage,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  updated: $updated,\n)';
 
- }
+}

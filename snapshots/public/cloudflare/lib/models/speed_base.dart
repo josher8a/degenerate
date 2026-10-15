@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';@immutable final class SpeedBase {const SpeedBase({this.editable, this.id, this.modifiedOn = const Omittable.absent(), this.value, });
 
-factory SpeedBase.fromJson(Map<String, dynamic> json) { return SpeedBase(
+factory SpeedBase.fromJson(Map<String, dynamic> json) {return SpeedBase(
   editable: json['editable'] as bool?,
   id: json['id'] as String?,
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -31,19 +31,19 @@ final CacheRulesSmartTieredCachePatchValue? value;
 /// The value of `editable`, or its schema default when absent.
 bool get editableOrDefault => editable ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': ?id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SpeedBase copyWith({bool? Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return SpeedBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key));}
+SpeedBase copyWith({bool? Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, CacheRulesSmartTieredCachePatchValue? Function()? value, }) {return SpeedBase(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpeedBase &&
           editable == other.editable &&
@@ -55,4 +55,4 @@ SpeedBase copyWith({bool? Function()? editable, String? Function()? id, Omittabl
 
 @override String toString() => 'SpeedBase(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

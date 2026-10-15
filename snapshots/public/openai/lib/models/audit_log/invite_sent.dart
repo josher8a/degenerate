@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/invite_sent_data.dart';/// The details for events with this `type`.
 @immutable final class InviteSent {const InviteSent({this.id, this.data, });
 
-factory InviteSent.fromJson(Map<String, dynamic> json) { return InviteSent(
+factory InviteSent.fromJson(Map<String, dynamic> json) {return InviteSent(
   id: json['id'] as String?,
   data: json['data'] != null ? InviteSentData.fromJson(json['data'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The ID of the invite.
 final String? id;
@@ -15,15 +15,15 @@ final String? id;
 /// The payload used to create the invite.
 final InviteSentData? data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (data != null) 'data': data?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'data'}.contains(key)); } 
-InviteSent copyWith({String? Function()? id, InviteSentData? Function()? data, }) { return InviteSent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'data'}.contains(key));}
+InviteSent copyWith({String? Function()? id, InviteSentData? Function()? data, }) {return InviteSent(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InviteSent &&
           id == other.id &&
@@ -33,4 +33,4 @@ InviteSent copyWith({String? Function()? id, InviteSentData? Function()? data, }
 
 @override String toString() => 'InviteSent(id: $id, data: $data)';
 
- }
+}

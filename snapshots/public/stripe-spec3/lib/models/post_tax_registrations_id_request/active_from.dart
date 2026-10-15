@@ -8,11 +8,11 @@ const ActiveFrom({this.trialEndVariant1 = const Omittable.absent(), this.$int = 
 const ActiveFrom._({required this.rawValue, required this.trialEndVariant1, required this.$int, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ActiveFrom.fromJson(Object? json) { return ActiveFrom._(
+factory ActiveFrom.fromJson(Object? json) {return ActiveFrom._(
   rawValue: Omittable(json),
   trialEndVariant1: parseAnyOfVariant<TrialEndVariant1>(json, (value) => TrialEndVariant1.fromJson(value! as String)),
   $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ActiveFrom(${toJson()})';
 
- }
+}

@@ -31,7 +31,7 @@ String toJson() => value;
 }
 @immutable final class AccessBookmarks {const AccessBookmarks({this.appLauncherVisible, this.createdAt, this.domain, this.id, this.logoUrl, this.name, this.updatedAt, });
 
-factory AccessBookmarks.fromJson(Map<String, dynamic> json) { return AccessBookmarks(
+factory AccessBookmarks.fromJson(Map<String, dynamic> json) {return AccessBookmarks(
   appLauncherVisible: json['app_launcher_visible'] != null ? AccessSchemasAppLauncherVisible.fromJson(json['app_launcher_visible'] as bool) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   domain: json['domain'] != null ? AccessSchemasDomain.fromJson(json['domain'] as String) : null,
@@ -39,7 +39,7 @@ factory AccessBookmarks.fromJson(Map<String, dynamic> json) { return AccessBookm
   logoUrl: json['logo_url'] != null ? AccessSchemasLogoUrl.fromJson(json['logo_url'] as String) : null,
   name: json['name'] != null ? AccessBookmarksComponentsSchemasName.fromJson(json['name'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final AccessSchemasAppLauncherVisible? appLauncherVisible;
 
@@ -56,7 +56,7 @@ final AccessBookmarksComponentsSchemasName? name;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (appLauncherVisible != null) 'app_launcher_visible': appLauncherVisible?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (domain != null) 'domain': domain?.toJson(),
@@ -64,9 +64,9 @@ Map<String, dynamic> toJson() { return {
   if (logoUrl != null) 'logo_url': logoUrl?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_launcher_visible', 'created_at', 'domain', 'id', 'logo_url', 'name', 'updated_at'}.contains(key)); } 
-AccessBookmarks copyWith({AccessSchemasAppLauncherVisible? Function()? appLauncherVisible, AccessTimestamp? Function()? createdAt, AccessSchemasDomain? Function()? domain, String? Function()? id, AccessSchemasLogoUrl? Function()? logoUrl, AccessBookmarksComponentsSchemasName? Function()? name, AccessTimestamp? Function()? updatedAt, }) { return AccessBookmarks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'app_launcher_visible', 'created_at', 'domain', 'id', 'logo_url', 'name', 'updated_at'}.contains(key));}
+AccessBookmarks copyWith({AccessSchemasAppLauncherVisible? Function()? appLauncherVisible, AccessTimestamp? Function()? createdAt, AccessSchemasDomain? Function()? domain, String? Function()? id, AccessSchemasLogoUrl? Function()? logoUrl, AccessBookmarksComponentsSchemasName? Function()? name, AccessTimestamp? Function()? updatedAt, }) {return AccessBookmarks(
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   domain: domain != null ? domain() : this.domain,
@@ -74,7 +74,7 @@ AccessBookmarks copyWith({AccessSchemasAppLauncherVisible? Function()? appLaunch
   logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessBookmarks &&
           appLauncherVisible == other.appLauncherVisible &&
@@ -89,4 +89,4 @@ AccessBookmarks copyWith({AccessSchemasAppLauncherVisible? Function()? appLaunch
 
 @override String toString() => 'AccessBookmarks(appLauncherVisible: $appLauncherVisible, createdAt: $createdAt, domain: $domain, id: $id, logoUrl: $logoUrl, name: $name, updatedAt: $updatedAt)';
 
- }
+}

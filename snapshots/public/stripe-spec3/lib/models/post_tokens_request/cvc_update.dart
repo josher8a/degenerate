@@ -4,23 +4,23 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The updated CVC value this token represents.
 @immutable final class CvcUpdate {const CvcUpdate({required this.cvc});
 
-factory CvcUpdate.fromJson(Map<String, dynamic> json) { return CvcUpdate(
+factory CvcUpdate.fromJson(Map<String, dynamic> json) {return CvcUpdate(
   cvc: json['cvc'] as String,
-); }
+);}
 
 final String cvc;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cvc': cvc,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvc') && json['cvc'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cvc') && json['cvc'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (cvc.runes.length > 5000) { errors.add('cvc: length must be <= 5000'); }
-return errors; } 
-CvcUpdate copyWith({String? cvc}) { return CvcUpdate(
+return errors;}
+CvcUpdate copyWith({String? cvc}) {return CvcUpdate(
   cvc: cvc ?? this.cvc,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CvcUpdate &&
           cvc == other.cvc;
@@ -29,4 +29,4 @@ CvcUpdate copyWith({String? cvc}) { return CvcUpdate(
 
 @override String toString() => 'CvcUpdate(cvc: $cvc)';
 
- }
+}

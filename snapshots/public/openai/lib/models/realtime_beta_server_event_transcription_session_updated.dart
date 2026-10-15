@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeBetaServerEventTranscriptionSessionUpdated {const RealtimeBetaServerEventTranscriptionSessionUpdated({required this.eventId, required this.type, required this.session, });
 
-factory RealtimeBetaServerEventTranscriptionSessionUpdated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventTranscriptionSessionUpdated(
+factory RealtimeBetaServerEventTranscriptionSessionUpdated.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventTranscriptionSessionUpdated(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventTranscriptionSessionUpdatedType.fromJson(json['type'] as String),
   session: RealtimeTranscriptionSessionCreateResponse.fromJson(json['session'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -20,19 +20,19 @@ final RealtimeBetaServerEventTranscriptionSessionUpdatedType type;
 
 final RealtimeTranscriptionSessionCreateResponse session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'session': session.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('session'); } 
-RealtimeBetaServerEventTranscriptionSessionUpdated copyWith({String? eventId, RealtimeBetaServerEventTranscriptionSessionUpdatedType? type, RealtimeTranscriptionSessionCreateResponse? session, }) { return RealtimeBetaServerEventTranscriptionSessionUpdated(
+      json.containsKey('session');}
+RealtimeBetaServerEventTranscriptionSessionUpdated copyWith({String? eventId, RealtimeBetaServerEventTranscriptionSessionUpdatedType? type, RealtimeTranscriptionSessionCreateResponse? session, }) {return RealtimeBetaServerEventTranscriptionSessionUpdated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   session: session ?? this.session,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventTranscriptionSessionUpdated &&
           eventId == other.eventId &&
@@ -43,4 +43,4 @@ RealtimeBetaServerEventTranscriptionSessionUpdated copyWith({String? eventId, Re
 
 @override String toString() => 'RealtimeBetaServerEventTranscriptionSessionUpdated(eventId: $eventId, type: $type, session: $session)';
 
- }
+}

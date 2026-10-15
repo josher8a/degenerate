@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGetHostedRunnersPlatformsForOrgResponse {const ActionsGetHostedRunnersPlatformsForOrgResponse({required this.totalCount, required this.platforms, });
 
-factory ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsGetHostedRunnersPlatformsForOrgResponse(
+factory ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsGetHostedRunnersPlatformsForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),
   platforms: (json['platforms'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<String> platforms;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'platforms': platforms,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('platforms'); } 
-ActionsGetHostedRunnersPlatformsForOrgResponse copyWith({int? totalCount, List<String>? platforms, }) { return ActionsGetHostedRunnersPlatformsForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('platforms');}
+ActionsGetHostedRunnersPlatformsForOrgResponse copyWith({int? totalCount, List<String>? platforms, }) {return ActionsGetHostedRunnersPlatformsForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   platforms: platforms ?? this.platforms,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGetHostedRunnersPlatformsForOrgResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsGetHostedRunnersPlatformsForOrgResponse copyWith({int? totalCount, List<S
 
 @override String toString() => 'ActionsGetHostedRunnersPlatformsForOrgResponse(totalCount: $totalCount, platforms: $platforms)';
 
- }
+}

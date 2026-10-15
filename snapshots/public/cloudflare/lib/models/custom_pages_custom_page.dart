@@ -9,7 +9,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class CustomPagesCustomPage {const CustomPagesCustomPage({this.createdOn, this.description, this.id, this.modifiedOn, this.previewTarget, this.requiredTokens, this.state, this.url, });
 
-factory CustomPagesCustomPage.fromJson(Map<String, dynamic> json) { return CustomPagesCustomPage(
+factory CustomPagesCustomPage.fromJson(Map<String, dynamic> json) {return CustomPagesCustomPage(
   createdOn: json['created_on'] != null ? CustomPagesTimestamp.fromJson(json['created_on'] as String) : null,
   description: json['description'] as String?,
   id: json['id'] as String?,
@@ -18,7 +18,7 @@ factory CustomPagesCustomPage.fromJson(Map<String, dynamic> json) { return Custo
   requiredTokens: (json['required_tokens'] as List<dynamic>?)?.map((e) => e as String).toList(),
   state: json['state'] != null ? CustomPagesState.fromJson(json['state'] as String) : null,
   url: json['url'] != null ? CustomPagesUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 final CustomPagesTimestamp? createdOn;
 
@@ -40,7 +40,7 @@ final CustomPagesState? state;
 
 final CustomPagesUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   'description': ?description,
   'id': ?id,
@@ -49,9 +49,9 @@ Map<String, dynamic> toJson() { return {
   'required_tokens': ?requiredTokens,
   if (state != null) 'state': state?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'id', 'modified_on', 'preview_target', 'required_tokens', 'state', 'url'}.contains(key)); } 
-CustomPagesCustomPage copyWith({CustomPagesTimestamp? Function()? createdOn, String? Function()? description, String? Function()? id, CustomPagesTimestamp? Function()? modifiedOn, String? Function()? previewTarget, List<String>? Function()? requiredTokens, CustomPagesState? Function()? state, CustomPagesUrl? Function()? url, }) { return CustomPagesCustomPage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'description', 'id', 'modified_on', 'preview_target', 'required_tokens', 'state', 'url'}.contains(key));}
+CustomPagesCustomPage copyWith({CustomPagesTimestamp? Function()? createdOn, String? Function()? description, String? Function()? id, CustomPagesTimestamp? Function()? modifiedOn, String? Function()? previewTarget, List<String>? Function()? requiredTokens, CustomPagesState? Function()? state, CustomPagesUrl? Function()? url, }) {return CustomPagesCustomPage(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
@@ -60,7 +60,7 @@ CustomPagesCustomPage copyWith({CustomPagesTimestamp? Function()? createdOn, Str
   requiredTokens: requiredTokens != null ? requiredTokens() : this.requiredTokens,
   state: state != null ? state() : this.state,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomPagesCustomPage &&
           createdOn == other.createdOn &&
@@ -76,4 +76,4 @@ CustomPagesCustomPage copyWith({CustomPagesTimestamp? Function()? createdOn, Str
 
 @override String toString() => 'CustomPagesCustomPage(createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, previewTarget: $previewTarget, requiredTokens: $requiredTokens, state: $state, url: $url)';
 
- }
+}

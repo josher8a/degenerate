@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/repos_update_invitation_request/repos_update_invitation_request_permissions.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Repository invitations let you manage who you collaborate with.
 @immutable final class RepositoryInvitation {const RepositoryInvitation({required this.id, required this.repository, required this.invitee, required this.inviter, required this.permissions, required this.createdAt, required this.url, required this.htmlUrl, required this.nodeId, this.expired, });
 
-factory RepositoryInvitation.fromJson(Map<String, dynamic> json) { return RepositoryInvitation(
+factory RepositoryInvitation.fromJson(Map<String, dynamic> json) {return RepositoryInvitation(
   id: (json['id'] as num).toInt(),
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
   invitee: json['invitee'] != null ? SimpleUser.fromJson(json['invitee'] as Map<String, dynamic>) : null,
@@ -15,7 +15,7 @@ factory RepositoryInvitation.fromJson(Map<String, dynamic> json) { return Reposi
   url: json['url'] as String,
   htmlUrl: json['html_url'] as String,
   nodeId: json['node_id'] as String,
-); }
+);}
 
 /// Unique identifier of the repository invitation.
 final int id;
@@ -41,7 +41,7 @@ final String htmlUrl;
 
 final String nodeId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'repository': repository.toJson(),
   'invitee': invitee?.toJson(),
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'html_url': htmlUrl,
   'node_id': nodeId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('repository') &&
       json.containsKey('invitee') &&
       json.containsKey('inviter') &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('node_id') && json['node_id'] is String; } 
-RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUser? Function()? invitee, SimpleUser? Function()? inviter, ReposUpdateInvitationRequestPermissions? permissions, DateTime? createdAt, bool? Function()? expired, String? url, String? htmlUrl, String? nodeId, }) { return RepositoryInvitation(
+      json.containsKey('node_id') && json['node_id'] is String;}
+RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUser? Function()? invitee, SimpleUser? Function()? inviter, ReposUpdateInvitationRequestPermissions? permissions, DateTime? createdAt, bool? Function()? expired, String? url, String? htmlUrl, String? nodeId, }) {return RepositoryInvitation(
   id: id ?? this.id,
   repository: repository ?? this.repository,
   invitee: invitee != null ? invitee() : this.invitee,
@@ -73,7 +73,7 @@ RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUse
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   nodeId: nodeId ?? this.nodeId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryInvitation &&
           id == other.id &&
@@ -91,4 +91,4 @@ RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUse
 
 @override String toString() => 'RepositoryInvitation(\n  id: $id,\n  repository: $repository,\n  invitee: $invitee,\n  inviter: $inviter,\n  permissions: $permissions,\n  createdAt: $createdAt,\n  expired: $expired,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  nodeId: $nodeId,\n)';
 
- }
+}

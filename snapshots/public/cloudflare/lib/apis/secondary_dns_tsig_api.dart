@@ -14,7 +14,7 @@ final class SecondaryDnsTsigApi with ApiExecutor {const SecondaryDnsTsigApi(this
 /// List TSIGs.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/tsigs`
-Future<ApiResult<List<SecondaryDnsTsig>?, SecondaryDnsTsigListTsiGsError>> secondaryDnsTsigListTsiGs({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecondaryDnsTsig>?, SecondaryDnsTsigListTsiGsError>> secondaryDnsTsigListTsiGs({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: SecondaryDnsTsigListTsiGsError.fromResponse,
 );
- } 
+}
 /// Create TSIG
 ///
 /// Create TSIG.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/tsigs`
-Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigCreateTsigError>> secondaryDnsTsigCreateTsig({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigCreateTsigError>> secondaryDnsTsigCreateTsig({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: SecondaryDnsTsigCreateTsigError.fromResponse,
 );
- } 
+}
 /// TSIG Details
 ///
 /// Get TSIG.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigTsigDetailsError>> secondaryDnsTsigTsigDetails({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigTsigDetailsError>> secondaryDnsTsigTsigDetails({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: SecondaryDnsTsigTsigDetailsError.fromResponse,
 );
- } 
+}
 /// Update TSIG
 ///
 /// Modify TSIG.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigUpdateTsigError>> secondaryDnsTsigUpdateTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsTsig?, SecondaryDnsTsigUpdateTsigError>> secondaryDnsTsigUpdateTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsTsigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: SecondaryDnsTsigUpdateTsigError.fromResponse,
 );
- } 
+}
 /// Delete TSIG
 ///
 /// Delete TSIG.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/tsigs/{tsig_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsTsigDeleteTsigError>> secondaryDnsTsigDeleteTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsTsigDeleteTsigError>> secondaryDnsTsigDeleteTsig({required SecondaryDnsSchemasIdentifier tsigId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,5 +127,5 @@ return await execute(
   },
   onError: SecondaryDnsTsigDeleteTsigError.fromResponse,
 );
- } 
- }
+}
+}

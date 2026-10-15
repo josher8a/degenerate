@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';@immutable final class WebhooksComment {const WebhooksComment({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, required this.reactions, required this.repositoryUrl, required this.updatedAt, required this.user, });
 
-factory WebhooksComment.fromJson(Map<String, dynamic> json) { return WebhooksComment(
+factory WebhooksComment.fromJson(Map<String, dynamic> json) {return WebhooksComment(
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   childCommentCount: (json['child_comment_count'] as num).toInt(),
@@ -17,7 +17,7 @@ factory WebhooksComment.fromJson(Map<String, dynamic> json) { return WebhooksCom
   repositoryUrl: json['repository_url'] as String,
   updatedAt: json['updated_at'] as String,
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
@@ -46,7 +46,7 @@ final String updatedAt;
 
 final DiscussionUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author_association': authorAssociation.toJson(),
   'body': body,
   'child_comment_count': childCommentCount,
@@ -60,8 +60,8 @@ Map<String, dynamic> toJson() { return {
   'repository_url': repositoryUrl,
   'updated_at': updatedAt,
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('child_comment_count') && json['child_comment_count'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -73,8 +73,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('reactions') &&
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('user'); } 
-WebhooksComment copyWith({AuthorAssociation? authorAssociation, String? body, int? childCommentCount, String? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, int? Function()? parentId, DiscussionReactions? reactions, String? repositoryUrl, String? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksComment(
+      json.containsKey('user');}
+WebhooksComment copyWith({AuthorAssociation? authorAssociation, String? body, int? childCommentCount, String? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, int? Function()? parentId, DiscussionReactions? reactions, String? repositoryUrl, String? updatedAt, DiscussionUser? Function()? user, }) {return WebhooksComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   childCommentCount: childCommentCount ?? this.childCommentCount,
@@ -88,7 +88,7 @@ WebhooksComment copyWith({AuthorAssociation? authorAssociation, String? body, in
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksComment &&
           authorAssociation == other.authorAssociation &&
@@ -109,4 +109,4 @@ WebhooksComment copyWith({AuthorAssociation? authorAssociation, String? body, in
 
 @override String toString() => 'WebhooksComment(\n  authorAssociation: $authorAssociation,\n  body: $body,\n  childCommentCount: $childCommentCount,\n  createdAt: $createdAt,\n  discussionId: $discussionId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  nodeId: $nodeId,\n  parentId: $parentId,\n  reactions: $reactions,\n  repositoryUrl: $repositoryUrl,\n  updatedAt: $updatedAt,\n  user: $user,\n)';
 
- }
+}

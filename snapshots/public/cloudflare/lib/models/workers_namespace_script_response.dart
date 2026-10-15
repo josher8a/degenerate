@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_created_on.dart';import 'package:pub_cloudflare/models/workers_dispatch_namespace_name.dart';import 'package:pub_cloudflare/models/workers_modified_on.dart';import 'package:pub_cloudflare/models/workers_script_response.dart';/// Details about a worker uploaded to a Workers for Platforms namespace.
 @immutable final class WorkersNamespaceScriptResponse {const WorkersNamespaceScriptResponse({this.createdOn, this.dispatchNamespace, this.modifiedOn, this.script, });
 
-factory WorkersNamespaceScriptResponse.fromJson(Map<String, dynamic> json) { return WorkersNamespaceScriptResponse(
+factory WorkersNamespaceScriptResponse.fromJson(Map<String, dynamic> json) {return WorkersNamespaceScriptResponse(
   createdOn: json['created_on'] != null ? WorkersCreatedOn.fromJson(json['created_on'] as String) : null,
   dispatchNamespace: json['dispatch_namespace'] != null ? WorkersDispatchNamespaceName.fromJson(json['dispatch_namespace'] as String) : null,
   modifiedOn: json['modified_on'] != null ? WorkersModifiedOn.fromJson(json['modified_on'] as String) : null,
   script: json['script'] != null ? WorkersScriptResponse.fromJson(json['script'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// When the script was created.
 final WorkersCreatedOn? createdOn;
@@ -22,19 +22,19 @@ final WorkersModifiedOn? modifiedOn;
 
 final WorkersScriptResponse? script;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (dispatchNamespace != null) 'dispatch_namespace': dispatchNamespace?.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
   if (script != null) 'script': script?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'dispatch_namespace', 'modified_on', 'script'}.contains(key)); } 
-WorkersNamespaceScriptResponse copyWith({WorkersCreatedOn? Function()? createdOn, WorkersDispatchNamespaceName? Function()? dispatchNamespace, WorkersModifiedOn? Function()? modifiedOn, WorkersScriptResponse? Function()? script, }) { return WorkersNamespaceScriptResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'dispatch_namespace', 'modified_on', 'script'}.contains(key));}
+WorkersNamespaceScriptResponse copyWith({WorkersCreatedOn? Function()? createdOn, WorkersDispatchNamespaceName? Function()? dispatchNamespace, WorkersModifiedOn? Function()? modifiedOn, WorkersScriptResponse? Function()? script, }) {return WorkersNamespaceScriptResponse(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   dispatchNamespace: dispatchNamespace != null ? dispatchNamespace() : this.dispatchNamespace,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   script: script != null ? script() : this.script,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersNamespaceScriptResponse &&
           createdOn == other.createdOn &&
@@ -46,4 +46,4 @@ WorkersNamespaceScriptResponse copyWith({WorkersCreatedOn? Function()? createdOn
 
 @override String toString() => 'WorkersNamespaceScriptResponse(createdOn: $createdOn, dispatchNamespace: $dispatchNamespace, modifiedOn: $modifiedOn, script: $script)';
 
- }
+}

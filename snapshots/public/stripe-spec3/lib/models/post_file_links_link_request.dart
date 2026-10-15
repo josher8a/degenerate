@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_file_links_link_request/post_file_links_link_request_expires_at.dart';@immutable final class PostFileLinksLinkRequest {const PostFileLinksLinkRequest({this.expand, this.expiresAt, this.metadata, });
 
-factory PostFileLinksLinkRequest.fromJson(Map<String, dynamic> json) { return PostFileLinksLinkRequest(
+factory PostFileLinksLinkRequest.fromJson(Map<String, dynamic> json) {return PostFileLinksLinkRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? PostFileLinksLinkRequestExpiresAt.fromJson(json['expires_at']) : null,
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,17 +18,17 @@ final PostFileLinksLinkRequestExpiresAt? expiresAt;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Metadata? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (expiresAt != null) 'expires_at': expiresAt?.toJson(),
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'expires_at', 'metadata'}.contains(key)); } 
-PostFileLinksLinkRequest copyWith({List<String>? Function()? expand, PostFileLinksLinkRequestExpiresAt? Function()? expiresAt, Metadata? Function()? metadata, }) { return PostFileLinksLinkRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'expires_at', 'metadata'}.contains(key));}
+PostFileLinksLinkRequest copyWith({List<String>? Function()? expand, PostFileLinksLinkRequestExpiresAt? Function()? expiresAt, Metadata? Function()? metadata, }) {return PostFileLinksLinkRequest(
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostFileLinksLinkRequest &&
           listEquals(expand, other.expand) &&
@@ -39,4 +39,4 @@ PostFileLinksLinkRequest copyWith({List<String>? Function()? expand, PostFileLin
 
 @override String toString() => 'PostFileLinksLinkRequest(expand: $expand, expiresAt: $expiresAt, metadata: $metadata)';
 
- }
+}

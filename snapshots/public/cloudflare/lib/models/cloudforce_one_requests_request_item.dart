@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_content.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_readable_id.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_status.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_summary.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_type.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_tlp.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_uuid.dart';@immutable final class CloudforceOneRequestsRequestItem {const CloudforceOneRequestsRequestItem({required this.content, required this.created, required this.id, required this.priority, required this.request, required this.summary, required this.tlp, required this.updated, this.completed, this.messageTokens, this.readableId, this.status, this.tokens, });
 
-factory CloudforceOneRequestsRequestItem.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestItem(
+factory CloudforceOneRequestsRequestItem.fromJson(Map<String, dynamic> json) {return CloudforceOneRequestsRequestItem(
   completed: json['completed'] != null ? CloudforceOneRequestsTime.fromJson(json['completed'] as String) : null,
   content: CloudforceOneRequestsRequestContent.fromJson(json['content'] as String),
   created: CloudforceOneRequestsTime.fromJson(json['created'] as String),
@@ -17,7 +17,7 @@ factory CloudforceOneRequestsRequestItem.fromJson(Map<String, dynamic> json) { r
   tlp: CloudforceOneRequestsTlp.fromJson(json['tlp'] as String),
   tokens: json['tokens'] != null ? (json['tokens'] as num).toInt() : null,
   updated: CloudforceOneRequestsTime.fromJson(json['updated'] as String),
-); }
+);}
 
 final CloudforceOneRequestsTime? completed;
 
@@ -52,7 +52,7 @@ final int? tokens;
 
 final CloudforceOneRequestsTime updated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (completed != null) 'completed': completed?.toJson(),
   'content': content.toJson(),
   'created': created.toJson(),
@@ -66,16 +66,16 @@ Map<String, dynamic> toJson() { return {
   'tlp': tlp.toJson(),
   'tokens': ?tokens,
   'updated': updated.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
       json.containsKey('created') &&
       json.containsKey('id') &&
       json.containsKey('priority') &&
       json.containsKey('request') &&
       json.containsKey('summary') &&
       json.containsKey('tlp') &&
-      json.containsKey('updated'); } 
-CloudforceOneRequestsRequestItem copyWith({CloudforceOneRequestsTime? Function()? completed, CloudforceOneRequestsRequestContent? content, CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, int? Function()? messageTokens, CloudforceOneRequestsTime? priority, CloudforceOneRequestsRequestReadableId? Function()? readableId, CloudforceOneRequestsRequestType? request, CloudforceOneRequestsRequestStatus? Function()? status, CloudforceOneRequestsRequestSummary? summary, CloudforceOneRequestsTlp? tlp, int? Function()? tokens, CloudforceOneRequestsTime? updated, }) { return CloudforceOneRequestsRequestItem(
+      json.containsKey('updated');}
+CloudforceOneRequestsRequestItem copyWith({CloudforceOneRequestsTime? Function()? completed, CloudforceOneRequestsRequestContent? content, CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, int? Function()? messageTokens, CloudforceOneRequestsTime? priority, CloudforceOneRequestsRequestReadableId? Function()? readableId, CloudforceOneRequestsRequestType? request, CloudforceOneRequestsRequestStatus? Function()? status, CloudforceOneRequestsRequestSummary? summary, CloudforceOneRequestsTlp? tlp, int? Function()? tokens, CloudforceOneRequestsTime? updated, }) {return CloudforceOneRequestsRequestItem(
   completed: completed != null ? completed() : this.completed,
   content: content ?? this.content,
   created: created ?? this.created,
@@ -89,7 +89,7 @@ CloudforceOneRequestsRequestItem copyWith({CloudforceOneRequestsTime? Function()
   tlp: tlp ?? this.tlp,
   tokens: tokens != null ? tokens() : this.tokens,
   updated: updated ?? this.updated,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestItem &&
           completed == other.completed &&
@@ -110,4 +110,4 @@ CloudforceOneRequestsRequestItem copyWith({CloudforceOneRequestsTime? Function()
 
 @override String toString() => 'CloudforceOneRequestsRequestItem(\n  completed: $completed,\n  content: $content,\n  created: $created,\n  id: $id,\n  messageTokens: $messageTokens,\n  priority: $priority,\n  readableId: $readableId,\n  request: $request,\n  status: $status,\n  summary: $summary,\n  tlp: $tlp,\n  tokens: $tokens,\n  updated: $updated,\n)';
 
- }
+}

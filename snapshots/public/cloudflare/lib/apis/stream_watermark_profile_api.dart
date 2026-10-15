@@ -14,7 +14,7 @@ final class StreamWatermarkProfileApi with ApiExecutor {const StreamWatermarkPro
 /// Lists all watermark profiles for an account.
 ///
 /// `GET /accounts/{account_id}/stream/watermarks`
-Future<ApiResult<List<StreamWatermarks>?, AddAudioTrackError>> streamWatermarkProfileListWatermarkProfiles({required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<StreamWatermarks>?, AddAudioTrackError>> streamWatermarkProfileListWatermarkProfiles({required StreamAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Create watermark profiles via basic upload
 ///
 /// Creates watermark profiles using a single `HTTP POST multipart/form-data` request.
 ///
 /// `POST /accounts/{account_id}/stream/watermarks`
-Future<ApiResult<StreamWatermarks?, AddAudioTrackError>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamWatermarks?, AddAudioTrackError>> streamWatermarkProfileCreateWatermarkProfilesViaBasicUpload({required StreamAccountIdentifier accountId, required StreamWatermarkBasicUpload body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -68,13 +68,13 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Watermark profile details
 ///
 /// Retrieves details for a single watermark profile.
 ///
 /// `GET /accounts/{account_id}/stream/watermarks/{identifier}`
-Future<ApiResult<StreamWatermarks?, AddAudioTrackError>> streamWatermarkProfileDetails({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamWatermarks?, AddAudioTrackError>> streamWatermarkProfileDetails({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -91,13 +91,13 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Delete watermark profiles
 ///
 /// Deletes a watermark profile.
 ///
 /// `DELETE /accounts/{account_id}/stream/watermarks/{identifier}`
-Future<ApiResult<String?, AddAudioTrackError>> streamWatermarkProfileDeleteWatermarkProfiles({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, AddAudioTrackError>> streamWatermarkProfileDeleteWatermarkProfiles({required StreamWatermarkIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -114,5 +114,5 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
- }
+}
+}

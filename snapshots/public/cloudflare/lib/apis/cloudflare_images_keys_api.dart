@@ -14,7 +14,7 @@ final class CloudflareImagesKeysApi with ApiExecutor {const CloudflareImagesKeys
 /// Lists your signing keys. These can be found on your Cloudflare Images dashboard.
 ///
 /// `GET /accounts/{account_id}/images/v1/keys`
-Future<ApiResult<ImagesImageKeysResponse, CloudflareImagesKeysListSigningKeysError>> cloudflareImagesKeysListSigningKeys({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImageKeysResponse, CloudflareImagesKeysListSigningKeysError>> cloudflareImagesKeysListSigningKeys({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: CloudflareImagesKeysListSigningKeysError.fromResponse,
 );
- } 
+}
 /// Create a new Signing Key
 ///
 /// Create a new signing key with specified name. Returns all keys available.
 ///
 /// `PUT /accounts/{account_id}/images/v1/keys/{signing_key_name}`
-Future<ApiResult<ImagesImageKeysResponse, CloudflareImagesKeysAddSigningKeyError>> cloudflareImagesKeysAddSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImageKeysResponse, CloudflareImagesKeysAddSigningKeyError>> cloudflareImagesKeysAddSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -54,7 +54,7 @@ return await execute(
   },
   onError: CloudflareImagesKeysAddSigningKeyError.fromResponse,
 );
- } 
+}
 /// Delete Signing Key
 ///
 /// Delete signing key with specified name. Returns all keys available.
@@ -62,7 +62,7 @@ return await execute(
 /// 
 ///
 /// `DELETE /accounts/{account_id}/images/v1/keys/{signing_key_name}`
-Future<ApiResult<ImagesImageKeysResponse, CloudflareImagesKeysDeleteSigningKeyError>> cloudflareImagesKeysDeleteSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImageKeysResponse, CloudflareImagesKeysDeleteSigningKeyError>> cloudflareImagesKeysDeleteSigningKey({required ImagesSigningKeyIdentifier signingKeyName, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -79,5 +79,5 @@ return await execute(
   },
   onError: CloudflareImagesKeysDeleteSigningKeyError.fromResponse,
 );
- } 
- }
+}
+}

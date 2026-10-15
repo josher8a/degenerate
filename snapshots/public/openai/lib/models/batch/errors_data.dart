@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorsData {const ErrorsData({this.code, this.message, this.param = const Omittable.absent(), this.line = const Omittable.absent(), });
 
-factory ErrorsData.fromJson(Map<String, dynamic> json) { return ErrorsData(
+factory ErrorsData.fromJson(Map<String, dynamic> json) {return ErrorsData(
   code: json['code'] as String?,
   message: json['message'] as String?,
   param: json.containsKey('param') ? Omittable(json['param'] as String?) : const Omittable.absent(),
   line: json.containsKey('line') ? Omittable(json['line'] != null ? (json['line'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// An error code identifying the error type.
 final String? code;
@@ -22,19 +22,19 @@ final Omittable<String?> param;
 /// The line number of the input file where the error occurred, if applicable.
 final Omittable<int?> line;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': ?message,
   if (param.isPresent) 'param': param.value,
   if (line.isPresent) 'line': line.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'param', 'line'}.contains(key)); } 
-ErrorsData copyWith({String? Function()? code, String? Function()? message, Omittable<String?>? param, Omittable<int?>? line, }) { return ErrorsData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'message', 'param', 'line'}.contains(key));}
+ErrorsData copyWith({String? Function()? code, String? Function()? message, Omittable<String?>? param, Omittable<int?>? line, }) {return ErrorsData(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   param: param ?? this.param,
   line: line ?? this.line,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorsData &&
           code == other.code &&
@@ -46,4 +46,4 @@ ErrorsData copyWith({String? Function()? code, String? Function()? message, Omit
 
 @override String toString() => 'ErrorsData(code: $code, message: $message, param: $param, line: $line)';
 
- }
+}

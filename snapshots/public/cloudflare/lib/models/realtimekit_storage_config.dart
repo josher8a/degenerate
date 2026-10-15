@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config/realtimekit_storage_config_auth_method.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config_response/realtimekit_storage_config_response_type.dart';@immutable final class RealtimekitStorageConfig {const RealtimekitStorageConfig({required this.type, this.accessKey, this.authMethod, this.bucket, this.host, this.password, this.path, this.port, this.privateKey, this.region, this.secret, this.username, });
 
-factory RealtimekitStorageConfig.fromJson(Map<String, dynamic> json) { return RealtimekitStorageConfig(
+factory RealtimekitStorageConfig.fromJson(Map<String, dynamic> json) {return RealtimekitStorageConfig(
   accessKey: json['access_key'] as String?,
   authMethod: json['auth_method'] != null ? RealtimekitStorageConfigAuthMethod.fromJson(json['auth_method'] as String) : null,
   bucket: json['bucket'] as String?,
@@ -16,7 +16,7 @@ factory RealtimekitStorageConfig.fromJson(Map<String, dynamic> json) { return Re
   secret: json['secret'] as String?,
   type: RealtimekitStorageConfigResponseType.fromJson(json['type'] as String),
   username: json['username'] as String?,
-); }
+);}
 
 /// Access key of the storage medium. Access key is not required for the `gcs` storage media type.
 /// 
@@ -59,7 +59,7 @@ final RealtimekitStorageConfigResponseType type;
 /// SSH destination server username for SFTP type storage medium
 final String? username;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_key': ?accessKey,
   if (authMethod != null) 'auth_method': authMethod?.toJson(),
   'bucket': ?bucket,
@@ -72,9 +72,9 @@ Map<String, dynamic> toJson() { return {
   'secret': ?secret,
   'type': type.toJson(),
   'username': ?username,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimekitStorageConfig copyWith({String? Function()? accessKey, RealtimekitStorageConfigAuthMethod? Function()? authMethod, String? Function()? bucket, String? Function()? host, String? Function()? password, String? Function()? path, double? Function()? port, String? Function()? privateKey, String? Function()? region, String? Function()? secret, RealtimekitStorageConfigResponseType? type, String? Function()? username, }) { return RealtimekitStorageConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+RealtimekitStorageConfig copyWith({String? Function()? accessKey, RealtimekitStorageConfigAuthMethod? Function()? authMethod, String? Function()? bucket, String? Function()? host, String? Function()? password, String? Function()? path, double? Function()? port, String? Function()? privateKey, String? Function()? region, String? Function()? secret, RealtimekitStorageConfigResponseType? type, String? Function()? username, }) {return RealtimekitStorageConfig(
   accessKey: accessKey != null ? accessKey() : this.accessKey,
   authMethod: authMethod != null ? authMethod() : this.authMethod,
   bucket: bucket != null ? bucket() : this.bucket,
@@ -87,7 +87,7 @@ RealtimekitStorageConfig copyWith({String? Function()? accessKey, RealtimekitSto
   secret: secret != null ? secret() : this.secret,
   type: type ?? this.type,
   username: username != null ? username() : this.username,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitStorageConfig &&
           accessKey == other.accessKey &&
@@ -107,4 +107,4 @@ RealtimekitStorageConfig copyWith({String? Function()? accessKey, RealtimekitSto
 
 @override String toString() => 'RealtimekitStorageConfig(\n  accessKey: $accessKey,\n  authMethod: $authMethod,\n  bucket: $bucket,\n  host: $host,\n  password: $password,\n  path: $path,\n  port: $port,\n  privateKey: $privateKey,\n  region: $region,\n  secret: $secret,\n  type: $type,\n  username: $username,\n)';
 
- }
+}

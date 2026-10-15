@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_scan.dart';import 'package:pub_cloudflare/models/bundle_messages2.dart';@immutable final class BundleResponseCustomScanCollection {const BundleResponseCustomScanCollection({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory BundleResponseCustomScanCollection.fromJson(Map<String, dynamic> json) { return BundleResponseCustomScanCollection(
+factory BundleResponseCustomScanCollection.fromJson(Map<String, dynamic> json) {return BundleResponseCustomScanCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => BundleMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => BundleMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<BundleMessages2> errors;
 
@@ -21,22 +21,22 @@ final List<BundleCustomScan> result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-BundleResponseCustomScanCollection copyWith({List<BundleMessages2>? errors, List<BundleMessages2>? messages, List<BundleCustomScan>? result, bool? success, }) { return BundleResponseCustomScanCollection(
+      json.containsKey('success') && json['success'] is bool;}
+BundleResponseCustomScanCollection copyWith({List<BundleMessages2>? errors, List<BundleMessages2>? messages, List<BundleCustomScan>? result, bool? success, }) {return BundleResponseCustomScanCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BundleResponseCustomScanCollection &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ BundleResponseCustomScanCollection copyWith({List<BundleMessages2>? errors, List
 
 @override String toString() => 'BundleResponseCustomScanCollection(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

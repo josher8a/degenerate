@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).
 @immutable final class RunCompletionUsage {const RunCompletionUsage({required this.completionTokens, required this.promptTokens, required this.totalTokens, });
 
-factory RunCompletionUsage.fromJson(Map<String, dynamic> json) { return RunCompletionUsage(
+factory RunCompletionUsage.fromJson(Map<String, dynamic> json) {return RunCompletionUsage(
   completionTokens: (json['completion_tokens'] as num).toInt(),
   promptTokens: (json['prompt_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
-); }
+);}
 
 /// Number of completion tokens used over the course of the run.
 final int completionTokens;
@@ -19,19 +19,19 @@ final int promptTokens;
 /// Total number of tokens used (prompt + completion).
 final int totalTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completion_tokens': completionTokens,
   'prompt_tokens': promptTokens,
   'total_tokens': totalTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completion_tokens') && json['completion_tokens'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('completion_tokens') && json['completion_tokens'] is num &&
       json.containsKey('prompt_tokens') && json['prompt_tokens'] is num &&
-      json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-RunCompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTokens, }) { return RunCompletionUsage(
+      json.containsKey('total_tokens') && json['total_tokens'] is num;}
+RunCompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTokens, }) {return RunCompletionUsage(
   completionTokens: completionTokens ?? this.completionTokens,
   promptTokens: promptTokens ?? this.promptTokens,
   totalTokens: totalTokens ?? this.totalTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunCompletionUsage &&
           completionTokens == other.completionTokens &&
@@ -42,4 +42,4 @@ RunCompletionUsage copyWith({int? completionTokens, int? promptTokens, int? tota
 
 @override String toString() => 'RunCompletionUsage(completionTokens: $completionTokens, promptTokens: $promptTokens, totalTokens: $totalTokens)';
 
- }
+}

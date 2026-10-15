@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The current status.
 sealed class StatusUpdateStatus {const StatusUpdateStatus();
 
-factory StatusUpdateStatus.fromJson(String json) { return switch (json) {
+factory StatusUpdateStatus.fromJson(String json) {return switch (json) {
   'INACTIVE' => inactive,
   'ON_TRACK' => onTrack,
   'AT_RISK' => atRisk,
@@ -12,7 +12,7 @@ factory StatusUpdateStatus.fromJson(String json) { return switch (json) {
   'COMPLETE' => complete,
   'null' => $null,
   _ => StatusUpdateStatus$Unknown(json),
-}; }
+};}
 
 static const StatusUpdateStatus inactive = StatusUpdateStatus$inactive._();
 
@@ -29,9 +29,9 @@ static const StatusUpdateStatus $null = StatusUpdateStatus$$null._();
 static const List<StatusUpdateStatus> values = [inactive, onTrack, atRisk, offTrack, complete, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'INACTIVE' => 'inactive',
   'ON_TRACK' => 'onTrack',
   'AT_RISK' => 'atRisk',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'COMPLETE' => 'complete',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StatusUpdateStatus$Unknown; } 
+bool get isUnknown {return this is StatusUpdateStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inactive, required W Function() onTrack, required W Function() atRisk, required W Function() offTrack, required W Function() complete, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inactive, required W Function() onTrack, required W Function() atRisk, required W Function() offTrack, required W Function() complete, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       StatusUpdateStatus$inactive() => inactive(),
       StatusUpdateStatus$onTrack() => onTrack(),
       StatusUpdateStatus$atRisk() => atRisk(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() inactive, required W Function() onTrack, requir
       StatusUpdateStatus$complete() => complete(),
       StatusUpdateStatus$$null() => $null(),
       StatusUpdateStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive, W Function()? onTrack, W Function()? atRisk, W Function()? offTrack, W Function()? complete, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive, W Function()? onTrack, W Function()? atRisk, W Function()? offTrack, W Function()? complete, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       StatusUpdateStatus$inactive() => inactive != null ? inactive() : orElse(value),
       StatusUpdateStatus$onTrack() => onTrack != null ? onTrack() : orElse(value),
       StatusUpdateStatus$atRisk() => atRisk != null ? atRisk() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
       StatusUpdateStatus$complete() => complete != null ? complete() : orElse(value),
       StatusUpdateStatus$$null() => $null != null ? $null() : orElse(value),
       StatusUpdateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StatusUpdateStatus($value)';
 
- }
+}
 @immutable final class StatusUpdateStatus$inactive extends StatusUpdateStatus {const StatusUpdateStatus$inactive._();
 
 @override String get value => 'INACTIVE';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
 
 @override int get hashCode => 'INACTIVE'.hashCode;
 
- }
+}
 @immutable final class StatusUpdateStatus$onTrack extends StatusUpdateStatus {const StatusUpdateStatus$onTrack._();
 
 @override String get value => 'ON_TRACK';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
 
 @override int get hashCode => 'ON_TRACK'.hashCode;
 
- }
+}
 @immutable final class StatusUpdateStatus$atRisk extends StatusUpdateStatus {const StatusUpdateStatus$atRisk._();
 
 @override String get value => 'AT_RISK';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
 
 @override int get hashCode => 'AT_RISK'.hashCode;
 
- }
+}
 @immutable final class StatusUpdateStatus$offTrack extends StatusUpdateStatus {const StatusUpdateStatus$offTrack._();
 
 @override String get value => 'OFF_TRACK';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
 
 @override int get hashCode => 'OFF_TRACK'.hashCode;
 
- }
+}
 @immutable final class StatusUpdateStatus$complete extends StatusUpdateStatus {const StatusUpdateStatus$complete._();
 
 @override String get value => 'COMPLETE';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
 
 @override int get hashCode => 'COMPLETE'.hashCode;
 
- }
+}
 @immutable final class StatusUpdateStatus$$null extends StatusUpdateStatus {const StatusUpdateStatus$$null._();
 
 @override String get value => 'null';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class StatusUpdateStatus$Unknown extends StatusUpdateStatus {const StatusUpdateStatus$Unknown(this.value);
 
 @override final String value;
@@ -128,11 +128,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An status update belonging to a project
 @immutable final class StatusUpdate {const StatusUpdate({required this.id, required this.nodeId, required this.createdAt, required this.updatedAt, this.projectNodeId, this.creator, this.status = const Omittable.absent(), this.startDate, this.targetDate, this.body = const Omittable.absent(), });
 
-factory StatusUpdate.fromJson(Map<String, dynamic> json) { return StatusUpdate(
+factory StatusUpdate.fromJson(Map<String, dynamic> json) {return StatusUpdate(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String,
   projectNodeId: json['project_node_id'] as String?,
@@ -143,7 +143,7 @@ factory StatusUpdate.fromJson(Map<String, dynamic> json) { return StatusUpdate(
   startDate: json['start_date'] as String?,
   targetDate: json['target_date'] as String?,
   body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique identifier of the status update.
 final double id;
@@ -174,7 +174,7 @@ final String? targetDate;
 /// Body of the status update
 final Omittable<String?> body;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'project_node_id': ?projectNodeId,
@@ -185,12 +185,12 @@ Map<String, dynamic> toJson() { return {
   'start_date': ?startDate,
   'target_date': ?targetDate,
   if (body.isPresent) 'body': body.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNodeId, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<StatusUpdateStatus?>? status, String? Function()? startDate, String? Function()? targetDate, Omittable<String?>? body, }) { return StatusUpdate(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNodeId, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<StatusUpdateStatus?>? status, String? Function()? startDate, String? Function()? targetDate, Omittable<String?>? body, }) {return StatusUpdate(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   projectNodeId: projectNodeId != null ? projectNodeId() : this.projectNodeId,
@@ -201,7 +201,7 @@ StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNo
   startDate: startDate != null ? startDate() : this.startDate,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   body: body ?? this.body,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StatusUpdate &&
           id == other.id &&
@@ -219,4 +219,4 @@ StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNo
 
 @override String toString() => 'StatusUpdate(\n  id: $id,\n  nodeId: $nodeId,\n  projectNodeId: $projectNodeId,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  status: $status,\n  startDate: $startDate,\n  targetDate: $targetDate,\n  body: $body,\n)';
 
- }
+}

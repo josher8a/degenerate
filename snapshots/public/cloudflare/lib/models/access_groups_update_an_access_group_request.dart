@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_groups_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_is_default.dart';import 'package:pub_cloudflare/models/access_rule.dart';@immutable final class AccessGroupsUpdateAnAccessGroupRequest {const AccessGroupsUpdateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.isDefault, this.require, });
 
-factory AccessGroupsUpdateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) { return AccessGroupsUpdateAnAccessGroupRequest(
+factory AccessGroupsUpdateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) {return AccessGroupsUpdateAnAccessGroupRequest(
   exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   include: (json['include'] as List<dynamic>).map(AccessRule.fromJson).toList(),
   isDefault: json['is_default'] != null ? AccessIsDefault.fromJson(json['is_default'] as bool) : null,
   name: AccessGroupsComponentsSchemasName.fromJson(json['name'] as String),
   require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
-); }
+);}
 
 /// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.
 final List<AccessRule>? exclude;
@@ -26,22 +26,22 @@ final AccessGroupsComponentsSchemasName name;
 /// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
 final List<AccessRule>? require;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   'include': include.map((e) => e.toJson()).toList(),
   if (isDefault != null) 'is_default': isDefault?.toJson(),
   'name': name.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('include') &&
-      json.containsKey('name'); } 
-AccessGroupsUpdateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessIsDefault? Function()? isDefault, AccessGroupsComponentsSchemasName? name, List<AccessRule>? Function()? require, }) { return AccessGroupsUpdateAnAccessGroupRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('include') &&
+      json.containsKey('name');}
+AccessGroupsUpdateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessIsDefault? Function()? isDefault, AccessGroupsComponentsSchemasName? name, List<AccessRule>? Function()? require, }) {return AccessGroupsUpdateAnAccessGroupRequest(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include ?? this.include,
   isDefault: isDefault != null ? isDefault() : this.isDefault,
   name: name ?? this.name,
   require: require != null ? require() : this.require,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessGroupsUpdateAnAccessGroupRequest &&
           listEquals(exclude, other.exclude) &&
@@ -54,4 +54,4 @@ AccessGroupsUpdateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? e
 
 @override String toString() => 'AccessGroupsUpdateAnAccessGroupRequest(exclude: $exclude, include: $include, isDefault: $isDefault, name: $name, require: $require)';
 
- }
+}

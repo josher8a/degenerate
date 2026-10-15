@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_start_side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';import 'package:pub_github_rest_3_1/models/pulls_create_review_comment_request/pulls_create_review_comment_request_side.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review_comment/webhooks_review_comment_links.dart';/// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.
 @immutable final class WebhookPullRequestReviewThreadResolvedThreadComments {const WebhookPullRequestReviewThreadResolvedThreadComments({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, required this.startSide, required this.updatedAt, required this.url, required this.user, this.inReplyToId, this.subjectType, });
 
-factory WebhookPullRequestReviewThreadResolvedThreadComments.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolvedThreadComments(
+factory WebhookPullRequestReviewThreadResolvedThreadComments.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewThreadResolvedThreadComments(
   links: WebhooksReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
@@ -32,7 +32,7 @@ factory WebhookPullRequestReviewThreadResolvedThreadComments.fromJson(Map<String
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhooksReviewCommentLinks links;
 
@@ -110,7 +110,7 @@ final Uri url;
 
 final WebhooksIssueCommentUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
   'body': body,
@@ -138,8 +138,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
@@ -163,8 +163,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('start_side') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestReviewThreadResolvedThreadComments copyWith({WebhooksReviewCommentLinks? links, AuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? Function()? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, DiscussionReactions? reactions, PullsCreateReviewCommentRequestSide? side, int? Function()? startLine, PullRequestReviewCommentStartSide? Function()? startSide, SubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestReviewThreadResolvedThreadComments(
+      json.containsKey('user');}
+WebhookPullRequestReviewThreadResolvedThreadComments copyWith({WebhooksReviewCommentLinks? links, AuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int? Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? Function()? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, DiscussionReactions? reactions, PullsCreateReviewCommentRequestSide? side, int? Function()? startLine, PullRequestReviewCommentStartSide? Function()? startSide, SubjectType? Function()? subjectType, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) {return WebhookPullRequestReviewThreadResolvedThreadComments(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
@@ -192,7 +192,7 @@ WebhookPullRequestReviewThreadResolvedThreadComments copyWith({WebhooksReviewCom
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewThreadResolvedThreadComments &&
           links == other.links &&
@@ -227,4 +227,4 @@ WebhookPullRequestReviewThreadResolvedThreadComments copyWith({WebhooksReviewCom
 
 @override String toString() => 'WebhookPullRequestReviewThreadResolvedThreadComments(\n  links: $links,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  commitId: $commitId,\n  createdAt: $createdAt,\n  diffHunk: $diffHunk,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  inReplyToId: $inReplyToId,\n  line: $line,\n  nodeId: $nodeId,\n  originalCommitId: $originalCommitId,\n  originalLine: $originalLine,\n  originalPosition: $originalPosition,\n  originalStartLine: $originalStartLine,\n  path: $path,\n  position: $position,\n  pullRequestReviewId: $pullRequestReviewId,\n  pullRequestUrl: $pullRequestUrl,\n  reactions: $reactions,\n  side: $side,\n  startLine: $startLine,\n  startSide: $startSide,\n  subjectType: $subjectType,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
- }
+}

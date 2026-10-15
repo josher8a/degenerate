@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason why the customer is appealing.
 sealed class AbuseReportsAppealReason {const AbuseReportsAppealReason();
 
-factory AbuseReportsAppealReason.fromJson(String json) { return switch (json) {
+factory AbuseReportsAppealReason.fromJson(String json) {return switch (json) {
   'removed' => removed,
   'misclassified' => misclassified,
   _ => AbuseReportsAppealReason$Unknown(json),
-}; }
+};}
 
 static const AbuseReportsAppealReason removed = AbuseReportsAppealReason$removed._();
 
@@ -17,30 +17,30 @@ static const AbuseReportsAppealReason misclassified = AbuseReportsAppealReason$m
 static const List<AbuseReportsAppealReason> values = [removed, misclassified];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'removed' => 'removed',
   'misclassified' => 'misclassified',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AbuseReportsAppealReason$Unknown; } 
+bool get isUnknown {return this is AbuseReportsAppealReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() removed, required W Function() misclassified, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() removed, required W Function() misclassified, required W Function(String value) $unknown, }) {return switch (this) {
       AbuseReportsAppealReason$removed() => removed(),
       AbuseReportsAppealReason$misclassified() => misclassified(),
       AbuseReportsAppealReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? removed, W Function()? misclassified, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? removed, W Function()? misclassified, W Function(String value)? $unknown, }) {return switch (this) {
       AbuseReportsAppealReason$removed() => removed != null ? removed() : orElse(value),
       AbuseReportsAppealReason$misclassified() => misclassified != null ? misclassified() : orElse(value),
       AbuseReportsAppealReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AbuseReportsAppealReason($value)';
 
- }
+}
 @immutable final class AbuseReportsAppealReason$removed extends AbuseReportsAppealReason {const AbuseReportsAppealReason$removed._();
 
 @override String get value => 'removed';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? removed,
 
 @override int get hashCode => 'removed'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsAppealReason$misclassified extends AbuseReportsAppealReason {const AbuseReportsAppealReason$misclassified._();
 
 @override String get value => 'misclassified';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? removed,
 
 @override int get hashCode => 'misclassified'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsAppealReason$Unknown extends AbuseReportsAppealReason {const AbuseReportsAppealReason$Unknown(this.value);
 
 @override final String value;
@@ -68,13 +68,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? removed,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AbuseReportsMitigationAppeal {const AbuseReportsMitigationAppeal({required this.id, required this.reason, });
 
-factory AbuseReportsMitigationAppeal.fromJson(Map<String, dynamic> json) { return AbuseReportsMitigationAppeal(
+factory AbuseReportsMitigationAppeal.fromJson(Map<String, dynamic> json) {return AbuseReportsMitigationAppeal(
   id: json['id'] as String,
   reason: AbuseReportsAppealReason.fromJson(json['reason'] as String),
-); }
+);}
 
 /// ID of the mitigation to appeal.
 final String id;
@@ -82,16 +82,16 @@ final String id;
 /// Reason why the customer is appealing.
 final AbuseReportsAppealReason reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'reason': reason.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('reason'); } 
-AbuseReportsMitigationAppeal copyWith({String? id, AbuseReportsAppealReason? reason, }) { return AbuseReportsMitigationAppeal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('reason');}
+AbuseReportsMitigationAppeal copyWith({String? id, AbuseReportsAppealReason? reason, }) {return AbuseReportsMitigationAppeal(
   id: id ?? this.id,
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsMitigationAppeal &&
           id == other.id &&
@@ -101,4 +101,4 @@ AbuseReportsMitigationAppeal copyWith({String? id, AbuseReportsAppealReason? rea
 
 @override String toString() => 'AbuseReportsMitigationAppeal(id: $id, reason: $reason)';
 
- }
+}

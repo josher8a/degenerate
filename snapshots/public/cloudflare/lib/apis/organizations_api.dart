@@ -14,7 +14,7 @@ final class OrganizationsApi with ApiExecutor {const OrganizationsApi(this.apiCo
 /// Retrieve a list of organizations a particular user has access to. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations`
-Future<ApiResult<List<Organization>, AccountsBatchMoveAccountsError>> organizationListOrganizations({List<OrganizationId>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Organization>, AccountsBatchMoveAccountsError>> organizationListOrganizations({List<OrganizationId>? id, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? containingAccount, String? containingUser, String? containingOrganization, OrganizationListOrganizationsParentId? parentId, String? pageToken, int? pageSize, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
 queryParameters['id'] = id.map((item) => item.toJson()).join(',');
@@ -69,13 +69,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// Create organization
 ///
 /// Create a new organization for a user. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations`
-Future<ApiResult<Organization, AccountsBatchMoveAccountsError>> organizationsCreateUserOrganization({required OrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Organization, AccountsBatchMoveAccountsError>> organizationsCreateUserOrganization({required OrganizationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,13 +94,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// Get organization
 ///
 /// Retrieve the details of a certain organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}`
-Future<ApiResult<Organization, AccountsBatchMoveAccountsError>> organizationsRetrieve({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Organization, AccountsBatchMoveAccountsError>> organizationsRetrieve({required OrganizationId organizationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -117,13 +117,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// Modify organization.
 ///
 /// Modify organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}`
-Future<ApiResult<Organization, AccountsBatchMoveAccountsError>> organizationsModify({required OrganizationId organizationId, required OrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Organization, AccountsBatchMoveAccountsError>> organizationsModify({required OrganizationId organizationId, required OrganizationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,14 +142,14 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// Delete organization.
 ///
 /// Delete an organization. The organization MUST be empty before deleting.
 /// It must not contain any sub-organizations, accounts, members or users. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `DELETE /organizations/{organization_id}`
-Future<ApiResult<DeleteOrganizationResponse, AccountsBatchMoveAccountsError>> organizationsDelete({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteOrganizationResponse, AccountsBatchMoveAccountsError>> organizationsDelete({required OrganizationId organizationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -166,13 +166,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// Get organization accounts
 ///
 /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/accounts`
-Future<ApiResult<List<Account>, AccountsBatchMoveAccountsError>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Account>, AccountsBatchMoveAccountsError>> organizationsGetAccounts({required OrganizationId organizationId, String? accountPubname, String? accountPubnameStartsWith, String? accountPubnameEndsWith, String? accountPubnameContains, String? name, String? nameStartsWith, String? nameEndsWith, String? nameContains, String? pageToken, int? pageSize, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountPubname != null) {
   queryParameters['account_pubname'] = accountPubname;
@@ -224,13 +224,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// Get organization profile
 ///
 /// Get an organizations profile if it exists. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/profile`
-Future<ApiResult<Profile, AccountsBatchMoveAccountsError>> organizationsGetProfile({required OrganizationId organizationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Profile, AccountsBatchMoveAccountsError>> organizationsGetProfile({required OrganizationId organizationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -247,13 +247,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// Modify organization profile.
 ///
 /// Modify organization profile. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `PUT /organizations/{organization_id}/profile`
-Future<ApiResult<void, AccountsBatchMoveAccountsError>> organizationsModifyProfile({required OrganizationId organizationId, required Profile body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, AccountsBatchMoveAccountsError>> organizationsModifyProfile({required OrganizationId organizationId, required Profile body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -269,5 +269,5 @@ return await execute(
   onSuccess: (_) {},
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
- }
+}
+}

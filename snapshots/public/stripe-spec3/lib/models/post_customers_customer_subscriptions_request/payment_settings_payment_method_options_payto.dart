@@ -7,11 +7,11 @@ const PaymentSettingsPaymentMethodOptionsPayto({this.invoicePaymentMethodOptions
 const PaymentSettingsPaymentMethodOptionsPayto._({required this.rawValue, required this.invoicePaymentMethodOptionsParam12, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PaymentSettingsPaymentMethodOptionsPayto.fromJson(Object? json) { return PaymentSettingsPaymentMethodOptionsPayto._(
+factory PaymentSettingsPaymentMethodOptionsPayto.fromJson(Object? json) {return PaymentSettingsPaymentMethodOptionsPayto._(
   rawValue: Omittable(json),
   invoicePaymentMethodOptionsParam12: json is Map<String, dynamic> && InvoicePaymentMethodOptionsParam12.canParse(json) ? parseAnyOfVariant<InvoicePaymentMethodOptionsParam12>(json, (value) => InvoicePaymentMethodOptionsParam12.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PaymentSettingsPaymentMethodOptionsPayto(${toJson()})';
 
- }
+}

@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.type, required this.name, required this.input, required this.reference, required this.evaluationMetric, });
 
-factory GraderTextSimilarity.fromJson(Map<String, dynamic> json) { return GraderTextSimilarity(
+factory GraderTextSimilarity.fromJson(Map<String, dynamic> json) {return GraderTextSimilarity(
   type: EvalGraderTextSimilarityType.fromJson(json['type'] as String),
   name: json['name'] as String,
   input: json['input'] as String,
   reference: json['reference'] as String,
   evaluationMetric: EvaluationMetric.fromJson(json['evaluation_metric'] as String),
-); }
+);}
 
 /// The type of grader.
 final EvalGraderTextSimilarityType type;
@@ -31,25 +31,25 @@ final String reference;
 /// 
 final EvaluationMetric evaluationMetric;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'input': input,
   'reference': reference,
   'evaluation_metric': evaluationMetric.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'text_similarity' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'text_similarity' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('input') && json['input'] is String &&
       json.containsKey('reference') && json['reference'] is String &&
-      json.containsKey('evaluation_metric'); } 
-GraderTextSimilarity copyWith({EvalGraderTextSimilarityType? type, String? name, String? input, String? reference, EvaluationMetric? evaluationMetric, }) { return GraderTextSimilarity(
+      json.containsKey('evaluation_metric');}
+GraderTextSimilarity copyWith({EvalGraderTextSimilarityType? type, String? name, String? input, String? reference, EvaluationMetric? evaluationMetric, }) {return GraderTextSimilarity(
   type: type ?? this.type,
   name: name ?? this.name,
   input: input ?? this.input,
   reference: reference ?? this.reference,
   evaluationMetric: evaluationMetric ?? this.evaluationMetric,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GraderTextSimilarity &&
           type == other.type &&
@@ -62,4 +62,4 @@ GraderTextSimilarity copyWith({EvalGraderTextSimilarityType? type, String? name,
 
 @override String toString() => 'GraderTextSimilarity(type: $type, name: $name, input: $input, reference: $reference, evaluationMetric: $evaluationMetric)';
 
- }
+}

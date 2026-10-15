@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_device_posture_integrations.dart';import 'package:pub_cloudflare/models/teams_devices_messages2.dart';import 'package:pub_cloudflare/models/teams_devices_result_info.dart';@immutable final class TeamsDevicesSchemasResponseCollection {const TeamsDevicesSchemasResponseCollection({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
-factory TeamsDevicesSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return TeamsDevicesSchemasResponseCollection(
+factory TeamsDevicesSchemasResponseCollection.fromJson(Map<String, dynamic> json) {return TeamsDevicesSchemasResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => TeamsDevicesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TeamsDevicesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => TeamsDevicesDevicePostureIntegrations.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? TeamsDevicesResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<TeamsDevicesMessages2> errors;
 
@@ -24,24 +24,24 @@ final bool success;
 
 final TeamsDevicesResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-TeamsDevicesSchemasResponseCollection copyWith({List<TeamsDevicesMessages2>? errors, List<TeamsDevicesMessages2>? messages, List<TeamsDevicesDevicePostureIntegrations>? result, bool? success, TeamsDevicesResultInfo? Function()? resultInfo, }) { return TeamsDevicesSchemasResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+TeamsDevicesSchemasResponseCollection copyWith({List<TeamsDevicesMessages2>? errors, List<TeamsDevicesMessages2>? messages, List<TeamsDevicesDevicePostureIntegrations>? result, bool? success, TeamsDevicesResultInfo? Function()? resultInfo, }) {return TeamsDevicesSchemasResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesSchemasResponseCollection &&
           listEquals(errors, other.errors) &&
@@ -54,4 +54,4 @@ TeamsDevicesSchemasResponseCollection copyWith({List<TeamsDevicesMessages2>? err
 
 @override String toString() => 'TeamsDevicesSchemasResponseCollection(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)';
 
- }
+}

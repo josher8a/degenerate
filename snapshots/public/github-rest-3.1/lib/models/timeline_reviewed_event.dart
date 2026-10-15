@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Timeline Reviewed Event
 @immutable final class TimelineReviewedEvent {const TimelineReviewedEvent({required this.event, required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.commitId, required this.authorAssociation, this.submittedAt, this.updatedAt = const Omittable.absent(), this.bodyHtml, this.bodyText, });
 
-factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return TimelineReviewedEvent(
+factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) {return TimelineReviewedEvent(
   event: json['event'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -20,7 +20,7 @@ factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return Timel
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
-); }
+);}
 
 final String event;
 
@@ -56,7 +56,7 @@ final String? bodyText;
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event,
   'id': id,
   'node_id': nodeId,
@@ -72,8 +72,8 @@ Map<String, dynamic> toJson() { return {
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
   'author_association': authorAssociation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') && json['event'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('user') &&
@@ -83,8 +83,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('_links') &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('author_association'); } 
-TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime? Function()? submittedAt, Omittable<DateTime?>? updatedAt, String? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) { return TimelineReviewedEvent(
+      json.containsKey('author_association');}
+TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime? Function()? submittedAt, Omittable<DateTime?>? updatedAt, String? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) {return TimelineReviewedEvent(
   event: event ?? this.event,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -100,7 +100,7 @@ TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUs
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
   bodyText: bodyText != null ? bodyText() : this.bodyText,
   authorAssociation: authorAssociation ?? this.authorAssociation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineReviewedEvent &&
           event == other.event &&
@@ -123,4 +123,4 @@ TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUs
 
 @override String toString() => 'TimelineReviewedEvent(\n  event: $event,\n  id: $id,\n  nodeId: $nodeId,\n  user: $user,\n  body: $body,\n  state: $state,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  links: $links,\n  submittedAt: $submittedAt,\n  updatedAt: $updatedAt,\n  commitId: $commitId,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  authorAssociation: $authorAssociation,\n)';
 
- }
+}

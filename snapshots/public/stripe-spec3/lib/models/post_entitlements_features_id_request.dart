@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostEntitlementsFeaturesIdRequest {const PostEntitlementsFeaturesIdRequest({this.active, this.expand, this.metadata, this.name, });
 
-factory PostEntitlementsFeaturesIdRequest.fromJson(Map<String, dynamic> json) { return PostEntitlementsFeaturesIdRequest(
+factory PostEntitlementsFeaturesIdRequest.fromJson(Map<String, dynamic> json) {return PostEntitlementsFeaturesIdRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// Inactive features cannot be attached to new products and will not be returned from the features list endpoint.
 final bool? active;
@@ -22,26 +22,26 @@ final Metadata? metadata;
 /// The feature's name, for your own purpose, not meant to be displayable to the customer.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'metadata', 'name'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'expand', 'metadata', 'name'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 80) { errors.add('name: length must be <= 80'); }
 }
-return errors; } 
-PostEntitlementsFeaturesIdRequest copyWith({bool? Function()? active, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, }) { return PostEntitlementsFeaturesIdRequest(
+return errors;}
+PostEntitlementsFeaturesIdRequest copyWith({bool? Function()? active, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, }) {return PostEntitlementsFeaturesIdRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostEntitlementsFeaturesIdRequest &&
           active == other.active &&
@@ -53,4 +53,4 @@ PostEntitlementsFeaturesIdRequest copyWith({bool? Function()? active, List<Strin
 
 @override String toString() => 'PostEntitlementsFeaturesIdRequest(active: $active, expand: $expand, metadata: $metadata, name: $name)';
 
- }
+}

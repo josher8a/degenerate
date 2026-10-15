@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteIndicatorDeleteResponse {const DeleteIndicatorDeleteResponse({this.message, this.success, });
 
-factory DeleteIndicatorDeleteResponse.fromJson(Map<String, dynamic> json) { return DeleteIndicatorDeleteResponse(
+factory DeleteIndicatorDeleteResponse.fromJson(Map<String, dynamic> json) {return DeleteIndicatorDeleteResponse(
   message: json['message'] as String?,
   success: json['success'] as bool?,
-); }
+);}
 
 final String? message;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': ?message,
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'success'}.contains(key)); } 
-DeleteIndicatorDeleteResponse copyWith({String? Function()? message, bool? Function()? success, }) { return DeleteIndicatorDeleteResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'message', 'success'}.contains(key));}
+DeleteIndicatorDeleteResponse copyWith({String? Function()? message, bool? Function()? success, }) {return DeleteIndicatorDeleteResponse(
   message: message != null ? message() : this.message,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteIndicatorDeleteResponse &&
           message == other.message &&
@@ -30,4 +30,4 @@ DeleteIndicatorDeleteResponse copyWith({String? Function()? message, bool? Funct
 
 @override String toString() => 'DeleteIndicatorDeleteResponse(message: $message, success: $success)';
 
- }
+}

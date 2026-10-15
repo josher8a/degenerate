@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_recurring.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_trigger_field.dart';/// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
 sealed class AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod();
 
-factory AccountUsageUsageTriggerCallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountUsageUsageTriggerCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountUsageUsageTriggerCallbackMethod$Unknown(json),
-}; }
+};}
 
 static const AccountUsageUsageTriggerCallbackMethod $get = AccountUsageUsageTriggerCallbackMethod$$get._();
 
@@ -17,30 +17,30 @@ static const AccountUsageUsageTriggerCallbackMethod post = AccountUsageUsageTrig
 static const List<AccountUsageUsageTriggerCallbackMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountUsageUsageTriggerCallbackMethod$Unknown; } 
+bool get isUnknown {return this is AccountUsageUsageTriggerCallbackMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       AccountUsageUsageTriggerCallbackMethod$$get() => $get(),
       AccountUsageUsageTriggerCallbackMethod$post() => post(),
       AccountUsageUsageTriggerCallbackMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       AccountUsageUsageTriggerCallbackMethod$$get() => $get != null ? $get() : orElse(value),
       AccountUsageUsageTriggerCallbackMethod$post() => post != null ? post() : orElse(value),
       AccountUsageUsageTriggerCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountUsageUsageTriggerCallbackMethod($value)';
 
- }
+}
 @immutable final class AccountUsageUsageTriggerCallbackMethod$$get extends AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class AccountUsageUsageTriggerCallbackMethod$post extends AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class AccountUsageUsageTriggerCallbackMethod$Unknown extends AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccountUsageUsageTrigger {const AccountUsageUsageTrigger({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callbackMethod = const Omittable.absent(), this.callbackUrl = const Omittable.absent(), this.currentValue = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateFired = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.recurring, this.sid = const Omittable.absent(), this.triggerBy, this.triggerValue = const Omittable.absent(), this.uri = const Omittable.absent(), this.usageCategory = const Omittable.absent(), this.usageRecordUri = const Omittable.absent(), });
 
-factory AccountUsageUsageTrigger.fromJson(Map<String, dynamic> json) { return AccountUsageUsageTrigger(
+factory AccountUsageUsageTrigger.fromJson(Map<String, dynamic> json) {return AccountUsageUsageTrigger(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   callbackMethod: json.containsKey('callback_method') ? Omittable(json['callback_method'] != null ? AccountUsageUsageTriggerCallbackMethod.fromJson(json['callback_method'] as String) : null) : const Omittable.absent(),
@@ -88,7 +88,7 @@ factory AccountUsageUsageTrigger.fromJson(Map<String, dynamic> json) { return Ac
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
   usageCategory: json.containsKey('usage_category') ? Omittable(json['usage_category'] as String?) : const Omittable.absent(),
   usageRecordUri: json.containsKey('usage_record_uri') ? Omittable(json['usage_record_uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the trigger monitors.
 final Omittable<String?> accountSid;
@@ -136,7 +136,7 @@ final Omittable<String?> usageCategory;
 /// The URI of the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource this trigger watches, relative to `https://api.twilio.com`.
 final Omittable<String?> usageRecordUri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (callbackMethod.isPresent) 'callback_method': callbackMethod.value?.toJson(),
@@ -153,10 +153,10 @@ Map<String, dynamic> toJson() { return {
   if (uri.isPresent) 'uri': uri.value,
   if (usageCategory.isPresent) 'usage_category': usageCategory.value,
   if (usageRecordUri.isPresent) 'usage_record_uri': usageRecordUri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'callback_method', 'callback_url', 'current_value', 'date_created', 'date_fired', 'date_updated', 'friendly_name', 'recurring', 'sid', 'trigger_by', 'trigger_value', 'uri', 'usage_category', 'usage_record_uri'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'callback_method', 'callback_url', 'current_value', 'date_created', 'date_fired', 'date_updated', 'friendly_name', 'recurring', 'sid', 'trigger_by', 'trigger_value', 'uri', 'usage_category', 'usage_record_uri'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -169,8 +169,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^UT[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^UT[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountUsageUsageTrigger copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<AccountUsageUsageTriggerCallbackMethod?>? callbackMethod, Omittable<Uri?>? callbackUrl, Omittable<String?>? currentValue, Omittable<String?>? dateCreated, Omittable<String?>? dateFired, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, Omittable<String?>? sid, UsageTriggerEnumTriggerField? Function()? triggerBy, Omittable<String?>? triggerValue, Omittable<String?>? uri, Omittable<String?>? usageCategory, Omittable<String?>? usageRecordUri, }) { return AccountUsageUsageTrigger(
+return errors;}
+AccountUsageUsageTrigger copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<AccountUsageUsageTriggerCallbackMethod?>? callbackMethod, Omittable<Uri?>? callbackUrl, Omittable<String?>? currentValue, Omittable<String?>? dateCreated, Omittable<String?>? dateFired, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, Omittable<String?>? sid, UsageTriggerEnumTriggerField? Function()? triggerBy, Omittable<String?>? triggerValue, Omittable<String?>? uri, Omittable<String?>? usageCategory, Omittable<String?>? usageRecordUri, }) {return AccountUsageUsageTrigger(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   callbackMethod: callbackMethod ?? this.callbackMethod,
@@ -187,7 +187,7 @@ AccountUsageUsageTrigger copyWith({Omittable<String?>? accountSid, Omittable<Str
   uri: uri ?? this.uri,
   usageCategory: usageCategory ?? this.usageCategory,
   usageRecordUri: usageRecordUri ?? this.usageRecordUri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUsageUsageTrigger &&
           accountSid == other.accountSid &&
@@ -211,4 +211,4 @@ AccountUsageUsageTrigger copyWith({Omittable<String?>? accountSid, Omittable<Str
 
 @override String toString() => 'AccountUsageUsageTrigger(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  callbackMethod: $callbackMethod,\n  callbackUrl: $callbackUrl,\n  currentValue: $currentValue,\n  dateCreated: $dateCreated,\n  dateFired: $dateFired,\n  dateUpdated: $dateUpdated,\n  friendlyName: $friendlyName,\n  recurring: $recurring,\n  sid: $sid,\n  triggerBy: $triggerBy,\n  triggerValue: $triggerValue,\n  uri: $uri,\n  usageCategory: $usageCategory,\n  usageRecordUri: $usageRecordUri,\n)';
 
- }
+}

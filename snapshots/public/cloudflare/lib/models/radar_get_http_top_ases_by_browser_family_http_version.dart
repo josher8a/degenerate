@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByBrowserFamilyHttpVersion {const RadarGetHttpTopAsesByBrowserFamilyHttpVersion();
 
-factory RadarGetHttpTopAsesByBrowserFamilyHttpVersion.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByBrowserFamilyHttpVersion.fromJson(String json) {return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
   _ => RadarGetHttpTopAsesByBrowserFamilyHttpVersion$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByBrowserFamilyHttpVersion httPv1 = RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv1._();
 
@@ -19,33 +19,33 @@ static const RadarGetHttpTopAsesByBrowserFamilyHttpVersion httPv3 = RadarGetHttp
 static const List<RadarGetHttpTopAsesByBrowserFamilyHttpVersion> values = [httPv1, httPv2, httPv3];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'HTTPv1' => 'httPv1',
   'HTTPv2' => 'httPv2',
   'HTTPv3' => 'httPv3',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopAsesByBrowserFamilyHttpVersion$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopAsesByBrowserFamilyHttpVersion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() httPv1, required W Function() httPv2, required W Function() httPv3, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() httPv1, required W Function() httPv2, required W Function() httPv3, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv1() => httPv1(),
       RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv2() => httPv2(),
       RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv3() => httPv3(),
       RadarGetHttpTopAsesByBrowserFamilyHttpVersion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? httPv1, W Function()? httPv2, W Function()? httPv3, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? httPv1, W Function()? httPv2, W Function()? httPv3, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv1() => httPv1 != null ? httPv1() : orElse(value),
       RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv2() => httPv2 != null ? httPv2() : orElse(value),
       RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv3() => httPv3 != null ? httPv3() : orElse(value),
       RadarGetHttpTopAsesByBrowserFamilyHttpVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopAsesByBrowserFamilyHttpVersion($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv1 extends RadarGetHttpTopAsesByBrowserFamilyHttpVersion {const RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv1._();
 
 @override String get value => 'HTTPv1';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httPv1, 
 
 @override int get hashCode => 'HTTPv1'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv2 extends RadarGetHttpTopAsesByBrowserFamilyHttpVersion {const RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv2._();
 
 @override String get value => 'HTTPv2';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httPv1, 
 
 @override int get hashCode => 'HTTPv2'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv3 extends RadarGetHttpTopAsesByBrowserFamilyHttpVersion {const RadarGetHttpTopAsesByBrowserFamilyHttpVersion$httPv3._();
 
 @override String get value => 'HTTPv3';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httPv1, 
 
 @override int get hashCode => 'HTTPv3'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByBrowserFamilyHttpVersion$Unknown extends RadarGetHttpTopAsesByBrowserFamilyHttpVersion {const RadarGetHttpTopAsesByBrowserFamilyHttpVersion$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httPv1, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

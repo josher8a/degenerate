@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_delete_request/post_apps_secrets_delete_request_scope.dart';@immutable final class PostAppsSecretsRequest {const PostAppsSecretsRequest({required this.name, required this.payload, required this.scope, this.expand, this.expiresAt, });
 
-factory PostAppsSecretsRequest.fromJson(Map<String, dynamic> json) { return PostAppsSecretsRequest(
+factory PostAppsSecretsRequest.fromJson(Map<String, dynamic> json) {return PostAppsSecretsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   name: json['name'] as String,
   payload: json['payload'] as String,
   scope: PostAppsSecretsDeleteRequestScope.fromJson(json['scope'] as Map<String, dynamic>),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -26,28 +26,28 @@ final String payload;
 /// Specifies the scoping of the secret. Requests originating from UI extensions can only access account-scoped secrets or secrets scoped to their own user.
 final PostAppsSecretsDeleteRequestScope scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'expires_at': ?expiresAt,
   'name': name,
   'payload': payload,
   'scope': scope.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('payload') && json['payload'] is String &&
-      json.containsKey('scope'); } 
+      json.containsKey('scope');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 if (payload.runes.length > 5000) { errors.add('payload: length must be <= 5000'); }
-return errors; } 
-PostAppsSecretsRequest copyWith({List<String>? Function()? expand, int? Function()? expiresAt, String? name, String? payload, PostAppsSecretsDeleteRequestScope? scope, }) { return PostAppsSecretsRequest(
+return errors;}
+PostAppsSecretsRequest copyWith({List<String>? Function()? expand, int? Function()? expiresAt, String? name, String? payload, PostAppsSecretsDeleteRequestScope? scope, }) {return PostAppsSecretsRequest(
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   name: name ?? this.name,
   payload: payload ?? this.payload,
   scope: scope ?? this.scope,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAppsSecretsRequest &&
           listEquals(expand, other.expand) &&
@@ -60,4 +60,4 @@ PostAppsSecretsRequest copyWith({List<String>? Function()? expand, int? Function
 
 @override String toString() => 'PostAppsSecretsRequest(expand: $expand, expiresAt: $expiresAt, name: $name, payload: $payload, scope: $scope)';
 
- }
+}

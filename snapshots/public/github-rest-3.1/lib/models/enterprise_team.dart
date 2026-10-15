@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Group of enterprise owners and/or members
 @immutable final class EnterpriseTeam {const EnterpriseTeam({required this.id, required this.name, required this.slug, required this.url, required this.groupId, required this.htmlUrl, required this.membersUrl, required this.createdAt, required this.updatedAt, this.description, this.syncToOrganizations, this.organizationSelectionType, this.groupName = const Omittable.absent(), });
 
-factory EnterpriseTeam.fromJson(Map<String, dynamic> json) { return EnterpriseTeam(
+factory EnterpriseTeam.fromJson(Map<String, dynamic> json) {return EnterpriseTeam(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   description: json['description'] as String?,
@@ -18,7 +18,7 @@ factory EnterpriseTeam.fromJson(Map<String, dynamic> json) { return EnterpriseTe
   membersUrl: json['members_url'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final int id;
 
@@ -48,7 +48,7 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'description': ?description,
@@ -62,8 +62,8 @@ Map<String, dynamic> toJson() { return {
   'members_url': membersUrl,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('url') && json['url'] is String &&
@@ -71,8 +71,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-EnterpriseTeam copyWith({int? id, String? name, String? Function()? description, String? slug, Uri? url, String? Function()? syncToOrganizations, String? Function()? organizationSelectionType, String? Function()? groupId, Omittable<String?>? groupName, Uri? htmlUrl, String? membersUrl, DateTime? createdAt, DateTime? updatedAt, }) { return EnterpriseTeam(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+EnterpriseTeam copyWith({int? id, String? name, String? Function()? description, String? slug, Uri? url, String? Function()? syncToOrganizations, String? Function()? organizationSelectionType, String? Function()? groupId, Omittable<String?>? groupName, Uri? htmlUrl, String? membersUrl, DateTime? createdAt, DateTime? updatedAt, }) {return EnterpriseTeam(
   id: id ?? this.id,
   name: name ?? this.name,
   description: description != null ? description() : this.description,
@@ -86,7 +86,7 @@ EnterpriseTeam copyWith({int? id, String? name, String? Function()? description,
   membersUrl: membersUrl ?? this.membersUrl,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EnterpriseTeam &&
           id == other.id &&
@@ -107,4 +107,4 @@ EnterpriseTeam copyWith({int? id, String? name, String? Function()? description,
 
 @override String toString() => 'EnterpriseTeam(\n  id: $id,\n  name: $name,\n  description: $description,\n  slug: $slug,\n  url: $url,\n  syncToOrganizations: $syncToOrganizations,\n  organizationSelectionType: $organizationSelectionType,\n  groupId: $groupId,\n  groupName: $groupName,\n  htmlUrl: $htmlUrl,\n  membersUrl: $membersUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

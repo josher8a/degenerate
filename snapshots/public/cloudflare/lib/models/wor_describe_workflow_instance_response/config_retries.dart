@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Backoff {const Backoff();
 
-factory Backoff.fromJson(String json) { return switch (json) {
+factory Backoff.fromJson(String json) {return switch (json) {
   'constant' => constant,
   'linear' => linear,
   'exponential' => exponential,
   _ => Backoff$Unknown(json),
-}; }
+};}
 
 static const Backoff constant = Backoff$constant._();
 
@@ -19,33 +19,33 @@ static const Backoff exponential = Backoff$exponential._();
 static const List<Backoff> values = [constant, linear, exponential];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'constant' => 'constant',
   'linear' => 'linear',
   'exponential' => 'exponential',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Backoff$Unknown; } 
+bool get isUnknown {return this is Backoff$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() constant, required W Function() linear, required W Function() exponential, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() constant, required W Function() linear, required W Function() exponential, required W Function(String value) $unknown, }) {return switch (this) {
       Backoff$constant() => constant(),
       Backoff$linear() => linear(),
       Backoff$exponential() => exponential(),
       Backoff$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? constant, W Function()? linear, W Function()? exponential, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? constant, W Function()? linear, W Function()? exponential, W Function(String value)? $unknown, }) {return switch (this) {
       Backoff$constant() => constant != null ? constant() : orElse(value),
       Backoff$linear() => linear != null ? linear() : orElse(value),
       Backoff$exponential() => exponential != null ? exponential() : orElse(value),
       Backoff$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Backoff($value)';
 
- }
+}
 @immutable final class Backoff$constant extends Backoff {const Backoff$constant._();
 
 @override String get value => 'constant';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? constant
 
 @override int get hashCode => 'constant'.hashCode;
 
- }
+}
 @immutable final class Backoff$linear extends Backoff {const Backoff$linear._();
 
 @override String get value => 'linear';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? constant
 
 @override int get hashCode => 'linear'.hashCode;
 
- }
+}
 @immutable final class Backoff$exponential extends Backoff {const Backoff$exponential._();
 
 @override String get value => 'exponential';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? constant
 
 @override int get hashCode => 'exponential'.hashCode;
 
- }
+}
 @immutable final class Backoff$Unknown extends Backoff {const Backoff$Unknown(this.value);
 
 @override final String value;
@@ -82,14 +82,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? constant
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ConfigRetries {const ConfigRetries({required this.delay, required this.limit, this.backoff, });
 
-factory ConfigRetries.fromJson(Map<String, dynamic> json) { return ConfigRetries(
+factory ConfigRetries.fromJson(Map<String, dynamic> json) {return ConfigRetries(
   backoff: json['backoff'] != null ? Backoff.fromJson(json['backoff'] as String) : null,
   delay: json['delay'],
   limit: (json['limit'] as num).toDouble(),
-); }
+);}
 
 final Backoff? backoff;
 
@@ -102,18 +102,18 @@ final dynamic delay;
 
 final double limit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (backoff != null) 'backoff': backoff?.toJson(),
   'delay': delay,
   'limit': limit,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('delay') &&
-      json.containsKey('limit') && json['limit'] is num; } 
-ConfigRetries copyWith({Backoff? Function()? backoff, dynamic delay, double? limit, }) { return ConfigRetries(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('delay') &&
+      json.containsKey('limit') && json['limit'] is num;}
+ConfigRetries copyWith({Backoff? Function()? backoff, dynamic delay, double? limit, }) {return ConfigRetries(
   backoff: backoff != null ? backoff() : this.backoff,
   delay: delay ?? this.delay,
   limit: limit ?? this.limit,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConfigRetries &&
           backoff == other.backoff &&
@@ -124,4 +124,4 @@ ConfigRetries copyWith({Backoff? Function()? backoff, dynamic delay, double? lim
 
 @override String toString() => 'ConfigRetries(backoff: $backoff, delay: $delay, limit: $limit)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_close_request/forwarding_settings.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/nickname.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/platform_restrictions.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/post_treasury_financial_accounts_financial_account_request_features.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountRequest {const PostTreasuryFinancialAccountsFinancialAccountRequest({this.expand, this.features, this.forwardingSettings, this.metadata, this.nickname, this.platformRestrictions, });
 
-factory PostTreasuryFinancialAccountsFinancialAccountRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequest(
+factory PostTreasuryFinancialAccountsFinancialAccountRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsFinancialAccountRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: json['features'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   forwardingSettings: json['forwarding_settings'] != null ? ForwardingSettings.fromJson(json['forwarding_settings'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nickname: json['nickname'] != null ? Nickname.fromJson(json['nickname']) : null,
   platformRestrictions: json['platform_restrictions'] != null ? PlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -30,23 +30,23 @@ final Nickname? nickname;
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
 final PlatformRestrictions? platformRestrictions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (features != null) 'features': features?.toJson(),
   if (forwardingSettings != null) 'forwarding_settings': forwardingSettings?.toJson(),
   'metadata': ?metadata,
   if (nickname != null) 'nickname': nickname?.toJson(),
   if (platformRestrictions != null) 'platform_restrictions': platformRestrictions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'features', 'forwarding_settings', 'metadata', 'nickname', 'platform_restrictions'}.contains(key)); } 
-PostTreasuryFinancialAccountsFinancialAccountRequest copyWith({List<String>? Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures? Function()? features, ForwardingSettings? Function()? forwardingSettings, Map<String, String>? Function()? metadata, Nickname? Function()? nickname, PlatformRestrictions? Function()? platformRestrictions, }) { return PostTreasuryFinancialAccountsFinancialAccountRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'features', 'forwarding_settings', 'metadata', 'nickname', 'platform_restrictions'}.contains(key));}
+PostTreasuryFinancialAccountsFinancialAccountRequest copyWith({List<String>? Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures? Function()? features, ForwardingSettings? Function()? forwardingSettings, Map<String, String>? Function()? metadata, Nickname? Function()? nickname, PlatformRestrictions? Function()? platformRestrictions, }) {return PostTreasuryFinancialAccountsFinancialAccountRequest(
   expand: expand != null ? expand() : this.expand,
   features: features != null ? features() : this.features,
   forwardingSettings: forwardingSettings != null ? forwardingSettings() : this.forwardingSettings,
   metadata: metadata != null ? metadata() : this.metadata,
   nickname: nickname != null ? nickname() : this.nickname,
   platformRestrictions: platformRestrictions != null ? platformRestrictions() : this.platformRestrictions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountRequest &&
           listEquals(expand, other.expand) &&
@@ -60,4 +60,4 @@ PostTreasuryFinancialAccountsFinancialAccountRequest copyWith({List<String>? Fun
 
 @override String toString() => 'PostTreasuryFinancialAccountsFinancialAccountRequest(expand: $expand, features: $features, forwardingSettings: $forwardingSettings, metadata: $metadata, nickname: $nickname, platformRestrictions: $platformRestrictions)';
 
- }
+}

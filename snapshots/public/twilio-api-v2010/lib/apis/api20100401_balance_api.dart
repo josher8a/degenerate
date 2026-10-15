@@ -12,7 +12,7 @@ final class Api20100401BalanceApi with ApiExecutor {const Api20100401BalanceApi(
 /// Fetch the balance for an Account based on Account Sid. Balance changes may not be reflected immediately. Child accounts do not contain balance information
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Balance.json`
-Future<ApiResult<AccountBalance, Never>> fetchBalance({required String accountSid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountBalance, Never>> fetchBalance({required String accountSid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,5 +27,5 @@ return await execute(
     return AccountBalance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

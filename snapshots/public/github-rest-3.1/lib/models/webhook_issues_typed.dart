@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue.dart';sealed class WebhookIssuesTypedAction {const WebhookIssuesTypedAction();
 
-factory WebhookIssuesTypedAction.fromJson(String json) { return switch (json) {
+factory WebhookIssuesTypedAction.fromJson(String json) {return switch (json) {
   'typed' => typed,
   _ => WebhookIssuesTypedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookIssuesTypedAction typed = WebhookIssuesTypedAction$typed._();
 
 static const List<WebhookIssuesTypedAction> values = [typed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'typed' => 'typed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookIssuesTypedAction$Unknown; } 
+bool get isUnknown {return this is WebhookIssuesTypedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() typed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() typed, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookIssuesTypedAction$typed() => typed(),
       WebhookIssuesTypedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? typed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? typed, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookIssuesTypedAction$typed() => typed != null ? typed() : orElse(value),
       WebhookIssuesTypedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookIssuesTypedAction($value)';
 
- }
+}
 @immutable final class WebhookIssuesTypedAction$typed extends WebhookIssuesTypedAction {const WebhookIssuesTypedAction$typed._();
 
 @override String get value => 'typed';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typed, W
 
 @override int get hashCode => 'typed'.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesTypedAction$Unknown extends WebhookIssuesTypedAction {const WebhookIssuesTypedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? typed, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookIssuesTyped {const WebhookIssuesTyped({required this.action, required this.issue, required this.type, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookIssuesTyped.fromJson(Map<String, dynamic> json) { return WebhookIssuesTyped(
+factory WebhookIssuesTyped.fromJson(Map<String, dynamic> json) {return WebhookIssuesTyped(
   action: WebhookIssuesTypedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -64,7 +64,7 @@ factory WebhookIssuesTyped.fromJson(Map<String, dynamic> json) { return WebhookI
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookIssuesTypedAction action;
 
@@ -82,7 +82,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -91,13 +91,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('issue') &&
       json.containsKey('type') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssuesTyped copyWith({WebhookIssuesTypedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, IssueType? Function()? type, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesTyped(
+      json.containsKey('sender');}
+WebhookIssuesTyped copyWith({WebhookIssuesTypedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, IssueType? Function()? type, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssuesTyped(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -106,7 +106,7 @@ WebhookIssuesTyped copyWith({WebhookIssuesTypedAction? action, EnterpriseWebhook
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesTyped &&
           action == other.action &&
@@ -122,4 +122,4 @@ WebhookIssuesTyped copyWith({WebhookIssuesTypedAction? action, EnterpriseWebhook
 
 @override String toString() => 'WebhookIssuesTyped(action: $action, enterprise: $enterprise, installation: $installation, issue: $issue, type: $type, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

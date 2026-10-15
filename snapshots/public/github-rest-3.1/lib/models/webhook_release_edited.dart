@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_release_edited/webhook_release_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_release.dart';@immutable final class WebhookReleaseEdited {const WebhookReleaseEdited({required this.action, required this.changes, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookReleaseEdited.fromJson(Map<String, dynamic> json) { return WebhookReleaseEdited(
+factory WebhookReleaseEdited.fromJson(Map<String, dynamic> json) {return WebhookReleaseEdited(
   action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookReleaseEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookReleaseEdited.fromJson(Map<String, dynamic> json) { return Webhoo
   release: WebhooksRelease.fromJson(json['release'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ItemEditedAction action;
 
@@ -30,7 +30,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -39,12 +39,12 @@ Map<String, dynamic> toJson() { return {
   'release': release.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('release') &&
-      json.containsKey('repository'); } 
-WebhookReleaseEdited copyWith({ItemEditedAction? action, WebhookReleaseEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease? release, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookReleaseEdited(
+      json.containsKey('repository');}
+WebhookReleaseEdited copyWith({ItemEditedAction? action, WebhookReleaseEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease? release, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookReleaseEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -53,7 +53,7 @@ WebhookReleaseEdited copyWith({ItemEditedAction? action, WebhookReleaseEditedCha
   release: release ?? this.release,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookReleaseEdited &&
           action == other.action &&
@@ -69,4 +69,4 @@ WebhookReleaseEdited copyWith({ItemEditedAction? action, WebhookReleaseEditedCha
 
 @override String toString() => 'WebhookReleaseEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)';
 
- }
+}

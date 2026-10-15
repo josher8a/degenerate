@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class InvoiceSettingCustomField {const InvoiceSettingCustomField({required this.name, required this.value, });
 
-factory InvoiceSettingCustomField.fromJson(Map<String, dynamic> json) { return InvoiceSettingCustomField(
+factory InvoiceSettingCustomField.fromJson(Map<String, dynamic> json) {return InvoiceSettingCustomField(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// The name of the custom field.
 final String name;
@@ -15,21 +15,21 @@ final String name;
 /// The value of the custom field.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 if (value.runes.length > 5000) { errors.add('value: length must be <= 5000'); }
-return errors; } 
-InvoiceSettingCustomField copyWith({String? name, String? value, }) { return InvoiceSettingCustomField(
+return errors;}
+InvoiceSettingCustomField copyWith({String? name, String? value, }) {return InvoiceSettingCustomField(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceSettingCustomField &&
           name == other.name &&
@@ -39,4 +39,4 @@ InvoiceSettingCustomField copyWith({String? name, String? value, }) { return Inv
 
 @override String toString() => 'InvoiceSettingCustomField(name: $name, value: $value)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payouts_request/source_type.dart';@immutable final class PostTransfersRequest {const PostTransfersRequest({required this.currency, required this.destination, this.amount, this.description, this.expand, this.metadata, this.sourceTransaction, this.sourceType, this.transferGroup, });
 
-factory PostTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTransfersRequest(
+factory PostTransfersRequest.fromJson(Map<String, dynamic> json) {return PostTransfersRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -13,7 +13,7 @@ factory PostTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTr
   sourceTransaction: json['source_transaction'] as String?,
   sourceType: json['source_type'] != null ? SourceType.fromJson(json['source_type'] as String) : null,
   transferGroup: json['transfer_group'] as String?,
-); }
+);}
 
 /// A positive integer in cents (or local equivalent) representing how much to transfer.
 final int? amount;
@@ -42,7 +42,7 @@ final SourceType? sourceType;
 /// A string that identifies this transaction as part of a group. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final String? transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'currency': currency,
   'description': ?description,
@@ -52,17 +52,17 @@ Map<String, dynamic> toJson() { return {
   'source_transaction': ?sourceTransaction,
   if (sourceType != null) 'source_type': sourceType?.toJson(),
   'transfer_group': ?transferGroup,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('destination') && json['destination'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('destination') && json['destination'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-return errors; } 
-PostTransfersRequest copyWith({int? Function()? amount, String? currency, String? Function()? description, String? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? sourceTransaction, SourceType? Function()? sourceType, String? Function()? transferGroup, }) { return PostTransfersRequest(
+return errors;}
+PostTransfersRequest copyWith({int? Function()? amount, String? currency, String? Function()? description, String? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? sourceTransaction, SourceType? Function()? sourceType, String? Function()? transferGroup, }) {return PostTransfersRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -72,7 +72,7 @@ PostTransfersRequest copyWith({int? Function()? amount, String? currency, String
   sourceTransaction: sourceTransaction != null ? sourceTransaction() : this.sourceTransaction,
   sourceType: sourceType != null ? sourceType() : this.sourceType,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTransfersRequest &&
           amount == other.amount &&
@@ -89,4 +89,4 @@ PostTransfersRequest copyWith({int? Function()? amount, String? currency, String
 
 @override String toString() => 'PostTransfersRequest(\n  amount: $amount,\n  currency: $currency,\n  description: $description,\n  destination: $destination,\n  expand: $expand,\n  metadata: $metadata,\n  sourceTransaction: $sourceTransaction,\n  sourceType: $sourceType,\n  transferGroup: $transferGroup,\n)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_python/eval_grader_python_type.dart';@immutable final class EvalGraderPython {const EvalGraderPython({required this.type, required this.name, required this.source, this.imageTag, this.passThreshold, });
 
-factory EvalGraderPython.fromJson(Map<String, dynamic> json) { return EvalGraderPython(
+factory EvalGraderPython.fromJson(Map<String, dynamic> json) {return EvalGraderPython(
   type: EvalGraderPythonType.fromJson(json['type'] as String),
   name: json['name'] as String,
   source: json['source'] as String,
   imageTag: json['image_tag'] as String?,
   passThreshold: json['pass_threshold'] != null ? (json['pass_threshold'] as num).toDouble() : null,
-); }
+);}
 
 /// The object type, which is always `python`.
 final EvalGraderPythonType type;
@@ -26,23 +26,23 @@ final String? imageTag;
 /// The threshold for the score.
 final double? passThreshold;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'source': source,
   'image_tag': ?imageTag,
   'pass_threshold': ?passThreshold,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'python' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'python' &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('source') && json['source'] is String; } 
-EvalGraderPython copyWith({EvalGraderPythonType? type, String? name, String? source, String? Function()? imageTag, double? Function()? passThreshold, }) { return EvalGraderPython(
+      json.containsKey('source') && json['source'] is String;}
+EvalGraderPython copyWith({EvalGraderPythonType? type, String? name, String? source, String? Function()? imageTag, double? Function()? passThreshold, }) {return EvalGraderPython(
   type: type ?? this.type,
   name: name ?? this.name,
   source: source ?? this.source,
   imageTag: imageTag != null ? imageTag() : this.imageTag,
   passThreshold: passThreshold != null ? passThreshold() : this.passThreshold,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EvalGraderPython &&
           type == other.type &&
@@ -55,4 +55,4 @@ EvalGraderPython copyWith({EvalGraderPythonType? type, String? name, String? sou
 
 @override String toString() => 'EvalGraderPython(type: $type, name: $name, source: $source, imageTag: $imageTag, passThreshold: $passThreshold)';
 
- }
+}

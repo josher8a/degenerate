@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_one_recording_response/get_one_recording_response_data.dart';@immutable final class GetOneRecordingResponse {const GetOneRecordingResponse({required this.success, this.data, });
 
-factory GetOneRecordingResponse.fromJson(Map<String, dynamic> json) { return GetOneRecordingResponse(
+factory GetOneRecordingResponse.fromJson(Map<String, dynamic> json) {return GetOneRecordingResponse(
   data: json['data'] != null ? GetOneRecordingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
-); }
+);}
 
 final GetOneRecordingResponseData? data;
 
 /// Success status of the operation
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-GetOneRecordingResponse copyWith({GetOneRecordingResponseData? Function()? data, bool? success, }) { return GetOneRecordingResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('success') && json['success'] is bool;}
+GetOneRecordingResponse copyWith({GetOneRecordingResponseData? Function()? data, bool? success, }) {return GetOneRecordingResponse(
   data: data != null ? data() : this.data,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetOneRecordingResponse &&
           data == other.data &&
@@ -31,4 +31,4 @@ GetOneRecordingResponse copyWith({GetOneRecordingResponseData? Function()? data,
 
 @override String toString() => 'GetOneRecordingResponse(data: $data, success: $success)';
 
- }
+}

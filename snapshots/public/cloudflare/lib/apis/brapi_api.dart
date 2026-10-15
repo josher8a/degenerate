@@ -14,7 +14,7 @@ final class BrapiApi with ApiExecutor {const BrapiApi(this.apiConfig);
 /// Fetches rendered HTML content from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/content`
-Future<ApiResult<String?, BrapiPostContentError>> brapiPostContent({required String accountId, required BrapiPostContentRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String?, BrapiPostContentError>> brapiPostContent({required String accountId, required BrapiPostContentRequest body, double? cacheTtl, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -41,13 +41,13 @@ return await execute(
   },
   onError: BrapiPostContentError.fromResponse,
 );
- } 
+}
 /// Get json.
 ///
 /// Gets json from a webpage from a provided URL or HTML. Pass `prompt` or `schema` in the body. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/json`
-Future<ApiResult<Map<String, Map<String, dynamic>?>, BrapiPostJsonError>> brapiPostJson({required String accountId, required BrapiPostJsonRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, Map<String, dynamic>?>, BrapiPostJsonError>> brapiPostJson({required String accountId, required BrapiPostJsonRequest body, double? cacheTtl, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -74,13 +74,13 @@ return await execute(
   },
   onError: BrapiPostJsonError.fromResponse,
 );
- } 
+}
 /// Get Links.
 ///
 /// Get links from a web page.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/links`
-Future<ApiResult<List<String>, BrapiPostLinksError>> brapiPostLinks({required String accountId, required BrapiPostLinksRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<String>, BrapiPostLinksError>> brapiPostLinks({required String accountId, required BrapiPostLinksRequest body, double? cacheTtl, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -107,13 +107,13 @@ return await execute(
   },
   onError: BrapiPostLinksError.fromResponse,
 );
- } 
+}
 /// Get markdown.
 ///
 /// Gets markdown of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/markdown`
-Future<ApiResult<String?, BrapiPostMarkdownError>> brapiPostMarkdown({required String accountId, required BrapiPostMarkdownRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String?, BrapiPostMarkdownError>> brapiPostMarkdown({required String accountId, required BrapiPostMarkdownRequest body, double? cacheTtl, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -140,13 +140,13 @@ return await execute(
   },
   onError: BrapiPostMarkdownError.fromResponse,
 );
- } 
+}
 /// Get PDF.
 ///
 /// Fetches rendered PDF from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/pdf`
-Future<ApiResult<String, BrapiPostPdfError>> brapiPostPdf({required String accountId, required BrapiPostPdfRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, BrapiPostPdfError>> brapiPostPdf({required String accountId, required BrapiPostPdfRequest body, double? cacheTtl, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -172,13 +172,13 @@ return await execute(
   },
   onError: BrapiPostPdfError.fromResponse,
 );
- } 
+}
 /// Scrape elements.
 ///
 /// Get meta attributes like height, width, text and others of selected elements.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/scrape`
-Future<ApiResult<List<BrapiPostScrapeResponseResult>, BrapiPostScrapeError>> brapiPostScrape({required String accountId, required BrapiPostScrapeRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BrapiPostScrapeResponseResult>, BrapiPostScrapeError>> brapiPostScrape({required String accountId, required BrapiPostScrapeRequest body, double? cacheTtl, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -205,13 +205,13 @@ return await execute(
   },
   onError: BrapiPostScrapeError.fromResponse,
 );
- } 
+}
 /// Get screenshot.
 ///
 /// Takes a screenshot of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/screenshot`
-Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotError>> brapiPostScreenshot({required String accountId, required BrapiPostScreenshotRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BrapiPostScreenshotResponse, BrapiPostScreenshotError>> brapiPostScreenshot({required String accountId, required BrapiPostScreenshotRequest body, double? cacheTtl, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -237,13 +237,13 @@ return await execute(
   },
   onError: BrapiPostScreenshotError.fromResponse,
 );
- } 
+}
 /// Get HTML content and screenshot.
 ///
 /// Returns the page's HTML content and screenshot. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/snapshot`
-Future<ApiResult<BrapiPostSnapshotResponseResult?, BrapiPostSnapshotError>> brapiPostSnapshot({required String accountId, required BrapiPostSnapshotRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BrapiPostSnapshotResponseResult?, BrapiPostSnapshotError>> brapiPostSnapshot({required String accountId, required BrapiPostSnapshotRequest body, double? cacheTtl, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -270,5 +270,5 @@ return await execute(
   },
   onError: BrapiPostSnapshotError.fromResponse,
 );
- } 
- }
+}
+}

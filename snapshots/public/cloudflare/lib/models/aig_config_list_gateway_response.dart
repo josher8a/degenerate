@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_response/aig_config_create_gateway_response_result.dart';@immutable final class AigConfigListGatewayResponse {const AigConfigListGatewayResponse({required this.result, required this.success, });
 
-factory AigConfigListGatewayResponse.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayResponse(
+factory AigConfigListGatewayResponse.fromJson(Map<String, dynamic> json) {return AigConfigListGatewayResponse(
   result: (json['result'] as List<dynamic>).map((e) => AigConfigCreateGatewayResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AigConfigCreateGatewayResponseResult> result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigListGatewayResponse copyWith({List<AigConfigCreateGatewayResponseResult>? result, bool? success, }) { return AigConfigListGatewayResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigListGatewayResponse copyWith({List<AigConfigCreateGatewayResponseResult>? result, bool? success, }) {return AigConfigListGatewayResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListGatewayResponse &&
           listEquals(result, other.result) &&
@@ -31,4 +31,4 @@ AigConfigListGatewayResponse copyWith({List<AigConfigCreateGatewayResponseResult
 
 @override String toString() => 'AigConfigListGatewayResponse(result: $result, success: $success)';
 
- }
+}

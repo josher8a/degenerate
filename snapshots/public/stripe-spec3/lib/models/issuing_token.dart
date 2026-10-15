@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_token/issuing_token_card.dart';/// The token service provider / card network associated with the token.
 sealed class IssuingTokenNetwork {const IssuingTokenNetwork();
 
-factory IssuingTokenNetwork.fromJson(String json) { return switch (json) {
+factory IssuingTokenNetwork.fromJson(String json) {return switch (json) {
   'mastercard' => mastercard,
   'visa' => visa,
   _ => IssuingTokenNetwork$Unknown(json),
-}; }
+};}
 
 static const IssuingTokenNetwork mastercard = IssuingTokenNetwork$mastercard._();
 
@@ -17,30 +17,30 @@ static const IssuingTokenNetwork visa = IssuingTokenNetwork$visa._();
 static const List<IssuingTokenNetwork> values = [mastercard, visa];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mastercard' => 'mastercard',
   'visa' => 'visa',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingTokenNetwork$Unknown; } 
+bool get isUnknown {return this is IssuingTokenNetwork$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mastercard, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mastercard, required W Function() visa, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingTokenNetwork$mastercard() => mastercard(),
       IssuingTokenNetwork$visa() => visa(),
       IssuingTokenNetwork$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mastercard, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mastercard, W Function()? visa, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingTokenNetwork$mastercard() => mastercard != null ? mastercard() : orElse(value),
       IssuingTokenNetwork$visa() => visa != null ? visa() : orElse(value),
       IssuingTokenNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingTokenNetwork($value)';
 
- }
+}
 @immutable final class IssuingTokenNetwork$mastercard extends IssuingTokenNetwork {const IssuingTokenNetwork$mastercard._();
 
 @override String get value => 'mastercard';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? masterca
 
 @override int get hashCode => 'mastercard'.hashCode;
 
- }
+}
 @immutable final class IssuingTokenNetwork$visa extends IssuingTokenNetwork {const IssuingTokenNetwork$visa._();
 
 @override String get value => 'visa';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? masterca
 
 @override int get hashCode => 'visa'.hashCode;
 
- }
+}
 @immutable final class IssuingTokenNetwork$Unknown extends IssuingTokenNetwork {const IssuingTokenNetwork$Unknown(this.value);
 
 @override final String value;
@@ -68,41 +68,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? masterca
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class IssuingTokenObject {const IssuingTokenObject();
 
-factory IssuingTokenObject.fromJson(String json) { return switch (json) {
+factory IssuingTokenObject.fromJson(String json) {return switch (json) {
   'issuing.token' => issuingToken,
   _ => IssuingTokenObject$Unknown(json),
-}; }
+};}
 
 static const IssuingTokenObject issuingToken = IssuingTokenObject$issuingToken._();
 
 static const List<IssuingTokenObject> values = [issuingToken];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issuing.token' => 'issuingToken',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingTokenObject$Unknown; } 
+bool get isUnknown {return this is IssuingTokenObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issuingToken, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issuingToken, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingTokenObject$issuingToken() => issuingToken(),
       IssuingTokenObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingToken, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingToken, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingTokenObject$issuingToken() => issuingToken != null ? issuingToken() : orElse(value),
       IssuingTokenObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingTokenObject($value)';
 
- }
+}
 @immutable final class IssuingTokenObject$issuingToken extends IssuingTokenObject {const IssuingTokenObject$issuingToken._();
 
 @override String get value => 'issuing.token';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingT
 
 @override int get hashCode => 'issuing.token'.hashCode;
 
- }
+}
 @immutable final class IssuingTokenObject$Unknown extends IssuingTokenObject {const IssuingTokenObject$Unknown(this.value);
 
 @override final String value;
@@ -121,17 +121,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingT
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The usage state of the token.
 sealed class IssuingTokenStatus {const IssuingTokenStatus();
 
-factory IssuingTokenStatus.fromJson(String json) { return switch (json) {
+factory IssuingTokenStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'deleted' => deleted,
   'requested' => requested,
   'suspended' => suspended,
   _ => IssuingTokenStatus$Unknown(json),
-}; }
+};}
 
 static const IssuingTokenStatus active = IssuingTokenStatus$active._();
 
@@ -144,36 +144,36 @@ static const IssuingTokenStatus suspended = IssuingTokenStatus$suspended._();
 static const List<IssuingTokenStatus> values = [active, deleted, requested, suspended];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'deleted' => 'deleted',
   'requested' => 'requested',
   'suspended' => 'suspended',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingTokenStatus$Unknown; } 
+bool get isUnknown {return this is IssuingTokenStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() deleted, required W Function() requested, required W Function() suspended, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() deleted, required W Function() requested, required W Function() suspended, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingTokenStatus$active() => active(),
       IssuingTokenStatus$deleted() => deleted(),
       IssuingTokenStatus$requested() => requested(),
       IssuingTokenStatus$suspended() => suspended(),
       IssuingTokenStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? deleted, W Function()? requested, W Function()? suspended, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? deleted, W Function()? requested, W Function()? suspended, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingTokenStatus$active() => active != null ? active() : orElse(value),
       IssuingTokenStatus$deleted() => deleted != null ? deleted() : orElse(value),
       IssuingTokenStatus$requested() => requested != null ? requested() : orElse(value),
       IssuingTokenStatus$suspended() => suspended != null ? suspended() : orElse(value),
       IssuingTokenStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingTokenStatus($value)';
 
- }
+}
 @immutable final class IssuingTokenStatus$active extends IssuingTokenStatus {const IssuingTokenStatus$active._();
 
 @override String get value => 'active';
@@ -182,7 +182,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class IssuingTokenStatus$deleted extends IssuingTokenStatus {const IssuingTokenStatus$deleted._();
 
 @override String get value => 'deleted';
@@ -191,7 +191,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'deleted'.hashCode;
 
- }
+}
 @immutable final class IssuingTokenStatus$requested extends IssuingTokenStatus {const IssuingTokenStatus$requested._();
 
 @override String get value => 'requested';
@@ -200,7 +200,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'requested'.hashCode;
 
- }
+}
 @immutable final class IssuingTokenStatus$suspended extends IssuingTokenStatus {const IssuingTokenStatus$suspended._();
 
 @override String get value => 'suspended';
@@ -209,7 +209,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'suspended'.hashCode;
 
- }
+}
 @immutable final class IssuingTokenStatus$Unknown extends IssuingTokenStatus {const IssuingTokenStatus$Unknown(this.value);
 
 @override final String value;
@@ -219,16 +219,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The digital wallet for this token, if one was used.
 sealed class WalletProvider {const WalletProvider();
 
-factory WalletProvider.fromJson(String json) { return switch (json) {
+factory WalletProvider.fromJson(String json) {return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
   _ => WalletProvider$Unknown(json),
-}; }
+};}
 
 static const WalletProvider applePay = WalletProvider$applePay._();
 
@@ -239,33 +239,33 @@ static const WalletProvider samsungPay = WalletProvider$samsungPay._();
 static const List<WalletProvider> values = [applePay, googlePay, samsungPay];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'apple_pay' => 'applePay',
   'google_pay' => 'googlePay',
   'samsung_pay' => 'samsungPay',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WalletProvider$Unknown; } 
+bool get isUnknown {return this is WalletProvider$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() samsungPay, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() samsungPay, required W Function(String value) $unknown, }) {return switch (this) {
       WalletProvider$applePay() => applePay(),
       WalletProvider$googlePay() => googlePay(),
       WalletProvider$samsungPay() => samsungPay(),
       WalletProvider$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? samsungPay, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? samsungPay, W Function(String value)? $unknown, }) {return switch (this) {
       WalletProvider$applePay() => applePay != null ? applePay() : orElse(value),
       WalletProvider$googlePay() => googlePay != null ? googlePay() : orElse(value),
       WalletProvider$samsungPay() => samsungPay != null ? samsungPay() : orElse(value),
       WalletProvider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WalletProvider($value)';
 
- }
+}
 @immutable final class WalletProvider$applePay extends WalletProvider {const WalletProvider$applePay._();
 
 @override String get value => 'apple_pay';
@@ -274,7 +274,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay
 
 @override int get hashCode => 'apple_pay'.hashCode;
 
- }
+}
 @immutable final class WalletProvider$googlePay extends WalletProvider {const WalletProvider$googlePay._();
 
 @override String get value => 'google_pay';
@@ -283,7 +283,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay
 
 @override int get hashCode => 'google_pay'.hashCode;
 
- }
+}
 @immutable final class WalletProvider$samsungPay extends WalletProvider {const WalletProvider$samsungPay._();
 
 @override String get value => 'samsung_pay';
@@ -292,7 +292,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay
 
 @override int get hashCode => 'samsung_pay'.hashCode;
 
- }
+}
 @immutable final class WalletProvider$Unknown extends WalletProvider {const WalletProvider$Unknown(this.value);
 
 @override final String value;
@@ -302,11 +302,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An issuing token object is created when an issued card is added to a digital wallet. As a [card issuer](https://docs.stripe.com/issuing), you can [view and manage these tokens](https://docs.stripe.com/issuing/controls/token-management) through Stripe.
 @immutable final class IssuingToken {const IssuingToken({required this.card, required this.created, required this.id, required this.livemode, required this.network, required this.networkUpdatedAt, required this.object, required this.status, this.deviceFingerprint = const Omittable.absent(), this.last4, this.networkData, this.walletProvider, });
 
-factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
+factory IssuingToken.fromJson(Map<String, dynamic> json) {return IssuingToken(
   card: IssuingTokenCard.fromJson(json['card']),
   created: (json['created'] as num).toInt(),
   deviceFingerprint: json.containsKey('device_fingerprint') ? Omittable(json['device_fingerprint'] as String?) : const Omittable.absent(),
@@ -319,7 +319,7 @@ factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
   object: IssuingTokenObject.fromJson(json['object'] as String),
   status: IssuingTokenStatus.fromJson(json['status'] as String),
   walletProvider: json['wallet_provider'] != null ? WalletProvider.fromJson(json['wallet_provider'] as String) : null,
-); }
+);}
 
 /// Card associated with this token.
 final IssuingTokenCard card;
@@ -356,7 +356,7 @@ final IssuingTokenStatus status;
 /// The digital wallet for this token, if one was used.
 final WalletProvider? walletProvider;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'card': card.toJson(),
   'created': created,
   if (deviceFingerprint.isPresent) 'device_fingerprint': deviceFingerprint.value,
@@ -369,17 +369,17 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'status': status.toJson(),
   if (walletProvider != null) 'wallet_provider': walletProvider?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('card') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('card') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('network') &&
       json.containsKey('network_updated_at') && json['network_updated_at'] is num &&
       json.containsKey('object') &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final deviceFingerprint$ = deviceFingerprint.value;
 if (deviceFingerprint$ != null) {
   if (deviceFingerprint$.runes.length > 5000) { errors.add('deviceFingerprint: length must be <= 5000'); }
@@ -389,8 +389,8 @@ final last4$ = last4;
 if (last4$ != null) {
   if (last4$.runes.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
-return errors; } 
-IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>? deviceFingerprint, String? id, String? Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData? Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, WalletProvider? Function()? walletProvider, }) { return IssuingToken(
+return errors;}
+IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>? deviceFingerprint, String? id, String? Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData? Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, WalletProvider? Function()? walletProvider, }) {return IssuingToken(
   card: card ?? this.card,
   created: created ?? this.created,
   deviceFingerprint: deviceFingerprint ?? this.deviceFingerprint,
@@ -403,7 +403,7 @@ IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>?
   object: object ?? this.object,
   status: status ?? this.status,
   walletProvider: walletProvider != null ? walletProvider() : this.walletProvider,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingToken &&
           card == other.card &&
@@ -423,4 +423,4 @@ IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>?
 
 @override String toString() => 'IssuingToken(\n  card: $card,\n  created: $created,\n  deviceFingerprint: $deviceFingerprint,\n  id: $id,\n  last4: $last4,\n  livemode: $livemode,\n  network: $network,\n  networkData: $networkData,\n  networkUpdatedAt: $networkUpdatedAt,\n  object: $object,\n  status: $status,\n  walletProvider: $walletProvider,\n)';
 
- }
+}

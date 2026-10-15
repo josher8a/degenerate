@@ -10,7 +10,7 @@ final class ResourceApi with ApiExecutor {const ResourceApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `POST /resource`
-Future<ApiResult<ExampleResource, Never>> createResource({required ExampleResource body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExampleResource, Never>> createResource({required ExampleResource body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,9 +27,9 @@ return await execute(
     return ExampleResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /fileResource`
-Future<ApiResult<FileResource, Never>> createFile({required CreateFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FileResource, Never>> createFile({required CreateFileRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -49,9 +49,9 @@ return await execute(
     return FileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /datasource/array`
-Future<ApiResult<List<String>, Never>> getArrayDataSource({required String filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<String>, Never>> getArrayDataSource({required String filter, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['filter'] = filter;
 
@@ -73,9 +73,9 @@ return await execute(
     return json.map((e) => e as String).toList();
   },
 );
- } 
+}
 /// `GET /resource/object/{resourceId}`
-Future<ApiResult<ExampleResource, Never>> getResource({required String resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExampleResource, Never>> getResource({required String resourceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -90,9 +90,9 @@ return await execute(
     return ExampleResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /resource/object/{resourceId}`
-Future<ApiResult<void, Never>> updateResource({required String resourceId, required String augment, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> updateResource({required String resourceId, required String augment, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['augment'] = augment;
 
@@ -111,9 +111,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `DELETE /resource/object/{resourceId}`
-Future<ApiResult<void, Never>> deleteResource({required String resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteResource({required String resourceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -126,5 +126,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

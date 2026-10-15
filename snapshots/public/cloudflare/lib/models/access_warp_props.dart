@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_custom_deny_url.dart';import 'package:pub_cloudflare/models/access_custom_non_identity_deny_url.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_type.dart';@immutable final class AccessWarpProps {const AccessWarpProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain = const Omittable.absent(), this.name = const Omittable.absent(), this.sessionDuration, });
 
-factory AccessWarpProps.fromJson(Map<String, dynamic> json) { return AccessWarpProps(
+factory AccessWarpProps.fromJson(Map<String, dynamic> json) {return AccessWarpProps(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
   customDenyUrl: json['custom_deny_url'] != null ? AccessCustomDenyUrl.fromJson(json['custom_deny_url'] as String) : null,
@@ -13,7 +13,7 @@ factory AccessWarpProps.fromJson(Map<String, dynamic> json) { return AccessWarpP
   name: json.containsKey('name') ? Omittable(json['name']) : const Omittable.absent(),
   sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: AccessType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
@@ -42,7 +42,7 @@ final AccessSchemasSessionDuration? sessionDuration;
 /// The application type.
 final AccessType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_idps': ?allowedIdps,
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
   if (customDenyUrl != null) 'custom_deny_url': customDenyUrl?.toJson(),
@@ -52,9 +52,9 @@ Map<String, dynamic> toJson() { return {
   if (name.isPresent) 'name': name.value,
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccessWarpProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, }) { return AccessWarpProps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AccessWarpProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, }) {return AccessWarpProps(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
   customDenyUrl: customDenyUrl != null ? customDenyUrl() : this.customDenyUrl,
@@ -64,7 +64,7 @@ AccessWarpProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAu
   name: name ?? this.name,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessWarpProps &&
           listEquals(allowedIdps, other.allowedIdps) &&
@@ -81,4 +81,4 @@ AccessWarpProps copyWith({List<String>? Function()? allowedIdps, AccessSchemasAu
 
 @override String toString() => 'AccessWarpProps(\n  allowedIdps: $allowedIdps,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customDenyUrl: $customDenyUrl,\n  customNonIdentityDenyUrl: $customNonIdentityDenyUrl,\n  customPages: $customPages,\n  domain: $domain,\n  name: $name,\n  sessionDuration: $sessionDuration,\n  type: $type,\n)';
 
- }
+}

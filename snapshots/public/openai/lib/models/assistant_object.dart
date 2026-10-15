@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';/// The object type, which is always `assistant`.
 sealed class AssistantObjectObject {const AssistantObjectObject();
 
-factory AssistantObjectObject.fromJson(String json) { return switch (json) {
+factory AssistantObjectObject.fromJson(String json) {return switch (json) {
   'assistant' => assistant,
   _ => AssistantObjectObject$Unknown(json),
-}; }
+};}
 
 static const AssistantObjectObject assistant = AssistantObjectObject$assistant._();
 
 static const List<AssistantObjectObject> values = [assistant];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'assistant' => 'assistant',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AssistantObjectObject$Unknown; } 
+bool get isUnknown {return this is AssistantObjectObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() assistant, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() assistant, required W Function(String value) $unknown, }) {return switch (this) {
       AssistantObjectObject$assistant() => assistant(),
       AssistantObjectObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistant, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistant, W Function(String value)? $unknown, }) {return switch (this) {
       AssistantObjectObject$assistant() => assistant != null ? assistant() : orElse(value),
       AssistantObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AssistantObjectObject($value)';
 
- }
+}
 @immutable final class AssistantObjectObject$assistant extends AssistantObjectObject {const AssistantObjectObject$assistant._();
 
 @override String get value => 'assistant';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => 'assistant'.hashCode;
 
- }
+}
 @immutable final class AssistantObjectObject$Unknown extends AssistantObjectObject {const AssistantObjectObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistan
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents an `assistant` that can call the model and use tools.
 @immutable final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, required this.tools, required this.metadata, this.toolResources = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
 
-factory AssistantObject.fromJson(Map<String, dynamic> json) { return AssistantObject(
+factory AssistantObject.fromJson(Map<String, dynamic> json) {return AssistantObject(
   id: json['id'] as String,
   object: AssistantObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -71,7 +71,7 @@ factory AssistantObject.fromJson(Map<String, dynamic> json) { return AssistantOb
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -120,7 +120,7 @@ final Omittable<double?> topP;
 
 final Omittable<ResponseFormatOption?> responseFormat;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -134,8 +134,8 @@ Map<String, dynamic> toJson() { return {
   if (temperature.isPresent) 'temperature': temperature.value,
   if (topP.isPresent) 'top_p': topP.value,
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
@@ -143,9 +143,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('instructions') && (json['instructions'] == null || json['instructions'] is String) &&
       json.containsKey('tools') &&
-      json.containsKey('metadata'); } 
+      json.containsKey('metadata');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 256) { errors.add('name: length must be <= 256'); }
@@ -169,8 +169,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
-return errors; } 
-AssistantObject copyWith({String? id, AssistantObjectObject? object, int? createdAt, String? Function()? name, String? Function()? description, String? model, String? Function()? instructions, List<AssistantObjectTools>? tools, Omittable<AssistantObjectToolResources?>? toolResources, Map<String, String>? Function()? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return AssistantObject(
+return errors;}
+AssistantObject copyWith({String? id, AssistantObjectObject? object, int? createdAt, String? Function()? name, String? Function()? description, String? model, String? Function()? instructions, List<AssistantObjectTools>? tools, Omittable<AssistantObjectToolResources?>? toolResources, Map<String, String>? Function()? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) {return AssistantObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -184,7 +184,7 @@ AssistantObject copyWith({String? id, AssistantObjectObject? object, int? create
   temperature: temperature ?? this.temperature,
   topP: topP ?? this.topP,
   responseFormat: responseFormat ?? this.responseFormat,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantObject &&
           id == other.id &&
@@ -205,4 +205,4 @@ AssistantObject copyWith({String? id, AssistantObjectObject? object, int? create
 
 @override String toString() => 'AssistantObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  name: $name,\n  description: $description,\n  model: $model,\n  instructions: $instructions,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  responseFormat: $responseFormat,\n)';
 
- }
+}

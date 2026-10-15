@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_cert_and_key.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslsettings.dart';@immutable final class TlsCertificatesAndHostnamesSslpostDv {const TlsCertificatesAndHostnamesSslpostDv({this.bundleMethod, this.certificateAuthority, this.cloudflareBranding, this.customCertBundle, this.customCertificate, this.customKey, this.method, this.settings, this.type, this.wildcard, });
 
-factory TlsCertificatesAndHostnamesSslpostDv.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslpostDv(
+factory TlsCertificatesAndHostnamesSslpostDv.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesSslpostDv(
   bundleMethod: json['bundle_method'] != null ? BundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
   cloudflareBranding: json['cloudflare_branding'] as bool?,
@@ -14,7 +14,7 @@ factory TlsCertificatesAndHostnamesSslpostDv.fromJson(Map<String, dynamic> json)
   settings: json['settings'] != null ? TlsCertificatesAndHostnamesSslsettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? DvType.fromJson(json['type'] as String) : null,
   wildcard: json['wildcard'] as bool?,
-); }
+);}
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 /// 
@@ -94,7 +94,7 @@ final bool? wildcard;
 /// The value of `bundleMethod`, or its schema default when absent.
 BundleMethod get bundleMethodOrDefault => bundleMethod ?? BundleMethod.fromJson('ubiquitous');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
   'cloudflare_branding': ?cloudflareBranding,
@@ -105,17 +105,17 @@ Map<String, dynamic> toJson() { return {
   if (settings != null) 'settings': settings?.toJson(),
   if (type != null) 'type': type?.toJson(),
   'wildcard': ?wildcard,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'cloudflare_branding', 'custom_cert_bundle', 'custom_certificate', 'custom_key', 'method', 'settings', 'type', 'wildcard'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'cloudflare_branding', 'custom_cert_bundle', 'custom_certificate', 'custom_key', 'method', 'settings', 'type', 'wildcard'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customCertBundle$ = customCertBundle;
 if (customCertBundle$ != null) {
   if (customCertBundle$.isEmpty) { errors.add('customCertBundle: must have >= 1 items'); }
   if (customCertBundle$.length > 2) { errors.add('customCertBundle: must have <= 2 items'); }
 }
-return errors; } 
-TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, bool? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesCustomCertAndKey>? Function()? customCertBundle, String? Function()? customCertificate, String? Function()? customKey, DvMethod? Function()? method, TlsCertificatesAndHostnamesSslsettings? Function()? settings, DvType? Function()? type, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslpostDv(
+return errors;}
+TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, bool? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesCustomCertAndKey>? Function()? customCertBundle, String? Function()? customCertificate, String? Function()? customKey, DvMethod? Function()? method, TlsCertificatesAndHostnamesSslsettings? Function()? settings, DvType? Function()? type, bool? Function()? wildcard, }) {return TlsCertificatesAndHostnamesSslpostDv(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
@@ -126,7 +126,7 @@ TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod? Function()? bundleM
   settings: settings != null ? settings() : this.settings,
   type: type != null ? type() : this.type,
   wildcard: wildcard != null ? wildcard() : this.wildcard,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslpostDv &&
           bundleMethod == other.bundleMethod &&
@@ -144,4 +144,4 @@ TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod? Function()? bundleM
 
 @override String toString() => 'TlsCertificatesAndHostnamesSslpostDv(\n  bundleMethod: $bundleMethod,\n  certificateAuthority: $certificateAuthority,\n  cloudflareBranding: $cloudflareBranding,\n  customCertBundle: $customCertBundle,\n  customCertificate: $customCertificate,\n  customKey: $customKey,\n  method: $method,\n  settings: $settings,\n  type: $type,\n  wildcard: $wildcard,\n)';
 
- }
+}

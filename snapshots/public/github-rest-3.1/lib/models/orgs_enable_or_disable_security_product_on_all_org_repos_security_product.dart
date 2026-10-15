@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct();
 
-factory OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.fromJson(String json) { return switch (json) {
+factory OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.fromJson(String json) {return switch (json) {
   'dependency_graph' => dependencyGraph,
   'dependabot_alerts' => dependabotAlerts,
   'dependabot_security_updates' => dependabotSecurityUpdates,
@@ -12,7 +12,7 @@ factory OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct.fromJson(
   'secret_scanning' => secretScanning,
   'secret_scanning_push_protection' => secretScanningPushProtection,
   _ => OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown(json),
-}; }
+};}
 
 static const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct dependencyGraph = OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependencyGraph._();
 
@@ -31,9 +31,9 @@ static const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct secr
 static const List<OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct> values = [dependencyGraph, dependabotAlerts, dependabotSecurityUpdates, advancedSecurity, codeScanningDefaultSetup, secretScanning, secretScanningPushProtection];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'dependency_graph' => 'dependencyGraph',
   'dependabot_alerts' => 'dependabotAlerts',
   'dependabot_security_updates' => 'dependabotSecurityUpdates',
@@ -42,11 +42,11 @@ String get name { return switch (value) {
   'secret_scanning' => 'secretScanning',
   'secret_scanning_push_protection' => 'secretScanningPushProtection',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown; } 
+bool get isUnknown {return this is OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dependencyGraph, required W Function() dependabotAlerts, required W Function() dependabotSecurityUpdates, required W Function() advancedSecurity, required W Function() codeScanningDefaultSetup, required W Function() secretScanning, required W Function() secretScanningPushProtection, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dependencyGraph, required W Function() dependabotAlerts, required W Function() dependabotSecurityUpdates, required W Function() advancedSecurity, required W Function() codeScanningDefaultSetup, required W Function() secretScanning, required W Function() secretScanningPushProtection, required W Function(String value) $unknown, }) {return switch (this) {
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependencyGraph() => dependencyGraph(),
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotAlerts() => dependabotAlerts(),
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotSecurityUpdates() => dependabotSecurityUpdates(),
@@ -55,9 +55,9 @@ W when<W>({required W Function() dependencyGraph, required W Function() dependab
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanning() => secretScanning(),
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanningPushProtection() => secretScanningPushProtection(),
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependencyGraph, W Function()? dependabotAlerts, W Function()? dependabotSecurityUpdates, W Function()? advancedSecurity, W Function()? codeScanningDefaultSetup, W Function()? secretScanning, W Function()? secretScanningPushProtection, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependencyGraph, W Function()? dependabotAlerts, W Function()? dependabotSecurityUpdates, W Function()? advancedSecurity, W Function()? codeScanningDefaultSetup, W Function()? secretScanning, W Function()? secretScanningPushProtection, W Function(String value)? $unknown, }) {return switch (this) {
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependencyGraph() => dependencyGraph != null ? dependencyGraph() : orElse(value),
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotAlerts() => dependabotAlerts != null ? dependabotAlerts() : orElse(value),
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotSecurityUpdates() => dependabotSecurityUpdates != null ? dependabotSecurityUpdates() : orElse(value),
@@ -66,10 +66,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanning() => secretScanning != null ? secretScanning() : orElse(value),
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanningPushProtection() => secretScanningPushProtection != null ? secretScanningPushProtection() : orElse(value),
       OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct($value)';
 
- }
+}
 @immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependencyGraph extends OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependencyGraph._();
 
 @override String get value => 'dependency_graph';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
 
 @override int get hashCode => 'dependency_graph'.hashCode;
 
- }
+}
 @immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotAlerts extends OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotAlerts._();
 
 @override String get value => 'dependabot_alerts';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
 
 @override int get hashCode => 'dependabot_alerts'.hashCode;
 
- }
+}
 @immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotSecurityUpdates extends OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotSecurityUpdates._();
 
 @override String get value => 'dependabot_security_updates';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
 
 @override int get hashCode => 'dependabot_security_updates'.hashCode;
 
- }
+}
 @immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$advancedSecurity extends OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$advancedSecurity._();
 
 @override String get value => 'advanced_security';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
 
 @override int get hashCode => 'advanced_security'.hashCode;
 
- }
+}
 @immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$codeScanningDefaultSetup extends OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$codeScanningDefaultSetup._();
 
 @override String get value => 'code_scanning_default_setup';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
 
 @override int get hashCode => 'code_scanning_default_setup'.hashCode;
 
- }
+}
 @immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanning extends OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanning._();
 
 @override String get value => 'secret_scanning';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
 
 @override int get hashCode => 'secret_scanning'.hashCode;
 
- }
+}
 @immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanningPushProtection extends OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanningPushProtection._();
 
 @override String get value => 'secret_scanning_push_protection';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
 
 @override int get hashCode => 'secret_scanning_push_protection'.hashCode;
 
- }
+}
 @immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown extends OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown(this.value);
 
 @override final String value;
@@ -142,4 +142,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependen
 
 @override int get hashCode => value.hashCode;
 
- }
+}

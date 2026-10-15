@@ -14,7 +14,7 @@ final class CancellationApi with ApiExecutor {const CancellationApi(this.apiConf
 /// Waits for specified seconds before returning a response
 ///
 /// `GET /delay/{seconds}`
-Future<ApiResult<CancelledRequestResponse, Never>> cancelledRequest({required int seconds, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CancelledRequestResponse, Never>> cancelledRequest({required int seconds, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,13 +29,13 @@ return await execute(
     return CancelledRequestResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delay endpoint for cancellation hook testing
 ///
 /// Waits for specified seconds before returning a response - used for testing cancellation within hooks
 ///
 /// `GET /delay/{seconds}#cancellationHook`
-Future<ApiResult<CancellationHookResponse, Never>> cancellationHook({required int seconds, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CancellationHookResponse, Never>> cancellationHook({required int seconds, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -50,5 +50,5 @@ return await execute(
     return CancellationHookResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

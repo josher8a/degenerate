@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/branding.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/settings_bacs_debit_payments.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/settings_card_issuing.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/settings_card_payments.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/settings_payments.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/settings_payouts.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/settings_treasury.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/post_accounts_request_settings_invoices.dart';/// Options for customizing how the account functions within Stripe.
 @immutable final class PostAccountsRequestSettings {const PostAccountsRequestSettings({this.bacsDebitPayments, this.branding, this.cardIssuing, this.cardPayments, this.invoices, this.payments, this.payouts, this.treasury, });
 
-factory PostAccountsRequestSettings.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettings(
+factory PostAccountsRequestSettings.fromJson(Map<String, dynamic> json) {return PostAccountsRequestSettings(
   bacsDebitPayments: json['bacs_debit_payments'] != null ? SettingsBacsDebitPayments.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>) : null,
   branding: json['branding'] != null ? Branding.fromJson(json['branding'] as Map<String, dynamic>) : null,
   cardIssuing: json['card_issuing'] != null ? SettingsCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory PostAccountsRequestSettings.fromJson(Map<String, dynamic> json) { return
   payments: json['payments'] != null ? SettingsPayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
   payouts: json['payouts'] != null ? SettingsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
   treasury: json['treasury'] != null ? SettingsTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final SettingsBacsDebitPayments? bacsDebitPayments;
 
@@ -31,7 +31,7 @@ final SettingsPayouts? payouts;
 
 final SettingsTreasury? treasury;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bacsDebitPayments != null) 'bacs_debit_payments': bacsDebitPayments?.toJson(),
   if (branding != null) 'branding': branding?.toJson(),
   if (cardIssuing != null) 'card_issuing': cardIssuing?.toJson(),
@@ -40,9 +40,9 @@ Map<String, dynamic> toJson() { return {
   if (payments != null) 'payments': payments?.toJson(),
   if (payouts != null) 'payouts': payouts?.toJson(),
   if (treasury != null) 'treasury': treasury?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bacs_debit_payments', 'branding', 'card_issuing', 'card_payments', 'invoices', 'payments', 'payouts', 'treasury'}.contains(key)); } 
-PostAccountsRequestSettings copyWith({SettingsBacsDebitPayments? Function()? bacsDebitPayments, Branding? Function()? branding, SettingsCardIssuing? Function()? cardIssuing, SettingsCardPayments? Function()? cardPayments, PostAccountsRequestSettingsInvoices? Function()? invoices, SettingsPayments? Function()? payments, SettingsPayouts? Function()? payouts, SettingsTreasury? Function()? treasury, }) { return PostAccountsRequestSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bacs_debit_payments', 'branding', 'card_issuing', 'card_payments', 'invoices', 'payments', 'payouts', 'treasury'}.contains(key));}
+PostAccountsRequestSettings copyWith({SettingsBacsDebitPayments? Function()? bacsDebitPayments, Branding? Function()? branding, SettingsCardIssuing? Function()? cardIssuing, SettingsCardPayments? Function()? cardPayments, PostAccountsRequestSettingsInvoices? Function()? invoices, SettingsPayments? Function()? payments, SettingsPayouts? Function()? payouts, SettingsTreasury? Function()? treasury, }) {return PostAccountsRequestSettings(
   bacsDebitPayments: bacsDebitPayments != null ? bacsDebitPayments() : this.bacsDebitPayments,
   branding: branding != null ? branding() : this.branding,
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
@@ -51,7 +51,7 @@ PostAccountsRequestSettings copyWith({SettingsBacsDebitPayments? Function()? bac
   payments: payments != null ? payments() : this.payments,
   payouts: payouts != null ? payouts() : this.payouts,
   treasury: treasury != null ? treasury() : this.treasury,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsRequestSettings &&
           bacsDebitPayments == other.bacsDebitPayments &&
@@ -67,4 +67,4 @@ PostAccountsRequestSettings copyWith({SettingsBacsDebitPayments? Function()? bac
 
 @override String toString() => 'PostAccountsRequestSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, invoices: $invoices, payments: $payments, payouts: $payouts, treasury: $treasury)';
 
- }
+}

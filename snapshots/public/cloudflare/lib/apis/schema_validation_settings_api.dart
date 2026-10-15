@@ -14,7 +14,7 @@ final class SchemaValidationSettingsApi with ApiExecutor {const SchemaValidation
 /// Retrieves the current global schema validation settings for a zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ShieldGlobalSettings, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationGetSettings({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldGlobalSettings, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationGetSettings({required ShieldIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Update global schema validation settings
 ///
 /// Fully updates global schema validation settings for a zone, replacing existing configuration.
 ///
 /// `PUT /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ShieldGlobalSettings, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationUpdateSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldGlobalSettings, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationUpdateSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Edit global schema validation settings
 ///
 /// Partially updates global schema validation settings for a zone using PATCH semantics.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ShieldGlobalSettings, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationEditSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldGlobalSettings, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationEditSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,13 +81,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// List per-operation schema validation settings
 ///
 /// Lists all per-operation schema validation settings configured for the zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings/operations`
-Future<ApiResult<List<ShieldPerOperationSetting>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldPerOperationSetting>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -115,13 +115,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Bulk edit per-operation schema validation settings
 ///
 /// Updates schema validation settings for multiple API operations in a single request. Efficient for applying consistent validation rules across endpoints.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/settings/operations`
-Future<ApiResult<Map<String, ShieldPerOperationSetting>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationBulkEditPerOperationSettings({required ShieldIdentifier zoneId, required Map<String,SchemaValidationBulkEditPerOperationSettingsRequestValue> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, ShieldPerOperationSetting>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationBulkEditPerOperationSettings({required ShieldIdentifier zoneId, required Map<String,SchemaValidationBulkEditPerOperationSettingsRequestValue> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,13 +140,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Get per-operation schema validation setting
 ///
 /// Retrieves the schema validation settings configured for a specific API operation.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ShieldPerOperationSetting, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationGetPerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPerOperationSetting, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationGetPerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -163,13 +163,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Update per-operation schema validation setting
 ///
 /// Fully updates schema validation settings for a specific API operation.
 ///
 /// `PUT /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ShieldPerOperationSetting, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationUpdatePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, required ShieldPerOperationSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPerOperationSetting, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationUpdatePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, required ShieldPerOperationSettingChangeBase body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -188,13 +188,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Delete per-operation schema validation setting
 ///
 /// Removes custom schema validation settings for a specific API operation, reverting to zone-level defaults.
 ///
 /// `DELETE /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<SchemaValidationDeletePerOperationSettingResponseResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationDeletePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SchemaValidationDeletePerOperationSettingResponseResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> schemaValidationDeletePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -211,5 +211,5 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
- }
+}
+}

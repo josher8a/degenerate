@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_messages2.dart';import 'package:pub_cloudflare/models/observatory_page_test_.dart';import 'package:pub_cloudflare/models/observatory_result_info.dart';@immutable final class ObservatoryPageTestResponseCollection {const ObservatoryPageTestResponseCollection({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
 
-factory ObservatoryPageTestResponseCollection.fromJson(Map<String, dynamic> json) { return ObservatoryPageTestResponseCollection(
+factory ObservatoryPageTestResponseCollection.fromJson(Map<String, dynamic> json) {return ObservatoryPageTestResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => ObservatoryMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ObservatoryMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => ObservatoryPageTest.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: json['result_info'] != null ? ObservatoryResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<ObservatoryMessages2> errors;
 
@@ -24,23 +24,23 @@ final List<ObservatoryPageTest>? result;
 
 final ObservatoryResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ObservatoryPageTestResponseCollection copyWith({List<ObservatoryMessages2>? errors, List<ObservatoryMessages2>? messages, bool? success, List<ObservatoryPageTest>? Function()? result, ObservatoryResultInfo? Function()? resultInfo, }) { return ObservatoryPageTestResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+ObservatoryPageTestResponseCollection copyWith({List<ObservatoryMessages2>? errors, List<ObservatoryMessages2>? messages, bool? success, List<ObservatoryPageTest>? Function()? result, ObservatoryResultInfo? Function()? resultInfo, }) {return ObservatoryPageTestResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryPageTestResponseCollection &&
           listEquals(errors, other.errors) &&
@@ -53,4 +53,4 @@ ObservatoryPageTestResponseCollection copyWith({List<ObservatoryMessages2>? erro
 
 @override String toString() => 'ObservatoryPageTestResponseCollection(errors: $errors, messages: $messages, success: $success, result: $result, resultInfo: $resultInfo)';
 
- }
+}

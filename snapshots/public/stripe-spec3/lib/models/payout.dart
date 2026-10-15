@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_application_fee.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payout/original_payout.dart';import 'package:pub_stripe_spec3/models/payout/payout_destination.dart';import 'package:pub_stripe_spec3/models/payout/reversed_by.dart';import 'package:pub_stripe_spec3/models/payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PayoutObject {const PayoutObject();
 
-factory PayoutObject.fromJson(String json) { return switch (json) {
+factory PayoutObject.fromJson(String json) {return switch (json) {
   'payout' => payout,
   _ => PayoutObject$Unknown(json),
-}; }
+};}
 
 static const PayoutObject payout = PayoutObject$payout._();
 
 static const List<PayoutObject> values = [payout];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'payout' => 'payout',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PayoutObject$Unknown; } 
+bool get isUnknown {return this is PayoutObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() payout, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() payout, required W Function(String value) $unknown, }) {return switch (this) {
       PayoutObject$payout() => payout(),
       PayoutObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? payout, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? payout, W Function(String value)? $unknown, }) {return switch (this) {
       PayoutObject$payout() => payout != null ? payout() : orElse(value),
       PayoutObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PayoutObject($value)';
 
- }
+}
 @immutable final class PayoutObject$payout extends PayoutObject {const PayoutObject$payout._();
 
 @override String get value => 'payout';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? payout, 
 
 @override int get hashCode => 'payout'.hashCode;
 
- }
+}
 @immutable final class PayoutObject$Unknown extends PayoutObject {const PayoutObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? payout, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// If `completed`, you can use the [Balance Transactions API](https://docs.stripe.com/api/balance_transactions/list#balance_transaction_list-payout) to list all balance transactions that are paid out in this payout.
 sealed class ReconciliationStatus {const ReconciliationStatus();
 
-factory ReconciliationStatus.fromJson(String json) { return switch (json) {
+factory ReconciliationStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'in_progress' => inProgress,
   'not_applicable' => notApplicable,
   _ => ReconciliationStatus$Unknown(json),
-}; }
+};}
 
 static const ReconciliationStatus completed = ReconciliationStatus$completed._();
 
@@ -73,33 +73,33 @@ static const ReconciliationStatus notApplicable = ReconciliationStatus$notApplic
 static const List<ReconciliationStatus> values = [completed, inProgress, notApplicable];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'completed' => 'completed',
   'in_progress' => 'inProgress',
   'not_applicable' => 'notApplicable',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReconciliationStatus$Unknown; } 
+bool get isUnknown {return this is ReconciliationStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() completed, required W Function() inProgress, required W Function() notApplicable, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() completed, required W Function() inProgress, required W Function() notApplicable, required W Function(String value) $unknown, }) {return switch (this) {
       ReconciliationStatus$completed() => completed(),
       ReconciliationStatus$inProgress() => inProgress(),
       ReconciliationStatus$notApplicable() => notApplicable(),
       ReconciliationStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? inProgress, W Function()? notApplicable, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? inProgress, W Function()? notApplicable, W Function(String value)? $unknown, }) {return switch (this) {
       ReconciliationStatus$completed() => completed != null ? completed() : orElse(value),
       ReconciliationStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       ReconciliationStatus$notApplicable() => notApplicable != null ? notApplicable() : orElse(value),
       ReconciliationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReconciliationStatus($value)';
 
- }
+}
 @immutable final class ReconciliationStatus$completed extends ReconciliationStatus {const ReconciliationStatus$completed._();
 
 @override String get value => 'completed';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class ReconciliationStatus$inProgress extends ReconciliationStatus {const ReconciliationStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class ReconciliationStatus$notApplicable extends ReconciliationStatus {const ReconciliationStatus$notApplicable._();
 
 @override String get value => 'not_applicable';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'not_applicable'.hashCode;
 
- }
+}
 @immutable final class ReconciliationStatus$Unknown extends ReconciliationStatus {const ReconciliationStatus$Unknown(this.value);
 
 @override final String value;
@@ -136,15 +136,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Can be `bank_account` or `card`.
 sealed class PayoutType {const PayoutType();
 
-factory PayoutType.fromJson(String json) { return switch (json) {
+factory PayoutType.fromJson(String json) {return switch (json) {
   'bank_account' => bankAccount,
   'card' => card,
   _ => PayoutType$Unknown(json),
-}; }
+};}
 
 static const PayoutType bankAccount = PayoutType$bankAccount._();
 
@@ -153,30 +153,30 @@ static const PayoutType card = PayoutType$card._();
 static const List<PayoutType> values = [bankAccount, card];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'bank_account' => 'bankAccount',
   'card' => 'card',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PayoutType$Unknown; } 
+bool get isUnknown {return this is PayoutType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() bankAccount, required W Function() card, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() bankAccount, required W Function() card, required W Function(String value) $unknown, }) {return switch (this) {
       PayoutType$bankAccount() => bankAccount(),
       PayoutType$card() => card(),
       PayoutType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAccount, W Function()? card, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAccount, W Function()? card, W Function(String value)? $unknown, }) {return switch (this) {
       PayoutType$bankAccount() => bankAccount != null ? bankAccount() : orElse(value),
       PayoutType$card() => card != null ? card() : orElse(value),
       PayoutType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PayoutType($value)';
 
- }
+}
 @immutable final class PayoutType$bankAccount extends PayoutType {const PayoutType$bankAccount._();
 
 @override String get value => 'bank_account';
@@ -185,7 +185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAcco
 
 @override int get hashCode => 'bank_account'.hashCode;
 
- }
+}
 @immutable final class PayoutType$card extends PayoutType {const PayoutType$card._();
 
 @override String get value => 'card';
@@ -194,7 +194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAcco
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class PayoutType$Unknown extends PayoutType {const PayoutType$Unknown(this.value);
 
 @override final String value;
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAcco
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A `Payout` object is created when you receive funds from Stripe, or when you
 /// initiate a payout to either a bank account or debit card of a [connected
 /// Stripe account](/docs/connect/bank-debit-card-payouts). You can retrieve individual payouts,
@@ -215,7 +215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAcco
 /// Related guide: [Receiving payouts](https://docs.stripe.com/payouts)
 @immutable final class Payout {const Payout({required this.amount, required this.arrivalDate, required this.automatic, required this.created, required this.currency, required this.id, required this.livemode, required this.method, required this.object, required this.reconciliationStatus, required this.sourceType, required this.status, required this.type, this.applicationFee = const Omittable.absent(), this.applicationFeeAmount = const Omittable.absent(), this.balanceTransaction = const Omittable.absent(), this.description = const Omittable.absent(), this.destination = const Omittable.absent(), this.failureBalanceTransaction = const Omittable.absent(), this.failureCode = const Omittable.absent(), this.failureMessage = const Omittable.absent(), this.metadata = const Omittable.absent(), this.originalPayout = const Omittable.absent(), this.payoutMethod = const Omittable.absent(), this.reversedBy = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.traceId = const Omittable.absent(), });
 
-factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
+factory Payout.fromJson(Map<String, dynamic> json) {return Payout(
   amount: (json['amount'] as num).toInt(),
   applicationFee: json.containsKey('application_fee') ? Omittable(json['application_fee'] != null ? ChargeApplicationFee.fromJson(json['application_fee']) : null) : const Omittable.absent(),
   applicationFeeAmount: json.containsKey('application_fee_amount') ? Omittable(json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null) : const Omittable.absent(),
@@ -243,7 +243,7 @@ factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   status: json['status'] as String,
   traceId: json.containsKey('trace_id') ? Omittable(json['trace_id'] != null ? PayoutsTraceId.fromJson(json['trace_id'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: PayoutType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The amount (in cents (or local equivalent)) that transfers to your bank account or debit card.
 final int amount;
@@ -326,7 +326,7 @@ final Omittable<PayoutsTraceId?> traceId;
 /// Can be `bank_account` or `card`.
 final PayoutType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (applicationFee.isPresent) 'application_fee': applicationFee.value?.toJson(),
   if (applicationFeeAmount.isPresent) 'application_fee_amount': applicationFeeAmount.value,
@@ -354,8 +354,8 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   if (traceId.isPresent) 'trace_id': traceId.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('arrival_date') && json['arrival_date'] is num &&
       json.containsKey('automatic') && json['automatic'] is bool &&
       json.containsKey('created') && json['created'] is num &&
@@ -367,9 +367,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('reconciliation_status') &&
       json.containsKey('source_type') && json['source_type'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -394,8 +394,8 @@ if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
-return errors; } 
-Payout copyWith({int? amount, Omittable<ChargeApplicationFee?>? applicationFee, Omittable<int?>? applicationFeeAmount, int? arrivalDate, bool? automatic, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<PayoutDestination?>? destination, Omittable<FailureBalanceTransaction?>? failureBalanceTransaction, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, String? method, PayoutObject? object, Omittable<OriginalPayout?>? originalPayout, Omittable<String?>? payoutMethod, ReconciliationStatus? reconciliationStatus, Omittable<ReversedBy?>? reversedBy, String? sourceType, Omittable<String?>? statementDescriptor, String? status, Omittable<PayoutsTraceId?>? traceId, PayoutType? type, }) { return Payout(
+return errors;}
+Payout copyWith({int? amount, Omittable<ChargeApplicationFee?>? applicationFee, Omittable<int?>? applicationFeeAmount, int? arrivalDate, bool? automatic, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<PayoutDestination?>? destination, Omittable<FailureBalanceTransaction?>? failureBalanceTransaction, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, String? method, PayoutObject? object, Omittable<OriginalPayout?>? originalPayout, Omittable<String?>? payoutMethod, ReconciliationStatus? reconciliationStatus, Omittable<ReversedBy?>? reversedBy, String? sourceType, Omittable<String?>? statementDescriptor, String? status, Omittable<PayoutsTraceId?>? traceId, PayoutType? type, }) {return Payout(
   amount: amount ?? this.amount,
   applicationFee: applicationFee ?? this.applicationFee,
   applicationFeeAmount: applicationFeeAmount ?? this.applicationFeeAmount,
@@ -423,7 +423,7 @@ Payout copyWith({int? amount, Omittable<ChargeApplicationFee?>? applicationFee, 
   status: status ?? this.status,
   traceId: traceId ?? this.traceId,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Payout &&
           amount == other.amount &&
@@ -458,4 +458,4 @@ Payout copyWith({int? amount, Omittable<ChargeApplicationFee?>? applicationFee, 
 
 @override String toString() => 'Payout(\n  amount: $amount,\n  applicationFee: $applicationFee,\n  applicationFeeAmount: $applicationFeeAmount,\n  arrivalDate: $arrivalDate,\n  automatic: $automatic,\n  balanceTransaction: $balanceTransaction,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  destination: $destination,\n  failureBalanceTransaction: $failureBalanceTransaction,\n  failureCode: $failureCode,\n  failureMessage: $failureMessage,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  method: $method,\n  object: $object,\n  originalPayout: $originalPayout,\n  payoutMethod: $payoutMethod,\n  reconciliationStatus: $reconciliationStatus,\n  reversedBy: $reversedBy,\n  sourceType: $sourceType,\n  statementDescriptor: $statementDescriptor,\n  status: $status,\n  traceId: $traceId,\n  type: $type,\n)';
 
- }
+}

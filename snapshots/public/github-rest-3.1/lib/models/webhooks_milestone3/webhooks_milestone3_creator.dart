@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/user/user10_type.dart';@immutable final class WebhooksMilestone3Creator {const WebhooksMilestone3Creator({required this.id, required this.login, this.avatarUrl, this.deleted, this.email = const Omittable.absent(), this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
-factory WebhooksMilestone3Creator.fromJson(Map<String, dynamic> json) { return WebhooksMilestone3Creator(
+factory WebhooksMilestone3Creator.fromJson(Map<String, dynamic> json) {return WebhooksMilestone3Creator(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   deleted: json['deleted'] as bool?,
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
@@ -26,7 +26,7 @@ factory WebhooksMilestone3Creator.fromJson(Map<String, dynamic> json) { return W
   type: json['type'] != null ? User10Type.fromJson(json['type'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final Uri? avatarUrl;
 
@@ -72,7 +72,7 @@ final Uri? url;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
   'deleted': ?deleted,
   if (email.isPresent) 'email': email.value,
@@ -95,10 +95,10 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (url != null) 'url': url?.toString(),
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('login') && json['login'] is String; } 
-WebhooksMilestone3Creator copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, User10Type? Function()? type, Uri? Function()? url, String? Function()? userViewType, }) { return WebhooksMilestone3Creator(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('login') && json['login'] is String;}
+WebhooksMilestone3Creator copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, User10Type? Function()? type, Uri? Function()? url, String? Function()? userViewType, }) {return WebhooksMilestone3Creator(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
   email: email ?? this.email,
@@ -121,7 +121,7 @@ WebhooksMilestone3Creator copyWith({Uri? Function()? avatarUrl, bool? Function()
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksMilestone3Creator &&
           avatarUrl == other.avatarUrl &&
@@ -151,4 +151,4 @@ WebhooksMilestone3Creator copyWith({Uri? Function()? avatarUrl, bool? Function()
 
 @override String toString() => 'WebhooksMilestone3Creator(\n  avatarUrl: $avatarUrl,\n  deleted: $deleted,\n  email: $email,\n  eventsUrl: $eventsUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  gravatarId: $gravatarId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  login: $login,\n  name: $name,\n  nodeId: $nodeId,\n  organizationsUrl: $organizationsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  reposUrl: $reposUrl,\n  siteAdmin: $siteAdmin,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  type: $type,\n  url: $url,\n  userViewType: $userViewType,\n)';
 
- }
+}

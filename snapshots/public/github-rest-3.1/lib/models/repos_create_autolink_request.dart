@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateAutolinkRequest {const ReposCreateAutolinkRequest({required this.keyPrefix, required this.urlTemplate, this.isAlphanumeric, });
 
-factory ReposCreateAutolinkRequest.fromJson(Map<String, dynamic> json) { return ReposCreateAutolinkRequest(
+factory ReposCreateAutolinkRequest.fromJson(Map<String, dynamic> json) {return ReposCreateAutolinkRequest(
   keyPrefix: json['key_prefix'] as String,
   urlTemplate: json['url_template'] as String,
   isAlphanumeric: json['is_alphanumeric'] as bool?,
-); }
+);}
 
 /// This prefix appended by certain characters will generate a link any time it is found in an issue, pull request, or commit.
 final String keyPrefix;
@@ -21,18 +21,18 @@ final bool? isAlphanumeric;
 /// The value of `isAlphanumeric`, or its schema default when absent.
 bool get isAlphanumericOrDefault => isAlphanumeric ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key_prefix': keyPrefix,
   'url_template': urlTemplate,
   'is_alphanumeric': ?isAlphanumeric,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_prefix') && json['key_prefix'] is String &&
-      json.containsKey('url_template') && json['url_template'] is String; } 
-ReposCreateAutolinkRequest copyWith({String? keyPrefix, String? urlTemplate, bool? Function()? isAlphanumeric, }) { return ReposCreateAutolinkRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key_prefix') && json['key_prefix'] is String &&
+      json.containsKey('url_template') && json['url_template'] is String;}
+ReposCreateAutolinkRequest copyWith({String? keyPrefix, String? urlTemplate, bool? Function()? isAlphanumeric, }) {return ReposCreateAutolinkRequest(
   keyPrefix: keyPrefix ?? this.keyPrefix,
   urlTemplate: urlTemplate ?? this.urlTemplate,
   isAlphanumeric: isAlphanumeric != null ? isAlphanumeric() : this.isAlphanumeric,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateAutolinkRequest &&
           keyPrefix == other.keyPrefix &&
@@ -43,4 +43,4 @@ ReposCreateAutolinkRequest copyWith({String? keyPrefix, String? urlTemplate, boo
 
 @override String toString() => 'ReposCreateAutolinkRequest(keyPrefix: $keyPrefix, urlTemplate: $urlTemplate, isAlphanumeric: $isAlphanumeric)';
 
- }
+}

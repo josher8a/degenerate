@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_scheme.dart';@immutable final class HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin {const HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin({required this.accessClientId, required this.accessClientSecret, required this.host, this.database, this.password, this.scheme, this.user, });
 
-factory HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin(
+factory HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin.fromJson(Map<String, dynamic> json) {return HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin(
   accessClientId: json['access_client_id'] as String,
   accessClientSecret: json['access_client_secret'] as String,
   host: json['host'] as String,
@@ -11,7 +11,7 @@ factory HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin.fromJson(Map<String
   password: json['password'] as String?,
   scheme: json['scheme'] != null ? HyperdriveHyperdriveScheme.fromJson(json['scheme'] as String) : null,
   user: json['user'] as String?,
-); }
+);}
 
 /// Defines the Client ID of the Access token to use when connecting to the origin database.
 /// 
@@ -43,7 +43,7 @@ final HyperdriveHyperdriveScheme? scheme;
 /// Example: `'postgres'`
 final String? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_client_id': accessClientId,
   'access_client_secret': accessClientSecret,
   'host': host,
@@ -51,11 +51,11 @@ Map<String, dynamic> toJson() { return {
   'password': ?password,
   if (scheme != null) 'scheme': scheme?.toJson(),
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_client_id') && json['access_client_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('access_client_id') && json['access_client_id'] is String &&
       json.containsKey('access_client_secret') && json['access_client_secret'] is String &&
-      json.containsKey('host') && json['host'] is String; } 
-HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin copyWith({String? accessClientId, String? accessClientSecret, String? host, String? Function()? database, String? Function()? password, HyperdriveHyperdriveScheme? Function()? scheme, String? Function()? user, }) { return HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin(
+      json.containsKey('host') && json['host'] is String;}
+HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin copyWith({String? accessClientId, String? accessClientSecret, String? host, String? Function()? database, String? Function()? password, HyperdriveHyperdriveScheme? Function()? scheme, String? Function()? user, }) {return HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin(
   accessClientId: accessClientId ?? this.accessClientId,
   accessClientSecret: accessClientSecret ?? this.accessClientSecret,
   host: host ?? this.host,
@@ -63,7 +63,7 @@ HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin copyWith({String? accessCli
   password: password != null ? password() : this.password,
   scheme: scheme != null ? scheme() : this.scheme,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin &&
           accessClientId == other.accessClientId &&
@@ -78,4 +78,4 @@ HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin copyWith({String? accessCli
 
 @override String toString() => 'HyperdriveHyperdriveOriginHyperdriveOverAccessOrigin(accessClientId: $accessClientId, accessClientSecret: $accessClientSecret, host: $host, database: $database, password: $password, scheme: $scheme, user: $user)';
 
- }
+}

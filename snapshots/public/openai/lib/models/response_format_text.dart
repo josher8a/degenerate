@@ -5,20 +5,20 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ResponseFormatText {const ResponseFormatText({required this.type});
 
-factory ResponseFormatText.fromJson(Map<String, dynamic> json) { return ResponseFormatText(
+factory ResponseFormatText.fromJson(Map<String, dynamic> json) {return ResponseFormatText(
   type: MessageContentTextObjectType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The type of response format being defined. Always `text`.
 final MessageContentTextObjectType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'text'; } 
-ResponseFormatText copyWith({MessageContentTextObjectType? type}) { return ResponseFormatText(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'text';}
+ResponseFormatText copyWith({MessageContentTextObjectType? type}) {return ResponseFormatText(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFormatText &&
           type == other.type;
@@ -27,4 +27,4 @@ ResponseFormatText copyWith({MessageContentTextObjectType? type}) { return Respo
 
 @override String toString() => 'ResponseFormatText(type: $type)';
 
- }
+}

@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A response to an
 /// 
 @immutable final class McpApprovalResponseResource {const McpApprovalResponseResource({required this.type, required this.id, required this.approvalRequestId, required this.approve, this.reason = const Omittable.absent(), });
 
-factory McpApprovalResponseResource.fromJson(Map<String, dynamic> json) { return McpApprovalResponseResource(
+factory McpApprovalResponseResource.fromJson(Map<String, dynamic> json) {return McpApprovalResponseResource(
   type: json['type'] as String,
   id: json['id'] as String,
   approvalRequestId: json['approval_request_id'] as String,
   approve: json['approve'] as bool,
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of the item. Always `mcp_approval_response`.
 /// 
@@ -33,24 +33,24 @@ final bool approve;
 /// 
 final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'approval_request_id': approvalRequestId,
   'approve': approve,
   if (reason.isPresent) 'reason': reason.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('approval_request_id') && json['approval_request_id'] is String &&
-      json.containsKey('approve') && json['approve'] is bool; } 
-McpApprovalResponseResource copyWith({String? type, String? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) { return McpApprovalResponseResource(
+      json.containsKey('approve') && json['approve'] is bool;}
+McpApprovalResponseResource copyWith({String? type, String? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) {return McpApprovalResponseResource(
   type: type ?? this.type,
   id: id ?? this.id,
   approvalRequestId: approvalRequestId ?? this.approvalRequestId,
   approve: approve ?? this.approve,
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McpApprovalResponseResource &&
           type == other.type &&
@@ -63,4 +63,4 @@ McpApprovalResponseResource copyWith({String? type, String? id, String? approval
 
 @override String toString() => 'McpApprovalResponseResource(type: $type, id: $id, approvalRequestId: $approvalRequestId, approve: $approve, reason: $reason)';
 
- }
+}

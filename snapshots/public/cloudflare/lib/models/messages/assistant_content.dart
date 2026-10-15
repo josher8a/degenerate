@@ -7,11 +7,11 @@ const AssistantContent({this.string = const Omittable.absent(), this.listAssista
 const AssistantContent._({required this.rawValue, required this.string, required this.listAssistantContentVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory AssistantContent.fromJson(Object? json) { return AssistantContent._(
+factory AssistantContent.fromJson(Object? json) {return AssistantContent._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   listAssistantContentVariant2: parseAnyOfVariant<List<AssistantContentVariant2>>(json, (value) => (value! as List<dynamic>).map((e) => AssistantContentVariant2.fromJson(e as Map<String, dynamic>)).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'AssistantContent(${toJson()})';
 
- }
+}

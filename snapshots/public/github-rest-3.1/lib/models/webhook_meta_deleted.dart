@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_meta_deleted/webhook_meta_deleted_hook.dart';@immutable final class WebhookMetaDeleted {const WebhookMetaDeleted({required this.action, required this.hook, required this.hookId, this.enterprise, this.installation, this.organization, this.repository = const Omittable.absent(), this.sender, });
 
-factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) { return WebhookMetaDeleted(
+factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) {return WebhookMetaDeleted(
   action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   hook: WebhookMetaDeletedHook.fromJson(json['hook'] as Map<String, dynamic>),
@@ -12,7 +12,7 @@ factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) { return WebhookM
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ItemDeletedAction action;
 
@@ -32,7 +32,7 @@ final Omittable<RepositoryWebhooks?> repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'hook': hook.toJson(),
@@ -41,11 +41,11 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (repository.isPresent) 'repository': repository.value?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('hook') &&
-      json.containsKey('hook_id') && json['hook_id'] is num; } 
-WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, Omittable<RepositoryWebhooks?>? repository, SimpleUser? Function()? sender, }) { return WebhookMetaDeleted(
+      json.containsKey('hook_id') && json['hook_id'] is num;}
+WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, Omittable<RepositoryWebhooks?>? repository, SimpleUser? Function()? sender, }) {return WebhookMetaDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   hook: hook ?? this.hook,
@@ -54,7 +54,7 @@ WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Func
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMetaDeleted &&
           action == other.action &&
@@ -70,4 +70,4 @@ WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Func
 
 @override String toString() => 'WebhookMetaDeleted(action: $action, enterprise: $enterprise, hook: $hook, hookId: $hookId, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

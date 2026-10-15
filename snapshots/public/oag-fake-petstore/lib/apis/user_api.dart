@@ -14,7 +14,7 @@ final class UserApi with ApiExecutor {const UserApi(this.apiConfig);
 /// This can only be done by the logged in user.
 ///
 /// `POST /user`
-Future<ApiResult<void, Never>> createUser({required User body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createUser({required User body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -29,13 +29,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates list of users with given input array
 ///
 /// 
 ///
 /// `POST /user/createWithArray`
-Future<ApiResult<void, Never>> createUsersWithArrayInput({required List<User> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createUsersWithArrayInput({required List<User> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,13 +50,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Creates list of users with given input array
 ///
 /// 
 ///
 /// `POST /user/createWithList`
-Future<ApiResult<void, Never>> createUsersWithListInput({required List<User> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> createUsersWithListInput({required List<User> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,13 +71,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Logs user into the system
 ///
 /// 
 ///
 /// `GET /user/login`
-Future<ApiResult<String, Never>> loginUser({required String username, required String password, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> loginUser({required String username, required String password, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['username'] = username;
 queryParameters['password'] = password;
@@ -96,16 +96,16 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// Logs out current logged in user session
 ///
 /// 
 ///
 /// `GET /user/logout`
-Future<ApiResult<void, Never>> logoutUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> logoutUser({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -118,13 +118,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Get user by user name
 ///
 /// 
 ///
 /// `GET /user/{username}`
-Future<ApiResult<User, Never>> getUserByName({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<User, Never>> getUserByName({required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -139,13 +139,13 @@ return await execute(
     return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Updated user
 ///
 /// This can only be done by the logged in user.
 ///
 /// `PUT /user/{username}`
-Future<ApiResult<void, Never>> updateUser({required String username, required User body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updateUser({required String username, required User body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -160,13 +160,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Delete user
 ///
 /// This can only be done by the logged in user.
 ///
 /// `DELETE /user/{username}`
-Future<ApiResult<void, Never>> deleteUser({required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteUser({required String username, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -179,5 +179,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

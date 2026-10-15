@@ -5,19 +5,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Requires a Google Workspace identity provider.
 @immutable final class AccessGsuiteGroupRule {const AccessGsuiteGroupRule({required this.gsuite});
 
-factory AccessGsuiteGroupRule.fromJson(Map<String, dynamic> json) { return AccessGsuiteGroupRule(
+factory AccessGsuiteGroupRule.fromJson(Map<String, dynamic> json) {return AccessGsuiteGroupRule(
   gsuite: Gsuite.fromJson(json['gsuite'] as Map<String, dynamic>),
-); }
+);}
 
 final Gsuite gsuite;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'gsuite': gsuite.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('gsuite'); } 
-AccessGsuiteGroupRule copyWith({Gsuite? gsuite}) { return AccessGsuiteGroupRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('gsuite');}
+AccessGsuiteGroupRule copyWith({Gsuite? gsuite}) {return AccessGsuiteGroupRule(
   gsuite: gsuite ?? this.gsuite,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessGsuiteGroupRule &&
           gsuite == other.gsuite;
@@ -26,4 +26,4 @@ AccessGsuiteGroupRule copyWith({Gsuite? gsuite}) { return AccessGsuiteGroupRule(
 
 @override String toString() => 'AccessGsuiteGroupRule(gsuite: $gsuite)';
 
- }
+}

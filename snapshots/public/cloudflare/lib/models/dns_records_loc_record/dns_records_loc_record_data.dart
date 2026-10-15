@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Latitude direction.
 sealed class LatDirection {const LatDirection();
 
-factory LatDirection.fromJson(String json) { return switch (json) {
+factory LatDirection.fromJson(String json) {return switch (json) {
   'N' => n,
   'S' => s,
   _ => LatDirection$Unknown(json),
-}; }
+};}
 
 static const LatDirection n = LatDirection$n._();
 
@@ -17,30 +17,30 @@ static const LatDirection s = LatDirection$s._();
 static const List<LatDirection> values = [n, s];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'N' => 'n',
   'S' => 's',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LatDirection$Unknown; } 
+bool get isUnknown {return this is LatDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() n, required W Function() s, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() n, required W Function() s, required W Function(String value) $unknown, }) {return switch (this) {
       LatDirection$n() => n(),
       LatDirection$s() => s(),
       LatDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? n, W Function()? s, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? n, W Function()? s, W Function(String value)? $unknown, }) {return switch (this) {
       LatDirection$n() => n != null ? n() : orElse(value),
       LatDirection$s() => s != null ? s() : orElse(value),
       LatDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LatDirection($value)';
 
- }
+}
 @immutable final class LatDirection$n extends LatDirection {const LatDirection$n._();
 
 @override String get value => 'N';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? n, W Fun
 
 @override int get hashCode => 'N'.hashCode;
 
- }
+}
 @immutable final class LatDirection$s extends LatDirection {const LatDirection$s._();
 
 @override String get value => 'S';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? n, W Fun
 
 @override int get hashCode => 'S'.hashCode;
 
- }
+}
 @immutable final class LatDirection$Unknown extends LatDirection {const LatDirection$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? n, W Fun
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Longitude direction.
 sealed class LongDirection {const LongDirection();
 
-factory LongDirection.fromJson(String json) { return switch (json) {
+factory LongDirection.fromJson(String json) {return switch (json) {
   'E' => e,
   'W' => w,
   _ => LongDirection$Unknown(json),
-}; }
+};}
 
 static const LongDirection e = LongDirection$e._();
 
@@ -85,30 +85,30 @@ static const LongDirection w = LongDirection$w._();
 static const List<LongDirection> values = [e, w];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'E' => 'e',
   'W' => 'w',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LongDirection$Unknown; } 
+bool get isUnknown {return this is LongDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() e, required W Function() w, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() e, required W Function() w, required W Function(String value) $unknown, }) {return switch (this) {
       LongDirection$e() => e(),
       LongDirection$w() => w(),
       LongDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? e, W Function()? w, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? e, W Function()? w, W Function(String value)? $unknown, }) {return switch (this) {
       LongDirection$e() => e != null ? e() : orElse(value),
       LongDirection$w() => w != null ? w() : orElse(value),
       LongDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LongDirection($value)';
 
- }
+}
 @immutable final class LongDirection$e extends LongDirection {const LongDirection$e._();
 
 @override String get value => 'E';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? e, W Fun
 
 @override int get hashCode => 'E'.hashCode;
 
- }
+}
 @immutable final class LongDirection$w extends LongDirection {const LongDirection$w._();
 
 @override String get value => 'W';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? e, W Fun
 
 @override int get hashCode => 'W'.hashCode;
 
- }
+}
 @immutable final class LongDirection$Unknown extends LongDirection {const LongDirection$Unknown(this.value);
 
 @override final String value;
@@ -136,11 +136,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? e, W Fun
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Components of a LOC record.
 @immutable final class DnsRecordsLocRecordData {const DnsRecordsLocRecordData({this.altitude, this.latDegrees, this.latDirection, this.latMinutes, this.latSeconds, this.longDegrees, this.longDirection, this.longMinutes, this.longSeconds, this.precisionHorz, this.precisionVert, this.size, });
 
-factory DnsRecordsLocRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsLocRecordData(
+factory DnsRecordsLocRecordData.fromJson(Map<String, dynamic> json) {return DnsRecordsLocRecordData(
   altitude: json['altitude'] != null ? (json['altitude'] as num).toDouble() : null,
   latDegrees: json['lat_degrees'] != null ? (json['lat_degrees'] as num).toDouble() : null,
   latDirection: json['lat_direction'] != null ? LatDirection.fromJson(json['lat_direction'] as String) : null,
@@ -153,7 +153,7 @@ factory DnsRecordsLocRecordData.fromJson(Map<String, dynamic> json) { return Dns
   precisionHorz: json['precision_horz'] != null ? (json['precision_horz'] as num).toDouble() : null,
   precisionVert: json['precision_vert'] != null ? (json['precision_vert'] as num).toDouble() : null,
   size: json['size'] != null ? (json['size'] as num).toDouble() : null,
-); }
+);}
 
 /// Altitude of location in meters.
 /// 
@@ -215,7 +215,7 @@ final double? precisionVert;
 /// Example: `100`
 final double? size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'altitude': ?altitude,
   'lat_degrees': ?latDegrees,
   if (latDirection != null) 'lat_direction': latDirection?.toJson(),
@@ -228,10 +228,10 @@ Map<String, dynamic> toJson() { return {
   'precision_horz': ?precisionHorz,
   'precision_vert': ?precisionVert,
   'size': ?size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'altitude', 'lat_degrees', 'lat_direction', 'lat_minutes', 'lat_seconds', 'long_degrees', 'long_direction', 'long_minutes', 'long_seconds', 'precision_horz', 'precision_vert', 'size'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'altitude', 'lat_degrees', 'lat_direction', 'lat_minutes', 'lat_seconds', 'long_degrees', 'long_direction', 'long_minutes', 'long_seconds', 'precision_horz', 'precision_vert', 'size'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final altitude$ = altitude;
 if (altitude$ != null) {
   if (altitude$ < -100000) { errors.add('altitude: must be >= -100000'); }
@@ -282,8 +282,8 @@ if (size$ != null) {
   if (size$ < 0) { errors.add('size: must be >= 0'); }
   if (size$ > 90000000.0) { errors.add('size: must be <= 90000000.0'); }
 }
-return errors; } 
-DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function()? latDegrees, LatDirection? Function()? latDirection, double? Function()? latMinutes, double? Function()? latSeconds, double? Function()? longDegrees, LongDirection? Function()? longDirection, double? Function()? longMinutes, double? Function()? longSeconds, double? Function()? precisionHorz, double? Function()? precisionVert, double? Function()? size, }) { return DnsRecordsLocRecordData(
+return errors;}
+DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function()? latDegrees, LatDirection? Function()? latDirection, double? Function()? latMinutes, double? Function()? latSeconds, double? Function()? longDegrees, LongDirection? Function()? longDirection, double? Function()? longMinutes, double? Function()? longSeconds, double? Function()? precisionHorz, double? Function()? precisionVert, double? Function()? size, }) {return DnsRecordsLocRecordData(
   altitude: altitude != null ? altitude() : this.altitude,
   latDegrees: latDegrees != null ? latDegrees() : this.latDegrees,
   latDirection: latDirection != null ? latDirection() : this.latDirection,
@@ -296,7 +296,7 @@ DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function
   precisionHorz: precisionHorz != null ? precisionHorz() : this.precisionHorz,
   precisionVert: precisionVert != null ? precisionVert() : this.precisionVert,
   size: size != null ? size() : this.size,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsLocRecordData &&
           altitude == other.altitude &&
@@ -316,4 +316,4 @@ DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function
 
 @override String toString() => 'DnsRecordsLocRecordData(\n  altitude: $altitude,\n  latDegrees: $latDegrees,\n  latDirection: $latDirection,\n  latMinutes: $latMinutes,\n  latSeconds: $latSeconds,\n  longDegrees: $longDegrees,\n  longDirection: $longDirection,\n  longMinutes: $longMinutes,\n  longSeconds: $longSeconds,\n  precisionHorz: $precisionHorz,\n  precisionVert: $precisionVert,\n  size: $size,\n)';
 
- }
+}

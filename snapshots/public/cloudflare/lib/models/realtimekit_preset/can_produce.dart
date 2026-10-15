@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Can produce audio
 sealed class CanProduce {const CanProduce();
 
-factory CanProduce.fromJson(String json) { return switch (json) {
+factory CanProduce.fromJson(String json) {return switch (json) {
   'ALLOWED' => allowed,
   'NOT_ALLOWED' => notAllowed,
   'CAN_REQUEST' => canRequest,
   _ => CanProduce$Unknown(json),
-}; }
+};}
 
 static const CanProduce allowed = CanProduce$allowed._();
 
@@ -20,33 +20,33 @@ static const CanProduce canRequest = CanProduce$canRequest._();
 static const List<CanProduce> values = [allowed, notAllowed, canRequest];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ALLOWED' => 'allowed',
   'NOT_ALLOWED' => 'notAllowed',
   'CAN_REQUEST' => 'canRequest',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CanProduce$Unknown; } 
+bool get isUnknown {return this is CanProduce$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() allowed, required W Function() notAllowed, required W Function() canRequest, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() allowed, required W Function() notAllowed, required W Function() canRequest, required W Function(String value) $unknown, }) {return switch (this) {
       CanProduce$allowed() => allowed(),
       CanProduce$notAllowed() => notAllowed(),
       CanProduce$canRequest() => canRequest(),
       CanProduce$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowed, W Function()? notAllowed, W Function()? canRequest, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowed, W Function()? notAllowed, W Function()? canRequest, W Function(String value)? $unknown, }) {return switch (this) {
       CanProduce$allowed() => allowed != null ? allowed() : orElse(value),
       CanProduce$notAllowed() => notAllowed != null ? notAllowed() : orElse(value),
       CanProduce$canRequest() => canRequest != null ? canRequest() : orElse(value),
       CanProduce$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CanProduce($value)';
 
- }
+}
 @immutable final class CanProduce$allowed extends CanProduce {const CanProduce$allowed._();
 
 @override String get value => 'ALLOWED';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowed,
 
 @override int get hashCode => 'ALLOWED'.hashCode;
 
- }
+}
 @immutable final class CanProduce$notAllowed extends CanProduce {const CanProduce$notAllowed._();
 
 @override String get value => 'NOT_ALLOWED';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowed,
 
 @override int get hashCode => 'NOT_ALLOWED'.hashCode;
 
- }
+}
 @immutable final class CanProduce$canRequest extends CanProduce {const CanProduce$canRequest._();
 
 @override String get value => 'CAN_REQUEST';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowed,
 
 @override int get hashCode => 'CAN_REQUEST'.hashCode;
 
- }
+}
 @immutable final class CanProduce$Unknown extends CanProduce {const CanProduce$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowed,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ReviewRequestedAction {const ReviewRequestedAction();
 
-factory ReviewRequestedAction.fromJson(String json) { return switch (json) {
+factory ReviewRequestedAction.fromJson(String json) {return switch (json) {
   'review_requested' => reviewRequested,
   _ => ReviewRequestedAction$Unknown(json),
-}; }
+};}
 
 static const ReviewRequestedAction reviewRequested = ReviewRequestedAction$reviewRequested._();
 
 static const List<ReviewRequestedAction> values = [reviewRequested];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'review_requested' => 'reviewRequested',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReviewRequestedAction$Unknown; } 
+bool get isUnknown {return this is ReviewRequestedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() reviewRequested, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() reviewRequested, required W Function(String value) $unknown, }) {return switch (this) {
       ReviewRequestedAction$reviewRequested() => reviewRequested(),
       ReviewRequestedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewRequested, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewRequested, W Function(String value)? $unknown, }) {return switch (this) {
       ReviewRequestedAction$reviewRequested() => reviewRequested != null ? reviewRequested() : orElse(value),
       ReviewRequestedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReviewRequestedAction($value)';
 
- }
+}
 @immutable final class ReviewRequestedAction$reviewRequested extends ReviewRequestedAction {const ReviewRequestedAction$reviewRequested._();
 
 @override String get value => 'review_requested';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewRe
 
 @override int get hashCode => 'review_requested'.hashCode;
 
- }
+}
 @immutable final class ReviewRequestedAction$Unknown extends ReviewRequestedAction {const ReviewRequestedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewRe
 
 @override int get hashCode => value.hashCode;
 
- }
+}

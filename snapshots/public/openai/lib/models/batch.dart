@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch/batch_errors.dart';import 'package:pub_openai/models/batch/batch_usage.dart';import 'package:pub_openai/models/batch/request_counts.dart';/// The object type, which is always `batch`.
 sealed class BatchObject {const BatchObject();
 
-factory BatchObject.fromJson(String json) { return switch (json) {
+factory BatchObject.fromJson(String json) {return switch (json) {
   'batch' => batch,
   _ => BatchObject$Unknown(json),
-}; }
+};}
 
 static const BatchObject batch = BatchObject$batch._();
 
 static const List<BatchObject> values = [batch];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'batch' => 'batch',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BatchObject$Unknown; } 
+bool get isUnknown {return this is BatchObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() batch, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() batch, required W Function(String value) $unknown, }) {return switch (this) {
       BatchObject$batch() => batch(),
       BatchObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? batch, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? batch, W Function(String value)? $unknown, }) {return switch (this) {
       BatchObject$batch() => batch != null ? batch() : orElse(value),
       BatchObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BatchObject($value)';
 
- }
+}
 @immutable final class BatchObject$batch extends BatchObject {const BatchObject$batch._();
 
 @override String get value => 'batch';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? batch, W
 
 @override int get hashCode => 'batch'.hashCode;
 
- }
+}
 @immutable final class BatchObject$Unknown extends BatchObject {const BatchObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? batch, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The current status of the batch.
 sealed class BatchStatus {const BatchStatus();
 
-factory BatchStatus.fromJson(String json) { return switch (json) {
+factory BatchStatus.fromJson(String json) {return switch (json) {
   'validating' => validating,
   'failed' => failed,
   'in_progress' => inProgress,
@@ -67,7 +67,7 @@ factory BatchStatus.fromJson(String json) { return switch (json) {
   'cancelling' => cancelling,
   'cancelled' => cancelled,
   _ => BatchStatus$Unknown(json),
-}; }
+};}
 
 static const BatchStatus validating = BatchStatus$validating._();
 
@@ -88,9 +88,9 @@ static const BatchStatus cancelled = BatchStatus$cancelled._();
 static const List<BatchStatus> values = [validating, failed, inProgress, finalizing, completed, expired, cancelling, cancelled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'validating' => 'validating',
   'failed' => 'failed',
   'in_progress' => 'inProgress',
@@ -100,11 +100,11 @@ String get name { return switch (value) {
   'cancelling' => 'cancelling',
   'cancelled' => 'cancelled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BatchStatus$Unknown; } 
+bool get isUnknown {return this is BatchStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() validating, required W Function() failed, required W Function() inProgress, required W Function() finalizing, required W Function() completed, required W Function() expired, required W Function() cancelling, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() validating, required W Function() failed, required W Function() inProgress, required W Function() finalizing, required W Function() completed, required W Function() expired, required W Function() cancelling, required W Function() cancelled, required W Function(String value) $unknown, }) {return switch (this) {
       BatchStatus$validating() => validating(),
       BatchStatus$failed() => failed(),
       BatchStatus$inProgress() => inProgress(),
@@ -114,9 +114,9 @@ W when<W>({required W Function() validating, required W Function() failed, requi
       BatchStatus$cancelling() => cancelling(),
       BatchStatus$cancelled() => cancelled(),
       BatchStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? validating, W Function()? failed, W Function()? inProgress, W Function()? finalizing, W Function()? completed, W Function()? expired, W Function()? cancelling, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? validating, W Function()? failed, W Function()? inProgress, W Function()? finalizing, W Function()? completed, W Function()? expired, W Function()? cancelling, W Function()? cancelled, W Function(String value)? $unknown, }) {return switch (this) {
       BatchStatus$validating() => validating != null ? validating() : orElse(value),
       BatchStatus$failed() => failed != null ? failed() : orElse(value),
       BatchStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
@@ -126,10 +126,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
       BatchStatus$cancelling() => cancelling != null ? cancelling() : orElse(value),
       BatchStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
       BatchStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BatchStatus($value)';
 
- }
+}
 @immutable final class BatchStatus$validating extends BatchStatus {const BatchStatus$validating._();
 
 @override String get value => 'validating';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'validating'.hashCode;
 
- }
+}
 @immutable final class BatchStatus$failed extends BatchStatus {const BatchStatus$failed._();
 
 @override String get value => 'failed';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class BatchStatus$inProgress extends BatchStatus {const BatchStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class BatchStatus$finalizing extends BatchStatus {const BatchStatus$finalizing._();
 
 @override String get value => 'finalizing';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'finalizing'.hashCode;
 
- }
+}
 @immutable final class BatchStatus$completed extends BatchStatus {const BatchStatus$completed._();
 
 @override String get value => 'completed';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class BatchStatus$expired extends BatchStatus {const BatchStatus$expired._();
 
 @override String get value => 'expired';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class BatchStatus$cancelling extends BatchStatus {const BatchStatus$cancelling._();
 
 @override String get value => 'cancelling';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'cancelling'.hashCode;
 
- }
+}
 @immutable final class BatchStatus$cancelled extends BatchStatus {const BatchStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -201,7 +201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class BatchStatus$Unknown extends BatchStatus {const BatchStatus$Unknown(this.value);
 
 @override final String value;
@@ -211,10 +211,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Batch {const Batch({required this.id, required this.object, required this.endpoint, required this.inputFileId, required this.completionWindow, required this.status, required this.createdAt, this.model, this.errors, this.outputFileId, this.errorFileId, this.inProgressAt, this.expiresAt, this.finalizingAt, this.completedAt, this.failedAt, this.expiredAt, this.cancellingAt, this.cancelledAt, this.requestCounts, this.usage, this.metadata = const Omittable.absent(), });
 
-factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
+factory Batch.fromJson(Map<String, dynamic> json) {return Batch(
   id: json['id'] as String,
   object: BatchObject.fromJson(json['object'] as String),
   endpoint: json['endpoint'] as String,
@@ -237,7 +237,7 @@ factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
   requestCounts: json['request_counts'] != null ? RequestCounts.fromJson(json['request_counts'] as Map<String, dynamic>) : null,
   usage: json['usage'] != null ? BatchUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-); }
+);}
 
 final String id;
 
@@ -309,7 +309,7 @@ final BatchUsage? usage;
 
 final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'endpoint': endpoint,
@@ -332,15 +332,15 @@ Map<String, dynamic> toJson() { return {
   if (requestCounts != null) 'request_counts': requestCounts?.toJson(),
   if (usage != null) 'usage': usage?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('endpoint') && json['endpoint'] is String &&
       json.containsKey('input_file_id') && json['input_file_id'] is String &&
       json.containsKey('completion_window') && json['completion_window'] is String &&
       json.containsKey('status') &&
-      json.containsKey('created_at') && json['created_at'] is num; } 
-Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Function()? model, BatchErrors? Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String? Function()? outputFileId, String? Function()? errorFileId, int? createdAt, int? Function()? inProgressAt, int? Function()? expiresAt, int? Function()? finalizingAt, int? Function()? completedAt, int? Function()? failedAt, int? Function()? expiredAt, int? Function()? cancellingAt, int? Function()? cancelledAt, RequestCounts? Function()? requestCounts, BatchUsage? Function()? usage, Omittable<Map<String,String>?>? metadata, }) { return Batch(
+      json.containsKey('created_at') && json['created_at'] is num;}
+Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Function()? model, BatchErrors? Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String? Function()? outputFileId, String? Function()? errorFileId, int? createdAt, int? Function()? inProgressAt, int? Function()? expiresAt, int? Function()? finalizingAt, int? Function()? completedAt, int? Function()? failedAt, int? Function()? expiredAt, int? Function()? cancellingAt, int? Function()? cancelledAt, RequestCounts? Function()? requestCounts, BatchUsage? Function()? usage, Omittable<Map<String,String>?>? metadata, }) {return Batch(
   id: id ?? this.id,
   object: object ?? this.object,
   endpoint: endpoint ?? this.endpoint,
@@ -363,7 +363,7 @@ Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Funct
   requestCounts: requestCounts != null ? requestCounts() : this.requestCounts,
   usage: usage != null ? usage() : this.usage,
   metadata: metadata ?? this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Batch &&
           id == other.id &&
@@ -393,4 +393,4 @@ Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Funct
 
 @override String toString() => 'Batch(\n  id: $id,\n  object: $object,\n  endpoint: $endpoint,\n  model: $model,\n  errors: $errors,\n  inputFileId: $inputFileId,\n  completionWindow: $completionWindow,\n  status: $status,\n  outputFileId: $outputFileId,\n  errorFileId: $errorFileId,\n  createdAt: $createdAt,\n  inProgressAt: $inProgressAt,\n  expiresAt: $expiresAt,\n  finalizingAt: $finalizingAt,\n  completedAt: $completedAt,\n  failedAt: $failedAt,\n  expiredAt: $expiredAt,\n  cancellingAt: $cancellingAt,\n  cancelledAt: $cancelledAt,\n  requestCounts: $requestCounts,\n  usage: $usage,\n  metadata: $metadata,\n)';
 
- }
+}

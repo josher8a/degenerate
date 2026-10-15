@@ -8,6 +8,6 @@ static final testAuthHttpBasicRequirements = [const ApiSecurityRequirement({'htt
 
 static final testAuthHttpBearerRequirements = [const ApiSecurityRequirement({'http_bearer_auth': []})];
 
-static ApiConfig applyHttpAuth(ApiConfig config, {required String username, required String password, }) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'}); } 
-static ApiConfig applyHttpBearerAuth(ApiConfig config, String token, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'}); } 
- }
+static ApiConfig applyHttpAuth(ApiConfig config, {required String username, required String password, }) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});}
+static ApiConfig applyHttpBearerAuth(ApiConfig config, String token, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});}
+}

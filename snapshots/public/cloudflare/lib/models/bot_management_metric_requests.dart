@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BotManagementMetricRequests {const BotManagementMetricRequests({required this.metric, required this.requests, });
 
-factory BotManagementMetricRequests.fromJson(Map<String, dynamic> json) { return BotManagementMetricRequests(
+factory BotManagementMetricRequests.fromJson(Map<String, dynamic> json) {return BotManagementMetricRequests(
   metric: json['metric'] as String,
   requests: (json['requests'] as num).toInt(),
-); }
+);}
 
 final String metric;
 
 final int requests;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'metric': metric,
   'requests': requests,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('metric') && json['metric'] is String &&
-      json.containsKey('requests') && json['requests'] is num; } 
-BotManagementMetricRequests copyWith({String? metric, int? requests, }) { return BotManagementMetricRequests(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('metric') && json['metric'] is String &&
+      json.containsKey('requests') && json['requests'] is num;}
+BotManagementMetricRequests copyWith({String? metric, int? requests, }) {return BotManagementMetricRequests(
   metric: metric ?? this.metric,
   requests: requests ?? this.requests,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementMetricRequests &&
           metric == other.metric &&
@@ -31,4 +31,4 @@ BotManagementMetricRequests copyWith({String? metric, int? requests, }) { return
 
 @override String toString() => 'BotManagementMetricRequests(metric: $metric, requests: $requests)';
 
- }
+}

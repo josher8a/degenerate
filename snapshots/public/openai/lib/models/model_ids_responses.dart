@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/model_ids_shared.dart';sealed class ResponsesOnlyModel {const ResponsesOnlyModel();
 
-factory ResponsesOnlyModel.fromJson(String json) { return switch (json) {
+factory ResponsesOnlyModel.fromJson(String json) {return switch (json) {
   'o1-pro' => o1Pro,
   'o1-pro-2025-03-19' => o1Pro20250319,
   'o3-pro' => o3Pro,
@@ -19,7 +19,7 @@ factory ResponsesOnlyModel.fromJson(String json) { return switch (json) {
   'gpt-5-pro-2025-10-06' => gpt5Pro20251006,
   'gpt-5.1-codex-max' => gpt51CodexMax,
   _ => ResponsesOnlyModel$Unknown(json),
-}; }
+};}
 
 static const ResponsesOnlyModel o1Pro = ResponsesOnlyModel$o1Pro._();
 
@@ -52,9 +52,9 @@ static const ResponsesOnlyModel gpt51CodexMax = ResponsesOnlyModel$gpt51CodexMax
 static const List<ResponsesOnlyModel> values = [o1Pro, o1Pro20250319, o3Pro, o3Pro20250610, o3DeepResearch, o3DeepResearch20250626, o4MiniDeepResearch, o4MiniDeepResearch20250626, computerUsePreview, computerUsePreview20250311, gpt5Codex, gpt5Pro, gpt5Pro20251006, gpt51CodexMax];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'o1-pro' => 'o1Pro',
   'o1-pro-2025-03-19' => 'o1Pro20250319',
   'o3-pro' => 'o3Pro',
@@ -70,11 +70,11 @@ String get name { return switch (value) {
   'gpt-5-pro-2025-10-06' => 'gpt5Pro20251006',
   'gpt-5.1-codex-max' => 'gpt51CodexMax',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponsesOnlyModel$Unknown; } 
+bool get isUnknown {return this is ResponsesOnlyModel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() o1Pro, required W Function() o1Pro20250319, required W Function() o3Pro, required W Function() o3Pro20250610, required W Function() o3DeepResearch, required W Function() o3DeepResearch20250626, required W Function() o4MiniDeepResearch, required W Function() o4MiniDeepResearch20250626, required W Function() computerUsePreview, required W Function() computerUsePreview20250311, required W Function() gpt5Codex, required W Function() gpt5Pro, required W Function() gpt5Pro20251006, required W Function() gpt51CodexMax, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() o1Pro, required W Function() o1Pro20250319, required W Function() o3Pro, required W Function() o3Pro20250610, required W Function() o3DeepResearch, required W Function() o3DeepResearch20250626, required W Function() o4MiniDeepResearch, required W Function() o4MiniDeepResearch20250626, required W Function() computerUsePreview, required W Function() computerUsePreview20250311, required W Function() gpt5Codex, required W Function() gpt5Pro, required W Function() gpt5Pro20251006, required W Function() gpt51CodexMax, required W Function(String value) $unknown, }) {return switch (this) {
       ResponsesOnlyModel$o1Pro() => o1Pro(),
       ResponsesOnlyModel$o1Pro20250319() => o1Pro20250319(),
       ResponsesOnlyModel$o3Pro() => o3Pro(),
@@ -90,9 +90,9 @@ W when<W>({required W Function() o1Pro, required W Function() o1Pro20250319, req
       ResponsesOnlyModel$gpt5Pro20251006() => gpt5Pro20251006(),
       ResponsesOnlyModel$gpt51CodexMax() => gpt51CodexMax(),
       ResponsesOnlyModel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W Function()? o1Pro20250319, W Function()? o3Pro, W Function()? o3Pro20250610, W Function()? o3DeepResearch, W Function()? o3DeepResearch20250626, W Function()? o4MiniDeepResearch, W Function()? o4MiniDeepResearch20250626, W Function()? computerUsePreview, W Function()? computerUsePreview20250311, W Function()? gpt5Codex, W Function()? gpt5Pro, W Function()? gpt5Pro20251006, W Function()? gpt51CodexMax, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W Function()? o1Pro20250319, W Function()? o3Pro, W Function()? o3Pro20250610, W Function()? o3DeepResearch, W Function()? o3DeepResearch20250626, W Function()? o4MiniDeepResearch, W Function()? o4MiniDeepResearch20250626, W Function()? computerUsePreview, W Function()? computerUsePreview20250311, W Function()? gpt5Codex, W Function()? gpt5Pro, W Function()? gpt5Pro20251006, W Function()? gpt51CodexMax, W Function(String value)? $unknown, }) {return switch (this) {
       ResponsesOnlyModel$o1Pro() => o1Pro != null ? o1Pro() : orElse(value),
       ResponsesOnlyModel$o1Pro20250319() => o1Pro20250319 != null ? o1Pro20250319() : orElse(value),
       ResponsesOnlyModel$o3Pro() => o3Pro != null ? o3Pro() : orElse(value),
@@ -108,10 +108,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
       ResponsesOnlyModel$gpt5Pro20251006() => gpt5Pro20251006 != null ? gpt5Pro20251006() : orElse(value),
       ResponsesOnlyModel$gpt51CodexMax() => gpt51CodexMax != null ? gpt51CodexMax() : orElse(value),
       ResponsesOnlyModel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResponsesOnlyModel($value)';
 
- }
+}
 @immutable final class ResponsesOnlyModel$o1Pro extends ResponsesOnlyModel {const ResponsesOnlyModel$o1Pro._();
 
 @override String get value => 'o1-pro';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'o1-pro'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$o1Pro20250319 extends ResponsesOnlyModel {const ResponsesOnlyModel$o1Pro20250319._();
 
 @override String get value => 'o1-pro-2025-03-19';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'o1-pro-2025-03-19'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$o3Pro extends ResponsesOnlyModel {const ResponsesOnlyModel$o3Pro._();
 
 @override String get value => 'o3-pro';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'o3-pro'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$o3Pro20250610 extends ResponsesOnlyModel {const ResponsesOnlyModel$o3Pro20250610._();
 
 @override String get value => 'o3-pro-2025-06-10';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'o3-pro-2025-06-10'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$o3DeepResearch extends ResponsesOnlyModel {const ResponsesOnlyModel$o3DeepResearch._();
 
 @override String get value => 'o3-deep-research';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'o3-deep-research'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$o3DeepResearch20250626 extends ResponsesOnlyModel {const ResponsesOnlyModel$o3DeepResearch20250626._();
 
 @override String get value => 'o3-deep-research-2025-06-26';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'o3-deep-research-2025-06-26'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$o4MiniDeepResearch extends ResponsesOnlyModel {const ResponsesOnlyModel$o4MiniDeepResearch._();
 
 @override String get value => 'o4-mini-deep-research';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'o4-mini-deep-research'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$o4MiniDeepResearch20250626 extends ResponsesOnlyModel {const ResponsesOnlyModel$o4MiniDeepResearch20250626._();
 
 @override String get value => 'o4-mini-deep-research-2025-06-26';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'o4-mini-deep-research-2025-06-26'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$computerUsePreview extends ResponsesOnlyModel {const ResponsesOnlyModel$computerUsePreview._();
 
 @override String get value => 'computer-use-preview';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'computer-use-preview'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$computerUsePreview20250311 extends ResponsesOnlyModel {const ResponsesOnlyModel$computerUsePreview20250311._();
 
 @override String get value => 'computer-use-preview-2025-03-11';
@@ -201,7 +201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'computer-use-preview-2025-03-11'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$gpt5Codex extends ResponsesOnlyModel {const ResponsesOnlyModel$gpt5Codex._();
 
 @override String get value => 'gpt-5-codex';
@@ -210,7 +210,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'gpt-5-codex'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$gpt5Pro extends ResponsesOnlyModel {const ResponsesOnlyModel$gpt5Pro._();
 
 @override String get value => 'gpt-5-pro';
@@ -219,7 +219,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'gpt-5-pro'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$gpt5Pro20251006 extends ResponsesOnlyModel {const ResponsesOnlyModel$gpt5Pro20251006._();
 
 @override String get value => 'gpt-5-pro-2025-10-06';
@@ -228,7 +228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'gpt-5-pro-2025-10-06'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$gpt51CodexMax extends ResponsesOnlyModel {const ResponsesOnlyModel$gpt51CodexMax._();
 
 @override String get value => 'gpt-5.1-codex-max';
@@ -237,7 +237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => 'gpt-5.1-codex-max'.hashCode;
 
- }
+}
 @immutable final class ResponsesOnlyModel$Unknown extends ResponsesOnlyModel {const ResponsesOnlyModel$Unknown(this.value);
 
 @override final String value;
@@ -247,18 +247,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? o1Pro, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ModelIdsResponses {/// A value built from one or more typed views (at least one must be present).
 const ModelIdsResponses({this.modelIdsShared = const Omittable.absent(), this.responsesOnlyModel = const Omittable.absent(), }) : rawValue = const Omittable.absent();
 
 const ModelIdsResponses._({required this.rawValue, required this.modelIdsShared, required this.responsesOnlyModel, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ModelIdsResponses.fromJson(Object? json) { return ModelIdsResponses._(
+factory ModelIdsResponses.fromJson(Object? json) {return ModelIdsResponses._(
   rawValue: Omittable(json),
   modelIdsShared: parseAnyOfVariant<ModelIdsShared>(json, ModelIdsShared.fromJson, isValid: (value) => value.isValid),
   responsesOnlyModel: parseAnyOfVariant<ResponsesOnlyModel>(json, (value) => ResponsesOnlyModel.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -288,4 +288,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ModelIdsResponses(${toJson()})';
 
- }
+}

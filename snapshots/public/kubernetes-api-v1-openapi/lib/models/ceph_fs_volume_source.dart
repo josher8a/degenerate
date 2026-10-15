@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/local_object_reference.dart';/// Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
 @immutable final class CephFsVolumeSource {const CephFsVolumeSource({required this.monitors, this.path, this.readOnly, this.secretFile, this.secretRef, this.user, });
 
-factory CephFsVolumeSource.fromJson(Map<String, dynamic> json) { return CephFsVolumeSource(
+factory CephFsVolumeSource.fromJson(Map<String, dynamic> json) {return CephFsVolumeSource(
   monitors: (json['monitors'] as List<dynamic>).map((e) => e as String).toList(),
   path: json['path'] as String?,
   readOnly: json['readOnly'] as bool?,
   secretFile: json['secretFile'] as String?,
   secretRef: json['secretRef'] != null ? LocalObjectReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   user: json['user'] as String?,
-); }
+);}
 
 /// monitors is Required: Monitors is a collection of Ceph monitors More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
 final List<String> monitors;
@@ -31,23 +31,23 @@ final LocalObjectReference? secretRef;
 /// user is optional: User is the rados user name, default is admin More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
 final String? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'monitors': monitors,
   'path': ?path,
   'readOnly': ?readOnly,
   'secretFile': ?secretFile,
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('monitors'); } 
-CephFsVolumeSource copyWith({List<String>? monitors, String? Function()? path, bool? Function()? readOnly, String? Function()? secretFile, LocalObjectReference? Function()? secretRef, String? Function()? user, }) { return CephFsVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('monitors');}
+CephFsVolumeSource copyWith({List<String>? monitors, String? Function()? path, bool? Function()? readOnly, String? Function()? secretFile, LocalObjectReference? Function()? secretRef, String? Function()? user, }) {return CephFsVolumeSource(
   monitors: monitors ?? this.monitors,
   path: path != null ? path() : this.path,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretFile: secretFile != null ? secretFile() : this.secretFile,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CephFsVolumeSource &&
           listEquals(monitors, other.monitors) &&
@@ -61,4 +61,4 @@ CephFsVolumeSource copyWith({List<String>? monitors, String? Function()? path, b
 
 @override String toString() => 'CephFsVolumeSource(monitors: $monitors, path: $path, readOnly: $readOnly, secretFile: $secretFile, secretRef: $secretRef, user: $user)';
 
- }
+}

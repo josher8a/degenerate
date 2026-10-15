@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure how Gateway Proxy traffic egresses. You can enable this setting for rules with Egress actions and filters, or omit it to indicate local egress via WARP IPs. Settable only for `egress` rules.
 @immutable final class Egress {const Egress({this.ipv4, this.ipv4Fallback, this.ipv6, });
 
-factory Egress.fromJson(Map<String, dynamic> json) { return Egress(
+factory Egress.fromJson(Map<String, dynamic> json) {return Egress(
   ipv4: json['ipv4'] as String?,
   ipv4Fallback: json['ipv4_fallback'] as String?,
   ipv6: json['ipv6'] as String?,
-); }
+);}
 
 /// Specify the IPv4 address to use for egress.
 /// 
@@ -25,17 +25,17 @@ final String? ipv4Fallback;
 /// Example: `'2001:DB8::/64'`
 final String? ipv6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ipv4': ?ipv4,
   'ipv4_fallback': ?ipv4Fallback,
   'ipv6': ?ipv6,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipv4', 'ipv4_fallback', 'ipv6'}.contains(key)); } 
-Egress copyWith({String? Function()? ipv4, String? Function()? ipv4Fallback, String? Function()? ipv6, }) { return Egress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ipv4', 'ipv4_fallback', 'ipv6'}.contains(key));}
+Egress copyWith({String? Function()? ipv4, String? Function()? ipv4Fallback, String? Function()? ipv6, }) {return Egress(
   ipv4: ipv4 != null ? ipv4() : this.ipv4,
   ipv4Fallback: ipv4Fallback != null ? ipv4Fallback() : this.ipv4Fallback,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Egress &&
           ipv4 == other.ipv4 &&
@@ -46,4 +46,4 @@ Egress copyWith({String? Function()? ipv4, String? Function()? ipv4Fallback, Str
 
 @override String toString() => 'Egress(ipv4: $ipv4, ipv4Fallback: $ipv4Fallback, ipv6: $ipv6)';
 
- }
+}

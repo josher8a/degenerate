@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SecretsStoreSystemSecretsListDirection {const SecretsStoreSystemSecretsListDirection();
 
-factory SecretsStoreSystemSecretsListDirection.fromJson(String json) { return switch (json) {
+factory SecretsStoreSystemSecretsListDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => SecretsStoreSystemSecretsListDirection$Unknown(json),
-}; }
+};}
 
 static const SecretsStoreSystemSecretsListDirection asc = SecretsStoreSystemSecretsListDirection$asc._();
 
@@ -16,30 +16,30 @@ static const SecretsStoreSystemSecretsListDirection desc = SecretsStoreSystemSec
 static const List<SecretsStoreSystemSecretsListDirection> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SecretsStoreSystemSecretsListDirection$Unknown; } 
+bool get isUnknown {return this is SecretsStoreSystemSecretsListDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       SecretsStoreSystemSecretsListDirection$asc() => asc(),
       SecretsStoreSystemSecretsListDirection$desc() => desc(),
       SecretsStoreSystemSecretsListDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       SecretsStoreSystemSecretsListDirection$asc() => asc != null ? asc() : orElse(value),
       SecretsStoreSystemSecretsListDirection$desc() => desc != null ? desc() : orElse(value),
       SecretsStoreSystemSecretsListDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SecretsStoreSystemSecretsListDirection($value)';
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListDirection$asc extends SecretsStoreSystemSecretsListDirection {const SecretsStoreSystemSecretsListDirection$asc._();
 
 @override String get value => 'asc';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListDirection$desc extends SecretsStoreSystemSecretsListDirection {const SecretsStoreSystemSecretsListDirection$desc._();
 
 @override String get value => 'desc';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListDirection$Unknown extends SecretsStoreSystemSecretsListDirection {const SecretsStoreSystemSecretsListDirection$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

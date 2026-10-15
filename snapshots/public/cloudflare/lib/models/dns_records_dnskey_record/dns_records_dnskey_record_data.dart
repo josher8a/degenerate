@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a DNSKEY record.
 @immutable final class DnsRecordsDnskeyRecordData {const DnsRecordsDnskeyRecordData({this.algorithm, this.flags, this.protocol, this.publicKey, });
 
-factory DnsRecordsDnskeyRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsDnskeyRecordData(
+factory DnsRecordsDnskeyRecordData.fromJson(Map<String, dynamic> json) {return DnsRecordsDnskeyRecordData(
   algorithm: json['algorithm'] != null ? (json['algorithm'] as num).toDouble() : null,
   flags: json['flags'] != null ? (json['flags'] as num).toDouble() : null,
   protocol: json['protocol'] != null ? (json['protocol'] as num).toDouble() : null,
   publicKey: json['public_key'] as String?,
-); }
+);}
 
 /// Algorithm.
 /// 
@@ -29,15 +29,15 @@ final double? protocol;
 /// Public Key.
 final String? publicKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'algorithm': ?algorithm,
   'flags': ?flags,
   'protocol': ?protocol,
   'public_key': ?publicKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'flags', 'protocol', 'public_key'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'algorithm', 'flags', 'protocol', 'public_key'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final algorithm$ = algorithm;
 if (algorithm$ != null) {
   if (algorithm$ < 0) { errors.add('algorithm: must be >= 0'); }
@@ -53,13 +53,13 @@ if (protocol$ != null) {
   if (protocol$ < 0) { errors.add('protocol: must be >= 0'); }
   if (protocol$ > 255) { errors.add('protocol: must be <= 255'); }
 }
-return errors; } 
-DnsRecordsDnskeyRecordData copyWith({double? Function()? algorithm, double? Function()? flags, double? Function()? protocol, String? Function()? publicKey, }) { return DnsRecordsDnskeyRecordData(
+return errors;}
+DnsRecordsDnskeyRecordData copyWith({double? Function()? algorithm, double? Function()? flags, double? Function()? protocol, String? Function()? publicKey, }) {return DnsRecordsDnskeyRecordData(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   flags: flags != null ? flags() : this.flags,
   protocol: protocol != null ? protocol() : this.protocol,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnskeyRecordData &&
           algorithm == other.algorithm &&
@@ -71,4 +71,4 @@ DnsRecordsDnskeyRecordData copyWith({double? Function()? algorithm, double? Func
 
 @override String toString() => 'DnsRecordsDnskeyRecordData(algorithm: $algorithm, flags: $flags, protocol: $protocol, publicKey: $publicKey)';
 
- }
+}

@@ -7,7 +7,7 @@ const ExcludeRules({this.zarazLoadRule = const Omittable.absent(), this.zarazCli
 const ExcludeRules._({required this.rawValue, required this.zarazLoadRule, required this.zarazClickListenerRule, required this.zarazTimerRule, required this.zarazFormSubmissionRule, required this.zarazVariableMatchRule, required this.zarazScrollDepthRule, required this.zarazElementVisibilityRule, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ExcludeRules.fromJson(Object? json) { return ExcludeRules._(
+factory ExcludeRules.fromJson(Object? json) {return ExcludeRules._(
   rawValue: Omittable(json),
   zarazLoadRule: json is Map<String, dynamic> && ZarazLoadRule.canParse(json) ? parseAnyOfVariant<ZarazLoadRule>(json, (value) => ZarazLoadRule.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zarazClickListenerRule: json is Map<String, dynamic> && ZarazClickListenerRule.canParse(json) ? parseAnyOfVariant<ZarazClickListenerRule>(json, (value) => ZarazClickListenerRule.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -16,7 +16,7 @@ factory ExcludeRules.fromJson(Object? json) { return ExcludeRules._(
   zarazVariableMatchRule: json is Map<String, dynamic> && ZarazVariableMatchRule.canParse(json) ? parseAnyOfVariant<ZarazVariableMatchRule>(json, (value) => ZarazVariableMatchRule.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zarazScrollDepthRule: json is Map<String, dynamic> && ZarazScrollDepthRule.canParse(json) ? parseAnyOfVariant<ZarazScrollDepthRule>(json, (value) => ZarazScrollDepthRule.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zarazElementVisibilityRule: json is Map<String, dynamic> && ZarazElementVisibilityRule.canParse(json) ? parseAnyOfVariant<ZarazElementVisibilityRule>(json, (value) => ZarazElementVisibilityRule.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -66,4 +66,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ExcludeRules(${toJson()})';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_address_maps_membership_request.dart';import 'package:pub_cloudflare/models/addressing_enabled.dart';import 'package:pub_cloudflare/models/addressing_ip_address.dart';import 'package:pub_cloudflare/models/addressing_schemas_description.dart';@immutable final class IpAddressManagementAddressMapsCreateAddressMapRequest {const IpAddressManagementAddressMapsCreateAddressMapRequest({this.description = const Omittable.absent(), this.enabled = const Omittable.absent(), this.ips, this.memberships, });
 
-factory IpAddressManagementAddressMapsCreateAddressMapRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementAddressMapsCreateAddressMapRequest(
+factory IpAddressManagementAddressMapsCreateAddressMapRequest.fromJson(Map<String, dynamic> json) {return IpAddressManagementAddressMapsCreateAddressMapRequest(
   description: json.containsKey('description') ? Omittable(json['description'] != null ? AddressingSchemasDescription.fromJson(json['description'] as String) : null) : const Omittable.absent(),
   enabled: json.containsKey('enabled') ? Omittable(json['enabled'] != null ? AddressingEnabled.fromJson(json['enabled'] as bool) : null) : const Omittable.absent(),
   ips: (json['ips'] as List<dynamic>?)?.map((e) => AddressingIpAddress.fromJson(e as String)).toList(),
   memberships: (json['memberships'] as List<dynamic>?)?.map((e) => AddressingAddressMapsMembershipRequest.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// An optional description field which may be used to describe the types of IPs or zones on the map.
 final Omittable<AddressingSchemasDescription?> description;
@@ -22,19 +22,19 @@ final List<AddressingIpAddress>? ips;
 /// Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
 final List<AddressingAddressMapsMembershipRequest>? memberships;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value?.toJson(),
   if (enabled.isPresent) 'enabled': enabled.value?.toJson(),
   if (ips != null) 'ips': ips?.map((e) => e.toJson()).toList(),
   if (memberships != null) 'memberships': memberships?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'enabled', 'ips', 'memberships'}.contains(key)); } 
-IpAddressManagementAddressMapsCreateAddressMapRequest copyWith({Omittable<AddressingSchemasDescription?>? description, Omittable<AddressingEnabled?>? enabled, List<AddressingIpAddress>? Function()? ips, List<AddressingAddressMapsMembershipRequest>? Function()? memberships, }) { return IpAddressManagementAddressMapsCreateAddressMapRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'enabled', 'ips', 'memberships'}.contains(key));}
+IpAddressManagementAddressMapsCreateAddressMapRequest copyWith({Omittable<AddressingSchemasDescription?>? description, Omittable<AddressingEnabled?>? enabled, List<AddressingIpAddress>? Function()? ips, List<AddressingAddressMapsMembershipRequest>? Function()? memberships, }) {return IpAddressManagementAddressMapsCreateAddressMapRequest(
   description: description ?? this.description,
   enabled: enabled ?? this.enabled,
   ips: ips != null ? ips() : this.ips,
   memberships: memberships != null ? memberships() : this.memberships,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementAddressMapsCreateAddressMapRequest &&
           description == other.description &&
@@ -46,4 +46,4 @@ IpAddressManagementAddressMapsCreateAddressMapRequest copyWith({Omittable<Addres
 
 @override String toString() => 'IpAddressManagementAddressMapsCreateAddressMapRequest(description: $description, enabled: $enabled, ips: $ips, memberships: $memberships)';
 
- }
+}

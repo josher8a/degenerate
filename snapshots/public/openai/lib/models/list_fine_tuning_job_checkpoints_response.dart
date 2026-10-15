@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint.dart';@immutable final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, required this.hasMore, this.firstId = const Omittable.absent(), this.lastId = const Omittable.absent(), });
 
-factory ListFineTuningJobCheckpointsResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningJobCheckpointsResponse(
+factory ListFineTuningJobCheckpointsResponse.fromJson(Map<String, dynamic> json) {return ListFineTuningJobCheckpointsResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningJobCheckpoint.fromJson(e as Map<String, dynamic>)).toList(),
   object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   firstId: json.containsKey('first_id') ? Omittable(json['first_id'] as String?) : const Omittable.absent(),
   lastId: json.containsKey('last_id') ? Omittable(json['last_id'] as String?) : const Omittable.absent(),
   hasMore: json['has_more'] as bool,
-); }
+);}
 
 final List<FineTuningJobCheckpoint> data;
 
@@ -21,23 +21,23 @@ final Omittable<String?> lastId;
 
 final bool hasMore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'object': object.toJson(),
   if (firstId.isPresent) 'first_id': firstId.value,
   if (lastId.isPresent) 'last_id': lastId.value,
   'has_more': hasMore,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('object') &&
-      json.containsKey('has_more') && json['has_more'] is bool; } 
-ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? data, ContainerFileListResourceObject? object, Omittable<String?>? firstId, Omittable<String?>? lastId, bool? hasMore, }) { return ListFineTuningJobCheckpointsResponse(
+      json.containsKey('has_more') && json['has_more'] is bool;}
+ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? data, ContainerFileListResourceObject? object, Omittable<String?>? firstId, Omittable<String?>? lastId, bool? hasMore, }) {return ListFineTuningJobCheckpointsResponse(
   data: data ?? this.data,
   object: object ?? this.object,
   firstId: firstId ?? this.firstId,
   lastId: lastId ?? this.lastId,
   hasMore: hasMore ?? this.hasMore,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListFineTuningJobCheckpointsResponse &&
           listEquals(data, other.data) &&
@@ -50,4 +50,4 @@ ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? da
 
 @override String toString() => 'ListFineTuningJobCheckpointsResponse(data: $data, object: $object, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)';
 
- }
+}

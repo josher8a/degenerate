@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Country to geo egress from
 sealed class UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country();
 
-factory UrlscannerCreateScanRequest2Country.fromJson(String json) { return switch (json) {
+factory UrlscannerCreateScanRequest2Country.fromJson(String json) {return switch (json) {
   'AF' => af,
   'AL' => al,
   'DZ' => dz,
@@ -201,7 +201,7 @@ factory UrlscannerCreateScanRequest2Country.fromJson(String json) { return switc
   'ZM' => zm,
   'ZW' => zw,
   _ => UrlscannerCreateScanRequest2Country$Unknown(json),
-}; }
+};}
 
 static const UrlscannerCreateScanRequest2Country af = UrlscannerCreateScanRequest2Country$af._();
 
@@ -596,9 +596,9 @@ static const UrlscannerCreateScanRequest2Country zw = UrlscannerCreateScanReques
 static const List<UrlscannerCreateScanRequest2Country> values = [af, al, dz, ad, ao, ag, ar, am, au, at, az, bh, bd, bb, by, be, bz, bj, bm, bt, bo, ba, bw, br, bn, bg, bf, bi, kh, cm, ca, cv, ky, cf, td, cl, cn, co, km, cg, cr, ci, hr, cu, cy, cz, cd, dk, dj, dm, $do, ec, eg, sv, gq, er, ee, sz, et, fj, fi, fr, ga, ge, de, gh, gr, gl, gd, gt, gn, gw, gy, ht, hn, hu, $is, $in, id, ir, iq, ie, il, it, jm, jp, jo, kz, ke, ki, kw, kg, la, lv, lb, ls, lr, ly, li, lt, lu, mo, mg, mw, my, mv, ml, mr, mu, mx, fm, md, mc, mn, ms, ma, mz, mm, na, nr, np, nl, nz, ni, ne, ng, kp, mk, no, om, pk, ps, pa, pg, py, pe, ph, pl, pt, qa, ro, ru, rw, sh, kn, lc, vc, ws, sm, st, sa, sn, rs, sc, sl, sk, si, sb, so, za, kr, ss, es, lk, sd, sr, se, ch, sy, tw, tj, tz, th, bs, gm, tl, tg, to, tt, tn, tr, tm, ug, ua, ae, gb, us, uy, uz, vu, ve, vn, ye, zm, zw];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'AF' => 'af',
   'AL' => 'al',
   'DZ' => 'dz',
@@ -795,11 +795,11 @@ String get name { return switch (value) {
   'ZM' => 'zm',
   'ZW' => 'zw',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UrlscannerCreateScanRequest2Country$Unknown; } 
+bool get isUnknown {return this is UrlscannerCreateScanRequest2Country$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() af, required W Function() al, required W Function() dz, required W Function() ad, required W Function() ao, required W Function() ag, required W Function() ar, required W Function() am, required W Function() au, required W Function() at, required W Function() az, required W Function() bh, required W Function() bd, required W Function() bb, required W Function() by, required W Function() be, required W Function() bz, required W Function() bj, required W Function() bm, required W Function() bt, required W Function() bo, required W Function() ba, required W Function() bw, required W Function() br, required W Function() bn, required W Function() bg, required W Function() bf, required W Function() bi, required W Function() kh, required W Function() cm, required W Function() ca, required W Function() cv, required W Function() ky, required W Function() cf, required W Function() td, required W Function() cl, required W Function() cn, required W Function() co, required W Function() km, required W Function() cg, required W Function() cr, required W Function() ci, required W Function() hr, required W Function() cu, required W Function() cy, required W Function() cz, required W Function() cd, required W Function() dk, required W Function() dj, required W Function() dm, required W Function() $do, required W Function() ec, required W Function() eg, required W Function() sv, required W Function() gq, required W Function() er, required W Function() ee, required W Function() sz, required W Function() et, required W Function() fj, required W Function() fi, required W Function() fr, required W Function() ga, required W Function() ge, required W Function() de, required W Function() gh, required W Function() gr, required W Function() gl, required W Function() gd, required W Function() gt, required W Function() gn, required W Function() gw, required W Function() gy, required W Function() ht, required W Function() hn, required W Function() hu, required W Function() $is, required W Function() $in, required W Function() id, required W Function() ir, required W Function() iq, required W Function() ie, required W Function() il, required W Function() it, required W Function() jm, required W Function() jp, required W Function() jo, required W Function() kz, required W Function() ke, required W Function() ki, required W Function() kw, required W Function() kg, required W Function() la, required W Function() lv, required W Function() lb, required W Function() ls, required W Function() lr, required W Function() ly, required W Function() li, required W Function() lt, required W Function() lu, required W Function() mo, required W Function() mg, required W Function() mw, required W Function() my, required W Function() mv, required W Function() ml, required W Function() mr, required W Function() mu, required W Function() mx, required W Function() fm, required W Function() md, required W Function() mc, required W Function() mn, required W Function() ms, required W Function() ma, required W Function() mz, required W Function() mm, required W Function() na, required W Function() nr, required W Function() np, required W Function() nl, required W Function() nz, required W Function() ni, required W Function() ne, required W Function() ng, required W Function() kp, required W Function() mk, required W Function() no, required W Function() om, required W Function() pk, required W Function() ps, required W Function() pa, required W Function() pg, required W Function() py, required W Function() pe, required W Function() ph, required W Function() pl, required W Function() pt, required W Function() qa, required W Function() ro, required W Function() ru, required W Function() rw, required W Function() sh, required W Function() kn, required W Function() lc, required W Function() vc, required W Function() ws, required W Function() sm, required W Function() st, required W Function() sa, required W Function() sn, required W Function() rs, required W Function() sc, required W Function() sl, required W Function() sk, required W Function() si, required W Function() sb, required W Function() so, required W Function() za, required W Function() kr, required W Function() ss, required W Function() es, required W Function() lk, required W Function() sd, required W Function() sr, required W Function() se, required W Function() ch, required W Function() sy, required W Function() tw, required W Function() tj, required W Function() tz, required W Function() th, required W Function() bs, required W Function() gm, required W Function() tl, required W Function() tg, required W Function() to, required W Function() tt, required W Function() tn, required W Function() tr, required W Function() tm, required W Function() ug, required W Function() ua, required W Function() ae, required W Function() gb, required W Function() us, required W Function() uy, required W Function() uz, required W Function() vu, required W Function() ve, required W Function() vn, required W Function() ye, required W Function() zm, required W Function() zw, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() af, required W Function() al, required W Function() dz, required W Function() ad, required W Function() ao, required W Function() ag, required W Function() ar, required W Function() am, required W Function() au, required W Function() at, required W Function() az, required W Function() bh, required W Function() bd, required W Function() bb, required W Function() by, required W Function() be, required W Function() bz, required W Function() bj, required W Function() bm, required W Function() bt, required W Function() bo, required W Function() ba, required W Function() bw, required W Function() br, required W Function() bn, required W Function() bg, required W Function() bf, required W Function() bi, required W Function() kh, required W Function() cm, required W Function() ca, required W Function() cv, required W Function() ky, required W Function() cf, required W Function() td, required W Function() cl, required W Function() cn, required W Function() co, required W Function() km, required W Function() cg, required W Function() cr, required W Function() ci, required W Function() hr, required W Function() cu, required W Function() cy, required W Function() cz, required W Function() cd, required W Function() dk, required W Function() dj, required W Function() dm, required W Function() $do, required W Function() ec, required W Function() eg, required W Function() sv, required W Function() gq, required W Function() er, required W Function() ee, required W Function() sz, required W Function() et, required W Function() fj, required W Function() fi, required W Function() fr, required W Function() ga, required W Function() ge, required W Function() de, required W Function() gh, required W Function() gr, required W Function() gl, required W Function() gd, required W Function() gt, required W Function() gn, required W Function() gw, required W Function() gy, required W Function() ht, required W Function() hn, required W Function() hu, required W Function() $is, required W Function() $in, required W Function() id, required W Function() ir, required W Function() iq, required W Function() ie, required W Function() il, required W Function() it, required W Function() jm, required W Function() jp, required W Function() jo, required W Function() kz, required W Function() ke, required W Function() ki, required W Function() kw, required W Function() kg, required W Function() la, required W Function() lv, required W Function() lb, required W Function() ls, required W Function() lr, required W Function() ly, required W Function() li, required W Function() lt, required W Function() lu, required W Function() mo, required W Function() mg, required W Function() mw, required W Function() my, required W Function() mv, required W Function() ml, required W Function() mr, required W Function() mu, required W Function() mx, required W Function() fm, required W Function() md, required W Function() mc, required W Function() mn, required W Function() ms, required W Function() ma, required W Function() mz, required W Function() mm, required W Function() na, required W Function() nr, required W Function() np, required W Function() nl, required W Function() nz, required W Function() ni, required W Function() ne, required W Function() ng, required W Function() kp, required W Function() mk, required W Function() no, required W Function() om, required W Function() pk, required W Function() ps, required W Function() pa, required W Function() pg, required W Function() py, required W Function() pe, required W Function() ph, required W Function() pl, required W Function() pt, required W Function() qa, required W Function() ro, required W Function() ru, required W Function() rw, required W Function() sh, required W Function() kn, required W Function() lc, required W Function() vc, required W Function() ws, required W Function() sm, required W Function() st, required W Function() sa, required W Function() sn, required W Function() rs, required W Function() sc, required W Function() sl, required W Function() sk, required W Function() si, required W Function() sb, required W Function() so, required W Function() za, required W Function() kr, required W Function() ss, required W Function() es, required W Function() lk, required W Function() sd, required W Function() sr, required W Function() se, required W Function() ch, required W Function() sy, required W Function() tw, required W Function() tj, required W Function() tz, required W Function() th, required W Function() bs, required W Function() gm, required W Function() tl, required W Function() tg, required W Function() to, required W Function() tt, required W Function() tn, required W Function() tr, required W Function() tm, required W Function() ug, required W Function() ua, required W Function() ae, required W Function() gb, required W Function() us, required W Function() uy, required W Function() uz, required W Function() vu, required W Function() ve, required W Function() vn, required W Function() ye, required W Function() zm, required W Function() zw, required W Function(String value) $unknown, }) {return switch (this) {
       UrlscannerCreateScanRequest2Country$af() => af(),
       UrlscannerCreateScanRequest2Country$al() => al(),
       UrlscannerCreateScanRequest2Country$dz() => dz(),
@@ -996,9 +996,9 @@ W when<W>({required W Function() af, required W Function() al, required W Functi
       UrlscannerCreateScanRequest2Country$zm() => zm(),
       UrlscannerCreateScanRequest2Country$zw() => zw(),
       UrlscannerCreateScanRequest2Country$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Function()? al, W Function()? dz, W Function()? ad, W Function()? ao, W Function()? ag, W Function()? ar, W Function()? am, W Function()? au, W Function()? at, W Function()? az, W Function()? bh, W Function()? bd, W Function()? bb, W Function()? by, W Function()? be, W Function()? bz, W Function()? bj, W Function()? bm, W Function()? bt, W Function()? bo, W Function()? ba, W Function()? bw, W Function()? br, W Function()? bn, W Function()? bg, W Function()? bf, W Function()? bi, W Function()? kh, W Function()? cm, W Function()? ca, W Function()? cv, W Function()? ky, W Function()? cf, W Function()? td, W Function()? cl, W Function()? cn, W Function()? co, W Function()? km, W Function()? cg, W Function()? cr, W Function()? ci, W Function()? hr, W Function()? cu, W Function()? cy, W Function()? cz, W Function()? cd, W Function()? dk, W Function()? dj, W Function()? dm, W Function()? $do, W Function()? ec, W Function()? eg, W Function()? sv, W Function()? gq, W Function()? er, W Function()? ee, W Function()? sz, W Function()? et, W Function()? fj, W Function()? fi, W Function()? fr, W Function()? ga, W Function()? ge, W Function()? de, W Function()? gh, W Function()? gr, W Function()? gl, W Function()? gd, W Function()? gt, W Function()? gn, W Function()? gw, W Function()? gy, W Function()? ht, W Function()? hn, W Function()? hu, W Function()? $is, W Function()? $in, W Function()? id, W Function()? ir, W Function()? iq, W Function()? ie, W Function()? il, W Function()? it, W Function()? jm, W Function()? jp, W Function()? jo, W Function()? kz, W Function()? ke, W Function()? ki, W Function()? kw, W Function()? kg, W Function()? la, W Function()? lv, W Function()? lb, W Function()? ls, W Function()? lr, W Function()? ly, W Function()? li, W Function()? lt, W Function()? lu, W Function()? mo, W Function()? mg, W Function()? mw, W Function()? my, W Function()? mv, W Function()? ml, W Function()? mr, W Function()? mu, W Function()? mx, W Function()? fm, W Function()? md, W Function()? mc, W Function()? mn, W Function()? ms, W Function()? ma, W Function()? mz, W Function()? mm, W Function()? na, W Function()? nr, W Function()? np, W Function()? nl, W Function()? nz, W Function()? ni, W Function()? ne, W Function()? ng, W Function()? kp, W Function()? mk, W Function()? no, W Function()? om, W Function()? pk, W Function()? ps, W Function()? pa, W Function()? pg, W Function()? py, W Function()? pe, W Function()? ph, W Function()? pl, W Function()? pt, W Function()? qa, W Function()? ro, W Function()? ru, W Function()? rw, W Function()? sh, W Function()? kn, W Function()? lc, W Function()? vc, W Function()? ws, W Function()? sm, W Function()? st, W Function()? sa, W Function()? sn, W Function()? rs, W Function()? sc, W Function()? sl, W Function()? sk, W Function()? si, W Function()? sb, W Function()? so, W Function()? za, W Function()? kr, W Function()? ss, W Function()? es, W Function()? lk, W Function()? sd, W Function()? sr, W Function()? se, W Function()? ch, W Function()? sy, W Function()? tw, W Function()? tj, W Function()? tz, W Function()? th, W Function()? bs, W Function()? gm, W Function()? tl, W Function()? tg, W Function()? to, W Function()? tt, W Function()? tn, W Function()? tr, W Function()? tm, W Function()? ug, W Function()? ua, W Function()? ae, W Function()? gb, W Function()? us, W Function()? uy, W Function()? uz, W Function()? vu, W Function()? ve, W Function()? vn, W Function()? ye, W Function()? zm, W Function()? zw, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Function()? al, W Function()? dz, W Function()? ad, W Function()? ao, W Function()? ag, W Function()? ar, W Function()? am, W Function()? au, W Function()? at, W Function()? az, W Function()? bh, W Function()? bd, W Function()? bb, W Function()? by, W Function()? be, W Function()? bz, W Function()? bj, W Function()? bm, W Function()? bt, W Function()? bo, W Function()? ba, W Function()? bw, W Function()? br, W Function()? bn, W Function()? bg, W Function()? bf, W Function()? bi, W Function()? kh, W Function()? cm, W Function()? ca, W Function()? cv, W Function()? ky, W Function()? cf, W Function()? td, W Function()? cl, W Function()? cn, W Function()? co, W Function()? km, W Function()? cg, W Function()? cr, W Function()? ci, W Function()? hr, W Function()? cu, W Function()? cy, W Function()? cz, W Function()? cd, W Function()? dk, W Function()? dj, W Function()? dm, W Function()? $do, W Function()? ec, W Function()? eg, W Function()? sv, W Function()? gq, W Function()? er, W Function()? ee, W Function()? sz, W Function()? et, W Function()? fj, W Function()? fi, W Function()? fr, W Function()? ga, W Function()? ge, W Function()? de, W Function()? gh, W Function()? gr, W Function()? gl, W Function()? gd, W Function()? gt, W Function()? gn, W Function()? gw, W Function()? gy, W Function()? ht, W Function()? hn, W Function()? hu, W Function()? $is, W Function()? $in, W Function()? id, W Function()? ir, W Function()? iq, W Function()? ie, W Function()? il, W Function()? it, W Function()? jm, W Function()? jp, W Function()? jo, W Function()? kz, W Function()? ke, W Function()? ki, W Function()? kw, W Function()? kg, W Function()? la, W Function()? lv, W Function()? lb, W Function()? ls, W Function()? lr, W Function()? ly, W Function()? li, W Function()? lt, W Function()? lu, W Function()? mo, W Function()? mg, W Function()? mw, W Function()? my, W Function()? mv, W Function()? ml, W Function()? mr, W Function()? mu, W Function()? mx, W Function()? fm, W Function()? md, W Function()? mc, W Function()? mn, W Function()? ms, W Function()? ma, W Function()? mz, W Function()? mm, W Function()? na, W Function()? nr, W Function()? np, W Function()? nl, W Function()? nz, W Function()? ni, W Function()? ne, W Function()? ng, W Function()? kp, W Function()? mk, W Function()? no, W Function()? om, W Function()? pk, W Function()? ps, W Function()? pa, W Function()? pg, W Function()? py, W Function()? pe, W Function()? ph, W Function()? pl, W Function()? pt, W Function()? qa, W Function()? ro, W Function()? ru, W Function()? rw, W Function()? sh, W Function()? kn, W Function()? lc, W Function()? vc, W Function()? ws, W Function()? sm, W Function()? st, W Function()? sa, W Function()? sn, W Function()? rs, W Function()? sc, W Function()? sl, W Function()? sk, W Function()? si, W Function()? sb, W Function()? so, W Function()? za, W Function()? kr, W Function()? ss, W Function()? es, W Function()? lk, W Function()? sd, W Function()? sr, W Function()? se, W Function()? ch, W Function()? sy, W Function()? tw, W Function()? tj, W Function()? tz, W Function()? th, W Function()? bs, W Function()? gm, W Function()? tl, W Function()? tg, W Function()? to, W Function()? tt, W Function()? tn, W Function()? tr, W Function()? tm, W Function()? ug, W Function()? ua, W Function()? ae, W Function()? gb, W Function()? us, W Function()? uy, W Function()? uz, W Function()? vu, W Function()? ve, W Function()? vn, W Function()? ye, W Function()? zm, W Function()? zw, W Function(String value)? $unknown, }) {return switch (this) {
       UrlscannerCreateScanRequest2Country$af() => af != null ? af() : orElse(value),
       UrlscannerCreateScanRequest2Country$al() => al != null ? al() : orElse(value),
       UrlscannerCreateScanRequest2Country$dz() => dz != null ? dz() : orElse(value),
@@ -1195,10 +1195,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
       UrlscannerCreateScanRequest2Country$zm() => zm != null ? zm() : orElse(value),
       UrlscannerCreateScanRequest2Country$zw() => zw != null ? zw() : orElse(value),
       UrlscannerCreateScanRequest2Country$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UrlscannerCreateScanRequest2Country($value)';
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$af extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$af._();
 
 @override String get value => 'AF';
@@ -1207,7 +1207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AF'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$al extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$al._();
 
 @override String get value => 'AL';
@@ -1216,7 +1216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AL'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$dz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$dz._();
 
 @override String get value => 'DZ';
@@ -1225,7 +1225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'DZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ad extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ad._();
 
 @override String get value => 'AD';
@@ -1234,7 +1234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AD'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ao extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ao._();
 
 @override String get value => 'AO';
@@ -1243,7 +1243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ag extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ag._();
 
 @override String get value => 'AG';
@@ -1252,7 +1252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ar extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ar._();
 
 @override String get value => 'AR';
@@ -1261,7 +1261,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$am extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$am._();
 
 @override String get value => 'AM';
@@ -1270,7 +1270,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$au extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$au._();
 
 @override String get value => 'AU';
@@ -1279,7 +1279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AU'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$at extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$at._();
 
 @override String get value => 'AT';
@@ -1288,7 +1288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AT'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$az extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$az._();
 
 @override String get value => 'AZ';
@@ -1297,7 +1297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bh extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bh._();
 
 @override String get value => 'BH';
@@ -1306,7 +1306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BH'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bd extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bd._();
 
 @override String get value => 'BD';
@@ -1315,7 +1315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BD'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bb extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bb._();
 
 @override String get value => 'BB';
@@ -1324,7 +1324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BB'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$by extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$by._();
 
 @override String get value => 'BY';
@@ -1333,7 +1333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$be extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$be._();
 
 @override String get value => 'BE';
@@ -1342,7 +1342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bz._();
 
 @override String get value => 'BZ';
@@ -1351,7 +1351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bj extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bj._();
 
 @override String get value => 'BJ';
@@ -1360,7 +1360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BJ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bm._();
 
 @override String get value => 'BM';
@@ -1369,7 +1369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bt extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bt._();
 
 @override String get value => 'BT';
@@ -1378,7 +1378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BT'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bo extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bo._();
 
 @override String get value => 'BO';
@@ -1387,7 +1387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ba extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ba._();
 
 @override String get value => 'BA';
@@ -1396,7 +1396,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bw extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bw._();
 
 @override String get value => 'BW';
@@ -1405,7 +1405,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BW'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$br extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$br._();
 
 @override String get value => 'BR';
@@ -1414,7 +1414,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bn._();
 
 @override String get value => 'BN';
@@ -1423,7 +1423,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bg extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bg._();
 
 @override String get value => 'BG';
@@ -1432,7 +1432,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bf extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bf._();
 
 @override String get value => 'BF';
@@ -1441,7 +1441,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BF'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bi extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bi._();
 
 @override String get value => 'BI';
@@ -1450,7 +1450,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BI'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$kh extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$kh._();
 
 @override String get value => 'KH';
@@ -1459,7 +1459,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KH'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cm._();
 
 @override String get value => 'CM';
@@ -1468,7 +1468,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ca extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ca._();
 
 @override String get value => 'CA';
@@ -1477,7 +1477,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cv extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cv._();
 
 @override String get value => 'CV';
@@ -1486,7 +1486,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CV'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ky extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ky._();
 
 @override String get value => 'KY';
@@ -1495,7 +1495,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cf extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cf._();
 
 @override String get value => 'CF';
@@ -1504,7 +1504,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CF'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$td extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$td._();
 
 @override String get value => 'TD';
@@ -1513,7 +1513,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TD'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cl extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cl._();
 
 @override String get value => 'CL';
@@ -1522,7 +1522,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CL'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cn._();
 
 @override String get value => 'CN';
@@ -1531,7 +1531,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$co extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$co._();
 
 @override String get value => 'CO';
@@ -1540,7 +1540,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$km extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$km._();
 
 @override String get value => 'KM';
@@ -1549,7 +1549,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cg extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cg._();
 
 @override String get value => 'CG';
@@ -1558,7 +1558,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cr._();
 
 @override String get value => 'CR';
@@ -1567,7 +1567,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ci extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ci._();
 
 @override String get value => 'CI';
@@ -1576,7 +1576,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CI'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$hr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$hr._();
 
 @override String get value => 'HR';
@@ -1585,7 +1585,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'HR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cu extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cu._();
 
 @override String get value => 'CU';
@@ -1594,7 +1594,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CU'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cy extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cy._();
 
 @override String get value => 'CY';
@@ -1603,7 +1603,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cz._();
 
 @override String get value => 'CZ';
@@ -1612,7 +1612,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$cd extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$cd._();
 
 @override String get value => 'CD';
@@ -1621,7 +1621,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CD'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$dk extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$dk._();
 
 @override String get value => 'DK';
@@ -1630,7 +1630,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'DK'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$dj extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$dj._();
 
 @override String get value => 'DJ';
@@ -1639,7 +1639,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'DJ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$dm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$dm._();
 
 @override String get value => 'DM';
@@ -1648,7 +1648,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'DM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$$do extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$$do._();
 
 @override String get value => 'DO';
@@ -1657,7 +1657,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'DO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ec extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ec._();
 
 @override String get value => 'EC';
@@ -1666,7 +1666,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'EC'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$eg extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$eg._();
 
 @override String get value => 'EG';
@@ -1675,7 +1675,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'EG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sv extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sv._();
 
 @override String get value => 'SV';
@@ -1684,7 +1684,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SV'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gq extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gq._();
 
 @override String get value => 'GQ';
@@ -1693,7 +1693,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GQ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$er extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$er._();
 
 @override String get value => 'ER';
@@ -1702,7 +1702,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ER'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ee extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ee._();
 
 @override String get value => 'EE';
@@ -1711,7 +1711,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'EE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sz._();
 
 @override String get value => 'SZ';
@@ -1720,7 +1720,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$et extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$et._();
 
 @override String get value => 'ET';
@@ -1729,7 +1729,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ET'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$fj extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$fj._();
 
 @override String get value => 'FJ';
@@ -1738,7 +1738,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'FJ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$fi extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$fi._();
 
 @override String get value => 'FI';
@@ -1747,7 +1747,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'FI'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$fr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$fr._();
 
 @override String get value => 'FR';
@@ -1756,7 +1756,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'FR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ga extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ga._();
 
 @override String get value => 'GA';
@@ -1765,7 +1765,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ge extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ge._();
 
 @override String get value => 'GE';
@@ -1774,7 +1774,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$de extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$de._();
 
 @override String get value => 'DE';
@@ -1783,7 +1783,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'DE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gh extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gh._();
 
 @override String get value => 'GH';
@@ -1792,7 +1792,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GH'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gr._();
 
 @override String get value => 'GR';
@@ -1801,7 +1801,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gl extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gl._();
 
 @override String get value => 'GL';
@@ -1810,7 +1810,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GL'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gd extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gd._();
 
 @override String get value => 'GD';
@@ -1819,7 +1819,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GD'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gt extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gt._();
 
 @override String get value => 'GT';
@@ -1828,7 +1828,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GT'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gn._();
 
 @override String get value => 'GN';
@@ -1837,7 +1837,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gw extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gw._();
 
 @override String get value => 'GW';
@@ -1846,7 +1846,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GW'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gy extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gy._();
 
 @override String get value => 'GY';
@@ -1855,7 +1855,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ht extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ht._();
 
 @override String get value => 'HT';
@@ -1864,7 +1864,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'HT'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$hn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$hn._();
 
 @override String get value => 'HN';
@@ -1873,7 +1873,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'HN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$hu extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$hu._();
 
 @override String get value => 'HU';
@@ -1882,7 +1882,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'HU'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$$is extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$$is._();
 
 @override String get value => 'IS';
@@ -1891,7 +1891,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'IS'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$$in extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$$in._();
 
 @override String get value => 'IN';
@@ -1900,7 +1900,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'IN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$id extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$id._();
 
 @override String get value => 'ID';
@@ -1909,7 +1909,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ID'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ir extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ir._();
 
 @override String get value => 'IR';
@@ -1918,7 +1918,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'IR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$iq extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$iq._();
 
 @override String get value => 'IQ';
@@ -1927,7 +1927,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'IQ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ie extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ie._();
 
 @override String get value => 'IE';
@@ -1936,7 +1936,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'IE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$il extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$il._();
 
 @override String get value => 'IL';
@@ -1945,7 +1945,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'IL'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$it extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$it._();
 
 @override String get value => 'IT';
@@ -1954,7 +1954,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'IT'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$jm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$jm._();
 
 @override String get value => 'JM';
@@ -1963,7 +1963,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'JM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$jp extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$jp._();
 
 @override String get value => 'JP';
@@ -1972,7 +1972,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'JP'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$jo extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$jo._();
 
 @override String get value => 'JO';
@@ -1981,7 +1981,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'JO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$kz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$kz._();
 
 @override String get value => 'KZ';
@@ -1990,7 +1990,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ke extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ke._();
 
 @override String get value => 'KE';
@@ -1999,7 +1999,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ki extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ki._();
 
 @override String get value => 'KI';
@@ -2008,7 +2008,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KI'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$kw extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$kw._();
 
 @override String get value => 'KW';
@@ -2017,7 +2017,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KW'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$kg extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$kg._();
 
 @override String get value => 'KG';
@@ -2026,7 +2026,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$la extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$la._();
 
 @override String get value => 'LA';
@@ -2035,7 +2035,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$lv extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$lv._();
 
 @override String get value => 'LV';
@@ -2044,7 +2044,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LV'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$lb extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$lb._();
 
 @override String get value => 'LB';
@@ -2053,7 +2053,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LB'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ls extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ls._();
 
 @override String get value => 'LS';
@@ -2062,7 +2062,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LS'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$lr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$lr._();
 
 @override String get value => 'LR';
@@ -2071,7 +2071,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ly extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ly._();
 
 @override String get value => 'LY';
@@ -2080,7 +2080,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$li extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$li._();
 
 @override String get value => 'LI';
@@ -2089,7 +2089,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LI'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$lt extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$lt._();
 
 @override String get value => 'LT';
@@ -2098,7 +2098,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LT'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$lu extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$lu._();
 
 @override String get value => 'LU';
@@ -2107,7 +2107,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LU'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mo extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mo._();
 
 @override String get value => 'MO';
@@ -2116,7 +2116,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mg extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mg._();
 
 @override String get value => 'MG';
@@ -2125,7 +2125,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mw extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mw._();
 
 @override String get value => 'MW';
@@ -2134,7 +2134,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MW'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$my extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$my._();
 
 @override String get value => 'MY';
@@ -2143,7 +2143,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mv extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mv._();
 
 @override String get value => 'MV';
@@ -2152,7 +2152,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MV'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ml extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ml._();
 
 @override String get value => 'ML';
@@ -2161,7 +2161,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ML'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mr._();
 
 @override String get value => 'MR';
@@ -2170,7 +2170,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mu extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mu._();
 
 @override String get value => 'MU';
@@ -2179,7 +2179,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MU'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mx extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mx._();
 
 @override String get value => 'MX';
@@ -2188,7 +2188,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MX'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$fm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$fm._();
 
 @override String get value => 'FM';
@@ -2197,7 +2197,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'FM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$md extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$md._();
 
 @override String get value => 'MD';
@@ -2206,7 +2206,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MD'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mc extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mc._();
 
 @override String get value => 'MC';
@@ -2215,7 +2215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MC'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mn._();
 
 @override String get value => 'MN';
@@ -2224,7 +2224,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ms extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ms._();
 
 @override String get value => 'MS';
@@ -2233,7 +2233,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MS'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ma extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ma._();
 
 @override String get value => 'MA';
@@ -2242,7 +2242,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mz._();
 
 @override String get value => 'MZ';
@@ -2251,7 +2251,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mm._();
 
 @override String get value => 'MM';
@@ -2260,7 +2260,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$na extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$na._();
 
 @override String get value => 'NA';
@@ -2269,7 +2269,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$nr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$nr._();
 
 @override String get value => 'NR';
@@ -2278,7 +2278,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$np extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$np._();
 
 @override String get value => 'NP';
@@ -2287,7 +2287,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NP'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$nl extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$nl._();
 
 @override String get value => 'NL';
@@ -2296,7 +2296,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NL'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$nz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$nz._();
 
 @override String get value => 'NZ';
@@ -2305,7 +2305,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ni extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ni._();
 
 @override String get value => 'NI';
@@ -2314,7 +2314,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NI'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ne extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ne._();
 
 @override String get value => 'NE';
@@ -2323,7 +2323,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ng extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ng._();
 
 @override String get value => 'NG';
@@ -2332,7 +2332,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$kp extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$kp._();
 
 @override String get value => 'KP';
@@ -2341,7 +2341,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KP'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$mk extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$mk._();
 
 @override String get value => 'MK';
@@ -2350,7 +2350,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'MK'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$no extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$no._();
 
 @override String get value => 'NO';
@@ -2359,7 +2359,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'NO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$om extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$om._();
 
 @override String get value => 'OM';
@@ -2368,7 +2368,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'OM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$pk extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$pk._();
 
 @override String get value => 'PK';
@@ -2377,7 +2377,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PK'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ps extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ps._();
 
 @override String get value => 'PS';
@@ -2386,7 +2386,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PS'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$pa extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$pa._();
 
 @override String get value => 'PA';
@@ -2395,7 +2395,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$pg extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$pg._();
 
 @override String get value => 'PG';
@@ -2404,7 +2404,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$py extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$py._();
 
 @override String get value => 'PY';
@@ -2413,7 +2413,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$pe extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$pe._();
 
 @override String get value => 'PE';
@@ -2422,7 +2422,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ph extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ph._();
 
 @override String get value => 'PH';
@@ -2431,7 +2431,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PH'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$pl extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$pl._();
 
 @override String get value => 'PL';
@@ -2440,7 +2440,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PL'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$pt extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$pt._();
 
 @override String get value => 'PT';
@@ -2449,7 +2449,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'PT'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$qa extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$qa._();
 
 @override String get value => 'QA';
@@ -2458,7 +2458,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'QA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ro extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ro._();
 
 @override String get value => 'RO';
@@ -2467,7 +2467,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'RO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ru extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ru._();
 
 @override String get value => 'RU';
@@ -2476,7 +2476,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'RU'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$rw extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$rw._();
 
 @override String get value => 'RW';
@@ -2485,7 +2485,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'RW'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sh extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sh._();
 
 @override String get value => 'SH';
@@ -2494,7 +2494,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SH'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$kn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$kn._();
 
 @override String get value => 'KN';
@@ -2503,7 +2503,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$lc extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$lc._();
 
 @override String get value => 'LC';
@@ -2512,7 +2512,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LC'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$vc extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$vc._();
 
 @override String get value => 'VC';
@@ -2521,7 +2521,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'VC'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ws extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ws._();
 
 @override String get value => 'WS';
@@ -2530,7 +2530,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'WS'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sm._();
 
 @override String get value => 'SM';
@@ -2539,7 +2539,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$st extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$st._();
 
 @override String get value => 'ST';
@@ -2548,7 +2548,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ST'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sa extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sa._();
 
 @override String get value => 'SA';
@@ -2557,7 +2557,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sn._();
 
 @override String get value => 'SN';
@@ -2566,7 +2566,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$rs extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$rs._();
 
 @override String get value => 'RS';
@@ -2575,7 +2575,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'RS'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sc extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sc._();
 
 @override String get value => 'SC';
@@ -2584,7 +2584,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SC'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sl extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sl._();
 
 @override String get value => 'SL';
@@ -2593,7 +2593,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SL'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sk extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sk._();
 
 @override String get value => 'SK';
@@ -2602,7 +2602,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SK'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$si extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$si._();
 
 @override String get value => 'SI';
@@ -2611,7 +2611,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SI'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sb extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sb._();
 
 @override String get value => 'SB';
@@ -2620,7 +2620,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SB'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$so extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$so._();
 
 @override String get value => 'SO';
@@ -2629,7 +2629,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$za extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$za._();
 
 @override String get value => 'ZA';
@@ -2638,7 +2638,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ZA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$kr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$kr._();
 
 @override String get value => 'KR';
@@ -2647,7 +2647,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'KR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ss extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ss._();
 
 @override String get value => 'SS';
@@ -2656,7 +2656,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SS'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$es extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$es._();
 
 @override String get value => 'ES';
@@ -2665,7 +2665,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ES'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$lk extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$lk._();
 
 @override String get value => 'LK';
@@ -2674,7 +2674,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'LK'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sd extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sd._();
 
 @override String get value => 'SD';
@@ -2683,7 +2683,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SD'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sr._();
 
 @override String get value => 'SR';
@@ -2692,7 +2692,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$se extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$se._();
 
 @override String get value => 'SE';
@@ -2701,7 +2701,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ch extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ch._();
 
 @override String get value => 'CH';
@@ -2710,7 +2710,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'CH'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$sy extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$sy._();
 
 @override String get value => 'SY';
@@ -2719,7 +2719,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'SY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tw extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tw._();
 
 @override String get value => 'TW';
@@ -2728,7 +2728,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TW'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tj extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tj._();
 
 @override String get value => 'TJ';
@@ -2737,7 +2737,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TJ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tz._();
 
 @override String get value => 'TZ';
@@ -2746,7 +2746,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$th extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$th._();
 
 @override String get value => 'TH';
@@ -2755,7 +2755,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TH'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$bs extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$bs._();
 
 @override String get value => 'BS';
@@ -2764,7 +2764,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'BS'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gm._();
 
 @override String get value => 'GM';
@@ -2773,7 +2773,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tl extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tl._();
 
 @override String get value => 'TL';
@@ -2782,7 +2782,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TL'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tg extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tg._();
 
 @override String get value => 'TG';
@@ -2791,7 +2791,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$to extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$to._();
 
 @override String get value => 'TO';
@@ -2800,7 +2800,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TO'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tt extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tt._();
 
 @override String get value => 'TT';
@@ -2809,7 +2809,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TT'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tn._();
 
 @override String get value => 'TN';
@@ -2818,7 +2818,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tr extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tr._();
 
 @override String get value => 'TR';
@@ -2827,7 +2827,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TR'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$tm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$tm._();
 
 @override String get value => 'TM';
@@ -2836,7 +2836,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'TM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ug extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ug._();
 
 @override String get value => 'UG';
@@ -2845,7 +2845,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'UG'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ua extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ua._();
 
 @override String get value => 'UA';
@@ -2854,7 +2854,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'UA'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ae extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ae._();
 
 @override String get value => 'AE';
@@ -2863,7 +2863,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'AE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$gb extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$gb._();
 
 @override String get value => 'GB';
@@ -2872,7 +2872,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'GB'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$us extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$us._();
 
 @override String get value => 'US';
@@ -2881,7 +2881,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'US'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$uy extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$uy._();
 
 @override String get value => 'UY';
@@ -2890,7 +2890,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'UY'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$uz extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$uz._();
 
 @override String get value => 'UZ';
@@ -2899,7 +2899,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'UZ'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$vu extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$vu._();
 
 @override String get value => 'VU';
@@ -2908,7 +2908,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'VU'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ve extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ve._();
 
 @override String get value => 'VE';
@@ -2917,7 +2917,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'VE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$vn extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$vn._();
 
 @override String get value => 'VN';
@@ -2926,7 +2926,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'VN'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$ye extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$ye._();
 
 @override String get value => 'YE';
@@ -2935,7 +2935,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'YE'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$zm extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$zm._();
 
 @override String get value => 'ZM';
@@ -2944,7 +2944,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ZM'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$zw extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$zw._();
 
 @override String get value => 'ZW';
@@ -2953,7 +2953,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => 'ZW'.hashCode;
 
- }
+}
 @immutable final class UrlscannerCreateScanRequest2Country$Unknown extends UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country$Unknown(this.value);
 
 @override final String value;
@@ -2963,4 +2963,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_field_value/issue_field_value_single_select_option.dart';/// The data type of the issue field
 sealed class IssueFieldValueDataType {const IssueFieldValueDataType();
 
-factory IssueFieldValueDataType.fromJson(String json) { return switch (json) {
+factory IssueFieldValueDataType.fromJson(String json) {return switch (json) {
   'text' => text,
   'single_select' => singleSelect,
   'number' => number,
   'date' => date,
   _ => IssueFieldValueDataType$Unknown(json),
-}; }
+};}
 
 static const IssueFieldValueDataType text = IssueFieldValueDataType$text._();
 
@@ -23,36 +23,36 @@ static const IssueFieldValueDataType date = IssueFieldValueDataType$date._();
 static const List<IssueFieldValueDataType> values = [text, singleSelect, number, date];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'single_select' => 'singleSelect',
   'number' => 'number',
   'date' => 'date',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssueFieldValueDataType$Unknown; } 
+bool get isUnknown {return this is IssueFieldValueDataType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() singleSelect, required W Function() number, required W Function() date, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() singleSelect, required W Function() number, required W Function() date, required W Function(String value) $unknown, }) {return switch (this) {
       IssueFieldValueDataType$text() => text(),
       IssueFieldValueDataType$singleSelect() => singleSelect(),
       IssueFieldValueDataType$number() => number(),
       IssueFieldValueDataType$date() => date(),
       IssueFieldValueDataType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? singleSelect, W Function()? number, W Function()? date, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? singleSelect, W Function()? number, W Function()? date, W Function(String value)? $unknown, }) {return switch (this) {
       IssueFieldValueDataType$text() => text != null ? text() : orElse(value),
       IssueFieldValueDataType$singleSelect() => singleSelect != null ? singleSelect() : orElse(value),
       IssueFieldValueDataType$number() => number != null ? number() : orElse(value),
       IssueFieldValueDataType$date() => date != null ? date() : orElse(value),
       IssueFieldValueDataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssueFieldValueDataType($value)';
 
- }
+}
 @immutable final class IssueFieldValueDataType$text extends IssueFieldValueDataType {const IssueFieldValueDataType$text._();
 
 @override String get value => 'text';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class IssueFieldValueDataType$singleSelect extends IssueFieldValueDataType {const IssueFieldValueDataType$singleSelect._();
 
 @override String get value => 'single_select';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'single_select'.hashCode;
 
- }
+}
 @immutable final class IssueFieldValueDataType$number extends IssueFieldValueDataType {const IssueFieldValueDataType$number._();
 
 @override String get value => 'number';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'number'.hashCode;
 
- }
+}
 @immutable final class IssueFieldValueDataType$date extends IssueFieldValueDataType {const IssueFieldValueDataType$date._();
 
 @override String get value => 'date';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'date'.hashCode;
 
- }
+}
 @immutable final class IssueFieldValueDataType$Unknown extends IssueFieldValueDataType {const IssueFieldValueDataType$Unknown(this.value);
 
 @override final String value;
@@ -98,17 +98,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A value assigned to an issue field
 @immutable final class IssueFieldValue {const IssueFieldValue({required this.issueFieldId, required this.nodeId, required this.dataType, required this.value, this.singleSelectOption = const Omittable.absent(), });
 
-factory IssueFieldValue.fromJson(Map<String, dynamic> json) { return IssueFieldValue(
+factory IssueFieldValue.fromJson(Map<String, dynamic> json) {return IssueFieldValue(
   issueFieldId: (json['issue_field_id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   dataType: IssueFieldValueDataType.fromJson(json['data_type'] as String),
   value: json['value'],
   singleSelectOption: json.containsKey('single_select_option') ? Omittable(json['single_select_option'] != null ? IssueFieldValueSingleSelectOption.fromJson(json['single_select_option'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Unique identifier for the issue field.
 final int issueFieldId;
@@ -128,24 +128,24 @@ final dynamic value;
 /// Details about the selected option (only present for single_select fields)
 final Omittable<IssueFieldValueSingleSelectOption?> singleSelectOption;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'issue_field_id': issueFieldId,
   'node_id': nodeId,
   'data_type': dataType.toJson(),
   'value': value,
   if (singleSelectOption.isPresent) 'single_select_option': singleSelectOption.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue_field_id') && json['issue_field_id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('issue_field_id') && json['issue_field_id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('data_type') &&
-      json.containsKey('value'); } 
-IssueFieldValue copyWith({int? issueFieldId, String? nodeId, IssueFieldValueDataType? dataType, dynamic Function()? value, Omittable<IssueFieldValueSingleSelectOption?>? singleSelectOption, }) { return IssueFieldValue(
+      json.containsKey('value');}
+IssueFieldValue copyWith({int? issueFieldId, String? nodeId, IssueFieldValueDataType? dataType, dynamic Function()? value, Omittable<IssueFieldValueSingleSelectOption?>? singleSelectOption, }) {return IssueFieldValue(
   issueFieldId: issueFieldId ?? this.issueFieldId,
   nodeId: nodeId ?? this.nodeId,
   dataType: dataType ?? this.dataType,
   value: value != null ? value() : this.value,
   singleSelectOption: singleSelectOption ?? this.singleSelectOption,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssueFieldValue &&
           issueFieldId == other.issueFieldId &&
@@ -158,4 +158,4 @@ IssueFieldValue copyWith({int? issueFieldId, String? nodeId, IssueFieldValueData
 
 @override String toString() => 'IssueFieldValue(issueFieldId: $issueFieldId, nodeId: $nodeId, dataType: $dataType, value: $value, singleSelectOption: $singleSelectOption)';
 
- }
+}

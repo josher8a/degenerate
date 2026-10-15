@@ -7,11 +7,11 @@ const OptionsDocument({this.documentOptions = const Omittable.absent(), this.get
 const OptionsDocument._({required this.rawValue, required this.documentOptions, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory OptionsDocument.fromJson(Object? json) { return OptionsDocument._(
+factory OptionsDocument.fromJson(Object? json) {return OptionsDocument._(
   rawValue: Omittable(json),
   documentOptions: json is Map<String, dynamic> && DocumentOptions.canParse(json) ? parseAnyOfVariant<DocumentOptions>(json, (value) => DocumentOptions.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'OptionsDocument(${toJson()})';
 
- }
+}

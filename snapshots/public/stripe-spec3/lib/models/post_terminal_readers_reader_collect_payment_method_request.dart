@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_payment_method_request/collect_config.dart';@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequest {const PostTerminalReadersReaderCollectPaymentMethodRequest({required this.paymentIntent, this.collectConfig, this.expand, });
 
-factory PostTerminalReadersReaderCollectPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectPaymentMethodRequest(
+factory PostTerminalReadersReaderCollectPaymentMethodRequest.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderCollectPaymentMethodRequest(
   collectConfig: json['collect_config'] != null ? CollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentIntent: json['payment_intent'] as String,
-); }
+);}
 
 /// Configuration overrides for this collection, such as tipping, surcharging, and customer cancellation settings.
 final CollectConfig? collectConfig;
@@ -18,21 +18,21 @@ final List<String>? expand;
 /// The ID of the PaymentIntent to collect a payment method for.
 final String paymentIntent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (collectConfig != null) 'collect_config': collectConfig?.toJson(),
   'expand': ?expand,
   'payment_intent': paymentIntent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent') && json['payment_intent'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payment_intent') && json['payment_intent'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (paymentIntent.runes.length > 5000) { errors.add('paymentIntent: length must be <= 5000'); }
-return errors; } 
-PostTerminalReadersReaderCollectPaymentMethodRequest copyWith({CollectConfig? Function()? collectConfig, List<String>? Function()? expand, String? paymentIntent, }) { return PostTerminalReadersReaderCollectPaymentMethodRequest(
+return errors;}
+PostTerminalReadersReaderCollectPaymentMethodRequest copyWith({CollectConfig? Function()? collectConfig, List<String>? Function()? expand, String? paymentIntent, }) {return PostTerminalReadersReaderCollectPaymentMethodRequest(
   collectConfig: collectConfig != null ? collectConfig() : this.collectConfig,
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent ?? this.paymentIntent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderCollectPaymentMethodRequest &&
           collectConfig == other.collectConfig &&
@@ -43,4 +43,4 @@ PostTerminalReadersReaderCollectPaymentMethodRequest copyWith({CollectConfig? Fu
 
 @override String toString() => 'PostTerminalReadersReaderCollectPaymentMethodRequest(collectConfig: $collectConfig, expand: $expand, paymentIntent: $paymentIntent)';
 
- }
+}

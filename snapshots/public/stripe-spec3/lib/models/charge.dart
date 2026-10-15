@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh/bank_connections_resource_balance_refresh_status.dart';import 'package:pub_stripe_spec3/models/billing_details.dart';import 'package:pub_stripe_spec3/models/charge/charge_application_fee.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/charge/charge_refunds.dart';import 'package:pub_stripe_spec3/models/charge/charge_review.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/source_transfer.dart';import 'package:pub_stripe_spec3/models/charge_fraud_details.dart';import 'package:pub_stripe_spec3/models/charge_outcome.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_method_details.dart';import 'package:pub_stripe_spec3/models/radar_radar_options.dart';import 'package:pub_stripe_spec3/models/shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ChargeObject {const ChargeObject();
 
-factory ChargeObject.fromJson(String json) { return switch (json) {
+factory ChargeObject.fromJson(String json) {return switch (json) {
   'charge' => charge,
   _ => ChargeObject$Unknown(json),
-}; }
+};}
 
 static const ChargeObject charge = ChargeObject$charge._();
 
 static const List<ChargeObject> values = [charge];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'charge' => 'charge',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ChargeObject$Unknown; } 
+bool get isUnknown {return this is ChargeObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() charge, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() charge, required W Function(String value) $unknown, }) {return switch (this) {
       ChargeObject$charge() => charge(),
       ChargeObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, W Function(String value)? $unknown, }) {return switch (this) {
       ChargeObject$charge() => charge != null ? charge() : orElse(value),
       ChargeObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ChargeObject($value)';
 
- }
+}
 @immutable final class ChargeObject$charge extends ChargeObject {const ChargeObject$charge._();
 
 @override String get value => 'charge';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => 'charge'.hashCode;
 
- }
+}
 @immutable final class ChargeObject$Unknown extends ChargeObject {const ChargeObject$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The `Charge` object represents a single attempt to move money into your Stripe account.
 /// PaymentIntent confirmation is the most common way to create Charges, but [Account Debits](https://docs.stripe.com/connect/account-debits) may also create Charges.
 /// Some legacy payment flows create Charges directly, which is not recommended for new integrations.
 @immutable final class Charge {const Charge({required this.object, required this.amountCaptured, required this.amountRefunded, required this.billingDetails, required this.captured, required this.created, required this.currency, required this.disputed, required this.livemode, required this.refunded, required this.paid, required this.metadata, required this.id, required this.amount, required this.status, this.description = const Omittable.absent(), this.failureCode = const Omittable.absent(), this.failureMessage = const Omittable.absent(), this.fraudDetails = const Omittable.absent(), this.customer = const Omittable.absent(), this.calculatedStatementDescriptor = const Omittable.absent(), this.balanceTransaction = const Omittable.absent(), this.failureBalanceTransaction = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.outcome = const Omittable.absent(), this.applicationFeeAmount = const Omittable.absent(), this.paymentIntent = const Omittable.absent(), this.paymentMethod = const Omittable.absent(), this.paymentMethodDetails = const Omittable.absent(), this.transferGroup = const Omittable.absent(), this.radarOptions, this.receiptEmail = const Omittable.absent(), this.receiptNumber = const Omittable.absent(), this.receiptUrl = const Omittable.absent(), this.applicationFee = const Omittable.absent(), this.refunds = const Omittable.absent(), this.review = const Omittable.absent(), this.shipping = const Omittable.absent(), this.sourceTransfer = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.statementDescriptorSuffix = const Omittable.absent(), this.application = const Omittable.absent(), this.transfer, this.transferData = const Omittable.absent(), this.presentmentDetails, });
 
-factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
+factory Charge.fromJson(Map<String, dynamic> json) {return Charge(
   amount: (json['amount'] as num).toInt(),
   amountCaptured: (json['amount_captured'] as num).toInt(),
   amountRefunded: (json['amount_refunded'] as num).toInt(),
@@ -105,7 +105,7 @@ factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   transfer: json['transfer'] != null ? ChargeTransfer.fromJson(json['transfer']) : null,
   transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? ChargeTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Amount intended to be collected by this payment. A positive integer representing how much to charge in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) (e.g., 100 cents to charge $1.00 or 100 to charge ¥100, a zero-decimal currency). The minimum amount is $0.50 US or [equivalent in charge currency](https://docs.stripe.com/currencies#minimum-and-maximum-charge-amounts). The amount value supports up to eight digits (e.g., a value of 99999999 for a USD charge of $999,999.99).
 final int amount;
@@ -241,7 +241,7 @@ final Omittable<ChargeTransferData?> transferData;
 /// A string that identifies this transaction as part of a group. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final Omittable<String?> transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_captured': amountCaptured,
   'amount_refunded': amountRefunded,
@@ -287,8 +287,8 @@ Map<String, dynamic> toJson() { return {
   if (transfer != null) 'transfer': transfer?.toJson(),
   if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
   if (transferGroup.isPresent) 'transfer_group': transferGroup.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_captured') && json['amount_captured'] is num &&
       json.containsKey('amount_refunded') && json['amount_refunded'] is num &&
       json.containsKey('billing_details') &&
@@ -302,9 +302,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') && json['object'] == 'charge' &&
       json.containsKey('paid') && json['paid'] is bool &&
       json.containsKey('refunded') && json['refunded'] is bool &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final calculatedStatementDescriptor$ = calculatedStatementDescriptor.value;
 if (calculatedStatementDescriptor$ != null) {
   if (calculatedStatementDescriptor$.runes.length > 5000) { errors.add('calculatedStatementDescriptor: length must be <= 5000'); }
@@ -350,8 +350,8 @@ final transferGroup$ = transferGroup.value;
 if (transferGroup$ != null) {
   if (transferGroup$.runes.length > 5000) { errors.add('transferGroup: length must be <= 5000'); }
 }
-return errors; } 
-Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, Omittable<ApplicationFeeApplication?>? application, Omittable<ChargeApplicationFee?>? applicationFee, Omittable<int?>? applicationFeeAmount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, BillingDetails? billingDetails, Omittable<String?>? calculatedStatementDescriptor, bool? captured, int? created, String? currency, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? description, bool? disputed, Omittable<FailureBalanceTransaction?>? failureBalanceTransaction, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, Omittable<ChargeFraudDetails?>? fraudDetails, String? id, bool? livemode, Map<String,String>? metadata, ChargeObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<ChargeOutcome?>? outcome, bool? paid, Omittable<ChargePaymentIntent?>? paymentIntent, Omittable<String?>? paymentMethod, Omittable<PaymentMethodDetails?>? paymentMethodDetails, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, RadarRadarOptions? Function()? radarOptions, Omittable<String?>? receiptEmail, Omittable<String?>? receiptNumber, Omittable<String?>? receiptUrl, bool? refunded, Omittable<ChargeRefunds?>? refunds, Omittable<ChargeReview?>? review, Omittable<Shipping?>? shipping, Omittable<SourceTransfer?>? sourceTransfer, Omittable<String?>? statementDescriptor, Omittable<String?>? statementDescriptorSuffix, BankConnectionsResourceBalanceRefreshStatus? status, ChargeTransfer? Function()? transfer, Omittable<ChargeTransferData?>? transferData, Omittable<String?>? transferGroup, }) { return Charge(
+return errors;}
+Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, Omittable<ApplicationFeeApplication?>? application, Omittable<ChargeApplicationFee?>? applicationFee, Omittable<int?>? applicationFeeAmount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, BillingDetails? billingDetails, Omittable<String?>? calculatedStatementDescriptor, bool? captured, int? created, String? currency, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? description, bool? disputed, Omittable<FailureBalanceTransaction?>? failureBalanceTransaction, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, Omittable<ChargeFraudDetails?>? fraudDetails, String? id, bool? livemode, Map<String,String>? metadata, ChargeObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<ChargeOutcome?>? outcome, bool? paid, Omittable<ChargePaymentIntent?>? paymentIntent, Omittable<String?>? paymentMethod, Omittable<PaymentMethodDetails?>? paymentMethodDetails, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, RadarRadarOptions? Function()? radarOptions, Omittable<String?>? receiptEmail, Omittable<String?>? receiptNumber, Omittable<String?>? receiptUrl, bool? refunded, Omittable<ChargeRefunds?>? refunds, Omittable<ChargeReview?>? review, Omittable<Shipping?>? shipping, Omittable<SourceTransfer?>? sourceTransfer, Omittable<String?>? statementDescriptor, Omittable<String?>? statementDescriptorSuffix, BankConnectionsResourceBalanceRefreshStatus? status, ChargeTransfer? Function()? transfer, Omittable<ChargeTransferData?>? transferData, Omittable<String?>? transferGroup, }) {return Charge(
   amount: amount ?? this.amount,
   amountCaptured: amountCaptured ?? this.amountCaptured,
   amountRefunded: amountRefunded ?? this.amountRefunded,
@@ -397,7 +397,7 @@ Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, Omittabl
   transfer: transfer != null ? transfer() : this.transfer,
   transferData: transferData ?? this.transferData,
   transferGroup: transferGroup ?? this.transferGroup,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Charge &&
           amount == other.amount &&
@@ -450,4 +450,4 @@ Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, Omittabl
 
 @override String toString() => 'Charge(\n  amount: $amount,\n  amountCaptured: $amountCaptured,\n  amountRefunded: $amountRefunded,\n  application: $application,\n  applicationFee: $applicationFee,\n  applicationFeeAmount: $applicationFeeAmount,\n  balanceTransaction: $balanceTransaction,\n  billingDetails: $billingDetails,\n  calculatedStatementDescriptor: $calculatedStatementDescriptor,\n  captured: $captured,\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  description: $description,\n  disputed: $disputed,\n  failureBalanceTransaction: $failureBalanceTransaction,\n  failureCode: $failureCode,\n  failureMessage: $failureMessage,\n  fraudDetails: $fraudDetails,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  outcome: $outcome,\n  paid: $paid,\n  paymentIntent: $paymentIntent,\n  paymentMethod: $paymentMethod,\n  paymentMethodDetails: $paymentMethodDetails,\n  presentmentDetails: $presentmentDetails,\n  radarOptions: $radarOptions,\n  receiptEmail: $receiptEmail,\n  receiptNumber: $receiptNumber,\n  receiptUrl: $receiptUrl,\n  refunded: $refunded,\n  refunds: $refunds,\n  review: $review,\n  shipping: $shipping,\n  sourceTransfer: $sourceTransfer,\n  statementDescriptor: $statementDescriptor,\n  statementDescriptorSuffix: $statementDescriptorSuffix,\n  status: $status,\n  transfer: $transfer,\n  transferData: $transferData,\n  transferGroup: $transferGroup,\n)';
 
- }
+}

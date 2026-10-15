@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';import 'package:pub_cloudflare/models/dlp_pattern.dart';@immutable final class DlpEntryWithUploadStatusCustomEntry {const DlpEntryWithUploadStatusCustomEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.pattern, required this.updatedAt, required this.type, this.description = const Omittable.absent(), this.profileId = const Omittable.absent(), this.uploadStatus, });
 
-factory DlpEntryWithUploadStatusCustomEntry.fromJson(Map<String, dynamic> json) { return DlpEntryWithUploadStatusCustomEntry(
+factory DlpEntryWithUploadStatusCustomEntry.fromJson(Map<String, dynamic> json) {return DlpEntryWithUploadStatusCustomEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
@@ -14,7 +14,7 @@ factory DlpEntryWithUploadStatusCustomEntry.fromJson(Map<String, dynamic> json) 
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: CustomEntryType.fromJson(json['type'] as String),
   uploadStatus: json['upload_status'] != null ? DlpDatasetUploadStatus.fromJson(json['upload_status'] as String) : null,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -36,7 +36,7 @@ final CustomEntryType type;
 
 final DlpDatasetUploadStatus? uploadStatus;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   if (description.isPresent) 'description': description.value,
   'enabled': enabled,
@@ -47,15 +47,15 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'type': type.toJson(),
   if (uploadStatus != null) 'upload_status': uploadStatus?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('pattern') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type') && json['type'] == 'custom'; } 
-DlpEntryWithUploadStatusCustomEntry copyWith({DateTime? createdAt, Omittable<String?>? description, bool? enabled, String? id, String? name, DlpPattern? pattern, Omittable<String?>? profileId, DateTime? updatedAt, CustomEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, }) { return DlpEntryWithUploadStatusCustomEntry(
+      json.containsKey('type') && json['type'] == 'custom';}
+DlpEntryWithUploadStatusCustomEntry copyWith({DateTime? createdAt, Omittable<String?>? description, bool? enabled, String? id, String? name, DlpPattern? pattern, Omittable<String?>? profileId, DateTime? updatedAt, CustomEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, }) {return DlpEntryWithUploadStatusCustomEntry(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   enabled: enabled ?? this.enabled,
@@ -66,7 +66,7 @@ DlpEntryWithUploadStatusCustomEntry copyWith({DateTime? createdAt, Omittable<Str
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
   uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryWithUploadStatusCustomEntry &&
           createdAt == other.createdAt &&
@@ -84,4 +84,4 @@ DlpEntryWithUploadStatusCustomEntry copyWith({DateTime? createdAt, Omittable<Str
 
 @override String toString() => 'DlpEntryWithUploadStatusCustomEntry(\n  createdAt: $createdAt,\n  description: $description,\n  enabled: $enabled,\n  id: $id,\n  name: $name,\n  pattern: $pattern,\n  profileId: $profileId,\n  updatedAt: $updatedAt,\n  type: $type,\n  uploadStatus: $uploadStatus,\n)';
 
- }
+}

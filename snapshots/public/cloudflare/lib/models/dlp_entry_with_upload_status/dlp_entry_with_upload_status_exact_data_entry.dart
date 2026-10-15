@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';import 'package:pub_cloudflare/models/exact_data_entry/exact_data_entry_type.dart';@immutable final class DlpEntryWithUploadStatusExactDataEntry {const DlpEntryWithUploadStatusExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, required this.type, this.uploadStatus, });
 
-factory DlpEntryWithUploadStatusExactDataEntry.fromJson(Map<String, dynamic> json) { return DlpEntryWithUploadStatusExactDataEntry(
+factory DlpEntryWithUploadStatusExactDataEntry.fromJson(Map<String, dynamic> json) {return DlpEntryWithUploadStatusExactDataEntry(
   caseSensitive: json['case_sensitive'] as bool,
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
@@ -13,7 +13,7 @@ factory DlpEntryWithUploadStatusExactDataEntry.fromJson(Map<String, dynamic> jso
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: ExactDataEntryType.fromJson(json['type'] as String),
   uploadStatus: json['upload_status'] != null ? DlpDatasetUploadStatus.fromJson(json['upload_status'] as String) : null,
-); }
+);}
 
 /// Only applies to custom word lists.
 /// Determines if the words should be matched in a case-sensitive manner
@@ -36,7 +36,7 @@ final ExactDataEntryType type;
 
 final DlpDatasetUploadStatus? uploadStatus;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'case_sensitive': caseSensitive,
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
@@ -46,16 +46,16 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'type': type.toJson(),
   if (uploadStatus != null) 'upload_status': uploadStatus?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('case_sensitive') && json['case_sensitive'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('case_sensitive') && json['case_sensitive'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('secret') && json['secret'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type') && json['type'] == 'exact_data'; } 
-DlpEntryWithUploadStatusExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enabled, String? id, String? name, bool? secret, DateTime? updatedAt, ExactDataEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, }) { return DlpEntryWithUploadStatusExactDataEntry(
+      json.containsKey('type') && json['type'] == 'exact_data';}
+DlpEntryWithUploadStatusExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enabled, String? id, String? name, bool? secret, DateTime? updatedAt, ExactDataEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, }) {return DlpEntryWithUploadStatusExactDataEntry(
   caseSensitive: caseSensitive ?? this.caseSensitive,
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
@@ -65,7 +65,7 @@ DlpEntryWithUploadStatusExactDataEntry copyWith({bool? caseSensitive, DateTime? 
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
   uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryWithUploadStatusExactDataEntry &&
           caseSensitive == other.caseSensitive &&
@@ -82,4 +82,4 @@ DlpEntryWithUploadStatusExactDataEntry copyWith({bool? caseSensitive, DateTime? 
 
 @override String toString() => 'DlpEntryWithUploadStatusExactDataEntry(\n  caseSensitive: $caseSensitive,\n  createdAt: $createdAt,\n  enabled: $enabled,\n  id: $id,\n  name: $name,\n  secret: $secret,\n  updatedAt: $updatedAt,\n  type: $type,\n  uploadStatus: $uploadStatus,\n)';
 
- }
+}

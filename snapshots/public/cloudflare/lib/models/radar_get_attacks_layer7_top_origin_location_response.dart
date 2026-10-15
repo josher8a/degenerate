@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_origin_locations_response/radar_get_attacks_layer3_top_origin_locations_response_result.dart';@immutable final class RadarGetAttacksLayer7TopOriginLocationResponse {const RadarGetAttacksLayer7TopOriginLocationResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer7TopOriginLocationResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopOriginLocationResponse(
+factory RadarGetAttacksLayer7TopOriginLocationResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7TopOriginLocationResponse(
   result: RadarGetAttacksLayer3TopOriginLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer3TopOriginLocationsResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer7TopOriginLocationResponse copyWith({RadarGetAttacksLayer3TopOriginLocationsResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7TopOriginLocationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer7TopOriginLocationResponse copyWith({RadarGetAttacksLayer3TopOriginLocationsResponseResult? result, bool? success, }) {return RadarGetAttacksLayer7TopOriginLocationResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TopOriginLocationResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer7TopOriginLocationResponse copyWith({RadarGetAttacksLayer3To
 
 @override String toString() => 'RadarGetAttacksLayer7TopOriginLocationResponse(result: $result, success: $success)';
 
- }
+}

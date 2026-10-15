@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PullsListState {const PullsListState();
 
-factory PullsListState.fromJson(String json) { return switch (json) {
+factory PullsListState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'all' => all,
   _ => PullsListState$Unknown(json),
-}; }
+};}
 
 static const PullsListState open = PullsListState$open._();
 
@@ -19,33 +19,33 @@ static const PullsListState all = PullsListState$all._();
 static const List<PullsListState> values = [open, closed, all];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'open' => 'open',
   'closed' => 'closed',
   'all' => 'all',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PullsListState$Unknown; } 
+bool get isUnknown {return this is PullsListState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() open, required W Function() closed, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() open, required W Function() closed, required W Function() all, required W Function(String value) $unknown, }) {return switch (this) {
       PullsListState$open() => open(),
       PullsListState$closed() => closed(),
       PullsListState$all() => all(),
       PullsListState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? closed, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? closed, W Function()? all, W Function(String value)? $unknown, }) {return switch (this) {
       PullsListState$open() => open != null ? open() : orElse(value),
       PullsListState$closed() => closed != null ? closed() : orElse(value),
       PullsListState$all() => all != null ? all() : orElse(value),
       PullsListState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PullsListState($value)';
 
- }
+}
 @immutable final class PullsListState$open extends PullsListState {const PullsListState$open._();
 
 @override String get value => 'open';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class PullsListState$closed extends PullsListState {const PullsListState$closed._();
 
 @override String get value => 'closed';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'closed'.hashCode;
 
- }
+}
 @immutable final class PullsListState$all extends PullsListState {const PullsListState$all._();
 
 @override String get value => 'all';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class PullsListState$Unknown extends PullsListState {const PullsListState$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

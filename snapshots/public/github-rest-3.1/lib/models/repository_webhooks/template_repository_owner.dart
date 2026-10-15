@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TemplateRepositoryOwner {const TemplateRepositoryOwner({this.login, this.id, this.nodeId, this.avatarUrl, this.gravatarId, this.url, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.reposUrl, this.eventsUrl, this.receivedEventsUrl, this.type, this.siteAdmin, });
 
-factory TemplateRepositoryOwner.fromJson(Map<String, dynamic> json) { return TemplateRepositoryOwner(
+factory TemplateRepositoryOwner.fromJson(Map<String, dynamic> json) {return TemplateRepositoryOwner(
   login: json['login'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
@@ -22,7 +22,7 @@ factory TemplateRepositoryOwner.fromJson(Map<String, dynamic> json) { return Tem
   receivedEventsUrl: json['received_events_url'] as String?,
   type: json['type'] as String?,
   siteAdmin: json['site_admin'] as bool?,
-); }
+);}
 
 final String? login;
 
@@ -60,7 +60,7 @@ final String? type;
 
 final bool? siteAdmin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': ?login,
   'id': ?id,
   'node_id': ?nodeId,
@@ -79,9 +79,9 @@ Map<String, dynamic> toJson() { return {
   'received_events_url': ?receivedEventsUrl,
   'type': ?type,
   'site_admin': ?siteAdmin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login', 'id', 'node_id', 'avatar_url', 'gravatar_id', 'url', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'repos_url', 'events_url', 'received_events_url', 'type', 'site_admin'}.contains(key)); } 
-TemplateRepositoryOwner copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, String? Function()? avatarUrl, String? Function()? gravatarId, String? Function()? url, String? Function()? htmlUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? organizationsUrl, String? Function()? reposUrl, String? Function()? eventsUrl, String? Function()? receivedEventsUrl, String? Function()? type, bool? Function()? siteAdmin, }) { return TemplateRepositoryOwner(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'login', 'id', 'node_id', 'avatar_url', 'gravatar_id', 'url', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'repos_url', 'events_url', 'received_events_url', 'type', 'site_admin'}.contains(key));}
+TemplateRepositoryOwner copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, String? Function()? avatarUrl, String? Function()? gravatarId, String? Function()? url, String? Function()? htmlUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? organizationsUrl, String? Function()? reposUrl, String? Function()? eventsUrl, String? Function()? receivedEventsUrl, String? Function()? type, bool? Function()? siteAdmin, }) {return TemplateRepositoryOwner(
   login: login != null ? login() : this.login,
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
@@ -100,7 +100,7 @@ TemplateRepositoryOwner copyWith({String? Function()? login, int? Function()? id
   receivedEventsUrl: receivedEventsUrl != null ? receivedEventsUrl() : this.receivedEventsUrl,
   type: type != null ? type() : this.type,
   siteAdmin: siteAdmin != null ? siteAdmin() : this.siteAdmin,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TemplateRepositoryOwner &&
           login == other.login &&
@@ -126,4 +126,4 @@ TemplateRepositoryOwner copyWith({String? Function()? login, int? Function()? id
 
 @override String toString() => 'TemplateRepositoryOwner(\n  login: $login,\n  id: $id,\n  nodeId: $nodeId,\n  avatarUrl: $avatarUrl,\n  gravatarId: $gravatarId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  organizationsUrl: $organizationsUrl,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  type: $type,\n  siteAdmin: $siteAdmin,\n)';
 
- }
+}

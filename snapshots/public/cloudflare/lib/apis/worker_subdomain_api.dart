@@ -14,7 +14,7 @@ final class WorkerSubdomainApi with ApiExecutor {const WorkerSubdomainApi(this.a
 /// Returns a Workers subdomain for an account.
 ///
 /// `GET /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<WorkersSchemasSubdomain, CreateWorkerVersionError>> workerSubdomainGetSubdomain({required WorkersIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersSchemasSubdomain, CreateWorkerVersionError>> workerSubdomainGetSubdomain({required WorkersIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Create Subdomain
 ///
 /// Creates a Workers subdomain for an account.
 ///
 /// `PUT /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<WorkersSchemasSubdomain, CreateWorkerVersionError>> workerSubdomainCreateSubdomain({required WorkersIdentifier accountId, required WorkersSchemasSubdomain body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersSchemasSubdomain, CreateWorkerVersionError>> workerSubdomainCreateSubdomain({required WorkersIdentifier accountId, required WorkersSchemasSubdomain body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Delete Subdomain
 ///
 /// Deletes a Workers subdomain for an account.
 ///
 /// `DELETE /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<void, CreateWorkerVersionError>> workerSubdomainDeleteSubdomain({required WorkersIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CreateWorkerVersionError>> workerSubdomainDeleteSubdomain({required WorkersIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -76,5 +76,5 @@ return await execute(
   onSuccess: (_) {},
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
- }
+}
+}

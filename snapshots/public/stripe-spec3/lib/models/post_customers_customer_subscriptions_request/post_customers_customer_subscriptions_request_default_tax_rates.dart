@@ -8,11 +8,11 @@ const PostCustomersCustomerSubscriptionsRequestDefaultTaxRates({this.listString 
 const PostCustomersCustomerSubscriptionsRequestDefaultTaxRates._({required this.rawValue, required this.listString, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostCustomersCustomerSubscriptionsRequestDefaultTaxRates.fromJson(Object? json) { return PostCustomersCustomerSubscriptionsRequestDefaultTaxRates._(
+factory PostCustomersCustomerSubscriptionsRequestDefaultTaxRates.fromJson(Object? json) {return PostCustomersCustomerSubscriptionsRequestDefaultTaxRates._(
   rawValue: Omittable(json),
   listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostCustomersCustomerSubscriptionsRequestDefaultTaxRates(${toJson()})';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error_model2.dart';import 'package:pub_openai/models/eval_run_output_item/sample_input.dart';import 'package:pub_openai/models/eval_run_output_item/sample_output.dart';import 'package:pub_openai/models/eval_run_output_item/sample_usage.dart';/// A sample containing the input and output of the evaluation run.
 @immutable final class Sample {const Sample({required this.input, required this.output, required this.finishReason, required this.model, required this.usage, required this.error, required this.temperature, required this.maxCompletionTokens, required this.topP, required this.seed, });
 
-factory Sample.fromJson(Map<String, dynamic> json) { return Sample(
+factory Sample.fromJson(Map<String, dynamic> json) {return Sample(
   input: (json['input'] as List<dynamic>).map((e) => SampleInput.fromJson(e as Map<String, dynamic>)).toList(),
   output: (json['output'] as List<dynamic>).map((e) => SampleOutput.fromJson(e as Map<String, dynamic>)).toList(),
   finishReason: json['finish_reason'] as String,
@@ -15,7 +15,7 @@ factory Sample.fromJson(Map<String, dynamic> json) { return Sample(
   maxCompletionTokens: (json['max_completion_tokens'] as num).toInt(),
   topP: (json['top_p'] as num).toDouble(),
   seed: (json['seed'] as num).toInt(),
-); }
+);}
 
 /// An array of input messages.
 final List<SampleInput> input;
@@ -46,7 +46,7 @@ final double topP;
 /// The seed used for generating the sample.
 final int seed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input': input.map((e) => e.toJson()).toList(),
   'output': output.map((e) => e.toJson()).toList(),
   'finish_reason': finishReason,
@@ -57,8 +57,8 @@ Map<String, dynamic> toJson() { return {
   'max_completion_tokens': maxCompletionTokens,
   'top_p': topP,
   'seed': seed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input') &&
       json.containsKey('output') &&
       json.containsKey('finish_reason') && json['finish_reason'] is String &&
       json.containsKey('model') && json['model'] is String &&
@@ -67,8 +67,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('input
       json.containsKey('temperature') && json['temperature'] is num &&
       json.containsKey('max_completion_tokens') && json['max_completion_tokens'] is num &&
       json.containsKey('top_p') && json['top_p'] is num &&
-      json.containsKey('seed') && json['seed'] is num; } 
-Sample copyWith({List<SampleInput>? input, List<SampleOutput>? output, String? finishReason, String? model, SampleUsage? usage, ErrorModel2? error, double? temperature, int? maxCompletionTokens, double? topP, int? seed, }) { return Sample(
+      json.containsKey('seed') && json['seed'] is num;}
+Sample copyWith({List<SampleInput>? input, List<SampleOutput>? output, String? finishReason, String? model, SampleUsage? usage, ErrorModel2? error, double? temperature, int? maxCompletionTokens, double? topP, int? seed, }) {return Sample(
   input: input ?? this.input,
   output: output ?? this.output,
   finishReason: finishReason ?? this.finishReason,
@@ -79,7 +79,7 @@ Sample copyWith({List<SampleInput>? input, List<SampleOutput>? output, String? f
   maxCompletionTokens: maxCompletionTokens ?? this.maxCompletionTokens,
   topP: topP ?? this.topP,
   seed: seed ?? this.seed,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Sample &&
           listEquals(input, other.input) &&
@@ -97,4 +97,4 @@ Sample copyWith({List<SampleInput>? input, List<SampleOutput>? output, String? f
 
 @override String toString() => 'Sample(\n  input: $input,\n  output: $output,\n  finishReason: $finishReason,\n  model: $model,\n  usage: $usage,\n  error: $error,\n  temperature: $temperature,\n  maxCompletionTokens: $maxCompletionTokens,\n  topP: $topP,\n  seed: $seed,\n)';
 
- }
+}

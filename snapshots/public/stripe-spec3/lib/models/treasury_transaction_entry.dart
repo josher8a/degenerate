@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry/flow_type.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_balance_impact.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_flow_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TreasuryTransactionEntryObject {const TreasuryTransactionEntryObject();
 
-factory TreasuryTransactionEntryObject.fromJson(String json) { return switch (json) {
+factory TreasuryTransactionEntryObject.fromJson(String json) {return switch (json) {
   'treasury.transaction_entry' => treasuryTransactionEntry,
   _ => TreasuryTransactionEntryObject$Unknown(json),
-}; }
+};}
 
 static const TreasuryTransactionEntryObject treasuryTransactionEntry = TreasuryTransactionEntryObject$treasuryTransactionEntry._();
 
 static const List<TreasuryTransactionEntryObject> values = [treasuryTransactionEntry];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'treasury.transaction_entry' => 'treasuryTransactionEntry',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryTransactionEntryObject$Unknown; } 
+bool get isUnknown {return this is TreasuryTransactionEntryObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() treasuryTransactionEntry, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() treasuryTransactionEntry, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryTransactionEntryObject$treasuryTransactionEntry() => treasuryTransactionEntry(),
       TreasuryTransactionEntryObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryTransactionEntry, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryTransactionEntry, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryTransactionEntryObject$treasuryTransactionEntry() => treasuryTransactionEntry != null ? treasuryTransactionEntry() : orElse(value),
       TreasuryTransactionEntryObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryTransactionEntryObject($value)';
 
- }
+}
 @immutable final class TreasuryTransactionEntryObject$treasuryTransactionEntry extends TreasuryTransactionEntryObject {const TreasuryTransactionEntryObject$treasuryTransactionEntry._();
 
 @override String get value => 'treasury.transaction_entry';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => 'treasury.transaction_entry'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryObject$Unknown extends TreasuryTransactionEntryObject {const TreasuryTransactionEntryObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The specific money movement that generated the TransactionEntry.
 sealed class TreasuryTransactionEntryType {const TreasuryTransactionEntryType();
 
-factory TreasuryTransactionEntryType.fromJson(String json) { return switch (json) {
+factory TreasuryTransactionEntryType.fromJson(String json) {return switch (json) {
   'credit_reversal' => creditReversal,
   'credit_reversal_posting' => creditReversalPosting,
   'debit_reversal' => debitReversal,
@@ -79,7 +79,7 @@ factory TreasuryTransactionEntryType.fromJson(String json) { return switch (json
   'received_credit' => receivedCredit,
   'received_debit' => receivedDebit,
   _ => TreasuryTransactionEntryType$Unknown(json),
-}; }
+};}
 
 static const TreasuryTransactionEntryType creditReversal = TreasuryTransactionEntryType$creditReversal._();
 
@@ -124,9 +124,9 @@ static const TreasuryTransactionEntryType receivedDebit = TreasuryTransactionEnt
 static const List<TreasuryTransactionEntryType> values = [creditReversal, creditReversalPosting, debitReversal, inboundTransfer, inboundTransferReturn, issuingAuthorizationHold, issuingAuthorizationRelease, $other, outboundPayment, outboundPaymentCancellation, outboundPaymentFailure, outboundPaymentPosting, outboundPaymentReturn, outboundTransfer, outboundTransferCancellation, outboundTransferFailure, outboundTransferPosting, outboundTransferReturn, receivedCredit, receivedDebit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'credit_reversal' => 'creditReversal',
   'credit_reversal_posting' => 'creditReversalPosting',
   'debit_reversal' => 'debitReversal',
@@ -148,11 +148,11 @@ String get name { return switch (value) {
   'received_credit' => 'receivedCredit',
   'received_debit' => 'receivedDebit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryTransactionEntryType$Unknown; } 
+bool get isUnknown {return this is TreasuryTransactionEntryType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() creditReversal, required W Function() creditReversalPosting, required W Function() debitReversal, required W Function() inboundTransfer, required W Function() inboundTransferReturn, required W Function() issuingAuthorizationHold, required W Function() issuingAuthorizationRelease, required W Function() $other, required W Function() outboundPayment, required W Function() outboundPaymentCancellation, required W Function() outboundPaymentFailure, required W Function() outboundPaymentPosting, required W Function() outboundPaymentReturn, required W Function() outboundTransfer, required W Function() outboundTransferCancellation, required W Function() outboundTransferFailure, required W Function() outboundTransferPosting, required W Function() outboundTransferReturn, required W Function() receivedCredit, required W Function() receivedDebit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() creditReversal, required W Function() creditReversalPosting, required W Function() debitReversal, required W Function() inboundTransfer, required W Function() inboundTransferReturn, required W Function() issuingAuthorizationHold, required W Function() issuingAuthorizationRelease, required W Function() $other, required W Function() outboundPayment, required W Function() outboundPaymentCancellation, required W Function() outboundPaymentFailure, required W Function() outboundPaymentPosting, required W Function() outboundPaymentReturn, required W Function() outboundTransfer, required W Function() outboundTransferCancellation, required W Function() outboundTransferFailure, required W Function() outboundTransferPosting, required W Function() outboundTransferReturn, required W Function() receivedCredit, required W Function() receivedDebit, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryTransactionEntryType$creditReversal() => creditReversal(),
       TreasuryTransactionEntryType$creditReversalPosting() => creditReversalPosting(),
       TreasuryTransactionEntryType$debitReversal() => debitReversal(),
@@ -174,9 +174,9 @@ W when<W>({required W Function() creditReversal, required W Function() creditRev
       TreasuryTransactionEntryType$receivedCredit() => receivedCredit(),
       TreasuryTransactionEntryType$receivedDebit() => receivedDebit(),
       TreasuryTransactionEntryType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? creditReversalPosting, W Function()? debitReversal, W Function()? inboundTransfer, W Function()? inboundTransferReturn, W Function()? issuingAuthorizationHold, W Function()? issuingAuthorizationRelease, W Function()? $other, W Function()? outboundPayment, W Function()? outboundPaymentCancellation, W Function()? outboundPaymentFailure, W Function()? outboundPaymentPosting, W Function()? outboundPaymentReturn, W Function()? outboundTransfer, W Function()? outboundTransferCancellation, W Function()? outboundTransferFailure, W Function()? outboundTransferPosting, W Function()? outboundTransferReturn, W Function()? receivedCredit, W Function()? receivedDebit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? creditReversalPosting, W Function()? debitReversal, W Function()? inboundTransfer, W Function()? inboundTransferReturn, W Function()? issuingAuthorizationHold, W Function()? issuingAuthorizationRelease, W Function()? $other, W Function()? outboundPayment, W Function()? outboundPaymentCancellation, W Function()? outboundPaymentFailure, W Function()? outboundPaymentPosting, W Function()? outboundPaymentReturn, W Function()? outboundTransfer, W Function()? outboundTransferCancellation, W Function()? outboundTransferFailure, W Function()? outboundTransferPosting, W Function()? outboundTransferReturn, W Function()? receivedCredit, W Function()? receivedDebit, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryTransactionEntryType$creditReversal() => creditReversal != null ? creditReversal() : orElse(value),
       TreasuryTransactionEntryType$creditReversalPosting() => creditReversalPosting != null ? creditReversalPosting() : orElse(value),
       TreasuryTransactionEntryType$debitReversal() => debitReversal != null ? debitReversal() : orElse(value),
@@ -198,10 +198,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
       TreasuryTransactionEntryType$receivedCredit() => receivedCredit != null ? receivedCredit() : orElse(value),
       TreasuryTransactionEntryType$receivedDebit() => receivedDebit != null ? receivedDebit() : orElse(value),
       TreasuryTransactionEntryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryTransactionEntryType($value)';
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$creditReversal extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$creditReversal._();
 
 @override String get value => 'credit_reversal';
@@ -210,7 +210,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'credit_reversal'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$creditReversalPosting extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$creditReversalPosting._();
 
 @override String get value => 'credit_reversal_posting';
@@ -219,7 +219,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'credit_reversal_posting'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$debitReversal extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$debitReversal._();
 
 @override String get value => 'debit_reversal';
@@ -228,7 +228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'debit_reversal'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$inboundTransfer extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$inboundTransfer._();
 
 @override String get value => 'inbound_transfer';
@@ -237,7 +237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'inbound_transfer'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$inboundTransferReturn extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$inboundTransferReturn._();
 
 @override String get value => 'inbound_transfer_return';
@@ -246,7 +246,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'inbound_transfer_return'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$issuingAuthorizationHold extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$issuingAuthorizationHold._();
 
 @override String get value => 'issuing_authorization_hold';
@@ -255,7 +255,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'issuing_authorization_hold'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$issuingAuthorizationRelease extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$issuingAuthorizationRelease._();
 
 @override String get value => 'issuing_authorization_release';
@@ -264,7 +264,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'issuing_authorization_release'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$$other extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$$other._();
 
 @override String get value => 'other';
@@ -273,7 +273,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundPayment extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundPayment._();
 
 @override String get value => 'outbound_payment';
@@ -282,7 +282,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_payment'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundPaymentCancellation extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundPaymentCancellation._();
 
 @override String get value => 'outbound_payment_cancellation';
@@ -291,7 +291,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_payment_cancellation'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundPaymentFailure extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundPaymentFailure._();
 
 @override String get value => 'outbound_payment_failure';
@@ -300,7 +300,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_payment_failure'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundPaymentPosting extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundPaymentPosting._();
 
 @override String get value => 'outbound_payment_posting';
@@ -309,7 +309,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_payment_posting'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundPaymentReturn extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundPaymentReturn._();
 
 @override String get value => 'outbound_payment_return';
@@ -318,7 +318,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_payment_return'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundTransfer extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundTransfer._();
 
 @override String get value => 'outbound_transfer';
@@ -327,7 +327,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_transfer'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundTransferCancellation extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundTransferCancellation._();
 
 @override String get value => 'outbound_transfer_cancellation';
@@ -336,7 +336,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_transfer_cancellation'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundTransferFailure extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundTransferFailure._();
 
 @override String get value => 'outbound_transfer_failure';
@@ -345,7 +345,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_transfer_failure'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundTransferPosting extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundTransferPosting._();
 
 @override String get value => 'outbound_transfer_posting';
@@ -354,7 +354,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_transfer_posting'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$outboundTransferReturn extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$outboundTransferReturn._();
 
 @override String get value => 'outbound_transfer_return';
@@ -363,7 +363,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_transfer_return'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$receivedCredit extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$receivedCredit._();
 
 @override String get value => 'received_credit';
@@ -372,7 +372,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'received_credit'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$receivedDebit extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$receivedDebit._();
 
 @override String get value => 'received_debit';
@@ -381,7 +381,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'received_debit'.hashCode;
 
- }
+}
 @immutable final class TreasuryTransactionEntryType$Unknown extends TreasuryTransactionEntryType {const TreasuryTransactionEntryType$Unknown(this.value);
 
 @override final String value;
@@ -391,11 +391,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// TransactionEntries represent individual units of money movements within a single [Transaction](https://api.stripe.com#transactions).
 @immutable final class TreasuryTransactionEntry {const TreasuryTransactionEntry({required this.balanceImpact, required this.created, required this.currency, required this.effectiveAt, required this.financialAccount, required this.flowType, required this.id, required this.livemode, required this.object, required this.transaction, required this.type, this.flow = const Omittable.absent(), this.flowDetails = const Omittable.absent(), });
 
-factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return TreasuryTransactionEntry(
+factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) {return TreasuryTransactionEntry(
   balanceImpact: TreasuryTransactionsResourceBalanceImpact.fromJson(json['balance_impact'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -409,7 +409,7 @@ factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return Tr
   object: TreasuryTransactionEntryObject.fromJson(json['object'] as String),
   transaction: TreasuryCreditReversalTransaction.fromJson(json['transaction']),
   type: TreasuryTransactionEntryType.fromJson(json['type'] as String),
-); }
+);}
 
 final TreasuryTransactionsResourceBalanceImpact balanceImpact;
 
@@ -449,7 +449,7 @@ final TreasuryCreditReversalTransaction transaction;
 /// The specific money movement that generated the TransactionEntry.
 final TreasuryTransactionEntryType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'balance_impact': balanceImpact.toJson(),
   'created': created,
   'currency': currency,
@@ -463,8 +463,8 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'transaction': transaction.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('balance_impact') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('balance_impact') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('effective_at') && json['effective_at'] is num &&
@@ -474,17 +474,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('transaction') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (financialAccount.runes.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 final flow$ = flow.value;
 if (flow$ != null) {
   if (flow$.runes.length > 5000) { errors.add('flow: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, Omittable<String?>? flow, Omittable<TreasuryTransactionsResourceFlowDetails?>? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, TreasuryCreditReversalTransaction? transaction, TreasuryTransactionEntryType? type, }) { return TreasuryTransactionEntry(
+return errors;}
+TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, Omittable<String?>? flow, Omittable<TreasuryTransactionsResourceFlowDetails?>? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, TreasuryCreditReversalTransaction? transaction, TreasuryTransactionEntryType? type, }) {return TreasuryTransactionEntry(
   balanceImpact: balanceImpact ?? this.balanceImpact,
   created: created ?? this.created,
   currency: currency ?? this.currency,
@@ -498,7 +498,7 @@ TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? ba
   object: object ?? this.object,
   transaction: transaction ?? this.transaction,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryTransactionEntry &&
           balanceImpact == other.balanceImpact &&
@@ -519,4 +519,4 @@ TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? ba
 
 @override String toString() => 'TreasuryTransactionEntry(\n  balanceImpact: $balanceImpact,\n  created: $created,\n  currency: $currency,\n  effectiveAt: $effectiveAt,\n  financialAccount: $financialAccount,\n  flow: $flow,\n  flowDetails: $flowDetails,\n  flowType: $flowType,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  transaction: $transaction,\n  type: $type,\n)';
 
- }
+}

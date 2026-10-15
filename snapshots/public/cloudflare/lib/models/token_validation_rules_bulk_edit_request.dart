@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_action.dart';import 'package:pub_cloudflare/models/shield_after.dart';import 'package:pub_cloudflare/models/shield_before.dart';import 'package:pub_cloudflare/models/shield_enabled.dart';import 'package:pub_cloudflare/models/shield_expression.dart';import 'package:pub_cloudflare/models/shield_index.dart';import 'package:pub_cloudflare/models/shield_position.dart';import 'package:pub_cloudflare/models/shield_schemas_description.dart';import 'package:pub_cloudflare/models/shield_schemas_title.dart';import 'package:pub_cloudflare/models/shield_selector.dart';@immutable final class TokenValidationRulesBulkEditRequest {const TokenValidationRulesBulkEditRequest({required this.id, this.action, this.description, this.enabled, this.expression, this.selector, this.title, this.position, });
 
-factory TokenValidationRulesBulkEditRequest.fromJson(Map<String, dynamic> json) { return TokenValidationRulesBulkEditRequest(
+factory TokenValidationRulesBulkEditRequest.fromJson(Map<String, dynamic> json) {return TokenValidationRulesBulkEditRequest(
   action: json['action'] != null ? ShieldAction.fromJson(json['action'] as String) : null,
   description: json['description'] != null ? ShieldSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? ShieldEnabled.fromJson(json['enabled'] as bool) : null,
@@ -12,7 +12,7 @@ factory TokenValidationRulesBulkEditRequest.fromJson(Map<String, dynamic> json) 
   title: json['title'] != null ? ShieldSchemasTitle.fromJson(json['title'] as String) : null,
   position: json['position'] != null ? OneOf3.parse(json['position'], fromA: (v) => ShieldIndex.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldBefore.fromJson(v as Map<String, dynamic>), fromC: (v) => ShieldAfter.fromJson(v as Map<String, dynamic>),) : null,
   id: json['id'] as String,
-); }
+);}
 
 /// Action to take on requests that match operations included in `selector` and fail `expression`.
 final ShieldAction? action;
@@ -41,7 +41,7 @@ final ShieldPosition? position;
 /// Example: `'0d9bf70c-92e1-4bb3-9411-34a3bcc59003'`
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -50,13 +50,13 @@ Map<String, dynamic> toJson() { return {
   if (title != null) 'title': title?.toJson(),
   if (position != null) 'position': position?.toJson(),
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 36) { errors.add('id: length must be <= 36'); }
-return errors; } 
-TokenValidationRulesBulkEditRequest copyWith({ShieldAction? Function()? action, ShieldSchemasDescription? Function()? description, ShieldEnabled? Function()? enabled, ShieldExpression? Function()? expression, ShieldSelector? Function()? selector, ShieldSchemasTitle? Function()? title, ShieldPosition? Function()? position, String? id, }) { return TokenValidationRulesBulkEditRequest(
+return errors;}
+TokenValidationRulesBulkEditRequest copyWith({ShieldAction? Function()? action, ShieldSchemasDescription? Function()? description, ShieldEnabled? Function()? enabled, ShieldExpression? Function()? expression, ShieldSelector? Function()? selector, ShieldSchemasTitle? Function()? title, ShieldPosition? Function()? position, String? id, }) {return TokenValidationRulesBulkEditRequest(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -65,7 +65,7 @@ TokenValidationRulesBulkEditRequest copyWith({ShieldAction? Function()? action, 
   title: title != null ? title() : this.title,
   position: position != null ? position() : this.position,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationRulesBulkEditRequest &&
           action == other.action &&
@@ -81,4 +81,4 @@ TokenValidationRulesBulkEditRequest copyWith({ShieldAction? Function()? action, 
 
 @override String toString() => 'TokenValidationRulesBulkEditRequest(action: $action, description: $description, enabled: $enabled, expression: $expression, selector: $selector, title: $title, position: $position, id: $id)';
 
- }
+}

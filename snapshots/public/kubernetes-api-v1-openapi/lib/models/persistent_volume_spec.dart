@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/aws_elastic_block_store_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/azure_disk_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/azure_file_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/ceph_fs_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/cinder_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/csi_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/fc_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/flex_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/flocker_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/gce_persistent_disk_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/glusterfs_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/host_path_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/iscsi_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/local_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/nfs_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_reference.dart';import 'package:pub_kubernetes_api_v1_openapi/models/photon_persistent_disk_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/portworx_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/quobyte_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/rbd_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/scale_io_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/storage_os_persistent_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/volume_node_affinity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/vsphere_virtual_disk_volume_source.dart';/// PersistentVolumeSpec is the specification of a persistent volume.
 @immutable final class PersistentVolumeSpec {const PersistentVolumeSpec({this.accessModes, this.awsElasticBlockStore, this.azureDisk, this.azureFile, this.capacity, this.cephfs, this.cinder, this.claimRef, this.csi, this.fc, this.flexVolume, this.flocker, this.gcePersistentDisk, this.glusterfs, this.hostPath, this.iscsi, this.local, this.mountOptions, this.nfs, this.nodeAffinity, this.persistentVolumeReclaimPolicy, this.photonPersistentDisk, this.portworxVolume, this.quobyte, this.rbd, this.scaleIo, this.storageClassName, this.storageos, this.volumeAttributesClassName, this.volumeMode, this.vsphereVolume, });
 
-factory PersistentVolumeSpec.fromJson(Map<String, dynamic> json) { return PersistentVolumeSpec(
+factory PersistentVolumeSpec.fromJson(Map<String, dynamic> json) {return PersistentVolumeSpec(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   awsElasticBlockStore: json['awsElasticBlockStore'] != null ? AwsElasticBlockStoreVolumeSource.fromJson(json['awsElasticBlockStore'] as Map<String, dynamic>) : null,
   azureDisk: json['azureDisk'] != null ? AzureDiskVolumeSource.fromJson(json['azureDisk'] as Map<String, dynamic>) : null,
@@ -36,7 +36,7 @@ factory PersistentVolumeSpec.fromJson(Map<String, dynamic> json) { return Persis
   volumeAttributesClassName: json['volumeAttributesClassName'] as String?,
   volumeMode: json['volumeMode'] as String?,
   vsphereVolume: json['vsphereVolume'] != null ? VsphereVirtualDiskVolumeSource.fromJson(json['vsphereVolume'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// accessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes
 final List<String>? accessModes;
@@ -131,7 +131,7 @@ final String? volumeMode;
 /// vsphereVolume represents a vSphere volume attached and mounted on kubelets host machine. Deprecated: VsphereVolume is deprecated. All operations for the in-tree vsphereVolume type are redirected to the csi.vsphere.vmware.com CSI driver.
 final VsphereVirtualDiskVolumeSource? vsphereVolume;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessModes': ?accessModes,
   if (awsElasticBlockStore != null) 'awsElasticBlockStore': awsElasticBlockStore?.toJson(),
   if (azureDisk != null) 'azureDisk': azureDisk?.toJson(),
@@ -163,9 +163,9 @@ Map<String, dynamic> toJson() { return {
   'volumeAttributesClassName': ?volumeAttributesClassName,
   'volumeMode': ?volumeMode,
   if (vsphereVolume != null) 'vsphereVolume': vsphereVolume?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessModes', 'awsElasticBlockStore', 'azureDisk', 'azureFile', 'capacity', 'cephfs', 'cinder', 'claimRef', 'csi', 'fc', 'flexVolume', 'flocker', 'gcePersistentDisk', 'glusterfs', 'hostPath', 'iscsi', 'local', 'mountOptions', 'nfs', 'nodeAffinity', 'persistentVolumeReclaimPolicy', 'photonPersistentDisk', 'portworxVolume', 'quobyte', 'rbd', 'scaleIO', 'storageClassName', 'storageos', 'volumeAttributesClassName', 'volumeMode', 'vsphereVolume'}.contains(key)); } 
-PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockStore, AzureDiskVolumeSource? Function()? azureDisk, AzureFilePersistentVolumeSource? Function()? azureFile, Map<String, ResourceQuantity>? Function()? capacity, CephFsPersistentVolumeSource? Function()? cephfs, CinderPersistentVolumeSource? Function()? cinder, ObjectReference? Function()? claimRef, CsiPersistentVolumeSource? Function()? csi, FcVolumeSource? Function()? fc, FlexPersistentVolumeSource? Function()? flexVolume, FlockerVolumeSource? Function()? flocker, GcePersistentDiskVolumeSource? Function()? gcePersistentDisk, GlusterfsPersistentVolumeSource? Function()? glusterfs, HostPathVolumeSource? Function()? hostPath, IscsiPersistentVolumeSource? Function()? iscsi, LocalVolumeSource? Function()? local, List<String>? Function()? mountOptions, NfsVolumeSource? Function()? nfs, VolumeNodeAffinity? Function()? nodeAffinity, String? Function()? persistentVolumeReclaimPolicy, PhotonPersistentDiskVolumeSource? Function()? photonPersistentDisk, PortworxVolumeSource? Function()? portworxVolume, QuobyteVolumeSource? Function()? quobyte, RbdPersistentVolumeSource? Function()? rbd, ScaleIoPersistentVolumeSource? Function()? scaleIo, String? Function()? storageClassName, StorageOsPersistentVolumeSource? Function()? storageos, String? Function()? volumeAttributesClassName, String? Function()? volumeMode, VsphereVirtualDiskVolumeSource? Function()? vsphereVolume, }) { return PersistentVolumeSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessModes', 'awsElasticBlockStore', 'azureDisk', 'azureFile', 'capacity', 'cephfs', 'cinder', 'claimRef', 'csi', 'fc', 'flexVolume', 'flocker', 'gcePersistentDisk', 'glusterfs', 'hostPath', 'iscsi', 'local', 'mountOptions', 'nfs', 'nodeAffinity', 'persistentVolumeReclaimPolicy', 'photonPersistentDisk', 'portworxVolume', 'quobyte', 'rbd', 'scaleIO', 'storageClassName', 'storageos', 'volumeAttributesClassName', 'volumeMode', 'vsphereVolume'}.contains(key));}
+PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockStore, AzureDiskVolumeSource? Function()? azureDisk, AzureFilePersistentVolumeSource? Function()? azureFile, Map<String, ResourceQuantity>? Function()? capacity, CephFsPersistentVolumeSource? Function()? cephfs, CinderPersistentVolumeSource? Function()? cinder, ObjectReference? Function()? claimRef, CsiPersistentVolumeSource? Function()? csi, FcVolumeSource? Function()? fc, FlexPersistentVolumeSource? Function()? flexVolume, FlockerVolumeSource? Function()? flocker, GcePersistentDiskVolumeSource? Function()? gcePersistentDisk, GlusterfsPersistentVolumeSource? Function()? glusterfs, HostPathVolumeSource? Function()? hostPath, IscsiPersistentVolumeSource? Function()? iscsi, LocalVolumeSource? Function()? local, List<String>? Function()? mountOptions, NfsVolumeSource? Function()? nfs, VolumeNodeAffinity? Function()? nodeAffinity, String? Function()? persistentVolumeReclaimPolicy, PhotonPersistentDiskVolumeSource? Function()? photonPersistentDisk, PortworxVolumeSource? Function()? portworxVolume, QuobyteVolumeSource? Function()? quobyte, RbdPersistentVolumeSource? Function()? rbd, ScaleIoPersistentVolumeSource? Function()? scaleIo, String? Function()? storageClassName, StorageOsPersistentVolumeSource? Function()? storageos, String? Function()? volumeAttributesClassName, String? Function()? volumeMode, VsphereVirtualDiskVolumeSource? Function()? vsphereVolume, }) {return PersistentVolumeSpec(
   accessModes: accessModes != null ? accessModes() : this.accessModes,
   awsElasticBlockStore: awsElasticBlockStore != null ? awsElasticBlockStore() : this.awsElasticBlockStore,
   azureDisk: azureDisk != null ? azureDisk() : this.azureDisk,
@@ -197,7 +197,7 @@ PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElastic
   volumeAttributesClassName: volumeAttributesClassName != null ? volumeAttributesClassName() : this.volumeAttributesClassName,
   volumeMode: volumeMode != null ? volumeMode() : this.volumeMode,
   vsphereVolume: vsphereVolume != null ? vsphereVolume() : this.vsphereVolume,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeSpec &&
           listEquals(accessModes, other.accessModes) &&
@@ -236,4 +236,4 @@ PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElastic
 
 @override String toString() => 'PersistentVolumeSpec(\n  accessModes: $accessModes,\n  awsElasticBlockStore: $awsElasticBlockStore,\n  azureDisk: $azureDisk,\n  azureFile: $azureFile,\n  capacity: $capacity,\n  cephfs: $cephfs,\n  cinder: $cinder,\n  claimRef: $claimRef,\n  csi: $csi,\n  fc: $fc,\n  flexVolume: $flexVolume,\n  flocker: $flocker,\n  gcePersistentDisk: $gcePersistentDisk,\n  glusterfs: $glusterfs,\n  hostPath: $hostPath,\n  iscsi: $iscsi,\n  local: $local,\n  mountOptions: $mountOptions,\n  nfs: $nfs,\n  nodeAffinity: $nodeAffinity,\n  persistentVolumeReclaimPolicy: $persistentVolumeReclaimPolicy,\n  photonPersistentDisk: $photonPersistentDisk,\n  portworxVolume: $portworxVolume,\n  quobyte: $quobyte,\n  rbd: $rbd,\n  scaleIo: $scaleIo,\n  storageClassName: $storageClassName,\n  storageos: $storageos,\n  volumeAttributesClassName: $volumeAttributesClassName,\n  volumeMode: $volumeMode,\n  vsphereVolume: $vsphereVolume,\n)';
 
- }
+}

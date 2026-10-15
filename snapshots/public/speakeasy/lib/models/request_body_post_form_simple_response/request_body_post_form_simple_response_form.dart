@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequestBodyPostFormSimpleResponseForm {const RequestBodyPostFormSimpleResponseForm({required this.str, required this.$bool, required this.$int, required this.int32, required this.$num, required this.float32, required this.$enum, required this.date, required this.dateTime, required this.any, required this.intEnum, required this.int32Enum, this.strOpt, this.boolOpt, this.intOptNull, this.numOptNull, this.bigint, this.bigintStr, this.decimal, this.decimalStr, });
 
-factory RequestBodyPostFormSimpleResponseForm.fromJson(Map<String, dynamic> json) { return RequestBodyPostFormSimpleResponseForm(
+factory RequestBodyPostFormSimpleResponseForm.fromJson(Map<String, dynamic> json) {return RequestBodyPostFormSimpleResponseForm(
   str: json['str'] as String,
   $bool: json['bool'] as String,
   $int: json['int'] as String,
@@ -24,7 +24,7 @@ factory RequestBodyPostFormSimpleResponseForm.fromJson(Map<String, dynamic> json
   bigintStr: json['bigintStr'] as String?,
   decimal: json['decimal'] as String?,
   decimalStr: json['decimalStr'] as String?,
-); }
+);}
 
 /// Example: `'test'`
 final String str;
@@ -84,7 +84,7 @@ final String? decimal;
 /// Example: `'3.14159265358979344719667586'`
 final String? decimalStr;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'str': str,
   'bool': $bool,
   'int': $int,
@@ -105,8 +105,8 @@ Map<String, dynamic> toJson() { return {
   'bigintStr': ?bigintStr,
   'decimal': ?decimal,
   'decimalStr': ?decimalStr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('str') && json['str'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('str') && json['str'] is String &&
       json.containsKey('bool') && json['bool'] is String &&
       json.containsKey('int') && json['int'] is String &&
       json.containsKey('int32') && json['int32'] is String &&
@@ -117,8 +117,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('str')
       json.containsKey('dateTime') && json['dateTime'] is String &&
       json.containsKey('any') && json['any'] is String &&
       json.containsKey('intEnum') && json['intEnum'] is String &&
-      json.containsKey('int32Enum') && json['int32Enum'] is String; } 
-RequestBodyPostFormSimpleResponseForm copyWith({String? str, String? $bool, String? $int, String? int32, String? $num, String? float32, String? $enum, String? date, String? dateTime, String? any, String? Function()? strOpt, String? Function()? boolOpt, String? Function()? intOptNull, String? Function()? numOptNull, String? intEnum, String? int32Enum, String? Function()? bigint, String? Function()? bigintStr, String? Function()? decimal, String? Function()? decimalStr, }) { return RequestBodyPostFormSimpleResponseForm(
+      json.containsKey('int32Enum') && json['int32Enum'] is String;}
+RequestBodyPostFormSimpleResponseForm copyWith({String? str, String? $bool, String? $int, String? int32, String? $num, String? float32, String? $enum, String? date, String? dateTime, String? any, String? Function()? strOpt, String? Function()? boolOpt, String? Function()? intOptNull, String? Function()? numOptNull, String? intEnum, String? int32Enum, String? Function()? bigint, String? Function()? bigintStr, String? Function()? decimal, String? Function()? decimalStr, }) {return RequestBodyPostFormSimpleResponseForm(
   str: str ?? this.str,
   $bool: $bool ?? this.$bool,
   $int: $int ?? this.$int,
@@ -139,7 +139,7 @@ RequestBodyPostFormSimpleResponseForm copyWith({String? str, String? $bool, Stri
   bigintStr: bigintStr != null ? bigintStr() : this.bigintStr,
   decimal: decimal != null ? decimal() : this.decimal,
   decimalStr: decimalStr != null ? decimalStr() : this.decimalStr,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestBodyPostFormSimpleResponseForm &&
           str == other.str &&
@@ -167,4 +167,4 @@ RequestBodyPostFormSimpleResponseForm copyWith({String? str, String? $bool, Stri
 
 @override String toString() => 'RequestBodyPostFormSimpleResponseForm(\n  str: $str,\n  \$bool: ${$bool},\n  \$int: ${$int},\n  int32: $int32,\n  \$num: ${$num},\n  float32: $float32,\n  \$enum: ${$enum},\n  date: $date,\n  dateTime: $dateTime,\n  any: $any,\n  strOpt: $strOpt,\n  boolOpt: $boolOpt,\n  intOptNull: $intOptNull,\n  numOptNull: $numOptNull,\n  intEnum: $intEnum,\n  int32Enum: $int32Enum,\n  bigint: $bigint,\n  bigintStr: $bigintStr,\n  decimal: $decimal,\n  decimalStr: $decimalStr,\n)';
 
- }
+}

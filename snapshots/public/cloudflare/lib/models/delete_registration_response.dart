@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';@immutable final class DeleteRegistrationResponse {const DeleteRegistrationResponse({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
-factory DeleteRegistrationResponse.fromJson(Map<String, dynamic> json) { return DeleteRegistrationResponse(
+factory DeleteRegistrationResponse.fromJson(Map<String, dynamic> json) {return DeleteRegistrationResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: json.containsKey('result') ? Omittable(json['result'] as Map<String, dynamic>?) : const Omittable.absent(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<ResponseMessage> errors;
 
@@ -19,21 +19,21 @@ final Omittable<Map<String,dynamic>?> result;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   if (result.isPresent) 'result': result.value,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DeleteRegistrationResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, Omittable<Map<String,dynamic>?>? result, bool? success, }) { return DeleteRegistrationResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DeleteRegistrationResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, Omittable<Map<String,dynamic>?>? result, bool? success, }) {return DeleteRegistrationResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteRegistrationResponse &&
           listEquals(errors, other.errors) &&
@@ -45,4 +45,4 @@ DeleteRegistrationResponse copyWith({List<ResponseMessage>? errors, List<Respons
 
 @override String toString() => 'DeleteRegistrationResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -8,11 +8,11 @@ const ChargeTransferDataDestination({this.string = const Omittable.absent(), thi
 const ChargeTransferDataDestination._({required this.rawValue, required this.string, required this.account, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ChargeTransferDataDestination.fromJson(Object? json) { return ChargeTransferDataDestination._(
+factory ChargeTransferDataDestination.fromJson(Object? json) {return ChargeTransferDataDestination._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   account: json is Map<String, dynamic> && Account.canParse(json) ? parseAnyOfVariant<Account>(json, (value) => Account.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ChargeTransferDataDestination(${toJson()})';
 
- }
+}

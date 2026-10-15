@@ -13,11 +13,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuratio
 /// ```
 @immutable final class TeamsDevicesDeviceDexTestSchemasData {const TeamsDevicesDeviceDexTestSchemasData({this.host, this.kind, this.method, });
 
-factory TeamsDevicesDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceDexTestSchemasData(
+factory TeamsDevicesDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) {return TeamsDevicesDeviceDexTestSchemasData(
   host: json['host'] as String?,
   kind: json['kind'] as String?,
   method: json['method'] as String?,
-); }
+);}
 
 /// The desired endpoint to test.
 /// 
@@ -34,17 +34,17 @@ final String? kind;
 /// Example: `'GET'`
 final String? method;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': ?host,
   'kind': ?kind,
   'method': ?method,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'kind', 'method'}.contains(key)); } 
-TeamsDevicesDeviceDexTestSchemasData copyWith({String? Function()? host, String? Function()? kind, String? Function()? method, }) { return TeamsDevicesDeviceDexTestSchemasData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'host', 'kind', 'method'}.contains(key));}
+TeamsDevicesDeviceDexTestSchemasData copyWith({String? Function()? host, String? Function()? kind, String? Function()? method, }) {return TeamsDevicesDeviceDexTestSchemasData(
   host: host != null ? host() : this.host,
   kind: kind != null ? kind() : this.kind,
   method: method != null ? method() : this.method,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDeviceDexTestSchemasData &&
           host == other.host &&
@@ -55,4 +55,4 @@ TeamsDevicesDeviceDexTestSchemasData copyWith({String? Function()? host, String?
 
 @override String toString() => 'TeamsDevicesDeviceDexTestSchemasData(host: $host, kind: $kind, method: $method)';
 
- }
+}

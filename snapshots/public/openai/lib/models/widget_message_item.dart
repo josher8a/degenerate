@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';/// Thread item that renders a widget payload.
 @immutable final class WidgetMessageItem {const WidgetMessageItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.widget, });
 
-factory WidgetMessageItem.fromJson(Map<String, dynamic> json) { return WidgetMessageItem(
+factory WidgetMessageItem.fromJson(Map<String, dynamic> json) {return WidgetMessageItem(
   id: json['id'] as String,
   object: AssistantMessageItemObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
   threadId: json['thread_id'] as String,
   type: json['type'] as String,
   widget: json['widget'] as String,
-); }
+);}
 
 /// Identifier of the thread item.
 final String id;
@@ -31,28 +31,28 @@ final String type;
 /// Serialized widget payload rendered in the UI.
 final String widget;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
   'thread_id': threadId,
   'type': type,
   'widget': widget,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('thread_id') && json['thread_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('widget') && json['widget'] is String; } 
-WidgetMessageItem copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? type, String? widget, }) { return WidgetMessageItem(
+      json.containsKey('widget') && json['widget'] is String;}
+WidgetMessageItem copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? type, String? widget, }) {return WidgetMessageItem(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
   threadId: threadId ?? this.threadId,
   type: type ?? this.type,
   widget: widget ?? this.widget,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WidgetMessageItem &&
           id == other.id &&
@@ -66,4 +66,4 @@ WidgetMessageItem copyWith({String? id, AssistantMessageItemObject? object, int?
 
 @override String toString() => 'WidgetMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, widget: $widget)';
 
- }
+}

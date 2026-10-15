@@ -8,11 +8,11 @@ const PostTerminalConfigurationsConfigurationRequestTipping({this.tipping = cons
 const PostTerminalConfigurationsConfigurationRequestTipping._({required this.rawValue, required this.tipping, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTerminalConfigurationsConfigurationRequestTipping.fromJson(Object? json) { return PostTerminalConfigurationsConfigurationRequestTipping._(
+factory PostTerminalConfigurationsConfigurationRequestTipping.fromJson(Object? json) {return PostTerminalConfigurationsConfigurationRequestTipping._(
   rawValue: Omittable(json),
   tipping: json is Map<String, dynamic> && Tipping.canParse(json) ? parseAnyOfVariant<Tipping>(json, (value) => Tipping.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTerminalConfigurationsConfigurationRequestTipping(${toJson()})';
 
- }
+}

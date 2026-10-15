@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateNewSigningKeyRequest {const CreateNewSigningKeyRequest({this.friendlyName});
 
-factory CreateNewSigningKeyRequest.fromJson(Map<String, dynamic> json) { return CreateNewSigningKeyRequest(
+factory CreateNewSigningKeyRequest.fromJson(Map<String, dynamic> json) {return CreateNewSigningKeyRequest(
   friendlyName: json['FriendlyName'] as String?,
-); }
+);}
 
 /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
 final String? friendlyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': ?friendlyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName'}.contains(key)); } 
-CreateNewSigningKeyRequest copyWith({String? Function()? friendlyName}) { return CreateNewSigningKeyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'FriendlyName'}.contains(key));}
+CreateNewSigningKeyRequest copyWith({String? Function()? friendlyName}) {return CreateNewSigningKeyRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateNewSigningKeyRequest &&
           friendlyName == other.friendlyName;
@@ -25,4 +25,4 @@ CreateNewSigningKeyRequest copyWith({String? Function()? friendlyName}) { return
 
 @override String toString() => 'CreateNewSigningKeyRequest(friendlyName: $friendlyName)';
 
- }
+}

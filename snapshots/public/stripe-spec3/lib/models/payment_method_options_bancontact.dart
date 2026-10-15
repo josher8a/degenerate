@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_amazon_pay_payment_method_options/checkout_amazon_pay_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_bancontact/invoice_payment_method_options_bancontact_preferred_language.dart';/// 
 @immutable final class PaymentMethodOptionsBancontact {const PaymentMethodOptionsBancontact({required this.preferredLanguage, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsBancontact(
+factory PaymentMethodOptionsBancontact.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsBancontact(
   preferredLanguage: InvoicePaymentMethodOptionsBancontactPreferredLanguage.fromJson(json['preferred_language'] as String),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Preferred language of the Bancontact authorization page that the customer is redirected to.
 final InvoicePaymentMethodOptionsBancontactPreferredLanguage preferredLanguage;
@@ -21,15 +21,15 @@ final InvoicePaymentMethodOptionsBancontactPreferredLanguage preferredLanguage;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'preferred_language': preferredLanguage.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('preferred_language'); } 
-PaymentMethodOptionsBancontact copyWith({InvoicePaymentMethodOptionsBancontactPreferredLanguage? preferredLanguage, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsBancontact(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('preferred_language');}
+PaymentMethodOptionsBancontact copyWith({InvoicePaymentMethodOptionsBancontactPreferredLanguage? preferredLanguage, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsBancontact(
   preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsBancontact &&
           preferredLanguage == other.preferredLanguage &&
@@ -39,4 +39,4 @@ PaymentMethodOptionsBancontact copyWith({InvoicePaymentMethodOptionsBancontactPr
 
 @override String toString() => 'PaymentMethodOptionsBancontact(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

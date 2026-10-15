@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeSessionCreateRequest {const RealtimeSessionCreateRequest({required this.clientSecret, this.modalities = const Omittable.absent(), this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription, this.speed, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.truncation, this.prompt = const Omittable.absent(), });
 
-factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequest(
+factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequest(
   clientSecret: ClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
   modalities: json.containsKey('modalities') ? Omittable(json['modalities']) : const Omittable.absent(),
   instructions: json['instructions'] as String?,
@@ -23,7 +23,7 @@ factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { retur
   maxResponseOutputTokens: json['max_response_output_tokens'] != null ? OneOf2.parse(json['max_response_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
   truncation: json['truncation'] != null ? OneOf2.parse(json['truncation'], fromA: (v) => RealtimeTruncationVariant1.fromJson(v as String), fromB: (v) => RetentionRatioTruncation.fromJson(v as Map<String, dynamic>),) : null,
   prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Ephemeral key returned by the API.
 final ClientSecret clientSecret;
@@ -108,7 +108,7 @@ final Omittable<Prompt?> prompt;
 /// The value of `speed`, or its schema default when absent.
 double get speedOrDefault => speed ?? 1.0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_secret': clientSecret.toJson(),
   if (modalities.isPresent) 'modalities': modalities.value,
   'instructions': ?instructions,
@@ -125,17 +125,17 @@ Map<String, dynamic> toJson() { return {
   if (maxResponseOutputTokens != null) 'max_response_output_tokens': maxResponseOutputTokens?.toJson(),
   if (truncation != null) 'truncation': truncation?.toJson(),
   if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_secret');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final speed$ = speed;
 if (speed$ != null) {
   if (speed$ < 0.25) { errors.add('speed: must be >= 0.25'); }
   if (speed$ > 1.5) { errors.add('speed: must be <= 1.5'); }
 }
-return errors; } 
-RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, Omittable<dynamic>? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, String? Function()? inputAudioFormat, String? Function()? outputAudioFormat, InputAudioTranscription? Function()? inputAudioTranscription, double? Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, RealtimeTruncation? Function()? truncation, Omittable<Prompt?>? prompt, }) { return RealtimeSessionCreateRequest(
+return errors;}
+RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, Omittable<dynamic>? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, String? Function()? inputAudioFormat, String? Function()? outputAudioFormat, InputAudioTranscription? Function()? inputAudioTranscription, double? Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, RealtimeTruncation? Function()? truncation, Omittable<Prompt?>? prompt, }) {return RealtimeSessionCreateRequest(
   clientSecret: clientSecret ?? this.clientSecret,
   modalities: modalities ?? this.modalities,
   instructions: instructions != null ? instructions() : this.instructions,
@@ -152,7 +152,7 @@ RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, Omittable<dyn
   maxResponseOutputTokens: maxResponseOutputTokens != null ? maxResponseOutputTokens() : this.maxResponseOutputTokens,
   truncation: truncation != null ? truncation() : this.truncation,
   prompt: prompt ?? this.prompt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateRequest &&
           clientSecret == other.clientSecret &&
@@ -176,4 +176,4 @@ RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, Omittable<dyn
 
 @override String toString() => 'RealtimeSessionCreateRequest(\n  clientSecret: $clientSecret,\n  modalities: $modalities,\n  instructions: $instructions,\n  voice: $voice,\n  inputAudioFormat: $inputAudioFormat,\n  outputAudioFormat: $outputAudioFormat,\n  inputAudioTranscription: $inputAudioTranscription,\n  speed: $speed,\n  tracing: $tracing,\n  turnDetection: $turnDetection,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  temperature: $temperature,\n  maxResponseOutputTokens: $maxResponseOutputTokens,\n  truncation: $truncation,\n  prompt: $prompt,\n)';
 
- }
+}

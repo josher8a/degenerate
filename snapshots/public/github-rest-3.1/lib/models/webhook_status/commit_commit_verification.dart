@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class VerificationReason {const VerificationReason();
 
-factory VerificationReason.fromJson(String json) { return switch (json) {
+factory VerificationReason.fromJson(String json) {return switch (json) {
   'expired_key' => expiredKey,
   'not_signing_key' => notSigningKey,
   'gpgverify_error' => gpgverifyError,
@@ -20,7 +20,7 @@ factory VerificationReason.fromJson(String json) { return switch (json) {
   'bad_cert' => badCert,
   'ocsp_pending' => ocspPending,
   _ => VerificationReason$Unknown(json),
-}; }
+};}
 
 static const VerificationReason expiredKey = VerificationReason$expiredKey._();
 
@@ -55,9 +55,9 @@ static const VerificationReason ocspPending = VerificationReason$ocspPending._()
 static const List<VerificationReason> values = [expiredKey, notSigningKey, gpgverifyError, gpgverifyUnavailable, unsigned, unknownSignatureType, noUser, unverifiedEmail, badEmail, unknownKey, malformedSignature, invalid, valid, badCert, ocspPending];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'expired_key' => 'expiredKey',
   'not_signing_key' => 'notSigningKey',
   'gpgverify_error' => 'gpgverifyError',
@@ -74,11 +74,11 @@ String get name { return switch (value) {
   'bad_cert' => 'badCert',
   'ocsp_pending' => 'ocspPending',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VerificationReason$Unknown; } 
+bool get isUnknown {return this is VerificationReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() expiredKey, required W Function() notSigningKey, required W Function() gpgverifyError, required W Function() gpgverifyUnavailable, required W Function() unsigned, required W Function() unknownSignatureType, required W Function() noUser, required W Function() unverifiedEmail, required W Function() badEmail, required W Function() unknownKey, required W Function() malformedSignature, required W Function() invalid, required W Function() valid, required W Function() badCert, required W Function() ocspPending, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() expiredKey, required W Function() notSigningKey, required W Function() gpgverifyError, required W Function() gpgverifyUnavailable, required W Function() unsigned, required W Function() unknownSignatureType, required W Function() noUser, required W Function() unverifiedEmail, required W Function() badEmail, required W Function() unknownKey, required W Function() malformedSignature, required W Function() invalid, required W Function() valid, required W Function() badCert, required W Function() ocspPending, required W Function(String value) $unknown, }) {return switch (this) {
       VerificationReason$expiredKey() => expiredKey(),
       VerificationReason$notSigningKey() => notSigningKey(),
       VerificationReason$gpgverifyError() => gpgverifyError(),
@@ -95,9 +95,9 @@ W when<W>({required W Function() expiredKey, required W Function() notSigningKey
       VerificationReason$badCert() => badCert(),
       VerificationReason$ocspPending() => ocspPending(),
       VerificationReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredKey, W Function()? notSigningKey, W Function()? gpgverifyError, W Function()? gpgverifyUnavailable, W Function()? unsigned, W Function()? unknownSignatureType, W Function()? noUser, W Function()? unverifiedEmail, W Function()? badEmail, W Function()? unknownKey, W Function()? malformedSignature, W Function()? invalid, W Function()? valid, W Function()? badCert, W Function()? ocspPending, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredKey, W Function()? notSigningKey, W Function()? gpgverifyError, W Function()? gpgverifyUnavailable, W Function()? unsigned, W Function()? unknownSignatureType, W Function()? noUser, W Function()? unverifiedEmail, W Function()? badEmail, W Function()? unknownKey, W Function()? malformedSignature, W Function()? invalid, W Function()? valid, W Function()? badCert, W Function()? ocspPending, W Function(String value)? $unknown, }) {return switch (this) {
       VerificationReason$expiredKey() => expiredKey != null ? expiredKey() : orElse(value),
       VerificationReason$notSigningKey() => notSigningKey != null ? notSigningKey() : orElse(value),
       VerificationReason$gpgverifyError() => gpgverifyError != null ? gpgverifyError() : orElse(value),
@@ -114,10 +114,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
       VerificationReason$badCert() => badCert != null ? badCert() : orElse(value),
       VerificationReason$ocspPending() => ocspPending != null ? ocspPending() : orElse(value),
       VerificationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VerificationReason($value)';
 
- }
+}
 @immutable final class VerificationReason$expiredKey extends VerificationReason {const VerificationReason$expiredKey._();
 
 @override String get value => 'expired_key';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'expired_key'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$notSigningKey extends VerificationReason {const VerificationReason$notSigningKey._();
 
 @override String get value => 'not_signing_key';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'not_signing_key'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$gpgverifyError extends VerificationReason {const VerificationReason$gpgverifyError._();
 
 @override String get value => 'gpgverify_error';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'gpgverify_error'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$gpgverifyUnavailable extends VerificationReason {const VerificationReason$gpgverifyUnavailable._();
 
 @override String get value => 'gpgverify_unavailable';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'gpgverify_unavailable'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$unsigned extends VerificationReason {const VerificationReason$unsigned._();
 
 @override String get value => 'unsigned';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'unsigned'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$unknownSignatureType extends VerificationReason {const VerificationReason$unknownSignatureType._();
 
 @override String get value => 'unknown_signature_type';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'unknown_signature_type'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$noUser extends VerificationReason {const VerificationReason$noUser._();
 
 @override String get value => 'no_user';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'no_user'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$unverifiedEmail extends VerificationReason {const VerificationReason$unverifiedEmail._();
 
 @override String get value => 'unverified_email';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'unverified_email'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$badEmail extends VerificationReason {const VerificationReason$badEmail._();
 
 @override String get value => 'bad_email';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'bad_email'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$unknownKey extends VerificationReason {const VerificationReason$unknownKey._();
 
 @override String get value => 'unknown_key';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'unknown_key'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$malformedSignature extends VerificationReason {const VerificationReason$malformedSignature._();
 
 @override String get value => 'malformed_signature';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'malformed_signature'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$invalid extends VerificationReason {const VerificationReason$invalid._();
 
 @override String get value => 'invalid';
@@ -225,7 +225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'invalid'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$valid extends VerificationReason {const VerificationReason$valid._();
 
 @override String get value => 'valid';
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'valid'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$badCert extends VerificationReason {const VerificationReason$badCert._();
 
 @override String get value => 'bad_cert';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'bad_cert'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$ocspPending extends VerificationReason {const VerificationReason$ocspPending._();
 
 @override String get value => 'ocsp_pending';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => 'ocsp_pending'.hashCode;
 
- }
+}
 @immutable final class VerificationReason$Unknown extends VerificationReason {const VerificationReason$Unknown(this.value);
 
 @override final String value;
@@ -262,16 +262,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredK
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CommitCommitVerification {const CommitCommitVerification({required this.payload, required this.reason, required this.signature, required this.verified, required this.verifiedAt, });
 
-factory CommitCommitVerification.fromJson(Map<String, dynamic> json) { return CommitCommitVerification(
+factory CommitCommitVerification.fromJson(Map<String, dynamic> json) {return CommitCommitVerification(
   payload: json['payload'] as String?,
   reason: VerificationReason.fromJson(json['reason'] as String),
   signature: json['signature'] as String?,
   verified: json['verified'] as bool,
   verifiedAt: json['verified_at'] as String?,
-); }
+);}
 
 final String? payload;
 
@@ -283,25 +283,25 @@ final bool verified;
 
 final String? verifiedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payload': payload,
   'reason': reason.toJson(),
   'signature': signature,
   'verified': verified,
   'verified_at': verifiedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && (json['payload'] == null || json['payload'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payload') && (json['payload'] == null || json['payload'] is String) &&
       json.containsKey('reason') &&
       json.containsKey('signature') && (json['signature'] == null || json['signature'] is String) &&
       json.containsKey('verified') && json['verified'] is bool &&
-      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String); } 
-CommitCommitVerification copyWith({String? Function()? payload, VerificationReason? reason, String? Function()? signature, bool? verified, String? Function()? verifiedAt, }) { return CommitCommitVerification(
+      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String);}
+CommitCommitVerification copyWith({String? Function()? payload, VerificationReason? reason, String? Function()? signature, bool? verified, String? Function()? verifiedAt, }) {return CommitCommitVerification(
   payload: payload != null ? payload() : this.payload,
   reason: reason ?? this.reason,
   signature: signature != null ? signature() : this.signature,
   verified: verified ?? this.verified,
   verifiedAt: verifiedAt != null ? verifiedAt() : this.verifiedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommitCommitVerification &&
           payload == other.payload &&
@@ -314,4 +314,4 @@ CommitCommitVerification copyWith({String? Function()? payload, VerificationReas
 
 @override String toString() => 'CommitCommitVerification(payload: $payload, reason: $reason, signature: $signature, verified: $verified, verifiedAt: $verifiedAt)';
 
- }
+}

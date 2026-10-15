@@ -14,7 +14,7 @@ final class SecondaryDnsPeerApi with ApiExecutor {const SecondaryDnsPeerApi(this
 /// List Peers.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/peers`
-Future<ApiResult<List<SecondaryDnsPeer>?, SecondaryDnsPeerListPeersError>> secondaryDnsPeerListPeers({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecondaryDnsPeer>?, SecondaryDnsPeerListPeersError>> secondaryDnsPeerListPeers({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: SecondaryDnsPeerListPeersError.fromResponse,
 );
- } 
+}
 /// Create Peer
 ///
 /// Create Peer.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/peers`
-Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerCreatePeerError>> secondaryDnsPeerCreatePeer({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerCreatePeerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerCreatePeerError>> secondaryDnsPeerCreatePeer({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerCreatePeerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: SecondaryDnsPeerCreatePeerError.fromResponse,
 );
- } 
+}
 /// Peer Details
 ///
 /// Get Peer.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerPeerDetailsError>> secondaryDnsPeerPeerDetails({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerPeerDetailsError>> secondaryDnsPeerPeerDetails({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: SecondaryDnsPeerPeerDetailsError.fromResponse,
 );
- } 
+}
 /// Update Peer
 ///
 /// Modify Peer.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerUpdatePeerError>> secondaryDnsPeerUpdatePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, SecondaryDnsPeerUpdatePeerError>> secondaryDnsPeerUpdatePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: SecondaryDnsPeerUpdatePeerError.fromResponse,
 );
- } 
+}
 /// Delete Peer
 ///
 /// Delete Peer.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsPeerDeletePeerError>> secondaryDnsPeerDeletePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsPeerDeletePeerError>> secondaryDnsPeerDeletePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,5 +127,5 @@ return await execute(
   },
   onError: SecondaryDnsPeerDeletePeerError.fromResponse,
 );
- } 
- }
+}
+}

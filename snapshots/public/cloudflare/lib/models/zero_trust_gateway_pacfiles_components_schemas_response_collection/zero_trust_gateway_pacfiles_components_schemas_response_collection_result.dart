@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_slug.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_url.dart';@immutable final class ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult {const ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult({this.createdAt, this.description, this.id, this.name, this.slug, this.updatedAt, this.url, });
 
-factory ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(
+factory ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
   description: json['description'] != null ? ZeroTrustGatewayPacfilesComponentsSchemasDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null,
@@ -11,7 +11,7 @@ factory ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult.fromJs
   slug: json['slug'] != null ? ZeroTrustGatewaySlug.fromJson(json['slug'] as String) : null,
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
   url: json['url'] != null ? ZeroTrustGatewayUrl.fromJson(json['url'] as String) : null,
-); }
+);}
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
@@ -29,7 +29,7 @@ final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
 final ZeroTrustGatewayUrl? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -37,9 +37,9 @@ Map<String, dynamic> toJson() { return {
   if (slug != null) 'slug': slug?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'description', 'id', 'name', 'slug', 'updated_at', 'url'}.contains(key)); } 
-ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayPacfilesComponentsSchemasDescription? Function()? description, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayPacfilesComponentsSchemasName? Function()? name, ZeroTrustGatewaySlug? Function()? slug, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayUrl? Function()? url, }) { return ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'description', 'id', 'name', 'slug', 'updated_at', 'url'}.contains(key));}
+ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayPacfilesComponentsSchemasDescription? Function()? description, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayPacfilesComponentsSchemasName? Function()? name, ZeroTrustGatewaySlug? Function()? slug, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayUrl? Function()? url, }) {return ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
@@ -47,7 +47,7 @@ ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult copyWith({Zero
   slug: slug != null ? slug() : this.slug,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult &&
           createdAt == other.createdAt &&
@@ -62,4 +62,4 @@ ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult copyWith({Zero
 
 @override String toString() => 'ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(createdAt: $createdAt, description: $description, id: $id, name: $name, slug: $slug, updatedAt: $updatedAt, url: $url)';
 
- }
+}

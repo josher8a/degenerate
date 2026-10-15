@@ -14,7 +14,7 @@ final class TurnstileApi with ApiExecutor {const TurnstileApi(this.apiConfig);
 /// Lists all turnstile widgets of an account.
 ///
 /// `GET /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<List<TurnstileWidgetList>?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetsList({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TurnstileWidgetList>?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetsList({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -51,13 +51,13 @@ return await execute(
   },
   onError: AccountsTurnstileWidgetCreateError.fromResponse,
 );
- } 
+}
 /// Create a Turnstile Widget
 ///
 /// Lists challenge widgets.
 ///
 /// `POST /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, required AccountsTurnstileWidgetCreateRequest body, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, required AccountsTurnstileWidgetCreateRequest body, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -96,13 +96,13 @@ return await execute(
   },
   onError: AccountsTurnstileWidgetCreateError.fromResponse,
 );
- } 
+}
 /// Turnstile Widget Details
 ///
 /// Show a single challenge widget configuration.
 ///
 /// `GET /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetGet({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetGet({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,13 +119,13 @@ return await execute(
   },
   onError: AccountsTurnstileWidgetCreateError.fromResponse,
 );
- } 
+}
 /// Update a Turnstile Widget
 ///
 /// Update the configuration of a widget.
 ///
 /// `PUT /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetUpdate({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetUpdate({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,13 +144,13 @@ return await execute(
   },
   onError: AccountsTurnstileWidgetCreateError.fromResponse,
 );
- } 
+}
 /// Delete a Turnstile Widget
 ///
 /// Destroy a Turnstile Widget.
 ///
 /// `DELETE /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetDelete({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetDelete({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -167,7 +167,7 @@ return await execute(
   },
   onError: AccountsTurnstileWidgetCreateError.fromResponse,
 );
- } 
+}
 /// Rotate Secret for a Turnstile Widget
 ///
 /// Generate a new secret key for this widget. If `invalidate_immediately`
@@ -177,7 +177,7 @@ return await execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/challenges/widgets/{sitekey}/rotate_secret`
-Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetRotateSecret({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetRotateSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TurnstileWidgetDetail?, AccountsTurnstileWidgetCreateError>> accountsTurnstileWidgetRotateSecret({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetRotateSecretRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -196,5 +196,5 @@ return await execute(
   },
   onError: AccountsTurnstileWidgetCreateError.fromResponse,
 );
- } 
- }
+}
+}

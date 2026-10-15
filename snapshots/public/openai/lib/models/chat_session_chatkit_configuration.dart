@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_session_automatic_thread_titling.dart';import 'package:pub_openai/models/chat_session_file_upload.dart';import 'package:pub_openai/models/chat_session_history.dart';/// ChatKit configuration for the session.
 @immutable final class ChatSessionChatkitConfiguration {const ChatSessionChatkitConfiguration({required this.automaticThreadTitling, required this.fileUpload, required this.history, });
 
-factory ChatSessionChatkitConfiguration.fromJson(Map<String, dynamic> json) { return ChatSessionChatkitConfiguration(
+factory ChatSessionChatkitConfiguration.fromJson(Map<String, dynamic> json) {return ChatSessionChatkitConfiguration(
   automaticThreadTitling: ChatSessionAutomaticThreadTitling.fromJson(json['automatic_thread_titling'] as Map<String, dynamic>),
   fileUpload: ChatSessionFileUpload.fromJson(json['file_upload'] as Map<String, dynamic>),
   history: ChatSessionHistory.fromJson(json['history'] as Map<String, dynamic>),
-); }
+);}
 
 /// Automatic thread titling preferences.
 final ChatSessionAutomaticThreadTitling automaticThreadTitling;
@@ -19,19 +19,19 @@ final ChatSessionFileUpload fileUpload;
 /// History retention configuration.
 final ChatSessionHistory history;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'automatic_thread_titling': automaticThreadTitling.toJson(),
   'file_upload': fileUpload.toJson(),
   'history': history.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_thread_titling') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_thread_titling') &&
       json.containsKey('file_upload') &&
-      json.containsKey('history'); } 
-ChatSessionChatkitConfiguration copyWith({ChatSessionAutomaticThreadTitling? automaticThreadTitling, ChatSessionFileUpload? fileUpload, ChatSessionHistory? history, }) { return ChatSessionChatkitConfiguration(
+      json.containsKey('history');}
+ChatSessionChatkitConfiguration copyWith({ChatSessionAutomaticThreadTitling? automaticThreadTitling, ChatSessionFileUpload? fileUpload, ChatSessionHistory? history, }) {return ChatSessionChatkitConfiguration(
   automaticThreadTitling: automaticThreadTitling ?? this.automaticThreadTitling,
   fileUpload: fileUpload ?? this.fileUpload,
   history: history ?? this.history,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatSessionChatkitConfiguration &&
           automaticThreadTitling == other.automaticThreadTitling &&
@@ -42,4 +42,4 @@ ChatSessionChatkitConfiguration copyWith({ChatSessionAutomaticThreadTitling? aut
 
 @override String toString() => 'ChatSessionChatkitConfiguration(automaticThreadTitling: $automaticThreadTitling, fileUpload: $fileUpload, history: $history)';
 
- }
+}

@@ -12,7 +12,7 @@ final class Api20100401ConnectAppApi with ApiExecutor {const Api20100401ConnectA
 /// Fetch an instance of a connect-app
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json`
-Future<ApiResult<AccountConnectApp, Never>> fetchConnectApp({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountConnectApp, Never>> fetchConnectApp({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ return await execute(
     return AccountConnectApp.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update a connect-app with the specified parameters
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json`
-Future<ApiResult<AccountConnectApp, Never>> updateConnectApp({required String accountSid, required String sid, UpdateConnectAppRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountConnectApp, Never>> updateConnectApp({required String accountSid, required String sid, UpdateConnectAppRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -65,11 +65,11 @@ return await execute(
     return AccountConnectApp.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an instance of a connect-app
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/ConnectApps/{Sid}.json`
-Future<ApiResult<void, Never>> deleteConnectApp({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteConnectApp({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -82,11 +82,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of connect-apps belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/ConnectApps.json`
-Future<ApiResult<ListConnectAppResponse, Never>> listConnectApp({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListConnectAppResponse, Never>> listConnectApp({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -115,5 +115,5 @@ return await execute(
     return ListConnectAppResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -10,7 +10,7 @@ final class CollectionsApi with ApiExecutor {const CollectionsApi(this.apiConfig
 @override final ApiConfig apiConfig;
 
 /// `POST /anything/collectionsContainingNull`
-Future<ApiResult<CollectionsContainingNullResponse, Never>> collectionsContainingNull({CollectionsContainingNullRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CollectionsContainingNullResponse, Never>> collectionsContainingNull({CollectionsContainingNullRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,5 +27,5 @@ return await execute(
     return CollectionsContainingNullResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

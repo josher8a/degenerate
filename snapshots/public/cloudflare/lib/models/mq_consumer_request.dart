@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';sealed class MqConsumerRequestType {const MqConsumerRequestType();
 
-factory MqConsumerRequestType.fromJson(String json) { return switch (json) {
+factory MqConsumerRequestType.fromJson(String json) {return switch (json) {
   'http_pull' => httpPull,
   'worker' => worker,
   _ => MqConsumerRequestType$Unknown(json),
-}; }
+};}
 
 static const MqConsumerRequestType httpPull = MqConsumerRequestType$httpPull._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is MqConsumerRequestType$Unknown;
 
- }
+}
 @immutable final class MqConsumerRequestType$httpPull extends MqConsumerRequestType {const MqConsumerRequestType$httpPull._();
 
 @override String get value => 'http_pull';
@@ -31,7 +31,7 @@ bool get isUnknown => this is MqConsumerRequestType$Unknown;
 
 @override String toString() => 'MqConsumerRequestType(http_pull)';
 
- }
+}
 @immutable final class MqConsumerRequestType$worker extends MqConsumerRequestType {const MqConsumerRequestType$worker._();
 
 @override String get value => 'worker';
@@ -42,7 +42,7 @@ bool get isUnknown => this is MqConsumerRequestType$Unknown;
 
 @override String toString() => 'MqConsumerRequestType(worker)';
 
- }
+}
 @immutable final class MqConsumerRequestType$Unknown extends MqConsumerRequestType {const MqConsumerRequestType$Unknown(this.value);
 
 @override final String value;
@@ -53,22 +53,22 @@ bool get isUnknown => this is MqConsumerRequestType$Unknown;
 
 @override String toString() => 'MqConsumerRequestType($value)';
 
- }
+}
 /// Request body for creating or updating a consumer
 sealed class MqConsumerRequest {const MqConsumerRequest();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory MqConsumerRequest.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory MqConsumerRequest.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'http_pull' => MqConsumerRequestHttpPull.fromJson(json),
   'worker' => MqConsumerRequestWorker.fromJson(json),
   _ => MqConsumerRequest$Unknown(json),
-}; }
+};}
 
 /// Build the `http_pull` variant.
-factory MqConsumerRequest.httpPull({MqQueueName? deadLetterQueue, MqHttpConsumerRequestSettings? settings, }) { return MqConsumerRequestHttpPull(MqHttpConsumerRequest(type: 'http_pull', deadLetterQueue: deadLetterQueue, settings: settings)); }
+factory MqConsumerRequest.httpPull({MqQueueName? deadLetterQueue, MqHttpConsumerRequestSettings? settings, }) {return MqConsumerRequestHttpPull(MqHttpConsumerRequest(type: 'http_pull', deadLetterQueue: deadLetterQueue, settings: settings));}
 
 /// Build the `worker` variant.
-factory MqConsumerRequest.worker({required MqScriptName scriptName, MqQueueName? deadLetterQueue, MqWorkerConsumerRequestSettings? settings, }) { return MqConsumerRequestWorker(MqWorkerConsumerRequest(type: 'worker', deadLetterQueue: deadLetterQueue, scriptName: scriptName, settings: settings)); }
+factory MqConsumerRequest.worker({required MqScriptName scriptName, MqQueueName? deadLetterQueue, MqWorkerConsumerRequestSettings? settings, }) {return MqConsumerRequestWorker(MqWorkerConsumerRequest(type: 'worker', deadLetterQueue: deadLetterQueue, scriptName: scriptName, settings: settings));}
 
 /// The discriminator value identifying this variant.
 MqConsumerRequestType get type;
@@ -78,15 +78,15 @@ bool get isUnknown => this is MqConsumerRequest$Unknown;
 
 /// Shared by all variants of this union.
 MqQueueName? get deadLetterQueue;
-R when<R>({required R Function(MqConsumerRequestHttpPull) httpPull, required R Function(MqConsumerRequestWorker) worker, required R Function(MqConsumerRequest$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(MqConsumerRequestHttpPull) httpPull, required R Function(MqConsumerRequestWorker) worker, required R Function(MqConsumerRequest$Unknown) unknown, }) {return switch (this) {
   final MqConsumerRequestHttpPull v => httpPull(v),
   final MqConsumerRequestWorker v => worker(v),
   final MqConsumerRequest$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class MqConsumerRequestHttpPull extends MqConsumerRequest {const MqConsumerRequestHttpPull(this.mqHttpConsumerRequest);
 
-factory MqConsumerRequestHttpPull.fromJson(Map<String, dynamic> json) { return MqConsumerRequestHttpPull(MqHttpConsumerRequest.fromJson(json)); }
+factory MqConsumerRequestHttpPull.fromJson(Map<String, dynamic> json) {return MqConsumerRequestHttpPull(MqHttpConsumerRequest.fromJson(json));}
 
 final MqHttpConsumerRequest mqHttpConsumerRequest;
 
@@ -94,10 +94,10 @@ final MqHttpConsumerRequest mqHttpConsumerRequest;
 
 @override Map<String, dynamic> toJson() => {...mqHttpConsumerRequest.toJson(), 'type': type.toJson()};
 
-MqConsumerRequestHttpPull copyWith({MqQueueName? Function()? deadLetterQueue, MqHttpConsumerRequestSettings? Function()? settings, }) { return MqConsumerRequestHttpPull(mqHttpConsumerRequest.copyWith(
+MqConsumerRequestHttpPull copyWith({MqQueueName? Function()? deadLetterQueue, MqHttpConsumerRequestSettings? Function()? settings, }) {return MqConsumerRequestHttpPull(mqHttpConsumerRequest.copyWith(
   deadLetterQueue: deadLetterQueue,
   settings: settings,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is MqConsumerRequestHttpPull && mqHttpConsumerRequest == other.mqHttpConsumerRequest;
 
@@ -107,10 +107,10 @@ MqConsumerRequestHttpPull copyWith({MqQueueName? Function()? deadLetterQueue, Mq
 
 @override MqQueueName? get deadLetterQueue => mqHttpConsumerRequest.deadLetterQueue;
 
- }
+}
 @immutable final class MqConsumerRequestWorker extends MqConsumerRequest {const MqConsumerRequestWorker(this.mqWorkerConsumerRequest);
 
-factory MqConsumerRequestWorker.fromJson(Map<String, dynamic> json) { return MqConsumerRequestWorker(MqWorkerConsumerRequest.fromJson(json)); }
+factory MqConsumerRequestWorker.fromJson(Map<String, dynamic> json) {return MqConsumerRequestWorker(MqWorkerConsumerRequest.fromJson(json));}
 
 final MqWorkerConsumerRequest mqWorkerConsumerRequest;
 
@@ -118,11 +118,11 @@ final MqWorkerConsumerRequest mqWorkerConsumerRequest;
 
 @override Map<String, dynamic> toJson() => {...mqWorkerConsumerRequest.toJson(), 'type': type.toJson()};
 
-MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) { return MqConsumerRequestWorker(mqWorkerConsumerRequest.copyWith(
+MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) {return MqConsumerRequestWorker(mqWorkerConsumerRequest.copyWith(
   deadLetterQueue: deadLetterQueue,
   scriptName: scriptName,
   settings: settings,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is MqConsumerRequestWorker && mqWorkerConsumerRequest == other.mqWorkerConsumerRequest;
 
@@ -132,7 +132,7 @@ MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqSc
 
 @override MqQueueName? get deadLetterQueue => mqWorkerConsumerRequest.deadLetterQueue;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class MqConsumerRequest$Unknown extends MqConsumerRequest {MqConsumerRequest$Unknown(this.json);
@@ -154,4 +154,4 @@ late final MqQueueName? _deadLetterQueue = json['dead_letter_queue'] != null ? M
 
 @override MqQueueName? get deadLetterQueue => _deadLetterQueue;
 
- }
+}

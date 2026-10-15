@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Refer to the [developer documentation](https://developers.cloudflare.com/workers-ai/features/markdown-conversion/) for more information.
 @immutable final class ZonesContentConverterRequest {const ZonesContentConverterRequest({required this.id, required this.value, });
 
-factory ZonesContentConverterRequest.fromJson(Map<String, dynamic> json) { return ZonesContentConverterRequest(
+factory ZonesContentConverterRequest.fromJson(Map<String, dynamic> json) {return ZonesContentConverterRequest(
   id: json['id'],
   value: ZonesContentConverterValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// ID of the zone setting.
 /// 
@@ -19,16 +19,16 @@ final dynamic id;
 /// Value of the zone setting.
 final ZonesContentConverterValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesContentConverterRequest copyWith({dynamic Function()? id, ZonesContentConverterValue? value, }) { return ZonesContentConverterRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesContentConverterRequest copyWith({dynamic Function()? id, ZonesContentConverterValue? value, }) {return ZonesContentConverterRequest(
   id: id != null ? id() : this.id,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesContentConverterRequest &&
           id == other.id &&
@@ -38,4 +38,4 @@ ZonesContentConverterRequest copyWith({dynamic Function()? id, ZonesContentConve
 
 @override String toString() => 'ZonesContentConverterRequest(id: $id, value: $value)';
 
- }
+}

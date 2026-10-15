@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/issue/issue_labels.dart';import 'package:pub_github_rest_3_1/models/issue/issue_labels_variant2.dart';import 'package:pub_github_rest_3_1/models/issue/issue_pull_request.dart';import 'package:pub_github_rest_3_1/models/issue/issue_state_reason.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_field_value.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';/// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
 @immutable final class Issue {const Issue({required this.user, required this.nodeId, required this.url, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.number, required this.state, required this.title, required this.id, required this.labels, required this.assignee, required this.milestone, required this.locked, required this.closedAt, required this.createdAt, required this.updatedAt, required this.comments, this.activeLockReason = const Omittable.absent(), this.pullRequest, this.assignees, this.body = const Omittable.absent(), this.stateReason = const Omittable.absent(), this.issueFieldValues, this.closedBy = const Omittable.absent(), this.bodyHtml, this.bodyText, this.timelineUrl, this.type = const Omittable.absent(), this.repository, this.performedViaGithubApp = const Omittable.absent(), this.authorAssociation, this.reactions, this.subIssuesSummary, this.parentIssueUrl = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.issueDependenciesSummary, this.draft, });
 
-factory Issue.fromJson(Map<String, dynamic> json) { return Issue(
+factory Issue.fromJson(Map<String, dynamic> json) {return Issue(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -45,7 +45,7 @@ factory Issue.fromJson(Map<String, dynamic> json) { return Issue(
   pinnedComment: json.containsKey('pinned_comment') ? Omittable(json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   issueDependenciesSummary: json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null,
   issueFieldValues: (json['issue_field_values'] as List<dynamic>?)?.map((e) => IssueFieldValue.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int id;
 
@@ -136,7 +136,7 @@ final IssueDependenciesSummary? issueDependenciesSummary;
 
 final List<IssueFieldValue>? issueFieldValues;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -177,8 +177,8 @@ Map<String, dynamic> toJson() { return {
   if (pinnedComment.isPresent) 'pinned_comment': pinnedComment.value?.toJson(),
   if (issueDependenciesSummary != null) 'issue_dependencies_summary': issueDependenciesSummary?.toJson(),
   if (issueFieldValues != null) 'issue_field_values': issueFieldValues?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('repository_url') && json['repository_url'] is String &&
@@ -197,8 +197,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? number, String? state, Omittable<IssueStateReason?>? stateReason, String? title, Omittable<String?>? body, SimpleUser? Function()? user, List<IssueLabels>? labels, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Milestone? Function()? milestone, bool? locked, Omittable<String?>? activeLockReason, int? comments, IssuePullRequest? Function()? pullRequest, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, bool? Function()? draft, Omittable<SimpleUser?>? closedBy, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, Omittable<IssueType?>? type, Repository? Function()? repository, Omittable<Integration?>? performedViaGithubApp, AuthorAssociation? Function()? authorAssociation, ReactionRollup? Function()? reactions, SubIssuesSummary? Function()? subIssuesSummary, Omittable<Uri?>? parentIssueUrl, Omittable<IssueComment?>? pinnedComment, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, }) { return Issue(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? number, String? state, Omittable<IssueStateReason?>? stateReason, String? title, Omittable<String?>? body, SimpleUser? Function()? user, List<IssueLabels>? labels, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Milestone? Function()? milestone, bool? locked, Omittable<String?>? activeLockReason, int? comments, IssuePullRequest? Function()? pullRequest, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, bool? Function()? draft, Omittable<SimpleUser?>? closedBy, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, Omittable<IssueType?>? type, Repository? Function()? repository, Omittable<Integration?>? performedViaGithubApp, AuthorAssociation? Function()? authorAssociation, ReactionRollup? Function()? reactions, SubIssuesSummary? Function()? subIssuesSummary, Omittable<Uri?>? parentIssueUrl, Omittable<IssueComment?>? pinnedComment, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, }) {return Issue(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -239,7 +239,7 @@ Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? l
   pinnedComment: pinnedComment ?? this.pinnedComment,
   issueDependenciesSummary: issueDependenciesSummary != null ? issueDependenciesSummary() : this.issueDependenciesSummary,
   issueFieldValues: issueFieldValues != null ? issueFieldValues() : this.issueFieldValues,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Issue &&
           id == other.id &&
@@ -287,4 +287,4 @@ Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? l
 
 @override String toString() => 'Issue(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  repositoryUrl: $repositoryUrl,\n  labelsUrl: $labelsUrl,\n  commentsUrl: $commentsUrl,\n  eventsUrl: $eventsUrl,\n  htmlUrl: $htmlUrl,\n  number: $number,\n  state: $state,\n  stateReason: $stateReason,\n  title: $title,\n  body: $body,\n  user: $user,\n  labels: $labels,\n  assignee: $assignee,\n  assignees: $assignees,\n  milestone: $milestone,\n  locked: $locked,\n  activeLockReason: $activeLockReason,\n  comments: $comments,\n  pullRequest: $pullRequest,\n  closedAt: $closedAt,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  draft: $draft,\n  closedBy: $closedBy,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  timelineUrl: $timelineUrl,\n  type: $type,\n  repository: $repository,\n  performedViaGithubApp: $performedViaGithubApp,\n  authorAssociation: $authorAssociation,\n  reactions: $reactions,\n  subIssuesSummary: $subIssuesSummary,\n  parentIssueUrl: $parentIssueUrl,\n  pinnedComment: $pinnedComment,\n  issueDependenciesSummary: $issueDependenciesSummary,\n  issueFieldValues: $issueFieldValues,\n)';
 
- }
+}

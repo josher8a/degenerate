@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow/portal_flows_flow_type.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_after_completion.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_subscription_cancel.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_subscription_update.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_subscription_update_confirm.dart';/// 
 @immutable final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletion, required this.type, this.subscriptionCancel = const Omittable.absent(), this.subscriptionUpdate = const Omittable.absent(), this.subscriptionUpdateConfirm = const Omittable.absent(), });
 
-factory PortalFlowsFlow.fromJson(Map<String, dynamic> json) { return PortalFlowsFlow(
+factory PortalFlowsFlow.fromJson(Map<String, dynamic> json) {return PortalFlowsFlow(
   afterCompletion: PortalFlowsFlowAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),
   subscriptionCancel: json.containsKey('subscription_cancel') ? Omittable(json['subscription_cancel'] != null ? PortalFlowsFlowSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   subscriptionUpdate: json.containsKey('subscription_update') ? Omittable(json['subscription_update'] != null ? PortalFlowsFlowSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   subscriptionUpdateConfirm: json.containsKey('subscription_update_confirm') ? Omittable(json['subscription_update_confirm'] != null ? PortalFlowsFlowSubscriptionUpdateConfirm.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: PortalFlowsFlowType.fromJson(json['type'] as String),
-); }
+);}
 
 final PortalFlowsFlowAfterCompletion afterCompletion;
 
@@ -26,22 +26,22 @@ final Omittable<PortalFlowsFlowSubscriptionUpdateConfirm?> subscriptionUpdateCon
 /// Type of flow that the customer will go through.
 final PortalFlowsFlowType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after_completion': afterCompletion.toJson(),
   if (subscriptionCancel.isPresent) 'subscription_cancel': subscriptionCancel.value?.toJson(),
   if (subscriptionUpdate.isPresent) 'subscription_update': subscriptionUpdate.value?.toJson(),
   if (subscriptionUpdateConfirm.isPresent) 'subscription_update_confirm': subscriptionUpdateConfirm.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after_completion') &&
-      json.containsKey('type'); } 
-PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, Omittable<PortalFlowsFlowSubscriptionCancel?>? subscriptionCancel, Omittable<PortalFlowsFlowSubscriptionUpdate?>? subscriptionUpdate, Omittable<PortalFlowsFlowSubscriptionUpdateConfirm?>? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) { return PortalFlowsFlow(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('after_completion') &&
+      json.containsKey('type');}
+PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, Omittable<PortalFlowsFlowSubscriptionCancel?>? subscriptionCancel, Omittable<PortalFlowsFlowSubscriptionUpdate?>? subscriptionUpdate, Omittable<PortalFlowsFlowSubscriptionUpdateConfirm?>? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) {return PortalFlowsFlow(
   afterCompletion: afterCompletion ?? this.afterCompletion,
   subscriptionCancel: subscriptionCancel ?? this.subscriptionCancel,
   subscriptionUpdate: subscriptionUpdate ?? this.subscriptionUpdate,
   subscriptionUpdateConfirm: subscriptionUpdateConfirm ?? this.subscriptionUpdateConfirm,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFlowsFlow &&
           afterCompletion == other.afterCompletion &&
@@ -54,4 +54,4 @@ PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, Omitt
 
 @override String toString() => 'PortalFlowsFlow(afterCompletion: $afterCompletion, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate, subscriptionUpdateConfirm: $subscriptionUpdateConfirm, type: $type)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_messages2.dart';@immutable final class ResponseCommon51 {const ResponseCommon51({required this.errors, required this.messages, required this.success, });
 
-factory ResponseCommon51.fromJson(Map<String, dynamic> json) { return ResponseCommon51(
+factory ResponseCommon51.fromJson(Map<String, dynamic> json) {return ResponseCommon51(
   errors: (json['errors'] as List<dynamic>).map((e) => PagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => PagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<PagesMessages2> errors;
 
@@ -18,19 +18,19 @@ final List<PagesMessages2> messages;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon51 copyWith({List<PagesMessages2>? errors, List<PagesMessages2>? messages, bool? success, }) { return ResponseCommon51(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon51 copyWith({List<PagesMessages2>? errors, List<PagesMessages2>? messages, bool? success, }) {return ResponseCommon51(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon51 &&
           listEquals(errors, other.errors) &&
@@ -41,4 +41,4 @@ ResponseCommon51 copyWith({List<PagesMessages2>? errors, List<PagesMessages2>? m
 
 @override String toString() => 'ResponseCommon51(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

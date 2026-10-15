@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/link.dart';@immutable final class PullRequestLinks {const PullRequestLinks({required this.comments, required this.commits, required this.statuses, required this.html, required this.issue, required this.reviewComments, required this.reviewComment, required this.self, });
 
-factory PullRequestLinks.fromJson(Map<String, dynamic> json) { return PullRequestLinks(
+factory PullRequestLinks.fromJson(Map<String, dynamic> json) {return PullRequestLinks(
   comments: Link.fromJson(json['comments'] as Map<String, dynamic>),
   commits: Link.fromJson(json['commits'] as Map<String, dynamic>),
   statuses: Link.fromJson(json['statuses'] as Map<String, dynamic>),
@@ -12,7 +12,7 @@ factory PullRequestLinks.fromJson(Map<String, dynamic> json) { return PullReques
   reviewComments: Link.fromJson(json['review_comments'] as Map<String, dynamic>),
   reviewComment: Link.fromJson(json['review_comment'] as Map<String, dynamic>),
   self: Link.fromJson(json['self'] as Map<String, dynamic>),
-); }
+);}
 
 final Link comments;
 
@@ -30,7 +30,7 @@ final Link reviewComment;
 
 final Link self;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': comments.toJson(),
   'commits': commits.toJson(),
   'statuses': statuses.toJson(),
@@ -39,16 +39,16 @@ Map<String, dynamic> toJson() { return {
   'review_comments': reviewComments.toJson(),
   'review_comment': reviewComment.toJson(),
   'self': self.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comments') &&
       json.containsKey('commits') &&
       json.containsKey('statuses') &&
       json.containsKey('html') &&
       json.containsKey('issue') &&
       json.containsKey('review_comments') &&
       json.containsKey('review_comment') &&
-      json.containsKey('self'); } 
-PullRequestLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? html, Link? issue, Link? reviewComments, Link? reviewComment, Link? self, }) { return PullRequestLinks(
+      json.containsKey('self');}
+PullRequestLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? html, Link? issue, Link? reviewComments, Link? reviewComment, Link? self, }) {return PullRequestLinks(
   comments: comments ?? this.comments,
   commits: commits ?? this.commits,
   statuses: statuses ?? this.statuses,
@@ -57,7 +57,7 @@ PullRequestLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? 
   reviewComments: reviewComments ?? this.reviewComments,
   reviewComment: reviewComment ?? this.reviewComment,
   self: self ?? this.self,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestLinks &&
           comments == other.comments &&
@@ -73,4 +73,4 @@ PullRequestLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? 
 
 @override String toString() => 'PullRequestLinks(comments: $comments, commits: $commits, statuses: $statuses, html: $html, issue: $issue, reviewComments: $reviewComments, reviewComment: $reviewComment, self: $self)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_indicator_feed_item.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_schemas_messages2.dart';@immutable final class CustomIndicatorFeedsIndicatorFeedResponse {const CustomIndicatorFeedsIndicatorFeedResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory CustomIndicatorFeedsIndicatorFeedResponse.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedResponse(
+factory CustomIndicatorFeedsIndicatorFeedResponse.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsIndicatorFeedResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CustomIndicatorFeedsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CustomIndicatorFeedsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => CustomIndicatorFeedsIndicatorFeedItem.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<CustomIndicatorFeedsSchemasMessages2> errors;
 
@@ -22,21 +22,21 @@ final bool success;
 /// Example: `[{created_on: 2023-05-12T12:21:56.777653Z, description: user specified description 1, id: 1, modified_on: 2023-06-18T03:13:34.123321Z, name: user_specified_name_1}, {created_on: 2023-05-21T21:43:52.867525Z, description: User specified description 2, id: 2, modified_on: 2023-06-28T18:46:18.764425Z, name: user_specified_name_2}]`
 final List<CustomIndicatorFeedsIndicatorFeedItem>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-CustomIndicatorFeedsIndicatorFeedResponse copyWith({List<CustomIndicatorFeedsSchemasMessages2>? errors, List<CustomIndicatorFeedsSchemasMessages2>? messages, bool? success, List<CustomIndicatorFeedsIndicatorFeedItem>? Function()? result, }) { return CustomIndicatorFeedsIndicatorFeedResponse(
+      json.containsKey('success') && json['success'] is bool;}
+CustomIndicatorFeedsIndicatorFeedResponse copyWith({List<CustomIndicatorFeedsSchemasMessages2>? errors, List<CustomIndicatorFeedsSchemasMessages2>? messages, bool? success, List<CustomIndicatorFeedsIndicatorFeedItem>? Function()? result, }) {return CustomIndicatorFeedsIndicatorFeedResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsIndicatorFeedResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ CustomIndicatorFeedsIndicatorFeedResponse copyWith({List<CustomIndicatorFeedsSch
 
 @override String toString() => 'CustomIndicatorFeedsIndicatorFeedResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

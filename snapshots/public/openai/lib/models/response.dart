@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class ResponseObject {const ResponseObject();
 
-factory ResponseObject.fromJson(String json) { return switch (json) {
+factory ResponseObject.fromJson(String json) {return switch (json) {
   'response' => response,
   _ => ResponseObject$Unknown(json),
-}; }
+};}
 
 static const ResponseObject response = ResponseObject$response._();
 
 static const List<ResponseObject> values = [response];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response' => 'response',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseObject$Unknown; } 
+bool get isUnknown {return this is ResponseObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() response, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() response, required W Function(String value) $unknown, }) {return switch (this) {
       ResponseObject$response() => response(),
       ResponseObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? response, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? response, W Function(String value)? $unknown, }) {return switch (this) {
       ResponseObject$response() => response != null ? response() : orElse(value),
       ResponseObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResponseObject($value)';
 
- }
+}
 @immutable final class ResponseObject$response extends ResponseObject {const ResponseObject$response._();
 
 @override String get value => 'response';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response'.hashCode;
 
- }
+}
 @immutable final class ResponseObject$Unknown extends ResponseObject {const ResponseObject$Unknown(this.value);
 
 @override final String value;
@@ -54,13 +54,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the response generation. One of `completed`, `failed`,
 /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
 /// 
 sealed class ResponseStatus {const ResponseStatus();
 
-factory ResponseStatus.fromJson(String json) { return switch (json) {
+factory ResponseStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'failed' => failed,
   'in_progress' => inProgress,
@@ -68,7 +68,7 @@ factory ResponseStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'incomplete' => incomplete,
   _ => ResponseStatus$Unknown(json),
-}; }
+};}
 
 static const ResponseStatus completed = ResponseStatus$completed._();
 
@@ -85,9 +85,9 @@ static const ResponseStatus incomplete = ResponseStatus$incomplete._();
 static const List<ResponseStatus> values = [completed, failed, inProgress, cancelled, queued, incomplete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'completed' => 'completed',
   'failed' => 'failed',
   'in_progress' => 'inProgress',
@@ -95,11 +95,11 @@ String get name { return switch (value) {
   'queued' => 'queued',
   'incomplete' => 'incomplete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseStatus$Unknown; } 
+bool get isUnknown {return this is ResponseStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() completed, required W Function() failed, required W Function() inProgress, required W Function() cancelled, required W Function() queued, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() completed, required W Function() failed, required W Function() inProgress, required W Function() cancelled, required W Function() queued, required W Function() incomplete, required W Function(String value) $unknown, }) {return switch (this) {
       ResponseStatus$completed() => completed(),
       ResponseStatus$failed() => failed(),
       ResponseStatus$inProgress() => inProgress(),
@@ -107,9 +107,9 @@ W when<W>({required W Function() completed, required W Function() failed, requir
       ResponseStatus$queued() => queued(),
       ResponseStatus$incomplete() => incomplete(),
       ResponseStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? failed, W Function()? inProgress, W Function()? cancelled, W Function()? queued, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? failed, W Function()? inProgress, W Function()? cancelled, W Function()? queued, W Function()? incomplete, W Function(String value)? $unknown, }) {return switch (this) {
       ResponseStatus$completed() => completed != null ? completed() : orElse(value),
       ResponseStatus$failed() => failed != null ? failed() : orElse(value),
       ResponseStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
@@ -117,10 +117,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
       ResponseStatus$queued() => queued != null ? queued() : orElse(value),
       ResponseStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
       ResponseStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResponseStatus($value)';
 
- }
+}
 @immutable final class ResponseStatus$completed extends ResponseStatus {const ResponseStatus$completed._();
 
 @override String get value => 'completed';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$failed extends ResponseStatus {const ResponseStatus$failed._();
 
 @override String get value => 'failed';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$inProgress extends ResponseStatus {const ResponseStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$cancelled extends ResponseStatus {const ResponseStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$queued extends ResponseStatus {const ResponseStatus$queued._();
 
 @override String get value => 'queued';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$incomplete extends ResponseStatus {const ResponseStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class ResponseStatus$Unknown extends ResponseStatus {const ResponseStatus$Unknown(this.value);
 
 @override final String value;
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Example:
 /// ```json
 /// {
@@ -247,7 +247,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 /// ```
 @immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.model, required this.tools, required this.toolChoice, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, required this.parallelToolCalls, this.topLogprobs = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), this.previousResponseId = const Omittable.absent(), this.reasoning = const Omittable.absent(), this.background = const Omittable.absent(), this.maxOutputTokens = const Omittable.absent(), this.maxToolCalls = const Omittable.absent(), this.text, this.prompt = const Omittable.absent(), this.truncation = const Omittable.absent(), this.status, this.completedAt = const Omittable.absent(), this.outputText = const Omittable.absent(), this.usage, this.conversation = const Omittable.absent(), });
 
-factory Response.fromJson(Map<String, dynamic> json) { return Response(
+factory Response.fromJson(Map<String, dynamic> json) {return Response(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   topLogprobs: json.containsKey('top_logprobs') ? Omittable(json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null) : const Omittable.absent(),
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
@@ -281,7 +281,7 @@ factory Response.fromJson(Map<String, dynamic> json) { return Response(
   usage: json['usage'] != null ? ResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   parallelToolCalls: json['parallel_tool_calls'] as bool,
   conversation: json.containsKey('conversation') ? Omittable(json['conversation'] != null ? Conversation2.fromJson(json['conversation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -444,7 +444,7 @@ final bool parallelToolCalls;
 
 final Omittable<Conversation2?> conversation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'metadata': metadata,
   if (topLogprobs.isPresent) 'top_logprobs': topLogprobs.value,
   'temperature': temperature,
@@ -478,8 +478,8 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
   'parallel_tool_calls': parallelToolCalls,
   if (conversation.isPresent) 'conversation': conversation.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('metadata') &&
       json.containsKey('temperature') && (json['temperature'] == null || json['temperature'] is num) &&
       json.containsKey('top_p') && (json['top_p'] == null || json['top_p'] is num) &&
       json.containsKey('model') &&
@@ -492,9 +492,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('metad
       json.containsKey('incomplete_details') &&
       json.containsKey('output') &&
       json.containsKey('instructions') &&
-      json.containsKey('parallel_tool_calls') && json['parallel_tool_calls'] is bool; } 
+      json.containsKey('parallel_tool_calls') && json['parallel_tool_calls'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final topLogprobs$ = topLogprobs.value;
 if (topLogprobs$ != null) {
   if (topLogprobs$ < 0) { errors.add('topLogprobs: must be >= 0'); }
@@ -514,8 +514,8 @@ final safetyIdentifier$ = safetyIdentifier;
 if (safetyIdentifier$ != null) {
   if (safetyIdentifier$.runes.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
 }
-return errors; } 
-Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<PromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Omittable<Prompt?>? prompt, Omittable<Truncation?>? truncation, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, Omittable<double?>? completedAt, ResponseError? Function()? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, Omittable<String?>? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Omittable<Conversation2?>? conversation, }) { return Response(
+return errors;}
+Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<PromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Omittable<Prompt?>? prompt, Omittable<Truncation?>? truncation, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, Omittable<double?>? completedAt, ResponseError? Function()? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, Omittable<String?>? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Omittable<Conversation2?>? conversation, }) {return Response(
   metadata: metadata != null ? metadata() : this.metadata,
   topLogprobs: topLogprobs ?? this.topLogprobs,
   temperature: temperature != null ? temperature() : this.temperature,
@@ -549,7 +549,7 @@ Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? t
   usage: usage != null ? usage() : this.usage,
   parallelToolCalls: parallelToolCalls ?? this.parallelToolCalls,
   conversation: conversation ?? this.conversation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Response &&
           metadata == other.metadata &&
@@ -590,4 +590,4 @@ Response copyWith({Map<String, String>? Function()? metadata, Omittable<int?>? t
 
 @override String toString() => 'Response(\n  metadata: $metadata,\n  topLogprobs: $topLogprobs,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n  safetyIdentifier: $safetyIdentifier,\n  promptCacheKey: $promptCacheKey,\n  serviceTier: $serviceTier,\n  promptCacheRetention: $promptCacheRetention,\n  previousResponseId: $previousResponseId,\n  model: $model,\n  reasoning: $reasoning,\n  background: $background,\n  maxOutputTokens: $maxOutputTokens,\n  maxToolCalls: $maxToolCalls,\n  text: $text,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  prompt: $prompt,\n  truncation: $truncation,\n  id: $id,\n  object: $object,\n  status: $status,\n  createdAt: $createdAt,\n  completedAt: $completedAt,\n  error: $error,\n  incompleteDetails: $incompleteDetails,\n  output: $output,\n  instructions: $instructions,\n  outputText: $outputText,\n  usage: $usage,\n  parallelToolCalls: $parallelToolCalls,\n  conversation: $conversation,\n)';
 
- }
+}

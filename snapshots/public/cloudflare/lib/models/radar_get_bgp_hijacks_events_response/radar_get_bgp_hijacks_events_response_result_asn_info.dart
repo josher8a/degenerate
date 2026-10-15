@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpHijacksEventsResponseResultAsnInfo {const RadarGetBgpHijacksEventsResponseResultAsnInfo({required this.asn, required this.countryCode, required this.orgName, });
 
-factory RadarGetBgpHijacksEventsResponseResultAsnInfo.fromJson(Map<String, dynamic> json) { return RadarGetBgpHijacksEventsResponseResultAsnInfo(
+factory RadarGetBgpHijacksEventsResponseResultAsnInfo.fromJson(Map<String, dynamic> json) {return RadarGetBgpHijacksEventsResponseResultAsnInfo(
   asn: (json['asn'] as num).toInt(),
   countryCode: json['country_code'] as String,
   orgName: json['org_name'] as String,
-); }
+);}
 
 final int asn;
 
@@ -15,19 +15,19 @@ final String countryCode;
 
 final String orgName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'country_code': countryCode,
   'org_name': orgName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('country_code') && json['country_code'] is String &&
-      json.containsKey('org_name') && json['org_name'] is String; } 
-RadarGetBgpHijacksEventsResponseResultAsnInfo copyWith({int? asn, String? countryCode, String? orgName, }) { return RadarGetBgpHijacksEventsResponseResultAsnInfo(
+      json.containsKey('org_name') && json['org_name'] is String;}
+RadarGetBgpHijacksEventsResponseResultAsnInfo copyWith({int? asn, String? countryCode, String? orgName, }) {return RadarGetBgpHijacksEventsResponseResultAsnInfo(
   asn: asn ?? this.asn,
   countryCode: countryCode ?? this.countryCode,
   orgName: orgName ?? this.orgName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpHijacksEventsResponseResultAsnInfo &&
           asn == other.asn &&
@@ -38,4 +38,4 @@ RadarGetBgpHijacksEventsResponseResultAsnInfo copyWith({int? asn, String? countr
 
 @override String toString() => 'RadarGetBgpHijacksEventsResponseResultAsnInfo(asn: $asn, countryCode: $countryCode, orgName: $orgName)';
 
- }
+}

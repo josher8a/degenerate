@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_colos_response2.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_messages2.dart';@immutable final class DexEndpointsListColosResponse {const DexEndpointsListColosResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory DexEndpointsListColosResponse.fromJson(Map<String, dynamic> json) { return DexEndpointsListColosResponse(
+factory DexEndpointsListColosResponse.fromJson(Map<String, dynamic> json) {return DexEndpointsListColosResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringColosResponse2.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<DigitalExperienceMonitoringMessages2> errors;
 
@@ -22,21 +22,21 @@ final bool success;
 /// array of colos.
 final List<DigitalExperienceMonitoringColosResponse2>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DexEndpointsListColosResponse copyWith({List<DigitalExperienceMonitoringMessages2>? errors, List<DigitalExperienceMonitoringMessages2>? messages, bool? success, List<DigitalExperienceMonitoringColosResponse2>? Function()? result, }) { return DexEndpointsListColosResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DexEndpointsListColosResponse copyWith({List<DigitalExperienceMonitoringMessages2>? errors, List<DigitalExperienceMonitoringMessages2>? messages, bool? success, List<DigitalExperienceMonitoringColosResponse2>? Function()? result, }) {return DexEndpointsListColosResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DexEndpointsListColosResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ DexEndpointsListColosResponse copyWith({List<DigitalExperienceMonitoringMessages
 
 @override String toString() => 'DexEndpointsListColosResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/authorization_method.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/issuing_authorization_token.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_amount_details.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fraud_challenge.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fuel_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_merchant_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_pending_request.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_request.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_treasury.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_verification_data.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class IssuingAuthorizationObject {const IssuingAuthorizationObject();
 
-factory IssuingAuthorizationObject.fromJson(String json) { return switch (json) {
+factory IssuingAuthorizationObject.fromJson(String json) {return switch (json) {
   'issuing.authorization' => issuingAuthorization,
   _ => IssuingAuthorizationObject$Unknown(json),
-}; }
+};}
 
 static const IssuingAuthorizationObject issuingAuthorization = IssuingAuthorizationObject$issuingAuthorization._();
 
 static const List<IssuingAuthorizationObject> values = [issuingAuthorization];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issuing.authorization' => 'issuingAuthorization',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingAuthorizationObject$Unknown; } 
+bool get isUnknown {return this is IssuingAuthorizationObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issuingAuthorization, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issuingAuthorization, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingAuthorizationObject$issuingAuthorization() => issuingAuthorization(),
       IssuingAuthorizationObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingAuthorization, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingAuthorization, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingAuthorizationObject$issuingAuthorization() => issuingAuthorization != null ? issuingAuthorization() : orElse(value),
       IssuingAuthorizationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingAuthorizationObject($value)';
 
- }
+}
 @immutable final class IssuingAuthorizationObject$issuingAuthorization extends IssuingAuthorizationObject {const IssuingAuthorizationObject$issuingAuthorization._();
 
 @override String get value => 'issuing.authorization';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingA
 
 @override int get hashCode => 'issuing.authorization'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationObject$Unknown extends IssuingAuthorizationObject {const IssuingAuthorizationObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingA
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The current status of the authorization in its lifecycle.
 sealed class IssuingAuthorizationStatus {const IssuingAuthorizationStatus();
 
-factory IssuingAuthorizationStatus.fromJson(String json) { return switch (json) {
+factory IssuingAuthorizationStatus.fromJson(String json) {return switch (json) {
   'closed' => closed,
   'expired' => expired,
   'pending' => pending,
   'reversed' => reversed,
   _ => IssuingAuthorizationStatus$Unknown(json),
-}; }
+};}
 
 static const IssuingAuthorizationStatus closed = IssuingAuthorizationStatus$closed._();
 
@@ -76,36 +76,36 @@ static const IssuingAuthorizationStatus reversed = IssuingAuthorizationStatus$re
 static const List<IssuingAuthorizationStatus> values = [closed, expired, pending, reversed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'closed' => 'closed',
   'expired' => 'expired',
   'pending' => 'pending',
   'reversed' => 'reversed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingAuthorizationStatus$Unknown; } 
+bool get isUnknown {return this is IssuingAuthorizationStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() closed, required W Function() expired, required W Function() pending, required W Function() reversed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() closed, required W Function() expired, required W Function() pending, required W Function() reversed, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingAuthorizationStatus$closed() => closed(),
       IssuingAuthorizationStatus$expired() => expired(),
       IssuingAuthorizationStatus$pending() => pending(),
       IssuingAuthorizationStatus$reversed() => reversed(),
       IssuingAuthorizationStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? expired, W Function()? pending, W Function()? reversed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? expired, W Function()? pending, W Function()? reversed, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingAuthorizationStatus$closed() => closed != null ? closed() : orElse(value),
       IssuingAuthorizationStatus$expired() => expired != null ? expired() : orElse(value),
       IssuingAuthorizationStatus$pending() => pending != null ? pending() : orElse(value),
       IssuingAuthorizationStatus$reversed() => reversed != null ? reversed() : orElse(value),
       IssuingAuthorizationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingAuthorizationStatus($value)';
 
- }
+}
 @immutable final class IssuingAuthorizationStatus$closed extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$closed._();
 
 @override String get value => 'closed';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => 'closed'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationStatus$expired extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$expired._();
 
 @override String get value => 'expired';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationStatus$pending extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$pending._();
 
 @override String get value => 'pending';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationStatus$reversed extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$reversed._();
 
 @override String get value => 'reversed';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => 'reversed'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationStatus$Unknown extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$Unknown(this.value);
 
 @override final String value;
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// When an [issued card](https://docs.stripe.com/issuing) is used to make a purchase, an Issuing `Authorization`
 /// object is created. [Authorizations](https://docs.stripe.com/issuing/purchases/authorizations) must be approved for the
 /// purchase to be completed successfully.
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, 
 /// Related guide: [Issued card authorizations](https://docs.stripe.com/issuing/purchases/authorizations)
 @immutable final class IssuingAuthorization {const IssuingAuthorization({required this.amount, required this.approved, required this.authorizationMethod, required this.balanceTransactions, required this.card, required this.created, required this.currency, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, required this.object, required this.requestHistory, required this.status, required this.transactions, required this.verificationData, this.amountDetails = const Omittable.absent(), this.cardholder = const Omittable.absent(), this.fleet = const Omittable.absent(), this.fraudChallenges = const Omittable.absent(), this.fuel = const Omittable.absent(), this.networkData = const Omittable.absent(), this.pendingRequest = const Omittable.absent(), this.token = const Omittable.absent(), this.treasury = const Omittable.absent(), this.verifiedByFraudChallenge = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory IssuingAuthorization.fromJson(Map<String, dynamic> json) { return IssuingAuthorization(
+factory IssuingAuthorization.fromJson(Map<String, dynamic> json) {return IssuingAuthorization(
   amount: (json['amount'] as num).toInt(),
   amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   approved: json['approved'] as bool,
@@ -189,7 +189,7 @@ factory IssuingAuthorization.fromJson(Map<String, dynamic> json) { return Issuin
   verificationData: IssuingAuthorizationVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>),
   verifiedByFraudChallenge: json.containsKey('verified_by_fraud_challenge') ? Omittable(json['verified_by_fraud_challenge'] as bool?) : const Omittable.absent(),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The total amount that was authorized or rejected. This amount is in `currency` and in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal). `amount` should be the same as `merchant_amount`, unless `currency` and `merchant_currency` are different.
 final int amount;
@@ -275,7 +275,7 @@ final Omittable<bool?> verifiedByFraudChallenge;
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
 final Omittable<String?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (amountDetails.isPresent) 'amount_details': amountDetails.value?.toJson(),
   'approved': approved,
@@ -305,8 +305,8 @@ Map<String, dynamic> toJson() { return {
   'verification_data': verificationData.toJson(),
   if (verifiedByFraudChallenge.isPresent) 'verified_by_fraud_challenge': verifiedByFraudChallenge.value,
   if (wallet.isPresent) 'wallet': wallet.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('approved') && json['approved'] is bool &&
       json.containsKey('authorization_method') &&
       json.containsKey('balance_transactions') &&
@@ -323,16 +323,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('request_history') &&
       json.containsKey('status') &&
       json.containsKey('transactions') &&
-      json.containsKey('verification_data'); } 
+      json.containsKey('verification_data');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final wallet$ = wallet.value;
 if (wallet$ != null) {
   if (wallet$.runes.length > 5000) { errors.add('wallet: length must be <= 5000'); }
 }
-return errors; } 
-IssuingAuthorization copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, bool? approved, AuthorizationMethod? authorizationMethod, List<BalanceTransaction>? balanceTransactions, IssuingCard? card, Omittable<Cardholder?>? cardholder, int? created, String? currency, Omittable<IssuingAuthorizationFleetData?>? fleet, Omittable<List<IssuingAuthorizationFraudChallenge>?>? fraudChallenges, Omittable<IssuingAuthorizationFuelData?>? fuel, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, Omittable<IssuingAuthorizationNetworkData?>? networkData, IssuingAuthorizationObject? object, Omittable<IssuingAuthorizationPendingRequest?>? pendingRequest, List<IssuingAuthorizationRequest>? requestHistory, IssuingAuthorizationStatus? status, Omittable<IssuingAuthorizationToken?>? token, List<IssuingTransaction>? transactions, Omittable<IssuingAuthorizationTreasury?>? treasury, IssuingAuthorizationVerificationData? verificationData, Omittable<bool?>? verifiedByFraudChallenge, Omittable<String?>? wallet, }) { return IssuingAuthorization(
+return errors;}
+IssuingAuthorization copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, bool? approved, AuthorizationMethod? authorizationMethod, List<BalanceTransaction>? balanceTransactions, IssuingCard? card, Omittable<Cardholder?>? cardholder, int? created, String? currency, Omittable<IssuingAuthorizationFleetData?>? fleet, Omittable<List<IssuingAuthorizationFraudChallenge>?>? fraudChallenges, Omittable<IssuingAuthorizationFuelData?>? fuel, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, Omittable<IssuingAuthorizationNetworkData?>? networkData, IssuingAuthorizationObject? object, Omittable<IssuingAuthorizationPendingRequest?>? pendingRequest, List<IssuingAuthorizationRequest>? requestHistory, IssuingAuthorizationStatus? status, Omittable<IssuingAuthorizationToken?>? token, List<IssuingTransaction>? transactions, Omittable<IssuingAuthorizationTreasury?>? treasury, IssuingAuthorizationVerificationData? verificationData, Omittable<bool?>? verifiedByFraudChallenge, Omittable<String?>? wallet, }) {return IssuingAuthorization(
   amount: amount ?? this.amount,
   amountDetails: amountDetails ?? this.amountDetails,
   approved: approved ?? this.approved,
@@ -362,7 +362,7 @@ IssuingAuthorization copyWith({int? amount, Omittable<IssuingAuthorizationAmount
   verificationData: verificationData ?? this.verificationData,
   verifiedByFraudChallenge: verifiedByFraudChallenge ?? this.verifiedByFraudChallenge,
   wallet: wallet ?? this.wallet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorization &&
           amount == other.amount &&
@@ -400,4 +400,4 @@ IssuingAuthorization copyWith({int? amount, Omittable<IssuingAuthorizationAmount
 
 @override String toString() => 'IssuingAuthorization(\n  amount: $amount,\n  amountDetails: $amountDetails,\n  approved: $approved,\n  authorizationMethod: $authorizationMethod,\n  balanceTransactions: $balanceTransactions,\n  card: $card,\n  cardholder: $cardholder,\n  created: $created,\n  currency: $currency,\n  fleet: $fleet,\n  fraudChallenges: $fraudChallenges,\n  fuel: $fuel,\n  id: $id,\n  livemode: $livemode,\n  merchantAmount: $merchantAmount,\n  merchantCurrency: $merchantCurrency,\n  merchantData: $merchantData,\n  metadata: $metadata,\n  networkData: $networkData,\n  object: $object,\n  pendingRequest: $pendingRequest,\n  requestHistory: $requestHistory,\n  status: $status,\n  token: $token,\n  transactions: $transactions,\n  treasury: $treasury,\n  verificationData: $verificationData,\n  verifiedByFraudChallenge: $verifiedByFraudChallenge,\n  wallet: $wallet,\n)';
 
- }
+}

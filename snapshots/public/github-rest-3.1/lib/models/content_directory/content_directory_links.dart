@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentDirectoryLinks {const ContentDirectoryLinks({required this.git, required this.html, required this.self, });
 
-factory ContentDirectoryLinks.fromJson(Map<String, dynamic> json) { return ContentDirectoryLinks(
+factory ContentDirectoryLinks.fromJson(Map<String, dynamic> json) {return ContentDirectoryLinks(
   git: json['git'] != null ? Uri.parse(json['git'] as String) : null,
   html: json['html'] != null ? Uri.parse(json['html'] as String) : null,
   self: Uri.parse(json['self'] as String),
-); }
+);}
 
 final Uri? git;
 
@@ -15,19 +15,19 @@ final Uri? html;
 
 final Uri self;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'git': git?.toString(),
   'html': html?.toString(),
   'self': self.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('git') && (json['git'] == null || json['git'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('git') && (json['git'] == null || json['git'] is String) &&
       json.containsKey('html') && (json['html'] == null || json['html'] is String) &&
-      json.containsKey('self') && json['self'] is String; } 
-ContentDirectoryLinks copyWith({Uri? Function()? git, Uri? Function()? html, Uri? self, }) { return ContentDirectoryLinks(
+      json.containsKey('self') && json['self'] is String;}
+ContentDirectoryLinks copyWith({Uri? Function()? git, Uri? Function()? html, Uri? self, }) {return ContentDirectoryLinks(
   git: git != null ? git() : this.git,
   html: html != null ? html() : this.html,
   self: self ?? this.self,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ContentDirectoryLinks &&
           git == other.git &&
@@ -38,4 +38,4 @@ ContentDirectoryLinks copyWith({Uri? Function()? git, Uri? Function()? html, Uri
 
 @override String toString() => 'ContentDirectoryLinks(git: $git, html: $html, self: $self)';
 
- }
+}

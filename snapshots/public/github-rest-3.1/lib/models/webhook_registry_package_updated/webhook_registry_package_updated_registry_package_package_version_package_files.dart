@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles {const WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles({this.contentType, this.createdAt, this.downloadUrl, this.id, this.md5 = const Omittable.absent(), this.name, this.sha1 = const Omittable.absent(), this.sha256, this.size, this.state, this.updatedAt, });
 
-factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles(
+factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles(
   contentType: json['content_type'] as String?,
   createdAt: json['created_at'] as String?,
   downloadUrl: json['download_url'] as String?,
@@ -15,7 +15,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles.f
   size: json['size'] != null ? (json['size'] as num).toInt() : null,
   state: json['state'] as String?,
   updatedAt: json['updated_at'] as String?,
-); }
+);}
 
 final String? contentType;
 
@@ -39,7 +39,7 @@ final String? state;
 
 final String? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content_type': ?contentType,
   'created_at': ?createdAt,
   'download_url': ?downloadUrl,
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   'size': ?size,
   'state': ?state,
   'updated_at': ?updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_type', 'created_at', 'download_url', 'id', 'md5', 'name', 'sha1', 'sha256', 'size', 'state', 'updated_at'}.contains(key)); } 
-WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles copyWith({String? Function()? contentType, String? Function()? createdAt, String? Function()? downloadUrl, int? Function()? id, Omittable<String?>? md5, String? Function()? name, Omittable<String?>? sha1, String? Function()? sha256, int? Function()? size, String? Function()? state, String? Function()? updatedAt, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'content_type', 'created_at', 'download_url', 'id', 'md5', 'name', 'sha1', 'sha256', 'size', 'state', 'updated_at'}.contains(key));}
+WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles copyWith({String? Function()? contentType, String? Function()? createdAt, String? Function()? downloadUrl, int? Function()? id, Omittable<String?>? md5, String? Function()? name, Omittable<String?>? sha1, String? Function()? sha256, int? Function()? size, String? Function()? state, String? Function()? updatedAt, }) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles(
   contentType: contentType != null ? contentType() : this.contentType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
@@ -65,7 +65,7 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles copyWith(
   size: size != null ? size() : this.size,
   state: state != null ? state() : this.state,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles &&
           contentType == other.contentType &&
@@ -84,4 +84,4 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles copyWith(
 
 @override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles(\n  contentType: $contentType,\n  createdAt: $createdAt,\n  downloadUrl: $downloadUrl,\n  id: $id,\n  md5: $md5,\n  name: $name,\n  sha1: $sha1,\n  sha256: $sha256,\n  size: $size,\n  state: $state,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /proposals/{proposalId}`
-Future<ApiResult<AssistantTrackedProposal, Never>> getProposal({required String proposalId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AssistantTrackedProposal, Never>> getProposal({required String proposalId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,9 +25,9 @@ return await execute(
     return AssistantTrackedProposal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /beneficiaries`
-Future<ApiResult<Kind, Never>> createBeneficiary({required CreateBeneficiaryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Kind, Never>> createBeneficiary({required CreateBeneficiaryRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,9 +44,9 @@ return await execute(
     return Kind.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /actions`
-Future<ApiResult<void, Never>> submitAction({required Action body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> submitAction({required Action body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,5 +61,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

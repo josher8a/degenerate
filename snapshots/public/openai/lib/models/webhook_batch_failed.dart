@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class WebhookBatchFailedType {const WebhookBatchFailedType();
 
-factory WebhookBatchFailedType.fromJson(String json) { return switch (json) {
+factory WebhookBatchFailedType.fromJson(String json) {return switch (json) {
   'batch.failed' => batchFailed,
   _ => WebhookBatchFailedType$Unknown(json),
-}; }
+};}
 
 static const WebhookBatchFailedType batchFailed = WebhookBatchFailedType$batchFailed._();
 
 static const List<WebhookBatchFailedType> values = [batchFailed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'batch.failed' => 'batchFailed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookBatchFailedType$Unknown; } 
+bool get isUnknown {return this is WebhookBatchFailedType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() batchFailed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() batchFailed, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookBatchFailedType$batchFailed() => batchFailed(),
       WebhookBatchFailedType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? batchFailed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? batchFailed, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookBatchFailedType$batchFailed() => batchFailed != null ? batchFailed() : orElse(value),
       WebhookBatchFailedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookBatchFailedType($value)';
 
- }
+}
 @immutable final class WebhookBatchFailedType$batchFailed extends WebhookBatchFailedType {const WebhookBatchFailedType$batchFailed._();
 
 @override String get value => 'batch.failed';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? batchFai
 
 @override int get hashCode => 'batch.failed'.hashCode;
 
- }
+}
 @immutable final class WebhookBatchFailedType$Unknown extends WebhookBatchFailedType {const WebhookBatchFailedType$Unknown(this.value);
 
 @override final String value;
@@ -54,18 +54,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? batchFai
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Sent when a batch API request has failed.
 /// 
 @immutable final class WebhookBatchFailed {const WebhookBatchFailed({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
-factory WebhookBatchFailed.fromJson(Map<String, dynamic> json) { return WebhookBatchFailed(
+factory WebhookBatchFailed.fromJson(Map<String, dynamic> json) {return WebhookBatchFailed(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
   data: WebhookBatchCancelledData.fromJson(json['data'] as Map<String, dynamic>),
   object: json['object'] != null ? WebhookBatchCancelledObject.fromJson(json['object'] as String) : null,
   type: WebhookBatchFailedType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The Unix timestamp (in seconds) of when the batch API request failed.
 /// 
@@ -87,24 +87,24 @@ final WebhookBatchCancelledObject? object;
 /// 
 final WebhookBatchFailedType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'data': data.toJson(),
   if (object != null) 'object': object?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type'); } 
-WebhookBatchFailed copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject? Function()? object, WebhookBatchFailedType? type, }) { return WebhookBatchFailed(
+      json.containsKey('type');}
+WebhookBatchFailed copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject? Function()? object, WebhookBatchFailedType? type, }) {return WebhookBatchFailed(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookBatchFailed &&
           createdAt == other.createdAt &&
@@ -117,4 +117,4 @@ WebhookBatchFailed copyWith({int? createdAt, String? id, WebhookBatchCancelledDa
 
 @override String toString() => 'WebhookBatchFailed(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';
 
- }
+}

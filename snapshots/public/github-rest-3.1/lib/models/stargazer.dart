@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Stargazer
 @immutable final class Stargazer {const Stargazer({required this.starredAt, required this.user, });
 
-factory Stargazer.fromJson(Map<String, dynamic> json) { return Stargazer(
+factory Stargazer.fromJson(Map<String, dynamic> json) {return Stargazer(
   starredAt: DateTime.parse(json['starred_at'] as String),
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DateTime starredAt;
 
 final SimpleUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'starred_at': starredAt.toIso8601String(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('starred_at') && json['starred_at'] is String &&
-      json.containsKey('user'); } 
-Stargazer copyWith({DateTime? starredAt, SimpleUser? Function()? user, }) { return Stargazer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('starred_at') && json['starred_at'] is String &&
+      json.containsKey('user');}
+Stargazer copyWith({DateTime? starredAt, SimpleUser? Function()? user, }) {return Stargazer(
   starredAt: starredAt ?? this.starredAt,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Stargazer &&
           starredAt == other.starredAt &&
@@ -32,4 +32,4 @@ Stargazer copyWith({DateTime? starredAt, SimpleUser? Function()? user, }) { retu
 
 @override String toString() => 'Stargazer(starredAt: $starredAt, user: $user)';
 
- }
+}

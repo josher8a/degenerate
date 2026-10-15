@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_source/preview_deployment_setting.dart';@immutable final class SourceConfig {const SourceConfig({this.deploymentsEnabled, this.owner, this.ownerId, this.pathExcludes, this.pathIncludes, this.prCommentsEnabled, this.previewBranchExcludes, this.previewBranchIncludes, this.previewDeploymentSetting, this.productionBranch, this.productionDeploymentsEnabled, this.repoId, this.repoName, });
 
-factory SourceConfig.fromJson(Map<String, dynamic> json) { return SourceConfig(
+factory SourceConfig.fromJson(Map<String, dynamic> json) {return SourceConfig(
   deploymentsEnabled: json['deployments_enabled'] as bool?,
   owner: json['owner'] as String?,
   ownerId: json['owner_id'] as String?,
@@ -17,7 +17,7 @@ factory SourceConfig.fromJson(Map<String, dynamic> json) { return SourceConfig(
   productionDeploymentsEnabled: json['production_deployments_enabled'] as bool?,
   repoId: json['repo_id'] as String?,
   repoName: json['repo_name'] as String?,
-); }
+);}
 
 /// Whether to enable automatic deployments when pushing to the source repository.
 /// When disabled, no deployments (production or preview) will be triggered automatically.
@@ -70,7 +70,7 @@ final String? repoId;
 /// Example: `'my-repo'`
 final String? repoName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deployments_enabled': ?deploymentsEnabled,
   'owner': ?owner,
   'owner_id': ?ownerId,
@@ -84,9 +84,9 @@ Map<String, dynamic> toJson() { return {
   'production_deployments_enabled': ?productionDeploymentsEnabled,
   'repo_id': ?repoId,
   'repo_name': ?repoName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deployments_enabled', 'owner', 'owner_id', 'path_excludes', 'path_includes', 'pr_comments_enabled', 'preview_branch_excludes', 'preview_branch_includes', 'preview_deployment_setting', 'production_branch', 'production_deployments_enabled', 'repo_id', 'repo_name'}.contains(key)); } 
-SourceConfig copyWith({bool? Function()? deploymentsEnabled, String? Function()? owner, String? Function()? ownerId, List<String>? Function()? pathExcludes, List<String>? Function()? pathIncludes, bool? Function()? prCommentsEnabled, List<String>? Function()? previewBranchExcludes, List<String>? Function()? previewBranchIncludes, PreviewDeploymentSetting? Function()? previewDeploymentSetting, String? Function()? productionBranch, bool? Function()? productionDeploymentsEnabled, String? Function()? repoId, String? Function()? repoName, }) { return SourceConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'deployments_enabled', 'owner', 'owner_id', 'path_excludes', 'path_includes', 'pr_comments_enabled', 'preview_branch_excludes', 'preview_branch_includes', 'preview_deployment_setting', 'production_branch', 'production_deployments_enabled', 'repo_id', 'repo_name'}.contains(key));}
+SourceConfig copyWith({bool? Function()? deploymentsEnabled, String? Function()? owner, String? Function()? ownerId, List<String>? Function()? pathExcludes, List<String>? Function()? pathIncludes, bool? Function()? prCommentsEnabled, List<String>? Function()? previewBranchExcludes, List<String>? Function()? previewBranchIncludes, PreviewDeploymentSetting? Function()? previewDeploymentSetting, String? Function()? productionBranch, bool? Function()? productionDeploymentsEnabled, String? Function()? repoId, String? Function()? repoName, }) {return SourceConfig(
   deploymentsEnabled: deploymentsEnabled != null ? deploymentsEnabled() : this.deploymentsEnabled,
   owner: owner != null ? owner() : this.owner,
   ownerId: ownerId != null ? ownerId() : this.ownerId,
@@ -100,7 +100,7 @@ SourceConfig copyWith({bool? Function()? deploymentsEnabled, String? Function()?
   productionDeploymentsEnabled: productionDeploymentsEnabled != null ? productionDeploymentsEnabled() : this.productionDeploymentsEnabled,
   repoId: repoId != null ? repoId() : this.repoId,
   repoName: repoName != null ? repoName() : this.repoName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SourceConfig &&
           deploymentsEnabled == other.deploymentsEnabled &&
@@ -121,4 +121,4 @@ SourceConfig copyWith({bool? Function()? deploymentsEnabled, String? Function()?
 
 @override String toString() => 'SourceConfig(\n  deploymentsEnabled: $deploymentsEnabled,\n  owner: $owner,\n  ownerId: $ownerId,\n  pathExcludes: $pathExcludes,\n  pathIncludes: $pathIncludes,\n  prCommentsEnabled: $prCommentsEnabled,\n  previewBranchExcludes: $previewBranchExcludes,\n  previewBranchIncludes: $previewBranchIncludes,\n  previewDeploymentSetting: $previewDeploymentSetting,\n  productionBranch: $productionBranch,\n  productionDeploymentsEnabled: $productionDeploymentsEnabled,\n  repoId: $repoId,\n  repoName: $repoName,\n)';
 
- }
+}

@@ -7,11 +7,11 @@ const DnsRecordsDnsRecordBatchPutRequest({this.dnsRecordsDnsRecordBatchPatchDnsR
 const DnsRecordsDnsRecordBatchPutRequest._({required this.rawValue, required this.dnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutData, required this.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DnsRecordsDnsRecordBatchPutRequest.fromJson(Object? json) { return DnsRecordsDnsRecordBatchPutRequest._(
+factory DnsRecordsDnsRecordBatchPutRequest.fromJson(Object? json) {return DnsRecordsDnsRecordBatchPutRequest._(
   rawValue: Omittable(json),
   dnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutData: parseAnyOfVariant<DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutData>(json, (value) => OneOf8.parse(value, fromA: (v) => DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutDataDnsRecordsARecord.fromJson(v as Map<String, dynamic>), fromB: (v) => DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutDataDnsRecordsAaaaRecord.fromJson(v as Map<String, dynamic>), fromC: (v) => DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutDataDnsRecordsCnameRecord.fromJson(v as Map<String, dynamic>), fromD: (v) => DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutDataDnsRecordsMxRecord.fromJson(v as Map<String, dynamic>), fromE: (v) => DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutDataDnsRecordsNsRecord.fromJson(v as Map<String, dynamic>), fromF: (v) => DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutDataDnsRecordsOpenpgpkeyRecord.fromJson(v as Map<String, dynamic>), fromG: (v) => DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutDataDnsRecordsPtrRecord.fromJson(v as Map<String, dynamic>), fromH: (v) => DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithoutDataDnsRecordsTxtRecord.fromJson(v as Map<String, dynamic>),)),
   dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest: parseAnyOfVariant<DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest>(json, DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.fromJson),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPutRequest(${toJson()})';
 
- }
+}

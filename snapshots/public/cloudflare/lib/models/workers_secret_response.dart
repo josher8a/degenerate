@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_key/workers_binding_kind_secret_key_format.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_key_response.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_key_response/usages.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_text_response.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';sealed class WorkersSecretResponseType {const WorkersSecretResponseType();
 
-factory WorkersSecretResponseType.fromJson(String json) { return switch (json) {
+factory WorkersSecretResponseType.fromJson(String json) {return switch (json) {
   'secret_key' => secretKey,
   'secret_text' => secretText,
   _ => WorkersSecretResponseType$Unknown(json),
-}; }
+};}
 
 static const WorkersSecretResponseType secretKey = WorkersSecretResponseType$secretKey._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is WorkersSecretResponseType$Unknown;
 
- }
+}
 @immutable final class WorkersSecretResponseType$secretKey extends WorkersSecretResponseType {const WorkersSecretResponseType$secretKey._();
 
 @override String get value => 'secret_key';
@@ -31,7 +31,7 @@ bool get isUnknown => this is WorkersSecretResponseType$Unknown;
 
 @override String toString() => 'WorkersSecretResponseType(secret_key)';
 
- }
+}
 @immutable final class WorkersSecretResponseType$secretText extends WorkersSecretResponseType {const WorkersSecretResponseType$secretText._();
 
 @override String get value => 'secret_text';
@@ -42,7 +42,7 @@ bool get isUnknown => this is WorkersSecretResponseType$Unknown;
 
 @override String toString() => 'WorkersSecretResponseType(secret_text)';
 
- }
+}
 @immutable final class WorkersSecretResponseType$Unknown extends WorkersSecretResponseType {const WorkersSecretResponseType$Unknown(this.value);
 
 @override final String value;
@@ -53,22 +53,22 @@ bool get isUnknown => this is WorkersSecretResponseType$Unknown;
 
 @override String toString() => 'WorkersSecretResponseType($value)';
 
- }
+}
 /// A secret value accessible through a binding.
 sealed class WorkersSecretResponse {const WorkersSecretResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory WorkersSecretResponse.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory WorkersSecretResponse.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'secret_key' => WorkersSecretResponseSecretKey.fromJson(json),
   'secret_text' => WorkersSecretResponseSecretText.fromJson(json),
   _ => WorkersSecretResponse$Unknown(json),
-}; }
+};}
 
 /// Build the `secret_key` variant.
-factory WorkersSecretResponse.secretKey({required Map<String,dynamic> algorithm, required WorkersBindingKindSecretKeyFormat format, required WorkersBindingName name, required List<Usages> usages, }) { return WorkersSecretResponseSecretKey(WorkersBindingKindSecretKeyResponse(type: 'secret_key', algorithm: algorithm, format: format, name: name, usages: usages)); }
+factory WorkersSecretResponse.secretKey({required Map<String,dynamic> algorithm, required WorkersBindingKindSecretKeyFormat format, required WorkersBindingName name, required List<Usages> usages, }) {return WorkersSecretResponseSecretKey(WorkersBindingKindSecretKeyResponse(type: 'secret_key', algorithm: algorithm, format: format, name: name, usages: usages));}
 
 /// Build the `secret_text` variant.
-factory WorkersSecretResponse.secretText({required WorkersBindingName name}) { return WorkersSecretResponseSecretText(WorkersBindingKindSecretTextResponse(type: 'secret_text', name: name)); }
+factory WorkersSecretResponse.secretText({required WorkersBindingName name}) {return WorkersSecretResponseSecretText(WorkersBindingKindSecretTextResponse(type: 'secret_text', name: name));}
 
 /// The discriminator value identifying this variant.
 WorkersSecretResponseType get type;
@@ -78,15 +78,15 @@ bool get isUnknown => this is WorkersSecretResponse$Unknown;
 
 /// Shared by all variants of this union.
 WorkersBindingName get name;
-R when<R>({required R Function(WorkersSecretResponseSecretKey) secretKey, required R Function(WorkersSecretResponseSecretText) secretText, required R Function(WorkersSecretResponse$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(WorkersSecretResponseSecretKey) secretKey, required R Function(WorkersSecretResponseSecretText) secretText, required R Function(WorkersSecretResponse$Unknown) unknown, }) {return switch (this) {
   final WorkersSecretResponseSecretKey v => secretKey(v),
   final WorkersSecretResponseSecretText v => secretText(v),
   final WorkersSecretResponse$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class WorkersSecretResponseSecretKey extends WorkersSecretResponse {const WorkersSecretResponseSecretKey(this.workersBindingKindSecretKeyResponse);
 
-factory WorkersSecretResponseSecretKey.fromJson(Map<String, dynamic> json) { return WorkersSecretResponseSecretKey(WorkersBindingKindSecretKeyResponse.fromJson(json)); }
+factory WorkersSecretResponseSecretKey.fromJson(Map<String, dynamic> json) {return WorkersSecretResponseSecretKey(WorkersBindingKindSecretKeyResponse.fromJson(json));}
 
 final WorkersBindingKindSecretKeyResponse workersBindingKindSecretKeyResponse;
 
@@ -94,12 +94,12 @@ final WorkersBindingKindSecretKeyResponse workersBindingKindSecretKeyResponse;
 
 @override Map<String, dynamic> toJson() => {...workersBindingKindSecretKeyResponse.toJson(), 'type': type.toJson()};
 
-WorkersSecretResponseSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersSecretResponseSecretKey(workersBindingKindSecretKeyResponse.copyWith(
+WorkersSecretResponseSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, WorkersBindingName? name, List<Usages>? usages, }) {return WorkersSecretResponseSecretKey(workersBindingKindSecretKeyResponse.copyWith(
   algorithm: algorithm,
   format: format,
   name: name,
   usages: usages,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is WorkersSecretResponseSecretKey && workersBindingKindSecretKeyResponse == other.workersBindingKindSecretKeyResponse;
 
@@ -109,10 +109,10 @@ WorkersSecretResponseSecretKey copyWith({Map<String,dynamic>? algorithm, Workers
 
 @override WorkersBindingName get name => workersBindingKindSecretKeyResponse.name;
 
- }
+}
 @immutable final class WorkersSecretResponseSecretText extends WorkersSecretResponse {const WorkersSecretResponseSecretText(this.workersBindingKindSecretTextResponse);
 
-factory WorkersSecretResponseSecretText.fromJson(Map<String, dynamic> json) { return WorkersSecretResponseSecretText(WorkersBindingKindSecretTextResponse.fromJson(json)); }
+factory WorkersSecretResponseSecretText.fromJson(Map<String, dynamic> json) {return WorkersSecretResponseSecretText(WorkersBindingKindSecretTextResponse.fromJson(json));}
 
 final WorkersBindingKindSecretTextResponse workersBindingKindSecretTextResponse;
 
@@ -120,9 +120,9 @@ final WorkersBindingKindSecretTextResponse workersBindingKindSecretTextResponse;
 
 @override Map<String, dynamic> toJson() => {...workersBindingKindSecretTextResponse.toJson(), 'type': type.toJson()};
 
-WorkersSecretResponseSecretText copyWith({WorkersBindingName? name}) { return WorkersSecretResponseSecretText(workersBindingKindSecretTextResponse.copyWith(
+WorkersSecretResponseSecretText copyWith({WorkersBindingName? name}) {return WorkersSecretResponseSecretText(workersBindingKindSecretTextResponse.copyWith(
   name: name,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is WorkersSecretResponseSecretText && workersBindingKindSecretTextResponse == other.workersBindingKindSecretTextResponse;
 
@@ -132,7 +132,7 @@ WorkersSecretResponseSecretText copyWith({WorkersBindingName? name}) { return Wo
 
 @override WorkersBindingName get name => workersBindingKindSecretTextResponse.name;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class WorkersSecretResponse$Unknown extends WorkersSecretResponse {WorkersSecretResponse$Unknown(this.json);
@@ -154,4 +154,4 @@ late final WorkersBindingName _name = WorkersBindingName.fromJson(json['name'] a
 
 @override WorkersBindingName get name => _name;
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/public_user_schema.dart';@immutable final class SessionSpaceSchema {const SessionSpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, required this.categories, required this.recurring, this.slug = const Omittable.absent(), this.shortDescription = const Omittable.absent(), this.image = const Omittable.absent(), this.content, });
 
-factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionSpaceSchema(
+factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) {return SessionSpaceSchema(
   author: PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>),
   title: json['title'] as String,
   slug: json.containsKey('slug') ? Omittable(json['slug'] as String?) : const Omittable.absent(),
@@ -15,7 +15,7 @@ factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionS
   recurring: json['recurring'] as String,
   image: json.containsKey('image') ? Omittable(json['image'] as String?) : const Omittable.absent(),
   content: json['content'] as String?,
-); }
+);}
 
 final PublicUserSchema author;
 
@@ -45,7 +45,7 @@ final String? content;
 /// The value of `content`, or its schema default when absent.
 String get contentOrDefault => content ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author.toJson(),
   'title': title,
   if (slug.isPresent) 'slug': slug.value,
@@ -57,16 +57,16 @@ Map<String, dynamic> toJson() { return {
   'recurring': recurring,
   if (image.isPresent) 'image': image.value,
   'content': ?content,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('date_created') && json['date_created'] is String &&
       json.containsKey('date_modified') && json['date_modified'] is String &&
       json.containsKey('subtitle') && json['subtitle'] is String &&
       json.containsKey('categories') &&
-      json.containsKey('recurring') && json['recurring'] is String; } 
+      json.containsKey('recurring') && json['recurring'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (title.runes.length > 255) { errors.add('title: length must be <= 255'); }
 if (subtitle.runes.length > 2000) { errors.add('subtitle: length must be <= 2000'); }
 final shortDescription$ = shortDescription.value;
@@ -78,8 +78,8 @@ final content$ = content;
 if (content$ != null) {
   if (content$.runes.length > 10000) { errors.add('content: length must be <= 10000'); }
 }
-return errors; } 
-SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String? Function()? content, }) { return SessionSpaceSchema(
+return errors;}
+SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String? Function()? content, }) {return SessionSpaceSchema(
   author: author ?? this.author,
   title: title ?? this.title,
   slug: slug ?? this.slug,
@@ -91,7 +91,7 @@ SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<
   recurring: recurring ?? this.recurring,
   image: image ?? this.image,
   content: content != null ? content() : this.content,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SessionSpaceSchema &&
           author == other.author &&
@@ -110,4 +110,4 @@ SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<
 
 @override String toString() => 'SessionSpaceSchema(\n  author: $author,\n  title: $title,\n  slug: $slug,\n  dateCreated: $dateCreated,\n  dateModified: $dateModified,\n  subtitle: $subtitle,\n  categories: $categories,\n  shortDescription: $shortDescription,\n  recurring: $recurring,\n  image: $image,\n  content: $content,\n)';
 
- }
+}

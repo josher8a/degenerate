@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Encoding of the audio stream. Currently only supports raw signed little-endian 16-bit PCM.
 sealed class WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding();
 
-factory WorkersAiPostRunCfDeepgramFluxRequestEncoding.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfDeepgramFluxRequestEncoding.fromJson(String json) {return switch (json) {
   'linear16' => linear16,
   _ => WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfDeepgramFluxRequestEncoding linear16 = WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16._();
 
 static const List<WorkersAiPostRunCfDeepgramFluxRequestEncoding> values = [linear16];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'linear16' => 'linear16',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown; } 
+bool get isUnknown {return this is WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() linear16, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() linear16, required W Function(String value) $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16() => linear16(),
       WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function(String value)? $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16() => linear16 != null ? linear16() : orElse(value),
       WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkersAiPostRunCfDeepgramFluxRequestEncoding($value)';
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16 extends WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16._();
 
 @override String get value => 'linear16';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'linear16'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown extends WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Opts out requests from the Deepgram Model Improvement Program. Refer to Deepgram Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip
 sealed class MipOptOut {const MipOptOut();
 
-factory MipOptOut.fromJson(String json) { return switch (json) {
+factory MipOptOut.fromJson(String json) {return switch (json) {
   'true' => $true,
   'false' => $false,
   _ => MipOptOut$Unknown(json),
-}; }
+};}
 
 static const MipOptOut $true = MipOptOut$$true._();
 
@@ -70,30 +70,30 @@ static const MipOptOut $false = MipOptOut$$false._();
 static const List<MipOptOut> values = [$true, $false];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'true' => r'$true',
   'false' => r'$false',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MipOptOut$Unknown; } 
+bool get isUnknown {return this is MipOptOut$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $true, required W Function() $false, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $true, required W Function() $false, required W Function(String value) $unknown, }) {return switch (this) {
       MipOptOut$$true() => $true(),
       MipOptOut$$false() => $false(),
       MipOptOut$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W Function()? $false, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W Function()? $false, W Function(String value)? $unknown, }) {return switch (this) {
       MipOptOut$$true() => $true != null ? $true() : orElse(value),
       MipOptOut$$false() => $false != null ? $false() : orElse(value),
       MipOptOut$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MipOptOut($value)';
 
- }
+}
 @immutable final class MipOptOut$$true extends MipOptOut {const MipOptOut$$true._();
 
 @override String get value => 'true';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W
 
 @override int get hashCode => 'true'.hashCode;
 
- }
+}
 @immutable final class MipOptOut$$false extends MipOptOut {const MipOptOut$$false._();
 
 @override String get value => 'false';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W
 
 @override int get hashCode => 'false'.hashCode;
 
- }
+}
 @immutable final class MipOptOut$Unknown extends MipOptOut {const MipOptOut$Unknown(this.value);
 
 @override final String value;
@@ -121,10 +121,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({required this.encoding, required this.sampleRate, this.eagerEotThreshold, this.eotThreshold, this.eotTimeoutMs, this.keyterm, this.mipOptOut, this.tag, });
 
-factory WorkersAiPostRunCfDeepgramFluxRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramFluxRequest(
+factory WorkersAiPostRunCfDeepgramFluxRequest.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: json['eager_eot_threshold'] as String?,
   encoding: WorkersAiPostRunCfDeepgramFluxRequestEncoding.fromJson(json['encoding'] as String),
   eotThreshold: json['eot_threshold'] as String?,
@@ -133,7 +133,7 @@ factory WorkersAiPostRunCfDeepgramFluxRequest.fromJson(Map<String, dynamic> json
   mipOptOut: json['mip_opt_out'] != null ? MipOptOut.fromJson(json['mip_opt_out'] as String) : null,
   sampleRate: json['sample_rate'] as String,
   tag: json['tag'] as String?,
-); }
+);}
 
 /// End-of-turn confidence required to fire an eager end-of-turn event. When set, enables EagerEndOfTurn and TurnResumed events. Valid Values 0.3 - 0.9.
 final String? eagerEotThreshold;
@@ -168,7 +168,7 @@ String get eotTimeoutMsOrDefault => eotTimeoutMs ?? '5000';
 /// The value of `mipOptOut`, or its schema default when absent.
 MipOptOut get mipOptOutOrDefault => mipOptOut ?? MipOptOut.fromJson('false');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'eager_eot_threshold': ?eagerEotThreshold,
   'encoding': encoding.toJson(),
   'eot_threshold': ?eotThreshold,
@@ -177,18 +177,18 @@ Map<String, dynamic> toJson() { return {
   if (mipOptOut != null) 'mip_opt_out': mipOptOut?.toJson(),
   'sample_rate': sampleRate,
   'tag': ?tag,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('encoding') &&
-      json.containsKey('sample_rate') && json['sample_rate'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('encoding') &&
+      json.containsKey('sample_rate') && json['sample_rate'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eotTimeoutMs$ = eotTimeoutMs;
 if (eotTimeoutMs$ != null) {
   if (!RegExp(r'^[0-9]+$').hasMatch(eotTimeoutMs$)) { errors.add(r'eotTimeoutMs: must match pattern ^[0-9]+$'); }
 }
 if (!RegExp(r'^[0-9]+$').hasMatch(sampleRate)) { errors.add(r'sampleRate: must match pattern ^[0-9]+$'); }
-return errors; } 
-WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String? Function()? eotThreshold, String? Function()? eotTimeoutMs, String? Function()? keyterm, MipOptOut? Function()? mipOptOut, String? sampleRate, String? Function()? tag, }) { return WorkersAiPostRunCfDeepgramFluxRequest(
+return errors;}
+WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String? Function()? eotThreshold, String? Function()? eotTimeoutMs, String? Function()? keyterm, MipOptOut? Function()? mipOptOut, String? sampleRate, String? Function()? tag, }) {return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: eagerEotThreshold != null ? eagerEotThreshold() : this.eagerEotThreshold,
   encoding: encoding ?? this.encoding,
   eotThreshold: eotThreshold != null ? eotThreshold() : this.eotThreshold,
@@ -197,7 +197,7 @@ WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThre
   mipOptOut: mipOptOut != null ? mipOptOut() : this.mipOptOut,
   sampleRate: sampleRate ?? this.sampleRate,
   tag: tag != null ? tag() : this.tag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfDeepgramFluxRequest &&
           eagerEotThreshold == other.eagerEotThreshold &&
@@ -213,4 +213,4 @@ WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThre
 
 @override String toString() => 'WorkersAiPostRunCfDeepgramFluxRequest(eagerEotThreshold: $eagerEotThreshold, encoding: $encoding, eotThreshold: $eotThreshold, eotTimeoutMs: $eotTimeoutMs, keyterm: $keyterm, mipOptOut: $mipOptOut, sampleRate: $sampleRate, tag: $tag)';
 
- }
+}

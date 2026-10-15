@@ -14,7 +14,7 @@ final class WorkersAiTextToSpeechApi with ApiExecutor {const WorkersAiTextToSpee
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAuraError>> workersAiPostWebsocketRunCfDeepgramAura({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAuraError>> workersAiPostWebsocketRunCfDeepgramAura({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,13 +28,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramAuraError.fromResponse,
 );
- } 
+}
 /// Open Websocket connection with @cf/deepgram/aura-1 model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-1 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1Error>> workersAiPostWebsocketRunCfDeepgramAura1({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1Error>> workersAiPostWebsocketRunCfDeepgramAura1({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -48,13 +48,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramAura1Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/deepgram/aura-1 model.
 ///
 /// Runs inference on the @cf/deepgram/aura-1 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura1Error>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura1Error>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -83,13 +83,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfDeepgramAura1Error.fromResponse,
 );
- } 
+}
 /// Open Websocket connection with @cf/deepgram/aura-1-internal model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-1-internal model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-1-internal`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1InternalError>> workersAiPostWebsocketRunCfDeepgramAura1Internal({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1InternalError>> workersAiPostWebsocketRunCfDeepgramAura1Internal({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -103,13 +103,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramAura1InternalError.fromResponse,
 );
- } 
+}
 /// Open Websocket connection with @cf/deepgram/aura-2 model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2Error>> workersAiPostWebsocketRunCfDeepgramAura2({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2Error>> workersAiPostWebsocketRunCfDeepgramAura2({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -123,13 +123,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramAura2Error.fromResponse,
 );
- } 
+}
 /// Open Websocket connection with @cf/deepgram/aura-2-en model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2-en model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EnError>> workersAiPostWebsocketRunCfDeepgramAura2En({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EnError>> workersAiPostWebsocketRunCfDeepgramAura2En({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -143,13 +143,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramAura2EnError.fromResponse,
 );
- } 
+}
 /// Execute @cf/deepgram/aura-2-en model.
 ///
 /// Runs inference on the @cf/deepgram/aura-2-en model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EnError>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EnError>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -178,13 +178,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfDeepgramAura2EnError.fromResponse,
 );
- } 
+}
 /// Open Websocket connection with @cf/deepgram/aura-2-es model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2-es model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EsError>> workersAiPostWebsocketRunCfDeepgramAura2Es({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EsError>> workersAiPostWebsocketRunCfDeepgramAura2Es({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -198,13 +198,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramAura2EsError.fromResponse,
 );
- } 
+}
 /// Execute @cf/deepgram/aura-2-es model.
 ///
 /// Runs inference on the @cf/deepgram/aura-2-es model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EsError>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EsError>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -233,13 +233,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfDeepgramAura2EsError.fromResponse,
 );
- } 
+}
 /// Execute @cf/myshell-ai/melotts model.
 ///
 /// Runs inference on the @cf/myshell-ai/melotts model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/myshell-ai/melotts`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMyshellAiMelottsError>> workersAiPostRunCfMyshellAiMelotts({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMyshellAiMelottsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMyshellAiMelottsError>> workersAiPostRunCfMyshellAiMelotts({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMyshellAiMelottsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -268,5 +268,5 @@ return await execute(
   },
   onError: WorkersAiPostRunCfMyshellAiMelottsError.fromResponse,
 );
- } 
- }
+}
+}

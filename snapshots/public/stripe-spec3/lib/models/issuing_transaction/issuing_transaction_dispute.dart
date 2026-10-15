@@ -8,11 +8,11 @@ const IssuingTransactionDispute({this.string = const Omittable.absent(), this.is
 const IssuingTransactionDispute._({required this.rawValue, required this.string, required this.issuingDispute, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory IssuingTransactionDispute.fromJson(Object? json) { return IssuingTransactionDispute._(
+factory IssuingTransactionDispute.fromJson(Object? json) {return IssuingTransactionDispute._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   issuingDispute: json is Map<String, dynamic> && IssuingDispute.canParse(json) ? parseAnyOfVariant<IssuingDispute>(json, (value) => IssuingDispute.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'IssuingTransactionDispute(${toJson()})';
 
- }
+}

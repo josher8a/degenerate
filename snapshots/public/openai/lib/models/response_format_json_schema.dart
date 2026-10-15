@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ResponseFormatJsonSchema {const ResponseFormatJsonSchema({required this.type, required this.jsonSchema, });
 
-factory ResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return ResponseFormatJsonSchema(
+factory ResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) {return ResponseFormatJsonSchema(
   type: ResponseFormatJsonSchemaType.fromJson(json['type'] as String),
   jsonSchema: JsonSchema.fromJson(json['json_schema'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of response format being defined. Always `json_schema`.
 final ResponseFormatJsonSchemaType type;
@@ -18,16 +18,16 @@ final ResponseFormatJsonSchemaType type;
 /// 
 final JsonSchema jsonSchema;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'json_schema': jsonSchema.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'json_schema' &&
-      json.containsKey('json_schema'); } 
-ResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, JsonSchema? jsonSchema, }) { return ResponseFormatJsonSchema(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'json_schema' &&
+      json.containsKey('json_schema');}
+ResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, JsonSchema? jsonSchema, }) {return ResponseFormatJsonSchema(
   type: type ?? this.type,
   jsonSchema: jsonSchema ?? this.jsonSchema,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFormatJsonSchema &&
           type == other.type &&
@@ -37,4 +37,4 @@ ResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, JsonSchem
 
 @override String toString() => 'ResponseFormatJsonSchema(type: $type, jsonSchema: $jsonSchema)';
 
- }
+}

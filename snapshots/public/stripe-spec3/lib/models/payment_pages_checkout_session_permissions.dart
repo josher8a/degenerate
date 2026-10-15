@@ -8,11 +8,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines which
 /// When set to `server_only`, you must add the onShippingDetailsChange event handler when initializing the Stripe Checkout client and manually update the shipping details from your server using the Stripe API.
 sealed class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails();
 
-factory PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails.fromJson(String json) {return switch (json) {
   'client_only' => clientOnly,
   'server_only' => serverOnly,
   _ => PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails clientOnly = PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly._();
 
@@ -21,30 +21,30 @@ static const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails serverO
 static const List<PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails> values = [clientOnly, serverOnly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'client_only' => 'clientOnly',
   'server_only' => 'serverOnly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown; } 
+bool get isUnknown {return this is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() clientOnly, required W Function() serverOnly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() clientOnly, required W Function() serverOnly, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly() => clientOnly(),
       PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$serverOnly() => serverOnly(),
       PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientOnly, W Function()? serverOnly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientOnly, W Function()? serverOnly, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly() => clientOnly != null ? clientOnly() : orElse(value),
       PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$serverOnly() => serverOnly != null ? serverOnly() : orElse(value),
       PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails($value)';
 
- }
+}
 @immutable final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly extends PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly._();
 
 @override String get value => 'client_only';
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientOn
 
 @override int get hashCode => 'client_only'.hashCode;
 
- }
+}
 @immutable final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$serverOnly extends PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$serverOnly._();
 
 @override String get value => 'server_only';
@@ -62,7 +62,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientOn
 
 @override int get hashCode => 'server_only'.hashCode;
 
- }
+}
 @immutable final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown extends PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown(this.value);
 
 @override final String value;
@@ -72,13 +72,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientOn
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PaymentPagesCheckoutSessionPermissions {const PaymentPagesCheckoutSessionPermissions({this.updateShippingDetails = const Omittable.absent()});
 
-factory PaymentPagesCheckoutSessionPermissions.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionPermissions(
+factory PaymentPagesCheckoutSessionPermissions.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionPermissions(
   updateShippingDetails: json.containsKey('update_shipping_details') ? Omittable(json['update_shipping_details'] != null ? PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails.fromJson(json['update_shipping_details'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Determines which entity is allowed to update the shipping details.
 /// 
@@ -87,13 +87,13 @@ factory PaymentPagesCheckoutSessionPermissions.fromJson(Map<String, dynamic> jso
 /// When set to `server_only`, you must add the onShippingDetailsChange event handler when initializing the Stripe Checkout client and manually update the shipping details from your server using the Stripe API.
 final Omittable<PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails?> updateShippingDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (updateShippingDetails.isPresent) 'update_shipping_details': updateShippingDetails.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'update_shipping_details'}.contains(key)); } 
-PaymentPagesCheckoutSessionPermissions copyWith({Omittable<PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails?>? updateShippingDetails}) { return PaymentPagesCheckoutSessionPermissions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'update_shipping_details'}.contains(key));}
+PaymentPagesCheckoutSessionPermissions copyWith({Omittable<PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails?>? updateShippingDetails}) {return PaymentPagesCheckoutSessionPermissions(
   updateShippingDetails: updateShippingDetails ?? this.updateShippingDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionPermissions &&
           updateShippingDetails == other.updateShippingDetails;
@@ -102,4 +102,4 @@ PaymentPagesCheckoutSessionPermissions copyWith({Omittable<PaymentPagesCheckoutS
 
 @override String toString() => 'PaymentPagesCheckoutSessionPermissions(updateShippingDetails: $updateShippingDetails)';
 
- }
+}

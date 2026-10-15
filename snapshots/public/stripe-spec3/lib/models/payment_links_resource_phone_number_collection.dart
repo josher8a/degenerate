@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentLinksResourcePhoneNumberCollection {const PaymentLinksResourcePhoneNumberCollection({required this.enabled});
 
-factory PaymentLinksResourcePhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourcePhoneNumberCollection(
+factory PaymentLinksResourcePhoneNumberCollection.fromJson(Map<String, dynamic> json) {return PaymentLinksResourcePhoneNumberCollection(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// If `true`, a phone number will be collected during checkout.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PaymentLinksResourcePhoneNumberCollection copyWith({bool? enabled}) { return PaymentLinksResourcePhoneNumberCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PaymentLinksResourcePhoneNumberCollection copyWith({bool? enabled}) {return PaymentLinksResourcePhoneNumberCollection(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourcePhoneNumberCollection &&
           enabled == other.enabled;
@@ -26,4 +26,4 @@ PaymentLinksResourcePhoneNumberCollection copyWith({bool? enabled}) { return Pay
 
 @override String toString() => 'PaymentLinksResourcePhoneNumberCollection(enabled: $enabled)';
 
- }
+}

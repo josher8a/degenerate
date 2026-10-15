@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_identifier.dart';import 'package:pub_cloudflare/models/stream_scheduled_deletion.dart';import 'package:pub_cloudflare/models/stream_watermarks.dart';@immutable final class StreamDirectUploadResponseResult {const StreamDirectUploadResponseResult({this.scheduledDeletion, this.uid, this.uploadUrl, this.watermark, });
 
-factory StreamDirectUploadResponseResult.fromJson(Map<String, dynamic> json) { return StreamDirectUploadResponseResult(
+factory StreamDirectUploadResponseResult.fromJson(Map<String, dynamic> json) {return StreamDirectUploadResponseResult(
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   uid: json['uid'] != null ? StreamIdentifier.fromJson(json['uid'] as String) : null,
   uploadUrl: json['uploadURL'] as String?,
   watermark: json['watermark'] != null ? StreamWatermarks.fromJson(json['watermark'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final StreamScheduledDeletion? scheduledDeletion;
 
@@ -21,19 +21,19 @@ final String? uploadUrl;
 
 final StreamWatermarks? watermark;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (scheduledDeletion != null) 'scheduledDeletion': scheduledDeletion?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
   'uploadURL': ?uploadUrl,
   if (watermark != null) 'watermark': watermark?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'scheduledDeletion', 'uid', 'uploadURL', 'watermark'}.contains(key)); } 
-StreamDirectUploadResponseResult copyWith({StreamScheduledDeletion? Function()? scheduledDeletion, StreamIdentifier? Function()? uid, String? Function()? uploadUrl, StreamWatermarks? Function()? watermark, }) { return StreamDirectUploadResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'scheduledDeletion', 'uid', 'uploadURL', 'watermark'}.contains(key));}
+StreamDirectUploadResponseResult copyWith({StreamScheduledDeletion? Function()? scheduledDeletion, StreamIdentifier? Function()? uid, String? Function()? uploadUrl, StreamWatermarks? Function()? watermark, }) {return StreamDirectUploadResponseResult(
   scheduledDeletion: scheduledDeletion != null ? scheduledDeletion() : this.scheduledDeletion,
   uid: uid != null ? uid() : this.uid,
   uploadUrl: uploadUrl != null ? uploadUrl() : this.uploadUrl,
   watermark: watermark != null ? watermark() : this.watermark,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamDirectUploadResponseResult &&
           scheduledDeletion == other.scheduledDeletion &&
@@ -45,4 +45,4 @@ StreamDirectUploadResponseResult copyWith({StreamScheduledDeletion? Function()? 
 
 @override String toString() => 'StreamDirectUploadResponseResult(scheduledDeletion: $scheduledDeletion, uid: $uid, uploadUrl: $uploadUrl, watermark: $watermark)';
 
- }
+}

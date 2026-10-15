@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';sealed class CancelAtVariant3 {const CancelAtVariant3();
 
-factory CancelAtVariant3.fromJson(String json) { return switch (json) {
+factory CancelAtVariant3.fromJson(String json) {return switch (json) {
   'max_period_end' => maxPeriodEnd,
   'min_period_end' => minPeriodEnd,
   _ => CancelAtVariant3$Unknown(json),
-}; }
+};}
 
 static const CancelAtVariant3 maxPeriodEnd = CancelAtVariant3$maxPeriodEnd._();
 
@@ -16,30 +16,30 @@ static const CancelAtVariant3 minPeriodEnd = CancelAtVariant3$minPeriodEnd._();
 static const List<CancelAtVariant3> values = [maxPeriodEnd, minPeriodEnd];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'max_period_end' => 'maxPeriodEnd',
   'min_period_end' => 'minPeriodEnd',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CancelAtVariant3$Unknown; } 
+bool get isUnknown {return this is CancelAtVariant3$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() maxPeriodEnd, required W Function() minPeriodEnd, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() maxPeriodEnd, required W Function() minPeriodEnd, required W Function(String value) $unknown, }) {return switch (this) {
       CancelAtVariant3$maxPeriodEnd() => maxPeriodEnd(),
       CancelAtVariant3$minPeriodEnd() => minPeriodEnd(),
       CancelAtVariant3$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? maxPeriodEnd, W Function()? minPeriodEnd, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? maxPeriodEnd, W Function()? minPeriodEnd, W Function(String value)? $unknown, }) {return switch (this) {
       CancelAtVariant3$maxPeriodEnd() => maxPeriodEnd != null ? maxPeriodEnd() : orElse(value),
       CancelAtVariant3$minPeriodEnd() => minPeriodEnd != null ? minPeriodEnd() : orElse(value),
       CancelAtVariant3$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CancelAtVariant3($value)';
 
- }
+}
 @immutable final class CancelAtVariant3$maxPeriodEnd extends CancelAtVariant3 {const CancelAtVariant3$maxPeriodEnd._();
 
 @override String get value => 'max_period_end';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maxPerio
 
 @override int get hashCode => 'max_period_end'.hashCode;
 
- }
+}
 @immutable final class CancelAtVariant3$minPeriodEnd extends CancelAtVariant3 {const CancelAtVariant3$minPeriodEnd._();
 
 @override String get value => 'min_period_end';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maxPerio
 
 @override int get hashCode => 'min_period_end'.hashCode;
 
- }
+}
 @immutable final class CancelAtVariant3$Unknown extends CancelAtVariant3 {const CancelAtVariant3$Unknown(this.value);
 
 @override final String value;
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maxPerio
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A timestamp at which the subscription should cancel. If set to a date before the current period ends, this will cause a proration if prorations have been enabled using `proration_behavior`. If set during a future period, this will always cause a proration for that period.
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt {/// A value built from one or more typed views (at least one must be present).
 const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt({this.$int = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), this.cancelAtVariant3 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
@@ -75,12 +75,12 @@ const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt({th
 const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt._({required this.rawValue, required this.$int, required this.getPaymentMethodConfigurationsApplicationVariant2, required this.cancelAtVariant3, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt.fromJson(Object? json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt._(
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt.fromJson(Object? json) {return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt._(
   rawValue: Omittable(json),
   $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
   cancelAtVariant3: parseAnyOfVariant<CancelAtVariant3>(json, (value) => CancelAtVariant3.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -114,4 +114,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancelAt(${toJson()})';
 
- }
+}

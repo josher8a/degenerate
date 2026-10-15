@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_load_balancer.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';@immutable final class LoadBalancingLoadBalancerComponentsSchemasSingleResponse {const LoadBalancingLoadBalancerComponentsSchemasSingleResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory LoadBalancingLoadBalancerComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return LoadBalancingLoadBalancerComponentsSchemasSingleResponse(
+factory LoadBalancingLoadBalancerComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) {return LoadBalancingLoadBalancerComponentsSchemasSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: LoadBalancingLoadBalancer.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<LoadBalancingMessages2> errors;
 
@@ -21,22 +21,22 @@ final bool success;
 
 final LoadBalancingLoadBalancer result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-LoadBalancingLoadBalancerComponentsSchemasSingleResponse copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingLoadBalancer? result, }) { return LoadBalancingLoadBalancerComponentsSchemasSingleResponse(
+      json.containsKey('result');}
+LoadBalancingLoadBalancerComponentsSchemasSingleResponse copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingLoadBalancer? result, }) {return LoadBalancingLoadBalancerComponentsSchemasSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingLoadBalancerComponentsSchemasSingleResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ LoadBalancingLoadBalancerComponentsSchemasSingleResponse copyWith({List<LoadBala
 
 @override String toString() => 'LoadBalancingLoadBalancerComponentsSchemasSingleResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

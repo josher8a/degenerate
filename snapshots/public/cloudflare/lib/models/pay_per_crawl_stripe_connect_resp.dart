@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlStripeConnectResp {const PayPerCrawlStripeConnectResp({this.url});
 
-factory PayPerCrawlStripeConnectResp.fromJson(Map<String, dynamic> json) { return PayPerCrawlStripeConnectResp(
+factory PayPerCrawlStripeConnectResp.fromJson(Map<String, dynamic> json) {return PayPerCrawlStripeConnectResp(
   url: json['url'] as String?,
-); }
+);}
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
-PayPerCrawlStripeConnectResp copyWith({String? Function()? url}) { return PayPerCrawlStripeConnectResp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'url'}.contains(key));}
+PayPerCrawlStripeConnectResp copyWith({String? Function()? url}) {return PayPerCrawlStripeConnectResp(
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlStripeConnectResp &&
           url == other.url;
@@ -24,4 +24,4 @@ PayPerCrawlStripeConnectResp copyWith({String? Function()? url}) { return PayPer
 
 @override String toString() => 'PayPerCrawlStripeConnectResp(url: $url)';
 
- }
+}

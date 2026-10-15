@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_schema_upload_log_event.dart';@immutable final class ShieldOldSchemaUploadDetailsErrorsCritical {const ShieldOldSchemaUploadDetailsErrorsCritical({this.critical, this.errors, });
 
-factory ShieldOldSchemaUploadDetailsErrorsCritical.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadDetailsErrorsCritical(
+factory ShieldOldSchemaUploadDetailsErrorsCritical.fromJson(Map<String, dynamic> json) {return ShieldOldSchemaUploadDetailsErrorsCritical(
   critical: (json['critical'] as List<dynamic>?)?.map((e) => ShieldOldSchemaUploadLogEvent.fromJson(e as Map<String, dynamic>)).toList(),
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ShieldOldSchemaUploadLogEvent.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Diagnostic critical error events that occurred during processing.
 final List<ShieldOldSchemaUploadLogEvent>? critical;
@@ -14,15 +14,15 @@ final List<ShieldOldSchemaUploadLogEvent>? critical;
 /// Diagnostic error events that occurred during processing.
 final List<ShieldOldSchemaUploadLogEvent>? errors;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (critical != null) 'critical': critical?.map((e) => e.toJson()).toList(),
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'critical', 'errors'}.contains(key)); } 
-ShieldOldSchemaUploadDetailsErrorsCritical copyWith({List<ShieldOldSchemaUploadLogEvent>? Function()? critical, List<ShieldOldSchemaUploadLogEvent>? Function()? errors, }) { return ShieldOldSchemaUploadDetailsErrorsCritical(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'critical', 'errors'}.contains(key));}
+ShieldOldSchemaUploadDetailsErrorsCritical copyWith({List<ShieldOldSchemaUploadLogEvent>? Function()? critical, List<ShieldOldSchemaUploadLogEvent>? Function()? errors, }) {return ShieldOldSchemaUploadDetailsErrorsCritical(
   critical: critical != null ? critical() : this.critical,
   errors: errors != null ? errors() : this.errors,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldSchemaUploadDetailsErrorsCritical &&
           listEquals(critical, other.critical) &&
@@ -32,4 +32,4 @@ ShieldOldSchemaUploadDetailsErrorsCritical copyWith({List<ShieldOldSchemaUploadL
 
 @override String toString() => 'ShieldOldSchemaUploadDetailsErrorsCritical(critical: $critical, errors: $errors)';
 
- }
+}

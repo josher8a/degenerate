@@ -9,20 +9,20 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 /// ```
 @immutable final class EmailSecurityGetMessageRawResponseResult {const EmailSecurityGetMessageRawResponseResult({required this.raw});
 
-factory EmailSecurityGetMessageRawResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageRawResponseResult(
+factory EmailSecurityGetMessageRawResponseResult.fromJson(Map<String, dynamic> json) {return EmailSecurityGetMessageRawResponseResult(
   raw: json['raw'] as String,
-); }
+);}
 
 /// A UTF-8 encoded eml file of the email.
 final String raw;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'raw': raw,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('raw') && json['raw'] is String; } 
-EmailSecurityGetMessageRawResponseResult copyWith({String? raw}) { return EmailSecurityGetMessageRawResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('raw') && json['raw'] is String;}
+EmailSecurityGetMessageRawResponseResult copyWith({String? raw}) {return EmailSecurityGetMessageRawResponseResult(
   raw: raw ?? this.raw,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityGetMessageRawResponseResult &&
           raw == other.raw;
@@ -31,4 +31,4 @@ EmailSecurityGetMessageRawResponseResult copyWith({String? raw}) { return EmailS
 
 @override String toString() => 'EmailSecurityGetMessageRawResponseResult(raw: $raw)';
 
- }
+}

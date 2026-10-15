@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/d1_database_response.dart';import 'package:pub_cloudflare/models/d1_messages2.dart';@immutable final class D1ListDatabasesResponse {const D1ListDatabasesResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
-factory D1ListDatabasesResponse.fromJson(Map<String, dynamic> json) { return D1ListDatabasesResponse(
+factory D1ListDatabasesResponse.fromJson(Map<String, dynamic> json) {return D1ListDatabasesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => D1Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => D1Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => D1DatabaseResponse.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<D1Messages2> errors;
 
@@ -24,24 +24,24 @@ final bool success;
 
 final AccessActiveSessionsResponseResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-D1ListDatabasesResponse copyWith({List<D1Messages2>? errors, List<D1Messages2>? messages, List<D1DatabaseResponse>? result, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, }) { return D1ListDatabasesResponse(
+      json.containsKey('success') && json['success'] is bool;}
+D1ListDatabasesResponse copyWith({List<D1Messages2>? errors, List<D1Messages2>? messages, List<D1DatabaseResponse>? result, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, }) {return D1ListDatabasesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is D1ListDatabasesResponse &&
           listEquals(errors, other.errors) &&
@@ -54,4 +54,4 @@ D1ListDatabasesResponse copyWith({List<D1Messages2>? errors, List<D1Messages2>? 
 
 @override String toString() => 'D1ListDatabasesResponse(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)';
 
- }
+}

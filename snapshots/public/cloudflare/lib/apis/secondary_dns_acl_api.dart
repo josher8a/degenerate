@@ -14,7 +14,7 @@ final class SecondaryDnsAclApi with ApiExecutor {const SecondaryDnsAclApi(this.a
 /// List ACLs.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/acls`
-Future<ApiResult<List<SecondaryDnsAcl>?, SecondaryDnsAclListAcLsError>> secondaryDnsAclListAcLs({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecondaryDnsAcl>?, SecondaryDnsAclListAcLsError>> secondaryDnsAclListAcLs({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: SecondaryDnsAclListAcLsError.fromResponse,
 );
- } 
+}
 /// Create ACL
 ///
 /// Create ACL.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/acls`
-Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclCreateAclError>> secondaryDnsAclCreateAcl({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclCreateAclRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclCreateAclError>> secondaryDnsAclCreateAcl({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclCreateAclRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: SecondaryDnsAclCreateAclError.fromResponse,
 );
- } 
+}
 /// ACL Details
 ///
 /// Get ACL.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclAclDetailsError>> secondaryDnsAclAclDetails({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclAclDetailsError>> secondaryDnsAclAclDetails({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: SecondaryDnsAclAclDetailsError.fromResponse,
 );
- } 
+}
 /// Update ACL
 ///
 /// Modify ACL.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclUpdateAclError>> secondaryDnsAclUpdateAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclUpdateAclError>> secondaryDnsAclUpdateAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: SecondaryDnsAclUpdateAclError.fromResponse,
 );
- } 
+}
 /// Delete ACL
 ///
 /// Delete ACL.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsAclDeleteAclError>> secondaryDnsAclDeleteAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsAclDeleteAclError>> secondaryDnsAclDeleteAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,5 +127,5 @@ return await execute(
   },
   onError: SecondaryDnsAclDeleteAclError.fromResponse,
 );
- } 
- }
+}
+}

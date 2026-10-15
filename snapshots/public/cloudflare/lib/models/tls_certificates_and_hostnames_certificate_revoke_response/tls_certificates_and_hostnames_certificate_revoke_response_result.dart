@@ -10,24 +10,24 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class TlsCertificatesAndHostnamesCertificateRevokeResponseResult {const TlsCertificatesAndHostnamesCertificateRevokeResponseResult({this.id, this.revokedAt, });
 
-factory TlsCertificatesAndHostnamesCertificateRevokeResponseResult.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificateRevokeResponseResult(
+factory TlsCertificatesAndHostnamesCertificateRevokeResponseResult.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCertificateRevokeResponseResult(
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
   revokedAt: json['revoked_at'] != null ? TlsCertificatesAndHostnamesRevokedAt.fromJson(json['revoked_at'] as String) : null,
-); }
+);}
 
 final TlsCertificatesAndHostnamesIdentifier? id;
 
 final TlsCertificatesAndHostnamesRevokedAt? revokedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (revokedAt != null) 'revoked_at': revokedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'revoked_at'}.contains(key)); } 
-TlsCertificatesAndHostnamesCertificateRevokeResponseResult copyWith({TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesRevokedAt? Function()? revokedAt, }) { return TlsCertificatesAndHostnamesCertificateRevokeResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'revoked_at'}.contains(key));}
+TlsCertificatesAndHostnamesCertificateRevokeResponseResult copyWith({TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesRevokedAt? Function()? revokedAt, }) {return TlsCertificatesAndHostnamesCertificateRevokeResponseResult(
   id: id != null ? id() : this.id,
   revokedAt: revokedAt != null ? revokedAt() : this.revokedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificateRevokeResponseResult &&
           id == other.id &&
@@ -37,4 +37,4 @@ TlsCertificatesAndHostnamesCertificateRevokeResponseResult copyWith({TlsCertific
 
 @override String toString() => 'TlsCertificatesAndHostnamesCertificateRevokeResponseResult(id: $id, revokedAt: $revokedAt)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_action.dart';import 'package:pub_cloudflare/models/shield_enabled.dart';import 'package:pub_cloudflare/models/shield_expression.dart';import 'package:pub_cloudflare/models/shield_schemas_description.dart';import 'package:pub_cloudflare/models/shield_schemas_title.dart';import 'package:pub_cloudflare/models/shield_selector.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// A Token Validation rule that can enforce security policies using JWT Tokens.
 @immutable final class ShieldRule {const ShieldRule({required this.action, required this.description, required this.enabled, required this.expression, required this.selector, required this.title, this.createdAt, this.id, this.lastUpdated, });
 
-factory ShieldRule.fromJson(Map<String, dynamic> json) { return ShieldRule(
+factory ShieldRule.fromJson(Map<String, dynamic> json) {return ShieldRule(
   action: ShieldAction.fromJson(json['action'] as String),
   createdAt: json['created_at'] != null ? ShieldTimestamp.fromJson(json['created_at'] as String) : null,
   description: ShieldSchemasDescription.fromJson(json['description'] as String),
@@ -14,7 +14,7 @@ factory ShieldRule.fromJson(Map<String, dynamic> json) { return ShieldRule(
   lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,
   selector: ShieldSelector.fromJson(json['selector'] as Map<String, dynamic>),
   title: ShieldSchemasTitle.fromJson(json['title'] as String),
-); }
+);}
 
 final ShieldAction action;
 
@@ -34,7 +34,7 @@ final ShieldSelector selector;
 
 final ShieldSchemasTitle title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   'description': description.toJson(),
@@ -44,14 +44,14 @@ Map<String, dynamic> toJson() { return {
   if (lastUpdated != null) 'last_updated': lastUpdated?.toJson(),
   'selector': selector.toJson(),
   'title': title.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('description') &&
       json.containsKey('enabled') &&
       json.containsKey('expression') &&
       json.containsKey('selector') &&
-      json.containsKey('title'); } 
-ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdAt, ShieldSchemasDescription? description, ShieldEnabled? enabled, ShieldExpression? expression, ShieldUuid? Function()? id, ShieldTimestamp? Function()? lastUpdated, ShieldSelector? selector, ShieldSchemasTitle? title, }) { return ShieldRule(
+      json.containsKey('title');}
+ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdAt, ShieldSchemasDescription? description, ShieldEnabled? enabled, ShieldExpression? expression, ShieldUuid? Function()? id, ShieldTimestamp? Function()? lastUpdated, ShieldSelector? selector, ShieldSchemasTitle? title, }) {return ShieldRule(
   action: action ?? this.action,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description ?? this.description,
@@ -61,7 +61,7 @@ ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdA
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   selector: selector ?? this.selector,
   title: title ?? this.title,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldRule &&
           action == other.action &&
@@ -78,4 +78,4 @@ ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdA
 
 @override String toString() => 'ShieldRule(\n  action: $action,\n  createdAt: $createdAt,\n  description: $description,\n  enabled: $enabled,\n  expression: $expression,\n  id: $id,\n  lastUpdated: $lastUpdated,\n  selector: $selector,\n  title: $title,\n)';
 
- }
+}

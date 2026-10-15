@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enum value that represents the status of an abuse record
 sealed class AbuseReportsReportStatus {const AbuseReportsReportStatus();
 
-factory AbuseReportsReportStatus.fromJson(String json) { return switch (json) {
+factory AbuseReportsReportStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'in_review' => inReview,
   _ => AbuseReportsReportStatus$Unknown(json),
-}; }
+};}
 
 static const AbuseReportsReportStatus accepted = AbuseReportsReportStatus$accepted._();
 
@@ -17,30 +17,30 @@ static const AbuseReportsReportStatus inReview = AbuseReportsReportStatus$inRevi
 static const List<AbuseReportsReportStatus> values = [accepted, inReview];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'accepted' => 'accepted',
   'in_review' => 'inReview',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AbuseReportsReportStatus$Unknown; } 
+bool get isUnknown {return this is AbuseReportsReportStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accepted, required W Function() inReview, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accepted, required W Function() inReview, required W Function(String value) $unknown, }) {return switch (this) {
       AbuseReportsReportStatus$accepted() => accepted(),
       AbuseReportsReportStatus$inReview() => inReview(),
       AbuseReportsReportStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? inReview, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? inReview, W Function(String value)? $unknown, }) {return switch (this) {
       AbuseReportsReportStatus$accepted() => accepted != null ? accepted() : orElse(value),
       AbuseReportsReportStatus$inReview() => inReview != null ? inReview() : orElse(value),
       AbuseReportsReportStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AbuseReportsReportStatus($value)';
 
- }
+}
 @immutable final class AbuseReportsReportStatus$accepted extends AbuseReportsReportStatus {const AbuseReportsReportStatus$accepted._();
 
 @override String get value => 'accepted';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportStatus$inReview extends AbuseReportsReportStatus {const AbuseReportsReportStatus$inReview._();
 
 @override String get value => 'in_review';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'in_review'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsReportStatus$Unknown extends AbuseReportsReportStatus {const AbuseReportsReportStatus$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -7,7 +7,7 @@ const RadarGetCtTimeseriesGroupResponseResultSerie0({this.serie0Variant1 = const
 const RadarGetCtTimeseriesGroupResponseResultSerie0._({required this.rawValue, required this.serie0Variant1, required this.serie0Variant2, required this.serie0Variant3, required this.serie0Variant4, required this.serie0Variant5, required this.serie0Variant6, required this.serie0Variant7, required this.serie0Variant8, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory RadarGetCtTimeseriesGroupResponseResultSerie0.fromJson(Object? json) { return RadarGetCtTimeseriesGroupResponseResultSerie0._(
+factory RadarGetCtTimeseriesGroupResponseResultSerie0.fromJson(Object? json) {return RadarGetCtTimeseriesGroupResponseResultSerie0._(
   rawValue: Omittable(json),
   serie0Variant1: json is Map<String, dynamic> && Serie0Variant1.canParse(json) ? parseAnyOfVariant<Serie0Variant1>(json, (value) => Serie0Variant1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   serie0Variant2: json is Map<String, dynamic> && Serie0Variant2.canParse(json) ? parseAnyOfVariant<Serie0Variant2>(json, (value) => Serie0Variant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -17,7 +17,7 @@ factory RadarGetCtTimeseriesGroupResponseResultSerie0.fromJson(Object? json) { r
   serie0Variant6: json is Map<String, dynamic> && Serie0Variant6.canParse(json) ? parseAnyOfVariant<Serie0Variant6>(json, (value) => Serie0Variant6.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   serie0Variant7: json is Map<String, dynamic> && Serie0Variant7.canParse(json) ? parseAnyOfVariant<Serie0Variant7>(json, (value) => Serie0Variant7.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   serie0Variant8: json is Map<String, dynamic> && Serie0Variant8.canParse(json) ? parseAnyOfVariant<Serie0Variant8>(json, (value) => Serie0Variant8.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -71,4 +71,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'RadarGetCtTimeseriesGroupResponseResultSerie0(${toJson()})';
 
- }
+}

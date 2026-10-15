@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad/config_prompt.dart';@immutable final class AccessAzureAdConfig {const AccessAzureAdConfig({this.clientId, this.clientSecret, this.claims, this.emailClaimName, this.conditionalAccessEnabled, this.directoryId, this.prompt, this.supportGroups, });
 
-factory AccessAzureAdConfig.fromJson(Map<String, dynamic> json) { return AccessAzureAdConfig(
+factory AccessAzureAdConfig.fromJson(Map<String, dynamic> json) {return AccessAzureAdConfig(
   clientId: json['client_id'] as String?,
   clientSecret: json['client_secret'] as String?,
   claims: (json['claims'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory AccessAzureAdConfig.fromJson(Map<String, dynamic> json) { return AccessA
   directoryId: json['directory_id'] as String?,
   prompt: json['prompt'] != null ? ConfigPrompt.fromJson(json['prompt'] as String) : null,
   supportGroups: json['support_groups'] as bool?,
-); }
+);}
 
 /// Your OAuth Client ID
 /// 
@@ -48,7 +48,7 @@ final ConfigPrompt? prompt;
 /// Should Cloudflare try to load groups from your account
 final bool? supportGroups;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'client_secret': ?clientSecret,
   'claims': ?claims,
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   'directory_id': ?directoryId,
   if (prompt != null) 'prompt': prompt?.toJson(),
   'support_groups': ?supportGroups,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'conditional_access_enabled', 'directory_id', 'prompt', 'support_groups'}.contains(key)); } 
-AccessAzureAdConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, bool? Function()? conditionalAccessEnabled, String? Function()? directoryId, ConfigPrompt? Function()? prompt, bool? Function()? supportGroups, }) { return AccessAzureAdConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'conditional_access_enabled', 'directory_id', 'prompt', 'support_groups'}.contains(key));}
+AccessAzureAdConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, bool? Function()? conditionalAccessEnabled, String? Function()? directoryId, ConfigPrompt? Function()? prompt, bool? Function()? supportGroups, }) {return AccessAzureAdConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,
@@ -68,7 +68,7 @@ AccessAzureAdConfig copyWith({String? Function()? clientId, String? Function()? 
   directoryId: directoryId != null ? directoryId() : this.directoryId,
   prompt: prompt != null ? prompt() : this.prompt,
   supportGroups: supportGroups != null ? supportGroups() : this.supportGroups,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAzureAdConfig &&
           clientId == other.clientId &&
@@ -84,4 +84,4 @@ AccessAzureAdConfig copyWith({String? Function()? clientId, String? Function()? 
 
 @override String toString() => 'AccessAzureAdConfig(clientId: $clientId, clientSecret: $clientSecret, claims: $claims, emailClaimName: $emailClaimName, conditionalAccessEnabled: $conditionalAccessEnabled, directoryId: $directoryId, prompt: $prompt, supportGroups: $supportGroups)';
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage();
 
-factory DestinationListResponse404ErrorsMessage.fromJson(String json) { return switch (json) {
+factory DestinationListResponse404ErrorsMessage.fromJson(String json) {return switch (json) {
   'Not found' => notFound,
   _ => DestinationListResponse404ErrorsMessage$Unknown(json),
-}; }
+};}
 
 static const DestinationListResponse404ErrorsMessage notFound = DestinationListResponse404ErrorsMessage$notFound._();
 
 static const List<DestinationListResponse404ErrorsMessage> values = [notFound];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Not found' => 'notFound',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DestinationListResponse404ErrorsMessage$Unknown; } 
+bool get isUnknown {return this is DestinationListResponse404ErrorsMessage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() notFound, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() notFound, required W Function(String value) $unknown, }) {return switch (this) {
       DestinationListResponse404ErrorsMessage$notFound() => notFound(),
       DestinationListResponse404ErrorsMessage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? notFound, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notFound, W Function(String value)? $unknown, }) {return switch (this) {
       DestinationListResponse404ErrorsMessage$notFound() => notFound != null ? notFound() : orElse(value),
       DestinationListResponse404ErrorsMessage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DestinationListResponse404ErrorsMessage($value)';
 
- }
+}
 @immutable final class DestinationListResponse404ErrorsMessage$notFound extends DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage$notFound._();
 
 @override String get value => 'Not found';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notFound
 
 @override int get hashCode => 'Not found'.hashCode;
 
- }
+}
 @immutable final class DestinationListResponse404ErrorsMessage$Unknown extends DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage$Unknown(this.value);
 
 @override final String value;
@@ -52,27 +52,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? notFound
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class DestinationListResponse404Errors {const DestinationListResponse404Errors({required this.message, this.detail, });
 
-factory DestinationListResponse404Errors.fromJson(Map<String, dynamic> json) { return DestinationListResponse404Errors(
+factory DestinationListResponse404Errors.fromJson(Map<String, dynamic> json) {return DestinationListResponse404Errors(
   detail: json['detail'] as String?,
   message: DestinationListResponse404ErrorsMessage.fromJson(json['message'] as String),
-); }
+);}
 
 final String? detail;
 
 final DestinationListResponse404ErrorsMessage message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'detail': ?detail,
   'message': message.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
-DestinationListResponse404Errors copyWith({String? Function()? detail, DestinationListResponse404ErrorsMessage? message, }) { return DestinationListResponse404Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message');}
+DestinationListResponse404Errors copyWith({String? Function()? detail, DestinationListResponse404ErrorsMessage? message, }) {return DestinationListResponse404Errors(
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationListResponse404Errors &&
           detail == other.detail &&
@@ -82,4 +82,4 @@ DestinationListResponse404Errors copyWith({String? Function()? detail, Destinati
 
 @override String toString() => 'DestinationListResponse404Errors(detail: $detail, message: $message)';
 
- }
+}

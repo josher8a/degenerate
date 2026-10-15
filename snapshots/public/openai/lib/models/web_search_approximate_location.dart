@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class WebSearchApproximateLocation {const WebSearchApproximateLocation({this.type, this.country = const Omittable.absent(), this.region = const Omittable.absent(), this.city = const Omittable.absent(), this.timezone = const Omittable.absent(), });
 
-factory WebSearchApproximateLocation.fromJson(Map<String, dynamic> json) { return WebSearchApproximateLocation(
+factory WebSearchApproximateLocation.fromJson(Map<String, dynamic> json) {return WebSearchApproximateLocation(
   type: json['type'] != null ? ApproximateLocationType.fromJson(json['type'] as String) : null,
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
   region: json.containsKey('region') ? Omittable(json['region'] as String?) : const Omittable.absent(),
   city: json.containsKey('city') ? Omittable(json['city'] as String?) : const Omittable.absent(),
   timezone: json.containsKey('timezone') ? Omittable(json['timezone'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of location approximation. Always `approximate`.
 final ApproximateLocationType? type;
@@ -31,21 +31,21 @@ final Omittable<String?> timezone;
 /// The value of `type`, or its schema default when absent.
 ApproximateLocationType get typeOrDefault => type ?? ApproximateLocationType.fromJson('approximate');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (country.isPresent) 'country': country.value,
   if (region.isPresent) 'region': region.value,
   if (city.isPresent) 'city': city.value,
   if (timezone.isPresent) 'timezone': timezone.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'country', 'region', 'city', 'timezone'}.contains(key)); } 
-WebSearchApproximateLocation copyWith({ApproximateLocationType? Function()? type, Omittable<String?>? country, Omittable<String?>? region, Omittable<String?>? city, Omittable<String?>? timezone, }) { return WebSearchApproximateLocation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'country', 'region', 'city', 'timezone'}.contains(key));}
+WebSearchApproximateLocation copyWith({ApproximateLocationType? Function()? type, Omittable<String?>? country, Omittable<String?>? region, Omittable<String?>? city, Omittable<String?>? timezone, }) {return WebSearchApproximateLocation(
   type: type != null ? type() : this.type,
   country: country ?? this.country,
   region: region ?? this.region,
   city: city ?? this.city,
   timezone: timezone ?? this.timezone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchApproximateLocation &&
           type == other.type &&
@@ -58,4 +58,4 @@ WebSearchApproximateLocation copyWith({ApproximateLocationType? Function()? type
 
 @override String toString() => 'WebSearchApproximateLocation(type: $type, country: $country, region: $region, city: $city, timezone: $timezone)';
 
- }
+}

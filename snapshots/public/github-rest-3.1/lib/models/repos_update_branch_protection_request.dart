@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/repos_update_branch_protection_request_required_status_checks.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/restrictions.dart';@immutable final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes = const Omittable.absent(), this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch, this.allowForkSyncing, });
 
-factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequest(
+factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) {return ReposUpdateBranchProtectionRequest(
   requiredStatusChecks: json['required_status_checks'] != null ? ReposUpdateBranchProtectionRequestRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
   enforceAdmins: json['enforce_admins'] as bool?,
   requiredPullRequestReviews: json['required_pull_request_reviews'] != null ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviews.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>) : null,
@@ -15,7 +15,7 @@ factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) {
   requiredConversationResolution: json['required_conversation_resolution'] as bool?,
   lockBranch: json['lock_branch'] as bool?,
   allowForkSyncing: json['allow_fork_syncing'] as bool?,
-); }
+);}
 
 /// Require status checks to pass before merging. Set to `null` to disable.
 final ReposUpdateBranchProtectionRequestRequiredStatusChecks? requiredStatusChecks;
@@ -56,7 +56,7 @@ bool get lockBranchOrDefault => lockBranch ?? false;
 /// The value of `allowForkSyncing`, or its schema default when absent.
 bool get allowForkSyncingOrDefault => allowForkSyncing ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'required_status_checks': requiredStatusChecks?.toJson(),
   'enforce_admins': enforceAdmins,
   'required_pull_request_reviews': requiredPullRequestReviews?.toJson(),
@@ -68,12 +68,12 @@ Map<String, dynamic> toJson() { return {
   'required_conversation_resolution': ?requiredConversationResolution,
   'lock_branch': ?lockBranch,
   'allow_fork_syncing': ?allowForkSyncing,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('required_status_checks') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('required_status_checks') &&
       json.containsKey('enforce_admins') && (json['enforce_admins'] == null || json['enforce_admins'] is bool) &&
       json.containsKey('required_pull_request_reviews') &&
-      json.containsKey('restrictions'); } 
-ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, Restrictions? Function()? restrictions, bool? Function()? requiredLinearHistory, Omittable<bool?>? allowForcePushes, bool? Function()? allowDeletions, bool? Function()? blockCreations, bool? Function()? requiredConversationResolution, bool? Function()? lockBranch, bool? Function()? allowForkSyncing, }) { return ReposUpdateBranchProtectionRequest(
+      json.containsKey('restrictions');}
+ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, Restrictions? Function()? restrictions, bool? Function()? requiredLinearHistory, Omittable<bool?>? allowForcePushes, bool? Function()? allowDeletions, bool? Function()? blockCreations, bool? Function()? requiredConversationResolution, bool? Function()? lockBranch, bool? Function()? allowForkSyncing, }) {return ReposUpdateBranchProtectionRequest(
   requiredStatusChecks: requiredStatusChecks != null ? requiredStatusChecks() : this.requiredStatusChecks,
   enforceAdmins: enforceAdmins != null ? enforceAdmins() : this.enforceAdmins,
   requiredPullRequestReviews: requiredPullRequestReviews != null ? requiredPullRequestReviews() : this.requiredPullRequestReviews,
@@ -85,7 +85,7 @@ ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestR
   requiredConversationResolution: requiredConversationResolution != null ? requiredConversationResolution() : this.requiredConversationResolution,
   lockBranch: lockBranch != null ? lockBranch() : this.lockBranch,
   allowForkSyncing: allowForkSyncing != null ? allowForkSyncing() : this.allowForkSyncing,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateBranchProtectionRequest &&
           requiredStatusChecks == other.requiredStatusChecks &&
@@ -104,4 +104,4 @@ ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestR
 
 @override String toString() => 'ReposUpdateBranchProtectionRequest(\n  requiredStatusChecks: $requiredStatusChecks,\n  enforceAdmins: $enforceAdmins,\n  requiredPullRequestReviews: $requiredPullRequestReviews,\n  restrictions: $restrictions,\n  requiredLinearHistory: $requiredLinearHistory,\n  allowForcePushes: $allowForcePushes,\n  allowDeletions: $allowDeletions,\n  blockCreations: $blockCreations,\n  requiredConversationResolution: $requiredConversationResolution,\n  lockBranch: $lockBranch,\n  allowForkSyncing: $allowForkSyncing,\n)';
 
- }
+}

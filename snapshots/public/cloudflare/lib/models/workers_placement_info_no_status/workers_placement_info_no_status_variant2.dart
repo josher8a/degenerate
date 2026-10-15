@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementInfoNoStatusVariant2 {const WorkersPlacementInfoNoStatusVariant2({required this.region});
 
-factory WorkersPlacementInfoNoStatusVariant2.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoNoStatusVariant2(
+factory WorkersPlacementInfoNoStatusVariant2.fromJson(Map<String, dynamic> json) {return WorkersPlacementInfoNoStatusVariant2(
   region: json['region'] as String,
-); }
+);}
 
 /// Cloud region for targeted placement in format 'provider:region'.
 /// 
 /// Example: `'aws:us-east-1'`
 final String region;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'region': region,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('region') && json['region'] is String; } 
-WorkersPlacementInfoNoStatusVariant2 copyWith({String? region}) { return WorkersPlacementInfoNoStatusVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('region') && json['region'] is String;}
+WorkersPlacementInfoNoStatusVariant2 copyWith({String? region}) {return WorkersPlacementInfoNoStatusVariant2(
   region: region ?? this.region,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersPlacementInfoNoStatusVariant2 &&
           region == other.region;
@@ -27,4 +27,4 @@ WorkersPlacementInfoNoStatusVariant2 copyWith({String? region}) { return Workers
 
 @override String toString() => 'WorkersPlacementInfoNoStatusVariant2(region: $region)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class CardIssuingAccountTermsOfService {const CardIssuingAccountTermsOfService({this.date = const Omittable.absent(), this.ip = const Omittable.absent(), this.userAgent, });
 
-factory CardIssuingAccountTermsOfService.fromJson(Map<String, dynamic> json) { return CardIssuingAccountTermsOfService(
+factory CardIssuingAccountTermsOfService.fromJson(Map<String, dynamic> json) {return CardIssuingAccountTermsOfService(
   date: json.containsKey('date') ? Omittable(json['date'] != null ? (json['date'] as num).toInt() : null) : const Omittable.absent(),
   ip: json.containsKey('ip') ? Omittable(json['ip'] as String?) : const Omittable.absent(),
   userAgent: json['user_agent'] as String?,
-); }
+);}
 
 /// The Unix timestamp marking when the account representative accepted the service agreement.
 final Omittable<int?> date;
@@ -19,14 +19,14 @@ final Omittable<String?> ip;
 /// The user agent of the browser from which the account representative accepted the service agreement.
 final String? userAgent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (date.isPresent) 'date': date.value,
   if (ip.isPresent) 'ip': ip.value,
   'user_agent': ?userAgent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final ip$ = ip.value;
 if (ip$ != null) {
   if (ip$.runes.length > 5000) { errors.add('ip: length must be <= 5000'); }
@@ -35,12 +35,12 @@ final userAgent$ = userAgent;
 if (userAgent$ != null) {
   if (userAgent$.runes.length > 5000) { errors.add('userAgent: length must be <= 5000'); }
 }
-return errors; } 
-CardIssuingAccountTermsOfService copyWith({Omittable<int?>? date, Omittable<String?>? ip, String? Function()? userAgent, }) { return CardIssuingAccountTermsOfService(
+return errors;}
+CardIssuingAccountTermsOfService copyWith({Omittable<int?>? date, Omittable<String?>? ip, String? Function()? userAgent, }) {return CardIssuingAccountTermsOfService(
   date: date ?? this.date,
   ip: ip ?? this.ip,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CardIssuingAccountTermsOfService &&
           date == other.date &&
@@ -51,4 +51,4 @@ CardIssuingAccountTermsOfService copyWith({Omittable<int?>? date, Omittable<Stri
 
 @override String toString() => 'CardIssuingAccountTermsOfService(date: $date, ip: $ip, userAgent: $userAgent)';
 
- }
+}

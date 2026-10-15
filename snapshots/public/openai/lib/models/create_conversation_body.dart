@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_item.dart';@immutable final class CreateConversationBody {const CreateConversationBody({this.metadata = const Omittable.absent(), this.items = const Omittable.absent(), });
 
-factory CreateConversationBody.fromJson(Map<String, dynamic> json) { return CreateConversationBody(
+factory CreateConversationBody.fromJson(Map<String, dynamic> json) {return CreateConversationBody(
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   items: json.containsKey('items') ? Omittable((json['items'] as List<dynamic>?)?.map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -20,22 +20,22 @@ final Omittable<Map<String,String>?> metadata;
 /// Initial items to include in the conversation context. You may add up to 20 items at a time.
 final Omittable<List<InputItem>?> items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (metadata.isPresent) 'metadata': metadata.value,
   if (items.isPresent) 'items': items.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'items'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'metadata', 'items'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final items$ = items.value;
 if (items$ != null) {
   if (items$.length > 20) { errors.add('items: must have <= 20 items'); }
 }
-return errors; } 
-CreateConversationBody copyWith({Omittable<Map<String,String>?>? metadata, Omittable<List<InputItem>?>? items, }) { return CreateConversationBody(
+return errors;}
+CreateConversationBody copyWith({Omittable<Map<String,String>?>? metadata, Omittable<List<InputItem>?>? items, }) {return CreateConversationBody(
   metadata: metadata ?? this.metadata,
   items: items ?? this.items,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateConversationBody &&
           metadata == other.metadata &&
@@ -46,4 +46,4 @@ CreateConversationBody copyWith({Omittable<Map<String,String>?>? metadata, Omitt
 
 @override String toString() => 'CreateConversationBody(metadata: $metadata, items: $items)';
 
- }
+}

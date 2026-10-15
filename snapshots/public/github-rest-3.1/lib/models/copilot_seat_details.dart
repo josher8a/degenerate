@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_seat_details/assigning_team.dart';import 'package:pub_github_rest_3_1/models/enterprise_team.dart';import 'package:pub_github_rest_3_1/models/organization_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The Copilot plan of the organization, or the parent enterprise, when applicable.
 sealed class CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType();
 
-factory CopilotSeatDetailsPlanType.fromJson(String json) { return switch (json) {
+factory CopilotSeatDetailsPlanType.fromJson(String json) {return switch (json) {
   'business' => business,
   'enterprise' => enterprise,
   'unknown' => unknown,
   _ => CopilotSeatDetailsPlanType$Unknown(json),
-}; }
+};}
 
 static const CopilotSeatDetailsPlanType business = CopilotSeatDetailsPlanType$business._();
 
@@ -20,33 +20,33 @@ static const CopilotSeatDetailsPlanType unknown = CopilotSeatDetailsPlanType$unk
 static const List<CopilotSeatDetailsPlanType> values = [business, enterprise, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'business' => 'business',
   'enterprise' => 'enterprise',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CopilotSeatDetailsPlanType$Unknown; } 
+bool get isUnknown {return this is CopilotSeatDetailsPlanType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() business, required W Function() enterprise, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() business, required W Function() enterprise, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       CopilotSeatDetailsPlanType$business() => business(),
       CopilotSeatDetailsPlanType$enterprise() => enterprise(),
       CopilotSeatDetailsPlanType$unknown() => unknown(),
       CopilotSeatDetailsPlanType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? business, W Function()? enterprise, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? business, W Function()? enterprise, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       CopilotSeatDetailsPlanType$business() => business != null ? business() : orElse(value),
       CopilotSeatDetailsPlanType$enterprise() => enterprise != null ? enterprise() : orElse(value),
       CopilotSeatDetailsPlanType$unknown() => unknown != null ? unknown() : orElse(value),
       CopilotSeatDetailsPlanType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CopilotSeatDetailsPlanType($value)';
 
- }
+}
 @immutable final class CopilotSeatDetailsPlanType$business extends CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType$business._();
 
 @override String get value => 'business';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'business'.hashCode;
 
- }
+}
 @immutable final class CopilotSeatDetailsPlanType$enterprise extends CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType$enterprise._();
 
 @override String get value => 'enterprise';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'enterprise'.hashCode;
 
- }
+}
 @immutable final class CopilotSeatDetailsPlanType$unknown extends CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType$unknown._();
 
 @override String get value => 'unknown';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class CopilotSeatDetailsPlanType$Unknown extends CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType$Unknown(this.value);
 
 @override final String value;
@@ -83,11 +83,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? business
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Information about a Copilot Business seat assignment for a user, team, or organization.
 @immutable final class CopilotSeatDetails {const CopilotSeatDetails({required this.createdAt, this.assignee = const Omittable.absent(), this.organization = const Omittable.absent(), this.assigningTeam = const Omittable.absent(), this.pendingCancellationDate = const Omittable.absent(), this.lastActivityAt = const Omittable.absent(), this.lastActivityEditor = const Omittable.absent(), this.lastAuthenticatedAt = const Omittable.absent(), this.updatedAt, this.planType, });
 
-factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) { return CopilotSeatDetails(
+factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) {return CopilotSeatDetails(
   assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   organization: json.containsKey('organization') ? Omittable(json['organization'] != null ? OrganizationSimple.fromJson(json['organization'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   assigningTeam: json.containsKey('assigning_team') ? Omittable(json['assigning_team'] != null ? OneOf2.parse(json['assigning_team'], fromA: (v) => Team.fromJson(v as Map<String, dynamic>), fromB: (v) => EnterpriseTeam.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
@@ -98,7 +98,7 @@ factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) { return CopilotS
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   planType: json['plan_type'] != null ? CopilotSeatDetailsPlanType.fromJson(json['plan_type'] as String) : null,
-); }
+);}
 
 final Omittable<SimpleUser?> assignee;
 
@@ -128,7 +128,7 @@ final DateTime? updatedAt;
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 final CopilotSeatDetailsPlanType? planType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   if (organization.isPresent) 'organization': organization.value?.toJson(),
   if (assigningTeam.isPresent) 'assigning_team': assigningTeam.value?.toJson(),
@@ -139,9 +139,9 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   if (planType != null) 'plan_type': planType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String; } 
-CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<OrganizationSimple?>? organization, Omittable<AssigningTeam?>? assigningTeam, Omittable<String?>? pendingCancellationDate, Omittable<DateTime?>? lastActivityAt, Omittable<String?>? lastActivityEditor, Omittable<DateTime?>? lastAuthenticatedAt, DateTime? createdAt, DateTime? Function()? updatedAt, CopilotSeatDetailsPlanType? Function()? planType, }) { return CopilotSeatDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String;}
+CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<OrganizationSimple?>? organization, Omittable<AssigningTeam?>? assigningTeam, Omittable<String?>? pendingCancellationDate, Omittable<DateTime?>? lastActivityAt, Omittable<String?>? lastActivityEditor, Omittable<DateTime?>? lastAuthenticatedAt, DateTime? createdAt, DateTime? Function()? updatedAt, CopilotSeatDetailsPlanType? Function()? planType, }) {return CopilotSeatDetails(
   assignee: assignee ?? this.assignee,
   organization: organization ?? this.organization,
   assigningTeam: assigningTeam ?? this.assigningTeam,
@@ -152,7 +152,7 @@ CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<Organiz
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   planType: planType != null ? planType() : this.planType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotSeatDetails &&
           assignee == other.assignee &&
@@ -170,4 +170,4 @@ CopilotSeatDetails copyWith({Omittable<SimpleUser?>? assignee, Omittable<Organiz
 
 @override String toString() => 'CopilotSeatDetails(\n  assignee: $assignee,\n  organization: $organization,\n  assigningTeam: $assigningTeam,\n  pendingCancellationDate: $pendingCancellationDate,\n  lastActivityAt: $lastActivityAt,\n  lastActivityEditor: $lastActivityEditor,\n  lastAuthenticatedAt: $lastAuthenticatedAt,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  planType: $planType,\n)';
 
- }
+}

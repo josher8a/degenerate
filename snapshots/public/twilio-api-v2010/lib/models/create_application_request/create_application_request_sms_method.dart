@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `sms_url`. Can be: `GET` or `POST`.
 sealed class CreateApplicationRequestSmsMethod {const CreateApplicationRequestSmsMethod();
 
-factory CreateApplicationRequestSmsMethod.fromJson(String json) { return switch (json) {
+factory CreateApplicationRequestSmsMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateApplicationRequestSmsMethod$Unknown(json),
-}; }
+};}
 
 static const CreateApplicationRequestSmsMethod $get = CreateApplicationRequestSmsMethod$$get._();
 
@@ -17,30 +17,30 @@ static const CreateApplicationRequestSmsMethod post = CreateApplicationRequestSm
 static const List<CreateApplicationRequestSmsMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateApplicationRequestSmsMethod$Unknown; } 
+bool get isUnknown {return this is CreateApplicationRequestSmsMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       CreateApplicationRequestSmsMethod$$get() => $get(),
       CreateApplicationRequestSmsMethod$post() => post(),
       CreateApplicationRequestSmsMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       CreateApplicationRequestSmsMethod$$get() => $get != null ? $get() : orElse(value),
       CreateApplicationRequestSmsMethod$post() => post != null ? post() : orElse(value),
       CreateApplicationRequestSmsMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateApplicationRequestSmsMethod($value)';
 
- }
+}
 @immutable final class CreateApplicationRequestSmsMethod$$get extends CreateApplicationRequestSmsMethod {const CreateApplicationRequestSmsMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class CreateApplicationRequestSmsMethod$post extends CreateApplicationRequestSmsMethod {const CreateApplicationRequestSmsMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class CreateApplicationRequestSmsMethod$Unknown extends CreateApplicationRequestSmsMethod {const CreateApplicationRequestSmsMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

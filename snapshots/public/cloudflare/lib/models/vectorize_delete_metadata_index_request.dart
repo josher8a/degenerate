@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VectorizeDeleteMetadataIndexRequest {const VectorizeDeleteMetadataIndexRequest({required this.propertyName});
 
-factory VectorizeDeleteMetadataIndexRequest.fromJson(Map<String, dynamic> json) { return VectorizeDeleteMetadataIndexRequest(
+factory VectorizeDeleteMetadataIndexRequest.fromJson(Map<String, dynamic> json) {return VectorizeDeleteMetadataIndexRequest(
   propertyName: json['propertyName'] as String,
-); }
+);}
 
 /// Specifies the metadata property for which the index must be deleted.
 /// 
 /// Example: `'random_metadata_property'`
 final String propertyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'propertyName': propertyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('propertyName') && json['propertyName'] is String; } 
-VectorizeDeleteMetadataIndexRequest copyWith({String? propertyName}) { return VectorizeDeleteMetadataIndexRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('propertyName') && json['propertyName'] is String;}
+VectorizeDeleteMetadataIndexRequest copyWith({String? propertyName}) {return VectorizeDeleteMetadataIndexRequest(
   propertyName: propertyName ?? this.propertyName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeDeleteMetadataIndexRequest &&
           propertyName == other.propertyName;
@@ -27,4 +27,4 @@ VectorizeDeleteMetadataIndexRequest copyWith({String? propertyName}) { return Ve
 
 @override String toString() => 'VectorizeDeleteMetadataIndexRequest(propertyName: $propertyName)';
 
- }
+}

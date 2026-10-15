@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Content types to exclude from context analysis and return all matches.
 @immutable final class DlpSkipConfig {const DlpSkipConfig({required this.files});
 
-factory DlpSkipConfig.fromJson(Map<String, dynamic> json) { return DlpSkipConfig(
+factory DlpSkipConfig.fromJson(Map<String, dynamic> json) {return DlpSkipConfig(
   files: json['files'] as bool,
-); }
+);}
 
 /// If the content type is a file, skip context analysis and return all matches.
 final bool files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'files': files,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('files') && json['files'] is bool; } 
-DlpSkipConfig copyWith({bool? files}) { return DlpSkipConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('files') && json['files'] is bool;}
+DlpSkipConfig copyWith({bool? files}) {return DlpSkipConfig(
   files: files ?? this.files,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpSkipConfig &&
           files == other.files;
@@ -26,4 +26,4 @@ DlpSkipConfig copyWith({bool? files}) { return DlpSkipConfig(
 
 @override String toString() => 'DlpSkipConfig(files: $files)';
 
- }
+}

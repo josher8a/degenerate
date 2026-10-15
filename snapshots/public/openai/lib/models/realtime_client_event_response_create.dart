@@ -29,11 +29,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeClientEventResponseCreate {const RealtimeClientEventResponseCreate({required this.type, this.eventId, this.response, });
 
-factory RealtimeClientEventResponseCreate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventResponseCreate(
+factory RealtimeClientEventResponseCreate.fromJson(Map<String, dynamic> json) {return RealtimeClientEventResponseCreate(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
   response: json['response'] != null ? RealtimeResponseCreateParams.fromJson(json['response'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -43,24 +43,24 @@ final String type;
 
 final RealtimeResponseCreateParams? response;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
   if (response != null) 'response': response?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
   if (eventId$.runes.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
-return errors; } 
-RealtimeClientEventResponseCreate copyWith({String? Function()? eventId, String? type, RealtimeResponseCreateParams? Function()? response, }) { return RealtimeClientEventResponseCreate(
+return errors;}
+RealtimeClientEventResponseCreate copyWith({String? Function()? eventId, String? type, RealtimeResponseCreateParams? Function()? response, }) {return RealtimeClientEventResponseCreate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   response: response != null ? response() : this.response,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventResponseCreate &&
           eventId == other.eventId &&
@@ -71,4 +71,4 @@ RealtimeClientEventResponseCreate copyWith({String? Function()? eventId, String?
 
 @override String toString() => 'RealtimeClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)';
 
- }
+}

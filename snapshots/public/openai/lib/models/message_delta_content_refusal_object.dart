@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_refusal_object/message_content_refusal_object_type.dart';/// The refusal content that is part of a message.
 @immutable final class MessageDeltaContentRefusalObject {const MessageDeltaContentRefusalObject({required this.index, required this.type, this.refusal, });
 
-factory MessageDeltaContentRefusalObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentRefusalObject(
+factory MessageDeltaContentRefusalObject.fromJson(Map<String, dynamic> json) {return MessageDeltaContentRefusalObject(
   index: (json['index'] as num).toInt(),
   type: MessageContentRefusalObjectType.fromJson(json['type'] as String),
   refusal: json['refusal'] as String?,
-); }
+);}
 
 /// The index of the refusal part in the message.
 final int index;
@@ -18,18 +18,18 @@ final MessageContentRefusalObjectType type;
 
 final String? refusal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'index': index,
   'type': type.toJson(),
   'refusal': ?refusal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
-      json.containsKey('type') && json['type'] == 'refusal'; } 
-MessageDeltaContentRefusalObject copyWith({int? index, MessageContentRefusalObjectType? type, String? Function()? refusal, }) { return MessageDeltaContentRefusalObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('index') && json['index'] is num &&
+      json.containsKey('type') && json['type'] == 'refusal';}
+MessageDeltaContentRefusalObject copyWith({int? index, MessageContentRefusalObjectType? type, String? Function()? refusal, }) {return MessageDeltaContentRefusalObject(
   index: index ?? this.index,
   type: type ?? this.type,
   refusal: refusal != null ? refusal() : this.refusal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentRefusalObject &&
           index == other.index &&
@@ -40,4 +40,4 @@ MessageDeltaContentRefusalObject copyWith({int? index, MessageContentRefusalObje
 
 @override String toString() => 'MessageDeltaContentRefusalObject(index: $index, type: $type, refusal: $refusal)';
 
- }
+}

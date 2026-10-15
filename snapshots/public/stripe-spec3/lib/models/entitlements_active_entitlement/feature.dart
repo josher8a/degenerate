@@ -8,11 +8,11 @@ const Feature({this.string = const Omittable.absent(), this.entitlementsFeature 
 const Feature._({required this.rawValue, required this.string, required this.entitlementsFeature, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Feature.fromJson(Object? json) { return Feature._(
+factory Feature.fromJson(Object? json) {return Feature._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   entitlementsFeature: json is Map<String, dynamic> && EntitlementsFeature.canParse(json) ? parseAnyOfVariant<EntitlementsFeature>(json, (value) => EntitlementsFeature.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Feature(${toJson()})';
 
- }
+}

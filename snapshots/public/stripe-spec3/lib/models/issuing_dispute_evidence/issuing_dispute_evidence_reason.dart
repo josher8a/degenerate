@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for filing the dispute. Its value will match the field containing the evidence.
 sealed class IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason();
 
-factory IssuingDisputeEvidenceReason.fromJson(String json) { return switch (json) {
+factory IssuingDisputeEvidenceReason.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
@@ -14,7 +14,7 @@ factory IssuingDisputeEvidenceReason.fromJson(String json) { return switch (json
   'other' => $other,
   'service_not_as_described' => serviceNotAsDescribed,
   _ => IssuingDisputeEvidenceReason$Unknown(json),
-}; }
+};}
 
 static const IssuingDisputeEvidenceReason canceled = IssuingDisputeEvidenceReason$canceled._();
 
@@ -35,9 +35,9 @@ static const IssuingDisputeEvidenceReason serviceNotAsDescribed = IssuingDispute
 static const List<IssuingDisputeEvidenceReason> values = [canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, $other, serviceNotAsDescribed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'duplicate' => 'duplicate',
   'fraudulent' => 'fraudulent',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'other' => r'$other',
   'service_not_as_described' => 'serviceNotAsDescribed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingDisputeEvidenceReason$Unknown; } 
+bool get isUnknown {return this is IssuingDisputeEvidenceReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() duplicate, required W Function() fraudulent, required W Function() merchandiseNotAsDescribed, required W Function() noValidAuthorization, required W Function() notReceived, required W Function() $other, required W Function() serviceNotAsDescribed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() duplicate, required W Function() fraudulent, required W Function() merchandiseNotAsDescribed, required W Function() noValidAuthorization, required W Function() notReceived, required W Function() $other, required W Function() serviceNotAsDescribed, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingDisputeEvidenceReason$canceled() => canceled(),
       IssuingDisputeEvidenceReason$duplicate() => duplicate(),
       IssuingDisputeEvidenceReason$fraudulent() => fraudulent(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() canceled, required W Function() duplicate, requ
       IssuingDisputeEvidenceReason$$other() => $other(),
       IssuingDisputeEvidenceReason$serviceNotAsDescribed() => serviceNotAsDescribed(),
       IssuingDisputeEvidenceReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? duplicate, W Function()? fraudulent, W Function()? merchandiseNotAsDescribed, W Function()? noValidAuthorization, W Function()? notReceived, W Function()? $other, W Function()? serviceNotAsDescribed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? duplicate, W Function()? fraudulent, W Function()? merchandiseNotAsDescribed, W Function()? noValidAuthorization, W Function()? notReceived, W Function()? $other, W Function()? serviceNotAsDescribed, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingDisputeEvidenceReason$canceled() => canceled != null ? canceled() : orElse(value),
       IssuingDisputeEvidenceReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
       IssuingDisputeEvidenceReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
       IssuingDisputeEvidenceReason$$other() => $other != null ? $other() : orElse(value),
       IssuingDisputeEvidenceReason$serviceNotAsDescribed() => serviceNotAsDescribed != null ? serviceNotAsDescribed() : orElse(value),
       IssuingDisputeEvidenceReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingDisputeEvidenceReason($value)';
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$canceled extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$canceled._();
 
 @override String get value => 'canceled';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$duplicate extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$duplicate._();
 
 @override String get value => 'duplicate';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'duplicate'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$fraudulent extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$fraudulent._();
 
 @override String get value => 'fraudulent';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'fraudulent'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$merchandiseNotAsDescribed extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$merchandiseNotAsDescribed._();
 
 @override String get value => 'merchandise_not_as_described';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'merchandise_not_as_described'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$noValidAuthorization extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$noValidAuthorization._();
 
 @override String get value => 'no_valid_authorization';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'no_valid_authorization'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$notReceived extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$notReceived._();
 
 @override String get value => 'not_received';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'not_received'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$$other extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$$other._();
 
 @override String get value => 'other';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$serviceNotAsDescribed extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$serviceNotAsDescribed._();
 
 @override String get value => 'service_not_as_described';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'service_not_as_described'.hashCode;
 
- }
+}
 @immutable final class IssuingDisputeEvidenceReason$Unknown extends IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason$Unknown(this.value);
 
 @override final String value;
@@ -158,4 +158,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}

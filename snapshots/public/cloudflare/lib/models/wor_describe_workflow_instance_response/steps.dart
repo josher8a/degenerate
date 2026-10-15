@@ -7,13 +7,13 @@ const Steps({this.stepsStep = const Omittable.absent(), this.sleep = const Omitt
 const Steps._({required this.rawValue, required this.stepsStep, required this.sleep, required this.termination, required this.waitForEvent, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Steps.fromJson(Object? json) { return Steps._(
+factory Steps.fromJson(Object? json) {return Steps._(
   rawValue: Omittable(json),
   stepsStep: json is Map<String, dynamic> && StepsStep.canParse(json) ? parseAnyOfVariant<StepsStep>(json, (value) => StepsStep.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   sleep: json is Map<String, dynamic> && Sleep.canParse(json) ? parseAnyOfVariant<Sleep>(json, (value) => Sleep.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   termination: json is Map<String, dynamic> && Termination.canParse(json) ? parseAnyOfVariant<Termination>(json, (value) => Termination.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   waitForEvent: json is Map<String, dynamic> && WaitForEvent.canParse(json) ? parseAnyOfVariant<WaitForEvent>(json, (value) => WaitForEvent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -51,4 +51,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Steps(${toJson()})';
 
- }
+}

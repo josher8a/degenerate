@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/discovery_state_patch.dart';/// Mappings of discovered operations (keys) to objects describing their state
 @immutable final class DiscoveryPatchMultipleRequestEntry {const DiscoveryPatchMultipleRequestEntry({this.state});
 
-factory DiscoveryPatchMultipleRequestEntry.fromJson(Map<String, dynamic> json) { return DiscoveryPatchMultipleRequestEntry(
+factory DiscoveryPatchMultipleRequestEntry.fromJson(Map<String, dynamic> json) {return DiscoveryPatchMultipleRequestEntry(
   state: json['state'] != null ? DiscoveryStatePatch.fromJson(json['state'] as String) : null,
-); }
+);}
 
 final DiscoveryStatePatch? state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (state != null) 'state': state?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state'}.contains(key)); } 
-DiscoveryPatchMultipleRequestEntry copyWith({DiscoveryStatePatch? Function()? state}) { return DiscoveryPatchMultipleRequestEntry(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'state'}.contains(key));}
+DiscoveryPatchMultipleRequestEntry copyWith({DiscoveryStatePatch? Function()? state}) {return DiscoveryPatchMultipleRequestEntry(
   state: state != null ? state() : this.state,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DiscoveryPatchMultipleRequestEntry &&
           state == other.state;
@@ -25,4 +25,4 @@ DiscoveryPatchMultipleRequestEntry copyWith({DiscoveryStatePatch? Function()? st
 
 @override String toString() => 'DiscoveryPatchMultipleRequestEntry(state: $state)';
 
- }
+}

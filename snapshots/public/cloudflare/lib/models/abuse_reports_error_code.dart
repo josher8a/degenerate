@@ -95,19 +95,19 @@ String toJson() => value;
 /// A value that is one of: `AbuseReportsBadActError`, `AbuseReportsMaxIPsError`, `AbuseReportsPortsProtocolError`, `AbuseReportsInternalError`, `AbuseReportsInvalidNotifyError`, `AbuseReportsMustNotifyError`, `AbuseReportsNoAgreeError`, `AbuseReportsNoOriginalWorkError`, `AbuseReportsNoSigError`, `AbuseReportsUnexpectedActError`, `AbuseReportsUnknownError`, `AbuseReportsUrlNotOrangeError`, `AbuseReportsUrlNotvalidError`.
 sealed class AbuseReportsErrorCode {const AbuseReportsErrorCode();
 
-factory AbuseReportsErrorCode.fromJson(Object? json) {   return AbuseReportsErrorCode$Unknown(json); }
+factory AbuseReportsErrorCode.fromJson(Object? json) {  return AbuseReportsErrorCode$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsBadActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadActError(this._value);
 
 final AbuseReportsBadActError _value;
 
 @override AbuseReportsBadActError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsBadActError && _value == other._value;
 
@@ -115,14 +115,14 @@ final AbuseReportsBadActError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsBadActError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsMaxIPsError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMaxIPsError(this._value);
 
 final AbuseReportsMaxIPsError _value;
 
 @override AbuseReportsMaxIPsError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsMaxIPsError && _value == other._value;
 
@@ -130,14 +130,14 @@ final AbuseReportsMaxIPsError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsMaxIPsError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsPortsProtocolError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsPortsProtocolError(this._value);
 
 final AbuseReportsPortsProtocolError _value;
 
 @override AbuseReportsPortsProtocolError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsPortsProtocolError && _value == other._value;
 
@@ -145,14 +145,14 @@ final AbuseReportsPortsProtocolError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsPortsProtocolError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsInternalError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInternalError(this._value);
 
 final AbuseReportsInternalError _value;
 
 @override AbuseReportsInternalError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsInternalError && _value == other._value;
 
@@ -160,14 +160,14 @@ final AbuseReportsInternalError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsInternalError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsInvalidNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInvalidNotifyError(this._value);
 
 final AbuseReportsInvalidNotifyError _value;
 
 @override AbuseReportsInvalidNotifyError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsInvalidNotifyError && _value == other._value;
 
@@ -175,14 +175,14 @@ final AbuseReportsInvalidNotifyError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsInvalidNotifyError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsMustNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMustNotifyError(this._value);
 
 final AbuseReportsMustNotifyError _value;
 
 @override AbuseReportsMustNotifyError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsMustNotifyError && _value == other._value;
 
@@ -190,14 +190,14 @@ final AbuseReportsMustNotifyError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsMustNotifyError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsNoAgreeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoAgreeError(this._value);
 
 final AbuseReportsNoAgreeError _value;
 
 @override AbuseReportsNoAgreeError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsNoAgreeError && _value == other._value;
 
@@ -205,14 +205,14 @@ final AbuseReportsNoAgreeError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsNoAgreeError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError(this._value);
 
 final AbuseReportsNoOriginalWorkError _value;
 
 @override AbuseReportsNoOriginalWorkError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError && _value == other._value;
 
@@ -220,14 +220,14 @@ final AbuseReportsNoOriginalWorkError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsNoOriginalWorkError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsNoSigError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoSigError(this._value);
 
 final AbuseReportsNoSigError _value;
 
 @override AbuseReportsNoSigError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsNoSigError && _value == other._value;
 
@@ -235,14 +235,14 @@ final AbuseReportsNoSigError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsNoSigError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsUnexpectedActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnexpectedActError(this._value);
 
 final AbuseReportsUnexpectedActError _value;
 
 @override AbuseReportsUnexpectedActError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsUnexpectedActError && _value == other._value;
 
@@ -250,14 +250,14 @@ final AbuseReportsUnexpectedActError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsUnexpectedActError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsUnknownError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnknownError(this._value);
 
 final AbuseReportsUnknownError _value;
 
 @override AbuseReportsUnknownError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsUnknownError && _value == other._value;
 
@@ -265,14 +265,14 @@ final AbuseReportsUnknownError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsUnknownError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError(this._value);
 
 final AbuseReportsUrlNotOrangeError _value;
 
 @override AbuseReportsUrlNotOrangeError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError && _value == other._value;
 
@@ -280,14 +280,14 @@ final AbuseReportsUrlNotOrangeError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsUrlNotOrangeError($_value)';
 
- }
+}
 @immutable final class AbuseReportsErrorCodeAbuseReportsUrlNotvalidError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotvalidError(this._value);
 
 final AbuseReportsUrlNotvalidError _value;
 
 @override AbuseReportsUrlNotvalidError get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsUrlNotvalidError && _value == other._value;
 
@@ -295,7 +295,7 @@ final AbuseReportsUrlNotvalidError _value;
 
 @override String toString() => 'AbuseReportsErrorCode.abuseReportsUrlNotvalidError($_value)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class AbuseReportsErrorCode$Unknown extends AbuseReportsErrorCode {const AbuseReportsErrorCode$Unknown(this._value);
 
@@ -310,4 +310,4 @@ final dynamic _value;
 
 @override String toString() => 'AbuseReportsErrorCode.unknown($_value)';
 
- }
+}

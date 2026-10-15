@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
 sealed class RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus();
 
-factory RecordingAddOnResultEnumStatus.fromJson(String json) { return switch (json) {
+factory RecordingAddOnResultEnumStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'completed' => completed,
   'deleted' => deleted,
@@ -14,7 +14,7 @@ factory RecordingAddOnResultEnumStatus.fromJson(String json) { return switch (js
   'processing' => processing,
   'queued' => queued,
   _ => RecordingAddOnResultEnumStatus$Unknown(json),
-}; }
+};}
 
 static const RecordingAddOnResultEnumStatus canceled = RecordingAddOnResultEnumStatus$canceled._();
 
@@ -35,9 +35,9 @@ static const RecordingAddOnResultEnumStatus queued = RecordingAddOnResultEnumSta
 static const List<RecordingAddOnResultEnumStatus> values = [canceled, completed, deleted, failed, inProgress, init, processing, queued];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'completed' => 'completed',
   'deleted' => 'deleted',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'processing' => 'processing',
   'queued' => 'queued',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RecordingAddOnResultEnumStatus$Unknown; } 
+bool get isUnknown {return this is RecordingAddOnResultEnumStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() completed, required W Function() deleted, required W Function() failed, required W Function() inProgress, required W Function() init, required W Function() processing, required W Function() queued, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() completed, required W Function() deleted, required W Function() failed, required W Function() inProgress, required W Function() init, required W Function() processing, required W Function() queued, required W Function(String value) $unknown, }) {return switch (this) {
       RecordingAddOnResultEnumStatus$canceled() => canceled(),
       RecordingAddOnResultEnumStatus$completed() => completed(),
       RecordingAddOnResultEnumStatus$deleted() => deleted(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() canceled, required W Function() completed, requ
       RecordingAddOnResultEnumStatus$processing() => processing(),
       RecordingAddOnResultEnumStatus$queued() => queued(),
       RecordingAddOnResultEnumStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? completed, W Function()? deleted, W Function()? failed, W Function()? inProgress, W Function()? init, W Function()? processing, W Function()? queued, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? completed, W Function()? deleted, W Function()? failed, W Function()? inProgress, W Function()? init, W Function()? processing, W Function()? queued, W Function(String value)? $unknown, }) {return switch (this) {
       RecordingAddOnResultEnumStatus$canceled() => canceled != null ? canceled() : orElse(value),
       RecordingAddOnResultEnumStatus$completed() => completed != null ? completed() : orElse(value),
       RecordingAddOnResultEnumStatus$deleted() => deleted != null ? deleted() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
       RecordingAddOnResultEnumStatus$processing() => processing != null ? processing() : orElse(value),
       RecordingAddOnResultEnumStatus$queued() => queued != null ? queued() : orElse(value),
       RecordingAddOnResultEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RecordingAddOnResultEnumStatus($value)';
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$canceled extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$completed extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$completed._();
 
 @override String get value => 'completed';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$deleted extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$deleted._();
 
 @override String get value => 'deleted';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'deleted'.hashCode;
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$failed extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$failed._();
 
 @override String get value => 'failed';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$inProgress extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$inProgress._();
 
 @override String get value => 'in-progress';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'in-progress'.hashCode;
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$init extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$init._();
 
 @override String get value => 'init';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'init'.hashCode;
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$processing extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$processing._();
 
 @override String get value => 'processing';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$queued extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$queued._();
 
 @override String get value => 'queued';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class RecordingAddOnResultEnumStatus$Unknown extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$Unknown(this.value);
 
 @override final String value;
@@ -158,10 +158,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.status, this.addOnSid = const Omittable.absent(), this.addOnConfigurationSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.dateCompleted = const Omittable.absent(), this.referenceSid = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), });
 
-factory AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingAddOnResult(
+factory AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json) {return AccountRecordingRecordingAddOnResult(
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? RecordingAddOnResultEnumStatus.fromJson(json['status'] as String) : null,
@@ -172,7 +172,7 @@ factory AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json)
   dateCompleted: json.containsKey('date_completed') ? Omittable(json['date_completed'] as String?) : const Omittable.absent(),
   referenceSid: json.containsKey('reference_sid') ? Omittable(json['reference_sid'] as String?) : const Omittable.absent(),
   subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique string that that we created to identify the Recording AddOnResult resource.
 final Omittable<String?> sid;
@@ -203,7 +203,7 @@ final Omittable<String?> referenceSid;
 /// A list of related resources identified by their relative URIs.
 final Omittable<Map<String,dynamic>?> subresourceUris;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (sid.isPresent) 'sid': sid.value,
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (status != null) 'status': status?.toJson(),
@@ -214,10 +214,10 @@ Map<String, dynamic> toJson() { return {
   if (dateCompleted.isPresent) 'date_completed': dateCompleted.value,
   if (referenceSid.isPresent) 'reference_sid': referenceSid.value,
   if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'status', 'add_on_sid', 'add_on_configuration_sid', 'date_created', 'date_updated', 'date_completed', 'reference_sid', 'subresource_uris'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sid', 'account_sid', 'status', 'add_on_sid', 'add_on_configuration_sid', 'date_created', 'date_updated', 'date_completed', 'reference_sid', 'subresource_uris'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final sid$ = sid.value;
 if (sid$ != null) {
   if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
@@ -248,8 +248,8 @@ if (referenceSid$ != null) {
   if (referenceSid$.runes.length > 34) { errors.add('referenceSid: length must be <= 34'); }
   if (!RegExp(r'^RE[0-9a-fA-F]{32}$').hasMatch(referenceSid$)) { errors.add(r'referenceSid: must match pattern ^RE[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountRecordingRecordingAddOnResult copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, RecordingAddOnResultEnumStatus? Function()? status, Omittable<String?>? addOnSid, Omittable<String?>? addOnConfigurationSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? dateCompleted, Omittable<String?>? referenceSid, Omittable<Map<String,dynamic>?>? subresourceUris, }) { return AccountRecordingRecordingAddOnResult(
+return errors;}
+AccountRecordingRecordingAddOnResult copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, RecordingAddOnResultEnumStatus? Function()? status, Omittable<String?>? addOnSid, Omittable<String?>? addOnConfigurationSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? dateCompleted, Omittable<String?>? referenceSid, Omittable<Map<String,dynamic>?>? subresourceUris, }) {return AccountRecordingRecordingAddOnResult(
   sid: sid ?? this.sid,
   accountSid: accountSid ?? this.accountSid,
   status: status != null ? status() : this.status,
@@ -260,7 +260,7 @@ AccountRecordingRecordingAddOnResult copyWith({Omittable<String?>? sid, Omittabl
   dateCompleted: dateCompleted ?? this.dateCompleted,
   referenceSid: referenceSid ?? this.referenceSid,
   subresourceUris: subresourceUris ?? this.subresourceUris,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecordingRecordingAddOnResult &&
           sid == other.sid &&
@@ -278,4 +278,4 @@ AccountRecordingRecordingAddOnResult copyWith({Omittable<String?>? sid, Omittabl
 
 @override String toString() => 'AccountRecordingRecordingAddOnResult(\n  sid: $sid,\n  accountSid: $accountSid,\n  status: $status,\n  addOnSid: $addOnSid,\n  addOnConfigurationSid: $addOnConfigurationSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  dateCompleted: $dateCompleted,\n  referenceSid: $referenceSid,\n  subresourceUris: $subresourceUris,\n)';
 
- }
+}

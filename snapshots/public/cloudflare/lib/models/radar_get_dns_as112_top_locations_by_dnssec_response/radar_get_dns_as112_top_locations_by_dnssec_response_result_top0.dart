@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0 {const RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0({required this.clientCountryAlpha2, required this.clientCountryName, required this.value, });
 
-factory RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0(
+factory RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0(
   clientCountryAlpha2: json['clientCountryAlpha2'] as String,
   clientCountryName: json['clientCountryName'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// Example: `'US'`
 final String clientCountryAlpha2;
@@ -20,23 +20,23 @@ final String clientCountryName;
 /// Example: `'10'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'clientCountryAlpha2': clientCountryAlpha2,
   'clientCountryName': clientCountryName,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientCountryAlpha2') && json['clientCountryAlpha2'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('clientCountryAlpha2') && json['clientCountryAlpha2'] is String &&
       json.containsKey('clientCountryName') && json['clientCountryName'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
+      json.containsKey('value') && json['value'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch(value)) { errors.add(r'value: must match pattern ^\d+$'); }
-return errors; } 
-RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0 copyWith({String? clientCountryAlpha2, String? clientCountryName, String? value, }) { return RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0(
+return errors;}
+RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0 copyWith({String? clientCountryAlpha2, String? clientCountryName, String? value, }) {return RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0(
   clientCountryAlpha2: clientCountryAlpha2 ?? this.clientCountryAlpha2,
   clientCountryName: clientCountryName ?? this.clientCountryName,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0 &&
           clientCountryAlpha2 == other.clientCountryAlpha2 &&
@@ -47,4 +47,4 @@ RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0 copyWith({String? clientC
 
 @override String toString() => 'RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0(clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, value: $value)';
 
- }
+}

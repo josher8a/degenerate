@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class CustomToolChatCompletionsCustom {const CustomToolChatCompletionsCustom({required this.name, this.description, this.format, });
 
-factory CustomToolChatCompletionsCustom.fromJson(Map<String, dynamic> json) { return CustomToolChatCompletionsCustom(
+factory CustomToolChatCompletionsCustom.fromJson(Map<String, dynamic> json) {return CustomToolChatCompletionsCustom(
   name: json['name'] as String,
   description: json['description'] as String?,
   format: json['format'] != null ? OneOf2.parse(json['format'], fromA: (v) => TextFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => GrammarFormat.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 /// The name of the custom tool, used to identify it in tool calls.
 final String name;
@@ -22,17 +22,17 @@ final String? description;
 /// 
 final CustomFormat? format;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': ?description,
   if (format != null) 'format': format?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-CustomToolChatCompletionsCustom copyWith({String? name, String? Function()? description, CustomFormat? Function()? format, }) { return CustomToolChatCompletionsCustom(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+CustomToolChatCompletionsCustom copyWith({String? name, String? Function()? description, CustomFormat? Function()? format, }) {return CustomToolChatCompletionsCustom(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   format: format != null ? format() : this.format,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomToolChatCompletionsCustom &&
           name == other.name &&
@@ -43,4 +43,4 @@ CustomToolChatCompletionsCustom copyWith({String? name, String? Function()? desc
 
 @override String toString() => 'CustomToolChatCompletionsCustom(name: $name, description: $description, format: $format)';
 
- }
+}

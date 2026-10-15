@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_by_ip_version_response/radar_get_attacks_layer3_summary_by_ip_version_response_result.dart';@immutable final class RadarGetAttacksLayer3SummaryByIpVersionResponse {const RadarGetAttacksLayer3SummaryByIpVersionResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer3SummaryByIpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByIpVersionResponse(
+factory RadarGetAttacksLayer3SummaryByIpVersionResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3SummaryByIpVersionResponse(
   result: RadarGetAttacksLayer3SummaryByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer3SummaryByIpVersionResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer3SummaryByIpVersionResponse copyWith({RadarGetAttacksLayer3SummaryByIpVersionResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3SummaryByIpVersionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer3SummaryByIpVersionResponse copyWith({RadarGetAttacksLayer3SummaryByIpVersionResponseResult? result, bool? success, }) {return RadarGetAttacksLayer3SummaryByIpVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3SummaryByIpVersionResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer3SummaryByIpVersionResponse copyWith({RadarGetAttacksLayer3S
 
 @override String toString() => 'RadarGetAttacksLayer3SummaryByIpVersionResponse(result: $result, success: $success)';
 
- }
+}

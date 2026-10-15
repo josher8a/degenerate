@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started PKI rotation
 sealed class StartRotatePkiK {const StartRotatePkiK();
 
-factory StartRotatePkiK.fromJson(String json) { return switch (json) {
+factory StartRotatePkiK.fromJson(String json) {return switch (json) {
   'StartRotatePki' => startRotatePki,
   _ => StartRotatePkiK$Unknown(json),
-}; }
+};}
 
 static const StartRotatePkiK startRotatePki = StartRotatePkiK$startRotatePki._();
 
 static const List<StartRotatePkiK> values = [startRotatePki];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'StartRotatePki' => 'startRotatePki',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StartRotatePkiK$Unknown; } 
+bool get isUnknown {return this is StartRotatePkiK$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() startRotatePki, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() startRotatePki, required W Function(String value) $unknown, }) {return switch (this) {
       StartRotatePkiK$startRotatePki() => startRotatePki(),
       StartRotatePkiK$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? startRotatePki, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? startRotatePki, W Function(String value)? $unknown, }) {return switch (this) {
       StartRotatePkiK$startRotatePki() => startRotatePki != null ? startRotatePki() : orElse(value),
       StartRotatePkiK$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StartRotatePkiK($value)';
 
- }
+}
 @immutable final class StartRotatePkiK$startRotatePki extends StartRotatePkiK {const StartRotatePkiK$startRotatePki._();
 
 @override String get value => 'StartRotatePki';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? startRot
 
 @override int get hashCode => 'StartRotatePki'.hashCode;
 
- }
+}
 @immutable final class StartRotatePkiK$Unknown extends StartRotatePkiK {const StartRotatePkiK$Unknown(this.value);
 
 @override final String value;
@@ -53,23 +53,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? startRot
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class StartRotatePki {const StartRotatePki({required this.k});
 
-factory StartRotatePki.fromJson(Map<String, dynamic> json) { return StartRotatePki(
+factory StartRotatePki.fromJson(Map<String, dynamic> json) {return StartRotatePki(
   k: StartRotatePkiK.fromJson(json['k'] as String),
-); }
+);}
 
 /// Started PKI rotation
 final StartRotatePkiK k;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'k': k.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'StartRotatePki'; } 
-StartRotatePki copyWith({StartRotatePkiK? k}) { return StartRotatePki(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('k') && json['k'] == 'StartRotatePki';}
+StartRotatePki copyWith({StartRotatePkiK? k}) {return StartRotatePki(
   k: k ?? this.k,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StartRotatePki &&
           k == other.k;
@@ -78,4 +78,4 @@ StartRotatePki copyWith({StartRotatePkiK? k}) { return StartRotatePki(
 
 @override String toString() => 'StartRotatePki(k: $k)';
 
- }
+}

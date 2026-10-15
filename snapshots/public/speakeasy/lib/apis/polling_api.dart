@@ -21,7 +21,7 @@ final class PollingApi with ApiExecutor {const PollingApi(this.apiConfig);
 /// that the 5 second polling delay is used instead.
 ///
 /// `GET /polling/delaySeconds`
-Future<ApiResult<Polling, Never>> pollingDelaySecondsGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Polling?, Never>> pollingDelaySecondsGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -39,10 +39,11 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
+    if (const {201, 204}.contains(response.statusCode)) return null;
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling delaySeconds functionality. An initial (non-polling)
 /// request should be sent to the endpoint before starting polling requests,
 /// which will set timestamp on the server based on requestID.
@@ -56,7 +57,7 @@ return await execute(
 /// is used instead.
 ///
 /// `GET /polling/delaySeconds#override`
-Future<ApiResult<Polling, Never>> pollingDelaySecondsOverrideGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Polling?, Never>> pollingDelaySecondsOverrideGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -74,16 +75,17 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
+    if (const {201, 204}.contains(response.statusCode)) return null;
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling failureCriteria functionality based on response body.
 /// This endpoint always returns a 200 OK with a status of "failed", which
 /// should always cause an polling error due to the failureCriteria.
 ///
 /// `GET /polling/failureCriteria/responseBody`
-Future<ApiResult<Polling, Never>> pollingFailureCriteriaResponseBodyGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Polling, Never>> pollingFailureCriteriaResponseBodyGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +100,7 @@ return await execute(
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling failureCriteria functionality based on response body
 /// when the polling condition references a property with
 /// x-speakeasy-name-override. This endpoint always returns a 200 OK with
@@ -106,7 +108,7 @@ return await execute(
 /// the failureCriteria.
 ///
 /// `GET /polling/failureCriteria/responseBody/nameOverride`
-Future<ApiResult<PollingNameOverride, Never>> pollingFailureCriteriaResponseBodyNameOverrideGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PollingNameOverride, Never>> pollingFailureCriteriaResponseBodyNameOverrideGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -121,13 +123,13 @@ return await execute(
     return PollingNameOverride.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling failureCriteria functionality based on response body.
 /// This endpoint always returns a 200 OK with a status of "failed", which
 /// should always cause an polling error due to the failureCriteria.
 ///
 /// `GET /polling/failureCriteria/responseBody/nested`
-Future<ApiResult<PollingNested, Never>> pollingFailureCriteriaResponseBodyNestedGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PollingNested, Never>> pollingFailureCriteriaResponseBodyNestedGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -142,13 +144,13 @@ return await execute(
     return PollingNested.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling failureCriteria functionality based on response body.
 /// This endpoint always returns a 200 OK with a status of "failed", which
 /// should always cause an polling error due to the failureCriteria.
 ///
 /// `GET /polling/failureCriteria/responseBody#optional`
-Future<ApiResult<PollingOptional, Never>> pollingFailureCriteriaResponseBodyGetOptional({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PollingOptional, Never>> pollingFailureCriteriaResponseBodyGetOptional({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -163,13 +165,13 @@ return await execute(
     return PollingOptional.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling failureCriteria functionality based on status code.
 /// This endpoint always returns a 202 Accepted, which should always cause
 /// an error due to the failureCriteria.
 ///
 /// `GET /polling/failureCriteria/statusCode`
-Future<ApiResult<Polling, Never>> pollingFailureCriteriaStatusCodeGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Polling?, Never>> pollingFailureCriteriaStatusCodeGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -181,10 +183,11 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
+    if (response.statusCode == 202) return null;
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling intervalSeconds functionality. Based on requestID, the
 /// server will ensure requests are delayed by the expected interval.
 /// 
@@ -196,7 +199,7 @@ return await execute(
 /// and that the 5 second polling interval is used instead.
 ///
 /// `GET /polling/intervalSeconds`
-Future<ApiResult<Polling, Never>> pollingIntervalSecondsGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Polling?, Never>> pollingIntervalSecondsGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -214,10 +217,11 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
+    if (const {201, 204}.contains(response.statusCode)) return null;
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling intervalSeconds functionality. Based on requestID, the
 /// server will ensure requests are delayed by the expected interval.
 /// 
@@ -230,7 +234,7 @@ return await execute(
 /// is used instead.
 ///
 /// `GET /polling/intervalSeconds#override`
-Future<ApiResult<Polling, Never>> pollingIntervalSecondsOverrideGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Polling?, Never>> pollingIntervalSecondsOverrideGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -248,10 +252,11 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
+    if (const {201, 204}.contains(response.statusCode)) return null;
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling limitCount functionality. Based on requestID, the
 /// server will ensure requests are limited by the expected count.
 /// 
@@ -262,7 +267,7 @@ return await execute(
 /// the 5 polling request limit is used instead.
 ///
 /// `GET /polling/limitCount`
-Future<ApiResult<Polling, Never>> pollingLimitCountGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Polling, Never>> pollingLimitCountGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -283,7 +288,7 @@ return await execute(
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling limitCount functionality. Based on requestID, the
 /// server will ensure requests are limited by the expected count.
 /// 
@@ -295,7 +300,7 @@ return await execute(
 /// is used instead.
 ///
 /// `GET /polling/limitCount#override`
-Future<ApiResult<Polling, Never>> pollingLimitCountOverrideGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Polling, Never>> pollingLimitCountOverrideGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -316,13 +321,13 @@ return await execute(
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling successCriteria functionality based on response body.
 /// Based on requestID, this endpoint returns 200 OK with initial status of
 /// "pending", then "running", and then "completed".
 ///
 /// `GET /polling/successCriteria/responseBody`
-Future<ApiResult<Polling, Never>> pollingSuccessCriteriaResponseBodyGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Polling, Never>> pollingSuccessCriteriaResponseBodyGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -343,13 +348,13 @@ return await execute(
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling successCriteria functionality based on response body.
 /// Based on requestID, this endpoint returns 200 OK with initial status of
 /// "pending", then "running", and then "completed".
 ///
 /// `GET /polling/successCriteria/responseBody/nested`
-Future<ApiResult<PollingNested, Never>> pollingSuccessCriteriaResponseBodyNestedGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PollingNested, Never>> pollingSuccessCriteriaResponseBodyNestedGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -370,13 +375,13 @@ return await execute(
     return PollingNested.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling successCriteria functionality based on response body.
 /// Based on requestID, this endpoint returns 200 OK with initial status of
 /// "pending", then "running", and then "completed".
 ///
 /// `GET /polling/successCriteria/responseBody#optional`
-Future<ApiResult<PollingOptional, Never>> pollingSuccessCriteriaResponseBodyOptionalGet({required String requestId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PollingOptional, Never>> pollingSuccessCriteriaResponseBodyOptionalGet({required String requestId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 
@@ -397,13 +402,13 @@ return await execute(
     return PollingOptional.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Verifies polling successCriteria functionality based on status code.
 /// Based on requestID, this endpoint returns a 202 Accepted for the first
 /// request and a 200 OK for subsequent requests.
 ///
 /// `GET /polling/successCriteria/statusCode`
-Future<ApiResult<Polling, Never>> pollingSuccessCriteriaStatusCodeGet({required String requestId, required int statusCode, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Polling?, Never>> pollingSuccessCriteriaStatusCodeGet({required String requestId, required int statusCode, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['requestID'] = requestId;
 queryParameters['statusCode'] = statusCode.toString();
@@ -422,8 +427,9 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
+    if (response.statusCode == 202) return null;
     return Polling.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

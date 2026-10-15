@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';import 'package:pub_cloudflare/models/teams_devices_domain_joined_input_request/teams_devices_domain_joined_input_request_operating_system.dart';@immutable final class TeamsDevicesOsVersionInputRequest {const TeamsDevicesOsVersionInputRequest({required this.operatingSystem, required this.$operator, required this.version, this.osDistroName, this.osDistroRevision, this.osVersionExtra, });
 
-factory TeamsDevicesOsVersionInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesOsVersionInputRequest(
+factory TeamsDevicesOsVersionInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesOsVersionInputRequest(
   operatingSystem: TeamsDevicesDomainJoinedInputRequestOperatingSystem.fromJson(json['operating_system'] as String),
   $operator: TeamsDevicesCrowdstrikeInputRequestOperator.fromJson(json['operator'] as String),
   osDistroName: json['os_distro_name'] as String?,
   osDistroRevision: json['os_distro_revision'] as String?,
   osVersionExtra: json['os_version_extra'] as String?,
   version: json['version'] as String,
-); }
+);}
 
 /// Operating System.
 /// 
@@ -42,25 +42,25 @@ final String? osVersionExtra;
 /// Example: `'13.3.0'`
 final String version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'operating_system': operatingSystem.toJson(),
   'operator': $operator.toJson(),
   'os_distro_name': ?osDistroName,
   'os_distro_revision': ?osDistroRevision,
   'os_version_extra': ?osVersionExtra,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') && json['operating_system'] == 'windows' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operating_system') && json['operating_system'] == 'windows' &&
       json.containsKey('operator') &&
-      json.containsKey('version') && json['version'] is String; } 
-TeamsDevicesOsVersionInputRequest copyWith({TeamsDevicesDomainJoinedInputRequestOperatingSystem? operatingSystem, TeamsDevicesCrowdstrikeInputRequestOperator? $operator, String? Function()? osDistroName, String? Function()? osDistroRevision, String? Function()? osVersionExtra, String? version, }) { return TeamsDevicesOsVersionInputRequest(
+      json.containsKey('version') && json['version'] is String;}
+TeamsDevicesOsVersionInputRequest copyWith({TeamsDevicesDomainJoinedInputRequestOperatingSystem? operatingSystem, TeamsDevicesCrowdstrikeInputRequestOperator? $operator, String? Function()? osDistroName, String? Function()? osDistroRevision, String? Function()? osVersionExtra, String? version, }) {return TeamsDevicesOsVersionInputRequest(
   operatingSystem: operatingSystem ?? this.operatingSystem,
   $operator: $operator ?? this.$operator,
   osDistroName: osDistroName != null ? osDistroName() : this.osDistroName,
   osDistroRevision: osDistroRevision != null ? osDistroRevision() : this.osDistroRevision,
   osVersionExtra: osVersionExtra != null ? osVersionExtra() : this.osVersionExtra,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesOsVersionInputRequest &&
           operatingSystem == other.operatingSystem &&
@@ -74,4 +74,4 @@ TeamsDevicesOsVersionInputRequest copyWith({TeamsDevicesDomainJoinedInputRequest
 
 @override String toString() => 'TeamsDevicesOsVersionInputRequest(operatingSystem: $operatingSystem, \$operator: ${$operator}, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersionExtra: $osVersionExtra, version: $version)';
 
- }
+}

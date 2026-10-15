@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_post_reports_dataset_download_url_response/radar_post_reports_dataset_download_url_response_result.dart';@immutable final class RadarPostReportsDatasetDownloadUrlResponse {const RadarPostReportsDatasetDownloadUrlResponse({required this.result});
 
-factory RadarPostReportsDatasetDownloadUrlResponse.fromJson(Map<String, dynamic> json) { return RadarPostReportsDatasetDownloadUrlResponse(
+factory RadarPostReportsDatasetDownloadUrlResponse.fromJson(Map<String, dynamic> json) {return RadarPostReportsDatasetDownloadUrlResponse(
   result: RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarPostReportsDatasetDownloadUrlResponseResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result'); } 
-RadarPostReportsDatasetDownloadUrlResponse copyWith({RadarPostReportsDatasetDownloadUrlResponseResult? result}) { return RadarPostReportsDatasetDownloadUrlResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result');}
+RadarPostReportsDatasetDownloadUrlResponse copyWith({RadarPostReportsDatasetDownloadUrlResponseResult? result}) {return RadarPostReportsDatasetDownloadUrlResponse(
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarPostReportsDatasetDownloadUrlResponse &&
           result == other.result;
@@ -24,4 +24,4 @@ RadarPostReportsDatasetDownloadUrlResponse copyWith({RadarPostReportsDatasetDown
 
 @override String toString() => 'RadarPostReportsDatasetDownloadUrlResponse(result: $result)';
 
- }
+}

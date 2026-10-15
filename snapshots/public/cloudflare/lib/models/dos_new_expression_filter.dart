@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosNewExpressionFilter {const DosNewExpressionFilter({required this.expression, required this.mode, });
 
-factory DosNewExpressionFilter.fromJson(Map<String, dynamic> json) { return DosNewExpressionFilter(
+factory DosNewExpressionFilter.fromJson(Map<String, dynamic> json) {return DosNewExpressionFilter(
   expression: json['expression'] as String,
   mode: json['mode'] as String,
-); }
+);}
 
 /// The filter expression.
 /// 
@@ -16,16 +16,16 @@ final String expression;
 /// The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'.
 final String mode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expression': expression,
   'mode': mode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expression') && json['expression'] is String &&
-      json.containsKey('mode') && json['mode'] is String; } 
-DosNewExpressionFilter copyWith({String? expression, String? mode, }) { return DosNewExpressionFilter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expression') && json['expression'] is String &&
+      json.containsKey('mode') && json['mode'] is String;}
+DosNewExpressionFilter copyWith({String? expression, String? mode, }) {return DosNewExpressionFilter(
   expression: expression ?? this.expression,
   mode: mode ?? this.mode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DosNewExpressionFilter &&
           expression == other.expression &&
@@ -35,4 +35,4 @@ DosNewExpressionFilter copyWith({String? expression, String? mode, }) { return D
 
 @override String toString() => 'DosNewExpressionFilter(expression: $expression, mode: $mode)';
 
- }
+}

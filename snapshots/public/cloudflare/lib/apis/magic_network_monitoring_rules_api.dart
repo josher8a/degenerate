@@ -14,7 +14,7 @@ final class MagicNetworkMonitoringRulesApi with ApiExecutor {const MagicNetworkM
 /// Lists network monitoring rules for account.
 ///
 /// `GET /accounts/{account_id}/mnm/rules`
-Future<ApiResult<List<MagicVisibilityMnmMnmRule?>?, MagicNetworkMonitoringRulesListRulesError>> magicNetworkMonitoringRulesListRules({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicVisibilityMnmMnmRule?>?, MagicNetworkMonitoringRulesListRulesError>> magicNetworkMonitoringRulesListRules({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: MagicNetworkMonitoringRulesListRulesError.fromResponse,
 );
- } 
+}
 /// Create rules
 ///
 /// Create network monitoring rules for account. Currently only supports creating a single rule per API request.
 ///
 /// `POST /accounts/{account_id}/mnm/rules`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesCreateRulesError>> magicNetworkMonitoringRulesCreateRules({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesCreateRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesCreateRulesError>> magicNetworkMonitoringRulesCreateRules({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesCreateRulesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: MagicNetworkMonitoringRulesCreateRulesError.fromResponse,
 );
- } 
+}
 /// Update rules
 ///
 /// Update network monitoring rules for account.
 ///
 /// `PUT /accounts/{account_id}/mnm/rules`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesUpdateRulesError>> magicNetworkMonitoringRulesUpdateRules({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesUpdateRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesUpdateRulesError>> magicNetworkMonitoringRulesUpdateRules({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesUpdateRulesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,13 +81,13 @@ return await execute(
   },
   onError: MagicNetworkMonitoringRulesUpdateRulesError.fromResponse,
 );
- } 
+}
 /// Get rule
 ///
 /// List a single network monitoring rule for account.
 ///
 /// `GET /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesGetRuleError>> magicNetworkMonitoringRulesGetRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesGetRuleError>> magicNetworkMonitoringRulesGetRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: MagicNetworkMonitoringRulesGetRuleError.fromResponse,
 );
- } 
+}
 /// Update rule
 ///
 /// Update a network monitoring rule for account.
 ///
 /// `PATCH /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesUpdateRuleError>> magicNetworkMonitoringRulesUpdateRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesUpdateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesUpdateRuleError>> magicNetworkMonitoringRulesUpdateRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesUpdateRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -129,13 +129,13 @@ return await execute(
   },
   onError: MagicNetworkMonitoringRulesUpdateRuleError.fromResponse,
 );
- } 
+}
 /// Delete rule
 ///
 /// Delete a network monitoring rule for account.
 ///
 /// `DELETE /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesDeleteRuleError>> magicNetworkMonitoringRulesDeleteRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesDeleteRuleError>> magicNetworkMonitoringRulesDeleteRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -152,13 +152,13 @@ return await execute(
   },
   onError: MagicNetworkMonitoringRulesDeleteRuleError.fromResponse,
 );
- } 
+}
 /// Update advertisement for rule
 ///
 /// Update advertisement for rule.
 ///
 /// `PATCH /accounts/{account_id}/mnm/rules/{rule_id}/advertisement`
-Future<ApiResult<MagicVisibilityMnmMnmRuleAdvertisableResponse?, MagicNetworkMonitoringRulesUpdateAdvertisementForRuleError>> magicNetworkMonitoringRulesUpdateAdvertisementForRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRuleAdvertisableResponse?, MagicNetworkMonitoringRulesUpdateAdvertisementForRuleError>> magicNetworkMonitoringRulesUpdateAdvertisementForRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -175,5 +175,5 @@ return await execute(
   },
   onError: MagicNetworkMonitoringRulesUpdateAdvertisementForRuleError.fromResponse,
 );
- } 
- }
+}
+}

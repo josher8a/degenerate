@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HybridAndImplicitOptions {const HybridAndImplicitOptions({this.returnAccessTokenFromAuthorizationEndpoint, this.returnIdTokenFromAuthorizationEndpoint, });
 
-factory HybridAndImplicitOptions.fromJson(Map<String, dynamic> json) { return HybridAndImplicitOptions(
+factory HybridAndImplicitOptions.fromJson(Map<String, dynamic> json) {return HybridAndImplicitOptions(
   returnAccessTokenFromAuthorizationEndpoint: json['return_access_token_from_authorization_endpoint'] as bool?,
   returnIdTokenFromAuthorizationEndpoint: json['return_id_token_from_authorization_endpoint'] as bool?,
-); }
+);}
 
 /// If an Access Token should be returned from the OIDC Authorization endpoint
 final bool? returnAccessTokenFromAuthorizationEndpoint;
@@ -14,15 +14,15 @@ final bool? returnAccessTokenFromAuthorizationEndpoint;
 /// If an ID Token should be returned from the OIDC Authorization endpoint
 final bool? returnIdTokenFromAuthorizationEndpoint;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'return_access_token_from_authorization_endpoint': ?returnAccessTokenFromAuthorizationEndpoint,
   'return_id_token_from_authorization_endpoint': ?returnIdTokenFromAuthorizationEndpoint,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_access_token_from_authorization_endpoint', 'return_id_token_from_authorization_endpoint'}.contains(key)); } 
-HybridAndImplicitOptions copyWith({bool? Function()? returnAccessTokenFromAuthorizationEndpoint, bool? Function()? returnIdTokenFromAuthorizationEndpoint, }) { return HybridAndImplicitOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'return_access_token_from_authorization_endpoint', 'return_id_token_from_authorization_endpoint'}.contains(key));}
+HybridAndImplicitOptions copyWith({bool? Function()? returnAccessTokenFromAuthorizationEndpoint, bool? Function()? returnIdTokenFromAuthorizationEndpoint, }) {return HybridAndImplicitOptions(
   returnAccessTokenFromAuthorizationEndpoint: returnAccessTokenFromAuthorizationEndpoint != null ? returnAccessTokenFromAuthorizationEndpoint() : this.returnAccessTokenFromAuthorizationEndpoint,
   returnIdTokenFromAuthorizationEndpoint: returnIdTokenFromAuthorizationEndpoint != null ? returnIdTokenFromAuthorizationEndpoint() : this.returnIdTokenFromAuthorizationEndpoint,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HybridAndImplicitOptions &&
           returnAccessTokenFromAuthorizationEndpoint == other.returnAccessTokenFromAuthorizationEndpoint &&
@@ -32,4 +32,4 @@ HybridAndImplicitOptions copyWith({bool? Function()? returnAccessTokenFromAuthor
 
 @override String toString() => 'HybridAndImplicitOptions(returnAccessTokenFromAuthorizationEndpoint: $returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint: $returnIdTokenFromAuthorizationEndpoint)';
 
- }
+}

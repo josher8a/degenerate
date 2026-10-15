@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_configuration/deleted_terminal_configuration_object.dart';/// 
 @immutable final class DeletedTerminalConfiguration {const DeletedTerminalConfiguration({required this.deleted, required this.id, required this.object, });
 
-factory DeletedTerminalConfiguration.fromJson(Map<String, dynamic> json) { return DeletedTerminalConfiguration(
+factory DeletedTerminalConfiguration.fromJson(Map<String, dynamic> json) {return DeletedTerminalConfiguration(
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
   object: DeletedTerminalConfigurationObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Always true for a deleted object
 final bool deleted;
@@ -19,23 +19,23 @@ final String id;
 /// String representing the object's type. Objects of the same type share the same value.
 final DeletedTerminalConfigurationObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': deleted,
   'id': id,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'terminal.configuration'; } 
+      json.containsKey('object') && json['object'] == 'terminal.configuration';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-DeletedTerminalConfiguration copyWith({bool? deleted, String? id, DeletedTerminalConfigurationObject? object, }) { return DeletedTerminalConfiguration(
+return errors;}
+DeletedTerminalConfiguration copyWith({bool? deleted, String? id, DeletedTerminalConfigurationObject? object, }) {return DeletedTerminalConfiguration(
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedTerminalConfiguration &&
           deleted == other.deleted &&
@@ -46,4 +46,4 @@ DeletedTerminalConfiguration copyWith({bool? deleted, String? id, DeletedTermina
 
 @override String toString() => 'DeletedTerminalConfiguration(deleted: $deleted, id: $id, object: $object)';
 
- }
+}

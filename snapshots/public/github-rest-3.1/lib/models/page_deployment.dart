@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The GitHub Pages deployment status.
 @immutable final class PageDeployment {const PageDeployment({required this.id, required this.statusUrl, required this.pageUrl, this.previewUrl, });
 
-factory PageDeployment.fromJson(Map<String, dynamic> json) { return PageDeployment(
+factory PageDeployment.fromJson(Map<String, dynamic> json) {return PageDeployment(
   id: json['id'],
   statusUrl: Uri.parse(json['status_url'] as String),
   pageUrl: Uri.parse(json['page_url'] as String),
   previewUrl: json['preview_url'] != null ? Uri.parse(json['preview_url'] as String) : null,
-); }
+);}
 
 /// The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
 /// 
@@ -27,21 +27,21 @@ final Uri pageUrl;
 /// The URI to the deployed GitHub Pages preview.
 final Uri? previewUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'status_url': statusUrl.toString(),
   'page_url': pageUrl.toString(),
   if (previewUrl != null) 'preview_url': previewUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('status_url') && json['status_url'] is String &&
-      json.containsKey('page_url') && json['page_url'] is String; } 
-PageDeployment copyWith({dynamic id, Uri? statusUrl, Uri? pageUrl, Uri? Function()? previewUrl, }) { return PageDeployment(
+      json.containsKey('page_url') && json['page_url'] is String;}
+PageDeployment copyWith({dynamic id, Uri? statusUrl, Uri? pageUrl, Uri? Function()? previewUrl, }) {return PageDeployment(
   id: id ?? this.id,
   statusUrl: statusUrl ?? this.statusUrl,
   pageUrl: pageUrl ?? this.pageUrl,
   previewUrl: previewUrl != null ? previewUrl() : this.previewUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PageDeployment &&
           id == other.id &&
@@ -53,4 +53,4 @@ PageDeployment copyWith({dynamic id, Uri? statusUrl, Uri? pageUrl, Uri? Function
 
 @override String toString() => 'PageDeployment(id: $id, statusUrl: $statusUrl, pageUrl: $pageUrl, previewUrl: $previewUrl)';
 
- }
+}

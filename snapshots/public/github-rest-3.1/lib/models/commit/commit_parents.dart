@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommitParents {const CommitParents({required this.sha, required this.url, this.htmlUrl, });
 
-factory CommitParents.fromJson(Map<String, dynamic> json) { return CommitParents(
+factory CommitParents.fromJson(Map<String, dynamic> json) {return CommitParents(
   sha: json['sha'] as String,
   url: Uri.parse(json['url'] as String),
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
-); }
+);}
 
 final String sha;
 
@@ -15,18 +15,18 @@ final Uri url;
 
 final Uri? htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sha': sha,
   'url': url.toString(),
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-CommitParents copyWith({String? sha, Uri? url, Uri? Function()? htmlUrl, }) { return CommitParents(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sha') && json['sha'] is String &&
+      json.containsKey('url') && json['url'] is String;}
+CommitParents copyWith({String? sha, Uri? url, Uri? Function()? htmlUrl, }) {return CommitParents(
   sha: sha ?? this.sha,
   url: url ?? this.url,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommitParents &&
           sha == other.sha &&
@@ -37,4 +37,4 @@ CommitParents copyWith({String? sha, Uri? url, Uri? Function()? htmlUrl, }) { re
 
 @override String toString() => 'CommitParents(sha: $sha, url: $url, htmlUrl: $htmlUrl)';
 
- }
+}

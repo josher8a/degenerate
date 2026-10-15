@@ -25,11 +25,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class WorkersVersionItemFullResponseResources {const WorkersVersionItemFullResponseResources({this.bindings, this.script, this.scriptRuntime, });
 
-factory WorkersVersionItemFullResponseResources.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFullResponseResources(
+factory WorkersVersionItemFullResponseResources.fromJson(Map<String, dynamic> json) {return WorkersVersionItemFullResponseResources(
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItemResponse.fromJson(e as Map<String, dynamic>)).toList(),
   script: json['script'] != null ? Script.fromJson(json['script'] as Map<String, dynamic>) : null,
   scriptRuntime: json['script_runtime'] != null ? ScriptRuntime.fromJson(json['script_runtime'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 final List<WorkersBindingItemResponse>? bindings;
@@ -59,17 +59,17 @@ final Script? script;
 /// Runtime configuration for the Worker.
 final ScriptRuntime? scriptRuntime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
   if (script != null) 'script': script?.toJson(),
   if (scriptRuntime != null) 'script_runtime': scriptRuntime?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bindings', 'script', 'script_runtime'}.contains(key)); } 
-WorkersVersionItemFullResponseResources copyWith({List<WorkersBindingItemResponse>? Function()? bindings, Script? Function()? script, ScriptRuntime? Function()? scriptRuntime, }) { return WorkersVersionItemFullResponseResources(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bindings', 'script', 'script_runtime'}.contains(key));}
+WorkersVersionItemFullResponseResources copyWith({List<WorkersBindingItemResponse>? Function()? bindings, Script? Function()? script, ScriptRuntime? Function()? scriptRuntime, }) {return WorkersVersionItemFullResponseResources(
   bindings: bindings != null ? bindings() : this.bindings,
   script: script != null ? script() : this.script,
   scriptRuntime: scriptRuntime != null ? scriptRuntime() : this.scriptRuntime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionItemFullResponseResources &&
           listEquals(bindings, other.bindings) &&
@@ -80,4 +80,4 @@ WorkersVersionItemFullResponseResources copyWith({List<WorkersBindingItemRespons
 
 @override String toString() => 'WorkersVersionItemFullResponseResources(bindings: $bindings, script: $script, scriptRuntime: $scriptRuntime)';
 
- }
+}

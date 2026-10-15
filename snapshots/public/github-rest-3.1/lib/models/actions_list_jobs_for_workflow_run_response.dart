@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/job.dart';@immutable final class ActionsListJobsForWorkflowRunResponse {const ActionsListJobsForWorkflowRunResponse({required this.totalCount, required this.jobs, });
 
-factory ActionsListJobsForWorkflowRunResponse.fromJson(Map<String, dynamic> json) { return ActionsListJobsForWorkflowRunResponse(
+factory ActionsListJobsForWorkflowRunResponse.fromJson(Map<String, dynamic> json) {return ActionsListJobsForWorkflowRunResponse(
   totalCount: (json['total_count'] as num).toInt(),
   jobs: (json['jobs'] as List<dynamic>).map((e) => Job.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<Job> jobs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'jobs': jobs.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('jobs'); } 
-ActionsListJobsForWorkflowRunResponse copyWith({int? totalCount, List<Job>? jobs, }) { return ActionsListJobsForWorkflowRunResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('jobs');}
+ActionsListJobsForWorkflowRunResponse copyWith({int? totalCount, List<Job>? jobs, }) {return ActionsListJobsForWorkflowRunResponse(
   totalCount: totalCount ?? this.totalCount,
   jobs: jobs ?? this.jobs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListJobsForWorkflowRunResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListJobsForWorkflowRunResponse copyWith({int? totalCount, List<Job>? jobs
 
 @override String toString() => 'ActionsListJobsForWorkflowRunResponse(totalCount: $totalCount, jobs: $jobs)';
 
- }
+}

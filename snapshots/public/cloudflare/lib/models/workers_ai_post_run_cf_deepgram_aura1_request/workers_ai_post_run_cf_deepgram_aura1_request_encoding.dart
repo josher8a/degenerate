@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Encoding of the output audio.
 sealed class WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding();
 
-factory WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(String json) {return switch (json) {
   'linear16' => linear16,
   'flac' => flac,
   'mulaw' => mulaw,
@@ -13,7 +13,7 @@ factory WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(String json) { r
   'opus' => opus,
   'aac' => aac,
   _ => WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfDeepgramAura1RequestEncoding linear16 = WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16._();
 
@@ -32,9 +32,9 @@ static const WorkersAiPostRunCfDeepgramAura1RequestEncoding aac = WorkersAiPostR
 static const List<WorkersAiPostRunCfDeepgramAura1RequestEncoding> values = [linear16, flac, mulaw, alaw, mp3, opus, aac];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'linear16' => 'linear16',
   'flac' => 'flac',
   'mulaw' => 'mulaw',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'opus' => 'opus',
   'aac' => 'aac',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown; } 
+bool get isUnknown {return this is WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() linear16, required W Function() flac, required W Function() mulaw, required W Function() alaw, required W Function() mp3, required W Function() opus, required W Function() aac, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() linear16, required W Function() flac, required W Function() mulaw, required W Function() alaw, required W Function() mp3, required W Function() opus, required W Function() aac, required W Function(String value) $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16() => linear16(),
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac() => flac(),
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw() => mulaw(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() linear16, required W Function() flac, required 
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus() => opus(),
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac() => aac(),
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function()? flac, W Function()? mulaw, W Function()? alaw, W Function()? mp3, W Function()? opus, W Function()? aac, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function()? flac, W Function()? mulaw, W Function()? alaw, W Function()? mp3, W Function()? opus, W Function()? aac, W Function(String value)? $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16() => linear16 != null ? linear16() : orElse(value),
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac() => flac != null ? flac() : orElse(value),
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw() => mulaw != null ? mulaw() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus() => opus != null ? opus() : orElse(value),
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac() => aac != null ? aac() : orElse(value),
       WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkersAiPostRunCfDeepgramAura1RequestEncoding($value)';
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16 extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16._();
 
 @override String get value => 'linear16';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'linear16'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac._();
 
 @override String get value => 'flac';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'flac'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw._();
 
 @override String get value => 'mulaw';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'mulaw'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$alaw extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$alaw._();
 
 @override String get value => 'alaw';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'alaw'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$mp3 extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$mp3._();
 
 @override String get value => 'mp3';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'mp3'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus._();
 
 @override String get value => 'opus';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'opus'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac._();
 
 @override String get value => 'aac';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'aac'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => value.hashCode;
 
- }
+}

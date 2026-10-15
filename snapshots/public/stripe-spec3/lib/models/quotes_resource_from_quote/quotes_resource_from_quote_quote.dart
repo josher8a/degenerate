@@ -8,11 +8,11 @@ const QuotesResourceFromQuoteQuote({this.string = const Omittable.absent(), this
 const QuotesResourceFromQuoteQuote._({required this.rawValue, required this.string, required this.quote, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory QuotesResourceFromQuoteQuote.fromJson(Object? json) { return QuotesResourceFromQuoteQuote._(
+factory QuotesResourceFromQuoteQuote.fromJson(Object? json) {return QuotesResourceFromQuoteQuote._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   quote: json is Map<String, dynamic> && Quote.canParse(json) ? parseAnyOfVariant<Quote>(json, (value) => Quote.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'QuotesResourceFromQuoteQuote(${toJson()})';
 
- }
+}

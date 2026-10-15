@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor();
 
-factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'now' => now,
   'unchanged' => unchanged,
   _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$Unknown(json),
-}; }
+};}
 
 static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor now = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$now._();
 
@@ -16,30 +16,30 @@ static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBilli
 static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor> values = [now, unchanged];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'now' => 'now',
   'unchanged' => 'unchanged',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$Unknown; } 
+bool get isUnknown {return this is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() now, required W Function() unchanged, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() now, required W Function() unchanged, required W Function(String value) $unknown, }) {return switch (this) {
       PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$now() => now(),
       PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$unchanged() => unchanged(),
       PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W Function()? unchanged, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W Function()? unchanged, W Function(String value)? $unknown, }) {return switch (this) {
       PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$now() => now != null ? now() : orElse(value),
       PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$unchanged() => unchanged != null ? unchanged() : orElse(value),
       PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor($value)';
 
- }
+}
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$now extends PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$now._();
 
 @override String get value => 'now';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W F
 
 @override int get hashCode => 'now'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$unchanged extends PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$unchanged._();
 
 @override String get value => 'unchanged';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W F
 
 @override int get hashCode => 'unchanged'.hashCode;
 
- }
+}
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$Unknown extends PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

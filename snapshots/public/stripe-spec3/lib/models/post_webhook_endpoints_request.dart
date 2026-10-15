@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request/enabled_events.dart';/// Events sent to this endpoint will be generated with this Stripe Version instead of your account's default Stripe Version.
 sealed class PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion();
 
-factory PostWebhookEndpointsRequestVersion.fromJson(String json) { return switch (json) {
+factory PostWebhookEndpointsRequestVersion.fromJson(String json) {return switch (json) {
   '2011-01-01' => $20110101,
   '2011-06-21' => $20110621,
   '2011-06-28' => $20110628,
@@ -127,7 +127,7 @@ factory PostWebhookEndpointsRequestVersion.fromJson(String json) { return switch
   '2026-01-28.clover' => $20260128Clover,
   '2026-02-25.clover' => $20260225Clover,
   _ => PostWebhookEndpointsRequestVersion$Unknown(json),
-}; }
+};}
 
 static const PostWebhookEndpointsRequestVersion $20110101 = PostWebhookEndpointsRequestVersion$$20110101._();
 
@@ -374,9 +374,9 @@ static const PostWebhookEndpointsRequestVersion $20260225Clover = PostWebhookEnd
 static const List<PostWebhookEndpointsRequestVersion> values = [$20110101, $20110621, $20110628, $20110801, $20110915, $20111117, $20120223, $20120325, $20120618, $20120628, $20120709, $20120924, $20121026, $20121107, $20130211, $20130213, $20130705, $20130812, $20130813, $20131029, $20131203, $20140131, $20140313, $20140328, $20140519, $20140613, $20140617, $20140722, $20140726, $20140804, $20140820, $20140908, $20141007, $20141105, $20141120, $20141208, $20141217, $20141222, $20150111, $20150126, $20150210, $20150216, $20150218, $20150324, $20150407, $20150615, $20150707, $20150713, $20150728, $20150807, $20150819, $20150903, $20150908, $20150923, $20151001, $20151012, $20151016, $20160203, $20160219, $20160222, $20160223, $20160229, $20160307, $20160615, $20160706, $20161019, $20170127, $20170214, $20170406, $20170525, $20170605, $20170815, $20171214, $20180123, $20180205, $20180206, $20180228, $20180521, $20180727, $20180823, $20180906, $20180924, $20181031, $20181108, $20190211, $20190219, $20190314, $20190516, $20190814, $20190909, $20191008, $20191017, $20191105, $20191203, $20200302, $20200827, $20220801, $20221115, $20230816, $20231016, $20240410, $20240620, $20240930Acacia, $20241028Acacia, $20241120Acacia, $20241218Acacia, $20250127Acacia, $20250224Acacia, $20250301Dashboard, $20250331Basil, $20250430Basil, $20250528Basil, $20250630Basil, $20250730Basil, $20250827Basil, $20250930Clover, $20251029Clover, $20251117Clover, $20251215Clover, $20260128Clover, $20260225Clover];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '2011-01-01' => r'$20110101',
   '2011-06-21' => r'$20110621',
   '2011-06-28' => r'$20110628',
@@ -499,11 +499,11 @@ String get name { return switch (value) {
   '2026-01-28.clover' => r'$20260128Clover',
   '2026-02-25.clover' => r'$20260225Clover',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostWebhookEndpointsRequestVersion$Unknown; } 
+bool get isUnknown {return this is PostWebhookEndpointsRequestVersion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $20110101, required W Function() $20110621, required W Function() $20110628, required W Function() $20110801, required W Function() $20110915, required W Function() $20111117, required W Function() $20120223, required W Function() $20120325, required W Function() $20120618, required W Function() $20120628, required W Function() $20120709, required W Function() $20120924, required W Function() $20121026, required W Function() $20121107, required W Function() $20130211, required W Function() $20130213, required W Function() $20130705, required W Function() $20130812, required W Function() $20130813, required W Function() $20131029, required W Function() $20131203, required W Function() $20140131, required W Function() $20140313, required W Function() $20140328, required W Function() $20140519, required W Function() $20140613, required W Function() $20140617, required W Function() $20140722, required W Function() $20140726, required W Function() $20140804, required W Function() $20140820, required W Function() $20140908, required W Function() $20141007, required W Function() $20141105, required W Function() $20141120, required W Function() $20141208, required W Function() $20141217, required W Function() $20141222, required W Function() $20150111, required W Function() $20150126, required W Function() $20150210, required W Function() $20150216, required W Function() $20150218, required W Function() $20150324, required W Function() $20150407, required W Function() $20150615, required W Function() $20150707, required W Function() $20150713, required W Function() $20150728, required W Function() $20150807, required W Function() $20150819, required W Function() $20150903, required W Function() $20150908, required W Function() $20150923, required W Function() $20151001, required W Function() $20151012, required W Function() $20151016, required W Function() $20160203, required W Function() $20160219, required W Function() $20160222, required W Function() $20160223, required W Function() $20160229, required W Function() $20160307, required W Function() $20160615, required W Function() $20160706, required W Function() $20161019, required W Function() $20170127, required W Function() $20170214, required W Function() $20170406, required W Function() $20170525, required W Function() $20170605, required W Function() $20170815, required W Function() $20171214, required W Function() $20180123, required W Function() $20180205, required W Function() $20180206, required W Function() $20180228, required W Function() $20180521, required W Function() $20180727, required W Function() $20180823, required W Function() $20180906, required W Function() $20180924, required W Function() $20181031, required W Function() $20181108, required W Function() $20190211, required W Function() $20190219, required W Function() $20190314, required W Function() $20190516, required W Function() $20190814, required W Function() $20190909, required W Function() $20191008, required W Function() $20191017, required W Function() $20191105, required W Function() $20191203, required W Function() $20200302, required W Function() $20200827, required W Function() $20220801, required W Function() $20221115, required W Function() $20230816, required W Function() $20231016, required W Function() $20240410, required W Function() $20240620, required W Function() $20240930Acacia, required W Function() $20241028Acacia, required W Function() $20241120Acacia, required W Function() $20241218Acacia, required W Function() $20250127Acacia, required W Function() $20250224Acacia, required W Function() $20250301Dashboard, required W Function() $20250331Basil, required W Function() $20250430Basil, required W Function() $20250528Basil, required W Function() $20250630Basil, required W Function() $20250730Basil, required W Function() $20250827Basil, required W Function() $20250930Clover, required W Function() $20251029Clover, required W Function() $20251117Clover, required W Function() $20251215Clover, required W Function() $20260128Clover, required W Function() $20260225Clover, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $20110101, required W Function() $20110621, required W Function() $20110628, required W Function() $20110801, required W Function() $20110915, required W Function() $20111117, required W Function() $20120223, required W Function() $20120325, required W Function() $20120618, required W Function() $20120628, required W Function() $20120709, required W Function() $20120924, required W Function() $20121026, required W Function() $20121107, required W Function() $20130211, required W Function() $20130213, required W Function() $20130705, required W Function() $20130812, required W Function() $20130813, required W Function() $20131029, required W Function() $20131203, required W Function() $20140131, required W Function() $20140313, required W Function() $20140328, required W Function() $20140519, required W Function() $20140613, required W Function() $20140617, required W Function() $20140722, required W Function() $20140726, required W Function() $20140804, required W Function() $20140820, required W Function() $20140908, required W Function() $20141007, required W Function() $20141105, required W Function() $20141120, required W Function() $20141208, required W Function() $20141217, required W Function() $20141222, required W Function() $20150111, required W Function() $20150126, required W Function() $20150210, required W Function() $20150216, required W Function() $20150218, required W Function() $20150324, required W Function() $20150407, required W Function() $20150615, required W Function() $20150707, required W Function() $20150713, required W Function() $20150728, required W Function() $20150807, required W Function() $20150819, required W Function() $20150903, required W Function() $20150908, required W Function() $20150923, required W Function() $20151001, required W Function() $20151012, required W Function() $20151016, required W Function() $20160203, required W Function() $20160219, required W Function() $20160222, required W Function() $20160223, required W Function() $20160229, required W Function() $20160307, required W Function() $20160615, required W Function() $20160706, required W Function() $20161019, required W Function() $20170127, required W Function() $20170214, required W Function() $20170406, required W Function() $20170525, required W Function() $20170605, required W Function() $20170815, required W Function() $20171214, required W Function() $20180123, required W Function() $20180205, required W Function() $20180206, required W Function() $20180228, required W Function() $20180521, required W Function() $20180727, required W Function() $20180823, required W Function() $20180906, required W Function() $20180924, required W Function() $20181031, required W Function() $20181108, required W Function() $20190211, required W Function() $20190219, required W Function() $20190314, required W Function() $20190516, required W Function() $20190814, required W Function() $20190909, required W Function() $20191008, required W Function() $20191017, required W Function() $20191105, required W Function() $20191203, required W Function() $20200302, required W Function() $20200827, required W Function() $20220801, required W Function() $20221115, required W Function() $20230816, required W Function() $20231016, required W Function() $20240410, required W Function() $20240620, required W Function() $20240930Acacia, required W Function() $20241028Acacia, required W Function() $20241120Acacia, required W Function() $20241218Acacia, required W Function() $20250127Acacia, required W Function() $20250224Acacia, required W Function() $20250301Dashboard, required W Function() $20250331Basil, required W Function() $20250430Basil, required W Function() $20250528Basil, required W Function() $20250630Basil, required W Function() $20250730Basil, required W Function() $20250827Basil, required W Function() $20250930Clover, required W Function() $20251029Clover, required W Function() $20251117Clover, required W Function() $20251215Clover, required W Function() $20260128Clover, required W Function() $20260225Clover, required W Function(String value) $unknown, }) {return switch (this) {
       PostWebhookEndpointsRequestVersion$$20110101() => $20110101(),
       PostWebhookEndpointsRequestVersion$$20110621() => $20110621(),
       PostWebhookEndpointsRequestVersion$$20110628() => $20110628(),
@@ -626,9 +626,9 @@ W when<W>({required W Function() $20110101, required W Function() $20110621, req
       PostWebhookEndpointsRequestVersion$$20260128Clover() => $20260128Clover(),
       PostWebhookEndpointsRequestVersion$$20260225Clover() => $20260225Clover(),
       PostWebhookEndpointsRequestVersion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $20110101, W Function()? $20110621, W Function()? $20110628, W Function()? $20110801, W Function()? $20110915, W Function()? $20111117, W Function()? $20120223, W Function()? $20120325, W Function()? $20120618, W Function()? $20120628, W Function()? $20120709, W Function()? $20120924, W Function()? $20121026, W Function()? $20121107, W Function()? $20130211, W Function()? $20130213, W Function()? $20130705, W Function()? $20130812, W Function()? $20130813, W Function()? $20131029, W Function()? $20131203, W Function()? $20140131, W Function()? $20140313, W Function()? $20140328, W Function()? $20140519, W Function()? $20140613, W Function()? $20140617, W Function()? $20140722, W Function()? $20140726, W Function()? $20140804, W Function()? $20140820, W Function()? $20140908, W Function()? $20141007, W Function()? $20141105, W Function()? $20141120, W Function()? $20141208, W Function()? $20141217, W Function()? $20141222, W Function()? $20150111, W Function()? $20150126, W Function()? $20150210, W Function()? $20150216, W Function()? $20150218, W Function()? $20150324, W Function()? $20150407, W Function()? $20150615, W Function()? $20150707, W Function()? $20150713, W Function()? $20150728, W Function()? $20150807, W Function()? $20150819, W Function()? $20150903, W Function()? $20150908, W Function()? $20150923, W Function()? $20151001, W Function()? $20151012, W Function()? $20151016, W Function()? $20160203, W Function()? $20160219, W Function()? $20160222, W Function()? $20160223, W Function()? $20160229, W Function()? $20160307, W Function()? $20160615, W Function()? $20160706, W Function()? $20161019, W Function()? $20170127, W Function()? $20170214, W Function()? $20170406, W Function()? $20170525, W Function()? $20170605, W Function()? $20170815, W Function()? $20171214, W Function()? $20180123, W Function()? $20180205, W Function()? $20180206, W Function()? $20180228, W Function()? $20180521, W Function()? $20180727, W Function()? $20180823, W Function()? $20180906, W Function()? $20180924, W Function()? $20181031, W Function()? $20181108, W Function()? $20190211, W Function()? $20190219, W Function()? $20190314, W Function()? $20190516, W Function()? $20190814, W Function()? $20190909, W Function()? $20191008, W Function()? $20191017, W Function()? $20191105, W Function()? $20191203, W Function()? $20200302, W Function()? $20200827, W Function()? $20220801, W Function()? $20221115, W Function()? $20230816, W Function()? $20231016, W Function()? $20240410, W Function()? $20240620, W Function()? $20240930Acacia, W Function()? $20241028Acacia, W Function()? $20241120Acacia, W Function()? $20241218Acacia, W Function()? $20250127Acacia, W Function()? $20250224Acacia, W Function()? $20250301Dashboard, W Function()? $20250331Basil, W Function()? $20250430Basil, W Function()? $20250528Basil, W Function()? $20250630Basil, W Function()? $20250730Basil, W Function()? $20250827Basil, W Function()? $20250930Clover, W Function()? $20251029Clover, W Function()? $20251117Clover, W Function()? $20251215Clover, W Function()? $20260128Clover, W Function()? $20260225Clover, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $20110101, W Function()? $20110621, W Function()? $20110628, W Function()? $20110801, W Function()? $20110915, W Function()? $20111117, W Function()? $20120223, W Function()? $20120325, W Function()? $20120618, W Function()? $20120628, W Function()? $20120709, W Function()? $20120924, W Function()? $20121026, W Function()? $20121107, W Function()? $20130211, W Function()? $20130213, W Function()? $20130705, W Function()? $20130812, W Function()? $20130813, W Function()? $20131029, W Function()? $20131203, W Function()? $20140131, W Function()? $20140313, W Function()? $20140328, W Function()? $20140519, W Function()? $20140613, W Function()? $20140617, W Function()? $20140722, W Function()? $20140726, W Function()? $20140804, W Function()? $20140820, W Function()? $20140908, W Function()? $20141007, W Function()? $20141105, W Function()? $20141120, W Function()? $20141208, W Function()? $20141217, W Function()? $20141222, W Function()? $20150111, W Function()? $20150126, W Function()? $20150210, W Function()? $20150216, W Function()? $20150218, W Function()? $20150324, W Function()? $20150407, W Function()? $20150615, W Function()? $20150707, W Function()? $20150713, W Function()? $20150728, W Function()? $20150807, W Function()? $20150819, W Function()? $20150903, W Function()? $20150908, W Function()? $20150923, W Function()? $20151001, W Function()? $20151012, W Function()? $20151016, W Function()? $20160203, W Function()? $20160219, W Function()? $20160222, W Function()? $20160223, W Function()? $20160229, W Function()? $20160307, W Function()? $20160615, W Function()? $20160706, W Function()? $20161019, W Function()? $20170127, W Function()? $20170214, W Function()? $20170406, W Function()? $20170525, W Function()? $20170605, W Function()? $20170815, W Function()? $20171214, W Function()? $20180123, W Function()? $20180205, W Function()? $20180206, W Function()? $20180228, W Function()? $20180521, W Function()? $20180727, W Function()? $20180823, W Function()? $20180906, W Function()? $20180924, W Function()? $20181031, W Function()? $20181108, W Function()? $20190211, W Function()? $20190219, W Function()? $20190314, W Function()? $20190516, W Function()? $20190814, W Function()? $20190909, W Function()? $20191008, W Function()? $20191017, W Function()? $20191105, W Function()? $20191203, W Function()? $20200302, W Function()? $20200827, W Function()? $20220801, W Function()? $20221115, W Function()? $20230816, W Function()? $20231016, W Function()? $20240410, W Function()? $20240620, W Function()? $20240930Acacia, W Function()? $20241028Acacia, W Function()? $20241120Acacia, W Function()? $20241218Acacia, W Function()? $20250127Acacia, W Function()? $20250224Acacia, W Function()? $20250301Dashboard, W Function()? $20250331Basil, W Function()? $20250430Basil, W Function()? $20250528Basil, W Function()? $20250630Basil, W Function()? $20250730Basil, W Function()? $20250827Basil, W Function()? $20250930Clover, W Function()? $20251029Clover, W Function()? $20251117Clover, W Function()? $20251215Clover, W Function()? $20260128Clover, W Function()? $20260225Clover, W Function(String value)? $unknown, }) {return switch (this) {
       PostWebhookEndpointsRequestVersion$$20110101() => $20110101 != null ? $20110101() : orElse(value),
       PostWebhookEndpointsRequestVersion$$20110621() => $20110621 != null ? $20110621() : orElse(value),
       PostWebhookEndpointsRequestVersion$$20110628() => $20110628 != null ? $20110628() : orElse(value),
@@ -751,10 +751,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
       PostWebhookEndpointsRequestVersion$$20260128Clover() => $20260128Clover != null ? $20260128Clover() : orElse(value),
       PostWebhookEndpointsRequestVersion$$20260225Clover() => $20260225Clover != null ? $20260225Clover() : orElse(value),
       PostWebhookEndpointsRequestVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostWebhookEndpointsRequestVersion($value)';
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20110101 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20110101._();
 
 @override String get value => '2011-01-01';
@@ -763,7 +763,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2011-01-01'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20110621 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20110621._();
 
 @override String get value => '2011-06-21';
@@ -772,7 +772,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2011-06-21'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20110628 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20110628._();
 
 @override String get value => '2011-06-28';
@@ -781,7 +781,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2011-06-28'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20110801 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20110801._();
 
 @override String get value => '2011-08-01';
@@ -790,7 +790,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2011-08-01'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20110915 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20110915._();
 
 @override String get value => '2011-09-15';
@@ -799,7 +799,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2011-09-15'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20111117 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20111117._();
 
 @override String get value => '2011-11-17';
@@ -808,7 +808,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2011-11-17'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20120223 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20120223._();
 
 @override String get value => '2012-02-23';
@@ -817,7 +817,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2012-02-23'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20120325 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20120325._();
 
 @override String get value => '2012-03-25';
@@ -826,7 +826,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2012-03-25'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20120618 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20120618._();
 
 @override String get value => '2012-06-18';
@@ -835,7 +835,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2012-06-18'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20120628 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20120628._();
 
 @override String get value => '2012-06-28';
@@ -844,7 +844,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2012-06-28'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20120709 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20120709._();
 
 @override String get value => '2012-07-09';
@@ -853,7 +853,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2012-07-09'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20120924 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20120924._();
 
 @override String get value => '2012-09-24';
@@ -862,7 +862,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2012-09-24'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20121026 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20121026._();
 
 @override String get value => '2012-10-26';
@@ -871,7 +871,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2012-10-26'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20121107 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20121107._();
 
 @override String get value => '2012-11-07';
@@ -880,7 +880,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2012-11-07'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20130211 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20130211._();
 
 @override String get value => '2013-02-11';
@@ -889,7 +889,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2013-02-11'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20130213 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20130213._();
 
 @override String get value => '2013-02-13';
@@ -898,7 +898,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2013-02-13'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20130705 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20130705._();
 
 @override String get value => '2013-07-05';
@@ -907,7 +907,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2013-07-05'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20130812 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20130812._();
 
 @override String get value => '2013-08-12';
@@ -916,7 +916,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2013-08-12'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20130813 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20130813._();
 
 @override String get value => '2013-08-13';
@@ -925,7 +925,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2013-08-13'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20131029 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20131029._();
 
 @override String get value => '2013-10-29';
@@ -934,7 +934,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2013-10-29'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20131203 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20131203._();
 
 @override String get value => '2013-12-03';
@@ -943,7 +943,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2013-12-03'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140131 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140131._();
 
 @override String get value => '2014-01-31';
@@ -952,7 +952,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-01-31'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140313 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140313._();
 
 @override String get value => '2014-03-13';
@@ -961,7 +961,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-03-13'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140328 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140328._();
 
 @override String get value => '2014-03-28';
@@ -970,7 +970,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-03-28'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140519 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140519._();
 
 @override String get value => '2014-05-19';
@@ -979,7 +979,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-05-19'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140613 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140613._();
 
 @override String get value => '2014-06-13';
@@ -988,7 +988,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-06-13'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140617 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140617._();
 
 @override String get value => '2014-06-17';
@@ -997,7 +997,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-06-17'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140722 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140722._();
 
 @override String get value => '2014-07-22';
@@ -1006,7 +1006,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-07-22'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140726 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140726._();
 
 @override String get value => '2014-07-26';
@@ -1015,7 +1015,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-07-26'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140804 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140804._();
 
 @override String get value => '2014-08-04';
@@ -1024,7 +1024,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-08-04'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140820 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140820._();
 
 @override String get value => '2014-08-20';
@@ -1033,7 +1033,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-08-20'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20140908 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20140908._();
 
 @override String get value => '2014-09-08';
@@ -1042,7 +1042,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-09-08'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20141007 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20141007._();
 
 @override String get value => '2014-10-07';
@@ -1051,7 +1051,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-10-07'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20141105 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20141105._();
 
 @override String get value => '2014-11-05';
@@ -1060,7 +1060,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-11-05'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20141120 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20141120._();
 
 @override String get value => '2014-11-20';
@@ -1069,7 +1069,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-11-20'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20141208 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20141208._();
 
 @override String get value => '2014-12-08';
@@ -1078,7 +1078,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-12-08'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20141217 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20141217._();
 
 @override String get value => '2014-12-17';
@@ -1087,7 +1087,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-12-17'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20141222 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20141222._();
 
 @override String get value => '2014-12-22';
@@ -1096,7 +1096,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2014-12-22'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150111 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150111._();
 
 @override String get value => '2015-01-11';
@@ -1105,7 +1105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-01-11'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150126 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150126._();
 
 @override String get value => '2015-01-26';
@@ -1114,7 +1114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-01-26'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150210 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150210._();
 
 @override String get value => '2015-02-10';
@@ -1123,7 +1123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-02-10'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150216 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150216._();
 
 @override String get value => '2015-02-16';
@@ -1132,7 +1132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-02-16'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150218 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150218._();
 
 @override String get value => '2015-02-18';
@@ -1141,7 +1141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-02-18'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150324 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150324._();
 
 @override String get value => '2015-03-24';
@@ -1150,7 +1150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-03-24'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150407 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150407._();
 
 @override String get value => '2015-04-07';
@@ -1159,7 +1159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-04-07'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150615 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150615._();
 
 @override String get value => '2015-06-15';
@@ -1168,7 +1168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-06-15'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150707 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150707._();
 
 @override String get value => '2015-07-07';
@@ -1177,7 +1177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-07-07'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150713 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150713._();
 
 @override String get value => '2015-07-13';
@@ -1186,7 +1186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-07-13'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150728 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150728._();
 
 @override String get value => '2015-07-28';
@@ -1195,7 +1195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-07-28'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150807 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150807._();
 
 @override String get value => '2015-08-07';
@@ -1204,7 +1204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-08-07'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150819 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150819._();
 
 @override String get value => '2015-08-19';
@@ -1213,7 +1213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-08-19'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150903 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150903._();
 
 @override String get value => '2015-09-03';
@@ -1222,7 +1222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-09-03'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150908 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150908._();
 
 @override String get value => '2015-09-08';
@@ -1231,7 +1231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-09-08'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20150923 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20150923._();
 
 @override String get value => '2015-09-23';
@@ -1240,7 +1240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-09-23'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20151001 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20151001._();
 
 @override String get value => '2015-10-01';
@@ -1249,7 +1249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-10-01'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20151012 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20151012._();
 
 @override String get value => '2015-10-12';
@@ -1258,7 +1258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-10-12'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20151016 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20151016._();
 
 @override String get value => '2015-10-16';
@@ -1267,7 +1267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2015-10-16'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20160203 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20160203._();
 
 @override String get value => '2016-02-03';
@@ -1276,7 +1276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-02-03'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20160219 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20160219._();
 
 @override String get value => '2016-02-19';
@@ -1285,7 +1285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-02-19'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20160222 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20160222._();
 
 @override String get value => '2016-02-22';
@@ -1294,7 +1294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-02-22'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20160223 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20160223._();
 
 @override String get value => '2016-02-23';
@@ -1303,7 +1303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-02-23'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20160229 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20160229._();
 
 @override String get value => '2016-02-29';
@@ -1312,7 +1312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-02-29'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20160307 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20160307._();
 
 @override String get value => '2016-03-07';
@@ -1321,7 +1321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-03-07'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20160615 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20160615._();
 
 @override String get value => '2016-06-15';
@@ -1330,7 +1330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-06-15'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20160706 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20160706._();
 
 @override String get value => '2016-07-06';
@@ -1339,7 +1339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-07-06'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20161019 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20161019._();
 
 @override String get value => '2016-10-19';
@@ -1348,7 +1348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2016-10-19'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20170127 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20170127._();
 
 @override String get value => '2017-01-27';
@@ -1357,7 +1357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2017-01-27'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20170214 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20170214._();
 
 @override String get value => '2017-02-14';
@@ -1366,7 +1366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2017-02-14'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20170406 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20170406._();
 
 @override String get value => '2017-04-06';
@@ -1375,7 +1375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2017-04-06'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20170525 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20170525._();
 
 @override String get value => '2017-05-25';
@@ -1384,7 +1384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2017-05-25'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20170605 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20170605._();
 
 @override String get value => '2017-06-05';
@@ -1393,7 +1393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2017-06-05'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20170815 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20170815._();
 
 @override String get value => '2017-08-15';
@@ -1402,7 +1402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2017-08-15'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20171214 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20171214._();
 
 @override String get value => '2017-12-14';
@@ -1411,7 +1411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2017-12-14'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180123 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180123._();
 
 @override String get value => '2018-01-23';
@@ -1420,7 +1420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-01-23'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180205 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180205._();
 
 @override String get value => '2018-02-05';
@@ -1429,7 +1429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-02-05'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180206 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180206._();
 
 @override String get value => '2018-02-06';
@@ -1438,7 +1438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-02-06'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180228 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180228._();
 
 @override String get value => '2018-02-28';
@@ -1447,7 +1447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-02-28'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180521 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180521._();
 
 @override String get value => '2018-05-21';
@@ -1456,7 +1456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-05-21'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180727 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180727._();
 
 @override String get value => '2018-07-27';
@@ -1465,7 +1465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-07-27'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180823 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180823._();
 
 @override String get value => '2018-08-23';
@@ -1474,7 +1474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-08-23'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180906 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180906._();
 
 @override String get value => '2018-09-06';
@@ -1483,7 +1483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-09-06'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20180924 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20180924._();
 
 @override String get value => '2018-09-24';
@@ -1492,7 +1492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-09-24'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20181031 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20181031._();
 
 @override String get value => '2018-10-31';
@@ -1501,7 +1501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-10-31'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20181108 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20181108._();
 
 @override String get value => '2018-11-08';
@@ -1510,7 +1510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2018-11-08'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20190211 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20190211._();
 
 @override String get value => '2019-02-11';
@@ -1519,7 +1519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-02-11'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20190219 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20190219._();
 
 @override String get value => '2019-02-19';
@@ -1528,7 +1528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-02-19'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20190314 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20190314._();
 
 @override String get value => '2019-03-14';
@@ -1537,7 +1537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-03-14'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20190516 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20190516._();
 
 @override String get value => '2019-05-16';
@@ -1546,7 +1546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-05-16'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20190814 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20190814._();
 
 @override String get value => '2019-08-14';
@@ -1555,7 +1555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-08-14'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20190909 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20190909._();
 
 @override String get value => '2019-09-09';
@@ -1564,7 +1564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-09-09'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20191008 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20191008._();
 
 @override String get value => '2019-10-08';
@@ -1573,7 +1573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-10-08'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20191017 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20191017._();
 
 @override String get value => '2019-10-17';
@@ -1582,7 +1582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-10-17'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20191105 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20191105._();
 
 @override String get value => '2019-11-05';
@@ -1591,7 +1591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-11-05'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20191203 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20191203._();
 
 @override String get value => '2019-12-03';
@@ -1600,7 +1600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2019-12-03'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20200302 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20200302._();
 
 @override String get value => '2020-03-02';
@@ -1609,7 +1609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2020-03-02'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20200827 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20200827._();
 
 @override String get value => '2020-08-27';
@@ -1618,7 +1618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2020-08-27'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20220801 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20220801._();
 
 @override String get value => '2022-08-01';
@@ -1627,7 +1627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2022-08-01'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20221115 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20221115._();
 
 @override String get value => '2022-11-15';
@@ -1636,7 +1636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2022-11-15'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20230816 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20230816._();
 
 @override String get value => '2023-08-16';
@@ -1645,7 +1645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2023-08-16'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20231016 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20231016._();
 
 @override String get value => '2023-10-16';
@@ -1654,7 +1654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2023-10-16'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20240410 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20240410._();
 
 @override String get value => '2024-04-10';
@@ -1663,7 +1663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2024-04-10'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20240620 extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20240620._();
 
 @override String get value => '2024-06-20';
@@ -1672,7 +1672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2024-06-20'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20240930Acacia extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20240930Acacia._();
 
 @override String get value => '2024-09-30.acacia';
@@ -1681,7 +1681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2024-09-30.acacia'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20241028Acacia extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20241028Acacia._();
 
 @override String get value => '2024-10-28.acacia';
@@ -1690,7 +1690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2024-10-28.acacia'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20241120Acacia extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20241120Acacia._();
 
 @override String get value => '2024-11-20.acacia';
@@ -1699,7 +1699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2024-11-20.acacia'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20241218Acacia extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20241218Acacia._();
 
 @override String get value => '2024-12-18.acacia';
@@ -1708,7 +1708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2024-12-18.acacia'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250127Acacia extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250127Acacia._();
 
 @override String get value => '2025-01-27.acacia';
@@ -1717,7 +1717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-01-27.acacia'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250224Acacia extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250224Acacia._();
 
 @override String get value => '2025-02-24.acacia';
@@ -1726,7 +1726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-02-24.acacia'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250301Dashboard extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250301Dashboard._();
 
 @override String get value => '2025-03-01.dashboard';
@@ -1735,7 +1735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-03-01.dashboard'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250331Basil extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250331Basil._();
 
 @override String get value => '2025-03-31.basil';
@@ -1744,7 +1744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-03-31.basil'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250430Basil extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250430Basil._();
 
 @override String get value => '2025-04-30.basil';
@@ -1753,7 +1753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-04-30.basil'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250528Basil extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250528Basil._();
 
 @override String get value => '2025-05-28.basil';
@@ -1762,7 +1762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-05-28.basil'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250630Basil extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250630Basil._();
 
 @override String get value => '2025-06-30.basil';
@@ -1771,7 +1771,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-06-30.basil'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250730Basil extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250730Basil._();
 
 @override String get value => '2025-07-30.basil';
@@ -1780,7 +1780,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-07-30.basil'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250827Basil extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250827Basil._();
 
 @override String get value => '2025-08-27.basil';
@@ -1789,7 +1789,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-08-27.basil'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20250930Clover extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20250930Clover._();
 
 @override String get value => '2025-09-30.clover';
@@ -1798,7 +1798,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-09-30.clover'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20251029Clover extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20251029Clover._();
 
 @override String get value => '2025-10-29.clover';
@@ -1807,7 +1807,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-10-29.clover'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20251117Clover extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20251117Clover._();
 
 @override String get value => '2025-11-17.clover';
@@ -1816,7 +1816,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-11-17.clover'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20251215Clover extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20251215Clover._();
 
 @override String get value => '2025-12-15.clover';
@@ -1825,7 +1825,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2025-12-15.clover'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20260128Clover extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20260128Clover._();
 
 @override String get value => '2026-01-28.clover';
@@ -1834,7 +1834,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2026-01-28.clover'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$$20260225Clover extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$$20260225Clover._();
 
 @override String get value => '2026-02-25.clover';
@@ -1843,7 +1843,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => '2026-02-25.clover'.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequestVersion$Unknown extends PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion$Unknown(this.value);
 
 @override final String value;
@@ -1853,10 +1853,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2011010
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostWebhookEndpointsRequest {const PostWebhookEndpointsRequest({required this.enabledEvents, required this.url, this.apiVersion, this.connect, this.description, this.expand, this.metadata, });
 
-factory PostWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsRequest(
+factory PostWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) {return PostWebhookEndpointsRequest(
   apiVersion: json['api_version'] != null ? PostWebhookEndpointsRequestVersion.fromJson(json['api_version'] as String) : null,
   connect: json['connect'] as bool?,
   description: json['description'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription.fromJson(json['description']) : null,
@@ -1864,7 +1864,7 @@ factory PostWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   url: json['url'] as String,
-); }
+);}
 
 /// Events sent to this endpoint will be generated with this Stripe Version instead of your account's default Stripe Version.
 final PostWebhookEndpointsRequestVersion? apiVersion;
@@ -1887,7 +1887,7 @@ final Metadata? metadata;
 /// The URL of the webhook endpoint.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (apiVersion != null) 'api_version': apiVersion?.toJson(),
   'connect': ?connect,
   if (description != null) 'description': description?.toJson(),
@@ -1895,10 +1895,10 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_events') &&
-      json.containsKey('url') && json['url'] is String; } 
-PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Function()? apiVersion, bool? Function()? connect, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? Function()? description, List<EnabledEvents>? enabledEvents, List<String>? Function()? expand, Metadata? Function()? metadata, String? url, }) { return PostWebhookEndpointsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled_events') &&
+      json.containsKey('url') && json['url'] is String;}
+PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Function()? apiVersion, bool? Function()? connect, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? Function()? description, List<EnabledEvents>? enabledEvents, List<String>? Function()? expand, Metadata? Function()? metadata, String? url, }) {return PostWebhookEndpointsRequest(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   connect: connect != null ? connect() : this.connect,
   description: description != null ? description() : this.description,
@@ -1906,7 +1906,7 @@ PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Functi
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostWebhookEndpointsRequest &&
           apiVersion == other.apiVersion &&
@@ -1921,4 +1921,4 @@ PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Functi
 
 @override String toString() => 'PostWebhookEndpointsRequest(apiVersion: $apiVersion, connect: $connect, description: $description, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)';
 
- }
+}

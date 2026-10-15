@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_resource_reference.dart';@immutable final class LoadBalancingSearch {const LoadBalancingSearch({this.resources});
 
-factory LoadBalancingSearch.fromJson(Map<String, dynamic> json) { return LoadBalancingSearch(
+factory LoadBalancingSearch.fromJson(Map<String, dynamic> json) {return LoadBalancingSearch(
   resources: (json['resources'] as List<dynamic>?)?.map((e) => LoadBalancingResourceReference.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// A list of resources matching the search query.
 final List<LoadBalancingResourceReference>? resources;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (resources != null) 'resources': resources?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'resources'}.contains(key)); } 
-LoadBalancingSearch copyWith({List<LoadBalancingResourceReference>? Function()? resources}) { return LoadBalancingSearch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'resources'}.contains(key));}
+LoadBalancingSearch copyWith({List<LoadBalancingResourceReference>? Function()? resources}) {return LoadBalancingSearch(
   resources: resources != null ? resources() : this.resources,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingSearch &&
           listEquals(resources, other.resources);
@@ -25,4 +25,4 @@ LoadBalancingSearch copyWith({List<LoadBalancingResourceReference>? Function()? 
 
 @override String toString() => 'LoadBalancingSearch(resources: $resources)';
 
- }
+}

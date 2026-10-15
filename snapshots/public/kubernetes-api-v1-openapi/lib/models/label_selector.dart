@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/label_selector_requirement.dart';/// A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
 @immutable final class LabelSelector {const LabelSelector({this.matchExpressions, this.matchLabels, });
 
-factory LabelSelector.fromJson(Map<String, dynamic> json) { return LabelSelector(
+factory LabelSelector.fromJson(Map<String, dynamic> json) {return LabelSelector(
   matchExpressions: (json['matchExpressions'] as List<dynamic>?)?.map((e) => LabelSelectorRequirement.fromJson(e as Map<String, dynamic>)).toList(),
   matchLabels: (json['matchLabels'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// matchExpressions is a list of label selector requirements. The requirements are ANDed.
 final List<LabelSelectorRequirement>? matchExpressions;
@@ -15,15 +15,15 @@ final List<LabelSelectorRequirement>? matchExpressions;
 /// matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 final Map<String,String>? matchLabels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (matchExpressions != null) 'matchExpressions': matchExpressions?.map((e) => e.toJson()).toList(),
   'matchLabels': ?matchLabels,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'matchExpressions', 'matchLabels'}.contains(key)); } 
-LabelSelector copyWith({List<LabelSelectorRequirement>? Function()? matchExpressions, Map<String, String>? Function()? matchLabels, }) { return LabelSelector(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'matchExpressions', 'matchLabels'}.contains(key));}
+LabelSelector copyWith({List<LabelSelectorRequirement>? Function()? matchExpressions, Map<String, String>? Function()? matchLabels, }) {return LabelSelector(
   matchExpressions: matchExpressions != null ? matchExpressions() : this.matchExpressions,
   matchLabels: matchLabels != null ? matchLabels() : this.matchLabels,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LabelSelector &&
           listEquals(matchExpressions, other.matchExpressions) &&
@@ -33,4 +33,4 @@ LabelSelector copyWith({List<LabelSelectorRequirement>? Function()? matchExpress
 
 @override String toString() => 'LabelSelector(matchExpressions: $matchExpressions, matchLabels: $matchLabels)';
 
- }
+}

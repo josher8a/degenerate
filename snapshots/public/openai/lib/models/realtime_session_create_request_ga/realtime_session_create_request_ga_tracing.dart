@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class Auto {const Auto();
 
-factory Auto.fromJson(String json) { return switch (json) {
+factory Auto.fromJson(String json) {return switch (json) {
   'auto' => auto,
   _ => Auto$Unknown(json),
-}; }
+};}
 
 static const Auto auto = Auto$auto._();
 
 static const List<Auto> values = [auto];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Auto$Unknown; } 
+bool get isUnknown {return this is Auto$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function(String value) $unknown, }) {return switch (this) {
       Auto$auto() => auto(),
       Auto$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function(String value)? $unknown, }) {return switch (this) {
       Auto$auto() => auto != null ? auto() : orElse(value),
       Auto$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Auto($value)';
 
- }
+}
 @immutable final class Auto$auto extends Auto {const Auto$auto._();
 
 @override String get value => 'auto';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class Auto$Unknown extends Auto {const Auto$Unknown(this.value);
 
 @override final String value;
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once
 /// tracing is enabled for a session, the configuration cannot be modified.
 /// 

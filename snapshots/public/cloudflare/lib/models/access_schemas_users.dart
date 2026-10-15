@@ -45,7 +45,7 @@ String toJson() => value;
 }
 @immutable final class AccessSchemasUsers {const AccessSchemasUsers({this.accessSeat, this.activeDeviceCount, this.createdAt, this.email, this.gatewaySeat, this.id, this.lastSuccessfulLogin, this.name, this.seatUid, this.uid, this.updatedAt, });
 
-factory AccessSchemasUsers.fromJson(Map<String, dynamic> json) { return AccessSchemasUsers(
+factory AccessSchemasUsers.fromJson(Map<String, dynamic> json) {return AccessSchemasUsers(
   accessSeat: json['access_seat'] != null ? AccessSchemasAccessSeat.fromJson(json['access_seat'] as bool) : null,
   activeDeviceCount: json['active_device_count'] != null ? AccessActiveDeviceCount.fromJson(json['active_device_count'] as num) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
@@ -57,7 +57,7 @@ factory AccessSchemasUsers.fromJson(Map<String, dynamic> json) { return AccessSc
   seatUid: json['seat_uid'] != null ? AccessSchemasSeatUid.fromJson(json['seat_uid'] as String) : null,
   uid: json['uid'] != null ? AccessUid.fromJson(json['uid'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// True if the user has authenticated with Cloudflare Access.
 final AccessSchemasAccessSeat? accessSeat;
@@ -87,7 +87,7 @@ final AccessUid? uid;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accessSeat != null) 'access_seat': accessSeat?.toJson(),
   if (activeDeviceCount != null) 'active_device_count': activeDeviceCount?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
@@ -99,9 +99,9 @@ Map<String, dynamic> toJson() { return {
   if (seatUid != null) 'seat_uid': seatUid?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_seat', 'active_device_count', 'created_at', 'email', 'gateway_seat', 'id', 'last_successful_login', 'name', 'seat_uid', 'uid', 'updated_at'}.contains(key)); } 
-AccessSchemasUsers copyWith({AccessSchemasAccessSeat? Function()? accessSeat, AccessActiveDeviceCount? Function()? activeDeviceCount, AccessTimestamp? Function()? createdAt, AccessSchemasEmail? Function()? email, AccessSchemasGatewaySeat? Function()? gatewaySeat, AccessUuid? Function()? id, AccessLastSuccessfulLogin? Function()? lastSuccessfulLogin, AccessUsersComponentsSchemasName? Function()? name, AccessSchemasSeatUid? Function()? seatUid, AccessUid? Function()? uid, AccessTimestamp? Function()? updatedAt, }) { return AccessSchemasUsers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'access_seat', 'active_device_count', 'created_at', 'email', 'gateway_seat', 'id', 'last_successful_login', 'name', 'seat_uid', 'uid', 'updated_at'}.contains(key));}
+AccessSchemasUsers copyWith({AccessSchemasAccessSeat? Function()? accessSeat, AccessActiveDeviceCount? Function()? activeDeviceCount, AccessTimestamp? Function()? createdAt, AccessSchemasEmail? Function()? email, AccessSchemasGatewaySeat? Function()? gatewaySeat, AccessUuid? Function()? id, AccessLastSuccessfulLogin? Function()? lastSuccessfulLogin, AccessUsersComponentsSchemasName? Function()? name, AccessSchemasSeatUid? Function()? seatUid, AccessUid? Function()? uid, AccessTimestamp? Function()? updatedAt, }) {return AccessSchemasUsers(
   accessSeat: accessSeat != null ? accessSeat() : this.accessSeat,
   activeDeviceCount: activeDeviceCount != null ? activeDeviceCount() : this.activeDeviceCount,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
@@ -113,7 +113,7 @@ AccessSchemasUsers copyWith({AccessSchemasAccessSeat? Function()? accessSeat, Ac
   seatUid: seatUid != null ? seatUid() : this.seatUid,
   uid: uid != null ? uid() : this.uid,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasUsers &&
           accessSeat == other.accessSeat &&
@@ -132,4 +132,4 @@ AccessSchemasUsers copyWith({AccessSchemasAccessSeat? Function()? accessSeat, Ac
 
 @override String toString() => 'AccessSchemasUsers(\n  accessSeat: $accessSeat,\n  activeDeviceCount: $activeDeviceCount,\n  createdAt: $createdAt,\n  email: $email,\n  gatewaySeat: $gatewaySeat,\n  id: $id,\n  lastSuccessfulLogin: $lastSuccessfulLogin,\n  name: $name,\n  seatUid: $seatUid,\n  uid: $uid,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

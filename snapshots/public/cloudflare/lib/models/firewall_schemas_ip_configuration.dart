@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_ip_configuration/firewall_ip_configuration_target.dart';@immutable final class FirewallSchemasIpConfiguration {const FirewallSchemasIpConfiguration({this.target, this.value, });
 
-factory FirewallSchemasIpConfiguration.fromJson(Map<String, dynamic> json) { return FirewallSchemasIpConfiguration(
+factory FirewallSchemasIpConfiguration.fromJson(Map<String, dynamic> json) {return FirewallSchemasIpConfiguration(
   target: json['target'] != null ? FirewallIpConfigurationTarget.fromJson(json['target'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// The configuration target. You must set the target to `ip` when specifying an IP address in the Zone Lockdown rule.
 /// 
@@ -18,15 +18,15 @@ final FirewallIpConfigurationTarget? target;
 /// Example: `'198.51.100.4'`
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (target != null) 'target': target?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'value'}.contains(key)); } 
-FirewallSchemasIpConfiguration copyWith({FirewallIpConfigurationTarget? Function()? target, String? Function()? value, }) { return FirewallSchemasIpConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'target', 'value'}.contains(key));}
+FirewallSchemasIpConfiguration copyWith({FirewallIpConfigurationTarget? Function()? target, String? Function()? value, }) {return FirewallSchemasIpConfiguration(
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallSchemasIpConfiguration &&
           target == other.target &&
@@ -36,4 +36,4 @@ FirewallSchemasIpConfiguration copyWith({FirewallIpConfigurationTarget? Function
 
 @override String toString() => 'FirewallSchemasIpConfiguration(target: $target, value: $value)';
 
- }
+}

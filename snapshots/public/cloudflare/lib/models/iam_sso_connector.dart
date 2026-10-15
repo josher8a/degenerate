@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_sso_connector_verification_info.dart';import 'package:pub_cloudflare/models/iam_use_fedramp_language.dart';@immutable final class IamSsoConnector {const IamSsoConnector({this.createdOn, this.emailDomain, this.enabled, this.id, this.updatedOn, this.useFedrampLanguage, this.verification, });
 
-factory IamSsoConnector.fromJson(Map<String, dynamic> json) { return IamSsoConnector(
+factory IamSsoConnector.fromJson(Map<String, dynamic> json) {return IamSsoConnector(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   emailDomain: json['email_domain'] as String?,
   enabled: json['enabled'] as bool?,
@@ -11,7 +11,7 @@ factory IamSsoConnector.fromJson(Map<String, dynamic> json) { return IamSsoConne
   updatedOn: json['updated_on'] != null ? DateTime.parse(json['updated_on'] as String) : null,
   useFedrampLanguage: json['use_fedramp_language'] != null ? IamUseFedrampLanguage.fromJson(json['use_fedramp_language'] as bool) : null,
   verification: json['verification'] != null ? IamSsoConnectorVerificationInfo.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Timestamp for the creation of the SSO connector
 /// 
@@ -35,7 +35,7 @@ final IamUseFedrampLanguage? useFedrampLanguage;
 
 final IamSsoConnectorVerificationInfo? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
   'email_domain': ?emailDomain,
   'enabled': ?enabled,
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   if (updatedOn != null) 'updated_on': updatedOn?.toIso8601String(),
   if (useFedrampLanguage != null) 'use_fedramp_language': useFedrampLanguage?.toJson(),
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'email_domain', 'enabled', 'id', 'updated_on', 'use_fedramp_language', 'verification'}.contains(key)); } 
-IamSsoConnector copyWith({DateTime? Function()? createdOn, String? Function()? emailDomain, bool? Function()? enabled, IamCommonComponentsSchemasIdentifier? Function()? id, DateTime? Function()? updatedOn, IamUseFedrampLanguage? Function()? useFedrampLanguage, IamSsoConnectorVerificationInfo? Function()? verification, }) { return IamSsoConnector(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'email_domain', 'enabled', 'id', 'updated_on', 'use_fedramp_language', 'verification'}.contains(key));}
+IamSsoConnector copyWith({DateTime? Function()? createdOn, String? Function()? emailDomain, bool? Function()? enabled, IamCommonComponentsSchemasIdentifier? Function()? id, DateTime? Function()? updatedOn, IamUseFedrampLanguage? Function()? useFedrampLanguage, IamSsoConnectorVerificationInfo? Function()? verification, }) {return IamSsoConnector(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   emailDomain: emailDomain != null ? emailDomain() : this.emailDomain,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -53,7 +53,7 @@ IamSsoConnector copyWith({DateTime? Function()? createdOn, String? Function()? e
   updatedOn: updatedOn != null ? updatedOn() : this.updatedOn,
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,
   verification: verification != null ? verification() : this.verification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamSsoConnector &&
           createdOn == other.createdOn &&
@@ -68,4 +68,4 @@ IamSsoConnector copyWith({DateTime? Function()? createdOn, String? Function()? e
 
 @override String toString() => 'IamSsoConnector(createdOn: $createdOn, emailDomain: $emailDomain, enabled: $enabled, id: $id, updatedOn: $updatedOn, useFedrampLanguage: $useFedrampLanguage, verification: $verification)';
 
- }
+}

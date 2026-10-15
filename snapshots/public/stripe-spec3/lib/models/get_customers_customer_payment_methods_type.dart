@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType();
 
-factory GetCustomersCustomerPaymentMethodsType.fromJson(String json) { return switch (json) {
+factory GetCustomersCustomerPaymentMethodsType.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -56,7 +56,7 @@ factory GetCustomersCustomerPaymentMethodsType.fromJson(String json) { return sw
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => GetCustomersCustomerPaymentMethodsType$Unknown(json),
-}; }
+};}
 
 static const GetCustomersCustomerPaymentMethodsType acssDebit = GetCustomersCustomerPaymentMethodsType$acssDebit._();
 
@@ -163,9 +163,9 @@ static const GetCustomersCustomerPaymentMethodsType zip = GetCustomersCustomerPa
 static const List<GetCustomersCustomerPaymentMethodsType> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, crypto, custom, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'acss_debit' => 'acssDebit',
   'affirm' => 'affirm',
   'afterpay_clearpay' => 'afterpayClearpay',
@@ -218,11 +218,11 @@ String get name { return switch (value) {
   'wechat_pay' => 'wechatPay',
   'zip' => 'zip',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetCustomersCustomerPaymentMethodsType$Unknown; } 
+bool get isUnknown {return this is GetCustomersCustomerPaymentMethodsType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() crypto, required W Function() custom, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() crypto, required W Function() custom, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) {return switch (this) {
       GetCustomersCustomerPaymentMethodsType$acssDebit() => acssDebit(),
       GetCustomersCustomerPaymentMethodsType$affirm() => affirm(),
       GetCustomersCustomerPaymentMethodsType$afterpayClearpay() => afterpayClearpay(),
@@ -275,9 +275,9 @@ W when<W>({required W Function() acssDebit, required W Function() affirm, requir
       GetCustomersCustomerPaymentMethodsType$wechatPay() => wechatPay(),
       GetCustomersCustomerPaymentMethodsType$zip() => zip(),
       GetCustomersCustomerPaymentMethodsType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? crypto, W Function()? custom, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? crypto, W Function()? custom, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) {return switch (this) {
       GetCustomersCustomerPaymentMethodsType$acssDebit() => acssDebit != null ? acssDebit() : orElse(value),
       GetCustomersCustomerPaymentMethodsType$affirm() => affirm != null ? affirm() : orElse(value),
       GetCustomersCustomerPaymentMethodsType$afterpayClearpay() => afterpayClearpay != null ? afterpayClearpay() : orElse(value),
@@ -330,10 +330,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
       GetCustomersCustomerPaymentMethodsType$wechatPay() => wechatPay != null ? wechatPay() : orElse(value),
       GetCustomersCustomerPaymentMethodsType$zip() => zip != null ? zip() : orElse(value),
       GetCustomersCustomerPaymentMethodsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetCustomersCustomerPaymentMethodsType($value)';
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$acssDebit extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$acssDebit._();
 
 @override String get value => 'acss_debit';
@@ -342,7 +342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'acss_debit'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$affirm extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$affirm._();
 
 @override String get value => 'affirm';
@@ -351,7 +351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'affirm'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$afterpayClearpay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$afterpayClearpay._();
 
 @override String get value => 'afterpay_clearpay';
@@ -360,7 +360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'afterpay_clearpay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$alipay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$alipay._();
 
 @override String get value => 'alipay';
@@ -369,7 +369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alipay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$alma extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$alma._();
 
 @override String get value => 'alma';
@@ -378,7 +378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alma'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$amazonPay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$amazonPay._();
 
 @override String get value => 'amazon_pay';
@@ -387,7 +387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'amazon_pay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$auBecsDebit extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$auBecsDebit._();
 
 @override String get value => 'au_becs_debit';
@@ -396,7 +396,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'au_becs_debit'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$bacsDebit extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$bacsDebit._();
 
 @override String get value => 'bacs_debit';
@@ -405,7 +405,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bacs_debit'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$bancontact extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$bancontact._();
 
 @override String get value => 'bancontact';
@@ -414,7 +414,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bancontact'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$billie extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$billie._();
 
 @override String get value => 'billie';
@@ -423,7 +423,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'billie'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$blik extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$blik._();
 
 @override String get value => 'blik';
@@ -432,7 +432,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'blik'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$boleto extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$boleto._();
 
 @override String get value => 'boleto';
@@ -441,7 +441,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'boleto'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$card extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$card._();
 
 @override String get value => 'card';
@@ -450,7 +450,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$cashapp extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$cashapp._();
 
 @override String get value => 'cashapp';
@@ -459,7 +459,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'cashapp'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$crypto extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$crypto._();
 
 @override String get value => 'crypto';
@@ -468,7 +468,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'crypto'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$custom extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$custom._();
 
 @override String get value => 'custom';
@@ -477,7 +477,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'custom'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$customerBalance extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$customerBalance._();
 
 @override String get value => 'customer_balance';
@@ -486,7 +486,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'customer_balance'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$eps extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$eps._();
 
 @override String get value => 'eps';
@@ -495,7 +495,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'eps'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$fpx extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$fpx._();
 
 @override String get value => 'fpx';
@@ -504,7 +504,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'fpx'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$giropay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$giropay._();
 
 @override String get value => 'giropay';
@@ -513,7 +513,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'giropay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$grabpay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$grabpay._();
 
 @override String get value => 'grabpay';
@@ -522,7 +522,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'grabpay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$ideal extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$ideal._();
 
 @override String get value => 'ideal';
@@ -531,7 +531,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'ideal'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$kakaoPay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$kakaoPay._();
 
 @override String get value => 'kakao_pay';
@@ -540,7 +540,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kakao_pay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$klarna extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$klarna._();
 
 @override String get value => 'klarna';
@@ -549,7 +549,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'klarna'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$konbini extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$konbini._();
 
 @override String get value => 'konbini';
@@ -558,7 +558,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'konbini'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$krCard extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$krCard._();
 
 @override String get value => 'kr_card';
@@ -567,7 +567,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kr_card'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$link extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$link._();
 
 @override String get value => 'link';
@@ -576,7 +576,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$mbWay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$mbWay._();
 
 @override String get value => 'mb_way';
@@ -585,7 +585,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mb_way'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$mobilepay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$mobilepay._();
 
 @override String get value => 'mobilepay';
@@ -594,7 +594,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mobilepay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$multibanco extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$multibanco._();
 
 @override String get value => 'multibanco';
@@ -603,7 +603,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'multibanco'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$naverPay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$naverPay._();
 
 @override String get value => 'naver_pay';
@@ -612,7 +612,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'naver_pay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$nzBankAccount extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$nzBankAccount._();
 
 @override String get value => 'nz_bank_account';
@@ -621,7 +621,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'nz_bank_account'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$oxxo extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$oxxo._();
 
 @override String get value => 'oxxo';
@@ -630,7 +630,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'oxxo'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$p24 extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$p24._();
 
 @override String get value => 'p24';
@@ -639,7 +639,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'p24'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$payByBank extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$payByBank._();
 
 @override String get value => 'pay_by_bank';
@@ -648,7 +648,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pay_by_bank'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$payco extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$payco._();
 
 @override String get value => 'payco';
@@ -657,7 +657,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payco'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$paynow extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$paynow._();
 
 @override String get value => 'paynow';
@@ -666,7 +666,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paynow'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$paypal extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$paypal._();
 
 @override String get value => 'paypal';
@@ -675,7 +675,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paypal'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$payto extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$payto._();
 
 @override String get value => 'payto';
@@ -684,7 +684,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payto'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$pix extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$pix._();
 
 @override String get value => 'pix';
@@ -693,7 +693,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pix'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$promptpay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$promptpay._();
 
 @override String get value => 'promptpay';
@@ -702,7 +702,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'promptpay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$revolutPay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$revolutPay._();
 
 @override String get value => 'revolut_pay';
@@ -711,7 +711,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'revolut_pay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$samsungPay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$samsungPay._();
 
 @override String get value => 'samsung_pay';
@@ -720,7 +720,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'samsung_pay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$satispay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$satispay._();
 
 @override String get value => 'satispay';
@@ -729,7 +729,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'satispay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$sepaDebit extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$sepaDebit._();
 
 @override String get value => 'sepa_debit';
@@ -738,7 +738,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sepa_debit'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$sofort extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$sofort._();
 
 @override String get value => 'sofort';
@@ -747,7 +747,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sofort'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$swish extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$swish._();
 
 @override String get value => 'swish';
@@ -756,7 +756,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'swish'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$twint extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$twint._();
 
 @override String get value => 'twint';
@@ -765,7 +765,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'twint'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$usBankAccount extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$usBankAccount._();
 
 @override String get value => 'us_bank_account';
@@ -774,7 +774,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'us_bank_account'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$wechatPay extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$wechatPay._();
 
 @override String get value => 'wechat_pay';
@@ -783,7 +783,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'wechat_pay'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$zip extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$zip._();
 
 @override String get value => 'zip';
@@ -792,7 +792,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'zip'.hashCode;
 
- }
+}
 @immutable final class GetCustomersCustomerPaymentMethodsType$Unknown extends GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType$Unknown(this.value);
 
 @override final String value;
@@ -802,4 +802,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

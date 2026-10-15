@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SshKeyFingerprints {const SshKeyFingerprints({this.sha256Rsa, this.sha256Dsa, this.sha256Ecdsa, this.sha256Ed25519, });
 
-factory SshKeyFingerprints.fromJson(Map<String, dynamic> json) { return SshKeyFingerprints(
+factory SshKeyFingerprints.fromJson(Map<String, dynamic> json) {return SshKeyFingerprints(
   sha256Rsa: json['SHA256_RSA'] as String?,
   sha256Dsa: json['SHA256_DSA'] as String?,
   sha256Ecdsa: json['SHA256_ECDSA'] as String?,
   sha256Ed25519: json['SHA256_ED25519'] as String?,
-); }
+);}
 
 final String? sha256Rsa;
 
@@ -18,19 +18,19 @@ final String? sha256Ecdsa;
 
 final String? sha256Ed25519;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'SHA256_RSA': ?sha256Rsa,
   'SHA256_DSA': ?sha256Dsa,
   'SHA256_ECDSA': ?sha256Ecdsa,
   'SHA256_ED25519': ?sha256Ed25519,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'SHA256_RSA', 'SHA256_DSA', 'SHA256_ECDSA', 'SHA256_ED25519'}.contains(key)); } 
-SshKeyFingerprints copyWith({String? Function()? sha256Rsa, String? Function()? sha256Dsa, String? Function()? sha256Ecdsa, String? Function()? sha256Ed25519, }) { return SshKeyFingerprints(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'SHA256_RSA', 'SHA256_DSA', 'SHA256_ECDSA', 'SHA256_ED25519'}.contains(key));}
+SshKeyFingerprints copyWith({String? Function()? sha256Rsa, String? Function()? sha256Dsa, String? Function()? sha256Ecdsa, String? Function()? sha256Ed25519, }) {return SshKeyFingerprints(
   sha256Rsa: sha256Rsa != null ? sha256Rsa() : this.sha256Rsa,
   sha256Dsa: sha256Dsa != null ? sha256Dsa() : this.sha256Dsa,
   sha256Ecdsa: sha256Ecdsa != null ? sha256Ecdsa() : this.sha256Ecdsa,
   sha256Ed25519: sha256Ed25519 != null ? sha256Ed25519() : this.sha256Ed25519,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SshKeyFingerprints &&
           sha256Rsa == other.sha256Rsa &&
@@ -42,4 +42,4 @@ SshKeyFingerprints copyWith({String? Function()? sha256Rsa, String? Function()? 
 
 @override String toString() => 'SshKeyFingerprints(sha256Rsa: $sha256Rsa, sha256Dsa: $sha256Dsa, sha256Ecdsa: $sha256Ecdsa, sha256Ed25519: $sha256Ed25519)';
 
- }
+}

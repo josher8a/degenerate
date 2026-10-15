@@ -14,7 +14,7 @@ final class LoadBalancersApi with ApiExecutor {const LoadBalancersApi(this.apiCo
 /// List configured load balancers.
 ///
 /// `GET /zones/{zone_id}/load_balancers`
-Future<ApiResult<List<LoadBalancingLoadBalancer>, LoadBalancersListLoadBalancersError>> loadBalancersListLoadBalancers({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingLoadBalancer>, LoadBalancersListLoadBalancersError>> loadBalancersListLoadBalancers({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: LoadBalancersListLoadBalancersError.fromResponse,
 );
- } 
+}
 /// Create Load Balancer
 ///
 /// Create a new load balancer.
 ///
 /// `POST /zones/{zone_id}/load_balancers`
-Future<ApiResult<LoadBalancingLoadBalancer, LoadBalancersCreateLoadBalancerError>> loadBalancersCreateLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancersCreateLoadBalancerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingLoadBalancer, LoadBalancersCreateLoadBalancerError>> loadBalancersCreateLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancersCreateLoadBalancerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: LoadBalancersCreateLoadBalancerError.fromResponse,
 );
- } 
+}
 /// Load Balancer Details
 ///
 /// Fetch a single configured load balancer.
 ///
 /// `GET /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<LoadBalancingLoadBalancer, LoadBalancersLoadBalancerDetailsError>> loadBalancersLoadBalancerDetails({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingLoadBalancer, LoadBalancersLoadBalancerDetailsError>> loadBalancersLoadBalancerDetails({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: LoadBalancersLoadBalancerDetailsError.fromResponse,
 );
- } 
+}
 /// Update Load Balancer
 ///
 /// Update a configured load balancer.
 ///
 /// `PUT /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<LoadBalancingLoadBalancer, LoadBalancersUpdateLoadBalancerError>> loadBalancersUpdateLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, required LoadBalancersUpdateLoadBalancerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingLoadBalancer, LoadBalancersUpdateLoadBalancerError>> loadBalancersUpdateLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, required LoadBalancersUpdateLoadBalancerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: LoadBalancersUpdateLoadBalancerError.fromResponse,
 );
- } 
+}
 /// Patch Load Balancer
 ///
 /// Apply changes to an existing load balancer, overwriting the supplied properties.
 ///
 /// `PATCH /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<LoadBalancingLoadBalancer, LoadBalancersPatchLoadBalancerError>> loadBalancersPatchLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, required LoadBalancersPatchLoadBalancerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingLoadBalancer, LoadBalancersPatchLoadBalancerError>> loadBalancersPatchLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, required LoadBalancersPatchLoadBalancerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -129,13 +129,13 @@ return await execute(
   },
   onError: LoadBalancersPatchLoadBalancerError.fromResponse,
 );
- } 
+}
 /// Delete Load Balancer
 ///
 /// Delete a configured load balancer.
 ///
 /// `DELETE /zones/{zone_id}/load_balancers/{load_balancer_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult, LoadBalancersDeleteLoadBalancerError>> loadBalancersDeleteLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult, LoadBalancersDeleteLoadBalancerError>> loadBalancersDeleteLoadBalancer({required LoadBalancingLoadBalancerComponentsSchemasIdentifier zoneId, required LoadBalancingLoadBalancerComponentsSchemasIdentifier loadBalancerId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -152,5 +152,5 @@ return await execute(
   },
   onError: LoadBalancersDeleteLoadBalancerError.fromResponse,
 );
- } 
- }
+}
+}

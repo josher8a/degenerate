@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_allow_iframe.dart';import 'package:pub_cloudflare/models/access_app_launcher_visible.dart';import 'package:pub_cloudflare/models/access_app_policy_response.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_cors_headers.dart';import 'package:pub_cloudflare/models/access_custom_deny_message.dart';import 'package:pub_cloudflare/models/access_custom_deny_url.dart';import 'package:pub_cloudflare/models/access_custom_non_identity_deny_url.dart';import 'package:pub_cloudflare/models/access_destinations2.dart';import 'package:pub_cloudflare/models/access_domain.dart';import 'package:pub_cloudflare/models/access_enable_binding_cookie.dart';import 'package:pub_cloudflare/models/access_http_only_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_mfa_config.dart';import 'package:pub_cloudflare/models/access_oauth_configuration.dart';import 'package:pub_cloudflare/models/access_options_preflight_bypass.dart';import 'package:pub_cloudflare/models/access_path_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_read_service_tokens_from_header.dart';import 'package:pub_cloudflare/models/access_same_site_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_schemas_allow_authenticate_via_warp.dart';import 'package:pub_cloudflare/models/access_schemas_aud.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_scim_config.dart';import 'package:pub_cloudflare/models/access_service_auth401_redirect.dart';import 'package:pub_cloudflare/models/access_skip_interstitial.dart';import 'package:pub_cloudflare/models/access_target_criteria_self_hosted_app.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_type.dart';import 'package:pub_cloudflare/models/access_use_clientless_isolation_app_launcher_url.dart';import 'package:pub_cloudflare/models/access_uuid.dart';import 'package:pub_cloudflare/models/private_destination.dart';import 'package:pub_cloudflare/models/public_destination.dart';import 'package:pub_cloudflare/models/via_mcp_server_portal_destination.dart';/// The policies that Access applies to the application.
 @immutable final class BrowserRdpApplication2 {const BrowserRdpApplication2({required this.type, required this.targetCriteria, required this.domain, this.customDenyMessage, this.createdAt, this.allowAuthenticateViaWarp, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.aud, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.destinations, this.id, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.mfaConfig, this.name, this.oauthConfiguration, this.policies, this.pathCookieAttribute, this.readServiceTokensFromHeader, this.sameSiteCookieAttribute, this.scimConfig, this.selfHostedDomains, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.tags, this.updatedAt, this.useClientlessIsolationAppLauncherUrl, this.optionsPreflightBypass, });
 
-factory BrowserRdpApplication2.fromJson(Map<String, dynamic> json) { return BrowserRdpApplication2(
+factory BrowserRdpApplication2.fromJson(Map<String, dynamic> json) {return BrowserRdpApplication2(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -41,7 +41,7 @@ factory BrowserRdpApplication2.fromJson(Map<String, dynamic> json) { return Brow
   type: AccessType.fromJson(json['type'] as String),
   useClientlessIsolationAppLauncherUrl: json['use_clientless_isolation_app_launcher_url'] != null ? AccessUseClientlessIsolationAppLauncherUrl.fromJson(json['use_clientless_isolation_app_launcher_url'] as bool) : null,
   policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessAppPolicyResponse.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -118,7 +118,7 @@ final AccessUseClientlessIsolationAppLauncherUrl? useClientlessIsolationAppLaunc
 
 final List<AccessAppPolicyResponse>? policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -155,11 +155,11 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (useClientlessIsolationAppLauncherUrl != null) 'use_clientless_isolation_app_launcher_url': useClientlessIsolationAppLauncherUrl?.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_criteria') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('target_criteria') &&
       json.containsKey('domain') &&
-      json.containsKey('type'); } 
-BrowserRdpApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<AccessTargetCriteriaSelfHostedApp>? targetCriteria, AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessMfaConfig? Function()? mfaConfig, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessPathCookieAttribute? Function()? pathCookieAttribute, AccessReadServiceTokensFromHeader? Function()? readServiceTokensFromHeader, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, List<String>? Function()? selfHostedDomains, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, List<String>? Function()? tags, AccessType? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, List<AccessAppPolicyResponse>? Function()? policies, }) { return BrowserRdpApplication2(
+      json.containsKey('type');}
+BrowserRdpApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<AccessTargetCriteriaSelfHostedApp>? targetCriteria, AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessMfaConfig? Function()? mfaConfig, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessPathCookieAttribute? Function()? pathCookieAttribute, AccessReadServiceTokensFromHeader? Function()? readServiceTokensFromHeader, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, List<String>? Function()? selfHostedDomains, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, List<String>? Function()? tags, AccessType? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, List<AccessAppPolicyResponse>? Function()? policies, }) {return BrowserRdpApplication2(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -196,7 +196,7 @@ BrowserRdpApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimest
   type: type ?? this.type,
   useClientlessIsolationAppLauncherUrl: useClientlessIsolationAppLauncherUrl != null ? useClientlessIsolationAppLauncherUrl() : this.useClientlessIsolationAppLauncherUrl,
   policies: policies != null ? policies() : this.policies,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BrowserRdpApplication2 &&
           aud == other.aud &&
@@ -240,4 +240,4 @@ BrowserRdpApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimest
 
 @override String toString() => 'BrowserRdpApplication2(\n  aud: $aud,\n  createdAt: $createdAt,\n  id: $id,\n  updatedAt: $updatedAt,\n  targetCriteria: $targetCriteria,\n  allowAuthenticateViaWarp: $allowAuthenticateViaWarp,\n  allowIframe: $allowIframe,\n  allowedIdps: $allowedIdps,\n  appLauncherVisible: $appLauncherVisible,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  corsHeaders: $corsHeaders,\n  customDenyMessage: $customDenyMessage,\n  customDenyUrl: $customDenyUrl,\n  customNonIdentityDenyUrl: $customNonIdentityDenyUrl,\n  customPages: $customPages,\n  destinations: $destinations,\n  domain: $domain,\n  enableBindingCookie: $enableBindingCookie,\n  httpOnlyCookieAttribute: $httpOnlyCookieAttribute,\n  logoUrl: $logoUrl,\n  mfaConfig: $mfaConfig,\n  name: $name,\n  oauthConfiguration: $oauthConfiguration,\n  optionsPreflightBypass: $optionsPreflightBypass,\n  pathCookieAttribute: $pathCookieAttribute,\n  readServiceTokensFromHeader: $readServiceTokensFromHeader,\n  sameSiteCookieAttribute: $sameSiteCookieAttribute,\n  scimConfig: $scimConfig,\n  selfHostedDomains: $selfHostedDomains,\n  serviceAuth401Redirect: $serviceAuth401Redirect,\n  sessionDuration: $sessionDuration,\n  skipInterstitial: $skipInterstitial,\n  tags: $tags,\n  type: $type,\n  useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl,\n  policies: $policies,\n)';
 
- }
+}

@@ -14,7 +14,7 @@ final class ZoneLevelAccessShortLivedCertificateCAsApi with ApiExecutor {const Z
 /// Fetches a short-lived certificate CA and its public key.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/ca`
-Future<ApiResult<AccessSchemasCa?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessShortLivedCertificateCAsGetAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasCa?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessShortLivedCertificateCAsGetAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Create a short-lived certificate CA
 ///
 /// Generates a new short-lived certificate CA and public key.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/ca`
-Future<ApiResult<AccessSchemasCa?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessShortLivedCertificateCAsCreateAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasCa?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessShortLivedCertificateCAsCreateAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete a short-lived certificate CA
 ///
 /// Deletes a short-lived certificate CA.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}/ca`
-Future<ApiResult<AccessCaComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessShortLivedCertificateCAsDeleteAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCaComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessShortLivedCertificateCAsDeleteAShortLivedCertificateCa({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -77,13 +77,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// List short-lived certificate CAs
 ///
 /// Lists short-lived certificate CAs and their public keys.
 ///
 /// `GET /zones/{zone_id}/access/apps/ca`
-Future<ApiResult<List<AccessSchemasCa>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessShortLivedCertificateCAsListShortLivedCertificateCAs({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSchemasCa>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessShortLivedCertificateCAsListShortLivedCertificateCAs({required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -100,5 +100,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

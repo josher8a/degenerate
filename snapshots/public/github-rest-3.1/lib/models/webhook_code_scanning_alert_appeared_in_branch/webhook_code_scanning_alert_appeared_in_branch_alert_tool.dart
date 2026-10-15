@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertAppearedInBranchAlertTool {const WebhookCodeScanningAlertAppearedInBranchAlertTool({required this.name, required this.version, });
 
-factory WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlertTool(
+factory WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertAppearedInBranchAlertTool(
   name: json['name'] as String,
   version: json['version'] as String?,
-); }
+);}
 
 /// The name of the tool used to generate the code scanning analysis alert.
 final String name;
@@ -14,16 +14,16 @@ final String name;
 /// The version of the tool used to detect the alert.
 final String? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version') && (json['version'] == null || json['version'] is String); } 
-WebhookCodeScanningAlertAppearedInBranchAlertTool copyWith({String? name, String? Function()? version, }) { return WebhookCodeScanningAlertAppearedInBranchAlertTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('version') && (json['version'] == null || json['version'] is String);}
+WebhookCodeScanningAlertAppearedInBranchAlertTool copyWith({String? name, String? Function()? version, }) {return WebhookCodeScanningAlertAppearedInBranchAlertTool(
   name: name ?? this.name,
   version: version != null ? version() : this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranchAlertTool &&
           name == other.name &&
@@ -33,4 +33,4 @@ WebhookCodeScanningAlertAppearedInBranchAlertTool copyWith({String? name, String
 
 @override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAlertTool(name: $name, version: $version)';
 
- }
+}

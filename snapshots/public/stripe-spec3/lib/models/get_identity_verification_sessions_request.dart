@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIdentityVerificationSessionsRequest {const GetIdentityVerificationSessionsRequest();
 
-factory GetIdentityVerificationSessionsRequest.fromJson(Map<String, dynamic> _) { return const GetIdentityVerificationSessionsRequest(); }
+factory GetIdentityVerificationSessionsRequest.fromJson(Map<String, dynamic> _) {return const GetIdentityVerificationSessionsRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetIdentityVerificationSessionsRequest copyWith() { return const GetIdentityVerificationSessionsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetIdentityVerificationSessionsRequest copyWith() {return const GetIdentityVerificationSessionsRequest(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is GetIdentityVerificationSessionsRequest;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'GetIdentityVerificationSessionsRequest()';
 
- }
+}

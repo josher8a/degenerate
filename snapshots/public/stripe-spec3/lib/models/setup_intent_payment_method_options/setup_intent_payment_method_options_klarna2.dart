@@ -7,11 +7,11 @@ const SetupIntentPaymentMethodOptionsKlarna2({this.setupIntentPaymentMethodOptio
 const SetupIntentPaymentMethodOptionsKlarna2._({required this.rawValue, required this.setupIntentPaymentMethodOptionsKlarna, required this.setupIntentTypeSpecificPaymentMethodOptionsClient, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory SetupIntentPaymentMethodOptionsKlarna2.fromJson(Object? json) { return SetupIntentPaymentMethodOptionsKlarna2._(
+factory SetupIntentPaymentMethodOptionsKlarna2.fromJson(Object? json) {return SetupIntentPaymentMethodOptionsKlarna2._(
   rawValue: Omittable(json),
   setupIntentPaymentMethodOptionsKlarna: json is Map<String, dynamic> && SetupIntentPaymentMethodOptionsKlarna.canParse(json) ? parseAnyOfVariant<SetupIntentPaymentMethodOptionsKlarna>(json, (value) => SetupIntentPaymentMethodOptionsKlarna.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   setupIntentTypeSpecificPaymentMethodOptionsClient: json is Map<String, dynamic> && SetupIntentTypeSpecificPaymentMethodOptionsClient.canParse(json) ? parseAnyOfVariant<SetupIntentTypeSpecificPaymentMethodOptionsClient>(json, (value) => SetupIntentTypeSpecificPaymentMethodOptionsClient.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'SetupIntentPaymentMethodOptionsKlarna2(${toJson()})';
 
- }
+}

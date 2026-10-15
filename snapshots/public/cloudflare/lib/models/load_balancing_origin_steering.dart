@@ -8,13 +8,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of orig
 /// - `"least_connections"`: Select an origin by taking into consideration origin weights, as well as each origin's number of open connections. Origins with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.
 sealed class Policy {const Policy();
 
-factory Policy.fromJson(String json) { return switch (json) {
+factory Policy.fromJson(String json) {return switch (json) {
   'random' => random,
   'hash' => hash,
   'least_outstanding_requests' => leastOutstandingRequests,
   'least_connections' => leastConnections,
   _ => Policy$Unknown(json),
-}; }
+};}
 
 static const Policy random = Policy$random._();
 
@@ -27,36 +27,36 @@ static const Policy leastConnections = Policy$leastConnections._();
 static const List<Policy> values = [random, hash, leastOutstandingRequests, leastConnections];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'random' => 'random',
   'hash' => 'hash',
   'least_outstanding_requests' => 'leastOutstandingRequests',
   'least_connections' => 'leastConnections',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Policy$Unknown; } 
+bool get isUnknown {return this is Policy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() random, required W Function() hash, required W Function() leastOutstandingRequests, required W Function() leastConnections, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() random, required W Function() hash, required W Function() leastOutstandingRequests, required W Function() leastConnections, required W Function(String value) $unknown, }) {return switch (this) {
       Policy$random() => random(),
       Policy$hash() => hash(),
       Policy$leastOutstandingRequests() => leastOutstandingRequests(),
       Policy$leastConnections() => leastConnections(),
       Policy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? random, W Function()? hash, W Function()? leastOutstandingRequests, W Function()? leastConnections, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? random, W Function()? hash, W Function()? leastOutstandingRequests, W Function()? leastConnections, W Function(String value)? $unknown, }) {return switch (this) {
       Policy$random() => random != null ? random() : orElse(value),
       Policy$hash() => hash != null ? hash() : orElse(value),
       Policy$leastOutstandingRequests() => leastOutstandingRequests != null ? leastOutstandingRequests() : orElse(value),
       Policy$leastConnections() => leastConnections != null ? leastConnections() : orElse(value),
       Policy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Policy($value)';
 
- }
+}
 @immutable final class Policy$random extends Policy {const Policy$random._();
 
 @override String get value => 'random';
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? random, 
 
 @override int get hashCode => 'random'.hashCode;
 
- }
+}
 @immutable final class Policy$hash extends Policy {const Policy$hash._();
 
 @override String get value => 'hash';
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? random, 
 
 @override int get hashCode => 'hash'.hashCode;
 
- }
+}
 @immutable final class Policy$leastOutstandingRequests extends Policy {const Policy$leastOutstandingRequests._();
 
 @override String get value => 'least_outstanding_requests';
@@ -83,7 +83,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? random, 
 
 @override int get hashCode => 'least_outstanding_requests'.hashCode;
 
- }
+}
 @immutable final class Policy$leastConnections extends Policy {const Policy$leastConnections._();
 
 @override String get value => 'least_connections';
@@ -92,7 +92,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? random, 
 
 @override int get hashCode => 'least_connections'.hashCode;
 
- }
+}
 @immutable final class Policy$Unknown extends Policy {const Policy$Unknown(this.value);
 
 @override final String value;
@@ -102,13 +102,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? random, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configures origin steering for the pool. Controls how origins are selected for new sessions and traffic without session affinity.
 @immutable final class LoadBalancingOriginSteering {const LoadBalancingOriginSteering({this.policy});
 
-factory LoadBalancingOriginSteering.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginSteering(
+factory LoadBalancingOriginSteering.fromJson(Map<String, dynamic> json) {return LoadBalancingOriginSteering(
   policy: json['policy'] != null ? Policy.fromJson(json['policy'] as String) : null,
-); }
+);}
 
 /// The type of origin steering policy to use.
 /// - `"random"`: Select an origin randomly.
@@ -120,13 +120,13 @@ final Policy? policy;
 /// The value of `policy`, or its schema default when absent.
 Policy get policyOrDefault => policy ?? Policy.fromJson('random');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (policy != null) 'policy': policy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'policy'}.contains(key)); } 
-LoadBalancingOriginSteering copyWith({Policy? Function()? policy}) { return LoadBalancingOriginSteering(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'policy'}.contains(key));}
+LoadBalancingOriginSteering copyWith({Policy? Function()? policy}) {return LoadBalancingOriginSteering(
   policy: policy != null ? policy() : this.policy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingOriginSteering &&
           policy == other.policy;
@@ -135,4 +135,4 @@ LoadBalancingOriginSteering copyWith({Policy? Function()? policy}) { return Load
 
 @override String toString() => 'LoadBalancingOriginSteering(policy: $policy)';
 
- }
+}

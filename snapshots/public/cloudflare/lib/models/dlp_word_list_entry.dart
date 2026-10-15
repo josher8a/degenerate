@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpWordListEntry {const DlpWordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, this.profileId = const Omittable.absent(), });
 
-factory DlpWordListEntry.fromJson(Map<String, dynamic> json) { return DlpWordListEntry(
+factory DlpWordListEntry.fromJson(Map<String, dynamic> json) {return DlpWordListEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
@@ -11,7 +11,7 @@ factory DlpWordListEntry.fromJson(Map<String, dynamic> json) { return DlpWordLis
   profileId: json.containsKey('profile_id') ? Omittable(json['profile_id'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   wordList: json['word_list'],
-); }
+);}
 
 final DateTime createdAt;
 
@@ -27,7 +27,7 @@ final DateTime updatedAt;
 
 final dynamic wordList;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
   'id': id,
@@ -35,14 +35,14 @@ Map<String, dynamic> toJson() { return {
   if (profileId.isPresent) 'profile_id': profileId.value,
   'updated_at': updatedAt.toIso8601String(),
   'word_list': wordList,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('word_list'); } 
-DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, dynamic Function()? wordList, }) { return DlpWordListEntry(
+      json.containsKey('word_list');}
+DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, dynamic Function()? wordList, }) {return DlpWordListEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
@@ -50,7 +50,7 @@ DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, Strin
   profileId: profileId ?? this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
   wordList: wordList != null ? wordList() : this.wordList,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpWordListEntry &&
           createdAt == other.createdAt &&
@@ -65,4 +65,4 @@ DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, Strin
 
 @override String toString() => 'DlpWordListEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, wordList: $wordList)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 sealed class AppPermissionsPullRequests {const AppPermissionsPullRequests();
 
-factory AppPermissionsPullRequests.fromJson(String json) { return switch (json) {
+factory AppPermissionsPullRequests.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => AppPermissionsPullRequests$Unknown(json),
-}; }
+};}
 
 static const AppPermissionsPullRequests read = AppPermissionsPullRequests$read._();
 
@@ -17,30 +17,30 @@ static const AppPermissionsPullRequests write = AppPermissionsPullRequests$write
 static const List<AppPermissionsPullRequests> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AppPermissionsPullRequests$Unknown; } 
+bool get isUnknown {return this is AppPermissionsPullRequests$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       AppPermissionsPullRequests$read() => read(),
       AppPermissionsPullRequests$write() => write(),
       AppPermissionsPullRequests$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       AppPermissionsPullRequests$read() => read != null ? read() : orElse(value),
       AppPermissionsPullRequests$write() => write != null ? write() : orElse(value),
       AppPermissionsPullRequests$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AppPermissionsPullRequests($value)';
 
- }
+}
 @immutable final class AppPermissionsPullRequests$read extends AppPermissionsPullRequests {const AppPermissionsPullRequests$read._();
 
 @override String get value => 'read';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class AppPermissionsPullRequests$write extends AppPermissionsPullRequests {const AppPermissionsPullRequests$write._();
 
 @override String get value => 'write';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class AppPermissionsPullRequests$Unknown extends AppPermissionsPullRequests {const AppPermissionsPullRequests$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

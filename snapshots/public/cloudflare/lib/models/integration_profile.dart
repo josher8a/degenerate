@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/integration_entry/integration_entry_type.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class IntegrationProfile {const IntegrationProfile({required this.createdAt, required this.entries, required this.id, required this.name, required this.sharedEntries, required this.updatedAt, required this.type, this.description = const Omittable.absent(), });
 
-factory IntegrationProfile.fromJson(Map<String, dynamic> json) { return IntegrationProfile(
+factory IntegrationProfile.fromJson(Map<String, dynamic> json) {return IntegrationProfile(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
@@ -12,7 +12,7 @@ factory IntegrationProfile.fromJson(Map<String, dynamic> json) { return Integrat
   sharedEntries: (json['shared_entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: IntegrationEntryType.fromJson(json['type'] as String),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -31,7 +31,7 @@ final DateTime updatedAt;
 
 final IntegrationEntryType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   if (description.isPresent) 'description': description.value,
   'entries': entries.map((e) => e.toJson()).toList(),
@@ -40,15 +40,15 @@ Map<String, dynamic> toJson() { return {
   'shared_entries': sharedEntries.map((e) => e.toJson()).toList(),
   'updated_at': updatedAt.toIso8601String(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('entries') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('shared_entries') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type') && json['type'] == 'integration'; } 
-IntegrationProfile copyWith({DateTime? createdAt, Omittable<String?>? description, List<DlpEntry>? entries, String? id, String? name, List<DlpEntry>? sharedEntries, DateTime? updatedAt, IntegrationEntryType? type, }) { return IntegrationProfile(
+      json.containsKey('type') && json['type'] == 'integration';}
+IntegrationProfile copyWith({DateTime? createdAt, Omittable<String?>? description, List<DlpEntry>? entries, String? id, String? name, List<DlpEntry>? sharedEntries, DateTime? updatedAt, IntegrationEntryType? type, }) {return IntegrationProfile(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   entries: entries ?? this.entries,
@@ -57,7 +57,7 @@ IntegrationProfile copyWith({DateTime? createdAt, Omittable<String?>? descriptio
   sharedEntries: sharedEntries ?? this.sharedEntries,
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IntegrationProfile &&
           createdAt == other.createdAt &&
@@ -73,4 +73,4 @@ IntegrationProfile copyWith({DateTime? createdAt, Omittable<String?>? descriptio
 
 @override String toString() => 'IntegrationProfile(createdAt: $createdAt, description: $description, entries: $entries, id: $id, name: $name, sharedEntries: $sharedEntries, updatedAt: $updatedAt, type: $type)';
 
- }
+}

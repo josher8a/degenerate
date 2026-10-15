@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_rerequested/webhook_check_suite_rerequested_check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_triggering_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run_repository.dart';sealed class WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus();
 
-factory WebhookDeploymentReviewRejectedWorkflowRunStatus.fromJson(String json) { return switch (json) {
+factory WebhookDeploymentReviewRejectedWorkflowRunStatus.fromJson(String json) {return switch (json) {
   'requested' => requested,
   'in_progress' => inProgress,
   'completed' => completed,
   'queued' => queued,
   'waiting' => waiting,
   _ => WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown(json),
-}; }
+};}
 
 static const WebhookDeploymentReviewRejectedWorkflowRunStatus requested = WebhookDeploymentReviewRejectedWorkflowRunStatus$requested._();
 
@@ -25,39 +25,39 @@ static const WebhookDeploymentReviewRejectedWorkflowRunStatus waiting = WebhookD
 static const List<WebhookDeploymentReviewRejectedWorkflowRunStatus> values = [requested, inProgress, completed, queued, waiting];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'requested' => 'requested',
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'queued' => 'queued',
   'waiting' => 'waiting',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown; } 
+bool get isUnknown {return this is WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() requested, required W Function() inProgress, required W Function() completed, required W Function() queued, required W Function() waiting, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() requested, required W Function() inProgress, required W Function() completed, required W Function() queued, required W Function() waiting, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookDeploymentReviewRejectedWorkflowRunStatus$requested() => requested(),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress() => inProgress(),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$completed() => completed(),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$queued() => queued(),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting() => waiting(),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? requested, W Function()? inProgress, W Function()? completed, W Function()? queued, W Function()? waiting, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? requested, W Function()? inProgress, W Function()? completed, W Function()? queued, W Function()? waiting, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookDeploymentReviewRejectedWorkflowRunStatus$requested() => requested != null ? requested() : orElse(value),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$completed() => completed != null ? completed() : orElse(value),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$queued() => queued != null ? queued() : orElse(value),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting() => waiting != null ? waiting() : orElse(value),
       WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookDeploymentReviewRejectedWorkflowRunStatus($value)';
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$requested extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$requested._();
 
 @override String get value => 'requested';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'requested'.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$completed extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$completed._();
 
 @override String get value => 'completed';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$queued extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$queued._();
 
 @override String get value => 'queued';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting._();
 
 @override String get value => 'waiting';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => 'waiting'.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown(this.value);
 
 @override final String value;
@@ -112,10 +112,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requeste
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRun {const WebhookDeploymentReviewRejectedWorkflowRun({required this.name, required this.checkSuiteId, required this.checkSuiteNodeId, required this.headSha, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.actor, required this.htmlUrl, required this.id, required this.triggeringActor, required this.nodeId, required this.path, required this.pullRequests, required this.displayTitle, required this.runNumber, required this.status, required this.url, required this.workflowId, required this.runAttempt, required this.updatedAt, required this.runStartedAt, this.repository, this.rerunUrl, this.previousAttemptUrl = const Omittable.absent(), this.logsUrl, this.jobsUrl, this.headRepository, this.referencedWorkflows = const Omittable.absent(), this.headCommit = const Omittable.absent(), this.cancelUrl, this.artifactsUrl, this.workflowUrl, this.checkSuiteUrl, });
 
-factory WebhookDeploymentReviewRejectedWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRejectedWorkflowRun(
+factory WebhookDeploymentReviewRejectedWorkflowRun.fromJson(Map<String, dynamic> json) {return WebhookDeploymentReviewRejectedWorkflowRun(
   actor: json['actor'] != null ? WebhookDeploymentCreatedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   artifactsUrl: json['artifacts_url'] as String?,
   cancelUrl: json['cancel_url'] as String?,
@@ -151,7 +151,7 @@ factory WebhookDeploymentReviewRejectedWorkflowRun.fromJson(Map<String, dynamic>
   workflowId: (json['workflow_id'] as num).toInt(),
   workflowUrl: json['workflow_url'] as String?,
   displayTitle: json['display_title'] as String,
-); }
+);}
 
 final WebhookDeploymentCreatedWorkflowRunActor? actor;
 
@@ -223,7 +223,7 @@ final String? workflowUrl;
 
 final String displayTitle;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actor': actor?.toJson(),
   'artifacts_url': ?artifactsUrl,
   'cancel_url': ?cancelUrl,
@@ -259,8 +259,8 @@ Map<String, dynamic> toJson() { return {
   'workflow_id': workflowId,
   'workflow_url': ?workflowUrl,
   'display_title': displayTitle,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actor') &&
       json.containsKey('check_suite_id') && json['check_suite_id'] is num &&
       json.containsKey('check_suite_node_id') && json['check_suite_node_id'] is String &&
       json.containsKey('conclusion') &&
@@ -282,8 +282,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is num &&
-      json.containsKey('display_title') && json['display_title'] is String; } 
-WebhookDeploymentReviewRejectedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflowRunActor? Function()? actor, String? Function()? artifactsUrl, String? Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String? Function()? checkSuiteUrl, WebhookCheckSuiteRerequestedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? headBranch, Omittable<Map<String,dynamic>?>? headCommit, WebhookDeploymentReviewApprovedWorkflowRunHeadRepository? Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String? Function()? jobsUrl, String? Function()? logsUrl, String? name, String? nodeId, String? path, Omittable<String?>? previousAttemptUrl, List<CheckSuitePullRequests>? pullRequests, Omittable<List<ReferencedWorkflows>?>? referencedWorkflows, WebhookDeploymentReviewApprovedWorkflowRunRepository? Function()? repository, String? Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentReviewRejectedWorkflowRunStatus? status, WebhookDeploymentCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String? Function()? workflowUrl, String? displayTitle, }) { return WebhookDeploymentReviewRejectedWorkflowRun(
+      json.containsKey('display_title') && json['display_title'] is String;}
+WebhookDeploymentReviewRejectedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflowRunActor? Function()? actor, String? Function()? artifactsUrl, String? Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String? Function()? checkSuiteUrl, WebhookCheckSuiteRerequestedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? headBranch, Omittable<Map<String,dynamic>?>? headCommit, WebhookDeploymentReviewApprovedWorkflowRunHeadRepository? Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String? Function()? jobsUrl, String? Function()? logsUrl, String? name, String? nodeId, String? path, Omittable<String?>? previousAttemptUrl, List<CheckSuitePullRequests>? pullRequests, Omittable<List<ReferencedWorkflows>?>? referencedWorkflows, WebhookDeploymentReviewApprovedWorkflowRunRepository? Function()? repository, String? Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentReviewRejectedWorkflowRunStatus? status, WebhookDeploymentCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String? Function()? workflowUrl, String? displayTitle, }) {return WebhookDeploymentReviewRejectedWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl != null ? artifactsUrl() : this.artifactsUrl,
   cancelUrl: cancelUrl != null ? cancelUrl() : this.cancelUrl,
@@ -319,7 +319,7 @@ WebhookDeploymentReviewRejectedWorkflowRun copyWith({WebhookDeploymentCreatedWor
   workflowId: workflowId ?? this.workflowId,
   workflowUrl: workflowUrl != null ? workflowUrl() : this.workflowUrl,
   displayTitle: displayTitle ?? this.displayTitle,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewRejectedWorkflowRun &&
           actor == other.actor &&
@@ -363,4 +363,4 @@ WebhookDeploymentReviewRejectedWorkflowRun copyWith({WebhookDeploymentCreatedWor
 
 @override String toString() => 'WebhookDeploymentReviewRejectedWorkflowRun(\n  actor: $actor,\n  artifactsUrl: $artifactsUrl,\n  cancelUrl: $cancelUrl,\n  checkSuiteId: $checkSuiteId,\n  checkSuiteNodeId: $checkSuiteNodeId,\n  checkSuiteUrl: $checkSuiteUrl,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  event: $event,\n  headBranch: $headBranch,\n  headCommit: $headCommit,\n  headRepository: $headRepository,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  jobsUrl: $jobsUrl,\n  logsUrl: $logsUrl,\n  name: $name,\n  nodeId: $nodeId,\n  path: $path,\n  previousAttemptUrl: $previousAttemptUrl,\n  pullRequests: $pullRequests,\n  referencedWorkflows: $referencedWorkflows,\n  repository: $repository,\n  rerunUrl: $rerunUrl,\n  runAttempt: $runAttempt,\n  runNumber: $runNumber,\n  runStartedAt: $runStartedAt,\n  status: $status,\n  triggeringActor: $triggeringActor,\n  updatedAt: $updatedAt,\n  url: $url,\n  workflowId: $workflowId,\n  workflowUrl: $workflowUrl,\n  displayTitle: $displayTitle,\n)';
 
- }
+}

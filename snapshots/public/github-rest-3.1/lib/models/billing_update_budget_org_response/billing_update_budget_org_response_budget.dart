@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request/budget_scope.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request/budget_type.dart';import 'package:pub_github_rest_3_1/models/budget/budget_budget_alerting.dart';@immutable final class BillingUpdateBudgetOrgResponseBudget {const BillingUpdateBudgetOrgResponseBudget({this.id, this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName, this.budgetType, this.budgetProductSku, });
 
-factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgResponseBudget(
+factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json) {return BillingUpdateBudgetOrgResponseBudget(
   id: json['id'] as String?,
   budgetAmount: json['budget_amount'] != null ? (json['budget_amount'] as num).toDouble() : null,
   preventFurtherUsage: json['prevent_further_usage'] as bool?,
@@ -12,7 +12,7 @@ factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json)
   budgetEntityName: json['budget_entity_name'] as String?,
   budgetType: json['budget_type'] != null ? BudgetType.fromJson(json['budget_type'] as String) : null,
   budgetProductSku: json['budget_product_sku'] as String?,
-); }
+);}
 
 /// ID of the budget.
 final String? id;
@@ -40,7 +40,7 @@ final String? budgetProductSku;
 /// The value of `budgetEntityName`, or its schema default when absent.
 String get budgetEntityNameOrDefault => budgetEntityName ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'budget_amount': ?budgetAmount,
   'prevent_further_usage': ?preventFurtherUsage,
@@ -49,9 +49,9 @@ Map<String, dynamic> toJson() { return {
   'budget_entity_name': ?budgetEntityName,
   if (budgetType != null) 'budget_type': budgetType?.toJson(),
   'budget_product_sku': ?budgetProductSku,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'budget_amount', 'prevent_further_usage', 'budget_alerting', 'budget_scope', 'budget_entity_name', 'budget_type', 'budget_product_sku'}.contains(key)); } 
-BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? Function()? budgetAmount, bool? Function()? preventFurtherUsage, BudgetBudgetAlerting? Function()? budgetAlerting, BudgetScope? Function()? budgetScope, String? Function()? budgetEntityName, BudgetType? Function()? budgetType, String? Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgResponseBudget(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'budget_amount', 'prevent_further_usage', 'budget_alerting', 'budget_scope', 'budget_entity_name', 'budget_type', 'budget_product_sku'}.contains(key));}
+BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? Function()? budgetAmount, bool? Function()? preventFurtherUsage, BudgetBudgetAlerting? Function()? budgetAlerting, BudgetScope? Function()? budgetScope, String? Function()? budgetEntityName, BudgetType? Function()? budgetType, String? Function()? budgetProductSku, }) {return BillingUpdateBudgetOrgResponseBudget(
   id: id != null ? id() : this.id,
   budgetAmount: budgetAmount != null ? budgetAmount() : this.budgetAmount,
   preventFurtherUsage: preventFurtherUsage != null ? preventFurtherUsage() : this.preventFurtherUsage,
@@ -60,7 +60,7 @@ BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? F
   budgetEntityName: budgetEntityName != null ? budgetEntityName() : this.budgetEntityName,
   budgetType: budgetType != null ? budgetType() : this.budgetType,
   budgetProductSku: budgetProductSku != null ? budgetProductSku() : this.budgetProductSku,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingUpdateBudgetOrgResponseBudget &&
           id == other.id &&
@@ -76,4 +76,4 @@ BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? F
 
 @override String toString() => 'BillingUpdateBudgetOrgResponseBudget(id: $id, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetAlerting: $budgetAlerting, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetType: $budgetType, budgetProductSku: $budgetProductSku)';
 
- }
+}

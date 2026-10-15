@@ -14,7 +14,7 @@ final class SslVerificationApi with ApiExecutor {const SslVerificationApi(this.a
 /// Get SSL Verification Info for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/verification`
-Future<ApiResult<List<TlsCertificatesAndHostnamesVerification>?, SslVerificationDetailsError>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic retry, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TlsCertificatesAndHostnamesVerification>?, SslVerificationDetailsError>> sslVerificationDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic retry, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (retry != null) {
   queryParameters['retry'] = retry.toString();
@@ -39,13 +39,13 @@ return await execute(
   },
   onError: SslVerificationDetailsError.fromResponse,
 );
- } 
+}
 /// Edit SSL Certificate Pack Validation Method
 ///
 /// Edit SSL validation method for a certificate pack. A PATCH request will request an immediate validation check on any certificate, and return the updated status. If a validation method is provided, the validation will be immediately attempted using that method.
 ///
 /// `PATCH /zones/{zone_id}/ssl/verification/{certificate_pack_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult?, SslVerificationEditSslCertificatePackValidationMethodError>> sslVerificationEditSslCertificatePackValidationMethod({required TlsCertificatesAndHostnamesCertPackUuid certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult?, SslVerificationEditSslCertificatePackValidationMethodError>> sslVerificationEditSslCertificatePackValidationMethod({required TlsCertificatesAndHostnamesCertPackUuid certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesComponentsSchemasValidationMethod body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,5 +64,5 @@ return await execute(
   },
   onError: SslVerificationEditSslCertificatePackValidationMethodError.fromResponse,
 );
- } 
- }
+}
+}

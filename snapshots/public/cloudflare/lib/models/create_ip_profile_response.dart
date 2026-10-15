@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile.dart';@immutable final class CreateIpProfileResponse {const CreateIpProfileResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory CreateIpProfileResponse.fromJson(Map<String, dynamic> json) { return CreateIpProfileResponse(
+factory CreateIpProfileResponse.fromJson(Map<String, dynamic> json) {return CreateIpProfileResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: TeamsDevicesIpProfile.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<ResponseMessage> errors;
 
@@ -19,22 +19,22 @@ final TeamsDevicesIpProfile result;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-CreateIpProfileResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, TeamsDevicesIpProfile? result, bool? success, }) { return CreateIpProfileResponse(
+      json.containsKey('success') && json['success'] is bool;}
+CreateIpProfileResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, TeamsDevicesIpProfile? result, bool? success, }) {return CreateIpProfileResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateIpProfileResponse &&
           listEquals(errors, other.errors) &&
@@ -46,4 +46,4 @@ CreateIpProfileResponse copyWith({List<ResponseMessage>? errors, List<ResponseMe
 
 @override String toString() => 'CreateIpProfileResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

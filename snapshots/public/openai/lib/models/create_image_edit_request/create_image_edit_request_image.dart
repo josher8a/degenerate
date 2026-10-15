@@ -16,11 +16,11 @@ const CreateImageEditRequestImage({this.uint8List = const Omittable.absent(), th
 const CreateImageEditRequestImage._({required this.rawValue, required this.uint8List, required this.listUint8List, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CreateImageEditRequestImage.fromJson(Object? json) { return CreateImageEditRequestImage._(
+factory CreateImageEditRequestImage.fromJson(Object? json) {return CreateImageEditRequestImage._(
   rawValue: Omittable(json),
   uint8List: parseAnyOfVariant<Uint8List>(json, (value) => base64Decode(value! as String)),
   listUint8List: parseAnyOfVariant<List<Uint8List>>(json, (value) => (value! as List<dynamic>).map((e) => base64Decode(e as String)).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -50,4 +50,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CreateImageEditRequestImage(${toJson()})';
 
- }
+}

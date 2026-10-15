@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice_setting_subscription_schedule_phase_setting.dart';import 'package:pub_stripe_spec3/models/schedules_phase_automatic_tax.dart';import 'package:pub_stripe_spec3/models/stackable_discount_with_discount_settings_and_discount_end.dart';import 'package:pub_stripe_spec3/models/subscription_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_add_invoice_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_configuration_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration/subscription_schedule_phase_configuration_collection_method.dart';import 'package:pub_stripe_spec3/models/subscription_transfer_data.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 sealed class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor();
 
-factory SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'automatic' => automatic,
   'phase_start' => phaseStart,
   _ => SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown(json),
-}; }
+};}
 
 static const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor automatic = SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic._();
 
@@ -17,30 +17,30 @@ static const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor phaseStart
 static const List<SubscriptionSchedulePhaseConfigurationBillingCycleAnchor> values = [automatic, phaseStart];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'automatic' => 'automatic',
   'phase_start' => 'phaseStart',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown; } 
+bool get isUnknown {return this is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() automatic, required W Function() phaseStart, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() automatic, required W Function() phaseStart, required W Function(String value) $unknown, }) {return switch (this) {
       SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic() => automatic(),
       SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart() => phaseStart(),
       SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? automatic, W Function()? phaseStart, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? automatic, W Function()? phaseStart, W Function(String value)? $unknown, }) {return switch (this) {
       SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic() => automatic != null ? automatic() : orElse(value),
       SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart() => phaseStart != null ? phaseStart() : orElse(value),
       SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)';
 
- }
+}
 @immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic extends SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic._();
 
 @override String get value => 'automatic';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'automatic'.hashCode;
 
- }
+}
 @immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart extends SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart._();
 
 @override String get value => 'phase_start';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'phase_start'.hashCode;
 
- }
+}
 @immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown extends SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown(this.value);
 
 @override final String value;
@@ -68,11 +68,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A phase describes the plans, coupon, and trialing status of a subscription for a predefined time period.
 @immutable final class SubscriptionSchedulePhaseConfiguration {const SubscriptionSchedulePhaseConfiguration({required this.addInvoiceItems, required this.currency, required this.discounts, required this.endDate, required this.items, required this.prorationBehavior, required this.startDate, this.applicationFeePercent = const Omittable.absent(), this.automaticTax, this.billingCycleAnchor = const Omittable.absent(), this.billingThresholds = const Omittable.absent(), this.collectionMethod = const Omittable.absent(), this.defaultPaymentMethod = const Omittable.absent(), this.defaultTaxRates = const Omittable.absent(), this.description = const Omittable.absent(), this.invoiceSettings = const Omittable.absent(), this.metadata = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.transferData = const Omittable.absent(), this.trialEnd = const Omittable.absent(), });
 
-factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulePhaseConfiguration(
+factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> json) {return SubscriptionSchedulePhaseConfiguration(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>).map((e) => SubscriptionScheduleAddInvoiceItem.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json.containsKey('application_fee_percent') ? Omittable(json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null) : const Omittable.absent(),
   automaticTax: json['automatic_tax'] != null ? SchedulesPhaseAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
@@ -93,7 +93,7 @@ factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> jso
   startDate: (json['start_date'] as num).toInt(),
   transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? SubscriptionTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   trialEnd: json.containsKey('trial_end') ? Omittable(json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// A list of prices and quantities that will generate invoice items appended to the next invoice for this phase.
 final List<SubscriptionScheduleAddInvoiceItem> addInvoiceItems;
@@ -154,7 +154,7 @@ final Omittable<SubscriptionTransferData?> transferData;
 /// When the trial ends within the phase.
 final Omittable<int?> trialEnd;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'add_invoice_items': addInvoiceItems.map((e) => e.toJson()).toList(),
   if (applicationFeePercent.isPresent) 'application_fee_percent': applicationFeePercent.value,
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -175,22 +175,22 @@ Map<String, dynamic> toJson() { return {
   'start_date': startDate,
   if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
   if (trialEnd.isPresent) 'trial_end': trialEnd.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('add_invoice_items') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('add_invoice_items') &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('discounts') &&
       json.containsKey('end_date') && json['end_date'] is num &&
       json.containsKey('items') &&
       json.containsKey('proration_behavior') &&
-      json.containsKey('start_date') && json['start_date'] is num; } 
+      json.containsKey('start_date') && json['start_date'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-return errors; } 
-SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, Omittable<double?>? applicationFeePercent, SchedulesPhaseAutomaticTax? Function()? automaticTax, Omittable<SubscriptionSchedulePhaseConfigurationBillingCycleAnchor?>? billingCycleAnchor, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<SubscriptionSchedulePhaseConfigurationCollectionMethod?>? collectionMethod, String? currency, Omittable<DefaultPaymentMethod?>? defaultPaymentMethod, Omittable<List<TaxRate>?>? defaultTaxRates, Omittable<String?>? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, Omittable<InvoiceSettingSubscriptionSchedulePhaseSetting?>? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Omittable<Map<String,String>?>? metadata, Omittable<ChargeOnBehalfOf?>? onBehalfOf, DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior, int? startDate, Omittable<SubscriptionTransferData?>? transferData, Omittable<int?>? trialEnd, }) { return SubscriptionSchedulePhaseConfiguration(
+return errors;}
+SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, Omittable<double?>? applicationFeePercent, SchedulesPhaseAutomaticTax? Function()? automaticTax, Omittable<SubscriptionSchedulePhaseConfigurationBillingCycleAnchor?>? billingCycleAnchor, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<SubscriptionSchedulePhaseConfigurationCollectionMethod?>? collectionMethod, String? currency, Omittable<DefaultPaymentMethod?>? defaultPaymentMethod, Omittable<List<TaxRate>?>? defaultTaxRates, Omittable<String?>? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, Omittable<InvoiceSettingSubscriptionSchedulePhaseSetting?>? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Omittable<Map<String,String>?>? metadata, Omittable<ChargeOnBehalfOf?>? onBehalfOf, DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior, int? startDate, Omittable<SubscriptionTransferData?>? transferData, Omittable<int?>? trialEnd, }) {return SubscriptionSchedulePhaseConfiguration(
   addInvoiceItems: addInvoiceItems ?? this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent ?? this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
@@ -211,7 +211,7 @@ SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInv
   startDate: startDate ?? this.startDate,
   transferData: transferData ?? this.transferData,
   trialEnd: trialEnd ?? this.trialEnd,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionSchedulePhaseConfiguration &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
@@ -240,4 +240,4 @@ SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInv
 
 @override String toString() => 'SubscriptionSchedulePhaseConfiguration(\n  addInvoiceItems: $addInvoiceItems,\n  applicationFeePercent: $applicationFeePercent,\n  automaticTax: $automaticTax,\n  billingCycleAnchor: $billingCycleAnchor,\n  billingThresholds: $billingThresholds,\n  collectionMethod: $collectionMethod,\n  currency: $currency,\n  defaultPaymentMethod: $defaultPaymentMethod,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  discounts: $discounts,\n  endDate: $endDate,\n  invoiceSettings: $invoiceSettings,\n  items: $items,\n  metadata: $metadata,\n  onBehalfOf: $onBehalfOf,\n  prorationBehavior: $prorationBehavior,\n  startDate: $startDate,\n  transferData: $transferData,\n  trialEnd: $trialEnd,\n)';
 
- }
+}

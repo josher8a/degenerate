@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasSettings {const AccessSchemasSettings({required this.chinaNetwork, required this.clientCertificateForwarding, required this.hostname, });
 
-factory AccessSchemasSettings.fromJson(Map<String, dynamic> json) { return AccessSchemasSettings(
+factory AccessSchemasSettings.fromJson(Map<String, dynamic> json) {return AccessSchemasSettings(
   chinaNetwork: json['china_network'] as bool,
   clientCertificateForwarding: json['client_certificate_forwarding'] as bool,
   hostname: json['hostname'] as String,
-); }
+);}
 
 /// Request client certificates for this hostname in China. Can only be set to true if this zone is china network enabled.
 /// 
@@ -24,19 +24,19 @@ final bool clientCertificateForwarding;
 /// Example: `'admin.example.com'`
 final String hostname;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'china_network': chinaNetwork,
   'client_certificate_forwarding': clientCertificateForwarding,
   'hostname': hostname,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('china_network') && json['china_network'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('china_network') && json['china_network'] is bool &&
       json.containsKey('client_certificate_forwarding') && json['client_certificate_forwarding'] is bool &&
-      json.containsKey('hostname') && json['hostname'] is String; } 
-AccessSchemasSettings copyWith({bool? chinaNetwork, bool? clientCertificateForwarding, String? hostname, }) { return AccessSchemasSettings(
+      json.containsKey('hostname') && json['hostname'] is String;}
+AccessSchemasSettings copyWith({bool? chinaNetwork, bool? clientCertificateForwarding, String? hostname, }) {return AccessSchemasSettings(
   chinaNetwork: chinaNetwork ?? this.chinaNetwork,
   clientCertificateForwarding: clientCertificateForwarding ?? this.clientCertificateForwarding,
   hostname: hostname ?? this.hostname,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasSettings &&
           chinaNetwork == other.chinaNetwork &&
@@ -47,4 +47,4 @@ AccessSchemasSettings copyWith({bool? chinaNetwork, bool? clientCertificateForwa
 
 @override String toString() => 'AccessSchemasSettings(chinaNetwork: $chinaNetwork, clientCertificateForwarding: $clientCertificateForwarding, hostname: $hostname)';
 
- }
+}

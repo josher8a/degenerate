@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/post_shipping_rates_request_type.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/shipping_rate_delivery_estimate.dart';import 'package:pub_stripe_spec3/models/shipping_rate_fixed_amount.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ShippingRateObject {const ShippingRateObject();
 
-factory ShippingRateObject.fromJson(String json) { return switch (json) {
+factory ShippingRateObject.fromJson(String json) {return switch (json) {
   'shipping_rate' => shippingRate,
   _ => ShippingRateObject$Unknown(json),
-}; }
+};}
 
 static const ShippingRateObject shippingRate = ShippingRateObject$shippingRate._();
 
 static const List<ShippingRateObject> values = [shippingRate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'shipping_rate' => 'shippingRate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShippingRateObject$Unknown; } 
+bool get isUnknown {return this is ShippingRateObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() shippingRate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() shippingRate, required W Function(String value) $unknown, }) {return switch (this) {
       ShippingRateObject$shippingRate() => shippingRate(),
       ShippingRateObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? shippingRate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? shippingRate, W Function(String value)? $unknown, }) {return switch (this) {
       ShippingRateObject$shippingRate() => shippingRate != null ? shippingRate() : orElse(value),
       ShippingRateObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShippingRateObject($value)';
 
- }
+}
 @immutable final class ShippingRateObject$shippingRate extends ShippingRateObject {const ShippingRateObject$shippingRate._();
 
 @override String get value => 'shipping_rate';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? shipping
 
 @override int get hashCode => 'shipping_rate'.hashCode;
 
- }
+}
 @immutable final class ShippingRateObject$Unknown extends ShippingRateObject {const ShippingRateObject$Unknown(this.value);
 
 @override final String value;
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? shipping
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Shipping rates describe the price of shipping presented to your customers and
 /// applied to a purchase. For more information, see [Charge for shipping](https://docs.stripe.com/payments/during-payment/charge-shipping).
 @immutable final class ShippingRate {const ShippingRate({required this.active, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.type, this.deliveryEstimate = const Omittable.absent(), this.displayName = const Omittable.absent(), this.fixedAmount, this.taxBehavior = const Omittable.absent(), this.taxCode = const Omittable.absent(), });
 
-factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
+factory ShippingRate.fromJson(Map<String, dynamic> json) {return ShippingRate(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
   deliveryEstimate: json.containsKey('delivery_estimate') ? Omittable(json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -71,7 +71,7 @@ factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
   taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
   taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? ProductTaxCode.fromJson(json['tax_code']) : null) : const Omittable.absent(),
   type: PostShippingRatesRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Whether the shipping rate can be used for new purchases. Defaults to `true`.
 final bool active;
@@ -108,7 +108,7 @@ final Omittable<ProductTaxCode?> taxCode;
 /// The type of calculation to use on the shipping rate.
 final PostShippingRatesRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'created': created,
   if (deliveryEstimate.isPresent) 'delivery_estimate': deliveryEstimate.value?.toJson(),
@@ -121,23 +121,23 @@ Map<String, dynamic> toJson() { return {
   if (taxBehavior.isPresent) 'tax_behavior': taxBehavior.value?.toJson(),
   if (taxCode.isPresent) 'tax_code': taxCode.value?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final displayName$ = displayName.value;
 if (displayName$ != null) {
   if (displayName$.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliveryEstimate?>? deliveryEstimate, Omittable<String?>? displayName, ShippingRateFixedAmount? Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, Omittable<CurrencyOptionTaxBehavior?>? taxBehavior, Omittable<ProductTaxCode?>? taxCode, PostShippingRatesRequestType? type, }) { return ShippingRate(
+return errors;}
+ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliveryEstimate?>? deliveryEstimate, Omittable<String?>? displayName, ShippingRateFixedAmount? Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, Omittable<CurrencyOptionTaxBehavior?>? taxBehavior, Omittable<ProductTaxCode?>? taxCode, PostShippingRatesRequestType? type, }) {return ShippingRate(
   active: active ?? this.active,
   created: created ?? this.created,
   deliveryEstimate: deliveryEstimate ?? this.deliveryEstimate,
@@ -150,7 +150,7 @@ ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliver
   taxBehavior: taxBehavior ?? this.taxBehavior,
   taxCode: taxCode ?? this.taxCode,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingRate &&
           active == other.active &&
@@ -170,4 +170,4 @@ ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliver
 
 @override String toString() => 'ShippingRate(\n  active: $active,\n  created: $created,\n  deliveryEstimate: $deliveryEstimate,\n  displayName: $displayName,\n  fixedAmount: $fixedAmount,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  taxBehavior: $taxBehavior,\n  taxCode: $taxCode,\n  type: $type,\n)';
 
- }
+}

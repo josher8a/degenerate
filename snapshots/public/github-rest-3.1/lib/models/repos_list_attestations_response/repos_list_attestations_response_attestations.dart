@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_attestation_request/repos_create_attestation_request_bundle.dart';@immutable final class ReposListAttestationsResponseAttestations {const ReposListAttestationsResponseAttestations({this.bundle, this.repositoryId, this.bundleUrl, this.initiator, });
 
-factory ReposListAttestationsResponseAttestations.fromJson(Map<String, dynamic> json) { return ReposListAttestationsResponseAttestations(
+factory ReposListAttestationsResponseAttestations.fromJson(Map<String, dynamic> json) {return ReposListAttestationsResponseAttestations(
   bundle: json['bundle'] != null ? ReposCreateAttestationRequestBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null,
   repositoryId: json['repository_id'] != null ? (json['repository_id'] as num).toInt() : null,
   bundleUrl: json['bundle_url'] as String?,
   initiator: json['initiator'] as String?,
-); }
+);}
 
 /// The attestation's Sigstore Bundle.
 /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
@@ -20,19 +20,19 @@ final String? bundleUrl;
 
 final String? initiator;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bundle != null) 'bundle': bundle?.toJson(),
   'repository_id': ?repositoryId,
   'bundle_url': ?bundleUrl,
   'initiator': ?initiator,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle', 'repository_id', 'bundle_url', 'initiator'}.contains(key)); } 
-ReposListAttestationsResponseAttestations copyWith({ReposCreateAttestationRequestBundle? Function()? bundle, int? Function()? repositoryId, String? Function()? bundleUrl, String? Function()? initiator, }) { return ReposListAttestationsResponseAttestations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bundle', 'repository_id', 'bundle_url', 'initiator'}.contains(key));}
+ReposListAttestationsResponseAttestations copyWith({ReposCreateAttestationRequestBundle? Function()? bundle, int? Function()? repositoryId, String? Function()? bundleUrl, String? Function()? initiator, }) {return ReposListAttestationsResponseAttestations(
   bundle: bundle != null ? bundle() : this.bundle,
   repositoryId: repositoryId != null ? repositoryId() : this.repositoryId,
   bundleUrl: bundleUrl != null ? bundleUrl() : this.bundleUrl,
   initiator: initiator != null ? initiator() : this.initiator,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposListAttestationsResponseAttestations &&
           bundle == other.bundle &&
@@ -44,4 +44,4 @@ ReposListAttestationsResponseAttestations copyWith({ReposCreateAttestationReques
 
 @override String toString() => 'ReposListAttestationsResponseAttestations(bundle: $bundle, repositoryId: $repositoryId, bundleUrl: $bundleUrl, initiator: $initiator)';
 
- }
+}

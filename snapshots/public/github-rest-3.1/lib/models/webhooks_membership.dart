@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';/// The membership between the user and the organization. Not present when the action is `member_invited`.
 @immutable final class WebhooksMembership {const WebhooksMembership({required this.organizationUrl, required this.role, required this.state, required this.url, required this.user, this.directMembership, this.enterpriseTeamsProvidingIndirectMembership, });
 
-factory WebhooksMembership.fromJson(Map<String, dynamic> json) { return WebhooksMembership(
+factory WebhooksMembership.fromJson(Map<String, dynamic> json) {return WebhooksMembership(
   organizationUrl: Uri.parse(json['organization_url'] as String),
   role: json['role'] as String,
   directMembership: json['direct_membership'] as bool?,
@@ -12,7 +12,7 @@ factory WebhooksMembership.fromJson(Map<String, dynamic> json) { return Webhooks
   state: json['state'] as String,
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Uri organizationUrl;
 
@@ -31,7 +31,7 @@ final Uri url;
 
 final DiscussionUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'organization_url': organizationUrl.toString(),
   'role': role,
   'direct_membership': ?directMembership,
@@ -39,20 +39,20 @@ Map<String, dynamic> toJson() { return {
   'state': state,
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('organization_url') && json['organization_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('organization_url') && json['organization_url'] is String &&
       json.containsKey('role') && json['role'] is String &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
+      json.containsKey('user');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final enterpriseTeamsProvidingIndirectMembership$ = enterpriseTeamsProvidingIndirectMembership;
 if (enterpriseTeamsProvidingIndirectMembership$ != null) {
   if (enterpriseTeamsProvidingIndirectMembership$.length > 100) { errors.add('enterpriseTeamsProvidingIndirectMembership: must have <= 100 items'); }
 }
-return errors; } 
-WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, DiscussionUser? Function()? user, }) { return WebhooksMembership(
+return errors;}
+WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, DiscussionUser? Function()? user, }) {return WebhooksMembership(
   organizationUrl: organizationUrl ?? this.organizationUrl,
   role: role ?? this.role,
   directMembership: directMembership != null ? directMembership() : this.directMembership,
@@ -60,7 +60,7 @@ WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function(
   state: state ?? this.state,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksMembership &&
           organizationUrl == other.organizationUrl &&
@@ -75,4 +75,4 @@ WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function(
 
 @override String toString() => 'WebhooksMembership(organizationUrl: $organizationUrl, role: $role, directMembership: $directMembership, enterpriseTeamsProvidingIndirectMembership: $enterpriseTeamsProvidingIndirectMembership, state: $state, url: $url, user: $user)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindWorkflow {const WorkersBindingKindWorkflow({required this.name, required this.type, required this.workflowName, this.className, this.scriptName, });
 
-factory WorkersBindingKindWorkflow.fromJson(Map<String, dynamic> json) { return WorkersBindingKindWorkflow(
+factory WorkersBindingKindWorkflow.fromJson(Map<String, dynamic> json) {return WorkersBindingKindWorkflow(
   className: json['class_name'] as String?,
   name: WorkersBindingName.fromJson(json['name'] as String),
   scriptName: json['script_name'] as String?,
   type: json['type'] as String,
   workflowName: json['workflow_name'] as String,
-); }
+);}
 
 /// Class name of the Workflow. Should only be provided if the Workflow belongs to this script.
 /// 
@@ -31,23 +31,23 @@ final String type;
 /// Example: `'my-workflow'`
 final String workflowName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'class_name': ?className,
   'name': name.toJson(),
   'script_name': ?scriptName,
   'type': type,
   'workflow_name': workflowName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('workflow_name') && json['workflow_name'] is String; } 
-WorkersBindingKindWorkflow copyWith({String? Function()? className, WorkersBindingName? name, String? Function()? scriptName, String? type, String? workflowName, }) { return WorkersBindingKindWorkflow(
+      json.containsKey('workflow_name') && json['workflow_name'] is String;}
+WorkersBindingKindWorkflow copyWith({String? Function()? className, WorkersBindingName? name, String? Function()? scriptName, String? type, String? workflowName, }) {return WorkersBindingKindWorkflow(
   className: className != null ? className() : this.className,
   name: name ?? this.name,
   scriptName: scriptName != null ? scriptName() : this.scriptName,
   type: type ?? this.type,
   workflowName: workflowName ?? this.workflowName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindWorkflow &&
           className == other.className &&
@@ -60,4 +60,4 @@ WorkersBindingKindWorkflow copyWith({String? Function()? className, WorkersBindi
 
 @override String toString() => 'WorkersBindingKindWorkflow(className: $className, name: $name, scriptName: $scriptName, type: $type, workflowName: $workflowName)';
 
- }
+}

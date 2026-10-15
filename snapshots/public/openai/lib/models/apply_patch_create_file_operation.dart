@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Create a new file with the provided diff.
 sealed class ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType();
 
-factory ApplyPatchCreateFileOperationType.fromJson(String json) { return switch (json) {
+factory ApplyPatchCreateFileOperationType.fromJson(String json) {return switch (json) {
   'create_file' => createFile,
   _ => ApplyPatchCreateFileOperationType$Unknown(json),
-}; }
+};}
 
 static const ApplyPatchCreateFileOperationType createFile = ApplyPatchCreateFileOperationType$createFile._();
 
 static const List<ApplyPatchCreateFileOperationType> values = [createFile];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'create_file' => 'createFile',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ApplyPatchCreateFileOperationType$Unknown; } 
+bool get isUnknown {return this is ApplyPatchCreateFileOperationType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() createFile, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() createFile, required W Function(String value) $unknown, }) {return switch (this) {
       ApplyPatchCreateFileOperationType$createFile() => createFile(),
       ApplyPatchCreateFileOperationType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? createFile, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createFile, W Function(String value)? $unknown, }) {return switch (this) {
       ApplyPatchCreateFileOperationType$createFile() => createFile != null ? createFile() : orElse(value),
       ApplyPatchCreateFileOperationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ApplyPatchCreateFileOperationType($value)';
 
- }
+}
 @immutable final class ApplyPatchCreateFileOperationType$createFile extends ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType$createFile._();
 
 @override String get value => 'create_file';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createFi
 
 @override int get hashCode => 'create_file'.hashCode;
 
- }
+}
 @immutable final class ApplyPatchCreateFileOperationType$Unknown extends ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createFi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Instruction describing how to create a file via the apply_patch tool.
 @immutable final class ApplyPatchCreateFileOperation {const ApplyPatchCreateFileOperation({required this.type, required this.path, required this.diff, });
 
-factory ApplyPatchCreateFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchCreateFileOperation(
+factory ApplyPatchCreateFileOperation.fromJson(Map<String, dynamic> json) {return ApplyPatchCreateFileOperation(
   type: ApplyPatchCreateFileOperationType.fromJson(json['type'] as String),
   path: json['path'] as String,
   diff: json['diff'] as String,
-); }
+);}
 
 /// Create a new file with the provided diff.
 final ApplyPatchCreateFileOperationType type;
@@ -72,19 +72,19 @@ final String path;
 /// Diff to apply.
 final String diff;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'path': path,
   'diff': diff,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('diff') && json['diff'] is String; } 
-ApplyPatchCreateFileOperation copyWith({ApplyPatchCreateFileOperationType? type, String? path, String? diff, }) { return ApplyPatchCreateFileOperation(
+      json.containsKey('diff') && json['diff'] is String;}
+ApplyPatchCreateFileOperation copyWith({ApplyPatchCreateFileOperationType? type, String? path, String? diff, }) {return ApplyPatchCreateFileOperation(
   type: type ?? this.type,
   path: path ?? this.path,
   diff: diff ?? this.diff,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchCreateFileOperation &&
           type == other.type &&
@@ -95,4 +95,4 @@ ApplyPatchCreateFileOperation copyWith({ApplyPatchCreateFileOperationType? type,
 
 @override String toString() => 'ApplyPatchCreateFileOperation(type: $type, path: $path, diff: $diff)';
 
- }
+}

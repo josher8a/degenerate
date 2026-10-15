@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_permissions.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class Team {const Team({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.type, required this.parent, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });
 
-factory Team.fromJson(Map<String, dynamic> json) { return Team(
+factory Team.fromJson(Map<String, dynamic> json) {return Team(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -22,7 +22,7 @@ factory Team.fromJson(Map<String, dynamic> json) { return Team(
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
   parent: json['parent'] != null ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int id;
 
@@ -61,7 +61,7 @@ final int? enterpriseId;
 
 final TeamSimple? parent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -79,8 +79,8 @@ Map<String, dynamic> toJson() { return {
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
   'parent': parent?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
@@ -91,8 +91,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('type') &&
-      json.containsKey('parent'); } 
-Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, TeamSimple? Function()? parent, }) { return Team(
+      json.containsKey('parent');}
+Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, TeamSimple? Function()? parent, }) {return Team(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -110,7 +110,7 @@ Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Func
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
   parent: parent != null ? parent() : this.parent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Team &&
           id == other.id &&
@@ -135,4 +135,4 @@ Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Func
 
 @override String toString() => 'Team(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  slug: $slug,\n  description: $description,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  permission: $permission,\n  permissions: $permissions,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  membersUrl: $membersUrl,\n  repositoriesUrl: $repositoriesUrl,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n  parent: $parent,\n)';
 
- }
+}

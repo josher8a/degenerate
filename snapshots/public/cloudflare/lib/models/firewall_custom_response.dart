@@ -9,10 +9,10 @@ const FirewallCustomResponse({this.firewallCustomResponseVariant1 = const Omitta
 const FirewallCustomResponse._({required this.rawValue, required this.firewallCustomResponseVariant1, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory FirewallCustomResponse.fromJson(Object? json) { return FirewallCustomResponse._(
+factory FirewallCustomResponse.fromJson(Object? json) {return FirewallCustomResponse._(
   rawValue: Omittable(json),
   firewallCustomResponseVariant1: json is Map<String, dynamic> && FirewallCustomResponseVariant1.canParse(json) ? parseAnyOfVariant<FirewallCustomResponseVariant1>(json, (value) => FirewallCustomResponseVariant1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -38,4 +38,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'FirewallCustomResponse(${toJson()})';
 
- }
+}

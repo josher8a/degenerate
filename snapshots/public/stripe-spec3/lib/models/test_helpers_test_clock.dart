@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_clocks_resource_status_details_status_details.dart';import 'package:pub_stripe_spec3/models/deleted_test_helpers_test_clock/deleted_test_helpers_test_clock_object.dart';/// The status of the Test Clock.
 sealed class TestHelpersTestClockStatus {const TestHelpersTestClockStatus();
 
-factory TestHelpersTestClockStatus.fromJson(String json) { return switch (json) {
+factory TestHelpersTestClockStatus.fromJson(String json) {return switch (json) {
   'advancing' => advancing,
   'internal_failure' => internalFailure,
   'ready' => ready,
   _ => TestHelpersTestClockStatus$Unknown(json),
-}; }
+};}
 
 static const TestHelpersTestClockStatus advancing = TestHelpersTestClockStatus$advancing._();
 
@@ -20,33 +20,33 @@ static const TestHelpersTestClockStatus ready = TestHelpersTestClockStatus$ready
 static const List<TestHelpersTestClockStatus> values = [advancing, internalFailure, ready];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'advancing' => 'advancing',
   'internal_failure' => 'internalFailure',
   'ready' => 'ready',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TestHelpersTestClockStatus$Unknown; } 
+bool get isUnknown {return this is TestHelpersTestClockStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() advancing, required W Function() internalFailure, required W Function() ready, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() advancing, required W Function() internalFailure, required W Function() ready, required W Function(String value) $unknown, }) {return switch (this) {
       TestHelpersTestClockStatus$advancing() => advancing(),
       TestHelpersTestClockStatus$internalFailure() => internalFailure(),
       TestHelpersTestClockStatus$ready() => ready(),
       TestHelpersTestClockStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? advancing, W Function()? internalFailure, W Function()? ready, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? advancing, W Function()? internalFailure, W Function()? ready, W Function(String value)? $unknown, }) {return switch (this) {
       TestHelpersTestClockStatus$advancing() => advancing != null ? advancing() : orElse(value),
       TestHelpersTestClockStatus$internalFailure() => internalFailure != null ? internalFailure() : orElse(value),
       TestHelpersTestClockStatus$ready() => ready != null ? ready() : orElse(value),
       TestHelpersTestClockStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TestHelpersTestClockStatus($value)';
 
- }
+}
 @immutable final class TestHelpersTestClockStatus$advancing extends TestHelpersTestClockStatus {const TestHelpersTestClockStatus$advancing._();
 
 @override String get value => 'advancing';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advancin
 
 @override int get hashCode => 'advancing'.hashCode;
 
- }
+}
 @immutable final class TestHelpersTestClockStatus$internalFailure extends TestHelpersTestClockStatus {const TestHelpersTestClockStatus$internalFailure._();
 
 @override String get value => 'internal_failure';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advancin
 
 @override int get hashCode => 'internal_failure'.hashCode;
 
- }
+}
 @immutable final class TestHelpersTestClockStatus$ready extends TestHelpersTestClockStatus {const TestHelpersTestClockStatus$ready._();
 
 @override String get value => 'ready';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advancin
 
 @override int get hashCode => 'ready'.hashCode;
 
- }
+}
 @immutable final class TestHelpersTestClockStatus$Unknown extends TestHelpersTestClockStatus {const TestHelpersTestClockStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,13 +83,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? advancin
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A test clock enables deterministic control over objects in testmode. With a test clock, you can create
 /// objects at a frozen time in the past or future, and advance to a specific future time to observe webhooks and state changes. After the clock advances,
 /// you can either validate the current state of your scenario (and test your assumptions), change the current state of your scenario (and test more complex scenarios), or keep advancing forward in time.
 @immutable final class TestHelpersTestClock {const TestHelpersTestClock({required this.created, required this.deletesAfter, required this.frozenTime, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, this.name = const Omittable.absent(), });
 
-factory TestHelpersTestClock.fromJson(Map<String, dynamic> json) { return TestHelpersTestClock(
+factory TestHelpersTestClock.fromJson(Map<String, dynamic> json) {return TestHelpersTestClock(
   created: (json['created'] as num).toInt(),
   deletesAfter: (json['deletes_after'] as num).toInt(),
   frozenTime: (json['frozen_time'] as num).toInt(),
@@ -99,7 +99,7 @@ factory TestHelpersTestClock.fromJson(Map<String, dynamic> json) { return TestHe
   object: DeletedTestHelpersTestClockObject.fromJson(json['object'] as String),
   status: TestHelpersTestClockStatus.fromJson(json['status'] as String),
   statusDetails: BillingClocksResourceStatusDetailsStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -127,7 +127,7 @@ final TestHelpersTestClockStatus status;
 
 final BillingClocksResourceStatusDetailsStatusDetails statusDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'deletes_after': deletesAfter,
   'frozen_time': frozenTime,
@@ -137,24 +137,24 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'status': status.toJson(),
   'status_details': statusDetails.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('deletes_after') && json['deletes_after'] is num &&
       json.containsKey('frozen_time') && json['frozen_time'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('status') &&
-      json.containsKey('status_details'); } 
+      json.containsKey('status_details');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-return errors; } 
-TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime, String? id, bool? livemode, Omittable<String?>? name, DeletedTestHelpersTestClockObject? object, TestHelpersTestClockStatus? status, BillingClocksResourceStatusDetailsStatusDetails? statusDetails, }) { return TestHelpersTestClock(
+return errors;}
+TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime, String? id, bool? livemode, Omittable<String?>? name, DeletedTestHelpersTestClockObject? object, TestHelpersTestClockStatus? status, BillingClocksResourceStatusDetailsStatusDetails? statusDetails, }) {return TestHelpersTestClock(
   created: created ?? this.created,
   deletesAfter: deletesAfter ?? this.deletesAfter,
   frozenTime: frozenTime ?? this.frozenTime,
@@ -164,7 +164,7 @@ TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime,
   object: object ?? this.object,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TestHelpersTestClock &&
           created == other.created &&
@@ -181,4 +181,4 @@ TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime,
 
 @override String toString() => 'TestHelpersTestClock(\n  created: $created,\n  deletesAfter: $deletesAfter,\n  frozenTime: $frozenTime,\n  id: $id,\n  livemode: $livemode,\n  name: $name,\n  object: $object,\n  status: $status,\n  statusDetails: $statusDetails,\n)';
 
- }
+}

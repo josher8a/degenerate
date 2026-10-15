@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `string_check`.
 sealed class GraderStringCheckType {const GraderStringCheckType();
 
-factory GraderStringCheckType.fromJson(String json) { return switch (json) {
+factory GraderStringCheckType.fromJson(String json) {return switch (json) {
   'string_check' => stringCheck,
   _ => GraderStringCheckType$Unknown(json),
-}; }
+};}
 
 static const GraderStringCheckType stringCheck = GraderStringCheckType$stringCheck._();
 
 static const List<GraderStringCheckType> values = [stringCheck];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'string_check' => 'stringCheck',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GraderStringCheckType$Unknown; } 
+bool get isUnknown {return this is GraderStringCheckType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() stringCheck, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() stringCheck, required W Function(String value) $unknown, }) {return switch (this) {
       GraderStringCheckType$stringCheck() => stringCheck(),
       GraderStringCheckType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? stringCheck, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stringCheck, W Function(String value)? $unknown, }) {return switch (this) {
       GraderStringCheckType$stringCheck() => stringCheck != null ? stringCheck() : orElse(value),
       GraderStringCheckType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GraderStringCheckType($value)';
 
- }
+}
 @immutable final class GraderStringCheckType$stringCheck extends GraderStringCheckType {const GraderStringCheckType$stringCheck._();
 
 @override String get value => 'string_check';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stringCh
 
 @override int get hashCode => 'string_check'.hashCode;
 
- }
+}
 @immutable final class GraderStringCheckType$Unknown extends GraderStringCheckType {const GraderStringCheckType$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stringCh
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
 sealed class GraderStringCheckOperation {const GraderStringCheckOperation();
 
-factory GraderStringCheckOperation.fromJson(String json) { return switch (json) {
+factory GraderStringCheckOperation.fromJson(String json) {return switch (json) {
   'eq' => eq,
   'ne' => ne,
   'like' => like,
   'ilike' => ilike,
   _ => GraderStringCheckOperation$Unknown(json),
-}; }
+};}
 
 static const GraderStringCheckOperation eq = GraderStringCheckOperation$eq._();
 
@@ -76,36 +76,36 @@ static const GraderStringCheckOperation ilike = GraderStringCheckOperation$ilike
 static const List<GraderStringCheckOperation> values = [eq, ne, like, ilike];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'eq' => 'eq',
   'ne' => 'ne',
   'like' => 'like',
   'ilike' => 'ilike',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GraderStringCheckOperation$Unknown; } 
+bool get isUnknown {return this is GraderStringCheckOperation$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() eq, required W Function() ne, required W Function() like, required W Function() ilike, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() eq, required W Function() ne, required W Function() like, required W Function() ilike, required W Function(String value) $unknown, }) {return switch (this) {
       GraderStringCheckOperation$eq() => eq(),
       GraderStringCheckOperation$ne() => ne(),
       GraderStringCheckOperation$like() => like(),
       GraderStringCheckOperation$ilike() => ilike(),
       GraderStringCheckOperation$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? ne, W Function()? like, W Function()? ilike, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? ne, W Function()? like, W Function()? ilike, W Function(String value)? $unknown, }) {return switch (this) {
       GraderStringCheckOperation$eq() => eq != null ? eq() : orElse(value),
       GraderStringCheckOperation$ne() => ne != null ? ne() : orElse(value),
       GraderStringCheckOperation$like() => like != null ? like() : orElse(value),
       GraderStringCheckOperation$ilike() => ilike != null ? ilike() : orElse(value),
       GraderStringCheckOperation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GraderStringCheckOperation($value)';
 
- }
+}
 @immutable final class GraderStringCheckOperation$eq extends GraderStringCheckOperation {const GraderStringCheckOperation$eq._();
 
 @override String get value => 'eq';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'eq'.hashCode;
 
- }
+}
 @immutable final class GraderStringCheckOperation$ne extends GraderStringCheckOperation {const GraderStringCheckOperation$ne._();
 
 @override String get value => 'ne';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'ne'.hashCode;
 
- }
+}
 @immutable final class GraderStringCheckOperation$like extends GraderStringCheckOperation {const GraderStringCheckOperation$like._();
 
 @override String get value => 'like';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'like'.hashCode;
 
- }
+}
 @immutable final class GraderStringCheckOperation$ilike extends GraderStringCheckOperation {const GraderStringCheckOperation$ilike._();
 
 @override String get value => 'ilike';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => 'ilike'.hashCode;
 
- }
+}
 @immutable final class GraderStringCheckOperation$Unknown extends GraderStringCheckOperation {const GraderStringCheckOperation$Unknown(this.value);
 
 @override final String value;
@@ -151,18 +151,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A StringCheckGrader object that performs a string comparison between input and reference using a specified operation.
 /// 
 @immutable final class GraderStringCheck {const GraderStringCheck({required this.type, required this.name, required this.input, required this.reference, required this.operation, });
 
-factory GraderStringCheck.fromJson(Map<String, dynamic> json) { return GraderStringCheck(
+factory GraderStringCheck.fromJson(Map<String, dynamic> json) {return GraderStringCheck(
   type: GraderStringCheckType.fromJson(json['type'] as String),
   name: json['name'] as String,
   input: json['input'] as String,
   reference: json['reference'] as String,
   operation: GraderStringCheckOperation.fromJson(json['operation'] as String),
-); }
+);}
 
 /// The object type, which is always `string_check`.
 final GraderStringCheckType type;
@@ -179,25 +179,25 @@ final String reference;
 /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
 final GraderStringCheckOperation operation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'input': input,
   'reference': reference,
   'operation': operation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'string_check' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'string_check' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('input') && json['input'] is String &&
       json.containsKey('reference') && json['reference'] is String &&
-      json.containsKey('operation'); } 
-GraderStringCheck copyWith({GraderStringCheckType? type, String? name, String? input, String? reference, GraderStringCheckOperation? operation, }) { return GraderStringCheck(
+      json.containsKey('operation');}
+GraderStringCheck copyWith({GraderStringCheckType? type, String? name, String? input, String? reference, GraderStringCheckOperation? operation, }) {return GraderStringCheck(
   type: type ?? this.type,
   name: name ?? this.name,
   input: input ?? this.input,
   reference: reference ?? this.reference,
   operation: operation ?? this.operation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GraderStringCheck &&
           type == other.type &&
@@ -210,4 +210,4 @@ GraderStringCheck copyWith({GraderStringCheckType? type, String? name, String? i
 
 @override String toString() => 'GraderStringCheck(type: $type, name: $name, input: $input, reference: $reference, operation: $operation)';
 
- }
+}

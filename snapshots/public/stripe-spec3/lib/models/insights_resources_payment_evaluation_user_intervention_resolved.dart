@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the intervention if it has been completed.
 sealed class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome();
 
-factory InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(String json) { return switch (json) {
+factory InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(String json) {return switch (json) {
   'abandoned' => abandoned,
   'failed' => failed,
   'passed' => passed,
   _ => InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown(json),
-}; }
+};}
 
 static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome abandoned = InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned._();
 
@@ -20,33 +20,33 @@ static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome p
 static const List<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome> values = [abandoned, failed, passed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'abandoned' => 'abandoned',
   'failed' => 'failed',
   'passed' => 'passed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown; } 
+bool get isUnknown {return this is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() abandoned, required W Function() failed, required W Function() passed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() abandoned, required W Function() failed, required W Function() passed, required W Function(String value) $unknown, }) {return switch (this) {
       InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned() => abandoned(),
       InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed() => failed(),
       InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed() => passed(),
       InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? failed, W Function()? passed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? failed, W Function()? passed, W Function(String value)? $unknown, }) {return switch (this) {
       InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned() => abandoned != null ? abandoned() : orElse(value),
       InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed() => failed != null ? failed() : orElse(value),
       InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed() => passed != null ? passed() : orElse(value),
       InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)';
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned extends InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned._();
 
 @override String get value => 'abandoned';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'abandoned'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed extends InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed._();
 
 @override String get value => 'failed';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed extends InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed._();
 
 @override String get value => 'passed';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'passed'.hashCode;
 
- }
+}
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown extends InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown(this.value);
 
 @override final String value;
@@ -83,14 +83,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// User Intervention Resolved Event details attached to this payment evaluation
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolved {const InsightsResourcesPaymentEvaluationUserInterventionResolved({required this.key, this.outcome = const Omittable.absent(), });
 
-factory InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
+factory InsightsResourcesPaymentEvaluationUserInterventionResolved.fromJson(Map<String, dynamic> json) {return InsightsResourcesPaymentEvaluationUserInterventionResolved(
   key: json['key'] as String,
   outcome: json.containsKey('outcome') ? Omittable(json['outcome'] != null ? InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(json['outcome'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Unique ID of this intervention. Use this to provide the result.
 final String key;
@@ -98,19 +98,19 @@ final String key;
 /// Result of the intervention if it has been completed.
 final Omittable<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome?> outcome;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   if (outcome.isPresent) 'outcome': outcome.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (key.runes.length > 5000) { errors.add('key: length must be <= 5000'); }
-return errors; } 
-InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key, Omittable<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome?>? outcome, }) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
+return errors;}
+InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key, Omittable<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome?>? outcome, }) {return InsightsResourcesPaymentEvaluationUserInterventionResolved(
   key: key ?? this.key,
   outcome: outcome ?? this.outcome,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationUserInterventionResolved &&
           key == other.key &&
@@ -120,4 +120,4 @@ InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key
 
 @override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionResolved(key: $key, outcome: $outcome)';
 
- }
+}

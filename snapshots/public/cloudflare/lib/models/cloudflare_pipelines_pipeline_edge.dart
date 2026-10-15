@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesPipelineEdge {const CloudflarePipelinesPipelineEdge({required this.destId, required this.edgeType, required this.keyType, required this.srcId, required this.valueType, });
 
-factory CloudflarePipelinesPipelineEdge.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesPipelineEdge(
+factory CloudflarePipelinesPipelineEdge.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesPipelineEdge(
   destId: (json['dest_id'] as num).toInt(),
   edgeType: json['edge_type'] as String,
   keyType: json['key_type'] as String,
   srcId: (json['src_id'] as num).toInt(),
   valueType: json['value_type'] as String,
-); }
+);}
 
 final int destId;
 
@@ -21,30 +21,30 @@ final int srcId;
 
 final String valueType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dest_id': destId,
   'edge_type': edgeType,
   'key_type': keyType,
   'src_id': srcId,
   'value_type': valueType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dest_id') && json['dest_id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dest_id') && json['dest_id'] is num &&
       json.containsKey('edge_type') && json['edge_type'] is String &&
       json.containsKey('key_type') && json['key_type'] is String &&
       json.containsKey('src_id') && json['src_id'] is num &&
-      json.containsKey('value_type') && json['value_type'] is String; } 
+      json.containsKey('value_type') && json['value_type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (destId < 0) { errors.add('destId: must be >= 0'); }
 if (srcId < 0) { errors.add('srcId: must be >= 0'); }
-return errors; } 
-CloudflarePipelinesPipelineEdge copyWith({int? destId, String? edgeType, String? keyType, int? srcId, String? valueType, }) { return CloudflarePipelinesPipelineEdge(
+return errors;}
+CloudflarePipelinesPipelineEdge copyWith({int? destId, String? edgeType, String? keyType, int? srcId, String? valueType, }) {return CloudflarePipelinesPipelineEdge(
   destId: destId ?? this.destId,
   edgeType: edgeType ?? this.edgeType,
   keyType: keyType ?? this.keyType,
   srcId: srcId ?? this.srcId,
   valueType: valueType ?? this.valueType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesPipelineEdge &&
           destId == other.destId &&
@@ -57,4 +57,4 @@ CloudflarePipelinesPipelineEdge copyWith({int? destId, String? edgeType, String?
 
 @override String toString() => 'CloudflarePipelinesPipelineEdge(destId: $destId, edgeType: $edgeType, keyType: $keyType, srcId: $srcId, valueType: $valueType)';
 
- }
+}

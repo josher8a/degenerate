@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_lines.dart';import 'package:pub_stripe_spec3/models/credit_note_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CreditNoteObject {const CreditNoteObject();
 
-factory CreditNoteObject.fromJson(String json) { return switch (json) {
+factory CreditNoteObject.fromJson(String json) {return switch (json) {
   'credit_note' => creditNote,
   _ => CreditNoteObject$Unknown(json),
-}; }
+};}
 
 static const CreditNoteObject creditNote = CreditNoteObject$creditNote._();
 
 static const List<CreditNoteObject> values = [creditNote];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'credit_note' => 'creditNote',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreditNoteObject$Unknown; } 
+bool get isUnknown {return this is CreditNoteObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() creditNote, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() creditNote, required W Function(String value) $unknown, }) {return switch (this) {
       CreditNoteObject$creditNote() => creditNote(),
       CreditNoteObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNote, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNote, W Function(String value)? $unknown, }) {return switch (this) {
       CreditNoteObject$creditNote() => creditNote != null ? creditNote() : orElse(value),
       CreditNoteObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreditNoteObject($value)';
 
- }
+}
 @immutable final class CreditNoteObject$creditNote extends CreditNoteObject {const CreditNoteObject$creditNote._();
 
 @override String get value => 'credit_note';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNo
 
 @override int get hashCode => 'credit_note'.hashCode;
 
- }
+}
 @immutable final class CreditNoteObject$Unknown extends CreditNoteObject {const CreditNoteObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNo
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
 sealed class CreditNoteReason {const CreditNoteReason();
 
-factory CreditNoteReason.fromJson(String json) { return switch (json) {
+factory CreditNoteReason.fromJson(String json) {return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'order_change' => orderChange,
   'product_unsatisfactory' => productUnsatisfactory,
   _ => CreditNoteReason$Unknown(json),
-}; }
+};}
 
 static const CreditNoteReason duplicate = CreditNoteReason$duplicate._();
 
@@ -76,36 +76,36 @@ static const CreditNoteReason productUnsatisfactory = CreditNoteReason$productUn
 static const List<CreditNoteReason> values = [duplicate, fraudulent, orderChange, productUnsatisfactory];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'duplicate' => 'duplicate',
   'fraudulent' => 'fraudulent',
   'order_change' => 'orderChange',
   'product_unsatisfactory' => 'productUnsatisfactory',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreditNoteReason$Unknown; } 
+bool get isUnknown {return this is CreditNoteReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() duplicate, required W Function() fraudulent, required W Function() orderChange, required W Function() productUnsatisfactory, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() duplicate, required W Function() fraudulent, required W Function() orderChange, required W Function() productUnsatisfactory, required W Function(String value) $unknown, }) {return switch (this) {
       CreditNoteReason$duplicate() => duplicate(),
       CreditNoteReason$fraudulent() => fraudulent(),
       CreditNoteReason$orderChange() => orderChange(),
       CreditNoteReason$productUnsatisfactory() => productUnsatisfactory(),
       CreditNoteReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? fraudulent, W Function()? orderChange, W Function()? productUnsatisfactory, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? fraudulent, W Function()? orderChange, W Function()? productUnsatisfactory, W Function(String value)? $unknown, }) {return switch (this) {
       CreditNoteReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
       CreditNoteReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
       CreditNoteReason$orderChange() => orderChange != null ? orderChange() : orElse(value),
       CreditNoteReason$productUnsatisfactory() => productUnsatisfactory != null ? productUnsatisfactory() : orElse(value),
       CreditNoteReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreditNoteReason($value)';
 
- }
+}
 @immutable final class CreditNoteReason$duplicate extends CreditNoteReason {const CreditNoteReason$duplicate._();
 
 @override String get value => 'duplicate';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => 'duplicate'.hashCode;
 
- }
+}
 @immutable final class CreditNoteReason$fraudulent extends CreditNoteReason {const CreditNoteReason$fraudulent._();
 
 @override String get value => 'fraudulent';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => 'fraudulent'.hashCode;
 
- }
+}
 @immutable final class CreditNoteReason$orderChange extends CreditNoteReason {const CreditNoteReason$orderChange._();
 
 @override String get value => 'order_change';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => 'order_change'.hashCode;
 
- }
+}
 @immutable final class CreditNoteReason$productUnsatisfactory extends CreditNoteReason {const CreditNoteReason$productUnsatisfactory._();
 
 @override String get value => 'product_unsatisfactory';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => 'product_unsatisfactory'.hashCode;
 
- }
+}
 @immutable final class CreditNoteReason$Unknown extends CreditNoteReason {const CreditNoteReason$Unknown(this.value);
 
 @override final String value;
@@ -151,15 +151,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Status of this credit note, one of `issued` or `void`. Learn more about [voiding credit notes](https://docs.stripe.com/billing/invoices/credit-notes#voiding).
 sealed class CreditNoteStatus {const CreditNoteStatus();
 
-factory CreditNoteStatus.fromJson(String json) { return switch (json) {
+factory CreditNoteStatus.fromJson(String json) {return switch (json) {
   'issued' => issued,
   'void' => $void,
   _ => CreditNoteStatus$Unknown(json),
-}; }
+};}
 
 static const CreditNoteStatus issued = CreditNoteStatus$issued._();
 
@@ -168,30 +168,30 @@ static const CreditNoteStatus $void = CreditNoteStatus$$void._();
 static const List<CreditNoteStatus> values = [issued, $void];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issued' => 'issued',
   'void' => r'$void',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreditNoteStatus$Unknown; } 
+bool get isUnknown {return this is CreditNoteStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issued, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issued, required W Function() $void, required W Function(String value) $unknown, }) {return switch (this) {
       CreditNoteStatus$issued() => issued(),
       CreditNoteStatus$$void() => $void(),
       CreditNoteStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issued, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issued, W Function()? $void, W Function(String value)? $unknown, }) {return switch (this) {
       CreditNoteStatus$issued() => issued != null ? issued() : orElse(value),
       CreditNoteStatus$$void() => $void != null ? $void() : orElse(value),
       CreditNoteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreditNoteStatus($value)';
 
- }
+}
 @immutable final class CreditNoteStatus$issued extends CreditNoteStatus {const CreditNoteStatus$issued._();
 
 @override String get value => 'issued';
@@ -200,7 +200,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issued, 
 
 @override int get hashCode => 'issued'.hashCode;
 
- }
+}
 @immutable final class CreditNoteStatus$$void extends CreditNoteStatus {const CreditNoteStatus$$void._();
 
 @override String get value => 'void';
@@ -209,7 +209,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issued, 
 
 @override int get hashCode => 'void'.hashCode;
 
- }
+}
 @immutable final class CreditNoteStatus$Unknown extends CreditNoteStatus {const CreditNoteStatus$Unknown(this.value);
 
 @override final String value;
@@ -219,16 +219,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issued, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Type of this credit note, one of `pre_payment` or `post_payment`. A `pre_payment` credit note means it was issued when the invoice was open. A `post_payment` credit note means it was issued when the invoice was paid.
 sealed class CreditNoteType {const CreditNoteType();
 
-factory CreditNoteType.fromJson(String json) { return switch (json) {
+factory CreditNoteType.fromJson(String json) {return switch (json) {
   'mixed' => mixed,
   'post_payment' => postPayment,
   'pre_payment' => prePayment,
   _ => CreditNoteType$Unknown(json),
-}; }
+};}
 
 static const CreditNoteType mixed = CreditNoteType$mixed._();
 
@@ -239,33 +239,33 @@ static const CreditNoteType prePayment = CreditNoteType$prePayment._();
 static const List<CreditNoteType> values = [mixed, postPayment, prePayment];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mixed' => 'mixed',
   'post_payment' => 'postPayment',
   'pre_payment' => 'prePayment',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreditNoteType$Unknown; } 
+bool get isUnknown {return this is CreditNoteType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mixed, required W Function() postPayment, required W Function() prePayment, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mixed, required W Function() postPayment, required W Function() prePayment, required W Function(String value) $unknown, }) {return switch (this) {
       CreditNoteType$mixed() => mixed(),
       CreditNoteType$postPayment() => postPayment(),
       CreditNoteType$prePayment() => prePayment(),
       CreditNoteType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mixed, W Function()? postPayment, W Function()? prePayment, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mixed, W Function()? postPayment, W Function()? prePayment, W Function(String value)? $unknown, }) {return switch (this) {
       CreditNoteType$mixed() => mixed != null ? mixed() : orElse(value),
       CreditNoteType$postPayment() => postPayment != null ? postPayment() : orElse(value),
       CreditNoteType$prePayment() => prePayment != null ? prePayment() : orElse(value),
       CreditNoteType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreditNoteType($value)';
 
- }
+}
 @immutable final class CreditNoteType$mixed extends CreditNoteType {const CreditNoteType$mixed._();
 
 @override String get value => 'mixed';
@@ -274,7 +274,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mixed, W
 
 @override int get hashCode => 'mixed'.hashCode;
 
- }
+}
 @immutable final class CreditNoteType$postPayment extends CreditNoteType {const CreditNoteType$postPayment._();
 
 @override String get value => 'post_payment';
@@ -283,7 +283,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mixed, W
 
 @override int get hashCode => 'post_payment'.hashCode;
 
- }
+}
 @immutable final class CreditNoteType$prePayment extends CreditNoteType {const CreditNoteType$prePayment._();
 
 @override String get value => 'pre_payment';
@@ -292,7 +292,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mixed, W
 
 @override int get hashCode => 'pre_payment'.hashCode;
 
- }
+}
 @immutable final class CreditNoteType$Unknown extends CreditNoteType {const CreditNoteType$Unknown(this.value);
 
 @override final String value;
@@ -302,13 +302,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mixed, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Issue a credit note to adjust an invoice's amount after the invoice is finalized.
 /// 
 /// Related guide: [Credit notes](https://docs.stripe.com/billing/invoices/credit-notes)
 @immutable final class CreditNote {const CreditNote({required this.number, required this.amountShipping, required this.created, required this.currency, required this.customer, required this.invoice, required this.discountAmount, required this.discountAmounts, required this.id, required this.amount, required this.lines, required this.livemode, required this.prePaymentAmount, required this.object, required this.pdf, required this.postPaymentAmount, required this.type, required this.total, required this.refunds, required this.subtotal, required this.status, required this.pretaxCreditAmounts, this.voidedAt = const Omittable.absent(), this.reason = const Omittable.absent(), this.outOfBandAmount = const Omittable.absent(), this.shippingCost = const Omittable.absent(), this.metadata = const Omittable.absent(), this.memo = const Omittable.absent(), this.subtotalExcludingTax = const Omittable.absent(), this.effectiveAt = const Omittable.absent(), this.totalExcludingTax = const Omittable.absent(), this.totalTaxes = const Omittable.absent(), this.customerBalanceTransaction = const Omittable.absent(), this.customerAccount = const Omittable.absent(), });
 
-factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
+factory CreditNote.fromJson(Map<String, dynamic> json) {return CreditNote(
   amount: (json['amount'] as num).toInt(),
   amountShipping: (json['amount_shipping'] as num).toInt(),
   created: (json['created'] as num).toInt(),
@@ -343,7 +343,7 @@ factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   totalTaxes: json.containsKey('total_taxes') ? Omittable((json['total_taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   type: CreditNoteType.fromJson(json['type'] as String),
   voidedAt: json.containsKey('voided_at') ? Omittable(json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The integer amount in cents (or local equivalent) representing the total amount of the credit note, including tax.
 final int amount;
@@ -447,7 +447,7 @@ final CreditNoteType type;
 /// The time that the credit note was voided.
 final Omittable<int?> voidedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_shipping': amountShipping,
   'created': created,
@@ -482,8 +482,8 @@ Map<String, dynamic> toJson() { return {
   if (totalTaxes.isPresent) 'total_taxes': totalTaxes.value?.map((e) => e.toJson()).toList(),
   'type': type.toJson(),
   if (voidedAt.isPresent) 'voided_at': voidedAt.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_shipping') && json['amount_shipping'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -504,9 +504,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('subtotal') && json['subtotal'] is num &&
       json.containsKey('total') && json['total'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
@@ -518,8 +518,8 @@ if (memo$ != null) {
 }
 if (number.runes.length > 5000) { errors.add('number: length must be <= 5000'); }
 if (pdf.runes.length > 5000) { errors.add('pdf: length must be <= 5000'); }
-return errors; } 
-CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, BankAccountCustomer? customer, Omittable<String?>? customerAccount, Omittable<CreditNoteCustomerBalanceTransaction?>? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, Omittable<int?>? effectiveAt, String? id, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? invoice, CreditNoteLines? lines, bool? livemode, Omittable<String?>? memo, Omittable<Map<String,String>?>? metadata, String? number, CreditNoteObject? object, Omittable<int?>? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, Omittable<CreditNoteReason?>? reason, List<CreditNoteRefund>? refunds, Omittable<InvoicesResourceShippingCost?>? shippingCost, CreditNoteStatus? status, int? subtotal, Omittable<int?>? subtotalExcludingTax, int? total, Omittable<int?>? totalExcludingTax, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, CreditNoteType? type, Omittable<int?>? voidedAt, }) { return CreditNote(
+return errors;}
+CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, BankAccountCustomer? customer, Omittable<String?>? customerAccount, Omittable<CreditNoteCustomerBalanceTransaction?>? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, Omittable<int?>? effectiveAt, String? id, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? invoice, CreditNoteLines? lines, bool? livemode, Omittable<String?>? memo, Omittable<Map<String,String>?>? metadata, String? number, CreditNoteObject? object, Omittable<int?>? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, Omittable<CreditNoteReason?>? reason, List<CreditNoteRefund>? refunds, Omittable<InvoicesResourceShippingCost?>? shippingCost, CreditNoteStatus? status, int? subtotal, Omittable<int?>? subtotalExcludingTax, int? total, Omittable<int?>? totalExcludingTax, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, CreditNoteType? type, Omittable<int?>? voidedAt, }) {return CreditNote(
   amount: amount ?? this.amount,
   amountShipping: amountShipping ?? this.amountShipping,
   created: created ?? this.created,
@@ -554,7 +554,7 @@ CreditNote copyWith({int? amount, int? amountShipping, int? created, String? cur
   totalTaxes: totalTaxes ?? this.totalTaxes,
   type: type ?? this.type,
   voidedAt: voidedAt ?? this.voidedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreditNote &&
           amount == other.amount &&
@@ -597,4 +597,4 @@ CreditNote copyWith({int? amount, int? amountShipping, int? created, String? cur
 
 @override String toString() => 'CreditNote(\n  amount: $amount,\n  amountShipping: $amountShipping,\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  customerBalanceTransaction: $customerBalanceTransaction,\n  discountAmount: $discountAmount,\n  discountAmounts: $discountAmounts,\n  effectiveAt: $effectiveAt,\n  id: $id,\n  invoice: $invoice,\n  lines: $lines,\n  livemode: $livemode,\n  memo: $memo,\n  metadata: $metadata,\n  number: $number,\n  object: $object,\n  outOfBandAmount: $outOfBandAmount,\n  pdf: $pdf,\n  postPaymentAmount: $postPaymentAmount,\n  prePaymentAmount: $prePaymentAmount,\n  pretaxCreditAmounts: $pretaxCreditAmounts,\n  reason: $reason,\n  refunds: $refunds,\n  shippingCost: $shippingCost,\n  status: $status,\n  subtotal: $subtotal,\n  subtotalExcludingTax: $subtotalExcludingTax,\n  total: $total,\n  totalExcludingTax: $totalExcludingTax,\n  totalTaxes: $totalTaxes,\n  type: $type,\n  voidedAt: $voidedAt,\n)';
 
- }
+}

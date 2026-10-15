@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OldPermission {const OldPermission({required this.from});
 
-factory OldPermission.fromJson(Map<String, dynamic> json) { return OldPermission(
+factory OldPermission.fromJson(Map<String, dynamic> json) {return OldPermission(
   from: json['from'] as String,
-); }
+);}
 
 /// The previous permissions of the collaborator if the action was edited.
 final String from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
-OldPermission copyWith({String? from}) { return OldPermission(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && json['from'] is String;}
+OldPermission copyWith({String? from}) {return OldPermission(
   from: from ?? this.from,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OldPermission &&
           from == other.from;
@@ -25,4 +25,4 @@ OldPermission copyWith({String? from}) { return OldPermission(
 
 @override String toString() => 'OldPermission(from: $from)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether or not Early Hints is enabled.
 sealed class EarlyHints {const EarlyHints();
 
-factory EarlyHints.fromJson(String json) { return switch (json) {
+factory EarlyHints.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => EarlyHints$Unknown(json),
-}; }
+};}
 
 static const EarlyHints $on = EarlyHints$$on._();
 
@@ -17,30 +17,30 @@ static const EarlyHints off = EarlyHints$off._();
 static const List<EarlyHints> values = [$on, off];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'on' => r'$on',
   'off' => 'off',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EarlyHints$Unknown; } 
+bool get isUnknown {return this is EarlyHints$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) {return switch (this) {
       EarlyHints$$on() => $on(),
       EarlyHints$off() => off(),
       EarlyHints$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) {return switch (this) {
       EarlyHints$$on() => $on != null ? $on() : orElse(value),
       EarlyHints$off() => off != null ? off() : orElse(value),
       EarlyHints$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EarlyHints($value)';
 
- }
+}
 @immutable final class EarlyHints$$on extends EarlyHints {const EarlyHints$$on._();
 
 @override String get value => 'on';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class EarlyHints$off extends EarlyHints {const EarlyHints$off._();
 
 @override String get value => 'off';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class EarlyHints$Unknown extends EarlyHints {const EarlyHints$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Whether or not HTTP2 is enabled.
 sealed class Http2 {const Http2();
 
-factory Http2.fromJson(String json) { return switch (json) {
+factory Http2.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => Http2$Unknown(json),
-}; }
+};}
 
 static const Http2 $on = Http2$$on._();
 
@@ -85,30 +85,30 @@ static const Http2 off = Http2$off._();
 static const List<Http2> values = [$on, off];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'on' => r'$on',
   'off' => 'off',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Http2$Unknown; } 
+bool get isUnknown {return this is Http2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) {return switch (this) {
       Http2$$on() => $on(),
       Http2$off() => off(),
       Http2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) {return switch (this) {
       Http2$$on() => $on != null ? $on() : orElse(value),
       Http2$off() => off != null ? off() : orElse(value),
       Http2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Http2($value)';
 
- }
+}
 @immutable final class Http2$$on extends Http2 {const Http2$$on._();
 
 @override String get value => 'on';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class Http2$off extends Http2 {const Http2$off._();
 
 @override String get value => 'off';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class Http2$Unknown extends Http2 {const Http2$Unknown(this.value);
 
 @override final String value;
@@ -136,17 +136,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The minimum TLS version supported.
 sealed class MinTlsVersion {const MinTlsVersion();
 
-factory MinTlsVersion.fromJson(String json) { return switch (json) {
+factory MinTlsVersion.fromJson(String json) {return switch (json) {
   '1.0' => $10,
   '1.1' => $11,
   '1.2' => $12,
   '1.3' => $13,
   _ => MinTlsVersion$Unknown(json),
-}; }
+};}
 
 static const MinTlsVersion $10 = MinTlsVersion$$10._();
 
@@ -159,36 +159,36 @@ static const MinTlsVersion $13 = MinTlsVersion$$13._();
 static const List<MinTlsVersion> values = [$10, $11, $12, $13];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '1.0' => r'$10',
   '1.1' => r'$11',
   '1.2' => r'$12',
   '1.3' => r'$13',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MinTlsVersion$Unknown; } 
+bool get isUnknown {return this is MinTlsVersion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $10, required W Function() $11, required W Function() $12, required W Function() $13, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $10, required W Function() $11, required W Function() $12, required W Function() $13, required W Function(String value) $unknown, }) {return switch (this) {
       MinTlsVersion$$10() => $10(),
       MinTlsVersion$$11() => $11(),
       MinTlsVersion$$12() => $12(),
       MinTlsVersion$$13() => $13(),
       MinTlsVersion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W Function()? $11, W Function()? $12, W Function()? $13, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W Function()? $11, W Function()? $12, W Function()? $13, W Function(String value)? $unknown, }) {return switch (this) {
       MinTlsVersion$$10() => $10 != null ? $10() : orElse(value),
       MinTlsVersion$$11() => $11 != null ? $11() : orElse(value),
       MinTlsVersion$$12() => $12 != null ? $12() : orElse(value),
       MinTlsVersion$$13() => $13 != null ? $13() : orElse(value),
       MinTlsVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MinTlsVersion($value)';
 
- }
+}
 @immutable final class MinTlsVersion$$10 extends MinTlsVersion {const MinTlsVersion$$10._();
 
 @override String get value => '1.0';
@@ -197,7 +197,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W F
 
 @override int get hashCode => '1.0'.hashCode;
 
- }
+}
 @immutable final class MinTlsVersion$$11 extends MinTlsVersion {const MinTlsVersion$$11._();
 
 @override String get value => '1.1';
@@ -206,7 +206,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W F
 
 @override int get hashCode => '1.1'.hashCode;
 
- }
+}
 @immutable final class MinTlsVersion$$12 extends MinTlsVersion {const MinTlsVersion$$12._();
 
 @override String get value => '1.2';
@@ -215,7 +215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W F
 
 @override int get hashCode => '1.2'.hashCode;
 
- }
+}
 @immutable final class MinTlsVersion$$13 extends MinTlsVersion {const MinTlsVersion$$13._();
 
 @override String get value => '1.3';
@@ -224,7 +224,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W F
 
 @override int get hashCode => '1.3'.hashCode;
 
- }
+}
 @immutable final class MinTlsVersion$Unknown extends MinTlsVersion {const MinTlsVersion$Unknown(this.value);
 
 @override final String value;
@@ -234,15 +234,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Whether or not TLS 1.3 is enabled.
 sealed class Tls13 {const Tls13();
 
-factory Tls13.fromJson(String json) { return switch (json) {
+factory Tls13.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => Tls13$Unknown(json),
-}; }
+};}
 
 static const Tls13 $on = Tls13$$on._();
 
@@ -251,30 +251,30 @@ static const Tls13 off = Tls13$off._();
 static const List<Tls13> values = [$on, off];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'on' => r'$on',
   'off' => 'off',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Tls13$Unknown; } 
+bool get isUnknown {return this is Tls13$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) {return switch (this) {
       Tls13$$on() => $on(),
       Tls13$off() => off(),
       Tls13$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) {return switch (this) {
       Tls13$$on() => $on != null ? $on() : orElse(value),
       Tls13$off() => off != null ? off() : orElse(value),
       Tls13$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Tls13($value)';
 
- }
+}
 @immutable final class Tls13$$on extends Tls13 {const Tls13$$on._();
 
 @override String get value => 'on';
@@ -283,7 +283,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class Tls13$off extends Tls13 {const Tls13$off._();
 
 @override String get value => 'off';
@@ -292,7 +292,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class Tls13$Unknown extends Tls13 {const Tls13$Unknown(this.value);
 
 @override final String value;
@@ -302,17 +302,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// SSL specific settings.
 @immutable final class TlsCertificatesAndHostnamesSslsettings {const TlsCertificatesAndHostnamesSslsettings({this.ciphers, this.earlyHints, this.http2, this.minTlsVersion, this.tls13, });
 
-factory TlsCertificatesAndHostnamesSslsettings.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslsettings(
+factory TlsCertificatesAndHostnamesSslsettings.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesSslsettings(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   earlyHints: json['early_hints'] != null ? EarlyHints.fromJson(json['early_hints'] as String) : null,
   http2: json['http2'] != null ? Http2.fromJson(json['http2'] as String) : null,
   minTlsVersion: json['min_tls_version'] != null ? MinTlsVersion.fromJson(json['min_tls_version'] as String) : null,
   tls13: json['tls_1_3'] != null ? Tls13.fromJson(json['tls_1_3'] as String) : null,
-); }
+);}
 
 /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 /// 
@@ -339,28 +339,28 @@ final MinTlsVersion? minTlsVersion;
 /// Example: `'on'`
 final Tls13? tls13;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ciphers': ?ciphers,
   if (earlyHints != null) 'early_hints': earlyHints?.toJson(),
   if (http2 != null) 'http2': http2?.toJson(),
   if (minTlsVersion != null) 'min_tls_version': minTlsVersion?.toJson(),
   if (tls13 != null) 'tls_1_3': tls13?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ciphers', 'early_hints', 'http2', 'min_tls_version', 'tls_1_3'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ciphers', 'early_hints', 'http2', 'min_tls_version', 'tls_1_3'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final ciphers$ = ciphers;
 if (ciphers$ != null) {
   if (ciphers$.toSet().length != ciphers$.length) { errors.add('ciphers: items must be unique'); }
 }
-return errors; } 
-TlsCertificatesAndHostnamesSslsettings copyWith({List<String>? Function()? ciphers, EarlyHints? Function()? earlyHints, Http2? Function()? http2, MinTlsVersion? Function()? minTlsVersion, Tls13? Function()? tls13, }) { return TlsCertificatesAndHostnamesSslsettings(
+return errors;}
+TlsCertificatesAndHostnamesSslsettings copyWith({List<String>? Function()? ciphers, EarlyHints? Function()? earlyHints, Http2? Function()? http2, MinTlsVersion? Function()? minTlsVersion, Tls13? Function()? tls13, }) {return TlsCertificatesAndHostnamesSslsettings(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   earlyHints: earlyHints != null ? earlyHints() : this.earlyHints,
   http2: http2 != null ? http2() : this.http2,
   minTlsVersion: minTlsVersion != null ? minTlsVersion() : this.minTlsVersion,
   tls13: tls13 != null ? tls13() : this.tls13,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslsettings &&
           listEquals(ciphers, other.ciphers) &&
@@ -373,4 +373,4 @@ TlsCertificatesAndHostnamesSslsettings copyWith({List<String>? Function()? ciphe
 
 @override String toString() => 'TlsCertificatesAndHostnamesSslsettings(ciphers: $ciphers, earlyHints: $earlyHints, http2: $http2, minTlsVersion: $minTlsVersion, tls13: $tls13)';
 
- }
+}

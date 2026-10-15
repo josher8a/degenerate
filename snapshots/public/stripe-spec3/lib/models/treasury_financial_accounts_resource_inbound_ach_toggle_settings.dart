@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_toggle_settings/treasury_financial_accounts_resource_aba_toggle_settings_status.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Toggle settings for enabling/disabling an inbound ACH specific feature
 @immutable final class TreasuryFinancialAccountsResourceInboundAchToggleSettings {const TreasuryFinancialAccountsResourceInboundAchToggleSettings({required this.requested, required this.status, required this.statusDetails, });
 
-factory TreasuryFinancialAccountsResourceInboundAchToggleSettings.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceInboundAchToggleSettings(
+factory TreasuryFinancialAccountsResourceInboundAchToggleSettings.fromJson(Map<String, dynamic> json) {return TreasuryFinancialAccountsResourceInboundAchToggleSettings(
   requested: json['requested'] as bool,
   status: TreasuryFinancialAccountsResourceAbaToggleSettingsStatus.fromJson(json['status'] as String),
   statusDetails: (json['status_details'] as List<dynamic>).map((e) => TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Whether the FinancialAccount should have the Feature.
 final bool requested;
@@ -19,19 +19,19 @@ final TreasuryFinancialAccountsResourceAbaToggleSettingsStatus status;
 /// Additional details; includes at least one entry when the status is not `active`.
 final List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails> statusDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': requested,
   'status': status.toJson(),
   'status_details': statusDetails.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested') && json['requested'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requested') && json['requested'] is bool &&
       json.containsKey('status') &&
-      json.containsKey('status_details'); } 
-TreasuryFinancialAccountsResourceInboundAchToggleSettings copyWith({bool? requested, TreasuryFinancialAccountsResourceAbaToggleSettingsStatus? status, List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>? statusDetails, }) { return TreasuryFinancialAccountsResourceInboundAchToggleSettings(
+      json.containsKey('status_details');}
+TreasuryFinancialAccountsResourceInboundAchToggleSettings copyWith({bool? requested, TreasuryFinancialAccountsResourceAbaToggleSettingsStatus? status, List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>? statusDetails, }) {return TreasuryFinancialAccountsResourceInboundAchToggleSettings(
   requested: requested ?? this.requested,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceInboundAchToggleSettings &&
           requested == other.requested &&
@@ -42,4 +42,4 @@ TreasuryFinancialAccountsResourceInboundAchToggleSettings copyWith({bool? reques
 
 @override String toString() => 'TreasuryFinancialAccountsResourceInboundAchToggleSettings(requested: $requested, status: $status, statusDetails: $statusDetails)';
 
- }
+}

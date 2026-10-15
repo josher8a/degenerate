@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingGetBudgetOrgResponse503 {const BillingGetBudgetOrgResponse503({this.code, this.message, this.documentationUrl, });
 
-factory BillingGetBudgetOrgResponse503.fromJson(Map<String, dynamic> json) { return BillingGetBudgetOrgResponse503(
+factory BillingGetBudgetOrgResponse503.fromJson(Map<String, dynamic> json) {return BillingGetBudgetOrgResponse503(
   code: json['code'] as String?,
   message: json['message'] as String?,
   documentationUrl: json['documentation_url'] as String?,
-); }
+);}
 
 final String? code;
 
@@ -15,17 +15,17 @@ final String? message;
 
 final String? documentationUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': ?message,
   'documentation_url': ?documentationUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key)); } 
-BillingGetBudgetOrgResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) { return BillingGetBudgetOrgResponse503(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key));}
+BillingGetBudgetOrgResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) {return BillingGetBudgetOrgResponse503(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingGetBudgetOrgResponse503 &&
           code == other.code &&
@@ -36,4 +36,4 @@ BillingGetBudgetOrgResponse503 copyWith({String? Function()? code, String? Funct
 
 @override String toString() => 'BillingGetBudgetOrgResponse503(code: $code, message: $message, documentationUrl: $documentationUrl)';
 
- }
+}

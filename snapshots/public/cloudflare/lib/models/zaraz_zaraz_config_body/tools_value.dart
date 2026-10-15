@@ -7,11 +7,11 @@ const ToolsValue({this.zarazManagedComponent = const Omittable.absent(), this.za
 const ToolsValue._({required this.rawValue, required this.zarazManagedComponent, required this.zarazCustomManagedComponent, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ToolsValue.fromJson(Object? json) { return ToolsValue._(
+factory ToolsValue.fromJson(Object? json) {return ToolsValue._(
   rawValue: Omittable(json),
   zarazManagedComponent: json is Map<String, dynamic> && ZarazManagedComponent.canParse(json) ? parseAnyOfVariant<ZarazManagedComponent>(json, (value) => ZarazManagedComponent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zarazCustomManagedComponent: json is Map<String, dynamic> && ZarazCustomManagedComponent.canParse(json) ? parseAnyOfVariant<ZarazCustomManagedComponent>(json, (value) => ZarazCustomManagedComponent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ToolsValue(${toJson()})';
 
- }
+}

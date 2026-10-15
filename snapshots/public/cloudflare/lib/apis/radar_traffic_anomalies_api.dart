@@ -14,7 +14,7 @@ final class RadarTrafficAnomaliesApi with ApiExecutor {const RadarTrafficAnomali
 /// Retrieves the latest Internet traffic anomalies, which are signals that might indicate an outage. These alerts are automatically detected by Radar and manually verified by our team.
 ///
 /// `GET /radar/traffic_anomalies`
-Future<ApiResult<RadarGetTrafficAnomaliesResponseResult, RadarGetTrafficAnomaliesError>> radarGetTrafficAnomalies({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesStatus? status, List<RadarGetTrafficAnomaliesType>? type, int? asn, String? location, String? origin, RadarGetTrafficAnomaliesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTrafficAnomaliesResponseResult, RadarGetTrafficAnomaliesError>> radarGetTrafficAnomalies({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesStatus? status, List<RadarGetTrafficAnomaliesType>? type, int? asn, String? location, String? origin, RadarGetTrafficAnomaliesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -71,13 +71,13 @@ return await execute(
   },
   onError: RadarGetTrafficAnomaliesError.fromResponse,
 );
- } 
+}
 /// Get top locations by total traffic anomalies
 ///
 /// Retrieves the sum of Internet traffic anomalies, grouped by location. These anomalies are signals that might indicate an outage, automatically detected by Radar and manually verified by our team.
 ///
 /// `GET /radar/traffic_anomalies/locations`
-Future<ApiResult<RadarGetTrafficAnomaliesTopResponseResult, RadarGetTrafficAnomaliesTopError>> radarGetTrafficAnomaliesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesTopStatus? status, RadarGetTrafficAnomaliesTopFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTrafficAnomaliesTopResponseResult, RadarGetTrafficAnomaliesTopError>> radarGetTrafficAnomaliesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesTopStatus? status, RadarGetTrafficAnomaliesTopFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -117,5 +117,5 @@ return await execute(
   },
   onError: RadarGetTrafficAnomaliesTopError.fromResponse,
 );
- } 
- }
+}
+}

@@ -8,10 +8,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor, this.seconds, });
 
-factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequestExpiresAfter(
+factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) {return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: json['anchor'] != null ? ExpiresAfterParamAnchor.fromJson(json['anchor'] as String) : null,
   seconds: json['seconds'] != null ? (json['seconds'] as num).toInt() : null,
-); }
+);}
 
 /// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
 /// 
@@ -27,23 +27,23 @@ ExpiresAfterParamAnchor get anchorOrDefault => anchor ?? ExpiresAfterParamAnchor
 /// The value of `seconds`, or its schema default when absent.
 int get secondsOrDefault => seconds ?? 600;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (anchor != null) 'anchor': anchor?.toJson(),
   'seconds': ?seconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anchor', 'seconds'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'anchor', 'seconds'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final seconds$ = seconds;
 if (seconds$ != null) {
   if (seconds$ < 10) { errors.add('seconds: must be >= 10'); }
   if (seconds$ > 7200) { errors.add('seconds: must be <= 7200'); }
 }
-return errors; } 
-RealtimeCreateClientSecretRequestExpiresAfter copyWith({ExpiresAfterParamAnchor? Function()? anchor, int? Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
+return errors;}
+RealtimeCreateClientSecretRequestExpiresAfter copyWith({ExpiresAfterParamAnchor? Function()? anchor, int? Function()? seconds, }) {return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,
   seconds: seconds != null ? seconds() : this.seconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCreateClientSecretRequestExpiresAfter &&
           anchor == other.anchor &&
@@ -53,4 +53,4 @@ RealtimeCreateClientSecretRequestExpiresAfter copyWith({ExpiresAfterParamAnchor?
 
 @override String toString() => 'RealtimeCreateClientSecretRequestExpiresAfter(anchor: $anchor, seconds: $seconds)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_authenticated_user_request/migrations_start_for_authenticated_user_request_exclude.dart';@immutable final class MigrationsStartForOrgRequest {const MigrationsStartForOrgRequest({required this.repositories, this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly, this.exclude, });
 
-factory MigrationsStartForOrgRequest.fromJson(Map<String, dynamic> json) { return MigrationsStartForOrgRequest(
+factory MigrationsStartForOrgRequest.fromJson(Map<String, dynamic> json) {return MigrationsStartForOrgRequest(
   repositories: (json['repositories'] as List<dynamic>).map((e) => e as String).toList(),
   lockRepositories: json['lock_repositories'] as bool?,
   excludeMetadata: json['exclude_metadata'] as bool?,
@@ -13,7 +13,7 @@ factory MigrationsStartForOrgRequest.fromJson(Map<String, dynamic> json) { retur
   excludeOwnerProjects: json['exclude_owner_projects'] as bool?,
   orgMetadataOnly: json['org_metadata_only'] as bool?,
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => MigrationsStartForAuthenticatedUserRequestExclude.fromJson(e as String)).toList(),
-); }
+);}
 
 /// A list of arrays indicating which repositories should be migrated.
 final List<String> repositories;
@@ -63,7 +63,7 @@ bool get excludeOwnerProjectsOrDefault => excludeOwnerProjects ?? false;
 /// The value of `orgMetadataOnly`, or its schema default when absent.
 bool get orgMetadataOnlyOrDefault => orgMetadataOnly ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'repositories': repositories,
   'lock_repositories': ?lockRepositories,
   'exclude_metadata': ?excludeMetadata,
@@ -73,9 +73,9 @@ Map<String, dynamic> toJson() { return {
   'exclude_owner_projects': ?excludeOwnerProjects,
   'org_metadata_only': ?orgMetadataOnly,
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repositories'); } 
-MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool? Function()? lockRepositories, bool? Function()? excludeMetadata, bool? Function()? excludeGitData, bool? Function()? excludeAttachments, bool? Function()? excludeReleases, bool? Function()? excludeOwnerProjects, bool? Function()? orgMetadataOnly, List<MigrationsStartForAuthenticatedUserRequestExclude>? Function()? exclude, }) { return MigrationsStartForOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repositories');}
+MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool? Function()? lockRepositories, bool? Function()? excludeMetadata, bool? Function()? excludeGitData, bool? Function()? excludeAttachments, bool? Function()? excludeReleases, bool? Function()? excludeOwnerProjects, bool? Function()? orgMetadataOnly, List<MigrationsStartForAuthenticatedUserRequestExclude>? Function()? exclude, }) {return MigrationsStartForOrgRequest(
   repositories: repositories ?? this.repositories,
   lockRepositories: lockRepositories != null ? lockRepositories() : this.lockRepositories,
   excludeMetadata: excludeMetadata != null ? excludeMetadata() : this.excludeMetadata,
@@ -85,7 +85,7 @@ MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool? Functio
   excludeOwnerProjects: excludeOwnerProjects != null ? excludeOwnerProjects() : this.excludeOwnerProjects,
   orgMetadataOnly: orgMetadataOnly != null ? orgMetadataOnly() : this.orgMetadataOnly,
   exclude: exclude != null ? exclude() : this.exclude,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MigrationsStartForOrgRequest &&
           listEquals(repositories, other.repositories) &&
@@ -102,4 +102,4 @@ MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool? Functio
 
 @override String toString() => 'MigrationsStartForOrgRequest(\n  repositories: $repositories,\n  lockRepositories: $lockRepositories,\n  excludeMetadata: $excludeMetadata,\n  excludeGitData: $excludeGitData,\n  excludeAttachments: $excludeAttachments,\n  excludeReleases: $excludeReleases,\n  excludeOwnerProjects: $excludeOwnerProjects,\n  orgMetadataOnly: $orgMetadataOnly,\n  exclude: $exclude,\n)';
 
- }
+}

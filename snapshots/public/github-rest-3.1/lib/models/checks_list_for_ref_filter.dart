@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ChecksListForRefFilter {const ChecksListForRefFilter();
 
-factory ChecksListForRefFilter.fromJson(String json) { return switch (json) {
+factory ChecksListForRefFilter.fromJson(String json) {return switch (json) {
   'latest' => latest,
   'all' => all,
   _ => ChecksListForRefFilter$Unknown(json),
-}; }
+};}
 
 static const ChecksListForRefFilter latest = ChecksListForRefFilter$latest._();
 
@@ -16,30 +16,30 @@ static const ChecksListForRefFilter all = ChecksListForRefFilter$all._();
 static const List<ChecksListForRefFilter> values = [latest, all];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'latest' => 'latest',
   'all' => 'all',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ChecksListForRefFilter$Unknown; } 
+bool get isUnknown {return this is ChecksListForRefFilter$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() latest, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() latest, required W Function() all, required W Function(String value) $unknown, }) {return switch (this) {
       ChecksListForRefFilter$latest() => latest(),
       ChecksListForRefFilter$all() => all(),
       ChecksListForRefFilter$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? latest, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? latest, W Function()? all, W Function(String value)? $unknown, }) {return switch (this) {
       ChecksListForRefFilter$latest() => latest != null ? latest() : orElse(value),
       ChecksListForRefFilter$all() => all != null ? all() : orElse(value),
       ChecksListForRefFilter$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ChecksListForRefFilter($value)';
 
- }
+}
 @immutable final class ChecksListForRefFilter$latest extends ChecksListForRefFilter {const ChecksListForRefFilter$latest._();
 
 @override String get value => 'latest';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? latest, 
 
 @override int get hashCode => 'latest'.hashCode;
 
- }
+}
 @immutable final class ChecksListForRefFilter$all extends ChecksListForRefFilter {const ChecksListForRefFilter$all._();
 
 @override String get value => 'all';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? latest, 
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class ChecksListForRefFilter$Unknown extends ChecksListForRefFilter {const ChecksListForRefFilter$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? latest, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

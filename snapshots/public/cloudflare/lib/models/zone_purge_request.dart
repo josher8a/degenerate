@@ -7,7 +7,7 @@ const ZonePurgeRequest({this.cachePurgeFlexPurgeByTags = const Omittable.absent(
 const ZonePurgeRequest._({required this.rawValue, required this.cachePurgeFlexPurgeByTags, required this.cachePurgeFlexPurgeByHostnames, required this.cachePurgeFlexPurgeByPrefixes, required this.cachePurgeEverything, required this.cachePurgeSingleFile, required this.cachePurgeSingleFileWithUrlAndHeaders, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ZonePurgeRequest.fromJson(Object? json) { return ZonePurgeRequest._(
+factory ZonePurgeRequest.fromJson(Object? json) {return ZonePurgeRequest._(
   rawValue: Omittable(json),
   cachePurgeFlexPurgeByTags: json is Map<String, dynamic> && CachePurgeFlexPurgeByTags.canParse(json) ? parseAnyOfVariant<CachePurgeFlexPurgeByTags>(json, (value) => CachePurgeFlexPurgeByTags.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   cachePurgeFlexPurgeByHostnames: json is Map<String, dynamic> && CachePurgeFlexPurgeByHostnames.canParse(json) ? parseAnyOfVariant<CachePurgeFlexPurgeByHostnames>(json, (value) => CachePurgeFlexPurgeByHostnames.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -15,7 +15,7 @@ factory ZonePurgeRequest.fromJson(Object? json) { return ZonePurgeRequest._(
   cachePurgeEverything: json is Map<String, dynamic> && CachePurgeEverything.canParse(json) ? parseAnyOfVariant<CachePurgeEverything>(json, (value) => CachePurgeEverything.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   cachePurgeSingleFile: json is Map<String, dynamic> && CachePurgeSingleFile.canParse(json) ? parseAnyOfVariant<CachePurgeSingleFile>(json, (value) => CachePurgeSingleFile.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   cachePurgeSingleFileWithUrlAndHeaders: json is Map<String, dynamic> && CachePurgeSingleFileWithUrlAndHeaders.canParse(json) ? parseAnyOfVariant<CachePurgeSingleFileWithUrlAndHeaders>(json, (value) => CachePurgeSingleFileWithUrlAndHeaders.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -61,4 +61,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ZonePurgeRequest(${toJson()})';
 
- }
+}

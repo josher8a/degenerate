@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/package/package_visibility.dart';@immutable final class ReposCreateInOrgRequest {const ReposCreateInOrgRequest({required this.name, this.description, this.homepage, this.private, this.visibility, this.hasIssues, this.hasProjects, this.hasWiki, this.hasDownloads, this.isTemplate, this.teamId, this.autoInit, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge, this.allowMergeCommit, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.customProperties, });
 
-factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) { return ReposCreateInOrgRequest(
+factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) {return ReposCreateInOrgRequest(
   name: json['name'] as String,
   description: json['description'] as String?,
   homepage: json['homepage'] as String?,
@@ -29,7 +29,7 @@ factory ReposCreateInOrgRequest.fromJson(Map<String, dynamic> json) { return Rep
   mergeCommitTitle: json['merge_commit_title'] != null ? MergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
   mergeCommitMessage: json['merge_commit_message'] != null ? MergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
   customProperties: json['custom_properties'] as Map<String, dynamic>?,
-); }
+);}
 
 /// The name of the repository.
 final String name;
@@ -163,7 +163,7 @@ bool get deleteBranchOnMergeOrDefault => deleteBranchOnMerge ?? false;
 /// The value of `useSquashPrTitleAsDefault`, or its schema default when absent.
 bool get useSquashPrTitleAsDefaultOrDefault => useSquashPrTitleAsDefault ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': ?description,
   'homepage': ?homepage,
@@ -189,9 +189,9 @@ Map<String, dynamic> toJson() { return {
   if (mergeCommitTitle != null) 'merge_commit_title': mergeCommitTitle?.toJson(),
   if (mergeCommitMessage != null) 'merge_commit_message': mergeCommitMessage?.toJson(),
   'custom_properties': ?customProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ReposCreateInOrgRequest copyWith({String? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, PackageVisibility? Function()? visibility, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasDownloads, bool? Function()? isTemplate, int? Function()? teamId, bool? Function()? autoInit, String? Function()? gitignoreTemplate, String? Function()? licenseTemplate, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, Map<String, dynamic>? Function()? customProperties, }) { return ReposCreateInOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ReposCreateInOrgRequest copyWith({String? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, PackageVisibility? Function()? visibility, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasDownloads, bool? Function()? isTemplate, int? Function()? teamId, bool? Function()? autoInit, String? Function()? gitignoreTemplate, String? Function()? licenseTemplate, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, Map<String, dynamic>? Function()? customProperties, }) {return ReposCreateInOrgRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,
@@ -217,7 +217,7 @@ ReposCreateInOrgRequest copyWith({String? name, String? Function()? description,
   mergeCommitTitle: mergeCommitTitle != null ? mergeCommitTitle() : this.mergeCommitTitle,
   mergeCommitMessage: mergeCommitMessage != null ? mergeCommitMessage() : this.mergeCommitMessage,
   customProperties: customProperties != null ? customProperties() : this.customProperties,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateInOrgRequest &&
           name == other.name &&
@@ -250,4 +250,4 @@ ReposCreateInOrgRequest copyWith({String? name, String? Function()? description,
 
 @override String toString() => 'ReposCreateInOrgRequest(\n  name: $name,\n  description: $description,\n  homepage: $homepage,\n  private: $private,\n  visibility: $visibility,\n  hasIssues: $hasIssues,\n  hasProjects: $hasProjects,\n  hasWiki: $hasWiki,\n  hasDownloads: $hasDownloads,\n  isTemplate: $isTemplate,\n  teamId: $teamId,\n  autoInit: $autoInit,\n  gitignoreTemplate: $gitignoreTemplate,\n  licenseTemplate: $licenseTemplate,\n  allowSquashMerge: $allowSquashMerge,\n  allowMergeCommit: $allowMergeCommit,\n  allowRebaseMerge: $allowRebaseMerge,\n  allowAutoMerge: $allowAutoMerge,\n  deleteBranchOnMerge: $deleteBranchOnMerge,\n  useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault,\n  squashMergeCommitTitle: $squashMergeCommitTitle,\n  squashMergeCommitMessage: $squashMergeCommitMessage,\n  mergeCommitTitle: $mergeCommitTitle,\n  mergeCommitMessage: $mergeCommitMessage,\n  customProperties: $customProperties,\n)';
 
- }
+}

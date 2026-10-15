@@ -9,12 +9,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class EasyInputMessage {const EasyInputMessage({required this.role, required this.content, this.phase = const Omittable.absent(), this.type, });
 
-factory EasyInputMessage.fromJson(Map<String, dynamic> json) { return EasyInputMessage(
+factory EasyInputMessage.fromJson(Map<String, dynamic> json) {return EasyInputMessage(
   role: EasyInputMessageRole.fromJson(json['role'] as String),
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputContent.fromJson(e as Map<String, dynamic>)).toList(),),
   phase: json.containsKey('phase') ? Omittable(json['phase'] != null ? MessagePhase.fromJson(json['phase'] as String) : null) : const Omittable.absent(),
   type: json['type'] as String?,
-); }
+);}
 
 /// The role of the message input. One of `user`, `assistant`, `system`, or
 /// `developer`.
@@ -32,20 +32,20 @@ final Omittable<MessagePhase?> phase;
 /// 
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'role': role.toJson(),
   'content': content.toJson(),
   if (phase.isPresent) 'phase': phase.value?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
-      json.containsKey('content'); } 
-EasyInputMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, Omittable<MessagePhase?>? phase, String? Function()? type, }) { return EasyInputMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role') &&
+      json.containsKey('content');}
+EasyInputMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, Omittable<MessagePhase?>? phase, String? Function()? type, }) {return EasyInputMessage(
   role: role ?? this.role,
   content: content ?? this.content,
   phase: phase ?? this.phase,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EasyInputMessage &&
           role == other.role &&
@@ -57,4 +57,4 @@ EasyInputMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? 
 
 @override String toString() => 'EasyInputMessage(role: $role, content: $content, phase: $phase, type: $type)';
 
- }
+}

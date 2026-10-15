@@ -7,11 +7,11 @@ const PostTerminalLocationsLocationResponse({this.terminalLocation = const Omitt
 const PostTerminalLocationsLocationResponse._({required this.rawValue, required this.terminalLocation, required this.deletedTerminalLocation, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTerminalLocationsLocationResponse.fromJson(Object? json) { return PostTerminalLocationsLocationResponse._(
+factory PostTerminalLocationsLocationResponse.fromJson(Object? json) {return PostTerminalLocationsLocationResponse._(
   rawValue: Omittable(json),
   terminalLocation: json is Map<String, dynamic> && TerminalLocation.canParse(json) ? parseAnyOfVariant<TerminalLocation>(json, (value) => TerminalLocation.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   deletedTerminalLocation: json is Map<String, dynamic> && DeletedTerminalLocation.canParse(json) ? parseAnyOfVariant<DeletedTerminalLocation>(json, (value) => DeletedTerminalLocation.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTerminalLocationsLocationResponse(${toJson()})';
 
- }
+}

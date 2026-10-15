@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/certificate_record_type.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/revocation_status.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_response/certificate_authority_related.dart';/// The inclusion status of a Certificate Authority (CA) in the trust store.
 sealed class AppleStatus {const AppleStatus();
 
-factory AppleStatus.fromJson(String json) { return switch (json) {
+factory AppleStatus.fromJson(String json) {return switch (json) {
   'INCLUDED' => included,
   'NOT_YET_INCLUDED' => notYetIncluded,
   'NOT_INCLUDED' => notIncluded,
@@ -13,7 +13,7 @@ factory AppleStatus.fromJson(String json) { return switch (json) {
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
   _ => AppleStatus$Unknown(json),
-}; }
+};}
 
 static const AppleStatus included = AppleStatus$included._();
 
@@ -32,9 +32,9 @@ static const AppleStatus blocked = AppleStatus$blocked._();
 static const List<AppleStatus> values = [included, notYetIncluded, notIncluded, notBefore, removed, disabled, blocked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'INCLUDED' => 'included',
   'NOT_YET_INCLUDED' => 'notYetIncluded',
   'NOT_INCLUDED' => 'notIncluded',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'DISABLED' => 'disabled',
   'BLOCKED' => 'blocked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AppleStatus$Unknown; } 
+bool get isUnknown {return this is AppleStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) {return switch (this) {
       AppleStatus$included() => included(),
       AppleStatus$notYetIncluded() => notYetIncluded(),
       AppleStatus$notIncluded() => notIncluded(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() included, required W Function() notYetIncluded,
       AppleStatus$disabled() => disabled(),
       AppleStatus$blocked() => blocked(),
       AppleStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) {return switch (this) {
       AppleStatus$included() => included != null ? included() : orElse(value),
       AppleStatus$notYetIncluded() => notYetIncluded != null ? notYetIncluded() : orElse(value),
       AppleStatus$notIncluded() => notIncluded != null ? notIncluded() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
       AppleStatus$disabled() => disabled != null ? disabled() : orElse(value),
       AppleStatus$blocked() => blocked != null ? blocked() : orElse(value),
       AppleStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AppleStatus($value)';
 
- }
+}
 @immutable final class AppleStatus$included extends AppleStatus {const AppleStatus$included._();
 
 @override String get value => 'INCLUDED';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'INCLUDED'.hashCode;
 
- }
+}
 @immutable final class AppleStatus$notYetIncluded extends AppleStatus {const AppleStatus$notYetIncluded._();
 
 @override String get value => 'NOT_YET_INCLUDED';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_YET_INCLUDED'.hashCode;
 
- }
+}
 @immutable final class AppleStatus$notIncluded extends AppleStatus {const AppleStatus$notIncluded._();
 
 @override String get value => 'NOT_INCLUDED';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_INCLUDED'.hashCode;
 
- }
+}
 @immutable final class AppleStatus$notBefore extends AppleStatus {const AppleStatus$notBefore._();
 
 @override String get value => 'NOT_BEFORE';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_BEFORE'.hashCode;
 
- }
+}
 @immutable final class AppleStatus$removed extends AppleStatus {const AppleStatus$removed._();
 
 @override String get value => 'REMOVED';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'REMOVED'.hashCode;
 
- }
+}
 @immutable final class AppleStatus$disabled extends AppleStatus {const AppleStatus$disabled._();
 
 @override String get value => 'DISABLED';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'DISABLED'.hashCode;
 
- }
+}
 @immutable final class AppleStatus$blocked extends AppleStatus {const AppleStatus$blocked._();
 
 @override String get value => 'BLOCKED';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'BLOCKED'.hashCode;
 
- }
+}
 @immutable final class AppleStatus$Unknown extends AppleStatus {const AppleStatus$Unknown(this.value);
 
 @override final String value;
@@ -143,11 +143,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 sealed class ChromeStatus {const ChromeStatus();
 
-factory ChromeStatus.fromJson(String json) { return switch (json) {
+factory ChromeStatus.fromJson(String json) {return switch (json) {
   'INCLUDED' => included,
   'NOT_YET_INCLUDED' => notYetIncluded,
   'NOT_INCLUDED' => notIncluded,
@@ -156,7 +156,7 @@ factory ChromeStatus.fromJson(String json) { return switch (json) {
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
   _ => ChromeStatus$Unknown(json),
-}; }
+};}
 
 static const ChromeStatus included = ChromeStatus$included._();
 
@@ -175,9 +175,9 @@ static const ChromeStatus blocked = ChromeStatus$blocked._();
 static const List<ChromeStatus> values = [included, notYetIncluded, notIncluded, notBefore, removed, disabled, blocked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'INCLUDED' => 'included',
   'NOT_YET_INCLUDED' => 'notYetIncluded',
   'NOT_INCLUDED' => 'notIncluded',
@@ -186,11 +186,11 @@ String get name { return switch (value) {
   'DISABLED' => 'disabled',
   'BLOCKED' => 'blocked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ChromeStatus$Unknown; } 
+bool get isUnknown {return this is ChromeStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) {return switch (this) {
       ChromeStatus$included() => included(),
       ChromeStatus$notYetIncluded() => notYetIncluded(),
       ChromeStatus$notIncluded() => notIncluded(),
@@ -199,9 +199,9 @@ W when<W>({required W Function() included, required W Function() notYetIncluded,
       ChromeStatus$disabled() => disabled(),
       ChromeStatus$blocked() => blocked(),
       ChromeStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) {return switch (this) {
       ChromeStatus$included() => included != null ? included() : orElse(value),
       ChromeStatus$notYetIncluded() => notYetIncluded != null ? notYetIncluded() : orElse(value),
       ChromeStatus$notIncluded() => notIncluded != null ? notIncluded() : orElse(value),
@@ -210,10 +210,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
       ChromeStatus$disabled() => disabled != null ? disabled() : orElse(value),
       ChromeStatus$blocked() => blocked != null ? blocked() : orElse(value),
       ChromeStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ChromeStatus($value)';
 
- }
+}
 @immutable final class ChromeStatus$included extends ChromeStatus {const ChromeStatus$included._();
 
 @override String get value => 'INCLUDED';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'INCLUDED'.hashCode;
 
- }
+}
 @immutable final class ChromeStatus$notYetIncluded extends ChromeStatus {const ChromeStatus$notYetIncluded._();
 
 @override String get value => 'NOT_YET_INCLUDED';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_YET_INCLUDED'.hashCode;
 
- }
+}
 @immutable final class ChromeStatus$notIncluded extends ChromeStatus {const ChromeStatus$notIncluded._();
 
 @override String get value => 'NOT_INCLUDED';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_INCLUDED'.hashCode;
 
- }
+}
 @immutable final class ChromeStatus$notBefore extends ChromeStatus {const ChromeStatus$notBefore._();
 
 @override String get value => 'NOT_BEFORE';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_BEFORE'.hashCode;
 
- }
+}
 @immutable final class ChromeStatus$removed extends ChromeStatus {const ChromeStatus$removed._();
 
 @override String get value => 'REMOVED';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'REMOVED'.hashCode;
 
- }
+}
 @immutable final class ChromeStatus$disabled extends ChromeStatus {const ChromeStatus$disabled._();
 
 @override String get value => 'DISABLED';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'DISABLED'.hashCode;
 
- }
+}
 @immutable final class ChromeStatus$blocked extends ChromeStatus {const ChromeStatus$blocked._();
 
 @override String get value => 'BLOCKED';
@@ -276,7 +276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'BLOCKED'.hashCode;
 
- }
+}
 @immutable final class ChromeStatus$Unknown extends ChromeStatus {const ChromeStatus$Unknown(this.value);
 
 @override final String value;
@@ -286,11 +286,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 sealed class MicrosoftStatus {const MicrosoftStatus();
 
-factory MicrosoftStatus.fromJson(String json) { return switch (json) {
+factory MicrosoftStatus.fromJson(String json) {return switch (json) {
   'INCLUDED' => included,
   'NOT_YET_INCLUDED' => notYetIncluded,
   'NOT_INCLUDED' => notIncluded,
@@ -299,7 +299,7 @@ factory MicrosoftStatus.fromJson(String json) { return switch (json) {
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
   _ => MicrosoftStatus$Unknown(json),
-}; }
+};}
 
 static const MicrosoftStatus included = MicrosoftStatus$included._();
 
@@ -318,9 +318,9 @@ static const MicrosoftStatus blocked = MicrosoftStatus$blocked._();
 static const List<MicrosoftStatus> values = [included, notYetIncluded, notIncluded, notBefore, removed, disabled, blocked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'INCLUDED' => 'included',
   'NOT_YET_INCLUDED' => 'notYetIncluded',
   'NOT_INCLUDED' => 'notIncluded',
@@ -329,11 +329,11 @@ String get name { return switch (value) {
   'DISABLED' => 'disabled',
   'BLOCKED' => 'blocked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MicrosoftStatus$Unknown; } 
+bool get isUnknown {return this is MicrosoftStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) {return switch (this) {
       MicrosoftStatus$included() => included(),
       MicrosoftStatus$notYetIncluded() => notYetIncluded(),
       MicrosoftStatus$notIncluded() => notIncluded(),
@@ -342,9 +342,9 @@ W when<W>({required W Function() included, required W Function() notYetIncluded,
       MicrosoftStatus$disabled() => disabled(),
       MicrosoftStatus$blocked() => blocked(),
       MicrosoftStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) {return switch (this) {
       MicrosoftStatus$included() => included != null ? included() : orElse(value),
       MicrosoftStatus$notYetIncluded() => notYetIncluded != null ? notYetIncluded() : orElse(value),
       MicrosoftStatus$notIncluded() => notIncluded != null ? notIncluded() : orElse(value),
@@ -353,10 +353,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
       MicrosoftStatus$disabled() => disabled != null ? disabled() : orElse(value),
       MicrosoftStatus$blocked() => blocked != null ? blocked() : orElse(value),
       MicrosoftStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MicrosoftStatus($value)';
 
- }
+}
 @immutable final class MicrosoftStatus$included extends MicrosoftStatus {const MicrosoftStatus$included._();
 
 @override String get value => 'INCLUDED';
@@ -365,7 +365,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'INCLUDED'.hashCode;
 
- }
+}
 @immutable final class MicrosoftStatus$notYetIncluded extends MicrosoftStatus {const MicrosoftStatus$notYetIncluded._();
 
 @override String get value => 'NOT_YET_INCLUDED';
@@ -374,7 +374,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_YET_INCLUDED'.hashCode;
 
- }
+}
 @immutable final class MicrosoftStatus$notIncluded extends MicrosoftStatus {const MicrosoftStatus$notIncluded._();
 
 @override String get value => 'NOT_INCLUDED';
@@ -383,7 +383,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_INCLUDED'.hashCode;
 
- }
+}
 @immutable final class MicrosoftStatus$notBefore extends MicrosoftStatus {const MicrosoftStatus$notBefore._();
 
 @override String get value => 'NOT_BEFORE';
@@ -392,7 +392,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_BEFORE'.hashCode;
 
- }
+}
 @immutable final class MicrosoftStatus$removed extends MicrosoftStatus {const MicrosoftStatus$removed._();
 
 @override String get value => 'REMOVED';
@@ -401,7 +401,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'REMOVED'.hashCode;
 
- }
+}
 @immutable final class MicrosoftStatus$disabled extends MicrosoftStatus {const MicrosoftStatus$disabled._();
 
 @override String get value => 'DISABLED';
@@ -410,7 +410,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'DISABLED'.hashCode;
 
- }
+}
 @immutable final class MicrosoftStatus$blocked extends MicrosoftStatus {const MicrosoftStatus$blocked._();
 
 @override String get value => 'BLOCKED';
@@ -419,7 +419,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'BLOCKED'.hashCode;
 
- }
+}
 @immutable final class MicrosoftStatus$Unknown extends MicrosoftStatus {const MicrosoftStatus$Unknown(this.value);
 
 @override final String value;
@@ -429,11 +429,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 sealed class MozillaStatus {const MozillaStatus();
 
-factory MozillaStatus.fromJson(String json) { return switch (json) {
+factory MozillaStatus.fromJson(String json) {return switch (json) {
   'INCLUDED' => included,
   'NOT_YET_INCLUDED' => notYetIncluded,
   'NOT_INCLUDED' => notIncluded,
@@ -442,7 +442,7 @@ factory MozillaStatus.fromJson(String json) { return switch (json) {
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
   _ => MozillaStatus$Unknown(json),
-}; }
+};}
 
 static const MozillaStatus included = MozillaStatus$included._();
 
@@ -461,9 +461,9 @@ static const MozillaStatus blocked = MozillaStatus$blocked._();
 static const List<MozillaStatus> values = [included, notYetIncluded, notIncluded, notBefore, removed, disabled, blocked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'INCLUDED' => 'included',
   'NOT_YET_INCLUDED' => 'notYetIncluded',
   'NOT_INCLUDED' => 'notIncluded',
@@ -472,11 +472,11 @@ String get name { return switch (value) {
   'DISABLED' => 'disabled',
   'BLOCKED' => 'blocked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MozillaStatus$Unknown; } 
+bool get isUnknown {return this is MozillaStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) {return switch (this) {
       MozillaStatus$included() => included(),
       MozillaStatus$notYetIncluded() => notYetIncluded(),
       MozillaStatus$notIncluded() => notIncluded(),
@@ -485,9 +485,9 @@ W when<W>({required W Function() included, required W Function() notYetIncluded,
       MozillaStatus$disabled() => disabled(),
       MozillaStatus$blocked() => blocked(),
       MozillaStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) {return switch (this) {
       MozillaStatus$included() => included != null ? included() : orElse(value),
       MozillaStatus$notYetIncluded() => notYetIncluded != null ? notYetIncluded() : orElse(value),
       MozillaStatus$notIncluded() => notIncluded != null ? notIncluded() : orElse(value),
@@ -496,10 +496,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
       MozillaStatus$disabled() => disabled != null ? disabled() : orElse(value),
       MozillaStatus$blocked() => blocked != null ? blocked() : orElse(value),
       MozillaStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MozillaStatus($value)';
 
- }
+}
 @immutable final class MozillaStatus$included extends MozillaStatus {const MozillaStatus$included._();
 
 @override String get value => 'INCLUDED';
@@ -508,7 +508,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'INCLUDED'.hashCode;
 
- }
+}
 @immutable final class MozillaStatus$notYetIncluded extends MozillaStatus {const MozillaStatus$notYetIncluded._();
 
 @override String get value => 'NOT_YET_INCLUDED';
@@ -517,7 +517,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_YET_INCLUDED'.hashCode;
 
- }
+}
 @immutable final class MozillaStatus$notIncluded extends MozillaStatus {const MozillaStatus$notIncluded._();
 
 @override String get value => 'NOT_INCLUDED';
@@ -526,7 +526,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_INCLUDED'.hashCode;
 
- }
+}
 @immutable final class MozillaStatus$notBefore extends MozillaStatus {const MozillaStatus$notBefore._();
 
 @override String get value => 'NOT_BEFORE';
@@ -535,7 +535,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'NOT_BEFORE'.hashCode;
 
- }
+}
 @immutable final class MozillaStatus$removed extends MozillaStatus {const MozillaStatus$removed._();
 
 @override String get value => 'REMOVED';
@@ -544,7 +544,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'REMOVED'.hashCode;
 
- }
+}
 @immutable final class MozillaStatus$disabled extends MozillaStatus {const MozillaStatus$disabled._();
 
 @override String get value => 'DISABLED';
@@ -553,7 +553,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'DISABLED'.hashCode;
 
- }
+}
 @immutable final class MozillaStatus$blocked extends MozillaStatus {const MozillaStatus$blocked._();
 
 @override String get value => 'BLOCKED';
@@ -562,7 +562,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => 'BLOCKED'.hashCode;
 
- }
+}
 @immutable final class MozillaStatus$Unknown extends MozillaStatus {const MozillaStatus$Unknown(this.value);
 
 @override final String value;
@@ -572,10 +572,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? included
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ResultCertificateAuthority {const ResultCertificateAuthority({required this.appleStatus, required this.authorityKeyIdentifier, required this.certificateRecordType, required this.chromeStatus, required this.country, required this.countryName, required this.microsoftStatus, required this.mozillaStatus, required this.name, required this.owner, required this.parentName, required this.parentSha256Fingerprint, required this.related, required this.revocationStatus, required this.sha256Fingerprint, required this.subjectKeyIdentifier, required this.validFrom, required this.validTo, });
 
-factory ResultCertificateAuthority.fromJson(Map<String, dynamic> json) { return ResultCertificateAuthority(
+factory ResultCertificateAuthority.fromJson(Map<String, dynamic> json) {return ResultCertificateAuthority(
   appleStatus: AppleStatus.fromJson(json['appleStatus'] as String),
   authorityKeyIdentifier: json['authorityKeyIdentifier'] as String,
   certificateRecordType: CertificateRecordType.fromJson(json['certificateRecordType'] as String),
@@ -594,7 +594,7 @@ factory ResultCertificateAuthority.fromJson(Map<String, dynamic> json) { return 
   subjectKeyIdentifier: json['subjectKeyIdentifier'] as String,
   validFrom: json['validFrom'] as String,
   validTo: json['validTo'] as String,
-); }
+);}
 
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 final AppleStatus appleStatus;
@@ -672,7 +672,7 @@ final String validFrom;
 /// Example: `'2032-06-08'`
 final String validTo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'appleStatus': appleStatus.toJson(),
   'authorityKeyIdentifier': authorityKeyIdentifier,
   'certificateRecordType': certificateRecordType.toJson(),
@@ -691,8 +691,8 @@ Map<String, dynamic> toJson() { return {
   'subjectKeyIdentifier': subjectKeyIdentifier,
   'validFrom': validFrom,
   'validTo': validTo,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('appleStatus') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('appleStatus') &&
       json.containsKey('authorityKeyIdentifier') && json['authorityKeyIdentifier'] is String &&
       json.containsKey('certificateRecordType') &&
       json.containsKey('chromeStatus') &&
@@ -709,8 +709,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apple
       json.containsKey('sha256Fingerprint') && json['sha256Fingerprint'] is String &&
       json.containsKey('subjectKeyIdentifier') && json['subjectKeyIdentifier'] is String &&
       json.containsKey('validFrom') && json['validFrom'] is String &&
-      json.containsKey('validTo') && json['validTo'] is String; } 
-ResultCertificateAuthority copyWith({AppleStatus? appleStatus, String? authorityKeyIdentifier, CertificateRecordType? certificateRecordType, ChromeStatus? chromeStatus, String? country, String? countryName, MicrosoftStatus? microsoftStatus, MozillaStatus? mozillaStatus, String? name, String? owner, String? parentName, String? parentSha256Fingerprint, List<CertificateAuthorityRelated>? related, RevocationStatus? revocationStatus, String? sha256Fingerprint, String? subjectKeyIdentifier, String? validFrom, String? validTo, }) { return ResultCertificateAuthority(
+      json.containsKey('validTo') && json['validTo'] is String;}
+ResultCertificateAuthority copyWith({AppleStatus? appleStatus, String? authorityKeyIdentifier, CertificateRecordType? certificateRecordType, ChromeStatus? chromeStatus, String? country, String? countryName, MicrosoftStatus? microsoftStatus, MozillaStatus? mozillaStatus, String? name, String? owner, String? parentName, String? parentSha256Fingerprint, List<CertificateAuthorityRelated>? related, RevocationStatus? revocationStatus, String? sha256Fingerprint, String? subjectKeyIdentifier, String? validFrom, String? validTo, }) {return ResultCertificateAuthority(
   appleStatus: appleStatus ?? this.appleStatus,
   authorityKeyIdentifier: authorityKeyIdentifier ?? this.authorityKeyIdentifier,
   certificateRecordType: certificateRecordType ?? this.certificateRecordType,
@@ -729,7 +729,7 @@ ResultCertificateAuthority copyWith({AppleStatus? appleStatus, String? authority
   subjectKeyIdentifier: subjectKeyIdentifier ?? this.subjectKeyIdentifier,
   validFrom: validFrom ?? this.validFrom,
   validTo: validTo ?? this.validTo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultCertificateAuthority &&
           appleStatus == other.appleStatus &&
@@ -755,4 +755,4 @@ ResultCertificateAuthority copyWith({AppleStatus? appleStatus, String? authority
 
 @override String toString() => 'ResultCertificateAuthority(\n  appleStatus: $appleStatus,\n  authorityKeyIdentifier: $authorityKeyIdentifier,\n  certificateRecordType: $certificateRecordType,\n  chromeStatus: $chromeStatus,\n  country: $country,\n  countryName: $countryName,\n  microsoftStatus: $microsoftStatus,\n  mozillaStatus: $mozillaStatus,\n  name: $name,\n  owner: $owner,\n  parentName: $parentName,\n  parentSha256Fingerprint: $parentSha256Fingerprint,\n  related: $related,\n  revocationStatus: $revocationStatus,\n  sha256Fingerprint: $sha256Fingerprint,\n  subjectKeyIdentifier: $subjectKeyIdentifier,\n  validFrom: $validFrom,\n  validTo: $validTo,\n)';
 
- }
+}

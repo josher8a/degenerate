@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/environment_approvals/environment_approvals_environments.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
 sealed class EnvironmentApprovalsState {const EnvironmentApprovalsState();
 
-factory EnvironmentApprovalsState.fromJson(String json) { return switch (json) {
+factory EnvironmentApprovalsState.fromJson(String json) {return switch (json) {
   'approved' => approved,
   'rejected' => rejected,
   'pending' => pending,
   _ => EnvironmentApprovalsState$Unknown(json),
-}; }
+};}
 
 static const EnvironmentApprovalsState approved = EnvironmentApprovalsState$approved._();
 
@@ -20,33 +20,33 @@ static const EnvironmentApprovalsState pending = EnvironmentApprovalsState$pendi
 static const List<EnvironmentApprovalsState> values = [approved, rejected, pending];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'approved' => 'approved',
   'rejected' => 'rejected',
   'pending' => 'pending',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnvironmentApprovalsState$Unknown; } 
+bool get isUnknown {return this is EnvironmentApprovalsState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() approved, required W Function() rejected, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() approved, required W Function() rejected, required W Function() pending, required W Function(String value) $unknown, }) {return switch (this) {
       EnvironmentApprovalsState$approved() => approved(),
       EnvironmentApprovalsState$rejected() => rejected(),
       EnvironmentApprovalsState$pending() => pending(),
       EnvironmentApprovalsState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved, W Function()? rejected, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved, W Function()? rejected, W Function()? pending, W Function(String value)? $unknown, }) {return switch (this) {
       EnvironmentApprovalsState$approved() => approved != null ? approved() : orElse(value),
       EnvironmentApprovalsState$rejected() => rejected != null ? rejected() : orElse(value),
       EnvironmentApprovalsState$pending() => pending != null ? pending() : orElse(value),
       EnvironmentApprovalsState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnvironmentApprovalsState($value)';
 
- }
+}
 @immutable final class EnvironmentApprovalsState$approved extends EnvironmentApprovalsState {const EnvironmentApprovalsState$approved._();
 
 @override String get value => 'approved';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved
 
 @override int get hashCode => 'approved'.hashCode;
 
- }
+}
 @immutable final class EnvironmentApprovalsState$rejected extends EnvironmentApprovalsState {const EnvironmentApprovalsState$rejected._();
 
 @override String get value => 'rejected';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class EnvironmentApprovalsState$pending extends EnvironmentApprovalsState {const EnvironmentApprovalsState$pending._();
 
 @override String get value => 'pending';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class EnvironmentApprovalsState$Unknown extends EnvironmentApprovalsState {const EnvironmentApprovalsState$Unknown(this.value);
 
 @override final String value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An entry in the reviews log for environment deployments
 @immutable final class EnvironmentApprovals {const EnvironmentApprovals({required this.environments, required this.state, required this.user, required this.comment, });
 
-factory EnvironmentApprovals.fromJson(Map<String, dynamic> json) { return EnvironmentApprovals(
+factory EnvironmentApprovals.fromJson(Map<String, dynamic> json) {return EnvironmentApprovals(
   environments: (json['environments'] as List<dynamic>).map((e) => EnvironmentApprovalsEnvironments.fromJson(e as Map<String, dynamic>)).toList(),
   state: EnvironmentApprovalsState.fromJson(json['state'] as String),
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
   comment: json['comment'] as String,
-); }
+);}
 
 /// The list of environments that were approved or rejected
 final List<EnvironmentApprovalsEnvironments> environments;
@@ -105,22 +105,22 @@ final SimpleUser user;
 /// The comment submitted with the deployment review
 final String comment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'environments': environments.map((e) => e.toJson()).toList(),
   'state': state.toJson(),
   'user': user.toJson(),
   'comment': comment,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('environments') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('environments') &&
       json.containsKey('state') &&
       json.containsKey('user') &&
-      json.containsKey('comment') && json['comment'] is String; } 
-EnvironmentApprovals copyWith({List<EnvironmentApprovalsEnvironments>? environments, EnvironmentApprovalsState? state, SimpleUser? user, String? comment, }) { return EnvironmentApprovals(
+      json.containsKey('comment') && json['comment'] is String;}
+EnvironmentApprovals copyWith({List<EnvironmentApprovalsEnvironments>? environments, EnvironmentApprovalsState? state, SimpleUser? user, String? comment, }) {return EnvironmentApprovals(
   environments: environments ?? this.environments,
   state: state ?? this.state,
   user: user ?? this.user,
   comment: comment ?? this.comment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EnvironmentApprovals &&
           listEquals(environments, other.environments) &&
@@ -132,4 +132,4 @@ EnvironmentApprovals copyWith({List<EnvironmentApprovalsEnvironments>? environme
 
 @override String toString() => 'EnvironmentApprovals(environments: $environments, state: $state, user: $user, comment: $comment)';
 
- }
+}

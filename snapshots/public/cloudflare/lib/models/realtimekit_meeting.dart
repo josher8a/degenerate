@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_meeting/realtimekit_meeting_status.dart';@immutable final class RealtimekitMeeting {const RealtimekitMeeting({required this.createdAt, required this.id, required this.updatedAt, this.liveStreamOnStart, this.persistChat, this.recordOnStart, this.sessionKeepAliveTimeInSecs, this.status, this.summarizeOnEnd, this.title, });
 
-factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) { return RealtimekitMeeting(
+factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) {return RealtimekitMeeting(
   createdAt: DateTime.parse(json['created_at'] as String),
   id: json['id'] as String,
   liveStreamOnStart: json['live_stream_on_start'] as bool?,
@@ -14,7 +14,7 @@ factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) { return Realtime
   summarizeOnEnd: json['summarize_on_end'] as bool?,
   title: json['title'] as String?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// Timestamp the object was created at. The time is returned in ISO format.
 final DateTime createdAt;
@@ -49,7 +49,7 @@ final DateTime updatedAt;
 /// The value of `sessionKeepAliveTimeInSecs`, or its schema default when absent.
 double get sessionKeepAliveTimeInSecsOrDefault => sessionKeepAliveTimeInSecs ?? 60.0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'id': id,
   'live_stream_on_start': ?liveStreamOnStart,
@@ -60,19 +60,19 @@ Map<String, dynamic> toJson() { return {
   'summarize_on_end': ?summarizeOnEnd,
   'title': ?title,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
+      json.containsKey('updated_at') && json['updated_at'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final sessionKeepAliveTimeInSecs$ = sessionKeepAliveTimeInSecs;
 if (sessionKeepAliveTimeInSecs$ != null) {
   if (sessionKeepAliveTimeInSecs$ < 60) { errors.add('sessionKeepAliveTimeInSecs: must be >= 60'); }
   if (sessionKeepAliveTimeInSecs$ > 600) { errors.add('sessionKeepAliveTimeInSecs: must be <= 600'); }
 }
-return errors; } 
-RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? liveStreamOnStart, bool? Function()? persistChat, bool? Function()? recordOnStart, double? Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool? Function()? summarizeOnEnd, String? Function()? title, DateTime? updatedAt, }) { return RealtimekitMeeting(
+return errors;}
+RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? liveStreamOnStart, bool? Function()? persistChat, bool? Function()? recordOnStart, double? Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool? Function()? summarizeOnEnd, String? Function()? title, DateTime? updatedAt, }) {return RealtimekitMeeting(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   liveStreamOnStart: liveStreamOnStart != null ? liveStreamOnStart() : this.liveStreamOnStart,
@@ -83,7 +83,7 @@ RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? 
   summarizeOnEnd: summarizeOnEnd != null ? summarizeOnEnd() : this.summarizeOnEnd,
   title: title != null ? title() : this.title,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitMeeting &&
           createdAt == other.createdAt &&
@@ -101,4 +101,4 @@ RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? 
 
 @override String toString() => 'RealtimekitMeeting(\n  createdAt: $createdAt,\n  id: $id,\n  liveStreamOnStart: $liveStreamOnStart,\n  persistChat: $persistChat,\n  recordOnStart: $recordOnStart,\n  sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs,\n  status: $status,\n  summarizeOnEnd: $summarizeOnEnd,\n  title: $title,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

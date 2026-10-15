@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';import 'package:pub_cloudflare/models/dlp_entry_profile.dart';import 'package:pub_cloudflare/models/word_list_entry/word_list_entry_type.dart';@immutable final class DlpEntryWithSharedProfilesWordListEntry {const DlpEntryWithSharedProfilesWordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, required this.type, required this.profiles, this.profileId = const Omittable.absent(), this.uploadStatus, });
 
-factory DlpEntryWithSharedProfilesWordListEntry.fromJson(Map<String, dynamic> json) { return DlpEntryWithSharedProfilesWordListEntry(
+factory DlpEntryWithSharedProfilesWordListEntry.fromJson(Map<String, dynamic> json) {return DlpEntryWithSharedProfilesWordListEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
@@ -14,7 +14,7 @@ factory DlpEntryWithSharedProfilesWordListEntry.fromJson(Map<String, dynamic> js
   type: WordListEntryType.fromJson(json['type'] as String),
   uploadStatus: json['upload_status'] != null ? DlpDatasetUploadStatus.fromJson(json['upload_status'] as String) : null,
   profiles: (json['profiles'] as List<dynamic>).map((e) => DlpEntryProfile.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -36,7 +36,7 @@ final DlpDatasetUploadStatus? uploadStatus;
 
 final List<DlpEntryProfile> profiles;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
   'id': id,
@@ -47,16 +47,16 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (uploadStatus != null) 'upload_status': uploadStatus?.toJson(),
   'profiles': profiles.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('word_list') &&
       json.containsKey('type') && json['type'] == 'word_list' &&
-      json.containsKey('profiles'); } 
-DlpEntryWithSharedProfilesWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, dynamic Function()? wordList, WordListEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, List<DlpEntryProfile>? profiles, }) { return DlpEntryWithSharedProfilesWordListEntry(
+      json.containsKey('profiles');}
+DlpEntryWithSharedProfilesWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, dynamic Function()? wordList, WordListEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, List<DlpEntryProfile>? profiles, }) {return DlpEntryWithSharedProfilesWordListEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
@@ -67,7 +67,7 @@ DlpEntryWithSharedProfilesWordListEntry copyWith({DateTime? createdAt, bool? ena
   type: type ?? this.type,
   uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,
   profiles: profiles ?? this.profiles,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryWithSharedProfilesWordListEntry &&
           createdAt == other.createdAt &&
@@ -85,4 +85,4 @@ DlpEntryWithSharedProfilesWordListEntry copyWith({DateTime? createdAt, bool? ena
 
 @override String toString() => 'DlpEntryWithSharedProfilesWordListEntry(\n  createdAt: $createdAt,\n  enabled: $enabled,\n  id: $id,\n  name: $name,\n  profileId: $profileId,\n  updatedAt: $updatedAt,\n  wordList: $wordList,\n  type: $type,\n  uploadStatus: $uploadStatus,\n  profiles: $profiles,\n)';
 
- }
+}

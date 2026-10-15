@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Validity Days selected for the order.
 sealed class TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays();
 
-factory TlsCertificatesAndHostnamesValidityDays.fromJson(int json) { return switch (json) {
+factory TlsCertificatesAndHostnamesValidityDays.fromJson(int json) {return switch (json) {
   14 => $14,
   30 => $30,
   90 => $90,
   365 => $365,
   _ => TlsCertificatesAndHostnamesValidityDays$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesValidityDays $14 = TlsCertificatesAndHostnamesValidityDays$$14._();
 
@@ -23,36 +23,36 @@ static const TlsCertificatesAndHostnamesValidityDays $365 = TlsCertificatesAndHo
 static const List<TlsCertificatesAndHostnamesValidityDays> values = [$14, $30, $90, $365];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   14 => r'$14',
   30 => r'$30',
   90 => r'$90',
   365 => r'$365',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesValidityDays$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesValidityDays$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $14, required W Function() $30, required W Function() $90, required W Function() $365, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $14, required W Function() $30, required W Function() $90, required W Function() $365, required W Function(int value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesValidityDays$$14() => $14(),
       TlsCertificatesAndHostnamesValidityDays$$30() => $30(),
       TlsCertificatesAndHostnamesValidityDays$$90() => $90(),
       TlsCertificatesAndHostnamesValidityDays$$365() => $365(),
       TlsCertificatesAndHostnamesValidityDays$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $14, W Function()? $30, W Function()? $90, W Function()? $365, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $14, W Function()? $30, W Function()? $90, W Function()? $365, W Function(int value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesValidityDays$$14() => $14 != null ? $14() : orElse(value),
       TlsCertificatesAndHostnamesValidityDays$$30() => $30 != null ? $30() : orElse(value),
       TlsCertificatesAndHostnamesValidityDays$$90() => $90 != null ? $90() : orElse(value),
       TlsCertificatesAndHostnamesValidityDays$$365() => $365 != null ? $365() : orElse(value),
       TlsCertificatesAndHostnamesValidityDays$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesValidityDays($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesValidityDays$$14 extends TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays$$14._();
 
 @override int get value => 14;
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $14, W Func
 
 @override int get hashCode => 14.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesValidityDays$$30 extends TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays$$30._();
 
 @override int get value => 30;
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $14, W Func
 
 @override int get hashCode => 30.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesValidityDays$$90 extends TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays$$90._();
 
 @override int get value => 90;
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $14, W Func
 
 @override int get hashCode => 90.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesValidityDays$$365 extends TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays$$365._();
 
 @override int get value => 365;
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $14, W Func
 
 @override int get hashCode => 365.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesValidityDays$Unknown extends TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays$Unknown(this.value);
 
 @override final int value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $14, W Func
 
 @override int get hashCode => value.hashCode;
 
- }
+}

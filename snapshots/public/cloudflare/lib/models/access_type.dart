@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The application type.
 sealed class AccessType {const AccessType();
 
-factory AccessType.fromJson(String json) { return switch (json) {
+factory AccessType.fromJson(String json) {return switch (json) {
   'self_hosted' => selfHosted,
   'saas' => saas,
   'ssh' => ssh,
@@ -20,7 +20,7 @@ factory AccessType.fromJson(String json) { return switch (json) {
   'mcp_portal' => mcpPortal,
   'proxy_endpoint' => proxyEndpoint,
   _ => AccessType$Unknown(json),
-}; }
+};}
 
 static const AccessType selfHosted = AccessType$selfHosted._();
 
@@ -53,9 +53,9 @@ static const AccessType proxyEndpoint = AccessType$proxyEndpoint._();
 static const List<AccessType> values = [selfHosted, saas, ssh, vnc, appLauncher, warp, biso, bookmark, dashSso, infrastructure, rdp, mcp, mcpPortal, proxyEndpoint];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'self_hosted' => 'selfHosted',
   'saas' => 'saas',
   'ssh' => 'ssh',
@@ -71,11 +71,11 @@ String get name { return switch (value) {
   'mcp_portal' => 'mcpPortal',
   'proxy_endpoint' => 'proxyEndpoint',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccessType$Unknown; } 
+bool get isUnknown {return this is AccessType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() selfHosted, required W Function() saas, required W Function() ssh, required W Function() vnc, required W Function() appLauncher, required W Function() warp, required W Function() biso, required W Function() bookmark, required W Function() dashSso, required W Function() infrastructure, required W Function() rdp, required W Function() mcp, required W Function() mcpPortal, required W Function() proxyEndpoint, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() selfHosted, required W Function() saas, required W Function() ssh, required W Function() vnc, required W Function() appLauncher, required W Function() warp, required W Function() biso, required W Function() bookmark, required W Function() dashSso, required W Function() infrastructure, required W Function() rdp, required W Function() mcp, required W Function() mcpPortal, required W Function() proxyEndpoint, required W Function(String value) $unknown, }) {return switch (this) {
       AccessType$selfHosted() => selfHosted(),
       AccessType$saas() => saas(),
       AccessType$ssh() => ssh(),
@@ -91,9 +91,9 @@ W when<W>({required W Function() selfHosted, required W Function() saas, require
       AccessType$mcpPortal() => mcpPortal(),
       AccessType$proxyEndpoint() => proxyEndpoint(),
       AccessType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHosted, W Function()? saas, W Function()? ssh, W Function()? vnc, W Function()? appLauncher, W Function()? warp, W Function()? biso, W Function()? bookmark, W Function()? dashSso, W Function()? infrastructure, W Function()? rdp, W Function()? mcp, W Function()? mcpPortal, W Function()? proxyEndpoint, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHosted, W Function()? saas, W Function()? ssh, W Function()? vnc, W Function()? appLauncher, W Function()? warp, W Function()? biso, W Function()? bookmark, W Function()? dashSso, W Function()? infrastructure, W Function()? rdp, W Function()? mcp, W Function()? mcpPortal, W Function()? proxyEndpoint, W Function(String value)? $unknown, }) {return switch (this) {
       AccessType$selfHosted() => selfHosted != null ? selfHosted() : orElse(value),
       AccessType$saas() => saas != null ? saas() : orElse(value),
       AccessType$ssh() => ssh != null ? ssh() : orElse(value),
@@ -109,10 +109,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
       AccessType$mcpPortal() => mcpPortal != null ? mcpPortal() : orElse(value),
       AccessType$proxyEndpoint() => proxyEndpoint != null ? proxyEndpoint() : orElse(value),
       AccessType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccessType($value)';
 
- }
+}
 @immutable final class AccessType$selfHosted extends AccessType {const AccessType$selfHosted._();
 
 @override String get value => 'self_hosted';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'self_hosted'.hashCode;
 
- }
+}
 @immutable final class AccessType$saas extends AccessType {const AccessType$saas._();
 
 @override String get value => 'saas';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'saas'.hashCode;
 
- }
+}
 @immutable final class AccessType$ssh extends AccessType {const AccessType$ssh._();
 
 @override String get value => 'ssh';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'ssh'.hashCode;
 
- }
+}
 @immutable final class AccessType$vnc extends AccessType {const AccessType$vnc._();
 
 @override String get value => 'vnc';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'vnc'.hashCode;
 
- }
+}
 @immutable final class AccessType$appLauncher extends AccessType {const AccessType$appLauncher._();
 
 @override String get value => 'app_launcher';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'app_launcher'.hashCode;
 
- }
+}
 @immutable final class AccessType$warp extends AccessType {const AccessType$warp._();
 
 @override String get value => 'warp';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'warp'.hashCode;
 
- }
+}
 @immutable final class AccessType$biso extends AccessType {const AccessType$biso._();
 
 @override String get value => 'biso';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'biso'.hashCode;
 
- }
+}
 @immutable final class AccessType$bookmark extends AccessType {const AccessType$bookmark._();
 
 @override String get value => 'bookmark';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'bookmark'.hashCode;
 
- }
+}
 @immutable final class AccessType$dashSso extends AccessType {const AccessType$dashSso._();
 
 @override String get value => 'dash_sso';
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'dash_sso'.hashCode;
 
- }
+}
 @immutable final class AccessType$infrastructure extends AccessType {const AccessType$infrastructure._();
 
 @override String get value => 'infrastructure';
@@ -202,7 +202,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'infrastructure'.hashCode;
 
- }
+}
 @immutable final class AccessType$rdp extends AccessType {const AccessType$rdp._();
 
 @override String get value => 'rdp';
@@ -211,7 +211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'rdp'.hashCode;
 
- }
+}
 @immutable final class AccessType$mcp extends AccessType {const AccessType$mcp._();
 
 @override String get value => 'mcp';
@@ -220,7 +220,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'mcp'.hashCode;
 
- }
+}
 @immutable final class AccessType$mcpPortal extends AccessType {const AccessType$mcpPortal._();
 
 @override String get value => 'mcp_portal';
@@ -229,7 +229,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'mcp_portal'.hashCode;
 
- }
+}
 @immutable final class AccessType$proxyEndpoint extends AccessType {const AccessType$proxyEndpoint._();
 
 @override String get value => 'proxy_endpoint';
@@ -238,7 +238,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => 'proxy_endpoint'.hashCode;
 
- }
+}
 @immutable final class AccessType$Unknown extends AccessType {const AccessType$Unknown(this.value);
 
 @override final String value;
@@ -248,4 +248,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHost
 
 @override int get hashCode => value.hashCode;
 
- }
+}

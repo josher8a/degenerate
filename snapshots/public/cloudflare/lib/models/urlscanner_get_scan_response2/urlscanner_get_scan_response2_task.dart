@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/task_options.dart';@immutable final class UrlscannerGetScanResponse2Task {const UrlscannerGetScanResponse2Task({required this.apexDomain, required this.domUrl, required this.domain, required this.method, required this.options, required this.reportUrl, required this.screenshotUrl, required this.source, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
 
-factory UrlscannerGetScanResponse2Task.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Task(
+factory UrlscannerGetScanResponse2Task.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanResponse2Task(
   apexDomain: json['apexDomain'] as String,
   domUrl: json['domURL'] as String,
   domain: json['domain'] as String,
@@ -17,7 +17,7 @@ factory UrlscannerGetScanResponse2Task.fromJson(Map<String, dynamic> json) { ret
   url: json['url'] as String,
   uuid: json['uuid'] as String,
   visibility: json['visibility'] as String,
-); }
+);}
 
 final String apexDomain;
 
@@ -45,7 +45,7 @@ final String uuid;
 
 final String visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apexDomain': apexDomain,
   'domURL': domUrl,
   'domain': domain,
@@ -59,8 +59,8 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'uuid': uuid,
   'visibility': visibility,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('apexDomain') && json['apexDomain'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('apexDomain') && json['apexDomain'] is String &&
       json.containsKey('domURL') && json['domURL'] is String &&
       json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('method') && json['method'] is String &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apexD
       json.containsKey('time') && json['time'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('visibility') && json['visibility'] is String; } 
-UrlscannerGetScanResponse2Task copyWith({String? apexDomain, String? domUrl, String? domain, String? method, TaskOptions? options, String? reportUrl, String? screenshotUrl, String? source, bool? success, String? time, String? url, String? uuid, String? visibility, }) { return UrlscannerGetScanResponse2Task(
+      json.containsKey('visibility') && json['visibility'] is String;}
+UrlscannerGetScanResponse2Task copyWith({String? apexDomain, String? domUrl, String? domain, String? method, TaskOptions? options, String? reportUrl, String? screenshotUrl, String? source, bool? success, String? time, String? url, String? uuid, String? visibility, }) {return UrlscannerGetScanResponse2Task(
   apexDomain: apexDomain ?? this.apexDomain,
   domUrl: domUrl ?? this.domUrl,
   domain: domain ?? this.domain,
@@ -87,7 +87,7 @@ UrlscannerGetScanResponse2Task copyWith({String? apexDomain, String? domUrl, Str
   url: url ?? this.url,
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2Task &&
           apexDomain == other.apexDomain &&
@@ -108,4 +108,4 @@ UrlscannerGetScanResponse2Task copyWith({String? apexDomain, String? domUrl, Str
 
 @override String toString() => 'UrlscannerGetScanResponse2Task(\n  apexDomain: $apexDomain,\n  domUrl: $domUrl,\n  domain: $domain,\n  method: $method,\n  options: $options,\n  reportUrl: $reportUrl,\n  screenshotUrl: $screenshotUrl,\n  source: $source,\n  success: $success,\n  time: $time,\n  url: $url,\n  uuid: $uuid,\n  visibility: $visibility,\n)';
 
- }
+}

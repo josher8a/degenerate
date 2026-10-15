@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field/field_configuration.dart';import 'package:pub_github_rest_3_1/models/single_select_options.dart';/// The field's data type.
 sealed class FieldDataType {const FieldDataType();
 
-factory FieldDataType.fromJson(String json) { return switch (json) {
+factory FieldDataType.fromJson(String json) {return switch (json) {
   'assignees' => assignees,
   'linked_pull_requests' => linkedPullRequests,
   'reviewers' => reviewers,
@@ -21,7 +21,7 @@ factory FieldDataType.fromJson(String json) { return switch (json) {
   'parent_issue' => parentIssue,
   'sub_issues_progress' => subIssuesProgress,
   _ => FieldDataType$Unknown(json),
-}; }
+};}
 
 static const FieldDataType assignees = FieldDataType$assignees._();
 
@@ -56,9 +56,9 @@ static const FieldDataType subIssuesProgress = FieldDataType$subIssuesProgress._
 static const List<FieldDataType> values = [assignees, linkedPullRequests, reviewers, labels, milestone, repository, title, text, singleSelect, number, date, iteration, issueType, parentIssue, subIssuesProgress];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'assignees' => 'assignees',
   'linked_pull_requests' => 'linkedPullRequests',
   'reviewers' => 'reviewers',
@@ -75,11 +75,11 @@ String get name { return switch (value) {
   'parent_issue' => 'parentIssue',
   'sub_issues_progress' => 'subIssuesProgress',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FieldDataType$Unknown; } 
+bool get isUnknown {return this is FieldDataType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() assignees, required W Function() linkedPullRequests, required W Function() reviewers, required W Function() labels, required W Function() milestone, required W Function() repository, required W Function() title, required W Function() text, required W Function() singleSelect, required W Function() number, required W Function() date, required W Function() iteration, required W Function() issueType, required W Function() parentIssue, required W Function() subIssuesProgress, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() assignees, required W Function() linkedPullRequests, required W Function() reviewers, required W Function() labels, required W Function() milestone, required W Function() repository, required W Function() title, required W Function() text, required W Function() singleSelect, required W Function() number, required W Function() date, required W Function() iteration, required W Function() issueType, required W Function() parentIssue, required W Function() subIssuesProgress, required W Function(String value) $unknown, }) {return switch (this) {
       FieldDataType$assignees() => assignees(),
       FieldDataType$linkedPullRequests() => linkedPullRequests(),
       FieldDataType$reviewers() => reviewers(),
@@ -96,9 +96,9 @@ W when<W>({required W Function() assignees, required W Function() linkedPullRequ
       FieldDataType$parentIssue() => parentIssue(),
       FieldDataType$subIssuesProgress() => subIssuesProgress(),
       FieldDataType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignees, W Function()? linkedPullRequests, W Function()? reviewers, W Function()? labels, W Function()? milestone, W Function()? repository, W Function()? title, W Function()? text, W Function()? singleSelect, W Function()? number, W Function()? date, W Function()? iteration, W Function()? issueType, W Function()? parentIssue, W Function()? subIssuesProgress, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignees, W Function()? linkedPullRequests, W Function()? reviewers, W Function()? labels, W Function()? milestone, W Function()? repository, W Function()? title, W Function()? text, W Function()? singleSelect, W Function()? number, W Function()? date, W Function()? iteration, W Function()? issueType, W Function()? parentIssue, W Function()? subIssuesProgress, W Function(String value)? $unknown, }) {return switch (this) {
       FieldDataType$assignees() => assignees != null ? assignees() : orElse(value),
       FieldDataType$linkedPullRequests() => linkedPullRequests != null ? linkedPullRequests() : orElse(value),
       FieldDataType$reviewers() => reviewers != null ? reviewers() : orElse(value),
@@ -115,10 +115,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
       FieldDataType$parentIssue() => parentIssue != null ? parentIssue() : orElse(value),
       FieldDataType$subIssuesProgress() => subIssuesProgress != null ? subIssuesProgress() : orElse(value),
       FieldDataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FieldDataType($value)';
 
- }
+}
 @immutable final class FieldDataType$assignees extends FieldDataType {const FieldDataType$assignees._();
 
 @override String get value => 'assignees';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'assignees'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$linkedPullRequests extends FieldDataType {const FieldDataType$linkedPullRequests._();
 
 @override String get value => 'linked_pull_requests';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'linked_pull_requests'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$reviewers extends FieldDataType {const FieldDataType$reviewers._();
 
 @override String get value => 'reviewers';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'reviewers'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$labels extends FieldDataType {const FieldDataType$labels._();
 
 @override String get value => 'labels';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'labels'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$milestone extends FieldDataType {const FieldDataType$milestone._();
 
 @override String get value => 'milestone';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'milestone'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$repository extends FieldDataType {const FieldDataType$repository._();
 
 @override String get value => 'repository';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'repository'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$title extends FieldDataType {const FieldDataType$title._();
 
 @override String get value => 'title';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'title'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$text extends FieldDataType {const FieldDataType$text._();
 
 @override String get value => 'text';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$singleSelect extends FieldDataType {const FieldDataType$singleSelect._();
 
 @override String get value => 'single_select';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'single_select'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$number extends FieldDataType {const FieldDataType$number._();
 
 @override String get value => 'number';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'number'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$date extends FieldDataType {const FieldDataType$date._();
 
 @override String get value => 'date';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'date'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$iteration extends FieldDataType {const FieldDataType$iteration._();
 
 @override String get value => 'iteration';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'iteration'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$issueType extends FieldDataType {const FieldDataType$issueType._();
 
 @override String get value => 'issue_type';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'issue_type'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$parentIssue extends FieldDataType {const FieldDataType$parentIssue._();
 
 @override String get value => 'parent_issue';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'parent_issue'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$subIssuesProgress extends FieldDataType {const FieldDataType$subIssuesProgress._();
 
 @override String get value => 'sub_issues_progress';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => 'sub_issues_progress'.hashCode;
 
- }
+}
 @immutable final class FieldDataType$Unknown extends FieldDataType {const FieldDataType$Unknown(this.value);
 
 @override final String value;
@@ -263,11 +263,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignee
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A field inside a projects v2 project
 @immutable final class Field {const Field({required this.id, required this.projectUrl, required this.name, required this.dataType, required this.createdAt, required this.updatedAt, this.nodeId, this.options, this.configuration, });
 
-factory Field.fromJson(Map<String, dynamic> json) { return Field(
+factory Field.fromJson(Map<String, dynamic> json) {return Field(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String?,
   projectUrl: json['project_url'] as String,
@@ -277,7 +277,7 @@ factory Field.fromJson(Map<String, dynamic> json) { return Field(
   configuration: json['configuration'] != null ? FieldConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// The unique identifier of the field.
 final int id;
@@ -306,7 +306,7 @@ final DateTime createdAt;
 /// The time when the field was last updated.
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': ?nodeId,
   'project_url': projectUrl,
@@ -316,14 +316,14 @@ Map<String, dynamic> toJson() { return {
   if (configuration != null) 'configuration': configuration?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('data_type') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String? name, FieldDataType? dataType, List<SingleSelectOptions>? Function()? options, FieldConfiguration? Function()? configuration, DateTime? createdAt, DateTime? updatedAt, }) { return Field(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String? name, FieldDataType? dataType, List<SingleSelectOptions>? Function()? options, FieldConfiguration? Function()? configuration, DateTime? createdAt, DateTime? updatedAt, }) {return Field(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   projectUrl: projectUrl ?? this.projectUrl,
@@ -333,7 +333,7 @@ Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String?
   configuration: configuration != null ? configuration() : this.configuration,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Field &&
           id == other.id &&
@@ -350,4 +350,4 @@ Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String?
 
 @override String toString() => 'Field(\n  id: $id,\n  nodeId: $nodeId,\n  projectUrl: $projectUrl,\n  name: $name,\n  dataType: $dataType,\n  options: $options,\n  configuration: $configuration,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

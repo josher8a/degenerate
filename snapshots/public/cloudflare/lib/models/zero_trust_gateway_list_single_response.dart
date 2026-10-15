@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_lists.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';@immutable final class ZeroTrustGatewayListSingleResponse {const ZeroTrustGatewayListSingleResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory ZeroTrustGatewayListSingleResponse.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayListSingleResponse(
+factory ZeroTrustGatewayListSingleResponse.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayListSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? ZeroTrustGatewayLists.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<ZeroTrustGatewayMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final ZeroTrustGatewayLists? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ZeroTrustGatewayListSingleResponse copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayLists? Function()? result, }) { return ZeroTrustGatewayListSingleResponse(
+      json.containsKey('success') && json['success'] is bool;}
+ZeroTrustGatewayListSingleResponse copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayLists? Function()? result, }) {return ZeroTrustGatewayListSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayListSingleResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ZeroTrustGatewayListSingleResponse copyWith({List<ZeroTrustGatewayMessages2>? er
 
 @override String toString() => 'ZeroTrustGatewayListSingleResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

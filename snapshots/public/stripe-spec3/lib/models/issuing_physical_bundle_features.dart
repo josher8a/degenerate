@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy for how to use card logo images in a card design with this physical bundle.
 sealed class IssuingPhysicalBundleFeaturesCardLogo {const IssuingPhysicalBundleFeaturesCardLogo();
 
-factory IssuingPhysicalBundleFeaturesCardLogo.fromJson(String json) { return switch (json) {
+factory IssuingPhysicalBundleFeaturesCardLogo.fromJson(String json) {return switch (json) {
   'optional' => optional,
   'required' => $required,
   'unsupported' => unsupported,
   _ => IssuingPhysicalBundleFeaturesCardLogo$Unknown(json),
-}; }
+};}
 
 static const IssuingPhysicalBundleFeaturesCardLogo optional = IssuingPhysicalBundleFeaturesCardLogo$optional._();
 
@@ -20,33 +20,33 @@ static const IssuingPhysicalBundleFeaturesCardLogo unsupported = IssuingPhysical
 static const List<IssuingPhysicalBundleFeaturesCardLogo> values = [optional, $required, unsupported];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'optional' => 'optional',
   'required' => r'$required',
   'unsupported' => 'unsupported',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingPhysicalBundleFeaturesCardLogo$Unknown; } 
+bool get isUnknown {return this is IssuingPhysicalBundleFeaturesCardLogo$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingPhysicalBundleFeaturesCardLogo$optional() => optional(),
       IssuingPhysicalBundleFeaturesCardLogo$$required() => $required(),
       IssuingPhysicalBundleFeaturesCardLogo$unsupported() => unsupported(),
       IssuingPhysicalBundleFeaturesCardLogo$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingPhysicalBundleFeaturesCardLogo$optional() => optional != null ? optional() : orElse(value),
       IssuingPhysicalBundleFeaturesCardLogo$$required() => $required != null ? $required() : orElse(value),
       IssuingPhysicalBundleFeaturesCardLogo$unsupported() => unsupported != null ? unsupported() : orElse(value),
       IssuingPhysicalBundleFeaturesCardLogo$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingPhysicalBundleFeaturesCardLogo($value)';
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesCardLogo$optional extends IssuingPhysicalBundleFeaturesCardLogo {const IssuingPhysicalBundleFeaturesCardLogo$optional._();
 
 @override String get value => 'optional';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'optional'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesCardLogo$$required extends IssuingPhysicalBundleFeaturesCardLogo {const IssuingPhysicalBundleFeaturesCardLogo$$required._();
 
 @override String get value => 'required';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'required'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesCardLogo$unsupported extends IssuingPhysicalBundleFeaturesCardLogo {const IssuingPhysicalBundleFeaturesCardLogo$unsupported._();
 
 @override String get value => 'unsupported';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'unsupported'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesCardLogo$Unknown extends IssuingPhysicalBundleFeaturesCardLogo {const IssuingPhysicalBundleFeaturesCardLogo$Unknown(this.value);
 
 @override final String value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The policy for how to use carrier letter text in a card design with this physical bundle.
 sealed class IssuingPhysicalBundleFeaturesCarrierText {const IssuingPhysicalBundleFeaturesCarrierText();
 
-factory IssuingPhysicalBundleFeaturesCarrierText.fromJson(String json) { return switch (json) {
+factory IssuingPhysicalBundleFeaturesCarrierText.fromJson(String json) {return switch (json) {
   'optional' => optional,
   'required' => $required,
   'unsupported' => unsupported,
   _ => IssuingPhysicalBundleFeaturesCarrierText$Unknown(json),
-}; }
+};}
 
 static const IssuingPhysicalBundleFeaturesCarrierText optional = IssuingPhysicalBundleFeaturesCarrierText$optional._();
 
@@ -103,33 +103,33 @@ static const IssuingPhysicalBundleFeaturesCarrierText unsupported = IssuingPhysi
 static const List<IssuingPhysicalBundleFeaturesCarrierText> values = [optional, $required, unsupported];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'optional' => 'optional',
   'required' => r'$required',
   'unsupported' => 'unsupported',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingPhysicalBundleFeaturesCarrierText$Unknown; } 
+bool get isUnknown {return this is IssuingPhysicalBundleFeaturesCarrierText$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingPhysicalBundleFeaturesCarrierText$optional() => optional(),
       IssuingPhysicalBundleFeaturesCarrierText$$required() => $required(),
       IssuingPhysicalBundleFeaturesCarrierText$unsupported() => unsupported(),
       IssuingPhysicalBundleFeaturesCarrierText$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingPhysicalBundleFeaturesCarrierText$optional() => optional != null ? optional() : orElse(value),
       IssuingPhysicalBundleFeaturesCarrierText$$required() => $required != null ? $required() : orElse(value),
       IssuingPhysicalBundleFeaturesCarrierText$unsupported() => unsupported != null ? unsupported() : orElse(value),
       IssuingPhysicalBundleFeaturesCarrierText$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingPhysicalBundleFeaturesCarrierText($value)';
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesCarrierText$optional extends IssuingPhysicalBundleFeaturesCarrierText {const IssuingPhysicalBundleFeaturesCarrierText$optional._();
 
 @override String get value => 'optional';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'optional'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesCarrierText$$required extends IssuingPhysicalBundleFeaturesCarrierText {const IssuingPhysicalBundleFeaturesCarrierText$$required._();
 
 @override String get value => 'required';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'required'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesCarrierText$unsupported extends IssuingPhysicalBundleFeaturesCarrierText {const IssuingPhysicalBundleFeaturesCarrierText$unsupported._();
 
 @override String get value => 'unsupported';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'unsupported'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesCarrierText$Unknown extends IssuingPhysicalBundleFeaturesCarrierText {const IssuingPhysicalBundleFeaturesCarrierText$Unknown(this.value);
 
 @override final String value;
@@ -166,16 +166,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The policy for how to use a second line on a card with this physical bundle.
 sealed class IssuingPhysicalBundleFeaturesSecondLine {const IssuingPhysicalBundleFeaturesSecondLine();
 
-factory IssuingPhysicalBundleFeaturesSecondLine.fromJson(String json) { return switch (json) {
+factory IssuingPhysicalBundleFeaturesSecondLine.fromJson(String json) {return switch (json) {
   'optional' => optional,
   'required' => $required,
   'unsupported' => unsupported,
   _ => IssuingPhysicalBundleFeaturesSecondLine$Unknown(json),
-}; }
+};}
 
 static const IssuingPhysicalBundleFeaturesSecondLine optional = IssuingPhysicalBundleFeaturesSecondLine$optional._();
 
@@ -186,33 +186,33 @@ static const IssuingPhysicalBundleFeaturesSecondLine unsupported = IssuingPhysic
 static const List<IssuingPhysicalBundleFeaturesSecondLine> values = [optional, $required, unsupported];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'optional' => 'optional',
   'required' => r'$required',
   'unsupported' => 'unsupported',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingPhysicalBundleFeaturesSecondLine$Unknown; } 
+bool get isUnknown {return this is IssuingPhysicalBundleFeaturesSecondLine$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingPhysicalBundleFeaturesSecondLine$optional() => optional(),
       IssuingPhysicalBundleFeaturesSecondLine$$required() => $required(),
       IssuingPhysicalBundleFeaturesSecondLine$unsupported() => unsupported(),
       IssuingPhysicalBundleFeaturesSecondLine$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingPhysicalBundleFeaturesSecondLine$optional() => optional != null ? optional() : orElse(value),
       IssuingPhysicalBundleFeaturesSecondLine$$required() => $required != null ? $required() : orElse(value),
       IssuingPhysicalBundleFeaturesSecondLine$unsupported() => unsupported != null ? unsupported() : orElse(value),
       IssuingPhysicalBundleFeaturesSecondLine$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingPhysicalBundleFeaturesSecondLine($value)';
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesSecondLine$optional extends IssuingPhysicalBundleFeaturesSecondLine {const IssuingPhysicalBundleFeaturesSecondLine$optional._();
 
 @override String get value => 'optional';
@@ -221,7 +221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'optional'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesSecondLine$$required extends IssuingPhysicalBundleFeaturesSecondLine {const IssuingPhysicalBundleFeaturesSecondLine$$required._();
 
 @override String get value => 'required';
@@ -230,7 +230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'required'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesSecondLine$unsupported extends IssuingPhysicalBundleFeaturesSecondLine {const IssuingPhysicalBundleFeaturesSecondLine$unsupported._();
 
 @override String get value => 'unsupported';
@@ -239,7 +239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => 'unsupported'.hashCode;
 
- }
+}
 @immutable final class IssuingPhysicalBundleFeaturesSecondLine$Unknown extends IssuingPhysicalBundleFeaturesSecondLine {const IssuingPhysicalBundleFeaturesSecondLine$Unknown(this.value);
 
 @override final String value;
@@ -249,15 +249,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class IssuingPhysicalBundleFeatures {const IssuingPhysicalBundleFeatures({required this.cardLogo, required this.carrierText, required this.secondLine, });
 
-factory IssuingPhysicalBundleFeatures.fromJson(Map<String, dynamic> json) { return IssuingPhysicalBundleFeatures(
+factory IssuingPhysicalBundleFeatures.fromJson(Map<String, dynamic> json) {return IssuingPhysicalBundleFeatures(
   cardLogo: IssuingPhysicalBundleFeaturesCardLogo.fromJson(json['card_logo'] as String),
   carrierText: IssuingPhysicalBundleFeaturesCarrierText.fromJson(json['carrier_text'] as String),
   secondLine: IssuingPhysicalBundleFeaturesSecondLine.fromJson(json['second_line'] as String),
-); }
+);}
 
 /// The policy for how to use card logo images in a card design with this physical bundle.
 final IssuingPhysicalBundleFeaturesCardLogo cardLogo;
@@ -268,19 +268,19 @@ final IssuingPhysicalBundleFeaturesCarrierText carrierText;
 /// The policy for how to use a second line on a card with this physical bundle.
 final IssuingPhysicalBundleFeaturesSecondLine secondLine;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'card_logo': cardLogo.toJson(),
   'carrier_text': carrierText.toJson(),
   'second_line': secondLine.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('card_logo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('card_logo') &&
       json.containsKey('carrier_text') &&
-      json.containsKey('second_line'); } 
-IssuingPhysicalBundleFeatures copyWith({IssuingPhysicalBundleFeaturesCardLogo? cardLogo, IssuingPhysicalBundleFeaturesCarrierText? carrierText, IssuingPhysicalBundleFeaturesSecondLine? secondLine, }) { return IssuingPhysicalBundleFeatures(
+      json.containsKey('second_line');}
+IssuingPhysicalBundleFeatures copyWith({IssuingPhysicalBundleFeaturesCardLogo? cardLogo, IssuingPhysicalBundleFeaturesCarrierText? carrierText, IssuingPhysicalBundleFeaturesSecondLine? secondLine, }) {return IssuingPhysicalBundleFeatures(
   cardLogo: cardLogo ?? this.cardLogo,
   carrierText: carrierText ?? this.carrierText,
   secondLine: secondLine ?? this.secondLine,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingPhysicalBundleFeatures &&
           cardLogo == other.cardLogo &&
@@ -291,4 +291,4 @@ IssuingPhysicalBundleFeatures copyWith({IssuingPhysicalBundleFeaturesCardLogo? c
 
 @override String toString() => 'IssuingPhysicalBundleFeatures(cardLogo: $cardLogo, carrierText: $carrierText, secondLine: $secondLine)';
 
- }
+}

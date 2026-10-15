@@ -8,11 +8,11 @@ const PostTerminalConfigurationsConfigurationRequestVerifoneP400({this.verifoneP
 const PostTerminalConfigurationsConfigurationRequestVerifoneP400._({required this.rawValue, required this.verifoneP400, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTerminalConfigurationsConfigurationRequestVerifoneP400.fromJson(Object? json) { return PostTerminalConfigurationsConfigurationRequestVerifoneP400._(
+factory PostTerminalConfigurationsConfigurationRequestVerifoneP400.fromJson(Object? json) {return PostTerminalConfigurationsConfigurationRequestVerifoneP400._(
   rawValue: Omittable(json),
   verifoneP400: json is Map<String, dynamic> && VerifoneP400.canParse(json) ? parseAnyOfVariant<VerifoneP400>(json, (value) => VerifoneP400.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTerminalConfigurationsConfigurationRequestVerifoneP400(${toJson()})';
 
- }
+}

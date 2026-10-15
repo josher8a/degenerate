@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityDetails {const SecurityDetails({required this.certificateId, required this.certificateTransparencyCompliance, required this.cipher, required this.encryptedClientHello, required this.issuer, required this.keyExchange, required this.keyExchangeGroup, required this.protocol, required this.sanList, required this.serverSignatureAlgorithm, required this.subjectName, required this.validFrom, required this.validTo, });
 
-factory SecurityDetails.fromJson(Map<String, dynamic> json) { return SecurityDetails(
+factory SecurityDetails.fromJson(Map<String, dynamic> json) {return SecurityDetails(
   certificateId: (json['certificateId'] as num).toDouble(),
   certificateTransparencyCompliance: json['certificateTransparencyCompliance'] as String,
   cipher: json['cipher'] as String,
@@ -17,7 +17,7 @@ factory SecurityDetails.fromJson(Map<String, dynamic> json) { return SecurityDet
   subjectName: json['subjectName'] as String,
   validFrom: (json['validFrom'] as num).toDouble(),
   validTo: (json['validTo'] as num).toDouble(),
-); }
+);}
 
 final double certificateId;
 
@@ -45,7 +45,7 @@ final double validFrom;
 
 final double validTo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificateId': certificateId,
   'certificateTransparencyCompliance': certificateTransparencyCompliance,
   'cipher': cipher,
@@ -59,8 +59,8 @@ Map<String, dynamic> toJson() { return {
   'subjectName': subjectName,
   'validFrom': validFrom,
   'validTo': validTo,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificateId') && json['certificateId'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificateId') && json['certificateId'] is num &&
       json.containsKey('certificateTransparencyCompliance') && json['certificateTransparencyCompliance'] is String &&
       json.containsKey('cipher') && json['cipher'] is String &&
       json.containsKey('encryptedClientHello') && json['encryptedClientHello'] is bool &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('serverSignatureAlgorithm') && json['serverSignatureAlgorithm'] is num &&
       json.containsKey('subjectName') && json['subjectName'] is String &&
       json.containsKey('validFrom') && json['validFrom'] is num &&
-      json.containsKey('validTo') && json['validTo'] is num; } 
-SecurityDetails copyWith({double? certificateId, String? certificateTransparencyCompliance, String? cipher, bool? encryptedClientHello, String? issuer, String? keyExchange, String? keyExchangeGroup, String? protocol, List<String>? sanList, double? serverSignatureAlgorithm, String? subjectName, double? validFrom, double? validTo, }) { return SecurityDetails(
+      json.containsKey('validTo') && json['validTo'] is num;}
+SecurityDetails copyWith({double? certificateId, String? certificateTransparencyCompliance, String? cipher, bool? encryptedClientHello, String? issuer, String? keyExchange, String? keyExchangeGroup, String? protocol, List<String>? sanList, double? serverSignatureAlgorithm, String? subjectName, double? validFrom, double? validTo, }) {return SecurityDetails(
   certificateId: certificateId ?? this.certificateId,
   certificateTransparencyCompliance: certificateTransparencyCompliance ?? this.certificateTransparencyCompliance,
   cipher: cipher ?? this.cipher,
@@ -87,7 +87,7 @@ SecurityDetails copyWith({double? certificateId, String? certificateTransparency
   subjectName: subjectName ?? this.subjectName,
   validFrom: validFrom ?? this.validFrom,
   validTo: validTo ?? this.validTo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityDetails &&
           certificateId == other.certificateId &&
@@ -108,4 +108,4 @@ SecurityDetails copyWith({double? certificateId, String? certificateTransparency
 
 @override String toString() => 'SecurityDetails(\n  certificateId: $certificateId,\n  certificateTransparencyCompliance: $certificateTransparencyCompliance,\n  cipher: $cipher,\n  encryptedClientHello: $encryptedClientHello,\n  issuer: $issuer,\n  keyExchange: $keyExchange,\n  keyExchangeGroup: $keyExchangeGroup,\n  protocol: $protocol,\n  sanList: $sanList,\n  serverSignatureAlgorithm: $serverSignatureAlgorithm,\n  subjectName: $subjectName,\n  validFrom: $validFrom,\n  validTo: $validTo,\n)';
 
- }
+}

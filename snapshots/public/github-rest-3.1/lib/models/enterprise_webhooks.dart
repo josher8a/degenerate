@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enterprise on
 /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
 @immutable final class EnterpriseWebhooks {const EnterpriseWebhooks({required this.htmlUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, this.description = const Omittable.absent(), this.websiteUrl = const Omittable.absent(), });
 
-factory EnterpriseWebhooks.fromJson(Map<String, dynamic> json) { return EnterpriseWebhooks(
+factory EnterpriseWebhooks.fromJson(Map<String, dynamic> json) {return EnterpriseWebhooks(
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   htmlUrl: Uri.parse(json['html_url'] as String),
   websiteUrl: json.containsKey('website_url') ? Omittable(json['website_url'] != null ? Uri.parse(json['website_url'] as String) : null) : const Omittable.absent(),
@@ -17,7 +17,7 @@ factory EnterpriseWebhooks.fromJson(Map<String, dynamic> json) { return Enterpri
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   avatarUrl: Uri.parse(json['avatar_url'] as String),
-); }
+);}
 
 /// A short description of the enterprise.
 final Omittable<String?> description;
@@ -44,7 +44,7 @@ final DateTime? updatedAt;
 
 final Uri avatarUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value,
   'html_url': htmlUrl.toString(),
   if (websiteUrl.isPresent) 'website_url': websiteUrl.value?.toString(),
@@ -55,16 +55,16 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt?.toIso8601String(),
   'updated_at': updatedAt?.toIso8601String(),
   'avatar_url': avatarUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_url') && json['html_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
-      json.containsKey('avatar_url') && json['avatar_url'] is String; } 
-EnterpriseWebhooks copyWith({Omittable<String?>? description, Uri? htmlUrl, Omittable<Uri?>? websiteUrl, int? id, String? nodeId, String? name, String? slug, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? avatarUrl, }) { return EnterpriseWebhooks(
+      json.containsKey('avatar_url') && json['avatar_url'] is String;}
+EnterpriseWebhooks copyWith({Omittable<String?>? description, Uri? htmlUrl, Omittable<Uri?>? websiteUrl, int? id, String? nodeId, String? name, String? slug, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? avatarUrl, }) {return EnterpriseWebhooks(
   description: description ?? this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   websiteUrl: websiteUrl ?? this.websiteUrl,
@@ -75,7 +75,7 @@ EnterpriseWebhooks copyWith({Omittable<String?>? description, Uri? htmlUrl, Omit
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   avatarUrl: avatarUrl ?? this.avatarUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EnterpriseWebhooks &&
           description == other.description &&
@@ -93,4 +93,4 @@ EnterpriseWebhooks copyWith({Omittable<String?>? description, Uri? htmlUrl, Omit
 
 @override String toString() => 'EnterpriseWebhooks(\n  description: $description,\n  htmlUrl: $htmlUrl,\n  websiteUrl: $websiteUrl,\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  slug: $slug,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  avatarUrl: $avatarUrl,\n)';
 
- }
+}

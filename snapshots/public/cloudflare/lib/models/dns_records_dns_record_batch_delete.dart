@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';@immutable final class DnsRecordsDnsRecordBatchDelete {const DnsRecordsDnsRecordBatchDelete({required this.id});
 
-factory DnsRecordsDnsRecordBatchDelete.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordBatchDelete(
+factory DnsRecordsDnsRecordBatchDelete.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsRecordBatchDelete(
   id: DnsRecordsIdentifier.fromJson(json['id'] as String),
-); }
+);}
 
 final DnsRecordsIdentifier id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DnsRecordsDnsRecordBatchDelete copyWith({DnsRecordsIdentifier? id}) { return DnsRecordsDnsRecordBatchDelete(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+DnsRecordsDnsRecordBatchDelete copyWith({DnsRecordsIdentifier? id}) {return DnsRecordsDnsRecordBatchDelete(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsRecordBatchDelete &&
           id == other.id;
@@ -24,4 +24,4 @@ DnsRecordsDnsRecordBatchDelete copyWith({DnsRecordsIdentifier? id}) { return Dns
 
 @override String toString() => 'DnsRecordsDnsRecordBatchDelete(id: $id)';
 
- }
+}

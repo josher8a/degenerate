@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mutually exclusive with billing_cycle_anchor and only valid with monthly and yearly price intervals. When provided, the billing_cycle_anchor is set to the next occurrence of the day_of_month at the hour, minute, and second UTC.
 @immutable final class BillingCycleAnchorConfig {const BillingCycleAnchorConfig({required this.dayOfMonth, this.hour, this.minute, this.month, this.second, });
 
-factory BillingCycleAnchorConfig.fromJson(Map<String, dynamic> json) { return BillingCycleAnchorConfig(
+factory BillingCycleAnchorConfig.fromJson(Map<String, dynamic> json) {return BillingCycleAnchorConfig(
   dayOfMonth: (json['day_of_month'] as num).toInt(),
   hour: json['hour'] != null ? (json['hour'] as num).toInt() : null,
   minute: json['minute'] != null ? (json['minute'] as num).toInt() : null,
   month: json['month'] != null ? (json['month'] as num).toInt() : null,
   second: json['second'] != null ? (json['second'] as num).toInt() : null,
-); }
+);}
 
 final int dayOfMonth;
 
@@ -22,21 +22,21 @@ final int? month;
 
 final int? second;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'day_of_month': dayOfMonth,
   'hour': ?hour,
   'minute': ?minute,
   'month': ?month,
   'second': ?second,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('day_of_month') && json['day_of_month'] is num; } 
-BillingCycleAnchorConfig copyWith({int? dayOfMonth, int? Function()? hour, int? Function()? minute, int? Function()? month, int? Function()? second, }) { return BillingCycleAnchorConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('day_of_month') && json['day_of_month'] is num;}
+BillingCycleAnchorConfig copyWith({int? dayOfMonth, int? Function()? hour, int? Function()? minute, int? Function()? month, int? Function()? second, }) {return BillingCycleAnchorConfig(
   dayOfMonth: dayOfMonth ?? this.dayOfMonth,
   hour: hour != null ? hour() : this.hour,
   minute: minute != null ? minute() : this.minute,
   month: month != null ? month() : this.month,
   second: second != null ? second() : this.second,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCycleAnchorConfig &&
           dayOfMonth == other.dayOfMonth &&
@@ -49,4 +49,4 @@ BillingCycleAnchorConfig copyWith({int? dayOfMonth, int? Function()? hour, int? 
 
 @override String toString() => 'BillingCycleAnchorConfig(dayOfMonth: $dayOfMonth, hour: $hour, minute: $minute, month: $month, second: $second)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventTagCreateRequest {const PostEventTagCreateRequest({required this.tags});
 
-factory PostEventTagCreateRequest.fromJson(Map<String, dynamic> json) { return PostEventTagCreateRequest(
+factory PostEventTagCreateRequest.fromJson(Map<String, dynamic> json) {return PostEventTagCreateRequest(
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tags': tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tags'); } 
-PostEventTagCreateRequest copyWith({List<String>? tags}) { return PostEventTagCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tags');}
+PostEventTagCreateRequest copyWith({List<String>? tags}) {return PostEventTagCreateRequest(
   tags: tags ?? this.tags,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventTagCreateRequest &&
           listEquals(tags, other.tags);
@@ -24,4 +24,4 @@ PostEventTagCreateRequest copyWith({List<String>? tags}) { return PostEventTagCr
 
 @override String toString() => 'PostEventTagCreateRequest(tags: $tags)';
 
- }
+}

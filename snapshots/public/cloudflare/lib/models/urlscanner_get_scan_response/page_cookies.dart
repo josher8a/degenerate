@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageCookies {const PageCookies({required this.domain, required this.expires, required this.httpOnly, required this.name, required this.path, required this.sameParty, required this.secure, required this.session, required this.size, required this.sourcePort, required this.sourceScheme, required this.value, this.priority, });
 
-factory PageCookies.fromJson(Map<String, dynamic> json) { return PageCookies(
+factory PageCookies.fromJson(Map<String, dynamic> json) {return PageCookies(
   domain: json['domain'] as String,
   expires: (json['expires'] as num).toDouble(),
   httpOnly: json['httpOnly'] as bool,
@@ -17,7 +17,7 @@ factory PageCookies.fromJson(Map<String, dynamic> json) { return PageCookies(
   sourcePort: (json['sourcePort'] as num).toDouble(),
   sourceScheme: json['sourceScheme'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// Example: `'rkmod.somee.com'`
 final String domain;
@@ -55,7 +55,7 @@ final String sourceScheme;
 /// Example: `'b'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain': domain,
   'expires': expires,
   'httpOnly': httpOnly,
@@ -69,8 +69,8 @@ Map<String, dynamic> toJson() { return {
   'sourcePort': sourcePort,
   'sourceScheme': sourceScheme,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('expires') && json['expires'] is num &&
       json.containsKey('httpOnly') && json['httpOnly'] is bool &&
       json.containsKey('name') && json['name'] is String &&
@@ -81,8 +81,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('domai
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('sourcePort') && json['sourcePort'] is num &&
       json.containsKey('sourceScheme') && json['sourceScheme'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-PageCookies copyWith({String? domain, double? expires, bool? httpOnly, String? name, String? path, String? Function()? priority, bool? sameParty, bool? secure, bool? session, double? size, double? sourcePort, String? sourceScheme, String? value, }) { return PageCookies(
+      json.containsKey('value') && json['value'] is String;}
+PageCookies copyWith({String? domain, double? expires, bool? httpOnly, String? name, String? path, String? Function()? priority, bool? sameParty, bool? secure, bool? session, double? size, double? sourcePort, String? sourceScheme, String? value, }) {return PageCookies(
   domain: domain ?? this.domain,
   expires: expires ?? this.expires,
   httpOnly: httpOnly ?? this.httpOnly,
@@ -96,7 +96,7 @@ PageCookies copyWith({String? domain, double? expires, bool? httpOnly, String? n
   sourcePort: sourcePort ?? this.sourcePort,
   sourceScheme: sourceScheme ?? this.sourceScheme,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PageCookies &&
           domain == other.domain &&
@@ -117,4 +117,4 @@ PageCookies copyWith({String? domain, double? expires, bool? httpOnly, String? n
 
 @override String toString() => 'PageCookies(\n  domain: $domain,\n  expires: $expires,\n  httpOnly: $httpOnly,\n  name: $name,\n  path: $path,\n  priority: $priority,\n  sameParty: $sameParty,\n  secure: $secure,\n  session: $session,\n  size: $size,\n  sourcePort: $sourcePort,\n  sourceScheme: $sourceScheme,\n  value: $value,\n)';
 
- }
+}

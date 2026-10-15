@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TestAsyncHooksResponseArgs {const TestAsyncHooksResponseArgs({required this.asyncParam});
 
-factory TestAsyncHooksResponseArgs.fromJson(Map<String, dynamic> json) { return TestAsyncHooksResponseArgs(
+factory TestAsyncHooksResponseArgs.fromJson(Map<String, dynamic> json) {return TestAsyncHooksResponseArgs(
   asyncParam: json['asyncParam'] as String,
-); }
+);}
 
 /// Example: `'asyncOverriddenParam'`
 final String asyncParam;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asyncParam': asyncParam,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asyncParam') && json['asyncParam'] is String; } 
-TestAsyncHooksResponseArgs copyWith({String? asyncParam}) { return TestAsyncHooksResponseArgs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asyncParam') && json['asyncParam'] is String;}
+TestAsyncHooksResponseArgs copyWith({String? asyncParam}) {return TestAsyncHooksResponseArgs(
   asyncParam: asyncParam ?? this.asyncParam,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TestAsyncHooksResponseArgs &&
           asyncParam == other.asyncParam;
@@ -25,4 +25,4 @@ TestAsyncHooksResponseArgs copyWith({String? asyncParam}) { return TestAsyncHook
 
 @override String toString() => 'TestAsyncHooksResponseArgs(asyncParam: $asyncParam)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/package_version_author.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_updated/registry_package_package_version_docker_metadata.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_updated/webhook_registry_package_updated_registry_package_package_version_package_files.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_updated/webhook_registry_package_updated_registry_package_package_version_release.dart';import 'package:pub_github_rest_3_1/models/webhook_rubygems_metadata.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackagePackageVersion {const WebhookRegistryPackageUpdatedRegistryPackagePackageVersion({required this.author, required this.body, required this.bodyHtml, required this.createdAt, required this.description, required this.htmlUrl, required this.id, required this.installationCommand, required this.metadata, required this.name, required this.packageFiles, required this.packageUrl, required this.summary, required this.targetCommitish, required this.targetOid, required this.updatedAt, required this.version, this.dockerMetadata, this.draft, this.manifest, this.prerelease, this.release, this.rubygemsMetadata, this.tagName, });
 
-factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(
+factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(
   author: PackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>),
   body: json['body'] as String,
   bodyHtml: json['body_html'] as String,
@@ -28,7 +28,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(Map<
   targetOid: json['target_oid'] as String,
   updatedAt: json['updated_at'] as String,
   version: json['version'] as String,
-); }
+);}
 
 final PackageVersionAuthor author;
 
@@ -78,7 +78,7 @@ final String updatedAt;
 
 final String version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author.toJson(),
   'body': body,
   'body_html': bodyHtml,
@@ -103,8 +103,8 @@ Map<String, dynamic> toJson() { return {
   'target_oid': targetOid,
   'updated_at': updatedAt,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('body_html') && json['body_html'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -120,8 +120,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('target_commitish') && json['target_commitish'] is String &&
       json.containsKey('target_oid') && json['target_oid'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
-WebhookRegistryPackageUpdatedRegistryPackagePackageVersion copyWith({PackageVersionAuthor? author, String? body, String? bodyHtml, String? createdAt, String? description, List<RegistryPackagePackageVersionDockerMetadata?>? Function()? dockerMetadata, bool? Function()? draft, String? htmlUrl, int? id, String? installationCommand, String? Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, List<WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool? Function()? prerelease, WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease? Function()? release, List<WebhookRubygemsMetadata>? Function()? rubygemsMetadata, String? summary, String? Function()? tagName, String? targetCommitish, String? targetOid, String? updatedAt, String? version, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(
+      json.containsKey('version') && json['version'] is String;}
+WebhookRegistryPackageUpdatedRegistryPackagePackageVersion copyWith({PackageVersionAuthor? author, String? body, String? bodyHtml, String? createdAt, String? description, List<RegistryPackagePackageVersionDockerMetadata?>? Function()? dockerMetadata, bool? Function()? draft, String? htmlUrl, int? id, String? installationCommand, String? Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, List<WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool? Function()? prerelease, WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease? Function()? release, List<WebhookRubygemsMetadata>? Function()? rubygemsMetadata, String? summary, String? Function()? tagName, String? targetCommitish, String? targetOid, String? updatedAt, String? version, }) {return WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(
   author: author ?? this.author,
   body: body ?? this.body,
   bodyHtml: bodyHtml ?? this.bodyHtml,
@@ -146,7 +146,7 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersion copyWith({PackageVers
   targetOid: targetOid ?? this.targetOid,
   updatedAt: updatedAt ?? this.updatedAt,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackagePackageVersion &&
           author == other.author &&
@@ -178,4 +178,4 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersion copyWith({PackageVers
 
 @override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(\n  author: $author,\n  body: $body,\n  bodyHtml: $bodyHtml,\n  createdAt: $createdAt,\n  description: $description,\n  dockerMetadata: $dockerMetadata,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  installationCommand: $installationCommand,\n  manifest: $manifest,\n  metadata: $metadata,\n  name: $name,\n  packageFiles: $packageFiles,\n  packageUrl: $packageUrl,\n  prerelease: $prerelease,\n  release: $release,\n  rubygemsMetadata: $rubygemsMetadata,\n  summary: $summary,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  targetOid: $targetOid,\n  updatedAt: $updatedAt,\n  version: $version,\n)';
 
- }
+}

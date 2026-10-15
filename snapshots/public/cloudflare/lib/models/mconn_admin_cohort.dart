@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnAdminCohort {const MconnAdminCohort({required this.id, required this.name, this.desiredVersion, });
 
-factory MconnAdminCohort.fromJson(Map<String, dynamic> json) { return MconnAdminCohort(
+factory MconnAdminCohort.fromJson(Map<String, dynamic> json) {return MconnAdminCohort(
   desiredVersion: json['desired_version'] as String?,
   id: MconnUuid.fromJson(json['id'] as String),
   name: json['name'] as String,
-); }
+);}
 
 final String? desiredVersion;
 
@@ -15,18 +15,18 @@ final MconnUuid id;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'desired_version': ?desiredVersion,
   'id': id.toJson(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('name') && json['name'] is String; } 
-MconnAdminCohort copyWith({String? Function()? desiredVersion, MconnUuid? id, String? name, }) { return MconnAdminCohort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('name') && json['name'] is String;}
+MconnAdminCohort copyWith({String? Function()? desiredVersion, MconnUuid? id, String? name, }) {return MconnAdminCohort(
   desiredVersion: desiredVersion != null ? desiredVersion() : this.desiredVersion,
   id: id ?? this.id,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminCohort &&
           desiredVersion == other.desiredVersion &&
@@ -37,4 +37,4 @@ MconnAdminCohort copyWith({String? Function()? desiredVersion, MconnUuid? id, St
 
 @override String toString() => 'MconnAdminCohort(desiredVersion: $desiredVersion, id: $id, name: $name)';
 
- }
+}

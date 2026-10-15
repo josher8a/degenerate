@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GcsSourceResponseSchemaVendor {const GcsSourceResponseSchemaVendor();
 
-factory GcsSourceResponseSchemaVendor.fromJson(String json) { return switch (json) {
+factory GcsSourceResponseSchemaVendor.fromJson(String json) {return switch (json) {
   'gcs' => gcs,
   _ => GcsSourceResponseSchemaVendor$Unknown(json),
-}; }
+};}
 
 static const GcsSourceResponseSchemaVendor gcs = GcsSourceResponseSchemaVendor$gcs._();
 
 static const List<GcsSourceResponseSchemaVendor> values = [gcs];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'gcs' => 'gcs',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GcsSourceResponseSchemaVendor$Unknown; } 
+bool get isUnknown {return this is GcsSourceResponseSchemaVendor$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() gcs, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() gcs, required W Function(String value) $unknown, }) {return switch (this) {
       GcsSourceResponseSchemaVendor$gcs() => gcs(),
       GcsSourceResponseSchemaVendor$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? gcs, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? gcs, W Function(String value)? $unknown, }) {return switch (this) {
       GcsSourceResponseSchemaVendor$gcs() => gcs != null ? gcs() : orElse(value),
       GcsSourceResponseSchemaVendor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GcsSourceResponseSchemaVendor($value)';
 
- }
+}
 @immutable final class GcsSourceResponseSchemaVendor$gcs extends GcsSourceResponseSchemaVendor {const GcsSourceResponseSchemaVendor$gcs._();
 
 @override String get value => 'gcs';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gcs, W F
 
 @override int get hashCode => 'gcs'.hashCode;
 
- }
+}
 @immutable final class GcsSourceResponseSchemaVendor$Unknown extends GcsSourceResponseSchemaVendor {const GcsSourceResponseSchemaVendor$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? gcs, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

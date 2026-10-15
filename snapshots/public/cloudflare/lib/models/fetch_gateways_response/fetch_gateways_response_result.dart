@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fetch_gateways_response/result_servers.dart';@immutable final class FetchGatewaysResponseResult {const FetchGatewaysResponseResult({required this.hostname, required this.id, required this.name, required this.servers, this.createdAt, this.createdBy, this.description, this.modifiedAt, this.modifiedBy, this.secureWebGateway, });
 
-factory FetchGatewaysResponseResult.fromJson(Map<String, dynamic> json) { return FetchGatewaysResponseResult(
+factory FetchGatewaysResponseResult.fromJson(Map<String, dynamic> json) {return FetchGatewaysResponseResult(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
   description: json['description'] as String?,
@@ -14,7 +14,7 @@ factory FetchGatewaysResponseResult.fromJson(Map<String, dynamic> json) { return
   name: json['name'] as String,
   secureWebGateway: json['secure_web_gateway'] as bool?,
   servers: (json['servers'] as List<dynamic>).map((e) => ResultServers.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -45,7 +45,7 @@ final bool? secureWebGateway;
 
 final List<ResultServers> servers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
   'description': ?description,
@@ -56,13 +56,13 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'secure_web_gateway': ?secureWebGateway,
   'servers': servers.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('servers'); } 
+      json.containsKey('servers');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 512) { errors.add('description: length must be <= 512'); }
@@ -72,8 +72,8 @@ if (id.isEmpty) { errors.add('id: length must be >= 1'); }
 if (id.runes.length > 32) { errors.add('id: length must be <= 32'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 if (name.runes.length > 350) { errors.add('name: length must be <= 350'); }
-return errors; } 
-FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, List<ResultServers>? servers, }) { return FetchGatewaysResponseResult(
+return errors;}
+FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, List<ResultServers>? servers, }) {return FetchGatewaysResponseResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   description: description != null ? description() : this.description,
@@ -84,7 +84,7 @@ FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? F
   name: name ?? this.name,
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
   servers: servers ?? this.servers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FetchGatewaysResponseResult &&
           createdAt == other.createdAt &&
@@ -102,4 +102,4 @@ FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? F
 
 @override String toString() => 'FetchGatewaysResponseResult(\n  createdAt: $createdAt,\n  createdBy: $createdBy,\n  description: $description,\n  hostname: $hostname,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  modifiedBy: $modifiedBy,\n  name: $name,\n  secureWebGateway: $secureWebGateway,\n  servers: $servers,\n)';
 
- }
+}

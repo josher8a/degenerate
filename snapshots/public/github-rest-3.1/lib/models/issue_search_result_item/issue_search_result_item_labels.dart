@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssueSearchResultItemLabels {const IssueSearchResultItemLabels({this.id, this.nodeId, this.url, this.name, this.color, this.$default, this.description = const Omittable.absent(), });
 
-factory IssueSearchResultItemLabels.fromJson(Map<String, dynamic> json) { return IssueSearchResultItemLabels(
+factory IssueSearchResultItemLabels.fromJson(Map<String, dynamic> json) {return IssueSearchResultItemLabels(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
   url: json['url'] as String?,
@@ -11,7 +11,7 @@ factory IssueSearchResultItemLabels.fromJson(Map<String, dynamic> json) { return
   color: json['color'] as String?,
   $default: json['default'] as bool?,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final int? id;
 
@@ -27,7 +27,7 @@ final bool? $default;
 
 final Omittable<String?> description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'node_id': ?nodeId,
   'url': ?url,
@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   'color': ?color,
   'default': ?$default,
   if (description.isPresent) 'description': description.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'url', 'name', 'color', 'default', 'description'}.contains(key)); } 
-IssueSearchResultItemLabels copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? url, String? Function()? name, String? Function()? color, bool? Function()? $default, Omittable<String?>? description, }) { return IssueSearchResultItemLabels(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'node_id', 'url', 'name', 'color', 'default', 'description'}.contains(key));}
+IssueSearchResultItemLabels copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? url, String? Function()? name, String? Function()? color, bool? Function()? $default, Omittable<String?>? description, }) {return IssueSearchResultItemLabels(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   url: url != null ? url() : this.url,
@@ -45,7 +45,7 @@ IssueSearchResultItemLabels copyWith({int? Function()? id, String? Function()? n
   color: color != null ? color() : this.color,
   $default: $default != null ? $default() : this.$default,
   description: description ?? this.description,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssueSearchResultItemLabels &&
           id == other.id &&
@@ -60,4 +60,4 @@ IssueSearchResultItemLabels copyWith({int? Function()? id, String? Function()? n
 
 @override String toString() => 'IssueSearchResultItemLabels(id: $id, nodeId: $nodeId, url: $url, name: $name, color: $color, \$default: ${$default}, description: $description)';
 
- }
+}

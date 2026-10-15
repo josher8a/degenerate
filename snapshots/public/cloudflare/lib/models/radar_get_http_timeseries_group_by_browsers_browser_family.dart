@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily {const RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily();
 
-factory RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily.fromJson(String json) {return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
   _ => RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily chrome = RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$chrome._();
 
@@ -22,36 +22,36 @@ static const RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily safari = RadarGe
 static const List<RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily> values = [chrome, edge, firefox, safari];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'CHROME' => 'chrome',
   'EDGE' => 'edge',
   'FIREFOX' => 'firefox',
   'SAFARI' => 'safari',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$chrome() => chrome(),
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$edge() => edge(),
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$firefox() => firefox(),
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$safari() => safari(),
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$chrome() => chrome != null ? chrome() : orElse(value),
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$edge() => edge != null ? edge() : orElse(value),
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$firefox() => firefox != null ? firefox() : orElse(value),
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$safari() => safari != null ? safari() : orElse(value),
       RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily($value)';
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$chrome extends RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily {const RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$chrome._();
 
 @override String get value => 'CHROME';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'CHROME'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$edge extends RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily {const RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$edge._();
 
 @override String get value => 'EDGE';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'EDGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$firefox extends RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily {const RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$firefox._();
 
 @override String get value => 'FIREFOX';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'FIREFOX'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$safari extends RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily {const RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$safari._();
 
 @override String get value => 'SAFARI';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'SAFARI'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown extends RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily {const RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details of Public IP for a GitHub-hosted larger runners
 @immutable final class PublicIp {const PublicIp({this.enabled, this.prefix, this.length, });
 
-factory PublicIp.fromJson(Map<String, dynamic> json) { return PublicIp(
+factory PublicIp.fromJson(Map<String, dynamic> json) {return PublicIp(
   enabled: json['enabled'] as bool?,
   prefix: json['prefix'] as String?,
   length: json['length'] != null ? (json['length'] as num).toInt() : null,
-); }
+);}
 
 /// Whether public IP is enabled.
 final bool? enabled;
@@ -19,17 +19,17 @@ final String? prefix;
 /// The length of the IP prefix.
 final int? length;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'prefix': ?prefix,
   'length': ?length,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'prefix', 'length'}.contains(key)); } 
-PublicIp copyWith({bool? Function()? enabled, String? Function()? prefix, int? Function()? length, }) { return PublicIp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'prefix', 'length'}.contains(key));}
+PublicIp copyWith({bool? Function()? enabled, String? Function()? prefix, int? Function()? length, }) {return PublicIp(
   enabled: enabled != null ? enabled() : this.enabled,
   prefix: prefix != null ? prefix() : this.prefix,
   length: length != null ? length() : this.length,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PublicIp &&
           enabled == other.enabled &&
@@ -40,4 +40,4 @@ PublicIp copyWith({bool? Function()? enabled, String? Function()? prefix, int? F
 
 @override String toString() => 'PublicIp(enabled: $enabled, prefix: $prefix, length: $length)';
 
- }
+}

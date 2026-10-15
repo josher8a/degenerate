@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/noise_reduction.dart';import 'package:pub_openai/models/realtime_turn_detection.dart';@immutable final class RealtimeSessionCreateRequestGaAudioInput {const RealtimeSessionCreateRequestGaAudioInput({this.format, this.transcription, this.noiseReduction, this.turnDetection = const Omittable.absent(), });
 
-factory RealtimeSessionCreateRequestGaAudioInput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGaAudioInput(
+factory RealtimeSessionCreateRequestGaAudioInput.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequestGaAudioInput(
   format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   transcription: json['transcription'] != null ? AudioTranscription.fromJson(json['transcription'] as Map<String, dynamic>) : null,
   noiseReduction: json['noise_reduction'] != null ? NoiseReduction.fromJson(json['noise_reduction'] as Map<String, dynamic>) : null,
   turnDetection: json.containsKey('turn_detection') ? Omittable(json['turn_detection'] != null ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The format of the input audio.
 final RealtimeAudioFormats? format;
@@ -25,19 +25,19 @@ final NoiseReduction? noiseReduction;
 
 final Omittable<RealtimeTurnDetection?> turnDetection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (transcription != null) 'transcription': transcription?.toJson(),
   if (noiseReduction != null) 'noise_reduction': noiseReduction?.toJson(),
   if (turnDetection.isPresent) 'turn_detection': turnDetection.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'transcription', 'noise_reduction', 'turn_detection'}.contains(key)); } 
-RealtimeSessionCreateRequestGaAudioInput copyWith({RealtimeAudioFormats? Function()? format, AudioTranscription? Function()? transcription, NoiseReduction? Function()? noiseReduction, Omittable<RealtimeTurnDetection?>? turnDetection, }) { return RealtimeSessionCreateRequestGaAudioInput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'transcription', 'noise_reduction', 'turn_detection'}.contains(key));}
+RealtimeSessionCreateRequestGaAudioInput copyWith({RealtimeAudioFormats? Function()? format, AudioTranscription? Function()? transcription, NoiseReduction? Function()? noiseReduction, Omittable<RealtimeTurnDetection?>? turnDetection, }) {return RealtimeSessionCreateRequestGaAudioInput(
   format: format != null ? format() : this.format,
   transcription: transcription != null ? transcription() : this.transcription,
   noiseReduction: noiseReduction != null ? noiseReduction() : this.noiseReduction,
   turnDetection: turnDetection ?? this.turnDetection,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateRequestGaAudioInput &&
           format == other.format &&
@@ -49,4 +49,4 @@ RealtimeSessionCreateRequestGaAudioInput copyWith({RealtimeAudioFormats? Functio
 
 @override String toString() => 'RealtimeSessionCreateRequestGaAudioInput(format: $format, transcription: $transcription, noiseReduction: $noiseReduction, turnDetection: $turnDetection)';
 
- }
+}

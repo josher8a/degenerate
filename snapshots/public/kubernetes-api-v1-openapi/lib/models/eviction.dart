@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/delete_options.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// Eviction evicts a pod from its node subject to certain policies and safety constraints. This is a subresource of Pod.  A request to cause such an eviction is created by POSTing to .../pods/`<pod name>`/evictions.
 @immutable final class Eviction {const Eviction({this.apiVersion, this.deleteOptions, this.kind, this.metadata, });
 
-factory Eviction.fromJson(Map<String, dynamic> json) { return Eviction(
+factory Eviction.fromJson(Map<String, dynamic> json) {return Eviction(
   apiVersion: json['apiVersion'] as String?,
   deleteOptions: json['deleteOptions'] != null ? DeleteOptions.fromJson(json['deleteOptions'] as Map<String, dynamic>) : null,
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -23,19 +23,19 @@ final String? kind;
 /// ObjectMeta describes the pod that is being evicted.
 final ObjectMeta? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   if (deleteOptions != null) 'deleteOptions': deleteOptions?.toJson(),
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'deleteOptions', 'kind', 'metadata'}.contains(key)); } 
-Eviction copyWith({String? Function()? apiVersion, DeleteOptions? Function()? deleteOptions, String? Function()? kind, ObjectMeta? Function()? metadata, }) { return Eviction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'deleteOptions', 'kind', 'metadata'}.contains(key));}
+Eviction copyWith({String? Function()? apiVersion, DeleteOptions? Function()? deleteOptions, String? Function()? kind, ObjectMeta? Function()? metadata, }) {return Eviction(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   deleteOptions: deleteOptions != null ? deleteOptions() : this.deleteOptions,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Eviction &&
           apiVersion == other.apiVersion &&
@@ -47,4 +47,4 @@ Eviction copyWith({String? Function()? apiVersion, DeleteOptions? Function()? de
 
 @override String toString() => 'Eviction(apiVersion: $apiVersion, deleteOptions: $deleteOptions, kind: $kind, metadata: $metadata)';
 
- }
+}

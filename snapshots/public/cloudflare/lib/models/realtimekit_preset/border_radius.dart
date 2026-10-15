@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class BorderRadius {const BorderRadius();
 
-factory BorderRadius.fromJson(String json) { return switch (json) {
+factory BorderRadius.fromJson(String json) {return switch (json) {
   'rounded' => rounded,
   _ => BorderRadius$Unknown(json),
-}; }
+};}
 
 static const BorderRadius rounded = BorderRadius$rounded._();
 
 static const List<BorderRadius> values = [rounded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'rounded' => 'rounded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BorderRadius$Unknown; } 
+bool get isUnknown {return this is BorderRadius$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() rounded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() rounded, required W Function(String value) $unknown, }) {return switch (this) {
       BorderRadius$rounded() => rounded(),
       BorderRadius$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? rounded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rounded, W Function(String value)? $unknown, }) {return switch (this) {
       BorderRadius$rounded() => rounded != null ? rounded() : orElse(value),
       BorderRadius$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BorderRadius($value)';
 
- }
+}
 @immutable final class BorderRadius$rounded extends BorderRadius {const BorderRadius$rounded._();
 
 @override String get value => 'rounded';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rounded,
 
 @override int get hashCode => 'rounded'.hashCode;
 
- }
+}
 @immutable final class BorderRadius$Unknown extends BorderRadius {const BorderRadius$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rounded,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

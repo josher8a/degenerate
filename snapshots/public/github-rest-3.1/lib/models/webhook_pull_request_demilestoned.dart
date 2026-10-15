@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_demilestoned/webhook_issues_demilestoned_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5.dart';@immutable final class WebhookPullRequestDemilestoned {const WebhookPullRequestDemilestoned({required this.action, required this.number, required this.pullRequest, required this.repository, this.enterprise, this.milestone, this.organization, this.sender, });
 
-factory WebhookPullRequestDemilestoned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestDemilestoned(
+factory WebhookPullRequestDemilestoned.fromJson(Map<String, dynamic> json) {return WebhookPullRequestDemilestoned(
   action: WebhookIssuesDemilestonedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   milestone: json['milestone'] != null ? Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookPullRequestDemilestoned.fromJson(Map<String, dynamic> json) { ret
   pullRequest: WebhooksPullRequest5.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookIssuesDemilestonedAction action;
 
@@ -31,7 +31,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (milestone != null) 'milestone': milestone?.toJson(),
@@ -40,12 +40,12 @@ Map<String, dynamic> toJson() { return {
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
-      json.containsKey('repository'); } 
-WebhookPullRequestDemilestoned copyWith({WebhookIssuesDemilestonedAction? action, EnterpriseWebhooks? Function()? enterprise, Milestone? Function()? milestone, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhooksPullRequest5? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookPullRequestDemilestoned(
+      json.containsKey('repository');}
+WebhookPullRequestDemilestoned copyWith({WebhookIssuesDemilestonedAction? action, EnterpriseWebhooks? Function()? enterprise, Milestone? Function()? milestone, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhooksPullRequest5? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookPullRequestDemilestoned(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   milestone: milestone != null ? milestone() : this.milestone,
@@ -54,7 +54,7 @@ WebhookPullRequestDemilestoned copyWith({WebhookIssuesDemilestonedAction? action
   pullRequest: pullRequest ?? this.pullRequest,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestDemilestoned &&
           action == other.action &&
@@ -70,4 +70,4 @@ WebhookPullRequestDemilestoned copyWith({WebhookIssuesDemilestonedAction? action
 
 @override String toString() => 'WebhookPullRequestDemilestoned(action: $action, enterprise: $enterprise, milestone: $milestone, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
 
- }
+}

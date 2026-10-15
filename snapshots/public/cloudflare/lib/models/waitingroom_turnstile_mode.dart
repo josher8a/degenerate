@@ -9,13 +9,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which Turnstile 
 /// 
 sealed class WaitingroomTurnstileMode {const WaitingroomTurnstileMode();
 
-factory WaitingroomTurnstileMode.fromJson(String json) { return switch (json) {
+factory WaitingroomTurnstileMode.fromJson(String json) {return switch (json) {
   'off' => off,
   'invisible' => invisible,
   'visible_non_interactive' => visibleNonInteractive,
   'visible_managed' => visibleManaged,
   _ => WaitingroomTurnstileMode$Unknown(json),
-}; }
+};}
 
 static const WaitingroomTurnstileMode off = WaitingroomTurnstileMode$off._();
 
@@ -28,36 +28,36 @@ static const WaitingroomTurnstileMode visibleManaged = WaitingroomTurnstileMode$
 static const List<WaitingroomTurnstileMode> values = [off, invisible, visibleNonInteractive, visibleManaged];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'invisible' => 'invisible',
   'visible_non_interactive' => 'visibleNonInteractive',
   'visible_managed' => 'visibleManaged',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WaitingroomTurnstileMode$Unknown; } 
+bool get isUnknown {return this is WaitingroomTurnstileMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() invisible, required W Function() visibleNonInteractive, required W Function() visibleManaged, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() invisible, required W Function() visibleNonInteractive, required W Function() visibleManaged, required W Function(String value) $unknown, }) {return switch (this) {
       WaitingroomTurnstileMode$off() => off(),
       WaitingroomTurnstileMode$invisible() => invisible(),
       WaitingroomTurnstileMode$visibleNonInteractive() => visibleNonInteractive(),
       WaitingroomTurnstileMode$visibleManaged() => visibleManaged(),
       WaitingroomTurnstileMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? invisible, W Function()? visibleNonInteractive, W Function()? visibleManaged, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? invisible, W Function()? visibleNonInteractive, W Function()? visibleManaged, W Function(String value)? $unknown, }) {return switch (this) {
       WaitingroomTurnstileMode$off() => off != null ? off() : orElse(value),
       WaitingroomTurnstileMode$invisible() => invisible != null ? invisible() : orElse(value),
       WaitingroomTurnstileMode$visibleNonInteractive() => visibleNonInteractive != null ? visibleNonInteractive() : orElse(value),
       WaitingroomTurnstileMode$visibleManaged() => visibleManaged != null ? visibleManaged() : orElse(value),
       WaitingroomTurnstileMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WaitingroomTurnstileMode($value)';
 
- }
+}
 @immutable final class WaitingroomTurnstileMode$off extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$off._();
 
 @override String get value => 'off';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class WaitingroomTurnstileMode$invisible extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$invisible._();
 
 @override String get value => 'invisible';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'invisible'.hashCode;
 
- }
+}
 @immutable final class WaitingroomTurnstileMode$visibleNonInteractive extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$visibleNonInteractive._();
 
 @override String get value => 'visible_non_interactive';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'visible_non_interactive'.hashCode;
 
- }
+}
 @immutable final class WaitingroomTurnstileMode$visibleManaged extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$visibleManaged._();
 
 @override String get value => 'visible_managed';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'visible_managed'.hashCode;
 
- }
+}
 @immutable final class WaitingroomTurnstileMode$Unknown extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$Unknown(this.value);
 
 @override final String value;
@@ -103,4 +103,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -10,7 +10,7 @@ final class TelemetryApi with ApiExecutor {const TelemetryApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /anything/telemetry/user-agent`
-Future<ApiResult<TelemetryUserAgentGetResponse, Never>> telemetryUserAgentGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TelemetryUserAgentGetResponse, Never>> telemetryUserAgentGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,9 +25,9 @@ return await execute(
     return TelemetryUserAgentGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/telemetry/speakeasy-user-agent`
-Future<ApiResult<TelemetrySpeakeasyUserAgentGetResponse, Never>> telemetrySpeakeasyUserAgentGet({required String userAgent, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TelemetrySpeakeasyUserAgentGetResponse, Never>> telemetrySpeakeasyUserAgentGet({required String userAgent, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['User-Agent'] = userAgent;
 
 final request = ApiRequest(
@@ -43,5 +43,5 @@ return await execute(
     return TelemetrySpeakeasyUserAgentGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

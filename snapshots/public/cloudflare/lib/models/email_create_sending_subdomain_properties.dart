@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailCreateSendingSubdomainProperties {const EmailCreateSendingSubdomainProperties({required this.name});
 
-factory EmailCreateSendingSubdomainProperties.fromJson(Map<String, dynamic> json) { return EmailCreateSendingSubdomainProperties(
+factory EmailCreateSendingSubdomainProperties.fromJson(Map<String, dynamic> json) {return EmailCreateSendingSubdomainProperties(
   name: json['name'] as String,
-); }
+);}
 
 /// The subdomain name. Must be within the zone.
 /// 
 /// Example: `'sub.example.com'`
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-EmailCreateSendingSubdomainProperties copyWith({String? name}) { return EmailCreateSendingSubdomainProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+EmailCreateSendingSubdomainProperties copyWith({String? name}) {return EmailCreateSendingSubdomainProperties(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailCreateSendingSubdomainProperties &&
           name == other.name;
@@ -27,4 +27,4 @@ EmailCreateSendingSubdomainProperties copyWith({String? name}) { return EmailCre
 
 @override String toString() => 'EmailCreateSendingSubdomainProperties(name: $name)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ca.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_mtls_management_components_schemas_uploaded_on.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificates.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_expires_on.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_issuer.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_name.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_serial_number.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_signature.dart';@immutable final class TlsCertificatesAndHostnamesComponentsSchemasCertificateObject {const TlsCertificatesAndHostnamesComponentsSchemasCertificateObject({this.ca, this.certificates, this.expiresOn, this.id, this.issuer, this.name, this.serialNumber, this.signature, this.uploadedOn, });
 
-factory TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(
+factory TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(
   ca: json['ca'] != null ? TlsCertificatesAndHostnamesCa.fromJson(json['ca'] as bool) : null,
   certificates: json['certificates'] != null ? TlsCertificatesAndHostnamesSchemasCertificates.fromJson(json['certificates'] as String) : null,
   expiresOn: json['expires_on'] != null ? TlsCertificatesAndHostnamesSchemasExpiresOn.fromJson(json['expires_on'] as String) : null,
@@ -13,7 +13,7 @@ factory TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(M
   serialNumber: json['serial_number'] != null ? TlsCertificatesAndHostnamesSchemasSerialNumber.fromJson(json['serial_number'] as String) : null,
   signature: json['signature'] != null ? TlsCertificatesAndHostnamesSignature.fromJson(json['signature'] as String) : null,
   uploadedOn: json['uploaded_on'] != null ? TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn.fromJson(json['uploaded_on'] as String) : null,
-); }
+);}
 
 /// Indicates whether the certificate is a CA or leaf certificate.
 final TlsCertificatesAndHostnamesCa? ca;
@@ -34,7 +34,7 @@ final TlsCertificatesAndHostnamesSignature? signature;
 
 final TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? uploadedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ca != null) 'ca': ca?.toJson(),
   if (certificates != null) 'certificates': certificates?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
@@ -44,9 +44,9 @@ Map<String, dynamic> toJson() { return {
   if (serialNumber != null) 'serial_number': serialNumber?.toJson(),
   if (signature != null) 'signature': signature?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ca', 'certificates', 'expires_on', 'id', 'issuer', 'name', 'serial_number', 'signature', 'uploaded_on'}.contains(key)); } 
-TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCertificatesAndHostnamesCa? Function()? ca, TlsCertificatesAndHostnamesSchemasCertificates? Function()? certificates, TlsCertificatesAndHostnamesSchemasExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesSchemasIssuer? Function()? issuer, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesSchemasSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? Function()? uploadedOn, }) { return TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ca', 'certificates', 'expires_on', 'id', 'issuer', 'name', 'serial_number', 'signature', 'uploaded_on'}.contains(key));}
+TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCertificatesAndHostnamesCa? Function()? ca, TlsCertificatesAndHostnamesSchemasCertificates? Function()? certificates, TlsCertificatesAndHostnamesSchemasExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesSchemasIssuer? Function()? issuer, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesSchemasSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? Function()? uploadedOn, }) {return TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(
   ca: ca != null ? ca() : this.ca,
   certificates: certificates != null ? certificates() : this.certificates,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
@@ -56,7 +56,7 @@ TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCerti
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
   signature: signature != null ? signature() : this.signature,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesComponentsSchemasCertificateObject &&
           ca == other.ca &&
@@ -73,4 +73,4 @@ TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCerti
 
 @override String toString() => 'TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(\n  ca: $ca,\n  certificates: $certificates,\n  expiresOn: $expiresOn,\n  id: $id,\n  issuer: $issuer,\n  name: $name,\n  serialNumber: $serialNumber,\n  signature: $signature,\n  uploadedOn: $uploadedOn,\n)';
 
- }
+}

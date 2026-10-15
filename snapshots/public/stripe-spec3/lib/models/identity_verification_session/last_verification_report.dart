@@ -8,11 +8,11 @@ const LastVerificationReport({this.string = const Omittable.absent(), this.ident
 const LastVerificationReport._({required this.rawValue, required this.string, required this.identityVerificationReport, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory LastVerificationReport.fromJson(Object? json) { return LastVerificationReport._(
+factory LastVerificationReport.fromJson(Object? json) {return LastVerificationReport._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   identityVerificationReport: json is Map<String, dynamic> && IdentityVerificationReport.canParse(json) ? parseAnyOfVariant<IdentityVerificationReport>(json, (value) => IdentityVerificationReport.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'LastVerificationReport(${toJson()})';
 
- }
+}

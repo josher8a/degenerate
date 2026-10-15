@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_authenticated_user_request/migrations_start_for_authenticated_user_request_exclude.dart';@immutable final class MigrationsStartForAuthenticatedUserRequest {const MigrationsStartForAuthenticatedUserRequest({required this.repositories, this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly, this.exclude, });
 
-factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return MigrationsStartForAuthenticatedUserRequest(
+factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return MigrationsStartForAuthenticatedUserRequest(
   lockRepositories: json['lock_repositories'] as bool?,
   excludeMetadata: json['exclude_metadata'] as bool?,
   excludeGitData: json['exclude_git_data'] as bool?,
@@ -13,7 +13,7 @@ factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic>
   orgMetadataOnly: json['org_metadata_only'] as bool?,
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => MigrationsStartForAuthenticatedUserRequestExclude.fromJson(e as String)).toList(),
   repositories: (json['repositories'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Lock the repositories being migrated at the start of the migration
 final bool? lockRepositories;
@@ -44,7 +44,7 @@ final List<String> repositories;
 /// The value of `orgMetadataOnly`, or its schema default when absent.
 bool get orgMetadataOnlyOrDefault => orgMetadataOnly ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'lock_repositories': ?lockRepositories,
   'exclude_metadata': ?excludeMetadata,
   'exclude_git_data': ?excludeGitData,
@@ -54,9 +54,9 @@ Map<String, dynamic> toJson() { return {
   'org_metadata_only': ?orgMetadataOnly,
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   'repositories': repositories,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('repositories'); } 
-MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepositories, bool? Function()? excludeMetadata, bool? Function()? excludeGitData, bool? Function()? excludeAttachments, bool? Function()? excludeReleases, bool? Function()? excludeOwnerProjects, bool? Function()? orgMetadataOnly, List<MigrationsStartForAuthenticatedUserRequestExclude>? Function()? exclude, List<String>? repositories, }) { return MigrationsStartForAuthenticatedUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('repositories');}
+MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepositories, bool? Function()? excludeMetadata, bool? Function()? excludeGitData, bool? Function()? excludeAttachments, bool? Function()? excludeReleases, bool? Function()? excludeOwnerProjects, bool? Function()? orgMetadataOnly, List<MigrationsStartForAuthenticatedUserRequestExclude>? Function()? exclude, List<String>? repositories, }) {return MigrationsStartForAuthenticatedUserRequest(
   lockRepositories: lockRepositories != null ? lockRepositories() : this.lockRepositories,
   excludeMetadata: excludeMetadata != null ? excludeMetadata() : this.excludeMetadata,
   excludeGitData: excludeGitData != null ? excludeGitData() : this.excludeGitData,
@@ -66,7 +66,7 @@ MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepos
   orgMetadataOnly: orgMetadataOnly != null ? orgMetadataOnly() : this.orgMetadataOnly,
   exclude: exclude != null ? exclude() : this.exclude,
   repositories: repositories ?? this.repositories,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MigrationsStartForAuthenticatedUserRequest &&
           lockRepositories == other.lockRepositories &&
@@ -83,4 +83,4 @@ MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepos
 
 @override String toString() => 'MigrationsStartForAuthenticatedUserRequest(\n  lockRepositories: $lockRepositories,\n  excludeMetadata: $excludeMetadata,\n  excludeGitData: $excludeGitData,\n  excludeAttachments: $excludeAttachments,\n  excludeReleases: $excludeReleases,\n  excludeOwnerProjects: $excludeOwnerProjects,\n  orgMetadataOnly: $orgMetadataOnly,\n  exclude: $exclude,\n  repositories: $repositories,\n)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Disk
 @immutable final class MconnSnapshotDisk {const MconnSnapshotDisk({required this.inProgress, required this.major, required this.merged, required this.minor, required this.name, required this.reads, required this.sectorsRead, required this.sectorsWritten, required this.timeInProgressMs, required this.timeReadingMs, required this.timeWritingMs, required this.weightedTimeInProgressMs, required this.writes, required this.writesMerged, this.connectorId, this.discards, this.discardsMerged, this.flushes, this.sectorsDiscarded, this.timeDiscardingMs, this.timeFlushingMs, });
 
-factory MconnSnapshotDisk.fromJson(Map<String, dynamic> json) { return MconnSnapshotDisk(
+factory MconnSnapshotDisk.fromJson(Map<String, dynamic> json) {return MconnSnapshotDisk(
   connectorId: json['connector_id'] as String?,
   discards: json['discards'] != null ? (json['discards'] as num).toDouble() : null,
   discardsMerged: json['discards_merged'] != null ? (json['discards_merged'] as num).toDouble() : null,
@@ -26,7 +26,7 @@ factory MconnSnapshotDisk.fromJson(Map<String, dynamic> json) { return MconnSnap
   weightedTimeInProgressMs: (json['weighted_time_in_progress_ms'] as num).toDouble(),
   writes: (json['writes'] as num).toDouble(),
   writesMerged: (json['writes_merged'] as num).toDouble(),
-); }
+);}
 
 /// Connector identifier
 final String? connectorId;
@@ -91,7 +91,7 @@ final double writes;
 /// Writes merged
 final double writesMerged;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connector_id': ?connectorId,
   'discards': ?discards,
   'discards_merged': ?discardsMerged,
@@ -113,8 +113,8 @@ Map<String, dynamic> toJson() { return {
   'weighted_time_in_progress_ms': weightedTimeInProgressMs,
   'writes': writes,
   'writes_merged': writesMerged,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('in_progress') && json['in_progress'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('in_progress') && json['in_progress'] is num &&
       json.containsKey('major') && json['major'] is num &&
       json.containsKey('merged') && json['merged'] is num &&
       json.containsKey('minor') && json['minor'] is num &&
@@ -127,8 +127,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('in_pr
       json.containsKey('time_writing_ms') && json['time_writing_ms'] is num &&
       json.containsKey('weighted_time_in_progress_ms') && json['weighted_time_in_progress_ms'] is num &&
       json.containsKey('writes') && json['writes'] is num &&
-      json.containsKey('writes_merged') && json['writes_merged'] is num; } 
-MconnSnapshotDisk copyWith({String? Function()? connectorId, double? Function()? discards, double? Function()? discardsMerged, double? Function()? flushes, double? inProgress, double? major, double? merged, double? minor, String? name, double? reads, double? Function()? sectorsDiscarded, double? sectorsRead, double? sectorsWritten, double? Function()? timeDiscardingMs, double? Function()? timeFlushingMs, double? timeInProgressMs, double? timeReadingMs, double? timeWritingMs, double? weightedTimeInProgressMs, double? writes, double? writesMerged, }) { return MconnSnapshotDisk(
+      json.containsKey('writes_merged') && json['writes_merged'] is num;}
+MconnSnapshotDisk copyWith({String? Function()? connectorId, double? Function()? discards, double? Function()? discardsMerged, double? Function()? flushes, double? inProgress, double? major, double? merged, double? minor, String? name, double? reads, double? Function()? sectorsDiscarded, double? sectorsRead, double? sectorsWritten, double? Function()? timeDiscardingMs, double? Function()? timeFlushingMs, double? timeInProgressMs, double? timeReadingMs, double? timeWritingMs, double? weightedTimeInProgressMs, double? writes, double? writesMerged, }) {return MconnSnapshotDisk(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   discards: discards != null ? discards() : this.discards,
   discardsMerged: discardsMerged != null ? discardsMerged() : this.discardsMerged,
@@ -150,7 +150,7 @@ MconnSnapshotDisk copyWith({String? Function()? connectorId, double? Function()?
   weightedTimeInProgressMs: weightedTimeInProgressMs ?? this.weightedTimeInProgressMs,
   writes: writes ?? this.writes,
   writesMerged: writesMerged ?? this.writesMerged,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotDisk &&
           connectorId == other.connectorId &&
@@ -179,4 +179,4 @@ MconnSnapshotDisk copyWith({String? Function()? connectorId, double? Function()?
 
 @override String toString() => 'MconnSnapshotDisk(\n  connectorId: $connectorId,\n  discards: $discards,\n  discardsMerged: $discardsMerged,\n  flushes: $flushes,\n  inProgress: $inProgress,\n  major: $major,\n  merged: $merged,\n  minor: $minor,\n  name: $name,\n  reads: $reads,\n  sectorsDiscarded: $sectorsDiscarded,\n  sectorsRead: $sectorsRead,\n  sectorsWritten: $sectorsWritten,\n  timeDiscardingMs: $timeDiscardingMs,\n  timeFlushingMs: $timeFlushingMs,\n  timeInProgressMs: $timeInProgressMs,\n  timeReadingMs: $timeReadingMs,\n  timeWritingMs: $timeWritingMs,\n  weightedTimeInProgressMs: $weightedTimeInProgressMs,\n  writes: $writes,\n  writesMerged: $writesMerged,\n)';
 
- }
+}

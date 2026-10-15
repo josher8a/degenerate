@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_connector_identity.dart';import 'package:pub_cloudflare/models/mconn_controller_device_identity.dart';@immutable final class MconnControllerAttestationSession {const MconnControllerAttestationSession({required this.akPublic, required this.device, required this.nonce, this.connector, });
 
-factory MconnControllerAttestationSession.fromJson(Map<String, dynamic> json) { return MconnControllerAttestationSession(
+factory MconnControllerAttestationSession.fromJson(Map<String, dynamic> json) {return MconnControllerAttestationSession(
   akPublic: json['ak_public'] as String,
   connector: json['connector'] != null ? MconnControllerConnectorIdentity.fromJson(json['connector'] as Map<String, dynamic>) : null,
   device: MconnControllerDeviceIdentity.fromJson(json['device'] as Map<String, dynamic>),
   nonce: json['nonce'] as String,
-); }
+);}
 
 final String akPublic;
 
@@ -18,21 +18,21 @@ final MconnControllerDeviceIdentity device;
 
 final String nonce;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ak_public': akPublic,
   if (connector != null) 'connector': connector?.toJson(),
   'device': device.toJson(),
   'nonce': nonce,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ak_public') && json['ak_public'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ak_public') && json['ak_public'] is String &&
       json.containsKey('device') &&
-      json.containsKey('nonce') && json['nonce'] is String; } 
-MconnControllerAttestationSession copyWith({String? akPublic, MconnControllerConnectorIdentity? Function()? connector, MconnControllerDeviceIdentity? device, String? nonce, }) { return MconnControllerAttestationSession(
+      json.containsKey('nonce') && json['nonce'] is String;}
+MconnControllerAttestationSession copyWith({String? akPublic, MconnControllerConnectorIdentity? Function()? connector, MconnControllerDeviceIdentity? device, String? nonce, }) {return MconnControllerAttestationSession(
   akPublic: akPublic ?? this.akPublic,
   connector: connector != null ? connector() : this.connector,
   device: device ?? this.device,
   nonce: nonce ?? this.nonce,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerAttestationSession &&
           akPublic == other.akPublic &&
@@ -44,4 +44,4 @@ MconnControllerAttestationSession copyWith({String? akPublic, MconnControllerCon
 
 @override String toString() => 'MconnControllerAttestationSession(akPublic: $akPublic, connector: $connector, device: $device, nonce: $nonce)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetFilesFileRequest {const GetFilesFileRequest();
 
-factory GetFilesFileRequest.fromJson(Map<String, dynamic> _) { return const GetFilesFileRequest(); }
+factory GetFilesFileRequest.fromJson(Map<String, dynamic> _) {return const GetFilesFileRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetFilesFileRequest copyWith() { return const GetFilesFileRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetFilesFileRequest copyWith() {return const GetFilesFileRequest(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is GetFilesFileRequest;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'GetFilesFileRequest()';
 
- }
+}

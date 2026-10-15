@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Subdomain settings for the Worker.
 @immutable final class Subdomain {const Subdomain({this.enabled, this.previewsEnabled, });
 
-factory Subdomain.fromJson(Map<String, dynamic> json) { return Subdomain(
+factory Subdomain.fromJson(Map<String, dynamic> json) {return Subdomain(
   enabled: json['enabled'] as bool?,
   previewsEnabled: json['previews_enabled'] as bool?,
-); }
+);}
 
 /// Whether the *.workers.dev subdomain is enabled for the Worker.
 final bool? enabled;
@@ -18,15 +18,15 @@ final bool? previewsEnabled;
 /// The value of `enabled`, or its schema default when absent.
 bool get enabledOrDefault => enabled ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'previews_enabled': ?previewsEnabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'previews_enabled'}.contains(key)); } 
-Subdomain copyWith({bool? Function()? enabled, bool? Function()? previewsEnabled, }) { return Subdomain(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'previews_enabled'}.contains(key));}
+Subdomain copyWith({bool? Function()? enabled, bool? Function()? previewsEnabled, }) {return Subdomain(
   enabled: enabled != null ? enabled() : this.enabled,
   previewsEnabled: previewsEnabled != null ? previewsEnabled() : this.previewsEnabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Subdomain &&
           enabled == other.enabled &&
@@ -36,4 +36,4 @@ Subdomain copyWith({bool? Function()? enabled, bool? Function()? previewsEnabled
 
 @override String toString() => 'Subdomain(enabled: $enabled, previewsEnabled: $previewsEnabled)';
 
- }
+}

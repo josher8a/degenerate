@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/port_status.dart';/// LoadBalancerIngress represents the status of a load-balancer ingress point: traffic intended for the service should be sent to an ingress point.
 @immutable final class LoadBalancerIngress {const LoadBalancerIngress({this.hostname, this.ip, this.ipMode, this.ports, });
 
-factory LoadBalancerIngress.fromJson(Map<String, dynamic> json) { return LoadBalancerIngress(
+factory LoadBalancerIngress.fromJson(Map<String, dynamic> json) {return LoadBalancerIngress(
   hostname: json['hostname'] as String?,
   ip: json['ip'] as String?,
   ipMode: json['ipMode'] as String?,
   ports: (json['ports'] as List<dynamic>?)?.map((e) => PortStatus.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Hostname is set for load-balancer ingress points that are DNS based (typically AWS load-balancers)
 final String? hostname;
@@ -23,19 +23,19 @@ final String? ipMode;
 /// Ports is a list of records of service ports If used, every port defined in the service should have an entry in it
 final List<PortStatus>? ports;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostname': ?hostname,
   'ip': ?ip,
   'ipMode': ?ipMode,
   if (ports != null) 'ports': ports?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hostname', 'ip', 'ipMode', 'ports'}.contains(key)); } 
-LoadBalancerIngress copyWith({String? Function()? hostname, String? Function()? ip, String? Function()? ipMode, List<PortStatus>? Function()? ports, }) { return LoadBalancerIngress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hostname', 'ip', 'ipMode', 'ports'}.contains(key));}
+LoadBalancerIngress copyWith({String? Function()? hostname, String? Function()? ip, String? Function()? ipMode, List<PortStatus>? Function()? ports, }) {return LoadBalancerIngress(
   hostname: hostname != null ? hostname() : this.hostname,
   ip: ip != null ? ip() : this.ip,
   ipMode: ipMode != null ? ipMode() : this.ipMode,
   ports: ports != null ? ports() : this.ports,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancerIngress &&
           hostname == other.hostname &&
@@ -47,4 +47,4 @@ LoadBalancerIngress copyWith({String? Function()? hostname, String? Function()? 
 
 @override String toString() => 'LoadBalancerIngress(hostname: $hostname, ip: $ip, ipMode: $ipMode, ports: $ports)';
 
- }
+}

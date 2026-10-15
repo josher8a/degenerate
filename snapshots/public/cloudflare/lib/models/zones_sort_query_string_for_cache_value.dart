@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 sealed class ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue();
 
-factory ZonesSortQueryStringForCacheValue.fromJson(String json) { return switch (json) {
+factory ZonesSortQueryStringForCacheValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => ZonesSortQueryStringForCacheValue$Unknown(json),
-}; }
+};}
 
 static const ZonesSortQueryStringForCacheValue $on = ZonesSortQueryStringForCacheValue$$on._();
 
@@ -17,30 +17,30 @@ static const ZonesSortQueryStringForCacheValue off = ZonesSortQueryStringForCach
 static const List<ZonesSortQueryStringForCacheValue> values = [$on, off];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'on' => r'$on',
   'off' => 'off',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesSortQueryStringForCacheValue$Unknown; } 
+bool get isUnknown {return this is ZonesSortQueryStringForCacheValue$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesSortQueryStringForCacheValue$$on() => $on(),
       ZonesSortQueryStringForCacheValue$off() => off(),
       ZonesSortQueryStringForCacheValue$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesSortQueryStringForCacheValue$$on() => $on != null ? $on() : orElse(value),
       ZonesSortQueryStringForCacheValue$off() => off != null ? off() : orElse(value),
       ZonesSortQueryStringForCacheValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesSortQueryStringForCacheValue($value)';
 
- }
+}
 @immutable final class ZonesSortQueryStringForCacheValue$$on extends ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue$$on._();
 
 @override String get value => 'on';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class ZonesSortQueryStringForCacheValue$off extends ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue$off._();
 
 @override String get value => 'off';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class ZonesSortQueryStringForCacheValue$Unknown extends ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

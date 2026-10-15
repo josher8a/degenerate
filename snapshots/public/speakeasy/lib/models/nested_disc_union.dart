@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/type_a.dart';import 'package:pub_speakeasy/models/type_a1.dart';import 'package:pub_speakeasy/models/type_a2.dart';import 'package:pub_speakeasy/models/type_b.dart';sealed class NestedDiscUnionType {const NestedDiscUnionType();
 
-factory NestedDiscUnionType.fromJson(String json) { return switch (json) {
+factory NestedDiscUnionType.fromJson(String json) {return switch (json) {
   'a' => a,
   'b' => b,
   _ => NestedDiscUnionType$Unknown(json),
-}; }
+};}
 
 static const NestedDiscUnionType a = NestedDiscUnionType$a._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is NestedDiscUnionType$Unknown;
 
- }
+}
 @immutable final class NestedDiscUnionType$a extends NestedDiscUnionType {const NestedDiscUnionType$a._();
 
 @override String get value => 'a';
@@ -31,7 +31,7 @@ bool get isUnknown => this is NestedDiscUnionType$Unknown;
 
 @override String toString() => 'NestedDiscUnionType(a)';
 
- }
+}
 @immutable final class NestedDiscUnionType$b extends NestedDiscUnionType {const NestedDiscUnionType$b._();
 
 @override String get value => 'b';
@@ -42,7 +42,7 @@ bool get isUnknown => this is NestedDiscUnionType$Unknown;
 
 @override String toString() => 'NestedDiscUnionType(b)';
 
- }
+}
 @immutable final class NestedDiscUnionType$Unknown extends NestedDiscUnionType {const NestedDiscUnionType$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ bool get isUnknown => this is NestedDiscUnionType$Unknown;
 
 @override String toString() => 'NestedDiscUnionType($value)';
 
- }
+}
 sealed class NestedDiscUnion {const NestedDiscUnion();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory NestedDiscUnion.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory NestedDiscUnion.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'a' => NestedDiscUnionA.fromJson(json),
   'b' => NestedDiscUnionB.fromJson(json),
   _ => NestedDiscUnion$Unknown(json),
-}; }
+};}
 
 /// Build the `b` variant.
-factory NestedDiscUnion.b({required String data}) { return NestedDiscUnionB(TypeB(type: 'b', data: data)); }
+factory NestedDiscUnion.b({required String data}) {return NestedDiscUnionB(TypeB(type: 'b', data: data));}
 
 /// The discriminator value identifying this variant.
 NestedDiscUnionType get type;
@@ -72,15 +72,15 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is NestedDiscUnion$Unknown;
 
-R when<R>({required R Function(NestedDiscUnionA) a, required R Function(NestedDiscUnionB) b, required R Function(NestedDiscUnion$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(NestedDiscUnionA) a, required R Function(NestedDiscUnionB) b, required R Function(NestedDiscUnion$Unknown) unknown, }) {return switch (this) {
   final NestedDiscUnionA v => a(v),
   final NestedDiscUnionB v => b(v),
   final NestedDiscUnion$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class NestedDiscUnionA extends NestedDiscUnion {const NestedDiscUnionA(this.typeA);
 
-factory NestedDiscUnionA.fromJson(Map<String, dynamic> json) { return NestedDiscUnionA(OneOf2.parse(json, fromA: (v) => TypeA1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypeA2.fromJson(v as Map<String, dynamic>),)); }
+factory NestedDiscUnionA.fromJson(Map<String, dynamic> json) {return NestedDiscUnionA(OneOf2.parse(json, fromA: (v) => TypeA1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypeA2.fromJson(v as Map<String, dynamic>),));}
 
 final TypeA typeA;
 
@@ -88,7 +88,7 @@ final TypeA typeA;
 
 @override Map<String, dynamic> toJson() => {'type': type.toJson(), 'data': typeA.toJson()};
 
-NestedDiscUnionA copyWith({TypeA? typeA}) { return NestedDiscUnionA(typeA ?? this.typeA); } 
+NestedDiscUnionA copyWith({TypeA? typeA}) {return NestedDiscUnionA(typeA ?? this.typeA);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is NestedDiscUnionA && typeA == other.typeA;
 
@@ -96,10 +96,10 @@ NestedDiscUnionA copyWith({TypeA? typeA}) { return NestedDiscUnionA(typeA ?? thi
 
 @override String toString() => 'NestedDiscUnion.a($typeA)';
 
- }
+}
 @immutable final class NestedDiscUnionB extends NestedDiscUnion {const NestedDiscUnionB(this.typeB);
 
-factory NestedDiscUnionB.fromJson(Map<String, dynamic> json) { return NestedDiscUnionB(TypeB.fromJson(json)); }
+factory NestedDiscUnionB.fromJson(Map<String, dynamic> json) {return NestedDiscUnionB(TypeB.fromJson(json));}
 
 final TypeB typeB;
 
@@ -107,9 +107,9 @@ final TypeB typeB;
 
 @override Map<String, dynamic> toJson() => {...typeB.toJson(), 'type': type.toJson()};
 
-NestedDiscUnionB copyWith({String? data}) { return NestedDiscUnionB(typeB.copyWith(
+NestedDiscUnionB copyWith({String? data}) {return NestedDiscUnionB(typeB.copyWith(
   data: data,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is NestedDiscUnionB && typeB == other.typeB;
 
@@ -117,7 +117,7 @@ NestedDiscUnionB copyWith({String? data}) { return NestedDiscUnionB(typeB.copyWi
 
 @override String toString() => 'NestedDiscUnion.b($typeB)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class NestedDiscUnion$Unknown extends NestedDiscUnion {const NestedDiscUnion$Unknown(this.json);
@@ -135,4 +135,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'NestedDiscUnion.unknown($json)';
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';@immutable final class RealtimeResponseCreateParamsAudioOutput {const RealtimeResponseCreateParamsAudioOutput({this.format, this.voice, });
 
-factory RealtimeResponseCreateParamsAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeResponseCreateParamsAudioOutput(
+factory RealtimeResponseCreateParamsAudioOutput.fromJson(Map<String, dynamic> json) {return RealtimeResponseCreateParamsAudioOutput(
   format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   voice: json['voice'] != null ? VoiceIdsOrCustomVoice.fromJson(json['voice']) : null,
-); }
+);}
 
 /// The format of the output audio.
 final RealtimeAudioFormats? format;
@@ -20,15 +20,15 @@ final RealtimeAudioFormats? format;
 /// 
 final VoiceIdsOrCustomVoice? voice;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (voice != null) 'voice': voice?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice'}.contains(key)); } 
-RealtimeResponseCreateParamsAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsOrCustomVoice? Function()? voice, }) { return RealtimeResponseCreateParamsAudioOutput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'voice'}.contains(key));}
+RealtimeResponseCreateParamsAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsOrCustomVoice? Function()? voice, }) {return RealtimeResponseCreateParamsAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeResponseCreateParamsAudioOutput &&
           format == other.format &&
@@ -38,4 +38,4 @@ RealtimeResponseCreateParamsAudioOutput copyWith({RealtimeAudioFormats? Function
 
 @override String toString() => 'RealtimeResponseCreateParamsAudioOutput(format: $format, voice: $voice)';
 
- }
+}

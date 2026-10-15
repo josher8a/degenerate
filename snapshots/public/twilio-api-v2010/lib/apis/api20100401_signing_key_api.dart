@@ -12,7 +12,7 @@ final class Api20100401SigningKeyApi with ApiExecutor {const Api20100401SigningK
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SigningKeys.json`
-Future<ApiResult<ListSigningKeyResponse, Never>> listSigningKey({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListSigningKeyResponse, Never>> listSigningKey({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -41,11 +41,11 @@ return await execute(
     return ListSigningKeyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json`
-Future<ApiResult<AccountSigningKey, Never>> fetchSigningKey({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSigningKey, Never>> fetchSigningKey({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -60,11 +60,11 @@ return await execute(
     return AccountSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json`
-Future<ApiResult<AccountSigningKey, Never>> updateSigningKey({required String accountSid, required String sid, UpdateSigningKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSigningKey, Never>> updateSigningKey({required String accountSid, required String sid, UpdateSigningKeyRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -84,11 +84,11 @@ return await execute(
     return AccountSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SigningKeys/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSigningKey({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSigningKey({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -101,5 +101,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

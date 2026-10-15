@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Aed {const Aed({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
 
-factory Aed.fromJson(Map<String, dynamic> json) { return Aed(
+factory Aed.fromJson(Map<String, dynamic> json) {return Aed(
   fixedAmounts: (json['fixed_amounts'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   percentages: (json['percentages'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   smartTipThreshold: json['smart_tip_threshold'] != null ? (json['smart_tip_threshold'] as num).toInt() : null,
-); }
+);}
 
 final List<int>? fixedAmounts;
 
@@ -15,17 +15,17 @@ final List<int>? percentages;
 
 final int? smartTipThreshold;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fixed_amounts': ?fixedAmounts,
   'percentages': ?percentages,
   'smart_tip_threshold': ?smartTipThreshold,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fixed_amounts', 'percentages', 'smart_tip_threshold'}.contains(key)); } 
-Aed copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percentages, int? Function()? smartTipThreshold, }) { return Aed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fixed_amounts', 'percentages', 'smart_tip_threshold'}.contains(key));}
+Aed copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percentages, int? Function()? smartTipThreshold, }) {return Aed(
   fixedAmounts: fixedAmounts != null ? fixedAmounts() : this.fixedAmounts,
   percentages: percentages != null ? percentages() : this.percentages,
   smartTipThreshold: smartTipThreshold != null ? smartTipThreshold() : this.smartTipThreshold,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Aed &&
           listEquals(fixedAmounts, other.fixedAmounts) &&
@@ -36,4 +36,4 @@ Aed copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percen
 
 @override String toString() => 'Aed(fixedAmounts: $fixedAmounts, percentages: $percentages, smartTipThreshold: $smartTipThreshold)';
 
- }
+}

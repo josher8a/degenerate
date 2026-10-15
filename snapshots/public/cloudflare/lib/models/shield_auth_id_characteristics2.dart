@@ -7,11 +7,11 @@ const ShieldAuthIdCharacteristics2({this.shieldAuthIdCharacteristic = const Omit
 const ShieldAuthIdCharacteristics2._({required this.rawValue, required this.shieldAuthIdCharacteristic, required this.shieldAuthIdCharacteristicJwtClaim, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ShieldAuthIdCharacteristics2.fromJson(Object? json) { return ShieldAuthIdCharacteristics2._(
+factory ShieldAuthIdCharacteristics2.fromJson(Object? json) {return ShieldAuthIdCharacteristics2._(
   rawValue: Omittable(json),
   shieldAuthIdCharacteristic: json is Map<String, dynamic> && ShieldAuthIdCharacteristic.canParse(json) ? parseAnyOfVariant<ShieldAuthIdCharacteristic>(json, (value) => ShieldAuthIdCharacteristic.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   shieldAuthIdCharacteristicJwtClaim: json is Map<String, dynamic> && ShieldAuthIdCharacteristicJwtClaim.canParse(json) ? parseAnyOfVariant<ShieldAuthIdCharacteristicJwtClaim>(json, (value) => ShieldAuthIdCharacteristicJwtClaim.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ShieldAuthIdCharacteristics2(${toJson()})';
 
- }
+}

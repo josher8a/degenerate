@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rate plan applied to the subscription.
 @immutable final class RatePlan2 {const RatePlan2({this.currency, this.externallyManaged, this.id, this.isContract, this.publicName, this.scope, this.sets, });
 
-factory RatePlan2.fromJson(Map<String, dynamic> json) { return RatePlan2(
+factory RatePlan2.fromJson(Map<String, dynamic> json) {return RatePlan2(
   currency: json['currency'] as String?,
   externallyManaged: json['externally_managed'] as bool?,
   id: json['id'] as String?,
@@ -12,7 +12,7 @@ factory RatePlan2.fromJson(Map<String, dynamic> json) { return RatePlan2(
   publicName: json['public_name'] as String?,
   scope: json['scope'] as String?,
   sets: (json['sets'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The currency applied to the rate plan subscription.
 /// 
@@ -49,7 +49,7 @@ final String? scope;
 /// Example: `[]`
 final List<String>? sets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'currency': ?currency,
   'externally_managed': ?externallyManaged,
   'id': ?id,
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   'public_name': ?publicName,
   'scope': ?scope,
   'sets': ?sets,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'externally_managed', 'id', 'is_contract', 'public_name', 'scope', 'sets'}.contains(key)); } 
-RatePlan2 copyWith({String? Function()? currency, bool? Function()? externallyManaged, String? Function()? id, bool? Function()? isContract, String? Function()? publicName, String? Function()? scope, List<String>? Function()? sets, }) { return RatePlan2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'currency', 'externally_managed', 'id', 'is_contract', 'public_name', 'scope', 'sets'}.contains(key));}
+RatePlan2 copyWith({String? Function()? currency, bool? Function()? externallyManaged, String? Function()? id, bool? Function()? isContract, String? Function()? publicName, String? Function()? scope, List<String>? Function()? sets, }) {return RatePlan2(
   currency: currency != null ? currency() : this.currency,
   externallyManaged: externallyManaged != null ? externallyManaged() : this.externallyManaged,
   id: id != null ? id() : this.id,
@@ -67,7 +67,7 @@ RatePlan2 copyWith({String? Function()? currency, bool? Function()? externallyMa
   publicName: publicName != null ? publicName() : this.publicName,
   scope: scope != null ? scope() : this.scope,
   sets: sets != null ? sets() : this.sets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RatePlan2 &&
           currency == other.currency &&
@@ -82,4 +82,4 @@ RatePlan2 copyWith({String? Function()? currency, bool? Function()? externallyMa
 
 @override String toString() => 'RatePlan2(currency: $currency, externallyManaged: $externallyManaged, id: $id, isContract: $isContract, publicName: $publicName, scope: $scope, sets: $sets)';
 
- }
+}

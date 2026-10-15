@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_content_type.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// An item belonging to a project
 @immutable final class ItemWithContent {const ItemWithContent({required this.id, required this.contentType, required this.createdAt, required this.updatedAt, required this.archivedAt, this.nodeId, this.projectUrl, this.content = const Omittable.absent(), this.creator, this.itemUrl = const Omittable.absent(), this.fields, });
 
-factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithContent(
+factory ItemWithContent.fromJson(Map<String, dynamic> json) {return ItemWithContent(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String?,
   projectUrl: json['project_url'] != null ? Uri.parse(json['project_url'] as String) : null,
@@ -16,7 +16,7 @@ factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithCon
   archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
   itemUrl: json.containsKey('item_url') ? Omittable(json['item_url'] != null ? Uri.parse(json['item_url'] as String) : null) : const Omittable.absent(),
   fields: (json['fields'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
-); }
+);}
 
 /// The unique identifier of the project item.
 final double id;
@@ -50,7 +50,7 @@ final Omittable<Uri?> itemUrl;
 /// The fields and values associated with this item.
 final List<Map<String,dynamic>>? fields;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': ?nodeId,
   if (projectUrl != null) 'project_url': projectUrl?.toString(),
@@ -62,13 +62,13 @@ Map<String, dynamic> toJson() { return {
   'archived_at': archivedAt?.toIso8601String(),
   if (itemUrl.isPresent) 'item_url': itemUrl.value?.toString(),
   if (fields != null) 'fields': fields?.map((e) => e).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('content_type') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String); } 
-ItemWithContent copyWith({double? id, String? Function()? nodeId, Uri? Function()? projectUrl, ItemContentType? contentType, Omittable<Map<String,dynamic>?>? content, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Omittable<Uri?>? itemUrl, List<Map<String, dynamic>>? Function()? fields, }) { return ItemWithContent(
+      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String);}
+ItemWithContent copyWith({double? id, String? Function()? nodeId, Uri? Function()? projectUrl, ItemContentType? contentType, Omittable<Map<String,dynamic>?>? content, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Omittable<Uri?>? itemUrl, List<Map<String, dynamic>>? Function()? fields, }) {return ItemWithContent(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   projectUrl: projectUrl != null ? projectUrl() : this.projectUrl,
@@ -80,7 +80,7 @@ ItemWithContent copyWith({double? id, String? Function()? nodeId, Uri? Function(
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
   itemUrl: itemUrl ?? this.itemUrl,
   fields: fields != null ? fields() : this.fields,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ItemWithContent &&
           id == other.id &&
@@ -99,4 +99,4 @@ ItemWithContent copyWith({double? id, String? Function()? nodeId, Uri? Function(
 
 @override String toString() => 'ItemWithContent(\n  id: $id,\n  nodeId: $nodeId,\n  projectUrl: $projectUrl,\n  contentType: $contentType,\n  content: $content,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  archivedAt: $archivedAt,\n  itemUrl: $itemUrl,\n  fields: $fields,\n)';
 
- }
+}

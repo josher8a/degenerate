@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_tokens_response/ai_search_create_tokens_response_result.dart';@immutable final class AiSearchDeleteTokensResponse {const AiSearchDeleteTokensResponse({required this.result, required this.success, });
 
-factory AiSearchDeleteTokensResponse.fromJson(Map<String, dynamic> json) { return AiSearchDeleteTokensResponse(
+factory AiSearchDeleteTokensResponse.fromJson(Map<String, dynamic> json) {return AiSearchDeleteTokensResponse(
   result: AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AiSearchCreateTokensResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AiSearchDeleteTokensResponse copyWith({AiSearchCreateTokensResponseResult? result, bool? success, }) { return AiSearchDeleteTokensResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AiSearchDeleteTokensResponse copyWith({AiSearchCreateTokensResponseResult? result, bool? success, }) {return AiSearchDeleteTokensResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchDeleteTokensResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ AiSearchDeleteTokensResponse copyWith({AiSearchCreateTokensResponseResult? resul
 
 @override String toString() => 'AiSearchDeleteTokensResponse(result: $result, success: $success)';
 
- }
+}

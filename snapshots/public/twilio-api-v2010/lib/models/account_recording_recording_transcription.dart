@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the transcription. Can be: `in-progress`, `completed`, `failed`.
 sealed class RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus();
 
-factory RecordingTranscriptionEnumStatus.fromJson(String json) { return switch (json) {
+factory RecordingTranscriptionEnumStatus.fromJson(String json) {return switch (json) {
   'in-progress' => inProgress,
   'completed' => completed,
   'failed' => failed,
   _ => RecordingTranscriptionEnumStatus$Unknown(json),
-}; }
+};}
 
 static const RecordingTranscriptionEnumStatus inProgress = RecordingTranscriptionEnumStatus$inProgress._();
 
@@ -20,33 +20,33 @@ static const RecordingTranscriptionEnumStatus failed = RecordingTranscriptionEnu
 static const List<RecordingTranscriptionEnumStatus> values = [inProgress, completed, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in-progress' => 'inProgress',
   'completed' => 'completed',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RecordingTranscriptionEnumStatus$Unknown; } 
+bool get isUnknown {return this is RecordingTranscriptionEnumStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       RecordingTranscriptionEnumStatus$inProgress() => inProgress(),
       RecordingTranscriptionEnumStatus$completed() => completed(),
       RecordingTranscriptionEnumStatus$failed() => failed(),
       RecordingTranscriptionEnumStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       RecordingTranscriptionEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       RecordingTranscriptionEnumStatus$completed() => completed != null ? completed() : orElse(value),
       RecordingTranscriptionEnumStatus$failed() => failed != null ? failed() : orElse(value),
       RecordingTranscriptionEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RecordingTranscriptionEnumStatus($value)';
 
- }
+}
 @immutable final class RecordingTranscriptionEnumStatus$inProgress extends RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus$inProgress._();
 
 @override String get value => 'in-progress';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in-progress'.hashCode;
 
- }
+}
 @immutable final class RecordingTranscriptionEnumStatus$completed extends RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus$completed._();
 
 @override String get value => 'completed';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class RecordingTranscriptionEnumStatus$failed extends RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus$failed._();
 
 @override String get value => 'failed';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class RecordingTranscriptionEnumStatus$Unknown extends RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,10 +83,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccountRecordingRecordingTranscription {const AccountRecordingRecordingTranscription({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.duration = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.recordingSid = const Omittable.absent(), this.sid = const Omittable.absent(), this.status, this.transcriptionText = const Omittable.absent(), this.type = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountRecordingRecordingTranscription.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingTranscription(
+factory AccountRecordingRecordingTranscription.fromJson(Map<String, dynamic> json) {return AccountRecordingRecordingTranscription(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
@@ -100,7 +100,7 @@ factory AccountRecordingRecordingTranscription.fromJson(Map<String, dynamic> jso
   transcriptionText: json.containsKey('transcription_text') ? Omittable(json['transcription_text'] as String?) : const Omittable.absent(),
   type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Transcription resource.
 final Omittable<String?> accountSid;
@@ -140,7 +140,7 @@ final Omittable<String?> type;
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final Omittable<String?> uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
@@ -154,10 +154,10 @@ Map<String, dynamic> toJson() { return {
   if (transcriptionText.isPresent) 'transcription_text': transcriptionText.value,
   if (type.isPresent) 'type': type.value,
   if (uri.isPresent) 'uri': uri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'duration', 'price', 'price_unit', 'recording_sid', 'sid', 'status', 'transcription_text', 'type', 'uri'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'duration', 'price', 'price_unit', 'recording_sid', 'sid', 'status', 'transcription_text', 'type', 'uri'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -176,8 +176,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^TR[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^TR[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountRecordingRecordingTranscription copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? duration, Omittable<double?>? price, Omittable<String?>? priceUnit, Omittable<String?>? recordingSid, Omittable<String?>? sid, RecordingTranscriptionEnumStatus? Function()? status, Omittable<String?>? transcriptionText, Omittable<String?>? type, Omittable<String?>? uri, }) { return AccountRecordingRecordingTranscription(
+return errors;}
+AccountRecordingRecordingTranscription copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? duration, Omittable<double?>? price, Omittable<String?>? priceUnit, Omittable<String?>? recordingSid, Omittable<String?>? sid, RecordingTranscriptionEnumStatus? Function()? status, Omittable<String?>? transcriptionText, Omittable<String?>? type, Omittable<String?>? uri, }) {return AccountRecordingRecordingTranscription(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   dateCreated: dateCreated ?? this.dateCreated,
@@ -191,7 +191,7 @@ AccountRecordingRecordingTranscription copyWith({Omittable<String?>? accountSid,
   transcriptionText: transcriptionText ?? this.transcriptionText,
   type: type ?? this.type,
   uri: uri ?? this.uri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecordingRecordingTranscription &&
           accountSid == other.accountSid &&
@@ -212,4 +212,4 @@ AccountRecordingRecordingTranscription copyWith({Omittable<String?>? accountSid,
 
 @override String toString() => 'AccountRecordingRecordingTranscription(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  duration: $duration,\n  price: $price,\n  priceUnit: $priceUnit,\n  recordingSid: $recordingSid,\n  sid: $sid,\n  status: $status,\n  transcriptionText: $transcriptionText,\n  type: $type,\n  uri: $uri,\n)';
 
- }
+}

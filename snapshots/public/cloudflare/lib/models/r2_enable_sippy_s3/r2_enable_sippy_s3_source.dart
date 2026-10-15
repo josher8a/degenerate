@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider();
 
-factory R2EnableSippyS3SourceProvider.fromJson(String json) { return switch (json) {
+factory R2EnableSippyS3SourceProvider.fromJson(String json) {return switch (json) {
   's3' => s3,
   _ => R2EnableSippyS3SourceProvider$Unknown(json),
-}; }
+};}
 
 static const R2EnableSippyS3SourceProvider s3 = R2EnableSippyS3SourceProvider$s3._();
 
 static const List<R2EnableSippyS3SourceProvider> values = [s3];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   's3' => 's3',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is R2EnableSippyS3SourceProvider$Unknown; } 
+bool get isUnknown {return this is R2EnableSippyS3SourceProvider$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() s3, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() s3, required W Function(String value) $unknown, }) {return switch (this) {
       R2EnableSippyS3SourceProvider$s3() => s3(),
       R2EnableSippyS3SourceProvider$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? s3, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? s3, W Function(String value)? $unknown, }) {return switch (this) {
       R2EnableSippyS3SourceProvider$s3() => s3 != null ? s3() : orElse(value),
       R2EnableSippyS3SourceProvider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'R2EnableSippyS3SourceProvider($value)';
 
- }
+}
 @immutable final class R2EnableSippyS3SourceProvider$s3 extends R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider$s3._();
 
 @override String get value => 's3';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? s3, W Fu
 
 @override int get hashCode => 's3'.hashCode;
 
- }
+}
 @immutable final class R2EnableSippyS3SourceProvider$Unknown extends R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider$Unknown(this.value);
 
 @override final String value;
@@ -52,16 +52,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? s3, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// General S3-compatible provider to copy objects from.
 @immutable final class R2EnableSippyS3Source {const R2EnableSippyS3Source({this.accessKeyId, this.bucketUrl, this.provider, this.secretAccessKey, });
 
-factory R2EnableSippyS3Source.fromJson(Map<String, dynamic> json) { return R2EnableSippyS3Source(
+factory R2EnableSippyS3Source.fromJson(Map<String, dynamic> json) {return R2EnableSippyS3Source(
   accessKeyId: json['accessKeyId'] as String?,
   bucketUrl: json['bucketUrl'] as String?,
   provider: json['provider'] != null ? R2EnableSippyS3SourceProvider.fromJson(json['provider'] as String) : null,
   secretAccessKey: json['secretAccessKey'] as String?,
-); }
+);}
 
 /// Access Key ID of an IAM credential (ideally scoped to a single S3 bucket).
 final String? accessKeyId;
@@ -74,19 +74,19 @@ final R2EnableSippyS3SourceProvider? provider;
 /// Secret Access Key of an IAM credential (ideally scoped to a single S3 bucket).
 final String? secretAccessKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessKeyId': ?accessKeyId,
   'bucketUrl': ?bucketUrl,
   if (provider != null) 'provider': provider?.toJson(),
   'secretAccessKey': ?secretAccessKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'bucketUrl', 'provider', 'secretAccessKey'}.contains(key)); } 
-R2EnableSippyS3Source copyWith({String? Function()? accessKeyId, String? Function()? bucketUrl, R2EnableSippyS3SourceProvider? Function()? provider, String? Function()? secretAccessKey, }) { return R2EnableSippyS3Source(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessKeyId', 'bucketUrl', 'provider', 'secretAccessKey'}.contains(key));}
+R2EnableSippyS3Source copyWith({String? Function()? accessKeyId, String? Function()? bucketUrl, R2EnableSippyS3SourceProvider? Function()? provider, String? Function()? secretAccessKey, }) {return R2EnableSippyS3Source(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   bucketUrl: bucketUrl != null ? bucketUrl() : this.bucketUrl,
   provider: provider != null ? provider() : this.provider,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2EnableSippyS3Source &&
           accessKeyId == other.accessKeyId &&
@@ -98,4 +98,4 @@ R2EnableSippyS3Source copyWith({String? Function()? accessKeyId, String? Functio
 
 @override String toString() => 'R2EnableSippyS3Source(accessKeyId: $accessKeyId, bucketUrl: $bucketUrl, provider: $provider, secretAccessKey: $secretAccessKey)';
 
- }
+}

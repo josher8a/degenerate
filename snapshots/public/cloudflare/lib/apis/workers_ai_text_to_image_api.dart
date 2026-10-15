@@ -14,7 +14,7 @@ final class WorkersAiTextToImageApi with ApiExecutor {const WorkersAiTextToImage
 /// Runs inference on the @cf/black-forest-labs/flux-1-schnell model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-1-schnell`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux1SchnellError>> workersAiPostRunCfBlackForestLabsFlux1Schnell({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux1SchnellError>> workersAiPostRunCfBlackForestLabsFlux1Schnell({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -43,13 +43,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfBlackForestLabsFlux1SchnellError.fromResponse,
 );
- } 
+}
 /// Execute @cf/black-forest-labs/flux-2-dev model.
 ///
 /// Runs inference on the @cf/black-forest-labs/flux-2-dev model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-dev`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2DevError>> workersAiPostRunCfBlackForestLabsFlux2Dev({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2DevRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2DevError>> workersAiPostRunCfBlackForestLabsFlux2Dev({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2DevRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -78,13 +78,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfBlackForestLabsFlux2DevError.fromResponse,
 );
- } 
+}
 /// Execute @cf/black-forest-labs/flux-2-klein-4b model.
 ///
 /// Runs inference on the @cf/black-forest-labs/flux-2-klein-4b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-klein-4b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bError>> workersAiPostRunCfBlackForestLabsFlux2Klein4b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bError>> workersAiPostRunCfBlackForestLabsFlux2Klein4b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -113,13 +113,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfBlackForestLabsFlux2Klein4bError.fromResponse,
 );
- } 
+}
 /// Execute @cf/black-forest-labs/flux-2-klein-9b model.
 ///
 /// Runs inference on the @cf/black-forest-labs/flux-2-klein-9b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-klein-9b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bError>> workersAiPostRunCfBlackForestLabsFlux2Klein9b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bError>> workersAiPostRunCfBlackForestLabsFlux2Klein9b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -148,13 +148,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfBlackForestLabsFlux2Klein9bError.fromResponse,
 );
- } 
+}
 /// Execute @cf/bytedance/stable-diffusion-xl-lightning model.
 ///
 /// Runs inference on the @cf/bytedance/stable-diffusion-xl-lightning model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/bytedance/stable-diffusion-xl-lightning`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError>> workersAiPostRunCfBytedanceStableDiffusionXlLightning({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError>> workersAiPostRunCfBytedanceStableDiffusionXlLightning({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -183,13 +183,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError.fromResponse,
 );
- } 
+}
 /// Execute @cf/leonardo/lucid-origin model.
 ///
 /// Runs inference on the @cf/leonardo/lucid-origin model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/leonardo/lucid-origin`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLeonardoLucidOriginError>> workersAiPostRunCfLeonardoLucidOrigin({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoLucidOriginRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLeonardoLucidOriginError>> workersAiPostRunCfLeonardoLucidOrigin({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoLucidOriginRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -218,13 +218,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfLeonardoLucidOriginError.fromResponse,
 );
- } 
+}
 /// Execute @cf/leonardo/phoenix-1.0 model.
 ///
 /// Runs inference on the @cf/leonardo/phoenix-1.0 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/leonardo/phoenix-1.0`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLeonardoPhoenix10Error>> workersAiPostRunCfLeonardoPhoenix10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoPhoenix10Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLeonardoPhoenix10Error>> workersAiPostRunCfLeonardoPhoenix10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoPhoenix10Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -253,13 +253,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfLeonardoPhoenix10Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/lykon/dreamshaper-8-lcm model.
 ///
 /// Runs inference on the @cf/lykon/dreamshaper-8-lcm model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/lykon/dreamshaper-8-lcm`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLykonDreamshaper8LcmError>> workersAiPostRunCfLykonDreamshaper8Lcm({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLykonDreamshaper8LcmRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLykonDreamshaper8LcmError>> workersAiPostRunCfLykonDreamshaper8Lcm({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLykonDreamshaper8LcmRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -288,13 +288,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfLykonDreamshaper8LcmError.fromResponse,
 );
- } 
+}
 /// Execute @cf/runwayml/stable-diffusion-v1-5-img2img model.
 ///
 /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-img2img model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/runwayml/stable-diffusion-v1-5-img2img`
-Future<ApiResult<Map<String, dynamic>, Img2imgError>> workersAiPostRunCfRunwaymlStableDiffusionV15Img2img({required String accountId, String? queueRequest, String? tags, $5Img2imgRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, Img2imgError>> workersAiPostRunCfRunwaymlStableDiffusionV15Img2img({required String accountId, String? queueRequest, String? tags, $5Img2imgRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -323,13 +323,13 @@ return await execute(
   },
   onError: Img2imgError.fromResponse,
 );
- } 
+}
 /// Execute @cf/runwayml/stable-diffusion-v1-5-inpainting model.
 ///
 /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-inpainting model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/runwayml/stable-diffusion-v1-5-inpainting`
-Future<ApiResult<Map<String, dynamic>, InpaintingError>> workersAiPostRunCfRunwaymlStableDiffusionV15Inpainting({required String accountId, String? queueRequest, String? tags, $5InpaintingRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, InpaintingError>> workersAiPostRunCfRunwaymlStableDiffusionV15Inpainting({required String accountId, String? queueRequest, String? tags, $5InpaintingRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -358,13 +358,13 @@ return await execute(
   },
   onError: InpaintingError.fromResponse,
 );
- } 
+}
 /// Execute @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
 ///
 /// Runs inference on the @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error>> workersAiPostRunCfStabilityaiStableDiffusionXlBase10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error>> workersAiPostRunCfStabilityaiStableDiffusionXlBase10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -393,13 +393,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error.fromResponse,
 );
- } 
+}
 /// Open Websocket connection with @cf/sven/test-pipe-http model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/sven/test-pipe-http model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/sven/test-pipe-http`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfSvenTestPipeHttpError>> workersAiPostWebsocketRunCfSvenTestPipeHttp({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfSvenTestPipeHttpError>> workersAiPostWebsocketRunCfSvenTestPipeHttp({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -413,5 +413,5 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfSvenTestPipeHttpError.fromResponse,
 );
- } 
- }
+}
+}

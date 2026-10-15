@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_request_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_kind.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';@immutable final class UpdateZoneRulesetRequest {const UpdateZoneRulesetRequest({this.description, this.name, this.kind, this.phase, this.rules, });
 
-factory UpdateZoneRulesetRequest.fromJson(Map<String, dynamic> json) { return UpdateZoneRulesetRequest(
+factory UpdateZoneRulesetRequest.fromJson(Map<String, dynamic> json) {return UpdateZoneRulesetRequest(
   description: json['description'] as String?,
   name: json['name'] as String?,
   kind: json['kind'] != null ? RulesetsRulesetKind.fromJson(json['kind'] as String) : null,
   phase: json['phase'] != null ? RulesetsRulesetPhase.fromJson(json['phase'] as String) : null,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RulesetsRequestRuleRequest.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// An informative description of the ruleset.
 /// 
@@ -33,28 +33,28 @@ final List<RulesetsRequestRuleRequest>? rules;
 /// The value of `description`, or its schema default when absent.
 String get descriptionOrDefault => description ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'name': ?name,
   if (kind != null) 'kind': kind?.toJson(),
   if (phase != null) 'phase': phase?.toJson(),
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'kind', 'phase', 'rules'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'name', 'kind', 'phase', 'rules'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.isEmpty) { errors.add('name: length must be >= 1'); }
 }
-return errors; } 
-UpdateZoneRulesetRequest copyWith({String? Function()? description, String? Function()? name, RulesetsRulesetKind? Function()? kind, RulesetsRulesetPhase? Function()? phase, List<RulesetsRequestRuleRequest>? Function()? rules, }) { return UpdateZoneRulesetRequest(
+return errors;}
+UpdateZoneRulesetRequest copyWith({String? Function()? description, String? Function()? name, RulesetsRulesetKind? Function()? kind, RulesetsRulesetPhase? Function()? phase, List<RulesetsRequestRuleRequest>? Function()? rules, }) {return UpdateZoneRulesetRequest(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
   kind: kind != null ? kind() : this.kind,
   phase: phase != null ? phase() : this.phase,
   rules: rules != null ? rules() : this.rules,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateZoneRulesetRequest &&
           description == other.description &&
@@ -67,4 +67,4 @@ UpdateZoneRulesetRequest copyWith({String? Function()? description, String? Func
 
 @override String toString() => 'UpdateZoneRulesetRequest(description: $description, name: $name, kind: $kind, phase: $phase, rules: $rules)';
 
- }
+}

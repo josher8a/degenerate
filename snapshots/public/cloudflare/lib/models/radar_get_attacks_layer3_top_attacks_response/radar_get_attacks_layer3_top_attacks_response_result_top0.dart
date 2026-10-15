@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TopAttacksResponseResultTop0 {const RadarGetAttacksLayer3TopAttacksResponseResultTop0({required this.originCountryAlpha2, required this.originCountryName, required this.value, });
 
-factory RadarGetAttacksLayer3TopAttacksResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopAttacksResponseResultTop0(
+factory RadarGetAttacksLayer3TopAttacksResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TopAttacksResponseResultTop0(
   originCountryAlpha2: json['originCountryAlpha2'] as String,
   originCountryName: json['originCountryName'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// Example: `'FR'`
 final String originCountryAlpha2;
@@ -18,19 +18,19 @@ final String originCountryName;
 /// Example: `'4.323214'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'originCountryAlpha2': originCountryAlpha2,
   'originCountryName': originCountryName,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('originCountryAlpha2') && json['originCountryAlpha2'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('originCountryAlpha2') && json['originCountryAlpha2'] is String &&
       json.containsKey('originCountryName') && json['originCountryName'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetAttacksLayer3TopAttacksResponseResultTop0 copyWith({String? originCountryAlpha2, String? originCountryName, String? value, }) { return RadarGetAttacksLayer3TopAttacksResponseResultTop0(
+      json.containsKey('value') && json['value'] is String;}
+RadarGetAttacksLayer3TopAttacksResponseResultTop0 copyWith({String? originCountryAlpha2, String? originCountryName, String? value, }) {return RadarGetAttacksLayer3TopAttacksResponseResultTop0(
   originCountryAlpha2: originCountryAlpha2 ?? this.originCountryAlpha2,
   originCountryName: originCountryName ?? this.originCountryName,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TopAttacksResponseResultTop0 &&
           originCountryAlpha2 == other.originCountryAlpha2 &&
@@ -41,4 +41,4 @@ RadarGetAttacksLayer3TopAttacksResponseResultTop0 copyWith({String? originCountr
 
 @override String toString() => 'RadarGetAttacksLayer3TopAttacksResponseResultTop0(originCountryAlpha2: $originCountryAlpha2, originCountryName: $originCountryName, value: $value)';
 
- }
+}

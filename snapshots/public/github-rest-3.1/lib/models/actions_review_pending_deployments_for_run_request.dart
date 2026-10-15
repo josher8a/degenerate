@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_review_pending_deployments_for_run_request/actions_review_pending_deployments_for_run_request_state.dart';@immutable final class ActionsReviewPendingDeploymentsForRunRequest {const ActionsReviewPendingDeploymentsForRunRequest({required this.environmentIds, required this.state, required this.comment, });
 
-factory ActionsReviewPendingDeploymentsForRunRequest.fromJson(Map<String, dynamic> json) { return ActionsReviewPendingDeploymentsForRunRequest(
+factory ActionsReviewPendingDeploymentsForRunRequest.fromJson(Map<String, dynamic> json) {return ActionsReviewPendingDeploymentsForRunRequest(
   environmentIds: (json['environment_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   state: ActionsReviewPendingDeploymentsForRunRequestState.fromJson(json['state'] as String),
   comment: json['comment'] as String,
-); }
+);}
 
 /// The list of environment ids to approve or reject
 final List<int> environmentIds;
@@ -18,19 +18,19 @@ final ActionsReviewPendingDeploymentsForRunRequestState state;
 /// A comment to accompany the deployment review
 final String comment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'environment_ids': environmentIds,
   'state': state.toJson(),
   'comment': comment,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('environment_ids') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('environment_ids') &&
       json.containsKey('state') &&
-      json.containsKey('comment') && json['comment'] is String; } 
-ActionsReviewPendingDeploymentsForRunRequest copyWith({List<int>? environmentIds, ActionsReviewPendingDeploymentsForRunRequestState? state, String? comment, }) { return ActionsReviewPendingDeploymentsForRunRequest(
+      json.containsKey('comment') && json['comment'] is String;}
+ActionsReviewPendingDeploymentsForRunRequest copyWith({List<int>? environmentIds, ActionsReviewPendingDeploymentsForRunRequestState? state, String? comment, }) {return ActionsReviewPendingDeploymentsForRunRequest(
   environmentIds: environmentIds ?? this.environmentIds,
   state: state ?? this.state,
   comment: comment ?? this.comment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsReviewPendingDeploymentsForRunRequest &&
           listEquals(environmentIds, other.environmentIds) &&
@@ -41,4 +41,4 @@ ActionsReviewPendingDeploymentsForRunRequest copyWith({List<int>? environmentIds
 
 @override String toString() => 'ActionsReviewPendingDeploymentsForRunRequest(environmentIds: $environmentIds, state: $state, comment: $comment)';
 
- }
+}

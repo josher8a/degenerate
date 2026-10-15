@@ -10,7 +10,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class StreamClipping {const StreamClipping({this.allowedOrigins, this.clippedFromVideoUid, this.created, this.creator, this.endTimeSeconds, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.requireSignedUrLs, this.startTimeSeconds, this.status, this.thumbnailTimestampPct, this.watermark, });
 
-factory StreamClipping.fromJson(Map<String, dynamic> json) { return StreamClipping(
+factory StreamClipping.fromJson(Map<String, dynamic> json) {return StreamClipping(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
   clippedFromVideoUid: json['clippedFromVideoUID'] != null ? StreamClippedFromVideoUid.fromJson(json['clippedFromVideoUID'] as String) : null,
   created: json['created'] != null ? StreamClippingCreated.fromJson(json['created'] as String) : null,
@@ -26,7 +26,7 @@ factory StreamClipping.fromJson(Map<String, dynamic> json) { return StreamClippi
   status: json['status'] != null ? StreamMediaState.fromJson(json['status'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
   watermark: json['watermark'] != null ? StreamWatermarkAtUpload2.fromJson(json['watermark'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
@@ -60,7 +60,7 @@ final StreamThumbnailTimestampPct? thumbnailTimestampPct;
 
 final StreamWatermarkAtUpload2? watermark;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowedOrigins': ?allowedOrigins,
   if (clippedFromVideoUid != null) 'clippedFromVideoUID': clippedFromVideoUid?.toJson(),
   if (created != null) 'created': created?.toJson(),
@@ -76,9 +76,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (thumbnailTimestampPct != null) 'thumbnailTimestampPct': thumbnailTimestampPct?.toJson(),
   if (watermark != null) 'watermark': watermark?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowedOrigins', 'clippedFromVideoUID', 'created', 'creator', 'endTimeSeconds', 'maxDurationSeconds', 'meta', 'modified', 'playback', 'preview', 'requireSignedURLs', 'startTimeSeconds', 'status', 'thumbnailTimestampPct', 'watermark'}.contains(key)); } 
-StreamClipping copyWith({List<String>? Function()? allowedOrigins, StreamClippedFromVideoUid? Function()? clippedFromVideoUid, StreamClippingCreated? Function()? created, StreamCreator? Function()? creator, StreamEndTimeSeconds? Function()? endTimeSeconds, StreamMaxDurationSeconds? Function()? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamPlayback? Function()? playback, StreamPreview? Function()? preview, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamStartTimeSeconds? Function()? startTimeSeconds, StreamMediaState? Function()? status, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2? Function()? watermark, }) { return StreamClipping(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowedOrigins', 'clippedFromVideoUID', 'created', 'creator', 'endTimeSeconds', 'maxDurationSeconds', 'meta', 'modified', 'playback', 'preview', 'requireSignedURLs', 'startTimeSeconds', 'status', 'thumbnailTimestampPct', 'watermark'}.contains(key));}
+StreamClipping copyWith({List<String>? Function()? allowedOrigins, StreamClippedFromVideoUid? Function()? clippedFromVideoUid, StreamClippingCreated? Function()? created, StreamCreator? Function()? creator, StreamEndTimeSeconds? Function()? endTimeSeconds, StreamMaxDurationSeconds? Function()? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamPlayback? Function()? playback, StreamPreview? Function()? preview, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamStartTimeSeconds? Function()? startTimeSeconds, StreamMediaState? Function()? status, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2? Function()? watermark, }) {return StreamClipping(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   clippedFromVideoUid: clippedFromVideoUid != null ? clippedFromVideoUid() : this.clippedFromVideoUid,
   created: created != null ? created() : this.created,
@@ -94,7 +94,7 @@ StreamClipping copyWith({List<String>? Function()? allowedOrigins, StreamClipped
   status: status != null ? status() : this.status,
   thumbnailTimestampPct: thumbnailTimestampPct != null ? thumbnailTimestampPct() : this.thumbnailTimestampPct,
   watermark: watermark != null ? watermark() : this.watermark,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamClipping &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
@@ -117,4 +117,4 @@ StreamClipping copyWith({List<String>? Function()? allowedOrigins, StreamClipped
 
 @override String toString() => 'StreamClipping(\n  allowedOrigins: $allowedOrigins,\n  clippedFromVideoUid: $clippedFromVideoUid,\n  created: $created,\n  creator: $creator,\n  endTimeSeconds: $endTimeSeconds,\n  maxDurationSeconds: $maxDurationSeconds,\n  meta: $meta,\n  modified: $modified,\n  playback: $playback,\n  preview: $preview,\n  requireSignedUrLs: $requireSignedUrLs,\n  startTimeSeconds: $startTimeSeconds,\n  status: $status,\n  thumbnailTimestampPct: $thumbnailTimestampPct,\n  watermark: $watermark,\n)';
 
- }
+}

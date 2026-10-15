@@ -7,11 +7,11 @@ const Dlp({this.dlpVariant1 = const Omittable.absent(), this.dlpVariant2 = const
 const Dlp._({required this.rawValue, required this.dlpVariant1, required this.dlpVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Dlp.fromJson(Object? json) { return Dlp._(
+factory Dlp.fromJson(Object? json) {return Dlp._(
   rawValue: Omittable(json),
   dlpVariant1: json is Map<String, dynamic> && DlpVariant1.canParse(json) ? parseAnyOfVariant<DlpVariant1>(json, (value) => DlpVariant1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   dlpVariant2: json is Map<String, dynamic> && DlpVariant2.canParse(json) ? parseAnyOfVariant<DlpVariant2>(json, (value) => DlpVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Dlp(${toJson()})';
 
- }
+}

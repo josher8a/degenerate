@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions();
 
-factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) { return switch (json) {
+factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) {return switch (json) {
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
@@ -13,7 +13,7 @@ factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) { retu
   'too_expensive' => tooExpensive,
   'unused' => unused,
   _ => PortalSubscriptionCancellationReasonOptions$Unknown(json),
-}; }
+};}
 
 static const PortalSubscriptionCancellationReasonOptions customerService = PortalSubscriptionCancellationReasonOptions$customerService._();
 
@@ -34,9 +34,9 @@ static const PortalSubscriptionCancellationReasonOptions unused = PortalSubscrip
 static const List<PortalSubscriptionCancellationReasonOptions> values = [customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'customer_service' => 'customerService',
   'low_quality' => 'lowQuality',
   'missing_features' => 'missingFeatures',
@@ -46,11 +46,11 @@ String get name { return switch (value) {
   'too_expensive' => 'tooExpensive',
   'unused' => 'unused',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PortalSubscriptionCancellationReasonOptions$Unknown; } 
+bool get isUnknown {return this is PortalSubscriptionCancellationReasonOptions$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) {return switch (this) {
       PortalSubscriptionCancellationReasonOptions$customerService() => customerService(),
       PortalSubscriptionCancellationReasonOptions$lowQuality() => lowQuality(),
       PortalSubscriptionCancellationReasonOptions$missingFeatures() => missingFeatures(),
@@ -60,9 +60,9 @@ W when<W>({required W Function() customerService, required W Function() lowQuali
       PortalSubscriptionCancellationReasonOptions$tooExpensive() => tooExpensive(),
       PortalSubscriptionCancellationReasonOptions$unused() => unused(),
       PortalSubscriptionCancellationReasonOptions$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) {return switch (this) {
       PortalSubscriptionCancellationReasonOptions$customerService() => customerService != null ? customerService() : orElse(value),
       PortalSubscriptionCancellationReasonOptions$lowQuality() => lowQuality != null ? lowQuality() : orElse(value),
       PortalSubscriptionCancellationReasonOptions$missingFeatures() => missingFeatures != null ? missingFeatures() : orElse(value),
@@ -72,10 +72,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
       PortalSubscriptionCancellationReasonOptions$tooExpensive() => tooExpensive != null ? tooExpensive() : orElse(value),
       PortalSubscriptionCancellationReasonOptions$unused() => unused != null ? unused() : orElse(value),
       PortalSubscriptionCancellationReasonOptions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PortalSubscriptionCancellationReasonOptions($value)';
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$customerService extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$customerService._();
 
 @override String get value => 'customer_service';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'customer_service'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$lowQuality extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$lowQuality._();
 
 @override String get value => 'low_quality';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'low_quality'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$missingFeatures extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$missingFeatures._();
 
 @override String get value => 'missing_features';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'missing_features'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$$other extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$$other._();
 
 @override String get value => 'other';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$switchedService extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$switchedService._();
 
 @override String get value => 'switched_service';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'switched_service'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$tooComplex extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$tooComplex._();
 
 @override String get value => 'too_complex';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'too_complex'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$tooExpensive extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$tooExpensive._();
 
 @override String get value => 'too_expensive';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'too_expensive'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$unused extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$unused._();
 
 @override String get value => 'unused';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'unused'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionCancellationReasonOptions$Unknown extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$Unknown(this.value);
 
 @override final String value;
@@ -157,14 +157,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PortalSubscriptionCancellationReason {const PortalSubscriptionCancellationReason({required this.enabled, required this.options, });
 
-factory PortalSubscriptionCancellationReason.fromJson(Map<String, dynamic> json) { return PortalSubscriptionCancellationReason(
+factory PortalSubscriptionCancellationReason.fromJson(Map<String, dynamic> json) {return PortalSubscriptionCancellationReason(
   enabled: json['enabled'] as bool,
   options: (json['options'] as List<dynamic>).map((e) => PortalSubscriptionCancellationReasonOptions.fromJson(e as String)).toList(),
-); }
+);}
 
 /// Whether the feature is enabled.
 final bool enabled;
@@ -172,16 +172,16 @@ final bool enabled;
 /// Which cancellation reasons will be given as options to the customer.
 final List<PortalSubscriptionCancellationReasonOptions> options;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'options': options.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('options'); } 
-PortalSubscriptionCancellationReason copyWith({bool? enabled, List<PortalSubscriptionCancellationReasonOptions>? options, }) { return PortalSubscriptionCancellationReason(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('options');}
+PortalSubscriptionCancellationReason copyWith({bool? enabled, List<PortalSubscriptionCancellationReasonOptions>? options, }) {return PortalSubscriptionCancellationReason(
   enabled: enabled ?? this.enabled,
   options: options ?? this.options,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PortalSubscriptionCancellationReason &&
           enabled == other.enabled &&
@@ -191,4 +191,4 @@ PortalSubscriptionCancellationReason copyWith({bool? enabled, List<PortalSubscri
 
 @override String toString() => 'PortalSubscriptionCancellationReason(enabled: $enabled, options: $options)';
 
- }
+}

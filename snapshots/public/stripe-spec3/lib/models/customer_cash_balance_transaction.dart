@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_transferred_to_balance.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_unapplied_from_payment_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CustomerCashBalanceTransactionObject {const CustomerCashBalanceTransactionObject();
 
-factory CustomerCashBalanceTransactionObject.fromJson(String json) { return switch (json) {
+factory CustomerCashBalanceTransactionObject.fromJson(String json) {return switch (json) {
   'customer_cash_balance_transaction' => customerCashBalanceTransaction,
   _ => CustomerCashBalanceTransactionObject$Unknown(json),
-}; }
+};}
 
 static const CustomerCashBalanceTransactionObject customerCashBalanceTransaction = CustomerCashBalanceTransactionObject$customerCashBalanceTransaction._();
 
 static const List<CustomerCashBalanceTransactionObject> values = [customerCashBalanceTransaction];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'customer_cash_balance_transaction' => 'customerCashBalanceTransaction',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerCashBalanceTransactionObject$Unknown; } 
+bool get isUnknown {return this is CustomerCashBalanceTransactionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customerCashBalanceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customerCashBalanceTransaction, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerCashBalanceTransactionObject$customerCashBalanceTransaction() => customerCashBalanceTransaction(),
       CustomerCashBalanceTransactionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerCashBalanceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerCashBalanceTransaction, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerCashBalanceTransactionObject$customerCashBalanceTransaction() => customerCashBalanceTransaction != null ? customerCashBalanceTransaction() : orElse(value),
       CustomerCashBalanceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerCashBalanceTransactionObject($value)';
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionObject$customerCashBalanceTransaction extends CustomerCashBalanceTransactionObject {const CustomerCashBalanceTransactionObject$customerCashBalanceTransaction._();
 
 @override String get value => 'customer_cash_balance_transaction';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'customer_cash_balance_transaction'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionObject$Unknown extends CustomerCashBalanceTransactionObject {const CustomerCashBalanceTransactionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The type of the cash balance transaction. New types may be added in future. See [Customer Balance](https://docs.stripe.com/payments/customer-balance#types) to learn more about these types.
 sealed class CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType();
 
-factory CustomerCashBalanceTransactionType.fromJson(String json) { return switch (json) {
+factory CustomerCashBalanceTransactionType.fromJson(String json) {return switch (json) {
   'adjusted_for_overdraft' => adjustedForOverdraft,
   'applied_to_payment' => appliedToPayment,
   'funded' => funded,
@@ -68,7 +68,7 @@ factory CustomerCashBalanceTransactionType.fromJson(String json) { return switch
   'transferred_to_balance' => transferredToBalance,
   'unapplied_from_payment' => unappliedFromPayment,
   _ => CustomerCashBalanceTransactionType$Unknown(json),
-}; }
+};}
 
 static const CustomerCashBalanceTransactionType adjustedForOverdraft = CustomerCashBalanceTransactionType$adjustedForOverdraft._();
 
@@ -91,9 +91,9 @@ static const CustomerCashBalanceTransactionType unappliedFromPayment = CustomerC
 static const List<CustomerCashBalanceTransactionType> values = [adjustedForOverdraft, appliedToPayment, funded, fundingReversed, refundedFromPayment, returnCanceled, returnInitiated, transferredToBalance, unappliedFromPayment];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'adjusted_for_overdraft' => 'adjustedForOverdraft',
   'applied_to_payment' => 'appliedToPayment',
   'funded' => 'funded',
@@ -104,11 +104,11 @@ String get name { return switch (value) {
   'transferred_to_balance' => 'transferredToBalance',
   'unapplied_from_payment' => 'unappliedFromPayment',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerCashBalanceTransactionType$Unknown; } 
+bool get isUnknown {return this is CustomerCashBalanceTransactionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() adjustedForOverdraft, required W Function() appliedToPayment, required W Function() funded, required W Function() fundingReversed, required W Function() refundedFromPayment, required W Function() returnCanceled, required W Function() returnInitiated, required W Function() transferredToBalance, required W Function() unappliedFromPayment, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() adjustedForOverdraft, required W Function() appliedToPayment, required W Function() funded, required W Function() fundingReversed, required W Function() refundedFromPayment, required W Function() returnCanceled, required W Function() returnInitiated, required W Function() transferredToBalance, required W Function() unappliedFromPayment, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerCashBalanceTransactionType$adjustedForOverdraft() => adjustedForOverdraft(),
       CustomerCashBalanceTransactionType$appliedToPayment() => appliedToPayment(),
       CustomerCashBalanceTransactionType$funded() => funded(),
@@ -119,9 +119,9 @@ W when<W>({required W Function() adjustedForOverdraft, required W Function() app
       CustomerCashBalanceTransactionType$transferredToBalance() => transferredToBalance(),
       CustomerCashBalanceTransactionType$unappliedFromPayment() => unappliedFromPayment(),
       CustomerCashBalanceTransactionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustedForOverdraft, W Function()? appliedToPayment, W Function()? funded, W Function()? fundingReversed, W Function()? refundedFromPayment, W Function()? returnCanceled, W Function()? returnInitiated, W Function()? transferredToBalance, W Function()? unappliedFromPayment, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustedForOverdraft, W Function()? appliedToPayment, W Function()? funded, W Function()? fundingReversed, W Function()? refundedFromPayment, W Function()? returnCanceled, W Function()? returnInitiated, W Function()? transferredToBalance, W Function()? unappliedFromPayment, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerCashBalanceTransactionType$adjustedForOverdraft() => adjustedForOverdraft != null ? adjustedForOverdraft() : orElse(value),
       CustomerCashBalanceTransactionType$appliedToPayment() => appliedToPayment != null ? appliedToPayment() : orElse(value),
       CustomerCashBalanceTransactionType$funded() => funded != null ? funded() : orElse(value),
@@ -132,10 +132,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
       CustomerCashBalanceTransactionType$transferredToBalance() => transferredToBalance != null ? transferredToBalance() : orElse(value),
       CustomerCashBalanceTransactionType$unappliedFromPayment() => unappliedFromPayment != null ? unappliedFromPayment() : orElse(value),
       CustomerCashBalanceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerCashBalanceTransactionType($value)';
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$adjustedForOverdraft extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$adjustedForOverdraft._();
 
 @override String get value => 'adjusted_for_overdraft';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'adjusted_for_overdraft'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$appliedToPayment extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$appliedToPayment._();
 
 @override String get value => 'applied_to_payment';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'applied_to_payment'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$funded extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$funded._();
 
 @override String get value => 'funded';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'funded'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$fundingReversed extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$fundingReversed._();
 
 @override String get value => 'funding_reversed';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'funding_reversed'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$refundedFromPayment extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$refundedFromPayment._();
 
 @override String get value => 'refunded_from_payment';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'refunded_from_payment'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$returnCanceled extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$returnCanceled._();
 
 @override String get value => 'return_canceled';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'return_canceled'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$returnInitiated extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$returnInitiated._();
 
 @override String get value => 'return_initiated';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'return_initiated'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$transferredToBalance extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$transferredToBalance._();
 
 @override String get value => 'transferred_to_balance';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'transferred_to_balance'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$unappliedFromPayment extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$unappliedFromPayment._();
 
 @override String get value => 'unapplied_from_payment';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => 'unapplied_from_payment'.hashCode;
 
- }
+}
 @immutable final class CustomerCashBalanceTransactionType$Unknown extends CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType$Unknown(this.value);
 
 @override final String value;
@@ -226,14 +226,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjusted
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Customers with certain payments enabled have a cash balance, representing funds that were paid
 /// by the customer to a merchant, but have not yet been allocated to a payment. Cash Balance Transactions
 /// represent when funds are moved into or out of this balance. This includes funding by the customer, allocation
 /// to payments, and refunds to the customer.
 @immutable final class CustomerCashBalanceTransaction {const CustomerCashBalanceTransaction({required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.netAmount, required this.object, required this.type, this.adjustedForOverdraft, this.appliedToPayment, this.customerAccount = const Omittable.absent(), this.funded, this.refundedFromPayment, this.transferredToBalance, this.unappliedFromPayment, });
 
-factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerCashBalanceTransaction(
+factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) {return CustomerCashBalanceTransaction(
   adjustedForOverdraft: json['adjusted_for_overdraft'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(json['adjusted_for_overdraft'] as Map<String, dynamic>) : null,
   appliedToPayment: json['applied_to_payment'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction.fromJson(json['applied_to_payment'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
@@ -250,7 +250,7 @@ factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { ret
   transferredToBalance: json['transferred_to_balance'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance.fromJson(json['transferred_to_balance'] as Map<String, dynamic>) : null,
   type: CustomerCashBalanceTransactionType.fromJson(json['type'] as String),
   unappliedFromPayment: json['unapplied_from_payment'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction.fromJson(json['unapplied_from_payment'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? adjustedForOverdraft;
 
@@ -294,7 +294,7 @@ final CustomerCashBalanceTransactionType type;
 
 final CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction? unappliedFromPayment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adjustedForOverdraft != null) 'adjusted_for_overdraft': adjustedForOverdraft?.toJson(),
   if (appliedToPayment != null) 'applied_to_payment': appliedToPayment?.toJson(),
   'created': created,
@@ -311,8 +311,8 @@ Map<String, dynamic> toJson() { return {
   if (transferredToBalance != null) 'transferred_to_balance': transferredToBalance?.toJson(),
   'type': type.toJson(),
   if (unappliedFromPayment != null) 'unapplied_from_payment': unappliedFromPayment?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('customer') &&
       json.containsKey('ending_balance') && json['ending_balance'] is num &&
@@ -320,17 +320,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('net_amount') && json['net_amount'] is num &&
       json.containsKey('object') && json['object'] == 'customer_cash_balance_transaction' &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? Function()? adjustedForOverdraft, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction? Function()? appliedToPayment, int? created, String? currency, BankConnectionsResourceAccountholderCustomer? customer, Omittable<String?>? customerAccount, int? endingBalance, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction? Function()? funded, String? id, bool? livemode, int? netAmount, CustomerCashBalanceTransactionObject? object, CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction? Function()? refundedFromPayment, CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance? Function()? transferredToBalance, CustomerCashBalanceTransactionType? type, CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction? Function()? unappliedFromPayment, }) { return CustomerCashBalanceTransaction(
+return errors;}
+CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? Function()? adjustedForOverdraft, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction? Function()? appliedToPayment, int? created, String? currency, BankConnectionsResourceAccountholderCustomer? customer, Omittable<String?>? customerAccount, int? endingBalance, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction? Function()? funded, String? id, bool? livemode, int? netAmount, CustomerCashBalanceTransactionObject? object, CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction? Function()? refundedFromPayment, CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance? Function()? transferredToBalance, CustomerCashBalanceTransactionType? type, CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction? Function()? unappliedFromPayment, }) {return CustomerCashBalanceTransaction(
   adjustedForOverdraft: adjustedForOverdraft != null ? adjustedForOverdraft() : this.adjustedForOverdraft,
   appliedToPayment: appliedToPayment != null ? appliedToPayment() : this.appliedToPayment,
   created: created ?? this.created,
@@ -347,7 +347,7 @@ CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTrans
   transferredToBalance: transferredToBalance != null ? transferredToBalance() : this.transferredToBalance,
   type: type ?? this.type,
   unappliedFromPayment: unappliedFromPayment != null ? unappliedFromPayment() : this.unappliedFromPayment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerCashBalanceTransaction &&
           adjustedForOverdraft == other.adjustedForOverdraft &&
@@ -371,4 +371,4 @@ CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTrans
 
 @override String toString() => 'CustomerCashBalanceTransaction(\n  adjustedForOverdraft: $adjustedForOverdraft,\n  appliedToPayment: $appliedToPayment,\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  endingBalance: $endingBalance,\n  funded: $funded,\n  id: $id,\n  livemode: $livemode,\n  netAmount: $netAmount,\n  object: $object,\n  refundedFromPayment: $refundedFromPayment,\n  transferredToBalance: $transferredToBalance,\n  type: $type,\n  unappliedFromPayment: $unappliedFromPayment,\n)';
 
- }
+}

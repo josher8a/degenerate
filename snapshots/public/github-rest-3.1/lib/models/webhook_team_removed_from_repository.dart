@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_team_added_to_repository/webhook_team_added_to_repository_repository.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1.dart';sealed class WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction();
 
-factory WebhookTeamRemovedFromRepositoryAction.fromJson(String json) { return switch (json) {
+factory WebhookTeamRemovedFromRepositoryAction.fromJson(String json) {return switch (json) {
   'removed_from_repository' => removedFromRepository,
   _ => WebhookTeamRemovedFromRepositoryAction$Unknown(json),
-}; }
+};}
 
 static const WebhookTeamRemovedFromRepositoryAction removedFromRepository = WebhookTeamRemovedFromRepositoryAction$removedFromRepository._();
 
 static const List<WebhookTeamRemovedFromRepositoryAction> values = [removedFromRepository];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'removed_from_repository' => 'removedFromRepository',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookTeamRemovedFromRepositoryAction$Unknown; } 
+bool get isUnknown {return this is WebhookTeamRemovedFromRepositoryAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() removedFromRepository, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() removedFromRepository, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookTeamRemovedFromRepositoryAction$removedFromRepository() => removedFromRepository(),
       WebhookTeamRemovedFromRepositoryAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? removedFromRepository, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? removedFromRepository, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookTeamRemovedFromRepositoryAction$removedFromRepository() => removedFromRepository != null ? removedFromRepository() : orElse(value),
       WebhookTeamRemovedFromRepositoryAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookTeamRemovedFromRepositoryAction($value)';
 
- }
+}
 @immutable final class WebhookTeamRemovedFromRepositoryAction$removedFromRepository extends WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction$removedFromRepository._();
 
 @override String get value => 'removed_from_repository';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? removedF
 
 @override int get hashCode => 'removed_from_repository'.hashCode;
 
- }
+}
 @immutable final class WebhookTeamRemovedFromRepositoryAction$Unknown extends WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? removedF
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookTeamRemovedFromRepository {const WebhookTeamRemovedFromRepository({required this.action, required this.organization, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
 
-factory WebhookTeamRemovedFromRepository.fromJson(Map<String, dynamic> json) { return WebhookTeamRemovedFromRepository(
+factory WebhookTeamRemovedFromRepository.fromJson(Map<String, dynamic> json) {return WebhookTeamRemovedFromRepository(
   action: WebhookTeamRemovedFromRepositoryAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -63,7 +63,7 @@ factory WebhookTeamRemovedFromRepository.fromJson(Map<String, dynamic> json) { r
   repository: json['repository'] != null ? WebhookTeamAddedToRepositoryRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   team: WebhooksTeam1.fromJson(json['team'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookTeamRemovedFromRepositoryAction action;
 
@@ -80,7 +80,7 @@ final SimpleUser sender;
 
 final WebhooksTeam1 team;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -88,12 +88,12 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
   'team': team.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('sender') &&
-      json.containsKey('team'); } 
-WebhookTeamRemovedFromRepository copyWith({WebhookTeamRemovedFromRepositoryAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamAddedToRepositoryRepository? Function()? repository, SimpleUser? sender, WebhooksTeam1? team, }) { return WebhookTeamRemovedFromRepository(
+      json.containsKey('team');}
+WebhookTeamRemovedFromRepository copyWith({WebhookTeamRemovedFromRepositoryAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamAddedToRepositoryRepository? Function()? repository, SimpleUser? sender, WebhooksTeam1? team, }) {return WebhookTeamRemovedFromRepository(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -101,7 +101,7 @@ WebhookTeamRemovedFromRepository copyWith({WebhookTeamRemovedFromRepositoryActio
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
   team: team ?? this.team,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookTeamRemovedFromRepository &&
           action == other.action &&
@@ -116,4 +116,4 @@ WebhookTeamRemovedFromRepository copyWith({WebhookTeamRemovedFromRepositoryActio
 
 @override String toString() => 'WebhookTeamRemovedFromRepository(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)';
 
- }
+}

@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class InputAudio {const InputAudio({required this.type, required this.inputAudio, });
 
-factory InputAudio.fromJson(Map<String, dynamic> json) { return InputAudio(
+factory InputAudio.fromJson(Map<String, dynamic> json) {return InputAudio(
   type: ChatCompletionRequestMessageContentPartAudioType.fromJson(json['type'] as String),
   inputAudio: ChatCompletionRequestMessageContentPartAudioInputAudio.fromJson(json['input_audio'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the input item. Always `input_audio`.
 /// 
@@ -16,16 +16,16 @@ final ChatCompletionRequestMessageContentPartAudioType type;
 
 final ChatCompletionRequestMessageContentPartAudioInputAudio inputAudio;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'input_audio': inputAudio.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'input_audio' &&
-      json.containsKey('input_audio'); } 
-InputAudio copyWith({ChatCompletionRequestMessageContentPartAudioType? type, ChatCompletionRequestMessageContentPartAudioInputAudio? inputAudio, }) { return InputAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'input_audio' &&
+      json.containsKey('input_audio');}
+InputAudio copyWith({ChatCompletionRequestMessageContentPartAudioType? type, ChatCompletionRequestMessageContentPartAudioInputAudio? inputAudio, }) {return InputAudio(
   type: type ?? this.type,
   inputAudio: inputAudio ?? this.inputAudio,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InputAudio &&
           type == other.type &&
@@ -35,4 +35,4 @@ InputAudio copyWith({ChatCompletionRequestMessageContentPartAudioType? type, Cha
 
 @override String toString() => 'InputAudio(type: $type, inputAudio: $inputAudio)';
 
- }
+}

@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AssistantsNamedToolChoiceFunction {const AssistantsNamedToolChoiceFunction({required this.name});
 
-factory AssistantsNamedToolChoiceFunction.fromJson(Map<String, dynamic> json) { return AssistantsNamedToolChoiceFunction(
+factory AssistantsNamedToolChoiceFunction.fromJson(Map<String, dynamic> json) {return AssistantsNamedToolChoiceFunction(
   name: json['name'] as String,
-); }
+);}
 
 /// The name of the function to call.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-AssistantsNamedToolChoiceFunction copyWith({String? name}) { return AssistantsNamedToolChoiceFunction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+AssistantsNamedToolChoiceFunction copyWith({String? name}) {return AssistantsNamedToolChoiceFunction(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantsNamedToolChoiceFunction &&
           name == other.name;
@@ -25,4 +25,4 @@ AssistantsNamedToolChoiceFunction copyWith({String? name}) { return AssistantsNa
 
 @override String toString() => 'AssistantsNamedToolChoiceFunction(name: $name)';
 
- }
+}

@@ -12,7 +12,7 @@ final class CoreApi with ApiExecutor {const CoreApi(this.apiConfig);
 /// get available resources
 ///
 /// `GET /api/v1/`
-Future<ApiResult<ResourceList, Never>> getCoreV1ApiResources({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceList, Never>> getCoreV1ApiResources({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ return await execute(
     return ResourceList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list objects of kind ComponentStatus
 ///
 /// `GET /api/v1/componentstatuses`
-Future<ApiResult<ComponentStatusList, Never>> listCoreV1ComponentStatus({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ComponentStatusList, Never>> listCoreV1ComponentStatus({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -84,11 +84,11 @@ return await execute(
     return ComponentStatusList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified ComponentStatus
 ///
 /// `GET /api/v1/componentstatuses/{name}`
-Future<ApiResult<ComponentStatus, Never>> readCoreV1ComponentStatus({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ComponentStatus, Never>> readCoreV1ComponentStatus({required String name, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -111,11 +111,11 @@ return await execute(
     return ComponentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind ConfigMap
 ///
 /// `GET /api/v1/configmaps`
-Future<ApiResult<ConfigMapList, Never>> listCoreV1ConfigMapForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConfigMapList, Never>> listCoreV1ConfigMapForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -168,11 +168,11 @@ return await execute(
     return ConfigMapList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Endpoints
 ///
 /// `GET /api/v1/endpoints`
-Future<ApiResult<EndpointsList, Never>> listCoreV1EndpointsForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EndpointsList, Never>> listCoreV1EndpointsForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -225,11 +225,11 @@ return await execute(
     return EndpointsList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Event
 ///
 /// `GET /api/v1/events`
-Future<ApiResult<EventList, Never>> listCoreV1EventForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EventList, Never>> listCoreV1EventForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -282,11 +282,11 @@ return await execute(
     return EventList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind LimitRange
 ///
 /// `GET /api/v1/limitranges`
-Future<ApiResult<LimitRangeList, Never>> listCoreV1LimitRangeForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LimitRangeList, Never>> listCoreV1LimitRangeForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -339,11 +339,11 @@ return await execute(
     return LimitRangeList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Namespace
 ///
 /// `GET /api/v1/namespaces`
-Future<ApiResult<NamespaceList, Never>> listCoreV1Namespace({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<NamespaceList, Never>> listCoreV1Namespace({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -396,11 +396,11 @@ return await execute(
     return NamespaceList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a Namespace
 ///
 /// `POST /api/v1/namespaces`
-Future<ApiResult<Namespace, Never>> createCoreV1Namespace({required Namespace body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> createCoreV1Namespace({required Namespace body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -434,11 +434,11 @@ return await execute(
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a Binding
 ///
 /// `POST /api/v1/namespaces/{namespace}/bindings`
-Future<ApiResult<Binding, Never>> createCoreV1NamespacedBinding({required String namespace, required Binding body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Binding, Never>> createCoreV1NamespacedBinding({required String namespace, required Binding body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dryRun != null) {
   queryParameters['dryRun'] = dryRun;
@@ -472,11 +472,11 @@ return await execute(
     return Binding.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind ConfigMap
 ///
 /// `GET /api/v1/namespaces/{namespace}/configmaps`
-Future<ApiResult<ConfigMapList, Never>> listCoreV1NamespacedConfigMap({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConfigMapList, Never>> listCoreV1NamespacedConfigMap({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -529,11 +529,11 @@ return await execute(
     return ConfigMapList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a ConfigMap
 ///
 /// `POST /api/v1/namespaces/{namespace}/configmaps`
-Future<ApiResult<ConfigMap, Never>> createCoreV1NamespacedConfigMap({required String namespace, required ConfigMap body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConfigMap, Never>> createCoreV1NamespacedConfigMap({required String namespace, required ConfigMap body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -567,11 +567,11 @@ return await execute(
     return ConfigMap.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of ConfigMap
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/configmaps`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedConfigMap({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedConfigMap({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -635,11 +635,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified ConfigMap
 ///
 /// `GET /api/v1/namespaces/{namespace}/configmaps/{name}`
-Future<ApiResult<ConfigMap, Never>> readCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConfigMap, Never>> readCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -662,11 +662,11 @@ return await execute(
     return ConfigMap.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified ConfigMap
 ///
 /// `PUT /api/v1/namespaces/{namespace}/configmaps/{name}`
-Future<ApiResult<ConfigMap, Never>> replaceCoreV1NamespacedConfigMap({required String name, required String namespace, required ConfigMap body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConfigMap, Never>> replaceCoreV1NamespacedConfigMap({required String name, required String namespace, required ConfigMap body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -700,11 +700,11 @@ return await execute(
     return ConfigMap.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified ConfigMap
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/configmaps/{name}`
-Future<ApiResult<ConfigMap, Never>> patchCoreV1NamespacedConfigMap({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConfigMap, Never>> patchCoreV1NamespacedConfigMap({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -741,11 +741,11 @@ return await execute(
     return ConfigMap.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a ConfigMap
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/configmaps/{name}`
-Future<ApiResult<Status, Never>> deleteCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -785,11 +785,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Endpoints
 ///
 /// `GET /api/v1/namespaces/{namespace}/endpoints`
-Future<ApiResult<EndpointsList, Never>> listCoreV1NamespacedEndpoints({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EndpointsList, Never>> listCoreV1NamespacedEndpoints({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -842,11 +842,11 @@ return await execute(
     return EndpointsList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create Endpoints
 ///
 /// `POST /api/v1/namespaces/{namespace}/endpoints`
-Future<ApiResult<Endpoints, Never>> createCoreV1NamespacedEndpoints({required String namespace, required Endpoints body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Endpoints, Never>> createCoreV1NamespacedEndpoints({required String namespace, required Endpoints body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -880,11 +880,11 @@ return await execute(
     return Endpoints.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of Endpoints
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/endpoints`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEndpoints({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEndpoints({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -948,11 +948,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified Endpoints
 ///
 /// `GET /api/v1/namespaces/{namespace}/endpoints/{name}`
-Future<ApiResult<Endpoints, Never>> readCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Endpoints, Never>> readCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -975,11 +975,11 @@ return await execute(
     return Endpoints.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified Endpoints
 ///
 /// `PUT /api/v1/namespaces/{namespace}/endpoints/{name}`
-Future<ApiResult<Endpoints, Never>> replaceCoreV1NamespacedEndpoints({required String name, required String namespace, required Endpoints body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Endpoints, Never>> replaceCoreV1NamespacedEndpoints({required String name, required String namespace, required Endpoints body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1013,11 +1013,11 @@ return await execute(
     return Endpoints.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified Endpoints
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/endpoints/{name}`
-Future<ApiResult<Endpoints, Never>> patchCoreV1NamespacedEndpoints({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Endpoints, Never>> patchCoreV1NamespacedEndpoints({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1054,11 +1054,11 @@ return await execute(
     return Endpoints.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete Endpoints
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/endpoints/{name}`
-Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1098,11 +1098,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Event
 ///
 /// `GET /api/v1/namespaces/{namespace}/events`
-Future<ApiResult<EventList, Never>> listCoreV1NamespacedEvent({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EventList, Never>> listCoreV1NamespacedEvent({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1155,11 +1155,11 @@ return await execute(
     return EventList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create an Event
 ///
 /// `POST /api/v1/namespaces/{namespace}/events`
-Future<ApiResult<Event, Never>> createCoreV1NamespacedEvent({required String namespace, required Event body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Event, Never>> createCoreV1NamespacedEvent({required String namespace, required Event body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1193,11 +1193,11 @@ return await execute(
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of Event
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/events`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEvent({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEvent({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1261,11 +1261,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified Event
 ///
 /// `GET /api/v1/namespaces/{namespace}/events/{name}`
-Future<ApiResult<Event, Never>> readCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Event, Never>> readCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1288,11 +1288,11 @@ return await execute(
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified Event
 ///
 /// `PUT /api/v1/namespaces/{namespace}/events/{name}`
-Future<ApiResult<Event, Never>> replaceCoreV1NamespacedEvent({required String name, required String namespace, required Event body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Event, Never>> replaceCoreV1NamespacedEvent({required String name, required String namespace, required Event body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1326,11 +1326,11 @@ return await execute(
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified Event
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/events/{name}`
-Future<ApiResult<Event, Never>> patchCoreV1NamespacedEvent({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Event, Never>> patchCoreV1NamespacedEvent({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1367,11 +1367,11 @@ return await execute(
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete an Event
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/events/{name}`
-Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1411,11 +1411,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind LimitRange
 ///
 /// `GET /api/v1/namespaces/{namespace}/limitranges`
-Future<ApiResult<LimitRangeList, Never>> listCoreV1NamespacedLimitRange({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LimitRangeList, Never>> listCoreV1NamespacedLimitRange({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1468,11 +1468,11 @@ return await execute(
     return LimitRangeList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a LimitRange
 ///
 /// `POST /api/v1/namespaces/{namespace}/limitranges`
-Future<ApiResult<LimitRange, Never>> createCoreV1NamespacedLimitRange({required String namespace, required LimitRange body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LimitRange, Never>> createCoreV1NamespacedLimitRange({required String namespace, required LimitRange body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1506,11 +1506,11 @@ return await execute(
     return LimitRange.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of LimitRange
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/limitranges`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedLimitRange({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedLimitRange({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1574,11 +1574,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified LimitRange
 ///
 /// `GET /api/v1/namespaces/{namespace}/limitranges/{name}`
-Future<ApiResult<LimitRange, Never>> readCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LimitRange, Never>> readCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1601,11 +1601,11 @@ return await execute(
     return LimitRange.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified LimitRange
 ///
 /// `PUT /api/v1/namespaces/{namespace}/limitranges/{name}`
-Future<ApiResult<LimitRange, Never>> replaceCoreV1NamespacedLimitRange({required String name, required String namespace, required LimitRange body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LimitRange, Never>> replaceCoreV1NamespacedLimitRange({required String name, required String namespace, required LimitRange body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1639,11 +1639,11 @@ return await execute(
     return LimitRange.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified LimitRange
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/limitranges/{name}`
-Future<ApiResult<LimitRange, Never>> patchCoreV1NamespacedLimitRange({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LimitRange, Never>> patchCoreV1NamespacedLimitRange({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1680,11 +1680,11 @@ return await execute(
     return LimitRange.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a LimitRange
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/limitranges/{name}`
-Future<ApiResult<Status, Never>> deleteCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1724,11 +1724,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind PersistentVolumeClaim
 ///
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims`
-Future<ApiResult<PersistentVolumeClaimList, Never>> listCoreV1NamespacedPersistentVolumeClaim({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaimList, Never>> listCoreV1NamespacedPersistentVolumeClaim({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1781,11 +1781,11 @@ return await execute(
     return PersistentVolumeClaimList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a PersistentVolumeClaim
 ///
 /// `POST /api/v1/namespaces/{namespace}/persistentvolumeclaims`
-Future<ApiResult<PersistentVolumeClaim, Never>> createCoreV1NamespacedPersistentVolumeClaim({required String namespace, required PersistentVolumeClaim body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> createCoreV1NamespacedPersistentVolumeClaim({required String namespace, required PersistentVolumeClaim body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1819,11 +1819,11 @@ return await execute(
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of PersistentVolumeClaim
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPersistentVolumeClaim({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPersistentVolumeClaim({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1887,11 +1887,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified PersistentVolumeClaim
 ///
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
-Future<ApiResult<PersistentVolumeClaim, Never>> readCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> readCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1914,11 +1914,11 @@ return await execute(
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified PersistentVolumeClaim
 ///
 /// `PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
-Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, required PersistentVolumeClaim body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, required PersistentVolumeClaim body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1952,11 +1952,11 @@ return await execute(
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified PersistentVolumeClaim
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
-Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -1993,11 +1993,11 @@ return await execute(
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a PersistentVolumeClaim
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
-Future<ApiResult<PersistentVolumeClaim, Never>> deleteCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> deleteCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2037,11 +2037,11 @@ return await execute(
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read status of the specified PersistentVolumeClaim
 ///
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
-Future<ApiResult<PersistentVolumeClaim, Never>> readCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> readCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2064,11 +2064,11 @@ return await execute(
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace status of the specified PersistentVolumeClaim
 ///
 /// `PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
-Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, required PersistentVolumeClaim body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, required PersistentVolumeClaim body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2102,11 +2102,11 @@ return await execute(
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update status of the specified PersistentVolumeClaim
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
-Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2143,11 +2143,11 @@ return await execute(
     return PersistentVolumeClaim.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods`
-Future<ApiResult<PodList, Never>> listCoreV1NamespacedPod({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodList, Never>> listCoreV1NamespacedPod({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2200,11 +2200,11 @@ return await execute(
     return PodList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods`
-Future<ApiResult<Pod, Never>> createCoreV1NamespacedPod({required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> createCoreV1NamespacedPod({required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2238,11 +2238,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPod({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPod({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2306,11 +2306,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}`
-Future<ApiResult<Pod, Never>> readCoreV1NamespacedPod({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> readCoreV1NamespacedPod({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2333,11 +2333,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}`
-Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPod({required String name, required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPod({required String name, required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2371,11 +2371,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}`
-Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPod({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPod({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2412,11 +2412,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}`
-Future<ApiResult<Pod, Never>> deleteCoreV1NamespacedPod({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> deleteCoreV1NamespacedPod({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2456,11 +2456,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// connect GET requests to attach of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/attach`
-Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (container != null) {
   queryParameters['container'] = container;
@@ -2492,14 +2492,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to attach of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/attach`
-Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (container != null) {
   queryParameters['container'] = container;
@@ -2531,14 +2531,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// create binding of a Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/binding`
-Future<ApiResult<Binding, Never>> createCoreV1NamespacedPodBinding({required String name, required String namespace, required Binding body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Binding, Never>> createCoreV1NamespacedPodBinding({required String name, required String namespace, required Binding body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dryRun != null) {
   queryParameters['dryRun'] = dryRun;
@@ -2572,11 +2572,11 @@ return await execute(
     return Binding.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read ephemeralcontainers of the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
-Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2599,11 +2599,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace ephemeralcontainers of the specified Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
-Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2637,11 +2637,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update ephemeralcontainers of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
-Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -2678,11 +2678,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create eviction of a Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/eviction`
-Future<ApiResult<Eviction, Never>> createCoreV1NamespacedPodEviction({required String name, required String namespace, required Eviction body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Eviction, Never>> createCoreV1NamespacedPodEviction({required String name, required String namespace, required Eviction body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dryRun != null) {
   queryParameters['dryRun'] = dryRun;
@@ -2716,11 +2716,11 @@ return await execute(
     return Eviction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// connect GET requests to exec of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/exec`
-Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (command != null) {
   queryParameters['command'] = command;
@@ -2755,14 +2755,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to exec of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/exec`
-Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (command != null) {
   queryParameters['command'] = command;
@@ -2797,14 +2797,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// read log of the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/log`
-Future<ApiResult<String, Never>> readCoreV1NamespacedPodLog({required String name, required String namespace, String? container, bool? follow, bool? insecureSkipTlsVerifyBackend, int? limitBytes, String? pretty, bool? previous, int? sinceSeconds, String? stream, int? tailLines, bool? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> readCoreV1NamespacedPodLog({required String name, required String namespace, String? container, bool? follow, bool? insecureSkipTlsVerifyBackend, int? limitBytes, String? pretty, bool? previous, int? sinceSeconds, String? stream, int? tailLines, bool? timestamps, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (container != null) {
   queryParameters['container'] = container;
@@ -2851,14 +2851,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect GET requests to portforward of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/portforward`
-Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodPortforward({required String name, required String namespace, int? ports, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodPortforward({required String name, required String namespace, int? ports, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ports != null) {
   queryParameters['ports'] = ports.toString();
@@ -2878,14 +2878,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to portforward of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/portforward`
-Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodPortforward({required String name, required String namespace, int? ports, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodPortforward({required String name, required String namespace, int? ports, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ports != null) {
   queryParameters['ports'] = ports.toString();
@@ -2905,14 +2905,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect GET requests to proxy of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -2932,14 +2932,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to proxy of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -2959,14 +2959,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PUT requests to proxy of Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PutNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PutNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -2986,14 +2986,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PATCH requests to proxy of Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -3013,14 +3013,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect DELETE requests to proxy of Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -3040,14 +3040,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect HEAD requests to proxy of Pod
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -3067,14 +3067,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect OPTIONS requests to proxy of Pod
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/pods/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -3094,14 +3094,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect GET requests to proxy of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -3121,14 +3121,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to proxy of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -3148,14 +3148,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PUT requests to proxy of Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PutNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PutNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -3175,14 +3175,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PATCH requests to proxy of Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -3202,14 +3202,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect DELETE requests to proxy of Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -3229,14 +3229,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect HEAD requests to proxy of Pod
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -3256,14 +3256,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect OPTIONS requests to proxy of Pod
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -3283,14 +3283,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// read resize of the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/resize`
-Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodResize({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodResize({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3313,11 +3313,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace resize of the specified Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/resize`
-Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodResize({required String name, required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodResize({required String name, required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3351,11 +3351,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update resize of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/resize`
-Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodResize({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodResize({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3392,11 +3392,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read status of the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/status`
-Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3419,11 +3419,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace status of the specified Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/status`
-Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodStatus({required String name, required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodStatus({required String name, required String namespace, required Pod body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3457,11 +3457,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update status of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/status`
-Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3498,11 +3498,11 @@ return await execute(
     return Pod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind PodTemplate
 ///
 /// `GET /api/v1/namespaces/{namespace}/podtemplates`
-Future<ApiResult<PodTemplateList, Never>> listCoreV1NamespacedPodTemplate({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodTemplateList, Never>> listCoreV1NamespacedPodTemplate({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3555,11 +3555,11 @@ return await execute(
     return PodTemplateList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a PodTemplate
 ///
 /// `POST /api/v1/namespaces/{namespace}/podtemplates`
-Future<ApiResult<PodTemplate, Never>> createCoreV1NamespacedPodTemplate({required String namespace, required PodTemplate body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodTemplate, Never>> createCoreV1NamespacedPodTemplate({required String namespace, required PodTemplate body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3593,11 +3593,11 @@ return await execute(
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of PodTemplate
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/podtemplates`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPodTemplate({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPodTemplate({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3661,11 +3661,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified PodTemplate
 ///
 /// `GET /api/v1/namespaces/{namespace}/podtemplates/{name}`
-Future<ApiResult<PodTemplate, Never>> readCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodTemplate, Never>> readCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3688,11 +3688,11 @@ return await execute(
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified PodTemplate
 ///
 /// `PUT /api/v1/namespaces/{namespace}/podtemplates/{name}`
-Future<ApiResult<PodTemplate, Never>> replaceCoreV1NamespacedPodTemplate({required String name, required String namespace, required PodTemplate body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodTemplate, Never>> replaceCoreV1NamespacedPodTemplate({required String name, required String namespace, required PodTemplate body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3726,11 +3726,11 @@ return await execute(
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified PodTemplate
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/podtemplates/{name}`
-Future<ApiResult<PodTemplate, Never>> patchCoreV1NamespacedPodTemplate({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodTemplate, Never>> patchCoreV1NamespacedPodTemplate({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3767,11 +3767,11 @@ return await execute(
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a PodTemplate
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/podtemplates/{name}`
-Future<ApiResult<PodTemplate, Never>> deleteCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodTemplate, Never>> deleteCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3811,11 +3811,11 @@ return await execute(
     return PodTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind ReplicationController
 ///
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers`
-Future<ApiResult<ReplicationControllerList, Never>> listCoreV1NamespacedReplicationController({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationControllerList, Never>> listCoreV1NamespacedReplicationController({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3868,11 +3868,11 @@ return await execute(
     return ReplicationControllerList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a ReplicationController
 ///
 /// `POST /api/v1/namespaces/{namespace}/replicationcontrollers`
-Future<ApiResult<ReplicationController, Never>> createCoreV1NamespacedReplicationController({required String namespace, required ReplicationController body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> createCoreV1NamespacedReplicationController({required String namespace, required ReplicationController body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3906,11 +3906,11 @@ return await execute(
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of ReplicationController
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/replicationcontrollers`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedReplicationController({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedReplicationController({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -3974,11 +3974,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified ReplicationController
 ///
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
-Future<ApiResult<ReplicationController, Never>> readCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> readCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4001,11 +4001,11 @@ return await execute(
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified ReplicationController
 ///
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
-Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicationController({required String name, required String namespace, required ReplicationController body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicationController({required String name, required String namespace, required ReplicationController body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4039,11 +4039,11 @@ return await execute(
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
-Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationController({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationController({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4080,11 +4080,11 @@ return await execute(
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a ReplicationController
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
-Future<ApiResult<Status, Never>> deleteCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4124,11 +4124,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read scale of the specified ReplicationController
 ///
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
-Future<ApiResult<Scale, Never>> readCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Scale, Never>> readCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4151,11 +4151,11 @@ return await execute(
     return Scale.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace scale of the specified ReplicationController
 ///
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
-Future<ApiResult<Scale, Never>> replaceCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, required Scale body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Scale, Never>> replaceCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, required Scale body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4189,11 +4189,11 @@ return await execute(
     return Scale.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update scale of the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
-Future<ApiResult<Scale, Never>> patchCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Scale, Never>> patchCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4230,11 +4230,11 @@ return await execute(
     return Scale.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read status of the specified ReplicationController
 ///
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
-Future<ApiResult<ReplicationController, Never>> readCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> readCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4257,11 +4257,11 @@ return await execute(
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace status of the specified ReplicationController
 ///
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
-Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, required ReplicationController body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, required ReplicationController body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4295,11 +4295,11 @@ return await execute(
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update status of the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
-Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4336,11 +4336,11 @@ return await execute(
     return ReplicationController.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind ResourceQuota
 ///
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas`
-Future<ApiResult<ResourceQuotaList, Never>> listCoreV1NamespacedResourceQuota({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuotaList, Never>> listCoreV1NamespacedResourceQuota({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4393,11 +4393,11 @@ return await execute(
     return ResourceQuotaList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a ResourceQuota
 ///
 /// `POST /api/v1/namespaces/{namespace}/resourcequotas`
-Future<ApiResult<ResourceQuota, Never>> createCoreV1NamespacedResourceQuota({required String namespace, required ResourceQuota body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> createCoreV1NamespacedResourceQuota({required String namespace, required ResourceQuota body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4431,11 +4431,11 @@ return await execute(
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of ResourceQuota
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/resourcequotas`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedResourceQuota({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedResourceQuota({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4499,11 +4499,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified ResourceQuota
 ///
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas/{name}`
-Future<ApiResult<ResourceQuota, Never>> readCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> readCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4526,11 +4526,11 @@ return await execute(
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified ResourceQuota
 ///
 /// `PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}`
-Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuota({required String name, required String namespace, required ResourceQuota body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuota({required String name, required String namespace, required ResourceQuota body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4564,11 +4564,11 @@ return await execute(
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified ResourceQuota
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}`
-Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuota({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuota({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4605,11 +4605,11 @@ return await execute(
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a ResourceQuota
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/resourcequotas/{name}`
-Future<ApiResult<ResourceQuota, Never>> deleteCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> deleteCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4649,11 +4649,11 @@ return await execute(
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read status of the specified ResourceQuota
 ///
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
-Future<ApiResult<ResourceQuota, Never>> readCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> readCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4676,11 +4676,11 @@ return await execute(
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace status of the specified ResourceQuota
 ///
 /// `PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
-Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, required ResourceQuota body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, required ResourceQuota body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4714,11 +4714,11 @@ return await execute(
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update status of the specified ResourceQuota
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
-Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4755,11 +4755,11 @@ return await execute(
     return ResourceQuota.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Secret
 ///
 /// `GET /api/v1/namespaces/{namespace}/secrets`
-Future<ApiResult<SecretList, Never>> listCoreV1NamespacedSecret({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SecretList, Never>> listCoreV1NamespacedSecret({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4812,11 +4812,11 @@ return await execute(
     return SecretList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a Secret
 ///
 /// `POST /api/v1/namespaces/{namespace}/secrets`
-Future<ApiResult<Secret, Never>> createCoreV1NamespacedSecret({required String namespace, required Secret body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Secret, Never>> createCoreV1NamespacedSecret({required String namespace, required Secret body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4850,11 +4850,11 @@ return await execute(
     return Secret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of Secret
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/secrets`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedSecret({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedSecret({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4918,11 +4918,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified Secret
 ///
 /// `GET /api/v1/namespaces/{namespace}/secrets/{name}`
-Future<ApiResult<Secret, Never>> readCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Secret, Never>> readCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4945,11 +4945,11 @@ return await execute(
     return Secret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified Secret
 ///
 /// `PUT /api/v1/namespaces/{namespace}/secrets/{name}`
-Future<ApiResult<Secret, Never>> replaceCoreV1NamespacedSecret({required String name, required String namespace, required Secret body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Secret, Never>> replaceCoreV1NamespacedSecret({required String name, required String namespace, required Secret body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -4983,11 +4983,11 @@ return await execute(
     return Secret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified Secret
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/secrets/{name}`
-Future<ApiResult<Secret, Never>> patchCoreV1NamespacedSecret({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Secret, Never>> patchCoreV1NamespacedSecret({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5024,11 +5024,11 @@ return await execute(
     return Secret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a Secret
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/secrets/{name}`
-Future<ApiResult<Status, Never>> deleteCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5068,11 +5068,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind ServiceAccount
 ///
 /// `GET /api/v1/namespaces/{namespace}/serviceaccounts`
-Future<ApiResult<ServiceAccountList, Never>> listCoreV1NamespacedServiceAccount({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceAccountList, Never>> listCoreV1NamespacedServiceAccount({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5125,11 +5125,11 @@ return await execute(
     return ServiceAccountList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a ServiceAccount
 ///
 /// `POST /api/v1/namespaces/{namespace}/serviceaccounts`
-Future<ApiResult<ServiceAccount, Never>> createCoreV1NamespacedServiceAccount({required String namespace, required ServiceAccount body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceAccount, Never>> createCoreV1NamespacedServiceAccount({required String namespace, required ServiceAccount body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5163,11 +5163,11 @@ return await execute(
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of ServiceAccount
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/serviceaccounts`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedServiceAccount({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedServiceAccount({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5231,11 +5231,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified ServiceAccount
 ///
 /// `GET /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
-Future<ApiResult<ServiceAccount, Never>> readCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceAccount, Never>> readCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5258,11 +5258,11 @@ return await execute(
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified ServiceAccount
 ///
 /// `PUT /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
-Future<ApiResult<ServiceAccount, Never>> replaceCoreV1NamespacedServiceAccount({required String name, required String namespace, required ServiceAccount body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceAccount, Never>> replaceCoreV1NamespacedServiceAccount({required String name, required String namespace, required ServiceAccount body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5296,11 +5296,11 @@ return await execute(
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified ServiceAccount
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
-Future<ApiResult<ServiceAccount, Never>> patchCoreV1NamespacedServiceAccount({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceAccount, Never>> patchCoreV1NamespacedServiceAccount({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5337,11 +5337,11 @@ return await execute(
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a ServiceAccount
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
-Future<ApiResult<ServiceAccount, Never>> deleteCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceAccount, Never>> deleteCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5381,11 +5381,11 @@ return await execute(
     return ServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create token of a ServiceAccount
 ///
 /// `POST /api/v1/namespaces/{namespace}/serviceaccounts/{name}/token`
-Future<ApiResult<TokenRequest, Never>> createCoreV1NamespacedServiceAccountToken({required String name, required String namespace, required TokenRequest body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TokenRequest, Never>> createCoreV1NamespacedServiceAccountToken({required String name, required String namespace, required TokenRequest body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dryRun != null) {
   queryParameters['dryRun'] = dryRun;
@@ -5419,11 +5419,11 @@ return await execute(
     return TokenRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services`
-Future<ApiResult<ServiceList, Never>> listCoreV1NamespacedService({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceList, Never>> listCoreV1NamespacedService({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5476,11 +5476,11 @@ return await execute(
     return ServiceList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a Service
 ///
 /// `POST /api/v1/namespaces/{namespace}/services`
-Future<ApiResult<Service, Never>> createCoreV1NamespacedService({required String namespace, required Service body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Service, Never>> createCoreV1NamespacedService({required String namespace, required Service body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5514,11 +5514,11 @@ return await execute(
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedService({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedService({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5582,11 +5582,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}`
-Future<ApiResult<Service, Never>> readCoreV1NamespacedService({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Service, Never>> readCoreV1NamespacedService({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5609,11 +5609,11 @@ return await execute(
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}`
-Future<ApiResult<Service, Never>> replaceCoreV1NamespacedService({required String name, required String namespace, required Service body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Service, Never>> replaceCoreV1NamespacedService({required String name, required String namespace, required Service body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5647,11 +5647,11 @@ return await execute(
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}`
-Future<ApiResult<Service, Never>> patchCoreV1NamespacedService({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Service, Never>> patchCoreV1NamespacedService({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5688,11 +5688,11 @@ return await execute(
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}`
-Future<ApiResult<Service, Never>> deleteCoreV1NamespacedService({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Service, Never>> deleteCoreV1NamespacedService({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -5732,11 +5732,11 @@ return await execute(
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// connect GET requests to proxy of Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1GetNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -5756,14 +5756,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to proxy of Service
 ///
 /// `POST /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PostNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -5783,14 +5783,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PUT requests to proxy of Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PutNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PutNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -5810,14 +5810,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PATCH requests to proxy of Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -5837,14 +5837,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect DELETE requests to proxy of Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -5864,14 +5864,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect HEAD requests to proxy of Service
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -5891,14 +5891,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect OPTIONS requests to proxy of Service
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/services/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -5918,14 +5918,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect GET requests to proxy of Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1GetNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -5945,14 +5945,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to proxy of Service
 ///
 /// `POST /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PostNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -5972,14 +5972,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PUT requests to proxy of Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PutNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PutNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -5999,14 +5999,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PATCH requests to proxy of Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -6026,14 +6026,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect DELETE requests to proxy of Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -6053,14 +6053,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect HEAD requests to proxy of Service
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -6080,14 +6080,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect OPTIONS requests to proxy of Service
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -6107,14 +6107,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// read status of the specified Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/status`
-Future<ApiResult<Service, Never>> readCoreV1NamespacedServiceStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Service, Never>> readCoreV1NamespacedServiceStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6137,11 +6137,11 @@ return await execute(
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace status of the specified Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/status`
-Future<ApiResult<Service, Never>> replaceCoreV1NamespacedServiceStatus({required String name, required String namespace, required Service body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Service, Never>> replaceCoreV1NamespacedServiceStatus({required String name, required String namespace, required Service body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6175,11 +6175,11 @@ return await execute(
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update status of the specified Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/status`
-Future<ApiResult<Service, Never>> patchCoreV1NamespacedServiceStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Service, Never>> patchCoreV1NamespacedServiceStatus({required String name, required String namespace, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6216,11 +6216,11 @@ return await execute(
     return Service.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified Namespace
 ///
 /// `GET /api/v1/namespaces/{name}`
-Future<ApiResult<Namespace, Never>> readCoreV1Namespace({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> readCoreV1Namespace({required String name, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6243,11 +6243,11 @@ return await execute(
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified Namespace
 ///
 /// `PUT /api/v1/namespaces/{name}`
-Future<ApiResult<Namespace, Never>> replaceCoreV1Namespace({required String name, required Namespace body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> replaceCoreV1Namespace({required String name, required Namespace body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6281,11 +6281,11 @@ return await execute(
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified Namespace
 ///
 /// `PATCH /api/v1/namespaces/{name}`
-Future<ApiResult<Namespace, Never>> patchCoreV1Namespace({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> patchCoreV1Namespace({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6322,11 +6322,11 @@ return await execute(
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a Namespace
 ///
 /// `DELETE /api/v1/namespaces/{name}`
-Future<ApiResult<Status, Never>> deleteCoreV1Namespace({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1Namespace({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6366,11 +6366,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace finalize of the specified Namespace
 ///
 /// `PUT /api/v1/namespaces/{name}/finalize`
-Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceFinalize({required String name, required Namespace body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceFinalize({required String name, required Namespace body, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dryRun != null) {
   queryParameters['dryRun'] = dryRun;
@@ -6404,11 +6404,11 @@ return await execute(
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read status of the specified Namespace
 ///
 /// `GET /api/v1/namespaces/{name}/status`
-Future<ApiResult<Namespace, Never>> readCoreV1NamespaceStatus({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> readCoreV1NamespaceStatus({required String name, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6431,11 +6431,11 @@ return await execute(
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace status of the specified Namespace
 ///
 /// `PUT /api/v1/namespaces/{name}/status`
-Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceStatus({required String name, required Namespace body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceStatus({required String name, required Namespace body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6469,11 +6469,11 @@ return await execute(
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update status of the specified Namespace
 ///
 /// `PATCH /api/v1/namespaces/{name}/status`
-Future<ApiResult<Namespace, Never>> patchCoreV1NamespaceStatus({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Namespace, Never>> patchCoreV1NamespaceStatus({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6510,11 +6510,11 @@ return await execute(
     return Namespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Node
 ///
 /// `GET /api/v1/nodes`
-Future<ApiResult<NodeList, Never>> listCoreV1Node({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<NodeList, Never>> listCoreV1Node({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6567,11 +6567,11 @@ return await execute(
     return NodeList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a Node
 ///
 /// `POST /api/v1/nodes`
-Future<ApiResult<Node, Never>> createCoreV1Node({required Node body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Node, Never>> createCoreV1Node({required Node body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6605,11 +6605,11 @@ return await execute(
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of Node
 ///
 /// `DELETE /api/v1/nodes`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionNode({String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionNode({String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6673,11 +6673,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified Node
 ///
 /// `GET /api/v1/nodes/{name}`
-Future<ApiResult<Node, Never>> readCoreV1Node({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Node, Never>> readCoreV1Node({required String name, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6700,11 +6700,11 @@ return await execute(
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified Node
 ///
 /// `PUT /api/v1/nodes/{name}`
-Future<ApiResult<Node, Never>> replaceCoreV1Node({required String name, required Node body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Node, Never>> replaceCoreV1Node({required String name, required Node body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6738,11 +6738,11 @@ return await execute(
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified Node
 ///
 /// `PATCH /api/v1/nodes/{name}`
-Future<ApiResult<Node, Never>> patchCoreV1Node({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Node, Never>> patchCoreV1Node({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6779,11 +6779,11 @@ return await execute(
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a Node
 ///
 /// `DELETE /api/v1/nodes/{name}`
-Future<ApiResult<Status, Never>> deleteCoreV1Node({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1Node({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -6823,11 +6823,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// connect GET requests to proxy of Node
 ///
 /// `GET /api/v1/nodes/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1GetNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNodeProxy({required String name, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -6847,14 +6847,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to proxy of Node
 ///
 /// `POST /api/v1/nodes/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PostNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNodeProxy({required String name, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -6874,14 +6874,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PUT requests to proxy of Node
 ///
 /// `PUT /api/v1/nodes/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PutNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PutNodeProxy({required String name, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -6901,14 +6901,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PATCH requests to proxy of Node
 ///
 /// `PATCH /api/v1/nodes/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1PatchNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PatchNodeProxy({required String name, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -6928,14 +6928,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect DELETE requests to proxy of Node
 ///
 /// `DELETE /api/v1/nodes/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1DeleteNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1DeleteNodeProxy({required String name, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -6955,14 +6955,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect HEAD requests to proxy of Node
 ///
 /// `HEAD /api/v1/nodes/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1HeadNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1HeadNodeProxy({required String name, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -6982,14 +6982,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect OPTIONS requests to proxy of Node
 ///
 /// `OPTIONS /api/v1/nodes/{name}/proxy`
-Future<ApiResult<String, Never>> connectCoreV1OptionsNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1OptionsNodeProxy({required String name, String? path, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path != null) {
   queryParameters['path'] = path;
@@ -7009,14 +7009,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect GET requests to proxy of Node
 ///
 /// `GET /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1GetNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1GetNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -7036,14 +7036,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect POST requests to proxy of Node
 ///
 /// `POST /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PostNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PostNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -7063,14 +7063,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PUT requests to proxy of Node
 ///
 /// `PUT /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PutNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PutNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -7090,14 +7090,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect PATCH requests to proxy of Node
 ///
 /// `PATCH /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1PatchNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1PatchNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -7117,14 +7117,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect DELETE requests to proxy of Node
 ///
 /// `DELETE /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1DeleteNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1DeleteNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -7144,14 +7144,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect HEAD requests to proxy of Node
 ///
 /// `HEAD /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1HeadNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1HeadNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -7171,14 +7171,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// connect OPTIONS requests to proxy of Node
 ///
 /// `OPTIONS /api/v1/nodes/{name}/proxy/{path}`
-Future<ApiResult<String, Never>> connectCoreV1OptionsNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> connectCoreV1OptionsNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (path2 != null) {
   queryParameters['path'] = path2;
@@ -7198,14 +7198,14 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
+}
 /// read status of the specified Node
 ///
 /// `GET /api/v1/nodes/{name}/status`
-Future<ApiResult<Node, Never>> readCoreV1NodeStatus({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Node, Never>> readCoreV1NodeStatus({required String name, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7228,11 +7228,11 @@ return await execute(
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace status of the specified Node
 ///
 /// `PUT /api/v1/nodes/{name}/status`
-Future<ApiResult<Node, Never>> replaceCoreV1NodeStatus({required String name, required Node body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Node, Never>> replaceCoreV1NodeStatus({required String name, required Node body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7266,11 +7266,11 @@ return await execute(
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update status of the specified Node
 ///
 /// `PATCH /api/v1/nodes/{name}/status`
-Future<ApiResult<Node, Never>> patchCoreV1NodeStatus({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Node, Never>> patchCoreV1NodeStatus({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7307,11 +7307,11 @@ return await execute(
     return Node.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind PersistentVolumeClaim
 ///
 /// `GET /api/v1/persistentvolumeclaims`
-Future<ApiResult<PersistentVolumeClaimList, Never>> listCoreV1PersistentVolumeClaimForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeClaimList, Never>> listCoreV1PersistentVolumeClaimForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -7364,11 +7364,11 @@ return await execute(
     return PersistentVolumeClaimList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind PersistentVolume
 ///
 /// `GET /api/v1/persistentvolumes`
-Future<ApiResult<PersistentVolumeList, Never>> listCoreV1PersistentVolume({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolumeList, Never>> listCoreV1PersistentVolume({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7421,11 +7421,11 @@ return await execute(
     return PersistentVolumeList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// create a PersistentVolume
 ///
 /// `POST /api/v1/persistentvolumes`
-Future<ApiResult<PersistentVolume, Never>> createCoreV1PersistentVolume({required PersistentVolume body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> createCoreV1PersistentVolume({required PersistentVolume body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7459,11 +7459,11 @@ return await execute(
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete collection of PersistentVolume
 ///
 /// `DELETE /api/v1/persistentvolumes`
-Future<ApiResult<Status, Never>> deleteCoreV1CollectionPersistentVolume({String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Status, Never>> deleteCoreV1CollectionPersistentVolume({String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7527,11 +7527,11 @@ return await execute(
     return Status.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read the specified PersistentVolume
 ///
 /// `GET /api/v1/persistentvolumes/{name}`
-Future<ApiResult<PersistentVolume, Never>> readCoreV1PersistentVolume({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> readCoreV1PersistentVolume({required String name, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7554,11 +7554,11 @@ return await execute(
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace the specified PersistentVolume
 ///
 /// `PUT /api/v1/persistentvolumes/{name}`
-Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolume({required String name, required PersistentVolume body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolume({required String name, required PersistentVolume body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7592,11 +7592,11 @@ return await execute(
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update the specified PersistentVolume
 ///
 /// `PATCH /api/v1/persistentvolumes/{name}`
-Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolume({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolume({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7633,11 +7633,11 @@ return await execute(
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// delete a PersistentVolume
 ///
 /// `DELETE /api/v1/persistentvolumes/{name}`
-Future<ApiResult<PersistentVolume, Never>> deleteCoreV1PersistentVolume({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> deleteCoreV1PersistentVolume({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7677,11 +7677,11 @@ return await execute(
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// read status of the specified PersistentVolume
 ///
 /// `GET /api/v1/persistentvolumes/{name}/status`
-Future<ApiResult<PersistentVolume, Never>> readCoreV1PersistentVolumeStatus({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> readCoreV1PersistentVolumeStatus({required String name, String? pretty, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7704,11 +7704,11 @@ return await execute(
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// replace status of the specified PersistentVolume
 ///
 /// `PUT /api/v1/persistentvolumes/{name}/status`
-Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolumeStatus({required String name, required PersistentVolume body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolumeStatus({required String name, required PersistentVolume body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7742,11 +7742,11 @@ return await execute(
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// partially update status of the specified PersistentVolume
 ///
 /// `PATCH /api/v1/persistentvolumes/{name}/status`
-Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolumeStatus({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolumeStatus({required String name, required Map<String,dynamic> body, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pretty != null) {
   queryParameters['pretty'] = pretty;
@@ -7783,11 +7783,11 @@ return await execute(
     return PersistentVolume.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Pod
 ///
 /// `GET /api/v1/pods`
-Future<ApiResult<PodList, Never>> listCoreV1PodForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodList, Never>> listCoreV1PodForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -7840,11 +7840,11 @@ return await execute(
     return PodList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind PodTemplate
 ///
 /// `GET /api/v1/podtemplates`
-Future<ApiResult<PodTemplateList, Never>> listCoreV1PodTemplateForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PodTemplateList, Never>> listCoreV1PodTemplateForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -7897,11 +7897,11 @@ return await execute(
     return PodTemplateList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind ReplicationController
 ///
 /// `GET /api/v1/replicationcontrollers`
-Future<ApiResult<ReplicationControllerList, Never>> listCoreV1ReplicationControllerForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReplicationControllerList, Never>> listCoreV1ReplicationControllerForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -7954,11 +7954,11 @@ return await execute(
     return ReplicationControllerList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind ResourceQuota
 ///
 /// `GET /api/v1/resourcequotas`
-Future<ApiResult<ResourceQuotaList, Never>> listCoreV1ResourceQuotaForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceQuotaList, Never>> listCoreV1ResourceQuotaForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8011,11 +8011,11 @@ return await execute(
     return ResourceQuotaList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Secret
 ///
 /// `GET /api/v1/secrets`
-Future<ApiResult<SecretList, Never>> listCoreV1SecretForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SecretList, Never>> listCoreV1SecretForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8068,11 +8068,11 @@ return await execute(
     return SecretList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind ServiceAccount
 ///
 /// `GET /api/v1/serviceaccounts`
-Future<ApiResult<ServiceAccountList, Never>> listCoreV1ServiceAccountForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceAccountList, Never>> listCoreV1ServiceAccountForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8125,11 +8125,11 @@ return await execute(
     return ServiceAccountList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// list or watch objects of kind Service
 ///
 /// `GET /api/v1/services`
-Future<ApiResult<ServiceList, Never>> listCoreV1ServiceForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ServiceList, Never>> listCoreV1ServiceForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8182,11 +8182,11 @@ return await execute(
     return ServiceList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of ConfigMap. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/configmaps`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1ConfigMapListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1ConfigMapListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8239,11 +8239,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Endpoints. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/endpoints`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1EndpointsListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1EndpointsListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8296,11 +8296,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/events`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1EventListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1EventListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8353,11 +8353,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of LimitRange. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/limitranges`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1LimitRangeListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1LimitRangeListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8410,11 +8410,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Namespace. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespaceList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespaceList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8467,11 +8467,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of ConfigMap. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/configmaps`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedConfigMapList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedConfigMapList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8524,11 +8524,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind ConfigMap. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/configmaps/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedConfigMap({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedConfigMap({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8581,11 +8581,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Endpoints. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/endpoints`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEndpointsList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEndpointsList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8638,11 +8638,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind Endpoints. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/endpoints/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEndpoints({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEndpoints({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8695,11 +8695,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/events`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEventList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEventList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8752,11 +8752,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind Event. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/events/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEvent({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEvent({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8809,11 +8809,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of LimitRange. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/limitranges`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedLimitRangeList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedLimitRangeList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8866,11 +8866,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind LimitRange. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/limitranges/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedLimitRange({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedLimitRange({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8923,11 +8923,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/persistentvolumeclaims`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPersistentVolumeClaimList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPersistentVolumeClaimList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -8980,11 +8980,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/persistentvolumeclaims/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9037,11 +9037,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Pod. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/pods`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9094,11 +9094,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind Pod. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/pods/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPod({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPod({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9151,11 +9151,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of PodTemplate. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/podtemplates`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodTemplateList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodTemplateList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9208,11 +9208,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind PodTemplate. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/podtemplates/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodTemplate({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodTemplate({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9265,11 +9265,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of ReplicationController. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/replicationcontrollers`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedReplicationControllerList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedReplicationControllerList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9322,11 +9322,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind ReplicationController. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/replicationcontrollers/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedReplicationController({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedReplicationController({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9379,11 +9379,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/resourcequotas`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedResourceQuotaList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedResourceQuotaList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9436,11 +9436,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/resourcequotas/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedResourceQuota({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedResourceQuota({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9493,11 +9493,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Secret. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/secrets`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedSecretList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedSecretList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9550,11 +9550,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind Secret. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/secrets/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedSecret({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedSecret({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9607,11 +9607,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/serviceaccounts`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceAccountList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceAccountList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9664,11 +9664,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/serviceaccounts/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceAccount({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceAccount({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9721,11 +9721,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Service. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/services`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9778,11 +9778,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind Service. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/services/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedService({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedService({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9835,11 +9835,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind Namespace. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1Namespace({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1Namespace({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9892,11 +9892,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Node. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/nodes`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1NodeList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1NodeList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -9949,11 +9949,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind Node. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/nodes/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1Node({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1Node({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10006,11 +10006,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/persistentvolumeclaims`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolumeClaimListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolumeClaimListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10063,11 +10063,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of PersistentVolume. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/persistentvolumes`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolumeList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolumeList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10120,11 +10120,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch changes to an object of kind PersistentVolume. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/persistentvolumes/{name}`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolume({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolume({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10177,11 +10177,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Pod. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/pods`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1PodListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1PodListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10234,11 +10234,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of PodTemplate. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/podtemplates`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1PodTemplateListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1PodTemplateListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10291,11 +10291,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of ReplicationController. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/replicationcontrollers`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1ReplicationControllerListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1ReplicationControllerListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10348,11 +10348,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/resourcequotas`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1ResourceQuotaListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1ResourceQuotaListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10405,11 +10405,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Secret. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/secrets`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1SecretListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1SecretListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10462,11 +10462,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/serviceaccounts`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1ServiceAccountListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1ServiceAccountListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10519,11 +10519,11 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// watch individual changes to a list of Service. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/services`
-Future<ApiResult<WatchEvent, Never>> watchCoreV1ServiceListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WatchEvent, Never>> watchCoreV1ServiceListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowWatchBookmarks != null) {
   queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
@@ -10576,5 +10576,5 @@ return await execute(
     return WatchEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

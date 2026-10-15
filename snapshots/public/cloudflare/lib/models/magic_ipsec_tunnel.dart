@@ -10,7 +10,7 @@ bool toJson() => value;
 }
 @immutable final class MagicIpsecTunnel {const MagicIpsecTunnel({required this.cloudflareEndpoint, required this.id, required this.interfaceAddress, required this.name, this.allowNullCipher, this.automaticReturnRouting, this.bgp, this.bgpStatus, this.createdOn, this.customRemoteIdentities, this.customerEndpoint, this.description, this.healthCheck, this.interfaceAddress6, this.modifiedOn, this.pskMetadata, this.replayProtection, });
 
-factory MagicIpsecTunnel.fromJson(Map<String, dynamic> json) { return MagicIpsecTunnel(
+factory MagicIpsecTunnel.fromJson(Map<String, dynamic> json) {return MagicIpsecTunnel(
   allowNullCipher: json['allow_null_cipher'] != null ? MagicAllowNullCipher.fromJson(json['allow_null_cipher'] as bool) : null,
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
   bgp: json['bgp'] != null ? MagicBgpConfig.fromJson(json['bgp'] as Map<String, dynamic>) : null,
@@ -28,7 +28,7 @@ factory MagicIpsecTunnel.fromJson(Map<String, dynamic> json) { return MagicIpsec
   name: MagicIpsecTunnelName.fromJson(json['name'] as String),
   pskMetadata: json['psk_metadata'] != null ? MagicPskMetadata.fromJson(json['psk_metadata'] as Map<String, dynamic>) : null,
   replayProtection: json['replay_protection'] != null ? MagicReplayProtection.fromJson(json['replay_protection'] as bool) : null,
-); }
+);}
 
 /// When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).
 final MagicAllowNullCipher? allowNullCipher;
@@ -71,7 +71,7 @@ final MagicPskMetadata? pskMetadata;
 
 final MagicReplayProtection? replayProtection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowNullCipher != null) 'allow_null_cipher': allowNullCipher?.toJson(),
   if (automaticReturnRouting != null) 'automatic_return_routing': automaticReturnRouting?.toJson(),
   if (bgp != null) 'bgp': bgp?.toJson(),
@@ -89,12 +89,12 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   if (pskMetadata != null) 'psk_metadata': pskMetadata?.toJson(),
   if (replayProtection != null) 'replay_protection': replayProtection?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloudflare_endpoint') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cloudflare_endpoint') &&
       json.containsKey('id') &&
       json.containsKey('interface_address') &&
-      json.containsKey('name'); } 
-MagicIpsecTunnel copyWith({MagicAllowNullCipher? Function()? allowNullCipher, MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicBgpConfig? Function()? bgp, MagicBgpStatusWithState? Function()? bgpStatus, MagicCloudflareIpsecEndpoint? cloudflareEndpoint, MagicSchemasCreatedOn? Function()? createdOn, MagicCustomRemoteIdentities? Function()? customRemoteIdentities, MagicCustomerIpsecEndpoint? Function()? customerEndpoint, MagicComponentsSchemasDescription? Function()? description, MagicTunnelHealthCheck? Function()? healthCheck, MagicSchemasIdentifier? id, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicSchemasModifiedOn? Function()? modifiedOn, MagicIpsecTunnelName? name, MagicPskMetadata? Function()? pskMetadata, MagicReplayProtection? Function()? replayProtection, }) { return MagicIpsecTunnel(
+      json.containsKey('name');}
+MagicIpsecTunnel copyWith({MagicAllowNullCipher? Function()? allowNullCipher, MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicBgpConfig? Function()? bgp, MagicBgpStatusWithState? Function()? bgpStatus, MagicCloudflareIpsecEndpoint? cloudflareEndpoint, MagicSchemasCreatedOn? Function()? createdOn, MagicCustomRemoteIdentities? Function()? customRemoteIdentities, MagicCustomerIpsecEndpoint? Function()? customerEndpoint, MagicComponentsSchemasDescription? Function()? description, MagicTunnelHealthCheck? Function()? healthCheck, MagicSchemasIdentifier? id, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicSchemasModifiedOn? Function()? modifiedOn, MagicIpsecTunnelName? name, MagicPskMetadata? Function()? pskMetadata, MagicReplayProtection? Function()? replayProtection, }) {return MagicIpsecTunnel(
   allowNullCipher: allowNullCipher != null ? allowNullCipher() : this.allowNullCipher,
   automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
   bgp: bgp != null ? bgp() : this.bgp,
@@ -112,7 +112,7 @@ MagicIpsecTunnel copyWith({MagicAllowNullCipher? Function()? allowNullCipher, Ma
   name: name ?? this.name,
   pskMetadata: pskMetadata != null ? pskMetadata() : this.pskMetadata,
   replayProtection: replayProtection != null ? replayProtection() : this.replayProtection,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicIpsecTunnel &&
           allowNullCipher == other.allowNullCipher &&
@@ -137,4 +137,4 @@ MagicIpsecTunnel copyWith({MagicAllowNullCipher? Function()? allowNullCipher, Ma
 
 @override String toString() => 'MagicIpsecTunnel(\n  allowNullCipher: $allowNullCipher,\n  automaticReturnRouting: $automaticReturnRouting,\n  bgp: $bgp,\n  bgpStatus: $bgpStatus,\n  cloudflareEndpoint: $cloudflareEndpoint,\n  createdOn: $createdOn,\n  customRemoteIdentities: $customRemoteIdentities,\n  customerEndpoint: $customerEndpoint,\n  description: $description,\n  healthCheck: $healthCheck,\n  id: $id,\n  interfaceAddress: $interfaceAddress,\n  interfaceAddress6: $interfaceAddress6,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  pskMetadata: $pskMetadata,\n  replayProtection: $replayProtection,\n)';
 
- }
+}

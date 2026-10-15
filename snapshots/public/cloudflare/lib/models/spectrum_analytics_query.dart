@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_dimensions2.dart';import 'package:pub_cloudflare/models/spectrum_analytics_filters.dart';import 'package:pub_cloudflare/models/spectrum_analytics_metrics2.dart';import 'package:pub_cloudflare/models/spectrum_analytics_timestamp.dart';@immutable final class SpectrumAnalyticsQuery {const SpectrumAnalyticsQuery({this.dimensions, this.filters, this.limit, this.metrics, this.since, this.sort, this.until, });
 
-factory SpectrumAnalyticsQuery.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsQuery(
+factory SpectrumAnalyticsQuery.fromJson(Map<String, dynamic> json) {return SpectrumAnalyticsQuery(
   dimensions: (json['dimensions'] as List<dynamic>?)?.map((e) => SpectrumAnalyticsDimensions2.fromJson(e as String)).toList(),
   filters: json['filters'] != null ? SpectrumAnalyticsFilters.fromJson(json['filters'] as String) : null,
   limit: json['limit'] != null ? (json['limit'] as num).toDouble() : null,
@@ -11,7 +11,7 @@ factory SpectrumAnalyticsQuery.fromJson(Map<String, dynamic> json) { return Spec
   since: json['since'] != null ? SpectrumAnalyticsTimestamp.fromJson(json['since'] as String) : null,
   sort: (json['sort'] as List<dynamic>?)?.map((e) => e as String).toList(),
   until: json['until'] != null ? SpectrumAnalyticsTimestamp.fromJson(json['until'] as String) : null,
-); }
+);}
 
 /// Can be used to break down the data by given attributes. Options are:
 /// 
@@ -57,7 +57,7 @@ final List<String>? sort;
 
 final SpectrumAnalyticsTimestamp? until;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dimensions != null) 'dimensions': dimensions?.map((e) => e.toJson()).toList(),
   if (filters != null) 'filters': filters?.toJson(),
   'limit': ?limit,
@@ -65,9 +65,9 @@ Map<String, dynamic> toJson() { return {
   if (since != null) 'since': since?.toJson(),
   'sort': ?sort,
   if (until != null) 'until': until?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dimensions', 'filters', 'limit', 'metrics', 'since', 'sort', 'until'}.contains(key)); } 
-SpectrumAnalyticsQuery copyWith({List<SpectrumAnalyticsDimensions2>? Function()? dimensions, SpectrumAnalyticsFilters? Function()? filters, double? Function()? limit, List<SpectrumAnalyticsMetrics2>? Function()? metrics, SpectrumAnalyticsTimestamp? Function()? since, List<String>? Function()? sort, SpectrumAnalyticsTimestamp? Function()? until, }) { return SpectrumAnalyticsQuery(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'dimensions', 'filters', 'limit', 'metrics', 'since', 'sort', 'until'}.contains(key));}
+SpectrumAnalyticsQuery copyWith({List<SpectrumAnalyticsDimensions2>? Function()? dimensions, SpectrumAnalyticsFilters? Function()? filters, double? Function()? limit, List<SpectrumAnalyticsMetrics2>? Function()? metrics, SpectrumAnalyticsTimestamp? Function()? since, List<String>? Function()? sort, SpectrumAnalyticsTimestamp? Function()? until, }) {return SpectrumAnalyticsQuery(
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   filters: filters != null ? filters() : this.filters,
   limit: limit != null ? limit() : this.limit,
@@ -75,7 +75,7 @@ SpectrumAnalyticsQuery copyWith({List<SpectrumAnalyticsDimensions2>? Function()?
   since: since != null ? since() : this.since,
   sort: sort != null ? sort() : this.sort,
   until: until != null ? until() : this.until,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumAnalyticsQuery &&
           listEquals(dimensions, other.dimensions) &&
@@ -90,4 +90,4 @@ SpectrumAnalyticsQuery copyWith({List<SpectrumAnalyticsDimensions2>? Function()?
 
 @override String toString() => 'SpectrumAnalyticsQuery(dimensions: $dimensions, filters: $filters, limit: $limit, metrics: $metrics, since: $since, sort: $sort, until: $until)';
 
- }
+}

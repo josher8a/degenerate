@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom Payment M
 /// used for this payment attempt.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails({required this.displayName, this.type = const Omittable.absent(), });
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails.fromJson(Map<String, dynamic> json) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: json['display_name'] as String,
   type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Display name for the custom (user-defined) payment method type used to make this payment.
 final String displayName;
@@ -17,23 +17,23 @@ final String displayName;
 /// The custom payment method type associated with this payment.
 final Omittable<String?> type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'display_name': displayName,
   if (type.isPresent) 'type': type.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('display_name') && json['display_name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (displayName.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 final type$ = type.value;
 if (type$ != null) {
   if (type$.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
 }
-return errors; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, Omittable<String?>? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
+return errors;}
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, Omittable<String?>? type, }) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: displayName ?? this.displayName,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails &&
           displayName == other.displayName &&
@@ -43,4 +43,4 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({Str
 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(displayName: $displayName, type: $type)';
 
- }
+}

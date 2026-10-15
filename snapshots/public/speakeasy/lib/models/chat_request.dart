@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatRequest {const ChatRequest({required this.prompt, this.stream, });
 
-factory ChatRequest.fromJson(Map<String, dynamic> json) { return ChatRequest(
+factory ChatRequest.fromJson(Map<String, dynamic> json) {return ChatRequest(
   stream: json['stream'] as bool?,
   prompt: json['prompt'] as String,
-); }
+);}
 
 final bool? stream;
 
 final String prompt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'stream': ?stream,
   'prompt': prompt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-ChatRequest copyWith({bool? Function()? stream, String? prompt, }) { return ChatRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
+ChatRequest copyWith({bool? Function()? stream, String? prompt, }) {return ChatRequest(
   stream: stream != null ? stream() : this.stream,
   prompt: prompt ?? this.prompt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatRequest &&
           stream == other.stream &&
@@ -30,4 +30,4 @@ ChatRequest copyWith({bool? Function()? stream, String? prompt, }) { return Chat
 
 @override String toString() => 'ChatRequest(stream: $stream, prompt: $prompt)';
 
- }
+}

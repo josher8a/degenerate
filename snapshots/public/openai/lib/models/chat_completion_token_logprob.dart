@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_token_logprob/chat_completion_token_logprob_top_logprobs.dart';@immutable final class ChatCompletionTokenLogprob {const ChatCompletionTokenLogprob({required this.token, required this.logprob, required this.bytes, required this.topLogprobs, });
 
-factory ChatCompletionTokenLogprob.fromJson(Map<String, dynamic> json) { return ChatCompletionTokenLogprob(
+factory ChatCompletionTokenLogprob.fromJson(Map<String, dynamic> json) {return ChatCompletionTokenLogprob(
   token: json['token'] as String,
   logprob: (json['logprob'] as num).toDouble(),
   bytes: (json['bytes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   topLogprobs: (json['top_logprobs'] as List<dynamic>).map((e) => ChatCompletionTokenLogprobTopLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The token.
 final String token;
@@ -22,22 +22,22 @@ final List<int>? bytes;
 /// List of the most likely tokens and their log probability, at this token position. In rare cases, there may be fewer than the number of requested `top_logprobs` returned.
 final List<ChatCompletionTokenLogprobTopLogprobs> topLogprobs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token': token,
   'logprob': logprob,
   'bytes': bytes,
   'top_logprobs': topLogprobs.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('token') && json['token'] is String &&
       json.containsKey('logprob') && json['logprob'] is num &&
       json.containsKey('bytes') &&
-      json.containsKey('top_logprobs'); } 
-ChatCompletionTokenLogprob copyWith({String? token, double? logprob, List<int>? Function()? bytes, List<ChatCompletionTokenLogprobTopLogprobs>? topLogprobs, }) { return ChatCompletionTokenLogprob(
+      json.containsKey('top_logprobs');}
+ChatCompletionTokenLogprob copyWith({String? token, double? logprob, List<int>? Function()? bytes, List<ChatCompletionTokenLogprobTopLogprobs>? topLogprobs, }) {return ChatCompletionTokenLogprob(
   token: token ?? this.token,
   logprob: logprob ?? this.logprob,
   bytes: bytes != null ? bytes() : this.bytes,
   topLogprobs: topLogprobs ?? this.topLogprobs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionTokenLogprob &&
           token == other.token &&
@@ -49,4 +49,4 @@ ChatCompletionTokenLogprob copyWith({String? token, double? logprob, List<int>? 
 
 @override String toString() => 'ChatCompletionTokenLogprob(token: $token, logprob: $logprob, bytes: $bytes, topLogprobs: $topLogprobs)';
 
- }
+}

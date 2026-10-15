@@ -11,7 +11,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify addition
 /// - `reasoning.encrypted_content`: Includes an encrypted version of reasoning tokens in reasoning item outputs. This enables reasoning items to be used in multi-turn conversations when using the Responses API statelessly (like when the `store` parameter is set to `false`, or when an organization is enrolled in the zero data retention program).
 sealed class IncludeEnum {const IncludeEnum();
 
-factory IncludeEnum.fromJson(String json) { return switch (json) {
+factory IncludeEnum.fromJson(String json) {return switch (json) {
   'file_search_call.results' => fileSearchCallResults,
   'web_search_call.results' => webSearchCallResults,
   'web_search_call.action.sources' => webSearchCallActionSources,
@@ -21,7 +21,7 @@ factory IncludeEnum.fromJson(String json) { return switch (json) {
   'reasoning.encrypted_content' => reasoningEncryptedContent,
   'message.output_text.logprobs' => messageOutputTextLogprobs,
   _ => IncludeEnum$Unknown(json),
-}; }
+};}
 
 static const IncludeEnum fileSearchCallResults = IncludeEnum$fileSearchCallResults._();
 
@@ -42,9 +42,9 @@ static const IncludeEnum messageOutputTextLogprobs = IncludeEnum$messageOutputTe
 static const List<IncludeEnum> values = [fileSearchCallResults, webSearchCallResults, webSearchCallActionSources, messageInputImageImageUrl, computerCallOutputOutputImageUrl, codeInterpreterCallOutputs, reasoningEncryptedContent, messageOutputTextLogprobs];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'file_search_call.results' => 'fileSearchCallResults',
   'web_search_call.results' => 'webSearchCallResults',
   'web_search_call.action.sources' => 'webSearchCallActionSources',
@@ -54,11 +54,11 @@ String get name { return switch (value) {
   'reasoning.encrypted_content' => 'reasoningEncryptedContent',
   'message.output_text.logprobs' => 'messageOutputTextLogprobs',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IncludeEnum$Unknown; } 
+bool get isUnknown {return this is IncludeEnum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fileSearchCallResults, required W Function() webSearchCallResults, required W Function() webSearchCallActionSources, required W Function() messageInputImageImageUrl, required W Function() computerCallOutputOutputImageUrl, required W Function() codeInterpreterCallOutputs, required W Function() reasoningEncryptedContent, required W Function() messageOutputTextLogprobs, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fileSearchCallResults, required W Function() webSearchCallResults, required W Function() webSearchCallActionSources, required W Function() messageInputImageImageUrl, required W Function() computerCallOutputOutputImageUrl, required W Function() codeInterpreterCallOutputs, required W Function() reasoningEncryptedContent, required W Function() messageOutputTextLogprobs, required W Function(String value) $unknown, }) {return switch (this) {
       IncludeEnum$fileSearchCallResults() => fileSearchCallResults(),
       IncludeEnum$webSearchCallResults() => webSearchCallResults(),
       IncludeEnum$webSearchCallActionSources() => webSearchCallActionSources(),
@@ -68,9 +68,9 @@ W when<W>({required W Function() fileSearchCallResults, required W Function() we
       IncludeEnum$reasoningEncryptedContent() => reasoningEncryptedContent(),
       IncludeEnum$messageOutputTextLogprobs() => messageOutputTextLogprobs(),
       IncludeEnum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSearchCallResults, W Function()? webSearchCallResults, W Function()? webSearchCallActionSources, W Function()? messageInputImageImageUrl, W Function()? computerCallOutputOutputImageUrl, W Function()? codeInterpreterCallOutputs, W Function()? reasoningEncryptedContent, W Function()? messageOutputTextLogprobs, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSearchCallResults, W Function()? webSearchCallResults, W Function()? webSearchCallActionSources, W Function()? messageInputImageImageUrl, W Function()? computerCallOutputOutputImageUrl, W Function()? codeInterpreterCallOutputs, W Function()? reasoningEncryptedContent, W Function()? messageOutputTextLogprobs, W Function(String value)? $unknown, }) {return switch (this) {
       IncludeEnum$fileSearchCallResults() => fileSearchCallResults != null ? fileSearchCallResults() : orElse(value),
       IncludeEnum$webSearchCallResults() => webSearchCallResults != null ? webSearchCallResults() : orElse(value),
       IncludeEnum$webSearchCallActionSources() => webSearchCallActionSources != null ? webSearchCallActionSources() : orElse(value),
@@ -80,10 +80,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
       IncludeEnum$reasoningEncryptedContent() => reasoningEncryptedContent != null ? reasoningEncryptedContent() : orElse(value),
       IncludeEnum$messageOutputTextLogprobs() => messageOutputTextLogprobs != null ? messageOutputTextLogprobs() : orElse(value),
       IncludeEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IncludeEnum($value)';
 
- }
+}
 @immutable final class IncludeEnum$fileSearchCallResults extends IncludeEnum {const IncludeEnum$fileSearchCallResults._();
 
 @override String get value => 'file_search_call.results';
@@ -92,7 +92,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => 'file_search_call.results'.hashCode;
 
- }
+}
 @immutable final class IncludeEnum$webSearchCallResults extends IncludeEnum {const IncludeEnum$webSearchCallResults._();
 
 @override String get value => 'web_search_call.results';
@@ -101,7 +101,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => 'web_search_call.results'.hashCode;
 
- }
+}
 @immutable final class IncludeEnum$webSearchCallActionSources extends IncludeEnum {const IncludeEnum$webSearchCallActionSources._();
 
 @override String get value => 'web_search_call.action.sources';
@@ -110,7 +110,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => 'web_search_call.action.sources'.hashCode;
 
- }
+}
 @immutable final class IncludeEnum$messageInputImageImageUrl extends IncludeEnum {const IncludeEnum$messageInputImageImageUrl._();
 
 @override String get value => 'message.input_image.image_url';
@@ -119,7 +119,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => 'message.input_image.image_url'.hashCode;
 
- }
+}
 @immutable final class IncludeEnum$computerCallOutputOutputImageUrl extends IncludeEnum {const IncludeEnum$computerCallOutputOutputImageUrl._();
 
 @override String get value => 'computer_call_output.output.image_url';
@@ -128,7 +128,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => 'computer_call_output.output.image_url'.hashCode;
 
- }
+}
 @immutable final class IncludeEnum$codeInterpreterCallOutputs extends IncludeEnum {const IncludeEnum$codeInterpreterCallOutputs._();
 
 @override String get value => 'code_interpreter_call.outputs';
@@ -137,7 +137,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => 'code_interpreter_call.outputs'.hashCode;
 
- }
+}
 @immutable final class IncludeEnum$reasoningEncryptedContent extends IncludeEnum {const IncludeEnum$reasoningEncryptedContent._();
 
 @override String get value => 'reasoning.encrypted_content';
@@ -146,7 +146,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => 'reasoning.encrypted_content'.hashCode;
 
- }
+}
 @immutable final class IncludeEnum$messageOutputTextLogprobs extends IncludeEnum {const IncludeEnum$messageOutputTextLogprobs._();
 
 @override String get value => 'message.output_text.logprobs';
@@ -155,7 +155,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => 'message.output_text.logprobs'.hashCode;
 
- }
+}
 @immutable final class IncludeEnum$Unknown extends IncludeEnum {const IncludeEnum$Unknown(this.value);
 
 @override final String value;
@@ -165,4 +165,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSear
 
 @override int get hashCode => value.hashCode;
 
- }
+}

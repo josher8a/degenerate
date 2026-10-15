@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response/aig_config_create_evaluations_response_result.dart';@immutable final class AigConfigCreateEvaluationsResponse {const AigConfigCreateEvaluationsResponse({required this.result, required this.success, });
 
-factory AigConfigCreateEvaluationsResponse.fromJson(Map<String, dynamic> json) { return AigConfigCreateEvaluationsResponse(
+factory AigConfigCreateEvaluationsResponse.fromJson(Map<String, dynamic> json) {return AigConfigCreateEvaluationsResponse(
   result: AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AigConfigCreateEvaluationsResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigCreateEvaluationsResponse copyWith({AigConfigCreateEvaluationsResponseResult? result, bool? success, }) { return AigConfigCreateEvaluationsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigCreateEvaluationsResponse copyWith({AigConfigCreateEvaluationsResponseResult? result, bool? success, }) {return AigConfigCreateEvaluationsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateEvaluationsResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ AigConfigCreateEvaluationsResponse copyWith({AigConfigCreateEvaluationsResponseR
 
 @override String toString() => 'AigConfigCreateEvaluationsResponse(result: $result, success: $success)';
 
- }
+}

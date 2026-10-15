@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_or_update_file_contents_request/repos_create_or_update_file_contents_request_author.dart';import 'package:pub_github_rest_3_1/models/repos_create_or_update_file_contents_request/repos_create_or_update_file_contents_request_committer.dart';@immutable final class ReposCreateOrUpdateFileContentsRequest {const ReposCreateOrUpdateFileContentsRequest({required this.message, required this.content, this.sha, this.branch, this.committer, this.author, });
 
-factory ReposCreateOrUpdateFileContentsRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateFileContentsRequest(
+factory ReposCreateOrUpdateFileContentsRequest.fromJson(Map<String, dynamic> json) {return ReposCreateOrUpdateFileContentsRequest(
   message: json['message'] as String,
   content: json['content'] as String,
   sha: json['sha'] as String?,
   branch: json['branch'] as String?,
   committer: json['committer'] != null ? ReposCreateOrUpdateFileContentsRequestCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
   author: json['author'] != null ? ReposCreateOrUpdateFileContentsRequestAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The commit message.
 final String message;
@@ -30,24 +30,24 @@ final ReposCreateOrUpdateFileContentsRequestCommitter? committer;
 /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
 final ReposCreateOrUpdateFileContentsRequestAuthor? author;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
   'content': content,
   'sha': ?sha,
   'branch': ?branch,
   if (committer != null) 'committer': committer?.toJson(),
   if (author != null) 'author': author?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
-      json.containsKey('content') && json['content'] is String; } 
-ReposCreateOrUpdateFileContentsRequest copyWith({String? message, String? content, String? Function()? sha, String? Function()? branch, ReposCreateOrUpdateFileContentsRequestCommitter? Function()? committer, ReposCreateOrUpdateFileContentsRequestAuthor? Function()? author, }) { return ReposCreateOrUpdateFileContentsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String &&
+      json.containsKey('content') && json['content'] is String;}
+ReposCreateOrUpdateFileContentsRequest copyWith({String? message, String? content, String? Function()? sha, String? Function()? branch, ReposCreateOrUpdateFileContentsRequestCommitter? Function()? committer, ReposCreateOrUpdateFileContentsRequestAuthor? Function()? author, }) {return ReposCreateOrUpdateFileContentsRequest(
   message: message ?? this.message,
   content: content ?? this.content,
   sha: sha != null ? sha() : this.sha,
   branch: branch != null ? branch() : this.branch,
   committer: committer != null ? committer() : this.committer,
   author: author != null ? author() : this.author,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateOrUpdateFileContentsRequest &&
           message == other.message &&
@@ -61,4 +61,4 @@ ReposCreateOrUpdateFileContentsRequest copyWith({String? message, String? conten
 
 @override String toString() => 'ReposCreateOrUpdateFileContentsRequest(message: $message, content: $content, sha: $sha, branch: $branch, committer: $committer, author: $author)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_enhanced_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/cancellation_policy.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/customer_communication.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/customer_signature.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/dispute_evidence_receipt.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/duplicate_charge_documentation.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/refund_policy.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/service_documentation.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/shipping_documentation.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/uncategorized_file.dart';/// 
 @immutable final class DisputeEvidence {const DisputeEvidence({required this.enhancedEvidence, this.accessActivityLog = const Omittable.absent(), this.billingAddress = const Omittable.absent(), this.cancellationPolicy = const Omittable.absent(), this.cancellationPolicyDisclosure = const Omittable.absent(), this.cancellationRebuttal = const Omittable.absent(), this.customerCommunication = const Omittable.absent(), this.customerEmailAddress = const Omittable.absent(), this.customerName = const Omittable.absent(), this.customerPurchaseIp = const Omittable.absent(), this.customerSignature = const Omittable.absent(), this.duplicateChargeDocumentation = const Omittable.absent(), this.duplicateChargeExplanation = const Omittable.absent(), this.duplicateChargeId = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.receipt = const Omittable.absent(), this.refundPolicy = const Omittable.absent(), this.refundPolicyDisclosure = const Omittable.absent(), this.refundRefusalExplanation = const Omittable.absent(), this.serviceDate = const Omittable.absent(), this.serviceDocumentation = const Omittable.absent(), this.shippingAddress = const Omittable.absent(), this.shippingCarrier = const Omittable.absent(), this.shippingDate = const Omittable.absent(), this.shippingDocumentation = const Omittable.absent(), this.shippingTrackingNumber = const Omittable.absent(), this.uncategorizedFile = const Omittable.absent(), this.uncategorizedText = const Omittable.absent(), });
 
-factory DisputeEvidence.fromJson(Map<String, dynamic> json) { return DisputeEvidence(
+factory DisputeEvidence.fromJson(Map<String, dynamic> json) {return DisputeEvidence(
   accessActivityLog: json.containsKey('access_activity_log') ? Omittable(json['access_activity_log'] as String?) : const Omittable.absent(),
   billingAddress: json.containsKey('billing_address') ? Omittable(json['billing_address'] as String?) : const Omittable.absent(),
   cancellationPolicy: json.containsKey('cancellation_policy') ? Omittable(json['cancellation_policy'] != null ? CancellationPolicy.fromJson(json['cancellation_policy']) : null) : const Omittable.absent(),
@@ -33,7 +33,7 @@ factory DisputeEvidence.fromJson(Map<String, dynamic> json) { return DisputeEvid
   shippingTrackingNumber: json.containsKey('shipping_tracking_number') ? Omittable(json['shipping_tracking_number'] as String?) : const Omittable.absent(),
   uncategorizedFile: json.containsKey('uncategorized_file') ? Omittable(json['uncategorized_file'] != null ? UncategorizedFile.fromJson(json['uncategorized_file']) : null) : const Omittable.absent(),
   uncategorizedText: json.containsKey('uncategorized_text') ? Omittable(json['uncategorized_text'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Any server or activity logs showing proof that the customer accessed or downloaded the purchased digital product. This information should include IP addresses, corresponding timestamps, and any detailed recorded activity.
 final Omittable<String?> accessActivityLog;
@@ -118,7 +118,7 @@ final Omittable<UncategorizedFile?> uncategorizedFile;
 /// Any additional evidence or statements.
 final Omittable<String?> uncategorizedText;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accessActivityLog.isPresent) 'access_activity_log': accessActivityLog.value,
   if (billingAddress.isPresent) 'billing_address': billingAddress.value,
   if (cancellationPolicy.isPresent) 'cancellation_policy': cancellationPolicy.value?.toJson(),
@@ -147,10 +147,10 @@ Map<String, dynamic> toJson() { return {
   if (shippingTrackingNumber.isPresent) 'shipping_tracking_number': shippingTrackingNumber.value,
   if (uncategorizedFile.isPresent) 'uncategorized_file': uncategorizedFile.value?.toJson(),
   if (uncategorizedText.isPresent) 'uncategorized_text': uncategorizedText.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enhanced_evidence'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enhanced_evidence');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accessActivityLog$ = accessActivityLog.value;
 if (accessActivityLog$ != null) {
   if (accessActivityLog$.runes.length > 150000) { errors.add('accessActivityLog: length must be <= 150000'); }
@@ -223,8 +223,8 @@ final uncategorizedText$ = uncategorizedText.value;
 if (uncategorizedText$ != null) {
   if (uncategorizedText$.runes.length > 150000) { errors.add('uncategorizedText: length must be <= 150000'); }
 }
-return errors; } 
-DisputeEvidence copyWith({Omittable<String?>? accessActivityLog, Omittable<String?>? billingAddress, Omittable<CancellationPolicy?>? cancellationPolicy, Omittable<String?>? cancellationPolicyDisclosure, Omittable<String?>? cancellationRebuttal, Omittable<CustomerCommunication?>? customerCommunication, Omittable<String?>? customerEmailAddress, Omittable<String?>? customerName, Omittable<String?>? customerPurchaseIp, Omittable<CustomerSignature?>? customerSignature, Omittable<DuplicateChargeDocumentation?>? duplicateChargeDocumentation, Omittable<String?>? duplicateChargeExplanation, Omittable<String?>? duplicateChargeId, DisputeEnhancedEvidence? enhancedEvidence, Omittable<String?>? productDescription, Omittable<DisputeEvidenceReceipt?>? receipt, Omittable<RefundPolicy?>? refundPolicy, Omittable<String?>? refundPolicyDisclosure, Omittable<String?>? refundRefusalExplanation, Omittable<String?>? serviceDate, Omittable<ServiceDocumentation?>? serviceDocumentation, Omittable<String?>? shippingAddress, Omittable<String?>? shippingCarrier, Omittable<String?>? shippingDate, Omittable<ShippingDocumentation?>? shippingDocumentation, Omittable<String?>? shippingTrackingNumber, Omittable<UncategorizedFile?>? uncategorizedFile, Omittable<String?>? uncategorizedText, }) { return DisputeEvidence(
+return errors;}
+DisputeEvidence copyWith({Omittable<String?>? accessActivityLog, Omittable<String?>? billingAddress, Omittable<CancellationPolicy?>? cancellationPolicy, Omittable<String?>? cancellationPolicyDisclosure, Omittable<String?>? cancellationRebuttal, Omittable<CustomerCommunication?>? customerCommunication, Omittable<String?>? customerEmailAddress, Omittable<String?>? customerName, Omittable<String?>? customerPurchaseIp, Omittable<CustomerSignature?>? customerSignature, Omittable<DuplicateChargeDocumentation?>? duplicateChargeDocumentation, Omittable<String?>? duplicateChargeExplanation, Omittable<String?>? duplicateChargeId, DisputeEnhancedEvidence? enhancedEvidence, Omittable<String?>? productDescription, Omittable<DisputeEvidenceReceipt?>? receipt, Omittable<RefundPolicy?>? refundPolicy, Omittable<String?>? refundPolicyDisclosure, Omittable<String?>? refundRefusalExplanation, Omittable<String?>? serviceDate, Omittable<ServiceDocumentation?>? serviceDocumentation, Omittable<String?>? shippingAddress, Omittable<String?>? shippingCarrier, Omittable<String?>? shippingDate, Omittable<ShippingDocumentation?>? shippingDocumentation, Omittable<String?>? shippingTrackingNumber, Omittable<UncategorizedFile?>? uncategorizedFile, Omittable<String?>? uncategorizedText, }) {return DisputeEvidence(
   accessActivityLog: accessActivityLog ?? this.accessActivityLog,
   billingAddress: billingAddress ?? this.billingAddress,
   cancellationPolicy: cancellationPolicy ?? this.cancellationPolicy,
@@ -253,7 +253,7 @@ DisputeEvidence copyWith({Omittable<String?>? accessActivityLog, Omittable<Strin
   shippingTrackingNumber: shippingTrackingNumber ?? this.shippingTrackingNumber,
   uncategorizedFile: uncategorizedFile ?? this.uncategorizedFile,
   uncategorizedText: uncategorizedText ?? this.uncategorizedText,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DisputeEvidence &&
           accessActivityLog == other.accessActivityLog &&
@@ -289,4 +289,4 @@ DisputeEvidence copyWith({Omittable<String?>? accessActivityLog, Omittable<Strin
 
 @override String toString() => 'DisputeEvidence(\n  accessActivityLog: $accessActivityLog,\n  billingAddress: $billingAddress,\n  cancellationPolicy: $cancellationPolicy,\n  cancellationPolicyDisclosure: $cancellationPolicyDisclosure,\n  cancellationRebuttal: $cancellationRebuttal,\n  customerCommunication: $customerCommunication,\n  customerEmailAddress: $customerEmailAddress,\n  customerName: $customerName,\n  customerPurchaseIp: $customerPurchaseIp,\n  customerSignature: $customerSignature,\n  duplicateChargeDocumentation: $duplicateChargeDocumentation,\n  duplicateChargeExplanation: $duplicateChargeExplanation,\n  duplicateChargeId: $duplicateChargeId,\n  enhancedEvidence: $enhancedEvidence,\n  productDescription: $productDescription,\n  receipt: $receipt,\n  refundPolicy: $refundPolicy,\n  refundPolicyDisclosure: $refundPolicyDisclosure,\n  refundRefusalExplanation: $refundRefusalExplanation,\n  serviceDate: $serviceDate,\n  serviceDocumentation: $serviceDocumentation,\n  shippingAddress: $shippingAddress,\n  shippingCarrier: $shippingCarrier,\n  shippingDate: $shippingDate,\n  shippingDocumentation: $shippingDocumentation,\n  shippingTrackingNumber: $shippingTrackingNumber,\n  uncategorizedFile: $uncategorizedFile,\n  uncategorizedText: $uncategorizedText,\n)';
 
- }
+}

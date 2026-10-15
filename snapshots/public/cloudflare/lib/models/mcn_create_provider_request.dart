@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cloud_type.dart';@immutable final class McnCreateProviderRequest {const McnCreateProviderRequest({required this.cloudType, required this.friendlyName, this.description, });
 
-factory McnCreateProviderRequest.fromJson(Map<String, dynamic> json) { return McnCreateProviderRequest(
+factory McnCreateProviderRequest.fromJson(Map<String, dynamic> json) {return McnCreateProviderRequest(
   cloudType: McnCloudType.fromJson(json['cloud_type'] as String),
   description: json['description'] as String?,
   friendlyName: json['friendly_name'] as String,
-); }
+);}
 
 final McnCloudType cloudType;
 
@@ -15,18 +15,18 @@ final String? description;
 
 final String friendlyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cloud_type': cloudType.toJson(),
   'description': ?description,
   'friendly_name': friendlyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud_type') &&
-      json.containsKey('friendly_name') && json['friendly_name'] is String; } 
-McnCreateProviderRequest copyWith({McnCloudType? cloudType, String? Function()? description, String? friendlyName, }) { return McnCreateProviderRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cloud_type') &&
+      json.containsKey('friendly_name') && json['friendly_name'] is String;}
+McnCreateProviderRequest copyWith({McnCloudType? cloudType, String? Function()? description, String? friendlyName, }) {return McnCreateProviderRequest(
   cloudType: cloudType ?? this.cloudType,
   description: description != null ? description() : this.description,
   friendlyName: friendlyName ?? this.friendlyName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnCreateProviderRequest &&
           cloudType == other.cloudType &&
@@ -37,4 +37,4 @@ McnCreateProviderRequest copyWith({McnCloudType? cloudType, String? Function()? 
 
 @override String toString() => 'McnCreateProviderRequest(cloudType: $cloudType, description: $description, friendlyName: $friendlyName)';
 
- }
+}

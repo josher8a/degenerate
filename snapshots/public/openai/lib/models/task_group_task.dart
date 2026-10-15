@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/task_type.dart';/// Task entry that appears within a TaskGroup.
 @immutable final class TaskGroupTask {const TaskGroupTask({required this.type, required this.heading, required this.summary, });
 
-factory TaskGroupTask.fromJson(Map<String, dynamic> json) { return TaskGroupTask(
+factory TaskGroupTask.fromJson(Map<String, dynamic> json) {return TaskGroupTask(
   type: TaskType.fromJson(json['type'] as String),
   heading: json['heading'] as String?,
   summary: json['summary'] as String?,
-); }
+);}
 
 /// Subtype for the grouped task.
 final TaskType type;
@@ -19,19 +19,19 @@ final String? heading;
 /// Optional summary that describes the grouped task. Defaults to null when omitted.
 final String? summary;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'heading': heading,
   'summary': summary,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('heading') && (json['heading'] == null || json['heading'] is String) &&
-      json.containsKey('summary') && (json['summary'] == null || json['summary'] is String); } 
-TaskGroupTask copyWith({TaskType? type, String? Function()? heading, String? Function()? summary, }) { return TaskGroupTask(
+      json.containsKey('summary') && (json['summary'] == null || json['summary'] is String);}
+TaskGroupTask copyWith({TaskType? type, String? Function()? heading, String? Function()? summary, }) {return TaskGroupTask(
   type: type ?? this.type,
   heading: heading != null ? heading() : this.heading,
   summary: summary != null ? summary() : this.summary,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaskGroupTask &&
           type == other.type &&
@@ -42,4 +42,4 @@ TaskGroupTask copyWith({TaskType? type, String? Function()? heading, String? Fun
 
 @override String toString() => 'TaskGroupTask(type: $type, heading: $heading, summary: $summary)';
 
- }
+}

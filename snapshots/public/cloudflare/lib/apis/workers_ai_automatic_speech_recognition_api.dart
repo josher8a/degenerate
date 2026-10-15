@@ -14,7 +14,7 @@ final class WorkersAiAutomaticSpeechRecognitionApi with ApiExecutor {const Worke
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/flux model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/flux`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramFluxError>> workersAiPostWebsocketRunCfDeepgramFlux({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramFluxError>> workersAiPostWebsocketRunCfDeepgramFlux({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,13 +28,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramFluxError.fromResponse,
 );
- } 
+}
 /// Execute @cf/deepgram/flux model.
 ///
 /// Runs inference on the @cf/deepgram/flux model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/flux`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramFluxError>> workersAiPostRunCfDeepgramFlux({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramFluxRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramFluxError>> workersAiPostRunCfDeepgramFlux({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramFluxRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -63,13 +63,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfDeepgramFluxError.fromResponse,
 );
- } 
+}
 /// Open Websocket connection with @cf/deepgram/nova-3 model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/nova-3`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3Error>> workersAiPostWebsocketRunCfDeepgramNova3({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3Error>> workersAiPostWebsocketRunCfDeepgramNova3({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,13 +83,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramNova3Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/deepgram/nova-3 model.
 ///
 /// Runs inference on the @cf/deepgram/nova-3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/nova-3`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramNova3Error>> workersAiPostRunCfDeepgramNova3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramNova3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramNova3Error>> workersAiPostRunCfDeepgramNova3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramNova3Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -118,13 +118,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfDeepgramNova3Error.fromResponse,
 );
- } 
+}
 /// Open Websocket connection with @cf/deepgram/nova-3-internal model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3-internal model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/deepgram/nova-3-internal`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3InternalError>> workersAiPostWebsocketRunCfDeepgramNova3Internal({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramNova3InternalError>> workersAiPostWebsocketRunCfDeepgramNova3Internal({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -138,13 +138,13 @@ return await execute(
   onSuccess: (_) {},
   onError: WorkersAiPostWebsocketRunCfDeepgramNova3InternalError.fromResponse,
 );
- } 
+}
 /// Execute @cf/openai/whisper model.
 ///
 /// Runs inference on the @cf/openai/whisper model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenaiWhisperError>> workersAiPostRunCfOpenaiWhisper({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenaiWhisperError>> workersAiPostRunCfOpenaiWhisper({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -173,13 +173,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfOpenaiWhisperError.fromResponse,
 );
- } 
+}
 /// Execute @cf/openai/whisper-large-v3-turbo model.
 ///
 /// Runs inference on the @cf/openai/whisper-large-v3-turbo model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper-large-v3-turbo`
-Future<ApiResult<Map<String, dynamic>, TurboError>> workersAiPostRunCfOpenaiWhisperLargeV3Turbo({required String accountId, String? queueRequest, String? tags, TurboRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, TurboError>> workersAiPostRunCfOpenaiWhisperLargeV3Turbo({required String accountId, String? queueRequest, String? tags, TurboRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -208,13 +208,13 @@ return await execute(
   },
   onError: TurboError.fromResponse,
 );
- } 
+}
 /// Execute @cf/openai/whisper-tiny-en model.
 ///
 /// Runs inference on the @cf/openai/whisper-tiny-en model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/openai/whisper-tiny-en`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenaiWhisperTinyEnError>> workersAiPostRunCfOpenaiWhisperTinyEn({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfOpenaiWhisperTinyEnError>> workersAiPostRunCfOpenaiWhisperTinyEn({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -243,5 +243,5 @@ return await execute(
   },
   onError: WorkersAiPostRunCfOpenaiWhisperTinyEnError.fromResponse,
 );
- } 
- }
+}
+}

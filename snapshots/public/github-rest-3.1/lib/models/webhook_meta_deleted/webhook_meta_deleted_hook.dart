@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_meta_deleted/hook_config.dart';sealed class HookEvents {const HookEvents();
 
-factory HookEvents.fromJson(String json) { return switch (json) {
+factory HookEvents.fromJson(String json) {return switch (json) {
   '*' => $empty,
   'branch_protection_rule' => branchProtectionRule,
   'check_run' => checkRun,
@@ -57,7 +57,7 @@ factory HookEvents.fromJson(String json) { return switch (json) {
   'repository_dispatch' => repositoryDispatch,
   'projects_v2_item' => projectsV2Item,
   _ => HookEvents$Unknown(json),
-}; }
+};}
 
 static const HookEvents $empty = HookEvents$$empty._();
 
@@ -166,9 +166,9 @@ static const HookEvents projectsV2Item = HookEvents$projectsV2Item._();
 static const List<HookEvents> values = [$empty, branchProtectionRule, checkRun, checkSuite, codeScanningAlert, commitComment, create, delete, deployment, deploymentStatus, deployKey, discussion, discussionComment, fork, gollum, issues, issueComment, label, member, membership, meta, milestone, organization, orgBlock, package, pageBuild, project, projectCard, projectColumn, public, pullRequest, pullRequestReview, pullRequestReviewComment, pullRequestReviewThread, push, registryPackage, release, repository, repositoryImport, repositoryVulnerabilityAlert, secretScanningAlert, secretScanningAlertLocation, securityAndAnalysis, star, status, team, teamAdd, watch, workflowJob, workflowRun, repositoryDispatch, projectsV2Item];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '*' => r'$empty',
   'branch_protection_rule' => 'branchProtectionRule',
   'check_run' => 'checkRun',
@@ -222,11 +222,11 @@ String get name { return switch (value) {
   'repository_dispatch' => 'repositoryDispatch',
   'projects_v2_item' => 'projectsV2Item',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is HookEvents$Unknown; } 
+bool get isUnknown {return this is HookEvents$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() branchProtectionRule, required W Function() checkRun, required W Function() checkSuite, required W Function() codeScanningAlert, required W Function() commitComment, required W Function() create, required W Function() delete, required W Function() deployment, required W Function() deploymentStatus, required W Function() deployKey, required W Function() discussion, required W Function() discussionComment, required W Function() fork, required W Function() gollum, required W Function() issues, required W Function() issueComment, required W Function() label, required W Function() member, required W Function() membership, required W Function() meta, required W Function() milestone, required W Function() organization, required W Function() orgBlock, required W Function() package, required W Function() pageBuild, required W Function() project, required W Function() projectCard, required W Function() projectColumn, required W Function() public, required W Function() pullRequest, required W Function() pullRequestReview, required W Function() pullRequestReviewComment, required W Function() pullRequestReviewThread, required W Function() push, required W Function() registryPackage, required W Function() release, required W Function() repository, required W Function() repositoryImport, required W Function() repositoryVulnerabilityAlert, required W Function() secretScanningAlert, required W Function() secretScanningAlertLocation, required W Function() securityAndAnalysis, required W Function() star, required W Function() status, required W Function() team, required W Function() teamAdd, required W Function() watch, required W Function() workflowJob, required W Function() workflowRun, required W Function() repositoryDispatch, required W Function() projectsV2Item, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() branchProtectionRule, required W Function() checkRun, required W Function() checkSuite, required W Function() codeScanningAlert, required W Function() commitComment, required W Function() create, required W Function() delete, required W Function() deployment, required W Function() deploymentStatus, required W Function() deployKey, required W Function() discussion, required W Function() discussionComment, required W Function() fork, required W Function() gollum, required W Function() issues, required W Function() issueComment, required W Function() label, required W Function() member, required W Function() membership, required W Function() meta, required W Function() milestone, required W Function() organization, required W Function() orgBlock, required W Function() package, required W Function() pageBuild, required W Function() project, required W Function() projectCard, required W Function() projectColumn, required W Function() public, required W Function() pullRequest, required W Function() pullRequestReview, required W Function() pullRequestReviewComment, required W Function() pullRequestReviewThread, required W Function() push, required W Function() registryPackage, required W Function() release, required W Function() repository, required W Function() repositoryImport, required W Function() repositoryVulnerabilityAlert, required W Function() secretScanningAlert, required W Function() secretScanningAlertLocation, required W Function() securityAndAnalysis, required W Function() star, required W Function() status, required W Function() team, required W Function() teamAdd, required W Function() watch, required W Function() workflowJob, required W Function() workflowRun, required W Function() repositoryDispatch, required W Function() projectsV2Item, required W Function(String value) $unknown, }) {return switch (this) {
       HookEvents$$empty() => $empty(),
       HookEvents$branchProtectionRule() => branchProtectionRule(),
       HookEvents$checkRun() => checkRun(),
@@ -280,9 +280,9 @@ W when<W>({required W Function() $empty, required W Function() branchProtectionR
       HookEvents$repositoryDispatch() => repositoryDispatch(),
       HookEvents$projectsV2Item() => projectsV2Item(),
       HookEvents$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? branchProtectionRule, W Function()? checkRun, W Function()? checkSuite, W Function()? codeScanningAlert, W Function()? commitComment, W Function()? create, W Function()? delete, W Function()? deployment, W Function()? deploymentStatus, W Function()? deployKey, W Function()? discussion, W Function()? discussionComment, W Function()? fork, W Function()? gollum, W Function()? issues, W Function()? issueComment, W Function()? label, W Function()? member, W Function()? membership, W Function()? meta, W Function()? milestone, W Function()? organization, W Function()? orgBlock, W Function()? package, W Function()? pageBuild, W Function()? project, W Function()? projectCard, W Function()? projectColumn, W Function()? public, W Function()? pullRequest, W Function()? pullRequestReview, W Function()? pullRequestReviewComment, W Function()? pullRequestReviewThread, W Function()? push, W Function()? registryPackage, W Function()? release, W Function()? repository, W Function()? repositoryImport, W Function()? repositoryVulnerabilityAlert, W Function()? secretScanningAlert, W Function()? secretScanningAlertLocation, W Function()? securityAndAnalysis, W Function()? star, W Function()? status, W Function()? team, W Function()? teamAdd, W Function()? watch, W Function()? workflowJob, W Function()? workflowRun, W Function()? repositoryDispatch, W Function()? projectsV2Item, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? branchProtectionRule, W Function()? checkRun, W Function()? checkSuite, W Function()? codeScanningAlert, W Function()? commitComment, W Function()? create, W Function()? delete, W Function()? deployment, W Function()? deploymentStatus, W Function()? deployKey, W Function()? discussion, W Function()? discussionComment, W Function()? fork, W Function()? gollum, W Function()? issues, W Function()? issueComment, W Function()? label, W Function()? member, W Function()? membership, W Function()? meta, W Function()? milestone, W Function()? organization, W Function()? orgBlock, W Function()? package, W Function()? pageBuild, W Function()? project, W Function()? projectCard, W Function()? projectColumn, W Function()? public, W Function()? pullRequest, W Function()? pullRequestReview, W Function()? pullRequestReviewComment, W Function()? pullRequestReviewThread, W Function()? push, W Function()? registryPackage, W Function()? release, W Function()? repository, W Function()? repositoryImport, W Function()? repositoryVulnerabilityAlert, W Function()? secretScanningAlert, W Function()? secretScanningAlertLocation, W Function()? securityAndAnalysis, W Function()? star, W Function()? status, W Function()? team, W Function()? teamAdd, W Function()? watch, W Function()? workflowJob, W Function()? workflowRun, W Function()? repositoryDispatch, W Function()? projectsV2Item, W Function(String value)? $unknown, }) {return switch (this) {
       HookEvents$$empty() => $empty != null ? $empty() : orElse(value),
       HookEvents$branchProtectionRule() => branchProtectionRule != null ? branchProtectionRule() : orElse(value),
       HookEvents$checkRun() => checkRun != null ? checkRun() : orElse(value),
@@ -336,10 +336,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
       HookEvents$repositoryDispatch() => repositoryDispatch != null ? repositoryDispatch() : orElse(value),
       HookEvents$projectsV2Item() => projectsV2Item != null ? projectsV2Item() : orElse(value),
       HookEvents$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'HookEvents($value)';
 
- }
+}
 @immutable final class HookEvents$$empty extends HookEvents {const HookEvents$$empty._();
 
 @override String get value => '*';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => '*'.hashCode;
 
- }
+}
 @immutable final class HookEvents$branchProtectionRule extends HookEvents {const HookEvents$branchProtectionRule._();
 
 @override String get value => 'branch_protection_rule';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'branch_protection_rule'.hashCode;
 
- }
+}
 @immutable final class HookEvents$checkRun extends HookEvents {const HookEvents$checkRun._();
 
 @override String get value => 'check_run';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'check_run'.hashCode;
 
- }
+}
 @immutable final class HookEvents$checkSuite extends HookEvents {const HookEvents$checkSuite._();
 
 @override String get value => 'check_suite';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'check_suite'.hashCode;
 
- }
+}
 @immutable final class HookEvents$codeScanningAlert extends HookEvents {const HookEvents$codeScanningAlert._();
 
 @override String get value => 'code_scanning_alert';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'code_scanning_alert'.hashCode;
 
- }
+}
 @immutable final class HookEvents$commitComment extends HookEvents {const HookEvents$commitComment._();
 
 @override String get value => 'commit_comment';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'commit_comment'.hashCode;
 
- }
+}
 @immutable final class HookEvents$create extends HookEvents {const HookEvents$create._();
 
 @override String get value => 'create';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'create'.hashCode;
 
- }
+}
 @immutable final class HookEvents$delete extends HookEvents {const HookEvents$delete._();
 
 @override String get value => 'delete';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'delete'.hashCode;
 
- }
+}
 @immutable final class HookEvents$deployment extends HookEvents {const HookEvents$deployment._();
 
 @override String get value => 'deployment';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'deployment'.hashCode;
 
- }
+}
 @immutable final class HookEvents$deploymentStatus extends HookEvents {const HookEvents$deploymentStatus._();
 
 @override String get value => 'deployment_status';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'deployment_status'.hashCode;
 
- }
+}
 @immutable final class HookEvents$deployKey extends HookEvents {const HookEvents$deployKey._();
 
 @override String get value => 'deploy_key';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'deploy_key'.hashCode;
 
- }
+}
 @immutable final class HookEvents$discussion extends HookEvents {const HookEvents$discussion._();
 
 @override String get value => 'discussion';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'discussion'.hashCode;
 
- }
+}
 @immutable final class HookEvents$discussionComment extends HookEvents {const HookEvents$discussionComment._();
 
 @override String get value => 'discussion_comment';
@@ -456,7 +456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'discussion_comment'.hashCode;
 
- }
+}
 @immutable final class HookEvents$fork extends HookEvents {const HookEvents$fork._();
 
 @override String get value => 'fork';
@@ -465,7 +465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'fork'.hashCode;
 
- }
+}
 @immutable final class HookEvents$gollum extends HookEvents {const HookEvents$gollum._();
 
 @override String get value => 'gollum';
@@ -474,7 +474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'gollum'.hashCode;
 
- }
+}
 @immutable final class HookEvents$issues extends HookEvents {const HookEvents$issues._();
 
 @override String get value => 'issues';
@@ -483,7 +483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issues'.hashCode;
 
- }
+}
 @immutable final class HookEvents$issueComment extends HookEvents {const HookEvents$issueComment._();
 
 @override String get value => 'issue_comment';
@@ -492,7 +492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'issue_comment'.hashCode;
 
- }
+}
 @immutable final class HookEvents$label extends HookEvents {const HookEvents$label._();
 
 @override String get value => 'label';
@@ -501,7 +501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'label'.hashCode;
 
- }
+}
 @immutable final class HookEvents$member extends HookEvents {const HookEvents$member._();
 
 @override String get value => 'member';
@@ -510,7 +510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'member'.hashCode;
 
- }
+}
 @immutable final class HookEvents$membership extends HookEvents {const HookEvents$membership._();
 
 @override String get value => 'membership';
@@ -519,7 +519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'membership'.hashCode;
 
- }
+}
 @immutable final class HookEvents$meta extends HookEvents {const HookEvents$meta._();
 
 @override String get value => 'meta';
@@ -528,7 +528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'meta'.hashCode;
 
- }
+}
 @immutable final class HookEvents$milestone extends HookEvents {const HookEvents$milestone._();
 
 @override String get value => 'milestone';
@@ -537,7 +537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'milestone'.hashCode;
 
- }
+}
 @immutable final class HookEvents$organization extends HookEvents {const HookEvents$organization._();
 
 @override String get value => 'organization';
@@ -546,7 +546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'organization'.hashCode;
 
- }
+}
 @immutable final class HookEvents$orgBlock extends HookEvents {const HookEvents$orgBlock._();
 
 @override String get value => 'org_block';
@@ -555,7 +555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'org_block'.hashCode;
 
- }
+}
 @immutable final class HookEvents$package extends HookEvents {const HookEvents$package._();
 
 @override String get value => 'package';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'package'.hashCode;
 
- }
+}
 @immutable final class HookEvents$pageBuild extends HookEvents {const HookEvents$pageBuild._();
 
 @override String get value => 'page_build';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'page_build'.hashCode;
 
- }
+}
 @immutable final class HookEvents$project extends HookEvents {const HookEvents$project._();
 
 @override String get value => 'project';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'project'.hashCode;
 
- }
+}
 @immutable final class HookEvents$projectCard extends HookEvents {const HookEvents$projectCard._();
 
 @override String get value => 'project_card';
@@ -591,7 +591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'project_card'.hashCode;
 
- }
+}
 @immutable final class HookEvents$projectColumn extends HookEvents {const HookEvents$projectColumn._();
 
 @override String get value => 'project_column';
@@ -600,7 +600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'project_column'.hashCode;
 
- }
+}
 @immutable final class HookEvents$public extends HookEvents {const HookEvents$public._();
 
 @override String get value => 'public';
@@ -609,7 +609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'public'.hashCode;
 
- }
+}
 @immutable final class HookEvents$pullRequest extends HookEvents {const HookEvents$pullRequest._();
 
 @override String get value => 'pull_request';
@@ -618,7 +618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'pull_request'.hashCode;
 
- }
+}
 @immutable final class HookEvents$pullRequestReview extends HookEvents {const HookEvents$pullRequestReview._();
 
 @override String get value => 'pull_request_review';
@@ -627,7 +627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'pull_request_review'.hashCode;
 
- }
+}
 @immutable final class HookEvents$pullRequestReviewComment extends HookEvents {const HookEvents$pullRequestReviewComment._();
 
 @override String get value => 'pull_request_review_comment';
@@ -636,7 +636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'pull_request_review_comment'.hashCode;
 
- }
+}
 @immutable final class HookEvents$pullRequestReviewThread extends HookEvents {const HookEvents$pullRequestReviewThread._();
 
 @override String get value => 'pull_request_review_thread';
@@ -645,7 +645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'pull_request_review_thread'.hashCode;
 
- }
+}
 @immutable final class HookEvents$push extends HookEvents {const HookEvents$push._();
 
 @override String get value => 'push';
@@ -654,7 +654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'push'.hashCode;
 
- }
+}
 @immutable final class HookEvents$registryPackage extends HookEvents {const HookEvents$registryPackage._();
 
 @override String get value => 'registry_package';
@@ -663,7 +663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'registry_package'.hashCode;
 
- }
+}
 @immutable final class HookEvents$release extends HookEvents {const HookEvents$release._();
 
 @override String get value => 'release';
@@ -672,7 +672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'release'.hashCode;
 
- }
+}
 @immutable final class HookEvents$repository extends HookEvents {const HookEvents$repository._();
 
 @override String get value => 'repository';
@@ -681,7 +681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'repository'.hashCode;
 
- }
+}
 @immutable final class HookEvents$repositoryImport extends HookEvents {const HookEvents$repositoryImport._();
 
 @override String get value => 'repository_import';
@@ -690,7 +690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'repository_import'.hashCode;
 
- }
+}
 @immutable final class HookEvents$repositoryVulnerabilityAlert extends HookEvents {const HookEvents$repositoryVulnerabilityAlert._();
 
 @override String get value => 'repository_vulnerability_alert';
@@ -699,7 +699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'repository_vulnerability_alert'.hashCode;
 
- }
+}
 @immutable final class HookEvents$secretScanningAlert extends HookEvents {const HookEvents$secretScanningAlert._();
 
 @override String get value => 'secret_scanning_alert';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'secret_scanning_alert'.hashCode;
 
- }
+}
 @immutable final class HookEvents$secretScanningAlertLocation extends HookEvents {const HookEvents$secretScanningAlertLocation._();
 
 @override String get value => 'secret_scanning_alert_location';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'secret_scanning_alert_location'.hashCode;
 
- }
+}
 @immutable final class HookEvents$securityAndAnalysis extends HookEvents {const HookEvents$securityAndAnalysis._();
 
 @override String get value => 'security_and_analysis';
@@ -726,7 +726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'security_and_analysis'.hashCode;
 
- }
+}
 @immutable final class HookEvents$star extends HookEvents {const HookEvents$star._();
 
 @override String get value => 'star';
@@ -735,7 +735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'star'.hashCode;
 
- }
+}
 @immutable final class HookEvents$status extends HookEvents {const HookEvents$status._();
 
 @override String get value => 'status';
@@ -744,7 +744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'status'.hashCode;
 
- }
+}
 @immutable final class HookEvents$team extends HookEvents {const HookEvents$team._();
 
 @override String get value => 'team';
@@ -753,7 +753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'team'.hashCode;
 
- }
+}
 @immutable final class HookEvents$teamAdd extends HookEvents {const HookEvents$teamAdd._();
 
 @override String get value => 'team_add';
@@ -762,7 +762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'team_add'.hashCode;
 
- }
+}
 @immutable final class HookEvents$watch extends HookEvents {const HookEvents$watch._();
 
 @override String get value => 'watch';
@@ -771,7 +771,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'watch'.hashCode;
 
- }
+}
 @immutable final class HookEvents$workflowJob extends HookEvents {const HookEvents$workflowJob._();
 
 @override String get value => 'workflow_job';
@@ -780,7 +780,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'workflow_job'.hashCode;
 
- }
+}
 @immutable final class HookEvents$workflowRun extends HookEvents {const HookEvents$workflowRun._();
 
 @override String get value => 'workflow_run';
@@ -789,7 +789,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'workflow_run'.hashCode;
 
- }
+}
 @immutable final class HookEvents$repositoryDispatch extends HookEvents {const HookEvents$repositoryDispatch._();
 
 @override String get value => 'repository_dispatch';
@@ -798,7 +798,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'repository_dispatch'.hashCode;
 
- }
+}
 @immutable final class HookEvents$projectsV2Item extends HookEvents {const HookEvents$projectsV2Item._();
 
 @override String get value => 'projects_v2_item';
@@ -807,7 +807,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'projects_v2_item'.hashCode;
 
- }
+}
 @immutable final class HookEvents$Unknown extends HookEvents {const HookEvents$Unknown(this.value);
 
 @override final String value;
@@ -817,11 +817,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The deleted webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
 @immutable final class WebhookMetaDeletedHook {const WebhookMetaDeletedHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, });
 
-factory WebhookMetaDeletedHook.fromJson(Map<String, dynamic> json) { return WebhookMetaDeletedHook(
+factory WebhookMetaDeletedHook.fromJson(Map<String, dynamic> json) {return WebhookMetaDeletedHook(
   active: json['active'] as bool,
   config: HookConfig.fromJson(json['config'] as Map<String, dynamic>),
   createdAt: json['created_at'] as String,
@@ -830,7 +830,7 @@ factory WebhookMetaDeletedHook.fromJson(Map<String, dynamic> json) { return Webh
   name: json['name'] as String,
   type: json['type'] as String,
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 final bool active;
 
@@ -849,7 +849,7 @@ final String type;
 
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'config': config.toJson(),
   'created_at': createdAt,
@@ -858,16 +858,16 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'type': type,
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('config') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('events') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookMetaDeletedHook copyWith({bool? active, HookConfig? config, String? createdAt, List<HookEvents>? events, int? id, String? name, String? type, String? updatedAt, }) { return WebhookMetaDeletedHook(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhookMetaDeletedHook copyWith({bool? active, HookConfig? config, String? createdAt, List<HookEvents>? events, int? id, String? name, String? type, String? updatedAt, }) {return WebhookMetaDeletedHook(
   active: active ?? this.active,
   config: config ?? this.config,
   createdAt: createdAt ?? this.createdAt,
@@ -876,7 +876,7 @@ WebhookMetaDeletedHook copyWith({bool? active, HookConfig? config, String? creat
   name: name ?? this.name,
   type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMetaDeletedHook &&
           active == other.active &&
@@ -892,4 +892,4 @@ WebhookMetaDeletedHook copyWith({bool? active, HookConfig? config, String? creat
 
 @override String toString() => 'WebhookMetaDeletedHook(active: $active, config: $config, createdAt: $createdAt, events: $events, id: $id, name: $name, type: $type, updatedAt: $updatedAt)';
 
- }
+}

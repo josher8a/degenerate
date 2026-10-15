@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessDevicePostureCheck {const AccessDevicePostureCheck({this.exists, this.path, });
 
-factory AccessDevicePostureCheck.fromJson(Map<String, dynamic> json) { return AccessDevicePostureCheck(
+factory AccessDevicePostureCheck.fromJson(Map<String, dynamic> json) {return AccessDevicePostureCheck(
   exists: json['exists'] as bool?,
   path: json['path'] as String?,
-); }
+);}
 
 final bool? exists;
 
 final String? path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'exists': ?exists,
   'path': ?path,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exists', 'path'}.contains(key)); } 
-AccessDevicePostureCheck copyWith({bool? Function()? exists, String? Function()? path, }) { return AccessDevicePostureCheck(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'exists', 'path'}.contains(key));}
+AccessDevicePostureCheck copyWith({bool? Function()? exists, String? Function()? path, }) {return AccessDevicePostureCheck(
   exists: exists != null ? exists() : this.exists,
   path: path != null ? path() : this.path,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessDevicePostureCheck &&
           exists == other.exists &&
@@ -30,4 +30,4 @@ AccessDevicePostureCheck copyWith({bool? Function()? exists, String? Function()?
 
 @override String toString() => 'AccessDevicePostureCheck(exists: $exists, path: $path)';
 
- }
+}

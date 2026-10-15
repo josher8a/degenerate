@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error` or `rate_limit_exceeded`.
 sealed class RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode();
 
-factory RunStepObjectLastErrorCode.fromJson(String json) { return switch (json) {
+factory RunStepObjectLastErrorCode.fromJson(String json) {return switch (json) {
   'server_error' => serverError,
   'rate_limit_exceeded' => rateLimitExceeded,
   _ => RunStepObjectLastErrorCode$Unknown(json),
-}; }
+};}
 
 static const RunStepObjectLastErrorCode serverError = RunStepObjectLastErrorCode$serverError._();
 
@@ -17,30 +17,30 @@ static const RunStepObjectLastErrorCode rateLimitExceeded = RunStepObjectLastErr
 static const List<RunStepObjectLastErrorCode> values = [serverError, rateLimitExceeded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'server_error' => 'serverError',
   'rate_limit_exceeded' => 'rateLimitExceeded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RunStepObjectLastErrorCode$Unknown; } 
+bool get isUnknown {return this is RunStepObjectLastErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() serverError, required W Function() rateLimitExceeded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() serverError, required W Function() rateLimitExceeded, required W Function(String value) $unknown, }) {return switch (this) {
       RunStepObjectLastErrorCode$serverError() => serverError(),
       RunStepObjectLastErrorCode$rateLimitExceeded() => rateLimitExceeded(),
       RunStepObjectLastErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? rateLimitExceeded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? rateLimitExceeded, W Function(String value)? $unknown, }) {return switch (this) {
       RunStepObjectLastErrorCode$serverError() => serverError != null ? serverError() : orElse(value),
       RunStepObjectLastErrorCode$rateLimitExceeded() => rateLimitExceeded != null ? rateLimitExceeded() : orElse(value),
       RunStepObjectLastErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RunStepObjectLastErrorCode($value)';
 
- }
+}
 @immutable final class RunStepObjectLastErrorCode$serverError extends RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode$serverError._();
 
 @override String get value => 'server_error';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'server_error'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectLastErrorCode$rateLimitExceeded extends RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode$rateLimitExceeded._();
 
 @override String get value => 'rate_limit_exceeded';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'rate_limit_exceeded'.hashCode;
 
- }
+}
 @immutable final class RunStepObjectLastErrorCode$Unknown extends RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -68,14 +68,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The last error associated with this run step. Will be `null` if there are no errors.
 @immutable final class RunStepObjectLastError {const RunStepObjectLastError({required this.code, required this.message, });
 
-factory RunStepObjectLastError.fromJson(Map<String, dynamic> json) { return RunStepObjectLastError(
+factory RunStepObjectLastError.fromJson(Map<String, dynamic> json) {return RunStepObjectLastError(
   code: RunStepObjectLastErrorCode.fromJson(json['code'] as String),
   message: json['message'] as String,
-); }
+);}
 
 /// One of `server_error` or `rate_limit_exceeded`.
 final RunStepObjectLastErrorCode code;
@@ -83,16 +83,16 @@ final RunStepObjectLastErrorCode code;
 /// A human-readable description of the error.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
-      json.containsKey('message') && json['message'] is String; } 
-RunStepObjectLastError copyWith({RunStepObjectLastErrorCode? code, String? message, }) { return RunStepObjectLastError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
+      json.containsKey('message') && json['message'] is String;}
+RunStepObjectLastError copyWith({RunStepObjectLastErrorCode? code, String? message, }) {return RunStepObjectLastError(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepObjectLastError &&
           code == other.code &&
@@ -102,4 +102,4 @@ RunStepObjectLastError copyWith({RunStepObjectLastErrorCode? code, String? messa
 
 @override String toString() => 'RunStepObjectLastError(code: $code, message: $message)';
 
- }
+}

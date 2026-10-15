@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_permission_list_response/get_permission_list_response_resource_type.dart';import 'package:pub_cloudflare/models/get_permission_list_response/get_permission_list_response_role.dart';import 'package:pub_cloudflare/models/get_permission_list_response/subject_type.dart';@immutable final class PostPermissionCreateResponse {const PostPermissionCreateResponse({required this.createdAt, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, this.resourceId, });
 
-factory PostPermissionCreateResponse.fromJson(Map<String, dynamic> json) { return PostPermissionCreateResponse(
+factory PostPermissionCreateResponse.fromJson(Map<String, dynamic> json) {return PostPermissionCreateResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),
   resourceId: json['resourceId'] as String?,
   resourceType: GetPermissionListResponseResourceType.fromJson(json['resourceType'] as String),
@@ -12,7 +12,7 @@ factory PostPermissionCreateResponse.fromJson(Map<String, dynamic> json) { retur
   subjectType: SubjectType.fromJson(json['subjectType'] as String),
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   uuid: json['uuid'] as String,
-); }
+);}
 
 /// Example: `'2022-04-01T00:00:00Z'`
 final DateTime createdAt;
@@ -40,7 +40,7 @@ final DateTime updatedAt;
 /// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'createdAt': createdAt.toIso8601String(),
   'resourceId': ?resourceId,
   'resourceType': resourceType.toJson(),
@@ -49,15 +49,15 @@ Map<String, dynamic> toJson() { return {
   'subjectType': subjectType.toJson(),
   'updatedAt': updatedAt.toIso8601String(),
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('createdAt') && json['createdAt'] is String &&
       json.containsKey('resourceType') &&
       json.containsKey('role') &&
       json.containsKey('subjectId') && json['subjectId'] is String &&
       json.containsKey('subjectType') &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-PostPermissionCreateResponse copyWith({DateTime? createdAt, String? Function()? resourceId, GetPermissionListResponseResourceType? resourceType, GetPermissionListResponseRole? role, String? subjectId, SubjectType? subjectType, DateTime? updatedAt, String? uuid, }) { return PostPermissionCreateResponse(
+      json.containsKey('uuid') && json['uuid'] is String;}
+PostPermissionCreateResponse copyWith({DateTime? createdAt, String? Function()? resourceId, GetPermissionListResponseResourceType? resourceType, GetPermissionListResponseRole? role, String? subjectId, SubjectType? subjectType, DateTime? updatedAt, String? uuid, }) {return PostPermissionCreateResponse(
   createdAt: createdAt ?? this.createdAt,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceType: resourceType ?? this.resourceType,
@@ -66,7 +66,7 @@ PostPermissionCreateResponse copyWith({DateTime? createdAt, String? Function()? 
   subjectType: subjectType ?? this.subjectType,
   updatedAt: updatedAt ?? this.updatedAt,
   uuid: uuid ?? this.uuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPermissionCreateResponse &&
           createdAt == other.createdAt &&
@@ -82,4 +82,4 @@ PostPermissionCreateResponse copyWith({DateTime? createdAt, String? Function()? 
 
 @override String toString() => 'PostPermissionCreateResponse(createdAt: $createdAt, resourceId: $resourceId, resourceType: $resourceType, role: $role, subjectId: $subjectId, subjectType: $subjectType, updatedAt: $updatedAt, uuid: $uuid)';
 
- }
+}

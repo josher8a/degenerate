@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/creation_info.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/relationships.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/sbom_packages.dart';@immutable final class Sbom {const Sbom({required this.spdxid, required this.spdxVersion, required this.creationInfo, required this.name, required this.dataLicense, required this.documentNamespace, required this.packages, this.comment, this.relationships, });
 
-factory Sbom.fromJson(Map<String, dynamic> json) { return Sbom(
+factory Sbom.fromJson(Map<String, dynamic> json) {return Sbom(
   spdxid: json['SPDXID'] as String,
   spdxVersion: json['spdxVersion'] as String,
   comment: json['comment'] as String?,
@@ -13,7 +13,7 @@ factory Sbom.fromJson(Map<String, dynamic> json) { return Sbom(
   documentNamespace: json['documentNamespace'] as String,
   packages: (json['packages'] as List<dynamic>).map((e) => SbomPackages.fromJson(e as Map<String, dynamic>)).toList(),
   relationships: (json['relationships'] as List<dynamic>?)?.map((e) => Relationships.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The SPDX identifier for the SPDX document.
 final String spdxid;
@@ -39,7 +39,7 @@ final List<SbomPackages> packages;
 
 final List<Relationships>? relationships;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'SPDXID': spdxid,
   'spdxVersion': spdxVersion,
   'comment': ?comment,
@@ -49,15 +49,15 @@ Map<String, dynamic> toJson() { return {
   'documentNamespace': documentNamespace,
   'packages': packages.map((e) => e.toJson()).toList(),
   if (relationships != null) 'relationships': relationships?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('SPDXID') && json['SPDXID'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('SPDXID') && json['SPDXID'] is String &&
       json.containsKey('spdxVersion') && json['spdxVersion'] is String &&
       json.containsKey('creationInfo') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('dataLicense') && json['dataLicense'] is String &&
       json.containsKey('documentNamespace') && json['documentNamespace'] is String &&
-      json.containsKey('packages'); } 
-Sbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment, CreationInfo? creationInfo, String? name, String? dataLicense, String? documentNamespace, List<SbomPackages>? packages, List<Relationships>? Function()? relationships, }) { return Sbom(
+      json.containsKey('packages');}
+Sbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment, CreationInfo? creationInfo, String? name, String? dataLicense, String? documentNamespace, List<SbomPackages>? packages, List<Relationships>? Function()? relationships, }) {return Sbom(
   spdxid: spdxid ?? this.spdxid,
   spdxVersion: spdxVersion ?? this.spdxVersion,
   comment: comment != null ? comment() : this.comment,
@@ -67,7 +67,7 @@ Sbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment,
   documentNamespace: documentNamespace ?? this.documentNamespace,
   packages: packages ?? this.packages,
   relationships: relationships != null ? relationships() : this.relationships,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Sbom &&
           spdxid == other.spdxid &&
@@ -84,4 +84,4 @@ Sbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment,
 
 @override String toString() => 'Sbom(\n  spdxid: $spdxid,\n  spdxVersion: $spdxVersion,\n  comment: $comment,\n  creationInfo: $creationInfo,\n  name: $name,\n  dataLicense: $dataLicense,\n  documentNamespace: $documentNamespace,\n  packages: $packages,\n  relationships: $relationships,\n)';
 
- }
+}

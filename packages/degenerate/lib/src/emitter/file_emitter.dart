@@ -10,6 +10,7 @@ import 'package:degenerate/src/emitter/import_analyzer.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/negative_fixture_emitter.dart';
 import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
+import 'package:degenerate/src/emitter/success_union_emitter.dart';
 import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
@@ -159,9 +160,35 @@ final class FileEmitter {
       typeToFile,
     );
 
+    final successUnionMap = buildSuccessUnionMap(apis, ctx);
+    final successUnionFileStems = <String>{};
+    for (final info in successUnionMap.values) {
+      final fileStem = 'responses/${toSnakeCase(info.className)}';
+      typeToFile[info.className] = fileStem;
+      successUnionFileStems.add(fileStem);
+      files['models/$fileStem.dart'] = emitRaw(
+        emitSuccessUnionLibrary(
+          info: info,
+          ctx: ctx,
+          packageName: packageName,
+          typeToFile: typeToFile,
+        ),
+      );
+    }
+    final statusUnionFileStems = {
+      ...errorUnionFileStems,
+      ...successUnionFileStems,
+    };
+
     final apiAnalysisCache = {
       for (final api in apis)
-        api.name: analyzeApiImports(api, ctx, unwrapFields, errorUnionMap),
+        api.name: analyzeApiImports(
+          api,
+          ctx,
+          unwrapFields,
+          errorUnionMap,
+          successUnionMap,
+        ),
     };
 
     _emitApiFiles(
@@ -172,6 +199,7 @@ final class FileEmitter {
       typeToFile,
       unwrapFields,
       errorUnionMap,
+      successUnionMap,
       warnings,
       apiAnalysisCache,
     );
@@ -203,7 +231,7 @@ final class FileEmitter {
       typeToFile: typeToFile,
       inlinedTypes: inlining.inlinedInto.keys.toSet(),
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
-      errorUnionFiles: errorUnionFileStems,
+      errorUnionFiles: statusUnionFileStems,
       barrelHide: barrelHide,
     );
 
@@ -218,8 +246,9 @@ final class FileEmitter {
           packageName: packageName,
           typeToFile: typeToFile,
           inlinedTypes: inlining.inlinedInto.keys.toSet(),
-          errorUnionFiles: errorUnionFileStems,
+          errorUnionFiles: statusUnionFileStems,
           errorUnionMap: errorUnionMap,
+          successUnionMap: successUnionMap,
           barrelHide: barrelHide,
         );
       }
@@ -429,6 +458,7 @@ final class FileEmitter {
     Map<String, String> typeToFile,
     List<String> unwrapFields,
     Map<String, ErrorUnionInfo> errorUnionMap,
+    Map<String, SuccessUnionInfo> successUnionMap,
     List<String>? warnings,
     Map<String, ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})> apiAnalysisCache,
   ) {
@@ -439,6 +469,7 @@ final class FileEmitter {
         ctx: ctx,
         unwrapFields: unwrapFields,
         errorUnionMap: errorUnionMap,
+        successUnionMap: successUnionMap,
       );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
@@ -612,6 +643,7 @@ final class FileEmitter {
     Set<String> inlinedTypes = const {},
     Set<String> errorUnionFiles = const {},
     Map<String, ErrorUnionInfo> errorUnionMap = const {},
+    Map<String, SuccessUnionInfo> successUnionMap = const {},
     List<String> barrelHide = const [],
   }) {
     final apiFileName = toSnakeCase(api.name);
@@ -623,6 +655,9 @@ final class FileEmitter {
       if (info != null) {
         final target = info.resolvedClassName;
         usedErrorStems.add('errors/${toSnakeCase(target)}');
+      }
+      if (successUnionMap[op.operationId] case final success?) {
+        usedErrorStems.add('responses/${toSnakeCase(success.className)}');
       }
     }
 

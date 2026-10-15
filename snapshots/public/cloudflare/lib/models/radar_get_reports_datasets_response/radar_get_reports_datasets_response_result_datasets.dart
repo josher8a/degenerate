@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetReportsDatasetsResponseResultDatasets {const RadarGetReportsDatasetsResponseResultDatasets({required this.description, required this.id, required this.meta, required this.tags, required this.title, required this.type, });
 
-factory RadarGetReportsDatasetsResponseResultDatasets.fromJson(Map<String, dynamic> json) { return RadarGetReportsDatasetsResponseResultDatasets(
+factory RadarGetReportsDatasetsResponseResultDatasets.fromJson(Map<String, dynamic> json) {return RadarGetReportsDatasetsResponseResultDatasets(
   description: json['description'] as String,
   id: (json['id'] as num).toInt(),
   meta: json['meta'] as Map<String, dynamic>,
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
   title: json['title'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// Example: `'This dataset contains a list of the op 20000 domains globally'`
 final String description;
@@ -28,28 +28,28 @@ final String title;
 /// Example: `'RANKING_BUCKET'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'id': id,
   'meta': meta,
   'tags': tags,
   'title': title,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('meta') &&
       json.containsKey('tags') &&
       json.containsKey('title') && json['title'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-RadarGetReportsDatasetsResponseResultDatasets copyWith({String? description, int? id, Map<String,dynamic>? meta, List<String>? tags, String? title, String? type, }) { return RadarGetReportsDatasetsResponseResultDatasets(
+      json.containsKey('type') && json['type'] is String;}
+RadarGetReportsDatasetsResponseResultDatasets copyWith({String? description, int? id, Map<String,dynamic>? meta, List<String>? tags, String? title, String? type, }) {return RadarGetReportsDatasetsResponseResultDatasets(
   description: description ?? this.description,
   id: id ?? this.id,
   meta: meta ?? this.meta,
   tags: tags ?? this.tags,
   title: title ?? this.title,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetReportsDatasetsResponseResultDatasets &&
           description == other.description &&
@@ -63,4 +63,4 @@ RadarGetReportsDatasetsResponseResultDatasets copyWith({String? description, int
 
 @override String toString() => 'RadarGetReportsDatasetsResponseResultDatasets(description: $description, id: $id, meta: $meta, tags: $tags, title: $title, type: $type)';
 
- }
+}

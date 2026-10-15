@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetAttacksLayer7TopAttacksFormat {const RadarGetAttacksLayer7TopAttacksFormat();
 
-factory RadarGetAttacksLayer7TopAttacksFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7TopAttacksFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAttacksLayer7TopAttacksFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7TopAttacksFormat $json = RadarGetAttacksLayer7TopAttacksFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetAttacksLayer7TopAttacksFormat csv = RadarGetAttacksLayer7To
 static const List<RadarGetAttacksLayer7TopAttacksFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer7TopAttacksFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer7TopAttacksFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer7TopAttacksFormat$$json() => $json(),
       RadarGetAttacksLayer7TopAttacksFormat$csv() => csv(),
       RadarGetAttacksLayer7TopAttacksFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer7TopAttacksFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetAttacksLayer7TopAttacksFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetAttacksLayer7TopAttacksFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer7TopAttacksFormat($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TopAttacksFormat$$json extends RadarGetAttacksLayer7TopAttacksFormat {const RadarGetAttacksLayer7TopAttacksFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TopAttacksFormat$csv extends RadarGetAttacksLayer7TopAttacksFormat {const RadarGetAttacksLayer7TopAttacksFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7TopAttacksFormat$Unknown extends RadarGetAttacksLayer7TopAttacksFormat {const RadarGetAttacksLayer7TopAttacksFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

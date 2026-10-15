@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_file_search/assistant_tools_file_search_file_search.dart';import 'package:pub_openai/models/assistant_tools_file_search/assistant_tools_file_search_type.dart';@immutable final class AssistantToolsFileSearch {const AssistantToolsFileSearch({required this.type, this.fileSearch, });
 
-factory AssistantToolsFileSearch.fromJson(Map<String, dynamic> json) { return AssistantToolsFileSearch(
+factory AssistantToolsFileSearch.fromJson(Map<String, dynamic> json) {return AssistantToolsFileSearch(
   type: AssistantToolsFileSearchType.fromJson(json['type'] as String),
   fileSearch: json['file_search'] != null ? AssistantToolsFileSearchFileSearch.fromJson(json['file_search'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The type of tool being defined: `file_search`
 final AssistantToolsFileSearchType type;
@@ -14,15 +14,15 @@ final AssistantToolsFileSearchType type;
 /// Overrides for the file search tool.
 final AssistantToolsFileSearchFileSearch? fileSearch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (fileSearch != null) 'file_search': fileSearch?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file_search'; } 
-AssistantToolsFileSearch copyWith({AssistantToolsFileSearchType? type, AssistantToolsFileSearchFileSearch? Function()? fileSearch, }) { return AssistantToolsFileSearch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'file_search';}
+AssistantToolsFileSearch copyWith({AssistantToolsFileSearchType? type, AssistantToolsFileSearchFileSearch? Function()? fileSearch, }) {return AssistantToolsFileSearch(
   type: type ?? this.type,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantToolsFileSearch &&
           type == other.type &&
@@ -32,4 +32,4 @@ AssistantToolsFileSearch copyWith({AssistantToolsFileSearchType? type, Assistant
 
 @override String toString() => 'AssistantToolsFileSearch(type: $type, fileSearch: $fileSearch)';
 
- }
+}

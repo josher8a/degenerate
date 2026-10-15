@@ -8,11 +8,11 @@ const PostTerminalConfigurationsConfigurationRequestStripeS700({this.stripeS700 
 const PostTerminalConfigurationsConfigurationRequestStripeS700._({required this.rawValue, required this.stripeS700, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTerminalConfigurationsConfigurationRequestStripeS700.fromJson(Object? json) { return PostTerminalConfigurationsConfigurationRequestStripeS700._(
+factory PostTerminalConfigurationsConfigurationRequestStripeS700.fromJson(Object? json) {return PostTerminalConfigurationsConfigurationRequestStripeS700._(
   rawValue: Omittable(json),
   stripeS700: json is Map<String, dynamic> && StripeS700.canParse(json) ? parseAnyOfVariant<StripeS700>(json, (value) => StripeS700.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTerminalConfigurationsConfigurationRequestStripeS700(${toJson()})';
 
- }
+}

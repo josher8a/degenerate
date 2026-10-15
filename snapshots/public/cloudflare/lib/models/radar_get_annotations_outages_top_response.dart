@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_top_response/radar_get_annotations_outages_top_response_result.dart';@immutable final class RadarGetAnnotationsOutagesTopResponse {const RadarGetAnnotationsOutagesTopResponse({required this.result, required this.success, });
 
-factory RadarGetAnnotationsOutagesTopResponse.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsOutagesTopResponse(
+factory RadarGetAnnotationsOutagesTopResponse.fromJson(Map<String, dynamic> json) {return RadarGetAnnotationsOutagesTopResponse(
   result: RadarGetAnnotationsOutagesTopResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAnnotationsOutagesTopResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAnnotationsOutagesTopResponse copyWith({RadarGetAnnotationsOutagesTopResponseResult? result, bool? success, }) { return RadarGetAnnotationsOutagesTopResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAnnotationsOutagesTopResponse copyWith({RadarGetAnnotationsOutagesTopResponseResult? result, bool? success, }) {return RadarGetAnnotationsOutagesTopResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAnnotationsOutagesTopResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAnnotationsOutagesTopResponse copyWith({RadarGetAnnotationsOutagesTopRes
 
 @override String toString() => 'RadarGetAnnotationsOutagesTopResponse(result: $result, success: $success)';
 
- }
+}

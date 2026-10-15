@@ -7,7 +7,7 @@ const ZonesZoneSettingsResponseCollectionResult({this.zones0rtt = const Omittabl
 const ZonesZoneSettingsResponseCollectionResult._({required this.rawValue, required this.zones0rtt, required this.zonesAdvancedDdos, required this.zonesCacheRulesAegis, required this.zonesAlwaysOnline, required this.zonesSchemasAlwaysUseHttps, required this.zonesSchemasAutomaticHttpsRewrites, required this.zonesBrotli, required this.zonesSchemasBrowserCacheTtl, required this.zonesSchemasBrowserCheck, required this.zonesSchemasCacheLevel, required this.zonesChallengeTtl, required this.zonesCiphers, required this.zonesContentConverter, required this.zonesCnameFlattening, required this.zonesDevelopmentMode, required this.zonesEarlyHints, required this.zonesSchemasEdgeCacheTtl, required this.zonesSchemasEmailObfuscation, required this.zonesH2Prioritization, required this.zonesHotlinkProtection, required this.zonesHttp2, required this.zonesHttp3, required this.zonesImageResizing, required this.zonesSchemasIpGeolocation, required this.zonesIpv6, required this.zonesMaxUpload, required this.zonesMinTlsVersion, required this.zonesSchemasMirage, required this.zonesNel, required this.zonesSchemasOpportunisticEncryption, required this.zonesOpportunisticOnion, required this.zonesOrangeToOrange, required this.zonesSchemasOriginErrorPagePassThru, required this.zonesCacheRulesOriginH2MaxStreams, required this.zonesCacheRulesOriginMaxHttpVersion, required this.zonesSchemasPolish, required this.zonesPrefetchPreload, required this.zonesPrivacyPass, required this.zonesProxyReadTimeout, required this.zonesPseudoIpv4, required this.zonesRedirectsForAiTraining, required this.zonesReplaceInsecureJs, required this.zonesSchemasResponseBuffering, required this.zonesSchemasRocketLoader, required this.zonesSchemasAutomaticPlatformOptimization, required this.zonesSecurityHeader, required this.zonesSchemasSecurityLevel, required this.zonesServerSideExclude, required this.zonesSha1Support, required this.zonesSchemasSortQueryStringForCache, required this.zonesSchemasSsl, required this.zonesSslRecommender, required this.zonesTls12Only, required this.zonesTls13, required this.zonesTlsClientAuth, required this.zonesTransformations, required this.zonesTransformationsAllowedOrigins, required this.zonesSchemasTrueClientIpHeader, required this.zonesSchemasWaf, required this.zonesWebp, required this.zonesWebsockets, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ZonesZoneSettingsResponseCollectionResult.fromJson(Object? json) { return ZonesZoneSettingsResponseCollectionResult._(
+factory ZonesZoneSettingsResponseCollectionResult.fromJson(Object? json) {return ZonesZoneSettingsResponseCollectionResult._(
   rawValue: Omittable(json),
   zones0rtt: json is Map<String, dynamic> && Zones0rtt.canParse(json) ? parseAnyOfVariant<Zones0rtt>(json, (value) => Zones0rtt.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zonesAdvancedDdos: json is Map<String, dynamic> && ZonesAdvancedDdos.canParse(json) ? parseAnyOfVariant<ZonesAdvancedDdos>(json, (value) => ZonesAdvancedDdos.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -70,7 +70,7 @@ factory ZonesZoneSettingsResponseCollectionResult.fromJson(Object? json) { retur
   zonesSchemasWaf: json is Map<String, dynamic> && ZonesSchemasWaf.canParse(json) ? parseAnyOfVariant<ZonesSchemasWaf>(json, (value) => ZonesSchemasWaf.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zonesWebp: json is Map<String, dynamic> && ZonesWebp.canParse(json) ? parseAnyOfVariant<ZonesWebp>(json, (value) => ZonesWebp.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zonesWebsockets: json is Map<String, dynamic> && ZonesWebsockets.canParse(json) ? parseAnyOfVariant<ZonesWebsockets>(json, (value) => ZonesWebsockets.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -336,4 +336,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ZonesZoneSettingsResponseCollectionResult(${toJson()})';
 
- }
+}

@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_ui_design_tokens.dart';@immutable final class RealtimekitPresetUi {const RealtimekitPresetUi({required this.designTokens, this.configDiff, });
 
-factory RealtimekitPresetUi.fromJson(Map<String, dynamic> json) { return RealtimekitPresetUi(
+factory RealtimekitPresetUi.fromJson(Map<String, dynamic> json) {return RealtimekitPresetUi(
   configDiff: json['config_diff'] as Map<String, dynamic>?,
   designTokens: RealtimekitPresetUiDesignTokens.fromJson(json['design_tokens'] as Map<String, dynamic>),
-); }
+);}
 
 final Map<String,dynamic>? configDiff;
 
 final RealtimekitPresetUiDesignTokens designTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config_diff': ?configDiff,
   'design_tokens': designTokens.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('design_tokens'); } 
-RealtimekitPresetUi copyWith({Map<String, dynamic>? Function()? configDiff, RealtimekitPresetUiDesignTokens? designTokens, }) { return RealtimekitPresetUi(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('design_tokens');}
+RealtimekitPresetUi copyWith({Map<String, dynamic>? Function()? configDiff, RealtimekitPresetUiDesignTokens? designTokens, }) {return RealtimekitPresetUi(
   configDiff: configDiff != null ? configDiff() : this.configDiff,
   designTokens: designTokens ?? this.designTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetUi &&
           configDiff == other.configDiff &&
@@ -30,4 +30,4 @@ RealtimekitPresetUi copyWith({Map<String, dynamic>? Function()? configDiff, Real
 
 @override String toString() => 'RealtimekitPresetUi(configDiff: $configDiff, designTokens: $designTokens)';
 
- }
+}

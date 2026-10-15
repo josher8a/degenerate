@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/dlp_pattern.dart';@immutable final class DlpEntryUpdateTypeVariant1 {const DlpEntryUpdateTypeVariant1({required this.name, required this.pattern, required this.type, this.description = const Omittable.absent(), });
 
-factory DlpEntryUpdateTypeVariant1.fromJson(Map<String, dynamic> json) { return DlpEntryUpdateTypeVariant1(
+factory DlpEntryUpdateTypeVariant1.fromJson(Map<String, dynamic> json) {return DlpEntryUpdateTypeVariant1(
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   pattern: DlpPattern.fromJson(json['pattern'] as Map<String, dynamic>),
   type: CustomEntryType.fromJson(json['type'] as String),
-); }
+);}
 
 final Omittable<String?> description;
 
@@ -18,21 +18,21 @@ final DlpPattern pattern;
 
 final CustomEntryType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value,
   'name': name,
   'pattern': pattern.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('pattern') &&
-      json.containsKey('type') && json['type'] == 'custom'; } 
-DlpEntryUpdateTypeVariant1 copyWith({Omittable<String?>? description, String? name, DlpPattern? pattern, CustomEntryType? type, }) { return DlpEntryUpdateTypeVariant1(
+      json.containsKey('type') && json['type'] == 'custom';}
+DlpEntryUpdateTypeVariant1 copyWith({Omittable<String?>? description, String? name, DlpPattern? pattern, CustomEntryType? type, }) {return DlpEntryUpdateTypeVariant1(
   description: description ?? this.description,
   name: name ?? this.name,
   pattern: pattern ?? this.pattern,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryUpdateTypeVariant1 &&
           description == other.description &&
@@ -44,4 +44,4 @@ DlpEntryUpdateTypeVariant1 copyWith({Omittable<String?>? description, String? na
 
 @override String toString() => 'DlpEntryUpdateTypeVariant1(description: $description, name: $name, pattern: $pattern, type: $type)';
 
- }
+}

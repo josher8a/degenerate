@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/issuing_card_shipping_type.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/service.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/billing_address.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/address_validation.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/customs.dart';/// The address where the card will be shipped.
 @immutable final class PostIssuingCardsCardRequestShipping {const PostIssuingCardsCardRequestShipping({required this.address, required this.name, this.addressValidation, this.customs, this.phoneNumber, this.requireSignature, this.service, this.type, });
 
-factory PostIssuingCardsCardRequestShipping.fromJson(Map<String, dynamic> json) { return PostIssuingCardsCardRequestShipping(
+factory PostIssuingCardsCardRequestShipping.fromJson(Map<String, dynamic> json) {return PostIssuingCardsCardRequestShipping(
   address: BillingAddress.fromJson(json['address'] as Map<String, dynamic>),
   addressValidation: json['address_validation'] != null ? AddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>) : null,
   customs: json['customs'] != null ? Customs.fromJson(json['customs'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory PostIssuingCardsCardRequestShipping.fromJson(Map<String, dynamic> json) 
   requireSignature: json['require_signature'] as bool?,
   service: json['service'] != null ? Service.fromJson(json['service'] as String) : null,
   type: json['type'] != null ? IssuingCardShippingType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final BillingAddress address;
 
@@ -31,7 +31,7 @@ final Service? service;
 
 final IssuingCardShippingType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (addressValidation != null) 'address_validation': addressValidation?.toJson(),
   if (customs != null) 'customs': customs?.toJson(),
@@ -40,14 +40,14 @@ Map<String, dynamic> toJson() { return {
   'require_signature': ?requireSignature,
   if (service != null) 'service': service?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-return errors; } 
-PostIssuingCardsCardRequestShipping copyWith({BillingAddress? address, AddressValidation? Function()? addressValidation, Customs? Function()? customs, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, Service? Function()? service, IssuingCardShippingType? Function()? type, }) { return PostIssuingCardsCardRequestShipping(
+return errors;}
+PostIssuingCardsCardRequestShipping copyWith({BillingAddress? address, AddressValidation? Function()? addressValidation, Customs? Function()? customs, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, Service? Function()? service, IssuingCardShippingType? Function()? type, }) {return PostIssuingCardsCardRequestShipping(
   address: address ?? this.address,
   addressValidation: addressValidation != null ? addressValidation() : this.addressValidation,
   customs: customs != null ? customs() : this.customs,
@@ -56,7 +56,7 @@ PostIssuingCardsCardRequestShipping copyWith({BillingAddress? address, AddressVa
   requireSignature: requireSignature != null ? requireSignature() : this.requireSignature,
   service: service != null ? service() : this.service,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardsCardRequestShipping &&
           address == other.address &&
@@ -72,4 +72,4 @@ PostIssuingCardsCardRequestShipping copyWith({BillingAddress? address, AddressVa
 
 @override String toString() => 'PostIssuingCardsCardRequestShipping(address: $address, addressValidation: $addressValidation, customs: $customs, name: $name, phoneNumber: $phoneNumber, requireSignature: $requireSignature, service: $service, type: $type)';
 
- }
+}

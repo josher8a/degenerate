@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MethodDeleteRequest {const MethodDeleteRequest({this.id});
 
-factory MethodDeleteRequest.fromJson(Map<String, dynamic> json) { return MethodDeleteRequest(
+factory MethodDeleteRequest.fromJson(Map<String, dynamic> json) {return MethodDeleteRequest(
   id: json['id'] as String?,
-); }
+);}
 
 /// Example: `'test123'`
 final String? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-MethodDeleteRequest copyWith({String? Function()? id}) { return MethodDeleteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+MethodDeleteRequest copyWith({String? Function()? id}) {return MethodDeleteRequest(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MethodDeleteRequest &&
           id == other.id;
@@ -25,4 +25,4 @@ MethodDeleteRequest copyWith({String? Function()? id}) { return MethodDeleteRequ
 
 @override String toString() => 'MethodDeleteRequest(id: $id)';
 
- }
+}

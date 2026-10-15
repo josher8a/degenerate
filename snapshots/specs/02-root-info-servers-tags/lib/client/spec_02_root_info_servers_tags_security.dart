@@ -6,5 +6,5 @@ static final securitySchemes = <String, ApiSecurityScheme>{'apiKeyAuth': const A
 
 static final globalRequirements = [const ApiSecurityRequirement({}), const ApiSecurityRequirement({'apiKeyAuth': []})];
 
-static ApiConfig applyApiKeyAuth(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value}); } 
- }
+static ApiConfig applyApiKeyAuth(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value});}
+}

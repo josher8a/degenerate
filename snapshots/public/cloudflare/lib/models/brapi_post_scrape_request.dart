@@ -7,11 +7,11 @@ const BrapiPostScrapeRequest({this.brapiPostScrapeRequestVariant1 = const Omitta
 const BrapiPostScrapeRequest._({required this.rawValue, required this.brapiPostScrapeRequestVariant1, required this.brapiPostScrapeRequestVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BrapiPostScrapeRequest.fromJson(Object? json) { return BrapiPostScrapeRequest._(
+factory BrapiPostScrapeRequest.fromJson(Object? json) {return BrapiPostScrapeRequest._(
   rawValue: Omittable(json),
   brapiPostScrapeRequestVariant1: json is Map<String, dynamic> && BrapiPostScrapeRequestVariant1.canParse(json) ? parseAnyOfVariant<BrapiPostScrapeRequestVariant1>(json, (value) => BrapiPostScrapeRequestVariant1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   brapiPostScrapeRequestVariant2: json is Map<String, dynamic> && BrapiPostScrapeRequestVariant2.canParse(json) ? parseAnyOfVariant<BrapiPostScrapeRequestVariant2>(json, (value) => BrapiPostScrapeRequestVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BrapiPostScrapeRequest(${toJson()})';
 
- }
+}

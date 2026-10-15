@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/skill_version_resource.dart';@immutable final class SkillVersionListResource {const SkillVersionListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
-factory SkillVersionListResource.fromJson(Map<String, dynamic> json) { return SkillVersionListResource(
+factory SkillVersionListResource.fromJson(Map<String, dynamic> json) {return SkillVersionListResource(
   object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => SkillVersionResource.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
-); }
+);}
 
 /// The type of object returned, must be `list`.
 final ChatCompletionListObject object;
@@ -26,25 +26,25 @@ final String? lastId;
 /// Whether there are more items available.
 final bool hasMore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'first_id': firstId,
   'last_id': lastId,
   'has_more': hasMore,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('first_id') && (json['first_id'] == null || json['first_id'] is String) &&
       json.containsKey('last_id') && (json['last_id'] == null || json['last_id'] is String) &&
-      json.containsKey('has_more') && json['has_more'] is bool; } 
-SkillVersionListResource copyWith({ChatCompletionListObject? object, List<SkillVersionResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return SkillVersionListResource(
+      json.containsKey('has_more') && json['has_more'] is bool;}
+SkillVersionListResource copyWith({ChatCompletionListObject? object, List<SkillVersionResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) {return SkillVersionListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,
   lastId: lastId != null ? lastId() : this.lastId,
   hasMore: hasMore ?? this.hasMore,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SkillVersionListResource &&
           object == other.object &&
@@ -57,4 +57,4 @@ SkillVersionListResource copyWith({ChatCompletionListObject? object, List<SkillV
 
 @override String toString() => 'SkillVersionListResource(object: $object, data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)';
 
- }
+}

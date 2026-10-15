@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WorDeleteWorkflowResponseResultStatus {const WorDeleteWorkflowResponseResultStatus();
 
-factory WorDeleteWorkflowResponseResultStatus.fromJson(String json) { return switch (json) {
+factory WorDeleteWorkflowResponseResultStatus.fromJson(String json) {return switch (json) {
   'ok' => ok,
   _ => WorDeleteWorkflowResponseResultStatus$Unknown(json),
-}; }
+};}
 
 static const WorDeleteWorkflowResponseResultStatus ok = WorDeleteWorkflowResponseResultStatus$ok._();
 
 static const List<WorDeleteWorkflowResponseResultStatus> values = [ok];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ok' => 'ok',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorDeleteWorkflowResponseResultStatus$Unknown; } 
+bool get isUnknown {return this is WorDeleteWorkflowResponseResultStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ok, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ok, required W Function(String value) $unknown, }) {return switch (this) {
       WorDeleteWorkflowResponseResultStatus$ok() => ok(),
       WorDeleteWorkflowResponseResultStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ok, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ok, W Function(String value)? $unknown, }) {return switch (this) {
       WorDeleteWorkflowResponseResultStatus$ok() => ok != null ? ok() : orElse(value),
       WorDeleteWorkflowResponseResultStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorDeleteWorkflowResponseResultStatus($value)';
 
- }
+}
 @immutable final class WorDeleteWorkflowResponseResultStatus$ok extends WorDeleteWorkflowResponseResultStatus {const WorDeleteWorkflowResponseResultStatus$ok._();
 
 @override String get value => 'ok';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ok, W Fu
 
 @override int get hashCode => 'ok'.hashCode;
 
- }
+}
 @immutable final class WorDeleteWorkflowResponseResultStatus$Unknown extends WorDeleteWorkflowResponseResultStatus {const WorDeleteWorkflowResponseResultStatus$Unknown(this.value);
 
 @override final String value;
@@ -52,28 +52,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ok, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WorDeleteWorkflowResponseResult {const WorDeleteWorkflowResponseResult({required this.status, required this.success, });
 
-factory WorDeleteWorkflowResponseResult.fromJson(Map<String, dynamic> json) { return WorDeleteWorkflowResponseResult(
+factory WorDeleteWorkflowResponseResult.fromJson(Map<String, dynamic> json) {return WorDeleteWorkflowResponseResult(
   status: WorDeleteWorkflowResponseResultStatus.fromJson(json['status'] as String),
   success: json['success'] as bool?,
-); }
+);}
 
 final WorDeleteWorkflowResponseResultStatus status;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
-      json.containsKey('success') && (json['success'] == null || json['success'] is bool); } 
-WorDeleteWorkflowResponseResult copyWith({WorDeleteWorkflowResponseResultStatus? status, bool? Function()? success, }) { return WorDeleteWorkflowResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') &&
+      json.containsKey('success') && (json['success'] == null || json['success'] is bool);}
+WorDeleteWorkflowResponseResult copyWith({WorDeleteWorkflowResponseResultStatus? status, bool? Function()? success, }) {return WorDeleteWorkflowResponseResult(
   status: status ?? this.status,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorDeleteWorkflowResponseResult &&
           status == other.status &&
@@ -83,4 +83,4 @@ WorDeleteWorkflowResponseResult copyWith({WorDeleteWorkflowResponseResultStatus?
 
 @override String toString() => 'WorDeleteWorkflowResponseResult(status: $status, success: $success)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_caching_enabled.dart';import 'package:pub_cloudflare/models/builds_build_command.dart';import 'package:pub_cloudflare/models/builds_build_token_name.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';import 'package:pub_cloudflare/models/builds_deleted_on.dart';import 'package:pub_cloudflare/models/builds_deploy_command.dart';import 'package:pub_cloudflare/models/builds_external_script_id.dart';import 'package:pub_cloudflare/models/builds_modified_on.dart';import 'package:pub_cloudflare/models/builds_root_directory.dart';import 'package:pub_cloudflare/models/builds_trigger_name.dart';import 'package:pub_cloudflare/models/builds_trigger_uuid.dart';import 'package:pub_cloudflare/models/builds_upsert_repo_connection_response.dart';@immutable final class BuildsTriggerResponse {const BuildsTriggerResponse({this.branchExcludes, this.branchIncludes, this.buildCachingEnabled, this.buildCommand, this.buildTokenName, this.buildTokenUuid, this.createdOn, this.deletedOn = const Omittable.absent(), this.deployCommand, this.externalScriptId, this.modifiedOn, this.pathExcludes, this.pathIncludes, this.repoConnection, this.rootDirectory, this.triggerName, this.triggerUuid, });
 
-factory BuildsTriggerResponse.fromJson(Map<String, dynamic> json) { return BuildsTriggerResponse(
+factory BuildsTriggerResponse.fromJson(Map<String, dynamic> json) {return BuildsTriggerResponse(
   branchExcludes: (json['branch_excludes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   branchIncludes: (json['branch_includes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   buildCachingEnabled: json['build_caching_enabled'] != null ? BuildsBuildCachingEnabled.fromJson(json['build_caching_enabled'] as bool) : null,
@@ -21,7 +21,7 @@ factory BuildsTriggerResponse.fromJson(Map<String, dynamic> json) { return Build
   rootDirectory: json['root_directory'] != null ? BuildsRootDirectory.fromJson(json['root_directory'] as String) : null,
   triggerName: json['trigger_name'] != null ? BuildsTriggerName.fromJson(json['trigger_name'] as String) : null,
   triggerUuid: json['trigger_uuid'] != null ? BuildsTriggerUuid.fromJson(json['trigger_uuid'] as String) : null,
-); }
+);}
 
 final List<String>? branchExcludes;
 
@@ -57,7 +57,7 @@ final BuildsTriggerName? triggerName;
 
 final BuildsTriggerUuid? triggerUuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'branch_excludes': ?branchExcludes,
   'branch_includes': ?branchIncludes,
   if (buildCachingEnabled != null) 'build_caching_enabled': buildCachingEnabled?.toJson(),
@@ -75,9 +75,9 @@ Map<String, dynamic> toJson() { return {
   if (rootDirectory != null) 'root_directory': rootDirectory?.toJson(),
   if (triggerName != null) 'trigger_name': triggerName?.toJson(),
   if (triggerUuid != null) 'trigger_uuid': triggerUuid?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'branch_excludes', 'branch_includes', 'build_caching_enabled', 'build_command', 'build_token_name', 'build_token_uuid', 'created_on', 'deleted_on', 'deploy_command', 'external_script_id', 'modified_on', 'path_excludes', 'path_includes', 'repo_connection', 'root_directory', 'trigger_name', 'trigger_uuid'}.contains(key)); } 
-BuildsTriggerResponse copyWith({List<String>? Function()? branchExcludes, List<String>? Function()? branchIncludes, BuildsBuildCachingEnabled? Function()? buildCachingEnabled, BuildsBuildCommand? Function()? buildCommand, BuildsBuildTokenName? Function()? buildTokenName, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsCreatedOn? Function()? createdOn, Omittable<BuildsDeletedOn?>? deletedOn, BuildsDeployCommand? Function()? deployCommand, BuildsExternalScriptId? Function()? externalScriptId, BuildsModifiedOn? Function()? modifiedOn, List<String>? Function()? pathExcludes, List<String>? Function()? pathIncludes, BuildsUpsertRepoConnectionResponse? Function()? repoConnection, BuildsRootDirectory? Function()? rootDirectory, BuildsTriggerName? Function()? triggerName, BuildsTriggerUuid? Function()? triggerUuid, }) { return BuildsTriggerResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'branch_excludes', 'branch_includes', 'build_caching_enabled', 'build_command', 'build_token_name', 'build_token_uuid', 'created_on', 'deleted_on', 'deploy_command', 'external_script_id', 'modified_on', 'path_excludes', 'path_includes', 'repo_connection', 'root_directory', 'trigger_name', 'trigger_uuid'}.contains(key));}
+BuildsTriggerResponse copyWith({List<String>? Function()? branchExcludes, List<String>? Function()? branchIncludes, BuildsBuildCachingEnabled? Function()? buildCachingEnabled, BuildsBuildCommand? Function()? buildCommand, BuildsBuildTokenName? Function()? buildTokenName, BuildsBuildTokenUuid? Function()? buildTokenUuid, BuildsCreatedOn? Function()? createdOn, Omittable<BuildsDeletedOn?>? deletedOn, BuildsDeployCommand? Function()? deployCommand, BuildsExternalScriptId? Function()? externalScriptId, BuildsModifiedOn? Function()? modifiedOn, List<String>? Function()? pathExcludes, List<String>? Function()? pathIncludes, BuildsUpsertRepoConnectionResponse? Function()? repoConnection, BuildsRootDirectory? Function()? rootDirectory, BuildsTriggerName? Function()? triggerName, BuildsTriggerUuid? Function()? triggerUuid, }) {return BuildsTriggerResponse(
   branchExcludes: branchExcludes != null ? branchExcludes() : this.branchExcludes,
   branchIncludes: branchIncludes != null ? branchIncludes() : this.branchIncludes,
   buildCachingEnabled: buildCachingEnabled != null ? buildCachingEnabled() : this.buildCachingEnabled,
@@ -95,7 +95,7 @@ BuildsTriggerResponse copyWith({List<String>? Function()? branchExcludes, List<S
   rootDirectory: rootDirectory != null ? rootDirectory() : this.rootDirectory,
   triggerName: triggerName != null ? triggerName() : this.triggerName,
   triggerUuid: triggerUuid != null ? triggerUuid() : this.triggerUuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsTriggerResponse &&
           listEquals(branchExcludes, other.branchExcludes) &&
@@ -120,4 +120,4 @@ BuildsTriggerResponse copyWith({List<String>? Function()? branchExcludes, List<S
 
 @override String toString() => 'BuildsTriggerResponse(\n  branchExcludes: $branchExcludes,\n  branchIncludes: $branchIncludes,\n  buildCachingEnabled: $buildCachingEnabled,\n  buildCommand: $buildCommand,\n  buildTokenName: $buildTokenName,\n  buildTokenUuid: $buildTokenUuid,\n  createdOn: $createdOn,\n  deletedOn: $deletedOn,\n  deployCommand: $deployCommand,\n  externalScriptId: $externalScriptId,\n  modifiedOn: $modifiedOn,\n  pathExcludes: $pathExcludes,\n  pathIncludes: $pathIncludes,\n  repoConnection: $repoConnection,\n  rootDirectory: $rootDirectory,\n  triggerName: $triggerName,\n  triggerUuid: $triggerUuid,\n)';
 
- }
+}

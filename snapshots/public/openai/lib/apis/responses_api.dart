@@ -19,7 +19,7 @@ final class ResponsesApi with ApiExecutor {const ResponsesApi(this.apiConfig);
 /// 
 ///
 /// `POST /responses`
-Future<ApiResult<Response, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Response, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -36,12 +36,12 @@ return await execute(
     return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieves a model response with the given ID.
 /// 
 ///
 /// `GET /responses/{response_id}`
-Future<ApiResult<Response, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Response, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -75,12 +75,12 @@ return await execute(
     return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Deletes a model response with the given ID.
 /// 
 ///
 /// `DELETE /responses/{response_id}`
-Future<ApiResult<void, CancelResponseError>> deleteResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CancelResponseError>> deleteResponse({required String responseId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -94,14 +94,14 @@ return await execute(
   onSuccess: (_) {},
   onError: CancelResponseError.fromResponse,
 );
- } 
+}
 /// Cancels a model response with the given ID. Only responses created with
 /// the `background` parameter set to `true` can be cancelled.
 /// [Learn more](/docs/guides/background).
 /// 
 ///
 /// `POST /responses/{response_id}/cancel`
-Future<ApiResult<Response, CancelResponseError>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Response, CancelResponseError>> cancelResponse({required String responseId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -117,11 +117,11 @@ return await execute(
   },
   onError: CancelResponseError.fromResponse,
 );
- } 
+}
 /// Returns a list of input items for a given response.
 ///
 /// `GET /responses/{response_id}/input_items`
-Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -155,7 +155,7 @@ return await execute(
     return ResponseItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Creates a model response. Provide [text](/docs/guides/text) or
 /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)
 /// or [JSON](/docs/guides/structured-outputs) outputs. Have the model call
@@ -166,7 +166,7 @@ return await execute(
 ///  (streaming)
 ///
 /// `POST /responses`
-Stream<ResponseStreamEvent> createResponseStream({required CreateResponse body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ResponseStreamEvent> createResponseStream({required CreateResponse body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,5 +183,5 @@ return executeStreaming(
     return ResponseStreamEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

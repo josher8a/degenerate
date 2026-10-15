@@ -14,7 +14,7 @@ final class ZoneLevelAccessMTlsAuthenticationApi with ApiExecutor {const ZoneLev
 /// Lists all mTLS certificates.
 ///
 /// `GET /zones/{zone_id}/access/certificates`
-Future<ApiResult<List<AccessComponentsSchemasCertificates>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessComponentsSchemasCertificates>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationListMtlsCertificates({required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Add an mTLS certificate
 ///
 /// Adds a new mTLS root certificate to Access.
 ///
 /// `POST /zones/{zone_id}/access/certificates`
-Future<ApiResult<AccessComponentsSchemasCertificates?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasCertificates?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificate({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get an mTLS certificate
 ///
 /// Fetches a single mTLS certificate.
 ///
 /// `GET /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessComponentsSchemasCertificates?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasCertificates?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an mTLS certificate
 ///
 /// Updates a configured mTLS certificate.
 ///
 /// `PUT /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessComponentsSchemasCertificates?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasCertificates?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an mTLS certificate
 ///
 /// Deletes an mTLS certificate.
 ///
 /// `DELETE /zones/{zone_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,13 +127,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// List all mTLS hostname settings
 ///
 /// List all mTLS hostname settings for this zone.
 ///
 /// `GET /zones/{zone_id}/access/certificates/settings`
-Future<ApiResult<List<AccessSchemasSettings>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSchemasSettings>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettings({required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -150,13 +150,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an mTLS certificate's hostname settings
 ///
 /// Updates an mTLS certificate's hostname settings.
 ///
 /// `PUT /zones/{zone_id}/access/certificates/settings`
-Future<ApiResult<List<AccessSchemasSettings>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSchemasSettings>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettings({required AccessIdentifier zoneId, required ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,5 +175,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

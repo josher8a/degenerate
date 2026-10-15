@@ -7,11 +7,11 @@ const GetTerminalReadersReaderResponse({this.terminalReader = const Omittable.ab
 const GetTerminalReadersReaderResponse._({required this.rawValue, required this.terminalReader, required this.deletedTerminalReader, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory GetTerminalReadersReaderResponse.fromJson(Object? json) { return GetTerminalReadersReaderResponse._(
+factory GetTerminalReadersReaderResponse.fromJson(Object? json) {return GetTerminalReadersReaderResponse._(
   rawValue: Omittable(json),
   terminalReader: json is Map<String, dynamic> && TerminalReader.canParse(json) ? parseAnyOfVariant<TerminalReader>(json, (value) => TerminalReader.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   deletedTerminalReader: json is Map<String, dynamic> && DeletedTerminalReader.canParse(json) ? parseAnyOfVariant<DeletedTerminalReader>(json, (value) => DeletedTerminalReader.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'GetTerminalReadersReaderResponse(${toJson()})';
 
- }
+}

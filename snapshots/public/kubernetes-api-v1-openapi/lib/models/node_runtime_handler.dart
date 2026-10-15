@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_runtime_handler_features.dart';/// NodeRuntimeHandler is a set of runtime handler information.
 @immutable final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name, });
 
-factory NodeRuntimeHandler.fromJson(Map<String, dynamic> json) { return NodeRuntimeHandler(
+factory NodeRuntimeHandler.fromJson(Map<String, dynamic> json) {return NodeRuntimeHandler(
   features: json['features'] != null ? NodeRuntimeHandlerFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// Supported features.
 final NodeRuntimeHandlerFeatures? features;
@@ -18,15 +18,15 @@ final String? name;
 /// The value of `name`, or its schema default when absent.
 String get nameOrDefault => name ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (features != null) 'features': features?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'features', 'name'}.contains(key)); } 
-NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, String? Function()? name, }) { return NodeRuntimeHandler(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'features', 'name'}.contains(key));}
+NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, String? Function()? name, }) {return NodeRuntimeHandler(
   features: features != null ? features() : this.features,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NodeRuntimeHandler &&
           features == other.features &&
@@ -36,4 +36,4 @@ NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, S
 
 @override String toString() => 'NodeRuntimeHandler(features: $features, name: $name)';
 
- }
+}

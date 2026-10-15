@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned scripts.
 sealed class PageShieldListScriptsOrderBy {const PageShieldListScriptsOrderBy();
 
-factory PageShieldListScriptsOrderBy.fromJson(String json) { return switch (json) {
+factory PageShieldListScriptsOrderBy.fromJson(String json) {return switch (json) {
   'first_seen_at' => firstSeenAt,
   'last_seen_at' => lastSeenAt,
   _ => PageShieldListScriptsOrderBy$Unknown(json),
-}; }
+};}
 
 static const PageShieldListScriptsOrderBy firstSeenAt = PageShieldListScriptsOrderBy$firstSeenAt._();
 
@@ -17,30 +17,30 @@ static const PageShieldListScriptsOrderBy lastSeenAt = PageShieldListScriptsOrde
 static const List<PageShieldListScriptsOrderBy> values = [firstSeenAt, lastSeenAt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'first_seen_at' => 'firstSeenAt',
   'last_seen_at' => 'lastSeenAt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PageShieldListScriptsOrderBy$Unknown; } 
+bool get isUnknown {return this is PageShieldListScriptsOrderBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() firstSeenAt, required W Function() lastSeenAt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() firstSeenAt, required W Function() lastSeenAt, required W Function(String value) $unknown, }) {return switch (this) {
       PageShieldListScriptsOrderBy$firstSeenAt() => firstSeenAt(),
       PageShieldListScriptsOrderBy$lastSeenAt() => lastSeenAt(),
       PageShieldListScriptsOrderBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? firstSeenAt, W Function()? lastSeenAt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? firstSeenAt, W Function()? lastSeenAt, W Function(String value)? $unknown, }) {return switch (this) {
       PageShieldListScriptsOrderBy$firstSeenAt() => firstSeenAt != null ? firstSeenAt() : orElse(value),
       PageShieldListScriptsOrderBy$lastSeenAt() => lastSeenAt != null ? lastSeenAt() : orElse(value),
       PageShieldListScriptsOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PageShieldListScriptsOrderBy($value)';
 
- }
+}
 @immutable final class PageShieldListScriptsOrderBy$firstSeenAt extends PageShieldListScriptsOrderBy {const PageShieldListScriptsOrderBy$firstSeenAt._();
 
 @override String get value => 'first_seen_at';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? firstSee
 
 @override int get hashCode => 'first_seen_at'.hashCode;
 
- }
+}
 @immutable final class PageShieldListScriptsOrderBy$lastSeenAt extends PageShieldListScriptsOrderBy {const PageShieldListScriptsOrderBy$lastSeenAt._();
 
 @override String get value => 'last_seen_at';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? firstSee
 
 @override int get hashCode => 'last_seen_at'.hashCode;
 
- }
+}
 @immutable final class PageShieldListScriptsOrderBy$Unknown extends PageShieldListScriptsOrderBy {const PageShieldListScriptsOrderBy$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? firstSee
 
 @override int get hashCode => value.hashCode;
 
- }
+}

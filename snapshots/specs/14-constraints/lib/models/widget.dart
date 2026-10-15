@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Widget {const Widget({required this.name, required this.score, this.label, this.ratio, this.tags, this.note, });
 
-factory Widget.fromJson(Map<String, dynamic> json) { return Widget(
+factory Widget.fromJson(Map<String, dynamic> json) {return Widget(
   name: json['name'] as String,
   label: json['label'] as String?,
   score: (json['score'] as num).toInt(),
   ratio: json['ratio'] != null ? (json['ratio'] as num).toDouble() : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   note: json['note'] as String?,
-); }
+);}
 
 final String name;
 
@@ -24,18 +24,18 @@ final List<String>? tags;
 
 final String? note;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'label': ?label,
   'score': score,
   'ratio': ?ratio,
   'tags': ?tags,
   'note': ?note,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('score') && json['score'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('score') && json['score'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length < 3) { errors.add('name: length must be >= 3'); }
 if (name.runes.length > 10) { errors.add('name: length must be <= 10'); }
 if (!RegExp(r'^[a-z]+$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-z]+$'); }
@@ -58,15 +58,15 @@ if (tags$ != null) {
   if (tags$.length > 3) { errors.add('tags: must have <= 3 items'); }
   if (tags$.toSet().length != tags$.length) { errors.add('tags: items must be unique'); }
 }
-return errors; } 
-Widget copyWith({String? name, String? Function()? label, int? score, double? Function()? ratio, List<String>? Function()? tags, String? Function()? note, }) { return Widget(
+return errors;}
+Widget copyWith({String? name, String? Function()? label, int? score, double? Function()? ratio, List<String>? Function()? tags, String? Function()? note, }) {return Widget(
   name: name ?? this.name,
   label: label != null ? label() : this.label,
   score: score ?? this.score,
   ratio: ratio != null ? ratio() : this.ratio,
   tags: tags != null ? tags() : this.tags,
   note: note != null ? note() : this.note,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Widget &&
           name == other.name &&
@@ -80,4 +80,4 @@ Widget copyWith({String? name, String? Function()? label, int? score, double? Fu
 
 @override String toString() => 'Widget(name: $name, label: $label, score: $score, ratio: $ratio, tags: $tags, note: $note)';
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_timeseries_group_by_bot_class_response/radar_get_http_timeseries_group_by_bot_class_response_result.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse({required this.result, required this.success, });
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse(
+factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse.fromJson(Map<String, dynamic> json) {return RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse(
   result: RadarGetHttpTimeseriesGroupByBotClassResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetHttpTimeseriesGroupByBotClassResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse copyWith({RadarGetHttpTimeseriesGroupByBotClassResponseResult? result, bool? success, }) { return RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse copyWith({RadarGetHttpTimeseriesGroupByBotClassResponseResult? result, bool? success, }) {return RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse copyWith({RadarG
 
 @override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassResponse(result: $result, success: $success)';
 
- }
+}

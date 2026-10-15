@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_managed_transforms.dart';import 'package:pub_cloudflare/models/rulesets_message.dart';@immutable final class ListManagedTransformsResponse {const ListManagedTransformsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory ListManagedTransformsResponse.fromJson(Map<String, dynamic> json) { return ListManagedTransformsResponse(
+factory ListManagedTransformsResponse.fromJson(Map<String, dynamic> json) {return ListManagedTransformsResponse(
   errors: json['errors'],
   messages: (json['messages'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: RulesetsManagedTransforms.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'],
-); }
+);}
 
 final dynamic errors;
 
@@ -19,26 +19,26 @@ final RulesetsManagedTransforms result;
 
 final dynamic success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors,
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success'); } 
+      json.containsKey('success');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 if (messages.toSet().length != messages.length) { errors$.add('messages: items must be unique'); }
-return errors$; } 
-ListManagedTransformsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, RulesetsManagedTransforms? result, dynamic Function()? success, }) { return ListManagedTransformsResponse(
+return errors$;}
+ListManagedTransformsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, RulesetsManagedTransforms? result, dynamic Function()? success, }) {return ListManagedTransformsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListManagedTransformsResponse &&
           errors == other.errors &&
@@ -50,4 +50,4 @@ ListManagedTransformsResponse copyWith({dynamic Function()? errors, List<Ruleset
 
 @override String toString() => 'ListManagedTransformsResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

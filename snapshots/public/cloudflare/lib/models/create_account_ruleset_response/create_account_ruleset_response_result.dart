@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_request_rule.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_kind.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';@immutable final class CreateAccountRulesetResponseResult {const CreateAccountRulesetResponseResult({required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, required this.rules, this.description, });
 
-factory CreateAccountRulesetResponseResult.fromJson(Map<String, dynamic> json) { return CreateAccountRulesetResponseResult(
+factory CreateAccountRulesetResponseResult.fromJson(Map<String, dynamic> json) {return CreateAccountRulesetResponseResult(
   description: json['description'] as String?,
   id: RulesetsRulesetId.fromJson(json['id'] as String),
   lastUpdated: DateTime.parse(json['last_updated'] as String),
@@ -12,7 +12,7 @@ factory CreateAccountRulesetResponseResult.fromJson(Map<String, dynamic> json) {
   kind: RulesetsRulesetKind.fromJson(json['kind'] as String),
   phase: RulesetsRulesetPhase.fromJson(json['phase'] as String),
   rules: (json['rules'] as List<dynamic>).map((e) => RulesetsRequestRule.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// An informative description of the ruleset.
 /// 
@@ -47,7 +47,7 @@ final List<RulesetsRequestRule> rules;
 /// The value of `description`, or its schema default when absent.
 String get descriptionOrDefault => description ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'id': id.toJson(),
   'last_updated': lastUpdated.toIso8601String(),
@@ -56,19 +56,19 @@ Map<String, dynamic> toJson() { return {
   'kind': kind.toJson(),
   'phase': phase.toJson(),
   'rules': rules.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') &&
       json.containsKey('kind') &&
       json.containsKey('phase') &&
-      json.containsKey('rules'); } 
+      json.containsKey('rules');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
-return errors; } 
-CreateAccountRulesetResponseResult copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, List<RulesetsRequestRule>? rules, }) { return CreateAccountRulesetResponseResult(
+return errors;}
+CreateAccountRulesetResponseResult copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, List<RulesetsRequestRule>? rules, }) {return CreateAccountRulesetResponseResult(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,
@@ -77,7 +77,7 @@ CreateAccountRulesetResponseResult copyWith({String? Function()? description, Ru
   kind: kind ?? this.kind,
   phase: phase ?? this.phase,
   rules: rules ?? this.rules,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateAccountRulesetResponseResult &&
           description == other.description &&
@@ -93,4 +93,4 @@ CreateAccountRulesetResponseResult copyWith({String? Function()? description, Ru
 
 @override String toString() => 'CreateAccountRulesetResponseResult(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase, rules: $rules)';
 
- }
+}

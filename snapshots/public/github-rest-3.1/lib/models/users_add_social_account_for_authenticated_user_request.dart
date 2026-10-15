@@ -12,20 +12,20 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 /// ```
 @immutable final class UsersAddSocialAccountForAuthenticatedUserRequest {const UsersAddSocialAccountForAuthenticatedUserRequest({required this.accountUrls});
 
-factory UsersAddSocialAccountForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersAddSocialAccountForAuthenticatedUserRequest(
+factory UsersAddSocialAccountForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return UsersAddSocialAccountForAuthenticatedUserRequest(
   accountUrls: (json['account_urls'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Full URLs for the social media profiles to add.
 final List<String> accountUrls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_urls': accountUrls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_urls'); } 
-UsersAddSocialAccountForAuthenticatedUserRequest copyWith({List<String>? accountUrls}) { return UsersAddSocialAccountForAuthenticatedUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_urls');}
+UsersAddSocialAccountForAuthenticatedUserRequest copyWith({List<String>? accountUrls}) {return UsersAddSocialAccountForAuthenticatedUserRequest(
   accountUrls: accountUrls ?? this.accountUrls,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsersAddSocialAccountForAuthenticatedUserRequest &&
           listEquals(accountUrls, other.accountUrls);
@@ -34,4 +34,4 @@ UsersAddSocialAccountForAuthenticatedUserRequest copyWith({List<String>? account
 
 @override String toString() => 'UsersAddSocialAccountForAuthenticatedUserRequest(accountUrls: $accountUrls)';
 
- }
+}

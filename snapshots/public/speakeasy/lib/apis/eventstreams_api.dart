@@ -10,7 +10,7 @@ final class EventstreamsApi with ApiExecutor {const EventstreamsApi(this.apiConf
 @override final ApiConfig apiConfig;
 
 /// `POST /eventstreams/json`
-Future<ApiResult<JsonEvent, Never>> json({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<JsonEvent, Never>> json({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -26,9 +26,9 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into JsonEvent');
   },
 );
- } 
+}
 /// `POST /eventstreams/text`
-Future<ApiResult<TextEvent, TextError>> text({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TextEvent, TextError>> text({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -45,9 +45,9 @@ throw UnsupportedError('Cannot decode text/event-stream response into TextEvent'
   },
   onError: TextError.fromResponse,
 );
- } 
+}
 /// `POST /eventstreams/multiline`
-Future<ApiResult<TextEvent, Never>> multiline({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TextEvent, Never>> multiline({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -63,9 +63,9 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into TextEvent');
   },
 );
- } 
+}
 /// `POST /eventstreams/rich`
-Future<ApiResult<RichStream, Never>> rich({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RichStream, Never>> rich({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -81,9 +81,9 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into RichStream');
   },
 );
- } 
+}
 /// `POST /eventstreams/differentdataschemas`
-Future<ApiResult<DifferentDataSchemas, Never>> differentDataSchemas({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DifferentDataSchemas, Never>> differentDataSchemas({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -99,9 +99,9 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into DifferentDataSchemas');
   },
 );
- } 
+}
 /// `POST /eventstreams/chat`
-Future<ApiResult<List<ChatCompletionResult2>, Never>> chat({required ChatRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ChatCompletionResult2>, Never>> chat({required ChatRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -119,13 +119,13 @@ return await execute(
     return json.map((e) => OneOf2.parse(e, fromA: (v) => ChatCompletionEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => SentinelEvent.fromJson(v as Map<String, dynamic>),)).toList();
   },
 );
- } 
+}
 /// Exercises x-speakeasy-sse-overload. Server returns SSE when
 /// body.sse is true, JSON otherwise.
 /// 
 ///
 /// `POST /eventstreams/sse-overload`
-Future<ApiResult<List<ChatCompletionResult2>, SseOverloadChatError>> sseOverloadChat({required SseOverloadChatRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ChatCompletionResult2>, SseOverloadChatError>> sseOverloadChat({required SseOverloadChatRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,11 +144,11 @@ return await execute(
   },
   onError: SseOverloadChatError.fromResponse,
 );
- } 
+}
 /// SSE chat stream with heartbeat events (no data field) mixed with data events, testing that parsers skip data-less events when data is required
 ///
 /// `POST /eventstreams/chat-heartbeat`
-Future<ApiResult<ChatCompletionEvent, Never>> chatHeartbeat({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ChatCompletionEvent, Never>> chatHeartbeat({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -164,9 +164,9 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into ChatCompletionEvent');
   },
 );
- } 
+}
 /// `POST /eventstreams/chat-chunked`
-Future<ApiResult<ChatCompletionEvent, Never>> chatSkipSentinel({required ChatSkipSentinelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ChatCompletionEvent, Never>> chatSkipSentinel({required ChatSkipSentinelRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -184,9 +184,9 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into ChatCompletionEvent');
   },
 );
- } 
+}
 /// `POST /eventstreams/stayopen`
-Future<ApiResult<TextEvent, Never>> stayOpen({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TextEvent, Never>> stayOpen({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -202,11 +202,11 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into TextEvent');
   },
 );
- } 
+}
 /// SSE union events with comments and partial delivery
 ///
 /// `POST /eventstreams/union-with-comments`
-Future<ApiResult<UnionWithCommentsStream, Never>> unionWithComments({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionWithCommentsStream, Never>> unionWithComments({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -222,11 +222,11 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into UnionWithCommentsStream');
   },
 );
- } 
+}
 /// SSE with comments, partial messages and mixed boundaries
 ///
 /// `POST /eventstreams/partial-with-comments`
-Future<ApiResult<PartialWithCommentsEvent, Never>> partialWithComments({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PartialWithCommentsEvent, Never>> partialWithComments({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -242,11 +242,11 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into PartialWithCommentsEvent');
   },
 );
- } 
+}
 /// Test SSE endpoint with optional data field in the event schema
 ///
 /// `POST /eventstreams/optionaldata`
-Future<ApiResult<OptionalDataEvent, Never>> optionalData({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OptionalDataEvent, Never>> optionalData({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -262,11 +262,11 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into OptionalDataEvent');
   },
 );
- } 
+}
 /// SSE parsing edge cases per HTML Living Standard
 ///
 /// `GET /eventstreams/wpt-compliance`
-Future<ApiResult<SseEvent, Never>> wptCompliance({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SseEvent, Never>> wptCompliance({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -282,11 +282,11 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into SseEvent');
   },
 );
- } 
+}
 /// SSE endpoint with mixed JSON and plain text data in a union
 ///
 /// `POST /eventstreams/mixeddata`
-Future<ApiResult<MixedDataEvent, Never>> mixedData({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MixedDataEvent, Never>> mixedData({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -302,11 +302,11 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into MixedDataEvent');
   },
 );
- } 
+}
 /// SSE endpoint where event schema has nullable id field
 ///
 /// `GET /eventstreams/nullable-id`
-Future<ApiResult<NullableIdEvent, Never>> nullableIdStream({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NullableIdEvent, Never>> nullableIdStream({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -322,11 +322,11 @@ return await execute(
 throw UnsupportedError('Cannot decode text/event-stream response into NullableIdEvent');
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/json`
-Stream<JsonEvent> jsonStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<JsonEvent> jsonStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -341,11 +341,11 @@ return executeStreaming(
     return JsonEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/text`
-Stream<TextEvent> textStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<TextEvent> textStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -360,11 +360,11 @@ return executeStreaming(
     return TextEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/multiline`
-Stream<TextEvent> multilineStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<TextEvent> multilineStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -379,11 +379,11 @@ return executeStreaming(
     return TextEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/rich`
-Stream<RichStream> richStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<RichStream> richStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -398,11 +398,11 @@ return executeStreaming(
     return RichStream.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/differentdataschemas`
-Stream<DifferentDataSchemas> differentDataSchemasStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<DifferentDataSchemas> differentDataSchemasStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -417,11 +417,11 @@ return executeStreaming(
     return DifferentDataSchemas.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/chat`
-Stream<ChatCompletionStream> chatStream({required ChatRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ChatCompletionStream> chatStream({required ChatRequest body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -438,11 +438,11 @@ return executeStreaming(
     return OneOf2.parse(jsonDecode(data), fromA: (v) => ChatCompletionEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => SentinelEvent.fromJson(v as Map<String, dynamic>),);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/sse-overload`
-Stream<ChatCompletionStream> sseOverloadChatStream({required SseOverloadChatRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ChatCompletionStream> sseOverloadChatStream({required SseOverloadChatRequest body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -459,11 +459,11 @@ return executeStreaming(
     return OneOf2.parse(jsonDecode(data), fromA: (v) => ChatCompletionEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => SentinelEvent.fromJson(v as Map<String, dynamic>),);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/chat-heartbeat`
-Stream<ChatCompletionEvent> chatHeartbeatStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ChatCompletionEvent> chatHeartbeatStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -478,11 +478,11 @@ return executeStreaming(
     return ChatCompletionEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/chat-chunked`
-Stream<ChatCompletionEvent> chatSkipSentinelStream({required ChatSkipSentinelRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ChatCompletionEvent> chatSkipSentinelStream({required ChatSkipSentinelRequest body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -499,11 +499,11 @@ return executeStreaming(
     return ChatCompletionEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/stayopen`
-Stream<TextEvent> stayOpenStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<TextEvent> stayOpenStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -518,11 +518,11 @@ return executeStreaming(
     return TextEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/union-with-comments`
-Stream<UnionWithCommentsStream> unionWithCommentsStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<UnionWithCommentsStream> unionWithCommentsStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -537,11 +537,11 @@ return executeStreaming(
     return UnionWithCommentsStream.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/partial-with-comments`
-Stream<PartialWithCommentsEvent> partialWithCommentsStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<PartialWithCommentsEvent> partialWithCommentsStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -556,11 +556,11 @@ return executeStreaming(
     return PartialWithCommentsEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/optionaldata`
-Stream<OptionalDataEvent> optionalDataStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<OptionalDataEvent> optionalDataStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -575,11 +575,11 @@ return executeStreaming(
     return OptionalDataEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /eventstreams/wpt-compliance`
-Stream<SseEvent> wptComplianceStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<SseEvent> wptComplianceStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -594,11 +594,11 @@ return executeStreaming(
     return SseEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `POST /eventstreams/mixeddata`
-Stream<MixedDataEvent> mixedDataStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<MixedDataEvent> mixedDataStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -613,11 +613,11 @@ return executeStreaming(
     return MixedDataEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /eventstreams/nullable-id`
-Stream<NullableIdEvent> nullableIdStreamStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<NullableIdEvent> nullableIdStreamStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -632,5 +632,5 @@ return executeStreaming(
     return NullableIdEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

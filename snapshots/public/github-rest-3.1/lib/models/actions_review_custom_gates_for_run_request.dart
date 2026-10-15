@@ -7,11 +7,11 @@ const ActionsReviewCustomGatesForRunRequest({this.reviewCustomGatesCommentRequir
 const ActionsReviewCustomGatesForRunRequest._({required this.rawValue, required this.reviewCustomGatesCommentRequired, required this.reviewCustomGatesStateRequired, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ActionsReviewCustomGatesForRunRequest.fromJson(Object? json) { return ActionsReviewCustomGatesForRunRequest._(
+factory ActionsReviewCustomGatesForRunRequest.fromJson(Object? json) {return ActionsReviewCustomGatesForRunRequest._(
   rawValue: Omittable(json),
   reviewCustomGatesCommentRequired: json is Map<String, dynamic> && ReviewCustomGatesCommentRequired.canParse(json) ? parseAnyOfVariant<ReviewCustomGatesCommentRequired>(json, (value) => ReviewCustomGatesCommentRequired.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   reviewCustomGatesStateRequired: json is Map<String, dynamic> && ReviewCustomGatesStateRequired.canParse(json) ? parseAnyOfVariant<ReviewCustomGatesStateRequired>(json, (value) => ReviewCustomGatesStateRequired.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ActionsReviewCustomGatesForRunRequest(${toJson()})';
 
- }
+}

@@ -3,23 +3,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TrackingDetailsAch {const TrackingDetailsAch({required this.traceId});
 
-factory TrackingDetailsAch.fromJson(Map<String, dynamic> json) { return TrackingDetailsAch(
+factory TrackingDetailsAch.fromJson(Map<String, dynamic> json) {return TrackingDetailsAch(
   traceId: json['trace_id'] as String,
-); }
+);}
 
 final String traceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'trace_id': traceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('trace_id') && json['trace_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('trace_id') && json['trace_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (traceId.runes.length > 5000) { errors.add('traceId: length must be <= 5000'); }
-return errors; } 
-TrackingDetailsAch copyWith({String? traceId}) { return TrackingDetailsAch(
+return errors;}
+TrackingDetailsAch copyWith({String? traceId}) {return TrackingDetailsAch(
   traceId: traceId ?? this.traceId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TrackingDetailsAch &&
           traceId == other.traceId;
@@ -28,4 +28,4 @@ TrackingDetailsAch copyWith({String? traceId}) { return TrackingDetailsAch(
 
 @override String toString() => 'TrackingDetailsAch(traceId: $traceId)';
 
- }
+}

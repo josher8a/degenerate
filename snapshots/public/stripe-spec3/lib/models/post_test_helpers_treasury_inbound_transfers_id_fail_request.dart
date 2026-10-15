@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_fail_request/failure_details.dart';@immutable final class PostTestHelpersTreasuryInboundTransfersIdFailRequest {const PostTestHelpersTreasuryInboundTransfersIdFailRequest({this.expand, this.failureDetails, });
 
-factory PostTestHelpersTreasuryInboundTransfersIdFailRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryInboundTransfersIdFailRequest(
+factory PostTestHelpersTreasuryInboundTransfersIdFailRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersTreasuryInboundTransfersIdFailRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   failureDetails: json['failure_details'] != null ? FailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -14,15 +14,15 @@ final List<String>? expand;
 /// Details about a failed InboundTransfer.
 final FailureDetails? failureDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (failureDetails != null) 'failure_details': failureDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'failure_details'}.contains(key)); } 
-PostTestHelpersTreasuryInboundTransfersIdFailRequest copyWith({List<String>? Function()? expand, FailureDetails? Function()? failureDetails, }) { return PostTestHelpersTreasuryInboundTransfersIdFailRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'failure_details'}.contains(key));}
+PostTestHelpersTreasuryInboundTransfersIdFailRequest copyWith({List<String>? Function()? expand, FailureDetails? Function()? failureDetails, }) {return PostTestHelpersTreasuryInboundTransfersIdFailRequest(
   expand: expand != null ? expand() : this.expand,
   failureDetails: failureDetails != null ? failureDetails() : this.failureDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTreasuryInboundTransfersIdFailRequest &&
           listEquals(expand, other.expand) &&
@@ -32,4 +32,4 @@ PostTestHelpersTreasuryInboundTransfersIdFailRequest copyWith({List<String>? Fun
 
 @override String toString() => 'PostTestHelpersTreasuryInboundTransfersIdFailRequest(expand: $expand, failureDetails: $failureDetails)';
 
- }
+}

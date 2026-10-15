@@ -8,19 +8,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class SamplingParamsText {const SamplingParamsText({this.format});
 
-factory SamplingParamsText.fromJson(Map<String, dynamic> json) { return SamplingParamsText(
+factory SamplingParamsText.fromJson(Map<String, dynamic> json) {return SamplingParamsText(
   format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 final TextResponseFormatConfiguration? format;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format'}.contains(key)); } 
-SamplingParamsText copyWith({TextResponseFormatConfiguration? Function()? format}) { return SamplingParamsText(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format'}.contains(key));}
+SamplingParamsText copyWith({TextResponseFormatConfiguration? Function()? format}) {return SamplingParamsText(
   format: format != null ? format() : this.format,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SamplingParamsText &&
           format == other.format;
@@ -29,4 +29,4 @@ SamplingParamsText copyWith({TextResponseFormatConfiguration? Function()? format
 
 @override String toString() => 'SamplingParamsText(format: $format)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityBatchBlockedSendersRequestPuts {const EmailSecurityBatchBlockedSendersRequestPuts({required this.isRegex, required this.pattern, required this.patternType, required this.id, this.comments = const Omittable.absent(), });
 
-factory EmailSecurityBatchBlockedSendersRequestPuts.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchBlockedSendersRequestPuts(
+factory EmailSecurityBatchBlockedSendersRequestPuts.fromJson(Map<String, dynamic> json) {return EmailSecurityBatchBlockedSendersRequestPuts(
   comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
   id: EmailSecurityBlockedSenderId.fromJson(json['id'] as num),
-); }
+);}
 
 final Omittable<String?> comments;
 
@@ -22,33 +22,33 @@ final EmailSecurityPatternType? patternType;
 /// The unique identifier for the allow policy.
 final EmailSecurityBlockedSenderId id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
   'pattern_type': patternType?.toJson(),
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('pattern_type') &&
-      json.containsKey('id'); } 
+      json.containsKey('id');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
-return errors; } 
-EmailSecurityBatchBlockedSendersRequestPuts copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, EmailSecurityBlockedSenderId? id, }) { return EmailSecurityBatchBlockedSendersRequestPuts(
+return errors;}
+EmailSecurityBatchBlockedSendersRequestPuts copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, EmailSecurityBlockedSenderId? id, }) {return EmailSecurityBatchBlockedSendersRequestPuts(
   comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchBlockedSendersRequestPuts &&
           comments == other.comments &&
@@ -61,4 +61,4 @@ EmailSecurityBatchBlockedSendersRequestPuts copyWith({Omittable<String?>? commen
 
 @override String toString() => 'EmailSecurityBatchBlockedSendersRequestPuts(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType, id: $id)';
 
- }
+}

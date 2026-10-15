@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hook_response.dart';import 'package:pub_github_rest_3_1/models/webhook_config.dart';/// Webhooks for repositories.
 @immutable final class Hook {const Hook({required this.type, required this.id, required this.name, required this.active, required this.events, required this.config, required this.updatedAt, required this.createdAt, required this.url, required this.testUrl, required this.pingUrl, required this.lastResponse, this.deliveriesUrl, });
 
-factory Hook.fromJson(Map<String, dynamic> json) { return Hook(
+factory Hook.fromJson(Map<String, dynamic> json) {return Hook(
   type: json['type'] as String,
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
@@ -18,7 +18,7 @@ factory Hook.fromJson(Map<String, dynamic> json) { return Hook(
   pingUrl: Uri.parse(json['ping_url'] as String),
   deliveriesUrl: json['deliveries_url'] != null ? Uri.parse(json['deliveries_url'] as String) : null,
   lastResponse: HookResponse.fromJson(json['last_response'] as Map<String, dynamic>),
-); }
+);}
 
 final String type;
 
@@ -50,7 +50,7 @@ final Uri? deliveriesUrl;
 
 final HookResponse lastResponse;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'name': name,
@@ -64,8 +64,8 @@ Map<String, dynamic> toJson() { return {
   'ping_url': pingUrl.toString(),
   if (deliveriesUrl != null) 'deliveries_url': deliveriesUrl?.toString(),
   'last_response': lastResponse.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('active') && json['active'] is bool &&
@@ -76,8 +76,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('test_url') && json['test_url'] is String &&
       json.containsKey('ping_url') && json['ping_url'] is String &&
-      json.containsKey('last_response'); } 
-Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? events, WebhookConfig? config, DateTime? updatedAt, DateTime? createdAt, Uri? url, Uri? testUrl, Uri? pingUrl, Uri? Function()? deliveriesUrl, HookResponse? lastResponse, }) { return Hook(
+      json.containsKey('last_response');}
+Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? events, WebhookConfig? config, DateTime? updatedAt, DateTime? createdAt, Uri? url, Uri? testUrl, Uri? pingUrl, Uri? Function()? deliveriesUrl, HookResponse? lastResponse, }) {return Hook(
   type: type ?? this.type,
   id: id ?? this.id,
   name: name ?? this.name,
@@ -91,7 +91,7 @@ Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? 
   pingUrl: pingUrl ?? this.pingUrl,
   deliveriesUrl: deliveriesUrl != null ? deliveriesUrl() : this.deliveriesUrl,
   lastResponse: lastResponse ?? this.lastResponse,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Hook &&
           type == other.type &&
@@ -112,4 +112,4 @@ Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? 
 
 @override String toString() => 'Hook(\n  type: $type,\n  id: $id,\n  name: $name,\n  active: $active,\n  events: $events,\n  config: $config,\n  updatedAt: $updatedAt,\n  createdAt: $createdAt,\n  url: $url,\n  testUrl: $testUrl,\n  pingUrl: $pingUrl,\n  deliveriesUrl: $deliveriesUrl,\n  lastResponse: $lastResponse,\n)';
 
- }
+}

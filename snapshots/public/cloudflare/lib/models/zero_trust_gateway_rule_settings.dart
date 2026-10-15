@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/audit_ssh.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/biso_admin_controls.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/block_page.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/check_session.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/dns_resolvers.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/egress.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/forensic_copy.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/l4override.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/notification_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/payload_log.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/quarantine.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/redirect.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/resolve_dns_internally.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/untrusted_cert.dart';/// Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.
 @immutable final class ZeroTrustGatewayRuleSettings {const ZeroTrustGatewayRuleSettings({this.addHeaders = const Omittable.absent(), this.allowChildBypass = const Omittable.absent(), this.auditSsh = const Omittable.absent(), this.bisoAdminControls, this.blockPage = const Omittable.absent(), this.blockPageEnabled, this.blockReason = const Omittable.absent(), this.bypassParentRule = const Omittable.absent(), this.checkSession = const Omittable.absent(), this.dnsResolvers = const Omittable.absent(), this.egress = const Omittable.absent(), this.forensicCopy = const Omittable.absent(), this.ignoreCnameCategoryMatches, this.insecureDisableDnssecValidation, this.ipCategories, this.ipIndicatorFeeds, this.l4override = const Omittable.absent(), this.notificationSettings = const Omittable.absent(), this.overrideHost, this.overrideIps = const Omittable.absent(), this.payloadLog = const Omittable.absent(), this.quarantine = const Omittable.absent(), this.redirect = const Omittable.absent(), this.resolveDnsInternally = const Omittable.absent(), this.resolveDnsThroughCloudflare = const Omittable.absent(), this.untrustedCert = const Omittable.absent(), });
 
-factory ZeroTrustGatewayRuleSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettings(
+factory ZeroTrustGatewayRuleSettings.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayRuleSettings(
   addHeaders: json.containsKey('add_headers') ? Omittable((json['add_headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList()))) : const Omittable.absent(),
   allowChildBypass: json.containsKey('allow_child_bypass') ? Omittable(json['allow_child_bypass'] as bool?) : const Omittable.absent(),
   auditSsh: json.containsKey('audit_ssh') ? Omittable(json['audit_ssh'] != null ? AuditSsh.fromJson(json['audit_ssh'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -31,7 +31,7 @@ factory ZeroTrustGatewayRuleSettings.fromJson(Map<String, dynamic> json) { retur
   resolveDnsInternally: json.containsKey('resolve_dns_internally') ? Omittable(json['resolve_dns_internally'] != null ? ResolveDnsInternally.fromJson(json['resolve_dns_internally'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   resolveDnsThroughCloudflare: json.containsKey('resolve_dns_through_cloudflare') ? Omittable(json['resolve_dns_through_cloudflare'] as bool?) : const Omittable.absent(),
   untrustedCert: json.containsKey('untrusted_cert') ? Omittable(json['untrusted_cert'] != null ? UntrustedCert.fromJson(json['untrusted_cert'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values. Settable only for `http` rules with the action set to `allow`.
 /// 
@@ -135,7 +135,7 @@ final Omittable<bool?> resolveDnsThroughCloudflare;
 /// Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.
 final Omittable<UntrustedCert?> untrustedCert;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addHeaders.isPresent) 'add_headers': addHeaders.value,
   if (allowChildBypass.isPresent) 'allow_child_bypass': allowChildBypass.value,
   if (auditSsh.isPresent) 'audit_ssh': auditSsh.value?.toJson(),
@@ -162,9 +162,9 @@ Map<String, dynamic> toJson() { return {
   if (resolveDnsInternally.isPresent) 'resolve_dns_internally': resolveDnsInternally.value?.toJson(),
   if (resolveDnsThroughCloudflare.isPresent) 'resolve_dns_through_cloudflare': resolveDnsThroughCloudflare.value,
   if (untrustedCert.isPresent) 'untrusted_cert': untrustedCert.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'add_headers', 'allow_child_bypass', 'audit_ssh', 'biso_admin_controls', 'block_page', 'block_page_enabled', 'block_reason', 'bypass_parent_rule', 'check_session', 'dns_resolvers', 'egress', 'forensic_copy', 'ignore_cname_category_matches', 'insecure_disable_dnssec_validation', 'ip_categories', 'ip_indicator_feeds', 'l4override', 'notification_settings', 'override_host', 'override_ips', 'payload_log', 'quarantine', 'redirect', 'resolve_dns_internally', 'resolve_dns_through_cloudflare', 'untrusted_cert'}.contains(key)); } 
-ZeroTrustGatewayRuleSettings copyWith({Omittable<Map<String,List<String>>?>? addHeaders, Omittable<bool?>? allowChildBypass, Omittable<AuditSsh?>? auditSsh, BisoAdminControls? Function()? bisoAdminControls, Omittable<BlockPage?>? blockPage, bool? Function()? blockPageEnabled, Omittable<String?>? blockReason, Omittable<bool?>? bypassParentRule, Omittable<CheckSession?>? checkSession, Omittable<DnsResolvers?>? dnsResolvers, Omittable<Egress?>? egress, Omittable<ForensicCopy?>? forensicCopy, bool? Function()? ignoreCnameCategoryMatches, bool? Function()? insecureDisableDnssecValidation, bool? Function()? ipCategories, bool? Function()? ipIndicatorFeeds, Omittable<L4override?>? l4override, Omittable<NotificationSettings?>? notificationSettings, String? Function()? overrideHost, Omittable<List<String>?>? overrideIps, Omittable<PayloadLog?>? payloadLog, Omittable<Quarantine?>? quarantine, Omittable<Redirect?>? redirect, Omittable<ResolveDnsInternally?>? resolveDnsInternally, Omittable<bool?>? resolveDnsThroughCloudflare, Omittable<UntrustedCert?>? untrustedCert, }) { return ZeroTrustGatewayRuleSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'add_headers', 'allow_child_bypass', 'audit_ssh', 'biso_admin_controls', 'block_page', 'block_page_enabled', 'block_reason', 'bypass_parent_rule', 'check_session', 'dns_resolvers', 'egress', 'forensic_copy', 'ignore_cname_category_matches', 'insecure_disable_dnssec_validation', 'ip_categories', 'ip_indicator_feeds', 'l4override', 'notification_settings', 'override_host', 'override_ips', 'payload_log', 'quarantine', 'redirect', 'resolve_dns_internally', 'resolve_dns_through_cloudflare', 'untrusted_cert'}.contains(key));}
+ZeroTrustGatewayRuleSettings copyWith({Omittable<Map<String,List<String>>?>? addHeaders, Omittable<bool?>? allowChildBypass, Omittable<AuditSsh?>? auditSsh, BisoAdminControls? Function()? bisoAdminControls, Omittable<BlockPage?>? blockPage, bool? Function()? blockPageEnabled, Omittable<String?>? blockReason, Omittable<bool?>? bypassParentRule, Omittable<CheckSession?>? checkSession, Omittable<DnsResolvers?>? dnsResolvers, Omittable<Egress?>? egress, Omittable<ForensicCopy?>? forensicCopy, bool? Function()? ignoreCnameCategoryMatches, bool? Function()? insecureDisableDnssecValidation, bool? Function()? ipCategories, bool? Function()? ipIndicatorFeeds, Omittable<L4override?>? l4override, Omittable<NotificationSettings?>? notificationSettings, String? Function()? overrideHost, Omittable<List<String>?>? overrideIps, Omittable<PayloadLog?>? payloadLog, Omittable<Quarantine?>? quarantine, Omittable<Redirect?>? redirect, Omittable<ResolveDnsInternally?>? resolveDnsInternally, Omittable<bool?>? resolveDnsThroughCloudflare, Omittable<UntrustedCert?>? untrustedCert, }) {return ZeroTrustGatewayRuleSettings(
   addHeaders: addHeaders ?? this.addHeaders,
   allowChildBypass: allowChildBypass ?? this.allowChildBypass,
   auditSsh: auditSsh ?? this.auditSsh,
@@ -191,7 +191,7 @@ ZeroTrustGatewayRuleSettings copyWith({Omittable<Map<String,List<String>>?>? add
   resolveDnsInternally: resolveDnsInternally ?? this.resolveDnsInternally,
   resolveDnsThroughCloudflare: resolveDnsThroughCloudflare ?? this.resolveDnsThroughCloudflare,
   untrustedCert: untrustedCert ?? this.untrustedCert,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayRuleSettings &&
           addHeaders == other.addHeaders &&
@@ -226,4 +226,4 @@ ZeroTrustGatewayRuleSettings copyWith({Omittable<Map<String,List<String>>?>? add
 
 @override String toString() => 'ZeroTrustGatewayRuleSettings(\n  addHeaders: $addHeaders,\n  allowChildBypass: $allowChildBypass,\n  auditSsh: $auditSsh,\n  bisoAdminControls: $bisoAdminControls,\n  blockPage: $blockPage,\n  blockPageEnabled: $blockPageEnabled,\n  blockReason: $blockReason,\n  bypassParentRule: $bypassParentRule,\n  checkSession: $checkSession,\n  dnsResolvers: $dnsResolvers,\n  egress: $egress,\n  forensicCopy: $forensicCopy,\n  ignoreCnameCategoryMatches: $ignoreCnameCategoryMatches,\n  insecureDisableDnssecValidation: $insecureDisableDnssecValidation,\n  ipCategories: $ipCategories,\n  ipIndicatorFeeds: $ipIndicatorFeeds,\n  l4override: $l4override,\n  notificationSettings: $notificationSettings,\n  overrideHost: $overrideHost,\n  overrideIps: $overrideIps,\n  payloadLog: $payloadLog,\n  quarantine: $quarantine,\n  redirect: $redirect,\n  resolveDnsInternally: $resolveDnsInternally,\n  resolveDnsThroughCloudflare: $resolveDnsThroughCloudflare,\n  untrustedCert: $untrustedCert,\n)';
 
- }
+}

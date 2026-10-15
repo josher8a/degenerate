@@ -8,11 +8,11 @@ const PostInvoicesInvoiceRequestTransferData({this.transferDataSpecs2 = const Om
 const PostInvoicesInvoiceRequestTransferData._({required this.rawValue, required this.transferDataSpecs2, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostInvoicesInvoiceRequestTransferData.fromJson(Object? json) { return PostInvoicesInvoiceRequestTransferData._(
+factory PostInvoicesInvoiceRequestTransferData.fromJson(Object? json) {return PostInvoicesInvoiceRequestTransferData._(
   rawValue: Omittable(json),
   transferDataSpecs2: json is Map<String, dynamic> && TransferDataSpecs2.canParse(json) ? parseAnyOfVariant<TransferDataSpecs2>(json, (value) => TransferDataSpecs2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostInvoicesInvoiceRequestTransferData(${toJson()})';
 
- }
+}

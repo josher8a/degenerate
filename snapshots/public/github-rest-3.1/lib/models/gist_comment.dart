@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A comment made to a gist.
 @immutable final class GistComment {const GistComment({required this.id, required this.nodeId, required this.url, required this.body, required this.user, required this.createdAt, required this.updatedAt, required this.authorAssociation, });
 
-factory GistComment.fromJson(Map<String, dynamic> json) { return GistComment(
+factory GistComment.fromJson(Map<String, dynamic> json) {return GistComment(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -13,7 +13,7 @@ factory GistComment.fromJson(Map<String, dynamic> json) { return GistComment(
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
-); }
+);}
 
 final int id;
 
@@ -33,7 +33,7 @@ final DateTime updatedAt;
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -42,20 +42,20 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'author_association': authorAssociation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('user') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('author_association'); } 
+      json.containsKey('author_association');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (body.runes.length > 65535) { errors.add('body: length must be <= 65535'); }
-return errors; } 
-GistComment copyWith({int? id, String? nodeId, Uri? url, String? body, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, AuthorAssociation? authorAssociation, }) { return GistComment(
+return errors;}
+GistComment copyWith({int? id, String? nodeId, Uri? url, String? body, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, AuthorAssociation? authorAssociation, }) {return GistComment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -64,7 +64,7 @@ GistComment copyWith({int? id, String? nodeId, Uri? url, String? body, SimpleUse
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   authorAssociation: authorAssociation ?? this.authorAssociation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GistComment &&
           id == other.id &&
@@ -80,4 +80,4 @@ GistComment copyWith({int? id, String? nodeId, Uri? url, String? body, SimpleUse
 
 @override String toString() => 'GistComment(id: $id, nodeId: $nodeId, url: $url, body: $body, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, authorAssociation: $authorAssociation)';
 
- }
+}

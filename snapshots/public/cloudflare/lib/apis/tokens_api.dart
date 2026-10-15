@@ -14,7 +14,7 @@ final class TokensApi with ApiExecutor {const TokensApi(this.apiConfig);
 /// List all access tokens you created.
 ///
 /// `GET /user/tokens`
-Future<ApiResult<List<IamTokenBase>?, TokensCreateTokenError>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamTokenBase>?, TokensCreateTokenError>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -45,13 +45,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Create Token
 ///
 /// Create a new access token.
 ///
 /// `POST /user/tokens`
-Future<ApiResult<IamTokenWithValue?, TokensCreateTokenError>> userApiTokensCreateToken({required IamCreatePayloadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenWithValue?, TokensCreateTokenError>> userApiTokensCreateToken({required IamCreatePayloadRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -70,13 +70,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Token Details
 ///
 /// Get information about a specific token.
 ///
 /// `GET /user/tokens/{token_id}`
-Future<ApiResult<IamTokenBase?, TokensCreateTokenError>> userApiTokensTokenDetails({required IamTokenIdentifier tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenBase?, TokensCreateTokenError>> userApiTokensTokenDetails({required IamTokenIdentifier tokenId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -93,13 +93,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Update Token
 ///
 /// Update an existing token.
 ///
 /// `PUT /user/tokens/{token_id}`
-Future<ApiResult<IamTokenBase?, TokensCreateTokenError>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenBase?, TokensCreateTokenError>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBaseRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -118,13 +118,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Delete Token
 ///
 /// Destroy a token.
 ///
 /// `DELETE /user/tokens/{token_id}`
-Future<ApiResult<ResponseSingleId4Result?, TokensCreateTokenError>> userApiTokensDeleteToken({required IamTokenIdentifier tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, TokensCreateTokenError>> userApiTokensDeleteToken({required IamTokenIdentifier tokenId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -141,13 +141,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Roll Token
 ///
 /// Roll the token secret.
 ///
 /// `PUT /user/tokens/{token_id}/value`
-Future<ApiResult<IamValue?, TokensCreateTokenError>> userApiTokensRollToken({required IamTokenIdentifier tokenId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamValue?, TokensCreateTokenError>> userApiTokensRollToken({required IamTokenIdentifier tokenId, required Map<String,dynamic> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,13 +166,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// List Token Permission Groups
 ///
 /// Find all available permission groups for API Tokens
 ///
 /// `GET /user/tokens/permission_groups`
-Future<ApiResult<List<IamPermissionsGroupResponseCollectionResult>?, TokensCreateTokenError>> permissionGroupsListPermissionGroups({String? name, String? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamPermissionsGroupResponseCollectionResult>?, TokensCreateTokenError>> permissionGroupsListPermissionGroups({String? name, String? scope, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -200,13 +200,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Verify Token
 ///
 /// Test whether a token works.
 ///
 /// `GET /user/tokens/verify`
-Future<ApiResult<IamTokenVerifyResponseSingleSegmentResult?, TokensCreateTokenError>> userApiTokensVerifyToken({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenVerifyResponseSingleSegmentResult?, TokensCreateTokenError>> userApiTokensVerifyToken({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -223,5 +223,5 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
- }
+}
+}

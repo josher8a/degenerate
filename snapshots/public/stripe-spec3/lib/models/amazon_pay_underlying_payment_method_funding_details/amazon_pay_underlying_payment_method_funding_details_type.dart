@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// funding type of the underlying payment method.
 sealed class AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType();
 
-factory AmazonPayUnderlyingPaymentMethodFundingDetailsType.fromJson(String json) { return switch (json) {
+factory AmazonPayUnderlyingPaymentMethodFundingDetailsType.fromJson(String json) {return switch (json) {
   'card' => card,
   _ => AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown(json),
-}; }
+};}
 
 static const AmazonPayUnderlyingPaymentMethodFundingDetailsType card = AmazonPayUnderlyingPaymentMethodFundingDetailsType$card._();
 
 static const List<AmazonPayUnderlyingPaymentMethodFundingDetailsType> values = [card];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'card' => 'card',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown; } 
+bool get isUnknown {return this is AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() card, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() card, required W Function(String value) $unknown, }) {return switch (this) {
       AmazonPayUnderlyingPaymentMethodFundingDetailsType$card() => card(),
       AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? card, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? card, W Function(String value)? $unknown, }) {return switch (this) {
       AmazonPayUnderlyingPaymentMethodFundingDetailsType$card() => card != null ? card() : orElse(value),
       AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AmazonPayUnderlyingPaymentMethodFundingDetailsType($value)';
 
- }
+}
 @immutable final class AmazonPayUnderlyingPaymentMethodFundingDetailsType$card extends AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType$card._();
 
 @override String get value => 'card';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? card, W 
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown extends AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? card, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

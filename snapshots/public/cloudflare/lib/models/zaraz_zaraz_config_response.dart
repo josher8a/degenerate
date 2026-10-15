@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_messages2.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_return.dart';@immutable final class ZarazZarazConfigResponse {const ZarazZarazConfigResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory ZarazZarazConfigResponse.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigResponse(
+factory ZarazZarazConfigResponse.fromJson(Map<String, dynamic> json) {return ZarazZarazConfigResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZarazMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZarazMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<ZarazMessages2> errors;
 
@@ -21,22 +21,22 @@ final bool success;
 
 final ZarazZarazConfigReturn result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-ZarazZarazConfigResponse copyWith({List<ZarazMessages2>? errors, List<ZarazMessages2>? messages, bool? success, ZarazZarazConfigReturn? result, }) { return ZarazZarazConfigResponse(
+      json.containsKey('result');}
+ZarazZarazConfigResponse copyWith({List<ZarazMessages2>? errors, List<ZarazMessages2>? messages, bool? success, ZarazZarazConfigReturn? result, }) {return ZarazZarazConfigResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazConfigResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ ZarazZarazConfigResponse copyWith({List<ZarazMessages2>? errors, List<ZarazMessa
 
 @override String toString() => 'ZarazZarazConfigResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

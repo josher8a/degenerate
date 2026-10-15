@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringPatchRuleBody {const DigitalExperienceMonitoringPatchRuleBody({this.description, this.match, this.name, });
 
-factory DigitalExperienceMonitoringPatchRuleBody.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringPatchRuleBody(
+factory DigitalExperienceMonitoringPatchRuleBody.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringPatchRuleBody(
   description: json['description'] as String?,
   match: json['match'] as String?,
   name: json['name'] as String?,
-); }
+);}
 
 final String? description;
 
@@ -17,17 +17,17 @@ final String? match;
 /// The name of the Rule.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'match': ?match,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'match', 'name'}.contains(key)); } 
-DigitalExperienceMonitoringPatchRuleBody copyWith({String? Function()? description, String? Function()? match, String? Function()? name, }) { return DigitalExperienceMonitoringPatchRuleBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'match', 'name'}.contains(key));}
+DigitalExperienceMonitoringPatchRuleBody copyWith({String? Function()? description, String? Function()? match, String? Function()? name, }) {return DigitalExperienceMonitoringPatchRuleBody(
   description: description != null ? description() : this.description,
   match: match != null ? match() : this.match,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringPatchRuleBody &&
           description == other.description &&
@@ -38,4 +38,4 @@ DigitalExperienceMonitoringPatchRuleBody copyWith({String? Function()? descripti
 
 @override String toString() => 'DigitalExperienceMonitoringPatchRuleBody(description: $description, match: $match, name: $name)';
 
- }
+}

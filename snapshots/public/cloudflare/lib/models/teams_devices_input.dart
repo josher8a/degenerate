@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request.dart';import 'package:pub_cloudflare/models/teams_devices_access_serial_number_list_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_antivirus_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_application_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_carbonblack_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_client_certificate_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_custom_s2s_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_disk_encryption_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_domain_joined_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_file_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_firewall_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_intune_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_kolide_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_os_version_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_sentinelone_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_sentinelone_s2s_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_tanium_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_unique_client_id_input_request.dart';import 'package:pub_cloudflare/models/teams_devices_workspace_one_input_request.dart';/// A value that is one of: `TeamsDevicesFileInputRequest`, `TeamsDevicesUniqueClientIdInputRequest`, `TeamsDevicesDomainJoinedInputRequest`, `TeamsDevicesOsVersionInputRequest`, `TeamsDevicesFirewallInputRequest`, `TeamsDevicesSentineloneInputRequest`, `TeamsDevicesCarbonblackInputRequest`, `TeamsDevicesAccessSerialNumberListInputRequest`, `TeamsDevicesDiskEncryptionInputRequest`, `TeamsDevicesApplicationInputRequest`, `TeamsDevicesClientCertificateInputRequest`, `InputRequest`, `TeamsDevicesAntivirusInputRequest`, `TeamsDevicesWorkspaceOneInputRequest`, `TeamsDevicesCrowdstrikeInputRequest`, `TeamsDevicesIntuneInputRequest`, `TeamsDevicesKolideInputRequest`, `TeamsDevicesTaniumInputRequest`, `TeamsDevicesSentineloneS2sInputRequest`, `TeamsDevicesCustomS2sInputRequest`.
 sealed class TeamsDevicesInput {const TeamsDevicesInput();
 
-factory TeamsDevicesInput.fromJson(Object? json) {   if (json is Map<String, dynamic> && TeamsDevicesFileInputRequest.canParse(json)) {
+factory TeamsDevicesInput.fromJson(Object? json) {  if (json is Map<String, dynamic> && TeamsDevicesFileInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesFileInputRequest(TeamsDevicesFileInputRequest.fromJson(json));
   }
   if (json is Map<String, dynamic> && TeamsDevicesUniqueClientIdInputRequest.canParse(json)) {
@@ -64,19 +64,19 @@ factory TeamsDevicesInput.fromJson(Object? json) {   if (json is Map<String, dyn
   if (json is Map<String, dynamic> && TeamsDevicesCustomS2sInputRequest.canParse(json)) {
     return TeamsDevicesInputTeamsDevicesCustomS2sInputRequest(TeamsDevicesCustomS2sInputRequest.fromJson(json));
   }
-  return TeamsDevicesInput$Unknown(json); }
+  return TeamsDevicesInput$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class TeamsDevicesInputTeamsDevicesFileInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesFileInputRequest(this._value);
 
 final TeamsDevicesFileInputRequest _value;
 
 @override TeamsDevicesFileInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesFileInputRequest && _value == other._value;
 
@@ -84,14 +84,14 @@ final TeamsDevicesFileInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesFileInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest(this._value);
 
 final TeamsDevicesUniqueClientIdInputRequest _value;
 
 @override TeamsDevicesUniqueClientIdInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest && _value == other._value;
 
@@ -99,14 +99,14 @@ final TeamsDevicesUniqueClientIdInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesUniqueClientIdInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest(this._value);
 
 final TeamsDevicesDomainJoinedInputRequest _value;
 
 @override TeamsDevicesDomainJoinedInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest && _value == other._value;
 
@@ -114,14 +114,14 @@ final TeamsDevicesDomainJoinedInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesDomainJoinedInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesOsVersionInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesOsVersionInputRequest(this._value);
 
 final TeamsDevicesOsVersionInputRequest _value;
 
 @override TeamsDevicesOsVersionInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesOsVersionInputRequest && _value == other._value;
 
@@ -129,14 +129,14 @@ final TeamsDevicesOsVersionInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesOsVersionInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesFirewallInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesFirewallInputRequest(this._value);
 
 final TeamsDevicesFirewallInputRequest _value;
 
 @override TeamsDevicesFirewallInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesFirewallInputRequest && _value == other._value;
 
@@ -144,14 +144,14 @@ final TeamsDevicesFirewallInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesFirewallInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesSentineloneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesSentineloneInputRequest(this._value);
 
 final TeamsDevicesSentineloneInputRequest _value;
 
 @override TeamsDevicesSentineloneInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesSentineloneInputRequest && _value == other._value;
 
@@ -159,14 +159,14 @@ final TeamsDevicesSentineloneInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesSentineloneInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesCarbonblackInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCarbonblackInputRequest(this._value);
 
 final TeamsDevicesCarbonblackInputRequest _value;
 
 @override TeamsDevicesCarbonblackInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesCarbonblackInputRequest && _value == other._value;
 
@@ -174,14 +174,14 @@ final TeamsDevicesCarbonblackInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesCarbonblackInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest(this._value);
 
 final TeamsDevicesAccessSerialNumberListInputRequest _value;
 
 @override TeamsDevicesAccessSerialNumberListInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest && _value == other._value;
 
@@ -189,14 +189,14 @@ final TeamsDevicesAccessSerialNumberListInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesAccessSerialNumberListInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest(this._value);
 
 final TeamsDevicesDiskEncryptionInputRequest _value;
 
 @override TeamsDevicesDiskEncryptionInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest && _value == other._value;
 
@@ -204,14 +204,14 @@ final TeamsDevicesDiskEncryptionInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesDiskEncryptionInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesApplicationInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesApplicationInputRequest(this._value);
 
 final TeamsDevicesApplicationInputRequest _value;
 
 @override TeamsDevicesApplicationInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesApplicationInputRequest && _value == other._value;
 
@@ -219,14 +219,14 @@ final TeamsDevicesApplicationInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesApplicationInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesClientCertificateInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesClientCertificateInputRequest(this._value);
 
 final TeamsDevicesClientCertificateInputRequest _value;
 
 @override TeamsDevicesClientCertificateInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesClientCertificateInputRequest && _value == other._value;
 
@@ -234,14 +234,14 @@ final TeamsDevicesClientCertificateInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesClientCertificateInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputInputRequest extends TeamsDevicesInput {const TeamsDevicesInputInputRequest(this._value);
 
 final InputRequest _value;
 
 @override InputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputInputRequest && _value == other._value;
 
@@ -249,14 +249,14 @@ final InputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.inputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesAntivirusInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesAntivirusInputRequest(this._value);
 
 final TeamsDevicesAntivirusInputRequest _value;
 
 @override TeamsDevicesAntivirusInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesAntivirusInputRequest && _value == other._value;
 
@@ -264,14 +264,14 @@ final TeamsDevicesAntivirusInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesAntivirusInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest(this._value);
 
 final TeamsDevicesWorkspaceOneInputRequest _value;
 
 @override TeamsDevicesWorkspaceOneInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest && _value == other._value;
 
@@ -279,14 +279,14 @@ final TeamsDevicesWorkspaceOneInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesWorkspaceOneInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest(this._value);
 
 final TeamsDevicesCrowdstrikeInputRequest _value;
 
 @override TeamsDevicesCrowdstrikeInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest && _value == other._value;
 
@@ -294,14 +294,14 @@ final TeamsDevicesCrowdstrikeInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesCrowdstrikeInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesIntuneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesIntuneInputRequest(this._value);
 
 final TeamsDevicesIntuneInputRequest _value;
 
 @override TeamsDevicesIntuneInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesIntuneInputRequest && _value == other._value;
 
@@ -309,14 +309,14 @@ final TeamsDevicesIntuneInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesIntuneInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesKolideInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesKolideInputRequest(this._value);
 
 final TeamsDevicesKolideInputRequest _value;
 
 @override TeamsDevicesKolideInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesKolideInputRequest && _value == other._value;
 
@@ -324,14 +324,14 @@ final TeamsDevicesKolideInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesKolideInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesTaniumInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesTaniumInputRequest(this._value);
 
 final TeamsDevicesTaniumInputRequest _value;
 
 @override TeamsDevicesTaniumInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesTaniumInputRequest && _value == other._value;
 
@@ -339,14 +339,14 @@ final TeamsDevicesTaniumInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesTaniumInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest(this._value);
 
 final TeamsDevicesSentineloneS2sInputRequest _value;
 
 @override TeamsDevicesSentineloneS2sInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest && _value == other._value;
 
@@ -354,14 +354,14 @@ final TeamsDevicesSentineloneS2sInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesSentineloneS2sInputRequest($_value)';
 
- }
+}
 @immutable final class TeamsDevicesInputTeamsDevicesCustomS2sInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCustomS2sInputRequest(this._value);
 
 final TeamsDevicesCustomS2sInputRequest _value;
 
 @override TeamsDevicesCustomS2sInputRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesCustomS2sInputRequest && _value == other._value;
 
@@ -369,7 +369,7 @@ final TeamsDevicesCustomS2sInputRequest _value;
 
 @override String toString() => 'TeamsDevicesInput.teamsDevicesCustomS2sInputRequest($_value)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class TeamsDevicesInput$Unknown extends TeamsDevicesInput {const TeamsDevicesInput$Unknown(this._value);
 
@@ -384,4 +384,4 @@ final dynamic _value;
 
 @override String toString() => 'TeamsDevicesInput.unknown($_value)';
 
- }
+}

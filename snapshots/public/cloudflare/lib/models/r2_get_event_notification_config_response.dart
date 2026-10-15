@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_errors2.dart';import 'package:pub_cloudflare/models/r2_queues_config.dart';@immutable final class R2GetEventNotificationConfigResponse {const R2GetEventNotificationConfigResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory R2GetEventNotificationConfigResponse.fromJson(Map<String, dynamic> json) { return R2GetEventNotificationConfigResponse(
+factory R2GetEventNotificationConfigResponse.fromJson(Map<String, dynamic> json) {return R2GetEventNotificationConfigResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => R2Errors2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
   result: R2QueuesConfig.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<R2Errors2> errors;
 
@@ -19,22 +19,22 @@ final R2QueuesConfig result;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages,
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-R2GetEventNotificationConfigResponse copyWith({List<R2Errors2>? errors, List<String>? messages, R2QueuesConfig? result, bool? success, }) { return R2GetEventNotificationConfigResponse(
+      json.containsKey('success') && json['success'] is bool;}
+R2GetEventNotificationConfigResponse copyWith({List<R2Errors2>? errors, List<String>? messages, R2QueuesConfig? result, bool? success, }) {return R2GetEventNotificationConfigResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2GetEventNotificationConfigResponse &&
           listEquals(errors, other.errors) &&
@@ -46,4 +46,4 @@ R2GetEventNotificationConfigResponse copyWith({List<R2Errors2>? errors, List<Str
 
 @override String toString() => 'R2GetEventNotificationConfigResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

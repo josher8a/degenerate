@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AllowedCountries {const AllowedCountries();
 
-factory AllowedCountries.fromJson(String json) { return switch (json) {
+factory AllowedCountries.fromJson(String json) {return switch (json) {
   'AC' => ac,
   'AD' => ad,
   'AE' => ae,
@@ -243,7 +243,7 @@ factory AllowedCountries.fromJson(String json) { return switch (json) {
   'ZW' => zw,
   'ZZ' => zz,
   _ => AllowedCountries$Unknown(json),
-}; }
+};}
 
 static const AllowedCountries ac = AllowedCountries$ac._();
 
@@ -724,9 +724,9 @@ static const AllowedCountries zz = AllowedCountries$zz._();
 static const List<AllowedCountries> values = [ac, ad, ae, af, ag, ai, al, am, ao, aq, ar, at, au, aw, ax, az, ba, bb, bd, be, bf, bg, bh, bi, bj, bl, bm, bn, bo, bq, br, bs, bt, bv, bw, by, bz, ca, cd, cf, cg, ch, ci, ck, cl, cm, cn, co, cr, cv, cw, cy, cz, de, dj, dk, dm, $do, dz, ec, ee, eg, eh, er, es, et, fi, fj, fk, fo, fr, ga, gb, gd, ge, gf, gg, gh, gi, gl, gm, gn, gp, gq, gr, gs, gt, gu, gw, gy, hk, hn, hr, ht, hu, id, ie, il, im, $in, io, iq, $is, it, je, jm, jo, jp, ke, kg, kh, ki, km, kn, kr, kw, ky, kz, la, lb, lc, li, lk, lr, ls, lt, lu, lv, ly, ma, mc, md, me, mf, mg, mk, ml, mm, mn, mo, mq, mr, ms, mt, mu, mv, mw, mx, my, mz, na, nc, ne, ng, ni, nl, no, np, nr, nu, nz, om, pa, pe, pf, pg, ph, pk, pl, pm, pn, pr, ps, pt, py, qa, re, ro, rs, ru, rw, sa, sb, sc, sd, se, sg, sh, si, sj, sk, sl, sm, sn, so, sr, ss, st, sv, sx, sz, ta, tc, td, tf, tg, th, tj, tk, tl, tm, tn, to, tr, tt, tv, tw, tz, ua, ug, us, uy, uz, va, vc, ve, vg, vn, vu, wf, ws, xk, ye, yt, za, zm, zw, zz];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'AC' => 'ac',
   'AD' => 'ad',
   'AE' => 'ae',
@@ -966,11 +966,11 @@ String get name { return switch (value) {
   'ZW' => 'zw',
   'ZZ' => 'zz',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AllowedCountries$Unknown; } 
+bool get isUnknown {return this is AllowedCountries$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ac, required W Function() ad, required W Function() ae, required W Function() af, required W Function() ag, required W Function() ai, required W Function() al, required W Function() am, required W Function() ao, required W Function() aq, required W Function() ar, required W Function() at, required W Function() au, required W Function() aw, required W Function() ax, required W Function() az, required W Function() ba, required W Function() bb, required W Function() bd, required W Function() be, required W Function() bf, required W Function() bg, required W Function() bh, required W Function() bi, required W Function() bj, required W Function() bl, required W Function() bm, required W Function() bn, required W Function() bo, required W Function() bq, required W Function() br, required W Function() bs, required W Function() bt, required W Function() bv, required W Function() bw, required W Function() by, required W Function() bz, required W Function() ca, required W Function() cd, required W Function() cf, required W Function() cg, required W Function() ch, required W Function() ci, required W Function() ck, required W Function() cl, required W Function() cm, required W Function() cn, required W Function() co, required W Function() cr, required W Function() cv, required W Function() cw, required W Function() cy, required W Function() cz, required W Function() de, required W Function() dj, required W Function() dk, required W Function() dm, required W Function() $do, required W Function() dz, required W Function() ec, required W Function() ee, required W Function() eg, required W Function() eh, required W Function() er, required W Function() es, required W Function() et, required W Function() fi, required W Function() fj, required W Function() fk, required W Function() fo, required W Function() fr, required W Function() ga, required W Function() gb, required W Function() gd, required W Function() ge, required W Function() gf, required W Function() gg, required W Function() gh, required W Function() gi, required W Function() gl, required W Function() gm, required W Function() gn, required W Function() gp, required W Function() gq, required W Function() gr, required W Function() gs, required W Function() gt, required W Function() gu, required W Function() gw, required W Function() gy, required W Function() hk, required W Function() hn, required W Function() hr, required W Function() ht, required W Function() hu, required W Function() id, required W Function() ie, required W Function() il, required W Function() im, required W Function() $in, required W Function() io, required W Function() iq, required W Function() $is, required W Function() it, required W Function() je, required W Function() jm, required W Function() jo, required W Function() jp, required W Function() ke, required W Function() kg, required W Function() kh, required W Function() ki, required W Function() km, required W Function() kn, required W Function() kr, required W Function() kw, required W Function() ky, required W Function() kz, required W Function() la, required W Function() lb, required W Function() lc, required W Function() li, required W Function() lk, required W Function() lr, required W Function() ls, required W Function() lt, required W Function() lu, required W Function() lv, required W Function() ly, required W Function() ma, required W Function() mc, required W Function() md, required W Function() me, required W Function() mf, required W Function() mg, required W Function() mk, required W Function() ml, required W Function() mm, required W Function() mn, required W Function() mo, required W Function() mq, required W Function() mr, required W Function() ms, required W Function() mt, required W Function() mu, required W Function() mv, required W Function() mw, required W Function() mx, required W Function() my, required W Function() mz, required W Function() na, required W Function() nc, required W Function() ne, required W Function() ng, required W Function() ni, required W Function() nl, required W Function() no, required W Function() np, required W Function() nr, required W Function() nu, required W Function() nz, required W Function() om, required W Function() pa, required W Function() pe, required W Function() pf, required W Function() pg, required W Function() ph, required W Function() pk, required W Function() pl, required W Function() pm, required W Function() pn, required W Function() pr, required W Function() ps, required W Function() pt, required W Function() py, required W Function() qa, required W Function() re, required W Function() ro, required W Function() rs, required W Function() ru, required W Function() rw, required W Function() sa, required W Function() sb, required W Function() sc, required W Function() sd, required W Function() se, required W Function() sg, required W Function() sh, required W Function() si, required W Function() sj, required W Function() sk, required W Function() sl, required W Function() sm, required W Function() sn, required W Function() so, required W Function() sr, required W Function() ss, required W Function() st, required W Function() sv, required W Function() sx, required W Function() sz, required W Function() ta, required W Function() tc, required W Function() td, required W Function() tf, required W Function() tg, required W Function() th, required W Function() tj, required W Function() tk, required W Function() tl, required W Function() tm, required W Function() tn, required W Function() to, required W Function() tr, required W Function() tt, required W Function() tv, required W Function() tw, required W Function() tz, required W Function() ua, required W Function() ug, required W Function() us, required W Function() uy, required W Function() uz, required W Function() va, required W Function() vc, required W Function() ve, required W Function() vg, required W Function() vn, required W Function() vu, required W Function() wf, required W Function() ws, required W Function() xk, required W Function() ye, required W Function() yt, required W Function() za, required W Function() zm, required W Function() zw, required W Function() zz, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ac, required W Function() ad, required W Function() ae, required W Function() af, required W Function() ag, required W Function() ai, required W Function() al, required W Function() am, required W Function() ao, required W Function() aq, required W Function() ar, required W Function() at, required W Function() au, required W Function() aw, required W Function() ax, required W Function() az, required W Function() ba, required W Function() bb, required W Function() bd, required W Function() be, required W Function() bf, required W Function() bg, required W Function() bh, required W Function() bi, required W Function() bj, required W Function() bl, required W Function() bm, required W Function() bn, required W Function() bo, required W Function() bq, required W Function() br, required W Function() bs, required W Function() bt, required W Function() bv, required W Function() bw, required W Function() by, required W Function() bz, required W Function() ca, required W Function() cd, required W Function() cf, required W Function() cg, required W Function() ch, required W Function() ci, required W Function() ck, required W Function() cl, required W Function() cm, required W Function() cn, required W Function() co, required W Function() cr, required W Function() cv, required W Function() cw, required W Function() cy, required W Function() cz, required W Function() de, required W Function() dj, required W Function() dk, required W Function() dm, required W Function() $do, required W Function() dz, required W Function() ec, required W Function() ee, required W Function() eg, required W Function() eh, required W Function() er, required W Function() es, required W Function() et, required W Function() fi, required W Function() fj, required W Function() fk, required W Function() fo, required W Function() fr, required W Function() ga, required W Function() gb, required W Function() gd, required W Function() ge, required W Function() gf, required W Function() gg, required W Function() gh, required W Function() gi, required W Function() gl, required W Function() gm, required W Function() gn, required W Function() gp, required W Function() gq, required W Function() gr, required W Function() gs, required W Function() gt, required W Function() gu, required W Function() gw, required W Function() gy, required W Function() hk, required W Function() hn, required W Function() hr, required W Function() ht, required W Function() hu, required W Function() id, required W Function() ie, required W Function() il, required W Function() im, required W Function() $in, required W Function() io, required W Function() iq, required W Function() $is, required W Function() it, required W Function() je, required W Function() jm, required W Function() jo, required W Function() jp, required W Function() ke, required W Function() kg, required W Function() kh, required W Function() ki, required W Function() km, required W Function() kn, required W Function() kr, required W Function() kw, required W Function() ky, required W Function() kz, required W Function() la, required W Function() lb, required W Function() lc, required W Function() li, required W Function() lk, required W Function() lr, required W Function() ls, required W Function() lt, required W Function() lu, required W Function() lv, required W Function() ly, required W Function() ma, required W Function() mc, required W Function() md, required W Function() me, required W Function() mf, required W Function() mg, required W Function() mk, required W Function() ml, required W Function() mm, required W Function() mn, required W Function() mo, required W Function() mq, required W Function() mr, required W Function() ms, required W Function() mt, required W Function() mu, required W Function() mv, required W Function() mw, required W Function() mx, required W Function() my, required W Function() mz, required W Function() na, required W Function() nc, required W Function() ne, required W Function() ng, required W Function() ni, required W Function() nl, required W Function() no, required W Function() np, required W Function() nr, required W Function() nu, required W Function() nz, required W Function() om, required W Function() pa, required W Function() pe, required W Function() pf, required W Function() pg, required W Function() ph, required W Function() pk, required W Function() pl, required W Function() pm, required W Function() pn, required W Function() pr, required W Function() ps, required W Function() pt, required W Function() py, required W Function() qa, required W Function() re, required W Function() ro, required W Function() rs, required W Function() ru, required W Function() rw, required W Function() sa, required W Function() sb, required W Function() sc, required W Function() sd, required W Function() se, required W Function() sg, required W Function() sh, required W Function() si, required W Function() sj, required W Function() sk, required W Function() sl, required W Function() sm, required W Function() sn, required W Function() so, required W Function() sr, required W Function() ss, required W Function() st, required W Function() sv, required W Function() sx, required W Function() sz, required W Function() ta, required W Function() tc, required W Function() td, required W Function() tf, required W Function() tg, required W Function() th, required W Function() tj, required W Function() tk, required W Function() tl, required W Function() tm, required W Function() tn, required W Function() to, required W Function() tr, required W Function() tt, required W Function() tv, required W Function() tw, required W Function() tz, required W Function() ua, required W Function() ug, required W Function() us, required W Function() uy, required W Function() uz, required W Function() va, required W Function() vc, required W Function() ve, required W Function() vg, required W Function() vn, required W Function() vu, required W Function() wf, required W Function() ws, required W Function() xk, required W Function() ye, required W Function() yt, required W Function() za, required W Function() zm, required W Function() zw, required W Function() zz, required W Function(String value) $unknown, }) {return switch (this) {
       AllowedCountries$ac() => ac(),
       AllowedCountries$ad() => ad(),
       AllowedCountries$ae() => ae(),
@@ -1210,9 +1210,9 @@ W when<W>({required W Function() ac, required W Function() ad, required W Functi
       AllowedCountries$zw() => zw(),
       AllowedCountries$zz() => zz(),
       AllowedCountries$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Function()? ad, W Function()? ae, W Function()? af, W Function()? ag, W Function()? ai, W Function()? al, W Function()? am, W Function()? ao, W Function()? aq, W Function()? ar, W Function()? at, W Function()? au, W Function()? aw, W Function()? ax, W Function()? az, W Function()? ba, W Function()? bb, W Function()? bd, W Function()? be, W Function()? bf, W Function()? bg, W Function()? bh, W Function()? bi, W Function()? bj, W Function()? bl, W Function()? bm, W Function()? bn, W Function()? bo, W Function()? bq, W Function()? br, W Function()? bs, W Function()? bt, W Function()? bv, W Function()? bw, W Function()? by, W Function()? bz, W Function()? ca, W Function()? cd, W Function()? cf, W Function()? cg, W Function()? ch, W Function()? ci, W Function()? ck, W Function()? cl, W Function()? cm, W Function()? cn, W Function()? co, W Function()? cr, W Function()? cv, W Function()? cw, W Function()? cy, W Function()? cz, W Function()? de, W Function()? dj, W Function()? dk, W Function()? dm, W Function()? $do, W Function()? dz, W Function()? ec, W Function()? ee, W Function()? eg, W Function()? eh, W Function()? er, W Function()? es, W Function()? et, W Function()? fi, W Function()? fj, W Function()? fk, W Function()? fo, W Function()? fr, W Function()? ga, W Function()? gb, W Function()? gd, W Function()? ge, W Function()? gf, W Function()? gg, W Function()? gh, W Function()? gi, W Function()? gl, W Function()? gm, W Function()? gn, W Function()? gp, W Function()? gq, W Function()? gr, W Function()? gs, W Function()? gt, W Function()? gu, W Function()? gw, W Function()? gy, W Function()? hk, W Function()? hn, W Function()? hr, W Function()? ht, W Function()? hu, W Function()? id, W Function()? ie, W Function()? il, W Function()? im, W Function()? $in, W Function()? io, W Function()? iq, W Function()? $is, W Function()? it, W Function()? je, W Function()? jm, W Function()? jo, W Function()? jp, W Function()? ke, W Function()? kg, W Function()? kh, W Function()? ki, W Function()? km, W Function()? kn, W Function()? kr, W Function()? kw, W Function()? ky, W Function()? kz, W Function()? la, W Function()? lb, W Function()? lc, W Function()? li, W Function()? lk, W Function()? lr, W Function()? ls, W Function()? lt, W Function()? lu, W Function()? lv, W Function()? ly, W Function()? ma, W Function()? mc, W Function()? md, W Function()? me, W Function()? mf, W Function()? mg, W Function()? mk, W Function()? ml, W Function()? mm, W Function()? mn, W Function()? mo, W Function()? mq, W Function()? mr, W Function()? ms, W Function()? mt, W Function()? mu, W Function()? mv, W Function()? mw, W Function()? mx, W Function()? my, W Function()? mz, W Function()? na, W Function()? nc, W Function()? ne, W Function()? ng, W Function()? ni, W Function()? nl, W Function()? no, W Function()? np, W Function()? nr, W Function()? nu, W Function()? nz, W Function()? om, W Function()? pa, W Function()? pe, W Function()? pf, W Function()? pg, W Function()? ph, W Function()? pk, W Function()? pl, W Function()? pm, W Function()? pn, W Function()? pr, W Function()? ps, W Function()? pt, W Function()? py, W Function()? qa, W Function()? re, W Function()? ro, W Function()? rs, W Function()? ru, W Function()? rw, W Function()? sa, W Function()? sb, W Function()? sc, W Function()? sd, W Function()? se, W Function()? sg, W Function()? sh, W Function()? si, W Function()? sj, W Function()? sk, W Function()? sl, W Function()? sm, W Function()? sn, W Function()? so, W Function()? sr, W Function()? ss, W Function()? st, W Function()? sv, W Function()? sx, W Function()? sz, W Function()? ta, W Function()? tc, W Function()? td, W Function()? tf, W Function()? tg, W Function()? th, W Function()? tj, W Function()? tk, W Function()? tl, W Function()? tm, W Function()? tn, W Function()? to, W Function()? tr, W Function()? tt, W Function()? tv, W Function()? tw, W Function()? tz, W Function()? ua, W Function()? ug, W Function()? us, W Function()? uy, W Function()? uz, W Function()? va, W Function()? vc, W Function()? ve, W Function()? vg, W Function()? vn, W Function()? vu, W Function()? wf, W Function()? ws, W Function()? xk, W Function()? ye, W Function()? yt, W Function()? za, W Function()? zm, W Function()? zw, W Function()? zz, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Function()? ad, W Function()? ae, W Function()? af, W Function()? ag, W Function()? ai, W Function()? al, W Function()? am, W Function()? ao, W Function()? aq, W Function()? ar, W Function()? at, W Function()? au, W Function()? aw, W Function()? ax, W Function()? az, W Function()? ba, W Function()? bb, W Function()? bd, W Function()? be, W Function()? bf, W Function()? bg, W Function()? bh, W Function()? bi, W Function()? bj, W Function()? bl, W Function()? bm, W Function()? bn, W Function()? bo, W Function()? bq, W Function()? br, W Function()? bs, W Function()? bt, W Function()? bv, W Function()? bw, W Function()? by, W Function()? bz, W Function()? ca, W Function()? cd, W Function()? cf, W Function()? cg, W Function()? ch, W Function()? ci, W Function()? ck, W Function()? cl, W Function()? cm, W Function()? cn, W Function()? co, W Function()? cr, W Function()? cv, W Function()? cw, W Function()? cy, W Function()? cz, W Function()? de, W Function()? dj, W Function()? dk, W Function()? dm, W Function()? $do, W Function()? dz, W Function()? ec, W Function()? ee, W Function()? eg, W Function()? eh, W Function()? er, W Function()? es, W Function()? et, W Function()? fi, W Function()? fj, W Function()? fk, W Function()? fo, W Function()? fr, W Function()? ga, W Function()? gb, W Function()? gd, W Function()? ge, W Function()? gf, W Function()? gg, W Function()? gh, W Function()? gi, W Function()? gl, W Function()? gm, W Function()? gn, W Function()? gp, W Function()? gq, W Function()? gr, W Function()? gs, W Function()? gt, W Function()? gu, W Function()? gw, W Function()? gy, W Function()? hk, W Function()? hn, W Function()? hr, W Function()? ht, W Function()? hu, W Function()? id, W Function()? ie, W Function()? il, W Function()? im, W Function()? $in, W Function()? io, W Function()? iq, W Function()? $is, W Function()? it, W Function()? je, W Function()? jm, W Function()? jo, W Function()? jp, W Function()? ke, W Function()? kg, W Function()? kh, W Function()? ki, W Function()? km, W Function()? kn, W Function()? kr, W Function()? kw, W Function()? ky, W Function()? kz, W Function()? la, W Function()? lb, W Function()? lc, W Function()? li, W Function()? lk, W Function()? lr, W Function()? ls, W Function()? lt, W Function()? lu, W Function()? lv, W Function()? ly, W Function()? ma, W Function()? mc, W Function()? md, W Function()? me, W Function()? mf, W Function()? mg, W Function()? mk, W Function()? ml, W Function()? mm, W Function()? mn, W Function()? mo, W Function()? mq, W Function()? mr, W Function()? ms, W Function()? mt, W Function()? mu, W Function()? mv, W Function()? mw, W Function()? mx, W Function()? my, W Function()? mz, W Function()? na, W Function()? nc, W Function()? ne, W Function()? ng, W Function()? ni, W Function()? nl, W Function()? no, W Function()? np, W Function()? nr, W Function()? nu, W Function()? nz, W Function()? om, W Function()? pa, W Function()? pe, W Function()? pf, W Function()? pg, W Function()? ph, W Function()? pk, W Function()? pl, W Function()? pm, W Function()? pn, W Function()? pr, W Function()? ps, W Function()? pt, W Function()? py, W Function()? qa, W Function()? re, W Function()? ro, W Function()? rs, W Function()? ru, W Function()? rw, W Function()? sa, W Function()? sb, W Function()? sc, W Function()? sd, W Function()? se, W Function()? sg, W Function()? sh, W Function()? si, W Function()? sj, W Function()? sk, W Function()? sl, W Function()? sm, W Function()? sn, W Function()? so, W Function()? sr, W Function()? ss, W Function()? st, W Function()? sv, W Function()? sx, W Function()? sz, W Function()? ta, W Function()? tc, W Function()? td, W Function()? tf, W Function()? tg, W Function()? th, W Function()? tj, W Function()? tk, W Function()? tl, W Function()? tm, W Function()? tn, W Function()? to, W Function()? tr, W Function()? tt, W Function()? tv, W Function()? tw, W Function()? tz, W Function()? ua, W Function()? ug, W Function()? us, W Function()? uy, W Function()? uz, W Function()? va, W Function()? vc, W Function()? ve, W Function()? vg, W Function()? vn, W Function()? vu, W Function()? wf, W Function()? ws, W Function()? xk, W Function()? ye, W Function()? yt, W Function()? za, W Function()? zm, W Function()? zw, W Function()? zz, W Function(String value)? $unknown, }) {return switch (this) {
       AllowedCountries$ac() => ac != null ? ac() : orElse(value),
       AllowedCountries$ad() => ad != null ? ad() : orElse(value),
       AllowedCountries$ae() => ae != null ? ae() : orElse(value),
@@ -1452,10 +1452,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
       AllowedCountries$zw() => zw != null ? zw() : orElse(value),
       AllowedCountries$zz() => zz != null ? zz() : orElse(value),
       AllowedCountries$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AllowedCountries($value)';
 
- }
+}
 @immutable final class AllowedCountries$ac extends AllowedCountries {const AllowedCountries$ac._();
 
 @override String get value => 'AC';
@@ -1464,7 +1464,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AC'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ad extends AllowedCountries {const AllowedCountries$ad._();
 
 @override String get value => 'AD';
@@ -1473,7 +1473,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AD'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ae extends AllowedCountries {const AllowedCountries$ae._();
 
 @override String get value => 'AE';
@@ -1482,7 +1482,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$af extends AllowedCountries {const AllowedCountries$af._();
 
 @override String get value => 'AF';
@@ -1491,7 +1491,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AF'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ag extends AllowedCountries {const AllowedCountries$ag._();
 
 @override String get value => 'AG';
@@ -1500,7 +1500,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ai extends AllowedCountries {const AllowedCountries$ai._();
 
 @override String get value => 'AI';
@@ -1509,7 +1509,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$al extends AllowedCountries {const AllowedCountries$al._();
 
 @override String get value => 'AL';
@@ -1518,7 +1518,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$am extends AllowedCountries {const AllowedCountries$am._();
 
 @override String get value => 'AM';
@@ -1527,7 +1527,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ao extends AllowedCountries {const AllowedCountries$ao._();
 
 @override String get value => 'AO';
@@ -1536,7 +1536,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$aq extends AllowedCountries {const AllowedCountries$aq._();
 
 @override String get value => 'AQ';
@@ -1545,7 +1545,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AQ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ar extends AllowedCountries {const AllowedCountries$ar._();
 
 @override String get value => 'AR';
@@ -1554,7 +1554,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$at extends AllowedCountries {const AllowedCountries$at._();
 
 @override String get value => 'AT';
@@ -1563,7 +1563,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$au extends AllowedCountries {const AllowedCountries$au._();
 
 @override String get value => 'AU';
@@ -1572,7 +1572,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AU'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$aw extends AllowedCountries {const AllowedCountries$aw._();
 
 @override String get value => 'AW';
@@ -1581,7 +1581,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ax extends AllowedCountries {const AllowedCountries$ax._();
 
 @override String get value => 'AX';
@@ -1590,7 +1590,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AX'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$az extends AllowedCountries {const AllowedCountries$az._();
 
 @override String get value => 'AZ';
@@ -1599,7 +1599,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'AZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ba extends AllowedCountries {const AllowedCountries$ba._();
 
 @override String get value => 'BA';
@@ -1608,7 +1608,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bb extends AllowedCountries {const AllowedCountries$bb._();
 
 @override String get value => 'BB';
@@ -1617,7 +1617,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BB'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bd extends AllowedCountries {const AllowedCountries$bd._();
 
 @override String get value => 'BD';
@@ -1626,7 +1626,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BD'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$be extends AllowedCountries {const AllowedCountries$be._();
 
 @override String get value => 'BE';
@@ -1635,7 +1635,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bf extends AllowedCountries {const AllowedCountries$bf._();
 
 @override String get value => 'BF';
@@ -1644,7 +1644,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BF'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bg extends AllowedCountries {const AllowedCountries$bg._();
 
 @override String get value => 'BG';
@@ -1653,7 +1653,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bh extends AllowedCountries {const AllowedCountries$bh._();
 
 @override String get value => 'BH';
@@ -1662,7 +1662,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BH'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bi extends AllowedCountries {const AllowedCountries$bi._();
 
 @override String get value => 'BI';
@@ -1671,7 +1671,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bj extends AllowedCountries {const AllowedCountries$bj._();
 
 @override String get value => 'BJ';
@@ -1680,7 +1680,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BJ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bl extends AllowedCountries {const AllowedCountries$bl._();
 
 @override String get value => 'BL';
@@ -1689,7 +1689,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bm extends AllowedCountries {const AllowedCountries$bm._();
 
 @override String get value => 'BM';
@@ -1698,7 +1698,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bn extends AllowedCountries {const AllowedCountries$bn._();
 
 @override String get value => 'BN';
@@ -1707,7 +1707,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bo extends AllowedCountries {const AllowedCountries$bo._();
 
 @override String get value => 'BO';
@@ -1716,7 +1716,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bq extends AllowedCountries {const AllowedCountries$bq._();
 
 @override String get value => 'BQ';
@@ -1725,7 +1725,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BQ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$br extends AllowedCountries {const AllowedCountries$br._();
 
 @override String get value => 'BR';
@@ -1734,7 +1734,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bs extends AllowedCountries {const AllowedCountries$bs._();
 
 @override String get value => 'BS';
@@ -1743,7 +1743,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bt extends AllowedCountries {const AllowedCountries$bt._();
 
 @override String get value => 'BT';
@@ -1752,7 +1752,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bv extends AllowedCountries {const AllowedCountries$bv._();
 
 @override String get value => 'BV';
@@ -1761,7 +1761,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BV'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bw extends AllowedCountries {const AllowedCountries$bw._();
 
 @override String get value => 'BW';
@@ -1770,7 +1770,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$by extends AllowedCountries {const AllowedCountries$by._();
 
 @override String get value => 'BY';
@@ -1779,7 +1779,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BY'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$bz extends AllowedCountries {const AllowedCountries$bz._();
 
 @override String get value => 'BZ';
@@ -1788,7 +1788,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'BZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ca extends AllowedCountries {const AllowedCountries$ca._();
 
 @override String get value => 'CA';
@@ -1797,7 +1797,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cd extends AllowedCountries {const AllowedCountries$cd._();
 
 @override String get value => 'CD';
@@ -1806,7 +1806,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CD'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cf extends AllowedCountries {const AllowedCountries$cf._();
 
 @override String get value => 'CF';
@@ -1815,7 +1815,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CF'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cg extends AllowedCountries {const AllowedCountries$cg._();
 
 @override String get value => 'CG';
@@ -1824,7 +1824,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ch extends AllowedCountries {const AllowedCountries$ch._();
 
 @override String get value => 'CH';
@@ -1833,7 +1833,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CH'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ci extends AllowedCountries {const AllowedCountries$ci._();
 
 @override String get value => 'CI';
@@ -1842,7 +1842,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ck extends AllowedCountries {const AllowedCountries$ck._();
 
 @override String get value => 'CK';
@@ -1851,7 +1851,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cl extends AllowedCountries {const AllowedCountries$cl._();
 
 @override String get value => 'CL';
@@ -1860,7 +1860,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cm extends AllowedCountries {const AllowedCountries$cm._();
 
 @override String get value => 'CM';
@@ -1869,7 +1869,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cn extends AllowedCountries {const AllowedCountries$cn._();
 
 @override String get value => 'CN';
@@ -1878,7 +1878,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$co extends AllowedCountries {const AllowedCountries$co._();
 
 @override String get value => 'CO';
@@ -1887,7 +1887,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cr extends AllowedCountries {const AllowedCountries$cr._();
 
 @override String get value => 'CR';
@@ -1896,7 +1896,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cv extends AllowedCountries {const AllowedCountries$cv._();
 
 @override String get value => 'CV';
@@ -1905,7 +1905,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CV'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cw extends AllowedCountries {const AllowedCountries$cw._();
 
 @override String get value => 'CW';
@@ -1914,7 +1914,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cy extends AllowedCountries {const AllowedCountries$cy._();
 
 @override String get value => 'CY';
@@ -1923,7 +1923,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CY'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$cz extends AllowedCountries {const AllowedCountries$cz._();
 
 @override String get value => 'CZ';
@@ -1932,7 +1932,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'CZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$de extends AllowedCountries {const AllowedCountries$de._();
 
 @override String get value => 'DE';
@@ -1941,7 +1941,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'DE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$dj extends AllowedCountries {const AllowedCountries$dj._();
 
 @override String get value => 'DJ';
@@ -1950,7 +1950,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'DJ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$dk extends AllowedCountries {const AllowedCountries$dk._();
 
 @override String get value => 'DK';
@@ -1959,7 +1959,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'DK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$dm extends AllowedCountries {const AllowedCountries$dm._();
 
 @override String get value => 'DM';
@@ -1968,7 +1968,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'DM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$$do extends AllowedCountries {const AllowedCountries$$do._();
 
 @override String get value => 'DO';
@@ -1977,7 +1977,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'DO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$dz extends AllowedCountries {const AllowedCountries$dz._();
 
 @override String get value => 'DZ';
@@ -1986,7 +1986,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'DZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ec extends AllowedCountries {const AllowedCountries$ec._();
 
 @override String get value => 'EC';
@@ -1995,7 +1995,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'EC'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ee extends AllowedCountries {const AllowedCountries$ee._();
 
 @override String get value => 'EE';
@@ -2004,7 +2004,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'EE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$eg extends AllowedCountries {const AllowedCountries$eg._();
 
 @override String get value => 'EG';
@@ -2013,7 +2013,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'EG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$eh extends AllowedCountries {const AllowedCountries$eh._();
 
 @override String get value => 'EH';
@@ -2022,7 +2022,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'EH'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$er extends AllowedCountries {const AllowedCountries$er._();
 
 @override String get value => 'ER';
@@ -2031,7 +2031,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ER'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$es extends AllowedCountries {const AllowedCountries$es._();
 
 @override String get value => 'ES';
@@ -2040,7 +2040,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ES'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$et extends AllowedCountries {const AllowedCountries$et._();
 
 @override String get value => 'ET';
@@ -2049,7 +2049,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ET'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$fi extends AllowedCountries {const AllowedCountries$fi._();
 
 @override String get value => 'FI';
@@ -2058,7 +2058,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'FI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$fj extends AllowedCountries {const AllowedCountries$fj._();
 
 @override String get value => 'FJ';
@@ -2067,7 +2067,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'FJ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$fk extends AllowedCountries {const AllowedCountries$fk._();
 
 @override String get value => 'FK';
@@ -2076,7 +2076,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'FK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$fo extends AllowedCountries {const AllowedCountries$fo._();
 
 @override String get value => 'FO';
@@ -2085,7 +2085,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'FO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$fr extends AllowedCountries {const AllowedCountries$fr._();
 
 @override String get value => 'FR';
@@ -2094,7 +2094,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'FR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ga extends AllowedCountries {const AllowedCountries$ga._();
 
 @override String get value => 'GA';
@@ -2103,7 +2103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gb extends AllowedCountries {const AllowedCountries$gb._();
 
 @override String get value => 'GB';
@@ -2112,7 +2112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GB'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gd extends AllowedCountries {const AllowedCountries$gd._();
 
 @override String get value => 'GD';
@@ -2121,7 +2121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GD'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ge extends AllowedCountries {const AllowedCountries$ge._();
 
 @override String get value => 'GE';
@@ -2130,7 +2130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gf extends AllowedCountries {const AllowedCountries$gf._();
 
 @override String get value => 'GF';
@@ -2139,7 +2139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GF'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gg extends AllowedCountries {const AllowedCountries$gg._();
 
 @override String get value => 'GG';
@@ -2148,7 +2148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gh extends AllowedCountries {const AllowedCountries$gh._();
 
 @override String get value => 'GH';
@@ -2157,7 +2157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GH'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gi extends AllowedCountries {const AllowedCountries$gi._();
 
 @override String get value => 'GI';
@@ -2166,7 +2166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gl extends AllowedCountries {const AllowedCountries$gl._();
 
 @override String get value => 'GL';
@@ -2175,7 +2175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gm extends AllowedCountries {const AllowedCountries$gm._();
 
 @override String get value => 'GM';
@@ -2184,7 +2184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gn extends AllowedCountries {const AllowedCountries$gn._();
 
 @override String get value => 'GN';
@@ -2193,7 +2193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gp extends AllowedCountries {const AllowedCountries$gp._();
 
 @override String get value => 'GP';
@@ -2202,7 +2202,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GP'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gq extends AllowedCountries {const AllowedCountries$gq._();
 
 @override String get value => 'GQ';
@@ -2211,7 +2211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GQ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gr extends AllowedCountries {const AllowedCountries$gr._();
 
 @override String get value => 'GR';
@@ -2220,7 +2220,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gs extends AllowedCountries {const AllowedCountries$gs._();
 
 @override String get value => 'GS';
@@ -2229,7 +2229,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gt extends AllowedCountries {const AllowedCountries$gt._();
 
 @override String get value => 'GT';
@@ -2238,7 +2238,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gu extends AllowedCountries {const AllowedCountries$gu._();
 
 @override String get value => 'GU';
@@ -2247,7 +2247,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GU'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gw extends AllowedCountries {const AllowedCountries$gw._();
 
 @override String get value => 'GW';
@@ -2256,7 +2256,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$gy extends AllowedCountries {const AllowedCountries$gy._();
 
 @override String get value => 'GY';
@@ -2265,7 +2265,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'GY'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$hk extends AllowedCountries {const AllowedCountries$hk._();
 
 @override String get value => 'HK';
@@ -2274,7 +2274,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'HK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$hn extends AllowedCountries {const AllowedCountries$hn._();
 
 @override String get value => 'HN';
@@ -2283,7 +2283,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'HN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$hr extends AllowedCountries {const AllowedCountries$hr._();
 
 @override String get value => 'HR';
@@ -2292,7 +2292,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'HR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ht extends AllowedCountries {const AllowedCountries$ht._();
 
 @override String get value => 'HT';
@@ -2301,7 +2301,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'HT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$hu extends AllowedCountries {const AllowedCountries$hu._();
 
 @override String get value => 'HU';
@@ -2310,7 +2310,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'HU'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$id extends AllowedCountries {const AllowedCountries$id._();
 
 @override String get value => 'ID';
@@ -2319,7 +2319,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ID'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ie extends AllowedCountries {const AllowedCountries$ie._();
 
 @override String get value => 'IE';
@@ -2328,7 +2328,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'IE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$il extends AllowedCountries {const AllowedCountries$il._();
 
 @override String get value => 'IL';
@@ -2337,7 +2337,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'IL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$im extends AllowedCountries {const AllowedCountries$im._();
 
 @override String get value => 'IM';
@@ -2346,7 +2346,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'IM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$$in extends AllowedCountries {const AllowedCountries$$in._();
 
 @override String get value => 'IN';
@@ -2355,7 +2355,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'IN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$io extends AllowedCountries {const AllowedCountries$io._();
 
 @override String get value => 'IO';
@@ -2364,7 +2364,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'IO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$iq extends AllowedCountries {const AllowedCountries$iq._();
 
 @override String get value => 'IQ';
@@ -2373,7 +2373,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'IQ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$$is extends AllowedCountries {const AllowedCountries$$is._();
 
 @override String get value => 'IS';
@@ -2382,7 +2382,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'IS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$it extends AllowedCountries {const AllowedCountries$it._();
 
 @override String get value => 'IT';
@@ -2391,7 +2391,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'IT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$je extends AllowedCountries {const AllowedCountries$je._();
 
 @override String get value => 'JE';
@@ -2400,7 +2400,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'JE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$jm extends AllowedCountries {const AllowedCountries$jm._();
 
 @override String get value => 'JM';
@@ -2409,7 +2409,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'JM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$jo extends AllowedCountries {const AllowedCountries$jo._();
 
 @override String get value => 'JO';
@@ -2418,7 +2418,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'JO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$jp extends AllowedCountries {const AllowedCountries$jp._();
 
 @override String get value => 'JP';
@@ -2427,7 +2427,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'JP'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ke extends AllowedCountries {const AllowedCountries$ke._();
 
 @override String get value => 'KE';
@@ -2436,7 +2436,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$kg extends AllowedCountries {const AllowedCountries$kg._();
 
 @override String get value => 'KG';
@@ -2445,7 +2445,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$kh extends AllowedCountries {const AllowedCountries$kh._();
 
 @override String get value => 'KH';
@@ -2454,7 +2454,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KH'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ki extends AllowedCountries {const AllowedCountries$ki._();
 
 @override String get value => 'KI';
@@ -2463,7 +2463,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$km extends AllowedCountries {const AllowedCountries$km._();
 
 @override String get value => 'KM';
@@ -2472,7 +2472,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$kn extends AllowedCountries {const AllowedCountries$kn._();
 
 @override String get value => 'KN';
@@ -2481,7 +2481,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$kr extends AllowedCountries {const AllowedCountries$kr._();
 
 @override String get value => 'KR';
@@ -2490,7 +2490,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$kw extends AllowedCountries {const AllowedCountries$kw._();
 
 @override String get value => 'KW';
@@ -2499,7 +2499,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ky extends AllowedCountries {const AllowedCountries$ky._();
 
 @override String get value => 'KY';
@@ -2508,7 +2508,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KY'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$kz extends AllowedCountries {const AllowedCountries$kz._();
 
 @override String get value => 'KZ';
@@ -2517,7 +2517,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'KZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$la extends AllowedCountries {const AllowedCountries$la._();
 
 @override String get value => 'LA';
@@ -2526,7 +2526,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$lb extends AllowedCountries {const AllowedCountries$lb._();
 
 @override String get value => 'LB';
@@ -2535,7 +2535,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LB'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$lc extends AllowedCountries {const AllowedCountries$lc._();
 
 @override String get value => 'LC';
@@ -2544,7 +2544,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LC'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$li extends AllowedCountries {const AllowedCountries$li._();
 
 @override String get value => 'LI';
@@ -2553,7 +2553,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$lk extends AllowedCountries {const AllowedCountries$lk._();
 
 @override String get value => 'LK';
@@ -2562,7 +2562,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$lr extends AllowedCountries {const AllowedCountries$lr._();
 
 @override String get value => 'LR';
@@ -2571,7 +2571,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ls extends AllowedCountries {const AllowedCountries$ls._();
 
 @override String get value => 'LS';
@@ -2580,7 +2580,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$lt extends AllowedCountries {const AllowedCountries$lt._();
 
 @override String get value => 'LT';
@@ -2589,7 +2589,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$lu extends AllowedCountries {const AllowedCountries$lu._();
 
 @override String get value => 'LU';
@@ -2598,7 +2598,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LU'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$lv extends AllowedCountries {const AllowedCountries$lv._();
 
 @override String get value => 'LV';
@@ -2607,7 +2607,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LV'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ly extends AllowedCountries {const AllowedCountries$ly._();
 
 @override String get value => 'LY';
@@ -2616,7 +2616,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'LY'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ma extends AllowedCountries {const AllowedCountries$ma._();
 
 @override String get value => 'MA';
@@ -2625,7 +2625,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mc extends AllowedCountries {const AllowedCountries$mc._();
 
 @override String get value => 'MC';
@@ -2634,7 +2634,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MC'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$md extends AllowedCountries {const AllowedCountries$md._();
 
 @override String get value => 'MD';
@@ -2643,7 +2643,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MD'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$me extends AllowedCountries {const AllowedCountries$me._();
 
 @override String get value => 'ME';
@@ -2652,7 +2652,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ME'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mf extends AllowedCountries {const AllowedCountries$mf._();
 
 @override String get value => 'MF';
@@ -2661,7 +2661,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MF'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mg extends AllowedCountries {const AllowedCountries$mg._();
 
 @override String get value => 'MG';
@@ -2670,7 +2670,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mk extends AllowedCountries {const AllowedCountries$mk._();
 
 @override String get value => 'MK';
@@ -2679,7 +2679,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ml extends AllowedCountries {const AllowedCountries$ml._();
 
 @override String get value => 'ML';
@@ -2688,7 +2688,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ML'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mm extends AllowedCountries {const AllowedCountries$mm._();
 
 @override String get value => 'MM';
@@ -2697,7 +2697,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mn extends AllowedCountries {const AllowedCountries$mn._();
 
 @override String get value => 'MN';
@@ -2706,7 +2706,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mo extends AllowedCountries {const AllowedCountries$mo._();
 
 @override String get value => 'MO';
@@ -2715,7 +2715,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mq extends AllowedCountries {const AllowedCountries$mq._();
 
 @override String get value => 'MQ';
@@ -2724,7 +2724,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MQ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mr extends AllowedCountries {const AllowedCountries$mr._();
 
 @override String get value => 'MR';
@@ -2733,7 +2733,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ms extends AllowedCountries {const AllowedCountries$ms._();
 
 @override String get value => 'MS';
@@ -2742,7 +2742,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mt extends AllowedCountries {const AllowedCountries$mt._();
 
 @override String get value => 'MT';
@@ -2751,7 +2751,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mu extends AllowedCountries {const AllowedCountries$mu._();
 
 @override String get value => 'MU';
@@ -2760,7 +2760,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MU'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mv extends AllowedCountries {const AllowedCountries$mv._();
 
 @override String get value => 'MV';
@@ -2769,7 +2769,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MV'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mw extends AllowedCountries {const AllowedCountries$mw._();
 
 @override String get value => 'MW';
@@ -2778,7 +2778,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mx extends AllowedCountries {const AllowedCountries$mx._();
 
 @override String get value => 'MX';
@@ -2787,7 +2787,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MX'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$my extends AllowedCountries {const AllowedCountries$my._();
 
 @override String get value => 'MY';
@@ -2796,7 +2796,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MY'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$mz extends AllowedCountries {const AllowedCountries$mz._();
 
 @override String get value => 'MZ';
@@ -2805,7 +2805,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'MZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$na extends AllowedCountries {const AllowedCountries$na._();
 
 @override String get value => 'NA';
@@ -2814,7 +2814,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$nc extends AllowedCountries {const AllowedCountries$nc._();
 
 @override String get value => 'NC';
@@ -2823,7 +2823,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NC'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ne extends AllowedCountries {const AllowedCountries$ne._();
 
 @override String get value => 'NE';
@@ -2832,7 +2832,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ng extends AllowedCountries {const AllowedCountries$ng._();
 
 @override String get value => 'NG';
@@ -2841,7 +2841,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ni extends AllowedCountries {const AllowedCountries$ni._();
 
 @override String get value => 'NI';
@@ -2850,7 +2850,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$nl extends AllowedCountries {const AllowedCountries$nl._();
 
 @override String get value => 'NL';
@@ -2859,7 +2859,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$no extends AllowedCountries {const AllowedCountries$no._();
 
 @override String get value => 'NO';
@@ -2868,7 +2868,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$np extends AllowedCountries {const AllowedCountries$np._();
 
 @override String get value => 'NP';
@@ -2877,7 +2877,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NP'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$nr extends AllowedCountries {const AllowedCountries$nr._();
 
 @override String get value => 'NR';
@@ -2886,7 +2886,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$nu extends AllowedCountries {const AllowedCountries$nu._();
 
 @override String get value => 'NU';
@@ -2895,7 +2895,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NU'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$nz extends AllowedCountries {const AllowedCountries$nz._();
 
 @override String get value => 'NZ';
@@ -2904,7 +2904,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'NZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$om extends AllowedCountries {const AllowedCountries$om._();
 
 @override String get value => 'OM';
@@ -2913,7 +2913,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'OM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pa extends AllowedCountries {const AllowedCountries$pa._();
 
 @override String get value => 'PA';
@@ -2922,7 +2922,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pe extends AllowedCountries {const AllowedCountries$pe._();
 
 @override String get value => 'PE';
@@ -2931,7 +2931,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pf extends AllowedCountries {const AllowedCountries$pf._();
 
 @override String get value => 'PF';
@@ -2940,7 +2940,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PF'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pg extends AllowedCountries {const AllowedCountries$pg._();
 
 @override String get value => 'PG';
@@ -2949,7 +2949,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ph extends AllowedCountries {const AllowedCountries$ph._();
 
 @override String get value => 'PH';
@@ -2958,7 +2958,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PH'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pk extends AllowedCountries {const AllowedCountries$pk._();
 
 @override String get value => 'PK';
@@ -2967,7 +2967,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pl extends AllowedCountries {const AllowedCountries$pl._();
 
 @override String get value => 'PL';
@@ -2976,7 +2976,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pm extends AllowedCountries {const AllowedCountries$pm._();
 
 @override String get value => 'PM';
@@ -2985,7 +2985,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pn extends AllowedCountries {const AllowedCountries$pn._();
 
 @override String get value => 'PN';
@@ -2994,7 +2994,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pr extends AllowedCountries {const AllowedCountries$pr._();
 
 @override String get value => 'PR';
@@ -3003,7 +3003,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ps extends AllowedCountries {const AllowedCountries$ps._();
 
 @override String get value => 'PS';
@@ -3012,7 +3012,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$pt extends AllowedCountries {const AllowedCountries$pt._();
 
 @override String get value => 'PT';
@@ -3021,7 +3021,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$py extends AllowedCountries {const AllowedCountries$py._();
 
 @override String get value => 'PY';
@@ -3030,7 +3030,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'PY'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$qa extends AllowedCountries {const AllowedCountries$qa._();
 
 @override String get value => 'QA';
@@ -3039,7 +3039,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'QA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$re extends AllowedCountries {const AllowedCountries$re._();
 
 @override String get value => 'RE';
@@ -3048,7 +3048,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'RE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ro extends AllowedCountries {const AllowedCountries$ro._();
 
 @override String get value => 'RO';
@@ -3057,7 +3057,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'RO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$rs extends AllowedCountries {const AllowedCountries$rs._();
 
 @override String get value => 'RS';
@@ -3066,7 +3066,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'RS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ru extends AllowedCountries {const AllowedCountries$ru._();
 
 @override String get value => 'RU';
@@ -3075,7 +3075,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'RU'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$rw extends AllowedCountries {const AllowedCountries$rw._();
 
 @override String get value => 'RW';
@@ -3084,7 +3084,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'RW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sa extends AllowedCountries {const AllowedCountries$sa._();
 
 @override String get value => 'SA';
@@ -3093,7 +3093,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sb extends AllowedCountries {const AllowedCountries$sb._();
 
 @override String get value => 'SB';
@@ -3102,7 +3102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SB'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sc extends AllowedCountries {const AllowedCountries$sc._();
 
 @override String get value => 'SC';
@@ -3111,7 +3111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SC'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sd extends AllowedCountries {const AllowedCountries$sd._();
 
 @override String get value => 'SD';
@@ -3120,7 +3120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SD'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$se extends AllowedCountries {const AllowedCountries$se._();
 
 @override String get value => 'SE';
@@ -3129,7 +3129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sg extends AllowedCountries {const AllowedCountries$sg._();
 
 @override String get value => 'SG';
@@ -3138,7 +3138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sh extends AllowedCountries {const AllowedCountries$sh._();
 
 @override String get value => 'SH';
@@ -3147,7 +3147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SH'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$si extends AllowedCountries {const AllowedCountries$si._();
 
 @override String get value => 'SI';
@@ -3156,7 +3156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SI'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sj extends AllowedCountries {const AllowedCountries$sj._();
 
 @override String get value => 'SJ';
@@ -3165,7 +3165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SJ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sk extends AllowedCountries {const AllowedCountries$sk._();
 
 @override String get value => 'SK';
@@ -3174,7 +3174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sl extends AllowedCountries {const AllowedCountries$sl._();
 
 @override String get value => 'SL';
@@ -3183,7 +3183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sm extends AllowedCountries {const AllowedCountries$sm._();
 
 @override String get value => 'SM';
@@ -3192,7 +3192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sn extends AllowedCountries {const AllowedCountries$sn._();
 
 @override String get value => 'SN';
@@ -3201,7 +3201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$so extends AllowedCountries {const AllowedCountries$so._();
 
 @override String get value => 'SO';
@@ -3210,7 +3210,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sr extends AllowedCountries {const AllowedCountries$sr._();
 
 @override String get value => 'SR';
@@ -3219,7 +3219,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ss extends AllowedCountries {const AllowedCountries$ss._();
 
 @override String get value => 'SS';
@@ -3228,7 +3228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$st extends AllowedCountries {const AllowedCountries$st._();
 
 @override String get value => 'ST';
@@ -3237,7 +3237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ST'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sv extends AllowedCountries {const AllowedCountries$sv._();
 
 @override String get value => 'SV';
@@ -3246,7 +3246,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SV'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sx extends AllowedCountries {const AllowedCountries$sx._();
 
 @override String get value => 'SX';
@@ -3255,7 +3255,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SX'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$sz extends AllowedCountries {const AllowedCountries$sz._();
 
 @override String get value => 'SZ';
@@ -3264,7 +3264,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'SZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ta extends AllowedCountries {const AllowedCountries$ta._();
 
 @override String get value => 'TA';
@@ -3273,7 +3273,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tc extends AllowedCountries {const AllowedCountries$tc._();
 
 @override String get value => 'TC';
@@ -3282,7 +3282,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TC'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$td extends AllowedCountries {const AllowedCountries$td._();
 
 @override String get value => 'TD';
@@ -3291,7 +3291,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TD'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tf extends AllowedCountries {const AllowedCountries$tf._();
 
 @override String get value => 'TF';
@@ -3300,7 +3300,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TF'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tg extends AllowedCountries {const AllowedCountries$tg._();
 
 @override String get value => 'TG';
@@ -3309,7 +3309,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$th extends AllowedCountries {const AllowedCountries$th._();
 
 @override String get value => 'TH';
@@ -3318,7 +3318,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TH'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tj extends AllowedCountries {const AllowedCountries$tj._();
 
 @override String get value => 'TJ';
@@ -3327,7 +3327,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TJ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tk extends AllowedCountries {const AllowedCountries$tk._();
 
 @override String get value => 'TK';
@@ -3336,7 +3336,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tl extends AllowedCountries {const AllowedCountries$tl._();
 
 @override String get value => 'TL';
@@ -3345,7 +3345,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TL'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tm extends AllowedCountries {const AllowedCountries$tm._();
 
 @override String get value => 'TM';
@@ -3354,7 +3354,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tn extends AllowedCountries {const AllowedCountries$tn._();
 
 @override String get value => 'TN';
@@ -3363,7 +3363,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$to extends AllowedCountries {const AllowedCountries$to._();
 
 @override String get value => 'TO';
@@ -3372,7 +3372,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TO'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tr extends AllowedCountries {const AllowedCountries$tr._();
 
 @override String get value => 'TR';
@@ -3381,7 +3381,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TR'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tt extends AllowedCountries {const AllowedCountries$tt._();
 
 @override String get value => 'TT';
@@ -3390,7 +3390,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tv extends AllowedCountries {const AllowedCountries$tv._();
 
 @override String get value => 'TV';
@@ -3399,7 +3399,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TV'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tw extends AllowedCountries {const AllowedCountries$tw._();
 
 @override String get value => 'TW';
@@ -3408,7 +3408,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$tz extends AllowedCountries {const AllowedCountries$tz._();
 
 @override String get value => 'TZ';
@@ -3417,7 +3417,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'TZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ua extends AllowedCountries {const AllowedCountries$ua._();
 
 @override String get value => 'UA';
@@ -3426,7 +3426,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'UA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ug extends AllowedCountries {const AllowedCountries$ug._();
 
 @override String get value => 'UG';
@@ -3435,7 +3435,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'UG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$us extends AllowedCountries {const AllowedCountries$us._();
 
 @override String get value => 'US';
@@ -3444,7 +3444,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'US'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$uy extends AllowedCountries {const AllowedCountries$uy._();
 
 @override String get value => 'UY';
@@ -3453,7 +3453,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'UY'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$uz extends AllowedCountries {const AllowedCountries$uz._();
 
 @override String get value => 'UZ';
@@ -3462,7 +3462,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'UZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$va extends AllowedCountries {const AllowedCountries$va._();
 
 @override String get value => 'VA';
@@ -3471,7 +3471,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'VA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$vc extends AllowedCountries {const AllowedCountries$vc._();
 
 @override String get value => 'VC';
@@ -3480,7 +3480,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'VC'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ve extends AllowedCountries {const AllowedCountries$ve._();
 
 @override String get value => 'VE';
@@ -3489,7 +3489,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'VE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$vg extends AllowedCountries {const AllowedCountries$vg._();
 
 @override String get value => 'VG';
@@ -3498,7 +3498,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'VG'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$vn extends AllowedCountries {const AllowedCountries$vn._();
 
 @override String get value => 'VN';
@@ -3507,7 +3507,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'VN'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$vu extends AllowedCountries {const AllowedCountries$vu._();
 
 @override String get value => 'VU';
@@ -3516,7 +3516,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'VU'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$wf extends AllowedCountries {const AllowedCountries$wf._();
 
 @override String get value => 'WF';
@@ -3525,7 +3525,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'WF'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ws extends AllowedCountries {const AllowedCountries$ws._();
 
 @override String get value => 'WS';
@@ -3534,7 +3534,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'WS'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$xk extends AllowedCountries {const AllowedCountries$xk._();
 
 @override String get value => 'XK';
@@ -3543,7 +3543,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'XK'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$ye extends AllowedCountries {const AllowedCountries$ye._();
 
 @override String get value => 'YE';
@@ -3552,7 +3552,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'YE'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$yt extends AllowedCountries {const AllowedCountries$yt._();
 
 @override String get value => 'YT';
@@ -3561,7 +3561,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'YT'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$za extends AllowedCountries {const AllowedCountries$za._();
 
 @override String get value => 'ZA';
@@ -3570,7 +3570,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ZA'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$zm extends AllowedCountries {const AllowedCountries$zm._();
 
 @override String get value => 'ZM';
@@ -3579,7 +3579,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ZM'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$zw extends AllowedCountries {const AllowedCountries$zw._();
 
 @override String get value => 'ZW';
@@ -3588,7 +3588,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ZW'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$zz extends AllowedCountries {const AllowedCountries$zz._();
 
 @override String get value => 'ZZ';
@@ -3597,7 +3597,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => 'ZZ'.hashCode;
 
- }
+}
 @immutable final class AllowedCountries$Unknown extends AllowedCountries {const AllowedCountries$Unknown(this.value);
 
 @override final String value;
@@ -3607,4 +3607,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ac, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

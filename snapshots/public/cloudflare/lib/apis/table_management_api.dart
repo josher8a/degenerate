@@ -16,7 +16,7 @@ final class TableManagementApi with ApiExecutor {const TableManagementApi(this.a
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables`
-Future<ApiResult<R2DataCatalogTableListResponse?, DisableCatalogError>> listTables({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, String? pageToken, int? pageSize, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<R2DataCatalogTableListResponse?, DisableCatalogError>> listTables({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, String? pageToken, int? pageSize, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageToken != null) {
   queryParameters['page_token'] = pageToken;
@@ -50,5 +50,5 @@ return await execute(
   },
   onError: DisableCatalogError.fromResponse,
 );
- } 
- }
+}
+}

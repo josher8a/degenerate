@@ -7,11 +7,11 @@ const ExpectedAt({this.$int = const Omittable.absent(), this.getPaymentMethodCon
 const ExpectedAt._({required this.rawValue, required this.$int, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ExpectedAt.fromJson(Object? json) { return ExpectedAt._(
+factory ExpectedAt.fromJson(Object? json) {return ExpectedAt._(
   rawValue: Omittable(json),
   $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ExpectedAt(${toJson()})';
 
- }
+}

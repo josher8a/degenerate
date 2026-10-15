@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_create/ref_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_deploy_pusher_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_ref0.dart';@immutable final class WebhookCreate {const WebhookCreate({required this.description, required this.masterBranch, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate(
+factory WebhookCreate.fromJson(Map<String, dynamic> json) {return WebhookCreate(
   description: json['description'] as String?,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -14,7 +14,7 @@ factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate
   refType: RefType.fromJson(json['ref_type'] as String),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 /// The repository's current description.
 final String? description;
@@ -41,7 +41,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -52,15 +52,15 @@ Map<String, dynamic> toJson() { return {
   'ref_type': refType.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('master_branch') && json['master_branch'] is String &&
       json.containsKey('pusher_type') &&
       json.containsKey('ref') &&
       json.containsKey('ref_type') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, String? masterBranch, OrganizationSimpleWebhooks? Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, RefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCreate(
+      json.containsKey('sender');}
+WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, String? masterBranch, OrganizationSimpleWebhooks? Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, RefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCreate(
   description: description != null ? description() : this.description,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -71,7 +71,7 @@ WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Fun
   refType: refType ?? this.refType,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCreate &&
           description == other.description &&
@@ -89,4 +89,4 @@ WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Fun
 
 @override String toString() => 'WebhookCreate(\n  description: $description,\n  enterprise: $enterprise,\n  installation: $installation,\n  masterBranch: $masterBranch,\n  organization: $organization,\n  pusherType: $pusherType,\n  ref: $ref,\n  refType: $refType,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

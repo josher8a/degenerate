@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';/// Network status of device.
 sealed class NetworkStatus {const NetworkStatus();
 
-factory NetworkStatus.fromJson(String json) { return switch (json) {
+factory NetworkStatus.fromJson(String json) {return switch (json) {
   'connected' => connected,
   'disconnected' => disconnected,
   'disconnecting' => disconnecting,
   'connecting' => connecting,
   _ => NetworkStatus$Unknown(json),
-}; }
+};}
 
 static const NetworkStatus connected = NetworkStatus$connected._();
 
@@ -23,36 +23,36 @@ static const NetworkStatus connecting = NetworkStatus$connecting._();
 static const List<NetworkStatus> values = [connected, disconnected, disconnecting, connecting];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'connected' => 'connected',
   'disconnected' => 'disconnected',
   'disconnecting' => 'disconnecting',
   'connecting' => 'connecting',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NetworkStatus$Unknown; } 
+bool get isUnknown {return this is NetworkStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() connected, required W Function() disconnected, required W Function() disconnecting, required W Function() connecting, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() connected, required W Function() disconnected, required W Function() disconnecting, required W Function() connecting, required W Function(String value) $unknown, }) {return switch (this) {
       NetworkStatus$connected() => connected(),
       NetworkStatus$disconnected() => disconnected(),
       NetworkStatus$disconnecting() => disconnecting(),
       NetworkStatus$connecting() => connecting(),
       NetworkStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? connected, W Function()? disconnected, W Function()? disconnecting, W Function()? connecting, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? connected, W Function()? disconnected, W Function()? disconnecting, W Function()? connecting, W Function(String value)? $unknown, }) {return switch (this) {
       NetworkStatus$connected() => connected != null ? connected() : orElse(value),
       NetworkStatus$disconnected() => disconnected != null ? disconnected() : orElse(value),
       NetworkStatus$disconnecting() => disconnecting != null ? disconnecting() : orElse(value),
       NetworkStatus$connecting() => connecting != null ? connecting() : orElse(value),
       NetworkStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'NetworkStatus($value)';
 
- }
+}
 @immutable final class NetworkStatus$connected extends NetworkStatus {const NetworkStatus$connected._();
 
 @override String get value => 'connected';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecte
 
 @override int get hashCode => 'connected'.hashCode;
 
- }
+}
 @immutable final class NetworkStatus$disconnected extends NetworkStatus {const NetworkStatus$disconnected._();
 
 @override String get value => 'disconnected';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecte
 
 @override int get hashCode => 'disconnected'.hashCode;
 
- }
+}
 @immutable final class NetworkStatus$disconnecting extends NetworkStatus {const NetworkStatus$disconnecting._();
 
 @override String get value => 'disconnecting';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecte
 
 @override int get hashCode => 'disconnecting'.hashCode;
 
- }
+}
 @immutable final class NetworkStatus$connecting extends NetworkStatus {const NetworkStatus$connecting._();
 
 @override String get value => 'connecting';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecte
 
 @override int get hashCode => 'connecting'.hashCode;
 
- }
+}
 @immutable final class NetworkStatus$Unknown extends NetworkStatus {const NetworkStatus$Unknown(this.value);
 
 @override final String value;
@@ -98,11 +98,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecte
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Agent operational state.
 sealed class OperationalState {const OperationalState();
 
-factory OperationalState.fromJson(String json) { return switch (json) {
+factory OperationalState.fromJson(String json) {return switch (json) {
   'na' => na,
   'partially_disabled' => partiallyDisabled,
   'auto_fully_disabled' => autoFullyDisabled,
@@ -111,7 +111,7 @@ factory OperationalState.fromJson(String json) { return switch (json) {
   'disabled_error' => disabledError,
   'db_corruption' => dbCorruption,
   _ => OperationalState$Unknown(json),
-}; }
+};}
 
 static const OperationalState na = OperationalState$na._();
 
@@ -130,9 +130,9 @@ static const OperationalState dbCorruption = OperationalState$dbCorruption._();
 static const List<OperationalState> values = [na, partiallyDisabled, autoFullyDisabled, fullyDisabled, autoPartiallyDisabled, disabledError, dbCorruption];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'na' => 'na',
   'partially_disabled' => 'partiallyDisabled',
   'auto_fully_disabled' => 'autoFullyDisabled',
@@ -141,11 +141,11 @@ String get name { return switch (value) {
   'disabled_error' => 'disabledError',
   'db_corruption' => 'dbCorruption',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OperationalState$Unknown; } 
+bool get isUnknown {return this is OperationalState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() na, required W Function() partiallyDisabled, required W Function() autoFullyDisabled, required W Function() fullyDisabled, required W Function() autoPartiallyDisabled, required W Function() disabledError, required W Function() dbCorruption, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() na, required W Function() partiallyDisabled, required W Function() autoFullyDisabled, required W Function() fullyDisabled, required W Function() autoPartiallyDisabled, required W Function() disabledError, required W Function() dbCorruption, required W Function(String value) $unknown, }) {return switch (this) {
       OperationalState$na() => na(),
       OperationalState$partiallyDisabled() => partiallyDisabled(),
       OperationalState$autoFullyDisabled() => autoFullyDisabled(),
@@ -154,9 +154,9 @@ W when<W>({required W Function() na, required W Function() partiallyDisabled, re
       OperationalState$disabledError() => disabledError(),
       OperationalState$dbCorruption() => dbCorruption(),
       OperationalState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Function()? partiallyDisabled, W Function()? autoFullyDisabled, W Function()? fullyDisabled, W Function()? autoPartiallyDisabled, W Function()? disabledError, W Function()? dbCorruption, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Function()? partiallyDisabled, W Function()? autoFullyDisabled, W Function()? fullyDisabled, W Function()? autoPartiallyDisabled, W Function()? disabledError, W Function()? dbCorruption, W Function(String value)? $unknown, }) {return switch (this) {
       OperationalState$na() => na != null ? na() : orElse(value),
       OperationalState$partiallyDisabled() => partiallyDisabled != null ? partiallyDisabled() : orElse(value),
       OperationalState$autoFullyDisabled() => autoFullyDisabled != null ? autoFullyDisabled() : orElse(value),
@@ -165,10 +165,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
       OperationalState$disabledError() => disabledError != null ? disabledError() : orElse(value),
       OperationalState$dbCorruption() => dbCorruption != null ? dbCorruption() : orElse(value),
       OperationalState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OperationalState($value)';
 
- }
+}
 @immutable final class OperationalState$na extends OperationalState {const OperationalState$na._();
 
 @override String get value => 'na';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
 
 @override int get hashCode => 'na'.hashCode;
 
- }
+}
 @immutable final class OperationalState$partiallyDisabled extends OperationalState {const OperationalState$partiallyDisabled._();
 
 @override String get value => 'partially_disabled';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
 
 @override int get hashCode => 'partially_disabled'.hashCode;
 
- }
+}
 @immutable final class OperationalState$autoFullyDisabled extends OperationalState {const OperationalState$autoFullyDisabled._();
 
 @override String get value => 'auto_fully_disabled';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
 
 @override int get hashCode => 'auto_fully_disabled'.hashCode;
 
- }
+}
 @immutable final class OperationalState$fullyDisabled extends OperationalState {const OperationalState$fullyDisabled._();
 
 @override String get value => 'fully_disabled';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
 
 @override int get hashCode => 'fully_disabled'.hashCode;
 
- }
+}
 @immutable final class OperationalState$autoPartiallyDisabled extends OperationalState {const OperationalState$autoPartiallyDisabled._();
 
 @override String get value => 'auto_partially_disabled';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
 
 @override int get hashCode => 'auto_partially_disabled'.hashCode;
 
- }
+}
 @immutable final class OperationalState$disabledError extends OperationalState {const OperationalState$disabledError._();
 
 @override String get value => 'disabled_error';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
 
 @override int get hashCode => 'disabled_error'.hashCode;
 
- }
+}
 @immutable final class OperationalState$dbCorruption extends OperationalState {const OperationalState$dbCorruption._();
 
 @override String get value => 'db_corruption';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
 
 @override int get hashCode => 'db_corruption'.hashCode;
 
- }
+}
 @immutable final class OperationalState$Unknown extends OperationalState {const OperationalState$Unknown(this.value);
 
 @override final String value;
@@ -241,10 +241,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesSentineloneS2sInputRequest {const TeamsDevicesSentineloneS2sInputRequest({required this.connectionId, this.activeThreats, this.infected, this.isActive, this.networkStatus, this.operationalState, this.$operator, });
 
-factory TeamsDevicesSentineloneS2sInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesSentineloneS2sInputRequest(
+factory TeamsDevicesSentineloneS2sInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesSentineloneS2sInputRequest(
   activeThreats: json['active_threats'] != null ? (json['active_threats'] as num).toDouble() : null,
   connectionId: json['connection_id'] as String,
   infected: json['infected'] as bool?,
@@ -252,7 +252,7 @@ factory TeamsDevicesSentineloneS2sInputRequest.fromJson(Map<String, dynamic> jso
   networkStatus: json['network_status'] != null ? NetworkStatus.fromJson(json['network_status'] as String) : null,
   operationalState: json['operational_state'] != null ? OperationalState.fromJson(json['operational_state'] as String) : null,
   $operator: json['operator'] != null ? TeamsDevicesCrowdstrikeInputRequestOperator.fromJson(json['operator'] as String) : null,
-); }
+);}
 
 /// The Number of active threats.
 /// 
@@ -287,7 +287,7 @@ final OperationalState? operationalState;
 /// Example: `'>'`
 final TeamsDevicesCrowdstrikeInputRequestOperator? $operator;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_threats': ?activeThreats,
   'connection_id': connectionId,
   'infected': ?infected,
@@ -295,9 +295,9 @@ Map<String, dynamic> toJson() { return {
   if (networkStatus != null) 'network_status': networkStatus?.toJson(),
   if (operationalState != null) 'operational_state': operationalState?.toJson(),
   if ($operator != null) 'operator': $operator?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String; } 
-TeamsDevicesSentineloneS2sInputRequest copyWith({double? Function()? activeThreats, String? connectionId, bool? Function()? infected, bool? Function()? isActive, NetworkStatus? Function()? networkStatus, OperationalState? Function()? operationalState, TeamsDevicesCrowdstrikeInputRequestOperator? Function()? $operator, }) { return TeamsDevicesSentineloneS2sInputRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('connection_id') && json['connection_id'] is String;}
+TeamsDevicesSentineloneS2sInputRequest copyWith({double? Function()? activeThreats, String? connectionId, bool? Function()? infected, bool? Function()? isActive, NetworkStatus? Function()? networkStatus, OperationalState? Function()? operationalState, TeamsDevicesCrowdstrikeInputRequestOperator? Function()? $operator, }) {return TeamsDevicesSentineloneS2sInputRequest(
   activeThreats: activeThreats != null ? activeThreats() : this.activeThreats,
   connectionId: connectionId ?? this.connectionId,
   infected: infected != null ? infected() : this.infected,
@@ -305,7 +305,7 @@ TeamsDevicesSentineloneS2sInputRequest copyWith({double? Function()? activeThrea
   networkStatus: networkStatus != null ? networkStatus() : this.networkStatus,
   operationalState: operationalState != null ? operationalState() : this.operationalState,
   $operator: $operator != null ? $operator() : this.$operator,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesSentineloneS2sInputRequest &&
           activeThreats == other.activeThreats &&
@@ -320,4 +320,4 @@ TeamsDevicesSentineloneS2sInputRequest copyWith({double? Function()? activeThrea
 
 @override String toString() => 'TeamsDevicesSentineloneS2sInputRequest(activeThreats: $activeThreats, connectionId: $connectionId, infected: $infected, isActive: $isActive, networkStatus: $networkStatus, operationalState: $operationalState, \$operator: ${$operator})';
 
- }
+}

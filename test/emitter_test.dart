@@ -4989,12 +4989,44 @@ void main() {
 
   // ─── analyzeApiImports ───────────────────────────────────────
 
+  group('status union imports', () {
+    test('an anyOf body imports only its class, not its variants', () {
+      // The anyOf class decodes its own views; importing them from the error
+      // union file trips unused_import (FE `*Response409` errors).
+      const anyOf = IrAnyOf('Conflict409', [
+        IrTypeRef('AlreadyExists'),
+        IrTypeRef('Idempotency'),
+      ]);
+      final ctx = EmitContext(<String, IrType>{
+        'Conflict409': anyOf,
+        'AlreadyExists': const IrObject('AlreadyExists', []),
+        'Idempotency': const IrObject('Idempotency', []),
+      });
+      final source = emitRaw(
+        emitErrorUnionLibrary(
+          className: 'CreateError',
+          statusErrors: {409: ('Conflict409', const IrTypeRef('Conflict409'))},
+          ctx: ctx,
+          packageName: 'pkg',
+          typeToFile: const {
+            'Conflict409': 'conflict409',
+            'AlreadyExists': 'already_exists',
+            'Idempotency': 'idempotency',
+          },
+        ),
+      );
+      expect(source, contains('package:pkg/models/conflict409.dart'));
+      expect(source, isNot(contains('already_exists.dart')));
+      expect(source, isNot(contains('idempotency.dart')));
+    });
+  });
+
   group('analyzeApiImports', () {
-    test('stops at an empty-content success response, mirroring the emitter',
+    test('imports a 2XX body even when an exact success status is bodiless',
         () {
-      // The emitter treats an existing 2xx with no content as void and
-      // never deserializes the later 2XX body — importing its type would
-      // trip unused_import.
+      // A bodiless 200 next to a 2XX body yields `Thing?`: 2XX bodies are
+      // decoded (200 → null), so the type is used and must be imported.
+      // Both sides read the shared successShapeOf classification.
       final api = IrApi('TestApi', [
         IrOperation(
           'getThing',
@@ -5014,7 +5046,7 @@ void main() {
 
       final result = analyzeApiImports(api);
 
-      expect(result.referencedTypes, isNot(contains('Thing')));
+      expect(result.referencedTypes, contains('Thing'));
     });
 
     test('collects types from operation parameters', () {

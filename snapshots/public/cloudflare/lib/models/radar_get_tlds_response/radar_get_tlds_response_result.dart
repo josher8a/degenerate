@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_tlds_response/tlds.dart';@immutable final class RadarGetTldsResponseResult {const RadarGetTldsResponseResult({required this.tlds});
 
-factory RadarGetTldsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetTldsResponseResult(
+factory RadarGetTldsResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetTldsResponseResult(
   tlds: (json['tlds'] as List<dynamic>).map((e) => Tlds.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<Tlds> tlds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tlds': tlds.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tlds'); } 
-RadarGetTldsResponseResult copyWith({List<Tlds>? tlds}) { return RadarGetTldsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tlds');}
+RadarGetTldsResponseResult copyWith({List<Tlds>? tlds}) {return RadarGetTldsResponseResult(
   tlds: tlds ?? this.tlds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetTldsResponseResult &&
           listEquals(tlds, other.tlds);
@@ -24,4 +24,4 @@ RadarGetTldsResponseResult copyWith({List<Tlds>? tlds}) { return RadarGetTldsRes
 
 @override String toString() => 'RadarGetTldsResponseResult(tlds: $tlds)';
 
- }
+}

@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_access_group_rule/access_access_group_rule_group.dart';/// Matches an Access group.
 @immutable final class AccessAccessGroupRule {const AccessAccessGroupRule({required this.group});
 
-factory AccessAccessGroupRule.fromJson(Map<String, dynamic> json) { return AccessAccessGroupRule(
+factory AccessAccessGroupRule.fromJson(Map<String, dynamic> json) {return AccessAccessGroupRule(
   group: AccessAccessGroupRuleGroup.fromJson(json['group'] as Map<String, dynamic>),
-); }
+);}
 
 final AccessAccessGroupRuleGroup group;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'group': group.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('group'); } 
-AccessAccessGroupRule copyWith({AccessAccessGroupRuleGroup? group}) { return AccessAccessGroupRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('group');}
+AccessAccessGroupRule copyWith({AccessAccessGroupRuleGroup? group}) {return AccessAccessGroupRule(
   group: group ?? this.group,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAccessGroupRule &&
           group == other.group;
@@ -25,4 +25,4 @@ AccessAccessGroupRule copyWith({AccessAccessGroupRuleGroup? group}) { return Acc
 
 @override String toString() => 'AccessAccessGroupRule(group: $group)';
 
- }
+}

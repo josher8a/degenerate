@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingAlertsIdDeactivateRequest {const PostBillingAlertsIdDeactivateRequest({this.expand});
 
-factory PostBillingAlertsIdDeactivateRequest.fromJson(Map<String, dynamic> json) { return PostBillingAlertsIdDeactivateRequest(
+factory PostBillingAlertsIdDeactivateRequest.fromJson(Map<String, dynamic> json) {return PostBillingAlertsIdDeactivateRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
-PostBillingAlertsIdDeactivateRequest copyWith({List<String>? Function()? expand}) { return PostBillingAlertsIdDeactivateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand'}.contains(key));}
+PostBillingAlertsIdDeactivateRequest copyWith({List<String>? Function()? expand}) {return PostBillingAlertsIdDeactivateRequest(
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingAlertsIdDeactivateRequest &&
           listEquals(expand, other.expand);
@@ -25,4 +25,4 @@ PostBillingAlertsIdDeactivateRequest copyWith({List<String>? Function()? expand}
 
 @override String toString() => 'PostBillingAlertsIdDeactivateRequest(expand: $expand)';
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result.dart';@immutable final class RadarGetAttacksLayer7SummaryByVerticalResponse {const RadarGetAttacksLayer7SummaryByVerticalResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer7SummaryByVerticalResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByVerticalResponse(
+factory RadarGetAttacksLayer7SummaryByVerticalResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7SummaryByVerticalResponse(
   result: RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAiBotsSummaryByUserAgentResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer7SummaryByVerticalResponse copyWith({RadarGetAiBotsSummaryByUserAgentResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7SummaryByVerticalResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer7SummaryByVerticalResponse copyWith({RadarGetAiBotsSummaryByUserAgentResponseResult? result, bool? success, }) {return RadarGetAttacksLayer7SummaryByVerticalResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7SummaryByVerticalResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer7SummaryByVerticalResponse copyWith({RadarGetAiBotsSummaryBy
 
 @override String toString() => 'RadarGetAttacksLayer7SummaryByVerticalResponse(result: $result, success: $success)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_sensitivity_level.dart';@immutable final class DlpSensitivityGroup {const DlpSensitivityGroup({required this.createdAt, required this.description, required this.id, required this.levels, required this.name, required this.updatedAt, this.templateId = const Omittable.absent(), });
 
-factory DlpSensitivityGroup.fromJson(Map<String, dynamic> json) { return DlpSensitivityGroup(
+factory DlpSensitivityGroup.fromJson(Map<String, dynamic> json) {return DlpSensitivityGroup(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String,
   id: json['id'] as String,
@@ -11,7 +11,7 @@ factory DlpSensitivityGroup.fromJson(Map<String, dynamic> json) { return DlpSens
   name: json['name'] as String,
   templateId: json.containsKey('template_id') ? Omittable(json['template_id'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -27,7 +27,7 @@ final Omittable<String?> templateId;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'description': description,
   'id': id,
@@ -35,14 +35,14 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   if (templateId.isPresent) 'template_id': templateId.value,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('levels') &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-DlpSensitivityGroup copyWith({DateTime? createdAt, String? description, String? id, List<DlpSensitivityLevel>? levels, String? name, Omittable<String?>? templateId, DateTime? updatedAt, }) { return DlpSensitivityGroup(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+DlpSensitivityGroup copyWith({DateTime? createdAt, String? description, String? id, List<DlpSensitivityLevel>? levels, String? name, Omittable<String?>? templateId, DateTime? updatedAt, }) {return DlpSensitivityGroup(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   id: id ?? this.id,
@@ -50,7 +50,7 @@ DlpSensitivityGroup copyWith({DateTime? createdAt, String? description, String? 
   name: name ?? this.name,
   templateId: templateId ?? this.templateId,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpSensitivityGroup &&
           createdAt == other.createdAt &&
@@ -65,4 +65,4 @@ DlpSensitivityGroup copyWith({DateTime? createdAt, String? description, String? 
 
 @override String toString() => 'DlpSensitivityGroup(createdAt: $createdAt, description: $description, id: $id, levels: $levels, name: $name, templateId: $templateId, updatedAt: $updatedAt)';
 
- }
+}

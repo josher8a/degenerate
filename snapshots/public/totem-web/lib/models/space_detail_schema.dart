@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/next_session_schema.dart';import 'package:pub_totem_web/models/public_user_schema.dart';@immutable final class SpaceDetailSchema {const SpaceDetailSchema({required this.slug, required this.title, required this.imageLink, required this.shortDescription, required this.content, required this.author, required this.nextEvent, required this.category, required this.subscribers, required this.recurring, required this.price, });
 
-factory SpaceDetailSchema.fromJson(Map<String, dynamic> json) { return SpaceDetailSchema(
+factory SpaceDetailSchema.fromJson(Map<String, dynamic> json) {return SpaceDetailSchema(
   slug: json['slug'] as String,
   title: json['title'] as String,
   imageLink: json['image_link'] as String?,
@@ -15,7 +15,7 @@ factory SpaceDetailSchema.fromJson(Map<String, dynamic> json) { return SpaceDeta
   subscribers: (json['subscribers'] as num).toInt(),
   recurring: json['recurring'] as String?,
   price: (json['price'] as num).toInt(),
-); }
+);}
 
 final String slug;
 
@@ -39,7 +39,7 @@ final String? recurring;
 
 final int price;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'slug': slug,
   'title': title,
   'image_link': imageLink,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'subscribers': subscribers,
   'recurring': recurring,
   'price': price,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('image_link') && (json['image_link'] == null || json['image_link'] is String) &&
       json.containsKey('short_description') && json['short_description'] is String &&
@@ -62,8 +62,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug'
       json.containsKey('category') && (json['category'] == null || json['category'] is String) &&
       json.containsKey('subscribers') && json['subscribers'] is num &&
       json.containsKey('recurring') && (json['recurring'] == null || json['recurring'] is String) &&
-      json.containsKey('price') && json['price'] is num; } 
-SpaceDetailSchema copyWith({String? slug, String? title, String? Function()? imageLink, String? shortDescription, String? content, PublicUserSchema? author, NextSessionSchema? Function()? nextEvent, String? Function()? category, int? subscribers, String? Function()? recurring, int? price, }) { return SpaceDetailSchema(
+      json.containsKey('price') && json['price'] is num;}
+SpaceDetailSchema copyWith({String? slug, String? title, String? Function()? imageLink, String? shortDescription, String? content, PublicUserSchema? author, NextSessionSchema? Function()? nextEvent, String? Function()? category, int? subscribers, String? Function()? recurring, int? price, }) {return SpaceDetailSchema(
   slug: slug ?? this.slug,
   title: title ?? this.title,
   imageLink: imageLink != null ? imageLink() : this.imageLink,
@@ -75,7 +75,7 @@ SpaceDetailSchema copyWith({String? slug, String? title, String? Function()? ima
   subscribers: subscribers ?? this.subscribers,
   recurring: recurring != null ? recurring() : this.recurring,
   price: price ?? this.price,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpaceDetailSchema &&
           slug == other.slug &&
@@ -94,4 +94,4 @@ SpaceDetailSchema copyWith({String? slug, String? title, String? Function()? ima
 
 @override String toString() => 'SpaceDetailSchema(\n  slug: $slug,\n  title: $title,\n  imageLink: $imageLink,\n  shortDescription: $shortDescription,\n  content: $content,\n  author: $author,\n  nextEvent: $nextEvent,\n  category: $category,\n  subscribers: $subscribers,\n  recurring: $recurring,\n  price: $price,\n)';
 
- }
+}

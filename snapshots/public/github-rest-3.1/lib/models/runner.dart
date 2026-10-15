@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner_label.dart';/// A self hosted runner
 @immutable final class Runner {const Runner({required this.id, required this.name, required this.os, required this.status, required this.busy, required this.labels, this.runnerGroupId, this.ephemeral, });
 
-factory Runner.fromJson(Map<String, dynamic> json) { return Runner(
+factory Runner.fromJson(Map<String, dynamic> json) {return Runner(
   id: (json['id'] as num).toInt(),
   runnerGroupId: json['runner_group_id'] != null ? (json['runner_group_id'] as num).toInt() : null,
   name: json['name'] as String,
@@ -13,7 +13,7 @@ factory Runner.fromJson(Map<String, dynamic> json) { return Runner(
   busy: json['busy'] as bool,
   labels: (json['labels'] as List<dynamic>).map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>)).toList(),
   ephemeral: json['ephemeral'] as bool?,
-); }
+);}
 
 /// The ID of the runner.
 final int id;
@@ -36,7 +36,7 @@ final List<RunnerLabel> labels;
 
 final bool? ephemeral;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'runner_group_id': ?runnerGroupId,
   'name': name,
@@ -45,14 +45,14 @@ Map<String, dynamic> toJson() { return {
   'busy': busy,
   'labels': labels.map((e) => e.toJson()).toList(),
   'ephemeral': ?ephemeral,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('os') && json['os'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('busy') && json['busy'] is bool &&
-      json.containsKey('labels'); } 
-Runner copyWith({int? id, int? Function()? runnerGroupId, String? name, String? os, String? status, bool? busy, List<RunnerLabel>? labels, bool? Function()? ephemeral, }) { return Runner(
+      json.containsKey('labels');}
+Runner copyWith({int? id, int? Function()? runnerGroupId, String? name, String? os, String? status, bool? busy, List<RunnerLabel>? labels, bool? Function()? ephemeral, }) {return Runner(
   id: id ?? this.id,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,
   name: name ?? this.name,
@@ -61,7 +61,7 @@ Runner copyWith({int? id, int? Function()? runnerGroupId, String? name, String? 
   busy: busy ?? this.busy,
   labels: labels ?? this.labels,
   ephemeral: ephemeral != null ? ephemeral() : this.ephemeral,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Runner &&
           id == other.id &&
@@ -77,4 +77,4 @@ Runner copyWith({int? id, int? Function()? runnerGroupId, String? name, String? 
 
 @override String toString() => 'Runner(id: $id, runnerGroupId: $runnerGroupId, name: $name, os: $os, status: $status, busy: $busy, labels: $labels, ephemeral: $ephemeral)';
 
- }
+}

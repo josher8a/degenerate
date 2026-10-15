@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class GelatoRelatedPerson {const GelatoRelatedPerson({required this.account, required this.person, });
 
-factory GelatoRelatedPerson.fromJson(Map<String, dynamic> json) { return GelatoRelatedPerson(
+factory GelatoRelatedPerson.fromJson(Map<String, dynamic> json) {return GelatoRelatedPerson(
   account: json['account'] as String,
   person: json['person'] as String,
-); }
+);}
 
 /// Token referencing the associated Account of the related Person resource.
 final String account;
@@ -15,21 +15,21 @@ final String account;
 /// Token referencing the related Person resource.
 final String person;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   'person': person,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
-      json.containsKey('person') && json['person'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
+      json.containsKey('person') && json['person'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (account.runes.length > 5000) { errors.add('account: length must be <= 5000'); }
 if (person.runes.length > 5000) { errors.add('person: length must be <= 5000'); }
-return errors; } 
-GelatoRelatedPerson copyWith({String? account, String? person, }) { return GelatoRelatedPerson(
+return errors;}
+GelatoRelatedPerson copyWith({String? account, String? person, }) {return GelatoRelatedPerson(
   account: account ?? this.account,
   person: person ?? this.person,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoRelatedPerson &&
           account == other.account &&
@@ -39,4 +39,4 @@ GelatoRelatedPerson copyWith({String? account, String? person, }) { return Gelat
 
 @override String toString() => 'GelatoRelatedPerson(account: $account, person: $person)';
 
- }
+}

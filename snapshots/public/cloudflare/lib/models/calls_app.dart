@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_created.dart';import 'package:pub_cloudflare/models/calls_identifier.dart';import 'package:pub_cloudflare/models/calls_modified.dart';import 'package:pub_cloudflare/models/calls_name.dart';@immutable final class CallsApp {const CallsApp({this.created, this.modified, this.name, this.uid, });
 
-factory CallsApp.fromJson(Map<String, dynamic> json) { return CallsApp(
+factory CallsApp.fromJson(Map<String, dynamic> json) {return CallsApp(
   created: json['created'] != null ? CallsCreated.fromJson(json['created'] as String) : null,
   modified: json['modified'] != null ? CallsModified.fromJson(json['modified'] as String) : null,
   name: json['name'] != null ? CallsName.fromJson(json['name'] as String) : null,
   uid: json['uid'] != null ? CallsIdentifier.fromJson(json['uid'] as String) : null,
-); }
+);}
 
 final CallsCreated? created;
 
@@ -18,19 +18,19 @@ final CallsName? name;
 
 final CallsIdentifier? uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   if (modified != null) 'modified': modified?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'modified', 'name', 'uid'}.contains(key)); } 
-CallsApp copyWith({CallsCreated? Function()? created, CallsModified? Function()? modified, CallsName? Function()? name, CallsIdentifier? Function()? uid, }) { return CallsApp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created', 'modified', 'name', 'uid'}.contains(key));}
+CallsApp copyWith({CallsCreated? Function()? created, CallsModified? Function()? modified, CallsName? Function()? name, CallsIdentifier? Function()? uid, }) {return CallsApp(
   created: created != null ? created() : this.created,
   modified: modified != null ? modified() : this.modified,
   name: name != null ? name() : this.name,
   uid: uid != null ? uid() : this.uid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CallsApp &&
           created == other.created &&
@@ -42,4 +42,4 @@ CallsApp copyWith({CallsCreated? Function()? created, CallsModified? Function()?
 
 @override String toString() => 'CallsApp(created: $created, modified: $modified, name: $name, uid: $uid)';
 
- }
+}

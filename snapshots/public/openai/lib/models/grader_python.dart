@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class GraderPython {const GraderPython({required this.type, required this.name, required this.source, this.imageTag, });
 
-factory GraderPython.fromJson(Map<String, dynamic> json) { return GraderPython(
+factory GraderPython.fromJson(Map<String, dynamic> json) {return GraderPython(
   type: EvalGraderPythonType.fromJson(json['type'] as String),
   name: json['name'] as String,
   source: json['source'] as String,
   imageTag: json['image_tag'] as String?,
-); }
+);}
 
 /// The object type, which is always `python`.
 final EvalGraderPythonType type;
@@ -24,21 +24,21 @@ final String source;
 /// The image tag to use for the python script.
 final String? imageTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'source': source,
   'image_tag': ?imageTag,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'python' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'python' &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('source') && json['source'] is String; } 
-GraderPython copyWith({EvalGraderPythonType? type, String? name, String? source, String? Function()? imageTag, }) { return GraderPython(
+      json.containsKey('source') && json['source'] is String;}
+GraderPython copyWith({EvalGraderPythonType? type, String? name, String? source, String? Function()? imageTag, }) {return GraderPython(
   type: type ?? this.type,
   name: name ?? this.name,
   source: source ?? this.source,
   imageTag: imageTag != null ? imageTag() : this.imageTag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GraderPython &&
           type == other.type &&
@@ -50,4 +50,4 @@ GraderPython copyWith({EvalGraderPythonType? type, String? name, String? source,
 
 @override String toString() => 'GraderPython(type: $type, name: $name, source: $source, imageTag: $imageTag)';
 
- }
+}

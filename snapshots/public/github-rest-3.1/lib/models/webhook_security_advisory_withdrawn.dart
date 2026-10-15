@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_security_advisory_withdrawn/security_advisory.dart';sealed class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction();
 
-factory WebhookSecurityAdvisoryWithdrawnAction.fromJson(String json) { return switch (json) {
+factory WebhookSecurityAdvisoryWithdrawnAction.fromJson(String json) {return switch (json) {
   'withdrawn' => withdrawn,
   _ => WebhookSecurityAdvisoryWithdrawnAction$Unknown(json),
-}; }
+};}
 
 static const WebhookSecurityAdvisoryWithdrawnAction withdrawn = WebhookSecurityAdvisoryWithdrawnAction$withdrawn._();
 
 static const List<WebhookSecurityAdvisoryWithdrawnAction> values = [withdrawn];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'withdrawn' => 'withdrawn',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookSecurityAdvisoryWithdrawnAction$Unknown; } 
+bool get isUnknown {return this is WebhookSecurityAdvisoryWithdrawnAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() withdrawn, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() withdrawn, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookSecurityAdvisoryWithdrawnAction$withdrawn() => withdrawn(),
       WebhookSecurityAdvisoryWithdrawnAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? withdrawn, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? withdrawn, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookSecurityAdvisoryWithdrawnAction$withdrawn() => withdrawn != null ? withdrawn() : orElse(value),
       WebhookSecurityAdvisoryWithdrawnAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookSecurityAdvisoryWithdrawnAction($value)';
 
- }
+}
 @immutable final class WebhookSecurityAdvisoryWithdrawnAction$withdrawn extends WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction$withdrawn._();
 
 @override String get value => 'withdrawn';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? withdraw
 
 @override int get hashCode => 'withdrawn'.hashCode;
 
- }
+}
 @immutable final class WebhookSecurityAdvisoryWithdrawnAction$Unknown extends WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? withdraw
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookSecurityAdvisoryWithdrawn {const WebhookSecurityAdvisoryWithdrawn({required this.action, required this.securityAdvisory, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawn(
+factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) {return WebhookSecurityAdvisoryWithdrawn(
   action: WebhookSecurityAdvisoryWithdrawnAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -63,7 +63,7 @@ factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) { r
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   securityAdvisory: SecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookSecurityAdvisoryWithdrawnAction action;
 
@@ -80,7 +80,7 @@ final SecurityAdvisory securityAdvisory;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -88,10 +88,10 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'security_advisory': securityAdvisory.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('security_advisory'); } 
-WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SecurityAdvisory? securityAdvisory, SimpleUser? Function()? sender, }) { return WebhookSecurityAdvisoryWithdrawn(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('security_advisory');}
+WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SecurityAdvisory? securityAdvisory, SimpleUser? Function()? sender, }) {return WebhookSecurityAdvisoryWithdrawn(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -99,7 +99,7 @@ WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnActio
   repository: repository != null ? repository() : this.repository,
   securityAdvisory: securityAdvisory ?? this.securityAdvisory,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecurityAdvisoryWithdrawn &&
           action == other.action &&
@@ -114,4 +114,4 @@ WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnActio
 
 @override String toString() => 'WebhookSecurityAdvisoryWithdrawn(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)';
 
- }
+}

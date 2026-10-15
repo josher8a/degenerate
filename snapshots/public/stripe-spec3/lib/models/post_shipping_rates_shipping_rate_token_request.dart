@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_shipping_rate_token_request/post_shipping_rates_shipping_rate_token_request_fixed_amount.dart';@immutable final class PostShippingRatesShippingRateTokenRequest {const PostShippingRatesShippingRateTokenRequest({this.active, this.expand, this.fixedAmount, this.metadata, this.taxBehavior, });
 
-factory PostShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> json) { return PostShippingRatesShippingRateTokenRequest(
+factory PostShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> json) {return PostShippingRatesShippingRateTokenRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fixedAmount: json['fixed_amount'] != null ? PostShippingRatesShippingRateTokenRequestFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-); }
+);}
 
 /// Whether the shipping rate can be used for new purchases. Defaults to `true`.
 final bool? active;
@@ -26,21 +26,21 @@ final Metadata? metadata;
 /// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
 final PostInvoiceitemsInvoiceitemRequestTaxBehavior? taxBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'expand': ?expand,
   if (fixedAmount != null) 'fixed_amount': fixedAmount?.toJson(),
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'fixed_amount', 'metadata', 'tax_behavior'}.contains(key)); } 
-PostShippingRatesShippingRateTokenRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostShippingRatesShippingRateTokenRequestFixedAmount? Function()? fixedAmount, Metadata? Function()? metadata, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, }) { return PostShippingRatesShippingRateTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'expand', 'fixed_amount', 'metadata', 'tax_behavior'}.contains(key));}
+PostShippingRatesShippingRateTokenRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostShippingRatesShippingRateTokenRequestFixedAmount? Function()? fixedAmount, Metadata? Function()? metadata, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, }) {return PostShippingRatesShippingRateTokenRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,
   fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,
   metadata: metadata != null ? metadata() : this.metadata,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostShippingRatesShippingRateTokenRequest &&
           active == other.active &&
@@ -53,4 +53,4 @@ PostShippingRatesShippingRateTokenRequest copyWith({bool? Function()? active, Li
 
 @override String toString() => 'PostShippingRatesShippingRateTokenRequest(active: $active, expand: $expand, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior)';
 
- }
+}

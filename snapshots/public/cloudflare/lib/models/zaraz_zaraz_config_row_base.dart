@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazZarazConfigRowBase {const ZarazZarazConfigRowBase({required this.createdAt, required this.id, required this.updatedAt, required this.userId, });
 
-factory ZarazZarazConfigRowBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigRowBase(
+factory ZarazZarazConfigRowBase.fromJson(Map<String, dynamic> json) {return ZarazZarazConfigRowBase(
   createdAt: DateTime.parse(json['createdAt'] as String),
   id: (json['id'] as num).toInt(),
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   userId: json['userId'] as String,
-); }
+);}
 
 /// Date and time the configuration was created
 final DateTime createdAt;
@@ -22,22 +22,22 @@ final DateTime updatedAt;
 /// Alpha-numeric ID of the account user who published the configuration
 final String userId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'createdAt': createdAt.toIso8601String(),
   'id': id,
   'updatedAt': updatedAt.toIso8601String(),
   'userId': userId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('createdAt') && json['createdAt'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
-      json.containsKey('userId') && json['userId'] is String; } 
-ZarazZarazConfigRowBase copyWith({DateTime? createdAt, int? id, DateTime? updatedAt, String? userId, }) { return ZarazZarazConfigRowBase(
+      json.containsKey('userId') && json['userId'] is String;}
+ZarazZarazConfigRowBase copyWith({DateTime? createdAt, int? id, DateTime? updatedAt, String? userId, }) {return ZarazZarazConfigRowBase(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   updatedAt: updatedAt ?? this.updatedAt,
   userId: userId ?? this.userId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazConfigRowBase &&
           createdAt == other.createdAt &&
@@ -49,4 +49,4 @@ ZarazZarazConfigRowBase copyWith({DateTime? createdAt, int? id, DateTime? update
 
 @override String toString() => 'ZarazZarazConfigRowBase(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, userId: $userId)';
 
- }
+}

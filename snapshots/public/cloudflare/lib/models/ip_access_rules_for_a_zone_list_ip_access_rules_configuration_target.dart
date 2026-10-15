@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The target to search in existing rules.
 sealed class IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget {const IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget();
 
-factory IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget.fromJson(String json) { return switch (json) {
+factory IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget.fromJson(String json) {return switch (json) {
   'ip' => ip,
   'ip_range' => ipRange,
   'asn' => asn,
   'country' => country,
   _ => IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$Unknown(json),
-}; }
+};}
 
 static const IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget ip = IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ip._();
 
@@ -23,36 +23,36 @@ static const IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget country =
 static const List<IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget> values = [ip, ipRange, asn, country];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ip' => 'ip',
   'ip_range' => 'ipRange',
   'asn' => 'asn',
   'country' => 'country',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$Unknown; } 
+bool get isUnknown {return this is IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ip, required W Function() ipRange, required W Function() asn, required W Function() country, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ip, required W Function() ipRange, required W Function() asn, required W Function() country, required W Function(String value) $unknown, }) {return switch (this) {
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ip() => ip(),
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ipRange() => ipRange(),
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$asn() => asn(),
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$country() => country(),
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Function()? ipRange, W Function()? asn, W Function()? country, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Function()? ipRange, W Function()? asn, W Function()? country, W Function(String value)? $unknown, }) {return switch (this) {
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ip() => ip != null ? ip() : orElse(value),
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ipRange() => ipRange != null ? ipRange() : orElse(value),
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$asn() => asn != null ? asn() : orElse(value),
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$country() => country != null ? country() : orElse(value),
       IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget($value)';
 
- }
+}
 @immutable final class IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ip extends IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget {const IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ip._();
 
 @override String get value => 'ip';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Fu
 
 @override int get hashCode => 'ip'.hashCode;
 
- }
+}
 @immutable final class IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ipRange extends IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget {const IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$ipRange._();
 
 @override String get value => 'ip_range';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Fu
 
 @override int get hashCode => 'ip_range'.hashCode;
 
- }
+}
 @immutable final class IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$asn extends IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget {const IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$asn._();
 
 @override String get value => 'asn';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Fu
 
 @override int get hashCode => 'asn'.hashCode;
 
- }
+}
 @immutable final class IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$country extends IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget {const IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$country._();
 
 @override String get value => 'country';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Fu
 
 @override int get hashCode => 'country'.hashCode;
 
- }
+}
 @immutable final class IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$Unknown extends IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget {const IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget$Unknown(this.value);
 
 @override final String value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

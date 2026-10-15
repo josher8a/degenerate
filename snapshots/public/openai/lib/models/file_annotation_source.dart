@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation_source/file_annotation_source_type.dart';/// Attachment source referenced by an annotation.
 @immutable final class FileAnnotationSource {const FileAnnotationSource({required this.type, required this.filename, });
 
-factory FileAnnotationSource.fromJson(Map<String, dynamic> json) { return FileAnnotationSource(
+factory FileAnnotationSource.fromJson(Map<String, dynamic> json) {return FileAnnotationSource(
   type: FileAnnotationSourceType.fromJson(json['type'] as String),
   filename: json['filename'] as String,
-); }
+);}
 
 /// Type discriminator that is always `file`.
 final FileAnnotationSourceType type;
@@ -15,16 +15,16 @@ final FileAnnotationSourceType type;
 /// Filename referenced by the annotation.
 final String filename;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'filename': filename,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('filename') && json['filename'] is String; } 
-FileAnnotationSource copyWith({FileAnnotationSourceType? type, String? filename, }) { return FileAnnotationSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('filename') && json['filename'] is String;}
+FileAnnotationSource copyWith({FileAnnotationSourceType? type, String? filename, }) {return FileAnnotationSource(
   type: type ?? this.type,
   filename: filename ?? this.filename,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FileAnnotationSource &&
           type == other.type &&
@@ -34,4 +34,4 @@ FileAnnotationSource copyWith({FileAnnotationSourceType? type, String? filename,
 
 @override String toString() => 'FileAnnotationSource(type: $type, filename: $filename)';
 
- }
+}

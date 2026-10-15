@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_delta_event/transcript_text_delta_event_logprobs.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';/// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
 @immutable final class TranscriptTextDoneEvent {const TranscriptTextDoneEvent({required this.type, required this.text, this.logprobs, this.usage, });
 
-factory TranscriptTextDoneEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextDoneEvent(
+factory TranscriptTextDoneEvent.fromJson(Map<String, dynamic> json) {return TranscriptTextDoneEvent(
   type: json['type'] as String,
   text: json['text'] as String,
   logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => TranscriptTextDeltaEventLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
   usage: json['usage'] != null ? TranscriptTextUsageTokens.fromJson(json['usage'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The type of the event. Always `transcript.text.done`.
 /// 
@@ -25,20 +25,20 @@ final List<TranscriptTextDeltaEventLogprobs>? logprobs;
 
 final TranscriptTextUsageTokens? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'text': text,
   if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
   if (usage != null) 'usage': usage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('text') && json['text'] is String; } 
-TranscriptTextDoneEvent copyWith({String? type, String? text, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, TranscriptTextUsageTokens? Function()? usage, }) { return TranscriptTextDoneEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('text') && json['text'] is String;}
+TranscriptTextDoneEvent copyWith({String? type, String? text, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, TranscriptTextUsageTokens? Function()? usage, }) {return TranscriptTextDoneEvent(
   type: type ?? this.type,
   text: text ?? this.text,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   usage: usage != null ? usage() : this.usage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextDoneEvent &&
           type == other.type &&
@@ -50,4 +50,4 @@ TranscriptTextDoneEvent copyWith({String? type, String? text, List<TranscriptTex
 
 @override String toString() => 'TranscriptTextDoneEvent(type: $type, text: $text, logprobs: $logprobs, usage: $usage)';
 
- }
+}

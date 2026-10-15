@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/config_retries.dart';@immutable final class StepConfig {const StepConfig({required this.retries, required this.timeout, });
 
-factory StepConfig.fromJson(Map<String, dynamic> json) { return StepConfig(
+factory StepConfig.fromJson(Map<String, dynamic> json) {return StepConfig(
   retries: ConfigRetries.fromJson(json['retries'] as Map<String, dynamic>),
   timeout: json['timeout'],
-); }
+);}
 
 final ConfigRetries retries;
 
@@ -17,16 +17,16 @@ final ConfigRetries retries;
 /// One of: String, double
 final dynamic timeout;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'retries': retries.toJson(),
   'timeout': timeout,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('retries') &&
-      json.containsKey('timeout'); } 
-StepConfig copyWith({ConfigRetries? retries, dynamic timeout, }) { return StepConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('retries') &&
+      json.containsKey('timeout');}
+StepConfig copyWith({ConfigRetries? retries, dynamic timeout, }) {return StepConfig(
   retries: retries ?? this.retries,
   timeout: timeout ?? this.timeout,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StepConfig &&
           retries == other.retries &&
@@ -36,4 +36,4 @@ StepConfig copyWith({ConfigRetries? retries, dynamic timeout, }) { return StepCo
 
 @override String toString() => 'StepConfig(retries: $retries, timeout: $timeout)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the certificate attribute by which to group the results.
 sealed class RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension();
 
-factory RadarGetCtTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'CA' => ca,
   'CA_OWNER' => caOwner,
   'DURATION' => duration,
@@ -20,7 +20,7 @@ factory RadarGetCtTimeseriesGroupDimension.fromJson(String json) { return switch
   'TLD' => tld,
   'VALIDATION_LEVEL' => validationLevel,
   _ => RadarGetCtTimeseriesGroupDimension$Unknown(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesGroupDimension ca = RadarGetCtTimeseriesGroupDimension$ca._();
 
@@ -53,9 +53,9 @@ static const RadarGetCtTimeseriesGroupDimension validationLevel = RadarGetCtTime
 static const List<RadarGetCtTimeseriesGroupDimension> values = [ca, caOwner, duration, entryType, expirationStatus, hasIps, hasWildcards, log, logApi, logOperator, publicKeyAlgorithm, signatureAlgorithm, tld, validationLevel];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'CA' => 'ca',
   'CA_OWNER' => 'caOwner',
   'DURATION' => 'duration',
@@ -71,11 +71,11 @@ String get name { return switch (value) {
   'TLD' => 'tld',
   'VALIDATION_LEVEL' => 'validationLevel',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetCtTimeseriesGroupDimension$Unknown; } 
+bool get isUnknown {return this is RadarGetCtTimeseriesGroupDimension$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ca, required W Function() caOwner, required W Function() duration, required W Function() entryType, required W Function() expirationStatus, required W Function() hasIps, required W Function() hasWildcards, required W Function() log, required W Function() logApi, required W Function() logOperator, required W Function() publicKeyAlgorithm, required W Function() signatureAlgorithm, required W Function() tld, required W Function() validationLevel, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ca, required W Function() caOwner, required W Function() duration, required W Function() entryType, required W Function() expirationStatus, required W Function() hasIps, required W Function() hasWildcards, required W Function() log, required W Function() logApi, required W Function() logOperator, required W Function() publicKeyAlgorithm, required W Function() signatureAlgorithm, required W Function() tld, required W Function() validationLevel, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetCtTimeseriesGroupDimension$ca() => ca(),
       RadarGetCtTimeseriesGroupDimension$caOwner() => caOwner(),
       RadarGetCtTimeseriesGroupDimension$duration() => duration(),
@@ -91,9 +91,9 @@ W when<W>({required W Function() ca, required W Function() caOwner, required W F
       RadarGetCtTimeseriesGroupDimension$tld() => tld(),
       RadarGetCtTimeseriesGroupDimension$validationLevel() => validationLevel(),
       RadarGetCtTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Function()? caOwner, W Function()? duration, W Function()? entryType, W Function()? expirationStatus, W Function()? hasIps, W Function()? hasWildcards, W Function()? log, W Function()? logApi, W Function()? logOperator, W Function()? publicKeyAlgorithm, W Function()? signatureAlgorithm, W Function()? tld, W Function()? validationLevel, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Function()? caOwner, W Function()? duration, W Function()? entryType, W Function()? expirationStatus, W Function()? hasIps, W Function()? hasWildcards, W Function()? log, W Function()? logApi, W Function()? logOperator, W Function()? publicKeyAlgorithm, W Function()? signatureAlgorithm, W Function()? tld, W Function()? validationLevel, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetCtTimeseriesGroupDimension$ca() => ca != null ? ca() : orElse(value),
       RadarGetCtTimeseriesGroupDimension$caOwner() => caOwner != null ? caOwner() : orElse(value),
       RadarGetCtTimeseriesGroupDimension$duration() => duration != null ? duration() : orElse(value),
@@ -109,10 +109,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
       RadarGetCtTimeseriesGroupDimension$tld() => tld != null ? tld() : orElse(value),
       RadarGetCtTimeseriesGroupDimension$validationLevel() => validationLevel != null ? validationLevel() : orElse(value),
       RadarGetCtTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetCtTimeseriesGroupDimension($value)';
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$ca extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$ca._();
 
 @override String get value => 'CA';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'CA'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$caOwner extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$caOwner._();
 
 @override String get value => 'CA_OWNER';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'CA_OWNER'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$duration extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$duration._();
 
 @override String get value => 'DURATION';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'DURATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$entryType extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$entryType._();
 
 @override String get value => 'ENTRY_TYPE';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'ENTRY_TYPE'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$expirationStatus extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$expirationStatus._();
 
 @override String get value => 'EXPIRATION_STATUS';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'EXPIRATION_STATUS'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$hasIps extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$hasIps._();
 
 @override String get value => 'HAS_IPS';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'HAS_IPS'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$hasWildcards extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$hasWildcards._();
 
 @override String get value => 'HAS_WILDCARDS';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'HAS_WILDCARDS'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$log extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$log._();
 
 @override String get value => 'LOG';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'LOG'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$logApi extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$logApi._();
 
 @override String get value => 'LOG_API';
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'LOG_API'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$logOperator extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$logOperator._();
 
 @override String get value => 'LOG_OPERATOR';
@@ -202,7 +202,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'LOG_OPERATOR'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$publicKeyAlgorithm extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$publicKeyAlgorithm._();
 
 @override String get value => 'PUBLIC_KEY_ALGORITHM';
@@ -211,7 +211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'PUBLIC_KEY_ALGORITHM'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$signatureAlgorithm extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$signatureAlgorithm._();
 
 @override String get value => 'SIGNATURE_ALGORITHM';
@@ -220,7 +220,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'SIGNATURE_ALGORITHM'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$tld extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$tld._();
 
 @override String get value => 'TLD';
@@ -229,7 +229,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'TLD'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$validationLevel extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$validationLevel._();
 
 @override String get value => 'VALIDATION_LEVEL';
@@ -238,7 +238,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => 'VALIDATION_LEVEL'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupDimension$Unknown extends RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension$Unknown(this.value);
 
 @override final String value;
@@ -248,4 +248,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

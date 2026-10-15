@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/coord_param.dart';/// A drag action.
 @immutable final class DragParam {const DragParam({required this.type, required this.path, });
 
-factory DragParam.fromJson(Map<String, dynamic> json) { return DragParam(
+factory DragParam.fromJson(Map<String, dynamic> json) {return DragParam(
   type: json['type'] as String,
   path: (json['path'] as List<dynamic>).map((e) => CoordParam.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Specifies the event type. For a drag action, this property is always set to `drag`.
 final String type;
@@ -21,16 +21,16 @@ final String type;
 /// ```
 final List<CoordParam> path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'path': path.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('path'); } 
-DragParam copyWith({String? type, List<CoordParam>? path, }) { return DragParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('path');}
+DragParam copyWith({String? type, List<CoordParam>? path, }) {return DragParam(
   type: type ?? this.type,
   path: path ?? this.path,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DragParam &&
           type == other.type &&
@@ -40,4 +40,4 @@ DragParam copyWith({String? type, List<CoordParam>? path, }) { return DragParam(
 
 @override String toString() => 'DragParam(type: $type, path: $path)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode();
 
-factory PayPerCrawlBotAccessMode.fromJson(String json) { return switch (json) {
+factory PayPerCrawlBotAccessMode.fromJson(String json) {return switch (json) {
   'charge' => charge,
   'bypass' => bypass,
   _ => PayPerCrawlBotAccessMode$Unknown(json),
-}; }
+};}
 
 static const PayPerCrawlBotAccessMode charge = PayPerCrawlBotAccessMode$charge._();
 
@@ -16,30 +16,30 @@ static const PayPerCrawlBotAccessMode bypass = PayPerCrawlBotAccessMode$bypass._
 static const List<PayPerCrawlBotAccessMode> values = [charge, bypass];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'charge' => 'charge',
   'bypass' => 'bypass',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PayPerCrawlBotAccessMode$Unknown; } 
+bool get isUnknown {return this is PayPerCrawlBotAccessMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() charge, required W Function() bypass, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() charge, required W Function() bypass, required W Function(String value) $unknown, }) {return switch (this) {
       PayPerCrawlBotAccessMode$charge() => charge(),
       PayPerCrawlBotAccessMode$bypass() => bypass(),
       PayPerCrawlBotAccessMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, W Function()? bypass, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, W Function()? bypass, W Function(String value)? $unknown, }) {return switch (this) {
       PayPerCrawlBotAccessMode$charge() => charge != null ? charge() : orElse(value),
       PayPerCrawlBotAccessMode$bypass() => bypass != null ? bypass() : orElse(value),
       PayPerCrawlBotAccessMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PayPerCrawlBotAccessMode($value)';
 
- }
+}
 @immutable final class PayPerCrawlBotAccessMode$charge extends PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode$charge._();
 
 @override String get value => 'charge';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => 'charge'.hashCode;
 
- }
+}
 @immutable final class PayPerCrawlBotAccessMode$bypass extends PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode$bypass._();
 
 @override String get value => 'bypass';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => 'bypass'.hashCode;
 
- }
+}
 @immutable final class PayPerCrawlBotAccessMode$Unknown extends PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode$Unknown(this.value);
 
 @override final String value;
@@ -67,14 +67,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PayPerCrawlDaricConfig {const PayPerCrawlDaricConfig({this.botOverrides, this.enabled, this.priceUsdMicrocents, });
 
-factory PayPerCrawlDaricConfig.fromJson(Map<String, dynamic> json) { return PayPerCrawlDaricConfig(
+factory PayPerCrawlDaricConfig.fromJson(Map<String, dynamic> json) {return PayPerCrawlDaricConfig(
   botOverrides: (json['bot_overrides'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PayPerCrawlBotAccessMode.fromJson(v as String))),
   enabled: json['enabled'] as bool?,
   priceUsdMicrocents: json['price_usd_microcents'] != null ? (json['price_usd_microcents'] as num).toInt() : null,
-); }
+);}
 
 final Map<String,PayPerCrawlBotAccessMode>? botOverrides;
 
@@ -82,17 +82,17 @@ final bool? enabled;
 
 final int? priceUsdMicrocents;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (botOverrides != null) 'bot_overrides': botOverrides?.map((k, v) => MapEntry(k, v.toJson())),
   'enabled': ?enabled,
   'price_usd_microcents': ?priceUsdMicrocents,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bot_overrides', 'enabled', 'price_usd_microcents'}.contains(key)); } 
-PayPerCrawlDaricConfig copyWith({Map<String, PayPerCrawlBotAccessMode>? Function()? botOverrides, bool? Function()? enabled, int? Function()? priceUsdMicrocents, }) { return PayPerCrawlDaricConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bot_overrides', 'enabled', 'price_usd_microcents'}.contains(key));}
+PayPerCrawlDaricConfig copyWith({Map<String, PayPerCrawlBotAccessMode>? Function()? botOverrides, bool? Function()? enabled, int? Function()? priceUsdMicrocents, }) {return PayPerCrawlDaricConfig(
   botOverrides: botOverrides != null ? botOverrides() : this.botOverrides,
   enabled: enabled != null ? enabled() : this.enabled,
   priceUsdMicrocents: priceUsdMicrocents != null ? priceUsdMicrocents() : this.priceUsdMicrocents,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlDaricConfig &&
           botOverrides == other.botOverrides &&
@@ -103,4 +103,4 @@ PayPerCrawlDaricConfig copyWith({Map<String, PayPerCrawlBotAccessMode>? Function
 
 @override String toString() => 'PayPerCrawlDaricConfig(botOverrides: $botOverrides, enabled: $enabled, priceUsdMicrocents: $priceUsdMicrocents)';
 
- }
+}

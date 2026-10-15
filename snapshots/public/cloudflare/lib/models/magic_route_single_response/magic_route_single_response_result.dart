@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route.dart';@immutable final class MagicRouteSingleResponseResult {const MagicRouteSingleResponseResult({this.route});
 
-factory MagicRouteSingleResponseResult.fromJson(Map<String, dynamic> json) { return MagicRouteSingleResponseResult(
+factory MagicRouteSingleResponseResult.fromJson(Map<String, dynamic> json) {return MagicRouteSingleResponseResult(
   route: json['route'] != null ? MagicRoute.fromJson(json['route'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final MagicRoute? route;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (route != null) 'route': route?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'route'}.contains(key)); } 
-MagicRouteSingleResponseResult copyWith({MagicRoute? Function()? route}) { return MagicRouteSingleResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'route'}.contains(key));}
+MagicRouteSingleResponseResult copyWith({MagicRoute? Function()? route}) {return MagicRouteSingleResponseResult(
   route: route != null ? route() : this.route,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRouteSingleResponseResult &&
           route == other.route;
@@ -24,4 +24,4 @@ MagicRouteSingleResponseResult copyWith({MagicRoute? Function()? route}) { retur
 
 @override String toString() => 'MagicRouteSingleResponseResult(route: $route)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/kinds_business.dart';import 'package:spec_16_allof_unions/models/assistant_tracked_proposal/kinds_individual.dart';import 'package:spec_16_allof_unions/models/tracking/status.dart';sealed class MappedKindsKind {const MappedKindsKind();
 
-factory MappedKindsKind.fromJson(String json) { return switch (json) {
+factory MappedKindsKind.fromJson(String json) {return switch (json) {
   'BUSINESS' => business,
   'INDIVIDUAL' => individual,
   _ => MappedKindsKind$Unknown(json),
-}; }
+};}
 
 static const MappedKindsKind business = MappedKindsKind$business._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is MappedKindsKind$Unknown;
 
- }
+}
 @immutable final class MappedKindsKind$business extends MappedKindsKind {const MappedKindsKind$business._();
 
 @override String get value => 'BUSINESS';
@@ -31,7 +31,7 @@ bool get isUnknown => this is MappedKindsKind$Unknown;
 
 @override String toString() => 'MappedKindsKind(BUSINESS)';
 
- }
+}
 @immutable final class MappedKindsKind$individual extends MappedKindsKind {const MappedKindsKind$individual._();
 
 @override String get value => 'INDIVIDUAL';
@@ -42,7 +42,7 @@ bool get isUnknown => this is MappedKindsKind$Unknown;
 
 @override String toString() => 'MappedKindsKind(INDIVIDUAL)';
 
- }
+}
 @immutable final class MappedKindsKind$Unknown extends MappedKindsKind {const MappedKindsKind$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is MappedKindsKind$Unknown;
 
 @override String toString() => 'MappedKindsKind($value)';
 
- }
+}
 sealed class MappedKinds {const MappedKinds();
 
 /// Deserialize from JSON, dispatching on the `kind` discriminator.
-factory MappedKinds.fromJson(Map<String, dynamic> json) { return switch (json['kind']) {
+factory MappedKinds.fromJson(Map<String, dynamic> json) {return switch (json['kind']) {
   'BUSINESS' => MappedKindsBusiness.fromJson(json),
   'INDIVIDUAL' => MappedKindsIndividual.fromJson(json),
   _ => MappedKinds$Unknown(json),
-}; }
+};}
 
 /// Build the `BUSINESS` variant.
-factory MappedKinds.business({required String legalName, String? proposalId, Status? status, }) { return MappedKindsBusiness(KindsBusiness(kind: 'BUSINESS', legalName: legalName, proposalId: proposalId, status: status)); }
+factory MappedKinds.business({required String legalName, String? proposalId, Status? status, }) {return MappedKindsBusiness(KindsBusiness(kind: 'BUSINESS', legalName: legalName, proposalId: proposalId, status: status));}
 
 /// Build the `INDIVIDUAL` variant.
-factory MappedKinds.individual({required String firstName, String? proposalId, Status? status, }) { return MappedKindsIndividual(KindsIndividual(kind: 'INDIVIDUAL', firstName: firstName, proposalId: proposalId, status: status)); }
+factory MappedKinds.individual({required String firstName, String? proposalId, Status? status, }) {return MappedKindsIndividual(KindsIndividual(kind: 'INDIVIDUAL', firstName: firstName, proposalId: proposalId, status: status));}
 
 /// The discriminator value identifying this variant.
 MappedKindsKind get kind;
@@ -79,15 +79,15 @@ bool get isUnknown => this is MappedKinds$Unknown;
 String? get proposalId;
 /// Shared by all variants of this union.
 Status? get status;
-R when<R>({required R Function(MappedKindsBusiness) business, required R Function(MappedKindsIndividual) individual, required R Function(MappedKinds$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(MappedKindsBusiness) business, required R Function(MappedKindsIndividual) individual, required R Function(MappedKinds$Unknown) unknown, }) {return switch (this) {
   final MappedKindsBusiness v => business(v),
   final MappedKindsIndividual v => individual(v),
   final MappedKinds$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class MappedKindsBusiness extends MappedKinds {const MappedKindsBusiness(this.kindsBusiness);
 
-factory MappedKindsBusiness.fromJson(Map<String, dynamic> json) { return MappedKindsBusiness(KindsBusiness.fromJson(json)); }
+factory MappedKindsBusiness.fromJson(Map<String, dynamic> json) {return MappedKindsBusiness(KindsBusiness.fromJson(json));}
 
 final KindsBusiness kindsBusiness;
 
@@ -95,11 +95,11 @@ final KindsBusiness kindsBusiness;
 
 @override Map<String, dynamic> toJson() => {...kindsBusiness.toJson(), 'kind': kind.toJson()};
 
-MappedKindsBusiness copyWith({String? legalName, String? Function()? proposalId, Status? Function()? status, }) { return MappedKindsBusiness(kindsBusiness.copyWith(
+MappedKindsBusiness copyWith({String? legalName, String? Function()? proposalId, Status? Function()? status, }) {return MappedKindsBusiness(kindsBusiness.copyWith(
   legalName: legalName,
   proposalId: proposalId,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is MappedKindsBusiness && kindsBusiness == other.kindsBusiness;
 
@@ -111,10 +111,10 @@ MappedKindsBusiness copyWith({String? legalName, String? Function()? proposalId,
 
 @override Status? get status => kindsBusiness.status;
 
- }
+}
 @immutable final class MappedKindsIndividual extends MappedKinds {const MappedKindsIndividual(this.kindsIndividual);
 
-factory MappedKindsIndividual.fromJson(Map<String, dynamic> json) { return MappedKindsIndividual(KindsIndividual.fromJson(json)); }
+factory MappedKindsIndividual.fromJson(Map<String, dynamic> json) {return MappedKindsIndividual(KindsIndividual.fromJson(json));}
 
 final KindsIndividual kindsIndividual;
 
@@ -122,11 +122,11 @@ final KindsIndividual kindsIndividual;
 
 @override Map<String, dynamic> toJson() => {...kindsIndividual.toJson(), 'kind': kind.toJson()};
 
-MappedKindsIndividual copyWith({String? firstName, String? Function()? proposalId, Status? Function()? status, }) { return MappedKindsIndividual(kindsIndividual.copyWith(
+MappedKindsIndividual copyWith({String? firstName, String? Function()? proposalId, Status? Function()? status, }) {return MappedKindsIndividual(kindsIndividual.copyWith(
   firstName: firstName,
   proposalId: proposalId,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is MappedKindsIndividual && kindsIndividual == other.kindsIndividual;
 
@@ -138,7 +138,7 @@ MappedKindsIndividual copyWith({String? firstName, String? Function()? proposalI
 
 @override Status? get status => kindsIndividual.status;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class MappedKinds$Unknown extends MappedKinds {MappedKinds$Unknown(this.json);
@@ -164,4 +164,4 @@ late final Status? _status = json['status'] != null ? Status.fromJson(json['stat
 
 @override Status? get status => _status;
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A break down of bytes served over HTTPS.
 @immutable final class Bandwidth2Ssl {const Bandwidth2Ssl({this.encrypted, this.unencrypted, });
 
-factory Bandwidth2Ssl.fromJson(Map<String, dynamic> json) { return Bandwidth2Ssl(
+factory Bandwidth2Ssl.fromJson(Map<String, dynamic> json) {return Bandwidth2Ssl(
   encrypted: json['encrypted'] != null ? (json['encrypted'] as num).toInt() : null,
   unencrypted: json['unencrypted'] != null ? (json['unencrypted'] as num).toInt() : null,
-); }
+);}
 
 /// The number of bytes served over HTTPS.
 final int? encrypted;
@@ -15,15 +15,15 @@ final int? encrypted;
 /// The number of bytes served over HTTP.
 final int? unencrypted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'encrypted': ?encrypted,
   'unencrypted': ?unencrypted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'encrypted', 'unencrypted'}.contains(key)); } 
-Bandwidth2Ssl copyWith({int? Function()? encrypted, int? Function()? unencrypted, }) { return Bandwidth2Ssl(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'encrypted', 'unencrypted'}.contains(key));}
+Bandwidth2Ssl copyWith({int? Function()? encrypted, int? Function()? unencrypted, }) {return Bandwidth2Ssl(
   encrypted: encrypted != null ? encrypted() : this.encrypted,
   unencrypted: unencrypted != null ? unencrypted() : this.unencrypted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Bandwidth2Ssl &&
           encrypted == other.encrypted &&
@@ -33,4 +33,4 @@ Bandwidth2Ssl copyWith({int? Function()? encrypted, int? Function()? unencrypted
 
 @override String toString() => 'Bandwidth2Ssl(encrypted: $encrypted, unencrypted: $unencrypted)';
 
- }
+}

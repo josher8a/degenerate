@@ -14,7 +14,7 @@ final class ResourceSharingApi with ApiExecutor {const ResourceSharingApi(this.a
 /// Lists all account shares.
 ///
 /// `GET /accounts/{account_id}/shares`
-Future<ApiResult<List<ResourceSharingShareObject>?, OrganizationSharesListError>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceSharingShareObject>?, OrganizationSharesListError>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -68,13 +68,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Create a new share
 ///
 /// Creates a new resource share for sharing Cloudflare resources with other accounts or organizations.
 ///
 /// `POST /accounts/{account_id}/shares`
-Future<ApiResult<ResourceSharingShareObject?, OrganizationSharesListError>> shareCreate({required ResourceSharingAccountId accountId, required ResourceSharingCreateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareObject?, OrganizationSharesListError>> shareCreate({required ResourceSharingAccountId accountId, required ResourceSharingCreateShareRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,13 +93,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Get account share by ID
 ///
 /// Fetches share by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResourceSharingShareObject?, OrganizationSharesListError>> sharesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceSharingShareObject?, OrganizationSharesListError>> sharesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -127,13 +127,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Update a share
 ///
 /// Updating is not immediate, an updated share object with a new status will be returned.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResourceSharingShareObject?, OrganizationSharesListError>> shareUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingUpdateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareObject?, OrganizationSharesListError>> shareUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingUpdateShareRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -152,13 +152,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Delete a share
 ///
 /// Deletion is not immediate, an updated share object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResourceSharingShareObject?, OrganizationSharesListError>> shareDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareObject?, OrganizationSharesListError>> shareDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -175,13 +175,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// List share recipients by share ID
 ///
 /// List share recipients by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<List<ResourceSharingShareRecipientObject>?, OrganizationSharesListError>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceSharingShareRecipientObject>?, OrganizationSharesListError>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -212,13 +212,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Create a new share recipient
 ///
 /// Adds a recipient to a resource share, granting them access to the shared resources.
 ///
 /// `POST /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<ResourceSharingShareRecipientObject?, OrganizationSharesListError>> shareRecipientCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareRecipientRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareRecipientObject?, OrganizationSharesListError>> shareRecipientCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareRecipientRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -237,13 +237,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Update a share's recipients
 ///
 /// Changes a share's recipients to match the given list. Returns an error if the share targets an organization.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<void, OrganizationSharesListError>> shareRecipientsUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required List<ResourceSharingCreateShareRecipientRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OrganizationSharesListError>> shareRecipientsUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required List<ResourceSharingCreateShareRecipientRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -259,13 +259,13 @@ return await execute(
   onSuccess: (_) {},
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Get share recipient by ID
 ///
 /// Get share recipient by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
-Future<ApiResult<ResourceSharingShareRecipientObject?, OrganizationSharesListError>> shareRecipientsGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, bool? includeResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceSharingShareRecipientObject?, OrganizationSharesListError>> shareRecipientsGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, bool? includeResources, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -290,13 +290,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Delete a share recipient
 ///
 /// Deletion is not immediate, an updated share recipient object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
-Future<ApiResult<ResourceSharingShareRecipientObject?, OrganizationSharesListError>> shareRecipientDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareRecipientObject?, OrganizationSharesListError>> shareRecipientDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -313,13 +313,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// List share resources by share ID
 ///
 /// List share resources by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<List<ResourceSharingShareResourceObject>?, OrganizationSharesListError>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceSharingShareResourceObject>?, OrganizationSharesListError>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -353,13 +353,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Create a new share resource
 ///
 /// Adds a resource to an existing share, making it available to share recipients.
 ///
 /// `POST /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<ResourceSharingShareResourceObject?, OrganizationSharesListError>> shareResourceCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareResourceObject?, OrganizationSharesListError>> shareResourceCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareResourceRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -378,13 +378,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Get share resource by ID
 ///
 /// Get share resource by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResourceSharingShareResourceObject?, OrganizationSharesListError>> shareResourcesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareResourceObject?, OrganizationSharesListError>> shareResourcesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -401,13 +401,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Update a share resource
 ///
 /// Update is not immediate, an updated share resource object with a new status will be returned.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResourceSharingShareResourceObject?, OrganizationSharesListError>> shareResourceUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, required ResourceSharingUpdateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareResourceObject?, OrganizationSharesListError>> shareResourceUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, required ResourceSharingUpdateShareResourceRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -426,13 +426,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// Delete a share resource
 ///
 /// Deletion is not immediate, an updated share resource object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResourceSharingShareResourceObject?, OrganizationSharesListError>> shareResourceDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceSharingShareResourceObject?, OrganizationSharesListError>> shareResourceDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -449,13 +449,13 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
+}
 /// List organization shares
 ///
 /// Lists all organization shares.
 ///
 /// `GET /organizations/{organization_id}/shares`
-Future<ApiResult<List<ResourceSharingShareObject>?, OrganizationSharesListError>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceSharingShareObject>?, OrganizationSharesListError>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -503,5 +503,5 @@ return await execute(
   },
   onError: OrganizationSharesListError.fromResponse,
 );
- } 
- }
+}
+}

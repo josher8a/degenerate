@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_pipeline_edge.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_pipeline_node.dart';@immutable final class CloudflarePipelinesPipelineGraph {const CloudflarePipelinesPipelineGraph({required this.edges, required this.nodes, });
 
-factory CloudflarePipelinesPipelineGraph.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesPipelineGraph(
+factory CloudflarePipelinesPipelineGraph.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesPipelineGraph(
   edges: (json['edges'] as List<dynamic>).map((e) => CloudflarePipelinesPipelineEdge.fromJson(e as Map<String, dynamic>)).toList(),
   nodes: (json['nodes'] as List<dynamic>).map((e) => CloudflarePipelinesPipelineNode.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<CloudflarePipelinesPipelineEdge> edges;
 
 final List<CloudflarePipelinesPipelineNode> nodes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'edges': edges.map((e) => e.toJson()).toList(),
   'nodes': nodes.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('edges') &&
-      json.containsKey('nodes'); } 
-CloudflarePipelinesPipelineGraph copyWith({List<CloudflarePipelinesPipelineEdge>? edges, List<CloudflarePipelinesPipelineNode>? nodes, }) { return CloudflarePipelinesPipelineGraph(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('edges') &&
+      json.containsKey('nodes');}
+CloudflarePipelinesPipelineGraph copyWith({List<CloudflarePipelinesPipelineEdge>? edges, List<CloudflarePipelinesPipelineNode>? nodes, }) {return CloudflarePipelinesPipelineGraph(
   edges: edges ?? this.edges,
   nodes: nodes ?? this.nodes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesPipelineGraph &&
           listEquals(edges, other.edges) &&
@@ -31,4 +31,4 @@ CloudflarePipelinesPipelineGraph copyWith({List<CloudflarePipelinesPipelineEdge>
 
 @override String toString() => 'CloudflarePipelinesPipelineGraph(edges: $edges, nodes: $nodes)';
 
- }
+}

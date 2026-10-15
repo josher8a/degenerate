@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_target_id.dart';@immutable final class InfraTargetsDeleteBatchRequest {const InfraTargetsDeleteBatchRequest({required this.targetIds});
 
-factory InfraTargetsDeleteBatchRequest.fromJson(Map<String, dynamic> json) { return InfraTargetsDeleteBatchRequest(
+factory InfraTargetsDeleteBatchRequest.fromJson(Map<String, dynamic> json) {return InfraTargetsDeleteBatchRequest(
   targetIds: (json['target_ids'] as List<dynamic>).map((e) => InfraTargetId.fromJson(e as String)).toList(),
-); }
+);}
 
 /// List of target IDs to bulk delete
 final List<InfraTargetId> targetIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'target_ids': targetIds.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_ids'); } 
-InfraTargetsDeleteBatchRequest copyWith({List<InfraTargetId>? targetIds}) { return InfraTargetsDeleteBatchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('target_ids');}
+InfraTargetsDeleteBatchRequest copyWith({List<InfraTargetId>? targetIds}) {return InfraTargetsDeleteBatchRequest(
   targetIds: targetIds ?? this.targetIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InfraTargetsDeleteBatchRequest &&
           listEquals(targetIds, other.targetIds);
@@ -25,4 +25,4 @@ InfraTargetsDeleteBatchRequest copyWith({List<InfraTargetId>? targetIds}) { retu
 
 @override String toString() => 'InfraTargetsDeleteBatchRequest(targetIds: $targetIds)';
 
- }
+}

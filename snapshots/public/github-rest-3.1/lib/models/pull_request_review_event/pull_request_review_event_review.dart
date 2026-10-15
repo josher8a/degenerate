@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class PullRequestReviewEventReview {const PullRequestReviewEventReview({this.id, this.nodeId, this.user = const Omittable.absent(), this.body, this.commitId, this.submittedAt = const Omittable.absent(), this.state, this.htmlUrl, this.pullRequestUrl, this.links, this.updatedAt, });
 
-factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) { return PullRequestReviewEventReview(
+factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) {return PullRequestReviewEventReview(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
   user: json.containsKey('user') ? Omittable(json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -15,7 +15,7 @@ factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) { retur
   pullRequestUrl: json['pull_request_url'] != null ? Uri.parse(json['pull_request_url'] as String) : null,
   links: json['_links'] != null ? PullRequestReviewLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
   updatedAt: json['updated_at'] as String?,
-); }
+);}
 
 final int? id;
 
@@ -39,7 +39,7 @@ final PullRequestReviewLinks? links;
 
 final String? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'node_id': ?nodeId,
   if (user.isPresent) 'user': user.value?.toJson(),
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   if (pullRequestUrl != null) 'pull_request_url': pullRequestUrl?.toString(),
   if (links != null) '_links': links?.toJson(),
   'updated_at': ?updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'user', 'body', 'commit_id', 'submitted_at', 'state', 'html_url', 'pull_request_url', '_links', 'updated_at'}.contains(key)); } 
-PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? nodeId, Omittable<SimpleUser?>? user, String? Function()? body, String? Function()? commitId, Omittable<String?>? submittedAt, String? Function()? state, Uri? Function()? htmlUrl, Uri? Function()? pullRequestUrl, PullRequestReviewLinks? Function()? links, String? Function()? updatedAt, }) { return PullRequestReviewEventReview(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'node_id', 'user', 'body', 'commit_id', 'submitted_at', 'state', 'html_url', 'pull_request_url', '_links', 'updated_at'}.contains(key));}
+PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? nodeId, Omittable<SimpleUser?>? user, String? Function()? body, String? Function()? commitId, Omittable<String?>? submittedAt, String? Function()? state, Uri? Function()? htmlUrl, Uri? Function()? pullRequestUrl, PullRequestReviewLinks? Function()? links, String? Function()? updatedAt, }) {return PullRequestReviewEventReview(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   user: user ?? this.user,
@@ -65,7 +65,7 @@ PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? 
   pullRequestUrl: pullRequestUrl != null ? pullRequestUrl() : this.pullRequestUrl,
   links: links != null ? links() : this.links,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewEventReview &&
           id == other.id &&
@@ -84,4 +84,4 @@ PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? 
 
 @override String toString() => 'PullRequestReviewEventReview(\n  id: $id,\n  nodeId: $nodeId,\n  user: $user,\n  body: $body,\n  commitId: $commitId,\n  submittedAt: $submittedAt,\n  state: $state,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  links: $links,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

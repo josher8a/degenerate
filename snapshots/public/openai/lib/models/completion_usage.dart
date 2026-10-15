@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage/completion_tokens_details.dart';import 'package:pub_openai/models/completion_usage/prompt_tokens_details.dart';/// Usage statistics for the completion request.
 @immutable final class CompletionUsage {const CompletionUsage({required this.completionTokens, required this.promptTokens, required this.totalTokens, this.completionTokensDetails, this.promptTokensDetails, });
 
-factory CompletionUsage.fromJson(Map<String, dynamic> json) { return CompletionUsage(
+factory CompletionUsage.fromJson(Map<String, dynamic> json) {return CompletionUsage(
   completionTokens: (json['completion_tokens'] as num).toInt(),
   promptTokens: (json['prompt_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
   completionTokensDetails: json['completion_tokens_details'] != null ? CompletionTokensDetails.fromJson(json['completion_tokens_details'] as Map<String, dynamic>) : null,
   promptTokensDetails: json['prompt_tokens_details'] != null ? PromptTokensDetails.fromJson(json['prompt_tokens_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Number of tokens in the generated completion.
 final int completionTokens;
@@ -27,23 +27,23 @@ final CompletionTokensDetails? completionTokensDetails;
 /// Breakdown of tokens used in the prompt.
 final PromptTokensDetails? promptTokensDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completion_tokens': completionTokens,
   'prompt_tokens': promptTokens,
   'total_tokens': totalTokens,
   if (completionTokensDetails != null) 'completion_tokens_details': completionTokensDetails?.toJson(),
   if (promptTokensDetails != null) 'prompt_tokens_details': promptTokensDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completion_tokens') && json['completion_tokens'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('completion_tokens') && json['completion_tokens'] is num &&
       json.containsKey('prompt_tokens') && json['prompt_tokens'] is num &&
-      json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-CompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTokens, CompletionTokensDetails? Function()? completionTokensDetails, PromptTokensDetails? Function()? promptTokensDetails, }) { return CompletionUsage(
+      json.containsKey('total_tokens') && json['total_tokens'] is num;}
+CompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTokens, CompletionTokensDetails? Function()? completionTokensDetails, PromptTokensDetails? Function()? promptTokensDetails, }) {return CompletionUsage(
   completionTokens: completionTokens ?? this.completionTokens,
   promptTokens: promptTokens ?? this.promptTokens,
   totalTokens: totalTokens ?? this.totalTokens,
   completionTokensDetails: completionTokensDetails != null ? completionTokensDetails() : this.completionTokensDetails,
   promptTokensDetails: promptTokensDetails != null ? promptTokensDetails() : this.promptTokensDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CompletionUsage &&
           completionTokens == other.completionTokens &&
@@ -56,4 +56,4 @@ CompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTo
 
 @override String toString() => 'CompletionUsage(completionTokens: $completionTokens, promptTokens: $promptTokens, totalTokens: $totalTokens, completionTokensDetails: $completionTokensDetails, promptTokensDetails: $promptTokensDetails)';
 
- }
+}

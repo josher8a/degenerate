@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ExpectedDisposition {const ExpectedDisposition();
 
-factory ExpectedDisposition.fromJson(String json) { return switch (json) {
+factory ExpectedDisposition.fromJson(String json) {return switch (json) {
   'NONE' => none,
   'BULK' => bulk,
   'MALICIOUS' => malicious,
@@ -11,7 +11,7 @@ factory ExpectedDisposition.fromJson(String json) { return switch (json) {
   'SPOOF' => spoof,
   'SUSPICIOUS' => suspicious,
   _ => ExpectedDisposition$Unknown(json),
-}; }
+};}
 
 static const ExpectedDisposition none = ExpectedDisposition$none._();
 
@@ -28,9 +28,9 @@ static const ExpectedDisposition suspicious = ExpectedDisposition$suspicious._()
 static const List<ExpectedDisposition> values = [none, bulk, malicious, spam, spoof, suspicious];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'NONE' => 'none',
   'BULK' => 'bulk',
   'MALICIOUS' => 'malicious',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'SPOOF' => 'spoof',
   'SUSPICIOUS' => 'suspicious',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ExpectedDisposition$Unknown; } 
+bool get isUnknown {return this is ExpectedDisposition$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() bulk, required W Function() malicious, required W Function() spam, required W Function() spoof, required W Function() suspicious, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() bulk, required W Function() malicious, required W Function() spam, required W Function() spoof, required W Function() suspicious, required W Function(String value) $unknown, }) {return switch (this) {
       ExpectedDisposition$none() => none(),
       ExpectedDisposition$bulk() => bulk(),
       ExpectedDisposition$malicious() => malicious(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() none, required W Function() bulk, required W Fu
       ExpectedDisposition$spoof() => spoof(),
       ExpectedDisposition$suspicious() => suspicious(),
       ExpectedDisposition$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? bulk, W Function()? malicious, W Function()? spam, W Function()? spoof, W Function()? suspicious, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? bulk, W Function()? malicious, W Function()? spam, W Function()? spoof, W Function()? suspicious, W Function(String value)? $unknown, }) {return switch (this) {
       ExpectedDisposition$none() => none != null ? none() : orElse(value),
       ExpectedDisposition$bulk() => bulk != null ? bulk() : orElse(value),
       ExpectedDisposition$malicious() => malicious != null ? malicious() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
       ExpectedDisposition$spoof() => spoof != null ? spoof() : orElse(value),
       ExpectedDisposition$suspicious() => suspicious != null ? suspicious() : orElse(value),
       ExpectedDisposition$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ExpectedDisposition($value)';
 
- }
+}
 @immutable final class ExpectedDisposition$none extends ExpectedDisposition {const ExpectedDisposition$none._();
 
 @override String get value => 'NONE';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'NONE'.hashCode;
 
- }
+}
 @immutable final class ExpectedDisposition$bulk extends ExpectedDisposition {const ExpectedDisposition$bulk._();
 
 @override String get value => 'BULK';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'BULK'.hashCode;
 
- }
+}
 @immutable final class ExpectedDisposition$malicious extends ExpectedDisposition {const ExpectedDisposition$malicious._();
 
 @override String get value => 'MALICIOUS';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'MALICIOUS'.hashCode;
 
- }
+}
 @immutable final class ExpectedDisposition$spam extends ExpectedDisposition {const ExpectedDisposition$spam._();
 
 @override String get value => 'SPAM';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'SPAM'.hashCode;
 
- }
+}
 @immutable final class ExpectedDisposition$spoof extends ExpectedDisposition {const ExpectedDisposition$spoof._();
 
 @override String get value => 'SPOOF';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'SPOOF'.hashCode;
 
- }
+}
 @immutable final class ExpectedDisposition$suspicious extends ExpectedDisposition {const ExpectedDisposition$suspicious._();
 
 @override String get value => 'SUSPICIOUS';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'SUSPICIOUS'.hashCode;
 
- }
+}
 @immutable final class ExpectedDisposition$Unknown extends ExpectedDisposition {const ExpectedDisposition$Unknown(this.value);
 
 @override final String value;
@@ -127,14 +127,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class EmailSecurityPostReclassifyRequest {const EmailSecurityPostReclassifyRequest({required this.expectedDisposition, this.emlContent, this.escalatedSubmissionId, });
 
-factory EmailSecurityPostReclassifyRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostReclassifyRequest(
+factory EmailSecurityPostReclassifyRequest.fromJson(Map<String, dynamic> json) {return EmailSecurityPostReclassifyRequest(
   emlContent: json['eml_content'] as String?,
   escalatedSubmissionId: json['escalated_submission_id'] as String?,
   expectedDisposition: ExpectedDisposition.fromJson(json['expected_disposition'] as String),
-); }
+);}
 
 /// Base64 encoded content of the EML file
 final String? emlContent;
@@ -143,17 +143,17 @@ final String? escalatedSubmissionId;
 
 final ExpectedDisposition expectedDisposition;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'eml_content': ?emlContent,
   'escalated_submission_id': ?escalatedSubmissionId,
   'expected_disposition': expectedDisposition.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expected_disposition'); } 
-EmailSecurityPostReclassifyRequest copyWith({String? Function()? emlContent, String? Function()? escalatedSubmissionId, ExpectedDisposition? expectedDisposition, }) { return EmailSecurityPostReclassifyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expected_disposition');}
+EmailSecurityPostReclassifyRequest copyWith({String? Function()? emlContent, String? Function()? escalatedSubmissionId, ExpectedDisposition? expectedDisposition, }) {return EmailSecurityPostReclassifyRequest(
   emlContent: emlContent != null ? emlContent() : this.emlContent,
   escalatedSubmissionId: escalatedSubmissionId != null ? escalatedSubmissionId() : this.escalatedSubmissionId,
   expectedDisposition: expectedDisposition ?? this.expectedDisposition,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPostReclassifyRequest &&
           emlContent == other.emlContent &&
@@ -164,4 +164,4 @@ EmailSecurityPostReclassifyRequest copyWith({String? Function()? emlContent, Str
 
 @override String toString() => 'EmailSecurityPostReclassifyRequest(emlContent: $emlContent, escalatedSubmissionId: $escalatedSubmissionId, expectedDisposition: $expectedDisposition)';
 
- }
+}

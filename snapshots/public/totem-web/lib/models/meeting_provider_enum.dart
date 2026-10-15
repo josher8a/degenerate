@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MeetingProviderEnum {const MeetingProviderEnum();
 
-factory MeetingProviderEnum.fromJson(String json) { return switch (json) {
+factory MeetingProviderEnum.fromJson(String json) {return switch (json) {
   'google_meet' => googleMeet,
   'livekit' => livekit,
   _ => MeetingProviderEnum$Unknown(json),
-}; }
+};}
 
 static const MeetingProviderEnum googleMeet = MeetingProviderEnum$googleMeet._();
 
@@ -16,30 +16,30 @@ static const MeetingProviderEnum livekit = MeetingProviderEnum$livekit._();
 static const List<MeetingProviderEnum> values = [googleMeet, livekit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'google_meet' => 'googleMeet',
   'livekit' => 'livekit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MeetingProviderEnum$Unknown; } 
+bool get isUnknown {return this is MeetingProviderEnum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() googleMeet, required W Function() livekit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() googleMeet, required W Function() livekit, required W Function(String value) $unknown, }) {return switch (this) {
       MeetingProviderEnum$googleMeet() => googleMeet(),
       MeetingProviderEnum$livekit() => livekit(),
       MeetingProviderEnum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? googleMeet, W Function()? livekit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? googleMeet, W Function()? livekit, W Function(String value)? $unknown, }) {return switch (this) {
       MeetingProviderEnum$googleMeet() => googleMeet != null ? googleMeet() : orElse(value),
       MeetingProviderEnum$livekit() => livekit != null ? livekit() : orElse(value),
       MeetingProviderEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MeetingProviderEnum($value)';
 
- }
+}
 @immutable final class MeetingProviderEnum$googleMeet extends MeetingProviderEnum {const MeetingProviderEnum$googleMeet._();
 
 @override String get value => 'google_meet';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? googleMe
 
 @override int get hashCode => 'google_meet'.hashCode;
 
- }
+}
 @immutable final class MeetingProviderEnum$livekit extends MeetingProviderEnum {const MeetingProviderEnum$livekit._();
 
 @override String get value => 'livekit';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? googleMe
 
 @override int get hashCode => 'livekit'.hashCode;
 
- }
+}
 @immutable final class MeetingProviderEnum$Unknown extends MeetingProviderEnum {const MeetingProviderEnum$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? googleMe
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_by_ip_version_response/radar_get_dns_as112_timeseries_group_by_ip_version_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByIpVersionResponse {const RadarGetDnsTimeseriesGroupByIpVersionResponse({required this.result, required this.success, });
 
-factory RadarGetDnsTimeseriesGroupByIpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByIpVersionResponse(
+factory RadarGetDnsTimeseriesGroupByIpVersionResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByIpVersionResponse(
   result: RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsTimeseriesGroupByIpVersionResponse copyWith({RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByIpVersionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsTimeseriesGroupByIpVersionResponse copyWith({RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResult? result, bool? success, }) {return RadarGetDnsTimeseriesGroupByIpVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByIpVersionResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetDnsTimeseriesGroupByIpVersionResponse copyWith({RadarGetDnsAs112Timeseri
 
 @override String toString() => 'RadarGetDnsTimeseriesGroupByIpVersionResponse(result: $result, success: $success)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FuelType {const FuelType();
 
-factory FuelType.fromJson(String json) { return switch (json) {
+factory FuelType.fromJson(String json) {return switch (json) {
   'diesel' => diesel,
   'other' => $other,
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
   _ => FuelType$Unknown(json),
-}; }
+};}
 
 static const FuelType diesel = FuelType$diesel._();
 
@@ -25,39 +25,39 @@ static const FuelType unleadedSuper = FuelType$unleadedSuper._();
 static const List<FuelType> values = [diesel, $other, unleadedPlus, unleadedRegular, unleadedSuper];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'diesel' => 'diesel',
   'other' => r'$other',
   'unleaded_plus' => 'unleadedPlus',
   'unleaded_regular' => 'unleadedRegular',
   'unleaded_super' => 'unleadedSuper',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FuelType$Unknown; } 
+bool get isUnknown {return this is FuelType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() diesel, required W Function() $other, required W Function() unleadedPlus, required W Function() unleadedRegular, required W Function() unleadedSuper, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() diesel, required W Function() $other, required W Function() unleadedPlus, required W Function() unleadedRegular, required W Function() unleadedSuper, required W Function(String value) $unknown, }) {return switch (this) {
       FuelType$diesel() => diesel(),
       FuelType$$other() => $other(),
       FuelType$unleadedPlus() => unleadedPlus(),
       FuelType$unleadedRegular() => unleadedRegular(),
       FuelType$unleadedSuper() => unleadedSuper(),
       FuelType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, W Function()? $other, W Function()? unleadedPlus, W Function()? unleadedRegular, W Function()? unleadedSuper, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, W Function()? $other, W Function()? unleadedPlus, W Function()? unleadedRegular, W Function()? unleadedSuper, W Function(String value)? $unknown, }) {return switch (this) {
       FuelType$diesel() => diesel != null ? diesel() : orElse(value),
       FuelType$$other() => $other != null ? $other() : orElse(value),
       FuelType$unleadedPlus() => unleadedPlus != null ? unleadedPlus() : orElse(value),
       FuelType$unleadedRegular() => unleadedRegular != null ? unleadedRegular() : orElse(value),
       FuelType$unleadedSuper() => unleadedSuper != null ? unleadedSuper() : orElse(value),
       FuelType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FuelType($value)';
 
- }
+}
 @immutable final class FuelType$diesel extends FuelType {const FuelType$diesel._();
 
 @override String get value => 'diesel';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, 
 
 @override int get hashCode => 'diesel'.hashCode;
 
- }
+}
 @immutable final class FuelType$$other extends FuelType {const FuelType$$other._();
 
 @override String get value => 'other';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, 
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class FuelType$unleadedPlus extends FuelType {const FuelType$unleadedPlus._();
 
 @override String get value => 'unleaded_plus';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, 
 
 @override int get hashCode => 'unleaded_plus'.hashCode;
 
- }
+}
 @immutable final class FuelType$unleadedRegular extends FuelType {const FuelType$unleadedRegular._();
 
 @override String get value => 'unleaded_regular';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, 
 
 @override int get hashCode => 'unleaded_regular'.hashCode;
 
- }
+}
 @immutable final class FuelType$unleadedSuper extends FuelType {const FuelType$unleadedSuper._();
 
 @override String get value => 'unleaded_super';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, 
 
 @override int get hashCode => 'unleaded_super'.hashCode;
 
- }
+}
 @immutable final class FuelType$Unknown extends FuelType {const FuelType$Unknown(this.value);
 
 @override final String value;
@@ -112,10 +112,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class FuelUnit {const FuelUnit();
 
-factory FuelUnit.fromJson(String json) { return switch (json) {
+factory FuelUnit.fromJson(String json) {return switch (json) {
   'charging_minute' => chargingMinute,
   'imperial_gallon' => imperialGallon,
   'kilogram' => kilogram,
@@ -125,7 +125,7 @@ factory FuelUnit.fromJson(String json) { return switch (json) {
   'pound' => pound,
   'us_gallon' => usGallon,
   _ => FuelUnit$Unknown(json),
-}; }
+};}
 
 static const FuelUnit chargingMinute = FuelUnit$chargingMinute._();
 
@@ -146,9 +146,9 @@ static const FuelUnit usGallon = FuelUnit$usGallon._();
 static const List<FuelUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, $other, pound, usGallon];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'charging_minute' => 'chargingMinute',
   'imperial_gallon' => 'imperialGallon',
   'kilogram' => 'kilogram',
@@ -158,11 +158,11 @@ String get name { return switch (value) {
   'pound' => 'pound',
   'us_gallon' => 'usGallon',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FuelUnit$Unknown; } 
+bool get isUnknown {return this is FuelUnit$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chargingMinute, required W Function() imperialGallon, required W Function() kilogram, required W Function() kilowattHour, required W Function() liter, required W Function() $other, required W Function() pound, required W Function() usGallon, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chargingMinute, required W Function() imperialGallon, required W Function() kilogram, required W Function() kilowattHour, required W Function() liter, required W Function() $other, required W Function() pound, required W Function() usGallon, required W Function(String value) $unknown, }) {return switch (this) {
       FuelUnit$chargingMinute() => chargingMinute(),
       FuelUnit$imperialGallon() => imperialGallon(),
       FuelUnit$kilogram() => kilogram(),
@@ -172,9 +172,9 @@ W when<W>({required W Function() chargingMinute, required W Function() imperialG
       FuelUnit$pound() => pound(),
       FuelUnit$usGallon() => usGallon(),
       FuelUnit$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargingMinute, W Function()? imperialGallon, W Function()? kilogram, W Function()? kilowattHour, W Function()? liter, W Function()? $other, W Function()? pound, W Function()? usGallon, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargingMinute, W Function()? imperialGallon, W Function()? kilogram, W Function()? kilowattHour, W Function()? liter, W Function()? $other, W Function()? pound, W Function()? usGallon, W Function(String value)? $unknown, }) {return switch (this) {
       FuelUnit$chargingMinute() => chargingMinute != null ? chargingMinute() : orElse(value),
       FuelUnit$imperialGallon() => imperialGallon != null ? imperialGallon() : orElse(value),
       FuelUnit$kilogram() => kilogram != null ? kilogram() : orElse(value),
@@ -184,10 +184,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
       FuelUnit$pound() => pound != null ? pound() : orElse(value),
       FuelUnit$usGallon() => usGallon != null ? usGallon() : orElse(value),
       FuelUnit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FuelUnit($value)';
 
- }
+}
 @immutable final class FuelUnit$chargingMinute extends FuelUnit {const FuelUnit$chargingMinute._();
 
 @override String get value => 'charging_minute';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => 'charging_minute'.hashCode;
 
- }
+}
 @immutable final class FuelUnit$imperialGallon extends FuelUnit {const FuelUnit$imperialGallon._();
 
 @override String get value => 'imperial_gallon';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => 'imperial_gallon'.hashCode;
 
- }
+}
 @immutable final class FuelUnit$kilogram extends FuelUnit {const FuelUnit$kilogram._();
 
 @override String get value => 'kilogram';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => 'kilogram'.hashCode;
 
- }
+}
 @immutable final class FuelUnit$kilowattHour extends FuelUnit {const FuelUnit$kilowattHour._();
 
 @override String get value => 'kilowatt_hour';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => 'kilowatt_hour'.hashCode;
 
- }
+}
 @immutable final class FuelUnit$liter extends FuelUnit {const FuelUnit$liter._();
 
 @override String get value => 'liter';
@@ -232,7 +232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => 'liter'.hashCode;
 
- }
+}
 @immutable final class FuelUnit$$other extends FuelUnit {const FuelUnit$$other._();
 
 @override String get value => 'other';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class FuelUnit$pound extends FuelUnit {const FuelUnit$pound._();
 
 @override String get value => 'pound';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => 'pound'.hashCode;
 
- }
+}
 @immutable final class FuelUnit$usGallon extends FuelUnit {const FuelUnit$usGallon._();
 
 @override String get value => 'us_gallon';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => 'us_gallon'.hashCode;
 
- }
+}
 @immutable final class FuelUnit$Unknown extends FuelUnit {const FuelUnit$Unknown(this.value);
 
 @override final String value;
@@ -269,17 +269,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charging
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Information about fuel that was purchased with this transaction.
 @immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
 
-factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel(
+factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel(
   industryProductCode: json['industry_product_code'] as String?,
   quantityDecimal: json['quantity_decimal'] as String?,
   type: json['type'] != null ? FuelType.fromJson(json['type'] as String) : null,
   unit: json['unit'] != null ? FuelUnit.fromJson(json['unit'] as String) : null,
   unitCostDecimal: json['unit_cost_decimal'] as String?,
-); }
+);}
 
 final String? industryProductCode;
 
@@ -291,28 +291,28 @@ final FuelUnit? unit;
 
 final String? unitCostDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'industry_product_code': ?industryProductCode,
   'quantity_decimal': ?quantityDecimal,
   if (type != null) 'type': type?.toJson(),
   if (unit != null) 'unit': unit?.toJson(),
   'unit_cost_decimal': ?unitCostDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'industry_product_code', 'quantity_decimal', 'type', 'unit', 'unit_cost_decimal'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'industry_product_code', 'quantity_decimal', 'type', 'unit', 'unit_cost_decimal'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final industryProductCode$ = industryProductCode;
 if (industryProductCode$ != null) {
   if (industryProductCode$.runes.length > 5000) { errors.add('industryProductCode: length must be <= 5000'); }
 }
-return errors; } 
-PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, FuelType? Function()? type, FuelUnit? Function()? unit, String? Function()? unitCostDecimal, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel(
+return errors;}
+PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, FuelType? Function()? type, FuelUnit? Function()? unit, String? Function()? unitCostDecimal, }) {return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel(
   industryProductCode: industryProductCode != null ? industryProductCode() : this.industryProductCode,
   quantityDecimal: quantityDecimal != null ? quantityDecimal() : this.quantityDecimal,
   type: type != null ? type() : this.type,
   unit: unit != null ? unit() : this.unit,
   unitCostDecimal: unitCostDecimal != null ? unitCostDecimal() : this.unitCostDecimal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel &&
           industryProductCode == other.industryProductCode &&
@@ -325,4 +325,4 @@ PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel copyW
 
 @override String toString() => 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)';
 
- }
+}

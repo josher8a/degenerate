@@ -4,7 +4,7 @@
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_files_request/file_link_data.dart';/// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 sealed class PostFilesRequestPurpose {const PostFilesRequestPurpose();
 
-factory PostFilesRequestPurpose.fromJson(String json) { return switch (json) {
+factory PostFilesRequestPurpose.fromJson(String json) {return switch (json) {
   'account_requirement' => accountRequirement,
   'additional_verification' => additionalVerification,
   'business_icon' => businessIcon,
@@ -21,7 +21,7 @@ factory PostFilesRequestPurpose.fromJson(String json) { return switch (json) {
   'terminal_wifi_certificate' => terminalWifiCertificate,
   'terminal_wifi_private_key' => terminalWifiPrivateKey,
   _ => PostFilesRequestPurpose$Unknown(json),
-}; }
+};}
 
 static const PostFilesRequestPurpose accountRequirement = PostFilesRequestPurpose$accountRequirement._();
 
@@ -56,9 +56,9 @@ static const PostFilesRequestPurpose terminalWifiPrivateKey = PostFilesRequestPu
 static const List<PostFilesRequestPurpose> values = [accountRequirement, additionalVerification, businessIcon, businessLogo, customerSignature, disputeEvidence, identityDocument, issuingRegulatoryReporting, pciDocument, platformTermsOfService, taxDocumentUserUpload, terminalAndroidApk, terminalReaderSplashscreen, terminalWifiCertificate, terminalWifiPrivateKey];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'account_requirement' => 'accountRequirement',
   'additional_verification' => 'additionalVerification',
   'business_icon' => 'businessIcon',
@@ -75,11 +75,11 @@ String get name { return switch (value) {
   'terminal_wifi_certificate' => 'terminalWifiCertificate',
   'terminal_wifi_private_key' => 'terminalWifiPrivateKey',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostFilesRequestPurpose$Unknown; } 
+bool get isUnknown {return this is PostFilesRequestPurpose$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accountRequirement, required W Function() additionalVerification, required W Function() businessIcon, required W Function() businessLogo, required W Function() customerSignature, required W Function() disputeEvidence, required W Function() identityDocument, required W Function() issuingRegulatoryReporting, required W Function() pciDocument, required W Function() platformTermsOfService, required W Function() taxDocumentUserUpload, required W Function() terminalAndroidApk, required W Function() terminalReaderSplashscreen, required W Function() terminalWifiCertificate, required W Function() terminalWifiPrivateKey, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accountRequirement, required W Function() additionalVerification, required W Function() businessIcon, required W Function() businessLogo, required W Function() customerSignature, required W Function() disputeEvidence, required W Function() identityDocument, required W Function() issuingRegulatoryReporting, required W Function() pciDocument, required W Function() platformTermsOfService, required W Function() taxDocumentUserUpload, required W Function() terminalAndroidApk, required W Function() terminalReaderSplashscreen, required W Function() terminalWifiCertificate, required W Function() terminalWifiPrivateKey, required W Function(String value) $unknown, }) {return switch (this) {
       PostFilesRequestPurpose$accountRequirement() => accountRequirement(),
       PostFilesRequestPurpose$additionalVerification() => additionalVerification(),
       PostFilesRequestPurpose$businessIcon() => businessIcon(),
@@ -96,9 +96,9 @@ W when<W>({required W Function() accountRequirement, required W Function() addit
       PostFilesRequestPurpose$terminalWifiCertificate() => terminalWifiCertificate(),
       PostFilesRequestPurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey(),
       PostFilesRequestPurpose$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountRequirement, W Function()? additionalVerification, W Function()? businessIcon, W Function()? businessLogo, W Function()? customerSignature, W Function()? disputeEvidence, W Function()? identityDocument, W Function()? issuingRegulatoryReporting, W Function()? pciDocument, W Function()? platformTermsOfService, W Function()? taxDocumentUserUpload, W Function()? terminalAndroidApk, W Function()? terminalReaderSplashscreen, W Function()? terminalWifiCertificate, W Function()? terminalWifiPrivateKey, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountRequirement, W Function()? additionalVerification, W Function()? businessIcon, W Function()? businessLogo, W Function()? customerSignature, W Function()? disputeEvidence, W Function()? identityDocument, W Function()? issuingRegulatoryReporting, W Function()? pciDocument, W Function()? platformTermsOfService, W Function()? taxDocumentUserUpload, W Function()? terminalAndroidApk, W Function()? terminalReaderSplashscreen, W Function()? terminalWifiCertificate, W Function()? terminalWifiPrivateKey, W Function(String value)? $unknown, }) {return switch (this) {
       PostFilesRequestPurpose$accountRequirement() => accountRequirement != null ? accountRequirement() : orElse(value),
       PostFilesRequestPurpose$additionalVerification() => additionalVerification != null ? additionalVerification() : orElse(value),
       PostFilesRequestPurpose$businessIcon() => businessIcon != null ? businessIcon() : orElse(value),
@@ -115,10 +115,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
       PostFilesRequestPurpose$terminalWifiCertificate() => terminalWifiCertificate != null ? terminalWifiCertificate() : orElse(value),
       PostFilesRequestPurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey != null ? terminalWifiPrivateKey() : orElse(value),
       PostFilesRequestPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostFilesRequestPurpose($value)';
 
- }
+}
 @immutable final class PostFilesRequestPurpose$accountRequirement extends PostFilesRequestPurpose {const PostFilesRequestPurpose$accountRequirement._();
 
 @override String get value => 'account_requirement';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'account_requirement'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$additionalVerification extends PostFilesRequestPurpose {const PostFilesRequestPurpose$additionalVerification._();
 
 @override String get value => 'additional_verification';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'additional_verification'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$businessIcon extends PostFilesRequestPurpose {const PostFilesRequestPurpose$businessIcon._();
 
 @override String get value => 'business_icon';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'business_icon'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$businessLogo extends PostFilesRequestPurpose {const PostFilesRequestPurpose$businessLogo._();
 
 @override String get value => 'business_logo';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'business_logo'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$customerSignature extends PostFilesRequestPurpose {const PostFilesRequestPurpose$customerSignature._();
 
 @override String get value => 'customer_signature';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'customer_signature'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$disputeEvidence extends PostFilesRequestPurpose {const PostFilesRequestPurpose$disputeEvidence._();
 
 @override String get value => 'dispute_evidence';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'dispute_evidence'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$identityDocument extends PostFilesRequestPurpose {const PostFilesRequestPurpose$identityDocument._();
 
 @override String get value => 'identity_document';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'identity_document'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$issuingRegulatoryReporting extends PostFilesRequestPurpose {const PostFilesRequestPurpose$issuingRegulatoryReporting._();
 
 @override String get value => 'issuing_regulatory_reporting';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'issuing_regulatory_reporting'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$pciDocument extends PostFilesRequestPurpose {const PostFilesRequestPurpose$pciDocument._();
 
 @override String get value => 'pci_document';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'pci_document'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$platformTermsOfService extends PostFilesRequestPurpose {const PostFilesRequestPurpose$platformTermsOfService._();
 
 @override String get value => 'platform_terms_of_service';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'platform_terms_of_service'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$taxDocumentUserUpload extends PostFilesRequestPurpose {const PostFilesRequestPurpose$taxDocumentUserUpload._();
 
 @override String get value => 'tax_document_user_upload';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'tax_document_user_upload'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$terminalAndroidApk extends PostFilesRequestPurpose {const PostFilesRequestPurpose$terminalAndroidApk._();
 
 @override String get value => 'terminal_android_apk';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'terminal_android_apk'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$terminalReaderSplashscreen extends PostFilesRequestPurpose {const PostFilesRequestPurpose$terminalReaderSplashscreen._();
 
 @override String get value => 'terminal_reader_splashscreen';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'terminal_reader_splashscreen'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$terminalWifiCertificate extends PostFilesRequestPurpose {const PostFilesRequestPurpose$terminalWifiCertificate._();
 
 @override String get value => 'terminal_wifi_certificate';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'terminal_wifi_certificate'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$terminalWifiPrivateKey extends PostFilesRequestPurpose {const PostFilesRequestPurpose$terminalWifiPrivateKey._();
 
 @override String get value => 'terminal_wifi_private_key';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'terminal_wifi_private_key'.hashCode;
 
- }
+}
 @immutable final class PostFilesRequestPurpose$Unknown extends PostFilesRequestPurpose {const PostFilesRequestPurpose$Unknown(this.value);
 
 @override final String value;
@@ -263,15 +263,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostFilesRequest {const PostFilesRequest({required this.file, required this.purpose, this.expand, this.fileLinkData, });
 
-factory PostFilesRequest.fromJson(Map<String, dynamic> json) { return PostFilesRequest(
+factory PostFilesRequest.fromJson(Map<String, dynamic> json) {return PostFilesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   file: base64Decode(json['file'] as String),
   fileLinkData: json['file_link_data'] != null ? FileLinkData.fromJson(json['file_link_data'] as Map<String, dynamic>) : null,
   purpose: PostFilesRequestPurpose.fromJson(json['purpose'] as String),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -285,20 +285,20 @@ final FileLinkData? fileLinkData;
 /// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 final PostFilesRequestPurpose purpose;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'file': base64Encode(file),
   if (fileLinkData != null) 'file_link_data': fileLinkData?.toJson(),
   'purpose': purpose.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('purpose'); } 
-PostFilesRequest copyWith({List<String>? Function()? expand, Uint8List? file, FileLinkData? Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) { return PostFilesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('purpose');}
+PostFilesRequest copyWith({List<String>? Function()? expand, Uint8List? file, FileLinkData? Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) {return PostFilesRequest(
   expand: expand != null ? expand() : this.expand,
   file: file ?? this.file,
   fileLinkData: fileLinkData != null ? fileLinkData() : this.fileLinkData,
   purpose: purpose ?? this.purpose,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostFilesRequest &&
           listEquals(expand, other.expand) &&
@@ -310,4 +310,4 @@ PostFilesRequest copyWith({List<String>? Function()? expand, Uint8List? file, Fi
 
 @override String toString() => 'PostFilesRequest(expand: $expand, file: $file, fileLinkData: $fileLinkData, purpose: $purpose)';
 
- }
+}

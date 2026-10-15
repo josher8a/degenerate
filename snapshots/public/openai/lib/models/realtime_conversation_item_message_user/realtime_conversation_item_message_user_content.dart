@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/detail.dart';/// The content type (`input_text`, `input_audio`, or `input_image`).
 sealed class RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType();
 
-factory RealtimeConversationItemMessageUserContentType.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemMessageUserContentType.fromJson(String json) {return switch (json) {
   'input_text' => inputText,
   'input_audio' => inputAudio,
   'input_image' => inputImage,
   _ => RealtimeConversationItemMessageUserContentType$Unknown(json),
-}; }
+};}
 
 static const RealtimeConversationItemMessageUserContentType inputText = RealtimeConversationItemMessageUserContentType$inputText._();
 
@@ -20,33 +20,33 @@ static const RealtimeConversationItemMessageUserContentType inputImage = Realtim
 static const List<RealtimeConversationItemMessageUserContentType> values = [inputText, inputAudio, inputImage];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'input_text' => 'inputText',
   'input_audio' => 'inputAudio',
   'input_image' => 'inputImage',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeConversationItemMessageUserContentType$Unknown; } 
+bool get isUnknown {return this is RealtimeConversationItemMessageUserContentType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inputText, required W Function() inputAudio, required W Function() inputImage, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inputText, required W Function() inputAudio, required W Function() inputImage, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeConversationItemMessageUserContentType$inputText() => inputText(),
       RealtimeConversationItemMessageUserContentType$inputAudio() => inputAudio(),
       RealtimeConversationItemMessageUserContentType$inputImage() => inputImage(),
       RealtimeConversationItemMessageUserContentType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputText, W Function()? inputAudio, W Function()? inputImage, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputText, W Function()? inputAudio, W Function()? inputImage, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeConversationItemMessageUserContentType$inputText() => inputText != null ? inputText() : orElse(value),
       RealtimeConversationItemMessageUserContentType$inputAudio() => inputAudio != null ? inputAudio() : orElse(value),
       RealtimeConversationItemMessageUserContentType$inputImage() => inputImage != null ? inputImage() : orElse(value),
       RealtimeConversationItemMessageUserContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeConversationItemMessageUserContentType($value)';
 
- }
+}
 @immutable final class RealtimeConversationItemMessageUserContentType$inputText extends RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType$inputText._();
 
 @override String get value => 'input_text';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputTex
 
 @override int get hashCode => 'input_text'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemMessageUserContentType$inputAudio extends RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType$inputAudio._();
 
 @override String get value => 'input_audio';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputTex
 
 @override int get hashCode => 'input_audio'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemMessageUserContentType$inputImage extends RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType$inputImage._();
 
 @override String get value => 'input_image';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputTex
 
 @override int get hashCode => 'input_image'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemMessageUserContentType$Unknown extends RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType$Unknown(this.value);
 
 @override final String value;
@@ -83,17 +83,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputTex
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemMessageUserContent {const RealtimeConversationItemMessageUserContent({this.type, this.text, this.audio, this.imageUrl, this.detail, this.transcript, });
 
-factory RealtimeConversationItemMessageUserContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUserContent(
+factory RealtimeConversationItemMessageUserContent.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemMessageUserContent(
   type: json['type'] != null ? RealtimeConversationItemMessageUserContentType.fromJson(json['type'] as String) : null,
   text: json['text'] as String?,
   audio: json['audio'] as String?,
   imageUrl: json['image_url'] as String?,
   detail: json['detail'] != null ? Detail.fromJson(json['detail'] as String) : null,
   transcript: json['transcript'] as String?,
-); }
+);}
 
 /// The content type (`input_text`, `input_audio`, or `input_image`).
 final RealtimeConversationItemMessageUserContentType? type;
@@ -116,23 +116,23 @@ final String? transcript;
 /// The value of `detail`, or its schema default when absent.
 Detail get detailOrDefault => detail ?? Detail.fromJson('auto');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'text': ?text,
   'audio': ?audio,
   'image_url': ?imageUrl,
   if (detail != null) 'detail': detail?.toJson(),
   'transcript': ?transcript,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text', 'audio', 'image_url', 'detail', 'transcript'}.contains(key)); } 
-RealtimeConversationItemMessageUserContent copyWith({RealtimeConversationItemMessageUserContentType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? imageUrl, Detail? Function()? detail, String? Function()? transcript, }) { return RealtimeConversationItemMessageUserContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'text', 'audio', 'image_url', 'detail', 'transcript'}.contains(key));}
+RealtimeConversationItemMessageUserContent copyWith({RealtimeConversationItemMessageUserContentType? Function()? type, String? Function()? text, String? Function()? audio, String? Function()? imageUrl, Detail? Function()? detail, String? Function()? transcript, }) {return RealtimeConversationItemMessageUserContent(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
   audio: audio != null ? audio() : this.audio,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   detail: detail != null ? detail() : this.detail,
   transcript: transcript != null ? transcript() : this.transcript,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemMessageUserContent &&
           type == other.type &&
@@ -146,4 +146,4 @@ RealtimeConversationItemMessageUserContent copyWith({RealtimeConversationItemMes
 
 @override String toString() => 'RealtimeConversationItemMessageUserContent(type: $type, text: $text, audio: $audio, imageUrl: $imageUrl, detail: $detail, transcript: $transcript)';
 
- }
+}

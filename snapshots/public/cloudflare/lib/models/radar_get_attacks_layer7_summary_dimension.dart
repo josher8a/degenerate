@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 sealed class RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension();
 
-factory RadarGetAttacksLayer7SummaryDimension.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7SummaryDimension.fromJson(String json) {return switch (json) {
   'HTTP_METHOD' => httpMethod,
   'HTTP_VERSION' => httpVersion,
   'IP_VERSION' => ipVersion,
@@ -13,7 +13,7 @@ factory RadarGetAttacksLayer7SummaryDimension.fromJson(String json) { return swi
   'VERTICAL' => vertical,
   'INDUSTRY' => industry,
   _ => RadarGetAttacksLayer7SummaryDimension$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7SummaryDimension httpMethod = RadarGetAttacksLayer7SummaryDimension$httpMethod._();
 
@@ -32,9 +32,9 @@ static const RadarGetAttacksLayer7SummaryDimension industry = RadarGetAttacksLay
 static const List<RadarGetAttacksLayer7SummaryDimension> values = [httpMethod, httpVersion, ipVersion, managedRules, mitigationProduct, vertical, industry];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'HTTP_METHOD' => 'httpMethod',
   'HTTP_VERSION' => 'httpVersion',
   'IP_VERSION' => 'ipVersion',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'VERTICAL' => 'vertical',
   'INDUSTRY' => 'industry',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer7SummaryDimension$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer7SummaryDimension$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() httpMethod, required W Function() httpVersion, required W Function() ipVersion, required W Function() managedRules, required W Function() mitigationProduct, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() httpMethod, required W Function() httpVersion, required W Function() ipVersion, required W Function() managedRules, required W Function() mitigationProduct, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer7SummaryDimension$httpMethod() => httpMethod(),
       RadarGetAttacksLayer7SummaryDimension$httpVersion() => httpVersion(),
       RadarGetAttacksLayer7SummaryDimension$ipVersion() => ipVersion(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() httpMethod, required W Function() httpVersion, 
       RadarGetAttacksLayer7SummaryDimension$vertical() => vertical(),
       RadarGetAttacksLayer7SummaryDimension$industry() => industry(),
       RadarGetAttacksLayer7SummaryDimension$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMethod, W Function()? httpVersion, W Function()? ipVersion, W Function()? managedRules, W Function()? mitigationProduct, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMethod, W Function()? httpVersion, W Function()? ipVersion, W Function()? managedRules, W Function()? mitigationProduct, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer7SummaryDimension$httpMethod() => httpMethod != null ? httpMethod() : orElse(value),
       RadarGetAttacksLayer7SummaryDimension$httpVersion() => httpVersion != null ? httpVersion() : orElse(value),
       RadarGetAttacksLayer7SummaryDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
       RadarGetAttacksLayer7SummaryDimension$vertical() => vertical != null ? vertical() : orElse(value),
       RadarGetAttacksLayer7SummaryDimension$industry() => industry != null ? industry() : orElse(value),
       RadarGetAttacksLayer7SummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer7SummaryDimension($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryDimension$httpMethod extends RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension$httpMethod._();
 
 @override String get value => 'HTTP_METHOD';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
 
 @override int get hashCode => 'HTTP_METHOD'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryDimension$httpVersion extends RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension$httpVersion._();
 
 @override String get value => 'HTTP_VERSION';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
 
 @override int get hashCode => 'HTTP_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryDimension$ipVersion extends RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension$ipVersion._();
 
 @override String get value => 'IP_VERSION';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
 
 @override int get hashCode => 'IP_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryDimension$managedRules extends RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension$managedRules._();
 
 @override String get value => 'MANAGED_RULES';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
 
 @override int get hashCode => 'MANAGED_RULES'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryDimension$mitigationProduct extends RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension$mitigationProduct._();
 
 @override String get value => 'MITIGATION_PRODUCT';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
 
 @override int get hashCode => 'MITIGATION_PRODUCT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryDimension$vertical extends RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension$vertical._();
 
 @override String get value => 'VERTICAL';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
 
 @override int get hashCode => 'VERTICAL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryDimension$industry extends RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension$industry._();
 
 @override String get value => 'INDUSTRY';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
 
 @override int get hashCode => 'INDUSTRY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryDimension$Unknown extends RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMeth
 
 @override int get hashCode => value.hashCode;
 
- }
+}

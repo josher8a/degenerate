@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_assets/workers_assets_config.dart';/// Configuration for assets within a Worker.
 @immutable final class WorkersAssets {const WorkersAssets({this.config, this.jwt, });
 
-factory WorkersAssets.fromJson(Map<String, dynamic> json) { return WorkersAssets(
+factory WorkersAssets.fromJson(Map<String, dynamic> json) {return WorkersAssets(
   config: json['config'] != null ? WorkersAssetsConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   jwt: json['jwt'] as String?,
-); }
+);}
 
 /// Configuration for assets within a Worker.
 final WorkersAssetsConfig? config;
@@ -15,15 +15,15 @@ final WorkersAssetsConfig? config;
 /// Token provided upon successful upload of all files from a registered manifest.
 final String? jwt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   'jwt': ?jwt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'jwt'}.contains(key)); } 
-WorkersAssets copyWith({WorkersAssetsConfig? Function()? config, String? Function()? jwt, }) { return WorkersAssets(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'config', 'jwt'}.contains(key));}
+WorkersAssets copyWith({WorkersAssetsConfig? Function()? config, String? Function()? jwt, }) {return WorkersAssets(
   config: config != null ? config() : this.config,
   jwt: jwt != null ? jwt() : this.jwt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAssets &&
           config == other.config &&
@@ -33,4 +33,4 @@ WorkersAssets copyWith({WorkersAssetsConfig? Function()? config, String? Functio
 
 @override String toString() => 'WorkersAssets(config: $config, jwt: $jwt)';
 
- }
+}

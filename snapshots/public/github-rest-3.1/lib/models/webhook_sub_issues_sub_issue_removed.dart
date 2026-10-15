@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookSubIssuesSubIssueRemovedAction {const WebhookSubIssuesSubIssueRemovedAction();
 
-factory WebhookSubIssuesSubIssueRemovedAction.fromJson(String json) { return switch (json) {
+factory WebhookSubIssuesSubIssueRemovedAction.fromJson(String json) {return switch (json) {
   'sub_issue_removed' => subIssueRemoved,
   _ => WebhookSubIssuesSubIssueRemovedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookSubIssuesSubIssueRemovedAction subIssueRemoved = WebhookSubIssuesSubIssueRemovedAction$subIssueRemoved._();
 
 static const List<WebhookSubIssuesSubIssueRemovedAction> values = [subIssueRemoved];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'sub_issue_removed' => 'subIssueRemoved',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookSubIssuesSubIssueRemovedAction$Unknown; } 
+bool get isUnknown {return this is WebhookSubIssuesSubIssueRemovedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() subIssueRemoved, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() subIssueRemoved, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookSubIssuesSubIssueRemovedAction$subIssueRemoved() => subIssueRemoved(),
       WebhookSubIssuesSubIssueRemovedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? subIssueRemoved, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? subIssueRemoved, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookSubIssuesSubIssueRemovedAction$subIssueRemoved() => subIssueRemoved != null ? subIssueRemoved() : orElse(value),
       WebhookSubIssuesSubIssueRemovedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookSubIssuesSubIssueRemovedAction($value)';
 
- }
+}
 @immutable final class WebhookSubIssuesSubIssueRemovedAction$subIssueRemoved extends WebhookSubIssuesSubIssueRemovedAction {const WebhookSubIssuesSubIssueRemovedAction$subIssueRemoved._();
 
 @override String get value => 'sub_issue_removed';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subIssue
 
 @override int get hashCode => 'sub_issue_removed'.hashCode;
 
- }
+}
 @immutable final class WebhookSubIssuesSubIssueRemovedAction$Unknown extends WebhookSubIssuesSubIssueRemovedAction {const WebhookSubIssuesSubIssueRemovedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subIssue
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookSubIssuesSubIssueRemoved {const WebhookSubIssuesSubIssueRemoved({required this.action, required this.subIssueId, required this.subIssue, required this.subIssueRepo, required this.parentIssueId, required this.parentIssue, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookSubIssuesSubIssueRemoved.fromJson(Map<String, dynamic> json) { return WebhookSubIssuesSubIssueRemoved(
+factory WebhookSubIssuesSubIssueRemoved.fromJson(Map<String, dynamic> json) {return WebhookSubIssuesSubIssueRemoved(
   action: WebhookSubIssuesSubIssueRemovedAction.fromJson(json['action'] as String),
   subIssueId: (json['sub_issue_id'] as num).toDouble(),
   subIssue: Issue.fromJson(json['sub_issue'] as Map<String, dynamic>),
@@ -66,7 +66,7 @@ factory WebhookSubIssuesSubIssueRemoved.fromJson(Map<String, dynamic> json) { re
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookSubIssuesSubIssueRemovedAction action;
 
@@ -90,7 +90,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'sub_issue_id': subIssueId,
   'sub_issue': subIssue.toJson(),
@@ -101,14 +101,14 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('sub_issue_id') && json['sub_issue_id'] is num &&
       json.containsKey('sub_issue') &&
       json.containsKey('sub_issue_repo') &&
       json.containsKey('parent_issue_id') && json['parent_issue_id'] is num &&
-      json.containsKey('parent_issue'); } 
-WebhookSubIssuesSubIssueRemoved copyWith({WebhookSubIssuesSubIssueRemovedAction? action, double? subIssueId, Issue? subIssue, Repository? subIssueRepo, double? parentIssueId, Issue? parentIssue, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookSubIssuesSubIssueRemoved(
+      json.containsKey('parent_issue');}
+WebhookSubIssuesSubIssueRemoved copyWith({WebhookSubIssuesSubIssueRemovedAction? action, double? subIssueId, Issue? subIssue, Repository? subIssueRepo, double? parentIssueId, Issue? parentIssue, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) {return WebhookSubIssuesSubIssueRemoved(
   action: action ?? this.action,
   subIssueId: subIssueId ?? this.subIssueId,
   subIssue: subIssue ?? this.subIssue,
@@ -119,7 +119,7 @@ WebhookSubIssuesSubIssueRemoved copyWith({WebhookSubIssuesSubIssueRemovedAction?
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSubIssuesSubIssueRemoved &&
           action == other.action &&
@@ -137,4 +137,4 @@ WebhookSubIssuesSubIssueRemoved copyWith({WebhookSubIssuesSubIssueRemovedAction?
 
 @override String toString() => 'WebhookSubIssuesSubIssueRemoved(\n  action: $action,\n  subIssueId: $subIssueId,\n  subIssue: $subIssue,\n  subIssueRepo: $subIssueRepo,\n  parentIssueId: $parentIssueId,\n  parentIssue: $parentIssue,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

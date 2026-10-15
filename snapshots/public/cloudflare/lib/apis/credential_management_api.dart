@@ -16,7 +16,7 @@ final class CredentialManagementApi with ApiExecutor {const CredentialManagement
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/credential`
-Future<ApiResult<Map<String, dynamic>?, DisableCatalogError>> storeCredentials({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogCatalogCredentialRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DisableCatalogError>> storeCredentials({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogCatalogCredentialRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -35,5 +35,5 @@ return await execute(
   },
   onError: DisableCatalogError.fromResponse,
 );
- } 
- }
+}
+}

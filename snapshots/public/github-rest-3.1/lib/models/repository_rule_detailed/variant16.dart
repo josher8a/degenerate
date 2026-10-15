@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_path_restriction/repository_rule_file_path_restriction_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_path_restriction/repository_rule_file_path_restriction_type.dart';import 'package:pub_github_rest_3_1/models/repository_rule_ruleset_info/ruleset_source_type.dart';/// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
 @immutable final class Variant16 {const Variant16({required this.type, this.parameters, this.rulesetSourceType, this.rulesetSource, this.rulesetId, });
 
-factory Variant16.fromJson(Map<String, dynamic> json) { return Variant16(
+factory Variant16.fromJson(Map<String, dynamic> json) {return Variant16(
   type: RepositoryRuleFilePathRestrictionType.fromJson(json['type'] as String),
   parameters: json['parameters'] != null ? RepositoryRuleFilePathRestrictionParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
   rulesetSourceType: json['ruleset_source_type'] != null ? RulesetSourceType.fromJson(json['ruleset_source_type'] as String) : null,
   rulesetSource: json['ruleset_source'] as String?,
   rulesetId: json['ruleset_id'] != null ? (json['ruleset_id'] as num).toInt() : null,
-); }
+);}
 
 final RepositoryRuleFilePathRestrictionType type;
 
@@ -25,21 +25,21 @@ final String? rulesetSource;
 /// The ID of the ruleset that includes this rule.
 final int? rulesetId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
   if (rulesetSourceType != null) 'ruleset_source_type': rulesetSourceType?.toJson(),
   'ruleset_source': ?rulesetSource,
   'ruleset_id': ?rulesetId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file_path_restriction'; } 
-Variant16 copyWith({RepositoryRuleFilePathRestrictionType? type, RepositoryRuleFilePathRestrictionParameters? Function()? parameters, RulesetSourceType? Function()? rulesetSourceType, String? Function()? rulesetSource, int? Function()? rulesetId, }) { return Variant16(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'file_path_restriction';}
+Variant16 copyWith({RepositoryRuleFilePathRestrictionType? type, RepositoryRuleFilePathRestrictionParameters? Function()? parameters, RulesetSourceType? Function()? rulesetSourceType, String? Function()? rulesetSource, int? Function()? rulesetId, }) {return Variant16(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
   rulesetSourceType: rulesetSourceType != null ? rulesetSourceType() : this.rulesetSourceType,
   rulesetSource: rulesetSource != null ? rulesetSource() : this.rulesetSource,
   rulesetId: rulesetId != null ? rulesetId() : this.rulesetId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Variant16 &&
           type == other.type &&
@@ -52,4 +52,4 @@ Variant16 copyWith({RepositoryRuleFilePathRestrictionType? type, RepositoryRuleF
 
 @override String toString() => 'Variant16(type: $type, parameters: $parameters, rulesetSourceType: $rulesetSourceType, rulesetSource: $rulesetSource, rulesetId: $rulesetId)';
 
- }
+}

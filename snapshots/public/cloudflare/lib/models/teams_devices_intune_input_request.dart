@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Compliance Status.
 sealed class TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus();
 
-factory TeamsDevicesIntuneInputRequestComplianceStatus.fromJson(String json) { return switch (json) {
+factory TeamsDevicesIntuneInputRequestComplianceStatus.fromJson(String json) {return switch (json) {
   'compliant' => compliant,
   'noncompliant' => noncompliant,
   'unknown' => unknown,
@@ -12,7 +12,7 @@ factory TeamsDevicesIntuneInputRequestComplianceStatus.fromJson(String json) { r
   'ingraceperiod' => ingraceperiod,
   'error' => error,
   _ => TeamsDevicesIntuneInputRequestComplianceStatus$Unknown(json),
-}; }
+};}
 
 static const TeamsDevicesIntuneInputRequestComplianceStatus compliant = TeamsDevicesIntuneInputRequestComplianceStatus$compliant._();
 
@@ -29,9 +29,9 @@ static const TeamsDevicesIntuneInputRequestComplianceStatus error = TeamsDevices
 static const List<TeamsDevicesIntuneInputRequestComplianceStatus> values = [compliant, noncompliant, unknown, notapplicable, ingraceperiod, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'compliant' => 'compliant',
   'noncompliant' => 'noncompliant',
   'unknown' => 'unknown',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'ingraceperiod' => 'ingraceperiod',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TeamsDevicesIntuneInputRequestComplianceStatus$Unknown; } 
+bool get isUnknown {return this is TeamsDevicesIntuneInputRequestComplianceStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() compliant, required W Function() noncompliant, required W Function() unknown, required W Function() notapplicable, required W Function() ingraceperiod, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() compliant, required W Function() noncompliant, required W Function() unknown, required W Function() notapplicable, required W Function() ingraceperiod, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       TeamsDevicesIntuneInputRequestComplianceStatus$compliant() => compliant(),
       TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant() => noncompliant(),
       TeamsDevicesIntuneInputRequestComplianceStatus$unknown() => unknown(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() compliant, required W Function() noncompliant, 
       TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod() => ingraceperiod(),
       TeamsDevicesIntuneInputRequestComplianceStatus$error() => error(),
       TeamsDevicesIntuneInputRequestComplianceStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? compliant, W Function()? noncompliant, W Function()? unknown, W Function()? notapplicable, W Function()? ingraceperiod, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? compliant, W Function()? noncompliant, W Function()? unknown, W Function()? notapplicable, W Function()? ingraceperiod, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       TeamsDevicesIntuneInputRequestComplianceStatus$compliant() => compliant != null ? compliant() : orElse(value),
       TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant() => noncompliant != null ? noncompliant() : orElse(value),
       TeamsDevicesIntuneInputRequestComplianceStatus$unknown() => unknown != null ? unknown() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complian
       TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod() => ingraceperiod != null ? ingraceperiod() : orElse(value),
       TeamsDevicesIntuneInputRequestComplianceStatus$error() => error != null ? error() : orElse(value),
       TeamsDevicesIntuneInputRequestComplianceStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TeamsDevicesIntuneInputRequestComplianceStatus($value)';
 
- }
+}
 @immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$compliant extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$compliant._();
 
 @override String get value => 'compliant';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complian
 
 @override int get hashCode => 'compliant'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant._();
 
 @override String get value => 'noncompliant';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complian
 
 @override int get hashCode => 'noncompliant'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$unknown extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$unknown._();
 
 @override String get value => 'unknown';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complian
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$notapplicable extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$notapplicable._();
 
 @override String get value => 'notapplicable';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complian
 
 @override int get hashCode => 'notapplicable'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod._();
 
 @override String get value => 'ingraceperiod';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complian
 
 @override int get hashCode => 'ingraceperiod'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$error extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$error._();
 
 @override String get value => 'error';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complian
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$Unknown extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$Unknown(this.value);
 
 @override final String value;
@@ -128,13 +128,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complian
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesIntuneInputRequest {const TeamsDevicesIntuneInputRequest({required this.complianceStatus, required this.connectionId, });
 
-factory TeamsDevicesIntuneInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesIntuneInputRequest(
+factory TeamsDevicesIntuneInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesIntuneInputRequest(
   complianceStatus: TeamsDevicesIntuneInputRequestComplianceStatus.fromJson(json['compliance_status'] as String),
   connectionId: json['connection_id'] as String,
-); }
+);}
 
 /// Compliance Status.
 /// 
@@ -146,16 +146,16 @@ final TeamsDevicesIntuneInputRequestComplianceStatus complianceStatus;
 /// Example: `'bc7cbfbb-600a-42e4-8a23-45b5e85f804f'`
 final String connectionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'compliance_status': complianceStatus.toJson(),
   'connection_id': connectionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('compliance_status') &&
-      json.containsKey('connection_id') && json['connection_id'] is String; } 
-TeamsDevicesIntuneInputRequest copyWith({TeamsDevicesIntuneInputRequestComplianceStatus? complianceStatus, String? connectionId, }) { return TeamsDevicesIntuneInputRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('compliance_status') &&
+      json.containsKey('connection_id') && json['connection_id'] is String;}
+TeamsDevicesIntuneInputRequest copyWith({TeamsDevicesIntuneInputRequestComplianceStatus? complianceStatus, String? connectionId, }) {return TeamsDevicesIntuneInputRequest(
   complianceStatus: complianceStatus ?? this.complianceStatus,
   connectionId: connectionId ?? this.connectionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIntuneInputRequest &&
           complianceStatus == other.complianceStatus &&
@@ -165,4 +165,4 @@ TeamsDevicesIntuneInputRequest copyWith({TeamsDevicesIntuneInputRequestComplianc
 
 @override String toString() => 'TeamsDevicesIntuneInputRequest(complianceStatus: $complianceStatus, connectionId: $connectionId)';
 
- }
+}

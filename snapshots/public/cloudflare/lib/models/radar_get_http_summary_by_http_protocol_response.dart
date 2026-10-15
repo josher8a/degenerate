@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_summary_by_http_protocol_response/radar_get_http_summary_by_http_protocol_response_result.dart';@immutable final class RadarGetHttpSummaryByHttpProtocolResponse {const RadarGetHttpSummaryByHttpProtocolResponse({required this.result, required this.success, });
 
-factory RadarGetHttpSummaryByHttpProtocolResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByHttpProtocolResponse(
+factory RadarGetHttpSummaryByHttpProtocolResponse.fromJson(Map<String, dynamic> json) {return RadarGetHttpSummaryByHttpProtocolResponse(
   result: RadarGetHttpSummaryByHttpProtocolResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetHttpSummaryByHttpProtocolResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpSummaryByHttpProtocolResponse copyWith({RadarGetHttpSummaryByHttpProtocolResponseResult? result, bool? success, }) { return RadarGetHttpSummaryByHttpProtocolResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetHttpSummaryByHttpProtocolResponse copyWith({RadarGetHttpSummaryByHttpProtocolResponseResult? result, bool? success, }) {return RadarGetHttpSummaryByHttpProtocolResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByHttpProtocolResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetHttpSummaryByHttpProtocolResponse copyWith({RadarGetHttpSummaryByHttpPro
 
 @override String toString() => 'RadarGetHttpSummaryByHttpProtocolResponse(result: $result, success: $success)';
 
- }
+}

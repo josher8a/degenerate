@@ -3,9 +3,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_operation_mitigation_action.dart';@immutable final class ShieldOldOperationSchemaValidationSettingsModifyRequest {const ShieldOldOperationSchemaValidationSettingsModifyRequest({this.mitigationAction = const Omittable.absent()});
 
-factory ShieldOldOperationSchemaValidationSettingsModifyRequest.fromJson(Map<String, dynamic> json) { return ShieldOldOperationSchemaValidationSettingsModifyRequest(
+factory ShieldOldOperationSchemaValidationSettingsModifyRequest.fromJson(Map<String, dynamic> json) {return ShieldOldOperationSchemaValidationSettingsModifyRequest(
   mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? ShieldOldOperationMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// When set, this applies a mitigation action to this operation
 /// 
@@ -16,13 +16,13 @@ factory ShieldOldOperationSchemaValidationSettingsModifyRequest.fromJson(Map<Str
 /// 
 final Omittable<ShieldOldOperationMitigationAction?> mitigationAction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
-ShieldOldOperationSchemaValidationSettingsModifyRequest copyWith({Omittable<ShieldOldOperationMitigationAction?>? mitigationAction}) { return ShieldOldOperationSchemaValidationSettingsModifyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mitigation_action'}.contains(key));}
+ShieldOldOperationSchemaValidationSettingsModifyRequest copyWith({Omittable<ShieldOldOperationMitigationAction?>? mitigationAction}) {return ShieldOldOperationSchemaValidationSettingsModifyRequest(
   mitigationAction: mitigationAction ?? this.mitigationAction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldOperationSchemaValidationSettingsModifyRequest &&
           mitigationAction == other.mitigationAction;
@@ -31,4 +31,4 @@ ShieldOldOperationSchemaValidationSettingsModifyRequest copyWith({Omittable<Shie
 
 @override String toString() => 'ShieldOldOperationSchemaValidationSettingsModifyRequest(mitigationAction: $mitigationAction)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file/links.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class FileObject {const FileObject();
 
-factory FileObject.fromJson(String json) { return switch (json) {
+factory FileObject.fromJson(String json) {return switch (json) {
   'file' => file,
   _ => FileObject$Unknown(json),
-}; }
+};}
 
 static const FileObject file = FileObject$file._();
 
 static const List<FileObject> values = [file];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'file' => 'file',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FileObject$Unknown; } 
+bool get isUnknown {return this is FileObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() file, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() file, required W Function(String value) $unknown, }) {return switch (this) {
       FileObject$file() => file(),
       FileObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W Function(String value)? $unknown, }) {return switch (this) {
       FileObject$file() => file != null ? file() : orElse(value),
       FileObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FileObject($value)';
 
- }
+}
 @immutable final class FileObject$file extends FileObject {const FileObject$file._();
 
 @override String get value => 'file';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W 
 
 @override int get hashCode => 'file'.hashCode;
 
- }
+}
 @immutable final class FileObject$Unknown extends FileObject {const FileObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 sealed class FilePurpose {const FilePurpose();
 
-factory FilePurpose.fromJson(String json) { return switch (json) {
+factory FilePurpose.fromJson(String json) {return switch (json) {
   'account_requirement' => accountRequirement,
   'additional_verification' => additionalVerification,
   'business_icon' => businessIcon,
@@ -80,7 +80,7 @@ factory FilePurpose.fromJson(String json) { return switch (json) {
   'terminal_wifi_certificate' => terminalWifiCertificate,
   'terminal_wifi_private_key' => terminalWifiPrivateKey,
   _ => FilePurpose$Unknown(json),
-}; }
+};}
 
 static const FilePurpose accountRequirement = FilePurpose$accountRequirement._();
 
@@ -127,9 +127,9 @@ static const FilePurpose terminalWifiPrivateKey = FilePurpose$terminalWifiPrivat
 static const List<FilePurpose> values = [accountRequirement, additionalVerification, businessIcon, businessLogo, customerSignature, disputeEvidence, documentProviderIdentityDocument, financeReportRun, financialAccountStatement, identityDocument, identityDocumentDownloadable, issuingRegulatoryReporting, pciDocument, platformTermsOfService, selfie, sigmaScheduledQuery, taxDocumentUserUpload, terminalAndroidApk, terminalReaderSplashscreen, terminalWifiCertificate, terminalWifiPrivateKey];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'account_requirement' => 'accountRequirement',
   'additional_verification' => 'additionalVerification',
   'business_icon' => 'businessIcon',
@@ -152,11 +152,11 @@ String get name { return switch (value) {
   'terminal_wifi_certificate' => 'terminalWifiCertificate',
   'terminal_wifi_private_key' => 'terminalWifiPrivateKey',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FilePurpose$Unknown; } 
+bool get isUnknown {return this is FilePurpose$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accountRequirement, required W Function() additionalVerification, required W Function() businessIcon, required W Function() businessLogo, required W Function() customerSignature, required W Function() disputeEvidence, required W Function() documentProviderIdentityDocument, required W Function() financeReportRun, required W Function() financialAccountStatement, required W Function() identityDocument, required W Function() identityDocumentDownloadable, required W Function() issuingRegulatoryReporting, required W Function() pciDocument, required W Function() platformTermsOfService, required W Function() selfie, required W Function() sigmaScheduledQuery, required W Function() taxDocumentUserUpload, required W Function() terminalAndroidApk, required W Function() terminalReaderSplashscreen, required W Function() terminalWifiCertificate, required W Function() terminalWifiPrivateKey, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accountRequirement, required W Function() additionalVerification, required W Function() businessIcon, required W Function() businessLogo, required W Function() customerSignature, required W Function() disputeEvidence, required W Function() documentProviderIdentityDocument, required W Function() financeReportRun, required W Function() financialAccountStatement, required W Function() identityDocument, required W Function() identityDocumentDownloadable, required W Function() issuingRegulatoryReporting, required W Function() pciDocument, required W Function() platformTermsOfService, required W Function() selfie, required W Function() sigmaScheduledQuery, required W Function() taxDocumentUserUpload, required W Function() terminalAndroidApk, required W Function() terminalReaderSplashscreen, required W Function() terminalWifiCertificate, required W Function() terminalWifiPrivateKey, required W Function(String value) $unknown, }) {return switch (this) {
       FilePurpose$accountRequirement() => accountRequirement(),
       FilePurpose$additionalVerification() => additionalVerification(),
       FilePurpose$businessIcon() => businessIcon(),
@@ -179,9 +179,9 @@ W when<W>({required W Function() accountRequirement, required W Function() addit
       FilePurpose$terminalWifiCertificate() => terminalWifiCertificate(),
       FilePurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey(),
       FilePurpose$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountRequirement, W Function()? additionalVerification, W Function()? businessIcon, W Function()? businessLogo, W Function()? customerSignature, W Function()? disputeEvidence, W Function()? documentProviderIdentityDocument, W Function()? financeReportRun, W Function()? financialAccountStatement, W Function()? identityDocument, W Function()? identityDocumentDownloadable, W Function()? issuingRegulatoryReporting, W Function()? pciDocument, W Function()? platformTermsOfService, W Function()? selfie, W Function()? sigmaScheduledQuery, W Function()? taxDocumentUserUpload, W Function()? terminalAndroidApk, W Function()? terminalReaderSplashscreen, W Function()? terminalWifiCertificate, W Function()? terminalWifiPrivateKey, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountRequirement, W Function()? additionalVerification, W Function()? businessIcon, W Function()? businessLogo, W Function()? customerSignature, W Function()? disputeEvidence, W Function()? documentProviderIdentityDocument, W Function()? financeReportRun, W Function()? financialAccountStatement, W Function()? identityDocument, W Function()? identityDocumentDownloadable, W Function()? issuingRegulatoryReporting, W Function()? pciDocument, W Function()? platformTermsOfService, W Function()? selfie, W Function()? sigmaScheduledQuery, W Function()? taxDocumentUserUpload, W Function()? terminalAndroidApk, W Function()? terminalReaderSplashscreen, W Function()? terminalWifiCertificate, W Function()? terminalWifiPrivateKey, W Function(String value)? $unknown, }) {return switch (this) {
       FilePurpose$accountRequirement() => accountRequirement != null ? accountRequirement() : orElse(value),
       FilePurpose$additionalVerification() => additionalVerification != null ? additionalVerification() : orElse(value),
       FilePurpose$businessIcon() => businessIcon != null ? businessIcon() : orElse(value),
@@ -204,10 +204,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
       FilePurpose$terminalWifiCertificate() => terminalWifiCertificate != null ? terminalWifiCertificate() : orElse(value),
       FilePurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey != null ? terminalWifiPrivateKey() : orElse(value),
       FilePurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FilePurpose($value)';
 
- }
+}
 @immutable final class FilePurpose$accountRequirement extends FilePurpose {const FilePurpose$accountRequirement._();
 
 @override String get value => 'account_requirement';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'account_requirement'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$additionalVerification extends FilePurpose {const FilePurpose$additionalVerification._();
 
 @override String get value => 'additional_verification';
@@ -225,7 +225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'additional_verification'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$businessIcon extends FilePurpose {const FilePurpose$businessIcon._();
 
 @override String get value => 'business_icon';
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'business_icon'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$businessLogo extends FilePurpose {const FilePurpose$businessLogo._();
 
 @override String get value => 'business_logo';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'business_logo'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$customerSignature extends FilePurpose {const FilePurpose$customerSignature._();
 
 @override String get value => 'customer_signature';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'customer_signature'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$disputeEvidence extends FilePurpose {const FilePurpose$disputeEvidence._();
 
 @override String get value => 'dispute_evidence';
@@ -261,7 +261,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'dispute_evidence'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$documentProviderIdentityDocument extends FilePurpose {const FilePurpose$documentProviderIdentityDocument._();
 
 @override String get value => 'document_provider_identity_document';
@@ -270,7 +270,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'document_provider_identity_document'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$financeReportRun extends FilePurpose {const FilePurpose$financeReportRun._();
 
 @override String get value => 'finance_report_run';
@@ -279,7 +279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'finance_report_run'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$financialAccountStatement extends FilePurpose {const FilePurpose$financialAccountStatement._();
 
 @override String get value => 'financial_account_statement';
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'financial_account_statement'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$identityDocument extends FilePurpose {const FilePurpose$identityDocument._();
 
 @override String get value => 'identity_document';
@@ -297,7 +297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'identity_document'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$identityDocumentDownloadable extends FilePurpose {const FilePurpose$identityDocumentDownloadable._();
 
 @override String get value => 'identity_document_downloadable';
@@ -306,7 +306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'identity_document_downloadable'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$issuingRegulatoryReporting extends FilePurpose {const FilePurpose$issuingRegulatoryReporting._();
 
 @override String get value => 'issuing_regulatory_reporting';
@@ -315,7 +315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'issuing_regulatory_reporting'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$pciDocument extends FilePurpose {const FilePurpose$pciDocument._();
 
 @override String get value => 'pci_document';
@@ -324,7 +324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'pci_document'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$platformTermsOfService extends FilePurpose {const FilePurpose$platformTermsOfService._();
 
 @override String get value => 'platform_terms_of_service';
@@ -333,7 +333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'platform_terms_of_service'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$selfie extends FilePurpose {const FilePurpose$selfie._();
 
 @override String get value => 'selfie';
@@ -342,7 +342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'selfie'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$sigmaScheduledQuery extends FilePurpose {const FilePurpose$sigmaScheduledQuery._();
 
 @override String get value => 'sigma_scheduled_query';
@@ -351,7 +351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'sigma_scheduled_query'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$taxDocumentUserUpload extends FilePurpose {const FilePurpose$taxDocumentUserUpload._();
 
 @override String get value => 'tax_document_user_upload';
@@ -360,7 +360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'tax_document_user_upload'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$terminalAndroidApk extends FilePurpose {const FilePurpose$terminalAndroidApk._();
 
 @override String get value => 'terminal_android_apk';
@@ -369,7 +369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'terminal_android_apk'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$terminalReaderSplashscreen extends FilePurpose {const FilePurpose$terminalReaderSplashscreen._();
 
 @override String get value => 'terminal_reader_splashscreen';
@@ -378,7 +378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'terminal_reader_splashscreen'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$terminalWifiCertificate extends FilePurpose {const FilePurpose$terminalWifiCertificate._();
 
 @override String get value => 'terminal_wifi_certificate';
@@ -387,7 +387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'terminal_wifi_certificate'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$terminalWifiPrivateKey extends FilePurpose {const FilePurpose$terminalWifiPrivateKey._();
 
 @override String get value => 'terminal_wifi_private_key';
@@ -396,7 +396,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => 'terminal_wifi_private_key'.hashCode;
 
- }
+}
 @immutable final class FilePurpose$Unknown extends FilePurpose {const FilePurpose$Unknown(this.value);
 
 @override final String value;
@@ -406,7 +406,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// This object represents files hosted on Stripe's servers. You can upload
 /// files with the [create file](https://api.stripe.com#create_file) request
 /// (for example, when uploading dispute evidence). Stripe also
@@ -416,7 +416,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountR
 /// Related guide: [File upload guide](https://docs.stripe.com/file-upload)
 @immutable final class File {const File({required this.created, required this.id, required this.object, required this.purpose, required this.size, this.expiresAt = const Omittable.absent(), this.filename = const Omittable.absent(), this.links = const Omittable.absent(), this.title = const Omittable.absent(), this.type = const Omittable.absent(), this.url = const Omittable.absent(), });
 
-factory File.fromJson(Map<String, dynamic> json) { return File(
+factory File.fromJson(Map<String, dynamic> json) {return File(
   created: (json['created'] as num).toInt(),
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   filename: json.containsKey('filename') ? Omittable(json['filename'] as String?) : const Omittable.absent(),
@@ -428,7 +428,7 @@ factory File.fromJson(Map<String, dynamic> json) { return File(
   title: json.containsKey('title') ? Omittable(json['title'] as String?) : const Omittable.absent(),
   type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -463,7 +463,7 @@ final Omittable<String?> type;
 /// Use your live secret API key to download the file from this URL.
 final Omittable<String?> url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   if (filename.isPresent) 'filename': filename.value,
@@ -475,14 +475,14 @@ Map<String, dynamic> toJson() { return {
   if (title.isPresent) 'title': title.value,
   if (type.isPresent) 'type': type.value,
   if (url.isPresent) 'url': url.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('purpose') &&
-      json.containsKey('size') && json['size'] is num; } 
+      json.containsKey('size') && json['size'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final filename$ = filename.value;
 if (filename$ != null) {
   if (filename$.runes.length > 5000) { errors.add('filename: length must be <= 5000'); }
@@ -500,8 +500,8 @@ final url$ = url.value;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
-return errors; } 
-File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? filename, String? id, Omittable<Links?>? links, FileObject? object, FilePurpose? purpose, int? size, Omittable<String?>? title, Omittable<String?>? type, Omittable<String?>? url, }) { return File(
+return errors;}
+File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? filename, String? id, Omittable<Links?>? links, FileObject? object, FilePurpose? purpose, int? size, Omittable<String?>? title, Omittable<String?>? type, Omittable<String?>? url, }) {return File(
   created: created ?? this.created,
   expiresAt: expiresAt ?? this.expiresAt,
   filename: filename ?? this.filename,
@@ -513,7 +513,7 @@ File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? fil
   title: title ?? this.title,
   type: type ?? this.type,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is File &&
           created == other.created &&
@@ -532,4 +532,4 @@ File copyWith({int? created, Omittable<int?>? expiresAt, Omittable<String?>? fil
 
 @override String toString() => 'File(\n  created: $created,\n  expiresAt: $expiresAt,\n  filename: $filename,\n  id: $id,\n  links: $links,\n  object: $object,\n  purpose: $purpose,\n  size: $size,\n  title: $title,\n  type: $type,\n  url: $url,\n)';
 
- }
+}

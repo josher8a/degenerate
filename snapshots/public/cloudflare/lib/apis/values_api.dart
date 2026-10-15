@@ -14,7 +14,7 @@ final class ValuesApi with ApiExecutor {const ValuesApi(this.apiConfig);
 /// List unique values found in your events.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/values`
-Future<ApiResult<List<TelemetryValuesListResponseResult>, TelemetryValuesListError>> telemetryValuesList({required String accountId, required TelemetryValuesListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TelemetryValuesListResponseResult>, TelemetryValuesListError>> telemetryValuesList({required String accountId, required TelemetryValuesListRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -33,5 +33,5 @@ return await execute(
   },
   onError: TelemetryValuesListError.fromResponse,
 );
- } 
- }
+}
+}

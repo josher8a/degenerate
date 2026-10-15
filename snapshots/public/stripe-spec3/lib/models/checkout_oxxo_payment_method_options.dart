@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class CheckoutOxxoPaymentMethodOptions {const CheckoutOxxoPaymentMethodOptions({required this.expiresAfterDays, this.setupFutureUsage, });
 
-factory CheckoutOxxoPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutOxxoPaymentMethodOptions(
+factory CheckoutOxxoPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutOxxoPaymentMethodOptions(
   expiresAfterDays: (json['expires_after_days'] as num).toInt(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// The number of calendar days before an OXXO invoice expires. For example, if you create an OXXO invoice on Monday and you set expires_after_days to 2, the OXXO invoice will expire on Wednesday at 23:59 America/Mexico_City time.
 final int expiresAfterDays;
@@ -21,15 +21,15 @@ final int expiresAfterDays;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expires_after_days': expiresAfterDays,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expires_after_days') && json['expires_after_days'] is num; } 
-CheckoutOxxoPaymentMethodOptions copyWith({int? expiresAfterDays, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutOxxoPaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expires_after_days') && json['expires_after_days'] is num;}
+CheckoutOxxoPaymentMethodOptions copyWith({int? expiresAfterDays, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return CheckoutOxxoPaymentMethodOptions(
   expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutOxxoPaymentMethodOptions &&
           expiresAfterDays == other.expiresAfterDays &&
@@ -39,4 +39,4 @@ CheckoutOxxoPaymentMethodOptions copyWith({int? expiresAfterDays, CheckoutAffirm
 
 @override String toString() => 'CheckoutOxxoPaymentMethodOptions(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

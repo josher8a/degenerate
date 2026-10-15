@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object_camel_case/any_val.dart';import 'package:pub_speakeasy/models/simple_object_camel_case.dart';@immutable final class DeepObjectCamelCase {const DeepObjectCamelCase({required this.strVal, required this.boolVal, required this.intVal, required this.numVal, required this.objVal, required this.mapVal, required this.arrVal, required this.anyVal, this.type, });
 
-factory DeepObjectCamelCase.fromJson(Map<String, dynamic> json) { return DeepObjectCamelCase(
+factory DeepObjectCamelCase.fromJson(Map<String, dynamic> json) {return DeepObjectCamelCase(
   strVal: json['str_val'] as String,
   boolVal: json['bool_val'] as bool,
   intVal: (json['int_val'] as num).toInt(),
@@ -13,7 +13,7 @@ factory DeepObjectCamelCase.fromJson(Map<String, dynamic> json) { return DeepObj
   arrVal: (json['arr_val'] as List<dynamic>).map((e) => SimpleObjectCamelCase.fromJson(e as Map<String, dynamic>)).toList(),
   anyVal: AnyVal.fromJson(json['any_val']),
   type: json['type'] as String?,
-); }
+);}
 
 /// Example: `'test'`
 final String strVal;
@@ -39,7 +39,7 @@ final AnyVal anyVal;
 
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'str_val': strVal,
   'bool_val': boolVal,
   'int_val': intVal,
@@ -49,16 +49,16 @@ Map<String, dynamic> toJson() { return {
   'arr_val': arrVal.map((e) => e.toJson()).toList(),
   'any_val': anyVal.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('str_val') && json['str_val'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('str_val') && json['str_val'] is String &&
       json.containsKey('bool_val') && json['bool_val'] is bool &&
       json.containsKey('int_val') && json['int_val'] is num &&
       json.containsKey('num_val') && json['num_val'] is num &&
       json.containsKey('obj_val') &&
       json.containsKey('map_val') &&
       json.containsKey('arr_val') &&
-      json.containsKey('any_val'); } 
-DeepObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, double? numVal, SimpleObjectCamelCase? objVal, Map<String,SimpleObjectCamelCase>? mapVal, List<SimpleObjectCamelCase>? arrVal, AnyVal? anyVal, String? Function()? type, }) { return DeepObjectCamelCase(
+      json.containsKey('any_val');}
+DeepObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, double? numVal, SimpleObjectCamelCase? objVal, Map<String,SimpleObjectCamelCase>? mapVal, List<SimpleObjectCamelCase>? arrVal, AnyVal? anyVal, String? Function()? type, }) {return DeepObjectCamelCase(
   strVal: strVal ?? this.strVal,
   boolVal: boolVal ?? this.boolVal,
   intVal: intVal ?? this.intVal,
@@ -68,7 +68,7 @@ DeepObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, double
   arrVal: arrVal ?? this.arrVal,
   anyVal: anyVal ?? this.anyVal,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeepObjectCamelCase &&
           strVal == other.strVal &&
@@ -85,4 +85,4 @@ DeepObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, double
 
 @override String toString() => 'DeepObjectCamelCase(\n  strVal: $strVal,\n  boolVal: $boolVal,\n  intVal: $intVal,\n  numVal: $numVal,\n  objVal: $objVal,\n  mapVal: $mapVal,\n  arrVal: $arrVal,\n  anyVal: $anyVal,\n  type: $type,\n)';
 
- }
+}

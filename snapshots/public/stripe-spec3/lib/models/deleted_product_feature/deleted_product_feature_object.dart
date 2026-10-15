@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class DeletedProductFeatureObject {const DeletedProductFeatureObject();
 
-factory DeletedProductFeatureObject.fromJson(String json) { return switch (json) {
+factory DeletedProductFeatureObject.fromJson(String json) {return switch (json) {
   'product_feature' => productFeature,
   _ => DeletedProductFeatureObject$Unknown(json),
-}; }
+};}
 
 static const DeletedProductFeatureObject productFeature = DeletedProductFeatureObject$productFeature._();
 
 static const List<DeletedProductFeatureObject> values = [productFeature];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'product_feature' => 'productFeature',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DeletedProductFeatureObject$Unknown; } 
+bool get isUnknown {return this is DeletedProductFeatureObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() productFeature, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() productFeature, required W Function(String value) $unknown, }) {return switch (this) {
       DeletedProductFeatureObject$productFeature() => productFeature(),
       DeletedProductFeatureObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? productFeature, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? productFeature, W Function(String value)? $unknown, }) {return switch (this) {
       DeletedProductFeatureObject$productFeature() => productFeature != null ? productFeature() : orElse(value),
       DeletedProductFeatureObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DeletedProductFeatureObject($value)';
 
- }
+}
 @immutable final class DeletedProductFeatureObject$productFeature extends DeletedProductFeatureObject {const DeletedProductFeatureObject$productFeature._();
 
 @override String get value => 'product_feature';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? productF
 
 @override int get hashCode => 'product_feature'.hashCode;
 
- }
+}
 @immutable final class DeletedProductFeatureObject$Unknown extends DeletedProductFeatureObject {const DeletedProductFeatureObject$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? productF
 
 @override int get hashCode => value.hashCode;
 
- }
+}

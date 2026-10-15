@@ -12,7 +12,7 @@ final class FakeApi with ApiExecutor {const FakeApi(this.apiConfig);
 /// To test enum parameters
 ///
 /// `GET /fake`
-Future<ApiResult<void, Never>> testEnumParameters({List<TestEnumParametersEnumQueryStringArray>? enumQueryStringArray, TestEnumParametersEnumQueryString? enumQueryString, TestEnumParametersEnumQueryInteger? enumQueryInteger, TestEnumParametersEnumQueryDouble? enumQueryDouble, List<EnumClass>? enumQueryModelArray, List<TestEnumParametersEnumHeaderStringArray>? enumHeaderStringArray, TestEnumParametersEnumHeaderString? enumHeaderString, TestEnumParametersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> testEnumParameters({List<TestEnumParametersEnumQueryStringArray>? enumQueryStringArray, TestEnumParametersEnumQueryString? enumQueryString, TestEnumParametersEnumQueryInteger? enumQueryInteger, TestEnumParametersEnumQueryDouble? enumQueryDouble, List<EnumClass>? enumQueryModelArray, List<TestEnumParametersEnumHeaderStringArray>? enumHeaderStringArray, TestEnumParametersEnumHeaderString? enumHeaderString, TestEnumParametersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (enumQueryStringArray != null) {
 for (final item in enumQueryStringArray) {
@@ -62,7 +62,7 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Fake endpoint for testing various parameters
 /// 假端點
 /// 偽のエンドポイント
@@ -70,7 +70,7 @@ return await execute(
 /// 
 ///
 /// `POST /fake`
-Future<ApiResult<void, Never>> testEndpointParameters({TestEndpointParametersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testEndpointParameters({TestEndpointParametersRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -110,11 +110,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// To test "client" model
 ///
 /// `PATCH /fake`
-Future<ApiResult<Client, Never>> testClientModel({required Client body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Client, Never>> testClientModel({required Client body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -131,11 +131,11 @@ return await execute(
     return Client.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Fake endpoint to test group parameters (optional)
 ///
 /// `DELETE /fake`
-Future<ApiResult<void, Never>> testGroupParameters({required int requiredStringGroup, required int requiredInt64Group, required bool requiredBooleanGroup, int? stringGroup, int? int64Group, bool? booleanGroup, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> testGroupParameters({required int requiredStringGroup, required int requiredInt64Group, required bool requiredBooleanGroup, int? stringGroup, int? int64Group, bool? booleanGroup, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['required_string_group'] = requiredStringGroup.toString();
 queryParameters['required_int64_group'] = requiredInt64Group.toString();
@@ -165,11 +165,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Test serialization of outer number types
 ///
 /// `POST /fake/outer/number`
-Future<ApiResult<OuterNumber, Never>> fakeOuterNumberSerialize({OuterNumber? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OuterNumber, Never>> fakeOuterNumberSerialize({OuterNumber? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,11 +186,11 @@ return await execute(
     return OuterNumber.fromJson(jsonDecode(response.body) as num);
   },
 );
- } 
+}
 /// Test serialization of enum (int) properties with examples
 ///
 /// `POST /fake/property/enum-int`
-Future<ApiResult<OuterObjectWithEnumProperty, Never>> fakePropertyEnumIntegerSerialize({required OuterObjectWithEnumProperty body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OuterObjectWithEnumProperty, Never>> fakePropertyEnumIntegerSerialize({required OuterObjectWithEnumProperty body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -207,11 +207,11 @@ return await execute(
     return OuterObjectWithEnumProperty.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Test serialization of outer string types
 ///
 /// `POST /fake/outer/string`
-Future<ApiResult<OuterString, Never>> fakeOuterStringSerialize({OuterString? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OuterString, Never>> fakeOuterStringSerialize({OuterString? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -228,11 +228,11 @@ return await execute(
     return OuterString.fromJson(jsonDecode(response.body) as String);
   },
 );
- } 
+}
 /// Test serialization of outer boolean types
 ///
 /// `POST /fake/outer/boolean`
-Future<ApiResult<OuterBoolean, Never>> fakeOuterBooleanSerialize({OuterBoolean? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OuterBoolean, Never>> fakeOuterBooleanSerialize({OuterBoolean? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -249,11 +249,11 @@ return await execute(
     return OuterBoolean.fromJson(jsonDecode(response.body) as bool);
   },
 );
- } 
+}
 /// Test serialization of object with outer number type
 ///
 /// `POST /fake/outer/composite`
-Future<ApiResult<OuterComposite, Never>> fakeOuterCompositeSerialize({OuterComposite? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OuterComposite, Never>> fakeOuterCompositeSerialize({OuterComposite? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -270,11 +270,11 @@ return await execute(
     return OuterComposite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// for Java apache and Java native, test toUrlQueryString for maps with BegDecimal keys
 ///
 /// `GET /fake/BigDecimalMap`
-Future<ApiResult<FakeBigDecimalMapResponse, Never>> fakeBigDecimalMap({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FakeBigDecimalMapResponse, Never>> fakeBigDecimalMap({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -289,13 +289,13 @@ return await execute(
     return FakeBigDecimalMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// test json serialization of form data
 ///
 /// 
 ///
 /// `GET /fake/jsonFormData`
-Future<ApiResult<void, Never>> testJsonFormData({TestJsonFormDataRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testJsonFormData({TestJsonFormDataRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -313,13 +313,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// test referenced additionalProperties
 ///
 /// 
 ///
 /// `POST /fake/additionalProperties-reference`
-Future<ApiResult<void, Never>> testAdditionalPropertiesReference({required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testAdditionalPropertiesReference({required Map<String,dynamic> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -334,13 +334,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// test referenced string map
 ///
 /// 
 ///
 /// `POST /fake/stringMap-reference`
-Future<ApiResult<void, Never>> testStringMapReference({required Map<String,String> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testStringMapReference({required Map<String,String> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -355,13 +355,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// test inline additionalProperties
 ///
 /// 
 ///
 /// `POST /fake/inline-additionalProperties`
-Future<ApiResult<void, Never>> testInlineAdditionalProperties({required Map<String,String> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testInlineAdditionalProperties({required Map<String,String> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -376,13 +376,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// test inline free-form additionalProperties
 ///
 /// 
 ///
 /// `POST /fake/inline-freeform-additionalProperties`
-Future<ApiResult<void, Never>> testInlineFreeformAdditionalProperties({required TestInlineFreeformAdditionalPropertiesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testInlineFreeformAdditionalProperties({required TestInlineFreeformAdditionalPropertiesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -397,13 +397,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// test nullable parent property
 ///
 /// 
 ///
 /// `POST /fake/nullable`
-Future<ApiResult<void, Never>> testNullable({required ChildWithNullable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testNullable({required ChildWithNullable body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -418,9 +418,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `PUT /fake/body-with-query-params`
-Future<ApiResult<void, Never>> testBodyWithQueryParams({required String query, required User body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> testBodyWithQueryParams({required String query, required User body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['query'] = query;
 
@@ -441,11 +441,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// For this test, the body for this request must reference a schema named `File`.
 ///
 /// `PUT /fake/body-with-file-schema`
-Future<ApiResult<void, Never>> testBodyWithFileSchema({required FileSchemaTestClass body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testBodyWithFileSchema({required FileSchemaTestClass body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -460,11 +460,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// For this test, the body has to be a binary file.
 ///
 /// `PUT /fake/body-with-binary`
-Future<ApiResult<void, Never>> testBodyWithBinary({required Uint8List? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> testBodyWithBinary({required Uint8List? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'image/png';
 
 final request = ApiRequest(
@@ -479,11 +479,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// To test the collection format in query parameters
 ///
 /// `PUT /fake/test-query-parameters`
-Future<ApiResult<void, Never>> testQueryParameterCollectionFormat({required List<String> pipe, required List<String> ioutil, required List<String> http, required List<String> url, required List<String> context, required String allowEmpty, Map<String,String>? language, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> testQueryParameterCollectionFormat({required List<String> pipe, required List<String> ioutil, required List<String> http, required List<String> url, required List<String> context, required String allowEmpty, Map<String,String>? language, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['pipe'] = pipe.join('|');
 queryParameters['ioutil'] = ioutil.join(',');
@@ -514,11 +514,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Health check endpoint
 ///
 /// `GET /fake/health`
-Future<ApiResult<HealthCheckResult, Never>> getFakeHealth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HealthCheckResult, Never>> getFakeHealth({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -533,11 +533,11 @@ return await execute(
     return HealthCheckResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// test http signature authentication
 ///
 /// `GET /fake/http-signature-test`
-Future<ApiResult<void, Never>> fakeHttpSignatureTest({required Pet body, String? query1, String? header1, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> fakeHttpSignatureTest({required Pet body, String? query1, String? header1, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (query1 != null) {
   queryParameters['query_1'] = query1;
@@ -563,5 +563,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

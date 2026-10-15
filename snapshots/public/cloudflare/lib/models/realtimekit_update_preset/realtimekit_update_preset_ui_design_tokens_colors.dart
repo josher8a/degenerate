@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_ui_design_tokens_colors_background.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_ui_design_tokens_colors_brand.dart';@immutable final class RealtimekitUpdatePresetUiDesignTokensColors {const RealtimekitUpdatePresetUiDesignTokensColors({this.background, this.brand, this.danger, this.success, this.text, this.textOnBrand, this.videoBg, this.warning, });
 
-factory RealtimekitUpdatePresetUiDesignTokensColors.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokensColors(
+factory RealtimekitUpdatePresetUiDesignTokensColors.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetUiDesignTokensColors(
   background: json['background'] != null ? RealtimekitUpdatePresetUiDesignTokensColorsBackground.fromJson(json['background'] as Map<String, dynamic>) : null,
   brand: json['brand'] != null ? RealtimekitUpdatePresetUiDesignTokensColorsBrand.fromJson(json['brand'] as Map<String, dynamic>) : null,
   danger: json['danger'] as String?,
@@ -12,7 +12,7 @@ factory RealtimekitUpdatePresetUiDesignTokensColors.fromJson(Map<String, dynamic
   textOnBrand: json['text_on_brand'] as String?,
   videoBg: json['video_bg'] as String?,
   warning: json['warning'] as String?,
-); }
+);}
 
 final RealtimekitUpdatePresetUiDesignTokensColorsBackground? background;
 
@@ -48,7 +48,7 @@ String get videoBgOrDefault => videoBg ?? '#191919';
 /// The value of `warning`, or its schema default when absent.
 String get warningOrDefault => warning ?? '#FFCD07';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (background != null) 'background': background?.toJson(),
   if (brand != null) 'brand': brand?.toJson(),
   'danger': ?danger,
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   'text_on_brand': ?textOnBrand,
   'video_bg': ?videoBg,
   'warning': ?warning,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background', 'brand', 'danger', 'success', 'text', 'text_on_brand', 'video_bg', 'warning'}.contains(key)); } 
-RealtimekitUpdatePresetUiDesignTokensColors copyWith({RealtimekitUpdatePresetUiDesignTokensColorsBackground? Function()? background, RealtimekitUpdatePresetUiDesignTokensColorsBrand? Function()? brand, String? Function()? danger, String? Function()? success, String? Function()? text, String? Function()? textOnBrand, String? Function()? videoBg, String? Function()? warning, }) { return RealtimekitUpdatePresetUiDesignTokensColors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'background', 'brand', 'danger', 'success', 'text', 'text_on_brand', 'video_bg', 'warning'}.contains(key));}
+RealtimekitUpdatePresetUiDesignTokensColors copyWith({RealtimekitUpdatePresetUiDesignTokensColorsBackground? Function()? background, RealtimekitUpdatePresetUiDesignTokensColorsBrand? Function()? brand, String? Function()? danger, String? Function()? success, String? Function()? text, String? Function()? textOnBrand, String? Function()? videoBg, String? Function()? warning, }) {return RealtimekitUpdatePresetUiDesignTokensColors(
   background: background != null ? background() : this.background,
   brand: brand != null ? brand() : this.brand,
   danger: danger != null ? danger() : this.danger,
@@ -68,7 +68,7 @@ RealtimekitUpdatePresetUiDesignTokensColors copyWith({RealtimekitUpdatePresetUiD
   textOnBrand: textOnBrand != null ? textOnBrand() : this.textOnBrand,
   videoBg: videoBg != null ? videoBg() : this.videoBg,
   warning: warning != null ? warning() : this.warning,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetUiDesignTokensColors &&
           background == other.background &&
@@ -84,4 +84,4 @@ RealtimekitUpdatePresetUiDesignTokensColors copyWith({RealtimekitUpdatePresetUiD
 
 @override String toString() => 'RealtimekitUpdatePresetUiDesignTokensColors(background: $background, brand: $brand, danger: $danger, success: $success, text: $text, textOnBrand: $textOnBrand, videoBg: $videoBg, warning: $warning)';
 
- }
+}

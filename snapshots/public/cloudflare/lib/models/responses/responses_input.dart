@@ -8,11 +8,11 @@ const ResponsesInput({this.string = const Omittable.absent(), this.listdynamic =
 const ResponsesInput._({required this.rawValue, required this.string, required this.listdynamic, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ResponsesInput.fromJson(Object? json) { return ResponsesInput._(
+factory ResponsesInput.fromJson(Object? json) {return ResponsesInput._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   listdynamic: parseAnyOfVariant<List<dynamic>>(json, (value) => (value! as List<dynamic>).map((e) => e).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ResponsesInput(${toJson()})';
 
- }
+}

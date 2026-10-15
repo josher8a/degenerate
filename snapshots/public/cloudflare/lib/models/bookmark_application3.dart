@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_schemas_aud.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class BookmarkApplication3 {const BookmarkApplication3({required this.domain, required this.type, this.aud, this.createdAt, this.id, this.scimConfig, this.updatedAt, this.appLauncherVisible = const Omittable.absent(), this.logoUrl, this.name, });
 
-factory BookmarkApplication3.fromJson(Map<String, dynamic> json) { return BookmarkApplication3(
+factory BookmarkApplication3.fromJson(Map<String, dynamic> json) {return BookmarkApplication3(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -14,7 +14,7 @@ factory BookmarkApplication3.fromJson(Map<String, dynamic> json) { return Bookma
   logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   type: json['type'] as String,
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -42,7 +42,7 @@ final AccessAppsComponentsSchemasName? name;
 /// Example: `'bookmark'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -53,10 +53,10 @@ Map<String, dynamic> toJson() { return {
   if (logoUrl != null) 'logo_url': logoUrl?.toJson(),
   if (name != null) 'name': name?.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
-      json.containsKey('type') && json['type'] is String; } 
-BookmarkApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, Omittable<dynamic>? appLauncherVisible, dynamic Function()? domain, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, String? type, }) { return BookmarkApplication3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') &&
+      json.containsKey('type') && json['type'] is String;}
+BookmarkApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, Omittable<dynamic>? appLauncherVisible, dynamic Function()? domain, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, String? type, }) {return BookmarkApplication3(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -67,7 +67,7 @@ BookmarkApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestam
   logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,
   name: name != null ? name() : this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BookmarkApplication3 &&
           aud == other.aud &&
@@ -85,4 +85,4 @@ BookmarkApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestam
 
 @override String toString() => 'BookmarkApplication3(\n  aud: $aud,\n  createdAt: $createdAt,\n  id: $id,\n  scimConfig: $scimConfig,\n  updatedAt: $updatedAt,\n  appLauncherVisible: $appLauncherVisible,\n  domain: $domain,\n  logoUrl: $logoUrl,\n  name: $name,\n  type: $type,\n)';
 
- }
+}

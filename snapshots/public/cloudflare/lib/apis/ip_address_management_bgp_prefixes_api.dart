@@ -14,7 +14,7 @@ final class IpAddressManagementBgpPrefixesApi with ApiExecutor {const IpAddressM
 /// List all BGP Prefixes within the specified IP Prefix. BGP Prefixes are used to control which specific subnets are advertised to the Internet. It is possible to advertise subnets more specific than an IP Prefix by creating more specific BGP Prefixes.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes`
-Future<ApiResult<List<AddressingIpamBgpPrefixes>?, IpAddressManagementPrefixesListBgpPrefixesError>> ipAddressManagementPrefixesListBgpPrefixes({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingIpamBgpPrefixes>?, IpAddressManagementPrefixesListBgpPrefixesError>> ipAddressManagementPrefixesListBgpPrefixes({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: IpAddressManagementPrefixesListBgpPrefixesError.fromResponse,
 );
- } 
+}
 /// Create BGP Prefix
 ///
 /// Create a BGP prefix, controlling the BGP advertisement status of a specific subnet. When created, BGP prefixes are initially withdrawn, and can be advertised with the Update BGP Prefix API.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes`
-Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesCreateBgpPrefixError>> ipAddressManagementPrefixesCreateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesCreateBgpPrefixError>> ipAddressManagementPrefixesCreateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixCreate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: IpAddressManagementPrefixesCreateBgpPrefixError.fromResponse,
 );
- } 
+}
 /// Fetch BGP Prefix
 ///
 /// Retrieve a single BGP Prefix according to its identifier
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}`
-Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesFetchBgpPrefixError>> ipAddressManagementPrefixesFetchBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesFetchBgpPrefixError>> ipAddressManagementPrefixesFetchBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: IpAddressManagementPrefixesFetchBgpPrefixError.fromResponse,
 );
- } 
+}
 /// Update BGP Prefix
 ///
 /// Update the properties of a BGP Prefix, such as the on demand advertisement status (advertised or withdrawn).
 ///
 /// `PATCH /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}`
-Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesUpdateBgpPrefixError>> ipAddressManagementPrefixesUpdateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, required AddressingBgpPrefixUpdateAdvertisement body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesUpdateBgpPrefixError>> ipAddressManagementPrefixesUpdateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, required AddressingBgpPrefixUpdateAdvertisement body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: IpAddressManagementPrefixesUpdateBgpPrefixError.fromResponse,
 );
- } 
+}
 /// Delete BGP Prefix
 ///
 /// Delete a BGP Prefix associated with the specified IP Prefix. A BGP Prefix must be withdrawn before it can be deleted.
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}`
-Future<ApiResult<ResponseCommon4, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementPrefixesDeleteBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon4, IpAddressManagementPrefixesDeleteBgpPrefixError>> ipAddressManagementPrefixesDeleteBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -126,5 +126,5 @@ return await execute(
   },
   onError: IpAddressManagementPrefixesDeleteBgpPrefixError.fromResponse,
 );
- } 
- }
+}
+}

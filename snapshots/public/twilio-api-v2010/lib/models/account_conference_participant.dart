@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the participant's call in a session. Can be: `queued`, `connecting`, `ringing`, `connected`, `complete`, or `failed`.
 sealed class ParticipantEnumStatus {const ParticipantEnumStatus();
 
-factory ParticipantEnumStatus.fromJson(String json) { return switch (json) {
+factory ParticipantEnumStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'connecting' => connecting,
   'ringing' => ringing,
@@ -12,7 +12,7 @@ factory ParticipantEnumStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
   'failed' => failed,
   _ => ParticipantEnumStatus$Unknown(json),
-}; }
+};}
 
 static const ParticipantEnumStatus queued = ParticipantEnumStatus$queued._();
 
@@ -29,9 +29,9 @@ static const ParticipantEnumStatus failed = ParticipantEnumStatus$failed._();
 static const List<ParticipantEnumStatus> values = [queued, connecting, ringing, connected, complete, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'queued' => 'queued',
   'connecting' => 'connecting',
   'ringing' => 'ringing',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'complete' => 'complete',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ParticipantEnumStatus$Unknown; } 
+bool get isUnknown {return this is ParticipantEnumStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() queued, required W Function() connecting, required W Function() ringing, required W Function() connected, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() queued, required W Function() connecting, required W Function() ringing, required W Function() connected, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       ParticipantEnumStatus$queued() => queued(),
       ParticipantEnumStatus$connecting() => connecting(),
       ParticipantEnumStatus$ringing() => ringing(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() queued, required W Function() connecting, requi
       ParticipantEnumStatus$complete() => complete(),
       ParticipantEnumStatus$failed() => failed(),
       ParticipantEnumStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? connecting, W Function()? ringing, W Function()? connected, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? connecting, W Function()? ringing, W Function()? connected, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       ParticipantEnumStatus$queued() => queued != null ? queued() : orElse(value),
       ParticipantEnumStatus$connecting() => connecting != null ? connecting() : orElse(value),
       ParticipantEnumStatus$ringing() => ringing != null ? ringing() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
       ParticipantEnumStatus$complete() => complete != null ? complete() : orElse(value),
       ParticipantEnumStatus$failed() => failed != null ? failed() : orElse(value),
       ParticipantEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ParticipantEnumStatus($value)';
 
- }
+}
 @immutable final class ParticipantEnumStatus$queued extends ParticipantEnumStatus {const ParticipantEnumStatus$queued._();
 
 @override String get value => 'queued';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class ParticipantEnumStatus$connecting extends ParticipantEnumStatus {const ParticipantEnumStatus$connecting._();
 
 @override String get value => 'connecting';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'connecting'.hashCode;
 
- }
+}
 @immutable final class ParticipantEnumStatus$ringing extends ParticipantEnumStatus {const ParticipantEnumStatus$ringing._();
 
 @override String get value => 'ringing';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'ringing'.hashCode;
 
- }
+}
 @immutable final class ParticipantEnumStatus$connected extends ParticipantEnumStatus {const ParticipantEnumStatus$connected._();
 
 @override String get value => 'connected';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'connected'.hashCode;
 
- }
+}
 @immutable final class ParticipantEnumStatus$complete extends ParticipantEnumStatus {const ParticipantEnumStatus$complete._();
 
 @override String get value => 'complete';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'complete'.hashCode;
 
- }
+}
 @immutable final class ParticipantEnumStatus$failed extends ParticipantEnumStatus {const ParticipantEnumStatus$failed._();
 
 @override String get value => 'failed';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class ParticipantEnumStatus$Unknown extends ParticipantEnumStatus {const ParticipantEnumStatus$Unknown(this.value);
 
 @override final String value;
@@ -128,10 +128,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccountConferenceParticipant {const AccountConferenceParticipant({this.accountSid = const Omittable.absent(), this.callSid = const Omittable.absent(), this.label = const Omittable.absent(), this.callSidToCoach = const Omittable.absent(), this.coaching = const Omittable.absent(), this.conferenceSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.endConferenceOnExit = const Omittable.absent(), this.muted = const Omittable.absent(), this.hold = const Omittable.absent(), this.startConferenceOnEnter = const Omittable.absent(), this.status, this.queueTime = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountConferenceParticipant.fromJson(Map<String, dynamic> json) { return AccountConferenceParticipant(
+factory AccountConferenceParticipant.fromJson(Map<String, dynamic> json) {return AccountConferenceParticipant(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
   label: json.containsKey('label') ? Omittable(json['label'] as String?) : const Omittable.absent(),
@@ -147,7 +147,7 @@ factory AccountConferenceParticipant.fromJson(Map<String, dynamic> json) { retur
   status: json['status'] != null ? ParticipantEnumStatus.fromJson(json['status'] as String) : null,
   queueTime: json.containsKey('queue_time') ? Omittable(json['queue_time'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Participant resource.
 final Omittable<String?> accountSid;
@@ -193,7 +193,7 @@ final Omittable<String?> queueTime;
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final Omittable<String?> uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (callSid.isPresent) 'call_sid': callSid.value,
   if (label.isPresent) 'label': label.value,
@@ -209,10 +209,10 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (queueTime.isPresent) 'queue_time': queueTime.value,
   if (uri.isPresent) 'uri': uri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'call_sid', 'label', 'call_sid_to_coach', 'coaching', 'conference_sid', 'date_created', 'date_updated', 'end_conference_on_exit', 'muted', 'hold', 'start_conference_on_enter', 'status', 'queue_time', 'uri'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'call_sid', 'label', 'call_sid_to_coach', 'coaching', 'conference_sid', 'date_created', 'date_updated', 'end_conference_on_exit', 'muted', 'hold', 'start_conference_on_enter', 'status', 'queue_time', 'uri'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -237,8 +237,8 @@ if (conferenceSid$ != null) {
   if (conferenceSid$.runes.length > 34) { errors.add('conferenceSid: length must be <= 34'); }
   if (!RegExp(r'^CF[0-9a-fA-F]{32}$').hasMatch(conferenceSid$)) { errors.add(r'conferenceSid: must match pattern ^CF[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountConferenceParticipant copyWith({Omittable<String?>? accountSid, Omittable<String?>? callSid, Omittable<String?>? label, Omittable<String?>? callSidToCoach, Omittable<bool?>? coaching, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<bool?>? endConferenceOnExit, Omittable<bool?>? muted, Omittable<bool?>? hold, Omittable<bool?>? startConferenceOnEnter, ParticipantEnumStatus? Function()? status, Omittable<String?>? queueTime, Omittable<String?>? uri, }) { return AccountConferenceParticipant(
+return errors;}
+AccountConferenceParticipant copyWith({Omittable<String?>? accountSid, Omittable<String?>? callSid, Omittable<String?>? label, Omittable<String?>? callSidToCoach, Omittable<bool?>? coaching, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<bool?>? endConferenceOnExit, Omittable<bool?>? muted, Omittable<bool?>? hold, Omittable<bool?>? startConferenceOnEnter, ParticipantEnumStatus? Function()? status, Omittable<String?>? queueTime, Omittable<String?>? uri, }) {return AccountConferenceParticipant(
   accountSid: accountSid ?? this.accountSid,
   callSid: callSid ?? this.callSid,
   label: label ?? this.label,
@@ -254,7 +254,7 @@ AccountConferenceParticipant copyWith({Omittable<String?>? accountSid, Omittable
   status: status != null ? status() : this.status,
   queueTime: queueTime ?? this.queueTime,
   uri: uri ?? this.uri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountConferenceParticipant &&
           accountSid == other.accountSid &&
@@ -277,4 +277,4 @@ AccountConferenceParticipant copyWith({Omittable<String?>? accountSid, Omittable
 
 @override String toString() => 'AccountConferenceParticipant(\n  accountSid: $accountSid,\n  callSid: $callSid,\n  label: $label,\n  callSidToCoach: $callSidToCoach,\n  coaching: $coaching,\n  conferenceSid: $conferenceSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  endConferenceOnExit: $endConferenceOnExit,\n  muted: $muted,\n  hold: $hold,\n  startConferenceOnEnter: $startConferenceOnEnter,\n  status: $status,\n  queueTime: $queueTime,\n  uri: $uri,\n)';
 
- }
+}

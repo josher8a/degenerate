@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0({required this.clean, required this.compromised, required this.timestamps, });
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(
+factory RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(
   clean: (json['CLEAN'] as List<dynamic>).map((e) => e as String).toList(),
   compromised: (json['COMPROMISED'] as List<dynamic>).map((e) => e as String).toList(),
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
-); }
+);}
 
 final List<String> clean;
 
@@ -15,19 +15,19 @@ final List<String> compromised;
 
 final List<DateTime> timestamps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'CLEAN': clean,
   'COMPROMISED': compromised,
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('CLEAN') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('CLEAN') &&
       json.containsKey('COMPROMISED') &&
-      json.containsKey('timestamps'); } 
-RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 copyWith({List<String>? clean, List<String>? compromised, List<DateTime>? timestamps, }) { return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(
+      json.containsKey('timestamps');}
+RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 copyWith({List<String>? clean, List<String>? compromised, List<DateTime>? timestamps, }) {return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(
   clean: clean ?? this.clean,
   compromised: compromised ?? this.compromised,
   timestamps: timestamps ?? this.timestamps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 &&
           listEquals(clean, other.clean) &&
@@ -38,4 +38,4 @@ RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 c
 
 @override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(clean: $clean, compromised: $compromised, timestamps: $timestamps)';
 
- }
+}

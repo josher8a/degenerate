@@ -14,7 +14,7 @@ final class MagicAccountAppsApi with ApiExecutor {const MagicAccountAppsApi(this
 /// Lists Apps associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/apps`
-Future<ApiResult<List<MagicApp>, MagicAccountAppsAddAppError>> magicAccountAppsListApps({required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicApp>, MagicAccountAppsAddAppError>> magicAccountAppsListApps({required MagicIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Create a new App
 ///
 /// Creates a new App for an account
 ///
 /// `POST /accounts/{account_id}/magic/apps`
-Future<ApiResult<MagicAccountApp, MagicAccountAppsAddAppError>> magicAccountAppsAddApp({required MagicIdentifier accountId, required MagicAppAddSingleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAccountApp, MagicAccountAppsAddAppError>> magicAccountAppsAddApp({required MagicIdentifier accountId, required MagicAppAddSingleRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Update an App
 ///
 /// Updates an Account App
 ///
 /// `PUT /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAccountApp, MagicAccountAppsAddAppError>> magicAccountAppsUpdateApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAccountApp, MagicAccountAppsAddAppError>> magicAccountAppsUpdateApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,13 +81,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Update an App
 ///
 /// Updates an Account App
 ///
 /// `PATCH /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAccountApp, MagicAccountAppsAddAppError>> magicAccountAppsPatchApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAccountApp, MagicAccountAppsAddAppError>> magicAccountAppsPatchApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,13 +106,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Delete Account App
 ///
 /// Deletes specific Account App.
 ///
 /// `DELETE /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAccountApp, MagicAccountAppsAddAppError>> magicAccountAppsDeleteApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAccountApp, MagicAccountAppsAddAppError>> magicAccountAppsDeleteApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -129,5 +129,5 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_name.dart';import 'package:pub_cloudflare/models/stream_opacity.dart';import 'package:pub_cloudflare/models/stream_padding.dart';import 'package:pub_cloudflare/models/stream_position.dart';import 'package:pub_cloudflare/models/stream_scale.dart';@immutable final class StreamWatermarkBasicUpload {const StreamWatermarkBasicUpload({required this.file, this.name, this.opacity, this.padding, this.position, this.scale, });
 
-factory StreamWatermarkBasicUpload.fromJson(Map<String, dynamic> json) { return StreamWatermarkBasicUpload(
+factory StreamWatermarkBasicUpload.fromJson(Map<String, dynamic> json) {return StreamWatermarkBasicUpload(
   file: json['file'] as String,
   name: json['name'] != null ? StreamName.fromJson(json['name'] as String) : null,
   opacity: json['opacity'] != null ? StreamOpacity.fromJson(json['opacity'] as num) : null,
   padding: json['padding'] != null ? StreamPadding.fromJson(json['padding'] as num) : null,
   position: json['position'] != null ? StreamPosition.fromJson(json['position'] as String) : null,
   scale: json['scale'] != null ? StreamScale.fromJson(json['scale'] as num) : null,
-); }
+);}
 
 /// The image file to upload.
 /// 
@@ -32,23 +32,23 @@ final StreamPosition? position;
 /// The size of the image relative to the overall size of the video. This parameter will adapt to horizontal and vertical videos automatically. `0.0` indicates no scaling (use the size of the image as-is), and `1.0 `fills the entire video.
 final StreamScale? scale;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': file,
   if (name != null) 'name': name?.toJson(),
   if (opacity != null) 'opacity': opacity?.toJson(),
   if (padding != null) 'padding': padding?.toJson(),
   if (position != null) 'position': position?.toJson(),
   if (scale != null) 'scale': scale?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
-StreamWatermarkBasicUpload copyWith({String? file, StreamName? Function()? name, StreamOpacity? Function()? opacity, StreamPadding? Function()? padding, StreamPosition? Function()? position, StreamScale? Function()? scale, }) { return StreamWatermarkBasicUpload(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') && json['file'] is String;}
+StreamWatermarkBasicUpload copyWith({String? file, StreamName? Function()? name, StreamOpacity? Function()? opacity, StreamPadding? Function()? padding, StreamPosition? Function()? position, StreamScale? Function()? scale, }) {return StreamWatermarkBasicUpload(
   file: file ?? this.file,
   name: name != null ? name() : this.name,
   opacity: opacity != null ? opacity() : this.opacity,
   padding: padding != null ? padding() : this.padding,
   position: position != null ? position() : this.position,
   scale: scale != null ? scale() : this.scale,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamWatermarkBasicUpload &&
           file == other.file &&
@@ -62,4 +62,4 @@ StreamWatermarkBasicUpload copyWith({String? file, StreamName? Function()? name,
 
 @override String toString() => 'StreamWatermarkBasicUpload(file: $file, name: $name, opacity: $opacity, padding: $padding, position: $position, scale: $scale)';
 
- }
+}

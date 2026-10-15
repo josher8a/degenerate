@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostApplePayDomainsRequest {const PostApplePayDomainsRequest({required this.domainName, this.expand, });
 
-factory PostApplePayDomainsRequest.fromJson(Map<String, dynamic> json) { return PostApplePayDomainsRequest(
+factory PostApplePayDomainsRequest.fromJson(Map<String, dynamic> json) {return PostApplePayDomainsRequest(
   domainName: json['domain_name'] as String,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final String domainName;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain_name': domainName,
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain_name') && json['domain_name'] is String; } 
-PostApplePayDomainsRequest copyWith({String? domainName, List<String>? Function()? expand, }) { return PostApplePayDomainsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain_name') && json['domain_name'] is String;}
+PostApplePayDomainsRequest copyWith({String? domainName, List<String>? Function()? expand, }) {return PostApplePayDomainsRequest(
   domainName: domainName ?? this.domainName,
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostApplePayDomainsRequest &&
           domainName == other.domainName &&
@@ -31,4 +31,4 @@ PostApplePayDomainsRequest copyWith({String? domainName, List<String>? Function(
 
 @override String toString() => 'PostApplePayDomainsRequest(domainName: $domainName, expand: $expand)';
 
- }
+}

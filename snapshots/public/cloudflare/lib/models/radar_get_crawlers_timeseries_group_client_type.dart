@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the client.
 sealed class RadarGetCrawlersTimeseriesGroupClientType {const RadarGetCrawlersTimeseriesGroupClientType();
 
-factory RadarGetCrawlersTimeseriesGroupClientType.fromJson(String json) { return switch (json) {
+factory RadarGetCrawlersTimeseriesGroupClientType.fromJson(String json) {return switch (json) {
   'HUMAN' => human,
   'NON_AI_BOT' => nonAiBot,
   'AI_BOT' => aiBot,
   'MIXED_PURPOSE' => mixedPurpose,
   _ => RadarGetCrawlersTimeseriesGroupClientType$Unknown(json),
-}; }
+};}
 
 static const RadarGetCrawlersTimeseriesGroupClientType human = RadarGetCrawlersTimeseriesGroupClientType$human._();
 
@@ -23,36 +23,36 @@ static const RadarGetCrawlersTimeseriesGroupClientType mixedPurpose = RadarGetCr
 static const List<RadarGetCrawlersTimeseriesGroupClientType> values = [human, nonAiBot, aiBot, mixedPurpose];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'HUMAN' => 'human',
   'NON_AI_BOT' => 'nonAiBot',
   'AI_BOT' => 'aiBot',
   'MIXED_PURPOSE' => 'mixedPurpose',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetCrawlersTimeseriesGroupClientType$Unknown; } 
+bool get isUnknown {return this is RadarGetCrawlersTimeseriesGroupClientType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() human, required W Function() nonAiBot, required W Function() aiBot, required W Function() mixedPurpose, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() human, required W Function() nonAiBot, required W Function() aiBot, required W Function() mixedPurpose, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetCrawlersTimeseriesGroupClientType$human() => human(),
       RadarGetCrawlersTimeseriesGroupClientType$nonAiBot() => nonAiBot(),
       RadarGetCrawlersTimeseriesGroupClientType$aiBot() => aiBot(),
       RadarGetCrawlersTimeseriesGroupClientType$mixedPurpose() => mixedPurpose(),
       RadarGetCrawlersTimeseriesGroupClientType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? human, W Function()? nonAiBot, W Function()? aiBot, W Function()? mixedPurpose, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? human, W Function()? nonAiBot, W Function()? aiBot, W Function()? mixedPurpose, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetCrawlersTimeseriesGroupClientType$human() => human != null ? human() : orElse(value),
       RadarGetCrawlersTimeseriesGroupClientType$nonAiBot() => nonAiBot != null ? nonAiBot() : orElse(value),
       RadarGetCrawlersTimeseriesGroupClientType$aiBot() => aiBot != null ? aiBot() : orElse(value),
       RadarGetCrawlersTimeseriesGroupClientType$mixedPurpose() => mixedPurpose != null ? mixedPurpose() : orElse(value),
       RadarGetCrawlersTimeseriesGroupClientType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetCrawlersTimeseriesGroupClientType($value)';
 
- }
+}
 @immutable final class RadarGetCrawlersTimeseriesGroupClientType$human extends RadarGetCrawlersTimeseriesGroupClientType {const RadarGetCrawlersTimeseriesGroupClientType$human._();
 
 @override String get value => 'HUMAN';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? human, W
 
 @override int get hashCode => 'HUMAN'.hashCode;
 
- }
+}
 @immutable final class RadarGetCrawlersTimeseriesGroupClientType$nonAiBot extends RadarGetCrawlersTimeseriesGroupClientType {const RadarGetCrawlersTimeseriesGroupClientType$nonAiBot._();
 
 @override String get value => 'NON_AI_BOT';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? human, W
 
 @override int get hashCode => 'NON_AI_BOT'.hashCode;
 
- }
+}
 @immutable final class RadarGetCrawlersTimeseriesGroupClientType$aiBot extends RadarGetCrawlersTimeseriesGroupClientType {const RadarGetCrawlersTimeseriesGroupClientType$aiBot._();
 
 @override String get value => 'AI_BOT';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? human, W
 
 @override int get hashCode => 'AI_BOT'.hashCode;
 
- }
+}
 @immutable final class RadarGetCrawlersTimeseriesGroupClientType$mixedPurpose extends RadarGetCrawlersTimeseriesGroupClientType {const RadarGetCrawlersTimeseriesGroupClientType$mixedPurpose._();
 
 @override String get value => 'MIXED_PURPOSE';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? human, W
 
 @override int get hashCode => 'MIXED_PURPOSE'.hashCode;
 
- }
+}
 @immutable final class RadarGetCrawlersTimeseriesGroupClientType$Unknown extends RadarGetCrawlersTimeseriesGroupClientType {const RadarGetCrawlersTimeseriesGroupClientType$Unknown(this.value);
 
 @override final String value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? human, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

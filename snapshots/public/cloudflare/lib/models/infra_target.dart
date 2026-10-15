@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_ip_info.dart';import 'package:pub_cloudflare/models/infra_target_id.dart';@immutable final class InfraTarget {const InfraTarget({required this.createdAt, required this.hostname, required this.id, required this.ip, required this.modifiedAt, });
 
-factory InfraTarget.fromJson(Map<String, dynamic> json) { return InfraTarget(
+factory InfraTarget.fromJson(Map<String, dynamic> json) {return InfraTarget(
   createdAt: DateTime.parse(json['created_at'] as String),
   hostname: json['hostname'] as String,
   id: InfraTargetId.fromJson(json['id'] as String),
   ip: InfraIpInfo.fromJson(json['ip'] as Map<String, dynamic>),
   modifiedAt: DateTime.parse(json['modified_at'] as String),
-); }
+);}
 
 /// Date and time at which the target was created
 /// 
@@ -30,25 +30,25 @@ final InfraIpInfo ip;
 /// Example: `'2019-08-24T14:15:22Z'`
 final DateTime modifiedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'hostname': hostname,
   'id': id.toJson(),
   'ip': ip.toJson(),
   'modified_at': modifiedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') &&
       json.containsKey('ip') &&
-      json.containsKey('modified_at') && json['modified_at'] is String; } 
-InfraTarget copyWith({DateTime? createdAt, String? hostname, InfraTargetId? id, InfraIpInfo? ip, DateTime? modifiedAt, }) { return InfraTarget(
+      json.containsKey('modified_at') && json['modified_at'] is String;}
+InfraTarget copyWith({DateTime? createdAt, String? hostname, InfraTargetId? id, InfraIpInfo? ip, DateTime? modifiedAt, }) {return InfraTarget(
   createdAt: createdAt ?? this.createdAt,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,
   ip: ip ?? this.ip,
   modifiedAt: modifiedAt ?? this.modifiedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InfraTarget &&
           createdAt == other.createdAt &&
@@ -61,4 +61,4 @@ InfraTarget copyWith({DateTime? createdAt, String? hostname, InfraTargetId? id, 
 
 @override String toString() => 'InfraTarget(createdAt: $createdAt, hostname: $hostname, id: $id, ip: $ip, modifiedAt: $modifiedAt)';
 
- }
+}

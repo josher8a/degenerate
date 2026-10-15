@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindD1 {const WorkersBindingKindD1({required this.id, required this.name, required this.type, });
 
-factory WorkersBindingKindD1.fromJson(Map<String, dynamic> json) { return WorkersBindingKindD1(
+factory WorkersBindingKindD1.fromJson(Map<String, dynamic> json) {return WorkersBindingKindD1(
   id: json['id'] as String,
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
-); }
+);}
 
 /// Identifier of the D1 database to bind to.
 /// 
@@ -19,19 +19,19 @@ final WorkersBindingName name;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindD1 copyWith({String? id, WorkersBindingName? name, String? type, }) { return WorkersBindingKindD1(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindD1 copyWith({String? id, WorkersBindingName? name, String? type, }) {return WorkersBindingKindD1(
   id: id ?? this.id,
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindD1 &&
           id == other.id &&
@@ -42,4 +42,4 @@ WorkersBindingKindD1 copyWith({String? id, WorkersBindingName? name, String? typ
 
 @override String toString() => 'WorkersBindingKindD1(id: $id, name: $name, type: $type)';
 
- }
+}

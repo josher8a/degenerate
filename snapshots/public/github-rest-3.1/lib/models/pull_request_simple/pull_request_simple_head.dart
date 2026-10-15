@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class PullRequestSimpleHead {const PullRequestSimpleHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
-factory PullRequestSimpleHead.fromJson(Map<String, dynamic> json) { return PullRequestSimpleHead(
+factory PullRequestSimpleHead.fromJson(Map<String, dynamic> json) {return PullRequestSimpleHead(
   label: json['label'] as String,
   ref: json['ref'] as String,
   repo: Repository.fromJson(json['repo'] as Map<String, dynamic>),
   sha: json['sha'] as String,
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String label;
 
@@ -21,25 +21,25 @@ final String sha;
 
 final SimpleUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'label': label,
   'ref': ref,
   'repo': repo.toJson(),
   'sha': sha,
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('label') && json['label'] is String &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repo') &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('user'); } 
-PullRequestSimpleHead copyWith({String? label, String? ref, Repository? repo, String? sha, SimpleUser? Function()? user, }) { return PullRequestSimpleHead(
+      json.containsKey('user');}
+PullRequestSimpleHead copyWith({String? label, String? ref, Repository? repo, String? sha, SimpleUser? Function()? user, }) {return PullRequestSimpleHead(
   label: label ?? this.label,
   ref: ref ?? this.ref,
   repo: repo ?? this.repo,
   sha: sha ?? this.sha,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestSimpleHead &&
           label == other.label &&
@@ -52,4 +52,4 @@ PullRequestSimpleHead copyWith({String? label, String? ref, Repository? repo, St
 
 @override String toString() => 'PullRequestSimpleHead(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)';
 
- }
+}

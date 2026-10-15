@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_messages2.dart';import 'package:pub_cloudflare/models/email_rule_properties.dart';@immutable final class EmailRuleResponseSingle {const EmailRuleResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
-factory EmailRuleResponseSingle.fromJson(Map<String, dynamic> json) { return EmailRuleResponseSingle(
+factory EmailRuleResponseSingle.fromJson(Map<String, dynamic> json) {return EmailRuleResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<EmailMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final EmailRuleProperties? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-EmailRuleResponseSingle copyWith({List<EmailMessages2>? errors, List<EmailMessages2>? messages, bool? success, EmailRuleProperties? Function()? result, }) { return EmailRuleResponseSingle(
+      json.containsKey('success') && json['success'] is bool;}
+EmailRuleResponseSingle copyWith({List<EmailMessages2>? errors, List<EmailMessages2>? messages, bool? success, EmailRuleProperties? Function()? result, }) {return EmailRuleResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailRuleResponseSingle &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ EmailRuleResponseSingle copyWith({List<EmailMessages2>? errors, List<EmailMessag
 
 @override String toString() => 'EmailRuleResponseSingle(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

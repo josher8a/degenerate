@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_rules/fixed_response.dart';import 'package:pub_cloudflare/models/load_balancing_rules/overrides.dart';/// A rule object containing conditions and overrides for this load balancer to evaluate.
 @immutable final class LoadBalancingRules2 {const LoadBalancingRules2({this.condition, this.disabled, this.fixedResponse, this.name, this.overrides, this.priority, this.terminates, });
 
-factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) { return LoadBalancingRules2(
+factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) {return LoadBalancingRules2(
   condition: json['condition'] as String?,
   disabled: json['disabled'] as bool?,
   fixedResponse: json['fixed_response'] != null ? FixedResponse.fromJson(json['fixed_response'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) { return LoadBal
   overrides: json['overrides'] != null ? Overrides.fromJson(json['overrides'] as Map<String, dynamic>) : null,
   priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
   terminates: json['terminates'] as bool?,
-); }
+);}
 
 /// The condition expressions to evaluate. If the condition evaluates to true, the overrides or fixed_response in this rule will be applied. An empty condition is always true. For more details on condition expressions, please see https://developers.cloudflare.com/load-balancing/understand-basics/load-balancing-rules/expressions.
 /// 
@@ -45,7 +45,7 @@ bool get disabledOrDefault => disabled ?? false;
 /// The value of `priority`, or its schema default when absent.
 int get priorityOrDefault => priority ?? 0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'condition': ?condition,
   'disabled': ?disabled,
   if (fixedResponse != null) 'fixed_response': fixedResponse?.toJson(),
@@ -53,10 +53,10 @@ Map<String, dynamic> toJson() { return {
   if (overrides != null) 'overrides': overrides?.toJson(),
   'priority': ?priority,
   'terminates': ?terminates,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'disabled', 'fixed_response', 'name', 'overrides', 'priority', 'terminates'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'condition', 'disabled', 'fixed_response', 'name', 'overrides', 'priority', 'terminates'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 200) { errors.add('name: length must be <= 200'); }
@@ -65,8 +65,8 @@ final priority$ = priority;
 if (priority$ != null) {
   if (priority$ < 0) { errors.add('priority: must be >= 0'); }
 }
-return errors; } 
-LoadBalancingRules2 copyWith({String? Function()? condition, bool? Function()? disabled, FixedResponse? Function()? fixedResponse, String? Function()? name, Overrides? Function()? overrides, int? Function()? priority, bool? Function()? terminates, }) { return LoadBalancingRules2(
+return errors;}
+LoadBalancingRules2 copyWith({String? Function()? condition, bool? Function()? disabled, FixedResponse? Function()? fixedResponse, String? Function()? name, Overrides? Function()? overrides, int? Function()? priority, bool? Function()? terminates, }) {return LoadBalancingRules2(
   condition: condition != null ? condition() : this.condition,
   disabled: disabled != null ? disabled() : this.disabled,
   fixedResponse: fixedResponse != null ? fixedResponse() : this.fixedResponse,
@@ -74,7 +74,7 @@ LoadBalancingRules2 copyWith({String? Function()? condition, bool? Function()? d
   overrides: overrides != null ? overrides() : this.overrides,
   priority: priority != null ? priority() : this.priority,
   terminates: terminates != null ? terminates() : this.terminates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingRules2 &&
           condition == other.condition &&
@@ -89,4 +89,4 @@ LoadBalancingRules2 copyWith({String? Function()? condition, bool? Function()? d
 
 @override String toString() => 'LoadBalancingRules2(condition: $condition, disabled: $disabled, fixedResponse: $fixedResponse, name: $name, overrides: $overrides, priority: $priority, terminates: $terminates)';
 
- }
+}

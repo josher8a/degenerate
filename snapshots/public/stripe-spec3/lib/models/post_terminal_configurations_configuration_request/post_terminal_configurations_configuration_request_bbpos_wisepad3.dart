@@ -8,11 +8,11 @@ const PostTerminalConfigurationsConfigurationRequestBbposWisepad3({this.bbposWis
 const PostTerminalConfigurationsConfigurationRequestBbposWisepad3._({required this.rawValue, required this.bbposWisePad3, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTerminalConfigurationsConfigurationRequestBbposWisepad3.fromJson(Object? json) { return PostTerminalConfigurationsConfigurationRequestBbposWisepad3._(
+factory PostTerminalConfigurationsConfigurationRequestBbposWisepad3.fromJson(Object? json) {return PostTerminalConfigurationsConfigurationRequestBbposWisepad3._(
   rawValue: Omittable(json),
   bbposWisePad3: json is Map<String, dynamic> && BbposWisePad3.canParse(json) ? parseAnyOfVariant<BbposWisePad3>(json, (value) => BbposWisePad3.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTerminalConfigurationsConfigurationRequestBbposWisepad3(${toJson()})';
 
- }
+}

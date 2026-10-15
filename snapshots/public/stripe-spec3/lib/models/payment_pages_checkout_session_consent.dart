@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// If `opt_in`, the
 /// from the merchant about this Checkout Session.
 sealed class PaymentPagesCheckoutSessionConsentPromotions {const PaymentPagesCheckoutSessionConsentPromotions();
 
-factory PaymentPagesCheckoutSessionConsentPromotions.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionConsentPromotions.fromJson(String json) {return switch (json) {
   'opt_in' => optIn,
   'opt_out' => optOut,
   _ => PaymentPagesCheckoutSessionConsentPromotions$Unknown(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionConsentPromotions optIn = PaymentPagesCheckoutSessionConsentPromotions$optIn._();
 
@@ -18,30 +18,30 @@ static const PaymentPagesCheckoutSessionConsentPromotions optOut = PaymentPagesC
 static const List<PaymentPagesCheckoutSessionConsentPromotions> values = [optIn, optOut];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'opt_in' => 'optIn',
   'opt_out' => 'optOut',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentPagesCheckoutSessionConsentPromotions$Unknown; } 
+bool get isUnknown {return this is PaymentPagesCheckoutSessionConsentPromotions$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() optIn, required W Function() optOut, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() optIn, required W Function() optOut, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentPagesCheckoutSessionConsentPromotions$optIn() => optIn(),
       PaymentPagesCheckoutSessionConsentPromotions$optOut() => optOut(),
       PaymentPagesCheckoutSessionConsentPromotions$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? optIn, W Function()? optOut, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optIn, W Function()? optOut, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentPagesCheckoutSessionConsentPromotions$optIn() => optIn != null ? optIn() : orElse(value),
       PaymentPagesCheckoutSessionConsentPromotions$optOut() => optOut != null ? optOut() : orElse(value),
       PaymentPagesCheckoutSessionConsentPromotions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentPagesCheckoutSessionConsentPromotions($value)';
 
- }
+}
 @immutable final class PaymentPagesCheckoutSessionConsentPromotions$optIn extends PaymentPagesCheckoutSessionConsentPromotions {const PaymentPagesCheckoutSessionConsentPromotions$optIn._();
 
 @override String get value => 'opt_in';
@@ -50,7 +50,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optIn, W
 
 @override int get hashCode => 'opt_in'.hashCode;
 
- }
+}
 @immutable final class PaymentPagesCheckoutSessionConsentPromotions$optOut extends PaymentPagesCheckoutSessionConsentPromotions {const PaymentPagesCheckoutSessionConsentPromotions$optOut._();
 
 @override String get value => 'opt_out';
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optIn, W
 
 @override int get hashCode => 'opt_out'.hashCode;
 
- }
+}
 @immutable final class PaymentPagesCheckoutSessionConsentPromotions$Unknown extends PaymentPagesCheckoutSessionConsentPromotions {const PaymentPagesCheckoutSessionConsentPromotions$Unknown(this.value);
 
 @override final String value;
@@ -69,41 +69,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? optIn, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// If `accepted`, the customer in this Checkout Session has agreed to the merchant's terms of service.
 sealed class PaymentPagesCheckoutSessionConsentTermsOfService {const PaymentPagesCheckoutSessionConsentTermsOfService();
 
-factory PaymentPagesCheckoutSessionConsentTermsOfService.fromJson(String json) { return switch (json) {
+factory PaymentPagesCheckoutSessionConsentTermsOfService.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   _ => PaymentPagesCheckoutSessionConsentTermsOfService$Unknown(json),
-}; }
+};}
 
 static const PaymentPagesCheckoutSessionConsentTermsOfService accepted = PaymentPagesCheckoutSessionConsentTermsOfService$accepted._();
 
 static const List<PaymentPagesCheckoutSessionConsentTermsOfService> values = [accepted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'accepted' => 'accepted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentPagesCheckoutSessionConsentTermsOfService$Unknown; } 
+bool get isUnknown {return this is PaymentPagesCheckoutSessionConsentTermsOfService$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accepted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accepted, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentPagesCheckoutSessionConsentTermsOfService$accepted() => accepted(),
       PaymentPagesCheckoutSessionConsentTermsOfService$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentPagesCheckoutSessionConsentTermsOfService$accepted() => accepted != null ? accepted() : orElse(value),
       PaymentPagesCheckoutSessionConsentTermsOfService$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentPagesCheckoutSessionConsentTermsOfService($value)';
 
- }
+}
 @immutable final class PaymentPagesCheckoutSessionConsentTermsOfService$accepted extends PaymentPagesCheckoutSessionConsentTermsOfService {const PaymentPagesCheckoutSessionConsentTermsOfService$accepted._();
 
 @override String get value => 'accepted';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class PaymentPagesCheckoutSessionConsentTermsOfService$Unknown extends PaymentPagesCheckoutSessionConsentTermsOfService {const PaymentPagesCheckoutSessionConsentTermsOfService$Unknown(this.value);
 
 @override final String value;
@@ -122,14 +122,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PaymentPagesCheckoutSessionConsent {const PaymentPagesCheckoutSessionConsent({this.promotions = const Omittable.absent(), this.termsOfService = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionConsent.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionConsent(
+factory PaymentPagesCheckoutSessionConsent.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionConsent(
   promotions: json.containsKey('promotions') ? Omittable(json['promotions'] != null ? PaymentPagesCheckoutSessionConsentPromotions.fromJson(json['promotions'] as String) : null) : const Omittable.absent(),
   termsOfService: json.containsKey('terms_of_service') ? Omittable(json['terms_of_service'] != null ? PaymentPagesCheckoutSessionConsentTermsOfService.fromJson(json['terms_of_service'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// If `opt_in`, the customer consents to receiving promotional communications
 /// from the merchant about this Checkout Session.
@@ -138,15 +138,15 @@ final Omittable<PaymentPagesCheckoutSessionConsentPromotions?> promotions;
 /// If `accepted`, the customer in this Checkout Session has agreed to the merchant's terms of service.
 final Omittable<PaymentPagesCheckoutSessionConsentTermsOfService?> termsOfService;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (promotions.isPresent) 'promotions': promotions.value?.toJson(),
   if (termsOfService.isPresent) 'terms_of_service': termsOfService.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'promotions', 'terms_of_service'}.contains(key)); } 
-PaymentPagesCheckoutSessionConsent copyWith({Omittable<PaymentPagesCheckoutSessionConsentPromotions?>? promotions, Omittable<PaymentPagesCheckoutSessionConsentTermsOfService?>? termsOfService, }) { return PaymentPagesCheckoutSessionConsent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'promotions', 'terms_of_service'}.contains(key));}
+PaymentPagesCheckoutSessionConsent copyWith({Omittable<PaymentPagesCheckoutSessionConsentPromotions?>? promotions, Omittable<PaymentPagesCheckoutSessionConsentTermsOfService?>? termsOfService, }) {return PaymentPagesCheckoutSessionConsent(
   promotions: promotions ?? this.promotions,
   termsOfService: termsOfService ?? this.termsOfService,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionConsent &&
           promotions == other.promotions &&
@@ -156,4 +156,4 @@ PaymentPagesCheckoutSessionConsent copyWith({Omittable<PaymentPagesCheckoutSessi
 
 @override String toString() => 'PaymentPagesCheckoutSessionConsent(promotions: $promotions, termsOfService: $termsOfService)';
 
- }
+}

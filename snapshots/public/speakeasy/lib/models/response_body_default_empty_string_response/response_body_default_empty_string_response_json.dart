@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseBodyDefaultEmptyStringResponseJson {const ResponseBodyDefaultEmptyStringResponseJson({this.optionalString});
 
-factory ResponseBodyDefaultEmptyStringResponseJson.fromJson(Map<String, dynamic> json) { return ResponseBodyDefaultEmptyStringResponseJson(
+factory ResponseBodyDefaultEmptyStringResponseJson.fromJson(Map<String, dynamic> json) {return ResponseBodyDefaultEmptyStringResponseJson(
   optionalString: json['optionalString'] as String?,
-); }
+);}
 
 final String? optionalString;
 
 /// The value of `optionalString`, or its schema default when absent.
 String get optionalStringOrDefault => optionalString ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'optionalString': ?optionalString,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'optionalString'}.contains(key)); } 
-ResponseBodyDefaultEmptyStringResponseJson copyWith({String? Function()? optionalString}) { return ResponseBodyDefaultEmptyStringResponseJson(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'optionalString'}.contains(key));}
+ResponseBodyDefaultEmptyStringResponseJson copyWith({String? Function()? optionalString}) {return ResponseBodyDefaultEmptyStringResponseJson(
   optionalString: optionalString != null ? optionalString() : this.optionalString,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseBodyDefaultEmptyStringResponseJson &&
           optionalString == other.optionalString;
@@ -27,4 +27,4 @@ ResponseBodyDefaultEmptyStringResponseJson copyWith({String? Function()? optiona
 
 @override String toString() => 'ResponseBodyDefaultEmptyStringResponseJson(optionalString: $optionalString)';
 
- }
+}

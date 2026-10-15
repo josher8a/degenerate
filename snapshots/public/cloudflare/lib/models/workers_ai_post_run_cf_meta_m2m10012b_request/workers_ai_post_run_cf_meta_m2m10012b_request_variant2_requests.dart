@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests({required this.targetLang, required this.text, this.sourceLang, });
 
-factory WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
+factory WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
   sourceLang: json['source_lang'] as String?,
   targetLang: json['target_lang'] as String,
   text: json['text'] as String,
-); }
+);}
 
 /// The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
 final String? sourceLang;
@@ -21,22 +21,22 @@ final String text;
 /// The value of `sourceLang`, or its schema default when absent.
 String get sourceLangOrDefault => sourceLang ?? 'en';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'source_lang': ?sourceLang,
   'target_lang': targetLang,
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_lang') && json['target_lang'] is String &&
-      json.containsKey('text') && json['text'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('target_lang') && json['target_lang'] is String &&
+      json.containsKey('text') && json['text'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (text.isEmpty) { errors.add('text: length must be >= 1'); }
-return errors; } 
-WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests copyWith({String? Function()? sourceLang, String? targetLang, String? text, }) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
+return errors;}
+WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests copyWith({String? Function()? sourceLang, String? targetLang, String? text, }) {return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
   sourceLang: sourceLang != null ? sourceLang() : this.sourceLang,
   targetLang: targetLang ?? this.targetLang,
   text: text ?? this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests &&
           sourceLang == other.sourceLang &&
@@ -47,4 +47,4 @@ WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests copyWith({String? Functio
 
 @override String toString() => 'WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(sourceLang: $sourceLang, targetLang: $targetLang, text: $text)';
 
- }
+}

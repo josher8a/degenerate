@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_response/radar_get_attacks_layer3_summary_response_result.dart';@immutable final class RadarGetEmailSecuritySummaryResponse {const RadarGetEmailSecuritySummaryResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecuritySummaryResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryResponse(
+factory RadarGetEmailSecuritySummaryResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecuritySummaryResponse(
   result: RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer3SummaryResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecuritySummaryResponse copyWith({RadarGetAttacksLayer3SummaryResponseResult? result, bool? success, }) { return RadarGetEmailSecuritySummaryResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecuritySummaryResponse copyWith({RadarGetAttacksLayer3SummaryResponseResult? result, bool? success, }) {return RadarGetEmailSecuritySummaryResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecuritySummaryResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailSecuritySummaryResponse copyWith({RadarGetAttacksLayer3SummaryRespo
 
 @override String toString() => 'RadarGetEmailSecuritySummaryResponse(result: $result, success: $success)';
 
- }
+}

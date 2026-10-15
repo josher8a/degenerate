@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Change the origi
 /// 
 sealed class ZonesResolveOverrideId {const ZonesResolveOverrideId();
 
-factory ZonesResolveOverrideId.fromJson(String json) { return switch (json) {
+factory ZonesResolveOverrideId.fromJson(String json) {return switch (json) {
   'resolve_override' => resolveOverride,
   _ => ZonesResolveOverrideId$Unknown(json),
-}; }
+};}
 
 static const ZonesResolveOverrideId resolveOverride = ZonesResolveOverrideId$resolveOverride._();
 
 static const List<ZonesResolveOverrideId> values = [resolveOverride];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'resolve_override' => 'resolveOverride',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesResolveOverrideId$Unknown; } 
+bool get isUnknown {return this is ZonesResolveOverrideId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() resolveOverride, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() resolveOverride, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesResolveOverrideId$resolveOverride() => resolveOverride(),
       ZonesResolveOverrideId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolveOverride, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolveOverride, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesResolveOverrideId$resolveOverride() => resolveOverride != null ? resolveOverride() : orElse(value),
       ZonesResolveOverrideId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesResolveOverrideId($value)';
 
- }
+}
 @immutable final class ZonesResolveOverrideId$resolveOverride extends ZonesResolveOverrideId {const ZonesResolveOverrideId$resolveOverride._();
 
 @override String get value => 'resolve_override';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolveO
 
 @override int get hashCode => 'resolve_override'.hashCode;
 
- }
+}
 @immutable final class ZonesResolveOverrideId$Unknown extends ZonesResolveOverrideId {const ZonesResolveOverrideId$Unknown(this.value);
 
 @override final String value;
@@ -54,13 +54,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolveO
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesResolveOverride {const ZonesResolveOverride({this.id, this.value, });
 
-factory ZonesResolveOverride.fromJson(Map<String, dynamic> json) { return ZonesResolveOverride(
+factory ZonesResolveOverride.fromJson(Map<String, dynamic> json) {return ZonesResolveOverride(
   id: json['id'] != null ? ZonesResolveOverrideId.fromJson(json['id'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// Change the origin address to the value specified in this setting.
 /// 
@@ -74,15 +74,15 @@ final ZonesResolveOverrideId? id;
 /// Example: `'example.com'`
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesResolveOverride copyWith({ZonesResolveOverrideId? Function()? id, String? Function()? value, }) { return ZonesResolveOverride(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesResolveOverride copyWith({ZonesResolveOverrideId? Function()? id, String? Function()? value, }) {return ZonesResolveOverride(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesResolveOverride &&
           id == other.id &&
@@ -92,4 +92,4 @@ ZonesResolveOverride copyWith({ZonesResolveOverrideId? Function()? id, String? F
 
 @override String toString() => 'ZonesResolveOverride(id: $id, value: $value)';
 
- }
+}

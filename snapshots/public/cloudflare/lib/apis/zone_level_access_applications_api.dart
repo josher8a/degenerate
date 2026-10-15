@@ -14,7 +14,7 @@ final class ZoneLevelAccessApplicationsApi with ApiExecutor {const ZoneLevelAcce
 /// List all Access Applications in a zone.
 ///
 /// `GET /zones/{zone_id}/access/apps`
-Future<ApiResult<List<AccessApps>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsListAccessApplications({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessApps>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsListAccessApplications({required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Add an Access application
 ///
 /// Adds a new application to Access.
 ///
 /// `POST /zones/{zone_id}/access/apps`
-Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsAddABookmarkApplication({required AccessIdentifier zoneId, required AccessAppsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsAddABookmarkApplication({required AccessIdentifier zoneId, required AccessAppsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get an Access application
 ///
 /// Fetches information about an Access application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an Access application
 ///
 /// Updates an Access application.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsUpdateABookmarkApplication({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessApps?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsUpdateABookmarkApplication({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an Access application
 ///
 /// Deletes an application from Access.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,13 +127,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Revoke application tokens
 ///
 /// Revokes all tokens issued for an application.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/revoke_tokens`
-Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -150,13 +150,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update application settings
 ///
 /// Updates application settings.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}/settings`
-Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,13 +175,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update application settings
 ///
 /// Updates application settings.
 ///
 /// `PATCH /zones/{zone_id}/access/apps/{app_id}/settings`
-Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier zoneId, required AccessAppSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -200,13 +200,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Test Access policies
 ///
 /// Tests if a specific user has permission to access an application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/user_policy_checks`
-Future<ApiResult<AccessSchemasPolicyCheckResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasPolicyCheckResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -223,5 +223,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

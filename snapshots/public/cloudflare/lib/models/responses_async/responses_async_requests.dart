@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/responses/reasoning.dart';import 'package:pub_cloudflare/models/responses/responses_input.dart';@immutable final class ResponsesAsyncRequests {const ResponsesAsyncRequests({required this.input, this.reasoning, });
 
-factory ResponsesAsyncRequests.fromJson(Map<String, dynamic> json) { return ResponsesAsyncRequests(
+factory ResponsesAsyncRequests.fromJson(Map<String, dynamic> json) {return ResponsesAsyncRequests(
   input: ResponsesInput.fromJson(json['input']),
   reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Responses API Input messages. Refer to OpenAI Responses API docs to learn more about supported content types
 final ResponsesInput input;
 
 final Reasoning? reasoning;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input': input.toJson(),
   if (reasoning != null) 'reasoning': reasoning?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
-ResponsesAsyncRequests copyWith({ResponsesInput? input, Reasoning? Function()? reasoning, }) { return ResponsesAsyncRequests(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input');}
+ResponsesAsyncRequests copyWith({ResponsesInput? input, Reasoning? Function()? reasoning, }) {return ResponsesAsyncRequests(
   input: input ?? this.input,
   reasoning: reasoning != null ? reasoning() : this.reasoning,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponsesAsyncRequests &&
           input == other.input &&
@@ -31,4 +31,4 @@ ResponsesAsyncRequests copyWith({ResponsesInput? input, Reasoning? Function()? r
 
 @override String toString() => 'ResponsesAsyncRequests(input: $input, reasoning: $reasoning)';
 
- }
+}

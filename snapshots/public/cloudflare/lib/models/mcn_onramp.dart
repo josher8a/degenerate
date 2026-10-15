@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cost.dart';import 'package:pub_cloudflare/models/mcn_cost_diff.dart';import 'package:pub_cloudflare/models/mcn_onramp_cloud_type.dart';import 'package:pub_cloudflare/models/mcn_onramp_id.dart';import 'package:pub_cloudflare/models/mcn_onramp_status.dart';import 'package:pub_cloudflare/models/mcn_onramp_type.dart';import 'package:pub_cloudflare/models/mcn_resource_details.dart';import 'package:pub_cloudflare/models/mcn_resource_diff.dart';import 'package:pub_cloudflare/models/mcn_resource_id.dart';@immutable final class McnOnramp {const McnOnramp({required this.cloudType, required this.dynamicRouting, required this.id, required this.installRoutesInCloud, required this.installRoutesInMagicWan, required this.name, required this.type, required this.updatedAt, this.attachedHubs, this.attachedVpcs, this.cloudAsn, this.description, this.hub, this.lastAppliedAt, this.lastExportedAt, this.lastPlannedAt, this.manageHubToHubAttachments, this.manageVpcToHubAttachments, this.plannedMonthlyCostEstimate, this.plannedResources, this.plannedResourcesUnavailable, this.postApplyMonthlyCostEstimate, this.postApplyResources, this.postApplyResourcesUnavailable, this.region, this.status, this.vpc, this.vpcsById, this.vpcsByIdUnavailable, });
 
-factory McnOnramp.fromJson(Map<String, dynamic> json) { return McnOnramp(
+factory McnOnramp.fromJson(Map<String, dynamic> json) {return McnOnramp(
   attachedHubs: (json['attached_hubs'] as List<dynamic>?)?.map((e) => McnResourceId.fromJson(e as String)).toList(),
   attachedVpcs: (json['attached_vpcs'] as List<dynamic>?)?.map((e) => McnResourceId.fromJson(e as String)).toList(),
   cloudAsn: json['cloud_asn'] != null ? (json['cloud_asn'] as num).toInt() : null,
@@ -33,7 +33,7 @@ factory McnOnramp.fromJson(Map<String, dynamic> json) { return McnOnramp(
   vpc: json['vpc'] != null ? McnResourceId.fromJson(json['vpc'] as String) : null,
   vpcsById: (json['vpcs_by_id'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, McnResourceDetails.fromJson(v as Map<String, dynamic>))),
   vpcsByIdUnavailable: (json['vpcs_by_id_unavailable'] as List<dynamic>?)?.map((e) => McnResourceId.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<McnResourceId>? attachedHubs;
 
@@ -94,7 +94,7 @@ final Map<String,McnResourceDetails>? vpcsById;
 /// The list of vpc IDs for which resource details failed to generate.
 final List<McnResourceId>? vpcsByIdUnavailable;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (attachedHubs != null) 'attached_hubs': attachedHubs?.map((e) => e.toJson()).toList(),
   if (attachedVpcs != null) 'attached_vpcs': attachedVpcs?.map((e) => e.toJson()).toList(),
   'cloud_asn': ?cloudAsn,
@@ -124,16 +124,16 @@ Map<String, dynamic> toJson() { return {
   if (vpc != null) 'vpc': vpc?.toJson(),
   if (vpcsById != null) 'vpcs_by_id': vpcsById?.map((k, v) => MapEntry(k, v.toJson())),
   if (vpcsByIdUnavailable != null) 'vpcs_by_id_unavailable': vpcsByIdUnavailable?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cloud_type') &&
       json.containsKey('dynamic_routing') && json['dynamic_routing'] is bool &&
       json.containsKey('id') &&
       json.containsKey('install_routes_in_cloud') && json['install_routes_in_cloud'] is bool &&
       json.containsKey('install_routes_in_magic_wan') && json['install_routes_in_magic_wan'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-McnOnramp copyWith({List<McnResourceId>? Function()? attachedHubs, List<McnResourceId>? Function()? attachedVpcs, int? Function()? cloudAsn, McnOnrampCloudType? cloudType, String? Function()? description, bool? dynamicRouting, McnResourceId? Function()? hub, McnOnrampId? id, bool? installRoutesInCloud, bool? installRoutesInMagicWan, String? Function()? lastAppliedAt, String? Function()? lastExportedAt, String? Function()? lastPlannedAt, bool? Function()? manageHubToHubAttachments, bool? Function()? manageVpcToHubAttachments, String? name, McnCostDiff? Function()? plannedMonthlyCostEstimate, List<McnResourceDiff>? Function()? plannedResources, bool? Function()? plannedResourcesUnavailable, McnCost? Function()? postApplyMonthlyCostEstimate, Map<String, McnResourceDetails>? Function()? postApplyResources, bool? Function()? postApplyResourcesUnavailable, String? Function()? region, McnOnrampStatus? Function()? status, McnOnrampType? type, String? updatedAt, McnResourceId? Function()? vpc, Map<String, McnResourceDetails>? Function()? vpcsById, List<McnResourceId>? Function()? vpcsByIdUnavailable, }) { return McnOnramp(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+McnOnramp copyWith({List<McnResourceId>? Function()? attachedHubs, List<McnResourceId>? Function()? attachedVpcs, int? Function()? cloudAsn, McnOnrampCloudType? cloudType, String? Function()? description, bool? dynamicRouting, McnResourceId? Function()? hub, McnOnrampId? id, bool? installRoutesInCloud, bool? installRoutesInMagicWan, String? Function()? lastAppliedAt, String? Function()? lastExportedAt, String? Function()? lastPlannedAt, bool? Function()? manageHubToHubAttachments, bool? Function()? manageVpcToHubAttachments, String? name, McnCostDiff? Function()? plannedMonthlyCostEstimate, List<McnResourceDiff>? Function()? plannedResources, bool? Function()? plannedResourcesUnavailable, McnCost? Function()? postApplyMonthlyCostEstimate, Map<String, McnResourceDetails>? Function()? postApplyResources, bool? Function()? postApplyResourcesUnavailable, String? Function()? region, McnOnrampStatus? Function()? status, McnOnrampType? type, String? updatedAt, McnResourceId? Function()? vpc, Map<String, McnResourceDetails>? Function()? vpcsById, List<McnResourceId>? Function()? vpcsByIdUnavailable, }) {return McnOnramp(
   attachedHubs: attachedHubs != null ? attachedHubs() : this.attachedHubs,
   attachedVpcs: attachedVpcs != null ? attachedVpcs() : this.attachedVpcs,
   cloudAsn: cloudAsn != null ? cloudAsn() : this.cloudAsn,
@@ -163,7 +163,7 @@ McnOnramp copyWith({List<McnResourceId>? Function()? attachedHubs, List<McnResou
   vpc: vpc != null ? vpc() : this.vpc,
   vpcsById: vpcsById != null ? vpcsById() : this.vpcsById,
   vpcsByIdUnavailable: vpcsByIdUnavailable != null ? vpcsByIdUnavailable() : this.vpcsByIdUnavailable,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnOnramp &&
           listEquals(attachedHubs, other.attachedHubs) &&
@@ -200,4 +200,4 @@ McnOnramp copyWith({List<McnResourceId>? Function()? attachedHubs, List<McnResou
 
 @override String toString() => 'McnOnramp(\n  attachedHubs: $attachedHubs,\n  attachedVpcs: $attachedVpcs,\n  cloudAsn: $cloudAsn,\n  cloudType: $cloudType,\n  description: $description,\n  dynamicRouting: $dynamicRouting,\n  hub: $hub,\n  id: $id,\n  installRoutesInCloud: $installRoutesInCloud,\n  installRoutesInMagicWan: $installRoutesInMagicWan,\n  lastAppliedAt: $lastAppliedAt,\n  lastExportedAt: $lastExportedAt,\n  lastPlannedAt: $lastPlannedAt,\n  manageHubToHubAttachments: $manageHubToHubAttachments,\n  manageVpcToHubAttachments: $manageVpcToHubAttachments,\n  name: $name,\n  plannedMonthlyCostEstimate: $plannedMonthlyCostEstimate,\n  plannedResources: $plannedResources,\n  plannedResourcesUnavailable: $plannedResourcesUnavailable,\n  postApplyMonthlyCostEstimate: $postApplyMonthlyCostEstimate,\n  postApplyResources: $postApplyResources,\n  postApplyResourcesUnavailable: $postApplyResourcesUnavailable,\n  region: $region,\n  status: $status,\n  type: $type,\n  updatedAt: $updatedAt,\n  vpc: $vpc,\n  vpcsById: $vpcsById,\n  vpcsByIdUnavailable: $vpcsByIdUnavailable,\n)';
 
- }
+}

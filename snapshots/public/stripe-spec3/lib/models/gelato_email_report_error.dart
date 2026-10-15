@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
 sealed class GelatoEmailReportErrorCode {const GelatoEmailReportErrorCode();
 
-factory GelatoEmailReportErrorCode.fromJson(String json) { return switch (json) {
+factory GelatoEmailReportErrorCode.fromJson(String json) {return switch (json) {
   'email_unverified_other' => emailUnverifiedOther,
   'email_verification_declined' => emailVerificationDeclined,
   _ => GelatoEmailReportErrorCode$Unknown(json),
-}; }
+};}
 
 static const GelatoEmailReportErrorCode emailUnverifiedOther = GelatoEmailReportErrorCode$emailUnverifiedOther._();
 
@@ -17,30 +17,30 @@ static const GelatoEmailReportErrorCode emailVerificationDeclined = GelatoEmailR
 static const List<GelatoEmailReportErrorCode> values = [emailUnverifiedOther, emailVerificationDeclined];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'email_unverified_other' => 'emailUnverifiedOther',
   'email_verification_declined' => 'emailVerificationDeclined',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GelatoEmailReportErrorCode$Unknown; } 
+bool get isUnknown {return this is GelatoEmailReportErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() emailUnverifiedOther, required W Function() emailVerificationDeclined, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() emailUnverifiedOther, required W Function() emailVerificationDeclined, required W Function(String value) $unknown, }) {return switch (this) {
       GelatoEmailReportErrorCode$emailUnverifiedOther() => emailUnverifiedOther(),
       GelatoEmailReportErrorCode$emailVerificationDeclined() => emailVerificationDeclined(),
       GelatoEmailReportErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailUnverifiedOther, W Function()? emailVerificationDeclined, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailUnverifiedOther, W Function()? emailVerificationDeclined, W Function(String value)? $unknown, }) {return switch (this) {
       GelatoEmailReportErrorCode$emailUnverifiedOther() => emailUnverifiedOther != null ? emailUnverifiedOther() : orElse(value),
       GelatoEmailReportErrorCode$emailVerificationDeclined() => emailVerificationDeclined != null ? emailVerificationDeclined() : orElse(value),
       GelatoEmailReportErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GelatoEmailReportErrorCode($value)';
 
- }
+}
 @immutable final class GelatoEmailReportErrorCode$emailUnverifiedOther extends GelatoEmailReportErrorCode {const GelatoEmailReportErrorCode$emailUnverifiedOther._();
 
 @override String get value => 'email_unverified_other';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailUnv
 
 @override int get hashCode => 'email_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoEmailReportErrorCode$emailVerificationDeclined extends GelatoEmailReportErrorCode {const GelatoEmailReportErrorCode$emailVerificationDeclined._();
 
 @override String get value => 'email_verification_declined';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailUnv
 
 @override int get hashCode => 'email_verification_declined'.hashCode;
 
- }
+}
 @immutable final class GelatoEmailReportErrorCode$Unknown extends GelatoEmailReportErrorCode {const GelatoEmailReportErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -68,14 +68,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailUnv
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class GelatoEmailReportError {const GelatoEmailReportError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory GelatoEmailReportError.fromJson(Map<String, dynamic> json) { return GelatoEmailReportError(
+factory GelatoEmailReportError.fromJson(Map<String, dynamic> json) {return GelatoEmailReportError(
   code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoEmailReportErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// A short machine-readable string giving the reason for the verification failure.
 final Omittable<GelatoEmailReportErrorCode?> code;
@@ -83,22 +83,22 @@ final Omittable<GelatoEmailReportErrorCode?> code;
 /// A human-readable message giving the reason for the failure. These messages can be shown to your users.
 final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (code.isPresent) 'code': code.value?.toJson(),
   if (reason.isPresent) 'reason': reason.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'reason'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final reason$ = reason.value;
 if (reason$ != null) {
   if (reason$.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
 }
-return errors; } 
-GelatoEmailReportError copyWith({Omittable<GelatoEmailReportErrorCode?>? code, Omittable<String?>? reason, }) { return GelatoEmailReportError(
+return errors;}
+GelatoEmailReportError copyWith({Omittable<GelatoEmailReportErrorCode?>? code, Omittable<String?>? reason, }) {return GelatoEmailReportError(
   code: code ?? this.code,
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoEmailReportError &&
           code == other.code &&
@@ -108,4 +108,4 @@ GelatoEmailReportError copyWith({Omittable<GelatoEmailReportErrorCode?>? code, O
 
 @override String toString() => 'GelatoEmailReportError(code: $code, reason: $reason)';
 
- }
+}

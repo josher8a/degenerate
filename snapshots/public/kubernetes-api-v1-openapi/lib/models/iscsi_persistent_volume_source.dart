@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_reference.dart';/// ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
 @immutable final class IscsiPersistentVolumeSource {const IscsiPersistentVolumeSource({required this.iqn, required this.lun, required this.targetPortal, this.chapAuthDiscovery, this.chapAuthSession, this.fsType, this.initiatorName, this.iscsiInterface, this.portals, this.readOnly, this.secretRef, });
 
-factory IscsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return IscsiPersistentVolumeSource(
+factory IscsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) {return IscsiPersistentVolumeSource(
   chapAuthDiscovery: json['chapAuthDiscovery'] as bool?,
   chapAuthSession: json['chapAuthSession'] as bool?,
   fsType: json['fsType'] as String?,
@@ -16,7 +16,7 @@ factory IscsiPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return
   readOnly: json['readOnly'] as bool?,
   secretRef: json['secretRef'] != null ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   targetPortal: json['targetPortal'] as String,
-); }
+);}
 
 /// chapAuthDiscovery defines whether support iSCSI Discovery CHAP authentication
 final bool? chapAuthDiscovery;
@@ -54,7 +54,7 @@ final String targetPortal;
 /// The value of `iscsiInterface`, or its schema default when absent.
 String get iscsiInterfaceOrDefault => iscsiInterface ?? 'default';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'chapAuthDiscovery': ?chapAuthDiscovery,
   'chapAuthSession': ?chapAuthSession,
   'fsType': ?fsType,
@@ -66,11 +66,11 @@ Map<String, dynamic> toJson() { return {
   'readOnly': ?readOnly,
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
   'targetPortal': targetPortal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('iqn') && json['iqn'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('iqn') && json['iqn'] is String &&
       json.containsKey('lun') && json['lun'] is num &&
-      json.containsKey('targetPortal') && json['targetPortal'] is String; } 
-IscsiPersistentVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool? Function()? chapAuthSession, String? Function()? fsType, String? Function()? initiatorName, String? iqn, String? Function()? iscsiInterface, int? lun, List<String>? Function()? portals, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? targetPortal, }) { return IscsiPersistentVolumeSource(
+      json.containsKey('targetPortal') && json['targetPortal'] is String;}
+IscsiPersistentVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool? Function()? chapAuthSession, String? Function()? fsType, String? Function()? initiatorName, String? iqn, String? Function()? iscsiInterface, int? lun, List<String>? Function()? portals, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? targetPortal, }) {return IscsiPersistentVolumeSource(
   chapAuthDiscovery: chapAuthDiscovery != null ? chapAuthDiscovery() : this.chapAuthDiscovery,
   chapAuthSession: chapAuthSession != null ? chapAuthSession() : this.chapAuthSession,
   fsType: fsType != null ? fsType() : this.fsType,
@@ -82,7 +82,7 @@ IscsiPersistentVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool?
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   targetPortal: targetPortal ?? this.targetPortal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IscsiPersistentVolumeSource &&
           chapAuthDiscovery == other.chapAuthDiscovery &&
@@ -101,4 +101,4 @@ IscsiPersistentVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool?
 
 @override String toString() => 'IscsiPersistentVolumeSource(\n  chapAuthDiscovery: $chapAuthDiscovery,\n  chapAuthSession: $chapAuthSession,\n  fsType: $fsType,\n  initiatorName: $initiatorName,\n  iqn: $iqn,\n  iscsiInterface: $iscsiInterface,\n  lun: $lun,\n  portals: $portals,\n  readOnly: $readOnly,\n  secretRef: $secretRef,\n  targetPortal: $targetPortal,\n)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSetupIntentsRequest {const GetSetupIntentsRequest();
 
-factory GetSetupIntentsRequest.fromJson(Map<String, dynamic> _) { return const GetSetupIntentsRequest(); }
+factory GetSetupIntentsRequest.fromJson(Map<String, dynamic> _) {return const GetSetupIntentsRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetSetupIntentsRequest copyWith() { return const GetSetupIntentsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetSetupIntentsRequest copyWith() {return const GetSetupIntentsRequest(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is GetSetupIntentsRequest;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'GetSetupIntentsRequest()';
 
- }
+}

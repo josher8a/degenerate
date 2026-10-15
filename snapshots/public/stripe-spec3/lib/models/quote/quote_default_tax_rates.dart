@@ -7,11 +7,11 @@ const QuoteDefaultTaxRates({this.string = const Omittable.absent(), this.taxRate
 const QuoteDefaultTaxRates._({required this.rawValue, required this.string, required this.taxRate, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory QuoteDefaultTaxRates.fromJson(Object? json) { return QuoteDefaultTaxRates._(
+factory QuoteDefaultTaxRates.fromJson(Object? json) {return QuoteDefaultTaxRates._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   taxRate: json is Map<String, dynamic> && TaxRate.canParse(json) ? parseAnyOfVariant<TaxRate>(json, (value) => TaxRate.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'QuoteDefaultTaxRates(${toJson()})';
 
- }
+}

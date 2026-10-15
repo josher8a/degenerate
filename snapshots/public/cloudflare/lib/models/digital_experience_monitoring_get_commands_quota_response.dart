@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringGetCommandsQuotaResponse {const DigitalExperienceMonitoringGetCommandsQuotaResponse({required this.quota, required this.quotaUsage, required this.resetTime, });
 
-factory DigitalExperienceMonitoringGetCommandsQuotaResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringGetCommandsQuotaResponse(
+factory DigitalExperienceMonitoringGetCommandsQuotaResponse.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringGetCommandsQuotaResponse(
   quota: (json['quota'] as num).toDouble(),
   quotaUsage: (json['quota_usage'] as num).toDouble(),
   resetTime: DateTime.parse(json['reset_time'] as String),
-); }
+);}
 
 /// The remaining number of commands that can be initiated for an account
 final double quota;
@@ -18,19 +18,19 @@ final double quotaUsage;
 /// The time when the quota resets
 final DateTime resetTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'quota': quota,
   'quota_usage': quotaUsage,
   'reset_time': resetTime.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('quota') && json['quota'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('quota') && json['quota'] is num &&
       json.containsKey('quota_usage') && json['quota_usage'] is num &&
-      json.containsKey('reset_time') && json['reset_time'] is String; } 
-DigitalExperienceMonitoringGetCommandsQuotaResponse copyWith({double? quota, double? quotaUsage, DateTime? resetTime, }) { return DigitalExperienceMonitoringGetCommandsQuotaResponse(
+      json.containsKey('reset_time') && json['reset_time'] is String;}
+DigitalExperienceMonitoringGetCommandsQuotaResponse copyWith({double? quota, double? quotaUsage, DateTime? resetTime, }) {return DigitalExperienceMonitoringGetCommandsQuotaResponse(
   quota: quota ?? this.quota,
   quotaUsage: quotaUsage ?? this.quotaUsage,
   resetTime: resetTime ?? this.resetTime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringGetCommandsQuotaResponse &&
           quota == other.quota &&
@@ -41,4 +41,4 @@ DigitalExperienceMonitoringGetCommandsQuotaResponse copyWith({double? quota, dou
 
 @override String toString() => 'DigitalExperienceMonitoringGetCommandsQuotaResponse(quota: $quota, quotaUsage: $quotaUsage, resetTime: $resetTime)';
 
- }
+}

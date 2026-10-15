@@ -7,11 +7,11 @@ const CustomTextShippingAddress({this.customTextPositionParam = const Omittable.
 const CustomTextShippingAddress._({required this.rawValue, required this.customTextPositionParam, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CustomTextShippingAddress.fromJson(Object? json) { return CustomTextShippingAddress._(
+factory CustomTextShippingAddress.fromJson(Object? json) {return CustomTextShippingAddress._(
   rawValue: Omittable(json),
   customTextPositionParam: json is Map<String, dynamic> && CustomTextPositionParam.canParse(json) ? parseAnyOfVariant<CustomTextPositionParam>(json, (value) => CustomTextPositionParam.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CustomTextShippingAddress(${toJson()})';
 
- }
+}

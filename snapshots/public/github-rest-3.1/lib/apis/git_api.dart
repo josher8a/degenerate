@@ -14,7 +14,7 @@ final class GitApi with ApiExecutor {const GitApi(this.apiConfig);
 /// 
 ///
 /// `POST /repos/{owner}/{repo}/git/blobs`
-Future<ApiResult<ShortBlob, GitCreateBlobError>> gitCreateBlob({required String owner, required String repo, required GitCreateBlobRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShortBlob, GitCreateBlobError>> gitCreateBlob({required String owner, required String repo, required GitCreateBlobRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -32,7 +32,7 @@ return await execute(
   },
   onError: GitCreateBlobError.fromResponse,
 );
- } 
+}
 /// Get a blob
 ///
 /// The `content` in the response will always be Base64 encoded.
@@ -45,7 +45,7 @@ return await execute(
 /// **Note** This endpoint supports blobs up to 100 megabytes in size.
 ///
 /// `GET /repos/{owner}/{repo}/git/blobs/{file_sha}`
-Future<ApiResult<Blob, ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError>> gitGetBlob({required String owner, required String repo, required String fileSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Blob, ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError>> gitGetBlob({required String owner, required String repo, required String fileSha, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -61,7 +61,7 @@ return await execute(
   },
   onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse,
 );
- } 
+}
 /// Create a commit
 ///
 /// Creates a new Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
@@ -97,7 +97,7 @@ return await execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `POST /repos/{owner}/{repo}/git/commits`
-Future<ApiResult<GitCommit, GitCreateCommitError>> gitCreateCommit({required String owner, required String repo, required GitCreateCommitRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitCommit, GitCreateCommitError>> gitCreateCommit({required String owner, required String repo, required GitCreateCommitRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,7 +115,7 @@ return await execute(
   },
   onError: GitCreateCommitError.fromResponse,
 );
- } 
+}
 /// Get a commit object
 ///
 /// Gets a Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
@@ -153,7 +153,7 @@ return await execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/git/commits/{commit_sha}`
-Future<ApiResult<GitCommit, GitGetCommitError>> gitGetCommit({required String owner, required String repo, required String commitSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitCommit, GitGetCommitError>> gitGetCommit({required String owner, required String repo, required String commitSha, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -169,7 +169,7 @@ return await execute(
   },
   onError: GitGetCommitError.fromResponse,
 );
- } 
+}
 /// List matching references
 ///
 /// Returns an array of references from your Git database that match the supplied name. The `:ref` in the URL must be formatted as `heads/<branch name>` for branches and `tags/<tag name>` for tags. If the `:ref` doesn't exist in the repository, but existing refs start with `:ref`, they will be returned as an array.
@@ -182,7 +182,7 @@ return await execute(
 /// If you request matching references for a branch named `feature` but the branch `feature` doesn't exist, the response can still include other matching head refs that start with the word `feature`, such as `featureA` and `featureB`.
 ///
 /// `GET /repos/{owner}/{repo}/git/matching-refs/{ref}`
-Future<ApiResult<List<GitRef>, ActionsCancelWorkflowRunError>> gitListMatchingRefs({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GitRef>, ActionsCancelWorkflowRunError>> gitListMatchingRefs({required String owner, required String repo, required String ref, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -199,7 +199,7 @@ return await execute(
   },
   onError: ActionsCancelWorkflowRunError.fromResponse,
 );
- } 
+}
 /// Get a reference
 ///
 /// Returns a single reference from your Git database. The `:ref` in the URL must be formatted as `heads/<branch name>` for branches and `tags/<tag name>` for tags. If the `:ref` doesn't match an existing ref, a `404` is returned.
@@ -208,7 +208,7 @@ return await execute(
 /// > You need to explicitly [request a pull request](https://docs.github.com/rest/pulls/pulls#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)".
 ///
 /// `GET /repos/{owner}/{repo}/git/ref/{ref}`
-Future<ApiResult<GitRef, GitGetCommitError>> gitGetRef({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitRef, GitGetCommitError>> gitGetRef({required String owner, required String repo, required String ref, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -224,13 +224,13 @@ return await execute(
   },
   onError: GitGetCommitError.fromResponse,
 );
- } 
+}
 /// Create a reference
 ///
 /// Creates a reference for your repository. You are unable to create new references for empty repositories, even if the commit SHA-1 hash used exists. Empty repositories are repositories without branches.
 ///
 /// `POST /repos/{owner}/{repo}/git/refs`
-Future<ApiResult<GitRef, GitCreateRefError>> gitCreateRef({required String owner, required String repo, required GitCreateRefRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitRef, GitCreateRefError>> gitCreateRef({required String owner, required String repo, required GitCreateRefRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -248,13 +248,13 @@ return await execute(
   },
   onError: GitCreateRefError.fromResponse,
 );
- } 
+}
 /// Update a reference
 ///
 /// Updates the provided reference to point to a new SHA. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
 ///
 /// `PATCH /repos/{owner}/{repo}/git/refs/{ref}`
-Future<ApiResult<GitRef, GitCreateRefError>> gitUpdateRef({required String owner, required String repo, required String ref, required GitUpdateRefRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitRef, GitCreateRefError>> gitUpdateRef({required String owner, required String repo, required String ref, required GitUpdateRefRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -272,13 +272,13 @@ return await execute(
   },
   onError: GitCreateRefError.fromResponse,
 );
- } 
+}
 /// Delete a reference
 ///
 /// Deletes the provided reference.
 ///
 /// `DELETE /repos/{owner}/{repo}/git/refs/{ref}`
-Future<ApiResult<void, ActionsCancelWorkflowRunError>> gitDeleteRef({required String owner, required String repo, required String ref, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsCancelWorkflowRunError>> gitDeleteRef({required String owner, required String repo, required String ref, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -292,7 +292,7 @@ return await execute(
   onSuccess: (_) {},
   onError: ActionsCancelWorkflowRunError.fromResponse,
 );
- } 
+}
 /// Create a tag object
 ///
 /// Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then [create](https://docs.github.com/rest/git/refs#create-a-reference) the `refs/tags/[tag]` reference. If you want to create a lightweight tag, you only have to [create](https://docs.github.com/rest/git/refs#create-a-reference) the tag reference - this call would be unnecessary.
@@ -328,7 +328,7 @@ return await execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `POST /repos/{owner}/{repo}/git/tags`
-Future<ApiResult<GitTag, GitCreateRefError>> gitCreateTag({required String owner, required String repo, required GitCreateTagRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitTag, GitCreateRefError>> gitCreateTag({required String owner, required String repo, required GitCreateTagRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -346,7 +346,7 @@ return await execute(
   },
   onError: GitCreateRefError.fromResponse,
 );
- } 
+}
 /// Get a tag
 ///
 /// **Signature verification object**
@@ -380,7 +380,7 @@ return await execute(
 /// | `valid` | None of the above errors applied, so the signature is considered to be verified. |
 ///
 /// `GET /repos/{owner}/{repo}/git/tags/{tag_sha}`
-Future<ApiResult<GitTag, GitGetCommitError>> gitGetTag({required String owner, required String repo, required String tagSha, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitTag, GitGetCommitError>> gitGetTag({required String owner, required String repo, required String tagSha, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -396,7 +396,7 @@ return await execute(
   },
   onError: GitGetCommitError.fromResponse,
 );
- } 
+}
 /// Create a tree
 ///
 /// The tree creation API accepts nested entries. If you specify both a tree and a nested path modifying that tree, this endpoint will overwrite the contents of the tree with the new path contents, and create a new tree structure.
@@ -406,7 +406,7 @@ return await execute(
 /// Returns an error if you try to delete a file that does not exist.
 ///
 /// `POST /repos/{owner}/{repo}/git/trees`
-Future<ApiResult<GitTree, ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError>> gitCreateTree({required String owner, required String repo, required GitCreateTreeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitTree, ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError>> gitCreateTree({required String owner, required String repo, required GitCreateTreeRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -424,7 +424,7 @@ return await execute(
   },
   onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse,
 );
- } 
+}
 /// Get a tree
 ///
 /// Returns a single tree using the SHA1 value or ref name for that tree.
@@ -435,7 +435,7 @@ return await execute(
 /// > The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
 ///
 /// `GET /repos/{owner}/{repo}/git/trees/{tree_sha}`
-Future<ApiResult<GitTree, GitCreateCommitError>> gitGetTree({required String owner, required String repo, required String treeSha, String? recursive, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GitTree, GitCreateCommitError>> gitGetTree({required String owner, required String repo, required String treeSha, String? recursive, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (recursive != null) {
   queryParameters['recursive'] = recursive;
@@ -459,5 +459,5 @@ return await execute(
   },
   onError: GitCreateCommitError.fromResponse,
 );
- } 
- }
+}
+}

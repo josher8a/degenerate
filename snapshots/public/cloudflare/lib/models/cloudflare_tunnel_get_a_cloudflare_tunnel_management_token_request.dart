@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Management resources the token will have access to.
 sealed class TunnelManagementResources {const TunnelManagementResources();
 
-factory TunnelManagementResources.fromJson(String json) { return switch (json) {
+factory TunnelManagementResources.fromJson(String json) {return switch (json) {
   'logs' => logs,
   _ => TunnelManagementResources$Unknown(json),
-}; }
+};}
 
 static const TunnelManagementResources logs = TunnelManagementResources$logs._();
 
 static const List<TunnelManagementResources> values = [logs];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'logs' => 'logs',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TunnelManagementResources$Unknown; } 
+bool get isUnknown {return this is TunnelManagementResources$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() logs, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() logs, required W Function(String value) $unknown, }) {return switch (this) {
       TunnelManagementResources$logs() => logs(),
       TunnelManagementResources$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? logs, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? logs, W Function(String value)? $unknown, }) {return switch (this) {
       TunnelManagementResources$logs() => logs != null ? logs() : orElse(value),
       TunnelManagementResources$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TunnelManagementResources($value)';
 
- }
+}
 @immutable final class TunnelManagementResources$logs extends TunnelManagementResources {const TunnelManagementResources$logs._();
 
 @override String get value => 'logs';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? logs, W 
 
 @override int get hashCode => 'logs'.hashCode;
 
- }
+}
 @immutable final class TunnelManagementResources$Unknown extends TunnelManagementResources {const TunnelManagementResources$Unknown(this.value);
 
 @override final String value;
@@ -53,22 +53,22 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? logs, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CloudflareTunnelGetACloudflareTunnelManagementTokenRequest {const CloudflareTunnelGetACloudflareTunnelManagementTokenRequest({required this.resources});
 
-factory CloudflareTunnelGetACloudflareTunnelManagementTokenRequest.fromJson(Map<String, dynamic> json) { return CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(
+factory CloudflareTunnelGetACloudflareTunnelManagementTokenRequest.fromJson(Map<String, dynamic> json) {return CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(
   resources: (json['resources'] as List<dynamic>).map((e) => TunnelManagementResources.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<TunnelManagementResources> resources;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resources': resources.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('resources'); } 
-CloudflareTunnelGetACloudflareTunnelManagementTokenRequest copyWith({List<TunnelManagementResources>? resources}) { return CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('resources');}
+CloudflareTunnelGetACloudflareTunnelManagementTokenRequest copyWith({List<TunnelManagementResources>? resources}) {return CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(
   resources: resources ?? this.resources,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflareTunnelGetACloudflareTunnelManagementTokenRequest &&
           listEquals(resources, other.resources);
@@ -77,4 +77,4 @@ CloudflareTunnelGetACloudflareTunnelManagementTokenRequest copyWith({List<Tunnel
 
 @override String toString() => 'CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(resources: $resources)';
 
- }
+}

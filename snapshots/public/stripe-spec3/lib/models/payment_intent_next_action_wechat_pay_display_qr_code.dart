@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionWechatPayDisplayQrCode {const PaymentIntentNextActionWechatPayDisplayQrCode({required this.data, required this.hostedInstructionsUrl, required this.imageDataUrl, required this.imageUrlPng, required this.imageUrlSvg, });
 
-factory PaymentIntentNextActionWechatPayDisplayQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionWechatPayDisplayQrCode(
+factory PaymentIntentNextActionWechatPayDisplayQrCode.fromJson(Map<String, dynamic> json) {return PaymentIntentNextActionWechatPayDisplayQrCode(
   data: json['data'] as String,
   hostedInstructionsUrl: json['hosted_instructions_url'] as String,
   imageDataUrl: json['image_data_url'] as String,
   imageUrlPng: json['image_url_png'] as String,
   imageUrlSvg: json['image_url_svg'] as String,
-); }
+);}
 
 /// The data being used to generate QR code
 final String data;
@@ -27,33 +27,33 @@ final String imageUrlPng;
 /// The image_url_svg string used to render QR code
 final String imageUrlSvg;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data,
   'hosted_instructions_url': hostedInstructionsUrl,
   'image_data_url': imageDataUrl,
   'image_url_png': imageUrlPng,
   'image_url_svg': imageUrlSvg,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') && json['data'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') && json['data'] is String &&
       json.containsKey('hosted_instructions_url') && json['hosted_instructions_url'] is String &&
       json.containsKey('image_data_url') && json['image_data_url'] is String &&
       json.containsKey('image_url_png') && json['image_url_png'] is String &&
-      json.containsKey('image_url_svg') && json['image_url_svg'] is String; } 
+      json.containsKey('image_url_svg') && json['image_url_svg'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (data.runes.length > 5000) { errors.add('data: length must be <= 5000'); }
 if (hostedInstructionsUrl.runes.length > 5000) { errors.add('hostedInstructionsUrl: length must be <= 5000'); }
 if (imageDataUrl.runes.length > 5000) { errors.add('imageDataUrl: length must be <= 5000'); }
 if (imageUrlPng.runes.length > 5000) { errors.add('imageUrlPng: length must be <= 5000'); }
 if (imageUrlSvg.runes.length > 5000) { errors.add('imageUrlSvg: length must be <= 5000'); }
-return errors; } 
-PaymentIntentNextActionWechatPayDisplayQrCode copyWith({String? data, String? hostedInstructionsUrl, String? imageDataUrl, String? imageUrlPng, String? imageUrlSvg, }) { return PaymentIntentNextActionWechatPayDisplayQrCode(
+return errors;}
+PaymentIntentNextActionWechatPayDisplayQrCode copyWith({String? data, String? hostedInstructionsUrl, String? imageDataUrl, String? imageUrlPng, String? imageUrlSvg, }) {return PaymentIntentNextActionWechatPayDisplayQrCode(
   data: data ?? this.data,
   hostedInstructionsUrl: hostedInstructionsUrl ?? this.hostedInstructionsUrl,
   imageDataUrl: imageDataUrl ?? this.imageDataUrl,
   imageUrlPng: imageUrlPng ?? this.imageUrlPng,
   imageUrlSvg: imageUrlSvg ?? this.imageUrlSvg,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionWechatPayDisplayQrCode &&
           data == other.data &&
@@ -66,4 +66,4 @@ PaymentIntentNextActionWechatPayDisplayQrCode copyWith({String? data, String? ho
 
 @override String toString() => 'PaymentIntentNextActionWechatPayDisplayQrCode(data: $data, hostedInstructionsUrl: $hostedInstructionsUrl, imageDataUrl: $imageDataUrl, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)';
 
- }
+}

@@ -10,7 +10,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class TlsCertificatesAndHostnamesCertificateObjectPost {const TlsCertificatesAndHostnamesCertificateObjectPost({this.ca, this.certificates, this.expiresOn, this.id, this.issuer, this.name, this.serialNumber, this.signature, this.updatedAt, this.uploadedOn, });
 
-factory TlsCertificatesAndHostnamesCertificateObjectPost.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificateObjectPost(
+factory TlsCertificatesAndHostnamesCertificateObjectPost.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCertificateObjectPost(
   ca: json['ca'] != null ? TlsCertificatesAndHostnamesCa.fromJson(json['ca'] as bool) : null,
   certificates: json['certificates'] != null ? TlsCertificatesAndHostnamesSchemasCertificates.fromJson(json['certificates'] as String) : null,
   expiresOn: json['expires_on'] != null ? TlsCertificatesAndHostnamesSchemasExpiresOn.fromJson(json['expires_on'] as String) : null,
@@ -21,7 +21,7 @@ factory TlsCertificatesAndHostnamesCertificateObjectPost.fromJson(Map<String, dy
   signature: json['signature'] != null ? TlsCertificatesAndHostnamesSignature.fromJson(json['signature'] as String) : null,
   updatedAt: json['updated_at'] != null ? TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt.fromJson(json['updated_at'] as String) : null,
   uploadedOn: json['uploaded_on'] != null ? TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn.fromJson(json['uploaded_on'] as String) : null,
-); }
+);}
 
 /// Indicates whether the certificate is a CA or leaf certificate.
 final TlsCertificatesAndHostnamesCa? ca;
@@ -44,7 +44,7 @@ final TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt? updat
 
 final TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? uploadedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ca != null) 'ca': ca?.toJson(),
   if (certificates != null) 'certificates': certificates?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   if (signature != null) 'signature': signature?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ca', 'certificates', 'expires_on', 'id', 'issuer', 'name', 'serial_number', 'signature', 'updated_at', 'uploaded_on'}.contains(key)); } 
-TlsCertificatesAndHostnamesCertificateObjectPost copyWith({TlsCertificatesAndHostnamesCa? Function()? ca, TlsCertificatesAndHostnamesSchemasCertificates? Function()? certificates, TlsCertificatesAndHostnamesSchemasExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesSchemasIssuer? Function()? issuer, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesSchemasSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt? Function()? updatedAt, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? Function()? uploadedOn, }) { return TlsCertificatesAndHostnamesCertificateObjectPost(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ca', 'certificates', 'expires_on', 'id', 'issuer', 'name', 'serial_number', 'signature', 'updated_at', 'uploaded_on'}.contains(key));}
+TlsCertificatesAndHostnamesCertificateObjectPost copyWith({TlsCertificatesAndHostnamesCa? Function()? ca, TlsCertificatesAndHostnamesSchemasCertificates? Function()? certificates, TlsCertificatesAndHostnamesSchemasExpiresOn? Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesSchemasIssuer? Function()? issuer, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesSchemasSerialNumber? Function()? serialNumber, TlsCertificatesAndHostnamesSignature? Function()? signature, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt? Function()? updatedAt, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn? Function()? uploadedOn, }) {return TlsCertificatesAndHostnamesCertificateObjectPost(
   ca: ca != null ? ca() : this.ca,
   certificates: certificates != null ? certificates() : this.certificates,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
@@ -68,7 +68,7 @@ TlsCertificatesAndHostnamesCertificateObjectPost copyWith({TlsCertificatesAndHos
   signature: signature != null ? signature() : this.signature,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificateObjectPost &&
           ca == other.ca &&
@@ -86,4 +86,4 @@ TlsCertificatesAndHostnamesCertificateObjectPost copyWith({TlsCertificatesAndHos
 
 @override String toString() => 'TlsCertificatesAndHostnamesCertificateObjectPost(\n  ca: $ca,\n  certificates: $certificates,\n  expiresOn: $expiresOn,\n  id: $id,\n  issuer: $issuer,\n  name: $name,\n  serialNumber: $serialNumber,\n  signature: $signature,\n  updatedAt: $updatedAt,\n  uploadedOn: $uploadedOn,\n)';
 
- }
+}

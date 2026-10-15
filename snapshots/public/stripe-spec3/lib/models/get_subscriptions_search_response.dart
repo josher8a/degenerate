@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_charges_search_response/get_charges_search_response_object.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// 
 @immutable final class GetSubscriptionsSearchResponse {const GetSubscriptionsSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage = const Omittable.absent(), this.totalCount, });
 
-factory GetSubscriptionsSearchResponse.fromJson(Map<String, dynamic> json) { return GetSubscriptionsSearchResponse(
+factory GetSubscriptionsSearchResponse.fromJson(Map<String, dynamic> json) {return GetSubscriptionsSearchResponse(
   data: (json['data'] as List<dynamic>).map((e) => Subscription.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   nextPage: json.containsKey('next_page') ? Omittable(json['next_page'] as String?) : const Omittable.absent(),
   object: GetChargesSearchResponseObject.fromJson(json['object'] as String),
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   url: json['url'] as String,
-); }
+);}
 
 final List<Subscription> data;
 
@@ -27,34 +27,34 @@ final int? totalCount;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   if (nextPage.isPresent) 'next_page': nextPage.value,
   'object': object.toJson(),
   'total_count': ?totalCount,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final nextPage$ = nextPage.value;
 if (nextPage$ != null) {
   if (nextPage$.runes.length > 5000) { errors.add('nextPage: length must be <= 5000'); }
 }
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
-return errors; } 
-GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, Omittable<String?>? nextPage, GetChargesSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetSubscriptionsSearchResponse(
+return errors;}
+GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, Omittable<String?>? nextPage, GetChargesSearchResponseObject? object, int? Function()? totalCount, String? url, }) {return GetSubscriptionsSearchResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage ?? this.nextPage,
   object: object ?? this.object,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetSubscriptionsSearchResponse &&
           listEquals(data, other.data) &&
@@ -68,4 +68,4 @@ GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore
 
 @override String toString() => 'GetSubscriptionsSearchResponse(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, totalCount: $totalCount, url: $url)';
 
- }
+}

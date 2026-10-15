@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_service_account/project_service_account_role.dart';import 'package:pub_openai/models/project_service_account_create_response/project_service_account_create_response_object.dart';/// Represents an individual service account in a project.
 @immutable final class ProjectServiceAccount {const ProjectServiceAccount({required this.object, required this.id, required this.name, required this.role, required this.createdAt, });
 
-factory ProjectServiceAccount.fromJson(Map<String, dynamic> json) { return ProjectServiceAccount(
+factory ProjectServiceAccount.fromJson(Map<String, dynamic> json) {return ProjectServiceAccount(
   object: ProjectServiceAccountCreateResponseObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
   role: ProjectServiceAccountRole.fromJson(json['role'] as String),
   createdAt: (json['created_at'] as num).toInt(),
-); }
+);}
 
 /// The object type, which is always `organization.project.service_account`
 final ProjectServiceAccountCreateResponseObject object;
@@ -27,25 +27,25 @@ final ProjectServiceAccountRole role;
 /// The Unix timestamp (in seconds) of when the service account was created
 final int createdAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'id': id,
   'name': name,
   'role': role.toJson(),
   'created_at': createdAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('role') &&
-      json.containsKey('created_at') && json['created_at'] is num; } 
-ProjectServiceAccount copyWith({ProjectServiceAccountCreateResponseObject? object, String? id, String? name, ProjectServiceAccountRole? role, int? createdAt, }) { return ProjectServiceAccount(
+      json.containsKey('created_at') && json['created_at'] is num;}
+ProjectServiceAccount copyWith({ProjectServiceAccountCreateResponseObject? object, String? id, String? name, ProjectServiceAccountRole? role, int? createdAt, }) {return ProjectServiceAccount(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,
   role: role ?? this.role,
   createdAt: createdAt ?? this.createdAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectServiceAccount &&
           object == other.object &&
@@ -58,4 +58,4 @@ ProjectServiceAccount copyWith({ProjectServiceAccountCreateResponseObject? objec
 
 @override String toString() => 'ProjectServiceAccount(object: $object, id: $id, name: $name, role: $role, createdAt: $createdAt)';
 
- }
+}

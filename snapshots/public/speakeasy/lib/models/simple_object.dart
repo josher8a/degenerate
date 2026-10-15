@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum.dart';/// An integer enum property.
 sealed class IntEnum {const IntEnum();
 
-factory IntEnum.fromJson(int json) { return switch (json) {
+factory IntEnum.fromJson(int json) {return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
   _ => IntEnum$Unknown(json),
-}; }
+};}
 
 static const IntEnum $1 = IntEnum$$1._();
 
@@ -20,33 +20,33 @@ static const IntEnum $3 = IntEnum$$3._();
 static const List<IntEnum> values = [$1, $2, $3];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   1 => r'$1',
   2 => r'$2',
   3 => r'$3',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IntEnum$Unknown; } 
+bool get isUnknown {return this is IntEnum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) {return switch (this) {
       IntEnum$$1() => $1(),
       IntEnum$$2() => $2(),
       IntEnum$$3() => $3(),
       IntEnum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) {return switch (this) {
       IntEnum$$1() => $1 != null ? $1() : orElse(value),
       IntEnum$$2() => $2 != null ? $2() : orElse(value),
       IntEnum$$3() => $3 != null ? $3() : orElse(value),
       IntEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IntEnum($value)';
 
- }
+}
 @immutable final class IntEnum$$1 extends IntEnum {const IntEnum$$1._();
 
 @override int get value => 1;
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 1.hashCode;
 
- }
+}
 @immutable final class IntEnum$$2 extends IntEnum {const IntEnum$$2._();
 
 @override int get value => 2;
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 2.hashCode;
 
- }
+}
 @immutable final class IntEnum$$3 extends IntEnum {const IntEnum$$3._();
 
 @override int get value => 3;
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 3.hashCode;
 
- }
+}
 @immutable final class IntEnum$Unknown extends IntEnum {const IntEnum$Unknown(this.value);
 
 @override final int value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An int32 enum property.
 sealed class Int32Enum {const Int32Enum();
 
-factory Int32Enum.fromJson(int json) { return switch (json) {
+factory Int32Enum.fromJson(int json) {return switch (json) {
   55 => $55,
   69 => $69,
   181 => $181,
   _ => Int32Enum$Unknown(json),
-}; }
+};}
 
 static const Int32Enum $55 = Int32Enum$$55._();
 
@@ -103,33 +103,33 @@ static const Int32Enum $181 = Int32Enum$$181._();
 static const List<Int32Enum> values = [$55, $69, $181];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   55 => r'$55',
   69 => r'$69',
   181 => r'$181',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Int32Enum$Unknown; } 
+bool get isUnknown {return this is Int32Enum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $55, required W Function() $69, required W Function() $181, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $55, required W Function() $69, required W Function() $181, required W Function(int value) $unknown, }) {return switch (this) {
       Int32Enum$$55() => $55(),
       Int32Enum$$69() => $69(),
       Int32Enum$$181() => $181(),
       Int32Enum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Function()? $69, W Function()? $181, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Function()? $69, W Function()? $181, W Function(int value)? $unknown, }) {return switch (this) {
       Int32Enum$$55() => $55 != null ? $55() : orElse(value),
       Int32Enum$$69() => $69 != null ? $69() : orElse(value),
       Int32Enum$$181() => $181 != null ? $181() : orElse(value),
       Int32Enum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Int32Enum($value)';
 
- }
+}
 @immutable final class Int32Enum$$55 extends Int32Enum {const Int32Enum$$55._();
 
 @override int get value => 55;
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
 @override int get hashCode => 55.hashCode;
 
- }
+}
 @immutable final class Int32Enum$$69 extends Int32Enum {const Int32Enum$$69._();
 
 @override int get value => 69;
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
 @override int get hashCode => 69.hashCode;
 
- }
+}
 @immutable final class Int32Enum$$181 extends Int32Enum {const Int32Enum$$181._();
 
 @override int get value => 181;
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
 @override int get hashCode => 181.hashCode;
 
- }
+}
 @immutable final class Int32Enum$Unknown extends Int32Enum {const Int32Enum$Unknown(this.value);
 
 @override final int value;
@@ -166,11 +166,11 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Func
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A simple object that uses all our supported primitive types and enums and has optional properties.
 @immutable final class SimpleObject {const SimpleObject({required this.str, required this.$bool, required this.$int, required this.int32, required this.$num, required this.float32, required this.$enum, required this.date, required this.dateTime, required this.any, required this.intEnum, required this.int32Enum, this.strOpt, this.boolOpt, this.intOptNull, this.numOptNull, this.bigint, this.bigintStr, this.decimal, this.decimalStr, this.decimalNullableOpt = const Omittable.absent(), this.int64Str, this.float64Str, });
 
-factory SimpleObject.fromJson(Map<String, dynamic> json) { return SimpleObject(
+factory SimpleObject.fromJson(Map<String, dynamic> json) {return SimpleObject(
   str: json['str'] as String,
   $bool: json['bool'] as bool,
   $int: (json['int'] as num).toInt(),
@@ -194,7 +194,7 @@ factory SimpleObject.fromJson(Map<String, dynamic> json) { return SimpleObject(
   decimalNullableOpt: json.containsKey('decimalNullableOpt') ? Omittable(json['decimalNullableOpt'] != null ? (json['decimalNullableOpt'] as num).toDouble() : null) : const Omittable.absent(),
   int64Str: json['int64Str'] as String?,
   float64Str: json['float64Str'] as String?,
-); }
+);}
 
 /// A string property.
 /// 
@@ -294,7 +294,7 @@ final String? int64Str;
 /// Example: `'1.1'`
 final String? float64Str;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'str': str,
   'bool': $bool,
   'int': $int,
@@ -318,8 +318,8 @@ Map<String, dynamic> toJson() { return {
   if (decimalNullableOpt.isPresent) 'decimalNullableOpt': decimalNullableOpt.value,
   'int64Str': ?int64Str,
   'float64Str': ?float64Str,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('str') && json['str'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('str') && json['str'] is String &&
       json.containsKey('bool') && json['bool'] is bool &&
       json.containsKey('int') && json['int'] is num &&
       json.containsKey('int32') && json['int32'] is num &&
@@ -330,8 +330,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('str')
       json.containsKey('dateTime') && json['dateTime'] is String &&
       json.containsKey('any') &&
       json.containsKey('intEnum') &&
-      json.containsKey('int32Enum'); } 
-SimpleObject copyWith({String? str, bool? $bool, int? $int, int? int32, double? $num, double? float32, Enum? $enum, String? date, DateTime? dateTime, dynamic Function()? any, String? Function()? strOpt, bool? Function()? boolOpt, int? Function()? intOptNull, double? Function()? numOptNull, IntEnum? intEnum, Int32Enum? int32Enum, int? Function()? bigint, String? Function()? bigintStr, double? Function()? decimal, String? Function()? decimalStr, Omittable<double?>? decimalNullableOpt, String? Function()? int64Str, String? Function()? float64Str, }) { return SimpleObject(
+      json.containsKey('int32Enum');}
+SimpleObject copyWith({String? str, bool? $bool, int? $int, int? int32, double? $num, double? float32, Enum? $enum, String? date, DateTime? dateTime, dynamic Function()? any, String? Function()? strOpt, bool? Function()? boolOpt, int? Function()? intOptNull, double? Function()? numOptNull, IntEnum? intEnum, Int32Enum? int32Enum, int? Function()? bigint, String? Function()? bigintStr, double? Function()? decimal, String? Function()? decimalStr, Omittable<double?>? decimalNullableOpt, String? Function()? int64Str, String? Function()? float64Str, }) {return SimpleObject(
   str: str ?? this.str,
   $bool: $bool ?? this.$bool,
   $int: $int ?? this.$int,
@@ -355,7 +355,7 @@ SimpleObject copyWith({String? str, bool? $bool, int? $int, int? int32, double? 
   decimalNullableOpt: decimalNullableOpt ?? this.decimalNullableOpt,
   int64Str: int64Str != null ? int64Str() : this.int64Str,
   float64Str: float64Str != null ? float64Str() : this.float64Str,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleObject &&
           str == other.str &&
@@ -386,4 +386,4 @@ SimpleObject copyWith({String? str, bool? $bool, int? $int, int? int32, double? 
 
 @override String toString() => 'SimpleObject(\n  str: $str,\n  \$bool: ${$bool},\n  \$int: ${$int},\n  int32: $int32,\n  \$num: ${$num},\n  float32: $float32,\n  \$enum: ${$enum},\n  date: $date,\n  dateTime: $dateTime,\n  any: $any,\n  strOpt: $strOpt,\n  boolOpt: $boolOpt,\n  intOptNull: $intOptNull,\n  numOptNull: $numOptNull,\n  intEnum: $intEnum,\n  int32Enum: $int32Enum,\n  bigint: $bigint,\n  bigintStr: $bigintStr,\n  decimal: $decimal,\n  decimalStr: $decimalStr,\n  decimalNullableOpt: $decimalNullableOpt,\n  int64Str: $int64Str,\n  float64Str: $float64Str,\n)';
 
- }
+}

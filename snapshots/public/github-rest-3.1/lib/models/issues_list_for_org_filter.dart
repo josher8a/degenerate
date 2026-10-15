@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IssuesListForOrgFilter {const IssuesListForOrgFilter();
 
-factory IssuesListForOrgFilter.fromJson(String json) { return switch (json) {
+factory IssuesListForOrgFilter.fromJson(String json) {return switch (json) {
   'assigned' => assigned,
   'created' => created,
   'mentioned' => mentioned,
@@ -11,7 +11,7 @@ factory IssuesListForOrgFilter.fromJson(String json) { return switch (json) {
   'repos' => repos,
   'all' => all,
   _ => IssuesListForOrgFilter$Unknown(json),
-}; }
+};}
 
 static const IssuesListForOrgFilter assigned = IssuesListForOrgFilter$assigned._();
 
@@ -28,9 +28,9 @@ static const IssuesListForOrgFilter all = IssuesListForOrgFilter$all._();
 static const List<IssuesListForOrgFilter> values = [assigned, created, mentioned, subscribed, repos, all];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'assigned' => 'assigned',
   'created' => 'created',
   'mentioned' => 'mentioned',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'repos' => 'repos',
   'all' => 'all',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuesListForOrgFilter$Unknown; } 
+bool get isUnknown {return this is IssuesListForOrgFilter$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() assigned, required W Function() created, required W Function() mentioned, required W Function() subscribed, required W Function() repos, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() assigned, required W Function() created, required W Function() mentioned, required W Function() subscribed, required W Function() repos, required W Function() all, required W Function(String value) $unknown, }) {return switch (this) {
       IssuesListForOrgFilter$assigned() => assigned(),
       IssuesListForOrgFilter$created() => created(),
       IssuesListForOrgFilter$mentioned() => mentioned(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() assigned, required W Function() created, requir
       IssuesListForOrgFilter$repos() => repos(),
       IssuesListForOrgFilter$all() => all(),
       IssuesListForOrgFilter$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned, W Function()? created, W Function()? mentioned, W Function()? subscribed, W Function()? repos, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned, W Function()? created, W Function()? mentioned, W Function()? subscribed, W Function()? repos, W Function()? all, W Function(String value)? $unknown, }) {return switch (this) {
       IssuesListForOrgFilter$assigned() => assigned != null ? assigned() : orElse(value),
       IssuesListForOrgFilter$created() => created != null ? created() : orElse(value),
       IssuesListForOrgFilter$mentioned() => mentioned != null ? mentioned() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned
       IssuesListForOrgFilter$repos() => repos != null ? repos() : orElse(value),
       IssuesListForOrgFilter$all() => all != null ? all() : orElse(value),
       IssuesListForOrgFilter$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuesListForOrgFilter($value)';
 
- }
+}
 @immutable final class IssuesListForOrgFilter$assigned extends IssuesListForOrgFilter {const IssuesListForOrgFilter$assigned._();
 
 @override String get value => 'assigned';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned
 
 @override int get hashCode => 'assigned'.hashCode;
 
- }
+}
 @immutable final class IssuesListForOrgFilter$created extends IssuesListForOrgFilter {const IssuesListForOrgFilter$created._();
 
 @override String get value => 'created';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned
 
 @override int get hashCode => 'created'.hashCode;
 
- }
+}
 @immutable final class IssuesListForOrgFilter$mentioned extends IssuesListForOrgFilter {const IssuesListForOrgFilter$mentioned._();
 
 @override String get value => 'mentioned';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned
 
 @override int get hashCode => 'mentioned'.hashCode;
 
- }
+}
 @immutable final class IssuesListForOrgFilter$subscribed extends IssuesListForOrgFilter {const IssuesListForOrgFilter$subscribed._();
 
 @override String get value => 'subscribed';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned
 
 @override int get hashCode => 'subscribed'.hashCode;
 
- }
+}
 @immutable final class IssuesListForOrgFilter$repos extends IssuesListForOrgFilter {const IssuesListForOrgFilter$repos._();
 
 @override String get value => 'repos';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned
 
 @override int get hashCode => 'repos'.hashCode;
 
- }
+}
 @immutable final class IssuesListForOrgFilter$all extends IssuesListForOrgFilter {const IssuesListForOrgFilter$all._();
 
 @override String get value => 'all';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class IssuesListForOrgFilter$Unknown extends IssuesListForOrgFilter {const IssuesListForOrgFilter$Unknown(this.value);
 
 @override final String value;
@@ -127,4 +127,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_connection_schema.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table.dart';import 'package:pub_cloudflare/models/sinks_request/sinks_request_config.dart';import 'package:pub_cloudflare/models/sinks_request/sinks_request_type.dart';@immutable final class SinksRequest {const SinksRequest({required this.name, required this.type, this.config, this.format, this.schema, });
 
-factory SinksRequest.fromJson(Map<String, dynamic> json) { return SinksRequest(
+factory SinksRequest.fromJson(Map<String, dynamic> json) {return SinksRequest(
   config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => CloudflarePipelinesR2Table.fromJson(v as Map<String, dynamic>), fromB: (v) => CloudflarePipelinesR2DataCatalogTable.fromJson(v as Map<String, dynamic>),) : null,
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
   type: SinksRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Defines the configuration of the R2 Sink.
 final SinksRequestConfig? config;
@@ -28,27 +28,27 @@ final CloudflarePipelinesConnectionSchema? schema;
 /// Example: `'r2'`
 final SinksRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (config != null) 'config': config?.toJson(),
   if (format != null) 'format': format?.toJson(),
   'name': name,
   if (schema != null) 'schema': schema?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
-return errors; } 
-SinksRequest copyWith({SinksRequestConfig? Function()? config, CloudflarePipelinesFormat? Function()? format, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) { return SinksRequest(
+return errors;}
+SinksRequest copyWith({SinksRequestConfig? Function()? config, CloudflarePipelinesFormat? Function()? format, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) {return SinksRequest(
   config: config != null ? config() : this.config,
   format: format != null ? format() : this.format,
   name: name ?? this.name,
   schema: schema != null ? schema() : this.schema,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SinksRequest &&
           config == other.config &&
@@ -61,4 +61,4 @@ SinksRequest copyWith({SinksRequestConfig? Function()? config, CloudflarePipelin
 
 @override String toString() => 'SinksRequest(config: $config, format: $format, name: $name, schema: $schema, type: $type)';
 
- }
+}

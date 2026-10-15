@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesCreateCommentRequest {const IssuesCreateCommentRequest({required this.body});
 
-factory IssuesCreateCommentRequest.fromJson(Map<String, dynamic> json) { return IssuesCreateCommentRequest(
+factory IssuesCreateCommentRequest.fromJson(Map<String, dynamic> json) {return IssuesCreateCommentRequest(
   body: json['body'] as String,
-); }
+);}
 
 /// The contents of the comment.
 final String body;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String; } 
-IssuesCreateCommentRequest copyWith({String? body}) { return IssuesCreateCommentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body') && json['body'] is String;}
+IssuesCreateCommentRequest copyWith({String? body}) {return IssuesCreateCommentRequest(
   body: body ?? this.body,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesCreateCommentRequest &&
           body == other.body;
@@ -25,4 +25,4 @@ IssuesCreateCommentRequest copyWith({String? body}) { return IssuesCreateComment
 
 @override String toString() => 'IssuesCreateCommentRequest(body: $body)';
 
- }
+}

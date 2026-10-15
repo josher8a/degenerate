@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_v4error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';@immutable final class ResponseCommon55 {const ResponseCommon55({required this.errors, required this.success, this.result, });
 
-factory ResponseCommon55.fromJson(Map<String, dynamic> json) { return ResponseCommon55(
+factory ResponseCommon55.fromJson(Map<String, dynamic> json) {return ResponseCommon55(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceSharingV4error.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] != null ? ResponseCommon33Result.fromJson(json['result']) : null,
   success: json['success'] as bool,
-); }
+);}
 
 final List<ResourceSharingV4error> errors;
 
@@ -18,18 +18,18 @@ final ResponseCommon33Result? result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   if (result != null) 'result': result?.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon55 copyWith({List<ResourceSharingV4error>? errors, ResponseCommon33Result? Function()? result, bool? success, }) { return ResponseCommon55(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon55 copyWith({List<ResourceSharingV4error>? errors, ResponseCommon33Result? Function()? result, bool? success, }) {return ResponseCommon55(
   errors: errors ?? this.errors,
   result: result != null ? result() : this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon55 &&
           listEquals(errors, other.errors) &&
@@ -40,4 +40,4 @@ ResponseCommon55 copyWith({List<ResourceSharingV4error>? errors, ResponseCommon3
 
 @override String toString() => 'ResponseCommon55(errors: $errors, result: $result, success: $success)';
 
- }
+}

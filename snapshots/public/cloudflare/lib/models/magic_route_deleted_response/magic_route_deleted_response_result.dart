@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route.dart';@immutable final class MagicRouteDeletedResponseResult {const MagicRouteDeletedResponseResult({this.deleted, this.deletedRoute, });
 
-factory MagicRouteDeletedResponseResult.fromJson(Map<String, dynamic> json) { return MagicRouteDeletedResponseResult(
+factory MagicRouteDeletedResponseResult.fromJson(Map<String, dynamic> json) {return MagicRouteDeletedResponseResult(
   deleted: json['deleted'] as bool?,
   deletedRoute: json['deleted_route'] != null ? MagicRoute.fromJson(json['deleted_route'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Example: `true`
 final bool? deleted;
 
 final MagicRoute? deletedRoute;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': ?deleted,
   if (deletedRoute != null) 'deleted_route': deletedRoute?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deleted', 'deleted_route'}.contains(key)); } 
-MagicRouteDeletedResponseResult copyWith({bool? Function()? deleted, MagicRoute? Function()? deletedRoute, }) { return MagicRouteDeletedResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'deleted', 'deleted_route'}.contains(key));}
+MagicRouteDeletedResponseResult copyWith({bool? Function()? deleted, MagicRoute? Function()? deletedRoute, }) {return MagicRouteDeletedResponseResult(
   deleted: deleted != null ? deleted() : this.deleted,
   deletedRoute: deletedRoute != null ? deletedRoute() : this.deletedRoute,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRouteDeletedResponseResult &&
           deleted == other.deleted &&
@@ -31,4 +31,4 @@ MagicRouteDeletedResponseResult copyWith({bool? Function()? deleted, MagicRoute?
 
 @override String toString() => 'MagicRouteDeletedResponseResult(deleted: $deleted, deletedRoute: $deletedRoute)';
 
- }
+}

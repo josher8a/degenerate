@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/source.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TopupObject {const TopupObject();
 
-factory TopupObject.fromJson(String json) { return switch (json) {
+factory TopupObject.fromJson(String json) {return switch (json) {
   'topup' => topup,
   _ => TopupObject$Unknown(json),
-}; }
+};}
 
 static const TopupObject topup = TopupObject$topup._();
 
 static const List<TopupObject> values = [topup];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'topup' => 'topup',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TopupObject$Unknown; } 
+bool get isUnknown {return this is TopupObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() topup, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() topup, required W Function(String value) $unknown, }) {return switch (this) {
       TopupObject$topup() => topup(),
       TopupObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? topup, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? topup, W Function(String value)? $unknown, }) {return switch (this) {
       TopupObject$topup() => topup != null ? topup() : orElse(value),
       TopupObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TopupObject($value)';
 
- }
+}
 @immutable final class TopupObject$topup extends TopupObject {const TopupObject$topup._();
 
 @override String get value => 'topup';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? topup, W
 
 @override int get hashCode => 'topup'.hashCode;
 
- }
+}
 @immutable final class TopupObject$Unknown extends TopupObject {const TopupObject$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? topup, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the top-up is either `canceled`, `failed`, `pending`, `reversed`, or `succeeded`.
 sealed class TopupStatus {const TopupStatus();
 
-factory TopupStatus.fromJson(String json) { return switch (json) {
+factory TopupStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'failed' => failed,
   'pending' => pending,
   'reversed' => reversed,
   'succeeded' => succeeded,
   _ => TopupStatus$Unknown(json),
-}; }
+};}
 
 static const TopupStatus canceled = TopupStatus$canceled._();
 
@@ -79,39 +79,39 @@ static const TopupStatus succeeded = TopupStatus$succeeded._();
 static const List<TopupStatus> values = [canceled, failed, pending, reversed, succeeded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'failed' => 'failed',
   'pending' => 'pending',
   'reversed' => 'reversed',
   'succeeded' => 'succeeded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TopupStatus$Unknown; } 
+bool get isUnknown {return this is TopupStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() failed, required W Function() pending, required W Function() reversed, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() failed, required W Function() pending, required W Function() reversed, required W Function() succeeded, required W Function(String value) $unknown, }) {return switch (this) {
       TopupStatus$canceled() => canceled(),
       TopupStatus$failed() => failed(),
       TopupStatus$pending() => pending(),
       TopupStatus$reversed() => reversed(),
       TopupStatus$succeeded() => succeeded(),
       TopupStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? pending, W Function()? reversed, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? pending, W Function()? reversed, W Function()? succeeded, W Function(String value)? $unknown, }) {return switch (this) {
       TopupStatus$canceled() => canceled != null ? canceled() : orElse(value),
       TopupStatus$failed() => failed != null ? failed() : orElse(value),
       TopupStatus$pending() => pending != null ? pending() : orElse(value),
       TopupStatus$reversed() => reversed != null ? reversed() : orElse(value),
       TopupStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
       TopupStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TopupStatus($value)';
 
- }
+}
 @immutable final class TopupStatus$canceled extends TopupStatus {const TopupStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class TopupStatus$failed extends TopupStatus {const TopupStatus$failed._();
 
 @override String get value => 'failed';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class TopupStatus$pending extends TopupStatus {const TopupStatus$pending._();
 
 @override String get value => 'pending';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class TopupStatus$reversed extends TopupStatus {const TopupStatus$reversed._();
 
 @override String get value => 'reversed';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'reversed'.hashCode;
 
- }
+}
 @immutable final class TopupStatus$succeeded extends TopupStatus {const TopupStatus$succeeded._();
 
 @override String get value => 'succeeded';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'succeeded'.hashCode;
 
- }
+}
 @immutable final class TopupStatus$Unknown extends TopupStatus {const TopupStatus$Unknown(this.value);
 
 @override final String value;
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// To top up your Stripe balance, you create a top-up object. You can retrieve
 /// individual top-ups, as well as list all top-ups. Top-ups are identified by a
 /// unique, random ID.
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 /// Related guide: [Topping up your platform account](https://docs.stripe.com/connect/top-ups)
 @immutable final class Topup {const Topup({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, this.balanceTransaction = const Omittable.absent(), this.description = const Omittable.absent(), this.expectedAvailabilityDate = const Omittable.absent(), this.failureCode = const Omittable.absent(), this.failureMessage = const Omittable.absent(), this.source = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.transferGroup = const Omittable.absent(), });
 
-factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
+factory Topup.fromJson(Map<String, dynamic> json) {return Topup(
   amount: (json['amount'] as num).toInt(),
   balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -191,7 +191,7 @@ factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
   statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
   status: TopupStatus.fromJson(json['status'] as String),
   transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Amount transferred.
 final int amount;
@@ -241,7 +241,7 @@ final TopupStatus status;
 /// A string that identifies this top-up as part of a group.
 final Omittable<String?> transferGroup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'created': created,
@@ -258,17 +258,17 @@ Map<String, dynamic> toJson() { return {
   if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
   'status': status.toJson(),
   if (transferGroup.isPresent) 'transfer_group': transferGroup.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') && json['object'] == 'topup' &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 final description$ = description.value;
 if (description$ != null) {
@@ -291,8 +291,8 @@ final transferGroup$ = transferGroup.value;
 if (transferGroup$ != null) {
   if (transferGroup$.runes.length > 5000) { errors.add('transferGroup: length must be <= 5000'); }
 }
-return errors; } 
-Topup copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<int?>? expectedAvailabilityDate, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, Omittable<Source?>? source, Omittable<String?>? statementDescriptor, TopupStatus? status, Omittable<String?>? transferGroup, }) { return Topup(
+return errors;}
+Topup copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<int?>? expectedAvailabilityDate, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, Omittable<Source?>? source, Omittable<String?>? statementDescriptor, TopupStatus? status, Omittable<String?>? transferGroup, }) {return Topup(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   created: created ?? this.created,
@@ -309,7 +309,7 @@ Topup copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balan
   statementDescriptor: statementDescriptor ?? this.statementDescriptor,
   status: status ?? this.status,
   transferGroup: transferGroup ?? this.transferGroup,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Topup &&
           amount == other.amount &&
@@ -333,4 +333,4 @@ Topup copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balan
 
 @override String toString() => 'Topup(\n  amount: $amount,\n  balanceTransaction: $balanceTransaction,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  expectedAvailabilityDate: $expectedAvailabilityDate,\n  failureCode: $failureCode,\n  failureMessage: $failureMessage,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  source: $source,\n  statementDescriptor: $statementDescriptor,\n  status: $status,\n  transferGroup: $transferGroup,\n)';
 
- }
+}

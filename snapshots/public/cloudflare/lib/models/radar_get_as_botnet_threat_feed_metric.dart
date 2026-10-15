@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metric to rank ASNs by.
 sealed class RadarGetAsBotnetThreatFeedMetric {const RadarGetAsBotnetThreatFeedMetric();
 
-factory RadarGetAsBotnetThreatFeedMetric.fromJson(String json) { return switch (json) {
+factory RadarGetAsBotnetThreatFeedMetric.fromJson(String json) {return switch (json) {
   'OFFENSE_COUNT' => offenseCount,
   'NUMBER_OF_OFFENDING_IPS' => numberOfOffendingIps,
   _ => RadarGetAsBotnetThreatFeedMetric$Unknown(json),
-}; }
+};}
 
 static const RadarGetAsBotnetThreatFeedMetric offenseCount = RadarGetAsBotnetThreatFeedMetric$offenseCount._();
 
@@ -17,30 +17,30 @@ static const RadarGetAsBotnetThreatFeedMetric numberOfOffendingIps = RadarGetAsB
 static const List<RadarGetAsBotnetThreatFeedMetric> values = [offenseCount, numberOfOffendingIps];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'OFFENSE_COUNT' => 'offenseCount',
   'NUMBER_OF_OFFENDING_IPS' => 'numberOfOffendingIps',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAsBotnetThreatFeedMetric$Unknown; } 
+bool get isUnknown {return this is RadarGetAsBotnetThreatFeedMetric$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() offenseCount, required W Function() numberOfOffendingIps, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() offenseCount, required W Function() numberOfOffendingIps, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAsBotnetThreatFeedMetric$offenseCount() => offenseCount(),
       RadarGetAsBotnetThreatFeedMetric$numberOfOffendingIps() => numberOfOffendingIps(),
       RadarGetAsBotnetThreatFeedMetric$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? offenseCount, W Function()? numberOfOffendingIps, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offenseCount, W Function()? numberOfOffendingIps, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAsBotnetThreatFeedMetric$offenseCount() => offenseCount != null ? offenseCount() : orElse(value),
       RadarGetAsBotnetThreatFeedMetric$numberOfOffendingIps() => numberOfOffendingIps != null ? numberOfOffendingIps() : orElse(value),
       RadarGetAsBotnetThreatFeedMetric$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAsBotnetThreatFeedMetric($value)';
 
- }
+}
 @immutable final class RadarGetAsBotnetThreatFeedMetric$offenseCount extends RadarGetAsBotnetThreatFeedMetric {const RadarGetAsBotnetThreatFeedMetric$offenseCount._();
 
 @override String get value => 'OFFENSE_COUNT';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offenseC
 
 @override int get hashCode => 'OFFENSE_COUNT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAsBotnetThreatFeedMetric$numberOfOffendingIps extends RadarGetAsBotnetThreatFeedMetric {const RadarGetAsBotnetThreatFeedMetric$numberOfOffendingIps._();
 
 @override String get value => 'NUMBER_OF_OFFENDING_IPS';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offenseC
 
 @override int get hashCode => 'NUMBER_OF_OFFENDING_IPS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAsBotnetThreatFeedMetric$Unknown extends RadarGetAsBotnetThreatFeedMetric {const RadarGetAsBotnetThreatFeedMetric$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offenseC
 
 @override int get hashCode => value.hashCode;
 
- }
+}

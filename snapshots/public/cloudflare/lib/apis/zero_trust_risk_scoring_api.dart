@@ -12,7 +12,7 @@ final class ZeroTrustRiskScoringApi with ApiExecutor {const ZeroTrustRiskScoring
 /// Get risk event/score information for a specific user
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/{user_id}`
-Future<ApiResult<DlpRiskEvents?, DlpDatasetsCreateError>> dlpRiskScoreSummaryGetForUser({required String accountId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpRiskEvents?, DlpDatasetsCreateError>> dlpRiskScoreSummaryGetForUser({required String accountId, required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,11 +29,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Clear the risk score for a particular user
 ///
 /// `POST /accounts/{account_id}/zt_risk_scoring/{user_id}/reset`
-Future<ApiResult<Map<String, dynamic>?, DlpDatasetsCreateError>> dlpRiskScoreResetPost({required String accountId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DlpDatasetsCreateError>> dlpRiskScoreResetPost({required String accountId, required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -50,11 +50,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Get all behaviors and associated configuration
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/behaviors`
-Future<ApiResult<DlpBehaviors?, DlpDatasetsCreateError>> dlpRiskScoreBehaviorsGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpBehaviors?, DlpDatasetsCreateError>> dlpRiskScoreBehaviorsGet({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,11 +71,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Update configuration for risk behaviors
 ///
 /// `PUT /accounts/{account_id}/zt_risk_scoring/behaviors`
-Future<ApiResult<DlpUpdateBehaviors?, DlpDatasetsCreateError>> dlpRiskScoreBehaviorsPut({required String accountId, required DlpUpdateBehaviors body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpUpdateBehaviors?, DlpDatasetsCreateError>> dlpRiskScoreBehaviorsPut({required String accountId, required DlpUpdateBehaviors body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,11 +94,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Get risk score info for all users in the account
 ///
 /// `GET /accounts/{account_id}/zt_risk_scoring/summary`
-Future<ApiResult<DlpRiskSummary?, DlpDatasetsCreateError>> dlpRiskScoreSummaryGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpRiskSummary?, DlpDatasetsCreateError>> dlpRiskScoreSummaryGet({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -115,5 +115,5 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
- }
+}
+}

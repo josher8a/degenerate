@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/customer_update_allowed_updates.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate({this.allowedUpdates, this.enabled, });
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
   allowedUpdates: json['allowed_updates'] != null ? CustomerUpdateAllowedUpdates.fromJson(json['allowed_updates']) : null,
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 final CustomerUpdateAllowedUpdates? allowedUpdates;
 
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowedUpdates != null) 'allowed_updates': allowedUpdates?.toJson(),
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_updates', 'enabled'}.contains(key)); } 
-PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate copyWith({CustomerUpdateAllowedUpdates? Function()? allowedUpdates, bool? Function()? enabled, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowed_updates', 'enabled'}.contains(key));}
+PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate copyWith({CustomerUpdateAllowedUpdates? Function()? allowedUpdates, bool? Function()? enabled, }) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
   allowedUpdates: allowedUpdates != null ? allowedUpdates() : this.allowedUpdates,
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate &&
           allowedUpdates == other.allowedUpdates &&
@@ -30,4 +30,4 @@ PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate copyWi
 
 @override String toString() => 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(allowedUpdates: $allowedUpdates, enabled: $enabled)';
 
- }
+}

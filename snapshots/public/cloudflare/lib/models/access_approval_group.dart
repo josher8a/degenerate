@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of email addresses that can approve a temporary authentication request.
 @immutable final class AccessApprovalGroup {const AccessApprovalGroup({required this.approvalsNeeded, this.emailAddresses, this.emailListUuid, });
 
-factory AccessApprovalGroup.fromJson(Map<String, dynamic> json) { return AccessApprovalGroup(
+factory AccessApprovalGroup.fromJson(Map<String, dynamic> json) {return AccessApprovalGroup(
   approvalsNeeded: (json['approvals_needed'] as num).toDouble(),
   emailAddresses: (json['email_addresses'] as List<dynamic>?)?.map((e) => e as String).toList(),
   emailListUuid: json['email_list_uuid'] as String?,
-); }
+);}
 
 /// The number of approvals needed to obtain access.
 /// 
@@ -23,21 +23,21 @@ final List<String>? emailAddresses;
 /// The UUID of an re-usable email list.
 final String? emailListUuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'approvals_needed': approvalsNeeded,
   'email_addresses': ?emailAddresses,
   'email_list_uuid': ?emailListUuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('approvals_needed') && json['approvals_needed'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('approvals_needed') && json['approvals_needed'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (approvalsNeeded < 0) { errors.add('approvalsNeeded: must be >= 0'); }
-return errors; } 
-AccessApprovalGroup copyWith({double? approvalsNeeded, List<String>? Function()? emailAddresses, String? Function()? emailListUuid, }) { return AccessApprovalGroup(
+return errors;}
+AccessApprovalGroup copyWith({double? approvalsNeeded, List<String>? Function()? emailAddresses, String? Function()? emailListUuid, }) {return AccessApprovalGroup(
   approvalsNeeded: approvalsNeeded ?? this.approvalsNeeded,
   emailAddresses: emailAddresses != null ? emailAddresses() : this.emailAddresses,
   emailListUuid: emailListUuid != null ? emailListUuid() : this.emailListUuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessApprovalGroup &&
           approvalsNeeded == other.approvalsNeeded &&
@@ -48,4 +48,4 @@ AccessApprovalGroup copyWith({double? approvalsNeeded, List<String>? Function()?
 
 @override String toString() => 'AccessApprovalGroup(approvalsNeeded: $approvalsNeeded, emailAddresses: $emailAddresses, emailListUuid: $emailListUuid)';
 
- }
+}

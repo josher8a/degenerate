@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountAddress {const AccountAddress({this.accountSid = const Omittable.absent(), this.city = const Omittable.absent(), this.customerName = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.isoCountry = const Omittable.absent(), this.postalCode = const Omittable.absent(), this.region = const Omittable.absent(), this.sid = const Omittable.absent(), this.street = const Omittable.absent(), this.uri = const Omittable.absent(), this.emergencyEnabled = const Omittable.absent(), this.validated = const Omittable.absent(), this.verified = const Omittable.absent(), this.streetSecondary = const Omittable.absent(), });
 
-factory AccountAddress.fromJson(Map<String, dynamic> json) { return AccountAddress(
+factory AccountAddress.fromJson(Map<String, dynamic> json) {return AccountAddress(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   city: json.containsKey('city') ? Omittable(json['city'] as String?) : const Omittable.absent(),
   customerName: json.containsKey('customer_name') ? Omittable(json['customer_name'] as String?) : const Omittable.absent(),
@@ -20,7 +20,7 @@ factory AccountAddress.fromJson(Map<String, dynamic> json) { return AccountAddre
   validated: json.containsKey('validated') ? Omittable(json['validated'] as bool?) : const Omittable.absent(),
   verified: json.containsKey('verified') ? Omittable(json['verified'] as bool?) : const Omittable.absent(),
   streetSecondary: json.containsKey('street_secondary') ? Omittable(json['street_secondary'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that is responsible for the Address resource.
 final Omittable<String?> accountSid;
@@ -70,7 +70,7 @@ final Omittable<bool?> verified;
 /// The additional number and street address of the address.
 final Omittable<String?> streetSecondary;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (city.isPresent) 'city': city.value,
   if (customerName.isPresent) 'customer_name': customerName.value,
@@ -87,10 +87,10 @@ Map<String, dynamic> toJson() { return {
   if (validated.isPresent) 'validated': validated.value,
   if (verified.isPresent) 'verified': verified.value,
   if (streetSecondary.isPresent) 'street_secondary': streetSecondary.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'city', 'customer_name', 'date_created', 'date_updated', 'friendly_name', 'iso_country', 'postal_code', 'region', 'sid', 'street', 'uri', 'emergency_enabled', 'validated', 'verified', 'street_secondary'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'city', 'customer_name', 'date_created', 'date_updated', 'friendly_name', 'iso_country', 'postal_code', 'region', 'sid', 'street', 'uri', 'emergency_enabled', 'validated', 'verified', 'street_secondary'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -103,8 +103,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^AD[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountAddress copyWith({Omittable<String?>? accountSid, Omittable<String?>? city, Omittable<String?>? customerName, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<String?>? isoCountry, Omittable<String?>? postalCode, Omittable<String?>? region, Omittable<String?>? sid, Omittable<String?>? street, Omittable<String?>? uri, Omittable<bool?>? emergencyEnabled, Omittable<bool?>? validated, Omittable<bool?>? verified, Omittable<String?>? streetSecondary, }) { return AccountAddress(
+return errors;}
+AccountAddress copyWith({Omittable<String?>? accountSid, Omittable<String?>? city, Omittable<String?>? customerName, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<String?>? isoCountry, Omittable<String?>? postalCode, Omittable<String?>? region, Omittable<String?>? sid, Omittable<String?>? street, Omittable<String?>? uri, Omittable<bool?>? emergencyEnabled, Omittable<bool?>? validated, Omittable<bool?>? verified, Omittable<String?>? streetSecondary, }) {return AccountAddress(
   accountSid: accountSid ?? this.accountSid,
   city: city ?? this.city,
   customerName: customerName ?? this.customerName,
@@ -121,7 +121,7 @@ AccountAddress copyWith({Omittable<String?>? accountSid, Omittable<String?>? cit
   validated: validated ?? this.validated,
   verified: verified ?? this.verified,
   streetSecondary: streetSecondary ?? this.streetSecondary,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountAddress &&
           accountSid == other.accountSid &&
@@ -145,4 +145,4 @@ AccountAddress copyWith({Omittable<String?>? accountSid, Omittable<String?>? cit
 
 @override String toString() => 'AccountAddress(\n  accountSid: $accountSid,\n  city: $city,\n  customerName: $customerName,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  friendlyName: $friendlyName,\n  isoCountry: $isoCountry,\n  postalCode: $postalCode,\n  region: $region,\n  sid: $sid,\n  street: $street,\n  uri: $uri,\n  emergencyEnabled: $emergencyEnabled,\n  validated: $validated,\n  verified: $verified,\n  streetSecondary: $streetSecondary,\n)';
 
- }
+}

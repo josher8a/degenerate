@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_settings.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules.dart';/// Details of a deployment environment
 @immutable final class Environment {const Environment({required this.id, required this.nodeId, required this.name, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, this.protectionRules, this.deploymentBranchPolicy = const Omittable.absent(), });
 
-factory Environment.fromJson(Map<String, dynamic> json) { return Environment(
+factory Environment.fromJson(Map<String, dynamic> json) {return Environment(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -14,7 +14,7 @@ factory Environment.fromJson(Map<String, dynamic> json) { return Environment(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   protectionRules: (json['protection_rules'] as List<dynamic>?)?.map(ProtectionRules.fromJson).toList(),
   deploymentBranchPolicy: json.containsKey('deployment_branch_policy') ? Omittable(json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The id of the environment.
 final int id;
@@ -39,7 +39,7 @@ final List<ProtectionRules>? protectionRules;
 
 final Omittable<DeploymentBranchPolicySettings?> deploymentBranchPolicy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -49,15 +49,15 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   if (protectionRules != null) 'protection_rules': protectionRules?.map((e) => e.toJson()).toList(),
   if (deploymentBranchPolicy.isPresent) 'deployment_branch_policy': deploymentBranchPolicy.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-Environment copyWith({int? id, String? nodeId, String? name, String? url, String? htmlUrl, DateTime? createdAt, DateTime? updatedAt, List<ProtectionRules>? Function()? protectionRules, Omittable<DeploymentBranchPolicySettings?>? deploymentBranchPolicy, }) { return Environment(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+Environment copyWith({int? id, String? nodeId, String? name, String? url, String? htmlUrl, DateTime? createdAt, DateTime? updatedAt, List<ProtectionRules>? Function()? protectionRules, Omittable<DeploymentBranchPolicySettings?>? deploymentBranchPolicy, }) {return Environment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -67,7 +67,7 @@ Environment copyWith({int? id, String? nodeId, String? name, String? url, String
   updatedAt: updatedAt ?? this.updatedAt,
   protectionRules: protectionRules != null ? protectionRules() : this.protectionRules,
   deploymentBranchPolicy: deploymentBranchPolicy ?? this.deploymentBranchPolicy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Environment &&
           id == other.id &&
@@ -84,4 +84,4 @@ Environment copyWith({int? id, String? nodeId, String? name, String? url, String
 
 @override String toString() => 'Environment(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  protectionRules: $protectionRules,\n  deploymentBranchPolicy: $deploymentBranchPolicy,\n)';
 
- }
+}

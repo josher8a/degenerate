@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesSourceVerifyRequest {const PostSourcesSourceVerifyRequest({required this.values, this.expand, });
 
-factory PostSourcesSourceVerifyRequest.fromJson(Map<String, dynamic> json) { return PostSourcesSourceVerifyRequest(
+factory PostSourcesSourceVerifyRequest.fromJson(Map<String, dynamic> json) {return PostSourcesSourceVerifyRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   values: (json['values'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -14,15 +14,15 @@ final List<String>? expand;
 /// The values needed to verify the source.
 final List<String> values;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'values': values,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('values'); } 
-PostSourcesSourceVerifyRequest copyWith({List<String>? Function()? expand, List<String>? values, }) { return PostSourcesSourceVerifyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('values');}
+PostSourcesSourceVerifyRequest copyWith({List<String>? Function()? expand, List<String>? values, }) {return PostSourcesSourceVerifyRequest(
   expand: expand != null ? expand() : this.expand,
   values: values ?? this.values,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSourcesSourceVerifyRequest &&
           listEquals(expand, other.expand) &&
@@ -32,4 +32,4 @@ PostSourcesSourceVerifyRequest copyWith({List<String>? Function()? expand, List<
 
 @override String toString() => 'PostSourcesSourceVerifyRequest(expand: $expand, values: $values)';
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceRebootWindow {const TerminalConfigurationConfigurationResourceRebootWindow({required this.endHour, required this.startHour, });
 
-factory TerminalConfigurationConfigurationResourceRebootWindow.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceRebootWindow(
+factory TerminalConfigurationConfigurationResourceRebootWindow.fromJson(Map<String, dynamic> json) {return TerminalConfigurationConfigurationResourceRebootWindow(
   endHour: (json['end_hour'] as num).toInt(),
   startHour: (json['start_hour'] as num).toInt(),
-); }
+);}
 
 /// Integer between 0 to 23 that represents the end hour of the reboot time window. The value must be different than the start_hour.
 final int endHour;
@@ -15,16 +15,16 @@ final int endHour;
 /// Integer between 0 to 23 that represents the start hour of the reboot time window.
 final int startHour;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_hour': endHour,
   'start_hour': startHour,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_hour') && json['end_hour'] is num &&
-      json.containsKey('start_hour') && json['start_hour'] is num; } 
-TerminalConfigurationConfigurationResourceRebootWindow copyWith({int? endHour, int? startHour, }) { return TerminalConfigurationConfigurationResourceRebootWindow(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end_hour') && json['end_hour'] is num &&
+      json.containsKey('start_hour') && json['start_hour'] is num;}
+TerminalConfigurationConfigurationResourceRebootWindow copyWith({int? endHour, int? startHour, }) {return TerminalConfigurationConfigurationResourceRebootWindow(
   endHour: endHour ?? this.endHour,
   startHour: startHour ?? this.startHour,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceRebootWindow &&
           endHour == other.endHour &&
@@ -34,4 +34,4 @@ TerminalConfigurationConfigurationResourceRebootWindow copyWith({int? endHour, i
 
 @override String toString() => 'TerminalConfigurationConfigurationResourceRebootWindow(endHour: $endHour, startHour: $startHour)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiCreateFinetuneResponseResult {const WorkersAiCreateFinetuneResponseResult({required this.createdAt, required this.id, required this.model, required this.modifiedAt, required this.name, required this.public, this.description, });
 
-factory WorkersAiCreateFinetuneResponseResult.fromJson(Map<String, dynamic> json) { return WorkersAiCreateFinetuneResponseResult(
+factory WorkersAiCreateFinetuneResponseResult.fromJson(Map<String, dynamic> json) {return WorkersAiCreateFinetuneResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String?,
   id: json['id'] as String,
@@ -11,7 +11,7 @@ factory WorkersAiCreateFinetuneResponseResult.fromJson(Map<String, dynamic> json
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   name: json['name'] as String,
   public: json['public'] as bool,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -27,7 +27,7 @@ final String name;
 
 final bool public;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'description': ?description,
   'id': id,
@@ -35,14 +35,14 @@ Map<String, dynamic> toJson() { return {
   'modified_at': modifiedAt.toIso8601String(),
   'name': name,
   'public': public,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('public') && json['public'] is bool; } 
-WorkersAiCreateFinetuneResponseResult copyWith({DateTime? createdAt, String? Function()? description, String? id, String? model, DateTime? modifiedAt, String? name, bool? public, }) { return WorkersAiCreateFinetuneResponseResult(
+      json.containsKey('public') && json['public'] is bool;}
+WorkersAiCreateFinetuneResponseResult copyWith({DateTime? createdAt, String? Function()? description, String? id, String? model, DateTime? modifiedAt, String? name, bool? public, }) {return WorkersAiCreateFinetuneResponseResult(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,
   id: id ?? this.id,
@@ -50,7 +50,7 @@ WorkersAiCreateFinetuneResponseResult copyWith({DateTime? createdAt, String? Fun
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
   public: public ?? this.public,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiCreateFinetuneResponseResult &&
           createdAt == other.createdAt &&
@@ -65,4 +65,4 @@ WorkersAiCreateFinetuneResponseResult copyWith({DateTime? createdAt, String? Fun
 
 @override String toString() => 'WorkersAiCreateFinetuneResponseResult(createdAt: $createdAt, description: $description, id: $id, model: $model, modifiedAt: $modifiedAt, name: $name, public: $public)';
 
- }
+}

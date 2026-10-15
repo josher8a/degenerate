@@ -7,11 +7,11 @@ const PatchIndicatorUpdateRequestTags({this.string = const Omittable.absent(), t
 const PatchIndicatorUpdateRequestTags._({required this.rawValue, required this.string, required this.tagsVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PatchIndicatorUpdateRequestTags.fromJson(Object? json) { return PatchIndicatorUpdateRequestTags._(
+factory PatchIndicatorUpdateRequestTags.fromJson(Object? json) {return PatchIndicatorUpdateRequestTags._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   tagsVariant2: json is Map<String, dynamic> && TagsVariant2.canParse(json) ? parseAnyOfVariant<TagsVariant2>(json, (value) => TagsVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PatchIndicatorUpdateRequestTags(${toJson()})';
 
- }
+}

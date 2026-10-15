@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/portal_resource_schedule_update_at_period_end.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update/trial_update_behavior.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update_product.dart';/// Determines the value to use for the billing cycle anchor on subscription updates. Valid values are `now` or `unchanged`, and the default value is `unchanged`. Setting the value to `now` resets the subscription's billing cycle anchor to the current time (in UTC). For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 sealed class PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor();
 
-factory PortalSubscriptionUpdateBillingCycleAnchor.fromJson(String json) { return switch (json) {
+factory PortalSubscriptionUpdateBillingCycleAnchor.fromJson(String json) {return switch (json) {
   'now' => now,
   'unchanged' => unchanged,
   _ => PortalSubscriptionUpdateBillingCycleAnchor$Unknown(json),
-}; }
+};}
 
 static const PortalSubscriptionUpdateBillingCycleAnchor now = PortalSubscriptionUpdateBillingCycleAnchor$now._();
 
@@ -17,30 +17,30 @@ static const PortalSubscriptionUpdateBillingCycleAnchor unchanged = PortalSubscr
 static const List<PortalSubscriptionUpdateBillingCycleAnchor> values = [now, unchanged];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'now' => 'now',
   'unchanged' => 'unchanged',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PortalSubscriptionUpdateBillingCycleAnchor$Unknown; } 
+bool get isUnknown {return this is PortalSubscriptionUpdateBillingCycleAnchor$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() now, required W Function() unchanged, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() now, required W Function() unchanged, required W Function(String value) $unknown, }) {return switch (this) {
       PortalSubscriptionUpdateBillingCycleAnchor$now() => now(),
       PortalSubscriptionUpdateBillingCycleAnchor$unchanged() => unchanged(),
       PortalSubscriptionUpdateBillingCycleAnchor$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W Function()? unchanged, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W Function()? unchanged, W Function(String value)? $unknown, }) {return switch (this) {
       PortalSubscriptionUpdateBillingCycleAnchor$now() => now != null ? now() : orElse(value),
       PortalSubscriptionUpdateBillingCycleAnchor$unchanged() => unchanged != null ? unchanged() : orElse(value),
       PortalSubscriptionUpdateBillingCycleAnchor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PortalSubscriptionUpdateBillingCycleAnchor($value)';
 
- }
+}
 @immutable final class PortalSubscriptionUpdateBillingCycleAnchor$now extends PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor$now._();
 
 @override String get value => 'now';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W F
 
 @override int get hashCode => 'now'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionUpdateBillingCycleAnchor$unchanged extends PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor$unchanged._();
 
 @override String get value => 'unchanged';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W F
 
 @override int get hashCode => 'unchanged'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionUpdateBillingCycleAnchor$Unknown extends PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates();
 
-factory PortalSubscriptionUpdateDefaultAllowedUpdates.fromJson(String json) { return switch (json) {
+factory PortalSubscriptionUpdateDefaultAllowedUpdates.fromJson(String json) {return switch (json) {
   'price' => price,
   'promotion_code' => promotionCode,
   'quantity' => quantity,
   _ => PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown(json),
-}; }
+};}
 
 static const PortalSubscriptionUpdateDefaultAllowedUpdates price = PortalSubscriptionUpdateDefaultAllowedUpdates$price._();
 
@@ -87,33 +87,33 @@ static const PortalSubscriptionUpdateDefaultAllowedUpdates quantity = PortalSubs
 static const List<PortalSubscriptionUpdateDefaultAllowedUpdates> values = [price, promotionCode, quantity];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'price' => 'price',
   'promotion_code' => 'promotionCode',
   'quantity' => 'quantity',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown; } 
+bool get isUnknown {return this is PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() price, required W Function() promotionCode, required W Function() quantity, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() price, required W Function() promotionCode, required W Function() quantity, required W Function(String value) $unknown, }) {return switch (this) {
       PortalSubscriptionUpdateDefaultAllowedUpdates$price() => price(),
       PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode() => promotionCode(),
       PortalSubscriptionUpdateDefaultAllowedUpdates$quantity() => quantity(),
       PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? price, W Function()? promotionCode, W Function()? quantity, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? price, W Function()? promotionCode, W Function()? quantity, W Function(String value)? $unknown, }) {return switch (this) {
       PortalSubscriptionUpdateDefaultAllowedUpdates$price() => price != null ? price() : orElse(value),
       PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode() => promotionCode != null ? promotionCode() : orElse(value),
       PortalSubscriptionUpdateDefaultAllowedUpdates$quantity() => quantity != null ? quantity() : orElse(value),
       PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PortalSubscriptionUpdateDefaultAllowedUpdates($value)';
 
- }
+}
 @immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates$price extends PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates$price._();
 
 @override String get value => 'price';
@@ -122,7 +122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? price, W
 
 @override int get hashCode => 'price'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode extends PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode._();
 
 @override String get value => 'promotion_code';
@@ -131,7 +131,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? price, W
 
 @override int get hashCode => 'promotion_code'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates$quantity extends PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates$quantity._();
 
 @override String get value => 'quantity';
@@ -140,7 +140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? price, W
 
 @override int get hashCode => 'quantity'.hashCode;
 
- }
+}
 @immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown extends PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown(this.value);
 
 @override final String value;
@@ -150,11 +150,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? price, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PortalSubscriptionUpdate {const PortalSubscriptionUpdate({required this.defaultAllowedUpdates, required this.enabled, required this.prorationBehavior, required this.scheduleAtPeriodEnd, required this.trialUpdateBehavior, this.billingCycleAnchor = const Omittable.absent(), this.products = const Omittable.absent(), });
 
-factory PortalSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PortalSubscriptionUpdate(
+factory PortalSubscriptionUpdate.fromJson(Map<String, dynamic> json) {return PortalSubscriptionUpdate(
   billingCycleAnchor: json.containsKey('billing_cycle_anchor') ? Omittable(json['billing_cycle_anchor'] != null ? PortalSubscriptionUpdateBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null) : const Omittable.absent(),
   defaultAllowedUpdates: (json['default_allowed_updates'] as List<dynamic>).map((e) => PortalSubscriptionUpdateDefaultAllowedUpdates.fromJson(e as String)).toList(),
   enabled: json['enabled'] as bool,
@@ -162,7 +162,7 @@ factory PortalSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return Po
   prorationBehavior: DeleteSubscriptionItemsItemRequestProrationBehavior.fromJson(json['proration_behavior'] as String),
   scheduleAtPeriodEnd: PortalResourceScheduleUpdateAtPeriodEnd.fromJson(json['schedule_at_period_end'] as Map<String, dynamic>),
   trialUpdateBehavior: TrialUpdateBehavior.fromJson(json['trial_update_behavior'] as String),
-); }
+);}
 
 /// Determines the value to use for the billing cycle anchor on subscription updates. Valid values are `now` or `unchanged`, and the default value is `unchanged`. Setting the value to `now` resets the subscription's billing cycle anchor to the current time (in UTC). For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 final Omittable<PortalSubscriptionUpdateBillingCycleAnchor?> billingCycleAnchor;
@@ -184,7 +184,7 @@ final PortalResourceScheduleUpdateAtPeriodEnd scheduleAtPeriodEnd;
 /// Determines how handle updates to trialing subscriptions. Valid values are `end_trial` and `continue_trial`. Defaults to a value of `end_trial` if you don't set it during creation.
 final TrialUpdateBehavior trialUpdateBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingCycleAnchor.isPresent) 'billing_cycle_anchor': billingCycleAnchor.value?.toJson(),
   'default_allowed_updates': defaultAllowedUpdates.map((e) => e.toJson()).toList(),
   'enabled': enabled,
@@ -192,13 +192,13 @@ Map<String, dynamic> toJson() { return {
   'proration_behavior': prorationBehavior.toJson(),
   'schedule_at_period_end': scheduleAtPeriodEnd.toJson(),
   'trial_update_behavior': trialUpdateBehavior.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_allowed_updates') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('default_allowed_updates') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('proration_behavior') &&
       json.containsKey('schedule_at_period_end') &&
-      json.containsKey('trial_update_behavior'); } 
-PortalSubscriptionUpdate copyWith({Omittable<PortalSubscriptionUpdateBillingCycleAnchor?>? billingCycleAnchor, List<PortalSubscriptionUpdateDefaultAllowedUpdates>? defaultAllowedUpdates, bool? enabled, Omittable<List<PortalSubscriptionUpdateProduct>?>? products, DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior, PortalResourceScheduleUpdateAtPeriodEnd? scheduleAtPeriodEnd, TrialUpdateBehavior? trialUpdateBehavior, }) { return PortalSubscriptionUpdate(
+      json.containsKey('trial_update_behavior');}
+PortalSubscriptionUpdate copyWith({Omittable<PortalSubscriptionUpdateBillingCycleAnchor?>? billingCycleAnchor, List<PortalSubscriptionUpdateDefaultAllowedUpdates>? defaultAllowedUpdates, bool? enabled, Omittable<List<PortalSubscriptionUpdateProduct>?>? products, DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior, PortalResourceScheduleUpdateAtPeriodEnd? scheduleAtPeriodEnd, TrialUpdateBehavior? trialUpdateBehavior, }) {return PortalSubscriptionUpdate(
   billingCycleAnchor: billingCycleAnchor ?? this.billingCycleAnchor,
   defaultAllowedUpdates: defaultAllowedUpdates ?? this.defaultAllowedUpdates,
   enabled: enabled ?? this.enabled,
@@ -206,7 +206,7 @@ PortalSubscriptionUpdate copyWith({Omittable<PortalSubscriptionUpdateBillingCycl
   prorationBehavior: prorationBehavior ?? this.prorationBehavior,
   scheduleAtPeriodEnd: scheduleAtPeriodEnd ?? this.scheduleAtPeriodEnd,
   trialUpdateBehavior: trialUpdateBehavior ?? this.trialUpdateBehavior,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PortalSubscriptionUpdate &&
           billingCycleAnchor == other.billingCycleAnchor &&
@@ -222,4 +222,4 @@ PortalSubscriptionUpdate copyWith({Omittable<PortalSubscriptionUpdateBillingCycl
 
 @override String toString() => 'PortalSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)';
 
- }
+}

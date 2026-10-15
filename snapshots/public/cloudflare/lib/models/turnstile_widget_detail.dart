@@ -11,7 +11,7 @@ String toJson() => value;
 /// A Turnstile widget's detailed configuration
 @immutable final class TurnstileWidgetDetail {const TurnstileWidgetDetail({required this.botFightMode, required this.clearanceLevel, required this.createdOn, required this.domains, required this.ephemeralId, required this.mode, required this.modifiedOn, required this.name, required this.offlabel, required this.region, required this.secret, required this.sitekey, });
 
-factory TurnstileWidgetDetail.fromJson(Map<String, dynamic> json) { return TurnstileWidgetDetail(
+factory TurnstileWidgetDetail.fromJson(Map<String, dynamic> json) {return TurnstileWidgetDetail(
   botFightMode: TurnstileBotFightMode.fromJson(json['bot_fight_mode'] as bool),
   clearanceLevel: TurnstileClearanceLevel.fromJson(json['clearance_level'] as String),
   createdOn: TurnstileCreatedOn.fromJson(json['created_on'] as String),
@@ -24,7 +24,7 @@ factory TurnstileWidgetDetail.fromJson(Map<String, dynamic> json) { return Turns
   region: TurnstileRegion.fromJson(json['region'] as String),
   secret: TurnstileSecret.fromJson(json['secret'] as String),
   sitekey: TurnstileSitekey.fromJson(json['sitekey'] as String),
-); }
+);}
 
 /// If bot_fight_mode is set to `true`, Cloudflare issues computationally
 /// expensive challenges in response to malicious bots (ENT only).
@@ -70,7 +70,7 @@ final TurnstileSecret secret;
 /// Widget item identifier tag.
 final TurnstileSitekey sitekey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bot_fight_mode': botFightMode.toJson(),
   'clearance_level': clearanceLevel.toJson(),
   'created_on': createdOn.toJson(),
@@ -83,8 +83,8 @@ Map<String, dynamic> toJson() { return {
   'region': region.toJson(),
   'secret': secret.toJson(),
   'sitekey': sitekey.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bot_fight_mode') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bot_fight_mode') &&
       json.containsKey('clearance_level') &&
       json.containsKey('created_on') &&
       json.containsKey('domains') &&
@@ -95,8 +95,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bot_f
       json.containsKey('offlabel') &&
       json.containsKey('region') &&
       json.containsKey('secret') &&
-      json.containsKey('sitekey'); } 
-TurnstileWidgetDetail copyWith({TurnstileBotFightMode? botFightMode, TurnstileClearanceLevel? clearanceLevel, TurnstileCreatedOn? createdOn, List<String>? domains, TurnstileEphemeralId? ephemeralId, TurnstileWidgetMode? mode, TurnstileModifiedOn? modifiedOn, TurnstileName? name, TurnstileOfflabel? offlabel, TurnstileRegion? region, TurnstileSecret? secret, TurnstileSitekey? sitekey, }) { return TurnstileWidgetDetail(
+      json.containsKey('sitekey');}
+TurnstileWidgetDetail copyWith({TurnstileBotFightMode? botFightMode, TurnstileClearanceLevel? clearanceLevel, TurnstileCreatedOn? createdOn, List<String>? domains, TurnstileEphemeralId? ephemeralId, TurnstileWidgetMode? mode, TurnstileModifiedOn? modifiedOn, TurnstileName? name, TurnstileOfflabel? offlabel, TurnstileRegion? region, TurnstileSecret? secret, TurnstileSitekey? sitekey, }) {return TurnstileWidgetDetail(
   botFightMode: botFightMode ?? this.botFightMode,
   clearanceLevel: clearanceLevel ?? this.clearanceLevel,
   createdOn: createdOn ?? this.createdOn,
@@ -109,7 +109,7 @@ TurnstileWidgetDetail copyWith({TurnstileBotFightMode? botFightMode, TurnstileCl
   region: region ?? this.region,
   secret: secret ?? this.secret,
   sitekey: sitekey ?? this.sitekey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TurnstileWidgetDetail &&
           botFightMode == other.botFightMode &&
@@ -129,4 +129,4 @@ TurnstileWidgetDetail copyWith({TurnstileBotFightMode? botFightMode, TurnstileCl
 
 @override String toString() => 'TurnstileWidgetDetail(\n  botFightMode: $botFightMode,\n  clearanceLevel: $clearanceLevel,\n  createdOn: $createdOn,\n  domains: $domains,\n  ephemeralId: $ephemeralId,\n  mode: $mode,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  offlabel: $offlabel,\n  region: $region,\n  secret: $secret,\n  sitekey: $sitekey,\n)';
 
- }
+}

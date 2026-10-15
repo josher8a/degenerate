@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of tokens used in a completion.
 @immutable final class CompletionTokensDetails {const CompletionTokensDetails({this.acceptedPredictionTokens, this.audioTokens, this.reasoningTokens, this.rejectedPredictionTokens, });
 
-factory CompletionTokensDetails.fromJson(Map<String, dynamic> json) { return CompletionTokensDetails(
+factory CompletionTokensDetails.fromJson(Map<String, dynamic> json) {return CompletionTokensDetails(
   acceptedPredictionTokens: json['accepted_prediction_tokens'] != null ? (json['accepted_prediction_tokens'] as num).toInt() : null,
   audioTokens: json['audio_tokens'] != null ? (json['audio_tokens'] as num).toInt() : null,
   reasoningTokens: json['reasoning_tokens'] != null ? (json['reasoning_tokens'] as num).toInt() : null,
   rejectedPredictionTokens: json['rejected_prediction_tokens'] != null ? (json['rejected_prediction_tokens'] as num).toInt() : null,
-); }
+);}
 
 /// When using Predicted Outputs, the number of tokens in the
 /// prediction that appeared in the completion.
@@ -42,19 +42,19 @@ int get reasoningTokensOrDefault => reasoningTokens ?? 0;
 /// The value of `rejectedPredictionTokens`, or its schema default when absent.
 int get rejectedPredictionTokensOrDefault => rejectedPredictionTokens ?? 0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accepted_prediction_tokens': ?acceptedPredictionTokens,
   'audio_tokens': ?audioTokens,
   'reasoning_tokens': ?reasoningTokens,
   'rejected_prediction_tokens': ?rejectedPredictionTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accepted_prediction_tokens', 'audio_tokens', 'reasoning_tokens', 'rejected_prediction_tokens'}.contains(key)); } 
-CompletionTokensDetails copyWith({int? Function()? acceptedPredictionTokens, int? Function()? audioTokens, int? Function()? reasoningTokens, int? Function()? rejectedPredictionTokens, }) { return CompletionTokensDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accepted_prediction_tokens', 'audio_tokens', 'reasoning_tokens', 'rejected_prediction_tokens'}.contains(key));}
+CompletionTokensDetails copyWith({int? Function()? acceptedPredictionTokens, int? Function()? audioTokens, int? Function()? reasoningTokens, int? Function()? rejectedPredictionTokens, }) {return CompletionTokensDetails(
   acceptedPredictionTokens: acceptedPredictionTokens != null ? acceptedPredictionTokens() : this.acceptedPredictionTokens,
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
   reasoningTokens: reasoningTokens != null ? reasoningTokens() : this.reasoningTokens,
   rejectedPredictionTokens: rejectedPredictionTokens != null ? rejectedPredictionTokens() : this.rejectedPredictionTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CompletionTokensDetails &&
           acceptedPredictionTokens == other.acceptedPredictionTokens &&
@@ -66,4 +66,4 @@ CompletionTokensDetails copyWith({int? Function()? acceptedPredictionTokens, int
 
 @override String toString() => 'CompletionTokensDetails(acceptedPredictionTokens: $acceptedPredictionTokens, audioTokens: $audioTokens, reasoningTokens: $reasoningTokens, rejectedPredictionTokens: $rejectedPredictionTokens)';
 
- }
+}

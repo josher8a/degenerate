@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/code_scanning_default_setup_state.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/query_suite.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/threat_model.dart';/// Runner type to be used.
 sealed class CodeScanningDefaultSetupUpdateRunnerType {const CodeScanningDefaultSetupUpdateRunnerType();
 
-factory CodeScanningDefaultSetupUpdateRunnerType.fromJson(String json) { return switch (json) {
+factory CodeScanningDefaultSetupUpdateRunnerType.fromJson(String json) {return switch (json) {
   'standard' => standard,
   'labeled' => labeled,
   _ => CodeScanningDefaultSetupUpdateRunnerType$Unknown(json),
-}; }
+};}
 
 static const CodeScanningDefaultSetupUpdateRunnerType standard = CodeScanningDefaultSetupUpdateRunnerType$standard._();
 
@@ -17,30 +17,30 @@ static const CodeScanningDefaultSetupUpdateRunnerType labeled = CodeScanningDefa
 static const List<CodeScanningDefaultSetupUpdateRunnerType> values = [standard, labeled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'standard' => 'standard',
   'labeled' => 'labeled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeScanningDefaultSetupUpdateRunnerType$Unknown; } 
+bool get isUnknown {return this is CodeScanningDefaultSetupUpdateRunnerType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() standard, required W Function() labeled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() standard, required W Function() labeled, required W Function(String value) $unknown, }) {return switch (this) {
       CodeScanningDefaultSetupUpdateRunnerType$standard() => standard(),
       CodeScanningDefaultSetupUpdateRunnerType$labeled() => labeled(),
       CodeScanningDefaultSetupUpdateRunnerType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? labeled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? labeled, W Function(String value)? $unknown, }) {return switch (this) {
       CodeScanningDefaultSetupUpdateRunnerType$standard() => standard != null ? standard() : orElse(value),
       CodeScanningDefaultSetupUpdateRunnerType$labeled() => labeled != null ? labeled() : orElse(value),
       CodeScanningDefaultSetupUpdateRunnerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeScanningDefaultSetupUpdateRunnerType($value)';
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateRunnerType$standard extends CodeScanningDefaultSetupUpdateRunnerType {const CodeScanningDefaultSetupUpdateRunnerType$standard._();
 
 @override String get value => 'standard';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => 'standard'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateRunnerType$labeled extends CodeScanningDefaultSetupUpdateRunnerType {const CodeScanningDefaultSetupUpdateRunnerType$labeled._();
 
 @override String get value => 'labeled';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => 'labeled'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateRunnerType$Unknown extends CodeScanningDefaultSetupUpdateRunnerType {const CodeScanningDefaultSetupUpdateRunnerType$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages();
 
-factory CodeScanningDefaultSetupUpdateLanguages.fromJson(String json) { return switch (json) {
+factory CodeScanningDefaultSetupUpdateLanguages.fromJson(String json) {return switch (json) {
   'actions' => actions,
   'c-cpp' => cCpp,
   'csharp' => csharp,
@@ -82,7 +82,7 @@ factory CodeScanningDefaultSetupUpdateLanguages.fromJson(String json) { return s
   'ruby' => ruby,
   'swift' => swift,
   _ => CodeScanningDefaultSetupUpdateLanguages$Unknown(json),
-}; }
+};}
 
 static const CodeScanningDefaultSetupUpdateLanguages actions = CodeScanningDefaultSetupUpdateLanguages$actions._();
 
@@ -105,9 +105,9 @@ static const CodeScanningDefaultSetupUpdateLanguages swift = CodeScanningDefault
 static const List<CodeScanningDefaultSetupUpdateLanguages> values = [actions, cCpp, csharp, go, javaKotlin, javascriptTypescript, python, ruby, swift];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'actions' => 'actions',
   'c-cpp' => 'cCpp',
   'csharp' => 'csharp',
@@ -118,11 +118,11 @@ String get name { return switch (value) {
   'ruby' => 'ruby',
   'swift' => 'swift',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeScanningDefaultSetupUpdateLanguages$Unknown; } 
+bool get isUnknown {return this is CodeScanningDefaultSetupUpdateLanguages$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() actions, required W Function() cCpp, required W Function() csharp, required W Function() go, required W Function() javaKotlin, required W Function() javascriptTypescript, required W Function() python, required W Function() ruby, required W Function() swift, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() actions, required W Function() cCpp, required W Function() csharp, required W Function() go, required W Function() javaKotlin, required W Function() javascriptTypescript, required W Function() python, required W Function() ruby, required W Function() swift, required W Function(String value) $unknown, }) {return switch (this) {
       CodeScanningDefaultSetupUpdateLanguages$actions() => actions(),
       CodeScanningDefaultSetupUpdateLanguages$cCpp() => cCpp(),
       CodeScanningDefaultSetupUpdateLanguages$csharp() => csharp(),
@@ -133,9 +133,9 @@ W when<W>({required W Function() actions, required W Function() cCpp, required W
       CodeScanningDefaultSetupUpdateLanguages$ruby() => ruby(),
       CodeScanningDefaultSetupUpdateLanguages$swift() => swift(),
       CodeScanningDefaultSetupUpdateLanguages$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions, W Function()? cCpp, W Function()? csharp, W Function()? go, W Function()? javaKotlin, W Function()? javascriptTypescript, W Function()? python, W Function()? ruby, W Function()? swift, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions, W Function()? cCpp, W Function()? csharp, W Function()? go, W Function()? javaKotlin, W Function()? javascriptTypescript, W Function()? python, W Function()? ruby, W Function()? swift, W Function(String value)? $unknown, }) {return switch (this) {
       CodeScanningDefaultSetupUpdateLanguages$actions() => actions != null ? actions() : orElse(value),
       CodeScanningDefaultSetupUpdateLanguages$cCpp() => cCpp != null ? cCpp() : orElse(value),
       CodeScanningDefaultSetupUpdateLanguages$csharp() => csharp != null ? csharp() : orElse(value),
@@ -146,10 +146,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
       CodeScanningDefaultSetupUpdateLanguages$ruby() => ruby != null ? ruby() : orElse(value),
       CodeScanningDefaultSetupUpdateLanguages$swift() => swift != null ? swift() : orElse(value),
       CodeScanningDefaultSetupUpdateLanguages$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeScanningDefaultSetupUpdateLanguages($value)';
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$actions extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$actions._();
 
 @override String get value => 'actions';
@@ -158,7 +158,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'actions'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$cCpp extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$cCpp._();
 
 @override String get value => 'c-cpp';
@@ -167,7 +167,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'c-cpp'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$csharp extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$csharp._();
 
 @override String get value => 'csharp';
@@ -176,7 +176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'csharp'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$go extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$go._();
 
 @override String get value => 'go';
@@ -185,7 +185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'go'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$javaKotlin extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$javaKotlin._();
 
 @override String get value => 'java-kotlin';
@@ -194,7 +194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'java-kotlin'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$javascriptTypescript extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$javascriptTypescript._();
 
 @override String get value => 'javascript-typescript';
@@ -203,7 +203,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'javascript-typescript'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$python extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$python._();
 
 @override String get value => 'python';
@@ -212,7 +212,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'python'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$ruby extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$ruby._();
 
 @override String get value => 'ruby';
@@ -221,7 +221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'ruby'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$swift extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$swift._();
 
 @override String get value => 'swift';
@@ -230,7 +230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => 'swift'.hashCode;
 
- }
+}
 @immutable final class CodeScanningDefaultSetupUpdateLanguages$Unknown extends CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages$Unknown(this.value);
 
 @override final String value;
@@ -240,18 +240,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configuration for code scanning default setup.
 @immutable final class CodeScanningDefaultSetupUpdate {const CodeScanningDefaultSetupUpdate({this.state, this.runnerType, this.runnerLabel = const Omittable.absent(), this.querySuite, this.threatModel, this.languages, });
 
-factory CodeScanningDefaultSetupUpdate.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetupUpdate(
+factory CodeScanningDefaultSetupUpdate.fromJson(Map<String, dynamic> json) {return CodeScanningDefaultSetupUpdate(
   state: json['state'] != null ? CodeScanningDefaultSetupState.fromJson(json['state'] as String) : null,
   runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupUpdateRunnerType.fromJson(json['runner_type'] as String) : null,
   runnerLabel: json.containsKey('runner_label') ? Omittable(json['runner_label'] as String?) : const Omittable.absent(),
   querySuite: json['query_suite'] != null ? QuerySuite.fromJson(json['query_suite'] as String) : null,
   threatModel: json['threat_model'] != null ? ThreatModel.fromJson(json['threat_model'] as String) : null,
   languages: (json['languages'] as List<dynamic>?)?.map((e) => CodeScanningDefaultSetupUpdateLanguages.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The desired state of code scanning default setup.
 final CodeScanningDefaultSetupState? state;
@@ -271,23 +271,23 @@ final ThreatModel? threatModel;
 /// CodeQL languages to be analyzed.
 final List<CodeScanningDefaultSetupUpdateLanguages>? languages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (state != null) 'state': state?.toJson(),
   if (runnerType != null) 'runner_type': runnerType?.toJson(),
   if (runnerLabel.isPresent) 'runner_label': runnerLabel.value,
   if (querySuite != null) 'query_suite': querySuite?.toJson(),
   if (threatModel != null) 'threat_model': threatModel?.toJson(),
   if (languages != null) 'languages': languages?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'languages'}.contains(key)); } 
-CodeScanningDefaultSetupUpdate copyWith({CodeScanningDefaultSetupState? Function()? state, CodeScanningDefaultSetupUpdateRunnerType? Function()? runnerType, Omittable<String?>? runnerLabel, QuerySuite? Function()? querySuite, ThreatModel? Function()? threatModel, List<CodeScanningDefaultSetupUpdateLanguages>? Function()? languages, }) { return CodeScanningDefaultSetupUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'state', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'languages'}.contains(key));}
+CodeScanningDefaultSetupUpdate copyWith({CodeScanningDefaultSetupState? Function()? state, CodeScanningDefaultSetupUpdateRunnerType? Function()? runnerType, Omittable<String?>? runnerLabel, QuerySuite? Function()? querySuite, ThreatModel? Function()? threatModel, List<CodeScanningDefaultSetupUpdateLanguages>? Function()? languages, }) {return CodeScanningDefaultSetupUpdate(
   state: state != null ? state() : this.state,
   runnerType: runnerType != null ? runnerType() : this.runnerType,
   runnerLabel: runnerLabel ?? this.runnerLabel,
   querySuite: querySuite != null ? querySuite() : this.querySuite,
   threatModel: threatModel != null ? threatModel() : this.threatModel,
   languages: languages != null ? languages() : this.languages,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningDefaultSetupUpdate &&
           state == other.state &&
@@ -301,4 +301,4 @@ CodeScanningDefaultSetupUpdate copyWith({CodeScanningDefaultSetupState? Function
 
 @override String toString() => 'CodeScanningDefaultSetupUpdate(state: $state, runnerType: $runnerType, runnerLabel: $runnerLabel, querySuite: $querySuite, threatModel: $threatModel, languages: $languages)';
 
- }
+}

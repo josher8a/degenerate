@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependencyGraphDiffVulnerabilities {const DependencyGraphDiffVulnerabilities({required this.severity, required this.advisoryGhsaId, required this.advisorySummary, required this.advisoryUrl, });
 
-factory DependencyGraphDiffVulnerabilities.fromJson(Map<String, dynamic> json) { return DependencyGraphDiffVulnerabilities(
+factory DependencyGraphDiffVulnerabilities.fromJson(Map<String, dynamic> json) {return DependencyGraphDiffVulnerabilities(
   severity: json['severity'] as String,
   advisoryGhsaId: json['advisory_ghsa_id'] as String,
   advisorySummary: json['advisory_summary'] as String,
   advisoryUrl: json['advisory_url'] as String,
-); }
+);}
 
 final String severity;
 
@@ -18,22 +18,22 @@ final String advisorySummary;
 
 final String advisoryUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'severity': severity,
   'advisory_ghsa_id': advisoryGhsaId,
   'advisory_summary': advisorySummary,
   'advisory_url': advisoryUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('severity') && json['severity'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('severity') && json['severity'] is String &&
       json.containsKey('advisory_ghsa_id') && json['advisory_ghsa_id'] is String &&
       json.containsKey('advisory_summary') && json['advisory_summary'] is String &&
-      json.containsKey('advisory_url') && json['advisory_url'] is String; } 
-DependencyGraphDiffVulnerabilities copyWith({String? severity, String? advisoryGhsaId, String? advisorySummary, String? advisoryUrl, }) { return DependencyGraphDiffVulnerabilities(
+      json.containsKey('advisory_url') && json['advisory_url'] is String;}
+DependencyGraphDiffVulnerabilities copyWith({String? severity, String? advisoryGhsaId, String? advisorySummary, String? advisoryUrl, }) {return DependencyGraphDiffVulnerabilities(
   severity: severity ?? this.severity,
   advisoryGhsaId: advisoryGhsaId ?? this.advisoryGhsaId,
   advisorySummary: advisorySummary ?? this.advisorySummary,
   advisoryUrl: advisoryUrl ?? this.advisoryUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependencyGraphDiffVulnerabilities &&
           severity == other.severity &&
@@ -45,4 +45,4 @@ DependencyGraphDiffVulnerabilities copyWith({String? severity, String? advisoryG
 
 @override String toString() => 'DependencyGraphDiffVulnerabilities(severity: $severity, advisoryGhsaId: $advisoryGhsaId, advisorySummary: $advisorySummary, advisoryUrl: $advisoryUrl)';
 
- }
+}

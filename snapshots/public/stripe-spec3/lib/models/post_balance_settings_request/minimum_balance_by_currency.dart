@@ -7,11 +7,11 @@ const MinimumBalanceByCurrency({this.mapStringVariant1Value = const Omittable.ab
 const MinimumBalanceByCurrency._({required this.rawValue, required this.mapStringVariant1Value, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory MinimumBalanceByCurrency.fromJson(Object? json) { return MinimumBalanceByCurrency._(
+factory MinimumBalanceByCurrency.fromJson(Object? json) {return MinimumBalanceByCurrency._(
   rawValue: Omittable(json),
   mapStringVariant1Value: parseAnyOfVariant<Map<String, Variant1Value>>(json, (value) => (value! as Map<String, dynamic>).map((k, v) => MapEntry(k, Variant1Value.fromJson(v)))),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'MinimumBalanceByCurrency(${toJson()})';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CapabilitiesPixPayments {const CapabilitiesPixPayments({this.requested});
 
-factory CapabilitiesPixPayments.fromJson(Map<String, dynamic> json) { return CapabilitiesPixPayments(
+factory CapabilitiesPixPayments.fromJson(Map<String, dynamic> json) {return CapabilitiesPixPayments(
   requested: json['requested'] as bool?,
-); }
+);}
 
 final bool? requested;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requested': ?requested,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-CapabilitiesPixPayments copyWith({bool? Function()? requested}) { return CapabilitiesPixPayments(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'requested'}.contains(key));}
+CapabilitiesPixPayments copyWith({bool? Function()? requested}) {return CapabilitiesPixPayments(
   requested: requested != null ? requested() : this.requested,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CapabilitiesPixPayments &&
           requested == other.requested;
@@ -24,4 +24,4 @@ CapabilitiesPixPayments copyWith({bool? Function()? requested}) { return Capabil
 
 @override String toString() => 'CapabilitiesPixPayments(requested: $requested)';
 
- }
+}

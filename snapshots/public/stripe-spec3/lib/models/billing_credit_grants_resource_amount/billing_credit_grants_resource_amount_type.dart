@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of this amount. We currently only support `monetary` billing credits.
 sealed class BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType();
 
-factory BillingCreditGrantsResourceAmountType.fromJson(String json) { return switch (json) {
+factory BillingCreditGrantsResourceAmountType.fromJson(String json) {return switch (json) {
   'monetary' => monetary,
   _ => BillingCreditGrantsResourceAmountType$Unknown(json),
-}; }
+};}
 
 static const BillingCreditGrantsResourceAmountType monetary = BillingCreditGrantsResourceAmountType$monetary._();
 
 static const List<BillingCreditGrantsResourceAmountType> values = [monetary];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'monetary' => 'monetary',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingCreditGrantsResourceAmountType$Unknown; } 
+bool get isUnknown {return this is BillingCreditGrantsResourceAmountType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() monetary, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() monetary, required W Function(String value) $unknown, }) {return switch (this) {
       BillingCreditGrantsResourceAmountType$monetary() => monetary(),
       BillingCreditGrantsResourceAmountType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? monetary, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? monetary, W Function(String value)? $unknown, }) {return switch (this) {
       BillingCreditGrantsResourceAmountType$monetary() => monetary != null ? monetary() : orElse(value),
       BillingCreditGrantsResourceAmountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingCreditGrantsResourceAmountType($value)';
 
- }
+}
 @immutable final class BillingCreditGrantsResourceAmountType$monetary extends BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType$monetary._();
 
 @override String get value => 'monetary';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? monetary
 
 @override int get hashCode => 'monetary'.hashCode;
 
- }
+}
 @immutable final class BillingCreditGrantsResourceAmountType$Unknown extends BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? monetary
 
 @override int get hashCode => value.hashCode;
 
- }
+}

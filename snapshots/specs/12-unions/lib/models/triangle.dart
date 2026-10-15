@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Triangle {const Triangle({required this.type, required this.base, required this.height, this.angles, });
 
-factory Triangle.fromJson(Map<String, dynamic> json) { return Triangle(
+factory Triangle.fromJson(Map<String, dynamic> json) {return Triangle(
   type: json['type'] as String,
   base: (json['base'] as num).toDouble(),
   height: (json['height'] as num).toDouble(),
   angles: (json['angles'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-); }
+);}
 
 final String type;
 
@@ -18,29 +18,29 @@ final double height;
 
 final List<double>? angles;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'base': base,
   'height': height,
   'angles': ?angles,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('base') && json['base'] is num &&
-      json.containsKey('height') && json['height'] is num; } 
+      json.containsKey('height') && json['height'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final angles$ = angles;
 if (angles$ != null) {
   if (angles$.length < 3) { errors.add('angles: must have >= 3 items'); }
   if (angles$.length > 3) { errors.add('angles: must have <= 3 items'); }
 }
-return errors; } 
-Triangle copyWith({String? type, double? base, double? height, List<double>? Function()? angles, }) { return Triangle(
+return errors;}
+Triangle copyWith({String? type, double? base, double? height, List<double>? Function()? angles, }) {return Triangle(
   type: type ?? this.type,
   base: base ?? this.base,
   height: height ?? this.height,
   angles: angles != null ? angles() : this.angles,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Triangle &&
           type == other.type &&
@@ -52,4 +52,4 @@ Triangle copyWith({String? type, double? base, double? height, List<double>? Fun
 
 @override String toString() => 'Triangle(type: $type, base: $base, height: $height, angles: $angles)';
 
- }
+}

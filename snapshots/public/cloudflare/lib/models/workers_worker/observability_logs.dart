@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Log settings for the Worker.
 @immutable final class ObservabilityLogs {const ObservabilityLogs({this.enabled, this.headSamplingRate, this.invocationLogs, });
 
-factory ObservabilityLogs.fromJson(Map<String, dynamic> json) { return ObservabilityLogs(
+factory ObservabilityLogs.fromJson(Map<String, dynamic> json) {return ObservabilityLogs(
   enabled: json['enabled'] as bool?,
   headSamplingRate: json['head_sampling_rate'] != null ? (json['head_sampling_rate'] as num).toDouble() : null,
   invocationLogs: json['invocation_logs'] as bool?,
-); }
+);}
 
 /// Whether logs are enabled for the Worker.
 final bool? enabled;
@@ -30,17 +30,17 @@ double get headSamplingRateOrDefault => headSamplingRate ?? 1.0;
 /// The value of `invocationLogs`, or its schema default when absent.
 bool get invocationLogsOrDefault => invocationLogs ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'head_sampling_rate': ?headSamplingRate,
   'invocation_logs': ?invocationLogs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'head_sampling_rate', 'invocation_logs'}.contains(key)); } 
-ObservabilityLogs copyWith({bool? Function()? enabled, double? Function()? headSamplingRate, bool? Function()? invocationLogs, }) { return ObservabilityLogs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'head_sampling_rate', 'invocation_logs'}.contains(key));}
+ObservabilityLogs copyWith({bool? Function()? enabled, double? Function()? headSamplingRate, bool? Function()? invocationLogs, }) {return ObservabilityLogs(
   enabled: enabled != null ? enabled() : this.enabled,
   headSamplingRate: headSamplingRate != null ? headSamplingRate() : this.headSamplingRate,
   invocationLogs: invocationLogs != null ? invocationLogs() : this.invocationLogs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ObservabilityLogs &&
           enabled == other.enabled &&
@@ -51,4 +51,4 @@ ObservabilityLogs copyWith({bool? Function()? enabled, double? Function()? headS
 
 @override String toString() => 'ObservabilityLogs(enabled: $enabled, headSamplingRate: $headSamplingRate, invocationLogs: $invocationLogs)';
 
- }
+}

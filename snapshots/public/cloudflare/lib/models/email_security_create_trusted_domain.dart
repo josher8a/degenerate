@@ -13,13 +13,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 /// ```
 @immutable final class EmailSecurityCreateTrustedDomain {const EmailSecurityCreateTrustedDomain({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, this.comments = const Omittable.absent(), });
 
-factory EmailSecurityCreateTrustedDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateTrustedDomain(
+factory EmailSecurityCreateTrustedDomain.fromJson(Map<String, dynamic> json) {return EmailSecurityCreateTrustedDomain(
   comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRecent: json['is_recent'] as bool,
   isRegex: json['is_regex'] as bool,
   isSimilarity: json['is_similarity'] as bool,
   pattern: json['pattern'] as String,
-); }
+);}
 
 final Omittable<String?> comments;
 
@@ -36,33 +36,33 @@ final bool isSimilarity;
 
 final String pattern;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comments.isPresent) 'comments': comments.value,
   'is_recent': isRecent,
   'is_regex': isRegex,
   'is_similarity': isSimilarity,
   'pattern': pattern,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_recent') && json['is_recent'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_recent') && json['is_recent'] is bool &&
       json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('is_similarity') && json['is_similarity'] is bool &&
-      json.containsKey('pattern') && json['pattern'] is String; } 
+      json.containsKey('pattern') && json['pattern'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
-return errors; } 
-EmailSecurityCreateTrustedDomain copyWith({Omittable<String?>? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, }) { return EmailSecurityCreateTrustedDomain(
+return errors;}
+EmailSecurityCreateTrustedDomain copyWith({Omittable<String?>? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, }) {return EmailSecurityCreateTrustedDomain(
   comments: comments ?? this.comments,
   isRecent: isRecent ?? this.isRecent,
   isRegex: isRegex ?? this.isRegex,
   isSimilarity: isSimilarity ?? this.isSimilarity,
   pattern: pattern ?? this.pattern,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateTrustedDomain &&
           comments == other.comments &&
@@ -75,4 +75,4 @@ EmailSecurityCreateTrustedDomain copyWith({Omittable<String?>? comments, bool? i
 
 @override String toString() => 'EmailSecurityCreateTrustedDomain(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern)';
 
- }
+}

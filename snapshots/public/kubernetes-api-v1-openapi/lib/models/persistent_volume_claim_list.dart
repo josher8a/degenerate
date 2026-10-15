@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim.dart';/// PersistentVolumeClaimList is a list of PersistentVolumeClaim items.
 @immutable final class PersistentVolumeClaimList {const PersistentVolumeClaimList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
-factory PersistentVolumeClaimList.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimList(
+factory PersistentVolumeClaimList.fromJson(Map<String, dynamic> json) {return PersistentVolumeClaimList(
   apiVersion: json['apiVersion'] as String?,
   items: (json['items'] as List<dynamic>).map((e) => PersistentVolumeClaim.fromJson(e as Map<String, dynamic>)).toList(),
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ListMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -23,19 +23,19 @@ final String? kind;
 /// Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 final ListMeta? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'items': items.map((e) => e.toJson()).toList(),
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-PersistentVolumeClaimList copyWith({String? Function()? apiVersion, List<PersistentVolumeClaim>? items, String? Function()? kind, ListMeta? Function()? metadata, }) { return PersistentVolumeClaimList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items');}
+PersistentVolumeClaimList copyWith({String? Function()? apiVersion, List<PersistentVolumeClaim>? items, String? Function()? kind, ListMeta? Function()? metadata, }) {return PersistentVolumeClaimList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   items: items ?? this.items,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeClaimList &&
           apiVersion == other.apiVersion &&
@@ -47,4 +47,4 @@ PersistentVolumeClaimList copyWith({String? Function()? apiVersion, List<Persist
 
 @override String toString() => 'PersistentVolumeClaimList(apiVersion: $apiVersion, items: $items, kind: $kind, metadata: $metadata)';
 
- }
+}

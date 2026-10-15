@@ -14,7 +14,7 @@ final class PerHostnameTlsSettingsApi with ApiExecutor {const PerHostnameTlsSett
 /// List the requested TLS setting for the hostnames under this zone.
 ///
 /// `GET /zones/{zone_id}/hostnames/settings/{setting_id}`
-Future<ApiResult<List<TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionResult>?, PerHostnameTlsSettingsListError>> perHostnameTlsSettingsList({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionResult>?, PerHostnameTlsSettingsListError>> perHostnameTlsSettingsList({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: PerHostnameTlsSettingsListError.fromResponse,
 );
- } 
+}
 /// Get TLS setting for hostname
 ///
 /// Get the requested TLS setting for the hostname.
 ///
 /// `GET /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<TlsCertificatesAndHostnamesSettingObject?, PerHostnameTlsSettingsGetError>> perHostnameTlsSettingsGet({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSettingObject?, PerHostnameTlsSettingsGetError>> perHostnameTlsSettingsGet({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: PerHostnameTlsSettingsGetError.fromResponse,
 );
- } 
+}
 /// Edit TLS setting for hostname
 ///
 /// Update the tls setting value for the hostname.
 ///
 /// `PUT /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<TlsCertificatesAndHostnamesSettingObject?, PerHostnameTlsSettingsPutError>> perHostnameTlsSettingsPut({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, required PerHostnameTlsSettingsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSettingObject?, PerHostnameTlsSettingsPutError>> perHostnameTlsSettingsPut({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, required PerHostnameTlsSettingsPutRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: PerHostnameTlsSettingsPutError.fromResponse,
 );
- } 
+}
 /// Delete TLS setting for hostname
 ///
 /// Delete the tls setting value for the hostname.
 ///
 /// `DELETE /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<TlsCertificatesAndHostnamesSettingObjectDelete?, PerHostnameTlsSettingsDeleteError>> perHostnameTlsSettingsDelete({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSettingObjectDelete?, PerHostnameTlsSettingsDeleteError>> perHostnameTlsSettingsDelete({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -102,5 +102,5 @@ return await execute(
   },
   onError: PerHostnameTlsSettingsDeleteError.fromResponse,
 );
- } 
- }
+}
+}

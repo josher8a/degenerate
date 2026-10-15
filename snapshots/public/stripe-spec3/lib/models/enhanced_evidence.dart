@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/visa_compelling_evidence3.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/visa_compliance.dart';@immutable final class EnhancedEvidence {const EnhancedEvidence({this.visaCompellingEvidence3, this.visaCompliance, });
 
-factory EnhancedEvidence.fromJson(Map<String, dynamic> json) { return EnhancedEvidence(
+factory EnhancedEvidence.fromJson(Map<String, dynamic> json) {return EnhancedEvidence(
   visaCompellingEvidence3: json['visa_compelling_evidence_3'] != null ? VisaCompellingEvidence3.fromJson(json['visa_compelling_evidence_3'] as Map<String, dynamic>) : null,
   visaCompliance: json['visa_compliance'] != null ? VisaCompliance.fromJson(json['visa_compliance'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final VisaCompellingEvidence3? visaCompellingEvidence3;
 
 final VisaCompliance? visaCompliance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (visaCompellingEvidence3 != null) 'visa_compelling_evidence_3': visaCompellingEvidence3?.toJson(),
   if (visaCompliance != null) 'visa_compliance': visaCompliance?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'visa_compelling_evidence_3', 'visa_compliance'}.contains(key)); } 
-EnhancedEvidence copyWith({VisaCompellingEvidence3? Function()? visaCompellingEvidence3, VisaCompliance? Function()? visaCompliance, }) { return EnhancedEvidence(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'visa_compelling_evidence_3', 'visa_compliance'}.contains(key));}
+EnhancedEvidence copyWith({VisaCompellingEvidence3? Function()? visaCompellingEvidence3, VisaCompliance? Function()? visaCompliance, }) {return EnhancedEvidence(
   visaCompellingEvidence3: visaCompellingEvidence3 != null ? visaCompellingEvidence3() : this.visaCompellingEvidence3,
   visaCompliance: visaCompliance != null ? visaCompliance() : this.visaCompliance,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EnhancedEvidence &&
           visaCompellingEvidence3 == other.visaCompellingEvidence3 &&
@@ -30,4 +30,4 @@ EnhancedEvidence copyWith({VisaCompellingEvidence3? Function()? visaCompellingEv
 
 @override String toString() => 'EnhancedEvidence(visaCompellingEvidence3: $visaCompellingEvidence3, visaCompliance: $visaCompliance)';
 
- }
+}

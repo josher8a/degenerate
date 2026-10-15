@@ -7,37 +7,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off
 /// 
 sealed class ZonesDisablePerformanceId {const ZonesDisablePerformanceId();
 
-factory ZonesDisablePerformanceId.fromJson(String json) { return switch (json) {
+factory ZonesDisablePerformanceId.fromJson(String json) {return switch (json) {
   'disable_performance' => disablePerformance,
   _ => ZonesDisablePerformanceId$Unknown(json),
-}; }
+};}
 
 static const ZonesDisablePerformanceId disablePerformance = ZonesDisablePerformanceId$disablePerformance._();
 
 static const List<ZonesDisablePerformanceId> values = [disablePerformance];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'disable_performance' => 'disablePerformance',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesDisablePerformanceId$Unknown; } 
+bool get isUnknown {return this is ZonesDisablePerformanceId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() disablePerformance, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() disablePerformance, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesDisablePerformanceId$disablePerformance() => disablePerformance(),
       ZonesDisablePerformanceId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? disablePerformance, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disablePerformance, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesDisablePerformanceId$disablePerformance() => disablePerformance != null ? disablePerformance() : orElse(value),
       ZonesDisablePerformanceId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesDisablePerformanceId($value)';
 
- }
+}
 @immutable final class ZonesDisablePerformanceId$disablePerformance extends ZonesDisablePerformanceId {const ZonesDisablePerformanceId$disablePerformance._();
 
 @override String get value => 'disable_performance';
@@ -46,7 +46,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableP
 
 @override int get hashCode => 'disable_performance'.hashCode;
 
- }
+}
 @immutable final class ZonesDisablePerformanceId$Unknown extends ZonesDisablePerformanceId {const ZonesDisablePerformanceId$Unknown(this.value);
 
 @override final String value;
@@ -56,12 +56,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableP
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesDisablePerformance {const ZonesDisablePerformance({this.id});
 
-factory ZonesDisablePerformance.fromJson(Map<String, dynamic> json) { return ZonesDisablePerformance(
+factory ZonesDisablePerformance.fromJson(Map<String, dynamic> json) {return ZonesDisablePerformance(
   id: json['id'] != null ? ZonesDisablePerformanceId.fromJson(json['id'] as String) : null,
-); }
+);}
 
 /// Turn off
 /// [Rocket Loader](https://developers.cloudflare.com/speed/optimization/content/rocket-loader/), and
@@ -69,13 +69,13 @@ factory ZonesDisablePerformance.fromJson(Map<String, dynamic> json) { return Zon
 /// 
 final ZonesDisablePerformanceId? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-ZonesDisablePerformance copyWith({ZonesDisablePerformanceId? Function()? id}) { return ZonesDisablePerformance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+ZonesDisablePerformance copyWith({ZonesDisablePerformanceId? Function()? id}) {return ZonesDisablePerformance(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesDisablePerformance &&
           id == other.id;
@@ -84,4 +84,4 @@ ZonesDisablePerformance copyWith({ZonesDisablePerformanceId? Function()? id}) { 
 
 @override String toString() => 'ZonesDisablePerformance(id: $id)';
 
- }
+}

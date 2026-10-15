@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_disputes_list_features.dart';/// 
 @immutable final class ConnectEmbeddedDisputesListConfig {const ConnectEmbeddedDisputesListConfig({required this.enabled, required this.features, });
 
-factory ConnectEmbeddedDisputesListConfig.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedDisputesListConfig(
+factory ConnectEmbeddedDisputesListConfig.fromJson(Map<String, dynamic> json) {return ConnectEmbeddedDisputesListConfig(
   enabled: json['enabled'] as bool,
   features: ConnectEmbeddedDisputesListFeatures.fromJson(json['features'] as Map<String, dynamic>),
-); }
+);}
 
 /// Whether the embedded component is enabled.
 final bool enabled;
 
 final ConnectEmbeddedDisputesListFeatures features;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'features': features.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('features'); } 
-ConnectEmbeddedDisputesListConfig copyWith({bool? enabled, ConnectEmbeddedDisputesListFeatures? features, }) { return ConnectEmbeddedDisputesListConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('features');}
+ConnectEmbeddedDisputesListConfig copyWith({bool? enabled, ConnectEmbeddedDisputesListFeatures? features, }) {return ConnectEmbeddedDisputesListConfig(
   enabled: enabled ?? this.enabled,
   features: features ?? this.features,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedDisputesListConfig &&
           enabled == other.enabled &&
@@ -33,4 +33,4 @@ ConnectEmbeddedDisputesListConfig copyWith({bool? enabled, ConnectEmbeddedDisput
 
 @override String toString() => 'ConnectEmbeddedDisputesListConfig(enabled: $enabled, features: $features)';
 
- }
+}

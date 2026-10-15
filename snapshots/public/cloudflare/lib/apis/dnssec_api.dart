@@ -14,7 +14,7 @@ final class DnssecApi with ApiExecutor {const DnssecApi(this.apiConfig);
 /// Details about DNSSEC status and configuration.
 ///
 /// `GET /zones/{zone_id}/dnssec`
-Future<ApiResult<DnssecDnssec?, DnssecDetailsError>> dnssecDetails({required DnssecIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnssecDnssec?, DnssecDetailsError>> dnssecDetails({required DnssecIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: DnssecDetailsError.fromResponse,
 );
- } 
+}
 /// Edit DNSSEC Status
 ///
 /// Enable or disable DNSSEC.
 ///
 /// `PATCH /zones/{zone_id}/dnssec`
-Future<ApiResult<DnssecDnssec?, DnssecEditDnssecStatusError>> dnssecEditDnssecStatus({required DnssecIdentifier zoneId, required DnssecEditDnssecStatusRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnssecDnssec?, DnssecEditDnssecStatusError>> dnssecEditDnssecStatus({required DnssecIdentifier zoneId, required DnssecEditDnssecStatusRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: DnssecEditDnssecStatusError.fromResponse,
 );
- } 
+}
 /// Delete DNSSEC records
 ///
 /// Delete DNSSEC.
 ///
 /// `DELETE /zones/{zone_id}/dnssec`
-Future<ApiResult<String?, DnssecDeleteDnssecRecordsError>> dnssecDeleteDnssecRecords({required DnssecIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, DnssecDeleteDnssecRecordsError>> dnssecDeleteDnssecRecords({required DnssecIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -79,5 +79,5 @@ return await execute(
   },
   onError: DnssecDeleteDnssecRecordsError.fromResponse,
 );
- } 
- }
+}
+}

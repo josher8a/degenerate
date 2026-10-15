@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1/webhooks_team1_parent.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class WebhooksTeam1 {const WebhooksTeam1({required this.id, required this.name, this.deleted, this.description = const Omittable.absent(), this.htmlUrl, this.membersUrl, this.nodeId, this.parent = const Omittable.absent(), this.permission, this.privacy, this.notificationSetting, this.repositoriesUrl, this.slug, this.url, this.type, this.organizationId, this.enterpriseId, });
 
-factory WebhooksTeam1.fromJson(Map<String, dynamic> json) { return WebhooksTeam1(
+factory WebhooksTeam1.fromJson(Map<String, dynamic> json) {return WebhooksTeam1(
   deleted: json['deleted'] as bool?,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
@@ -22,7 +22,7 @@ factory WebhooksTeam1.fromJson(Map<String, dynamic> json) { return WebhooksTeam1
   type: json['type'] != null ? TeamFullType.fromJson(json['type'] as String) : null,
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-); }
+);}
 
 final bool? deleted;
 
@@ -67,7 +67,7 @@ final int? organizationId;
 /// Unique identifier of the enterprise to which this team belongs
 final int? enterpriseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': ?deleted,
   if (description.isPresent) 'description': description.value,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
@@ -85,10 +85,10 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String; } 
-WebhooksTeam1 copyWith({bool? Function()? deleted, Omittable<String?>? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, Omittable<WebhooksTeam1Parent?>? parent, String? Function()? permission, TeamPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, TeamFullType? Function()? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return WebhooksTeam1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String;}
+WebhooksTeam1 copyWith({bool? Function()? deleted, Omittable<String?>? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, Omittable<WebhooksTeam1Parent?>? parent, String? Function()? permission, TeamPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, TeamFullType? Function()? type, int? Function()? organizationId, int? Function()? enterpriseId, }) {return WebhooksTeam1(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description ?? this.description,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
@@ -106,7 +106,7 @@ WebhooksTeam1 copyWith({bool? Function()? deleted, Omittable<String?>? descripti
   type: type != null ? type() : this.type,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksTeam1 &&
           deleted == other.deleted &&
@@ -131,4 +131,4 @@ WebhooksTeam1 copyWith({bool? Function()? deleted, Omittable<String?>? descripti
 
 @override String toString() => 'WebhooksTeam1(\n  deleted: $deleted,\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  parent: $parent,\n  permission: $permission,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
- }
+}

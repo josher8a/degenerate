@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration.dart';import 'package:pub_github_rest_3_1/models/code_security_set_configuration_as_default_for_enterprise_request/default_for_new_repos.dart';@immutable final class CodeSecuritySetConfigurationAsDefaultResponse {const CodeSecuritySetConfigurationAsDefaultResponse({this.defaultForNewRepos, this.configuration, });
 
-factory CodeSecuritySetConfigurationAsDefaultResponse.fromJson(Map<String, dynamic> json) { return CodeSecuritySetConfigurationAsDefaultResponse(
+factory CodeSecuritySetConfigurationAsDefaultResponse.fromJson(Map<String, dynamic> json) {return CodeSecuritySetConfigurationAsDefaultResponse(
   defaultForNewRepos: json['default_for_new_repos'] != null ? DefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null,
   configuration: json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which types of repository this security configuration is applied to by default.
 final DefaultForNewRepos? defaultForNewRepos;
 
 final CodeSecurityConfiguration? configuration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (defaultForNewRepos != null) 'default_for_new_repos': defaultForNewRepos?.toJson(),
   if (configuration != null) 'configuration': configuration?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_for_new_repos', 'configuration'}.contains(key)); } 
-CodeSecuritySetConfigurationAsDefaultResponse copyWith({DefaultForNewRepos? Function()? defaultForNewRepos, CodeSecurityConfiguration? Function()? configuration, }) { return CodeSecuritySetConfigurationAsDefaultResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_for_new_repos', 'configuration'}.contains(key));}
+CodeSecuritySetConfigurationAsDefaultResponse copyWith({DefaultForNewRepos? Function()? defaultForNewRepos, CodeSecurityConfiguration? Function()? configuration, }) {return CodeSecuritySetConfigurationAsDefaultResponse(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
   configuration: configuration != null ? configuration() : this.configuration,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecuritySetConfigurationAsDefaultResponse &&
           defaultForNewRepos == other.defaultForNewRepos &&
@@ -31,4 +31,4 @@ CodeSecuritySetConfigurationAsDefaultResponse copyWith({DefaultForNewRepos? Func
 
 @override String toString() => 'CodeSecuritySetConfigurationAsDefaultResponse(defaultForNewRepos: $defaultForNewRepos, configuration: $configuration)';
 
- }
+}

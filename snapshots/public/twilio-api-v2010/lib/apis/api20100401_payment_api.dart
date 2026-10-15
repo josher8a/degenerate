@@ -12,7 +12,7 @@ final class Api20100401PaymentApi with ApiExecutor {const Api20100401PaymentApi(
 /// create an instance of payments. This will start a new payments session
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments.json`
-Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -60,11 +60,11 @@ return await execute(
     return AccountCallPayments.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// update an instance of payments with different phases of payment flows.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments/{Sid}.json`
-Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -88,5 +88,5 @@ return await execute(
     return AccountCallPayments.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

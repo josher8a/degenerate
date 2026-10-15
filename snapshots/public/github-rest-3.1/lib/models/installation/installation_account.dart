@@ -7,11 +7,11 @@ const InstallationAccount({this.simpleUser = const Omittable.absent(), this.ente
 const InstallationAccount._({required this.rawValue, required this.simpleUser, required this.enterprise, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory InstallationAccount.fromJson(Object? json) { return InstallationAccount._(
+factory InstallationAccount.fromJson(Object? json) {return InstallationAccount._(
   rawValue: Omittable(json),
   simpleUser: json is Map<String, dynamic> && SimpleUser.canParse(json) ? parseAnyOfVariant<SimpleUser>(json, (value) => SimpleUser.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   enterprise: json is Map<String, dynamic> && Enterprise.canParse(json) ? parseAnyOfVariant<Enterprise>(json, (value) => Enterprise.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'InstallationAccount(${toJson()})';
 
- }
+}

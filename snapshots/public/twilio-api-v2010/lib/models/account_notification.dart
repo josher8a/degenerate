@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_call_call_notification_instance/request_method.dart';@immutable final class AccountNotification {const AccountNotification({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.errorCode = const Omittable.absent(), this.log = const Omittable.absent(), this.messageDate = const Omittable.absent(), this.messageText = const Omittable.absent(), this.moreInfo = const Omittable.absent(), this.requestMethod = const Omittable.absent(), this.requestUrl = const Omittable.absent(), this.sid = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountNotification.fromJson(Map<String, dynamic> json) { return AccountNotification(
+factory AccountNotification.fromJson(Map<String, dynamic> json) {return AccountNotification(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
@@ -18,7 +18,7 @@ factory AccountNotification.fromJson(Map<String, dynamic> json) { return Account
   requestUrl: json.containsKey('request_url') ? Omittable(json['request_url'] != null ? Uri.parse(json['request_url'] as String) : null) : const Omittable.absent(),
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Notification resource.
 final Omittable<String?> accountSid;
@@ -62,7 +62,7 @@ final Omittable<String?> sid;
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final Omittable<String?> uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (callSid.isPresent) 'call_sid': callSid.value,
@@ -77,10 +77,10 @@ Map<String, dynamic> toJson() { return {
   if (requestUrl.isPresent) 'request_url': requestUrl.value?.toString(),
   if (sid.isPresent) 'sid': sid.value,
   if (uri.isPresent) 'uri': uri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'date_created', 'date_updated', 'error_code', 'log', 'message_date', 'message_text', 'more_info', 'request_method', 'request_url', 'sid', 'uri'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'date_created', 'date_updated', 'error_code', 'log', 'message_date', 'message_text', 'more_info', 'request_method', 'request_url', 'sid', 'uri'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -99,8 +99,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^NO[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^NO[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountNotification copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? errorCode, Omittable<String?>? log, Omittable<String?>? messageDate, Omittable<String?>? messageText, Omittable<Uri?>? moreInfo, Omittable<RequestMethod?>? requestMethod, Omittable<Uri?>? requestUrl, Omittable<String?>? sid, Omittable<String?>? uri, }) { return AccountNotification(
+return errors;}
+AccountNotification copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? errorCode, Omittable<String?>? log, Omittable<String?>? messageDate, Omittable<String?>? messageText, Omittable<Uri?>? moreInfo, Omittable<RequestMethod?>? requestMethod, Omittable<Uri?>? requestUrl, Omittable<String?>? sid, Omittable<String?>? uri, }) {return AccountNotification(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   callSid: callSid ?? this.callSid,
@@ -115,7 +115,7 @@ AccountNotification copyWith({Omittable<String?>? accountSid, Omittable<String?>
   requestUrl: requestUrl ?? this.requestUrl,
   sid: sid ?? this.sid,
   uri: uri ?? this.uri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountNotification &&
           accountSid == other.accountSid &&
@@ -137,4 +137,4 @@ AccountNotification copyWith({Omittable<String?>? accountSid, Omittable<String?>
 
 @override String toString() => 'AccountNotification(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  callSid: $callSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  errorCode: $errorCode,\n  log: $log,\n  messageDate: $messageDate,\n  messageText: $messageText,\n  moreInfo: $moreInfo,\n  requestMethod: $requestMethod,\n  requestUrl: $requestUrl,\n  sid: $sid,\n  uri: $uri,\n)';
 
- }
+}

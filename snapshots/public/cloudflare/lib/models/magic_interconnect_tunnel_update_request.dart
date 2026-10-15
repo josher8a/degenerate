@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_automatic_return_routing.dart';import 'package:pub_cloudflare/models/magic_gre.dart';import 'package:pub_cloudflare/models/magic_health_check_base.dart';import 'package:pub_cloudflare/models/magic_interconnect_components_schemas_description.dart';import 'package:pub_cloudflare/models/magic_interface_address.dart';import 'package:pub_cloudflare/models/magic_interface_address6.dart';import 'package:pub_cloudflare/models/magic_schemas_mtu.dart';@immutable final class MagicInterconnectTunnelUpdateRequest {const MagicInterconnectTunnelUpdateRequest({this.automaticReturnRouting, this.description, this.gre, this.healthCheck, this.interfaceAddress, this.interfaceAddress6, this.mtu, });
 
-factory MagicInterconnectTunnelUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicInterconnectTunnelUpdateRequest(
+factory MagicInterconnectTunnelUpdateRequest.fromJson(Map<String, dynamic> json) {return MagicInterconnectTunnelUpdateRequest(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
   description: json['description'] != null ? MagicInterconnectComponentsSchemasDescription.fromJson(json['description'] as String) : null,
   gre: json['gre'] != null ? MagicGre.fromJson(json['gre'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory MagicInterconnectTunnelUpdateRequest.fromJson(Map<String, dynamic> json)
   interfaceAddress: json['interface_address'] != null ? MagicInterfaceAddress.fromJson(json['interface_address'] as String) : null,
   interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,
   mtu: json['mtu'] != null ? MagicSchemasMtu.fromJson(json['mtu'] as num) : null,
-); }
+);}
 
 /// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
 final MagicAutomaticReturnRouting? automaticReturnRouting;
@@ -29,7 +29,7 @@ final MagicInterfaceAddress6? interfaceAddress6;
 
 final MagicSchemasMtu? mtu;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (automaticReturnRouting != null) 'automatic_return_routing': automaticReturnRouting?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (gre != null) 'gre': gre?.toJson(),
@@ -37,9 +37,9 @@ Map<String, dynamic> toJson() { return {
   if (interfaceAddress != null) 'interface_address': interfaceAddress?.toJson(),
   if (interfaceAddress6 != null) 'interface_address6': interfaceAddress6?.toJson(),
   if (mtu != null) 'mtu': mtu?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_return_routing', 'description', 'gre', 'health_check', 'interface_address', 'interface_address6', 'mtu'}.contains(key)); } 
-MagicInterconnectTunnelUpdateRequest copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicInterconnectComponentsSchemasDescription? Function()? description, MagicGre? Function()? gre, MagicHealthCheckBase? Function()? healthCheck, MagicInterfaceAddress? Function()? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicSchemasMtu? Function()? mtu, }) { return MagicInterconnectTunnelUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'automatic_return_routing', 'description', 'gre', 'health_check', 'interface_address', 'interface_address6', 'mtu'}.contains(key));}
+MagicInterconnectTunnelUpdateRequest copyWith({MagicAutomaticReturnRouting? Function()? automaticReturnRouting, MagicInterconnectComponentsSchemasDescription? Function()? description, MagicGre? Function()? gre, MagicHealthCheckBase? Function()? healthCheck, MagicInterfaceAddress? Function()? interfaceAddress, MagicInterfaceAddress6? Function()? interfaceAddress6, MagicSchemasMtu? Function()? mtu, }) {return MagicInterconnectTunnelUpdateRequest(
   automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
   description: description != null ? description() : this.description,
   gre: gre != null ? gre() : this.gre,
@@ -47,7 +47,7 @@ MagicInterconnectTunnelUpdateRequest copyWith({MagicAutomaticReturnRouting? Func
   interfaceAddress: interfaceAddress != null ? interfaceAddress() : this.interfaceAddress,
   interfaceAddress6: interfaceAddress6 != null ? interfaceAddress6() : this.interfaceAddress6,
   mtu: mtu != null ? mtu() : this.mtu,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicInterconnectTunnelUpdateRequest &&
           automaticReturnRouting == other.automaticReturnRouting &&
@@ -62,4 +62,4 @@ MagicInterconnectTunnelUpdateRequest copyWith({MagicAutomaticReturnRouting? Func
 
 @override String toString() => 'MagicInterconnectTunnelUpdateRequest(automaticReturnRouting: $automaticReturnRouting, description: $description, gre: $gre, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu)';
 
- }
+}

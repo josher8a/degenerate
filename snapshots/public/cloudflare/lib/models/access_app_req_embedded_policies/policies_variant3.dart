@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_approval_group.dart';import 'package:pub_cloudflare/models/access_approval_required.dart';import 'package:pub_cloudflare/models/access_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_connection_rules.dart';import 'package:pub_cloudflare/models/access_decision.dart';import 'package:pub_cloudflare/models/access_isolation_required.dart';import 'package:pub_cloudflare/models/access_mfa_config.dart';import 'package:pub_cloudflare/models/access_policy_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_precedence.dart';import 'package:pub_cloudflare/models/access_purpose_justification_prompt.dart';import 'package:pub_cloudflare/models/access_purpose_justification_required.dart';import 'package:pub_cloudflare/models/access_rule.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';/// An application-scoped policy JSON. If the policy does not yet exist, it will be created.
 @immutable final class PoliciesVariant3 {const PoliciesVariant3({required this.decision, required this.include, required this.name, this.precedence, this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.exclude, this.require, this.id, });
 
-factory PoliciesVariant3.fromJson(Map<String, dynamic> json) { return PoliciesVariant3(
+factory PoliciesVariant3.fromJson(Map<String, dynamic> json) {return PoliciesVariant3(
   precedence: json['precedence'] != null ? AccessPrecedence.fromJson(json['precedence'] as num) : null,
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),
   approvalRequired: json['approval_required'] != null ? AccessApprovalRequired.fromJson(json['approval_required'] as bool) : null,
@@ -20,7 +20,7 @@ factory PoliciesVariant3.fromJson(Map<String, dynamic> json) { return PoliciesVa
   name: AccessPolicyComponentsSchemasName.fromJson(json['name'] as String),
   require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   id: json['id'] != null ? AccessSchemasUuid.fromJson(json['id'] as String) : null,
-); }
+);}
 
 final AccessPrecedence? precedence;
 
@@ -52,7 +52,7 @@ final List<AccessRule>? require;
 
 final AccessSchemasUuid? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (precedence != null) 'precedence': precedence?.toJson(),
   if (approvalGroups != null) 'approval_groups': approvalGroups?.map((e) => e.toJson()).toList(),
   if (approvalRequired != null) 'approval_required': approvalRequired?.toJson(),
@@ -68,11 +68,11 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('decision') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('decision') &&
       json.containsKey('include') &&
-      json.containsKey('name'); } 
-PoliciesVariant3 copyWith({AccessPrecedence? Function()? precedence, List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, AccessDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule>? Function()? require, AccessSchemasUuid? Function()? id, }) { return PoliciesVariant3(
+      json.containsKey('name');}
+PoliciesVariant3 copyWith({AccessPrecedence? Function()? precedence, List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, AccessDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule>? Function()? require, AccessSchemasUuid? Function()? id, }) {return PoliciesVariant3(
   precedence: precedence != null ? precedence() : this.precedence,
   approvalGroups: approvalGroups != null ? approvalGroups() : this.approvalGroups,
   approvalRequired: approvalRequired != null ? approvalRequired() : this.approvalRequired,
@@ -88,7 +88,7 @@ PoliciesVariant3 copyWith({AccessPrecedence? Function()? precedence, List<Access
   name: name ?? this.name,
   require: require != null ? require() : this.require,
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PoliciesVariant3 &&
           precedence == other.precedence &&
@@ -111,4 +111,4 @@ PoliciesVariant3 copyWith({AccessPrecedence? Function()? precedence, List<Access
 
 @override String toString() => 'PoliciesVariant3(\n  precedence: $precedence,\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  connectionRules: $connectionRules,\n  isolationRequired: $isolationRequired,\n  mfaConfig: $mfaConfig,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  sessionDuration: $sessionDuration,\n  decision: $decision,\n  exclude: $exclude,\n  include: $include,\n  name: $name,\n  require: $require,\n  id: $id,\n)';
 
- }
+}

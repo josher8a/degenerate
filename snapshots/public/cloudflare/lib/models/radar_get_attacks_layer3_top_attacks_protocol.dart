@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol();
 
-factory RadarGetAttacksLayer3TopAttacksProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TopAttacksProtocol.fromJson(String json) {return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'ICMP' => icmp,
   'GRE' => gre,
   _ => RadarGetAttacksLayer3TopAttacksProtocol$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TopAttacksProtocol udp = RadarGetAttacksLayer3TopAttacksProtocol$udp._();
 
@@ -22,36 +22,36 @@ static const RadarGetAttacksLayer3TopAttacksProtocol gre = RadarGetAttacksLayer3
 static const List<RadarGetAttacksLayer3TopAttacksProtocol> values = [udp, tcp, icmp, gre];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'UDP' => 'udp',
   'TCP' => 'tcp',
   'ICMP' => 'icmp',
   'GRE' => 'gre',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer3TopAttacksProtocol$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer3TopAttacksProtocol$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() udp, required W Function() tcp, required W Function() icmp, required W Function() gre, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() udp, required W Function() tcp, required W Function() icmp, required W Function() gre, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TopAttacksProtocol$udp() => udp(),
       RadarGetAttacksLayer3TopAttacksProtocol$tcp() => tcp(),
       RadarGetAttacksLayer3TopAttacksProtocol$icmp() => icmp(),
       RadarGetAttacksLayer3TopAttacksProtocol$gre() => gre(),
       RadarGetAttacksLayer3TopAttacksProtocol$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? icmp, W Function()? gre, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? icmp, W Function()? gre, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TopAttacksProtocol$udp() => udp != null ? udp() : orElse(value),
       RadarGetAttacksLayer3TopAttacksProtocol$tcp() => tcp != null ? tcp() : orElse(value),
       RadarGetAttacksLayer3TopAttacksProtocol$icmp() => icmp != null ? icmp() : orElse(value),
       RadarGetAttacksLayer3TopAttacksProtocol$gre() => gre != null ? gre() : orElse(value),
       RadarGetAttacksLayer3TopAttacksProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer3TopAttacksProtocol($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TopAttacksProtocol$udp extends RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol$udp._();
 
 @override String get value => 'UDP';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'UDP'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TopAttacksProtocol$tcp extends RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol$tcp._();
 
 @override String get value => 'TCP';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'TCP'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TopAttacksProtocol$icmp extends RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol$icmp._();
 
 @override String get value => 'ICMP';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'ICMP'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TopAttacksProtocol$gre extends RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol$gre._();
 
 @override String get value => 'GRE';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'GRE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TopAttacksProtocol$Unknown extends RadarGetAttacksLayer3TopAttacksProtocol {const RadarGetAttacksLayer3TopAttacksProtocol$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

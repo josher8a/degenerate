@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartUnionDeeplyNestedArrayObjectBX {const SmartUnionDeeplyNestedArrayObjectBX({required this.a, required this.b, });
 
-factory SmartUnionDeeplyNestedArrayObjectBX.fromJson(Map<String, dynamic> json) { return SmartUnionDeeplyNestedArrayObjectBX(
+factory SmartUnionDeeplyNestedArrayObjectBX.fromJson(Map<String, dynamic> json) {return SmartUnionDeeplyNestedArrayObjectBX(
   a: json['a'] as String,
   b: json['b'] as bool,
-); }
+);}
 
 final String a;
 
 final bool b;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'a': a,
   'b': b,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('a') && json['a'] is String &&
-      json.containsKey('b') && json['b'] is bool; } 
-SmartUnionDeeplyNestedArrayObjectBX copyWith({String? a, bool? b, }) { return SmartUnionDeeplyNestedArrayObjectBX(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('a') && json['a'] is String &&
+      json.containsKey('b') && json['b'] is bool;}
+SmartUnionDeeplyNestedArrayObjectBX copyWith({String? a, bool? b, }) {return SmartUnionDeeplyNestedArrayObjectBX(
   a: a ?? this.a,
   b: b ?? this.b,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartUnionDeeplyNestedArrayObjectBX &&
           a == other.a &&
@@ -31,4 +31,4 @@ SmartUnionDeeplyNestedArrayObjectBX copyWith({String? a, bool? b, }) { return Sm
 
 @override String toString() => 'SmartUnionDeeplyNestedArrayObjectBX(a: $a, b: $b)';
 
- }
+}

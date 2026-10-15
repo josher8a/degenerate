@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GithubOrganization {const GithubOrganization({required this.identityProviderId, required this.name, this.team, });
 
-factory GithubOrganization.fromJson(Map<String, dynamic> json) { return GithubOrganization(
+factory GithubOrganization.fromJson(Map<String, dynamic> json) {return GithubOrganization(
   identityProviderId: json['identity_provider_id'] as String,
   name: json['name'] as String,
   team: json['team'] as String?,
-); }
+);}
 
 /// The ID of your Github identity provider.
 /// 
@@ -24,18 +24,18 @@ final String name;
 /// Example: `'api-team'`
 final String? team;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'identity_provider_id': identityProviderId,
   'name': name,
   'team': ?team,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('identity_provider_id') && json['identity_provider_id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-GithubOrganization copyWith({String? identityProviderId, String? name, String? Function()? team, }) { return GithubOrganization(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('identity_provider_id') && json['identity_provider_id'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+GithubOrganization copyWith({String? identityProviderId, String? name, String? Function()? team, }) {return GithubOrganization(
   identityProviderId: identityProviderId ?? this.identityProviderId,
   name: name ?? this.name,
   team: team != null ? team() : this.team,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GithubOrganization &&
           identityProviderId == other.identityProviderId &&
@@ -46,4 +46,4 @@ GithubOrganization copyWith({String? identityProviderId, String? name, String? F
 
 @override String toString() => 'GithubOrganization(identityProviderId: $identityProviderId, name: $name, team: $team)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_update_org_ruleset_request/repos_update_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_rule.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_conditions2.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';/// The type of the source of the ruleset
 sealed class RepositoryRulesetSourceType {const RepositoryRulesetSourceType();
 
-factory RepositoryRulesetSourceType.fromJson(String json) { return switch (json) {
+factory RepositoryRulesetSourceType.fromJson(String json) {return switch (json) {
   'Repository' => repository,
   'Organization' => organization,
   'Enterprise' => enterprise,
   _ => RepositoryRulesetSourceType$Unknown(json),
-}; }
+};}
 
 static const RepositoryRulesetSourceType repository = RepositoryRulesetSourceType$repository._();
 
@@ -20,33 +20,33 @@ static const RepositoryRulesetSourceType enterprise = RepositoryRulesetSourceTyp
 static const List<RepositoryRulesetSourceType> values = [repository, organization, enterprise];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Repository' => 'repository',
   'Organization' => 'organization',
   'Enterprise' => 'enterprise',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RepositoryRulesetSourceType$Unknown; } 
+bool get isUnknown {return this is RepositoryRulesetSourceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() repository, required W Function() organization, required W Function() enterprise, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() repository, required W Function() organization, required W Function() enterprise, required W Function(String value) $unknown, }) {return switch (this) {
       RepositoryRulesetSourceType$repository() => repository(),
       RepositoryRulesetSourceType$organization() => organization(),
       RepositoryRulesetSourceType$enterprise() => enterprise(),
       RepositoryRulesetSourceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? repository, W Function()? organization, W Function()? enterprise, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? repository, W Function()? organization, W Function()? enterprise, W Function(String value)? $unknown, }) {return switch (this) {
       RepositoryRulesetSourceType$repository() => repository != null ? repository() : orElse(value),
       RepositoryRulesetSourceType$organization() => organization != null ? organization() : orElse(value),
       RepositoryRulesetSourceType$enterprise() => enterprise != null ? enterprise() : orElse(value),
       RepositoryRulesetSourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RepositoryRulesetSourceType($value)';
 
- }
+}
 @immutable final class RepositoryRulesetSourceType$repository extends RepositoryRulesetSourceType {const RepositoryRulesetSourceType$repository._();
 
 @override String get value => 'Repository';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reposito
 
 @override int get hashCode => 'Repository'.hashCode;
 
- }
+}
 @immutable final class RepositoryRulesetSourceType$organization extends RepositoryRulesetSourceType {const RepositoryRulesetSourceType$organization._();
 
 @override String get value => 'Organization';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reposito
 
 @override int get hashCode => 'Organization'.hashCode;
 
- }
+}
 @immutable final class RepositoryRulesetSourceType$enterprise extends RepositoryRulesetSourceType {const RepositoryRulesetSourceType$enterprise._();
 
 @override String get value => 'Enterprise';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reposito
 
 @override int get hashCode => 'Enterprise'.hashCode;
 
- }
+}
 @immutable final class RepositoryRulesetSourceType$Unknown extends RepositoryRulesetSourceType {const RepositoryRulesetSourceType$Unknown(this.value);
 
 @override final String value;
@@ -83,18 +83,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reposito
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The bypass type of the user making the API request for this ruleset. This field is only returned when
 /// querying the repository-level endpoint.
 sealed class CurrentUserCanBypass {const CurrentUserCanBypass();
 
-factory CurrentUserCanBypass.fromJson(String json) { return switch (json) {
+factory CurrentUserCanBypass.fromJson(String json) {return switch (json) {
   'always' => always,
   'pull_requests_only' => pullRequestsOnly,
   'never' => never,
   'exempt' => exempt,
   _ => CurrentUserCanBypass$Unknown(json),
-}; }
+};}
 
 static const CurrentUserCanBypass always = CurrentUserCanBypass$always._();
 
@@ -107,36 +107,36 @@ static const CurrentUserCanBypass exempt = CurrentUserCanBypass$exempt._();
 static const List<CurrentUserCanBypass> values = [always, pullRequestsOnly, never, exempt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'always' => 'always',
   'pull_requests_only' => 'pullRequestsOnly',
   'never' => 'never',
   'exempt' => 'exempt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CurrentUserCanBypass$Unknown; } 
+bool get isUnknown {return this is CurrentUserCanBypass$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() always, required W Function() pullRequestsOnly, required W Function() never, required W Function() exempt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() always, required W Function() pullRequestsOnly, required W Function() never, required W Function() exempt, required W Function(String value) $unknown, }) {return switch (this) {
       CurrentUserCanBypass$always() => always(),
       CurrentUserCanBypass$pullRequestsOnly() => pullRequestsOnly(),
       CurrentUserCanBypass$never() => never(),
       CurrentUserCanBypass$exempt() => exempt(),
       CurrentUserCanBypass$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? pullRequestsOnly, W Function()? never, W Function()? exempt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? pullRequestsOnly, W Function()? never, W Function()? exempt, W Function(String value)? $unknown, }) {return switch (this) {
       CurrentUserCanBypass$always() => always != null ? always() : orElse(value),
       CurrentUserCanBypass$pullRequestsOnly() => pullRequestsOnly != null ? pullRequestsOnly() : orElse(value),
       CurrentUserCanBypass$never() => never != null ? never() : orElse(value),
       CurrentUserCanBypass$exempt() => exempt != null ? exempt() : orElse(value),
       CurrentUserCanBypass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CurrentUserCanBypass($value)';
 
- }
+}
 @immutable final class CurrentUserCanBypass$always extends CurrentUserCanBypass {const CurrentUserCanBypass$always._();
 
 @override String get value => 'always';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'always'.hashCode;
 
- }
+}
 @immutable final class CurrentUserCanBypass$pullRequestsOnly extends CurrentUserCanBypass {const CurrentUserCanBypass$pullRequestsOnly._();
 
 @override String get value => 'pull_requests_only';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'pull_requests_only'.hashCode;
 
- }
+}
 @immutable final class CurrentUserCanBypass$never extends CurrentUserCanBypass {const CurrentUserCanBypass$never._();
 
 @override String get value => 'never';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'never'.hashCode;
 
- }
+}
 @immutable final class CurrentUserCanBypass$exempt extends CurrentUserCanBypass {const CurrentUserCanBypass$exempt._();
 
 @override String get value => 'exempt';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'exempt'.hashCode;
 
- }
+}
 @immutable final class CurrentUserCanBypass$Unknown extends CurrentUserCanBypass {const CurrentUserCanBypass$Unknown(this.value);
 
 @override final String value;
@@ -182,11 +182,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A set of rules to apply when specified conditions are met.
 @immutable final class RepositoryRuleset {const RepositoryRuleset({required this.id, required this.name, required this.source, required this.enforcement, this.target, this.sourceType, this.bypassActors, this.currentUserCanBypass, this.nodeId, this.links, this.conditions = const Omittable.absent(), this.rules, this.createdAt, this.updatedAt, });
 
-factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return RepositoryRuleset(
+factory RepositoryRuleset.fromJson(Map<String, dynamic> json) {return RepositoryRuleset(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   target: json['target'] != null ? ReposUpdateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
@@ -201,7 +201,7 @@ factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return Repositor
   rules: (json['rules'] as List<dynamic>?)?.map(RepositoryRule.fromJson).toList(),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The ID of the ruleset
 final int id;
@@ -240,7 +240,7 @@ final DateTime? createdAt;
 
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (target != null) 'target': target?.toJson(),
@@ -255,12 +255,12 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String &&
-      json.containsKey('enforcement'); } 
-RepositoryRuleset copyWith({int? id, String? name, ReposUpdateOrgRulesetRequestTarget? Function()? target, RepositoryRulesetSourceType? Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, CurrentUserCanBypass? Function()? currentUserCanBypass, String? Function()? nodeId, RepositoryRulesetLinks? Function()? links, Omittable<RepositoryRulesetConditions2?>? conditions, List<RepositoryRule>? Function()? rules, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return RepositoryRuleset(
+      json.containsKey('enforcement');}
+RepositoryRuleset copyWith({int? id, String? name, ReposUpdateOrgRulesetRequestTarget? Function()? target, RepositoryRulesetSourceType? Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, CurrentUserCanBypass? Function()? currentUserCanBypass, String? Function()? nodeId, RepositoryRulesetLinks? Function()? links, Omittable<RepositoryRulesetConditions2?>? conditions, List<RepositoryRule>? Function()? rules, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) {return RepositoryRuleset(
   id: id ?? this.id,
   name: name ?? this.name,
   target: target != null ? target() : this.target,
@@ -275,7 +275,7 @@ RepositoryRuleset copyWith({int? id, String? name, ReposUpdateOrgRulesetRequestT
   rules: rules != null ? rules() : this.rules,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleset &&
           id == other.id &&
@@ -297,4 +297,4 @@ RepositoryRuleset copyWith({int? id, String? name, ReposUpdateOrgRulesetRequestT
 
 @override String toString() => 'RepositoryRuleset(\n  id: $id,\n  name: $name,\n  target: $target,\n  sourceType: $sourceType,\n  source: $source,\n  enforcement: $enforcement,\n  bypassActors: $bypassActors,\n  currentUserCanBypass: $currentUserCanBypass,\n  nodeId: $nodeId,\n  links: $links,\n  conditions: $conditions,\n  rules: $rules,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

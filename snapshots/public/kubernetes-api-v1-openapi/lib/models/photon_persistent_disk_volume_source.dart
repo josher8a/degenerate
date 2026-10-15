@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Photon Controller persistent disk resource.
 @immutable final class PhotonPersistentDiskVolumeSource {const PhotonPersistentDiskVolumeSource({required this.pdId, this.fsType, });
 
-factory PhotonPersistentDiskVolumeSource.fromJson(Map<String, dynamic> json) { return PhotonPersistentDiskVolumeSource(
+factory PhotonPersistentDiskVolumeSource.fromJson(Map<String, dynamic> json) {return PhotonPersistentDiskVolumeSource(
   fsType: json['fsType'] as String?,
   pdId: json['pdID'] as String,
-); }
+);}
 
 /// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
 final String? fsType;
@@ -15,15 +15,15 @@ final String? fsType;
 /// pdID is the ID that identifies Photon Controller persistent disk
 final String pdId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'pdID': pdId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pdID') && json['pdID'] is String; } 
-PhotonPersistentDiskVolumeSource copyWith({String? Function()? fsType, String? pdId, }) { return PhotonPersistentDiskVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pdID') && json['pdID'] is String;}
+PhotonPersistentDiskVolumeSource copyWith({String? Function()? fsType, String? pdId, }) {return PhotonPersistentDiskVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   pdId: pdId ?? this.pdId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PhotonPersistentDiskVolumeSource &&
           fsType == other.fsType &&
@@ -33,4 +33,4 @@ PhotonPersistentDiskVolumeSource copyWith({String? Function()? fsType, String? p
 
 @override String toString() => 'PhotonPersistentDiskVolumeSource(fsType: $fsType, pdId: $pdId)';
 
- }
+}

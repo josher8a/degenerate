@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/cvss_severities/cvss_severities_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/global_advisory/global_advisory_credits.dart';import 'package:pub_github_rest_3_1/models/security_advisory_epss.dart';import 'package:pub_github_rest_3_1/models/vulnerability.dart';/// The type of advisory.
 sealed class GlobalAdvisoryType {const GlobalAdvisoryType();
 
-factory GlobalAdvisoryType.fromJson(String json) { return switch (json) {
+factory GlobalAdvisoryType.fromJson(String json) {return switch (json) {
   'reviewed' => reviewed,
   'unreviewed' => unreviewed,
   'malware' => malware,
   _ => GlobalAdvisoryType$Unknown(json),
-}; }
+};}
 
 static const GlobalAdvisoryType reviewed = GlobalAdvisoryType$reviewed._();
 
@@ -20,33 +20,33 @@ static const GlobalAdvisoryType malware = GlobalAdvisoryType$malware._();
 static const List<GlobalAdvisoryType> values = [reviewed, unreviewed, malware];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'reviewed' => 'reviewed',
   'unreviewed' => 'unreviewed',
   'malware' => 'malware',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GlobalAdvisoryType$Unknown; } 
+bool get isUnknown {return this is GlobalAdvisoryType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() reviewed, required W Function() unreviewed, required W Function() malware, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() reviewed, required W Function() unreviewed, required W Function() malware, required W Function(String value) $unknown, }) {return switch (this) {
       GlobalAdvisoryType$reviewed() => reviewed(),
       GlobalAdvisoryType$unreviewed() => unreviewed(),
       GlobalAdvisoryType$malware() => malware(),
       GlobalAdvisoryType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewed, W Function()? unreviewed, W Function()? malware, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewed, W Function()? unreviewed, W Function()? malware, W Function(String value)? $unknown, }) {return switch (this) {
       GlobalAdvisoryType$reviewed() => reviewed != null ? reviewed() : orElse(value),
       GlobalAdvisoryType$unreviewed() => unreviewed != null ? unreviewed() : orElse(value),
       GlobalAdvisoryType$malware() => malware != null ? malware() : orElse(value),
       GlobalAdvisoryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GlobalAdvisoryType($value)';
 
- }
+}
 @immutable final class GlobalAdvisoryType$reviewed extends GlobalAdvisoryType {const GlobalAdvisoryType$reviewed._();
 
 @override String get value => 'reviewed';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewed
 
 @override int get hashCode => 'reviewed'.hashCode;
 
- }
+}
 @immutable final class GlobalAdvisoryType$unreviewed extends GlobalAdvisoryType {const GlobalAdvisoryType$unreviewed._();
 
 @override String get value => 'unreviewed';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewed
 
 @override int get hashCode => 'unreviewed'.hashCode;
 
- }
+}
 @immutable final class GlobalAdvisoryType$malware extends GlobalAdvisoryType {const GlobalAdvisoryType$malware._();
 
 @override String get value => 'malware';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewed
 
 @override int get hashCode => 'malware'.hashCode;
 
- }
+}
 @immutable final class GlobalAdvisoryType$Unknown extends GlobalAdvisoryType {const GlobalAdvisoryType$Unknown(this.value);
 
 @override final String value;
@@ -83,18 +83,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewed
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The severity of the advisory.
 sealed class GlobalAdvisorySeverity {const GlobalAdvisorySeverity();
 
-factory GlobalAdvisorySeverity.fromJson(String json) { return switch (json) {
+factory GlobalAdvisorySeverity.fromJson(String json) {return switch (json) {
   'critical' => critical,
   'high' => high,
   'medium' => medium,
   'low' => low,
   'unknown' => unknown,
   _ => GlobalAdvisorySeverity$Unknown(json),
-}; }
+};}
 
 static const GlobalAdvisorySeverity critical = GlobalAdvisorySeverity$critical._();
 
@@ -109,39 +109,39 @@ static const GlobalAdvisorySeverity unknown = GlobalAdvisorySeverity$unknown._()
 static const List<GlobalAdvisorySeverity> values = [critical, high, medium, low, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'critical' => 'critical',
   'high' => 'high',
   'medium' => 'medium',
   'low' => 'low',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GlobalAdvisorySeverity$Unknown; } 
+bool get isUnknown {return this is GlobalAdvisorySeverity$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() critical, required W Function() high, required W Function() medium, required W Function() low, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() critical, required W Function() high, required W Function() medium, required W Function() low, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       GlobalAdvisorySeverity$critical() => critical(),
       GlobalAdvisorySeverity$high() => high(),
       GlobalAdvisorySeverity$medium() => medium(),
       GlobalAdvisorySeverity$low() => low(),
       GlobalAdvisorySeverity$unknown() => unknown(),
       GlobalAdvisorySeverity$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical, W Function()? high, W Function()? medium, W Function()? low, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical, W Function()? high, W Function()? medium, W Function()? low, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       GlobalAdvisorySeverity$critical() => critical != null ? critical() : orElse(value),
       GlobalAdvisorySeverity$high() => high != null ? high() : orElse(value),
       GlobalAdvisorySeverity$medium() => medium != null ? medium() : orElse(value),
       GlobalAdvisorySeverity$low() => low != null ? low() : orElse(value),
       GlobalAdvisorySeverity$unknown() => unknown != null ? unknown() : orElse(value),
       GlobalAdvisorySeverity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GlobalAdvisorySeverity($value)';
 
- }
+}
 @immutable final class GlobalAdvisorySeverity$critical extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$critical._();
 
 @override String get value => 'critical';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'critical'.hashCode;
 
- }
+}
 @immutable final class GlobalAdvisorySeverity$high extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$high._();
 
 @override String get value => 'high';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class GlobalAdvisorySeverity$medium extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$medium._();
 
 @override String get value => 'medium';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'medium'.hashCode;
 
- }
+}
 @immutable final class GlobalAdvisorySeverity$low extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$low._();
 
 @override String get value => 'low';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class GlobalAdvisorySeverity$unknown extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$unknown._();
 
 @override String get value => 'unknown';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class GlobalAdvisorySeverity$Unknown extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$Unknown(this.value);
 
 @override final String value;
@@ -196,11 +196,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A GitHub Security Advisory.
 @immutable final class GlobalAdvisory {const GlobalAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.repositoryAdvisoryUrl, required this.summary, required this.description, required this.type, required this.severity, required this.sourceCodeLocation, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.githubReviewedAt, required this.nvdPublishedAt, required this.withdrawnAt, required this.vulnerabilities, required this.cvss, required this.cwes, required this.credits, this.cvssSeverities = const Omittable.absent(), this.epss = const Omittable.absent(), });
 
-factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdvisory(
+factory GlobalAdvisory.fromJson(Map<String, dynamic> json) {return GlobalAdvisory(
   ghsaId: json['ghsa_id'] as String,
   cveId: json['cve_id'] as String?,
   url: json['url'] as String,
@@ -224,7 +224,7 @@ factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdviso
   epss: json.containsKey('epss') ? Omittable(json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cwes: (json['cwes'] as List<dynamic>?)?.map((e) => Cwes.fromJson(e as Map<String, dynamic>)).toList(),
   credits: (json['credits'] as List<dynamic>?)?.map((e) => GlobalAdvisoryCredits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The GitHub Security Advisory ID.
 final String ghsaId;
@@ -290,7 +290,7 @@ final List<Cwes>? cwes;
 /// The users who contributed to the advisory.
 final List<GlobalAdvisoryCredits>? credits;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ghsa_id': ghsaId,
   'cve_id': cveId,
   'url': url,
@@ -314,8 +314,8 @@ Map<String, dynamic> toJson() { return {
   if (epss.isPresent) 'epss': epss.value?.toJson(),
   'cwes': cwes?.map((e) => e.toJson()).toList(),
   'credits': credits?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -335,16 +335,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('vulnerabilities') &&
       json.containsKey('cvss') &&
       json.containsKey('cwes') &&
-      json.containsKey('credits'); } 
+      json.containsKey('credits');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (summary.runes.length > 1024) { errors.add('summary: length must be <= 1024'); }
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 65535) { errors.add('description: length must be <= 65535'); }
 }
-return errors; } 
-GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<DependabotAlertSecurityAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<Cwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
+return errors;}
+GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<DependabotAlertSecurityAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<Cwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) {return GlobalAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,
@@ -368,7 +368,7 @@ GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url,
   epss: epss ?? this.epss,
   cwes: cwes != null ? cwes() : this.cwes,
   credits: credits != null ? credits() : this.credits,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GlobalAdvisory &&
           ghsaId == other.ghsaId &&
@@ -399,4 +399,4 @@ GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url,
 
 @override String toString() => 'GlobalAdvisory(\n  ghsaId: $ghsaId,\n  cveId: $cveId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  repositoryAdvisoryUrl: $repositoryAdvisoryUrl,\n  summary: $summary,\n  description: $description,\n  type: $type,\n  severity: $severity,\n  sourceCodeLocation: $sourceCodeLocation,\n  identifiers: $identifiers,\n  references: $references,\n  publishedAt: $publishedAt,\n  updatedAt: $updatedAt,\n  githubReviewedAt: $githubReviewedAt,\n  nvdPublishedAt: $nvdPublishedAt,\n  withdrawnAt: $withdrawnAt,\n  vulnerabilities: $vulnerabilities,\n  cvss: $cvss,\n  cvssSeverities: $cvssSeverities,\n  epss: $epss,\n  cwes: $cwes,\n  credits: $credits,\n)';
 
- }
+}

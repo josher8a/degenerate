@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0({required this.gre, required this.icmp, required this.tcp, required this.udp, });
 
-factory RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(
+factory RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(
   gre: json['GRE'] as String,
   icmp: json['ICMP'] as String,
   tcp: json['TCP'] as String,
   udp: json['UDP'] as String,
-); }
+);}
 
 /// A numeric string.
 /// 
@@ -30,29 +30,29 @@ final String tcp;
 /// Example: `'10'`
 final String udp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'GRE': gre,
   'ICMP': icmp,
   'TCP': tcp,
   'UDP': udp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('GRE') && json['GRE'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('GRE') && json['GRE'] is String &&
       json.containsKey('ICMP') && json['ICMP'] is String &&
       json.containsKey('TCP') && json['TCP'] is String &&
-      json.containsKey('UDP') && json['UDP'] is String; } 
+      json.containsKey('UDP') && json['UDP'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch(gre)) { errors.add(r'gre: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(icmp)) { errors.add(r'icmp: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(tcp)) { errors.add(r'tcp: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(udp)) { errors.add(r'udp: must match pattern ^\d+$'); }
-return errors; } 
-RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 copyWith({String? gre, String? icmp, String? tcp, String? udp, }) { return RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(
+return errors;}
+RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 copyWith({String? gre, String? icmp, String? tcp, String? udp, }) {return RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(
   gre: gre ?? this.gre,
   icmp: icmp ?? this.icmp,
   tcp: tcp ?? this.tcp,
   udp: udp ?? this.udp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 &&
           gre == other.gre &&
@@ -64,4 +64,4 @@ RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 copyWith({String? g
 
 @override String toString() => 'RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(gre: $gre, icmp: $icmp, tcp: $tcp, udp: $udp)';
 
- }
+}

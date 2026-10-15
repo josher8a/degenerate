@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
 @immutable final class PermissionsUpgraded {const PermissionsUpgraded({this.organization, this.repository, this.other, });
 
-factory PermissionsUpgraded.fromJson(Map<String, dynamic> json) { return PermissionsUpgraded(
+factory PermissionsUpgraded.fromJson(Map<String, dynamic> json) {return PermissionsUpgraded(
   organization: (json['organization'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   repository: (json['repository'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   other: (json['other'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 final Map<String,String>? organization;
 
@@ -16,17 +16,17 @@ final Map<String,String>? repository;
 
 final Map<String,String>? other;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'organization': ?organization,
   'repository': ?repository,
   'other': ?other,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key)); } 
-PermissionsUpgraded copyWith({Map<String, String>? Function()? organization, Map<String, String>? Function()? repository, Map<String, String>? Function()? other, }) { return PermissionsUpgraded(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key));}
+PermissionsUpgraded copyWith({Map<String, String>? Function()? organization, Map<String, String>? Function()? repository, Map<String, String>? Function()? other, }) {return PermissionsUpgraded(
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,
   other: other != null ? other() : this.other,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PermissionsUpgraded &&
           organization == other.organization &&
@@ -37,4 +37,4 @@ PermissionsUpgraded copyWith({Map<String, String>? Function()? organization, Map
 
 @override String toString() => 'PermissionsUpgraded(organization: $organization, repository: $repository, other: $other)';
 
- }
+}

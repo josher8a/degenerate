@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_aura1_request/workers_ai_post_run_cf_deepgram_aura1_request_container.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_aura1_request/workers_ai_post_run_cf_deepgram_aura1_request_encoding.dart';/// Speaker used to produce the audio.
 sealed class WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker();
 
-factory WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(String json) {return switch (json) {
   'angus' => angus,
   'asteria' => asteria,
   'arcas' => arcas,
@@ -18,7 +18,7 @@ factory WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(String json) { re
   'hera' => hera,
   'stella' => stella,
   _ => WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfDeepgramAura1RequestSpeaker angus = WorkersAiPostRunCfDeepgramAura1RequestSpeaker$angus._();
 
@@ -47,9 +47,9 @@ static const WorkersAiPostRunCfDeepgramAura1RequestSpeaker stella = WorkersAiPos
 static const List<WorkersAiPostRunCfDeepgramAura1RequestSpeaker> values = [angus, asteria, arcas, orion, orpheus, athena, luna, zeus, perseus, helios, hera, stella];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'angus' => 'angus',
   'asteria' => 'asteria',
   'arcas' => 'arcas',
@@ -63,11 +63,11 @@ String get name { return switch (value) {
   'hera' => 'hera',
   'stella' => 'stella',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown; } 
+bool get isUnknown {return this is WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() angus, required W Function() asteria, required W Function() arcas, required W Function() orion, required W Function() orpheus, required W Function() athena, required W Function() luna, required W Function() zeus, required W Function() perseus, required W Function() helios, required W Function() hera, required W Function() stella, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() angus, required W Function() asteria, required W Function() arcas, required W Function() orion, required W Function() orpheus, required W Function() athena, required W Function() luna, required W Function() zeus, required W Function() perseus, required W Function() helios, required W Function() hera, required W Function() stella, required W Function(String value) $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$angus() => angus(),
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$asteria() => asteria(),
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$arcas() => arcas(),
@@ -81,9 +81,9 @@ W when<W>({required W Function() angus, required W Function() asteria, required 
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$hera() => hera(),
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$stella() => stella(),
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W Function()? asteria, W Function()? arcas, W Function()? orion, W Function()? orpheus, W Function()? athena, W Function()? luna, W Function()? zeus, W Function()? perseus, W Function()? helios, W Function()? hera, W Function()? stella, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W Function()? asteria, W Function()? arcas, W Function()? orion, W Function()? orpheus, W Function()? athena, W Function()? luna, W Function()? zeus, W Function()? perseus, W Function()? helios, W Function()? hera, W Function()? stella, W Function(String value)? $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$angus() => angus != null ? angus() : orElse(value),
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$asteria() => asteria != null ? asteria() : orElse(value),
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$arcas() => arcas != null ? arcas() : orElse(value),
@@ -97,10 +97,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$hera() => hera != null ? hera() : orElse(value),
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$stella() => stella != null ? stella() : orElse(value),
       WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkersAiPostRunCfDeepgramAura1RequestSpeaker($value)';
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$angus extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$angus._();
 
 @override String get value => 'angus';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'angus'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$asteria extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$asteria._();
 
 @override String get value => 'asteria';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'asteria'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$arcas extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$arcas._();
 
 @override String get value => 'arcas';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'arcas'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$orion extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$orion._();
 
 @override String get value => 'orion';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'orion'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$orpheus extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$orpheus._();
 
 @override String get value => 'orpheus';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'orpheus'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$athena extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$athena._();
 
 @override String get value => 'athena';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'athena'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$luna extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$luna._();
 
 @override String get value => 'luna';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'luna'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$zeus extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$zeus._();
 
 @override String get value => 'zeus';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'zeus'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$perseus extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$perseus._();
 
 @override String get value => 'perseus';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'perseus'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$helios extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$helios._();
 
 @override String get value => 'helios';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'helios'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$hera extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$hera._();
 
 @override String get value => 'hera';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'hera'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$stella extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$stella._();
 
 @override String get value => 'stella';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => 'stella'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown extends WorkersAiPostRunCfDeepgramAura1RequestSpeaker {const WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown(this.value);
 
 @override final String value;
@@ -218,17 +218,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramAura1Request {const WorkersAiPostRunCfDeepgramAura1Request({required this.text, this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker, });
 
-factory WorkersAiPostRunCfDeepgramAura1Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramAura1Request(
+factory WorkersAiPostRunCfDeepgramAura1Request.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfDeepgramAura1Request(
   bitRate: json['bit_rate'] != null ? (json['bit_rate'] as num).toDouble() : null,
   container: json['container'] != null ? WorkersAiPostRunCfDeepgramAura1RequestContainer.fromJson(json['container'] as String) : null,
   encoding: json['encoding'] != null ? WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(json['encoding'] as String) : null,
   sampleRate: json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null,
   speaker: json['speaker'] != null ? WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson(json['speaker'] as String) : null,
   text: json['text'] as String,
-); }
+);}
 
 /// The bitrate of the audio in bits per second. Choose from predefined ranges or specific values based on the encoding type.
 final double? bitRate;
@@ -251,23 +251,23 @@ final String text;
 /// The value of `speaker`, or its schema default when absent.
 WorkersAiPostRunCfDeepgramAura1RequestSpeaker get speakerOrDefault => speaker ?? WorkersAiPostRunCfDeepgramAura1RequestSpeaker.fromJson('angus');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bit_rate': ?bitRate,
   if (container != null) 'container': container?.toJson(),
   if (encoding != null) 'encoding': encoding?.toJson(),
   'sample_rate': ?sampleRate,
   if (speaker != null) 'speaker': speaker?.toJson(),
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-WorkersAiPostRunCfDeepgramAura1Request copyWith({double? Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer? Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding? Function()? encoding, double? Function()? sampleRate, WorkersAiPostRunCfDeepgramAura1RequestSpeaker? Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura1Request(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text') && json['text'] is String;}
+WorkersAiPostRunCfDeepgramAura1Request copyWith({double? Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer? Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding? Function()? encoding, double? Function()? sampleRate, WorkersAiPostRunCfDeepgramAura1RequestSpeaker? Function()? speaker, String? text, }) {return WorkersAiPostRunCfDeepgramAura1Request(
   bitRate: bitRate != null ? bitRate() : this.bitRate,
   container: container != null ? container() : this.container,
   encoding: encoding != null ? encoding() : this.encoding,
   sampleRate: sampleRate != null ? sampleRate() : this.sampleRate,
   speaker: speaker != null ? speaker() : this.speaker,
   text: text ?? this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfDeepgramAura1Request &&
           bitRate == other.bitRate &&
@@ -281,4 +281,4 @@ WorkersAiPostRunCfDeepgramAura1Request copyWith({double? Function()? bitRate, Wo
 
 @override String toString() => 'WorkersAiPostRunCfDeepgramAura1Request(bitRate: $bitRate, container: $container, encoding: $encoding, sampleRate: $sampleRate, speaker: $speaker, text: $text)';
 
- }
+}

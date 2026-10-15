@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcm`.
 sealed class PcmAudioFormatType {const PcmAudioFormatType();
 
-factory PcmAudioFormatType.fromJson(String json) { return switch (json) {
+factory PcmAudioFormatType.fromJson(String json) {return switch (json) {
   'audio/pcm' => audioPcm,
   _ => PcmAudioFormatType$Unknown(json),
-}; }
+};}
 
 static const PcmAudioFormatType audioPcm = PcmAudioFormatType$audioPcm._();
 
 static const List<PcmAudioFormatType> values = [audioPcm];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'audio/pcm' => 'audioPcm',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PcmAudioFormatType$Unknown; } 
+bool get isUnknown {return this is PcmAudioFormatType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() audioPcm, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() audioPcm, required W Function(String value) $unknown, }) {return switch (this) {
       PcmAudioFormatType$audioPcm() => audioPcm(),
       PcmAudioFormatType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioPcm, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioPcm, W Function(String value)? $unknown, }) {return switch (this) {
       PcmAudioFormatType$audioPcm() => audioPcm != null ? audioPcm() : orElse(value),
       PcmAudioFormatType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PcmAudioFormatType($value)';
 
- }
+}
 @immutable final class PcmAudioFormatType$audioPcm extends PcmAudioFormatType {const PcmAudioFormatType$audioPcm._();
 
 @override String get value => 'audio/pcm';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioPcm
 
 @override int get hashCode => 'audio/pcm'.hashCode;
 
- }
+}
 @immutable final class PcmAudioFormatType$Unknown extends PcmAudioFormatType {const PcmAudioFormatType$Unknown(this.value);
 
 @override final String value;
@@ -53,41 +53,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioPcm
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The sample rate of the audio. Always `24000`.
 sealed class Rate {const Rate();
 
-factory Rate.fromJson(int json) { return switch (json) {
+factory Rate.fromJson(int json) {return switch (json) {
   24000 => $24000,
   _ => Rate$Unknown(json),
-}; }
+};}
 
 static const Rate $24000 = Rate$$24000._();
 
 static const List<Rate> values = [$24000];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   24000 => r'$24000',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Rate$Unknown; } 
+bool get isUnknown {return this is Rate$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $24000, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $24000, required W Function(int value) $unknown, }) {return switch (this) {
       Rate$$24000() => $24000(),
       Rate$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $24000, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $24000, W Function(int value)? $unknown, }) {return switch (this) {
       Rate$$24000() => $24000 != null ? $24000() : orElse(value),
       Rate$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Rate($value)';
 
- }
+}
 @immutable final class Rate$$24000 extends Rate {const Rate$$24000._();
 
 @override int get value => 24000;
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $24000, W F
 
 @override int get hashCode => 24000.hashCode;
 
- }
+}
 @immutable final class Rate$Unknown extends Rate {const Rate$Unknown(this.value);
 
 @override final int value;
@@ -106,14 +106,14 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $24000, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The PCM audio format. Only a 24kHz sample rate is supported.
 @immutable final class PcmAudioFormat {const PcmAudioFormat({this.type, this.rate, });
 
-factory PcmAudioFormat.fromJson(Map<String, dynamic> json) { return PcmAudioFormat(
+factory PcmAudioFormat.fromJson(Map<String, dynamic> json) {return PcmAudioFormat(
   type: json['type'] != null ? PcmAudioFormatType.fromJson(json['type'] as String) : null,
   rate: json['rate'] != null ? Rate.fromJson((json['rate'] as num).toInt()) : null,
-); }
+);}
 
 /// The audio format. Always `audio/pcm`.
 final PcmAudioFormatType? type;
@@ -121,15 +121,15 @@ final PcmAudioFormatType? type;
 /// The sample rate of the audio. Always `24000`.
 final Rate? rate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (rate != null) 'rate': rate?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'rate'}.contains(key)); } 
-PcmAudioFormat copyWith({PcmAudioFormatType? Function()? type, Rate? Function()? rate, }) { return PcmAudioFormat(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'rate'}.contains(key));}
+PcmAudioFormat copyWith({PcmAudioFormatType? Function()? type, Rate? Function()? rate, }) {return PcmAudioFormat(
   type: type != null ? type() : this.type,
   rate: rate != null ? rate() : this.rate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PcmAudioFormat &&
           type == other.type &&
@@ -139,4 +139,4 @@ PcmAudioFormat copyWith({PcmAudioFormatType? Function()? type, Rate? Function()?
 
 @override String toString() => 'PcmAudioFormat(type: $type, rate: $rate)';
 
- }
+}

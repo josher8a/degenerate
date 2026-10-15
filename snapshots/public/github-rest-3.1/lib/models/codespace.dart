@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespace/codespace_location.dart';import 'package:pub_github_rest_3_1/models/codespace/codespace_state.dart';import 'package:pub_github_rest_3_1/models/codespace/git_status.dart';import 'package:pub_github_rest_3_1/models/codespace/runtime_constraints.dart';import 'package:pub_github_rest_3_1/models/codespace_machine.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A codespace.
 @immutable final class Codespace {const Codespace({required this.id, required this.name, required this.environmentId, required this.owner, required this.billableOwner, required this.repository, required this.machine, required this.prebuild, required this.createdAt, required this.updatedAt, required this.lastUsedAt, required this.state, required this.url, required this.gitStatus, required this.location, required this.idleTimeoutMinutes, required this.webUrl, required this.machinesUrl, required this.startUrl, required this.stopUrl, required this.pullsUrl, required this.recentFolders, this.displayName = const Omittable.absent(), this.devcontainerPath = const Omittable.absent(), this.publishUrl = const Omittable.absent(), this.runtimeConstraints, this.pendingOperation = const Omittable.absent(), this.pendingOperationDisabledReason = const Omittable.absent(), this.idleTimeoutNotice = const Omittable.absent(), this.retentionPeriodMinutes = const Omittable.absent(), this.retentionExpiresAt = const Omittable.absent(), this.lastKnownStopNotice = const Omittable.absent(), });
 
-factory Codespace.fromJson(Map<String, dynamic> json) { return Codespace(
+factory Codespace.fromJson(Map<String, dynamic> json) {return Codespace(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
@@ -37,7 +37,7 @@ factory Codespace.fromJson(Map<String, dynamic> json) { return Codespace(
   retentionPeriodMinutes: json.containsKey('retention_period_minutes') ? Omittable(json['retention_period_minutes'] != null ? (json['retention_period_minutes'] as num).toInt() : null) : const Omittable.absent(),
   retentionExpiresAt: json.containsKey('retention_expires_at') ? Omittable(json['retention_expires_at'] != null ? DateTime.parse(json['retention_expires_at'] as String) : null) : const Omittable.absent(),
   lastKnownStopNotice: json.containsKey('last_known_stop_notice') ? Omittable(json['last_known_stop_notice'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final int id;
 
@@ -126,7 +126,7 @@ final Omittable<DateTime?> retentionExpiresAt;
 /// The text to display to a user when a codespace has been stopped for a potentially actionable reason.
 final Omittable<String?> lastKnownStopNotice;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (displayName.isPresent) 'display_name': displayName.value,
@@ -159,8 +159,8 @@ Map<String, dynamic> toJson() { return {
   if (retentionPeriodMinutes.isPresent) 'retention_period_minutes': retentionPeriodMinutes.value,
   if (retentionExpiresAt.isPresent) 'retention_expires_at': retentionExpiresAt.value?.toIso8601String(),
   if (lastKnownStopNotice.isPresent) 'last_known_stop_notice': lastKnownStopNotice.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('environment_id') && (json['environment_id'] == null || json['environment_id'] is String) &&
       json.containsKey('owner') &&
@@ -181,8 +181,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('start_url') && json['start_url'] is String &&
       json.containsKey('stop_url') && json['stop_url'] is String &&
       json.containsKey('pulls_url') && (json['pulls_url'] == null || json['pulls_url'] is String) &&
-      json.containsKey('recent_folders'); } 
-Codespace copyWith({int? id, String? name, Omittable<String?>? displayName, String? Function()? environmentId, SimpleUser? owner, SimpleUser? billableOwner, MinimalRepository? repository, CodespaceMachine? Function()? machine, Omittable<String?>? devcontainerPath, bool? Function()? prebuild, DateTime? createdAt, DateTime? updatedAt, DateTime? lastUsedAt, CodespaceState? state, Uri? url, GitStatus? gitStatus, CodespaceLocation? location, int? Function()? idleTimeoutMinutes, Uri? webUrl, Uri? machinesUrl, Uri? startUrl, Uri? stopUrl, Omittable<Uri?>? publishUrl, Uri? Function()? pullsUrl, List<String>? recentFolders, RuntimeConstraints? Function()? runtimeConstraints, Omittable<bool?>? pendingOperation, Omittable<String?>? pendingOperationDisabledReason, Omittable<String?>? idleTimeoutNotice, Omittable<int?>? retentionPeriodMinutes, Omittable<DateTime?>? retentionExpiresAt, Omittable<String?>? lastKnownStopNotice, }) { return Codespace(
+      json.containsKey('recent_folders');}
+Codespace copyWith({int? id, String? name, Omittable<String?>? displayName, String? Function()? environmentId, SimpleUser? owner, SimpleUser? billableOwner, MinimalRepository? repository, CodespaceMachine? Function()? machine, Omittable<String?>? devcontainerPath, bool? Function()? prebuild, DateTime? createdAt, DateTime? updatedAt, DateTime? lastUsedAt, CodespaceState? state, Uri? url, GitStatus? gitStatus, CodespaceLocation? location, int? Function()? idleTimeoutMinutes, Uri? webUrl, Uri? machinesUrl, Uri? startUrl, Uri? stopUrl, Omittable<Uri?>? publishUrl, Uri? Function()? pullsUrl, List<String>? recentFolders, RuntimeConstraints? Function()? runtimeConstraints, Omittable<bool?>? pendingOperation, Omittable<String?>? pendingOperationDisabledReason, Omittable<String?>? idleTimeoutNotice, Omittable<int?>? retentionPeriodMinutes, Omittable<DateTime?>? retentionExpiresAt, Omittable<String?>? lastKnownStopNotice, }) {return Codespace(
   id: id ?? this.id,
   name: name ?? this.name,
   displayName: displayName ?? this.displayName,
@@ -215,7 +215,7 @@ Codespace copyWith({int? id, String? name, Omittable<String?>? displayName, Stri
   retentionPeriodMinutes: retentionPeriodMinutes ?? this.retentionPeriodMinutes,
   retentionExpiresAt: retentionExpiresAt ?? this.retentionExpiresAt,
   lastKnownStopNotice: lastKnownStopNotice ?? this.lastKnownStopNotice,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Codespace &&
           id == other.id &&
@@ -255,4 +255,4 @@ Codespace copyWith({int? id, String? name, Omittable<String?>? displayName, Stri
 
 @override String toString() => 'Codespace(\n  id: $id,\n  name: $name,\n  displayName: $displayName,\n  environmentId: $environmentId,\n  owner: $owner,\n  billableOwner: $billableOwner,\n  repository: $repository,\n  machine: $machine,\n  devcontainerPath: $devcontainerPath,\n  prebuild: $prebuild,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  lastUsedAt: $lastUsedAt,\n  state: $state,\n  url: $url,\n  gitStatus: $gitStatus,\n  location: $location,\n  idleTimeoutMinutes: $idleTimeoutMinutes,\n  webUrl: $webUrl,\n  machinesUrl: $machinesUrl,\n  startUrl: $startUrl,\n  stopUrl: $stopUrl,\n  publishUrl: $publishUrl,\n  pullsUrl: $pullsUrl,\n  recentFolders: $recentFolders,\n  runtimeConstraints: $runtimeConstraints,\n  pendingOperation: $pendingOperation,\n  pendingOperationDisabledReason: $pendingOperationDisabledReason,\n  idleTimeoutNotice: $idleTimeoutNotice,\n  retentionPeriodMinutes: $retentionPeriodMinutes,\n  retentionExpiresAt: $retentionExpiresAt,\n  lastKnownStopNotice: $lastKnownStopNotice,\n)';
 
- }
+}

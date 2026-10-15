@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result/amount.dart';sealed class CostsResultObject {const CostsResultObject();
 
-factory CostsResultObject.fromJson(String json) { return switch (json) {
+factory CostsResultObject.fromJson(String json) {return switch (json) {
   'organization.costs.result' => organizationCostsResult,
   _ => CostsResultObject$Unknown(json),
-}; }
+};}
 
 static const CostsResultObject organizationCostsResult = CostsResultObject$organizationCostsResult._();
 
 static const List<CostsResultObject> values = [organizationCostsResult];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.costs.result' => 'organizationCostsResult',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CostsResultObject$Unknown; } 
+bool get isUnknown {return this is CostsResultObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationCostsResult, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationCostsResult, required W Function(String value) $unknown, }) {return switch (this) {
       CostsResultObject$organizationCostsResult() => organizationCostsResult(),
       CostsResultObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationCostsResult, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationCostsResult, W Function(String value)? $unknown, }) {return switch (this) {
       CostsResultObject$organizationCostsResult() => organizationCostsResult != null ? organizationCostsResult() : orElse(value),
       CostsResultObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CostsResultObject($value)';
 
- }
+}
 @immutable final class CostsResultObject$organizationCostsResult extends CostsResultObject {const CostsResultObject$organizationCostsResult._();
 
 @override String get value => 'organization.costs.result';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.costs.result'.hashCode;
 
- }
+}
 @immutable final class CostsResultObject$Unknown extends CostsResultObject {const CostsResultObject$Unknown(this.value);
 
 @override final String value;
@@ -52,16 +52,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The aggregated costs details of the specific time bucket.
 @immutable final class CostsResult {const CostsResult({required this.object, this.amount, this.lineItem = const Omittable.absent(), this.projectId = const Omittable.absent(), });
 
-factory CostsResult.fromJson(Map<String, dynamic> json) { return CostsResult(
+factory CostsResult.fromJson(Map<String, dynamic> json) {return CostsResult(
   object: CostsResultObject.fromJson(json['object'] as String),
   amount: json['amount'] != null ? Amount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   lineItem: json.containsKey('line_item') ? Omittable(json['line_item'] as String?) : const Omittable.absent(),
   projectId: json.containsKey('project_id') ? Omittable(json['project_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final CostsResultObject object;
 
@@ -74,19 +74,19 @@ final Omittable<String?> lineItem;
 /// When `group_by=project_id`, this field provides the project ID of the grouped costs result.
 final Omittable<String?> projectId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   if (amount != null) 'amount': amount?.toJson(),
   if (lineItem.isPresent) 'line_item': lineItem.value,
   if (projectId.isPresent) 'project_id': projectId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.costs.result'; } 
-CostsResult copyWith({CostsResultObject? object, Amount? Function()? amount, Omittable<String?>? lineItem, Omittable<String?>? projectId, }) { return CostsResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] == 'organization.costs.result';}
+CostsResult copyWith({CostsResultObject? object, Amount? Function()? amount, Omittable<String?>? lineItem, Omittable<String?>? projectId, }) {return CostsResult(
   object: object ?? this.object,
   amount: amount != null ? amount() : this.amount,
   lineItem: lineItem ?? this.lineItem,
   projectId: projectId ?? this.projectId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CostsResult &&
           object == other.object &&
@@ -98,4 +98,4 @@ CostsResult copyWith({CostsResultObject? object, Amount? Function()? amount, Omi
 
 @override String toString() => 'CostsResult(object: $object, amount: $amount, lineItem: $lineItem, projectId: $projectId)';
 
- }
+}

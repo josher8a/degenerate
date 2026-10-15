@@ -14,7 +14,7 @@ final class WorkersAiTextClassificationApi with ApiExecutor {const WorkersAiText
 /// Runs inference on the @cf/baai/bge-reranker-base model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-reranker-base`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeRerankerBaseError>> workersAiPostRunCfBaaiBgeRerankerBase({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeRerankerBaseRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeRerankerBaseError>> workersAiPostRunCfBaaiBgeRerankerBase({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeRerankerBaseRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -43,13 +43,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfBaaiBgeRerankerBaseError.fromResponse,
 );
- } 
+}
 /// Execute @cf/huggingface/distilbert-sst-2-int8 model.
 ///
 /// Runs inference on the @cf/huggingface/distilbert-sst-2-int8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/huggingface/distilbert-sst-2-int8`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error>> workersAiPostRunCfHuggingfaceDistilbertSst2Int8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error>> workersAiPostRunCfHuggingfaceDistilbertSst2Int8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -78,5 +78,5 @@ return await execute(
   },
   onError: WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error.fromResponse,
 );
- } 
- }
+}
+}

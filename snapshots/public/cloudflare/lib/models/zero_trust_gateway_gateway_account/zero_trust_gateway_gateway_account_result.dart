@@ -24,11 +24,11 @@ String toJson() => value;
 }
 @immutable final class ZeroTrustGatewayGatewayAccountResult {const ZeroTrustGatewayGatewayAccountResult({this.gatewayTag, this.id, this.providerName, });
 
-factory ZeroTrustGatewayGatewayAccountResult.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountResult(
+factory ZeroTrustGatewayGatewayAccountResult.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayGatewayAccountResult(
   gatewayTag: json['gateway_tag'] != null ? ZeroTrustGatewayGatewayTag.fromJson(json['gateway_tag'] as String) : null,
   id: json['id'] != null ? ZeroTrustGatewayCfAccountId.fromJson(json['id'] as String) : null,
   providerName: json['provider_name'] != null ? ZeroTrustGatewayProviderName.fromJson(json['provider_name'] as String) : null,
-); }
+);}
 
 final ZeroTrustGatewayGatewayTag? gatewayTag;
 
@@ -37,17 +37,17 @@ final ZeroTrustGatewayCfAccountId? id;
 
 final ZeroTrustGatewayProviderName? providerName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (gatewayTag != null) 'gateway_tag': gatewayTag?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (providerName != null) 'provider_name': providerName?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gateway_tag', 'id', 'provider_name'}.contains(key)); } 
-ZeroTrustGatewayGatewayAccountResult copyWith({ZeroTrustGatewayGatewayTag? Function()? gatewayTag, ZeroTrustGatewayCfAccountId? Function()? id, ZeroTrustGatewayProviderName? Function()? providerName, }) { return ZeroTrustGatewayGatewayAccountResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'gateway_tag', 'id', 'provider_name'}.contains(key));}
+ZeroTrustGatewayGatewayAccountResult copyWith({ZeroTrustGatewayGatewayTag? Function()? gatewayTag, ZeroTrustGatewayCfAccountId? Function()? id, ZeroTrustGatewayProviderName? Function()? providerName, }) {return ZeroTrustGatewayGatewayAccountResult(
   gatewayTag: gatewayTag != null ? gatewayTag() : this.gatewayTag,
   id: id != null ? id() : this.id,
   providerName: providerName != null ? providerName() : this.providerName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayGatewayAccountResult &&
           gatewayTag == other.gatewayTag &&
@@ -58,4 +58,4 @@ ZeroTrustGatewayGatewayAccountResult copyWith({ZeroTrustGatewayGatewayTag? Funct
 
 @override String toString() => 'ZeroTrustGatewayGatewayAccountResult(gatewayTag: $gatewayTag, id: $id, providerName: $providerName)';
 
- }
+}

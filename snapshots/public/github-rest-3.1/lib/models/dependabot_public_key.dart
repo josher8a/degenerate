@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The public key used for setting Dependabot Secrets.
 @immutable final class DependabotPublicKey {const DependabotPublicKey({required this.keyId, required this.key, });
 
-factory DependabotPublicKey.fromJson(Map<String, dynamic> json) { return DependabotPublicKey(
+factory DependabotPublicKey.fromJson(Map<String, dynamic> json) {return DependabotPublicKey(
   keyId: json['key_id'] as String,
   key: json['key'] as String,
-); }
+);}
 
 /// The identifier for the key.
 final String keyId;
@@ -15,16 +15,16 @@ final String keyId;
 /// The Base64 encoded public key.
 final String key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key_id': keyId,
   'key': key,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String &&
-      json.containsKey('key') && json['key'] is String; } 
-DependabotPublicKey copyWith({String? keyId, String? key, }) { return DependabotPublicKey(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key_id') && json['key_id'] is String &&
+      json.containsKey('key') && json['key'] is String;}
+DependabotPublicKey copyWith({String? keyId, String? key, }) {return DependabotPublicKey(
   keyId: keyId ?? this.keyId,
   key: key ?? this.key,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotPublicKey &&
           keyId == other.keyId &&
@@ -34,4 +34,4 @@ DependabotPublicKey copyWith({String? keyId, String? key, }) { return Dependabot
 
 @override String toString() => 'DependabotPublicKey(keyId: $keyId, key: $key)';
 
- }
+}

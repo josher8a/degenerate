@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/open_ai_file.dart';/// The status of the Upload.
 sealed class UploadStatus {const UploadStatus();
 
-factory UploadStatus.fromJson(String json) { return switch (json) {
+factory UploadStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'completed' => completed,
   'cancelled' => cancelled,
   'expired' => expired,
   _ => UploadStatus$Unknown(json),
-}; }
+};}
 
 static const UploadStatus pending = UploadStatus$pending._();
 
@@ -23,36 +23,36 @@ static const UploadStatus expired = UploadStatus$expired._();
 static const List<UploadStatus> values = [pending, completed, cancelled, expired];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'completed' => 'completed',
   'cancelled' => 'cancelled',
   'expired' => 'expired',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UploadStatus$Unknown; } 
+bool get isUnknown {return this is UploadStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() completed, required W Function() cancelled, required W Function() expired, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() completed, required W Function() cancelled, required W Function() expired, required W Function(String value) $unknown, }) {return switch (this) {
       UploadStatus$pending() => pending(),
       UploadStatus$completed() => completed(),
       UploadStatus$cancelled() => cancelled(),
       UploadStatus$expired() => expired(),
       UploadStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? completed, W Function()? cancelled, W Function()? expired, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? completed, W Function()? cancelled, W Function()? expired, W Function(String value)? $unknown, }) {return switch (this) {
       UploadStatus$pending() => pending != null ? pending() : orElse(value),
       UploadStatus$completed() => completed != null ? completed() : orElse(value),
       UploadStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
       UploadStatus$expired() => expired != null ? expired() : orElse(value),
       UploadStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UploadStatus($value)';
 
- }
+}
 @immutable final class UploadStatus$pending extends UploadStatus {const UploadStatus$pending._();
 
 @override String get value => 'pending';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class UploadStatus$completed extends UploadStatus {const UploadStatus$completed._();
 
 @override String get value => 'completed';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class UploadStatus$cancelled extends UploadStatus {const UploadStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class UploadStatus$expired extends UploadStatus {const UploadStatus$expired._();
 
 @override String get value => 'expired';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class UploadStatus$Unknown extends UploadStatus {const UploadStatus$Unknown(this.value);
 
 @override final String value;
@@ -98,41 +98,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The object type, which is always "upload".
 sealed class UploadObject {const UploadObject();
 
-factory UploadObject.fromJson(String json) { return switch (json) {
+factory UploadObject.fromJson(String json) {return switch (json) {
   'upload' => upload,
   _ => UploadObject$Unknown(json),
-}; }
+};}
 
 static const UploadObject upload = UploadObject$upload._();
 
 static const List<UploadObject> values = [upload];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'upload' => 'upload',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UploadObject$Unknown; } 
+bool get isUnknown {return this is UploadObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() upload, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() upload, required W Function(String value) $unknown, }) {return switch (this) {
       UploadObject$upload() => upload(),
       UploadObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? upload, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? upload, W Function(String value)? $unknown, }) {return switch (this) {
       UploadObject$upload() => upload != null ? upload() : orElse(value),
       UploadObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UploadObject($value)';
 
- }
+}
 @immutable final class UploadObject$upload extends UploadObject {const UploadObject$upload._();
 
 @override String get value => 'upload';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? upload, 
 
 @override int get hashCode => 'upload'.hashCode;
 
- }
+}
 @immutable final class UploadObject$Unknown extends UploadObject {const UploadObject$Unknown(this.value);
 
 @override final String value;
@@ -151,12 +151,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? upload, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The Upload object can accept byte chunks in the form of Parts.
 /// 
 @immutable final class Upload {const Upload({required this.id, required this.createdAt, required this.filename, required this.bytes, required this.purpose, required this.status, required this.expiresAt, this.object, this.file = const Omittable.absent(), });
 
-factory Upload.fromJson(Map<String, dynamic> json) { return Upload(
+factory Upload.fromJson(Map<String, dynamic> json) {return Upload(
   id: json['id'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   filename: json['filename'] as String,
@@ -166,7 +166,7 @@ factory Upload.fromJson(Map<String, dynamic> json) { return Upload(
   expiresAt: (json['expires_at'] as num).toInt(),
   object: json['object'] != null ? UploadObject.fromJson(json['object'] as String) : null,
   file: json.containsKey('file') ? Omittable(json['file'] != null ? OpenAiFile.fromJson(json['file'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The Upload unique identifier, which can be referenced in API endpoints.
 final String id;
@@ -195,7 +195,7 @@ final UploadObject? object;
 /// The ready File object after the Upload is completed.
 final Omittable<OpenAiFile?> file;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'created_at': createdAt,
   'filename': filename,
@@ -205,15 +205,15 @@ Map<String, dynamic> toJson() { return {
   'expires_at': expiresAt,
   if (object != null) 'object': object?.toJson(),
   if (file.isPresent) 'file': file.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('filename') && json['filename'] is String &&
       json.containsKey('bytes') && json['bytes'] is num &&
       json.containsKey('purpose') && json['purpose'] is String &&
       json.containsKey('status') &&
-      json.containsKey('expires_at') && json['expires_at'] is num; } 
-Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, String? purpose, UploadStatus? status, int? expiresAt, UploadObject? Function()? object, Omittable<OpenAiFile?>? file, }) { return Upload(
+      json.containsKey('expires_at') && json['expires_at'] is num;}
+Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, String? purpose, UploadStatus? status, int? expiresAt, UploadObject? Function()? object, Omittable<OpenAiFile?>? file, }) {return Upload(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   filename: filename ?? this.filename,
@@ -223,7 +223,7 @@ Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, Strin
   expiresAt: expiresAt ?? this.expiresAt,
   object: object != null ? object() : this.object,
   file: file ?? this.file,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Upload &&
           id == other.id &&
@@ -240,4 +240,4 @@ Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, Strin
 
 @override String toString() => 'Upload(\n  id: $id,\n  createdAt: $createdAt,\n  filename: $filename,\n  bytes: $bytes,\n  purpose: $purpose,\n  status: $status,\n  expiresAt: $expiresAt,\n  object: $object,\n  file: $file,\n)';
 
- }
+}

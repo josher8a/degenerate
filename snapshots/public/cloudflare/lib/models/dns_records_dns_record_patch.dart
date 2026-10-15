@@ -7,11 +7,11 @@ const DnsRecordsDnsRecordPatch({this.dnsRecordsDnsRecordWithoutData = const Omit
 const DnsRecordsDnsRecordPatch._({required this.rawValue, required this.dnsRecordsDnsRecordWithoutData, required this.dnsRecordsDnsRecordWithData, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DnsRecordsDnsRecordPatch.fromJson(Object? json) { return DnsRecordsDnsRecordPatch._(
+factory DnsRecordsDnsRecordPatch.fromJson(Object? json) {return DnsRecordsDnsRecordPatch._(
   rawValue: Omittable(json),
   dnsRecordsDnsRecordWithoutData: parseAnyOfVariant<DnsRecordsDnsRecordWithoutData>(json, (value) => OneOf8.parse(value, fromA: (v) => DnsRecordsARecord.fromJson(v as Map<String, dynamic>), fromB: (v) => DnsRecordsAaaaRecord.fromJson(v as Map<String, dynamic>), fromC: (v) => DnsRecordsCnameRecord.fromJson(v as Map<String, dynamic>), fromD: (v) => DnsRecordsMxRecord.fromJson(v as Map<String, dynamic>), fromE: (v) => DnsRecordsNsRecord.fromJson(v as Map<String, dynamic>), fromF: (v) => DnsRecordsOpenpgpkeyRecord.fromJson(v as Map<String, dynamic>), fromG: (v) => DnsRecordsPtrRecord.fromJson(v as Map<String, dynamic>), fromH: (v) => DnsRecordsTxtRecord.fromJson(v as Map<String, dynamic>),)),
   dnsRecordsDnsRecordWithData: parseAnyOfVariant<DnsRecordsDnsRecordWithData>(json, DnsRecordsDnsRecordWithData.fromJson),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DnsRecordsDnsRecordPatch(${toJson()})';
 
- }
+}

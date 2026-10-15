@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_usage_trigger_request/create_usage_trigger_request_callback_method.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_recurring.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_trigger_field.dart';@immutable final class CreateUsageTriggerRequest {const CreateUsageTriggerRequest({required this.callbackUrl, required this.triggerValue, required this.usageCategory, this.callbackMethod, this.friendlyName, this.recurring, this.triggerBy, });
 
-factory CreateUsageTriggerRequest.fromJson(Map<String, dynamic> json) { return CreateUsageTriggerRequest(
+factory CreateUsageTriggerRequest.fromJson(Map<String, dynamic> json) {return CreateUsageTriggerRequest(
   callbackUrl: Uri.parse(json['CallbackUrl'] as String),
   triggerValue: json['TriggerValue'] as String,
   usageCategory: json['UsageCategory'] as String,
@@ -11,7 +11,7 @@ factory CreateUsageTriggerRequest.fromJson(Map<String, dynamic> json) { return C
   friendlyName: json['FriendlyName'] as String?,
   recurring: json['Recurring'] != null ? UsageTriggerEnumRecurring.fromJson(json['Recurring'] as String) : null,
   triggerBy: json['TriggerBy'] != null ? UsageTriggerEnumTriggerField.fromJson(json['TriggerBy'] as String) : null,
-); }
+);}
 
 /// The URL we should call using `callback_method` when the trigger fires.
 final Uri callbackUrl;
@@ -34,7 +34,7 @@ final UsageTriggerEnumRecurring? recurring;
 /// The field in the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource that fires the trigger.  Can be: `count`, `usage`, or `price`, as described in the [UsageRecords documentation](https://www.twilio.com/docs/usage/api/usage-record#usage-count-price).
 final UsageTriggerEnumTriggerField? triggerBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'CallbackUrl': callbackUrl.toString(),
   'TriggerValue': triggerValue,
   'UsageCategory': usageCategory,
@@ -42,11 +42,11 @@ Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
   if (recurring != null) 'Recurring': recurring?.toJson(),
   if (triggerBy != null) 'TriggerBy': triggerBy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('CallbackUrl') && json['CallbackUrl'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('CallbackUrl') && json['CallbackUrl'] is String &&
       json.containsKey('TriggerValue') && json['TriggerValue'] is String &&
-      json.containsKey('UsageCategory') && json['UsageCategory'] is String; } 
-CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, String? usageCategory, CreateUsageTriggerRequestCallbackMethod? Function()? callbackMethod, String? Function()? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, UsageTriggerEnumTriggerField? Function()? triggerBy, }) { return CreateUsageTriggerRequest(
+      json.containsKey('UsageCategory') && json['UsageCategory'] is String;}
+CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, String? usageCategory, CreateUsageTriggerRequestCallbackMethod? Function()? callbackMethod, String? Function()? friendlyName, UsageTriggerEnumRecurring? Function()? recurring, UsageTriggerEnumTriggerField? Function()? triggerBy, }) {return CreateUsageTriggerRequest(
   callbackUrl: callbackUrl ?? this.callbackUrl,
   triggerValue: triggerValue ?? this.triggerValue,
   usageCategory: usageCategory ?? this.usageCategory,
@@ -54,7 +54,7 @@ CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, Stri
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   recurring: recurring != null ? recurring() : this.recurring,
   triggerBy: triggerBy != null ? triggerBy() : this.triggerBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateUsageTriggerRequest &&
           callbackUrl == other.callbackUrl &&
@@ -69,4 +69,4 @@ CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, Stri
 
 @override String toString() => 'CreateUsageTriggerRequest(callbackUrl: $callbackUrl, triggerValue: $triggerValue, usageCategory: $usageCategory, callbackMethod: $callbackMethod, friendlyName: $friendlyName, recurring: $recurring, triggerBy: $triggerBy)';
 
- }
+}

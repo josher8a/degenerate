@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageVectorStoresBucketWidth {const UsageVectorStoresBucketWidth();
 
-factory UsageVectorStoresBucketWidth.fromJson(String json) { return switch (json) {
+factory UsageVectorStoresBucketWidth.fromJson(String json) {return switch (json) {
   '1m' => $1m,
   '1h' => $1h,
   '1d' => $1d,
   _ => UsageVectorStoresBucketWidth$Unknown(json),
-}; }
+};}
 
 static const UsageVectorStoresBucketWidth $1m = UsageVectorStoresBucketWidth$$1m._();
 
@@ -19,33 +19,33 @@ static const UsageVectorStoresBucketWidth $1d = UsageVectorStoresBucketWidth$$1d
 static const List<UsageVectorStoresBucketWidth> values = [$1m, $1h, $1d];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '1m' => r'$1m',
   '1h' => r'$1h',
   '1d' => r'$1d',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UsageVectorStoresBucketWidth$Unknown; } 
+bool get isUnknown {return this is UsageVectorStoresBucketWidth$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1m, required W Function() $1h, required W Function() $1d, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1m, required W Function() $1h, required W Function() $1d, required W Function(String value) $unknown, }) {return switch (this) {
       UsageVectorStoresBucketWidth$$1m() => $1m(),
       UsageVectorStoresBucketWidth$$1h() => $1h(),
       UsageVectorStoresBucketWidth$$1d() => $1d(),
       UsageVectorStoresBucketWidth$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W Function()? $1h, W Function()? $1d, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W Function()? $1h, W Function()? $1d, W Function(String value)? $unknown, }) {return switch (this) {
       UsageVectorStoresBucketWidth$$1m() => $1m != null ? $1m() : orElse(value),
       UsageVectorStoresBucketWidth$$1h() => $1h != null ? $1h() : orElse(value),
       UsageVectorStoresBucketWidth$$1d() => $1d != null ? $1d() : orElse(value),
       UsageVectorStoresBucketWidth$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UsageVectorStoresBucketWidth($value)';
 
- }
+}
 @immutable final class UsageVectorStoresBucketWidth$$1m extends UsageVectorStoresBucketWidth {const UsageVectorStoresBucketWidth$$1m._();
 
 @override String get value => '1m';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W F
 
 @override int get hashCode => '1m'.hashCode;
 
- }
+}
 @immutable final class UsageVectorStoresBucketWidth$$1h extends UsageVectorStoresBucketWidth {const UsageVectorStoresBucketWidth$$1h._();
 
 @override String get value => '1h';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W F
 
 @override int get hashCode => '1h'.hashCode;
 
- }
+}
 @immutable final class UsageVectorStoresBucketWidth$$1d extends UsageVectorStoresBucketWidth {const UsageVectorStoresBucketWidth$$1d._();
 
 @override String get value => '1d';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W F
 
 @override int get hashCode => '1d'.hashCode;
 
- }
+}
 @immutable final class UsageVectorStoresBucketWidth$Unknown extends UsageVectorStoresBucketWidth {const UsageVectorStoresBucketWidth$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

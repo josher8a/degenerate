@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_version_item_short.dart';@immutable final class WorkersVersionsListResponseResult {const WorkersVersionsListResponseResult({this.items});
 
-factory WorkersVersionsListResponseResult.fromJson(Map<String, dynamic> json) { return WorkersVersionsListResponseResult(
+factory WorkersVersionsListResponseResult.fromJson(Map<String, dynamic> json) {return WorkersVersionsListResponseResult(
   items: (json['items'] as List<dynamic>?)?.map((e) => WorkersVersionItemShort.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<WorkersVersionItemShort>? items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'items'}.contains(key)); } 
-WorkersVersionsListResponseResult copyWith({List<WorkersVersionItemShort>? Function()? items}) { return WorkersVersionsListResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'items'}.contains(key));}
+WorkersVersionsListResponseResult copyWith({List<WorkersVersionItemShort>? Function()? items}) {return WorkersVersionsListResponseResult(
   items: items != null ? items() : this.items,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionsListResponseResult &&
           listEquals(items, other.items);
@@ -24,4 +24,4 @@ WorkersVersionsListResponseResult copyWith({List<WorkersVersionItemShort>? Funct
 
 @override String toString() => 'WorkersVersionsListResponseResult(items: $items)';
 
- }
+}

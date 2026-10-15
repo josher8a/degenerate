@@ -14,7 +14,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 /// Lists containers.
 ///
 /// `GET /containers`
-Future<ApiResult<ContainerListResource, Never>> listContainers({int? limit, ListContainersOrder? order, String? after, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ContainerListResource, Never>> listContainers({int? limit, ListContainersOrder? order, String? after, String? name, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -46,13 +46,13 @@ return await execute(
     return ContainerListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create Container
 ///
 /// Creates a container.
 ///
 /// `POST /containers`
-Future<ApiResult<ContainerResource, Never>> createContainer({CreateContainerBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ContainerResource, Never>> createContainer({CreateContainerBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,13 +69,13 @@ return await execute(
     return ContainerResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve Container
 ///
 /// Retrieves a container.
 ///
 /// `GET /containers/{container_id}`
-Future<ApiResult<ContainerResource, Never>> retrieveContainer({required String containerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ContainerResource, Never>> retrieveContainer({required String containerId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -90,13 +90,13 @@ return await execute(
     return ContainerResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete Container
 ///
 /// Delete a container.
 ///
 /// `DELETE /containers/{container_id}`
-Future<ApiResult<void, Never>> deleteContainer({required String containerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteContainer({required String containerId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -109,13 +109,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// List Container files
 ///
 /// Lists container files.
 ///
 /// `GET /containers/{container_id}/files`
-Future<ApiResult<ContainerFileListResource, Never>> listContainerFiles({required String containerId, int? limit, ListContainerFilesOrder? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ContainerFileListResource, Never>> listContainerFiles({required String containerId, int? limit, ListContainerFilesOrder? order, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -144,7 +144,7 @@ return await execute(
     return ContainerFileListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a Container File
 /// 
 /// You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.
@@ -154,7 +154,7 @@ return await execute(
 /// 
 ///
 /// `POST /containers/{container_id}/files`
-Future<ApiResult<ContainerFileResource, Never>> createContainerFile({required String containerId, required CreateContainerFileBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ContainerFileResource, Never>> createContainerFile({required String containerId, required CreateContainerFileBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -171,13 +171,13 @@ return await execute(
     return ContainerFileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve Container File
 ///
 /// Retrieves a container file.
 ///
 /// `GET /containers/{container_id}/files/{file_id}`
-Future<ApiResult<ContainerFileResource, Never>> retrieveContainerFile({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ContainerFileResource, Never>> retrieveContainerFile({required String containerId, required String fileId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -192,13 +192,13 @@ return await execute(
     return ContainerFileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete Container File
 ///
 /// Delete a container file.
 ///
 /// `DELETE /containers/{container_id}/files/{file_id}`
-Future<ApiResult<void, Never>> deleteContainerFile({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteContainerFile({required String containerId, required String fileId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -211,13 +211,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve Container File Content
 ///
 /// Retrieves a container file content.
 ///
 /// `GET /containers/{container_id}/files/{file_id}/content`
-Future<ApiResult<void, Never>> retrieveContainerFileContent({required String containerId, required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> retrieveContainerFileContent({required String containerId, required String fileId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -230,13 +230,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// List organization API keys
 ///
 /// Retrieve a paginated list of organization admin API keys.
 ///
 /// `GET /organization/admin_api_keys`
-Future<ApiResult<KeyList, Never>> adminApiKeysList({String? after, KeysListOrder? order, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<KeyList, Never>> adminApiKeysList({String? after, KeysListOrder? order, int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) {
   queryParameters['after'] = after;
@@ -265,13 +265,13 @@ return await execute(
     return KeyList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create an organization admin API key
 ///
 /// Create a new admin-level API key for the organization.
 ///
 /// `POST /organization/admin_api_keys`
-Future<ApiResult<Key, Never>> adminApiKeysCreate({required KeysCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Key, Never>> adminApiKeysCreate({required KeysCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -288,13 +288,13 @@ return await execute(
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve a single organization API key
 ///
 /// Get details for a specific organization API key by its ID.
 ///
 /// `GET /organization/admin_api_keys/{key_id}`
-Future<ApiResult<Key, Never>> adminApiKeysGet({required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Key, Never>> adminApiKeysGet({required String keyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -309,13 +309,13 @@ return await execute(
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an organization admin API key
 ///
 /// Delete the specified admin API key.
 ///
 /// `DELETE /organization/admin_api_keys/{key_id}`
-Future<ApiResult<KeysDeleteResponse, Never>> adminApiKeysDelete({required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<KeysDeleteResponse, Never>> adminApiKeysDelete({required String keyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -330,13 +330,13 @@ return await execute(
     return KeysDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Returns input token counts of the request.
 /// 
 /// Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count.
 ///
 /// `POST /responses/input_tokens`
-Future<ApiResult<TokenCountsResource, Never>> getinputtokencounts({TokenCountsBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TokenCountsResource, Never>> getinputtokencounts({TokenCountsBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -353,13 +353,13 @@ return await execute(
     return TokenCountsResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Compact a conversation. Returns a compacted response object.
 /// 
 /// Learn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced).
 ///
 /// `POST /responses/compact`
-Future<ApiResult<CompactResource, Never>> compactconversation({CompactResponseMethodPublicBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CompactResource, Never>> compactconversation({CompactResponseMethodPublicBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -376,13 +376,13 @@ return await execute(
     return CompactResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Cancel an active ChatKit session and return its most recent metadata.
 /// 
 /// Cancelling prevents new requests from using the issued client secret.
 ///
 /// `POST /chatkit/sessions/{session_id}/cancel`
-Future<ApiResult<ChatSessionResource, Never>> cancelChatSessionMethod({required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ChatSessionResource, Never>> cancelChatSessionMethod({required String sessionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -397,11 +397,11 @@ return await execute(
     return ChatSessionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a ChatKit session.
 ///
 /// `POST /chatkit/sessions`
-Future<ApiResult<ChatSessionResource, Never>> createChatSessionMethod({CreateChatSessionBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ChatSessionResource, Never>> createChatSessionMethod({CreateChatSessionBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -418,11 +418,11 @@ return await execute(
     return ChatSessionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// List items that belong to a ChatKit thread.
 ///
 /// `GET /chatkit/threads/{thread_id}/items`
-Future<ApiResult<ThreadItemListResource, Never>> listThreadItemsMethod({required String threadId, int? limit, OrderEnum? order, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ThreadItemListResource, Never>> listThreadItemsMethod({required String threadId, int? limit, OrderEnum? order, String? after, String? before, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -454,11 +454,11 @@ return await execute(
     return ThreadItemListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve a ChatKit thread by its identifier.
 ///
 /// `GET /chatkit/threads/{thread_id}`
-Future<ApiResult<ThreadResource, Never>> getThreadMethod({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ThreadResource, Never>> getThreadMethod({required String threadId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -473,11 +473,11 @@ return await execute(
     return ThreadResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a ChatKit thread along with its items and stored attachments.
 ///
 /// `DELETE /chatkit/threads/{thread_id}`
-Future<ApiResult<DeletedThreadResource, Never>> deleteThreadMethod({required String threadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedThreadResource, Never>> deleteThreadMethod({required String threadId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -492,11 +492,11 @@ return await execute(
     return DeletedThreadResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// List ChatKit threads with optional pagination and user filters.
 ///
 /// `GET /chatkit/threads`
-Future<ApiResult<ThreadListResource, Never>> listThreadsMethod({int? limit, OrderEnum? order, String? after, String? before, String? user, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ThreadListResource, Never>> listThreadsMethod({int? limit, OrderEnum? order, String? after, String? before, String? user, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -531,5 +531,5 @@ return await execute(
     return ThreadListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

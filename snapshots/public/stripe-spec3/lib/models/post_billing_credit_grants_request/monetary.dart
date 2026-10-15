@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Monetary {const Monetary({required this.currency, required this.value, });
 
-factory Monetary.fromJson(Map<String, dynamic> json) { return Monetary(
+factory Monetary.fromJson(Map<String, dynamic> json) {return Monetary(
   currency: json['currency'] as String,
   value: (json['value'] as num).toInt(),
-); }
+);}
 
 final String currency;
 
 final int value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'currency': currency,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('value') && json['value'] is num; } 
-Monetary copyWith({String? currency, int? value, }) { return Monetary(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('value') && json['value'] is num;}
+Monetary copyWith({String? currency, int? value, }) {return Monetary(
   currency: currency ?? this.currency,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Monetary &&
           currency == other.currency &&
@@ -31,4 +31,4 @@ Monetary copyWith({String? currency, int? value, }) { return Monetary(
 
 @override String toString() => 'Monetary(currency: $currency, value: $value)';
 
- }
+}

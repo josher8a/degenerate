@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Serie0Variant8 {const Serie0Variant8({required this.domain, required this.extended, required this.organization, required this.unknown, });
 
-factory Serie0Variant8.fromJson(Map<String, dynamic> json) { return Serie0Variant8(
+factory Serie0Variant8.fromJson(Map<String, dynamic> json) {return Serie0Variant8(
   domain: (json['domain'] as List<dynamic>).map((e) => e as String).toList(),
   extended: (json['extended'] as List<dynamic>).map((e) => e as String).toList(),
   organization: (json['organization'] as List<dynamic>).map((e) => e as String).toList(),
   unknown: (json['unknown'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> domain;
 
@@ -18,22 +18,22 @@ final List<String> organization;
 
 final List<String> unknown;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain': domain,
   'extended': extended,
   'organization': organization,
   'unknown': unknown,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') &&
       json.containsKey('extended') &&
       json.containsKey('organization') &&
-      json.containsKey('unknown'); } 
-Serie0Variant8 copyWith({List<String>? domain, List<String>? extended, List<String>? organization, List<String>? unknown, }) { return Serie0Variant8(
+      json.containsKey('unknown');}
+Serie0Variant8 copyWith({List<String>? domain, List<String>? extended, List<String>? organization, List<String>? unknown, }) {return Serie0Variant8(
   domain: domain ?? this.domain,
   extended: extended ?? this.extended,
   organization: organization ?? this.organization,
   unknown: unknown ?? this.unknown,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant8 &&
           listEquals(domain, other.domain) &&
@@ -45,4 +45,4 @@ Serie0Variant8 copyWith({List<String>? domain, List<String>? extended, List<Stri
 
 @override String toString() => 'Serie0Variant8(domain: $domain, extended: $extended, organization: $organization, unknown: $unknown)';
 
- }
+}

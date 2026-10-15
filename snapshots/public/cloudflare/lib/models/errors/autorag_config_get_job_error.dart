@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_get_job_response404.dart';import 'package:pub_cloudflare/models/autorag_config_get_job_response503.dart';sealed class AutoragConfigGetJobError {const AutoragConfigGetJobError();
 
-factory AutoragConfigGetJobError.fromResponse(ApiResponse response) {     try {
+factory AutoragConfigGetJobError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         404 => AutoragConfigGetJobError$404(AutoragConfigGetJobResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         503 => AutoragConfigGetJobError$503(AutoragConfigGetJobResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -10,12 +10,12 @@ factory AutoragConfigGetJobError.fromResponse(ApiResponse response) {     try {
       };
     } on Object {
       return AutoragConfigGetJobError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class AutoragConfigGetJobError$404 extends AutoragConfigGetJobError {const AutoragConfigGetJobError$404(this.error);
 
 final AutoragConfigGetJobResponse404 error;
@@ -24,7 +24,7 @@ final AutoragConfigGetJobResponse404 error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class AutoragConfigGetJobError$503 extends AutoragConfigGetJobError {const AutoragConfigGetJobError$503(this.error);
 
 final AutoragConfigGetJobResponse503 error;
@@ -33,11 +33,11 @@ final AutoragConfigGetJobResponse503 error;
 
 @override int get statusCode => 503;
 
- }
+}
 final class AutoragConfigGetJobError$Unknown extends AutoragConfigGetJobError {const AutoragConfigGetJobError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}

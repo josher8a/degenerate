@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Simulated data for the card payment method.
 @immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard({required this.expMonth, required this.expYear, required this.number, this.cvc, });
 
-factory PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard.fromJson(Map<String, dynamic> json) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard(
+factory PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard.fromJson(Map<String, dynamic> json) {return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard(
   cvc: json['cvc'] as String?,
   expMonth: (json['exp_month'] as num).toInt(),
   expYear: (json['exp_year'] as num).toInt(),
   number: json['number'] as String,
-); }
+);}
 
 final String? cvc;
 
@@ -19,29 +19,29 @@ final int expYear;
 
 final String number;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cvc': ?cvc,
   'exp_month': expMonth,
   'exp_year': expYear,
   'number': number,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
-      json.containsKey('number') && json['number'] is String; } 
+      json.containsKey('number') && json['number'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final cvc$ = cvc;
 if (cvc$ != null) {
   if (cvc$.runes.length > 5000) { errors.add('cvc: length must be <= 5000'); }
 }
 if (number.runes.length > 5000) { errors.add('number: length must be <= 5000'); }
-return errors; } 
-PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard copyWith({String? Function()? cvc, int? expMonth, int? expYear, String? number, }) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard(
+return errors;}
+PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard copyWith({String? Function()? cvc, int? expMonth, int? expYear, String? number, }) {return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard(
   cvc: cvc != null ? cvc() : this.cvc,
   expMonth: expMonth ?? this.expMonth,
   expYear: expYear ?? this.expYear,
   number: number ?? this.number,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard &&
           cvc == other.cvc &&
@@ -53,4 +53,4 @@ PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard copyWith({St
 
 @override String toString() => 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard(cvc: $cvc, expMonth: $expMonth, expYear: $expYear, number: $number)';
 
- }
+}

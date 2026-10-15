@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document.dart';/// 
 @immutable final class IssuingCardholderVerification {const IssuingCardholderVerification({this.document = const Omittable.absent()});
 
-factory IssuingCardholderVerification.fromJson(Map<String, dynamic> json) { return IssuingCardholderVerification(
+factory IssuingCardholderVerification.fromJson(Map<String, dynamic> json) {return IssuingCardholderVerification(
   document: json.containsKey('document') ? Omittable(json['document'] != null ? IssuingCardholderIdDocument.fromJson(json['document'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// An identifying document, either a passport or local ID card.
 final Omittable<IssuingCardholderIdDocument?> document;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (document.isPresent) 'document': document.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document'}.contains(key)); } 
-IssuingCardholderVerification copyWith({Omittable<IssuingCardholderIdDocument?>? document}) { return IssuingCardholderVerification(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'document'}.contains(key));}
+IssuingCardholderVerification copyWith({Omittable<IssuingCardholderIdDocument?>? document}) {return IssuingCardholderVerification(
   document: document ?? this.document,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardholderVerification &&
           document == other.document;
@@ -26,4 +26,4 @@ IssuingCardholderVerification copyWith({Omittable<IssuingCardholderIdDocument?>?
 
 @override String toString() => 'IssuingCardholderVerification(document: $document)';
 
- }
+}

@@ -7,11 +7,11 @@ const FirewallConfigurations2({this.firewallSchemasIpConfiguration = const Omitt
 const FirewallConfigurations2._({required this.rawValue, required this.firewallSchemasIpConfiguration, required this.firewallSchemasCidrConfiguration, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory FirewallConfigurations2.fromJson(Object? json) { return FirewallConfigurations2._(
+factory FirewallConfigurations2.fromJson(Object? json) {return FirewallConfigurations2._(
   rawValue: Omittable(json),
   firewallSchemasIpConfiguration: json is Map<String, dynamic> && FirewallSchemasIpConfiguration.canParse(json) ? parseAnyOfVariant<FirewallSchemasIpConfiguration>(json, (value) => FirewallSchemasIpConfiguration.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   firewallSchemasCidrConfiguration: json is Map<String, dynamic> && FirewallSchemasCidrConfiguration.canParse(json) ? parseAnyOfVariant<FirewallSchemasCidrConfiguration>(json, (value) => FirewallSchemasCidrConfiguration.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'FirewallConfigurations2(${toJson()})';
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_response/radar_get_bgp_ips_timeseries_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_response/radar_get_bgp_ips_timeseries_response_result_serie0.dart';@immutable final class RadarGetBgpIpsTimeseriesResponseResult {const RadarGetBgpIpsTimeseriesResponseResult({required this.meta, required this.serie0, });
 
-factory RadarGetBgpIpsTimeseriesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpIpsTimeseriesResponseResult(
+factory RadarGetBgpIpsTimeseriesResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetBgpIpsTimeseriesResponseResult(
   meta: RadarGetBgpIpsTimeseriesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   serie0: RadarGetBgpIpsTimeseriesResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetBgpIpsTimeseriesResponseResultMeta meta;
 
 final RadarGetBgpIpsTimeseriesResponseResultSerie0 serie0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'serie_0': serie0.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('serie_0'); } 
-RadarGetBgpIpsTimeseriesResponseResult copyWith({RadarGetBgpIpsTimeseriesResponseResultMeta? meta, RadarGetBgpIpsTimeseriesResponseResultSerie0? serie0, }) { return RadarGetBgpIpsTimeseriesResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('serie_0');}
+RadarGetBgpIpsTimeseriesResponseResult copyWith({RadarGetBgpIpsTimeseriesResponseResultMeta? meta, RadarGetBgpIpsTimeseriesResponseResultSerie0? serie0, }) {return RadarGetBgpIpsTimeseriesResponseResult(
   meta: meta ?? this.meta,
   serie0: serie0 ?? this.serie0,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpIpsTimeseriesResponseResult &&
           meta == other.meta &&
@@ -32,4 +32,4 @@ RadarGetBgpIpsTimeseriesResponseResult copyWith({RadarGetBgpIpsTimeseriesRespons
 
 @override String toString() => 'RadarGetBgpIpsTimeseriesResponseResult(meta: $meta, serie0: $serie0)';
 
- }
+}

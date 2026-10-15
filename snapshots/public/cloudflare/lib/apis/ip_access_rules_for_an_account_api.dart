@@ -14,7 +14,7 @@ final class IpAccessRulesForAnAccountApi with ApiExecutor {const IpAccessRulesFo
 /// Fetches IP Access rules of an account. These rules apply to all the zones in the account. You can filter the results using several optional parameters.
 ///
 /// `GET /accounts/{account_id}/firewall/access_rules/rules`
-Future<ApiResult<List<FirewallSchemasRule>, IpAccessRulesForAnAccountListIpAccessRulesError>> ipAccessRulesForAnAccountListIpAccessRules({required FirewallAccountIdentifier accountId, FirewallSchemasMode? mode, IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAnAccountListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAnAccountListIpAccessRulesOrder? order, IpAccessRulesForAnAccountListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallSchemasRule>, IpAccessRulesForAnAccountListIpAccessRulesError>> ipAccessRulesForAnAccountListIpAccessRules({required FirewallAccountIdentifier accountId, FirewallSchemasMode? mode, IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAnAccountListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAnAccountListIpAccessRulesOrder? order, IpAccessRulesForAnAccountListIpAccessRulesDirection? direction, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode.toJson();
@@ -63,7 +63,7 @@ return await execute(
   },
   onError: IpAccessRulesForAnAccountListIpAccessRulesError.fromResponse,
 );
- } 
+}
 /// Create an IP Access rule
 ///
 /// Creates a new IP Access rule for an account. The rule will apply to all zones in the account.
@@ -71,7 +71,7 @@ return await execute(
 /// Note: To create an IP Access rule that applies to a single zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /accounts/{account_id}/firewall/access_rules/rules`
-Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountCreateAnIpAccessRuleError>> ipAccessRulesForAnAccountCreateAnIpAccessRule({required FirewallAccountIdentifier accountId, required IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountCreateAnIpAccessRuleError>> ipAccessRulesForAnAccountCreateAnIpAccessRule({required FirewallAccountIdentifier accountId, required IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,13 +90,13 @@ return await execute(
   },
   onError: IpAccessRulesForAnAccountCreateAnIpAccessRuleError.fromResponse,
 );
- } 
+}
 /// Get an IP Access rule
 ///
 /// Fetches the details of an IP Access rule defined at the account level.
 ///
 /// `GET /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountGetAnIpAccessRuleError>> ipAccessRulesForAnAccountGetAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountGetAnIpAccessRuleError>> ipAccessRulesForAnAccountGetAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -113,7 +113,7 @@ return await execute(
   },
   onError: IpAccessRulesForAnAccountGetAnIpAccessRuleError.fromResponse,
 );
- } 
+}
 /// Update an IP Access rule
 ///
 /// Updates an IP Access rule defined at the account level.
@@ -121,7 +121,7 @@ return await execute(
 /// Note: This operation will affect all zones in the account.
 ///
 /// `PATCH /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountUpdateAnIpAccessRuleError>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountUpdateAnIpAccessRuleError>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,7 +140,7 @@ return await execute(
   },
   onError: IpAccessRulesForAnAccountUpdateAnIpAccessRuleError.fromResponse,
 );
- } 
+}
 /// Delete an IP Access rule
 ///
 /// Deletes an existing IP Access rule defined at the account level.
@@ -148,7 +148,7 @@ return await execute(
 /// Note: This operation will affect all zones in the account.
 ///
 /// `DELETE /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseSingleId3Result?, IpAccessRulesForAnAccountDeleteAnIpAccessRuleError>> ipAccessRulesForAnAccountDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, IpAccessRulesForAnAccountDeleteAnIpAccessRuleError>> ipAccessRulesForAnAccountDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -165,5 +165,5 @@ return await execute(
   },
   onError: IpAccessRulesForAnAccountDeleteAnIpAccessRuleError.fromResponse,
 );
- } 
- }
+}
+}

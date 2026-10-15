@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class False {const False({required this.elementId});
 
-factory False.fromJson(Map<String, dynamic> json) { return False(
+factory False.fromJson(Map<String, dynamic> json) {return False(
   elementId: json['elementId'] as String,
-); }
+);}
 
 final String elementId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'elementId': elementId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
-False copyWith({String? elementId}) { return False(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elementId') && json['elementId'] is String;}
+False copyWith({String? elementId}) {return False(
   elementId: elementId ?? this.elementId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is False &&
           elementId == other.elementId;
@@ -24,4 +24,4 @@ False copyWith({String? elementId}) { return False(
 
 @override String toString() => 'False(elementId: $elementId)';
 
- }
+}

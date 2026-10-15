@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Poll permissions
 @immutable final class RealtimekitPresetPermissionsPolls {const RealtimekitPresetPermissionsPolls({required this.canCreate, required this.canView, required this.canVote, });
 
-factory RealtimekitPresetPermissionsPolls.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsPolls(
+factory RealtimekitPresetPermissionsPolls.fromJson(Map<String, dynamic> json) {return RealtimekitPresetPermissionsPolls(
   canCreate: json['can_create'] as bool,
   canView: json['can_view'] as bool,
   canVote: json['can_vote'] as bool,
-); }
+);}
 
 /// Can create polls
 final bool canCreate;
@@ -19,19 +19,19 @@ final bool canView;
 /// Can vote on polls
 final bool canVote;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_create': canCreate,
   'can_view': canView,
   'can_vote': canVote,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('can_create') && json['can_create'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('can_create') && json['can_create'] is bool &&
       json.containsKey('can_view') && json['can_view'] is bool &&
-      json.containsKey('can_vote') && json['can_vote'] is bool; } 
-RealtimekitPresetPermissionsPolls copyWith({bool? canCreate, bool? canView, bool? canVote, }) { return RealtimekitPresetPermissionsPolls(
+      json.containsKey('can_vote') && json['can_vote'] is bool;}
+RealtimekitPresetPermissionsPolls copyWith({bool? canCreate, bool? canView, bool? canVote, }) {return RealtimekitPresetPermissionsPolls(
   canCreate: canCreate ?? this.canCreate,
   canView: canView ?? this.canView,
   canVote: canVote ?? this.canVote,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissionsPolls &&
           canCreate == other.canCreate &&
@@ -42,4 +42,4 @@ RealtimekitPresetPermissionsPolls copyWith({bool? canCreate, bool? canView, bool
 
 @override String toString() => 'RealtimekitPresetPermissionsPolls(canCreate: $canCreate, canView: $canView, canVote: $canVote)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';@immutable final class CustomerPaymentSourceCard {const CustomerPaymentSourceCard({required this.expMonth, required this.expYear, required this.number, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.cvc, this.metadata, this.name, this.object, });
 
-factory CustomerPaymentSourceCard.fromJson(Map<String, dynamic> json) { return CustomerPaymentSourceCard(
+factory CustomerPaymentSourceCard.fromJson(Map<String, dynamic> json) {return CustomerPaymentSourceCard(
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -17,7 +17,7 @@ factory CustomerPaymentSourceCard.fromJson(Map<String, dynamic> json) { return C
   name: json['name'] as String?,
   number: json['number'] as String,
   object: json['object'] != null ? CardObject.fromJson(json['object'] as String) : null,
-); }
+);}
 
 final String? addressCity;
 
@@ -45,7 +45,7 @@ final String number;
 
 final CardObject? object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address_city': ?addressCity,
   'address_country': ?addressCountry,
   'address_line1': ?addressLine1,
@@ -59,12 +59,12 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'number': number,
   if (object != null) 'object': object?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
-      json.containsKey('number') && json['number'] is String; } 
+      json.containsKey('number') && json['number'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final addressCity$ = addressCity;
 if (addressCity$ != null) {
   if (addressCity$.runes.length > 5000) { errors.add('addressCity: length must be <= 5000'); }
@@ -98,8 +98,8 @@ if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 if (number.runes.length > 5000) { errors.add('number: length must be <= 5000'); }
-return errors; } 
-CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? cvc, int? expMonth, int? expYear, Map<String, String>? Function()? metadata, String? Function()? name, String? number, CardObject? Function()? object, }) { return CustomerPaymentSourceCard(
+return errors;}
+CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? cvc, int? expMonth, int? expYear, Map<String, String>? Function()? metadata, String? Function()? name, String? number, CardObject? Function()? object, }) {return CustomerPaymentSourceCard(
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,
   addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,
@@ -113,7 +113,7 @@ CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Fun
   name: name != null ? name() : this.name,
   number: number ?? this.number,
   object: object != null ? object() : this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerPaymentSourceCard &&
           addressCity == other.addressCity &&
@@ -134,4 +134,4 @@ CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Fun
 
 @override String toString() => 'CustomerPaymentSourceCard(\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  cvc: $cvc,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  metadata: $metadata,\n  name: $name,\n  number: $number,\n  object: $object,\n)';
 
- }
+}

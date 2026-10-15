@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/connect_app_enum_permission.dart';/// The HTTP method we use to call `deauthorize_callback_url`.
 sealed class AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod();
 
-factory AccountConnectAppDeauthorizeCallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountConnectAppDeauthorizeCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountConnectAppDeauthorizeCallbackMethod$Unknown(json),
-}; }
+};}
 
 static const AccountConnectAppDeauthorizeCallbackMethod $get = AccountConnectAppDeauthorizeCallbackMethod$$get._();
 
@@ -17,30 +17,30 @@ static const AccountConnectAppDeauthorizeCallbackMethod post = AccountConnectApp
 static const List<AccountConnectAppDeauthorizeCallbackMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountConnectAppDeauthorizeCallbackMethod$Unknown; } 
+bool get isUnknown {return this is AccountConnectAppDeauthorizeCallbackMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       AccountConnectAppDeauthorizeCallbackMethod$$get() => $get(),
       AccountConnectAppDeauthorizeCallbackMethod$post() => post(),
       AccountConnectAppDeauthorizeCallbackMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       AccountConnectAppDeauthorizeCallbackMethod$$get() => $get != null ? $get() : orElse(value),
       AccountConnectAppDeauthorizeCallbackMethod$post() => post != null ? post() : orElse(value),
       AccountConnectAppDeauthorizeCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountConnectAppDeauthorizeCallbackMethod($value)';
 
- }
+}
 @immutable final class AccountConnectAppDeauthorizeCallbackMethod$$get extends AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class AccountConnectAppDeauthorizeCallbackMethod$post extends AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class AccountConnectAppDeauthorizeCallbackMethod$Unknown extends AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccountConnectApp {const AccountConnectApp({this.accountSid = const Omittable.absent(), this.authorizeRedirectUrl = const Omittable.absent(), this.companyName = const Omittable.absent(), this.deauthorizeCallbackMethod = const Omittable.absent(), this.deauthorizeCallbackUrl = const Omittable.absent(), this.description = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.homepageUrl = const Omittable.absent(), this.permissions = const Omittable.absent(), this.sid = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountConnectApp.fromJson(Map<String, dynamic> json) { return AccountConnectApp(
+factory AccountConnectApp.fromJson(Map<String, dynamic> json) {return AccountConnectApp(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   authorizeRedirectUrl: json.containsKey('authorize_redirect_url') ? Omittable(json['authorize_redirect_url'] != null ? Uri.parse(json['authorize_redirect_url'] as String) : null) : const Omittable.absent(),
   companyName: json.containsKey('company_name') ? Omittable(json['company_name'] as String?) : const Omittable.absent(),
@@ -83,7 +83,7 @@ factory AccountConnectApp.fromJson(Map<String, dynamic> json) { return AccountCo
   permissions: json.containsKey('permissions') ? Omittable((json['permissions'] as List<dynamic>?)?.map((e) => ConnectAppEnumPermission.fromJson(e as String)).toList()) : const Omittable.absent(),
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ConnectApp resource.
 final Omittable<String?> accountSid;
@@ -118,7 +118,7 @@ final Omittable<String?> sid;
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final Omittable<String?> uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (authorizeRedirectUrl.isPresent) 'authorize_redirect_url': authorizeRedirectUrl.value?.toString(),
   if (companyName.isPresent) 'company_name': companyName.value,
@@ -130,10 +130,10 @@ Map<String, dynamic> toJson() { return {
   if (permissions.isPresent) 'permissions': permissions.value?.map((e) => e.toJson()).toList(),
   if (sid.isPresent) 'sid': sid.value,
   if (uri.isPresent) 'uri': uri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'authorize_redirect_url', 'company_name', 'deauthorize_callback_method', 'deauthorize_callback_url', 'description', 'friendly_name', 'homepage_url', 'permissions', 'sid', 'uri'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'authorize_redirect_url', 'company_name', 'deauthorize_callback_method', 'deauthorize_callback_url', 'description', 'friendly_name', 'homepage_url', 'permissions', 'sid', 'uri'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -146,8 +146,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^CN[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^CN[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountConnectApp copyWith({Omittable<String?>? accountSid, Omittable<Uri?>? authorizeRedirectUrl, Omittable<String?>? companyName, Omittable<AccountConnectAppDeauthorizeCallbackMethod?>? deauthorizeCallbackMethod, Omittable<Uri?>? deauthorizeCallbackUrl, Omittable<String?>? description, Omittable<String?>? friendlyName, Omittable<Uri?>? homepageUrl, Omittable<List<ConnectAppEnumPermission>?>? permissions, Omittable<String?>? sid, Omittable<String?>? uri, }) { return AccountConnectApp(
+return errors;}
+AccountConnectApp copyWith({Omittable<String?>? accountSid, Omittable<Uri?>? authorizeRedirectUrl, Omittable<String?>? companyName, Omittable<AccountConnectAppDeauthorizeCallbackMethod?>? deauthorizeCallbackMethod, Omittable<Uri?>? deauthorizeCallbackUrl, Omittable<String?>? description, Omittable<String?>? friendlyName, Omittable<Uri?>? homepageUrl, Omittable<List<ConnectAppEnumPermission>?>? permissions, Omittable<String?>? sid, Omittable<String?>? uri, }) {return AccountConnectApp(
   accountSid: accountSid ?? this.accountSid,
   authorizeRedirectUrl: authorizeRedirectUrl ?? this.authorizeRedirectUrl,
   companyName: companyName ?? this.companyName,
@@ -159,7 +159,7 @@ AccountConnectApp copyWith({Omittable<String?>? accountSid, Omittable<Uri?>? aut
   permissions: permissions ?? this.permissions,
   sid: sid ?? this.sid,
   uri: uri ?? this.uri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountConnectApp &&
           accountSid == other.accountSid &&
@@ -179,4 +179,4 @@ AccountConnectApp copyWith({Omittable<String?>? accountSid, Omittable<Uri?>? aut
 
 @override String toString() => 'AccountConnectApp(\n  accountSid: $accountSid,\n  authorizeRedirectUrl: $authorizeRedirectUrl,\n  companyName: $companyName,\n  deauthorizeCallbackMethod: $deauthorizeCallbackMethod,\n  deauthorizeCallbackUrl: $deauthorizeCallbackUrl,\n  description: $description,\n  friendlyName: $friendlyName,\n  homepageUrl: $homepageUrl,\n  permissions: $permissions,\n  sid: $sid,\n  uri: $uri,\n)';
 
- }
+}

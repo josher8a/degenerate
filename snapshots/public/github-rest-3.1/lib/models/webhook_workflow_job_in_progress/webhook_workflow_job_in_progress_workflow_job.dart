@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/job/steps_status.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_in_progress/webhook_workflow_job_in_progress_workflow_job_steps.dart';/// The workflow job. Many `workflow_job` keys, such as `head_sha`, `conclusion`, and `started_at` are the same as those in a [`check_run`](#check_run) object.
 @immutable final class WebhookWorkflowJobInProgressWorkflowJob {const WebhookWorkflowJobInProgressWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.status, required this.headBranch, required this.workflowName, required this.steps, required this.url, });
 
-factory WebhookWorkflowJobInProgressWorkflowJob.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobInProgressWorkflowJob(
+factory WebhookWorkflowJobInProgressWorkflowJob.fromJson(Map<String, dynamic> json) {return WebhookWorkflowJobInProgressWorkflowJob(
   checkRunUrl: json['check_run_url'] as String,
   completedAt: json['completed_at'] as String?,
   conclusion: json['conclusion'] as String?,
@@ -28,7 +28,7 @@ factory WebhookWorkflowJobInProgressWorkflowJob.fromJson(Map<String, dynamic> js
   workflowName: json['workflow_name'] as String?,
   steps: (json['steps'] as List<dynamic>).map((e) => WebhookWorkflowJobInProgressWorkflowJobSteps.fromJson(e as Map<String, dynamic>)).toList(),
   url: json['url'] as String,
-); }
+);}
 
 final String checkRunUrl;
 
@@ -79,7 +79,7 @@ final List<WebhookWorkflowJobInProgressWorkflowJobSteps> steps;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'check_run_url': checkRunUrl,
   'completed_at': completedAt,
   'conclusion': conclusion,
@@ -103,8 +103,8 @@ Map<String, dynamic> toJson() { return {
   'workflow_name': workflowName,
   'steps': steps.map((e) => e.toJson()).toList(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('check_run_url') && json['check_run_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('check_run_url') && json['check_run_url'] is String &&
       json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') && (json['conclusion'] == null || json['conclusion'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -126,8 +126,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('check
       json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('workflow_name') && (json['workflow_name'] == null || json['workflow_name'] is String) &&
       json.containsKey('steps') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookWorkflowJobInProgressWorkflowJob copyWith({String? checkRunUrl, String? Function()? completedAt, String? Function()? conclusion, String? createdAt, String? headSha, String? htmlUrl, int? id, List<String>? labels, String? name, String? nodeId, int? runAttempt, int? runId, String? runUrl, double? Function()? runnerGroupId, String? Function()? runnerGroupName, double? Function()? runnerId, String? Function()? runnerName, String? startedAt, StepsStatus? status, String? Function()? headBranch, String? Function()? workflowName, List<WebhookWorkflowJobInProgressWorkflowJobSteps>? steps, String? url, }) { return WebhookWorkflowJobInProgressWorkflowJob(
+      json.containsKey('url') && json['url'] is String;}
+WebhookWorkflowJobInProgressWorkflowJob copyWith({String? checkRunUrl, String? Function()? completedAt, String? Function()? conclusion, String? createdAt, String? headSha, String? htmlUrl, int? id, List<String>? labels, String? name, String? nodeId, int? runAttempt, int? runId, String? runUrl, double? Function()? runnerGroupId, String? Function()? runnerGroupName, double? Function()? runnerId, String? Function()? runnerName, String? startedAt, StepsStatus? status, String? Function()? headBranch, String? Function()? workflowName, List<WebhookWorkflowJobInProgressWorkflowJobSteps>? steps, String? url, }) {return WebhookWorkflowJobInProgressWorkflowJob(
   checkRunUrl: checkRunUrl ?? this.checkRunUrl,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   conclusion: conclusion != null ? conclusion() : this.conclusion,
@@ -151,7 +151,7 @@ WebhookWorkflowJobInProgressWorkflowJob copyWith({String? checkRunUrl, String? F
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   steps: steps ?? this.steps,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobInProgressWorkflowJob &&
           checkRunUrl == other.checkRunUrl &&
@@ -182,4 +182,4 @@ WebhookWorkflowJobInProgressWorkflowJob copyWith({String? checkRunUrl, String? F
 
 @override String toString() => 'WebhookWorkflowJobInProgressWorkflowJob(\n  checkRunUrl: $checkRunUrl,\n  completedAt: $completedAt,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  labels: $labels,\n  name: $name,\n  nodeId: $nodeId,\n  runAttempt: $runAttempt,\n  runId: $runId,\n  runUrl: $runUrl,\n  runnerGroupId: $runnerGroupId,\n  runnerGroupName: $runnerGroupName,\n  runnerId: $runnerId,\n  runnerName: $runnerName,\n  startedAt: $startedAt,\n  status: $status,\n  headBranch: $headBranch,\n  workflowName: $workflowName,\n  steps: $steps,\n  url: $url,\n)';
 
- }
+}

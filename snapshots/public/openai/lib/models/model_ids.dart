@@ -7,11 +7,11 @@ const ModelIds({this.modelIdsShared = const Omittable.absent(), this.modelIdsRes
 const ModelIds._({required this.rawValue, required this.modelIdsShared, required this.modelIdsResponses, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ModelIds.fromJson(Object? json) { return ModelIds._(
+factory ModelIds.fromJson(Object? json) {return ModelIds._(
   rawValue: Omittable(json),
   modelIdsShared: parseAnyOfVariant<ModelIdsShared>(json, ModelIdsShared.fromJson, isValid: (value) => value.isValid),
   modelIdsResponses: parseAnyOfVariant<ModelIdsResponses>(json, ModelIdsResponses.fromJson, isValid: (value) => value.isValid),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ModelIds(${toJson()})';
 
- }
+}

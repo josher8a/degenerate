@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
 sealed class AaaAuditLogsActorType {const AaaAuditLogsActorType();
 
-factory AaaAuditLogsActorType.fromJson(String json) { return switch (json) {
+factory AaaAuditLogsActorType.fromJson(String json) {return switch (json) {
   'user' => user,
   'admin' => admin,
   'Cloudflare' => cloudflare,
   _ => AaaAuditLogsActorType$Unknown(json),
-}; }
+};}
 
 static const AaaAuditLogsActorType user = AaaAuditLogsActorType$user._();
 
@@ -20,33 +20,33 @@ static const AaaAuditLogsActorType cloudflare = AaaAuditLogsActorType$cloudflare
 static const List<AaaAuditLogsActorType> values = [user, admin, cloudflare];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'user' => 'user',
   'admin' => 'admin',
   'Cloudflare' => 'cloudflare',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AaaAuditLogsActorType$Unknown; } 
+bool get isUnknown {return this is AaaAuditLogsActorType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() user, required W Function() admin, required W Function() cloudflare, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() user, required W Function() admin, required W Function() cloudflare, required W Function(String value) $unknown, }) {return switch (this) {
       AaaAuditLogsActorType$user() => user(),
       AaaAuditLogsActorType$admin() => admin(),
       AaaAuditLogsActorType$cloudflare() => cloudflare(),
       AaaAuditLogsActorType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? admin, W Function()? cloudflare, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? admin, W Function()? cloudflare, W Function(String value)? $unknown, }) {return switch (this) {
       AaaAuditLogsActorType$user() => user != null ? user() : orElse(value),
       AaaAuditLogsActorType$admin() => admin != null ? admin() : orElse(value),
       AaaAuditLogsActorType$cloudflare() => cloudflare != null ? cloudflare() : orElse(value),
       AaaAuditLogsActorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AaaAuditLogsActorType($value)';
 
- }
+}
 @immutable final class AaaAuditLogsActorType$user extends AaaAuditLogsActorType {const AaaAuditLogsActorType$user._();
 
 @override String get value => 'user';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'user'.hashCode;
 
- }
+}
 @immutable final class AaaAuditLogsActorType$admin extends AaaAuditLogsActorType {const AaaAuditLogsActorType$admin._();
 
 @override String get value => 'admin';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'admin'.hashCode;
 
- }
+}
 @immutable final class AaaAuditLogsActorType$cloudflare extends AaaAuditLogsActorType {const AaaAuditLogsActorType$cloudflare._();
 
 @override String get value => 'Cloudflare';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'Cloudflare'.hashCode;
 
- }
+}
 @immutable final class AaaAuditLogsActorType$Unknown extends AaaAuditLogsActorType {const AaaAuditLogsActorType$Unknown(this.value);
 
 @override final String value;
@@ -83,15 +83,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AaaAuditLogsActor {const AaaAuditLogsActor({this.email, this.id, this.ip, this.type, });
 
-factory AaaAuditLogsActor.fromJson(Map<String, dynamic> json) { return AaaAuditLogsActor(
+factory AaaAuditLogsActor.fromJson(Map<String, dynamic> json) {return AaaAuditLogsActor(
   email: json['email'] as String?,
   id: json['id'] as String?,
   ip: json['ip'] as String?,
   type: json['type'] != null ? AaaAuditLogsActorType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The email of the user that performed the action.
 /// 
@@ -113,19 +113,19 @@ final String? ip;
 /// Example: `'user'`
 final AaaAuditLogsActorType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': ?email,
   'id': ?id,
   'ip': ?ip,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'id', 'ip', 'type'}.contains(key)); } 
-AaaAuditLogsActor copyWith({String? Function()? email, String? Function()? id, String? Function()? ip, AaaAuditLogsActorType? Function()? type, }) { return AaaAuditLogsActor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'email', 'id', 'ip', 'type'}.contains(key));}
+AaaAuditLogsActor copyWith({String? Function()? email, String? Function()? id, String? Function()? ip, AaaAuditLogsActorType? Function()? type, }) {return AaaAuditLogsActor(
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,
   ip: ip != null ? ip() : this.ip,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogsActor &&
           email == other.email &&
@@ -137,4 +137,4 @@ AaaAuditLogsActor copyWith({String? Function()? email, String? Function()? id, S
 
 @override String toString() => 'AaaAuditLogsActor(email: $email, id: $id, ip: $ip, type: $type)';
 
- }
+}

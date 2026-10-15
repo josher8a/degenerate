@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_connector_id.dart';import 'package:pub_cloudflare/models/magic_secondary_connector_id.dart';import 'package:pub_cloudflare/models/magic_site_location.dart';import 'package:pub_cloudflare/models/magic_site_name.dart';@immutable final class MagicSitesAddSingleRequest {const MagicSitesAddSingleRequest({required this.name, this.connectorId, this.description, this.haMode, this.location, this.secondaryConnectorId, });
 
-factory MagicSitesAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicSitesAddSingleRequest(
+factory MagicSitesAddSingleRequest.fromJson(Map<String, dynamic> json) {return MagicSitesAddSingleRequest(
   connectorId: json['connector_id'] != null ? MagicConnectorId.fromJson(json['connector_id'] as String) : null,
   description: json['description'] as String?,
   haMode: json['ha_mode'] as bool?,
   location: json['location'] != null ? MagicSiteLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   name: MagicSiteName.fromJson(json['name'] as String),
   secondaryConnectorId: json['secondary_connector_id'] != null ? MagicSecondaryConnectorId.fromJson(json['secondary_connector_id'] as String) : null,
-); }
+);}
 
 /// Magic Connector identifier tag.
 final MagicConnectorId? connectorId;
@@ -30,23 +30,23 @@ final MagicSiteName name;
 /// Magic Connector identifier tag. Used when high availability mode is on.
 final MagicSecondaryConnectorId? secondaryConnectorId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (connectorId != null) 'connector_id': connectorId?.toJson(),
   'description': ?description,
   'ha_mode': ?haMode,
   if (location != null) 'location': location?.toJson(),
   'name': name.toJson(),
   if (secondaryConnectorId != null) 'secondary_connector_id': secondaryConnectorId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-MagicSitesAddSingleRequest copyWith({MagicConnectorId? Function()? connectorId, String? Function()? description, bool? Function()? haMode, MagicSiteLocation? Function()? location, MagicSiteName? name, MagicSecondaryConnectorId? Function()? secondaryConnectorId, }) { return MagicSitesAddSingleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+MagicSitesAddSingleRequest copyWith({MagicConnectorId? Function()? connectorId, String? Function()? description, bool? Function()? haMode, MagicSiteLocation? Function()? location, MagicSiteName? name, MagicSecondaryConnectorId? Function()? secondaryConnectorId, }) {return MagicSitesAddSingleRequest(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   description: description != null ? description() : this.description,
   haMode: haMode != null ? haMode() : this.haMode,
   location: location != null ? location() : this.location,
   name: name ?? this.name,
   secondaryConnectorId: secondaryConnectorId != null ? secondaryConnectorId() : this.secondaryConnectorId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSitesAddSingleRequest &&
           connectorId == other.connectorId &&
@@ -60,4 +60,4 @@ MagicSitesAddSingleRequest copyWith({MagicConnectorId? Function()? connectorId, 
 
 @override String toString() => 'MagicSitesAddSingleRequest(connectorId: $connectorId, description: $description, haMode: $haMode, location: $location, name: $name, secondaryConnectorId: $secondaryConnectorId)';
 
- }
+}

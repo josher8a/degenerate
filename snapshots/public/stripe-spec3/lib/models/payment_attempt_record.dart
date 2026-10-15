@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_card/insights_resources_payment_evaluation_money_movement_card_customer_presence.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record/reported_by.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_amount.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_processor_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_shipping_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PaymentAttemptRecordObject {const PaymentAttemptRecordObject();
 
-factory PaymentAttemptRecordObject.fromJson(String json) { return switch (json) {
+factory PaymentAttemptRecordObject.fromJson(String json) {return switch (json) {
   'payment_attempt_record' => paymentAttemptRecord,
   _ => PaymentAttemptRecordObject$Unknown(json),
-}; }
+};}
 
 static const PaymentAttemptRecordObject paymentAttemptRecord = PaymentAttemptRecordObject$paymentAttemptRecord._();
 
 static const List<PaymentAttemptRecordObject> values = [paymentAttemptRecord];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'payment_attempt_record' => 'paymentAttemptRecord',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentAttemptRecordObject$Unknown; } 
+bool get isUnknown {return this is PaymentAttemptRecordObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() paymentAttemptRecord, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() paymentAttemptRecord, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentAttemptRecordObject$paymentAttemptRecord() => paymentAttemptRecord(),
       PaymentAttemptRecordObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentAttemptRecord, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentAttemptRecord, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentAttemptRecordObject$paymentAttemptRecord() => paymentAttemptRecord != null ? paymentAttemptRecord() : orElse(value),
       PaymentAttemptRecordObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentAttemptRecordObject($value)';
 
- }
+}
 @immutable final class PaymentAttemptRecordObject$paymentAttemptRecord extends PaymentAttemptRecordObject {const PaymentAttemptRecordObject$paymentAttemptRecord._();
 
 @override String get value => 'payment_attempt_record';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentA
 
 @override int get hashCode => 'payment_attempt_record'.hashCode;
 
- }
+}
 @immutable final class PaymentAttemptRecordObject$Unknown extends PaymentAttemptRecordObject {const PaymentAttemptRecordObject$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentA
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Payment Attempt Record represents an individual attempt at making a payment, on or off Stripe.
 /// Each payment attempt tries to collect a fixed amount of money from a fixed customer and payment
 /// method. Payment Attempt Records are attached to Payment Records. Only one attempt per Payment Record
 /// can have guaranteed funds.
 @immutable final class PaymentAttemptRecord {const PaymentAttemptRecord({required this.amount, required this.amountAuthorized, required this.amountCanceled, required this.amountFailed, required this.amountGuaranteed, required this.amountRefunded, required this.amountRequested, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.processorDetails, required this.reportedBy, this.application = const Omittable.absent(), this.customerDetails = const Omittable.absent(), this.customerPresence = const Omittable.absent(), this.description = const Omittable.absent(), this.paymentMethodDetails = const Omittable.absent(), this.paymentRecord = const Omittable.absent(), this.shippingDetails = const Omittable.absent(), });
 
-factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) { return PaymentAttemptRecord(
+factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) {return PaymentAttemptRecord(
   amount: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),
   amountAuthorized: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount_authorized'] as Map<String, dynamic>),
   amountCanceled: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount_canceled'] as Map<String, dynamic>),
@@ -82,7 +82,7 @@ factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) { return Paymen
   processorDetails: PaymentsPrimitivesPaymentRecordsResourceProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
   reportedBy: ReportedBy.fromJson(json['reported_by'] as String),
   shippingDetails: json.containsKey('shipping_details') ? Omittable(json['shipping_details'] != null ? PaymentsPrimitivesPaymentRecordsResourceShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final PaymentsPrimitivesPaymentRecordsResourceAmount amount;
 
@@ -139,7 +139,7 @@ final ReportedBy reportedBy;
 /// Shipping information for this payment.
 final Omittable<PaymentsPrimitivesPaymentRecordsResourceShippingDetails?> shippingDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount.toJson(),
   'amount_authorized': amountAuthorized.toJson(),
   'amount_canceled': amountCanceled.toJson(),
@@ -161,8 +161,8 @@ Map<String, dynamic> toJson() { return {
   'processor_details': processorDetails.toJson(),
   'reported_by': reportedBy.toJson(),
   if (shippingDetails.isPresent) 'shipping_details': shippingDetails.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') &&
       json.containsKey('amount_authorized') &&
       json.containsKey('amount_canceled') &&
       json.containsKey('amount_failed') &&
@@ -175,9 +175,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('processor_details') &&
-      json.containsKey('reported_by'); } 
+      json.containsKey('reported_by');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final application$ = application.value;
 if (application$ != null) {
   if (application$.runes.length > 5000) { errors.add('application: length must be <= 5000'); }
@@ -191,8 +191,8 @@ final paymentRecord$ = paymentRecord.value;
 if (paymentRecord$ != null) {
   if (paymentRecord$.runes.length > 5000) { errors.add('paymentRecord: length must be <= 5000'); }
 }
-return errors; } 
-PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, Omittable<String?>? application, int? created, Omittable<PaymentsPrimitivesPaymentRecordsResourceCustomerDetails?>? customerDetails, Omittable<InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence?>? customerPresence, Omittable<String?>? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails?>? paymentMethodDetails, Omittable<String?>? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, ReportedBy? reportedBy, Omittable<PaymentsPrimitivesPaymentRecordsResourceShippingDetails?>? shippingDetails, }) { return PaymentAttemptRecord(
+return errors;}
+PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, Omittable<String?>? application, int? created, Omittable<PaymentsPrimitivesPaymentRecordsResourceCustomerDetails?>? customerDetails, Omittable<InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence?>? customerPresence, Omittable<String?>? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails?>? paymentMethodDetails, Omittable<String?>? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, ReportedBy? reportedBy, Omittable<PaymentsPrimitivesPaymentRecordsResourceShippingDetails?>? shippingDetails, }) {return PaymentAttemptRecord(
   amount: amount ?? this.amount,
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   amountCanceled: amountCanceled ?? this.amountCanceled,
@@ -214,7 +214,7 @@ PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? a
   processorDetails: processorDetails ?? this.processorDetails,
   reportedBy: reportedBy ?? this.reportedBy,
   shippingDetails: shippingDetails ?? this.shippingDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentAttemptRecord &&
           amount == other.amount &&
@@ -243,4 +243,4 @@ PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? a
 
 @override String toString() => 'PaymentAttemptRecord(\n  amount: $amount,\n  amountAuthorized: $amountAuthorized,\n  amountCanceled: $amountCanceled,\n  amountFailed: $amountFailed,\n  amountGuaranteed: $amountGuaranteed,\n  amountRefunded: $amountRefunded,\n  amountRequested: $amountRequested,\n  application: $application,\n  created: $created,\n  customerDetails: $customerDetails,\n  customerPresence: $customerPresence,\n  description: $description,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  paymentMethodDetails: $paymentMethodDetails,\n  paymentRecord: $paymentRecord,\n  processorDetails: $processorDetails,\n  reportedBy: $reportedBy,\n  shippingDetails: $shippingDetails,\n)';
 
- }
+}

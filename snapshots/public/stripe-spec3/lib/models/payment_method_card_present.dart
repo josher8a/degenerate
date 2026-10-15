@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present/read_method.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present_networks.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_offline.dart';/// 
 @immutable final class PaymentMethodCardPresent {const PaymentMethodCardPresent({required this.expMonth, required this.expYear, this.brand = const Omittable.absent(), this.brandProduct = const Omittable.absent(), this.cardholderName = const Omittable.absent(), this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.issuer = const Omittable.absent(), this.last4 = const Omittable.absent(), this.networks = const Omittable.absent(), this.offline = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.readMethod = const Omittable.absent(), this.wallet, });
 
-factory PaymentMethodCardPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodCardPresent(
+factory PaymentMethodCardPresent.fromJson(Map<String, dynamic> json) {return PaymentMethodCardPresent(
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
   brandProduct: json.containsKey('brand_product') ? Omittable(json['brand_product'] as String?) : const Omittable.absent(),
   cardholderName: json.containsKey('cardholder_name') ? Omittable(json['cardholder_name'] as String?) : const Omittable.absent(),
@@ -21,7 +21,7 @@ factory PaymentMethodCardPresent.fromJson(Map<String, dynamic> json) { return Pa
   preferredLocales: json.containsKey('preferred_locales') ? Omittable((json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   readMethod: json.containsKey('read_method') ? Omittable(json['read_method'] != null ? ReadMethod.fromJson(json['read_method'] as String) : null) : const Omittable.absent(),
   wallet: json['wallet'] != null ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 final Omittable<String?> brand;
@@ -72,7 +72,7 @@ final Omittable<ReadMethod?> readMethod;
 
 final PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brand.isPresent) 'brand': brand.value,
   if (brandProduct.isPresent) 'brand_product': brandProduct.value,
   if (cardholderName.isPresent) 'cardholder_name': cardholderName.value,
@@ -89,11 +89,11 @@ Map<String, dynamic> toJson() { return {
   if (preferredLocales.isPresent) 'preferred_locales': preferredLocales.value,
   if (readMethod.isPresent) 'read_method': readMethod.value?.toJson(),
   if (wallet != null) 'wallet': wallet?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
-      json.containsKey('exp_year') && json['exp_year'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
+      json.containsKey('exp_year') && json['exp_year'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final brand$ = brand.value;
 if (brand$ != null) {
   if (brand$.runes.length > 5000) { errors.add('brand: length must be <= 5000'); }
@@ -130,8 +130,8 @@ final last4$ = last4.value;
 if (last4$ != null) {
   if (last4$.runes.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodCardPresent copyWith({Omittable<String?>? brand, Omittable<String?>? brandProduct, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? issuer, Omittable<String?>? last4, Omittable<PaymentMethodCardPresentNetworks?>? networks, Omittable<PaymentMethodDetailsCardPresentOffline?>? offline, Omittable<List<String>?>? preferredLocales, Omittable<ReadMethod?>? readMethod, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? Function()? wallet, }) { return PaymentMethodCardPresent(
+return errors;}
+PaymentMethodCardPresent copyWith({Omittable<String?>? brand, Omittable<String?>? brandProduct, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? issuer, Omittable<String?>? last4, Omittable<PaymentMethodCardPresentNetworks?>? networks, Omittable<PaymentMethodDetailsCardPresentOffline?>? offline, Omittable<List<String>?>? preferredLocales, Omittable<ReadMethod?>? readMethod, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? Function()? wallet, }) {return PaymentMethodCardPresent(
   brand: brand ?? this.brand,
   brandProduct: brandProduct ?? this.brandProduct,
   cardholderName: cardholderName ?? this.cardholderName,
@@ -148,7 +148,7 @@ PaymentMethodCardPresent copyWith({Omittable<String?>? brand, Omittable<String?>
   preferredLocales: preferredLocales ?? this.preferredLocales,
   readMethod: readMethod ?? this.readMethod,
   wallet: wallet != null ? wallet() : this.wallet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodCardPresent &&
           brand == other.brand &&
@@ -173,4 +173,4 @@ PaymentMethodCardPresent copyWith({Omittable<String?>? brand, Omittable<String?>
 
 @override String toString() => 'PaymentMethodCardPresent(\n  brand: $brand,\n  brandProduct: $brandProduct,\n  cardholderName: $cardholderName,\n  country: $country,\n  description: $description,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  issuer: $issuer,\n  last4: $last4,\n  networks: $networks,\n  offline: $offline,\n  preferredLocales: $preferredLocales,\n  readMethod: $readMethod,\n  wallet: $wallet,\n)';
 
- }
+}

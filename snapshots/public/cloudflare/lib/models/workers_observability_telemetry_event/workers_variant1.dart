@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/event_value.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/execution_model.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/script_version.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/variant1_event_type.dart';@immutable final class WorkersVariant1 {const WorkersVariant1({required this.eventType, required this.requestId, required this.scriptName, this.durableObjectId, this.entrypoint, this.event, this.executionModel, this.outcome, this.scriptVersion, this.truncated, });
 
-factory WorkersVariant1.fromJson(Map<String, dynamic> json) { return WorkersVariant1(
+factory WorkersVariant1.fromJson(Map<String, dynamic> json) {return WorkersVariant1(
   durableObjectId: json['durableObjectId'] as String?,
   entrypoint: json['entrypoint'] as String?,
   event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, EventValue.fromJson(v))),
@@ -14,7 +14,7 @@ factory WorkersVariant1.fromJson(Map<String, dynamic> json) { return WorkersVari
   scriptName: json['scriptName'] as String,
   scriptVersion: json['scriptVersion'] != null ? ScriptVersion.fromJson(json['scriptVersion'] as Map<String, dynamic>) : null,
   truncated: json['truncated'] as bool?,
-); }
+);}
 
 final String? durableObjectId;
 
@@ -36,7 +36,7 @@ final ScriptVersion? scriptVersion;
 
 final bool? truncated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'durableObjectId': ?durableObjectId,
   'entrypoint': ?entrypoint,
   if (event != null) 'event': event?.map((k, v) => MapEntry(k, v.toJson())),
@@ -47,11 +47,11 @@ Map<String, dynamic> toJson() { return {
   'scriptName': scriptName,
   if (scriptVersion != null) 'scriptVersion': scriptVersion?.toJson(),
   'truncated': ?truncated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('eventType') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('eventType') &&
       json.containsKey('requestId') && json['requestId'] is String &&
-      json.containsKey('scriptName') && json['scriptName'] is String; } 
-WorkersVariant1 copyWith({String? Function()? durableObjectId, String? Function()? entrypoint, Map<String, EventValue>? Function()? event, Variant1EventType? eventType, ExecutionModel? Function()? executionModel, String? Function()? outcome, String? requestId, String? scriptName, ScriptVersion? Function()? scriptVersion, bool? Function()? truncated, }) { return WorkersVariant1(
+      json.containsKey('scriptName') && json['scriptName'] is String;}
+WorkersVariant1 copyWith({String? Function()? durableObjectId, String? Function()? entrypoint, Map<String, EventValue>? Function()? event, Variant1EventType? eventType, ExecutionModel? Function()? executionModel, String? Function()? outcome, String? requestId, String? scriptName, ScriptVersion? Function()? scriptVersion, bool? Function()? truncated, }) {return WorkersVariant1(
   durableObjectId: durableObjectId != null ? durableObjectId() : this.durableObjectId,
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   event: event != null ? event() : this.event,
@@ -62,7 +62,7 @@ WorkersVariant1 copyWith({String? Function()? durableObjectId, String? Function(
   scriptName: scriptName ?? this.scriptName,
   scriptVersion: scriptVersion != null ? scriptVersion() : this.scriptVersion,
   truncated: truncated != null ? truncated() : this.truncated,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVariant1 &&
           durableObjectId == other.durableObjectId &&
@@ -80,4 +80,4 @@ WorkersVariant1 copyWith({String? Function()? durableObjectId, String? Function(
 
 @override String toString() => 'WorkersVariant1(\n  durableObjectId: $durableObjectId,\n  entrypoint: $entrypoint,\n  event: $event,\n  eventType: $eventType,\n  executionModel: $executionModel,\n  outcome: $outcome,\n  requestId: $requestId,\n  scriptName: $scriptName,\n  scriptVersion: $scriptVersion,\n  truncated: $truncated,\n)';
 
- }
+}

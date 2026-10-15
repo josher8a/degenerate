@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_mandate_options_card/invoice_mandate_options_card_amount_type.dart';import 'package:pub_stripe_spec3/models/invoice_mandate_options_payto/invoice_mandate_options_payto_purpose.dart';import 'package:pub_stripe_spec3/models/mandate_options_payto/mandate_options_payto_payment_schedule.dart';/// 
 @immutable final class MandateOptionsPayto {const MandateOptionsPayto({this.amount = const Omittable.absent(), this.amountType = const Omittable.absent(), this.endDate = const Omittable.absent(), this.paymentSchedule = const Omittable.absent(), this.paymentsPerPeriod = const Omittable.absent(), this.purpose = const Omittable.absent(), this.startDate = const Omittable.absent(), });
 
-factory MandateOptionsPayto.fromJson(Map<String, dynamic> json) { return MandateOptionsPayto(
+factory MandateOptionsPayto.fromJson(Map<String, dynamic> json) {return MandateOptionsPayto(
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   amountType: json.containsKey('amount_type') ? Omittable(json['amount_type'] != null ? InvoiceMandateOptionsCardAmountType.fromJson(json['amount_type'] as String) : null) : const Omittable.absent(),
   endDate: json.containsKey('end_date') ? Omittable(json['end_date'] as String?) : const Omittable.absent(),
@@ -12,7 +12,7 @@ factory MandateOptionsPayto.fromJson(Map<String, dynamic> json) { return Mandate
   paymentsPerPeriod: json.containsKey('payments_per_period') ? Omittable(json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null) : const Omittable.absent(),
   purpose: json.containsKey('purpose') ? Omittable(json['purpose'] != null ? InvoiceMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null) : const Omittable.absent(),
   startDate: json.containsKey('start_date') ? Omittable(json['start_date'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Amount that will be collected. It is required when `amount_type` is `fixed`.
 final Omittable<int?> amount;
@@ -35,7 +35,7 @@ final Omittable<InvoiceMandateOptionsPaytoPurpose?> purpose;
 /// Date, in YYYY-MM-DD format, from which payments will be collected. Defaults to confirmation time.
 final Omittable<String?> startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount.isPresent) 'amount': amount.value,
   if (amountType.isPresent) 'amount_type': amountType.value?.toJson(),
   if (endDate.isPresent) 'end_date': endDate.value,
@@ -43,10 +43,10 @@ Map<String, dynamic> toJson() { return {
   if (paymentsPerPeriod.isPresent) 'payments_per_period': paymentsPerPeriod.value,
   if (purpose.isPresent) 'purpose': purpose.value?.toJson(),
   if (startDate.isPresent) 'start_date': startDate.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final endDate$ = endDate.value;
 if (endDate$ != null) {
   if (endDate$.runes.length > 5000) { errors.add('endDate: length must be <= 5000'); }
@@ -55,8 +55,8 @@ final startDate$ = startDate.value;
 if (startDate$ != null) {
   if (startDate$.runes.length > 5000) { errors.add('startDate: length must be <= 5000'); }
 }
-return errors; } 
-MandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<InvoiceMandateOptionsCardAmountType?>? amountType, Omittable<String?>? endDate, Omittable<MandateOptionsPaytoPaymentSchedule?>? paymentSchedule, Omittable<int?>? paymentsPerPeriod, Omittable<InvoiceMandateOptionsPaytoPurpose?>? purpose, Omittable<String?>? startDate, }) { return MandateOptionsPayto(
+return errors;}
+MandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<InvoiceMandateOptionsCardAmountType?>? amountType, Omittable<String?>? endDate, Omittable<MandateOptionsPaytoPaymentSchedule?>? paymentSchedule, Omittable<int?>? paymentsPerPeriod, Omittable<InvoiceMandateOptionsPaytoPurpose?>? purpose, Omittable<String?>? startDate, }) {return MandateOptionsPayto(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   endDate: endDate ?? this.endDate,
@@ -64,7 +64,7 @@ MandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<InvoiceMandateO
   paymentsPerPeriod: paymentsPerPeriod ?? this.paymentsPerPeriod,
   purpose: purpose ?? this.purpose,
   startDate: startDate ?? this.startDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MandateOptionsPayto &&
           amount == other.amount &&
@@ -79,4 +79,4 @@ MandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<InvoiceMandateO
 
 @override String toString() => 'MandateOptionsPayto(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)';
 
- }
+}

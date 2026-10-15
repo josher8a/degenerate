@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Check Annotation
 @immutable final class CheckAnnotation {const CheckAnnotation({required this.path, required this.startLine, required this.endLine, required this.startColumn, required this.endColumn, required this.annotationLevel, required this.title, required this.message, required this.rawDetails, required this.blobHref, });
 
-factory CheckAnnotation.fromJson(Map<String, dynamic> json) { return CheckAnnotation(
+factory CheckAnnotation.fromJson(Map<String, dynamic> json) {return CheckAnnotation(
   path: json['path'] as String,
   startLine: (json['start_line'] as num).toInt(),
   endLine: (json['end_line'] as num).toInt(),
@@ -15,7 +15,7 @@ factory CheckAnnotation.fromJson(Map<String, dynamic> json) { return CheckAnnota
   message: json['message'] as String?,
   rawDetails: json['raw_details'] as String?,
   blobHref: json['blob_href'] as String,
-); }
+);}
 
 final String path;
 
@@ -37,7 +37,7 @@ final String? rawDetails;
 
 final String blobHref;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'start_line': startLine,
   'end_line': endLine,
@@ -48,8 +48,8 @@ Map<String, dynamic> toJson() { return {
   'message': message,
   'raw_details': rawDetails,
   'blob_href': blobHref,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
       json.containsKey('start_line') && json['start_line'] is num &&
       json.containsKey('end_line') && json['end_line'] is num &&
       json.containsKey('start_column') && (json['start_column'] == null || json['start_column'] is num) &&
@@ -58,8 +58,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('path'
       json.containsKey('title') && (json['title'] == null || json['title'] is String) &&
       json.containsKey('message') && (json['message'] == null || json['message'] is String) &&
       json.containsKey('raw_details') && (json['raw_details'] == null || json['raw_details'] is String) &&
-      json.containsKey('blob_href') && json['blob_href'] is String; } 
-CheckAnnotation copyWith({String? path, int? startLine, int? endLine, int? Function()? startColumn, int? Function()? endColumn, String? Function()? annotationLevel, String? Function()? title, String? Function()? message, String? Function()? rawDetails, String? blobHref, }) { return CheckAnnotation(
+      json.containsKey('blob_href') && json['blob_href'] is String;}
+CheckAnnotation copyWith({String? path, int? startLine, int? endLine, int? Function()? startColumn, int? Function()? endColumn, String? Function()? annotationLevel, String? Function()? title, String? Function()? message, String? Function()? rawDetails, String? blobHref, }) {return CheckAnnotation(
   path: path ?? this.path,
   startLine: startLine ?? this.startLine,
   endLine: endLine ?? this.endLine,
@@ -70,7 +70,7 @@ CheckAnnotation copyWith({String? path, int? startLine, int? endLine, int? Funct
   message: message != null ? message() : this.message,
   rawDetails: rawDetails != null ? rawDetails() : this.rawDetails,
   blobHref: blobHref ?? this.blobHref,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckAnnotation &&
           path == other.path &&
@@ -88,4 +88,4 @@ CheckAnnotation copyWith({String? path, int? startLine, int? endLine, int? Funct
 
 @override String toString() => 'CheckAnnotation(\n  path: $path,\n  startLine: $startLine,\n  endLine: $endLine,\n  startColumn: $startColumn,\n  endColumn: $endColumn,\n  annotationLevel: $annotationLevel,\n  title: $title,\n  message: $message,\n  rawDetails: $rawDetails,\n  blobHref: $blobHref,\n)';
 
- }
+}

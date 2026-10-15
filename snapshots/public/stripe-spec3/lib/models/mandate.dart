@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/mandate_multi_use.dart';import 'package:pub_stripe_spec3/models/mandate_payment_method_details.dart';import 'package:pub_stripe_spec3/models/mandate_single_use.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class MandateObject {const MandateObject();
 
-factory MandateObject.fromJson(String json) { return switch (json) {
+factory MandateObject.fromJson(String json) {return switch (json) {
   'mandate' => mandate,
   _ => MandateObject$Unknown(json),
-}; }
+};}
 
 static const MandateObject mandate = MandateObject$mandate._();
 
 static const List<MandateObject> values = [mandate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mandate' => 'mandate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MandateObject$Unknown; } 
+bool get isUnknown {return this is MandateObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mandate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mandate, required W Function(String value) $unknown, }) {return switch (this) {
       MandateObject$mandate() => mandate(),
       MandateObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mandate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mandate, W Function(String value)? $unknown, }) {return switch (this) {
       MandateObject$mandate() => mandate != null ? mandate() : orElse(value),
       MandateObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MandateObject($value)';
 
- }
+}
 @immutable final class MandateObject$mandate extends MandateObject {const MandateObject$mandate._();
 
 @override String get value => 'mandate';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mandate,
 
 @override int get hashCode => 'mandate'.hashCode;
 
- }
+}
 @immutable final class MandateObject$Unknown extends MandateObject {const MandateObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mandate,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The mandate status indicates whether or not you can use it to initiate a payment.
 sealed class MandateStatus {const MandateStatus();
 
-factory MandateStatus.fromJson(String json) { return switch (json) {
+factory MandateStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   _ => MandateStatus$Unknown(json),
-}; }
+};}
 
 static const MandateStatus active = MandateStatus$active._();
 
@@ -73,33 +73,33 @@ static const MandateStatus pending = MandateStatus$pending._();
 static const List<MandateStatus> values = [active, inactive, pending];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'inactive' => 'inactive',
   'pending' => 'pending',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MandateStatus$Unknown; } 
+bool get isUnknown {return this is MandateStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() inactive, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() inactive, required W Function() pending, required W Function(String value) $unknown, }) {return switch (this) {
       MandateStatus$active() => active(),
       MandateStatus$inactive() => inactive(),
       MandateStatus$pending() => pending(),
       MandateStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? pending, W Function(String value)? $unknown, }) {return switch (this) {
       MandateStatus$active() => active != null ? active() : orElse(value),
       MandateStatus$inactive() => inactive != null ? inactive() : orElse(value),
       MandateStatus$pending() => pending != null ? pending() : orElse(value),
       MandateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MandateStatus($value)';
 
- }
+}
 @immutable final class MandateStatus$active extends MandateStatus {const MandateStatus$active._();
 
 @override String get value => 'active';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class MandateStatus$inactive extends MandateStatus {const MandateStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class MandateStatus$pending extends MandateStatus {const MandateStatus$pending._();
 
 @override String get value => 'pending';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class MandateStatus$Unknown extends MandateStatus {const MandateStatus$Unknown(this.value);
 
 @override final String value;
@@ -136,15 +136,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The type of the mandate.
 sealed class MandateType {const MandateType();
 
-factory MandateType.fromJson(String json) { return switch (json) {
+factory MandateType.fromJson(String json) {return switch (json) {
   'multi_use' => multiUse,
   'single_use' => singleUse,
   _ => MandateType$Unknown(json),
-}; }
+};}
 
 static const MandateType multiUse = MandateType$multiUse._();
 
@@ -153,30 +153,30 @@ static const MandateType singleUse = MandateType$singleUse._();
 static const List<MandateType> values = [multiUse, singleUse];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'multi_use' => 'multiUse',
   'single_use' => 'singleUse',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MandateType$Unknown; } 
+bool get isUnknown {return this is MandateType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() multiUse, required W Function() singleUse, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() multiUse, required W Function() singleUse, required W Function(String value) $unknown, }) {return switch (this) {
       MandateType$multiUse() => multiUse(),
       MandateType$singleUse() => singleUse(),
       MandateType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? multiUse, W Function()? singleUse, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? multiUse, W Function()? singleUse, W Function(String value)? $unknown, }) {return switch (this) {
       MandateType$multiUse() => multiUse != null ? multiUse() : orElse(value),
       MandateType$singleUse() => singleUse != null ? singleUse() : orElse(value),
       MandateType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MandateType($value)';
 
- }
+}
 @immutable final class MandateType$multiUse extends MandateType {const MandateType$multiUse._();
 
 @override String get value => 'multi_use';
@@ -185,7 +185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? multiUse
 
 @override int get hashCode => 'multi_use'.hashCode;
 
- }
+}
 @immutable final class MandateType$singleUse extends MandateType {const MandateType$singleUse._();
 
 @override String get value => 'single_use';
@@ -194,7 +194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? multiUse
 
 @override int get hashCode => 'single_use'.hashCode;
 
- }
+}
 @immutable final class MandateType$Unknown extends MandateType {const MandateType$Unknown(this.value);
 
 @override final String value;
@@ -204,11 +204,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? multiUse
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Mandate is a record of the permission that your customer gives you to debit their payment method.
 @immutable final class Mandate {const Mandate({required this.customerAcceptance, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.paymentMethodDetails, required this.status, required this.type, this.multiUse, this.onBehalfOf, this.singleUse, });
 
-factory Mandate.fromJson(Map<String, dynamic> json) { return Mandate(
+factory Mandate.fromJson(Map<String, dynamic> json) {return Mandate(
   customerAcceptance: CustomerAcceptance.fromJson(json['customer_acceptance'] as Map<String, dynamic>),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -220,7 +220,7 @@ factory Mandate.fromJson(Map<String, dynamic> json) { return Mandate(
   singleUse: json['single_use'] != null ? MandateSingleUse.fromJson(json['single_use'] as Map<String, dynamic>) : null,
   status: MandateStatus.fromJson(json['status'] as String),
   type: MandateType.fromJson(json['type'] as String),
-); }
+);}
 
 final CustomerAcceptance customerAcceptance;
 
@@ -251,7 +251,7 @@ final MandateStatus status;
 /// The type of the mandate.
 final MandateType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer_acceptance': customerAcceptance.toJson(),
   'id': id,
   'livemode': livemode,
@@ -263,24 +263,24 @@ Map<String, dynamic> toJson() { return {
   if (singleUse != null) 'single_use': singleUse?.toJson(),
   'status': status.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_acceptance') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('customer_acceptance') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('payment_method') &&
       json.containsKey('payment_method_details') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final onBehalfOf$ = onBehalfOf;
 if (onBehalfOf$ != null) {
   if (onBehalfOf$.runes.length > 5000) { errors.add('onBehalfOf: length must be <= 5000'); }
 }
-return errors; } 
-Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? livemode, MandateMultiUse? Function()? multiUse, MandateObject? object, String? Function()? onBehalfOf, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? paymentMethod, MandatePaymentMethodDetails? paymentMethodDetails, MandateSingleUse? Function()? singleUse, MandateStatus? status, MandateType? type, }) { return Mandate(
+return errors;}
+Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? livemode, MandateMultiUse? Function()? multiUse, MandateObject? object, String? Function()? onBehalfOf, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? paymentMethod, MandatePaymentMethodDetails? paymentMethodDetails, MandateSingleUse? Function()? singleUse, MandateStatus? status, MandateType? type, }) {return Mandate(
   customerAcceptance: customerAcceptance ?? this.customerAcceptance,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
@@ -292,7 +292,7 @@ Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? live
   singleUse: singleUse != null ? singleUse() : this.singleUse,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Mandate &&
           customerAcceptance == other.customerAcceptance &&
@@ -311,4 +311,4 @@ Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? live
 
 @override String toString() => 'Mandate(\n  customerAcceptance: $customerAcceptance,\n  id: $id,\n  livemode: $livemode,\n  multiUse: $multiUse,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  paymentMethod: $paymentMethod,\n  paymentMethodDetails: $paymentMethodDetails,\n  singleUse: $singleUse,\n  status: $status,\n  type: $type,\n)';
 
- }
+}

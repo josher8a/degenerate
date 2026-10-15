@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cash_balance_request/post_customers_customer_cash_balance_request_settings.dart';@immutable final class PostCustomersCustomerCashBalanceRequest {const PostCustomersCustomerCashBalanceRequest({this.expand, this.settings, });
 
-factory PostCustomersCustomerCashBalanceRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerCashBalanceRequest(
+factory PostCustomersCustomerCashBalanceRequest.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerCashBalanceRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   settings: json['settings'] != null ? PostCustomersCustomerCashBalanceRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -14,15 +14,15 @@ final List<String>? expand;
 /// A hash of settings for this cash balance.
 final PostCustomersCustomerCashBalanceRequestSettings? settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (settings != null) 'settings': settings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'settings'}.contains(key)); } 
-PostCustomersCustomerCashBalanceRequest copyWith({List<String>? Function()? expand, PostCustomersCustomerCashBalanceRequestSettings? Function()? settings, }) { return PostCustomersCustomerCashBalanceRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'settings'}.contains(key));}
+PostCustomersCustomerCashBalanceRequest copyWith({List<String>? Function()? expand, PostCustomersCustomerCashBalanceRequestSettings? Function()? settings, }) {return PostCustomersCustomerCashBalanceRequest(
   expand: expand != null ? expand() : this.expand,
   settings: settings != null ? settings() : this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerCashBalanceRequest &&
           listEquals(expand, other.expand) &&
@@ -32,4 +32,4 @@ PostCustomersCustomerCashBalanceRequest copyWith({List<String>? Function()? expa
 
 @override String toString() => 'PostCustomersCustomerCashBalanceRequest(expand: $expand, settings: $settings)';
 
- }
+}

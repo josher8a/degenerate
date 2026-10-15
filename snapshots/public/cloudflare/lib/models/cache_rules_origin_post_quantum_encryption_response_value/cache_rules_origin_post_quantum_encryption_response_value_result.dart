@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_origin_post_quantum_encryption/cache_rules_origin_post_quantum_encryption_id.dart';import 'package:pub_cloudflare/models/cache_rules_origin_post_quantum_encryption_value.dart';@immutable final class CacheRulesOriginPostQuantumEncryptionResponseValueResult {const CacheRulesOriginPostQuantumEncryptionResponseValueResult({required this.id, required this.value, this.modifiedOn = const Omittable.absent(), });
 
-factory CacheRulesOriginPostQuantumEncryptionResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesOriginPostQuantumEncryptionResponseValueResult(
+factory CacheRulesOriginPostQuantumEncryptionResponseValueResult.fromJson(Map<String, dynamic> json) {return CacheRulesOriginPostQuantumEncryptionResponseValueResult(
   id: CacheRulesOriginPostQuantumEncryptionId.fromJson(json['id'] as String),
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: CacheRulesOriginPostQuantumEncryptionValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Value of the zone setting.
 /// 
@@ -21,18 +21,18 @@ final Omittable<DateTime?> modifiedOn;
 
 final CacheRulesOriginPostQuantumEncryptionValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-CacheRulesOriginPostQuantumEncryptionResponseValueResult copyWith({CacheRulesOriginPostQuantumEncryptionId? id, Omittable<DateTime?>? modifiedOn, CacheRulesOriginPostQuantumEncryptionValue? value, }) { return CacheRulesOriginPostQuantumEncryptionResponseValueResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+CacheRulesOriginPostQuantumEncryptionResponseValueResult copyWith({CacheRulesOriginPostQuantumEncryptionId? id, Omittable<DateTime?>? modifiedOn, CacheRulesOriginPostQuantumEncryptionValue? value, }) {return CacheRulesOriginPostQuantumEncryptionResponseValueResult(
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesOriginPostQuantumEncryptionResponseValueResult &&
           id == other.id &&
@@ -43,4 +43,4 @@ CacheRulesOriginPostQuantumEncryptionResponseValueResult copyWith({CacheRulesOri
 
 @override String toString() => 'CacheRulesOriginPostQuantumEncryptionResponseValueResult(id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

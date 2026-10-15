@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_code_scanning_tool.dart';@immutable final class RepositoryRuleCodeScanningParameters {const RepositoryRuleCodeScanningParameters({required this.codeScanningTools});
 
-factory RepositoryRuleCodeScanningParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleCodeScanningParameters(
+factory RepositoryRuleCodeScanningParameters.fromJson(Map<String, dynamic> json) {return RepositoryRuleCodeScanningParameters(
   codeScanningTools: (json['code_scanning_tools'] as List<dynamic>).map((e) => RepositoryRuleParamsCodeScanningTool.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Tools that must provide code scanning results for this rule to pass.
 final List<RepositoryRuleParamsCodeScanningTool> codeScanningTools;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code_scanning_tools': codeScanningTools.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code_scanning_tools'); } 
-RepositoryRuleCodeScanningParameters copyWith({List<RepositoryRuleParamsCodeScanningTool>? codeScanningTools}) { return RepositoryRuleCodeScanningParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code_scanning_tools');}
+RepositoryRuleCodeScanningParameters copyWith({List<RepositoryRuleParamsCodeScanningTool>? codeScanningTools}) {return RepositoryRuleCodeScanningParameters(
   codeScanningTools: codeScanningTools ?? this.codeScanningTools,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleCodeScanningParameters &&
           listEquals(codeScanningTools, other.codeScanningTools);
@@ -25,4 +25,4 @@ RepositoryRuleCodeScanningParameters copyWith({List<RepositoryRuleParamsCodeScan
 
 @override String toString() => 'RepositoryRuleCodeScanningParameters(codeScanningTools: $codeScanningTools)';
 
- }
+}

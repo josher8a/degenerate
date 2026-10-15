@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_dmca_report/abuse_reports_dmca_report_host_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_dmca_report/abuse_reports_dmca_report_owner_notification.dart';@immutable final class AbuseReportsTrademarkReport {const AbuseReportsTrademarkReport({required this.act, required this.email, required this.email2, required this.name, required this.urls, required this.hostNotification, required this.justification, required this.ownerNotification, required this.trademarkNumber, required this.trademarkOffice, required this.trademarkSymbol, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, });
 
-factory AbuseReportsTrademarkReport.fromJson(Map<String, dynamic> json) { return AbuseReportsTrademarkReport(
+factory AbuseReportsTrademarkReport.fromJson(Map<String, dynamic> json) {return AbuseReportsTrademarkReport(
   act: json['act'],
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -21,7 +21,7 @@ factory AbuseReportsTrademarkReport.fromJson(Map<String, dynamic> json) { return
   trademarkNumber: json['trademark_number'] as String,
   trademarkOffice: json['trademark_office'] as String,
   trademarkSymbol: json['trademark_symbol'] as String,
-); }
+);}
 
 final dynamic act;
 
@@ -76,7 +76,7 @@ final String trademarkOffice;
 /// Text not exceeding 1000 characters
 final String trademarkSymbol;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act,
   'comments': ?comments,
   'company': ?company,
@@ -94,8 +94,8 @@ Map<String, dynamic> toJson() { return {
   'trademark_number': trademarkNumber,
   'trademark_office': trademarkOffice,
   'trademark_symbol': trademarkSymbol,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
@@ -105,9 +105,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('owner_notification') &&
       json.containsKey('trademark_number') && json['trademark_number'] is String &&
       json.containsKey('trademark_office') && json['trademark_office'] is String &&
-      json.containsKey('trademark_symbol') && json['trademark_symbol'] is String; } 
+      json.containsKey('trademark_symbol') && json['trademark_symbol'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.isEmpty) { errors.add('comments: length must be >= 1'); }
@@ -148,8 +148,8 @@ if (trademarkOffice.isEmpty) { errors.add('trademarkOffice: length must be >= 1'
 if (trademarkOffice.runes.length > 1000) { errors.add('trademarkOffice: length must be <= 1000'); }
 if (trademarkSymbol.isEmpty) { errors.add('trademarkSymbol: length must be >= 1'); }
 if (trademarkSymbol.runes.length > 1000) { errors.add('trademarkSymbol: length must be <= 1000'); }
-return errors; } 
-AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsDmcaReportHostNotification? hostNotification, String? justification, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? trademarkNumber, String? trademarkOffice, String? trademarkSymbol, }) { return AbuseReportsTrademarkReport(
+return errors;}
+AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsDmcaReportHostNotification? hostNotification, String? justification, AbuseReportsDmcaReportOwnerNotification? ownerNotification, String? trademarkNumber, String? trademarkOffice, String? trademarkSymbol, }) {return AbuseReportsTrademarkReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -167,7 +167,7 @@ AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function(
   trademarkNumber: trademarkNumber ?? this.trademarkNumber,
   trademarkOffice: trademarkOffice ?? this.trademarkOffice,
   trademarkSymbol: trademarkSymbol ?? this.trademarkSymbol,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsTrademarkReport &&
           act == other.act &&
@@ -192,4 +192,4 @@ AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function(
 
 @override String toString() => 'AbuseReportsTrademarkReport(\n  act: $act,\n  comments: $comments,\n  company: $company,\n  email: $email,\n  email2: $email2,\n  name: $name,\n  reportedCountry: $reportedCountry,\n  reportedUserAgent: $reportedUserAgent,\n  tele: $tele,\n  title: $title,\n  urls: $urls,\n  hostNotification: $hostNotification,\n  justification: $justification,\n  ownerNotification: $ownerNotification,\n  trademarkNumber: $trademarkNumber,\n  trademarkOffice: $trademarkOffice,\n  trademarkSymbol: $trademarkSymbol,\n)';
 
- }
+}

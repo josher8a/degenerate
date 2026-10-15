@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/web3_messages2.dart';@immutable final class ResponseCommon78 {const ResponseCommon78({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory ResponseCommon78.fromJson(Map<String, dynamic> json) { return ResponseCommon78(
+factory ResponseCommon78.fromJson(Map<String, dynamic> json) {return ResponseCommon78(
   errors: (json['errors'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: ResponseCommon33Result.fromJson(json['result']),
   success: json['success'] as bool,
-); }
+);}
 
 final List<Web3Messages2> errors;
 
@@ -22,22 +22,22 @@ final ResponseCommon33Result result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon78 copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? messages, ResponseCommon33Result? result, bool? success, }) { return ResponseCommon78(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon78 copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? messages, ResponseCommon33Result? result, bool? success, }) {return ResponseCommon78(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon78 &&
           listEquals(errors, other.errors) &&
@@ -49,4 +49,4 @@ ResponseCommon78 copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? mes
 
 @override String toString() => 'ResponseCommon78(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

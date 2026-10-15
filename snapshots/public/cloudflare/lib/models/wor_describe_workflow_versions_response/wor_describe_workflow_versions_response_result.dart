@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_request/wor_create_or_modify_workflow_request_limits.dart';@immutable final class WorDescribeWorkflowVersionsResponseResult {const WorDescribeWorkflowVersionsResponseResult({required this.className, required this.createdOn, required this.hasDag, required this.id, required this.modifiedOn, required this.workflowId, this.limits, });
 
-factory WorDescribeWorkflowVersionsResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowVersionsResponseResult(
+factory WorDescribeWorkflowVersionsResponseResult.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowVersionsResponseResult(
   className: json['class_name'] as String,
   createdOn: DateTime.parse(json['created_on'] as String),
   hasDag: json['has_dag'] as bool,
@@ -11,7 +11,7 @@ factory WorDescribeWorkflowVersionsResponseResult.fromJson(Map<String, dynamic> 
   limits: json['limits'] != null ? WorCreateOrModifyWorkflowRequestLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   workflowId: json['workflow_id'] as String,
-); }
+);}
 
 final String className;
 
@@ -27,7 +27,7 @@ final DateTime modifiedOn;
 
 final String workflowId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'class_name': className,
   'created_on': createdOn.toIso8601String(),
   'has_dag': hasDag,
@@ -35,14 +35,14 @@ Map<String, dynamic> toJson() { return {
   if (limits != null) 'limits': limits?.toJson(),
   'modified_on': modifiedOn.toIso8601String(),
   'workflow_id': workflowId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('class_name') && json['class_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('class_name') && json['class_name'] is String &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('has_dag') && json['has_dag'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
-      json.containsKey('workflow_id') && json['workflow_id'] is String; } 
-WorDescribeWorkflowVersionsResponseResult copyWith({String? className, DateTime? createdOn, bool? hasDag, String? id, WorCreateOrModifyWorkflowRequestLimits? Function()? limits, DateTime? modifiedOn, String? workflowId, }) { return WorDescribeWorkflowVersionsResponseResult(
+      json.containsKey('workflow_id') && json['workflow_id'] is String;}
+WorDescribeWorkflowVersionsResponseResult copyWith({String? className, DateTime? createdOn, bool? hasDag, String? id, WorCreateOrModifyWorkflowRequestLimits? Function()? limits, DateTime? modifiedOn, String? workflowId, }) {return WorDescribeWorkflowVersionsResponseResult(
   className: className ?? this.className,
   createdOn: createdOn ?? this.createdOn,
   hasDag: hasDag ?? this.hasDag,
@@ -50,7 +50,7 @@ WorDescribeWorkflowVersionsResponseResult copyWith({String? className, DateTime?
   limits: limits != null ? limits() : this.limits,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   workflowId: workflowId ?? this.workflowId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorDescribeWorkflowVersionsResponseResult &&
           className == other.className &&
@@ -65,4 +65,4 @@ WorDescribeWorkflowVersionsResponseResult copyWith({String? className, DateTime?
 
 @override String toString() => 'WorDescribeWorkflowVersionsResponseResult(className: $className, createdOn: $createdOn, hasDag: $hasDag, id: $id, limits: $limits, modifiedOn: $modifiedOn, workflowId: $workflowId)';
 
- }
+}

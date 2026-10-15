@@ -14,7 +14,7 @@ final class FraudDetectionApi with ApiExecutor {const FraudDetectionApi(this.api
 /// Retrieve Fraud Detection settings for a zone.
 ///
 /// `GET /zones/{zone_id}/fraud_detection/settings`
-Future<ApiResult<FraudFraudSettings?, FraudDetectionZoneGetSettingsError>> fraudDetectionZoneGetSettings({required FraudIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FraudFraudSettings?, FraudDetectionZoneGetSettingsError>> fraudDetectionZoneGetSettings({required FraudIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,7 +31,7 @@ return await execute(
   },
   onError: FraudDetectionZoneGetSettingsError.fromResponse,
 );
- } 
+}
 /// Update Fraud Detection Settings
 ///
 /// Update Fraud Detection settings for a zone.
@@ -42,7 +42,7 @@ return await execute(
 /// 
 ///
 /// `PUT /zones/{zone_id}/fraud_detection/settings`
-Future<ApiResult<FraudFraudSettings?, FraudDetectionZoneUpdateSettingsError>> fraudDetectionZoneUpdateSettings({required FraudIdentifier zoneId, required FraudFraudSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FraudFraudSettings?, FraudDetectionZoneUpdateSettingsError>> fraudDetectionZoneUpdateSettings({required FraudIdentifier zoneId, required FraudFraudSettings body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,5 +61,5 @@ return await execute(
   },
   onError: FraudDetectionZoneUpdateSettingsError.fromResponse,
 );
- } 
- }
+}
+}

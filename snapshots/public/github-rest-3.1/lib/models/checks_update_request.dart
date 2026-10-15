@@ -7,11 +7,11 @@ const ChecksUpdateRequest({this.checksUpdateRequestCompleted = const Omittable.a
 const ChecksUpdateRequest._({required this.rawValue, required this.checksUpdateRequestCompleted, required this.checksCreateRequestVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ChecksUpdateRequest.fromJson(Object? json) { return ChecksUpdateRequest._(
+factory ChecksUpdateRequest.fromJson(Object? json) {return ChecksUpdateRequest._(
   rawValue: Omittable(json),
   checksUpdateRequestCompleted: json is Map<String, dynamic> && ChecksUpdateRequestCompleted.canParse(json) ? parseAnyOfVariant<ChecksUpdateRequestCompleted>(json, (value) => ChecksUpdateRequestCompleted.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   checksCreateRequestVariant2: json is Map<String, dynamic> && ChecksCreateRequestVariant2.canParse(json) ? parseAnyOfVariant<ChecksCreateRequestVariant2>(json, (value) => ChecksCreateRequestVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ChecksUpdateRequest(${toJson()})';
 
- }
+}

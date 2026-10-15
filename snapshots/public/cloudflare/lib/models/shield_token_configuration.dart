@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_credentials.dart';import 'package:pub_cloudflare/models/shield_description.dart';import 'package:pub_cloudflare/models/shield_header.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_title.dart';import 'package:pub_cloudflare/models/shield_token_type.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ShieldTokenConfiguration {const ShieldTokenConfiguration({required this.createdAt, required this.credentials, required this.description, required this.id, required this.lastUpdated, required this.title, required this.tokenSources, required this.tokenType, });
 
-factory ShieldTokenConfiguration.fromJson(Map<String, dynamic> json) { return ShieldTokenConfiguration(
+factory ShieldTokenConfiguration.fromJson(Map<String, dynamic> json) {return ShieldTokenConfiguration(
   createdAt: ShieldTimestamp.fromJson(json['created_at'] as String),
   credentials: ShieldCredentials.fromJson(json['credentials'] as Map<String, dynamic>),
   description: ShieldDescription.fromJson(json['description'] as String),
@@ -12,7 +12,7 @@ factory ShieldTokenConfiguration.fromJson(Map<String, dynamic> json) { return Sh
   title: ShieldTitle.fromJson(json['title'] as String),
   tokenSources: (json['token_sources'] as List<dynamic>).map((e) => ShieldHeader.fromJson(e as String)).toList(),
   tokenType: ShieldTokenType.fromJson(json['token_type'] as String),
-); }
+);}
 
 final ShieldTimestamp createdAt;
 
@@ -30,7 +30,7 @@ final List<ShieldHeader> tokenSources;
 
 final ShieldTokenType tokenType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toJson(),
   'credentials': credentials.toJson(),
   'description': description.toJson(),
@@ -39,21 +39,21 @@ Map<String, dynamic> toJson() { return {
   'title': title.toJson(),
   'token_sources': tokenSources.map((e) => e.toJson()).toList(),
   'token_type': tokenType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') &&
       json.containsKey('credentials') &&
       json.containsKey('description') &&
       json.containsKey('id') &&
       json.containsKey('last_updated') &&
       json.containsKey('title') &&
       json.containsKey('token_sources') &&
-      json.containsKey('token_type'); } 
+      json.containsKey('token_type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (tokenSources.isEmpty) { errors.add('tokenSources: must have >= 1 items'); }
 if (tokenSources.length > 4) { errors.add('tokenSources: must have <= 4 items'); }
-return errors; } 
-ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials? credentials, ShieldDescription? description, ShieldUuid? id, ShieldTimestamp? lastUpdated, ShieldTitle? title, List<ShieldHeader>? tokenSources, ShieldTokenType? tokenType, }) { return ShieldTokenConfiguration(
+return errors;}
+ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials? credentials, ShieldDescription? description, ShieldUuid? id, ShieldTimestamp? lastUpdated, ShieldTitle? title, List<ShieldHeader>? tokenSources, ShieldTokenType? tokenType, }) {return ShieldTokenConfiguration(
   createdAt: createdAt ?? this.createdAt,
   credentials: credentials ?? this.credentials,
   description: description ?? this.description,
@@ -62,7 +62,7 @@ ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials
   title: title ?? this.title,
   tokenSources: tokenSources ?? this.tokenSources,
   tokenType: tokenType ?? this.tokenType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldTokenConfiguration &&
           createdAt == other.createdAt &&
@@ -78,4 +78,4 @@ ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials
 
 @override String toString() => 'ShieldTokenConfiguration(createdAt: $createdAt, credentials: $credentials, description: $description, id: $id, lastUpdated: $lastUpdated, title: $title, tokenSources: $tokenSources, tokenType: $tokenType)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/one_of_primitives.dart';@immutable final class UnionMapResponseJson {const UnionMapResponseJson({required this.input});
 
-factory UnionMapResponseJson.fromJson(Map<String, dynamic> json) { return UnionMapResponseJson(
+factory UnionMapResponseJson.fromJson(Map<String, dynamic> json) {return UnionMapResponseJson(
   input: (json['input'] as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as bool, fromB: (v) => v as String,))),
-); }
+);}
 
 final Map<String,OneOfPrimitives> input;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input': input.map((k, v) => MapEntry(k, v.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
-UnionMapResponseJson copyWith({Map<String,OneOfPrimitives>? input}) { return UnionMapResponseJson(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input');}
+UnionMapResponseJson copyWith({Map<String,OneOfPrimitives>? input}) {return UnionMapResponseJson(
   input: input ?? this.input,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UnionMapResponseJson &&
           input == other.input;
@@ -24,4 +24,4 @@ UnionMapResponseJson copyWith({Map<String,OneOfPrimitives>? input}) { return Uni
 
 @override String toString() => 'UnionMapResponseJson(input: $input)';
 
- }
+}

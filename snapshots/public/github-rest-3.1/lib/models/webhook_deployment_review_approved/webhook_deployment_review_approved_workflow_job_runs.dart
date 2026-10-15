@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentReviewApprovedWorkflowJobRuns {const WebhookDeploymentReviewApprovedWorkflowJobRuns({this.conclusion = const Omittable.absent(), this.createdAt, this.environment, this.htmlUrl, this.id, this.name = const Omittable.absent(), this.status, this.updatedAt, });
 
-factory WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
+factory WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(Map<String, dynamic> json) {return WebhookDeploymentReviewApprovedWorkflowJobRuns(
   conclusion: json.containsKey('conclusion') ? Omittable(json['conclusion']) : const Omittable.absent(),
   createdAt: json['created_at'] as String?,
   environment: json['environment'] as String?,
@@ -12,7 +12,7 @@ factory WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(Map<String, dyna
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   status: json['status'] as String?,
   updatedAt: json['updated_at'] as String?,
-); }
+);}
 
 final Omittable<dynamic> conclusion;
 
@@ -30,7 +30,7 @@ final String? status;
 
 final String? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (conclusion.isPresent) 'conclusion': conclusion.value,
   'created_at': ?createdAt,
   'environment': ?environment,
@@ -39,9 +39,9 @@ Map<String, dynamic> toJson() { return {
   if (name.isPresent) 'name': name.value,
   'status': ?status,
   'updated_at': ?updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conclusion', 'created_at', 'environment', 'html_url', 'id', 'name', 'status', 'updated_at'}.contains(key)); } 
-WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({Omittable<dynamic>? conclusion, String? Function()? createdAt, String? Function()? environment, String? Function()? htmlUrl, int? Function()? id, Omittable<String?>? name, String? Function()? status, String? Function()? updatedAt, }) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'conclusion', 'created_at', 'environment', 'html_url', 'id', 'name', 'status', 'updated_at'}.contains(key));}
+WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({Omittable<dynamic>? conclusion, String? Function()? createdAt, String? Function()? environment, String? Function()? htmlUrl, int? Function()? id, Omittable<String?>? name, String? Function()? status, String? Function()? updatedAt, }) {return WebhookDeploymentReviewApprovedWorkflowJobRuns(
   conclusion: conclusion ?? this.conclusion,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   environment: environment != null ? environment() : this.environment,
@@ -50,7 +50,7 @@ WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({Omittable<dynamic>? con
   name: name ?? this.name,
   status: status != null ? status() : this.status,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewApprovedWorkflowJobRuns &&
           conclusion == other.conclusion &&
@@ -66,4 +66,4 @@ WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({Omittable<dynamic>? con
 
 @override String toString() => 'WebhookDeploymentReviewApprovedWorkflowJobRuns(conclusion: $conclusion, createdAt: $createdAt, environment: $environment, htmlUrl: $htmlUrl, id: $id, name: $name, status: $status, updatedAt: $updatedAt)';
 
- }
+}

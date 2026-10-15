@@ -14,7 +14,7 @@ final class CustomPagesForAZoneApi with ApiExecutor {const CustomPagesForAZoneAp
 /// Fetches all the custom pages at the zone level.
 ///
 /// `GET /zones/{zone_identifier}/custom_pages`
-Future<ApiResult<List<CustomPagesCustomPage>?, CustomPagesForAZoneListCustomPagesError>> customPagesForAZoneListCustomPages({required CustomPagesIdentifier zoneIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CustomPagesCustomPage>?, CustomPagesForAZoneListCustomPagesError>> customPagesForAZoneListCustomPages({required CustomPagesIdentifier zoneIdentifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: CustomPagesForAZoneListCustomPagesError.fromResponse,
 );
- } 
+}
 /// Get a custom page
 ///
 /// Fetches the details of a custom page.
 ///
 /// `GET /zones/{zone_identifier}/custom_pages/{identifier}`
-Future<ApiResult<CustomPagesCustomPage, CustomPagesForAZoneGetACustomPageError>> customPagesForAZoneGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier zoneIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomPagesCustomPage, CustomPagesForAZoneGetACustomPageError>> customPagesForAZoneGetACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier zoneIdentifier, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -53,13 +53,13 @@ return await execute(
   },
   onError: CustomPagesForAZoneGetACustomPageError.fromResponse,
 );
- } 
+}
 /// Update a custom page
 ///
 /// Updates the configuration of an existing custom page.
 ///
 /// `PUT /zones/{zone_identifier}/custom_pages/{identifier}`
-Future<ApiResult<CustomPagesCustomPage?, CustomPagesForAZoneUpdateACustomPageError>> customPagesForAZoneUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier zoneIdentifier, required CustomPagesForAZoneUpdateACustomPageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomPagesCustomPage?, CustomPagesForAZoneUpdateACustomPageError>> customPagesForAZoneUpdateACustomPage({required CustomPagesErrorPageType identifier, required CustomPagesIdentifier zoneIdentifier, required CustomPagesForAZoneUpdateACustomPageRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -78,5 +78,5 @@ return await execute(
   },
   onError: CustomPagesForAZoneUpdateACustomPageError.fromResponse,
 );
- } 
- }
+}
+}

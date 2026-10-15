@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite_required_status_checks/checks_app.dart';@immutable final class RuleSuiteRequiredStatusChecksChecks {const RuleSuiteRequiredStatusChecksChecks({this.id, this.context, this.state, this.type, this.app = const Omittable.absent(), });
 
-factory RuleSuiteRequiredStatusChecksChecks.fromJson(Map<String, dynamic> json) { return RuleSuiteRequiredStatusChecksChecks(
+factory RuleSuiteRequiredStatusChecksChecks.fromJson(Map<String, dynamic> json) {return RuleSuiteRequiredStatusChecksChecks(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   context: json['context'] as String?,
   state: json['state'] as String?,
   type: json['type'] as String?,
   app: json.containsKey('app') ? Omittable(json['app'] != null ? ChecksApp.fromJson(json['app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The unique identifier of the status check.
 final int? id;
@@ -26,21 +26,21 @@ final String? type;
 /// The GitHub App associated with the status check.
 final Omittable<ChecksApp?> app;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'context': ?context,
   'state': ?state,
   'type': ?type,
   if (app.isPresent) 'app': app.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'context', 'state', 'type', 'app'}.contains(key)); } 
-RuleSuiteRequiredStatusChecksChecks copyWith({int? Function()? id, String? Function()? context, String? Function()? state, String? Function()? type, Omittable<ChecksApp?>? app, }) { return RuleSuiteRequiredStatusChecksChecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'context', 'state', 'type', 'app'}.contains(key));}
+RuleSuiteRequiredStatusChecksChecks copyWith({int? Function()? id, String? Function()? context, String? Function()? state, String? Function()? type, Omittable<ChecksApp?>? app, }) {return RuleSuiteRequiredStatusChecksChecks(
   id: id != null ? id() : this.id,
   context: context != null ? context() : this.context,
   state: state != null ? state() : this.state,
   type: type != null ? type() : this.type,
   app: app ?? this.app,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuiteRequiredStatusChecksChecks &&
           id == other.id &&
@@ -53,4 +53,4 @@ RuleSuiteRequiredStatusChecksChecks copyWith({int? Function()? id, String? Funct
 
 @override String toString() => 'RuleSuiteRequiredStatusChecksChecks(id: $id, context: $context, state: $state, type: $type, app: $app)';
 
- }
+}

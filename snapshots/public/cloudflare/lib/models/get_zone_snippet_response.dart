@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_message.dart';import 'package:pub_cloudflare/models/snippets_snippet.dart';@immutable final class GetZoneSnippetResponse {const GetZoneSnippetResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory GetZoneSnippetResponse.fromJson(Map<String, dynamic> json) { return GetZoneSnippetResponse(
+factory GetZoneSnippetResponse.fromJson(Map<String, dynamic> json) {return GetZoneSnippetResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SnippetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: SnippetsSnippet.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<Map<String,dynamic>> errors;
 
@@ -19,22 +19,22 @@ final SnippetsSnippet result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-GetZoneSnippetResponse copyWith({List<Map<String,dynamic>>? errors, List<SnippetsMessage>? messages, SnippetsSnippet? result, bool? success, }) { return GetZoneSnippetResponse(
+      json.containsKey('success') && json['success'] is bool;}
+GetZoneSnippetResponse copyWith({List<Map<String,dynamic>>? errors, List<SnippetsMessage>? messages, SnippetsSnippet? result, bool? success, }) {return GetZoneSnippetResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetZoneSnippetResponse &&
           listEquals(errors, other.errors) &&
@@ -46,4 +46,4 @@ GetZoneSnippetResponse copyWith({List<Map<String,dynamic>>? errors, List<Snippet
 
 @override String toString() => 'GetZoneSnippetResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

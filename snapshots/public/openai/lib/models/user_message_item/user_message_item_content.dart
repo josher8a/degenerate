@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';import 'package:pub_openai/models/user_message_input_text.dart';import 'package:pub_openai/models/user_message_quoted_text.dart';sealed class UserMessageItemContentType {const UserMessageItemContentType();
 
-factory UserMessageItemContentType.fromJson(String json) { return switch (json) {
+factory UserMessageItemContentType.fromJson(String json) {return switch (json) {
   'input_text' => inputText,
   'quoted_text' => quotedText,
   _ => UserMessageItemContentType$Unknown(json),
-}; }
+};}
 
 static const UserMessageItemContentType inputText = UserMessageItemContentType$inputText._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is UserMessageItemContentType$Unknown;
 
- }
+}
 @immutable final class UserMessageItemContentType$inputText extends UserMessageItemContentType {const UserMessageItemContentType$inputText._();
 
 @override String get value => 'input_text';
@@ -31,7 +31,7 @@ bool get isUnknown => this is UserMessageItemContentType$Unknown;
 
 @override String toString() => 'UserMessageItemContentType(input_text)';
 
- }
+}
 @immutable final class UserMessageItemContentType$quotedText extends UserMessageItemContentType {const UserMessageItemContentType$quotedText._();
 
 @override String get value => 'quoted_text';
@@ -42,7 +42,7 @@ bool get isUnknown => this is UserMessageItemContentType$Unknown;
 
 @override String toString() => 'UserMessageItemContentType(quoted_text)';
 
- }
+}
 @immutable final class UserMessageItemContentType$Unknown extends UserMessageItemContentType {const UserMessageItemContentType$Unknown(this.value);
 
 @override final String value;
@@ -53,22 +53,22 @@ bool get isUnknown => this is UserMessageItemContentType$Unknown;
 
 @override String toString() => 'UserMessageItemContentType($value)';
 
- }
+}
 /// Content blocks that comprise a user message.
 sealed class UserMessageItemContent {const UserMessageItemContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory UserMessageItemContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory UserMessageItemContent.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'input_text' => UserMessageItemContentInputText.fromJson(json),
   'quoted_text' => UserMessageItemContentQuotedText.fromJson(json),
   _ => UserMessageItemContent$Unknown(json),
-}; }
+};}
 
 /// Build the `input_text` variant.
-factory UserMessageItemContent.inputText({required String text}) { return UserMessageItemContentInputText(UserMessageInputText(type: InputTextContentParamType.fromJson('input_text'), text: text)); }
+factory UserMessageItemContent.inputText({required String text}) {return UserMessageItemContentInputText(UserMessageInputText(type: InputTextContentParamType.fromJson('input_text'), text: text));}
 
 /// Build the `quoted_text` variant.
-factory UserMessageItemContent.quotedText({required String text}) { return UserMessageItemContentQuotedText(UserMessageQuotedText(type: UserMessageQuotedTextType.fromJson('quoted_text'), text: text)); }
+factory UserMessageItemContent.quotedText({required String text}) {return UserMessageItemContentQuotedText(UserMessageQuotedText(type: UserMessageQuotedTextType.fromJson('quoted_text'), text: text));}
 
 /// The discriminator value identifying this variant.
 UserMessageItemContentType get type;
@@ -78,15 +78,15 @@ bool get isUnknown => this is UserMessageItemContent$Unknown;
 
 /// Shared by all variants of this union.
 String get text;
-R when<R>({required R Function(UserMessageItemContentInputText) inputText, required R Function(UserMessageItemContentQuotedText) quotedText, required R Function(UserMessageItemContent$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(UserMessageItemContentInputText) inputText, required R Function(UserMessageItemContentQuotedText) quotedText, required R Function(UserMessageItemContent$Unknown) unknown, }) {return switch (this) {
   final UserMessageItemContentInputText v => inputText(v),
   final UserMessageItemContentQuotedText v => quotedText(v),
   final UserMessageItemContent$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class UserMessageItemContentInputText extends UserMessageItemContent {const UserMessageItemContentInputText(this.userMessageInputText);
 
-factory UserMessageItemContentInputText.fromJson(Map<String, dynamic> json) { return UserMessageItemContentInputText(UserMessageInputText.fromJson(json)); }
+factory UserMessageItemContentInputText.fromJson(Map<String, dynamic> json) {return UserMessageItemContentInputText(UserMessageInputText.fromJson(json));}
 
 final UserMessageInputText userMessageInputText;
 
@@ -94,9 +94,9 @@ final UserMessageInputText userMessageInputText;
 
 @override Map<String, dynamic> toJson() => {...userMessageInputText.toJson(), 'type': type.toJson()};
 
-UserMessageItemContentInputText copyWith({String? text}) { return UserMessageItemContentInputText(userMessageInputText.copyWith(
+UserMessageItemContentInputText copyWith({String? text}) {return UserMessageItemContentInputText(userMessageInputText.copyWith(
   text: text,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is UserMessageItemContentInputText && userMessageInputText == other.userMessageInputText;
 
@@ -106,10 +106,10 @@ UserMessageItemContentInputText copyWith({String? text}) { return UserMessageIte
 
 @override String get text => userMessageInputText.text;
 
- }
+}
 @immutable final class UserMessageItemContentQuotedText extends UserMessageItemContent {const UserMessageItemContentQuotedText(this.userMessageQuotedText);
 
-factory UserMessageItemContentQuotedText.fromJson(Map<String, dynamic> json) { return UserMessageItemContentQuotedText(UserMessageQuotedText.fromJson(json)); }
+factory UserMessageItemContentQuotedText.fromJson(Map<String, dynamic> json) {return UserMessageItemContentQuotedText(UserMessageQuotedText.fromJson(json));}
 
 final UserMessageQuotedText userMessageQuotedText;
 
@@ -117,9 +117,9 @@ final UserMessageQuotedText userMessageQuotedText;
 
 @override Map<String, dynamic> toJson() => {...userMessageQuotedText.toJson(), 'type': type.toJson()};
 
-UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageItemContentQuotedText(userMessageQuotedText.copyWith(
+UserMessageItemContentQuotedText copyWith({String? text}) {return UserMessageItemContentQuotedText(userMessageQuotedText.copyWith(
   text: text,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is UserMessageItemContentQuotedText && userMessageQuotedText == other.userMessageQuotedText;
 
@@ -129,7 +129,7 @@ UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageIt
 
 @override String get text => userMessageQuotedText.text;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class UserMessageItemContent$Unknown extends UserMessageItemContent {UserMessageItemContent$Unknown(this.json);
@@ -151,4 +151,4 @@ late final String _text = json['text'] as String;
 
 @override String get text => _text;
 
- }
+}

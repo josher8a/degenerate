@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_delete_list_items_request/lists_delete_list_items_request_items.dart';@immutable final class ListsDeleteListItemsRequest {const ListsDeleteListItemsRequest({this.items});
 
-factory ListsDeleteListItemsRequest.fromJson(Map<String, dynamic> json) { return ListsDeleteListItemsRequest(
+factory ListsDeleteListItemsRequest.fromJson(Map<String, dynamic> json) {return ListsDeleteListItemsRequest(
   items: (json['items'] as List<dynamic>?)?.map((e) => ListsDeleteListItemsRequestItems.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<ListsDeleteListItemsRequestItems>? items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'items'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'items'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final items$ = items;
 if (items$ != null) {
   if (items$.isEmpty) { errors.add('items: must have >= 1 items'); }
 }
-return errors; } 
-ListsDeleteListItemsRequest copyWith({List<ListsDeleteListItemsRequestItems>? Function()? items}) { return ListsDeleteListItemsRequest(
+return errors;}
+ListsDeleteListItemsRequest copyWith({List<ListsDeleteListItemsRequestItems>? Function()? items}) {return ListsDeleteListItemsRequest(
   items: items != null ? items() : this.items,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListsDeleteListItemsRequest &&
           listEquals(items, other.items);
@@ -31,4 +31,4 @@ ListsDeleteListItemsRequest copyWith({List<ListsDeleteListItemsRequestItems>? Fu
 
 @override String toString() => 'ListsDeleteListItemsRequest(items: $items)';
 
- }
+}

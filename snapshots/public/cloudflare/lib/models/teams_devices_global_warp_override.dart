@@ -10,25 +10,25 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class TeamsDevicesGlobalWarpOverride {const TeamsDevicesGlobalWarpOverride({this.disconnect, this.timestamp, });
 
-factory TeamsDevicesGlobalWarpOverride.fromJson(Map<String, dynamic> json) { return TeamsDevicesGlobalWarpOverride(
+factory TeamsDevicesGlobalWarpOverride.fromJson(Map<String, dynamic> json) {return TeamsDevicesGlobalWarpOverride(
   disconnect: json['disconnect'] != null ? TeamsDevicesDisconnect.fromJson(json['disconnect'] as bool) : null,
   timestamp: json['timestamp'] != null ? TeamsDevicesTimestamp.fromJson(json['timestamp'] as String) : null,
-); }
+);}
 
 /// Disconnects all devices on the account using Global WARP override.
 final TeamsDevicesDisconnect? disconnect;
 
 final TeamsDevicesTimestamp? timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (disconnect != null) 'disconnect': disconnect?.toJson(),
   if (timestamp != null) 'timestamp': timestamp?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disconnect', 'timestamp'}.contains(key)); } 
-TeamsDevicesGlobalWarpOverride copyWith({TeamsDevicesDisconnect? Function()? disconnect, TeamsDevicesTimestamp? Function()? timestamp, }) { return TeamsDevicesGlobalWarpOverride(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'disconnect', 'timestamp'}.contains(key));}
+TeamsDevicesGlobalWarpOverride copyWith({TeamsDevicesDisconnect? Function()? disconnect, TeamsDevicesTimestamp? Function()? timestamp, }) {return TeamsDevicesGlobalWarpOverride(
   disconnect: disconnect != null ? disconnect() : this.disconnect,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesGlobalWarpOverride &&
           disconnect == other.disconnect &&
@@ -38,4 +38,4 @@ TeamsDevicesGlobalWarpOverride copyWith({TeamsDevicesDisconnect? Function()? dis
 
 @override String toString() => 'TeamsDevicesGlobalWarpOverride(disconnect: $disconnect, timestamp: $timestamp)';
 
- }
+}

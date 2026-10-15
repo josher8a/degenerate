@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm();
 
-factory RadarGetCtTimeseriesSignatureAlgorithm.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesSignatureAlgorithm.fromJson(String json) {return switch (json) {
   'DSA_SHA_1' => dsaSha1,
   'DSA_SHA_256' => dsaSha256,
   'ECDSA_SHA_1' => ecdsaSha1,
@@ -20,7 +20,7 @@ factory RadarGetCtTimeseriesSignatureAlgorithm.fromJson(String json) { return sw
   'RSA_SHA_384' => rsaSha384,
   'RSA_SHA_512' => rsaSha512,
   _ => RadarGetCtTimeseriesSignatureAlgorithm$Unknown(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesSignatureAlgorithm dsaSha1 = RadarGetCtTimeseriesSignatureAlgorithm$dsaSha1._();
 
@@ -55,9 +55,9 @@ static const RadarGetCtTimeseriesSignatureAlgorithm rsaSha512 = RadarGetCtTimese
 static const List<RadarGetCtTimeseriesSignatureAlgorithm> values = [dsaSha1, dsaSha256, ecdsaSha1, ecdsaSha256, ecdsaSha384, ecdsaSha512, pssSha256, pssSha384, pssSha512, rsaMd2, rsaMd5, rsaSha1, rsaSha256, rsaSha384, rsaSha512];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DSA_SHA_1' => 'dsaSha1',
   'DSA_SHA_256' => 'dsaSha256',
   'ECDSA_SHA_1' => 'ecdsaSha1',
@@ -74,11 +74,11 @@ String get name { return switch (value) {
   'RSA_SHA_384' => 'rsaSha384',
   'RSA_SHA_512' => 'rsaSha512',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetCtTimeseriesSignatureAlgorithm$Unknown; } 
+bool get isUnknown {return this is RadarGetCtTimeseriesSignatureAlgorithm$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dsaSha1, required W Function() dsaSha256, required W Function() ecdsaSha1, required W Function() ecdsaSha256, required W Function() ecdsaSha384, required W Function() ecdsaSha512, required W Function() pssSha256, required W Function() pssSha384, required W Function() pssSha512, required W Function() rsaMd2, required W Function() rsaMd5, required W Function() rsaSha1, required W Function() rsaSha256, required W Function() rsaSha384, required W Function() rsaSha512, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dsaSha1, required W Function() dsaSha256, required W Function() ecdsaSha1, required W Function() ecdsaSha256, required W Function() ecdsaSha384, required W Function() ecdsaSha512, required W Function() pssSha256, required W Function() pssSha384, required W Function() pssSha512, required W Function() rsaMd2, required W Function() rsaMd5, required W Function() rsaSha1, required W Function() rsaSha256, required W Function() rsaSha384, required W Function() rsaSha512, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetCtTimeseriesSignatureAlgorithm$dsaSha1() => dsaSha1(),
       RadarGetCtTimeseriesSignatureAlgorithm$dsaSha256() => dsaSha256(),
       RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha1() => ecdsaSha1(),
@@ -95,9 +95,9 @@ W when<W>({required W Function() dsaSha1, required W Function() dsaSha256, requi
       RadarGetCtTimeseriesSignatureAlgorithm$rsaSha384() => rsaSha384(),
       RadarGetCtTimeseriesSignatureAlgorithm$rsaSha512() => rsaSha512(),
       RadarGetCtTimeseriesSignatureAlgorithm$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1, W Function()? dsaSha256, W Function()? ecdsaSha1, W Function()? ecdsaSha256, W Function()? ecdsaSha384, W Function()? ecdsaSha512, W Function()? pssSha256, W Function()? pssSha384, W Function()? pssSha512, W Function()? rsaMd2, W Function()? rsaMd5, W Function()? rsaSha1, W Function()? rsaSha256, W Function()? rsaSha384, W Function()? rsaSha512, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1, W Function()? dsaSha256, W Function()? ecdsaSha1, W Function()? ecdsaSha256, W Function()? ecdsaSha384, W Function()? ecdsaSha512, W Function()? pssSha256, W Function()? pssSha384, W Function()? pssSha512, W Function()? rsaMd2, W Function()? rsaMd5, W Function()? rsaSha1, W Function()? rsaSha256, W Function()? rsaSha384, W Function()? rsaSha512, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetCtTimeseriesSignatureAlgorithm$dsaSha1() => dsaSha1 != null ? dsaSha1() : orElse(value),
       RadarGetCtTimeseriesSignatureAlgorithm$dsaSha256() => dsaSha256 != null ? dsaSha256() : orElse(value),
       RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha1() => ecdsaSha1 != null ? ecdsaSha1() : orElse(value),
@@ -114,10 +114,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
       RadarGetCtTimeseriesSignatureAlgorithm$rsaSha384() => rsaSha384 != null ? rsaSha384() : orElse(value),
       RadarGetCtTimeseriesSignatureAlgorithm$rsaSha512() => rsaSha512 != null ? rsaSha512() : orElse(value),
       RadarGetCtTimeseriesSignatureAlgorithm$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetCtTimeseriesSignatureAlgorithm($value)';
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$dsaSha1 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$dsaSha1._();
 
 @override String get value => 'DSA_SHA_1';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'DSA_SHA_1'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$dsaSha256 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$dsaSha256._();
 
 @override String get value => 'DSA_SHA_256';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'DSA_SHA_256'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha1 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha1._();
 
 @override String get value => 'ECDSA_SHA_1';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'ECDSA_SHA_1'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha256 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha256._();
 
 @override String get value => 'ECDSA_SHA_256';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'ECDSA_SHA_256'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha384 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha384._();
 
 @override String get value => 'ECDSA_SHA_384';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'ECDSA_SHA_384'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha512 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$ecdsaSha512._();
 
 @override String get value => 'ECDSA_SHA_512';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'ECDSA_SHA_512'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$pssSha256 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$pssSha256._();
 
 @override String get value => 'PSS_SHA_256';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'PSS_SHA_256'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$pssSha384 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$pssSha384._();
 
 @override String get value => 'PSS_SHA_384';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'PSS_SHA_384'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$pssSha512 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$pssSha512._();
 
 @override String get value => 'PSS_SHA_512';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'PSS_SHA_512'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$rsaMd2 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$rsaMd2._();
 
 @override String get value => 'RSA_MD2';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'RSA_MD2'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$rsaMd5 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$rsaMd5._();
 
 @override String get value => 'RSA_MD5';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'RSA_MD5'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$rsaSha1 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$rsaSha1._();
 
 @override String get value => 'RSA_SHA_1';
@@ -225,7 +225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'RSA_SHA_1'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$rsaSha256 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$rsaSha256._();
 
 @override String get value => 'RSA_SHA_256';
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'RSA_SHA_256'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$rsaSha384 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$rsaSha384._();
 
 @override String get value => 'RSA_SHA_384';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'RSA_SHA_384'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$rsaSha512 extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$rsaSha512._();
 
 @override String get value => 'RSA_SHA_512';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => 'RSA_SHA_512'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesSignatureAlgorithm$Unknown extends RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm$Unknown(this.value);
 
 @override final String value;
@@ -262,4 +262,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

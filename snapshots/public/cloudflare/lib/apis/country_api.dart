@@ -12,7 +12,7 @@ final class CountryApi with ApiExecutor {const CountryApi(this.apiConfig);
 /// Retrieves countries information for all countries
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/countries`
-Future<ApiResult<List<GetCountryReadResponse>, GetCountryReadError>> getCountryRead({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetCountryReadResponse>, GetCountryReadError>> getCountryRead({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,5 +29,5 @@ return await execute(
   },
   onError: GetCountryReadError.fromResponse,
 );
- } 
- }
+}
+}

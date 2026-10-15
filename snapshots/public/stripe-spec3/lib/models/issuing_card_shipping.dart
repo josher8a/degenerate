@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/issuing_card_shipping_type.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/service.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_address_validation.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_customs.dart';/// The delivery company that shipped a card.
 sealed class Carrier {const Carrier();
 
-factory Carrier.fromJson(String json) { return switch (json) {
+factory Carrier.fromJson(String json) {return switch (json) {
   'dhl' => dhl,
   'fedex' => fedex,
   'royal_mail' => royalMail,
   'usps' => usps,
   _ => Carrier$Unknown(json),
-}; }
+};}
 
 static const Carrier dhl = Carrier$dhl._();
 
@@ -23,36 +23,36 @@ static const Carrier usps = Carrier$usps._();
 static const List<Carrier> values = [dhl, fedex, royalMail, usps];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'dhl' => 'dhl',
   'fedex' => 'fedex',
   'royal_mail' => 'royalMail',
   'usps' => 'usps',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Carrier$Unknown; } 
+bool get isUnknown {return this is Carrier$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dhl, required W Function() fedex, required W Function() royalMail, required W Function() usps, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dhl, required W Function() fedex, required W Function() royalMail, required W Function() usps, required W Function(String value) $unknown, }) {return switch (this) {
       Carrier$dhl() => dhl(),
       Carrier$fedex() => fedex(),
       Carrier$royalMail() => royalMail(),
       Carrier$usps() => usps(),
       Carrier$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dhl, W Function()? fedex, W Function()? royalMail, W Function()? usps, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dhl, W Function()? fedex, W Function()? royalMail, W Function()? usps, W Function(String value)? $unknown, }) {return switch (this) {
       Carrier$dhl() => dhl != null ? dhl() : orElse(value),
       Carrier$fedex() => fedex != null ? fedex() : orElse(value),
       Carrier$royalMail() => royalMail != null ? royalMail() : orElse(value),
       Carrier$usps() => usps != null ? usps() : orElse(value),
       Carrier$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Carrier($value)';
 
- }
+}
 @immutable final class Carrier$dhl extends Carrier {const Carrier$dhl._();
 
 @override String get value => 'dhl';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dhl, W F
 
 @override int get hashCode => 'dhl'.hashCode;
 
- }
+}
 @immutable final class Carrier$fedex extends Carrier {const Carrier$fedex._();
 
 @override String get value => 'fedex';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dhl, W F
 
 @override int get hashCode => 'fedex'.hashCode;
 
- }
+}
 @immutable final class Carrier$royalMail extends Carrier {const Carrier$royalMail._();
 
 @override String get value => 'royal_mail';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dhl, W F
 
 @override int get hashCode => 'royal_mail'.hashCode;
 
- }
+}
 @immutable final class Carrier$usps extends Carrier {const Carrier$usps._();
 
 @override String get value => 'usps';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dhl, W F
 
 @override int get hashCode => 'usps'.hashCode;
 
- }
+}
 @immutable final class Carrier$Unknown extends Carrier {const Carrier$Unknown(this.value);
 
 @override final String value;
@@ -98,11 +98,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dhl, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The delivery status of the card.
 sealed class IssuingCardShippingStatus {const IssuingCardShippingStatus();
 
-factory IssuingCardShippingStatus.fromJson(String json) { return switch (json) {
+factory IssuingCardShippingStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'delivered' => delivered,
   'failure' => failure,
@@ -111,7 +111,7 @@ factory IssuingCardShippingStatus.fromJson(String json) { return switch (json) {
   'shipped' => shipped,
   'submitted' => submitted,
   _ => IssuingCardShippingStatus$Unknown(json),
-}; }
+};}
 
 static const IssuingCardShippingStatus canceled = IssuingCardShippingStatus$canceled._();
 
@@ -130,9 +130,9 @@ static const IssuingCardShippingStatus submitted = IssuingCardShippingStatus$sub
 static const List<IssuingCardShippingStatus> values = [canceled, delivered, failure, pending, returned, shipped, submitted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'delivered' => 'delivered',
   'failure' => 'failure',
@@ -141,11 +141,11 @@ String get name { return switch (value) {
   'shipped' => 'shipped',
   'submitted' => 'submitted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardShippingStatus$Unknown; } 
+bool get isUnknown {return this is IssuingCardShippingStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() delivered, required W Function() failure, required W Function() pending, required W Function() returned, required W Function() shipped, required W Function() submitted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() delivered, required W Function() failure, required W Function() pending, required W Function() returned, required W Function() shipped, required W Function() submitted, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardShippingStatus$canceled() => canceled(),
       IssuingCardShippingStatus$delivered() => delivered(),
       IssuingCardShippingStatus$failure() => failure(),
@@ -154,9 +154,9 @@ W when<W>({required W Function() canceled, required W Function() delivered, requ
       IssuingCardShippingStatus$shipped() => shipped(),
       IssuingCardShippingStatus$submitted() => submitted(),
       IssuingCardShippingStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? delivered, W Function()? failure, W Function()? pending, W Function()? returned, W Function()? shipped, W Function()? submitted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? delivered, W Function()? failure, W Function()? pending, W Function()? returned, W Function()? shipped, W Function()? submitted, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardShippingStatus$canceled() => canceled != null ? canceled() : orElse(value),
       IssuingCardShippingStatus$delivered() => delivered != null ? delivered() : orElse(value),
       IssuingCardShippingStatus$failure() => failure != null ? failure() : orElse(value),
@@ -165,10 +165,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
       IssuingCardShippingStatus$shipped() => shipped != null ? shipped() : orElse(value),
       IssuingCardShippingStatus$submitted() => submitted != null ? submitted() : orElse(value),
       IssuingCardShippingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardShippingStatus($value)';
 
- }
+}
 @immutable final class IssuingCardShippingStatus$canceled extends IssuingCardShippingStatus {const IssuingCardShippingStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingStatus$delivered extends IssuingCardShippingStatus {const IssuingCardShippingStatus$delivered._();
 
 @override String get value => 'delivered';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'delivered'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingStatus$failure extends IssuingCardShippingStatus {const IssuingCardShippingStatus$failure._();
 
 @override String get value => 'failure';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'failure'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingStatus$pending extends IssuingCardShippingStatus {const IssuingCardShippingStatus$pending._();
 
 @override String get value => 'pending';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingStatus$returned extends IssuingCardShippingStatus {const IssuingCardShippingStatus$returned._();
 
 @override String get value => 'returned';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'returned'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingStatus$shipped extends IssuingCardShippingStatus {const IssuingCardShippingStatus$shipped._();
 
 @override String get value => 'shipped';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'shipped'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingStatus$submitted extends IssuingCardShippingStatus {const IssuingCardShippingStatus$submitted._();
 
 @override String get value => 'submitted';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'submitted'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingStatus$Unknown extends IssuingCardShippingStatus {const IssuingCardShippingStatus$Unknown(this.value);
 
 @override final String value;
@@ -241,11 +241,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class IssuingCardShipping {const IssuingCardShipping({required this.address, required this.name, required this.service, required this.type, this.addressValidation = const Omittable.absent(), this.carrier = const Omittable.absent(), this.customs = const Omittable.absent(), this.eta = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.requireSignature = const Omittable.absent(), this.status = const Omittable.absent(), this.trackingNumber = const Omittable.absent(), this.trackingUrl = const Omittable.absent(), });
 
-factory IssuingCardShipping.fromJson(Map<String, dynamic> json) { return IssuingCardShipping(
+factory IssuingCardShipping.fromJson(Map<String, dynamic> json) {return IssuingCardShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
   addressValidation: json.containsKey('address_validation') ? Omittable(json['address_validation'] != null ? IssuingCardShippingAddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   carrier: json.containsKey('carrier') ? Omittable(json['carrier'] != null ? Carrier.fromJson(json['carrier'] as String) : null) : const Omittable.absent(),
@@ -259,7 +259,7 @@ factory IssuingCardShipping.fromJson(Map<String, dynamic> json) { return Issuing
   trackingNumber: json.containsKey('tracking_number') ? Omittable(json['tracking_number'] as String?) : const Omittable.absent(),
   trackingUrl: json.containsKey('tracking_url') ? Omittable(json['tracking_url'] as String?) : const Omittable.absent(),
   type: IssuingCardShippingType.fromJson(json['type'] as String),
-); }
+);}
 
 final Address address;
 
@@ -299,7 +299,7 @@ final Omittable<String?> trackingUrl;
 /// Packaging options.
 final IssuingCardShippingType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (addressValidation.isPresent) 'address_validation': addressValidation.value?.toJson(),
   if (carrier.isPresent) 'carrier': carrier.value?.toJson(),
@@ -313,13 +313,13 @@ Map<String, dynamic> toJson() { return {
   if (trackingNumber.isPresent) 'tracking_number': trackingNumber.value,
   if (trackingUrl.isPresent) 'tracking_url': trackingUrl.value,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('service') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 final phoneNumber$ = phoneNumber.value;
 if (phoneNumber$ != null) {
@@ -333,8 +333,8 @@ final trackingUrl$ = trackingUrl.value;
 if (trackingUrl$ != null) {
   if (trackingUrl$.runes.length > 5000) { errors.add('trackingUrl: length must be <= 5000'); }
 }
-return errors; } 
-IssuingCardShipping copyWith({Address? address, Omittable<IssuingCardShippingAddressValidation?>? addressValidation, Omittable<Carrier?>? carrier, Omittable<IssuingCardShippingCustoms?>? customs, Omittable<int?>? eta, String? name, Omittable<String?>? phoneNumber, Omittable<bool?>? requireSignature, Service? service, Omittable<IssuingCardShippingStatus?>? status, Omittable<String?>? trackingNumber, Omittable<String?>? trackingUrl, IssuingCardShippingType? type, }) { return IssuingCardShipping(
+return errors;}
+IssuingCardShipping copyWith({Address? address, Omittable<IssuingCardShippingAddressValidation?>? addressValidation, Omittable<Carrier?>? carrier, Omittable<IssuingCardShippingCustoms?>? customs, Omittable<int?>? eta, String? name, Omittable<String?>? phoneNumber, Omittable<bool?>? requireSignature, Service? service, Omittable<IssuingCardShippingStatus?>? status, Omittable<String?>? trackingNumber, Omittable<String?>? trackingUrl, IssuingCardShippingType? type, }) {return IssuingCardShipping(
   address: address ?? this.address,
   addressValidation: addressValidation ?? this.addressValidation,
   carrier: carrier ?? this.carrier,
@@ -348,7 +348,7 @@ IssuingCardShipping copyWith({Address? address, Omittable<IssuingCardShippingAdd
   trackingNumber: trackingNumber ?? this.trackingNumber,
   trackingUrl: trackingUrl ?? this.trackingUrl,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardShipping &&
           address == other.address &&
@@ -369,4 +369,4 @@ IssuingCardShipping copyWith({Address? address, Omittable<IssuingCardShippingAdd
 
 @override String toString() => 'IssuingCardShipping(\n  address: $address,\n  addressValidation: $addressValidation,\n  carrier: $carrier,\n  customs: $customs,\n  eta: $eta,\n  name: $name,\n  phoneNumber: $phoneNumber,\n  requireSignature: $requireSignature,\n  service: $service,\n  status: $status,\n  trackingNumber: $trackingNumber,\n  trackingUrl: $trackingUrl,\n  type: $type,\n)';
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WebhookCodeScanningAlertFixedAction {const WebhookCodeScanningAlertFixedAction();
 
-factory WebhookCodeScanningAlertFixedAction.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertFixedAction.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   _ => WebhookCodeScanningAlertFixedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertFixedAction fixed = WebhookCodeScanningAlertFixedAction$fixed._();
 
 static const List<WebhookCodeScanningAlertFixedAction> values = [fixed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fixed' => 'fixed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookCodeScanningAlertFixedAction$Unknown; } 
+bool get isUnknown {return this is WebhookCodeScanningAlertFixedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fixed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fixed, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookCodeScanningAlertFixedAction$fixed() => fixed(),
       WebhookCodeScanningAlertFixedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookCodeScanningAlertFixedAction$fixed() => fixed != null ? fixed() : orElse(value),
       WebhookCodeScanningAlertFixedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookCodeScanningAlertFixedAction($value)';
 
- }
+}
 @immutable final class WebhookCodeScanningAlertFixedAction$fixed extends WebhookCodeScanningAlertFixedAction {const WebhookCodeScanningAlertFixedAction$fixed._();
 
 @override String get value => 'fixed';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => 'fixed'.hashCode;
 
- }
+}
 @immutable final class WebhookCodeScanningAlertFixedAction$Unknown extends WebhookCodeScanningAlertFixedAction {const WebhookCodeScanningAlertFixedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

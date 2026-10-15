@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class NcmecNotification {const NcmecNotification();
 
-factory NcmecNotification.fromJson(String json) { return switch (json) {
+factory NcmecNotification.fromJson(String json) {return switch (json) {
   'send' => send,
   'send-anon' => sendAnon,
   _ => NcmecNotification$Unknown(json),
-}; }
+};}
 
 static const NcmecNotification send = NcmecNotification$send._();
 
@@ -18,30 +18,30 @@ static const NcmecNotification sendAnon = NcmecNotification$sendAnon._();
 static const List<NcmecNotification> values = [send, sendAnon];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'send' => 'send',
   'send-anon' => 'sendAnon',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NcmecNotification$Unknown; } 
+bool get isUnknown {return this is NcmecNotification$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() send, required W Function() sendAnon, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() send, required W Function() sendAnon, required W Function(String value) $unknown, }) {return switch (this) {
       NcmecNotification$send() => send(),
       NcmecNotification$sendAnon() => sendAnon(),
       NcmecNotification$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W Function()? sendAnon, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W Function()? sendAnon, W Function(String value)? $unknown, }) {return switch (this) {
       NcmecNotification$send() => send != null ? send() : orElse(value),
       NcmecNotification$sendAnon() => sendAnon != null ? sendAnon() : orElse(value),
       NcmecNotification$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'NcmecNotification($value)';
 
- }
+}
 @immutable final class NcmecNotification$send extends NcmecNotification {const NcmecNotification$send._();
 
 @override String get value => 'send';
@@ -50,7 +50,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => 'send'.hashCode;
 
- }
+}
 @immutable final class NcmecNotification$sendAnon extends NcmecNotification {const NcmecNotification$sendAnon._();
 
 @override String get value => 'send-anon';
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => 'send-anon'.hashCode;
 
- }
+}
 @immutable final class NcmecNotification$Unknown extends NcmecNotification {const NcmecNotification$Unknown(this.value);
 
 @override final String value;
@@ -69,10 +69,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AbuseReportsCsamReport {const AbuseReportsCsamReport({required this.act, required this.email, required this.email2, required this.name, required this.urls, required this.hostNotification, required this.justification, required this.ncmecNotification, required this.ownerNotification, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, this.country, });
 
-factory AbuseReportsCsamReport.fromJson(Map<String, dynamic> json) { return AbuseReportsCsamReport(
+factory AbuseReportsCsamReport.fromJson(Map<String, dynamic> json) {return AbuseReportsCsamReport(
   act: json['act'],
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -89,7 +89,7 @@ factory AbuseReportsCsamReport.fromJson(Map<String, dynamic> json) { return Abus
   justification: json['justification'] as String,
   ncmecNotification: NcmecNotification.fromJson(json['ncmec_notification'] as String),
   ownerNotification: AbuseReportsCsamReportOwnerNotification.fromJson(json['owner_notification'] as String),
-); }
+);}
 
 final dynamic act;
 
@@ -143,7 +143,7 @@ final NcmecNotification ncmecNotification;
 /// 
 final AbuseReportsCsamReportOwnerNotification ownerNotification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act,
   'comments': ?comments,
   'company': ?company,
@@ -160,8 +160,8 @@ Map<String, dynamic> toJson() { return {
   'justification': justification,
   'ncmec_notification': ncmecNotification.toJson(),
   'owner_notification': ownerNotification.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
@@ -169,9 +169,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('host_notification') &&
       json.containsKey('justification') && json['justification'] is String &&
       json.containsKey('ncmec_notification') &&
-      json.containsKey('owner_notification'); } 
+      json.containsKey('owner_notification');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.isEmpty) { errors.add('comments: length must be >= 1'); }
@@ -211,8 +211,8 @@ if (country$ != null) {
 }
 if (justification.isEmpty) { errors.add('justification: length must be >= 1'); }
 if (justification.runes.length > 5000) { errors.add('justification: length must be <= 5000'); }
-return errors; } 
-AbuseReportsCsamReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, NcmecNotification? ncmecNotification, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) { return AbuseReportsCsamReport(
+return errors;}
+AbuseReportsCsamReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, NcmecNotification? ncmecNotification, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) {return AbuseReportsCsamReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -229,7 +229,7 @@ AbuseReportsCsamReport copyWith({dynamic Function()? act, String? Function()? co
   justification: justification ?? this.justification,
   ncmecNotification: ncmecNotification ?? this.ncmecNotification,
   ownerNotification: ownerNotification ?? this.ownerNotification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsCsamReport &&
           act == other.act &&
@@ -253,4 +253,4 @@ AbuseReportsCsamReport copyWith({dynamic Function()? act, String? Function()? co
 
 @override String toString() => 'AbuseReportsCsamReport(\n  act: $act,\n  comments: $comments,\n  company: $company,\n  email: $email,\n  email2: $email2,\n  name: $name,\n  reportedCountry: $reportedCountry,\n  reportedUserAgent: $reportedUserAgent,\n  tele: $tele,\n  title: $title,\n  urls: $urls,\n  country: $country,\n  hostNotification: $hostNotification,\n  justification: $justification,\n  ncmecNotification: $ncmecNotification,\n  ownerNotification: $ownerNotification,\n)';
 
- }
+}

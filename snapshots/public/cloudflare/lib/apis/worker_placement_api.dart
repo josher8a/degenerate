@@ -14,7 +14,7 @@ final class WorkerPlacementApi with ApiExecutor {const WorkerPlacementApi(this.a
 /// Returns a list of available placement regions organized by cloud provider. These regions can be used to configure Smart Placement for Workers.
 ///
 /// `GET /accounts/{account_id}/workers/placement/regions`
-Future<ApiResult<WorkersPlacementRegionsResponse, CreateWorkerVersionError>> workerPlacementListRegions({required WorkersIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersPlacementRegionsResponse, CreateWorkerVersionError>> workerPlacementListRegions({required WorkersIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,5 +31,5 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
- }
+}
+}

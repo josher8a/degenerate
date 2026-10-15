@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_messages2.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl_validation_method_response_collection/tls_certificates_and_hostnames_ssl_validation_method_response_collection_result.dart';@immutable final class TlsCertificatesAndHostnamesSslValidationMethodResponseCollection {const TlsCertificatesAndHostnamesSslValidationMethodResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
-factory TlsCertificatesAndHostnamesSslValidationMethodResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslValidationMethodResponseCollection(
+factory TlsCertificatesAndHostnamesSslValidationMethodResponseCollection.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesSslValidationMethodResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<TlsCertificatesAndHostnamesMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-TlsCertificatesAndHostnamesSslValidationMethodResponseCollection copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult? Function()? result, }) { return TlsCertificatesAndHostnamesSslValidationMethodResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+TlsCertificatesAndHostnamesSslValidationMethodResponseCollection copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult? Function()? result, }) {return TlsCertificatesAndHostnamesSslValidationMethodResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslValidationMethodResponseCollection &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ TlsCertificatesAndHostnamesSslValidationMethodResponseCollection copyWith({List<
 
 @override String toString() => 'TlsCertificatesAndHostnamesSslValidationMethodResponseCollection(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

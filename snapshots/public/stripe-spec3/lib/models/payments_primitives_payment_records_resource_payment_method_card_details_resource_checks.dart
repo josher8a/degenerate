@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If you provide a value for `address.line1`, the check result is one of `pass`, `fail`, `unavailable`, or `unchecked`.
 sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check();
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$Unknown(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check fail = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$fail._();
 
@@ -23,36 +23,36 @@ static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsRes
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check> values = [fail, pass, unavailable, unchecked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fail' => 'fail',
   'pass' => 'pass',
   'unavailable' => 'unavailable',
   'unchecked' => 'unchecked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$Unknown; } 
+bool get isUnknown {return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fail, required W Function() pass, required W Function() unavailable, required W Function() unchecked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fail, required W Function() pass, required W Function() unavailable, required W Function() unchecked, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$fail() => fail(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$pass() => pass(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$unavailable() => unavailable(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$unchecked() => unchecked(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W Function()? pass, W Function()? unavailable, W Function()? unchecked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W Function()? pass, W Function()? unavailable, W Function()? unchecked, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$fail() => fail != null ? fail() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$pass() => pass != null ? pass() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$unavailable() => unavailable != null ? unavailable() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$unchecked() => unchecked != null ? unchecked() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check($value)';
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$fail extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$fail._();
 
 @override String get value => 'fail';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'fail'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$pass extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$pass._();
 
 @override String get value => 'pass';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'pass'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$unavailable extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$unavailable._();
 
 @override String get value => 'unavailable';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'unavailable'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$unchecked extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$unchecked._();
 
 @override String get value => 'unchecked';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'unchecked'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check$Unknown(this.value);
 
 @override final String value;
@@ -98,17 +98,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// If you provide a address postal code, the check result is one of `pass`, `fail`, `unavailable`, or `unchecked`.
 sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck();
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$Unknown(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck fail = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$fail._();
 
@@ -121,36 +121,36 @@ static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsRes
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck> values = [fail, pass, unavailable, unchecked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fail' => 'fail',
   'pass' => 'pass',
   'unavailable' => 'unavailable',
   'unchecked' => 'unchecked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$Unknown; } 
+bool get isUnknown {return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fail, required W Function() pass, required W Function() unavailable, required W Function() unchecked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fail, required W Function() pass, required W Function() unavailable, required W Function() unchecked, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$fail() => fail(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$pass() => pass(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$unavailable() => unavailable(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$unchecked() => unchecked(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W Function()? pass, W Function()? unavailable, W Function()? unchecked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W Function()? pass, W Function()? unavailable, W Function()? unchecked, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$fail() => fail != null ? fail() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$pass() => pass != null ? pass() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$unavailable() => unavailable != null ? unavailable() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$unchecked() => unchecked != null ? unchecked() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck($value)';
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$fail extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$fail._();
 
 @override String get value => 'fail';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'fail'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$pass extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$pass._();
 
 @override String get value => 'pass';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'pass'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$unavailable extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$unavailable._();
 
 @override String get value => 'unavailable';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'unavailable'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$unchecked extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$unchecked._();
 
 @override String get value => 'unchecked';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'unchecked'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck$Unknown(this.value);
 
 @override final String value;
@@ -196,17 +196,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// If you provide a CVC, the check results is one of `pass`, `fail`, `unavailable`, or `unchecked`.
 sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck();
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck.fromJson(String json) {return switch (json) {
   'fail' => fail,
   'pass' => pass,
   'unavailable' => unavailable,
   'unchecked' => unchecked,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$Unknown(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck fail = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$fail._();
 
@@ -219,36 +219,36 @@ static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsRes
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck> values = [fail, pass, unavailable, unchecked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fail' => 'fail',
   'pass' => 'pass',
   'unavailable' => 'unavailable',
   'unchecked' => 'unchecked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$Unknown; } 
+bool get isUnknown {return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fail, required W Function() pass, required W Function() unavailable, required W Function() unchecked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fail, required W Function() pass, required W Function() unavailable, required W Function() unchecked, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$fail() => fail(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$pass() => pass(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$unavailable() => unavailable(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$unchecked() => unchecked(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W Function()? pass, W Function()? unavailable, W Function()? unchecked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W Function()? pass, W Function()? unavailable, W Function()? unchecked, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$fail() => fail != null ? fail() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$pass() => pass != null ? pass() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$unavailable() => unavailable != null ? unavailable() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$unchecked() => unchecked != null ? unchecked() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck($value)';
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$fail extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$fail._();
 
 @override String get value => 'fail';
@@ -257,7 +257,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'fail'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$pass extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$pass._();
 
 @override String get value => 'pass';
@@ -266,7 +266,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'pass'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$unavailable extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$unavailable._();
 
 @override String get value => 'unavailable';
@@ -275,7 +275,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'unavailable'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$unchecked extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$unchecked._();
 
 @override String get value => 'unchecked';
@@ -284,7 +284,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => 'unchecked'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck$Unknown(this.value);
 
 @override final String value;
@@ -294,15 +294,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks({this.addressLine1Check = const Omittable.absent(), this.addressPostalCodeCheck = const Omittable.absent(), this.cvcCheck = const Omittable.absent(), });
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks.fromJson(Map<String, dynamic> json) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
   addressLine1Check: json.containsKey('address_line1_check') ? Omittable(json['address_line1_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check.fromJson(json['address_line1_check'] as String) : null) : const Omittable.absent(),
   addressPostalCodeCheck: json.containsKey('address_postal_code_check') ? Omittable(json['address_postal_code_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String) : null) : const Omittable.absent(),
   cvcCheck: json.containsKey('cvc_check') ? Omittable(json['cvc_check'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck.fromJson(json['cvc_check'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// If you provide a value for `address.line1`, the check result is one of `pass`, `fail`, `unavailable`, or `unchecked`.
 final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check?> addressLine1Check;
@@ -313,17 +313,17 @@ final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails
 /// If you provide a CVC, the check results is one of `pass`, `fail`, `unavailable`, or `unchecked`.
 final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck?> cvcCheck;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addressLine1Check.isPresent) 'address_line1_check': addressLine1Check.value?.toJson(),
   if (addressPostalCodeCheck.isPresent) 'address_postal_code_check': addressPostalCodeCheck.value?.toJson(),
   if (cvcCheck.isPresent) 'cvc_check': cvcCheck.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'cvc_check'}.contains(key)); } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks copyWith({Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check?>? addressLine1Check, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck?>? addressPostalCodeCheck, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck?>? cvcCheck, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'cvc_check'}.contains(key));}
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks copyWith({Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check?>? addressLine1Check, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck?>? addressPostalCodeCheck, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck?>? cvcCheck, }) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
   addressLine1Check: addressLine1Check ?? this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck ?? this.addressPostalCodeCheck,
   cvcCheck: cvcCheck ?? this.cvcCheck,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks &&
           addressLine1Check == other.addressLine1Check &&
@@ -334,4 +334,4 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks c
 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck)';
 
- }
+}

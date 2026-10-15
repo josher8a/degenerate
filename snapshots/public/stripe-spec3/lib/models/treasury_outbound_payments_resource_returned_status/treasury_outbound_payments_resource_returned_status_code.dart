@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for the return.
 sealed class TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode();
 
-factory TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(String json) { return switch (json) {
+factory TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(String json) {return switch (json) {
   'account_closed' => accountClosed,
   'account_frozen' => accountFrozen,
   'bank_account_restricted' => bankAccountRestricted,
@@ -16,7 +16,7 @@ factory TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(String json)
   'no_account' => noAccount,
   'other' => $other,
   _ => TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown(json),
-}; }
+};}
 
 static const TreasuryOutboundPaymentsResourceReturnedStatusCode accountClosed = TreasuryOutboundPaymentsResourceReturnedStatusCode$accountClosed._();
 
@@ -41,9 +41,9 @@ static const TreasuryOutboundPaymentsResourceReturnedStatusCode $other = Treasur
 static const List<TreasuryOutboundPaymentsResourceReturnedStatusCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, declined, incorrectAccountHolderName, invalidAccountNumber, invalidCurrency, noAccount, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'account_closed' => 'accountClosed',
   'account_frozen' => 'accountFrozen',
   'bank_account_restricted' => 'bankAccountRestricted',
@@ -55,11 +55,11 @@ String get name { return switch (value) {
   'no_account' => 'noAccount',
   'other' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown; } 
+bool get isUnknown {return this is TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accountClosed, required W Function() accountFrozen, required W Function() bankAccountRestricted, required W Function() bankOwnershipChanged, required W Function() declined, required W Function() incorrectAccountHolderName, required W Function() invalidAccountNumber, required W Function() invalidCurrency, required W Function() noAccount, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accountClosed, required W Function() accountFrozen, required W Function() bankAccountRestricted, required W Function() bankOwnershipChanged, required W Function() declined, required W Function() incorrectAccountHolderName, required W Function() invalidAccountNumber, required W Function() invalidCurrency, required W Function() noAccount, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryOutboundPaymentsResourceReturnedStatusCode$accountClosed() => accountClosed(),
       TreasuryOutboundPaymentsResourceReturnedStatusCode$accountFrozen() => accountFrozen(),
       TreasuryOutboundPaymentsResourceReturnedStatusCode$bankAccountRestricted() => bankAccountRestricted(),
@@ -71,9 +71,9 @@ W when<W>({required W Function() accountClosed, required W Function() accountFro
       TreasuryOutboundPaymentsResourceReturnedStatusCode$noAccount() => noAccount(),
       TreasuryOutboundPaymentsResourceReturnedStatusCode$$other() => $other(),
       TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountClosed, W Function()? accountFrozen, W Function()? bankAccountRestricted, W Function()? bankOwnershipChanged, W Function()? declined, W Function()? incorrectAccountHolderName, W Function()? invalidAccountNumber, W Function()? invalidCurrency, W Function()? noAccount, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountClosed, W Function()? accountFrozen, W Function()? bankAccountRestricted, W Function()? bankOwnershipChanged, W Function()? declined, W Function()? incorrectAccountHolderName, W Function()? invalidAccountNumber, W Function()? invalidCurrency, W Function()? noAccount, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryOutboundPaymentsResourceReturnedStatusCode$accountClosed() => accountClosed != null ? accountClosed() : orElse(value),
       TreasuryOutboundPaymentsResourceReturnedStatusCode$accountFrozen() => accountFrozen != null ? accountFrozen() : orElse(value),
       TreasuryOutboundPaymentsResourceReturnedStatusCode$bankAccountRestricted() => bankAccountRestricted != null ? bankAccountRestricted() : orElse(value),
@@ -85,10 +85,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
       TreasuryOutboundPaymentsResourceReturnedStatusCode$noAccount() => noAccount != null ? noAccount() : orElse(value),
       TreasuryOutboundPaymentsResourceReturnedStatusCode$$other() => $other != null ? $other() : orElse(value),
       TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryOutboundPaymentsResourceReturnedStatusCode($value)';
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$accountClosed extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$accountClosed._();
 
 @override String get value => 'account_closed';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'account_closed'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$accountFrozen extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$accountFrozen._();
 
 @override String get value => 'account_frozen';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'account_frozen'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$bankAccountRestricted extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$bankAccountRestricted._();
 
 @override String get value => 'bank_account_restricted';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'bank_account_restricted'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$bankOwnershipChanged extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$bankOwnershipChanged._();
 
 @override String get value => 'bank_ownership_changed';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'bank_ownership_changed'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$declined extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$declined._();
 
 @override String get value => 'declined';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'declined'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$incorrectAccountHolderName extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$incorrectAccountHolderName._();
 
 @override String get value => 'incorrect_account_holder_name';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'incorrect_account_holder_name'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$invalidAccountNumber extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$invalidAccountNumber._();
 
 @override String get value => 'invalid_account_number';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'invalid_account_number'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$invalidCurrency extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$invalidCurrency._();
 
 @override String get value => 'invalid_currency';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'invalid_currency'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$noAccount extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$noAccount._();
 
 @override String get value => 'no_account';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'no_account'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$$other extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$$other._();
 
 @override String get value => 'other';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown extends TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown(this.value);
 
 @override final String value;
@@ -188,4 +188,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => value.hashCode;
 
- }
+}

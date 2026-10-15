@@ -14,7 +14,7 @@ final class NotificationSilencesApi with ApiExecutor {const NotificationSilences
 /// Gets a list of silences for an account.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/silences`
-Future<ApiResult<List<AaaSilence>?, NotificationSilencesListSilencesError>> notificationSilencesListSilences({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AaaSilence>?, NotificationSilencesListSilencesError>> notificationSilencesListSilences({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: NotificationSilencesListSilencesError.fromResponse,
 );
- } 
+}
 /// Create Silences
 ///
 /// Creates a new silence for an account.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/silences`
-Future<ApiResult<ResponseCommon2, NotificationSilencesCreateSilencesError>> notificationSilencesCreateSilences({required AaaAccountId accountId, required List<AaaSilenceCreateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon2, NotificationSilencesCreateSilencesError>> notificationSilencesCreateSilences({required AaaAccountId accountId, required List<AaaSilenceCreateRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,13 +55,13 @@ return await execute(
   },
   onError: NotificationSilencesCreateSilencesError.fromResponse,
 );
- } 
+}
 /// Update Silences
 ///
 /// Updates existing silences for an account.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/silences`
-Future<ApiResult<List<AaaSilence>?, NotificationSilencesUpdateSilencesError>> notificationSilencesUpdateSilences({required AaaAccountId accountId, required List<AaaSilenceUpdateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AaaSilence>?, NotificationSilencesUpdateSilencesError>> notificationSilencesUpdateSilences({required AaaAccountId accountId, required List<AaaSilenceUpdateRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -80,13 +80,13 @@ return await execute(
   },
   onError: NotificationSilencesUpdateSilencesError.fromResponse,
 );
- } 
+}
 /// Get Silence
 ///
 /// Gets a specific silence for an account.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/silences/{silence_id}`
-Future<ApiResult<AaaSilence?, NotificationSilencesGetSilenceError>> notificationSilencesGetSilence({required AaaAccountId accountId, required AaaSilenceId silenceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaSilence?, NotificationSilencesGetSilenceError>> notificationSilencesGetSilence({required AaaAccountId accountId, required AaaSilenceId silenceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -103,13 +103,13 @@ return await execute(
   },
   onError: NotificationSilencesGetSilenceError.fromResponse,
 );
- } 
+}
 /// Delete Silence
 ///
 /// Deletes an existing silence for an account.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/silences/{silence_id}`
-Future<ApiResult<ResponseCommon2, NotificationSilencesDeleteSilencesError>> notificationSilencesDeleteSilences({required AaaAccountId accountId, required AaaSilenceId silenceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon2, NotificationSilencesDeleteSilencesError>> notificationSilencesDeleteSilences({required AaaAccountId accountId, required AaaSilenceId silenceId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,5 +125,5 @@ return await execute(
   },
   onError: NotificationSilencesDeleteSilencesError.fromResponse,
 );
- } 
- }
+}
+}

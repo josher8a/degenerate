@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of totals for threats.
 @immutable final class Threats {const Threats({this.all, this.country, this.type, });
 
-factory Threats.fromJson(Map<String, dynamic> json) { return Threats(
+factory Threats.fromJson(Map<String, dynamic> json) {return Threats(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
   country: json['country'] as Map<String, dynamic>?,
   type: json['type'] as Map<String, dynamic>?,
-); }
+);}
 
 /// The total number of identifiable threats received over the time frame.
 final int? all;
@@ -23,17 +23,17 @@ final Map<String,dynamic>? country;
 /// Example: `{hot.ban.unknown: 5324, macro.chl.captchaErr: 1341, macro.chl.jschlErr: 5323, user.ban.ip: 123}`
 final Map<String,dynamic>? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'all': ?all,
   'country': ?country,
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'country', 'type'}.contains(key)); } 
-Threats copyWith({int? Function()? all, Map<String, dynamic>? Function()? country, Map<String, dynamic>? Function()? type, }) { return Threats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'all', 'country', 'type'}.contains(key));}
+Threats copyWith({int? Function()? all, Map<String, dynamic>? Function()? country, Map<String, dynamic>? Function()? type, }) {return Threats(
   all: all != null ? all() : this.all,
   country: country != null ? country() : this.country,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Threats &&
           all == other.all &&
@@ -44,4 +44,4 @@ Threats copyWith({int? Function()? all, Map<String, dynamic>? Function()? countr
 
 @override String toString() => 'Threats(all: $all, country: $country, type: $type)';
 
- }
+}

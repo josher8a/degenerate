@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_timeseries_group_by_duration_response/radar_get_attacks_layer3_timeseries_group_by_duration_response_result.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByDurationResponse {const RadarGetAttacksLayer3TimeseriesGroupByDurationResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer3TimeseriesGroupByDurationResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByDurationResponse(
+factory RadarGetAttacksLayer3TimeseriesGroupByDurationResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TimeseriesGroupByDurationResponse(
   result: RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer3TimeseriesGroupByDurationResponse copyWith({RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3TimeseriesGroupByDurationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer3TimeseriesGroupByDurationResponse copyWith({RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResult? result, bool? success, }) {return RadarGetAttacksLayer3TimeseriesGroupByDurationResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByDurationResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer3TimeseriesGroupByDurationResponse copyWith({RadarGetAttacks
 
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByDurationResponse(result: $result, success: $success)';
 
- }
+}

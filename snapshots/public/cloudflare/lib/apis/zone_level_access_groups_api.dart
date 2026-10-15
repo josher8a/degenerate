@@ -14,7 +14,7 @@ final class ZoneLevelAccessGroupsApi with ApiExecutor {const ZoneLevelAccessGrou
 /// Lists all Access groups.
 ///
 /// `GET /zones/{zone_id}/access/groups`
-Future<ApiResult<List<AccessComponentsSchemasGroups>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsListAccessGroups({required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessComponentsSchemasGroups>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsListAccessGroups({required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Create an Access group
 ///
 /// Creates a new Access group.
 ///
 /// `POST /zones/{zone_id}/access/groups`
-Future<ApiResult<AccessComponentsSchemasGroups?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsCreateAnAccessGroup({required AccessIdentifier zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasGroups?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsCreateAnAccessGroup({required AccessIdentifier zoneId, required ZoneLevelAccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get an Access group
 ///
 /// Fetches a single Access group.
 ///
 /// `GET /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<AccessComponentsSchemasGroups?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasGroups?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an Access group
 ///
 /// Updates a configured Access group.
 ///
 /// `PUT /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<AccessComponentsSchemasGroups?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasGroups?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, required ZoneLevelAccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an Access group
 ///
 /// Deletes an Access group.
 ///
 /// `DELETE /zones/{zone_id}/access/groups/{group_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,5 +127,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

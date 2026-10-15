@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_feedback_type.dart';import 'package:pub_cloudflare/models/bot_management_metric_requests.dart';@immutable final class BotManagementFeedbackReportRequest {const BotManagementFeedbackReportRequest({required this.description, required this.expression, required this.firstRequestSeenAt, required this.lastRequestSeenAt, required this.requests, required this.requestsByAttribute, required this.requestsByScore, required this.requestsByScoreSrc, required this.type, this.subtype, });
 
-factory BotManagementFeedbackReportRequest.fromJson(Map<String, dynamic> json) { return BotManagementFeedbackReportRequest(
+factory BotManagementFeedbackReportRequest.fromJson(Map<String, dynamic> json) {return BotManagementFeedbackReportRequest(
   description: json['description'] as String,
   expression: json['expression'] as String,
   firstRequestSeenAt: DateTime.parse(json['first_request_seen_at'] as String),
@@ -14,7 +14,7 @@ factory BotManagementFeedbackReportRequest.fromJson(Map<String, dynamic> json) {
   requestsByScoreSrc: (json['requests_by_score_src'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),
   subtype: json['subtype'] as String?,
   type: BotManagementFeedbackType.fromJson(json['type'] as String),
-); }
+);}
 
 final String description;
 
@@ -41,7 +41,7 @@ final String? subtype;
 /// Type of feedback report.
 final BotManagementFeedbackType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'expression': expression,
   'first_request_seen_at': firstRequestSeenAt.toIso8601String(),
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'requests_by_score_src': requestsByScoreSrc,
   'subtype': ?subtype,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('expression') && json['expression'] is String &&
       json.containsKey('first_request_seen_at') && json['first_request_seen_at'] is String &&
       json.containsKey('last_request_seen_at') && json['last_request_seen_at'] is String &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('requests_by_attribute') &&
       json.containsKey('requests_by_score') &&
       json.containsKey('requests_by_score_src') &&
-      json.containsKey('type'); } 
-BotManagementFeedbackReportRequest copyWith({String? description, String? expression, DateTime? firstRequestSeenAt, DateTime? lastRequestSeenAt, int? requests, Map<String,List<BotManagementMetricRequests>>? requestsByAttribute, Map<String,int>? requestsByScore, Map<String,int>? requestsByScoreSrc, String? Function()? subtype, BotManagementFeedbackType? type, }) { return BotManagementFeedbackReportRequest(
+      json.containsKey('type');}
+BotManagementFeedbackReportRequest copyWith({String? description, String? expression, DateTime? firstRequestSeenAt, DateTime? lastRequestSeenAt, int? requests, Map<String,List<BotManagementMetricRequests>>? requestsByAttribute, Map<String,int>? requestsByScore, Map<String,int>? requestsByScoreSrc, String? Function()? subtype, BotManagementFeedbackType? type, }) {return BotManagementFeedbackReportRequest(
   description: description ?? this.description,
   expression: expression ?? this.expression,
   firstRequestSeenAt: firstRequestSeenAt ?? this.firstRequestSeenAt,
@@ -73,7 +73,7 @@ BotManagementFeedbackReportRequest copyWith({String? description, String? expres
   requestsByScoreSrc: requestsByScoreSrc ?? this.requestsByScoreSrc,
   subtype: subtype != null ? subtype() : this.subtype,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementFeedbackReportRequest &&
           description == other.description &&
@@ -91,4 +91,4 @@ BotManagementFeedbackReportRequest copyWith({String? description, String? expres
 
 @override String toString() => 'BotManagementFeedbackReportRequest(\n  description: $description,\n  expression: $expression,\n  firstRequestSeenAt: $firstRequestSeenAt,\n  lastRequestSeenAt: $lastRequestSeenAt,\n  requests: $requests,\n  requestsByAttribute: $requestsByAttribute,\n  requestsByScore: $requestsByScore,\n  requestsByScoreSrc: $requestsByScoreSrc,\n  subtype: $subtype,\n  type: $type,\n)';
 
- }
+}

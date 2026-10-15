@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// EPS is an Austria-based payment method that allows customers to complete transactions online using their bank credentials. EPS is supported by all Austrian banks and is accepted by over 80% of Austrian online retailers. Check this [page](https://docs.stripe.com/payments/eps) for more details.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestEps {const PostPaymentMethodConfigurationsConfigurationRequestEps({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestEps.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestEps(
+factory PostPaymentMethodConfigurationsConfigurationRequestEps.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestEps(
   displayPreference: json['display_preference'] != null ? DisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestEps copyWith({DisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestEps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestEps copyWith({DisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsConfigurationRequestEps(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestEps &&
           displayPreference == other.displayPreference;
@@ -25,4 +25,4 @@ PostPaymentMethodConfigurationsConfigurationRequestEps copyWith({DisplayPreferen
 
 @override String toString() => 'PostPaymentMethodConfigurationsConfigurationRequestEps(displayPreference: $displayPreference)';
 
- }
+}

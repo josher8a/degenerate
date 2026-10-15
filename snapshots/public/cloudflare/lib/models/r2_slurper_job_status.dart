@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2SlurperJobStatus {const R2SlurperJobStatus();
 
-factory R2SlurperJobStatus.fromJson(String json) { return switch (json) {
+factory R2SlurperJobStatus.fromJson(String json) {return switch (json) {
   'running' => running,
   'paused' => paused,
   'aborted' => aborted,
   'completed' => completed,
   _ => R2SlurperJobStatus$Unknown(json),
-}; }
+};}
 
 static const R2SlurperJobStatus running = R2SlurperJobStatus$running._();
 
@@ -22,36 +22,36 @@ static const R2SlurperJobStatus completed = R2SlurperJobStatus$completed._();
 static const List<R2SlurperJobStatus> values = [running, paused, aborted, completed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'running' => 'running',
   'paused' => 'paused',
   'aborted' => 'aborted',
   'completed' => 'completed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is R2SlurperJobStatus$Unknown; } 
+bool get isUnknown {return this is R2SlurperJobStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() running, required W Function() paused, required W Function() aborted, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() running, required W Function() paused, required W Function() aborted, required W Function() completed, required W Function(String value) $unknown, }) {return switch (this) {
       R2SlurperJobStatus$running() => running(),
       R2SlurperJobStatus$paused() => paused(),
       R2SlurperJobStatus$aborted() => aborted(),
       R2SlurperJobStatus$completed() => completed(),
       R2SlurperJobStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? running, W Function()? paused, W Function()? aborted, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? running, W Function()? paused, W Function()? aborted, W Function()? completed, W Function(String value)? $unknown, }) {return switch (this) {
       R2SlurperJobStatus$running() => running != null ? running() : orElse(value),
       R2SlurperJobStatus$paused() => paused != null ? paused() : orElse(value),
       R2SlurperJobStatus$aborted() => aborted != null ? aborted() : orElse(value),
       R2SlurperJobStatus$completed() => completed != null ? completed() : orElse(value),
       R2SlurperJobStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'R2SlurperJobStatus($value)';
 
- }
+}
 @immutable final class R2SlurperJobStatus$running extends R2SlurperJobStatus {const R2SlurperJobStatus$running._();
 
 @override String get value => 'running';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => 'running'.hashCode;
 
- }
+}
 @immutable final class R2SlurperJobStatus$paused extends R2SlurperJobStatus {const R2SlurperJobStatus$paused._();
 
 @override String get value => 'paused';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => 'paused'.hashCode;
 
- }
+}
 @immutable final class R2SlurperJobStatus$aborted extends R2SlurperJobStatus {const R2SlurperJobStatus$aborted._();
 
 @override String get value => 'aborted';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => 'aborted'.hashCode;
 
- }
+}
 @immutable final class R2SlurperJobStatus$completed extends R2SlurperJobStatus {const R2SlurperJobStatus$completed._();
 
 @override String get value => 'completed';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class R2SlurperJobStatus$Unknown extends R2SlurperJobStatus {const R2SlurperJobStatus$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? running,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

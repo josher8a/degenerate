@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_delta_content_text_annotations_file_citation_object.dart';import 'package:pub_openai/models/message_delta_content_text_annotations_file_path_object.dart';import 'package:pub_openai/models/message_delta_content_text_object/message_delta_content_text_object_text_annotations.dart';@immutable final class MessageDeltaContentTextObjectText {const MessageDeltaContentTextObjectText({this.value, this.annotations, });
 
-factory MessageDeltaContentTextObjectText.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextObjectText(
+factory MessageDeltaContentTextObjectText.fromJson(Map<String, dynamic> json) {return MessageDeltaContentTextObjectText(
   value: json['value'] as String?,
   annotations: (json['annotations'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageDeltaContentTextAnnotationsFilePathObject.fromJson(v as Map<String, dynamic>),)).toList(),
-); }
+);}
 
 /// The data that makes up the text.
 final String? value;
 
 final List<MessageDeltaContentTextObjectTextAnnotations>? annotations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': ?value,
   if (annotations != null) 'annotations': annotations?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value', 'annotations'}.contains(key)); } 
-MessageDeltaContentTextObjectText copyWith({String? Function()? value, List<MessageDeltaContentTextObjectTextAnnotations>? Function()? annotations, }) { return MessageDeltaContentTextObjectText(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'value', 'annotations'}.contains(key));}
+MessageDeltaContentTextObjectText copyWith({String? Function()? value, List<MessageDeltaContentTextObjectTextAnnotations>? Function()? annotations, }) {return MessageDeltaContentTextObjectText(
   value: value != null ? value() : this.value,
   annotations: annotations != null ? annotations() : this.annotations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentTextObjectText &&
           value == other.value &&
@@ -31,4 +31,4 @@ MessageDeltaContentTextObjectText copyWith({String? Function()? value, List<Mess
 
 @override String toString() => 'MessageDeltaContentTextObjectText(value: $value, annotations: $annotations)';
 
- }
+}

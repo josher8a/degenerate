@@ -8,11 +8,11 @@ const DefaultPrice({this.string = const Omittable.absent(), this.price = const O
 const DefaultPrice._({required this.rawValue, required this.string, required this.price, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DefaultPrice.fromJson(Object? json) { return DefaultPrice._(
+factory DefaultPrice.fromJson(Object? json) {return DefaultPrice._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   price: json is Map<String, dynamic> && Price.canParse(json) ? parseAnyOfVariant<Price>(json, (value) => Price.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DefaultPrice(${toJson()})';
 
- }
+}

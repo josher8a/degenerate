@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payout_schedule/weekly_payout_days.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/delay_days.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/schedule_interval.dart';sealed class WeeklyAnchor {const WeeklyAnchor();
 
-factory WeeklyAnchor.fromJson(String json) { return switch (json) {
+factory WeeklyAnchor.fromJson(String json) {return switch (json) {
   'friday' => friday,
   'monday' => monday,
   'saturday' => saturday,
@@ -12,7 +12,7 @@ factory WeeklyAnchor.fromJson(String json) { return switch (json) {
   'tuesday' => tuesday,
   'wednesday' => wednesday,
   _ => WeeklyAnchor$Unknown(json),
-}; }
+};}
 
 static const WeeklyAnchor friday = WeeklyAnchor$friday._();
 
@@ -31,9 +31,9 @@ static const WeeklyAnchor wednesday = WeeklyAnchor$wednesday._();
 static const List<WeeklyAnchor> values = [friday, monday, saturday, sunday, thursday, tuesday, wednesday];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'friday' => 'friday',
   'monday' => 'monday',
   'saturday' => 'saturday',
@@ -42,11 +42,11 @@ String get name { return switch (value) {
   'tuesday' => 'tuesday',
   'wednesday' => 'wednesday',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WeeklyAnchor$Unknown; } 
+bool get isUnknown {return this is WeeklyAnchor$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() friday, required W Function() monday, required W Function() saturday, required W Function() sunday, required W Function() thursday, required W Function() tuesday, required W Function() wednesday, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() friday, required W Function() monday, required W Function() saturday, required W Function() sunday, required W Function() thursday, required W Function() tuesday, required W Function() wednesday, required W Function(String value) $unknown, }) {return switch (this) {
       WeeklyAnchor$friday() => friday(),
       WeeklyAnchor$monday() => monday(),
       WeeklyAnchor$saturday() => saturday(),
@@ -55,9 +55,9 @@ W when<W>({required W Function() friday, required W Function() monday, required 
       WeeklyAnchor$tuesday() => tuesday(),
       WeeklyAnchor$wednesday() => wednesday(),
       WeeklyAnchor$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, W Function()? monday, W Function()? saturday, W Function()? sunday, W Function()? thursday, W Function()? tuesday, W Function()? wednesday, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, W Function()? monday, W Function()? saturday, W Function()? sunday, W Function()? thursday, W Function()? tuesday, W Function()? wednesday, W Function(String value)? $unknown, }) {return switch (this) {
       WeeklyAnchor$friday() => friday != null ? friday() : orElse(value),
       WeeklyAnchor$monday() => monday != null ? monday() : orElse(value),
       WeeklyAnchor$saturday() => saturday != null ? saturday() : orElse(value),
@@ -66,10 +66,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
       WeeklyAnchor$tuesday() => tuesday != null ? tuesday() : orElse(value),
       WeeklyAnchor$wednesday() => wednesday != null ? wednesday() : orElse(value),
       WeeklyAnchor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WeeklyAnchor($value)';
 
- }
+}
 @immutable final class WeeklyAnchor$friday extends WeeklyAnchor {const WeeklyAnchor$friday._();
 
 @override String get value => 'friday';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 
 @override int get hashCode => 'friday'.hashCode;
 
- }
+}
 @immutable final class WeeklyAnchor$monday extends WeeklyAnchor {const WeeklyAnchor$monday._();
 
 @override String get value => 'monday';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 
 @override int get hashCode => 'monday'.hashCode;
 
- }
+}
 @immutable final class WeeklyAnchor$saturday extends WeeklyAnchor {const WeeklyAnchor$saturday._();
 
 @override String get value => 'saturday';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 
 @override int get hashCode => 'saturday'.hashCode;
 
- }
+}
 @immutable final class WeeklyAnchor$sunday extends WeeklyAnchor {const WeeklyAnchor$sunday._();
 
 @override String get value => 'sunday';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 
 @override int get hashCode => 'sunday'.hashCode;
 
- }
+}
 @immutable final class WeeklyAnchor$thursday extends WeeklyAnchor {const WeeklyAnchor$thursday._();
 
 @override String get value => 'thursday';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 
 @override int get hashCode => 'thursday'.hashCode;
 
- }
+}
 @immutable final class WeeklyAnchor$tuesday extends WeeklyAnchor {const WeeklyAnchor$tuesday._();
 
 @override String get value => 'tuesday';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 
 @override int get hashCode => 'tuesday'.hashCode;
 
- }
+}
 @immutable final class WeeklyAnchor$wednesday extends WeeklyAnchor {const WeeklyAnchor$wednesday._();
 
 @override String get value => 'wednesday';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 
 @override int get hashCode => 'wednesday'.hashCode;
 
- }
+}
 @immutable final class WeeklyAnchor$Unknown extends WeeklyAnchor {const WeeklyAnchor$Unknown(this.value);
 
 @override final String value;
@@ -142,17 +142,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class SettingsPayoutsSchedule {const SettingsPayoutsSchedule({this.delayDays, this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
-factory SettingsPayoutsSchedule.fromJson(Map<String, dynamic> json) { return SettingsPayoutsSchedule(
+factory SettingsPayoutsSchedule.fromJson(Map<String, dynamic> json) {return SettingsPayoutsSchedule(
   delayDays: json['delay_days'] != null ? DelayDays.fromJson(json['delay_days']) : null,
   interval: json['interval'] != null ? ScheduleInterval.fromJson(json['interval'] as String) : null,
   monthlyAnchor: json['monthly_anchor'] != null ? (json['monthly_anchor'] as num).toInt() : null,
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   weeklyAnchor: json['weekly_anchor'] != null ? WeeklyAnchor.fromJson(json['weekly_anchor'] as String) : null,
   weeklyPayoutDays: (json['weekly_payout_days'] as List<dynamic>?)?.map((e) => WeeklyPayoutDays.fromJson(e as String)).toList(),
-); }
+);}
 
 final DelayDays? delayDays;
 
@@ -166,23 +166,23 @@ final WeeklyAnchor? weeklyAnchor;
 
 final List<WeeklyPayoutDays>? weeklyPayoutDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (delayDays != null) 'delay_days': delayDays?.toJson(),
   if (interval != null) 'interval': interval?.toJson(),
   'monthly_anchor': ?monthlyAnchor,
   'monthly_payout_days': ?monthlyPayoutDays,
   if (weeklyAnchor != null) 'weekly_anchor': weeklyAnchor?.toJson(),
   if (weeklyPayoutDays != null) 'weekly_payout_days': weeklyPayoutDays?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delay_days', 'interval', 'monthly_anchor', 'monthly_payout_days', 'weekly_anchor', 'weekly_payout_days'}.contains(key)); } 
-SettingsPayoutsSchedule copyWith({DelayDays? Function()? delayDays, ScheduleInterval? Function()? interval, int? Function()? monthlyAnchor, List<int>? Function()? monthlyPayoutDays, WeeklyAnchor? Function()? weeklyAnchor, List<WeeklyPayoutDays>? Function()? weeklyPayoutDays, }) { return SettingsPayoutsSchedule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'delay_days', 'interval', 'monthly_anchor', 'monthly_payout_days', 'weekly_anchor', 'weekly_payout_days'}.contains(key));}
+SettingsPayoutsSchedule copyWith({DelayDays? Function()? delayDays, ScheduleInterval? Function()? interval, int? Function()? monthlyAnchor, List<int>? Function()? monthlyPayoutDays, WeeklyAnchor? Function()? weeklyAnchor, List<WeeklyPayoutDays>? Function()? weeklyPayoutDays, }) {return SettingsPayoutsSchedule(
   delayDays: delayDays != null ? delayDays() : this.delayDays,
   interval: interval != null ? interval() : this.interval,
   monthlyAnchor: monthlyAnchor != null ? monthlyAnchor() : this.monthlyAnchor,
   monthlyPayoutDays: monthlyPayoutDays != null ? monthlyPayoutDays() : this.monthlyPayoutDays,
   weeklyAnchor: weeklyAnchor != null ? weeklyAnchor() : this.weeklyAnchor,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SettingsPayoutsSchedule &&
           delayDays == other.delayDays &&
@@ -196,4 +196,4 @@ SettingsPayoutsSchedule copyWith({DelayDays? Function()? delayDays, ScheduleInte
 
 @override String toString() => 'SettingsPayoutsSchedule(delayDays: $delayDays, interval: $interval, monthlyAnchor: $monthlyAnchor, monthlyPayoutDays: $monthlyPayoutDays, weeklyAnchor: $weeklyAnchor, weeklyPayoutDays: $weeklyPayoutDays)';
 
- }
+}

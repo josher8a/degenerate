@@ -14,7 +14,7 @@ final class NotificationAlertTypesApi with ApiExecutor {const NotificationAlertT
 /// Gets a list of all alert types for which an account is eligible.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/available_alerts`
-Future<ApiResult<Map<String, List<AaaAlertTypes>>?, NotificationAlertTypesGetAlertTypesError>> notificationAlertTypesGetAlertTypes({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, List<AaaAlertTypes>>?, NotificationAlertTypesGetAlertTypesError>> notificationAlertTypesGetAlertTypes({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,5 +31,5 @@ return await execute(
   },
   onError: NotificationAlertTypesGetAlertTypesError.fromResponse,
 );
- } 
- }
+}
+}

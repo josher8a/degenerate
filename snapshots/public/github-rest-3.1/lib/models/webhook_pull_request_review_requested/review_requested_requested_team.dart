@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_parent.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class ReviewRequestedRequestedTeam {const ReviewRequestedRequestedTeam({required this.id, required this.name, this.deleted, this.description = const Omittable.absent(), this.htmlUrl, this.membersUrl, this.nodeId, this.parent = const Omittable.absent(), this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
 
-factory ReviewRequestedRequestedTeam.fromJson(Map<String, dynamic> json) { return ReviewRequestedRequestedTeam(
+factory ReviewRequestedRequestedTeam.fromJson(Map<String, dynamic> json) {return ReviewRequestedRequestedTeam(
   deleted: json['deleted'] as bool?,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
@@ -18,7 +18,7 @@ factory ReviewRequestedRequestedTeam.fromJson(Map<String, dynamic> json) { retur
   repositoriesUrl: json['repositories_url'] != null ? Uri.parse(json['repositories_url'] as String) : null,
   slug: json['slug'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 final bool? deleted;
 
@@ -51,7 +51,7 @@ final String? slug;
 /// URL for the team
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': ?deleted,
   if (description.isPresent) 'description': description.value,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
@@ -65,10 +65,10 @@ Map<String, dynamic> toJson() { return {
   if (repositoriesUrl != null) 'repositories_url': repositoriesUrl?.toString(),
   'slug': ?slug,
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('name') && json['name'] is String; } 
-ReviewRequestedRequestedTeam copyWith({bool? Function()? deleted, Omittable<String?>? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, Omittable<TeamParent?>? parent, String? Function()? permission, TeamPrivacy? Function()? privacy, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, }) { return ReviewRequestedRequestedTeam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String;}
+ReviewRequestedRequestedTeam copyWith({bool? Function()? deleted, Omittable<String?>? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, Omittable<TeamParent?>? parent, String? Function()? permission, TeamPrivacy? Function()? privacy, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, }) {return ReviewRequestedRequestedTeam(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description ?? this.description,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
@@ -82,7 +82,7 @@ ReviewRequestedRequestedTeam copyWith({bool? Function()? deleted, Omittable<Stri
   repositoriesUrl: repositoriesUrl != null ? repositoriesUrl() : this.repositoriesUrl,
   slug: slug != null ? slug() : this.slug,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewRequestedRequestedTeam &&
           deleted == other.deleted &&
@@ -103,4 +103,4 @@ ReviewRequestedRequestedTeam copyWith({bool? Function()? deleted, Omittable<Stri
 
 @override String toString() => 'ReviewRequestedRequestedTeam(\n  deleted: $deleted,\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  parent: $parent,\n  permission: $permission,\n  privacy: $privacy,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n)';
 
- }
+}

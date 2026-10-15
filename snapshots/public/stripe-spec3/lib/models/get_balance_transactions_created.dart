@@ -7,11 +7,11 @@ const GetBalanceTransactionsCreated({this.rangeQuerySpecs = const Omittable.abse
 const GetBalanceTransactionsCreated._({required this.rawValue, required this.rangeQuerySpecs, required this.$int, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory GetBalanceTransactionsCreated.fromJson(Object? json) { return GetBalanceTransactionsCreated._(
+factory GetBalanceTransactionsCreated.fromJson(Object? json) {return GetBalanceTransactionsCreated._(
   rawValue: Omittable(json),
   rangeQuerySpecs: json is Map<String, dynamic> && RangeQuerySpecs.canParse(json) ? parseAnyOfVariant<RangeQuerySpecs>(json, (value) => RangeQuerySpecs.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'GetBalanceTransactionsCreated(${toJson()})';
 
- }
+}

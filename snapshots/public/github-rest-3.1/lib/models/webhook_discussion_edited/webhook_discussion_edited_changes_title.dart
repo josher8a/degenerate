@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDiscussionEditedChangesTitle {const WebhookDiscussionEditedChangesTitle({required this.from});
 
-factory WebhookDiscussionEditedChangesTitle.fromJson(Map<String, dynamic> json) { return WebhookDiscussionEditedChangesTitle(
+factory WebhookDiscussionEditedChangesTitle.fromJson(Map<String, dynamic> json) {return WebhookDiscussionEditedChangesTitle(
   from: json['from'] as String,
-); }
+);}
 
 final String from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
-WebhookDiscussionEditedChangesTitle copyWith({String? from}) { return WebhookDiscussionEditedChangesTitle(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && json['from'] is String;}
+WebhookDiscussionEditedChangesTitle copyWith({String? from}) {return WebhookDiscussionEditedChangesTitle(
   from: from ?? this.from,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionEditedChangesTitle &&
           from == other.from;
@@ -24,4 +24,4 @@ WebhookDiscussionEditedChangesTitle copyWith({String? from}) { return WebhookDis
 
 @override String toString() => 'WebhookDiscussionEditedChangesTitle(from: $from)';
 
- }
+}

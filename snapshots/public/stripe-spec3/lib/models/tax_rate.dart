@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_rate_details/rate_type.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_rate_details/tax_product_resource_tax_rate_details_tax_type.dart';import 'package:pub_stripe_spec3/models/tax_rate_flat_amount.dart';/// The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates.
 sealed class TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel();
 
-factory TaxRateJurisdictionLevel.fromJson(String json) { return switch (json) {
+factory TaxRateJurisdictionLevel.fromJson(String json) {return switch (json) {
   'city' => city,
   'country' => country,
   'county' => county,
@@ -12,7 +12,7 @@ factory TaxRateJurisdictionLevel.fromJson(String json) { return switch (json) {
   'multiple' => multiple,
   'state' => state,
   _ => TaxRateJurisdictionLevel$Unknown(json),
-}; }
+};}
 
 static const TaxRateJurisdictionLevel city = TaxRateJurisdictionLevel$city._();
 
@@ -29,9 +29,9 @@ static const TaxRateJurisdictionLevel state = TaxRateJurisdictionLevel$state._()
 static const List<TaxRateJurisdictionLevel> values = [city, country, county, district, multiple, state];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'city' => 'city',
   'country' => 'country',
   'county' => 'county',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'multiple' => 'multiple',
   'state' => 'state',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxRateJurisdictionLevel$Unknown; } 
+bool get isUnknown {return this is TaxRateJurisdictionLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() city, required W Function() country, required W Function() county, required W Function() district, required W Function() multiple, required W Function() state, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() city, required W Function() country, required W Function() county, required W Function() district, required W Function() multiple, required W Function() state, required W Function(String value) $unknown, }) {return switch (this) {
       TaxRateJurisdictionLevel$city() => city(),
       TaxRateJurisdictionLevel$country() => country(),
       TaxRateJurisdictionLevel$county() => county(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() city, required W Function() country, required W
       TaxRateJurisdictionLevel$multiple() => multiple(),
       TaxRateJurisdictionLevel$state() => state(),
       TaxRateJurisdictionLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W Function()? country, W Function()? county, W Function()? district, W Function()? multiple, W Function()? state, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W Function()? country, W Function()? county, W Function()? district, W Function()? multiple, W Function()? state, W Function(String value)? $unknown, }) {return switch (this) {
       TaxRateJurisdictionLevel$city() => city != null ? city() : orElse(value),
       TaxRateJurisdictionLevel$country() => country != null ? country() : orElse(value),
       TaxRateJurisdictionLevel$county() => county != null ? county() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
       TaxRateJurisdictionLevel$multiple() => multiple != null ? multiple() : orElse(value),
       TaxRateJurisdictionLevel$state() => state != null ? state() : orElse(value),
       TaxRateJurisdictionLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxRateJurisdictionLevel($value)';
 
- }
+}
 @immutable final class TaxRateJurisdictionLevel$city extends TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel$city._();
 
 @override String get value => 'city';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'city'.hashCode;
 
- }
+}
 @immutable final class TaxRateJurisdictionLevel$country extends TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel$country._();
 
 @override String get value => 'country';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'country'.hashCode;
 
- }
+}
 @immutable final class TaxRateJurisdictionLevel$county extends TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel$county._();
 
 @override String get value => 'county';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'county'.hashCode;
 
- }
+}
 @immutable final class TaxRateJurisdictionLevel$district extends TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel$district._();
 
 @override String get value => 'district';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'district'.hashCode;
 
- }
+}
 @immutable final class TaxRateJurisdictionLevel$multiple extends TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel$multiple._();
 
 @override String get value => 'multiple';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'multiple'.hashCode;
 
- }
+}
 @immutable final class TaxRateJurisdictionLevel$state extends TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel$state._();
 
 @override String get value => 'state';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'state'.hashCode;
 
- }
+}
 @immutable final class TaxRateJurisdictionLevel$Unknown extends TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel$Unknown(this.value);
 
 @override final String value;
@@ -128,41 +128,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class TaxRateObject {const TaxRateObject();
 
-factory TaxRateObject.fromJson(String json) { return switch (json) {
+factory TaxRateObject.fromJson(String json) {return switch (json) {
   'tax_rate' => taxRate,
   _ => TaxRateObject$Unknown(json),
-}; }
+};}
 
 static const TaxRateObject taxRate = TaxRateObject$taxRate._();
 
 static const List<TaxRateObject> values = [taxRate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tax_rate' => 'taxRate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxRateObject$Unknown; } 
+bool get isUnknown {return this is TaxRateObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() taxRate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() taxRate, required W Function(String value) $unknown, }) {return switch (this) {
       TaxRateObject$taxRate() => taxRate(),
       TaxRateObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRate, W Function(String value)? $unknown, }) {return switch (this) {
       TaxRateObject$taxRate() => taxRate != null ? taxRate() : orElse(value),
       TaxRateObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxRateObject($value)';
 
- }
+}
 @immutable final class TaxRateObject$taxRate extends TaxRateObject {const TaxRateObject$taxRate._();
 
 @override String get value => 'tax_rate';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRate,
 
 @override int get hashCode => 'tax_rate'.hashCode;
 
- }
+}
 @immutable final class TaxRateObject$Unknown extends TaxRateObject {const TaxRateObject$Unknown(this.value);
 
 @override final String value;
@@ -181,13 +181,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRate,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Tax rates can be applied to [invoices](/invoicing/taxes/tax-rates), [subscriptions](/billing/taxes/tax-rates) and [Checkout Sessions](/payments/checkout/use-manual-tax-rates) to collect tax.
 /// 
 /// Related guide: [Tax rates](/billing/taxes/tax-rates)
 @immutable final class TaxRate {const TaxRate({required this.active, required this.created, required this.displayName, required this.id, required this.inclusive, required this.livemode, required this.object, required this.percentage, this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.effectivePercentage = const Omittable.absent(), this.flatAmount = const Omittable.absent(), this.jurisdiction = const Omittable.absent(), this.jurisdictionLevel = const Omittable.absent(), this.metadata = const Omittable.absent(), this.rateType = const Omittable.absent(), this.state = const Omittable.absent(), this.taxType = const Omittable.absent(), });
 
-factory TaxRate.fromJson(Map<String, dynamic> json) { return TaxRate(
+factory TaxRate.fromJson(Map<String, dynamic> json) {return TaxRate(
   active: json['active'] as bool,
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -206,7 +206,7 @@ factory TaxRate.fromJson(Map<String, dynamic> json) { return TaxRate(
   rateType: json.containsKey('rate_type') ? Omittable(json['rate_type'] != null ? RateType.fromJson(json['rate_type'] as String) : null) : const Omittable.absent(),
   state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
   taxType: json.containsKey('tax_type') ? Omittable(json['tax_type'] != null ? TaxProductResourceTaxRateDetailsTaxType.fromJson(json['tax_type'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Defaults to `true`. When set to `false`, this tax rate cannot be used with new applications or Checkout Sessions, but will still work for subscriptions and invoices that already have it set.
 final bool active;
@@ -264,7 +264,7 @@ final Omittable<String?> state;
 /// The high-level tax type, such as `vat` or `sales_tax`.
 final Omittable<TaxProductResourceTaxRateDetailsTaxType?> taxType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   if (country.isPresent) 'country': country.value,
   'created': created,
@@ -283,17 +283,17 @@ Map<String, dynamic> toJson() { return {
   if (rateType.isPresent) 'rate_type': rateType.value?.toJson(),
   if (state.isPresent) 'state': state.value,
   if (taxType.isPresent) 'tax_type': taxType.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('inclusive') && json['inclusive'] is bool &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('percentage') && json['percentage'] is num; } 
+      json.containsKey('percentage') && json['percentage'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final country$ = country.value;
 if (country$ != null) {
   if (country$.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
@@ -312,8 +312,8 @@ final state$ = state.value;
 if (state$ != null) {
   if (state$.runes.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
-return errors; } 
-TaxRate copyWith({bool? active, Omittable<String?>? country, int? created, Omittable<String?>? description, String? displayName, Omittable<double?>? effectivePercentage, Omittable<TaxRateFlatAmount?>? flatAmount, String? id, bool? inclusive, Omittable<String?>? jurisdiction, Omittable<TaxRateJurisdictionLevel?>? jurisdictionLevel, bool? livemode, Omittable<Map<String,String>?>? metadata, TaxRateObject? object, double? percentage, Omittable<RateType?>? rateType, Omittable<String?>? state, Omittable<TaxProductResourceTaxRateDetailsTaxType?>? taxType, }) { return TaxRate(
+return errors;}
+TaxRate copyWith({bool? active, Omittable<String?>? country, int? created, Omittable<String?>? description, String? displayName, Omittable<double?>? effectivePercentage, Omittable<TaxRateFlatAmount?>? flatAmount, String? id, bool? inclusive, Omittable<String?>? jurisdiction, Omittable<TaxRateJurisdictionLevel?>? jurisdictionLevel, bool? livemode, Omittable<Map<String,String>?>? metadata, TaxRateObject? object, double? percentage, Omittable<RateType?>? rateType, Omittable<String?>? state, Omittable<TaxProductResourceTaxRateDetailsTaxType?>? taxType, }) {return TaxRate(
   active: active ?? this.active,
   country: country ?? this.country,
   created: created ?? this.created,
@@ -332,7 +332,7 @@ TaxRate copyWith({bool? active, Omittable<String?>? country, int? created, Omitt
   rateType: rateType ?? this.rateType,
   state: state ?? this.state,
   taxType: taxType ?? this.taxType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxRate &&
           active == other.active &&
@@ -358,4 +358,4 @@ TaxRate copyWith({bool? active, Omittable<String?>? country, int? created, Omitt
 
 @override String toString() => 'TaxRate(\n  active: $active,\n  country: $country,\n  created: $created,\n  description: $description,\n  displayName: $displayName,\n  effectivePercentage: $effectivePercentage,\n  flatAmount: $flatAmount,\n  id: $id,\n  inclusive: $inclusive,\n  jurisdiction: $jurisdiction,\n  jurisdictionLevel: $jurisdictionLevel,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  percentage: $percentage,\n  rateType: $rateType,\n  state: $state,\n  taxType: $taxType,\n)';
 
- }
+}

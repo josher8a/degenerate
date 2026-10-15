@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_colo.dart';import 'package:pub_cloudflare/models/magic_transit_hop_result.dart';/// Errors resulting from collecting traceroute from colo to target.
 sealed class MagicTransitError {const MagicTransitError();
 
-factory MagicTransitError.fromJson(String json) { return switch (json) {
+factory MagicTransitError.fromJson(String json) {return switch (json) {
   '' => $empty,
   'Could not gather traceroute data: Code 1' => couldNotGatherTracerouteDataCode1,
   'Could not gather traceroute data: Code 2' => couldNotGatherTracerouteDataCode2,
   'Could not gather traceroute data: Code 3' => couldNotGatherTracerouteDataCode3,
   'Could not gather traceroute data: Code 4' => couldNotGatherTracerouteDataCode4,
   _ => MagicTransitError$Unknown(json),
-}; }
+};}
 
 static const MagicTransitError $empty = MagicTransitError$$empty._();
 
@@ -26,39 +26,39 @@ static const MagicTransitError couldNotGatherTracerouteDataCode4 = MagicTransitE
 static const List<MagicTransitError> values = [$empty, couldNotGatherTracerouteDataCode1, couldNotGatherTracerouteDataCode2, couldNotGatherTracerouteDataCode3, couldNotGatherTracerouteDataCode4];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'Could not gather traceroute data: Code 1' => 'couldNotGatherTracerouteDataCode1',
   'Could not gather traceroute data: Code 2' => 'couldNotGatherTracerouteDataCode2',
   'Could not gather traceroute data: Code 3' => 'couldNotGatherTracerouteDataCode3',
   'Could not gather traceroute data: Code 4' => 'couldNotGatherTracerouteDataCode4',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MagicTransitError$Unknown; } 
+bool get isUnknown {return this is MagicTransitError$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() couldNotGatherTracerouteDataCode1, required W Function() couldNotGatherTracerouteDataCode2, required W Function() couldNotGatherTracerouteDataCode3, required W Function() couldNotGatherTracerouteDataCode4, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() couldNotGatherTracerouteDataCode1, required W Function() couldNotGatherTracerouteDataCode2, required W Function() couldNotGatherTracerouteDataCode3, required W Function() couldNotGatherTracerouteDataCode4, required W Function(String value) $unknown, }) {return switch (this) {
       MagicTransitError$$empty() => $empty(),
       MagicTransitError$couldNotGatherTracerouteDataCode1() => couldNotGatherTracerouteDataCode1(),
       MagicTransitError$couldNotGatherTracerouteDataCode2() => couldNotGatherTracerouteDataCode2(),
       MagicTransitError$couldNotGatherTracerouteDataCode3() => couldNotGatherTracerouteDataCode3(),
       MagicTransitError$couldNotGatherTracerouteDataCode4() => couldNotGatherTracerouteDataCode4(),
       MagicTransitError$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? couldNotGatherTracerouteDataCode1, W Function()? couldNotGatherTracerouteDataCode2, W Function()? couldNotGatherTracerouteDataCode3, W Function()? couldNotGatherTracerouteDataCode4, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? couldNotGatherTracerouteDataCode1, W Function()? couldNotGatherTracerouteDataCode2, W Function()? couldNotGatherTracerouteDataCode3, W Function()? couldNotGatherTracerouteDataCode4, W Function(String value)? $unknown, }) {return switch (this) {
       MagicTransitError$$empty() => $empty != null ? $empty() : orElse(value),
       MagicTransitError$couldNotGatherTracerouteDataCode1() => couldNotGatherTracerouteDataCode1 != null ? couldNotGatherTracerouteDataCode1() : orElse(value),
       MagicTransitError$couldNotGatherTracerouteDataCode2() => couldNotGatherTracerouteDataCode2 != null ? couldNotGatherTracerouteDataCode2() : orElse(value),
       MagicTransitError$couldNotGatherTracerouteDataCode3() => couldNotGatherTracerouteDataCode3 != null ? couldNotGatherTracerouteDataCode3() : orElse(value),
       MagicTransitError$couldNotGatherTracerouteDataCode4() => couldNotGatherTracerouteDataCode4 != null ? couldNotGatherTracerouteDataCode4() : orElse(value),
       MagicTransitError$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MagicTransitError($value)';
 
- }
+}
 @immutable final class MagicTransitError$$empty extends MagicTransitError {const MagicTransitError$$empty._();
 
 @override String get value => '';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class MagicTransitError$couldNotGatherTracerouteDataCode1 extends MagicTransitError {const MagicTransitError$couldNotGatherTracerouteDataCode1._();
 
 @override String get value => 'Could not gather traceroute data: Code 1';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'Could not gather traceroute data: Code 1'.hashCode;
 
- }
+}
 @immutable final class MagicTransitError$couldNotGatherTracerouteDataCode2 extends MagicTransitError {const MagicTransitError$couldNotGatherTracerouteDataCode2._();
 
 @override String get value => 'Could not gather traceroute data: Code 2';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'Could not gather traceroute data: Code 2'.hashCode;
 
- }
+}
 @immutable final class MagicTransitError$couldNotGatherTracerouteDataCode3 extends MagicTransitError {const MagicTransitError$couldNotGatherTracerouteDataCode3._();
 
 @override String get value => 'Could not gather traceroute data: Code 3';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'Could not gather traceroute data: Code 3'.hashCode;
 
- }
+}
 @immutable final class MagicTransitError$couldNotGatherTracerouteDataCode4 extends MagicTransitError {const MagicTransitError$couldNotGatherTracerouteDataCode4._();
 
 @override String get value => 'Could not gather traceroute data: Code 4';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'Could not gather traceroute data: Code 4'.hashCode;
 
- }
+}
 @immutable final class MagicTransitError$Unknown extends MagicTransitError {const MagicTransitError$Unknown(this.value);
 
 @override final String value;
@@ -113,7 +113,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Total time of traceroute in ms.
 extension type const MagicTransitTracerouteTimeMs(int value) {
 factory MagicTransitTracerouteTimeMs.fromJson(num json) => MagicTransitTracerouteTimeMs(json.toInt());
@@ -123,13 +123,13 @@ num toJson() => value;
 }
 @immutable final class MagicTransitColoResult {const MagicTransitColoResult({this.colo, this.error, this.hops, this.targetSummary, this.tracerouteTimeMs, });
 
-factory MagicTransitColoResult.fromJson(Map<String, dynamic> json) { return MagicTransitColoResult(
+factory MagicTransitColoResult.fromJson(Map<String, dynamic> json) {return MagicTransitColoResult(
   colo: json['colo'] != null ? MagicTransitColo.fromJson(json['colo'] as Map<String, dynamic>) : null,
   error: json['error'] != null ? MagicTransitError.fromJson(json['error'] as String) : null,
   hops: (json['hops'] as List<dynamic>?)?.map((e) => MagicTransitHopResult.fromJson(e as Map<String, dynamic>)).toList(),
   targetSummary: json['target_summary'] as Map<String, dynamic>?,
   tracerouteTimeMs: json['traceroute_time_ms'] != null ? MagicTransitTracerouteTimeMs.fromJson(json['traceroute_time_ms'] as num) : null,
-); }
+);}
 
 final MagicTransitColo? colo;
 
@@ -141,21 +141,21 @@ final Map<String,dynamic>? targetSummary;
 
 final MagicTransitTracerouteTimeMs? tracerouteTimeMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (colo != null) 'colo': colo?.toJson(),
   if (error != null) 'error': error?.toJson(),
   if (hops != null) 'hops': hops?.map((e) => e.toJson()).toList(),
   'target_summary': ?targetSummary,
   if (tracerouteTimeMs != null) 'traceroute_time_ms': tracerouteTimeMs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'colo', 'error', 'hops', 'target_summary', 'traceroute_time_ms'}.contains(key)); } 
-MagicTransitColoResult copyWith({MagicTransitColo? Function()? colo, MagicTransitError? Function()? error, List<MagicTransitHopResult>? Function()? hops, Map<String, dynamic>? Function()? targetSummary, MagicTransitTracerouteTimeMs? Function()? tracerouteTimeMs, }) { return MagicTransitColoResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'colo', 'error', 'hops', 'target_summary', 'traceroute_time_ms'}.contains(key));}
+MagicTransitColoResult copyWith({MagicTransitColo? Function()? colo, MagicTransitError? Function()? error, List<MagicTransitHopResult>? Function()? hops, Map<String, dynamic>? Function()? targetSummary, MagicTransitTracerouteTimeMs? Function()? tracerouteTimeMs, }) {return MagicTransitColoResult(
   colo: colo != null ? colo() : this.colo,
   error: error != null ? error() : this.error,
   hops: hops != null ? hops() : this.hops,
   targetSummary: targetSummary != null ? targetSummary() : this.targetSummary,
   tracerouteTimeMs: tracerouteTimeMs != null ? tracerouteTimeMs() : this.tracerouteTimeMs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTransitColoResult &&
           colo == other.colo &&
@@ -168,4 +168,4 @@ MagicTransitColoResult copyWith({MagicTransitColo? Function()? colo, MagicTransi
 
 @override String toString() => 'MagicTransitColoResult(colo: $colo, error: $error, hops: $hops, targetSummary: $targetSummary, tracerouteTimeMs: $tracerouteTimeMs)';
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_ip_info.dart';@immutable final class InfraTargetsPutRequest {const InfraTargetsPutRequest({required this.hostname, required this.ip, });
 
-factory InfraTargetsPutRequest.fromJson(Map<String, dynamic> json) { return InfraTargetsPutRequest(
+factory InfraTargetsPutRequest.fromJson(Map<String, dynamic> json) {return InfraTargetsPutRequest(
   hostname: json['hostname'] as String,
   ip: InfraIpInfo.fromJson(json['ip'] as Map<String, dynamic>),
-); }
+);}
 
 /// A non-unique field that refers to a target. Case insensitive, maximum
 /// length of 255 characters, supports the use of special characters dash
@@ -18,16 +18,16 @@ final String hostname;
 
 final InfraIpInfo ip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostname': hostname,
   'ip': ip.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
-      json.containsKey('ip'); } 
-InfraTargetsPutRequest copyWith({String? hostname, InfraIpInfo? ip, }) { return InfraTargetsPutRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String &&
+      json.containsKey('ip');}
+InfraTargetsPutRequest copyWith({String? hostname, InfraIpInfo? ip, }) {return InfraTargetsPutRequest(
   hostname: hostname ?? this.hostname,
   ip: ip ?? this.ip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InfraTargetsPutRequest &&
           hostname == other.hostname &&
@@ -37,4 +37,4 @@ InfraTargetsPutRequest copyWith({String? hostname, InfraIpInfo? ip, }) { return 
 
 @override String toString() => 'InfraTargetsPutRequest(hostname: $hostname, ip: $ip)';
 
- }
+}

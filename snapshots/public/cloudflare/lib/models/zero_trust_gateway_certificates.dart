@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_uuid.dart';/// Indicate the read-only deployment status of the certificate on Cloudflare's edge. Gateway TLS interception can use certificates in the 'available' (previously called 'active') state.
 sealed class ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus();
 
-factory ZeroTrustGatewayBindingStatus.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayBindingStatus.fromJson(String json) {return switch (json) {
   'pending_deployment' => pendingDeployment,
   'available' => available,
   'pending_deletion' => pendingDeletion,
   'inactive' => inactive,
   _ => ZeroTrustGatewayBindingStatus$Unknown(json),
-}; }
+};}
 
 static const ZeroTrustGatewayBindingStatus pendingDeployment = ZeroTrustGatewayBindingStatus$pendingDeployment._();
 
@@ -23,36 +23,36 @@ static const ZeroTrustGatewayBindingStatus inactive = ZeroTrustGatewayBindingSta
 static const List<ZeroTrustGatewayBindingStatus> values = [pendingDeployment, available, pendingDeletion, inactive];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending_deployment' => 'pendingDeployment',
   'available' => 'available',
   'pending_deletion' => 'pendingDeletion',
   'inactive' => 'inactive',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustGatewayBindingStatus$Unknown; } 
+bool get isUnknown {return this is ZeroTrustGatewayBindingStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pendingDeployment, required W Function() available, required W Function() pendingDeletion, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pendingDeployment, required W Function() available, required W Function() pendingDeletion, required W Function() inactive, required W Function(String value) $unknown, }) {return switch (this) {
       ZeroTrustGatewayBindingStatus$pendingDeployment() => pendingDeployment(),
       ZeroTrustGatewayBindingStatus$available() => available(),
       ZeroTrustGatewayBindingStatus$pendingDeletion() => pendingDeletion(),
       ZeroTrustGatewayBindingStatus$inactive() => inactive(),
       ZeroTrustGatewayBindingStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingDeployment, W Function()? available, W Function()? pendingDeletion, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingDeployment, W Function()? available, W Function()? pendingDeletion, W Function()? inactive, W Function(String value)? $unknown, }) {return switch (this) {
       ZeroTrustGatewayBindingStatus$pendingDeployment() => pendingDeployment != null ? pendingDeployment() : orElse(value),
       ZeroTrustGatewayBindingStatus$available() => available != null ? available() : orElse(value),
       ZeroTrustGatewayBindingStatus$pendingDeletion() => pendingDeletion != null ? pendingDeletion() : orElse(value),
       ZeroTrustGatewayBindingStatus$inactive() => inactive != null ? inactive() : orElse(value),
       ZeroTrustGatewayBindingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZeroTrustGatewayBindingStatus($value)';
 
- }
+}
 @immutable final class ZeroTrustGatewayBindingStatus$pendingDeployment extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$pendingDeployment._();
 
 @override String get value => 'pending_deployment';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingD
 
 @override int get hashCode => 'pending_deployment'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayBindingStatus$available extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$available._();
 
 @override String get value => 'available';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingD
 
 @override int get hashCode => 'available'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayBindingStatus$pendingDeletion extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$pendingDeletion._();
 
 @override String get value => 'pending_deletion';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingD
 
 @override int get hashCode => 'pending_deletion'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayBindingStatus$inactive extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingD
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayBindingStatus$Unknown extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$Unknown(this.value);
 
 @override final String value;
@@ -98,15 +98,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingD
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.
 sealed class ZeroTrustGatewayType {const ZeroTrustGatewayType();
 
-factory ZeroTrustGatewayType.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'gateway_managed' => gatewayManaged,
   _ => ZeroTrustGatewayType$Unknown(json),
-}; }
+};}
 
 static const ZeroTrustGatewayType custom = ZeroTrustGatewayType$custom._();
 
@@ -115,30 +115,30 @@ static const ZeroTrustGatewayType gatewayManaged = ZeroTrustGatewayType$gatewayM
 static const List<ZeroTrustGatewayType> values = [custom, gatewayManaged];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'custom' => 'custom',
   'gateway_managed' => 'gatewayManaged',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustGatewayType$Unknown; } 
+bool get isUnknown {return this is ZeroTrustGatewayType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() custom, required W Function() gatewayManaged, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() custom, required W Function() gatewayManaged, required W Function(String value) $unknown, }) {return switch (this) {
       ZeroTrustGatewayType$custom() => custom(),
       ZeroTrustGatewayType$gatewayManaged() => gatewayManaged(),
       ZeroTrustGatewayType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? gatewayManaged, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? gatewayManaged, W Function(String value)? $unknown, }) {return switch (this) {
       ZeroTrustGatewayType$custom() => custom != null ? custom() : orElse(value),
       ZeroTrustGatewayType$gatewayManaged() => gatewayManaged != null ? gatewayManaged() : orElse(value),
       ZeroTrustGatewayType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZeroTrustGatewayType($value)';
 
- }
+}
 @immutable final class ZeroTrustGatewayType$custom extends ZeroTrustGatewayType {const ZeroTrustGatewayType$custom._();
 
 @override String get value => 'custom';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'custom'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayType$gatewayManaged extends ZeroTrustGatewayType {const ZeroTrustGatewayType$gatewayManaged._();
 
 @override String get value => 'gateway_managed';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'gateway_managed'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayType$Unknown extends ZeroTrustGatewayType {const ZeroTrustGatewayType$Unknown(this.value);
 
 @override final String value;
@@ -166,10 +166,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayCertificates {const ZeroTrustGatewayCertificates({this.bindingStatus, this.certificate, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.inUse, this.issuerOrg, this.issuerRaw, this.type, this.updatedAt, this.uploadedOn, });
 
-factory ZeroTrustGatewayCertificates.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayCertificates(
+factory ZeroTrustGatewayCertificates.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayCertificates(
   bindingStatus: json['binding_status'] != null ? ZeroTrustGatewayBindingStatus.fromJson(json['binding_status'] as String) : null,
   certificate: json['certificate'] as String?,
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
@@ -182,7 +182,7 @@ factory ZeroTrustGatewayCertificates.fromJson(Map<String, dynamic> json) { retur
   type: json['type'] != null ? ZeroTrustGatewayType.fromJson(json['type'] as String) : null,
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
   uploadedOn: json['uploaded_on'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['uploaded_on'] as String) : null,
-); }
+);}
 
 /// Indicate the read-only deployment status of the certificate on Cloudflare's edge. Gateway TLS interception can use certificates in the 'available' (previously called 'active') state.
 final ZeroTrustGatewayBindingStatus? bindingStatus;
@@ -222,7 +222,7 @@ final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
 final ZeroTrustGatewayReadOnlyTimestamp? uploadedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bindingStatus != null) 'binding_status': bindingStatus?.toJson(),
   'certificate': ?certificate,
   if (createdAt != null) 'created_at': createdAt?.toJson(),
@@ -235,9 +235,9 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'binding_status', 'certificate', 'created_at', 'expires_on', 'fingerprint', 'id', 'in_use', 'issuer_org', 'issuer_raw', 'type', 'updated_at', 'uploaded_on'}.contains(key)); } 
-ZeroTrustGatewayCertificates copyWith({ZeroTrustGatewayBindingStatus? Function()? bindingStatus, String? Function()? certificate, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayReadOnlyTimestamp? Function()? expiresOn, String? Function()? fingerprint, ZeroTrustGatewayUuid? Function()? id, bool? Function()? inUse, String? Function()? issuerOrg, String? Function()? issuerRaw, ZeroTrustGatewayType? Function()? type, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayReadOnlyTimestamp? Function()? uploadedOn, }) { return ZeroTrustGatewayCertificates(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'binding_status', 'certificate', 'created_at', 'expires_on', 'fingerprint', 'id', 'in_use', 'issuer_org', 'issuer_raw', 'type', 'updated_at', 'uploaded_on'}.contains(key));}
+ZeroTrustGatewayCertificates copyWith({ZeroTrustGatewayBindingStatus? Function()? bindingStatus, String? Function()? certificate, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayReadOnlyTimestamp? Function()? expiresOn, String? Function()? fingerprint, ZeroTrustGatewayUuid? Function()? id, bool? Function()? inUse, String? Function()? issuerOrg, String? Function()? issuerRaw, ZeroTrustGatewayType? Function()? type, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayReadOnlyTimestamp? Function()? uploadedOn, }) {return ZeroTrustGatewayCertificates(
   bindingStatus: bindingStatus != null ? bindingStatus() : this.bindingStatus,
   certificate: certificate != null ? certificate() : this.certificate,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
@@ -250,7 +250,7 @@ ZeroTrustGatewayCertificates copyWith({ZeroTrustGatewayBindingStatus? Function()
   type: type != null ? type() : this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayCertificates &&
           bindingStatus == other.bindingStatus &&
@@ -270,4 +270,4 @@ ZeroTrustGatewayCertificates copyWith({ZeroTrustGatewayBindingStatus? Function()
 
 @override String toString() => 'ZeroTrustGatewayCertificates(\n  bindingStatus: $bindingStatus,\n  certificate: $certificate,\n  createdAt: $createdAt,\n  expiresOn: $expiresOn,\n  fingerprint: $fingerprint,\n  id: $id,\n  inUse: $inUse,\n  issuerOrg: $issuerOrg,\n  issuerRaw: $issuerRaw,\n  type: $type,\n  updatedAt: $updatedAt,\n  uploadedOn: $uploadedOn,\n)';
 
- }
+}

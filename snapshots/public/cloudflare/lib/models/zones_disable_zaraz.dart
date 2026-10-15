@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off [Zaraz]
 /// 
 sealed class ZonesDisableZarazId {const ZonesDisableZarazId();
 
-factory ZonesDisableZarazId.fromJson(String json) { return switch (json) {
+factory ZonesDisableZarazId.fromJson(String json) {return switch (json) {
   'disable_zaraz' => disableZaraz,
   _ => ZonesDisableZarazId$Unknown(json),
-}; }
+};}
 
 static const ZonesDisableZarazId disableZaraz = ZonesDisableZarazId$disableZaraz._();
 
 static const List<ZonesDisableZarazId> values = [disableZaraz];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'disable_zaraz' => 'disableZaraz',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesDisableZarazId$Unknown; } 
+bool get isUnknown {return this is ZonesDisableZarazId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() disableZaraz, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() disableZaraz, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesDisableZarazId$disableZaraz() => disableZaraz(),
       ZonesDisableZarazId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableZaraz, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableZaraz, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesDisableZarazId$disableZaraz() => disableZaraz != null ? disableZaraz() : orElse(value),
       ZonesDisableZarazId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesDisableZarazId($value)';
 
- }
+}
 @immutable final class ZonesDisableZarazId$disableZaraz extends ZonesDisableZarazId {const ZonesDisableZarazId$disableZaraz._();
 
 @override String get value => 'disable_zaraz';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableZ
 
 @override int get hashCode => 'disable_zaraz'.hashCode;
 
- }
+}
 @immutable final class ZonesDisableZarazId$Unknown extends ZonesDisableZarazId {const ZonesDisableZarazId$Unknown(this.value);
 
 @override final String value;
@@ -54,24 +54,24 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableZ
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesDisableZaraz {const ZonesDisableZaraz({this.id});
 
-factory ZonesDisableZaraz.fromJson(Map<String, dynamic> json) { return ZonesDisableZaraz(
+factory ZonesDisableZaraz.fromJson(Map<String, dynamic> json) {return ZonesDisableZaraz(
   id: json['id'] != null ? ZonesDisableZarazId.fromJson(json['id'] as String) : null,
-); }
+);}
 
 /// Turn off [Zaraz](https://developers.cloudflare.com/zaraz/).
 /// 
 final ZonesDisableZarazId? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-ZonesDisableZaraz copyWith({ZonesDisableZarazId? Function()? id}) { return ZonesDisableZaraz(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+ZonesDisableZaraz copyWith({ZonesDisableZarazId? Function()? id}) {return ZonesDisableZaraz(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesDisableZaraz &&
           id == other.id;
@@ -80,4 +80,4 @@ ZonesDisableZaraz copyWith({ZonesDisableZarazId? Function()? id}) { return Zones
 
 @override String toString() => 'ZonesDisableZaraz(id: $id)';
 
- }
+}

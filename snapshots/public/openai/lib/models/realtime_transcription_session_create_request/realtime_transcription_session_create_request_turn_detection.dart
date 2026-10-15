@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeTranscriptionSessionCreateRequestTurnDetection {const RealtimeTranscriptionSessionCreateRequestTurnDetection({this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, });
 
-factory RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequestTurnDetection(
+factory RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(Map<String, dynamic> json) {return RealtimeTranscriptionSessionCreateRequestTurnDetection(
   type: json['type'] != null ? VadConfigType.fromJson(json['type'] as String) : null,
   threshold: json['threshold'] != null ? (json['threshold'] as num).toDouble() : null,
   prefixPaddingMs: json['prefix_padding_ms'] != null ? (json['prefix_padding_ms'] as num).toInt() : null,
   silenceDurationMs: json['silence_duration_ms'] != null ? (json['silence_duration_ms'] as num).toInt() : null,
-); }
+);}
 
 /// Type of turn detection. Only `server_vad` is currently supported for transcription sessions.
 /// 
@@ -33,19 +33,19 @@ final int? prefixPaddingMs;
 /// 
 final int? silenceDurationMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   'threshold': ?threshold,
   'prefix_padding_ms': ?prefixPaddingMs,
   'silence_duration_ms': ?silenceDurationMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'threshold', 'prefix_padding_ms', 'silence_duration_ms'}.contains(key)); } 
-RealtimeTranscriptionSessionCreateRequestTurnDetection copyWith({VadConfigType? Function()? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, }) { return RealtimeTranscriptionSessionCreateRequestTurnDetection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'threshold', 'prefix_padding_ms', 'silence_duration_ms'}.contains(key));}
+RealtimeTranscriptionSessionCreateRequestTurnDetection copyWith({VadConfigType? Function()? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, }) {return RealtimeTranscriptionSessionCreateRequestTurnDetection(
   type: type != null ? type() : this.type,
   threshold: threshold != null ? threshold() : this.threshold,
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,
   silenceDurationMs: silenceDurationMs != null ? silenceDurationMs() : this.silenceDurationMs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateRequestTurnDetection &&
           type == other.type &&
@@ -57,4 +57,4 @@ RealtimeTranscriptionSessionCreateRequestTurnDetection copyWith({VadConfigType? 
 
 @override String toString() => 'RealtimeTranscriptionSessionCreateRequestTurnDetection(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs)';
 
- }
+}

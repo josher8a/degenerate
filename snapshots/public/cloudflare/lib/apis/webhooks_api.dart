@@ -14,7 +14,7 @@ final class WebhooksApi with ApiExecutor {const WebhooksApi(this.apiConfig);
 /// Returns details of all webhooks for an App.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/webhooks`
-Future<ApiResult<RealtimekitWebhooksListSuccessResponse, Never>> getAllWebhooks({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimekitWebhooksListSuccessResponse, Never>> getAllWebhooks({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,13 +29,13 @@ return await execute(
     return RealtimekitWebhooksListSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Add a webhook
 ///
 /// Adds a new webhook to an App.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/webhooks`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> addWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> addWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required RealtimekitWebhookRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,13 +53,13 @@ return await execute(
   },
   onError: AddWebhookError.fromResponse,
 );
- } 
+}
 /// Fetch details of a webhook
 ///
 /// Returns webhook details for the given webhook ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> getWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> getWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,13 +75,13 @@ return await execute(
   },
   onError: AddWebhookError.fromResponse,
 );
- } 
+}
 /// Replace a webhook
 ///
 /// Replace all details for the given webhook ID.
 ///
 /// `PUT /accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> replaceWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, required RealtimekitWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> replaceWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, required RealtimekitWebhookRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,13 +99,13 @@ return await execute(
   },
   onError: AddWebhookError.fromResponse,
 );
- } 
+}
 /// Edit a webhook
 ///
 /// Edits the webhook details for the given webhook ID.
 ///
 /// `PATCH /accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> editWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, required RealtimekitPatchWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> editWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, required RealtimekitPatchWebhookRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -123,13 +123,13 @@ return await execute(
   },
   onError: AddWebhookError.fromResponse,
 );
- } 
+}
 /// Delete a webhook
 ///
 /// Removes a webhook for the given webhook ID.
 ///
 /// `DELETE /accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}`
-Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> deleteWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> deleteWebhook({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String webhookId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -145,5 +145,5 @@ return await execute(
   },
   onError: AddWebhookError.fromResponse,
 );
- } 
- }
+}
+}

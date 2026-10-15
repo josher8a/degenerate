@@ -7,11 +7,11 @@ const RulesetsRewriteUriRequest({this.uriPath = const Omittable.absent(), this.u
 const RulesetsRewriteUriRequest._({required this.rawValue, required this.uriPath, required this.uriQuery, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory RulesetsRewriteUriRequest.fromJson(Object? json) { return RulesetsRewriteUriRequest._(
+factory RulesetsRewriteUriRequest.fromJson(Object? json) {return RulesetsRewriteUriRequest._(
   rawValue: Omittable(json),
   uriPath: json is Map<String, dynamic> && UriPath.canParse(json) ? parseAnyOfVariant<UriPath>(json, (value) => UriPath.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   uriQuery: json is Map<String, dynamic> && UriQuery.canParse(json) ? parseAnyOfVariant<UriQuery>(json, (value) => UriQuery.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'RulesetsRewriteUriRequest(${toJson()})';
 
- }
+}

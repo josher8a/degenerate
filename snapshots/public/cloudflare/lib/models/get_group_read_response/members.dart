@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Members {const Members({required this.accountId, required this.groupId, required this.uuid, this.createdAt, this.updatedAt, });
 
-factory Members.fromJson(Map<String, dynamic> json) { return Members(
+factory Members.fromJson(Map<String, dynamic> json) {return Members(
   accountId: json['accountId'] as String,
   createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : null,
   groupId: json['groupId'] as String,
   updatedAt: json['updatedAt'] != null ? DateTime.parse(json['updatedAt'] as String) : null,
   uuid: json['uuid'] as String,
-); }
+);}
 
 /// Example: `'123'`
 final String accountId;
@@ -26,23 +26,23 @@ final DateTime? updatedAt;
 /// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accountId': accountId,
   if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
   'groupId': groupId,
   if (updatedAt != null) 'updatedAt': updatedAt?.toIso8601String(),
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accountId') && json['accountId'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accountId') && json['accountId'] is String &&
       json.containsKey('groupId') && json['groupId'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-Members copyWith({String? accountId, DateTime? Function()? createdAt, String? groupId, DateTime? Function()? updatedAt, String? uuid, }) { return Members(
+      json.containsKey('uuid') && json['uuid'] is String;}
+Members copyWith({String? accountId, DateTime? Function()? createdAt, String? groupId, DateTime? Function()? updatedAt, String? uuid, }) {return Members(
   accountId: accountId ?? this.accountId,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   groupId: groupId ?? this.groupId,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   uuid: uuid ?? this.uuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Members &&
           accountId == other.accountId &&
@@ -55,4 +55,4 @@ Members copyWith({String? accountId, DateTime? Function()? createdAt, String? gr
 
 @override String toString() => 'Members(accountId: $accountId, createdAt: $createdAt, groupId: $groupId, updatedAt: $updatedAt, uuid: $uuid)';
 
- }
+}

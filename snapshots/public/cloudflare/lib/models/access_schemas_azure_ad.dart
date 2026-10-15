@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad/access_azure_ad_scim_config.dart';import 'package:pub_cloudflare/models/access_azure_ad_request/access_azure_ad_request_type.dart';import 'package:pub_cloudflare/models/access_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_schemas_azure_ad/access_schemas_azure_ad_config.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessSchemasAzureAd {const AccessSchemasAzureAd({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 
-factory AccessSchemasAzureAd.fromJson(Map<String, dynamic> json) { return AccessSchemasAzureAd(
+factory AccessSchemasAzureAd.fromJson(Map<String, dynamic> json) {return AccessSchemasAzureAd(
   config: AccessSchemasAzureAdConfig.fromJson(json['config'] as Map<String, dynamic>),
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
   scimConfig: json['scim_config'] != null ? AccessAzureAdScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
   type: AccessAzureAdRequestType.fromJson(json['type'] as String),
-); }
+);}
 
 final AccessSchemasAzureAdConfig config;
 
@@ -26,23 +26,23 @@ final AccessAzureAdScimConfig? scimConfig;
 /// Example: `'onetimepin'`
 final AccessAzureAdRequestType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config': config.toJson(),
   if (id != null) 'id': id?.toJson(),
   'name': name.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('config') &&
       json.containsKey('name') &&
-      json.containsKey('type'); } 
-AccessSchemasAzureAd copyWith({AccessSchemasAzureAdConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessAzureAdScimConfig? Function()? scimConfig, AccessAzureAdRequestType? type, }) { return AccessSchemasAzureAd(
+      json.containsKey('type');}
+AccessSchemasAzureAd copyWith({AccessSchemasAzureAdConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessAzureAdScimConfig? Function()? scimConfig, AccessAzureAdRequestType? type, }) {return AccessSchemasAzureAd(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasAzureAd &&
           config == other.config &&
@@ -55,4 +55,4 @@ AccessSchemasAzureAd copyWith({AccessSchemasAzureAdConfig? config, AccessUuid? F
 
 @override String toString() => 'AccessSchemasAzureAd(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)';
 
- }
+}

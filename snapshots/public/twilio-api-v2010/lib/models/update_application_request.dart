@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_method.dart';@immutable final class UpdateApplicationRequest {const UpdateApplicationRequest({this.friendlyName, this.apiVersion, this.voiceUrl, this.voiceMethod, this.voiceFallbackUrl, this.voiceFallbackMethod, this.statusCallback, this.statusCallbackMethod, this.voiceCallerIdLookup, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, this.smsStatusCallback, this.messageStatusCallback, this.publicApplicationConnectEnabled, });
 
-factory UpdateApplicationRequest.fromJson(Map<String, dynamic> json) { return UpdateApplicationRequest(
+factory UpdateApplicationRequest.fromJson(Map<String, dynamic> json) {return UpdateApplicationRequest(
   friendlyName: json['FriendlyName'] as String?,
   apiVersion: json['ApiVersion'] as String?,
   voiceUrl: json['VoiceUrl'] != null ? Uri.parse(json['VoiceUrl'] as String) : null,
@@ -20,7 +20,7 @@ factory UpdateApplicationRequest.fromJson(Map<String, dynamic> json) { return Up
   smsStatusCallback: json['SmsStatusCallback'] != null ? Uri.parse(json['SmsStatusCallback'] as String) : null,
   messageStatusCallback: json['MessageStatusCallback'] != null ? Uri.parse(json['MessageStatusCallback'] as String) : null,
   publicApplicationConnectEnabled: json['PublicApplicationConnectEnabled'] as bool?,
-); }
+);}
 
 /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
 final String? friendlyName;
@@ -70,7 +70,7 @@ final Uri? messageStatusCallback;
 /// Whether to allow other Twilio accounts to dial this applicaton using Dial verb. Can be: `true` or `false`.
 final bool? publicApplicationConnectEnabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FriendlyName': ?friendlyName,
   'ApiVersion': ?apiVersion,
   if (voiceUrl != null) 'VoiceUrl': voiceUrl?.toString(),
@@ -87,9 +87,9 @@ Map<String, dynamic> toJson() { return {
   if (smsStatusCallback != null) 'SmsStatusCallback': smsStatusCallback?.toString(),
   if (messageStatusCallback != null) 'MessageStatusCallback': messageStatusCallback?.toString(),
   'PublicApplicationConnectEnabled': ?publicApplicationConnectEnabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'ApiVersion', 'VoiceUrl', 'VoiceMethod', 'VoiceFallbackUrl', 'VoiceFallbackMethod', 'StatusCallback', 'StatusCallbackMethod', 'VoiceCallerIdLookup', 'SmsUrl', 'SmsMethod', 'SmsFallbackUrl', 'SmsFallbackMethod', 'SmsStatusCallback', 'MessageStatusCallback', 'PublicApplicationConnectEnabled'}.contains(key)); } 
-UpdateApplicationRequest copyWith({String? Function()? friendlyName, String? Function()? apiVersion, Uri? Function()? voiceUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, bool? Function()? voiceCallerIdLookup, Uri? Function()? smsUrl, CreateApplicationRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsFallbackUrl, CreateApplicationRequestSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsStatusCallback, Uri? Function()? messageStatusCallback, bool? Function()? publicApplicationConnectEnabled, }) { return UpdateApplicationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'FriendlyName', 'ApiVersion', 'VoiceUrl', 'VoiceMethod', 'VoiceFallbackUrl', 'VoiceFallbackMethod', 'StatusCallback', 'StatusCallbackMethod', 'VoiceCallerIdLookup', 'SmsUrl', 'SmsMethod', 'SmsFallbackUrl', 'SmsFallbackMethod', 'SmsStatusCallback', 'MessageStatusCallback', 'PublicApplicationConnectEnabled'}.contains(key));}
+UpdateApplicationRequest copyWith({String? Function()? friendlyName, String? Function()? apiVersion, Uri? Function()? voiceUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, bool? Function()? voiceCallerIdLookup, Uri? Function()? smsUrl, CreateApplicationRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsFallbackUrl, CreateApplicationRequestSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsStatusCallback, Uri? Function()? messageStatusCallback, bool? Function()? publicApplicationConnectEnabled, }) {return UpdateApplicationRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,
@@ -106,7 +106,7 @@ UpdateApplicationRequest copyWith({String? Function()? friendlyName, String? Fun
   smsStatusCallback: smsStatusCallback != null ? smsStatusCallback() : this.smsStatusCallback,
   messageStatusCallback: messageStatusCallback != null ? messageStatusCallback() : this.messageStatusCallback,
   publicApplicationConnectEnabled: publicApplicationConnectEnabled != null ? publicApplicationConnectEnabled() : this.publicApplicationConnectEnabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateApplicationRequest &&
           friendlyName == other.friendlyName &&
@@ -130,4 +130,4 @@ UpdateApplicationRequest copyWith({String? Function()? friendlyName, String? Fun
 
 @override String toString() => 'UpdateApplicationRequest(\n  friendlyName: $friendlyName,\n  apiVersion: $apiVersion,\n  voiceUrl: $voiceUrl,\n  voiceMethod: $voiceMethod,\n  voiceFallbackUrl: $voiceFallbackUrl,\n  voiceFallbackMethod: $voiceFallbackMethod,\n  statusCallback: $statusCallback,\n  statusCallbackMethod: $statusCallbackMethod,\n  voiceCallerIdLookup: $voiceCallerIdLookup,\n  smsUrl: $smsUrl,\n  smsMethod: $smsMethod,\n  smsFallbackUrl: $smsFallbackUrl,\n  smsFallbackMethod: $smsFallbackMethod,\n  smsStatusCallback: $smsStatusCallback,\n  messageStatusCallback: $messageStatusCallback,\n  publicApplicationConnectEnabled: $publicApplicationConnectEnabled,\n)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kanji.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_ownership_exemption_reason.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_structure.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_verification.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/directorship_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/ownership_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/registration_date.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/representative_declaration.dart';@immutable final class AccountCompany {const AccountCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipDeclarationShownAndSigned, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
 
-factory AccountCompany.fromJson(Map<String, dynamic> json) { return AccountCompany(
+factory AccountCompany.fromJson(Map<String, dynamic> json) {return AccountCompany(
   address: json['address'] != null ? PostAccountsAccountPeoplePersonRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
@@ -28,7 +28,7 @@ factory AccountCompany.fromJson(Map<String, dynamic> json) { return AccountCompa
   taxIdRegistrar: json['tax_id_registrar'] as String?,
   vatId: json['vat_id'] as String?,
   verification: json['verification'] != null ? CompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostAccountsAccountPeoplePersonRequestAddress? address;
 
@@ -78,7 +78,7 @@ final String? vatId;
 
 final CompanyVerification? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (addressKana != null) 'address_kana': addressKana?.toJson(),
   if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
@@ -103,10 +103,10 @@ Map<String, dynamic> toJson() { return {
   'tax_id_registrar': ?taxIdRegistrar,
   'vat_id': ?vatId,
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_declaration_shown_and_signed', 'ownership_exemption_reason', 'phone', 'registration_date', 'registration_number', 'representative_declaration', 'structure', 'tax_id', 'tax_id_registrar', 'vat_id', 'verification'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_declaration_shown_and_signed', 'ownership_exemption_reason', 'phone', 'registration_date', 'registration_number', 'representative_declaration', 'structure', 'tax_id', 'tax_id_registrar', 'vat_id', 'verification'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final exportLicenseId$ = exportLicenseId;
 if (exportLicenseId$ != null) {
   if (exportLicenseId$.runes.length > 5000) { errors.add('exportLicenseId: length must be <= 5000'); }
@@ -147,8 +147,8 @@ final vatId$ = vatId;
 if (vatId$ != null) {
   if (vatId$.runes.length > 5000) { errors.add('vatId: length must be <= 5000'); }
 }
-return errors; } 
-AccountCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, DirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, OwnershipDeclaration? Function()? ownershipDeclaration, bool? Function()? ownershipDeclarationShownAndSigned, CompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, RegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, RepresentativeDeclaration? Function()? representativeDeclaration, CompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, CompanyVerification? Function()? verification, }) { return AccountCompany(
+return errors;}
+AccountCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, DirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, OwnershipDeclaration? Function()? ownershipDeclaration, bool? Function()? ownershipDeclarationShownAndSigned, CompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, RegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, RepresentativeDeclaration? Function()? representativeDeclaration, CompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, CompanyVerification? Function()? verification, }) {return AccountCompany(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
@@ -173,7 +173,7 @@ AccountCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function
   taxIdRegistrar: taxIdRegistrar != null ? taxIdRegistrar() : this.taxIdRegistrar,
   vatId: vatId != null ? vatId() : this.vatId,
   verification: verification != null ? verification() : this.verification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCompany &&
           address == other.address &&
@@ -205,4 +205,4 @@ AccountCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function
 
 @override String toString() => 'AccountCompany(\n  address: $address,\n  addressKana: $addressKana,\n  addressKanji: $addressKanji,\n  directorsProvided: $directorsProvided,\n  directorshipDeclaration: $directorshipDeclaration,\n  executivesProvided: $executivesProvided,\n  exportLicenseId: $exportLicenseId,\n  exportPurposeCode: $exportPurposeCode,\n  name: $name,\n  nameKana: $nameKana,\n  nameKanji: $nameKanji,\n  ownersProvided: $ownersProvided,\n  ownershipDeclaration: $ownershipDeclaration,\n  ownershipDeclarationShownAndSigned: $ownershipDeclarationShownAndSigned,\n  ownershipExemptionReason: $ownershipExemptionReason,\n  phone: $phone,\n  registrationDate: $registrationDate,\n  registrationNumber: $registrationNumber,\n  representativeDeclaration: $representativeDeclaration,\n  structure: $structure,\n  taxId: $taxId,\n  taxIdRegistrar: $taxIdRegistrar,\n  vatId: $vatId,\n  verification: $verification,\n)';
 
- }
+}

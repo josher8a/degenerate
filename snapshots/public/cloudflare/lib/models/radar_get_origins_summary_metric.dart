@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to retrieve.
 sealed class RadarGetOriginsSummaryMetric {const RadarGetOriginsSummaryMetric();
 
-factory RadarGetOriginsSummaryMetric.fromJson(String json) { return switch (json) {
+factory RadarGetOriginsSummaryMetric.fromJson(String json) {return switch (json) {
   'CONNECTION_FAILURES' => connectionFailures,
   'REQUESTS' => requests,
   'RESPONSE_HEADER_RECEIVE_DURATION' => responseHeaderReceiveDuration,
@@ -12,7 +12,7 @@ factory RadarGetOriginsSummaryMetric.fromJson(String json) { return switch (json
   'TCP_RTT' => tcpRtt,
   'TLS_HANDSHAKE_DURATION' => tlsHandshakeDuration,
   _ => RadarGetOriginsSummaryMetric$Unknown(json),
-}; }
+};}
 
 static const RadarGetOriginsSummaryMetric connectionFailures = RadarGetOriginsSummaryMetric$connectionFailures._();
 
@@ -29,9 +29,9 @@ static const RadarGetOriginsSummaryMetric tlsHandshakeDuration = RadarGetOrigins
 static const List<RadarGetOriginsSummaryMetric> values = [connectionFailures, requests, responseHeaderReceiveDuration, tcpHandshakeDuration, tcpRtt, tlsHandshakeDuration];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'CONNECTION_FAILURES' => 'connectionFailures',
   'REQUESTS' => 'requests',
   'RESPONSE_HEADER_RECEIVE_DURATION' => 'responseHeaderReceiveDuration',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'TCP_RTT' => 'tcpRtt',
   'TLS_HANDSHAKE_DURATION' => 'tlsHandshakeDuration',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetOriginsSummaryMetric$Unknown; } 
+bool get isUnknown {return this is RadarGetOriginsSummaryMetric$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() connectionFailures, required W Function() requests, required W Function() responseHeaderReceiveDuration, required W Function() tcpHandshakeDuration, required W Function() tcpRtt, required W Function() tlsHandshakeDuration, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() connectionFailures, required W Function() requests, required W Function() responseHeaderReceiveDuration, required W Function() tcpHandshakeDuration, required W Function() tcpRtt, required W Function() tlsHandshakeDuration, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetOriginsSummaryMetric$connectionFailures() => connectionFailures(),
       RadarGetOriginsSummaryMetric$requests() => requests(),
       RadarGetOriginsSummaryMetric$responseHeaderReceiveDuration() => responseHeaderReceiveDuration(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() connectionFailures, required W Function() reque
       RadarGetOriginsSummaryMetric$tcpRtt() => tcpRtt(),
       RadarGetOriginsSummaryMetric$tlsHandshakeDuration() => tlsHandshakeDuration(),
       RadarGetOriginsSummaryMetric$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? connectionFailures, W Function()? requests, W Function()? responseHeaderReceiveDuration, W Function()? tcpHandshakeDuration, W Function()? tcpRtt, W Function()? tlsHandshakeDuration, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? connectionFailures, W Function()? requests, W Function()? responseHeaderReceiveDuration, W Function()? tcpHandshakeDuration, W Function()? tcpRtt, W Function()? tlsHandshakeDuration, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetOriginsSummaryMetric$connectionFailures() => connectionFailures != null ? connectionFailures() : orElse(value),
       RadarGetOriginsSummaryMetric$requests() => requests != null ? requests() : orElse(value),
       RadarGetOriginsSummaryMetric$responseHeaderReceiveDuration() => responseHeaderReceiveDuration != null ? responseHeaderReceiveDuration() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecti
       RadarGetOriginsSummaryMetric$tcpRtt() => tcpRtt != null ? tcpRtt() : orElse(value),
       RadarGetOriginsSummaryMetric$tlsHandshakeDuration() => tlsHandshakeDuration != null ? tlsHandshakeDuration() : orElse(value),
       RadarGetOriginsSummaryMetric$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetOriginsSummaryMetric($value)';
 
- }
+}
 @immutable final class RadarGetOriginsSummaryMetric$connectionFailures extends RadarGetOriginsSummaryMetric {const RadarGetOriginsSummaryMetric$connectionFailures._();
 
 @override String get value => 'CONNECTION_FAILURES';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecti
 
 @override int get hashCode => 'CONNECTION_FAILURES'.hashCode;
 
- }
+}
 @immutable final class RadarGetOriginsSummaryMetric$requests extends RadarGetOriginsSummaryMetric {const RadarGetOriginsSummaryMetric$requests._();
 
 @override String get value => 'REQUESTS';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecti
 
 @override int get hashCode => 'REQUESTS'.hashCode;
 
- }
+}
 @immutable final class RadarGetOriginsSummaryMetric$responseHeaderReceiveDuration extends RadarGetOriginsSummaryMetric {const RadarGetOriginsSummaryMetric$responseHeaderReceiveDuration._();
 
 @override String get value => 'RESPONSE_HEADER_RECEIVE_DURATION';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecti
 
 @override int get hashCode => 'RESPONSE_HEADER_RECEIVE_DURATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetOriginsSummaryMetric$tcpHandshakeDuration extends RadarGetOriginsSummaryMetric {const RadarGetOriginsSummaryMetric$tcpHandshakeDuration._();
 
 @override String get value => 'TCP_HANDSHAKE_DURATION';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecti
 
 @override int get hashCode => 'TCP_HANDSHAKE_DURATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetOriginsSummaryMetric$tcpRtt extends RadarGetOriginsSummaryMetric {const RadarGetOriginsSummaryMetric$tcpRtt._();
 
 @override String get value => 'TCP_RTT';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecti
 
 @override int get hashCode => 'TCP_RTT'.hashCode;
 
- }
+}
 @immutable final class RadarGetOriginsSummaryMetric$tlsHandshakeDuration extends RadarGetOriginsSummaryMetric {const RadarGetOriginsSummaryMetric$tlsHandshakeDuration._();
 
 @override String get value => 'TLS_HANDSHAKE_DURATION';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecti
 
 @override int get hashCode => 'TLS_HANDSHAKE_DURATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetOriginsSummaryMetric$Unknown extends RadarGetOriginsSummaryMetric {const RadarGetOriginsSummaryMetric$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? connecti
 
 @override int get hashCode => value.hashCode;
 
- }
+}

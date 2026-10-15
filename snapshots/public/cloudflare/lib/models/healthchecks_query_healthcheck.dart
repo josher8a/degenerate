@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_address.dart';import 'package:pub_cloudflare/models/healthchecks_check_regions2.dart';import 'package:pub_cloudflare/models/healthchecks_consecutive_fails.dart';import 'package:pub_cloudflare/models/healthchecks_consecutive_successes.dart';import 'package:pub_cloudflare/models/healthchecks_description.dart';import 'package:pub_cloudflare/models/healthchecks_http_config.dart';import 'package:pub_cloudflare/models/healthchecks_interval.dart';import 'package:pub_cloudflare/models/healthchecks_name.dart';import 'package:pub_cloudflare/models/healthchecks_retries.dart';import 'package:pub_cloudflare/models/healthchecks_suspended.dart';import 'package:pub_cloudflare/models/healthchecks_tcp_config.dart';import 'package:pub_cloudflare/models/healthchecks_timeout.dart';import 'package:pub_cloudflare/models/healthchecks_type.dart';@immutable final class HealthchecksQueryHealthcheck {const HealthchecksQueryHealthcheck({required this.address, required this.name, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig = const Omittable.absent(), this.interval, this.retries, this.suspended, this.tcpConfig = const Omittable.absent(), this.timeout, this.type, });
 
-factory HealthchecksQueryHealthcheck.fromJson(Map<String, dynamic> json) { return HealthchecksQueryHealthcheck(
+factory HealthchecksQueryHealthcheck.fromJson(Map<String, dynamic> json) {return HealthchecksQueryHealthcheck(
   address: HealthchecksAddress.fromJson(json['address'] as String),
   checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => HealthchecksCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? HealthchecksConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
@@ -17,7 +17,7 @@ factory HealthchecksQueryHealthcheck.fromJson(Map<String, dynamic> json) { retur
   tcpConfig: json.containsKey('tcp_config') ? Omittable(json['tcp_config'] != null ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   timeout: json['timeout'] != null ? HealthchecksTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? HealthchecksType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The hostname or IP address of the origin server to run health checks on.
 final HealthchecksAddress address;
@@ -52,7 +52,7 @@ final HealthchecksTimeout? timeout;
 
 final HealthchecksType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
@@ -66,10 +66,10 @@ Map<String, dynamic> toJson() { return {
   if (tcpConfig.isPresent) 'tcp_config': tcpConfig.value?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name'); } 
-HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, Omittable<List<HealthchecksCheckRegions2>?>? checkRegions, HealthchecksConsecutiveFails? Function()? consecutiveFails, HealthchecksConsecutiveSuccesses? Function()? consecutiveSuccesses, HealthchecksDescription? Function()? description, Omittable<HealthchecksHttpConfig?>? httpConfig, HealthchecksInterval? Function()? interval, HealthchecksName? name, HealthchecksRetries? Function()? retries, HealthchecksSuspended? Function()? suspended, Omittable<HealthchecksTcpConfig?>? tcpConfig, HealthchecksTimeout? Function()? timeout, HealthchecksType? Function()? type, }) { return HealthchecksQueryHealthcheck(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name');}
+HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, Omittable<List<HealthchecksCheckRegions2>?>? checkRegions, HealthchecksConsecutiveFails? Function()? consecutiveFails, HealthchecksConsecutiveSuccesses? Function()? consecutiveSuccesses, HealthchecksDescription? Function()? description, Omittable<HealthchecksHttpConfig?>? httpConfig, HealthchecksInterval? Function()? interval, HealthchecksName? name, HealthchecksRetries? Function()? retries, HealthchecksSuspended? Function()? suspended, Omittable<HealthchecksTcpConfig?>? tcpConfig, HealthchecksTimeout? Function()? timeout, HealthchecksType? Function()? type, }) {return HealthchecksQueryHealthcheck(
   address: address ?? this.address,
   checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
@@ -83,7 +83,7 @@ HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, Omittable<L
   tcpConfig: tcpConfig ?? this.tcpConfig,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HealthchecksQueryHealthcheck &&
           address == other.address &&
@@ -105,4 +105,4 @@ HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, Omittable<L
 
 @override String toString() => 'HealthchecksQueryHealthcheck(\n  address: $address,\n  checkRegions: $checkRegions,\n  consecutiveFails: $consecutiveFails,\n  consecutiveSuccesses: $consecutiveSuccesses,\n  description: $description,\n  httpConfig: $httpConfig,\n  interval: $interval,\n  name: $name,\n  retries: $retries,\n  suspended: $suspended,\n  tcpConfig: $tcpConfig,\n  timeout: $timeout,\n  type: $type,\n)';
 
- }
+}

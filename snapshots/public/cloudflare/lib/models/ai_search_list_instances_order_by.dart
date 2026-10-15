@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order By Column Name
 sealed class AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy();
 
-factory AiSearchListInstancesOrderBy.fromJson(String json) { return switch (json) {
+factory AiSearchListInstancesOrderBy.fromJson(String json) {return switch (json) {
   'created_at' => createdAt,
   _ => AiSearchListInstancesOrderBy$Unknown(json),
-}; }
+};}
 
 static const AiSearchListInstancesOrderBy createdAt = AiSearchListInstancesOrderBy$createdAt._();
 
 static const List<AiSearchListInstancesOrderBy> values = [createdAt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'created_at' => 'createdAt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AiSearchListInstancesOrderBy$Unknown; } 
+bool get isUnknown {return this is AiSearchListInstancesOrderBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() createdAt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() createdAt, required W Function(String value) $unknown, }) {return switch (this) {
       AiSearchListInstancesOrderBy$createdAt() => createdAt(),
       AiSearchListInstancesOrderBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdAt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdAt, W Function(String value)? $unknown, }) {return switch (this) {
       AiSearchListInstancesOrderBy$createdAt() => createdAt != null ? createdAt() : orElse(value),
       AiSearchListInstancesOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AiSearchListInstancesOrderBy($value)';
 
- }
+}
 @immutable final class AiSearchListInstancesOrderBy$createdAt extends AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy$createdAt._();
 
 @override String get value => 'created_at';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => 'created_at'.hashCode;
 
- }
+}
 @immutable final class AiSearchListInstancesOrderBy$Unknown extends AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdA
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_response/create_portals_response_result.dart';@immutable final class UpdatePortalsResponse {const UpdatePortalsResponse({required this.result, required this.success, });
 
-factory UpdatePortalsResponse.fromJson(Map<String, dynamic> json) { return UpdatePortalsResponse(
+factory UpdatePortalsResponse.fromJson(Map<String, dynamic> json) {return UpdatePortalsResponse(
   result: CreatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final CreatePortalsResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-UpdatePortalsResponse copyWith({CreatePortalsResponseResult? result, bool? success, }) { return UpdatePortalsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+UpdatePortalsResponse copyWith({CreatePortalsResponseResult? result, bool? success, }) {return UpdatePortalsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdatePortalsResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ UpdatePortalsResponse copyWith({CreatePortalsResponseResult? result, bool? succe
 
 @override String toString() => 'UpdatePortalsResponse(result: $result, success: $success)';
 
- }
+}

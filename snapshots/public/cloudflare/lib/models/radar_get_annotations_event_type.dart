@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by event type.
 sealed class RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType();
 
-factory RadarGetAnnotationsEventType.fromJson(String json) { return switch (json) {
+factory RadarGetAnnotationsEventType.fromJson(String json) {return switch (json) {
   'EVENT' => event,
   'GENERAL' => general,
   'OUTAGE' => outage,
@@ -12,7 +12,7 @@ factory RadarGetAnnotationsEventType.fromJson(String json) { return switch (json
   'PIPELINE' => pipeline,
   'TRAFFIC_ANOMALY' => trafficAnomaly,
   _ => RadarGetAnnotationsEventType$Unknown(json),
-}; }
+};}
 
 static const RadarGetAnnotationsEventType event = RadarGetAnnotationsEventType$event._();
 
@@ -29,9 +29,9 @@ static const RadarGetAnnotationsEventType trafficAnomaly = RadarGetAnnotationsEv
 static const List<RadarGetAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'EVENT' => 'event',
   'GENERAL' => 'general',
   'OUTAGE' => 'outage',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'PIPELINE' => 'pipeline',
   'TRAFFIC_ANOMALY' => 'trafficAnomaly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAnnotationsEventType$Unknown; } 
+bool get isUnknown {return this is RadarGetAnnotationsEventType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() event, required W Function() general, required W Function() outage, required W Function() partialProjection, required W Function() pipeline, required W Function() trafficAnomaly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() event, required W Function() general, required W Function() outage, required W Function() partialProjection, required W Function() pipeline, required W Function() trafficAnomaly, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAnnotationsEventType$event() => event(),
       RadarGetAnnotationsEventType$general() => general(),
       RadarGetAnnotationsEventType$outage() => outage(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() event, required W Function() general, required 
       RadarGetAnnotationsEventType$pipeline() => pipeline(),
       RadarGetAnnotationsEventType$trafficAnomaly() => trafficAnomaly(),
       RadarGetAnnotationsEventType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function()? general, W Function()? outage, W Function()? partialProjection, W Function()? pipeline, W Function()? trafficAnomaly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function()? general, W Function()? outage, W Function()? partialProjection, W Function()? pipeline, W Function()? trafficAnomaly, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAnnotationsEventType$event() => event != null ? event() : orElse(value),
       RadarGetAnnotationsEventType$general() => general != null ? general() : orElse(value),
       RadarGetAnnotationsEventType$outage() => outage != null ? outage() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
       RadarGetAnnotationsEventType$pipeline() => pipeline != null ? pipeline() : orElse(value),
       RadarGetAnnotationsEventType$trafficAnomaly() => trafficAnomaly != null ? trafficAnomaly() : orElse(value),
       RadarGetAnnotationsEventType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAnnotationsEventType($value)';
 
- }
+}
 @immutable final class RadarGetAnnotationsEventType$event extends RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType$event._();
 
 @override String get value => 'EVENT';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'EVENT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsEventType$general extends RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType$general._();
 
 @override String get value => 'GENERAL';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'GENERAL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsEventType$outage extends RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType$outage._();
 
 @override String get value => 'OUTAGE';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'OUTAGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsEventType$partialProjection extends RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType$partialProjection._();
 
 @override String get value => 'PARTIAL_PROJECTION';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'PARTIAL_PROJECTION'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsEventType$pipeline extends RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType$pipeline._();
 
 @override String get value => 'PIPELINE';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'PIPELINE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsEventType$trafficAnomaly extends RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType$trafficAnomaly._();
 
 @override String get value => 'TRAFFIC_ANOMALY';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'TRAFFIC_ANOMALY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsEventType$Unknown extends RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

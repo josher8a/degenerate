@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_review_pat_grant_request_request/orgs_review_pat_grant_request_request_action.dart';@immutable final class OrgsReviewPatGrantRequestRequest {const OrgsReviewPatGrantRequestRequest({required this.action, this.reason = const Omittable.absent(), });
 
-factory OrgsReviewPatGrantRequestRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestRequest(
+factory OrgsReviewPatGrantRequestRequest.fromJson(Map<String, dynamic> json) {return OrgsReviewPatGrantRequestRequest(
   action: OrgsReviewPatGrantRequestRequestAction.fromJson(json['action'] as String),
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Action to apply to the request.
 final OrgsReviewPatGrantRequestRequestAction action;
@@ -14,22 +14,22 @@ final OrgsReviewPatGrantRequestRequestAction action;
 /// Reason for approving or denying the request. Max 1024 characters.
 final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (reason.isPresent) 'reason': reason.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final reason$ = reason.value;
 if (reason$ != null) {
   if (reason$.runes.length > 1024) { errors.add('reason: length must be <= 1024'); }
 }
-return errors; } 
-OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestAction? action, Omittable<String?>? reason, }) { return OrgsReviewPatGrantRequestRequest(
+return errors;}
+OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestAction? action, Omittable<String?>? reason, }) {return OrgsReviewPatGrantRequestRequest(
   action: action ?? this.action,
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsReviewPatGrantRequestRequest &&
           action == other.action &&
@@ -39,4 +39,4 @@ OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestActio
 
 @override String toString() => 'OrgsReviewPatGrantRequestRequest(action: $action, reason: $reason)';
 
- }
+}

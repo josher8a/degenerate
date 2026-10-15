@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pages_https_certificate.dart';import 'package:pub_github_rest_3_1/models/pages_source_hash.dart';/// The status of the most recent build of the Page.
 sealed class PageStatus {const PageStatus();
 
-factory PageStatus.fromJson(String json) { return switch (json) {
+factory PageStatus.fromJson(String json) {return switch (json) {
   'built' => built,
   'building' => building,
   'errored' => errored,
   'null' => $null,
   _ => PageStatus$Unknown(json),
-}; }
+};}
 
 static const PageStatus built = PageStatus$built._();
 
@@ -23,36 +23,36 @@ static const PageStatus $null = PageStatus$$null._();
 static const List<PageStatus> values = [built, building, errored, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'built' => 'built',
   'building' => 'building',
   'errored' => 'errored',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PageStatus$Unknown; } 
+bool get isUnknown {return this is PageStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() built, required W Function() building, required W Function() errored, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() built, required W Function() building, required W Function() errored, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       PageStatus$built() => built(),
       PageStatus$building() => building(),
       PageStatus$errored() => errored(),
       PageStatus$$null() => $null(),
       PageStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? built, W Function()? building, W Function()? errored, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? built, W Function()? building, W Function()? errored, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       PageStatus$built() => built != null ? built() : orElse(value),
       PageStatus$building() => building != null ? building() : orElse(value),
       PageStatus$errored() => errored != null ? errored() : orElse(value),
       PageStatus$$null() => $null != null ? $null() : orElse(value),
       PageStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PageStatus($value)';
 
- }
+}
 @immutable final class PageStatus$built extends PageStatus {const PageStatus$built._();
 
 @override String get value => 'built';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? built, W
 
 @override int get hashCode => 'built'.hashCode;
 
- }
+}
 @immutable final class PageStatus$building extends PageStatus {const PageStatus$building._();
 
 @override String get value => 'building';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? built, W
 
 @override int get hashCode => 'building'.hashCode;
 
- }
+}
 @immutable final class PageStatus$errored extends PageStatus {const PageStatus$errored._();
 
 @override String get value => 'errored';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? built, W
 
 @override int get hashCode => 'errored'.hashCode;
 
- }
+}
 @immutable final class PageStatus$$null extends PageStatus {const PageStatus$$null._();
 
 @override String get value => 'null';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? built, W
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class PageStatus$Unknown extends PageStatus {const PageStatus$Unknown(this.value);
 
 @override final String value;
@@ -98,17 +98,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? built, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The state if the domain is verified
 sealed class ProtectedDomainState {const ProtectedDomainState();
 
-factory ProtectedDomainState.fromJson(String json) { return switch (json) {
+factory ProtectedDomainState.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'verified' => verified,
   'unverified' => unverified,
   'null' => $null,
   _ => ProtectedDomainState$Unknown(json),
-}; }
+};}
 
 static const ProtectedDomainState pending = ProtectedDomainState$pending._();
 
@@ -121,36 +121,36 @@ static const ProtectedDomainState $null = ProtectedDomainState$$null._();
 static const List<ProtectedDomainState> values = [pending, verified, unverified, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'verified' => 'verified',
   'unverified' => 'unverified',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ProtectedDomainState$Unknown; } 
+bool get isUnknown {return this is ProtectedDomainState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() verified, required W Function() unverified, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() verified, required W Function() unverified, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       ProtectedDomainState$pending() => pending(),
       ProtectedDomainState$verified() => verified(),
       ProtectedDomainState$unverified() => unverified(),
       ProtectedDomainState$$null() => $null(),
       ProtectedDomainState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? verified, W Function()? unverified, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? verified, W Function()? unverified, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       ProtectedDomainState$pending() => pending != null ? pending() : orElse(value),
       ProtectedDomainState$verified() => verified != null ? verified() : orElse(value),
       ProtectedDomainState$unverified() => unverified != null ? unverified() : orElse(value),
       ProtectedDomainState$$null() => $null != null ? $null() : orElse(value),
       ProtectedDomainState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ProtectedDomainState($value)';
 
- }
+}
 @immutable final class ProtectedDomainState$pending extends ProtectedDomainState {const ProtectedDomainState$pending._();
 
 @override String get value => 'pending';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class ProtectedDomainState$verified extends ProtectedDomainState {const ProtectedDomainState$verified._();
 
 @override String get value => 'verified';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'verified'.hashCode;
 
- }
+}
 @immutable final class ProtectedDomainState$unverified extends ProtectedDomainState {const ProtectedDomainState$unverified._();
 
 @override String get value => 'unverified';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'unverified'.hashCode;
 
- }
+}
 @immutable final class ProtectedDomainState$$null extends ProtectedDomainState {const ProtectedDomainState$$null._();
 
 @override String get value => 'null';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class ProtectedDomainState$Unknown extends ProtectedDomainState {const ProtectedDomainState$Unknown(this.value);
 
 @override final String value;
@@ -196,16 +196,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The process in which the Page will be built.
 sealed class BuildType {const BuildType();
 
-factory BuildType.fromJson(String json) { return switch (json) {
+factory BuildType.fromJson(String json) {return switch (json) {
   'legacy' => legacy,
   'workflow' => workflow,
   'null' => $null,
   _ => BuildType$Unknown(json),
-}; }
+};}
 
 static const BuildType legacy = BuildType$legacy._();
 
@@ -216,33 +216,33 @@ static const BuildType $null = BuildType$$null._();
 static const List<BuildType> values = [legacy, workflow, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'legacy' => 'legacy',
   'workflow' => 'workflow',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BuildType$Unknown; } 
+bool get isUnknown {return this is BuildType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() legacy, required W Function() workflow, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() legacy, required W Function() workflow, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       BuildType$legacy() => legacy(),
       BuildType$workflow() => workflow(),
       BuildType$$null() => $null(),
       BuildType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacy, W Function()? workflow, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacy, W Function()? workflow, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       BuildType$legacy() => legacy != null ? legacy() : orElse(value),
       BuildType$workflow() => workflow != null ? workflow() : orElse(value),
       BuildType$$null() => $null != null ? $null() : orElse(value),
       BuildType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BuildType($value)';
 
- }
+}
 @immutable final class BuildType$legacy extends BuildType {const BuildType$legacy._();
 
 @override String get value => 'legacy';
@@ -251,7 +251,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacy, 
 
 @override int get hashCode => 'legacy'.hashCode;
 
- }
+}
 @immutable final class BuildType$workflow extends BuildType {const BuildType$workflow._();
 
 @override String get value => 'workflow';
@@ -260,7 +260,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacy, 
 
 @override int get hashCode => 'workflow'.hashCode;
 
- }
+}
 @immutable final class BuildType$$null extends BuildType {const BuildType$$null._();
 
 @override String get value => 'null';
@@ -269,7 +269,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacy, 
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class BuildType$Unknown extends BuildType {const BuildType$Unknown(this.value);
 
 @override final String value;
@@ -279,11 +279,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacy, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The configuration for GitHub Pages for a repository.
 @immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.custom404, required this.public, this.protectedDomainState = const Omittable.absent(), this.pendingDomainUnverifiedAt = const Omittable.absent(), this.htmlUrl, this.buildType = const Omittable.absent(), this.source, this.httpsCertificate, this.httpsEnforced, });
 
-factory Page.fromJson(Map<String, dynamic> json) { return Page(
+factory Page.fromJson(Map<String, dynamic> json) {return Page(
   url: Uri.parse(json['url'] as String),
   status: json['status'] != null ? PageStatus.fromJson(json['status'] as String) : null,
   cname: json['cname'] as String?,
@@ -296,7 +296,7 @@ factory Page.fromJson(Map<String, dynamic> json) { return Page(
   public: json['public'] as bool,
   httpsCertificate: json['https_certificate'] != null ? PagesHttpsCertificate.fromJson(json['https_certificate'] as Map<String, dynamic>) : null,
   httpsEnforced: json['https_enforced'] as bool?,
-); }
+);}
 
 /// The API address for accessing this Page resource.
 final Uri url;
@@ -332,7 +332,7 @@ final PagesHttpsCertificate? httpsCertificate;
 /// Whether https is enabled on the domain
 final bool? httpsEnforced;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'status': status?.toJson(),
   'cname': cname,
@@ -345,13 +345,13 @@ Map<String, dynamic> toJson() { return {
   'public': public,
   if (httpsCertificate != null) 'https_certificate': httpsCertificate?.toJson(),
   'https_enforced': ?httpsEnforced,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('status') &&
       json.containsKey('cname') && (json['cname'] == null || json['cname'] is String) &&
       json.containsKey('custom_404') && json['custom_404'] is bool &&
-      json.containsKey('public') && json['public'] is bool; } 
-Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, Omittable<ProtectedDomainState?>? protectedDomainState, Omittable<DateTime?>? pendingDomainUnverifiedAt, bool? custom404, Uri? Function()? htmlUrl, Omittable<BuildType?>? buildType, PagesSourceHash? Function()? source, bool? public, PagesHttpsCertificate? Function()? httpsCertificate, bool? Function()? httpsEnforced, }) { return Page(
+      json.containsKey('public') && json['public'] is bool;}
+Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, Omittable<ProtectedDomainState?>? protectedDomainState, Omittable<DateTime?>? pendingDomainUnverifiedAt, bool? custom404, Uri? Function()? htmlUrl, Omittable<BuildType?>? buildType, PagesSourceHash? Function()? source, bool? public, PagesHttpsCertificate? Function()? httpsCertificate, bool? Function()? httpsEnforced, }) {return Page(
   url: url ?? this.url,
   status: status != null ? status() : this.status,
   cname: cname != null ? cname() : this.cname,
@@ -364,7 +364,7 @@ Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cna
   public: public ?? this.public,
   httpsCertificate: httpsCertificate != null ? httpsCertificate() : this.httpsCertificate,
   httpsEnforced: httpsEnforced != null ? httpsEnforced() : this.httpsEnforced,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Page &&
           url == other.url &&
@@ -384,4 +384,4 @@ Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cna
 
 @override String toString() => 'Page(\n  url: $url,\n  status: $status,\n  cname: $cname,\n  protectedDomainState: $protectedDomainState,\n  pendingDomainUnverifiedAt: $pendingDomainUnverifiedAt,\n  custom404: $custom404,\n  htmlUrl: $htmlUrl,\n  buildType: $buildType,\n  source: $source,\n  public: $public,\n  httpsCertificate: $httpsCertificate,\n  httpsEnforced: $httpsEnforced,\n)';
 
- }
+}

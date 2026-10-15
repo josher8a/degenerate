@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the PaymentMethod. An additional hash is included on the PaymentMethod with a name matching this value. It contains additional information specific to the PaymentMethod type.
 sealed class ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType();
 
-factory ConfirmationTokensResourcePaymentMethodPreviewType.fromJson(String json) { return switch (json) {
+factory ConfirmationTokensResourcePaymentMethodPreviewType.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -59,7 +59,7 @@ factory ConfirmationTokensResourcePaymentMethodPreviewType.fromJson(String json)
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => ConfirmationTokensResourcePaymentMethodPreviewType$Unknown(json),
-}; }
+};}
 
 static const ConfirmationTokensResourcePaymentMethodPreviewType acssDebit = ConfirmationTokensResourcePaymentMethodPreviewType$acssDebit._();
 
@@ -170,9 +170,9 @@ static const ConfirmationTokensResourcePaymentMethodPreviewType zip = Confirmati
 static const List<ConfirmationTokensResourcePaymentMethodPreviewType> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cardPresent, cashapp, crypto, custom, customerBalance, eps, fpx, giropay, grabpay, ideal, interacPresent, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'acss_debit' => 'acssDebit',
   'affirm' => 'affirm',
   'afterpay_clearpay' => 'afterpayClearpay',
@@ -227,11 +227,11 @@ String get name { return switch (value) {
   'wechat_pay' => 'wechatPay',
   'zip' => 'zip',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConfirmationTokensResourcePaymentMethodPreviewType$Unknown; } 
+bool get isUnknown {return this is ConfirmationTokensResourcePaymentMethodPreviewType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cardPresent, required W Function() cashapp, required W Function() crypto, required W Function() custom, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() interacPresent, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cardPresent, required W Function() cashapp, required W Function() crypto, required W Function() custom, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() interacPresent, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) {return switch (this) {
       ConfirmationTokensResourcePaymentMethodPreviewType$acssDebit() => acssDebit(),
       ConfirmationTokensResourcePaymentMethodPreviewType$affirm() => affirm(),
       ConfirmationTokensResourcePaymentMethodPreviewType$afterpayClearpay() => afterpayClearpay(),
@@ -286,9 +286,9 @@ W when<W>({required W Function() acssDebit, required W Function() affirm, requir
       ConfirmationTokensResourcePaymentMethodPreviewType$wechatPay() => wechatPay(),
       ConfirmationTokensResourcePaymentMethodPreviewType$zip() => zip(),
       ConfirmationTokensResourcePaymentMethodPreviewType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cardPresent, W Function()? cashapp, W Function()? crypto, W Function()? custom, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? interacPresent, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cardPresent, W Function()? cashapp, W Function()? crypto, W Function()? custom, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? interacPresent, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) {return switch (this) {
       ConfirmationTokensResourcePaymentMethodPreviewType$acssDebit() => acssDebit != null ? acssDebit() : orElse(value),
       ConfirmationTokensResourcePaymentMethodPreviewType$affirm() => affirm != null ? affirm() : orElse(value),
       ConfirmationTokensResourcePaymentMethodPreviewType$afterpayClearpay() => afterpayClearpay != null ? afterpayClearpay() : orElse(value),
@@ -343,10 +343,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
       ConfirmationTokensResourcePaymentMethodPreviewType$wechatPay() => wechatPay != null ? wechatPay() : orElse(value),
       ConfirmationTokensResourcePaymentMethodPreviewType$zip() => zip != null ? zip() : orElse(value),
       ConfirmationTokensResourcePaymentMethodPreviewType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ConfirmationTokensResourcePaymentMethodPreviewType($value)';
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$acssDebit extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$acssDebit._();
 
 @override String get value => 'acss_debit';
@@ -355,7 +355,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'acss_debit'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$affirm extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$affirm._();
 
 @override String get value => 'affirm';
@@ -364,7 +364,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'affirm'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$afterpayClearpay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$afterpayClearpay._();
 
 @override String get value => 'afterpay_clearpay';
@@ -373,7 +373,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'afterpay_clearpay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$alipay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$alipay._();
 
 @override String get value => 'alipay';
@@ -382,7 +382,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alipay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$alma extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$alma._();
 
 @override String get value => 'alma';
@@ -391,7 +391,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alma'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$amazonPay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$amazonPay._();
 
 @override String get value => 'amazon_pay';
@@ -400,7 +400,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'amazon_pay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$auBecsDebit extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$auBecsDebit._();
 
 @override String get value => 'au_becs_debit';
@@ -409,7 +409,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'au_becs_debit'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$bacsDebit extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$bacsDebit._();
 
 @override String get value => 'bacs_debit';
@@ -418,7 +418,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bacs_debit'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$bancontact extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$bancontact._();
 
 @override String get value => 'bancontact';
@@ -427,7 +427,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bancontact'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$billie extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$billie._();
 
 @override String get value => 'billie';
@@ -436,7 +436,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'billie'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$blik extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$blik._();
 
 @override String get value => 'blik';
@@ -445,7 +445,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'blik'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$boleto extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$boleto._();
 
 @override String get value => 'boleto';
@@ -454,7 +454,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'boleto'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$card extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$card._();
 
 @override String get value => 'card';
@@ -463,7 +463,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$cardPresent extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$cardPresent._();
 
 @override String get value => 'card_present';
@@ -472,7 +472,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'card_present'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$cashapp extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$cashapp._();
 
 @override String get value => 'cashapp';
@@ -481,7 +481,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'cashapp'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$crypto extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$crypto._();
 
 @override String get value => 'crypto';
@@ -490,7 +490,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'crypto'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$custom extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$custom._();
 
 @override String get value => 'custom';
@@ -499,7 +499,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'custom'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$customerBalance extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$customerBalance._();
 
 @override String get value => 'customer_balance';
@@ -508,7 +508,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'customer_balance'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$eps extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$eps._();
 
 @override String get value => 'eps';
@@ -517,7 +517,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'eps'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$fpx extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$fpx._();
 
 @override String get value => 'fpx';
@@ -526,7 +526,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'fpx'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$giropay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$giropay._();
 
 @override String get value => 'giropay';
@@ -535,7 +535,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'giropay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$grabpay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$grabpay._();
 
 @override String get value => 'grabpay';
@@ -544,7 +544,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'grabpay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$ideal extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$ideal._();
 
 @override String get value => 'ideal';
@@ -553,7 +553,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'ideal'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$interacPresent extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$interacPresent._();
 
 @override String get value => 'interac_present';
@@ -562,7 +562,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'interac_present'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$kakaoPay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$kakaoPay._();
 
 @override String get value => 'kakao_pay';
@@ -571,7 +571,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kakao_pay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$klarna extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$klarna._();
 
 @override String get value => 'klarna';
@@ -580,7 +580,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'klarna'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$konbini extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$konbini._();
 
 @override String get value => 'konbini';
@@ -589,7 +589,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'konbini'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$krCard extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$krCard._();
 
 @override String get value => 'kr_card';
@@ -598,7 +598,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kr_card'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$link extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$link._();
 
 @override String get value => 'link';
@@ -607,7 +607,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$mbWay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$mbWay._();
 
 @override String get value => 'mb_way';
@@ -616,7 +616,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mb_way'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$mobilepay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$mobilepay._();
 
 @override String get value => 'mobilepay';
@@ -625,7 +625,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mobilepay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$multibanco extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$multibanco._();
 
 @override String get value => 'multibanco';
@@ -634,7 +634,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'multibanco'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$naverPay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$naverPay._();
 
 @override String get value => 'naver_pay';
@@ -643,7 +643,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'naver_pay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$nzBankAccount extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$nzBankAccount._();
 
 @override String get value => 'nz_bank_account';
@@ -652,7 +652,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'nz_bank_account'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$oxxo extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$oxxo._();
 
 @override String get value => 'oxxo';
@@ -661,7 +661,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'oxxo'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$p24 extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$p24._();
 
 @override String get value => 'p24';
@@ -670,7 +670,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'p24'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$payByBank extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$payByBank._();
 
 @override String get value => 'pay_by_bank';
@@ -679,7 +679,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pay_by_bank'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$payco extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$payco._();
 
 @override String get value => 'payco';
@@ -688,7 +688,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payco'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$paynow extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$paynow._();
 
 @override String get value => 'paynow';
@@ -697,7 +697,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paynow'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$paypal extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$paypal._();
 
 @override String get value => 'paypal';
@@ -706,7 +706,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paypal'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$payto extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$payto._();
 
 @override String get value => 'payto';
@@ -715,7 +715,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payto'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$pix extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$pix._();
 
 @override String get value => 'pix';
@@ -724,7 +724,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pix'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$promptpay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$promptpay._();
 
 @override String get value => 'promptpay';
@@ -733,7 +733,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'promptpay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$revolutPay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$revolutPay._();
 
 @override String get value => 'revolut_pay';
@@ -742,7 +742,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'revolut_pay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$samsungPay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$samsungPay._();
 
 @override String get value => 'samsung_pay';
@@ -751,7 +751,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'samsung_pay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$satispay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$satispay._();
 
 @override String get value => 'satispay';
@@ -760,7 +760,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'satispay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$sepaDebit extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$sepaDebit._();
 
 @override String get value => 'sepa_debit';
@@ -769,7 +769,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sepa_debit'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$sofort extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$sofort._();
 
 @override String get value => 'sofort';
@@ -778,7 +778,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sofort'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$swish extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$swish._();
 
 @override String get value => 'swish';
@@ -787,7 +787,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'swish'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$twint extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$twint._();
 
 @override String get value => 'twint';
@@ -796,7 +796,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'twint'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$usBankAccount extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$usBankAccount._();
 
 @override String get value => 'us_bank_account';
@@ -805,7 +805,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'us_bank_account'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$wechatPay extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$wechatPay._();
 
 @override String get value => 'wechat_pay';
@@ -814,7 +814,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'wechat_pay'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$zip extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$zip._();
 
 @override String get value => 'zip';
@@ -823,7 +823,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'zip'.hashCode;
 
- }
+}
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType$Unknown extends ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType$Unknown(this.value);
 
 @override final String value;
@@ -833,4 +833,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

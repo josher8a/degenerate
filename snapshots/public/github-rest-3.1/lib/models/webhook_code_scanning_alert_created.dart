@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_created/webhook_code_scanning_alert_created_alert.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_commit_oid.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertCreated {const WebhookCodeScanningAlertCreated({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookCodeScanningAlertCreated.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreated(
+factory WebhookCodeScanningAlertCreated.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
   alert: WebhookCodeScanningAlertCreatedAlert.fromJson(json['alert'] as Map<String, dynamic>),
   commitOid: WebhooksCodeScanningCommitOid.fromJson(json['commit_oid'] as String),
@@ -13,7 +13,7 @@ factory WebhookCodeScanningAlertCreated.fromJson(Map<String, dynamic> json) { re
   ref: WebhooksCodeScanningRef.fromJson(json['ref'] as String),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemCreatedAction action;
 
@@ -36,7 +36,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'alert': alert.toJson(),
   'commit_oid': commitOid.toJson(),
@@ -46,14 +46,14 @@ Map<String, dynamic> toJson() { return {
   'ref': ref.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('commit_oid') &&
       json.containsKey('ref') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookCodeScanningAlertCreated copyWith({ItemCreatedAction? action, WebhookCodeScanningAlertCreatedAlert? alert, WebhooksCodeScanningCommitOid? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksCodeScanningRef? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertCreated(
+      json.containsKey('sender');}
+WebhookCodeScanningAlertCreated copyWith({ItemCreatedAction? action, WebhookCodeScanningAlertCreatedAlert? alert, WebhooksCodeScanningCommitOid? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksCodeScanningRef? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookCodeScanningAlertCreated(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   commitOid: commitOid ?? this.commitOid,
@@ -63,7 +63,7 @@ WebhookCodeScanningAlertCreated copyWith({ItemCreatedAction? action, WebhookCode
   ref: ref ?? this.ref,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertCreated &&
           action == other.action &&
@@ -80,4 +80,4 @@ WebhookCodeScanningAlertCreated copyWith({ItemCreatedAction? action, WebhookCode
 
 @override String toString() => 'WebhookCodeScanningAlertCreated(\n  action: $action,\n  alert: $alert,\n  commitOid: $commitOid,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  ref: $ref,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

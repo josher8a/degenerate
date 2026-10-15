@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the 
 /// 
 sealed class Name {const Name();
 
-factory Name.fromJson(String json) { return switch (json) {
+factory Name.fromJson(String json) {return switch (json) {
   'requests' => requests,
   'tokens' => tokens,
   _ => Name$Unknown(json),
-}; }
+};}
 
 static const Name requests = Name$requests._();
 
@@ -18,30 +18,30 @@ static const Name tokens = Name$tokens._();
 static const List<Name> values = [requests, tokens];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'requests' => 'requests',
   'tokens' => 'tokens',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Name$Unknown; } 
+bool get isUnknown {return this is Name$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() requests, required W Function() tokens, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() requests, required W Function() tokens, required W Function(String value) $unknown, }) {return switch (this) {
       Name$requests() => requests(),
       Name$tokens() => tokens(),
       Name$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? requests, W Function()? tokens, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? requests, W Function()? tokens, W Function(String value)? $unknown, }) {return switch (this) {
       Name$requests() => requests != null ? requests() : orElse(value),
       Name$tokens() => tokens != null ? tokens() : orElse(value),
       Name$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Name($value)';
 
- }
+}
 @immutable final class Name$requests extends Name {const Name$requests._();
 
 @override String get value => 'requests';
@@ -50,7 +50,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requests
 
 @override int get hashCode => 'requests'.hashCode;
 
- }
+}
 @immutable final class Name$tokens extends Name {const Name$tokens._();
 
 @override String get value => 'tokens';
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requests
 
 @override int get hashCode => 'tokens'.hashCode;
 
- }
+}
 @immutable final class Name$Unknown extends Name {const Name$Unknown(this.value);
 
 @override final String value;
@@ -69,15 +69,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requests
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class RateLimits {const RateLimits({this.name, this.limit, this.remaining, this.resetSeconds, });
 
-factory RateLimits.fromJson(Map<String, dynamic> json) { return RateLimits(
+factory RateLimits.fromJson(Map<String, dynamic> json) {return RateLimits(
   name: json['name'] != null ? Name.fromJson(json['name'] as String) : null,
   limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
   remaining: json['remaining'] != null ? (json['remaining'] as num).toInt() : null,
   resetSeconds: json['reset_seconds'] != null ? (json['reset_seconds'] as num).toDouble() : null,
-); }
+);}
 
 /// The name of the rate limit (`requests`, `tokens`).
 /// 
@@ -92,19 +92,19 @@ final int? remaining;
 /// Seconds until the rate limit resets.
 final double? resetSeconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (name != null) 'name': name?.toJson(),
   'limit': ?limit,
   'remaining': ?remaining,
   'reset_seconds': ?resetSeconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'limit', 'remaining', 'reset_seconds'}.contains(key)); } 
-RateLimits copyWith({Name? Function()? name, int? Function()? limit, int? Function()? remaining, double? Function()? resetSeconds, }) { return RateLimits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'limit', 'remaining', 'reset_seconds'}.contains(key));}
+RateLimits copyWith({Name? Function()? name, int? Function()? limit, int? Function()? remaining, double? Function()? resetSeconds, }) {return RateLimits(
   name: name != null ? name() : this.name,
   limit: limit != null ? limit() : this.limit,
   remaining: remaining != null ? remaining() : this.remaining,
   resetSeconds: resetSeconds != null ? resetSeconds() : this.resetSeconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimits &&
           name == other.name &&
@@ -116,4 +116,4 @@ RateLimits copyWith({Name? Function()? name, int? Function()? limit, int? Functi
 
 @override String toString() => 'RateLimits(name: $name, limit: $limit, remaining: $remaining, resetSeconds: $resetSeconds)';
 
- }
+}

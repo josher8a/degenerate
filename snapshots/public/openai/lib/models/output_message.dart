@@ -5,14 +5,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class OutputMessage {const OutputMessage({required this.id, required this.type, required this.role, required this.content, required this.status, this.phase = const Omittable.absent(), });
 
-factory OutputMessage.fromJson(Map<String, dynamic> json) { return OutputMessage(
+factory OutputMessage.fromJson(Map<String, dynamic> json) {return OutputMessage(
   id: json['id'] as String,
   type: json['type'] as String,
   role: ChatCompletionResponseMessageRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => OutputMessageContent.fromJson(e as Map<String, dynamic>)).toList(),
   phase: json.containsKey('phase') ? Omittable(json['phase'] != null ? MessagePhase.fromJson(json['phase'] as String) : null) : const Omittable.absent(),
   status: ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// The unique ID of the output message.
 /// 
@@ -41,27 +41,27 @@ final Omittable<MessagePhase?> phase;
 /// 
 final ComputerToolCallOutputResourceStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'type': type,
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
   if (phase.isPresent) 'phase': phase.value?.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
       json.containsKey('content') &&
-      json.containsKey('status'); } 
-OutputMessage copyWith({String? id, String? type, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, Omittable<MessagePhase?>? phase, ComputerToolCallOutputResourceStatus? status, }) { return OutputMessage(
+      json.containsKey('status');}
+OutputMessage copyWith({String? id, String? type, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, Omittable<MessagePhase?>? phase, ComputerToolCallOutputResourceStatus? status, }) {return OutputMessage(
   id: id ?? this.id,
   type: type ?? this.type,
   role: role ?? this.role,
   content: content ?? this.content,
   phase: phase ?? this.phase,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OutputMessage &&
           id == other.id &&
@@ -75,4 +75,4 @@ OutputMessage copyWith({String? id, String? type, ChatCompletionResponseMessageR
 
 @override String toString() => 'OutputMessage(id: $id, type: $type, role: $role, content: $content, phase: $phase, status: $status)';
 
- }
+}

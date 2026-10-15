@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IssuesListCommentsForRepoDirection {const IssuesListCommentsForRepoDirection();
 
-factory IssuesListCommentsForRepoDirection.fromJson(String json) { return switch (json) {
+factory IssuesListCommentsForRepoDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => IssuesListCommentsForRepoDirection$Unknown(json),
-}; }
+};}
 
 static const IssuesListCommentsForRepoDirection asc = IssuesListCommentsForRepoDirection$asc._();
 
@@ -16,30 +16,30 @@ static const IssuesListCommentsForRepoDirection desc = IssuesListCommentsForRepo
 static const List<IssuesListCommentsForRepoDirection> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuesListCommentsForRepoDirection$Unknown; } 
+bool get isUnknown {return this is IssuesListCommentsForRepoDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       IssuesListCommentsForRepoDirection$asc() => asc(),
       IssuesListCommentsForRepoDirection$desc() => desc(),
       IssuesListCommentsForRepoDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       IssuesListCommentsForRepoDirection$asc() => asc != null ? asc() : orElse(value),
       IssuesListCommentsForRepoDirection$desc() => desc != null ? desc() : orElse(value),
       IssuesListCommentsForRepoDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuesListCommentsForRepoDirection($value)';
 
- }
+}
 @immutable final class IssuesListCommentsForRepoDirection$asc extends IssuesListCommentsForRepoDirection {const IssuesListCommentsForRepoDirection$asc._();
 
 @override String get value => 'asc';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class IssuesListCommentsForRepoDirection$desc extends IssuesListCommentsForRepoDirection {const IssuesListCommentsForRepoDirection$desc._();
 
 @override String get value => 'desc';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class IssuesListCommentsForRepoDirection$Unknown extends IssuesListCommentsForRepoDirection {const IssuesListCommentsForRepoDirection$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

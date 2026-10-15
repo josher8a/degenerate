@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IndividualDob {const IndividualDob({required this.day, required this.month, required this.year, });
 
-factory IndividualDob.fromJson(Map<String, dynamic> json) { return IndividualDob(
+factory IndividualDob.fromJson(Map<String, dynamic> json) {return IndividualDob(
   day: (json['day'] as num).toInt(),
   month: (json['month'] as num).toInt(),
   year: (json['year'] as num).toInt(),
-); }
+);}
 
 final int day;
 
@@ -15,19 +15,19 @@ final int month;
 
 final int year;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'day': day,
   'month': month,
   'year': year,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('day') && json['day'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('day') && json['day'] is num &&
       json.containsKey('month') && json['month'] is num &&
-      json.containsKey('year') && json['year'] is num; } 
-IndividualDob copyWith({int? day, int? month, int? year, }) { return IndividualDob(
+      json.containsKey('year') && json['year'] is num;}
+IndividualDob copyWith({int? day, int? month, int? year, }) {return IndividualDob(
   day: day ?? this.day,
   month: month ?? this.month,
   year: year ?? this.year,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IndividualDob &&
           day == other.day &&
@@ -38,4 +38,4 @@ IndividualDob copyWith({int? day, int? month, int? year, }) { return IndividualD
 
 @override String toString() => 'IndividualDob(day: $day, month: $month, year: $year)';
 
- }
+}

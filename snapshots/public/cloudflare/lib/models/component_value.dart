@@ -24,11 +24,11 @@ num toJson() => value;
 }
 @immutable final class ComponentValue {const ComponentValue({this.$default, this.name = const Omittable.absent(), this.unitPrice, });
 
-factory ComponentValue.fromJson(Map<String, dynamic> json) { return ComponentValue(
+factory ComponentValue.fromJson(Map<String, dynamic> json) {return ComponentValue(
   $default: json['default'] != null ? Default.fromJson(json['default'] as num) : null,
   name: json.containsKey('name') ? Omittable(json['name'] != null ? ComponentsSchemasName.fromJson(json['name'] as dynamic) : null) : const Omittable.absent(),
   unitPrice: json['unit_price'] != null ? UnitPrice.fromJson(json['unit_price'] as num) : null,
-); }
+);}
 
 final Default? $default;
 
@@ -36,17 +36,17 @@ final Omittable<ComponentsSchemasName?> name;
 
 final UnitPrice? unitPrice;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if ($default != null) 'default': $default?.toJson(),
   if (name.isPresent) 'name': name.value?.toJson(),
   if (unitPrice != null) 'unit_price': unitPrice?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'name', 'unit_price'}.contains(key)); } 
-ComponentValue copyWith({Default? Function()? $default, Omittable<ComponentsSchemasName?>? name, UnitPrice? Function()? unitPrice, }) { return ComponentValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default', 'name', 'unit_price'}.contains(key));}
+ComponentValue copyWith({Default? Function()? $default, Omittable<ComponentsSchemasName?>? name, UnitPrice? Function()? unitPrice, }) {return ComponentValue(
   $default: $default != null ? $default() : this.$default,
   name: name ?? this.name,
   unitPrice: unitPrice != null ? unitPrice() : this.unitPrice,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ComponentValue &&
           $default == other.$default &&
@@ -57,4 +57,4 @@ ComponentValue copyWith({Default? Function()? $default, Omittable<ComponentsSche
 
 @override String toString() => 'ComponentValue(\$default: ${$default}, name: $name, unitPrice: $unitPrice)';
 
- }
+}

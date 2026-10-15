@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/app_armor_profile.dart';import 'package:pub_kubernetes_api_v1_openapi/models/capabilities.dart';import 'package:pub_kubernetes_api_v1_openapi/models/se_linux_options.dart';import 'package:pub_kubernetes_api_v1_openapi/models/seccomp_profile.dart';import 'package:pub_kubernetes_api_v1_openapi/models/windows_security_context_options.dart';/// SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext.  When both are set, the values in SecurityContext take precedence.
 @immutable final class SecurityContext {const SecurityContext({this.allowPrivilegeEscalation, this.appArmorProfile, this.capabilities, this.privileged, this.procMount, this.readOnlyRootFilesystem, this.runAsGroup, this.runAsNonRoot, this.runAsUser, this.seLinuxOptions, this.seccompProfile, this.windowsOptions, });
 
-factory SecurityContext.fromJson(Map<String, dynamic> json) { return SecurityContext(
+factory SecurityContext.fromJson(Map<String, dynamic> json) {return SecurityContext(
   allowPrivilegeEscalation: json['allowPrivilegeEscalation'] as bool?,
   appArmorProfile: json['appArmorProfile'] != null ? AppArmorProfile.fromJson(json['appArmorProfile'] as Map<String, dynamic>) : null,
   capabilities: json['capabilities'] != null ? Capabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
@@ -17,7 +17,7 @@ factory SecurityContext.fromJson(Map<String, dynamic> json) { return SecurityCon
   seLinuxOptions: json['seLinuxOptions'] != null ? SeLinuxOptions.fromJson(json['seLinuxOptions'] as Map<String, dynamic>) : null,
   seccompProfile: json['seccompProfile'] != null ? SeccompProfile.fromJson(json['seccompProfile'] as Map<String, dynamic>) : null,
   windowsOptions: json['windowsOptions'] != null ? WindowsSecurityContextOptions.fromJson(json['windowsOptions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN Note that this field cannot be set when spec.os.name is windows.
 final bool? allowPrivilegeEscalation;
@@ -55,7 +55,7 @@ final SeccompProfile? seccompProfile;
 /// The Windows specific settings applied to all containers. If unspecified, the options from the PodSecurityContext will be used. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. Note that this field cannot be set when spec.os.name is linux.
 final WindowsSecurityContextOptions? windowsOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowPrivilegeEscalation': ?allowPrivilegeEscalation,
   if (appArmorProfile != null) 'appArmorProfile': appArmorProfile?.toJson(),
   if (capabilities != null) 'capabilities': capabilities?.toJson(),
@@ -68,9 +68,9 @@ Map<String, dynamic> toJson() { return {
   if (seLinuxOptions != null) 'seLinuxOptions': seLinuxOptions?.toJson(),
   if (seccompProfile != null) 'seccompProfile': seccompProfile?.toJson(),
   if (windowsOptions != null) 'windowsOptions': windowsOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowPrivilegeEscalation', 'appArmorProfile', 'capabilities', 'privileged', 'procMount', 'readOnlyRootFilesystem', 'runAsGroup', 'runAsNonRoot', 'runAsUser', 'seLinuxOptions', 'seccompProfile', 'windowsOptions'}.contains(key)); } 
-SecurityContext copyWith({bool? Function()? allowPrivilegeEscalation, AppArmorProfile? Function()? appArmorProfile, Capabilities? Function()? capabilities, bool? Function()? privileged, String? Function()? procMount, bool? Function()? readOnlyRootFilesystem, int? Function()? runAsGroup, bool? Function()? runAsNonRoot, int? Function()? runAsUser, SeLinuxOptions? Function()? seLinuxOptions, SeccompProfile? Function()? seccompProfile, WindowsSecurityContextOptions? Function()? windowsOptions, }) { return SecurityContext(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowPrivilegeEscalation', 'appArmorProfile', 'capabilities', 'privileged', 'procMount', 'readOnlyRootFilesystem', 'runAsGroup', 'runAsNonRoot', 'runAsUser', 'seLinuxOptions', 'seccompProfile', 'windowsOptions'}.contains(key));}
+SecurityContext copyWith({bool? Function()? allowPrivilegeEscalation, AppArmorProfile? Function()? appArmorProfile, Capabilities? Function()? capabilities, bool? Function()? privileged, String? Function()? procMount, bool? Function()? readOnlyRootFilesystem, int? Function()? runAsGroup, bool? Function()? runAsNonRoot, int? Function()? runAsUser, SeLinuxOptions? Function()? seLinuxOptions, SeccompProfile? Function()? seccompProfile, WindowsSecurityContextOptions? Function()? windowsOptions, }) {return SecurityContext(
   allowPrivilegeEscalation: allowPrivilegeEscalation != null ? allowPrivilegeEscalation() : this.allowPrivilegeEscalation,
   appArmorProfile: appArmorProfile != null ? appArmorProfile() : this.appArmorProfile,
   capabilities: capabilities != null ? capabilities() : this.capabilities,
@@ -83,7 +83,7 @@ SecurityContext copyWith({bool? Function()? allowPrivilegeEscalation, AppArmorPr
   seLinuxOptions: seLinuxOptions != null ? seLinuxOptions() : this.seLinuxOptions,
   seccompProfile: seccompProfile != null ? seccompProfile() : this.seccompProfile,
   windowsOptions: windowsOptions != null ? windowsOptions() : this.windowsOptions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityContext &&
           allowPrivilegeEscalation == other.allowPrivilegeEscalation &&
@@ -103,4 +103,4 @@ SecurityContext copyWith({bool? Function()? allowPrivilegeEscalation, AppArmorPr
 
 @override String toString() => 'SecurityContext(\n  allowPrivilegeEscalation: $allowPrivilegeEscalation,\n  appArmorProfile: $appArmorProfile,\n  capabilities: $capabilities,\n  privileged: $privileged,\n  procMount: $procMount,\n  readOnlyRootFilesystem: $readOnlyRootFilesystem,\n  runAsGroup: $runAsGroup,\n  runAsNonRoot: $runAsNonRoot,\n  runAsUser: $runAsUser,\n  seLinuxOptions: $seLinuxOptions,\n  seccompProfile: $seccompProfile,\n  windowsOptions: $windowsOptions,\n)';
 
- }
+}

@@ -8,11 +8,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeServerEventRateLimitsUpdated {const RealtimeServerEventRateLimitsUpdated({required this.eventId, required this.type, required this.rateLimits, });
 
-factory RealtimeServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventRateLimitsUpdated(
+factory RealtimeServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) {return RealtimeServerEventRateLimitsUpdated(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   rateLimits: (json['rate_limits'] as List<dynamic>).map((e) => RateLimits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -23,19 +23,19 @@ final String type;
 /// List of rate limit information.
 final List<RateLimits> rateLimits;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'rate_limits': rateLimits.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('rate_limits'); } 
-RealtimeServerEventRateLimitsUpdated copyWith({String? eventId, String? type, List<RateLimits>? rateLimits, }) { return RealtimeServerEventRateLimitsUpdated(
+      json.containsKey('rate_limits');}
+RealtimeServerEventRateLimitsUpdated copyWith({String? eventId, String? type, List<RateLimits>? rateLimits, }) {return RealtimeServerEventRateLimitsUpdated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   rateLimits: rateLimits ?? this.rateLimits,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventRateLimitsUpdated &&
           eventId == other.eventId &&
@@ -46,4 +46,4 @@ RealtimeServerEventRateLimitsUpdated copyWith({String? eventId, String? type, Li
 
 @override String toString() => 'RealtimeServerEventRateLimitsUpdated(eventId: $eventId, type: $type, rateLimits: $rateLimits)';
 
- }
+}

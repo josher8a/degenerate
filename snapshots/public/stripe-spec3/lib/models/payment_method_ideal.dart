@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_ideal/bic.dart';import 'package:pub_stripe_spec3/models/payment_method_details_ideal/payment_method_details_ideal_bank.dart';/// 
 @immutable final class PaymentMethodIdeal {const PaymentMethodIdeal({this.bank = const Omittable.absent(), this.bic = const Omittable.absent(), });
 
-factory PaymentMethodIdeal.fromJson(Map<String, dynamic> json) { return PaymentMethodIdeal(
+factory PaymentMethodIdeal.fromJson(Map<String, dynamic> json) {return PaymentMethodIdeal(
   bank: json.containsKey('bank') ? Omittable(json['bank'] != null ? PaymentMethodDetailsIdealBank.fromJson(json['bank'] as String) : null) : const Omittable.absent(),
   bic: json.containsKey('bic') ? Omittable(json['bic'] != null ? Bic.fromJson(json['bic'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The customer's bank, if provided. Can be one of `abn_amro`, `adyen`, `asn_bank`, `bunq`, `buut`, `finom`, `handelsbanken`, `ing`, `knab`, `mollie`, `moneyou`, `n26`, `nn`, `rabobank`, `regiobank`, `revolut`, `sns_bank`, `triodos_bank`, `van_lanschot`, or `yoursafe`.
 final Omittable<PaymentMethodDetailsIdealBank?> bank;
@@ -15,15 +15,15 @@ final Omittable<PaymentMethodDetailsIdealBank?> bank;
 /// The Bank Identifier Code of the customer's bank, if the bank was provided.
 final Omittable<Bic?> bic;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank.isPresent) 'bank': bank.value?.toJson(),
   if (bic.isPresent) 'bic': bic.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'bic'}.contains(key)); } 
-PaymentMethodIdeal copyWith({Omittable<PaymentMethodDetailsIdealBank?>? bank, Omittable<Bic?>? bic, }) { return PaymentMethodIdeal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank', 'bic'}.contains(key));}
+PaymentMethodIdeal copyWith({Omittable<PaymentMethodDetailsIdealBank?>? bank, Omittable<Bic?>? bic, }) {return PaymentMethodIdeal(
   bank: bank ?? this.bank,
   bic: bic ?? this.bic,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodIdeal &&
           bank == other.bank &&
@@ -33,4 +33,4 @@ PaymentMethodIdeal copyWith({Omittable<PaymentMethodDetailsIdealBank?>? bank, Om
 
 @override String toString() => 'PaymentMethodIdeal(bank: $bank, bic: $bic)';
 
- }
+}

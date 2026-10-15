@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_single_query.dart';@immutable final class MultipleQueries {const MultipleQueries({required this.batch});
 
-factory MultipleQueries.fromJson(Map<String, dynamic> json) { return MultipleQueries(
+factory MultipleQueries.fromJson(Map<String, dynamic> json) {return MultipleQueries(
   batch: (json['batch'] as List<dynamic>).map((e) => D1SingleQuery.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<D1SingleQuery> batch;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'batch': batch.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('batch'); } 
-MultipleQueries copyWith({List<D1SingleQuery>? batch}) { return MultipleQueries(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('batch');}
+MultipleQueries copyWith({List<D1SingleQuery>? batch}) {return MultipleQueries(
   batch: batch ?? this.batch,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MultipleQueries &&
           listEquals(batch, other.batch);
@@ -24,4 +24,4 @@ MultipleQueries copyWith({List<D1SingleQuery>? batch}) { return MultipleQueries(
 
 @override String toString() => 'MultipleQueries(batch: $batch)';
 
- }
+}

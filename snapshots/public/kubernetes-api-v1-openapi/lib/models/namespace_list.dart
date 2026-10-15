@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/namespace.dart';/// NamespaceList is a list of Namespaces.
 @immutable final class NamespaceList {const NamespaceList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
-factory NamespaceList.fromJson(Map<String, dynamic> json) { return NamespaceList(
+factory NamespaceList.fromJson(Map<String, dynamic> json) {return NamespaceList(
   apiVersion: json['apiVersion'] as String?,
   items: (json['items'] as List<dynamic>).map((e) => Namespace.fromJson(e as Map<String, dynamic>)).toList(),
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ListMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -23,19 +23,19 @@ final String? kind;
 /// Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 final ListMeta? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'items': items.map((e) => e.toJson()).toList(),
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-NamespaceList copyWith({String? Function()? apiVersion, List<Namespace>? items, String? Function()? kind, ListMeta? Function()? metadata, }) { return NamespaceList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items');}
+NamespaceList copyWith({String? Function()? apiVersion, List<Namespace>? items, String? Function()? kind, ListMeta? Function()? metadata, }) {return NamespaceList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   items: items ?? this.items,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceList &&
           apiVersion == other.apiVersion &&
@@ -47,4 +47,4 @@ NamespaceList copyWith({String? Function()? apiVersion, List<Namespace>? items, 
 
 @override String toString() => 'NamespaceList(apiVersion: $apiVersion, items: $items, kind: $kind, metadata: $metadata)';
 
- }
+}

@@ -8,11 +8,11 @@ const Images({this.listString = const Omittable.absent(), this.getPaymentMethodC
 const Images._({required this.rawValue, required this.listString, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Images.fromJson(Object? json) { return Images._(
+factory Images.fromJson(Object? json) {return Images._(
   rawValue: Omittable(json),
   listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Images(${toJson()})';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';@immutable final class MconnControllerUpdateDeviceResponse {const MconnControllerUpdateDeviceResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory MconnControllerUpdateDeviceResponse.fromJson(Map<String, dynamic> json) { return MconnControllerUpdateDeviceResponse(
+factory MconnControllerUpdateDeviceResponse.fromJson(Map<String, dynamic> json) {return MconnControllerUpdateDeviceResponse(
   messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
-); }
+);}
 
 final List<MconnCodedMessage> messages;
 
@@ -18,22 +18,22 @@ final List<MconnCodedMessage> errors;
 
 final Map<String,dynamic> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'errors': errors.map((e) => e.toJson()).toList(),
   'result': result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('errors') &&
-      json.containsKey('result'); } 
-MconnControllerUpdateDeviceResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, Map<String,dynamic>? result, }) { return MconnControllerUpdateDeviceResponse(
+      json.containsKey('result');}
+MconnControllerUpdateDeviceResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, Map<String,dynamic>? result, }) {return MconnControllerUpdateDeviceResponse(
   messages: messages ?? this.messages,
   success: success ?? this.success,
   errors: errors ?? this.errors,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerUpdateDeviceResponse &&
           listEquals(messages, other.messages) &&
@@ -45,4 +45,4 @@ MconnControllerUpdateDeviceResponse copyWith({List<MconnCodedMessage>? messages,
 
 @override String toString() => 'MconnControllerUpdateDeviceResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

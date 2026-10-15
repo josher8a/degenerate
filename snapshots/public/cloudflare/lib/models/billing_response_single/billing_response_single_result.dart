@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/components_schemas_identifier.dart';@immutable final class BillingResponseSingleResult {const BillingResponseSingleResult({this.enterpriseBillingEmail, this.address, this.address2, this.balance, this.cardExpiryMonth, this.cardExpiryYear, this.cardNumber, this.city, this.company, this.country, this.createdOn, this.deviceData, this.editedOn, this.accountType, this.enterprisePrimaryEmail, this.firstName, this.id, this.isPartner, this.lastName, this.nextBillDate, this.paymentAddress, this.paymentAddress2, this.paymentCity, this.paymentCountry, this.paymentEmail, this.zipcode, this.paymentGateway, this.paymentLastName, this.paymentNonce, this.paymentState, this.paymentZipcode, this.primaryEmail, this.state, this.taxIdType, this.telephone, this.useLegacy, this.validationCode, this.vat, this.paymentFirstName, });
 
-factory BillingResponseSingleResult.fromJson(Map<String, dynamic> json) { return BillingResponseSingleResult(
+factory BillingResponseSingleResult.fromJson(Map<String, dynamic> json) {return BillingResponseSingleResult(
   accountType: json['account_type'] as String?,
   address: json['address'] as String?,
   address2: json['address2'] as String?,
@@ -43,7 +43,7 @@ factory BillingResponseSingleResult.fromJson(Map<String, dynamic> json) { return
   validationCode: json['validation_code'] as String?,
   vat: json['vat'] as String?,
   zipcode: json['zipcode'] as String?,
-); }
+);}
 
 /// Example: `'type'`
 final String? accountType;
@@ -161,7 +161,7 @@ final String? vat;
 /// Example: `12345`
 final String? zipcode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_type': ?accountType,
   'address': ?address,
   'address2': ?address2,
@@ -201,9 +201,9 @@ Map<String, dynamic> toJson() { return {
   'validation_code': ?validationCode,
   'vat': ?vat,
   'zipcode': ?zipcode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_type', 'address', 'address2', 'balance', 'card_expiry_month', 'card_expiry_year', 'card_number', 'city', 'company', 'country', 'created_on', 'device_data', 'edited_on', 'enterprise_billing_email', 'enterprise_primary_email', 'first_name', 'id', 'is_partner', 'last_name', 'next_bill_date', 'payment_address', 'payment_address2', 'payment_city', 'payment_country', 'payment_email', 'payment_first_name', 'payment_gateway', 'payment_last_name', 'payment_nonce', 'payment_state', 'payment_zipcode', 'primary_email', 'state', 'tax_id_type', 'telephone', 'use_legacy', 'validation_code', 'vat', 'zipcode'}.contains(key)); } 
-BillingResponseSingleResult copyWith({String? Function()? accountType, String? Function()? address, String? Function()? address2, String? Function()? balance, int? Function()? cardExpiryMonth, int? Function()? cardExpiryYear, String? Function()? cardNumber, String? Function()? city, String? Function()? company, String? Function()? country, DateTime? Function()? createdOn, String? Function()? deviceData, DateTime? Function()? editedOn, String? Function()? enterpriseBillingEmail, String? Function()? enterprisePrimaryEmail, String? Function()? firstName, ComponentsSchemasIdentifier? Function()? id, bool? Function()? isPartner, String? Function()? lastName, DateTime? Function()? nextBillDate, String? Function()? paymentAddress, String? Function()? paymentAddress2, String? Function()? paymentCity, String? Function()? paymentCountry, String? Function()? paymentEmail, String? Function()? paymentFirstName, String? Function()? paymentGateway, String? Function()? paymentLastName, String? Function()? paymentNonce, String? Function()? paymentState, String? Function()? paymentZipcode, String? Function()? primaryEmail, String? Function()? state, String? Function()? taxIdType, String? Function()? telephone, bool? Function()? useLegacy, String? Function()? validationCode, String? Function()? vat, String? Function()? zipcode, }) { return BillingResponseSingleResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_type', 'address', 'address2', 'balance', 'card_expiry_month', 'card_expiry_year', 'card_number', 'city', 'company', 'country', 'created_on', 'device_data', 'edited_on', 'enterprise_billing_email', 'enterprise_primary_email', 'first_name', 'id', 'is_partner', 'last_name', 'next_bill_date', 'payment_address', 'payment_address2', 'payment_city', 'payment_country', 'payment_email', 'payment_first_name', 'payment_gateway', 'payment_last_name', 'payment_nonce', 'payment_state', 'payment_zipcode', 'primary_email', 'state', 'tax_id_type', 'telephone', 'use_legacy', 'validation_code', 'vat', 'zipcode'}.contains(key));}
+BillingResponseSingleResult copyWith({String? Function()? accountType, String? Function()? address, String? Function()? address2, String? Function()? balance, int? Function()? cardExpiryMonth, int? Function()? cardExpiryYear, String? Function()? cardNumber, String? Function()? city, String? Function()? company, String? Function()? country, DateTime? Function()? createdOn, String? Function()? deviceData, DateTime? Function()? editedOn, String? Function()? enterpriseBillingEmail, String? Function()? enterprisePrimaryEmail, String? Function()? firstName, ComponentsSchemasIdentifier? Function()? id, bool? Function()? isPartner, String? Function()? lastName, DateTime? Function()? nextBillDate, String? Function()? paymentAddress, String? Function()? paymentAddress2, String? Function()? paymentCity, String? Function()? paymentCountry, String? Function()? paymentEmail, String? Function()? paymentFirstName, String? Function()? paymentGateway, String? Function()? paymentLastName, String? Function()? paymentNonce, String? Function()? paymentState, String? Function()? paymentZipcode, String? Function()? primaryEmail, String? Function()? state, String? Function()? taxIdType, String? Function()? telephone, bool? Function()? useLegacy, String? Function()? validationCode, String? Function()? vat, String? Function()? zipcode, }) {return BillingResponseSingleResult(
   accountType: accountType != null ? accountType() : this.accountType,
   address: address != null ? address() : this.address,
   address2: address2 != null ? address2() : this.address2,
@@ -243,7 +243,7 @@ BillingResponseSingleResult copyWith({String? Function()? accountType, String? F
   validationCode: validationCode != null ? validationCode() : this.validationCode,
   vat: vat != null ? vat() : this.vat,
   zipcode: zipcode != null ? zipcode() : this.zipcode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingResponseSingleResult &&
           accountType == other.accountType &&
@@ -290,4 +290,4 @@ BillingResponseSingleResult copyWith({String? Function()? accountType, String? F
 
 @override String toString() => 'BillingResponseSingleResult(\n  accountType: $accountType,\n  address: $address,\n  address2: $address2,\n  balance: $balance,\n  cardExpiryMonth: $cardExpiryMonth,\n  cardExpiryYear: $cardExpiryYear,\n  cardNumber: $cardNumber,\n  city: $city,\n  company: $company,\n  country: $country,\n  createdOn: $createdOn,\n  deviceData: $deviceData,\n  editedOn: $editedOn,\n  enterpriseBillingEmail: $enterpriseBillingEmail,\n  enterprisePrimaryEmail: $enterprisePrimaryEmail,\n  firstName: $firstName,\n  id: $id,\n  isPartner: $isPartner,\n  lastName: $lastName,\n  nextBillDate: $nextBillDate,\n  paymentAddress: $paymentAddress,\n  paymentAddress2: $paymentAddress2,\n  paymentCity: $paymentCity,\n  paymentCountry: $paymentCountry,\n  paymentEmail: $paymentEmail,\n  paymentFirstName: $paymentFirstName,\n  paymentGateway: $paymentGateway,\n  paymentLastName: $paymentLastName,\n  paymentNonce: $paymentNonce,\n  paymentState: $paymentState,\n  paymentZipcode: $paymentZipcode,\n  primaryEmail: $primaryEmail,\n  state: $state,\n  taxIdType: $taxIdType,\n  telephone: $telephone,\n  useLegacy: $useLegacy,\n  validationCode: $validationCode,\n  vat: $vat,\n  zipcode: $zipcode,\n)';
 
- }
+}

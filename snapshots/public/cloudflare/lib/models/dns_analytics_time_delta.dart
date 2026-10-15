@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Unit of time to group data by.
 sealed class DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta();
 
-factory DnsAnalyticsTimeDelta.fromJson(String json) { return switch (json) {
+factory DnsAnalyticsTimeDelta.fromJson(String json) {return switch (json) {
   'all' => all,
   'auto' => auto,
   'year' => year,
@@ -16,7 +16,7 @@ factory DnsAnalyticsTimeDelta.fromJson(String json) { return switch (json) {
   'dekaminute' => dekaminute,
   'minute' => minute,
   _ => DnsAnalyticsTimeDelta$Unknown(json),
-}; }
+};}
 
 static const DnsAnalyticsTimeDelta all = DnsAnalyticsTimeDelta$all._();
 
@@ -41,9 +41,9 @@ static const DnsAnalyticsTimeDelta minute = DnsAnalyticsTimeDelta$minute._();
 static const List<DnsAnalyticsTimeDelta> values = [all, auto, year, quarter, month, week, day, hour, dekaminute, minute];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'all' => 'all',
   'auto' => 'auto',
   'year' => 'year',
@@ -55,11 +55,11 @@ String get name { return switch (value) {
   'dekaminute' => 'dekaminute',
   'minute' => 'minute',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnsAnalyticsTimeDelta$Unknown; } 
+bool get isUnknown {return this is DnsAnalyticsTimeDelta$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() all, required W Function() auto, required W Function() year, required W Function() quarter, required W Function() month, required W Function() week, required W Function() day, required W Function() hour, required W Function() dekaminute, required W Function() minute, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() all, required W Function() auto, required W Function() year, required W Function() quarter, required W Function() month, required W Function() week, required W Function() day, required W Function() hour, required W Function() dekaminute, required W Function() minute, required W Function(String value) $unknown, }) {return switch (this) {
       DnsAnalyticsTimeDelta$all() => all(),
       DnsAnalyticsTimeDelta$auto() => auto(),
       DnsAnalyticsTimeDelta$year() => year(),
@@ -71,9 +71,9 @@ W when<W>({required W Function() all, required W Function() auto, required W Fun
       DnsAnalyticsTimeDelta$dekaminute() => dekaminute(),
       DnsAnalyticsTimeDelta$minute() => minute(),
       DnsAnalyticsTimeDelta$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? auto, W Function()? year, W Function()? quarter, W Function()? month, W Function()? week, W Function()? day, W Function()? hour, W Function()? dekaminute, W Function()? minute, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? auto, W Function()? year, W Function()? quarter, W Function()? month, W Function()? week, W Function()? day, W Function()? hour, W Function()? dekaminute, W Function()? minute, W Function(String value)? $unknown, }) {return switch (this) {
       DnsAnalyticsTimeDelta$all() => all != null ? all() : orElse(value),
       DnsAnalyticsTimeDelta$auto() => auto != null ? auto() : orElse(value),
       DnsAnalyticsTimeDelta$year() => year != null ? year() : orElse(value),
@@ -85,10 +85,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
       DnsAnalyticsTimeDelta$dekaminute() => dekaminute != null ? dekaminute() : orElse(value),
       DnsAnalyticsTimeDelta$minute() => minute != null ? minute() : orElse(value),
       DnsAnalyticsTimeDelta$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DnsAnalyticsTimeDelta($value)';
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$all extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$all._();
 
 @override String get value => 'all';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$auto extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$auto._();
 
 @override String get value => 'auto';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$year extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$year._();
 
 @override String get value => 'year';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'year'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$quarter extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$quarter._();
 
 @override String get value => 'quarter';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'quarter'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$month extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$month._();
 
 @override String get value => 'month';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'month'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$week extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$week._();
 
 @override String get value => 'week';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'week'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$day extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$day._();
 
 @override String get value => 'day';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'day'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$hour extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$hour._();
 
 @override String get value => 'hour';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'hour'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$dekaminute extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$dekaminute._();
 
 @override String get value => 'dekaminute';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'dekaminute'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$minute extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$minute._();
 
 @override String get value => 'minute';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'minute'.hashCode;
 
- }
+}
 @immutable final class DnsAnalyticsTimeDelta$Unknown extends DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta$Unknown(this.value);
 
 @override final String value;
@@ -188,4 +188,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

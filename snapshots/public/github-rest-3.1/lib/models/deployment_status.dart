@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_status/deployment_status_state.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The status of a deployment.
 @immutable final class DeploymentStatus {const DeploymentStatus({required this.url, required this.id, required this.nodeId, required this.state, required this.creator, required this.description, required this.targetUrl, required this.createdAt, required this.updatedAt, required this.deploymentUrl, required this.repositoryUrl, this.environment, this.environmentUrl, this.logUrl, this.performedViaGithubApp = const Omittable.absent(), });
 
-factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return DeploymentStatus(
+factory DeploymentStatus.fromJson(Map<String, dynamic> json) {return DeploymentStatus(
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -20,7 +20,7 @@ factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return Deployment
   environmentUrl: json['environment_url'] != null ? Uri.parse(json['environment_url'] as String) : null,
   logUrl: json['log_url'] != null ? Uri.parse(json['log_url'] as String) : null,
   performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final Uri url;
 
@@ -61,7 +61,7 @@ final Omittable<Integration?> performedViaGithubApp;
 /// The value of `environment`, or its schema default when absent.
 String get environmentOrDefault => environment ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'id': id,
   'node_id': nodeId,
@@ -77,8 +77,8 @@ Map<String, dynamic> toJson() { return {
   if (environmentUrl != null) 'environment_url': environmentUrl?.toString(),
   if (logUrl != null) 'log_url': logUrl?.toString(),
   if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('state') &&
@@ -88,12 +88,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('deployment_url') && json['deployment_url'] is String &&
-      json.containsKey('repository_url') && json['repository_url'] is String; } 
+      json.containsKey('repository_url') && json['repository_url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (description.runes.length > 140) { errors.add('description: length must be <= 140'); }
-return errors; } 
-DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusState? state, SimpleUser? Function()? creator, String? description, String? Function()? environment, Uri? targetUrl, DateTime? createdAt, DateTime? updatedAt, Uri? deploymentUrl, Uri? repositoryUrl, Uri? Function()? environmentUrl, Uri? Function()? logUrl, Omittable<Integration?>? performedViaGithubApp, }) { return DeploymentStatus(
+return errors;}
+DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusState? state, SimpleUser? Function()? creator, String? description, String? Function()? environment, Uri? targetUrl, DateTime? createdAt, DateTime? updatedAt, Uri? deploymentUrl, Uri? repositoryUrl, Uri? Function()? environmentUrl, Uri? Function()? logUrl, Omittable<Integration?>? performedViaGithubApp, }) {return DeploymentStatus(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -109,7 +109,7 @@ DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusSt
   environmentUrl: environmentUrl != null ? environmentUrl() : this.environmentUrl,
   logUrl: logUrl != null ? logUrl() : this.logUrl,
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentStatus &&
           url == other.url &&
@@ -132,4 +132,4 @@ DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusSt
 
 @override String toString() => 'DeploymentStatus(\n  url: $url,\n  id: $id,\n  nodeId: $nodeId,\n  state: $state,\n  creator: $creator,\n  description: $description,\n  environment: $environment,\n  targetUrl: $targetUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  deploymentUrl: $deploymentUrl,\n  repositoryUrl: $repositoryUrl,\n  environmentUrl: $environmentUrl,\n  logUrl: $logUrl,\n  performedViaGithubApp: $performedViaGithubApp,\n)';
 
- }
+}

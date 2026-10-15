@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_targeted_test_.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringDexRule {const DigitalExperienceMonitoringDexRule({required this.createdAt, required this.id, required this.match, required this.name, this.description, this.targetedTests, this.updatedAt, });
 
-factory DigitalExperienceMonitoringDexRule.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDexRule(
+factory DigitalExperienceMonitoringDexRule.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringDexRule(
   createdAt: json['created_at'] as String,
   description: json['description'] as String?,
   id: DigitalExperienceMonitoringUuid.fromJson(json['id'] as String),
@@ -11,7 +11,7 @@ factory DigitalExperienceMonitoringDexRule.fromJson(Map<String, dynamic> json) {
   name: json['name'] as String,
   targetedTests: (json['targeted_tests'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDexTargetedTest.fromJson(e as Map<String, dynamic>)).toList(),
   updatedAt: json['updated_at'] as String?,
-); }
+);}
 
 /// Example: `'2023-07-16 15:00:00+00'`
 final String createdAt;
@@ -29,7 +29,7 @@ final List<DigitalExperienceMonitoringDexTargetedTest>? targetedTests;
 /// Example: `'2023-07-16 15:00:00+00'`
 final String? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'description': ?description,
   'id': id.toJson(),
@@ -37,12 +37,12 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   if (targetedTests != null) 'targeted_tests': targetedTests?.map((e) => e.toJson()).toList(),
   'updated_at': ?updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') &&
       json.containsKey('match') && json['match'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-DigitalExperienceMonitoringDexRule copyWith({String? createdAt, String? Function()? description, DigitalExperienceMonitoringUuid? id, String? match, String? name, List<DigitalExperienceMonitoringDexTargetedTest>? Function()? targetedTests, String? Function()? updatedAt, }) { return DigitalExperienceMonitoringDexRule(
+      json.containsKey('name') && json['name'] is String;}
+DigitalExperienceMonitoringDexRule copyWith({String? createdAt, String? Function()? description, DigitalExperienceMonitoringUuid? id, String? match, String? name, List<DigitalExperienceMonitoringDexTargetedTest>? Function()? targetedTests, String? Function()? updatedAt, }) {return DigitalExperienceMonitoringDexRule(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,
   id: id ?? this.id,
@@ -50,7 +50,7 @@ DigitalExperienceMonitoringDexRule copyWith({String? createdAt, String? Function
   name: name ?? this.name,
   targetedTests: targetedTests != null ? targetedTests() : this.targetedTests,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDexRule &&
           createdAt == other.createdAt &&
@@ -65,4 +65,4 @@ DigitalExperienceMonitoringDexRule copyWith({String? createdAt, String? Function
 
 @override String toString() => 'DigitalExperienceMonitoringDexRule(createdAt: $createdAt, description: $description, id: $id, match: $match, name: $name, targetedTests: $targetedTests, updatedAt: $updatedAt)';
 
- }
+}

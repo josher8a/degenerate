@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 sealed class RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension();
 
-factory RadarGetEmailSecurityTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'SPAM' => spam,
   'MALICIOUS' => malicious,
   'SPOOF' => spoof,
@@ -15,7 +15,7 @@ factory RadarGetEmailSecurityTimeseriesGroupDimension.fromJson(String json) { re
   'SPF' => spf,
   'TLS_VERSION' => tlsVersion,
   _ => RadarGetEmailSecurityTimeseriesGroupDimension$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTimeseriesGroupDimension spam = RadarGetEmailSecurityTimeseriesGroupDimension$spam._();
 
@@ -38,9 +38,9 @@ static const RadarGetEmailSecurityTimeseriesGroupDimension tlsVersion = RadarGet
 static const List<RadarGetEmailSecurityTimeseriesGroupDimension> values = [spam, malicious, spoof, threatCategory, arc, dkim, dmarc, spf, tlsVersion];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'SPAM' => 'spam',
   'MALICIOUS' => 'malicious',
   'SPOOF' => 'spoof',
@@ -51,11 +51,11 @@ String get name { return switch (value) {
   'SPF' => 'spf',
   'TLS_VERSION' => 'tlsVersion',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupDimension$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailSecurityTimeseriesGroupDimension$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() spam, required W Function() malicious, required W Function() spoof, required W Function() threatCategory, required W Function() arc, required W Function() dkim, required W Function() dmarc, required W Function() spf, required W Function() tlsVersion, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() spam, required W Function() malicious, required W Function() spoof, required W Function() threatCategory, required W Function() arc, required W Function() dkim, required W Function() dmarc, required W Function() spf, required W Function() tlsVersion, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTimeseriesGroupDimension$spam() => spam(),
       RadarGetEmailSecurityTimeseriesGroupDimension$malicious() => malicious(),
       RadarGetEmailSecurityTimeseriesGroupDimension$spoof() => spoof(),
@@ -66,9 +66,9 @@ W when<W>({required W Function() spam, required W Function() malicious, required
       RadarGetEmailSecurityTimeseriesGroupDimension$spf() => spf(),
       RadarGetEmailSecurityTimeseriesGroupDimension$tlsVersion() => tlsVersion(),
       RadarGetEmailSecurityTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W Function()? malicious, W Function()? spoof, W Function()? threatCategory, W Function()? arc, W Function()? dkim, W Function()? dmarc, W Function()? spf, W Function()? tlsVersion, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W Function()? malicious, W Function()? spoof, W Function()? threatCategory, W Function()? arc, W Function()? dkim, W Function()? dmarc, W Function()? spf, W Function()? tlsVersion, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTimeseriesGroupDimension$spam() => spam != null ? spam() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupDimension$malicious() => malicious != null ? malicious() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupDimension$spoof() => spoof != null ? spoof() : orElse(value),
@@ -79,10 +79,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
       RadarGetEmailSecurityTimeseriesGroupDimension$spf() => spf != null ? spf() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupDimension$tlsVersion() => tlsVersion != null ? tlsVersion() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupDimension($value)';
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$spam extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$spam._();
 
 @override String get value => 'SPAM';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'SPAM'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$malicious extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$malicious._();
 
 @override String get value => 'MALICIOUS';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'MALICIOUS'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$spoof extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$spoof._();
 
 @override String get value => 'SPOOF';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'SPOOF'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$threatCategory extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$threatCategory._();
 
 @override String get value => 'THREAT_CATEGORY';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'THREAT_CATEGORY'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$arc extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$arc._();
 
 @override String get value => 'ARC';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'ARC'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$dkim extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$dkim._();
 
 @override String get value => 'DKIM';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'DKIM'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$dmarc extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$dmarc._();
 
 @override String get value => 'DMARC';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'DMARC'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$spf extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$spf._();
 
 @override String get value => 'SPF';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'SPF'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$tlsVersion extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$tlsVersion._();
 
 @override String get value => 'TLS_VERSION';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => 'TLS_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupDimension$Unknown extends RadarGetEmailSecurityTimeseriesGroupDimension {const RadarGetEmailSecurityTimeseriesGroupDimension$Unknown(this.value);
 
 @override final String value;
@@ -173,4 +173,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

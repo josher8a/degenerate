@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitTagObject {const GitTagObject({required this.sha, required this.type, required this.url, });
 
-factory GitTagObject.fromJson(Map<String, dynamic> json) { return GitTagObject(
+factory GitTagObject.fromJson(Map<String, dynamic> json) {return GitTagObject(
   sha: json['sha'] as String,
   type: json['type'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String sha;
 
@@ -15,19 +15,19 @@ final String type;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sha': sha,
   'type': type,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-GitTagObject copyWith({String? sha, String? type, Uri? url, }) { return GitTagObject(
+      json.containsKey('url') && json['url'] is String;}
+GitTagObject copyWith({String? sha, String? type, Uri? url, }) {return GitTagObject(
   sha: sha ?? this.sha,
   type: type ?? this.type,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GitTagObject &&
           sha == other.sha &&
@@ -38,4 +38,4 @@ GitTagObject copyWith({String? sha, String? type, Uri? url, }) { return GitTagOb
 
 @override String toString() => 'GitTagObject(sha: $sha, type: $type, url: $url)';
 
- }
+}

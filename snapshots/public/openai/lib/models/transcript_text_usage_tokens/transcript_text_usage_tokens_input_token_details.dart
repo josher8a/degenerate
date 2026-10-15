@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the input tokens billed for this request.
 @immutable final class TranscriptTextUsageTokensInputTokenDetails {const TranscriptTextUsageTokensInputTokenDetails({this.textTokens, this.audioTokens, });
 
-factory TranscriptTextUsageTokensInputTokenDetails.fromJson(Map<String, dynamic> json) { return TranscriptTextUsageTokensInputTokenDetails(
+factory TranscriptTextUsageTokensInputTokenDetails.fromJson(Map<String, dynamic> json) {return TranscriptTextUsageTokensInputTokenDetails(
   textTokens: json['text_tokens'] != null ? (json['text_tokens'] as num).toInt() : null,
   audioTokens: json['audio_tokens'] != null ? (json['audio_tokens'] as num).toInt() : null,
-); }
+);}
 
 /// Number of text tokens billed for this request.
 final int? textTokens;
@@ -15,15 +15,15 @@ final int? textTokens;
 /// Number of audio tokens billed for this request.
 final int? audioTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text_tokens': ?textTokens,
   'audio_tokens': ?audioTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text_tokens', 'audio_tokens'}.contains(key)); } 
-TranscriptTextUsageTokensInputTokenDetails copyWith({int? Function()? textTokens, int? Function()? audioTokens, }) { return TranscriptTextUsageTokensInputTokenDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'text_tokens', 'audio_tokens'}.contains(key));}
+TranscriptTextUsageTokensInputTokenDetails copyWith({int? Function()? textTokens, int? Function()? audioTokens, }) {return TranscriptTextUsageTokensInputTokenDetails(
   textTokens: textTokens != null ? textTokens() : this.textTokens,
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextUsageTokensInputTokenDetails &&
           textTokens == other.textTokens &&
@@ -33,4 +33,4 @@ TranscriptTextUsageTokensInputTokenDetails copyWith({int? Function()? textTokens
 
 @override String toString() => 'TranscriptTextUsageTokensInputTokenDetails(textTokens: $textTokens, audioTokens: $audioTokens)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';@immutable final class TrafficStats {const TrafficStats({required this.lastUpdated, required this.periodSeconds, required this.requests, });
 
-factory TrafficStats.fromJson(Map<String, dynamic> json) { return TrafficStats(
+factory TrafficStats.fromJson(Map<String, dynamic> json) {return TrafficStats(
   lastUpdated: ShieldTimestamp.fromJson(json['last_updated'] as String),
   periodSeconds: (json['period_seconds'] as num).toInt(),
   requests: (json['requests'] as num).toDouble(),
-); }
+);}
 
 final ShieldTimestamp lastUpdated;
 
@@ -21,19 +21,19 @@ final int periodSeconds;
 /// Example: `1987.06`
 final double requests;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'last_updated': lastUpdated.toJson(),
   'period_seconds': periodSeconds,
   'requests': requests,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_updated') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('last_updated') &&
       json.containsKey('period_seconds') && json['period_seconds'] is num &&
-      json.containsKey('requests') && json['requests'] is num; } 
-TrafficStats copyWith({ShieldTimestamp? lastUpdated, int? periodSeconds, double? requests, }) { return TrafficStats(
+      json.containsKey('requests') && json['requests'] is num;}
+TrafficStats copyWith({ShieldTimestamp? lastUpdated, int? periodSeconds, double? requests, }) {return TrafficStats(
   lastUpdated: lastUpdated ?? this.lastUpdated,
   periodSeconds: periodSeconds ?? this.periodSeconds,
   requests: requests ?? this.requests,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TrafficStats &&
           lastUpdated == other.lastUpdated &&
@@ -44,4 +44,4 @@ TrafficStats copyWith({ShieldTimestamp? lastUpdated, int? periodSeconds, double?
 
 @override String toString() => 'TrafficStats(lastUpdated: $lastUpdated, periodSeconds: $periodSeconds, requests: $requests)';
 
- }
+}

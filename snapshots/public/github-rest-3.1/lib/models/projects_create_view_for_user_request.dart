@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_create_view_for_org_request/layout.dart';@immutable final class ProjectsCreateViewForUserRequest {const ProjectsCreateViewForUserRequest({required this.name, required this.layout, this.filter, this.visibleFields, });
 
-factory ProjectsCreateViewForUserRequest.fromJson(Map<String, dynamic> json) { return ProjectsCreateViewForUserRequest(
+factory ProjectsCreateViewForUserRequest.fromJson(Map<String, dynamic> json) {return ProjectsCreateViewForUserRequest(
   name: json['name'] as String,
   layout: Layout.fromJson(json['layout'] as String),
   filter: json['filter'] as String?,
   visibleFields: (json['visible_fields'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The name of the view.
 final String name;
@@ -23,20 +23,20 @@ final String? filter;
 /// For `table` and `board` layouts, this represents the field IDs that should be visible in the view. If not provided, the default visible fields will be used.
 final List<int>? visibleFields;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'layout': layout.toJson(),
   'filter': ?filter,
   'visible_fields': ?visibleFields,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('layout'); } 
-ProjectsCreateViewForUserRequest copyWith({String? name, Layout? layout, String? Function()? filter, List<int>? Function()? visibleFields, }) { return ProjectsCreateViewForUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('layout');}
+ProjectsCreateViewForUserRequest copyWith({String? name, Layout? layout, String? Function()? filter, List<int>? Function()? visibleFields, }) {return ProjectsCreateViewForUserRequest(
   name: name ?? this.name,
   layout: layout ?? this.layout,
   filter: filter != null ? filter() : this.filter,
   visibleFields: visibleFields != null ? visibleFields() : this.visibleFields,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectsCreateViewForUserRequest &&
           name == other.name &&
@@ -48,4 +48,4 @@ ProjectsCreateViewForUserRequest copyWith({String? name, Layout? layout, String?
 
 @override String toString() => 'ProjectsCreateViewForUserRequest(name: $name, layout: $layout, filter: $filter, visibleFields: $visibleFields)';
 
- }
+}

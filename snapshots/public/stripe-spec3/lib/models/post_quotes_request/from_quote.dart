@@ -4,28 +4,28 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Clone an existing quote. The new quote will be created in `status=draft`. When using this parameter, you cannot specify any other parameters except for `expires_at`.
 @immutable final class FromQuote {const FromQuote({required this.quote, this.isRevision, });
 
-factory FromQuote.fromJson(Map<String, dynamic> json) { return FromQuote(
+factory FromQuote.fromJson(Map<String, dynamic> json) {return FromQuote(
   isRevision: json['is_revision'] as bool?,
   quote: json['quote'] as String,
-); }
+);}
 
 final bool? isRevision;
 
 final String quote;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'is_revision': ?isRevision,
   'quote': quote,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('quote') && json['quote'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('quote') && json['quote'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (quote.runes.length > 5000) { errors.add('quote: length must be <= 5000'); }
-return errors; } 
-FromQuote copyWith({bool? Function()? isRevision, String? quote, }) { return FromQuote(
+return errors;}
+FromQuote copyWith({bool? Function()? isRevision, String? quote, }) {return FromQuote(
   isRevision: isRevision != null ? isRevision() : this.isRevision,
   quote: quote ?? this.quote,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FromQuote &&
           isRevision == other.isRevision &&
@@ -35,4 +35,4 @@ FromQuote copyWith({bool? Function()? isRevision, String? quote, }) { return Fro
 
 @override String toString() => 'FromQuote(isRevision: $isRevision, quote: $quote)';
 
- }
+}

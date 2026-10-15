@@ -8,11 +8,11 @@ const BankConnectionsResourceAccountholderCustomer({this.string = const Omittabl
 const BankConnectionsResourceAccountholderCustomer._({required this.rawValue, required this.string, required this.customer, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BankConnectionsResourceAccountholderCustomer.fromJson(Object? json) { return BankConnectionsResourceAccountholderCustomer._(
+factory BankConnectionsResourceAccountholderCustomer.fromJson(Object? json) {return BankConnectionsResourceAccountholderCustomer._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   customer: json is Map<String, dynamic> && Customer.canParse(json) ? parseAnyOfVariant<Customer>(json, (value) => Customer.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BankConnectionsResourceAccountholderCustomer(${toJson()})';
 
- }
+}

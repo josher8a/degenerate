@@ -9,13 +9,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeTranscriptionSessionCreateResponse {const RealtimeTranscriptionSessionCreateResponse({required this.clientSecret, this.modalities = const Omittable.absent(), this.inputAudioFormat, this.inputAudioTranscription, this.turnDetection, });
 
-factory RealtimeTranscriptionSessionCreateResponse.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateResponse(
+factory RealtimeTranscriptionSessionCreateResponse.fromJson(Map<String, dynamic> json) {return RealtimeTranscriptionSessionCreateResponse(
   clientSecret: ClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
   modalities: json.containsKey('modalities') ? Omittable(json['modalities']) : const Omittable.absent(),
   inputAudioFormat: json['input_audio_format'] as String?,
   inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
   turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Ephemeral key returned by the API. Only present when the session is
 /// created on the server via REST API.
@@ -41,21 +41,21 @@ final AudioTranscription? inputAudioTranscription;
 /// 
 final RealtimeSessionCreateRequestTurnDetection? turnDetection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_secret': clientSecret.toJson(),
   if (modalities.isPresent) 'modalities': modalities.value,
   'input_audio_format': ?inputAudioFormat,
   if (inputAudioTranscription != null) 'input_audio_transcription': inputAudioTranscription?.toJson(),
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret'); } 
-RealtimeTranscriptionSessionCreateResponse copyWith({ClientSecret? clientSecret, Omittable<dynamic>? modalities, String? Function()? inputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_secret');}
+RealtimeTranscriptionSessionCreateResponse copyWith({ClientSecret? clientSecret, Omittable<dynamic>? modalities, String? Function()? inputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, }) {return RealtimeTranscriptionSessionCreateResponse(
   clientSecret: clientSecret ?? this.clientSecret,
   modalities: modalities ?? this.modalities,
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,
   inputAudioTranscription: inputAudioTranscription != null ? inputAudioTranscription() : this.inputAudioTranscription,
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateResponse &&
           clientSecret == other.clientSecret &&
@@ -68,4 +68,4 @@ RealtimeTranscriptionSessionCreateResponse copyWith({ClientSecret? clientSecret,
 
 @override String toString() => 'RealtimeTranscriptionSessionCreateResponse(clientSecret: $clientSecret, modalities: $modalities, inputAudioFormat: $inputAudioFormat, inputAudioTranscription: $inputAudioTranscription, turnDetection: $turnDetection)';
 
- }
+}

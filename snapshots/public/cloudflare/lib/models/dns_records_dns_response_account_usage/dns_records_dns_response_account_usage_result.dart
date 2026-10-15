@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseAccountUsageResult {const DnsRecordsDnsResponseAccountUsageResult({this.internalRecordQuota = const Omittable.absent(), this.internalRecordUsage = const Omittable.absent(), this.recordQuota = const Omittable.absent(), this.recordUsage, });
 
-factory DnsRecordsDnsResponseAccountUsageResult.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseAccountUsageResult(
+factory DnsRecordsDnsResponseAccountUsageResult.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsResponseAccountUsageResult(
   internalRecordQuota: json.containsKey('internal_record_quota') ? Omittable(json['internal_record_quota'] != null ? (json['internal_record_quota'] as num).toInt() : null) : const Omittable.absent(),
   internalRecordUsage: json.containsKey('internal_record_usage') ? Omittable(json['internal_record_usage'] != null ? (json['internal_record_usage'] as num).toInt() : null) : const Omittable.absent(),
   recordQuota: json.containsKey('record_quota') ? Omittable(json['record_quota'] != null ? (json['record_quota'] as num).toInt() : null) : const Omittable.absent(),
   recordUsage: json['record_usage'] != null ? (json['record_usage'] as num).toInt() : null,
-); }
+);}
 
 /// Maximum number of DNS records allowed across all internal zones in the account. Only present if internal DNS is enabled.
 /// 
@@ -30,15 +30,15 @@ final Omittable<int?> recordQuota;
 /// Example: `5000`
 final int? recordUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (internalRecordQuota.isPresent) 'internal_record_quota': internalRecordQuota.value,
   if (internalRecordUsage.isPresent) 'internal_record_usage': internalRecordUsage.value,
   if (recordQuota.isPresent) 'record_quota': recordQuota.value,
   'record_usage': ?recordUsage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'internal_record_quota', 'internal_record_usage', 'record_quota', 'record_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'internal_record_quota', 'internal_record_usage', 'record_quota', 'record_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final internalRecordQuota$ = internalRecordQuota.value;
 if (internalRecordQuota$ != null) {
   if (internalRecordQuota$ < 0) { errors.add('internalRecordQuota: must be >= 0'); }
@@ -55,13 +55,13 @@ final recordUsage$ = recordUsage;
 if (recordUsage$ != null) {
   if (recordUsage$ < 0) { errors.add('recordUsage: must be >= 0'); }
 }
-return errors; } 
-DnsRecordsDnsResponseAccountUsageResult copyWith({Omittable<int?>? internalRecordQuota, Omittable<int?>? internalRecordUsage, Omittable<int?>? recordQuota, int? Function()? recordUsage, }) { return DnsRecordsDnsResponseAccountUsageResult(
+return errors;}
+DnsRecordsDnsResponseAccountUsageResult copyWith({Omittable<int?>? internalRecordQuota, Omittable<int?>? internalRecordUsage, Omittable<int?>? recordQuota, int? Function()? recordUsage, }) {return DnsRecordsDnsResponseAccountUsageResult(
   internalRecordQuota: internalRecordQuota ?? this.internalRecordQuota,
   internalRecordUsage: internalRecordUsage ?? this.internalRecordUsage,
   recordQuota: recordQuota ?? this.recordQuota,
   recordUsage: recordUsage != null ? recordUsage() : this.recordUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsResponseAccountUsageResult &&
           internalRecordQuota == other.internalRecordQuota &&
@@ -73,4 +73,4 @@ DnsRecordsDnsResponseAccountUsageResult copyWith({Omittable<int?>? internalRecor
 
 @override String toString() => 'DnsRecordsDnsResponseAccountUsageResult(internalRecordQuota: $internalRecordQuota, internalRecordUsage: $internalRecordUsage, recordQuota: $recordQuota, recordUsage: $recordUsage)';
 
- }
+}

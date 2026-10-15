@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ranking_top_domains_response/radar_get_ranking_top_domains_response_result.dart';@immutable final class RadarGetRankingTopDomainsResponse {const RadarGetRankingTopDomainsResponse({required this.result, required this.success, });
 
-factory RadarGetRankingTopDomainsResponse.fromJson(Map<String, dynamic> json) { return RadarGetRankingTopDomainsResponse(
+factory RadarGetRankingTopDomainsResponse.fromJson(Map<String, dynamic> json) {return RadarGetRankingTopDomainsResponse(
   result: RadarGetRankingTopDomainsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetRankingTopDomainsResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetRankingTopDomainsResponse copyWith({RadarGetRankingTopDomainsResponseResult? result, bool? success, }) { return RadarGetRankingTopDomainsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetRankingTopDomainsResponse copyWith({RadarGetRankingTopDomainsResponseResult? result, bool? success, }) {return RadarGetRankingTopDomainsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRankingTopDomainsResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetRankingTopDomainsResponse copyWith({RadarGetRankingTopDomainsResponseRes
 
 @override String toString() => 'RadarGetRankingTopDomainsResponse(result: $result, success: $success)';
 
- }
+}

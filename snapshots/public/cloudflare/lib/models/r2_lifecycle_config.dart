@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_rule.dart';@immutable final class R2LifecycleConfig {const R2LifecycleConfig({this.rules});
 
-factory R2LifecycleConfig.fromJson(Map<String, dynamic> json) { return R2LifecycleConfig(
+factory R2LifecycleConfig.fromJson(Map<String, dynamic> json) {return R2LifecycleConfig(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => R2LifecycleRule.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<R2LifecycleRule>? rules;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rules'}.contains(key)); } 
-R2LifecycleConfig copyWith({List<R2LifecycleRule>? Function()? rules}) { return R2LifecycleConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'rules'}.contains(key));}
+R2LifecycleConfig copyWith({List<R2LifecycleRule>? Function()? rules}) {return R2LifecycleConfig(
   rules: rules != null ? rules() : this.rules,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2LifecycleConfig &&
           listEquals(rules, other.rules);
@@ -24,4 +24,4 @@ R2LifecycleConfig copyWith({List<R2LifecycleRule>? Function()? rules}) { return 
 
 @override String toString() => 'R2LifecycleConfig(rules: $rules)';
 
- }
+}

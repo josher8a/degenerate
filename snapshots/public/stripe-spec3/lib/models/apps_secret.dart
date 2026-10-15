@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/secret_service_resource_scope.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class AppsSecretObject {const AppsSecretObject();
 
-factory AppsSecretObject.fromJson(String json) { return switch (json) {
+factory AppsSecretObject.fromJson(String json) {return switch (json) {
   'apps.secret' => appsSecret,
   _ => AppsSecretObject$Unknown(json),
-}; }
+};}
 
 static const AppsSecretObject appsSecret = AppsSecretObject$appsSecret._();
 
 static const List<AppsSecretObject> values = [appsSecret];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'apps.secret' => 'appsSecret',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AppsSecretObject$Unknown; } 
+bool get isUnknown {return this is AppsSecretObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() appsSecret, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() appsSecret, required W Function(String value) $unknown, }) {return switch (this) {
       AppsSecretObject$appsSecret() => appsSecret(),
       AppsSecretObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? appsSecret, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? appsSecret, W Function(String value)? $unknown, }) {return switch (this) {
       AppsSecretObject$appsSecret() => appsSecret != null ? appsSecret() : orElse(value),
       AppsSecretObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AppsSecretObject($value)';
 
- }
+}
 @immutable final class AppsSecretObject$appsSecret extends AppsSecretObject {const AppsSecretObject$appsSecret._();
 
 @override String get value => 'apps.secret';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? appsSecr
 
 @override int get hashCode => 'apps.secret'.hashCode;
 
- }
+}
 @immutable final class AppsSecretObject$Unknown extends AppsSecretObject {const AppsSecretObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? appsSecr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Secret Store is an API that allows Stripe Apps developers to securely persist secrets for use by UI Extensions and app backends.
 /// 
 /// The primary resource in Secret Store is a `secret`. Other apps can't view secrets created by an app. Additionally, secrets are scoped to provide further permission control.
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? appsSecr
 /// Related guide: [Store data between page reloads](https://docs.stripe.com/stripe-apps/store-auth-data-custom-objects)
 @immutable final class AppsSecret {const AppsSecret({required this.created, required this.id, required this.livemode, required this.name, required this.object, required this.scope, this.deleted, this.expiresAt = const Omittable.absent(), this.payload = const Omittable.absent(), });
 
-factory AppsSecret.fromJson(Map<String, dynamic> json) { return AppsSecret(
+factory AppsSecret.fromJson(Map<String, dynamic> json) {return AppsSecret(
   created: (json['created'] as num).toInt(),
   deleted: json['deleted'] as bool?,
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
@@ -75,7 +75,7 @@ factory AppsSecret.fromJson(Map<String, dynamic> json) { return AppsSecret(
   object: AppsSecretObject.fromJson(json['object'] as String),
   payload: json.containsKey('payload') ? Omittable(json['payload'] as String?) : const Omittable.absent(),
   scope: SecretServiceResourceScope.fromJson(json['scope'] as Map<String, dynamic>),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -103,7 +103,7 @@ final Omittable<String?> payload;
 
 final SecretServiceResourceScope scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'deleted': ?deleted,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
@@ -113,23 +113,23 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   if (payload.isPresent) 'payload': payload.value,
   'scope': scope.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
-      json.containsKey('scope'); } 
+      json.containsKey('scope');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 final payload$ = payload.value;
 if (payload$ != null) {
   if (payload$.runes.length > 5000) { errors.add('payload: length must be <= 5000'); }
 }
-return errors; } 
-AppsSecret copyWith({int? created, bool? Function()? deleted, Omittable<int?>? expiresAt, String? id, bool? livemode, String? name, AppsSecretObject? object, Omittable<String?>? payload, SecretServiceResourceScope? scope, }) { return AppsSecret(
+return errors;}
+AppsSecret copyWith({int? created, bool? Function()? deleted, Omittable<int?>? expiresAt, String? id, bool? livemode, String? name, AppsSecretObject? object, Omittable<String?>? payload, SecretServiceResourceScope? scope, }) {return AppsSecret(
   created: created ?? this.created,
   deleted: deleted != null ? deleted() : this.deleted,
   expiresAt: expiresAt ?? this.expiresAt,
@@ -139,7 +139,7 @@ AppsSecret copyWith({int? created, bool? Function()? deleted, Omittable<int?>? e
   object: object ?? this.object,
   payload: payload ?? this.payload,
   scope: scope ?? this.scope,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppsSecret &&
           created == other.created &&
@@ -156,4 +156,4 @@ AppsSecret copyWith({int? created, bool? Function()? deleted, Omittable<int?>? e
 
 @override String toString() => 'AppsSecret(\n  created: $created,\n  deleted: $deleted,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  name: $name,\n  object: $object,\n  payload: $payload,\n  scope: $scope,\n)';
 
- }
+}

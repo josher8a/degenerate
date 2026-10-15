@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The specified type of behavior after the flow is completed.
 sealed class PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType();
 
-factory PortalFlowsFlowAfterCompletionType.fromJson(String json) { return switch (json) {
+factory PortalFlowsFlowAfterCompletionType.fromJson(String json) {return switch (json) {
   'hosted_confirmation' => hostedConfirmation,
   'portal_homepage' => portalHomepage,
   'redirect' => redirect,
   _ => PortalFlowsFlowAfterCompletionType$Unknown(json),
-}; }
+};}
 
 static const PortalFlowsFlowAfterCompletionType hostedConfirmation = PortalFlowsFlowAfterCompletionType$hostedConfirmation._();
 
@@ -20,33 +20,33 @@ static const PortalFlowsFlowAfterCompletionType redirect = PortalFlowsFlowAfterC
 static const List<PortalFlowsFlowAfterCompletionType> values = [hostedConfirmation, portalHomepage, redirect];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'hosted_confirmation' => 'hostedConfirmation',
   'portal_homepage' => 'portalHomepage',
   'redirect' => 'redirect',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PortalFlowsFlowAfterCompletionType$Unknown; } 
+bool get isUnknown {return this is PortalFlowsFlowAfterCompletionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() hostedConfirmation, required W Function() portalHomepage, required W Function() redirect, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() hostedConfirmation, required W Function() portalHomepage, required W Function() redirect, required W Function(String value) $unknown, }) {return switch (this) {
       PortalFlowsFlowAfterCompletionType$hostedConfirmation() => hostedConfirmation(),
       PortalFlowsFlowAfterCompletionType$portalHomepage() => portalHomepage(),
       PortalFlowsFlowAfterCompletionType$redirect() => redirect(),
       PortalFlowsFlowAfterCompletionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostedConfirmation, W Function()? portalHomepage, W Function()? redirect, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostedConfirmation, W Function()? portalHomepage, W Function()? redirect, W Function(String value)? $unknown, }) {return switch (this) {
       PortalFlowsFlowAfterCompletionType$hostedConfirmation() => hostedConfirmation != null ? hostedConfirmation() : orElse(value),
       PortalFlowsFlowAfterCompletionType$portalHomepage() => portalHomepage != null ? portalHomepage() : orElse(value),
       PortalFlowsFlowAfterCompletionType$redirect() => redirect != null ? redirect() : orElse(value),
       PortalFlowsFlowAfterCompletionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PortalFlowsFlowAfterCompletionType($value)';
 
- }
+}
 @immutable final class PortalFlowsFlowAfterCompletionType$hostedConfirmation extends PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType$hostedConfirmation._();
 
 @override String get value => 'hosted_confirmation';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostedCo
 
 @override int get hashCode => 'hosted_confirmation'.hashCode;
 
- }
+}
 @immutable final class PortalFlowsFlowAfterCompletionType$portalHomepage extends PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType$portalHomepage._();
 
 @override String get value => 'portal_homepage';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostedCo
 
 @override int get hashCode => 'portal_homepage'.hashCode;
 
- }
+}
 @immutable final class PortalFlowsFlowAfterCompletionType$redirect extends PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType$redirect._();
 
 @override String get value => 'redirect';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostedCo
 
 @override int get hashCode => 'redirect'.hashCode;
 
- }
+}
 @immutable final class PortalFlowsFlowAfterCompletionType$Unknown extends PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostedCo
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -21,12 +21,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class Script {const Script({this.etag, this.handlers, this.lastDeployedFrom, this.namedHandlers, });
 
-factory Script.fromJson(Map<String, dynamic> json) { return Script(
+factory Script.fromJson(Map<String, dynamic> json) {return Script(
   etag: json['etag'] as String?,
   handlers: (json['handlers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lastDeployedFrom: json['last_deployed_from'] as String?,
   namedHandlers: (json['named_handlers'] as List<dynamic>?)?.map((e) => NamedHandlers.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Hashed script content
 /// 
@@ -48,19 +48,19 @@ final String? lastDeployedFrom;
 /// Example: `[{handlers: [fetch], name: MyClass}]`
 final List<NamedHandlers>? namedHandlers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'etag': ?etag,
   'handlers': ?handlers,
   'last_deployed_from': ?lastDeployedFrom,
   if (namedHandlers != null) 'named_handlers': namedHandlers?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'etag', 'handlers', 'last_deployed_from', 'named_handlers'}.contains(key)); } 
-Script copyWith({String? Function()? etag, List<String>? Function()? handlers, String? Function()? lastDeployedFrom, List<NamedHandlers>? Function()? namedHandlers, }) { return Script(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'etag', 'handlers', 'last_deployed_from', 'named_handlers'}.contains(key));}
+Script copyWith({String? Function()? etag, List<String>? Function()? handlers, String? Function()? lastDeployedFrom, List<NamedHandlers>? Function()? namedHandlers, }) {return Script(
   etag: etag != null ? etag() : this.etag,
   handlers: handlers != null ? handlers() : this.handlers,
   lastDeployedFrom: lastDeployedFrom != null ? lastDeployedFrom() : this.lastDeployedFrom,
   namedHandlers: namedHandlers != null ? namedHandlers() : this.namedHandlers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Script &&
           etag == other.etag &&
@@ -72,4 +72,4 @@ Script copyWith({String? Function()? etag, List<String>? Function()? handlers, S
 
 @override String toString() => 'Script(etag: $etag, handlers: $handlers, lastDeployedFrom: $lastDeployedFrom, namedHandlers: $namedHandlers)';
 
- }
+}

@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The pricing information for the invoice item.
 @immutable final class Pricing {const Pricing({this.price});
 
-factory Pricing.fromJson(Map<String, dynamic> json) { return Pricing(
+factory Pricing.fromJson(Map<String, dynamic> json) {return Pricing(
   price: json['price'] as String?,
-); }
+);}
 
 final String? price;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'price': ?price,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'price'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'price'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final price$ = price;
 if (price$ != null) {
   if (price$.runes.length > 5000) { errors.add('price: length must be <= 5000'); }
 }
-return errors; } 
-Pricing copyWith({String? Function()? price}) { return Pricing(
+return errors;}
+Pricing copyWith({String? Function()? price}) {return Pricing(
   price: price != null ? price() : this.price,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Pricing &&
           price == other.price;
@@ -32,4 +32,4 @@ Pricing copyWith({String? Function()? price}) { return Pricing(
 
 @override String toString() => 'Pricing(price: $price)';
 
- }
+}

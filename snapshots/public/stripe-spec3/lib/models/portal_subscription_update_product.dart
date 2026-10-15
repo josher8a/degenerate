@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update_product_adjustable_quantity.dart';/// 
 @immutable final class PortalSubscriptionUpdateProduct {const PortalSubscriptionUpdateProduct({required this.adjustableQuantity, required this.prices, required this.product, });
 
-factory PortalSubscriptionUpdateProduct.fromJson(Map<String, dynamic> json) { return PortalSubscriptionUpdateProduct(
+factory PortalSubscriptionUpdateProduct.fromJson(Map<String, dynamic> json) {return PortalSubscriptionUpdateProduct(
   adjustableQuantity: PortalSubscriptionUpdateProductAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>),
   prices: (json['prices'] as List<dynamic>).map((e) => e as String).toList(),
   product: json['product'] as String,
-); }
+);}
 
 final PortalSubscriptionUpdateProductAdjustableQuantity adjustableQuantity;
 
@@ -18,23 +18,23 @@ final List<String> prices;
 /// The product ID.
 final String product;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'adjustable_quantity': adjustableQuantity.toJson(),
   'prices': prices,
   'product': product,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('adjustable_quantity') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('adjustable_quantity') &&
       json.containsKey('prices') &&
-      json.containsKey('product') && json['product'] is String; } 
+      json.containsKey('product') && json['product'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (product.runes.length > 5000) { errors.add('product: length must be <= 5000'); }
-return errors; } 
-PortalSubscriptionUpdateProduct copyWith({PortalSubscriptionUpdateProductAdjustableQuantity? adjustableQuantity, List<String>? prices, String? product, }) { return PortalSubscriptionUpdateProduct(
+return errors;}
+PortalSubscriptionUpdateProduct copyWith({PortalSubscriptionUpdateProductAdjustableQuantity? adjustableQuantity, List<String>? prices, String? product, }) {return PortalSubscriptionUpdateProduct(
   adjustableQuantity: adjustableQuantity ?? this.adjustableQuantity,
   prices: prices ?? this.prices,
   product: product ?? this.product,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PortalSubscriptionUpdateProduct &&
           adjustableQuantity == other.adjustableQuantity &&
@@ -45,4 +45,4 @@ PortalSubscriptionUpdateProduct copyWith({PortalSubscriptionUpdateProductAdjusta
 
 @override String toString() => 'PortalSubscriptionUpdateProduct(adjustableQuantity: $adjustableQuantity, prices: $prices, product: $product)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_argo_smart_routing.dart';import 'package:pub_cloudflare/models/spectrum_config_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips/dynamic.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips/static.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_ip_firewall.dart';import 'package:pub_cloudflare/models/spectrum_config_origin_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_origin_port.dart';import 'package:pub_cloudflare/models/spectrum_config_protocol.dart';import 'package:pub_cloudflare/models/spectrum_config_proxy_protocol.dart';import 'package:pub_cloudflare/models/spectrum_config_timestamp.dart';import 'package:pub_cloudflare/models/spectrum_config_tls.dart';import 'package:pub_cloudflare/models/spectrum_config_traffic_type.dart';@immutable final class SpectrumConfigAppConfig {const SpectrumConfigAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, required this.trafficType, this.argoSmartRouting, this.edgeIps, this.ipFirewall, this.originDirect, this.originDns, this.originPort, this.proxyProtocol, this.tls, });
 
-factory SpectrumConfigAppConfig.fromJson(Map<String, dynamic> json) { return SpectrumConfigAppConfig(
+factory SpectrumConfigAppConfig.fromJson(Map<String, dynamic> json) {return SpectrumConfigAppConfig(
   createdOn: SpectrumConfigTimestamp.fromJson(json['created_on'] as String),
   id: SpectrumConfigIdentifier.fromJson(json['id'] as String),
   modifiedOn: SpectrumConfigTimestamp.fromJson(json['modified_on'] as String),
@@ -18,7 +18,7 @@ factory SpectrumConfigAppConfig.fromJson(Map<String, dynamic> json) { return Spe
   proxyProtocol: json['proxy_protocol'] != null ? SpectrumConfigProxyProtocol.fromJson(json['proxy_protocol'] as String) : null,
   tls: json['tls'] != null ? SpectrumConfigTls.fromJson(json['tls'] as String) : null,
   trafficType: SpectrumConfigTrafficType.fromJson(json['traffic_type'] as String),
-); }
+);}
 
 final SpectrumConfigTimestamp createdOn;
 
@@ -48,7 +48,7 @@ final SpectrumConfigTls? tls;
 
 final SpectrumConfigTrafficType trafficType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toJson(),
   'id': id.toJson(),
   'modified_on': modifiedOn.toJson(),
@@ -63,14 +63,14 @@ Map<String, dynamic> toJson() { return {
   if (proxyProtocol != null) 'proxy_protocol': proxyProtocol?.toJson(),
   if (tls != null) 'tls': tls?.toJson(),
   'traffic_type': trafficType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') &&
       json.containsKey('id') &&
       json.containsKey('modified_on') &&
       json.containsKey('dns') &&
       json.containsKey('protocol') &&
-      json.containsKey('traffic_type'); } 
-SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, SpectrumConfigArgoSmartRouting? Function()? argoSmartRouting, SpectrumConfigDns? dns, SpectrumConfigEdgeIps? Function()? edgeIps, SpectrumConfigIpFirewall? Function()? ipFirewall, List<String>? Function()? originDirect, SpectrumConfigOriginDns? Function()? originDns, SpectrumConfigOriginPort? Function()? originPort, SpectrumConfigProtocol? protocol, SpectrumConfigProxyProtocol? Function()? proxyProtocol, SpectrumConfigTls? Function()? tls, SpectrumConfigTrafficType? trafficType, }) { return SpectrumConfigAppConfig(
+      json.containsKey('traffic_type');}
+SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, SpectrumConfigArgoSmartRouting? Function()? argoSmartRouting, SpectrumConfigDns? dns, SpectrumConfigEdgeIps? Function()? edgeIps, SpectrumConfigIpFirewall? Function()? ipFirewall, List<String>? Function()? originDirect, SpectrumConfigOriginDns? Function()? originDns, SpectrumConfigOriginPort? Function()? originPort, SpectrumConfigProtocol? protocol, SpectrumConfigProxyProtocol? Function()? proxyProtocol, SpectrumConfigTls? Function()? tls, SpectrumConfigTrafficType? trafficType, }) {return SpectrumConfigAppConfig(
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
@@ -85,7 +85,7 @@ SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumCo
   proxyProtocol: proxyProtocol != null ? proxyProtocol() : this.proxyProtocol,
   tls: tls != null ? tls() : this.tls,
   trafficType: trafficType ?? this.trafficType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumConfigAppConfig &&
           createdOn == other.createdOn &&
@@ -107,4 +107,4 @@ SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumCo
 
 @override String toString() => 'SpectrumConfigAppConfig(\n  createdOn: $createdOn,\n  id: $id,\n  modifiedOn: $modifiedOn,\n  argoSmartRouting: $argoSmartRouting,\n  dns: $dns,\n  edgeIps: $edgeIps,\n  ipFirewall: $ipFirewall,\n  originDirect: $originDirect,\n  originDns: $originDns,\n  originPort: $originPort,\n  protocol: $protocol,\n  proxyProtocol: $proxyProtocol,\n  tls: $tls,\n  trafficType: $trafficType,\n)';
 
- }
+}

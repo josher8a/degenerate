@@ -14,7 +14,7 @@ final class WebAnalyticsApi with ApiExecutor {const WebAnalyticsApi(this.apiConf
 /// Creates a new Web Analytics site.
 ///
 /// `POST /accounts/{account_id}/rum/site_info`
-Future<ApiResult<RumSite?, WebAnalyticsCreateRuleError>> webAnalyticsCreateSite({required RumIdentifier accountId, required RumCreateSiteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumSite?, WebAnalyticsCreateRuleError>> webAnalyticsCreateSite({required RumIdentifier accountId, required RumCreateSiteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -33,13 +33,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Get a Web Analytics site
 ///
 /// Retrieves a Web Analytics site.
 ///
 /// `GET /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<RumSite?, WebAnalyticsCreateRuleError>> webAnalyticsGetSite({required RumIdentifier accountId, required RumIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumSite?, WebAnalyticsCreateRuleError>> webAnalyticsGetSite({required RumIdentifier accountId, required RumIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Update a Web Analytics site
 ///
 /// Updates an existing Web Analytics site.
 ///
 /// `PUT /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<RumSite?, WebAnalyticsCreateRuleError>> webAnalyticsUpdateSite({required RumIdentifier accountId, required RumIdentifier siteId, required RumUpdateSiteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumSite?, WebAnalyticsCreateRuleError>> webAnalyticsUpdateSite({required RumIdentifier accountId, required RumIdentifier siteId, required RumUpdateSiteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,13 +81,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Delete a Web Analytics site
 ///
 /// Deletes an existing Web Analytics site.
 ///
 /// `DELETE /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<RumSiteTagResponseSingleResult?, WebAnalyticsCreateRuleError>> webAnalyticsDeleteSite({required RumIdentifier accountId, required RumIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumSiteTagResponseSingleResult?, WebAnalyticsCreateRuleError>> webAnalyticsDeleteSite({required RumIdentifier accountId, required RumIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// List Web Analytics sites
 ///
 /// Lists all Web Analytics sites of an account.
 ///
 /// `GET /accounts/{account_id}/rum/site_info/list`
-Future<ApiResult<List<RumSite>?, WebAnalyticsCreateRuleError>> webAnalyticsListSites({required RumIdentifier accountId, RumPerPage? perPage, RumPage? page, RumOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<RumSite>?, WebAnalyticsCreateRuleError>> webAnalyticsListSites({required RumIdentifier accountId, RumPerPage? perPage, RumPage? page, RumOrderBy? orderBy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toJson().toString();
@@ -141,13 +141,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Create a Web Analytics rule
 ///
 /// Creates a new rule in a Web Analytics ruleset.
 ///
 /// `POST /accounts/{account_id}/rum/v2/{ruleset_id}/rule`
-Future<ApiResult<RumRule?, WebAnalyticsCreateRuleError>> webAnalyticsCreateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumCreateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRule?, WebAnalyticsCreateRuleError>> webAnalyticsCreateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumCreateRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,13 +166,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Update a Web Analytics rule
 ///
 /// Updates a rule in a Web Analytics ruleset.
 ///
 /// `PUT /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<RumRule?, WebAnalyticsCreateRuleError>> webAnalyticsUpdateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, required RumCreateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRule?, WebAnalyticsCreateRuleError>> webAnalyticsUpdateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, required RumCreateRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -191,13 +191,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Delete a Web Analytics rule
 ///
 /// Deletes an existing rule from a Web Analytics ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, WebAnalyticsCreateRuleError>> webAnalyticsDeleteRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, WebAnalyticsCreateRuleError>> webAnalyticsDeleteRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -214,13 +214,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// List rules in Web Analytics ruleset
 ///
 /// Lists all the rules in a Web Analytics ruleset.
 ///
 /// `GET /accounts/{account_id}/rum/v2/{ruleset_id}/rules`
-Future<ApiResult<RumRulesResponseCollectionResult?, WebAnalyticsCreateRuleError>> webAnalyticsListRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRulesResponseCollectionResult?, WebAnalyticsCreateRuleError>> webAnalyticsListRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -237,13 +237,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Update Web Analytics rules
 ///
 /// Modifies one or more rules in a Web Analytics ruleset with a single request.
 ///
 /// `POST /accounts/{account_id}/rum/v2/{ruleset_id}/rules`
-Future<ApiResult<RumRulesResponseCollectionResult?, WebAnalyticsCreateRuleError>> webAnalyticsModifyRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumModifyRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRulesResponseCollectionResult?, WebAnalyticsCreateRuleError>> webAnalyticsModifyRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumModifyRulesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -262,13 +262,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Get RUM status for a zone
 ///
 /// Retrieves RUM status for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/rum`
-Future<ApiResult<RumRumSite?, WebAnalyticsCreateRuleError>> webAnalyticsGetRumStatus({required RumIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRumSite?, WebAnalyticsCreateRuleError>> webAnalyticsGetRumStatus({required RumIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -285,13 +285,13 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
+}
 /// Toggle RUM on/off for a zone
 ///
 /// Toggles RUM on/off for an existing zone.
 ///
 /// `PATCH /zones/{zone_id}/settings/rum`
-Future<ApiResult<RumRumSite?, WebAnalyticsCreateRuleError>> webAnalyticsToggleRum({required RumIdentifier zoneId, required RumToggleRumRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRumSite?, WebAnalyticsCreateRuleError>> webAnalyticsToggleRum({required RumIdentifier zoneId, required RumToggleRumRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -310,5 +310,5 @@ return await execute(
   },
   onError: WebAnalyticsCreateRuleError.fromResponse,
 );
- } 
- }
+}
+}

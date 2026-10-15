@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/billing_details_name.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/email.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_billing_details_address.dart';import 'package:pub_stripe_spec3/models/recipient_shipping_with_optional_fields_address/recipient_shipping_with_optional_fields_address_phone.dart';@immutable final class DestinationPaymentMethodDataBillingDetails {const DestinationPaymentMethodDataBillingDetails({this.address, this.email, this.name, this.phone, });
 
-factory DestinationPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) { return DestinationPaymentMethodDataBillingDetails(
+factory DestinationPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) {return DestinationPaymentMethodDataBillingDetails(
   address: json['address'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress.fromJson(json['address']) : null,
   email: json['email'] != null ? Email.fromJson(json['email']) : null,
   name: json['name'] != null ? BillingDetailsName.fromJson(json['name']) : null,
   phone: json['phone'] != null ? RecipientShippingWithOptionalFieldsAddressPhone.fromJson(json['phone']) : null,
-); }
+);}
 
 final PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress? address;
 
@@ -18,19 +18,19 @@ final BillingDetailsName? name;
 
 final RecipientShippingWithOptionalFieldsAddressPhone? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (email != null) 'email': email?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (phone != null) 'phone': phone?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key)); } 
-DestinationPaymentMethodDataBillingDetails copyWith({PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress? Function()? address, Email? Function()? email, BillingDetailsName? Function()? name, RecipientShippingWithOptionalFieldsAddressPhone? Function()? phone, }) { return DestinationPaymentMethodDataBillingDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key));}
+DestinationPaymentMethodDataBillingDetails copyWith({PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress? Function()? address, Email? Function()? email, BillingDetailsName? Function()? name, RecipientShippingWithOptionalFieldsAddressPhone? Function()? phone, }) {return DestinationPaymentMethodDataBillingDetails(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
   phone: phone != null ? phone() : this.phone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationPaymentMethodDataBillingDetails &&
           address == other.address &&
@@ -42,4 +42,4 @@ DestinationPaymentMethodDataBillingDetails copyWith({PostPaymentMethodsPaymentMe
 
 @override String toString() => 'DestinationPaymentMethodDataBillingDetails(address: $address, email: $email, name: $name, phone: $phone)';
 
- }
+}

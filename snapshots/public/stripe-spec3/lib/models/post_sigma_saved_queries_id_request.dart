@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSigmaSavedQueriesIdRequest {const PostSigmaSavedQueriesIdRequest({this.expand, this.name, this.sql, });
 
-factory PostSigmaSavedQueriesIdRequest.fromJson(Map<String, dynamic> json) { return PostSigmaSavedQueriesIdRequest(
+factory PostSigmaSavedQueriesIdRequest.fromJson(Map<String, dynamic> json) {return PostSigmaSavedQueriesIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,
   sql: json['sql'] as String?,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,14 +18,14 @@ final String? name;
 /// The sql statement to update the specified query statement with. This should be a valid Trino SQL statement that can be run in Sigma.
 final String? sql;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'name': ?name,
   'sql': ?sql,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'name', 'sql'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'name', 'sql'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
@@ -34,12 +34,12 @@ final sql$ = sql;
 if (sql$ != null) {
   if (sql$.runes.length > 100000) { errors.add('sql: length must be <= 100000'); }
 }
-return errors; } 
-PostSigmaSavedQueriesIdRequest copyWith({List<String>? Function()? expand, String? Function()? name, String? Function()? sql, }) { return PostSigmaSavedQueriesIdRequest(
+return errors;}
+PostSigmaSavedQueriesIdRequest copyWith({List<String>? Function()? expand, String? Function()? name, String? Function()? sql, }) {return PostSigmaSavedQueriesIdRequest(
   expand: expand != null ? expand() : this.expand,
   name: name != null ? name() : this.name,
   sql: sql != null ? sql() : this.sql,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSigmaSavedQueriesIdRequest &&
           listEquals(expand, other.expand) &&
@@ -50,4 +50,4 @@ PostSigmaSavedQueriesIdRequest copyWith({List<String>? Function()? expand, Strin
 
 @override String toString() => 'PostSigmaSavedQueriesIdRequest(expand: $expand, name: $name, sql: $sql)';
 
- }
+}

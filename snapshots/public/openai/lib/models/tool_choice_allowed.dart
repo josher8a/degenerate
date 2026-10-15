@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ToolChoiceAllowed {const ToolChoiceAllowed({required this.type, required this.mode, required this.tools, });
 
-factory ToolChoiceAllowed.fromJson(Map<String, dynamic> json) { return ToolChoiceAllowed(
+factory ToolChoiceAllowed.fromJson(Map<String, dynamic> json) {return ToolChoiceAllowed(
   type: ChatCompletionAllowedToolsChoiceType.fromJson(json['type'] as String),
   mode: Mode.fromJson(json['mode'] as String),
   tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
-); }
+);}
 
 /// Allowed tool configuration type. Always `allowed_tools`.
 final ChatCompletionAllowedToolsChoiceType type;
@@ -36,19 +36,19 @@ final Mode mode;
 /// 
 final List<Map<String,dynamic>> tools;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'mode': mode.toJson(),
   'tools': tools.map((e) => e).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'allowed_tools' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'allowed_tools' &&
       json.containsKey('mode') &&
-      json.containsKey('tools'); } 
-ToolChoiceAllowed copyWith({ChatCompletionAllowedToolsChoiceType? type, Mode? mode, List<Map<String,dynamic>>? tools, }) { return ToolChoiceAllowed(
+      json.containsKey('tools');}
+ToolChoiceAllowed copyWith({ChatCompletionAllowedToolsChoiceType? type, Mode? mode, List<Map<String,dynamic>>? tools, }) {return ToolChoiceAllowed(
   type: type ?? this.type,
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToolChoiceAllowed &&
           type == other.type &&
@@ -59,4 +59,4 @@ ToolChoiceAllowed copyWith({ChatCompletionAllowedToolsChoiceType? type, Mode? mo
 
 @override String toString() => 'ToolChoiceAllowed(type: $type, mode: $mode, tools: $tools)';
 
- }
+}

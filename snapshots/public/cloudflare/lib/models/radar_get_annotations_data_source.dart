@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by data source.
 sealed class RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource();
 
-factory RadarGetAnnotationsDataSource.fromJson(String json) { return switch (json) {
+factory RadarGetAnnotationsDataSource.fromJson(String json) {return switch (json) {
   'ALL' => all,
   'AI_BOTS' => aiBots,
   'AI_GATEWAY' => aiGateway,
@@ -31,7 +31,7 @@ factory RadarGetAnnotationsDataSource.fromJson(String json) { return switch (jso
   'SPEED' => speed,
   'WORKERS_AI' => workersAi,
   _ => RadarGetAnnotationsDataSource$Unknown(json),
-}; }
+};}
 
 static const RadarGetAnnotationsDataSource all = RadarGetAnnotationsDataSource$all._();
 
@@ -86,9 +86,9 @@ static const RadarGetAnnotationsDataSource workersAi = RadarGetAnnotationsDataSo
 static const List<RadarGetAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ALL' => 'all',
   'AI_BOTS' => 'aiBots',
   'AI_GATEWAY' => 'aiGateway',
@@ -115,11 +115,11 @@ String get name { return switch (value) {
   'SPEED' => 'speed',
   'WORKERS_AI' => 'workersAi',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAnnotationsDataSource$Unknown; } 
+bool get isUnknown {return this is RadarGetAnnotationsDataSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() all, required W Function() aiBots, required W Function() aiGateway, required W Function() bgp, required W Function() bots, required W Function() connectionAnomaly, required W Function() ct, required W Function() dns, required W Function() dnsMagnitude, required W Function() dnsAs112, required W Function() dos, required W Function() emailRouting, required W Function() emailSecurity, required W Function() fw, required W Function() fwPg, required W Function() http, required W Function() httpControl, required W Function() httpCrawlerReferer, required W Function() httpOrigins, required W Function() iqi, required W Function() leakedCredentials, required W Function() net, required W Function() robotsTxt, required W Function() speed, required W Function() workersAi, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() all, required W Function() aiBots, required W Function() aiGateway, required W Function() bgp, required W Function() bots, required W Function() connectionAnomaly, required W Function() ct, required W Function() dns, required W Function() dnsMagnitude, required W Function() dnsAs112, required W Function() dos, required W Function() emailRouting, required W Function() emailSecurity, required W Function() fw, required W Function() fwPg, required W Function() http, required W Function() httpControl, required W Function() httpCrawlerReferer, required W Function() httpOrigins, required W Function() iqi, required W Function() leakedCredentials, required W Function() net, required W Function() robotsTxt, required W Function() speed, required W Function() workersAi, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAnnotationsDataSource$all() => all(),
       RadarGetAnnotationsDataSource$aiBots() => aiBots(),
       RadarGetAnnotationsDataSource$aiGateway() => aiGateway(),
@@ -146,9 +146,9 @@ W when<W>({required W Function() all, required W Function() aiBots, required W F
       RadarGetAnnotationsDataSource$speed() => speed(),
       RadarGetAnnotationsDataSource$workersAi() => workersAi(),
       RadarGetAnnotationsDataSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? aiBots, W Function()? aiGateway, W Function()? bgp, W Function()? bots, W Function()? connectionAnomaly, W Function()? ct, W Function()? dns, W Function()? dnsMagnitude, W Function()? dnsAs112, W Function()? dos, W Function()? emailRouting, W Function()? emailSecurity, W Function()? fw, W Function()? fwPg, W Function()? http, W Function()? httpControl, W Function()? httpCrawlerReferer, W Function()? httpOrigins, W Function()? iqi, W Function()? leakedCredentials, W Function()? net, W Function()? robotsTxt, W Function()? speed, W Function()? workersAi, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? aiBots, W Function()? aiGateway, W Function()? bgp, W Function()? bots, W Function()? connectionAnomaly, W Function()? ct, W Function()? dns, W Function()? dnsMagnitude, W Function()? dnsAs112, W Function()? dos, W Function()? emailRouting, W Function()? emailSecurity, W Function()? fw, W Function()? fwPg, W Function()? http, W Function()? httpControl, W Function()? httpCrawlerReferer, W Function()? httpOrigins, W Function()? iqi, W Function()? leakedCredentials, W Function()? net, W Function()? robotsTxt, W Function()? speed, W Function()? workersAi, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAnnotationsDataSource$all() => all != null ? all() : orElse(value),
       RadarGetAnnotationsDataSource$aiBots() => aiBots != null ? aiBots() : orElse(value),
       RadarGetAnnotationsDataSource$aiGateway() => aiGateway != null ? aiGateway() : orElse(value),
@@ -175,10 +175,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
       RadarGetAnnotationsDataSource$speed() => speed != null ? speed() : orElse(value),
       RadarGetAnnotationsDataSource$workersAi() => workersAi != null ? workersAi() : orElse(value),
       RadarGetAnnotationsDataSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAnnotationsDataSource($value)';
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$all extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$all._();
 
 @override String get value => 'ALL';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'ALL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$aiBots extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$aiBots._();
 
 @override String get value => 'AI_BOTS';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'AI_BOTS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$aiGateway extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$aiGateway._();
 
 @override String get value => 'AI_GATEWAY';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'AI_GATEWAY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$bgp extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$bgp._();
 
 @override String get value => 'BGP';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'BGP'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$bots extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$bots._();
 
 @override String get value => 'BOTS';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'BOTS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$connectionAnomaly extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$connectionAnomaly._();
 
 @override String get value => 'CONNECTION_ANOMALY';
@@ -232,7 +232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'CONNECTION_ANOMALY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$ct extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$ct._();
 
 @override String get value => 'CT';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'CT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$dns extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$dns._();
 
 @override String get value => 'DNS';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'DNS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$dnsMagnitude extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$dnsMagnitude._();
 
 @override String get value => 'DNS_MAGNITUDE';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'DNS_MAGNITUDE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$dnsAs112 extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$dnsAs112._();
 
 @override String get value => 'DNS_AS112';
@@ -268,7 +268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'DNS_AS112'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$dos extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$dos._();
 
 @override String get value => 'DOS';
@@ -277,7 +277,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'DOS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$emailRouting extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$emailRouting._();
 
 @override String get value => 'EMAIL_ROUTING';
@@ -286,7 +286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'EMAIL_ROUTING'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$emailSecurity extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$emailSecurity._();
 
 @override String get value => 'EMAIL_SECURITY';
@@ -295,7 +295,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'EMAIL_SECURITY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$fw extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$fw._();
 
 @override String get value => 'FW';
@@ -304,7 +304,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'FW'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$fwPg extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$fwPg._();
 
 @override String get value => 'FW_PG';
@@ -313,7 +313,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'FW_PG'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$http extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$http._();
 
 @override String get value => 'HTTP';
@@ -322,7 +322,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'HTTP'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$httpControl extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$httpControl._();
 
 @override String get value => 'HTTP_CONTROL';
@@ -331,7 +331,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'HTTP_CONTROL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$httpCrawlerReferer extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$httpCrawlerReferer._();
 
 @override String get value => 'HTTP_CRAWLER_REFERER';
@@ -340,7 +340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'HTTP_CRAWLER_REFERER'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$httpOrigins extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$httpOrigins._();
 
 @override String get value => 'HTTP_ORIGINS';
@@ -349,7 +349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'HTTP_ORIGINS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$iqi extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$iqi._();
 
 @override String get value => 'IQI';
@@ -358,7 +358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'IQI'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$leakedCredentials extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$leakedCredentials._();
 
 @override String get value => 'LEAKED_CREDENTIALS';
@@ -367,7 +367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'LEAKED_CREDENTIALS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$net extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$net._();
 
 @override String get value => 'NET';
@@ -376,7 +376,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'NET'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$robotsTxt extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$robotsTxt._();
 
 @override String get value => 'ROBOTS_TXT';
@@ -385,7 +385,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'ROBOTS_TXT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$speed extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$speed._();
 
 @override String get value => 'SPEED';
@@ -394,7 +394,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'SPEED'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$workersAi extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$workersAi._();
 
 @override String get value => 'WORKERS_AI';
@@ -403,7 +403,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'WORKERS_AI'.hashCode;
 
- }
+}
 @immutable final class RadarGetAnnotationsDataSource$Unknown extends RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource$Unknown(this.value);
 
 @override final String value;
@@ -413,4 +413,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

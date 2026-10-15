@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A range of status codes to apply the TTL to.
 @immutable final class StatusCodeRange {const StatusCodeRange({this.from, this.to, });
 
-factory StatusCodeRange.fromJson(Map<String, dynamic> json) { return StatusCodeRange(
+factory StatusCodeRange.fromJson(Map<String, dynamic> json) {return StatusCodeRange(
   from: json['from'] != null ? (json['from'] as num).toInt() : null,
   to: json['to'] != null ? (json['to'] as num).toInt() : null,
-); }
+);}
 
 /// The lower bound of the range.
 /// 
@@ -19,13 +19,13 @@ final int? from;
 /// Example: `299`
 final int? to;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': ?from,
   'to': ?to,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'from', 'to'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final from$ = from;
 if (from$ != null) {
   if (from$ < 100) { errors.add('from: must be >= 100'); }
@@ -36,11 +36,11 @@ if (to$ != null) {
   if (to$ < 100) { errors.add('to: must be >= 100'); }
   if (to$ > 999) { errors.add('to: must be <= 999'); }
 }
-return errors; } 
-StatusCodeRange copyWith({int? Function()? from, int? Function()? to, }) { return StatusCodeRange(
+return errors;}
+StatusCodeRange copyWith({int? Function()? from, int? Function()? to, }) {return StatusCodeRange(
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StatusCodeRange &&
           from == other.from &&
@@ -50,4 +50,4 @@ StatusCodeRange copyWith({int? Function()? from, int? Function()? to, }) { retur
 
 @override String toString() => 'StatusCodeRange(from: $from, to: $to)';
 
- }
+}

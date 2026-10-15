@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit.dart';import 'package:pub_github_rest_3_1/models/diff_entry.dart';sealed class CommitComparisonStatus {const CommitComparisonStatus();
 
-factory CommitComparisonStatus.fromJson(String json) { return switch (json) {
+factory CommitComparisonStatus.fromJson(String json) {return switch (json) {
   'diverged' => diverged,
   'ahead' => ahead,
   'behind' => behind,
   'identical' => $identical,
   _ => CommitComparisonStatus$Unknown(json),
-}; }
+};}
 
 static const CommitComparisonStatus diverged = CommitComparisonStatus$diverged._();
 
@@ -22,36 +22,36 @@ static const CommitComparisonStatus $identical = CommitComparisonStatus$$identic
 static const List<CommitComparisonStatus> values = [diverged, ahead, behind, $identical];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'diverged' => 'diverged',
   'ahead' => 'ahead',
   'behind' => 'behind',
   'identical' => r'$identical',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CommitComparisonStatus$Unknown; } 
+bool get isUnknown {return this is CommitComparisonStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() diverged, required W Function() ahead, required W Function() behind, required W Function() $identical, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() diverged, required W Function() ahead, required W Function() behind, required W Function() $identical, required W Function(String value) $unknown, }) {return switch (this) {
       CommitComparisonStatus$diverged() => diverged(),
       CommitComparisonStatus$ahead() => ahead(),
       CommitComparisonStatus$behind() => behind(),
       CommitComparisonStatus$$identical() => $identical(),
       CommitComparisonStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? diverged, W Function()? ahead, W Function()? behind, W Function()? $identical, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? diverged, W Function()? ahead, W Function()? behind, W Function()? $identical, W Function(String value)? $unknown, }) {return switch (this) {
       CommitComparisonStatus$diverged() => diverged != null ? diverged() : orElse(value),
       CommitComparisonStatus$ahead() => ahead != null ? ahead() : orElse(value),
       CommitComparisonStatus$behind() => behind != null ? behind() : orElse(value),
       CommitComparisonStatus$$identical() => $identical != null ? $identical() : orElse(value),
       CommitComparisonStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CommitComparisonStatus($value)';
 
- }
+}
 @immutable final class CommitComparisonStatus$diverged extends CommitComparisonStatus {const CommitComparisonStatus$diverged._();
 
 @override String get value => 'diverged';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diverged
 
 @override int get hashCode => 'diverged'.hashCode;
 
- }
+}
 @immutable final class CommitComparisonStatus$ahead extends CommitComparisonStatus {const CommitComparisonStatus$ahead._();
 
 @override String get value => 'ahead';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diverged
 
 @override int get hashCode => 'ahead'.hashCode;
 
- }
+}
 @immutable final class CommitComparisonStatus$behind extends CommitComparisonStatus {const CommitComparisonStatus$behind._();
 
 @override String get value => 'behind';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diverged
 
 @override int get hashCode => 'behind'.hashCode;
 
- }
+}
 @immutable final class CommitComparisonStatus$$identical extends CommitComparisonStatus {const CommitComparisonStatus$$identical._();
 
 @override String get value => 'identical';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diverged
 
 @override int get hashCode => 'identical'.hashCode;
 
- }
+}
 @immutable final class CommitComparisonStatus$Unknown extends CommitComparisonStatus {const CommitComparisonStatus$Unknown(this.value);
 
 @override final String value;
@@ -97,11 +97,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? diverged
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Commit Comparison
 @immutable final class CommitComparison {const CommitComparison({required this.url, required this.htmlUrl, required this.permalinkUrl, required this.diffUrl, required this.patchUrl, required this.baseCommit, required this.mergeBaseCommit, required this.status, required this.aheadBy, required this.behindBy, required this.totalCommits, required this.commits, this.files, });
 
-factory CommitComparison.fromJson(Map<String, dynamic> json) { return CommitComparison(
+factory CommitComparison.fromJson(Map<String, dynamic> json) {return CommitComparison(
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   permalinkUrl: Uri.parse(json['permalink_url'] as String),
@@ -115,7 +115,7 @@ factory CommitComparison.fromJson(Map<String, dynamic> json) { return CommitComp
   totalCommits: (json['total_commits'] as num).toInt(),
   commits: (json['commits'] as List<dynamic>).map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList(),
   files: (json['files'] as List<dynamic>?)?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -143,7 +143,7 @@ final List<Commit> commits;
 
 final List<DiffEntry>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'permalink_url': permalinkUrl.toString(),
@@ -157,8 +157,8 @@ Map<String, dynamic> toJson() { return {
   'total_commits': totalCommits,
   'commits': commits.map((e) => e.toJson()).toList(),
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('permalink_url') && json['permalink_url'] is String &&
       json.containsKey('diff_url') && json['diff_url'] is String &&
@@ -169,8 +169,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('ahead_by') && json['ahead_by'] is num &&
       json.containsKey('behind_by') && json['behind_by'] is num &&
       json.containsKey('total_commits') && json['total_commits'] is num &&
-      json.containsKey('commits'); } 
-CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffUrl, Uri? patchUrl, Commit? baseCommit, Commit? mergeBaseCommit, CommitComparisonStatus? status, int? aheadBy, int? behindBy, int? totalCommits, List<Commit>? commits, List<DiffEntry>? Function()? files, }) { return CommitComparison(
+      json.containsKey('commits');}
+CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffUrl, Uri? patchUrl, Commit? baseCommit, Commit? mergeBaseCommit, CommitComparisonStatus? status, int? aheadBy, int? behindBy, int? totalCommits, List<Commit>? commits, List<DiffEntry>? Function()? files, }) {return CommitComparison(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   permalinkUrl: permalinkUrl ?? this.permalinkUrl,
@@ -184,7 +184,7 @@ CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffU
   totalCommits: totalCommits ?? this.totalCommits,
   commits: commits ?? this.commits,
   files: files != null ? files() : this.files,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommitComparison &&
           url == other.url &&
@@ -205,4 +205,4 @@ CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffU
 
 @override String toString() => 'CommitComparison(\n  url: $url,\n  htmlUrl: $htmlUrl,\n  permalinkUrl: $permalinkUrl,\n  diffUrl: $diffUrl,\n  patchUrl: $patchUrl,\n  baseCommit: $baseCommit,\n  mergeBaseCommit: $mergeBaseCommit,\n  status: $status,\n  aheadBy: $aheadBy,\n  behindBy: $behindBy,\n  totalCommits: $totalCommits,\n  commits: $commits,\n  files: $files,\n)';
 
- }
+}

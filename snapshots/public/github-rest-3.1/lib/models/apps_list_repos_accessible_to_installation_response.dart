@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository.dart';@immutable final class AppsListReposAccessibleToInstallationResponse {const AppsListReposAccessibleToInstallationResponse({required this.totalCount, required this.repositories, this.repositorySelection, });
 
-factory AppsListReposAccessibleToInstallationResponse.fromJson(Map<String, dynamic> json) { return AppsListReposAccessibleToInstallationResponse(
+factory AppsListReposAccessibleToInstallationResponse.fromJson(Map<String, dynamic> json) {return AppsListReposAccessibleToInstallationResponse(
   totalCount: (json['total_count'] as num).toInt(),
   repositories: (json['repositories'] as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
   repositorySelection: json['repository_selection'] as String?,
-); }
+);}
 
 final int totalCount;
 
@@ -15,18 +15,18 @@ final List<Repository> repositories;
 
 final String? repositorySelection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'repositories': repositories.map((e) => e.toJson()).toList(),
   'repository_selection': ?repositorySelection,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('repositories'); } 
-AppsListReposAccessibleToInstallationResponse copyWith({int? totalCount, List<Repository>? repositories, String? Function()? repositorySelection, }) { return AppsListReposAccessibleToInstallationResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('repositories');}
+AppsListReposAccessibleToInstallationResponse copyWith({int? totalCount, List<Repository>? repositories, String? Function()? repositorySelection, }) {return AppsListReposAccessibleToInstallationResponse(
   totalCount: totalCount ?? this.totalCount,
   repositories: repositories ?? this.repositories,
   repositorySelection: repositorySelection != null ? repositorySelection() : this.repositorySelection,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppsListReposAccessibleToInstallationResponse &&
           totalCount == other.totalCount &&
@@ -37,4 +37,4 @@ AppsListReposAccessibleToInstallationResponse copyWith({int? totalCount, List<Re
 
 @override String toString() => 'AppsListReposAccessibleToInstallationResponse(totalCount: $totalCount, repositories: $repositories, repositorySelection: $repositorySelection)';
 
- }
+}

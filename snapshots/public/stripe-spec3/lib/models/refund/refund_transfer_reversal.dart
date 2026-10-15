@@ -8,11 +8,11 @@ const RefundTransferReversal({this.string = const Omittable.absent(), this.trans
 const RefundTransferReversal._({required this.rawValue, required this.string, required this.transferReversal, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory RefundTransferReversal.fromJson(Object? json) { return RefundTransferReversal._(
+factory RefundTransferReversal.fromJson(Object? json) {return RefundTransferReversal._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   transferReversal: json is Map<String, dynamic> && TransferReversal.canParse(json) ? parseAnyOfVariant<TransferReversal>(json, (value) => TransferReversal.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'RefundTransferReversal(${toJson()})';
 
- }
+}

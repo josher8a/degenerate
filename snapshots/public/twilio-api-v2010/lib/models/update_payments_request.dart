@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, or `bank-account-number`.
 sealed class PaymentsEnumCapture {const PaymentsEnumCapture();
 
-factory PaymentsEnumCapture.fromJson(String json) { return switch (json) {
+factory PaymentsEnumCapture.fromJson(String json) {return switch (json) {
   'payment-card-number' => paymentCardNumber,
   'expiration-date' => expirationDate,
   'security-code' => securityCode,
@@ -12,7 +12,7 @@ factory PaymentsEnumCapture.fromJson(String json) { return switch (json) {
   'bank-routing-number' => bankRoutingNumber,
   'bank-account-number' => bankAccountNumber,
   _ => PaymentsEnumCapture$Unknown(json),
-}; }
+};}
 
 static const PaymentsEnumCapture paymentCardNumber = PaymentsEnumCapture$paymentCardNumber._();
 
@@ -29,9 +29,9 @@ static const PaymentsEnumCapture bankAccountNumber = PaymentsEnumCapture$bankAcc
 static const List<PaymentsEnumCapture> values = [paymentCardNumber, expirationDate, securityCode, postalCode, bankRoutingNumber, bankAccountNumber];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'payment-card-number' => 'paymentCardNumber',
   'expiration-date' => 'expirationDate',
   'security-code' => 'securityCode',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'bank-routing-number' => 'bankRoutingNumber',
   'bank-account-number' => 'bankAccountNumber',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentsEnumCapture$Unknown; } 
+bool get isUnknown {return this is PaymentsEnumCapture$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() paymentCardNumber, required W Function() expirationDate, required W Function() securityCode, required W Function() postalCode, required W Function() bankRoutingNumber, required W Function() bankAccountNumber, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() paymentCardNumber, required W Function() expirationDate, required W Function() securityCode, required W Function() postalCode, required W Function() bankRoutingNumber, required W Function() bankAccountNumber, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentsEnumCapture$paymentCardNumber() => paymentCardNumber(),
       PaymentsEnumCapture$expirationDate() => expirationDate(),
       PaymentsEnumCapture$securityCode() => securityCode(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() paymentCardNumber, required W Function() expira
       PaymentsEnumCapture$bankRoutingNumber() => bankRoutingNumber(),
       PaymentsEnumCapture$bankAccountNumber() => bankAccountNumber(),
       PaymentsEnumCapture$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentCardNumber, W Function()? expirationDate, W Function()? securityCode, W Function()? postalCode, W Function()? bankRoutingNumber, W Function()? bankAccountNumber, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentCardNumber, W Function()? expirationDate, W Function()? securityCode, W Function()? postalCode, W Function()? bankRoutingNumber, W Function()? bankAccountNumber, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentsEnumCapture$paymentCardNumber() => paymentCardNumber != null ? paymentCardNumber() : orElse(value),
       PaymentsEnumCapture$expirationDate() => expirationDate != null ? expirationDate() : orElse(value),
       PaymentsEnumCapture$securityCode() => securityCode != null ? securityCode() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentC
       PaymentsEnumCapture$bankRoutingNumber() => bankRoutingNumber != null ? bankRoutingNumber() : orElse(value),
       PaymentsEnumCapture$bankAccountNumber() => bankAccountNumber != null ? bankAccountNumber() : orElse(value),
       PaymentsEnumCapture$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentsEnumCapture($value)';
 
- }
+}
 @immutable final class PaymentsEnumCapture$paymentCardNumber extends PaymentsEnumCapture {const PaymentsEnumCapture$paymentCardNumber._();
 
 @override String get value => 'payment-card-number';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentC
 
 @override int get hashCode => 'payment-card-number'.hashCode;
 
- }
+}
 @immutable final class PaymentsEnumCapture$expirationDate extends PaymentsEnumCapture {const PaymentsEnumCapture$expirationDate._();
 
 @override String get value => 'expiration-date';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentC
 
 @override int get hashCode => 'expiration-date'.hashCode;
 
- }
+}
 @immutable final class PaymentsEnumCapture$securityCode extends PaymentsEnumCapture {const PaymentsEnumCapture$securityCode._();
 
 @override String get value => 'security-code';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentC
 
 @override int get hashCode => 'security-code'.hashCode;
 
- }
+}
 @immutable final class PaymentsEnumCapture$postalCode extends PaymentsEnumCapture {const PaymentsEnumCapture$postalCode._();
 
 @override String get value => 'postal-code';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentC
 
 @override int get hashCode => 'postal-code'.hashCode;
 
- }
+}
 @immutable final class PaymentsEnumCapture$bankRoutingNumber extends PaymentsEnumCapture {const PaymentsEnumCapture$bankRoutingNumber._();
 
 @override String get value => 'bank-routing-number';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentC
 
 @override int get hashCode => 'bank-routing-number'.hashCode;
 
- }
+}
 @immutable final class PaymentsEnumCapture$bankAccountNumber extends PaymentsEnumCapture {const PaymentsEnumCapture$bankAccountNumber._();
 
 @override String get value => 'bank-account-number';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentC
 
 @override int get hashCode => 'bank-account-number'.hashCode;
 
- }
+}
 @immutable final class PaymentsEnumCapture$Unknown extends PaymentsEnumCapture {const PaymentsEnumCapture$Unknown(this.value);
 
 @override final String value;
@@ -128,15 +128,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
 sealed class PaymentsEnumStatus {const PaymentsEnumStatus();
 
-factory PaymentsEnumStatus.fromJson(String json) { return switch (json) {
+factory PaymentsEnumStatus.fromJson(String json) {return switch (json) {
   'complete' => complete,
   'cancel' => cancel,
   _ => PaymentsEnumStatus$Unknown(json),
-}; }
+};}
 
 static const PaymentsEnumStatus complete = PaymentsEnumStatus$complete._();
 
@@ -145,30 +145,30 @@ static const PaymentsEnumStatus cancel = PaymentsEnumStatus$cancel._();
 static const List<PaymentsEnumStatus> values = [complete, cancel];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'complete' => 'complete',
   'cancel' => 'cancel',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentsEnumStatus$Unknown; } 
+bool get isUnknown {return this is PaymentsEnumStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() complete, required W Function() cancel, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() complete, required W Function() cancel, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentsEnumStatus$complete() => complete(),
       PaymentsEnumStatus$cancel() => cancel(),
       PaymentsEnumStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? cancel, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? cancel, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentsEnumStatus$complete() => complete != null ? complete() : orElse(value),
       PaymentsEnumStatus$cancel() => cancel != null ? cancel() : orElse(value),
       PaymentsEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentsEnumStatus($value)';
 
- }
+}
 @immutable final class PaymentsEnumStatus$complete extends PaymentsEnumStatus {const PaymentsEnumStatus$complete._();
 
 @override String get value => 'complete';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'complete'.hashCode;
 
- }
+}
 @immutable final class PaymentsEnumStatus$cancel extends PaymentsEnumStatus {const PaymentsEnumStatus$cancel._();
 
 @override String get value => 'cancel';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'cancel'.hashCode;
 
- }
+}
 @immutable final class PaymentsEnumStatus$Unknown extends PaymentsEnumStatus {const PaymentsEnumStatus$Unknown(this.value);
 
 @override final String value;
@@ -196,15 +196,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class UpdatePaymentsRequest {const UpdatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.capture, this.status, });
 
-factory UpdatePaymentsRequest.fromJson(Map<String, dynamic> json) { return UpdatePaymentsRequest(
+factory UpdatePaymentsRequest.fromJson(Map<String, dynamic> json) {return UpdatePaymentsRequest(
   idempotencyKey: json['IdempotencyKey'] as String,
   statusCallback: Uri.parse(json['StatusCallback'] as String),
   capture: json['Capture'] != null ? PaymentsEnumCapture.fromJson(json['Capture'] as String) : null,
   status: json['Status'] != null ? PaymentsEnumStatus.fromJson(json['Status'] as String) : null,
-); }
+);}
 
 /// A unique token that will be used to ensure that multiple API calls with the same information do not result in multiple transactions. This should be a unique string value per API call and can be a randomly generated.
 final String idempotencyKey;
@@ -218,20 +218,20 @@ final PaymentsEnumCapture? capture;
 /// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
 final PaymentsEnumStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'IdempotencyKey': idempotencyKey,
   'StatusCallback': statusCallback.toString(),
   if (capture != null) 'Capture': capture?.toJson(),
   if (status != null) 'Status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
-      json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
-UpdatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumCapture? Function()? capture, PaymentsEnumStatus? Function()? status, }) { return UpdatePaymentsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
+      json.containsKey('StatusCallback') && json['StatusCallback'] is String;}
+UpdatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumCapture? Function()? capture, PaymentsEnumStatus? Function()? status, }) {return UpdatePaymentsRequest(
   idempotencyKey: idempotencyKey ?? this.idempotencyKey,
   statusCallback: statusCallback ?? this.statusCallback,
   capture: capture != null ? capture() : this.capture,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdatePaymentsRequest &&
           idempotencyKey == other.idempotencyKey &&
@@ -243,4 +243,4 @@ UpdatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, Pay
 
 @override String toString() => 'UpdatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, capture: $capture, status: $status)';
 
- }
+}

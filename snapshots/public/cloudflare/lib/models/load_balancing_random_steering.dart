@@ -7,10 +7,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures pool 
 /// - `steering_policy="least_connections"`: Use pool weights to scale each pool's open connections.
 @immutable final class LoadBalancingRandomSteering {const LoadBalancingRandomSteering({this.defaultWeight, this.poolWeights, });
 
-factory LoadBalancingRandomSteering.fromJson(Map<String, dynamic> json) { return LoadBalancingRandomSteering(
+factory LoadBalancingRandomSteering.fromJson(Map<String, dynamic> json) {return LoadBalancingRandomSteering(
   defaultWeight: json['default_weight'] != null ? (json['default_weight'] as num).toDouble() : null,
   poolWeights: (json['pool_weights'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toDouble())),
-); }
+);}
 
 /// The default weight for pools in the load balancer that are not specified in the pool_weights map.
 /// 
@@ -25,24 +25,24 @@ final Map<String,double>? poolWeights;
 /// The value of `defaultWeight`, or its schema default when absent.
 double get defaultWeightOrDefault => defaultWeight ?? 1.0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'default_weight': ?defaultWeight,
   'pool_weights': ?poolWeights,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_weight', 'pool_weights'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_weight', 'pool_weights'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final defaultWeight$ = defaultWeight;
 if (defaultWeight$ != null) {
   if (defaultWeight$ < 0) { errors.add('defaultWeight: must be >= 0'); }
   if (defaultWeight$ > 1) { errors.add('defaultWeight: must be <= 1'); }
   if (defaultWeight$ % 0.1 != 0) { errors.add('defaultWeight: must be a multiple of 0.1'); }
 }
-return errors; } 
-LoadBalancingRandomSteering copyWith({double? Function()? defaultWeight, Map<String, double>? Function()? poolWeights, }) { return LoadBalancingRandomSteering(
+return errors;}
+LoadBalancingRandomSteering copyWith({double? Function()? defaultWeight, Map<String, double>? Function()? poolWeights, }) {return LoadBalancingRandomSteering(
   defaultWeight: defaultWeight != null ? defaultWeight() : this.defaultWeight,
   poolWeights: poolWeights != null ? poolWeights() : this.poolWeights,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingRandomSteering &&
           defaultWeight == other.defaultWeight &&
@@ -52,4 +52,4 @@ LoadBalancingRandomSteering copyWith({double? Function()? defaultWeight, Map<Str
 
 @override String toString() => 'LoadBalancingRandomSteering(defaultWeight: $defaultWeight, poolWeights: $poolWeights)';
 
- }
+}

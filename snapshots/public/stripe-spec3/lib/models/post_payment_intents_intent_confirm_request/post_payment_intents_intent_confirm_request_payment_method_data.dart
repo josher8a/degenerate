@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_billing_details.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_payto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_acss_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_affirm.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_alipay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_alma.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_amazon_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_bacs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_bancontact.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_billie.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_blik.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_boleto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_cashapp.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_crypto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_customer_balance.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_eps.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_fpx.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_giropay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_grabpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_ideal.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_interac_present.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_kakao_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_klarna.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_konbini.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_kr_card.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_link.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_mb_way.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_mobilepay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_multibanco.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_naver_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_oxxo.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_p24.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_payco.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_paynow.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_paypal.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_pix.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_promptpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_revolut_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_samsung_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_satispay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_sepa_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_sofort.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_swish.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_twint.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_us_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_wechat_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_zip.dart';sealed class PaymentMethodDataType {const PaymentMethodDataType();
 
-factory PaymentMethodDataType.fromJson(String json) { return switch (json) {
+factory PaymentMethodDataType.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -54,7 +54,7 @@ factory PaymentMethodDataType.fromJson(String json) { return switch (json) {
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PaymentMethodDataType$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodDataType acssDebit = PaymentMethodDataType$acssDebit._();
 
@@ -157,9 +157,9 @@ static const PaymentMethodDataType zip = PaymentMethodDataType$zip._();
 static const List<PaymentMethodDataType> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'acss_debit' => 'acssDebit',
   'affirm' => 'affirm',
   'afterpay_clearpay' => 'afterpayClearpay',
@@ -210,11 +210,11 @@ String get name { return switch (value) {
   'wechat_pay' => 'wechatPay',
   'zip' => 'zip',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodDataType$Unknown; } 
+bool get isUnknown {return this is PaymentMethodDataType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() cashapp, required W Function() crypto, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() cashapp, required W Function() crypto, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodDataType$acssDebit() => acssDebit(),
       PaymentMethodDataType$affirm() => affirm(),
       PaymentMethodDataType$afterpayClearpay() => afterpayClearpay(),
@@ -265,9 +265,9 @@ W when<W>({required W Function() acssDebit, required W Function() affirm, requir
       PaymentMethodDataType$wechatPay() => wechatPay(),
       PaymentMethodDataType$zip() => zip(),
       PaymentMethodDataType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? cashapp, W Function()? crypto, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? cashapp, W Function()? crypto, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodDataType$acssDebit() => acssDebit != null ? acssDebit() : orElse(value),
       PaymentMethodDataType$affirm() => affirm != null ? affirm() : orElse(value),
       PaymentMethodDataType$afterpayClearpay() => afterpayClearpay != null ? afterpayClearpay() : orElse(value),
@@ -318,10 +318,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
       PaymentMethodDataType$wechatPay() => wechatPay != null ? wechatPay() : orElse(value),
       PaymentMethodDataType$zip() => zip != null ? zip() : orElse(value),
       PaymentMethodDataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodDataType($value)';
 
- }
+}
 @immutable final class PaymentMethodDataType$acssDebit extends PaymentMethodDataType {const PaymentMethodDataType$acssDebit._();
 
 @override String get value => 'acss_debit';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'acss_debit'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$affirm extends PaymentMethodDataType {const PaymentMethodDataType$affirm._();
 
 @override String get value => 'affirm';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'affirm'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$afterpayClearpay extends PaymentMethodDataType {const PaymentMethodDataType$afterpayClearpay._();
 
 @override String get value => 'afterpay_clearpay';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'afterpay_clearpay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$alipay extends PaymentMethodDataType {const PaymentMethodDataType$alipay._();
 
 @override String get value => 'alipay';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alipay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$alma extends PaymentMethodDataType {const PaymentMethodDataType$alma._();
 
 @override String get value => 'alma';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alma'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$amazonPay extends PaymentMethodDataType {const PaymentMethodDataType$amazonPay._();
 
 @override String get value => 'amazon_pay';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'amazon_pay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$auBecsDebit extends PaymentMethodDataType {const PaymentMethodDataType$auBecsDebit._();
 
 @override String get value => 'au_becs_debit';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'au_becs_debit'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$bacsDebit extends PaymentMethodDataType {const PaymentMethodDataType$bacsDebit._();
 
 @override String get value => 'bacs_debit';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bacs_debit'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$bancontact extends PaymentMethodDataType {const PaymentMethodDataType$bancontact._();
 
 @override String get value => 'bancontact';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bancontact'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$billie extends PaymentMethodDataType {const PaymentMethodDataType$billie._();
 
 @override String get value => 'billie';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'billie'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$blik extends PaymentMethodDataType {const PaymentMethodDataType$blik._();
 
 @override String get value => 'blik';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'blik'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$boleto extends PaymentMethodDataType {const PaymentMethodDataType$boleto._();
 
 @override String get value => 'boleto';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'boleto'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$cashapp extends PaymentMethodDataType {const PaymentMethodDataType$cashapp._();
 
 @override String get value => 'cashapp';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'cashapp'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$crypto extends PaymentMethodDataType {const PaymentMethodDataType$crypto._();
 
 @override String get value => 'crypto';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'crypto'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$customerBalance extends PaymentMethodDataType {const PaymentMethodDataType$customerBalance._();
 
 @override String get value => 'customer_balance';
@@ -456,7 +456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'customer_balance'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$eps extends PaymentMethodDataType {const PaymentMethodDataType$eps._();
 
 @override String get value => 'eps';
@@ -465,7 +465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'eps'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$fpx extends PaymentMethodDataType {const PaymentMethodDataType$fpx._();
 
 @override String get value => 'fpx';
@@ -474,7 +474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'fpx'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$giropay extends PaymentMethodDataType {const PaymentMethodDataType$giropay._();
 
 @override String get value => 'giropay';
@@ -483,7 +483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'giropay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$grabpay extends PaymentMethodDataType {const PaymentMethodDataType$grabpay._();
 
 @override String get value => 'grabpay';
@@ -492,7 +492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'grabpay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$ideal extends PaymentMethodDataType {const PaymentMethodDataType$ideal._();
 
 @override String get value => 'ideal';
@@ -501,7 +501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'ideal'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$kakaoPay extends PaymentMethodDataType {const PaymentMethodDataType$kakaoPay._();
 
 @override String get value => 'kakao_pay';
@@ -510,7 +510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kakao_pay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$klarna extends PaymentMethodDataType {const PaymentMethodDataType$klarna._();
 
 @override String get value => 'klarna';
@@ -519,7 +519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'klarna'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$konbini extends PaymentMethodDataType {const PaymentMethodDataType$konbini._();
 
 @override String get value => 'konbini';
@@ -528,7 +528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'konbini'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$krCard extends PaymentMethodDataType {const PaymentMethodDataType$krCard._();
 
 @override String get value => 'kr_card';
@@ -537,7 +537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kr_card'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$link extends PaymentMethodDataType {const PaymentMethodDataType$link._();
 
 @override String get value => 'link';
@@ -546,7 +546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$mbWay extends PaymentMethodDataType {const PaymentMethodDataType$mbWay._();
 
 @override String get value => 'mb_way';
@@ -555,7 +555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mb_way'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$mobilepay extends PaymentMethodDataType {const PaymentMethodDataType$mobilepay._();
 
 @override String get value => 'mobilepay';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mobilepay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$multibanco extends PaymentMethodDataType {const PaymentMethodDataType$multibanco._();
 
 @override String get value => 'multibanco';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'multibanco'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$naverPay extends PaymentMethodDataType {const PaymentMethodDataType$naverPay._();
 
 @override String get value => 'naver_pay';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'naver_pay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$nzBankAccount extends PaymentMethodDataType {const PaymentMethodDataType$nzBankAccount._();
 
 @override String get value => 'nz_bank_account';
@@ -591,7 +591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'nz_bank_account'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$oxxo extends PaymentMethodDataType {const PaymentMethodDataType$oxxo._();
 
 @override String get value => 'oxxo';
@@ -600,7 +600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'oxxo'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$p24 extends PaymentMethodDataType {const PaymentMethodDataType$p24._();
 
 @override String get value => 'p24';
@@ -609,7 +609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'p24'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$payByBank extends PaymentMethodDataType {const PaymentMethodDataType$payByBank._();
 
 @override String get value => 'pay_by_bank';
@@ -618,7 +618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pay_by_bank'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$payco extends PaymentMethodDataType {const PaymentMethodDataType$payco._();
 
 @override String get value => 'payco';
@@ -627,7 +627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payco'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$paynow extends PaymentMethodDataType {const PaymentMethodDataType$paynow._();
 
 @override String get value => 'paynow';
@@ -636,7 +636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paynow'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$paypal extends PaymentMethodDataType {const PaymentMethodDataType$paypal._();
 
 @override String get value => 'paypal';
@@ -645,7 +645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paypal'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$payto extends PaymentMethodDataType {const PaymentMethodDataType$payto._();
 
 @override String get value => 'payto';
@@ -654,7 +654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payto'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$pix extends PaymentMethodDataType {const PaymentMethodDataType$pix._();
 
 @override String get value => 'pix';
@@ -663,7 +663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pix'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$promptpay extends PaymentMethodDataType {const PaymentMethodDataType$promptpay._();
 
 @override String get value => 'promptpay';
@@ -672,7 +672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'promptpay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$revolutPay extends PaymentMethodDataType {const PaymentMethodDataType$revolutPay._();
 
 @override String get value => 'revolut_pay';
@@ -681,7 +681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'revolut_pay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$samsungPay extends PaymentMethodDataType {const PaymentMethodDataType$samsungPay._();
 
 @override String get value => 'samsung_pay';
@@ -690,7 +690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'samsung_pay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$satispay extends PaymentMethodDataType {const PaymentMethodDataType$satispay._();
 
 @override String get value => 'satispay';
@@ -699,7 +699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'satispay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$sepaDebit extends PaymentMethodDataType {const PaymentMethodDataType$sepaDebit._();
 
 @override String get value => 'sepa_debit';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sepa_debit'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$sofort extends PaymentMethodDataType {const PaymentMethodDataType$sofort._();
 
 @override String get value => 'sofort';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sofort'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$swish extends PaymentMethodDataType {const PaymentMethodDataType$swish._();
 
 @override String get value => 'swish';
@@ -726,7 +726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'swish'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$twint extends PaymentMethodDataType {const PaymentMethodDataType$twint._();
 
 @override String get value => 'twint';
@@ -735,7 +735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'twint'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$usBankAccount extends PaymentMethodDataType {const PaymentMethodDataType$usBankAccount._();
 
 @override String get value => 'us_bank_account';
@@ -744,7 +744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'us_bank_account'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$wechatPay extends PaymentMethodDataType {const PaymentMethodDataType$wechatPay._();
 
 @override String get value => 'wechat_pay';
@@ -753,7 +753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'wechat_pay'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$zip extends PaymentMethodDataType {const PaymentMethodDataType$zip._();
 
 @override String get value => 'zip';
@@ -762,7 +762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'zip'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodDataType$Unknown extends PaymentMethodDataType {const PaymentMethodDataType$Unknown(this.value);
 
 @override final String value;
@@ -772,13 +772,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// If provided, this hash will be used to create a PaymentMethod. The new PaymentMethod will appear
 /// in the [payment_method](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-payment_method)
 /// property on the PaymentIntent.
 @immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodData {const PostPaymentIntentsIntentConfirmRequestPaymentMethodData({required this.type, this.fpx, this.afterpayClearpay, this.alipay, this.allowRedisplay, this.alma, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.billingDetails, this.blik, this.boleto, this.cashapp, this.crypto, this.customerBalance, this.eps, this.acssDebit, this.giropay, this.grabpay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.metadata, this.mobilepay, this.multibanco, this.naverPay, this.nzBankAccount, this.oxxo, this.p24, this.zip, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.affirm, this.usBankAccount, this.wechatPay, this.payByBank, });
 
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodData(
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodData(
   acssDebit: json['acss_debit'] != null ? PostPaymentMethodsRequestAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   affirm: json['affirm'] != null ? PostPaymentMethodsRequestAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
   afterpayClearpay: json['afterpay_clearpay'] != null ? PostPaymentMethodsRequestAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
@@ -834,7 +834,7 @@ factory PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(Map<Str
   usBankAccount: json['us_bank_account'] != null ? PostPaymentMethodsRequestUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
   wechatPay: json['wechat_pay'] != null ? PostPaymentMethodsRequestWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
   zip: json['zip'] != null ? PostPaymentMethodsRequestZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PostPaymentMethodsRequestAcssDebit? acssDebit;
 
@@ -946,7 +946,7 @@ final PostPaymentMethodsRequestWechatPay? wechatPay;
 
 final PostPaymentMethodsRequestZip? zip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (affirm != null) 'affirm': affirm?.toJson(),
   if (afterpayClearpay != null) 'afterpay_clearpay': afterpayClearpay?.toJson(),
@@ -1002,9 +1002,9 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
   if (wechatPay != null) 'wechat_pay': wechatPay?.toJson(),
   if (zip != null) 'zip': zip?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostPaymentIntentsIntentConfirmRequestPaymentMethodData copyWith({PostPaymentMethodsRequestAcssDebit? Function()? acssDebit, PostPaymentMethodsRequestAffirm? Function()? affirm, PostPaymentMethodsRequestAfterpayClearpay? Function()? afterpayClearpay, PostPaymentMethodsRequestAlipay? Function()? alipay, ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, PostPaymentMethodsRequestAlma? Function()? alma, PostPaymentMethodsRequestAmazonPay? Function()? amazonPay, PostPaymentMethodsRequestAuBecsDebit? Function()? auBecsDebit, PostPaymentMethodsRequestBacsDebit? Function()? bacsDebit, PostPaymentMethodsRequestBancontact? Function()? bancontact, PostPaymentMethodsRequestBillie? Function()? billie, PostPaymentMethodsPaymentMethodRequestBillingDetails? Function()? billingDetails, PostPaymentMethodsRequestBlik? Function()? blik, PostPaymentMethodsRequestBoleto? Function()? boleto, PostPaymentMethodsRequestCashapp? Function()? cashapp, PostPaymentMethodsRequestCrypto? Function()? crypto, PostPaymentMethodsRequestCustomerBalance? Function()? customerBalance, PostPaymentMethodsRequestEps? Function()? eps, PostPaymentMethodsRequestFpx? Function()? fpx, PostPaymentMethodsRequestGiropay? Function()? giropay, PostPaymentMethodsRequestGrabpay? Function()? grabpay, PostPaymentMethodsRequestIdeal? Function()? ideal, PostPaymentMethodsRequestInteracPresent? Function()? interacPresent, PostPaymentMethodsRequestKakaoPay? Function()? kakaoPay, PostPaymentMethodsRequestKlarna? Function()? klarna, PostPaymentMethodsRequestKonbini? Function()? konbini, PostPaymentMethodsRequestKrCard? Function()? krCard, PostPaymentMethodsRequestLink? Function()? link, PostPaymentMethodsRequestMbWay? Function()? mbWay, Map<String, String>? Function()? metadata, PostPaymentMethodsRequestMobilepay? Function()? mobilepay, PostPaymentMethodsRequestMultibanco? Function()? multibanco, PostPaymentMethodsRequestNaverPay? Function()? naverPay, PostPaymentMethodsRequestNzBankAccount? Function()? nzBankAccount, PostPaymentMethodsRequestOxxo? Function()? oxxo, PostPaymentMethodsRequestP24? Function()? p24, PostPaymentMethodsRequestPayByBank? Function()? payByBank, PostPaymentMethodsRequestPayco? Function()? payco, PostPaymentMethodsRequestPaynow? Function()? paynow, PostPaymentMethodsRequestPaypal? Function()? paypal, PostPaymentMethodsPaymentMethodRequestPayto? Function()? payto, PostPaymentMethodsRequestPix? Function()? pix, PostPaymentMethodsRequestPromptpay? Function()? promptpay, RadarOptions? Function()? radarOptions, PostPaymentMethodsRequestRevolutPay? Function()? revolutPay, PostPaymentMethodsRequestSamsungPay? Function()? samsungPay, PostPaymentMethodsRequestSatispay? Function()? satispay, PostPaymentMethodsRequestSepaDebit? Function()? sepaDebit, PostPaymentMethodsRequestSofort? Function()? sofort, PostPaymentMethodsRequestSwish? Function()? swish, PostPaymentMethodsRequestTwint? Function()? twint, PaymentMethodDataType? type, PostPaymentMethodsRequestUsBankAccount? Function()? usBankAccount, PostPaymentMethodsRequestWechatPay? Function()? wechatPay, PostPaymentMethodsRequestZip? Function()? zip, }) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+PostPaymentIntentsIntentConfirmRequestPaymentMethodData copyWith({PostPaymentMethodsRequestAcssDebit? Function()? acssDebit, PostPaymentMethodsRequestAffirm? Function()? affirm, PostPaymentMethodsRequestAfterpayClearpay? Function()? afterpayClearpay, PostPaymentMethodsRequestAlipay? Function()? alipay, ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, PostPaymentMethodsRequestAlma? Function()? alma, PostPaymentMethodsRequestAmazonPay? Function()? amazonPay, PostPaymentMethodsRequestAuBecsDebit? Function()? auBecsDebit, PostPaymentMethodsRequestBacsDebit? Function()? bacsDebit, PostPaymentMethodsRequestBancontact? Function()? bancontact, PostPaymentMethodsRequestBillie? Function()? billie, PostPaymentMethodsPaymentMethodRequestBillingDetails? Function()? billingDetails, PostPaymentMethodsRequestBlik? Function()? blik, PostPaymentMethodsRequestBoleto? Function()? boleto, PostPaymentMethodsRequestCashapp? Function()? cashapp, PostPaymentMethodsRequestCrypto? Function()? crypto, PostPaymentMethodsRequestCustomerBalance? Function()? customerBalance, PostPaymentMethodsRequestEps? Function()? eps, PostPaymentMethodsRequestFpx? Function()? fpx, PostPaymentMethodsRequestGiropay? Function()? giropay, PostPaymentMethodsRequestGrabpay? Function()? grabpay, PostPaymentMethodsRequestIdeal? Function()? ideal, PostPaymentMethodsRequestInteracPresent? Function()? interacPresent, PostPaymentMethodsRequestKakaoPay? Function()? kakaoPay, PostPaymentMethodsRequestKlarna? Function()? klarna, PostPaymentMethodsRequestKonbini? Function()? konbini, PostPaymentMethodsRequestKrCard? Function()? krCard, PostPaymentMethodsRequestLink? Function()? link, PostPaymentMethodsRequestMbWay? Function()? mbWay, Map<String, String>? Function()? metadata, PostPaymentMethodsRequestMobilepay? Function()? mobilepay, PostPaymentMethodsRequestMultibanco? Function()? multibanco, PostPaymentMethodsRequestNaverPay? Function()? naverPay, PostPaymentMethodsRequestNzBankAccount? Function()? nzBankAccount, PostPaymentMethodsRequestOxxo? Function()? oxxo, PostPaymentMethodsRequestP24? Function()? p24, PostPaymentMethodsRequestPayByBank? Function()? payByBank, PostPaymentMethodsRequestPayco? Function()? payco, PostPaymentMethodsRequestPaynow? Function()? paynow, PostPaymentMethodsRequestPaypal? Function()? paypal, PostPaymentMethodsPaymentMethodRequestPayto? Function()? payto, PostPaymentMethodsRequestPix? Function()? pix, PostPaymentMethodsRequestPromptpay? Function()? promptpay, RadarOptions? Function()? radarOptions, PostPaymentMethodsRequestRevolutPay? Function()? revolutPay, PostPaymentMethodsRequestSamsungPay? Function()? samsungPay, PostPaymentMethodsRequestSatispay? Function()? satispay, PostPaymentMethodsRequestSepaDebit? Function()? sepaDebit, PostPaymentMethodsRequestSofort? Function()? sofort, PostPaymentMethodsRequestSwish? Function()? swish, PostPaymentMethodsRequestTwint? Function()? twint, PaymentMethodDataType? type, PostPaymentMethodsRequestUsBankAccount? Function()? usBankAccount, PostPaymentMethodsRequestWechatPay? Function()? wechatPay, PostPaymentMethodsRequestZip? Function()? zip, }) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodData(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   affirm: affirm != null ? affirm() : this.affirm,
   afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,
@@ -1060,7 +1060,7 @@ PostPaymentIntentsIntentConfirmRequestPaymentMethodData copyWith({PostPaymentMet
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
   wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
   zip: zip != null ? zip() : this.zip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentConfirmRequestPaymentMethodData &&
           acssDebit == other.acssDebit &&
@@ -1123,4 +1123,4 @@ PostPaymentIntentsIntentConfirmRequestPaymentMethodData copyWith({PostPaymentMet
 
 @override String toString() => 'PostPaymentIntentsIntentConfirmRequestPaymentMethodData(\n  acssDebit: $acssDebit,\n  affirm: $affirm,\n  afterpayClearpay: $afterpayClearpay,\n  alipay: $alipay,\n  allowRedisplay: $allowRedisplay,\n  alma: $alma,\n  amazonPay: $amazonPay,\n  auBecsDebit: $auBecsDebit,\n  bacsDebit: $bacsDebit,\n  bancontact: $bancontact,\n  billie: $billie,\n  billingDetails: $billingDetails,\n  blik: $blik,\n  boleto: $boleto,\n  cashapp: $cashapp,\n  crypto: $crypto,\n  customerBalance: $customerBalance,\n  eps: $eps,\n  fpx: $fpx,\n  giropay: $giropay,\n  grabpay: $grabpay,\n  ideal: $ideal,\n  interacPresent: $interacPresent,\n  kakaoPay: $kakaoPay,\n  klarna: $klarna,\n  konbini: $konbini,\n  krCard: $krCard,\n  link: $link,\n  mbWay: $mbWay,\n  metadata: $metadata,\n  mobilepay: $mobilepay,\n  multibanco: $multibanco,\n  naverPay: $naverPay,\n  nzBankAccount: $nzBankAccount,\n  oxxo: $oxxo,\n  p24: $p24,\n  payByBank: $payByBank,\n  payco: $payco,\n  paynow: $paynow,\n  paypal: $paypal,\n  payto: $payto,\n  pix: $pix,\n  promptpay: $promptpay,\n  radarOptions: $radarOptions,\n  revolutPay: $revolutPay,\n  samsungPay: $samsungPay,\n  satispay: $satispay,\n  sepaDebit: $sepaDebit,\n  sofort: $sofort,\n  swish: $swish,\n  twint: $twint,\n  type: $type,\n  usBankAccount: $usBankAccount,\n  wechatPay: $wechatPay,\n  zip: $zip,\n)';
 
- }
+}

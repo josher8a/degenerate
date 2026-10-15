@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsBatchMoveAccountsRequest {const AccountsBatchMoveAccountsRequest({required this.accountIds, required this.destinationOrganizationId, });
 
-factory AccountsBatchMoveAccountsRequest.fromJson(Map<String, dynamic> json) { return AccountsBatchMoveAccountsRequest(
+factory AccountsBatchMoveAccountsRequest.fromJson(Map<String, dynamic> json) {return AccountsBatchMoveAccountsRequest(
   accountIds: (json['account_ids'] as List<dynamic>).map((e) => e as String).toList(),
   destinationOrganizationId: json['destination_organization_id'] as String,
-); }
+);}
 
 /// Move these accounts to the destination organization.
 final List<String> accountIds;
@@ -14,16 +14,16 @@ final List<String> accountIds;
 /// Move accounts to this organization ID.
 final String destinationOrganizationId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_ids': accountIds,
   'destination_organization_id': destinationOrganizationId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_ids') &&
-      json.containsKey('destination_organization_id') && json['destination_organization_id'] is String; } 
-AccountsBatchMoveAccountsRequest copyWith({List<String>? accountIds, String? destinationOrganizationId, }) { return AccountsBatchMoveAccountsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_ids') &&
+      json.containsKey('destination_organization_id') && json['destination_organization_id'] is String;}
+AccountsBatchMoveAccountsRequest copyWith({List<String>? accountIds, String? destinationOrganizationId, }) {return AccountsBatchMoveAccountsRequest(
   accountIds: accountIds ?? this.accountIds,
   destinationOrganizationId: destinationOrganizationId ?? this.destinationOrganizationId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsBatchMoveAccountsRequest &&
           listEquals(accountIds, other.accountIds) &&
@@ -33,4 +33,4 @@ AccountsBatchMoveAccountsRequest copyWith({List<String>? accountIds, String? des
 
 @override String toString() => 'AccountsBatchMoveAccountsRequest(accountIds: $accountIds, destinationOrganizationId: $destinationOrganizationId)';
 
- }
+}

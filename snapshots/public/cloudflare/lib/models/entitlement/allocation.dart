@@ -7,12 +7,12 @@ const Allocation({this.maxCountAllocation = const Omittable.absent(), this.boolA
 const Allocation._({required this.rawValue, required this.maxCountAllocation, required this.boolAllocation, required this.nullAllocation, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Allocation.fromJson(Object? json) { return Allocation._(
+factory Allocation.fromJson(Object? json) {return Allocation._(
   rawValue: Omittable(json),
   maxCountAllocation: json is Map<String, dynamic> && MaxCountAllocation.canParse(json) ? parseAnyOfVariant<MaxCountAllocation>(json, (value) => MaxCountAllocation.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   boolAllocation: json is Map<String, dynamic> && BoolAllocation.canParse(json) ? parseAnyOfVariant<BoolAllocation>(json, (value) => BoolAllocation.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   nullAllocation: json is Map<String, dynamic> && NullAllocation.canParse(json) ? parseAnyOfVariant<NullAllocation>(json, (value) => NullAllocation.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -46,4 +46,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Allocation(${toJson()})';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';@immutable final class FunctionToolCallResource {const FunctionToolCallResource({required this.id, required this.type, required this.callId, required this.name, required this.arguments, this.namespace, this.status, });
 
-factory FunctionToolCallResource.fromJson(Map<String, dynamic> json) { return FunctionToolCallResource(
+factory FunctionToolCallResource.fromJson(Map<String, dynamic> json) {return FunctionToolCallResource(
   id: json['id'] as String,
   type: json['type'] as String,
   callId: json['call_id'] as String,
@@ -11,7 +11,7 @@ factory FunctionToolCallResource.fromJson(Map<String, dynamic> json) { return Fu
   name: json['name'] as String,
   arguments: json['arguments'] as String,
   status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The unique ID of the function tool call.
 /// 
@@ -42,7 +42,7 @@ final String arguments;
 /// 
 final ComputerToolCallOutputResourceStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'type': type,
   'call_id': callId,
@@ -50,13 +50,13 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'arguments': arguments,
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('arguments') && json['arguments'] is String; } 
-FunctionToolCallResource copyWith({String? id, String? type, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputResourceStatus? Function()? status, }) { return FunctionToolCallResource(
+      json.containsKey('arguments') && json['arguments'] is String;}
+FunctionToolCallResource copyWith({String? id, String? type, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputResourceStatus? Function()? status, }) {return FunctionToolCallResource(
   id: id ?? this.id,
   type: type ?? this.type,
   callId: callId ?? this.callId,
@@ -64,7 +64,7 @@ FunctionToolCallResource copyWith({String? id, String? type, String? callId, Str
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionToolCallResource &&
           id == other.id &&
@@ -79,4 +79,4 @@ FunctionToolCallResource copyWith({String? id, String? type, String? callId, Str
 
 @override String toString() => 'FunctionToolCallResource(id: $id, type: $type, callId: $callId, namespace: $namespace, name: $name, arguments: $arguments, status: $status)';
 
- }
+}

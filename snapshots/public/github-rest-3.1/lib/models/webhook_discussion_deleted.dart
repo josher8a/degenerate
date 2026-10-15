@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookDiscussionDeleted {const WebhookDiscussionDeleted({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookDiscussionDeleted.fromJson(Map<String, dynamic> json) { return WebhookDiscussionDeleted(
+factory WebhookDiscussionDeleted.fromJson(Map<String, dynamic> json) {return WebhookDiscussionDeleted(
   action: ItemDeletedAction.fromJson(json['action'] as String),
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookDiscussionDeleted.fromJson(Map<String, dynamic> json) { return We
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemDeletedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'discussion': discussion.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('discussion') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookDiscussionDeleted copyWith({ItemDeletedAction? action, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionDeleted(
+      json.containsKey('sender');}
+WebhookDiscussionDeleted copyWith({ItemDeletedAction? action, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookDiscussionDeleted(
   action: action ?? this.action,
   discussion: discussion ?? this.discussion,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -48,7 +48,7 @@ WebhookDiscussionDeleted copyWith({ItemDeletedAction? action, Discussion? discus
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionDeleted &&
           action == other.action &&
@@ -63,4 +63,4 @@ WebhookDiscussionDeleted copyWith({ItemDeletedAction? action, Discussion? discus
 
 @override String toString() => 'WebhookDiscussionDeleted(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

@@ -7,12 +7,12 @@ const ProtectionRules({this.protectionRulesVariant1 = const Omittable.absent(), 
 const ProtectionRules._({required this.rawValue, required this.protectionRulesVariant1, required this.protectionRulesVariant2, required this.protectionRulesVariant3, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ProtectionRules.fromJson(Object? json) { return ProtectionRules._(
+factory ProtectionRules.fromJson(Object? json) {return ProtectionRules._(
   rawValue: Omittable(json),
   protectionRulesVariant1: json is Map<String, dynamic> && ProtectionRulesVariant1.canParse(json) ? parseAnyOfVariant<ProtectionRulesVariant1>(json, (value) => ProtectionRulesVariant1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   protectionRulesVariant2: json is Map<String, dynamic> && ProtectionRulesVariant2.canParse(json) ? parseAnyOfVariant<ProtectionRulesVariant2>(json, (value) => ProtectionRulesVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   protectionRulesVariant3: json is Map<String, dynamic> && ProtectionRulesVariant3.canParse(json) ? parseAnyOfVariant<ProtectionRulesVariant3>(json, (value) => ProtectionRulesVariant3.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -46,4 +46,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ProtectionRules(${toJson()})';
 
- }
+}

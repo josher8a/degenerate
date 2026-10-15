@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_account_app_id.dart';import 'package:pub_cloudflare/models/magic_app_breakout.dart';import 'package:pub_cloudflare/models/magic_app_priority.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_managed_app_id.dart';@immutable final class MagicAppConfigUpdateRequest {const MagicAppConfigUpdateRequest({this.accountAppId, this.breakout, this.managedAppId, this.preferredWans, this.priority, });
 
-factory MagicAppConfigUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicAppConfigUpdateRequest(
+factory MagicAppConfigUpdateRequest.fromJson(Map<String, dynamic> json) {return MagicAppConfigUpdateRequest(
   accountAppId: json['account_app_id'] != null ? MagicAccountAppId.fromJson(json['account_app_id'] as String) : null,
   breakout: json['breakout'] != null ? MagicAppBreakout.fromJson(json['breakout'] as bool) : null,
   managedAppId: json['managed_app_id'] != null ? MagicManagedAppId.fromJson(json['managed_app_id'] as String) : null,
   preferredWans: (json['preferred_wans'] as List<dynamic>?)?.map((e) => MagicIdentifier.fromJson(e as String)).toList(),
   priority: json['priority'] != null ? MagicAppPriority.fromJson(json['priority'] as num) : null,
-); }
+);}
 
 /// Magic account app ID.
 final MagicAccountAppId? accountAppId;
@@ -24,21 +24,21 @@ final List<MagicIdentifier>? preferredWans;
 
 final MagicAppPriority? priority;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountAppId != null) 'account_app_id': accountAppId?.toJson(),
   if (breakout != null) 'breakout': breakout?.toJson(),
   if (managedAppId != null) 'managed_app_id': managedAppId?.toJson(),
   if (preferredWans != null) 'preferred_wans': preferredWans?.map((e) => e.toJson()).toList(),
   if (priority != null) 'priority': priority?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_app_id', 'breakout', 'managed_app_id', 'preferred_wans', 'priority'}.contains(key)); } 
-MagicAppConfigUpdateRequest copyWith({MagicAccountAppId? Function()? accountAppId, MagicAppBreakout? Function()? breakout, MagicManagedAppId? Function()? managedAppId, List<MagicIdentifier>? Function()? preferredWans, MagicAppPriority? Function()? priority, }) { return MagicAppConfigUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_app_id', 'breakout', 'managed_app_id', 'preferred_wans', 'priority'}.contains(key));}
+MagicAppConfigUpdateRequest copyWith({MagicAccountAppId? Function()? accountAppId, MagicAppBreakout? Function()? breakout, MagicManagedAppId? Function()? managedAppId, List<MagicIdentifier>? Function()? preferredWans, MagicAppPriority? Function()? priority, }) {return MagicAppConfigUpdateRequest(
   accountAppId: accountAppId != null ? accountAppId() : this.accountAppId,
   breakout: breakout != null ? breakout() : this.breakout,
   managedAppId: managedAppId != null ? managedAppId() : this.managedAppId,
   preferredWans: preferredWans != null ? preferredWans() : this.preferredWans,
   priority: priority != null ? priority() : this.priority,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicAppConfigUpdateRequest &&
           accountAppId == other.accountAppId &&
@@ -51,4 +51,4 @@ MagicAppConfigUpdateRequest copyWith({MagicAccountAppId? Function()? accountAppI
 
 @override String toString() => 'MagicAppConfigUpdateRequest(accountAppId: $accountAppId, breakout: $breakout, managedAppId: $managedAppId, preferredWans: $preferredWans, priority: $priority)';
 
- }
+}

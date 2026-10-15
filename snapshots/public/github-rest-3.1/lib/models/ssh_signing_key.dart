@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A public SSH key used to sign Git commits
 @immutable final class SshSigningKey {const SshSigningKey({required this.key, required this.id, required this.title, required this.createdAt, });
 
-factory SshSigningKey.fromJson(Map<String, dynamic> json) { return SshSigningKey(
+factory SshSigningKey.fromJson(Map<String, dynamic> json) {return SshSigningKey(
   key: json['key'] as String,
   id: (json['id'] as num).toInt(),
   title: json['title'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
-); }
+);}
 
 final String key;
 
@@ -19,22 +19,22 @@ final String title;
 
 final DateTime createdAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'id': id,
   'title': title,
   'created_at': createdAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('title') && json['title'] is String &&
-      json.containsKey('created_at') && json['created_at'] is String; } 
-SshSigningKey copyWith({String? key, int? id, String? title, DateTime? createdAt, }) { return SshSigningKey(
+      json.containsKey('created_at') && json['created_at'] is String;}
+SshSigningKey copyWith({String? key, int? id, String? title, DateTime? createdAt, }) {return SshSigningKey(
   key: key ?? this.key,
   id: id ?? this.id,
   title: title ?? this.title,
   createdAt: createdAt ?? this.createdAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SshSigningKey &&
           key == other.key &&
@@ -46,4 +46,4 @@ SshSigningKey copyWith({String? key, int? id, String? title, DateTime? createdAt
 
 @override String toString() => 'SshSigningKey(key: $key, id: $id, title: $title, createdAt: $createdAt)';
 
- }
+}

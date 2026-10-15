@@ -18,10 +18,10 @@ String toJson() => value;
 /// Used only for ECMP routes.
 @immutable final class MagicScope {const MagicScope({this.coloNames, this.coloRegions, });
 
-factory MagicScope.fromJson(Map<String, dynamic> json) { return MagicScope(
+factory MagicScope.fromJson(Map<String, dynamic> json) {return MagicScope(
   coloNames: (json['colo_names'] as List<dynamic>?)?.map((e) => MagicColoName.fromJson(e as String)).toList(),
   coloRegions: (json['colo_regions'] as List<dynamic>?)?.map((e) => MagicColoRegion.fromJson(e as String)).toList(),
-); }
+);}
 
 /// List of colo names for the ECMP scope.
 final List<MagicColoName>? coloNames;
@@ -29,15 +29,15 @@ final List<MagicColoName>? coloNames;
 /// List of colo regions for the ECMP scope.
 final List<MagicColoRegion>? coloRegions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (coloNames != null) 'colo_names': coloNames?.map((e) => e.toJson()).toList(),
   if (coloRegions != null) 'colo_regions': coloRegions?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'colo_names', 'colo_regions'}.contains(key)); } 
-MagicScope copyWith({List<MagicColoName>? Function()? coloNames, List<MagicColoRegion>? Function()? coloRegions, }) { return MagicScope(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'colo_names', 'colo_regions'}.contains(key));}
+MagicScope copyWith({List<MagicColoName>? Function()? coloNames, List<MagicColoRegion>? Function()? coloRegions, }) {return MagicScope(
   coloNames: coloNames != null ? coloNames() : this.coloNames,
   coloRegions: coloRegions != null ? coloRegions() : this.coloRegions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicScope &&
           listEquals(coloNames, other.coloNames) &&
@@ -47,4 +47,4 @@ MagicScope copyWith({List<MagicColoName>? Function()? coloNames, List<MagicColoR
 
 @override String toString() => 'MagicScope(coloNames: $coloNames, coloRegions: $coloRegions)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_namespace_identifier.dart';import 'package:pub_cloudflare/models/workers_kv_namespace_title.dart';@immutable final class WorkersKvNamespace {const WorkersKvNamespace({required this.id, required this.title, this.supportsUrlEncoding, });
 
-factory WorkersKvNamespace.fromJson(Map<String, dynamic> json) { return WorkersKvNamespace(
+factory WorkersKvNamespace.fromJson(Map<String, dynamic> json) {return WorkersKvNamespace(
   id: WorkersKvNamespaceIdentifier.fromJson(json['id'] as String),
   supportsUrlEncoding: json['supports_url_encoding'] as bool?,
   title: WorkersKvNamespaceTitle.fromJson(json['title'] as String),
-); }
+);}
 
 final WorkersKvNamespaceIdentifier id;
 
@@ -18,18 +18,18 @@ final bool? supportsUrlEncoding;
 
 final WorkersKvNamespaceTitle title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
   'supports_url_encoding': ?supportsUrlEncoding,
   'title': title.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('title'); } 
-WorkersKvNamespace copyWith({WorkersKvNamespaceIdentifier? id, bool? Function()? supportsUrlEncoding, WorkersKvNamespaceTitle? title, }) { return WorkersKvNamespace(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('title');}
+WorkersKvNamespace copyWith({WorkersKvNamespaceIdentifier? id, bool? Function()? supportsUrlEncoding, WorkersKvNamespaceTitle? title, }) {return WorkersKvNamespace(
   id: id ?? this.id,
   supportsUrlEncoding: supportsUrlEncoding != null ? supportsUrlEncoding() : this.supportsUrlEncoding,
   title: title ?? this.title,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvNamespace &&
           id == other.id &&
@@ -40,4 +40,4 @@ WorkersKvNamespace copyWith({WorkersKvNamespaceIdentifier? id, bool? Function()?
 
 @override String toString() => 'WorkersKvNamespace(id: $id, supportsUrlEncoding: $supportsUrlEncoding, title: $title)';
 
- }
+}

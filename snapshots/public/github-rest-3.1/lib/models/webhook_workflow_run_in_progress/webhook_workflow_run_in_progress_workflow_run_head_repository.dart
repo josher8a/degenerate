@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_head_repository_owner.dart';@immutable final class WebhookWorkflowRunInProgressWorkflowRunHeadRepository {const WebhookWorkflowRunInProgressWorkflowRunHeadRepository({required this.forksUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.description, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.archiveUrl, required this.fullName, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.hooksUrl, required this.htmlUrl, required this.id, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.url, required this.milestonesUrl, required this.name, required this.nodeId, required this.notificationsUrl, required this.owner, required this.private, required this.pullsUrl, required this.releasesUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.mergesUrl, });
 
-factory WebhookWorkflowRunInProgressWorkflowRunHeadRepository.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunInProgressWorkflowRunHeadRepository(
+factory WebhookWorkflowRunInProgressWorkflowRunHeadRepository.fromJson(Map<String, dynamic> json) {return WebhookWorkflowRunInProgressWorkflowRunHeadRepository(
   archiveUrl: json['archive_url'] as String,
   assigneesUrl: json['assignees_url'] as String,
   blobsUrl: json['blobs_url'] as String,
@@ -50,7 +50,7 @@ factory WebhookWorkflowRunInProgressWorkflowRunHeadRepository.fromJson(Map<Strin
   teamsUrl: Uri.parse(json['teams_url'] as String),
   treesUrl: json['trees_url'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String archiveUrl;
 
@@ -147,7 +147,7 @@ final String treesUrl;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'archive_url': archiveUrl,
   'assignees_url': assigneesUrl,
   'blobs_url': blobsUrl,
@@ -194,8 +194,8 @@ Map<String, dynamic> toJson() { return {
   'teams_url': teamsUrl.toString(),
   'trees_url': treesUrl,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('archive_url') && json['archive_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('archive_url') && json['archive_url'] is String &&
       json.containsKey('assignees_url') && json['assignees_url'] is String &&
       json.containsKey('blobs_url') && json['blobs_url'] is String &&
       json.containsKey('branches_url') && json['branches_url'] is String &&
@@ -240,8 +240,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('tags_url') && json['tags_url'] is String &&
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('trees_url') && json['trees_url'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookWorkflowRunInProgressWorkflowRunHeadRepository copyWith({String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, String? Function()? description, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? hooksUrl, Uri? htmlUrl, int? id, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? Function()? name, String? nodeId, String? notificationsUrl, WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwner? Function()? owner, bool? private, String? pullsUrl, String? releasesUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, Uri? url, }) { return WebhookWorkflowRunInProgressWorkflowRunHeadRepository(
+      json.containsKey('url') && json['url'] is String;}
+WebhookWorkflowRunInProgressWorkflowRunHeadRepository copyWith({String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, String? Function()? description, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? hooksUrl, Uri? htmlUrl, int? id, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? Function()? name, String? nodeId, String? notificationsUrl, WebhookWorkflowRunInProgressWorkflowRunHeadRepositoryOwner? Function()? owner, bool? private, String? pullsUrl, String? releasesUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, Uri? url, }) {return WebhookWorkflowRunInProgressWorkflowRunHeadRepository(
   archiveUrl: archiveUrl ?? this.archiveUrl,
   assigneesUrl: assigneesUrl ?? this.assigneesUrl,
   blobsUrl: blobsUrl ?? this.blobsUrl,
@@ -288,7 +288,7 @@ WebhookWorkflowRunInProgressWorkflowRunHeadRepository copyWith({String? archiveU
   teamsUrl: teamsUrl ?? this.teamsUrl,
   treesUrl: treesUrl ?? this.treesUrl,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowRunInProgressWorkflowRunHeadRepository &&
           archiveUrl == other.archiveUrl &&
@@ -342,4 +342,4 @@ WebhookWorkflowRunInProgressWorkflowRunHeadRepository copyWith({String? archiveU
 
 @override String toString() => 'WebhookWorkflowRunInProgressWorkflowRunHeadRepository(\n  archiveUrl: $archiveUrl,\n  assigneesUrl: $assigneesUrl,\n  blobsUrl: $blobsUrl,\n  branchesUrl: $branchesUrl,\n  collaboratorsUrl: $collaboratorsUrl,\n  commentsUrl: $commentsUrl,\n  commitsUrl: $commitsUrl,\n  compareUrl: $compareUrl,\n  contentsUrl: $contentsUrl,\n  contributorsUrl: $contributorsUrl,\n  deploymentsUrl: $deploymentsUrl,\n  description: $description,\n  downloadsUrl: $downloadsUrl,\n  eventsUrl: $eventsUrl,\n  fork: $fork,\n  forksUrl: $forksUrl,\n  fullName: $fullName,\n  gitCommitsUrl: $gitCommitsUrl,\n  gitRefsUrl: $gitRefsUrl,\n  gitTagsUrl: $gitTagsUrl,\n  hooksUrl: $hooksUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  issueCommentUrl: $issueCommentUrl,\n  issueEventsUrl: $issueEventsUrl,\n  issuesUrl: $issuesUrl,\n  keysUrl: $keysUrl,\n  labelsUrl: $labelsUrl,\n  languagesUrl: $languagesUrl,\n  mergesUrl: $mergesUrl,\n  milestonesUrl: $milestonesUrl,\n  name: $name,\n  nodeId: $nodeId,\n  notificationsUrl: $notificationsUrl,\n  owner: $owner,\n  private: $private,\n  pullsUrl: $pullsUrl,\n  releasesUrl: $releasesUrl,\n  stargazersUrl: $stargazersUrl,\n  statusesUrl: $statusesUrl,\n  subscribersUrl: $subscribersUrl,\n  subscriptionUrl: $subscriptionUrl,\n  tagsUrl: $tagsUrl,\n  teamsUrl: $teamsUrl,\n  treesUrl: $treesUrl,\n  url: $url,\n)';
 
- }
+}

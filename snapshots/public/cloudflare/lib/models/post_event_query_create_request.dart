@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventQueryCreateRequest {const PostEventQueryCreateRequest({required this.alertEnabled, required this.alertRollupEnabled, required this.name, required this.queryJson, required this.ruleEnabled, this.ruleScope, });
 
-factory PostEventQueryCreateRequest.fromJson(Map<String, dynamic> json) { return PostEventQueryCreateRequest(
+factory PostEventQueryCreateRequest.fromJson(Map<String, dynamic> json) {return PostEventQueryCreateRequest(
   alertEnabled: json['alert_enabled'] as bool,
   alertRollupEnabled: json['alert_rollup_enabled'] as bool,
   name: json['name'] as String,
   queryJson: json['query_json'] as String,
   ruleEnabled: json['rule_enabled'] as bool,
   ruleScope: json['rule_scope'] as String?,
-); }
+);}
 
 /// Enable alerts for this query
 final bool alertEnabled;
@@ -30,27 +30,27 @@ final bool ruleEnabled;
 /// Scope for the rule
 final String? ruleScope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'alert_enabled': alertEnabled,
   'alert_rollup_enabled': alertRollupEnabled,
   'name': name,
   'query_json': queryJson,
   'rule_enabled': ruleEnabled,
   'rule_scope': ?ruleScope,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert_enabled') && json['alert_enabled'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('alert_enabled') && json['alert_enabled'] is bool &&
       json.containsKey('alert_rollup_enabled') && json['alert_rollup_enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('query_json') && json['query_json'] is String &&
-      json.containsKey('rule_enabled') && json['rule_enabled'] is bool; } 
-PostEventQueryCreateRequest copyWith({bool? alertEnabled, bool? alertRollupEnabled, String? name, String? queryJson, bool? ruleEnabled, String? Function()? ruleScope, }) { return PostEventQueryCreateRequest(
+      json.containsKey('rule_enabled') && json['rule_enabled'] is bool;}
+PostEventQueryCreateRequest copyWith({bool? alertEnabled, bool? alertRollupEnabled, String? name, String? queryJson, bool? ruleEnabled, String? Function()? ruleScope, }) {return PostEventQueryCreateRequest(
   alertEnabled: alertEnabled ?? this.alertEnabled,
   alertRollupEnabled: alertRollupEnabled ?? this.alertRollupEnabled,
   name: name ?? this.name,
   queryJson: queryJson ?? this.queryJson,
   ruleEnabled: ruleEnabled ?? this.ruleEnabled,
   ruleScope: ruleScope != null ? ruleScope() : this.ruleScope,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventQueryCreateRequest &&
           alertEnabled == other.alertEnabled &&
@@ -64,4 +64,4 @@ PostEventQueryCreateRequest copyWith({bool? alertEnabled, bool? alertRollupEnabl
 
 @override String toString() => 'PostEventQueryCreateRequest(alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope)';
 
- }
+}

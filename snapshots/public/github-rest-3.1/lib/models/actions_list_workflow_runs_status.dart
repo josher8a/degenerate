@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus();
 
-factory ActionsListWorkflowRunsStatus.fromJson(String json) { return switch (json) {
+factory ActionsListWorkflowRunsStatus.fromJson(String json) {return switch (json) {
   'completed' => completed,
   'action_required' => actionRequired,
   'cancelled' => cancelled,
@@ -19,7 +19,7 @@ factory ActionsListWorkflowRunsStatus.fromJson(String json) { return switch (jso
   'waiting' => waiting,
   'pending' => pending,
   _ => ActionsListWorkflowRunsStatus$Unknown(json),
-}; }
+};}
 
 static const ActionsListWorkflowRunsStatus completed = ActionsListWorkflowRunsStatus$completed._();
 
@@ -52,9 +52,9 @@ static const ActionsListWorkflowRunsStatus pending = ActionsListWorkflowRunsStat
 static const List<ActionsListWorkflowRunsStatus> values = [completed, actionRequired, cancelled, failure, neutral, skipped, stale, success, timedOut, inProgress, queued, requested, waiting, pending];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'completed' => 'completed',
   'action_required' => 'actionRequired',
   'cancelled' => 'cancelled',
@@ -70,11 +70,11 @@ String get name { return switch (value) {
   'waiting' => 'waiting',
   'pending' => 'pending',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ActionsListWorkflowRunsStatus$Unknown; } 
+bool get isUnknown {return this is ActionsListWorkflowRunsStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() completed, required W Function() actionRequired, required W Function() cancelled, required W Function() failure, required W Function() neutral, required W Function() skipped, required W Function() stale, required W Function() success, required W Function() timedOut, required W Function() inProgress, required W Function() queued, required W Function() requested, required W Function() waiting, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() completed, required W Function() actionRequired, required W Function() cancelled, required W Function() failure, required W Function() neutral, required W Function() skipped, required W Function() stale, required W Function() success, required W Function() timedOut, required W Function() inProgress, required W Function() queued, required W Function() requested, required W Function() waiting, required W Function() pending, required W Function(String value) $unknown, }) {return switch (this) {
       ActionsListWorkflowRunsStatus$completed() => completed(),
       ActionsListWorkflowRunsStatus$actionRequired() => actionRequired(),
       ActionsListWorkflowRunsStatus$cancelled() => cancelled(),
@@ -90,9 +90,9 @@ W when<W>({required W Function() completed, required W Function() actionRequired
       ActionsListWorkflowRunsStatus$waiting() => waiting(),
       ActionsListWorkflowRunsStatus$pending() => pending(),
       ActionsListWorkflowRunsStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? actionRequired, W Function()? cancelled, W Function()? failure, W Function()? neutral, W Function()? skipped, W Function()? stale, W Function()? success, W Function()? timedOut, W Function()? inProgress, W Function()? queued, W Function()? requested, W Function()? waiting, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? actionRequired, W Function()? cancelled, W Function()? failure, W Function()? neutral, W Function()? skipped, W Function()? stale, W Function()? success, W Function()? timedOut, W Function()? inProgress, W Function()? queued, W Function()? requested, W Function()? waiting, W Function()? pending, W Function(String value)? $unknown, }) {return switch (this) {
       ActionsListWorkflowRunsStatus$completed() => completed != null ? completed() : orElse(value),
       ActionsListWorkflowRunsStatus$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
       ActionsListWorkflowRunsStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
@@ -108,10 +108,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
       ActionsListWorkflowRunsStatus$waiting() => waiting != null ? waiting() : orElse(value),
       ActionsListWorkflowRunsStatus$pending() => pending != null ? pending() : orElse(value),
       ActionsListWorkflowRunsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ActionsListWorkflowRunsStatus($value)';
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$completed extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$completed._();
 
 @override String get value => 'completed';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$actionRequired extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$actionRequired._();
 
 @override String get value => 'action_required';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'action_required'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$cancelled extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$failure extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$failure._();
 
 @override String get value => 'failure';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'failure'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$neutral extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$neutral._();
 
 @override String get value => 'neutral';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'neutral'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$skipped extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$skipped._();
 
 @override String get value => 'skipped';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'skipped'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$stale extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$stale._();
 
 @override String get value => 'stale';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'stale'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$success extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$success._();
 
 @override String get value => 'success';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$timedOut extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$timedOut._();
 
 @override String get value => 'timed_out';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'timed_out'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$inProgress extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -201,7 +201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$queued extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$queued._();
 
 @override String get value => 'queued';
@@ -210,7 +210,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$requested extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$requested._();
 
 @override String get value => 'requested';
@@ -219,7 +219,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'requested'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$waiting extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$waiting._();
 
 @override String get value => 'waiting';
@@ -228,7 +228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'waiting'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$pending extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$pending._();
 
 @override String get value => 'pending';
@@ -237,7 +237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class ActionsListWorkflowRunsStatus$Unknown extends ActionsListWorkflowRunsStatus {const ActionsListWorkflowRunsStatus$Unknown(this.value);
 
 @override final String value;
@@ -247,4 +247,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -10,19 +10,19 @@ String toJson() => value;
 }
 @immutable final class WaitingroomPreviewResponseResult {const WaitingroomPreviewResponseResult({this.previewUrl});
 
-factory WaitingroomPreviewResponseResult.fromJson(Map<String, dynamic> json) { return WaitingroomPreviewResponseResult(
+factory WaitingroomPreviewResponseResult.fromJson(Map<String, dynamic> json) {return WaitingroomPreviewResponseResult(
   previewUrl: json['preview_url'] != null ? WaitingroomPreviewUrl.fromJson(json['preview_url'] as String) : null,
-); }
+);}
 
 final WaitingroomPreviewUrl? previewUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (previewUrl != null) 'preview_url': previewUrl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preview_url'}.contains(key)); } 
-WaitingroomPreviewResponseResult copyWith({WaitingroomPreviewUrl? Function()? previewUrl}) { return WaitingroomPreviewResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preview_url'}.contains(key));}
+WaitingroomPreviewResponseResult copyWith({WaitingroomPreviewUrl? Function()? previewUrl}) {return WaitingroomPreviewResponseResult(
   previewUrl: previewUrl != null ? previewUrl() : this.previewUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomPreviewResponseResult &&
           previewUrl == other.previewUrl;
@@ -31,4 +31,4 @@ WaitingroomPreviewResponseResult copyWith({WaitingroomPreviewUrl? Function()? pr
 
 @override String toString() => 'WaitingroomPreviewResponseResult(previewUrl: $previewUrl)';
 
- }
+}

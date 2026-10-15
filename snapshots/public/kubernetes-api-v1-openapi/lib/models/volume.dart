@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/aws_elastic_block_store_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/azure_disk_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/azure_file_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/ceph_fs_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/cinder_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/config_map_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/csi_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/empty_dir_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/ephemeral_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/fc_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/flex_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/flocker_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/gce_persistent_disk_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/git_repo_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/glusterfs_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/host_path_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/image_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/iscsi_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/nfs_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/photon_persistent_disk_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/portworx_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/projected_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/quobyte_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/rbd_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/scale_io_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/storage_os_volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/volume_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/vsphere_virtual_disk_volume_source.dart';/// Volume represents a named volume in a pod that may be accessed by any container in the pod.
 @immutable final class Volume {const Volume({required this.name, this.awsElasticBlockStore, this.azureDisk, this.azureFile, this.cephfs, this.cinder, this.configMap, this.csi, this.downwardApi, this.emptyDir, this.ephemeral, this.fc, this.flexVolume, this.flocker, this.gcePersistentDisk, this.gitRepo, this.glusterfs, this.hostPath, this.image, this.iscsi, this.nfs, this.persistentVolumeClaim, this.photonPersistentDisk, this.portworxVolume, this.projected, this.quobyte, this.rbd, this.scaleIo, this.secret, this.storageos, this.vsphereVolume, });
 
-factory Volume.fromJson(Map<String, dynamic> json) { return Volume(
+factory Volume.fromJson(Map<String, dynamic> json) {return Volume(
   awsElasticBlockStore: json['awsElasticBlockStore'] != null ? AwsElasticBlockStoreVolumeSource.fromJson(json['awsElasticBlockStore'] as Map<String, dynamic>) : null,
   azureDisk: json['azureDisk'] != null ? AzureDiskVolumeSource.fromJson(json['azureDisk'] as Map<String, dynamic>) : null,
   azureFile: json['azureFile'] != null ? AzureFileVolumeSource.fromJson(json['azureFile'] as Map<String, dynamic>) : null,
@@ -36,7 +36,7 @@ factory Volume.fromJson(Map<String, dynamic> json) { return Volume(
   secret: json['secret'] != null ? SecretVolumeSource.fromJson(json['secret'] as Map<String, dynamic>) : null,
   storageos: json['storageos'] != null ? StorageOsVolumeSource.fromJson(json['storageos'] as Map<String, dynamic>) : null,
   vsphereVolume: json['vsphereVolume'] != null ? VsphereVirtualDiskVolumeSource.fromJson(json['vsphereVolume'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// awsElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. Deprecated: AWSElasticBlockStore is deprecated. All operations for the in-tree awsElasticBlockStore type are redirected to the ebs.csi.aws.com CSI driver. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
 final AwsElasticBlockStoreVolumeSource? awsElasticBlockStore;
@@ -148,7 +148,7 @@ final StorageOsVolumeSource? storageos;
 /// vsphereVolume represents a vSphere volume attached and mounted on kubelets host machine. Deprecated: VsphereVolume is deprecated. All operations for the in-tree vsphereVolume type are redirected to the csi.vsphere.vmware.com CSI driver.
 final VsphereVirtualDiskVolumeSource? vsphereVolume;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (awsElasticBlockStore != null) 'awsElasticBlockStore': awsElasticBlockStore?.toJson(),
   if (azureDisk != null) 'azureDisk': azureDisk?.toJson(),
   if (azureFile != null) 'azureFile': azureFile?.toJson(),
@@ -180,9 +180,9 @@ Map<String, dynamic> toJson() { return {
   if (secret != null) 'secret': secret?.toJson(),
   if (storageos != null) 'storageos': storageos?.toJson(),
   if (vsphereVolume != null) 'vsphereVolume': vsphereVolume?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Volume copyWith({AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockStore, AzureDiskVolumeSource? Function()? azureDisk, AzureFileVolumeSource? Function()? azureFile, CephFsVolumeSource? Function()? cephfs, CinderVolumeSource? Function()? cinder, ConfigMapVolumeSource? Function()? configMap, CsiVolumeSource? Function()? csi, VolumeSource? Function()? downwardApi, EmptyDirVolumeSource? Function()? emptyDir, EphemeralVolumeSource? Function()? ephemeral, FcVolumeSource? Function()? fc, FlexVolumeSource? Function()? flexVolume, FlockerVolumeSource? Function()? flocker, GcePersistentDiskVolumeSource? Function()? gcePersistentDisk, GitRepoVolumeSource? Function()? gitRepo, GlusterfsVolumeSource? Function()? glusterfs, HostPathVolumeSource? Function()? hostPath, ImageVolumeSource? Function()? image, IscsiVolumeSource? Function()? iscsi, String? name, NfsVolumeSource? Function()? nfs, PersistentVolumeClaimVolumeSource? Function()? persistentVolumeClaim, PhotonPersistentDiskVolumeSource? Function()? photonPersistentDisk, PortworxVolumeSource? Function()? portworxVolume, ProjectedVolumeSource? Function()? projected, QuobyteVolumeSource? Function()? quobyte, RbdVolumeSource? Function()? rbd, ScaleIoVolumeSource? Function()? scaleIo, SecretVolumeSource? Function()? secret, StorageOsVolumeSource? Function()? storageos, VsphereVirtualDiskVolumeSource? Function()? vsphereVolume, }) { return Volume(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+Volume copyWith({AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockStore, AzureDiskVolumeSource? Function()? azureDisk, AzureFileVolumeSource? Function()? azureFile, CephFsVolumeSource? Function()? cephfs, CinderVolumeSource? Function()? cinder, ConfigMapVolumeSource? Function()? configMap, CsiVolumeSource? Function()? csi, VolumeSource? Function()? downwardApi, EmptyDirVolumeSource? Function()? emptyDir, EphemeralVolumeSource? Function()? ephemeral, FcVolumeSource? Function()? fc, FlexVolumeSource? Function()? flexVolume, FlockerVolumeSource? Function()? flocker, GcePersistentDiskVolumeSource? Function()? gcePersistentDisk, GitRepoVolumeSource? Function()? gitRepo, GlusterfsVolumeSource? Function()? glusterfs, HostPathVolumeSource? Function()? hostPath, ImageVolumeSource? Function()? image, IscsiVolumeSource? Function()? iscsi, String? name, NfsVolumeSource? Function()? nfs, PersistentVolumeClaimVolumeSource? Function()? persistentVolumeClaim, PhotonPersistentDiskVolumeSource? Function()? photonPersistentDisk, PortworxVolumeSource? Function()? portworxVolume, ProjectedVolumeSource? Function()? projected, QuobyteVolumeSource? Function()? quobyte, RbdVolumeSource? Function()? rbd, ScaleIoVolumeSource? Function()? scaleIo, SecretVolumeSource? Function()? secret, StorageOsVolumeSource? Function()? storageos, VsphereVirtualDiskVolumeSource? Function()? vsphereVolume, }) {return Volume(
   awsElasticBlockStore: awsElasticBlockStore != null ? awsElasticBlockStore() : this.awsElasticBlockStore,
   azureDisk: azureDisk != null ? azureDisk() : this.azureDisk,
   azureFile: azureFile != null ? azureFile() : this.azureFile,
@@ -214,7 +214,7 @@ Volume copyWith({AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockSt
   secret: secret != null ? secret() : this.secret,
   storageos: storageos != null ? storageos() : this.storageos,
   vsphereVolume: vsphereVolume != null ? vsphereVolume() : this.vsphereVolume,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Volume &&
           awsElasticBlockStore == other.awsElasticBlockStore &&
@@ -253,4 +253,4 @@ Volume copyWith({AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockSt
 
 @override String toString() => 'Volume(\n  awsElasticBlockStore: $awsElasticBlockStore,\n  azureDisk: $azureDisk,\n  azureFile: $azureFile,\n  cephfs: $cephfs,\n  cinder: $cinder,\n  configMap: $configMap,\n  csi: $csi,\n  downwardApi: $downwardApi,\n  emptyDir: $emptyDir,\n  ephemeral: $ephemeral,\n  fc: $fc,\n  flexVolume: $flexVolume,\n  flocker: $flocker,\n  gcePersistentDisk: $gcePersistentDisk,\n  gitRepo: $gitRepo,\n  glusterfs: $glusterfs,\n  hostPath: $hostPath,\n  image: $image,\n  iscsi: $iscsi,\n  name: $name,\n  nfs: $nfs,\n  persistentVolumeClaim: $persistentVolumeClaim,\n  photonPersistentDisk: $photonPersistentDisk,\n  portworxVolume: $portworxVolume,\n  projected: $projected,\n  quobyte: $quobyte,\n  rbd: $rbd,\n  scaleIo: $scaleIo,\n  secret: $secret,\n  storageos: $storageos,\n  vsphereVolume: $vsphereVolume,\n)';
 
- }
+}

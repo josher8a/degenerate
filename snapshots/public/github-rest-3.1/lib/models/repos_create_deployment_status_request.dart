@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_status/deployment_status_state.dart';@immutable final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl, this.logUrl, this.description, this.environment, this.environmentUrl, this.autoInactive, });
 
-factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentStatusRequest(
+factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) {return ReposCreateDeploymentStatusRequest(
   state: DeploymentStatusState.fromJson(json['state'] as String),
   targetUrl: json['target_url'] as String?,
   logUrl: json['log_url'] as String?,
@@ -11,7 +11,7 @@ factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) {
   environment: json['environment'] as String?,
   environmentUrl: json['environment_url'] as String?,
   autoInactive: json['auto_inactive'] as bool?,
-); }
+);}
 
 /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
 final DeploymentStatusState state;
@@ -49,7 +49,7 @@ String get descriptionOrDefault => description ?? '';
 /// The value of `environmentUrl`, or its schema default when absent.
 String get environmentUrlOrDefault => environmentUrl ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'state': state.toJson(),
   'target_url': ?targetUrl,
   'log_url': ?logUrl,
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   'environment': ?environment,
   'environment_url': ?environmentUrl,
   'auto_inactive': ?autoInactive,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-ReposCreateDeploymentStatusRequest copyWith({DeploymentStatusState? state, String? Function()? targetUrl, String? Function()? logUrl, String? Function()? description, String? Function()? environment, String? Function()? environmentUrl, bool? Function()? autoInactive, }) { return ReposCreateDeploymentStatusRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state');}
+ReposCreateDeploymentStatusRequest copyWith({DeploymentStatusState? state, String? Function()? targetUrl, String? Function()? logUrl, String? Function()? description, String? Function()? environment, String? Function()? environmentUrl, bool? Function()? autoInactive, }) {return ReposCreateDeploymentStatusRequest(
   state: state ?? this.state,
   targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
   logUrl: logUrl != null ? logUrl() : this.logUrl,
@@ -67,7 +67,7 @@ ReposCreateDeploymentStatusRequest copyWith({DeploymentStatusState? state, Strin
   environment: environment != null ? environment() : this.environment,
   environmentUrl: environmentUrl != null ? environmentUrl() : this.environmentUrl,
   autoInactive: autoInactive != null ? autoInactive() : this.autoInactive,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateDeploymentStatusRequest &&
           state == other.state &&
@@ -82,4 +82,4 @@ ReposCreateDeploymentStatusRequest copyWith({DeploymentStatusState? state, Strin
 
 @override String toString() => 'ReposCreateDeploymentStatusRequest(state: $state, targetUrl: $targetUrl, logUrl: $logUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, autoInactive: $autoInactive)';
 
- }
+}

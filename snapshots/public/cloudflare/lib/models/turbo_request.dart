@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turbo_request/turbo_request_audio.dart';@immutable final class TurboRequest {const TurboRequest({required this.audio, this.beamSize, this.compressionRatioThreshold, this.conditionOnPreviousText, this.hallucinationSilenceThreshold, this.initialPrompt, this.language, this.logProbThreshold, this.noSpeechThreshold, this.prefix, this.task, this.vadFilter, });
 
-factory TurboRequest.fromJson(Map<String, dynamic> json) { return TurboRequest(
+factory TurboRequest.fromJson(Map<String, dynamic> json) {return TurboRequest(
   audio: TurboRequestAudio.fromJson(json['audio']),
   beamSize: json['beam_size'] != null ? (json['beam_size'] as num).toInt() : null,
   compressionRatioThreshold: json['compression_ratio_threshold'] != null ? (json['compression_ratio_threshold'] as num).toDouble() : null,
@@ -16,7 +16,7 @@ factory TurboRequest.fromJson(Map<String, dynamic> json) { return TurboRequest(
   prefix: json['prefix'] as String?,
   task: json['task'] as String?,
   vadFilter: json['vad_filter'] as bool?,
-); }
+);}
 
 final TurboRequestAudio audio;
 
@@ -74,7 +74,7 @@ String get taskOrDefault => task ?? 'transcribe';
 /// The value of `vadFilter`, or its schema default when absent.
 bool get vadFilterOrDefault => vadFilter ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'audio': audio.toJson(),
   'beam_size': ?beamSize,
   'compression_ratio_threshold': ?compressionRatioThreshold,
@@ -87,9 +87,9 @@ Map<String, dynamic> toJson() { return {
   'prefix': ?prefix,
   'task': ?task,
   'vad_filter': ?vadFilter,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio'); } 
-TurboRequest copyWith({TurboRequestAudio? audio, int? Function()? beamSize, double? Function()? compressionRatioThreshold, bool? Function()? conditionOnPreviousText, double? Function()? hallucinationSilenceThreshold, String? Function()? initialPrompt, String? Function()? language, double? Function()? logProbThreshold, double? Function()? noSpeechThreshold, String? Function()? prefix, String? Function()? task, bool? Function()? vadFilter, }) { return TurboRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('audio');}
+TurboRequest copyWith({TurboRequestAudio? audio, int? Function()? beamSize, double? Function()? compressionRatioThreshold, bool? Function()? conditionOnPreviousText, double? Function()? hallucinationSilenceThreshold, String? Function()? initialPrompt, String? Function()? language, double? Function()? logProbThreshold, double? Function()? noSpeechThreshold, String? Function()? prefix, String? Function()? task, bool? Function()? vadFilter, }) {return TurboRequest(
   audio: audio ?? this.audio,
   beamSize: beamSize != null ? beamSize() : this.beamSize,
   compressionRatioThreshold: compressionRatioThreshold != null ? compressionRatioThreshold() : this.compressionRatioThreshold,
@@ -102,7 +102,7 @@ TurboRequest copyWith({TurboRequestAudio? audio, int? Function()? beamSize, doub
   prefix: prefix != null ? prefix() : this.prefix,
   task: task != null ? task() : this.task,
   vadFilter: vadFilter != null ? vadFilter() : this.vadFilter,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TurboRequest &&
           audio == other.audio &&
@@ -122,4 +122,4 @@ TurboRequest copyWith({TurboRequestAudio? audio, int? Function()? beamSize, doub
 
 @override String toString() => 'TurboRequest(\n  audio: $audio,\n  beamSize: $beamSize,\n  compressionRatioThreshold: $compressionRatioThreshold,\n  conditionOnPreviousText: $conditionOnPreviousText,\n  hallucinationSilenceThreshold: $hallucinationSilenceThreshold,\n  initialPrompt: $initialPrompt,\n  language: $language,\n  logProbThreshold: $logProbThreshold,\n  noSpeechThreshold: $noSpeechThreshold,\n  prefix: $prefix,\n  task: $task,\n  vadFilter: $vadFilter,\n)';
 
- }
+}

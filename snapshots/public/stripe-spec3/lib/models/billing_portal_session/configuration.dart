@@ -8,11 +8,11 @@ const Configuration({this.string = const Omittable.absent(), this.billingPortalC
 const Configuration._({required this.rawValue, required this.string, required this.billingPortalConfiguration, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Configuration.fromJson(Object? json) { return Configuration._(
+factory Configuration.fromJson(Object? json) {return Configuration._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   billingPortalConfiguration: json is Map<String, dynamic> && BillingPortalConfiguration.canParse(json) ? parseAnyOfVariant<BillingPortalConfiguration>(json, (value) => BillingPortalConfiguration.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Configuration(${toJson()})';
 
- }
+}

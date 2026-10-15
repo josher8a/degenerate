@@ -14,7 +14,7 @@ final class TunnelVirtualNetworkApi with ApiExecutor {const TunnelVirtualNetwork
 /// Lists and filters virtual networks in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/virtual_networks`
-Future<ApiResult<List<TunnelVirtualNetwork>, TunnelVirtualNetworkListVirtualNetworksError>> tunnelVirtualNetworkListVirtualNetworks({required TunnelAccountId accountId, TunnelVirtualNetworkId? id, TunnelVirtualNetworkName? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TunnelVirtualNetwork>, TunnelVirtualNetworkListVirtualNetworksError>> tunnelVirtualNetworkListVirtualNetworks({required TunnelAccountId accountId, TunnelVirtualNetworkId? id, TunnelVirtualNetworkName? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id.toJson();
@@ -51,13 +51,13 @@ return await execute(
   },
   onError: TunnelVirtualNetworkListVirtualNetworksError.fromResponse,
 );
- } 
+}
 /// Create a virtual network
 ///
 /// Adds a new virtual network to an account.
 ///
 /// `POST /accounts/{account_id}/teamnet/virtual_networks`
-Future<ApiResult<TunnelVirtualNetwork, TunnelVirtualNetworkCreateAVirtualNetworkError>> tunnelVirtualNetworkCreateAVirtualNetwork({required TunnelAccountId accountId, required TunnelVirtualNetworkCreateAVirtualNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelVirtualNetwork, TunnelVirtualNetworkCreateAVirtualNetworkError>> tunnelVirtualNetworkCreateAVirtualNetwork({required TunnelAccountId accountId, required TunnelVirtualNetworkCreateAVirtualNetworkRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -76,13 +76,13 @@ return await execute(
   },
   onError: TunnelVirtualNetworkCreateAVirtualNetworkError.fromResponse,
 );
- } 
+}
 /// Get a virtual network
 ///
 /// Get a virtual network.
 ///
 /// `GET /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<TunnelVirtualNetwork, TunnelVirtualNetworkGetError>> tunnelVirtualNetworkGet({required TunnelAccountId accountId, required TunnelVirtualNetworkId virtualNetworkId, required TunnelVirtualNetworkGetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelVirtualNetwork, TunnelVirtualNetworkGetError>> tunnelVirtualNetworkGet({required TunnelAccountId accountId, required TunnelVirtualNetworkId virtualNetworkId, required TunnelVirtualNetworkGetRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,13 +101,13 @@ return await execute(
   },
   onError: TunnelVirtualNetworkGetError.fromResponse,
 );
- } 
+}
 /// Update a virtual network
 ///
 /// Updates an existing virtual network.
 ///
 /// `PATCH /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<TunnelVirtualNetwork, TunnelVirtualNetworkUpdateError>> tunnelVirtualNetworkUpdate({required TunnelAccountId accountId, required TunnelVirtualNetworkId virtualNetworkId, required TunnelVirtualNetworkUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelVirtualNetwork, TunnelVirtualNetworkUpdateError>> tunnelVirtualNetworkUpdate({required TunnelAccountId accountId, required TunnelVirtualNetworkId virtualNetworkId, required TunnelVirtualNetworkUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -126,13 +126,13 @@ return await execute(
   },
   onError: TunnelVirtualNetworkUpdateError.fromResponse,
 );
- } 
+}
 /// Delete a virtual network
 ///
 /// Deletes an existing virtual network.
 ///
 /// `DELETE /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<TunnelVirtualNetwork, TunnelVirtualNetworkDeleteError>> tunnelVirtualNetworkDelete({required TunnelVirtualNetworkId virtualNetworkId, required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelVirtualNetwork, TunnelVirtualNetworkDeleteError>> tunnelVirtualNetworkDelete({required TunnelVirtualNetworkId virtualNetworkId, required TunnelAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -149,5 +149,5 @@ return await execute(
   },
   onError: TunnelVirtualNetworkDeleteError.fromResponse,
 );
- } 
- }
+}
+}

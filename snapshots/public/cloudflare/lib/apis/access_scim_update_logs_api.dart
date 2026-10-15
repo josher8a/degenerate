@@ -14,7 +14,7 @@ final class AccessScimUpdateLogsApi with ApiExecutor {const AccessScimUpdateLogs
 /// Lists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/logs/scim/updates`
-Future<ApiResult<List<AccessResponses>?, AccessApplicationsAddAnApplicationError>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, required List<String> idpId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessResponses>?, AccessApplicationsAddAnApplicationError>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, required List<String> idpId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toJson().toString();
@@ -84,5 +84,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

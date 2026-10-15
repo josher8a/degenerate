@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_created_on.dart';import 'package:pub_cloudflare/models/workers_etag.dart';import 'package:pub_cloudflare/models/workers_has_assets.dart';import 'package:pub_cloudflare/models/workers_has_modules.dart';import 'package:pub_cloudflare/models/workers_logpush.dart';import 'package:pub_cloudflare/models/workers_modified_on.dart';import 'package:pub_cloudflare/models/workers_observability.dart';import 'package:pub_cloudflare/models/workers_placement_info.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_smart.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted2.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted3.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_targeted4.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant2.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant3.dart';import 'package:pub_cloudflare/models/workers_placement_info/workers_placement_info_variant4.dart';import 'package:pub_cloudflare/models/workers_placement_mode.dart';import 'package:pub_cloudflare/models/workers_placement_status.dart';import 'package:pub_cloudflare/models/workers_route.dart';import 'package:pub_cloudflare/models/workers_script_response/named_handlers.dart';import 'package:pub_cloudflare/models/workers_tag.dart';import 'package:pub_cloudflare/models/workers_tail_consumers_script.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';@immutable final class WorkersScriptResponseCollectionResult {const WorkersScriptResponseCollectionResult({this.compatibilityDate, this.compatibilityFlags, this.createdOn, this.etag, this.handlers, this.hasAssets, this.hasModules, this.id, this.lastDeployedFrom, this.logpush, this.migrationTag, this.modifiedOn, this.namedHandlers, this.observability, this.placement, this.placementMode, this.placementStatus, this.tag, this.tags = const Omittable.absent(), this.tailConsumers = const Omittable.absent(), this.usageModel, this.routes = const Omittable.absent(), });
 
-factory WorkersScriptResponseCollectionResult.fromJson(Map<String, dynamic> json) { return WorkersScriptResponseCollectionResult(
+factory WorkersScriptResponseCollectionResult.fromJson(Map<String, dynamic> json) {return WorkersScriptResponseCollectionResult(
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
   createdOn: json['created_on'] != null ? WorkersCreatedOn.fromJson(json['created_on'] as String) : null,
@@ -26,7 +26,7 @@ factory WorkersScriptResponseCollectionResult.fromJson(Map<String, dynamic> json
   tailConsumers: json.containsKey('tail_consumers') ? Omittable((json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
   routes: json.containsKey('routes') ? Omittable((json['routes'] as List<dynamic>?)?.map((e) => WorkersRoute.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
 final WorkersCompatibilityDate? compatibilityDate;
@@ -99,7 +99,7 @@ final WorkersUsageModel? usageModel;
 /// Routes associated with the Worker.
 final Omittable<List<WorkersRoute>?> routes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (compatibilityDate != null) 'compatibility_date': compatibilityDate?.toJson(),
   if (compatibilityFlags != null) 'compatibility_flags': compatibilityFlags?.map((e) => e.toJson()).toList(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
@@ -122,16 +122,16 @@ Map<String, dynamic> toJson() { return {
   if (tailConsumers.isPresent) 'tail_consumers': tailConsumers.value?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
   if (routes.isPresent) 'routes': routes.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compatibility_date', 'compatibility_flags', 'created_on', 'etag', 'handlers', 'has_assets', 'has_modules', 'id', 'last_deployed_from', 'logpush', 'migration_tag', 'modified_on', 'named_handlers', 'observability', 'placement', 'placement_mode', 'placement_status', 'tag', 'tags', 'tail_consumers', 'usage_model', 'routes'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'compatibility_date', 'compatibility_flags', 'created_on', 'etag', 'handlers', 'has_assets', 'has_modules', 'id', 'last_deployed_from', 'logpush', 'migration_tag', 'modified_on', 'named_handlers', 'observability', 'placement', 'placement_mode', 'placement_status', 'tag', 'tags', 'tail_consumers', 'usage_model', 'routes'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final tags$ = tags.value;
 if (tags$ != null) {
   if (tags$.length > 10) { errors.add('tags: must have <= 10 items'); }
 }
-return errors; } 
-WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<NamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, Omittable<List<WorkersRoute>?>? routes, }) { return WorkersScriptResponseCollectionResult(
+return errors;}
+WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<NamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, Omittable<List<WorkersRoute>?>? routes, }) {return WorkersScriptResponseCollectionResult(
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
   compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
@@ -154,7 +154,7 @@ WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Functi
   tailConsumers: tailConsumers ?? this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
   routes: routes ?? this.routes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersScriptResponseCollectionResult &&
           compatibilityDate == other.compatibilityDate &&
@@ -187,4 +187,4 @@ WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Functi
 
 @override String toString() => 'WorkersScriptResponseCollectionResult(\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  createdOn: $createdOn,\n  etag: $etag,\n  handlers: $handlers,\n  hasAssets: $hasAssets,\n  hasModules: $hasModules,\n  id: $id,\n  lastDeployedFrom: $lastDeployedFrom,\n  logpush: $logpush,\n  migrationTag: $migrationTag,\n  modifiedOn: $modifiedOn,\n  namedHandlers: $namedHandlers,\n  observability: $observability,\n  placement: $placement,\n  placementMode: $placementMode,\n  placementStatus: $placementStatus,\n  tag: $tag,\n  tags: $tags,\n  tailConsumers: $tailConsumers,\n  usageModel: $usageModel,\n  routes: $routes,\n)';
 
- }
+}

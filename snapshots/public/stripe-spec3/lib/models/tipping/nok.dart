@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Nok {const Nok({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
 
-factory Nok.fromJson(Map<String, dynamic> json) { return Nok(
+factory Nok.fromJson(Map<String, dynamic> json) {return Nok(
   fixedAmounts: (json['fixed_amounts'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   percentages: (json['percentages'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   smartTipThreshold: json['smart_tip_threshold'] != null ? (json['smart_tip_threshold'] as num).toInt() : null,
-); }
+);}
 
 final List<int>? fixedAmounts;
 
@@ -15,17 +15,17 @@ final List<int>? percentages;
 
 final int? smartTipThreshold;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fixed_amounts': ?fixedAmounts,
   'percentages': ?percentages,
   'smart_tip_threshold': ?smartTipThreshold,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fixed_amounts', 'percentages', 'smart_tip_threshold'}.contains(key)); } 
-Nok copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percentages, int? Function()? smartTipThreshold, }) { return Nok(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fixed_amounts', 'percentages', 'smart_tip_threshold'}.contains(key));}
+Nok copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percentages, int? Function()? smartTipThreshold, }) {return Nok(
   fixedAmounts: fixedAmounts != null ? fixedAmounts() : this.fixedAmounts,
   percentages: percentages != null ? percentages() : this.percentages,
   smartTipThreshold: smartTipThreshold != null ? smartTipThreshold() : this.smartTipThreshold,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Nok &&
           listEquals(fixedAmounts, other.fixedAmounts) &&
@@ -36,4 +36,4 @@ Nok copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percen
 
 @override String toString() => 'Nok(fixedAmounts: $fixedAmounts, percentages: $percentages, smartTipThreshold: $smartTipThreshold)';
 
- }
+}

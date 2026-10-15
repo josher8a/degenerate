@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpectrumConfigBaseAppConfigRequest {const SpectrumConfigBaseAppConfigRequest();
 
-factory SpectrumConfigBaseAppConfigRequest.fromJson(Map<String, dynamic> _) { return const SpectrumConfigBaseAppConfigRequest(); }
+factory SpectrumConfigBaseAppConfigRequest.fromJson(Map<String, dynamic> _) {return const SpectrumConfigBaseAppConfigRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-SpectrumConfigBaseAppConfigRequest copyWith() { return const SpectrumConfigBaseAppConfigRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+SpectrumConfigBaseAppConfigRequest copyWith() {return const SpectrumConfigBaseAppConfigRequest(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigBaseAppConfigRequest;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'SpectrumConfigBaseAppConfigRequest()';
 
- }
+}

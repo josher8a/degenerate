@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/get_indicator_read_response_tags.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/related_events.dart';@immutable final class IndicatorsItems {const IndicatorsItems({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
 
-factory IndicatorsItems.fromJson(Map<String, dynamic> json) { return IndicatorsItems(
+factory IndicatorsItems.fromJson(Map<String, dynamic> json) {return IndicatorsItems(
   createdAt: DateTime.parse(json['createdAt'] as String),
   datasetId: json['datasetId'] as String?,
   indicatorType: json['indicatorType'] as String,
@@ -12,7 +12,7 @@ factory IndicatorsItems.fromJson(Map<String, dynamic> json) { return IndicatorsI
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   uuid: json['uuid'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// Example: `'2022-04-01T00:00:00Z'`
 final DateTime createdAt;
@@ -38,7 +38,7 @@ final String uuid;
 /// Example: `'malicious-domain.com'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'createdAt': createdAt.toIso8601String(),
   'datasetId': ?datasetId,
   'indicatorType': indicatorType,
@@ -47,13 +47,13 @@ Map<String, dynamic> toJson() { return {
   'updatedAt': updatedAt.toIso8601String(),
   'uuid': uuid,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('createdAt') && json['createdAt'] is String &&
       json.containsKey('indicatorType') && json['indicatorType'] is String &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-IndicatorsItems copyWith({DateTime? createdAt, String? Function()? datasetId, String? indicatorType, List<RelatedEvents>? Function()? relatedEvents, List<GetIndicatorReadResponseTags>? Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) { return IndicatorsItems(
+      json.containsKey('value') && json['value'] is String;}
+IndicatorsItems copyWith({DateTime? createdAt, String? Function()? datasetId, String? indicatorType, List<RelatedEvents>? Function()? relatedEvents, List<GetIndicatorReadResponseTags>? Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) {return IndicatorsItems(
   createdAt: createdAt ?? this.createdAt,
   datasetId: datasetId != null ? datasetId() : this.datasetId,
   indicatorType: indicatorType ?? this.indicatorType,
@@ -62,7 +62,7 @@ IndicatorsItems copyWith({DateTime? createdAt, String? Function()? datasetId, St
   updatedAt: updatedAt ?? this.updatedAt,
   uuid: uuid ?? this.uuid,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IndicatorsItems &&
           createdAt == other.createdAt &&
@@ -78,4 +78,4 @@ IndicatorsItems copyWith({DateTime? createdAt, String? Function()? datasetId, St
 
 @override String toString() => 'IndicatorsItems(createdAt: $createdAt, datasetId: $datasetId, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, updatedAt: $updatedAt, uuid: $uuid, value: $value)';
 
- }
+}

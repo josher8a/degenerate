@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_ipam_bgp_prefixes.dart';import 'package:pub_cloudflare/models/addressing_messages2.dart';@immutable final class AddressingResponseCollectionBgp {const AddressingResponseCollectionBgp({required this.errors, required this.messages, required this.success, this.result, });
 
-factory AddressingResponseCollectionBgp.fromJson(Map<String, dynamic> json) { return AddressingResponseCollectionBgp(
+factory AddressingResponseCollectionBgp.fromJson(Map<String, dynamic> json) {return AddressingResponseCollectionBgp(
   errors: (json['errors'] as List<dynamic>).map((e) => AddressingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AddressingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => AddressingIpamBgpPrefixes.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<AddressingMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final List<AddressingIpamBgpPrefixes>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AddressingResponseCollectionBgp copyWith({List<AddressingMessages2>? errors, List<AddressingMessages2>? messages, bool? success, List<AddressingIpamBgpPrefixes>? Function()? result, }) { return AddressingResponseCollectionBgp(
+      json.containsKey('success') && json['success'] is bool;}
+AddressingResponseCollectionBgp copyWith({List<AddressingMessages2>? errors, List<AddressingMessages2>? messages, bool? success, List<AddressingIpamBgpPrefixes>? Function()? result, }) {return AddressingResponseCollectionBgp(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingResponseCollectionBgp &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ AddressingResponseCollectionBgp copyWith({List<AddressingMessages2>? errors, Lis
 
 @override String toString() => 'AddressingResponseCollectionBgp(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

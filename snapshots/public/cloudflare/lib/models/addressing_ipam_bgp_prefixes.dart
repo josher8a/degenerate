@@ -10,7 +10,7 @@ num toJson() => value;
 }
 @immutable final class AddressingIpamBgpPrefixes {const AddressingIpamBgpPrefixes({this.asn = const Omittable.absent(), this.asnPrependCount, this.autoAdvertiseWithdraw, this.bgpSignalOpts, this.cidr, this.createdAt, this.id, this.modifiedAt, this.onDemand, });
 
-factory AddressingIpamBgpPrefixes.fromJson(Map<String, dynamic> json) { return AddressingIpamBgpPrefixes(
+factory AddressingIpamBgpPrefixes.fromJson(Map<String, dynamic> json) {return AddressingIpamBgpPrefixes(
   asn: json.containsKey('asn') ? Omittable(json['asn'] != null ? AddressingSchemasAsn.fromJson(json['asn'] as num) : null) : const Omittable.absent(),
   asnPrependCount: json['asn_prepend_count'] != null ? AddressingAsnPrependCount.fromJson(json['asn_prepend_count'] as num) : null,
   autoAdvertiseWithdraw: json['auto_advertise_withdraw'] != null ? AddressingAutoAdvertiseWithdraw.fromJson(json['auto_advertise_withdraw'] as bool) : null,
@@ -20,7 +20,7 @@ factory AddressingIpamBgpPrefixes.fromJson(Map<String, dynamic> json) { return A
   id: json['id'] != null ? AddressingBgpPrefixIdentifier.fromJson(json['id'] as String) : null,
   modifiedAt: json['modified_at'] != null ? AddressingTimestamp.fromJson(json['modified_at'] as String) : null,
   onDemand: json['on_demand'] != null ? AddressingBgpOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Omittable<AddressingSchemasAsn?> asn;
 
@@ -44,7 +44,7 @@ final AddressingTimestamp? modifiedAt;
 
 final AddressingBgpOnDemand? onDemand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (asn.isPresent) 'asn': asn.value?.toJson(),
   if (asnPrependCount != null) 'asn_prepend_count': asnPrependCount?.toJson(),
   if (autoAdvertiseWithdraw != null) 'auto_advertise_withdraw': autoAdvertiseWithdraw?.toJson(),
@@ -54,9 +54,9 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
   if (onDemand != null) 'on_demand': onDemand?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'asn_prepend_count', 'auto_advertise_withdraw', 'bgp_signal_opts', 'cidr', 'created_at', 'id', 'modified_at', 'on_demand'}.contains(key)); } 
-AddressingIpamBgpPrefixes copyWith({Omittable<AddressingSchemasAsn?>? asn, AddressingAsnPrependCount? Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw? Function()? autoAdvertiseWithdraw, AddressingBgpSignalOpts? Function()? bgpSignalOpts, AddressingCidr? Function()? cidr, AddressingTimestamp? Function()? createdAt, AddressingBgpPrefixIdentifier? Function()? id, AddressingTimestamp? Function()? modifiedAt, AddressingBgpOnDemand? Function()? onDemand, }) { return AddressingIpamBgpPrefixes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'asn', 'asn_prepend_count', 'auto_advertise_withdraw', 'bgp_signal_opts', 'cidr', 'created_at', 'id', 'modified_at', 'on_demand'}.contains(key));}
+AddressingIpamBgpPrefixes copyWith({Omittable<AddressingSchemasAsn?>? asn, AddressingAsnPrependCount? Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw? Function()? autoAdvertiseWithdraw, AddressingBgpSignalOpts? Function()? bgpSignalOpts, AddressingCidr? Function()? cidr, AddressingTimestamp? Function()? createdAt, AddressingBgpPrefixIdentifier? Function()? id, AddressingTimestamp? Function()? modifiedAt, AddressingBgpOnDemand? Function()? onDemand, }) {return AddressingIpamBgpPrefixes(
   asn: asn ?? this.asn,
   asnPrependCount: asnPrependCount != null ? asnPrependCount() : this.asnPrependCount,
   autoAdvertiseWithdraw: autoAdvertiseWithdraw != null ? autoAdvertiseWithdraw() : this.autoAdvertiseWithdraw,
@@ -66,7 +66,7 @@ AddressingIpamBgpPrefixes copyWith({Omittable<AddressingSchemasAsn?>? asn, Addre
   id: id != null ? id() : this.id,
   modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
   onDemand: onDemand != null ? onDemand() : this.onDemand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingIpamBgpPrefixes &&
           asn == other.asn &&
@@ -83,4 +83,4 @@ AddressingIpamBgpPrefixes copyWith({Omittable<AddressingSchemasAsn?>? asn, Addre
 
 @override String toString() => 'AddressingIpamBgpPrefixes(\n  asn: $asn,\n  asnPrependCount: $asnPrependCount,\n  autoAdvertiseWithdraw: $autoAdvertiseWithdraw,\n  bgpSignalOpts: $bgpSignalOpts,\n  cidr: $cidr,\n  createdAt: $createdAt,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  onDemand: $onDemand,\n)';
 
- }
+}

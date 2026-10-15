@@ -8,11 +8,11 @@ const QuoteSubscriptionSchedule({this.string = const Omittable.absent(), this.su
 const QuoteSubscriptionSchedule._({required this.rawValue, required this.string, required this.subscriptionSchedule, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory QuoteSubscriptionSchedule.fromJson(Object? json) { return QuoteSubscriptionSchedule._(
+factory QuoteSubscriptionSchedule.fromJson(Object? json) {return QuoteSubscriptionSchedule._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   subscriptionSchedule: json is Map<String, dynamic> && SubscriptionSchedule.canParse(json) ? parseAnyOfVariant<SubscriptionSchedule>(json, (value) => SubscriptionSchedule.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'QuoteSubscriptionSchedule(${toJson()})';
 
- }
+}

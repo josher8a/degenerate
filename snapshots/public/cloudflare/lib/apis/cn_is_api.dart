@@ -12,7 +12,7 @@ final class CnIsApi with ApiExecutor {const CnIsApi(this.apiConfig);
 /// List existing CNI objects
 ///
 /// `GET /accounts/{account_id}/cni/cnis`
-Future<ApiResult<NscCniList, Never>> listCnis({required NscAccountTag accountId, String? slot, String? tunnelId, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<NscCniList, Never>> listCnis({required NscAccountTag accountId, String? slot, String? tunnelId, int? cursor, int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (slot != null) {
   queryParameters['slot'] = slot;
@@ -44,11 +44,11 @@ return await execute(
     return NscCniList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new CNI object
 ///
 /// `POST /accounts/{account_id}/cni/cnis`
-Future<ApiResult<NscCni, Never>> createCni({required NscAccountTag accountId, required NscCniCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscCni, Never>> createCni({required NscAccountTag accountId, required NscCniCreate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,11 +65,11 @@ return await execute(
     return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get information about a CNI object
 ///
 /// `GET /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<NscCni, Never>> getCni({required String cni, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscCni, Never>> getCni({required String cni, required NscAccountTag accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -84,11 +84,11 @@ return await execute(
     return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Modify stored information about a CNI object
 ///
 /// `PUT /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<NscCni, Never>> updateCni({required String cni, required NscAccountTag accountId, required NscCni body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NscCni, Never>> updateCni({required String cni, required NscAccountTag accountId, required NscCni body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,11 +105,11 @@ return await execute(
     return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a specified CNI object
 ///
 /// `DELETE /accounts/{account_id}/cni/cnis/{cni}`
-Future<ApiResult<void, Never>> deleteCni({required String cni, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteCni({required String cni, required NscAccountTag accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -122,5 +122,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

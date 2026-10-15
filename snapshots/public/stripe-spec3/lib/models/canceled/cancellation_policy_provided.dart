@@ -7,11 +7,11 @@ const CancellationPolicyProvided({this.$bool = const Omittable.absent(), this.ge
 const CancellationPolicyProvided._({required this.rawValue, required this.$bool, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CancellationPolicyProvided.fromJson(Object? json) { return CancellationPolicyProvided._(
+factory CancellationPolicyProvided.fromJson(Object? json) {return CancellationPolicyProvided._(
   rawValue: Omittable(json),
   $bool: parseAnyOfVariant<bool>(json, (value) => value! as bool),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CancellationPolicyProvided(${toJson()})';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/label.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class PullRequestEvent {const PullRequestEvent({required this.action, required this.number, required this.pullRequest, this.assignee, this.assignees, this.label, this.labels, });
 
-factory PullRequestEvent.fromJson(Map<String, dynamic> json) { return PullRequestEvent(
+factory PullRequestEvent.fromJson(Map<String, dynamic> json) {return PullRequestEvent(
   action: json['action'] as String,
   number: (json['number'] as num).toInt(),
   pullRequest: PullRequestMinimal.fromJson(json['pull_request'] as Map<String, dynamic>),
@@ -11,7 +11,7 @@ factory PullRequestEvent.fromJson(Map<String, dynamic> json) { return PullReques
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   label: json['label'] != null ? Label.fromJson(json['label'] as Map<String, dynamic>) : null,
   labels: (json['labels'] as List<dynamic>?)?.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String action;
 
@@ -27,7 +27,7 @@ final Label? label;
 
 final List<Label>? labels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action,
   'number': number,
   'pull_request': pullRequest.toJson(),
@@ -35,11 +35,11 @@ Map<String, dynamic> toJson() { return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   if (label != null) 'label': label?.toJson(),
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] is String &&
       json.containsKey('number') && json['number'] is num &&
-      json.containsKey('pull_request'); } 
-PullRequestEvent copyWith({String? action, int? number, PullRequestMinimal? pullRequest, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Label? Function()? label, List<Label>? Function()? labels, }) { return PullRequestEvent(
+      json.containsKey('pull_request');}
+PullRequestEvent copyWith({String? action, int? number, PullRequestMinimal? pullRequest, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Label? Function()? label, List<Label>? Function()? labels, }) {return PullRequestEvent(
   action: action ?? this.action,
   number: number ?? this.number,
   pullRequest: pullRequest ?? this.pullRequest,
@@ -47,7 +47,7 @@ PullRequestEvent copyWith({String? action, int? number, PullRequestMinimal? pull
   assignees: assignees != null ? assignees() : this.assignees,
   label: label != null ? label() : this.label,
   labels: labels != null ? labels() : this.labels,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestEvent &&
           action == other.action &&
@@ -62,4 +62,4 @@ PullRequestEvent copyWith({String? action, int? number, PullRequestMinimal? pull
 
 @override String toString() => 'PullRequestEvent(action: $action, number: $number, pullRequest: $pullRequest, assignee: $assignee, assignees: $assignees, label: $label, labels: $labels)';
 
- }
+}

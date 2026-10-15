@@ -7,12 +7,12 @@ const Rows({this.$double = const Omittable.absent(), this.string = const Omittab
 const Rows._({required this.rawValue, required this.$double, required this.string, required this.mapStringdynamic, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Rows.fromJson(Object? json) { return Rows._(
+factory Rows.fromJson(Object? json) {return Rows._(
   rawValue: Omittable(json),
   $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   mapStringdynamic: parseAnyOfVariant<Map<String, dynamic>>(json, (value) => value! as Map<String, dynamic>),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -46,4 +46,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Rows(${toJson()})';
 
- }
+}

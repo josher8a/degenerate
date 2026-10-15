@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecurityDeliveryMode {const EmailSecurityDeliveryMode();
 
-factory EmailSecurityDeliveryMode.fromJson(String json) { return switch (json) {
+factory EmailSecurityDeliveryMode.fromJson(String json) {return switch (json) {
   'DIRECT' => direct,
   'BCC' => bcc,
   'JOURNAL' => journal,
   'API' => api,
   'RETRO_SCAN' => retroScan,
   _ => EmailSecurityDeliveryMode$Unknown(json),
-}; }
+};}
 
 static const EmailSecurityDeliveryMode direct = EmailSecurityDeliveryMode$direct._();
 
@@ -25,39 +25,39 @@ static const EmailSecurityDeliveryMode retroScan = EmailSecurityDeliveryMode$ret
 static const List<EmailSecurityDeliveryMode> values = [direct, bcc, journal, api, retroScan];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DIRECT' => 'direct',
   'BCC' => 'bcc',
   'JOURNAL' => 'journal',
   'API' => 'api',
   'RETRO_SCAN' => 'retroScan',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EmailSecurityDeliveryMode$Unknown; } 
+bool get isUnknown {return this is EmailSecurityDeliveryMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() direct, required W Function() bcc, required W Function() journal, required W Function() api, required W Function() retroScan, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() direct, required W Function() bcc, required W Function() journal, required W Function() api, required W Function() retroScan, required W Function(String value) $unknown, }) {return switch (this) {
       EmailSecurityDeliveryMode$direct() => direct(),
       EmailSecurityDeliveryMode$bcc() => bcc(),
       EmailSecurityDeliveryMode$journal() => journal(),
       EmailSecurityDeliveryMode$api() => api(),
       EmailSecurityDeliveryMode$retroScan() => retroScan(),
       EmailSecurityDeliveryMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? bcc, W Function()? journal, W Function()? api, W Function()? retroScan, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? bcc, W Function()? journal, W Function()? api, W Function()? retroScan, W Function(String value)? $unknown, }) {return switch (this) {
       EmailSecurityDeliveryMode$direct() => direct != null ? direct() : orElse(value),
       EmailSecurityDeliveryMode$bcc() => bcc != null ? bcc() : orElse(value),
       EmailSecurityDeliveryMode$journal() => journal != null ? journal() : orElse(value),
       EmailSecurityDeliveryMode$api() => api != null ? api() : orElse(value),
       EmailSecurityDeliveryMode$retroScan() => retroScan != null ? retroScan() : orElse(value),
       EmailSecurityDeliveryMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EmailSecurityDeliveryMode($value)';
 
- }
+}
 @immutable final class EmailSecurityDeliveryMode$direct extends EmailSecurityDeliveryMode {const EmailSecurityDeliveryMode$direct._();
 
 @override String get value => 'DIRECT';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'DIRECT'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDeliveryMode$bcc extends EmailSecurityDeliveryMode {const EmailSecurityDeliveryMode$bcc._();
 
 @override String get value => 'BCC';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'BCC'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDeliveryMode$journal extends EmailSecurityDeliveryMode {const EmailSecurityDeliveryMode$journal._();
 
 @override String get value => 'JOURNAL';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'JOURNAL'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDeliveryMode$api extends EmailSecurityDeliveryMode {const EmailSecurityDeliveryMode$api._();
 
 @override String get value => 'API';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'API'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDeliveryMode$retroScan extends EmailSecurityDeliveryMode {const EmailSecurityDeliveryMode$retroScan._();
 
 @override String get value => 'RETRO_SCAN';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'RETRO_SCAN'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDeliveryMode$Unknown extends EmailSecurityDeliveryMode {const EmailSecurityDeliveryMode$Unknown(this.value);
 
 @override final String value;
@@ -112,4 +112,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class BillingMeterEventObject {const BillingMeterEventObject();
 
-factory BillingMeterEventObject.fromJson(String json) { return switch (json) {
+factory BillingMeterEventObject.fromJson(String json) {return switch (json) {
   'billing.meter_event' => billingMeterEvent,
   _ => BillingMeterEventObject$Unknown(json),
-}; }
+};}
 
 static const BillingMeterEventObject billingMeterEvent = BillingMeterEventObject$billingMeterEvent._();
 
 static const List<BillingMeterEventObject> values = [billingMeterEvent];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'billing.meter_event' => 'billingMeterEvent',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingMeterEventObject$Unknown; } 
+bool get isUnknown {return this is BillingMeterEventObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() billingMeterEvent, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() billingMeterEvent, required W Function(String value) $unknown, }) {return switch (this) {
       BillingMeterEventObject$billingMeterEvent() => billingMeterEvent(),
       BillingMeterEventObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingMeterEvent, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingMeterEvent, W Function(String value)? $unknown, }) {return switch (this) {
       BillingMeterEventObject$billingMeterEvent() => billingMeterEvent != null ? billingMeterEvent() : orElse(value),
       BillingMeterEventObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingMeterEventObject($value)';
 
- }
+}
 @immutable final class BillingMeterEventObject$billingMeterEvent extends BillingMeterEventObject {const BillingMeterEventObject$billingMeterEvent._();
 
 @override String get value => 'billing.meter_event';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingM
 
 @override int get hashCode => 'billing.meter_event'.hashCode;
 
- }
+}
 @immutable final class BillingMeterEventObject$Unknown extends BillingMeterEventObject {const BillingMeterEventObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingM
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Meter events represent actions that customers take in your system. You can use meter events to bill a customer based on their usage. Meter events are associated with billing meters, which define both the contents of the event’s payload and how to aggregate those events.
 @immutable final class BillingMeterEvent {const BillingMeterEvent({required this.created, required this.eventName, required this.identifier, required this.livemode, required this.object, required this.payload, required this.timestamp, });
 
-factory BillingMeterEvent.fromJson(Map<String, dynamic> json) { return BillingMeterEvent(
+factory BillingMeterEvent.fromJson(Map<String, dynamic> json) {return BillingMeterEvent(
   created: (json['created'] as num).toInt(),
   eventName: json['event_name'] as String,
   identifier: json['identifier'] as String,
@@ -65,7 +65,7 @@ factory BillingMeterEvent.fromJson(Map<String, dynamic> json) { return BillingMe
   object: BillingMeterEventObject.fromJson(json['object'] as String),
   payload: (json['payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   timestamp: (json['timestamp'] as num).toInt(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -88,7 +88,7 @@ final Map<String,String> payload;
 /// The timestamp passed in when creating the event. Measured in seconds since the Unix epoch.
 final int timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'event_name': eventName,
   'identifier': identifier,
@@ -96,20 +96,20 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'payload': payload,
   'timestamp': timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('event_name') && json['event_name'] is String &&
       json.containsKey('identifier') && json['identifier'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('payload') &&
-      json.containsKey('timestamp') && json['timestamp'] is num; } 
+      json.containsKey('timestamp') && json['timestamp'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (eventName.runes.length > 100) { errors.add('eventName: length must be <= 100'); }
 if (identifier.runes.length > 5000) { errors.add('identifier: length must be <= 5000'); }
-return errors; } 
-BillingMeterEvent copyWith({int? created, String? eventName, String? identifier, bool? livemode, BillingMeterEventObject? object, Map<String,String>? payload, int? timestamp, }) { return BillingMeterEvent(
+return errors;}
+BillingMeterEvent copyWith({int? created, String? eventName, String? identifier, bool? livemode, BillingMeterEventObject? object, Map<String,String>? payload, int? timestamp, }) {return BillingMeterEvent(
   created: created ?? this.created,
   eventName: eventName ?? this.eventName,
   identifier: identifier ?? this.identifier,
@@ -117,7 +117,7 @@ BillingMeterEvent copyWith({int? created, String? eventName, String? identifier,
   object: object ?? this.object,
   payload: payload ?? this.payload,
   timestamp: timestamp ?? this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterEvent &&
           created == other.created &&
@@ -132,4 +132,4 @@ BillingMeterEvent copyWith({int? created, String? eventName, String? identifier,
 
 @override String toString() => 'BillingMeterEvent(created: $created, eventName: $eventName, identifier: $identifier, livemode: $livemode, object: $object, payload: $payload, timestamp: $timestamp)';
 
- }
+}

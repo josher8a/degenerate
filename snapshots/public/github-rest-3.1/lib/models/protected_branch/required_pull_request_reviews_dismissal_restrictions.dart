@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';@immutable final class RequiredPullRequestReviewsDismissalRestrictions {const RequiredPullRequestReviewsDismissalRestrictions({required this.url, required this.usersUrl, required this.teamsUrl, required this.users, required this.teams, this.apps, });
 
-factory RequiredPullRequestReviewsDismissalRestrictions.fromJson(Map<String, dynamic> json) { return RequiredPullRequestReviewsDismissalRestrictions(
+factory RequiredPullRequestReviewsDismissalRestrictions.fromJson(Map<String, dynamic> json) {return RequiredPullRequestReviewsDismissalRestrictions(
   url: Uri.parse(json['url'] as String),
   usersUrl: Uri.parse(json['users_url'] as String),
   teamsUrl: Uri.parse(json['teams_url'] as String),
   users: (json['users'] as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   teams: (json['teams'] as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
   apps: (json['apps'] as List<dynamic>?)?.map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -24,27 +24,27 @@ final List<Team> teams;
 
 final List<Integration?>? apps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'users_url': usersUrl.toString(),
   'teams_url': teamsUrl.toString(),
   'users': users.map((e) => e.toJson()).toList(),
   'teams': teams.map((e) => e.toJson()).toList(),
   if (apps != null) 'apps': apps?.map((e) => e?.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('users_url') && json['users_url'] is String &&
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('users') &&
-      json.containsKey('teams'); } 
-RequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, List<SimpleUser>? users, List<Team>? teams, List<Integration?>? Function()? apps, }) { return RequiredPullRequestReviewsDismissalRestrictions(
+      json.containsKey('teams');}
+RequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, List<SimpleUser>? users, List<Team>? teams, List<Integration?>? Function()? apps, }) {return RequiredPullRequestReviewsDismissalRestrictions(
   url: url ?? this.url,
   usersUrl: usersUrl ?? this.usersUrl,
   teamsUrl: teamsUrl ?? this.teamsUrl,
   users: users ?? this.users,
   teams: teams ?? this.teams,
   apps: apps != null ? apps() : this.apps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequiredPullRequestReviewsDismissalRestrictions &&
           url == other.url &&
@@ -58,4 +58,4 @@ RequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUr
 
 @override String toString() => 'RequiredPullRequestReviewsDismissalRestrictions(url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl, users: $users, teams: $teams, apps: $apps)';
 
- }
+}

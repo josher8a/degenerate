@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTreasuryInboundTransfersIdSucceedRequest {const PostTestHelpersTreasuryInboundTransfersIdSucceedRequest({this.expand});
 
-factory PostTestHelpersTreasuryInboundTransfersIdSucceedRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryInboundTransfersIdSucceedRequest(
+factory PostTestHelpersTreasuryInboundTransfersIdSucceedRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersTreasuryInboundTransfersIdSucceedRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
-PostTestHelpersTreasuryInboundTransfersIdSucceedRequest copyWith({List<String>? Function()? expand}) { return PostTestHelpersTreasuryInboundTransfersIdSucceedRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand'}.contains(key));}
+PostTestHelpersTreasuryInboundTransfersIdSucceedRequest copyWith({List<String>? Function()? expand}) {return PostTestHelpersTreasuryInboundTransfersIdSucceedRequest(
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTreasuryInboundTransfersIdSucceedRequest &&
           listEquals(expand, other.expand);
@@ -25,4 +25,4 @@ PostTestHelpersTreasuryInboundTransfersIdSucceedRequest copyWith({List<String>? 
 
 @override String toString() => 'PostTestHelpersTreasuryInboundTransfersIdSucceedRequest(expand: $expand)';
 
- }
+}

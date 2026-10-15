@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';sealed class ActionsApproveWorkflowRunError {const ActionsApproveWorkflowRunError();
 
-factory ActionsApproveWorkflowRunError.fromResponse(ApiResponse response) {     try {
+factory ActionsApproveWorkflowRunError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         403 => ActionsApproveWorkflowRunError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => ActionsApproveWorkflowRunError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -10,12 +10,12 @@ factory ActionsApproveWorkflowRunError.fromResponse(ApiResponse response) {     
       };
     } on Object {
       return ActionsApproveWorkflowRunError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class ActionsApproveWorkflowRunError$403 extends ActionsApproveWorkflowRunError {const ActionsApproveWorkflowRunError$403(this.error);
 
 final BasicError error;
@@ -24,7 +24,7 @@ final BasicError error;
 
 @override int get statusCode => 403;
 
- }
+}
 final class ActionsApproveWorkflowRunError$404 extends ActionsApproveWorkflowRunError {const ActionsApproveWorkflowRunError$404(this.error);
 
 final BasicError error;
@@ -33,14 +33,14 @@ final BasicError error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class ActionsApproveWorkflowRunError$Unknown extends ActionsApproveWorkflowRunError {const ActionsApproveWorkflowRunError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef ActionsGetActionsCacheRetentionLimitForEnterpriseError = ActionsApproveWorkflowRunError;
 typedef ActionsGetActionsCacheRetentionLimitForOrganizationError = ActionsApproveWorkflowRunError;
 typedef ActionsGetActionsCacheRetentionLimitForRepositoryError = ActionsApproveWorkflowRunError;

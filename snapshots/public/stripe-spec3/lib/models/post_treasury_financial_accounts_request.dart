@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/nickname.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/platform_restrictions.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/post_treasury_financial_accounts_financial_account_request_features.dart';@immutable final class PostTreasuryFinancialAccountsRequest {const PostTreasuryFinancialAccountsRequest({required this.supportedCurrencies, this.expand, this.features, this.metadata, this.nickname, this.platformRestrictions, });
 
-factory PostTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequest(
+factory PostTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: json['features'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nickname: json['nickname'] != null ? Nickname.fromJson(json['nickname']) : null,
   platformRestrictions: json['platform_restrictions'] != null ? PlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
   supportedCurrencies: (json['supported_currencies'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -30,23 +30,23 @@ final PlatformRestrictions? platformRestrictions;
 /// The currencies the FinancialAccount can hold a balance in.
 final List<String> supportedCurrencies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   if (features != null) 'features': features?.toJson(),
   'metadata': ?metadata,
   if (nickname != null) 'nickname': nickname?.toJson(),
   if (platformRestrictions != null) 'platform_restrictions': platformRestrictions?.toJson(),
   'supported_currencies': supportedCurrencies,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported_currencies'); } 
-PostTreasuryFinancialAccountsRequest copyWith({List<String>? Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures? Function()? features, Map<String, String>? Function()? metadata, Nickname? Function()? nickname, PlatformRestrictions? Function()? platformRestrictions, List<String>? supportedCurrencies, }) { return PostTreasuryFinancialAccountsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('supported_currencies');}
+PostTreasuryFinancialAccountsRequest copyWith({List<String>? Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures? Function()? features, Map<String, String>? Function()? metadata, Nickname? Function()? nickname, PlatformRestrictions? Function()? platformRestrictions, List<String>? supportedCurrencies, }) {return PostTreasuryFinancialAccountsRequest(
   expand: expand != null ? expand() : this.expand,
   features: features != null ? features() : this.features,
   metadata: metadata != null ? metadata() : this.metadata,
   nickname: nickname != null ? nickname() : this.nickname,
   platformRestrictions: platformRestrictions != null ? platformRestrictions() : this.platformRestrictions,
   supportedCurrencies: supportedCurrencies ?? this.supportedCurrencies,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryFinancialAccountsRequest &&
           listEquals(expand, other.expand) &&
@@ -60,4 +60,4 @@ PostTreasuryFinancialAccountsRequest copyWith({List<String>? Function()? expand,
 
 @override String toString() => 'PostTreasuryFinancialAccountsRequest(expand: $expand, features: $features, metadata: $metadata, nickname: $nickname, platformRestrictions: $platformRestrictions, supportedCurrencies: $supportedCurrencies)';
 
- }
+}

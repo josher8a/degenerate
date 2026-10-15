@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_assigned/webhook_pull_request_assigned_pull_request_head_repo.dart';@immutable final class WebhookPullRequestAssignedPullRequestHead {const WebhookPullRequestAssignedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
-factory WebhookPullRequestAssignedPullRequestHead.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAssignedPullRequestHead(
+factory WebhookPullRequestAssignedPullRequestHead.fromJson(Map<String, dynamic> json) {return WebhookPullRequestAssignedPullRequestHead(
   label: json['label'] as String?,
   ref: json['ref'] as String,
   repo: json['repo'] != null ? WebhookPullRequestAssignedPullRequestHeadRepo.fromJson(json['repo'] as Map<String, dynamic>) : null,
   sha: json['sha'] as String,
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? label;
 
@@ -22,25 +22,25 @@ final String sha;
 
 final DiscussionUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'label': label,
   'ref': ref,
   'repo': repo?.toJson(),
   'sha': sha,
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && (json['label'] == null || json['label'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('label') && (json['label'] == null || json['label'] is String) &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repo') &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestAssignedPullRequestHead copyWith({String? Function()? label, String? ref, WebhookPullRequestAssignedPullRequestHeadRepo? Function()? repo, String? sha, DiscussionUser? Function()? user, }) { return WebhookPullRequestAssignedPullRequestHead(
+      json.containsKey('user');}
+WebhookPullRequestAssignedPullRequestHead copyWith({String? Function()? label, String? ref, WebhookPullRequestAssignedPullRequestHeadRepo? Function()? repo, String? sha, DiscussionUser? Function()? user, }) {return WebhookPullRequestAssignedPullRequestHead(
   label: label != null ? label() : this.label,
   ref: ref ?? this.ref,
   repo: repo != null ? repo() : this.repo,
   sha: sha ?? this.sha,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestAssignedPullRequestHead &&
           label == other.label &&
@@ -53,4 +53,4 @@ WebhookPullRequestAssignedPullRequestHead copyWith({String? Function()? label, S
 
 @override String toString() => 'WebhookPullRequestAssignedPullRequestHead(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)';
 
- }
+}

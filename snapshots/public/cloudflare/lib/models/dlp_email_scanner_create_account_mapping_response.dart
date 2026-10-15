@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_addin_account_mapping.dart';import 'package:pub_cloudflare/models/dlp_messages2.dart';@immutable final class DlpEmailScannerCreateAccountMappingResponse {const DlpEmailScannerCreateAccountMappingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory DlpEmailScannerCreateAccountMappingResponse.fromJson(Map<String, dynamic> json) { return DlpEmailScannerCreateAccountMappingResponse(
+factory DlpEmailScannerCreateAccountMappingResponse.fromJson(Map<String, dynamic> json) {return DlpEmailScannerCreateAccountMappingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? DlpAddinAccountMapping.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<DlpMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final DlpAddinAccountMapping? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DlpEmailScannerCreateAccountMappingResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, DlpAddinAccountMapping? Function()? result, }) { return DlpEmailScannerCreateAccountMappingResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DlpEmailScannerCreateAccountMappingResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, DlpAddinAccountMapping? Function()? result, }) {return DlpEmailScannerCreateAccountMappingResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEmailScannerCreateAccountMappingResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ DlpEmailScannerCreateAccountMappingResponse copyWith({List<DlpMessages2>? errors
 
 @override String toString() => 'DlpEmailScannerCreateAccountMappingResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync.dart';import 'package:pub_cloudflare/models/mcn_error.dart';@immutable final class McnCreateCatalogSyncResponse {const McnCreateCatalogSyncResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory McnCreateCatalogSyncResponse.fromJson(Map<String, dynamic> json) { return McnCreateCatalogSyncResponse(
+factory McnCreateCatalogSyncResponse.fromJson(Map<String, dynamic> json) {return McnCreateCatalogSyncResponse(
   messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   errors: (json['errors'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
   result: McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<McnError> messages;
 
@@ -18,22 +18,22 @@ final List<McnError> errors;
 
 final McnCatalogSync result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'errors': errors.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('errors') &&
-      json.containsKey('result'); } 
-McnCreateCatalogSyncResponse copyWith({List<McnError>? messages, bool? success, List<McnError>? errors, McnCatalogSync? result, }) { return McnCreateCatalogSyncResponse(
+      json.containsKey('result');}
+McnCreateCatalogSyncResponse copyWith({List<McnError>? messages, bool? success, List<McnError>? errors, McnCatalogSync? result, }) {return McnCreateCatalogSyncResponse(
   messages: messages ?? this.messages,
   success: success ?? this.success,
   errors: errors ?? this.errors,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnCreateCatalogSyncResponse &&
           listEquals(messages, other.messages) &&
@@ -45,4 +45,4 @@ McnCreateCatalogSyncResponse copyWith({List<McnError>? messages, bool? success, 
 
 @override String toString() => 'McnCreateCatalogSyncResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

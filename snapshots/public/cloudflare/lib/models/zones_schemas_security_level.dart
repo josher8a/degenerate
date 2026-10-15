@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_security_level_value.dart';/// Choose the appropriate security profile for your website, which will automatically adjust each of the security settings. If you choose to customize an individual security setting, the profile will become Custom. (https://support.cloudflare.com/hc/en-us/articles/200170056).
 @immutable final class ZonesSchemasSecurityLevel {const ZonesSchemasSecurityLevel({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
-factory ZonesSchemasSecurityLevel.fromJson(Map<String, dynamic> json) { return ZonesSchemasSecurityLevel(
+factory ZonesSchemasSecurityLevel.fromJson(Map<String, dynamic> json) {return ZonesSchemasSecurityLevel(
   editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesSecurityLevelValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -29,20 +29,20 @@ final ZonesSecurityLevelValue value;
 /// The value of `editable`, or its schema default when absent.
 bool get editableOrDefault => editable ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesSchemasSecurityLevel copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesSecurityLevelValue? value, }) { return ZonesSchemasSecurityLevel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesSchemasSecurityLevel copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesSecurityLevelValue? value, }) {return ZonesSchemasSecurityLevel(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesSchemasSecurityLevel &&
           editable == other.editable &&
@@ -54,4 +54,4 @@ ZonesSchemasSecurityLevel copyWith({bool? Function()? editable, dynamic Function
 
 @override String toString() => 'ZonesSchemasSecurityLevel(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

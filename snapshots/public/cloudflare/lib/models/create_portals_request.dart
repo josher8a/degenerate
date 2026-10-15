@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_request/create_portals_request_servers.dart';@immutable final class CreatePortalsRequest {const CreatePortalsRequest({required this.hostname, required this.id, required this.name, this.description, this.secureWebGateway, this.servers, });
 
-factory CreatePortalsRequest.fromJson(Map<String, dynamic> json) { return CreatePortalsRequest(
+factory CreatePortalsRequest.fromJson(Map<String, dynamic> json) {return CreatePortalsRequest(
   description: json['description'] as String?,
   hostname: json['hostname'] as String,
   id: json['id'] as String,
   name: json['name'] as String,
   secureWebGateway: json['secure_web_gateway'] as bool?,
   servers: (json['servers'] as List<dynamic>?)?.map((e) => CreatePortalsRequestServers.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Example: `'This is my custom MCP Portal'`
 final String? description;
@@ -33,19 +33,19 @@ final bool? secureWebGateway;
 
 final List<CreatePortalsRequestServers>? servers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'hostname': hostname,
   'id': id,
   'name': name,
   'secure_web_gateway': ?secureWebGateway,
   if (servers != null) 'servers': servers?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 512) { errors.add('description: length must be <= 512'); }
@@ -59,15 +59,15 @@ final servers$ = servers;
 if (servers$ != null) {
   if (servers$.length > 20) { errors.add('servers: must have <= 20 items'); }
 }
-return errors; } 
-CreatePortalsRequest copyWith({String? Function()? description, String? hostname, String? id, String? name, bool? Function()? secureWebGateway, List<CreatePortalsRequestServers>? Function()? servers, }) { return CreatePortalsRequest(
+return errors;}
+CreatePortalsRequest copyWith({String? Function()? description, String? hostname, String? id, String? name, bool? Function()? secureWebGateway, List<CreatePortalsRequestServers>? Function()? servers, }) {return CreatePortalsRequest(
   description: description != null ? description() : this.description,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,
   name: name ?? this.name,
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
   servers: servers != null ? servers() : this.servers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePortalsRequest &&
           description == other.description &&
@@ -81,4 +81,4 @@ CreatePortalsRequest copyWith({String? Function()? description, String? hostname
 
 @override String toString() => 'CreatePortalsRequest(description: $description, hostname: $hostname, id: $id, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)';
 
- }
+}

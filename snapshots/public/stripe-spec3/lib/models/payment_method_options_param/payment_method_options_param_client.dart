@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PaymentMethodOptionsParamClient {const PaymentMethodOptionsParamClient();
 
-factory PaymentMethodOptionsParamClient.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParamClient.fromJson(String json) {return switch (json) {
   'android' => android,
   'ios' => ios,
   'web' => web,
   _ => PaymentMethodOptionsParamClient$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParamClient android = PaymentMethodOptionsParamClient$android._();
 
@@ -19,33 +19,33 @@ static const PaymentMethodOptionsParamClient web = PaymentMethodOptionsParamClie
 static const List<PaymentMethodOptionsParamClient> values = [android, ios, web];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'android' => 'android',
   'ios' => 'ios',
   'web' => 'web',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodOptionsParamClient$Unknown; } 
+bool get isUnknown {return this is PaymentMethodOptionsParamClient$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() android, required W Function() ios, required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() android, required W Function() ios, required W Function() web, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodOptionsParamClient$android() => android(),
       PaymentMethodOptionsParamClient$ios() => ios(),
       PaymentMethodOptionsParamClient$web() => web(),
       PaymentMethodOptionsParamClient$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? android, W Function()? ios, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? android, W Function()? ios, W Function()? web, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodOptionsParamClient$android() => android != null ? android() : orElse(value),
       PaymentMethodOptionsParamClient$ios() => ios != null ? ios() : orElse(value),
       PaymentMethodOptionsParamClient$web() => web != null ? web() : orElse(value),
       PaymentMethodOptionsParamClient$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodOptionsParamClient($value)';
 
- }
+}
 @immutable final class PaymentMethodOptionsParamClient$android extends PaymentMethodOptionsParamClient {const PaymentMethodOptionsParamClient$android._();
 
 @override String get value => 'android';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
 @override int get hashCode => 'android'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamClient$ios extends PaymentMethodOptionsParamClient {const PaymentMethodOptionsParamClient$ios._();
 
 @override String get value => 'ios';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
 @override int get hashCode => 'ios'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamClient$web extends PaymentMethodOptionsParamClient {const PaymentMethodOptionsParamClient$web._();
 
 @override String get value => 'web';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
 @override int get hashCode => 'web'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamClient$Unknown extends PaymentMethodOptionsParamClient {const PaymentMethodOptionsParamClient$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

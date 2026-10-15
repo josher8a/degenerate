@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_id.dart';import 'package:pub_cloudflare/models/access_meta.dart';import 'package:pub_cloudflare/models/access_users/emails.dart';@immutable final class AccessUsers {const AccessUsers({this.active, this.displayName, this.emails, this.externalId, this.id, this.meta, this.schemas, });
 
-factory AccessUsers.fromJson(Map<String, dynamic> json) { return AccessUsers(
+factory AccessUsers.fromJson(Map<String, dynamic> json) {return AccessUsers(
   active: json['active'] as bool?,
   displayName: json['displayName'] as String?,
   emails: (json['emails'] as List<dynamic>?)?.map((e) => Emails.fromJson(e as Map<String, dynamic>)).toList(),
@@ -11,7 +11,7 @@ factory AccessUsers.fromJson(Map<String, dynamic> json) { return AccessUsers(
   id: json['id'] != null ? AccessId.fromJson(json['id'] as String) : null,
   meta: json['meta'] != null ? AccessMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   schemas: (json['schemas'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Determines the status of the SCIM User resource.
 /// 
@@ -40,7 +40,7 @@ final AccessMeta? meta;
 /// Example: `[urn:ietf:params:scim:schemas:core:2.0:User]`
 final List<String>? schemas;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'displayName': ?displayName,
   if (emails != null) 'emails': emails?.map((e) => e.toJson()).toList(),
@@ -48,9 +48,9 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (meta != null) 'meta': meta?.toJson(),
   'schemas': ?schemas,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'displayName', 'emails', 'externalId', 'id', 'meta', 'schemas'}.contains(key)); } 
-AccessUsers copyWith({bool? Function()? active, String? Function()? displayName, List<Emails>? Function()? emails, String? Function()? externalId, AccessId? Function()? id, AccessMeta? Function()? meta, List<String>? Function()? schemas, }) { return AccessUsers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'displayName', 'emails', 'externalId', 'id', 'meta', 'schemas'}.contains(key));}
+AccessUsers copyWith({bool? Function()? active, String? Function()? displayName, List<Emails>? Function()? emails, String? Function()? externalId, AccessId? Function()? id, AccessMeta? Function()? meta, List<String>? Function()? schemas, }) {return AccessUsers(
   active: active != null ? active() : this.active,
   displayName: displayName != null ? displayName() : this.displayName,
   emails: emails != null ? emails() : this.emails,
@@ -58,7 +58,7 @@ AccessUsers copyWith({bool? Function()? active, String? Function()? displayName,
   id: id != null ? id() : this.id,
   meta: meta != null ? meta() : this.meta,
   schemas: schemas != null ? schemas() : this.schemas,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessUsers &&
           active == other.active &&
@@ -73,4 +73,4 @@ AccessUsers copyWith({bool? Function()? active, String? Function()? displayName,
 
 @override String toString() => 'AccessUsers(active: $active, displayName: $displayName, emails: $emails, externalId: $externalId, id: $id, meta: $meta, schemas: $schemas)';
 
- }
+}

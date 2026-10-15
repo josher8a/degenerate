@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_error_missing_param.dart';import 'package:pub_cloudflare/models/workers_error_worker_invalid.dart';import 'package:pub_cloudflare/models/workers_error_worker_name_invalid.dart';import 'package:pub_cloudflare/models/workers_error_worker_name_preview_length_limit.dart';import 'package:pub_cloudflare/models/workers_error_worker_name_subdomain_length_limit.dart';import 'package:pub_cloudflare/models/workers_error_worker_observability_sampling_rate_invalid.dart';import 'package:pub_cloudflare/models/workers_error_worker_tag_invalid.dart';import 'package:pub_cloudflare/models/workers_error_worker_tag_length_limit.dart';sealed class EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode();
 
-factory EditWorkerResponse400ErrorsCode.fromJson(String json) { return switch (json) {
+factory EditWorkerResponse400ErrorsCode.fromJson(String json) {return switch (json) {
   '10003' => $10003,
   '10016' => $10016,
   '10021' => $10021,
@@ -13,7 +13,7 @@ factory EditWorkerResponse400ErrorsCode.fromJson(String json) { return switch (j
   '100308' => $100308,
   '100315' => $100315,
   _ => EditWorkerResponse400ErrorsCode$Unknown(json),
-}; }
+};}
 
 static const EditWorkerResponse400ErrorsCode $10003 = EditWorkerResponse400ErrorsCode$10003._();
 
@@ -38,7 +38,7 @@ String toJson() => value;
 
 bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$10003 extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$10003._();
 
 @override String get value => '10003';
@@ -49,7 +49,7 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode(10003)';
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$10016 extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$10016._();
 
 @override String get value => '10016';
@@ -60,7 +60,7 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode(10016)';
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$10021 extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$10021._();
 
 @override String get value => '10021';
@@ -71,7 +71,7 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode(10021)';
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$100102 extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$100102._();
 
 @override String get value => '100102';
@@ -82,7 +82,7 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode(100102)';
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$100132 extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$100132._();
 
 @override String get value => '100132';
@@ -93,7 +93,7 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode(100132)';
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$100134 extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$100134._();
 
 @override String get value => '100134';
@@ -104,7 +104,7 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode(100134)';
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$100308 extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$100308._();
 
 @override String get value => '100308';
@@ -115,7 +115,7 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode(100308)';
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$100315 extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$100315._();
 
 @override String get value => '100315';
@@ -126,7 +126,7 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode(100315)';
 
- }
+}
 @immutable final class EditWorkerResponse400ErrorsCode$Unknown extends EditWorkerResponse400ErrorsCode {const EditWorkerResponse400ErrorsCode$Unknown(this.value);
 
 @override final String value;
@@ -137,11 +137,11 @@ bool get isUnknown => this is EditWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'EditWorkerResponse400ErrorsCode($value)';
 
- }
+}
 sealed class EditWorkerResponse400Errors {const EditWorkerResponse400Errors();
 
 /// Deserialize from JSON, dispatching on the `code` discriminator.
-factory EditWorkerResponse400Errors.fromJson(Map<String, dynamic> json) { return switch (json['code']) {
+factory EditWorkerResponse400Errors.fromJson(Map<String, dynamic> json) {return switch (json['code']) {
   '10003' => EditWorkerResponse400Errors10003.fromJson(json),
   '10016' => EditWorkerResponse400Errors10016.fromJson(json),
   '10021' => EditWorkerResponse400Errors10021.fromJson(json),
@@ -151,31 +151,31 @@ factory EditWorkerResponse400Errors.fromJson(Map<String, dynamic> json) { return
   '100308' => EditWorkerResponse400Errors100308.fromJson(json),
   '100315' => EditWorkerResponse400Errors100315.fromJson(json),
   _ => EditWorkerResponse400Errors$Unknown(json),
-}; }
+};}
 
 /// Build the `10003` variant.
-factory EditWorkerResponse400Errors.$10003({required String message}) { return EditWorkerResponse400Errors10003(WorkersErrorMissingParam(code: WorkersErrorMissingParamCode.fromJson(10003), message: message)); }
+factory EditWorkerResponse400Errors.$10003({required String message}) {return EditWorkerResponse400Errors10003(WorkersErrorMissingParam(code: WorkersErrorMissingParamCode.fromJson(10003), message: message));}
 
 /// Build the `10016` variant.
-factory EditWorkerResponse400Errors.$10016({required String message}) { return EditWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid(code: WorkersErrorWorkerNameInvalidCode.fromJson(10016), message: message)); }
+factory EditWorkerResponse400Errors.$10016({required String message}) {return EditWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid(code: WorkersErrorWorkerNameInvalidCode.fromJson(10016), message: message));}
 
 /// Build the `10021` variant.
-factory EditWorkerResponse400Errors.$10021({required String message}) { return EditWorkerResponse400Errors10021(WorkersErrorWorkerInvalid(code: WorkersErrorWorkerInvalidCode.fromJson(10021), message: message)); }
+factory EditWorkerResponse400Errors.$10021({required String message}) {return EditWorkerResponse400Errors10021(WorkersErrorWorkerInvalid(code: WorkersErrorWorkerInvalidCode.fromJson(10021), message: message));}
 
 /// Build the `100102` variant.
-factory EditWorkerResponse400Errors.$100102({required String message}) { return EditWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit(code: WorkersErrorWorkerTagLengthLimitCode.fromJson(100102), message: message)); }
+factory EditWorkerResponse400Errors.$100102({required String message}) {return EditWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit(code: WorkersErrorWorkerTagLengthLimitCode.fromJson(100102), message: message));}
 
 /// Build the `100132` variant.
-factory EditWorkerResponse400Errors.$100132({required String message}) { return EditWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit(code: WorkersErrorWorkerNameSubdomainLengthLimitCode.fromJson(100132), message: message)); }
+factory EditWorkerResponse400Errors.$100132({required String message}) {return EditWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit(code: WorkersErrorWorkerNameSubdomainLengthLimitCode.fromJson(100132), message: message));}
 
 /// Build the `100134` variant.
-factory EditWorkerResponse400Errors.$100134({required String message}) { return EditWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid(code: WorkersErrorWorkerTagInvalidCode.fromJson(100134), message: message)); }
+factory EditWorkerResponse400Errors.$100134({required String message}) {return EditWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid(code: WorkersErrorWorkerTagInvalidCode.fromJson(100134), message: message));}
 
 /// Build the `100308` variant.
-factory EditWorkerResponse400Errors.$100308({required String message}) { return EditWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid(code: WorkersErrorWorkerObservabilitySamplingRateInvalidCode.fromJson(100308), message: message)); }
+factory EditWorkerResponse400Errors.$100308({required String message}) {return EditWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid(code: WorkersErrorWorkerObservabilitySamplingRateInvalidCode.fromJson(100308), message: message));}
 
 /// Build the `100315` variant.
-factory EditWorkerResponse400Errors.$100315({required String message}) { return EditWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit(code: WorkersErrorWorkerNamePreviewLengthLimitCode.fromJson(100315), message: message)); }
+factory EditWorkerResponse400Errors.$100315({required String message}) {return EditWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit(code: WorkersErrorWorkerNamePreviewLengthLimitCode.fromJson(100315), message: message));}
 
 /// The discriminator value identifying this variant.
 EditWorkerResponse400ErrorsCode get code;
@@ -185,7 +185,7 @@ bool get isUnknown => this is EditWorkerResponse400Errors$Unknown;
 
 /// Shared by all variants of this union.
 String get message;
-R when<R>({required R Function(EditWorkerResponse400Errors10003) $10003, required R Function(EditWorkerResponse400Errors10016) $10016, required R Function(EditWorkerResponse400Errors10021) $10021, required R Function(EditWorkerResponse400Errors100102) $100102, required R Function(EditWorkerResponse400Errors100132) $100132, required R Function(EditWorkerResponse400Errors100134) $100134, required R Function(EditWorkerResponse400Errors100308) $100308, required R Function(EditWorkerResponse400Errors100315) $100315, required R Function(EditWorkerResponse400Errors$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(EditWorkerResponse400Errors10003) $10003, required R Function(EditWorkerResponse400Errors10016) $10016, required R Function(EditWorkerResponse400Errors10021) $10021, required R Function(EditWorkerResponse400Errors100102) $100102, required R Function(EditWorkerResponse400Errors100132) $100132, required R Function(EditWorkerResponse400Errors100134) $100134, required R Function(EditWorkerResponse400Errors100308) $100308, required R Function(EditWorkerResponse400Errors100315) $100315, required R Function(EditWorkerResponse400Errors$Unknown) unknown, }) {return switch (this) {
   final EditWorkerResponse400Errors10003 v => $10003(v),
   final EditWorkerResponse400Errors10016 v => $10016(v),
   final EditWorkerResponse400Errors10021 v => $10021(v),
@@ -195,11 +195,11 @@ R when<R>({required R Function(EditWorkerResponse400Errors10003) $10003, require
   final EditWorkerResponse400Errors100308 v => $100308(v),
   final EditWorkerResponse400Errors100315 v => $100315(v),
   final EditWorkerResponse400Errors$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class EditWorkerResponse400Errors10003 extends EditWorkerResponse400Errors {const EditWorkerResponse400Errors10003(this.workersErrorMissingParam);
 
-factory EditWorkerResponse400Errors10003.fromJson(Map<String, dynamic> json) { return EditWorkerResponse400Errors10003(WorkersErrorMissingParam.fromJson(json)); }
+factory EditWorkerResponse400Errors10003.fromJson(Map<String, dynamic> json) {return EditWorkerResponse400Errors10003(WorkersErrorMissingParam.fromJson(json));}
 
 final WorkersErrorMissingParam workersErrorMissingParam;
 
@@ -207,9 +207,9 @@ final WorkersErrorMissingParam workersErrorMissingParam;
 
 @override Map<String, dynamic> toJson() => {...workersErrorMissingParam.toJson(), 'code': code.toJson()};
 
-EditWorkerResponse400Errors10003 copyWith({String? message}) { return EditWorkerResponse400Errors10003(workersErrorMissingParam.copyWith(
+EditWorkerResponse400Errors10003 copyWith({String? message}) {return EditWorkerResponse400Errors10003(workersErrorMissingParam.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is EditWorkerResponse400Errors10003 && workersErrorMissingParam == other.workersErrorMissingParam;
 
@@ -219,10 +219,10 @@ EditWorkerResponse400Errors10003 copyWith({String? message}) { return EditWorker
 
 @override String get message => workersErrorMissingParam.message;
 
- }
+}
 @immutable final class EditWorkerResponse400Errors10016 extends EditWorkerResponse400Errors {const EditWorkerResponse400Errors10016(this.workersErrorWorkerNameInvalid);
 
-factory EditWorkerResponse400Errors10016.fromJson(Map<String, dynamic> json) { return EditWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid.fromJson(json)); }
+factory EditWorkerResponse400Errors10016.fromJson(Map<String, dynamic> json) {return EditWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid.fromJson(json));}
 
 final WorkersErrorWorkerNameInvalid workersErrorWorkerNameInvalid;
 
@@ -230,9 +230,9 @@ final WorkersErrorWorkerNameInvalid workersErrorWorkerNameInvalid;
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerNameInvalid.toJson(), 'code': code.toJson()};
 
-EditWorkerResponse400Errors10016 copyWith({String? message}) { return EditWorkerResponse400Errors10016(workersErrorWorkerNameInvalid.copyWith(
+EditWorkerResponse400Errors10016 copyWith({String? message}) {return EditWorkerResponse400Errors10016(workersErrorWorkerNameInvalid.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is EditWorkerResponse400Errors10016 && workersErrorWorkerNameInvalid == other.workersErrorWorkerNameInvalid;
 
@@ -242,10 +242,10 @@ EditWorkerResponse400Errors10016 copyWith({String? message}) { return EditWorker
 
 @override String get message => workersErrorWorkerNameInvalid.message;
 
- }
+}
 @immutable final class EditWorkerResponse400Errors10021 extends EditWorkerResponse400Errors {const EditWorkerResponse400Errors10021(this.workersErrorWorkerInvalid);
 
-factory EditWorkerResponse400Errors10021.fromJson(Map<String, dynamic> json) { return EditWorkerResponse400Errors10021(WorkersErrorWorkerInvalid.fromJson(json)); }
+factory EditWorkerResponse400Errors10021.fromJson(Map<String, dynamic> json) {return EditWorkerResponse400Errors10021(WorkersErrorWorkerInvalid.fromJson(json));}
 
 final WorkersErrorWorkerInvalid workersErrorWorkerInvalid;
 
@@ -253,9 +253,9 @@ final WorkersErrorWorkerInvalid workersErrorWorkerInvalid;
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerInvalid.toJson(), 'code': code.toJson()};
 
-EditWorkerResponse400Errors10021 copyWith({String? message}) { return EditWorkerResponse400Errors10021(workersErrorWorkerInvalid.copyWith(
+EditWorkerResponse400Errors10021 copyWith({String? message}) {return EditWorkerResponse400Errors10021(workersErrorWorkerInvalid.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is EditWorkerResponse400Errors10021 && workersErrorWorkerInvalid == other.workersErrorWorkerInvalid;
 
@@ -265,10 +265,10 @@ EditWorkerResponse400Errors10021 copyWith({String? message}) { return EditWorker
 
 @override String get message => workersErrorWorkerInvalid.message;
 
- }
+}
 @immutable final class EditWorkerResponse400Errors100102 extends EditWorkerResponse400Errors {const EditWorkerResponse400Errors100102(this.workersErrorWorkerTagLengthLimit);
 
-factory EditWorkerResponse400Errors100102.fromJson(Map<String, dynamic> json) { return EditWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit.fromJson(json)); }
+factory EditWorkerResponse400Errors100102.fromJson(Map<String, dynamic> json) {return EditWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit.fromJson(json));}
 
 final WorkersErrorWorkerTagLengthLimit workersErrorWorkerTagLengthLimit;
 
@@ -276,9 +276,9 @@ final WorkersErrorWorkerTagLengthLimit workersErrorWorkerTagLengthLimit;
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerTagLengthLimit.toJson(), 'code': code.toJson()};
 
-EditWorkerResponse400Errors100102 copyWith({String? message}) { return EditWorkerResponse400Errors100102(workersErrorWorkerTagLengthLimit.copyWith(
+EditWorkerResponse400Errors100102 copyWith({String? message}) {return EditWorkerResponse400Errors100102(workersErrorWorkerTagLengthLimit.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is EditWorkerResponse400Errors100102 && workersErrorWorkerTagLengthLimit == other.workersErrorWorkerTagLengthLimit;
 
@@ -288,10 +288,10 @@ EditWorkerResponse400Errors100102 copyWith({String? message}) { return EditWorke
 
 @override String get message => workersErrorWorkerTagLengthLimit.message;
 
- }
+}
 @immutable final class EditWorkerResponse400Errors100132 extends EditWorkerResponse400Errors {const EditWorkerResponse400Errors100132(this.workersErrorWorkerNameSubdomainLengthLimit);
 
-factory EditWorkerResponse400Errors100132.fromJson(Map<String, dynamic> json) { return EditWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit.fromJson(json)); }
+factory EditWorkerResponse400Errors100132.fromJson(Map<String, dynamic> json) {return EditWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit.fromJson(json));}
 
 final WorkersErrorWorkerNameSubdomainLengthLimit workersErrorWorkerNameSubdomainLengthLimit;
 
@@ -299,9 +299,9 @@ final WorkersErrorWorkerNameSubdomainLengthLimit workersErrorWorkerNameSubdomain
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerNameSubdomainLengthLimit.toJson(), 'code': code.toJson()};
 
-EditWorkerResponse400Errors100132 copyWith({String? message}) { return EditWorkerResponse400Errors100132(workersErrorWorkerNameSubdomainLengthLimit.copyWith(
+EditWorkerResponse400Errors100132 copyWith({String? message}) {return EditWorkerResponse400Errors100132(workersErrorWorkerNameSubdomainLengthLimit.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is EditWorkerResponse400Errors100132 && workersErrorWorkerNameSubdomainLengthLimit == other.workersErrorWorkerNameSubdomainLengthLimit;
 
@@ -311,10 +311,10 @@ EditWorkerResponse400Errors100132 copyWith({String? message}) { return EditWorke
 
 @override String get message => workersErrorWorkerNameSubdomainLengthLimit.message;
 
- }
+}
 @immutable final class EditWorkerResponse400Errors100134 extends EditWorkerResponse400Errors {const EditWorkerResponse400Errors100134(this.workersErrorWorkerTagInvalid);
 
-factory EditWorkerResponse400Errors100134.fromJson(Map<String, dynamic> json) { return EditWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid.fromJson(json)); }
+factory EditWorkerResponse400Errors100134.fromJson(Map<String, dynamic> json) {return EditWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid.fromJson(json));}
 
 final WorkersErrorWorkerTagInvalid workersErrorWorkerTagInvalid;
 
@@ -322,9 +322,9 @@ final WorkersErrorWorkerTagInvalid workersErrorWorkerTagInvalid;
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerTagInvalid.toJson(), 'code': code.toJson()};
 
-EditWorkerResponse400Errors100134 copyWith({String? message}) { return EditWorkerResponse400Errors100134(workersErrorWorkerTagInvalid.copyWith(
+EditWorkerResponse400Errors100134 copyWith({String? message}) {return EditWorkerResponse400Errors100134(workersErrorWorkerTagInvalid.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is EditWorkerResponse400Errors100134 && workersErrorWorkerTagInvalid == other.workersErrorWorkerTagInvalid;
 
@@ -334,10 +334,10 @@ EditWorkerResponse400Errors100134 copyWith({String? message}) { return EditWorke
 
 @override String get message => workersErrorWorkerTagInvalid.message;
 
- }
+}
 @immutable final class EditWorkerResponse400Errors100308 extends EditWorkerResponse400Errors {const EditWorkerResponse400Errors100308(this.workersErrorWorkerObservabilitySamplingRateInvalid);
 
-factory EditWorkerResponse400Errors100308.fromJson(Map<String, dynamic> json) { return EditWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid.fromJson(json)); }
+factory EditWorkerResponse400Errors100308.fromJson(Map<String, dynamic> json) {return EditWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid.fromJson(json));}
 
 final WorkersErrorWorkerObservabilitySamplingRateInvalid workersErrorWorkerObservabilitySamplingRateInvalid;
 
@@ -345,9 +345,9 @@ final WorkersErrorWorkerObservabilitySamplingRateInvalid workersErrorWorkerObser
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerObservabilitySamplingRateInvalid.toJson(), 'code': code.toJson()};
 
-EditWorkerResponse400Errors100308 copyWith({String? message}) { return EditWorkerResponse400Errors100308(workersErrorWorkerObservabilitySamplingRateInvalid.copyWith(
+EditWorkerResponse400Errors100308 copyWith({String? message}) {return EditWorkerResponse400Errors100308(workersErrorWorkerObservabilitySamplingRateInvalid.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is EditWorkerResponse400Errors100308 && workersErrorWorkerObservabilitySamplingRateInvalid == other.workersErrorWorkerObservabilitySamplingRateInvalid;
 
@@ -357,10 +357,10 @@ EditWorkerResponse400Errors100308 copyWith({String? message}) { return EditWorke
 
 @override String get message => workersErrorWorkerObservabilitySamplingRateInvalid.message;
 
- }
+}
 @immutable final class EditWorkerResponse400Errors100315 extends EditWorkerResponse400Errors {const EditWorkerResponse400Errors100315(this.workersErrorWorkerNamePreviewLengthLimit);
 
-factory EditWorkerResponse400Errors100315.fromJson(Map<String, dynamic> json) { return EditWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit.fromJson(json)); }
+factory EditWorkerResponse400Errors100315.fromJson(Map<String, dynamic> json) {return EditWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit.fromJson(json));}
 
 final WorkersErrorWorkerNamePreviewLengthLimit workersErrorWorkerNamePreviewLengthLimit;
 
@@ -368,9 +368,9 @@ final WorkersErrorWorkerNamePreviewLengthLimit workersErrorWorkerNamePreviewLeng
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerNamePreviewLengthLimit.toJson(), 'code': code.toJson()};
 
-EditWorkerResponse400Errors100315 copyWith({String? message}) { return EditWorkerResponse400Errors100315(workersErrorWorkerNamePreviewLengthLimit.copyWith(
+EditWorkerResponse400Errors100315 copyWith({String? message}) {return EditWorkerResponse400Errors100315(workersErrorWorkerNamePreviewLengthLimit.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is EditWorkerResponse400Errors100315 && workersErrorWorkerNamePreviewLengthLimit == other.workersErrorWorkerNamePreviewLengthLimit;
 
@@ -380,7 +380,7 @@ EditWorkerResponse400Errors100315 copyWith({String? message}) { return EditWorke
 
 @override String get message => workersErrorWorkerNamePreviewLengthLimit.message;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class EditWorkerResponse400Errors$Unknown extends EditWorkerResponse400Errors {EditWorkerResponse400Errors$Unknown(this.json);
@@ -402,4 +402,4 @@ late final String _message = json['message'] as String;
 
 @override String get message => _message;
 
- }
+}

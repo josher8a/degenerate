@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject();
 
-factory RadarEarlyFraudWarningObject.fromJson(String json) { return switch (json) {
+factory RadarEarlyFraudWarningObject.fromJson(String json) {return switch (json) {
   'radar.early_fraud_warning' => radarEarlyFraudWarning,
   _ => RadarEarlyFraudWarningObject$Unknown(json),
-}; }
+};}
 
 static const RadarEarlyFraudWarningObject radarEarlyFraudWarning = RadarEarlyFraudWarningObject$radarEarlyFraudWarning._();
 
 static const List<RadarEarlyFraudWarningObject> values = [radarEarlyFraudWarning];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'radar.early_fraud_warning' => 'radarEarlyFraudWarning',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarEarlyFraudWarningObject$Unknown; } 
+bool get isUnknown {return this is RadarEarlyFraudWarningObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() radarEarlyFraudWarning, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() radarEarlyFraudWarning, required W Function(String value) $unknown, }) {return switch (this) {
       RadarEarlyFraudWarningObject$radarEarlyFraudWarning() => radarEarlyFraudWarning(),
       RadarEarlyFraudWarningObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarEarlyFraudWarning, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarEarlyFraudWarning, W Function(String value)? $unknown, }) {return switch (this) {
       RadarEarlyFraudWarningObject$radarEarlyFraudWarning() => radarEarlyFraudWarning != null ? radarEarlyFraudWarning() : orElse(value),
       RadarEarlyFraudWarningObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarEarlyFraudWarningObject($value)';
 
- }
+}
 @immutable final class RadarEarlyFraudWarningObject$radarEarlyFraudWarning extends RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject$radarEarlyFraudWarning._();
 
 @override String get value => 'radar.early_fraud_warning';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarEar
 
 @override int get hashCode => 'radar.early_fraud_warning'.hashCode;
 
- }
+}
 @immutable final class RadarEarlyFraudWarningObject$Unknown extends RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? radarEar
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An early fraud warning indicates that the card issuer has notified us that a
 /// charge may be fraudulent.
 /// 
 /// Related guide: [Early fraud warnings](https://docs.stripe.com/disputes/measuring#early-fraud-warnings)
 @immutable final class RadarEarlyFraudWarning {const RadarEarlyFraudWarning({required this.actionable, required this.charge, required this.created, required this.fraudType, required this.id, required this.livemode, required this.object, this.paymentIntent, });
 
-factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return RadarEarlyFraudWarning(
+factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) {return RadarEarlyFraudWarning(
   actionable: json['actionable'] as bool,
   charge: ApplicationFeeCharge.fromJson(json['charge']),
   created: (json['created'] as num).toInt(),
@@ -69,7 +69,7 @@ factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return Rada
   livemode: json['livemode'] as bool,
   object: RadarEarlyFraudWarningObject.fromJson(json['object'] as String),
   paymentIntent: json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent']) : null,
-); }
+);}
 
 /// An EFW is actionable if it has not received a dispute and has not been fully refunded. You may wish to proactively refund a charge that receives an EFW, in order to avoid receiving a dispute later.
 final bool actionable;
@@ -95,7 +95,7 @@ final RadarEarlyFraudWarningObject object;
 /// ID of the Payment Intent this early fraud warning is for, optionally expanded.
 final ChargePaymentIntent? paymentIntent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actionable': actionable,
   'charge': charge.toJson(),
   'created': created,
@@ -104,20 +104,20 @@ Map<String, dynamic> toJson() { return {
   'livemode': livemode,
   'object': object.toJson(),
   if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actionable') && json['actionable'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actionable') && json['actionable'] is bool &&
       json.containsKey('charge') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('fraud_type') && json['fraud_type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (fraudType.runes.length > 5000) { errors.add('fraudType: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-RadarEarlyFraudWarning copyWith({bool? actionable, ApplicationFeeCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, ChargePaymentIntent? Function()? paymentIntent, }) { return RadarEarlyFraudWarning(
+return errors;}
+RadarEarlyFraudWarning copyWith({bool? actionable, ApplicationFeeCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, ChargePaymentIntent? Function()? paymentIntent, }) {return RadarEarlyFraudWarning(
   actionable: actionable ?? this.actionable,
   charge: charge ?? this.charge,
   created: created ?? this.created,
@@ -126,7 +126,7 @@ RadarEarlyFraudWarning copyWith({bool? actionable, ApplicationFeeCharge? charge,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarEarlyFraudWarning &&
           actionable == other.actionable &&
@@ -142,4 +142,4 @@ RadarEarlyFraudWarning copyWith({bool? actionable, ApplicationFeeCharge? charge,
 
 @override String toString() => 'RadarEarlyFraudWarning(actionable: $actionable, charge: $charge, created: $created, fraudType: $fraudType, id: $id, livemode: $livemode, object: $object, paymentIntent: $paymentIntent)';
 
- }
+}

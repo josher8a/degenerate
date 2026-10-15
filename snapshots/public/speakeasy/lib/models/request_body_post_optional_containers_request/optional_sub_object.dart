@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OptionalSubObject {const OptionalSubObject({this.value});
 
-factory OptionalSubObject.fromJson(Map<String, dynamic> json) { return OptionalSubObject(
+factory OptionalSubObject.fromJson(Map<String, dynamic> json) {return OptionalSubObject(
   value: json['value'] as String?,
-); }
+);}
 
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value'}.contains(key)); } 
-OptionalSubObject copyWith({String? Function()? value}) { return OptionalSubObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'value'}.contains(key));}
+OptionalSubObject copyWith({String? Function()? value}) {return OptionalSubObject(
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OptionalSubObject &&
           value == other.value;
@@ -24,4 +24,4 @@ OptionalSubObject copyWith({String? Function()? value}) { return OptionalSubObje
 
 @override String toString() => 'OptionalSubObject(value: $value)';
 
- }
+}

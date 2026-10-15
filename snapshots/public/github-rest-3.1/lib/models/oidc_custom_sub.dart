@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actions OIDC Subject customization
 @immutable final class OidcCustomSub {const OidcCustomSub({required this.includeClaimKeys});
 
-factory OidcCustomSub.fromJson(Map<String, dynamic> json) { return OidcCustomSub(
+factory OidcCustomSub.fromJson(Map<String, dynamic> json) {return OidcCustomSub(
   includeClaimKeys: (json['include_claim_keys'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
 final List<String> includeClaimKeys;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'include_claim_keys': includeClaimKeys,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('include_claim_keys'); } 
-OidcCustomSub copyWith({List<String>? includeClaimKeys}) { return OidcCustomSub(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('include_claim_keys');}
+OidcCustomSub copyWith({List<String>? includeClaimKeys}) {return OidcCustomSub(
   includeClaimKeys: includeClaimKeys ?? this.includeClaimKeys,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OidcCustomSub &&
           listEquals(includeClaimKeys, other.includeClaimKeys);
@@ -26,4 +26,4 @@ OidcCustomSub copyWith({List<String>? includeClaimKeys}) { return OidcCustomSub(
 
 @override String toString() => 'OidcCustomSub(includeClaimKeys: $includeClaimKeys)';
 
- }
+}

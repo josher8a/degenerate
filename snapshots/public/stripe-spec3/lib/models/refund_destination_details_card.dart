@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of refund. This can be `refund`, `reversal`, or `pending`.
 sealed class RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType();
 
-factory RefundDestinationDetailsCardType.fromJson(String json) { return switch (json) {
+factory RefundDestinationDetailsCardType.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'refund' => refund,
   'reversal' => reversal,
   _ => RefundDestinationDetailsCardType$Unknown(json),
-}; }
+};}
 
 static const RefundDestinationDetailsCardType pending = RefundDestinationDetailsCardType$pending._();
 
@@ -20,33 +20,33 @@ static const RefundDestinationDetailsCardType reversal = RefundDestinationDetail
 static const List<RefundDestinationDetailsCardType> values = [pending, refund, reversal];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'refund' => 'refund',
   'reversal' => 'reversal',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RefundDestinationDetailsCardType$Unknown; } 
+bool get isUnknown {return this is RefundDestinationDetailsCardType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() refund, required W Function() reversal, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() refund, required W Function() reversal, required W Function(String value) $unknown, }) {return switch (this) {
       RefundDestinationDetailsCardType$pending() => pending(),
       RefundDestinationDetailsCardType$refund() => refund(),
       RefundDestinationDetailsCardType$reversal() => reversal(),
       RefundDestinationDetailsCardType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? refund, W Function()? reversal, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? refund, W Function()? reversal, W Function(String value)? $unknown, }) {return switch (this) {
       RefundDestinationDetailsCardType$pending() => pending != null ? pending() : orElse(value),
       RefundDestinationDetailsCardType$refund() => refund != null ? refund() : orElse(value),
       RefundDestinationDetailsCardType$reversal() => reversal != null ? reversal() : orElse(value),
       RefundDestinationDetailsCardType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RefundDestinationDetailsCardType($value)';
 
- }
+}
 @immutable final class RefundDestinationDetailsCardType$pending extends RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType$pending._();
 
 @override String get value => 'pending';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class RefundDestinationDetailsCardType$refund extends RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType$refund._();
 
 @override String get value => 'refund';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'refund'.hashCode;
 
- }
+}
 @immutable final class RefundDestinationDetailsCardType$reversal extends RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType$reversal._();
 
 @override String get value => 'reversal';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'reversal'.hashCode;
 
- }
+}
 @immutable final class RefundDestinationDetailsCardType$Unknown extends RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType$Unknown(this.value);
 
 @override final String value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class RefundDestinationDetailsCard {const RefundDestinationDetailsCard({required this.type, this.reference, this.referenceStatus, this.referenceType, });
 
-factory RefundDestinationDetailsCard.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsCard(
+factory RefundDestinationDetailsCard.fromJson(Map<String, dynamic> json) {return RefundDestinationDetailsCard(
   reference: json['reference'] as String?,
   referenceStatus: json['reference_status'] as String?,
   referenceType: json['reference_type'] as String?,
   type: RefundDestinationDetailsCardType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Value of the reference number assigned to the refund.
 final String? reference;
@@ -106,15 +106,15 @@ final String? referenceType;
 /// The type of refund. This can be `refund`, `reversal`, or `pending`.
 final RefundDestinationDetailsCardType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'reference': ?reference,
   'reference_status': ?referenceStatus,
   'reference_type': ?referenceType,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final reference$ = reference;
 if (reference$ != null) {
   if (reference$.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
@@ -127,13 +127,13 @@ final referenceType$ = referenceType;
 if (referenceType$ != null) {
   if (referenceType$.runes.length > 5000) { errors.add('referenceType: length must be <= 5000'); }
 }
-return errors; } 
-RefundDestinationDetailsCard copyWith({String? Function()? reference, String? Function()? referenceStatus, String? Function()? referenceType, RefundDestinationDetailsCardType? type, }) { return RefundDestinationDetailsCard(
+return errors;}
+RefundDestinationDetailsCard copyWith({String? Function()? reference, String? Function()? referenceStatus, String? Function()? referenceType, RefundDestinationDetailsCardType? type, }) {return RefundDestinationDetailsCard(
   reference: reference != null ? reference() : this.reference,
   referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,
   referenceType: referenceType != null ? referenceType() : this.referenceType,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RefundDestinationDetailsCard &&
           reference == other.reference &&
@@ -145,4 +145,4 @@ RefundDestinationDetailsCard copyWith({String? Function()? reference, String? Fu
 
 @override String toString() => 'RefundDestinationDetailsCard(reference: $reference, referenceStatus: $referenceStatus, referenceType: $referenceType, type: $type)';
 
- }
+}

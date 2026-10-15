@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptFailedRequest {const PostPaymentRecordsIdReportPaymentAttemptFailedRequest({required this.failedAt, this.expand, this.metadata, });
 
-factory PostPaymentRecordsIdReportPaymentAttemptFailedRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptFailedRequest(
+factory PostPaymentRecordsIdReportPaymentAttemptFailedRequest.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsIdReportPaymentAttemptFailedRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   failedAt: (json['failed_at'] as num).toInt(),
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,17 +18,17 @@ final int failedAt;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Metadata? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'failed_at': failedAt,
   if (metadata != null) 'metadata': metadata?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('failed_at') && json['failed_at'] is num; } 
-PostPaymentRecordsIdReportPaymentAttemptFailedRequest copyWith({List<String>? Function()? expand, int? failedAt, Metadata? Function()? metadata, }) { return PostPaymentRecordsIdReportPaymentAttemptFailedRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('failed_at') && json['failed_at'] is num;}
+PostPaymentRecordsIdReportPaymentAttemptFailedRequest copyWith({List<String>? Function()? expand, int? failedAt, Metadata? Function()? metadata, }) {return PostPaymentRecordsIdReportPaymentAttemptFailedRequest(
   expand: expand != null ? expand() : this.expand,
   failedAt: failedAt ?? this.failedAt,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptFailedRequest &&
           listEquals(expand, other.expand) &&
@@ -39,4 +39,4 @@ PostPaymentRecordsIdReportPaymentAttemptFailedRequest copyWith({List<String>? Fu
 
 @override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptFailedRequest(expand: $expand, failedAt: $failedAt, metadata: $metadata)';
 
- }
+}

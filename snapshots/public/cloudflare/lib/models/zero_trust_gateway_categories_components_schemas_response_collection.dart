@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_categories.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_result_info.dart';@immutable final class ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection {const ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
-factory ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection(
+factory ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? ZeroTrustGatewayResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayCategories.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<ZeroTrustGatewayMessages2> errors;
 
@@ -24,23 +24,23 @@ final ZeroTrustGatewayResultInfo? resultInfo;
 
 final List<ZeroTrustGatewayCategories>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayResultInfo? Function()? resultInfo, List<ZeroTrustGatewayCategories>? Function()? result, }) { return ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayResultInfo? Function()? resultInfo, List<ZeroTrustGatewayCategories>? Function()? result, }) {return ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection &&
           listEquals(errors, other.errors) &&
@@ -53,4 +53,4 @@ ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection copyWith({List<Zer
 
 @override String toString() => 'ZeroTrustGatewayCategoriesComponentsSchemasResponseCollection(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
 
- }
+}

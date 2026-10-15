@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RelatedEvents {const RelatedEvents({required this.datasetId, required this.eventId, });
 
-factory RelatedEvents.fromJson(Map<String, dynamic> json) { return RelatedEvents(
+factory RelatedEvents.fromJson(Map<String, dynamic> json) {return RelatedEvents(
   datasetId: json['datasetId'] as String,
   eventId: json['eventId'] as String,
-); }
+);}
 
 /// Example: `'dataset-uuid-123'`
 final String datasetId;
@@ -14,16 +14,16 @@ final String datasetId;
 /// Example: `'event-uuid-456'`
 final String eventId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'datasetId': datasetId,
   'eventId': eventId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('datasetId') && json['datasetId'] is String &&
-      json.containsKey('eventId') && json['eventId'] is String; } 
-RelatedEvents copyWith({String? datasetId, String? eventId, }) { return RelatedEvents(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('datasetId') && json['datasetId'] is String &&
+      json.containsKey('eventId') && json['eventId'] is String;}
+RelatedEvents copyWith({String? datasetId, String? eventId, }) {return RelatedEvents(
   datasetId: datasetId ?? this.datasetId,
   eventId: eventId ?? this.eventId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RelatedEvents &&
           datasetId == other.datasetId &&
@@ -33,4 +33,4 @@ RelatedEvents copyWith({String? datasetId, String? eventId, }) { return RelatedE
 
 @override String toString() => 'RelatedEvents(datasetId: $datasetId, eventId: $eventId)';
 
- }
+}

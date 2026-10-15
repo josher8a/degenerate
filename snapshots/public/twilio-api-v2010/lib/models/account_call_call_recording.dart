@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/call_recording_enum_status.dart';/// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
 sealed class CallRecordingEnumSource {const CallRecordingEnumSource();
 
-factory CallRecordingEnumSource.fromJson(String json) { return switch (json) {
+factory CallRecordingEnumSource.fromJson(String json) {return switch (json) {
   'DialVerb' => dialVerb,
   'Conference' => conference,
   'OutboundAPI' => outboundApi,
@@ -13,7 +13,7 @@ factory CallRecordingEnumSource.fromJson(String json) { return switch (json) {
   'StartCallRecordingAPI' => startCallRecordingApi,
   'StartConferenceRecordingAPI' => startConferenceRecordingApi,
   _ => CallRecordingEnumSource$Unknown(json),
-}; }
+};}
 
 static const CallRecordingEnumSource dialVerb = CallRecordingEnumSource$dialVerb._();
 
@@ -32,9 +32,9 @@ static const CallRecordingEnumSource startConferenceRecordingApi = CallRecording
 static const List<CallRecordingEnumSource> values = [dialVerb, conference, outboundApi, trunking, recordVerb, startCallRecordingApi, startConferenceRecordingApi];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DialVerb' => 'dialVerb',
   'Conference' => 'conference',
   'OutboundAPI' => 'outboundApi',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'StartCallRecordingAPI' => 'startCallRecordingApi',
   'StartConferenceRecordingAPI' => 'startConferenceRecordingApi',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CallRecordingEnumSource$Unknown; } 
+bool get isUnknown {return this is CallRecordingEnumSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dialVerb, required W Function() conference, required W Function() outboundApi, required W Function() trunking, required W Function() recordVerb, required W Function() startCallRecordingApi, required W Function() startConferenceRecordingApi, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dialVerb, required W Function() conference, required W Function() outboundApi, required W Function() trunking, required W Function() recordVerb, required W Function() startCallRecordingApi, required W Function() startConferenceRecordingApi, required W Function(String value) $unknown, }) {return switch (this) {
       CallRecordingEnumSource$dialVerb() => dialVerb(),
       CallRecordingEnumSource$conference() => conference(),
       CallRecordingEnumSource$outboundApi() => outboundApi(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() dialVerb, required W Function() conference, req
       CallRecordingEnumSource$startCallRecordingApi() => startCallRecordingApi(),
       CallRecordingEnumSource$startConferenceRecordingApi() => startConferenceRecordingApi(),
       CallRecordingEnumSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb, W Function()? conference, W Function()? outboundApi, W Function()? trunking, W Function()? recordVerb, W Function()? startCallRecordingApi, W Function()? startConferenceRecordingApi, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb, W Function()? conference, W Function()? outboundApi, W Function()? trunking, W Function()? recordVerb, W Function()? startCallRecordingApi, W Function()? startConferenceRecordingApi, W Function(String value)? $unknown, }) {return switch (this) {
       CallRecordingEnumSource$dialVerb() => dialVerb != null ? dialVerb() : orElse(value),
       CallRecordingEnumSource$conference() => conference != null ? conference() : orElse(value),
       CallRecordingEnumSource$outboundApi() => outboundApi != null ? outboundApi() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
       CallRecordingEnumSource$startCallRecordingApi() => startCallRecordingApi != null ? startCallRecordingApi() : orElse(value),
       CallRecordingEnumSource$startConferenceRecordingApi() => startConferenceRecordingApi != null ? startConferenceRecordingApi() : orElse(value),
       CallRecordingEnumSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CallRecordingEnumSource($value)';
 
- }
+}
 @immutable final class CallRecordingEnumSource$dialVerb extends CallRecordingEnumSource {const CallRecordingEnumSource$dialVerb._();
 
 @override String get value => 'DialVerb';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'DialVerb'.hashCode;
 
- }
+}
 @immutable final class CallRecordingEnumSource$conference extends CallRecordingEnumSource {const CallRecordingEnumSource$conference._();
 
 @override String get value => 'Conference';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'Conference'.hashCode;
 
- }
+}
 @immutable final class CallRecordingEnumSource$outboundApi extends CallRecordingEnumSource {const CallRecordingEnumSource$outboundApi._();
 
 @override String get value => 'OutboundAPI';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'OutboundAPI'.hashCode;
 
- }
+}
 @immutable final class CallRecordingEnumSource$trunking extends CallRecordingEnumSource {const CallRecordingEnumSource$trunking._();
 
 @override String get value => 'Trunking';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'Trunking'.hashCode;
 
- }
+}
 @immutable final class CallRecordingEnumSource$recordVerb extends CallRecordingEnumSource {const CallRecordingEnumSource$recordVerb._();
 
 @override String get value => 'RecordVerb';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'RecordVerb'.hashCode;
 
- }
+}
 @immutable final class CallRecordingEnumSource$startCallRecordingApi extends CallRecordingEnumSource {const CallRecordingEnumSource$startCallRecordingApi._();
 
 @override String get value => 'StartCallRecordingAPI';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'StartCallRecordingAPI'.hashCode;
 
- }
+}
 @immutable final class CallRecordingEnumSource$startConferenceRecordingApi extends CallRecordingEnumSource {const CallRecordingEnumSource$startConferenceRecordingApi._();
 
 @override String get value => 'StartConferenceRecordingAPI';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => 'StartConferenceRecordingAPI'.hashCode;
 
- }
+}
 @immutable final class CallRecordingEnumSource$Unknown extends CallRecordingEnumSource {const CallRecordingEnumSource$Unknown(this.value);
 
 @override final String value;
@@ -143,10 +143,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccountCallCallRecording {const AccountCallCallRecording({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callSid = const Omittable.absent(), this.conferenceSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.startTime = const Omittable.absent(), this.duration = const Omittable.absent(), this.sid = const Omittable.absent(), this.price = const Omittable.absent(), this.uri = const Omittable.absent(), this.encryptionDetails = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.status, this.channels, this.source, this.errorCode = const Omittable.absent(), this.track = const Omittable.absent(), });
 
-factory AccountCallCallRecording.fromJson(Map<String, dynamic> json) { return AccountCallCallRecording(
+factory AccountCallCallRecording.fromJson(Map<String, dynamic> json) {return AccountCallCallRecording(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
@@ -165,7 +165,7 @@ factory AccountCallCallRecording.fromJson(Map<String, dynamic> json) { return Ac
   source: json['source'] != null ? CallRecordingEnumSource.fromJson(json['source'] as String) : null,
   errorCode: json.containsKey('error_code') ? Omittable(json['error_code'] != null ? (json['error_code'] as num).toInt() : null) : const Omittable.absent(),
   track: json.containsKey('track') ? Omittable(json['track'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording resource.
 final Omittable<String?> accountSid;
@@ -222,7 +222,7 @@ final Omittable<String?> track;
 /// The value of `channels`, or its schema default when absent.
 int get channelsOrDefault => channels ?? 0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (callSid.isPresent) 'call_sid': callSid.value,
@@ -241,10 +241,10 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
   if (errorCode.isPresent) 'error_code': errorCode.value,
   if (track.isPresent) 'track': track.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'uri', 'encryption_details', 'price_unit', 'status', 'channels', 'source', 'error_code', 'track'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'uri', 'encryption_details', 'price_unit', 'status', 'channels', 'source', 'error_code', 'track'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -269,8 +269,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^RE[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^RE[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountCallCallRecording copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? startTime, Omittable<String?>? duration, Omittable<String?>? sid, Omittable<double?>? price, Omittable<String?>? uri, Omittable<dynamic>? encryptionDetails, Omittable<String?>? priceUnit, CallRecordingEnumStatus? Function()? status, int? Function()? channels, CallRecordingEnumSource? Function()? source, Omittable<int?>? errorCode, Omittable<String?>? track, }) { return AccountCallCallRecording(
+return errors;}
+AccountCallCallRecording copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? startTime, Omittable<String?>? duration, Omittable<String?>? sid, Omittable<double?>? price, Omittable<String?>? uri, Omittable<dynamic>? encryptionDetails, Omittable<String?>? priceUnit, CallRecordingEnumStatus? Function()? status, int? Function()? channels, CallRecordingEnumSource? Function()? source, Omittable<int?>? errorCode, Omittable<String?>? track, }) {return AccountCallCallRecording(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   callSid: callSid ?? this.callSid,
@@ -289,7 +289,7 @@ AccountCallCallRecording copyWith({Omittable<String?>? accountSid, Omittable<Str
   source: source != null ? source() : this.source,
   errorCode: errorCode ?? this.errorCode,
   track: track ?? this.track,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallCallRecording &&
           accountSid == other.accountSid &&
@@ -315,4 +315,4 @@ AccountCallCallRecording copyWith({Omittable<String?>? accountSid, Omittable<Str
 
 @override String toString() => 'AccountCallCallRecording(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  callSid: $callSid,\n  conferenceSid: $conferenceSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  startTime: $startTime,\n  duration: $duration,\n  sid: $sid,\n  price: $price,\n  uri: $uri,\n  encryptionDetails: $encryptionDetails,\n  priceUnit: $priceUnit,\n  status: $status,\n  channels: $channels,\n  source: $source,\n  errorCode: $errorCode,\n  track: $track,\n)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_event_destination.dart';@immutable final class SubscriptionsPatchRequest {const SubscriptionsPatchRequest({this.destination, this.enabled, this.events, this.name, });
 
-factory SubscriptionsPatchRequest.fromJson(Map<String, dynamic> json) { return SubscriptionsPatchRequest(
+factory SubscriptionsPatchRequest.fromJson(Map<String, dynamic> json) {return SubscriptionsPatchRequest(
   destination: json['destination'] != null ? MqEventDestination.fromJson(json['destination']) : null,
   enabled: json['enabled'] as bool?,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,
-); }
+);}
 
 final MqEventDestination? destination;
 
@@ -21,26 +21,26 @@ final List<String>? events;
 /// Name of the subscription
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (destination != null) 'destination': destination?.toJson(),
   'enabled': ?enabled,
   'events': ?events,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination', 'enabled', 'events', 'name'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'destination', 'enabled', 'events', 'name'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final events$ = events;
 if (events$ != null) {
   if (events$.isEmpty) { errors.add('events: must have >= 1 items'); }
 }
-return errors; } 
-SubscriptionsPatchRequest copyWith({MqEventDestination? Function()? destination, bool? Function()? enabled, List<String>? Function()? events, String? Function()? name, }) { return SubscriptionsPatchRequest(
+return errors;}
+SubscriptionsPatchRequest copyWith({MqEventDestination? Function()? destination, bool? Function()? enabled, List<String>? Function()? events, String? Function()? name, }) {return SubscriptionsPatchRequest(
   destination: destination != null ? destination() : this.destination,
   enabled: enabled != null ? enabled() : this.enabled,
   events: events != null ? events() : this.events,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsPatchRequest &&
           destination == other.destination &&
@@ -52,4 +52,4 @@ SubscriptionsPatchRequest copyWith({MqEventDestination? Function()? destination,
 
 @override String toString() => 'SubscriptionsPatchRequest(destination: $destination, enabled: $enabled, events: $events, name: $name)';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_item_status.dart';import 'package:pub_openai/models/function_shell_call_output_content_param.dart';/// The streamed output items emitted by a shell tool call.
 @immutable final class FunctionShellCallOutputItemParam {const FunctionShellCallOutputItemParam({required this.callId, required this.type, required this.output, this.id = const Omittable.absent(), this.status = const Omittable.absent(), this.maxOutputLength = const Omittable.absent(), });
 
-factory FunctionShellCallOutputItemParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputItemParam(
+factory FunctionShellCallOutputItemParam.fromJson(Map<String, dynamic> json) {return FunctionShellCallOutputItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   callId: json['call_id'] as String,
   type: json['type'] as String,
   output: (json['output'] as List<dynamic>).map((e) => FunctionShellCallOutputContentParam.fromJson(e as Map<String, dynamic>)).toList(),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? FunctionShellCallItemStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
   maxOutputLength: json.containsKey('max_output_length') ? Omittable(json['max_output_length'] != null ? (json['max_output_length'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The unique ID of the shell tool call output. Populated when this item is returned via API.
 final Omittable<String?> id;
@@ -31,30 +31,30 @@ final Omittable<FunctionShellCallItemStatus?> status;
 /// The maximum number of UTF-8 characters captured for this shell call's combined output.
 final Omittable<int?> maxOutputLength;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id.isPresent) 'id': id.value,
   'call_id': callId,
   'type': type,
   'output': output.map((e) => e.toJson()).toList(),
   if (status.isPresent) 'status': status.value?.toJson(),
   if (maxOutputLength.isPresent) 'max_output_length': maxOutputLength.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('call_id') && json['call_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('output'); } 
+      json.containsKey('output');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (callId.isEmpty) { errors.add('callId: length must be >= 1'); }
 if (callId.runes.length > 64) { errors.add('callId: length must be <= 64'); }
-return errors; } 
-FunctionShellCallOutputItemParam copyWith({Omittable<String?>? id, String? callId, String? type, List<FunctionShellCallOutputContentParam>? output, Omittable<FunctionShellCallItemStatus?>? status, Omittable<int?>? maxOutputLength, }) { return FunctionShellCallOutputItemParam(
+return errors;}
+FunctionShellCallOutputItemParam copyWith({Omittable<String?>? id, String? callId, String? type, List<FunctionShellCallOutputContentParam>? output, Omittable<FunctionShellCallItemStatus?>? status, Omittable<int?>? maxOutputLength, }) {return FunctionShellCallOutputItemParam(
   id: id ?? this.id,
   callId: callId ?? this.callId,
   type: type ?? this.type,
   output: output ?? this.output,
   status: status ?? this.status,
   maxOutputLength: maxOutputLength ?? this.maxOutputLength,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutputItemParam &&
           id == other.id &&
@@ -68,4 +68,4 @@ FunctionShellCallOutputItemParam copyWith({Omittable<String?>? id, String? callI
 
 @override String toString() => 'FunctionShellCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, status: $status, maxOutputLength: $maxOutputLength)';
 
- }
+}

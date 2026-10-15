@@ -10,37 +10,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off
 /// 
 sealed class ZonesDisableSecurityId {const ZonesDisableSecurityId();
 
-factory ZonesDisableSecurityId.fromJson(String json) { return switch (json) {
+factory ZonesDisableSecurityId.fromJson(String json) {return switch (json) {
   'disable_security' => disableSecurity,
   _ => ZonesDisableSecurityId$Unknown(json),
-}; }
+};}
 
 static const ZonesDisableSecurityId disableSecurity = ZonesDisableSecurityId$disableSecurity._();
 
 static const List<ZonesDisableSecurityId> values = [disableSecurity];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'disable_security' => 'disableSecurity',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesDisableSecurityId$Unknown; } 
+bool get isUnknown {return this is ZonesDisableSecurityId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() disableSecurity, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() disableSecurity, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesDisableSecurityId$disableSecurity() => disableSecurity(),
       ZonesDisableSecurityId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableSecurity, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableSecurity, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesDisableSecurityId$disableSecurity() => disableSecurity != null ? disableSecurity() : orElse(value),
       ZonesDisableSecurityId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesDisableSecurityId($value)';
 
- }
+}
 @immutable final class ZonesDisableSecurityId$disableSecurity extends ZonesDisableSecurityId {const ZonesDisableSecurityId$disableSecurity._();
 
 @override String get value => 'disable_security';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableS
 
 @override int get hashCode => 'disable_security'.hashCode;
 
- }
+}
 @immutable final class ZonesDisableSecurityId$Unknown extends ZonesDisableSecurityId {const ZonesDisableSecurityId$Unknown(this.value);
 
 @override final String value;
@@ -59,12 +59,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableS
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesDisableSecurity {const ZonesDisableSecurity({this.id});
 
-factory ZonesDisableSecurity.fromJson(Map<String, dynamic> json) { return ZonesDisableSecurity(
+factory ZonesDisableSecurity.fromJson(Map<String, dynamic> json) {return ZonesDisableSecurity(
   id: json['id'] != null ? ZonesDisableSecurityId.fromJson(json['id'] as String) : null,
-); }
+);}
 
 /// Turn off
 /// [Email Obfuscation](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/),
@@ -75,13 +75,13 @@ factory ZonesDisableSecurity.fromJson(Map<String, dynamic> json) { return ZonesD
 /// 
 final ZonesDisableSecurityId? id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-ZonesDisableSecurity copyWith({ZonesDisableSecurityId? Function()? id}) { return ZonesDisableSecurity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+ZonesDisableSecurity copyWith({ZonesDisableSecurityId? Function()? id}) {return ZonesDisableSecurity(
   id: id != null ? id() : this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesDisableSecurity &&
           id == other.id;
@@ -90,4 +90,4 @@ ZonesDisableSecurity copyWith({ZonesDisableSecurityId? Function()? id}) { return
 
 @override String toString() => 'ZonesDisableSecurity(id: $id)';
 
- }
+}

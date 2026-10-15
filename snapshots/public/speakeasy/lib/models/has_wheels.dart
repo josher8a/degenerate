@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/bike.dart';import 'package:pub_speakeasy/models/car.dart';sealed class HasWheelsWheelsType {const HasWheelsWheelsType();
 
-factory HasWheelsWheelsType.fromJson(String json) { return switch (json) {
+factory HasWheelsWheelsType.fromJson(String json) {return switch (json) {
   'four' => four,
   'two' => two,
   _ => HasWheelsWheelsType$Unknown(json),
-}; }
+};}
 
 static const HasWheelsWheelsType four = HasWheelsWheelsType$four._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is HasWheelsWheelsType$Unknown;
 
- }
+}
 @immutable final class HasWheelsWheelsType$four extends HasWheelsWheelsType {const HasWheelsWheelsType$four._();
 
 @override String get value => 'four';
@@ -31,7 +31,7 @@ bool get isUnknown => this is HasWheelsWheelsType$Unknown;
 
 @override String toString() => 'HasWheelsWheelsType(four)';
 
- }
+}
 @immutable final class HasWheelsWheelsType$two extends HasWheelsWheelsType {const HasWheelsWheelsType$two._();
 
 @override String get value => 'two';
@@ -42,7 +42,7 @@ bool get isUnknown => this is HasWheelsWheelsType$Unknown;
 
 @override String toString() => 'HasWheelsWheelsType(two)';
 
- }
+}
 @immutable final class HasWheelsWheelsType$Unknown extends HasWheelsWheelsType {const HasWheelsWheelsType$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is HasWheelsWheelsType$Unknown;
 
 @override String toString() => 'HasWheelsWheelsType($value)';
 
- }
+}
 sealed class HasWheels {const HasWheels();
 
 /// Deserialize from JSON, dispatching on the `wheelsType` discriminator.
-factory HasWheels.fromJson(Map<String, dynamic> json) { return switch (json['wheelsType']) {
+factory HasWheels.fromJson(Map<String, dynamic> json) {return switch (json['wheelsType']) {
   'four' => HasWheelsFour.fromJson(json),
   'two' => HasWheelsTwo.fromJson(json),
   _ => HasWheels$Unknown(json),
-}; }
+};}
 
 /// Build the `four` variant.
-factory HasWheels.four({required String vehicleType}) { return HasWheelsFour(Car(wheelsType: 'four', vehicleType: vehicleType)); }
+factory HasWheels.four({required String vehicleType}) {return HasWheelsFour(Car(wheelsType: 'four', vehicleType: vehicleType));}
 
 /// Build the `two` variant.
-factory HasWheels.two({required String vehicleType, required String colour, }) { return HasWheelsTwo(Bike(wheelsType: 'two', vehicleType: vehicleType, colour: colour)); }
+factory HasWheels.two({required String vehicleType, required String colour, }) {return HasWheelsTwo(Bike(wheelsType: 'two', vehicleType: vehicleType, colour: colour));}
 
 /// The discriminator value identifying this variant.
 HasWheelsWheelsType get wheelsType;
@@ -77,15 +77,15 @@ bool get isUnknown => this is HasWheels$Unknown;
 
 /// Shared by all variants of this union.
 String get vehicleType;
-R when<R>({required R Function(HasWheelsFour) four, required R Function(HasWheelsTwo) two, required R Function(HasWheels$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(HasWheelsFour) four, required R Function(HasWheelsTwo) two, required R Function(HasWheels$Unknown) unknown, }) {return switch (this) {
   final HasWheelsFour v => four(v),
   final HasWheelsTwo v => two(v),
   final HasWheels$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class HasWheelsFour extends HasWheels {const HasWheelsFour(this.car);
 
-factory HasWheelsFour.fromJson(Map<String, dynamic> json) { return HasWheelsFour(Car.fromJson(json)); }
+factory HasWheelsFour.fromJson(Map<String, dynamic> json) {return HasWheelsFour(Car.fromJson(json));}
 
 final Car car;
 
@@ -93,9 +93,9 @@ final Car car;
 
 @override Map<String, dynamic> toJson() => {...car.toJson(), 'wheelsType': wheelsType.toJson()};
 
-HasWheelsFour copyWith({String? vehicleType}) { return HasWheelsFour(car.copyWith(
+HasWheelsFour copyWith({String? vehicleType}) {return HasWheelsFour(car.copyWith(
   vehicleType: vehicleType,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is HasWheelsFour && car == other.car;
 
@@ -105,10 +105,10 @@ HasWheelsFour copyWith({String? vehicleType}) { return HasWheelsFour(car.copyWit
 
 @override String get vehicleType => car.vehicleType;
 
- }
+}
 @immutable final class HasWheelsTwo extends HasWheels {const HasWheelsTwo(this.bike);
 
-factory HasWheelsTwo.fromJson(Map<String, dynamic> json) { return HasWheelsTwo(Bike.fromJson(json)); }
+factory HasWheelsTwo.fromJson(Map<String, dynamic> json) {return HasWheelsTwo(Bike.fromJson(json));}
 
 final Bike bike;
 
@@ -116,10 +116,10 @@ final Bike bike;
 
 @override Map<String, dynamic> toJson() => {...bike.toJson(), 'wheelsType': wheelsType.toJson()};
 
-HasWheelsTwo copyWith({String? vehicleType, String? colour, }) { return HasWheelsTwo(bike.copyWith(
+HasWheelsTwo copyWith({String? vehicleType, String? colour, }) {return HasWheelsTwo(bike.copyWith(
   vehicleType: vehicleType,
   colour: colour,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is HasWheelsTwo && bike == other.bike;
 
@@ -129,7 +129,7 @@ HasWheelsTwo copyWith({String? vehicleType, String? colour, }) { return HasWheel
 
 @override String get vehicleType => bike.vehicleType;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class HasWheels$Unknown extends HasWheels {HasWheels$Unknown(this.json);
@@ -151,4 +151,4 @@ late final String _vehicleType = json['vehicleType'] as String;
 
 @override String get vehicleType => _vehicleType;
 
- }
+}

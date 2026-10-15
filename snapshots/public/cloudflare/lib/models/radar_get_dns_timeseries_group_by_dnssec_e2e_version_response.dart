@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_timeseries_group_by_cache_hit_status_response/radar_get_dns_timeseries_group_by_cache_hit_status_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse({required this.result, required this.success, });
 
-factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse(
+factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse(
   result: RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse copyWith({RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse copyWith({RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResult? result, bool? success, }) {return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse copyWith({RadarGetDnsTimese
 
 @override String toString() => 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse(result: $result, success: $success)';
 
- }
+}

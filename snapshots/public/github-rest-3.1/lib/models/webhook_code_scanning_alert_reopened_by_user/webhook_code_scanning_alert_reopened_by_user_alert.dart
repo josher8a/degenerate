@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_dismissed_comment.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/most_recent_instance.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_tool.dart';/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
 sealed class WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState();
 
-factory WebhookCodeScanningAlertReopenedByUserAlertState.fromJson(String json) { return switch (json) {
+factory WebhookCodeScanningAlertReopenedByUserAlertState.fromJson(String json) {return switch (json) {
   'open' => open,
   'fixed' => fixed,
   'null' => $null,
   _ => WebhookCodeScanningAlertReopenedByUserAlertState$Unknown(json),
-}; }
+};}
 
 static const WebhookCodeScanningAlertReopenedByUserAlertState open = WebhookCodeScanningAlertReopenedByUserAlertState$open._();
 
@@ -20,33 +20,33 @@ static const WebhookCodeScanningAlertReopenedByUserAlertState $null = WebhookCod
 static const List<WebhookCodeScanningAlertReopenedByUserAlertState> values = [open, fixed, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'open' => 'open',
   'fixed' => 'fixed',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookCodeScanningAlertReopenedByUserAlertState$Unknown; } 
+bool get isUnknown {return this is WebhookCodeScanningAlertReopenedByUserAlertState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() open, required W Function() fixed, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() open, required W Function() fixed, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookCodeScanningAlertReopenedByUserAlertState$open() => open(),
       WebhookCodeScanningAlertReopenedByUserAlertState$fixed() => fixed(),
       WebhookCodeScanningAlertReopenedByUserAlertState$$null() => $null(),
       WebhookCodeScanningAlertReopenedByUserAlertState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? fixed, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? fixed, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookCodeScanningAlertReopenedByUserAlertState$open() => open != null ? open() : orElse(value),
       WebhookCodeScanningAlertReopenedByUserAlertState$fixed() => fixed != null ? fixed() : orElse(value),
       WebhookCodeScanningAlertReopenedByUserAlertState$$null() => $null != null ? $null() : orElse(value),
       WebhookCodeScanningAlertReopenedByUserAlertState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookCodeScanningAlertReopenedByUserAlertState($value)';
 
- }
+}
 @immutable final class WebhookCodeScanningAlertReopenedByUserAlertState$open extends WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState$open._();
 
 @override String get value => 'open';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class WebhookCodeScanningAlertReopenedByUserAlertState$fixed extends WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState$fixed._();
 
 @override String get value => 'fixed';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'fixed'.hashCode;
 
- }
+}
 @immutable final class WebhookCodeScanningAlertReopenedByUserAlertState$$null extends WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState$$null._();
 
 @override String get value => 'null';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class WebhookCodeScanningAlertReopenedByUserAlertState$Unknown extends WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState$Unknown(this.value);
 
 @override final String value;
@@ -83,11 +83,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The code scanning alert involved in the event.
 @immutable final class WebhookCodeScanningAlertReopenedByUserAlert {const WebhookCodeScanningAlertReopenedByUserAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment = const Omittable.absent(), this.fixedAt = const Omittable.absent(), this.mostRecentInstance = const Omittable.absent(), });
 
-factory WebhookCodeScanningAlertReopenedByUserAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedByUserAlert(
+factory WebhookCodeScanningAlertReopenedByUserAlert.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertReopenedByUserAlert(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   dismissedAt: json['dismissed_at'],
@@ -102,7 +102,7 @@ factory WebhookCodeScanningAlertReopenedByUserAlert.fromJson(Map<String, dynamic
   state: json['state'] != null ? WebhookCodeScanningAlertReopenedByUserAlertState.fromJson(json['state'] as String) : null,
   tool: WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final List<SimpleUser>? assignees;
 
@@ -140,7 +140,7 @@ final WebhookCodeScanningAlertAppearedInBranchAlertTool tool;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
   'dismissed_at': dismissedAt,
@@ -155,8 +155,8 @@ Map<String, dynamic> toJson() { return {
   'state': state?.toJson(),
   'tool': tool.toJson(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('dismissed_at') &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
@@ -165,8 +165,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('rule') &&
       json.containsKey('state') &&
       json.containsKey('tool') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertReopenedByUserAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, dynamic Function()? dismissedAt, dynamic Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, dynamic Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<MostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertAppearedInBranchAlertRule? rule, WebhookCodeScanningAlertReopenedByUserAlertState? Function()? state, WebhookCodeScanningAlertAppearedInBranchAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertReopenedByUserAlert(
+      json.containsKey('url') && json['url'] is String;}
+WebhookCodeScanningAlertReopenedByUserAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, dynamic Function()? dismissedAt, dynamic Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, dynamic Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<MostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertAppearedInBranchAlertRule? rule, WebhookCodeScanningAlertReopenedByUserAlertState? Function()? state, WebhookCodeScanningAlertAppearedInBranchAlertTool? tool, Uri? url, }) {return WebhookCodeScanningAlertReopenedByUserAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,
@@ -181,7 +181,7 @@ WebhookCodeScanningAlertReopenedByUserAlert copyWith({List<SimpleUser>? Function
   state: state != null ? state() : this.state,
   tool: tool ?? this.tool,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertReopenedByUserAlert &&
           listEquals(assignees, other.assignees) &&
@@ -203,4 +203,4 @@ WebhookCodeScanningAlertReopenedByUserAlert copyWith({List<SimpleUser>? Function
 
 @override String toString() => 'WebhookCodeScanningAlertReopenedByUserAlert(\n  assignees: $assignees,\n  createdAt: $createdAt,\n  dismissedAt: $dismissedAt,\n  dismissedBy: $dismissedBy,\n  dismissedComment: $dismissedComment,\n  dismissedReason: $dismissedReason,\n  fixedAt: $fixedAt,\n  htmlUrl: $htmlUrl,\n  mostRecentInstance: $mostRecentInstance,\n  number: $number,\n  rule: $rule,\n  state: $state,\n  tool: $tool,\n  url: $url,\n)';
 
- }
+}

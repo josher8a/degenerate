@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack/validation_errors.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_cloudflare_branding.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_record.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validity_days.dart';/// Status of certificate pack.
 sealed class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus();
 
-factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending_validation' => pendingValidation,
   'deleted' => deleted,
@@ -27,7 +27,7 @@ factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJ
   'backup_issued' => backupIssued,
   'holding_deployment' => holdingDeployment,
   _ => TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing._();
 
@@ -74,9 +74,9 @@ static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus 
 static const List<TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus> values = [initializing, pendingValidation, deleted, pendingIssuance, pendingDeployment, pendingDeletion, pendingExpiration, expired, active, initializingTimedOut, validationTimedOut, issuanceTimedOut, deploymentTimedOut, deletionTimedOut, pendingCleanup, stagingDeployment, stagingActive, deactivating, inactive, backupIssued, holdingDeployment];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'initializing' => 'initializing',
   'pending_validation' => 'pendingValidation',
   'deleted' => 'deleted',
@@ -99,11 +99,11 @@ String get name { return switch (value) {
   'backup_issued' => 'backupIssued',
   'holding_deployment' => 'holdingDeployment',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() initializing, required W Function() pendingValidation, required W Function() deleted, required W Function() pendingIssuance, required W Function() pendingDeployment, required W Function() pendingDeletion, required W Function() pendingExpiration, required W Function() expired, required W Function() active, required W Function() initializingTimedOut, required W Function() validationTimedOut, required W Function() issuanceTimedOut, required W Function() deploymentTimedOut, required W Function() deletionTimedOut, required W Function() pendingCleanup, required W Function() stagingDeployment, required W Function() stagingActive, required W Function() deactivating, required W Function() inactive, required W Function() backupIssued, required W Function() holdingDeployment, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() initializing, required W Function() pendingValidation, required W Function() deleted, required W Function() pendingIssuance, required W Function() pendingDeployment, required W Function() pendingDeletion, required W Function() pendingExpiration, required W Function() expired, required W Function() active, required W Function() initializingTimedOut, required W Function() validationTimedOut, required W Function() issuanceTimedOut, required W Function() deploymentTimedOut, required W Function() deletionTimedOut, required W Function() pendingCleanup, required W Function() stagingDeployment, required W Function() stagingActive, required W Function() deactivating, required W Function() inactive, required W Function() backupIssued, required W Function() holdingDeployment, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing() => initializing(),
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingValidation() => pendingValidation(),
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deleted() => deleted(),
@@ -126,9 +126,9 @@ W when<W>({required W Function() initializing, required W Function() pendingVali
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$backupIssued() => backupIssued(),
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$holdingDeployment() => holdingDeployment(),
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingValidation, W Function()? deleted, W Function()? pendingIssuance, W Function()? pendingDeployment, W Function()? pendingDeletion, W Function()? pendingExpiration, W Function()? expired, W Function()? active, W Function()? initializingTimedOut, W Function()? validationTimedOut, W Function()? issuanceTimedOut, W Function()? deploymentTimedOut, W Function()? deletionTimedOut, W Function()? pendingCleanup, W Function()? stagingDeployment, W Function()? stagingActive, W Function()? deactivating, W Function()? inactive, W Function()? backupIssued, W Function()? holdingDeployment, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingValidation, W Function()? deleted, W Function()? pendingIssuance, W Function()? pendingDeployment, W Function()? pendingDeletion, W Function()? pendingExpiration, W Function()? expired, W Function()? active, W Function()? initializingTimedOut, W Function()? validationTimedOut, W Function()? issuanceTimedOut, W Function()? deploymentTimedOut, W Function()? deletionTimedOut, W Function()? pendingCleanup, W Function()? stagingDeployment, W Function()? stagingActive, W Function()? deactivating, W Function()? inactive, W Function()? backupIssued, W Function()? holdingDeployment, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing() => initializing != null ? initializing() : orElse(value),
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingValidation() => pendingValidation != null ? pendingValidation() : orElse(value),
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deleted() => deleted != null ? deleted() : orElse(value),
@@ -151,10 +151,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$backupIssued() => backupIssued != null ? backupIssued() : orElse(value),
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$holdingDeployment() => holdingDeployment != null ? holdingDeployment() : orElse(value),
       TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingValidation extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingValidation._();
 
 @override String get value => 'pending_validation';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_validation'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deleted extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deleted._();
 
 @override String get value => 'deleted';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deleted'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingIssuance extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingIssuance._();
 
 @override String get value => 'pending_issuance';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_issuance'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeployment extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeployment._();
 
 @override String get value => 'pending_deployment';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_deployment'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeletion extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeletion._();
 
 @override String get value => 'pending_deletion';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_deletion'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingExpiration extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingExpiration._();
 
 @override String get value => 'pending_expiration';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_expiration'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$expired extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$expired._();
 
 @override String get value => 'expired';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$active extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$active._();
 
 @override String get value => 'active';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializingTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializingTimedOut._();
 
 @override String get value => 'initializing_timed_out';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing_timed_out'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$validationTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$validationTimedOut._();
 
 @override String get value => 'validation_timed_out';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'validation_timed_out'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$issuanceTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$issuanceTimedOut._();
 
 @override String get value => 'issuance_timed_out';
@@ -262,7 +262,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'issuance_timed_out'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deploymentTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deploymentTimedOut._();
 
 @override String get value => 'deployment_timed_out';
@@ -271,7 +271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deployment_timed_out'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deletionTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deletionTimedOut._();
 
 @override String get value => 'deletion_timed_out';
@@ -280,7 +280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deletion_timed_out'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingCleanup extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingCleanup._();
 
 @override String get value => 'pending_cleanup';
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_cleanup'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingDeployment extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingDeployment._();
 
 @override String get value => 'staging_deployment';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'staging_deployment'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingActive extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingActive._();
 
 @override String get value => 'staging_active';
@@ -307,7 +307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'staging_active'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deactivating extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deactivating._();
 
 @override String get value => 'deactivating';
@@ -316,7 +316,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deactivating'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$inactive extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -325,7 +325,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$backupIssued extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$backupIssued._();
 
 @override String get value => 'backup_issued';
@@ -334,7 +334,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'backup_issued'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$holdingDeployment extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$holdingDeployment._();
 
 @override String get value => 'holding_deployment';
@@ -343,7 +343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'holding_deployment'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown(this.value);
 
 @override final String value;
@@ -353,7 +353,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Identifier of the primary certificate in a pack.
 extension type const TlsCertificatesAndHostnamesPrimary(String value) {
 factory TlsCertificatesAndHostnamesPrimary.fromJson(String json) => TlsCertificatesAndHostnamesPrimary(json);
@@ -364,7 +364,7 @@ String toJson() => value;
 /// Type of certificate pack.
 sealed class TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType();
 
-factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) {return switch (json) {
   'mh_custom' => mhCustom,
   'managed_hostname' => managedHostname,
   'sni_custom' => sniCustom,
@@ -374,7 +374,7 @@ factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) { return sw
   'keyless' => keyless,
   'legacy_custom' => legacyCustom,
   _ => TlsCertificatesAndHostnamesSchemasType$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSchemasType mhCustom = TlsCertificatesAndHostnamesSchemasType$mhCustom._();
 
@@ -395,9 +395,9 @@ static const TlsCertificatesAndHostnamesSchemasType legacyCustom = TlsCertificat
 static const List<TlsCertificatesAndHostnamesSchemasType> values = [mhCustom, managedHostname, sniCustom, universal, advanced, totalTls, keyless, legacyCustom];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mh_custom' => 'mhCustom',
   'managed_hostname' => 'managedHostname',
   'sni_custom' => 'sniCustom',
@@ -407,11 +407,11 @@ String get name { return switch (value) {
   'keyless' => 'keyless',
   'legacy_custom' => 'legacyCustom',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasType$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesSchemasType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mhCustom, required W Function() managedHostname, required W Function() sniCustom, required W Function() universal, required W Function() advanced, required W Function() totalTls, required W Function() keyless, required W Function() legacyCustom, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mhCustom, required W Function() managedHostname, required W Function() sniCustom, required W Function() universal, required W Function() advanced, required W Function() totalTls, required W Function() keyless, required W Function() legacyCustom, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesSchemasType$mhCustom() => mhCustom(),
       TlsCertificatesAndHostnamesSchemasType$managedHostname() => managedHostname(),
       TlsCertificatesAndHostnamesSchemasType$sniCustom() => sniCustom(),
@@ -421,9 +421,9 @@ W when<W>({required W Function() mhCustom, required W Function() managedHostname
       TlsCertificatesAndHostnamesSchemasType$keyless() => keyless(),
       TlsCertificatesAndHostnamesSchemasType$legacyCustom() => legacyCustom(),
       TlsCertificatesAndHostnamesSchemasType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom, W Function()? managedHostname, W Function()? sniCustom, W Function()? universal, W Function()? advanced, W Function()? totalTls, W Function()? keyless, W Function()? legacyCustom, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom, W Function()? managedHostname, W Function()? sniCustom, W Function()? universal, W Function()? advanced, W Function()? totalTls, W Function()? keyless, W Function()? legacyCustom, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesSchemasType$mhCustom() => mhCustom != null ? mhCustom() : orElse(value),
       TlsCertificatesAndHostnamesSchemasType$managedHostname() => managedHostname != null ? managedHostname() : orElse(value),
       TlsCertificatesAndHostnamesSchemasType$sniCustom() => sniCustom != null ? sniCustom() : orElse(value),
@@ -433,10 +433,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
       TlsCertificatesAndHostnamesSchemasType$keyless() => keyless != null ? keyless() : orElse(value),
       TlsCertificatesAndHostnamesSchemasType$legacyCustom() => legacyCustom != null ? legacyCustom() : orElse(value),
       TlsCertificatesAndHostnamesSchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesSchemasType($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$mhCustom extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$mhCustom._();
 
 @override String get value => 'mh_custom';
@@ -445,7 +445,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => 'mh_custom'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$managedHostname extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$managedHostname._();
 
 @override String get value => 'managed_hostname';
@@ -454,7 +454,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => 'managed_hostname'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$sniCustom extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$sniCustom._();
 
 @override String get value => 'sni_custom';
@@ -463,7 +463,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => 'sni_custom'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$universal extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$universal._();
 
 @override String get value => 'universal';
@@ -472,7 +472,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => 'universal'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$advanced extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$advanced._();
 
 @override String get value => 'advanced';
@@ -481,7 +481,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => 'advanced'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$totalTls extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$totalTls._();
 
 @override String get value => 'total_tls';
@@ -490,7 +490,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => 'total_tls'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$keyless extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$keyless._();
 
 @override String get value => 'keyless';
@@ -499,7 +499,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => 'keyless'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$legacyCustom extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$legacyCustom._();
 
 @override String get value => 'legacy_custom';
@@ -508,7 +508,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => 'legacy_custom'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasType$Unknown extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$Unknown(this.value);
 
 @override final String value;
@@ -518,11 +518,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mhCustom
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A certificate pack with all its properties.
 @immutable final class TlsCertificatesAndHostnamesCertificatePack {const TlsCertificatesAndHostnamesCertificatePack({required this.certificates, required this.hosts, required this.id, required this.status, required this.type, this.certificateAuthority, this.cloudflareBranding, this.dcvDelegationRecords, this.primaryCertificate, this.validationErrors, this.validationMethod, this.validationRecords, this.validityDays, });
 
-factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePack(
+factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesCertificatePack(
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
   certificates: (json['certificates'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(e as Map<String, dynamic>)).toList(),
   cloudflareBranding: json['cloudflare_branding'] != null ? TlsCertificatesAndHostnamesCloudflareBranding.fromJson(json['cloudflare_branding'] as bool) : null,
@@ -536,7 +536,7 @@ factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic>
   validationMethod: json['validation_method'] != null ? TlsCertificatesAndHostnamesValidationMethod.fromJson(json['validation_method'] as String) : null,
   validationRecords: (json['validation_records'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesValidationRecord.fromJson(e as Map<String, dynamic>)).toList(),
   validityDays: json['validity_days'] != null ? TlsCertificatesAndHostnamesValidityDays.fromJson((json['validity_days'] as num).toInt()) : null,
-); }
+);}
 
 final TlsCertificatesAndHostnamesSchemasCertificateAuthority? certificateAuthority;
 
@@ -569,7 +569,7 @@ final List<TlsCertificatesAndHostnamesValidationRecord>? validationRecords;
 
 final TlsCertificatesAndHostnamesValidityDays? validityDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
   'certificates': certificates.map((e) => e.toJson()).toList(),
   if (cloudflareBranding != null) 'cloudflare_branding': cloudflareBranding?.toJson(),
@@ -583,13 +583,13 @@ Map<String, dynamic> toJson() { return {
   if (validationMethod != null) 'validation_method': validationMethod?.toJson(),
   if (validationRecords != null) 'validation_records': validationRecords?.map((e) => e.toJson()).toList(),
   if (validityDays != null) 'validity_days': validityDays?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificates') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificates') &&
       json.containsKey('hosts') &&
       json.containsKey('id') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
-TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? Function()? certificateAuthority, List<TlsCertificatesAndHostnamesCertificatePackCertificate>? certificates, TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, List<String>? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesPrimary? Function()? primaryCertificate, TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus? status, TlsCertificatesAndHostnamesSchemasType? type, List<ValidationErrors>? Function()? validationErrors, TlsCertificatesAndHostnamesValidationMethod? Function()? validationMethod, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, TlsCertificatesAndHostnamesValidityDays? Function()? validityDays, }) { return TlsCertificatesAndHostnamesCertificatePack(
+      json.containsKey('type');}
+TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? Function()? certificateAuthority, List<TlsCertificatesAndHostnamesCertificatePackCertificate>? certificates, TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, List<String>? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesPrimary? Function()? primaryCertificate, TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus? status, TlsCertificatesAndHostnamesSchemasType? type, List<ValidationErrors>? Function()? validationErrors, TlsCertificatesAndHostnamesValidationMethod? Function()? validationMethod, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, TlsCertificatesAndHostnamesValidityDays? Function()? validityDays, }) {return TlsCertificatesAndHostnamesCertificatePack(
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   certificates: certificates ?? this.certificates,
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
@@ -603,7 +603,7 @@ TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnames
   validationMethod: validationMethod != null ? validationMethod() : this.validationMethod,
   validationRecords: validationRecords != null ? validationRecords() : this.validationRecords,
   validityDays: validityDays != null ? validityDays() : this.validityDays,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificatePack &&
           certificateAuthority == other.certificateAuthority &&
@@ -624,4 +624,4 @@ TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnames
 
 @override String toString() => 'TlsCertificatesAndHostnamesCertificatePack(\n  certificateAuthority: $certificateAuthority,\n  certificates: $certificates,\n  cloudflareBranding: $cloudflareBranding,\n  dcvDelegationRecords: $dcvDelegationRecords,\n  hosts: $hosts,\n  id: $id,\n  primaryCertificate: $primaryCertificate,\n  status: $status,\n  type: $type,\n  validationErrors: $validationErrors,\n  validationMethod: $validationMethod,\n  validationRecords: $validationRecords,\n  validityDays: $validityDays,\n)';
 
- }
+}

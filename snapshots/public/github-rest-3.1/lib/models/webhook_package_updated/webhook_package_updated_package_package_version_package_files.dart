@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPackageUpdatedPackagePackageVersionPackageFiles {const WebhookPackageUpdatedPackagePackageVersionPackageFiles({required this.contentType, required this.createdAt, required this.downloadUrl, required this.id, required this.md5, required this.name, required this.sha1, required this.sha256, required this.size, required this.state, required this.updatedAt, });
 
-factory WebhookPackageUpdatedPackagePackageVersionPackageFiles.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackagePackageVersionPackageFiles(
+factory WebhookPackageUpdatedPackagePackageVersionPackageFiles.fromJson(Map<String, dynamic> json) {return WebhookPackageUpdatedPackagePackageVersionPackageFiles(
   contentType: json['content_type'] as String,
   createdAt: json['created_at'] as String,
   downloadUrl: Uri.parse(json['download_url'] as String),
@@ -15,7 +15,7 @@ factory WebhookPackageUpdatedPackagePackageVersionPackageFiles.fromJson(Map<Stri
   size: (json['size'] as num).toInt(),
   state: json['state'] as String,
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 final String contentType;
 
@@ -39,7 +39,7 @@ final String state;
 
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content_type': contentType,
   'created_at': createdAt,
   'download_url': downloadUrl.toString(),
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'size': size,
   'state': state,
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content_type') && json['content_type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content_type') && json['content_type'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -62,8 +62,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
       json.containsKey('sha256') && json['sha256'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('state') && json['state'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookPackageUpdatedPackagePackageVersionPackageFiles copyWith({String? contentType, String? createdAt, Uri? downloadUrl, int? id, String? Function()? md5, String? name, String? Function()? sha1, String? sha256, int? size, String? state, String? updatedAt, }) { return WebhookPackageUpdatedPackagePackageVersionPackageFiles(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhookPackageUpdatedPackagePackageVersionPackageFiles copyWith({String? contentType, String? createdAt, Uri? downloadUrl, int? id, String? Function()? md5, String? name, String? Function()? sha1, String? sha256, int? size, String? state, String? updatedAt, }) {return WebhookPackageUpdatedPackagePackageVersionPackageFiles(
   contentType: contentType ?? this.contentType,
   createdAt: createdAt ?? this.createdAt,
   downloadUrl: downloadUrl ?? this.downloadUrl,
@@ -75,7 +75,7 @@ WebhookPackageUpdatedPackagePackageVersionPackageFiles copyWith({String? content
   size: size ?? this.size,
   state: state ?? this.state,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPackageUpdatedPackagePackageVersionPackageFiles &&
           contentType == other.contentType &&
@@ -94,4 +94,4 @@ WebhookPackageUpdatedPackagePackageVersionPackageFiles copyWith({String? content
 
 @override String toString() => 'WebhookPackageUpdatedPackagePackageVersionPackageFiles(\n  contentType: $contentType,\n  createdAt: $createdAt,\n  downloadUrl: $downloadUrl,\n  id: $id,\n  md5: $md5,\n  name: $name,\n  sha1: $sha1,\n  sha256: $sha256,\n  size: $size,\n  state: $state,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

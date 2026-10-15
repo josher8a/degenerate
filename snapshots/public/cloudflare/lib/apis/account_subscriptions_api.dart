@@ -14,7 +14,7 @@ final class AccountSubscriptionsApi with ApiExecutor {const AccountSubscriptions
 /// Lists all of an account's subscriptions.
 ///
 /// `GET /accounts/{account_id}/subscriptions`
-Future<ApiResult<List<Subscription2>, AccountSubscriptionsListSubscriptionsError>> accountSubscriptionsListSubscriptions({required Identifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Subscription2>, AccountSubscriptionsListSubscriptionsError>> accountSubscriptionsListSubscriptions({required Identifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AccountSubscriptionsListSubscriptionsError.fromResponse,
 );
- } 
+}
 /// Create Subscription
 ///
 /// Creates an account subscription.
 ///
 /// `POST /accounts/{account_id}/subscriptions`
-Future<ApiResult<Subscription2, AccountSubscriptionsCreateSubscriptionError>> accountSubscriptionsCreateSubscription({required Identifier accountId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription2, AccountSubscriptionsCreateSubscriptionError>> accountSubscriptionsCreateSubscription({required Identifier accountId, required Request2 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: AccountSubscriptionsCreateSubscriptionError.fromResponse,
 );
- } 
+}
 /// Update Subscription
 ///
 /// Updates an account subscription.
 ///
 /// `PUT /accounts/{account_id}/subscriptions/{subscription_identifier}`
-Future<ApiResult<Subscription2, AccountSubscriptionsUpdateSubscriptionError>> accountSubscriptionsUpdateSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription2, AccountSubscriptionsUpdateSubscriptionError>> accountSubscriptionsUpdateSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, required Request2 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,13 +81,13 @@ return await execute(
   },
   onError: AccountSubscriptionsUpdateSubscriptionError.fromResponse,
 );
- } 
+}
 /// Delete Subscription
 ///
 /// Deletes an account's subscription.
 ///
 /// `DELETE /accounts/{account_id}/subscriptions/{subscription_identifier}`
-Future<ApiResult<AccountSubscriptionsDeleteSubscriptionResponseResult, AccountSubscriptionsDeleteSubscriptionError>> accountSubscriptionsDeleteSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSubscriptionsDeleteSubscriptionResponseResult, AccountSubscriptionsDeleteSubscriptionError>> accountSubscriptionsDeleteSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -104,5 +104,5 @@ return await execute(
   },
   onError: AccountSubscriptionsDeleteSubscriptionError.fromResponse,
 );
- } 
- }
+}
+}

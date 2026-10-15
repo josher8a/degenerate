@@ -14,7 +14,7 @@ final class WorkersAiSummarizationApi with ApiExecutor {const WorkersAiSummariza
 /// Runs inference on the @cf/facebook/bart-large-cnn model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/bart-large-cnn`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookBartLargeCnnError>> workersAiPostRunCfFacebookBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookBartLargeCnnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookBartLargeCnnError>> workersAiPostRunCfFacebookBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookBartLargeCnnRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -43,13 +43,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfFacebookBartLargeCnnError.fromResponse,
 );
- } 
+}
 /// Execute @cf/facebook/nonomni-bart-large-cnn model.
 ///
 /// Runs inference on the @cf/facebook/nonomni-bart-large-cnn model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/nonomni-bart-large-cnn`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniBartLargeCnnError>> workersAiPostRunCfFacebookNonomniBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniBartLargeCnnError>> workersAiPostRunCfFacebookNonomniBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -78,5 +78,5 @@ return await execute(
   },
   onError: WorkersAiPostRunCfFacebookNonomniBartLargeCnnError.fromResponse,
 );
- } 
- }
+}
+}

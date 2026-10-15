@@ -14,12 +14,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The origin ipv4/
 /// ```
 @immutable final class LoadBalancingOriginHealthData {const LoadBalancingOriginHealthData({this.failureReason, this.healthy, this.responseCode, this.rtt, });
 
-factory LoadBalancingOriginHealthData.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginHealthData(
+factory LoadBalancingOriginHealthData.fromJson(Map<String, dynamic> json) {return LoadBalancingOriginHealthData(
   failureReason: json['failure_reason'] as String?,
   healthy: json['healthy'] as bool?,
   responseCode: json['response_code'] != null ? (json['response_code'] as num).toDouble() : null,
   rtt: json['rtt'] as String?,
-); }
+);}
 
 final String? failureReason;
 
@@ -29,19 +29,19 @@ final double? responseCode;
 
 final String? rtt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'failure_reason': ?failureReason,
   'healthy': ?healthy,
   'response_code': ?responseCode,
   'rtt': ?rtt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'failure_reason', 'healthy', 'response_code', 'rtt'}.contains(key)); } 
-LoadBalancingOriginHealthData copyWith({String? Function()? failureReason, bool? Function()? healthy, double? Function()? responseCode, String? Function()? rtt, }) { return LoadBalancingOriginHealthData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'failure_reason', 'healthy', 'response_code', 'rtt'}.contains(key));}
+LoadBalancingOriginHealthData copyWith({String? Function()? failureReason, bool? Function()? healthy, double? Function()? responseCode, String? Function()? rtt, }) {return LoadBalancingOriginHealthData(
   failureReason: failureReason != null ? failureReason() : this.failureReason,
   healthy: healthy != null ? healthy() : this.healthy,
   responseCode: responseCode != null ? responseCode() : this.responseCode,
   rtt: rtt != null ? rtt() : this.rtt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingOriginHealthData &&
           failureReason == other.failureReason &&
@@ -53,4 +53,4 @@ LoadBalancingOriginHealthData copyWith({String? Function()? failureReason, bool?
 
 @override String toString() => 'LoadBalancingOriginHealthData(failureReason: $failureReason, healthy: $healthy, responseCode: $responseCode, rtt: $rtt)';
 
- }
+}

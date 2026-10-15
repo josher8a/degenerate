@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat {const RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat();
 
-factory RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat $json = RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat csv = RadarGe
 static const List<RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$$json() => $json(),
       RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$csv() => csv(),
       RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$$json extends RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat {const RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$csv extends RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat {const RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$Unknown extends RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat {const RadarGetAttacksLayer3TimeseriesGroupByIpVersionFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

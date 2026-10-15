@@ -8,11 +8,11 @@ const GeneratedCard({this.string = const Omittable.absent(), this.paymentMethod 
 const GeneratedCard._({required this.rawValue, required this.string, required this.paymentMethod, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory GeneratedCard.fromJson(Object? json) { return GeneratedCard._(
+factory GeneratedCard.fromJson(Object? json) {return GeneratedCard._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   paymentMethod: json is Map<String, dynamic> && PaymentMethod.canParse(json) ? parseAnyOfVariant<PaymentMethod>(json, (value) => PaymentMethod.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'GeneratedCard(${toJson()})';
 
- }
+}

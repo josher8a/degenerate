@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RateLimitingTechnique {const RateLimitingTechnique();
 
-factory RateLimitingTechnique.fromJson(String json) { return switch (json) {
+factory RateLimitingTechnique.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'sliding' => sliding,
   _ => RateLimitingTechnique$Unknown(json),
-}; }
+};}
 
 static const RateLimitingTechnique fixed = RateLimitingTechnique$fixed._();
 
@@ -16,30 +16,30 @@ static const RateLimitingTechnique sliding = RateLimitingTechnique$sliding._();
 static const List<RateLimitingTechnique> values = [fixed, sliding];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fixed' => 'fixed',
   'sliding' => 'sliding',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RateLimitingTechnique$Unknown; } 
+bool get isUnknown {return this is RateLimitingTechnique$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fixed, required W Function() sliding, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fixed, required W Function() sliding, required W Function(String value) $unknown, }) {return switch (this) {
       RateLimitingTechnique$fixed() => fixed(),
       RateLimitingTechnique$sliding() => sliding(),
       RateLimitingTechnique$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function()? sliding, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function()? sliding, W Function(String value)? $unknown, }) {return switch (this) {
       RateLimitingTechnique$fixed() => fixed != null ? fixed() : orElse(value),
       RateLimitingTechnique$sliding() => sliding != null ? sliding() : orElse(value),
       RateLimitingTechnique$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RateLimitingTechnique($value)';
 
- }
+}
 @immutable final class RateLimitingTechnique$fixed extends RateLimitingTechnique {const RateLimitingTechnique$fixed._();
 
 @override String get value => 'fixed';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => 'fixed'.hashCode;
 
- }
+}
 @immutable final class RateLimitingTechnique$sliding extends RateLimitingTechnique {const RateLimitingTechnique$sliding._();
 
 @override String get value => 'sliding';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => 'sliding'.hashCode;
 
- }
+}
 @immutable final class RateLimitingTechnique$Unknown extends RateLimitingTechnique {const RateLimitingTechnique$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

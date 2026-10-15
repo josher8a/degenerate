@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot verification status.
 sealed class RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus();
 
-factory RadarGetBotsBotVerificationStatus.fromJson(String json) { return switch (json) {
+factory RadarGetBotsBotVerificationStatus.fromJson(String json) {return switch (json) {
   'VERIFIED' => verified,
   _ => RadarGetBotsBotVerificationStatus$Unknown(json),
-}; }
+};}
 
 static const RadarGetBotsBotVerificationStatus verified = RadarGetBotsBotVerificationStatus$verified._();
 
 static const List<RadarGetBotsBotVerificationStatus> values = [verified];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'VERIFIED' => 'verified',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetBotsBotVerificationStatus$Unknown; } 
+bool get isUnknown {return this is RadarGetBotsBotVerificationStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() verified, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() verified, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetBotsBotVerificationStatus$verified() => verified(),
       RadarGetBotsBotVerificationStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetBotsBotVerificationStatus$verified() => verified != null ? verified() : orElse(value),
       RadarGetBotsBotVerificationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetBotsBotVerificationStatus($value)';
 
- }
+}
 @immutable final class RadarGetBotsBotVerificationStatus$verified extends RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus$verified._();
 
 @override String get value => 'VERIFIED';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified
 
 @override int get hashCode => 'VERIFIED'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsBotVerificationStatus$Unknown extends RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified
 
 @override int get hashCode => value.hashCode;
 
- }
+}

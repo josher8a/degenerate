@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaid {const InvoicePaid({this.invoiceId});
 
-factory InvoicePaid.fromJson(Map<String, dynamic> json) { return InvoicePaid(
+factory InvoicePaid.fromJson(Map<String, dynamic> json) {return InvoicePaid(
   invoiceId: json['invoiceId'] as String?,
-); }
+);}
 
 final String? invoiceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'invoiceId': ?invoiceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invoiceId'}.contains(key)); } 
-InvoicePaid copyWith({String? Function()? invoiceId}) { return InvoicePaid(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'invoiceId'}.contains(key));}
+InvoicePaid copyWith({String? Function()? invoiceId}) {return InvoicePaid(
   invoiceId: invoiceId != null ? invoiceId() : this.invoiceId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaid &&
           invoiceId == other.invoiceId;
@@ -24,4 +24,4 @@ InvoicePaid copyWith({String? Function()? invoiceId}) { return InvoicePaid(
 
 @override String toString() => 'InvoicePaid(invoiceId: $invoiceId)';
 
- }
+}

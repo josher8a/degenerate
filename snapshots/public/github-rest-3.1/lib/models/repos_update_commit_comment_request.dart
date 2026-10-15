@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposUpdateCommitCommentRequest {const ReposUpdateCommitCommentRequest({required this.body});
 
-factory ReposUpdateCommitCommentRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateCommitCommentRequest(
+factory ReposUpdateCommitCommentRequest.fromJson(Map<String, dynamic> json) {return ReposUpdateCommitCommentRequest(
   body: json['body'] as String,
-); }
+);}
 
 /// The contents of the comment
 final String body;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'body': body,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String; } 
-ReposUpdateCommitCommentRequest copyWith({String? body}) { return ReposUpdateCommitCommentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('body') && json['body'] is String;}
+ReposUpdateCommitCommentRequest copyWith({String? body}) {return ReposUpdateCommitCommentRequest(
   body: body ?? this.body,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateCommitCommentRequest &&
           body == other.body;
@@ -25,4 +25,4 @@ ReposUpdateCommitCommentRequest copyWith({String? body}) { return ReposUpdateCom
 
 @override String toString() => 'ReposUpdateCommitCommentRequest(body: $body)';
 
- }
+}

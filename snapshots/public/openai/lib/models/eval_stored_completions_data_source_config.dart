@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class EvalStoredCompletionsDataSourceConfig {const EvalStoredCompletionsDataSourceConfig({required this.type, required this.schema, this.metadata = const Omittable.absent(), });
 
-factory EvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalStoredCompletionsDataSourceConfig(
+factory EvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic> json) {return EvalStoredCompletionsDataSourceConfig(
   type: CreateEvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   schema: json['schema'] as Map<String, dynamic>,
-); }
+);}
 
 /// The type of data source. Always `stored_completions`.
 final CreateEvalStoredCompletionsDataSourceConfigType type;
@@ -21,18 +21,18 @@ final Omittable<Map<String,String>?> metadata;
 /// 
 final Map<String,dynamic> schema;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
   'schema': schema,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'stored_completions' &&
-      json.containsKey('schema'); } 
-EvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Omittable<Map<String,String>?>? metadata, Map<String,dynamic>? schema, }) { return EvalStoredCompletionsDataSourceConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'stored_completions' &&
+      json.containsKey('schema');}
+EvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Omittable<Map<String,String>?>? metadata, Map<String,dynamic>? schema, }) {return EvalStoredCompletionsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata ?? this.metadata,
   schema: schema ?? this.schema,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EvalStoredCompletionsDataSourceConfig &&
           type == other.type &&
@@ -43,4 +43,4 @@ EvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletionsDataS
 
 @override String toString() => 'EvalStoredCompletionsDataSourceConfig(type: $type, metadata: $metadata, schema: $schema)';
 
- }
+}

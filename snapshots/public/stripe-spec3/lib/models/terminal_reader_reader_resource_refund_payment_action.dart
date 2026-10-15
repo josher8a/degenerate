@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_refund_payment_config.dart';/// Represents a reader action to refund a payment
 @immutable final class TerminalReaderReaderResourceRefundPaymentAction {const TerminalReaderReaderResourceRefundPaymentAction({this.amount, this.charge, this.metadata, this.paymentIntent, this.reason, this.refund, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
 
-factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentAction(
+factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dynamic> json) {return TerminalReaderReaderResourceRefundPaymentAction(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   charge: json['charge'] != null ? ApplicationFeeCharge.fromJson(json['charge']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -14,7 +14,7 @@ factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dyn
   refundApplicationFee: json['refund_application_fee'] as bool?,
   refundPaymentConfig: json['refund_payment_config'] != null ? TerminalReaderReaderResourceRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
   reverseTransfer: json['reverse_transfer'] as bool?,
-); }
+);}
 
 /// The amount being refunded.
 final int? amount;
@@ -42,7 +42,7 @@ final TerminalReaderReaderResourceRefundPaymentConfig? refundPaymentConfig;
 /// Boolean indicating whether the transfer should be reversed when refunding this charge. The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount). A transfer can be reversed only by the application that created the charge.
 final bool? reverseTransfer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   if (charge != null) 'charge': charge?.toJson(),
   'metadata': ?metadata,
@@ -52,9 +52,9 @@ Map<String, dynamic> toJson() { return {
   'refund_application_fee': ?refundApplicationFee,
   if (refundPaymentConfig != null) 'refund_payment_config': refundPaymentConfig?.toJson(),
   'reverse_transfer': ?reverseTransfer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'metadata', 'payment_intent', 'reason', 'refund', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key)); } 
-TerminalReaderReaderResourceRefundPaymentAction copyWith({int? Function()? amount, ApplicationFeeCharge? Function()? charge, Map<String, String>? Function()? metadata, ChargePaymentIntent? Function()? paymentIntent, PostChargesChargeRefundRequestReason? Function()? reason, CreditNoteRefundRefund? Function()? refund, bool? Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig? Function()? refundPaymentConfig, bool? Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'charge', 'metadata', 'payment_intent', 'reason', 'refund', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key));}
+TerminalReaderReaderResourceRefundPaymentAction copyWith({int? Function()? amount, ApplicationFeeCharge? Function()? charge, Map<String, String>? Function()? metadata, ChargePaymentIntent? Function()? paymentIntent, PostChargesChargeRefundRequestReason? Function()? reason, CreditNoteRefundRefund? Function()? refund, bool? Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig? Function()? refundPaymentConfig, bool? Function()? reverseTransfer, }) {return TerminalReaderReaderResourceRefundPaymentAction(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   metadata: metadata != null ? metadata() : this.metadata,
@@ -64,7 +64,7 @@ TerminalReaderReaderResourceRefundPaymentAction copyWith({int? Function()? amoun
   refundApplicationFee: refundApplicationFee != null ? refundApplicationFee() : this.refundApplicationFee,
   refundPaymentConfig: refundPaymentConfig != null ? refundPaymentConfig() : this.refundPaymentConfig,
   reverseTransfer: reverseTransfer != null ? reverseTransfer() : this.reverseTransfer,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceRefundPaymentAction &&
           amount == other.amount &&
@@ -81,4 +81,4 @@ TerminalReaderReaderResourceRefundPaymentAction copyWith({int? Function()? amoun
 
 @override String toString() => 'TerminalReaderReaderResourceRefundPaymentAction(\n  amount: $amount,\n  charge: $charge,\n  metadata: $metadata,\n  paymentIntent: $paymentIntent,\n  reason: $reason,\n  refund: $refund,\n  refundApplicationFee: $refundApplicationFee,\n  refundPaymentConfig: $refundPaymentConfig,\n  reverseTransfer: $reverseTransfer,\n)';
 
- }
+}

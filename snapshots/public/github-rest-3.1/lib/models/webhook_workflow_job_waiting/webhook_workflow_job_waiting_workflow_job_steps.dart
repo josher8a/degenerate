@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite/simple_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_queued/steps_conclusion.dart';@immutable final class WebhookWorkflowJobWaitingWorkflowJobSteps {const WebhookWorkflowJobWaitingWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
 
-factory WebhookWorkflowJobWaitingWorkflowJobSteps.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobWaitingWorkflowJobSteps(
+factory WebhookWorkflowJobWaitingWorkflowJobSteps.fromJson(Map<String, dynamic> json) {return WebhookWorkflowJobWaitingWorkflowJobSteps(
   completedAt: json['completed_at'] as String?,
   conclusion: json['conclusion'] != null ? StepsConclusion.fromJson(json['conclusion'] as String) : null,
   name: json['name'] as String,
   number: (json['number'] as num).toInt(),
   startedAt: json['started_at'] as String?,
   status: SimpleCheckSuiteStatus.fromJson(json['status'] as String),
-); }
+);}
 
 final String? completedAt;
 
@@ -24,28 +24,28 @@ final String? startedAt;
 
 final SimpleCheckSuiteStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completed_at': completedAt,
   'conclusion': conclusion?.toJson(),
   'name': name,
   'number': number,
   'started_at': startedAt,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('started_at') && (json['started_at'] == null || json['started_at'] is String) &&
-      json.containsKey('status'); } 
-WebhookWorkflowJobWaitingWorkflowJobSteps copyWith({String? Function()? completedAt, StepsConclusion? Function()? conclusion, String? name, int? number, String? Function()? startedAt, SimpleCheckSuiteStatus? status, }) { return WebhookWorkflowJobWaitingWorkflowJobSteps(
+      json.containsKey('status');}
+WebhookWorkflowJobWaitingWorkflowJobSteps copyWith({String? Function()? completedAt, StepsConclusion? Function()? conclusion, String? name, int? number, String? Function()? startedAt, SimpleCheckSuiteStatus? status, }) {return WebhookWorkflowJobWaitingWorkflowJobSteps(
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   name: name ?? this.name,
   number: number ?? this.number,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobWaitingWorkflowJobSteps &&
           completedAt == other.completedAt &&
@@ -59,4 +59,4 @@ WebhookWorkflowJobWaitingWorkflowJobSteps copyWith({String? Function()? complete
 
 @override String toString() => 'WebhookWorkflowJobWaitingWorkflowJobSteps(completedAt: $completedAt, conclusion: $conclusion, name: $name, number: $number, startedAt: $startedAt, status: $status)';
 
- }
+}

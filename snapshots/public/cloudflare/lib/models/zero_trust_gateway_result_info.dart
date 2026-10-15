@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayResultInfo {const ZeroTrustGatewayResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
-factory ZeroTrustGatewayResultInfo.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayResultInfo(
+factory ZeroTrustGatewayResultInfo.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,
   page: json['page'] != null ? (json['page'] as num).toDouble() : null,
   perPage: json['per_page'] != null ? (json['per_page'] as num).toDouble() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toDouble() : null,
-); }
+);}
 
 /// Indicate the total number of results for the requested service.
 /// 
@@ -30,19 +30,19 @@ final double? perPage;
 /// Example: `2000`
 final double? totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'page': ?page,
   'per_page': ?perPage,
   'total_count': ?totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count'}.contains(key)); } 
-ZeroTrustGatewayResultInfo copyWith({double? Function()? count, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, }) { return ZeroTrustGatewayResultInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count'}.contains(key));}
+ZeroTrustGatewayResultInfo copyWith({double? Function()? count, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, }) {return ZeroTrustGatewayResultInfo(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayResultInfo &&
           count == other.count &&
@@ -54,4 +54,4 @@ ZeroTrustGatewayResultInfo copyWith({double? Function()? count, double? Function
 
 @override String toString() => 'ZeroTrustGatewayResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
 
- }
+}

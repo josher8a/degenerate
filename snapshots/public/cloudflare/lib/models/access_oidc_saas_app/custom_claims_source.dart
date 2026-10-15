@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomClaimsSource {const CustomClaimsSource({this.name, this.nameByIdp, });
 
-factory CustomClaimsSource.fromJson(Map<String, dynamic> json) { return CustomClaimsSource(
+factory CustomClaimsSource.fromJson(Map<String, dynamic> json) {return CustomClaimsSource(
   name: json['name'] as String?,
   nameByIdp: (json['name_by_idp'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// The name of the IdP claim.
 /// 
@@ -18,15 +18,15 @@ final String? name;
 /// Example: `{exampleIdPID1: ClaimName1, exampleIdPID2: ClaimName2}`
 final Map<String,String>? nameByIdp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'name_by_idp': ?nameByIdp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'name_by_idp'}.contains(key)); } 
-CustomClaimsSource copyWith({String? Function()? name, Map<String, String>? Function()? nameByIdp, }) { return CustomClaimsSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'name_by_idp'}.contains(key));}
+CustomClaimsSource copyWith({String? Function()? name, Map<String, String>? Function()? nameByIdp, }) {return CustomClaimsSource(
   name: name != null ? name() : this.name,
   nameByIdp: nameByIdp != null ? nameByIdp() : this.nameByIdp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomClaimsSource &&
           name == other.name &&
@@ -36,4 +36,4 @@ CustomClaimsSource copyWith({String? Function()? name, Map<String, String>? Func
 
 @override String toString() => 'CustomClaimsSource(name: $name, nameByIdp: $nameByIdp)';
 
- }
+}

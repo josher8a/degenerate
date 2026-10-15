@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_providers_response/aig_config_create_providers_response_result.dart';@immutable final class AigConfigListProvidersResponse {const AigConfigListProvidersResponse({required this.result, required this.success, });
 
-factory AigConfigListProvidersResponse.fromJson(Map<String, dynamic> json) { return AigConfigListProvidersResponse(
+factory AigConfigListProvidersResponse.fromJson(Map<String, dynamic> json) {return AigConfigListProvidersResponse(
   result: (json['result'] as List<dynamic>).map((e) => AigConfigCreateProvidersResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AigConfigCreateProvidersResponseResult> result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigListProvidersResponse copyWith({List<AigConfigCreateProvidersResponseResult>? result, bool? success, }) { return AigConfigListProvidersResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigListProvidersResponse copyWith({List<AigConfigCreateProvidersResponseResult>? result, bool? success, }) {return AigConfigListProvidersResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListProvidersResponse &&
           listEquals(result, other.result) &&
@@ -31,4 +31,4 @@ AigConfigListProvidersResponse copyWith({List<AigConfigCreateProvidersResponseRe
 
 @override String toString() => 'AigConfigListProvidersResponse(result: $result, success: $success)';
 
- }
+}

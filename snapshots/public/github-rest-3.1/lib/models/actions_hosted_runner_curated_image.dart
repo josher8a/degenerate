@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_curated_image/actions_hosted_runner_curated_image_source.dart';/// Provides details of a hosted runner image
 @immutable final class ActionsHostedRunnerCuratedImage {const ActionsHostedRunnerCuratedImage({required this.id, required this.platform, required this.sizeGb, required this.displayName, required this.source, });
 
-factory ActionsHostedRunnerCuratedImage.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerCuratedImage(
+factory ActionsHostedRunnerCuratedImage.fromJson(Map<String, dynamic> json) {return ActionsHostedRunnerCuratedImage(
   id: json['id'] as String,
   platform: json['platform'] as String,
   sizeGb: (json['size_gb'] as num).toInt(),
   displayName: json['display_name'] as String,
   source: ActionsHostedRunnerCuratedImageSource.fromJson(json['source'] as String),
-); }
+);}
 
 /// The ID of the image. Use this ID for the `image` parameter when creating a new larger runner.
 final String id;
@@ -27,25 +27,25 @@ final String displayName;
 /// The image provider.
 final ActionsHostedRunnerCuratedImageSource source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'platform': platform,
   'size_gb': sizeGb,
   'display_name': displayName,
   'source': source.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('platform') && json['platform'] is String &&
       json.containsKey('size_gb') && json['size_gb'] is num &&
       json.containsKey('display_name') && json['display_name'] is String &&
-      json.containsKey('source'); } 
-ActionsHostedRunnerCuratedImage copyWith({String? id, String? platform, int? sizeGb, String? displayName, ActionsHostedRunnerCuratedImageSource? source, }) { return ActionsHostedRunnerCuratedImage(
+      json.containsKey('source');}
+ActionsHostedRunnerCuratedImage copyWith({String? id, String? platform, int? sizeGb, String? displayName, ActionsHostedRunnerCuratedImageSource? source, }) {return ActionsHostedRunnerCuratedImage(
   id: id ?? this.id,
   platform: platform ?? this.platform,
   sizeGb: sizeGb ?? this.sizeGb,
   displayName: displayName ?? this.displayName,
   source: source ?? this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsHostedRunnerCuratedImage &&
           id == other.id &&
@@ -58,4 +58,4 @@ ActionsHostedRunnerCuratedImage copyWith({String? id, String? platform, int? siz
 
 @override String toString() => 'ActionsHostedRunnerCuratedImage(id: $id, platform: $platform, sizeGb: $sizeGb, displayName: $displayName, source: $source)';
 
- }
+}

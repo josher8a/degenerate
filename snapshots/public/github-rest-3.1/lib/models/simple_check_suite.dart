@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite/check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite/simple_check_suite_status.dart';/// A suite of checks performed on the code of a given code change
 @immutable final class SimpleCheckSuite {const SimpleCheckSuite({this.after = const Omittable.absent(), this.app = const Omittable.absent(), this.before = const Omittable.absent(), this.conclusion = const Omittable.absent(), this.createdAt, this.headBranch = const Omittable.absent(), this.headSha, this.id, this.nodeId, this.pullRequests, this.repository, this.status, this.updatedAt, this.url, });
 
-factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) { return SimpleCheckSuite(
+factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) {return SimpleCheckSuite(
   after: json.containsKey('after') ? Omittable(json['after'] as String?) : const Omittable.absent(),
   app: json.containsKey('app') ? Omittable(json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   before: json.containsKey('before') ? Omittable(json['before'] as String?) : const Omittable.absent(),
@@ -19,7 +19,7 @@ factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) { return SimpleChec
   status: json['status'] != null ? SimpleCheckSuiteStatus.fromJson(json['status'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   url: json['url'] as String?,
-); }
+);}
 
 final Omittable<String?> after;
 
@@ -50,7 +50,7 @@ final DateTime? updatedAt;
 
 final String? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (after.isPresent) 'after': after.value,
   if (app.isPresent) 'app': app.value?.toJson(),
   if (before.isPresent) 'before': before.value,
@@ -65,9 +65,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   'url': ?url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after', 'app', 'before', 'conclusion', 'created_at', 'head_branch', 'head_sha', 'id', 'node_id', 'pull_requests', 'repository', 'status', 'updated_at', 'url'}.contains(key)); } 
-SimpleCheckSuite copyWith({Omittable<String?>? after, Omittable<Integration?>? app, Omittable<String?>? before, Omittable<CheckSuiteConclusion?>? conclusion, DateTime? Function()? createdAt, Omittable<String?>? headBranch, String? Function()? headSha, int? Function()? id, String? Function()? nodeId, List<PullRequestMinimal>? Function()? pullRequests, MinimalRepository? Function()? repository, SimpleCheckSuiteStatus? Function()? status, DateTime? Function()? updatedAt, String? Function()? url, }) { return SimpleCheckSuite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'after', 'app', 'before', 'conclusion', 'created_at', 'head_branch', 'head_sha', 'id', 'node_id', 'pull_requests', 'repository', 'status', 'updated_at', 'url'}.contains(key));}
+SimpleCheckSuite copyWith({Omittable<String?>? after, Omittable<Integration?>? app, Omittable<String?>? before, Omittable<CheckSuiteConclusion?>? conclusion, DateTime? Function()? createdAt, Omittable<String?>? headBranch, String? Function()? headSha, int? Function()? id, String? Function()? nodeId, List<PullRequestMinimal>? Function()? pullRequests, MinimalRepository? Function()? repository, SimpleCheckSuiteStatus? Function()? status, DateTime? Function()? updatedAt, String? Function()? url, }) {return SimpleCheckSuite(
   after: after ?? this.after,
   app: app ?? this.app,
   before: before ?? this.before,
@@ -82,7 +82,7 @@ SimpleCheckSuite copyWith({Omittable<String?>? after, Omittable<Integration?>? a
   status: status != null ? status() : this.status,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleCheckSuite &&
           after == other.after &&
@@ -104,4 +104,4 @@ SimpleCheckSuite copyWith({Omittable<String?>? after, Omittable<Integration?>? a
 
 @override String toString() => 'SimpleCheckSuite(\n  after: $after,\n  app: $app,\n  before: $before,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  headBranch: $headBranch,\n  headSha: $headSha,\n  id: $id,\n  nodeId: $nodeId,\n  pullRequests: $pullRequests,\n  repository: $repository,\n  status: $status,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
- }
+}

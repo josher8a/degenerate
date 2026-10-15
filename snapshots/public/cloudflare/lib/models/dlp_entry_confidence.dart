@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntryConfidence {const DlpEntryConfidence({required this.aiContextAvailable, required this.available, });
 
-factory DlpEntryConfidence.fromJson(Map<String, dynamic> json) { return DlpEntryConfidence(
+factory DlpEntryConfidence.fromJson(Map<String, dynamic> json) {return DlpEntryConfidence(
   aiContextAvailable: json['ai_context_available'] as bool,
   available: json['available'] as bool,
-); }
+);}
 
 /// Indicates whether this entry has AI remote service validation.
 final bool aiContextAvailable;
@@ -14,16 +14,16 @@ final bool aiContextAvailable;
 /// Indicates whether this entry has any form of validation that is not an AI remote service.
 final bool available;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ai_context_available': aiContextAvailable,
   'available': available,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ai_context_available') && json['ai_context_available'] is bool &&
-      json.containsKey('available') && json['available'] is bool; } 
-DlpEntryConfidence copyWith({bool? aiContextAvailable, bool? available, }) { return DlpEntryConfidence(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ai_context_available') && json['ai_context_available'] is bool &&
+      json.containsKey('available') && json['available'] is bool;}
+DlpEntryConfidence copyWith({bool? aiContextAvailable, bool? available, }) {return DlpEntryConfidence(
   aiContextAvailable: aiContextAvailable ?? this.aiContextAvailable,
   available: available ?? this.available,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryConfidence &&
           aiContextAvailable == other.aiContextAvailable &&
@@ -33,4 +33,4 @@ DlpEntryConfidence copyWith({bool? aiContextAvailable, bool? available, }) { ret
 
 @override String toString() => 'DlpEntryConfidence(aiContextAvailable: $aiContextAvailable, available: $available)';
 
- }
+}

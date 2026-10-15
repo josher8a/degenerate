@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `location` filter applies to the source or target location.
 sealed class RadarGetAttacksLayer3SummaryByBitrateDirection {const RadarGetAttacksLayer3SummaryByBitrateDirection();
 
-factory RadarGetAttacksLayer3SummaryByBitrateDirection.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3SummaryByBitrateDirection.fromJson(String json) {return switch (json) {
   'ORIGIN' => origin,
   'TARGET' => target,
   _ => RadarGetAttacksLayer3SummaryByBitrateDirection$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3SummaryByBitrateDirection origin = RadarGetAttacksLayer3SummaryByBitrateDirection$origin._();
 
@@ -17,30 +17,30 @@ static const RadarGetAttacksLayer3SummaryByBitrateDirection target = RadarGetAtt
 static const List<RadarGetAttacksLayer3SummaryByBitrateDirection> values = [origin, target];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ORIGIN' => 'origin',
   'TARGET' => 'target',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer3SummaryByBitrateDirection$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer3SummaryByBitrateDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() origin, required W Function() target, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() origin, required W Function() target, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3SummaryByBitrateDirection$origin() => origin(),
       RadarGetAttacksLayer3SummaryByBitrateDirection$target() => target(),
       RadarGetAttacksLayer3SummaryByBitrateDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, W Function()? target, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, W Function()? target, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3SummaryByBitrateDirection$origin() => origin != null ? origin() : orElse(value),
       RadarGetAttacksLayer3SummaryByBitrateDirection$target() => target != null ? target() : orElse(value),
       RadarGetAttacksLayer3SummaryByBitrateDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer3SummaryByBitrateDirection($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer3SummaryByBitrateDirection$origin extends RadarGetAttacksLayer3SummaryByBitrateDirection {const RadarGetAttacksLayer3SummaryByBitrateDirection$origin._();
 
 @override String get value => 'ORIGIN';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, 
 
 @override int get hashCode => 'ORIGIN'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3SummaryByBitrateDirection$target extends RadarGetAttacksLayer3SummaryByBitrateDirection {const RadarGetAttacksLayer3SummaryByBitrateDirection$target._();
 
 @override String get value => 'TARGET';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, 
 
 @override int get hashCode => 'TARGET'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3SummaryByBitrateDirection$Unknown extends RadarGetAttacksLayer3SummaryByBitrateDirection {const RadarGetAttacksLayer3SummaryByBitrateDirection$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

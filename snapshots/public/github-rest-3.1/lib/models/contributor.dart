@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contributor
 @immutable final class Contributor {const Contributor({required this.type, required this.contributions, this.login, this.id, this.nodeId, this.avatarUrl, this.gravatarId = const Omittable.absent(), this.url, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.reposUrl, this.eventsUrl, this.receivedEventsUrl, this.siteAdmin, this.email, this.name, this.userViewType, });
 
-factory Contributor.fromJson(Map<String, dynamic> json) { return Contributor(
+factory Contributor.fromJson(Map<String, dynamic> json) {return Contributor(
   login: json['login'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
@@ -27,7 +27,7 @@ factory Contributor.fromJson(Map<String, dynamic> json) { return Contributor(
   email: json['email'] as String?,
   name: json['name'] as String?,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String? login;
 
@@ -73,7 +73,7 @@ final String? name;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': ?login,
   'id': ?id,
   'node_id': ?nodeId,
@@ -96,10 +96,10 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
   'name': ?name,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('contributions') && json['contributions'] is num; } 
-Contributor copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, Uri? Function()? avatarUrl, Omittable<String?>? gravatarId, Uri? Function()? url, Uri? Function()? htmlUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, Uri? Function()? organizationsUrl, Uri? Function()? reposUrl, String? Function()? eventsUrl, Uri? Function()? receivedEventsUrl, String? type, bool? Function()? siteAdmin, int? contributions, String? Function()? email, String? Function()? name, String? Function()? userViewType, }) { return Contributor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('contributions') && json['contributions'] is num;}
+Contributor copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, Uri? Function()? avatarUrl, Omittable<String?>? gravatarId, Uri? Function()? url, Uri? Function()? htmlUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, Uri? Function()? organizationsUrl, Uri? Function()? reposUrl, String? Function()? eventsUrl, Uri? Function()? receivedEventsUrl, String? type, bool? Function()? siteAdmin, int? contributions, String? Function()? email, String? Function()? name, String? Function()? userViewType, }) {return Contributor(
   login: login != null ? login() : this.login,
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
@@ -122,7 +122,7 @@ Contributor copyWith({String? Function()? login, int? Function()? id, String? Fu
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Contributor &&
           login == other.login &&
@@ -152,4 +152,4 @@ Contributor copyWith({String? Function()? login, int? Function()? id, String? Fu
 
 @override String toString() => 'Contributor(\n  login: $login,\n  id: $id,\n  nodeId: $nodeId,\n  avatarUrl: $avatarUrl,\n  gravatarId: $gravatarId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  organizationsUrl: $organizationsUrl,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  type: $type,\n  siteAdmin: $siteAdmin,\n  contributions: $contributions,\n  email: $email,\n  name: $name,\n  userViewType: $userViewType,\n)';
 
- }
+}

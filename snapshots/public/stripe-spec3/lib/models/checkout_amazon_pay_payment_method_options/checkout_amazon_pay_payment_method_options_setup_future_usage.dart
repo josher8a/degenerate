@@ -10,11 +10,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 sealed class CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage {const CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage();
 
-factory CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   'off_session' => offSession,
   _ => CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown(json),
-}; }
+};}
 
 static const CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage none = CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$none._();
 
@@ -23,30 +23,30 @@ static const CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage offSession = 
 static const List<CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage> values = [none, offSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'off_session' => 'offSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown; } 
+bool get isUnknown {return this is CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() offSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() offSession, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$none() => none(),
       CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$offSession() => offSession(),
       CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? offSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? offSession, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$none() => none != null ? none() : orElse(value),
       CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$offSession() => offSession != null ? offSession() : orElse(value),
       CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage($value)';
 
- }
+}
 @immutable final class CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$none extends CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage {const CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$none._();
 
 @override String get value => 'none';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$offSession extends CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage {const CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$offSession._();
 
 @override String get value => 'off_session';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'off_session'.hashCode;
 
- }
+}
 @immutable final class CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown extends CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage {const CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown(this.value);
 
 @override final String value;
@@ -74,4 +74,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

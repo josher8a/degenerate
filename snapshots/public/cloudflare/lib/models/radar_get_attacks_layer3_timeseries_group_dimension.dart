@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 sealed class RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension();
 
-factory RadarGetAttacksLayer3TimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'PROTOCOL' => protocol,
   'IP_VERSION' => ipVersion,
   'VECTOR' => vector,
@@ -13,7 +13,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupDimension.fromJson(String json) { re
   'VERTICAL' => vertical,
   'INDUSTRY' => industry,
   _ => RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TimeseriesGroupDimension protocol = RadarGetAttacksLayer3TimeseriesGroupDimension$protocol._();
 
@@ -32,9 +32,9 @@ static const RadarGetAttacksLayer3TimeseriesGroupDimension industry = RadarGetAt
 static const List<RadarGetAttacksLayer3TimeseriesGroupDimension> values = [protocol, ipVersion, vector, duration, bitrate, vertical, industry];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'PROTOCOL' => 'protocol',
   'IP_VERSION' => 'ipVersion',
   'VECTOR' => 'vector',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'VERTICAL' => 'vertical',
   'INDUSTRY' => 'industry',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() protocol, required W Function() ipVersion, required W Function() vector, required W Function() duration, required W Function() bitrate, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() protocol, required W Function() ipVersion, required W Function() vector, required W Function() duration, required W Function() bitrate, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TimeseriesGroupDimension$protocol() => protocol(),
       RadarGetAttacksLayer3TimeseriesGroupDimension$ipVersion() => ipVersion(),
       RadarGetAttacksLayer3TimeseriesGroupDimension$vector() => vector(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() protocol, required W Function() ipVersion, requ
       RadarGetAttacksLayer3TimeseriesGroupDimension$vertical() => vertical(),
       RadarGetAttacksLayer3TimeseriesGroupDimension$industry() => industry(),
       RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol, W Function()? ipVersion, W Function()? vector, W Function()? duration, W Function()? bitrate, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol, W Function()? ipVersion, W Function()? vector, W Function()? duration, W Function()? bitrate, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TimeseriesGroupDimension$protocol() => protocol != null ? protocol() : orElse(value),
       RadarGetAttacksLayer3TimeseriesGroupDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
       RadarGetAttacksLayer3TimeseriesGroupDimension$vector() => vector != null ? vector() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
       RadarGetAttacksLayer3TimeseriesGroupDimension$vertical() => vertical != null ? vertical() : orElse(value),
       RadarGetAttacksLayer3TimeseriesGroupDimension$industry() => industry != null ? industry() : orElse(value),
       RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupDimension($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension$protocol extends RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension$protocol._();
 
 @override String get value => 'PROTOCOL';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
 
 @override int get hashCode => 'PROTOCOL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension$ipVersion extends RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension$ipVersion._();
 
 @override String get value => 'IP_VERSION';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
 
 @override int get hashCode => 'IP_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension$vector extends RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension$vector._();
 
 @override String get value => 'VECTOR';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
 
 @override int get hashCode => 'VECTOR'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension$duration extends RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension$duration._();
 
 @override String get value => 'DURATION';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
 
 @override int get hashCode => 'DURATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension$bitrate extends RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension$bitrate._();
 
 @override String get value => 'BITRATE';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
 
 @override int get hashCode => 'BITRATE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension$vertical extends RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension$vertical._();
 
 @override String get value => 'VERTICAL';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
 
 @override int get hashCode => 'VERTICAL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension$industry extends RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension$industry._();
 
 @override String get value => 'INDUSTRY';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
 
 @override int get hashCode => 'INDUSTRY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown extends RadarGetAttacksLayer3TimeseriesGroupDimension {const RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol
 
 @override int get hashCode => value.hashCode;
 
- }
+}

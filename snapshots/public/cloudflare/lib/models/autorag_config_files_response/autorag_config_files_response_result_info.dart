@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigFilesResponseResultInfo {const AutoragConfigFilesResponseResultInfo({required this.count, required this.page, required this.totalCount, this.perPage, });
 
-factory AutoragConfigFilesResponseResultInfo.fromJson(Map<String, dynamic> json) { return AutoragConfigFilesResponseResultInfo(
+factory AutoragConfigFilesResponseResultInfo.fromJson(Map<String, dynamic> json) {return AutoragConfigFilesResponseResultInfo(
   count: (json['count'] as num).toInt(),
   page: (json['page'] as num).toInt(),
   perPage: json['per_page'] != null ? (json['per_page'] as num).toInt() : null,
   totalCount: (json['total_count'] as num).toInt(),
-); }
+);}
 
 final int count;
 
@@ -21,29 +21,29 @@ final int totalCount;
 /// The value of `perPage`, or its schema default when absent.
 int get perPageOrDefault => perPage ?? 20;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'page': page,
   'per_page': ?perPage,
   'total_count': totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('page') && json['page'] is num &&
-      json.containsKey('total_count') && json['total_count'] is num; } 
+      json.containsKey('total_count') && json['total_count'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final perPage$ = perPage;
 if (perPage$ != null) {
   if (perPage$ < 5) { errors.add('perPage: must be >= 5'); }
   if (perPage$ > 50) { errors.add('perPage: must be <= 50'); }
 }
-return errors; } 
-AutoragConfigFilesResponseResultInfo copyWith({int? count, int? page, int? Function()? perPage, int? totalCount, }) { return AutoragConfigFilesResponseResultInfo(
+return errors;}
+AutoragConfigFilesResponseResultInfo copyWith({int? count, int? page, int? Function()? perPage, int? totalCount, }) {return AutoragConfigFilesResponseResultInfo(
   count: count ?? this.count,
   page: page ?? this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount ?? this.totalCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigFilesResponseResultInfo &&
           count == other.count &&
@@ -55,4 +55,4 @@ AutoragConfigFilesResponseResultInfo copyWith({int? count, int? page, int? Funct
 
 @override String toString() => 'AutoragConfigFilesResponseResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
 
- }
+}

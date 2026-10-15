@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthorizedActorNames {const AuthorizedActorNames({required this.from});
 
-factory AuthorizedActorNames.fromJson(Map<String, dynamic> json) { return AuthorizedActorNames(
+factory AuthorizedActorNames.fromJson(Map<String, dynamic> json) {return AuthorizedActorNames(
   from: (json['from'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from'); } 
-AuthorizedActorNames copyWith({List<String>? from}) { return AuthorizedActorNames(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from');}
+AuthorizedActorNames copyWith({List<String>? from}) {return AuthorizedActorNames(
   from: from ?? this.from,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AuthorizedActorNames &&
           listEquals(from, other.from);
@@ -24,4 +24,4 @@ AuthorizedActorNames copyWith({List<String>? from}) { return AuthorizedActorName
 
 @override String toString() => 'AuthorizedActorNames(from: $from)';
 
- }
+}

@@ -14,4 +14,4 @@ static const defaultBaseUrl = 'http://petstore.swagger.io/v1';
 
 late final PetsApi pets = PetsApi(_config);
 
- }
+}

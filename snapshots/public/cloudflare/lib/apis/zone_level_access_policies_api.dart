@@ -14,7 +14,7 @@ final class ZoneLevelAccessPoliciesApi with ApiExecutor {const ZoneLevelAccessPo
 /// Lists Access policies configured for an application.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/policies`
-Future<ApiResult<List<AccessPolicies>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesListAccessPolicies({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessPolicies>?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesListAccessPolicies({required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Create an Access policy
 ///
 /// Create a new Access policy for an application.
 ///
 /// `POST /zones/{zone_id}/access/apps/{app_id}/policies`
-Future<ApiResult<AccessPolicies?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesCreateAnAccessPolicy({required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicies?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesCreateAnAccessPolicy({required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get an Access policy
 ///
 /// Fetches a single Access policy.
 ///
 /// `GET /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<AccessPolicies?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesGetAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicies?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesGetAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an Access policy
 ///
 /// Update a configured Access policy.
 ///
 /// `PUT /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<AccessPolicies?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesUpdateAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicies?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesUpdateAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, required ZoneLevelAccessPoliciesUpdateAnAccessPolicyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an Access policy
 ///
 /// Delete an Access policy.
 ///
 /// `DELETE /zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesDeleteAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> zoneLevelAccessPoliciesDeleteAnAccessPolicy({required AccessUuid policyId, required AccessUuid appId, required AccessIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,5 +127,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

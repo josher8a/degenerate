@@ -10,7 +10,7 @@ final class GlobalsApi with ApiExecutor {const GlobalsApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /anything/globals/queryParameter`
-Future<ApiResult<GlobalsQueryParameterGetResponse, Never>> globalsQueryParameterGet({required String globalQueryParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GlobalsQueryParameterGetResponse, Never>> globalsQueryParameterGet({required String globalQueryParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['globalQueryParam'] = globalQueryParam;
 
@@ -31,9 +31,9 @@ return await execute(
     return GlobalsQueryParameterGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/globals/pathParameter/{globalPathParam}`
-Future<ApiResult<GlobalPathParameterGetResponse, Never>> globalPathParameterGet({required int globalPathParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GlobalPathParameterGetResponse, Never>> globalPathParameterGet({required int globalPathParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -48,9 +48,9 @@ return await execute(
     return GlobalPathParameterGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/globals/header`
-Future<ApiResult<GlobalsHeaderGetResponse, Never>> globalsHeaderGet({required bool globalHeaderParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GlobalsHeaderGetResponse, Never>> globalsHeaderGet({required bool globalHeaderParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['globalHeaderParam'] = globalHeaderParam.toString();
 
 final request = ApiRequest(
@@ -66,13 +66,13 @@ return await execute(
     return GlobalsHeaderGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Tests that kebab-cased global parameters are correctly converted to
 /// appropriate naming conventions (camelCase, PascalCase, etc.) in generated SDKs.
 /// 
 ///
 /// `GET /anything/globals/kebabCaseParam`
-Future<ApiResult<GlobalsKebabCaseParamGetResponse, Never>> globalsKebabCaseParamGet({String? kebabCaseParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GlobalsKebabCaseParamGetResponse, Never>> globalsKebabCaseParamGet({String? kebabCaseParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (kebabCaseParam != null) {
   queryParameters['kebab-case-param'] = kebabCaseParam;
@@ -95,9 +95,9 @@ return await execute(
     return GlobalsKebabCaseParamGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/globals/hidden/{globalHiddenPathParam}`
-Future<ApiResult<GlobalsHiddenPostResponse, Never>> globalsHiddenPost({required String globalHiddenPathParam, required String globalHiddenQueryParam, required String globalHiddenHeaderParam, required GlobalsHiddenPostRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GlobalsHiddenPostResponse, Never>> globalsHiddenPost({required String globalHiddenPathParam, required String globalHiddenQueryParam, required String globalHiddenHeaderParam, required GlobalsHiddenPostRequest body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['globalHiddenQueryParam'] = globalHiddenQueryParam;
 
@@ -121,14 +121,14 @@ return await execute(
     return GlobalsHiddenPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// This operation requires a globally optional path parameter. A failing
 /// test with 404 likely indicates that the path parameter value is not
 /// being templated into the operation request (.../globals//...).
 /// 
 ///
 /// `GET /anything/globals/{globalOptionalPathParam}/operation/required`
-Future<ApiResult<void, Never>> globalsOptionalPathParameterOperationRequired({required String globalOptionalPathParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> globalsOptionalPathParameterOperationRequired({required String globalOptionalPathParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -141,14 +141,14 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// This path requires a globally optional path parameter. A failing
 /// test with 404 likely indicates that the path parameter value is not
 /// being templated into the operation request (.../globals//...).
 /// 
 ///
 /// `GET /anything/globals/{globalOptionalPathParam}/path/required`
-Future<ApiResult<void, Never>> globalsOptionalPathParameterPathRequired({required String globalOptionalPathParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> globalsOptionalPathParameterPathRequired({required String globalOptionalPathParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -161,14 +161,14 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// This operation requires a globally optional hidden path parameter. A
 /// failing test with 404 likely indicates that the path parameter value is
 /// not being templated into the client (.../hidden//...).
 /// 
 ///
 /// `GET /anything/globals/hidden/{globalOptionalHiddenPathParam}/operation/required`
-Future<ApiResult<void, Never>> globalsOptionalHiddenPathParameterOperationRequired({required String globalOptionalHiddenPathParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> globalsOptionalHiddenPathParameterOperationRequired({required String globalOptionalHiddenPathParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -181,14 +181,14 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// This path requires a globally optional hidden path parameter. A failing
 /// test with 404 likely indicates that the path parameter value is not
 /// being templated into the client (.../hidden//...).
 /// 
 ///
 /// `GET /anything/globals/hidden/{globalOptionalHiddenPathParam}/path/required`
-Future<ApiResult<void, Never>> globalsOptionalHiddenPathParameterPathRequired({required String globalOptionalHiddenPathParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> globalsOptionalHiddenPathParameterPathRequired({required String globalOptionalHiddenPathParam, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -201,7 +201,7 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Tests that when an operation defines its own parameters (not redefining globals),
 /// the global parameters should NOT be included when operationScopedParamsNov2025 fix is enabled.
 /// This endpoint defines operation-specific query, path, and header parameters.
@@ -210,7 +210,7 @@ return await execute(
 /// 
 ///
 /// `GET /anything/globals/operationScopedExclusive/{operationPathParam}`
-Future<ApiResult<GlobalsOperationScopedExclusiveResponse, Never>> globalsOperationScopedExclusive({required String operationPathParam, required String operationQueryParam, required String operationHeaderParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GlobalsOperationScopedExclusiveResponse, Never>> globalsOperationScopedExclusive({required String operationPathParam, required String operationQueryParam, required String operationHeaderParam, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['operationQueryParam'] = operationQueryParam;
 
@@ -232,5 +232,5 @@ return await execute(
     return GlobalsOperationScopedExclusiveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

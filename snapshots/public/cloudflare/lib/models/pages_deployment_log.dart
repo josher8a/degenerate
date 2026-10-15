@@ -132,11 +132,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class PagesDeploymentLog {const PagesDeploymentLog({required this.data, required this.includesContainerLogs, required this.total, });
 
-factory PagesDeploymentLog.fromJson(Map<String, dynamic> json) { return PagesDeploymentLog(
+factory PagesDeploymentLog.fromJson(Map<String, dynamic> json) {return PagesDeploymentLog(
   data: (json['data'] as List<dynamic>).map((e) => PagesDeploymentLogData.fromJson(e as Map<String, dynamic>)).toList(),
   includesContainerLogs: json['includes_container_logs'] as bool,
   total: (json['total'] as num).toInt(),
-); }
+);}
 
 final List<PagesDeploymentLogData> data;
 
@@ -144,19 +144,19 @@ final bool includesContainerLogs;
 
 final int total;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'includes_container_logs': includesContainerLogs,
   'total': total,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('includes_container_logs') && json['includes_container_logs'] is bool &&
-      json.containsKey('total') && json['total'] is num; } 
-PagesDeploymentLog copyWith({List<PagesDeploymentLogData>? data, bool? includesContainerLogs, int? total, }) { return PagesDeploymentLog(
+      json.containsKey('total') && json['total'] is num;}
+PagesDeploymentLog copyWith({List<PagesDeploymentLogData>? data, bool? includesContainerLogs, int? total, }) {return PagesDeploymentLog(
   data: data ?? this.data,
   includesContainerLogs: includesContainerLogs ?? this.includesContainerLogs,
   total: total ?? this.total,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentLog &&
           listEquals(data, other.data) &&
@@ -167,4 +167,4 @@ PagesDeploymentLog copyWith({List<PagesDeploymentLogData>? data, bool? includesC
 
 @override String toString() => 'PagesDeploymentLog(data: $data, includesContainerLogs: $includesContainerLogs, total: $total)';
 
- }
+}

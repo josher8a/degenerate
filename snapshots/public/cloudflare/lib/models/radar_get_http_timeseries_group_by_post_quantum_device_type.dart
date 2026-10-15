@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupByPostQuantumDeviceType {const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType();
 
-factory RadarGetHttpTimeseriesGroupByPostQuantumDeviceType.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByPostQuantumDeviceType.fromJson(String json) {return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
   _ => RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType desktop = RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$desktop._();
 
@@ -19,33 +19,33 @@ static const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType $other = RadarGe
 static const List<RadarGetHttpTimeseriesGroupByPostQuantumDeviceType> values = [desktop, mobile, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DESKTOP' => 'desktop',
   'MOBILE' => 'mobile',
   'OTHER' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$desktop() => desktop(),
       RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$mobile() => mobile(),
       RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$$other() => $other(),
       RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$desktop() => desktop != null ? desktop() : orElse(value),
       RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$mobile() => mobile != null ? mobile() : orElse(value),
       RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$$other() => $other != null ? $other() : orElse(value),
       RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumDeviceType($value)';
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$desktop extends RadarGetHttpTimeseriesGroupByPostQuantumDeviceType {const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$desktop._();
 
 @override String get value => 'DESKTOP';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'DESKTOP'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$mobile extends RadarGetHttpTimeseriesGroupByPostQuantumDeviceType {const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$mobile._();
 
 @override String get value => 'MOBILE';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'MOBILE'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$$other extends RadarGetHttpTimeseriesGroupByPostQuantumDeviceType {const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$$other._();
 
 @override String get value => 'OTHER';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'OTHER'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$Unknown extends RadarGetHttpTimeseriesGroupByPostQuantumDeviceType {const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

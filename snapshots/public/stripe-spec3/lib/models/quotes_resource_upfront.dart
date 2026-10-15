@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details.dart';/// 
 @immutable final class QuotesResourceUpfront {const QuotesResourceUpfront({required this.amountSubtotal, required this.amountTotal, required this.totalDetails, this.lineItems, });
 
-factory QuotesResourceUpfront.fromJson(Map<String, dynamic> json) { return QuotesResourceUpfront(
+factory QuotesResourceUpfront.fromJson(Map<String, dynamic> json) {return QuotesResourceUpfront(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
   lineItems: json['line_items'] != null ? CheckoutSessionLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   totalDetails: QuotesResourceTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>),
-); }
+);}
 
 /// Total before any discounts or taxes are applied.
 final int amountSubtotal;
@@ -22,21 +22,21 @@ final CheckoutSessionLineItems? lineItems;
 
 final QuotesResourceTotalDetails totalDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_subtotal': amountSubtotal,
   'amount_total': amountTotal,
   if (lineItems != null) 'line_items': lineItems?.toJson(),
   'total_details': totalDetails.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
-      json.containsKey('total_details'); } 
-QuotesResourceUpfront copyWith({int? amountSubtotal, int? amountTotal, CheckoutSessionLineItems? Function()? lineItems, QuotesResourceTotalDetails? totalDetails, }) { return QuotesResourceUpfront(
+      json.containsKey('total_details');}
+QuotesResourceUpfront copyWith({int? amountSubtotal, int? amountTotal, CheckoutSessionLineItems? Function()? lineItems, QuotesResourceTotalDetails? totalDetails, }) {return QuotesResourceUpfront(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   lineItems: lineItems != null ? lineItems() : this.lineItems,
   totalDetails: totalDetails ?? this.totalDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceUpfront &&
           amountSubtotal == other.amountSubtotal &&
@@ -48,4 +48,4 @@ QuotesResourceUpfront copyWith({int? amountSubtotal, int? amountTotal, CheckoutS
 
 @override String toString() => 'QuotesResourceUpfront(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, lineItems: $lineItems, totalDetails: $totalDetails)';
 
- }
+}

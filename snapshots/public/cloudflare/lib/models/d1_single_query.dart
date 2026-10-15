@@ -11,24 +11,24 @@ String toJson() => value;
 /// A single query with or without parameters
 @immutable final class D1SingleQuery {const D1SingleQuery({required this.sql, this.params, });
 
-factory D1SingleQuery.fromJson(Map<String, dynamic> json) { return D1SingleQuery(
+factory D1SingleQuery.fromJson(Map<String, dynamic> json) {return D1SingleQuery(
   params: (json['params'] as List<dynamic>?)?.map((e) => e as String).toList(),
   sql: D1Sql.fromJson(json['sql'] as String),
-); }
+);}
 
 final List<String>? params;
 
 final D1Sql sql;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'params': ?params,
   'sql': sql.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sql'); } 
-D1SingleQuery copyWith({List<String>? Function()? params, D1Sql? sql, }) { return D1SingleQuery(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sql');}
+D1SingleQuery copyWith({List<String>? Function()? params, D1Sql? sql, }) {return D1SingleQuery(
   params: params != null ? params() : this.params,
   sql: sql ?? this.sql,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is D1SingleQuery &&
           listEquals(params, other.params) &&
@@ -38,4 +38,4 @@ D1SingleQuery copyWith({List<String>? Function()? params, D1Sql? sql, }) { retur
 
 @override String toString() => 'D1SingleQuery(params: $params, sql: $sql)';
 
- }
+}

@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/schemas_identifier.dart';@immutable final class AccountSubscriptionsDeleteSubscriptionResponseResult {const AccountSubscriptionsDeleteSubscriptionResponseResult({this.subscriptionId});
 
-factory AccountSubscriptionsDeleteSubscriptionResponseResult.fromJson(Map<String, dynamic> json) { return AccountSubscriptionsDeleteSubscriptionResponseResult(
+factory AccountSubscriptionsDeleteSubscriptionResponseResult.fromJson(Map<String, dynamic> json) {return AccountSubscriptionsDeleteSubscriptionResponseResult(
   subscriptionId: json['subscription_id'] != null ? SchemasIdentifier.fromJson(json['subscription_id'] as String) : null,
-); }
+);}
 
 /// Subscription identifier tag.
 final SchemasIdentifier? subscriptionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (subscriptionId != null) 'subscription_id': subscriptionId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'subscription_id'}.contains(key)); } 
-AccountSubscriptionsDeleteSubscriptionResponseResult copyWith({SchemasIdentifier? Function()? subscriptionId}) { return AccountSubscriptionsDeleteSubscriptionResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'subscription_id'}.contains(key));}
+AccountSubscriptionsDeleteSubscriptionResponseResult copyWith({SchemasIdentifier? Function()? subscriptionId}) {return AccountSubscriptionsDeleteSubscriptionResponseResult(
   subscriptionId: subscriptionId != null ? subscriptionId() : this.subscriptionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSubscriptionsDeleteSubscriptionResponseResult &&
           subscriptionId == other.subscriptionId;
@@ -25,4 +25,4 @@ AccountSubscriptionsDeleteSubscriptionResponseResult copyWith({SchemasIdentifier
 
 @override String toString() => 'AccountSubscriptionsDeleteSubscriptionResponseResult(subscriptionId: $subscriptionId)';
 
- }
+}

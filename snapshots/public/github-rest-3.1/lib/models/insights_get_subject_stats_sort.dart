@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class InsightsGetSubjectStatsSort {const InsightsGetSubjectStatsSort();
 
-factory InsightsGetSubjectStatsSort.fromJson(String json) { return switch (json) {
+factory InsightsGetSubjectStatsSort.fromJson(String json) {return switch (json) {
   'last_rate_limited_timestamp' => lastRateLimitedTimestamp,
   'last_request_timestamp' => lastRequestTimestamp,
   'rate_limited_request_count' => rateLimitedRequestCount,
   'subject_name' => subjectName,
   'total_request_count' => totalRequestCount,
   _ => InsightsGetSubjectStatsSort$Unknown(json),
-}; }
+};}
 
 static const InsightsGetSubjectStatsSort lastRateLimitedTimestamp = InsightsGetSubjectStatsSort$lastRateLimitedTimestamp._();
 
@@ -25,39 +25,39 @@ static const InsightsGetSubjectStatsSort totalRequestCount = InsightsGetSubjectS
 static const List<InsightsGetSubjectStatsSort> values = [lastRateLimitedTimestamp, lastRequestTimestamp, rateLimitedRequestCount, subjectName, totalRequestCount];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'last_rate_limited_timestamp' => 'lastRateLimitedTimestamp',
   'last_request_timestamp' => 'lastRequestTimestamp',
   'rate_limited_request_count' => 'rateLimitedRequestCount',
   'subject_name' => 'subjectName',
   'total_request_count' => 'totalRequestCount',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InsightsGetSubjectStatsSort$Unknown; } 
+bool get isUnknown {return this is InsightsGetSubjectStatsSort$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() lastRateLimitedTimestamp, required W Function() lastRequestTimestamp, required W Function() rateLimitedRequestCount, required W Function() subjectName, required W Function() totalRequestCount, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() lastRateLimitedTimestamp, required W Function() lastRequestTimestamp, required W Function() rateLimitedRequestCount, required W Function() subjectName, required W Function() totalRequestCount, required W Function(String value) $unknown, }) {return switch (this) {
       InsightsGetSubjectStatsSort$lastRateLimitedTimestamp() => lastRateLimitedTimestamp(),
       InsightsGetSubjectStatsSort$lastRequestTimestamp() => lastRequestTimestamp(),
       InsightsGetSubjectStatsSort$rateLimitedRequestCount() => rateLimitedRequestCount(),
       InsightsGetSubjectStatsSort$subjectName() => subjectName(),
       InsightsGetSubjectStatsSort$totalRequestCount() => totalRequestCount(),
       InsightsGetSubjectStatsSort$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRateLimitedTimestamp, W Function()? lastRequestTimestamp, W Function()? rateLimitedRequestCount, W Function()? subjectName, W Function()? totalRequestCount, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRateLimitedTimestamp, W Function()? lastRequestTimestamp, W Function()? rateLimitedRequestCount, W Function()? subjectName, W Function()? totalRequestCount, W Function(String value)? $unknown, }) {return switch (this) {
       InsightsGetSubjectStatsSort$lastRateLimitedTimestamp() => lastRateLimitedTimestamp != null ? lastRateLimitedTimestamp() : orElse(value),
       InsightsGetSubjectStatsSort$lastRequestTimestamp() => lastRequestTimestamp != null ? lastRequestTimestamp() : orElse(value),
       InsightsGetSubjectStatsSort$rateLimitedRequestCount() => rateLimitedRequestCount != null ? rateLimitedRequestCount() : orElse(value),
       InsightsGetSubjectStatsSort$subjectName() => subjectName != null ? subjectName() : orElse(value),
       InsightsGetSubjectStatsSort$totalRequestCount() => totalRequestCount != null ? totalRequestCount() : orElse(value),
       InsightsGetSubjectStatsSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InsightsGetSubjectStatsSort($value)';
 
- }
+}
 @immutable final class InsightsGetSubjectStatsSort$lastRateLimitedTimestamp extends InsightsGetSubjectStatsSort {const InsightsGetSubjectStatsSort$lastRateLimitedTimestamp._();
 
 @override String get value => 'last_rate_limited_timestamp';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRate
 
 @override int get hashCode => 'last_rate_limited_timestamp'.hashCode;
 
- }
+}
 @immutable final class InsightsGetSubjectStatsSort$lastRequestTimestamp extends InsightsGetSubjectStatsSort {const InsightsGetSubjectStatsSort$lastRequestTimestamp._();
 
 @override String get value => 'last_request_timestamp';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRate
 
 @override int get hashCode => 'last_request_timestamp'.hashCode;
 
- }
+}
 @immutable final class InsightsGetSubjectStatsSort$rateLimitedRequestCount extends InsightsGetSubjectStatsSort {const InsightsGetSubjectStatsSort$rateLimitedRequestCount._();
 
 @override String get value => 'rate_limited_request_count';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRate
 
 @override int get hashCode => 'rate_limited_request_count'.hashCode;
 
- }
+}
 @immutable final class InsightsGetSubjectStatsSort$subjectName extends InsightsGetSubjectStatsSort {const InsightsGetSubjectStatsSort$subjectName._();
 
 @override String get value => 'subject_name';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRate
 
 @override int get hashCode => 'subject_name'.hashCode;
 
- }
+}
 @immutable final class InsightsGetSubjectStatsSort$totalRequestCount extends InsightsGetSubjectStatsSort {const InsightsGetSubjectStatsSort$totalRequestCount._();
 
 @override String get value => 'total_request_count';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRate
 
 @override int get hashCode => 'total_request_count'.hashCode;
 
- }
+}
 @immutable final class InsightsGetSubjectStatsSort$Unknown extends InsightsGetSubjectStatsSort {const InsightsGetSubjectStatsSort$Unknown(this.value);
 
 @override final String value;
@@ -112,4 +112,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRate
 
 @override int get hashCode => value.hashCode;
 
- }
+}

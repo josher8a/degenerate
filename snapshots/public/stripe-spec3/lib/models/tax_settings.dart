@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_defaults.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_head_office.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TaxSettingsObject {const TaxSettingsObject();
 
-factory TaxSettingsObject.fromJson(String json) { return switch (json) {
+factory TaxSettingsObject.fromJson(String json) {return switch (json) {
   'tax.settings' => taxSettings,
   _ => TaxSettingsObject$Unknown(json),
-}; }
+};}
 
 static const TaxSettingsObject taxSettings = TaxSettingsObject$taxSettings._();
 
 static const List<TaxSettingsObject> values = [taxSettings];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tax.settings' => 'taxSettings',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxSettingsObject$Unknown; } 
+bool get isUnknown {return this is TaxSettingsObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() taxSettings, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() taxSettings, required W Function(String value) $unknown, }) {return switch (this) {
       TaxSettingsObject$taxSettings() => taxSettings(),
       TaxSettingsObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxSettings, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxSettings, W Function(String value)? $unknown, }) {return switch (this) {
       TaxSettingsObject$taxSettings() => taxSettings != null ? taxSettings() : orElse(value),
       TaxSettingsObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxSettingsObject($value)';
 
- }
+}
 @immutable final class TaxSettingsObject$taxSettings extends TaxSettingsObject {const TaxSettingsObject$taxSettings._();
 
 @override String get value => 'tax.settings';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxSetti
 
 @override int get hashCode => 'tax.settings'.hashCode;
 
- }
+}
 @immutable final class TaxSettingsObject$Unknown extends TaxSettingsObject {const TaxSettingsObject$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxSetti
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the Tax `Settings`.
 sealed class TaxSettingsStatus {const TaxSettingsStatus();
 
-factory TaxSettingsStatus.fromJson(String json) { return switch (json) {
+factory TaxSettingsStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'pending' => pending,
   _ => TaxSettingsStatus$Unknown(json),
-}; }
+};}
 
 static const TaxSettingsStatus active = TaxSettingsStatus$active._();
 
@@ -70,30 +70,30 @@ static const TaxSettingsStatus pending = TaxSettingsStatus$pending._();
 static const List<TaxSettingsStatus> values = [active, pending];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'pending' => 'pending',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxSettingsStatus$Unknown; } 
+bool get isUnknown {return this is TaxSettingsStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() pending, required W Function(String value) $unknown, }) {return switch (this) {
       TaxSettingsStatus$active() => active(),
       TaxSettingsStatus$pending() => pending(),
       TaxSettingsStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pending, W Function(String value)? $unknown, }) {return switch (this) {
       TaxSettingsStatus$active() => active != null ? active() : orElse(value),
       TaxSettingsStatus$pending() => pending != null ? pending() : orElse(value),
       TaxSettingsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxSettingsStatus($value)';
 
- }
+}
 @immutable final class TaxSettingsStatus$active extends TaxSettingsStatus {const TaxSettingsStatus$active._();
 
 @override String get value => 'active';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class TaxSettingsStatus$pending extends TaxSettingsStatus {const TaxSettingsStatus$pending._();
 
 @override String get value => 'pending';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class TaxSettingsStatus$Unknown extends TaxSettingsStatus {const TaxSettingsStatus$Unknown(this.value);
 
 @override final String value;
@@ -121,20 +121,20 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// You can use Tax `Settings` to manage configurations used by Stripe Tax calculations.
 /// 
 /// Related guide: [Using the Settings API](https://docs.stripe.com/tax/settings-api)
 @immutable final class TaxSettings {const TaxSettings({required this.defaults, required this.livemode, required this.object, required this.status, required this.statusDetails, this.headOffice = const Omittable.absent(), });
 
-factory TaxSettings.fromJson(Map<String, dynamic> json) { return TaxSettings(
+factory TaxSettings.fromJson(Map<String, dynamic> json) {return TaxSettings(
   defaults: TaxProductResourceTaxSettingsDefaults.fromJson(json['defaults'] as Map<String, dynamic>),
   headOffice: json.containsKey('head_office') ? Omittable(json['head_office'] != null ? TaxProductResourceTaxSettingsHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: TaxSettingsObject.fromJson(json['object'] as String),
   status: TaxSettingsStatus.fromJson(json['status'] as String),
   statusDetails: TaxProductResourceTaxSettingsStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
-); }
+);}
 
 final TaxProductResourceTaxSettingsDefaults defaults;
 
@@ -152,27 +152,27 @@ final TaxSettingsStatus status;
 
 final TaxProductResourceTaxSettingsStatusDetails statusDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'defaults': defaults.toJson(),
   if (headOffice.isPresent) 'head_office': headOffice.value?.toJson(),
   'livemode': livemode,
   'object': object.toJson(),
   'status': status.toJson(),
   'status_details': statusDetails.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('defaults') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('defaults') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('status') &&
-      json.containsKey('status_details'); } 
-TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, Omittable<TaxProductResourceTaxSettingsHeadOffice?>? headOffice, bool? livemode, TaxSettingsObject? object, TaxSettingsStatus? status, TaxProductResourceTaxSettingsStatusDetails? statusDetails, }) { return TaxSettings(
+      json.containsKey('status_details');}
+TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, Omittable<TaxProductResourceTaxSettingsHeadOffice?>? headOffice, bool? livemode, TaxSettingsObject? object, TaxSettingsStatus? status, TaxProductResourceTaxSettingsStatusDetails? statusDetails, }) {return TaxSettings(
   defaults: defaults ?? this.defaults,
   headOffice: headOffice ?? this.headOffice,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxSettings &&
           defaults == other.defaults &&
@@ -186,4 +186,4 @@ TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, Omittable
 
 @override String toString() => 'TaxSettings(defaults: $defaults, headOffice: $headOffice, livemode: $livemode, object: $object, status: $status, statusDetails: $statusDetails)';
 
- }
+}

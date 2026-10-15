@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_custom_page.dart';import 'package:pub_cloudflare/models/access_messages2.dart';@immutable final class AccessCustomPagesComponentsSchemasSingleResponse {const AccessCustomPagesComponentsSchemasSingleResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory AccessCustomPagesComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessCustomPagesComponentsSchemasSingleResponse(
+factory AccessCustomPagesComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) {return AccessCustomPagesComponentsSchemasSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? AccessCustomPage.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<AccessMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final AccessCustomPage? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AccessCustomPagesComponentsSchemasSingleResponse copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessCustomPage? Function()? result, }) { return AccessCustomPagesComponentsSchemasSingleResponse(
+      json.containsKey('success') && json['success'] is bool;}
+AccessCustomPagesComponentsSchemasSingleResponse copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessCustomPage? Function()? result, }) {return AccessCustomPagesComponentsSchemasSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCustomPagesComponentsSchemasSingleResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ AccessCustomPagesComponentsSchemasSingleResponse copyWith({List<AccessMessages2>
 
 @override String toString() => 'AccessCustomPagesComponentsSchemasSingleResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

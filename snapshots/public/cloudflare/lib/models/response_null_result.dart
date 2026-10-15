@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';@immutable final class ResponseNullResult {const ResponseNullResult({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
-factory ResponseNullResult.fromJson(Map<String, dynamic> json) { return ResponseNullResult(
+factory ResponseNullResult.fromJson(Map<String, dynamic> json) {return ResponseNullResult(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json.containsKey('result') ? Omittable(json['result'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 final List<WorkersMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final Omittable<Map<String,dynamic>?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result.isPresent) 'result': result.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseNullResult copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, Omittable<Map<String,dynamic>?>? result, }) { return ResponseNullResult(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseNullResult copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, Omittable<Map<String,dynamic>?>? result, }) {return ResponseNullResult(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseNullResult &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ResponseNullResult copyWith({List<WorkersMessages2>? errors, List<WorkersMessage
 
 @override String toString() => 'ResponseNullResult(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

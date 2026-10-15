@@ -6,37 +6,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify how long
 /// 
 sealed class ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId();
 
-factory ZonesEdgeCacheTtlId.fromJson(String json) { return switch (json) {
+factory ZonesEdgeCacheTtlId.fromJson(String json) {return switch (json) {
   'edge_cache_ttl' => edgeCacheTtl,
   _ => ZonesEdgeCacheTtlId$Unknown(json),
-}; }
+};}
 
 static const ZonesEdgeCacheTtlId edgeCacheTtl = ZonesEdgeCacheTtlId$edgeCacheTtl._();
 
 static const List<ZonesEdgeCacheTtlId> values = [edgeCacheTtl];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'edge_cache_ttl' => 'edgeCacheTtl',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesEdgeCacheTtlId$Unknown; } 
+bool get isUnknown {return this is ZonesEdgeCacheTtlId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() edgeCacheTtl, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() edgeCacheTtl, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesEdgeCacheTtlId$edgeCacheTtl() => edgeCacheTtl(),
       ZonesEdgeCacheTtlId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? edgeCacheTtl, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? edgeCacheTtl, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesEdgeCacheTtlId$edgeCacheTtl() => edgeCacheTtl != null ? edgeCacheTtl() : orElse(value),
       ZonesEdgeCacheTtlId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesEdgeCacheTtlId($value)';
 
- }
+}
 @immutable final class ZonesEdgeCacheTtlId$edgeCacheTtl extends ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId$edgeCacheTtl._();
 
 @override String get value => 'edge_cache_ttl';
@@ -45,7 +45,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? edgeCach
 
 @override int get hashCode => 'edge_cache_ttl'.hashCode;
 
- }
+}
 @immutable final class ZonesEdgeCacheTtlId$Unknown extends ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId$Unknown(this.value);
 
 @override final String value;
@@ -55,13 +55,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? edgeCach
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesEdgeCacheTtl {const ZonesEdgeCacheTtl({this.id, this.value, });
 
-factory ZonesEdgeCacheTtl.fromJson(Map<String, dynamic> json) { return ZonesEdgeCacheTtl(
+factory ZonesEdgeCacheTtl.fromJson(Map<String, dynamic> json) {return ZonesEdgeCacheTtl(
   id: json['id'] != null ? ZonesEdgeCacheTtlId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? (json['value'] as num).toInt() : null,
-); }
+);}
 
 /// Specify how long to cache a resource in the Cloudflare global
 /// network. *Edge Cache TTL* is not visible in response headers.
@@ -70,23 +70,23 @@ final ZonesEdgeCacheTtlId? id;
 
 final int? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final value$ = value;
 if (value$ != null) {
   if (value$ < 1) { errors.add('value: must be >= 1'); }
   if (value$ > 31536000.0) { errors.add('value: must be <= 31536000.0'); }
 }
-return errors; } 
-ZonesEdgeCacheTtl copyWith({ZonesEdgeCacheTtlId? Function()? id, int? Function()? value, }) { return ZonesEdgeCacheTtl(
+return errors;}
+ZonesEdgeCacheTtl copyWith({ZonesEdgeCacheTtlId? Function()? id, int? Function()? value, }) {return ZonesEdgeCacheTtl(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesEdgeCacheTtl &&
           id == other.id &&
@@ -96,4 +96,4 @@ ZonesEdgeCacheTtl copyWith({ZonesEdgeCacheTtlId? Function()? id, int? Function()
 
 @override String toString() => 'ZonesEdgeCacheTtl(id: $id, value: $value)';
 
- }
+}

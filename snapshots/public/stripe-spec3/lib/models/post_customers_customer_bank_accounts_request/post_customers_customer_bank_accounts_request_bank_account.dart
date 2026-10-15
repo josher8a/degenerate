@@ -8,11 +8,11 @@ const PostCustomersCustomerBankAccountsRequestBankAccount({this.customerPaymentS
 const PostCustomersCustomerBankAccountsRequestBankAccount._({required this.rawValue, required this.customerPaymentSourceBankAccount, required this.string, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostCustomersCustomerBankAccountsRequestBankAccount.fromJson(Object? json) { return PostCustomersCustomerBankAccountsRequestBankAccount._(
+factory PostCustomersCustomerBankAccountsRequestBankAccount.fromJson(Object? json) {return PostCustomersCustomerBankAccountsRequestBankAccount._(
   rawValue: Omittable(json),
   customerPaymentSourceBankAccount: json is Map<String, dynamic> && CustomerPaymentSourceBankAccount.canParse(json) ? parseAnyOfVariant<CustomerPaymentSourceBankAccount>(json, (value) => CustomerPaymentSourceBankAccount.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostCustomersCustomerBankAccountsRequestBankAccount(${toJson()})';
 
- }
+}

@@ -14,7 +14,7 @@ final class ChatApi with ApiExecutor {const ChatApi(this.apiConfig);
 /// 
 ///
 /// `GET /chat/completions`
-Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (model != null) {
   queryParameters['model'] = model;
@@ -51,7 +51,7 @@ return await execute(
     return ChatCompletionList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)
 /// to take advantage of the latest OpenAI platform features. Compare
 /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).
@@ -73,7 +73,7 @@ return await execute(
 /// 
 ///
 /// `POST /chat/completions`
-Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required CreateChatCompletionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required CreateChatCompletionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -90,13 +90,13 @@ return await execute(
     return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get a stored chat completion. Only Chat Completions that have been created
 /// with the `store` parameter set to `true` will be returned.
 /// 
 ///
 /// `GET /chat/completions/{completion_id}`
-Future<ApiResult<CreateChatCompletionResponse, Never>> getChatCompletion({required String completionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateChatCompletionResponse, Never>> getChatCompletion({required String completionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -111,14 +111,14 @@ return await execute(
     return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Modify a stored chat completion. Only Chat Completions that have been
 /// created with the `store` parameter set to `true` can be modified. Currently,
 /// the only supported modification is to update the `metadata` field.
 /// 
 ///
 /// `POST /chat/completions/{completion_id}`
-Future<ApiResult<CreateChatCompletionResponse, Never>> updateChatCompletion({required String completionId, required UpdateChatCompletionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateChatCompletionResponse, Never>> updateChatCompletion({required String completionId, required UpdateChatCompletionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -135,13 +135,13 @@ return await execute(
     return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a stored chat completion. Only Chat Completions that have been
 /// created with the `store` parameter set to `true` can be deleted.
 /// 
 ///
 /// `DELETE /chat/completions/{completion_id}`
-Future<ApiResult<ChatCompletionDeleted, Never>> deleteChatCompletion({required String completionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ChatCompletionDeleted, Never>> deleteChatCompletion({required String completionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -156,14 +156,14 @@ return await execute(
     return ChatCompletionDeleted.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get the messages in a stored chat completion. Only Chat Completions that
 /// have been created with the `store` parameter set to `true` will be
 /// returned.
 /// 
 ///
 /// `GET /chat/completions/{completion_id}/messages`
-Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (after != null) {
   queryParameters['after'] = after;
@@ -192,7 +192,7 @@ return await execute(
     return ChatCompletionMessageList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)
 /// to take advantage of the latest OpenAI platform features. Compare
 /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).
@@ -214,7 +214,7 @@ return await execute(
 ///  (streaming)
 ///
 /// `POST /chat/completions`
-Stream<CreateChatCompletionStreamResponse> createChatCompletionStream({required CreateChatCompletionRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<CreateChatCompletionStreamResponse> createChatCompletionStream({required CreateChatCompletionRequest body, RequestOptions? options, }) {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -231,5 +231,5 @@ return executeStreaming(
     return CreateChatCompletionStreamResponse.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

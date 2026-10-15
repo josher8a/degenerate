@@ -8,11 +8,11 @@ const CreditGrant({this.string = const Omittable.absent(), this.billingCreditGra
 const CreditGrant._({required this.rawValue, required this.string, required this.billingCreditGrant, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CreditGrant.fromJson(Object? json) { return CreditGrant._(
+factory CreditGrant.fromJson(Object? json) {return CreditGrant._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   billingCreditGrant: json is Map<String, dynamic> && BillingCreditGrant.canParse(json) ? parseAnyOfVariant<BillingCreditGrant>(json, (value) => BillingCreditGrant.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CreditGrant(${toJson()})';
 
- }
+}

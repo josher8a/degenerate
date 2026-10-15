@@ -3,9 +3,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_per_operation_setting_change_base/shield_per_operation_setting_change_base_mitigation_action.dart';@immutable final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction = const Omittable.absent()});
 
-factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) { return ShieldPerOperationSettingChangeBase(
+factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) {return ShieldPerOperationSettingChangeBase(
   mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// When set, this applies a mitigation action to this operation
 /// 
@@ -18,13 +18,13 @@ factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) 
 /// Example: `'block'`
 final Omittable<ShieldPerOperationSettingChangeBaseMitigationAction?> mitigationAction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
-ShieldPerOperationSettingChangeBase copyWith({Omittable<ShieldPerOperationSettingChangeBaseMitigationAction?>? mitigationAction}) { return ShieldPerOperationSettingChangeBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mitigation_action'}.contains(key));}
+ShieldPerOperationSettingChangeBase copyWith({Omittable<ShieldPerOperationSettingChangeBaseMitigationAction?>? mitigationAction}) {return ShieldPerOperationSettingChangeBase(
   mitigationAction: mitigationAction ?? this.mitigationAction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldPerOperationSettingChangeBase &&
           mitigationAction == other.mitigationAction;
@@ -33,4 +33,4 @@ ShieldPerOperationSettingChangeBase copyWith({Omittable<ShieldPerOperationSettin
 
 @override String toString() => 'ShieldPerOperationSettingChangeBase(mitigationAction: $mitigationAction)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_payment_method_properties.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject();
 
-factory PaymentMethodConfigurationObject.fromJson(String json) { return switch (json) {
+factory PaymentMethodConfigurationObject.fromJson(String json) {return switch (json) {
   'payment_method_configuration' => paymentMethodConfiguration,
   _ => PaymentMethodConfigurationObject$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodConfigurationObject paymentMethodConfiguration = PaymentMethodConfigurationObject$paymentMethodConfiguration._();
 
 static const List<PaymentMethodConfigurationObject> values = [paymentMethodConfiguration];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'payment_method_configuration' => 'paymentMethodConfiguration',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodConfigurationObject$Unknown; } 
+bool get isUnknown {return this is PaymentMethodConfigurationObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() paymentMethodConfiguration, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() paymentMethodConfiguration, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodConfigurationObject$paymentMethodConfiguration() => paymentMethodConfiguration(),
       PaymentMethodConfigurationObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentMethodConfiguration, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentMethodConfiguration, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodConfigurationObject$paymentMethodConfiguration() => paymentMethodConfiguration != null ? paymentMethodConfiguration() : orElse(value),
       PaymentMethodConfigurationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodConfigurationObject($value)';
 
- }
+}
 @immutable final class PaymentMethodConfigurationObject$paymentMethodConfiguration extends PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject$paymentMethodConfiguration._();
 
 @override String get value => 'payment_method_configuration';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentM
 
 @override int get hashCode => 'payment_method_configuration'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodConfigurationObject$Unknown extends PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentM
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// PaymentMethodConfigurations control which payment methods are displayed to your customers when you don't explicitly specify payment method types. You can have multiple configurations with different sets of payment methods for different scenarios.
 /// 
 /// There are two types of PaymentMethodConfigurations. Which is used depends on the [charge type](https://docs.stripe.com/connect/charges):
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentM
 /// - [Multiple configurations for your Connect accounts](https://docs.stripe.com/connect/multiple-payment-method-configurations)
 @immutable final class PaymentMethodConfiguration {const PaymentMethodConfiguration({required this.object, required this.active, required this.id, required this.isDefault, required this.livemode, required this.name, this.eps, this.applePay, this.application = const Omittable.absent(), this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.blik, this.boleto, this.card, this.cartesBancaires, this.cashapp, this.crypto, this.customerBalance, this.acssDebit, this.fpx, this.giropay, this.googlePay, this.grabpay, this.affirm, this.ideal, this.afterpayClearpay, this.jcb, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.alipay, this.mbWay, this.mobilepay, this.multibanco, this.alma, this.naverPay, this.zip, this.amazonPay, this.oxxo, this.p24, this.parent = const Omittable.absent(), this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.usBankAccount, this.wechatPay, this.nzBankAccount, });
 
-factory PaymentMethodConfiguration.fromJson(Map<String, dynamic> json) { return PaymentMethodConfiguration(
+factory PaymentMethodConfiguration.fromJson(Map<String, dynamic> json) {return PaymentMethodConfiguration(
   acssDebit: json['acss_debit'] != null ? PaymentMethodConfigResourcePaymentMethodProperties.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   active: json['active'] as bool,
   affirm: json['affirm'] != null ? PaymentMethodConfigResourcePaymentMethodProperties.fromJson(json['affirm'] as Map<String, dynamic>) : null,
@@ -133,7 +133,7 @@ factory PaymentMethodConfiguration.fromJson(Map<String, dynamic> json) { return 
   usBankAccount: json['us_bank_account'] != null ? PaymentMethodConfigResourcePaymentMethodProperties.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
   wechatPay: json['wechat_pay'] != null ? PaymentMethodConfigResourcePaymentMethodProperties.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
   zip: json['zip'] != null ? PaymentMethodConfigResourcePaymentMethodProperties.fromJson(json['zip'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentMethodConfigResourcePaymentMethodProperties? acssDebit;
 
@@ -267,7 +267,7 @@ final PaymentMethodConfigResourcePaymentMethodProperties? wechatPay;
 
 final PaymentMethodConfigResourcePaymentMethodProperties? zip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   'active': active,
   if (affirm != null) 'affirm': affirm?.toJson(),
@@ -330,15 +330,15 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
   if (wechatPay != null) 'wechat_pay': wechatPay?.toJson(),
   if (zip != null) 'zip': zip?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('is_default') && json['is_default'] is bool &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final application$ = application.value;
 if (application$ != null) {
   if (application$.runes.length > 5000) { errors.add('application: length must be <= 5000'); }
@@ -349,8 +349,8 @@ final parent$ = parent.value;
 if (parent$ != null) {
   if (parent$.runes.length > 5000) { errors.add('parent: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodConfiguration copyWith({PaymentMethodConfigResourcePaymentMethodProperties? Function()? acssDebit, bool? active, PaymentMethodConfigResourcePaymentMethodProperties? Function()? affirm, PaymentMethodConfigResourcePaymentMethodProperties? Function()? afterpayClearpay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? alipay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? alma, PaymentMethodConfigResourcePaymentMethodProperties? Function()? amazonPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? applePay, Omittable<String?>? application, PaymentMethodConfigResourcePaymentMethodProperties? Function()? auBecsDebit, PaymentMethodConfigResourcePaymentMethodProperties? Function()? bacsDebit, PaymentMethodConfigResourcePaymentMethodProperties? Function()? bancontact, PaymentMethodConfigResourcePaymentMethodProperties? Function()? billie, PaymentMethodConfigResourcePaymentMethodProperties? Function()? blik, PaymentMethodConfigResourcePaymentMethodProperties? Function()? boleto, PaymentMethodConfigResourcePaymentMethodProperties? Function()? card, PaymentMethodConfigResourcePaymentMethodProperties? Function()? cartesBancaires, PaymentMethodConfigResourcePaymentMethodProperties? Function()? cashapp, PaymentMethodConfigResourcePaymentMethodProperties? Function()? crypto, PaymentMethodConfigResourcePaymentMethodProperties? Function()? customerBalance, PaymentMethodConfigResourcePaymentMethodProperties? Function()? eps, PaymentMethodConfigResourcePaymentMethodProperties? Function()? fpx, PaymentMethodConfigResourcePaymentMethodProperties? Function()? giropay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? googlePay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? grabpay, String? id, PaymentMethodConfigResourcePaymentMethodProperties? Function()? ideal, bool? isDefault, PaymentMethodConfigResourcePaymentMethodProperties? Function()? jcb, PaymentMethodConfigResourcePaymentMethodProperties? Function()? kakaoPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? klarna, PaymentMethodConfigResourcePaymentMethodProperties? Function()? konbini, PaymentMethodConfigResourcePaymentMethodProperties? Function()? krCard, PaymentMethodConfigResourcePaymentMethodProperties? Function()? link, bool? livemode, PaymentMethodConfigResourcePaymentMethodProperties? Function()? mbWay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? mobilepay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? multibanco, String? name, PaymentMethodConfigResourcePaymentMethodProperties? Function()? naverPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? nzBankAccount, PaymentMethodConfigurationObject? object, PaymentMethodConfigResourcePaymentMethodProperties? Function()? oxxo, PaymentMethodConfigResourcePaymentMethodProperties? Function()? p24, Omittable<String?>? parent, PaymentMethodConfigResourcePaymentMethodProperties? Function()? payByBank, PaymentMethodConfigResourcePaymentMethodProperties? Function()? payco, PaymentMethodConfigResourcePaymentMethodProperties? Function()? paynow, PaymentMethodConfigResourcePaymentMethodProperties? Function()? paypal, PaymentMethodConfigResourcePaymentMethodProperties? Function()? payto, PaymentMethodConfigResourcePaymentMethodProperties? Function()? pix, PaymentMethodConfigResourcePaymentMethodProperties? Function()? promptpay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? revolutPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? samsungPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? satispay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? sepaDebit, PaymentMethodConfigResourcePaymentMethodProperties? Function()? sofort, PaymentMethodConfigResourcePaymentMethodProperties? Function()? swish, PaymentMethodConfigResourcePaymentMethodProperties? Function()? twint, PaymentMethodConfigResourcePaymentMethodProperties? Function()? usBankAccount, PaymentMethodConfigResourcePaymentMethodProperties? Function()? wechatPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? zip, }) { return PaymentMethodConfiguration(
+return errors;}
+PaymentMethodConfiguration copyWith({PaymentMethodConfigResourcePaymentMethodProperties? Function()? acssDebit, bool? active, PaymentMethodConfigResourcePaymentMethodProperties? Function()? affirm, PaymentMethodConfigResourcePaymentMethodProperties? Function()? afterpayClearpay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? alipay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? alma, PaymentMethodConfigResourcePaymentMethodProperties? Function()? amazonPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? applePay, Omittable<String?>? application, PaymentMethodConfigResourcePaymentMethodProperties? Function()? auBecsDebit, PaymentMethodConfigResourcePaymentMethodProperties? Function()? bacsDebit, PaymentMethodConfigResourcePaymentMethodProperties? Function()? bancontact, PaymentMethodConfigResourcePaymentMethodProperties? Function()? billie, PaymentMethodConfigResourcePaymentMethodProperties? Function()? blik, PaymentMethodConfigResourcePaymentMethodProperties? Function()? boleto, PaymentMethodConfigResourcePaymentMethodProperties? Function()? card, PaymentMethodConfigResourcePaymentMethodProperties? Function()? cartesBancaires, PaymentMethodConfigResourcePaymentMethodProperties? Function()? cashapp, PaymentMethodConfigResourcePaymentMethodProperties? Function()? crypto, PaymentMethodConfigResourcePaymentMethodProperties? Function()? customerBalance, PaymentMethodConfigResourcePaymentMethodProperties? Function()? eps, PaymentMethodConfigResourcePaymentMethodProperties? Function()? fpx, PaymentMethodConfigResourcePaymentMethodProperties? Function()? giropay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? googlePay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? grabpay, String? id, PaymentMethodConfigResourcePaymentMethodProperties? Function()? ideal, bool? isDefault, PaymentMethodConfigResourcePaymentMethodProperties? Function()? jcb, PaymentMethodConfigResourcePaymentMethodProperties? Function()? kakaoPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? klarna, PaymentMethodConfigResourcePaymentMethodProperties? Function()? konbini, PaymentMethodConfigResourcePaymentMethodProperties? Function()? krCard, PaymentMethodConfigResourcePaymentMethodProperties? Function()? link, bool? livemode, PaymentMethodConfigResourcePaymentMethodProperties? Function()? mbWay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? mobilepay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? multibanco, String? name, PaymentMethodConfigResourcePaymentMethodProperties? Function()? naverPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? nzBankAccount, PaymentMethodConfigurationObject? object, PaymentMethodConfigResourcePaymentMethodProperties? Function()? oxxo, PaymentMethodConfigResourcePaymentMethodProperties? Function()? p24, Omittable<String?>? parent, PaymentMethodConfigResourcePaymentMethodProperties? Function()? payByBank, PaymentMethodConfigResourcePaymentMethodProperties? Function()? payco, PaymentMethodConfigResourcePaymentMethodProperties? Function()? paynow, PaymentMethodConfigResourcePaymentMethodProperties? Function()? paypal, PaymentMethodConfigResourcePaymentMethodProperties? Function()? payto, PaymentMethodConfigResourcePaymentMethodProperties? Function()? pix, PaymentMethodConfigResourcePaymentMethodProperties? Function()? promptpay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? revolutPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? samsungPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? satispay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? sepaDebit, PaymentMethodConfigResourcePaymentMethodProperties? Function()? sofort, PaymentMethodConfigResourcePaymentMethodProperties? Function()? swish, PaymentMethodConfigResourcePaymentMethodProperties? Function()? twint, PaymentMethodConfigResourcePaymentMethodProperties? Function()? usBankAccount, PaymentMethodConfigResourcePaymentMethodProperties? Function()? wechatPay, PaymentMethodConfigResourcePaymentMethodProperties? Function()? zip, }) {return PaymentMethodConfiguration(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   active: active ?? this.active,
   affirm: affirm != null ? affirm() : this.affirm,
@@ -413,7 +413,7 @@ PaymentMethodConfiguration copyWith({PaymentMethodConfigResourcePaymentMethodPro
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
   wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
   zip: zip != null ? zip() : this.zip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodConfiguration &&
           acssDebit == other.acssDebit &&
@@ -483,4 +483,4 @@ PaymentMethodConfiguration copyWith({PaymentMethodConfigResourcePaymentMethodPro
 
 @override String toString() => 'PaymentMethodConfiguration(\n  acssDebit: $acssDebit,\n  active: $active,\n  affirm: $affirm,\n  afterpayClearpay: $afterpayClearpay,\n  alipay: $alipay,\n  alma: $alma,\n  amazonPay: $amazonPay,\n  applePay: $applePay,\n  application: $application,\n  auBecsDebit: $auBecsDebit,\n  bacsDebit: $bacsDebit,\n  bancontact: $bancontact,\n  billie: $billie,\n  blik: $blik,\n  boleto: $boleto,\n  card: $card,\n  cartesBancaires: $cartesBancaires,\n  cashapp: $cashapp,\n  crypto: $crypto,\n  customerBalance: $customerBalance,\n  eps: $eps,\n  fpx: $fpx,\n  giropay: $giropay,\n  googlePay: $googlePay,\n  grabpay: $grabpay,\n  id: $id,\n  ideal: $ideal,\n  isDefault: $isDefault,\n  jcb: $jcb,\n  kakaoPay: $kakaoPay,\n  klarna: $klarna,\n  konbini: $konbini,\n  krCard: $krCard,\n  link: $link,\n  livemode: $livemode,\n  mbWay: $mbWay,\n  mobilepay: $mobilepay,\n  multibanco: $multibanco,\n  name: $name,\n  naverPay: $naverPay,\n  nzBankAccount: $nzBankAccount,\n  object: $object,\n  oxxo: $oxxo,\n  p24: $p24,\n  parent: $parent,\n  payByBank: $payByBank,\n  payco: $payco,\n  paynow: $paynow,\n  paypal: $paypal,\n  payto: $payto,\n  pix: $pix,\n  promptpay: $promptpay,\n  revolutPay: $revolutPay,\n  samsungPay: $samsungPay,\n  satispay: $satispay,\n  sepaDebit: $sepaDebit,\n  sofort: $sofort,\n  swish: $swish,\n  twint: $twint,\n  usBankAccount: $usBankAccount,\n  wechatPay: $wechatPay,\n  zip: $zip,\n)';
 
- }
+}

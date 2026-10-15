@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_format.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_request/http.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_request/worker_binding.dart';@immutable final class StreamsByStreamIdResponse2Result {const StreamsByStreamIdResponse2Result({required this.createdAt, required this.http, required this.id, required this.modifiedAt, required this.name, required this.version, required this.workerBinding, this.endpoint, this.format, });
 
-factory StreamsByStreamIdResponse2Result.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdResponse2Result(
+factory StreamsByStreamIdResponse2Result.fromJson(Map<String, dynamic> json) {return StreamsByStreamIdResponse2Result(
   createdAt: DateTime.parse(json['created_at'] as String),
   endpoint: json['endpoint'] != null ? Uri.parse(json['endpoint'] as String) : null,
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory StreamsByStreamIdResponse2Result.fromJson(Map<String, dynamic> json) { r
   name: json['name'] as String,
   version: (json['version'] as num).toInt(),
   workerBinding: WorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -45,7 +45,7 @@ final int version;
 
 final WorkerBinding workerBinding;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   if (endpoint != null) 'endpoint': endpoint?.toString(),
   if (format != null) 'format': format?.toJson(),
@@ -55,20 +55,20 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'version': version,
   'worker_binding': workerBinding.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('http') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') && json['version'] is num &&
-      json.containsKey('worker_binding'); } 
+      json.containsKey('worker_binding');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
-return errors; } 
-StreamsByStreamIdResponse2Result copyWith({DateTime? createdAt, Uri? Function()? endpoint, CloudflarePipelinesFormat? Function()? format, Http? http, String? id, DateTime? modifiedAt, String? name, int? version, WorkerBinding? workerBinding, }) { return StreamsByStreamIdResponse2Result(
+return errors;}
+StreamsByStreamIdResponse2Result copyWith({DateTime? createdAt, Uri? Function()? endpoint, CloudflarePipelinesFormat? Function()? format, Http? http, String? id, DateTime? modifiedAt, String? name, int? version, WorkerBinding? workerBinding, }) {return StreamsByStreamIdResponse2Result(
   createdAt: createdAt ?? this.createdAt,
   endpoint: endpoint != null ? endpoint() : this.endpoint,
   format: format != null ? format() : this.format,
@@ -78,7 +78,7 @@ StreamsByStreamIdResponse2Result copyWith({DateTime? createdAt, Uri? Function()?
   name: name ?? this.name,
   version: version ?? this.version,
   workerBinding: workerBinding ?? this.workerBinding,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamsByStreamIdResponse2Result &&
           createdAt == other.createdAt &&
@@ -95,4 +95,4 @@ StreamsByStreamIdResponse2Result copyWith({DateTime? createdAt, Uri? Function()?
 
 @override String toString() => 'StreamsByStreamIdResponse2Result(\n  createdAt: $createdAt,\n  endpoint: $endpoint,\n  format: $format,\n  http: $http,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  name: $name,\n  version: $version,\n  workerBinding: $workerBinding,\n)';
 
- }
+}

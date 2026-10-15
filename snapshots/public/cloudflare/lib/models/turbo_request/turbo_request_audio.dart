@@ -7,11 +7,11 @@ const TurboRequestAudio({this.string = const Omittable.absent(), this.audioVaria
 const TurboRequestAudio._({required this.rawValue, required this.string, required this.audioVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory TurboRequestAudio.fromJson(Object? json) { return TurboRequestAudio._(
+factory TurboRequestAudio.fromJson(Object? json) {return TurboRequestAudio._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   audioVariant2: json is Map<String, dynamic> && AudioVariant2.canParse(json) ? parseAnyOfVariant<AudioVariant2>(json, (value) => AudioVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'TurboRequestAudio(${toJson()})';
 
- }
+}

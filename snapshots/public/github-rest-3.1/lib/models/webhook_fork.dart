@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_fork/webhook_fork_forkee.dart';/// A user forks a repository.
 @immutable final class WebhookFork {const WebhookFork({required this.forkee, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookFork.fromJson(Map<String, dynamic> json) { return WebhookFork(
+factory WebhookFork.fromJson(Map<String, dynamic> json) {return WebhookFork(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   forkee: WebhookForkForkee.fromJson(json['forkee'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final EnterpriseWebhooks? enterprise;
 
@@ -28,25 +28,25 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'forkee': forkee.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('forkee') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('forkee') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookFork copyWith({EnterpriseWebhooks? Function()? enterprise, WebhookForkForkee? forkee, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookFork(
+      json.containsKey('sender');}
+WebhookFork copyWith({EnterpriseWebhooks? Function()? enterprise, WebhookForkForkee? forkee, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookFork(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   forkee: forkee ?? this.forkee,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookFork &&
           enterprise == other.enterprise &&
@@ -60,4 +60,4 @@ WebhookFork copyWith({EnterpriseWebhooks? Function()? enterprise, WebhookForkFor
 
 @override String toString() => 'WebhookFork(enterprise: $enterprise, forkee: $forkee, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ScheduledQueryRunObject {const ScheduledQueryRunObject();
 
-factory ScheduledQueryRunObject.fromJson(String json) { return switch (json) {
+factory ScheduledQueryRunObject.fromJson(String json) {return switch (json) {
   'scheduled_query_run' => scheduledQueryRun,
   _ => ScheduledQueryRunObject$Unknown(json),
-}; }
+};}
 
 static const ScheduledQueryRunObject scheduledQueryRun = ScheduledQueryRunObject$scheduledQueryRun._();
 
 static const List<ScheduledQueryRunObject> values = [scheduledQueryRun];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'scheduled_query_run' => 'scheduledQueryRun',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ScheduledQueryRunObject$Unknown; } 
+bool get isUnknown {return this is ScheduledQueryRunObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() scheduledQueryRun, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() scheduledQueryRun, required W Function(String value) $unknown, }) {return switch (this) {
       ScheduledQueryRunObject$scheduledQueryRun() => scheduledQueryRun(),
       ScheduledQueryRunObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? scheduledQueryRun, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? scheduledQueryRun, W Function(String value)? $unknown, }) {return switch (this) {
       ScheduledQueryRunObject$scheduledQueryRun() => scheduledQueryRun != null ? scheduledQueryRun() : orElse(value),
       ScheduledQueryRunObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ScheduledQueryRunObject($value)';
 
- }
+}
 @immutable final class ScheduledQueryRunObject$scheduledQueryRun extends ScheduledQueryRunObject {const ScheduledQueryRunObject$scheduledQueryRun._();
 
 @override String get value => 'scheduled_query_run';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? schedule
 
 @override int get hashCode => 'scheduled_query_run'.hashCode;
 
- }
+}
 @immutable final class ScheduledQueryRunObject$Unknown extends ScheduledQueryRunObject {const ScheduledQueryRunObject$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? schedule
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// If you have [scheduled a Sigma query](https://docs.stripe.com/sigma/scheduled-queries), you'll
 /// receive a `sigma.scheduled_query_run.created` webhook each time the query
 /// runs. The webhook contains a `ScheduledQueryRun` object, which you can use to
 /// retrieve the query results.
 @immutable final class ScheduledQueryRun {const ScheduledQueryRun({required this.created, required this.dataLoadTime, required this.id, required this.livemode, required this.object, required this.resultAvailableUntil, required this.sql, required this.status, required this.title, this.error, this.file = const Omittable.absent(), });
 
-factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) { return ScheduledQueryRun(
+factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) {return ScheduledQueryRun(
   created: (json['created'] as num).toInt(),
   dataLoadTime: (json['data_load_time'] as num).toInt(),
   error: json['error'] != null ? SigmaScheduledQueryRunError.fromJson(json['error'] as Map<String, dynamic>) : null,
@@ -72,7 +72,7 @@ factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) { return Scheduled
   sql: json['sql'] as String,
   status: json['status'] as String,
   title: json['title'] as String,
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -106,7 +106,7 @@ final String status;
 /// Title of the query.
 final String title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'data_load_time': dataLoadTime,
   if (error != null) 'error': error?.toJson(),
@@ -118,8 +118,8 @@ Map<String, dynamic> toJson() { return {
   'sql': sql,
   'status': status,
   'title': title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('data_load_time') && json['data_load_time'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
@@ -127,15 +127,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('result_available_until') && json['result_available_until'] is num &&
       json.containsKey('sql') && json['sql'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('title') && json['title'] is String; } 
+      json.containsKey('title') && json['title'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (sql.runes.length > 100000) { errors.add('sql: length must be <= 100000'); }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
 if (title.runes.length > 5000) { errors.add('title: length must be <= 5000'); }
-return errors; } 
-ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError? Function()? error, Omittable<File?>? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
+return errors;}
+ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError? Function()? error, Omittable<File?>? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) {return ScheduledQueryRun(
   created: created ?? this.created,
   dataLoadTime: dataLoadTime ?? this.dataLoadTime,
   error: error != null ? error() : this.error,
@@ -147,7 +147,7 @@ ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQuery
   sql: sql ?? this.sql,
   status: status ?? this.status,
   title: title ?? this.title,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ScheduledQueryRun &&
           created == other.created &&
@@ -166,4 +166,4 @@ ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQuery
 
 @override String toString() => 'ScheduledQueryRun(\n  created: $created,\n  dataLoadTime: $dataLoadTime,\n  error: $error,\n  file: $file,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  resultAvailableUntil: $resultAvailableUntil,\n  sql: $sql,\n  status: $status,\n  title: $title,\n)';
 
- }
+}

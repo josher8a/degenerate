@@ -8,14 +8,14 @@ const PayoutDestination({this.string = const Omittable.absent(), this.bankAccoun
 const PayoutDestination._({required this.rawValue, required this.string, required this.bankAccount, required this.card, required this.deletedBankAccount, required this.deletedCard, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PayoutDestination.fromJson(Object? json) { return PayoutDestination._(
+factory PayoutDestination.fromJson(Object? json) {return PayoutDestination._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   bankAccount: json is Map<String, dynamic> && BankAccount.canParse(json) ? parseAnyOfVariant<BankAccount>(json, (value) => BankAccount.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   card: json is Map<String, dynamic> && Card.canParse(json) ? parseAnyOfVariant<Card>(json, (value) => Card.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   deletedBankAccount: json is Map<String, dynamic> && DeletedBankAccount.canParse(json) ? parseAnyOfVariant<DeletedBankAccount>(json, (value) => DeletedBankAccount.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   deletedCard: json is Map<String, dynamic> && DeletedCard.canParse(json) ? parseAnyOfVariant<DeletedCard>(json, (value) => DeletedCard.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -57,4 +57,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PayoutDestination(${toJson()})';
 
- }
+}

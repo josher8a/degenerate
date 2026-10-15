@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BankAccount {const BankAccount({required this.routingNumber, required this.accountNumber, this.accountHolderName, });
 
-factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
+factory BankAccount.fromJson(Map<String, dynamic> json) {return BankAccount(
   routingNumber: json['routingNumber'] as String,
   accountNumber: json['accountNumber'] as String,
   accountHolderName: json['accountHolderName'] as String?,
-); }
+);}
 
 final String routingNumber;
 
@@ -15,18 +15,18 @@ final String accountNumber;
 
 final String? accountHolderName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'routingNumber': routingNumber,
   'accountNumber': accountNumber,
   'accountHolderName': ?accountHolderName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('routingNumber') && json['routingNumber'] is String &&
-      json.containsKey('accountNumber') && json['accountNumber'] is String; } 
-BankAccount copyWith({String? routingNumber, String? accountNumber, String? Function()? accountHolderName, }) { return BankAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('routingNumber') && json['routingNumber'] is String &&
+      json.containsKey('accountNumber') && json['accountNumber'] is String;}
+BankAccount copyWith({String? routingNumber, String? accountNumber, String? Function()? accountHolderName, }) {return BankAccount(
   routingNumber: routingNumber ?? this.routingNumber,
   accountNumber: accountNumber ?? this.accountNumber,
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BankAccount &&
           routingNumber == other.routingNumber &&
@@ -37,4 +37,4 @@ BankAccount copyWith({String? routingNumber, String? accountNumber, String? Func
 
 @override String toString() => 'BankAccount(routingNumber: $routingNumber, accountNumber: $accountNumber, accountHolderName: $accountHolderName)';
 
- }
+}

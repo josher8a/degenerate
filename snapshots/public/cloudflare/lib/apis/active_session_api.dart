@@ -14,7 +14,7 @@ final class ActiveSessionApi with ApiExecutor {const ActiveSessionApi(this.apiCo
 /// Returns details of an ongoing active session for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session`
-Future<ApiResult<GetActiveSessionResponse, GetActiveSessionError>> getActiveSession({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetActiveSessionResponse, GetActiveSessionError>> getActiveSession({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -30,13 +30,13 @@ return await execute(
   },
   onError: GetActiveSessionError.fromResponse,
 );
- } 
+}
 /// Kick participants from an active session
 ///
 /// Kicks one or more participants from an active session using user ID or custom participant ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick`
-Future<ApiResult<KickPartcipantsResponse, GetActiveSessionError>> kickPartcipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required KickPartcipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<KickPartcipantsResponse, GetActiveSessionError>> kickPartcipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required KickPartcipantsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: GetActiveSessionError.fromResponse,
 );
- } 
+}
 /// Kick all participants
 ///
 /// Kicks all participants from an active session for the given meeting ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick-all`
-Future<ApiResult<KickAllParticipantsResponse, Never>> kickAllParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<KickAllParticipantsResponse, Never>> kickAllParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -75,13 +75,13 @@ return await execute(
     return KickAllParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Mute participants of an active session
 ///
 /// Mutes one or more participants from an active session using user ID or custom participant ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/mute`
-Future<ApiResult<MuteParticipantsResponse, Never>> muteParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required MuteParticipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MuteParticipantsResponse, Never>> muteParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required MuteParticipantsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,13 +98,13 @@ return await execute(
     return MuteParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Mute all participants
 ///
 /// Mutes all participants of an active session for the given meeting ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/mute-all`
-Future<ApiResult<MuteAllParticipantsResponse, Never>> muteAllParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required MuteAllParticipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MuteAllParticipantsResponse, Never>> muteAllParticipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required MuteAllParticipantsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,13 +121,13 @@ return await execute(
     return MuteAllParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a poll
 ///
 /// Creates a new poll in an active session for the given meeting ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/poll`
-Future<ApiResult<CreatePollResponse, Never>> createPoll({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required CreatePollRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreatePollResponse, Never>> createPoll({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required CreatePollRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,5 +144,5 @@ return await execute(
     return CreatePollResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

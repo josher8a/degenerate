@@ -12,7 +12,7 @@ final class AttackerApi with ApiExecutor {const AttackerApi(this.apiConfig);
 /// Lists attackers across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/attackers`
-Future<ApiResult<GetAttackerListResponse, GetAttackerListError>> getAttackerList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAttackerListResponse, GetAttackerListError>> getAttackerList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -38,5 +38,5 @@ return await execute(
   },
   onError: GetAttackerListError.fromResponse,
 );
- } 
- }
+}
+}

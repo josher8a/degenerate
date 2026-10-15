@@ -7,11 +7,11 @@ const BrapiPostLinksRequest({this.brapiPostLinksRequestVariant1 = const Omittabl
 const BrapiPostLinksRequest._({required this.rawValue, required this.brapiPostLinksRequestVariant1, required this.brapiPostLinksRequestVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BrapiPostLinksRequest.fromJson(Object? json) { return BrapiPostLinksRequest._(
+factory BrapiPostLinksRequest.fromJson(Object? json) {return BrapiPostLinksRequest._(
   rawValue: Omittable(json),
   brapiPostLinksRequestVariant1: json is Map<String, dynamic> && BrapiPostLinksRequestVariant1.canParse(json) ? parseAnyOfVariant<BrapiPostLinksRequestVariant1>(json, (value) => BrapiPostLinksRequestVariant1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   brapiPostLinksRequestVariant2: json is Map<String, dynamic> && BrapiPostLinksRequestVariant2.canParse(json) ? parseAnyOfVariant<BrapiPostLinksRequestVariant2>(json, (value) => BrapiPostLinksRequestVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BrapiPostLinksRequest(${toJson()})';
 
- }
+}

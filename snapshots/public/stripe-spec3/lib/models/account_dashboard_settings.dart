@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class AccountDashboardSettings {const AccountDashboardSettings({this.displayName = const Omittable.absent(), this.timezone = const Omittable.absent(), });
 
-factory AccountDashboardSettings.fromJson(Map<String, dynamic> json) { return AccountDashboardSettings(
+factory AccountDashboardSettings.fromJson(Map<String, dynamic> json) {return AccountDashboardSettings(
   displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
   timezone: json.containsKey('timezone') ? Omittable(json['timezone'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The display name for this account. This is used on the Stripe Dashboard to differentiate between accounts.
 final Omittable<String?> displayName;
@@ -15,13 +15,13 @@ final Omittable<String?> displayName;
 /// The timezone used in the Stripe Dashboard for this account. A list of possible time zone values is maintained at the [IANA Time Zone Database](http://www.iana.org/time-zones).
 final Omittable<String?> timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayName.isPresent) 'display_name': displayName.value,
   if (timezone.isPresent) 'timezone': timezone.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name', 'timezone'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_name', 'timezone'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final displayName$ = displayName.value;
 if (displayName$ != null) {
   if (displayName$.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
@@ -30,11 +30,11 @@ final timezone$ = timezone.value;
 if (timezone$ != null) {
   if (timezone$.runes.length > 5000) { errors.add('timezone: length must be <= 5000'); }
 }
-return errors; } 
-AccountDashboardSettings copyWith({Omittable<String?>? displayName, Omittable<String?>? timezone, }) { return AccountDashboardSettings(
+return errors;}
+AccountDashboardSettings copyWith({Omittable<String?>? displayName, Omittable<String?>? timezone, }) {return AccountDashboardSettings(
   displayName: displayName ?? this.displayName,
   timezone: timezone ?? this.timezone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountDashboardSettings &&
           displayName == other.displayName &&
@@ -44,4 +44,4 @@ AccountDashboardSettings copyWith({Omittable<String?>? displayName, Omittable<St
 
 @override String toString() => 'AccountDashboardSettings(displayName: $displayName, timezone: $timezone)';
 
- }
+}

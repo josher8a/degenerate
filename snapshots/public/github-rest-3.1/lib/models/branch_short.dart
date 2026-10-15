@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/branch_short/branch_short_commit.dart';/// Branch Short
 @immutable final class BranchShort {const BranchShort({required this.name, required this.commit, required this.protected, });
 
-factory BranchShort.fromJson(Map<String, dynamic> json) { return BranchShort(
+factory BranchShort.fromJson(Map<String, dynamic> json) {return BranchShort(
   name: json['name'] as String,
   commit: BranchShortCommit.fromJson(json['commit'] as Map<String, dynamic>),
   protected: json['protected'] as bool,
-); }
+);}
 
 final String name;
 
@@ -16,19 +16,19 @@ final BranchShortCommit commit;
 
 final bool protected;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'commit': commit.toJson(),
   'protected': protected,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('commit') &&
-      json.containsKey('protected') && json['protected'] is bool; } 
-BranchShort copyWith({String? name, BranchShortCommit? commit, bool? protected, }) { return BranchShort(
+      json.containsKey('protected') && json['protected'] is bool;}
+BranchShort copyWith({String? name, BranchShortCommit? commit, bool? protected, }) {return BranchShort(
   name: name ?? this.name,
   commit: commit ?? this.commit,
   protected: protected ?? this.protected,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BranchShort &&
           name == other.name &&
@@ -39,4 +39,4 @@ BranchShort copyWith({String? name, BranchShortCommit? commit, bool? protected, 
 
 @override String toString() => 'BranchShort(name: $name, commit: $commit, protected: $protected)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set, the types of subnets to include, separated by comma.
 sealed class ZeroTrustNetworksSubnetsListSubnetTypes {const ZeroTrustNetworksSubnetsListSubnetTypes();
 
-factory ZeroTrustNetworksSubnetsListSubnetTypes.fromJson(String json) { return switch (json) {
+factory ZeroTrustNetworksSubnetsListSubnetTypes.fromJson(String json) {return switch (json) {
   'cloudflare_source' => cloudflareSource,
   'warp' => warp,
   _ => ZeroTrustNetworksSubnetsListSubnetTypes$Unknown(json),
-}; }
+};}
 
 static const ZeroTrustNetworksSubnetsListSubnetTypes cloudflareSource = ZeroTrustNetworksSubnetsListSubnetTypes$cloudflareSource._();
 
@@ -17,30 +17,30 @@ static const ZeroTrustNetworksSubnetsListSubnetTypes warp = ZeroTrustNetworksSub
 static const List<ZeroTrustNetworksSubnetsListSubnetTypes> values = [cloudflareSource, warp];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cloudflare_source' => 'cloudflareSource',
   'warp' => 'warp',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustNetworksSubnetsListSubnetTypes$Unknown; } 
+bool get isUnknown {return this is ZeroTrustNetworksSubnetsListSubnetTypes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cloudflareSource, required W Function() warp, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cloudflareSource, required W Function() warp, required W Function(String value) $unknown, }) {return switch (this) {
       ZeroTrustNetworksSubnetsListSubnetTypes$cloudflareSource() => cloudflareSource(),
       ZeroTrustNetworksSubnetsListSubnetTypes$warp() => warp(),
       ZeroTrustNetworksSubnetsListSubnetTypes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cloudflareSource, W Function()? warp, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cloudflareSource, W Function()? warp, W Function(String value)? $unknown, }) {return switch (this) {
       ZeroTrustNetworksSubnetsListSubnetTypes$cloudflareSource() => cloudflareSource != null ? cloudflareSource() : orElse(value),
       ZeroTrustNetworksSubnetsListSubnetTypes$warp() => warp != null ? warp() : orElse(value),
       ZeroTrustNetworksSubnetsListSubnetTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZeroTrustNetworksSubnetsListSubnetTypes($value)';
 
- }
+}
 @immutable final class ZeroTrustNetworksSubnetsListSubnetTypes$cloudflareSource extends ZeroTrustNetworksSubnetsListSubnetTypes {const ZeroTrustNetworksSubnetsListSubnetTypes$cloudflareSource._();
 
 @override String get value => 'cloudflare_source';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cloudfla
 
 @override int get hashCode => 'cloudflare_source'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustNetworksSubnetsListSubnetTypes$warp extends ZeroTrustNetworksSubnetsListSubnetTypes {const ZeroTrustNetworksSubnetsListSubnetTypes$warp._();
 
 @override String get value => 'warp';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cloudfla
 
 @override int get hashCode => 'warp'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustNetworksSubnetsListSubnetTypes$Unknown extends ZeroTrustNetworksSubnetsListSubnetTypes {const ZeroTrustNetworksSubnetsListSubnetTypes$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cloudfla
 
 @override int get hashCode => value.hashCode;
 
- }
+}

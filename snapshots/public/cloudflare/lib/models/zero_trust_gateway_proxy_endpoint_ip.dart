@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_subdomain.dart';@immutable final class ZeroTrustGatewayProxyEndpointIp {const ZeroTrustGatewayProxyEndpointIp({required this.ips, required this.name, this.createdAt, this.id, this.kind, this.subdomain, this.updatedAt, });
 
-factory ZeroTrustGatewayProxyEndpointIp.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointIp(
+factory ZeroTrustGatewayProxyEndpointIp.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayProxyEndpointIp(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null,
   ips: (json['ips'] as List<dynamic>).map((e) => e as String).toList(),
@@ -11,7 +11,7 @@ factory ZeroTrustGatewayProxyEndpointIp.fromJson(Map<String, dynamic> json) { re
   name: ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String),
   subdomain: json['subdomain'] != null ? ZeroTrustGatewaySchemasSubdomain.fromJson(json['subdomain'] as String) : null,
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 
@@ -31,7 +31,7 @@ final ZeroTrustGatewaySchemasSubdomain? subdomain;
 
 final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   'ips': ips,
@@ -39,10 +39,10 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   if (subdomain != null) 'subdomain': subdomain?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ips') &&
-      json.containsKey('name'); } 
-ZeroTrustGatewayProxyEndpointIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, List<String>? ips, String? Function()? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain? Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayProxyEndpointIp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ips') &&
+      json.containsKey('name');}
+ZeroTrustGatewayProxyEndpointIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, List<String>? ips, String? Function()? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain? Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) {return ZeroTrustGatewayProxyEndpointIp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
   ips: ips ?? this.ips,
@@ -50,7 +50,7 @@ ZeroTrustGatewayProxyEndpointIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Fun
   name: name ?? this.name,
   subdomain: subdomain != null ? subdomain() : this.subdomain,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayProxyEndpointIp &&
           createdAt == other.createdAt &&
@@ -65,4 +65,4 @@ ZeroTrustGatewayProxyEndpointIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Fun
 
 @override String toString() => 'ZeroTrustGatewayProxyEndpointIp(createdAt: $createdAt, id: $id, ips: $ips, kind: $kind, name: $name, subdomain: $subdomain, updatedAt: $updatedAt)';
 
- }
+}

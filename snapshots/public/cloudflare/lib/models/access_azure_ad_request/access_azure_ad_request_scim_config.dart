@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad_request/identity_update_behavior.dart';/// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
 @immutable final class AccessAzureAdRequestScimConfig {const AccessAzureAdRequestScimConfig({this.enabled, this.identityUpdateBehavior, this.seatDeprovision, this.userDeprovision, });
 
-factory AccessAzureAdRequestScimConfig.fromJson(Map<String, dynamic> json) { return AccessAzureAdRequestScimConfig(
+factory AccessAzureAdRequestScimConfig.fromJson(Map<String, dynamic> json) {return AccessAzureAdRequestScimConfig(
   enabled: json['enabled'] as bool?,
   identityUpdateBehavior: json['identity_update_behavior'] != null ? IdentityUpdateBehavior.fromJson(json['identity_update_behavior'] as String) : null,
   seatDeprovision: json['seat_deprovision'] as bool?,
   userDeprovision: json['user_deprovision'] as bool?,
-); }
+);}
 
 /// A flag to enable or disable SCIM for the identity provider.
 final bool? enabled;
@@ -35,19 +35,19 @@ bool get seatDeprovisionOrDefault => seatDeprovision ?? false;
 /// The value of `userDeprovision`, or its schema default when absent.
 bool get userDeprovisionOrDefault => userDeprovision ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (identityUpdateBehavior != null) 'identity_update_behavior': identityUpdateBehavior?.toJson(),
   'seat_deprovision': ?seatDeprovision,
   'user_deprovision': ?userDeprovision,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'identity_update_behavior', 'seat_deprovision', 'user_deprovision'}.contains(key)); } 
-AccessAzureAdRequestScimConfig copyWith({bool? Function()? enabled, IdentityUpdateBehavior? Function()? identityUpdateBehavior, bool? Function()? seatDeprovision, bool? Function()? userDeprovision, }) { return AccessAzureAdRequestScimConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'identity_update_behavior', 'seat_deprovision', 'user_deprovision'}.contains(key));}
+AccessAzureAdRequestScimConfig copyWith({bool? Function()? enabled, IdentityUpdateBehavior? Function()? identityUpdateBehavior, bool? Function()? seatDeprovision, bool? Function()? userDeprovision, }) {return AccessAzureAdRequestScimConfig(
   enabled: enabled != null ? enabled() : this.enabled,
   identityUpdateBehavior: identityUpdateBehavior != null ? identityUpdateBehavior() : this.identityUpdateBehavior,
   seatDeprovision: seatDeprovision != null ? seatDeprovision() : this.seatDeprovision,
   userDeprovision: userDeprovision != null ? userDeprovision() : this.userDeprovision,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAzureAdRequestScimConfig &&
           enabled == other.enabled &&
@@ -59,4 +59,4 @@ AccessAzureAdRequestScimConfig copyWith({bool? Function()? enabled, IdentityUpda
 
 @override String toString() => 'AccessAzureAdRequestScimConfig(enabled: $enabled, identityUpdateBehavior: $identityUpdateBehavior, seatDeprovision: $seatDeprovision, userDeprovision: $userDeprovision)';
 
- }
+}

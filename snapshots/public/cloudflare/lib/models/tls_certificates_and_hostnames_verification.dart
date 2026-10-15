@@ -11,7 +11,7 @@ bool toJson() => value;
 /// Current status of certificate.
 sealed class TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus();
 
-factory TlsCertificatesAndHostnamesCertificateStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesCertificateStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'authorizing' => authorizing,
   'active' => active,
@@ -20,7 +20,7 @@ factory TlsCertificatesAndHostnamesCertificateStatus.fromJson(String json) { ret
   'timing_out' => timingOut,
   'pending_deployment' => pendingDeployment,
   _ => TlsCertificatesAndHostnamesCertificateStatus$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesCertificateStatus initializing = TlsCertificatesAndHostnamesCertificateStatus$initializing._();
 
@@ -39,9 +39,9 @@ static const TlsCertificatesAndHostnamesCertificateStatus pendingDeployment = Tl
 static const List<TlsCertificatesAndHostnamesCertificateStatus> values = [initializing, authorizing, active, expired, issuing, timingOut, pendingDeployment];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'initializing' => 'initializing',
   'authorizing' => 'authorizing',
   'active' => 'active',
@@ -50,11 +50,11 @@ String get name { return switch (value) {
   'timing_out' => 'timingOut',
   'pending_deployment' => 'pendingDeployment',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesCertificateStatus$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesCertificateStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() initializing, required W Function() authorizing, required W Function() active, required W Function() expired, required W Function() issuing, required W Function() timingOut, required W Function() pendingDeployment, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() initializing, required W Function() authorizing, required W Function() active, required W Function() expired, required W Function() issuing, required W Function() timingOut, required W Function() pendingDeployment, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesCertificateStatus$initializing() => initializing(),
       TlsCertificatesAndHostnamesCertificateStatus$authorizing() => authorizing(),
       TlsCertificatesAndHostnamesCertificateStatus$active() => active(),
@@ -63,9 +63,9 @@ W when<W>({required W Function() initializing, required W Function() authorizing
       TlsCertificatesAndHostnamesCertificateStatus$timingOut() => timingOut(),
       TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment() => pendingDeployment(),
       TlsCertificatesAndHostnamesCertificateStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? authorizing, W Function()? active, W Function()? expired, W Function()? issuing, W Function()? timingOut, W Function()? pendingDeployment, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? authorizing, W Function()? active, W Function()? expired, W Function()? issuing, W Function()? timingOut, W Function()? pendingDeployment, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesCertificateStatus$initializing() => initializing != null ? initializing() : orElse(value),
       TlsCertificatesAndHostnamesCertificateStatus$authorizing() => authorizing != null ? authorizing() : orElse(value),
       TlsCertificatesAndHostnamesCertificateStatus$active() => active != null ? active() : orElse(value),
@@ -74,10 +74,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
       TlsCertificatesAndHostnamesCertificateStatus$timingOut() => timingOut != null ? timingOut() : orElse(value),
       TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment() => pendingDeployment != null ? pendingDeployment() : orElse(value),
       TlsCertificatesAndHostnamesCertificateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesCertificateStatus($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificateStatus$initializing extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -86,7 +86,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificateStatus$authorizing extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$authorizing._();
 
 @override String get value => 'authorizing';
@@ -95,7 +95,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'authorizing'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificateStatus$active extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$active._();
 
 @override String get value => 'active';
@@ -104,7 +104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificateStatus$expired extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$expired._();
 
 @override String get value => 'expired';
@@ -113,7 +113,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificateStatus$issuing extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$issuing._();
 
 @override String get value => 'issuing';
@@ -122,7 +122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'issuing'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificateStatus$timingOut extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$timingOut._();
 
 @override String get value => 'timing_out';
@@ -131,7 +131,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'timing_out'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment._();
 
 @override String get value => 'pending_deployment';
@@ -140,7 +140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_deployment'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesCertificateStatus$Unknown extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$Unknown(this.value);
 
 @override final String value;
@@ -150,16 +150,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Certificate's signature algorithm.
 sealed class TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature();
 
-factory TlsCertificatesAndHostnamesSchemasSignature.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSchemasSignature.fromJson(String json) {return switch (json) {
   'ECDSAWithSHA256' => ecdsaWithSha256,
   'SHA1WithRSA' => sha1WithRsa,
   'SHA256WithRSA' => sha256WithRsa,
   _ => TlsCertificatesAndHostnamesSchemasSignature$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSchemasSignature ecdsaWithSha256 = TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256._();
 
@@ -170,33 +170,33 @@ static const TlsCertificatesAndHostnamesSchemasSignature sha256WithRsa = TlsCert
 static const List<TlsCertificatesAndHostnamesSchemasSignature> values = [ecdsaWithSha256, sha1WithRsa, sha256WithRsa];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ECDSAWithSHA256' => 'ecdsaWithSha256',
   'SHA1WithRSA' => 'sha1WithRsa',
   'SHA256WithRSA' => 'sha256WithRsa',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasSignature$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesSchemasSignature$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ecdsaWithSha256, required W Function() sha1WithRsa, required W Function() sha256WithRsa, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ecdsaWithSha256, required W Function() sha1WithRsa, required W Function() sha256WithRsa, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256() => ecdsaWithSha256(),
       TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa() => sha1WithRsa(),
       TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa() => sha256WithRsa(),
       TlsCertificatesAndHostnamesSchemasSignature$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ecdsaWithSha256, W Function()? sha1WithRsa, W Function()? sha256WithRsa, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ecdsaWithSha256, W Function()? sha1WithRsa, W Function()? sha256WithRsa, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256() => ecdsaWithSha256 != null ? ecdsaWithSha256() : orElse(value),
       TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa() => sha1WithRsa != null ? sha1WithRsa() : orElse(value),
       TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa() => sha256WithRsa != null ? sha256WithRsa() : orElse(value),
       TlsCertificatesAndHostnamesSchemasSignature$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesSchemasSignature($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256 extends TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256._();
 
 @override String get value => 'ECDSAWithSHA256';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ecdsaWit
 
 @override int get hashCode => 'ECDSAWithSHA256'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa extends TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa._();
 
 @override String get value => 'SHA1WithRSA';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ecdsaWit
 
 @override int get hashCode => 'SHA1WithRSA'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa extends TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa._();
 
 @override String get value => 'SHA256WithRSA';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ecdsaWit
 
 @override int get hashCode => 'SHA256WithRSA'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasSignature$Unknown extends TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature$Unknown(this.value);
 
 @override final String value;
@@ -233,16 +233,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ecdsaWit
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Validation method in use for a certificate pack order.
 sealed class TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod();
 
-factory TlsCertificatesAndHostnamesSchemasValidationMethod.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesSchemasValidationMethod.fromJson(String json) {return switch (json) {
   'http' => http,
   'cname' => cname,
   'txt' => txt,
   _ => TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesSchemasValidationMethod http = TlsCertificatesAndHostnamesSchemasValidationMethod$http._();
 
@@ -253,33 +253,33 @@ static const TlsCertificatesAndHostnamesSchemasValidationMethod txt = TlsCertifi
 static const List<TlsCertificatesAndHostnamesSchemasValidationMethod> values = [http, cname, txt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'http' => 'http',
   'cname' => 'cname',
   'txt' => 'txt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() http, required W Function() cname, required W Function() txt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() http, required W Function() cname, required W Function() txt, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesSchemasValidationMethod$http() => http(),
       TlsCertificatesAndHostnamesSchemasValidationMethod$cname() => cname(),
       TlsCertificatesAndHostnamesSchemasValidationMethod$txt() => txt(),
       TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? cname, W Function()? txt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? cname, W Function()? txt, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesSchemasValidationMethod$http() => http != null ? http() : orElse(value),
       TlsCertificatesAndHostnamesSchemasValidationMethod$cname() => cname != null ? cname() : orElse(value),
       TlsCertificatesAndHostnamesSchemasValidationMethod$txt() => txt != null ? txt() : orElse(value),
       TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesSchemasValidationMethod($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod$http extends TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod$http._();
 
 @override String get value => 'http';
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'http'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod$cname extends TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod$cname._();
 
 @override String get value => 'cname';
@@ -297,7 +297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'cname'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod$txt extends TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod$txt._();
 
 @override String get value => 'txt';
@@ -306,7 +306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'txt'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown extends TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown(this.value);
 
 @override final String value;
@@ -316,7 +316,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Status of the required verification information, omitted if verification status is unknown.
 extension type const TlsCertificatesAndHostnamesVerificationStatus(bool value) {
 factory TlsCertificatesAndHostnamesVerificationStatus.fromJson(bool json) => TlsCertificatesAndHostnamesVerificationStatus(json);
@@ -327,11 +327,11 @@ bool toJson() => value;
 /// Method of verification.
 sealed class TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType();
 
-factory TlsCertificatesAndHostnamesVerificationType.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesVerificationType.fromJson(String json) {return switch (json) {
   'cname' => cname,
   'meta tag' => metaTag,
   _ => TlsCertificatesAndHostnamesVerificationType$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesVerificationType cname = TlsCertificatesAndHostnamesVerificationType$cname._();
 
@@ -340,30 +340,30 @@ static const TlsCertificatesAndHostnamesVerificationType metaTag = TlsCertificat
 static const List<TlsCertificatesAndHostnamesVerificationType> values = [cname, metaTag];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cname' => 'cname',
   'meta tag' => 'metaTag',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesVerificationType$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesVerificationType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cname, required W Function() metaTag, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cname, required W Function() metaTag, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesVerificationType$cname() => cname(),
       TlsCertificatesAndHostnamesVerificationType$metaTag() => metaTag(),
       TlsCertificatesAndHostnamesVerificationType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W Function()? metaTag, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W Function()? metaTag, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesVerificationType$cname() => cname != null ? cname() : orElse(value),
       TlsCertificatesAndHostnamesVerificationType$metaTag() => metaTag != null ? metaTag() : orElse(value),
       TlsCertificatesAndHostnamesVerificationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesVerificationType($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesVerificationType$cname extends TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType$cname._();
 
 @override String get value => 'cname';
@@ -372,7 +372,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W
 
 @override int get hashCode => 'cname'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesVerificationType$metaTag extends TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType$metaTag._();
 
 @override String get value => 'meta tag';
@@ -381,7 +381,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W
 
 @override int get hashCode => 'meta tag'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesVerificationType$Unknown extends TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType$Unknown(this.value);
 
 @override final String value;
@@ -391,10 +391,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesVerification {const TlsCertificatesAndHostnamesVerification({required this.certificateStatus, this.brandCheck, this.certPackUuid, this.signature, this.validationMethod, this.verificationInfo, this.verificationStatus, this.verificationType, });
 
-factory TlsCertificatesAndHostnamesVerification.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesVerification(
+factory TlsCertificatesAndHostnamesVerification.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesVerification(
   brandCheck: json['brand_check'] != null ? TlsCertificatesAndHostnamesBrandCheck.fromJson(json['brand_check'] as bool) : null,
   certPackUuid: json['cert_pack_uuid'] != null ? TlsCertificatesAndHostnamesCertPackUuid.fromJson(json['cert_pack_uuid'] as String) : null,
   certificateStatus: TlsCertificatesAndHostnamesCertificateStatus.fromJson(json['certificate_status'] as String),
@@ -403,7 +403,7 @@ factory TlsCertificatesAndHostnamesVerification.fromJson(Map<String, dynamic> js
   verificationInfo: json['verification_info'] != null ? TlsCertificatesAndHostnamesVerificationInfo.fromJson(json['verification_info'] as Map<String, dynamic>) : null,
   verificationStatus: json['verification_status'] != null ? TlsCertificatesAndHostnamesVerificationStatus.fromJson(json['verification_status'] as bool) : null,
   verificationType: json['verification_type'] != null ? TlsCertificatesAndHostnamesVerificationType.fromJson(json['verification_type'] as String) : null,
-); }
+);}
 
 /// Certificate Authority is manually reviewing the order.
 final TlsCertificatesAndHostnamesBrandCheck? brandCheck;
@@ -426,7 +426,7 @@ final TlsCertificatesAndHostnamesVerificationStatus? verificationStatus;
 
 final TlsCertificatesAndHostnamesVerificationType? verificationType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brandCheck != null) 'brand_check': brandCheck?.toJson(),
   if (certPackUuid != null) 'cert_pack_uuid': certPackUuid?.toJson(),
   'certificate_status': certificateStatus.toJson(),
@@ -435,9 +435,9 @@ Map<String, dynamic> toJson() { return {
   if (verificationInfo != null) 'verification_info': verificationInfo?.toJson(),
   if (verificationStatus != null) 'verification_status': verificationStatus?.toJson(),
   if (verificationType != null) 'verification_type': verificationType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_status'); } 
-TlsCertificatesAndHostnamesVerification copyWith({TlsCertificatesAndHostnamesBrandCheck? Function()? brandCheck, TlsCertificatesAndHostnamesCertPackUuid? Function()? certPackUuid, TlsCertificatesAndHostnamesCertificateStatus? certificateStatus, TlsCertificatesAndHostnamesSchemasSignature? Function()? signature, TlsCertificatesAndHostnamesSchemasValidationMethod? Function()? validationMethod, TlsCertificatesAndHostnamesVerificationInfo? Function()? verificationInfo, TlsCertificatesAndHostnamesVerificationStatus? Function()? verificationStatus, TlsCertificatesAndHostnamesVerificationType? Function()? verificationType, }) { return TlsCertificatesAndHostnamesVerification(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate_status');}
+TlsCertificatesAndHostnamesVerification copyWith({TlsCertificatesAndHostnamesBrandCheck? Function()? brandCheck, TlsCertificatesAndHostnamesCertPackUuid? Function()? certPackUuid, TlsCertificatesAndHostnamesCertificateStatus? certificateStatus, TlsCertificatesAndHostnamesSchemasSignature? Function()? signature, TlsCertificatesAndHostnamesSchemasValidationMethod? Function()? validationMethod, TlsCertificatesAndHostnamesVerificationInfo? Function()? verificationInfo, TlsCertificatesAndHostnamesVerificationStatus? Function()? verificationStatus, TlsCertificatesAndHostnamesVerificationType? Function()? verificationType, }) {return TlsCertificatesAndHostnamesVerification(
   brandCheck: brandCheck != null ? brandCheck() : this.brandCheck,
   certPackUuid: certPackUuid != null ? certPackUuid() : this.certPackUuid,
   certificateStatus: certificateStatus ?? this.certificateStatus,
@@ -446,7 +446,7 @@ TlsCertificatesAndHostnamesVerification copyWith({TlsCertificatesAndHostnamesBra
   verificationInfo: verificationInfo != null ? verificationInfo() : this.verificationInfo,
   verificationStatus: verificationStatus != null ? verificationStatus() : this.verificationStatus,
   verificationType: verificationType != null ? verificationType() : this.verificationType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesVerification &&
           brandCheck == other.brandCheck &&
@@ -462,4 +462,4 @@ TlsCertificatesAndHostnamesVerification copyWith({TlsCertificatesAndHostnamesBra
 
 @override String toString() => 'TlsCertificatesAndHostnamesVerification(brandCheck: $brandCheck, certPackUuid: $certPackUuid, certificateStatus: $certificateStatus, signature: $signature, validationMethod: $validationMethod, verificationInfo: $verificationInfo, verificationStatus: $verificationStatus, verificationType: $verificationType)';
 
- }
+}

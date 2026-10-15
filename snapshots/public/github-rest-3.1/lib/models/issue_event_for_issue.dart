@@ -8,7 +8,7 @@ const IssueEventForIssue({this.labeledIssueEvent = const Omittable.absent(), thi
 const IssueEventForIssue._({required this.rawValue, required this.labeledIssueEvent, required this.unlabeledIssueEvent, required this.assignedIssueEvent, required this.unassignedIssueEvent, required this.milestonedIssueEvent, required this.demilestonedIssueEvent, required this.renamedIssueEvent, required this.reviewRequestedIssueEvent, required this.reviewRequestRemovedIssueEvent, required this.reviewDismissedIssueEvent, required this.lockedIssueEvent, required this.addedToProjectIssueEvent, required this.movedColumnInProjectIssueEvent, required this.removedFromProjectIssueEvent, required this.convertedNoteToIssueIssueEvent, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory IssueEventForIssue.fromJson(Object? json) { return IssueEventForIssue._(
+factory IssueEventForIssue.fromJson(Object? json) {return IssueEventForIssue._(
   rawValue: Omittable(json),
   labeledIssueEvent: json is Map<String, dynamic> && LabeledIssueEvent.canParse(json) ? parseAnyOfVariant<LabeledIssueEvent>(json, (value) => LabeledIssueEvent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   unlabeledIssueEvent: json is Map<String, dynamic> && UnlabeledIssueEvent.canParse(json) ? parseAnyOfVariant<UnlabeledIssueEvent>(json, (value) => UnlabeledIssueEvent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -25,7 +25,7 @@ factory IssueEventForIssue.fromJson(Object? json) { return IssueEventForIssue._(
   movedColumnInProjectIssueEvent: json is Map<String, dynamic> && MovedColumnInProjectIssueEvent.canParse(json) ? parseAnyOfVariant<MovedColumnInProjectIssueEvent>(json, (value) => MovedColumnInProjectIssueEvent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   removedFromProjectIssueEvent: json is Map<String, dynamic> && RemovedFromProjectIssueEvent.canParse(json) ? parseAnyOfVariant<RemovedFromProjectIssueEvent>(json, (value) => RemovedFromProjectIssueEvent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   convertedNoteToIssueIssueEvent: json is Map<String, dynamic> && ConvertedNoteToIssueIssueEvent.canParse(json) ? parseAnyOfVariant<ConvertedNoteToIssueIssueEvent>(json, (value) => ConvertedNoteToIssueIssueEvent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -107,4 +107,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'IssueEventForIssue(${toJson()})';
 
- }
+}

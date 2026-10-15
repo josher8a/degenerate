@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type.
 sealed class AuditLogEventType {const AuditLogEventType();
 
-factory AuditLogEventType.fromJson(String json) { return switch (json) {
+factory AuditLogEventType.fromJson(String json) {return switch (json) {
   'api_key.created' => apiKeyCreated,
   'api_key.updated' => apiKeyUpdated,
   'api_key.deleted' => apiKeyDeleted,
@@ -57,7 +57,7 @@ factory AuditLogEventType.fromJson(String json) { return switch (json) {
   'user.updated' => userUpdated,
   'user.deleted' => userDeleted,
   _ => AuditLogEventType$Unknown(json),
-}; }
+};}
 
 static const AuditLogEventType apiKeyCreated = AuditLogEventType$apiKeyCreated._();
 
@@ -164,9 +164,9 @@ static const AuditLogEventType userDeleted = AuditLogEventType$userDeleted._();
 static const List<AuditLogEventType> values = [apiKeyCreated, apiKeyUpdated, apiKeyDeleted, certificateCreated, certificateUpdated, certificateDeleted, certificatesActivated, certificatesDeactivated, checkpointPermissionCreated, checkpointPermissionDeleted, externalKeyRegistered, externalKeyRemoved, groupCreated, groupUpdated, groupDeleted, inviteSent, inviteAccepted, inviteDeleted, ipAllowlistCreated, ipAllowlistUpdated, ipAllowlistDeleted, ipAllowlistConfigActivated, ipAllowlistConfigDeactivated, loginSucceeded, loginFailed, logoutSucceeded, logoutFailed, organizationUpdated, projectCreated, projectUpdated, projectArchived, projectDeleted, rateLimitUpdated, rateLimitDeleted, resourceDeleted, tunnelCreated, tunnelUpdated, tunnelDeleted, roleCreated, roleUpdated, roleDeleted, roleAssignmentCreated, roleAssignmentDeleted, scimEnabled, scimDisabled, serviceAccountCreated, serviceAccountUpdated, serviceAccountDeleted, userAdded, userUpdated, userDeleted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'api_key.created' => 'apiKeyCreated',
   'api_key.updated' => 'apiKeyUpdated',
   'api_key.deleted' => 'apiKeyDeleted',
@@ -219,11 +219,11 @@ String get name { return switch (value) {
   'user.updated' => 'userUpdated',
   'user.deleted' => 'userDeleted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AuditLogEventType$Unknown; } 
+bool get isUnknown {return this is AuditLogEventType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() apiKeyCreated, required W Function() apiKeyUpdated, required W Function() apiKeyDeleted, required W Function() certificateCreated, required W Function() certificateUpdated, required W Function() certificateDeleted, required W Function() certificatesActivated, required W Function() certificatesDeactivated, required W Function() checkpointPermissionCreated, required W Function() checkpointPermissionDeleted, required W Function() externalKeyRegistered, required W Function() externalKeyRemoved, required W Function() groupCreated, required W Function() groupUpdated, required W Function() groupDeleted, required W Function() inviteSent, required W Function() inviteAccepted, required W Function() inviteDeleted, required W Function() ipAllowlistCreated, required W Function() ipAllowlistUpdated, required W Function() ipAllowlistDeleted, required W Function() ipAllowlistConfigActivated, required W Function() ipAllowlistConfigDeactivated, required W Function() loginSucceeded, required W Function() loginFailed, required W Function() logoutSucceeded, required W Function() logoutFailed, required W Function() organizationUpdated, required W Function() projectCreated, required W Function() projectUpdated, required W Function() projectArchived, required W Function() projectDeleted, required W Function() rateLimitUpdated, required W Function() rateLimitDeleted, required W Function() resourceDeleted, required W Function() tunnelCreated, required W Function() tunnelUpdated, required W Function() tunnelDeleted, required W Function() roleCreated, required W Function() roleUpdated, required W Function() roleDeleted, required W Function() roleAssignmentCreated, required W Function() roleAssignmentDeleted, required W Function() scimEnabled, required W Function() scimDisabled, required W Function() serviceAccountCreated, required W Function() serviceAccountUpdated, required W Function() serviceAccountDeleted, required W Function() userAdded, required W Function() userUpdated, required W Function() userDeleted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() apiKeyCreated, required W Function() apiKeyUpdated, required W Function() apiKeyDeleted, required W Function() certificateCreated, required W Function() certificateUpdated, required W Function() certificateDeleted, required W Function() certificatesActivated, required W Function() certificatesDeactivated, required W Function() checkpointPermissionCreated, required W Function() checkpointPermissionDeleted, required W Function() externalKeyRegistered, required W Function() externalKeyRemoved, required W Function() groupCreated, required W Function() groupUpdated, required W Function() groupDeleted, required W Function() inviteSent, required W Function() inviteAccepted, required W Function() inviteDeleted, required W Function() ipAllowlistCreated, required W Function() ipAllowlistUpdated, required W Function() ipAllowlistDeleted, required W Function() ipAllowlistConfigActivated, required W Function() ipAllowlistConfigDeactivated, required W Function() loginSucceeded, required W Function() loginFailed, required W Function() logoutSucceeded, required W Function() logoutFailed, required W Function() organizationUpdated, required W Function() projectCreated, required W Function() projectUpdated, required W Function() projectArchived, required W Function() projectDeleted, required W Function() rateLimitUpdated, required W Function() rateLimitDeleted, required W Function() resourceDeleted, required W Function() tunnelCreated, required W Function() tunnelUpdated, required W Function() tunnelDeleted, required W Function() roleCreated, required W Function() roleUpdated, required W Function() roleDeleted, required W Function() roleAssignmentCreated, required W Function() roleAssignmentDeleted, required W Function() scimEnabled, required W Function() scimDisabled, required W Function() serviceAccountCreated, required W Function() serviceAccountUpdated, required W Function() serviceAccountDeleted, required W Function() userAdded, required W Function() userUpdated, required W Function() userDeleted, required W Function(String value) $unknown, }) {return switch (this) {
       AuditLogEventType$apiKeyCreated() => apiKeyCreated(),
       AuditLogEventType$apiKeyUpdated() => apiKeyUpdated(),
       AuditLogEventType$apiKeyDeleted() => apiKeyDeleted(),
@@ -276,9 +276,9 @@ W when<W>({required W Function() apiKeyCreated, required W Function() apiKeyUpda
       AuditLogEventType$userUpdated() => userUpdated(),
       AuditLogEventType$userDeleted() => userDeleted(),
       AuditLogEventType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCreated, W Function()? apiKeyUpdated, W Function()? apiKeyDeleted, W Function()? certificateCreated, W Function()? certificateUpdated, W Function()? certificateDeleted, W Function()? certificatesActivated, W Function()? certificatesDeactivated, W Function()? checkpointPermissionCreated, W Function()? checkpointPermissionDeleted, W Function()? externalKeyRegistered, W Function()? externalKeyRemoved, W Function()? groupCreated, W Function()? groupUpdated, W Function()? groupDeleted, W Function()? inviteSent, W Function()? inviteAccepted, W Function()? inviteDeleted, W Function()? ipAllowlistCreated, W Function()? ipAllowlistUpdated, W Function()? ipAllowlistDeleted, W Function()? ipAllowlistConfigActivated, W Function()? ipAllowlistConfigDeactivated, W Function()? loginSucceeded, W Function()? loginFailed, W Function()? logoutSucceeded, W Function()? logoutFailed, W Function()? organizationUpdated, W Function()? projectCreated, W Function()? projectUpdated, W Function()? projectArchived, W Function()? projectDeleted, W Function()? rateLimitUpdated, W Function()? rateLimitDeleted, W Function()? resourceDeleted, W Function()? tunnelCreated, W Function()? tunnelUpdated, W Function()? tunnelDeleted, W Function()? roleCreated, W Function()? roleUpdated, W Function()? roleDeleted, W Function()? roleAssignmentCreated, W Function()? roleAssignmentDeleted, W Function()? scimEnabled, W Function()? scimDisabled, W Function()? serviceAccountCreated, W Function()? serviceAccountUpdated, W Function()? serviceAccountDeleted, W Function()? userAdded, W Function()? userUpdated, W Function()? userDeleted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCreated, W Function()? apiKeyUpdated, W Function()? apiKeyDeleted, W Function()? certificateCreated, W Function()? certificateUpdated, W Function()? certificateDeleted, W Function()? certificatesActivated, W Function()? certificatesDeactivated, W Function()? checkpointPermissionCreated, W Function()? checkpointPermissionDeleted, W Function()? externalKeyRegistered, W Function()? externalKeyRemoved, W Function()? groupCreated, W Function()? groupUpdated, W Function()? groupDeleted, W Function()? inviteSent, W Function()? inviteAccepted, W Function()? inviteDeleted, W Function()? ipAllowlistCreated, W Function()? ipAllowlistUpdated, W Function()? ipAllowlistDeleted, W Function()? ipAllowlistConfigActivated, W Function()? ipAllowlistConfigDeactivated, W Function()? loginSucceeded, W Function()? loginFailed, W Function()? logoutSucceeded, W Function()? logoutFailed, W Function()? organizationUpdated, W Function()? projectCreated, W Function()? projectUpdated, W Function()? projectArchived, W Function()? projectDeleted, W Function()? rateLimitUpdated, W Function()? rateLimitDeleted, W Function()? resourceDeleted, W Function()? tunnelCreated, W Function()? tunnelUpdated, W Function()? tunnelDeleted, W Function()? roleCreated, W Function()? roleUpdated, W Function()? roleDeleted, W Function()? roleAssignmentCreated, W Function()? roleAssignmentDeleted, W Function()? scimEnabled, W Function()? scimDisabled, W Function()? serviceAccountCreated, W Function()? serviceAccountUpdated, W Function()? serviceAccountDeleted, W Function()? userAdded, W Function()? userUpdated, W Function()? userDeleted, W Function(String value)? $unknown, }) {return switch (this) {
       AuditLogEventType$apiKeyCreated() => apiKeyCreated != null ? apiKeyCreated() : orElse(value),
       AuditLogEventType$apiKeyUpdated() => apiKeyUpdated != null ? apiKeyUpdated() : orElse(value),
       AuditLogEventType$apiKeyDeleted() => apiKeyDeleted != null ? apiKeyDeleted() : orElse(value),
@@ -331,10 +331,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
       AuditLogEventType$userUpdated() => userUpdated != null ? userUpdated() : orElse(value),
       AuditLogEventType$userDeleted() => userDeleted != null ? userDeleted() : orElse(value),
       AuditLogEventType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AuditLogEventType($value)';
 
- }
+}
 @immutable final class AuditLogEventType$apiKeyCreated extends AuditLogEventType {const AuditLogEventType$apiKeyCreated._();
 
 @override String get value => 'api_key.created';
@@ -343,7 +343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'api_key.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$apiKeyUpdated extends AuditLogEventType {const AuditLogEventType$apiKeyUpdated._();
 
 @override String get value => 'api_key.updated';
@@ -352,7 +352,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'api_key.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$apiKeyDeleted extends AuditLogEventType {const AuditLogEventType$apiKeyDeleted._();
 
 @override String get value => 'api_key.deleted';
@@ -361,7 +361,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'api_key.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$certificateCreated extends AuditLogEventType {const AuditLogEventType$certificateCreated._();
 
 @override String get value => 'certificate.created';
@@ -370,7 +370,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'certificate.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$certificateUpdated extends AuditLogEventType {const AuditLogEventType$certificateUpdated._();
 
 @override String get value => 'certificate.updated';
@@ -379,7 +379,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'certificate.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$certificateDeleted extends AuditLogEventType {const AuditLogEventType$certificateDeleted._();
 
 @override String get value => 'certificate.deleted';
@@ -388,7 +388,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'certificate.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$certificatesActivated extends AuditLogEventType {const AuditLogEventType$certificatesActivated._();
 
 @override String get value => 'certificates.activated';
@@ -397,7 +397,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'certificates.activated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$certificatesDeactivated extends AuditLogEventType {const AuditLogEventType$certificatesDeactivated._();
 
 @override String get value => 'certificates.deactivated';
@@ -406,7 +406,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'certificates.deactivated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$checkpointPermissionCreated extends AuditLogEventType {const AuditLogEventType$checkpointPermissionCreated._();
 
 @override String get value => 'checkpoint.permission.created';
@@ -415,7 +415,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'checkpoint.permission.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$checkpointPermissionDeleted extends AuditLogEventType {const AuditLogEventType$checkpointPermissionDeleted._();
 
 @override String get value => 'checkpoint.permission.deleted';
@@ -424,7 +424,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'checkpoint.permission.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$externalKeyRegistered extends AuditLogEventType {const AuditLogEventType$externalKeyRegistered._();
 
 @override String get value => 'external_key.registered';
@@ -433,7 +433,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'external_key.registered'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$externalKeyRemoved extends AuditLogEventType {const AuditLogEventType$externalKeyRemoved._();
 
 @override String get value => 'external_key.removed';
@@ -442,7 +442,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'external_key.removed'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$groupCreated extends AuditLogEventType {const AuditLogEventType$groupCreated._();
 
 @override String get value => 'group.created';
@@ -451,7 +451,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'group.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$groupUpdated extends AuditLogEventType {const AuditLogEventType$groupUpdated._();
 
 @override String get value => 'group.updated';
@@ -460,7 +460,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'group.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$groupDeleted extends AuditLogEventType {const AuditLogEventType$groupDeleted._();
 
 @override String get value => 'group.deleted';
@@ -469,7 +469,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'group.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$inviteSent extends AuditLogEventType {const AuditLogEventType$inviteSent._();
 
 @override String get value => 'invite.sent';
@@ -478,7 +478,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'invite.sent'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$inviteAccepted extends AuditLogEventType {const AuditLogEventType$inviteAccepted._();
 
 @override String get value => 'invite.accepted';
@@ -487,7 +487,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'invite.accepted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$inviteDeleted extends AuditLogEventType {const AuditLogEventType$inviteDeleted._();
 
 @override String get value => 'invite.deleted';
@@ -496,7 +496,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'invite.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$ipAllowlistCreated extends AuditLogEventType {const AuditLogEventType$ipAllowlistCreated._();
 
 @override String get value => 'ip_allowlist.created';
@@ -505,7 +505,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'ip_allowlist.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$ipAllowlistUpdated extends AuditLogEventType {const AuditLogEventType$ipAllowlistUpdated._();
 
 @override String get value => 'ip_allowlist.updated';
@@ -514,7 +514,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'ip_allowlist.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$ipAllowlistDeleted extends AuditLogEventType {const AuditLogEventType$ipAllowlistDeleted._();
 
 @override String get value => 'ip_allowlist.deleted';
@@ -523,7 +523,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'ip_allowlist.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$ipAllowlistConfigActivated extends AuditLogEventType {const AuditLogEventType$ipAllowlistConfigActivated._();
 
 @override String get value => 'ip_allowlist.config.activated';
@@ -532,7 +532,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'ip_allowlist.config.activated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$ipAllowlistConfigDeactivated extends AuditLogEventType {const AuditLogEventType$ipAllowlistConfigDeactivated._();
 
 @override String get value => 'ip_allowlist.config.deactivated';
@@ -541,7 +541,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'ip_allowlist.config.deactivated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$loginSucceeded extends AuditLogEventType {const AuditLogEventType$loginSucceeded._();
 
 @override String get value => 'login.succeeded';
@@ -550,7 +550,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'login.succeeded'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$loginFailed extends AuditLogEventType {const AuditLogEventType$loginFailed._();
 
 @override String get value => 'login.failed';
@@ -559,7 +559,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'login.failed'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$logoutSucceeded extends AuditLogEventType {const AuditLogEventType$logoutSucceeded._();
 
 @override String get value => 'logout.succeeded';
@@ -568,7 +568,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'logout.succeeded'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$logoutFailed extends AuditLogEventType {const AuditLogEventType$logoutFailed._();
 
 @override String get value => 'logout.failed';
@@ -577,7 +577,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'logout.failed'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$organizationUpdated extends AuditLogEventType {const AuditLogEventType$organizationUpdated._();
 
 @override String get value => 'organization.updated';
@@ -586,7 +586,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'organization.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$projectCreated extends AuditLogEventType {const AuditLogEventType$projectCreated._();
 
 @override String get value => 'project.created';
@@ -595,7 +595,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'project.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$projectUpdated extends AuditLogEventType {const AuditLogEventType$projectUpdated._();
 
 @override String get value => 'project.updated';
@@ -604,7 +604,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'project.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$projectArchived extends AuditLogEventType {const AuditLogEventType$projectArchived._();
 
 @override String get value => 'project.archived';
@@ -613,7 +613,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'project.archived'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$projectDeleted extends AuditLogEventType {const AuditLogEventType$projectDeleted._();
 
 @override String get value => 'project.deleted';
@@ -622,7 +622,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'project.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$rateLimitUpdated extends AuditLogEventType {const AuditLogEventType$rateLimitUpdated._();
 
 @override String get value => 'rate_limit.updated';
@@ -631,7 +631,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'rate_limit.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$rateLimitDeleted extends AuditLogEventType {const AuditLogEventType$rateLimitDeleted._();
 
 @override String get value => 'rate_limit.deleted';
@@ -640,7 +640,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'rate_limit.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$resourceDeleted extends AuditLogEventType {const AuditLogEventType$resourceDeleted._();
 
 @override String get value => 'resource.deleted';
@@ -649,7 +649,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'resource.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$tunnelCreated extends AuditLogEventType {const AuditLogEventType$tunnelCreated._();
 
 @override String get value => 'tunnel.created';
@@ -658,7 +658,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'tunnel.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$tunnelUpdated extends AuditLogEventType {const AuditLogEventType$tunnelUpdated._();
 
 @override String get value => 'tunnel.updated';
@@ -667,7 +667,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'tunnel.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$tunnelDeleted extends AuditLogEventType {const AuditLogEventType$tunnelDeleted._();
 
 @override String get value => 'tunnel.deleted';
@@ -676,7 +676,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'tunnel.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$roleCreated extends AuditLogEventType {const AuditLogEventType$roleCreated._();
 
 @override String get value => 'role.created';
@@ -685,7 +685,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'role.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$roleUpdated extends AuditLogEventType {const AuditLogEventType$roleUpdated._();
 
 @override String get value => 'role.updated';
@@ -694,7 +694,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'role.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$roleDeleted extends AuditLogEventType {const AuditLogEventType$roleDeleted._();
 
 @override String get value => 'role.deleted';
@@ -703,7 +703,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'role.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$roleAssignmentCreated extends AuditLogEventType {const AuditLogEventType$roleAssignmentCreated._();
 
 @override String get value => 'role.assignment.created';
@@ -712,7 +712,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'role.assignment.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$roleAssignmentDeleted extends AuditLogEventType {const AuditLogEventType$roleAssignmentDeleted._();
 
 @override String get value => 'role.assignment.deleted';
@@ -721,7 +721,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'role.assignment.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$scimEnabled extends AuditLogEventType {const AuditLogEventType$scimEnabled._();
 
 @override String get value => 'scim.enabled';
@@ -730,7 +730,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'scim.enabled'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$scimDisabled extends AuditLogEventType {const AuditLogEventType$scimDisabled._();
 
 @override String get value => 'scim.disabled';
@@ -739,7 +739,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'scim.disabled'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$serviceAccountCreated extends AuditLogEventType {const AuditLogEventType$serviceAccountCreated._();
 
 @override String get value => 'service_account.created';
@@ -748,7 +748,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'service_account.created'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$serviceAccountUpdated extends AuditLogEventType {const AuditLogEventType$serviceAccountUpdated._();
 
 @override String get value => 'service_account.updated';
@@ -757,7 +757,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'service_account.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$serviceAccountDeleted extends AuditLogEventType {const AuditLogEventType$serviceAccountDeleted._();
 
 @override String get value => 'service_account.deleted';
@@ -766,7 +766,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'service_account.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$userAdded extends AuditLogEventType {const AuditLogEventType$userAdded._();
 
 @override String get value => 'user.added';
@@ -775,7 +775,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'user.added'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$userUpdated extends AuditLogEventType {const AuditLogEventType$userUpdated._();
 
 @override String get value => 'user.updated';
@@ -784,7 +784,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'user.updated'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$userDeleted extends AuditLogEventType {const AuditLogEventType$userDeleted._();
 
 @override String get value => 'user.deleted';
@@ -793,7 +793,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => 'user.deleted'.hashCode;
 
- }
+}
 @immutable final class AuditLogEventType$Unknown extends AuditLogEventType {const AuditLogEventType$Unknown(this.value);
 
 @override final String value;
@@ -803,4 +803,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKeyCr
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response/aig_config_create_evaluations_response_result_datasets.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response/aig_config_create_evaluations_response_result_results.dart';@immutable final class AigConfigCreateEvaluationsResponseResult {const AigConfigCreateEvaluationsResponseResult({required this.createdAt, required this.datasets, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.processed, required this.results, required this.totalLogs, });
 
-factory AigConfigCreateEvaluationsResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigCreateEvaluationsResponseResult(
+factory AigConfigCreateEvaluationsResponseResult.fromJson(Map<String, dynamic> json) {return AigConfigCreateEvaluationsResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),
   datasets: (json['datasets'] as List<dynamic>).map((e) => AigConfigCreateEvaluationsResponseResultDatasets.fromJson(e as Map<String, dynamic>)).toList(),
   gatewayId: json['gateway_id'] as String,
@@ -13,7 +13,7 @@ factory AigConfigCreateEvaluationsResponseResult.fromJson(Map<String, dynamic> j
   processed: json['processed'] as bool,
   results: (json['results'] as List<dynamic>).map((e) => AigConfigCreateEvaluationsResponseResultResults.fromJson(e as Map<String, dynamic>)).toList(),
   totalLogs: (json['total_logs'] as num).toDouble(),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -36,7 +36,7 @@ final List<AigConfigCreateEvaluationsResponseResultResults> results;
 
 final double totalLogs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'datasets': datasets.map((e) => e.toJson()).toList(),
   'gateway_id': gatewayId,
@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'processed': processed,
   'results': results.map((e) => e.toJson()).toList(),
   'total_logs': totalLogs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('datasets') &&
       json.containsKey('gateway_id') && json['gateway_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -55,14 +55,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('processed') && json['processed'] is bool &&
       json.containsKey('results') &&
-      json.containsKey('total_logs') && json['total_logs'] is num; } 
+      json.containsKey('total_logs') && json['total_logs'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (gatewayId.isEmpty) { errors.add('gatewayId: length must be >= 1'); }
 if (gatewayId.runes.length > 64) { errors.add('gatewayId: length must be <= 64'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(gatewayId)) { errors.add(r'gatewayId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
-return errors; } 
-AigConfigCreateEvaluationsResponseResult copyWith({DateTime? createdAt, List<AigConfigCreateEvaluationsResponseResultDatasets>? datasets, String? gatewayId, String? id, DateTime? modifiedAt, String? name, bool? processed, List<AigConfigCreateEvaluationsResponseResultResults>? results, double? totalLogs, }) { return AigConfigCreateEvaluationsResponseResult(
+return errors;}
+AigConfigCreateEvaluationsResponseResult copyWith({DateTime? createdAt, List<AigConfigCreateEvaluationsResponseResultDatasets>? datasets, String? gatewayId, String? id, DateTime? modifiedAt, String? name, bool? processed, List<AigConfigCreateEvaluationsResponseResultResults>? results, double? totalLogs, }) {return AigConfigCreateEvaluationsResponseResult(
   createdAt: createdAt ?? this.createdAt,
   datasets: datasets ?? this.datasets,
   gatewayId: gatewayId ?? this.gatewayId,
@@ -72,7 +72,7 @@ AigConfigCreateEvaluationsResponseResult copyWith({DateTime? createdAt, List<Aig
   processed: processed ?? this.processed,
   results: results ?? this.results,
   totalLogs: totalLogs ?? this.totalLogs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateEvaluationsResponseResult &&
           createdAt == other.createdAt &&
@@ -89,4 +89,4 @@ AigConfigCreateEvaluationsResponseResult copyWith({DateTime? createdAt, List<Aig
 
 @override String toString() => 'AigConfigCreateEvaluationsResponseResult(\n  createdAt: $createdAt,\n  datasets: $datasets,\n  gatewayId: $gatewayId,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  name: $name,\n  processed: $processed,\n  results: $results,\n  totalLogs: $totalLogs,\n)';
 
- }
+}

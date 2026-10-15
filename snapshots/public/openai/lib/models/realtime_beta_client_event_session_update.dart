@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_session_create_request.dart';/// The event type, must be `session.update`.
 sealed class RealtimeBetaClientEventSessionUpdateType {const RealtimeBetaClientEventSessionUpdateType();
 
-factory RealtimeBetaClientEventSessionUpdateType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaClientEventSessionUpdateType.fromJson(String json) {return switch (json) {
   'session.update' => sessionUpdate,
   _ => RealtimeBetaClientEventSessionUpdateType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaClientEventSessionUpdateType sessionUpdate = RealtimeBetaClientEventSessionUpdateType$sessionUpdate._();
 
 static const List<RealtimeBetaClientEventSessionUpdateType> values = [sessionUpdate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'session.update' => 'sessionUpdate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaClientEventSessionUpdateType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaClientEventSessionUpdateType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() sessionUpdate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() sessionUpdate, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaClientEventSessionUpdateType$sessionUpdate() => sessionUpdate(),
       RealtimeBetaClientEventSessionUpdateType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? sessionUpdate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sessionUpdate, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaClientEventSessionUpdateType$sessionUpdate() => sessionUpdate != null ? sessionUpdate() : orElse(value),
       RealtimeBetaClientEventSessionUpdateType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaClientEventSessionUpdateType($value)';
 
- }
+}
 @immutable final class RealtimeBetaClientEventSessionUpdateType$sessionUpdate extends RealtimeBetaClientEventSessionUpdateType {const RealtimeBetaClientEventSessionUpdateType$sessionUpdate._();
 
 @override String get value => 'session.update';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sessionU
 
 @override int get hashCode => 'session.update'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaClientEventSessionUpdateType$Unknown extends RealtimeBetaClientEventSessionUpdateType {const RealtimeBetaClientEventSessionUpdateType$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sessionU
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Send this event to update the session’s default configuration.
 /// The client may send this event at any time to update any field,
 /// except for `voice`. However, note that once a session has been
@@ -67,11 +67,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sessionU
 /// 
 @immutable final class RealtimeBetaClientEventSessionUpdate {const RealtimeBetaClientEventSessionUpdate({required this.type, required this.session, this.eventId, });
 
-factory RealtimeBetaClientEventSessionUpdate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventSessionUpdate(
+factory RealtimeBetaClientEventSessionUpdate.fromJson(Map<String, dynamic> json) {return RealtimeBetaClientEventSessionUpdate(
   eventId: json['event_id'] as String?,
   type: RealtimeBetaClientEventSessionUpdateType.fromJson(json['type'] as String),
   session: RealtimeSessionCreateRequest.fromJson(json['session'] as Map<String, dynamic>),
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -81,18 +81,18 @@ final RealtimeBetaClientEventSessionUpdateType type;
 
 final RealtimeSessionCreateRequest session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type.toJson(),
   'session': session.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('session'); } 
-RealtimeBetaClientEventSessionUpdate copyWith({String? Function()? eventId, RealtimeBetaClientEventSessionUpdateType? type, RealtimeSessionCreateRequest? session, }) { return RealtimeBetaClientEventSessionUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('session');}
+RealtimeBetaClientEventSessionUpdate copyWith({String? Function()? eventId, RealtimeBetaClientEventSessionUpdateType? type, RealtimeSessionCreateRequest? session, }) {return RealtimeBetaClientEventSessionUpdate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   session: session ?? this.session,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventSessionUpdate &&
           eventId == other.eventId &&
@@ -103,4 +103,4 @@ RealtimeBetaClientEventSessionUpdate copyWith({String? Function()? eventId, Real
 
 @override String toString() => 'RealtimeBetaClientEventSessionUpdate(eventId: $eventId, type: $type, session: $session)';
 
- }
+}

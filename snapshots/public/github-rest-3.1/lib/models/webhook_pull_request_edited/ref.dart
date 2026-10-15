@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Ref {const Ref({required this.from});
 
-factory Ref.fromJson(Map<String, dynamic> json) { return Ref(
+factory Ref.fromJson(Map<String, dynamic> json) {return Ref(
   from: json['from'] as String,
-); }
+);}
 
 final String from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
-Ref copyWith({String? from}) { return Ref(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && json['from'] is String;}
+Ref copyWith({String? from}) {return Ref(
   from: from ?? this.from,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Ref &&
           from == other.from;
@@ -24,4 +24,4 @@ Ref copyWith({String? from}) { return Ref(
 
 @override String toString() => 'Ref(from: $from)';
 
- }
+}

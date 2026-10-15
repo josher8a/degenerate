@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByArcResponseResultSummary0 {const RadarGetEmailRoutingSummaryByArcResponseResultSummary0({required this.fail, required this.none, required this.pass, });
 
-factory RadarGetEmailRoutingSummaryByArcResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByArcResponseResultSummary0(
+factory RadarGetEmailRoutingSummaryByArcResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingSummaryByArcResponseResultSummary0(
   fail: json['FAIL'] as String,
   none: json['NONE'] as String,
   pass: json['PASS'] as String,
-); }
+);}
 
 /// A numeric string.
 /// 
@@ -24,25 +24,25 @@ final String none;
 /// Example: `'10'`
 final String pass;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'FAIL': fail,
   'NONE': none,
   'PASS': pass,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('FAIL') && json['FAIL'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('FAIL') && json['FAIL'] is String &&
       json.containsKey('NONE') && json['NONE'] is String &&
-      json.containsKey('PASS') && json['PASS'] is String; } 
+      json.containsKey('PASS') && json['PASS'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch(fail)) { errors.add(r'fail: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(none)) { errors.add(r'none: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(pass)) { errors.add(r'pass: must match pattern ^\d+$'); }
-return errors; } 
-RadarGetEmailRoutingSummaryByArcResponseResultSummary0 copyWith({String? fail, String? none, String? pass, }) { return RadarGetEmailRoutingSummaryByArcResponseResultSummary0(
+return errors;}
+RadarGetEmailRoutingSummaryByArcResponseResultSummary0 copyWith({String? fail, String? none, String? pass, }) {return RadarGetEmailRoutingSummaryByArcResponseResultSummary0(
   fail: fail ?? this.fail,
   none: none ?? this.none,
   pass: pass ?? this.pass,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingSummaryByArcResponseResultSummary0 &&
           fail == other.fail &&
@@ -53,4 +53,4 @@ RadarGetEmailRoutingSummaryByArcResponseResultSummary0 copyWith({String? fail, S
 
 @override String toString() => 'RadarGetEmailRoutingSummaryByArcResponseResultSummary0(fail: $fail, none: $none, pass: $pass)';
 
- }
+}

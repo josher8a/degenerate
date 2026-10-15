@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_subnet_comment.dart';import 'package:pub_cloudflare/models/tunnel_subnet_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_subnet_is_default_network.dart';import 'package:pub_cloudflare/models/tunnel_subnet_name.dart';@immutable final class ZeroTrustNetworksSubnetUpdateWarpRequest {const ZeroTrustNetworksSubnetUpdateWarpRequest({this.comment, this.isDefaultNetwork, this.name, this.network, });
 
-factory ZeroTrustNetworksSubnetUpdateWarpRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustNetworksSubnetUpdateWarpRequest(
+factory ZeroTrustNetworksSubnetUpdateWarpRequest.fromJson(Map<String, dynamic> json) {return ZeroTrustNetworksSubnetUpdateWarpRequest(
   comment: json['comment'] != null ? TunnelSubnetComment.fromJson(json['comment'] as String) : null,
   isDefaultNetwork: json['is_default_network'] != null ? TunnelSubnetIsDefaultNetwork.fromJson(json['is_default_network'] as bool) : null,
   name: json['name'] != null ? TunnelSubnetName.fromJson(json['name'] as String) : null,
   network: json['network'] != null ? TunnelSubnetIpNetwork.fromJson(json['network'] as String) : null,
-); }
+);}
 
 /// An optional description of the subnet.
 final TunnelSubnetComment? comment;
@@ -22,19 +22,19 @@ final TunnelSubnetName? name;
 /// The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
 final TunnelSubnetIpNetwork? network;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (isDefaultNetwork != null) 'is_default_network': isDefaultNetwork?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (network != null) 'network': network?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'is_default_network', 'name', 'network'}.contains(key)); } 
-ZeroTrustNetworksSubnetUpdateWarpRequest copyWith({TunnelSubnetComment? Function()? comment, TunnelSubnetIsDefaultNetwork? Function()? isDefaultNetwork, TunnelSubnetName? Function()? name, TunnelSubnetIpNetwork? Function()? network, }) { return ZeroTrustNetworksSubnetUpdateWarpRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'is_default_network', 'name', 'network'}.contains(key));}
+ZeroTrustNetworksSubnetUpdateWarpRequest copyWith({TunnelSubnetComment? Function()? comment, TunnelSubnetIsDefaultNetwork? Function()? isDefaultNetwork, TunnelSubnetName? Function()? name, TunnelSubnetIpNetwork? Function()? network, }) {return ZeroTrustNetworksSubnetUpdateWarpRequest(
   comment: comment != null ? comment() : this.comment,
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,
   name: name != null ? name() : this.name,
   network: network != null ? network() : this.network,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustNetworksSubnetUpdateWarpRequest &&
           comment == other.comment &&
@@ -46,4 +46,4 @@ ZeroTrustNetworksSubnetUpdateWarpRequest copyWith({TunnelSubnetComment? Function
 
 @override String toString() => 'ZeroTrustNetworksSubnetUpdateWarpRequest(comment: $comment, isDefaultNetwork: $isDefaultNetwork, name: $name, network: $network)';
 
- }
+}

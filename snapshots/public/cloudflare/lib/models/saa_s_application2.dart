@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_launcher_visible.dart';import 'package:pub_cloudflare/models/access_app_policy_response.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app.dart';import 'package:pub_cloudflare/models/access_saas_props/access_saas_props_saas_app.dart';import 'package:pub_cloudflare/models/access_saml_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_aud.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_scim_config.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_type.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// The policies that Access applies to the application.
 @immutable final class SaaSApplication2 {const SaaSApplication2({this.aud, this.createdAt, this.id, this.updatedAt, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.customPages, this.logoUrl, this.name, this.saasApp, this.scimConfig, this.tags, this.type, this.policies, });
 
-factory SaaSApplication2.fromJson(Map<String, dynamic> json) { return SaaSApplication2(
+factory SaaSApplication2.fromJson(Map<String, dynamic> json) {return SaaSApplication2(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -20,7 +20,7 @@ factory SaaSApplication2.fromJson(Map<String, dynamic> json) { return SaaSApplic
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: json['type'] != null ? AccessType.fromJson(json['type'] as String) : null,
   policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessAppPolicyResponse.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -54,7 +54,7 @@ final AccessType? type;
 
 final List<AccessAppPolicyResponse>? policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -70,9 +70,9 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
   if (type != null) 'type': type?.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aud', 'created_at', 'id', 'updated_at', 'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'custom_pages', 'logo_url', 'name', 'saas_app', 'scim_config', 'tags', 'type', 'policies'}.contains(key)); } 
-SaaSApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, List<String>? Function()? customPages, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSaasPropsSaasApp? Function()? saasApp, AccessScimConfig? Function()? scimConfig, List<String>? Function()? tags, AccessType? Function()? type, List<AccessAppPolicyResponse>? Function()? policies, }) { return SaaSApplication2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'aud', 'created_at', 'id', 'updated_at', 'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'custom_pages', 'logo_url', 'name', 'saas_app', 'scim_config', 'tags', 'type', 'policies'}.contains(key));}
+SaaSApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, List<String>? Function()? customPages, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSaasPropsSaasApp? Function()? saasApp, AccessScimConfig? Function()? scimConfig, List<String>? Function()? tags, AccessType? Function()? type, List<AccessAppPolicyResponse>? Function()? policies, }) {return SaaSApplication2(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -88,7 +88,7 @@ SaaSApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? F
   tags: tags != null ? tags() : this.tags,
   type: type != null ? type() : this.type,
   policies: policies != null ? policies() : this.policies,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SaaSApplication2 &&
           aud == other.aud &&
@@ -111,4 +111,4 @@ SaaSApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? F
 
 @override String toString() => 'SaaSApplication2(\n  aud: $aud,\n  createdAt: $createdAt,\n  id: $id,\n  updatedAt: $updatedAt,\n  allowedIdps: $allowedIdps,\n  appLauncherVisible: $appLauncherVisible,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customPages: $customPages,\n  logoUrl: $logoUrl,\n  name: $name,\n  saasApp: $saasApp,\n  scimConfig: $scimConfig,\n  tags: $tags,\n  type: $type,\n  policies: $policies,\n)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_messages2.dart';import 'package:pub_cloudflare/models/calls_turn_key_object.dart';@immutable final class CallsTurnKeyResponseSingle {const CallsTurnKeyResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
-factory CallsTurnKeyResponseSingle.fromJson(Map<String, dynamic> json) { return CallsTurnKeyResponseSingle(
+factory CallsTurnKeyResponseSingle.fromJson(Map<String, dynamic> json) {return CallsTurnKeyResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => CallsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CallsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? CallsTurnKeyObject.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<CallsMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final CallsTurnKeyObject? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-CallsTurnKeyResponseSingle copyWith({List<CallsMessages2>? errors, List<CallsMessages2>? messages, bool? success, CallsTurnKeyObject? Function()? result, }) { return CallsTurnKeyResponseSingle(
+      json.containsKey('success') && json['success'] is bool;}
+CallsTurnKeyResponseSingle copyWith({List<CallsMessages2>? errors, List<CallsMessages2>? messages, bool? success, CallsTurnKeyObject? Function()? result, }) {return CallsTurnKeyResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CallsTurnKeyResponseSingle &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ CallsTurnKeyResponseSingle copyWith({List<CallsMessages2>? errors, List<CallsMes
 
 @override String toString() => 'CallsTurnKeyResponseSingle(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

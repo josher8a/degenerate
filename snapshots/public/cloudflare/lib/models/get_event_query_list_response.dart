@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventQueryListResponse {const GetEventQueryListResponse({required this.accountId, required this.alertEnabled, required this.alertRollupEnabled, required this.createdAt, required this.id, required this.name, required this.queryJson, required this.ruleEnabled, required this.updatedAt, required this.userEmail, this.ruleScope, });
 
-factory GetEventQueryListResponse.fromJson(Map<String, dynamic> json) { return GetEventQueryListResponse(
+factory GetEventQueryListResponse.fromJson(Map<String, dynamic> json) {return GetEventQueryListResponse(
   accountId: (json['account_id'] as num).toInt(),
   alertEnabled: json['alert_enabled'] as bool,
   alertRollupEnabled: json['alert_rollup_enabled'] as bool,
@@ -15,7 +15,7 @@ factory GetEventQueryListResponse.fromJson(Map<String, dynamic> json) { return G
   ruleScope: json['rule_scope'] as String?,
   updatedAt: json['updated_at'] as String,
   userEmail: json['user_email'] as String,
-); }
+);}
 
 /// Account ID
 final int accountId;
@@ -50,7 +50,7 @@ final String updatedAt;
 /// Email of the user who created the query
 final String userEmail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId,
   'alert_enabled': alertEnabled,
   'alert_rollup_enabled': alertRollupEnabled,
@@ -62,8 +62,8 @@ Map<String, dynamic> toJson() { return {
   'rule_scope': ?ruleScope,
   'updated_at': updatedAt,
   'user_email': userEmail,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') && json['account_id'] is num &&
       json.containsKey('alert_enabled') && json['alert_enabled'] is bool &&
       json.containsKey('alert_rollup_enabled') && json['alert_rollup_enabled'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('query_json') && json['query_json'] is String &&
       json.containsKey('rule_enabled') && json['rule_enabled'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('user_email') && json['user_email'] is String; } 
-GetEventQueryListResponse copyWith({int? accountId, bool? alertEnabled, bool? alertRollupEnabled, String? createdAt, int? id, String? name, String? queryJson, bool? ruleEnabled, String? Function()? ruleScope, String? updatedAt, String? userEmail, }) { return GetEventQueryListResponse(
+      json.containsKey('user_email') && json['user_email'] is String;}
+GetEventQueryListResponse copyWith({int? accountId, bool? alertEnabled, bool? alertRollupEnabled, String? createdAt, int? id, String? name, String? queryJson, bool? ruleEnabled, String? Function()? ruleScope, String? updatedAt, String? userEmail, }) {return GetEventQueryListResponse(
   accountId: accountId ?? this.accountId,
   alertEnabled: alertEnabled ?? this.alertEnabled,
   alertRollupEnabled: alertRollupEnabled ?? this.alertRollupEnabled,
@@ -85,7 +85,7 @@ GetEventQueryListResponse copyWith({int? accountId, bool? alertEnabled, bool? al
   ruleScope: ruleScope != null ? ruleScope() : this.ruleScope,
   updatedAt: updatedAt ?? this.updatedAt,
   userEmail: userEmail ?? this.userEmail,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventQueryListResponse &&
           accountId == other.accountId &&
@@ -104,4 +104,4 @@ GetEventQueryListResponse copyWith({int? accountId, bool? alertEnabled, bool? al
 
 @override String toString() => 'GetEventQueryListResponse(\n  accountId: $accountId,\n  alertEnabled: $alertEnabled,\n  alertRollupEnabled: $alertRollupEnabled,\n  createdAt: $createdAt,\n  id: $id,\n  name: $name,\n  queryJson: $queryJson,\n  ruleEnabled: $ruleEnabled,\n  ruleScope: $ruleScope,\n  updatedAt: $updatedAt,\n  userEmail: $userEmail,\n)';
 
- }
+}

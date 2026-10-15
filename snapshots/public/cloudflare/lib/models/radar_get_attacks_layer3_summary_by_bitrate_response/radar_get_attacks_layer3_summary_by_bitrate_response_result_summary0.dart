@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0({required this.$1GbpsTo10Gbps, required this.$10GbpsTo100Gbps, required this.$500MbpsTo1Gbps, required this.over100Gbps, required this.under500Mbps, });
 
-factory RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(
+factory RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(
   $1GbpsTo10Gbps: json['_1_GBPS_TO_10_GBPS'] as String,
   $10GbpsTo100Gbps: json['_10_GBPS_TO_100_GBPS'] as String,
   $500MbpsTo1Gbps: json['_500_MBPS_TO_1_GBPS'] as String,
   over100Gbps: json['OVER_100_GBPS'] as String,
   under500Mbps: json['UNDER_500_MBPS'] as String,
-); }
+);}
 
 /// A numeric string.
 /// 
@@ -36,33 +36,33 @@ final String over100Gbps;
 /// Example: `'10'`
 final String under500Mbps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_1_GBPS_TO_10_GBPS': $1GbpsTo10Gbps,
   '_10_GBPS_TO_100_GBPS': $10GbpsTo100Gbps,
   '_500_MBPS_TO_1_GBPS': $500MbpsTo1Gbps,
   'OVER_100_GBPS': over100Gbps,
   'UNDER_500_MBPS': under500Mbps,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_1_GBPS_TO_10_GBPS') && json['_1_GBPS_TO_10_GBPS'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_1_GBPS_TO_10_GBPS') && json['_1_GBPS_TO_10_GBPS'] is String &&
       json.containsKey('_10_GBPS_TO_100_GBPS') && json['_10_GBPS_TO_100_GBPS'] is String &&
       json.containsKey('_500_MBPS_TO_1_GBPS') && json['_500_MBPS_TO_1_GBPS'] is String &&
       json.containsKey('OVER_100_GBPS') && json['OVER_100_GBPS'] is String &&
-      json.containsKey('UNDER_500_MBPS') && json['UNDER_500_MBPS'] is String; } 
+      json.containsKey('UNDER_500_MBPS') && json['UNDER_500_MBPS'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch($1GbpsTo10Gbps)) { errors.add(r'$1GbpsTo10Gbps: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch($10GbpsTo100Gbps)) { errors.add(r'$10GbpsTo100Gbps: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch($500MbpsTo1Gbps)) { errors.add(r'$500MbpsTo1Gbps: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(over100Gbps)) { errors.add(r'over100Gbps: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(under500Mbps)) { errors.add(r'under500Mbps: must match pattern ^\d+$'); }
-return errors; } 
-RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 copyWith({String? $1GbpsTo10Gbps, String? $10GbpsTo100Gbps, String? $500MbpsTo1Gbps, String? over100Gbps, String? under500Mbps, }) { return RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(
+return errors;}
+RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 copyWith({String? $1GbpsTo10Gbps, String? $10GbpsTo100Gbps, String? $500MbpsTo1Gbps, String? over100Gbps, String? under500Mbps, }) {return RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(
   $1GbpsTo10Gbps: $1GbpsTo10Gbps ?? this.$1GbpsTo10Gbps,
   $10GbpsTo100Gbps: $10GbpsTo100Gbps ?? this.$10GbpsTo100Gbps,
   $500MbpsTo1Gbps: $500MbpsTo1Gbps ?? this.$500MbpsTo1Gbps,
   over100Gbps: over100Gbps ?? this.over100Gbps,
   under500Mbps: under500Mbps ?? this.under500Mbps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 &&
           $1GbpsTo10Gbps == other.$1GbpsTo10Gbps &&
@@ -75,4 +75,4 @@ RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 copyWith({String? $1
 
 @override String toString() => 'RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(\$1GbpsTo10Gbps: ${$1GbpsTo10Gbps}, \$10GbpsTo100Gbps: ${$10GbpsTo100Gbps}, \$500MbpsTo1Gbps: ${$500MbpsTo1Gbps}, over100Gbps: $over100Gbps, under500Mbps: $under500Mbps)';
 
- }
+}

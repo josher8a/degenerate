@@ -14,7 +14,7 @@ final class LeakedCredentialChecksApi with ApiExecutor {const LeakedCredentialCh
 /// Retrieves the current status of Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks`
-Future<ApiResult<BundleStatus, LeakedCredentialsGetStatusError>> wafProductApiLeakedCredentialsGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleStatus, LeakedCredentialsGetStatusError>> wafProductApiLeakedCredentialsGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: LeakedCredentialsGetStatusError.fromResponse,
 );
- } 
+}
 /// Set Leaked Credential Checks Status
 ///
 /// Updates the current status of Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks`
-Future<ApiResult<BundleStatus, LeakedCredentialsSetStatusError>> wafProductApiLeakedCredentialsSetStatus({required BundleIdentifier zoneId, required BundleStatus body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleStatus, LeakedCredentialsSetStatusError>> wafProductApiLeakedCredentialsSetStatus({required BundleIdentifier zoneId, required BundleStatus body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: LeakedCredentialsSetStatusError.fromResponse,
 );
- } 
+}
 /// List Leaked Credential Checks Custom Detections
 ///
 /// List user-defined detection patterns for Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<List<BundleCustomDetection>, LeakedCredentialsListDetectionsError>> wafProductApiLeakedCredentialsListDetections({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomDetection>, LeakedCredentialsListDetectionsError>> wafProductApiLeakedCredentialsListDetections({required BundleIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: LeakedCredentialsListDetectionsError.fromResponse,
 );
- } 
+}
 /// Create Leaked Credential Checks Custom Detection
 ///
 /// Create user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<BundleCustomDetection, LeakedCredentialsCreateDetectionError>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsCreateDetectionError>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: LeakedCredentialsCreateDetectionError.fromResponse,
 );
- } 
+}
 /// Get Leaked Credential Checks Custom Detection
 ///
 /// Get user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<BundleCustomDetection, LeakedCredentialsGetDetectionError>> wafProductApiLeakedCredentialsGetDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsGetDetectionError>> wafProductApiLeakedCredentialsGetDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -127,13 +127,13 @@ return await execute(
   },
   onError: LeakedCredentialsGetDetectionError.fromResponse,
 );
- } 
+}
 /// Update Leaked Credential Checks Custom Detection
 ///
 /// Update user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `PUT /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<BundleCustomDetection, LeakedCredentialsUpdateDetectionError>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsUpdateDetectionError>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -152,13 +152,13 @@ return await execute(
   },
   onError: LeakedCredentialsUpdateDetectionError.fromResponse,
 );
- } 
+}
 /// Delete Leaked Credential Checks Custom Detection
 ///
 /// Remove user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `DELETE /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<ResponseCommon31Result, LeakedCredentialsDeleteDetectionError>> wafProductApiLeakedCredentialsDeleteDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon31Result, LeakedCredentialsDeleteDetectionError>> wafProductApiLeakedCredentialsDeleteDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -175,5 +175,5 @@ return await execute(
   },
   onError: LeakedCredentialsDeleteDetectionError.fromResponse,
 );
- } 
- }
+}
+}

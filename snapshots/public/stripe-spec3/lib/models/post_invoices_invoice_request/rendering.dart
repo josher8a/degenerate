@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_rendering_options_param/amount_tax_display.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/pdf.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/template_version.dart';/// The rendering-related settings that control how the invoice is displayed on customer-facing surfaces such as PDF and Hosted Invoice Page.
 @immutable final class Rendering {const Rendering({this.amountTaxDisplay, this.pdf, this.template, this.templateVersion, });
 
-factory Rendering.fromJson(Map<String, dynamic> json) { return Rendering(
+factory Rendering.fromJson(Map<String, dynamic> json) {return Rendering(
   amountTaxDisplay: json['amount_tax_display'] != null ? AmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
   pdf: json['pdf'] != null ? Pdf.fromJson(json['pdf'] as Map<String, dynamic>) : null,
   template: json['template'] as String?,
   templateVersion: json['template_version'] != null ? TemplateVersion.fromJson(json['template_version']) : null,
-); }
+);}
 
 final AmountTaxDisplay? amountTaxDisplay;
 
@@ -19,26 +19,26 @@ final String? template;
 
 final TemplateVersion? templateVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountTaxDisplay != null) 'amount_tax_display': amountTaxDisplay?.toJson(),
   if (pdf != null) 'pdf': pdf?.toJson(),
   'template': ?template,
   if (templateVersion != null) 'template_version': templateVersion?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final template$ = template;
 if (template$ != null) {
   if (template$.runes.length > 5000) { errors.add('template: length must be <= 5000'); }
 }
-return errors; } 
-Rendering copyWith({AmountTaxDisplay? Function()? amountTaxDisplay, Pdf? Function()? pdf, String? Function()? template, TemplateVersion? Function()? templateVersion, }) { return Rendering(
+return errors;}
+Rendering copyWith({AmountTaxDisplay? Function()? amountTaxDisplay, Pdf? Function()? pdf, String? Function()? template, TemplateVersion? Function()? templateVersion, }) {return Rendering(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   pdf: pdf != null ? pdf() : this.pdf,
   template: template != null ? template() : this.template,
   templateVersion: templateVersion != null ? templateVersion() : this.templateVersion,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Rendering &&
           amountTaxDisplay == other.amountTaxDisplay &&
@@ -50,4 +50,4 @@ Rendering copyWith({AmountTaxDisplay? Function()? amountTaxDisplay, Pdf? Functio
 
 @override String toString() => 'Rendering(amountTaxDisplay: $amountTaxDisplay, pdf: $pdf, template: $template, templateVersion: $templateVersion)';
 
- }
+}

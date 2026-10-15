@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turnstile_bot_fight_mode.dart';import 'package:pub_cloudflare/models/turnstile_clearance_level.dart';import 'package:pub_cloudflare/models/turnstile_ephemeral_id.dart';import 'package:pub_cloudflare/models/turnstile_name.dart';import 'package:pub_cloudflare/models/turnstile_offlabel.dart';import 'package:pub_cloudflare/models/turnstile_region.dart';import 'package:pub_cloudflare/models/turnstile_widget_mode.dart';@immutable final class AccountsTurnstileWidgetCreateRequest {const AccountsTurnstileWidgetCreateRequest({required this.domains, required this.mode, required this.name, this.botFightMode, this.clearanceLevel, this.ephemeralId, this.offlabel, this.region, });
 
-factory AccountsTurnstileWidgetCreateRequest.fromJson(Map<String, dynamic> json) { return AccountsTurnstileWidgetCreateRequest(
+factory AccountsTurnstileWidgetCreateRequest.fromJson(Map<String, dynamic> json) {return AccountsTurnstileWidgetCreateRequest(
   botFightMode: json['bot_fight_mode'] != null ? TurnstileBotFightMode.fromJson(json['bot_fight_mode'] as bool) : null,
   clearanceLevel: json['clearance_level'] != null ? TurnstileClearanceLevel.fromJson(json['clearance_level'] as String) : null,
   domains: (json['domains'] as List<dynamic>).map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory AccountsTurnstileWidgetCreateRequest.fromJson(Map<String, dynamic> json)
   name: TurnstileName.fromJson(json['name'] as String),
   offlabel: json['offlabel'] != null ? TurnstileOfflabel.fromJson(json['offlabel'] as bool) : null,
   region: json['region'] != null ? TurnstileRegion.fromJson(json['region'] as String) : null,
-); }
+);}
 
 /// If bot_fight_mode is set to `true`, Cloudflare issues computationally
 /// expensive challenges in response to malicious bots (ENT only).
@@ -47,7 +47,7 @@ final TurnstileOfflabel? offlabel;
 /// 
 final TurnstileRegion? region;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (botFightMode != null) 'bot_fight_mode': botFightMode?.toJson(),
   if (clearanceLevel != null) 'clearance_level': clearanceLevel?.toJson(),
   'domains': domains,
@@ -56,11 +56,11 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   if (offlabel != null) 'offlabel': offlabel?.toJson(),
   if (region != null) 'region': region?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domains') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domains') &&
       json.containsKey('mode') &&
-      json.containsKey('name'); } 
-AccountsTurnstileWidgetCreateRequest copyWith({TurnstileBotFightMode? Function()? botFightMode, TurnstileClearanceLevel? Function()? clearanceLevel, List<String>? domains, TurnstileEphemeralId? Function()? ephemeralId, TurnstileWidgetMode? mode, TurnstileName? name, TurnstileOfflabel? Function()? offlabel, TurnstileRegion? Function()? region, }) { return AccountsTurnstileWidgetCreateRequest(
+      json.containsKey('name');}
+AccountsTurnstileWidgetCreateRequest copyWith({TurnstileBotFightMode? Function()? botFightMode, TurnstileClearanceLevel? Function()? clearanceLevel, List<String>? domains, TurnstileEphemeralId? Function()? ephemeralId, TurnstileWidgetMode? mode, TurnstileName? name, TurnstileOfflabel? Function()? offlabel, TurnstileRegion? Function()? region, }) {return AccountsTurnstileWidgetCreateRequest(
   botFightMode: botFightMode != null ? botFightMode() : this.botFightMode,
   clearanceLevel: clearanceLevel != null ? clearanceLevel() : this.clearanceLevel,
   domains: domains ?? this.domains,
@@ -69,7 +69,7 @@ AccountsTurnstileWidgetCreateRequest copyWith({TurnstileBotFightMode? Function()
   name: name ?? this.name,
   offlabel: offlabel != null ? offlabel() : this.offlabel,
   region: region != null ? region() : this.region,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsTurnstileWidgetCreateRequest &&
           botFightMode == other.botFightMode &&
@@ -85,4 +85,4 @@ AccountsTurnstileWidgetCreateRequest copyWith({TurnstileBotFightMode? Function()
 
 @override String toString() => 'AccountsTurnstileWidgetCreateRequest(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, name: $name, offlabel: $offlabel, region: $region)';
 
- }
+}

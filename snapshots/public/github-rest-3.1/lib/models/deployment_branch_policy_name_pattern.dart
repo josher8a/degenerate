@@ -3,9 +3,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeploymentBranchPolicyNamePattern {const DeploymentBranchPolicyNamePattern({required this.name});
 
-factory DeploymentBranchPolicyNamePattern.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicyNamePattern(
+factory DeploymentBranchPolicyNamePattern.fromJson(Map<String, dynamic> json) {return DeploymentBranchPolicyNamePattern(
   name: json['name'] as String,
-); }
+);}
 
 /// The name pattern that branches must match in order to deploy to the environment.
 /// 
@@ -13,13 +13,13 @@ factory DeploymentBranchPolicyNamePattern.fromJson(Map<String, dynamic> json) { 
 /// For more information about pattern matching syntax, see the [Ruby File.fnmatch documentation](https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch).
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-DeploymentBranchPolicyNamePattern copyWith({String? name}) { return DeploymentBranchPolicyNamePattern(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+DeploymentBranchPolicyNamePattern copyWith({String? name}) {return DeploymentBranchPolicyNamePattern(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentBranchPolicyNamePattern &&
           name == other.name;
@@ -28,4 +28,4 @@ DeploymentBranchPolicyNamePattern copyWith({String? name}) { return DeploymentBr
 
 @override String toString() => 'DeploymentBranchPolicyNamePattern(name: $name)';
 
- }
+}

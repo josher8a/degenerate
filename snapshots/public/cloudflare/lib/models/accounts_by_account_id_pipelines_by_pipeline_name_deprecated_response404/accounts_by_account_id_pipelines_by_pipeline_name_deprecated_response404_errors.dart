@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors({required this.code, required this.message, });
 
-factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors(
+factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(Map<String, dynamic> json) {return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 /// Example: `7002`
 final double code;
@@ -14,16 +14,16 @@ final double code;
 /// Example: `'Not Found'`
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors copyWith({double? code, String? message, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors copyWith({double? code, String? message, }) {return AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors &&
           code == other.code &&
@@ -33,4 +33,4 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors copyWith({
 
 @override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors(code: $code, message: $message)';
 
- }
+}

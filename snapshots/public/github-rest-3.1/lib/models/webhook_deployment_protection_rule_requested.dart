@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_action.dart';@immutable final class WebhookDeploymentProtectionRuleRequested {const WebhookDeploymentProtectionRuleRequested({this.action, this.environment, this.event, this.sha, this.ref, this.deploymentCallbackUrl, this.deployment = const Omittable.absent(), this.pullRequests, this.repository, this.organization, this.installation, this.sender, });
 
-factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> json) { return WebhookDeploymentProtectionRuleRequested(
+factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> json) {return WebhookDeploymentProtectionRuleRequested(
   action: json['action'] != null ? WebhookCheckSuiteRequestedAction.fromJson(json['action'] as String) : null,
   environment: json['environment'] as String?,
   event: json['event'] as String?,
@@ -16,7 +16,7 @@ factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> j
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookCheckSuiteRequestedAction? action;
 
@@ -47,7 +47,7 @@ final SimpleInstallation? installation;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   'environment': ?environment,
   'event': ?event,
@@ -60,9 +60,9 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'environment', 'event', 'sha', 'ref', 'deployment_callback_url', 'deployment', 'pull_requests', 'repository', 'organization', 'installation', 'sender'}.contains(key)); } 
-WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAction? Function()? action, String? Function()? environment, String? Function()? event, String? Function()? sha, String? Function()? ref, Uri? Function()? deploymentCallbackUrl, Omittable<Deployment?>? deployment, List<PullRequest>? Function()? pullRequests, RepositoryWebhooks? Function()? repository, OrganizationSimpleWebhooks? Function()? organization, SimpleInstallation? Function()? installation, SimpleUser? Function()? sender, }) { return WebhookDeploymentProtectionRuleRequested(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'environment', 'event', 'sha', 'ref', 'deployment_callback_url', 'deployment', 'pull_requests', 'repository', 'organization', 'installation', 'sender'}.contains(key));}
+WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAction? Function()? action, String? Function()? environment, String? Function()? event, String? Function()? sha, String? Function()? ref, Uri? Function()? deploymentCallbackUrl, Omittable<Deployment?>? deployment, List<PullRequest>? Function()? pullRequests, RepositoryWebhooks? Function()? repository, OrganizationSimpleWebhooks? Function()? organization, SimpleInstallation? Function()? installation, SimpleUser? Function()? sender, }) {return WebhookDeploymentProtectionRuleRequested(
   action: action != null ? action() : this.action,
   environment: environment != null ? environment() : this.environment,
   event: event != null ? event() : this.event,
@@ -75,7 +75,7 @@ WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAct
   organization: organization != null ? organization() : this.organization,
   installation: installation != null ? installation() : this.installation,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentProtectionRuleRequested &&
           action == other.action &&
@@ -95,4 +95,4 @@ WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAct
 
 @override String toString() => 'WebhookDeploymentProtectionRuleRequested(\n  action: $action,\n  environment: $environment,\n  event: $event,\n  sha: $sha,\n  ref: $ref,\n  deploymentCallbackUrl: $deploymentCallbackUrl,\n  deployment: $deployment,\n  pullRequests: $pullRequests,\n  repository: $repository,\n  organization: $organization,\n  installation: $installation,\n  sender: $sender,\n)';
 
- }
+}

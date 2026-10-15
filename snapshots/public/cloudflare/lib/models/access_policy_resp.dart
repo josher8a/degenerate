@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_approval_group.dart';import 'package:pub_cloudflare/models/access_approval_required.dart';import 'package:pub_cloudflare/models/access_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_connection_rules.dart';import 'package:pub_cloudflare/models/access_decision.dart';import 'package:pub_cloudflare/models/access_isolation_required.dart';import 'package:pub_cloudflare/models/access_mfa_config.dart';import 'package:pub_cloudflare/models/access_policy_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_purpose_justification_prompt.dart';import 'package:pub_cloudflare/models/access_purpose_justification_required.dart';import 'package:pub_cloudflare/models/access_rule.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessPolicyResp {const AccessPolicyResp({this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, });
 
-factory AccessPolicyResp.fromJson(Map<String, dynamic> json) { return AccessPolicyResp(
+factory AccessPolicyResp.fromJson(Map<String, dynamic> json) {return AccessPolicyResp(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   decision: json['decision'] != null ? AccessDecision.fromJson(json['decision'] as String) : null,
   exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
@@ -20,7 +20,7 @@ factory AccessPolicyResp.fromJson(Map<String, dynamic> json) { return AccessPoli
   purposeJustificationPrompt: json['purpose_justification_prompt'] != null ? AccessPurposeJustificationPrompt.fromJson(json['purpose_justification_prompt'] as String) : null,
   purposeJustificationRequired: json['purpose_justification_required'] != null ? AccessPurposeJustificationRequired.fromJson(json['purpose_justification_required'] as bool) : null,
   sessionDuration: json['session_duration'] != null ? AccessComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -60,7 +60,7 @@ final AccessPurposeJustificationRequired? purposeJustificationRequired;
 /// The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 final AccessComponentsSchemasSessionDuration? sessionDuration;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (decision != null) 'decision': decision?.toJson(),
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
@@ -77,9 +77,9 @@ Map<String, dynamic> toJson() { return {
   if (purposeJustificationPrompt != null) 'purpose_justification_prompt': purposeJustificationPrompt?.toJson(),
   if (purposeJustificationRequired != null) 'purpose_justification_required': purposeJustificationRequired?.toJson(),
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'approval_groups', 'approval_required', 'connection_rules', 'isolation_required', 'mfa_config', 'purpose_justification_prompt', 'purpose_justification_required', 'session_duration'}.contains(key)); } 
-AccessPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, }) { return AccessPolicyResp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'approval_groups', 'approval_required', 'connection_rules', 'isolation_required', 'mfa_config', 'purpose_justification_prompt', 'purpose_justification_required', 'session_duration'}.contains(key));}
+AccessPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, }) {return AccessPolicyResp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   decision: decision != null ? decision() : this.decision,
   exclude: exclude != null ? exclude() : this.exclude,
@@ -96,7 +96,7 @@ AccessPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecisio
   purposeJustificationPrompt: purposeJustificationPrompt != null ? purposeJustificationPrompt() : this.purposeJustificationPrompt,
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyResp &&
           createdAt == other.createdAt &&
@@ -120,4 +120,4 @@ AccessPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecisio
 
 @override String toString() => 'AccessPolicyResp(\n  createdAt: $createdAt,\n  decision: $decision,\n  exclude: $exclude,\n  id: $id,\n  include: $include,\n  name: $name,\n  require: $require,\n  updatedAt: $updatedAt,\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  connectionRules: $connectionRules,\n  isolationRequired: $isolationRequired,\n  mfaConfig: $mfaConfig,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  sessionDuration: $sessionDuration,\n)';
 
- }
+}

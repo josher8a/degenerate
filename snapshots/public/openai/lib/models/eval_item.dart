@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class EvalItemType {const EvalItemType();
 
-factory EvalItemType.fromJson(String json) { return switch (json) {
+factory EvalItemType.fromJson(String json) {return switch (json) {
   'message' => message,
   _ => EvalItemType$Unknown(json),
-}; }
+};}
 
 static const EvalItemType message = EvalItemType$message._();
 
 static const List<EvalItemType> values = [message];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'message' => 'message',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EvalItemType$Unknown; } 
+bool get isUnknown {return this is EvalItemType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() message, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() message, required W Function(String value) $unknown, }) {return switch (this) {
       EvalItemType$message() => message(),
       EvalItemType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function(String value)? $unknown, }) {return switch (this) {
       EvalItemType$message() => message != null ? message() : orElse(value),
       EvalItemType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EvalItemType($value)';
 
- }
+}
 @immutable final class EvalItemType$message extends EvalItemType {const EvalItemType$message._();
 
 @override String get value => 'message';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => 'message'.hashCode;
 
- }
+}
 @immutable final class EvalItemType$Unknown extends EvalItemType {const EvalItemType$Unknown(this.value);
 
 @override final String value;
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A message input to the model with a role indicating instruction following
 /// hierarchy. Instructions given with the `developer` or `system` role take
 /// precedence over instructions given with the `user` role. Messages with the
@@ -63,11 +63,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 /// 
 @immutable final class EvalItem {const EvalItem({required this.role, required this.content, this.type, });
 
-factory EvalItem.fromJson(Map<String, dynamic> json) { return EvalItem(
+factory EvalItem.fromJson(Map<String, dynamic> json) {return EvalItem(
   role: EasyInputMessageRole.fromJson(json['role'] as String),
   content: OneOf2.parse(json['content'], fromA: (v) => OneOf5.parse(v, fromA: (v) => EvalItemContentText.fromJson(v as String), fromB: (v) => InputTextContent.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalItemContentOutputText.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalItemInputImage.fromJson(v as Map<String, dynamic>), fromE: (v) => InputAudio.fromJson(v as Map<String, dynamic>),), fromB: (v) => (v as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => EvalItemContentText.fromJson(v as String), fromB: (v) => InputTextContent.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalItemContentOutputText.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalItemInputImage.fromJson(v as Map<String, dynamic>), fromE: (v) => InputAudio.fromJson(v as Map<String, dynamic>),)).toList(),),
   type: json['type'] != null ? EvalItemType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The role of the message input. One of `user`, `assistant`, `system`, or
 /// `developer`.
@@ -80,18 +80,18 @@ final EvalItemContent content;
 /// 
 final EvalItemType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'role': role.toJson(),
   'content': content.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
-      json.containsKey('content'); } 
-EvalItem copyWith({EasyInputMessageRole? role, EvalItemContent? content, EvalItemType? Function()? type, }) { return EvalItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role') &&
+      json.containsKey('content');}
+EvalItem copyWith({EasyInputMessageRole? role, EvalItemContent? content, EvalItemType? Function()? type, }) {return EvalItem(
   role: role ?? this.role,
   content: content ?? this.content,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EvalItem &&
           role == other.role &&
@@ -102,4 +102,4 @@ EvalItem copyWith({EasyInputMessageRole? role, EvalItemContent? content, EvalIte
 
 @override String toString() => 'EvalItem(role: $role, content: $content, type: $type)';
 
- }
+}

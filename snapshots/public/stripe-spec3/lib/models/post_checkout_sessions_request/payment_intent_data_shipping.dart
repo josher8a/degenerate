@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/shipping_address.dart';@immutable final class PaymentIntentDataShipping {const PaymentIntentDataShipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });
 
-factory PaymentIntentDataShipping.fromJson(Map<String, dynamic> json) { return PaymentIntentDataShipping(
+factory PaymentIntentDataShipping.fromJson(Map<String, dynamic> json) {return PaymentIntentDataShipping(
   address: ShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   carrier: json['carrier'] as String?,
   name: json['name'] as String,
   phone: json['phone'] as String?,
   trackingNumber: json['tracking_number'] as String?,
-); }
+);}
 
 final ShippingAddress address;
 
@@ -21,17 +21,17 @@ final String? phone;
 
 final String? trackingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   'carrier': ?carrier,
   'name': name,
   'phone': ?phone,
   'tracking_number': ?trackingNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final carrier$ = carrier;
 if (carrier$ != null) {
   if (carrier$.runes.length > 5000) { errors.add('carrier: length must be <= 5000'); }
@@ -45,14 +45,14 @@ final trackingNumber$ = trackingNumber;
 if (trackingNumber$ != null) {
   if (trackingNumber$.runes.length > 5000) { errors.add('trackingNumber: length must be <= 5000'); }
 }
-return errors; } 
-PaymentIntentDataShipping copyWith({ShippingAddress? address, String? Function()? carrier, String? name, String? Function()? phone, String? Function()? trackingNumber, }) { return PaymentIntentDataShipping(
+return errors;}
+PaymentIntentDataShipping copyWith({ShippingAddress? address, String? Function()? carrier, String? name, String? Function()? phone, String? Function()? trackingNumber, }) {return PaymentIntentDataShipping(
   address: address ?? this.address,
   carrier: carrier != null ? carrier() : this.carrier,
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,
   trackingNumber: trackingNumber != null ? trackingNumber() : this.trackingNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentDataShipping &&
           address == other.address &&
@@ -65,4 +65,4 @@ PaymentIntentDataShipping copyWith({ShippingAddress? address, String? Function()
 
 @override String toString() => 'PaymentIntentDataShipping(address: $address, carrier: $carrier, name: $name, phone: $phone, trackingNumber: $trackingNumber)';
 
- }
+}

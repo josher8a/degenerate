@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method by which the fraud challenge was delivered to the cardholder.
 sealed class Channel {const Channel();
 
-factory Channel.fromJson(String json) { return switch (json) {
+factory Channel.fromJson(String json) {return switch (json) {
   'sms' => sms,
   _ => Channel$Unknown(json),
-}; }
+};}
 
 static const Channel sms = Channel$sms._();
 
 static const List<Channel> values = [sms];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'sms' => 'sms',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Channel$Unknown; } 
+bool get isUnknown {return this is Channel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() sms, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() sms, required W Function(String value) $unknown, }) {return switch (this) {
       Channel$sms() => sms(),
       Channel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? sms, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sms, W Function(String value)? $unknown, }) {return switch (this) {
       Channel$sms() => sms != null ? sms() : orElse(value),
       Channel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Channel($value)';
 
- }
+}
 @immutable final class Channel$sms extends Channel {const Channel$sms._();
 
 @override String get value => 'sms';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sms, W F
 
 @override int get hashCode => 'sms'.hashCode;
 
- }
+}
 @immutable final class Channel$Unknown extends Channel {const Channel$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sms, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the fraud challenge.
 sealed class IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus();
 
-factory IssuingAuthorizationFraudChallengeStatus.fromJson(String json) { return switch (json) {
+factory IssuingAuthorizationFraudChallengeStatus.fromJson(String json) {return switch (json) {
   'expired' => expired,
   'pending' => pending,
   'rejected' => rejected,
   'undeliverable' => undeliverable,
   'verified' => verified,
   _ => IssuingAuthorizationFraudChallengeStatus$Unknown(json),
-}; }
+};}
 
 static const IssuingAuthorizationFraudChallengeStatus expired = IssuingAuthorizationFraudChallengeStatus$expired._();
 
@@ -79,39 +79,39 @@ static const IssuingAuthorizationFraudChallengeStatus verified = IssuingAuthoriz
 static const List<IssuingAuthorizationFraudChallengeStatus> values = [expired, pending, rejected, undeliverable, verified];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'expired' => 'expired',
   'pending' => 'pending',
   'rejected' => 'rejected',
   'undeliverable' => 'undeliverable',
   'verified' => 'verified',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingAuthorizationFraudChallengeStatus$Unknown; } 
+bool get isUnknown {return this is IssuingAuthorizationFraudChallengeStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() expired, required W Function() pending, required W Function() rejected, required W Function() undeliverable, required W Function() verified, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() expired, required W Function() pending, required W Function() rejected, required W Function() undeliverable, required W Function() verified, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingAuthorizationFraudChallengeStatus$expired() => expired(),
       IssuingAuthorizationFraudChallengeStatus$pending() => pending(),
       IssuingAuthorizationFraudChallengeStatus$rejected() => rejected(),
       IssuingAuthorizationFraudChallengeStatus$undeliverable() => undeliverable(),
       IssuingAuthorizationFraudChallengeStatus$verified() => verified(),
       IssuingAuthorizationFraudChallengeStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? pending, W Function()? rejected, W Function()? undeliverable, W Function()? verified, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? pending, W Function()? rejected, W Function()? undeliverable, W Function()? verified, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingAuthorizationFraudChallengeStatus$expired() => expired != null ? expired() : orElse(value),
       IssuingAuthorizationFraudChallengeStatus$pending() => pending != null ? pending() : orElse(value),
       IssuingAuthorizationFraudChallengeStatus$rejected() => rejected != null ? rejected() : orElse(value),
       IssuingAuthorizationFraudChallengeStatus$undeliverable() => undeliverable != null ? undeliverable() : orElse(value),
       IssuingAuthorizationFraudChallengeStatus$verified() => verified != null ? verified() : orElse(value),
       IssuingAuthorizationFraudChallengeStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingAuthorizationFraudChallengeStatus($value)';
 
- }
+}
 @immutable final class IssuingAuthorizationFraudChallengeStatus$expired extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$expired._();
 
 @override String get value => 'expired';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationFraudChallengeStatus$pending extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$pending._();
 
 @override String get value => 'pending';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationFraudChallengeStatus$rejected extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$rejected._();
 
 @override String get value => 'rejected';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationFraudChallengeStatus$undeliverable extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$undeliverable._();
 
 @override String get value => 'undeliverable';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'undeliverable'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationFraudChallengeStatus$verified extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$verified._();
 
 @override String get value => 'verified';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'verified'.hashCode;
 
- }
+}
 @immutable final class IssuingAuthorizationFraudChallengeStatus$Unknown extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$Unknown(this.value);
 
 @override final String value;
@@ -166,15 +166,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// If the challenge is not deliverable, the reason why.
 sealed class UndeliverableReason {const UndeliverableReason();
 
-factory UndeliverableReason.fromJson(String json) { return switch (json) {
+factory UndeliverableReason.fromJson(String json) {return switch (json) {
   'no_phone_number' => noPhoneNumber,
   'unsupported_phone_number' => unsupportedPhoneNumber,
   _ => UndeliverableReason$Unknown(json),
-}; }
+};}
 
 static const UndeliverableReason noPhoneNumber = UndeliverableReason$noPhoneNumber._();
 
@@ -183,30 +183,30 @@ static const UndeliverableReason unsupportedPhoneNumber = UndeliverableReason$un
 static const List<UndeliverableReason> values = [noPhoneNumber, unsupportedPhoneNumber];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'no_phone_number' => 'noPhoneNumber',
   'unsupported_phone_number' => 'unsupportedPhoneNumber',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UndeliverableReason$Unknown; } 
+bool get isUnknown {return this is UndeliverableReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() noPhoneNumber, required W Function() unsupportedPhoneNumber, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() noPhoneNumber, required W Function() unsupportedPhoneNumber, required W Function(String value) $unknown, }) {return switch (this) {
       UndeliverableReason$noPhoneNumber() => noPhoneNumber(),
       UndeliverableReason$unsupportedPhoneNumber() => unsupportedPhoneNumber(),
       UndeliverableReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPhoneNumber, W Function()? unsupportedPhoneNumber, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPhoneNumber, W Function()? unsupportedPhoneNumber, W Function(String value)? $unknown, }) {return switch (this) {
       UndeliverableReason$noPhoneNumber() => noPhoneNumber != null ? noPhoneNumber() : orElse(value),
       UndeliverableReason$unsupportedPhoneNumber() => unsupportedPhoneNumber != null ? unsupportedPhoneNumber() : orElse(value),
       UndeliverableReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UndeliverableReason($value)';
 
- }
+}
 @immutable final class UndeliverableReason$noPhoneNumber extends UndeliverableReason {const UndeliverableReason$noPhoneNumber._();
 
 @override String get value => 'no_phone_number';
@@ -215,7 +215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPhoneN
 
 @override int get hashCode => 'no_phone_number'.hashCode;
 
- }
+}
 @immutable final class UndeliverableReason$unsupportedPhoneNumber extends UndeliverableReason {const UndeliverableReason$unsupportedPhoneNumber._();
 
 @override String get value => 'unsupported_phone_number';
@@ -224,7 +224,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPhoneN
 
 @override int get hashCode => 'unsupported_phone_number'.hashCode;
 
- }
+}
 @immutable final class UndeliverableReason$Unknown extends UndeliverableReason {const UndeliverableReason$Unknown(this.value);
 
 @override final String value;
@@ -234,15 +234,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPhoneN
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class IssuingAuthorizationFraudChallenge {const IssuingAuthorizationFraudChallenge({required this.channel, required this.status, this.undeliverableReason = const Omittable.absent(), });
 
-factory IssuingAuthorizationFraudChallenge.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFraudChallenge(
+factory IssuingAuthorizationFraudChallenge.fromJson(Map<String, dynamic> json) {return IssuingAuthorizationFraudChallenge(
   channel: Channel.fromJson(json['channel'] as String),
   status: IssuingAuthorizationFraudChallengeStatus.fromJson(json['status'] as String),
   undeliverableReason: json.containsKey('undeliverable_reason') ? Omittable(json['undeliverable_reason'] != null ? UndeliverableReason.fromJson(json['undeliverable_reason'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The method by which the fraud challenge was delivered to the cardholder.
 final Channel channel;
@@ -253,18 +253,18 @@ final IssuingAuthorizationFraudChallengeStatus status;
 /// If the challenge is not deliverable, the reason why.
 final Omittable<UndeliverableReason?> undeliverableReason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'channel': channel.toJson(),
   'status': status.toJson(),
   if (undeliverableReason.isPresent) 'undeliverable_reason': undeliverableReason.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('channel') &&
-      json.containsKey('status'); } 
-IssuingAuthorizationFraudChallenge copyWith({Channel? channel, IssuingAuthorizationFraudChallengeStatus? status, Omittable<UndeliverableReason?>? undeliverableReason, }) { return IssuingAuthorizationFraudChallenge(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('channel') &&
+      json.containsKey('status');}
+IssuingAuthorizationFraudChallenge copyWith({Channel? channel, IssuingAuthorizationFraudChallengeStatus? status, Omittable<UndeliverableReason?>? undeliverableReason, }) {return IssuingAuthorizationFraudChallenge(
   channel: channel ?? this.channel,
   status: status ?? this.status,
   undeliverableReason: undeliverableReason ?? this.undeliverableReason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationFraudChallenge &&
           channel == other.channel &&
@@ -275,4 +275,4 @@ IssuingAuthorizationFraudChallenge copyWith({Channel? channel, IssuingAuthorizat
 
 @override String toString() => 'IssuingAuthorizationFraudChallenge(channel: $channel, status: $status, undeliverableReason: $undeliverableReason)';
 
- }
+}

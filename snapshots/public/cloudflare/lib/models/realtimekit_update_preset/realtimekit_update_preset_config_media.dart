@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_config_media_screenshare.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_config_media_video.dart';/// Media configuration options. eg: Video quality
 @immutable final class RealtimekitUpdatePresetConfigMedia {const RealtimekitUpdatePresetConfigMedia({this.screenshare, this.video, });
 
-factory RealtimekitUpdatePresetConfigMedia.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfigMedia(
+factory RealtimekitUpdatePresetConfigMedia.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetConfigMedia(
   screenshare: json['screenshare'] != null ? RealtimekitUpdatePresetConfigMediaScreenshare.fromJson(json['screenshare'] as Map<String, dynamic>) : null,
   video: json['video'] != null ? RealtimekitUpdatePresetConfigMediaVideo.fromJson(json['video'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Configuration options for participant screen shares
 final RealtimekitUpdatePresetConfigMediaScreenshare? screenshare;
@@ -15,15 +15,15 @@ final RealtimekitUpdatePresetConfigMediaScreenshare? screenshare;
 /// Configuration options for participant videos
 final RealtimekitUpdatePresetConfigMediaVideo? video;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (screenshare != null) 'screenshare': screenshare?.toJson(),
   if (video != null) 'video': video?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'screenshare', 'video'}.contains(key)); } 
-RealtimekitUpdatePresetConfigMedia copyWith({RealtimekitUpdatePresetConfigMediaScreenshare? Function()? screenshare, RealtimekitUpdatePresetConfigMediaVideo? Function()? video, }) { return RealtimekitUpdatePresetConfigMedia(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'screenshare', 'video'}.contains(key));}
+RealtimekitUpdatePresetConfigMedia copyWith({RealtimekitUpdatePresetConfigMediaScreenshare? Function()? screenshare, RealtimekitUpdatePresetConfigMediaVideo? Function()? video, }) {return RealtimekitUpdatePresetConfigMedia(
   screenshare: screenshare != null ? screenshare() : this.screenshare,
   video: video != null ? video() : this.video,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetConfigMedia &&
           screenshare == other.screenshare &&
@@ -33,4 +33,4 @@ RealtimekitUpdatePresetConfigMedia copyWith({RealtimekitUpdatePresetConfigMediaS
 
 @override String toString() => 'RealtimekitUpdatePresetConfigMedia(screenshare: $screenshare, video: $video)';
 
- }
+}

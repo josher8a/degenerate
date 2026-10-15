@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_creator.dart';import 'package:pub_cloudflare/models/stream_max_duration_seconds.dart';import 'package:pub_cloudflare/models/stream_one_time_upload_expiry.dart';import 'package:pub_cloudflare/models/stream_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/stream_scheduled_deletion.dart';import 'package:pub_cloudflare/models/stream_thumbnail_timestamp_pct.dart';@immutable final class StreamVideoUpdate {const StreamVideoUpdate({this.allowedOrigins, this.creator, this.maxDurationSeconds, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, this.uploadExpiry, });
 
-factory StreamVideoUpdate.fromJson(Map<String, dynamic> json) { return StreamVideoUpdate(
+factory StreamVideoUpdate.fromJson(Map<String, dynamic> json) {return StreamVideoUpdate(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
@@ -12,7 +12,7 @@ factory StreamVideoUpdate.fromJson(Map<String, dynamic> json) { return StreamVid
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
   uploadExpiry: json['uploadExpiry'] != null ? StreamOneTimeUploadExpiry.fromJson(json['uploadExpiry'] as String) : null,
-); }
+);}
 
 /// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
@@ -38,7 +38,7 @@ final StreamThumbnailTimestampPct? thumbnailTimestampPct;
 /// The date and time when the video upload URL is no longer valid for direct user uploads.
 final StreamOneTimeUploadExpiry? uploadExpiry;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowedOrigins': ?allowedOrigins,
   if (creator != null) 'creator': creator?.toJson(),
   if (maxDurationSeconds != null) 'maxDurationSeconds': maxDurationSeconds?.toJson(),
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   if (scheduledDeletion != null) 'scheduledDeletion': scheduledDeletion?.toJson(),
   if (thumbnailTimestampPct != null) 'thumbnailTimestampPct': thumbnailTimestampPct?.toJson(),
   if (uploadExpiry != null) 'uploadExpiry': uploadExpiry?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowedOrigins', 'creator', 'maxDurationSeconds', 'meta', 'requireSignedURLs', 'scheduledDeletion', 'thumbnailTimestampPct', 'uploadExpiry'}.contains(key)); } 
-StreamVideoUpdate copyWith({List<String>? Function()? allowedOrigins, StreamCreator? Function()? creator, StreamMaxDurationSeconds? Function()? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamScheduledDeletion? Function()? scheduledDeletion, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamOneTimeUploadExpiry? Function()? uploadExpiry, }) { return StreamVideoUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowedOrigins', 'creator', 'maxDurationSeconds', 'meta', 'requireSignedURLs', 'scheduledDeletion', 'thumbnailTimestampPct', 'uploadExpiry'}.contains(key));}
+StreamVideoUpdate copyWith({List<String>? Function()? allowedOrigins, StreamCreator? Function()? creator, StreamMaxDurationSeconds? Function()? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamScheduledDeletion? Function()? scheduledDeletion, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamOneTimeUploadExpiry? Function()? uploadExpiry, }) {return StreamVideoUpdate(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,
   maxDurationSeconds: maxDurationSeconds != null ? maxDurationSeconds() : this.maxDurationSeconds,
@@ -58,7 +58,7 @@ StreamVideoUpdate copyWith({List<String>? Function()? allowedOrigins, StreamCrea
   scheduledDeletion: scheduledDeletion != null ? scheduledDeletion() : this.scheduledDeletion,
   thumbnailTimestampPct: thumbnailTimestampPct != null ? thumbnailTimestampPct() : this.thumbnailTimestampPct,
   uploadExpiry: uploadExpiry != null ? uploadExpiry() : this.uploadExpiry,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamVideoUpdate &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
@@ -74,4 +74,4 @@ StreamVideoUpdate copyWith({List<String>? Function()? allowedOrigins, StreamCrea
 
 @override String toString() => 'StreamVideoUpdate(allowedOrigins: $allowedOrigins, creator: $creator, maxDurationSeconds: $maxDurationSeconds, meta: $meta, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, thumbnailTimestampPct: $thumbnailTimestampPct, uploadExpiry: $uploadExpiry)';
 
- }
+}

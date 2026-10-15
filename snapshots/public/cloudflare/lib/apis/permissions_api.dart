@@ -14,7 +14,7 @@ final class PermissionsApi with ApiExecutor {const PermissionsApi(this.apiConfig
 /// List permissions
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions`
-Future<ApiResult<List<GetPermissionListResponse>, GetPermissionListError>> getPermissionList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetPermissionListResponse>, GetPermissionListError>> getPermissionList({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: GetPermissionListError.fromResponse,
 );
- } 
+}
 /// Create a permission for dataset
 ///
 /// Create a permission
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions`
-Future<ApiResult<PostPermissionCreateResponse, PostPermissionCreateError>> postPermissionCreate({required String accountId, required String datasetId, PostPermissionCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostPermissionCreateResponse, PostPermissionCreateError>> postPermissionCreate({required String accountId, required String datasetId, PostPermissionCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,13 +55,13 @@ return await execute(
   },
   onError: PostPermissionCreateError.fromResponse,
 );
- } 
+}
 /// Update a permission for dataset
 ///
 /// Update a permission
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}`
-Future<ApiResult<PutPermissionUpdateResponse, PutPermissionUpdateError>> putPermissionUpdate({required String accountId, required String datasetId, required String grantId, PutPermissionUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PutPermissionUpdateResponse, PutPermissionUpdateError>> putPermissionUpdate({required String accountId, required String datasetId, required String grantId, PutPermissionUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: PutPermissionUpdateError.fromResponse,
 );
- } 
+}
 /// Delete a permission for dataset
 ///
 /// Delete a permission
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}`
-Future<ApiResult<DeletePermissionDeleteResponse, DeletePermissionDeleteError>> deletePermissionDelete({required String accountId, required String datasetId, required String grantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletePermissionDeleteResponse, DeletePermissionDeleteError>> deletePermissionDelete({required String accountId, required String datasetId, required String grantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -101,5 +101,5 @@ return await execute(
   },
   onError: DeletePermissionDeleteError.fromResponse,
 );
- } 
- }
+}
+}

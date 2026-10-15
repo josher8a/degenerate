@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Customer information for this payment.
 @immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails({this.customer, this.email, this.name, this.phone, });
 
-factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails(
+factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails(
   customer: json['customer'] as String?,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
-); }
+);}
 
 final String? customer;
 
@@ -19,15 +19,15 @@ final String? name;
 
 final String? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer': ?customer,
   'email': ?email,
   'name': ?name,
   'phone': ?phone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'email', 'name', 'phone'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer', 'email', 'name', 'phone'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
   if (customer$.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
@@ -36,13 +36,13 @@ final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-return errors; } 
-PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails copyWith({String? Function()? customer, String? Function()? email, String? Function()? name, String? Function()? phone, }) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails(
+return errors;}
+PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails copyWith({String? Function()? customer, String? Function()? email, String? Function()? name, String? Function()? phone, }) {return PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails(
   customer: customer != null ? customer() : this.customer,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
   phone: phone != null ? phone() : this.phone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails &&
           customer == other.customer &&
@@ -54,4 +54,4 @@ PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails copy
 
 @override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails(customer: $customer, email: $email, name: $name, phone: $phone)';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The CISA defined Traffic Light Protocol (TLP).
 sealed class CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp();
 
-factory CloudforceOneRequestsTlp.fromJson(String json) { return switch (json) {
+factory CloudforceOneRequestsTlp.fromJson(String json) {return switch (json) {
   'clear' => clear,
   'amber' => amber,
   'amber-strict' => amberStrict,
   'green' => green,
   'red' => red,
   _ => CloudforceOneRequestsTlp$Unknown(json),
-}; }
+};}
 
 static const CloudforceOneRequestsTlp clear = CloudforceOneRequestsTlp$clear._();
 
@@ -26,39 +26,39 @@ static const CloudforceOneRequestsTlp red = CloudforceOneRequestsTlp$red._();
 static const List<CloudforceOneRequestsTlp> values = [clear, amber, amberStrict, green, red];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'clear' => 'clear',
   'amber' => 'amber',
   'amber-strict' => 'amberStrict',
   'green' => 'green',
   'red' => 'red',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CloudforceOneRequestsTlp$Unknown; } 
+bool get isUnknown {return this is CloudforceOneRequestsTlp$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() clear, required W Function() amber, required W Function() amberStrict, required W Function() green, required W Function() red, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() clear, required W Function() amber, required W Function() amberStrict, required W Function() green, required W Function() red, required W Function(String value) $unknown, }) {return switch (this) {
       CloudforceOneRequestsTlp$clear() => clear(),
       CloudforceOneRequestsTlp$amber() => amber(),
       CloudforceOneRequestsTlp$amberStrict() => amberStrict(),
       CloudforceOneRequestsTlp$green() => green(),
       CloudforceOneRequestsTlp$red() => red(),
       CloudforceOneRequestsTlp$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W Function()? amber, W Function()? amberStrict, W Function()? green, W Function()? red, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W Function()? amber, W Function()? amberStrict, W Function()? green, W Function()? red, W Function(String value)? $unknown, }) {return switch (this) {
       CloudforceOneRequestsTlp$clear() => clear != null ? clear() : orElse(value),
       CloudforceOneRequestsTlp$amber() => amber != null ? amber() : orElse(value),
       CloudforceOneRequestsTlp$amberStrict() => amberStrict != null ? amberStrict() : orElse(value),
       CloudforceOneRequestsTlp$green() => green != null ? green() : orElse(value),
       CloudforceOneRequestsTlp$red() => red != null ? red() : orElse(value),
       CloudforceOneRequestsTlp$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CloudforceOneRequestsTlp($value)';
 
- }
+}
 @immutable final class CloudforceOneRequestsTlp$clear extends CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp$clear._();
 
 @override String get value => 'clear';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W
 
 @override int get hashCode => 'clear'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsTlp$amber extends CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp$amber._();
 
 @override String get value => 'amber';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W
 
 @override int get hashCode => 'amber'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsTlp$amberStrict extends CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp$amberStrict._();
 
 @override String get value => 'amber-strict';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W
 
 @override int get hashCode => 'amber-strict'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsTlp$green extends CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp$green._();
 
 @override String get value => 'green';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W
 
 @override int get hashCode => 'green'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsTlp$red extends CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp$red._();
 
 @override String get value => 'red';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W
 
 @override int get hashCode => 'red'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsTlp$Unknown extends CloudforceOneRequestsTlp {const CloudforceOneRequestsTlp$Unknown(this.value);
 
 @override final String value;
@@ -113,4 +113,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

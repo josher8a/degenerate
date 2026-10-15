@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot kind.
 sealed class RadarGetBotsKind {const RadarGetBotsKind();
 
-factory RadarGetBotsKind.fromJson(String json) { return switch (json) {
+factory RadarGetBotsKind.fromJson(String json) {return switch (json) {
   'AGENT' => agent,
   'BOT' => bot,
   _ => RadarGetBotsKind$Unknown(json),
-}; }
+};}
 
 static const RadarGetBotsKind agent = RadarGetBotsKind$agent._();
 
@@ -17,30 +17,30 @@ static const RadarGetBotsKind bot = RadarGetBotsKind$bot._();
 static const List<RadarGetBotsKind> values = [agent, bot];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'AGENT' => 'agent',
   'BOT' => 'bot',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetBotsKind$Unknown; } 
+bool get isUnknown {return this is RadarGetBotsKind$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() agent, required W Function() bot, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() agent, required W Function() bot, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetBotsKind$agent() => agent(),
       RadarGetBotsKind$bot() => bot(),
       RadarGetBotsKind$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? agent, W Function()? bot, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? agent, W Function()? bot, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetBotsKind$agent() => agent != null ? agent() : orElse(value),
       RadarGetBotsKind$bot() => bot != null ? bot() : orElse(value),
       RadarGetBotsKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetBotsKind($value)';
 
- }
+}
 @immutable final class RadarGetBotsKind$agent extends RadarGetBotsKind {const RadarGetBotsKind$agent._();
 
 @override String get value => 'AGENT';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? agent, W
 
 @override int get hashCode => 'AGENT'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsKind$bot extends RadarGetBotsKind {const RadarGetBotsKind$bot._();
 
 @override String get value => 'BOT';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? agent, W
 
 @override int get hashCode => 'BOT'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsKind$Unknown extends RadarGetBotsKind {const RadarGetBotsKind$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? agent, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

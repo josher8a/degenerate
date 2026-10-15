@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_summary_by_spoof_response/radar_get_email_security_summary_by_spoof_response_result.dart';@immutable final class RadarGetEmailSecuritySummaryBySpoofResponse {const RadarGetEmailSecuritySummaryBySpoofResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecuritySummaryBySpoofResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpoofResponse(
+factory RadarGetEmailSecuritySummaryBySpoofResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecuritySummaryBySpoofResponse(
   result: RadarGetEmailSecuritySummaryBySpoofResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailSecuritySummaryBySpoofResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecuritySummaryBySpoofResponse copyWith({RadarGetEmailSecuritySummaryBySpoofResponseResult? result, bool? success, }) { return RadarGetEmailSecuritySummaryBySpoofResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecuritySummaryBySpoofResponse copyWith({RadarGetEmailSecuritySummaryBySpoofResponseResult? result, bool? success, }) {return RadarGetEmailSecuritySummaryBySpoofResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecuritySummaryBySpoofResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailSecuritySummaryBySpoofResponse copyWith({RadarGetEmailSecuritySumma
 
 @override String toString() => 'RadarGetEmailSecuritySummaryBySpoofResponse(result: $result, success: $success)';
 
- }
+}

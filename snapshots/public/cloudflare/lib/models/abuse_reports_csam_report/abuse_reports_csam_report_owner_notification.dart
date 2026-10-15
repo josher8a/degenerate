@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Notification typ
 /// 
 sealed class AbuseReportsCsamReportOwnerNotification {const AbuseReportsCsamReportOwnerNotification();
 
-factory AbuseReportsCsamReportOwnerNotification.fromJson(String json) { return switch (json) {
+factory AbuseReportsCsamReportOwnerNotification.fromJson(String json) {return switch (json) {
   'send' => send,
   'send-anon' => sendAnon,
   'none' => none,
   _ => AbuseReportsCsamReportOwnerNotification$Unknown(json),
-}; }
+};}
 
 static const AbuseReportsCsamReportOwnerNotification send = AbuseReportsCsamReportOwnerNotification$send._();
 
@@ -21,33 +21,33 @@ static const AbuseReportsCsamReportOwnerNotification none = AbuseReportsCsamRepo
 static const List<AbuseReportsCsamReportOwnerNotification> values = [send, sendAnon, none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'send' => 'send',
   'send-anon' => 'sendAnon',
   'none' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AbuseReportsCsamReportOwnerNotification$Unknown; } 
+bool get isUnknown {return this is AbuseReportsCsamReportOwnerNotification$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() send, required W Function() sendAnon, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() send, required W Function() sendAnon, required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       AbuseReportsCsamReportOwnerNotification$send() => send(),
       AbuseReportsCsamReportOwnerNotification$sendAnon() => sendAnon(),
       AbuseReportsCsamReportOwnerNotification$none() => none(),
       AbuseReportsCsamReportOwnerNotification$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W Function()? sendAnon, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W Function()? sendAnon, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       AbuseReportsCsamReportOwnerNotification$send() => send != null ? send() : orElse(value),
       AbuseReportsCsamReportOwnerNotification$sendAnon() => sendAnon != null ? sendAnon() : orElse(value),
       AbuseReportsCsamReportOwnerNotification$none() => none != null ? none() : orElse(value),
       AbuseReportsCsamReportOwnerNotification$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AbuseReportsCsamReportOwnerNotification($value)';
 
- }
+}
 @immutable final class AbuseReportsCsamReportOwnerNotification$send extends AbuseReportsCsamReportOwnerNotification {const AbuseReportsCsamReportOwnerNotification$send._();
 
 @override String get value => 'send';
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => 'send'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsCsamReportOwnerNotification$sendAnon extends AbuseReportsCsamReportOwnerNotification {const AbuseReportsCsamReportOwnerNotification$sendAnon._();
 
 @override String get value => 'send-anon';
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => 'send-anon'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsCsamReportOwnerNotification$none extends AbuseReportsCsamReportOwnerNotification {const AbuseReportsCsamReportOwnerNotification$none._();
 
 @override String get value => 'none';
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class AbuseReportsCsamReportOwnerNotification$Unknown extends AbuseReportsCsamReportOwnerNotification {const AbuseReportsCsamReportOwnerNotification$Unknown(this.value);
 
 @override final String value;
@@ -84,4 +84,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? send, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

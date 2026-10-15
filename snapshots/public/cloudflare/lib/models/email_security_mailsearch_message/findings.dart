@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';@immutable final class Findings {const Findings({this.attachment = const Omittable.absent(), this.detail = const Omittable.absent(), this.detection = const Omittable.absent(), this.field = const Omittable.absent(), this.name = const Omittable.absent(), this.portion = const Omittable.absent(), this.reason = const Omittable.absent(), this.score = const Omittable.absent(), this.value = const Omittable.absent(), });
 
-factory Findings.fromJson(Map<String, dynamic> json) { return Findings(
+factory Findings.fromJson(Map<String, dynamic> json) {return Findings(
   attachment: json.containsKey('attachment') ? Omittable(json['attachment'] as String?) : const Omittable.absent(),
   detail: json.containsKey('detail') ? Omittable(json['detail'] as String?) : const Omittable.absent(),
   detection: json.containsKey('detection') ? Omittable(json['detection'] != null ? EmailSecurityDispositionLabel.fromJson(json['detection'] as String) : null) : const Omittable.absent(),
@@ -13,7 +13,7 @@ factory Findings.fromJson(Map<String, dynamic> json) { return Findings(
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
   score: json.containsKey('score') ? Omittable(json['score'] != null ? (json['score'] as num).toDouble() : null) : const Omittable.absent(),
   value: json.containsKey('value') ? Omittable(json['value'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<String?> attachment;
 
@@ -33,7 +33,7 @@ final Omittable<double?> score;
 
 final Omittable<String?> value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (attachment.isPresent) 'attachment': attachment.value,
   if (detail.isPresent) 'detail': detail.value,
   if (detection.isPresent) 'detection': detection.value?.toJson(),
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   if (reason.isPresent) 'reason': reason.value,
   if (score.isPresent) 'score': score.value,
   if (value.isPresent) 'value': value.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attachment', 'detail', 'detection', 'field', 'name', 'portion', 'reason', 'score', 'value'}.contains(key)); } 
-Findings copyWith({Omittable<String?>? attachment, Omittable<String?>? detail, Omittable<EmailSecurityDispositionLabel?>? detection, Omittable<String?>? field, Omittable<String?>? name, Omittable<String?>? portion, Omittable<String?>? reason, Omittable<double?>? score, Omittable<String?>? value, }) { return Findings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'attachment', 'detail', 'detection', 'field', 'name', 'portion', 'reason', 'score', 'value'}.contains(key));}
+Findings copyWith({Omittable<String?>? attachment, Omittable<String?>? detail, Omittable<EmailSecurityDispositionLabel?>? detection, Omittable<String?>? field, Omittable<String?>? name, Omittable<String?>? portion, Omittable<String?>? reason, Omittable<double?>? score, Omittable<String?>? value, }) {return Findings(
   attachment: attachment ?? this.attachment,
   detail: detail ?? this.detail,
   detection: detection ?? this.detection,
@@ -55,7 +55,7 @@ Findings copyWith({Omittable<String?>? attachment, Omittable<String?>? detail, O
   reason: reason ?? this.reason,
   score: score ?? this.score,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Findings &&
           attachment == other.attachment &&
@@ -72,4 +72,4 @@ Findings copyWith({Omittable<String?>? attachment, Omittable<String?>? detail, O
 
 @override String toString() => 'Findings(\n  attachment: $attachment,\n  detail: $detail,\n  detection: $detection,\n  field: $field,\n  name: $name,\n  portion: $portion,\n  reason: $reason,\n  score: $score,\n  value: $value,\n)';
 
- }
+}

@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Server Name Indication (SNI) override.
 @immutable final class RulesetsRouteSni {const RulesetsRouteSni({required this.value});
 
-factory RulesetsRouteSni.fromJson(Map<String, dynamic> json) { return RulesetsRouteSni(
+factory RulesetsRouteSni.fromJson(Map<String, dynamic> json) {return RulesetsRouteSni(
   value: json['value'] as String,
-); }
+);}
 
 /// A value to override the SNI to.
 /// 
 /// Example: `'static.example.com'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value') && json['value'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (value.isEmpty) { errors.add('value: length must be >= 1'); }
-return errors; } 
-RulesetsRouteSni copyWith({String? value}) { return RulesetsRouteSni(
+return errors;}
+RulesetsRouteSni copyWith({String? value}) {return RulesetsRouteSni(
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRouteSni &&
           value == other.value;
@@ -32,4 +32,4 @@ RulesetsRouteSni copyWith({String? value}) { return RulesetsRouteSni(
 
 @override String toString() => 'RulesetsRouteSni(value: $value)';
 
- }
+}

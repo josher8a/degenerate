@@ -14,7 +14,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 /// `<p>`Retrieves the details of an account.`</p>`
 ///
 /// `GET /v1/account`
-Future<ApiResult<Account, DeleteAccountsAccountError>> getAccount({List<String>? expand, GetAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Account, DeleteAccountsAccountError>> getAccount({List<String>? expand, GetAccountRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -43,13 +43,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an account link
 ///
 /// `<p>`Creates an AccountLink object that includes a single-use Stripe URL that the platform can redirect their user to in order to take them through the Connect Onboarding flow.`</p>`
 ///
 /// `POST /v1/account_links`
-Future<ApiResult<AccountLink, DeleteAccountsAccountError>> postAccountLinks({required PostAccountLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountLink, DeleteAccountsAccountError>> postAccountLinks({required PostAccountLinksRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -80,13 +80,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an Account Session
 ///
 /// `<p>`Creates a AccountSession object that includes a single-use token that the platform can use on their front-end to grant client-side API access.`</p>`
 ///
 /// `POST /v1/account_sessions`
-Future<ApiResult<AccountSession, DeleteAccountsAccountError>> postAccountSessions({required PostAccountSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSession, DeleteAccountsAccountError>> postAccountSessions({required PostAccountSessionsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -109,13 +109,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all connected accounts
 ///
 /// `<p>`Returns a list of accounts connected to your platform via `<a href="/docs/connect">`Connect`</a>`. If you’re not a platform, the list is empty.`</p>`
 ///
 /// `GET /v1/accounts`
-Future<ApiResult<GetAccountsResponse, DeleteAccountsAccountError>> getAccounts({GetAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsResponse, DeleteAccountsAccountError>> getAccounts({GetAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAccountsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -156,7 +156,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`With `<a href="/docs/connect">`Connect`</a>`, you can create Stripe accounts for your users.
 /// To do this, you’ll first need to `<a href="https://dashboard.stripe.com/account/applications/settings">`register your platform`</a>`.`</p>`
 /// 
@@ -165,7 +165,7 @@ return await execute(
 /// You can prefill any information on the account.`</p>`
 ///
 /// `POST /v1/accounts`
-Future<ApiResult<Account, DeleteAccountsAccountError>> postAccounts({PostAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, DeleteAccountsAccountError>> postAccounts({PostAccountsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -222,13 +222,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve account
 ///
 /// `<p>`Retrieves the details of an account.`</p>`
 ///
 /// `GET /v1/accounts/{account}`
-Future<ApiResult<Account, DeleteAccountsAccountError>> getAccountsAccount({required String account, List<String>? expand, GetAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Account, DeleteAccountsAccountError>> getAccountsAccount({required String account, List<String>? expand, GetAccountsAccountRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -257,7 +257,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an account
 ///
 /// `<p>`Updates a `<a href="/connect/accounts">`connected account`</a>` by setting the values of the parameters passed. Any parameters not provided are
@@ -275,7 +275,7 @@ return await execute(
 /// `<a href="/docs/connect/updating-accounts">`Connect`</a>` documentation to learn more about updating accounts.`</p>`
 ///
 /// `POST /v1/accounts/{account}`
-Future<ApiResult<Account, DeleteAccountsAccountError>> postAccountsAccount({required String account, PostAccountsAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, DeleteAccountsAccountError>> postAccountsAccount({required String account, PostAccountsAccountRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -324,7 +324,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete an account
 ///
 /// `<p>`With `<a href="/connect">`Connect`</a>`, you can delete accounts you manage.`</p>`
@@ -336,7 +336,7 @@ return await execute(
 /// `<p>`If you want to delete your own account, use the `<a href="https://dashboard.stripe.com/settings/account">`account information tab in your account settings`</a>` instead.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}`
-Future<ApiResult<DeletedAccount, DeleteAccountsAccountError>> deleteAccountsAccount({required String account, DeleteAccountsAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedAccount, DeleteAccountsAccountError>> deleteAccountsAccount({required String account, DeleteAccountsAccountRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -355,13 +355,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an external account
 ///
 /// `<p>`Create an external account for a given account.`</p>`
 ///
 /// `POST /v1/accounts/{account}/bank_accounts`
-Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountBankAccounts({required String account, PostAccountsAccountBankAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountBankAccounts({required String account, PostAccountsAccountBankAccountsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -390,13 +390,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an external account
 ///
 /// `<p>`Retrieve a specified external account for a given account.`</p>`
 ///
 /// `GET /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> getAccountsAccountBankAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> getAccountsAccountBankAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -425,7 +425,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
 /// details are not editable by design.`</p>`
@@ -436,7 +436,7 @@ return await execute(
 /// arguments or changes.`</p>`
 ///
 /// `POST /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountBankAccountsId({required String account, required String id, PostAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountBankAccountsId({required String account, required String id, PostAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -487,13 +487,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete an external account
 ///
 /// `<p>`Delete a specified external account for a given account.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<DeletedExternalAccount, DeleteAccountsAccountError>> deleteAccountsAccountBankAccountsId({required String account, required String id, DeleteAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedExternalAccount, DeleteAccountsAccountError>> deleteAccountsAccountBankAccountsId({required String account, required String id, DeleteAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -512,13 +512,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all account capabilities
 ///
 /// `<p>`Returns a list of capabilities associated with the account. The capabilities are returned sorted by creation date, with the most recent capability appearing first.`</p>`
 ///
 /// `GET /v1/accounts/{account}/capabilities`
-Future<ApiResult<GetAccountsAccountCapabilitiesResponse, DeleteAccountsAccountError>> getAccountsAccountCapabilities({required String account, List<String>? expand, GetAccountsAccountCapabilitiesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsAccountCapabilitiesResponse, DeleteAccountsAccountError>> getAccountsAccountCapabilities({required String account, List<String>? expand, GetAccountsAccountCapabilitiesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -547,13 +547,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an Account Capability
 ///
 /// `<p>`Retrieves information about the specified Account Capability.`</p>`
 ///
 /// `GET /v1/accounts/{account}/capabilities/{capability}`
-Future<ApiResult<Capability, DeleteAccountsAccountError>> getAccountsAccountCapabilitiesCapability({required String account, required String capability, List<String>? expand, GetAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Capability, DeleteAccountsAccountError>> getAccountsAccountCapabilitiesCapability({required String account, required String capability, List<String>? expand, GetAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -582,13 +582,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an Account Capability
 ///
 /// `<p>`Updates an existing Account Capability. Request or remove a capability by updating its `<code>`requested`</code>` parameter.`</p>`
 ///
 /// `POST /v1/accounts/{account}/capabilities/{capability}`
-Future<ApiResult<Capability, DeleteAccountsAccountError>> postAccountsAccountCapabilitiesCapability({required String account, required String capability, PostAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Capability, DeleteAccountsAccountError>> postAccountsAccountCapabilitiesCapability({required String account, required String capability, PostAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -611,13 +611,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all external accounts
 ///
 /// `<p>`List external accounts for an account.`</p>`
 ///
 /// `GET /v1/accounts/{account}/external_accounts`
-Future<ApiResult<GetAccountsAccountExternalAccountsResponse, DeleteAccountsAccountError>> getAccountsAccountExternalAccounts({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountExternalAccountsObject? object, String? startingAfter, GetAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsAccountExternalAccountsResponse, DeleteAccountsAccountError>> getAccountsAccountExternalAccounts({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountExternalAccountsObject? object, String? startingAfter, GetAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -658,13 +658,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an external account
 ///
 /// `<p>`Create an external account for a given account.`</p>`
 ///
 /// `POST /v1/accounts/{account}/external_accounts`
-Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountExternalAccounts({required String account, PostAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountExternalAccounts({required String account, PostAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -693,13 +693,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an external account
 ///
 /// `<p>`Retrieve a specified external account for a given account.`</p>`
 ///
 /// `GET /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> getAccountsAccountExternalAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> getAccountsAccountExternalAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -728,7 +728,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
 /// details are not editable by design.`</p>`
@@ -739,7 +739,7 @@ return await execute(
 /// arguments or changes.`</p>`
 ///
 /// `POST /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountExternalAccountsId({required String account, required String id, PostAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountExternalAccountsId({required String account, required String id, PostAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -790,13 +790,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete an external account
 ///
 /// `<p>`Delete a specified external account for a given account.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<DeletedExternalAccount, DeleteAccountsAccountError>> deleteAccountsAccountExternalAccountsId({required String account, required String id, DeleteAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedExternalAccount, DeleteAccountsAccountError>> deleteAccountsAccountExternalAccountsId({required String account, required String id, DeleteAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -815,7 +815,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a login link
 ///
 /// `<p>`Creates a login link for a connected account to access the Express Dashboard.`</p>`
@@ -823,7 +823,7 @@ return await execute(
 /// `<p>``<strong>`You can only create login links for accounts that use the `<a href="/connect/express-dashboard">`Express Dashboard`</a>` and are connected to your platform`</strong>`.`</p>`
 ///
 /// `POST /v1/accounts/{account}/login_links`
-Future<ApiResult<LoginLink, DeleteAccountsAccountError>> postAccountsAccountLoginLinks({required String account, PostAccountsAccountLoginLinksRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoginLink, DeleteAccountsAccountError>> postAccountsAccountLoginLinks({required String account, PostAccountsAccountLoginLinksRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -844,13 +844,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all persons
 ///
 /// `<p>`Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.`</p>`
 ///
 /// `GET /v1/accounts/{account}/people`
-Future<ApiResult<GetAccountsAccountPeopleResponse, DeleteAccountsAccountError>> getAccountsAccountPeople({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPeopleRelationship? relationship, String? startingAfter, GetAccountsAccountPeopleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsAccountPeopleResponse, DeleteAccountsAccountError>> getAccountsAccountPeople({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPeopleRelationship? relationship, String? startingAfter, GetAccountsAccountPeopleRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -896,13 +896,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a person
 ///
 /// `<p>`Creates a new person.`</p>`
 ///
 /// `POST /v1/accounts/{account}/people`
-Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPeople({required String account, PostAccountsAccountPeopleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPeople({required String account, PostAccountsAccountPeopleRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -979,13 +979,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a person
 ///
 /// `<p>`Retrieves an existing person.`</p>`
 ///
 /// `GET /v1/accounts/{account}/people/{person}`
-Future<ApiResult<Person, DeleteAccountsAccountError>> getAccountsAccountPeoplePerson({required String account, required String person, List<String>? expand, GetAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Person, DeleteAccountsAccountError>> getAccountsAccountPeoplePerson({required String account, required String person, List<String>? expand, GetAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -1014,13 +1014,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a person
 ///
 /// `<p>`Updates an existing person.`</p>`
 ///
 /// `POST /v1/accounts/{account}/people/{person}`
-Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPeoplePerson({required String account, required String person, PostAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPeoplePerson({required String account, required String person, PostAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1097,13 +1097,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a person
 ///
 /// `<p>`Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the `<code>`account_opener`</code>`. If your integration is using the `<code>`executive`</code>` parameter, you cannot delete the only verified `<code>`executive`</code>` on file.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}/people/{person}`
-Future<ApiResult<DeletedPerson, DeleteAccountsAccountError>> deleteAccountsAccountPeoplePerson({required String account, required String person, DeleteAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedPerson, DeleteAccountsAccountError>> deleteAccountsAccountPeoplePerson({required String account, required String person, DeleteAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1122,13 +1122,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all persons
 ///
 /// `<p>`Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.`</p>`
 ///
 /// `GET /v1/accounts/{account}/persons`
-Future<ApiResult<GetAccountsAccountPersonsResponse, DeleteAccountsAccountError>> getAccountsAccountPersons({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPersonsRelationship? relationship, String? startingAfter, GetAccountsAccountPersonsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsAccountPersonsResponse, DeleteAccountsAccountError>> getAccountsAccountPersons({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPersonsRelationship? relationship, String? startingAfter, GetAccountsAccountPersonsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1174,13 +1174,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a person
 ///
 /// `<p>`Creates a new person.`</p>`
 ///
 /// `POST /v1/accounts/{account}/persons`
-Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPersons({required String account, PostAccountsAccountPersonsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPersons({required String account, PostAccountsAccountPersonsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1257,13 +1257,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a person
 ///
 /// `<p>`Retrieves an existing person.`</p>`
 ///
 /// `GET /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<Person, DeleteAccountsAccountError>> getAccountsAccountPersonsPerson({required String account, required String person, List<String>? expand, GetAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Person, DeleteAccountsAccountError>> getAccountsAccountPersonsPerson({required String account, required String person, List<String>? expand, GetAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -1292,13 +1292,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a person
 ///
 /// `<p>`Updates an existing person.`</p>`
 ///
 /// `POST /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPersonsPerson({required String account, required String person, PostAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPersonsPerson({required String account, required String person, PostAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1375,13 +1375,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a person
 ///
 /// `<p>`Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the `<code>`account_opener`</code>`. If your integration is using the `<code>`executive`</code>` parameter, you cannot delete the only verified `<code>`executive`</code>` on file.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<DeletedPerson, DeleteAccountsAccountError>> deleteAccountsAccountPersonsPerson({required String account, required String person, DeleteAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedPerson, DeleteAccountsAccountError>> deleteAccountsAccountPersonsPerson({required String account, required String person, DeleteAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1400,7 +1400,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Reject an account
 ///
 /// `<p>`With `<a href="/connect">`Connect`</a>`, you can reject accounts that you have flagged as suspicious.`</p>`
@@ -1408,7 +1408,7 @@ return await execute(
 /// `<p>`Only accounts where your platform is liable for negative account balances, which includes Custom and Express accounts, can be rejected. Test-mode accounts can be rejected at any time. Live-mode accounts can only be rejected after all balances are zero.`</p>`
 ///
 /// `POST /v1/accounts/{account}/reject`
-Future<ApiResult<Account, DeleteAccountsAccountError>> postAccountsAccountReject({required String account, required PostAccountsAccountRejectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, DeleteAccountsAccountError>> postAccountsAccountReject({required String account, required PostAccountsAccountRejectRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1430,11 +1430,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`List apple pay domains.`</p>`
 ///
 /// `GET /v1/apple_pay/domains`
-Future<ApiResult<GetApplePayDomainsResponse, DeleteAccountsAccountError>> getApplePayDomains({String? domainName, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplePayDomainsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetApplePayDomainsResponse, DeleteAccountsAccountError>> getApplePayDomains({String? domainName, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplePayDomainsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domainName != null) {
   queryParameters['domain_name'] = domainName;
@@ -1475,11 +1475,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Create an apple pay domain.`</p>`
 ///
 /// `POST /v1/apple_pay/domains`
-Future<ApiResult<ApplePayDomain, DeleteAccountsAccountError>> postApplePayDomains({required PostApplePayDomainsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ApplePayDomain, DeleteAccountsAccountError>> postApplePayDomains({required PostApplePayDomainsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1501,11 +1501,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Retrieve an apple pay domain.`</p>`
 ///
 /// `GET /v1/apple_pay/domains/{domain}`
-Future<ApiResult<ApplePayDomain, DeleteAccountsAccountError>> getApplePayDomainsDomain({required String domain, List<String>? expand, GetApplePayDomainsDomainRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ApplePayDomain, DeleteAccountsAccountError>> getApplePayDomainsDomain({required String domain, List<String>? expand, GetApplePayDomainsDomainRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -1534,11 +1534,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Delete an apple pay domain.`</p>`
 ///
 /// `DELETE /v1/apple_pay/domains/{domain}`
-Future<ApiResult<DeletedApplePayDomain, DeleteAccountsAccountError>> deleteApplePayDomainsDomain({required String domain, DeleteApplePayDomainsDomainRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedApplePayDomain, DeleteAccountsAccountError>> deleteApplePayDomainsDomain({required String domain, DeleteApplePayDomainsDomainRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1557,13 +1557,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all application fees
 ///
 /// `<p>`Returns a list of application fees you’ve previously collected. The application fees are returned in sorted order, with the most recent fees appearing first.`</p>`
 ///
 /// `GET /v1/application_fees`
-Future<ApiResult<GetApplicationFeesResponse, DeleteAccountsAccountError>> getApplicationFees({String? charge, GetApplicationFeesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetApplicationFeesResponse, DeleteAccountsAccountError>> getApplicationFees({String? charge, GetApplicationFeesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (charge != null) {
   queryParameters['charge'] = charge;
@@ -1607,13 +1607,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an application fee refund
 ///
 /// `<p>`By default, you can see the 10 most recent refunds stored directly on the application fee object, but you can also retrieve details about a specific refund stored on the application fee.`</p>`
 ///
 /// `GET /v1/application_fees/{fee}/refunds/{id}`
-Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> getApplicationFeesFeeRefundsId({required String fee, required String id, List<String>? expand, GetApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> getApplicationFeesFeeRefundsId({required String fee, required String id, List<String>? expand, GetApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -1642,7 +1642,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an application fee refund
 ///
 /// `<p>`Updates the specified application fee refund by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -1650,7 +1650,7 @@ return await execute(
 /// `<p>`This request only accepts metadata as an argument.`</p>`
 ///
 /// `POST /v1/application_fees/{fee}/refunds/{id}`
-Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> postApplicationFeesFeeRefundsId({required String fee, required String id, PostApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> postApplicationFeesFeeRefundsId({required String fee, required String id, PostApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1673,13 +1673,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an application fee
 ///
 /// `<p>`Retrieves the details of an application fee that your account has collected. The same information is returned when refunding the application fee.`</p>`
 ///
 /// `GET /v1/application_fees/{id}`
-Future<ApiResult<ApplicationFee, DeleteAccountsAccountError>> getApplicationFeesId({required String id, List<String>? expand, GetApplicationFeesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ApplicationFee, DeleteAccountsAccountError>> getApplicationFeesId({required String id, List<String>? expand, GetApplicationFeesIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -1708,11 +1708,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// 
 ///
 /// `POST /v1/application_fees/{id}/refund`
-Future<ApiResult<ApplicationFee, DeleteAccountsAccountError>> postApplicationFeesIdRefund({required String id, PostApplicationFeesIdRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ApplicationFee, DeleteAccountsAccountError>> postApplicationFeesIdRefund({required String id, PostApplicationFeesIdRefundRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1737,13 +1737,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all application fee refunds
 ///
 /// `<p>`You can see a list of the refunds belonging to a specific application fee. Note that the 10 most recent refunds are always available by default on the application fee object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional refunds.`</p>`
 ///
 /// `GET /v1/application_fees/{id}/refunds`
-Future<ApiResult<GetApplicationFeesIdRefundsResponse, DeleteAccountsAccountError>> getApplicationFeesIdRefunds({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetApplicationFeesIdRefundsResponse, DeleteAccountsAccountError>> getApplicationFeesIdRefunds({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1781,7 +1781,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an application fee refund
 ///
 /// `<p>`Refunds an application fee that has previously been collected but not yet refunded.
@@ -1795,7 +1795,7 @@ return await execute(
 /// or when trying to refund more money than is left on an application fee.`</p>`
 ///
 /// `POST /v1/application_fees/{id}/refunds`
-Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> postApplicationFeesIdRefunds({required String id, PostApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> postApplicationFeesIdRefunds({required String id, PostApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1820,13 +1820,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List secrets
 ///
 /// `<p>`List all secrets stored on the given scope.`</p>`
 ///
 /// `GET /v1/apps/secrets`
-Future<ApiResult<GetAppsSecretsResponse, DeleteAccountsAccountError>> getAppsSecrets({required GetAppsSecretsScope scope, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAppsSecretsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAppsSecretsResponse, DeleteAccountsAccountError>> getAppsSecrets({required GetAppsSecretsScope scope, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAppsSecretsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1866,13 +1866,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Set a Secret
 ///
 /// `<p>`Create or replace a secret in the secret store.`</p>`
 ///
 /// `POST /v1/apps/secrets`
-Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> postAppsSecrets({required PostAppsSecretsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> postAppsSecrets({required PostAppsSecretsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1898,13 +1898,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a Secret
 ///
 /// `<p>`Deletes a secret from the secret store by name and scope.`</p>`
 ///
 /// `POST /v1/apps/secrets/delete`
-Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> postAppsSecretsDelete({required PostAppsSecretsDeleteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> postAppsSecretsDelete({required PostAppsSecretsDeleteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1927,13 +1927,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Find a Secret
 ///
 /// `<p>`Finds a secret in the secret store by name and scope.`</p>`
 ///
 /// `GET /v1/apps/secrets/find`
-Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> getAppsSecretsFind({required String name, required GetAppsSecretsFindScope scope, List<String>? expand, GetAppsSecretsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> getAppsSecretsFind({required String name, required GetAppsSecretsFindScope scope, List<String>? expand, GetAppsSecretsFindRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -1965,14 +1965,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve balance
 ///
 /// `<p>`Retrieves the current account balance, based on the authentication that was used to make the request.
 ///  For a sample request, see `<a href="/docs/connect/account-balances#accounting-for-negative-balances">`Accounting for negative balances`</a>`.`</p>`
 ///
 /// `GET /v1/balance`
-Future<ApiResult<Balance, DeleteAccountsAccountError>> getBalance({List<String>? expand, GetBalanceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Balance, DeleteAccountsAccountError>> getBalance({List<String>? expand, GetBalanceRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -2001,7 +2001,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all balance transactions
 ///
 /// `<p>`Returns a list of transactions that have contributed to the Stripe account balance (e.g., charges, transfers, and so forth). The transactions are returned in sorted order, with the most recent transactions appearing first.`</p>`
@@ -2009,7 +2009,7 @@ return await execute(
 /// `<p>`Note that this endpoint was previously called “Balance history” and used the path `<code>`/v1/balance/history`</code>`.`</p>`
 ///
 /// `GET /v1/balance/history`
-Future<ApiResult<GetBalanceHistoryResponse, DeleteAccountsAccountError>> getBalanceHistory({GetBalanceHistoryCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceHistoryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBalanceHistoryResponse, DeleteAccountsAccountError>> getBalanceHistory({GetBalanceHistoryCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceHistoryRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -2062,7 +2062,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a balance transaction
 ///
 /// `<p>`Retrieves the balance transaction with the given ID.`</p>`
@@ -2070,7 +2070,7 @@ return await execute(
 /// `<p>`Note that this endpoint previously used the path `<code>`/v1/balance/history/:id`</code>`.`</p>`
 ///
 /// `GET /v1/balance/history/{id}`
-Future<ApiResult<BalanceTransaction, DeleteAccountsAccountError>> getBalanceHistoryId({required String id, List<String>? expand, GetBalanceHistoryIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BalanceTransaction, DeleteAccountsAccountError>> getBalanceHistoryId({required String id, List<String>? expand, GetBalanceHistoryIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -2099,14 +2099,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve balance settings
 ///
 /// `<p>`Retrieves balance settings for a given connected account.
 ///  Related guide: `<a href="/connect/authentication">`Making API calls for connected accounts`</a>``</p>`
 ///
 /// `GET /v1/balance_settings`
-Future<ApiResult<BalanceSettings, DeleteAccountsAccountError>> getBalanceSettings({List<String>? expand, GetBalanceSettingsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BalanceSettings, DeleteAccountsAccountError>> getBalanceSettings({List<String>? expand, GetBalanceSettingsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -2135,14 +2135,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update balance settings
 ///
 /// `<p>`Updates balance settings for a given connected account.
 ///  Related guide: `<a href="/connect/authentication">`Making API calls for connected accounts`</a>``</p>`
 ///
 /// `POST /v1/balance_settings`
-Future<ApiResult<BalanceSettings, DeleteAccountsAccountError>> postBalanceSettings({PostBalanceSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BalanceSettings, DeleteAccountsAccountError>> postBalanceSettings({PostBalanceSettingsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2165,7 +2165,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all balance transactions
 ///
 /// `<p>`Returns a list of transactions that have contributed to the Stripe account balance (e.g., charges, transfers, and so forth). The transactions are returned in sorted order, with the most recent transactions appearing first.`</p>`
@@ -2173,7 +2173,7 @@ return await execute(
 /// `<p>`Note that this endpoint was previously called “Balance history” and used the path `<code>`/v1/balance/history`</code>`.`</p>`
 ///
 /// `GET /v1/balance_transactions`
-Future<ApiResult<GetBalanceTransactionsResponse, DeleteAccountsAccountError>> getBalanceTransactions({GetBalanceTransactionsCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBalanceTransactionsResponse, DeleteAccountsAccountError>> getBalanceTransactions({GetBalanceTransactionsCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceTransactionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -2226,7 +2226,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a balance transaction
 ///
 /// `<p>`Retrieves the balance transaction with the given ID.`</p>`
@@ -2234,7 +2234,7 @@ return await execute(
 /// `<p>`Note that this endpoint previously used the path `<code>`/v1/balance/history/:id`</code>`.`</p>`
 ///
 /// `GET /v1/balance_transactions/{id}`
-Future<ApiResult<BalanceTransaction, DeleteAccountsAccountError>> getBalanceTransactionsId({required String id, List<String>? expand, GetBalanceTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BalanceTransaction, DeleteAccountsAccountError>> getBalanceTransactionsId({required String id, List<String>? expand, GetBalanceTransactionsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -2263,13 +2263,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List billing alerts
 ///
 /// `<p>`Lists billing active and inactive alerts`</p>`
 ///
 /// `GET /v1/billing/alerts`
-Future<ApiResult<GetBillingAlertsResponse, DeleteAccountsAccountError>> getBillingAlerts({GetBillingAlertsAlertType? alertType, String? endingBefore, List<String>? expand, int? limit, String? meter, String? startingAfter, GetBillingAlertsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingAlertsResponse, DeleteAccountsAccountError>> getBillingAlerts({GetBillingAlertsAlertType? alertType, String? endingBefore, List<String>? expand, int? limit, String? meter, String? startingAfter, GetBillingAlertsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (alertType != null) {
   queryParameters['alert_type'] = alertType.toJson();
@@ -2313,13 +2313,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a billing alert
 ///
 /// `<p>`Creates a billing alert`</p>`
 ///
 /// `POST /v1/billing/alerts`
-Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlerts({required PostBillingAlertsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlerts({required PostBillingAlertsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2344,13 +2344,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a billing alert
 ///
 /// `<p>`Retrieves a billing alert given an ID`</p>`
 ///
 /// `GET /v1/billing/alerts/{id}`
-Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> getBillingAlertsId({required String id, List<String>? expand, GetBillingAlertsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> getBillingAlertsId({required String id, List<String>? expand, GetBillingAlertsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -2379,13 +2379,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Activate a billing alert
 ///
 /// `<p>`Reactivates this alert, allowing it to trigger again.`</p>`
 ///
 /// `POST /v1/billing/alerts/{id}/activate`
-Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdActivate({required String id, PostBillingAlertsIdActivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdActivate({required String id, PostBillingAlertsIdActivateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2406,13 +2406,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Archive a billing alert
 ///
 /// `<p>`Archives this alert, removing it from the list view and APIs. This is non-reversible.`</p>`
 ///
 /// `POST /v1/billing/alerts/{id}/archive`
-Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdArchive({required String id, PostBillingAlertsIdArchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdArchive({required String id, PostBillingAlertsIdArchiveRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2433,13 +2433,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Deactivate a billing alert
 ///
 /// `<p>`Deactivates this alert, preventing it from triggering.`</p>`
 ///
 /// `POST /v1/billing/alerts/{id}/deactivate`
-Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdDeactivate({required String id, PostBillingAlertsIdDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdDeactivate({required String id, PostBillingAlertsIdDeactivateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2460,13 +2460,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve the credit balance summary for a customer
 ///
 /// `<p>`Retrieves the credit balance summary for a customer.`</p>`
 ///
 /// `GET /v1/billing/credit_balance_summary`
-Future<ApiResult<BillingCreditBalanceSummary, DeleteAccountsAccountError>> getBillingCreditBalanceSummary({required GetBillingCreditBalanceSummaryFilter filter, String? customer, String? customerAccount, List<String>? expand, GetBillingCreditBalanceSummaryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingCreditBalanceSummary, DeleteAccountsAccountError>> getBillingCreditBalanceSummary({required GetBillingCreditBalanceSummaryFilter filter, String? customer, String? customerAccount, List<String>? expand, GetBillingCreditBalanceSummaryRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -2504,13 +2504,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List credit balance transactions
 ///
 /// `<p>`Retrieve a list of credit balance transactions.`</p>`
 ///
 /// `GET /v1/billing/credit_balance_transactions`
-Future<ApiResult<GetBillingCreditBalanceTransactionsResponse, DeleteAccountsAccountError>> getBillingCreditBalanceTransactions({String? creditGrant, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingCreditBalanceTransactionsResponse, DeleteAccountsAccountError>> getBillingCreditBalanceTransactions({String? creditGrant, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditBalanceTransactionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (creditGrant != null) {
   queryParameters['credit_grant'] = creditGrant;
@@ -2557,13 +2557,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a credit balance transaction
 ///
 /// `<p>`Retrieves a credit balance transaction.`</p>`
 ///
 /// `GET /v1/billing/credit_balance_transactions/{id}`
-Future<ApiResult<BillingCreditBalanceTransaction, DeleteAccountsAccountError>> getBillingCreditBalanceTransactionsId({required String id, List<String>? expand, GetBillingCreditBalanceTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingCreditBalanceTransaction, DeleteAccountsAccountError>> getBillingCreditBalanceTransactionsId({required String id, List<String>? expand, GetBillingCreditBalanceTransactionsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -2592,13 +2592,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List credit grants
 ///
 /// `<p>`Retrieve a list of credit grants.`</p>`
 ///
 /// `GET /v1/billing/credit_grants`
-Future<ApiResult<GetBillingCreditGrantsResponse, DeleteAccountsAccountError>> getBillingCreditGrants({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditGrantsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingCreditGrantsResponse, DeleteAccountsAccountError>> getBillingCreditGrants({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditGrantsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -2642,13 +2642,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a credit grant
 ///
 /// `<p>`Creates a credit grant.`</p>`
 ///
 /// `POST /v1/billing/credit_grants`
-Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrants({required PostBillingCreditGrantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrants({required PostBillingCreditGrantsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2687,13 +2687,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a credit grant
 ///
 /// `<p>`Retrieves a credit grant.`</p>`
 ///
 /// `GET /v1/billing/credit_grants/{id}`
-Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> getBillingCreditGrantsId({required String id, List<String>? expand, GetBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> getBillingCreditGrantsId({required String id, List<String>? expand, GetBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -2722,13 +2722,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a credit grant
 ///
 /// `<p>`Updates a credit grant.`</p>`
 ///
 /// `POST /v1/billing/credit_grants/{id}`
-Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsId({required String id, PostBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsId({required String id, PostBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2753,13 +2753,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Expire a credit grant
 ///
 /// `<p>`Expires a credit grant.`</p>`
 ///
 /// `POST /v1/billing/credit_grants/{id}/expire`
-Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsIdExpire({required String id, PostBillingCreditGrantsIdExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsIdExpire({required String id, PostBillingCreditGrantsIdExpireRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2780,13 +2780,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Void a credit grant
 ///
 /// `<p>`Voids a credit grant.`</p>`
 ///
 /// `POST /v1/billing/credit_grants/{id}/void`
-Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsIdVoid({required String id, PostBillingCreditGrantsIdVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsIdVoid({required String id, PostBillingCreditGrantsIdVoidRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2807,13 +2807,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a billing meter event adjustment
 ///
 /// `<p>`Creates a billing meter event adjustment.`</p>`
 ///
 /// `POST /v1/billing/meter_event_adjustments`
-Future<ApiResult<BillingMeterEventAdjustment, DeleteAccountsAccountError>> postBillingMeterEventAdjustments({required PostBillingMeterEventAdjustmentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeterEventAdjustment, DeleteAccountsAccountError>> postBillingMeterEventAdjustments({required PostBillingMeterEventAdjustmentsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2838,13 +2838,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a billing meter event
 ///
 /// `<p>`Creates a billing meter event.`</p>`
 ///
 /// `POST /v1/billing/meter_events`
-Future<ApiResult<BillingMeterEvent, DeleteAccountsAccountError>> postBillingMeterEvents({required PostBillingMeterEventsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeterEvent, DeleteAccountsAccountError>> postBillingMeterEvents({required PostBillingMeterEventsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2871,13 +2871,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List billing meters
 ///
 /// `<p>`Retrieve a list of billing meters.`</p>`
 ///
 /// `GET /v1/billing/meters`
-Future<ApiResult<GetBillingMetersResponse, DeleteAccountsAccountError>> getBillingMeters({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersStatus? status, GetBillingMetersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingMetersResponse, DeleteAccountsAccountError>> getBillingMeters({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersStatus? status, GetBillingMetersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -2918,13 +2918,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a billing meter
 ///
 /// `<p>`Creates a billing meter.`</p>`
 ///
 /// `POST /v1/billing/meters`
-Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMeters({required PostBillingMetersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMeters({required PostBillingMetersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2954,13 +2954,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a billing meter
 ///
 /// `<p>`Retrieves a billing meter given an ID.`</p>`
 ///
 /// `GET /v1/billing/meters/{id}`
-Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> getBillingMetersId({required String id, List<String>? expand, GetBillingMetersIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> getBillingMetersId({required String id, List<String>? expand, GetBillingMetersIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -2989,13 +2989,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a billing meter
 ///
 /// `<p>`Updates a billing meter.`</p>`
 ///
 /// `POST /v1/billing/meters/{id}`
-Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersId({required String id, PostBillingMetersIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersId({required String id, PostBillingMetersIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3018,13 +3018,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Deactivate a billing meter
 ///
 /// `<p>`When a meter is deactivated, no more meter events will be accepted for this meter. You can’t attach a deactivated meter to a price.`</p>`
 ///
 /// `POST /v1/billing/meters/{id}/deactivate`
-Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersIdDeactivate({required String id, PostBillingMetersIdDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersIdDeactivate({required String id, PostBillingMetersIdDeactivateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3045,13 +3045,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List billing meter event summaries
 ///
 /// `<p>`Retrieve a list of billing meter event summaries.`</p>`
 ///
 /// `GET /v1/billing/meters/{id}/event_summaries`
-Future<ApiResult<GetBillingMetersIdEventSummariesResponse, DeleteAccountsAccountError>> getBillingMetersIdEventSummaries({required String id, required String customer, required int endTime, required int startTime, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersIdEventSummariesValueGroupingWindow? valueGroupingWindow, GetBillingMetersIdEventSummariesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingMetersIdEventSummariesResponse, DeleteAccountsAccountError>> getBillingMetersIdEventSummaries({required String id, required String customer, required int endTime, required int startTime, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersIdEventSummariesValueGroupingWindow? valueGroupingWindow, GetBillingMetersIdEventSummariesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['customer'] = customer;
 queryParameters['end_time'] = endTime.toString();
@@ -3095,13 +3095,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Reactivate a billing meter
 ///
 /// `<p>`When a meter is reactivated, events for this meter can be accepted and you can attach the meter to a price.`</p>`
 ///
 /// `POST /v1/billing/meters/{id}/reactivate`
-Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersIdReactivate({required String id, PostBillingMetersIdReactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersIdReactivate({required String id, PostBillingMetersIdReactivateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3122,13 +3122,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List portal configurations
 ///
 /// `<p>`Returns a list of configurations that describe the functionality of the customer portal.`</p>`
 ///
 /// `GET /v1/billing_portal/configurations`
-Future<ApiResult<GetBillingPortalConfigurationsResponse, DeleteAccountsAccountError>> getBillingPortalConfigurations({bool? active, String? endingBefore, List<String>? expand, bool? isDefault, int? limit, String? startingAfter, GetBillingPortalConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingPortalConfigurationsResponse, DeleteAccountsAccountError>> getBillingPortalConfigurations({bool? active, String? endingBefore, List<String>? expand, bool? isDefault, int? limit, String? startingAfter, GetBillingPortalConfigurationsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -3172,13 +3172,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a portal configuration
 ///
 /// `<p>`Creates a configuration that describes the functionality and behavior of a PortalSession`</p>`
 ///
 /// `POST /v1/billing_portal/configurations`
-Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> postBillingPortalConfigurations({required PostBillingPortalConfigurationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> postBillingPortalConfigurations({required PostBillingPortalConfigurationsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3210,13 +3210,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a portal configuration
 ///
 /// `<p>`Retrieves a configuration that describes the functionality of the customer portal.`</p>`
 ///
 /// `GET /v1/billing_portal/configurations/{configuration}`
-Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> getBillingPortalConfigurationsConfiguration({required String configuration, List<String>? expand, GetBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> getBillingPortalConfigurationsConfiguration({required String configuration, List<String>? expand, GetBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -3245,13 +3245,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a portal configuration
 ///
 /// `<p>`Updates a configuration that describes the functionality of the customer portal.`</p>`
 ///
 /// `POST /v1/billing_portal/configurations/{configuration}`
-Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> postBillingPortalConfigurationsConfiguration({required String configuration, PostBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> postBillingPortalConfigurationsConfiguration({required String configuration, PostBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3286,13 +3286,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a portal session
 ///
 /// `<p>`Creates a session of the customer portal.`</p>`
 ///
 /// `POST /v1/billing_portal/sessions`
-Future<ApiResult<BillingPortalSession, DeleteAccountsAccountError>> postBillingPortalSessions({PostBillingPortalSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingPortalSession, DeleteAccountsAccountError>> postBillingPortalSessions({PostBillingPortalSessionsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3327,13 +3327,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all charges
 ///
 /// `<p>`Returns a list of charges you’ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.`</p>`
 ///
 /// `GET /v1/charges`
-Future<ApiResult<GetChargesResponse, DeleteAccountsAccountError>> getCharges({GetChargesCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, String? transferGroup, GetChargesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetChargesResponse, DeleteAccountsAccountError>> getCharges({GetChargesCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, String? transferGroup, GetChargesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -3383,13 +3383,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`This method is no longer recommended—use the `<a href="/docs/api/payment_intents">`Payment Intents API`</a>`
 /// to initiate a new payment instead. Confirmation of the PaymentIntent creates the `<code>`Charge`</code>`
 /// object used to request payment.`</p>`
 ///
 /// `POST /v1/charges`
-Future<ApiResult<Charge, DeleteAccountsAccountError>> postCharges({PostChargesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> postCharges({PostChargesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3448,7 +3448,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Search charges
 ///
 /// `<p>`Search for charges you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -3457,7 +3457,7 @@ return await execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/charges/search`
-Future<ApiResult<GetChargesSearchResponse, DeleteAccountsAccountError>> getChargesSearch({required String query, List<String>? expand, int? limit, String? page, GetChargesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetChargesSearchResponse, DeleteAccountsAccountError>> getChargesSearch({required String query, List<String>? expand, int? limit, String? page, GetChargesSearchRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -3493,13 +3493,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a charge
 ///
 /// `<p>`Retrieves the details of a charge that has previously been created. Supply the unique charge ID that was returned from your previous request, and Stripe will return the corresponding charge information. The same information is returned when creating or refunding the charge.`</p>`
 ///
 /// `GET /v1/charges/{charge}`
-Future<ApiResult<Charge, DeleteAccountsAccountError>> getChargesCharge({required String charge, List<String>? expand, GetChargesChargeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> getChargesCharge({required String charge, List<String>? expand, GetChargesChargeRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -3528,13 +3528,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a charge
 ///
 /// `<p>`Updates the specified charge by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/charges/{charge}`
-Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesCharge({required String charge, PostChargesChargeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesCharge({required String charge, PostChargesChargeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3569,7 +3569,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Capture a payment
 ///
 /// `<p>`Capture the payment of an existing, uncaptured charge that was created with the `<code>`capture`</code>` option set to false.`</p>`
@@ -3579,7 +3579,7 @@ return await execute(
 /// `<p>`Don’t use this method to capture a PaymentIntent-initiated charge. Use `<a href="/docs/api/payment_intents/capture">`Capture a PaymentIntent`</a>`.`</p>`
 ///
 /// `POST /v1/charges/{charge}/capture`
-Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesChargeCapture({required String charge, PostChargesChargeCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesChargeCapture({required String charge, PostChargesChargeCaptureRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3616,11 +3616,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Retrieve a dispute for a specified charge.`</p>`
 ///
 /// `GET /v1/charges/{charge}/dispute`
-Future<ApiResult<Dispute, DeleteAccountsAccountError>> getChargesChargeDispute({required String charge, List<String>? expand, GetChargesChargeDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> getChargesChargeDispute({required String charge, List<String>? expand, GetChargesChargeDisputeRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -3649,11 +3649,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// 
 ///
 /// `POST /v1/charges/{charge}/dispute`
-Future<ApiResult<Dispute, DeleteAccountsAccountError>> postChargesChargeDispute({required String charge, PostChargesChargeDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> postChargesChargeDispute({required String charge, PostChargesChargeDisputeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3680,11 +3680,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// 
 ///
 /// `POST /v1/charges/{charge}/dispute/close`
-Future<ApiResult<Dispute, DeleteAccountsAccountError>> postChargesChargeDisputeClose({required String charge, PostChargesChargeDisputeCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> postChargesChargeDisputeClose({required String charge, PostChargesChargeDisputeCloseRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3705,7 +3705,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a refund
 ///
 /// `<p>`When you create a new refund, you must specify either a Charge or a PaymentIntent object.`</p>`
@@ -3721,7 +3721,7 @@ return await execute(
 /// or when you attempt to refund more money than is left on a charge.`</p>`
 ///
 /// `POST /v1/charges/{charge}/refund`
-Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesChargeRefund({required String charge, PostChargesChargeRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesChargeRefund({required String charge, PostChargesChargeRefundRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3756,13 +3756,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all refunds
 ///
 /// `<p>`You can see a list of the refunds belonging to a specific charge. Note that the 10 most recent refunds are always available by default on the charge object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional refunds.`</p>`
 ///
 /// `GET /v1/charges/{charge}/refunds`
-Future<ApiResult<GetChargesChargeRefundsResponse, DeleteAccountsAccountError>> getChargesChargeRefunds({required String charge, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetChargesChargeRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetChargesChargeRefundsResponse, DeleteAccountsAccountError>> getChargesChargeRefunds({required String charge, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetChargesChargeRefundsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -3800,7 +3800,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create customer balance refund
 ///
 /// `<p>`When you create a new refund, you must specify a Charge or a PaymentIntent object on which to create it.`</p>`
@@ -3816,7 +3816,7 @@ return await execute(
 /// or when trying to refund more money than is left on a charge.`</p>`
 ///
 /// `POST /v1/charges/{charge}/refunds`
-Future<ApiResult<Refund, DeleteAccountsAccountError>> postChargesChargeRefunds({required String charge, PostChargesChargeRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postChargesChargeRefunds({required String charge, PostChargesChargeRefundsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3857,11 +3857,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Retrieves the details of an existing refund.`</p>`
 ///
 /// `GET /v1/charges/{charge}/refunds/{refund}`
-Future<ApiResult<Refund, DeleteAccountsAccountError>> getChargesChargeRefundsRefund({required String charge, required String refund, List<String>? expand, GetChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> getChargesChargeRefundsRefund({required String charge, required String refund, List<String>? expand, GetChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -3890,11 +3890,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Update a specified refund.`</p>`
 ///
 /// `POST /v1/charges/{charge}/refunds/{refund}`
-Future<ApiResult<Refund, DeleteAccountsAccountError>> postChargesChargeRefundsRefund({required String charge, required String refund, PostChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postChargesChargeRefundsRefund({required String charge, required String refund, PostChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3917,13 +3917,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all Checkout Sessions
 ///
 /// `<p>`Returns a list of Checkout Sessions.`</p>`
 ///
 /// `GET /v1/checkout/sessions`
-Future<ApiResult<GetCheckoutSessionsResponse, DeleteAccountsAccountError>> getCheckoutSessions({GetCheckoutSessionsCreated? created, String? customer, String? customerAccount, GetCheckoutSessionsCustomerDetails? customerDetails, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? paymentLink, String? startingAfter, GetCheckoutSessionsStatus? status, String? subscription, GetCheckoutSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCheckoutSessionsResponse, DeleteAccountsAccountError>> getCheckoutSessions({GetCheckoutSessionsCreated? created, String? customer, String? customerAccount, GetCheckoutSessionsCustomerDetails? customerDetails, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? paymentLink, String? startingAfter, GetCheckoutSessionsStatus? status, String? subscription, GetCheckoutSessionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -3985,13 +3985,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Checkout Session
 ///
 /// `<p>`Creates a Checkout Session object.`</p>`
 ///
 /// `POST /v1/checkout/sessions`
-Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessions({PostCheckoutSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessions({PostCheckoutSessionsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4108,13 +4108,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Checkout Session
 ///
 /// `<p>`Retrieves a Checkout Session object.`</p>`
 ///
 /// `GET /v1/checkout/sessions/{session}`
-Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> getCheckoutSessionsSession({required String session, List<String>? expand, GetCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> getCheckoutSessionsSession({required String session, List<String>? expand, GetCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -4143,7 +4143,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a Checkout Session
 ///
 /// `<p>`Updates a Checkout Session object.`</p>`
@@ -4151,7 +4151,7 @@ return await execute(
 /// `<p>`Related guide: `<a href="/payments/advanced/dynamic-updates">`Dynamically update a Checkout Session`</a>``</p>`
 ///
 /// `POST /v1/checkout/sessions/{session}`
-Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessionsSession({required String session, PostCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessionsSession({required String session, PostCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4180,7 +4180,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Expire a Checkout Session
 ///
 /// `<p>`A Checkout Session can be expired when it is in one of these statuses: `<code>`open`</code>` `</p>`
@@ -4188,7 +4188,7 @@ return await execute(
 /// `<p>`After it expires, a customer can’t complete a Checkout Session and customers loading the Checkout Session see a message saying the Checkout Session is expired.`</p>`
 ///
 /// `POST /v1/checkout/sessions/{session}/expire`
-Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessionsSessionExpire({required String session, PostCheckoutSessionsSessionExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessionsSessionExpire({required String session, PostCheckoutSessionsSessionExpireRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4209,13 +4209,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Checkout Session's line items
 ///
 /// `<p>`When retrieving a Checkout Session, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/checkout/sessions/{session}/line_items`
-Future<ApiResult<GetCheckoutSessionsSessionLineItemsResponse, DeleteAccountsAccountError>> getCheckoutSessionsSessionLineItems({required String session, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCheckoutSessionsSessionLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCheckoutSessionsSessionLineItemsResponse, DeleteAccountsAccountError>> getCheckoutSessionsSessionLineItems({required String session, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCheckoutSessionsSessionLineItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4253,14 +4253,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List orders
 ///
 /// `<p>`Lists all Climate order objects. The orders are returned sorted by creation date, with the
 /// most recently created orders appearing first.`</p>`
 ///
 /// `GET /v1/climate/orders`
-Future<ApiResult<GetClimateOrdersResponse, DeleteAccountsAccountError>> getClimateOrders({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateOrdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetClimateOrdersResponse, DeleteAccountsAccountError>> getClimateOrders({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateOrdersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4298,14 +4298,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an order
 ///
 /// `<p>`Creates a Climate order object for a given Climate product. The order will be processed immediately
 /// after creation and payment will be deducted your Stripe balance.`</p>`
 ///
 /// `POST /v1/climate/orders`
-Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrders({required PostClimateOrdersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrders({required PostClimateOrdersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4337,13 +4337,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an order
 ///
 /// `<p>`Retrieves the details of a Climate order object with the given ID.`</p>`
 ///
 /// `GET /v1/climate/orders/{order}`
-Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> getClimateOrdersOrder({required String order, List<String>? expand, GetClimateOrdersOrderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> getClimateOrdersOrder({required String order, List<String>? expand, GetClimateOrdersOrderRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -4372,13 +4372,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an order
 ///
 /// `<p>`Updates the specified order by setting the values of the parameters passed.`</p>`
 ///
 /// `POST /v1/climate/orders/{order}`
-Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrdersOrder({required String order, PostClimateOrdersOrderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrdersOrder({required String order, PostClimateOrdersOrderRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4403,7 +4403,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel an order
 ///
 /// `<p>`Cancels a Climate order. You can cancel an order within 24 hours of creation. Stripe refunds the
@@ -4412,7 +4412,7 @@ return await execute(
 /// provides 90 days advance notice and refunds the `<code>`amount_total`</code>`.`</p>`
 ///
 /// `POST /v1/climate/orders/{order}/cancel`
-Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrdersOrderCancel({required String order, PostClimateOrdersOrderCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrdersOrderCancel({required String order, PostClimateOrdersOrderCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4433,13 +4433,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List products
 ///
 /// `<p>`Lists all available Climate product objects.`</p>`
 ///
 /// `GET /v1/climate/products`
-Future<ApiResult<GetClimateProductsResponse, DeleteAccountsAccountError>> getClimateProducts({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateProductsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetClimateProductsResponse, DeleteAccountsAccountError>> getClimateProducts({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateProductsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4477,13 +4477,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a product
 ///
 /// `<p>`Retrieves the details of a Climate product with the given ID.`</p>`
 ///
 /// `GET /v1/climate/products/{product}`
-Future<ApiResult<ClimateProduct, DeleteAccountsAccountError>> getClimateProductsProduct({required String product, List<String>? expand, GetClimateProductsProductRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ClimateProduct, DeleteAccountsAccountError>> getClimateProductsProduct({required String product, List<String>? expand, GetClimateProductsProductRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -4512,13 +4512,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List suppliers
 ///
 /// `<p>`Lists all available Climate supplier objects.`</p>`
 ///
 /// `GET /v1/climate/suppliers`
-Future<ApiResult<GetClimateSuppliersResponse, DeleteAccountsAccountError>> getClimateSuppliers({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateSuppliersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetClimateSuppliersResponse, DeleteAccountsAccountError>> getClimateSuppliers({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateSuppliersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4556,13 +4556,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a supplier
 ///
 /// `<p>`Retrieves a Climate supplier object.`</p>`
 ///
 /// `GET /v1/climate/suppliers/{supplier}`
-Future<ApiResult<ClimateSupplier, DeleteAccountsAccountError>> getClimateSuppliersSupplier({required String supplier, List<String>? expand, GetClimateSuppliersSupplierRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ClimateSupplier, DeleteAccountsAccountError>> getClimateSuppliersSupplier({required String supplier, List<String>? expand, GetClimateSuppliersSupplierRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -4591,13 +4591,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a ConfirmationToken
 ///
 /// `<p>`Retrieves an existing ConfirmationToken object`</p>`
 ///
 /// `GET /v1/confirmation_tokens/{confirmation_token}`
-Future<ApiResult<ConfirmationToken, DeleteAccountsAccountError>> getConfirmationTokensConfirmationToken({required String confirmationToken, List<String>? expand, GetConfirmationTokensConfirmationTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConfirmationToken, DeleteAccountsAccountError>> getConfirmationTokensConfirmationToken({required String confirmationToken, List<String>? expand, GetConfirmationTokensConfirmationTokenRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -4626,13 +4626,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List Country Specs
 ///
 /// `<p>`Lists all Country Spec objects available in the API.`</p>`
 ///
 /// `GET /v1/country_specs`
-Future<ApiResult<GetCountrySpecsResponse, DeleteAccountsAccountError>> getCountrySpecs({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCountrySpecsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCountrySpecsResponse, DeleteAccountsAccountError>> getCountrySpecs({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCountrySpecsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4670,13 +4670,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Country Spec
 ///
 /// `<p>`Returns a Country Spec for a given Country code.`</p>`
 ///
 /// `GET /v1/country_specs/{country}`
-Future<ApiResult<CountrySpec, DeleteAccountsAccountError>> getCountrySpecsCountry({required String country, List<String>? expand, GetCountrySpecsCountryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CountrySpec, DeleteAccountsAccountError>> getCountrySpecsCountry({required String country, List<String>? expand, GetCountrySpecsCountryRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -4705,13 +4705,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all coupons
 ///
 /// `<p>`Returns a list of your coupons.`</p>`
 ///
 /// `GET /v1/coupons`
-Future<ApiResult<GetCouponsResponse, DeleteAccountsAccountError>> getCoupons({GetCouponsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCouponsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCouponsResponse, DeleteAccountsAccountError>> getCoupons({GetCouponsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCouponsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -4752,7 +4752,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a coupon
 ///
 /// `<p>`You can create coupons easily via the `<a href="https://dashboard.stripe.com/coupons">`coupon management`</a>` page of the Stripe dashboard. Coupon creation is also accessible via the API if you need to create coupons on the fly.`</p>`
@@ -4760,7 +4760,7 @@ return await execute(
 /// `<p>`A coupon has either a `<code>`percent_off`</code>` or an `<code>`amount_off`</code>` and `<code>`currency`</code>`. If you set an `<code>`amount_off`</code>`, that amount will be subtracted from any invoice’s subtotal. For example, an invoice with a subtotal of `<currency>`100`</currency>` will have a final total of `<currency>`0`</currency>` if a coupon with an `<code>`amount_off`</code>` of `<amount>`200`</amount>` is applied to it and an invoice with a subtotal of `<currency>`300`</currency>` will have a final total of `<currency>`100`</currency>` if a coupon with an `<code>`amount_off`</code>` of `<amount>`200`</amount>` is applied to it.`</p>`
 ///
 /// `POST /v1/coupons`
-Future<ApiResult<Coupon, DeleteAccountsAccountError>> postCoupons({PostCouponsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Coupon, DeleteAccountsAccountError>> postCoupons({PostCouponsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4805,13 +4805,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a coupon
 ///
 /// `<p>`Retrieves the coupon with the given ID.`</p>`
 ///
 /// `GET /v1/coupons/{coupon}`
-Future<ApiResult<Coupon, DeleteAccountsAccountError>> getCouponsCoupon({required String coupon, List<String>? expand, GetCouponsCouponRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Coupon, DeleteAccountsAccountError>> getCouponsCoupon({required String coupon, List<String>? expand, GetCouponsCouponRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -4840,13 +4840,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a coupon
 ///
 /// `<p>`Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by design, not editable.`</p>`
 ///
 /// `POST /v1/coupons/{coupon}`
-Future<ApiResult<Coupon, DeleteAccountsAccountError>> postCouponsCoupon({required String coupon, PostCouponsCouponRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Coupon, DeleteAccountsAccountError>> postCouponsCoupon({required String coupon, PostCouponsCouponRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4873,13 +4873,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a coupon
 ///
 /// `<p>`You can delete coupons via the `<a href="https://dashboard.stripe.com/coupons">`coupon management`</a>` page of the Stripe dashboard. However, deleting a coupon does not affect any customers who have already applied the coupon; it means that new customers can’t redeem the coupon. You can also delete coupons via the API.`</p>`
 ///
 /// `DELETE /v1/coupons/{coupon}`
-Future<ApiResult<DeletedCoupon, DeleteAccountsAccountError>> deleteCouponsCoupon({required String coupon, DeleteCouponsCouponRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedCoupon, DeleteAccountsAccountError>> deleteCouponsCoupon({required String coupon, DeleteCouponsCouponRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4898,13 +4898,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all credit notes
 ///
 /// `<p>`Returns a list of credit notes.`</p>`
 ///
 /// `GET /v1/credit_notes`
-Future<ApiResult<GetCreditNotesResponse, DeleteAccountsAccountError>> getCreditNotes({GetCreditNotesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCreditNotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCreditNotesResponse, DeleteAccountsAccountError>> getCreditNotes({GetCreditNotesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCreditNotesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -4954,7 +4954,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a credit note
 ///
 /// `<p>`Issue a credit note to adjust the amount of a finalized invoice. A credit note will first reduce the invoice’s `<code>`amount_remaining`</code>` (and `<code>`amount_due`</code>`), but not below zero.
@@ -4972,7 +4972,7 @@ return await execute(
 /// `<code>`post_payment_credit_notes_amount`</code>`, or both, depending on the invoice’s `<code>`amount_remaining`</code>` at the time of credit note creation.`</p>`
 ///
 /// `POST /v1/credit_notes`
-Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotes({required PostCreditNotesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotes({required PostCreditNotesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5018,13 +5018,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Preview a credit note
 ///
 /// `<p>`Get a preview of a credit note without creating it.`</p>`
 ///
 /// `GET /v1/credit_notes/preview`
-Future<ApiResult<CreditNote, DeleteAccountsAccountError>> getCreditNotesPreview({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, GetCreditNotesPreviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> getCreditNotesPreview({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, GetCreditNotesPreviewRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
   queryParameters['amount'] = amount.toString();
@@ -5096,13 +5096,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a credit note preview's line items
 ///
 /// `<p>`When retrieving a credit note preview, you’ll get a `<strong>`lines`</strong>` property containing the first handful of those items. This URL you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/credit_notes/preview/lines`
-Future<ApiResult<GetCreditNotesPreviewLinesResponse, DeleteAccountsAccountError>> getCreditNotesPreviewLines({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, GetCreditNotesPreviewLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCreditNotesPreviewLinesResponse, DeleteAccountsAccountError>> getCreditNotesPreviewLines({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, GetCreditNotesPreviewLinesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
   queryParameters['amount'] = amount.toString();
@@ -5183,13 +5183,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a credit note's line items
 ///
 /// `<p>`When retrieving a credit note, you’ll get a `<strong>`lines`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/credit_notes/{credit_note}/lines`
-Future<ApiResult<GetCreditNotesCreditNoteLinesResponse, DeleteAccountsAccountError>> getCreditNotesCreditNoteLines({required String creditNote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCreditNotesCreditNoteLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCreditNotesCreditNoteLinesResponse, DeleteAccountsAccountError>> getCreditNotesCreditNoteLines({required String creditNote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCreditNotesCreditNoteLinesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -5227,13 +5227,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a credit note
 ///
 /// `<p>`Retrieves the credit note object with the given identifier.`</p>`
 ///
 /// `GET /v1/credit_notes/{id}`
-Future<ApiResult<CreditNote, DeleteAccountsAccountError>> getCreditNotesId({required String id, List<String>? expand, GetCreditNotesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> getCreditNotesId({required String id, List<String>? expand, GetCreditNotesIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -5262,13 +5262,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a credit note
 ///
 /// `<p>`Updates an existing credit note.`</p>`
 ///
 /// `POST /v1/credit_notes/{id}`
-Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotesId({required String id, PostCreditNotesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotesId({required String id, PostCreditNotesIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5293,13 +5293,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Void a credit note
 ///
 /// `<p>`Marks a credit note as void. Learn more about `<a href="/docs/billing/invoices/credit-notes#voiding">`voiding credit notes`</a>`.`</p>`
 ///
 /// `POST /v1/credit_notes/{id}/void`
-Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotesIdVoid({required String id, PostCreditNotesIdVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotesIdVoid({required String id, PostCreditNotesIdVoidRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5320,13 +5320,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Customer Session
 ///
 /// `<p>`Creates a Customer Session object that includes a single-use client secret that you can use on your front-end to grant client-side API access for certain customer resources.`</p>`
 ///
 /// `POST /v1/customer_sessions`
-Future<ApiResult<CustomerSession, DeleteAccountsAccountError>> postCustomerSessions({required PostCustomerSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomerSession, DeleteAccountsAccountError>> postCustomerSessions({required PostCustomerSessionsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5352,13 +5352,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all customers
 ///
 /// `<p>`Returns a list of your customers. The customers are returned sorted by creation date, with the most recent customers appearing first.`</p>`
 ///
 /// `GET /v1/customers`
-Future<ApiResult<GetCustomersResponse, DeleteAccountsAccountError>> getCustomers({GetCustomersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? testClock, GetCustomersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersResponse, DeleteAccountsAccountError>> getCustomers({GetCustomersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? testClock, GetCustomersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -5405,13 +5405,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a customer
 ///
 /// `<p>`Creates a new customer object.`</p>`
 ///
 /// `POST /v1/customers`
-Future<ApiResult<Customer, DeleteAccountsAccountError>> postCustomers({PostCustomersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Customer, DeleteAccountsAccountError>> postCustomers({PostCustomersRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5474,7 +5474,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Search customers
 ///
 /// `<p>`Search for customers you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -5483,7 +5483,7 @@ return await execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/customers/search`
-Future<ApiResult<GetCustomersSearchResponse, DeleteAccountsAccountError>> getCustomersSearch({required String query, List<String>? expand, int? limit, String? page, GetCustomersSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersSearchResponse, DeleteAccountsAccountError>> getCustomersSearch({required String query, List<String>? expand, int? limit, String? page, GetCustomersSearchRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -5519,13 +5519,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a customer
 ///
 /// `<p>`Retrieves a Customer object.`</p>`
 ///
 /// `GET /v1/customers/{customer}`
-Future<ApiResult<GetCustomersCustomerResponse, DeleteAccountsAccountError>> getCustomersCustomer({required String customer, List<String>? expand, GetCustomersCustomerRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerResponse, DeleteAccountsAccountError>> getCustomersCustomer({required String customer, List<String>? expand, GetCustomersCustomerRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -5554,7 +5554,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a customer
 ///
 /// `<p>`Updates the specified customer by setting the values of the parameters passed. Any parameters not provided are left unchanged. For example, if you pass the `<strong>`source`</strong>` parameter, that becomes the customer’s active source (such as a card) to be used for all charges in the future. When you update a customer to a new valid card source by passing the `<strong>`source`</strong>` parameter: for each of the customer’s current subscriptions, if the subscription bills automatically and is in the `<code>`past_due`</code>` state, then the latest open invoice for the subscription with automatic collection enabled is retried. This retry doesn’t count as an automatic retry, and doesn’t affect the next regularly scheduled payment for the invoice. Changing the `<strong>`default_source`</strong>` for a customer doesn’t trigger this behavior.`</p>`
@@ -5562,7 +5562,7 @@ return await execute(
 /// `<p>`This request accepts mostly the same arguments as the customer creation call.`</p>`
 ///
 /// `POST /v1/customers/{customer}`
-Future<ApiResult<Customer, DeleteAccountsAccountError>> postCustomersCustomer({required String customer, PostCustomersCustomerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Customer, DeleteAccountsAccountError>> postCustomersCustomer({required String customer, PostCustomersCustomerRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5631,13 +5631,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a customer
 ///
 /// `<p>`Permanently deletes a customer. It cannot be undone. Also immediately cancels any active subscriptions on the customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}`
-Future<ApiResult<DeletedCustomer, DeleteAccountsAccountError>> deleteCustomersCustomer({required String customer, DeleteCustomersCustomerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedCustomer, DeleteAccountsAccountError>> deleteCustomersCustomer({required String customer, DeleteCustomersCustomerRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5656,13 +5656,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List customer balance transactions
 ///
 /// `<p>`Returns a list of transactions that updated the customer’s `<a href="/docs/billing/customer/balance">`balances`</a>`.`</p>`
 ///
 /// `GET /v1/customers/{customer}/balance_transactions`
-Future<ApiResult<GetCustomersCustomerBalanceTransactionsResponse, DeleteAccountsAccountError>> getCustomersCustomerBalanceTransactions({required String customer, GetCustomersCustomerBalanceTransactionsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCustomersCustomerBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerBalanceTransactionsResponse, DeleteAccountsAccountError>> getCustomersCustomerBalanceTransactions({required String customer, GetCustomersCustomerBalanceTransactionsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCustomersCustomerBalanceTransactionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -5706,13 +5706,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a customer balance transaction
 ///
 /// `<p>`Creates an immutable transaction that updates the customer’s credit `<a href="/docs/billing/customer/balance">`balance`</a>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/balance_transactions`
-Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> postCustomersCustomerBalanceTransactions({required String customer, required PostCustomersCustomerBalanceTransactionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> postCustomersCustomerBalanceTransactions({required String customer, required PostCustomersCustomerBalanceTransactionsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5739,13 +5739,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a customer balance transaction
 ///
 /// `<p>`Retrieves a specific customer balance transaction that updated the customer’s `<a href="/docs/billing/customer/balance">`balances`</a>`.`</p>`
 ///
 /// `GET /v1/customers/{customer}/balance_transactions/{transaction}`
-Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> getCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> getCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -5774,13 +5774,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a customer credit balance transaction
 ///
 /// `<p>`Most credit balance transaction fields are immutable, but you may update its `<code>`description`</code>` and `<code>`metadata`</code>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/balance_transactions/{transaction}`
-Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> postCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, PostCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> postCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, PostCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5805,7 +5805,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a card
 ///
 /// `<p>`When you create a new credit card, you must specify a customer or recipient on which to create it.`</p>`
@@ -5815,7 +5815,7 @@ return await execute(
 /// To change the default, you should `<a href="/docs/api#update_customer">`update the customer`</a>` to have a new `<code>`default_source`</code>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/bank_accounts`
-Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerBankAccounts({required String customer, PostCustomersCustomerBankAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerBankAccounts({required String customer, PostCustomersCustomerBankAccountsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5846,11 +5846,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/bank_accounts/{id}`
-Future<ApiResult<PostCustomersCustomerBankAccountsIdResponse, DeleteAccountsAccountError>> postCustomersCustomerBankAccountsId({required String customer, required String id, PostCustomersCustomerBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCustomersCustomerBankAccountsIdResponse, DeleteAccountsAccountError>> postCustomersCustomerBankAccountsId({required String customer, required String id, PostCustomersCustomerBankAccountsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5897,13 +5897,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a customer source
 ///
 /// `<p>`Delete a specified source for a given customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/bank_accounts/{id}`
-Future<ApiResult<DeleteCustomersCustomerBankAccountsIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerBankAccountsId({required String customer, required String id, DeleteCustomersCustomerBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteCustomersCustomerBankAccountsIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerBankAccountsId({required String customer, required String id, DeleteCustomersCustomerBankAccountsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5924,13 +5924,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Verify a bank account
 ///
 /// `<p>`Verify a specified bank account for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/bank_accounts/{id}/verify`
-Future<ApiResult<BankAccount, DeleteAccountsAccountError>> postCustomersCustomerBankAccountsIdVerify({required String customer, required String id, PostCustomersCustomerBankAccountsIdVerifyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BankAccount, DeleteAccountsAccountError>> postCustomersCustomerBankAccountsIdVerify({required String customer, required String id, PostCustomersCustomerBankAccountsIdVerifyRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5953,7 +5953,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a card
 ///
 /// `<p>`When you create a new credit card, you must specify a customer or recipient on which to create it.`</p>`
@@ -5963,7 +5963,7 @@ return await execute(
 /// To change the default, you should `<a href="/docs/api#update_customer">`update the customer`</a>` to have a new `<code>`default_source`</code>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/cards`
-Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerCards({required String customer, PostCustomersCustomerCardsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerCards({required String customer, PostCustomersCustomerCardsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5994,11 +5994,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/cards/{id}`
-Future<ApiResult<PostCustomersCustomerCardsIdResponse, DeleteAccountsAccountError>> postCustomersCustomerCardsId({required String customer, required String id, PostCustomersCustomerCardsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCustomersCustomerCardsIdResponse, DeleteAccountsAccountError>> postCustomersCustomerCardsId({required String customer, required String id, PostCustomersCustomerCardsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6045,13 +6045,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a customer source
 ///
 /// `<p>`Delete a specified source for a given customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/cards/{id}`
-Future<ApiResult<DeleteCustomersCustomerCardsIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerCardsId({required String customer, required String id, DeleteCustomersCustomerCardsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteCustomersCustomerCardsIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerCardsId({required String customer, required String id, DeleteCustomersCustomerCardsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6072,13 +6072,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a cash balance
 ///
 /// `<p>`Retrieves a customer’s cash balance.`</p>`
 ///
 /// `GET /v1/customers/{customer}/cash_balance`
-Future<ApiResult<CashBalance, DeleteAccountsAccountError>> getCustomersCustomerCashBalance({required String customer, List<String>? expand, GetCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CashBalance, DeleteAccountsAccountError>> getCustomersCustomerCashBalance({required String customer, List<String>? expand, GetCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -6107,13 +6107,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a cash balance's settings
 ///
 /// `<p>`Changes the settings on a customer’s cash balance.`</p>`
 ///
 /// `POST /v1/customers/{customer}/cash_balance`
-Future<ApiResult<CashBalance, DeleteAccountsAccountError>> postCustomersCustomerCashBalance({required String customer, PostCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CashBalance, DeleteAccountsAccountError>> postCustomersCustomerCashBalance({required String customer, PostCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6136,13 +6136,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List cash balance transactions
 ///
 /// `<p>`Returns a list of transactions that modified the customer’s `<a href="/docs/payments/customer-balance">`cash balance`</a>`.`</p>`
 ///
 /// `GET /v1/customers/{customer}/cash_balance_transactions`
-Future<ApiResult<GetCustomersCustomerCashBalanceTransactionsResponse, DeleteAccountsAccountError>> getCustomersCustomerCashBalanceTransactions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerCashBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerCashBalanceTransactionsResponse, DeleteAccountsAccountError>> getCustomersCustomerCashBalanceTransactions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerCashBalanceTransactionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -6180,13 +6180,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a cash balance transaction
 ///
 /// `<p>`Retrieves a specific cash balance transaction, which updated the customer’s `<a href="/docs/payments/customer-balance">`cash balance`</a>`.`</p>`
 ///
 /// `GET /v1/customers/{customer}/cash_balance_transactions/{transaction}`
-Future<ApiResult<CustomerCashBalanceTransaction, DeleteAccountsAccountError>> getCustomersCustomerCashBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerCashBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CustomerCashBalanceTransaction, DeleteAccountsAccountError>> getCustomersCustomerCashBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerCashBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -6215,11 +6215,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// 
 ///
 /// `GET /v1/customers/{customer}/discount`
-Future<ApiResult<Discount, DeleteAccountsAccountError>> getCustomersCustomerDiscount({required String customer, List<String>? expand, GetCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Discount, DeleteAccountsAccountError>> getCustomersCustomerDiscount({required String customer, List<String>? expand, GetCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -6248,13 +6248,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a customer discount
 ///
 /// `<p>`Removes the currently applied discount on a customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/discount`
-Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteCustomersCustomerDiscount({required String customer, DeleteCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteCustomersCustomerDiscount({required String customer, DeleteCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6273,7 +6273,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create or retrieve funding instructions for a customer cash balance
 ///
 /// `<p>`Retrieve funding instructions for a customer cash balance. If funding instructions do not yet exist for the customer, new
@@ -6281,7 +6281,7 @@ return await execute(
 /// funding instructions will be retrieved. In other words, we will return the same funding instructions each time.`</p>`
 ///
 /// `POST /v1/customers/{customer}/funding_instructions`
-Future<ApiResult<FundingInstructions, DeleteAccountsAccountError>> postCustomersCustomerFundingInstructions({required String customer, required PostCustomersCustomerFundingInstructionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FundingInstructions, DeleteAccountsAccountError>> postCustomersCustomerFundingInstructions({required String customer, required PostCustomersCustomerFundingInstructionsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6305,13 +6305,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List a Customer's PaymentMethods
 ///
 /// `<p>`Returns a list of PaymentMethods for a given Customer`</p>`
 ///
 /// `GET /v1/customers/{customer}/payment_methods`
-Future<ApiResult<GetCustomersCustomerPaymentMethodsResponse, DeleteAccountsAccountError>> getCustomersCustomerPaymentMethods({required String customer, GetCustomersCustomerPaymentMethodsAllowRedisplay? allowRedisplay, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerPaymentMethodsType? type, GetCustomersCustomerPaymentMethodsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerPaymentMethodsResponse, DeleteAccountsAccountError>> getCustomersCustomerPaymentMethods({required String customer, GetCustomersCustomerPaymentMethodsAllowRedisplay? allowRedisplay, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerPaymentMethodsType? type, GetCustomersCustomerPaymentMethodsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowRedisplay != null) {
   queryParameters['allow_redisplay'] = allowRedisplay.toJson();
@@ -6355,13 +6355,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Customer's PaymentMethod
 ///
 /// `<p>`Retrieves a PaymentMethod object for a given Customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> getCustomersCustomerPaymentMethodsPaymentMethod({required String customer, required String paymentMethod, List<String>? expand, GetCustomersCustomerPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> getCustomersCustomerPaymentMethodsPaymentMethod({required String customer, required String paymentMethod, List<String>? expand, GetCustomersCustomerPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -6390,11 +6390,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`List sources for a specified customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/sources`
-Future<ApiResult<GetCustomersCustomerSourcesResponse, DeleteAccountsAccountError>> getCustomersCustomerSources({required String customer, String? endingBefore, List<String>? expand, int? limit, String? object, String? startingAfter, GetCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerSourcesResponse, DeleteAccountsAccountError>> getCustomersCustomerSources({required String customer, String? endingBefore, List<String>? expand, int? limit, String? object, String? startingAfter, GetCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -6435,7 +6435,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a card
 ///
 /// `<p>`When you create a new credit card, you must specify a customer or recipient on which to create it.`</p>`
@@ -6445,7 +6445,7 @@ return await execute(
 /// To change the default, you should `<a href="/docs/api#update_customer">`update the customer`</a>` to have a new `<code>`default_source`</code>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/sources`
-Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerSources({required String customer, PostCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerSources({required String customer, PostCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6476,11 +6476,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Retrieve a specified source for a given customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> getCustomersCustomerSourcesId({required String customer, required String id, List<String>? expand, GetCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> getCustomersCustomerSourcesId({required String customer, required String id, List<String>? expand, GetCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -6509,11 +6509,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<PostCustomersCustomerSourcesIdResponse, DeleteAccountsAccountError>> postCustomersCustomerSourcesId({required String customer, required String id, PostCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCustomersCustomerSourcesIdResponse, DeleteAccountsAccountError>> postCustomersCustomerSourcesId({required String customer, required String id, PostCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6560,13 +6560,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a customer source
 ///
 /// `<p>`Delete a specified source for a given customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<DeleteCustomersCustomerSourcesIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerSourcesId({required String customer, required String id, DeleteCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteCustomersCustomerSourcesIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerSourcesId({required String customer, required String id, DeleteCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6587,13 +6587,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Verify a bank account
 ///
 /// `<p>`Verify a specified bank account for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/sources/{id}/verify`
-Future<ApiResult<BankAccount, DeleteAccountsAccountError>> postCustomersCustomerSourcesIdVerify({required String customer, required String id, PostCustomersCustomerSourcesIdVerifyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BankAccount, DeleteAccountsAccountError>> postCustomersCustomerSourcesIdVerify({required String customer, required String id, PostCustomersCustomerSourcesIdVerifyRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6616,13 +6616,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List active subscriptions
 ///
 /// `<p>`You can see a list of the customer’s active subscriptions. Note that the 10 most recent active subscriptions are always available by default on the customer object. If you need more than those 10, you can use the limit and starting_after parameters to page through additional subscriptions.`</p>`
 ///
 /// `GET /v1/customers/{customer}/subscriptions`
-Future<ApiResult<GetCustomersCustomerSubscriptionsResponse, DeleteAccountsAccountError>> getCustomersCustomerSubscriptions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerSubscriptionsResponse, DeleteAccountsAccountError>> getCustomersCustomerSubscriptions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -6660,13 +6660,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a subscription
 ///
 /// `<p>`Creates a new subscription on an existing customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/subscriptions`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> postCustomersCustomerSubscriptions({required String customer, PostCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postCustomersCustomerSubscriptions({required String customer, PostCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6743,13 +6743,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a subscription
 ///
 /// `<p>`Retrieves the subscription with the given ID.`</p>`
 ///
 /// `GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> getCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> getCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -6778,13 +6778,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a subscription on a customer
 ///
 /// `<p>`Updates an existing subscription on a customer to match the specified parameters. When changing plans or quantities, we will optionally prorate the price we charge next month to make up for any price changes. To preview how the proration will be calculated, use the `<a href="#upcoming_invoice">`upcoming invoice`</a>` endpoint.`</p>`
 ///
 /// `POST /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> postCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6861,7 +6861,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a subscription
 ///
 /// `<p>`Cancels a customer’s subscription. If you set the `<code>`at_period_end`</code>` parameter to `<code>`true`</code>`, the subscription will remain active until the end of the period, at which point it will be canceled and not renewed. Otherwise, with the default `<code>`false`</code>` value, the subscription is terminated immediately. In either case, the customer will not be charged again for the subscription.`</p>`
@@ -6871,7 +6871,7 @@ return await execute(
 /// `<p>`By default, upon subscription cancellation, Stripe will stop automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> deleteCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> deleteCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6896,11 +6896,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// 
 ///
 /// `GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<Discount, DeleteAccountsAccountError>> getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Discount, DeleteAccountsAccountError>> getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -6929,13 +6929,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a customer discount
 ///
 /// `<p>`Removes the currently applied discount on a customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6954,13 +6954,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all Customer tax IDs
 ///
 /// `<p>`Returns a list of tax IDs for a customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/tax_ids`
-Future<ApiResult<GetCustomersCustomerTaxIdsResponse, DeleteAccountsAccountError>> getCustomersCustomerTaxIds({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerTaxIdsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerTaxIdsResponse, DeleteAccountsAccountError>> getCustomersCustomerTaxIds({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerTaxIdsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -6998,13 +6998,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Customer tax ID
 ///
 /// `<p>`Creates a new `<code>`tax_id`</code>` object for a customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/tax_ids`
-Future<ApiResult<TaxId, DeleteAccountsAccountError>> postCustomersCustomerTaxIds({required String customer, required PostCustomersCustomerTaxIdsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxId, DeleteAccountsAccountError>> postCustomersCustomerTaxIds({required String customer, required PostCustomersCustomerTaxIdsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7027,13 +7027,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Customer tax ID
 ///
 /// `<p>`Retrieves the `<code>`tax_id`</code>` object with the given identifier.`</p>`
 ///
 /// `GET /v1/customers/{customer}/tax_ids/{id}`
-Future<ApiResult<TaxId, DeleteAccountsAccountError>> getCustomersCustomerTaxIdsId({required String customer, required String id, List<String>? expand, GetCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxId, DeleteAccountsAccountError>> getCustomersCustomerTaxIdsId({required String customer, required String id, List<String>? expand, GetCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -7062,13 +7062,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a Customer tax ID
 ///
 /// `<p>`Deletes an existing `<code>`tax_id`</code>` object.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/tax_ids/{id}`
-Future<ApiResult<DeletedTaxId, DeleteAccountsAccountError>> deleteCustomersCustomerTaxIdsId({required String customer, required String id, DeleteCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTaxId, DeleteAccountsAccountError>> deleteCustomersCustomerTaxIdsId({required String customer, required String id, DeleteCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7087,13 +7087,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all disputes
 ///
 /// `<p>`Returns a list of your disputes.`</p>`
 ///
 /// `GET /v1/disputes`
-Future<ApiResult<GetDisputesResponse, DeleteAccountsAccountError>> getDisputes({String? charge, GetDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetDisputesResponse, DeleteAccountsAccountError>> getDisputes({String? charge, GetDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetDisputesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (charge != null) {
   queryParameters['charge'] = charge;
@@ -7140,13 +7140,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a dispute
 ///
 /// `<p>`Retrieves the dispute with the given ID.`</p>`
 ///
 /// `GET /v1/disputes/{dispute}`
-Future<ApiResult<Dispute, DeleteAccountsAccountError>> getDisputesDispute({required String dispute, List<String>? expand, GetDisputesDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> getDisputesDispute({required String dispute, List<String>? expand, GetDisputesDisputeRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -7175,7 +7175,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a dispute
 ///
 /// `<p>`When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your `<a href="https://dashboard.stripe.com/disputes">`dashboard`</a>`, but if you prefer, you can use the API to submit evidence programmatically.`</p>`
@@ -7183,7 +7183,7 @@ return await execute(
 /// `<p>`Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our `<a href="/docs/disputes/categories">`guide to dispute types`</a>`.`</p>`
 ///
 /// `POST /v1/disputes/{dispute}`
-Future<ApiResult<Dispute, DeleteAccountsAccountError>> postDisputesDispute({required String dispute, PostDisputesDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> postDisputesDispute({required String dispute, PostDisputesDisputeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7210,7 +7210,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Close a dispute
 ///
 /// `<p>`Closing the dispute for a charge indicates that you do not have any evidence to submit and are essentially dismissing the dispute, acknowledging it as lost.`</p>`
@@ -7218,7 +7218,7 @@ return await execute(
 /// `<p>`The status of the dispute will change from `<code>`needs_response`</code>` to `<code>`lost`</code>`. `<em>`Closing a dispute is irreversible`</em>`.`</p>`
 ///
 /// `POST /v1/disputes/{dispute}/close`
-Future<ApiResult<Dispute, DeleteAccountsAccountError>> postDisputesDisputeClose({required String dispute, PostDisputesDisputeCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> postDisputesDisputeClose({required String dispute, PostDisputesDisputeCloseRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7239,13 +7239,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all active entitlements
 ///
 /// `<p>`Retrieve a list of active entitlements for a customer`</p>`
 ///
 /// `GET /v1/entitlements/active_entitlements`
-Future<ApiResult<GetEntitlementsActiveEntitlementsResponse, DeleteAccountsAccountError>> getEntitlementsActiveEntitlements({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetEntitlementsActiveEntitlementsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetEntitlementsActiveEntitlementsResponse, DeleteAccountsAccountError>> getEntitlementsActiveEntitlements({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetEntitlementsActiveEntitlementsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['customer'] = customer;
 if (endingBefore != null) {
@@ -7284,13 +7284,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an active entitlement
 ///
 /// `<p>`Retrieve an active entitlement`</p>`
 ///
 /// `GET /v1/entitlements/active_entitlements/{id}`
-Future<ApiResult<EntitlementsActiveEntitlement, DeleteAccountsAccountError>> getEntitlementsActiveEntitlementsId({required String id, List<String>? expand, GetEntitlementsActiveEntitlementsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EntitlementsActiveEntitlement, DeleteAccountsAccountError>> getEntitlementsActiveEntitlementsId({required String id, List<String>? expand, GetEntitlementsActiveEntitlementsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -7319,13 +7319,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all features
 ///
 /// `<p>`Retrieve a list of features`</p>`
 ///
 /// `GET /v1/entitlements/features`
-Future<ApiResult<GetEntitlementsFeaturesResponse, DeleteAccountsAccountError>> getEntitlementsFeatures({bool? archived, String? endingBefore, List<String>? expand, int? limit, String? lookupKey, String? startingAfter, GetEntitlementsFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetEntitlementsFeaturesResponse, DeleteAccountsAccountError>> getEntitlementsFeatures({bool? archived, String? endingBefore, List<String>? expand, int? limit, String? lookupKey, String? startingAfter, GetEntitlementsFeaturesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (archived != null) {
   queryParameters['archived'] = archived.toString();
@@ -7369,13 +7369,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a feature
 ///
 /// `<p>`Creates a feature`</p>`
 ///
 /// `POST /v1/entitlements/features`
-Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> postEntitlementsFeatures({required PostEntitlementsFeaturesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> postEntitlementsFeatures({required PostEntitlementsFeaturesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7400,13 +7400,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a feature
 ///
 /// `<p>`Retrieves a feature`</p>`
 ///
 /// `GET /v1/entitlements/features/{id}`
-Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> getEntitlementsFeaturesId({required String id, List<String>? expand, GetEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> getEntitlementsFeaturesId({required String id, List<String>? expand, GetEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -7435,13 +7435,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Updates a feature
 ///
 /// `<p>`Update a feature’s metadata or permanently deactivate it.`</p>`
 ///
 /// `POST /v1/entitlements/features/{id}`
-Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> postEntitlementsFeaturesId({required String id, PostEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> postEntitlementsFeaturesId({required String id, PostEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7468,13 +7468,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an ephemeral key
 ///
 /// `<p>`Creates a short-lived API key for a given resource.`</p>`
 ///
 /// `POST /v1/ephemeral_keys`
-Future<ApiResult<EphemeralKey, DeleteAccountsAccountError>> postEphemeralKeys({PostEphemeralKeysRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EphemeralKey, DeleteAccountsAccountError>> postEphemeralKeys({PostEphemeralKeysRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7503,13 +7503,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Immediately invalidate an ephemeral key
 ///
 /// `<p>`Invalidates a short-lived API key for a given resource.`</p>`
 ///
 /// `DELETE /v1/ephemeral_keys/{key}`
-Future<ApiResult<EphemeralKey, DeleteAccountsAccountError>> deleteEphemeralKeysKey({required String key, DeleteEphemeralKeysKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EphemeralKey, DeleteAccountsAccountError>> deleteEphemeralKeysKey({required String key, DeleteEphemeralKeysKeyRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7530,13 +7530,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all events
 ///
 /// `<p>`List events, going back up to 30 days. Each event data is rendered according to Stripe API version at its creation time, specified in `<a href="https://docs.stripe.com/api/events/object">`event object`</a>` `<code>`api_version`</code>` attribute (not according to your current Stripe API version or `<code>`Stripe-Version`</code>` header).`</p>`
 ///
 /// `GET /v1/events`
-Future<ApiResult<GetEventsResponse, DeleteAccountsAccountError>> getEvents({GetEventsCreated? created, bool? deliverySuccess, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? type, List<String>? types, GetEventsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetEventsResponse, DeleteAccountsAccountError>> getEvents({GetEventsCreated? created, bool? deliverySuccess, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? type, List<String>? types, GetEventsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -7588,13 +7588,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an event
 ///
 /// `<p>`Retrieves the details of an event if it was created in the last 30 days. Supply the unique identifier of the event, which you might have received in a webhook.`</p>`
 ///
 /// `GET /v1/events/{id}`
-Future<ApiResult<Event, DeleteAccountsAccountError>> getEventsId({required String id, List<String>? expand, GetEventsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Event, DeleteAccountsAccountError>> getEventsId({required String id, List<String>? expand, GetEventsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -7623,7 +7623,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all exchange rates
 ///
 /// `<p>``[Deprecated]` The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
@@ -7631,7 +7631,7 @@ return await execute(
 /// `<p>`Returns a list of objects that contain the rates at which foreign currencies are converted to one another. Only shows the currencies for which Stripe supports.`</p>`
 ///
 /// `GET /v1/exchange_rates`
-Future<ApiResult<GetExchangeRatesResponse, DeleteAccountsAccountError>> getExchangeRates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetExchangeRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetExchangeRatesResponse, DeleteAccountsAccountError>> getExchangeRates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetExchangeRatesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -7669,7 +7669,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an exchange rate
 ///
 /// `<p>``[Deprecated]` The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
@@ -7677,7 +7677,7 @@ return await execute(
 /// `<p>`Retrieves the exchange rates from the given currency to every supported currency.`</p>`
 ///
 /// `GET /v1/exchange_rates/{rate_id}`
-Future<ApiResult<ExchangeRate, DeleteAccountsAccountError>> getExchangeRatesRateId({required String rateId, List<String>? expand, GetExchangeRatesRateIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ExchangeRate, DeleteAccountsAccountError>> getExchangeRatesRateId({required String rateId, List<String>? expand, GetExchangeRatesRateIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -7706,7 +7706,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
 /// details are not editable by design.`</p>`
@@ -7717,7 +7717,7 @@ return await execute(
 /// arguments or changes.`</p>`
 ///
 /// `POST /v1/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postExternalAccountsId({required String id, PostExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postExternalAccountsId({required String id, PostExternalAccountsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7768,13 +7768,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all file links
 ///
 /// `<p>`Returns a list of file links.`</p>`
 ///
 /// `GET /v1/file_links`
-Future<ApiResult<GetFileLinksResponse, DeleteAccountsAccountError>> getFileLinks({GetFileLinksCreated? created, String? endingBefore, List<String>? expand, bool? expired, String? file, int? limit, String? startingAfter, GetFileLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFileLinksResponse, DeleteAccountsAccountError>> getFileLinks({GetFileLinksCreated? created, String? endingBefore, List<String>? expand, bool? expired, String? file, int? limit, String? startingAfter, GetFileLinksRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -7821,13 +7821,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a file link
 ///
 /// `<p>`Creates a new file link object.`</p>`
 ///
 /// `POST /v1/file_links`
-Future<ApiResult<FileLink, DeleteAccountsAccountError>> postFileLinks({required PostFileLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FileLink, DeleteAccountsAccountError>> postFileLinks({required PostFileLinksRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7853,13 +7853,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a file link
 ///
 /// `<p>`Retrieves the file link with the given ID.`</p>`
 ///
 /// `GET /v1/file_links/{link}`
-Future<ApiResult<FileLink, DeleteAccountsAccountError>> getFileLinksLink({required String link, List<String>? expand, GetFileLinksLinkRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FileLink, DeleteAccountsAccountError>> getFileLinksLink({required String link, List<String>? expand, GetFileLinksLinkRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -7888,13 +7888,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a file link
 ///
 /// `<p>`Updates an existing file link object. Expired links can no longer be updated.`</p>`
 ///
 /// `POST /v1/file_links/{link}`
-Future<ApiResult<FileLink, DeleteAccountsAccountError>> postFileLinksLink({required String link, PostFileLinksLinkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FileLink, DeleteAccountsAccountError>> postFileLinksLink({required String link, PostFileLinksLinkRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7919,13 +7919,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all files
 ///
 /// `<p>`Returns a list of the files that your account has access to. Stripe sorts and returns the files by their creation dates, placing the most recently created files at the top.`</p>`
 ///
 /// `GET /v1/files`
-Future<ApiResult<GetFilesResponse, DeleteAccountsAccountError>> getFiles({GetFilesCreated? created, String? endingBefore, List<String>? expand, int? limit, GetFilesPurpose? purpose, String? startingAfter, GetFilesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFilesResponse, DeleteAccountsAccountError>> getFiles({GetFilesCreated? created, String? endingBefore, List<String>? expand, int? limit, GetFilesPurpose? purpose, String? startingAfter, GetFilesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -7969,7 +7969,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a file
 ///
 /// `<p>`To upload a file to Stripe, you need to send a request of type `<code>`multipart/form-data`</code>`. Include the file you want to upload in the request, and the parameters for creating a file.`</p>`
@@ -7977,7 +7977,7 @@ return await execute(
 /// `<p>`All of Stripe’s officially supported Client libraries support sending `<code>`multipart/form-data`</code>`.`</p>`
 ///
 /// `POST /v1/files`
-Future<ApiResult<File, DeleteAccountsAccountError>> postFiles({required PostFilesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<File, DeleteAccountsAccountError>> postFiles({required PostFilesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -8002,13 +8002,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a file
 ///
 /// `<p>`Retrieves the details of an existing file object. After you supply a unique file ID, Stripe returns the corresponding file object. Learn how to `<a href="/docs/file-upload#download-file-contents">`access file contents`</a>`.`</p>`
 ///
 /// `GET /v1/files/{file}`
-Future<ApiResult<File, DeleteAccountsAccountError>> getFilesFile({required String file, List<String>? expand, GetFilesFileRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<File, DeleteAccountsAccountError>> getFilesFile({required String file, List<String>? expand, GetFilesFileRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -8037,13 +8037,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List Accounts
 ///
 /// `<p>`Returns a list of Financial Connections `<code>`Account`</code>` objects.`</p>`
 ///
 /// `GET /v1/financial_connections/accounts`
-Future<ApiResult<GetFinancialConnectionsAccountsResponse, DeleteAccountsAccountError>> getFinancialConnectionsAccounts({GetFinancialConnectionsAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetFinancialConnectionsAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFinancialConnectionsAccountsResponse, DeleteAccountsAccountError>> getFinancialConnectionsAccounts({GetFinancialConnectionsAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetFinancialConnectionsAccountsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountHolder != null) {
 if (accountHolder.account case final account$?) { queryParameters['account_holder[account]'] = account$; }
@@ -8089,13 +8089,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an Account
 ///
 /// `<p>`Retrieves the details of an Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `GET /v1/financial_connections/accounts/{account}`
-Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> getFinancialConnectionsAccountsAccount({required String account, List<String>? expand, GetFinancialConnectionsAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> getFinancialConnectionsAccountsAccount({required String account, List<String>? expand, GetFinancialConnectionsAccountsAccountRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -8124,13 +8124,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Disconnect an Account
 ///
 /// `<p>`Disables your access to a Financial Connections `<code>`Account`</code>`. You will no longer be able to access data associated with the account (e.g. balances, transactions).`</p>`
 ///
 /// `POST /v1/financial_connections/accounts/{account}/disconnect`
-Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountDisconnect({required String account, PostFinancialConnectionsAccountsAccountDisconnectRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountDisconnect({required String account, PostFinancialConnectionsAccountsAccountDisconnectRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8151,13 +8151,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List Account Owners
 ///
 /// `<p>`Lists all owners for a given `<code>`Account`</code>``</p>`
 ///
 /// `GET /v1/financial_connections/accounts/{account}/owners`
-Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, DeleteAccountsAccountError>> getFinancialConnectionsAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, DeleteAccountsAccountError>> getFinancialConnectionsAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsAccountsAccountOwnersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8196,13 +8196,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Refresh Account data
 ///
 /// `<p>`Refreshes the data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `POST /v1/financial_connections/accounts/{account}/refresh`
-Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountRefresh({required String account, required PostFinancialConnectionsAccountsAccountRefreshRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountRefresh({required String account, required PostFinancialConnectionsAccountsAccountRefreshRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8224,13 +8224,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Subscribe to data refreshes for an Account
 ///
 /// `<p>`Subscribes to periodic refreshes of data associated with a Financial Connections `<code>`Account`</code>`. When the account status is active, data is typically refreshed once a day.`</p>`
 ///
 /// `POST /v1/financial_connections/accounts/{account}/subscribe`
-Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountSubscribe({required String account, required PostFinancialConnectionsAccountsAccountSubscribeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountSubscribe({required String account, required PostFinancialConnectionsAccountsAccountSubscribeRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8252,13 +8252,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Unsubscribe from data refreshes for an Account
 ///
 /// `<p>`Unsubscribes from periodic refreshes of data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `POST /v1/financial_connections/accounts/{account}/unsubscribe`
-Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountUnsubscribe({required String account, required PostFinancialConnectionsAccountsAccountUnsubscribeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountUnsubscribe({required String account, required PostFinancialConnectionsAccountsAccountUnsubscribeRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8280,13 +8280,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Session
 ///
 /// `<p>`To launch the Financial Connections authorization flow, create a `<code>`Session`</code>`. The session’s `<code>`client_secret`</code>` can be used to launch the flow using Stripe.js.`</p>`
 ///
 /// `POST /v1/financial_connections/sessions`
-Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> postFinancialConnectionsSessions({required PostFinancialConnectionsSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> postFinancialConnectionsSessions({required PostFinancialConnectionsSessionsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8315,13 +8315,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Session
 ///
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Session`</code>``</p>`
 ///
 /// `GET /v1/financial_connections/sessions/{session}`
-Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> getFinancialConnectionsSessionsSession({required String session, List<String>? expand, GetFinancialConnectionsSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> getFinancialConnectionsSessionsSession({required String session, List<String>? expand, GetFinancialConnectionsSessionsSessionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -8350,13 +8350,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List Transactions
 ///
 /// `<p>`Returns a list of Financial Connections `<code>`Transaction`</code>` objects.`</p>`
 ///
 /// `GET /v1/financial_connections/transactions`
-Future<ApiResult<GetFinancialConnectionsTransactionsResponse, DeleteAccountsAccountError>> getFinancialConnectionsTransactions({required String account, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsTransactionsTransactedAt? transactedAt, GetFinancialConnectionsTransactionsTransactionRefresh? transactionRefresh, GetFinancialConnectionsTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFinancialConnectionsTransactionsResponse, DeleteAccountsAccountError>> getFinancialConnectionsTransactions({required String account, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsTransactionsTransactedAt? transactedAt, GetFinancialConnectionsTransactionsTransactionRefresh? transactionRefresh, GetFinancialConnectionsTransactionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['account'] = account;
 if (endingBefore != null) {
@@ -8401,13 +8401,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Transaction
 ///
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Transaction`</code>``</p>`
 ///
 /// `GET /v1/financial_connections/transactions/{transaction}`
-Future<ApiResult<FinancialConnectionsTransaction, DeleteAccountsAccountError>> getFinancialConnectionsTransactionsTransaction({required String transaction, List<String>? expand, GetFinancialConnectionsTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsTransaction, DeleteAccountsAccountError>> getFinancialConnectionsTransactionsTransaction({required String transaction, List<String>? expand, GetFinancialConnectionsTransactionsTransactionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -8436,13 +8436,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all ForwardingRequests
 ///
 /// `<p>`Lists all ForwardingRequest objects.`</p>`
 ///
 /// `GET /v1/forwarding/requests`
-Future<ApiResult<GetForwardingRequestsResponse, DeleteAccountsAccountError>> getForwardingRequests({GetForwardingRequestsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetForwardingRequestsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetForwardingRequestsResponse, DeleteAccountsAccountError>> getForwardingRequests({GetForwardingRequestsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetForwardingRequestsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 if (created.gt case final gt$?) { queryParameters['created[gt]'] = gt$.toString(); }
@@ -8486,13 +8486,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a ForwardingRequest
 ///
 /// `<p>`Creates a ForwardingRequest object.`</p>`
 ///
 /// `POST /v1/forwarding/requests`
-Future<ApiResult<ForwardingRequest, DeleteAccountsAccountError>> postForwardingRequests({required PostForwardingRequestsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ForwardingRequest, DeleteAccountsAccountError>> postForwardingRequests({required PostForwardingRequestsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8520,13 +8520,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a ForwardingRequest
 ///
 /// `<p>`Retrieves a ForwardingRequest object.`</p>`
 ///
 /// `GET /v1/forwarding/requests/{id}`
-Future<ApiResult<ForwardingRequest, DeleteAccountsAccountError>> getForwardingRequestsId({required String id, List<String>? expand, GetForwardingRequestsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ForwardingRequest, DeleteAccountsAccountError>> getForwardingRequestsId({required String id, List<String>? expand, GetForwardingRequestsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -8555,13 +8555,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List VerificationReports
 ///
 /// `<p>`List all verification reports.`</p>`
 ///
 /// `GET /v1/identity/verification_reports`
-Future<ApiResult<GetIdentityVerificationReportsResponse, DeleteAccountsAccountError>> getIdentityVerificationReports({String? clientReferenceId, GetIdentityVerificationReportsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIdentityVerificationReportsType? type, String? verificationSession, GetIdentityVerificationReportsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIdentityVerificationReportsResponse, DeleteAccountsAccountError>> getIdentityVerificationReports({String? clientReferenceId, GetIdentityVerificationReportsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIdentityVerificationReportsType? type, String? verificationSession, GetIdentityVerificationReportsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientReferenceId != null) {
   queryParameters['client_reference_id'] = clientReferenceId;
@@ -8611,13 +8611,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a VerificationReport
 ///
 /// `<p>`Retrieves an existing VerificationReport`</p>`
 ///
 /// `GET /v1/identity/verification_reports/{report}`
-Future<ApiResult<IdentityVerificationReport, DeleteAccountsAccountError>> getIdentityVerificationReportsReport({required String report, List<String>? expand, GetIdentityVerificationReportsReportRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IdentityVerificationReport, DeleteAccountsAccountError>> getIdentityVerificationReportsReport({required String report, List<String>? expand, GetIdentityVerificationReportsReportRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -8646,13 +8646,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List VerificationSessions
 ///
 /// `<p>`Returns a list of VerificationSessions`</p>`
 ///
 /// `GET /v1/identity/verification_sessions`
-Future<ApiResult<GetIdentityVerificationSessionsResponse, DeleteAccountsAccountError>> getIdentityVerificationSessions({String? clientReferenceId, GetIdentityVerificationSessionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? relatedCustomer, String? relatedCustomerAccount, String? startingAfter, GetIdentityVerificationSessionsStatus? status, GetIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIdentityVerificationSessionsResponse, DeleteAccountsAccountError>> getIdentityVerificationSessions({String? clientReferenceId, GetIdentityVerificationSessionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? relatedCustomer, String? relatedCustomerAccount, String? startingAfter, GetIdentityVerificationSessionsStatus? status, GetIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientReferenceId != null) {
   queryParameters['client_reference_id'] = clientReferenceId;
@@ -8705,7 +8705,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a VerificationSession
 ///
 /// `<p>`Creates a VerificationSession object.`</p>`
@@ -8717,7 +8717,7 @@ return await execute(
 /// `<p>`Related guide: `<a href="/docs/identity/verify-identity-documents">`Verify your users’ identity documents`</a>``</p>`
 ///
 /// `POST /v1/identity/verification_sessions`
-Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessions({PostIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessions({PostIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8758,7 +8758,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a VerificationSession
 ///
 /// `<p>`Retrieves the details of a VerificationSession that was previously created.`</p>`
@@ -8767,7 +8767,7 @@ return await execute(
 /// `<code>`client_secret`</code>` or `<code>`url`</code>` to allow re-submission.`</p>`
 ///
 /// `GET /v1/identity/verification_sessions/{session}`
-Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> getIdentityVerificationSessionsSession({required String session, List<String>? expand, GetIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> getIdentityVerificationSessionsSession({required String session, List<String>? expand, GetIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -8796,7 +8796,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a VerificationSession
 ///
 /// `<p>`Updates a VerificationSession object.`</p>`
@@ -8805,7 +8805,7 @@ return await execute(
 /// verification check and options.`</p>`
 ///
 /// `POST /v1/identity/verification_sessions/{session}`
-Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSession({required String session, PostIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSession({required String session, PostIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8834,7 +8834,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a VerificationSession
 ///
 /// `<p>`A VerificationSession object can be canceled when it is in `<code>`requires_input`</code>` `<a href="/docs/identity/how-sessions-work">`status`</a>`.`</p>`
@@ -8842,7 +8842,7 @@ return await execute(
 /// `<p>`Once canceled, future submission attempts are disabled. This cannot be undone. `<a href="/docs/identity/verification-sessions#cancel">`Learn more`</a>`.`</p>`
 ///
 /// `POST /v1/identity/verification_sessions/{session}/cancel`
-Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSessionCancel({required String session, PostIdentityVerificationSessionsSessionCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSessionCancel({required String session, PostIdentityVerificationSessionsSessionCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8863,7 +8863,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Redact a VerificationSession
 ///
 /// `<p>`Redact a VerificationSession to remove all collected information from Stripe. This will redact
@@ -8887,7 +8887,7 @@ return await execute(
 /// `<p>``<a href="/docs/identity/verification-sessions#redact">`Learn more`</a>`.`</p>`
 ///
 /// `POST /v1/identity/verification_sessions/{session}/redact`
-Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSessionRedact({required String session, PostIdentityVerificationSessionsSessionRedactRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSessionRedact({required String session, PostIdentityVerificationSessionsSessionRedactRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8908,13 +8908,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all payments for an invoice
 ///
 /// `<p>`When retrieving an invoice, there is an includable payments property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of payments.`</p>`
 ///
 /// `GET /v1/invoice_payments`
-Future<ApiResult<GetInvoicePaymentsResponse, DeleteAccountsAccountError>> getInvoicePayments({GetInvoicePaymentsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, GetInvoicePaymentsPayment? payment, String? startingAfter, GetInvoicePaymentsStatus? status, GetInvoicePaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicePaymentsResponse, DeleteAccountsAccountError>> getInvoicePayments({GetInvoicePaymentsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, GetInvoicePaymentsPayment? payment, String? startingAfter, GetInvoicePaymentsStatus? status, GetInvoicePaymentsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -8966,13 +8966,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an InvoicePayment
 ///
 /// `<p>`Retrieves the invoice payment with the given ID.`</p>`
 ///
 /// `GET /v1/invoice_payments/{invoice_payment}`
-Future<ApiResult<InvoicePayment, DeleteAccountsAccountError>> getInvoicePaymentsInvoicePayment({required String invoicePayment, List<String>? expand, GetInvoicePaymentsInvoicePaymentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<InvoicePayment, DeleteAccountsAccountError>> getInvoicePaymentsInvoicePayment({required String invoicePayment, List<String>? expand, GetInvoicePaymentsInvoicePaymentRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -9001,13 +9001,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all invoice rendering templates
 ///
 /// `<p>`List all templates, ordered by creation date, with the most recently created template appearing first.`</p>`
 ///
 /// `GET /v1/invoice_rendering_templates`
-Future<ApiResult<GetInvoiceRenderingTemplatesResponse, DeleteAccountsAccountError>> getInvoiceRenderingTemplates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoiceRenderingTemplatesStatus? status, GetInvoiceRenderingTemplatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoiceRenderingTemplatesResponse, DeleteAccountsAccountError>> getInvoiceRenderingTemplates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoiceRenderingTemplatesStatus? status, GetInvoiceRenderingTemplatesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -9048,13 +9048,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an invoice rendering template
 ///
 /// `<p>`Retrieves an invoice rendering template with the given ID. It by default returns the latest version of the template. Optionally, specify a version to see previous versions.`</p>`
 ///
 /// `GET /v1/invoice_rendering_templates/{template}`
-Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> getInvoiceRenderingTemplatesTemplate({required String template, List<String>? expand, int? version, GetInvoiceRenderingTemplatesTemplateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> getInvoiceRenderingTemplatesTemplate({required String template, List<String>? expand, int? version, GetInvoiceRenderingTemplatesTemplateRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -9086,13 +9086,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Archive an invoice rendering template
 ///
 /// `<p>`Updates the status of an invoice rendering template to ‘archived’ so no new Stripe objects (customers, invoices, etc.) can reference it. The template can also no longer be updated. However, if the template is already set on a Stripe object, it will continue to be applied on invoices generated by it.`</p>`
 ///
 /// `POST /v1/invoice_rendering_templates/{template}/archive`
-Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> postInvoiceRenderingTemplatesTemplateArchive({required String template, PostInvoiceRenderingTemplatesTemplateArchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> postInvoiceRenderingTemplatesTemplateArchive({required String template, PostInvoiceRenderingTemplatesTemplateArchiveRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9113,13 +9113,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Unarchive an invoice rendering template
 ///
 /// `<p>`Unarchive an invoice rendering template so it can be used on new Stripe objects again.`</p>`
 ///
 /// `POST /v1/invoice_rendering_templates/{template}/unarchive`
-Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> postInvoiceRenderingTemplatesTemplateUnarchive({required String template, PostInvoiceRenderingTemplatesTemplateUnarchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> postInvoiceRenderingTemplatesTemplateUnarchive({required String template, PostInvoiceRenderingTemplatesTemplateUnarchiveRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9140,13 +9140,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all invoice items
 ///
 /// `<p>`Returns a list of your invoice items. Invoice items are returned sorted by creation date, with the most recently created invoice items appearing first.`</p>`
 ///
 /// `GET /v1/invoiceitems`
-Future<ApiResult<GetInvoiceitemsResponse, DeleteAccountsAccountError>> getInvoiceitems({GetInvoiceitemsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, bool? pending, String? startingAfter, GetInvoiceitemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoiceitemsResponse, DeleteAccountsAccountError>> getInvoiceitems({GetInvoiceitemsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, bool? pending, String? startingAfter, GetInvoiceitemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -9199,13 +9199,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an invoice item
 ///
 /// `<p>`Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is specified, the item will be on the next invoice created for the customer specified.`</p>`
 ///
 /// `POST /v1/invoiceitems`
-Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> postInvoiceitems({PostInvoiceitemsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> postInvoiceitems({PostInvoiceitemsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9262,13 +9262,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an invoice item
 ///
 /// `<p>`Retrieves the invoice item with the given ID.`</p>`
 ///
 /// `GET /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> getInvoiceitemsInvoiceitem({required String invoiceitem, List<String>? expand, GetInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> getInvoiceitemsInvoiceitem({required String invoiceitem, List<String>? expand, GetInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -9297,13 +9297,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an invoice item
 ///
 /// `<p>`Updates the amount or description of an invoice item on an upcoming invoice. Updating an invoice item is only possible before the invoice it’s attached to is closed.`</p>`
 ///
 /// `POST /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> postInvoiceitemsInvoiceitem({required String invoiceitem, PostInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> postInvoiceitemsInvoiceitem({required String invoiceitem, PostInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9350,13 +9350,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete an invoice item
 ///
 /// `<p>`Deletes an invoice item, removing it from an invoice. Deleting invoice items is only possible when they’re not attached to invoices, or if it’s attached to a draft invoice.`</p>`
 ///
 /// `DELETE /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<DeletedInvoiceitem, DeleteAccountsAccountError>> deleteInvoiceitemsInvoiceitem({required String invoiceitem, DeleteInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedInvoiceitem, DeleteAccountsAccountError>> deleteInvoiceitemsInvoiceitem({required String invoiceitem, DeleteInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9375,13 +9375,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all invoices
 ///
 /// `<p>`You can list all invoices, or list the invoices for a specific customer. The invoices are returned sorted by creation date, with the most recently created invoices appearing first.`</p>`
 ///
 /// `GET /v1/invoices`
-Future<ApiResult<GetInvoicesResponse, DeleteAccountsAccountError>> getInvoices({GetInvoicesCollectionMethod? collectionMethod, GetInvoicesCreated? created, String? customer, String? customerAccount, GetInvoicesDueDate? dueDate, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesStatus? status, String? subscription, GetInvoicesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicesResponse, DeleteAccountsAccountError>> getInvoices({GetInvoicesCollectionMethod? collectionMethod, GetInvoicesCreated? created, String? customer, String? customerAccount, GetInvoicesDueDate? dueDate, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesStatus? status, String? subscription, GetInvoicesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (collectionMethod != null) {
   queryParameters['collection_method'] = collectionMethod.toJson();
@@ -9440,13 +9440,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an invoice
 ///
 /// `<p>`This endpoint creates a draft invoice for a given customer. The invoice remains a draft until you `<a href="#finalize_invoice">`finalize`</a>` the invoice, which allows you to `<a href="/api/invoices/pay">`pay`</a>` or `<a href="/api/invoices/send">`send`</a>` the invoice to your customers.`</p>`
 ///
 /// `POST /v1/invoices`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoices({PostInvoicesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoices({PostInvoicesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9531,7 +9531,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a preview invoice
 ///
 /// `<p>`At any time, you can preview the upcoming invoice for a subscription or subscription schedule. This will show you all the charges that are pending, including subscription renewal charges, invoice item charges, etc. It will also show you any discounts that are applicable to the invoice.`</p>`
@@ -9545,7 +9545,7 @@ return await execute(
 /// `<p>`Note: Currency conversion calculations use the latest exchange rates. Exchange rates may vary between the time of the preview and the time of the actual invoice creation. `<a href="https://docs.stripe.com/currencies/conversions">`Learn more`</a>``</p>`
 ///
 /// `POST /v1/invoices/create_preview`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesCreatePreview({PostInvoicesCreatePreviewRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesCreatePreview({PostInvoicesCreatePreviewRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9594,7 +9594,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Search invoices
 ///
 /// `<p>`Search for invoices you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -9603,7 +9603,7 @@ return await execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/invoices/search`
-Future<ApiResult<GetInvoicesSearchResponse, DeleteAccountsAccountError>> getInvoicesSearch({required String query, List<String>? expand, int? limit, String? page, GetInvoicesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicesSearchResponse, DeleteAccountsAccountError>> getInvoicesSearch({required String query, List<String>? expand, int? limit, String? page, GetInvoicesSearchRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -9639,13 +9639,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an invoice
 ///
 /// `<p>`Retrieves the invoice with the given ID.`</p>`
 ///
 /// `GET /v1/invoices/{invoice}`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> getInvoicesInvoice({required String invoice, List<String>? expand, GetInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> getInvoicesInvoice({required String invoice, List<String>? expand, GetInvoicesInvoiceRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -9674,7 +9674,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an invoice
 ///
 /// `<p>`Draft invoices are fully editable. Once an invoice is `<a href="/docs/billing/invoices/workflow#finalized">`finalized`</a>`,
@@ -9685,7 +9685,7 @@ return await execute(
 /// `<code>`auto_advance=false`</code>`.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoice({required String invoice, PostInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoice({required String invoice, PostInvoicesInvoiceRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9758,13 +9758,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a draft invoice
 ///
 /// `<p>`Permanently deletes a one-off invoice draft. This cannot be undone. Attempts to delete invoices that are no longer in a draft state will fail; once an invoice has been finalized or if an invoice is for a subscription, it must be `<a href="#void_invoice">`voided`</a>`.`</p>`
 ///
 /// `DELETE /v1/invoices/{invoice}`
-Future<ApiResult<DeletedInvoice, DeleteAccountsAccountError>> deleteInvoicesInvoice({required String invoice, DeleteInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedInvoice, DeleteAccountsAccountError>> deleteInvoicesInvoice({required String invoice, DeleteInvoicesInvoiceRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9783,13 +9783,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Bulk add invoice line items
 ///
 /// `<p>`Adds multiple line items to an invoice. This is only possible when an invoice is still a draft.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/add_lines`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceAddLines({required String invoice, required PostInvoicesInvoiceAddLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceAddLines({required String invoice, required PostInvoicesInvoiceAddLinesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9813,7 +9813,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Attach a payment to an Invoice
 ///
 /// `<p>`Attaches a PaymentIntent or an Out of Band Payment to the invoice, adding it to the list of `<code>`payments`</code>`.`</p>`
@@ -9828,7 +9828,7 @@ return await execute(
 /// `<p>`See: `<a href="/docs/invoicing/partial-payments">`Partial payments`</a>` to learn more.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/attach_payment`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceAttachPayment({required String invoice, PostInvoicesInvoiceAttachPaymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceAttachPayment({required String invoice, PostInvoicesInvoiceAttachPaymentRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9853,13 +9853,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Finalize an invoice
 ///
 /// `<p>`Stripe automatically finalizes drafts before sending and attempting payment on invoices. However, if you’d like to finalize a draft invoice manually, you can do so using this method.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/finalize`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceFinalize({required String invoice, PostInvoicesInvoiceFinalizeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceFinalize({required String invoice, PostInvoicesInvoiceFinalizeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9882,13 +9882,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an invoice's line items
 ///
 /// `<p>`When retrieving an invoice, you’ll get a `<strong>`lines`</strong>` property containing the total count of line items and the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/invoices/{invoice}/lines`
-Future<ApiResult<GetInvoicesInvoiceLinesResponse, DeleteAccountsAccountError>> getInvoicesInvoiceLines({required String invoice, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesInvoiceLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicesInvoiceLinesResponse, DeleteAccountsAccountError>> getInvoicesInvoiceLines({required String invoice, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesInvoiceLinesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -9926,7 +9926,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an invoice's line item
 ///
 /// `<p>`Updates an invoice’s line item. Some fields, such as `<code>`tax_amounts`</code>`, only live on the invoice line item,
@@ -9935,7 +9935,7 @@ return await execute(
 /// Updating an invoice’s line item is only possible before the invoice is finalized.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/lines/{line_item_id}`
-Future<ApiResult<LineItem, DeleteAccountsAccountError>> postInvoicesInvoiceLinesLineItemId({required String invoice, required String lineItemId, PostInvoicesInvoiceLinesLineItemIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LineItem, DeleteAccountsAccountError>> postInvoicesInvoiceLinesLineItemId({required String invoice, required String lineItemId, PostInvoicesInvoiceLinesLineItemIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9978,13 +9978,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Mark an invoice as uncollectible
 ///
 /// `<p>`Marking an invoice as uncollectible is useful for keeping track of bad debts that can be written off for accounting purposes.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/mark_uncollectible`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceMarkUncollectible({required String invoice, PostInvoicesInvoiceMarkUncollectibleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceMarkUncollectible({required String invoice, PostInvoicesInvoiceMarkUncollectibleRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10005,13 +10005,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Pay an invoice
 ///
 /// `<p>`Stripe automatically creates and then attempts to collect payment on invoices for customers on subscriptions according to your `<a href="https://dashboard.stripe.com/account/billing/automatic">`subscriptions settings`</a>`. However, if you’d like to attempt payment on an invoice out of the normal collection schedule or for some other reason, you can do so.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/pay`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoicePay({required String invoice, PostInvoicesInvoicePayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoicePay({required String invoice, PostInvoicesInvoicePayRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10044,13 +10044,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Bulk remove invoice line items
 ///
 /// `<p>`Removes multiple line items from an invoice. This is only possible when an invoice is still a draft.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/remove_lines`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceRemoveLines({required String invoice, required PostInvoicesInvoiceRemoveLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceRemoveLines({required String invoice, required PostInvoicesInvoiceRemoveLinesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10074,7 +10074,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Send an invoice for manual payment
 ///
 /// `<p>`Stripe will automatically send invoices to customers according to your `<a href="https://dashboard.stripe.com/account/billing/automatic">`subscriptions settings`</a>`. However, if you’d like to manually send an invoice to your customer out of the normal schedule, you can do so. When sending invoices that have already been paid, there will be no reference to the payment in the email.`</p>`
@@ -10082,7 +10082,7 @@ return await execute(
 /// `<p>`Requests made in test-mode result in no emails being sent, despite sending an `<code>`invoice.sent`</code>` event.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/send`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceSend({required String invoice, PostInvoicesInvoiceSendRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceSend({required String invoice, PostInvoicesInvoiceSendRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10103,13 +10103,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Bulk update invoice line items
 ///
 /// `<p>`Updates multiple line items on an invoice. This is only possible when an invoice is still a draft.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/update_lines`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceUpdateLines({required String invoice, required PostInvoicesInvoiceUpdateLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceUpdateLines({required String invoice, required PostInvoicesInvoiceUpdateLinesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10133,7 +10133,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Void an invoice
 ///
 /// `<p>`Mark a finalized invoice as void. This cannot be undone. Voiding an invoice is similar to `<a href="#delete_invoice">`deletion`</a>`, however it only applies to finalized invoices and maintains a papertrail where the invoice can still be found.`</p>`
@@ -10141,7 +10141,7 @@ return await execute(
 /// `<p>`Consult with local regulations to determine whether and how an invoice might be amended, canceled, or voided in the jurisdiction you’re doing business in. You might need to `<a href="#create_invoice">`issue another invoice`</a>` or `<a href="#create_credit_note">`credit note`</a>` instead. Stripe recommends that you consult with your legal counsel for advice specific to your business.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/void`
-Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceVoid({required String invoice, PostInvoicesInvoiceVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceVoid({required String invoice, PostInvoicesInvoiceVoidRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10162,13 +10162,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all authorizations
 ///
 /// `<p>`Returns a list of Issuing `<code>`Authorization`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/authorizations`
-Future<ApiResult<GetIssuingAuthorizationsResponse, DeleteAccountsAccountError>> getIssuingAuthorizations({String? card, String? cardholder, GetIssuingAuthorizationsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingAuthorizationsStatus? status, GetIssuingAuthorizationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingAuthorizationsResponse, DeleteAccountsAccountError>> getIssuingAuthorizations({String? card, String? cardholder, GetIssuingAuthorizationsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingAuthorizationsStatus? status, GetIssuingAuthorizationsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (card != null) {
   queryParameters['card'] = card;
@@ -10218,13 +10218,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an authorization
 ///
 /// `<p>`Retrieves an Issuing `<code>`Authorization`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/authorizations/{authorization}`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> getIssuingAuthorizationsAuthorization({required String authorization, List<String>? expand, GetIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> getIssuingAuthorizationsAuthorization({required String authorization, List<String>? expand, GetIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -10253,13 +10253,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an authorization
 ///
 /// `<p>`Updates the specified Issuing `<code>`Authorization`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/authorizations/{authorization}`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postIssuingAuthorizationsAuthorization({required String authorization, PostIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postIssuingAuthorizationsAuthorization({required String authorization, PostIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10282,13 +10282,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all cardholders
 ///
 /// `<p>`Returns a list of Issuing `<code>`Cardholder`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/cardholders`
-Future<ApiResult<GetIssuingCardholdersResponse, DeleteAccountsAccountError>> getIssuingCardholders({GetIssuingCardholdersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? phoneNumber, String? startingAfter, GetIssuingCardholdersStatus? status, GetIssuingCardholdersType? type, GetIssuingCardholdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingCardholdersResponse, DeleteAccountsAccountError>> getIssuingCardholders({GetIssuingCardholdersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? phoneNumber, String? startingAfter, GetIssuingCardholdersStatus? status, GetIssuingCardholdersType? type, GetIssuingCardholdersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -10341,13 +10341,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a cardholder
 ///
 /// `<p>`Creates a new Issuing `<code>`Cardholder`</code>` object that can be issued cards.`</p>`
 ///
 /// `POST /v1/issuing/cardholders`
-Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> postIssuingCardholders({required PostIssuingCardholdersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> postIssuingCardholders({required PostIssuingCardholdersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10388,13 +10388,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a cardholder
 ///
 /// `<p>`Retrieves an Issuing `<code>`Cardholder`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/cardholders/{cardholder}`
-Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> getIssuingCardholdersCardholder({required String cardholder, List<String>? expand, GetIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> getIssuingCardholdersCardholder({required String cardholder, List<String>? expand, GetIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -10423,13 +10423,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a cardholder
 ///
 /// `<p>`Updates the specified Issuing `<code>`Cardholder`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/cardholders/{cardholder}`
-Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> postIssuingCardholdersCardholder({required String cardholder, PostIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> postIssuingCardholdersCardholder({required String cardholder, PostIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10468,13 +10468,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all cards
 ///
 /// `<p>`Returns a list of Issuing `<code>`Card`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/cards`
-Future<ApiResult<GetIssuingCardsResponse, DeleteAccountsAccountError>> getIssuingCards({String? cardholder, GetIssuingCardsCreated? created, String? endingBefore, int? expMonth, int? expYear, List<String>? expand, String? last4, int? limit, String? personalizationDesign, String? startingAfter, GetIssuingCardsStatus? status, GetIssuingCardsType? type, GetIssuingCardsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingCardsResponse, DeleteAccountsAccountError>> getIssuingCards({String? cardholder, GetIssuingCardsCreated? created, String? endingBefore, int? expMonth, int? expYear, List<String>? expand, String? last4, int? limit, String? personalizationDesign, String? startingAfter, GetIssuingCardsStatus? status, GetIssuingCardsType? type, GetIssuingCardsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cardholder != null) {
   queryParameters['cardholder'] = cardholder;
@@ -10536,13 +10536,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a card
 ///
 /// `<p>`Creates an Issuing `<code>`Card`</code>` object.`</p>`
 ///
 /// `POST /v1/issuing/cards`
-Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postIssuingCards({required PostIssuingCardsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postIssuingCards({required PostIssuingCardsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10591,13 +10591,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a card
 ///
 /// `<p>`Retrieves an Issuing `<code>`Card`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/cards/{card}`
-Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> getIssuingCardsCard({required String card, List<String>? expand, GetIssuingCardsCardRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> getIssuingCardsCard({required String card, List<String>? expand, GetIssuingCardsCardRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -10626,13 +10626,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a card
 ///
 /// `<p>`Updates the specified Issuing `<code>`Card`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/cards/{card}`
-Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postIssuingCardsCard({required String card, PostIssuingCardsCardRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postIssuingCardsCard({required String card, PostIssuingCardsCardRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10667,13 +10667,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all disputes
 ///
 /// `<p>`Returns a list of Issuing `<code>`Dispute`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/disputes`
-Future<ApiResult<GetIssuingDisputesResponse, DeleteAccountsAccountError>> getIssuingDisputes({GetIssuingDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingDisputesStatus? status, String? transaction, GetIssuingDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingDisputesResponse, DeleteAccountsAccountError>> getIssuingDisputes({GetIssuingDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingDisputesStatus? status, String? transaction, GetIssuingDisputesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -10720,13 +10720,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a dispute
 ///
 /// `<p>`Creates an Issuing `<code>`Dispute`</code>` object. Individual pieces of evidence within the `<code>`evidence`</code>` object are optional at this point. Stripe only validates that required evidence is present during submission. Refer to `<a href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">`Dispute reasons and evidence`</a>` for more details about evidence requirements.`</p>`
 ///
 /// `POST /v1/issuing/disputes`
-Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputes({PostIssuingDisputesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputes({PostIssuingDisputesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10757,13 +10757,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a dispute
 ///
 /// `<p>`Retrieves an Issuing `<code>`Dispute`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/disputes/{dispute}`
-Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> getIssuingDisputesDispute({required String dispute, List<String>? expand, GetIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> getIssuingDisputesDispute({required String dispute, List<String>? expand, GetIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -10792,13 +10792,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a dispute
 ///
 /// `<p>`Updates the specified Issuing `<code>`Dispute`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Properties on the `<code>`evidence`</code>` object can be unset by passing in an empty string.`</p>`
 ///
 /// `POST /v1/issuing/disputes/{dispute}`
-Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputesDispute({required String dispute, PostIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputesDispute({required String dispute, PostIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10825,13 +10825,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Submit a dispute
 ///
 /// `<p>`Submits an Issuing `<code>`Dispute`</code>` to the card network. Stripe validates that all evidence fields required for the dispute’s reason are present. For more details, see `<a href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">`Dispute reasons and evidence`</a>`.`</p>`
 ///
 /// `POST /v1/issuing/disputes/{dispute}/submit`
-Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputesDisputeSubmit({required String dispute, PostIssuingDisputesDisputeSubmitRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputesDisputeSubmit({required String dispute, PostIssuingDisputesDisputeSubmitRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10854,13 +10854,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all personalization designs
 ///
 /// `<p>`Returns a list of personalization design objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/personalization_designs`
-Future<ApiResult<GetIssuingPersonalizationDesignsResponse, DeleteAccountsAccountError>> getIssuingPersonalizationDesigns({String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, GetIssuingPersonalizationDesignsPreferences? preferences, String? startingAfter, GetIssuingPersonalizationDesignsStatus? status, GetIssuingPersonalizationDesignsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingPersonalizationDesignsResponse, DeleteAccountsAccountError>> getIssuingPersonalizationDesigns({String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, GetIssuingPersonalizationDesignsPreferences? preferences, String? startingAfter, GetIssuingPersonalizationDesignsStatus? status, GetIssuingPersonalizationDesignsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -10910,13 +10910,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a personalization design
 ///
 /// `<p>`Creates a personalization design object.`</p>`
 ///
 /// `POST /v1/issuing/personalization_designs`
-Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postIssuingPersonalizationDesigns({required PostIssuingPersonalizationDesignsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postIssuingPersonalizationDesigns({required PostIssuingPersonalizationDesignsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10952,13 +10952,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a personalization design
 ///
 /// `<p>`Retrieves a personalization design object.`</p>`
 ///
 /// `GET /v1/issuing/personalization_designs/{personalization_design}`
-Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> getIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, List<String>? expand, GetIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> getIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, List<String>? expand, GetIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -10987,13 +10987,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a personalization design
 ///
 /// `<p>`Updates a card personalization object.`</p>`
 ///
 /// `POST /v1/issuing/personalization_designs/{personalization_design}`
-Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, PostIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, PostIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11030,13 +11030,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all physical bundles
 ///
 /// `<p>`Returns a list of physical bundle objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/physical_bundles`
-Future<ApiResult<GetIssuingPhysicalBundlesResponse, DeleteAccountsAccountError>> getIssuingPhysicalBundles({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingPhysicalBundlesStatus? status, GetIssuingPhysicalBundlesType? type, GetIssuingPhysicalBundlesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingPhysicalBundlesResponse, DeleteAccountsAccountError>> getIssuingPhysicalBundles({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingPhysicalBundlesStatus? status, GetIssuingPhysicalBundlesType? type, GetIssuingPhysicalBundlesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11080,13 +11080,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a physical bundle
 ///
 /// `<p>`Retrieves a physical bundle object.`</p>`
 ///
 /// `GET /v1/issuing/physical_bundles/{physical_bundle}`
-Future<ApiResult<IssuingPhysicalBundle, DeleteAccountsAccountError>> getIssuingPhysicalBundlesPhysicalBundle({required String physicalBundle, List<String>? expand, GetIssuingPhysicalBundlesPhysicalBundleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingPhysicalBundle, DeleteAccountsAccountError>> getIssuingPhysicalBundlesPhysicalBundle({required String physicalBundle, List<String>? expand, GetIssuingPhysicalBundlesPhysicalBundleRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11115,13 +11115,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a settlement
 ///
 /// `<p>`Retrieves an Issuing `<code>`Settlement`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/settlements/{settlement}`
-Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> getIssuingSettlementsSettlement({required String settlement, List<String>? expand, GetIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> getIssuingSettlementsSettlement({required String settlement, List<String>? expand, GetIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11150,13 +11150,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a settlement
 ///
 /// `<p>`Updates the specified Issuing `<code>`Settlement`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/settlements/{settlement}`
-Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postIssuingSettlementsSettlement({required String settlement, PostIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postIssuingSettlementsSettlement({required String settlement, PostIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11179,13 +11179,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all issuing tokens for card
 ///
 /// `<p>`Lists all Issuing `<code>`Token`</code>` objects for a given card.`</p>`
 ///
 /// `GET /v1/issuing/tokens`
-Future<ApiResult<GetIssuingTokensResponse, DeleteAccountsAccountError>> getIssuingTokens({required String card, GetIssuingTokensCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTokensStatus? status, GetIssuingTokensRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingTokensResponse, DeleteAccountsAccountError>> getIssuingTokens({required String card, GetIssuingTokensCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTokensStatus? status, GetIssuingTokensRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['card'] = card;
 if (created != null) {
@@ -11230,13 +11230,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an issuing token
 ///
 /// `<p>`Retrieves an Issuing `<code>`Token`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/tokens/{token}`
-Future<ApiResult<IssuingToken, DeleteAccountsAccountError>> getIssuingTokensToken({required String token, List<String>? expand, GetIssuingTokensTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingToken, DeleteAccountsAccountError>> getIssuingTokensToken({required String token, List<String>? expand, GetIssuingTokensTokenRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11265,13 +11265,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a token status
 ///
 /// `<p>`Attempts to update the specified Issuing `<code>`Token`</code>` object to the status specified.`</p>`
 ///
 /// `POST /v1/issuing/tokens/{token}`
-Future<ApiResult<IssuingToken, DeleteAccountsAccountError>> postIssuingTokensToken({required String token, required PostIssuingTokensTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingToken, DeleteAccountsAccountError>> postIssuingTokensToken({required String token, required PostIssuingTokensTokenRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11293,13 +11293,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all transactions
 ///
 /// `<p>`Returns a list of Issuing `<code>`Transaction`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/transactions`
-Future<ApiResult<GetIssuingTransactionsResponse, DeleteAccountsAccountError>> getIssuingTransactions({String? card, String? cardholder, GetIssuingTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTransactionsType? type, GetIssuingTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingTransactionsResponse, DeleteAccountsAccountError>> getIssuingTransactions({String? card, String? cardholder, GetIssuingTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTransactionsType? type, GetIssuingTransactionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (card != null) {
   queryParameters['card'] = card;
@@ -11349,13 +11349,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a transaction
 ///
 /// `<p>`Retrieves an Issuing `<code>`Transaction`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/transactions/{transaction}`
-Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> getIssuingTransactionsTransaction({required String transaction, List<String>? expand, GetIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> getIssuingTransactionsTransaction({required String transaction, List<String>? expand, GetIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11384,13 +11384,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a transaction
 ///
 /// `<p>`Updates the specified Issuing `<code>`Transaction`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/transactions/{transaction}`
-Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postIssuingTransactionsTransaction({required String transaction, PostIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postIssuingTransactionsTransaction({required String transaction, PostIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11413,13 +11413,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Session
 ///
 /// `<p>`To launch the Financial Connections authorization flow, create a `<code>`Session`</code>`. The session’s `<code>`client_secret`</code>` can be used to launch the flow using Stripe.js.`</p>`
 ///
 /// `POST /v1/link_account_sessions`
-Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> postLinkAccountSessions({required PostLinkAccountSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> postLinkAccountSessions({required PostLinkAccountSessionsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11448,13 +11448,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Session
 ///
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Session`</code>``</p>`
 ///
 /// `GET /v1/link_account_sessions/{session}`
-Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> getLinkAccountSessionsSession({required String session, List<String>? expand, GetLinkAccountSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> getLinkAccountSessionsSession({required String session, List<String>? expand, GetLinkAccountSessionsSessionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11483,13 +11483,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List Accounts
 ///
 /// `<p>`Returns a list of Financial Connections `<code>`Account`</code>` objects.`</p>`
 ///
 /// `GET /v1/linked_accounts`
-Future<ApiResult<GetLinkedAccountsResponse, DeleteAccountsAccountError>> getLinkedAccounts({GetLinkedAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetLinkedAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetLinkedAccountsResponse, DeleteAccountsAccountError>> getLinkedAccounts({GetLinkedAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetLinkedAccountsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountHolder != null) {
 if (accountHolder.account case final account$?) { queryParameters['account_holder[account]'] = account$; }
@@ -11535,13 +11535,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an Account
 ///
 /// `<p>`Retrieves the details of an Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `GET /v1/linked_accounts/{account}`
-Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> getLinkedAccountsAccount({required String account, List<String>? expand, GetLinkedAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> getLinkedAccountsAccount({required String account, List<String>? expand, GetLinkedAccountsAccountRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11570,13 +11570,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Disconnect an Account
 ///
 /// `<p>`Disables your access to a Financial Connections `<code>`Account`</code>`. You will no longer be able to access data associated with the account (e.g. balances, transactions).`</p>`
 ///
 /// `POST /v1/linked_accounts/{account}/disconnect`
-Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postLinkedAccountsAccountDisconnect({required String account, PostLinkedAccountsAccountDisconnectRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postLinkedAccountsAccountDisconnect({required String account, PostLinkedAccountsAccountDisconnectRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11597,13 +11597,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List Account Owners
 ///
 /// `<p>`Lists all owners for a given `<code>`Account`</code>``</p>`
 ///
 /// `GET /v1/linked_accounts/{account}/owners`
-Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, DeleteAccountsAccountError>> getLinkedAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetLinkedAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, DeleteAccountsAccountError>> getLinkedAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetLinkedAccountsAccountOwnersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11642,13 +11642,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Refresh Account data
 ///
 /// `<p>`Refreshes the data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `POST /v1/linked_accounts/{account}/refresh`
-Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postLinkedAccountsAccountRefresh({required String account, required PostLinkedAccountsAccountRefreshRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postLinkedAccountsAccountRefresh({required String account, required PostLinkedAccountsAccountRefreshRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11670,13 +11670,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Mandate
 ///
 /// `<p>`Retrieves a Mandate object.`</p>`
 ///
 /// `GET /v1/mandates/{mandate}`
-Future<ApiResult<Mandate, DeleteAccountsAccountError>> getMandatesMandate({required String mandate, List<String>? expand, GetMandatesMandateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Mandate, DeleteAccountsAccountError>> getMandatesMandate({required String mandate, List<String>? expand, GetMandatesMandateRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11705,13 +11705,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List Payment Attempt Records
 ///
 /// `<p>`List all the Payment Attempt Records attached to the specified Payment Record.`</p>`
 ///
 /// `GET /v1/payment_attempt_records`
-Future<ApiResult<GetPaymentAttemptRecordsResponse, DeleteAccountsAccountError>> getPaymentAttemptRecords({required String paymentRecord, List<String>? expand, int? limit, String? startingAfter, GetPaymentAttemptRecordsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentAttemptRecordsResponse, DeleteAccountsAccountError>> getPaymentAttemptRecords({required String paymentRecord, List<String>? expand, int? limit, String? startingAfter, GetPaymentAttemptRecordsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11747,13 +11747,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Payment Attempt Record
 ///
 /// `<p>`Retrieves a Payment Attempt Record with the given ID`</p>`
 ///
 /// `GET /v1/payment_attempt_records/{id}`
-Future<ApiResult<PaymentAttemptRecord, DeleteAccountsAccountError>> getPaymentAttemptRecordsId({required String id, List<String>? expand, GetPaymentAttemptRecordsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentAttemptRecord, DeleteAccountsAccountError>> getPaymentAttemptRecordsId({required String id, List<String>? expand, GetPaymentAttemptRecordsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11782,13 +11782,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all PaymentIntents
 ///
 /// `<p>`Returns a list of PaymentIntents.`</p>`
 ///
 /// `GET /v1/payment_intents`
-Future<ApiResult<GetPaymentIntentsResponse, DeleteAccountsAccountError>> getPaymentIntents({GetPaymentIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentIntentsResponse, DeleteAccountsAccountError>> getPaymentIntents({GetPaymentIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -11835,7 +11835,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a PaymentIntent
 ///
 /// `<p>`Creates a PaymentIntent object.`</p>`
@@ -11850,7 +11850,7 @@ return await execute(
 /// `<code>`confirm=true`</code>`.`</p>`
 ///
 /// `POST /v1/payment_intents`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntents({required PostPaymentIntentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntents({required PostPaymentIntentsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11941,7 +11941,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Search PaymentIntents
 ///
 /// `<p>`Search for PaymentIntents you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -11950,7 +11950,7 @@ return await execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/payment_intents/search`
-Future<ApiResult<GetPaymentIntentsSearchResponse, DeleteAccountsAccountError>> getPaymentIntentsSearch({required String query, List<String>? expand, int? limit, String? page, GetPaymentIntentsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentIntentsSearchResponse, DeleteAccountsAccountError>> getPaymentIntentsSearch({required String query, List<String>? expand, int? limit, String? page, GetPaymentIntentsSearchRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -11986,7 +11986,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a PaymentIntent
 ///
 /// `<p>`Retrieves the details of a PaymentIntent that has previously been created. `</p>`
@@ -11996,7 +11996,7 @@ return await execute(
 /// `<p>`If you retrieve a PaymentIntent with a publishable key, it only returns a subset of properties. Refer to the `<a href="#payment_intent_object">`payment intent`</a>` object reference for more details.`</p>`
 ///
 /// `GET /v1/payment_intents/{intent}`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> getPaymentIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetPaymentIntentsIntentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> getPaymentIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetPaymentIntentsIntentRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
@@ -12028,7 +12028,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a PaymentIntent
 ///
 /// `<p>`Updates properties on a PaymentIntent object without confirming.`</p>`
@@ -12040,7 +12040,7 @@ return await execute(
 /// the `<a href="/docs/api/payment_intents/confirm">`confirm API`</a>` instead.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntent({required String intent, PostPaymentIntentsIntentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntent({required String intent, PostPaymentIntentsIntentRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12109,13 +12109,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all PaymentIntent LineItems
 ///
 /// `<p>`Lists all LineItems of a given PaymentIntent.`</p>`
 ///
 /// `GET /v1/payment_intents/{intent}/amount_details_line_items`
-Future<ApiResult<GetPaymentIntentsIntentAmountDetailsLineItemsResponse, DeleteAccountsAccountError>> getPaymentIntentsIntentAmountDetailsLineItems({required String intent, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsIntentAmountDetailsLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentIntentsIntentAmountDetailsLineItemsResponse, DeleteAccountsAccountError>> getPaymentIntentsIntentAmountDetailsLineItems({required String intent, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsIntentAmountDetailsLineItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -12153,13 +12153,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Reconcile a customer_balance PaymentIntent
 ///
 /// `<p>`Manually reconcile the remaining amount for a `<code>`customer_balance`</code>` PaymentIntent.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/apply_customer_balance`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentApplyCustomerBalance({required String intent, PostPaymentIntentsIntentApplyCustomerBalanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentApplyCustomerBalance({required String intent, PostPaymentIntentsIntentApplyCustomerBalanceRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12184,7 +12184,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a PaymentIntent
 ///
 /// `<p>`You can cancel a PaymentIntent object when it’s in one of these statuses: `<code>`requires_payment_method`</code>`, `<code>`requires_capture`</code>`, `<code>`requires_confirmation`</code>`, `<code>`requires_action`</code>` or, `<a href="/docs/payments/intents">`in rare cases`</a>`, `<code>`processing`</code>`. `</p>`
@@ -12194,7 +12194,7 @@ return await execute(
 /// `<p>`You can’t cancel the PaymentIntent for a Checkout Session. `<a href="/docs/api/checkout/sessions/expire">`Expire the Checkout Session`</a>` instead.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/cancel`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentCancel({required String intent, PostPaymentIntentsIntentCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentCancel({required String intent, PostPaymentIntentsIntentCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12217,7 +12217,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Capture a PaymentIntent
 ///
 /// `<p>`Capture the funds of an existing uncaptured PaymentIntent when its status is `<code>`requires_capture`</code>`.`</p>`
@@ -12227,7 +12227,7 @@ return await execute(
 /// `<p>`Learn more about `<a href="/docs/payments/capture-later">`separate authorization and capture`</a>`.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/capture`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentCapture({required String intent, PostPaymentIntentsIntentCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentCapture({required String intent, PostPaymentIntentsIntentCaptureRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12268,7 +12268,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Confirm a PaymentIntent
 ///
 /// `<p>`Confirm that your customer intends to pay with current or provided
@@ -12303,7 +12303,7 @@ return await execute(
 /// transition the PaymentIntent to the `<code>`canceled`</code>` state.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/confirm`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentConfirm({required String intent, PostPaymentIntentsIntentConfirmRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentConfirm({required String intent, PostPaymentIntentsIntentConfirmRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12366,7 +12366,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Increment an authorization
 ///
 /// `<p>`Perform an incremental authorization on an eligible
@@ -12395,7 +12395,7 @@ return await execute(
 /// `<p>`Learn more about `<a href="/docs/terminal/features/incremental-authorizations">`incremental authorizations`</a>`.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/increment_authorization`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentIncrementAuthorization({required String intent, required PostPaymentIntentsIntentIncrementAuthorizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentIncrementAuthorization({required String intent, required PostPaymentIntentsIntentIncrementAuthorizationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12433,13 +12433,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Verify microdeposits on a PaymentIntent
 ///
 /// `<p>`Verifies microdeposits on a PaymentIntent object.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/verify_microdeposits`
-Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentVerifyMicrodeposits({required String intent, PostPaymentIntentsIntentVerifyMicrodepositsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentVerifyMicrodeposits({required String intent, PostPaymentIntentsIntentVerifyMicrodepositsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12466,13 +12466,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all payment links
 ///
 /// `<p>`Returns a list of your payment links.`</p>`
 ///
 /// `GET /v1/payment_links`
-Future<ApiResult<GetPaymentLinksResponse, DeleteAccountsAccountError>> getPaymentLinks({bool? active, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentLinksResponse, DeleteAccountsAccountError>> getPaymentLinks({bool? active, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -12513,13 +12513,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a payment link
 ///
 /// `<p>`Creates a payment link.`</p>`
 ///
 /// `POST /v1/payment_links`
-Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> postPaymentLinks({required PostPaymentLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> postPaymentLinks({required PostPaymentLinksRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12597,13 +12597,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve payment link
 ///
 /// `<p>`Retrieve a payment link.`</p>`
 ///
 /// `GET /v1/payment_links/{payment_link}`
-Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> getPaymentLinksPaymentLink({required String paymentLink, List<String>? expand, GetPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> getPaymentLinksPaymentLink({required String paymentLink, List<String>? expand, GetPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -12632,13 +12632,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a payment link
 ///
 /// `<p>`Updates a payment link.`</p>`
 ///
 /// `POST /v1/payment_links/{payment_link}`
-Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> postPaymentLinksPaymentLink({required String paymentLink, PostPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> postPaymentLinksPaymentLink({required String paymentLink, PostPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12705,13 +12705,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a payment link's line items
 ///
 /// `<p>`When retrieving a payment link, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/payment_links/{payment_link}/line_items`
-Future<ApiResult<GetPaymentLinksPaymentLinkLineItemsResponse, DeleteAccountsAccountError>> getPaymentLinksPaymentLinkLineItems({required String paymentLink, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksPaymentLinkLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentLinksPaymentLinkLineItemsResponse, DeleteAccountsAccountError>> getPaymentLinksPaymentLinkLineItems({required String paymentLink, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksPaymentLinkLineItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -12749,13 +12749,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List payment method configurations
 ///
 /// `<p>`List payment method configurations`</p>`
 ///
 /// `GET /v1/payment_method_configurations`
-Future<ApiResult<GetPaymentMethodConfigurationsResponse, DeleteAccountsAccountError>> getPaymentMethodConfigurations({GetPaymentMethodConfigurationsApplication? application, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentMethodConfigurationsResponse, DeleteAccountsAccountError>> getPaymentMethodConfigurations({GetPaymentMethodConfigurationsApplication? application, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (application != null) {
 queryParametersList.add(ApiQueryParameter(name: 'application', value: application.toString()));
@@ -12796,13 +12796,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a payment method configuration
 ///
 /// `<p>`Creates a payment method configuration`</p>`
 ///
 /// `POST /v1/payment_method_configurations`
-Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> postPaymentMethodConfigurations({PostPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> postPaymentMethodConfigurations({PostPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12939,13 +12939,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve payment method configuration
 ///
 /// `<p>`Retrieve payment method configuration`</p>`
 ///
 /// `GET /v1/payment_method_configurations/{configuration}`
-Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> getPaymentMethodConfigurationsConfiguration({required String configuration, List<String>? expand, GetPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> getPaymentMethodConfigurationsConfiguration({required String configuration, List<String>? expand, GetPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -12974,13 +12974,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update payment method configuration
 ///
 /// `<p>`Update payment method configuration`</p>`
 ///
 /// `POST /v1/payment_method_configurations/{configuration}`
-Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> postPaymentMethodConfigurationsConfiguration({required String configuration, PostPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> postPaymentMethodConfigurationsConfiguration({required String configuration, PostPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13117,13 +13117,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List payment method domains
 ///
 /// `<p>`Lists the details of existing payment method domains.`</p>`
 ///
 /// `GET /v1/payment_method_domains`
-Future<ApiResult<GetPaymentMethodDomainsResponse, DeleteAccountsAccountError>> getPaymentMethodDomains({String? domainName, bool? enabled, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodDomainsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentMethodDomainsResponse, DeleteAccountsAccountError>> getPaymentMethodDomains({String? domainName, bool? enabled, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodDomainsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domainName != null) {
   queryParameters['domain_name'] = domainName;
@@ -13167,13 +13167,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a payment method domain
 ///
 /// `<p>`Creates a payment method domain.`</p>`
 ///
 /// `POST /v1/payment_method_domains`
-Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomains({required PostPaymentMethodDomainsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomains({required PostPaymentMethodDomainsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13197,13 +13197,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a payment method domain
 ///
 /// `<p>`Retrieves the details of an existing payment method domain.`</p>`
 ///
 /// `GET /v1/payment_method_domains/{payment_method_domain}`
-Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> getPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, List<String>? expand, GetPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> getPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, List<String>? expand, GetPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -13232,13 +13232,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a payment method domain
 ///
 /// `<p>`Updates an existing payment method domain.`</p>`
 ///
 /// `POST /v1/payment_method_domains/{payment_method_domain}`
-Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13261,7 +13261,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Validate an existing payment method domain
 ///
 /// `<p>`Some payment methods might require additional steps to register a domain. If the requirements weren’t satisfied when the domain was created, the payment method will be inactive on the domain.
@@ -13272,7 +13272,7 @@ return await execute(
 /// `<p>`Related guides: `<a href="/docs/payments/payment-methods/pmd-registration">`Payment method domains`</a>`.`</p>`
 ///
 /// `POST /v1/payment_method_domains/{payment_method_domain}/validate`
-Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomainsPaymentMethodDomainValidate({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainValidateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomainsPaymentMethodDomainValidate({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainValidateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13293,13 +13293,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List PaymentMethods
 ///
 /// `<p>`Returns a list of all PaymentMethods.`</p>`
 ///
 /// `GET /v1/payment_methods`
-Future<ApiResult<GetPaymentMethodsResponse, DeleteAccountsAccountError>> getPaymentMethods({GetPaymentMethodsAllowRedisplay? allowRedisplay, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodsType? type, GetPaymentMethodsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentMethodsResponse, DeleteAccountsAccountError>> getPaymentMethods({GetPaymentMethodsAllowRedisplay? allowRedisplay, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodsType? type, GetPaymentMethodsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowRedisplay != null) {
   queryParameters['allow_redisplay'] = allowRedisplay.toJson();
@@ -13349,7 +13349,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Shares a PaymentMethod
 ///
 /// `<p>`Creates a PaymentMethod object. Read the `<a href="/docs/stripe-js/reference#stripe-create-payment-method">`Stripe.js reference`</a>` to learn how to create PaymentMethods via Stripe.js.`</p>`
@@ -13357,7 +13357,7 @@ return await execute(
 /// `<p>`Instead of creating a PaymentMethod directly, we recommend using the `<a href="/docs/payments/accept-a-payment">`PaymentIntents`</a>` API to accept a payment immediately or the `<a href="/docs/payments/save-and-reuse">`SetupIntent`</a>` API to collect payment method details ahead of a future payment.`</p>`
 ///
 /// `POST /v1/payment_methods`
-Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethods({PostPaymentMethodsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethods({PostPaymentMethodsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13496,13 +13496,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a PaymentMethod
 ///
 /// `<p>`Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method attached to a Customer, you should use `<a href="/docs/api/payment_methods/customer">`Retrieve a Customer’s PaymentMethods`</a>``</p>`
 ///
 /// `GET /v1/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> getPaymentMethodsPaymentMethod({required String paymentMethod, List<String>? expand, GetPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> getPaymentMethodsPaymentMethod({required String paymentMethod, List<String>? expand, GetPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -13531,13 +13531,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a PaymentMethod
 ///
 /// `<p>`Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.`</p>`
 ///
 /// `POST /v1/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethod({required String paymentMethod, PostPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethod({required String paymentMethod, PostPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13570,7 +13570,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Attach a PaymentMethod to a Customer
 ///
 /// `<p>`Attaches a PaymentMethod object to a Customer.`</p>`
@@ -13588,7 +13588,7 @@ return await execute(
 /// on the Customer to the PaymentMethod’s ID.`</p>`
 ///
 /// `POST /v1/payment_methods/{payment_method}/attach`
-Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethodAttach({required String paymentMethod, PostPaymentMethodsPaymentMethodAttachRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethodAttach({required String paymentMethod, PostPaymentMethodsPaymentMethodAttachRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13613,13 +13613,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Detach a PaymentMethod from a Customer
 ///
 /// `<p>`Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no longer be used for a payment or re-attached to a Customer.`</p>`
 ///
 /// `POST /v1/payment_methods/{payment_method}/detach`
-Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethodDetach({required String paymentMethod, PostPaymentMethodsPaymentMethodDetachRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethodDetach({required String paymentMethod, PostPaymentMethodsPaymentMethodDetachRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13640,7 +13640,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Report a payment
 ///
 /// `<p>`Report a new Payment Record. You may report a Payment Record as it is
@@ -13648,7 +13648,7 @@ return await execute(
 ///  Records in a terminal state directly, through this method.`</p>`
 ///
 /// `POST /v1/payment_records/report_payment`
-Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsReportPayment({required PostPaymentRecordsReportPaymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsReportPayment({required PostPaymentRecordsReportPaymentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13690,13 +13690,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Payment Record
 ///
 /// `<p>`Retrieves a Payment Record with the given ID`</p>`
 ///
 /// `GET /v1/payment_records/{id}`
-Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> getPaymentRecordsId({required String id, List<String>? expand, GetPaymentRecordsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> getPaymentRecordsId({required String id, List<String>? expand, GetPaymentRecordsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -13725,14 +13725,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Report a payment attempt
 ///
 /// `<p>`Report a new payment attempt on the specified Payment Record. A new payment
 ///  attempt can only be specified if all other payment attempts are canceled or failed.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt`
-Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttempt({required String id, required PostPaymentRecordsIdReportPaymentAttemptRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttempt({required String id, required PostPaymentRecordsIdReportPaymentAttemptRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13768,14 +13768,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Report payment attempt canceled
 ///
 /// `<p>`Report that the most recent payment attempt on the specified Payment Record
 ///  was canceled.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_canceled`
-Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptCanceled({required String id, required PostPaymentRecordsIdReportPaymentAttemptCanceledRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptCanceled({required String id, required PostPaymentRecordsIdReportPaymentAttemptCanceledRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13799,14 +13799,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Report payment attempt failed
 ///
 /// `<p>`Report that the most recent payment attempt on the specified Payment Record
 ///  failed or errored.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_failed`
-Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptFailed({required String id, required PostPaymentRecordsIdReportPaymentAttemptFailedRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptFailed({required String id, required PostPaymentRecordsIdReportPaymentAttemptFailedRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13830,14 +13830,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Report payment attempt guaranteed
 ///
 /// `<p>`Report that the most recent payment attempt on the specified Payment Record
 ///  was guaranteed.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_guaranteed`
-Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptGuaranteed({required String id, required PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptGuaranteed({required String id, required PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13861,13 +13861,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Report payment attempt informational
 ///
 /// `<p>`Report informational updates on the specified Payment Record.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_informational`
-Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptInformational({required String id, PostPaymentRecordsIdReportPaymentAttemptInformationalRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptInformational({required String id, PostPaymentRecordsIdReportPaymentAttemptInformationalRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13896,14 +13896,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Report a refund
 ///
 /// `<p>`Report that the most recent payment attempt on the specified Payment Record
 ///  was refunded.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_refund`
-Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportRefund({required String id, required PostPaymentRecordsIdReportRefundRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportRefund({required String id, required PostPaymentRecordsIdReportRefundRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13933,13 +13933,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all payouts
 ///
 /// `<p>`Returns a list of existing payouts sent to third-party bank accounts or payouts that Stripe sent to you. The payouts return in sorted order, with the most recently created payouts appearing first.`</p>`
 ///
 /// `GET /v1/payouts`
-Future<ApiResult<GetPayoutsResponse, DeleteAccountsAccountError>> getPayouts({GetPayoutsArrivalDate? arrivalDate, GetPayoutsCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? status, GetPayoutsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPayoutsResponse, DeleteAccountsAccountError>> getPayouts({GetPayoutsArrivalDate? arrivalDate, GetPayoutsCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? status, GetPayoutsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (arrivalDate != null) {
 queryParametersList.add(ApiQueryParameter(name: 'arrival_date', value: arrivalDate.toString()));
@@ -13989,7 +13989,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a payout
 ///
 /// `<p>`To send funds to your own bank account, create a new payout object. Your `<a href="#balance">`Stripe balance`</a>` must cover the payout amount. If it doesn’t, you receive an “Insufficient Funds” error.`</p>`
@@ -13999,7 +13999,7 @@ return await execute(
 /// `<p>`If you create a manual payout on a Stripe account that uses multiple payment source types, you need to specify the source type balance that the payout draws from. The `<a href="#balance_object">`balance object`</a>` details available and pending amounts by source type.`</p>`
 ///
 /// `POST /v1/payouts`
-Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayouts({required PostPayoutsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayouts({required PostPayoutsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14036,13 +14036,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a payout
 ///
 /// `<p>`Retrieves the details of an existing payout. Supply the unique payout ID from either a payout creation request or the payout list. Stripe returns the corresponding payout information.`</p>`
 ///
 /// `GET /v1/payouts/{payout}`
-Future<ApiResult<Payout, DeleteAccountsAccountError>> getPayoutsPayout({required String payout, List<String>? expand, GetPayoutsPayoutRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> getPayoutsPayout({required String payout, List<String>? expand, GetPayoutsPayoutRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -14071,13 +14071,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a payout
 ///
 /// `<p>`Updates the specified payout by setting the values of the parameters you pass. We don’t change parameters that you don’t provide. This request only accepts the metadata as arguments.`</p>`
 ///
 /// `POST /v1/payouts/{payout}`
-Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayout({required String payout, PostPayoutsPayoutRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayout({required String payout, PostPayoutsPayoutRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14100,13 +14100,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a payout
 ///
 /// `<p>`You can cancel a previously created payout if its status is `<code>`pending`</code>`. Stripe refunds the funds to your available balance. You can’t cancel automatic Stripe payouts.`</p>`
 ///
 /// `POST /v1/payouts/{payout}/cancel`
-Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayoutCancel({required String payout, PostPayoutsPayoutCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayoutCancel({required String payout, PostPayoutsPayoutCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14127,7 +14127,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Reverse a payout
 ///
 /// `<p>`Reverses a payout by debiting the destination bank account. At this time, you can only reverse payouts for connected accounts to US and Canadian bank accounts. If the payout is manual and in the `<code>`pending`</code>` status, use `<code>`/v1/payouts/:id/cancel`</code>` instead.`</p>`
@@ -14135,7 +14135,7 @@ return await execute(
 /// `<p>`By requesting a reversal through `<code>`/v1/payouts/:id/reverse`</code>`, you confirm that the authorized signatory of the selected bank account authorizes the debit on the bank account and that no other authorization is required.`</p>`
 ///
 /// `POST /v1/payouts/{payout}/reverse`
-Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayoutReverse({required String payout, PostPayoutsPayoutReverseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayoutReverse({required String payout, PostPayoutsPayoutReverseRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14158,13 +14158,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all plans
 ///
 /// `<p>`Returns a list of your plans.`</p>`
 ///
 /// `GET /v1/plans`
-Future<ApiResult<GetPlansResponse, DeleteAccountsAccountError>> getPlans({bool? active, GetPlansCreated? created, String? endingBefore, List<String>? expand, int? limit, String? product, String? startingAfter, GetPlansRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPlansResponse, DeleteAccountsAccountError>> getPlans({bool? active, GetPlansCreated? created, String? endingBefore, List<String>? expand, int? limit, String? product, String? startingAfter, GetPlansRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -14211,13 +14211,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a plan
 ///
 /// `<p>`You can now model subscriptions more flexibly using the `<a href="#prices">`Prices API`</a>`. It replaces the Plans API and is backwards compatible to simplify your migration.`</p>`
 ///
 /// `POST /v1/plans`
-Future<ApiResult<Plan, DeleteAccountsAccountError>> postPlans({required PostPlansRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Plan, DeleteAccountsAccountError>> postPlans({required PostPlansRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14270,13 +14270,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a plan
 ///
 /// `<p>`Retrieves the plan with the given ID.`</p>`
 ///
 /// `GET /v1/plans/{plan}`
-Future<ApiResult<Plan, DeleteAccountsAccountError>> getPlansPlan({required String plan, List<String>? expand, GetPlansPlanRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Plan, DeleteAccountsAccountError>> getPlansPlan({required String plan, List<String>? expand, GetPlansPlanRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -14305,13 +14305,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a plan
 ///
 /// `<p>`Updates the specified plan by setting the values of the parameters passed. Any parameters not provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or billing cycle.`</p>`
 ///
 /// `POST /v1/plans/{plan}`
-Future<ApiResult<Plan, DeleteAccountsAccountError>> postPlansPlan({required String plan, PostPlansPlanRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Plan, DeleteAccountsAccountError>> postPlansPlan({required String plan, PostPlansPlanRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14342,13 +14342,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a plan
 ///
 /// `<p>`Deleting plans means new subscribers can’t be added. Existing subscribers aren’t affected.`</p>`
 ///
 /// `DELETE /v1/plans/{plan}`
-Future<ApiResult<DeletedPlan, DeleteAccountsAccountError>> deletePlansPlan({required String plan, DeletePlansPlanRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedPlan, DeleteAccountsAccountError>> deletePlansPlan({required String plan, DeletePlansPlanRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14367,13 +14367,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all prices
 ///
 /// `<p>`Returns a list of your active prices, excluding `<a href="/docs/products-prices/pricing-models#inline-pricing">`inline prices`</a>`. For the list of inactive prices, set `<code>`active`</code>` to false.`</p>`
 ///
 /// `GET /v1/prices`
-Future<ApiResult<GetPricesResponse, DeleteAccountsAccountError>> getPrices({bool? active, GetPricesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, String? product, GetPricesRecurring? recurring, String? startingAfter, GetPricesType? type, GetPricesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPricesResponse, DeleteAccountsAccountError>> getPrices({bool? active, GetPricesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, String? product, GetPricesRecurring? recurring, String? startingAfter, GetPricesType? type, GetPricesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -14436,13 +14436,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a price
 ///
 /// `<p>`Creates a new `<a href="https://docs.stripe.com/api/prices">`Price`</a>` for an existing `<a href="https://docs.stripe.com/api/products">`Product`</a>`. The Price can be recurring or one-time.`</p>`
 ///
 /// `POST /v1/prices`
-Future<ApiResult<Price, DeleteAccountsAccountError>> postPrices({required PostPricesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Price, DeleteAccountsAccountError>> postPrices({required PostPricesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14498,7 +14498,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Search prices
 ///
 /// `<p>`Search for prices you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -14507,7 +14507,7 @@ return await execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/prices/search`
-Future<ApiResult<GetPricesSearchResponse, DeleteAccountsAccountError>> getPricesSearch({required String query, List<String>? expand, int? limit, String? page, GetPricesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPricesSearchResponse, DeleteAccountsAccountError>> getPricesSearch({required String query, List<String>? expand, int? limit, String? page, GetPricesSearchRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -14543,13 +14543,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a price
 ///
 /// `<p>`Retrieves the price with the given ID.`</p>`
 ///
 /// `GET /v1/prices/{price}`
-Future<ApiResult<Price, DeleteAccountsAccountError>> getPricesPrice({required String price, List<String>? expand, GetPricesPriceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Price, DeleteAccountsAccountError>> getPricesPrice({required String price, List<String>? expand, GetPricesPriceRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -14578,13 +14578,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a price
 ///
 /// `<p>`Updates the specified price by setting the values of the parameters passed. Any parameters not provided are left unchanged.`</p>`
 ///
 /// `POST /v1/prices/{price}`
-Future<ApiResult<Price, DeleteAccountsAccountError>> postPricesPrice({required String price, PostPricesPriceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Price, DeleteAccountsAccountError>> postPricesPrice({required String price, PostPricesPriceRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14619,13 +14619,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all products
 ///
 /// `<p>`Returns a list of your products. The products are returned sorted by creation date, with the most recently created products appearing first.`</p>`
 ///
 /// `GET /v1/products`
-Future<ApiResult<GetProductsResponse, DeleteAccountsAccountError>> getProducts({bool? active, GetProductsCreated? created, String? endingBefore, List<String>? expand, List<String>? ids, int? limit, bool? shippable, String? startingAfter, String? url, GetProductsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetProductsResponse, DeleteAccountsAccountError>> getProducts({bool? active, GetProductsCreated? created, String? endingBefore, List<String>? expand, List<String>? ids, int? limit, bool? shippable, String? startingAfter, String? url, GetProductsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -14680,13 +14680,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a product
 ///
 /// `<p>`Creates a new product object.`</p>`
 ///
 /// `POST /v1/products`
-Future<ApiResult<Product, DeleteAccountsAccountError>> postProducts({required PostProductsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Product, DeleteAccountsAccountError>> postProducts({required PostProductsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14734,7 +14734,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Search products
 ///
 /// `<p>`Search for products you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -14743,7 +14743,7 @@ return await execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/products/search`
-Future<ApiResult<GetProductsSearchResponse, DeleteAccountsAccountError>> getProductsSearch({required String query, List<String>? expand, int? limit, String? page, GetProductsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetProductsSearchResponse, DeleteAccountsAccountError>> getProductsSearch({required String query, List<String>? expand, int? limit, String? page, GetProductsSearchRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -14779,13 +14779,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a product
 ///
 /// `<p>`Retrieves the details of an existing product. Supply the unique product ID from either a product creation request or the product list, and Stripe will return the corresponding product information.`</p>`
 ///
 /// `GET /v1/products/{id}`
-Future<ApiResult<Product, DeleteAccountsAccountError>> getProductsId({required String id, List<String>? expand, GetProductsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Product, DeleteAccountsAccountError>> getProductsId({required String id, List<String>? expand, GetProductsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -14814,13 +14814,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a product
 ///
 /// `<p>`Updates the specific product by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/products/{id}`
-Future<ApiResult<Product, DeleteAccountsAccountError>> postProductsId({required String id, PostProductsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Product, DeleteAccountsAccountError>> postProductsId({required String id, PostProductsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14867,13 +14867,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a product
 ///
 /// `<p>`Delete a product. Deleting a product is only possible if it has no prices associated with it. Additionally, deleting a product with `<code>`type=good`</code>` is only possible if it has no SKUs associated with it.`</p>`
 ///
 /// `DELETE /v1/products/{id}`
-Future<ApiResult<DeletedProduct, DeleteAccountsAccountError>> deleteProductsId({required String id, DeleteProductsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedProduct, DeleteAccountsAccountError>> deleteProductsId({required String id, DeleteProductsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14892,13 +14892,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all features attached to a product
 ///
 /// `<p>`Retrieve a list of features for a product`</p>`
 ///
 /// `GET /v1/products/{product}/features`
-Future<ApiResult<GetProductsProductFeaturesResponse, DeleteAccountsAccountError>> getProductsProductFeatures({required String product, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetProductsProductFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetProductsProductFeaturesResponse, DeleteAccountsAccountError>> getProductsProductFeatures({required String product, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetProductsProductFeaturesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -14936,13 +14936,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Attach a feature to a product
 ///
 /// `<p>`Creates a product_feature, which represents a feature attachment to a product`</p>`
 ///
 /// `POST /v1/products/{product}/features`
-Future<ApiResult<ProductFeature, DeleteAccountsAccountError>> postProductsProductFeatures({required String product, required PostProductsProductFeaturesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProductFeature, DeleteAccountsAccountError>> postProductsProductFeatures({required String product, required PostProductsProductFeaturesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14964,13 +14964,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a product_feature
 ///
 /// `<p>`Retrieves a product_feature, which represents a feature attachment to a product`</p>`
 ///
 /// `GET /v1/products/{product}/features/{id}`
-Future<ApiResult<ProductFeature, DeleteAccountsAccountError>> getProductsProductFeaturesId({required String id, required String product, List<String>? expand, GetProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ProductFeature, DeleteAccountsAccountError>> getProductsProductFeaturesId({required String id, required String product, List<String>? expand, GetProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -14999,13 +14999,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Remove a feature from a product
 ///
 /// `<p>`Deletes the feature attachment to a product`</p>`
 ///
 /// `DELETE /v1/products/{product}/features/{id}`
-Future<ApiResult<DeletedProductFeature, DeleteAccountsAccountError>> deleteProductsProductFeaturesId({required String id, required String product, DeleteProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedProductFeature, DeleteAccountsAccountError>> deleteProductsProductFeaturesId({required String id, required String product, DeleteProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15024,13 +15024,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all promotion codes
 ///
 /// `<p>`Returns a list of your promotion codes.`</p>`
 ///
 /// `GET /v1/promotion_codes`
-Future<ApiResult<GetPromotionCodesResponse, DeleteAccountsAccountError>> getPromotionCodes({bool? active, String? code, String? coupon, GetPromotionCodesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPromotionCodesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPromotionCodesResponse, DeleteAccountsAccountError>> getPromotionCodes({bool? active, String? code, String? coupon, GetPromotionCodesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPromotionCodesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -15086,13 +15086,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a promotion code
 ///
 /// `<p>`A promotion code points to an underlying promotion. You can optionally restrict the code to a specific customer, redemption limit, and expiration date.`</p>`
 ///
 /// `POST /v1/promotion_codes`
-Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> postPromotionCodes({required PostPromotionCodesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> postPromotionCodes({required PostPromotionCodesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15130,13 +15130,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a promotion code
 ///
 /// `<p>`Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the customer-facing `<code>`code`</code>` use `<a href="/docs/api/promotion_codes/list">`list`</a>` with the desired `<code>`code`</code>`.`</p>`
 ///
 /// `GET /v1/promotion_codes/{promotion_code}`
-Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> getPromotionCodesPromotionCode({required String promotionCode, List<String>? expand, GetPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> getPromotionCodesPromotionCode({required String promotionCode, List<String>? expand, GetPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -15165,13 +15165,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a promotion code
 ///
 /// `<p>`Updates the specified promotion code by setting the values of the parameters passed. Most fields are, by design, not editable.`</p>`
 ///
 /// `POST /v1/promotion_codes/{promotion_code}`
-Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> postPromotionCodesPromotionCode({required String promotionCode, PostPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> postPromotionCodesPromotionCode({required String promotionCode, PostPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15198,13 +15198,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all quotes
 ///
 /// `<p>`Returns a list of your quotes.`</p>`
 ///
 /// `GET /v1/quotes`
-Future<ApiResult<GetQuotesResponse, DeleteAccountsAccountError>> getQuotes({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesStatus? status, String? testClock, GetQuotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetQuotesResponse, DeleteAccountsAccountError>> getQuotes({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesStatus? status, String? testClock, GetQuotesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -15254,13 +15254,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a quote
 ///
 /// `<p>`A quote models prices and services for a customer. Default options for `<code>`header`</code>`, `<code>`description`</code>`, `<code>`footer`</code>`, and `<code>`expires_at`</code>` can be set in the dashboard via the `<a href="https://dashboard.stripe.com/settings/billing/quote">`quote template`</a>`.`</p>`
 ///
 /// `POST /v1/quotes`
-Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotes({PostQuotesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotes({PostQuotesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15321,13 +15321,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a quote
 ///
 /// `<p>`Retrieves the quote with the given ID.`</p>`
 ///
 /// `GET /v1/quotes/{quote}`
-Future<ApiResult<Quote, DeleteAccountsAccountError>> getQuotesQuote({required String quote, List<String>? expand, GetQuotesQuoteRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> getQuotesQuote({required String quote, List<String>? expand, GetQuotesQuoteRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -15356,13 +15356,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a quote
 ///
 /// `<p>`A quote models prices and services for a customer.`</p>`
 ///
 /// `POST /v1/quotes/{quote}`
-Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuote({required String quote, PostQuotesQuoteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuote({required String quote, PostQuotesQuoteRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15419,13 +15419,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Accept a quote
 ///
 /// `<p>`Accepts the specified quote.`</p>`
 ///
 /// `POST /v1/quotes/{quote}/accept`
-Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteAccept({required String quote, PostQuotesQuoteAcceptRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteAccept({required String quote, PostQuotesQuoteAcceptRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15446,13 +15446,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a quote
 ///
 /// `<p>`Cancels the quote.`</p>`
 ///
 /// `POST /v1/quotes/{quote}/cancel`
-Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteCancel({required String quote, PostQuotesQuoteCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteCancel({required String quote, PostQuotesQuoteCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15473,13 +15473,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a quote's upfront line items
 ///
 /// `<p>`When retrieving a quote, there is an includable `<a href="https://stripe.com/docs/api/quotes/object#quote_object-computed-upfront-line_items">``<strong>`computed.upfront.line_items`</strong>``</a>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of upfront line items.`</p>`
 ///
 /// `GET /v1/quotes/{quote}/computed_upfront_line_items`
-Future<ApiResult<GetQuotesQuoteComputedUpfrontLineItemsResponse, DeleteAccountsAccountError>> getQuotesQuoteComputedUpfrontLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteComputedUpfrontLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetQuotesQuoteComputedUpfrontLineItemsResponse, DeleteAccountsAccountError>> getQuotesQuoteComputedUpfrontLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteComputedUpfrontLineItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -15517,13 +15517,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Finalize a quote
 ///
 /// `<p>`Finalizes the quote.`</p>`
 ///
 /// `POST /v1/quotes/{quote}/finalize`
-Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteFinalize({required String quote, PostQuotesQuoteFinalizeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteFinalize({required String quote, PostQuotesQuoteFinalizeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15546,13 +15546,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a quote's line items
 ///
 /// `<p>`When retrieving a quote, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/quotes/{quote}/line_items`
-Future<ApiResult<GetQuotesQuoteLineItemsResponse, DeleteAccountsAccountError>> getQuotesQuoteLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetQuotesQuoteLineItemsResponse, DeleteAccountsAccountError>> getQuotesQuoteLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteLineItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -15590,13 +15590,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Download quote PDF
 ///
 /// `<p>`Download the PDF for a finalized quote. Explanation for special handling can be found `<a href="https://docs.stripe.com/quotes/overview#quote_pdf">`here`</a>``</p>`
 ///
 /// `GET /v1/quotes/{quote}/pdf`
-Future<ApiResult<Uint8List, DeleteAccountsAccountError>> getQuotesQuotePdf({required String quote, List<String>? expand, GetQuotesQuotePdfRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Uint8List, DeleteAccountsAccountError>> getQuotesQuotePdf({required String quote, List<String>? expand, GetQuotesQuotePdfRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -15625,13 +15625,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all early fraud warnings
 ///
 /// `<p>`Returns a list of early fraud warnings.`</p>`
 ///
 /// `GET /v1/radar/early_fraud_warnings`
-Future<ApiResult<GetRadarEarlyFraudWarningsResponse, DeleteAccountsAccountError>> getRadarEarlyFraudWarnings({String? charge, GetRadarEarlyFraudWarningsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRadarEarlyFraudWarningsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRadarEarlyFraudWarningsResponse, DeleteAccountsAccountError>> getRadarEarlyFraudWarnings({String? charge, GetRadarEarlyFraudWarningsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRadarEarlyFraudWarningsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (charge != null) {
   queryParameters['charge'] = charge;
@@ -15678,7 +15678,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an early fraud warning
 ///
 /// `<p>`Retrieves the details of an early fraud warning that has previously been created. `</p>`
@@ -15686,7 +15686,7 @@ return await execute(
 /// `<p>`Please refer to the `<a href="#early_fraud_warning_object">`early fraud warning`</a>` object reference for more details.`</p>`
 ///
 /// `GET /v1/radar/early_fraud_warnings/{early_fraud_warning}`
-Future<ApiResult<RadarEarlyFraudWarning, DeleteAccountsAccountError>> getRadarEarlyFraudWarningsEarlyFraudWarning({required String earlyFraudWarning, List<String>? expand, GetRadarEarlyFraudWarningsEarlyFraudWarningRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarEarlyFraudWarning, DeleteAccountsAccountError>> getRadarEarlyFraudWarningsEarlyFraudWarning({required String earlyFraudWarning, List<String>? expand, GetRadarEarlyFraudWarningsEarlyFraudWarningRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -15715,13 +15715,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Payment Evaluation
 ///
 /// `<p>`Request a Radar API fraud risk score from Stripe for a payment before sending it for external processor authorization.`</p>`
 ///
 /// `POST /v1/radar/payment_evaluations`
-Future<ApiResult<RadarPaymentEvaluation, DeleteAccountsAccountError>> postRadarPaymentEvaluations({required PostRadarPaymentEvaluationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RadarPaymentEvaluation, DeleteAccountsAccountError>> postRadarPaymentEvaluations({required PostRadarPaymentEvaluationsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15748,13 +15748,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all value list items
 ///
 /// `<p>`Returns a list of `<code>`ValueListItem`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/radar/value_list_items`
-Future<ApiResult<GetRadarValueListItemsResponse, DeleteAccountsAccountError>> getRadarValueListItems({required String valueList, GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, GetRadarValueListItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRadarValueListItemsResponse, DeleteAccountsAccountError>> getRadarValueListItems({required String valueList, GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, GetRadarValueListItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -15799,13 +15799,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a value list item
 ///
 /// `<p>`Creates a new `<code>`ValueListItem`</code>` object, which is added to the specified parent value list.`</p>`
 ///
 /// `POST /v1/radar/value_list_items`
-Future<ApiResult<RadarValueListItem, DeleteAccountsAccountError>> postRadarValueListItems({required PostRadarValueListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RadarValueListItem, DeleteAccountsAccountError>> postRadarValueListItems({required PostRadarValueListItemsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15828,13 +15828,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a value list item
 ///
 /// `<p>`Retrieves a `<code>`ValueListItem`</code>` object.`</p>`
 ///
 /// `GET /v1/radar/value_list_items/{item}`
-Future<ApiResult<RadarValueListItem, DeleteAccountsAccountError>> getRadarValueListItemsItem({required String item, List<String>? expand, GetRadarValueListItemsItemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarValueListItem, DeleteAccountsAccountError>> getRadarValueListItemsItem({required String item, List<String>? expand, GetRadarValueListItemsItemRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -15863,13 +15863,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a value list item
 ///
 /// `<p>`Deletes a `<code>`ValueListItem`</code>` object, removing it from its parent value list.`</p>`
 ///
 /// `DELETE /v1/radar/value_list_items/{item}`
-Future<ApiResult<DeletedRadarValueListItem, DeleteAccountsAccountError>> deleteRadarValueListItemsItem({required String item, DeleteRadarValueListItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedRadarValueListItem, DeleteAccountsAccountError>> deleteRadarValueListItemsItem({required String item, DeleteRadarValueListItemsItemRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15888,13 +15888,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all value lists
 ///
 /// `<p>`Returns a list of `<code>`ValueList`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/radar/value_lists`
-Future<ApiResult<GetRadarValueListsResponse, DeleteAccountsAccountError>> getRadarValueLists({String? alias, String? contains, GetRadarValueListsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetRadarValueListsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRadarValueListsResponse, DeleteAccountsAccountError>> getRadarValueLists({String? alias, String? contains, GetRadarValueListsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetRadarValueListsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (alias != null) {
   queryParameters['alias'] = alias;
@@ -15941,13 +15941,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a value list
 ///
 /// `<p>`Creates a new `<code>`ValueList`</code>` object, which can then be referenced in rules.`</p>`
 ///
 /// `POST /v1/radar/value_lists`
-Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> postRadarValueLists({required PostRadarValueListsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> postRadarValueLists({required PostRadarValueListsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15974,13 +15974,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a value list
 ///
 /// `<p>`Retrieves a `<code>`ValueList`</code>` object.`</p>`
 ///
 /// `GET /v1/radar/value_lists/{value_list}`
-Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> getRadarValueListsValueList({required String valueList, List<String>? expand, GetRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> getRadarValueListsValueList({required String valueList, List<String>? expand, GetRadarValueListsValueListRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -16009,13 +16009,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a value list
 ///
 /// `<p>`Updates a `<code>`ValueList`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Note that `<code>`item_type`</code>` is immutable.`</p>`
 ///
 /// `POST /v1/radar/value_lists/{value_list}`
-Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> postRadarValueListsValueList({required String valueList, PostRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> postRadarValueListsValueList({required String valueList, PostRadarValueListsValueListRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16042,13 +16042,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a value list
 ///
 /// `<p>`Deletes a `<code>`ValueList`</code>` object, also deleting any items contained within the value list. To be deleted, a value list must not be referenced in any rules.`</p>`
 ///
 /// `DELETE /v1/radar/value_lists/{value_list}`
-Future<ApiResult<DeletedRadarValueList, DeleteAccountsAccountError>> deleteRadarValueListsValueList({required String valueList, DeleteRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedRadarValueList, DeleteAccountsAccountError>> deleteRadarValueListsValueList({required String valueList, DeleteRadarValueListsValueListRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16067,13 +16067,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all refunds
 ///
 /// `<p>`Returns a list of all refunds you created. We return the refunds in sorted order, with the most recent refunds appearing first. The 10 most recent refunds are always available by default on the Charge object.`</p>`
 ///
 /// `GET /v1/refunds`
-Future<ApiResult<GetRefundsResponse, DeleteAccountsAccountError>> getRefunds({String? charge, GetRefundsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRefundsResponse, DeleteAccountsAccountError>> getRefunds({String? charge, GetRefundsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRefundsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (charge != null) {
   queryParameters['charge'] = charge;
@@ -16120,7 +16120,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create customer balance refund
 ///
 /// `<p>`When you create a new refund, you must specify a Charge or a PaymentIntent object on which to create it.`</p>`
@@ -16136,7 +16136,7 @@ return await execute(
 /// or when trying to refund more money than is left on a charge.`</p>`
 ///
 /// `POST /v1/refunds`
-Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefunds({PostRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefunds({PostRefundsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16179,13 +16179,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a refund
 ///
 /// `<p>`Retrieves the details of an existing refund.`</p>`
 ///
 /// `GET /v1/refunds/{refund}`
-Future<ApiResult<Refund, DeleteAccountsAccountError>> getRefundsRefund({required String refund, List<String>? expand, GetRefundsRefundRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> getRefundsRefund({required String refund, List<String>? expand, GetRefundsRefundRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -16214,7 +16214,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a refund
 ///
 /// `<p>`Updates the refund that you specify by setting the values of the passed parameters. Any parameters that you don’t provide remain unchanged.`</p>`
@@ -16222,7 +16222,7 @@ return await execute(
 /// `<p>`This request only accepts `<code>`metadata`</code>` as an argument.`</p>`
 ///
 /// `POST /v1/refunds/{refund}`
-Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefundsRefund({required String refund, PostRefundsRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefundsRefund({required String refund, PostRefundsRefundRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16245,7 +16245,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a refund
 ///
 /// `<p>`Cancels a refund with a status of `<code>`requires_action`</code>`.`</p>`
@@ -16253,7 +16253,7 @@ return await execute(
 /// `<p>`You can’t cancel refunds in other states. Only refunds for payment methods that require customer action can enter the `<code>`requires_action`</code>` state.`</p>`
 ///
 /// `POST /v1/refunds/{refund}/cancel`
-Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefundsRefundCancel({required String refund, PostRefundsRefundCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefundsRefundCancel({required String refund, PostRefundsRefundCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16274,13 +16274,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all Report Runs
 ///
 /// `<p>`Returns a list of Report Runs, with the most recent appearing first.`</p>`
 ///
 /// `GET /v1/reporting/report_runs`
-Future<ApiResult<GetReportingReportRunsResponse, DeleteAccountsAccountError>> getReportingReportRuns({GetReportingReportRunsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReportingReportRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetReportingReportRunsResponse, DeleteAccountsAccountError>> getReportingReportRuns({GetReportingReportRunsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReportingReportRunsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -16321,13 +16321,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Report Run
 ///
 /// `<p>`Creates a new object and begin running the report. (Certain report types require a `<a href="https://stripe.com/docs/keys#test-live-modes">`live-mode API key`</a>`.)`</p>`
 ///
 /// `POST /v1/reporting/report_runs`
-Future<ApiResult<ReportingReportRun, DeleteAccountsAccountError>> postReportingReportRuns({required PostReportingReportRunsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReportingReportRun, DeleteAccountsAccountError>> postReportingReportRuns({required PostReportingReportRunsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16351,13 +16351,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Report Run
 ///
 /// `<p>`Retrieves the details of an existing Report Run.`</p>`
 ///
 /// `GET /v1/reporting/report_runs/{report_run}`
-Future<ApiResult<ReportingReportRun, DeleteAccountsAccountError>> getReportingReportRunsReportRun({required String reportRun, List<String>? expand, GetReportingReportRunsReportRunRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReportingReportRun, DeleteAccountsAccountError>> getReportingReportRunsReportRun({required String reportRun, List<String>? expand, GetReportingReportRunsReportRunRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -16386,13 +16386,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all Report Types
 ///
 /// `<p>`Returns a full list of Report Types.`</p>`
 ///
 /// `GET /v1/reporting/report_types`
-Future<ApiResult<GetReportingReportTypesResponse, DeleteAccountsAccountError>> getReportingReportTypes({List<String>? expand, GetReportingReportTypesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetReportingReportTypesResponse, DeleteAccountsAccountError>> getReportingReportTypes({List<String>? expand, GetReportingReportTypesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -16421,13 +16421,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Report Type
 ///
 /// `<p>`Retrieves the details of a Report Type. (Certain report types require a `<a href="https://stripe.com/docs/keys#test-live-modes">`live-mode API key`</a>`.)`</p>`
 ///
 /// `GET /v1/reporting/report_types/{report_type}`
-Future<ApiResult<ReportingReportType, DeleteAccountsAccountError>> getReportingReportTypesReportType({required String reportType, List<String>? expand, GetReportingReportTypesReportTypeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReportingReportType, DeleteAccountsAccountError>> getReportingReportTypesReportType({required String reportType, List<String>? expand, GetReportingReportTypesReportTypeRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -16456,13 +16456,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all open reviews
 ///
 /// `<p>`Returns a list of `<code>`Review`</code>` objects that have `<code>`open`</code>` set to `<code>`true`</code>`. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/reviews`
-Future<ApiResult<GetReviewsResponse, DeleteAccountsAccountError>> getReviews({GetReviewsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReviewsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetReviewsResponse, DeleteAccountsAccountError>> getReviews({GetReviewsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReviewsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -16503,13 +16503,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a review
 ///
 /// `<p>`Retrieves a `<code>`Review`</code>` object.`</p>`
 ///
 /// `GET /v1/reviews/{review}`
-Future<ApiResult<Review, DeleteAccountsAccountError>> getReviewsReview({required String review, List<String>? expand, GetReviewsReviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Review, DeleteAccountsAccountError>> getReviewsReview({required String review, List<String>? expand, GetReviewsReviewRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -16538,13 +16538,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Approve a review
 ///
 /// `<p>`Approves a `<code>`Review`</code>` object, closing it and removing it from the list of reviews.`</p>`
 ///
 /// `POST /v1/reviews/{review}/approve`
-Future<ApiResult<Review, DeleteAccountsAccountError>> postReviewsReviewApprove({required String review, PostReviewsReviewApproveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Review, DeleteAccountsAccountError>> postReviewsReviewApprove({required String review, PostReviewsReviewApproveRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16565,13 +16565,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all SetupAttempts
 ///
 /// `<p>`Returns a list of SetupAttempts that associate with a provided SetupIntent.`</p>`
 ///
 /// `GET /v1/setup_attempts`
-Future<ApiResult<GetSetupAttemptsResponse, DeleteAccountsAccountError>> getSetupAttempts({required String setupIntent, GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSetupAttemptsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSetupAttemptsResponse, DeleteAccountsAccountError>> getSetupAttempts({required String setupIntent, GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSetupAttemptsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -16613,13 +16613,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all SetupIntents
 ///
 /// `<p>`Returns a list of SetupIntents.`</p>`
 ///
 /// `GET /v1/setup_intents`
-Future<ApiResult<GetSetupIntentsResponse, DeleteAccountsAccountError>> getSetupIntents({bool? attachToSelf, GetSetupIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? paymentMethod, String? startingAfter, GetSetupIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSetupIntentsResponse, DeleteAccountsAccountError>> getSetupIntents({bool? attachToSelf, GetSetupIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? paymentMethod, String? startingAfter, GetSetupIntentsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (attachToSelf != null) {
   queryParameters['attach_to_self'] = attachToSelf.toString();
@@ -16672,7 +16672,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a SetupIntent
 ///
 /// `<p>`Creates a SetupIntent object.`</p>`
@@ -16681,7 +16681,7 @@ return await execute(
 /// it to collect any required permissions to charge the payment method later.`</p>`
 ///
 /// `POST /v1/setup_intents`
-Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntents({PostSetupIntentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntents({PostSetupIntentsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16744,7 +16744,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a SetupIntent
 ///
 /// `<p>`Retrieves the details of a SetupIntent that has previously been created. `</p>`
@@ -16754,7 +16754,7 @@ return await execute(
 /// `<p>`When retrieved with a publishable key, only a subset of properties will be returned. Please refer to the `<a href="#setup_intent_object">`SetupIntent`</a>` object reference for more details.`</p>`
 ///
 /// `GET /v1/setup_intents/{intent}`
-Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> getSetupIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetSetupIntentsIntentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> getSetupIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetSetupIntentsIntentRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
@@ -16786,13 +16786,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a SetupIntent
 ///
 /// `<p>`Updates a SetupIntent object.`</p>`
 ///
 /// `POST /v1/setup_intents/{intent}`
-Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntent({required String intent, PostSetupIntentsIntentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntent({required String intent, PostSetupIntentsIntentRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16837,7 +16837,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a SetupIntent
 ///
 /// `<p>`You can cancel a SetupIntent object when it’s in one of these statuses: `<code>`requires_payment_method`</code>`, `<code>`requires_confirmation`</code>`, or `<code>`requires_action`</code>`. `</p>`
@@ -16845,7 +16845,7 @@ return await execute(
 /// `<p>`After you cancel it, setup is abandoned and any operations on the SetupIntent fail with an error. You can’t cancel the SetupIntent for a Checkout Session. `<a href="/docs/api/checkout/sessions/expire">`Expire the Checkout Session`</a>` instead.`</p>`
 ///
 /// `POST /v1/setup_intents/{intent}/cancel`
-Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentCancel({required String intent, PostSetupIntentsIntentCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentCancel({required String intent, PostSetupIntentsIntentCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16868,7 +16868,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Confirm a SetupIntent
 ///
 /// `<p>`Confirm that your customer intends to set up the current or
@@ -16887,7 +16887,7 @@ return await execute(
 /// confirmation limit is reached.`</p>`
 ///
 /// `POST /v1/setup_intents/{intent}/confirm`
-Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentConfirm({required String intent, PostSetupIntentsIntentConfirmRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentConfirm({required String intent, PostSetupIntentsIntentConfirmRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16924,13 +16924,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Verify microdeposits on a SetupIntent
 ///
 /// `<p>`Verifies microdeposits on a SetupIntent object.`</p>`
 ///
 /// `POST /v1/setup_intents/{intent}/verify_microdeposits`
-Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentVerifyMicrodeposits({required String intent, PostSetupIntentsIntentVerifyMicrodepositsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentVerifyMicrodeposits({required String intent, PostSetupIntentsIntentVerifyMicrodepositsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16957,13 +16957,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all shipping rates
 ///
 /// `<p>`Returns a list of your shipping rates.`</p>`
 ///
 /// `GET /v1/shipping_rates`
-Future<ApiResult<GetShippingRatesResponse, DeleteAccountsAccountError>> getShippingRates({bool? active, GetShippingRatesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetShippingRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetShippingRatesResponse, DeleteAccountsAccountError>> getShippingRates({bool? active, GetShippingRatesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetShippingRatesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -17010,13 +17010,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a shipping rate
 ///
 /// `<p>`Creates a new shipping rate object.`</p>`
 ///
 /// `POST /v1/shipping_rates`
-Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> postShippingRates({required PostShippingRatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> postShippingRates({required PostShippingRatesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17050,13 +17050,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a shipping rate
 ///
 /// `<p>`Returns the shipping rate object with the given ID.`</p>`
 ///
 /// `GET /v1/shipping_rates/{shipping_rate_token}`
-Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> getShippingRatesShippingRateToken({required String shippingRateToken, List<String>? expand, GetShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> getShippingRatesShippingRateToken({required String shippingRateToken, List<String>? expand, GetShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -17085,13 +17085,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a shipping rate
 ///
 /// `<p>`Updates an existing shipping rate object.`</p>`
 ///
 /// `POST /v1/shipping_rates/{shipping_rate_token}`
-Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> postShippingRatesShippingRateToken({required String shippingRateToken, PostShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> postShippingRatesShippingRateToken({required String shippingRateToken, PostShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17120,13 +17120,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update an existing Sigma Query
 ///
 /// `<p>`Update an existing Sigma query that previously exists`</p>`
 ///
 /// `POST /v1/sigma/saved_queries/{id}`
-Future<ApiResult<Query, DeleteAccountsAccountError>> postSigmaSavedQueriesId({required String id, PostSigmaSavedQueriesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Query, DeleteAccountsAccountError>> postSigmaSavedQueriesId({required String id, PostSigmaSavedQueriesIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17151,13 +17151,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all scheduled query runs
 ///
 /// `<p>`Returns a list of scheduled query runs.`</p>`
 ///
 /// `GET /v1/sigma/scheduled_query_runs`
-Future<ApiResult<GetSigmaScheduledQueryRunsResponse, DeleteAccountsAccountError>> getSigmaScheduledQueryRuns({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSigmaScheduledQueryRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSigmaScheduledQueryRunsResponse, DeleteAccountsAccountError>> getSigmaScheduledQueryRuns({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSigmaScheduledQueryRunsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17195,13 +17195,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a scheduled query run
 ///
 /// `<p>`Retrieves the details of an scheduled query run.`</p>`
 ///
 /// `GET /v1/sigma/scheduled_query_runs/{scheduled_query_run}`
-Future<ApiResult<ScheduledQueryRun, DeleteAccountsAccountError>> getSigmaScheduledQueryRunsScheduledQueryRun({required String scheduledQueryRun, List<String>? expand, GetSigmaScheduledQueryRunsScheduledQueryRunRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ScheduledQueryRun, DeleteAccountsAccountError>> getSigmaScheduledQueryRunsScheduledQueryRun({required String scheduledQueryRun, List<String>? expand, GetSigmaScheduledQueryRunsScheduledQueryRunRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -17230,13 +17230,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Shares a source
 ///
 /// `<p>`Creates a new source object.`</p>`
 ///
 /// `POST /v1/sources`
-Future<ApiResult<Source, DeleteAccountsAccountError>> postSources({PostSourcesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Source, DeleteAccountsAccountError>> postSources({PostSourcesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17287,13 +17287,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a source
 ///
 /// `<p>`Retrieves an existing source object. Supply the unique source ID from a source creation request and Stripe will return the corresponding up-to-date source object information.`</p>`
 ///
 /// `GET /v1/sources/{source}`
-Future<ApiResult<Source, DeleteAccountsAccountError>> getSourcesSource({required String source, String? clientSecret, List<String>? expand, GetSourcesSourceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Source, DeleteAccountsAccountError>> getSourcesSource({required String source, String? clientSecret, List<String>? expand, GetSourcesSourceRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
@@ -17325,7 +17325,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a source
 ///
 /// `<p>`Updates the specified source by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -17333,7 +17333,7 @@ return await execute(
 /// `<p>`This request accepts the `<code>`metadata`</code>` and `<code>`owner`</code>` as arguments. It is also possible to update type specific information for selected payment methods. Please refer to our `<a href="/docs/sources">`payment method guides`</a>` for more detail.`</p>`
 ///
 /// `POST /v1/sources/{source}`
-Future<ApiResult<Source, DeleteAccountsAccountError>> postSourcesSource({required String source, PostSourcesSourceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Source, DeleteAccountsAccountError>> postSourcesSource({required String source, PostSourcesSourceRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17364,13 +17364,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Source MandateNotification
 ///
 /// `<p>`Retrieves a new Source MandateNotification.`</p>`
 ///
 /// `GET /v1/sources/{source}/mandate_notifications/{mandate_notification}`
-Future<ApiResult<SourceMandateNotification, DeleteAccountsAccountError>> getSourcesSourceMandateNotificationsMandateNotification({required String mandateNotification, required String source, List<String>? expand, GetSourcesSourceMandateNotificationsMandateNotificationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SourceMandateNotification, DeleteAccountsAccountError>> getSourcesSourceMandateNotificationsMandateNotification({required String mandateNotification, required String source, List<String>? expand, GetSourcesSourceMandateNotificationsMandateNotificationRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -17399,11 +17399,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`List source transactions for a given source.`</p>`
 ///
 /// `GET /v1/sources/{source}/source_transactions`
-Future<ApiResult<GetSourcesSourceSourceTransactionsResponse, DeleteAccountsAccountError>> getSourcesSourceSourceTransactions({required String source, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSourcesSourceSourceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSourcesSourceSourceTransactionsResponse, DeleteAccountsAccountError>> getSourcesSourceSourceTransactions({required String source, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSourcesSourceSourceTransactionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17441,13 +17441,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a source transaction
 ///
 /// `<p>`Retrieve an existing source transaction object. Supply the unique source ID from a source creation request and the source transaction ID and Stripe will return the corresponding up-to-date source object information.`</p>`
 ///
 /// `GET /v1/sources/{source}/source_transactions/{source_transaction}`
-Future<ApiResult<SourceTransaction, DeleteAccountsAccountError>> getSourcesSourceSourceTransactionsSourceTransaction({required String source, required String sourceTransaction, List<String>? expand, GetSourcesSourceSourceTransactionsSourceTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SourceTransaction, DeleteAccountsAccountError>> getSourcesSourceSourceTransactionsSourceTransaction({required String source, required String sourceTransaction, List<String>? expand, GetSourcesSourceSourceTransactionsSourceTransactionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -17476,11 +17476,11 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// `<p>`Verify a given source.`</p>`
 ///
 /// `POST /v1/sources/{source}/verify`
-Future<ApiResult<Source, DeleteAccountsAccountError>> postSourcesSourceVerify({required String source, required PostSourcesSourceVerifyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Source, DeleteAccountsAccountError>> postSourcesSourceVerify({required String source, required PostSourcesSourceVerifyRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17502,13 +17502,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all subscription items
 ///
 /// `<p>`Returns a list of your subscription items for a given subscription.`</p>`
 ///
 /// `GET /v1/subscription_items`
-Future<ApiResult<GetSubscriptionItemsResponse, DeleteAccountsAccountError>> getSubscriptionItems({required String subscription, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSubscriptionItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionItemsResponse, DeleteAccountsAccountError>> getSubscriptionItems({required String subscription, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSubscriptionItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17547,13 +17547,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a subscription item
 ///
 /// `<p>`Adds a new item to an existing subscription. No existing items will be changed or replaced.`</p>`
 ///
 /// `POST /v1/subscription_items`
-Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> postSubscriptionItems({required PostSubscriptionItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> postSubscriptionItems({required PostSubscriptionItemsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17595,13 +17595,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a subscription item
 ///
 /// `<p>`Retrieves the subscription item with the given ID.`</p>`
 ///
 /// `GET /v1/subscription_items/{item}`
-Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> getSubscriptionItemsItem({required String item, List<String>? expand, GetSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> getSubscriptionItemsItem({required String item, List<String>? expand, GetSubscriptionItemsItemRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -17630,13 +17630,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a subscription item
 ///
 /// `<p>`Updates the plan or quantity of an item on a current subscription.`</p>`
 ///
 /// `POST /v1/subscription_items/{item}`
-Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> postSubscriptionItemsItem({required String item, PostSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> postSubscriptionItemsItem({required String item, PostSubscriptionItemsItemRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17679,13 +17679,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a subscription item
 ///
 /// `<p>`Deletes an item from the subscription. Removing a subscription item from a subscription will not cancel the subscription.`</p>`
 ///
 /// `DELETE /v1/subscription_items/{item}`
-Future<ApiResult<DeletedSubscriptionItem, DeleteAccountsAccountError>> deleteSubscriptionItemsItem({required String item, DeleteSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedSubscriptionItem, DeleteAccountsAccountError>> deleteSubscriptionItemsItem({required String item, DeleteSubscriptionItemsItemRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17712,13 +17712,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all schedules
 ///
 /// `<p>`Retrieves the list of your subscription schedules.`</p>`
 ///
 /// `GET /v1/subscription_schedules`
-Future<ApiResult<GetSubscriptionSchedulesResponse, DeleteAccountsAccountError>> getSubscriptionSchedules({GetSubscriptionSchedulesCanceledAt? canceledAt, GetSubscriptionSchedulesCompletedAt? completedAt, GetSubscriptionSchedulesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, GetSubscriptionSchedulesReleasedAt? releasedAt, bool? scheduled, String? startingAfter, GetSubscriptionSchedulesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionSchedulesResponse, DeleteAccountsAccountError>> getSubscriptionSchedules({GetSubscriptionSchedulesCanceledAt? canceledAt, GetSubscriptionSchedulesCompletedAt? completedAt, GetSubscriptionSchedulesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, GetSubscriptionSchedulesReleasedAt? releasedAt, bool? scheduled, String? startingAfter, GetSubscriptionSchedulesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (canceledAt != null) {
 queryParametersList.add(ApiQueryParameter(name: 'canceled_at', value: canceledAt.toString()));
@@ -17777,13 +17777,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a schedule
 ///
 /// `<p>`Creates a new subscription schedule object. Each customer can have up to 500 active or scheduled subscriptions.`</p>`
 ///
 /// `POST /v1/subscription_schedules`
-Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedules({PostSubscriptionSchedulesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedules({PostSubscriptionSchedulesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17822,13 +17822,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a schedule
 ///
 /// `<p>`Retrieves the details of an existing subscription schedule. You only need to supply the unique subscription schedule identifier that was returned upon subscription schedule creation.`</p>`
 ///
 /// `GET /v1/subscription_schedules/{schedule}`
-Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> getSubscriptionSchedulesSchedule({required String schedule, List<String>? expand, GetSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> getSubscriptionSchedulesSchedule({required String schedule, List<String>? expand, GetSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -17857,13 +17857,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a schedule
 ///
 /// `<p>`Updates an existing subscription schedule.`</p>`
 ///
 /// `POST /v1/subscription_schedules/{schedule}`
-Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesSchedule({required String schedule, PostSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesSchedule({required String schedule, PostSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17894,13 +17894,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a schedule
 ///
 /// `<p>`Cancels a subscription schedule and its associated subscription immediately (if the subscription schedule has an active subscription). A subscription schedule can only be canceled if its status is `<code>`not_started`</code>` or `<code>`active`</code>`.`</p>`
 ///
 /// `POST /v1/subscription_schedules/{schedule}/cancel`
-Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesScheduleCancel({required String schedule, PostSubscriptionSchedulesScheduleCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesScheduleCancel({required String schedule, PostSubscriptionSchedulesScheduleCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17925,13 +17925,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Release a schedule
 ///
 /// `<p>`Releases the subscription schedule immediately, which will stop scheduling of its phases, but leave any existing subscription in place. A schedule can only be released if its status is `<code>`not_started`</code>` or `<code>`active`</code>`. If the subscription schedule is currently associated with a subscription, releasing it will remove its `<code>`subscription`</code>` property and set the subscription’s ID to the `<code>`released_subscription`</code>` property.`</p>`
 ///
 /// `POST /v1/subscription_schedules/{schedule}/release`
-Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesScheduleRelease({required String schedule, PostSubscriptionSchedulesScheduleReleaseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesScheduleRelease({required String schedule, PostSubscriptionSchedulesScheduleReleaseRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17954,13 +17954,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List subscriptions
 ///
 /// `<p>`By default, returns a list of subscriptions that have not been canceled. In order to list canceled subscriptions, specify `<code>`status=canceled`</code>`.`</p>`
 ///
 /// `GET /v1/subscriptions`
-Future<ApiResult<GetSubscriptionsResponse, DeleteAccountsAccountError>> getSubscriptions({GetSubscriptionsAutomaticTax? automaticTax, GetSubscriptionsCollectionMethod? collectionMethod, GetSubscriptionsCreated? created, GetSubscriptionsCurrentPeriodEnd? currentPeriodEnd, GetSubscriptionsCurrentPeriodStart? currentPeriodStart, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? price, String? startingAfter, GetSubscriptionsStatus? status, String? testClock, GetSubscriptionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionsResponse, DeleteAccountsAccountError>> getSubscriptions({GetSubscriptionsAutomaticTax? automaticTax, GetSubscriptionsCollectionMethod? collectionMethod, GetSubscriptionsCreated? created, GetSubscriptionsCurrentPeriodEnd? currentPeriodEnd, GetSubscriptionsCurrentPeriodStart? currentPeriodStart, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? price, String? startingAfter, GetSubscriptionsStatus? status, String? testClock, GetSubscriptionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (automaticTax != null) {
 queryParameters['automatic_tax[enabled]'] = automaticTax.enabled.toString();
@@ -18028,7 +18028,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a subscription
 ///
 /// `<p>`Creates a new subscription on an existing customer. Each customer can have up to 500 active or scheduled subscriptions.`</p>`
@@ -18040,7 +18040,7 @@ return await execute(
 /// Schedules provide the flexibility to model more complex billing configurations that change over time.`</p>`
 ///
 /// `POST /v1/subscriptions`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptions({PostSubscriptionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptions({PostSubscriptionsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18129,7 +18129,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Search subscriptions
 ///
 /// `<p>`Search for subscriptions you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -18138,7 +18138,7 @@ return await execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/subscriptions/search`
-Future<ApiResult<GetSubscriptionsSearchResponse, DeleteAccountsAccountError>> getSubscriptionsSearch({required String query, List<String>? expand, int? limit, String? page, GetSubscriptionsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionsSearchResponse, DeleteAccountsAccountError>> getSubscriptionsSearch({required String query, List<String>? expand, int? limit, String? page, GetSubscriptionsSearchRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -18174,13 +18174,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a subscription
 ///
 /// `<p>`Retrieves the subscription with the given ID.`</p>`
 ///
 /// `GET /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> getSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, List<String>? expand, GetSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> getSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, List<String>? expand, GetSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -18209,7 +18209,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a subscription
 ///
 /// `<p>`Updates an existing subscription to match the specified parameters.
@@ -18235,7 +18235,7 @@ return await execute(
 /// `<p>`Updating the quantity on a subscription many times in an hour may result in `<a href="/docs/rate-limits">`rate limiting`</a>`. If you need to bill for a frequently changing quantity, consider integrating `<a href="/docs/billing/subscriptions/usage-based">`usage-based billing`</a>` instead.`</p>`
 ///
 /// `POST /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, PostSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, PostSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18316,7 +18316,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a subscription
 ///
 /// `<p>`Cancels a customer’s subscription immediately. The customer won’t be charged again for the subscription. After it’s canceled, you can no longer update the subscription or its `<a href="/metadata">`metadata`</a>`.`</p>`
@@ -18326,7 +18326,7 @@ return await execute(
 /// `<p>`By default, upon subscription cancellation, Stripe stops automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.`</p>`
 ///
 /// `DELETE /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> deleteSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> deleteSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18353,13 +18353,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a subscription discount
 ///
 /// `<p>`Removes the currently applied discount on a subscription.`</p>`
 ///
 /// `DELETE /v1/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteSubscriptionsSubscriptionExposedIdDiscount({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteSubscriptionsSubscriptionExposedIdDiscount({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18378,13 +18378,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Migrate a subscription
 ///
 /// `<p>`Upgrade the billing_mode of an existing subscription.`</p>`
 ///
 /// `POST /v1/subscriptions/{subscription}/migrate`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionMigrate({required String subscription, required PostSubscriptionsSubscriptionMigrateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionMigrate({required String subscription, required PostSubscriptionsSubscriptionMigrateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18406,13 +18406,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Resume a subscription
 ///
 /// `<p>`Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor and creating prorations. If no resumption invoice is generated, the subscription becomes `<code>`active`</code>` immediately. If a resumption invoice is generated, the subscription remains `<code>`paused`</code>` until the invoice is paid or marked uncollectible. If the invoice is not paid by the expiration date, it is voided and the subscription remains `<code>`paused`</code>`.`</p>`
 ///
 /// `POST /v1/subscriptions/{subscription}/resume`
-Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionResume({required String subscription, PostSubscriptionsSubscriptionResumeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionResume({required String subscription, PostSubscriptionsSubscriptionResumeRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18439,13 +18439,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Find a Tax Association
 ///
 /// `<p>`Finds a tax association object by PaymentIntent id.`</p>`
 ///
 /// `GET /v1/tax/associations/find`
-Future<ApiResult<TaxAssociation, DeleteAccountsAccountError>> getTaxAssociationsFind({required String paymentIntent, List<String>? expand, GetTaxAssociationsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxAssociation, DeleteAccountsAccountError>> getTaxAssociationsFind({required String paymentIntent, List<String>? expand, GetTaxAssociationsFindRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -18475,13 +18475,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Tax Calculation
 ///
 /// `<p>`Calculates tax based on the input and returns a Tax `<code>`Calculation`</code>` object.`</p>`
 ///
 /// `POST /v1/tax/calculations`
-Future<ApiResult<TaxCalculation, DeleteAccountsAccountError>> postTaxCalculations({required PostTaxCalculationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxCalculation, DeleteAccountsAccountError>> postTaxCalculations({required PostTaxCalculationsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18514,13 +18514,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Tax Calculation
 ///
 /// `<p>`Retrieves a Tax `<code>`Calculation`</code>` object, if the calculation hasn’t expired.`</p>`
 ///
 /// `GET /v1/tax/calculations/{calculation}`
-Future<ApiResult<TaxCalculation, DeleteAccountsAccountError>> getTaxCalculationsCalculation({required String calculation, List<String>? expand, GetTaxCalculationsCalculationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxCalculation, DeleteAccountsAccountError>> getTaxCalculationsCalculation({required String calculation, List<String>? expand, GetTaxCalculationsCalculationRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -18549,13 +18549,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a calculation's line items
 ///
 /// `<p>`Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t expired.`</p>`
 ///
 /// `GET /v1/tax/calculations/{calculation}/line_items`
-Future<ApiResult<GetTaxCalculationsCalculationLineItemsResponse, DeleteAccountsAccountError>> getTaxCalculationsCalculationLineItems({required String calculation, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCalculationsCalculationLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxCalculationsCalculationLineItemsResponse, DeleteAccountsAccountError>> getTaxCalculationsCalculationLineItems({required String calculation, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCalculationsCalculationLineItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -18593,13 +18593,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List registrations
 ///
 /// `<p>`Returns a list of Tax `<code>`Registration`</code>` objects.`</p>`
 ///
 /// `GET /v1/tax/registrations`
-Future<ApiResult<GetTaxRegistrationsResponse, DeleteAccountsAccountError>> getTaxRegistrations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxRegistrationsStatus? status, GetTaxRegistrationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxRegistrationsResponse, DeleteAccountsAccountError>> getTaxRegistrations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxRegistrationsStatus? status, GetTaxRegistrationsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -18640,13 +18640,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a registration
 ///
 /// `<p>`Creates a new Tax `<code>`Registration`</code>` object.`</p>`
 ///
 /// `POST /v1/tax/registrations`
-Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> postTaxRegistrations({required PostTaxRegistrationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> postTaxRegistrations({required PostTaxRegistrationsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18672,13 +18672,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a registration
 ///
 /// `<p>`Returns a Tax `<code>`Registration`</code>` object.`</p>`
 ///
 /// `GET /v1/tax/registrations/{id}`
-Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> getTaxRegistrationsId({required String id, List<String>? expand, GetTaxRegistrationsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> getTaxRegistrationsId({required String id, List<String>? expand, GetTaxRegistrationsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -18707,7 +18707,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a registration
 ///
 /// `<p>`Updates an existing Tax `<code>`Registration`</code>` object.`</p>`
@@ -18715,7 +18715,7 @@ return await execute(
 /// `<p>`A registration cannot be deleted after it has been created. If you wish to end a registration you may do so by setting `<code>`expires_at`</code>`.`</p>`
 ///
 /// `POST /v1/tax/registrations/{id}`
-Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> postTaxRegistrationsId({required String id, PostTaxRegistrationsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> postTaxRegistrationsId({required String id, PostTaxRegistrationsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18740,13 +18740,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve settings
 ///
 /// `<p>`Retrieves Tax `<code>`Settings`</code>` for a merchant.`</p>`
 ///
 /// `GET /v1/tax/settings`
-Future<ApiResult<TaxSettings, DeleteAccountsAccountError>> getTaxSettings({List<String>? expand, GetTaxSettingsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxSettings, DeleteAccountsAccountError>> getTaxSettings({List<String>? expand, GetTaxSettingsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -18775,13 +18775,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update settings
 ///
 /// `<p>`Updates Tax `<code>`Settings`</code>` parameters used in tax calculations. All parameters are editable but none can be removed once set.`</p>`
 ///
 /// `POST /v1/tax/settings`
-Future<ApiResult<TaxSettings, DeleteAccountsAccountError>> postTaxSettings({PostTaxSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxSettings, DeleteAccountsAccountError>> postTaxSettings({PostTaxSettingsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18806,13 +18806,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a transaction from a calculation
 ///
 /// `<p>`Creates a Tax Transaction from a calculation, if that calculation hasn’t expired. Calculations expire after 90 days.`</p>`
 ///
 /// `POST /v1/tax/transactions/create_from_calculation`
-Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> postTaxTransactionsCreateFromCalculation({required PostTaxTransactionsCreateFromCalculationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> postTaxTransactionsCreateFromCalculation({required PostTaxTransactionsCreateFromCalculationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18839,13 +18839,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a reversal transaction
 ///
 /// `<p>`Partially or fully reverses a previously created `<code>`Transaction`</code>`.`</p>`
 ///
 /// `POST /v1/tax/transactions/create_reversal`
-Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> postTaxTransactionsCreateReversal({required PostTaxTransactionsCreateReversalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> postTaxTransactionsCreateReversal({required PostTaxTransactionsCreateReversalRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18877,13 +18877,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a transaction
 ///
 /// `<p>`Retrieves a Tax `<code>`Transaction`</code>` object.`</p>`
 ///
 /// `GET /v1/tax/transactions/{transaction}`
-Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> getTaxTransactionsTransaction({required String transaction, List<String>? expand, GetTaxTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> getTaxTransactionsTransaction({required String transaction, List<String>? expand, GetTaxTransactionsTransactionRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -18912,13 +18912,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a transaction's line items
 ///
 /// `<p>`Retrieves the line items of a committed standalone transaction as a collection.`</p>`
 ///
 /// `GET /v1/tax/transactions/{transaction}/line_items`
-Future<ApiResult<GetTaxTransactionsTransactionLineItemsResponse, DeleteAccountsAccountError>> getTaxTransactionsTransactionLineItems({required String transaction, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxTransactionsTransactionLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxTransactionsTransactionLineItemsResponse, DeleteAccountsAccountError>> getTaxTransactionsTransactionLineItems({required String transaction, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxTransactionsTransactionLineItemsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -18956,13 +18956,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all tax codes
 ///
 /// `<p>`A list of `<a href="https://stripe.com/docs/tax/tax-categories">`all tax codes available`</a>` to add to Products in order to allow specific tax calculations.`</p>`
 ///
 /// `GET /v1/tax_codes`
-Future<ApiResult<GetTaxCodesResponse, DeleteAccountsAccountError>> getTaxCodes({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCodesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxCodesResponse, DeleteAccountsAccountError>> getTaxCodes({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCodesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19000,13 +19000,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a tax code
 ///
 /// `<p>`Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will return the corresponding tax code information.`</p>`
 ///
 /// `GET /v1/tax_codes/{id}`
-Future<ApiResult<TaxCode, DeleteAccountsAccountError>> getTaxCodesId({required String id, List<String>? expand, GetTaxCodesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxCode, DeleteAccountsAccountError>> getTaxCodesId({required String id, List<String>? expand, GetTaxCodesIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -19035,13 +19035,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all tax IDs
 ///
 /// `<p>`Returns a list of tax IDs.`</p>`
 ///
 /// `GET /v1/tax_ids`
-Future<ApiResult<GetTaxIdsResponse, DeleteAccountsAccountError>> getTaxIds({String? endingBefore, List<String>? expand, int? limit, GetTaxIdsOwner? owner, String? startingAfter, GetTaxIdsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxIdsResponse, DeleteAccountsAccountError>> getTaxIds({String? endingBefore, List<String>? expand, int? limit, GetTaxIdsOwner? owner, String? startingAfter, GetTaxIdsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19085,13 +19085,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a tax ID
 ///
 /// `<p>`Creates a new account or customer `<code>`tax_id`</code>` object.`</p>`
 ///
 /// `POST /v1/tax_ids`
-Future<ApiResult<TaxId, DeleteAccountsAccountError>> postTaxIds({required PostTaxIdsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxId, DeleteAccountsAccountError>> postTaxIds({required PostTaxIdsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19116,13 +19116,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a tax ID
 ///
 /// `<p>`Retrieves an account or customer `<code>`tax_id`</code>` object.`</p>`
 ///
 /// `GET /v1/tax_ids/{id}`
-Future<ApiResult<TaxId, DeleteAccountsAccountError>> getTaxIdsId({required String id, List<String>? expand, GetTaxIdsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxId, DeleteAccountsAccountError>> getTaxIdsId({required String id, List<String>? expand, GetTaxIdsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -19151,13 +19151,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a tax ID
 ///
 /// `<p>`Deletes an existing account or customer `<code>`tax_id`</code>` object.`</p>`
 ///
 /// `DELETE /v1/tax_ids/{id}`
-Future<ApiResult<DeletedTaxId, DeleteAccountsAccountError>> deleteTaxIdsId({required String id, DeleteTaxIdsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTaxId, DeleteAccountsAccountError>> deleteTaxIdsId({required String id, DeleteTaxIdsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19176,13 +19176,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all tax rates
 ///
 /// `<p>`Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most recently created tax rates appearing first.`</p>`
 ///
 /// `GET /v1/tax_rates`
-Future<ApiResult<GetTaxRatesResponse, DeleteAccountsAccountError>> getTaxRates({bool? active, GetTaxRatesCreated? created, String? endingBefore, List<String>? expand, bool? inclusive, int? limit, String? startingAfter, GetTaxRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxRatesResponse, DeleteAccountsAccountError>> getTaxRates({bool? active, GetTaxRatesCreated? created, String? endingBefore, List<String>? expand, bool? inclusive, int? limit, String? startingAfter, GetTaxRatesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -19229,13 +19229,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a tax rate
 ///
 /// `<p>`Creates a new tax rate.`</p>`
 ///
 /// `POST /v1/tax_rates`
-Future<ApiResult<TaxRate, DeleteAccountsAccountError>> postTaxRates({required PostTaxRatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxRate, DeleteAccountsAccountError>> postTaxRates({required PostTaxRatesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19273,13 +19273,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a tax rate
 ///
 /// `<p>`Retrieves a tax rate with the given ID`</p>`
 ///
 /// `GET /v1/tax_rates/{tax_rate}`
-Future<ApiResult<TaxRate, DeleteAccountsAccountError>> getTaxRatesTaxRate({required String taxRate, List<String>? expand, GetTaxRatesTaxRateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxRate, DeleteAccountsAccountError>> getTaxRatesTaxRate({required String taxRate, List<String>? expand, GetTaxRatesTaxRateRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -19308,13 +19308,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a tax rate
 ///
 /// `<p>`Updates an existing tax rate.`</p>`
 ///
 /// `POST /v1/tax_rates/{tax_rate}`
-Future<ApiResult<TaxRate, DeleteAccountsAccountError>> postTaxRatesTaxRate({required String taxRate, PostTaxRatesTaxRateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxRate, DeleteAccountsAccountError>> postTaxRatesTaxRate({required String taxRate, PostTaxRatesTaxRateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19351,13 +19351,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all Configurations
 ///
 /// `<p>`Returns a list of `<code>`Configuration`</code>` objects.`</p>`
 ///
 /// `GET /v1/terminal/configurations`
-Future<ApiResult<GetTerminalConfigurationsResponse, DeleteAccountsAccountError>> getTerminalConfigurations({String? endingBefore, List<String>? expand, bool? isAccountDefault, int? limit, String? startingAfter, GetTerminalConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalConfigurationsResponse, DeleteAccountsAccountError>> getTerminalConfigurations({String? endingBefore, List<String>? expand, bool? isAccountDefault, int? limit, String? startingAfter, GetTerminalConfigurationsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19398,13 +19398,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Configuration
 ///
 /// `<p>`Creates a new `<code>`Configuration`</code>` object.`</p>`
 ///
 /// `POST /v1/terminal/configurations`
-Future<ApiResult<TerminalConfiguration, DeleteAccountsAccountError>> postTerminalConfigurations({PostTerminalConfigurationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalConfiguration, DeleteAccountsAccountError>> postTerminalConfigurations({PostTerminalConfigurationsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19447,13 +19447,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Configuration
 ///
 /// `<p>`Retrieves a `<code>`Configuration`</code>` object.`</p>`
 ///
 /// `GET /v1/terminal/configurations/{configuration}`
-Future<ApiResult<GetTerminalConfigurationsConfigurationResponse, DeleteAccountsAccountError>> getTerminalConfigurationsConfiguration({required String configuration, List<String>? expand, GetTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalConfigurationsConfigurationResponse, DeleteAccountsAccountError>> getTerminalConfigurationsConfiguration({required String configuration, List<String>? expand, GetTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -19482,13 +19482,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a Configuration
 ///
 /// `<p>`Updates a new `<code>`Configuration`</code>` object.`</p>`
 ///
 /// `POST /v1/terminal/configurations/{configuration}`
-Future<ApiResult<PostTerminalConfigurationsConfigurationResponse, DeleteAccountsAccountError>> postTerminalConfigurationsConfiguration({required String configuration, PostTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostTerminalConfigurationsConfigurationResponse, DeleteAccountsAccountError>> postTerminalConfigurationsConfiguration({required String configuration, PostTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19531,13 +19531,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a Configuration
 ///
 /// `<p>`Deletes a `<code>`Configuration`</code>` object.`</p>`
 ///
 /// `DELETE /v1/terminal/configurations/{configuration}`
-Future<ApiResult<DeletedTerminalConfiguration, DeleteAccountsAccountError>> deleteTerminalConfigurationsConfiguration({required String configuration, DeleteTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTerminalConfiguration, DeleteAccountsAccountError>> deleteTerminalConfigurationsConfiguration({required String configuration, DeleteTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19556,13 +19556,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Connection Token
 ///
 /// `<p>`To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. On your backend, add an endpoint that creates and returns a connection token.`</p>`
 ///
 /// `POST /v1/terminal/connection_tokens`
-Future<ApiResult<TerminalConnectionToken, DeleteAccountsAccountError>> postTerminalConnectionTokens({PostTerminalConnectionTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalConnectionToken, DeleteAccountsAccountError>> postTerminalConnectionTokens({PostTerminalConnectionTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19585,13 +19585,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all Locations
 ///
 /// `<p>`Returns a list of `<code>`Location`</code>` objects.`</p>`
 ///
 /// `GET /v1/terminal/locations`
-Future<ApiResult<GetTerminalLocationsResponse, DeleteAccountsAccountError>> getTerminalLocations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTerminalLocationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalLocationsResponse, DeleteAccountsAccountError>> getTerminalLocations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTerminalLocationsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19629,14 +19629,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Location
 ///
 /// `<p>`Creates a new `<code>`Location`</code>` object.
 /// For further details, including which address fields are required in each country, see the `<a href="/docs/terminal/fleet/locations">`Manage locations`</a>` guide.`</p>`
 ///
 /// `POST /v1/terminal/locations`
-Future<ApiResult<TerminalLocation, DeleteAccountsAccountError>> postTerminalLocations({PostTerminalLocationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalLocation, DeleteAccountsAccountError>> postTerminalLocations({PostTerminalLocationsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19675,13 +19675,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Location
 ///
 /// `<p>`Retrieves a `<code>`Location`</code>` object.`</p>`
 ///
 /// `GET /v1/terminal/locations/{location}`
-Future<ApiResult<GetTerminalLocationsLocationResponse, DeleteAccountsAccountError>> getTerminalLocationsLocation({required String location, List<String>? expand, GetTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalLocationsLocationResponse, DeleteAccountsAccountError>> getTerminalLocationsLocation({required String location, List<String>? expand, GetTerminalLocationsLocationRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -19710,13 +19710,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a Location
 ///
 /// `<p>`Updates a `<code>`Location`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/terminal/locations/{location}`
-Future<ApiResult<PostTerminalLocationsLocationResponse, DeleteAccountsAccountError>> postTerminalLocationsLocation({required String location, PostTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostTerminalLocationsLocationResponse, DeleteAccountsAccountError>> postTerminalLocationsLocation({required String location, PostTerminalLocationsLocationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19755,13 +19755,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a Location
 ///
 /// `<p>`Deletes a `<code>`Location`</code>` object.`</p>`
 ///
 /// `DELETE /v1/terminal/locations/{location}`
-Future<ApiResult<DeletedTerminalLocation, DeleteAccountsAccountError>> deleteTerminalLocationsLocation({required String location, DeleteTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTerminalLocation, DeleteAccountsAccountError>> deleteTerminalLocationsLocation({required String location, DeleteTerminalLocationsLocationRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19780,13 +19780,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an Onboarding Link
 ///
 /// `<p>`Creates a new `<code>`OnboardingLink`</code>` object that contains a redirect_url used for onboarding onto Tap to Pay on iPhone.`</p>`
 ///
 /// `POST /v1/terminal/onboarding_links`
-Future<ApiResult<TerminalOnboardingLink, DeleteAccountsAccountError>> postTerminalOnboardingLinks({required PostTerminalOnboardingLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalOnboardingLink, DeleteAccountsAccountError>> postTerminalOnboardingLinks({required PostTerminalOnboardingLinksRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19811,13 +19811,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all Readers
 ///
 /// `<p>`Returns a list of `<code>`Reader`</code>` objects.`</p>`
 ///
 /// `GET /v1/terminal/readers`
-Future<ApiResult<GetTerminalReadersResponse, DeleteAccountsAccountError>> getTerminalReaders({GetTerminalReadersDeviceType? deviceType, String? endingBefore, List<String>? expand, int? limit, String? location, String? serialNumber, String? startingAfter, GetTerminalReadersStatus? status, GetTerminalReadersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalReadersResponse, DeleteAccountsAccountError>> getTerminalReaders({GetTerminalReadersDeviceType? deviceType, String? endingBefore, List<String>? expand, int? limit, String? location, String? serialNumber, String? startingAfter, GetTerminalReadersStatus? status, GetTerminalReadersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceType != null) {
   queryParameters['device_type'] = deviceType.toJson();
@@ -19867,13 +19867,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a Reader
 ///
 /// `<p>`Creates a new `<code>`Reader`</code>` object.`</p>`
 ///
 /// `POST /v1/terminal/readers`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReaders({required PostTerminalReadersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReaders({required PostTerminalReadersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19901,13 +19901,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Reader
 ///
 /// `<p>`Retrieves a `<code>`Reader`</code>` object.`</p>`
 ///
 /// `GET /v1/terminal/readers/{reader}`
-Future<ApiResult<GetTerminalReadersReaderResponse, DeleteAccountsAccountError>> getTerminalReadersReader({required String reader, List<String>? expand, GetTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalReadersReaderResponse, DeleteAccountsAccountError>> getTerminalReadersReader({required String reader, List<String>? expand, GetTerminalReadersReaderRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -19936,13 +19936,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a Reader
 ///
 /// `<p>`Updates a `<code>`Reader`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}`
-Future<ApiResult<PostTerminalReadersReaderResponse, DeleteAccountsAccountError>> postTerminalReadersReader({required String reader, PostTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostTerminalReadersReaderResponse, DeleteAccountsAccountError>> postTerminalReadersReader({required String reader, PostTerminalReadersReaderRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19967,13 +19967,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a Reader
 ///
 /// `<p>`Deletes a `<code>`Reader`</code>` object.`</p>`
 ///
 /// `DELETE /v1/terminal/readers/{reader}`
-Future<ApiResult<DeletedTerminalReader, DeleteAccountsAccountError>> deleteTerminalReadersReader({required String reader, DeleteTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTerminalReader, DeleteAccountsAccountError>> deleteTerminalReadersReader({required String reader, DeleteTerminalReadersReaderRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19992,13 +19992,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel the current reader action
 ///
 /// `<p>`Cancels the current reader action. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation">`Programmatic Cancellation`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/cancel_action`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCancelAction({required String reader, PostTerminalReadersReaderCancelActionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCancelAction({required String reader, PostTerminalReadersReaderCancelActionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20019,13 +20019,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Collect inputs using a Reader
 ///
 /// `<p>`Initiates an `<a href="/docs/terminal/features/collect-inputs">`input collection flow`</a>` on a Reader to display input forms and collect information from your customers.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/collect_inputs`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCollectInputs({required String reader, required PostTerminalReadersReaderCollectInputsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCollectInputs({required String reader, required PostTerminalReadersReaderCollectInputsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20049,13 +20049,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Hand off a PaymentIntent to a Reader and collect card details
 ///
 /// `<p>`Initiates a payment flow on a Reader and updates the PaymentIntent with card details before manual confirmation. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#collect-a-paymentmethod">`Collecting a Payment method`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/collect_payment_method`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCollectPaymentMethod({required String reader, required PostTerminalReadersReaderCollectPaymentMethodRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCollectPaymentMethod({required String reader, required PostTerminalReadersReaderCollectPaymentMethodRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20079,13 +20079,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Confirm a PaymentIntent on the Reader
 ///
 /// `<p>`Finalizes a payment on a Reader. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#confirm-the-paymentintent">`Confirming a Payment`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/confirm_payment_intent`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderConfirmPaymentIntent({required String reader, required PostTerminalReadersReaderConfirmPaymentIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderConfirmPaymentIntent({required String reader, required PostTerminalReadersReaderConfirmPaymentIntentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20109,13 +20109,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Hand-off a PaymentIntent to a Reader
 ///
 /// `<p>`Initiates a payment flow on a Reader. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=immediately#process-payment">`process the payment`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/process_payment_intent`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderProcessPaymentIntent({required String reader, required PostTerminalReadersReaderProcessPaymentIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderProcessPaymentIntent({required String reader, required PostTerminalReadersReaderProcessPaymentIntentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20139,13 +20139,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Hand-off a SetupIntent to a Reader
 ///
 /// `<p>`Initiates a SetupIntent flow on a Reader. See `<a href="/docs/terminal/features/saving-payment-details/save-directly">`Save directly without charging`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/process_setup_intent`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderProcessSetupIntent({required String reader, required PostTerminalReadersReaderProcessSetupIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderProcessSetupIntent({required String reader, required PostTerminalReadersReaderProcessSetupIntentRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20170,13 +20170,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Refund a Charge or a PaymentIntent in-person
 ///
 /// `<p>`Initiates an in-person refund on a Reader. See `<a href="/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment">`Refund an Interac Payment`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/refund_payment`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderRefundPayment({required String reader, PostTerminalReadersReaderRefundPaymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderRefundPayment({required String reader, PostTerminalReadersReaderRefundPaymentRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20211,13 +20211,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Set reader display
 ///
 /// `<p>`Sets the reader display to show `<a href="/docs/terminal/features/display">`cart details`</a>`.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/set_reader_display`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderSetReaderDisplay({required String reader, required PostTerminalReadersReaderSetReaderDisplayRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderSetReaderDisplay({required String reader, required PostTerminalReadersReaderSetReaderDisplayRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20241,7 +20241,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a refund using a Terminal-supported device.
 ///
 /// `<p>`Internal endpoint for terminal use to create a refund for a card_present charge.
@@ -20250,7 +20250,7 @@ return await execute(
 /// `<p>`You can optionally refund only part of a charge.`</p>`
 ///
 /// `POST /v1/terminal/refunds`
-Future<ApiResult<TerminalRefund, DeleteAccountsAccountError>> postTerminalRefunds({PostTerminalRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalRefund, DeleteAccountsAccountError>> postTerminalRefunds({PostTerminalRefundsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20285,13 +20285,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a test Confirmation Token
 ///
 /// `<p>`Creates a test mode Confirmation Token server side for your integration tests.`</p>`
 ///
 /// `POST /v1/test_helpers/confirmation_tokens`
-Future<ApiResult<ConfirmationToken, DeleteAccountsAccountError>> postTestHelpersConfirmationTokens({PostTestHelpersConfirmationTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConfirmationToken, DeleteAccountsAccountError>> postTestHelpersConfirmationTokens({PostTestHelpersConfirmationTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20324,13 +20324,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Fund a test mode cash balance
 ///
 /// `<p>`Create an incoming testmode bank transfer`</p>`
 ///
 /// `POST /v1/test_helpers/customers/{customer}/fund_cash_balance`
-Future<ApiResult<CustomerCashBalanceTransaction, DeleteAccountsAccountError>> postTestHelpersCustomersCustomerFundCashBalance({required String customer, required PostTestHelpersCustomersCustomerFundCashBalanceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomerCashBalanceTransaction, DeleteAccountsAccountError>> postTestHelpersCustomersCustomerFundCashBalance({required String customer, required PostTestHelpersCustomersCustomerFundCashBalanceRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20355,13 +20355,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a test-mode authorization
 ///
 /// `<p>`Create a test-mode authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizations({required PostTestHelpersIssuingAuthorizationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizations({required PostTestHelpersIssuingAuthorizationsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20413,13 +20413,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Capture a test-mode authorization
 ///
 /// `<p>`Capture a test-mode authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/capture`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationCapture({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationCapture({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20446,13 +20446,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Expire a test-mode authorization
 ///
 /// `<p>`Expire a test-mode Authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/expire`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationExpire({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationExpire({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20473,13 +20473,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Finalize a test-mode authorization's amount
 ///
 /// `<p>`Finalize the amount on an Authorization prior to capture, when the initial authorization was for an estimated amount.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmount({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmount({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20505,13 +20505,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Respond to fraud challenge
 ///
 /// `<p>`Respond to a fraud challenge on a testmode Issuing authorization, simulating either a confirmation of fraud or a correction of legitimacy.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespond({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespond({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20533,13 +20533,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Increment a test-mode authorization
 ///
 /// `<p>`Increment a test-mode Authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/increment`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationIncrement({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationIncrement({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20563,13 +20563,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Reverse a test-mode authorization
 ///
 /// `<p>`Reverse a test-mode Authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/reverse`
-Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationReverse({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationReverse({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20592,13 +20592,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Deliver a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`delivered`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/deliver`
-Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingDeliver({required String card, PostTestHelpersIssuingCardsCardShippingDeliverRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingDeliver({required String card, PostTestHelpersIssuingCardsCardShippingDeliverRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20619,13 +20619,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Fail a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`failure`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/fail`
-Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingFail({required String card, PostTestHelpersIssuingCardsCardShippingFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingFail({required String card, PostTestHelpersIssuingCardsCardShippingFailRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20646,13 +20646,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Return a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`returned`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/return`
-Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingReturn({required String card, PostTestHelpersIssuingCardsCardShippingReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingReturn({required String card, PostTestHelpersIssuingCardsCardShippingReturnRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20673,13 +20673,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Ship a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`shipped`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/ship`
-Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingShip({required String card, PostTestHelpersIssuingCardsCardShippingShipRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingShip({required String card, PostTestHelpersIssuingCardsCardShippingShipRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20700,13 +20700,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Submit a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`submitted`</code>`. This method requires Stripe Version ‘2024-09-30.acacia’ or later.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/submit`
-Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingSubmit({required String card, PostTestHelpersIssuingCardsCardShippingSubmitRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingSubmit({required String card, PostTestHelpersIssuingCardsCardShippingSubmitRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20727,13 +20727,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Activate a testmode personalization design
 ///
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`active`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate`
-Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20754,13 +20754,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Deactivate a testmode personalization design
 ///
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`inactive`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate`
-Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20781,13 +20781,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Reject a testmode personalization design
 ///
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`rejected`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject`
-Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignReject({required String personalizationDesign, required PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignReject({required String personalizationDesign, required PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20809,13 +20809,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a test-mode settlement
 ///
 /// `<p>`Allows the user to create an Issuing settlement.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/settlements`
-Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postTestHelpersIssuingSettlements({required PostTestHelpersIssuingSettlementsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postTestHelpersIssuingSettlements({required PostTestHelpersIssuingSettlementsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20850,13 +20850,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Complete a test-mode settlement
 ///
 /// `<p>`Allows the user to mark an Issuing settlement as complete.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/settlements/{settlement}/complete`
-Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postTestHelpersIssuingSettlementsSettlementComplete({required String settlement, PostTestHelpersIssuingSettlementsSettlementCompleteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postTestHelpersIssuingSettlementsSettlementComplete({required String settlement, PostTestHelpersIssuingSettlementsSettlementCompleteRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20877,13 +20877,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a test-mode force capture
 ///
 /// `<p>`Allows the user to capture an arbitrary amount, also known as a forced capture.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/transactions/create_force_capture`
-Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsCreateForceCapture({required PostTestHelpersIssuingTransactionsCreateForceCaptureRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsCreateForceCapture({required PostTestHelpersIssuingTransactionsCreateForceCaptureRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20912,13 +20912,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a test-mode unlinked refund
 ///
 /// `<p>`Allows the user to refund an arbitrary amount, also known as a unlinked refund.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/transactions/create_unlinked_refund`
-Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsCreateUnlinkedRefund({required PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsCreateUnlinkedRefund({required PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20947,13 +20947,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Refund a test-mode transaction
 ///
 /// `<p>`Refund a test-mode Transaction.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/transactions/{transaction}/refund`
-Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsTransactionRefund({required String transaction, PostTestHelpersIssuingTransactionsTransactionRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsTransactionRefund({required String transaction, PostTestHelpersIssuingTransactionsTransactionRefundRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20976,13 +20976,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Expire a pending refund.
 ///
 /// `<p>`Expire a refund with a status of `<code>`requires_action`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/refunds/{refund}/expire`
-Future<ApiResult<Refund, DeleteAccountsAccountError>> postTestHelpersRefundsRefundExpire({required String refund, PostTestHelpersRefundsRefundExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postTestHelpersRefundsRefundExpire({required String refund, PostTestHelpersRefundsRefundExpireRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21003,13 +21003,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Simulate presenting a payment method
 ///
 /// `<p>`Presents a payment method on a simulated reader. Can be used to simulate accepting a payment, saving a card or refunding a transaction.`</p>`
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/present_payment_method`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderPresentPaymentMethod({required String reader, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderPresentPaymentMethod({required String reader, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21040,13 +21040,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Simulate a successful input collection
 ///
 /// `<p>`Use this endpoint to trigger a successful input collection on a simulated reader.`</p>`
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/succeed_input_collection`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderSucceedInputCollection({required String reader, PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderSucceedInputCollection({required String reader, PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21069,13 +21069,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Simulate an input collection timeout
 ///
 /// `<p>`Use this endpoint to complete an input collection with a timeout error on a simulated reader.`</p>`
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/timeout_input_collection`
-Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderTimeoutInputCollection({required String reader, PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderTimeoutInputCollection({required String reader, PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21096,13 +21096,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all test clocks
 ///
 /// `<p>`Returns a list of your test clocks.`</p>`
 ///
 /// `GET /v1/test_helpers/test_clocks`
-Future<ApiResult<GetTestHelpersTestClocksResponse, DeleteAccountsAccountError>> getTestHelpersTestClocks({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTestHelpersTestClocksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTestHelpersTestClocksResponse, DeleteAccountsAccountError>> getTestHelpersTestClocks({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTestHelpersTestClocksRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -21140,13 +21140,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a test clock
 ///
 /// `<p>`Creates a new test clock that can be attached to new customers and quotes.`</p>`
 ///
 /// `POST /v1/test_helpers/test_clocks`
-Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> postTestHelpersTestClocks({required PostTestHelpersTestClocksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> postTestHelpersTestClocks({required PostTestHelpersTestClocksRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21170,13 +21170,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a test clock
 ///
 /// `<p>`Retrieves a test clock.`</p>`
 ///
 /// `GET /v1/test_helpers/test_clocks/{test_clock}`
-Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> getTestHelpersTestClocksTestClock({required String testClock, List<String>? expand, GetTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> getTestHelpersTestClocksTestClock({required String testClock, List<String>? expand, GetTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -21205,13 +21205,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a test clock
 ///
 /// `<p>`Deletes a test clock.`</p>`
 ///
 /// `DELETE /v1/test_helpers/test_clocks/{test_clock}`
-Future<ApiResult<DeletedTestHelpersTestClock, DeleteAccountsAccountError>> deleteTestHelpersTestClocksTestClock({required String testClock, DeleteTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTestHelpersTestClock, DeleteAccountsAccountError>> deleteTestHelpersTestClocksTestClock({required String testClock, DeleteTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21230,13 +21230,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Advance a test clock
 ///
 /// `<p>`Starts advancing a test clock to a specified time in the future. Advancement is done when status changes to `<code>`Ready`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/test_clocks/{test_clock}/advance`
-Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> postTestHelpersTestClocksTestClockAdvance({required String testClock, required PostTestHelpersTestClocksTestClockAdvanceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> postTestHelpersTestClocksTestClockAdvance({required String testClock, required PostTestHelpersTestClocksTestClockAdvanceRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21258,13 +21258,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Fail an InboundTransfer
 ///
 /// `<p>`Transitions a test mode created InboundTransfer to the `<code>`failed`</code>` status. The InboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/fail`
-Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdFail({required String id, PostTestHelpersTreasuryInboundTransfersIdFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdFail({required String id, PostTestHelpersTreasuryInboundTransfersIdFailRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21287,13 +21287,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Return an InboundTransfer
 ///
 /// `<p>`Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a ReceivedDebit. The InboundTransfer must already be in the `<code>`succeeded`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/return`
-Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdReturn({required String id, PostTestHelpersTreasuryInboundTransfersIdReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdReturn({required String id, PostTestHelpersTreasuryInboundTransfersIdReturnRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21314,13 +21314,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Succeed an InboundTransfer
 ///
 /// `<p>`Transitions a test mode created InboundTransfer to the `<code>`succeeded`</code>` status. The InboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/succeed`
-Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdSucceed({required String id, PostTestHelpersTreasuryInboundTransfersIdSucceedRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdSucceed({required String id, PostTestHelpersTreasuryInboundTransfersIdSucceedRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21341,13 +21341,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Update an OutboundPayment
 ///
 /// `<p>`Updates a test mode created OutboundPayment with tracking details. The OutboundPayment must not be cancelable, and cannot be in the `<code>`canceled`</code>` or `<code>`failed`</code>` states.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}`
-Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsId({required String id, required PostTestHelpersTreasuryOutboundPaymentsIdRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsId({required String id, required PostTestHelpersTreasuryOutboundPaymentsIdRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21369,13 +21369,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Fail an OutboundPayment
 ///
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`failed`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/fail`
-Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdFail({required String id, PostTestHelpersTreasuryOutboundPaymentsIdFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdFail({required String id, PostTestHelpersTreasuryOutboundPaymentsIdFailRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21396,13 +21396,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Post an OutboundPayment
 ///
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`posted`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/post`
-Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdPost({required String id, PostTestHelpersTreasuryOutboundPaymentsIdPostRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdPost({required String id, PostTestHelpersTreasuryOutboundPaymentsIdPostRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21423,13 +21423,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Return an OutboundPayment
 ///
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`returned`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/return`
-Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdReturn({required String id, PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdReturn({required String id, PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21452,13 +21452,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Update an OutboundTransfer
 ///
 /// `<p>`Updates a test mode created OutboundTransfer with tracking details. The OutboundTransfer must not be cancelable, and cannot be in the `<code>`canceled`</code>` or `<code>`failed`</code>` states.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}`
-Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, required PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, required PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21480,13 +21480,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Fail an OutboundTransfer
 ///
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`failed`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail`
-Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferFail({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferFail({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21507,13 +21507,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Post an OutboundTransfer
 ///
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`posted`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post`
-Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferPost({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferPost({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21534,13 +21534,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Return an OutboundTransfer
 ///
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`returned`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return`
-Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferReturn({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferReturn({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21563,13 +21563,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Create a ReceivedCredit
 ///
 /// `<p>`Use this endpoint to simulate a test mode ReceivedCredit initiated by a third party. In live mode, you can’t directly create ReceivedCredits initiated by third parties.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/received_credits`
-Future<ApiResult<TreasuryReceivedCredit, DeleteAccountsAccountError>> postTestHelpersTreasuryReceivedCredits({required PostTestHelpersTreasuryReceivedCreditsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryReceivedCredit, DeleteAccountsAccountError>> postTestHelpersTreasuryReceivedCredits({required PostTestHelpersTreasuryReceivedCreditsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21598,13 +21598,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Test mode: Create a ReceivedDebit
 ///
 /// `<p>`Use this endpoint to simulate a test mode ReceivedDebit initiated by a third party. In live mode, you can’t directly create ReceivedDebits initiated by third parties.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/received_debits`
-Future<ApiResult<TreasuryReceivedDebit, DeleteAccountsAccountError>> postTestHelpersTreasuryReceivedDebits({required PostTestHelpersTreasuryReceivedDebitsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryReceivedDebit, DeleteAccountsAccountError>> postTestHelpersTreasuryReceivedDebits({required PostTestHelpersTreasuryReceivedDebitsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21633,14 +21633,14 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a CVC update token
 ///
 /// `<p>`Creates a single-use token that represents a bank account’s details.
 /// You can use this token with any v1 API method in place of a bank account dictionary. You can only use this token once. To do so, attach it to a `<a href="#accounts">`connected account`</a>` where `<a href="/api/accounts/object#account_object-controller-requirement_collection">`controller.requirement_collection`</a>` is `<code>`application`</code>`, which includes Custom accounts.`</p>`
 ///
 /// `POST /v1/tokens`
-Future<ApiResult<Token, DeleteAccountsAccountError>> postTokens({PostTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Token, DeleteAccountsAccountError>> postTokens({PostTokensRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21675,13 +21675,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a token
 ///
 /// `<p>`Retrieves the token with the given ID.`</p>`
 ///
 /// `GET /v1/tokens/{token}`
-Future<ApiResult<Token, DeleteAccountsAccountError>> getTokensToken({required String token, List<String>? expand, GetTokensTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Token, DeleteAccountsAccountError>> getTokensToken({required String token, List<String>? expand, GetTokensTokenRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -21710,13 +21710,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all top-ups
 ///
 /// `<p>`Returns a list of top-ups.`</p>`
 ///
 /// `GET /v1/topups`
-Future<ApiResult<GetTopupsResponse, DeleteAccountsAccountError>> getTopups({GetTopupsAmount? amount, GetTopupsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTopupsStatus? status, GetTopupsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTopupsResponse, DeleteAccountsAccountError>> getTopups({GetTopupsAmount? amount, GetTopupsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTopupsStatus? status, GetTopupsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
 queryParametersList.add(ApiQueryParameter(name: 'amount', value: amount.toString()));
@@ -21763,13 +21763,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a top-up
 ///
 /// `<p>`Top up the balance of an account`</p>`
 ///
 /// `POST /v1/topups`
-Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopups({required PostTopupsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopups({required PostTopupsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21802,13 +21802,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a top-up
 ///
 /// `<p>`Retrieves the details of a top-up that has previously been created. Supply the unique top-up ID that was returned from your previous request, and Stripe will return the corresponding top-up information.`</p>`
 ///
 /// `GET /v1/topups/{topup}`
-Future<ApiResult<Topup, DeleteAccountsAccountError>> getTopupsTopup({required String topup, List<String>? expand, GetTopupsTopupRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Topup, DeleteAccountsAccountError>> getTopupsTopup({required String topup, List<String>? expand, GetTopupsTopupRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -21837,13 +21837,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a top-up
 ///
 /// `<p>`Updates the metadata of a top-up. Other top-up details are not editable by design.`</p>`
 ///
 /// `POST /v1/topups/{topup}`
-Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopupsTopup({required String topup, PostTopupsTopupRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopupsTopup({required String topup, PostTopupsTopupRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21868,13 +21868,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel a top-up
 ///
 /// `<p>`Cancels a top-up. Only pending top-ups can be canceled.`</p>`
 ///
 /// `POST /v1/topups/{topup}/cancel`
-Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopupsTopupCancel({required String topup, PostTopupsTopupCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopupsTopupCancel({required String topup, PostTopupsTopupCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21895,13 +21895,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all transfers
 ///
 /// `<p>`Returns a list of existing transfers sent to connected accounts. The transfers are returned in sorted order, with the most recently created transfers appearing first.`</p>`
 ///
 /// `GET /v1/transfers`
-Future<ApiResult<GetTransfersResponse, DeleteAccountsAccountError>> getTransfers({GetTransfersCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? transferGroup, GetTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTransfersResponse, DeleteAccountsAccountError>> getTransfers({GetTransfersCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? transferGroup, GetTransfersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -21948,13 +21948,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a transfer
 ///
 /// `<p>`To send funds from your Stripe account to a connected account, you create a new transfer object. Your `<a href="#balance">`Stripe balance`</a>` must be able to cover the transfer amount, or you’ll receive an “Insufficient Funds” error.`</p>`
 ///
 /// `POST /v1/transfers`
-Future<ApiResult<Transfer, DeleteAccountsAccountError>> postTransfers({required PostTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Transfer, DeleteAccountsAccountError>> postTransfers({required PostTransfersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21989,13 +21989,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all reversals
 ///
 /// `<p>`You can see a list of the reversals belonging to a specific transfer. Note that the 10 most recent reversals are always available by default on the transfer object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional reversals.`</p>`
 ///
 /// `GET /v1/transfers/{id}/reversals`
-Future<ApiResult<GetTransfersIdReversalsResponse, DeleteAccountsAccountError>> getTransfersIdReversals({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTransfersIdReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTransfersIdReversalsResponse, DeleteAccountsAccountError>> getTransfersIdReversals({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTransfersIdReversalsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22033,7 +22033,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a transfer reversal
 ///
 /// `<p>`When you create a new reversal, you must specify a transfer to create it on.`</p>`
@@ -22043,7 +22043,7 @@ return await execute(
 /// `<p>`Once entirely reversed, a transfer can’t be reversed again. This method will return an error when called on an already-reversed transfer, or when trying to reverse more money than is left on a transfer.`</p>`
 ///
 /// `POST /v1/transfers/{id}/reversals`
-Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> postTransfersIdReversals({required String id, PostTransfersIdReversalsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> postTransfersIdReversals({required String id, PostTransfersIdReversalsRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22072,13 +22072,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a transfer
 ///
 /// `<p>`Retrieves the details of an existing transfer. Supply the unique transfer ID from either a transfer creation request or the transfer list, and Stripe will return the corresponding transfer information.`</p>`
 ///
 /// `GET /v1/transfers/{transfer}`
-Future<ApiResult<Transfer, DeleteAccountsAccountError>> getTransfersTransfer({required String transfer, List<String>? expand, GetTransfersTransferRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Transfer, DeleteAccountsAccountError>> getTransfersTransfer({required String transfer, List<String>? expand, GetTransfersTransferRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -22107,7 +22107,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a transfer
 ///
 /// `<p>`Updates the specified transfer by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -22115,7 +22115,7 @@ return await execute(
 /// `<p>`This request accepts only metadata as an argument.`</p>`
 ///
 /// `POST /v1/transfers/{transfer}`
-Future<ApiResult<Transfer, DeleteAccountsAccountError>> postTransfersTransfer({required String transfer, PostTransfersTransferRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Transfer, DeleteAccountsAccountError>> postTransfersTransfer({required String transfer, PostTransfersTransferRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22140,13 +22140,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a reversal
 ///
 /// `<p>`By default, you can see the 10 most recent reversals stored directly on the transfer object, but you can also retrieve details about a specific reversal stored on the transfer.`</p>`
 ///
 /// `GET /v1/transfers/{transfer}/reversals/{id}`
-Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> getTransfersTransferReversalsId({required String id, required String transfer, List<String>? expand, GetTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> getTransfersTransferReversalsId({required String id, required String transfer, List<String>? expand, GetTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -22175,7 +22175,7 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a reversal
 ///
 /// `<p>`Updates the specified reversal by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -22183,7 +22183,7 @@ return await execute(
 /// `<p>`This request only accepts metadata and description as arguments.`</p>`
 ///
 /// `POST /v1/transfers/{transfer}/reversals/{id}`
-Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> postTransfersTransferReversalsId({required String id, required String transfer, PostTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> postTransfersTransferReversalsId({required String id, required String transfer, PostTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22206,13 +22206,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all CreditReversals
 ///
 /// `<p>`Returns a list of CreditReversals.`</p>`
 ///
 /// `GET /v1/treasury/credit_reversals`
-Future<ApiResult<GetTreasuryCreditReversalsResponse, DeleteAccountsAccountError>> getTreasuryCreditReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, GetTreasuryCreditReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryCreditReversalsResponse, DeleteAccountsAccountError>> getTreasuryCreditReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, GetTreasuryCreditReversalsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22257,13 +22257,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a CreditReversal
 ///
 /// `<p>`Reverses a ReceivedCredit and creates a CreditReversal object.`</p>`
 ///
 /// `POST /v1/treasury/credit_reversals`
-Future<ApiResult<TreasuryCreditReversal, DeleteAccountsAccountError>> postTreasuryCreditReversals({required PostTreasuryCreditReversalsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryCreditReversal, DeleteAccountsAccountError>> postTreasuryCreditReversals({required PostTreasuryCreditReversalsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22287,13 +22287,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a CreditReversal
 ///
 /// `<p>`Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID from either the CreditReversal creation request or CreditReversal list`</p>`
 ///
 /// `GET /v1/treasury/credit_reversals/{credit_reversal}`
-Future<ApiResult<TreasuryCreditReversal, DeleteAccountsAccountError>> getTreasuryCreditReversalsCreditReversal({required String creditReversal, List<String>? expand, GetTreasuryCreditReversalsCreditReversalRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryCreditReversal, DeleteAccountsAccountError>> getTreasuryCreditReversalsCreditReversal({required String creditReversal, List<String>? expand, GetTreasuryCreditReversalsCreditReversalRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -22322,13 +22322,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all DebitReversals
 ///
 /// `<p>`Returns a list of DebitReversals.`</p>`
 ///
 /// `GET /v1/treasury/debit_reversals`
-Future<ApiResult<GetTreasuryDebitReversalsResponse, DeleteAccountsAccountError>> getTreasuryDebitReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, GetTreasuryDebitReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryDebitReversalsResponse, DeleteAccountsAccountError>> getTreasuryDebitReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, GetTreasuryDebitReversalsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22376,13 +22376,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a DebitReversal
 ///
 /// `<p>`Reverses a ReceivedDebit and creates a DebitReversal object.`</p>`
 ///
 /// `POST /v1/treasury/debit_reversals`
-Future<ApiResult<TreasuryDebitReversal, DeleteAccountsAccountError>> postTreasuryDebitReversals({required PostTreasuryDebitReversalsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryDebitReversal, DeleteAccountsAccountError>> postTreasuryDebitReversals({required PostTreasuryDebitReversalsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22406,13 +22406,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a DebitReversal
 ///
 /// `<p>`Retrieves a DebitReversal object.`</p>`
 ///
 /// `GET /v1/treasury/debit_reversals/{debit_reversal}`
-Future<ApiResult<TreasuryDebitReversal, DeleteAccountsAccountError>> getTreasuryDebitReversalsDebitReversal({required String debitReversal, List<String>? expand, GetTreasuryDebitReversalsDebitReversalRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryDebitReversal, DeleteAccountsAccountError>> getTreasuryDebitReversalsDebitReversal({required String debitReversal, List<String>? expand, GetTreasuryDebitReversalsDebitReversalRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -22441,13 +22441,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all FinancialAccounts
 ///
 /// `<p>`Returns a list of FinancialAccounts.`</p>`
 ///
 /// `GET /v1/treasury/financial_accounts`
-Future<ApiResult<GetTreasuryFinancialAccountsResponse, DeleteAccountsAccountError>> getTreasuryFinancialAccounts({GetTreasuryFinancialAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryFinancialAccountsStatus? status, GetTreasuryFinancialAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryFinancialAccountsResponse, DeleteAccountsAccountError>> getTreasuryFinancialAccounts({GetTreasuryFinancialAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryFinancialAccountsStatus? status, GetTreasuryFinancialAccountsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -22491,13 +22491,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a FinancialAccount
 ///
 /// `<p>`Creates a new FinancialAccount. Each connected account can have up to three FinancialAccounts by default.`</p>`
 ///
 /// `POST /v1/treasury/financial_accounts`
-Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccounts({required PostTreasuryFinancialAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccounts({required PostTreasuryFinancialAccountsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22527,13 +22527,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a FinancialAccount
 ///
 /// `<p>`Retrieves the details of a FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/financial_accounts/{financial_account}`
-Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> getTreasuryFinancialAccountsFinancialAccount({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> getTreasuryFinancialAccountsFinancialAccount({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -22562,13 +22562,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a FinancialAccount
 ///
 /// `<p>`Updates the details of a FinancialAccount.`</p>`
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}`
-Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccount({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccount({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22599,13 +22599,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Close a FinancialAccount
 ///
 /// `<p>`Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has no pending InboundTransfers, and has canceled all attached Issuing cards.`</p>`
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}/close`
-Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccountClose({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccountClose({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountCloseRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22628,13 +22628,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve FinancialAccount Features
 ///
 /// `<p>`Retrieves Features information associated with the FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/financial_accounts/{financial_account}/features`
-Future<ApiResult<TreasuryFinancialAccountFeatures, DeleteAccountsAccountError>> getTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryFinancialAccountFeatures, DeleteAccountsAccountError>> getTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -22663,13 +22663,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update FinancialAccount Features
 ///
 /// `<p>`Updates the Features associated with a FinancialAccount.`</p>`
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}/features`
-Future<ApiResult<TreasuryFinancialAccountFeatures, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryFinancialAccountFeatures, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22704,13 +22704,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all InboundTransfers
 ///
 /// `<p>`Returns a list of InboundTransfers sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/inbound_transfers`
-Future<ApiResult<GetTreasuryInboundTransfersResponse, DeleteAccountsAccountError>> getTreasuryInboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, GetTreasuryInboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryInboundTransfersResponse, DeleteAccountsAccountError>> getTreasuryInboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, GetTreasuryInboundTransfersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22752,13 +22752,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an InboundTransfer
 ///
 /// `<p>`Creates an InboundTransfer.`</p>`
 ///
 /// `POST /v1/treasury/inbound_transfers`
-Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTreasuryInboundTransfers({required PostTreasuryInboundTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTreasuryInboundTransfers({required PostTreasuryInboundTransfersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22789,13 +22789,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an InboundTransfer
 ///
 /// `<p>`Retrieves the details of an existing InboundTransfer.`</p>`
 ///
 /// `GET /v1/treasury/inbound_transfers/{id}`
-Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> getTreasuryInboundTransfersId({required String id, List<String>? expand, GetTreasuryInboundTransfersIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> getTreasuryInboundTransfersId({required String id, List<String>? expand, GetTreasuryInboundTransfersIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -22824,13 +22824,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel an InboundTransfer
 ///
 /// `<p>`Cancels an InboundTransfer.`</p>`
 ///
 /// `POST /v1/treasury/inbound_transfers/{inbound_transfer}/cancel`
-Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTreasuryInboundTransfersInboundTransferCancel({required String inboundTransfer, PostTreasuryInboundTransfersInboundTransferCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTreasuryInboundTransfersInboundTransferCancel({required String inboundTransfer, PostTreasuryInboundTransfersInboundTransferCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22851,13 +22851,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all OutboundPayments
 ///
 /// `<p>`Returns a list of OutboundPayments sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/outbound_payments`
-Future<ApiResult<GetTreasuryOutboundPaymentsResponse, DeleteAccountsAccountError>> getTreasuryOutboundPayments({required String financialAccount, GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, GetTreasuryOutboundPaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryOutboundPaymentsResponse, DeleteAccountsAccountError>> getTreasuryOutboundPayments({required String financialAccount, GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, GetTreasuryOutboundPaymentsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -22905,13 +22905,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an OutboundPayment
 ///
 /// `<p>`Creates an OutboundPayment.`</p>`
 ///
 /// `POST /v1/treasury/outbound_payments`
-Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTreasuryOutboundPayments({required PostTreasuryOutboundPaymentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTreasuryOutboundPayments({required PostTreasuryOutboundPaymentsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22951,13 +22951,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an OutboundPayment
 ///
 /// `<p>`Retrieves the details of an existing OutboundPayment by passing the unique OutboundPayment ID from either the OutboundPayment creation request or OutboundPayment list.`</p>`
 ///
 /// `GET /v1/treasury/outbound_payments/{id}`
-Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> getTreasuryOutboundPaymentsId({required String id, List<String>? expand, GetTreasuryOutboundPaymentsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> getTreasuryOutboundPaymentsId({required String id, List<String>? expand, GetTreasuryOutboundPaymentsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -22986,13 +22986,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel an OutboundPayment
 ///
 /// `<p>`Cancel an OutboundPayment.`</p>`
 ///
 /// `POST /v1/treasury/outbound_payments/{id}/cancel`
-Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTreasuryOutboundPaymentsIdCancel({required String id, PostTreasuryOutboundPaymentsIdCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTreasuryOutboundPaymentsIdCancel({required String id, PostTreasuryOutboundPaymentsIdCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23013,13 +23013,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all OutboundTransfers
 ///
 /// `<p>`Returns a list of OutboundTransfers sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/outbound_transfers`
-Future<ApiResult<GetTreasuryOutboundTransfersResponse, DeleteAccountsAccountError>> getTreasuryOutboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, GetTreasuryOutboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryOutboundTransfersResponse, DeleteAccountsAccountError>> getTreasuryOutboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, GetTreasuryOutboundTransfersRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23061,13 +23061,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create an OutboundTransfer
 ///
 /// `<p>`Creates an OutboundTransfer.`</p>`
 ///
 /// `POST /v1/treasury/outbound_transfers`
-Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTreasuryOutboundTransfers({required PostTreasuryOutboundTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTreasuryOutboundTransfers({required PostTreasuryOutboundTransfersRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23103,13 +23103,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve an OutboundTransfer
 ///
 /// `<p>`Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID from either the OutboundTransfer creation request or OutboundTransfer list.`</p>`
 ///
 /// `GET /v1/treasury/outbound_transfers/{outbound_transfer}`
-Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> getTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, List<String>? expand, GetTreasuryOutboundTransfersOutboundTransferRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> getTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, List<String>? expand, GetTreasuryOutboundTransfersOutboundTransferRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -23138,13 +23138,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Cancel an OutboundTransfer
 ///
 /// `<p>`An OutboundTransfer can be canceled if the funds have not yet been paid out.`</p>`
 ///
 /// `POST /v1/treasury/outbound_transfers/{outbound_transfer}/cancel`
-Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTreasuryOutboundTransfersOutboundTransferCancel({required String outboundTransfer, PostTreasuryOutboundTransfersOutboundTransferCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTreasuryOutboundTransfersOutboundTransferCancel({required String outboundTransfer, PostTreasuryOutboundTransfersOutboundTransferCancelRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23165,13 +23165,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all ReceivedCredits
 ///
 /// `<p>`Returns a list of ReceivedCredits.`</p>`
 ///
 /// `GET /v1/treasury/received_credits`
-Future<ApiResult<GetTreasuryReceivedCreditsResponse, DeleteAccountsAccountError>> getTreasuryReceivedCredits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, GetTreasuryReceivedCreditsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryReceivedCreditsResponse, DeleteAccountsAccountError>> getTreasuryReceivedCredits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, GetTreasuryReceivedCreditsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23216,13 +23216,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a ReceivedCredit
 ///
 /// `<p>`Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID from the ReceivedCredit list.`</p>`
 ///
 /// `GET /v1/treasury/received_credits/{id}`
-Future<ApiResult<TreasuryReceivedCredit, DeleteAccountsAccountError>> getTreasuryReceivedCreditsId({required String id, List<String>? expand, GetTreasuryReceivedCreditsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryReceivedCredit, DeleteAccountsAccountError>> getTreasuryReceivedCreditsId({required String id, List<String>? expand, GetTreasuryReceivedCreditsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -23251,13 +23251,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all ReceivedDebits
 ///
 /// `<p>`Returns a list of ReceivedDebits.`</p>`
 ///
 /// `GET /v1/treasury/received_debits`
-Future<ApiResult<GetTreasuryReceivedDebitsResponse, DeleteAccountsAccountError>> getTreasuryReceivedDebits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, GetTreasuryReceivedDebitsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryReceivedDebitsResponse, DeleteAccountsAccountError>> getTreasuryReceivedDebits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, GetTreasuryReceivedDebitsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23299,13 +23299,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a ReceivedDebit
 ///
 /// `<p>`Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from the ReceivedDebit list`</p>`
 ///
 /// `GET /v1/treasury/received_debits/{id}`
-Future<ApiResult<TreasuryReceivedDebit, DeleteAccountsAccountError>> getTreasuryReceivedDebitsId({required String id, List<String>? expand, GetTreasuryReceivedDebitsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryReceivedDebit, DeleteAccountsAccountError>> getTreasuryReceivedDebitsId({required String id, List<String>? expand, GetTreasuryReceivedDebitsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -23334,13 +23334,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all TransactionEntries
 ///
 /// `<p>`Retrieves a list of TransactionEntry objects.`</p>`
 ///
 /// `GET /v1/treasury/transaction_entries`
-Future<ApiResult<GetTreasuryTransactionEntriesResponse, DeleteAccountsAccountError>> getTreasuryTransactionEntries({required String financialAccount, GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, GetTreasuryTransactionEntriesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryTransactionEntriesResponse, DeleteAccountsAccountError>> getTreasuryTransactionEntries({required String financialAccount, GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, GetTreasuryTransactionEntriesRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -23391,13 +23391,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a TransactionEntry
 ///
 /// `<p>`Retrieves a TransactionEntry object.`</p>`
 ///
 /// `GET /v1/treasury/transaction_entries/{id}`
-Future<ApiResult<TreasuryTransactionEntry, DeleteAccountsAccountError>> getTreasuryTransactionEntriesId({required String id, List<String>? expand, GetTreasuryTransactionEntriesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryTransactionEntry, DeleteAccountsAccountError>> getTreasuryTransactionEntriesId({required String id, List<String>? expand, GetTreasuryTransactionEntriesIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -23426,13 +23426,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all Transactions
 ///
 /// `<p>`Retrieves a list of Transaction objects.`</p>`
 ///
 /// `GET /v1/treasury/transactions`
-Future<ApiResult<GetTreasuryTransactionsResponse, DeleteAccountsAccountError>> getTreasuryTransactions({required String financialAccount, GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, GetTreasuryTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryTransactionsResponse, DeleteAccountsAccountError>> getTreasuryTransactions({required String financialAccount, GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, GetTreasuryTransactionsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -23483,13 +23483,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a Transaction
 ///
 /// `<p>`Retrieves the details of an existing Transaction.`</p>`
 ///
 /// `GET /v1/treasury/transactions/{id}`
-Future<ApiResult<TreasuryTransaction, DeleteAccountsAccountError>> getTreasuryTransactionsId({required String id, List<String>? expand, GetTreasuryTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryTransaction, DeleteAccountsAccountError>> getTreasuryTransactionsId({required String id, List<String>? expand, GetTreasuryTransactionsIdRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -23518,13 +23518,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// List all webhook endpoints
 ///
 /// `<p>`Returns a list of your webhook endpoints.`</p>`
 ///
 /// `GET /v1/webhook_endpoints`
-Future<ApiResult<GetWebhookEndpointsResponse, DeleteAccountsAccountError>> getWebhookEndpoints({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetWebhookEndpointsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetWebhookEndpointsResponse, DeleteAccountsAccountError>> getWebhookEndpoints({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetWebhookEndpointsRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23562,13 +23562,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Create a webhook endpoint
 ///
 /// `<p>`A webhook endpoint must have a `<code>`url`</code>` and a list of `<code>`enabled_events`</code>`. You may optionally specify the Boolean `<code>`connect`</code>` parameter. If set to true, then a Connect webhook endpoint that notifies the specified `<code>`url`</code>` about events from all connected accounts is created; otherwise an account webhook endpoint that notifies the specified `<code>`url`</code>` only about events from your account is created. You can also create webhook endpoints in the `<a href="https://dashboard.stripe.com/account/webhooks">`webhooks settings`</a>` section of the Dashboard.`</p>`
 ///
 /// `POST /v1/webhook_endpoints`
-Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> postWebhookEndpoints({required PostWebhookEndpointsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> postWebhookEndpoints({required PostWebhookEndpointsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23599,13 +23599,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Retrieve a webhook endpoint
 ///
 /// `<p>`Retrieves the webhook endpoint with the given ID.`</p>`
 ///
 /// `GET /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> getWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, List<String>? expand, GetWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> getWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, List<String>? expand, GetWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 for (final item in expand) {
@@ -23634,13 +23634,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Update a webhook endpoint
 ///
 /// `<p>`Updates the webhook endpoint. You may edit the `<code>`url`</code>`, the list of `<code>`enabled_events`</code>`, and the status of your endpoint.`</p>`
 ///
 /// `POST /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> postWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, PostWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> postWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, PostWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23671,13 +23671,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
+}
 /// Delete a webhook endpoint
 ///
 /// `<p>`You can also delete webhook endpoints via the `<a href="https://dashboard.stripe.com/account/webhooks">`webhook endpoint management`</a>` page of the Stripe dashboard.`</p>`
 ///
 /// `DELETE /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<DeletedWebhookEndpoint, DeleteAccountsAccountError>> deleteWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, DeleteWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedWebhookEndpoint, DeleteAccountsAccountError>> deleteWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, DeleteWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23696,5 +23696,5 @@ return await execute(
   },
   onError: DeleteAccountsAccountError.fromResponse,
 );
- } 
- }
+}
+}

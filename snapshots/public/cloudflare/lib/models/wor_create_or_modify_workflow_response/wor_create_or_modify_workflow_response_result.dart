@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorCreateOrModifyWorkflowResponseResult {const WorCreateOrModifyWorkflowResponseResult({required this.className, required this.createdOn, required this.id, required this.isDeleted, required this.modifiedOn, required this.name, required this.scriptName, required this.terminatorRunning, required this.triggeredOn, required this.versionId, });
 
-factory WorCreateOrModifyWorkflowResponseResult.fromJson(Map<String, dynamic> json) { return WorCreateOrModifyWorkflowResponseResult(
+factory WorCreateOrModifyWorkflowResponseResult.fromJson(Map<String, dynamic> json) {return WorCreateOrModifyWorkflowResponseResult(
   className: json['class_name'] as String,
   createdOn: DateTime.parse(json['created_on'] as String),
   id: json['id'] as String,
@@ -14,7 +14,7 @@ factory WorCreateOrModifyWorkflowResponseResult.fromJson(Map<String, dynamic> js
   terminatorRunning: (json['terminator_running'] as num).toDouble(),
   triggeredOn: json['triggered_on'] != null ? DateTime.parse(json['triggered_on'] as String) : null,
   versionId: json['version_id'] as String,
-); }
+);}
 
 final String className;
 
@@ -36,7 +36,7 @@ final DateTime? triggeredOn;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'class_name': className,
   'created_on': createdOn.toIso8601String(),
   'id': id,
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'terminator_running': terminatorRunning,
   'triggered_on': triggeredOn?.toIso8601String(),
   'version_id': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('class_name') && json['class_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('class_name') && json['class_name'] is String &&
       json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('is_deleted') && json['is_deleted'] is num &&
@@ -57,14 +57,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('script_name') && json['script_name'] is String &&
       json.containsKey('terminator_running') && json['terminator_running'] is num &&
       json.containsKey('triggered_on') && (json['triggered_on'] == null || json['triggered_on'] is String) &&
-      json.containsKey('version_id') && json['version_id'] is String; } 
+      json.containsKey('version_id') && json['version_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 64) { errors.add('name: length must be <= 64'); }
 if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$'); }
-return errors; } 
-WorCreateOrModifyWorkflowResponseResult copyWith({String? className, DateTime? createdOn, String? id, double? isDeleted, DateTime? modifiedOn, String? name, String? scriptName, double? terminatorRunning, DateTime? Function()? triggeredOn, String? versionId, }) { return WorCreateOrModifyWorkflowResponseResult(
+return errors;}
+WorCreateOrModifyWorkflowResponseResult copyWith({String? className, DateTime? createdOn, String? id, double? isDeleted, DateTime? modifiedOn, String? name, String? scriptName, double? terminatorRunning, DateTime? Function()? triggeredOn, String? versionId, }) {return WorCreateOrModifyWorkflowResponseResult(
   className: className ?? this.className,
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
@@ -75,7 +75,7 @@ WorCreateOrModifyWorkflowResponseResult copyWith({String? className, DateTime? c
   terminatorRunning: terminatorRunning ?? this.terminatorRunning,
   triggeredOn: triggeredOn != null ? triggeredOn() : this.triggeredOn,
   versionId: versionId ?? this.versionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorCreateOrModifyWorkflowResponseResult &&
           className == other.className &&
@@ -93,4 +93,4 @@ WorCreateOrModifyWorkflowResponseResult copyWith({String? className, DateTime? c
 
 @override String toString() => 'WorCreateOrModifyWorkflowResponseResult(\n  className: $className,\n  createdOn: $createdOn,\n  id: $id,\n  isDeleted: $isDeleted,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  scriptName: $scriptName,\n  terminatorRunning: $terminatorRunning,\n  triggeredOn: $triggeredOn,\n  versionId: $versionId,\n)';
 
- }
+}

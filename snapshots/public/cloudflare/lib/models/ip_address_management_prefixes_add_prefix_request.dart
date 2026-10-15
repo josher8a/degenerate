@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_asn.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_delegate_loa_creation.dart';import 'package:pub_cloudflare/models/addressing_description.dart';import 'package:pub_cloudflare/models/addressing_loa_document_identifier.dart';@immutable final class IpAddressManagementPrefixesAddPrefixRequest {const IpAddressManagementPrefixesAddPrefixRequest({required this.asn, required this.cidr, this.delegateLoaCreation, this.description, this.loaDocumentId = const Omittable.absent(), });
 
-factory IpAddressManagementPrefixesAddPrefixRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementPrefixesAddPrefixRequest(
+factory IpAddressManagementPrefixesAddPrefixRequest.fromJson(Map<String, dynamic> json) {return IpAddressManagementPrefixesAddPrefixRequest(
   asn: AddressingAsn.fromJson(json['asn'] as num),
   cidr: AddressingCidr.fromJson(json['cidr'] as String),
   delegateLoaCreation: json['delegate_loa_creation'] != null ? AddressingDelegateLoaCreation.fromJson(json['delegate_loa_creation'] as bool) : null,
   description: json['description'] != null ? AddressingDescription.fromJson(json['description'] as String) : null,
   loaDocumentId: json.containsKey('loa_document_id') ? Omittable(json['loa_document_id'] != null ? AddressingLoaDocumentIdentifier.fromJson(json['loa_document_id'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Autonomous System Number (ASN) the prefix will be advertised under.
 final AddressingAsn asn;
@@ -26,22 +26,22 @@ final AddressingDescription? description;
 /// Identifier for the uploaded LOA document.
 final Omittable<AddressingLoaDocumentIdentifier?> loaDocumentId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn.toJson(),
   'cidr': cidr.toJson(),
   if (delegateLoaCreation != null) 'delegate_loa_creation': delegateLoaCreation?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (loaDocumentId.isPresent) 'loa_document_id': loaDocumentId.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') &&
-      json.containsKey('cidr'); } 
-IpAddressManagementPrefixesAddPrefixRequest copyWith({AddressingAsn? asn, AddressingCidr? cidr, AddressingDelegateLoaCreation? Function()? delegateLoaCreation, AddressingDescription? Function()? description, Omittable<AddressingLoaDocumentIdentifier?>? loaDocumentId, }) { return IpAddressManagementPrefixesAddPrefixRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') &&
+      json.containsKey('cidr');}
+IpAddressManagementPrefixesAddPrefixRequest copyWith({AddressingAsn? asn, AddressingCidr? cidr, AddressingDelegateLoaCreation? Function()? delegateLoaCreation, AddressingDescription? Function()? description, Omittable<AddressingLoaDocumentIdentifier?>? loaDocumentId, }) {return IpAddressManagementPrefixesAddPrefixRequest(
   asn: asn ?? this.asn,
   cidr: cidr ?? this.cidr,
   delegateLoaCreation: delegateLoaCreation != null ? delegateLoaCreation() : this.delegateLoaCreation,
   description: description != null ? description() : this.description,
   loaDocumentId: loaDocumentId ?? this.loaDocumentId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementPrefixesAddPrefixRequest &&
           asn == other.asn &&
@@ -54,4 +54,4 @@ IpAddressManagementPrefixesAddPrefixRequest copyWith({AddressingAsn? asn, Addres
 
 @override String toString() => 'IpAddressManagementPrefixesAddPrefixRequest(asn: $asn, cidr: $cidr, delegateLoaCreation: $delegateLoaCreation, description: $description, loaDocumentId: $loaDocumentId)';
 
- }
+}

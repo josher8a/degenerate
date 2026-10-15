@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PriceDataProductData {const PriceDataProductData({required this.name, this.description, this.images, this.metadata, this.taxCode, this.unitLabel, });
 
-factory PriceDataProductData.fromJson(Map<String, dynamic> json) { return PriceDataProductData(
+factory PriceDataProductData.fromJson(Map<String, dynamic> json) {return PriceDataProductData(
   description: json['description'] as String?,
   images: (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   taxCode: json['tax_code'] as String?,
   unitLabel: json['unit_label'] as String?,
-); }
+);}
 
 final String? description;
 
@@ -24,17 +24,17 @@ final String? taxCode;
 
 final String? unitLabel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'images': ?images,
   'metadata': ?metadata,
   'name': name,
   'tax_code': ?taxCode,
   'unit_label': ?unitLabel,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 40000) { errors.add('description: length must be <= 40000'); }
@@ -48,15 +48,15 @@ final unitLabel$ = unitLabel;
 if (unitLabel$ != null) {
   if (unitLabel$.runes.length > 12) { errors.add('unitLabel: length must be <= 12'); }
 }
-return errors; } 
-PriceDataProductData copyWith({String? Function()? description, List<String>? Function()? images, Map<String, String>? Function()? metadata, String? name, String? Function()? taxCode, String? Function()? unitLabel, }) { return PriceDataProductData(
+return errors;}
+PriceDataProductData copyWith({String? Function()? description, List<String>? Function()? images, Map<String, String>? Function()? metadata, String? name, String? Function()? taxCode, String? Function()? unitLabel, }) {return PriceDataProductData(
   description: description != null ? description() : this.description,
   images: images != null ? images() : this.images,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name ?? this.name,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PriceDataProductData &&
           description == other.description &&
@@ -70,4 +70,4 @@ PriceDataProductData copyWith({String? Function()? description, List<String>? Fu
 
 @override String toString() => 'PriceDataProductData(description: $description, images: $images, metadata: $metadata, name: $name, taxCode: $taxCode, unitLabel: $unitLabel)';
 
- }
+}

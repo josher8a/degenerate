@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_ruleset_info/ruleset_source_type.dart';/// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
 @immutable final class RepositoryRuleRulesetInfo {const RepositoryRuleRulesetInfo({this.rulesetSourceType, this.rulesetSource, this.rulesetId, });
 
-factory RepositoryRuleRulesetInfo.fromJson(Map<String, dynamic> json) { return RepositoryRuleRulesetInfo(
+factory RepositoryRuleRulesetInfo.fromJson(Map<String, dynamic> json) {return RepositoryRuleRulesetInfo(
   rulesetSourceType: json['ruleset_source_type'] != null ? RulesetSourceType.fromJson(json['ruleset_source_type'] as String) : null,
   rulesetSource: json['ruleset_source'] as String?,
   rulesetId: json['ruleset_id'] != null ? (json['ruleset_id'] as num).toInt() : null,
-); }
+);}
 
 /// The type of source for the ruleset that includes this rule.
 final RulesetSourceType? rulesetSourceType;
@@ -19,17 +19,17 @@ final String? rulesetSource;
 /// The ID of the ruleset that includes this rule.
 final int? rulesetId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (rulesetSourceType != null) 'ruleset_source_type': rulesetSourceType?.toJson(),
   'ruleset_source': ?rulesetSource,
   'ruleset_id': ?rulesetId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ruleset_source_type', 'ruleset_source', 'ruleset_id'}.contains(key)); } 
-RepositoryRuleRulesetInfo copyWith({RulesetSourceType? Function()? rulesetSourceType, String? Function()? rulesetSource, int? Function()? rulesetId, }) { return RepositoryRuleRulesetInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ruleset_source_type', 'ruleset_source', 'ruleset_id'}.contains(key));}
+RepositoryRuleRulesetInfo copyWith({RulesetSourceType? Function()? rulesetSourceType, String? Function()? rulesetSource, int? Function()? rulesetId, }) {return RepositoryRuleRulesetInfo(
   rulesetSourceType: rulesetSourceType != null ? rulesetSourceType() : this.rulesetSourceType,
   rulesetSource: rulesetSource != null ? rulesetSource() : this.rulesetSource,
   rulesetId: rulesetId != null ? rulesetId() : this.rulesetId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRulesetInfo &&
           rulesetSourceType == other.rulesetSourceType &&
@@ -40,4 +40,4 @@ RepositoryRuleRulesetInfo copyWith({RulesetSourceType? Function()? rulesetSource
 
 @override String toString() => 'RepositoryRuleRulesetInfo(rulesetSourceType: $rulesetSourceType, rulesetSource: $rulesetSource, rulesetId: $rulesetId)';
 
- }
+}

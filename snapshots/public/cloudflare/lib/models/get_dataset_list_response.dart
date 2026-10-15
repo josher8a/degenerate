@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetDatasetListResponse {const GetDatasetListResponse({required this.isPublic, required this.name, required this.uuid, });
 
-factory GetDatasetListResponse.fromJson(Map<String, dynamic> json) { return GetDatasetListResponse(
+factory GetDatasetListResponse.fromJson(Map<String, dynamic> json) {return GetDatasetListResponse(
   isPublic: json['isPublic'] as bool,
   name: json['name'] as String,
   uuid: json['uuid'] as String,
-); }
+);}
 
 /// Example: `true`
 final bool isPublic;
@@ -18,19 +18,19 @@ final String name;
 /// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'isPublic': isPublic,
   'name': name,
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('isPublic') && json['isPublic'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('isPublic') && json['isPublic'] is bool &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-GetDatasetListResponse copyWith({bool? isPublic, String? name, String? uuid, }) { return GetDatasetListResponse(
+      json.containsKey('uuid') && json['uuid'] is String;}
+GetDatasetListResponse copyWith({bool? isPublic, String? name, String? uuid, }) {return GetDatasetListResponse(
   isPublic: isPublic ?? this.isPublic,
   name: name ?? this.name,
   uuid: uuid ?? this.uuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetDatasetListResponse &&
           isPublic == other.isPublic &&
@@ -41,4 +41,4 @@ GetDatasetListResponse copyWith({bool? isPublic, String? name, String? uuid, }) 
 
 @override String toString() => 'GetDatasetListResponse(isPublic: $isPublic, name: $name, uuid: $uuid)';
 
- }
+}

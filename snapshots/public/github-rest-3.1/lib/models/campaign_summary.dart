@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/campaign_state.dart';import 'package:pub_github_rest_3_1/models/campaign_summary/alert_stats.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The campaign metadata and alert stats.
 @immutable final class CampaignSummary {const CampaignSummary({required this.number, required this.createdAt, required this.updatedAt, required this.description, required this.managers, required this.endsAt, required this.state, required this.contactLink, this.name, this.teamManagers, this.publishedAt, this.closedAt = const Omittable.absent(), this.alertStats, });
 
-factory CampaignSummary.fromJson(Map<String, dynamic> json) { return CampaignSummary(
+factory CampaignSummary.fromJson(Map<String, dynamic> json) {return CampaignSummary(
   number: (json['number'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
@@ -18,7 +18,7 @@ factory CampaignSummary.fromJson(Map<String, dynamic> json) { return CampaignSum
   state: CampaignState.fromJson(json['state'] as String),
   contactLink: json['contact_link'] != null ? Uri.parse(json['contact_link'] as String) : null,
   alertStats: json['alert_stats'] != null ? AlertStats.fromJson(json['alert_stats'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The number of the newly created campaign
 final int number;
@@ -58,7 +58,7 @@ final Uri? contactLink;
 
 final AlertStats? alertStats;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'number': number,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
@@ -72,16 +72,16 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'contact_link': contactLink?.toString(),
   if (alertStats != null) 'alert_stats': alertStats?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('number') && json['number'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('number') && json['number'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('managers') &&
       json.containsKey('ends_at') && json['ends_at'] is String &&
       json.containsKey('state') &&
-      json.containsKey('contact_link') && (json['contact_link'] == null || json['contact_link'] is String); } 
-CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt, String? Function()? name, String? description, List<SimpleUser>? managers, List<Team>? Function()? teamManagers, DateTime? Function()? publishedAt, DateTime? endsAt, Omittable<DateTime?>? closedAt, CampaignState? state, Uri? Function()? contactLink, AlertStats? Function()? alertStats, }) { return CampaignSummary(
+      json.containsKey('contact_link') && (json['contact_link'] == null || json['contact_link'] is String);}
+CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt, String? Function()? name, String? description, List<SimpleUser>? managers, List<Team>? Function()? teamManagers, DateTime? Function()? publishedAt, DateTime? endsAt, Omittable<DateTime?>? closedAt, CampaignState? state, Uri? Function()? contactLink, AlertStats? Function()? alertStats, }) {return CampaignSummary(
   number: number ?? this.number,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
@@ -95,7 +95,7 @@ CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt,
   state: state ?? this.state,
   contactLink: contactLink != null ? contactLink() : this.contactLink,
   alertStats: alertStats != null ? alertStats() : this.alertStats,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CampaignSummary &&
           number == other.number &&
@@ -116,4 +116,4 @@ CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt,
 
 @override String toString() => 'CampaignSummary(\n  number: $number,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  name: $name,\n  description: $description,\n  managers: $managers,\n  teamManagers: $teamManagers,\n  publishedAt: $publishedAt,\n  endsAt: $endsAt,\n  closedAt: $closedAt,\n  state: $state,\n  contactLink: $contactLink,\n  alertStats: $alertStats,\n)';
 
- }
+}

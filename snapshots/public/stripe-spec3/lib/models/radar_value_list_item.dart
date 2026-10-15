@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Related guide: [Managing list items](https://docs.stripe.com/radar/lists#managing-list-items)
 @immutable final class RadarValueListItem {const RadarValueListItem({required this.created, required this.createdBy, required this.id, required this.livemode, required this.object, required this.value, required this.valueList, });
 
-factory RadarValueListItem.fromJson(Map<String, dynamic> json) { return RadarValueListItem(
+factory RadarValueListItem.fromJson(Map<String, dynamic> json) {return RadarValueListItem(
   created: (json['created'] as num).toInt(),
   createdBy: json['created_by'] as String,
   id: json['id'] as String,
@@ -14,7 +14,7 @@ factory RadarValueListItem.fromJson(Map<String, dynamic> json) { return RadarVal
   object: DeletedRadarValueListItemObject.fromJson(json['object'] as String),
   value: json['value'] as String,
   valueList: json['value_list'] as String,
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -37,7 +37,7 @@ final String value;
 /// The identifier of the value list this item belongs to.
 final String valueList;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'created_by': createdBy,
   'id': id,
@@ -45,22 +45,22 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'value': value,
   'value_list': valueList,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('created_by') && json['created_by'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('value') && json['value'] is String &&
-      json.containsKey('value_list') && json['value_list'] is String; } 
+      json.containsKey('value_list') && json['value_list'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (createdBy.runes.length > 5000) { errors.add('createdBy: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (value.runes.length > 5000) { errors.add('value: length must be <= 5000'); }
 if (valueList.runes.length > 5000) { errors.add('valueList: length must be <= 5000'); }
-return errors; } 
-RadarValueListItem copyWith({int? created, String? createdBy, String? id, bool? livemode, DeletedRadarValueListItemObject? object, String? value, String? valueList, }) { return RadarValueListItem(
+return errors;}
+RadarValueListItem copyWith({int? created, String? createdBy, String? id, bool? livemode, DeletedRadarValueListItemObject? object, String? value, String? valueList, }) {return RadarValueListItem(
   created: created ?? this.created,
   createdBy: createdBy ?? this.createdBy,
   id: id ?? this.id,
@@ -68,7 +68,7 @@ RadarValueListItem copyWith({int? created, String? createdBy, String? id, bool? 
   object: object ?? this.object,
   value: value ?? this.value,
   valueList: valueList ?? this.valueList,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarValueListItem &&
           created == other.created &&
@@ -83,4 +83,4 @@ RadarValueListItem copyWith({int? created, String? createdBy, String? id, bool? 
 
 @override String toString() => 'RadarValueListItem(created: $created, createdBy: $createdBy, id: $id, livemode: $livemode, object: $object, value: $value, valueList: $valueList)';
 
- }
+}

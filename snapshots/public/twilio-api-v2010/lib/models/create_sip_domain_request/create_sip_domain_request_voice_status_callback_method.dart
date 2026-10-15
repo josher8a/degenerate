@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `voice_status_callback_url`. Can be: `GET` or `POST`.
 sealed class CreateSipDomainRequestVoiceStatusCallbackMethod {const CreateSipDomainRequestVoiceStatusCallbackMethod();
 
-factory CreateSipDomainRequestVoiceStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory CreateSipDomainRequestVoiceStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => CreateSipDomainRequestVoiceStatusCallbackMethod$Unknown(json),
-}; }
+};}
 
 static const CreateSipDomainRequestVoiceStatusCallbackMethod $get = CreateSipDomainRequestVoiceStatusCallbackMethod$$get._();
 
@@ -17,30 +17,30 @@ static const CreateSipDomainRequestVoiceStatusCallbackMethod post = CreateSipDom
 static const List<CreateSipDomainRequestVoiceStatusCallbackMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateSipDomainRequestVoiceStatusCallbackMethod$Unknown; } 
+bool get isUnknown {return this is CreateSipDomainRequestVoiceStatusCallbackMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       CreateSipDomainRequestVoiceStatusCallbackMethod$$get() => $get(),
       CreateSipDomainRequestVoiceStatusCallbackMethod$post() => post(),
       CreateSipDomainRequestVoiceStatusCallbackMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       CreateSipDomainRequestVoiceStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
       CreateSipDomainRequestVoiceStatusCallbackMethod$post() => post != null ? post() : orElse(value),
       CreateSipDomainRequestVoiceStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateSipDomainRequestVoiceStatusCallbackMethod($value)';
 
- }
+}
 @immutable final class CreateSipDomainRequestVoiceStatusCallbackMethod$$get extends CreateSipDomainRequestVoiceStatusCallbackMethod {const CreateSipDomainRequestVoiceStatusCallbackMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class CreateSipDomainRequestVoiceStatusCallbackMethod$post extends CreateSipDomainRequestVoiceStatusCallbackMethod {const CreateSipDomainRequestVoiceStatusCallbackMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class CreateSipDomainRequestVoiceStatusCallbackMethod$Unknown extends CreateSipDomainRequestVoiceStatusCallbackMethod {const CreateSipDomainRequestVoiceStatusCallbackMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

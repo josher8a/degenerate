@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage();
 
-factory DestinationCreateResponse400ErrorsMessage.fromJson(String json) { return switch (json) {
+factory DestinationCreateResponse400ErrorsMessage.fromJson(String json) {return switch (json) {
   'Bad Request' => badRequest,
   _ => DestinationCreateResponse400ErrorsMessage$Unknown(json),
-}; }
+};}
 
 static const DestinationCreateResponse400ErrorsMessage badRequest = DestinationCreateResponse400ErrorsMessage$badRequest._();
 
 static const List<DestinationCreateResponse400ErrorsMessage> values = [badRequest];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Bad Request' => 'badRequest',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DestinationCreateResponse400ErrorsMessage$Unknown; } 
+bool get isUnknown {return this is DestinationCreateResponse400ErrorsMessage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() badRequest, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() badRequest, required W Function(String value) $unknown, }) {return switch (this) {
       DestinationCreateResponse400ErrorsMessage$badRequest() => badRequest(),
       DestinationCreateResponse400ErrorsMessage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? badRequest, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? badRequest, W Function(String value)? $unknown, }) {return switch (this) {
       DestinationCreateResponse400ErrorsMessage$badRequest() => badRequest != null ? badRequest() : orElse(value),
       DestinationCreateResponse400ErrorsMessage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DestinationCreateResponse400ErrorsMessage($value)';
 
- }
+}
 @immutable final class DestinationCreateResponse400ErrorsMessage$badRequest extends DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage$badRequest._();
 
 @override String get value => 'Bad Request';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? badReque
 
 @override int get hashCode => 'Bad Request'.hashCode;
 
- }
+}
 @immutable final class DestinationCreateResponse400ErrorsMessage$Unknown extends DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage$Unknown(this.value);
 
 @override final String value;
@@ -52,27 +52,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? badReque
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class DestinationCreateResponse400Errors {const DestinationCreateResponse400Errors({required this.message, this.detail, });
 
-factory DestinationCreateResponse400Errors.fromJson(Map<String, dynamic> json) { return DestinationCreateResponse400Errors(
+factory DestinationCreateResponse400Errors.fromJson(Map<String, dynamic> json) {return DestinationCreateResponse400Errors(
   detail: json['detail'] as String?,
   message: DestinationCreateResponse400ErrorsMessage.fromJson(json['message'] as String),
-); }
+);}
 
 final String? detail;
 
 final DestinationCreateResponse400ErrorsMessage message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'detail': ?detail,
   'message': message.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
-DestinationCreateResponse400Errors copyWith({String? Function()? detail, DestinationCreateResponse400ErrorsMessage? message, }) { return DestinationCreateResponse400Errors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message');}
+DestinationCreateResponse400Errors copyWith({String? Function()? detail, DestinationCreateResponse400ErrorsMessage? message, }) {return DestinationCreateResponse400Errors(
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationCreateResponse400Errors &&
           detail == other.detail &&
@@ -82,4 +82,4 @@ DestinationCreateResponse400Errors copyWith({String? Function()? detail, Destina
 
 @override String toString() => 'DestinationCreateResponse400Errors(detail: $detail, message: $message)';
 
- }
+}

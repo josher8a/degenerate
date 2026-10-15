@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_auth_type.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_scopes.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/grant_types.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/hybrid_and_implicit_options.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/refresh_token_options.dart';import 'package:pub_cloudflare/models/access_schemas_oidc_saas_app/access_schemas_oidc_saas_app_custom_claims.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessSchemasOidcSaasApp {const AccessSchemasOidcSaasApp({this.accessTokenLifetime, this.allowPkceWithoutClientSecret, this.appLauncherUrl, this.authType, this.clientId, this.clientSecret, this.createdAt, this.customClaims, this.grantTypes, this.groupFilterRegex, this.hybridAndImplicitOptions, this.publicKey, this.redirectUris, this.refreshTokenOptions, this.scopes, this.updatedAt, });
 
-factory AccessSchemasOidcSaasApp.fromJson(Map<String, dynamic> json) { return AccessSchemasOidcSaasApp(
+factory AccessSchemasOidcSaasApp.fromJson(Map<String, dynamic> json) {return AccessSchemasOidcSaasApp(
   accessTokenLifetime: json['access_token_lifetime'] as String?,
   allowPkceWithoutClientSecret: json['allow_pkce_without_client_secret'] as bool?,
   appLauncherUrl: json['app_launcher_url'] as String?,
@@ -20,7 +20,7 @@ factory AccessSchemasOidcSaasApp.fromJson(Map<String, dynamic> json) { return Ac
   refreshTokenOptions: json['refresh_token_options'] != null ? RefreshTokenOptions.fromJson(json['refresh_token_options'] as Map<String, dynamic>) : null,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => AccessOidcSaasAppScopes.fromJson(e as String)).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The lifetime of the OIDC Access Token after creation. Valid units are m,h. Must be greater than or equal to 1m and less than or equal to 24h.
 /// 
@@ -87,7 +87,7 @@ final List<AccessOidcSaasAppScopes>? scopes;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_token_lifetime': ?accessTokenLifetime,
   'allow_pkce_without_client_secret': ?allowPkceWithoutClientSecret,
   'app_launcher_url': ?appLauncherUrl,
@@ -104,9 +104,9 @@ Map<String, dynamic> toJson() { return {
   if (refreshTokenOptions != null) 'refresh_token_options': refreshTokenOptions?.toJson(),
   if (scopes != null) 'scopes': scopes?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_token_lifetime', 'allow_pkce_without_client_secret', 'app_launcher_url', 'auth_type', 'client_id', 'client_secret', 'created_at', 'custom_claims', 'grant_types', 'group_filter_regex', 'hybrid_and_implicit_options', 'public_key', 'redirect_uris', 'refresh_token_options', 'scopes', 'updated_at'}.contains(key)); } 
-AccessSchemasOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool? Function()? allowPkceWithoutClientSecret, String? Function()? appLauncherUrl, AccessOidcSaasAppAuthType? Function()? authType, String? Function()? clientId, String? Function()? clientSecret, AccessTimestamp? Function()? createdAt, List<AccessSchemasOidcSaasAppCustomClaims>? Function()? customClaims, List<GrantTypes>? Function()? grantTypes, String? Function()? groupFilterRegex, HybridAndImplicitOptions? Function()? hybridAndImplicitOptions, String? Function()? publicKey, List<String>? Function()? redirectUris, RefreshTokenOptions? Function()? refreshTokenOptions, List<AccessOidcSaasAppScopes>? Function()? scopes, AccessTimestamp? Function()? updatedAt, }) { return AccessSchemasOidcSaasApp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'access_token_lifetime', 'allow_pkce_without_client_secret', 'app_launcher_url', 'auth_type', 'client_id', 'client_secret', 'created_at', 'custom_claims', 'grant_types', 'group_filter_regex', 'hybrid_and_implicit_options', 'public_key', 'redirect_uris', 'refresh_token_options', 'scopes', 'updated_at'}.contains(key));}
+AccessSchemasOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool? Function()? allowPkceWithoutClientSecret, String? Function()? appLauncherUrl, AccessOidcSaasAppAuthType? Function()? authType, String? Function()? clientId, String? Function()? clientSecret, AccessTimestamp? Function()? createdAt, List<AccessSchemasOidcSaasAppCustomClaims>? Function()? customClaims, List<GrantTypes>? Function()? grantTypes, String? Function()? groupFilterRegex, HybridAndImplicitOptions? Function()? hybridAndImplicitOptions, String? Function()? publicKey, List<String>? Function()? redirectUris, RefreshTokenOptions? Function()? refreshTokenOptions, List<AccessOidcSaasAppScopes>? Function()? scopes, AccessTimestamp? Function()? updatedAt, }) {return AccessSchemasOidcSaasApp(
   accessTokenLifetime: accessTokenLifetime != null ? accessTokenLifetime() : this.accessTokenLifetime,
   allowPkceWithoutClientSecret: allowPkceWithoutClientSecret != null ? allowPkceWithoutClientSecret() : this.allowPkceWithoutClientSecret,
   appLauncherUrl: appLauncherUrl != null ? appLauncherUrl() : this.appLauncherUrl,
@@ -123,7 +123,7 @@ AccessSchemasOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool
   refreshTokenOptions: refreshTokenOptions != null ? refreshTokenOptions() : this.refreshTokenOptions,
   scopes: scopes != null ? scopes() : this.scopes,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasOidcSaasApp &&
           accessTokenLifetime == other.accessTokenLifetime &&
@@ -147,4 +147,4 @@ AccessSchemasOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool
 
 @override String toString() => 'AccessSchemasOidcSaasApp(\n  accessTokenLifetime: $accessTokenLifetime,\n  allowPkceWithoutClientSecret: $allowPkceWithoutClientSecret,\n  appLauncherUrl: $appLauncherUrl,\n  authType: $authType,\n  clientId: $clientId,\n  clientSecret: $clientSecret,\n  createdAt: $createdAt,\n  customClaims: $customClaims,\n  grantTypes: $grantTypes,\n  groupFilterRegex: $groupFilterRegex,\n  hybridAndImplicitOptions: $hybridAndImplicitOptions,\n  publicKey: $publicKey,\n  redirectUris: $redirectUris,\n  refreshTokenOptions: $refreshTokenOptions,\n  scopes: $scopes,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

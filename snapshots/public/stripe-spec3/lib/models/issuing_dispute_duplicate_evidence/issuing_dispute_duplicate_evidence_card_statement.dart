@@ -8,11 +8,11 @@ const IssuingDisputeDuplicateEvidenceCardStatement({this.string = const Omittabl
 const IssuingDisputeDuplicateEvidenceCardStatement._({required this.rawValue, required this.string, required this.file, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory IssuingDisputeDuplicateEvidenceCardStatement.fromJson(Object? json) { return IssuingDisputeDuplicateEvidenceCardStatement._(
+factory IssuingDisputeDuplicateEvidenceCardStatement.fromJson(Object? json) {return IssuingDisputeDuplicateEvidenceCardStatement._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   file: json is Map<String, dynamic> && File.canParse(json) ? parseAnyOfVariant<File>(json, (value) => File.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'IssuingDisputeDuplicateEvidenceCardStatement(${toJson()})';
 
- }
+}

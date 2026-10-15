@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ResponseFormatType {const ResponseFormatType();
 
-factory ResponseFormatType.fromJson(String json) { return switch (json) {
+factory ResponseFormatType.fromJson(String json) {return switch (json) {
   'json_object' => jsonObject,
   'json_schema' => jsonSchema,
   _ => ResponseFormatType$Unknown(json),
-}; }
+};}
 
 static const ResponseFormatType jsonObject = ResponseFormatType$jsonObject._();
 
@@ -16,30 +16,30 @@ static const ResponseFormatType jsonSchema = ResponseFormatType$jsonSchema._();
 static const List<ResponseFormatType> values = [jsonObject, jsonSchema];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'json_object' => 'jsonObject',
   'json_schema' => 'jsonSchema',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseFormatType$Unknown; } 
+bool get isUnknown {return this is ResponseFormatType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() jsonObject, required W Function() jsonSchema, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() jsonObject, required W Function() jsonSchema, required W Function(String value) $unknown, }) {return switch (this) {
       ResponseFormatType$jsonObject() => jsonObject(),
       ResponseFormatType$jsonSchema() => jsonSchema(),
       ResponseFormatType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? jsonObject, W Function()? jsonSchema, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? jsonObject, W Function()? jsonSchema, W Function(String value)? $unknown, }) {return switch (this) {
       ResponseFormatType$jsonObject() => jsonObject != null ? jsonObject() : orElse(value),
       ResponseFormatType$jsonSchema() => jsonSchema != null ? jsonSchema() : orElse(value),
       ResponseFormatType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResponseFormatType($value)';
 
- }
+}
 @immutable final class ResponseFormatType$jsonObject extends ResponseFormatType {const ResponseFormatType$jsonObject._();
 
 @override String get value => 'json_object';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? jsonObje
 
 @override int get hashCode => 'json_object'.hashCode;
 
- }
+}
 @immutable final class ResponseFormatType$jsonSchema extends ResponseFormatType {const ResponseFormatType$jsonSchema._();
 
 @override String get value => 'json_schema';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? jsonObje
 
 @override int get hashCode => 'json_schema'.hashCode;
 
- }
+}
 @immutable final class ResponseFormatType$Unknown extends ResponseFormatType {const ResponseFormatType$Unknown(this.value);
 
 @override final String value;
@@ -67,27 +67,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? jsonObje
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class MessagesResponseFormat {const MessagesResponseFormat({this.jsonSchema = const Omittable.absent(), this.type, });
 
-factory MessagesResponseFormat.fromJson(Map<String, dynamic> json) { return MessagesResponseFormat(
+factory MessagesResponseFormat.fromJson(Map<String, dynamic> json) {return MessagesResponseFormat(
   jsonSchema: json.containsKey('json_schema') ? Omittable(json['json_schema']) : const Omittable.absent(),
   type: json['type'] != null ? ResponseFormatType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final Omittable<dynamic> jsonSchema;
 
 final ResponseFormatType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (jsonSchema.isPresent) 'json_schema': jsonSchema.value,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'json_schema', 'type'}.contains(key)); } 
-MessagesResponseFormat copyWith({Omittable<dynamic>? jsonSchema, ResponseFormatType? Function()? type, }) { return MessagesResponseFormat(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'json_schema', 'type'}.contains(key));}
+MessagesResponseFormat copyWith({Omittable<dynamic>? jsonSchema, ResponseFormatType? Function()? type, }) {return MessagesResponseFormat(
   jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessagesResponseFormat &&
           jsonSchema == other.jsonSchema &&
@@ -97,4 +97,4 @@ MessagesResponseFormat copyWith({Omittable<dynamic>? jsonSchema, ResponseFormatT
 
 @override String toString() => 'MessagesResponseFormat(jsonSchema: $jsonSchema, type: $type)';
 
- }
+}

@@ -5,14 +5,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class GraderScoreModel {const GraderScoreModel({required this.type, required this.name, required this.model, required this.input, this.samplingParams, this.range, });
 
-factory GraderScoreModel.fromJson(Map<String, dynamic> json) { return GraderScoreModel(
+factory GraderScoreModel.fromJson(Map<String, dynamic> json) {return GraderScoreModel(
   type: EvalGraderScoreModelType.fromJson(json['type'] as String),
   name: json['name'] as String,
   model: json['model'] as String,
   samplingParams: json['sampling_params'] != null ? EvalGraderScoreModelSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>) : null,
   input: (json['input'] as List<dynamic>).map((e) => EvalItem.fromJson(e as Map<String, dynamic>)).toList(),
   range: (json['range'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-); }
+);}
 
 /// The object type, which is always `score_model`.
 final EvalGraderScoreModelType type;
@@ -33,26 +33,26 @@ final List<EvalItem> input;
 /// The range of the score. Defaults to `[0, 1]`.
 final List<double>? range;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
   'model': model,
   if (samplingParams != null) 'sampling_params': samplingParams?.toJson(),
   'input': input.map((e) => e.toJson()).toList(),
   'range': ?range,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'score_model' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'score_model' &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('input'); } 
-GraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String? model, EvalGraderScoreModelSamplingParams? Function()? samplingParams, List<EvalItem>? input, List<double>? Function()? range, }) { return GraderScoreModel(
+      json.containsKey('input');}
+GraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String? model, EvalGraderScoreModelSamplingParams? Function()? samplingParams, List<EvalItem>? input, List<double>? Function()? range, }) {return GraderScoreModel(
   type: type ?? this.type,
   name: name ?? this.name,
   model: model ?? this.model,
   samplingParams: samplingParams != null ? samplingParams() : this.samplingParams,
   input: input ?? this.input,
   range: range != null ? range() : this.range,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GraderScoreModel &&
           type == other.type &&
@@ -66,4 +66,4 @@ GraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String?
 
 @override String toString() => 'GraderScoreModel(type: $type, name: $name, model: $model, samplingParams: $samplingParams, input: $input, range: $range)';
 
- }
+}

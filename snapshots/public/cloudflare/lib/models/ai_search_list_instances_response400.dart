@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_response400/ai_search_create_instances_response400_errors.dart';@immutable final class AiSearchListInstancesResponse400 {const AiSearchListInstancesResponse400({required this.errors, required this.success, });
 
-factory AiSearchListInstancesResponse400.fromJson(Map<String, dynamic> json) { return AiSearchListInstancesResponse400(
+factory AiSearchListInstancesResponse400.fromJson(Map<String, dynamic> json) {return AiSearchListInstancesResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchCreateInstancesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AiSearchCreateInstancesResponse400Errors> errors;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AiSearchListInstancesResponse400 copyWith({List<AiSearchCreateInstancesResponse400Errors>? errors, bool? success, }) { return AiSearchListInstancesResponse400(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool;}
+AiSearchListInstancesResponse400 copyWith({List<AiSearchCreateInstancesResponse400Errors>? errors, bool? success, }) {return AiSearchListInstancesResponse400(
   errors: errors ?? this.errors,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchListInstancesResponse400 &&
           listEquals(errors, other.errors) &&
@@ -31,4 +31,4 @@ AiSearchListInstancesResponse400 copyWith({List<AiSearchCreateInstancesResponse4
 
 @override String toString() => 'AiSearchListInstancesResponse400(errors: $errors, success: $success)';
 
- }
+}

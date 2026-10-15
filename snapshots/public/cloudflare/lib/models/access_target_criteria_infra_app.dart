@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_port.dart';/// The communication protocol your application secures.
 sealed class AccessProtocolInfraApp {const AccessProtocolInfraApp();
 
-factory AccessProtocolInfraApp.fromJson(String json) { return switch (json) {
+factory AccessProtocolInfraApp.fromJson(String json) {return switch (json) {
   'SSH' => ssh,
   _ => AccessProtocolInfraApp$Unknown(json),
-}; }
+};}
 
 static const AccessProtocolInfraApp ssh = AccessProtocolInfraApp$ssh._();
 
 static const List<AccessProtocolInfraApp> values = [ssh];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'SSH' => 'ssh',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccessProtocolInfraApp$Unknown; } 
+bool get isUnknown {return this is AccessProtocolInfraApp$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ssh, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ssh, required W Function(String value) $unknown, }) {return switch (this) {
       AccessProtocolInfraApp$ssh() => ssh(),
       AccessProtocolInfraApp$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ssh, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ssh, W Function(String value)? $unknown, }) {return switch (this) {
       AccessProtocolInfraApp$ssh() => ssh != null ? ssh() : orElse(value),
       AccessProtocolInfraApp$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccessProtocolInfraApp($value)';
 
- }
+}
 @immutable final class AccessProtocolInfraApp$ssh extends AccessProtocolInfraApp {const AccessProtocolInfraApp$ssh._();
 
 @override String get value => 'SSH';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ssh, W F
 
 @override int get hashCode => 'SSH'.hashCode;
 
- }
+}
 @immutable final class AccessProtocolInfraApp$Unknown extends AccessProtocolInfraApp {const AccessProtocolInfraApp$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ssh, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccessTargetCriteriaInfraApp {const AccessTargetCriteriaInfraApp({required this.port, required this.targetAttributes, required this.protocol, });
 
-factory AccessTargetCriteriaInfraApp.fromJson(Map<String, dynamic> json) { return AccessTargetCriteriaInfraApp(
+factory AccessTargetCriteriaInfraApp.fromJson(Map<String, dynamic> json) {return AccessTargetCriteriaInfraApp(
   port: AccessPort.fromJson(json['port'] as num),
   targetAttributes: (json['target_attributes'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   protocol: AccessProtocolInfraApp.fromJson(json['protocol'] as String),
-); }
+);}
 
 /// The port that the targets use for the chosen communication protocol. A port cannot be assigned to multiple protocols.
 final AccessPort port;
@@ -71,19 +71,19 @@ final Map<String,List<String>> targetAttributes;
 /// The communication protocol your application secures.
 final AccessProtocolInfraApp protocol;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'port': port.toJson(),
   'target_attributes': targetAttributes,
   'protocol': protocol.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('port') &&
       json.containsKey('target_attributes') &&
-      json.containsKey('protocol'); } 
-AccessTargetCriteriaInfraApp copyWith({AccessPort? port, Map<String,List<String>>? targetAttributes, AccessProtocolInfraApp? protocol, }) { return AccessTargetCriteriaInfraApp(
+      json.containsKey('protocol');}
+AccessTargetCriteriaInfraApp copyWith({AccessPort? port, Map<String,List<String>>? targetAttributes, AccessProtocolInfraApp? protocol, }) {return AccessTargetCriteriaInfraApp(
   port: port ?? this.port,
   targetAttributes: targetAttributes ?? this.targetAttributes,
   protocol: protocol ?? this.protocol,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessTargetCriteriaInfraApp &&
           port == other.port &&
@@ -94,4 +94,4 @@ AccessTargetCriteriaInfraApp copyWith({AccessPort? port, Map<String,List<String>
 
 @override String toString() => 'AccessTargetCriteriaInfraApp(port: $port, targetAttributes: $targetAttributes, protocol: $protocol)';
 
- }
+}

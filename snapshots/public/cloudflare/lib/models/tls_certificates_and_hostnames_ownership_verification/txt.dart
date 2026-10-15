@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS Record type.
 sealed class TxtType {const TxtType();
 
-factory TxtType.fromJson(String json) { return switch (json) {
+factory TxtType.fromJson(String json) {return switch (json) {
   'txt' => txt,
   _ => TxtType$Unknown(json),
-}; }
+};}
 
 static const TxtType txt = TxtType$txt._();
 
 static const List<TxtType> values = [txt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'txt' => 'txt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TxtType$Unknown; } 
+bool get isUnknown {return this is TxtType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() txt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() txt, required W Function(String value) $unknown, }) {return switch (this) {
       TxtType$txt() => txt(),
       TxtType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? txt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? txt, W Function(String value)? $unknown, }) {return switch (this) {
       TxtType$txt() => txt != null ? txt() : orElse(value),
       TxtType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TxtType($value)';
 
- }
+}
 @immutable final class TxtType$txt extends TxtType {const TxtType$txt._();
 
 @override String get value => 'txt';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? txt, W F
 
 @override int get hashCode => 'txt'.hashCode;
 
- }
+}
 @immutable final class TxtType$Unknown extends TxtType {const TxtType$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? txt, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class Txt {const Txt({this.name, this.type, this.value, });
 
-factory Txt.fromJson(Map<String, dynamic> json) { return Txt(
+factory Txt.fromJson(Map<String, dynamic> json) {return Txt(
   name: json['name'] as String?,
   type: json['type'] != null ? TxtType.fromJson(json['type'] as String) : null,
   value: json['value'] as String?,
-); }
+);}
 
 /// DNS Name for record.
 /// 
@@ -77,17 +77,17 @@ final TxtType? type;
 /// Example: `'5cc07c04-ea62-4a5a-95f0-419334a875a4'`
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   if (type != null) 'type': type?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type', 'value'}.contains(key)); } 
-Txt copyWith({String? Function()? name, TxtType? Function()? type, String? Function()? value, }) { return Txt(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'type', 'value'}.contains(key));}
+Txt copyWith({String? Function()? name, TxtType? Function()? type, String? Function()? value, }) {return Txt(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Txt &&
           name == other.name &&
@@ -98,4 +98,4 @@ Txt copyWith({String? Function()? name, TxtType? Function()? type, String? Funct
 
 @override String toString() => 'Txt(name: $name, type: $type, value: $value)';
 
- }
+}

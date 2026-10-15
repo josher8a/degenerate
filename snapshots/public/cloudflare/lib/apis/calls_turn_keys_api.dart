@@ -14,7 +14,7 @@ final class CallsTurnKeysApi with ApiExecutor {const CallsTurnKeysApi(this.apiCo
 /// Lists all TURN keys in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/turn_keys`
-Future<ApiResult<List<CallsTurnKeyObject>?, CallsAppsListError>> callsTurnKeyList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CallsTurnKeyObject>?, CallsAppsListError>> callsTurnKeyList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: CallsAppsListError.fromResponse,
 );
- } 
+}
 /// Create a new TURN key
 ///
 /// Creates a new Cloudflare Calls TURN key.
 ///
 /// `POST /accounts/{account_id}/calls/turn_keys`
-Future<ApiResult<CallsTurnKeyWithKey?, Never>> callsTurnKeyCreate({required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyWithKey?, Never>> callsTurnKeyCreate({required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,13 +55,13 @@ return await execute(
     return json['result'] != null ? CallsTurnKeyWithKey.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
+}
 /// Retrieve TURN key details
 ///
 /// Fetches details for a single TURN key.
 ///
 /// `GET /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<CallsTurnKeyObject?, CallsAppsListError>> callsRetrieveTurnKeyDetails({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyObject?, CallsAppsListError>> callsRetrieveTurnKeyDetails({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,13 +78,13 @@ return await execute(
   },
   onError: CallsAppsListError.fromResponse,
 );
- } 
+}
 /// Edit TURN key details
 ///
 /// Edit details for a single TURN key.
 ///
 /// `PUT /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<CallsTurnKeyObject?, CallsAppsListError>> callsUpdateTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyObject?, CallsAppsListError>> callsUpdateTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,13 +103,13 @@ return await execute(
   },
   onError: CallsAppsListError.fromResponse,
 );
- } 
+}
 /// Delete TURN key
 ///
 /// Deletes a TURN key from Cloudflare Calls
 ///
 /// `DELETE /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<CallsTurnKeyObject?, Never>> callsDeleteTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyObject?, Never>> callsDeleteTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,5 +125,5 @@ return await execute(
     return json['result'] != null ? CallsTurnKeyObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
- }
+}
+}

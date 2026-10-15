@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ParticipantPeerStatsPrecallNetworkInformation {const ParticipantPeerStatsPrecallNetworkInformation({this.backendRtt, this.effectiveNetworktype, this.fractionalLoss, this.jitter, this.reflexiveConnectivity, this.relayConnectivity, this.rtt, this.throughput, this.turnConnectivity, });
 
-factory ParticipantPeerStatsPrecallNetworkInformation.fromJson(Map<String, dynamic> json) { return ParticipantPeerStatsPrecallNetworkInformation(
+factory ParticipantPeerStatsPrecallNetworkInformation.fromJson(Map<String, dynamic> json) {return ParticipantPeerStatsPrecallNetworkInformation(
   backendRtt: json['backend_rtt'] != null ? (json['backend_rtt'] as num).toDouble() : null,
   effectiveNetworktype: json['effective_networktype'] as String?,
   fractionalLoss: json['fractional_loss'] != null ? (json['fractional_loss'] as num).toInt() : null,
@@ -13,7 +13,7 @@ factory ParticipantPeerStatsPrecallNetworkInformation.fromJson(Map<String, dynam
   rtt: json['rtt'] != null ? (json['rtt'] as num).toDouble() : null,
   throughput: json['throughput'] != null ? (json['throughput'] as num).toInt() : null,
   turnConnectivity: json['turn_connectivity'] as bool?,
-); }
+);}
 
 final double? backendRtt;
 
@@ -33,7 +33,7 @@ final int? throughput;
 
 final bool? turnConnectivity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'backend_rtt': ?backendRtt,
   'effective_networktype': ?effectiveNetworktype,
   'fractional_loss': ?fractionalLoss,
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   'rtt': ?rtt,
   'throughput': ?throughput,
   'turn_connectivity': ?turnConnectivity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'backend_rtt', 'effective_networktype', 'fractional_loss', 'jitter', 'reflexive_connectivity', 'relay_connectivity', 'rtt', 'throughput', 'turn_connectivity'}.contains(key)); } 
-ParticipantPeerStatsPrecallNetworkInformation copyWith({double? Function()? backendRtt, String? Function()? effectiveNetworktype, int? Function()? fractionalLoss, int? Function()? jitter, bool? Function()? reflexiveConnectivity, bool? Function()? relayConnectivity, double? Function()? rtt, int? Function()? throughput, bool? Function()? turnConnectivity, }) { return ParticipantPeerStatsPrecallNetworkInformation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'backend_rtt', 'effective_networktype', 'fractional_loss', 'jitter', 'reflexive_connectivity', 'relay_connectivity', 'rtt', 'throughput', 'turn_connectivity'}.contains(key));}
+ParticipantPeerStatsPrecallNetworkInformation copyWith({double? Function()? backendRtt, String? Function()? effectiveNetworktype, int? Function()? fractionalLoss, int? Function()? jitter, bool? Function()? reflexiveConnectivity, bool? Function()? relayConnectivity, double? Function()? rtt, int? Function()? throughput, bool? Function()? turnConnectivity, }) {return ParticipantPeerStatsPrecallNetworkInformation(
   backendRtt: backendRtt != null ? backendRtt() : this.backendRtt,
   effectiveNetworktype: effectiveNetworktype != null ? effectiveNetworktype() : this.effectiveNetworktype,
   fractionalLoss: fractionalLoss != null ? fractionalLoss() : this.fractionalLoss,
@@ -55,7 +55,7 @@ ParticipantPeerStatsPrecallNetworkInformation copyWith({double? Function()? back
   rtt: rtt != null ? rtt() : this.rtt,
   throughput: throughput != null ? throughput() : this.throughput,
   turnConnectivity: turnConnectivity != null ? turnConnectivity() : this.turnConnectivity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipantPeerStatsPrecallNetworkInformation &&
           backendRtt == other.backendRtt &&
@@ -72,4 +72,4 @@ ParticipantPeerStatsPrecallNetworkInformation copyWith({double? Function()? back
 
 @override String toString() => 'ParticipantPeerStatsPrecallNetworkInformation(\n  backendRtt: $backendRtt,\n  effectiveNetworktype: $effectiveNetworktype,\n  fractionalLoss: $fractionalLoss,\n  jitter: $jitter,\n  reflexiveConnectivity: $reflexiveConnectivity,\n  relayConnectivity: $relayConnectivity,\n  rtt: $rtt,\n  throughput: $throughput,\n  turnConnectivity: $turnConnectivity,\n)';
 
- }
+}

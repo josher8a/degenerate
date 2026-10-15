@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MethodPutResponse {const MethodPutResponse({this.status});
 
-factory MethodPutResponse.fromJson(Map<String, dynamic> json) { return MethodPutResponse(
+factory MethodPutResponse.fromJson(Map<String, dynamic> json) {return MethodPutResponse(
   status: json['status'] as String?,
-); }
+);}
 
 /// Example: `'OK'`
 final String? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': ?status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-MethodPutResponse copyWith({String? Function()? status}) { return MethodPutResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+MethodPutResponse copyWith({String? Function()? status}) {return MethodPutResponse(
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MethodPutResponse &&
           status == other.status;
@@ -25,4 +25,4 @@ MethodPutResponse copyWith({String? Function()? status}) { return MethodPutRespo
 
 @override String toString() => 'MethodPutResponse(status: $status)';
 
- }
+}

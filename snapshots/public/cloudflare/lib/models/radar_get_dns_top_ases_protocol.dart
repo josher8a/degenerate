@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsTopAsesProtocol {const RadarGetDnsTopAsesProtocol();
 
-factory RadarGetDnsTopAsesProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetDnsTopAsesProtocol.fromJson(String json) {return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
   _ => RadarGetDnsTopAsesProtocol$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsTopAsesProtocol udp = RadarGetDnsTopAsesProtocol$udp._();
 
@@ -22,36 +22,36 @@ static const RadarGetDnsTopAsesProtocol tls = RadarGetDnsTopAsesProtocol$tls._()
 static const List<RadarGetDnsTopAsesProtocol> values = [udp, tcp, https, tls];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'UDP' => 'udp',
   'TCP' => 'tcp',
   'HTTPS' => 'https',
   'TLS' => 'tls',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsTopAsesProtocol$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsTopAsesProtocol$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() udp, required W Function() tcp, required W Function() https, required W Function() tls, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() udp, required W Function() tcp, required W Function() https, required W Function() tls, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsTopAsesProtocol$udp() => udp(),
       RadarGetDnsTopAsesProtocol$tcp() => tcp(),
       RadarGetDnsTopAsesProtocol$https() => https(),
       RadarGetDnsTopAsesProtocol$tls() => tls(),
       RadarGetDnsTopAsesProtocol$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? https, W Function()? tls, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? https, W Function()? tls, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsTopAsesProtocol$udp() => udp != null ? udp() : orElse(value),
       RadarGetDnsTopAsesProtocol$tcp() => tcp != null ? tcp() : orElse(value),
       RadarGetDnsTopAsesProtocol$https() => https != null ? https() : orElse(value),
       RadarGetDnsTopAsesProtocol$tls() => tls != null ? tls() : orElse(value),
       RadarGetDnsTopAsesProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsTopAsesProtocol($value)';
 
- }
+}
 @immutable final class RadarGetDnsTopAsesProtocol$udp extends RadarGetDnsTopAsesProtocol {const RadarGetDnsTopAsesProtocol$udp._();
 
 @override String get value => 'UDP';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'UDP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsTopAsesProtocol$tcp extends RadarGetDnsTopAsesProtocol {const RadarGetDnsTopAsesProtocol$tcp._();
 
 @override String get value => 'TCP';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'TCP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsTopAsesProtocol$https extends RadarGetDnsTopAsesProtocol {const RadarGetDnsTopAsesProtocol$https._();
 
 @override String get value => 'HTTPS';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'HTTPS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsTopAsesProtocol$tls extends RadarGetDnsTopAsesProtocol {const RadarGetDnsTopAsesProtocol$tls._();
 
 @override String get value => 'TLS';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'TLS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsTopAsesProtocol$Unknown extends RadarGetDnsTopAsesProtocol {const RadarGetDnsTopAsesProtocol$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

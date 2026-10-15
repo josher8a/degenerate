@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_type2/error_type2_error.dart';@immutable final class TaggedError2 {const TaggedError2({required this.tag, required this.error, });
 
-factory TaggedError2.fromJson(Map<String, dynamic> json) { return TaggedError2(
+factory TaggedError2.fromJson(Map<String, dynamic> json) {return TaggedError2(
   tag: json['tag'] as String,
   error: ErrorType2Error.fromJson(json['error'] as Map<String, dynamic>),
-); }
+);}
 
 final String tag;
 
 final ErrorType2Error error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tag': tag,
   'error': error.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tag') && json['tag'] is String &&
-      json.containsKey('error'); } 
-TaggedError2 copyWith({String? tag, ErrorType2Error? error, }) { return TaggedError2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tag') && json['tag'] is String &&
+      json.containsKey('error');}
+TaggedError2 copyWith({String? tag, ErrorType2Error? error, }) {return TaggedError2(
   tag: tag ?? this.tag,
   error: error ?? this.error,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaggedError2 &&
           tag == other.tag &&
@@ -31,4 +31,4 @@ TaggedError2 copyWith({String? tag, ErrorType2Error? error, }) { return TaggedEr
 
 @override String toString() => 'TaggedError2(tag: $tag, error: $error)';
 
- }
+}

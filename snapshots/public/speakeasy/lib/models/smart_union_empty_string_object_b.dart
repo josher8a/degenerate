@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartUnionEmptyStringObjectB {const SmartUnionEmptyStringObjectB({required this.b});
 
-factory SmartUnionEmptyStringObjectB.fromJson(Map<String, dynamic> json) { return SmartUnionEmptyStringObjectB(
+factory SmartUnionEmptyStringObjectB.fromJson(Map<String, dynamic> json) {return SmartUnionEmptyStringObjectB(
   b: json['b'] as String,
-); }
+);}
 
 final String b;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'b': b,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('b') && json['b'] is String; } 
-SmartUnionEmptyStringObjectB copyWith({String? b}) { return SmartUnionEmptyStringObjectB(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('b') && json['b'] is String;}
+SmartUnionEmptyStringObjectB copyWith({String? b}) {return SmartUnionEmptyStringObjectB(
   b: b ?? this.b,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartUnionEmptyStringObjectB &&
           b == other.b;
@@ -24,4 +24,4 @@ SmartUnionEmptyStringObjectB copyWith({String? b}) { return SmartUnionEmptyStrin
 
 @override String toString() => 'SmartUnionEmptyStringObjectB(b: $b)';
 
- }
+}

@@ -11,11 +11,11 @@ String toJson() => value;
 /// The type of DNS record associated with the application.
 sealed class SpectrumConfigDnsType {const SpectrumConfigDnsType();
 
-factory SpectrumConfigDnsType.fromJson(String json) { return switch (json) {
+factory SpectrumConfigDnsType.fromJson(String json) {return switch (json) {
   'CNAME' => cname,
   'ADDRESS' => address,
   _ => SpectrumConfigDnsType$Unknown(json),
-}; }
+};}
 
 static const SpectrumConfigDnsType cname = SpectrumConfigDnsType$cname._();
 
@@ -24,30 +24,30 @@ static const SpectrumConfigDnsType address = SpectrumConfigDnsType$address._();
 static const List<SpectrumConfigDnsType> values = [cname, address];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'CNAME' => 'cname',
   'ADDRESS' => 'address',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SpectrumConfigDnsType$Unknown; } 
+bool get isUnknown {return this is SpectrumConfigDnsType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cname, required W Function() address, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cname, required W Function() address, required W Function(String value) $unknown, }) {return switch (this) {
       SpectrumConfigDnsType$cname() => cname(),
       SpectrumConfigDnsType$address() => address(),
       SpectrumConfigDnsType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W Function()? address, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W Function()? address, W Function(String value)? $unknown, }) {return switch (this) {
       SpectrumConfigDnsType$cname() => cname != null ? cname() : orElse(value),
       SpectrumConfigDnsType$address() => address != null ? address() : orElse(value),
       SpectrumConfigDnsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SpectrumConfigDnsType($value)';
 
- }
+}
 @immutable final class SpectrumConfigDnsType$cname extends SpectrumConfigDnsType {const SpectrumConfigDnsType$cname._();
 
 @override String get value => 'CNAME';
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W
 
 @override int get hashCode => 'CNAME'.hashCode;
 
- }
+}
 @immutable final class SpectrumConfigDnsType$address extends SpectrumConfigDnsType {const SpectrumConfigDnsType$address._();
 
 @override String get value => 'ADDRESS';
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W
 
 @override int get hashCode => 'ADDRESS'.hashCode;
 
- }
+}
 @immutable final class SpectrumConfigDnsType$Unknown extends SpectrumConfigDnsType {const SpectrumConfigDnsType$Unknown(this.value);
 
 @override final String value;
@@ -75,28 +75,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The name and type of DNS record for the Spectrum application.
 @immutable final class SpectrumConfigDns {const SpectrumConfigDns({this.name, this.type, });
 
-factory SpectrumConfigDns.fromJson(Map<String, dynamic> json) { return SpectrumConfigDns(
+factory SpectrumConfigDns.fromJson(Map<String, dynamic> json) {return SpectrumConfigDns(
   name: json['name'] != null ? SpectrumConfigDnsName.fromJson(json['name'] as String) : null,
   type: json['type'] != null ? SpectrumConfigDnsType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final SpectrumConfigDnsName? name;
 
 final SpectrumConfigDnsType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (name != null) 'name': name?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type'}.contains(key)); } 
-SpectrumConfigDns copyWith({SpectrumConfigDnsName? Function()? name, SpectrumConfigDnsType? Function()? type, }) { return SpectrumConfigDns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'type'}.contains(key));}
+SpectrumConfigDns copyWith({SpectrumConfigDnsName? Function()? name, SpectrumConfigDnsType? Function()? type, }) {return SpectrumConfigDns(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumConfigDns &&
           name == other.name &&
@@ -106,4 +106,4 @@ SpectrumConfigDns copyWith({SpectrumConfigDnsName? Function()? name, SpectrumCon
 
 @override String toString() => 'SpectrumConfigDns(name: $name, type: $type)';
 
- }
+}

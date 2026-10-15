@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasuryReceivedDebitsResourceLinkedFlows {const TreasuryReceivedDebitsResourceLinkedFlows({this.debitReversal = const Omittable.absent(), this.inboundTransfer = const Omittable.absent(), this.issuingAuthorization = const Omittable.absent(), this.issuingTransaction = const Omittable.absent(), this.payout = const Omittable.absent(), this.topup = const Omittable.absent(), });
 
-factory TreasuryReceivedDebitsResourceLinkedFlows.fromJson(Map<String, dynamic> json) { return TreasuryReceivedDebitsResourceLinkedFlows(
+factory TreasuryReceivedDebitsResourceLinkedFlows.fromJson(Map<String, dynamic> json) {return TreasuryReceivedDebitsResourceLinkedFlows(
   debitReversal: json.containsKey('debit_reversal') ? Omittable(json['debit_reversal'] as String?) : const Omittable.absent(),
   inboundTransfer: json.containsKey('inbound_transfer') ? Omittable(json['inbound_transfer'] as String?) : const Omittable.absent(),
   issuingAuthorization: json.containsKey('issuing_authorization') ? Omittable(json['issuing_authorization'] as String?) : const Omittable.absent(),
   issuingTransaction: json.containsKey('issuing_transaction') ? Omittable(json['issuing_transaction'] as String?) : const Omittable.absent(),
   payout: json.containsKey('payout') ? Omittable(json['payout'] as String?) : const Omittable.absent(),
   topup: json.containsKey('topup') ? Omittable(json['topup'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The DebitReversal created as a result of this ReceivedDebit being reversed.
 final Omittable<String?> debitReversal;
@@ -31,17 +31,17 @@ final Omittable<String?> payout;
 /// Set if the ReceivedDebit was created due to a [Topup](https://api.stripe.com#topups) object.
 final Omittable<String?> topup;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (debitReversal.isPresent) 'debit_reversal': debitReversal.value,
   if (inboundTransfer.isPresent) 'inbound_transfer': inboundTransfer.value,
   if (issuingAuthorization.isPresent) 'issuing_authorization': issuingAuthorization.value,
   if (issuingTransaction.isPresent) 'issuing_transaction': issuingTransaction.value,
   if (payout.isPresent) 'payout': payout.value,
   if (topup.isPresent) 'topup': topup.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'debit_reversal', 'inbound_transfer', 'issuing_authorization', 'issuing_transaction', 'payout', 'topup'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'debit_reversal', 'inbound_transfer', 'issuing_authorization', 'issuing_transaction', 'payout', 'topup'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final debitReversal$ = debitReversal.value;
 if (debitReversal$ != null) {
   if (debitReversal$.runes.length > 5000) { errors.add('debitReversal: length must be <= 5000'); }
@@ -66,15 +66,15 @@ final topup$ = topup.value;
 if (topup$ != null) {
   if (topup$.runes.length > 5000) { errors.add('topup: length must be <= 5000'); }
 }
-return errors; } 
-TreasuryReceivedDebitsResourceLinkedFlows copyWith({Omittable<String?>? debitReversal, Omittable<String?>? inboundTransfer, Omittable<String?>? issuingAuthorization, Omittable<String?>? issuingTransaction, Omittable<String?>? payout, Omittable<String?>? topup, }) { return TreasuryReceivedDebitsResourceLinkedFlows(
+return errors;}
+TreasuryReceivedDebitsResourceLinkedFlows copyWith({Omittable<String?>? debitReversal, Omittable<String?>? inboundTransfer, Omittable<String?>? issuingAuthorization, Omittable<String?>? issuingTransaction, Omittable<String?>? payout, Omittable<String?>? topup, }) {return TreasuryReceivedDebitsResourceLinkedFlows(
   debitReversal: debitReversal ?? this.debitReversal,
   inboundTransfer: inboundTransfer ?? this.inboundTransfer,
   issuingAuthorization: issuingAuthorization ?? this.issuingAuthorization,
   issuingTransaction: issuingTransaction ?? this.issuingTransaction,
   payout: payout ?? this.payout,
   topup: topup ?? this.topup,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryReceivedDebitsResourceLinkedFlows &&
           debitReversal == other.debitReversal &&
@@ -88,4 +88,4 @@ TreasuryReceivedDebitsResourceLinkedFlows copyWith({Omittable<String?>? debitRev
 
 @override String toString() => 'TreasuryReceivedDebitsResourceLinkedFlows(debitReversal: $debitReversal, inboundTransfer: $inboundTransfer, issuingAuthorization: $issuingAuthorization, issuingTransaction: $issuingTransaction, payout: $payout, topup: $topup)';
 
- }
+}

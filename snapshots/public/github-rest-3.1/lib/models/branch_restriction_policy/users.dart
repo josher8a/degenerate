@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Users {const Users({this.login, this.id, this.nodeId, this.avatarUrl, this.gravatarId, this.url, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.reposUrl, this.eventsUrl, this.receivedEventsUrl, this.type, this.siteAdmin, this.userViewType, });
 
-factory Users.fromJson(Map<String, dynamic> json) { return Users(
+factory Users.fromJson(Map<String, dynamic> json) {return Users(
   login: json['login'] as String?,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
@@ -23,7 +23,7 @@ factory Users.fromJson(Map<String, dynamic> json) { return Users(
   type: json['type'] as String?,
   siteAdmin: json['site_admin'] as bool?,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String? login;
 
@@ -63,7 +63,7 @@ final bool? siteAdmin;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': ?login,
   'id': ?id,
   'node_id': ?nodeId,
@@ -83,9 +83,9 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'site_admin': ?siteAdmin,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login', 'id', 'node_id', 'avatar_url', 'gravatar_id', 'url', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'repos_url', 'events_url', 'received_events_url', 'type', 'site_admin', 'user_view_type'}.contains(key)); } 
-Users copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, String? Function()? avatarUrl, String? Function()? gravatarId, String? Function()? url, String? Function()? htmlUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? organizationsUrl, String? Function()? reposUrl, String? Function()? eventsUrl, String? Function()? receivedEventsUrl, String? Function()? type, bool? Function()? siteAdmin, String? Function()? userViewType, }) { return Users(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'login', 'id', 'node_id', 'avatar_url', 'gravatar_id', 'url', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'repos_url', 'events_url', 'received_events_url', 'type', 'site_admin', 'user_view_type'}.contains(key));}
+Users copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, String? Function()? avatarUrl, String? Function()? gravatarId, String? Function()? url, String? Function()? htmlUrl, String? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? organizationsUrl, String? Function()? reposUrl, String? Function()? eventsUrl, String? Function()? receivedEventsUrl, String? Function()? type, bool? Function()? siteAdmin, String? Function()? userViewType, }) {return Users(
   login: login != null ? login() : this.login,
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
@@ -105,7 +105,7 @@ Users copyWith({String? Function()? login, int? Function()? id, String? Function
   type: type != null ? type() : this.type,
   siteAdmin: siteAdmin != null ? siteAdmin() : this.siteAdmin,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Users &&
           login == other.login &&
@@ -132,4 +132,4 @@ Users copyWith({String? Function()? login, int? Function()? id, String? Function
 
 @override String toString() => 'Users(\n  login: $login,\n  id: $id,\n  nodeId: $nodeId,\n  avatarUrl: $avatarUrl,\n  gravatarId: $gravatarId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  organizationsUrl: $organizationsUrl,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  type: $type,\n  siteAdmin: $siteAdmin,\n  userViewType: $userViewType,\n)';
 
- }
+}

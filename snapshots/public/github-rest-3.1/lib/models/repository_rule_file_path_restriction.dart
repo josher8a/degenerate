@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_path_restriction/repository_rule_file_path_restriction_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_path_restriction/repository_rule_file_path_restriction_type.dart';/// Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names.
 @immutable final class RepositoryRuleFilePathRestriction {const RepositoryRuleFilePathRestriction({required this.type, this.parameters, });
 
-factory RepositoryRuleFilePathRestriction.fromJson(Map<String, dynamic> json) { return RepositoryRuleFilePathRestriction(
+factory RepositoryRuleFilePathRestriction.fromJson(Map<String, dynamic> json) {return RepositoryRuleFilePathRestriction(
   type: RepositoryRuleFilePathRestrictionType.fromJson(json['type'] as String),
   parameters: json['parameters'] != null ? RepositoryRuleFilePathRestrictionParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RepositoryRuleFilePathRestrictionType type;
 
 final RepositoryRuleFilePathRestrictionParameters? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file_path_restriction'; } 
-RepositoryRuleFilePathRestriction copyWith({RepositoryRuleFilePathRestrictionType? type, RepositoryRuleFilePathRestrictionParameters? Function()? parameters, }) { return RepositoryRuleFilePathRestriction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'file_path_restriction';}
+RepositoryRuleFilePathRestriction copyWith({RepositoryRuleFilePathRestrictionType? type, RepositoryRuleFilePathRestrictionParameters? Function()? parameters, }) {return RepositoryRuleFilePathRestriction(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleFilePathRestriction &&
           type == other.type &&
@@ -31,4 +31,4 @@ RepositoryRuleFilePathRestriction copyWith({RepositoryRuleFilePathRestrictionTyp
 
 @override String toString() => 'RepositoryRuleFilePathRestriction(type: $type, parameters: $parameters)';
 
- }
+}

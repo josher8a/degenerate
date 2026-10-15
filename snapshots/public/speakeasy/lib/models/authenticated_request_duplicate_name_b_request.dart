@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthenticatedRequestDuplicateNameBRequest {const AuthenticatedRequestDuplicateNameBRequest({this.name});
 
-factory AuthenticatedRequestDuplicateNameBRequest.fromJson(Map<String, dynamic> json) { return AuthenticatedRequestDuplicateNameBRequest(
+factory AuthenticatedRequestDuplicateNameBRequest.fromJson(Map<String, dynamic> json) {return AuthenticatedRequestDuplicateNameBRequest(
   name: json['name'] as String?,
-); }
+);}
 
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-AuthenticatedRequestDuplicateNameBRequest copyWith({String? Function()? name}) { return AuthenticatedRequestDuplicateNameBRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name'}.contains(key));}
+AuthenticatedRequestDuplicateNameBRequest copyWith({String? Function()? name}) {return AuthenticatedRequestDuplicateNameBRequest(
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AuthenticatedRequestDuplicateNameBRequest &&
           name == other.name;
@@ -24,4 +24,4 @@ AuthenticatedRequestDuplicateNameBRequest copyWith({String? Function()? name}) {
 
 @override String toString() => 'AuthenticatedRequestDuplicateNameBRequest(name: $name)';
 
- }
+}

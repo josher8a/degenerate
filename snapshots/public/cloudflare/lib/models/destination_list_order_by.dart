@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationListOrderBy {const DestinationListOrderBy();
 
-factory DestinationListOrderBy.fromJson(String json) { return switch (json) {
+factory DestinationListOrderBy.fromJson(String json) {return switch (json) {
   'created' => created,
   'updated' => updated,
   _ => DestinationListOrderBy$Unknown(json),
-}; }
+};}
 
 static const DestinationListOrderBy created = DestinationListOrderBy$created._();
 
@@ -16,30 +16,30 @@ static const DestinationListOrderBy updated = DestinationListOrderBy$updated._()
 static const List<DestinationListOrderBy> values = [created, updated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'created' => 'created',
   'updated' => 'updated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DestinationListOrderBy$Unknown; } 
+bool get isUnknown {return this is DestinationListOrderBy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() created, required W Function() updated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() created, required W Function() updated, required W Function(String value) $unknown, }) {return switch (this) {
       DestinationListOrderBy$created() => created(),
       DestinationListOrderBy$updated() => updated(),
       DestinationListOrderBy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function(String value)? $unknown, }) {return switch (this) {
       DestinationListOrderBy$created() => created != null ? created() : orElse(value),
       DestinationListOrderBy$updated() => updated != null ? updated() : orElse(value),
       DestinationListOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DestinationListOrderBy($value)';
 
- }
+}
 @immutable final class DestinationListOrderBy$created extends DestinationListOrderBy {const DestinationListOrderBy$created._();
 
 @override String get value => 'created';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'created'.hashCode;
 
- }
+}
 @immutable final class DestinationListOrderBy$updated extends DestinationListOrderBy {const DestinationListOrderBy$updated._();
 
 @override String get value => 'updated';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'updated'.hashCode;
 
- }
+}
 @immutable final class DestinationListOrderBy$Unknown extends DestinationListOrderBy {const DestinationListOrderBy$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

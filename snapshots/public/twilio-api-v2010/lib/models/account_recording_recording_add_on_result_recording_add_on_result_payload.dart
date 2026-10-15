@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload {const AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload({this.sid = const Omittable.absent(), this.addOnResultSid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.label = const Omittable.absent(), this.addOnSid = const Omittable.absent(), this.addOnConfigurationSid = const Omittable.absent(), this.contentType = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.referenceSid = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), });
 
-factory AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
+factory AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson(Map<String, dynamic> json) {return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   addOnResultSid: json.containsKey('add_on_result_sid') ? Omittable(json['add_on_result_sid'] as String?) : const Omittable.absent(),
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
@@ -15,7 +15,7 @@ factory AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
   referenceSid: json.containsKey('reference_sid') ? Omittable(json['reference_sid'] as String?) : const Omittable.absent(),
   subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique string that that we created to identify the Recording AddOnResult Payload resource.
 final Omittable<String?> sid;
@@ -50,7 +50,7 @@ final Omittable<String?> referenceSid;
 /// A list of related resources identified by their relative URIs.
 final Omittable<Map<String,dynamic>?> subresourceUris;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (sid.isPresent) 'sid': sid.value,
   if (addOnResultSid.isPresent) 'add_on_result_sid': addOnResultSid.value,
   if (accountSid.isPresent) 'account_sid': accountSid.value,
@@ -62,10 +62,10 @@ Map<String, dynamic> toJson() { return {
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
   if (referenceSid.isPresent) 'reference_sid': referenceSid.value,
   if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'add_on_result_sid', 'account_sid', 'label', 'add_on_sid', 'add_on_configuration_sid', 'content_type', 'date_created', 'date_updated', 'reference_sid', 'subresource_uris'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sid', 'add_on_result_sid', 'account_sid', 'label', 'add_on_sid', 'add_on_configuration_sid', 'content_type', 'date_created', 'date_updated', 'reference_sid', 'subresource_uris'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final sid$ = sid.value;
 if (sid$ != null) {
   if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
@@ -102,8 +102,8 @@ if (referenceSid$ != null) {
   if (referenceSid$.runes.length > 34) { errors.add('referenceSid: length must be <= 34'); }
   if (!RegExp(r'^RE[0-9a-fA-F]{32}$').hasMatch(referenceSid$)) { errors.add(r'referenceSid: must match pattern ^RE[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({Omittable<String?>? sid, Omittable<String?>? addOnResultSid, Omittable<String?>? accountSid, Omittable<String?>? label, Omittable<String?>? addOnSid, Omittable<String?>? addOnConfigurationSid, Omittable<String?>? contentType, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? referenceSid, Omittable<Map<String,dynamic>?>? subresourceUris, }) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
+return errors;}
+AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({Omittable<String?>? sid, Omittable<String?>? addOnResultSid, Omittable<String?>? accountSid, Omittable<String?>? label, Omittable<String?>? addOnSid, Omittable<String?>? addOnConfigurationSid, Omittable<String?>? contentType, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? referenceSid, Omittable<Map<String,dynamic>?>? subresourceUris, }) {return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(
   sid: sid ?? this.sid,
   addOnResultSid: addOnResultSid ?? this.addOnResultSid,
   accountSid: accountSid ?? this.accountSid,
@@ -115,7 +115,7 @@ AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({Omitta
   dateUpdated: dateUpdated ?? this.dateUpdated,
   referenceSid: referenceSid ?? this.referenceSid,
   subresourceUris: subresourceUris ?? this.subresourceUris,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload &&
           sid == other.sid &&
@@ -134,4 +134,4 @@ AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({Omitta
 
 @override String toString() => 'AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(\n  sid: $sid,\n  addOnResultSid: $addOnResultSid,\n  accountSid: $accountSid,\n  label: $label,\n  addOnSid: $addOnSid,\n  addOnConfigurationSid: $addOnConfigurationSid,\n  contentType: $contentType,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  referenceSid: $referenceSid,\n  subresourceUris: $subresourceUris,\n)';
 
- }
+}

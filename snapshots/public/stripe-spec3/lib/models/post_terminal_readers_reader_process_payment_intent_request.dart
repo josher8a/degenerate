@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_payment_intent_request/post_terminal_readers_reader_process_payment_intent_request_process_config.dart';@immutable final class PostTerminalReadersReaderProcessPaymentIntentRequest {const PostTerminalReadersReaderProcessPaymentIntentRequest({required this.paymentIntent, this.expand, this.processConfig, });
 
-factory PostTerminalReadersReaderProcessPaymentIntentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderProcessPaymentIntentRequest(
+factory PostTerminalReadersReaderProcessPaymentIntentRequest.fromJson(Map<String, dynamic> json) {return PostTerminalReadersReaderProcessPaymentIntentRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentIntent: json['payment_intent'] as String,
   processConfig: json['process_config'] != null ? PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig.fromJson(json['process_config'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,21 +18,21 @@ final String paymentIntent;
 /// Configuration overrides for this transaction, such as tipping and customer cancellation settings.
 final PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig? processConfig;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'payment_intent': paymentIntent,
   if (processConfig != null) 'process_config': processConfig?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent') && json['payment_intent'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payment_intent') && json['payment_intent'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (paymentIntent.runes.length > 5000) { errors.add('paymentIntent: length must be <= 5000'); }
-return errors; } 
-PostTerminalReadersReaderProcessPaymentIntentRequest copyWith({List<String>? Function()? expand, String? paymentIntent, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig? Function()? processConfig, }) { return PostTerminalReadersReaderProcessPaymentIntentRequest(
+return errors;}
+PostTerminalReadersReaderProcessPaymentIntentRequest copyWith({List<String>? Function()? expand, String? paymentIntent, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig? Function()? processConfig, }) {return PostTerminalReadersReaderProcessPaymentIntentRequest(
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent ?? this.paymentIntent,
   processConfig: processConfig != null ? processConfig() : this.processConfig,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderProcessPaymentIntentRequest &&
           listEquals(expand, other.expand) &&
@@ -43,4 +43,4 @@ PostTerminalReadersReaderProcessPaymentIntentRequest copyWith({List<String>? Fun
 
 @override String toString() => 'PostTerminalReadersReaderProcessPaymentIntentRequest(expand: $expand, paymentIntent: $paymentIntent, processConfig: $processConfig)';
 
- }
+}

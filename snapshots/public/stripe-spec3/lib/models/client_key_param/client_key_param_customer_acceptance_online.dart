@@ -3,31 +3,31 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ClientKeyParamCustomerAcceptanceOnline {const ClientKeyParamCustomerAcceptanceOnline({this.ipAddress, this.userAgent, });
 
-factory ClientKeyParamCustomerAcceptanceOnline.fromJson(Map<String, dynamic> json) { return ClientKeyParamCustomerAcceptanceOnline(
+factory ClientKeyParamCustomerAcceptanceOnline.fromJson(Map<String, dynamic> json) {return ClientKeyParamCustomerAcceptanceOnline(
   ipAddress: json['ip_address'] as String?,
   userAgent: json['user_agent'] as String?,
-); }
+);}
 
 final String? ipAddress;
 
 final String? userAgent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip_address': ?ipAddress,
   'user_agent': ?userAgent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip_address', 'user_agent'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ip_address', 'user_agent'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final userAgent$ = userAgent;
 if (userAgent$ != null) {
   if (userAgent$.runes.length > 5000) { errors.add('userAgent: length must be <= 5000'); }
 }
-return errors; } 
-ClientKeyParamCustomerAcceptanceOnline copyWith({String? Function()? ipAddress, String? Function()? userAgent, }) { return ClientKeyParamCustomerAcceptanceOnline(
+return errors;}
+ClientKeyParamCustomerAcceptanceOnline copyWith({String? Function()? ipAddress, String? Function()? userAgent, }) {return ClientKeyParamCustomerAcceptanceOnline(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ClientKeyParamCustomerAcceptanceOnline &&
           ipAddress == other.ipAddress &&
@@ -37,4 +37,4 @@ ClientKeyParamCustomerAcceptanceOnline copyWith({String? Function()? ipAddress, 
 
 @override String toString() => 'ClientKeyParamCustomerAcceptanceOnline(ipAddress: $ipAddress, userAgent: $userAgent)';
 
- }
+}

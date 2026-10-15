@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PortalInvoiceList {const PortalInvoiceList({required this.enabled});
 
-factory PortalInvoiceList.fromJson(Map<String, dynamic> json) { return PortalInvoiceList(
+factory PortalInvoiceList.fromJson(Map<String, dynamic> json) {return PortalInvoiceList(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// Whether the feature is enabled.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PortalInvoiceList copyWith({bool? enabled}) { return PortalInvoiceList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+PortalInvoiceList copyWith({bool? enabled}) {return PortalInvoiceList(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PortalInvoiceList &&
           enabled == other.enabled;
@@ -26,4 +26,4 @@ PortalInvoiceList copyWith({bool? enabled}) { return PortalInvoiceList(
 
 @override String toString() => 'PortalInvoiceList(enabled: $enabled)';
 
- }
+}

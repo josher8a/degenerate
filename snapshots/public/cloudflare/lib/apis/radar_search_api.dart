@@ -14,7 +14,7 @@ final class RadarSearchApi with ApiExecutor {const RadarSearchApi(this.apiConfig
 /// Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals
 ///
 /// `GET /radar/search/global`
-Future<ApiResult<RadarGetSearchGlobalResponseResult, RadarGetSearchGlobalError>> radarGetSearchGlobal({required String query, int? limit, double? limitPerGroup, List<RadarGetSearchGlobalInclude>? include, List<RadarGetSearchGlobalExclude>? exclude, RadarGetSearchGlobalFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetSearchGlobalResponseResult, RadarGetSearchGlobalError>> radarGetSearchGlobal({required String query, int? limit, double? limitPerGroup, List<RadarGetSearchGlobalInclude>? include, List<RadarGetSearchGlobalExclude>? exclude, RadarGetSearchGlobalFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -56,5 +56,5 @@ return await execute(
   },
   onError: RadarGetSearchGlobalError.fromResponse,
 );
- } 
- }
+}
+}

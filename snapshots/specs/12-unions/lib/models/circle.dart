@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Circle {const Circle({required this.type, required this.radius, this.color, });
 
-factory Circle.fromJson(Map<String, dynamic> json) { return Circle(
+factory Circle.fromJson(Map<String, dynamic> json) {return Circle(
   type: json['type'] as String,
   radius: (json['radius'] as num).toDouble(),
   color: json['color'] as String?,
-); }
+);}
 
 final String type;
 
@@ -15,18 +15,18 @@ final double radius;
 
 final String? color;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'radius': radius,
   'color': ?color,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('radius') && json['radius'] is num; } 
-Circle copyWith({String? type, double? radius, String? Function()? color, }) { return Circle(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('radius') && json['radius'] is num;}
+Circle copyWith({String? type, double? radius, String? Function()? color, }) {return Circle(
   type: type ?? this.type,
   radius: radius ?? this.radius,
   color: color != null ? color() : this.color,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Circle &&
           type == other.type &&
@@ -37,4 +37,4 @@ Circle copyWith({String? type, double? radius, String? Function()? color, }) { r
 
 @override String toString() => 'Circle(type: $type, radius: $radius, color: $color)';
 
- }
+}

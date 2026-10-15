@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase/webhooks_marketplace_purchase_account.dart';import 'package:pub_github_rest_3_1/models/webhooks_previous_marketplace_purchase/webhooks_previous_marketplace_purchase_plan.dart';@immutable final class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase {const WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.nextBillingDate, required this.onFreeTrial, required this.plan, required this.unitCount, });
 
-factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase(
+factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase.fromJson(Map<String, dynamic> json) {return WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase(
   account: WebhooksMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
   freeTrialEndsOn: json['free_trial_ends_on'],
@@ -11,7 +11,7 @@ factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase.from
   onFreeTrial: json['on_free_trial'] as bool,
   plan: WebhooksPreviousMarketplacePurchasePlan.fromJson(json['plan'] as Map<String, dynamic>),
   unitCount: (json['unit_count'] as num).toInt(),
-); }
+);}
 
 final WebhooksMarketplacePurchaseAccount account;
 
@@ -27,7 +27,7 @@ final WebhooksPreviousMarketplacePurchasePlan plan;
 
 final int unitCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   'billing_cycle': billingCycle,
   'free_trial_ends_on': freeTrialEndsOn,
@@ -35,15 +35,15 @@ Map<String, dynamic> toJson() { return {
   'on_free_trial': onFreeTrial,
   'plan': plan.toJson(),
   'unit_count': unitCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
       json.containsKey('billing_cycle') && json['billing_cycle'] is String &&
       json.containsKey('free_trial_ends_on') &&
       json.containsKey('next_billing_date') && (json['next_billing_date'] == null || json['next_billing_date'] is String) &&
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
       json.containsKey('plan') &&
-      json.containsKey('unit_count') && json['unit_count'] is num; } 
-WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount? account, String? billingCycle, dynamic Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? onFreeTrial, WebhooksPreviousMarketplacePurchasePlan? plan, int? unitCount, }) { return WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase(
+      json.containsKey('unit_count') && json['unit_count'] is num;}
+WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount? account, String? billingCycle, dynamic Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? onFreeTrial, WebhooksPreviousMarketplacePurchasePlan? plan, int? unitCount, }) {return WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase(
   account: account ?? this.account,
   billingCycle: billingCycle ?? this.billingCycle,
   freeTrialEndsOn: freeTrialEndsOn != null ? freeTrialEndsOn() : this.freeTrialEndsOn,
@@ -51,7 +51,7 @@ WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase copyWith({We
   onFreeTrial: onFreeTrial ?? this.onFreeTrial,
   plan: plan ?? this.plan,
   unitCount: unitCount ?? this.unitCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase &&
           account == other.account &&
@@ -66,4 +66,4 @@ WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase copyWith({We
 
 @override String toString() => 'WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchase(account: $account, billingCycle: $billingCycle, freeTrialEndsOn: $freeTrialEndsOn, nextBillingDate: $nextBillingDate, onFreeTrial: $onFreeTrial, plan: $plan, unitCount: $unitCount)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru_value.dart';/// Cloudflare will proxy customer error pages on any 502,504 errors on origin server instead of showing a default Cloudflare error page. This does not apply to 522 errors and is limited to Enterprise Zones.
 @immutable final class ZonesSchemasOriginErrorPagePassThru {const ZonesSchemasOriginErrorPagePassThru({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
-factory ZonesSchemasOriginErrorPagePassThru.fromJson(Map<String, dynamic> json) { return ZonesSchemasOriginErrorPagePassThru(
+factory ZonesSchemasOriginErrorPagePassThru.fromJson(Map<String, dynamic> json) {return ZonesSchemasOriginErrorPagePassThru(
   editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesOriginErrorPagePassThruValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -30,20 +30,20 @@ final ZonesOriginErrorPagePassThruValue value;
 /// The value of `editable`, or its schema default when absent.
 bool get editableOrDefault => editable ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesSchemasOriginErrorPagePassThru copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesOriginErrorPagePassThruValue? value, }) { return ZonesSchemasOriginErrorPagePassThru(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesSchemasOriginErrorPagePassThru copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesOriginErrorPagePassThruValue? value, }) {return ZonesSchemasOriginErrorPagePassThru(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesSchemasOriginErrorPagePassThru &&
           editable == other.editable &&
@@ -55,4 +55,4 @@ ZonesSchemasOriginErrorPagePassThru copyWith({bool? Function()? editable, dynami
 
 @override String toString() => 'ZonesSchemasOriginErrorPagePassThru(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

@@ -8,11 +8,11 @@ const PostProductsIdRequestPackageDimensions({this.packageDimensionsSpecs = cons
 const PostProductsIdRequestPackageDimensions._({required this.rawValue, required this.packageDimensionsSpecs, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostProductsIdRequestPackageDimensions.fromJson(Object? json) { return PostProductsIdRequestPackageDimensions._(
+factory PostProductsIdRequestPackageDimensions.fromJson(Object? json) {return PostProductsIdRequestPackageDimensions._(
   rawValue: Omittable(json),
   packageDimensionsSpecs: json is Map<String, dynamic> && PackageDimensionsSpecs.canParse(json) ? parseAnyOfVariant<PackageDimensionsSpecs>(json, (value) => PackageDimensionsSpecs.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostProductsIdRequestPackageDimensions(${toJson()})';
 
- }
+}

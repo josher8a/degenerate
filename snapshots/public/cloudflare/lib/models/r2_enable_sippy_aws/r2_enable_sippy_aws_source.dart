@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider();
 
-factory R2EnableSippyAwsSourceProvider.fromJson(String json) { return switch (json) {
+factory R2EnableSippyAwsSourceProvider.fromJson(String json) {return switch (json) {
   'aws' => aws,
   _ => R2EnableSippyAwsSourceProvider$Unknown(json),
-}; }
+};}
 
 static const R2EnableSippyAwsSourceProvider aws = R2EnableSippyAwsSourceProvider$aws._();
 
 static const List<R2EnableSippyAwsSourceProvider> values = [aws];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'aws' => 'aws',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is R2EnableSippyAwsSourceProvider$Unknown; } 
+bool get isUnknown {return this is R2EnableSippyAwsSourceProvider$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() aws, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() aws, required W Function(String value) $unknown, }) {return switch (this) {
       R2EnableSippyAwsSourceProvider$aws() => aws(),
       R2EnableSippyAwsSourceProvider$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W Function(String value)? $unknown, }) {return switch (this) {
       R2EnableSippyAwsSourceProvider$aws() => aws != null ? aws() : orElse(value),
       R2EnableSippyAwsSourceProvider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'R2EnableSippyAwsSourceProvider($value)';
 
- }
+}
 @immutable final class R2EnableSippyAwsSourceProvider$aws extends R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider$aws._();
 
 @override String get value => 'aws';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W F
 
 @override int get hashCode => 'aws'.hashCode;
 
- }
+}
 @immutable final class R2EnableSippyAwsSourceProvider$Unknown extends R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider$Unknown(this.value);
 
 @override final String value;
@@ -52,17 +52,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// AWS S3 bucket to copy objects from.
 @immutable final class R2EnableSippyAwsSource {const R2EnableSippyAwsSource({this.accessKeyId, this.bucket, this.provider, this.region, this.secretAccessKey, });
 
-factory R2EnableSippyAwsSource.fromJson(Map<String, dynamic> json) { return R2EnableSippyAwsSource(
+factory R2EnableSippyAwsSource.fromJson(Map<String, dynamic> json) {return R2EnableSippyAwsSource(
   accessKeyId: json['accessKeyId'] as String?,
   bucket: json['bucket'] as String?,
   provider: json['provider'] != null ? R2EnableSippyAwsSourceProvider.fromJson(json['provider'] as String) : null,
   region: json['region'] as String?,
   secretAccessKey: json['secretAccessKey'] as String?,
-); }
+);}
 
 /// Access Key ID of an IAM credential (ideally scoped to a single S3 bucket).
 final String? accessKeyId;
@@ -78,21 +78,21 @@ final String? region;
 /// Secret Access Key of an IAM credential (ideally scoped to a single S3 bucket).
 final String? secretAccessKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accessKeyId': ?accessKeyId,
   'bucket': ?bucket,
   if (provider != null) 'provider': provider?.toJson(),
   'region': ?region,
   'secretAccessKey': ?secretAccessKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'bucket', 'provider', 'region', 'secretAccessKey'}.contains(key)); } 
-R2EnableSippyAwsSource copyWith({String? Function()? accessKeyId, String? Function()? bucket, R2EnableSippyAwsSourceProvider? Function()? provider, String? Function()? region, String? Function()? secretAccessKey, }) { return R2EnableSippyAwsSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accessKeyId', 'bucket', 'provider', 'region', 'secretAccessKey'}.contains(key));}
+R2EnableSippyAwsSource copyWith({String? Function()? accessKeyId, String? Function()? bucket, R2EnableSippyAwsSourceProvider? Function()? provider, String? Function()? region, String? Function()? secretAccessKey, }) {return R2EnableSippyAwsSource(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   bucket: bucket != null ? bucket() : this.bucket,
   provider: provider != null ? provider() : this.provider,
   region: region != null ? region() : this.region,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2EnableSippyAwsSource &&
           accessKeyId == other.accessKeyId &&
@@ -105,4 +105,4 @@ R2EnableSippyAwsSource copyWith({String? Function()? accessKeyId, String? Functi
 
 @override String toString() => 'R2EnableSippyAwsSource(accessKeyId: $accessKeyId, bucket: $bucket, provider: $provider, region: $region, secretAccessKey: $secretAccessKey)';
 
- }
+}

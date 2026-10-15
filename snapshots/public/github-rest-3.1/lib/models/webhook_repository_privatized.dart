@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookRepositoryPrivatizedAction {const WebhookRepositoryPrivatizedAction();
 
-factory WebhookRepositoryPrivatizedAction.fromJson(String json) { return switch (json) {
+factory WebhookRepositoryPrivatizedAction.fromJson(String json) {return switch (json) {
   'privatized' => privatized,
   _ => WebhookRepositoryPrivatizedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookRepositoryPrivatizedAction privatized = WebhookRepositoryPrivatizedAction$privatized._();
 
 static const List<WebhookRepositoryPrivatizedAction> values = [privatized];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'privatized' => 'privatized',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookRepositoryPrivatizedAction$Unknown; } 
+bool get isUnknown {return this is WebhookRepositoryPrivatizedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() privatized, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() privatized, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookRepositoryPrivatizedAction$privatized() => privatized(),
       WebhookRepositoryPrivatizedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? privatized, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? privatized, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookRepositoryPrivatizedAction$privatized() => privatized != null ? privatized() : orElse(value),
       WebhookRepositoryPrivatizedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookRepositoryPrivatizedAction($value)';
 
- }
+}
 @immutable final class WebhookRepositoryPrivatizedAction$privatized extends WebhookRepositoryPrivatizedAction {const WebhookRepositoryPrivatizedAction$privatized._();
 
 @override String get value => 'privatized';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? privatiz
 
 @override int get hashCode => 'privatized'.hashCode;
 
- }
+}
 @immutable final class WebhookRepositoryPrivatizedAction$Unknown extends WebhookRepositoryPrivatizedAction {const WebhookRepositoryPrivatizedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,17 +52,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? privatiz
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookRepositoryPrivatized {const WebhookRepositoryPrivatized({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookRepositoryPrivatized.fromJson(Map<String, dynamic> json) { return WebhookRepositoryPrivatized(
+factory WebhookRepositoryPrivatized.fromJson(Map<String, dynamic> json) {return WebhookRepositoryPrivatized(
   action: WebhookRepositoryPrivatizedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookRepositoryPrivatizedAction action;
 
@@ -76,25 +76,25 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookRepositoryPrivatized copyWith({WebhookRepositoryPrivatizedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryPrivatized(
+      json.containsKey('sender');}
+WebhookRepositoryPrivatized copyWith({WebhookRepositoryPrivatizedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookRepositoryPrivatized(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryPrivatized &&
           action == other.action &&
@@ -108,4 +108,4 @@ WebhookRepositoryPrivatized copyWith({WebhookRepositoryPrivatizedAction? action,
 
 @override String toString() => 'WebhookRepositoryPrivatized(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

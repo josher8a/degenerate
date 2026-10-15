@@ -14,7 +14,7 @@ final class DnsFirewallApi with ApiExecutor {const DnsFirewallApi(this.apiConfig
 /// List DNS Firewall clusters for an account
 ///
 /// `GET /accounts/{account_id}/dns_firewall`
-Future<ApiResult<List<DnsFirewallDnsFirewallClusterResponse>?, DnsFirewallListDnsFirewallClustersError>> dnsFirewallListDnsFirewallClusters({required DnsFirewallIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DnsFirewallDnsFirewallClusterResponse>?, DnsFirewallListDnsFirewallClustersError>> dnsFirewallListDnsFirewallClusters({required DnsFirewallIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,13 +42,13 @@ return await execute(
   },
   onError: DnsFirewallListDnsFirewallClustersError.fromResponse,
 );
- } 
+}
 /// Create DNS Firewall Cluster
 ///
 /// Create a DNS Firewall cluster
 ///
 /// `POST /accounts/{account_id}/dns_firewall`
-Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallCreateDnsFirewallClusterError>> dnsFirewallCreateDnsFirewallCluster({required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallCluster body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallCreateDnsFirewallClusterError>> dnsFirewallCreateDnsFirewallCluster({required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallCluster body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,13 +67,13 @@ return await execute(
   },
   onError: DnsFirewallCreateDnsFirewallClusterError.fromResponse,
 );
- } 
+}
 /// DNS Firewall Cluster Details
 ///
 /// Show a single DNS Firewall cluster for an account
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallClusterDetailsError>> dnsFirewallClusterDetails({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallClusterDetailsError>> dnsFirewallClusterDetails({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -90,13 +90,13 @@ return await execute(
   },
   onError: DnsFirewallClusterDetailsError.fromResponse,
 );
- } 
+}
 /// Update DNS Firewall Cluster
 ///
 /// Modify the configuration of a DNS Firewall cluster
 ///
 /// `PATCH /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallUpdateDnsFirewallClusterError>> dnsFirewallUpdateDnsFirewallCluster({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallCluster body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, DnsFirewallUpdateDnsFirewallClusterError>> dnsFirewallUpdateDnsFirewallCluster({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallCluster body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,13 +115,13 @@ return await execute(
   },
   onError: DnsFirewallUpdateDnsFirewallClusterError.fromResponse,
 );
- } 
+}
 /// Delete DNS Firewall Cluster
 ///
 /// Delete a DNS Firewall cluster
 ///
 /// `DELETE /accounts/{account_id}/dns_firewall/{dns_firewall_id}`
-Future<ApiResult<AaaIdResponseResult?, DnsFirewallDeleteDnsFirewallClusterError>> dnsFirewallDeleteDnsFirewallCluster({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, DnsFirewallDeleteDnsFirewallClusterError>> dnsFirewallDeleteDnsFirewallCluster({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -138,13 +138,13 @@ return await execute(
   },
   onError: DnsFirewallDeleteDnsFirewallClusterError.fromResponse,
 );
- } 
+}
 /// Show DNS Firewall Cluster Reverse DNS
 ///
 /// Show reverse DNS configuration (PTR records) for a DNS Firewall cluster
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns`
-Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, DnsFirewallShowDnsFirewallClusterReverseDnsError>> dnsFirewallShowDnsFirewallClusterReverseDns({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, DnsFirewallShowDnsFirewallClusterReverseDnsError>> dnsFirewallShowDnsFirewallClusterReverseDns({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -161,13 +161,13 @@ return await execute(
   },
   onError: DnsFirewallShowDnsFirewallClusterReverseDnsError.fromResponse,
 );
- } 
+}
 /// Update DNS Firewall Cluster Reverse DNS
 ///
 /// Update reverse DNS configuration (PTR records) for a DNS Firewall cluster
 ///
 /// `PATCH /accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns`
-Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, DnsFirewallUpdateDnsFirewallClusterReverseDnsError>> dnsFirewallUpdateDnsFirewallClusterReverseDns({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallReverseDns body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, DnsFirewallUpdateDnsFirewallClusterReverseDnsError>> dnsFirewallUpdateDnsFirewallClusterReverseDns({required DnsFirewallIdentifier dnsFirewallId, required DnsFirewallIdentifier accountId, required DnsFirewallDnsFirewallReverseDns body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,5 +186,5 @@ return await execute(
   },
   onError: DnsFirewallUpdateDnsFirewallClusterReverseDnsError.fromResponse,
 );
- } 
- }
+}
+}

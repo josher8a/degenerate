@@ -14,7 +14,7 @@ final class R2AccountApi with ApiExecutor {const R2AccountApi(this.apiConfig);
 /// Get Storage/Object Count Metrics across all buckets in your account. Note that Account-Level Metrics may not immediately reflect the latest data.
 ///
 /// `GET /accounts/{account_id}/r2/metrics`
-Future<ApiResult<R2AccountLevelMetrics, R2AddCustomDomainError>> r2GetAccountLevelMetrics({required R2AccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2AccountLevelMetrics, R2AddCustomDomainError>> r2GetAccountLevelMetrics({required R2AccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,5 +31,5 @@ return await execute(
   },
   onError: R2AddCustomDomainError.fromResponse,
 );
- } 
- }
+}
+}

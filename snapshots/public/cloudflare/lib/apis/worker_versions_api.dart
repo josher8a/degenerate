@@ -14,7 +14,7 @@ final class WorkerVersionsApi with ApiExecutor {const WorkerVersionsApi(this.api
 /// List of Worker Versions. The first version in the list is the latest version.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<WorkersVersionsListResponseResult, WorkerVersionsListVersionsError>> workerVersionsListVersions({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, bool? deployable, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersionsListResponseResult, WorkerVersionsListVersionsError>> workerVersionsListVersions({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, bool? deployable, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deployable != null) {
   queryParameters['deployable'] = deployable.toString();
@@ -45,13 +45,13 @@ return await execute(
   },
   onError: WorkerVersionsListVersionsError.fromResponse,
 );
- } 
+}
 /// Upload Version
 ///
 /// Upload a Worker Version without deploying to Cloudflare's network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<WorkersVersionItemUploadedResponse, WorkerVersionsUploadVersionError>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkerVersionsUploadVersionRequest body, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersionItemUploadedResponse, WorkerVersionsUploadVersionError>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkerVersionsUploadVersionRequest body, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bindingsInherit != null) {
   queryParameters['bindings_inherit'] = bindingsInherit.toJson();
@@ -82,13 +82,13 @@ return await execute(
   },
   onError: WorkerVersionsUploadVersionError.fromResponse,
 );
- } 
+}
 /// Get Version Detail
 ///
 /// Retrieves detailed information about a specific version of a Workers script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions/{version_id}`
-Future<ApiResult<WorkersVersionItemFullResponse, WorkerVersionsGetVersionDetailError>> workerVersionsGetVersionDetail({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkersVersionIdentifier versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersVersionItemFullResponse, WorkerVersionsGetVersionDetailError>> workerVersionsGetVersionDetail({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkersVersionIdentifier versionId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -105,5 +105,5 @@ return await execute(
   },
   onError: WorkerVersionsGetVersionDetailError.fromResponse,
 );
- } 
- }
+}
+}

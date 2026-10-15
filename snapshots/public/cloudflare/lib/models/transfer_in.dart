@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Form of authorization has been accepted by the registrant.
 sealed class AcceptFoa {const AcceptFoa();
 
-factory AcceptFoa.fromJson(String json) { return switch (json) {
+factory AcceptFoa.fromJson(String json) {return switch (json) {
   'needed' => needed,
   'ok' => ok,
   _ => AcceptFoa$Unknown(json),
-}; }
+};}
 
 static const AcceptFoa needed = AcceptFoa$needed._();
 
@@ -17,30 +17,30 @@ static const AcceptFoa ok = AcceptFoa$ok._();
 static const List<AcceptFoa> values = [needed, ok];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'needed' => 'needed',
   'ok' => 'ok',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AcceptFoa$Unknown; } 
+bool get isUnknown {return this is AcceptFoa$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() needed, required W Function() ok, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() needed, required W Function() ok, required W Function(String value) $unknown, }) {return switch (this) {
       AcceptFoa$needed() => needed(),
       AcceptFoa$ok() => ok(),
       AcceptFoa$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function(String value)? $unknown, }) {return switch (this) {
       AcceptFoa$needed() => needed != null ? needed() : orElse(value),
       AcceptFoa$ok() => ok != null ? ok() : orElse(value),
       AcceptFoa$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AcceptFoa($value)';
 
- }
+}
 @immutable final class AcceptFoa$needed extends AcceptFoa {const AcceptFoa$needed._();
 
 @override String get value => 'needed';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'needed'.hashCode;
 
- }
+}
 @immutable final class AcceptFoa$ok extends AcceptFoa {const AcceptFoa$ok._();
 
 @override String get value => 'ok';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'ok'.hashCode;
 
- }
+}
 @immutable final class AcceptFoa$Unknown extends AcceptFoa {const AcceptFoa$Unknown(this.value);
 
 @override final String value;
@@ -68,11 +68,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Shows transfer status with the registry.
 sealed class ApproveTransfer {const ApproveTransfer();
 
-factory ApproveTransfer.fromJson(String json) { return switch (json) {
+factory ApproveTransfer.fromJson(String json) {return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'pending' => pending,
@@ -80,7 +80,7 @@ factory ApproveTransfer.fromJson(String json) { return switch (json) {
   'rejected' => rejected,
   'unknown' => unknown,
   _ => ApproveTransfer$Unknown(json),
-}; }
+};}
 
 static const ApproveTransfer needed = ApproveTransfer$needed._();
 
@@ -97,9 +97,9 @@ static const ApproveTransfer unknown = ApproveTransfer$unknown._();
 static const List<ApproveTransfer> values = [needed, ok, pending, trying, rejected, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'needed' => 'needed',
   'ok' => 'ok',
   'pending' => 'pending',
@@ -107,11 +107,11 @@ String get name { return switch (value) {
   'rejected' => 'rejected',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ApproveTransfer$Unknown; } 
+bool get isUnknown {return this is ApproveTransfer$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() rejected, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() rejected, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       ApproveTransfer$needed() => needed(),
       ApproveTransfer$ok() => ok(),
       ApproveTransfer$pending() => pending(),
@@ -119,9 +119,9 @@ W when<W>({required W Function() needed, required W Function() ok, required W Fu
       ApproveTransfer$rejected() => rejected(),
       ApproveTransfer$unknown() => unknown(),
       ApproveTransfer$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? rejected, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? rejected, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       ApproveTransfer$needed() => needed != null ? needed() : orElse(value),
       ApproveTransfer$ok() => ok != null ? ok() : orElse(value),
       ApproveTransfer$pending() => pending != null ? pending() : orElse(value),
@@ -129,10 +129,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
       ApproveTransfer$rejected() => rejected != null ? rejected() : orElse(value),
       ApproveTransfer$unknown() => unknown != null ? unknown() : orElse(value),
       ApproveTransfer$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ApproveTransfer($value)';
 
- }
+}
 @immutable final class ApproveTransfer$needed extends ApproveTransfer {const ApproveTransfer$needed._();
 
 @override String get value => 'needed';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'needed'.hashCode;
 
- }
+}
 @immutable final class ApproveTransfer$ok extends ApproveTransfer {const ApproveTransfer$ok._();
 
 @override String get value => 'ok';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'ok'.hashCode;
 
- }
+}
 @immutable final class ApproveTransfer$pending extends ApproveTransfer {const ApproveTransfer$pending._();
 
 @override String get value => 'pending';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class ApproveTransfer$trying extends ApproveTransfer {const ApproveTransfer$trying._();
 
 @override String get value => 'trying';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'trying'.hashCode;
 
- }
+}
 @immutable final class ApproveTransfer$rejected extends ApproveTransfer {const ApproveTransfer$rejected._();
 
 @override String get value => 'rejected';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class ApproveTransfer$unknown extends ApproveTransfer {const ApproveTransfer$unknown._();
 
 @override String get value => 'unknown';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class ApproveTransfer$Unknown extends ApproveTransfer {const ApproveTransfer$Unknown(this.value);
 
 @override final String value;
@@ -196,16 +196,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Privacy guards are disabled at the foreign registrar.
 sealed class DisablePrivacy {const DisablePrivacy();
 
-factory DisablePrivacy.fromJson(String json) { return switch (json) {
+factory DisablePrivacy.fromJson(String json) {return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'unknown' => unknown,
   _ => DisablePrivacy$Unknown(json),
-}; }
+};}
 
 static const DisablePrivacy needed = DisablePrivacy$needed._();
 
@@ -216,33 +216,33 @@ static const DisablePrivacy unknown = DisablePrivacy$unknown._();
 static const List<DisablePrivacy> values = [needed, ok, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'needed' => 'needed',
   'ok' => 'ok',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DisablePrivacy$Unknown; } 
+bool get isUnknown {return this is DisablePrivacy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() needed, required W Function() ok, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() needed, required W Function() ok, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       DisablePrivacy$needed() => needed(),
       DisablePrivacy$ok() => ok(),
       DisablePrivacy$unknown() => unknown(),
       DisablePrivacy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       DisablePrivacy$needed() => needed != null ? needed() : orElse(value),
       DisablePrivacy$ok() => ok != null ? ok() : orElse(value),
       DisablePrivacy$unknown() => unknown != null ? unknown() : orElse(value),
       DisablePrivacy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DisablePrivacy($value)';
 
- }
+}
 @immutable final class DisablePrivacy$needed extends DisablePrivacy {const DisablePrivacy$needed._();
 
 @override String get value => 'needed';
@@ -251,7 +251,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'needed'.hashCode;
 
- }
+}
 @immutable final class DisablePrivacy$ok extends DisablePrivacy {const DisablePrivacy$ok._();
 
 @override String get value => 'ok';
@@ -260,7 +260,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'ok'.hashCode;
 
- }
+}
 @immutable final class DisablePrivacy$unknown extends DisablePrivacy {const DisablePrivacy$unknown._();
 
 @override String get value => 'unknown';
@@ -269,7 +269,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class DisablePrivacy$Unknown extends DisablePrivacy {const DisablePrivacy$Unknown(this.value);
 
 @override final String value;
@@ -279,18 +279,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Auth code has been entered and verified.
 sealed class EnterAuthCode {const EnterAuthCode();
 
-factory EnterAuthCode.fromJson(String json) { return switch (json) {
+factory EnterAuthCode.fromJson(String json) {return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'pending' => pending,
   'trying' => trying,
   'rejected' => rejected,
   _ => EnterAuthCode$Unknown(json),
-}; }
+};}
 
 static const EnterAuthCode needed = EnterAuthCode$needed._();
 
@@ -305,39 +305,39 @@ static const EnterAuthCode rejected = EnterAuthCode$rejected._();
 static const List<EnterAuthCode> values = [needed, ok, pending, trying, rejected];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'needed' => 'needed',
   'ok' => 'ok',
   'pending' => 'pending',
   'trying' => 'trying',
   'rejected' => 'rejected',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnterAuthCode$Unknown; } 
+bool get isUnknown {return this is EnterAuthCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() rejected, required W Function(String value) $unknown, }) {return switch (this) {
       EnterAuthCode$needed() => needed(),
       EnterAuthCode$ok() => ok(),
       EnterAuthCode$pending() => pending(),
       EnterAuthCode$trying() => trying(),
       EnterAuthCode$rejected() => rejected(),
       EnterAuthCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? rejected, W Function(String value)? $unknown, }) {return switch (this) {
       EnterAuthCode$needed() => needed != null ? needed() : orElse(value),
       EnterAuthCode$ok() => ok != null ? ok() : orElse(value),
       EnterAuthCode$pending() => pending != null ? pending() : orElse(value),
       EnterAuthCode$trying() => trying != null ? trying() : orElse(value),
       EnterAuthCode$rejected() => rejected != null ? rejected() : orElse(value),
       EnterAuthCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnterAuthCode($value)';
 
- }
+}
 @immutable final class EnterAuthCode$needed extends EnterAuthCode {const EnterAuthCode$needed._();
 
 @override String get value => 'needed';
@@ -346,7 +346,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'needed'.hashCode;
 
- }
+}
 @immutable final class EnterAuthCode$ok extends EnterAuthCode {const EnterAuthCode$ok._();
 
 @override String get value => 'ok';
@@ -355,7 +355,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'ok'.hashCode;
 
- }
+}
 @immutable final class EnterAuthCode$pending extends EnterAuthCode {const EnterAuthCode$pending._();
 
 @override String get value => 'pending';
@@ -364,7 +364,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class EnterAuthCode$trying extends EnterAuthCode {const EnterAuthCode$trying._();
 
 @override String get value => 'trying';
@@ -373,7 +373,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'trying'.hashCode;
 
- }
+}
 @immutable final class EnterAuthCode$rejected extends EnterAuthCode {const EnterAuthCode$rejected._();
 
 @override String get value => 'rejected';
@@ -382,7 +382,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class EnterAuthCode$Unknown extends EnterAuthCode {const EnterAuthCode$Unknown(this.value);
 
 @override final String value;
@@ -392,18 +392,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Domain is unlocked at the foreign registrar.
 sealed class UnlockDomain {const UnlockDomain();
 
-factory UnlockDomain.fromJson(String json) { return switch (json) {
+factory UnlockDomain.fromJson(String json) {return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'pending' => pending,
   'trying' => trying,
   'unknown' => unknown,
   _ => UnlockDomain$Unknown(json),
-}; }
+};}
 
 static const UnlockDomain needed = UnlockDomain$needed._();
 
@@ -418,39 +418,39 @@ static const UnlockDomain unknown = UnlockDomain$unknown._();
 static const List<UnlockDomain> values = [needed, ok, pending, trying, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'needed' => 'needed',
   'ok' => 'ok',
   'pending' => 'pending',
   'trying' => 'trying',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UnlockDomain$Unknown; } 
+bool get isUnknown {return this is UnlockDomain$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       UnlockDomain$needed() => needed(),
       UnlockDomain$ok() => ok(),
       UnlockDomain$pending() => pending(),
       UnlockDomain$trying() => trying(),
       UnlockDomain$unknown() => unknown(),
       UnlockDomain$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       UnlockDomain$needed() => needed != null ? needed() : orElse(value),
       UnlockDomain$ok() => ok != null ? ok() : orElse(value),
       UnlockDomain$pending() => pending != null ? pending() : orElse(value),
       UnlockDomain$trying() => trying != null ? trying() : orElse(value),
       UnlockDomain$unknown() => unknown != null ? unknown() : orElse(value),
       UnlockDomain$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UnlockDomain($value)';
 
- }
+}
 @immutable final class UnlockDomain$needed extends UnlockDomain {const UnlockDomain$needed._();
 
 @override String get value => 'needed';
@@ -459,7 +459,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'needed'.hashCode;
 
- }
+}
 @immutable final class UnlockDomain$ok extends UnlockDomain {const UnlockDomain$ok._();
 
 @override String get value => 'ok';
@@ -468,7 +468,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'ok'.hashCode;
 
- }
+}
 @immutable final class UnlockDomain$pending extends UnlockDomain {const UnlockDomain$pending._();
 
 @override String get value => 'pending';
@@ -477,7 +477,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class UnlockDomain$trying extends UnlockDomain {const UnlockDomain$trying._();
 
 @override String get value => 'trying';
@@ -486,7 +486,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'trying'.hashCode;
 
- }
+}
 @immutable final class UnlockDomain$unknown extends UnlockDomain {const UnlockDomain$unknown._();
 
 @override String get value => 'unknown';
@@ -495,7 +495,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class UnlockDomain$Unknown extends UnlockDomain {const UnlockDomain$Unknown(this.value);
 
 @override final String value;
@@ -505,18 +505,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Statuses for domain transfers into Cloudflare Registrar.
 @immutable final class TransferIn {const TransferIn({this.acceptFoa, this.approveTransfer, this.canCancelTransfer, this.disablePrivacy, this.enterAuthCode, this.unlockDomain, });
 
-factory TransferIn.fromJson(Map<String, dynamic> json) { return TransferIn(
+factory TransferIn.fromJson(Map<String, dynamic> json) {return TransferIn(
   acceptFoa: json['accept_foa'] != null ? AcceptFoa.fromJson(json['accept_foa'] as String) : null,
   approveTransfer: json['approve_transfer'] != null ? ApproveTransfer.fromJson(json['approve_transfer'] as String) : null,
   canCancelTransfer: json['can_cancel_transfer'] as bool?,
   disablePrivacy: json['disable_privacy'] != null ? DisablePrivacy.fromJson(json['disable_privacy'] as String) : null,
   enterAuthCode: json['enter_auth_code'] != null ? EnterAuthCode.fromJson(json['enter_auth_code'] as String) : null,
   unlockDomain: json['unlock_domain'] != null ? UnlockDomain.fromJson(json['unlock_domain'] as String) : null,
-); }
+);}
 
 /// Form of authorization has been accepted by the registrant.
 /// 
@@ -548,23 +548,23 @@ final EnterAuthCode? enterAuthCode;
 /// Example: `'ok'`
 final UnlockDomain? unlockDomain;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acceptFoa != null) 'accept_foa': acceptFoa?.toJson(),
   if (approveTransfer != null) 'approve_transfer': approveTransfer?.toJson(),
   'can_cancel_transfer': ?canCancelTransfer,
   if (disablePrivacy != null) 'disable_privacy': disablePrivacy?.toJson(),
   if (enterAuthCode != null) 'enter_auth_code': enterAuthCode?.toJson(),
   if (unlockDomain != null) 'unlock_domain': unlockDomain?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accept_foa', 'approve_transfer', 'can_cancel_transfer', 'disable_privacy', 'enter_auth_code', 'unlock_domain'}.contains(key)); } 
-TransferIn copyWith({AcceptFoa? Function()? acceptFoa, ApproveTransfer? Function()? approveTransfer, bool? Function()? canCancelTransfer, DisablePrivacy? Function()? disablePrivacy, EnterAuthCode? Function()? enterAuthCode, UnlockDomain? Function()? unlockDomain, }) { return TransferIn(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accept_foa', 'approve_transfer', 'can_cancel_transfer', 'disable_privacy', 'enter_auth_code', 'unlock_domain'}.contains(key));}
+TransferIn copyWith({AcceptFoa? Function()? acceptFoa, ApproveTransfer? Function()? approveTransfer, bool? Function()? canCancelTransfer, DisablePrivacy? Function()? disablePrivacy, EnterAuthCode? Function()? enterAuthCode, UnlockDomain? Function()? unlockDomain, }) {return TransferIn(
   acceptFoa: acceptFoa != null ? acceptFoa() : this.acceptFoa,
   approveTransfer: approveTransfer != null ? approveTransfer() : this.approveTransfer,
   canCancelTransfer: canCancelTransfer != null ? canCancelTransfer() : this.canCancelTransfer,
   disablePrivacy: disablePrivacy != null ? disablePrivacy() : this.disablePrivacy,
   enterAuthCode: enterAuthCode != null ? enterAuthCode() : this.enterAuthCode,
   unlockDomain: unlockDomain != null ? unlockDomain() : this.unlockDomain,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TransferIn &&
           acceptFoa == other.acceptFoa &&
@@ -578,4 +578,4 @@ TransferIn copyWith({AcceptFoa? Function()? acceptFoa, ApproveTransfer? Function
 
 @override String toString() => 'TransferIn(acceptFoa: $acceptFoa, approveTransfer: $approveTransfer, canCancelTransfer: $canCancelTransfer, disablePrivacy: $disablePrivacy, enterAuthCode: $enterAuthCode, unlockDomain: $unlockDomain)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReportedBreakdownFuel {const ReportedBreakdownFuel({this.grossAmountDecimal});
 
-factory ReportedBreakdownFuel.fromJson(Map<String, dynamic> json) { return ReportedBreakdownFuel(
+factory ReportedBreakdownFuel.fromJson(Map<String, dynamic> json) {return ReportedBreakdownFuel(
   grossAmountDecimal: json['gross_amount_decimal'] as String?,
-); }
+);}
 
 final String? grossAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'gross_amount_decimal': ?grossAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gross_amount_decimal'}.contains(key)); } 
-ReportedBreakdownFuel copyWith({String? Function()? grossAmountDecimal}) { return ReportedBreakdownFuel(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'gross_amount_decimal'}.contains(key));}
+ReportedBreakdownFuel copyWith({String? Function()? grossAmountDecimal}) {return ReportedBreakdownFuel(
   grossAmountDecimal: grossAmountDecimal != null ? grossAmountDecimal() : this.grossAmountDecimal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReportedBreakdownFuel &&
           grossAmountDecimal == other.grossAmountDecimal;
@@ -24,4 +24,4 @@ ReportedBreakdownFuel copyWith({String? Function()? grossAmountDecimal}) { retur
 
 @override String toString() => 'ReportedBreakdownFuel(grossAmountDecimal: $grossAmountDecimal)';
 
- }
+}

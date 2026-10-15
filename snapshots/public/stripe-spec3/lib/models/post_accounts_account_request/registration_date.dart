@@ -7,11 +7,11 @@ const RegistrationDate({this.registrationDateSpecs = const Omittable.absent(), t
 const RegistrationDate._({required this.rawValue, required this.registrationDateSpecs, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory RegistrationDate.fromJson(Object? json) { return RegistrationDate._(
+factory RegistrationDate.fromJson(Object? json) {return RegistrationDate._(
   rawValue: Omittable(json),
   registrationDateSpecs: json is Map<String, dynamic> && RegistrationDateSpecs.canParse(json) ? parseAnyOfVariant<RegistrationDateSpecs>(json, (value) => RegistrationDateSpecs.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'RegistrationDate(${toJson()})';
 
- }
+}

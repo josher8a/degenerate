@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of th
 /// 
 sealed class ImageGenToolCallStatus {const ImageGenToolCallStatus();
 
-factory ImageGenToolCallStatus.fromJson(String json) { return switch (json) {
+factory ImageGenToolCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'generating' => generating,
   'failed' => failed,
   _ => ImageGenToolCallStatus$Unknown(json),
-}; }
+};}
 
 static const ImageGenToolCallStatus inProgress = ImageGenToolCallStatus$inProgress._();
 
@@ -24,36 +24,36 @@ static const ImageGenToolCallStatus failed = ImageGenToolCallStatus$failed._();
 static const List<ImageGenToolCallStatus> values = [inProgress, completed, generating, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'generating' => 'generating',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ImageGenToolCallStatus$Unknown; } 
+bool get isUnknown {return this is ImageGenToolCallStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() generating, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() generating, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       ImageGenToolCallStatus$inProgress() => inProgress(),
       ImageGenToolCallStatus$completed() => completed(),
       ImageGenToolCallStatus$generating() => generating(),
       ImageGenToolCallStatus$failed() => failed(),
       ImageGenToolCallStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? generating, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? generating, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       ImageGenToolCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       ImageGenToolCallStatus$completed() => completed != null ? completed() : orElse(value),
       ImageGenToolCallStatus$generating() => generating != null ? generating() : orElse(value),
       ImageGenToolCallStatus$failed() => failed != null ? failed() : orElse(value),
       ImageGenToolCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ImageGenToolCallStatus($value)';
 
- }
+}
 @immutable final class ImageGenToolCallStatus$inProgress extends ImageGenToolCallStatus {const ImageGenToolCallStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -62,7 +62,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class ImageGenToolCallStatus$completed extends ImageGenToolCallStatus {const ImageGenToolCallStatus$completed._();
 
 @override String get value => 'completed';
@@ -71,7 +71,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class ImageGenToolCallStatus$generating extends ImageGenToolCallStatus {const ImageGenToolCallStatus$generating._();
 
 @override String get value => 'generating';
@@ -80,7 +80,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'generating'.hashCode;
 
- }
+}
 @immutable final class ImageGenToolCallStatus$failed extends ImageGenToolCallStatus {const ImageGenToolCallStatus$failed._();
 
 @override String get value => 'failed';
@@ -89,7 +89,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class ImageGenToolCallStatus$Unknown extends ImageGenToolCallStatus {const ImageGenToolCallStatus$Unknown(this.value);
 
 @override final String value;
@@ -99,17 +99,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An image generation request made by the model.
 /// 
 @immutable final class ImageGenToolCall {const ImageGenToolCall({required this.type, required this.id, required this.status, required this.result, });
 
-factory ImageGenToolCall.fromJson(Map<String, dynamic> json) { return ImageGenToolCall(
+factory ImageGenToolCall.fromJson(Map<String, dynamic> json) {return ImageGenToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   status: ImageGenToolCallStatus.fromJson(json['status'] as String),
   result: json['result'] as String?,
-); }
+);}
 
 /// The type of the image generation call. Always `image_generation_call`.
 /// 
@@ -127,22 +127,22 @@ final ImageGenToolCallStatus status;
 /// 
 final String? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'status': status.toJson(),
   'result': result,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
-      json.containsKey('result') && (json['result'] == null || json['result'] is String); } 
-ImageGenToolCall copyWith({String? type, String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ImageGenToolCall(
+      json.containsKey('result') && (json['result'] == null || json['result'] is String);}
+ImageGenToolCall copyWith({String? type, String? id, ImageGenToolCallStatus? status, String? Function()? result, }) {return ImageGenToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   status: status ?? this.status,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenToolCall &&
           type == other.type &&
@@ -154,4 +154,4 @@ ImageGenToolCall copyWith({String? type, String? id, ImageGenToolCallStatus? sta
 
 @override String toString() => 'ImageGenToolCall(type: $type, id: $id, status: $status, result: $result)';
 
- }
+}

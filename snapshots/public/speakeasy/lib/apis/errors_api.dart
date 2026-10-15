@@ -14,7 +14,7 @@ final class ErrorsApi with ApiExecutor {const ErrorsApi(this.apiConfig);
 /// 
 ///
 /// `GET /status/{statusCode}#clientServerErrors`
-Future<ApiResult<void, Never>> statusGetError({required int statusCode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> statusGetError({required int statusCode, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,14 +27,14 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `x-speakeasy-errors` is used to override the
 /// `clientServerStatusCodesAsErrors` setting
 /// by marking all responses as non-errors.
 /// 
 ///
 /// `GET /status/{statusCode}#nonErrors`
-Future<ApiResult<void, Never>> statusGetNonError({required int statusCode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> statusGetNonError({required int statusCode, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -47,14 +47,14 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `x-speakeasy-errors` is used to override the
 /// `clientServerStatusCodesAsErrors` setting
 /// by only marking *unspecified* responses as errors.
 /// 
 ///
 /// `GET /status/{statusCode}#defaultErrors`
-Future<ApiResult<void, Never>> statusGetDefaultError({required int statusCode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> statusGetDefaultError({required int statusCode, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -67,9 +67,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /errors/{statusCode}`
-Future<ApiResult<void, StatusGetXSpeakeasyErrorsError>> statusGetXSpeakeasyErrors({required int statusCode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, StatusGetXSpeakeasyErrorsError>> statusGetXSpeakeasyErrors({required int statusCode, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,9 +83,9 @@ return await execute(
   onSuccess: (_) {},
   onError: StatusGetXSpeakeasyErrorsError.fromResponse,
 );
- } 
+}
 /// `GET /errors/duplicateExportCollision`
-Future<ApiResult<GetDuplicateExportCollisionResponse, GetDuplicateExportCollisionError>> getDuplicateExportCollision({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetDuplicateExportCollisionResponse, GetDuplicateExportCollisionError>> getDuplicateExportCollision({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -101,13 +101,13 @@ return await execute(
   },
   onError: GetDuplicateExportCollisionError.fromResponse,
 );
- } 
+}
 /// In C#, when `x-speakeasy-error-message: true` is set, the `ErrorMessage` method
 /// defined on the generated error model may clash with the enclosing type.
 /// 
 ///
 /// `GET /errors/errorMessageCollision`
-Future<ApiResult<void, GetErrorMessageCollisionError>> getErrorMessageCollision({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, GetErrorMessageCollisionError>> getErrorMessageCollision({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -121,9 +121,9 @@ return await execute(
   onSuccess: (_) {},
   onError: GetErrorMessageCollisionError.fromResponse,
 );
- } 
+}
 /// `GET /anything/connectionError`
-Future<ApiResult<void, Never>> connectionErrorGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> connectionErrorGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -136,9 +136,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `POST /errors/500#errorUnion`
-Future<ApiResult<void, ErrorUnionPostError>> errorUnionPost({required ErrorUnionPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorUnionPostError>> errorUnionPost({required ErrorUnionPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,9 +154,9 @@ return await execute(
   onSuccess: (_) {},
   onError: ErrorUnionPostError.fromResponse,
 );
- } 
+}
 /// `POST /errors/400#errorUnionDiscriminated`
-Future<ApiResult<void, ErrorUnionDiscriminatedPostError>> errorUnionDiscriminatedPost({required ErrorUnionDiscriminatedPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorUnionDiscriminatedPostError>> errorUnionDiscriminatedPost({required ErrorUnionDiscriminatedPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -172,9 +172,9 @@ return await execute(
   onSuccess: (_) {},
   onError: ErrorUnionDiscriminatedPostError.fromResponse,
 );
- } 
+}
 /// `POST /errors/400#sharedErrorUnion1`
-Future<ApiResult<void, SharedErrorUnionPost1Error>> sharedErrorUnionPost1({required SharedErrorUnionPost1Request body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, SharedErrorUnionPost1Error>> sharedErrorUnionPost1({required SharedErrorUnionPost1Request body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -190,9 +190,9 @@ return await execute(
   onSuccess: (_) {},
   onError: SharedErrorUnionPost1Error.fromResponse,
 );
- } 
+}
 /// `POST /errors/400#sharedErrorUnion2`
-Future<ApiResult<void, SharedErrorUnionPost2Error>> sharedErrorUnionPost2({required SharedErrorUnionPost2Request body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, SharedErrorUnionPost2Error>> sharedErrorUnionPost2({required SharedErrorUnionPost2Request body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -208,5 +208,5 @@ return await execute(
   onSuccess: (_) {},
   onError: SharedErrorUnionPost2Error.fromResponse,
 );
- } 
- }
+}
+}

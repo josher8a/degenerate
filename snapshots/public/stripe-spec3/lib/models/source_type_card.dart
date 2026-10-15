@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeCard {const SourceTypeCard({this.addressLine1Check = const Omittable.absent(), this.addressZipCheck = const Omittable.absent(), this.brand = const Omittable.absent(), this.country = const Omittable.absent(), this.cvcCheck = const Omittable.absent(), this.dynamicLast4 = const Omittable.absent(), this.expMonth = const Omittable.absent(), this.expYear = const Omittable.absent(), this.fingerprint, this.funding = const Omittable.absent(), this.last4 = const Omittable.absent(), this.name = const Omittable.absent(), this.threeDSecure, this.tokenizationMethod = const Omittable.absent(), });
 
-factory SourceTypeCard.fromJson(Map<String, dynamic> json) { return SourceTypeCard(
+factory SourceTypeCard.fromJson(Map<String, dynamic> json) {return SourceTypeCard(
   addressLine1Check: json.containsKey('address_line1_check') ? Omittable(json['address_line1_check'] as String?) : const Omittable.absent(),
   addressZipCheck: json.containsKey('address_zip_check') ? Omittable(json['address_zip_check'] as String?) : const Omittable.absent(),
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
@@ -18,7 +18,7 @@ factory SourceTypeCard.fromJson(Map<String, dynamic> json) { return SourceTypeCa
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   threeDSecure: json['three_d_secure'] as String?,
   tokenizationMethod: json.containsKey('tokenization_method') ? Omittable(json['tokenization_method'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<String?> addressLine1Check;
 
@@ -48,7 +48,7 @@ final String? threeDSecure;
 
 final Omittable<String?> tokenizationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addressLine1Check.isPresent) 'address_line1_check': addressLine1Check.value,
   if (addressZipCheck.isPresent) 'address_zip_check': addressZipCheck.value,
   if (brand.isPresent) 'brand': brand.value,
@@ -63,9 +63,9 @@ Map<String, dynamic> toJson() { return {
   if (name.isPresent) 'name': name.value,
   'three_d_secure': ?threeDSecure,
   if (tokenizationMethod.isPresent) 'tokenization_method': tokenizationMethod.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_zip_check', 'brand', 'country', 'cvc_check', 'dynamic_last4', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'name', 'three_d_secure', 'tokenization_method'}.contains(key)); } 
-SourceTypeCard copyWith({Omittable<String?>? addressLine1Check, Omittable<String?>? addressZipCheck, Omittable<String?>? brand, Omittable<String?>? country, Omittable<String?>? cvcCheck, Omittable<String?>? dynamicLast4, Omittable<int?>? expMonth, Omittable<int?>? expYear, String? Function()? fingerprint, Omittable<String?>? funding, Omittable<String?>? last4, Omittable<String?>? name, String? Function()? threeDSecure, Omittable<String?>? tokenizationMethod, }) { return SourceTypeCard(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address_line1_check', 'address_zip_check', 'brand', 'country', 'cvc_check', 'dynamic_last4', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'name', 'three_d_secure', 'tokenization_method'}.contains(key));}
+SourceTypeCard copyWith({Omittable<String?>? addressLine1Check, Omittable<String?>? addressZipCheck, Omittable<String?>? brand, Omittable<String?>? country, Omittable<String?>? cvcCheck, Omittable<String?>? dynamicLast4, Omittable<int?>? expMonth, Omittable<int?>? expYear, String? Function()? fingerprint, Omittable<String?>? funding, Omittable<String?>? last4, Omittable<String?>? name, String? Function()? threeDSecure, Omittable<String?>? tokenizationMethod, }) {return SourceTypeCard(
   addressLine1Check: addressLine1Check ?? this.addressLine1Check,
   addressZipCheck: addressZipCheck ?? this.addressZipCheck,
   brand: brand ?? this.brand,
@@ -80,7 +80,7 @@ SourceTypeCard copyWith({Omittable<String?>? addressLine1Check, Omittable<String
   name: name ?? this.name,
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
   tokenizationMethod: tokenizationMethod ?? this.tokenizationMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeCard &&
           addressLine1Check == other.addressLine1Check &&
@@ -102,4 +102,4 @@ SourceTypeCard copyWith({Omittable<String?>? addressLine1Check, Omittable<String
 
 @override String toString() => 'SourceTypeCard(\n  addressLine1Check: $addressLine1Check,\n  addressZipCheck: $addressZipCheck,\n  brand: $brand,\n  country: $country,\n  cvcCheck: $cvcCheck,\n  dynamicLast4: $dynamicLast4,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  last4: $last4,\n  name: $name,\n  threeDSecure: $threeDSecure,\n  tokenizationMethod: $tokenizationMethod,\n)';
 
- }
+}

@@ -7,11 +7,11 @@ const PostSubscriptionSchedulesRequestStartDate({this.$int = const Omittable.abs
 const PostSubscriptionSchedulesRequestStartDate._({required this.rawValue, required this.$int, required this.startDateVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostSubscriptionSchedulesRequestStartDate.fromJson(Object? json) { return PostSubscriptionSchedulesRequestStartDate._(
+factory PostSubscriptionSchedulesRequestStartDate.fromJson(Object? json) {return PostSubscriptionSchedulesRequestStartDate._(
   rawValue: Omittable(json),
   $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
   startDateVariant2: parseAnyOfVariant<StartDateVariant2>(json, (value) => StartDateVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostSubscriptionSchedulesRequestStartDate(${toJson()})';
 
- }
+}

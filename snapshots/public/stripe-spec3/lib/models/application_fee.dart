@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_refunds.dart';import 'package:pub_stripe_spec3/models/application_fee/originating_transaction.dart';import 'package:pub_stripe_spec3/models/platform_earning_fee_source.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ApplicationFeeObject {const ApplicationFeeObject();
 
-factory ApplicationFeeObject.fromJson(String json) { return switch (json) {
+factory ApplicationFeeObject.fromJson(String json) {return switch (json) {
   'application_fee' => applicationFee,
   _ => ApplicationFeeObject$Unknown(json),
-}; }
+};}
 
 static const ApplicationFeeObject applicationFee = ApplicationFeeObject$applicationFee._();
 
 static const List<ApplicationFeeObject> values = [applicationFee];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'application_fee' => 'applicationFee',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ApplicationFeeObject$Unknown; } 
+bool get isUnknown {return this is ApplicationFeeObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() applicationFee, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() applicationFee, required W Function(String value) $unknown, }) {return switch (this) {
       ApplicationFeeObject$applicationFee() => applicationFee(),
       ApplicationFeeObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicationFee, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicationFee, W Function(String value)? $unknown, }) {return switch (this) {
       ApplicationFeeObject$applicationFee() => applicationFee != null ? applicationFee() : orElse(value),
       ApplicationFeeObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ApplicationFeeObject($value)';
 
- }
+}
 @immutable final class ApplicationFeeObject$applicationFee extends ApplicationFeeObject {const ApplicationFeeObject$applicationFee._();
 
 @override String get value => 'application_fee';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicat
 
 @override int get hashCode => 'application_fee'.hashCode;
 
- }
+}
 @immutable final class ApplicationFeeObject$Unknown extends ApplicationFeeObject {const ApplicationFeeObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicat
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class ApplicationFee {const ApplicationFee({required this.account, required this.amount, required this.amountRefunded, required this.application, required this.charge, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.refunded, required this.refunds, this.balanceTransaction = const Omittable.absent(), this.feeSource = const Omittable.absent(), this.originatingTransaction = const Omittable.absent(), });
 
-factory ApplicationFee.fromJson(Map<String, dynamic> json) { return ApplicationFee(
+factory ApplicationFee.fromJson(Map<String, dynamic> json) {return ApplicationFee(
   account: ApplicationFeeAccount.fromJson(json['account']),
   amount: (json['amount'] as num).toInt(),
   amountRefunded: (json['amount_refunded'] as num).toInt(),
@@ -73,7 +73,7 @@ factory ApplicationFee.fromJson(Map<String, dynamic> json) { return ApplicationF
   originatingTransaction: json.containsKey('originating_transaction') ? Omittable(json['originating_transaction'] != null ? OriginatingTransaction.fromJson(json['originating_transaction']) : null) : const Omittable.absent(),
   refunded: json['refunded'] as bool,
   refunds: ApplicationFeeRefunds.fromJson(json['refunds'] as Map<String, dynamic>),
-); }
+);}
 
 /// ID of the Stripe account this fee was taken from.
 final ApplicationFeeAccount account;
@@ -120,7 +120,7 @@ final bool refunded;
 /// A list of refunds that have been applied to the fee.
 final ApplicationFeeRefunds refunds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account.toJson(),
   'amount': amount,
   'amount_refunded': amountRefunded,
@@ -136,8 +136,8 @@ Map<String, dynamic> toJson() { return {
   if (originatingTransaction.isPresent) 'originating_transaction': originatingTransaction.value?.toJson(),
   'refunded': refunded,
   'refunds': refunds.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') &&
       json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_refunded') && json['amount_refunded'] is num &&
       json.containsKey('application') &&
@@ -148,12 +148,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') && json['object'] == 'application_fee' &&
       json.containsKey('refunded') && json['refunded'] is bool &&
-      json.containsKey('refunds'); } 
+      json.containsKey('refunds');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, Omittable<PlatformEarningFeeSource?>? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, Omittable<OriginatingTransaction?>? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) { return ApplicationFee(
+return errors;}
+ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, Omittable<PlatformEarningFeeSource?>? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, Omittable<OriginatingTransaction?>? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) {return ApplicationFee(
   account: account ?? this.account,
   amount: amount ?? this.amount,
   amountRefunded: amountRefunded ?? this.amountRefunded,
@@ -169,7 +169,7 @@ ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amoun
   originatingTransaction: originatingTransaction ?? this.originatingTransaction,
   refunded: refunded ?? this.refunded,
   refunds: refunds ?? this.refunds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ApplicationFee &&
           account == other.account &&
@@ -192,4 +192,4 @@ ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amoun
 
 @override String toString() => 'ApplicationFee(\n  account: $account,\n  amount: $amount,\n  amountRefunded: $amountRefunded,\n  application: $application,\n  balanceTransaction: $balanceTransaction,\n  charge: $charge,\n  created: $created,\n  currency: $currency,\n  feeSource: $feeSource,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  originatingTransaction: $originatingTransaction,\n  refunded: $refunded,\n  refunds: $refunds,\n)';
 
- }
+}

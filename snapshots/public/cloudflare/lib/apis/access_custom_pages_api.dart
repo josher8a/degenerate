@@ -12,7 +12,7 @@ final class AccessCustomPagesApi with ApiExecutor {const AccessCustomPagesApi(th
 /// List custom pages
 ///
 /// `GET /accounts/{account_id}/access/custom_pages`
-Future<ApiResult<List<AccessCustomPageWithoutHtml>?, AccessApplicationsAddAnApplicationError>> accessCustomPagesListCustomPages({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessCustomPageWithoutHtml>?, AccessApplicationsAddAnApplicationError>> accessCustomPagesListCustomPages({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -40,11 +40,11 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Create a custom page
 ///
 /// `POST /accounts/{account_id}/access/custom_pages`
-Future<ApiResult<AccessCustomPageWithoutHtml?, AccessApplicationsAddAnApplicationError>> accessCustomPagesCreateACustomPage({required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCustomPageWithoutHtml?, AccessApplicationsAddAnApplicationError>> accessCustomPagesCreateACustomPage({required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,13 +63,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get a custom page
 ///
 /// Fetches a custom page and also returns its HTML.
 ///
 /// `GET /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<AccessCustomPage?, AccessApplicationsAddAnApplicationError>> accessCustomPagesGetACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCustomPage?, AccessApplicationsAddAnApplicationError>> accessCustomPagesGetACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,11 +86,11 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update a custom page
 ///
 /// `PUT /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<AccessCustomPageWithoutHtml?, AccessApplicationsAddAnApplicationError>> accessCustomPagesUpdateACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCustomPageWithoutHtml?, AccessApplicationsAddAnApplicationError>> accessCustomPagesUpdateACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,11 +109,11 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete a custom page
 ///
 /// `DELETE /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessCustomPagesDeleteACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessCustomPagesDeleteACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -130,5 +130,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

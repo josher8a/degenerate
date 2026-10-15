@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';import 'package:pub_stripe_spec3/models/checkout_card_installments_options.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/checkout_card_payment_method_options_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_extended_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_incremental_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_multicapture.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_overcapture.dart';import 'package:pub_stripe_spec3/models/payment_pages_private_card_payment_method_options_resource_restrictions.dart';/// 
 @immutable final class CheckoutCardPaymentMethodOptions {const CheckoutCardPaymentMethodOptions({required this.requestThreeDSecure, this.captureMethod, this.installments, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.restrictions, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, });
 
-factory CheckoutCardPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutCardPaymentMethodOptions(
+factory CheckoutCardPaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutCardPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
   installments: json['installments'] != null ? CheckoutCardInstallmentsOptions.fromJson(json['installments'] as Map<String, dynamic>) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] != null ? RequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
@@ -16,7 +16,7 @@ factory CheckoutCardPaymentMethodOptions.fromJson(Map<String, dynamic> json) { r
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] as String?,
   statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] as String?,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
@@ -55,7 +55,7 @@ final String? statementDescriptorSuffixKana;
 /// Provides information about a card payment that customers see on their statements. Concatenated with the Kanji prefix (shortened Kanji descriptor) or Kanji statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 17 characters. On card statements, the *concatenation* of both prefix and suffix (including separators) will appear truncated to 17 characters.
 final String? statementDescriptorSuffixKanji;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (installments != null) 'installments': installments?.toJson(),
   if (requestExtendedAuthorization != null) 'request_extended_authorization': requestExtendedAuthorization?.toJson(),
@@ -67,10 +67,10 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'statement_descriptor_suffix_kana': ?statementDescriptorSuffixKana,
   'statement_descriptor_suffix_kanji': ?statementDescriptorSuffixKanji,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('request_three_d_secure'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('request_three_d_secure');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final statementDescriptorSuffixKana$ = statementDescriptorSuffixKana;
 if (statementDescriptorSuffixKana$ != null) {
   if (statementDescriptorSuffixKana$.runes.length > 5000) { errors.add('statementDescriptorSuffixKana: length must be <= 5000'); }
@@ -79,8 +79,8 @@ final statementDescriptorSuffixKanji$ = statementDescriptorSuffixKanji;
 if (statementDescriptorSuffixKanji$ != null) {
   if (statementDescriptorSuffixKanji$.runes.length > 5000) { errors.add('statementDescriptorSuffixKanji: length must be <= 5000'); }
 }
-return errors; } 
-CheckoutCardPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, CheckoutCardInstallmentsOptions? Function()? installments, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure, PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions? Function()? restrictions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) { return CheckoutCardPaymentMethodOptions(
+return errors;}
+CheckoutCardPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, CheckoutCardInstallmentsOptions? Function()? installments, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure, PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions? Function()? restrictions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) {return CheckoutCardPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,
   requestExtendedAuthorization: requestExtendedAuthorization != null ? requestExtendedAuthorization() : this.requestExtendedAuthorization,
@@ -92,7 +92,7 @@ CheckoutCardPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCap
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   statementDescriptorSuffixKana: statementDescriptorSuffixKana != null ? statementDescriptorSuffixKana() : this.statementDescriptorSuffixKana,
   statementDescriptorSuffixKanji: statementDescriptorSuffixKanji != null ? statementDescriptorSuffixKanji() : this.statementDescriptorSuffixKanji,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutCardPaymentMethodOptions &&
           captureMethod == other.captureMethod &&
@@ -111,4 +111,4 @@ CheckoutCardPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCap
 
 @override String toString() => 'CheckoutCardPaymentMethodOptions(\n  captureMethod: $captureMethod,\n  installments: $installments,\n  requestExtendedAuthorization: $requestExtendedAuthorization,\n  requestIncrementalAuthorization: $requestIncrementalAuthorization,\n  requestMulticapture: $requestMulticapture,\n  requestOvercapture: $requestOvercapture,\n  requestThreeDSecure: $requestThreeDSecure,\n  restrictions: $restrictions,\n  setupFutureUsage: $setupFutureUsage,\n  statementDescriptorSuffixKana: $statementDescriptorSuffixKana,\n  statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji,\n)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageEvents {const UsageEvents({required this.payload});
 
-factory UsageEvents.fromJson(Map<String, dynamic> json) { return UsageEvents(
+factory UsageEvents.fromJson(Map<String, dynamic> json) {return UsageEvents(
   payload: json['payload'] as String,
-); }
+);}
 
 final String payload;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payload': payload,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && json['payload'] is String; } 
-UsageEvents copyWith({String? payload}) { return UsageEvents(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payload') && json['payload'] is String;}
+UsageEvents copyWith({String? payload}) {return UsageEvents(
   payload: payload ?? this.payload,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsageEvents &&
           payload == other.payload;
@@ -24,4 +24,4 @@ UsageEvents copyWith({String? payload}) { return UsageEvents(
 
 @override String toString() => 'UsageEvents(payload: $payload)';
 
- }
+}

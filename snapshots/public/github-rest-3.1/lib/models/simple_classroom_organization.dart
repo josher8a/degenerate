@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub organization.
 @immutable final class SimpleClassroomOrganization {const SimpleClassroomOrganization({required this.id, required this.login, required this.nodeId, required this.htmlUrl, required this.name, required this.avatarUrl, });
 
-factory SimpleClassroomOrganization.fromJson(Map<String, dynamic> json) { return SimpleClassroomOrganization(
+factory SimpleClassroomOrganization.fromJson(Map<String, dynamic> json) {return SimpleClassroomOrganization(
   id: (json['id'] as num).toInt(),
   login: json['login'] as String,
   nodeId: json['node_id'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   name: json['name'] as String?,
   avatarUrl: json['avatar_url'] as String,
-); }
+);}
 
 final int id;
 
@@ -25,28 +25,28 @@ final String? name;
 
 final String avatarUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'login': login,
   'node_id': nodeId,
   'html_url': htmlUrl.toString(),
   'name': name,
   'avatar_url': avatarUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
-      json.containsKey('avatar_url') && json['avatar_url'] is String; } 
-SimpleClassroomOrganization copyWith({int? id, String? login, String? nodeId, Uri? htmlUrl, String? Function()? name, String? avatarUrl, }) { return SimpleClassroomOrganization(
+      json.containsKey('avatar_url') && json['avatar_url'] is String;}
+SimpleClassroomOrganization copyWith({int? id, String? login, String? nodeId, Uri? htmlUrl, String? Function()? name, String? avatarUrl, }) {return SimpleClassroomOrganization(
   id: id ?? this.id,
   login: login ?? this.login,
   nodeId: nodeId ?? this.nodeId,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   name: name != null ? name() : this.name,
   avatarUrl: avatarUrl ?? this.avatarUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleClassroomOrganization &&
           id == other.id &&
@@ -60,4 +60,4 @@ SimpleClassroomOrganization copyWith({int? id, String? login, String? nodeId, Ur
 
 @override String toString() => 'SimpleClassroomOrganization(id: $id, login: $login, nodeId: $nodeId, htmlUrl: $htmlUrl, name: $name, avatarUrl: $avatarUrl)';
 
- }
+}

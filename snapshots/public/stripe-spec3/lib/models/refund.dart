@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/refund/refund_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund/source_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund_destination_details.dart';import 'package:pub_stripe_spec3/models/refund_next_action.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class RefundObject {const RefundObject();
 
-factory RefundObject.fromJson(String json) { return switch (json) {
+factory RefundObject.fromJson(String json) {return switch (json) {
   'refund' => refund,
   _ => RefundObject$Unknown(json),
-}; }
+};}
 
 static const RefundObject refund = RefundObject$refund._();
 
 static const List<RefundObject> values = [refund];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'refund' => 'refund',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RefundObject$Unknown; } 
+bool get isUnknown {return this is RefundObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() refund, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() refund, required W Function(String value) $unknown, }) {return switch (this) {
       RefundObject$refund() => refund(),
       RefundObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? refund, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? refund, W Function(String value)? $unknown, }) {return switch (this) {
       RefundObject$refund() => refund != null ? refund() : orElse(value),
       RefundObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RefundObject($value)';
 
- }
+}
 @immutable final class RefundObject$refund extends RefundObject {const RefundObject$refund._();
 
 @override String get value => 'refund';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? refund, 
 
 @override int get hashCode => 'refund'.hashCode;
 
- }
+}
 @immutable final class RefundObject$Unknown extends RefundObject {const RefundObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? refund, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Provides the reason for why the refund is pending. Possible values are: `processing`, `insufficient_funds`, or `charge_pending`.
 sealed class PendingReason {const PendingReason();
 
-factory PendingReason.fromJson(String json) { return switch (json) {
+factory PendingReason.fromJson(String json) {return switch (json) {
   'charge_pending' => chargePending,
   'insufficient_funds' => insufficientFunds,
   'processing' => processing,
   _ => PendingReason$Unknown(json),
-}; }
+};}
 
 static const PendingReason chargePending = PendingReason$chargePending._();
 
@@ -73,33 +73,33 @@ static const PendingReason processing = PendingReason$processing._();
 static const List<PendingReason> values = [chargePending, insufficientFunds, processing];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'charge_pending' => 'chargePending',
   'insufficient_funds' => 'insufficientFunds',
   'processing' => 'processing',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PendingReason$Unknown; } 
+bool get isUnknown {return this is PendingReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chargePending, required W Function() insufficientFunds, required W Function() processing, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chargePending, required W Function() insufficientFunds, required W Function() processing, required W Function(String value) $unknown, }) {return switch (this) {
       PendingReason$chargePending() => chargePending(),
       PendingReason$insufficientFunds() => insufficientFunds(),
       PendingReason$processing() => processing(),
       PendingReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargePending, W Function()? insufficientFunds, W Function()? processing, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargePending, W Function()? insufficientFunds, W Function()? processing, W Function(String value)? $unknown, }) {return switch (this) {
       PendingReason$chargePending() => chargePending != null ? chargePending() : orElse(value),
       PendingReason$insufficientFunds() => insufficientFunds != null ? insufficientFunds() : orElse(value),
       PendingReason$processing() => processing != null ? processing() : orElse(value),
       PendingReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PendingReason($value)';
 
- }
+}
 @immutable final class PendingReason$chargePending extends PendingReason {const PendingReason$chargePending._();
 
 @override String get value => 'charge_pending';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargePe
 
 @override int get hashCode => 'charge_pending'.hashCode;
 
- }
+}
 @immutable final class PendingReason$insufficientFunds extends PendingReason {const PendingReason$insufficientFunds._();
 
 @override String get value => 'insufficient_funds';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargePe
 
 @override int get hashCode => 'insufficient_funds'.hashCode;
 
- }
+}
 @immutable final class PendingReason$processing extends PendingReason {const PendingReason$processing._();
 
 @override String get value => 'processing';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargePe
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class PendingReason$Unknown extends PendingReason {const PendingReason$Unknown(this.value);
 
 @override final String value;
@@ -136,17 +136,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargePe
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Reason for the refund, which is either user-provided (`duplicate`, `fraudulent`, or `requested_by_customer`) or generated by Stripe internally (`expired_uncaptured_charge`).
 sealed class RefundReason {const RefundReason();
 
-factory RefundReason.fromJson(String json) { return switch (json) {
+factory RefundReason.fromJson(String json) {return switch (json) {
   'duplicate' => duplicate,
   'expired_uncaptured_charge' => expiredUncapturedCharge,
   'fraudulent' => fraudulent,
   'requested_by_customer' => requestedByCustomer,
   _ => RefundReason$Unknown(json),
-}; }
+};}
 
 static const RefundReason duplicate = RefundReason$duplicate._();
 
@@ -159,36 +159,36 @@ static const RefundReason requestedByCustomer = RefundReason$requestedByCustomer
 static const List<RefundReason> values = [duplicate, expiredUncapturedCharge, fraudulent, requestedByCustomer];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'duplicate' => 'duplicate',
   'expired_uncaptured_charge' => 'expiredUncapturedCharge',
   'fraudulent' => 'fraudulent',
   'requested_by_customer' => 'requestedByCustomer',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RefundReason$Unknown; } 
+bool get isUnknown {return this is RefundReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() duplicate, required W Function() expiredUncapturedCharge, required W Function() fraudulent, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() duplicate, required W Function() expiredUncapturedCharge, required W Function() fraudulent, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) {return switch (this) {
       RefundReason$duplicate() => duplicate(),
       RefundReason$expiredUncapturedCharge() => expiredUncapturedCharge(),
       RefundReason$fraudulent() => fraudulent(),
       RefundReason$requestedByCustomer() => requestedByCustomer(),
       RefundReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? expiredUncapturedCharge, W Function()? fraudulent, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? expiredUncapturedCharge, W Function()? fraudulent, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) {return switch (this) {
       RefundReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
       RefundReason$expiredUncapturedCharge() => expiredUncapturedCharge != null ? expiredUncapturedCharge() : orElse(value),
       RefundReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
       RefundReason$requestedByCustomer() => requestedByCustomer != null ? requestedByCustomer() : orElse(value),
       RefundReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RefundReason($value)';
 
- }
+}
 @immutable final class RefundReason$duplicate extends RefundReason {const RefundReason$duplicate._();
 
 @override String get value => 'duplicate';
@@ -197,7 +197,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => 'duplicate'.hashCode;
 
- }
+}
 @immutable final class RefundReason$expiredUncapturedCharge extends RefundReason {const RefundReason$expiredUncapturedCharge._();
 
 @override String get value => 'expired_uncaptured_charge';
@@ -206,7 +206,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => 'expired_uncaptured_charge'.hashCode;
 
- }
+}
 @immutable final class RefundReason$fraudulent extends RefundReason {const RefundReason$fraudulent._();
 
 @override String get value => 'fraudulent';
@@ -215,7 +215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => 'fraudulent'.hashCode;
 
- }
+}
 @immutable final class RefundReason$requestedByCustomer extends RefundReason {const RefundReason$requestedByCustomer._();
 
 @override String get value => 'requested_by_customer';
@@ -224,7 +224,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => 'requested_by_customer'.hashCode;
 
- }
+}
 @immutable final class RefundReason$Unknown extends RefundReason {const RefundReason$Unknown(this.value);
 
 @override final String value;
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Refund objects allow you to refund a previously created charge that isn't
 /// refunded yet. Funds are refunded to the credit or debit card that's
 /// initially charged.
@@ -242,7 +242,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicat
 /// Related guide: [Refunds](https://docs.stripe.com/refunds)
 @immutable final class Refund {const Refund({required this.amount, required this.created, required this.currency, required this.id, required this.object, this.balanceTransaction = const Omittable.absent(), this.charge = const Omittable.absent(), this.description, this.destinationDetails, this.failureBalanceTransaction, this.failureReason, this.instructionsEmail, this.metadata = const Omittable.absent(), this.nextAction, this.paymentIntent = const Omittable.absent(), this.pendingReason, this.presentmentDetails, this.reason = const Omittable.absent(), this.receiptNumber = const Omittable.absent(), this.sourceTransferReversal = const Omittable.absent(), this.status = const Omittable.absent(), this.transferReversal = const Omittable.absent(), });
 
-factory Refund.fromJson(Map<String, dynamic> json) { return Refund(
+factory Refund.fromJson(Map<String, dynamic> json) {return Refund(
   amount: (json['amount'] as num).toInt(),
   balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? ApplicationFeeCharge.fromJson(json['charge']) : null) : const Omittable.absent(),
@@ -265,7 +265,7 @@ factory Refund.fromJson(Map<String, dynamic> json) { return Refund(
   sourceTransferReversal: json.containsKey('source_transfer_reversal') ? Omittable(json['source_transfer_reversal'] != null ? SourceTransferReversal.fromJson(json['source_transfer_reversal']) : null) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] as String?) : const Omittable.absent(),
   transferReversal: json.containsKey('transfer_reversal') ? Omittable(json['transfer_reversal'] != null ? RefundTransferReversal.fromJson(json['transfer_reversal']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount, in cents (or local equivalent).
 final int amount;
@@ -330,7 +330,7 @@ final Omittable<String?> status;
 /// This refers to the transfer reversal object if the accompanying transfer reverses. This is only applicable if the charge was created using the destination parameter.
 final Omittable<RefundTransferReversal?> transferReversal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   if (charge.isPresent) 'charge': charge.value?.toJson(),
@@ -353,14 +353,14 @@ Map<String, dynamic> toJson() { return {
   if (sourceTransferReversal.isPresent) 'source_transfer_reversal': sourceTransferReversal.value?.toJson(),
   if (status.isPresent) 'status': status.value,
   if (transferReversal.isPresent) 'transfer_reversal': transferReversal.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'refund'; } 
+      json.containsKey('object') && json['object'] == 'refund';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -382,8 +382,8 @@ final status$ = status.value;
 if (status$ != null) {
   if (status$.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
 }
-return errors; } 
-Refund copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, Omittable<ApplicationFeeCharge?>? charge, int? created, String? currency, String? Function()? description, RefundDestinationDetails? Function()? destinationDetails, FailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureReason, String? id, String? Function()? instructionsEmail, Omittable<Map<String,String>?>? metadata, RefundNextAction? Function()? nextAction, RefundObject? object, Omittable<ChargePaymentIntent?>? paymentIntent, PendingReason? Function()? pendingReason, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, Omittable<RefundReason?>? reason, Omittable<String?>? receiptNumber, Omittable<SourceTransferReversal?>? sourceTransferReversal, Omittable<String?>? status, Omittable<RefundTransferReversal?>? transferReversal, }) { return Refund(
+return errors;}
+Refund copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, Omittable<ApplicationFeeCharge?>? charge, int? created, String? currency, String? Function()? description, RefundDestinationDetails? Function()? destinationDetails, FailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureReason, String? id, String? Function()? instructionsEmail, Omittable<Map<String,String>?>? metadata, RefundNextAction? Function()? nextAction, RefundObject? object, Omittable<ChargePaymentIntent?>? paymentIntent, PendingReason? Function()? pendingReason, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, Omittable<RefundReason?>? reason, Omittable<String?>? receiptNumber, Omittable<SourceTransferReversal?>? sourceTransferReversal, Omittable<String?>? status, Omittable<RefundTransferReversal?>? transferReversal, }) {return Refund(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   charge: charge ?? this.charge,
@@ -406,7 +406,7 @@ Refund copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? bala
   sourceTransferReversal: sourceTransferReversal ?? this.sourceTransferReversal,
   status: status ?? this.status,
   transferReversal: transferReversal ?? this.transferReversal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Refund &&
           amount == other.amount &&
@@ -436,4 +436,4 @@ Refund copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? bala
 
 @override String toString() => 'Refund(\n  amount: $amount,\n  balanceTransaction: $balanceTransaction,\n  charge: $charge,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  destinationDetails: $destinationDetails,\n  failureBalanceTransaction: $failureBalanceTransaction,\n  failureReason: $failureReason,\n  id: $id,\n  instructionsEmail: $instructionsEmail,\n  metadata: $metadata,\n  nextAction: $nextAction,\n  object: $object,\n  paymentIntent: $paymentIntent,\n  pendingReason: $pendingReason,\n  presentmentDetails: $presentmentDetails,\n  reason: $reason,\n  receiptNumber: $receiptNumber,\n  sourceTransferReversal: $sourceTransferReversal,\n  status: $status,\n  transferReversal: $transferReversal,\n)';
 
- }
+}

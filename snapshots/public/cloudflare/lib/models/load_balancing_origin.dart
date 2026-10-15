@@ -10,7 +10,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class LoadBalancingOrigin {const LoadBalancingOrigin({this.address, this.disabledAt, this.enabled, this.header, this.name, this.port, this.virtualNetworkId, this.weight, });
 
-factory LoadBalancingOrigin.fromJson(Map<String, dynamic> json) { return LoadBalancingOrigin(
+factory LoadBalancingOrigin.fromJson(Map<String, dynamic> json) {return LoadBalancingOrigin(
   address: json['address'] != null ? LoadBalancingAddress.fromJson(json['address'] as String) : null,
   disabledAt: json['disabled_at'] != null ? LoadBalancingDisabledAt.fromJson(json['disabled_at'] as String) : null,
   enabled: json['enabled'] != null ? LoadBalancingSchemasEnabled.fromJson(json['enabled'] as bool) : null,
@@ -19,7 +19,7 @@ factory LoadBalancingOrigin.fromJson(Map<String, dynamic> json) { return LoadBal
   port: json['port'] != null ? LoadBalancingOriginPort.fromJson(json['port'] as num) : null,
   virtualNetworkId: json['virtual_network_id'] != null ? LoadBalancingVirtualNetworkId.fromJson(json['virtual_network_id'] as String) : null,
   weight: json['weight'] != null ? LoadBalancingWeight.fromJson(json['weight'] as num) : null,
-); }
+);}
 
 /// The IP address (IPv4 or IPv6) of the origin, or its publicly addressable hostname. Hostnames entered here should resolve directly to the origin, and not be a hostname proxied by Cloudflare. To set an internal/reserved address, virtual_network_id must also be set.
 final LoadBalancingAddress? address;
@@ -39,7 +39,7 @@ final LoadBalancingVirtualNetworkId? virtualNetworkId;
 
 final LoadBalancingWeight? weight;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (disabledAt != null) 'disabled_at': disabledAt?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -48,9 +48,9 @@ Map<String, dynamic> toJson() { return {
   if (port != null) 'port': port?.toJson(),
   if (virtualNetworkId != null) 'virtual_network_id': virtualNetworkId?.toJson(),
   if (weight != null) 'weight': weight?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'disabled_at', 'enabled', 'header', 'name', 'port', 'virtual_network_id', 'weight'}.contains(key)); } 
-LoadBalancingOrigin copyWith({LoadBalancingAddress? Function()? address, LoadBalancingDisabledAt? Function()? disabledAt, LoadBalancingSchemasEnabled? Function()? enabled, LoadBalancingSchemasHeader? Function()? header, LoadBalancingSchemasName? Function()? name, LoadBalancingOriginPort? Function()? port, LoadBalancingVirtualNetworkId? Function()? virtualNetworkId, LoadBalancingWeight? Function()? weight, }) { return LoadBalancingOrigin(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'disabled_at', 'enabled', 'header', 'name', 'port', 'virtual_network_id', 'weight'}.contains(key));}
+LoadBalancingOrigin copyWith({LoadBalancingAddress? Function()? address, LoadBalancingDisabledAt? Function()? disabledAt, LoadBalancingSchemasEnabled? Function()? enabled, LoadBalancingSchemasHeader? Function()? header, LoadBalancingSchemasName? Function()? name, LoadBalancingOriginPort? Function()? port, LoadBalancingVirtualNetworkId? Function()? virtualNetworkId, LoadBalancingWeight? Function()? weight, }) {return LoadBalancingOrigin(
   address: address != null ? address() : this.address,
   disabledAt: disabledAt != null ? disabledAt() : this.disabledAt,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -59,7 +59,7 @@ LoadBalancingOrigin copyWith({LoadBalancingAddress? Function()? address, LoadBal
   port: port != null ? port() : this.port,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
   weight: weight != null ? weight() : this.weight,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingOrigin &&
           address == other.address &&
@@ -75,4 +75,4 @@ LoadBalancingOrigin copyWith({LoadBalancingAddress? Function()? address, LoadBal
 
 @override String toString() => 'LoadBalancingOrigin(address: $address, disabledAt: $disabledAt, enabled: $enabled, header: $header, name: $name, port: $port, virtualNetworkId: $virtualNetworkId, weight: $weight)';
 
- }
+}

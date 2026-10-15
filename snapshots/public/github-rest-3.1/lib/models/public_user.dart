@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_user/private_user_plan.dart';/// Public User
 @immutable final class PublicUser {const PublicUser({required this.organizationsUrl, required this.id, required this.updatedAt, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.login, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.name, required this.company, required this.blog, required this.location, required this.email, required this.createdAt, required this.following, required this.bio, required this.followers, required this.publicRepos, required this.publicGists, required this.hireable, this.collaborators, this.notificationEmail = const Omittable.absent(), this.userViewType, this.plan, this.privateGists, this.totalPrivateRepos, this.ownedPrivateRepos, this.diskUsage, this.twitterUsername = const Omittable.absent(), });
 
-factory PublicUser.fromJson(Map<String, dynamic> json) { return PublicUser(
+factory PublicUser.fromJson(Map<String, dynamic> json) {return PublicUser(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   userViewType: json['user_view_type'] as String?,
@@ -45,7 +45,7 @@ factory PublicUser.fromJson(Map<String, dynamic> json) { return PublicUser(
   ownedPrivateRepos: json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null,
   diskUsage: json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null,
   collaborators: json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null,
-); }
+);}
 
 final String login;
 
@@ -127,7 +127,7 @@ final int? diskUsage;
 
 final int? collaborators;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   'user_view_type': ?userViewType,
@@ -168,8 +168,8 @@ Map<String, dynamic> toJson() { return {
   'owned_private_repos': ?ownedPrivateRepos,
   'disk_usage': ?diskUsage,
   'collaborators': ?collaborators,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
@@ -199,8 +199,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('followers') && json['followers'] is num &&
       json.containsKey('following') && json['following'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-PublicUser copyWith({String? login, int? id, String? Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PrivateUserPlan? Function()? plan, int? Function()? privateGists, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, int? Function()? diskUsage, int? Function()? collaborators, }) { return PublicUser(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+PublicUser copyWith({String? login, int? id, String? Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PrivateUserPlan? Function()? plan, int? Function()? privateGists, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, int? Function()? diskUsage, int? Function()? collaborators, }) {return PublicUser(
   login: login ?? this.login,
   id: id ?? this.id,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
@@ -241,7 +241,7 @@ PublicUser copyWith({String? login, int? id, String? Function()? userViewType, S
   ownedPrivateRepos: ownedPrivateRepos != null ? ownedPrivateRepos() : this.ownedPrivateRepos,
   diskUsage: diskUsage != null ? diskUsage() : this.diskUsage,
   collaborators: collaborators != null ? collaborators() : this.collaborators,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PublicUser &&
           login == other.login &&
@@ -289,4 +289,4 @@ PublicUser copyWith({String? login, int? id, String? Function()? userViewType, S
 
 @override String toString() => 'PublicUser(\n  login: $login,\n  id: $id,\n  userViewType: $userViewType,\n  nodeId: $nodeId,\n  avatarUrl: $avatarUrl,\n  gravatarId: $gravatarId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  organizationsUrl: $organizationsUrl,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  type: $type,\n  siteAdmin: $siteAdmin,\n  name: $name,\n  company: $company,\n  blog: $blog,\n  location: $location,\n  email: $email,\n  notificationEmail: $notificationEmail,\n  hireable: $hireable,\n  bio: $bio,\n  twitterUsername: $twitterUsername,\n  publicRepos: $publicRepos,\n  publicGists: $publicGists,\n  followers: $followers,\n  following: $following,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  plan: $plan,\n  privateGists: $privateGists,\n  totalPrivateRepos: $totalPrivateRepos,\n  ownedPrivateRepos: $ownedPrivateRepos,\n  diskUsage: $diskUsage,\n  collaborators: $collaborators,\n)';
 
- }
+}

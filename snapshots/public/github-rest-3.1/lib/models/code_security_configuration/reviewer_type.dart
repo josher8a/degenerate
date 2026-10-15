@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the bypass reviewer
 sealed class ReviewerType {const ReviewerType();
 
-factory ReviewerType.fromJson(String json) { return switch (json) {
+factory ReviewerType.fromJson(String json) {return switch (json) {
   'TEAM' => team,
   'ROLE' => role,
   _ => ReviewerType$Unknown(json),
-}; }
+};}
 
 static const ReviewerType team = ReviewerType$team._();
 
@@ -17,30 +17,30 @@ static const ReviewerType role = ReviewerType$role._();
 static const List<ReviewerType> values = [team, role];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'TEAM' => 'team',
   'ROLE' => 'role',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReviewerType$Unknown; } 
+bool get isUnknown {return this is ReviewerType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() team, required W Function() role, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() team, required W Function() role, required W Function(String value) $unknown, }) {return switch (this) {
       ReviewerType$team() => team(),
       ReviewerType$role() => role(),
       ReviewerType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W Function()? role, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W Function()? role, W Function(String value)? $unknown, }) {return switch (this) {
       ReviewerType$team() => team != null ? team() : orElse(value),
       ReviewerType$role() => role != null ? role() : orElse(value),
       ReviewerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReviewerType($value)';
 
- }
+}
 @immutable final class ReviewerType$team extends ReviewerType {const ReviewerType$team._();
 
 @override String get value => 'TEAM';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W 
 
 @override int get hashCode => 'TEAM'.hashCode;
 
- }
+}
 @immutable final class ReviewerType$role extends ReviewerType {const ReviewerType$role._();
 
 @override String get value => 'ROLE';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W 
 
 @override int get hashCode => 'ROLE'.hashCode;
 
- }
+}
 @immutable final class ReviewerType$Unknown extends ReviewerType {const ReviewerType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

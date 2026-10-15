@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 sealed class RadarGetDnsAs112SummaryDimension {const RadarGetDnsAs112SummaryDimension();
 
-factory RadarGetDnsAs112SummaryDimension.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112SummaryDimension.fromJson(String json) {return switch (json) {
   'DNSSEC' => dnssec,
   'EDNS' => edns,
   'IP_VERSION' => ipVersion,
@@ -12,7 +12,7 @@ factory RadarGetDnsAs112SummaryDimension.fromJson(String json) { return switch (
   'QUERY_TYPE' => queryType,
   'RESPONSE_CODE' => responseCode,
   _ => RadarGetDnsAs112SummaryDimension$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsAs112SummaryDimension dnssec = RadarGetDnsAs112SummaryDimension$dnssec._();
 
@@ -29,9 +29,9 @@ static const RadarGetDnsAs112SummaryDimension responseCode = RadarGetDnsAs112Sum
 static const List<RadarGetDnsAs112SummaryDimension> values = [dnssec, edns, ipVersion, protocol, queryType, responseCode];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DNSSEC' => 'dnssec',
   'EDNS' => 'edns',
   'IP_VERSION' => 'ipVersion',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'QUERY_TYPE' => 'queryType',
   'RESPONSE_CODE' => 'responseCode',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsAs112SummaryDimension$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsAs112SummaryDimension$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dnssec, required W Function() edns, required W Function() ipVersion, required W Function() protocol, required W Function() queryType, required W Function() responseCode, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dnssec, required W Function() edns, required W Function() ipVersion, required W Function() protocol, required W Function() queryType, required W Function() responseCode, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsAs112SummaryDimension$dnssec() => dnssec(),
       RadarGetDnsAs112SummaryDimension$edns() => edns(),
       RadarGetDnsAs112SummaryDimension$ipVersion() => ipVersion(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() dnssec, required W Function() edns, required W 
       RadarGetDnsAs112SummaryDimension$queryType() => queryType(),
       RadarGetDnsAs112SummaryDimension$responseCode() => responseCode(),
       RadarGetDnsAs112SummaryDimension$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, W Function()? edns, W Function()? ipVersion, W Function()? protocol, W Function()? queryType, W Function()? responseCode, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, W Function()? edns, W Function()? ipVersion, W Function()? protocol, W Function()? queryType, W Function()? responseCode, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsAs112SummaryDimension$dnssec() => dnssec != null ? dnssec() : orElse(value),
       RadarGetDnsAs112SummaryDimension$edns() => edns != null ? edns() : orElse(value),
       RadarGetDnsAs112SummaryDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, 
       RadarGetDnsAs112SummaryDimension$queryType() => queryType != null ? queryType() : orElse(value),
       RadarGetDnsAs112SummaryDimension$responseCode() => responseCode != null ? responseCode() : orElse(value),
       RadarGetDnsAs112SummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsAs112SummaryDimension($value)';
 
- }
+}
 @immutable final class RadarGetDnsAs112SummaryDimension$dnssec extends RadarGetDnsAs112SummaryDimension {const RadarGetDnsAs112SummaryDimension$dnssec._();
 
 @override String get value => 'DNSSEC';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, 
 
 @override int get hashCode => 'DNSSEC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112SummaryDimension$edns extends RadarGetDnsAs112SummaryDimension {const RadarGetDnsAs112SummaryDimension$edns._();
 
 @override String get value => 'EDNS';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, 
 
 @override int get hashCode => 'EDNS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112SummaryDimension$ipVersion extends RadarGetDnsAs112SummaryDimension {const RadarGetDnsAs112SummaryDimension$ipVersion._();
 
 @override String get value => 'IP_VERSION';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, 
 
 @override int get hashCode => 'IP_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112SummaryDimension$protocol extends RadarGetDnsAs112SummaryDimension {const RadarGetDnsAs112SummaryDimension$protocol._();
 
 @override String get value => 'PROTOCOL';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, 
 
 @override int get hashCode => 'PROTOCOL'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112SummaryDimension$queryType extends RadarGetDnsAs112SummaryDimension {const RadarGetDnsAs112SummaryDimension$queryType._();
 
 @override String get value => 'QUERY_TYPE';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, 
 
 @override int get hashCode => 'QUERY_TYPE'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112SummaryDimension$responseCode extends RadarGetDnsAs112SummaryDimension {const RadarGetDnsAs112SummaryDimension$responseCode._();
 
 @override String get value => 'RESPONSE_CODE';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, 
 
 @override int get hashCode => 'RESPONSE_CODE'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112SummaryDimension$Unknown extends RadarGetDnsAs112SummaryDimension {const RadarGetDnsAs112SummaryDimension$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

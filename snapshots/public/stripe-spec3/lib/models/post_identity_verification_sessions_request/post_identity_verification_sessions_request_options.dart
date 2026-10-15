@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/options_document.dart';/// A set of options for the session’s verification checks.
 @immutable final class PostIdentityVerificationSessionsRequestOptions {const PostIdentityVerificationSessionsRequestOptions({this.document});
 
-factory PostIdentityVerificationSessionsRequestOptions.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequestOptions(
+factory PostIdentityVerificationSessionsRequestOptions.fromJson(Map<String, dynamic> json) {return PostIdentityVerificationSessionsRequestOptions(
   document: json['document'] != null ? OptionsDocument.fromJson(json['document']) : null,
-); }
+);}
 
 final OptionsDocument? document;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (document != null) 'document': document?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document'}.contains(key)); } 
-PostIdentityVerificationSessionsRequestOptions copyWith({OptionsDocument? Function()? document}) { return PostIdentityVerificationSessionsRequestOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'document'}.contains(key));}
+PostIdentityVerificationSessionsRequestOptions copyWith({OptionsDocument? Function()? document}) {return PostIdentityVerificationSessionsRequestOptions(
   document: document != null ? document() : this.document,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostIdentityVerificationSessionsRequestOptions &&
           document == other.document;
@@ -25,4 +25,4 @@ PostIdentityVerificationSessionsRequestOptions copyWith({OptionsDocument? Functi
 
 @override String toString() => 'PostIdentityVerificationSessionsRequestOptions(document: $document)';
 
- }
+}

@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RegenerateTokenResponseData {const RegenerateTokenResponseData({required this.token});
 
-factory RegenerateTokenResponseData.fromJson(Map<String, dynamic> json) { return RegenerateTokenResponseData(
+factory RegenerateTokenResponseData.fromJson(Map<String, dynamic> json) {return RegenerateTokenResponseData(
   token: json['token'] as String,
-); }
+);}
 
 /// Regenerated participant's authentication token.
 final String token;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token': token,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String; } 
-RegenerateTokenResponseData copyWith({String? token}) { return RegenerateTokenResponseData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('token') && json['token'] is String;}
+RegenerateTokenResponseData copyWith({String? token}) {return RegenerateTokenResponseData(
   token: token ?? this.token,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RegenerateTokenResponseData &&
           token == other.token;
@@ -25,4 +25,4 @@ RegenerateTokenResponseData copyWith({String? token}) { return RegenerateTokenRe
 
 @override String toString() => 'RegenerateTokenResponseData(token: $token)';
 
- }
+}

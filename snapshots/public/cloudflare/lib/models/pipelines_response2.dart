@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';import 'package:pub_cloudflare/models/pipelines_response2/pipelines_response2_result.dart';@immutable final class PipelinesResponse2 {const PipelinesResponse2({required this.result, required this.success, });
 
-factory PipelinesResponse2.fromJson(Map<String, dynamic> json) { return PipelinesResponse2(
+factory PipelinesResponse2.fromJson(Map<String, dynamic> json) {return PipelinesResponse2(
   result: PipelinesResponse2Result.fromJson(json['result'] as Map<String, dynamic>),
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
-); }
+);}
 
 final PipelinesResponse2Result result;
 
 /// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success'); } 
-PipelinesResponse2 copyWith({PipelinesResponse2Result? result, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return PipelinesResponse2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success');}
+PipelinesResponse2 copyWith({PipelinesResponse2Result? result, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) {return PipelinesResponse2(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PipelinesResponse2 &&
           result == other.result &&
@@ -32,4 +32,4 @@ PipelinesResponse2 copyWith({PipelinesResponse2Result? result, CloudflarePipelin
 
 @override String toString() => 'PipelinesResponse2(result: $result, success: $success)';
 
- }
+}

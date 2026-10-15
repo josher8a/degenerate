@@ -14,7 +14,7 @@ final class WorkersAiImageClassificationApi with ApiExecutor {const WorkersAiIma
 /// Runs inference on the @cf/microsoft/nonomni-resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/nonomni-resnet-50`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftNonomniResnet50Error>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftNonomniResnet50Error>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -43,13 +43,13 @@ return await execute(
   },
   onError: WorkersAiPostRunCfMicrosoftNonomniResnet50Error.fromResponse,
 );
- } 
+}
 /// Execute @cf/microsoft/resnet-50 model.
 ///
 /// Runs inference on the @cf/microsoft/resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/resnet-50`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftResnet50Error>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftResnet50Error>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -78,5 +78,5 @@ return await execute(
   },
   onError: WorkersAiPostRunCfMicrosoftResnet50Error.fromResponse,
 );
- } 
- }
+}
+}

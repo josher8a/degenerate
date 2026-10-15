@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Hypermedia Link
 @immutable final class Link {const Link({required this.href});
 
-factory Link.fromJson(Map<String, dynamic> json) { return Link(
+factory Link.fromJson(Map<String, dynamic> json) {return Link(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-Link copyWith({String? href}) { return Link(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+Link copyWith({String? href}) {return Link(
   href: href ?? this.href,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Link &&
           href == other.href;
@@ -25,4 +25,4 @@ Link copyWith({String? href}) { return Link(
 
 @override String toString() => 'Link(href: $href)';
 
- }
+}

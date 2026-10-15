@@ -14,7 +14,7 @@ final class ZeroTrustGatewayRulesApi with ApiExecutor {const ZeroTrustGatewayRul
 /// List Zero Trust Gateway rules for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/rules`
-Future<ApiResult<List<ZeroTrustGatewayRules>?, ZeroTrustGatewayRulesListZeroTrustGatewayRulesError>> zeroTrustGatewayRulesListZeroTrustGatewayRules({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayRules>?, ZeroTrustGatewayRulesListZeroTrustGatewayRulesError>> zeroTrustGatewayRulesListZeroTrustGatewayRules({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: ZeroTrustGatewayRulesListZeroTrustGatewayRulesError.fromResponse,
 );
- } 
+}
 /// Create a Zero Trust Gateway rule
 ///
 /// Create a new Zero Trust Gateway rule.
 ///
 /// `POST /accounts/{account_id}/gateway/rules`
-Future<ApiResult<ZeroTrustGatewayRules?, ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleError>> zeroTrustGatewayRulesCreateZeroTrustGatewayRule({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayRules?, ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleError>> zeroTrustGatewayRulesCreateZeroTrustGatewayRule({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleError.fromResponse,
 );
- } 
+}
 /// Get Zero Trust Gateway rule details.
 ///
 /// Get a single Zero Trust Gateway rule.
 ///
 /// `GET /accounts/{account_id}/gateway/rules/{rule_id}`
-Future<ApiResult<ZeroTrustGatewayRules?, ZeroTrustGatewayRulesZeroTrustGatewayRuleDetailsError>> zeroTrustGatewayRulesZeroTrustGatewayRuleDetails({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayRules?, ZeroTrustGatewayRulesZeroTrustGatewayRuleDetailsError>> zeroTrustGatewayRulesZeroTrustGatewayRuleDetails({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: ZeroTrustGatewayRulesZeroTrustGatewayRuleDetailsError.fromResponse,
 );
- } 
+}
 /// Update a Zero Trust Gateway rule
 ///
 /// Update a configured Zero Trust Gateway rule.
 ///
 /// `PUT /accounts/{account_id}/gateway/rules/{rule_id}`
-Future<ApiResult<ZeroTrustGatewayRules?, ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleError>> zeroTrustGatewayRulesUpdateZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayRules?, ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleError>> zeroTrustGatewayRulesUpdateZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleError.fromResponse,
 );
- } 
+}
 /// Delete a Zero Trust Gateway rule
 ///
 /// Delete a Zero Trust Gateway rule.
 ///
 /// `DELETE /accounts/{account_id}/gateway/rules/{rule_id}`
-Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayRulesDeleteZeroTrustGatewayRuleError>> zeroTrustGatewayRulesDeleteZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayRulesDeleteZeroTrustGatewayRuleError>> zeroTrustGatewayRulesDeleteZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,13 +127,13 @@ return await execute(
   },
   onError: ZeroTrustGatewayRulesDeleteZeroTrustGatewayRuleError.fromResponse,
 );
- } 
+}
 /// Reset the expiration of a Zero Trust Gateway Rule
 ///
 /// Resets the expiration of a Zero Trust Gateway Rule if its duration elapsed and it has a default duration. The Zero Trust Gateway Rule must have values  for both `expiration.expires_at` and `expiration.duration`.
 ///
 /// `POST /accounts/{account_id}/gateway/rules/{rule_id}/reset_expiration`
-Future<ApiResult<ZeroTrustGatewayRules?, ZeroTrustGatewayRulesResetExpirationZeroTrustGatewayRuleError>> zeroTrustGatewayRulesResetExpirationZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayRules?, ZeroTrustGatewayRulesResetExpirationZeroTrustGatewayRuleError>> zeroTrustGatewayRulesResetExpirationZeroTrustGatewayRule({required ZeroTrustGatewaySchemasUuid ruleId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -150,13 +150,13 @@ return await execute(
   },
   onError: ZeroTrustGatewayRulesResetExpirationZeroTrustGatewayRuleError.fromResponse,
 );
- } 
+}
 /// List Zero Trust Gateway rules inherited from the parent account
 ///
 /// List Zero Trust Gateway rules for the parent account of an account in the MSP configuration.
 ///
 /// `GET /accounts/{account_id}/gateway/rules/tenant`
-Future<ApiResult<List<ZeroTrustGatewayRules>?, ZeroTrustGatewayRulesListZeroTrustGatewayRulesTenantError>> zeroTrustGatewayRulesListZeroTrustGatewayRulesTenant({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayRules>?, ZeroTrustGatewayRulesListZeroTrustGatewayRulesTenantError>> zeroTrustGatewayRulesListZeroTrustGatewayRulesTenant({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -173,5 +173,5 @@ return await execute(
   },
   onError: ZeroTrustGatewayRulesListZeroTrustGatewayRulesTenantError.fromResponse,
 );
- } 
- }
+}
+}

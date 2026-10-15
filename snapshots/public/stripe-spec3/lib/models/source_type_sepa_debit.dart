@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeSepaDebit {const SourceTypeSepaDebit({this.bankCode = const Omittable.absent(), this.branchCode = const Omittable.absent(), this.country = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandateReference = const Omittable.absent(), this.mandateUrl = const Omittable.absent(), });
 
-factory SourceTypeSepaDebit.fromJson(Map<String, dynamic> json) { return SourceTypeSepaDebit(
+factory SourceTypeSepaDebit.fromJson(Map<String, dynamic> json) {return SourceTypeSepaDebit(
   bankCode: json.containsKey('bank_code') ? Omittable(json['bank_code'] as String?) : const Omittable.absent(),
   branchCode: json.containsKey('branch_code') ? Omittable(json['branch_code'] as String?) : const Omittable.absent(),
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
@@ -11,7 +11,7 @@ factory SourceTypeSepaDebit.fromJson(Map<String, dynamic> json) { return SourceT
   last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   mandateReference: json.containsKey('mandate_reference') ? Omittable(json['mandate_reference'] as String?) : const Omittable.absent(),
   mandateUrl: json.containsKey('mandate_url') ? Omittable(json['mandate_url'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<String?> bankCode;
 
@@ -27,7 +27,7 @@ final Omittable<String?> mandateReference;
 
 final Omittable<String?> mandateUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankCode.isPresent) 'bank_code': bankCode.value,
   if (branchCode.isPresent) 'branch_code': branchCode.value,
   if (country.isPresent) 'country': country.value,
@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   if (last4.isPresent) 'last4': last4.value,
   if (mandateReference.isPresent) 'mandate_reference': mandateReference.value,
   if (mandateUrl.isPresent) 'mandate_url': mandateUrl.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'branch_code', 'country', 'fingerprint', 'last4', 'mandate_reference', 'mandate_url'}.contains(key)); } 
-SourceTypeSepaDebit copyWith({Omittable<String?>? bankCode, Omittable<String?>? branchCode, Omittable<String?>? country, Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<String?>? mandateReference, Omittable<String?>? mandateUrl, }) { return SourceTypeSepaDebit(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_code', 'branch_code', 'country', 'fingerprint', 'last4', 'mandate_reference', 'mandate_url'}.contains(key));}
+SourceTypeSepaDebit copyWith({Omittable<String?>? bankCode, Omittable<String?>? branchCode, Omittable<String?>? country, Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<String?>? mandateReference, Omittable<String?>? mandateUrl, }) {return SourceTypeSepaDebit(
   bankCode: bankCode ?? this.bankCode,
   branchCode: branchCode ?? this.branchCode,
   country: country ?? this.country,
@@ -45,7 +45,7 @@ SourceTypeSepaDebit copyWith({Omittable<String?>? bankCode, Omittable<String?>? 
   last4: last4 ?? this.last4,
   mandateReference: mandateReference ?? this.mandateReference,
   mandateUrl: mandateUrl ?? this.mandateUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeSepaDebit &&
           bankCode == other.bankCode &&
@@ -60,4 +60,4 @@ SourceTypeSepaDebit copyWith({Omittable<String?>? bankCode, Omittable<String?>? 
 
 @override String toString() => 'SourceTypeSepaDebit(bankCode: $bankCode, branchCode: $branchCode, country: $country, fingerprint: $fingerprint, last4: $last4, mandateReference: $mandateReference, mandateUrl: $mandateUrl)';
 
- }
+}

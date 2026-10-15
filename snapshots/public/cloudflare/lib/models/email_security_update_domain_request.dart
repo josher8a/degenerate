@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_domain/email_security_domain_regions.dart';import 'package:pub_cloudflare/models/email_security_scannable_folder.dart';@immutable final class EmailSecurityUpdateDomainRequest {const EmailSecurityUpdateDomainRequest({required this.ipRestrictions, this.allowedDeliveryModes, this.domain, this.dropDispositions, this.folder = const Omittable.absent(), this.integrationId, this.lookbackHops, this.regions, this.requireTlsInbound, this.requireTlsOutbound, this.transport, });
 
-factory EmailSecurityUpdateDomainRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDomainRequest(
+factory EmailSecurityUpdateDomainRequest.fromJson(Map<String, dynamic> json) {return EmailSecurityUpdateDomainRequest(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>?)?.map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),
   domain: json['domain'] as String?,
   dropDispositions: (json['drop_dispositions'] as List<dynamic>?)?.map((e) => e == null ? null : EmailSecurityDispositionLabel.fromJson(e as String)).toList(),
@@ -15,7 +15,7 @@ factory EmailSecurityUpdateDomainRequest.fromJson(Map<String, dynamic> json) { r
   requireTlsInbound: json['require_tls_inbound'] as bool?,
   requireTlsOutbound: json['require_tls_outbound'] as bool?,
   transport: json['transport'] as String?,
-); }
+);}
 
 final List<EmailSecurityDeliveryMode>? allowedDeliveryModes;
 
@@ -40,7 +40,7 @@ final bool? requireTlsOutbound;
 
 final String? transport;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowedDeliveryModes != null) 'allowed_delivery_modes': allowedDeliveryModes?.map((e) => e.toJson()).toList(),
   'domain': ?domain,
   if (dropDispositions != null) 'drop_dispositions': dropDispositions?.map((e) => e?.toJson()).toList(),
@@ -52,17 +52,17 @@ Map<String, dynamic> toJson() { return {
   'require_tls_inbound': ?requireTlsInbound,
   'require_tls_outbound': ?requireTlsOutbound,
   'transport': ?transport,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip_restrictions'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip_restrictions');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final lookbackHops$ = lookbackHops;
 if (lookbackHops$ != null) {
   if (lookbackHops$ < 1) { errors.add('lookbackHops: must be >= 1'); }
   if (lookbackHops$ > 20) { errors.add('lookbackHops: must be <= 20'); }
 }
-return errors; } 
-EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Function()? allowedDeliveryModes, String? Function()? domain, List<EmailSecurityDispositionLabel?>? Function()? dropDispositions, Omittable<EmailSecurityScannableFolder?>? folder, String? Function()? integrationId, List<String>? ipRestrictions, int? Function()? lookbackHops, List<EmailSecurityDomainRegions>? Function()? regions, bool? Function()? requireTlsInbound, bool? Function()? requireTlsOutbound, String? Function()? transport, }) { return EmailSecurityUpdateDomainRequest(
+return errors;}
+EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Function()? allowedDeliveryModes, String? Function()? domain, List<EmailSecurityDispositionLabel?>? Function()? dropDispositions, Omittable<EmailSecurityScannableFolder?>? folder, String? Function()? integrationId, List<String>? ipRestrictions, int? Function()? lookbackHops, List<EmailSecurityDomainRegions>? Function()? regions, bool? Function()? requireTlsInbound, bool? Function()? requireTlsOutbound, String? Function()? transport, }) {return EmailSecurityUpdateDomainRequest(
   allowedDeliveryModes: allowedDeliveryModes != null ? allowedDeliveryModes() : this.allowedDeliveryModes,
   domain: domain != null ? domain() : this.domain,
   dropDispositions: dropDispositions != null ? dropDispositions() : this.dropDispositions,
@@ -74,7 +74,7 @@ EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Func
   requireTlsInbound: requireTlsInbound != null ? requireTlsInbound() : this.requireTlsInbound,
   requireTlsOutbound: requireTlsOutbound != null ? requireTlsOutbound() : this.requireTlsOutbound,
   transport: transport != null ? transport() : this.transport,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityUpdateDomainRequest &&
           listEquals(allowedDeliveryModes, other.allowedDeliveryModes) &&
@@ -93,4 +93,4 @@ EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Func
 
 @override String toString() => 'EmailSecurityUpdateDomainRequest(\n  allowedDeliveryModes: $allowedDeliveryModes,\n  domain: $domain,\n  dropDispositions: $dropDispositions,\n  folder: $folder,\n  integrationId: $integrationId,\n  ipRestrictions: $ipRestrictions,\n  lookbackHops: $lookbackHops,\n  regions: $regions,\n  requireTlsInbound: $requireTlsInbound,\n  requireTlsOutbound: $requireTlsOutbound,\n  transport: $transport,\n)';
 
- }
+}

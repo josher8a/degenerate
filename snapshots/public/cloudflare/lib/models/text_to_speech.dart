@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToSpeech {const TextToSpeech({required this.prompt, this.lang, });
 
-factory TextToSpeech.fromJson(Map<String, dynamic> json) { return TextToSpeech(
+factory TextToSpeech.fromJson(Map<String, dynamic> json) {return TextToSpeech(
   lang: json['lang'] as String?,
   prompt: json['prompt'] as String,
-); }
+);}
 
 /// The speech language (e.g., 'en' for English, 'fr' for French). Defaults to 'en' if not specified
 final String? lang;
@@ -17,19 +17,19 @@ final String prompt;
 /// The value of `lang`, or its schema default when absent.
 String get langOrDefault => lang ?? 'en';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'lang': ?lang,
   'prompt': prompt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
-return errors; } 
-TextToSpeech copyWith({String? Function()? lang, String? prompt, }) { return TextToSpeech(
+return errors;}
+TextToSpeech copyWith({String? Function()? lang, String? prompt, }) {return TextToSpeech(
   lang: lang != null ? lang() : this.lang,
   prompt: prompt ?? this.prompt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TextToSpeech &&
           lang == other.lang &&
@@ -39,4 +39,4 @@ TextToSpeech copyWith({String? Function()? lang, String? prompt, }) { return Tex
 
 @override String toString() => 'TextToSpeech(lang: $lang, prompt: $prompt)';
 
- }
+}

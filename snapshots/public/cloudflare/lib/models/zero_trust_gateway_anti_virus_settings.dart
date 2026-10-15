@@ -25,12 +25,12 @@ bool toJson() => value;
 /// Specify anti-virus settings.
 @immutable final class ZeroTrustGatewayAntiVirusSettings {const ZeroTrustGatewayAntiVirusSettings({this.enabledDownloadPhase = const Omittable.absent(), this.enabledUploadPhase = const Omittable.absent(), this.failClosed = const Omittable.absent(), this.notificationSettings = const Omittable.absent(), });
 
-factory ZeroTrustGatewayAntiVirusSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayAntiVirusSettings(
+factory ZeroTrustGatewayAntiVirusSettings.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayAntiVirusSettings(
   enabledDownloadPhase: json.containsKey('enabled_download_phase') ? Omittable(json['enabled_download_phase'] != null ? ZeroTrustGatewayEnabledDownloadPhase.fromJson(json['enabled_download_phase'] as bool) : null) : const Omittable.absent(),
   enabledUploadPhase: json.containsKey('enabled_upload_phase') ? Omittable(json['enabled_upload_phase'] != null ? ZeroTrustGatewayEnabledUploadPhase.fromJson(json['enabled_upload_phase'] as bool) : null) : const Omittable.absent(),
   failClosed: json.containsKey('fail_closed') ? Omittable(json['fail_closed'] != null ? ZeroTrustGatewayFailClosed.fromJson(json['fail_closed'] as bool) : null) : const Omittable.absent(),
   notificationSettings: json.containsKey('notification_settings') ? Omittable(json['notification_settings'] != null ? ZeroTrustGatewayNotificationSettings.fromJson(json['notification_settings'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<ZeroTrustGatewayEnabledDownloadPhase?> enabledDownloadPhase;
 
@@ -40,19 +40,19 @@ final Omittable<ZeroTrustGatewayFailClosed?> failClosed;
 
 final Omittable<ZeroTrustGatewayNotificationSettings?> notificationSettings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enabledDownloadPhase.isPresent) 'enabled_download_phase': enabledDownloadPhase.value?.toJson(),
   if (enabledUploadPhase.isPresent) 'enabled_upload_phase': enabledUploadPhase.value?.toJson(),
   if (failClosed.isPresent) 'fail_closed': failClosed.value?.toJson(),
   if (notificationSettings.isPresent) 'notification_settings': notificationSettings.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled_download_phase', 'enabled_upload_phase', 'fail_closed', 'notification_settings'}.contains(key)); } 
-ZeroTrustGatewayAntiVirusSettings copyWith({Omittable<ZeroTrustGatewayEnabledDownloadPhase?>? enabledDownloadPhase, Omittable<ZeroTrustGatewayEnabledUploadPhase?>? enabledUploadPhase, Omittable<ZeroTrustGatewayFailClosed?>? failClosed, Omittable<ZeroTrustGatewayNotificationSettings?>? notificationSettings, }) { return ZeroTrustGatewayAntiVirusSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled_download_phase', 'enabled_upload_phase', 'fail_closed', 'notification_settings'}.contains(key));}
+ZeroTrustGatewayAntiVirusSettings copyWith({Omittable<ZeroTrustGatewayEnabledDownloadPhase?>? enabledDownloadPhase, Omittable<ZeroTrustGatewayEnabledUploadPhase?>? enabledUploadPhase, Omittable<ZeroTrustGatewayFailClosed?>? failClosed, Omittable<ZeroTrustGatewayNotificationSettings?>? notificationSettings, }) {return ZeroTrustGatewayAntiVirusSettings(
   enabledDownloadPhase: enabledDownloadPhase ?? this.enabledDownloadPhase,
   enabledUploadPhase: enabledUploadPhase ?? this.enabledUploadPhase,
   failClosed: failClosed ?? this.failClosed,
   notificationSettings: notificationSettings ?? this.notificationSettings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayAntiVirusSettings &&
           enabledDownloadPhase == other.enabledDownloadPhase &&
@@ -64,4 +64,4 @@ ZeroTrustGatewayAntiVirusSettings copyWith({Omittable<ZeroTrustGatewayEnabledDow
 
 @override String toString() => 'ZeroTrustGatewayAntiVirusSettings(enabledDownloadPhase: $enabledDownloadPhase, enabledUploadPhase: $enabledUploadPhase, failClosed: $failClosed, notificationSettings: $notificationSettings)';
 
- }
+}

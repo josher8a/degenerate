@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FormQueryParamsObjectResponseArgs {const FormQueryParamsObjectResponseArgs({required this.str, required this.$bool, required this.$int, required this.int32, required this.$num, required this.float32, required this.$enum, required this.any, required this.date, required this.dateTime, required this.objParam, required this.intEnum, required this.int32Enum, this.float64Str, this.boolOpt, this.strOpt, this.intOptNull, this.numOptNull, this.int64Str, this.bigint, this.bigintStr, this.decimal, this.decimalStr, });
 
-factory FormQueryParamsObjectResponseArgs.fromJson(Map<String, dynamic> json) { return FormQueryParamsObjectResponseArgs(
+factory FormQueryParamsObjectResponseArgs.fromJson(Map<String, dynamic> json) {return FormQueryParamsObjectResponseArgs(
   str: json['str'] as String,
   $bool: json['bool'] as String,
   $int: json['int'] as String,
@@ -27,7 +27,7 @@ factory FormQueryParamsObjectResponseArgs.fromJson(Map<String, dynamic> json) { 
   bigintStr: json['bigintStr'] as String?,
   decimal: json['decimal'] as String?,
   decimalStr: json['decimalStr'] as String?,
-); }
+);}
 
 /// Example: `'test'`
 final String str;
@@ -96,7 +96,7 @@ final String? decimal;
 /// Example: `'3.14159265358979344719667586'`
 final String? decimalStr;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'str': str,
   'bool': $bool,
   'int': $int,
@@ -120,8 +120,8 @@ Map<String, dynamic> toJson() { return {
   'bigintStr': ?bigintStr,
   'decimal': ?decimal,
   'decimalStr': ?decimalStr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('str') && json['str'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('str') && json['str'] is String &&
       json.containsKey('bool') && json['bool'] is String &&
       json.containsKey('int') && json['int'] is String &&
       json.containsKey('int32') && json['int32'] is String &&
@@ -133,8 +133,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('str')
       json.containsKey('dateTime') && json['dateTime'] is String &&
       json.containsKey('objParam') && json['objParam'] is String &&
       json.containsKey('intEnum') && json['intEnum'] is String &&
-      json.containsKey('int32Enum') && json['int32Enum'] is String; } 
-FormQueryParamsObjectResponseArgs copyWith({String? str, String? $bool, String? $int, String? int32, String? $num, String? float32, String? Function()? float64Str, String? $enum, String? any, String? date, String? dateTime, String? Function()? boolOpt, String? Function()? strOpt, String? Function()? intOptNull, String? Function()? numOptNull, String? objParam, String? intEnum, String? int32Enum, String? Function()? int64Str, String? Function()? bigint, String? Function()? bigintStr, String? Function()? decimal, String? Function()? decimalStr, }) { return FormQueryParamsObjectResponseArgs(
+      json.containsKey('int32Enum') && json['int32Enum'] is String;}
+FormQueryParamsObjectResponseArgs copyWith({String? str, String? $bool, String? $int, String? int32, String? $num, String? float32, String? Function()? float64Str, String? $enum, String? any, String? date, String? dateTime, String? Function()? boolOpt, String? Function()? strOpt, String? Function()? intOptNull, String? Function()? numOptNull, String? objParam, String? intEnum, String? int32Enum, String? Function()? int64Str, String? Function()? bigint, String? Function()? bigintStr, String? Function()? decimal, String? Function()? decimalStr, }) {return FormQueryParamsObjectResponseArgs(
   str: str ?? this.str,
   $bool: $bool ?? this.$bool,
   $int: $int ?? this.$int,
@@ -158,7 +158,7 @@ FormQueryParamsObjectResponseArgs copyWith({String? str, String? $bool, String? 
   bigintStr: bigintStr != null ? bigintStr() : this.bigintStr,
   decimal: decimal != null ? decimal() : this.decimal,
   decimalStr: decimalStr != null ? decimalStr() : this.decimalStr,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FormQueryParamsObjectResponseArgs &&
           str == other.str &&
@@ -189,4 +189,4 @@ FormQueryParamsObjectResponseArgs copyWith({String? str, String? $bool, String? 
 
 @override String toString() => 'FormQueryParamsObjectResponseArgs(\n  str: $str,\n  \$bool: ${$bool},\n  \$int: ${$int},\n  int32: $int32,\n  \$num: ${$num},\n  float32: $float32,\n  float64Str: $float64Str,\n  \$enum: ${$enum},\n  any: $any,\n  date: $date,\n  dateTime: $dateTime,\n  boolOpt: $boolOpt,\n  strOpt: $strOpt,\n  intOptNull: $intOptNull,\n  numOptNull: $numOptNull,\n  objParam: $objParam,\n  intEnum: $intEnum,\n  int32Enum: $int32Enum,\n  int64Str: $int64Str,\n  bigint: $bigint,\n  bigintStr: $bigintStr,\n  decimal: $decimal,\n  decimalStr: $decimalStr,\n)';
 
- }
+}

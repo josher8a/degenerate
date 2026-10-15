@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType();
 
-factory ViaMcpServerPortalDestinationType.fromJson(String json) { return switch (json) {
+factory ViaMcpServerPortalDestinationType.fromJson(String json) {return switch (json) {
   'via_mcp_server_portal' => viaMcpServerPortal,
   _ => ViaMcpServerPortalDestinationType$Unknown(json),
-}; }
+};}
 
 static const ViaMcpServerPortalDestinationType viaMcpServerPortal = ViaMcpServerPortalDestinationType$viaMcpServerPortal._();
 
 static const List<ViaMcpServerPortalDestinationType> values = [viaMcpServerPortal];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'via_mcp_server_portal' => 'viaMcpServerPortal',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ViaMcpServerPortalDestinationType$Unknown; } 
+bool get isUnknown {return this is ViaMcpServerPortalDestinationType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() viaMcpServerPortal, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() viaMcpServerPortal, required W Function(String value) $unknown, }) {return switch (this) {
       ViaMcpServerPortalDestinationType$viaMcpServerPortal() => viaMcpServerPortal(),
       ViaMcpServerPortalDestinationType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? viaMcpServerPortal, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? viaMcpServerPortal, W Function(String value)? $unknown, }) {return switch (this) {
       ViaMcpServerPortalDestinationType$viaMcpServerPortal() => viaMcpServerPortal != null ? viaMcpServerPortal() : orElse(value),
       ViaMcpServerPortalDestinationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ViaMcpServerPortalDestinationType($value)';
 
- }
+}
 @immutable final class ViaMcpServerPortalDestinationType$viaMcpServerPortal extends ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType$viaMcpServerPortal._();
 
 @override String get value => 'via_mcp_server_portal';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? viaMcpSe
 
 @override int get hashCode => 'via_mcp_server_portal'.hashCode;
 
- }
+}
 @immutable final class ViaMcpServerPortalDestinationType$Unknown extends ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType$Unknown(this.value);
 
 @override final String value;
@@ -52,30 +52,30 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? viaMcpSe
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A MCP server id configured in ai-controls. Access will secure the MCP server if accessed through a MCP portal.
 /// 
 @immutable final class ViaMcpServerPortalDestination {const ViaMcpServerPortalDestination({this.mcpServerId, this.type, });
 
-factory ViaMcpServerPortalDestination.fromJson(Map<String, dynamic> json) { return ViaMcpServerPortalDestination(
+factory ViaMcpServerPortalDestination.fromJson(Map<String, dynamic> json) {return ViaMcpServerPortalDestination(
   mcpServerId: json['mcp_server_id'] as String?,
   type: json['type'] != null ? ViaMcpServerPortalDestinationType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The MCP server id configured in ai-controls.
 final String? mcpServerId;
 
 final ViaMcpServerPortalDestinationType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'mcp_server_id': ?mcpServerId,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mcp_server_id', 'type'}.contains(key)); } 
-ViaMcpServerPortalDestination copyWith({String? Function()? mcpServerId, ViaMcpServerPortalDestinationType? Function()? type, }) { return ViaMcpServerPortalDestination(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mcp_server_id', 'type'}.contains(key));}
+ViaMcpServerPortalDestination copyWith({String? Function()? mcpServerId, ViaMcpServerPortalDestinationType? Function()? type, }) {return ViaMcpServerPortalDestination(
   mcpServerId: mcpServerId != null ? mcpServerId() : this.mcpServerId,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ViaMcpServerPortalDestination &&
           mcpServerId == other.mcpServerId &&
@@ -85,4 +85,4 @@ ViaMcpServerPortalDestination copyWith({String? Function()? mcpServerId, ViaMcpS
 
 @override String toString() => 'ViaMcpServerPortalDestination(mcpServerId: $mcpServerId, type: $type)';
 
- }
+}

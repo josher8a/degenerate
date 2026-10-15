@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';@immutable final class MconnResponse {const MconnResponse({required this.messages, required this.success, });
 
-factory MconnResponse.fromJson(Map<String, dynamic> json) { return MconnResponse(
+factory MconnResponse.fromJson(Map<String, dynamic> json) {return MconnResponse(
   messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<MconnCodedMessage> messages;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-MconnResponse copyWith({List<MconnCodedMessage>? messages, bool? success, }) { return MconnResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool;}
+MconnResponse copyWith({List<MconnCodedMessage>? messages, bool? success, }) {return MconnResponse(
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnResponse &&
           listEquals(messages, other.messages) &&
@@ -31,4 +31,4 @@ MconnResponse copyWith({List<MconnCodedMessage>? messages, bool? success, }) { r
 
 @override String toString() => 'MconnResponse(messages: $messages, success: $success)';
 
- }
+}

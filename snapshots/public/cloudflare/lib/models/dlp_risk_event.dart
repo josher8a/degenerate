@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_risk_level.dart';@immutable final class DlpRiskEvent {const DlpRiskEvent({required this.id, required this.name, required this.riskLevel, required this.timestamp, this.eventDetails = const Omittable.absent(), });
 
-factory DlpRiskEvent.fromJson(Map<String, dynamic> json) { return DlpRiskEvent(
+factory DlpRiskEvent.fromJson(Map<String, dynamic> json) {return DlpRiskEvent(
   eventDetails: json.containsKey('event_details') ? Omittable(json['event_details']) : const Omittable.absent(),
   id: json['id'] as String,
   name: json['name'] as String,
   riskLevel: DlpRiskLevel.fromJson(json['risk_level'] as String),
   timestamp: DateTime.parse(json['timestamp'] as String),
-); }
+);}
 
 final Omittable<dynamic> eventDetails;
 
@@ -21,24 +21,24 @@ final DlpRiskLevel riskLevel;
 
 final DateTime timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (eventDetails.isPresent) 'event_details': eventDetails.value,
   'id': id,
   'name': name,
   'risk_level': riskLevel.toJson(),
   'timestamp': timestamp.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('risk_level') &&
-      json.containsKey('timestamp') && json['timestamp'] is String; } 
-DlpRiskEvent copyWith({Omittable<dynamic>? eventDetails, String? id, String? name, DlpRiskLevel? riskLevel, DateTime? timestamp, }) { return DlpRiskEvent(
+      json.containsKey('timestamp') && json['timestamp'] is String;}
+DlpRiskEvent copyWith({Omittable<dynamic>? eventDetails, String? id, String? name, DlpRiskLevel? riskLevel, DateTime? timestamp, }) {return DlpRiskEvent(
   eventDetails: eventDetails ?? this.eventDetails,
   id: id ?? this.id,
   name: name ?? this.name,
   riskLevel: riskLevel ?? this.riskLevel,
   timestamp: timestamp ?? this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpRiskEvent &&
           eventDetails == other.eventDetails &&
@@ -51,4 +51,4 @@ DlpRiskEvent copyWith({Omittable<dynamic>? eventDetails, String? id, String? nam
 
 @override String toString() => 'DlpRiskEvent(eventDetails: $eventDetails, id: $id, name: $name, riskLevel: $riskLevel, timestamp: $timestamp)';
 
- }
+}

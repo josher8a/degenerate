@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// API Insights usage summary stats for an organization
 @immutable final class InsightsSummaryStats {const InsightsSummaryStats({this.totalRequestCount, this.rateLimitedRequestCount, });
 
-factory InsightsSummaryStats.fromJson(Map<String, dynamic> json) { return InsightsSummaryStats(
+factory InsightsSummaryStats.fromJson(Map<String, dynamic> json) {return InsightsSummaryStats(
   totalRequestCount: json['total_request_count'] != null ? (json['total_request_count'] as num).toInt() : null,
   rateLimitedRequestCount: json['rate_limited_request_count'] != null ? (json['rate_limited_request_count'] as num).toInt() : null,
-); }
+);}
 
 /// The total number of requests within the queried time period
 final int? totalRequestCount;
@@ -15,15 +15,15 @@ final int? totalRequestCount;
 /// The total number of requests that were rate limited within the queried time period
 final int? rateLimitedRequestCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_request_count': ?totalRequestCount,
   'rate_limited_request_count': ?rateLimitedRequestCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_request_count', 'rate_limited_request_count'}.contains(key)); } 
-InsightsSummaryStats copyWith({int? Function()? totalRequestCount, int? Function()? rateLimitedRequestCount, }) { return InsightsSummaryStats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'total_request_count', 'rate_limited_request_count'}.contains(key));}
+InsightsSummaryStats copyWith({int? Function()? totalRequestCount, int? Function()? rateLimitedRequestCount, }) {return InsightsSummaryStats(
   totalRequestCount: totalRequestCount != null ? totalRequestCount() : this.totalRequestCount,
   rateLimitedRequestCount: rateLimitedRequestCount != null ? rateLimitedRequestCount() : this.rateLimitedRequestCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsSummaryStats &&
           totalRequestCount == other.totalRequestCount &&
@@ -33,4 +33,4 @@ InsightsSummaryStats copyWith({int? Function()? totalRequestCount, int? Function
 
 @override String toString() => 'InsightsSummaryStats(totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount)';
 
- }
+}

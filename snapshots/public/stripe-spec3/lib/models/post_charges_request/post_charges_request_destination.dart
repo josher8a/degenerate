@@ -7,11 +7,11 @@ const PostChargesRequestDestination({this.destinationSpecs = const Omittable.abs
 const PostChargesRequestDestination._({required this.rawValue, required this.destinationSpecs, required this.string, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostChargesRequestDestination.fromJson(Object? json) { return PostChargesRequestDestination._(
+factory PostChargesRequestDestination.fromJson(Object? json) {return PostChargesRequestDestination._(
   rawValue: Omittable(json),
   destinationSpecs: json is Map<String, dynamic> && DestinationSpecs.canParse(json) ? parseAnyOfVariant<DestinationSpecs>(json, (value) => DestinationSpecs.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostChargesRequestDestination(${toJson()})';
 
- }
+}

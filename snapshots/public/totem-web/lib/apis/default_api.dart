@@ -12,7 +12,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 /// Current User
 ///
 /// `GET /api/v1/auth/currentuser`
-Future<ApiResult<PublicUserSchema, CurrentUserError>> totemApiCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PublicUserSchema, CurrentUserError>> totemApiCurrentUser({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,11 +28,11 @@ return await execute(
   },
   onError: CurrentUserError.fromResponse,
 );
- } 
+}
 /// User Avatar Update
 ///
 /// `POST /api/v1/user/avatarupdate`
-Future<ApiResult<void, CurrentUserError>> totemApiUserAvatarUpdate({required AvatarUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CurrentUserError>> totemApiUserAvatarUpdate({required AvatarUpdate body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,11 +48,11 @@ return await execute(
   onSuccess: (_) {},
   onError: CurrentUserError.fromResponse,
 );
- } 
+}
 /// User Upload Profile Image
 ///
 /// `POST /api/v1/user/avatarimage`
-Future<ApiResult<void, CurrentUserError>> totemApiUserUploadProfileImage({required UserUploadProfileImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CurrentUserError>> totemApiUserUploadProfileImage({required UserUploadProfileImageRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -70,11 +70,11 @@ return await execute(
   onSuccess: (_) {},
   onError: CurrentUserError.fromResponse,
 );
- } 
+}
 /// Dev Version
 ///
 /// `GET /api/v1/dev/version`
-Future<ApiResult<String, Never>> totemApiDevVersion({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> totemApiDevVersion({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,8 +86,8 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
- }
+}
+}

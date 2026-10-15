@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted login page for this configuration. Learn more about the portal login page in our [integration docs](https://stripe.com/docs/billing/subscriptions/integrating-customer-portal#share).
 @immutable final class LoginPage {const LoginPage({required this.enabled});
 
-factory LoginPage.fromJson(Map<String, dynamic> json) { return LoginPage(
+factory LoginPage.fromJson(Map<String, dynamic> json) {return LoginPage(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-LoginPage copyWith({bool? enabled}) { return LoginPage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+LoginPage copyWith({bool? enabled}) {return LoginPage(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoginPage &&
           enabled == other.enabled;
@@ -25,4 +25,4 @@ LoginPage copyWith({bool? enabled}) { return LoginPage(
 
 @override String toString() => 'LoginPage(enabled: $enabled)';
 
- }
+}

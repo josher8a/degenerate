@@ -8,11 +8,11 @@ const SourceRefund({this.string = const Omittable.absent(), this.refund = const 
 const SourceRefund._({required this.rawValue, required this.string, required this.refund, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory SourceRefund.fromJson(Object? json) { return SourceRefund._(
+factory SourceRefund.fromJson(Object? json) {return SourceRefund._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   refund: json is Map<String, dynamic> && Refund.canParse(json) ? parseAnyOfVariant<Refund>(json, (value) => Refund.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'SourceRefund(${toJson()})';
 
- }
+}

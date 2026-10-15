@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_allowed_tools_choice.dart';import 'package:pub_openai/models/chat_completion_function_call_option.dart';import 'package:pub_openai/models/chat_completion_functions.dart';import 'package:pub_openai/models/chat_completion_named_tool_choice.dart';import 'package:pub_openai/models/chat_completion_named_tool_choice_custom.dart';import 'package:pub_openai/models/chat_completion_request_message.dart';import 'package:pub_openai/models/chat_completion_stream_options.dart';import 'package:pub_openai/models/chat_completion_tool.dart';import 'package:pub_openai/models/chat_completion_tool_choice_option.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_audio.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_function_call.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_response_format.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_tools.dart';import 'package:pub_openai/models/create_chat_completion_request/prompt_cache_retention.dart';import 'package:pub_openai/models/create_chat_completion_request/web_search_options.dart';import 'package:pub_openai/models/custom_tool_chat_completions.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/prediction_content.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/service_tier.dart';import 'package:pub_openai/models/stop_configuration.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/verbosity.dart';sealed class ResponseModalities2 {const ResponseModalities2();
 
-factory ResponseModalities2.fromJson(String json) { return switch (json) {
+factory ResponseModalities2.fromJson(String json) {return switch (json) {
   'text' => text,
   'audio' => audio,
   _ => ResponseModalities2$Unknown(json),
-}; }
+};}
 
 static const ResponseModalities2 text = ResponseModalities2$text._();
 
@@ -16,30 +16,30 @@ static const ResponseModalities2 audio = ResponseModalities2$audio._();
 static const List<ResponseModalities2> values = [text, audio];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text' => 'text',
   'audio' => 'audio',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseModalities2$Unknown; } 
+bool get isUnknown {return this is ResponseModalities2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() text, required W Function() audio, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() text, required W Function() audio, required W Function(String value) $unknown, }) {return switch (this) {
       ResponseModalities2$text() => text(),
       ResponseModalities2$audio() => audio(),
       ResponseModalities2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? audio, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? audio, W Function(String value)? $unknown, }) {return switch (this) {
       ResponseModalities2$text() => text != null ? text() : orElse(value),
       ResponseModalities2$audio() => audio != null ? audio() : orElse(value),
       ResponseModalities2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResponseModalities2($value)';
 
- }
+}
 @immutable final class ResponseModalities2$text extends ResponseModalities2 {const ResponseModalities2$text._();
 
 @override String get value => 'text';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'text'.hashCode;
 
- }
+}
 @immutable final class ResponseModalities2$audio extends ResponseModalities2 {const ResponseModalities2$audio._();
 
 @override String get value => 'audio';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => 'audio'.hashCode;
 
- }
+}
 @immutable final class ResponseModalities2$Unknown extends ResponseModalities2 {const ResponseModalities2$Unknown(this.value);
 
 @override final String value;
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CreateChatCompletionRequest {const CreateChatCompletionRequest({required this.model, required this.messages, this.verbosity = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), this.topLogprobs = const Omittable.absent(), this.temperature = const Omittable.absent(), this.modalities = const Omittable.absent(), this.metadata = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.frequencyPenalty = const Omittable.absent(), this.presencePenalty = const Omittable.absent(), this.webSearchOptions, this.responseFormat, this.audio = const Omittable.absent(), this.store = const Omittable.absent(), this.stream = const Omittable.absent(), this.functions, this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxTokens = const Omittable.absent(), this.n = const Omittable.absent(), this.prediction = const Omittable.absent(), this.seed = const Omittable.absent(), this.streamOptions = const Omittable.absent(), this.tools, this.toolChoice, this.parallelToolCalls, this.functionCall, this.stop = const Omittable.absent(), });
 
-factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequest(
+factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) {return CreateChatCompletionRequest(
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   topLogprobs: json.containsKey('top_logprobs') ? Omittable(json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null) : const Omittable.absent(),
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
@@ -106,7 +106,7 @@ factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return
   parallelToolCalls: json['parallel_tool_calls'] != null ? ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool) : null,
   functionCall: json['function_call'] != null ? OneOf2.parse(json['function_call'], fromA: (v) => FunctionCallVariant1.fromJson(v as String), fromB: (v) => ChatCompletionFunctionCallOption.fromJson(v as Map<String, dynamic>),) : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => ChatCompletionFunctions.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final Omittable<Map<String,String>?> metadata;
 
@@ -332,7 +332,7 @@ bool? get logprobsOrDefault => logprobs.valueOr(false);
 /// The value of `n`, or its schema default when absent.
 int? get nOrDefault => n.valueOr(1);
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (metadata.isPresent) 'metadata': metadata.value,
   if (topLogprobs.isPresent) 'top_logprobs': topLogprobs.value,
   if (temperature.isPresent) 'temperature': temperature.value,
@@ -368,11 +368,11 @@ Map<String, dynamic> toJson() { return {
   if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls?.toJson(),
   if (functionCall != null) 'function_call': functionCall?.toJson(),
   if (functions != null) 'functions': functions?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
-      json.containsKey('model'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('model');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final topLogprobs$ = topLogprobs.value;
 if (topLogprobs$ != null) {
   if (topLogprobs$ < 0) { errors.add('topLogprobs: must be >= 0'); }
@@ -418,8 +418,8 @@ if (functions$ != null) {
   if (functions$.isEmpty) { errors.add('functions: must have >= 1 items'); }
   if (functions$.length > 128) { errors.add('functions: must have <= 128 items'); }
 }
-return errors; } 
-CreateChatCompletionRequest copyWith({Omittable<Map<String,String>?>? metadata, Omittable<int?>? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<PromptCacheRetention?>? promptCacheRetention, List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, Omittable<List<ResponseModalities2>?>? modalities, Omittable<Verbosity?>? verbosity, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<int?>? maxCompletionTokens, Omittable<double?>? frequencyPenalty, Omittable<double?>? presencePenalty, WebSearchOptions? Function()? webSearchOptions, CreateChatCompletionRequestResponseFormat? Function()? responseFormat, Omittable<CreateChatCompletionRequestAudio?>? audio, Omittable<bool?>? store, Omittable<bool?>? stream, Omittable<StopConfiguration?>? stop, Omittable<Map<String,int>?>? logitBias, Omittable<bool?>? logprobs, Omittable<int?>? maxTokens, Omittable<int?>? n, Omittable<PredictionContent?>? prediction, Omittable<int?>? seed, Omittable<ChatCompletionStreamOptions?>? streamOptions, List<CreateChatCompletionRequestTools>? Function()? tools, ChatCompletionToolChoiceOption? Function()? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall? Function()? functionCall, List<ChatCompletionFunctions>? Function()? functions, }) { return CreateChatCompletionRequest(
+return errors;}
+CreateChatCompletionRequest copyWith({Omittable<Map<String,String>?>? metadata, Omittable<int?>? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<PromptCacheRetention?>? promptCacheRetention, List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, Omittable<List<ResponseModalities2>?>? modalities, Omittable<Verbosity?>? verbosity, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<int?>? maxCompletionTokens, Omittable<double?>? frequencyPenalty, Omittable<double?>? presencePenalty, WebSearchOptions? Function()? webSearchOptions, CreateChatCompletionRequestResponseFormat? Function()? responseFormat, Omittable<CreateChatCompletionRequestAudio?>? audio, Omittable<bool?>? store, Omittable<bool?>? stream, Omittable<StopConfiguration?>? stop, Omittable<Map<String,int>?>? logitBias, Omittable<bool?>? logprobs, Omittable<int?>? maxTokens, Omittable<int?>? n, Omittable<PredictionContent?>? prediction, Omittable<int?>? seed, Omittable<ChatCompletionStreamOptions?>? streamOptions, List<CreateChatCompletionRequestTools>? Function()? tools, ChatCompletionToolChoiceOption? Function()? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall? Function()? functionCall, List<ChatCompletionFunctions>? Function()? functions, }) {return CreateChatCompletionRequest(
   metadata: metadata ?? this.metadata,
   topLogprobs: topLogprobs ?? this.topLogprobs,
   temperature: temperature ?? this.temperature,
@@ -455,7 +455,7 @@ CreateChatCompletionRequest copyWith({Omittable<Map<String,String>?>? metadata, 
   parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
   functionCall: functionCall != null ? functionCall() : this.functionCall,
   functions: functions != null ? functions() : this.functions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionRequest &&
           metadata == other.metadata &&
@@ -499,4 +499,4 @@ CreateChatCompletionRequest copyWith({Omittable<Map<String,String>?>? metadata, 
 
 @override String toString() => 'CreateChatCompletionRequest(\n  metadata: $metadata,\n  topLogprobs: $topLogprobs,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n  safetyIdentifier: $safetyIdentifier,\n  promptCacheKey: $promptCacheKey,\n  serviceTier: $serviceTier,\n  promptCacheRetention: $promptCacheRetention,\n  messages: $messages,\n  model: $model,\n  modalities: $modalities,\n  verbosity: $verbosity,\n  reasoningEffort: $reasoningEffort,\n  maxCompletionTokens: $maxCompletionTokens,\n  frequencyPenalty: $frequencyPenalty,\n  presencePenalty: $presencePenalty,\n  webSearchOptions: $webSearchOptions,\n  responseFormat: $responseFormat,\n  audio: $audio,\n  store: $store,\n  stream: $stream,\n  stop: $stop,\n  logitBias: $logitBias,\n  logprobs: $logprobs,\n  maxTokens: $maxTokens,\n  n: $n,\n  prediction: $prediction,\n  seed: $seed,\n  streamOptions: $streamOptions,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  parallelToolCalls: $parallelToolCalls,\n  functionCall: $functionCall,\n  functions: $functions,\n)';
 
- }
+}

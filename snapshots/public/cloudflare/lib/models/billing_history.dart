@@ -38,7 +38,7 @@ String toJson() => value;
 }
 @immutable final class BillingHistory {const BillingHistory({required this.action, required this.amount, required this.currency, required this.description, required this.id, required this.occurredAt, required this.type, required this.zone, });
 
-factory BillingHistory.fromJson(Map<String, dynamic> json) { return BillingHistory(
+factory BillingHistory.fromJson(Map<String, dynamic> json) {return BillingHistory(
   action: Action.fromJson(json['action'] as String),
   amount: Amount.fromJson(json['amount'] as num),
   currency: Currency.fromJson(json['currency'] as String),
@@ -47,7 +47,7 @@ factory BillingHistory.fromJson(Map<String, dynamic> json) { return BillingHisto
   occurredAt: OccurredAt.fromJson(json['occurred_at'] as String),
   type: TypeModel.fromJson(json['type'] as String),
   zone: SchemasZone.fromJson(json['zone'] as Map<String, dynamic>),
-); }
+);}
 
 /// The billing item action.
 final Action action;
@@ -67,7 +67,7 @@ final TypeModel type;
 
 final SchemasZone zone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'amount': amount.toJson(),
   'currency': currency.toJson(),
@@ -76,16 +76,16 @@ Map<String, dynamic> toJson() { return {
   'occurred_at': occurredAt.toJson(),
   'type': type.toJson(),
   'zone': zone.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('amount') &&
       json.containsKey('currency') &&
       json.containsKey('description') &&
       json.containsKey('id') &&
       json.containsKey('occurred_at') &&
       json.containsKey('type') &&
-      json.containsKey('zone'); } 
-BillingHistory copyWith({Action? action, Amount? amount, Currency? currency, Description? description, ComponentsSchemasIdentifier? id, OccurredAt? occurredAt, TypeModel? type, SchemasZone? zone, }) { return BillingHistory(
+      json.containsKey('zone');}
+BillingHistory copyWith({Action? action, Amount? amount, Currency? currency, Description? description, ComponentsSchemasIdentifier? id, OccurredAt? occurredAt, TypeModel? type, SchemasZone? zone, }) {return BillingHistory(
   action: action ?? this.action,
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
@@ -94,7 +94,7 @@ BillingHistory copyWith({Action? action, Amount? amount, Currency? currency, Des
   occurredAt: occurredAt ?? this.occurredAt,
   type: type ?? this.type,
   zone: zone ?? this.zone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingHistory &&
           action == other.action &&
@@ -110,4 +110,4 @@ BillingHistory copyWith({Action? action, Amount? amount, Currency? currency, Des
 
 @override String toString() => 'BillingHistory(action: $action, amount: $amount, currency: $currency, description: $description, id: $id, occurredAt: $occurredAt, type: $type, zone: $zone)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreatePortalsResponseResult {const CreatePortalsResponseResult({required this.hostname, required this.id, required this.name, this.createdAt, this.createdBy, this.description, this.modifiedAt, this.modifiedBy, this.secureWebGateway, });
 
-factory CreatePortalsResponseResult.fromJson(Map<String, dynamic> json) { return CreatePortalsResponseResult(
+factory CreatePortalsResponseResult.fromJson(Map<String, dynamic> json) {return CreatePortalsResponseResult(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   createdBy: json['created_by'] as String?,
   description: json['description'] as String?,
@@ -13,7 +13,7 @@ factory CreatePortalsResponseResult.fromJson(Map<String, dynamic> json) { return
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
   secureWebGateway: json['secure_web_gateway'] as bool?,
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -42,7 +42,7 @@ final String name;
 /// Example: `false`
 final bool? secureWebGateway;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'created_by': ?createdBy,
   'description': ?description,
@@ -52,12 +52,12 @@ Map<String, dynamic> toJson() { return {
   'modified_by': ?modifiedBy,
   'name': name,
   'secure_web_gateway': ?secureWebGateway,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 512) { errors.add('description: length must be <= 512'); }
@@ -67,8 +67,8 @@ if (id.isEmpty) { errors.add('id: length must be >= 1'); }
 if (id.runes.length > 32) { errors.add('id: length must be <= 32'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 if (name.runes.length > 350) { errors.add('name: length must be <= 350'); }
-return errors; } 
-CreatePortalsResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, }) { return CreatePortalsResponseResult(
+return errors;}
+CreatePortalsResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, }) {return CreatePortalsResponseResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   description: description != null ? description() : this.description,
@@ -78,7 +78,7 @@ CreatePortalsResponseResult copyWith({DateTime? Function()? createdAt, String? F
   modifiedBy: modifiedBy != null ? modifiedBy() : this.modifiedBy,
   name: name ?? this.name,
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePortalsResponseResult &&
           createdAt == other.createdAt &&
@@ -95,4 +95,4 @@ CreatePortalsResponseResult copyWith({DateTime? Function()? createdAt, String? F
 
 @override String toString() => 'CreatePortalsResponseResult(\n  createdAt: $createdAt,\n  createdBy: $createdBy,\n  description: $description,\n  hostname: $hostname,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  modifiedBy: $modifiedBy,\n  name: $name,\n  secureWebGateway: $secureWebGateway,\n)';
 
- }
+}

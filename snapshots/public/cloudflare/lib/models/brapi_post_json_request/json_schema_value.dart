@@ -7,14 +7,14 @@ const JsonSchemaValue({this.string = const Omittable.absent(), this.$double = co
 const JsonSchemaValue._({required this.rawValue, required this.string, required this.$double, required this.$bool, required this.mapStringdynamic, required this.listString, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory JsonSchemaValue.fromJson(Object? json) { return JsonSchemaValue._(
+factory JsonSchemaValue.fromJson(Object? json) {return JsonSchemaValue._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
   $bool: parseAnyOfVariant<bool>(json, (value) => value! as bool),
   mapStringdynamic: parseAnyOfVariant<Map<String, dynamic>>(json, (value) => value! as Map<String, dynamic>),
   listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -56,4 +56,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'JsonSchemaValue(${toJson()})';
 
- }
+}

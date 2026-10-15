@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/voice_ids_shared.dart';@immutable final class RealtimeSessionCreateResponseAudioOutput {const RealtimeSessionCreateResponseAudioOutput({this.format, this.voice, this.speed, });
 
-factory RealtimeSessionCreateResponseAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseAudioOutput(
+factory RealtimeSessionCreateResponseAudioOutput.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateResponseAudioOutput(
   format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice']) : null,
   speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
-); }
+);}
 
 final RealtimeAudioFormats? format;
 
@@ -15,17 +15,17 @@ final VoiceIdsShared? voice;
 
 final double? speed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (voice != null) 'voice': voice?.toJson(),
   'speed': ?speed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key)); } 
-RealtimeSessionCreateResponseAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, double? Function()? speed, }) { return RealtimeSessionCreateResponseAudioOutput(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key));}
+RealtimeSessionCreateResponseAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, double? Function()? speed, }) {return RealtimeSessionCreateResponseAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,
   speed: speed != null ? speed() : this.speed,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateResponseAudioOutput &&
           format == other.format &&
@@ -36,4 +36,4 @@ RealtimeSessionCreateResponseAudioOutput copyWith({RealtimeAudioFormats? Functio
 
 @override String toString() => 'RealtimeSessionCreateResponseAudioOutput(format: $format, voice: $voice, speed: $speed)';
 
- }
+}

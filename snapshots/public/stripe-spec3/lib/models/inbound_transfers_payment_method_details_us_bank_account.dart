@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_mandate.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_network.dart';/// 
 @immutable final class InboundTransfersPaymentMethodDetailsUsBankAccount {const InboundTransfersPaymentMethodDetailsUsBankAccount({required this.network, this.accountHolderType = const Omittable.absent(), this.accountType = const Omittable.absent(), this.bankName = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate, this.routingNumber = const Omittable.absent(), });
 
-factory InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return InboundTransfersPaymentMethodDetailsUsBankAccount(
+factory InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) {return InboundTransfersPaymentMethodDetailsUsBankAccount(
   accountHolderType: json.containsKey('account_holder_type') ? Omittable(json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null) : const Omittable.absent(),
   accountType: json.containsKey('account_type') ? Omittable(json['account_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null) : const Omittable.absent(),
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
@@ -13,7 +13,7 @@ factory InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, d
   mandate: json['mandate'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountMandate.fromJson(json['mandate']) : null,
   network: InboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(json['network'] as String),
   routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Account holder type: individual or company.
 final Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?> accountHolderType;
@@ -39,7 +39,7 @@ final InboundTransfersPaymentMethodDetailsUsBankAccountNetwork network;
 /// Routing number of the bank account.
 final Omittable<String?> routingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountHolderType.isPresent) 'account_holder_type': accountHolderType.value?.toJson(),
   if (accountType.isPresent) 'account_type': accountType.value?.toJson(),
   if (bankName.isPresent) 'bank_name': bankName.value,
@@ -48,10 +48,10 @@ Map<String, dynamic> toJson() { return {
   if (mandate != null) 'mandate': mandate?.toJson(),
   'network': network.toJson(),
   if (routingNumber.isPresent) 'routing_number': routingNumber.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('network'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('network');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final bankName$ = bankName.value;
 if (bankName$ != null) {
   if (bankName$.runes.length > 5000) { errors.add('bankName: length must be <= 5000'); }
@@ -68,8 +68,8 @@ final routingNumber$ = routingNumber.value;
 if (routingNumber$ != null) {
   if (routingNumber$.runes.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
-return errors; } 
-InboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?>? accountHolderType, Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, Omittable<String?>? fingerprint, Omittable<String?>? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, InboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, Omittable<String?>? routingNumber, }) { return InboundTransfersPaymentMethodDetailsUsBankAccount(
+return errors;}
+InboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?>? accountHolderType, Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, Omittable<String?>? fingerprint, Omittable<String?>? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, InboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, Omittable<String?>? routingNumber, }) {return InboundTransfersPaymentMethodDetailsUsBankAccount(
   accountHolderType: accountHolderType ?? this.accountHolderType,
   accountType: accountType ?? this.accountType,
   bankName: bankName ?? this.bankName,
@@ -78,7 +78,7 @@ InboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<InboundTra
   mandate: mandate != null ? mandate() : this.mandate,
   network: network ?? this.network,
   routingNumber: routingNumber ?? this.routingNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InboundTransfersPaymentMethodDetailsUsBankAccount &&
           accountHolderType == other.accountHolderType &&
@@ -94,4 +94,4 @@ InboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<InboundTra
 
 @override String toString() => 'InboundTransfersPaymentMethodDetailsUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, network: $network, routingNumber: $routingNumber)';
 
- }
+}

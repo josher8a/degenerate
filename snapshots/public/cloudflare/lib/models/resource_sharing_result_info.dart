@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceSharingResultInfo {const ResourceSharingResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 
-factory ResourceSharingResultInfo.fromJson(Map<String, dynamic> json) { return ResourceSharingResultInfo(
+factory ResourceSharingResultInfo.fromJson(Map<String, dynamic> json) {return ResourceSharingResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,
   page: json['page'] != null ? (json['page'] as num).toDouble() : null,
   perPage: json['per_page'] != null ? (json['per_page'] as num).toDouble() : null,
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toDouble() : null,
   totalPages: json['total_pages'] != null ? (json['total_pages'] as num).toDouble() : null,
-); }
+);}
 
 /// Total number of results for the requested service.
 /// 
@@ -36,21 +36,21 @@ final double? totalCount;
 /// Example: `50`
 final double? totalPages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'page': ?page,
   'per_page': ?perPage,
   'total_count': ?totalCount,
   'total_pages': ?totalPages,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count', 'total_pages'}.contains(key)); } 
-ResourceSharingResultInfo copyWith({double? Function()? count, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, double? Function()? totalPages, }) { return ResourceSharingResultInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count', 'total_pages'}.contains(key));}
+ResourceSharingResultInfo copyWith({double? Function()? count, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, double? Function()? totalPages, }) {return ResourceSharingResultInfo(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   totalPages: totalPages != null ? totalPages() : this.totalPages,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingResultInfo &&
           count == other.count &&
@@ -63,4 +63,4 @@ ResourceSharingResultInfo copyWith({double? Function()? count, double? Function(
 
 @override String toString() => 'ResourceSharingResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount, totalPages: $totalPages)';
 
- }
+}

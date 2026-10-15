@@ -6,13 +6,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class TextResponseFormatJsonSchema {const TextResponseFormatJsonSchema({required this.type, required this.name, required this.schema, this.description, this.strict = const Omittable.absent(), });
 
-factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return TextResponseFormatJsonSchema(
+factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) {return TextResponseFormatJsonSchema(
   type: ResponseFormatJsonSchemaType.fromJson(json['type'] as String),
   description: json['description'] as String?,
   name: json['name'] as String,
   schema: json['schema'] as Map<String, dynamic>,
   strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of response format being defined. Always `json_schema`.
 final ResponseFormatJsonSchemaType type;
@@ -40,23 +40,23 @@ final Map<String,dynamic> schema;
 /// 
 final Omittable<bool?> strict;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'description': ?description,
   'name': name,
   'schema': schema,
   if (strict.isPresent) 'strict': strict.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'json_schema' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'json_schema' &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('schema'); } 
-TextResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, String? Function()? description, String? name, Map<String,dynamic>? schema, Omittable<bool?>? strict, }) { return TextResponseFormatJsonSchema(
+      json.containsKey('schema');}
+TextResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, String? Function()? description, String? name, Map<String,dynamic>? schema, Omittable<bool?>? strict, }) {return TextResponseFormatJsonSchema(
   type: type ?? this.type,
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   schema: schema ?? this.schema,
   strict: strict ?? this.strict,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TextResponseFormatJsonSchema &&
           type == other.type &&
@@ -69,4 +69,4 @@ TextResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, Strin
 
 @override String toString() => 'TextResponseFormatJsonSchema(type: $type, description: $description, name: $name, schema: $schema, strict: $strict)';
 
- }
+}

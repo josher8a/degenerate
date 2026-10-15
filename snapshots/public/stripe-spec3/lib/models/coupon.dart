@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// [checkout sessions](https://docs.stripe.com/api/checkout/sessions), [quotes](https://api.stripe.com#quotes), and more. Coupons do not work with conventional one-off [charges](https://api.stripe.com#create_charge) or [payment intents](https://docs.stripe.com/api/payment_intents).
 @immutable final class Coupon {const Coupon({required this.created, required this.duration, required this.id, required this.livemode, required this.object, required this.timesRedeemed, required this.valid, this.amountOff = const Omittable.absent(), this.appliesTo, this.currency = const Omittable.absent(), this.currencyOptions, this.durationInMonths = const Omittable.absent(), this.maxRedemptions = const Omittable.absent(), this.metadata = const Omittable.absent(), this.name = const Omittable.absent(), this.percentOff = const Omittable.absent(), this.redeemBy = const Omittable.absent(), });
 
-factory Coupon.fromJson(Map<String, dynamic> json) { return Coupon(
+factory Coupon.fromJson(Map<String, dynamic> json) {return Coupon(
   amountOff: json.containsKey('amount_off') ? Omittable(json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null) : const Omittable.absent(),
   appliesTo: json['applies_to'] != null ? CouponAppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
@@ -24,7 +24,7 @@ factory Coupon.fromJson(Map<String, dynamic> json) { return Coupon(
   redeemBy: json.containsKey('redeem_by') ? Omittable(json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null) : const Omittable.absent(),
   timesRedeemed: (json['times_redeemed'] as num).toInt(),
   valid: json['valid'] as bool,
-); }
+);}
 
 /// Amount (in the `currency` specified) that will be taken off the subtotal of any invoices for this customer.
 final Omittable<int?> amountOff;
@@ -76,7 +76,7 @@ final int timesRedeemed;
 /// Taking account of the above properties, whether this coupon can still be applied to a customer.
 final bool valid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountOff.isPresent) 'amount_off': amountOff.value,
   if (appliesTo != null) 'applies_to': appliesTo?.toJson(),
   'created': created,
@@ -94,23 +94,23 @@ Map<String, dynamic> toJson() { return {
   if (redeemBy.isPresent) 'redeem_by': redeemBy.value,
   'times_redeemed': timesRedeemed,
   'valid': valid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('duration') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('times_redeemed') && json['times_redeemed'] is num &&
-      json.containsKey('valid') && json['valid'] is bool; } 
+      json.containsKey('valid') && json['valid'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-return errors; } 
-Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? appliesTo, int? created, Omittable<String?>? currency, Map<String, CouponCurrencyOption>? Function()? currencyOptions, CouponDuration? duration, Omittable<int?>? durationInMonths, String? id, bool? livemode, Omittable<int?>? maxRedemptions, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, CouponObject? object, Omittable<double?>? percentOff, Omittable<int?>? redeemBy, int? timesRedeemed, bool? valid, }) { return Coupon(
+return errors;}
+Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? appliesTo, int? created, Omittable<String?>? currency, Map<String, CouponCurrencyOption>? Function()? currencyOptions, CouponDuration? duration, Omittable<int?>? durationInMonths, String? id, bool? livemode, Omittable<int?>? maxRedemptions, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, CouponObject? object, Omittable<double?>? percentOff, Omittable<int?>? redeemBy, int? timesRedeemed, bool? valid, }) {return Coupon(
   amountOff: amountOff ?? this.amountOff,
   appliesTo: appliesTo != null ? appliesTo() : this.appliesTo,
   created: created ?? this.created,
@@ -128,7 +128,7 @@ Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? applie
   redeemBy: redeemBy ?? this.redeemBy,
   timesRedeemed: timesRedeemed ?? this.timesRedeemed,
   valid: valid ?? this.valid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Coupon &&
           amountOff == other.amountOff &&
@@ -153,4 +153,4 @@ Coupon copyWith({Omittable<int?>? amountOff, CouponAppliesTo? Function()? applie
 
 @override String toString() => 'Coupon(\n  amountOff: $amountOff,\n  appliesTo: $appliesTo,\n  created: $created,\n  currency: $currency,\n  currencyOptions: $currencyOptions,\n  duration: $duration,\n  durationInMonths: $durationInMonths,\n  id: $id,\n  livemode: $livemode,\n  maxRedemptions: $maxRedemptions,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  percentOff: $percentOff,\n  redeemBy: $redeemBy,\n  timesRedeemed: $timesRedeemed,\n  valid: $valid,\n)';
 
- }
+}

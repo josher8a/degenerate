@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/related_events.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request/patch_indicator_update_request_tags.dart';@immutable final class PatchIndicatorUpdateRequest {const PatchIndicatorUpdateRequest({this.indicatorType, this.relatedEvents, this.tags, this.value, });
 
-factory PatchIndicatorUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateRequest(
+factory PatchIndicatorUpdateRequest.fromJson(Map<String, dynamic> json) {return PatchIndicatorUpdateRequest(
   indicatorType: json['indicatorType'] as String?,
   relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => RelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
   tags: (json['tags'] as List<dynamic>?)?.map(PatchIndicatorUpdateRequestTags.fromJson).toList(),
   value: json['value'] as String?,
-); }
+);}
 
 /// Example: `'domain'`
 final String? indicatorType;
@@ -20,19 +20,19 @@ final List<PatchIndicatorUpdateRequestTags>? tags;
 /// Example: `'updated-domain.com'`
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'indicatorType': ?indicatorType,
   if (relatedEvents != null) 'relatedEvents': relatedEvents?.map((e) => e.toJson()).toList(),
   if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'indicatorType', 'relatedEvents', 'tags', 'value'}.contains(key)); } 
-PatchIndicatorUpdateRequest copyWith({String? Function()? indicatorType, List<RelatedEvents>? Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags>? Function()? tags, String? Function()? value, }) { return PatchIndicatorUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'indicatorType', 'relatedEvents', 'tags', 'value'}.contains(key));}
+PatchIndicatorUpdateRequest copyWith({String? Function()? indicatorType, List<RelatedEvents>? Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags>? Function()? tags, String? Function()? value, }) {return PatchIndicatorUpdateRequest(
   indicatorType: indicatorType != null ? indicatorType() : this.indicatorType,
   relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,
   tags: tags != null ? tags() : this.tags,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PatchIndicatorUpdateRequest &&
           indicatorType == other.indicatorType &&
@@ -44,4 +44,4 @@ PatchIndicatorUpdateRequest copyWith({String? Function()? indicatorType, List<Re
 
 @override String toString() => 'PatchIndicatorUpdateRequest(indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)';
 
- }
+}

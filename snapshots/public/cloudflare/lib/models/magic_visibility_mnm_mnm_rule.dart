@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_duration.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_name.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_packet_threshold.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_rule_identifier.dart';/// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
 sealed class MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch();
 
-factory MagicVisibilityMnmMnmRulePrefixMatch.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRulePrefixMatch.fromJson(String json) {return switch (json) {
   'exact' => exact,
   'subnet' => subnet,
   'supernet' => supernet,
   _ => MagicVisibilityMnmMnmRulePrefixMatch$Unknown(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRulePrefixMatch exact = MagicVisibilityMnmMnmRulePrefixMatch$exact._();
 
@@ -20,33 +20,33 @@ static const MagicVisibilityMnmMnmRulePrefixMatch supernet = MagicVisibilityMnmM
 static const List<MagicVisibilityMnmMnmRulePrefixMatch> values = [exact, subnet, supernet];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'exact' => 'exact',
   'subnet' => 'subnet',
   'supernet' => 'supernet',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MagicVisibilityMnmMnmRulePrefixMatch$Unknown; } 
+bool get isUnknown {return this is MagicVisibilityMnmMnmRulePrefixMatch$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() exact, required W Function() subnet, required W Function() supernet, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() exact, required W Function() subnet, required W Function() supernet, required W Function(String value) $unknown, }) {return switch (this) {
       MagicVisibilityMnmMnmRulePrefixMatch$exact() => exact(),
       MagicVisibilityMnmMnmRulePrefixMatch$subnet() => subnet(),
       MagicVisibilityMnmMnmRulePrefixMatch$supernet() => supernet(),
       MagicVisibilityMnmMnmRulePrefixMatch$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? exact, W Function()? subnet, W Function()? supernet, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exact, W Function()? subnet, W Function()? supernet, W Function(String value)? $unknown, }) {return switch (this) {
       MagicVisibilityMnmMnmRulePrefixMatch$exact() => exact != null ? exact() : orElse(value),
       MagicVisibilityMnmMnmRulePrefixMatch$subnet() => subnet != null ? subnet() : orElse(value),
       MagicVisibilityMnmMnmRulePrefixMatch$supernet() => supernet != null ? supernet() : orElse(value),
       MagicVisibilityMnmMnmRulePrefixMatch$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MagicVisibilityMnmMnmRulePrefixMatch($value)';
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRulePrefixMatch$exact extends MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch$exact._();
 
 @override String get value => 'exact';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exact, W
 
 @override int get hashCode => 'exact'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRulePrefixMatch$subnet extends MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch$subnet._();
 
 @override String get value => 'subnet';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exact, W
 
 @override int get hashCode => 'subnet'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRulePrefixMatch$supernet extends MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch$supernet._();
 
 @override String get value => 'supernet';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exact, W
 
 @override int get hashCode => 'supernet'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRulePrefixMatch$Unknown extends MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch$Unknown(this.value);
 
 @override final String value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exact, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// MNM rule type.
 sealed class MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType();
 
-factory MagicVisibilityMnmMnmRuleType.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRuleType.fromJson(String json) {return switch (json) {
   'threshold' => threshold,
   'zscore' => zscore,
   'advanced_ddos' => advancedDdos,
   _ => MagicVisibilityMnmMnmRuleType$Unknown(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRuleType threshold = MagicVisibilityMnmMnmRuleType$threshold._();
 
@@ -103,33 +103,33 @@ static const MagicVisibilityMnmMnmRuleType advancedDdos = MagicVisibilityMnmMnmR
 static const List<MagicVisibilityMnmMnmRuleType> values = [threshold, zscore, advancedDdos];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'threshold' => 'threshold',
   'zscore' => 'zscore',
   'advanced_ddos' => 'advancedDdos',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MagicVisibilityMnmMnmRuleType$Unknown; } 
+bool get isUnknown {return this is MagicVisibilityMnmMnmRuleType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() threshold, required W Function() zscore, required W Function() advancedDdos, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() threshold, required W Function() zscore, required W Function() advancedDdos, required W Function(String value) $unknown, }) {return switch (this) {
       MagicVisibilityMnmMnmRuleType$threshold() => threshold(),
       MagicVisibilityMnmMnmRuleType$zscore() => zscore(),
       MagicVisibilityMnmMnmRuleType$advancedDdos() => advancedDdos(),
       MagicVisibilityMnmMnmRuleType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshold, W Function()? zscore, W Function()? advancedDdos, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshold, W Function()? zscore, W Function()? advancedDdos, W Function(String value)? $unknown, }) {return switch (this) {
       MagicVisibilityMnmMnmRuleType$threshold() => threshold != null ? threshold() : orElse(value),
       MagicVisibilityMnmMnmRuleType$zscore() => zscore != null ? zscore() : orElse(value),
       MagicVisibilityMnmMnmRuleType$advancedDdos() => advancedDdos != null ? advancedDdos() : orElse(value),
       MagicVisibilityMnmMnmRuleType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MagicVisibilityMnmMnmRuleType($value)';
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleType$threshold extends MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType$threshold._();
 
 @override String get value => 'threshold';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshol
 
 @override int get hashCode => 'threshold'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleType$zscore extends MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType$zscore._();
 
 @override String get value => 'zscore';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshol
 
 @override int get hashCode => 'zscore'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleType$advancedDdos extends MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType$advancedDdos._();
 
 @override String get value => 'advanced_ddos';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshol
 
 @override int get hashCode => 'advanced_ddos'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleType$Unknown extends MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType$Unknown(this.value);
 
 @override final String value;
@@ -166,16 +166,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshol
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Level of sensitivity set for zscore rules.
 sealed class MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity();
 
-factory MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRuleZscoreSensitivity low = MagicVisibilityMnmMnmRuleZscoreSensitivity$low._();
 
@@ -186,33 +186,33 @@ static const MagicVisibilityMnmMnmRuleZscoreSensitivity high = MagicVisibilityMn
 static const List<MagicVisibilityMnmMnmRuleZscoreSensitivity> values = [low, medium, high];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'low' => 'low',
   'medium' => 'medium',
   'high' => 'high',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown; } 
+bool get isUnknown {return this is MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) {return switch (this) {
       MagicVisibilityMnmMnmRuleZscoreSensitivity$low() => low(),
       MagicVisibilityMnmMnmRuleZscoreSensitivity$medium() => medium(),
       MagicVisibilityMnmMnmRuleZscoreSensitivity$high() => high(),
       MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) {return switch (this) {
       MagicVisibilityMnmMnmRuleZscoreSensitivity$low() => low != null ? low() : orElse(value),
       MagicVisibilityMnmMnmRuleZscoreSensitivity$medium() => medium != null ? medium() : orElse(value),
       MagicVisibilityMnmMnmRuleZscoreSensitivity$high() => high != null ? high() : orElse(value),
       MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MagicVisibilityMnmMnmRuleZscoreSensitivity($value)';
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity$low extends MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity$low._();
 
 @override String get value => 'low';
@@ -221,7 +221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity$medium extends MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity$medium._();
 
 @override String get value => 'medium';
@@ -230,7 +230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'medium'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity$high extends MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity$high._();
 
 @override String get value => 'high';
@@ -239,7 +239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown extends MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown(this.value);
 
 @override final String value;
@@ -249,15 +249,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Target of the zscore rule analysis.
 sealed class MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget();
 
-factory MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(String json) { return switch (json) {
+factory MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(String json) {return switch (json) {
   'bits' => bits,
   'packets' => packets,
   _ => MagicVisibilityMnmMnmRuleZscoreTarget$Unknown(json),
-}; }
+};}
 
 static const MagicVisibilityMnmMnmRuleZscoreTarget bits = MagicVisibilityMnmMnmRuleZscoreTarget$bits._();
 
@@ -266,30 +266,30 @@ static const MagicVisibilityMnmMnmRuleZscoreTarget packets = MagicVisibilityMnmM
 static const List<MagicVisibilityMnmMnmRuleZscoreTarget> values = [bits, packets];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'bits' => 'bits',
   'packets' => 'packets',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MagicVisibilityMnmMnmRuleZscoreTarget$Unknown; } 
+bool get isUnknown {return this is MagicVisibilityMnmMnmRuleZscoreTarget$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() bits, required W Function() packets, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() bits, required W Function() packets, required W Function(String value) $unknown, }) {return switch (this) {
       MagicVisibilityMnmMnmRuleZscoreTarget$bits() => bits(),
       MagicVisibilityMnmMnmRuleZscoreTarget$packets() => packets(),
       MagicVisibilityMnmMnmRuleZscoreTarget$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? bits, W Function()? packets, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bits, W Function()? packets, W Function(String value)? $unknown, }) {return switch (this) {
       MagicVisibilityMnmMnmRuleZscoreTarget$bits() => bits != null ? bits() : orElse(value),
       MagicVisibilityMnmMnmRuleZscoreTarget$packets() => packets != null ? packets() : orElse(value),
       MagicVisibilityMnmMnmRuleZscoreTarget$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MagicVisibilityMnmMnmRuleZscoreTarget($value)';
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleZscoreTarget$bits extends MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget$bits._();
 
 @override String get value => 'bits';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bits, W 
 
 @override int get hashCode => 'bits'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleZscoreTarget$packets extends MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget$packets._();
 
 @override String get value => 'packets';
@@ -307,7 +307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bits, W 
 
 @override int get hashCode => 'packets'.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRuleZscoreTarget$Unknown extends MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget$Unknown(this.value);
 
 @override final String value;
@@ -317,10 +317,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bits, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class MagicVisibilityMnmMnmRule {const MagicVisibilityMnmMnmRule({required this.automaticAdvertisement, required this.name, required this.prefixes, required this.type, this.bandwidthThreshold, this.duration, this.id, this.packetThreshold, this.prefixMatch = const Omittable.absent(), this.zscoreSensitivity = const Omittable.absent(), this.zscoreTarget = const Omittable.absent(), });
 
-factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRule(
+factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) {return MagicVisibilityMnmMnmRule(
   automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,
   bandwidthThreshold: json['bandwidth_threshold'] != null ? MagicVisibilityMnmMnmRuleBandwidthThreshold.fromJson(json['bandwidth_threshold'] as num) : null,
   duration: json['duration'] != null ? MagicVisibilityMnmMnmRuleDuration.fromJson(json['duration'] as String) : null,
@@ -332,7 +332,7 @@ factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) { return M
   type: MagicVisibilityMnmMnmRuleType.fromJson(json['type'] as String),
   zscoreSensitivity: json.containsKey('zscore_sensitivity') ? Omittable(json['zscore_sensitivity'] != null ? MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(json['zscore_sensitivity'] as String) : null) : const Omittable.absent(),
   zscoreTarget: json.containsKey('zscore_target') ? Omittable(json['zscore_target'] != null ? MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(json['zscore_target'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;
 
@@ -356,7 +356,7 @@ final Omittable<MagicVisibilityMnmMnmRuleZscoreSensitivity?> zscoreSensitivity;
 
 final Omittable<MagicVisibilityMnmMnmRuleZscoreTarget?> zscoreTarget;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'automatic_advertisement': automaticAdvertisement?.toJson(),
   if (bandwidthThreshold != null) 'bandwidth_threshold': bandwidthThreshold?.toJson(),
   if (duration != null) 'duration': duration?.toJson(),
@@ -368,12 +368,12 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (zscoreSensitivity.isPresent) 'zscore_sensitivity': zscoreSensitivity.value?.toJson(),
   if (zscoreTarget.isPresent) 'zscore_target': zscoreTarget.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_advertisement') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_advertisement') &&
       json.containsKey('name') &&
       json.containsKey('prefixes') &&
-      json.containsKey('type'); } 
-MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidthThreshold, MagicVisibilityMnmMnmRuleDuration? Function()? duration, MagicVisibilityMnmRuleIdentifier? Function()? id, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, Omittable<MagicVisibilityMnmMnmRulePrefixMatch?>? prefixMatch, List<MagicVisibilityMnmMnmRuleIpPrefix>? prefixes, MagicVisibilityMnmMnmRuleType? type, Omittable<MagicVisibilityMnmMnmRuleZscoreSensitivity?>? zscoreSensitivity, Omittable<MagicVisibilityMnmMnmRuleZscoreTarget?>? zscoreTarget, }) { return MagicVisibilityMnmMnmRule(
+      json.containsKey('type');}
+MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidthThreshold, MagicVisibilityMnmMnmRuleDuration? Function()? duration, MagicVisibilityMnmRuleIdentifier? Function()? id, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, Omittable<MagicVisibilityMnmMnmRulePrefixMatch?>? prefixMatch, List<MagicVisibilityMnmMnmRuleIpPrefix>? prefixes, MagicVisibilityMnmMnmRuleType? type, Omittable<MagicVisibilityMnmMnmRuleZscoreSensitivity?>? zscoreSensitivity, Omittable<MagicVisibilityMnmMnmRuleZscoreTarget?>? zscoreTarget, }) {return MagicVisibilityMnmMnmRule(
   automaticAdvertisement: automaticAdvertisement != null ? automaticAdvertisement() : this.automaticAdvertisement,
   bandwidthThreshold: bandwidthThreshold != null ? bandwidthThreshold() : this.bandwidthThreshold,
   duration: duration != null ? duration() : this.duration,
@@ -385,7 +385,7 @@ MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisem
   type: type ?? this.type,
   zscoreSensitivity: zscoreSensitivity ?? this.zscoreSensitivity,
   zscoreTarget: zscoreTarget ?? this.zscoreTarget,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMnmRule &&
           automaticAdvertisement == other.automaticAdvertisement &&
@@ -404,4 +404,4 @@ MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisem
 
 @override String toString() => 'MagicVisibilityMnmMnmRule(\n  automaticAdvertisement: $automaticAdvertisement,\n  bandwidthThreshold: $bandwidthThreshold,\n  duration: $duration,\n  id: $id,\n  name: $name,\n  packetThreshold: $packetThreshold,\n  prefixMatch: $prefixMatch,\n  prefixes: $prefixes,\n  type: $type,\n  zscoreSensitivity: $zscoreSensitivity,\n  zscoreTarget: $zscoreTarget,\n)';
 
- }
+}

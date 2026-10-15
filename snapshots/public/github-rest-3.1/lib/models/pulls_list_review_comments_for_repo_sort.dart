@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PullsListReviewCommentsForRepoSort {const PullsListReviewCommentsForRepoSort();
 
-factory PullsListReviewCommentsForRepoSort.fromJson(String json) { return switch (json) {
+factory PullsListReviewCommentsForRepoSort.fromJson(String json) {return switch (json) {
   'created' => created,
   'updated' => updated,
   'created_at' => createdAt,
   _ => PullsListReviewCommentsForRepoSort$Unknown(json),
-}; }
+};}
 
 static const PullsListReviewCommentsForRepoSort created = PullsListReviewCommentsForRepoSort$created._();
 
@@ -19,33 +19,33 @@ static const PullsListReviewCommentsForRepoSort createdAt = PullsListReviewComme
 static const List<PullsListReviewCommentsForRepoSort> values = [created, updated, createdAt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'created' => 'created',
   'updated' => 'updated',
   'created_at' => 'createdAt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PullsListReviewCommentsForRepoSort$Unknown; } 
+bool get isUnknown {return this is PullsListReviewCommentsForRepoSort$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() created, required W Function() updated, required W Function() createdAt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() created, required W Function() updated, required W Function() createdAt, required W Function(String value) $unknown, }) {return switch (this) {
       PullsListReviewCommentsForRepoSort$created() => created(),
       PullsListReviewCommentsForRepoSort$updated() => updated(),
       PullsListReviewCommentsForRepoSort$createdAt() => createdAt(),
       PullsListReviewCommentsForRepoSort$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function()? createdAt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function()? createdAt, W Function(String value)? $unknown, }) {return switch (this) {
       PullsListReviewCommentsForRepoSort$created() => created != null ? created() : orElse(value),
       PullsListReviewCommentsForRepoSort$updated() => updated != null ? updated() : orElse(value),
       PullsListReviewCommentsForRepoSort$createdAt() => createdAt != null ? createdAt() : orElse(value),
       PullsListReviewCommentsForRepoSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PullsListReviewCommentsForRepoSort($value)';
 
- }
+}
 @immutable final class PullsListReviewCommentsForRepoSort$created extends PullsListReviewCommentsForRepoSort {const PullsListReviewCommentsForRepoSort$created._();
 
 @override String get value => 'created';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'created'.hashCode;
 
- }
+}
 @immutable final class PullsListReviewCommentsForRepoSort$updated extends PullsListReviewCommentsForRepoSort {const PullsListReviewCommentsForRepoSort$updated._();
 
 @override String get value => 'updated';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'updated'.hashCode;
 
- }
+}
 @immutable final class PullsListReviewCommentsForRepoSort$createdAt extends PullsListReviewCommentsForRepoSort {const PullsListReviewCommentsForRepoSort$createdAt._();
 
 @override String get value => 'created_at';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => 'created_at'.hashCode;
 
- }
+}
 @immutable final class PullsListReviewCommentsForRepoSort$Unknown extends PullsListReviewCommentsForRepoSort {const PullsListReviewCommentsForRepoSort$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? created,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_create_tree_request/git_create_tree_request_tree.dart';@immutable final class GitCreateTreeRequest {const GitCreateTreeRequest({required this.tree, this.baseTree, });
 
-factory GitCreateTreeRequest.fromJson(Map<String, dynamic> json) { return GitCreateTreeRequest(
+factory GitCreateTreeRequest.fromJson(Map<String, dynamic> json) {return GitCreateTreeRequest(
   tree: (json['tree'] as List<dynamic>).map((e) => GitCreateTreeRequestTree.fromJson(e as Map<String, dynamic>)).toList(),
   baseTree: json['base_tree'] as String?,
-); }
+);}
 
 /// Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
 final List<GitCreateTreeRequestTree> tree;
@@ -15,15 +15,15 @@ final List<GitCreateTreeRequestTree> tree;
 /// If not provided, GitHub will create a new Git tree object from only the entries defined in the `tree` parameter. If you create a new commit pointing to such a tree, then all files which were a part of the parent commit's tree and were not defined in the `tree` parameter will be listed as deleted by the new commit.
 final String? baseTree;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tree': tree.map((e) => e.toJson()).toList(),
   'base_tree': ?baseTree,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tree'); } 
-GitCreateTreeRequest copyWith({List<GitCreateTreeRequestTree>? tree, String? Function()? baseTree, }) { return GitCreateTreeRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tree');}
+GitCreateTreeRequest copyWith({List<GitCreateTreeRequestTree>? tree, String? Function()? baseTree, }) {return GitCreateTreeRequest(
   tree: tree ?? this.tree,
   baseTree: baseTree != null ? baseTree() : this.baseTree,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateTreeRequest &&
           listEquals(tree, other.tree) &&
@@ -33,4 +33,4 @@ GitCreateTreeRequest copyWith({List<GitCreateTreeRequestTree>? tree, String? Fun
 
 @override String toString() => 'GitCreateTreeRequest(tree: $tree, baseTree: $baseTree)';
 
- }
+}

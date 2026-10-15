@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_author.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_committer.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_parents.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/verification.dart';/// Low-level Git commit operations within a repository
 @immutable final class GitCommit {const GitCommit({required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl, });
 
-factory GitCommit.fromJson(Map<String, dynamic> json) { return GitCommit(
+factory GitCommit.fromJson(Map<String, dynamic> json) {return GitCommit(
   sha: json['sha'] as String,
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -15,7 +15,7 @@ factory GitCommit.fromJson(Map<String, dynamic> json) { return GitCommit(
   parents: (json['parents'] as List<dynamic>).map((e) => GitCommitParents.fromJson(e as Map<String, dynamic>)).toList(),
   verification: Verification.fromJson(json['verification'] as Map<String, dynamic>),
   htmlUrl: Uri.parse(json['html_url'] as String),
-); }
+);}
 
 /// SHA for the commit
 final String sha;
@@ -41,7 +41,7 @@ final Verification verification;
 
 final Uri htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'sha': sha,
   'node_id': nodeId,
   'url': url.toString(),
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'parents': parents.map((e) => e.toJson()).toList(),
   'verification': verification.toJson(),
   'html_url': htmlUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('author') &&
@@ -62,8 +62,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha')
       json.containsKey('tree') &&
       json.containsKey('parents') &&
       json.containsKey('verification') &&
-      json.containsKey('html_url') && json['html_url'] is String; } 
-GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? author, GitCommitCommitter? committer, String? message, GitCommitTree? tree, List<GitCommitParents>? parents, Verification? verification, Uri? htmlUrl, }) { return GitCommit(
+      json.containsKey('html_url') && json['html_url'] is String;}
+GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? author, GitCommitCommitter? committer, String? message, GitCommitTree? tree, List<GitCommitParents>? parents, Verification? verification, Uri? htmlUrl, }) {return GitCommit(
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -74,7 +74,7 @@ GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? auth
   parents: parents ?? this.parents,
   verification: verification ?? this.verification,
   htmlUrl: htmlUrl ?? this.htmlUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GitCommit &&
           sha == other.sha &&
@@ -92,4 +92,4 @@ GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? auth
 
 @override String toString() => 'GitCommit(\n  sha: $sha,\n  nodeId: $nodeId,\n  url: $url,\n  author: $author,\n  committer: $committer,\n  message: $message,\n  tree: $tree,\n  parents: $parents,\n  verification: $verification,\n  htmlUrl: $htmlUrl,\n)';
 
- }
+}

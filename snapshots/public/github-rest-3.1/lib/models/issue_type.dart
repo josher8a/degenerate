@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_type/issue_type_color.dart';/// The type of issue.
 @immutable final class IssueType {const IssueType({required this.id, required this.nodeId, required this.name, required this.description, this.color = const Omittable.absent(), this.createdAt, this.updatedAt, this.isEnabled, });
 
-factory IssueType.fromJson(Map<String, dynamic> json) { return IssueType(
+factory IssueType.fromJson(Map<String, dynamic> json) {return IssueType(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -13,7 +13,7 @@ factory IssueType.fromJson(Map<String, dynamic> json) { return IssueType(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   isEnabled: json['is_enabled'] as bool?,
-); }
+);}
 
 /// The unique identifier of the issue type.
 final int id;
@@ -39,7 +39,7 @@ final DateTime? updatedAt;
 /// The enabled state of the issue type.
 final bool? isEnabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'name': name,
@@ -48,12 +48,12 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   'is_enabled': ?isEnabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && (json['description'] == null || json['description'] is String); } 
-IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? description, Omittable<IssueTypeColor?>? color, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? isEnabled, }) { return IssueType(
+      json.containsKey('description') && (json['description'] == null || json['description'] is String);}
+IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? description, Omittable<IssueTypeColor?>? color, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? isEnabled, }) {return IssueType(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -62,7 +62,7 @@ IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? d
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   isEnabled: isEnabled != null ? isEnabled() : this.isEnabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssueType &&
           id == other.id &&
@@ -78,4 +78,4 @@ IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? d
 
 @override String toString() => 'IssueType(id: $id, nodeId: $nodeId, name: $name, description: $description, color: $color, createdAt: $createdAt, updatedAt: $updatedAt, isEnabled: $isEnabled)';
 
- }
+}

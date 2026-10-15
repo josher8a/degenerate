@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/security_headers.dart';@immutable final class RedirectResponse {const RedirectResponse({required this.charset, required this.mimeType, required this.protocol, required this.remoteIpAddress, required this.remotePort, required this.securityHeaders, required this.securityState, required this.status, required this.statusText, required this.url, this.headers, });
 
-factory RedirectResponse.fromJson(Map<String, dynamic> json) { return RedirectResponse(
+factory RedirectResponse.fromJson(Map<String, dynamic> json) {return RedirectResponse(
   charset: json['charset'] as String,
   headers: json['headers'] as Map<String, dynamic>?,
   mimeType: json['mimeType'] as String,
@@ -15,7 +15,7 @@ factory RedirectResponse.fromJson(Map<String, dynamic> json) { return RedirectRe
   status: (json['status'] as num).toDouble(),
   statusText: json['statusText'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final String charset;
 
@@ -39,7 +39,7 @@ final String statusText;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'charset': charset,
   'headers': ?headers,
   'mimeType': mimeType,
@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'statusText': statusText,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('charset') && json['charset'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('charset') && json['charset'] is String &&
       json.containsKey('mimeType') && json['mimeType'] is String &&
       json.containsKey('protocol') && json['protocol'] is String &&
       json.containsKey('remoteIPAddress') && json['remoteIPAddress'] is String &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('chars
       json.containsKey('securityState') && json['securityState'] is String &&
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('statusText') && json['statusText'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-RedirectResponse copyWith({String? charset, Map<String, dynamic>? Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, List<SecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) { return RedirectResponse(
+      json.containsKey('url') && json['url'] is String;}
+RedirectResponse copyWith({String? charset, Map<String, dynamic>? Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, List<SecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) {return RedirectResponse(
   charset: charset ?? this.charset,
   headers: headers != null ? headers() : this.headers,
   mimeType: mimeType ?? this.mimeType,
@@ -74,7 +74,7 @@ RedirectResponse copyWith({String? charset, Map<String, dynamic>? Function()? he
   status: status ?? this.status,
   statusText: statusText ?? this.statusText,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RedirectResponse &&
           charset == other.charset &&
@@ -93,4 +93,4 @@ RedirectResponse copyWith({String? charset, Map<String, dynamic>? Function()? he
 
 @override String toString() => 'RedirectResponse(\n  charset: $charset,\n  headers: $headers,\n  mimeType: $mimeType,\n  protocol: $protocol,\n  remoteIpAddress: $remoteIpAddress,\n  remotePort: $remotePort,\n  securityHeaders: $securityHeaders,\n  securityState: $securityState,\n  status: $status,\n  statusText: $statusText,\n  url: $url,\n)';
 
- }
+}

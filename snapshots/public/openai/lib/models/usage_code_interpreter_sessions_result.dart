@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject();
 
-factory UsageCodeInterpreterSessionsResultObject.fromJson(String json) { return switch (json) {
+factory UsageCodeInterpreterSessionsResultObject.fromJson(String json) {return switch (json) {
   'organization.usage.code_interpreter_sessions.result' => organizationUsageCodeInterpreterSessionsResult,
   _ => UsageCodeInterpreterSessionsResultObject$Unknown(json),
-}; }
+};}
 
 static const UsageCodeInterpreterSessionsResultObject organizationUsageCodeInterpreterSessionsResult = UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult._();
 
 static const List<UsageCodeInterpreterSessionsResultObject> values = [organizationUsageCodeInterpreterSessionsResult];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.usage.code_interpreter_sessions.result' => 'organizationUsageCodeInterpreterSessionsResult',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UsageCodeInterpreterSessionsResultObject$Unknown; } 
+bool get isUnknown {return this is UsageCodeInterpreterSessionsResultObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationUsageCodeInterpreterSessionsResult, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationUsageCodeInterpreterSessionsResult, required W Function(String value) $unknown, }) {return switch (this) {
       UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult() => organizationUsageCodeInterpreterSessionsResult(),
       UsageCodeInterpreterSessionsResultObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageCodeInterpreterSessionsResult, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageCodeInterpreterSessionsResult, W Function(String value)? $unknown, }) {return switch (this) {
       UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult() => organizationUsageCodeInterpreterSessionsResult != null ? organizationUsageCodeInterpreterSessionsResult() : orElse(value),
       UsageCodeInterpreterSessionsResultObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UsageCodeInterpreterSessionsResultObject($value)';
 
- }
+}
 @immutable final class UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult extends UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult._();
 
 @override String get value => 'organization.usage.code_interpreter_sessions.result';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.usage.code_interpreter_sessions.result'.hashCode;
 
- }
+}
 @immutable final class UsageCodeInterpreterSessionsResultObject$Unknown extends UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject$Unknown(this.value);
 
 @override final String value;
@@ -52,15 +52,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The aggregated code interpreter sessions usage details of the specific time bucket.
 @immutable final class UsageCodeInterpreterSessionsResult {const UsageCodeInterpreterSessionsResult({required this.object, this.numSessions, this.projectId = const Omittable.absent(), });
 
-factory UsageCodeInterpreterSessionsResult.fromJson(Map<String, dynamic> json) { return UsageCodeInterpreterSessionsResult(
+factory UsageCodeInterpreterSessionsResult.fromJson(Map<String, dynamic> json) {return UsageCodeInterpreterSessionsResult(
   object: UsageCodeInterpreterSessionsResultObject.fromJson(json['object'] as String),
   numSessions: json['num_sessions'] != null ? (json['num_sessions'] as num).toInt() : null,
   projectId: json.containsKey('project_id') ? Omittable(json['project_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final UsageCodeInterpreterSessionsResultObject object;
 
@@ -70,17 +70,17 @@ final int? numSessions;
 /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
 final Omittable<String?> projectId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'num_sessions': ?numSessions,
   if (projectId.isPresent) 'project_id': projectId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.usage.code_interpreter_sessions.result'; } 
-UsageCodeInterpreterSessionsResult copyWith({UsageCodeInterpreterSessionsResultObject? object, int? Function()? numSessions, Omittable<String?>? projectId, }) { return UsageCodeInterpreterSessionsResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] == 'organization.usage.code_interpreter_sessions.result';}
+UsageCodeInterpreterSessionsResult copyWith({UsageCodeInterpreterSessionsResultObject? object, int? Function()? numSessions, Omittable<String?>? projectId, }) {return UsageCodeInterpreterSessionsResult(
   object: object ?? this.object,
   numSessions: numSessions != null ? numSessions() : this.numSessions,
   projectId: projectId ?? this.projectId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsageCodeInterpreterSessionsResult &&
           object == other.object &&
@@ -91,4 +91,4 @@ UsageCodeInterpreterSessionsResult copyWith({UsageCodeInterpreterSessionsResultO
 
 @override String toString() => 'UsageCodeInterpreterSessionsResult(object: $object, numSessions: $numSessions, projectId: $projectId)';
 
- }
+}

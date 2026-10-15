@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_destination_conf.dart';@immutable final class DeleteAccountsAccountIdLogpushValidateDestinationRequest {const DeleteAccountsAccountIdLogpushValidateDestinationRequest({required this.destinationConf});
 
-factory DeleteAccountsAccountIdLogpushValidateDestinationRequest.fromJson(Map<String, dynamic> json) { return DeleteAccountsAccountIdLogpushValidateDestinationRequest(
+factory DeleteAccountsAccountIdLogpushValidateDestinationRequest.fromJson(Map<String, dynamic> json) {return DeleteAccountsAccountIdLogpushValidateDestinationRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
-); }
+);}
 
 /// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination_conf': destinationConf.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
-DeleteAccountsAccountIdLogpushValidateDestinationRequest copyWith({LogpushDestinationConf? destinationConf}) { return DeleteAccountsAccountIdLogpushValidateDestinationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination_conf');}
+DeleteAccountsAccountIdLogpushValidateDestinationRequest copyWith({LogpushDestinationConf? destinationConf}) {return DeleteAccountsAccountIdLogpushValidateDestinationRequest(
   destinationConf: destinationConf ?? this.destinationConf,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteAccountsAccountIdLogpushValidateDestinationRequest &&
           destinationConf == other.destinationConf;
@@ -25,4 +25,4 @@ DeleteAccountsAccountIdLogpushValidateDestinationRequest copyWith({LogpushDestin
 
 @override String toString() => 'DeleteAccountsAccountIdLogpushValidateDestinationRequest(destinationConf: $destinationConf)';
 
- }
+}

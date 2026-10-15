@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';@immutable final class McnYamlDiffItem {const McnYamlDiffItem({required this.itemType, required this.yamlDiff, });
 
-factory McnYamlDiffItem.fromJson(Map<String, dynamic> json) { return McnYamlDiffItem(
+factory McnYamlDiffItem.fromJson(Map<String, dynamic> json) {return McnYamlDiffItem(
   itemType: json['item_type'] as String,
   yamlDiff: McnYamlDiff.fromJson(json['yaml_diff'] as Map<String, dynamic>),
-); }
+);}
 
 final String itemType;
 
 final McnYamlDiff yamlDiff;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'item_type': itemType,
   'yaml_diff': yamlDiff.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('item_type') && json['item_type'] is String &&
-      json.containsKey('yaml_diff'); } 
-McnYamlDiffItem copyWith({String? itemType, McnYamlDiff? yamlDiff, }) { return McnYamlDiffItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('item_type') && json['item_type'] is String &&
+      json.containsKey('yaml_diff');}
+McnYamlDiffItem copyWith({String? itemType, McnYamlDiff? yamlDiff, }) {return McnYamlDiffItem(
   itemType: itemType ?? this.itemType,
   yamlDiff: yamlDiff ?? this.yamlDiff,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnYamlDiffItem &&
           itemType == other.itemType &&
@@ -31,4 +31,4 @@ McnYamlDiffItem copyWith({String? itemType, McnYamlDiff? yamlDiff, }) { return M
 
 @override String toString() => 'McnYamlDiffItem(itemType: $itemType, yamlDiff: $yamlDiff)';
 
- }
+}

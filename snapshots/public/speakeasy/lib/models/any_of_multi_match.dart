@@ -7,11 +7,11 @@ const AnyOfMultiMatch({this.anyOfMultiMatchMember1 = const Omittable.absent(), t
 const AnyOfMultiMatch._({required this.rawValue, required this.anyOfMultiMatchMember1, required this.anyOfMultiMatchMember2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory AnyOfMultiMatch.fromJson(Object? json) { return AnyOfMultiMatch._(
+factory AnyOfMultiMatch.fromJson(Object? json) {return AnyOfMultiMatch._(
   rawValue: Omittable(json),
   anyOfMultiMatchMember1: json is Map<String, dynamic> && AnyOfMultiMatchMember1.canParse(json) ? parseAnyOfVariant<AnyOfMultiMatchMember1>(json, (value) => AnyOfMultiMatchMember1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   anyOfMultiMatchMember2: json is Map<String, dynamic> && AnyOfMultiMatchMember2.canParse(json) ? parseAnyOfVariant<AnyOfMultiMatchMember2>(json, (value) => AnyOfMultiMatchMember2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'AnyOfMultiMatch(${toJson()})';
 
- }
+}

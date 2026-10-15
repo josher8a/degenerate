@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions.dart';import 'package:pub_github_rest_3_1/models/authentication_token/authentication_token_repository_selection.dart';import 'package:pub_github_rest_3_1/models/installation/installation_account.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Installation
 @immutable final class Installation {const Installation({required this.id, required this.account, required this.repositorySelection, required this.accessTokensUrl, required this.repositoriesUrl, required this.htmlUrl, required this.appId, required this.targetId, required this.targetType, required this.permissions, required this.events, required this.createdAt, required this.updatedAt, required this.singleFileName, required this.appSlug, required this.suspendedBy, required this.suspendedAt, this.clientId, this.hasMultipleSingleFiles, this.singleFilePaths, this.contactEmail = const Omittable.absent(), });
 
-factory Installation.fromJson(Map<String, dynamic> json) { return Installation(
+factory Installation.fromJson(Map<String, dynamic> json) {return Installation(
   id: (json['id'] as num).toInt(),
   account: json['account'] != null ? InstallationAccount.fromJson(json['account']) : null,
   repositorySelection: AuthenticationTokenRepositorySelection.fromJson(json['repository_selection'] as String),
@@ -26,7 +26,7 @@ factory Installation.fromJson(Map<String, dynamic> json) { return Installation(
   suspendedBy: json['suspended_by'] != null ? SimpleUser.fromJson(json['suspended_by'] as Map<String, dynamic>) : null,
   suspendedAt: json['suspended_at'] != null ? DateTime.parse(json['suspended_at'] as String) : null,
   contactEmail: json.containsKey('contact_email') ? Omittable(json['contact_email'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The ID of the installation.
 final int id;
@@ -73,7 +73,7 @@ final DateTime? suspendedAt;
 
 final Omittable<String?> contactEmail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'account': account?.toJson(),
   'repository_selection': repositorySelection.toJson(),
@@ -95,8 +95,8 @@ Map<String, dynamic> toJson() { return {
   'suspended_by': suspendedBy?.toJson(),
   'suspended_at': suspendedAt?.toIso8601String(),
   if (contactEmail.isPresent) 'contact_email': contactEmail.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('account') &&
       json.containsKey('repository_selection') &&
       json.containsKey('access_tokens_url') && json['access_tokens_url'] is String &&
@@ -112,8 +112,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('single_file_name') && (json['single_file_name'] == null || json['single_file_name'] is String) &&
       json.containsKey('app_slug') && json['app_slug'] is String &&
       json.containsKey('suspended_by') &&
-      json.containsKey('suspended_at') && (json['suspended_at'] == null || json['suspended_at'] is String); } 
-Installation copyWith({int? id, InstallationAccount? Function()? account, AuthenticationTokenRepositorySelection? repositorySelection, Uri? accessTokensUrl, Uri? repositoriesUrl, Uri? htmlUrl, int? appId, String? Function()? clientId, int? targetId, String? targetType, AppPermissions? permissions, List<String>? events, DateTime? createdAt, DateTime? updatedAt, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, String? appSlug, SimpleUser? Function()? suspendedBy, DateTime? Function()? suspendedAt, Omittable<String?>? contactEmail, }) { return Installation(
+      json.containsKey('suspended_at') && (json['suspended_at'] == null || json['suspended_at'] is String);}
+Installation copyWith({int? id, InstallationAccount? Function()? account, AuthenticationTokenRepositorySelection? repositorySelection, Uri? accessTokensUrl, Uri? repositoriesUrl, Uri? htmlUrl, int? appId, String? Function()? clientId, int? targetId, String? targetType, AppPermissions? permissions, List<String>? events, DateTime? createdAt, DateTime? updatedAt, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, String? appSlug, SimpleUser? Function()? suspendedBy, DateTime? Function()? suspendedAt, Omittable<String?>? contactEmail, }) {return Installation(
   id: id ?? this.id,
   account: account != null ? account() : this.account,
   repositorySelection: repositorySelection ?? this.repositorySelection,
@@ -135,7 +135,7 @@ Installation copyWith({int? id, InstallationAccount? Function()? account, Authen
   suspendedBy: suspendedBy != null ? suspendedBy() : this.suspendedBy,
   suspendedAt: suspendedAt != null ? suspendedAt() : this.suspendedAt,
   contactEmail: contactEmail ?? this.contactEmail,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Installation &&
           id == other.id &&
@@ -164,4 +164,4 @@ Installation copyWith({int? id, InstallationAccount? Function()? account, Authen
 
 @override String toString() => 'Installation(\n  id: $id,\n  account: $account,\n  repositorySelection: $repositorySelection,\n  accessTokensUrl: $accessTokensUrl,\n  repositoriesUrl: $repositoriesUrl,\n  htmlUrl: $htmlUrl,\n  appId: $appId,\n  clientId: $clientId,\n  targetId: $targetId,\n  targetType: $targetType,\n  permissions: $permissions,\n  events: $events,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  singleFileName: $singleFileName,\n  hasMultipleSingleFiles: $hasMultipleSingleFiles,\n  singleFilePaths: $singleFilePaths,\n  appSlug: $appSlug,\n  suspendedBy: $suspendedBy,\n  suspendedAt: $suspendedAt,\n  contactEmail: $contactEmail,\n)';
 
- }
+}

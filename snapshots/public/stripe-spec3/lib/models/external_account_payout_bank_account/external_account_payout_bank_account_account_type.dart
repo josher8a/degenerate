@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ExternalAccountPayoutBankAccountAccountType {const ExternalAccountPayoutBankAccountAccountType();
 
-factory ExternalAccountPayoutBankAccountAccountType.fromJson(String json) { return switch (json) {
+factory ExternalAccountPayoutBankAccountAccountType.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'futsu' => futsu,
   'savings' => savings,
   'toza' => toza,
   _ => ExternalAccountPayoutBankAccountAccountType$Unknown(json),
-}; }
+};}
 
 static const ExternalAccountPayoutBankAccountAccountType checking = ExternalAccountPayoutBankAccountAccountType$checking._();
 
@@ -22,36 +22,36 @@ static const ExternalAccountPayoutBankAccountAccountType toza = ExternalAccountP
 static const List<ExternalAccountPayoutBankAccountAccountType> values = [checking, futsu, savings, toza];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'checking' => 'checking',
   'futsu' => 'futsu',
   'savings' => 'savings',
   'toza' => 'toza',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ExternalAccountPayoutBankAccountAccountType$Unknown; } 
+bool get isUnknown {return this is ExternalAccountPayoutBankAccountAccountType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() checking, required W Function() futsu, required W Function() savings, required W Function() toza, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() checking, required W Function() futsu, required W Function() savings, required W Function() toza, required W Function(String value) $unknown, }) {return switch (this) {
       ExternalAccountPayoutBankAccountAccountType$checking() => checking(),
       ExternalAccountPayoutBankAccountAccountType$futsu() => futsu(),
       ExternalAccountPayoutBankAccountAccountType$savings() => savings(),
       ExternalAccountPayoutBankAccountAccountType$toza() => toza(),
       ExternalAccountPayoutBankAccountAccountType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? futsu, W Function()? savings, W Function()? toza, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? futsu, W Function()? savings, W Function()? toza, W Function(String value)? $unknown, }) {return switch (this) {
       ExternalAccountPayoutBankAccountAccountType$checking() => checking != null ? checking() : orElse(value),
       ExternalAccountPayoutBankAccountAccountType$futsu() => futsu != null ? futsu() : orElse(value),
       ExternalAccountPayoutBankAccountAccountType$savings() => savings != null ? savings() : orElse(value),
       ExternalAccountPayoutBankAccountAccountType$toza() => toza != null ? toza() : orElse(value),
       ExternalAccountPayoutBankAccountAccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ExternalAccountPayoutBankAccountAccountType($value)';
 
- }
+}
 @immutable final class ExternalAccountPayoutBankAccountAccountType$checking extends ExternalAccountPayoutBankAccountAccountType {const ExternalAccountPayoutBankAccountAccountType$checking._();
 
 @override String get value => 'checking';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'checking'.hashCode;
 
- }
+}
 @immutable final class ExternalAccountPayoutBankAccountAccountType$futsu extends ExternalAccountPayoutBankAccountAccountType {const ExternalAccountPayoutBankAccountAccountType$futsu._();
 
 @override String get value => 'futsu';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'futsu'.hashCode;
 
- }
+}
 @immutable final class ExternalAccountPayoutBankAccountAccountType$savings extends ExternalAccountPayoutBankAccountAccountType {const ExternalAccountPayoutBankAccountAccountType$savings._();
 
 @override String get value => 'savings';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'savings'.hashCode;
 
- }
+}
 @immutable final class ExternalAccountPayoutBankAccountAccountType$toza extends ExternalAccountPayoutBankAccountAccountType {const ExternalAccountPayoutBankAccountAccountType$toza._();
 
 @override String get value => 'toza';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'toza'.hashCode;
 
- }
+}
 @immutable final class ExternalAccountPayoutBankAccountAccountType$Unknown extends ExternalAccountPayoutBankAccountAccountType {const ExternalAccountPayoutBankAccountAccountType$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => value.hashCode;
 
- }
+}

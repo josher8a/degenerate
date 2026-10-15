@@ -14,7 +14,7 @@ final class WorkerDeploymentsApi with ApiExecutor {const WorkerDeploymentsApi(th
 /// List of Worker Deployments. The first deployment in the list is the latest deployment actively serving traffic.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<WorkerDeploymentsListDeploymentsResponseResult, CreateWorkerVersionError>> workerDeploymentsListDeployments({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerDeploymentsListDeploymentsResponseResult, CreateWorkerVersionError>> workerDeploymentsListDeployments({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Create Deployment
 ///
 /// Deployments configure how [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions) are deployed to traffic. A deployment can consist of one or two versions of a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<WorkersDeployment, CreateWorkerVersionError>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersDeploymentRequest body, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersDeployment, CreateWorkerVersionError>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersDeploymentRequest body, bool? force, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (force != null) {
   queryParameters['force'] = force.toString();
@@ -64,13 +64,13 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Get Deployment
 ///
 /// Get information about a Worker Deployment.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/deployments/{deployment_id}`
-Future<ApiResult<WorkersDeployment, CreateWorkerVersionError>> workerDeploymentsGetDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersDeployment, CreateWorkerVersionError>> workerDeploymentsGetDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -87,13 +87,13 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Delete Deployment
 ///
 /// Delete a Worker Deployment. The latest deployment, which is actively serving traffic, cannot be deleted. All other deployments can be deleted.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/deployments/{deployment_id}`
-Future<ApiResult<ResponseCommon80, CreateWorkerVersionError>> workerDeploymentsDeleteDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon80, CreateWorkerVersionError>> workerDeploymentsDeleteDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -109,5 +109,5 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
- }
+}
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the team has a direct, indirect, or mixed relationship to a role
 sealed class Assignment {const Assignment();
 
-factory Assignment.fromJson(String json) { return switch (json) {
+factory Assignment.fromJson(String json) {return switch (json) {
   'direct' => direct,
   'indirect' => indirect,
   'mixed' => mixed,
   _ => Assignment$Unknown(json),
-}; }
+};}
 
 static const Assignment direct = Assignment$direct._();
 
@@ -20,33 +20,33 @@ static const Assignment mixed = Assignment$mixed._();
 static const List<Assignment> values = [direct, indirect, mixed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'direct' => 'direct',
   'indirect' => 'indirect',
   'mixed' => 'mixed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Assignment$Unknown; } 
+bool get isUnknown {return this is Assignment$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() direct, required W Function() indirect, required W Function() mixed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() direct, required W Function() indirect, required W Function() mixed, required W Function(String value) $unknown, }) {return switch (this) {
       Assignment$direct() => direct(),
       Assignment$indirect() => indirect(),
       Assignment$mixed() => mixed(),
       Assignment$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? indirect, W Function()? mixed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? indirect, W Function()? mixed, W Function(String value)? $unknown, }) {return switch (this) {
       Assignment$direct() => direct != null ? direct() : orElse(value),
       Assignment$indirect() => indirect != null ? indirect() : orElse(value),
       Assignment$mixed() => mixed != null ? mixed() : orElse(value),
       Assignment$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Assignment($value)';
 
- }
+}
 @immutable final class Assignment$direct extends Assignment {const Assignment$direct._();
 
 @override String get value => 'direct';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'direct'.hashCode;
 
- }
+}
 @immutable final class Assignment$indirect extends Assignment {const Assignment$indirect._();
 
 @override String get value => 'indirect';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'indirect'.hashCode;
 
- }
+}
 @immutable final class Assignment$mixed extends Assignment {const Assignment$mixed._();
 
 @override String get value => 'mixed';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'mixed'.hashCode;
 
- }
+}
 @immutable final class Assignment$Unknown extends Assignment {const Assignment$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

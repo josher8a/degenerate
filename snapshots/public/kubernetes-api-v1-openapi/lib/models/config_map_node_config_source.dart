@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ConfigMapNodeConfigSource contains the information to reference a ConfigMap as a config source for the Node. This API is deprecated since 1.22: https://git.k8s.io/enhancements/keps/sig-node/281-dynamic-kubelet-configuration
 @immutable final class ConfigMapNodeConfigSource {const ConfigMapNodeConfigSource({required this.kubeletConfigKey, required this.name, required this.namespace, this.resourceVersion, this.uid, });
 
-factory ConfigMapNodeConfigSource.fromJson(Map<String, dynamic> json) { return ConfigMapNodeConfigSource(
+factory ConfigMapNodeConfigSource.fromJson(Map<String, dynamic> json) {return ConfigMapNodeConfigSource(
   kubeletConfigKey: json['kubeletConfigKey'] as String,
   name: json['name'] as String,
   namespace: json['namespace'] as String,
   resourceVersion: json['resourceVersion'] as String?,
   uid: json['uid'] as String?,
-); }
+);}
 
 /// KubeletConfigKey declares which key of the referenced ConfigMap corresponds to the KubeletConfiguration structure This field is required in all cases.
 final String kubeletConfigKey;
@@ -27,23 +27,23 @@ final String? resourceVersion;
 /// UID is the metadata.UID of the referenced ConfigMap. This field is forbidden in Node.Spec, and required in Node.Status.
 final String? uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kubeletConfigKey': kubeletConfigKey,
   'name': name,
   'namespace': namespace,
   'resourceVersion': ?resourceVersion,
   'uid': ?uid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kubeletConfigKey') && json['kubeletConfigKey'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kubeletConfigKey') && json['kubeletConfigKey'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('namespace') && json['namespace'] is String; } 
-ConfigMapNodeConfigSource copyWith({String? kubeletConfigKey, String? name, String? namespace, String? Function()? resourceVersion, String? Function()? uid, }) { return ConfigMapNodeConfigSource(
+      json.containsKey('namespace') && json['namespace'] is String;}
+ConfigMapNodeConfigSource copyWith({String? kubeletConfigKey, String? name, String? namespace, String? Function()? resourceVersion, String? Function()? uid, }) {return ConfigMapNodeConfigSource(
   kubeletConfigKey: kubeletConfigKey ?? this.kubeletConfigKey,
   name: name ?? this.name,
   namespace: namespace ?? this.namespace,
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   uid: uid != null ? uid() : this.uid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConfigMapNodeConfigSource &&
           kubeletConfigKey == other.kubeletConfigKey &&
@@ -56,4 +56,4 @@ ConfigMapNodeConfigSource copyWith({String? kubeletConfigKey, String? name, Stri
 
 @override String toString() => 'ConfigMapNodeConfigSource(kubeletConfigKey: $kubeletConfigKey, name: $name, namespace: $namespace, resourceVersion: $resourceVersion, uid: $uid)';
 
- }
+}

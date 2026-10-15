@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_info_response.dart';import 'package:pub_cloudflare/models/vectorize_messages2.dart';@immutable final class VectorizeIndexInfoResponse2 {const VectorizeIndexInfoResponse2({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory VectorizeIndexInfoResponse2.fromJson(Map<String, dynamic> json) { return VectorizeIndexInfoResponse2(
+factory VectorizeIndexInfoResponse2.fromJson(Map<String, dynamic> json) {return VectorizeIndexInfoResponse2(
   errors: (json['errors'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: VectorizeIndexInfoResponse.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<VectorizeMessages2> errors;
 
@@ -21,22 +21,22 @@ final VectorizeIndexInfoResponse result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-VectorizeIndexInfoResponse2 copyWith({List<VectorizeMessages2>? errors, List<VectorizeMessages2>? messages, VectorizeIndexInfoResponse? result, bool? success, }) { return VectorizeIndexInfoResponse2(
+      json.containsKey('success') && json['success'] is bool;}
+VectorizeIndexInfoResponse2 copyWith({List<VectorizeMessages2>? errors, List<VectorizeMessages2>? messages, VectorizeIndexInfoResponse? result, bool? success, }) {return VectorizeIndexInfoResponse2(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexInfoResponse2 &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ VectorizeIndexInfoResponse2 copyWith({List<VectorizeMessages2>? errors, List<Vec
 
 @override String toString() => 'VectorizeIndexInfoResponse2(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

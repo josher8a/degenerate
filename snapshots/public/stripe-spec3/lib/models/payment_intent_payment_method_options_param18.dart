@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage();
 
-factory PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'none' => none,
   _ => PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown(json),
-}; }
+};}
 
 static const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty._();
 
@@ -16,30 +16,30 @@ static const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage none = Pay
 static const List<PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage> values = [$empty, none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'none' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown; } 
+bool get isUnknown {return this is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty() => $empty(),
       PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none() => none(),
       PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty() => $empty != null ? $empty() : orElse(value),
       PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none() => none != null ? none() : orElse(value),
       PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage($value)';
 
- }
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty extends PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty._();
 
 @override String get value => '';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none extends PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none._();
 
 @override String get value => 'none';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown extends PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown(this.value);
 
 @override final String value;
@@ -67,34 +67,34 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PaymentIntentPaymentMethodOptionsParam18 {const PaymentIntentPaymentMethodOptionsParam18({this.code, this.setupFutureUsage, });
 
-factory PaymentIntentPaymentMethodOptionsParam18.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam18(
+factory PaymentIntentPaymentMethodOptionsParam18.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsParam18(
   code: json['code'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final String? code;
 
 final PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'setup_future_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'setup_future_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final code$ = code;
 if (code$ != null) {
   if (code$.runes.length > 5000) { errors.add('code: length must be <= 5000'); }
 }
-return errors; } 
-PaymentIntentPaymentMethodOptionsParam18 copyWith({String? Function()? code, PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam18(
+return errors;}
+PaymentIntentPaymentMethodOptionsParam18 copyWith({String? Function()? code, PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentIntentPaymentMethodOptionsParam18(
   code: code != null ? code() : this.code,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam18 &&
           code == other.code &&
@@ -104,4 +104,4 @@ PaymentIntentPaymentMethodOptionsParam18 copyWith({String? Function()? code, Pay
 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsParam18(code: $code, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

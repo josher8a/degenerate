@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_https_record/dns_records_https_record_data.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_svcb_record_request/dns_records_svcb_record_request_type.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';@immutable final class DnsRecordsSvcbRecord {const DnsRecordsSvcbRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
-factory DnsRecordsSvcbRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsSvcbRecord(
+factory DnsRecordsSvcbRecord.fromJson(Map<String, dynamic> json) {return DnsRecordsSvcbRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,
   name: json['name'] != null ? DnsRecordsName.fromJson(json['name'] as String) : null,
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
@@ -13,7 +13,7 @@ factory DnsRecordsSvcbRecord.fromJson(Map<String, dynamic> json) { return DnsRec
   content: json['content'] as String?,
   data: json['data'] != null ? DnsRecordsHttpsRecordData.fromJson(json['data'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? DnsRecordsSvcbRecordRequestType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final DnsRecordsComment? comment;
 
@@ -38,7 +38,7 @@ final DnsRecordsHttpsRecordData? data;
 /// Example: `'SVCB'`
 final DnsRecordsSvcbRecordRequestType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (proxied != null) 'proxied': proxied?.toJson(),
@@ -48,9 +48,9 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
   if (data != null) 'data': data?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'type'}.contains(key)); } 
-DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsHttpsRecordData? Function()? data, DnsRecordsSvcbRecordRequestType? Function()? type, }) { return DnsRecordsSvcbRecord(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'type'}.contains(key));}
+DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsHttpsRecordData? Function()? data, DnsRecordsSvcbRecordRequestType? Function()? type, }) {return DnsRecordsSvcbRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,
@@ -60,7 +60,7 @@ DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecord
   content: content != null ? content() : this.content,
   data: data != null ? data() : this.data,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsSvcbRecord &&
           comment == other.comment &&
@@ -77,4 +77,4 @@ DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecord
 
 @override String toString() => 'DnsRecordsSvcbRecord(\n  comment: $comment,\n  name: $name,\n  proxied: $proxied,\n  settings: $settings,\n  tags: $tags,\n  ttl: $ttl,\n  content: $content,\n  data: $data,\n  type: $type,\n)';
 
- }
+}

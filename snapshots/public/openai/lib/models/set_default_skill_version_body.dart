@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Updates the default version pointer for a skill.
 @immutable final class SetDefaultSkillVersionBody {const SetDefaultSkillVersionBody({required this.defaultVersion});
 
-factory SetDefaultSkillVersionBody.fromJson(Map<String, dynamic> json) { return SetDefaultSkillVersionBody(
+factory SetDefaultSkillVersionBody.fromJson(Map<String, dynamic> json) {return SetDefaultSkillVersionBody(
   defaultVersion: json['default_version'] as String,
-); }
+);}
 
 /// The skill version number to set as default.
 final String defaultVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'default_version': defaultVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_version') && json['default_version'] is String; } 
-SetDefaultSkillVersionBody copyWith({String? defaultVersion}) { return SetDefaultSkillVersionBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('default_version') && json['default_version'] is String;}
+SetDefaultSkillVersionBody copyWith({String? defaultVersion}) {return SetDefaultSkillVersionBody(
   defaultVersion: defaultVersion ?? this.defaultVersion,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SetDefaultSkillVersionBody &&
           defaultVersion == other.defaultVersion;
@@ -26,4 +26,4 @@ SetDefaultSkillVersionBody copyWith({String? defaultVersion}) { return SetDefaul
 
 @override String toString() => 'SetDefaultSkillVersionBody(defaultVersion: $defaultVersion)';
 
- }
+}

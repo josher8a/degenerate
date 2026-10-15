@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode();
 
-factory ListsItemRedirectStatusCode.fromJson(int json) { return switch (json) {
+factory ListsItemRedirectStatusCode.fromJson(int json) {return switch (json) {
   301 => $301,
   302 => $302,
   307 => $307,
   308 => $308,
   _ => ListsItemRedirectStatusCode$Unknown(json),
-}; }
+};}
 
 static const ListsItemRedirectStatusCode $301 = ListsItemRedirectStatusCode$$301._();
 
@@ -22,36 +22,36 @@ static const ListsItemRedirectStatusCode $308 = ListsItemRedirectStatusCode$$308
 static const List<ListsItemRedirectStatusCode> values = [$301, $302, $307, $308];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   301 => r'$301',
   302 => r'$302',
   307 => r'$307',
   308 => r'$308',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ListsItemRedirectStatusCode$Unknown; } 
+bool get isUnknown {return this is ListsItemRedirectStatusCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $301, required W Function() $302, required W Function() $307, required W Function() $308, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $301, required W Function() $302, required W Function() $307, required W Function() $308, required W Function(int value) $unknown, }) {return switch (this) {
       ListsItemRedirectStatusCode$$301() => $301(),
       ListsItemRedirectStatusCode$$302() => $302(),
       ListsItemRedirectStatusCode$$307() => $307(),
       ListsItemRedirectStatusCode$$308() => $308(),
       ListsItemRedirectStatusCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Function()? $302, W Function()? $307, W Function()? $308, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Function()? $302, W Function()? $307, W Function()? $308, W Function(int value)? $unknown, }) {return switch (this) {
       ListsItemRedirectStatusCode$$301() => $301 != null ? $301() : orElse(value),
       ListsItemRedirectStatusCode$$302() => $302 != null ? $302() : orElse(value),
       ListsItemRedirectStatusCode$$307() => $307 != null ? $307() : orElse(value),
       ListsItemRedirectStatusCode$$308() => $308 != null ? $308() : orElse(value),
       ListsItemRedirectStatusCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ListsItemRedirectStatusCode($value)';
 
- }
+}
 @immutable final class ListsItemRedirectStatusCode$$301 extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$$301._();
 
 @override int get value => 301;
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Fun
 
 @override int get hashCode => 301.hashCode;
 
- }
+}
 @immutable final class ListsItemRedirectStatusCode$$302 extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$$302._();
 
 @override int get value => 302;
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Fun
 
 @override int get hashCode => 302.hashCode;
 
- }
+}
 @immutable final class ListsItemRedirectStatusCode$$307 extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$$307._();
 
 @override int get value => 307;
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Fun
 
 @override int get hashCode => 307.hashCode;
 
- }
+}
 @immutable final class ListsItemRedirectStatusCode$$308 extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$$308._();
 
 @override int get value => 308;
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Fun
 
 @override int get hashCode => 308.hashCode;
 
- }
+}
 @immutable final class ListsItemRedirectStatusCode$Unknown extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$Unknown(this.value);
 
 @override final int value;
@@ -97,11 +97,11 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Fun
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The definition of the redirect.
 @immutable final class ListsItemRedirect {const ListsItemRedirect({required this.sourceUrl, required this.targetUrl, this.includeSubdomains, this.preservePathSuffix, this.preserveQueryString, this.statusCode, this.subpathMatching, });
 
-factory ListsItemRedirect.fromJson(Map<String, dynamic> json) { return ListsItemRedirect(
+factory ListsItemRedirect.fromJson(Map<String, dynamic> json) {return ListsItemRedirect(
   includeSubdomains: json['include_subdomains'] as bool?,
   preservePathSuffix: json['preserve_path_suffix'] as bool?,
   preserveQueryString: json['preserve_query_string'] as bool?,
@@ -109,7 +109,7 @@ factory ListsItemRedirect.fromJson(Map<String, dynamic> json) { return ListsItem
   statusCode: json['status_code'] != null ? ListsItemRedirectStatusCode.fromJson((json['status_code'] as num).toInt()) : null,
   subpathMatching: json['subpath_matching'] as bool?,
   targetUrl: json['target_url'] as String,
-); }
+);}
 
 final bool? includeSubdomains;
 
@@ -142,7 +142,7 @@ ListsItemRedirectStatusCode get statusCodeOrDefault => statusCode ?? ListsItemRe
 /// The value of `subpathMatching`, or its schema default when absent.
 bool get subpathMatchingOrDefault => subpathMatching ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'include_subdomains': ?includeSubdomains,
   'preserve_path_suffix': ?preservePathSuffix,
   'preserve_query_string': ?preserveQueryString,
@@ -150,10 +150,10 @@ Map<String, dynamic> toJson() { return {
   if (statusCode != null) 'status_code': statusCode?.toJson(),
   'subpath_matching': ?subpathMatching,
   'target_url': targetUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('source_url') && json['source_url'] is String &&
-      json.containsKey('target_url') && json['target_url'] is String; } 
-ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function()? preservePathSuffix, bool? Function()? preserveQueryString, String? sourceUrl, ListsItemRedirectStatusCode? Function()? statusCode, bool? Function()? subpathMatching, String? targetUrl, }) { return ListsItemRedirect(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('source_url') && json['source_url'] is String &&
+      json.containsKey('target_url') && json['target_url'] is String;}
+ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function()? preservePathSuffix, bool? Function()? preserveQueryString, String? sourceUrl, ListsItemRedirectStatusCode? Function()? statusCode, bool? Function()? subpathMatching, String? targetUrl, }) {return ListsItemRedirect(
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
   preservePathSuffix: preservePathSuffix != null ? preservePathSuffix() : this.preservePathSuffix,
   preserveQueryString: preserveQueryString != null ? preserveQueryString() : this.preserveQueryString,
@@ -161,7 +161,7 @@ ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function(
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   subpathMatching: subpathMatching != null ? subpathMatching() : this.subpathMatching,
   targetUrl: targetUrl ?? this.targetUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListsItemRedirect &&
           includeSubdomains == other.includeSubdomains &&
@@ -176,4 +176,4 @@ ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function(
 
 @override String toString() => 'ListsItemRedirect(includeSubdomains: $includeSubdomains, preservePathSuffix: $preservePathSuffix, preserveQueryString: $preserveQueryString, sourceUrl: $sourceUrl, statusCode: $statusCode, subpathMatching: $subpathMatching, targetUrl: $targetUrl)';
 
- }
+}

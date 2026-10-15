@@ -14,7 +14,7 @@ final class RadarAiBotsApi with ApiExecutor {const RadarAiBotsApi(this.apiConfig
 /// Retrieves an aggregated summary of AI bots HTTP requests grouped by the specified dimension.
 ///
 /// `GET /radar/ai/bots/summary/{dimension}`
-Future<ApiResult<RadarGetAiBotsSummaryByUserAgentResponseResult, RadarGetAiBotsSummaryError>> radarGetAiBotsSummary({required RadarGetAiBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? vertical, List<String>? industry, List<RadarGetAiBotsSummaryContentType>? contentType, int? limitPerGroup, RadarGetAiBotsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsSummaryByUserAgentResponseResult, RadarGetAiBotsSummaryError>> radarGetAiBotsSummary({required RadarGetAiBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? vertical, List<String>? industry, List<RadarGetAiBotsSummaryContentType>? contentType, int? limitPerGroup, RadarGetAiBotsSummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -102,13 +102,13 @@ return await execute(
   },
   onError: RadarGetAiBotsSummaryError.fromResponse,
 );
- } 
+}
 /// Get AI bots HTTP requests time series
 ///
 /// Retrieves AI bots HTTP request volume over time.
 ///
 /// `GET /radar/ai/bots/timeseries`
-Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetAiBotsTimeseriesError>> radarGetAiBotsTimeseries({RadarGetAiBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetAiBotsTimeseriesError>> radarGetAiBotsTimeseries({RadarGetAiBotsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -199,13 +199,13 @@ return await execute(
   },
   onError: RadarGetAiBotsTimeseriesError.fromResponse,
 );
- } 
+}
 /// Get time series distribution of AI bots HTTP requests by dimension.
 ///
 /// Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
 ///
 /// `GET /radar/ai/bots/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetAiBotsTimeseriesGroupError>> radarGetAiBotsTimeseriesGroup({required RadarGetAiBotsTimeseriesGroupDimension dimension, RadarGetAiBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesGroupContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesGroupNormalization? normalization, RadarGetAiBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetAiBotsTimeseriesGroupError>> radarGetAiBotsTimeseriesGroup({required RadarGetAiBotsTimeseriesGroupDimension dimension, RadarGetAiBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesGroupContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesGroupNormalization? normalization, RadarGetAiBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -299,5 +299,5 @@ return await execute(
   },
   onError: RadarGetAiBotsTimeseriesGroupError.fromResponse,
 );
- } 
- }
+}
+}

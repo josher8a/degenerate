@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TestAsyncHooksBeforeCreateRequestPathsResponseHeaders {const TestAsyncHooksBeforeCreateRequestPathsResponseHeaders({this.asyncOldPathname});
 
-factory TestAsyncHooksBeforeCreateRequestPathsResponseHeaders.fromJson(Map<String, dynamic> json) { return TestAsyncHooksBeforeCreateRequestPathsResponseHeaders(
+factory TestAsyncHooksBeforeCreateRequestPathsResponseHeaders.fromJson(Map<String, dynamic> json) {return TestAsyncHooksBeforeCreateRequestPathsResponseHeaders(
   asyncOldPathname: json['async-old-pathname'] as String?,
-); }
+);}
 
 final String? asyncOldPathname;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'async-old-pathname': ?asyncOldPathname,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'async-old-pathname'}.contains(key)); } 
-TestAsyncHooksBeforeCreateRequestPathsResponseHeaders copyWith({String? Function()? asyncOldPathname}) { return TestAsyncHooksBeforeCreateRequestPathsResponseHeaders(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'async-old-pathname'}.contains(key));}
+TestAsyncHooksBeforeCreateRequestPathsResponseHeaders copyWith({String? Function()? asyncOldPathname}) {return TestAsyncHooksBeforeCreateRequestPathsResponseHeaders(
   asyncOldPathname: asyncOldPathname != null ? asyncOldPathname() : this.asyncOldPathname,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TestAsyncHooksBeforeCreateRequestPathsResponseHeaders &&
           asyncOldPathname == other.asyncOldPathname;
@@ -24,4 +24,4 @@ TestAsyncHooksBeforeCreateRequestPathsResponseHeaders copyWith({String? Function
 
 @override String toString() => 'TestAsyncHooksBeforeCreateRequestPathsResponseHeaders(asyncOldPathname: $asyncOldPathname)';
 
- }
+}

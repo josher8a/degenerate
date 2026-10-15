@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/package/package_type.dart';import 'package:pub_github_rest_3_1/models/package/package_visibility.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A software package
 @immutable final class Package {const Package({required this.id, required this.name, required this.packageType, required this.url, required this.htmlUrl, required this.versionCount, required this.visibility, required this.createdAt, required this.updatedAt, this.owner = const Omittable.absent(), this.repository = const Omittable.absent(), });
 
-factory Package.fromJson(Map<String, dynamic> json) { return Package(
+factory Package.fromJson(Map<String, dynamic> json) {return Package(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   packageType: PackageType.fromJson(json['package_type'] as String),
@@ -16,7 +16,7 @@ factory Package.fromJson(Map<String, dynamic> json) { return Package(
   repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// Unique identifier of the package.
 final int id;
@@ -43,7 +43,7 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'package_type': packageType.toJson(),
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   if (repository.isPresent) 'repository': repository.value?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('package_type') &&
       json.containsKey('url') && json['url'] is String &&
@@ -64,8 +64,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('version_count') && json['version_count'] is num &&
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-Package copyWith({int? id, String? name, PackageType? packageType, String? url, String? htmlUrl, int? versionCount, PackageVisibility? visibility, Omittable<SimpleUser?>? owner, Omittable<MinimalRepository?>? repository, DateTime? createdAt, DateTime? updatedAt, }) { return Package(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+Package copyWith({int? id, String? name, PackageType? packageType, String? url, String? htmlUrl, int? versionCount, PackageVisibility? visibility, Omittable<SimpleUser?>? owner, Omittable<MinimalRepository?>? repository, DateTime? createdAt, DateTime? updatedAt, }) {return Package(
   id: id ?? this.id,
   name: name ?? this.name,
   packageType: packageType ?? this.packageType,
@@ -77,7 +77,7 @@ Package copyWith({int? id, String? name, PackageType? packageType, String? url, 
   repository: repository ?? this.repository,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Package &&
           id == other.id &&
@@ -96,4 +96,4 @@ Package copyWith({int? id, String? name, PackageType? packageType, String? url, 
 
 @override String toString() => 'Package(\n  id: $id,\n  name: $name,\n  packageType: $packageType,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  versionCount: $versionCount,\n  visibility: $visibility,\n  owner: $owner,\n  repository: $repository,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

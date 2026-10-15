@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class D1ImportDatabaseResponse202ResultType {const D1ImportDatabaseResponse202ResultType();
 
-factory D1ImportDatabaseResponse202ResultType.fromJson(String json) { return switch (json) {
+factory D1ImportDatabaseResponse202ResultType.fromJson(String json) {return switch (json) {
   'import' => $import,
   _ => D1ImportDatabaseResponse202ResultType$Unknown(json),
-}; }
+};}
 
 static const D1ImportDatabaseResponse202ResultType $import = D1ImportDatabaseResponse202ResultType$$import._();
 
 static const List<D1ImportDatabaseResponse202ResultType> values = [$import];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'import' => r'$import',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is D1ImportDatabaseResponse202ResultType$Unknown; } 
+bool get isUnknown {return this is D1ImportDatabaseResponse202ResultType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $import, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $import, required W Function(String value) $unknown, }) {return switch (this) {
       D1ImportDatabaseResponse202ResultType$$import() => $import(),
       D1ImportDatabaseResponse202ResultType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $import, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $import, W Function(String value)? $unknown, }) {return switch (this) {
       D1ImportDatabaseResponse202ResultType$$import() => $import != null ? $import() : orElse(value),
       D1ImportDatabaseResponse202ResultType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'D1ImportDatabaseResponse202ResultType($value)';
 
- }
+}
 @immutable final class D1ImportDatabaseResponse202ResultType$$import extends D1ImportDatabaseResponse202ResultType {const D1ImportDatabaseResponse202ResultType$$import._();
 
 @override String get value => 'import';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $import,
 
 @override int get hashCode => 'import'.hashCode;
 
- }
+}
 @immutable final class D1ImportDatabaseResponse202ResultType$Unknown extends D1ImportDatabaseResponse202ResultType {const D1ImportDatabaseResponse202ResultType$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $import,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

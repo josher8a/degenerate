@@ -3,23 +3,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscSettings {const NscSettings({required this.defaultAsn});
 
-factory NscSettings.fromJson(Map<String, dynamic> json) { return NscSettings(
+factory NscSettings.fromJson(Map<String, dynamic> json) {return NscSettings(
   defaultAsn: (json['default_asn'] as num).toInt(),
-); }
+);}
 
 final int defaultAsn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'default_asn': defaultAsn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_asn') && json['default_asn'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('default_asn') && json['default_asn'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (defaultAsn < 0) { errors.add('defaultAsn: must be >= 0'); }
-return errors; } 
-NscSettings copyWith({int? defaultAsn}) { return NscSettings(
+return errors;}
+NscSettings copyWith({int? defaultAsn}) {return NscSettings(
   defaultAsn: defaultAsn ?? this.defaultAsn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NscSettings &&
           defaultAsn == other.defaultAsn;
@@ -28,4 +28,4 @@ NscSettings copyWith({int? defaultAsn}) { return NscSettings(
 
 @override String toString() => 'NscSettings(defaultAsn: $defaultAsn)';
 
- }
+}

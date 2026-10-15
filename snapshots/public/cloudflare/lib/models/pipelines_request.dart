@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PipelinesRequest {const PipelinesRequest({required this.name, required this.sql, });
 
-factory PipelinesRequest.fromJson(Map<String, dynamic> json) { return PipelinesRequest(
+factory PipelinesRequest.fromJson(Map<String, dynamic> json) {return PipelinesRequest(
   name: json['name'] as String,
   sql: json['sql'] as String,
-); }
+);}
 
 /// Specifies the name of the Pipeline.
 /// 
@@ -18,21 +18,21 @@ final String name;
 /// Example: `'insert into sink select * from source;'`
 final String sql;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'sql': sql,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('sql') && json['sql'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('sql') && json['sql'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
-return errors; } 
-PipelinesRequest copyWith({String? name, String? sql, }) { return PipelinesRequest(
+return errors;}
+PipelinesRequest copyWith({String? name, String? sql, }) {return PipelinesRequest(
   name: name ?? this.name,
   sql: sql ?? this.sql,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PipelinesRequest &&
           name == other.name &&
@@ -42,4 +42,4 @@ PipelinesRequest copyWith({String? name, String? sql, }) { return PipelinesReque
 
 @override String toString() => 'PipelinesRequest(name: $name, sql: $sql)';
 
- }
+}

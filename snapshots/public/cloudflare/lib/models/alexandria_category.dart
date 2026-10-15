@@ -31,12 +31,12 @@ String toJson() => value;
 }
 @immutable final class AlexandriaCategory {const AlexandriaCategory({required this.createdAt, required this.description, required this.id, required this.name, });
 
-factory AlexandriaCategory.fromJson(Map<String, dynamic> json) { return AlexandriaCategory(
+factory AlexandriaCategory.fromJson(Map<String, dynamic> json) {return AlexandriaCategory(
   createdAt: AlexandriaCategoryCreatedAt.fromJson(json['created_at'] as String),
   description: AlexandriaCategoryDescription.fromJson(json['description'] as String),
   id: AlexandriaCategoryId.fromJson(json['id'] as String),
   name: AlexandriaCategoryName.fromJson(json['name'] as String),
-); }
+);}
 
 final AlexandriaCategoryCreatedAt createdAt;
 
@@ -46,22 +46,22 @@ final AlexandriaCategoryId id;
 
 final AlexandriaCategoryName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toJson(),
   'description': description.toJson(),
   'id': id.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') &&
       json.containsKey('description') &&
       json.containsKey('id') &&
-      json.containsKey('name'); } 
-AlexandriaCategory copyWith({AlexandriaCategoryCreatedAt? createdAt, AlexandriaCategoryDescription? description, AlexandriaCategoryId? id, AlexandriaCategoryName? name, }) { return AlexandriaCategory(
+      json.containsKey('name');}
+AlexandriaCategory copyWith({AlexandriaCategoryCreatedAt? createdAt, AlexandriaCategoryDescription? description, AlexandriaCategoryId? id, AlexandriaCategoryName? name, }) {return AlexandriaCategory(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   id: id ?? this.id,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AlexandriaCategory &&
           createdAt == other.createdAt &&
@@ -73,4 +73,4 @@ AlexandriaCategory copyWith({AlexandriaCategoryCreatedAt? createdAt, AlexandriaC
 
 @override String toString() => 'AlexandriaCategory(createdAt: $createdAt, description: $description, id: $id, name: $name)';
 
- }
+}

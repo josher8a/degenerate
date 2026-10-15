@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UnionNestedEnumsResponse {const UnionNestedEnumsResponse({required this.form});
 
-factory UnionNestedEnumsResponse.fromJson(Map<String, dynamic> json) { return UnionNestedEnumsResponse(
+factory UnionNestedEnumsResponse.fromJson(Map<String, dynamic> json) {return UnionNestedEnumsResponse(
   form: json['form'] as Map<String, dynamic>,
-); }
+);}
 
 final Map<String,dynamic> form;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'form': form,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('form'); } 
-UnionNestedEnumsResponse copyWith({Map<String,dynamic>? form}) { return UnionNestedEnumsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('form');}
+UnionNestedEnumsResponse copyWith({Map<String,dynamic>? form}) {return UnionNestedEnumsResponse(
   form: form ?? this.form,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UnionNestedEnumsResponse &&
           form == other.form;
@@ -24,4 +24,4 @@ UnionNestedEnumsResponse copyWith({Map<String,dynamic>? form}) { return UnionNes
 
 @override String toString() => 'UnionNestedEnumsResponse(form: $form)';
 
- }
+}

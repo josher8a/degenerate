@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /users/{userId}`
-Future<ApiResult<User, Never>> getUser({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<User, Never>> getUser({required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,9 +25,9 @@ return await execute(
     return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `PATCH /users/{userId}`
-Future<ApiResult<User, Never>> patchUser({required String userId, required UserPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<User, Never>> patchUser({required String userId, required UserPatch body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/merge-patch+json';
 
 final request = ApiRequest(
@@ -44,9 +44,9 @@ return await execute(
     return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `PUT /users/{userId}/avatar`
-Future<ApiResult<void, Never>> uploadAvatar({required String userId, required UploadAvatarRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> uploadAvatar({required String userId, required UploadAvatarRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -65,5 +65,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

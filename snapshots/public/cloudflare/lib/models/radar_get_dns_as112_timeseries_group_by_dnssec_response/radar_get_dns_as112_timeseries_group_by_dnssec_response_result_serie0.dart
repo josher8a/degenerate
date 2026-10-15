@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0 {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0({required this.notSupported, required this.supported, });
 
-factory RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0(
+factory RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0(
   notSupported: (json['NOT_SUPPORTED'] as List<dynamic>).map((e) => e as String).toList(),
   supported: (json['SUPPORTED'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> notSupported;
 
 final List<String> supported;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'NOT_SUPPORTED': notSupported,
   'SUPPORTED': supported,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('NOT_SUPPORTED') &&
-      json.containsKey('SUPPORTED'); } 
-RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0 copyWith({List<String>? notSupported, List<String>? supported, }) { return RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('NOT_SUPPORTED') &&
+      json.containsKey('SUPPORTED');}
+RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0 copyWith({List<String>? notSupported, List<String>? supported, }) {return RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0(
   notSupported: notSupported ?? this.notSupported,
   supported: supported ?? this.supported,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0 &&
           listEquals(notSupported, other.notSupported) &&
@@ -31,4 +31,4 @@ RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0 copyWith({List<Strin
 
 @override String toString() => 'RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0(notSupported: $notSupported, supported: $supported)';
 
- }
+}

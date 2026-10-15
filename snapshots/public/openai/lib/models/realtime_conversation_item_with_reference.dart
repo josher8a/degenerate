@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType();
 
-factory RealtimeConversationItemWithReferenceType.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemWithReferenceType.fromJson(String json) {return switch (json) {
   'message' => message,
   'function_call' => functionCall,
   'function_call_output' => functionCallOutput,
   _ => RealtimeConversationItemWithReferenceType$Unknown(json),
-}; }
+};}
 
 static const RealtimeConversationItemWithReferenceType message = RealtimeConversationItemWithReferenceType$message._();
 
@@ -21,33 +21,33 @@ static const RealtimeConversationItemWithReferenceType functionCallOutput = Real
 static const List<RealtimeConversationItemWithReferenceType> values = [message, functionCall, functionCallOutput];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'message' => 'message',
   'function_call' => 'functionCall',
   'function_call_output' => 'functionCallOutput',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeConversationItemWithReferenceType$Unknown; } 
+bool get isUnknown {return this is RealtimeConversationItemWithReferenceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() message, required W Function() functionCall, required W Function() functionCallOutput, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() message, required W Function() functionCall, required W Function() functionCallOutput, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeConversationItemWithReferenceType$message() => message(),
       RealtimeConversationItemWithReferenceType$functionCall() => functionCall(),
       RealtimeConversationItemWithReferenceType$functionCallOutput() => functionCallOutput(),
       RealtimeConversationItemWithReferenceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function()? functionCall, W Function()? functionCallOutput, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function()? functionCall, W Function()? functionCallOutput, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeConversationItemWithReferenceType$message() => message != null ? message() : orElse(value),
       RealtimeConversationItemWithReferenceType$functionCall() => functionCall != null ? functionCall() : orElse(value),
       RealtimeConversationItemWithReferenceType$functionCallOutput() => functionCallOutput != null ? functionCallOutput() : orElse(value),
       RealtimeConversationItemWithReferenceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeConversationItemWithReferenceType($value)';
 
- }
+}
 @immutable final class RealtimeConversationItemWithReferenceType$message extends RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType$message._();
 
 @override String get value => 'message';
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => 'message'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemWithReferenceType$functionCall extends RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType$functionCall._();
 
 @override String get value => 'function_call';
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => 'function_call'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemWithReferenceType$functionCallOutput extends RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType$functionCallOutput._();
 
 @override String get value => 'function_call_output';
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => 'function_call_output'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemWithReferenceType$Unknown extends RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType$Unknown(this.value);
 
 @override final String value;
@@ -84,18 +84,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? message,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The role of the message sender (`user`, `assistant`, `system`), only
 /// applicable for `message` items.
 /// 
 sealed class RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole();
 
-factory RealtimeConversationItemWithReferenceRole.fromJson(String json) { return switch (json) {
+factory RealtimeConversationItemWithReferenceRole.fromJson(String json) {return switch (json) {
   'user' => user,
   'assistant' => assistant,
   'system' => system,
   _ => RealtimeConversationItemWithReferenceRole$Unknown(json),
-}; }
+};}
 
 static const RealtimeConversationItemWithReferenceRole user = RealtimeConversationItemWithReferenceRole$user._();
 
@@ -106,33 +106,33 @@ static const RealtimeConversationItemWithReferenceRole system = RealtimeConversa
 static const List<RealtimeConversationItemWithReferenceRole> values = [user, assistant, system];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'user' => 'user',
   'assistant' => 'assistant',
   'system' => 'system',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeConversationItemWithReferenceRole$Unknown; } 
+bool get isUnknown {return this is RealtimeConversationItemWithReferenceRole$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() user, required W Function() assistant, required W Function() system, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() user, required W Function() assistant, required W Function() system, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeConversationItemWithReferenceRole$user() => user(),
       RealtimeConversationItemWithReferenceRole$assistant() => assistant(),
       RealtimeConversationItemWithReferenceRole$system() => system(),
       RealtimeConversationItemWithReferenceRole$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? assistant, W Function()? system, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? assistant, W Function()? system, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeConversationItemWithReferenceRole$user() => user != null ? user() : orElse(value),
       RealtimeConversationItemWithReferenceRole$assistant() => assistant != null ? assistant() : orElse(value),
       RealtimeConversationItemWithReferenceRole$system() => system != null ? system() : orElse(value),
       RealtimeConversationItemWithReferenceRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeConversationItemWithReferenceRole($value)';
 
- }
+}
 @immutable final class RealtimeConversationItemWithReferenceRole$user extends RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole$user._();
 
 @override String get value => 'user';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'user'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemWithReferenceRole$assistant extends RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole$assistant._();
 
 @override String get value => 'assistant';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'assistant'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemWithReferenceRole$system extends RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole$system._();
 
 @override String get value => 'system';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => 'system'.hashCode;
 
- }
+}
 @immutable final class RealtimeConversationItemWithReferenceRole$Unknown extends RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole$Unknown(this.value);
 
 @override final String value;
@@ -169,11 +169,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The item to add to the conversation.
 @immutable final class RealtimeConversationItemWithReference {const RealtimeConversationItemWithReference({this.id, this.type, this.object, this.status, this.role, this.content, this.callId, this.name, this.arguments, this.output, });
 
-factory RealtimeConversationItemWithReference.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemWithReference(
+factory RealtimeConversationItemWithReference.fromJson(Map<String, dynamic> json) {return RealtimeConversationItemWithReference(
   id: json['id'] as String?,
   type: json['type'] != null ? RealtimeConversationItemWithReferenceType.fromJson(json['type'] as String) : null,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
@@ -184,7 +184,7 @@ factory RealtimeConversationItemWithReference.fromJson(Map<String, dynamic> json
   name: json['name'] as String?,
   arguments: json['arguments'] as String?,
   output: json['output'] as String?,
-); }
+);}
 
 /// For an item of type (`message` | `function_call` | `function_call_output`)
 /// this field allows the client to assign the unique ID of the item. It is
@@ -241,7 +241,7 @@ final String? arguments;
 /// 
 final String? output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (type != null) 'type': type?.toJson(),
   if (object != null) 'object': object?.toJson(),
@@ -252,9 +252,9 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'arguments': ?arguments,
   'output': ?output,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type', 'object', 'status', 'role', 'content', 'call_id', 'name', 'arguments', 'output'}.contains(key)); } 
-RealtimeConversationItemWithReference copyWith({String? Function()? id, RealtimeConversationItemWithReferenceType? Function()? type, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputResourceStatus? Function()? status, RealtimeConversationItemWithReferenceRole? Function()? role, List<RealtimeConversationItemWithReferenceContent>? Function()? content, String? Function()? callId, String? Function()? name, String? Function()? arguments, String? Function()? output, }) { return RealtimeConversationItemWithReference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'type', 'object', 'status', 'role', 'content', 'call_id', 'name', 'arguments', 'output'}.contains(key));}
+RealtimeConversationItemWithReference copyWith({String? Function()? id, RealtimeConversationItemWithReferenceType? Function()? type, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputResourceStatus? Function()? status, RealtimeConversationItemWithReferenceRole? Function()? role, List<RealtimeConversationItemWithReferenceContent>? Function()? content, String? Function()? callId, String? Function()? name, String? Function()? arguments, String? Function()? output, }) {return RealtimeConversationItemWithReference(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
   object: object != null ? object() : this.object,
@@ -265,7 +265,7 @@ RealtimeConversationItemWithReference copyWith({String? Function()? id, Realtime
   name: name != null ? name() : this.name,
   arguments: arguments != null ? arguments() : this.arguments,
   output: output != null ? output() : this.output,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemWithReference &&
           id == other.id &&
@@ -283,4 +283,4 @@ RealtimeConversationItemWithReference copyWith({String? Function()? id, Realtime
 
 @override String toString() => 'RealtimeConversationItemWithReference(\n  id: $id,\n  type: $type,\n  object: $object,\n  status: $status,\n  role: $role,\n  content: $content,\n  callId: $callId,\n  name: $name,\n  arguments: $arguments,\n  output: $output,\n)';
 
- }
+}

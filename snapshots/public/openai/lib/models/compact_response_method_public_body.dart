@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/compact_response_method_public_body/compact_response_method_public_body_input.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_ids_compaction.dart';@immutable final class CompactResponseMethodPublicBody {const CompactResponseMethodPublicBody({required this.model, this.input = const Omittable.absent(), this.previousResponseId = const Omittable.absent(), this.instructions = const Omittable.absent(), this.promptCacheKey = const Omittable.absent(), });
 
-factory CompactResponseMethodPublicBody.fromJson(Map<String, dynamic> json) { return CompactResponseMethodPublicBody(
+factory CompactResponseMethodPublicBody.fromJson(Map<String, dynamic> json) {return CompactResponseMethodPublicBody(
   model: json['model'] != null ? ModelIdsCompaction.fromJson(json['model']) : null,
   input: json.containsKey('input') ? Omittable(json['input'] != null ? OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),) : null) : const Omittable.absent(),
   previousResponseId: json.containsKey('previous_response_id') ? Omittable(json['previous_response_id'] as String?) : const Omittable.absent(),
   instructions: json.containsKey('instructions') ? Omittable(json['instructions'] as String?) : const Omittable.absent(),
   promptCacheKey: json.containsKey('prompt_cache_key') ? Omittable(json['prompt_cache_key'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final ModelIdsCompaction? model;
 
@@ -26,28 +26,28 @@ final Omittable<String?> instructions;
 /// A key to use when reading from or writing to the prompt cache.
 final Omittable<String?> promptCacheKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'model': model?.toJson(),
   if (input.isPresent) 'input': input.value?.toJson(),
   if (previousResponseId.isPresent) 'previous_response_id': previousResponseId.value,
   if (instructions.isPresent) 'instructions': instructions.value,
   if (promptCacheKey.isPresent) 'prompt_cache_key': promptCacheKey.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('model'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('model');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final promptCacheKey$ = promptCacheKey.value;
 if (promptCacheKey$ != null) {
   if (promptCacheKey$.runes.length > 64) { errors.add('promptCacheKey: length must be <= 64'); }
 }
-return errors; } 
-CompactResponseMethodPublicBody copyWith({ModelIdsCompaction? Function()? model, Omittable<CompactResponseMethodPublicBodyInput?>? input, Omittable<String?>? previousResponseId, Omittable<String?>? instructions, Omittable<String?>? promptCacheKey, }) { return CompactResponseMethodPublicBody(
+return errors;}
+CompactResponseMethodPublicBody copyWith({ModelIdsCompaction? Function()? model, Omittable<CompactResponseMethodPublicBodyInput?>? input, Omittable<String?>? previousResponseId, Omittable<String?>? instructions, Omittable<String?>? promptCacheKey, }) {return CompactResponseMethodPublicBody(
   model: model != null ? model() : this.model,
   input: input ?? this.input,
   previousResponseId: previousResponseId ?? this.previousResponseId,
   instructions: instructions ?? this.instructions,
   promptCacheKey: promptCacheKey ?? this.promptCacheKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CompactResponseMethodPublicBody &&
           model == other.model &&
@@ -60,4 +60,4 @@ CompactResponseMethodPublicBody copyWith({ModelIdsCompaction? Function()? model,
 
 @override String toString() => 'CompactResponseMethodPublicBody(model: $model, input: $input, previousResponseId: $previousResponseId, instructions: $instructions, promptCacheKey: $promptCacheKey)';
 
- }
+}

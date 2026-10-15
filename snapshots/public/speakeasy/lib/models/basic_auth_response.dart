@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BasicAuthResponse {const BasicAuthResponse({required this.authenticated, required this.user, });
 
-factory BasicAuthResponse.fromJson(Map<String, dynamic> json) { return BasicAuthResponse(
+factory BasicAuthResponse.fromJson(Map<String, dynamic> json) {return BasicAuthResponse(
   authenticated: json['authenticated'] as bool,
   user: json['user'] as String,
-); }
+);}
 
 final bool authenticated;
 
 final String user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'authenticated': authenticated,
   'user': user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('authenticated') && json['authenticated'] is bool &&
-      json.containsKey('user') && json['user'] is String; } 
-BasicAuthResponse copyWith({bool? authenticated, String? user, }) { return BasicAuthResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('authenticated') && json['authenticated'] is bool &&
+      json.containsKey('user') && json['user'] is String;}
+BasicAuthResponse copyWith({bool? authenticated, String? user, }) {return BasicAuthResponse(
   authenticated: authenticated ?? this.authenticated,
   user: user ?? this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BasicAuthResponse &&
           authenticated == other.authenticated &&
@@ -31,4 +31,4 @@ BasicAuthResponse copyWith({bool? authenticated, String? user, }) { return Basic
 
 @override String toString() => 'BasicAuthResponse(authenticated: $authenticated, user: $user)';
 
- }
+}

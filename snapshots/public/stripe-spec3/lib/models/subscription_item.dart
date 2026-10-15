@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// one plan, making it easy to represent complex billing relationships.
 @immutable final class SubscriptionItem {const SubscriptionItem({required this.created, required this.currentPeriodEnd, required this.currentPeriodStart, required this.discounts, required this.id, required this.metadata, required this.object, required this.price, required this.subscription, this.billingThresholds = const Omittable.absent(), this.quantity, this.taxRates = const Omittable.absent(), });
 
-factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return SubscriptionItem(
+factory SubscriptionItem.fromJson(Map<String, dynamic> json) {return SubscriptionItem(
   billingThresholds: json.containsKey('billing_thresholds') ? Omittable(json['billing_thresholds'] != null ? SubscriptionItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currentPeriodEnd: (json['current_period_end'] as num).toInt(),
@@ -18,7 +18,7 @@ factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return Subscripti
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String,
   taxRates: json.containsKey('tax_rates') ? Omittable((json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Define thresholds at which an invoice will be sent, and the related subscription advanced to a new billing period
 final Omittable<SubscriptionItemBillingThresholds?> billingThresholds;
@@ -55,7 +55,7 @@ final String subscription;
 /// The tax rates which apply to this `subscription_item`. When set, the `default_tax_rates` on the subscription do not apply to this `subscription_item`.
 final Omittable<List<TaxRate>?> taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingThresholds.isPresent) 'billing_thresholds': billingThresholds.value?.toJson(),
   'created': created,
   'current_period_end': currentPeriodEnd,
@@ -68,8 +68,8 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   'subscription': subscription,
   if (taxRates.isPresent) 'tax_rates': taxRates.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('current_period_end') && json['current_period_end'] is num &&
       json.containsKey('current_period_start') && json['current_period_start'] is num &&
       json.containsKey('discounts') &&
@@ -77,13 +77,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('price') &&
-      json.containsKey('subscription') && json['subscription'] is String; } 
+      json.containsKey('subscription') && json['subscription'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (subscription.runes.length > 5000) { errors.add('subscription: length must be <= 5000'); }
-return errors; } 
-SubscriptionItem copyWith({Omittable<SubscriptionItemBillingThresholds?>? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<InvoiceitemDiscounts>? discounts, String? id, Map<String,String>? metadata, DeletedSubscriptionItemObject? object, Price? price, int? Function()? quantity, String? subscription, Omittable<List<TaxRate>?>? taxRates, }) { return SubscriptionItem(
+return errors;}
+SubscriptionItem copyWith({Omittable<SubscriptionItemBillingThresholds?>? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<InvoiceitemDiscounts>? discounts, String? id, Map<String,String>? metadata, DeletedSubscriptionItemObject? object, Price? price, int? Function()? quantity, String? subscription, Omittable<List<TaxRate>?>? taxRates, }) {return SubscriptionItem(
   billingThresholds: billingThresholds ?? this.billingThresholds,
   created: created ?? this.created,
   currentPeriodEnd: currentPeriodEnd ?? this.currentPeriodEnd,
@@ -96,7 +96,7 @@ SubscriptionItem copyWith({Omittable<SubscriptionItemBillingThresholds?>? billin
   quantity: quantity != null ? quantity() : this.quantity,
   subscription: subscription ?? this.subscription,
   taxRates: taxRates ?? this.taxRates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionItem &&
           billingThresholds == other.billingThresholds &&
@@ -117,4 +117,4 @@ SubscriptionItem copyWith({Omittable<SubscriptionItemBillingThresholds?>? billin
 
 @override String toString() => 'SubscriptionItem(\n  billingThresholds: $billingThresholds,\n  created: $created,\n  currentPeriodEnd: $currentPeriodEnd,\n  currentPeriodStart: $currentPeriodStart,\n  discounts: $discounts,\n  id: $id,\n  metadata: $metadata,\n  object: $object,\n  price: $price,\n  quantity: $quantity,\n  subscription: $subscription,\n  taxRates: $taxRates,\n)';
 
- }
+}

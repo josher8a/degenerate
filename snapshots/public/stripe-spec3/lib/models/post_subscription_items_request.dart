@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/payment_behavior.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_item_request/post_subscription_items_item_request_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_item_request/post_subscription_items_item_request_price_data.dart';@immutable final class PostSubscriptionItemsRequest {const PostSubscriptionItemsRequest({required this.subscription, this.billingThresholds, this.discounts, this.expand, this.metadata, this.paymentBehavior, this.price, this.priceData, this.prorationBehavior, this.prorationDate, this.quantity, this.taxRates, });
 
-factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionItemsRequest(
+factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) {return PostSubscriptionItemsRequest(
   billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionItemsItemRequestBillingThresholds.fromJson(json['billing_thresholds']) : null,
   discounts: json['discounts'] != null ? PostCustomersCustomerSubscriptionsRequestDiscounts.fromJson(json['discounts']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -16,7 +16,7 @@ factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { retur
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String,
   taxRates: json['tax_rates'] != null ? TaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period. Pass an empty string to remove previously-defined thresholds.
 final PostSubscriptionItemsItemRequestBillingThresholds? billingThresholds;
@@ -60,7 +60,7 @@ final String subscription;
 /// A list of [Tax Rate](https://docs.stripe.com/api/tax_rates) ids. These Tax Rates will override the [`default_tax_rates`](https://docs.stripe.com/api/subscriptions/create#create_subscription-default_tax_rates) on the Subscription. When updating, pass an empty string to remove previously-defined tax rates.
 final TaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
   if (discounts != null) 'discounts': discounts?.toJson(),
   'expand': ?expand,
@@ -73,17 +73,17 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   'subscription': subscription,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('subscription') && json['subscription'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final price$ = price;
 if (price$ != null) {
   if (price$.runes.length > 5000) { errors.add('price: length must be <= 5000'); }
 }
 if (subscription.runes.length > 5000) { errors.add('subscription: length must be <= 5000'); }
-return errors; } 
-PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsItemRequestBillingThresholds? Function()? billingThresholds, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PaymentBehavior? Function()? paymentBehavior, String? Function()? price, PostSubscriptionItemsItemRequestPriceData? Function()? priceData, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, int? Function()? quantity, String? subscription, TaxRates? Function()? taxRates, }) { return PostSubscriptionItemsRequest(
+return errors;}
+PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsItemRequestBillingThresholds? Function()? billingThresholds, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PaymentBehavior? Function()? paymentBehavior, String? Function()? price, PostSubscriptionItemsItemRequestPriceData? Function()? priceData, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, int? Function()? quantity, String? subscription, TaxRates? Function()? taxRates, }) {return PostSubscriptionItemsRequest(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts != null ? discounts() : this.discounts,
   expand: expand != null ? expand() : this.expand,
@@ -96,7 +96,7 @@ PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsItemRequestBillingTh
   quantity: quantity != null ? quantity() : this.quantity,
   subscription: subscription ?? this.subscription,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionItemsRequest &&
           billingThresholds == other.billingThresholds &&
@@ -116,4 +116,4 @@ PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsItemRequestBillingTh
 
 @override String toString() => 'PostSubscriptionItemsRequest(\n  billingThresholds: $billingThresholds,\n  discounts: $discounts,\n  expand: $expand,\n  metadata: $metadata,\n  paymentBehavior: $paymentBehavior,\n  price: $price,\n  priceData: $priceData,\n  prorationBehavior: $prorationBehavior,\n  prorationDate: $prorationDate,\n  quantity: $quantity,\n  subscription: $subscription,\n  taxRates: $taxRates,\n)';
 
- }
+}

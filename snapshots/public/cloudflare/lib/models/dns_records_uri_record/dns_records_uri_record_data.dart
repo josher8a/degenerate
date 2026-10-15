@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a URI record.
 @immutable final class DnsRecordsUriRecordData {const DnsRecordsUriRecordData({this.target, this.weight, });
 
-factory DnsRecordsUriRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsUriRecordData(
+factory DnsRecordsUriRecordData.fromJson(Map<String, dynamic> json) {return DnsRecordsUriRecordData(
   target: json['target'] as String?,
   weight: json['weight'] != null ? (json['weight'] as num).toDouble() : null,
-); }
+);}
 
 /// The record content.
 /// 
@@ -19,23 +19,23 @@ final String? target;
 /// Example: `20`
 final double? weight;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'target': ?target,
   'weight': ?weight,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'weight'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'target', 'weight'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final weight$ = weight;
 if (weight$ != null) {
   if (weight$ < 0) { errors.add('weight: must be >= 0'); }
   if (weight$ > 65535) { errors.add('weight: must be <= 65535'); }
 }
-return errors; } 
-DnsRecordsUriRecordData copyWith({String? Function()? target, double? Function()? weight, }) { return DnsRecordsUriRecordData(
+return errors;}
+DnsRecordsUriRecordData copyWith({String? Function()? target, double? Function()? weight, }) {return DnsRecordsUriRecordData(
   target: target != null ? target() : this.target,
   weight: weight != null ? weight() : this.weight,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsUriRecordData &&
           target == other.target &&
@@ -45,4 +45,4 @@ DnsRecordsUriRecordData copyWith({String? Function()? target, double? Function()
 
 @override String toString() => 'DnsRecordsUriRecordData(target: $target, weight: $weight)';
 
- }
+}

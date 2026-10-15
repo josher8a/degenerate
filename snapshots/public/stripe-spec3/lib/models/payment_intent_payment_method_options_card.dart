@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_extended_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_incremental_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_multicapture.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_overcapture.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_card/invoice_payment_method_options_card_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_card/payment_intent_payment_method_options_card_network.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_installments.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options.dart';/// 
 @immutable final class PaymentIntentPaymentMethodOptionsCard {const PaymentIntentPaymentMethodOptionsCard({this.captureMethod, this.installments = const Omittable.absent(), this.mandateOptions = const Omittable.absent(), this.network = const Omittable.absent(), this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.requestThreeDSecure = const Omittable.absent(), this.requireCvcRecollection, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, });
 
-factory PaymentIntentPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsCard(
+factory PaymentIntentPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsCard(
   captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
   installments: json.containsKey('installments') ? Omittable(json['installments'] != null ? PaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   mandateOptions: json.containsKey('mandate_options') ? Omittable(json['mandate_options'] != null ? PaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -18,7 +18,7 @@ factory PaymentIntentPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] as String?,
   statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] as String?,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
@@ -67,7 +67,7 @@ final String? statementDescriptorSuffixKana;
 /// Provides information about a card payment that customers see on their statements. Concatenated with the Kanji prefix (shortened Kanji descriptor) or Kanji statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 17 characters. On card statements, the *concatenation* of both prefix and suffix (including separators) will appear truncated to 17 characters.
 final String? statementDescriptorSuffixKanji;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (installments.isPresent) 'installments': installments.value?.toJson(),
   if (mandateOptions.isPresent) 'mandate_options': mandateOptions.value?.toJson(),
@@ -81,10 +81,10 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   'statement_descriptor_suffix_kana': ?statementDescriptorSuffixKana,
   'statement_descriptor_suffix_kanji': ?statementDescriptorSuffixKanji,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'installments', 'mandate_options', 'network', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'require_cvc_recollection', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'installments', 'mandate_options', 'network', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'require_cvc_recollection', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final statementDescriptorSuffixKana$ = statementDescriptorSuffixKana;
 if (statementDescriptorSuffixKana$ != null) {
   if (statementDescriptorSuffixKana$.runes.length > 5000) { errors.add('statementDescriptorSuffixKana: length must be <= 5000'); }
@@ -93,8 +93,8 @@ final statementDescriptorSuffixKanji$ = statementDescriptorSuffixKanji;
 if (statementDescriptorSuffixKanji$ != null) {
   if (statementDescriptorSuffixKanji$.runes.length > 5000) { errors.add('statementDescriptorSuffixKanji: length must be <= 5000'); }
 }
-return errors; } 
-PaymentIntentPaymentMethodOptionsCard copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, Omittable<PaymentMethodOptionsCardInstallments?>? installments, Omittable<PaymentMethodOptionsCardMandateOptions?>? mandateOptions, Omittable<PaymentIntentPaymentMethodOptionsCardNetwork?>? network, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, Omittable<InvoicePaymentMethodOptionsCardRequestThreeDSecure?>? requestThreeDSecure, bool? Function()? requireCvcRecollection, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) { return PaymentIntentPaymentMethodOptionsCard(
+return errors;}
+PaymentIntentPaymentMethodOptionsCard copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, Omittable<PaymentMethodOptionsCardInstallments?>? installments, Omittable<PaymentMethodOptionsCardMandateOptions?>? mandateOptions, Omittable<PaymentIntentPaymentMethodOptionsCardNetwork?>? network, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, Omittable<InvoicePaymentMethodOptionsCardRequestThreeDSecure?>? requestThreeDSecure, bool? Function()? requireCvcRecollection, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) {return PaymentIntentPaymentMethodOptionsCard(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments ?? this.installments,
   mandateOptions: mandateOptions ?? this.mandateOptions,
@@ -108,7 +108,7 @@ PaymentIntentPaymentMethodOptionsCard copyWith({CheckoutAffirmPaymentMethodOptio
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   statementDescriptorSuffixKana: statementDescriptorSuffixKana != null ? statementDescriptorSuffixKana() : this.statementDescriptorSuffixKana,
   statementDescriptorSuffixKanji: statementDescriptorSuffixKanji != null ? statementDescriptorSuffixKanji() : this.statementDescriptorSuffixKanji,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsCard &&
           captureMethod == other.captureMethod &&
@@ -129,4 +129,4 @@ PaymentIntentPaymentMethodOptionsCard copyWith({CheckoutAffirmPaymentMethodOptio
 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsCard(\n  captureMethod: $captureMethod,\n  installments: $installments,\n  mandateOptions: $mandateOptions,\n  network: $network,\n  requestExtendedAuthorization: $requestExtendedAuthorization,\n  requestIncrementalAuthorization: $requestIncrementalAuthorization,\n  requestMulticapture: $requestMulticapture,\n  requestOvercapture: $requestOvercapture,\n  requestThreeDSecure: $requestThreeDSecure,\n  requireCvcRecollection: $requireCvcRecollection,\n  setupFutureUsage: $setupFutureUsage,\n  statementDescriptorSuffixKana: $statementDescriptorSuffixKana,\n  statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji,\n)';
 
- }
+}

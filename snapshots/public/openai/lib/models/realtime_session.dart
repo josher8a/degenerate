@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/create_transcription_request/chunking_strategy_variant1.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_session/input_audio_format.dart';import 'package:pub_openai/models/realtime_session/input_audio_noise_reduction.dart';import 'package:pub_openai/models/realtime_session_create_request/max_response_output_tokens.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_model.dart';import 'package:pub_openai/models/realtime_turn_detection.dart';import 'package:pub_openai/models/tracing_configuration.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The object type. Always `realtime.session`.
 sealed class RealtimeSessionObject {const RealtimeSessionObject();
 
-factory RealtimeSessionObject.fromJson(String json) { return switch (json) {
+factory RealtimeSessionObject.fromJson(String json) {return switch (json) {
   'realtime.session' => realtimeSession,
   _ => RealtimeSessionObject$Unknown(json),
-}; }
+};}
 
 static const RealtimeSessionObject realtimeSession = RealtimeSessionObject$realtimeSession._();
 
 static const List<RealtimeSessionObject> values = [realtimeSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'realtime.session' => 'realtimeSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeSessionObject$Unknown; } 
+bool get isUnknown {return this is RealtimeSessionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() realtimeSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() realtimeSession, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeSessionObject$realtimeSession() => realtimeSession(),
       RealtimeSessionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtimeSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtimeSession, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeSessionObject$realtimeSession() => realtimeSession != null ? realtimeSession() : orElse(value),
       RealtimeSessionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeSessionObject($value)';
 
- }
+}
 @immutable final class RealtimeSessionObject$realtimeSession extends RealtimeSessionObject {const RealtimeSessionObject$realtimeSession._();
 
 @override String get value => 'realtime.session';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime
 
 @override int get hashCode => 'realtime.session'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionObject$Unknown extends RealtimeSessionObject {const RealtimeSessionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// For `pcm16`, output audio is sampled at a rate of 24kHz.
 /// 
 sealed class RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat();
 
-factory RealtimeSessionOutputAudioFormat.fromJson(String json) { return switch (json) {
+factory RealtimeSessionOutputAudioFormat.fromJson(String json) {return switch (json) {
   'pcm16' => pcm16,
   'g711_ulaw' => g711Ulaw,
   'g711_alaw' => g711Alaw,
   _ => RealtimeSessionOutputAudioFormat$Unknown(json),
-}; }
+};}
 
 static const RealtimeSessionOutputAudioFormat pcm16 = RealtimeSessionOutputAudioFormat$pcm16._();
 
@@ -75,33 +75,33 @@ static const RealtimeSessionOutputAudioFormat g711Alaw = RealtimeSessionOutputAu
 static const List<RealtimeSessionOutputAudioFormat> values = [pcm16, g711Ulaw, g711Alaw];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pcm16' => 'pcm16',
   'g711_ulaw' => 'g711Ulaw',
   'g711_alaw' => 'g711Alaw',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeSessionOutputAudioFormat$Unknown; } 
+bool get isUnknown {return this is RealtimeSessionOutputAudioFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pcm16, required W Function() g711Ulaw, required W Function() g711Alaw, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pcm16, required W Function() g711Ulaw, required W Function() g711Alaw, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeSessionOutputAudioFormat$pcm16() => pcm16(),
       RealtimeSessionOutputAudioFormat$g711Ulaw() => g711Ulaw(),
       RealtimeSessionOutputAudioFormat$g711Alaw() => g711Alaw(),
       RealtimeSessionOutputAudioFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W Function()? g711Ulaw, W Function()? g711Alaw, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W Function()? g711Ulaw, W Function()? g711Alaw, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeSessionOutputAudioFormat$pcm16() => pcm16 != null ? pcm16() : orElse(value),
       RealtimeSessionOutputAudioFormat$g711Ulaw() => g711Ulaw != null ? g711Ulaw() : orElse(value),
       RealtimeSessionOutputAudioFormat$g711Alaw() => g711Alaw != null ? g711Alaw() : orElse(value),
       RealtimeSessionOutputAudioFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeSessionOutputAudioFormat($value)';
 
- }
+}
 @immutable final class RealtimeSessionOutputAudioFormat$pcm16 extends RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat$pcm16._();
 
 @override String get value => 'pcm16';
@@ -110,7 +110,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
 @override int get hashCode => 'pcm16'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionOutputAudioFormat$g711Ulaw extends RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat$g711Ulaw._();
 
 @override String get value => 'g711_ulaw';
@@ -119,7 +119,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
 @override int get hashCode => 'g711_ulaw'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionOutputAudioFormat$g711Alaw extends RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat$g711Alaw._();
 
 @override String get value => 'g711_alaw';
@@ -128,7 +128,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
 @override int get hashCode => 'g711_alaw'.hashCode;
 
- }
+}
 @immutable final class RealtimeSessionOutputAudioFormat$Unknown extends RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat$Unknown(this.value);
 
 @override final String value;
@@ -138,11 +138,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Realtime session object for the beta interface.
 @immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities = const Omittable.absent(), this.model, this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription = const Omittable.absent(), this.turnDetection = const Omittable.absent(), this.inputAudioNoiseReduction, this.speed, this.tracing = const Omittable.absent(), this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.expiresAt, this.prompt = const Omittable.absent(), this.include = const Omittable.absent(), });
 
-factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSession(
+factory RealtimeSession.fromJson(Map<String, dynamic> json) {return RealtimeSession(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeSessionObject.fromJson(json['object'] as String) : null,
   modalities: json.containsKey('modalities') ? Omittable(json['modalities']) : const Omittable.absent(),
@@ -163,7 +163,7 @@ factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSes
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   include: json.containsKey('include') ? Omittable((json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
 /// 
@@ -285,7 +285,7 @@ String get toolChoiceOrDefault => toolChoice ?? 'auto';
 /// The value of `temperature`, or its schema default when absent.
 double get temperatureOrDefault => temperature ?? 0.8;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
   if (modalities.isPresent) 'modalities': modalities.value,
@@ -306,17 +306,17 @@ Map<String, dynamic> toJson() { return {
   'expires_at': ?expiresAt,
   if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
   if (include.isPresent) 'include': include.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'modalities', 'model', 'instructions', 'voice', 'input_audio_format', 'output_audio_format', 'input_audio_transcription', 'turn_detection', 'input_audio_noise_reduction', 'speed', 'tracing', 'tools', 'tool_choice', 'temperature', 'max_response_output_tokens', 'expires_at', 'prompt', 'include'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'object', 'modalities', 'model', 'instructions', 'voice', 'input_audio_format', 'output_audio_format', 'input_audio_transcription', 'turn_detection', 'input_audio_noise_reduction', 'speed', 'tracing', 'tools', 'tool_choice', 'temperature', 'max_response_output_tokens', 'expires_at', 'prompt', 'include'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final speed$ = speed;
 if (speed$ != null) {
   if (speed$ < 0.25) { errors.add('speed: must be >= 0.25'); }
   if (speed$ > 1.5) { errors.add('speed: must be <= 1.5'); }
 }
-return errors; } 
-RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, Omittable<dynamic>? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat? Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat? Function()? outputAudioFormat, Omittable<AudioTranscription?>? inputAudioTranscription, Omittable<RealtimeTurnDetection?>? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double? Function()? speed, Omittable<RealtimeSessionCreateRequestTracing?>? tracing, List<RealtimeFunctionTool>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Omittable<Prompt?>? prompt, Omittable<List<Include>?>? include, }) { return RealtimeSession(
+return errors;}
+RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, Omittable<dynamic>? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat? Function()? inputAudioFormat, RealtimeSessionOutputAudioFormat? Function()? outputAudioFormat, Omittable<AudioTranscription?>? inputAudioTranscription, Omittable<RealtimeTurnDetection?>? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double? Function()? speed, Omittable<RealtimeSessionCreateRequestTracing?>? tracing, List<RealtimeFunctionTool>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Omittable<Prompt?>? prompt, Omittable<List<Include>?>? include, }) {return RealtimeSession(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   modalities: modalities ?? this.modalities,
@@ -337,7 +337,7 @@ RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Functio
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   prompt: prompt ?? this.prompt,
   include: include ?? this.include,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSession &&
           id == other.id &&
@@ -366,4 +366,4 @@ RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Functio
 
 @override String toString() => 'RealtimeSession(\n  id: $id,\n  object: $object,\n  modalities: $modalities,\n  model: $model,\n  instructions: $instructions,\n  voice: $voice,\n  inputAudioFormat: $inputAudioFormat,\n  outputAudioFormat: $outputAudioFormat,\n  inputAudioTranscription: $inputAudioTranscription,\n  turnDetection: $turnDetection,\n  inputAudioNoiseReduction: $inputAudioNoiseReduction,\n  speed: $speed,\n  tracing: $tracing,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  temperature: $temperature,\n  maxResponseOutputTokens: $maxResponseOutputTokens,\n  expiresAt: $expiresAt,\n  prompt: $prompt,\n  include: $include,\n)';
 
- }
+}

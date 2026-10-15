@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/package/package_visibility.dart';import 'package:pub_github_rest_3_1/models/repos_update_request/repos_update_request_security_and_analysis.dart';@immutable final class ReposUpdateRequest {const ReposUpdateRequest({this.name, this.description, this.homepage, this.private, this.visibility, this.securityAndAnalysis = const Omittable.absent(), this.hasIssues, this.hasProjects, this.hasWiki, this.isTemplate, this.defaultBranch, this.allowSquashMerge, this.allowMergeCommit, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.archived, this.allowForking, this.webCommitSignoffRequired, });
 
-factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateRequest(
+factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) {return ReposUpdateRequest(
   name: json['name'] as String?,
   description: json['description'] as String?,
   homepage: json['homepage'] as String?,
@@ -29,7 +29,7 @@ factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpd
   archived: json['archived'] as bool?,
   allowForking: json['allow_forking'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
-); }
+);}
 
 /// The name of the repository.
 final String? name;
@@ -177,7 +177,7 @@ bool get allowForkingOrDefault => allowForking ?? false;
 /// The value of `webCommitSignoffRequired`, or its schema default when absent.
 bool get webCommitSignoffRequiredOrDefault => webCommitSignoffRequired ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'description': ?description,
   'homepage': ?homepage,
@@ -203,9 +203,9 @@ Map<String, dynamic> toJson() { return {
   'archived': ?archived,
   'allow_forking': ?allowForking,
   'web_commit_signoff_required': ?webCommitSignoffRequired,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'homepage', 'private', 'visibility', 'security_and_analysis', 'has_issues', 'has_projects', 'has_wiki', 'is_template', 'default_branch', 'allow_squash_merge', 'allow_merge_commit', 'allow_rebase_merge', 'allow_auto_merge', 'delete_branch_on_merge', 'allow_update_branch', 'use_squash_pr_title_as_default', 'squash_merge_commit_title', 'squash_merge_commit_message', 'merge_commit_title', 'merge_commit_message', 'archived', 'allow_forking', 'web_commit_signoff_required'}.contains(key)); } 
-ReposUpdateRequest copyWith({String? Function()? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, PackageVisibility? Function()? visibility, Omittable<ReposUpdateRequestSecurityAndAnalysis?>? securityAndAnalysis, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? isTemplate, String? Function()? defaultBranch, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? archived, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, }) { return ReposUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'description', 'homepage', 'private', 'visibility', 'security_and_analysis', 'has_issues', 'has_projects', 'has_wiki', 'is_template', 'default_branch', 'allow_squash_merge', 'allow_merge_commit', 'allow_rebase_merge', 'allow_auto_merge', 'delete_branch_on_merge', 'allow_update_branch', 'use_squash_pr_title_as_default', 'squash_merge_commit_title', 'squash_merge_commit_message', 'merge_commit_title', 'merge_commit_message', 'archived', 'allow_forking', 'web_commit_signoff_required'}.contains(key));}
+ReposUpdateRequest copyWith({String? Function()? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, PackageVisibility? Function()? visibility, Omittable<ReposUpdateRequestSecurityAndAnalysis?>? securityAndAnalysis, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? isTemplate, String? Function()? defaultBranch, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? archived, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, }) {return ReposUpdateRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,
@@ -231,7 +231,7 @@ ReposUpdateRequest copyWith({String? Function()? name, String? Function()? descr
   archived: archived != null ? archived() : this.archived,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateRequest &&
           name == other.name &&
@@ -264,4 +264,4 @@ ReposUpdateRequest copyWith({String? Function()? name, String? Function()? descr
 
 @override String toString() => 'ReposUpdateRequest(\n  name: $name,\n  description: $description,\n  homepage: $homepage,\n  private: $private,\n  visibility: $visibility,\n  securityAndAnalysis: $securityAndAnalysis,\n  hasIssues: $hasIssues,\n  hasProjects: $hasProjects,\n  hasWiki: $hasWiki,\n  isTemplate: $isTemplate,\n  defaultBranch: $defaultBranch,\n  allowSquashMerge: $allowSquashMerge,\n  allowMergeCommit: $allowMergeCommit,\n  allowRebaseMerge: $allowRebaseMerge,\n  allowAutoMerge: $allowAutoMerge,\n  deleteBranchOnMerge: $deleteBranchOnMerge,\n  allowUpdateBranch: $allowUpdateBranch,\n  useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault,\n  squashMergeCommitTitle: $squashMergeCommitTitle,\n  squashMergeCommitMessage: $squashMergeCommitMessage,\n  mergeCommitTitle: $mergeCommitTitle,\n  mergeCommitMessage: $mergeCommitMessage,\n  archived: $archived,\n  allowForking: $allowForking,\n  webCommitSignoffRequired: $webCommitSignoffRequired,\n)';
 
- }
+}

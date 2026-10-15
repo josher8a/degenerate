@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom voice reference.
 @immutable final class VoiceIdsOrCustomVoiceVariant2 {const VoiceIdsOrCustomVoiceVariant2({required this.id});
 
-factory VoiceIdsOrCustomVoiceVariant2.fromJson(Map<String, dynamic> json) { return VoiceIdsOrCustomVoiceVariant2(
+factory VoiceIdsOrCustomVoiceVariant2.fromJson(Map<String, dynamic> json) {return VoiceIdsOrCustomVoiceVariant2(
   id: json['id'] as String,
-); }
+);}
 
 /// The custom voice ID, e.g. `voice_1234`.
 /// 
 /// Example: `'voice_1234'`
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-VoiceIdsOrCustomVoiceVariant2 copyWith({String? id}) { return VoiceIdsOrCustomVoiceVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+VoiceIdsOrCustomVoiceVariant2 copyWith({String? id}) {return VoiceIdsOrCustomVoiceVariant2(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VoiceIdsOrCustomVoiceVariant2 &&
           id == other.id;
@@ -28,4 +28,4 @@ VoiceIdsOrCustomVoiceVariant2 copyWith({String? id}) { return VoiceIdsOrCustomVo
 
 @override String toString() => 'VoiceIdsOrCustomVoiceVariant2(id: $id)';
 
- }
+}

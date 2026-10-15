@@ -9,11 +9,11 @@ const VoiceIdsOrCustomVoice({this.voiceIdsShared = const Omittable.absent(), thi
 const VoiceIdsOrCustomVoice._({required this.rawValue, required this.voiceIdsShared, required this.voiceIdsOrCustomVoiceVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory VoiceIdsOrCustomVoice.fromJson(Object? json) { return VoiceIdsOrCustomVoice._(
+factory VoiceIdsOrCustomVoice.fromJson(Object? json) {return VoiceIdsOrCustomVoice._(
   rawValue: Omittable(json),
   voiceIdsShared: parseAnyOfVariant<VoiceIdsShared>(json, VoiceIdsShared.fromJson, isValid: (value) => value.isValid),
   voiceIdsOrCustomVoiceVariant2: json is Map<String, dynamic> && VoiceIdsOrCustomVoiceVariant2.canParse(json) ? parseAnyOfVariant<VoiceIdsOrCustomVoiceVariant2>(json, (value) => VoiceIdsOrCustomVoiceVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -43,4 +43,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'VoiceIdsOrCustomVoice(${toJson()})';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_account_id.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnControllerConnectorIdentity {const MconnControllerConnectorIdentity({required this.accountId, required this.activated, required this.id, });
 
-factory MconnControllerConnectorIdentity.fromJson(Map<String, dynamic> json) { return MconnControllerConnectorIdentity(
+factory MconnControllerConnectorIdentity.fromJson(Map<String, dynamic> json) {return MconnControllerConnectorIdentity(
   accountId: MconnAccountId.fromJson(json['account_id'] as String),
   activated: json['activated'] as bool,
   id: MconnUuid.fromJson(json['id'] as String),
-); }
+);}
 
 /// Account identifier
 final MconnAccountId accountId;
@@ -16,19 +16,19 @@ final bool activated;
 
 final MconnUuid id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId.toJson(),
   'activated': activated,
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') &&
       json.containsKey('activated') && json['activated'] is bool &&
-      json.containsKey('id'); } 
-MconnControllerConnectorIdentity copyWith({MconnAccountId? accountId, bool? activated, MconnUuid? id, }) { return MconnControllerConnectorIdentity(
+      json.containsKey('id');}
+MconnControllerConnectorIdentity copyWith({MconnAccountId? accountId, bool? activated, MconnUuid? id, }) {return MconnControllerConnectorIdentity(
   accountId: accountId ?? this.accountId,
   activated: activated ?? this.activated,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerConnectorIdentity &&
           accountId == other.accountId &&
@@ -39,4 +39,4 @@ MconnControllerConnectorIdentity copyWith({MconnAccountId? accountId, bool? acti
 
 @override String toString() => 'MconnControllerConnectorIdentity(accountId: $accountId, activated: $activated, id: $id)';
 
- }
+}

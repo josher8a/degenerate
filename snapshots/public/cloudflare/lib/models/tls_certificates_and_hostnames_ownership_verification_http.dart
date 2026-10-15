@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ownership_verification_http/tls_certificates_and_hostnames_ownership_verification_http_variant1.dart';/// A value that is one of: `TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1`.
 sealed class TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttp();
 
-factory TlsCertificatesAndHostnamesOwnershipVerificationHttp.fromJson(Object? json) {   if (json is Map<String, dynamic> && TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.canParse(json)) {
+factory TlsCertificatesAndHostnamesOwnershipVerificationHttp.fromJson(Object? json) {  if (json is Map<String, dynamic> && TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.canParse(json)) {
     return TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.fromJson(json));
   }
-  return TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown(json); }
+  return TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 extends TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(this._value);
 
 final TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 _value;
 
 @override TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 && _value == other._value;
 
@@ -27,7 +27,7 @@ final TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 _value;
 
 @override String toString() => 'TlsCertificatesAndHostnamesOwnershipVerificationHttp.tlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1($_value)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown extends TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown(this._value);
 
@@ -42,4 +42,4 @@ final dynamic _value;
 
 @override String toString() => 'TlsCertificatesAndHostnamesOwnershipVerificationHttp.unknown($_value)';
 
- }
+}

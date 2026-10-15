@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindAi {const WorkersBindingKindAi({required this.name, required this.type, });
 
-factory WorkersBindingKindAi.fromJson(Map<String, dynamic> json) { return WorkersBindingKindAi(
+factory WorkersBindingKindAi.fromJson(Map<String, dynamic> json) {return WorkersBindingKindAi(
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
-); }
+);}
 
 final WorkersBindingName name;
 
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindAi copyWith({WorkersBindingName? name, String? type, }) { return WorkersBindingKindAi(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindAi copyWith({WorkersBindingName? name, String? type, }) {return WorkersBindingKindAi(
   name: name ?? this.name,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindAi &&
           name == other.name &&
@@ -32,4 +32,4 @@ WorkersBindingKindAi copyWith({WorkersBindingName? name, String? type, }) { retu
 
 @override String toString() => 'WorkersBindingKindAi(name: $name, type: $type)';
 
- }
+}

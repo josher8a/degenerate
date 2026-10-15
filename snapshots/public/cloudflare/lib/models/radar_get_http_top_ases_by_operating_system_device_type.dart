@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByOperatingSystemDeviceType {const RadarGetHttpTopAsesByOperatingSystemDeviceType();
 
-factory RadarGetHttpTopAsesByOperatingSystemDeviceType.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByOperatingSystemDeviceType.fromJson(String json) {return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
   _ => RadarGetHttpTopAsesByOperatingSystemDeviceType$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByOperatingSystemDeviceType desktop = RadarGetHttpTopAsesByOperatingSystemDeviceType$desktop._();
 
@@ -19,33 +19,33 @@ static const RadarGetHttpTopAsesByOperatingSystemDeviceType $other = RadarGetHtt
 static const List<RadarGetHttpTopAsesByOperatingSystemDeviceType> values = [desktop, mobile, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DESKTOP' => 'desktop',
   'MOBILE' => 'mobile',
   'OTHER' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopAsesByOperatingSystemDeviceType$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopAsesByOperatingSystemDeviceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByOperatingSystemDeviceType$desktop() => desktop(),
       RadarGetHttpTopAsesByOperatingSystemDeviceType$mobile() => mobile(),
       RadarGetHttpTopAsesByOperatingSystemDeviceType$$other() => $other(),
       RadarGetHttpTopAsesByOperatingSystemDeviceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByOperatingSystemDeviceType$desktop() => desktop != null ? desktop() : orElse(value),
       RadarGetHttpTopAsesByOperatingSystemDeviceType$mobile() => mobile != null ? mobile() : orElse(value),
       RadarGetHttpTopAsesByOperatingSystemDeviceType$$other() => $other != null ? $other() : orElse(value),
       RadarGetHttpTopAsesByOperatingSystemDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopAsesByOperatingSystemDeviceType($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByOperatingSystemDeviceType$desktop extends RadarGetHttpTopAsesByOperatingSystemDeviceType {const RadarGetHttpTopAsesByOperatingSystemDeviceType$desktop._();
 
 @override String get value => 'DESKTOP';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'DESKTOP'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByOperatingSystemDeviceType$mobile extends RadarGetHttpTopAsesByOperatingSystemDeviceType {const RadarGetHttpTopAsesByOperatingSystemDeviceType$mobile._();
 
 @override String get value => 'MOBILE';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'MOBILE'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByOperatingSystemDeviceType$$other extends RadarGetHttpTopAsesByOperatingSystemDeviceType {const RadarGetHttpTopAsesByOperatingSystemDeviceType$$other._();
 
 @override String get value => 'OTHER';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'OTHER'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByOperatingSystemDeviceType$Unknown extends RadarGetHttpTopAsesByOperatingSystemDeviceType {const RadarGetHttpTopAsesByOperatingSystemDeviceType$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

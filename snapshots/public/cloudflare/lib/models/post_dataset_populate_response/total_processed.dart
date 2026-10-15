@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TotalProcessed {const TotalProcessed({required this.type});
 
-factory TotalProcessed.fromJson(Map<String, dynamic> json) { return TotalProcessed(
+factory TotalProcessed.fromJson(Map<String, dynamic> json) {return TotalProcessed(
   type: json['type'] as String,
-); }
+);}
 
 /// Example: `'number'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-TotalProcessed copyWith({String? type}) { return TotalProcessed(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+TotalProcessed copyWith({String? type}) {return TotalProcessed(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TotalProcessed &&
           type == other.type;
@@ -25,4 +25,4 @@ TotalProcessed copyWith({String? type}) { return TotalProcessed(
 
 @override String toString() => 'TotalProcessed(type: $type)';
 
- }
+}

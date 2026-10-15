@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanDomResponse404Task {const UrlscannerGetScanDomResponse404Task({required this.status, required this.time, required this.url, required this.uuid, required this.visibility, });
 
-factory UrlscannerGetScanDomResponse404Task.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanDomResponse404Task(
+factory UrlscannerGetScanDomResponse404Task.fromJson(Map<String, dynamic> json) {return UrlscannerGetScanDomResponse404Task(
   status: json['status'] as String,
   time: json['time'] as String,
   url: json['url'] as String,
   uuid: json['uuid'] as String,
   visibility: json['visibility'] as String,
-); }
+);}
 
 /// Example: `'Queued'`
 final String status;
@@ -23,25 +23,25 @@ final String uuid;
 /// Example: `'public'`
 final String visibility;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status': status,
   'time': time,
   'url': url,
   'uuid': uuid,
   'visibility': visibility,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String &&
       json.containsKey('time') && json['time'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
-      json.containsKey('visibility') && json['visibility'] is String; } 
-UrlscannerGetScanDomResponse404Task copyWith({String? status, String? time, String? url, String? uuid, String? visibility, }) { return UrlscannerGetScanDomResponse404Task(
+      json.containsKey('visibility') && json['visibility'] is String;}
+UrlscannerGetScanDomResponse404Task copyWith({String? status, String? time, String? url, String? uuid, String? visibility, }) {return UrlscannerGetScanDomResponse404Task(
   status: status ?? this.status,
   time: time ?? this.time,
   url: url ?? this.url,
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanDomResponse404Task &&
           status == other.status &&
@@ -54,4 +54,4 @@ UrlscannerGetScanDomResponse404Task copyWith({String? status, String? time, Stri
 
 @override String toString() => 'UrlscannerGetScanDomResponse404Task(status: $status, time: $time, url: $url, uuid: $uuid, visibility: $visibility)';
 
- }
+}

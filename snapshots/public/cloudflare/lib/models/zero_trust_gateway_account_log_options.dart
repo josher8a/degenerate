@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayAccountLogOptions {const ZeroTrustGatewayAccountLogOptions({this.logAll, this.logBlocks, });
 
-factory ZeroTrustGatewayAccountLogOptions.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayAccountLogOptions(
+factory ZeroTrustGatewayAccountLogOptions.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayAccountLogOptions(
   logAll: json['log_all'] as bool?,
   logBlocks: json['log_blocks'] as bool?,
-); }
+);}
 
 /// Specify whether to log all requests to this service.
 /// 
@@ -24,15 +24,15 @@ bool get logAllOrDefault => logAll ?? false;
 /// The value of `logBlocks`, or its schema default when absent.
 bool get logBlocksOrDefault => logBlocks ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'log_all': ?logAll,
   'log_blocks': ?logBlocks,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'log_all', 'log_blocks'}.contains(key)); } 
-ZeroTrustGatewayAccountLogOptions copyWith({bool? Function()? logAll, bool? Function()? logBlocks, }) { return ZeroTrustGatewayAccountLogOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'log_all', 'log_blocks'}.contains(key));}
+ZeroTrustGatewayAccountLogOptions copyWith({bool? Function()? logAll, bool? Function()? logBlocks, }) {return ZeroTrustGatewayAccountLogOptions(
   logAll: logAll != null ? logAll() : this.logAll,
   logBlocks: logBlocks != null ? logBlocks() : this.logBlocks,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayAccountLogOptions &&
           logAll == other.logAll &&
@@ -42,4 +42,4 @@ ZeroTrustGatewayAccountLogOptions copyWith({bool? Function()? logAll, bool? Func
 
 @override String toString() => 'ZeroTrustGatewayAccountLogOptions(logAll: $logAll, logBlocks: $logBlocks)';
 
- }
+}

@@ -2,6 +2,7 @@ import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/success_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Result of analyzing a model or API's import requirements.
@@ -38,6 +39,7 @@ analyzeApiImports(
   EmitContext? ctx,
   List<String> unwrapFields = const [],
   Map<String, ErrorUnionInfo> errorUnionMap = const {},
+  Map<String, SuccessUnionInfo> successUnionMap = const {},
 ]) {
   final names = <String>{};
   var needsConvert = false;
@@ -88,29 +90,20 @@ analyzeApiImports(
       _collectTopLevelTypeName(schema, names);
       if (isBytesType(schema)) needsTypedData = true;
     }
-    // Mirror ApiEmitter._successResponseContent: priority codes, then any
-    // other concrete 2xx (206, 207, ...), then the 2XX range sentinel.
-    const priorityCodes = [200, 201, 202, 203, 204];
-    final successCodes = [
-      ...priorityCodes,
-      ...op.responses.keys.where(
-        (k) => k >= 200 && k < 300 && !priorityCodes.contains(k),
-      ),
-      kStatusRange2xx,
-    ];
-    for (final code in successCodes) {
-      if (op.responses[code] case final resp?) {
-        if (preferredContent(resp.content) case final content?) {
-          if (content.$1.test(isJsonLikeMediaType)) needsConvert = true;
-          final schema = maybeUnwrap(content.$2.schema);
-          _collectTopLevelTypeName(schema, names, ctx);
-          if (isBytesType(schema)) needsTypedData = true;
-          break;
+    // The same classification the API emitter decodes by.
+    switch (successShapeOf(op)) {
+      case SuccessSingle(:final content):
+        if (content.$1.test(isJsonLikeMediaType)) needsConvert = true;
+        final schema = maybeUnwrap(content.$2.schema);
+        _collectTopLevelTypeName(schema, names, ctx);
+        if (isBytesType(schema)) needsTypedData = true;
+      case SuccessUnion():
+        // The API file names only the union; it imports its own variants.
+        if (successUnionMap[op.operationId] case final union?) {
+          names.add(union.className);
         }
-        // An existing success response with no content means void — the
-        // emitter stops here and never deserializes a later body.
-        if (resp.content.isEmpty) break;
-      }
+      case SuccessVoid():
+        break;
     }
     if (streamingContent(op) case final streaming?) {
       needsConvert = true;

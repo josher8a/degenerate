@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SkippedUrls {const SkippedUrls({this.url, this.urlId, });
 
-factory SkippedUrls.fromJson(Map<String, dynamic> json) { return SkippedUrls(
+factory SkippedUrls.fromJson(Map<String, dynamic> json) {return SkippedUrls(
   url: json['url'] as String?,
   urlId: json['url_id'] != null ? (json['url_id'] as num).toInt() : null,
-); }
+);}
 
 /// URL that was skipped.
 /// 
@@ -18,15 +18,15 @@ final String? url;
 /// Example: `2`
 final int? urlId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': ?url,
   'url_id': ?urlId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'url_id'}.contains(key)); } 
-SkippedUrls copyWith({String? Function()? url, int? Function()? urlId, }) { return SkippedUrls(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'url', 'url_id'}.contains(key));}
+SkippedUrls copyWith({String? Function()? url, int? Function()? urlId, }) {return SkippedUrls(
   url: url != null ? url() : this.url,
   urlId: urlId != null ? urlId() : this.urlId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SkippedUrls &&
           url == other.url &&
@@ -36,4 +36,4 @@ SkippedUrls copyWith({String? Function()? url, int? Function()? urlId, }) { retu
 
 @override String toString() => 'SkippedUrls(url: $url, urlId: $urlId)';
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsCustomNameserversZoneMetadata {const DnsCustomNameserversZoneMetadata({this.enabled, this.nsSet, });
 
-factory DnsCustomNameserversZoneMetadata.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversZoneMetadata(
+factory DnsCustomNameserversZoneMetadata.fromJson(Map<String, dynamic> json) {return DnsCustomNameserversZoneMetadata(
   enabled: json['enabled'] as bool?,
   nsSet: json['ns_set'] != null ? (json['ns_set'] as num).toDouble() : null,
-); }
+);}
 
 /// Whether zone uses account-level custom nameservers.
 /// 
@@ -21,23 +21,23 @@ final double? nsSet;
 /// The value of `nsSet`, or its schema default when absent.
 double get nsSetOrDefault => nsSet ?? 1.0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   'ns_set': ?nsSet,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'ns_set'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'ns_set'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final nsSet$ = nsSet;
 if (nsSet$ != null) {
   if (nsSet$ < 1) { errors.add('nsSet: must be >= 1'); }
   if (nsSet$ > 5) { errors.add('nsSet: must be <= 5'); }
 }
-return errors; } 
-DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double? Function()? nsSet, }) { return DnsCustomNameserversZoneMetadata(
+return errors;}
+DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double? Function()? nsSet, }) {return DnsCustomNameserversZoneMetadata(
   enabled: enabled != null ? enabled() : this.enabled,
   nsSet: nsSet != null ? nsSet() : this.nsSet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsCustomNameserversZoneMetadata &&
           enabled == other.enabled &&
@@ -47,4 +47,4 @@ DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double? Fu
 
 @override String toString() => 'DnsCustomNameserversZoneMetadata(enabled: $enabled, nsSet: $nsSet)';
 
- }
+}

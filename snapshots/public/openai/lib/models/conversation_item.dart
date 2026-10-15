@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_tool_call.dart';import 'package:pub_openai/models/apply_patch_tool_call/apply_patch_tool_call_operation.dart';import 'package:pub_openai/models/apply_patch_tool_call_output.dart';import 'package:pub_openai/models/code_interpreter_tool_call.dart';import 'package:pub_openai/models/code_interpreter_tool_call/code_interpreter_tool_call_outputs.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call.dart';import 'package:pub_openai/models/computer_tool_call_output_resource.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/custom_tool_call.dart';import 'package:pub_openai/models/custom_tool_call_output.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/file_search_tool_call.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';import 'package:pub_openai/models/function_shell_action.dart';import 'package:pub_openai/models/function_shell_call.dart';import 'package:pub_openai/models/function_shell_call/function_shell_call_environment.dart';import 'package:pub_openai/models/function_shell_call_output.dart';import 'package:pub_openai/models/function_shell_call_output_content.dart';import 'package:pub_openai/models/function_tool_call_output_resource.dart';import 'package:pub_openai/models/function_tool_call_resource.dart';import 'package:pub_openai/models/image_gen_tool_call.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';import 'package:pub_openai/models/local_shell_tool_call.dart';import 'package:pub_openai/models/local_shell_tool_call_output.dart';import 'package:pub_openai/models/mcp_approval_request.dart';import 'package:pub_openai/models/mcp_approval_response_resource.dart';import 'package:pub_openai/models/mcp_list_tools.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/mcp_tool_call.dart';import 'package:pub_openai/models/message.dart';import 'package:pub_openai/models/message/message_content.dart';import 'package:pub_openai/models/reasoning_item.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_call.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_output.dart';import 'package:pub_openai/models/web_search_tool_call.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';sealed class ConversationItemType {const ConversationItemType();
 
-factory ConversationItemType.fromJson(String json) { return switch (json) {
+factory ConversationItemType.fromJson(String json) {return switch (json) {
   'message' => message,
   'FunctionToolCallResource' => functionToolCallResource,
   'FunctionToolCallOutputResource' => functionToolCallOutputResource,
@@ -29,7 +29,7 @@ factory ConversationItemType.fromJson(String json) { return switch (json) {
   'custom_tool_call' => customToolCall,
   'custom_tool_call_output' => customToolCallOutput,
   _ => ConversationItemType$Unknown(json),
-}; }
+};}
 
 static const ConversationItemType message = ConversationItemType$message._();
 
@@ -86,7 +86,7 @@ String toJson() => value;
 
 bool get isUnknown => this is ConversationItemType$Unknown;
 
- }
+}
 @immutable final class ConversationItemType$message extends ConversationItemType {const ConversationItemType$message._();
 
 @override String get value => 'message';
@@ -97,7 +97,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(message)';
 
- }
+}
 @immutable final class ConversationItemType$functionToolCallResource extends ConversationItemType {const ConversationItemType$functionToolCallResource._();
 
 @override String get value => 'FunctionToolCallResource';
@@ -108,7 +108,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(FunctionToolCallResource)';
 
- }
+}
 @immutable final class ConversationItemType$functionToolCallOutputResource extends ConversationItemType {const ConversationItemType$functionToolCallOutputResource._();
 
 @override String get value => 'FunctionToolCallOutputResource';
@@ -119,7 +119,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(FunctionToolCallOutputResource)';
 
- }
+}
 @immutable final class ConversationItemType$fileSearchCall extends ConversationItemType {const ConversationItemType$fileSearchCall._();
 
 @override String get value => 'file_search_call';
@@ -130,7 +130,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(file_search_call)';
 
- }
+}
 @immutable final class ConversationItemType$webSearchCall extends ConversationItemType {const ConversationItemType$webSearchCall._();
 
 @override String get value => 'web_search_call';
@@ -141,7 +141,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(web_search_call)';
 
- }
+}
 @immutable final class ConversationItemType$imageGenerationCall extends ConversationItemType {const ConversationItemType$imageGenerationCall._();
 
 @override String get value => 'image_generation_call';
@@ -152,7 +152,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(image_generation_call)';
 
- }
+}
 @immutable final class ConversationItemType$computerCall extends ConversationItemType {const ConversationItemType$computerCall._();
 
 @override String get value => 'computer_call';
@@ -163,7 +163,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(computer_call)';
 
- }
+}
 @immutable final class ConversationItemType$computerToolCallOutputResource extends ConversationItemType {const ConversationItemType$computerToolCallOutputResource._();
 
 @override String get value => 'ComputerToolCallOutputResource';
@@ -174,7 +174,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(ComputerToolCallOutputResource)';
 
- }
+}
 @immutable final class ConversationItemType$toolSearchCall extends ConversationItemType {const ConversationItemType$toolSearchCall._();
 
 @override String get value => 'tool_search_call';
@@ -185,7 +185,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(tool_search_call)';
 
- }
+}
 @immutable final class ConversationItemType$toolSearchOutput extends ConversationItemType {const ConversationItemType$toolSearchOutput._();
 
 @override String get value => 'tool_search_output';
@@ -196,7 +196,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(tool_search_output)';
 
- }
+}
 @immutable final class ConversationItemType$reasoning extends ConversationItemType {const ConversationItemType$reasoning._();
 
 @override String get value => 'reasoning';
@@ -207,7 +207,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(reasoning)';
 
- }
+}
 @immutable final class ConversationItemType$codeInterpreterCall extends ConversationItemType {const ConversationItemType$codeInterpreterCall._();
 
 @override String get value => 'code_interpreter_call';
@@ -218,7 +218,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(code_interpreter_call)';
 
- }
+}
 @immutable final class ConversationItemType$localShellCall extends ConversationItemType {const ConversationItemType$localShellCall._();
 
 @override String get value => 'local_shell_call';
@@ -229,7 +229,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(local_shell_call)';
 
- }
+}
 @immutable final class ConversationItemType$localShellCallOutput extends ConversationItemType {const ConversationItemType$localShellCallOutput._();
 
 @override String get value => 'local_shell_call_output';
@@ -240,7 +240,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(local_shell_call_output)';
 
- }
+}
 @immutable final class ConversationItemType$shellCall extends ConversationItemType {const ConversationItemType$shellCall._();
 
 @override String get value => 'shell_call';
@@ -251,7 +251,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(shell_call)';
 
- }
+}
 @immutable final class ConversationItemType$shellCallOutput extends ConversationItemType {const ConversationItemType$shellCallOutput._();
 
 @override String get value => 'shell_call_output';
@@ -262,7 +262,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(shell_call_output)';
 
- }
+}
 @immutable final class ConversationItemType$applyPatchCall extends ConversationItemType {const ConversationItemType$applyPatchCall._();
 
 @override String get value => 'apply_patch_call';
@@ -273,7 +273,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(apply_patch_call)';
 
- }
+}
 @immutable final class ConversationItemType$applyPatchCallOutput extends ConversationItemType {const ConversationItemType$applyPatchCallOutput._();
 
 @override String get value => 'apply_patch_call_output';
@@ -284,7 +284,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(apply_patch_call_output)';
 
- }
+}
 @immutable final class ConversationItemType$mcpListTools extends ConversationItemType {const ConversationItemType$mcpListTools._();
 
 @override String get value => 'mcp_list_tools';
@@ -295,7 +295,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(mcp_list_tools)';
 
- }
+}
 @immutable final class ConversationItemType$mcpApprovalRequest extends ConversationItemType {const ConversationItemType$mcpApprovalRequest._();
 
 @override String get value => 'mcp_approval_request';
@@ -306,7 +306,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(mcp_approval_request)';
 
- }
+}
 @immutable final class ConversationItemType$mcpApprovalResponse extends ConversationItemType {const ConversationItemType$mcpApprovalResponse._();
 
 @override String get value => 'mcp_approval_response';
@@ -317,7 +317,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(mcp_approval_response)';
 
- }
+}
 @immutable final class ConversationItemType$mcpCall extends ConversationItemType {const ConversationItemType$mcpCall._();
 
 @override String get value => 'mcp_call';
@@ -328,7 +328,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(mcp_call)';
 
- }
+}
 @immutable final class ConversationItemType$customToolCall extends ConversationItemType {const ConversationItemType$customToolCall._();
 
 @override String get value => 'custom_tool_call';
@@ -339,7 +339,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(custom_tool_call)';
 
- }
+}
 @immutable final class ConversationItemType$customToolCallOutput extends ConversationItemType {const ConversationItemType$customToolCallOutput._();
 
 @override String get value => 'custom_tool_call_output';
@@ -350,7 +350,7 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType(custom_tool_call_output)';
 
- }
+}
 @immutable final class ConversationItemType$Unknown extends ConversationItemType {const ConversationItemType$Unknown(this.value);
 
 @override final String value;
@@ -361,12 +361,12 @@ bool get isUnknown => this is ConversationItemType$Unknown;
 
 @override String toString() => 'ConversationItemType($value)';
 
- }
+}
 /// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](/docs/api-reference/responses/object#responses/object-output).
 sealed class ConversationItem {const ConversationItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory ConversationItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory ConversationItem.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'message' => ConversationItemMessage.fromJson(json),
   'FunctionToolCallResource' => ConversationItemFunctionToolCallResource.fromJson(json),
   'FunctionToolCallOutputResource' => ConversationItemFunctionToolCallOutputResource.fromJson(json),
@@ -392,79 +392,79 @@ factory ConversationItem.fromJson(Map<String, dynamic> json) { return switch (js
   'custom_tool_call' => ConversationItemCustomToolCall.fromJson(json),
   'custom_tool_call_output' => ConversationItemCustomToolCallOutput.fromJson(json),
   _ => ConversationItem$Unknown(json),
-}; }
+};}
 
 /// Build the `message` variant.
-factory ConversationItem.message({required String id, required MessageStatus status, required MessageRole role, required List<MessageContent> content, }) { return ConversationItemMessage(Message(type: 'message', id: id, status: status, role: role, content: content)); }
+factory ConversationItem.message({required String id, required MessageStatus status, required MessageRole role, required List<MessageContent> content, }) {return ConversationItemMessage(Message(type: 'message', id: id, status: status, role: role, content: content));}
 
 /// Build the `FunctionToolCallResource` variant.
-factory ConversationItem.functionToolCallResource({required String id, required String callId, required String name, required String arguments, String? namespace, ComputerToolCallOutputResourceStatus? status, }) { return ConversationItemFunctionToolCallResource(FunctionToolCallResource(type: 'FunctionToolCallResource', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+factory ConversationItem.functionToolCallResource({required String id, required String callId, required String name, required String arguments, String? namespace, ComputerToolCallOutputResourceStatus? status, }) {return ConversationItemFunctionToolCallResource(FunctionToolCallResource(type: 'FunctionToolCallResource', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status));}
 
 /// Build the `FunctionToolCallOutputResource` variant.
-factory ConversationItem.functionToolCallOutputResource({required String id, required String callId, required CustomToolCallOutputOutput output, ComputerToolCallOutputResourceStatus? status, }) { return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutputResource(type: 'FunctionToolCallOutputResource', id: id, callId: callId, output: output, status: status)); }
+factory ConversationItem.functionToolCallOutputResource({required String id, required String callId, required CustomToolCallOutputOutput output, ComputerToolCallOutputResourceStatus? status, }) {return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutputResource(type: 'FunctionToolCallOutputResource', id: id, callId: callId, output: output, status: status));}
 
 /// Build the `file_search_call` variant.
-factory ConversationItem.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, Omittable<List<FileSearchToolCallResults>?> results = const Omittable.absent(), }) { return ConversationItemFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
+factory ConversationItem.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, Omittable<List<FileSearchToolCallResults>?> results = const Omittable.absent(), }) {return ConversationItemFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results));}
 
 /// Build the `web_search_call` variant.
-factory ConversationItem.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) { return ConversationItemWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action)); }
+factory ConversationItem.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) {return ConversationItemWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action));}
 
 /// Build the `image_generation_call` variant.
-factory ConversationItem.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) { return ConversationItemImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result)); }
+factory ConversationItem.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) {return ConversationItemImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result));}
 
 /// Build the `computer_call` variant.
-factory ConversationItem.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputResourceStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ConversationItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+factory ConversationItem.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputResourceStatus status, ComputerAction? action, List<ComputerAction>? actions, }) {return ConversationItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status));}
 
 /// Build the `ComputerToolCallOutputResource` variant.
-factory ConversationItem.computerToolCallOutputResource({required String id, required String callId, required ComputerScreenshotImage output, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) { return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutputResource(type: 'ComputerToolCallOutputResource', id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
+factory ConversationItem.computerToolCallOutputResource({required String id, required String callId, required ComputerScreenshotImage output, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) {return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutputResource(type: 'ComputerToolCallOutputResource', id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status));}
 
 /// Build the `tool_search_call` variant.
-factory ConversationItem.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) { return ConversationItemToolSearchCall(ToolSearchCall(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy)); }
+factory ConversationItem.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) {return ConversationItemToolSearchCall(ToolSearchCall(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy));}
 
 /// Build the `tool_search_output` variant.
-factory ConversationItem.toolSearchOutput({required String id, required String? callId, required ToolSearchExecutionType execution, required List<Tool> tools, required FunctionCallOutputStatusEnum status, String? createdBy, }) { return ConversationItemToolSearchOutput(ToolSearchOutput(type: 'tool_search_output', id: id, callId: callId, execution: execution, tools: tools, status: status, createdBy: createdBy)); }
+factory ConversationItem.toolSearchOutput({required String id, required String? callId, required ToolSearchExecutionType execution, required List<Tool> tools, required FunctionCallOutputStatusEnum status, String? createdBy, }) {return ConversationItemToolSearchOutput(ToolSearchOutput(type: 'tool_search_output', id: id, callId: callId, execution: execution, tools: tools, status: status, createdBy: createdBy));}
 
 /// Build the `reasoning` variant.
-factory ConversationItem.reasoning({required String id, required List<SummaryTextContent> summary, Omittable<String?> encryptedContent = const Omittable.absent(), List<ReasoningTextContent>? content, ComputerToolCallOutputResourceStatus? status, }) { return ConversationItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
+factory ConversationItem.reasoning({required String id, required List<SummaryTextContent> summary, Omittable<String?> encryptedContent = const Omittable.absent(), List<ReasoningTextContent>? content, ComputerToolCallOutputResourceStatus? status, }) {return ConversationItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status));}
 
 /// Build the `code_interpreter_call` variant.
-factory ConversationItem.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs>? outputs, }) { return ConversationItemCodeInterpreterCall(CodeInterpreterToolCall(type: 'code_interpreter_call', id: id, status: status, containerId: containerId, code: code, outputs: outputs)); }
+factory ConversationItem.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs>? outputs, }) {return ConversationItemCodeInterpreterCall(CodeInterpreterToolCall(type: 'code_interpreter_call', id: id, status: status, containerId: containerId, code: code, outputs: outputs));}
 
 /// Build the `local_shell_call` variant.
-factory ConversationItem.localShellCall({required String id, required String callId, required LocalShellExecAction action, required ComputerToolCallOutputResourceStatus status, }) { return ConversationItemLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
+factory ConversationItem.localShellCall({required String id, required String callId, required LocalShellExecAction action, required ComputerToolCallOutputResourceStatus status, }) {return ConversationItemLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status));}
 
 /// Build the `local_shell_call_output` variant.
-factory ConversationItem.localShellCallOutput({required String id, required String output, Omittable<LocalShellToolCallOutputStatus?> status = const Omittable.absent(), }) { return ConversationItemLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
+factory ConversationItem.localShellCallOutput({required String id, required String output, Omittable<LocalShellToolCallOutputStatus?> status = const Omittable.absent(), }) {return ConversationItemLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status));}
 
 /// Build the `shell_call` variant.
-factory ConversationItem.shellCall({required String id, required String callId, required FunctionShellAction action, required LocalShellCallStatus status, required FunctionShellCallEnvironment? environment, String? createdBy, }) { return ConversationItemShellCall(FunctionShellCall(type: 'shell_call', id: id, callId: callId, action: action, status: status, environment: environment, createdBy: createdBy)); }
+factory ConversationItem.shellCall({required String id, required String callId, required FunctionShellAction action, required LocalShellCallStatus status, required FunctionShellCallEnvironment? environment, String? createdBy, }) {return ConversationItemShellCall(FunctionShellCall(type: 'shell_call', id: id, callId: callId, action: action, status: status, environment: environment, createdBy: createdBy));}
 
 /// Build the `shell_call_output` variant.
-factory ConversationItem.shellCallOutput({required String id, required String callId, required LocalShellCallOutputStatusEnum status, required List<FunctionShellCallOutputContent> output, required int? maxOutputLength, String? createdBy, }) { return ConversationItemShellCallOutput(FunctionShellCallOutput(type: 'shell_call_output', id: id, callId: callId, status: status, output: output, maxOutputLength: maxOutputLength, createdBy: createdBy)); }
+factory ConversationItem.shellCallOutput({required String id, required String callId, required LocalShellCallOutputStatusEnum status, required List<FunctionShellCallOutputContent> output, required int? maxOutputLength, String? createdBy, }) {return ConversationItemShellCallOutput(FunctionShellCallOutput(type: 'shell_call_output', id: id, callId: callId, status: status, output: output, maxOutputLength: maxOutputLength, createdBy: createdBy));}
 
 /// Build the `apply_patch_call` variant.
-factory ConversationItem.applyPatchCall({required String id, required String callId, required ApplyPatchCallStatus status, required ApplyPatchToolCallOperation operation, String? createdBy, }) { return ConversationItemApplyPatchCall(ApplyPatchToolCall(type: 'apply_patch_call', id: id, callId: callId, status: status, operation: operation, createdBy: createdBy)); }
+factory ConversationItem.applyPatchCall({required String id, required String callId, required ApplyPatchCallStatus status, required ApplyPatchToolCallOperation operation, String? createdBy, }) {return ConversationItemApplyPatchCall(ApplyPatchToolCall(type: 'apply_patch_call', id: id, callId: callId, status: status, operation: operation, createdBy: createdBy));}
 
 /// Build the `apply_patch_call_output` variant.
-factory ConversationItem.applyPatchCallOutput({required String id, required String callId, required ApplyPatchCallOutputStatus status, Omittable<String?> output = const Omittable.absent(), String? createdBy, }) { return ConversationItemApplyPatchCallOutput(ApplyPatchToolCallOutput(type: 'apply_patch_call_output', id: id, callId: callId, status: status, output: output, createdBy: createdBy)); }
+factory ConversationItem.applyPatchCallOutput({required String id, required String callId, required ApplyPatchCallOutputStatus status, Omittable<String?> output = const Omittable.absent(), String? createdBy, }) {return ConversationItemApplyPatchCallOutput(ApplyPatchToolCallOutput(type: 'apply_patch_call_output', id: id, callId: callId, status: status, output: output, createdBy: createdBy));}
 
 /// Build the `mcp_list_tools` variant.
-factory ConversationItem.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, Omittable<String?> error = const Omittable.absent(), }) { return ConversationItemMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
+factory ConversationItem.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, Omittable<String?> error = const Omittable.absent(), }) {return ConversationItemMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error));}
 
 /// Build the `mcp_approval_request` variant.
-factory ConversationItem.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) { return ConversationItemMcpApprovalRequest(McpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments)); }
+factory ConversationItem.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) {return ConversationItemMcpApprovalRequest(McpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments));}
 
 /// Build the `mcp_approval_response` variant.
-factory ConversationItem.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, Omittable<String?> reason = const Omittable.absent(), }) { return ConversationItemMcpApprovalResponse(McpApprovalResponseResource(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
+factory ConversationItem.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, Omittable<String?> reason = const Omittable.absent(), }) {return ConversationItemMcpApprovalResponse(McpApprovalResponseResource(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason));}
 
 /// Build the `mcp_call` variant.
-factory ConversationItem.mcpCall({required String id, required String serverLabel, required String name, required String arguments, Omittable<String?> output = const Omittable.absent(), Omittable<String?> error = const Omittable.absent(), McpToolCallStatus? status, Omittable<String?> approvalRequestId = const Omittable.absent(), }) { return ConversationItemMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
+factory ConversationItem.mcpCall({required String id, required String serverLabel, required String name, required String arguments, Omittable<String?> output = const Omittable.absent(), Omittable<String?> error = const Omittable.absent(), McpToolCallStatus? status, Omittable<String?> approvalRequestId = const Omittable.absent(), }) {return ConversationItemMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId));}
 
 /// Build the `custom_tool_call` variant.
-factory ConversationItem.customToolCall({required String callId, required String name, required String input, String? id, String? namespace, }) { return ConversationItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
+factory ConversationItem.customToolCall({required String callId, required String name, required String input, String? id, String? namespace, }) {return ConversationItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input));}
 
 /// Build the `custom_tool_call_output` variant.
-factory ConversationItem.customToolCallOutput({required String callId, required CustomToolCallOutputOutput output, String? id, }) { return ConversationItemCustomToolCallOutput(CustomToolCallOutput(type: 'custom_tool_call_output', id: id, callId: callId, output: output)); }
+factory ConversationItem.customToolCallOutput({required String callId, required CustomToolCallOutputOutput output, String? id, }) {return ConversationItemCustomToolCallOutput(CustomToolCallOutput(type: 'custom_tool_call_output', id: id, callId: callId, output: output));}
 
 /// The discriminator value identifying this variant.
 ConversationItemType get type;
@@ -474,7 +474,7 @@ bool get isUnknown => this is ConversationItem$Unknown;
 
 /// Shared by all variants of this union.
 String? get id;
-R when<R>({required R Function(ConversationItemMessage) message, required R Function(ConversationItemFunctionToolCallResource) functionToolCallResource, required R Function(ConversationItemFunctionToolCallOutputResource) functionToolCallOutputResource, required R Function(ConversationItemFileSearchCall) fileSearchCall, required R Function(ConversationItemWebSearchCall) webSearchCall, required R Function(ConversationItemImageGenerationCall) imageGenerationCall, required R Function(ConversationItemComputerCall) computerCall, required R Function(ConversationItemComputerToolCallOutputResource) computerToolCallOutputResource, required R Function(ConversationItemToolSearchCall) toolSearchCall, required R Function(ConversationItemToolSearchOutput) toolSearchOutput, required R Function(ConversationItemReasoning) reasoning, required R Function(ConversationItemCodeInterpreterCall) codeInterpreterCall, required R Function(ConversationItemLocalShellCall) localShellCall, required R Function(ConversationItemLocalShellCallOutput) localShellCallOutput, required R Function(ConversationItemShellCall) shellCall, required R Function(ConversationItemShellCallOutput) shellCallOutput, required R Function(ConversationItemApplyPatchCall) applyPatchCall, required R Function(ConversationItemApplyPatchCallOutput) applyPatchCallOutput, required R Function(ConversationItemMcpListTools) mcpListTools, required R Function(ConversationItemMcpApprovalRequest) mcpApprovalRequest, required R Function(ConversationItemMcpApprovalResponse) mcpApprovalResponse, required R Function(ConversationItemMcpCall) mcpCall, required R Function(ConversationItemCustomToolCall) customToolCall, required R Function(ConversationItemCustomToolCallOutput) customToolCallOutput, required R Function(ConversationItem$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(ConversationItemMessage) message, required R Function(ConversationItemFunctionToolCallResource) functionToolCallResource, required R Function(ConversationItemFunctionToolCallOutputResource) functionToolCallOutputResource, required R Function(ConversationItemFileSearchCall) fileSearchCall, required R Function(ConversationItemWebSearchCall) webSearchCall, required R Function(ConversationItemImageGenerationCall) imageGenerationCall, required R Function(ConversationItemComputerCall) computerCall, required R Function(ConversationItemComputerToolCallOutputResource) computerToolCallOutputResource, required R Function(ConversationItemToolSearchCall) toolSearchCall, required R Function(ConversationItemToolSearchOutput) toolSearchOutput, required R Function(ConversationItemReasoning) reasoning, required R Function(ConversationItemCodeInterpreterCall) codeInterpreterCall, required R Function(ConversationItemLocalShellCall) localShellCall, required R Function(ConversationItemLocalShellCallOutput) localShellCallOutput, required R Function(ConversationItemShellCall) shellCall, required R Function(ConversationItemShellCallOutput) shellCallOutput, required R Function(ConversationItemApplyPatchCall) applyPatchCall, required R Function(ConversationItemApplyPatchCallOutput) applyPatchCallOutput, required R Function(ConversationItemMcpListTools) mcpListTools, required R Function(ConversationItemMcpApprovalRequest) mcpApprovalRequest, required R Function(ConversationItemMcpApprovalResponse) mcpApprovalResponse, required R Function(ConversationItemMcpCall) mcpCall, required R Function(ConversationItemCustomToolCall) customToolCall, required R Function(ConversationItemCustomToolCallOutput) customToolCallOutput, required R Function(ConversationItem$Unknown) unknown, }) {return switch (this) {
   final ConversationItemMessage v => message(v),
   final ConversationItemFunctionToolCallResource v => functionToolCallResource(v),
   final ConversationItemFunctionToolCallOutputResource v => functionToolCallOutputResource(v),
@@ -500,11 +500,11 @@ R when<R>({required R Function(ConversationItemMessage) message, required R Func
   final ConversationItemCustomToolCall v => customToolCall(v),
   final ConversationItemCustomToolCallOutput v => customToolCallOutput(v),
   final ConversationItem$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class ConversationItemMessage extends ConversationItem {const ConversationItemMessage(this.message);
 
-factory ConversationItemMessage.fromJson(Map<String, dynamic> json) { return ConversationItemMessage(Message.fromJson(json)); }
+factory ConversationItemMessage.fromJson(Map<String, dynamic> json) {return ConversationItemMessage(Message.fromJson(json));}
 
 final Message message;
 
@@ -512,12 +512,12 @@ final Message message;
 
 @override Map<String, dynamic> toJson() => {...message.toJson(), 'type': type.toJson()};
 
-ConversationItemMessage copyWith({String? id, MessageStatus? status, MessageRole? role, List<MessageContent>? content, }) { return ConversationItemMessage(message.copyWith(
+ConversationItemMessage copyWith({String? id, MessageStatus? status, MessageRole? role, List<MessageContent>? content, }) {return ConversationItemMessage(message.copyWith(
   id: id,
   status: status,
   role: role,
   content: content,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemMessage && message == other.message;
 
@@ -527,10 +527,10 @@ ConversationItemMessage copyWith({String? id, MessageStatus? status, MessageRole
 
 @override String? get id => message.id;
 
- }
+}
 @immutable final class ConversationItemFunctionToolCallResource extends ConversationItem {const ConversationItemFunctionToolCallResource(this.functionToolCallResource);
 
-factory ConversationItemFunctionToolCallResource.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionToolCallResource(FunctionToolCallResource.fromJson(json)); }
+factory ConversationItemFunctionToolCallResource.fromJson(Map<String, dynamic> json) {return ConversationItemFunctionToolCallResource(FunctionToolCallResource.fromJson(json));}
 
 final FunctionToolCallResource functionToolCallResource;
 
@@ -538,14 +538,14 @@ final FunctionToolCallResource functionToolCallResource;
 
 @override Map<String, dynamic> toJson() => {...functionToolCallResource.toJson(), 'type': type.toJson()};
 
-ConversationItemFunctionToolCallResource copyWith({String? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ConversationItemFunctionToolCallResource(functionToolCallResource.copyWith(
+ConversationItemFunctionToolCallResource copyWith({String? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputResourceStatus? Function()? status, }) {return ConversationItemFunctionToolCallResource(functionToolCallResource.copyWith(
   id: id,
   callId: callId,
   namespace: namespace,
   name: name,
   arguments: arguments,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemFunctionToolCallResource && functionToolCallResource == other.functionToolCallResource;
 
@@ -555,10 +555,10 @@ ConversationItemFunctionToolCallResource copyWith({String? id, String? callId, S
 
 @override String? get id => functionToolCallResource.id;
 
- }
+}
 @immutable final class ConversationItemFunctionToolCallOutputResource extends ConversationItem {const ConversationItemFunctionToolCallOutputResource(this.functionToolCallOutputResource);
 
-factory ConversationItemFunctionToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutputResource.fromJson(json)); }
+factory ConversationItemFunctionToolCallOutputResource.fromJson(Map<String, dynamic> json) {return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutputResource.fromJson(json));}
 
 final FunctionToolCallOutputResource functionToolCallOutputResource;
 
@@ -566,12 +566,12 @@ final FunctionToolCallOutputResource functionToolCallOutputResource;
 
 @override Map<String, dynamic> toJson() => {...functionToolCallOutputResource.toJson(), 'type': type.toJson()};
 
-ConversationItemFunctionToolCallOutputResource copyWith({String? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ConversationItemFunctionToolCallOutputResource(functionToolCallOutputResource.copyWith(
+ConversationItemFunctionToolCallOutputResource copyWith({String? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputResourceStatus? Function()? status, }) {return ConversationItemFunctionToolCallOutputResource(functionToolCallOutputResource.copyWith(
   id: id,
   callId: callId,
   output: output,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemFunctionToolCallOutputResource && functionToolCallOutputResource == other.functionToolCallOutputResource;
 
@@ -581,10 +581,10 @@ ConversationItemFunctionToolCallOutputResource copyWith({String? id, String? cal
 
 @override String? get id => functionToolCallOutputResource.id;
 
- }
+}
 @immutable final class ConversationItemFileSearchCall extends ConversationItem {const ConversationItemFileSearchCall(this.fileSearchToolCall);
 
-factory ConversationItemFileSearchCall.fromJson(Map<String, dynamic> json) { return ConversationItemFileSearchCall(FileSearchToolCall.fromJson(json)); }
+factory ConversationItemFileSearchCall.fromJson(Map<String, dynamic> json) {return ConversationItemFileSearchCall(FileSearchToolCall.fromJson(json));}
 
 final FileSearchToolCall fileSearchToolCall;
 
@@ -592,12 +592,12 @@ final FileSearchToolCall fileSearchToolCall;
 
 @override Map<String, dynamic> toJson() => {...fileSearchToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, Omittable<List<FileSearchToolCallResults>?>? results, }) { return ConversationItemFileSearchCall(fileSearchToolCall.copyWith(
+ConversationItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, Omittable<List<FileSearchToolCallResults>?>? results, }) {return ConversationItemFileSearchCall(fileSearchToolCall.copyWith(
   id: id,
   status: status,
   queries: queries,
   results: results,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemFileSearchCall && fileSearchToolCall == other.fileSearchToolCall;
 
@@ -607,10 +607,10 @@ ConversationItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? s
 
 @override String? get id => fileSearchToolCall.id;
 
- }
+}
 @immutable final class ConversationItemWebSearchCall extends ConversationItem {const ConversationItemWebSearchCall(this.webSearchToolCall);
 
-factory ConversationItemWebSearchCall.fromJson(Map<String, dynamic> json) { return ConversationItemWebSearchCall(WebSearchToolCall.fromJson(json)); }
+factory ConversationItemWebSearchCall.fromJson(Map<String, dynamic> json) {return ConversationItemWebSearchCall(WebSearchToolCall.fromJson(json));}
 
 final WebSearchToolCall webSearchToolCall;
 
@@ -618,11 +618,11 @@ final WebSearchToolCall webSearchToolCall;
 
 @override Map<String, dynamic> toJson() => {...webSearchToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSearchToolCallAction? action, }) { return ConversationItemWebSearchCall(webSearchToolCall.copyWith(
+ConversationItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSearchToolCallAction? action, }) {return ConversationItemWebSearchCall(webSearchToolCall.copyWith(
   id: id,
   status: status,
   action: action,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemWebSearchCall && webSearchToolCall == other.webSearchToolCall;
 
@@ -632,10 +632,10 @@ ConversationItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? sta
 
 @override String? get id => webSearchToolCall.id;
 
- }
+}
 @immutable final class ConversationItemImageGenerationCall extends ConversationItem {const ConversationItemImageGenerationCall(this.imageGenToolCall);
 
-factory ConversationItemImageGenerationCall.fromJson(Map<String, dynamic> json) { return ConversationItemImageGenerationCall(ImageGenToolCall.fromJson(json)); }
+factory ConversationItemImageGenerationCall.fromJson(Map<String, dynamic> json) {return ConversationItemImageGenerationCall(ImageGenToolCall.fromJson(json));}
 
 final ImageGenToolCall imageGenToolCall;
 
@@ -643,11 +643,11 @@ final ImageGenToolCall imageGenToolCall;
 
 @override Map<String, dynamic> toJson() => {...imageGenToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ConversationItemImageGenerationCall(imageGenToolCall.copyWith(
+ConversationItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, String? Function()? result, }) {return ConversationItemImageGenerationCall(imageGenToolCall.copyWith(
   id: id,
   status: status,
   result: result,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemImageGenerationCall && imageGenToolCall == other.imageGenToolCall;
 
@@ -657,10 +657,10 @@ ConversationItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus
 
 @override String? get id => imageGenToolCall.id;
 
- }
+}
 @immutable final class ConversationItemComputerCall extends ConversationItem {const ConversationItemComputerCall(this.computerToolCall);
 
-factory ConversationItemComputerCall.fromJson(Map<String, dynamic> json) { return ConversationItemComputerCall(ComputerToolCall.fromJson(json)); }
+factory ConversationItemComputerCall.fromJson(Map<String, dynamic> json) {return ConversationItemComputerCall(ComputerToolCall.fromJson(json));}
 
 final ComputerToolCall computerToolCall;
 
@@ -668,14 +668,14 @@ final ComputerToolCall computerToolCall;
 
 @override Map<String, dynamic> toJson() => {...computerToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) { return ConversationItemComputerCall(computerToolCall.copyWith(
+ConversationItemComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) {return ConversationItemComputerCall(computerToolCall.copyWith(
   id: id,
   callId: callId,
   action: action,
   actions: actions,
   pendingSafetyChecks: pendingSafetyChecks,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemComputerCall && computerToolCall == other.computerToolCall;
 
@@ -685,10 +685,10 @@ ConversationItemComputerCall copyWith({String? id, String? callId, ComputerActio
 
 @override String? get id => computerToolCall.id;
 
- }
+}
 @immutable final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutputResource);
 
-factory ConversationItemComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutputResource.fromJson(json)); }
+factory ConversationItemComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) {return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutputResource.fromJson(json));}
 
 final ComputerToolCallOutputResource computerToolCallOutputResource;
 
@@ -696,13 +696,13 @@ final ComputerToolCallOutputResource computerToolCallOutputResource;
 
 @override Map<String, dynamic> toJson() => {...computerToolCallOutputResource.toJson(), 'type': type.toJson()};
 
-ConversationItemComputerToolCallOutputResource copyWith({String? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ConversationItemComputerToolCallOutputResource(computerToolCallOutputResource.copyWith(
+ConversationItemComputerToolCallOutputResource copyWith({String? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputResourceStatus? Function()? status, }) {return ConversationItemComputerToolCallOutputResource(computerToolCallOutputResource.copyWith(
   id: id,
   callId: callId,
   acknowledgedSafetyChecks: acknowledgedSafetyChecks,
   output: output,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemComputerToolCallOutputResource && computerToolCallOutputResource == other.computerToolCallOutputResource;
 
@@ -712,10 +712,10 @@ ConversationItemComputerToolCallOutputResource copyWith({String? id, String? cal
 
 @override String? get id => computerToolCallOutputResource.id;
 
- }
+}
 @immutable final class ConversationItemToolSearchCall extends ConversationItem {const ConversationItemToolSearchCall(this.toolSearchCall);
 
-factory ConversationItemToolSearchCall.fromJson(Map<String, dynamic> json) { return ConversationItemToolSearchCall(ToolSearchCall.fromJson(json)); }
+factory ConversationItemToolSearchCall.fromJson(Map<String, dynamic> json) {return ConversationItemToolSearchCall(ToolSearchCall.fromJson(json));}
 
 final ToolSearchCall toolSearchCall;
 
@@ -723,14 +723,14 @@ final ToolSearchCall toolSearchCall;
 
 @override Map<String, dynamic> toJson() => {...toolSearchCall.toJson(), 'type': type.toJson()};
 
-ConversationItemToolSearchCall copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) { return ConversationItemToolSearchCall(toolSearchCall.copyWith(
+ConversationItemToolSearchCall copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) {return ConversationItemToolSearchCall(toolSearchCall.copyWith(
   id: id,
   callId: callId,
   execution: execution,
   arguments: arguments,
   status: status,
   createdBy: createdBy,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemToolSearchCall && toolSearchCall == other.toolSearchCall;
 
@@ -740,10 +740,10 @@ ConversationItemToolSearchCall copyWith({String? id, String? Function()? callId,
 
 @override String? get id => toolSearchCall.id;
 
- }
+}
 @immutable final class ConversationItemToolSearchOutput extends ConversationItem {const ConversationItemToolSearchOutput(this.toolSearchOutput);
 
-factory ConversationItemToolSearchOutput.fromJson(Map<String, dynamic> json) { return ConversationItemToolSearchOutput(ToolSearchOutput.fromJson(json)); }
+factory ConversationItemToolSearchOutput.fromJson(Map<String, dynamic> json) {return ConversationItemToolSearchOutput(ToolSearchOutput.fromJson(json));}
 
 final ToolSearchOutput toolSearchOutput;
 
@@ -751,14 +751,14 @@ final ToolSearchOutput toolSearchOutput;
 
 @override Map<String, dynamic> toJson() => {...toolSearchOutput.toJson(), 'type': type.toJson()};
 
-ConversationItemToolSearchOutput copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) { return ConversationItemToolSearchOutput(toolSearchOutput.copyWith(
+ConversationItemToolSearchOutput copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) {return ConversationItemToolSearchOutput(toolSearchOutput.copyWith(
   id: id,
   callId: callId,
   execution: execution,
   tools: tools,
   status: status,
   createdBy: createdBy,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemToolSearchOutput && toolSearchOutput == other.toolSearchOutput;
 
@@ -768,10 +768,10 @@ ConversationItemToolSearchOutput copyWith({String? id, String? Function()? callI
 
 @override String? get id => toolSearchOutput.id;
 
- }
+}
 @immutable final class ConversationItemReasoning extends ConversationItem {const ConversationItemReasoning(this.reasoningItem);
 
-factory ConversationItemReasoning.fromJson(Map<String, dynamic> json) { return ConversationItemReasoning(ReasoningItem.fromJson(json)); }
+factory ConversationItemReasoning.fromJson(Map<String, dynamic> json) {return ConversationItemReasoning(ReasoningItem.fromJson(json));}
 
 final ReasoningItem reasoningItem;
 
@@ -779,13 +779,13 @@ final ReasoningItem reasoningItem;
 
 @override Map<String, dynamic> toJson() => {...reasoningItem.toJson(), 'type': type.toJson()};
 
-ConversationItemReasoning copyWith({String? id, Omittable<String?>? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ConversationItemReasoning(reasoningItem.copyWith(
+ConversationItemReasoning copyWith({String? id, Omittable<String?>? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputResourceStatus? Function()? status, }) {return ConversationItemReasoning(reasoningItem.copyWith(
   id: id,
   encryptedContent: encryptedContent,
   summary: summary,
   content: content,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemReasoning && reasoningItem == other.reasoningItem;
 
@@ -795,10 +795,10 @@ ConversationItemReasoning copyWith({String? id, Omittable<String?>? encryptedCon
 
 @override String? get id => reasoningItem.id;
 
- }
+}
 @immutable final class ConversationItemCodeInterpreterCall extends ConversationItem {const ConversationItemCodeInterpreterCall(this.codeInterpreterToolCall);
 
-factory ConversationItemCodeInterpreterCall.fromJson(Map<String, dynamic> json) { return ConversationItemCodeInterpreterCall(CodeInterpreterToolCall.fromJson(json)); }
+factory ConversationItemCodeInterpreterCall.fromJson(Map<String, dynamic> json) {return ConversationItemCodeInterpreterCall(CodeInterpreterToolCall.fromJson(json));}
 
 final CodeInterpreterToolCall codeInterpreterToolCall;
 
@@ -806,13 +806,13 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
 
 @override Map<String, dynamic> toJson() => {...codeInterpreterToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) { return ConversationItemCodeInterpreterCall(codeInterpreterToolCall.copyWith(
+ConversationItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) {return ConversationItemCodeInterpreterCall(codeInterpreterToolCall.copyWith(
   id: id,
   status: status,
   containerId: containerId,
   code: code,
   outputs: outputs,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall;
 
@@ -822,10 +822,10 @@ ConversationItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCal
 
 @override String? get id => codeInterpreterToolCall.id;
 
- }
+}
 @immutable final class ConversationItemLocalShellCall extends ConversationItem {const ConversationItemLocalShellCall(this.localShellToolCall);
 
-factory ConversationItemLocalShellCall.fromJson(Map<String, dynamic> json) { return ConversationItemLocalShellCall(LocalShellToolCall.fromJson(json)); }
+factory ConversationItemLocalShellCall.fromJson(Map<String, dynamic> json) {return ConversationItemLocalShellCall(LocalShellToolCall.fromJson(json));}
 
 final LocalShellToolCall localShellToolCall;
 
@@ -833,12 +833,12 @@ final LocalShellToolCall localShellToolCall;
 
 @override Map<String, dynamic> toJson() => {...localShellToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputResourceStatus? status, }) { return ConversationItemLocalShellCall(localShellToolCall.copyWith(
+ConversationItemLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputResourceStatus? status, }) {return ConversationItemLocalShellCall(localShellToolCall.copyWith(
   id: id,
   callId: callId,
   action: action,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemLocalShellCall && localShellToolCall == other.localShellToolCall;
 
@@ -848,10 +848,10 @@ ConversationItemLocalShellCall copyWith({String? id, String? callId, LocalShellE
 
 @override String? get id => localShellToolCall.id;
 
- }
+}
 @immutable final class ConversationItemLocalShellCallOutput extends ConversationItem {const ConversationItemLocalShellCallOutput(this.localShellToolCallOutput);
 
-factory ConversationItemLocalShellCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemLocalShellCallOutput(LocalShellToolCallOutput.fromJson(json)); }
+factory ConversationItemLocalShellCallOutput.fromJson(Map<String, dynamic> json) {return ConversationItemLocalShellCallOutput(LocalShellToolCallOutput.fromJson(json));}
 
 final LocalShellToolCallOutput localShellToolCallOutput;
 
@@ -859,11 +859,11 @@ final LocalShellToolCallOutput localShellToolCallOutput;
 
 @override Map<String, dynamic> toJson() => {...localShellToolCallOutput.toJson(), 'type': type.toJson()};
 
-ConversationItemLocalShellCallOutput copyWith({String? id, String? output, Omittable<LocalShellToolCallOutputStatus?>? status, }) { return ConversationItemLocalShellCallOutput(localShellToolCallOutput.copyWith(
+ConversationItemLocalShellCallOutput copyWith({String? id, String? output, Omittable<LocalShellToolCallOutputStatus?>? status, }) {return ConversationItemLocalShellCallOutput(localShellToolCallOutput.copyWith(
   id: id,
   output: output,
   status: status,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput;
 
@@ -873,10 +873,10 @@ ConversationItemLocalShellCallOutput copyWith({String? id, String? output, Omitt
 
 @override String? get id => localShellToolCallOutput.id;
 
- }
+}
 @immutable final class ConversationItemShellCall extends ConversationItem {const ConversationItemShellCall(this.functionShellCall);
 
-factory ConversationItemShellCall.fromJson(Map<String, dynamic> json) { return ConversationItemShellCall(FunctionShellCall.fromJson(json)); }
+factory ConversationItemShellCall.fromJson(Map<String, dynamic> json) {return ConversationItemShellCall(FunctionShellCall.fromJson(json));}
 
 final FunctionShellCall functionShellCall;
 
@@ -884,14 +884,14 @@ final FunctionShellCall functionShellCall;
 
 @override Map<String, dynamic> toJson() => {...functionShellCall.toJson(), 'type': type.toJson()};
 
-ConversationItemShellCall copyWith({String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) { return ConversationItemShellCall(functionShellCall.copyWith(
+ConversationItemShellCall copyWith({String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) {return ConversationItemShellCall(functionShellCall.copyWith(
   id: id,
   callId: callId,
   action: action,
   status: status,
   environment: environment,
   createdBy: createdBy,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemShellCall && functionShellCall == other.functionShellCall;
 
@@ -901,10 +901,10 @@ ConversationItemShellCall copyWith({String? id, String? callId, FunctionShellAct
 
 @override String? get id => functionShellCall.id;
 
- }
+}
 @immutable final class ConversationItemShellCallOutput extends ConversationItem {const ConversationItemShellCallOutput(this.functionShellCallOutput);
 
-factory ConversationItemShellCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemShellCallOutput(FunctionShellCallOutput.fromJson(json)); }
+factory ConversationItemShellCallOutput.fromJson(Map<String, dynamic> json) {return ConversationItemShellCallOutput(FunctionShellCallOutput.fromJson(json));}
 
 final FunctionShellCallOutput functionShellCallOutput;
 
@@ -912,14 +912,14 @@ final FunctionShellCallOutput functionShellCallOutput;
 
 @override Map<String, dynamic> toJson() => {...functionShellCallOutput.toJson(), 'type': type.toJson()};
 
-ConversationItemShellCallOutput copyWith({String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) { return ConversationItemShellCallOutput(functionShellCallOutput.copyWith(
+ConversationItemShellCallOutput copyWith({String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) {return ConversationItemShellCallOutput(functionShellCallOutput.copyWith(
   id: id,
   callId: callId,
   status: status,
   output: output,
   maxOutputLength: maxOutputLength,
   createdBy: createdBy,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemShellCallOutput && functionShellCallOutput == other.functionShellCallOutput;
 
@@ -929,10 +929,10 @@ ConversationItemShellCallOutput copyWith({String? id, String? callId, LocalShell
 
 @override String? get id => functionShellCallOutput.id;
 
- }
+}
 @immutable final class ConversationItemApplyPatchCall extends ConversationItem {const ConversationItemApplyPatchCall(this.applyPatchToolCall);
 
-factory ConversationItemApplyPatchCall.fromJson(Map<String, dynamic> json) { return ConversationItemApplyPatchCall(ApplyPatchToolCall.fromJson(json)); }
+factory ConversationItemApplyPatchCall.fromJson(Map<String, dynamic> json) {return ConversationItemApplyPatchCall(ApplyPatchToolCall.fromJson(json));}
 
 final ApplyPatchToolCall applyPatchToolCall;
 
@@ -940,13 +940,13 @@ final ApplyPatchToolCall applyPatchToolCall;
 
 @override Map<String, dynamic> toJson() => {...applyPatchToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String? Function()? createdBy, }) { return ConversationItemApplyPatchCall(applyPatchToolCall.copyWith(
+ConversationItemApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String? Function()? createdBy, }) {return ConversationItemApplyPatchCall(applyPatchToolCall.copyWith(
   id: id,
   callId: callId,
   status: status,
   operation: operation,
   createdBy: createdBy,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall;
 
@@ -956,10 +956,10 @@ ConversationItemApplyPatchCall copyWith({String? id, String? callId, ApplyPatchC
 
 @override String? get id => applyPatchToolCall.id;
 
- }
+}
 @immutable final class ConversationItemApplyPatchCallOutput extends ConversationItem {const ConversationItemApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
-factory ConversationItemApplyPatchCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemApplyPatchCallOutput(ApplyPatchToolCallOutput.fromJson(json)); }
+factory ConversationItemApplyPatchCallOutput.fromJson(Map<String, dynamic> json) {return ConversationItemApplyPatchCallOutput(ApplyPatchToolCallOutput.fromJson(json));}
 
 final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
@@ -967,13 +967,13 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
 @override Map<String, dynamic> toJson() => {...applyPatchToolCallOutput.toJson(), 'type': type.toJson()};
 
-ConversationItemApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, String? Function()? createdBy, }) { return ConversationItemApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
+ConversationItemApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, String? Function()? createdBy, }) {return ConversationItemApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
   id: id,
   callId: callId,
   status: status,
   output: output,
   createdBy: createdBy,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput;
 
@@ -983,10 +983,10 @@ ConversationItemApplyPatchCallOutput copyWith({String? id, String? callId, Apply
 
 @override String? get id => applyPatchToolCallOutput.id;
 
- }
+}
 @immutable final class ConversationItemMcpListTools extends ConversationItem {const ConversationItemMcpListTools(this.mcpListTools);
 
-factory ConversationItemMcpListTools.fromJson(Map<String, dynamic> json) { return ConversationItemMcpListTools(McpListTools.fromJson(json)); }
+factory ConversationItemMcpListTools.fromJson(Map<String, dynamic> json) {return ConversationItemMcpListTools(McpListTools.fromJson(json));}
 
 final McpListTools mcpListTools;
 
@@ -994,12 +994,12 @@ final McpListTools mcpListTools;
 
 @override Map<String, dynamic> toJson() => {...mcpListTools.toJson(), 'type': type.toJson()};
 
-ConversationItemMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, Omittable<String?>? error, }) { return ConversationItemMcpListTools(mcpListTools.copyWith(
+ConversationItemMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, Omittable<String?>? error, }) {return ConversationItemMcpListTools(mcpListTools.copyWith(
   id: id,
   serverLabel: serverLabel,
   tools: tools,
   error: error,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemMcpListTools && mcpListTools == other.mcpListTools;
 
@@ -1009,10 +1009,10 @@ ConversationItemMcpListTools copyWith({String? id, String? serverLabel, List<Mcp
 
 @override String? get id => mcpListTools.id;
 
- }
+}
 @immutable final class ConversationItemMcpApprovalRequest extends ConversationItem {const ConversationItemMcpApprovalRequest(this.mcpApprovalRequest);
 
-factory ConversationItemMcpApprovalRequest.fromJson(Map<String, dynamic> json) { return ConversationItemMcpApprovalRequest(McpApprovalRequest.fromJson(json)); }
+factory ConversationItemMcpApprovalRequest.fromJson(Map<String, dynamic> json) {return ConversationItemMcpApprovalRequest(McpApprovalRequest.fromJson(json));}
 
 final McpApprovalRequest mcpApprovalRequest;
 
@@ -1020,12 +1020,12 @@ final McpApprovalRequest mcpApprovalRequest;
 
 @override Map<String, dynamic> toJson() => {...mcpApprovalRequest.toJson(), 'type': type.toJson()};
 
-ConversationItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, String? arguments, }) { return ConversationItemMcpApprovalRequest(mcpApprovalRequest.copyWith(
+ConversationItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, String? arguments, }) {return ConversationItemMcpApprovalRequest(mcpApprovalRequest.copyWith(
   id: id,
   serverLabel: serverLabel,
   name: name,
   arguments: arguments,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest;
 
@@ -1035,10 +1035,10 @@ ConversationItemMcpApprovalRequest copyWith({String? id, String? serverLabel, St
 
 @override String? get id => mcpApprovalRequest.id;
 
- }
+}
 @immutable final class ConversationItemMcpApprovalResponse extends ConversationItem {const ConversationItemMcpApprovalResponse(this.mcpApprovalResponseResource);
 
-factory ConversationItemMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return ConversationItemMcpApprovalResponse(McpApprovalResponseResource.fromJson(json)); }
+factory ConversationItemMcpApprovalResponse.fromJson(Map<String, dynamic> json) {return ConversationItemMcpApprovalResponse(McpApprovalResponseResource.fromJson(json));}
 
 final McpApprovalResponseResource mcpApprovalResponseResource;
 
@@ -1046,12 +1046,12 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
 
 @override Map<String, dynamic> toJson() => {...mcpApprovalResponseResource.toJson(), 'type': type.toJson()};
 
-ConversationItemMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) { return ConversationItemMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
+ConversationItemMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) {return ConversationItemMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
   id: id,
   approvalRequestId: approvalRequestId,
   approve: approve,
   reason: reason,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource;
 
@@ -1061,10 +1061,10 @@ ConversationItemMcpApprovalResponse copyWith({String? id, String? approvalReques
 
 @override String? get id => mcpApprovalResponseResource.id;
 
- }
+}
 @immutable final class ConversationItemMcpCall extends ConversationItem {const ConversationItemMcpCall(this.mcpToolCall);
 
-factory ConversationItemMcpCall.fromJson(Map<String, dynamic> json) { return ConversationItemMcpCall(McpToolCall.fromJson(json)); }
+factory ConversationItemMcpCall.fromJson(Map<String, dynamic> json) {return ConversationItemMcpCall(McpToolCall.fromJson(json));}
 
 final McpToolCall mcpToolCall;
 
@@ -1072,7 +1072,7 @@ final McpToolCall mcpToolCall;
 
 @override Map<String, dynamic> toJson() => {...mcpToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) { return ConversationItemMcpCall(mcpToolCall.copyWith(
+ConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) {return ConversationItemMcpCall(mcpToolCall.copyWith(
   id: id,
   serverLabel: serverLabel,
   name: name,
@@ -1081,7 +1081,7 @@ ConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name,
   error: error,
   status: status,
   approvalRequestId: approvalRequestId,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemMcpCall && mcpToolCall == other.mcpToolCall;
 
@@ -1091,10 +1091,10 @@ ConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name,
 
 @override String? get id => mcpToolCall.id;
 
- }
+}
 @immutable final class ConversationItemCustomToolCall extends ConversationItem {const ConversationItemCustomToolCall(this.customToolCall);
 
-factory ConversationItemCustomToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemCustomToolCall(CustomToolCall.fromJson(json)); }
+factory ConversationItemCustomToolCall.fromJson(Map<String, dynamic> json) {return ConversationItemCustomToolCall(CustomToolCall.fromJson(json));}
 
 final CustomToolCall customToolCall;
 
@@ -1102,13 +1102,13 @@ final CustomToolCall customToolCall;
 
 @override Map<String, dynamic> toJson() => {...customToolCall.toJson(), 'type': type.toJson()};
 
-ConversationItemCustomToolCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) { return ConversationItemCustomToolCall(customToolCall.copyWith(
+ConversationItemCustomToolCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) {return ConversationItemCustomToolCall(customToolCall.copyWith(
   id: id,
   callId: callId,
   namespace: namespace,
   name: name,
   input: input,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemCustomToolCall && customToolCall == other.customToolCall;
 
@@ -1118,10 +1118,10 @@ ConversationItemCustomToolCall copyWith({String? Function()? id, String? callId,
 
 @override String? get id => customToolCall.id;
 
- }
+}
 @immutable final class ConversationItemCustomToolCallOutput extends ConversationItem {const ConversationItemCustomToolCallOutput(this.customToolCallOutput);
 
-factory ConversationItemCustomToolCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemCustomToolCallOutput(CustomToolCallOutput.fromJson(json)); }
+factory ConversationItemCustomToolCallOutput.fromJson(Map<String, dynamic> json) {return ConversationItemCustomToolCallOutput(CustomToolCallOutput.fromJson(json));}
 
 final CustomToolCallOutput customToolCallOutput;
 
@@ -1129,11 +1129,11 @@ final CustomToolCallOutput customToolCallOutput;
 
 @override Map<String, dynamic> toJson() => {...customToolCallOutput.toJson(), 'type': type.toJson()};
 
-ConversationItemCustomToolCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ConversationItemCustomToolCallOutput(customToolCallOutput.copyWith(
+ConversationItemCustomToolCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, }) {return ConversationItemCustomToolCallOutput(customToolCallOutput.copyWith(
   id: id,
   callId: callId,
   output: output,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ConversationItemCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput;
 
@@ -1143,7 +1143,7 @@ ConversationItemCustomToolCallOutput copyWith({String? Function()? id, String? c
 
 @override String? get id => customToolCallOutput.id;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class ConversationItem$Unknown extends ConversationItem {ConversationItem$Unknown(this.json);
@@ -1165,4 +1165,4 @@ late final String? _id = json['id'] as String?;
 
 @override String? get id => _id;
 
- }
+}

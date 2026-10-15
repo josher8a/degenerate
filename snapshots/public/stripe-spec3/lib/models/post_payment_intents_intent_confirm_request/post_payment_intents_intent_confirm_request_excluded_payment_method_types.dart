@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';sealed class ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1();
 
-factory ExcludedPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
+factory ExcludedPaymentMethodTypesVariant1.fromJson(String json) {return switch (json) {
   'acss_debit' => acssDebit,
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
@@ -54,7 +54,7 @@ factory ExcludedPaymentMethodTypesVariant1.fromJson(String json) { return switch
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => ExcludedPaymentMethodTypesVariant1$Unknown(json),
-}; }
+};}
 
 static const ExcludedPaymentMethodTypesVariant1 acssDebit = ExcludedPaymentMethodTypesVariant1$acssDebit._();
 
@@ -157,9 +157,9 @@ static const ExcludedPaymentMethodTypesVariant1 zip = ExcludedPaymentMethodTypes
 static const List<ExcludedPaymentMethodTypesVariant1> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'acss_debit' => 'acssDebit',
   'affirm' => 'affirm',
   'afterpay_clearpay' => 'afterpayClearpay',
@@ -210,11 +210,11 @@ String get name { return switch (value) {
   'wechat_pay' => 'wechatPay',
   'zip' => 'zip',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ExcludedPaymentMethodTypesVariant1$Unknown; } 
+bool get isUnknown {return this is ExcludedPaymentMethodTypesVariant1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() crypto, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() crypto, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) {return switch (this) {
       ExcludedPaymentMethodTypesVariant1$acssDebit() => acssDebit(),
       ExcludedPaymentMethodTypesVariant1$affirm() => affirm(),
       ExcludedPaymentMethodTypesVariant1$afterpayClearpay() => afterpayClearpay(),
@@ -265,9 +265,9 @@ W when<W>({required W Function() acssDebit, required W Function() affirm, requir
       ExcludedPaymentMethodTypesVariant1$wechatPay() => wechatPay(),
       ExcludedPaymentMethodTypesVariant1$zip() => zip(),
       ExcludedPaymentMethodTypesVariant1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? crypto, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? crypto, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) {return switch (this) {
       ExcludedPaymentMethodTypesVariant1$acssDebit() => acssDebit != null ? acssDebit() : orElse(value),
       ExcludedPaymentMethodTypesVariant1$affirm() => affirm != null ? affirm() : orElse(value),
       ExcludedPaymentMethodTypesVariant1$afterpayClearpay() => afterpayClearpay != null ? afterpayClearpay() : orElse(value),
@@ -318,10 +318,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
       ExcludedPaymentMethodTypesVariant1$wechatPay() => wechatPay != null ? wechatPay() : orElse(value),
       ExcludedPaymentMethodTypesVariant1$zip() => zip != null ? zip() : orElse(value),
       ExcludedPaymentMethodTypesVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ExcludedPaymentMethodTypesVariant1($value)';
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$acssDebit extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$acssDebit._();
 
 @override String get value => 'acss_debit';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'acss_debit'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$affirm extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$affirm._();
 
 @override String get value => 'affirm';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'affirm'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$afterpayClearpay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$afterpayClearpay._();
 
 @override String get value => 'afterpay_clearpay';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'afterpay_clearpay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$alipay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$alipay._();
 
 @override String get value => 'alipay';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alipay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$alma extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$alma._();
 
 @override String get value => 'alma';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'alma'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$amazonPay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$amazonPay._();
 
 @override String get value => 'amazon_pay';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'amazon_pay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$auBecsDebit extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$auBecsDebit._();
 
 @override String get value => 'au_becs_debit';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'au_becs_debit'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$bacsDebit extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$bacsDebit._();
 
 @override String get value => 'bacs_debit';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bacs_debit'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$bancontact extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$bancontact._();
 
 @override String get value => 'bancontact';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'bancontact'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$billie extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$billie._();
 
 @override String get value => 'billie';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'billie'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$blik extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$blik._();
 
 @override String get value => 'blik';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'blik'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$boleto extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$boleto._();
 
 @override String get value => 'boleto';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'boleto'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$card extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$card._();
 
 @override String get value => 'card';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$cashapp extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$cashapp._();
 
 @override String get value => 'cashapp';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'cashapp'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$crypto extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$crypto._();
 
 @override String get value => 'crypto';
@@ -456,7 +456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'crypto'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$customerBalance extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$customerBalance._();
 
 @override String get value => 'customer_balance';
@@ -465,7 +465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'customer_balance'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$eps extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$eps._();
 
 @override String get value => 'eps';
@@ -474,7 +474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'eps'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$fpx extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$fpx._();
 
 @override String get value => 'fpx';
@@ -483,7 +483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'fpx'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$giropay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$giropay._();
 
 @override String get value => 'giropay';
@@ -492,7 +492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'giropay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$grabpay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$grabpay._();
 
 @override String get value => 'grabpay';
@@ -501,7 +501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'grabpay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$ideal extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$ideal._();
 
 @override String get value => 'ideal';
@@ -510,7 +510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'ideal'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$kakaoPay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$kakaoPay._();
 
 @override String get value => 'kakao_pay';
@@ -519,7 +519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kakao_pay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$klarna extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$klarna._();
 
 @override String get value => 'klarna';
@@ -528,7 +528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'klarna'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$konbini extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$konbini._();
 
 @override String get value => 'konbini';
@@ -537,7 +537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'konbini'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$krCard extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$krCard._();
 
 @override String get value => 'kr_card';
@@ -546,7 +546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'kr_card'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$mbWay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$mbWay._();
 
 @override String get value => 'mb_way';
@@ -555,7 +555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mb_way'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$mobilepay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$mobilepay._();
 
 @override String get value => 'mobilepay';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'mobilepay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$multibanco extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$multibanco._();
 
 @override String get value => 'multibanco';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'multibanco'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$naverPay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$naverPay._();
 
 @override String get value => 'naver_pay';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'naver_pay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$nzBankAccount extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$nzBankAccount._();
 
 @override String get value => 'nz_bank_account';
@@ -591,7 +591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'nz_bank_account'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$oxxo extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$oxxo._();
 
 @override String get value => 'oxxo';
@@ -600,7 +600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'oxxo'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$p24 extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$p24._();
 
 @override String get value => 'p24';
@@ -609,7 +609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'p24'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$payByBank extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$payByBank._();
 
 @override String get value => 'pay_by_bank';
@@ -618,7 +618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pay_by_bank'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$payco extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$payco._();
 
 @override String get value => 'payco';
@@ -627,7 +627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payco'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$paynow extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$paynow._();
 
 @override String get value => 'paynow';
@@ -636,7 +636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paynow'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$paypal extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$paypal._();
 
 @override String get value => 'paypal';
@@ -645,7 +645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'paypal'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$payto extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$payto._();
 
 @override String get value => 'payto';
@@ -654,7 +654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'payto'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$pix extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$pix._();
 
 @override String get value => 'pix';
@@ -663,7 +663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'pix'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$promptpay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$promptpay._();
 
 @override String get value => 'promptpay';
@@ -672,7 +672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'promptpay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$revolutPay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$revolutPay._();
 
 @override String get value => 'revolut_pay';
@@ -681,7 +681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'revolut_pay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$samsungPay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$samsungPay._();
 
 @override String get value => 'samsung_pay';
@@ -690,7 +690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'samsung_pay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$satispay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$satispay._();
 
 @override String get value => 'satispay';
@@ -699,7 +699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'satispay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$sepaDebit extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$sepaDebit._();
 
 @override String get value => 'sepa_debit';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sepa_debit'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$sofort extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$sofort._();
 
 @override String get value => 'sofort';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'sofort'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$swish extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$swish._();
 
 @override String get value => 'swish';
@@ -726,7 +726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'swish'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$twint extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$twint._();
 
 @override String get value => 'twint';
@@ -735,7 +735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'twint'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$usBankAccount extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$usBankAccount._();
 
 @override String get value => 'us_bank_account';
@@ -744,7 +744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'us_bank_account'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$wechatPay extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$wechatPay._();
 
 @override String get value => 'wechat_pay';
@@ -753,7 +753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'wechat_pay'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$zip extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$zip._();
 
 @override String get value => 'zip';
@@ -762,7 +762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => 'zip'.hashCode;
 
- }
+}
 @immutable final class ExcludedPaymentMethodTypesVariant1$Unknown extends ExcludedPaymentMethodTypesVariant1 {const ExcludedPaymentMethodTypesVariant1$Unknown(this.value);
 
 @override final String value;
@@ -772,7 +772,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The list of payment method types to exclude from use with this payment.
 @immutable final class PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes {/// A value built from one or more typed views (at least one must be present).
 const PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes({this.listExcludedPaymentMethodTypesVariant1 = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
@@ -780,11 +780,11 @@ const PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes({this.lis
 const PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes._({required this.rawValue, required this.listExcludedPaymentMethodTypesVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes.fromJson(Object? json) { return PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes._(
+factory PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes.fromJson(Object? json) {return PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes._(
   rawValue: Omittable(json),
   listExcludedPaymentMethodTypesVariant1: parseAnyOfVariant<List<ExcludedPaymentMethodTypesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => ExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -814,4 +814,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes(${toJson()})';
 
- }
+}

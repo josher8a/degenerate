@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_parents.dart';import 'package:pub_github_rest_3_1/models/webhook_status/webhook_status_commit_author.dart';import 'package:pub_github_rest_3_1/models/webhook_status/webhook_status_commit_commit.dart';import 'package:pub_github_rest_3_1/models/webhook_status/webhook_status_commit_committer.dart';@immutable final class WebhookStatusCommit {const WebhookStatusCommit({required this.author, required this.commentsUrl, required this.commit, required this.committer, required this.htmlUrl, required this.nodeId, required this.parents, required this.sha, required this.url, });
 
-factory WebhookStatusCommit.fromJson(Map<String, dynamic> json) { return WebhookStatusCommit(
+factory WebhookStatusCommit.fromJson(Map<String, dynamic> json) {return WebhookStatusCommit(
   author: json['author'] != null ? WebhookStatusCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   commentsUrl: Uri.parse(json['comments_url'] as String),
   commit: WebhookStatusCommitCommit.fromJson(json['commit'] as Map<String, dynamic>),
@@ -13,7 +13,7 @@ factory WebhookStatusCommit.fromJson(Map<String, dynamic> json) { return Webhook
   parents: (json['parents'] as List<dynamic>).map((e) => GitCommitParents.fromJson(e as Map<String, dynamic>)).toList(),
   sha: json['sha'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final WebhookStatusCommitAuthor? author;
 
@@ -33,7 +33,7 @@ final String sha;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author': author?.toJson(),
   'comments_url': commentsUrl.toString(),
   'commit': commit.toJson(),
@@ -43,8 +43,8 @@ Map<String, dynamic> toJson() { return {
   'parents': parents.map((e) => e.toJson()).toList(),
   'sha': sha,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author') &&
       json.containsKey('comments_url') && json['comments_url'] is String &&
       json.containsKey('commit') &&
       json.containsKey('committer') &&
@@ -52,8 +52,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('parents') &&
       json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookStatusCommit copyWith({WebhookStatusCommitAuthor? Function()? author, Uri? commentsUrl, WebhookStatusCommitCommit? commit, WebhookStatusCommitCommitter? Function()? committer, Uri? htmlUrl, String? nodeId, List<GitCommitParents>? parents, String? sha, Uri? url, }) { return WebhookStatusCommit(
+      json.containsKey('url') && json['url'] is String;}
+WebhookStatusCommit copyWith({WebhookStatusCommitAuthor? Function()? author, Uri? commentsUrl, WebhookStatusCommitCommit? commit, WebhookStatusCommitCommitter? Function()? committer, Uri? htmlUrl, String? nodeId, List<GitCommitParents>? parents, String? sha, Uri? url, }) {return WebhookStatusCommit(
   author: author != null ? author() : this.author,
   commentsUrl: commentsUrl ?? this.commentsUrl,
   commit: commit ?? this.commit,
@@ -63,7 +63,7 @@ WebhookStatusCommit copyWith({WebhookStatusCommitAuthor? Function()? author, Uri
   parents: parents ?? this.parents,
   sha: sha ?? this.sha,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookStatusCommit &&
           author == other.author &&
@@ -80,4 +80,4 @@ WebhookStatusCommit copyWith({WebhookStatusCommitAuthor? Function()? author, Uri
 
 @override String toString() => 'WebhookStatusCommit(\n  author: $author,\n  commentsUrl: $commentsUrl,\n  commit: $commit,\n  committer: $committer,\n  htmlUrl: $htmlUrl,\n  nodeId: $nodeId,\n  parents: $parents,\n  sha: $sha,\n  url: $url,\n)';
 
- }
+}

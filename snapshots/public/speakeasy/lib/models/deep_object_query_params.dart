@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class DeepObjectQueryParams {const DeepObjectQueryParams({required this.arr, required this.$bool, required this.$int, required this.map, required this.$num, required this.obj, required this.str, this.oneof, this.oneofnestedobject, });
 
-factory DeepObjectQueryParams.fromJson(Map<String, dynamic> json) { return DeepObjectQueryParams(
+factory DeepObjectQueryParams.fromJson(Map<String, dynamic> json) {return DeepObjectQueryParams(
   arr: (json['arr'] as List<dynamic>).map((e) => e as String).toList(),
   $bool: json['bool'] as bool,
   $int: (json['int'] as num).toInt(),
@@ -17,7 +17,7 @@ factory DeepObjectQueryParams.fromJson(Map<String, dynamic> json) { return DeepO
   oneof: json['oneof'],
   oneofnestedobject: json['oneofnestedobject'] != null ? OneOf2.parse(json['oneofnestedobject'], fromA: (v) => v as String, fromB: (v) => OneofnestedobjectVariant2.fromJson(v as Map<String, dynamic>),) : null,
   str: json['str'] as String,
-); }
+);}
 
 /// Example: `[test1, test2]`
 final List<String> arr;
@@ -47,7 +47,7 @@ final Oneofnestedobject? oneofnestedobject;
 /// Example: `'test'`
 final String str;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'arr': arr,
   'bool': $bool,
   'int': $int,
@@ -57,15 +57,15 @@ Map<String, dynamic> toJson() { return {
   'oneof': ?oneof,
   if (oneofnestedobject != null) 'oneofnestedobject': oneofnestedobject?.toJson(),
   'str': str,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('arr') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('arr') &&
       json.containsKey('bool') && json['bool'] is bool &&
       json.containsKey('int') && json['int'] is num &&
       json.containsKey('map') &&
       json.containsKey('num') && json['num'] is num &&
       json.containsKey('obj') &&
-      json.containsKey('str') && json['str'] is String; } 
-DeepObjectQueryParams copyWith({List<String>? arr, bool? $bool, int? $int, Map<String,String>? map, double? $num, SimpleObject? obj, dynamic Function()? oneof, Oneofnestedobject? Function()? oneofnestedobject, String? str, }) { return DeepObjectQueryParams(
+      json.containsKey('str') && json['str'] is String;}
+DeepObjectQueryParams copyWith({List<String>? arr, bool? $bool, int? $int, Map<String,String>? map, double? $num, SimpleObject? obj, dynamic Function()? oneof, Oneofnestedobject? Function()? oneofnestedobject, String? str, }) {return DeepObjectQueryParams(
   arr: arr ?? this.arr,
   $bool: $bool ?? this.$bool,
   $int: $int ?? this.$int,
@@ -75,7 +75,7 @@ DeepObjectQueryParams copyWith({List<String>? arr, bool? $bool, int? $int, Map<S
   oneof: oneof != null ? oneof() : this.oneof,
   oneofnestedobject: oneofnestedobject != null ? oneofnestedobject() : this.oneofnestedobject,
   str: str ?? this.str,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeepObjectQueryParams &&
           listEquals(arr, other.arr) &&
@@ -92,4 +92,4 @@ DeepObjectQueryParams copyWith({List<String>? arr, bool? $bool, int? $int, Map<S
 
 @override String toString() => 'DeepObjectQueryParams(\n  arr: $arr,\n  \$bool: ${$bool},\n  \$int: ${$int},\n  map: $map,\n  \$num: ${$num},\n  obj: $obj,\n  oneof: $oneof,\n  oneofnestedobject: $oneofnestedobject,\n  str: $str,\n)';
 
- }
+}

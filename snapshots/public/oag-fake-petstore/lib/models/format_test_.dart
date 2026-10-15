@@ -3,7 +3,7 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FormatTest {const FormatTest({required this.number, required this.byte, required this.date, required this.password, this.integer, this.int32, this.int64, this.float, this.$double, this.decimal, this.string, this.binary, this.dateTime, this.uuid, this.patternWithDigits, this.patternWithDigitsAndDelimiter, });
 
-factory FormatTest.fromJson(Map<String, dynamic> json) { return FormatTest(
+factory FormatTest.fromJson(Map<String, dynamic> json) {return FormatTest(
   integer: json['integer'] != null ? (json['integer'] as num).toInt() : null,
   int32: json['int32'] != null ? (json['int32'] as num).toInt() : null,
   int64: json['int64'] != null ? (json['int64'] as num).toInt() : null,
@@ -20,7 +20,7 @@ factory FormatTest.fromJson(Map<String, dynamic> json) { return FormatTest(
   password: json['password'] as String,
   patternWithDigits: json['pattern_with_digits'] as String?,
   patternWithDigitsAndDelimiter: json['pattern_with_digits_and_delimiter'] as String?,
-); }
+);}
 
 final int? integer;
 
@@ -57,7 +57,7 @@ final String? patternWithDigits;
 /// A string starting with 'image_' (case insensitive) and one to three digits following i.e. Image_01.
 final String? patternWithDigitsAndDelimiter;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'integer': ?integer,
   'int32': ?int32,
   'int64': ?int64,
@@ -74,13 +74,13 @@ Map<String, dynamic> toJson() { return {
   'password': password,
   'pattern_with_digits': ?patternWithDigits,
   'pattern_with_digits_and_delimiter': ?patternWithDigitsAndDelimiter,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('number') && json['number'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('number') && json['number'] is num &&
       json.containsKey('byte') &&
       json.containsKey('date') && json['date'] is String &&
-      json.containsKey('password') && json['password'] is String; } 
+      json.containsKey('password') && json['password'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final integer$ = integer;
 if (integer$ != null) {
   if (integer$ < 10) { errors.add('integer: must be >= 10'); }
@@ -113,8 +113,8 @@ final patternWithDigits$ = patternWithDigits;
 if (patternWithDigits$ != null) {
   if (!RegExp(r'^\d{10}$').hasMatch(patternWithDigits$)) { errors.add(r'patternWithDigits: must match pattern ^\d{10}$'); }
 }
-return errors; } 
-FormatTest copyWith({int? Function()? integer, int? Function()? int32, int? Function()? int64, double? number, double? Function()? float, double? Function()? $double, String? Function()? decimal, String? Function()? string, Uint8List? byte, Uint8List? Function()? binary, String? date, DateTime? Function()? dateTime, String? Function()? uuid, String? password, String? Function()? patternWithDigits, String? Function()? patternWithDigitsAndDelimiter, }) { return FormatTest(
+return errors;}
+FormatTest copyWith({int? Function()? integer, int? Function()? int32, int? Function()? int64, double? number, double? Function()? float, double? Function()? $double, String? Function()? decimal, String? Function()? string, Uint8List? byte, Uint8List? Function()? binary, String? date, DateTime? Function()? dateTime, String? Function()? uuid, String? password, String? Function()? patternWithDigits, String? Function()? patternWithDigitsAndDelimiter, }) {return FormatTest(
   integer: integer != null ? integer() : this.integer,
   int32: int32 != null ? int32() : this.int32,
   int64: int64 != null ? int64() : this.int64,
@@ -131,7 +131,7 @@ FormatTest copyWith({int? Function()? integer, int? Function()? int32, int? Func
   password: password ?? this.password,
   patternWithDigits: patternWithDigits != null ? patternWithDigits() : this.patternWithDigits,
   patternWithDigitsAndDelimiter: patternWithDigitsAndDelimiter != null ? patternWithDigitsAndDelimiter() : this.patternWithDigitsAndDelimiter,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FormatTest &&
           integer == other.integer &&
@@ -155,4 +155,4 @@ FormatTest copyWith({int? Function()? integer, int? Function()? int32, int? Func
 
 @override String toString() => 'FormatTest(\n  integer: $integer,\n  int32: $int32,\n  int64: $int64,\n  number: $number,\n  float: $float,\n  \$double: ${$double},\n  decimal: $decimal,\n  string: $string,\n  byte: $byte,\n  binary: $binary,\n  date: $date,\n  dateTime: $dateTime,\n  uuid: $uuid,\n  password: $password,\n  patternWithDigits: $patternWithDigits,\n  patternWithDigitsAndDelimiter: $patternWithDigitsAndDelimiter,\n)';
 
- }
+}

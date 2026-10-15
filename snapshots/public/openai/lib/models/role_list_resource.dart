@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assigned_role_details.dart';import 'package:pub_openai/models/container_file_list_resource/container_file_list_resource_object.dart';/// Paginated list of roles assigned to a principal.
 @immutable final class RoleListResource {const RoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
-factory RoleListResource.fromJson(Map<String, dynamic> json) { return RoleListResource(
+factory RoleListResource.fromJson(Map<String, dynamic> json) {return RoleListResource(
   object: ContainerFileListResourceObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => AssignedRoleDetails.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
-); }
+);}
 
 /// Always `list`.
 final ContainerFileListResourceObject object;
@@ -23,22 +23,22 @@ final bool hasMore;
 /// Cursor to fetch the next page of results, or `null` when there are no more assignments.
 final String? next;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'next': next,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
-      json.containsKey('next') && (json['next'] == null || json['next'] is String); } 
-RoleListResource copyWith({ContainerFileListResourceObject? object, List<AssignedRoleDetails>? data, bool? hasMore, String? Function()? next, }) { return RoleListResource(
+      json.containsKey('next') && (json['next'] == null || json['next'] is String);}
+RoleListResource copyWith({ContainerFileListResourceObject? object, List<AssignedRoleDetails>? data, bool? hasMore, String? Function()? next, }) {return RoleListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   next: next != null ? next() : this.next,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RoleListResource &&
           object == other.object &&
@@ -50,4 +50,4 @@ RoleListResource copyWith({ContainerFileListResourceObject? object, List<Assigne
 
 @override String toString() => 'RoleListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)';
 
- }
+}

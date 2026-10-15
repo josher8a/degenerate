@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_id.dart';@immutable final class LoadBalancingMonitorGroupMember {const LoadBalancingMonitorGroupMember({required this.enabled, required this.monitorId, required this.monitoringOnly, required this.mustBeHealthy, this.createdAt, this.updatedAt, });
 
-factory LoadBalancingMonitorGroupMember.fromJson(Map<String, dynamic> json) { return LoadBalancingMonitorGroupMember(
+factory LoadBalancingMonitorGroupMember.fromJson(Map<String, dynamic> json) {return LoadBalancingMonitorGroupMember(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   enabled: json['enabled'] as bool,
   monitorId: LoadBalancingMonitorId.fromJson(json['monitor_id'] as String),
   monitoringOnly: json['monitoring_only'] as bool,
   mustBeHealthy: json['must_be_healthy'] as bool,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The timestamp of when the monitor was added to the group
 /// 
@@ -39,26 +39,26 @@ final bool mustBeHealthy;
 /// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'enabled': enabled,
   'monitor_id': monitorId.toJson(),
   'monitoring_only': monitoringOnly,
   'must_be_healthy': mustBeHealthy,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('monitor_id') &&
       json.containsKey('monitoring_only') && json['monitoring_only'] is bool &&
-      json.containsKey('must_be_healthy') && json['must_be_healthy'] is bool; } 
-LoadBalancingMonitorGroupMember copyWith({DateTime? Function()? createdAt, bool? enabled, LoadBalancingMonitorId? monitorId, bool? monitoringOnly, bool? mustBeHealthy, DateTime? Function()? updatedAt, }) { return LoadBalancingMonitorGroupMember(
+      json.containsKey('must_be_healthy') && json['must_be_healthy'] is bool;}
+LoadBalancingMonitorGroupMember copyWith({DateTime? Function()? createdAt, bool? enabled, LoadBalancingMonitorId? monitorId, bool? monitoringOnly, bool? mustBeHealthy, DateTime? Function()? updatedAt, }) {return LoadBalancingMonitorGroupMember(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   enabled: enabled ?? this.enabled,
   monitorId: monitorId ?? this.monitorId,
   monitoringOnly: monitoringOnly ?? this.monitoringOnly,
   mustBeHealthy: mustBeHealthy ?? this.mustBeHealthy,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingMonitorGroupMember &&
           createdAt == other.createdAt &&
@@ -72,4 +72,4 @@ LoadBalancingMonitorGroupMember copyWith({DateTime? Function()? createdAt, bool?
 
 @override String toString() => 'LoadBalancingMonitorGroupMember(createdAt: $createdAt, enabled: $enabled, monitorId: $monitorId, monitoringOnly: $monitoringOnly, mustBeHealthy: $mustBeHealthy, updatedAt: $updatedAt)';
 
- }
+}

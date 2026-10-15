@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/detail.dart';@immutable final class MessageContentImageFileObjectImageFile {const MessageContentImageFileObjectImageFile({required this.fileId, this.detail, });
 
-factory MessageContentImageFileObjectImageFile.fromJson(Map<String, dynamic> json) { return MessageContentImageFileObjectImageFile(
+factory MessageContentImageFileObjectImageFile.fromJson(Map<String, dynamic> json) {return MessageContentImageFileObjectImageFile(
   fileId: json['file_id'] as String,
   detail: json['detail'] != null ? Detail.fromJson(json['detail'] as String) : null,
-); }
+);}
 
 /// The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
 final String fileId;
@@ -17,15 +17,15 @@ final Detail? detail;
 /// The value of `detail`, or its schema default when absent.
 Detail get detailOrDefault => detail ?? Detail.fromJson('auto');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file_id': fileId,
   if (detail != null) 'detail': detail?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String; } 
-MessageContentImageFileObjectImageFile copyWith({String? fileId, Detail? Function()? detail, }) { return MessageContentImageFileObjectImageFile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file_id') && json['file_id'] is String;}
+MessageContentImageFileObjectImageFile copyWith({String? fileId, Detail? Function()? detail, }) {return MessageContentImageFileObjectImageFile(
   fileId: fileId ?? this.fileId,
   detail: detail != null ? detail() : this.detail,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentImageFileObjectImageFile &&
           fileId == other.fileId &&
@@ -35,4 +35,4 @@ MessageContentImageFileObjectImageFile copyWith({String? fileId, Detail? Functio
 
 @override String toString() => 'MessageContentImageFileObjectImageFile(fileId: $fileId, detail: $detail)';
 
- }
+}

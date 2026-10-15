@@ -10,37 +10,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that y
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 sealed class CheckoutAffirmPaymentMethodOptionsSetupFutureUsage {const CheckoutAffirmPaymentMethodOptionsSetupFutureUsage();
 
-factory CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(String json) {return switch (json) {
   'none' => none,
   _ => CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$Unknown(json),
-}; }
+};}
 
 static const CheckoutAffirmPaymentMethodOptionsSetupFutureUsage none = CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$none._();
 
 static const List<CheckoutAffirmPaymentMethodOptionsSetupFutureUsage> values = [none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$Unknown; } 
+bool get isUnknown {return this is CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$none() => none(),
       CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$none() => none != null ? none() : orElse(value),
       CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutAffirmPaymentMethodOptionsSetupFutureUsage($value)';
 
- }
+}
 @immutable final class CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$none extends CheckoutAffirmPaymentMethodOptionsSetupFutureUsage {const CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$none._();
 
 @override String get value => 'none';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$Unknown extends CheckoutAffirmPaymentMethodOptionsSetupFutureUsage {const CheckoutAffirmPaymentMethodOptionsSetupFutureUsage$Unknown(this.value);
 
 @override final String value;
@@ -59,4 +59,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

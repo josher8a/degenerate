@@ -8,24 +8,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ResponseTextParam {const ResponseTextParam({this.format, this.verbosity = const Omittable.absent(), });
 
-factory ResponseTextParam.fromJson(Map<String, dynamic> json) { return ResponseTextParam(
+factory ResponseTextParam.fromJson(Map<String, dynamic> json) {return ResponseTextParam(
   format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
   verbosity: json.containsKey('verbosity') ? Omittable(json['verbosity'] != null ? Verbosity.fromJson(json['verbosity'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final TextResponseFormatConfiguration? format;
 
 final Omittable<Verbosity?> verbosity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (verbosity.isPresent) 'verbosity': verbosity.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'verbosity'}.contains(key)); } 
-ResponseTextParam copyWith({TextResponseFormatConfiguration? Function()? format, Omittable<Verbosity?>? verbosity, }) { return ResponseTextParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'verbosity'}.contains(key));}
+ResponseTextParam copyWith({TextResponseFormatConfiguration? Function()? format, Omittable<Verbosity?>? verbosity, }) {return ResponseTextParam(
   format: format != null ? format() : this.format,
   verbosity: verbosity ?? this.verbosity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseTextParam &&
           format == other.format &&
@@ -35,4 +35,4 @@ ResponseTextParam copyWith({TextResponseFormatConfiguration? Function()? format,
 
 @override String toString() => 'ResponseTextParam(format: $format, verbosity: $verbosity)';
 
- }
+}

@@ -3,23 +3,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostProductsRequestMarketingFeatures {const PostProductsRequestMarketingFeatures({required this.name});
 
-factory PostProductsRequestMarketingFeatures.fromJson(Map<String, dynamic> json) { return PostProductsRequestMarketingFeatures(
+factory PostProductsRequestMarketingFeatures.fromJson(Map<String, dynamic> json) {return PostProductsRequestMarketingFeatures(
   name: json['name'] as String,
-); }
+);}
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-return errors; } 
-PostProductsRequestMarketingFeatures copyWith({String? name}) { return PostProductsRequestMarketingFeatures(
+return errors;}
+PostProductsRequestMarketingFeatures copyWith({String? name}) {return PostProductsRequestMarketingFeatures(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostProductsRequestMarketingFeatures &&
           name == other.name;
@@ -28,4 +28,4 @@ PostProductsRequestMarketingFeatures copyWith({String? name}) { return PostProdu
 
 @override String toString() => 'PostProductsRequestMarketingFeatures(name: $name)';
 
- }
+}

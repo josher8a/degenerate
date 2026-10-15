@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_credentials.dart';import 'package:pub_cloudflare/models/shield_description.dart';import 'package:pub_cloudflare/models/shield_header.dart';import 'package:pub_cloudflare/models/shield_title.dart';import 'package:pub_cloudflare/models/shield_token_type.dart';@immutable final class TokenValidationConfigCreateRequest {const TokenValidationConfigCreateRequest({required this.credentials, required this.description, required this.title, required this.tokenSources, required this.tokenType, });
 
-factory TokenValidationConfigCreateRequest.fromJson(Map<String, dynamic> json) { return TokenValidationConfigCreateRequest(
+factory TokenValidationConfigCreateRequest.fromJson(Map<String, dynamic> json) {return TokenValidationConfigCreateRequest(
   credentials: ShieldCredentials.fromJson(json['credentials'] as Map<String, dynamic>),
   description: ShieldDescription.fromJson(json['description'] as String),
   title: ShieldTitle.fromJson(json['title'] as String),
   tokenSources: (json['token_sources'] as List<dynamic>).map((e) => ShieldHeader.fromJson(e as String)).toList(),
   tokenType: ShieldTokenType.fromJson(json['token_type'] as String),
-); }
+);}
 
 final ShieldCredentials credentials;
 
@@ -21,30 +21,30 @@ final List<ShieldHeader> tokenSources;
 
 final ShieldTokenType tokenType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'credentials': credentials.toJson(),
   'description': description.toJson(),
   'title': title.toJson(),
   'token_sources': tokenSources.map((e) => e.toJson()).toList(),
   'token_type': tokenType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('credentials') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('credentials') &&
       json.containsKey('description') &&
       json.containsKey('title') &&
       json.containsKey('token_sources') &&
-      json.containsKey('token_type'); } 
+      json.containsKey('token_type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (tokenSources.isEmpty) { errors.add('tokenSources: must have >= 1 items'); }
 if (tokenSources.length > 4) { errors.add('tokenSources: must have <= 4 items'); }
-return errors; } 
-TokenValidationConfigCreateRequest copyWith({ShieldCredentials? credentials, ShieldDescription? description, ShieldTitle? title, List<ShieldHeader>? tokenSources, ShieldTokenType? tokenType, }) { return TokenValidationConfigCreateRequest(
+return errors;}
+TokenValidationConfigCreateRequest copyWith({ShieldCredentials? credentials, ShieldDescription? description, ShieldTitle? title, List<ShieldHeader>? tokenSources, ShieldTokenType? tokenType, }) {return TokenValidationConfigCreateRequest(
   credentials: credentials ?? this.credentials,
   description: description ?? this.description,
   title: title ?? this.title,
   tokenSources: tokenSources ?? this.tokenSources,
   tokenType: tokenType ?? this.tokenType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationConfigCreateRequest &&
           credentials == other.credentials &&
@@ -57,4 +57,4 @@ TokenValidationConfigCreateRequest copyWith({ShieldCredentials? credentials, Shi
 
 @override String toString() => 'TokenValidationConfigCreateRequest(credentials: $credentials, description: $description, title: $title, tokenSources: $tokenSources, tokenType: $tokenType)';
 
- }
+}

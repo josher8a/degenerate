@@ -7,11 +7,11 @@ const EvidenceNoValidAuthorization({this.noValidAuthorization = const Omittable.
 const EvidenceNoValidAuthorization._({required this.rawValue, required this.noValidAuthorization, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory EvidenceNoValidAuthorization.fromJson(Object? json) { return EvidenceNoValidAuthorization._(
+factory EvidenceNoValidAuthorization.fromJson(Object? json) {return EvidenceNoValidAuthorization._(
   rawValue: Omittable(json),
   noValidAuthorization: json is Map<String, dynamic> && NoValidAuthorization.canParse(json) ? parseAnyOfVariant<NoValidAuthorization>(json, (value) => NoValidAuthorization.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'EvidenceNoValidAuthorization(${toJson()})';
 
- }
+}

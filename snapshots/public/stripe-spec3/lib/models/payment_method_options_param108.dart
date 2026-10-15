@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param11_setup_future_usage.dart';sealed class PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage();
 
-factory PaymentMethodOptionsParamPreferredLanguage.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsParamPreferredLanguage.fromJson(String json) {return switch (json) {
   '' => $empty,
   'de' => de,
   'en' => en,
@@ -13,7 +13,7 @@ factory PaymentMethodOptionsParamPreferredLanguage.fromJson(String json) { retur
   'nl' => nl,
   'pl' => pl,
   _ => PaymentMethodOptionsParamPreferredLanguage$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodOptionsParamPreferredLanguage $empty = PaymentMethodOptionsParamPreferredLanguage$$empty._();
 
@@ -34,9 +34,9 @@ static const PaymentMethodOptionsParamPreferredLanguage pl = PaymentMethodOption
 static const List<PaymentMethodOptionsParamPreferredLanguage> values = [$empty, de, en, es, fr, it, nl, pl];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'de' => 'de',
   'en' => 'en',
@@ -46,11 +46,11 @@ String get name { return switch (value) {
   'nl' => 'nl',
   'pl' => 'pl',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodOptionsParamPreferredLanguage$Unknown; } 
+bool get isUnknown {return this is PaymentMethodOptionsParamPreferredLanguage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() de, required W Function() en, required W Function() es, required W Function() fr, required W Function() it, required W Function() nl, required W Function() pl, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() de, required W Function() en, required W Function() es, required W Function() fr, required W Function() it, required W Function() nl, required W Function() pl, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodOptionsParamPreferredLanguage$$empty() => $empty(),
       PaymentMethodOptionsParamPreferredLanguage$de() => de(),
       PaymentMethodOptionsParamPreferredLanguage$en() => en(),
@@ -60,9 +60,9 @@ W when<W>({required W Function() $empty, required W Function() de, required W Fu
       PaymentMethodOptionsParamPreferredLanguage$nl() => nl(),
       PaymentMethodOptionsParamPreferredLanguage$pl() => pl(),
       PaymentMethodOptionsParamPreferredLanguage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? de, W Function()? en, W Function()? es, W Function()? fr, W Function()? it, W Function()? nl, W Function()? pl, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? de, W Function()? en, W Function()? es, W Function()? fr, W Function()? it, W Function()? nl, W Function()? pl, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodOptionsParamPreferredLanguage$$empty() => $empty != null ? $empty() : orElse(value),
       PaymentMethodOptionsParamPreferredLanguage$de() => de != null ? de() : orElse(value),
       PaymentMethodOptionsParamPreferredLanguage$en() => en != null ? en() : orElse(value),
@@ -72,10 +72,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
       PaymentMethodOptionsParamPreferredLanguage$nl() => nl != null ? nl() : orElse(value),
       PaymentMethodOptionsParamPreferredLanguage$pl() => pl != null ? pl() : orElse(value),
       PaymentMethodOptionsParamPreferredLanguage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodOptionsParamPreferredLanguage($value)';
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$$empty extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$$empty._();
 
 @override String get value => '';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$de extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$de._();
 
 @override String get value => 'de';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'de'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$en extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$en._();
 
 @override String get value => 'en';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'en'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$es extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$es._();
 
 @override String get value => 'es';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'es'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$fr extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$fr._();
 
 @override String get value => 'fr';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'fr'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$it extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$it._();
 
 @override String get value => 'it';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'it'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$nl extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$nl._();
 
 @override String get value => 'nl';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'nl'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$pl extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$pl._();
 
 @override String get value => 'pl';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'pl'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParamPreferredLanguage$Unknown extends PaymentMethodOptionsParamPreferredLanguage {const PaymentMethodOptionsParamPreferredLanguage$Unknown(this.value);
 
 @override final String value;
@@ -157,27 +157,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsParam108 {const PaymentMethodOptionsParam108({this.preferredLanguage, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsParam108.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam108(
+factory PaymentMethodOptionsParam108.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam108(
   preferredLanguage: json['preferred_language'] != null ? PaymentMethodOptionsParamPreferredLanguage.fromJson(json['preferred_language'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentMethodOptionsParamPreferredLanguage? preferredLanguage;
 
 final PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam108 copyWith({PaymentMethodOptionsParamPreferredLanguage? Function()? preferredLanguage, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam108(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'preferred_language', 'setup_future_usage'}.contains(key));}
+PaymentMethodOptionsParam108 copyWith({PaymentMethodOptionsParamPreferredLanguage? Function()? preferredLanguage, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsParam108(
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam108 &&
           preferredLanguage == other.preferredLanguage &&
@@ -187,4 +187,4 @@ PaymentMethodOptionsParam108 copyWith({PaymentMethodOptionsParamPreferredLanguag
 
 @override String toString() => 'PaymentMethodOptionsParam108(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

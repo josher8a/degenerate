@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 {const RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0({required this.encrypted, required this.notEncrypted, });
 
-factory RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0(
+factory RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0(
   encrypted: json['ENCRYPTED'] as String,
   notEncrypted: json['NOT_ENCRYPTED'] as String,
-); }
+);}
 
 /// A numeric string.
 /// 
@@ -18,21 +18,21 @@ final String encrypted;
 /// Example: `'10'`
 final String notEncrypted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ENCRYPTED': encrypted,
   'NOT_ENCRYPTED': notEncrypted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ENCRYPTED') && json['ENCRYPTED'] is String &&
-      json.containsKey('NOT_ENCRYPTED') && json['NOT_ENCRYPTED'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ENCRYPTED') && json['ENCRYPTED'] is String &&
+      json.containsKey('NOT_ENCRYPTED') && json['NOT_ENCRYPTED'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch(encrypted)) { errors.add(r'encrypted: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(notEncrypted)) { errors.add(r'notEncrypted: must match pattern ^\d+$'); }
-return errors; } 
-RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 copyWith({String? encrypted, String? notEncrypted, }) { return RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0(
+return errors;}
+RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 copyWith({String? encrypted, String? notEncrypted, }) {return RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0(
   encrypted: encrypted ?? this.encrypted,
   notEncrypted: notEncrypted ?? this.notEncrypted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 &&
           encrypted == other.encrypted &&
@@ -42,4 +42,4 @@ RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 copyWith({String? e
 
 @override String toString() => 'RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0(encrypted: $encrypted, notEncrypted: $notEncrypted)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_errors3.dart';import 'package:pub_cloudflare/models/response_messages2.dart';import 'package:pub_cloudflare/models/response_success.dart';@immutable final class StoreCredentialsResponse {const StoreCredentialsResponse({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
-factory StoreCredentialsResponse.fromJson(Map<String, dynamic> json) { return StoreCredentialsResponse(
+factory StoreCredentialsResponse.fromJson(Map<String, dynamic> json) {return StoreCredentialsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseErrors3.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: ResponseSuccess.fromJson(json['success'] as bool),
   result: json.containsKey('result') ? Omittable(json['result'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 /// Contains errors if the API call was unsuccessful.
 final List<ResponseErrors3> errors;
@@ -21,21 +21,21 @@ final ResponseSuccess success;
 
 final Omittable<Map<String,dynamic>?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success.toJson(),
   if (result.isPresent) 'result': result.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success'); } 
-StoreCredentialsResponse copyWith({List<ResponseErrors3>? errors, List<ResponseMessages2>? messages, ResponseSuccess? success, Omittable<Map<String,dynamic>?>? result, }) { return StoreCredentialsResponse(
+      json.containsKey('success');}
+StoreCredentialsResponse copyWith({List<ResponseErrors3>? errors, List<ResponseMessages2>? messages, ResponseSuccess? success, Omittable<Map<String,dynamic>?>? result, }) {return StoreCredentialsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StoreCredentialsResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ StoreCredentialsResponse copyWith({List<ResponseErrors3>? errors, List<ResponseM
 
 @override String toString() => 'StoreCredentialsResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

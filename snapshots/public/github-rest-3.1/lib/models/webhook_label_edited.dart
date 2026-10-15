@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';@immutable final class WebhookLabelEdited {const WebhookLabelEdited({required this.action, required this.label, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
-factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) { return WebhookLabelEdited(
+factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) {return WebhookLabelEdited(
   action: ItemEditedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? WebhookLabelEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) { return WebhookL
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemEditedAction action;
 
@@ -31,7 +31,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (changes != null) 'changes': changes?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -40,12 +40,12 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('label') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookLabelEdited copyWith({ItemEditedAction? action, WebhookLabelEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookLabelEdited(
+      json.containsKey('sender');}
+WebhookLabelEdited copyWith({ItemEditedAction? action, WebhookLabelEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookLabelEdited(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -54,7 +54,7 @@ WebhookLabelEdited copyWith({ItemEditedAction? action, WebhookLabelEditedChanges
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookLabelEdited &&
           action == other.action &&
@@ -70,4 +70,4 @@ WebhookLabelEdited copyWith({ItemEditedAction? action, WebhookLabelEditedChanges
 
 @override String toString() => 'WebhookLabelEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)';
 
- }
+}

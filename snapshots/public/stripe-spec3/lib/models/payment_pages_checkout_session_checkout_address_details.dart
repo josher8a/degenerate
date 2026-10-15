@@ -4,30 +4,30 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCheckoutAddressDetails {const PaymentPagesCheckoutSessionCheckoutAddressDetails({required this.address, required this.name, });
 
-factory PaymentPagesCheckoutSessionCheckoutAddressDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCheckoutAddressDetails(
+factory PaymentPagesCheckoutSessionCheckoutAddressDetails.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionCheckoutAddressDetails(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-); }
+);}
 
 final Address address;
 
 /// Customer name.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-return errors; } 
-PaymentPagesCheckoutSessionCheckoutAddressDetails copyWith({Address? address, String? name, }) { return PaymentPagesCheckoutSessionCheckoutAddressDetails(
+return errors;}
+PaymentPagesCheckoutSessionCheckoutAddressDetails copyWith({Address? address, String? name, }) {return PaymentPagesCheckoutSessionCheckoutAddressDetails(
   address: address ?? this.address,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCheckoutAddressDetails &&
           address == other.address &&
@@ -37,4 +37,4 @@ PaymentPagesCheckoutSessionCheckoutAddressDetails copyWith({Address? address, St
 
 @override String toString() => 'PaymentPagesCheckoutSessionCheckoutAddressDetails(address: $address, name: $name)';
 
- }
+}

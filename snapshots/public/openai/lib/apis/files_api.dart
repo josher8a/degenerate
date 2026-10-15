@@ -12,7 +12,7 @@ final class FilesApi with ApiExecutor {const FilesApi(this.apiConfig);
 /// Returns a list of files.
 ///
 /// `GET /files`
-Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (purpose != null) {
   queryParameters['purpose'] = purpose;
@@ -44,7 +44,7 @@ return await execute(
     return ListFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Upload a file that can be used across various endpoints. Individual files
 /// can be up to 512 MB, and each project can store up to 2.5 TB of files in
 /// total. There is no organization-wide storage limit.
@@ -65,7 +65,7 @@ return await execute(
 /// 
 ///
 /// `POST /files`
-Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -87,11 +87,11 @@ return await execute(
     return OpenAiFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Returns information about a specific file.
 ///
 /// `GET /files/{file_id}`
-Future<ApiResult<OpenAiFile, Never>> retrieveFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OpenAiFile, Never>> retrieveFile({required String fileId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -106,11 +106,11 @@ return await execute(
     return OpenAiFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a file and remove it from all vector stores.
 ///
 /// `DELETE /files/{file_id}`
-Future<ApiResult<DeleteFileResponse, Never>> deleteFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteFileResponse, Never>> deleteFile({required String fileId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,11 +125,11 @@ return await execute(
     return DeleteFileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Returns the contents of the specified file.
 ///
 /// `GET /files/{file_id}/content`
-Future<ApiResult<String, Never>> downloadFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> downloadFile({required String fileId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -141,8 +141,8 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+    return jsonDecode(response.body) as String;
   },
 );
- } 
- }
+}
+}

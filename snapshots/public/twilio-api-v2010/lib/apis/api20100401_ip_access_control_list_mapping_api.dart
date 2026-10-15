@@ -12,7 +12,7 @@ final class Api20100401IpAccessControlListMappingApi with ApiExecutor {const Api
 /// Fetch an IpAccessControlListMapping resource.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings/{Sid}.json`
-Future<ApiResult<AccountSipSipDomainSipIpAccessControlListMapping, Never>> fetchSipIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipDomainSipIpAccessControlListMapping, Never>> fetchSipIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ return await execute(
     return AccountSipSipDomainSipIpAccessControlListMapping.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an IpAccessControlListMapping resource.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteSipIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteSipIpAccessControlListMapping({required String accountSid, required String domainSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -44,11 +44,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of IpAccessControlListMapping resources.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings.json`
-Future<ApiResult<ListSipIpAccessControlListMappingResponse, Never>> listSipIpAccessControlListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListSipIpAccessControlListMappingResponse, Never>> listSipIpAccessControlListMapping({required String accountSid, required String domainSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -77,11 +77,11 @@ return await execute(
     return ListSipIpAccessControlListMappingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new IpAccessControlListMapping resource.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings.json`
-Future<ApiResult<AccountSipSipDomainSipIpAccessControlListMapping, Never>> createSipIpAccessControlListMapping({required String accountSid, required String domainSid, CreateSipIpAccessControlListMappingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSipSipDomainSipIpAccessControlListMapping, Never>> createSipIpAccessControlListMapping({required String accountSid, required String domainSid, CreateSipIpAccessControlListMappingRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -100,5 +100,5 @@ return await execute(
     return AccountSipSipDomainSipIpAccessControlListMapping.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

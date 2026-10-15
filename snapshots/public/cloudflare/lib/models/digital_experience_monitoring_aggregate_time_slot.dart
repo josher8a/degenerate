@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringAggregateTimeSlot {const DigitalExperienceMonitoringAggregateTimeSlot({required this.avgMs, required this.timestamp, });
 
-factory DigitalExperienceMonitoringAggregateTimeSlot.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringAggregateTimeSlot(
+factory DigitalExperienceMonitoringAggregateTimeSlot.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringAggregateTimeSlot(
   avgMs: (json['avgMs'] as num).toInt(),
   timestamp: json['timestamp'] as String,
-); }
+);}
 
 final int avgMs;
 
 final String timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'avgMs': avgMs,
   'timestamp': timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('avgMs') && json['avgMs'] is num &&
-      json.containsKey('timestamp') && json['timestamp'] is String; } 
-DigitalExperienceMonitoringAggregateTimeSlot copyWith({int? avgMs, String? timestamp, }) { return DigitalExperienceMonitoringAggregateTimeSlot(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('avgMs') && json['avgMs'] is num &&
+      json.containsKey('timestamp') && json['timestamp'] is String;}
+DigitalExperienceMonitoringAggregateTimeSlot copyWith({int? avgMs, String? timestamp, }) {return DigitalExperienceMonitoringAggregateTimeSlot(
   avgMs: avgMs ?? this.avgMs,
   timestamp: timestamp ?? this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringAggregateTimeSlot &&
           avgMs == other.avgMs &&
@@ -31,4 +31,4 @@ DigitalExperienceMonitoringAggregateTimeSlot copyWith({int? avgMs, String? times
 
 @override String toString() => 'DigitalExperienceMonitoringAggregateTimeSlot(avgMs: $avgMs, timestamp: $timestamp)';
 
- }
+}

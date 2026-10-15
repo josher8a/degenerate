@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentSelector {const ContentSelector({required this.path, required this.selector, });
 
-factory ContentSelector.fromJson(Map<String, dynamic> json) { return ContentSelector(
+factory ContentSelector.fromJson(Map<String, dynamic> json) {return ContentSelector(
   path: json['path'] as String,
   selector: json['selector'] as String,
-); }
+);}
 
 /// Glob pattern to match against the page URL path. Uses standard glob syntax: * matches within a segment, ** crosses directories.
 /// 
@@ -18,21 +18,21 @@ final String path;
 /// Example: `'article .post-body'`
 final String selector;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'selector': selector,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
-      json.containsKey('selector') && json['selector'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
+      json.containsKey('selector') && json['selector'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (path.runes.length > 200) { errors.add('path: length must be <= 200'); }
 if (selector.runes.length > 200) { errors.add('selector: length must be <= 200'); }
-return errors; } 
-ContentSelector copyWith({String? path, String? selector, }) { return ContentSelector(
+return errors;}
+ContentSelector copyWith({String? path, String? selector, }) {return ContentSelector(
   path: path ?? this.path,
   selector: selector ?? this.selector,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ContentSelector &&
           path == other.path &&
@@ -42,4 +42,4 @@ ContentSelector copyWith({String? path, String? selector, }) { return ContentSel
 
 @override String toString() => 'ContentSelector(path: $path, selector: $selector)';
 
- }
+}

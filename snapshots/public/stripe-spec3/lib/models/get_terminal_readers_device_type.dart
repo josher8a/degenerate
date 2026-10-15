@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType();
 
-factory GetTerminalReadersDeviceType.fromJson(String json) { return switch (json) {
+factory GetTerminalReadersDeviceType.fromJson(String json) {return switch (json) {
   'bbpos_chipper2x' => bbposChipper2x,
   'bbpos_wisepad3' => bbposWisepad3,
   'bbpos_wisepos_e' => bbposWiseposE,
@@ -16,7 +16,7 @@ factory GetTerminalReadersDeviceType.fromJson(String json) { return switch (json
   'stripe_s710' => stripeS710,
   'verifone_P400' => verifoneP400,
   _ => GetTerminalReadersDeviceType$Unknown(json),
-}; }
+};}
 
 static const GetTerminalReadersDeviceType bbposChipper2x = GetTerminalReadersDeviceType$bbposChipper2x._();
 
@@ -43,9 +43,9 @@ static const GetTerminalReadersDeviceType verifoneP400 = GetTerminalReadersDevic
 static const List<GetTerminalReadersDeviceType> values = [bbposChipper2x, bbposWisepad3, bbposWiseposE, mobilePhoneReader, simulatedStripeS700, simulatedStripeS710, simulatedWiseposE, stripeM2, stripeS700, stripeS710, verifoneP400];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'bbpos_chipper2x' => 'bbposChipper2x',
   'bbpos_wisepad3' => 'bbposWisepad3',
   'bbpos_wisepos_e' => 'bbposWiseposE',
@@ -58,11 +58,11 @@ String get name { return switch (value) {
   'stripe_s710' => 'stripeS710',
   'verifone_P400' => 'verifoneP400',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetTerminalReadersDeviceType$Unknown; } 
+bool get isUnknown {return this is GetTerminalReadersDeviceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() bbposChipper2x, required W Function() bbposWisepad3, required W Function() bbposWiseposE, required W Function() mobilePhoneReader, required W Function() simulatedStripeS700, required W Function() simulatedStripeS710, required W Function() simulatedWiseposE, required W Function() stripeM2, required W Function() stripeS700, required W Function() stripeS710, required W Function() verifoneP400, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() bbposChipper2x, required W Function() bbposWisepad3, required W Function() bbposWiseposE, required W Function() mobilePhoneReader, required W Function() simulatedStripeS700, required W Function() simulatedStripeS710, required W Function() simulatedWiseposE, required W Function() stripeM2, required W Function() stripeS700, required W Function() stripeS710, required W Function() verifoneP400, required W Function(String value) $unknown, }) {return switch (this) {
       GetTerminalReadersDeviceType$bbposChipper2x() => bbposChipper2x(),
       GetTerminalReadersDeviceType$bbposWisepad3() => bbposWisepad3(),
       GetTerminalReadersDeviceType$bbposWiseposE() => bbposWiseposE(),
@@ -75,9 +75,9 @@ W when<W>({required W Function() bbposChipper2x, required W Function() bbposWise
       GetTerminalReadersDeviceType$stripeS710() => stripeS710(),
       GetTerminalReadersDeviceType$verifoneP400() => verifoneP400(),
       GetTerminalReadersDeviceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChipper2x, W Function()? bbposWisepad3, W Function()? bbposWiseposE, W Function()? mobilePhoneReader, W Function()? simulatedStripeS700, W Function()? simulatedStripeS710, W Function()? simulatedWiseposE, W Function()? stripeM2, W Function()? stripeS700, W Function()? stripeS710, W Function()? verifoneP400, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChipper2x, W Function()? bbposWisepad3, W Function()? bbposWiseposE, W Function()? mobilePhoneReader, W Function()? simulatedStripeS700, W Function()? simulatedStripeS710, W Function()? simulatedWiseposE, W Function()? stripeM2, W Function()? stripeS700, W Function()? stripeS710, W Function()? verifoneP400, W Function(String value)? $unknown, }) {return switch (this) {
       GetTerminalReadersDeviceType$bbposChipper2x() => bbposChipper2x != null ? bbposChipper2x() : orElse(value),
       GetTerminalReadersDeviceType$bbposWisepad3() => bbposWisepad3 != null ? bbposWisepad3() : orElse(value),
       GetTerminalReadersDeviceType$bbposWiseposE() => bbposWiseposE != null ? bbposWiseposE() : orElse(value),
@@ -90,10 +90,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
       GetTerminalReadersDeviceType$stripeS710() => stripeS710 != null ? stripeS710() : orElse(value),
       GetTerminalReadersDeviceType$verifoneP400() => verifoneP400 != null ? verifoneP400() : orElse(value),
       GetTerminalReadersDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetTerminalReadersDeviceType($value)';
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$bbposChipper2x extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$bbposChipper2x._();
 
 @override String get value => 'bbpos_chipper2x';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'bbpos_chipper2x'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$bbposWisepad3 extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$bbposWisepad3._();
 
 @override String get value => 'bbpos_wisepad3';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'bbpos_wisepad3'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$bbposWiseposE extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$bbposWiseposE._();
 
 @override String get value => 'bbpos_wisepos_e';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'bbpos_wisepos_e'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$mobilePhoneReader extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$mobilePhoneReader._();
 
 @override String get value => 'mobile_phone_reader';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'mobile_phone_reader'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$simulatedStripeS700 extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$simulatedStripeS700._();
 
 @override String get value => 'simulated_stripe_s700';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'simulated_stripe_s700'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$simulatedStripeS710 extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$simulatedStripeS710._();
 
 @override String get value => 'simulated_stripe_s710';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'simulated_stripe_s710'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$simulatedWiseposE extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$simulatedWiseposE._();
 
 @override String get value => 'simulated_wisepos_e';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'simulated_wisepos_e'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$stripeM2 extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$stripeM2._();
 
 @override String get value => 'stripe_m2';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'stripe_m2'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$stripeS700 extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$stripeS700._();
 
 @override String get value => 'stripe_s700';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'stripe_s700'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$stripeS710 extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$stripeS710._();
 
 @override String get value => 'stripe_s710';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'stripe_s710'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$verifoneP400 extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$verifoneP400._();
 
 @override String get value => 'verifone_P400';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => 'verifone_P400'.hashCode;
 
- }
+}
 @immutable final class GetTerminalReadersDeviceType$Unknown extends GetTerminalReadersDeviceType {const GetTerminalReadersDeviceType$Unknown(this.value);
 
 @override final String value;
@@ -202,4 +202,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

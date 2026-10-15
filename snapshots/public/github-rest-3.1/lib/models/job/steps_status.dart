@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The phase of the lifecycle that the job is currently in.
 sealed class StepsStatus {const StepsStatus();
 
-factory StepsStatus.fromJson(String json) { return switch (json) {
+factory StepsStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
   _ => StepsStatus$Unknown(json),
-}; }
+};}
 
 static const StepsStatus queued = StepsStatus$queued._();
 
@@ -20,33 +20,33 @@ static const StepsStatus completed = StepsStatus$completed._();
 static const List<StepsStatus> values = [queued, inProgress, completed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'queued' => 'queued',
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StepsStatus$Unknown; } 
+bool get isUnknown {return this is StepsStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) {return switch (this) {
       StepsStatus$queued() => queued(),
       StepsStatus$inProgress() => inProgress(),
       StepsStatus$completed() => completed(),
       StepsStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) {return switch (this) {
       StepsStatus$queued() => queued != null ? queued() : orElse(value),
       StepsStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       StepsStatus$completed() => completed != null ? completed() : orElse(value),
       StepsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StepsStatus($value)';
 
- }
+}
 @immutable final class StepsStatus$queued extends StepsStatus {const StepsStatus$queued._();
 
 @override String get value => 'queued';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class StepsStatus$inProgress extends StepsStatus {const StepsStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class StepsStatus$completed extends StepsStatus {const StepsStatus$completed._();
 
 @override String get value => 'completed';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class StepsStatus$Unknown extends StepsStatus {const StepsStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

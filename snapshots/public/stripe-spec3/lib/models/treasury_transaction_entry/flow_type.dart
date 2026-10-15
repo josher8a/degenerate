@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the flow that created the Transaction.
 sealed class FlowType {const FlowType();
 
-factory FlowType.fromJson(String json) { return switch (json) {
+factory FlowType.fromJson(String json) {return switch (json) {
   'credit_reversal' => creditReversal,
   'debit_reversal' => debitReversal,
   'inbound_transfer' => inboundTransfer,
@@ -15,7 +15,7 @@ factory FlowType.fromJson(String json) { return switch (json) {
   'received_credit' => receivedCredit,
   'received_debit' => receivedDebit,
   _ => FlowType$Unknown(json),
-}; }
+};}
 
 static const FlowType creditReversal = FlowType$creditReversal._();
 
@@ -38,9 +38,9 @@ static const FlowType receivedDebit = FlowType$receivedDebit._();
 static const List<FlowType> values = [creditReversal, debitReversal, inboundTransfer, issuingAuthorization, $other, outboundPayment, outboundTransfer, receivedCredit, receivedDebit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'credit_reversal' => 'creditReversal',
   'debit_reversal' => 'debitReversal',
   'inbound_transfer' => 'inboundTransfer',
@@ -51,11 +51,11 @@ String get name { return switch (value) {
   'received_credit' => 'receivedCredit',
   'received_debit' => 'receivedDebit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FlowType$Unknown; } 
+bool get isUnknown {return this is FlowType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() creditReversal, required W Function() debitReversal, required W Function() inboundTransfer, required W Function() issuingAuthorization, required W Function() $other, required W Function() outboundPayment, required W Function() outboundTransfer, required W Function() receivedCredit, required W Function() receivedDebit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() creditReversal, required W Function() debitReversal, required W Function() inboundTransfer, required W Function() issuingAuthorization, required W Function() $other, required W Function() outboundPayment, required W Function() outboundTransfer, required W Function() receivedCredit, required W Function() receivedDebit, required W Function(String value) $unknown, }) {return switch (this) {
       FlowType$creditReversal() => creditReversal(),
       FlowType$debitReversal() => debitReversal(),
       FlowType$inboundTransfer() => inboundTransfer(),
@@ -66,9 +66,9 @@ W when<W>({required W Function() creditReversal, required W Function() debitReve
       FlowType$receivedCredit() => receivedCredit(),
       FlowType$receivedDebit() => receivedDebit(),
       FlowType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? debitReversal, W Function()? inboundTransfer, W Function()? issuingAuthorization, W Function()? $other, W Function()? outboundPayment, W Function()? outboundTransfer, W Function()? receivedCredit, W Function()? receivedDebit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? debitReversal, W Function()? inboundTransfer, W Function()? issuingAuthorization, W Function()? $other, W Function()? outboundPayment, W Function()? outboundTransfer, W Function()? receivedCredit, W Function()? receivedDebit, W Function(String value)? $unknown, }) {return switch (this) {
       FlowType$creditReversal() => creditReversal != null ? creditReversal() : orElse(value),
       FlowType$debitReversal() => debitReversal != null ? debitReversal() : orElse(value),
       FlowType$inboundTransfer() => inboundTransfer != null ? inboundTransfer() : orElse(value),
@@ -79,10 +79,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
       FlowType$receivedCredit() => receivedCredit != null ? receivedCredit() : orElse(value),
       FlowType$receivedDebit() => receivedDebit != null ? receivedDebit() : orElse(value),
       FlowType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FlowType($value)';
 
- }
+}
 @immutable final class FlowType$creditReversal extends FlowType {const FlowType$creditReversal._();
 
 @override String get value => 'credit_reversal';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'credit_reversal'.hashCode;
 
- }
+}
 @immutable final class FlowType$debitReversal extends FlowType {const FlowType$debitReversal._();
 
 @override String get value => 'debit_reversal';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'debit_reversal'.hashCode;
 
- }
+}
 @immutable final class FlowType$inboundTransfer extends FlowType {const FlowType$inboundTransfer._();
 
 @override String get value => 'inbound_transfer';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'inbound_transfer'.hashCode;
 
- }
+}
 @immutable final class FlowType$issuingAuthorization extends FlowType {const FlowType$issuingAuthorization._();
 
 @override String get value => 'issuing_authorization';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'issuing_authorization'.hashCode;
 
- }
+}
 @immutable final class FlowType$$other extends FlowType {const FlowType$$other._();
 
 @override String get value => 'other';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class FlowType$outboundPayment extends FlowType {const FlowType$outboundPayment._();
 
 @override String get value => 'outbound_payment';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_payment'.hashCode;
 
- }
+}
 @immutable final class FlowType$outboundTransfer extends FlowType {const FlowType$outboundTransfer._();
 
 @override String get value => 'outbound_transfer';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'outbound_transfer'.hashCode;
 
- }
+}
 @immutable final class FlowType$receivedCredit extends FlowType {const FlowType$receivedCredit._();
 
 @override String get value => 'received_credit';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'received_credit'.hashCode;
 
- }
+}
 @immutable final class FlowType$receivedDebit extends FlowType {const FlowType$receivedDebit._();
 
 @override String get value => 'received_debit';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => 'received_debit'.hashCode;
 
- }
+}
 @immutable final class FlowType$Unknown extends FlowType {const FlowType$Unknown(this.value);
 
 @override final String value;
@@ -173,4 +173,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditRe
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOnetimepinConfig {const AccessOnetimepinConfig({this.redirectUrl});
 
-factory AccessOnetimepinConfig.fromJson(Map<String, dynamic> json) { return AccessOnetimepinConfig(
+factory AccessOnetimepinConfig.fromJson(Map<String, dynamic> json) {return AccessOnetimepinConfig(
   redirectUrl: json['redirect_url'] as String?,
-); }
+);}
 
 final String? redirectUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'redirect_url': ?redirectUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'redirect_url'}.contains(key)); } 
-AccessOnetimepinConfig copyWith({String? Function()? redirectUrl}) { return AccessOnetimepinConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'redirect_url'}.contains(key));}
+AccessOnetimepinConfig copyWith({String? Function()? redirectUrl}) {return AccessOnetimepinConfig(
   redirectUrl: redirectUrl != null ? redirectUrl() : this.redirectUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOnetimepinConfig &&
           redirectUrl == other.redirectUrl;
@@ -24,4 +24,4 @@ AccessOnetimepinConfig copyWith({String? Function()? redirectUrl}) { return Acce
 
 @override String toString() => 'AccessOnetimepinConfig(redirectUrl: $redirectUrl)';
 
- }
+}

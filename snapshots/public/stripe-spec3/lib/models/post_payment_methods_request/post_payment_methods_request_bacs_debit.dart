@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestBacsDebit {const PostPaymentMethodsRequestBacsDebit({this.accountNumber, this.sortCode, });
 
-factory PostPaymentMethodsRequestBacsDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBacsDebit(
+factory PostPaymentMethodsRequestBacsDebit.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsRequestBacsDebit(
   accountNumber: json['account_number'] as String?,
   sortCode: json['sort_code'] as String?,
-); }
+);}
 
 final String? accountNumber;
 
 final String? sortCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_number': ?accountNumber,
   'sort_code': ?sortCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_number', 'sort_code'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_number', 'sort_code'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountNumber$ = accountNumber;
 if (accountNumber$ != null) {
   if (accountNumber$.runes.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
@@ -27,11 +27,11 @@ final sortCode$ = sortCode;
 if (sortCode$ != null) {
   if (sortCode$.runes.length > 5000) { errors.add('sortCode: length must be <= 5000'); }
 }
-return errors; } 
-PostPaymentMethodsRequestBacsDebit copyWith({String? Function()? accountNumber, String? Function()? sortCode, }) { return PostPaymentMethodsRequestBacsDebit(
+return errors;}
+PostPaymentMethodsRequestBacsDebit copyWith({String? Function()? accountNumber, String? Function()? sortCode, }) {return PostPaymentMethodsRequestBacsDebit(
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
   sortCode: sortCode != null ? sortCode() : this.sortCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestBacsDebit &&
           accountNumber == other.accountNumber &&
@@ -41,4 +41,4 @@ PostPaymentMethodsRequestBacsDebit copyWith({String? Function()? accountNumber, 
 
 @override String toString() => 'PostPaymentMethodsRequestBacsDebit(accountNumber: $accountNumber, sortCode: $sortCode)';
 
- }
+}

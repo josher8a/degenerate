@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cloud_platform_client.dart';import 'package:pub_cloudflare/models/mcn_provider_discovery_progress.dart';import 'package:pub_cloudflare/models/mcn_provider_discovery_status.dart';@immutable final class McnProviderStatus {const McnProviderStatus({required this.discoveryProgress, required this.discoveryProgressV2, required this.lastDiscoveryStatus, required this.lastDiscoveryStatusV2, required this.regions, this.credentialsGoodSince, this.credentialsMissingSince, this.credentialsRejectedSince, this.discoveryMessage, this.discoveryMessageV2, this.inUseBy, this.lastDiscoveryCompletedAt, this.lastDiscoveryCompletedAtV2, this.lastDiscoveryStartedAt, this.lastDiscoveryStartedAtV2, this.lastUpdated, });
 
-factory McnProviderStatus.fromJson(Map<String, dynamic> json) { return McnProviderStatus(
+factory McnProviderStatus.fromJson(Map<String, dynamic> json) {return McnProviderStatus(
   credentialsGoodSince: json['credentials_good_since'] as String?,
   credentialsMissingSince: json['credentials_missing_since'] as String?,
   credentialsRejectedSince: json['credentials_rejected_since'] as String?,
@@ -20,7 +20,7 @@ factory McnProviderStatus.fromJson(Map<String, dynamic> json) { return McnProvid
   lastDiscoveryStatusV2: McnProviderDiscoveryStatus.fromJson(json['last_discovery_status_v2'] as String),
   lastUpdated: json['last_updated'] as String?,
   regions: (json['regions'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final String? credentialsGoodSince;
 
@@ -54,7 +54,7 @@ final String? lastUpdated;
 
 final List<String> regions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'credentials_good_since': ?credentialsGoodSince,
   'credentials_missing_since': ?credentialsMissingSince,
   'credentials_rejected_since': ?credentialsRejectedSince,
@@ -71,13 +71,13 @@ Map<String, dynamic> toJson() { return {
   'last_discovery_status_v2': lastDiscoveryStatusV2.toJson(),
   'last_updated': ?lastUpdated,
   'regions': regions,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('discovery_progress') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('discovery_progress') &&
       json.containsKey('discovery_progress_v2') &&
       json.containsKey('last_discovery_status') &&
       json.containsKey('last_discovery_status_v2') &&
-      json.containsKey('regions'); } 
-McnProviderStatus copyWith({String? Function()? credentialsGoodSince, String? Function()? credentialsMissingSince, String? Function()? credentialsRejectedSince, String? Function()? discoveryMessage, String? Function()? discoveryMessageV2, McnProviderDiscoveryProgress? discoveryProgress, McnProviderDiscoveryProgress? discoveryProgressV2, List<McnCloudPlatformClient>? Function()? inUseBy, String? Function()? lastDiscoveryCompletedAt, String? Function()? lastDiscoveryCompletedAtV2, String? Function()? lastDiscoveryStartedAt, String? Function()? lastDiscoveryStartedAtV2, McnProviderDiscoveryStatus? lastDiscoveryStatus, McnProviderDiscoveryStatus? lastDiscoveryStatusV2, String? Function()? lastUpdated, List<String>? regions, }) { return McnProviderStatus(
+      json.containsKey('regions');}
+McnProviderStatus copyWith({String? Function()? credentialsGoodSince, String? Function()? credentialsMissingSince, String? Function()? credentialsRejectedSince, String? Function()? discoveryMessage, String? Function()? discoveryMessageV2, McnProviderDiscoveryProgress? discoveryProgress, McnProviderDiscoveryProgress? discoveryProgressV2, List<McnCloudPlatformClient>? Function()? inUseBy, String? Function()? lastDiscoveryCompletedAt, String? Function()? lastDiscoveryCompletedAtV2, String? Function()? lastDiscoveryStartedAt, String? Function()? lastDiscoveryStartedAtV2, McnProviderDiscoveryStatus? lastDiscoveryStatus, McnProviderDiscoveryStatus? lastDiscoveryStatusV2, String? Function()? lastUpdated, List<String>? regions, }) {return McnProviderStatus(
   credentialsGoodSince: credentialsGoodSince != null ? credentialsGoodSince() : this.credentialsGoodSince,
   credentialsMissingSince: credentialsMissingSince != null ? credentialsMissingSince() : this.credentialsMissingSince,
   credentialsRejectedSince: credentialsRejectedSince != null ? credentialsRejectedSince() : this.credentialsRejectedSince,
@@ -94,7 +94,7 @@ McnProviderStatus copyWith({String? Function()? credentialsGoodSince, String? Fu
   lastDiscoveryStatusV2: lastDiscoveryStatusV2 ?? this.lastDiscoveryStatusV2,
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   regions: regions ?? this.regions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnProviderStatus &&
           credentialsGoodSince == other.credentialsGoodSince &&
@@ -118,4 +118,4 @@ McnProviderStatus copyWith({String? Function()? credentialsGoodSince, String? Fu
 
 @override String toString() => 'McnProviderStatus(\n  credentialsGoodSince: $credentialsGoodSince,\n  credentialsMissingSince: $credentialsMissingSince,\n  credentialsRejectedSince: $credentialsRejectedSince,\n  discoveryMessage: $discoveryMessage,\n  discoveryMessageV2: $discoveryMessageV2,\n  discoveryProgress: $discoveryProgress,\n  discoveryProgressV2: $discoveryProgressV2,\n  inUseBy: $inUseBy,\n  lastDiscoveryCompletedAt: $lastDiscoveryCompletedAt,\n  lastDiscoveryCompletedAtV2: $lastDiscoveryCompletedAtV2,\n  lastDiscoveryStartedAt: $lastDiscoveryStartedAt,\n  lastDiscoveryStartedAtV2: $lastDiscoveryStartedAtV2,\n  lastDiscoveryStatus: $lastDiscoveryStatus,\n  lastDiscoveryStatusV2: $lastDiscoveryStatusV2,\n  lastUpdated: $lastUpdated,\n  regions: $regions,\n)';
 
- }
+}

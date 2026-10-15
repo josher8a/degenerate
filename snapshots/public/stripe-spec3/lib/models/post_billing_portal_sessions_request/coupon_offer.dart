@@ -3,23 +3,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CouponOffer {const CouponOffer({required this.coupon});
 
-factory CouponOffer.fromJson(Map<String, dynamic> json) { return CouponOffer(
+factory CouponOffer.fromJson(Map<String, dynamic> json) {return CouponOffer(
   coupon: json['coupon'] as String,
-); }
+);}
 
 final String coupon;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'coupon': coupon,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('coupon') && json['coupon'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('coupon') && json['coupon'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (coupon.runes.length > 5000) { errors.add('coupon: length must be <= 5000'); }
-return errors; } 
-CouponOffer copyWith({String? coupon}) { return CouponOffer(
+return errors;}
+CouponOffer copyWith({String? coupon}) {return CouponOffer(
   coupon: coupon ?? this.coupon,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CouponOffer &&
           coupon == other.coupon;
@@ -28,4 +28,4 @@ CouponOffer copyWith({String? coupon}) { return CouponOffer(
 
 @override String toString() => 'CouponOffer(coupon: $coupon)';
 
- }
+}

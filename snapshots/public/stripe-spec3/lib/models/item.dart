@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/line_items_adjustable_quantity.dart';import 'package:pub_stripe_spec3/models/line_items_discount_amount.dart';import 'package:pub_stripe_spec3/models/line_items_tax_amount.dart';import 'package:pub_stripe_spec3/models/price.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ItemObject {const ItemObject();
 
-factory ItemObject.fromJson(String json) { return switch (json) {
+factory ItemObject.fromJson(String json) {return switch (json) {
   'item' => item,
   _ => ItemObject$Unknown(json),
-}; }
+};}
 
 static const ItemObject item = ItemObject$item._();
 
 static const List<ItemObject> values = [item];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'item' => 'item',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ItemObject$Unknown; } 
+bool get isUnknown {return this is ItemObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() item, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() item, required W Function(String value) $unknown, }) {return switch (this) {
       ItemObject$item() => item(),
       ItemObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? item, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? item, W Function(String value)? $unknown, }) {return switch (this) {
       ItemObject$item() => item != null ? item() : orElse(value),
       ItemObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ItemObject($value)';
 
- }
+}
 @immutable final class ItemObject$item extends ItemObject {const ItemObject$item._();
 
 @override String get value => 'item';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? item, W 
 
 @override int get hashCode => 'item'.hashCode;
 
- }
+}
 @immutable final class ItemObject$Unknown extends ItemObject {const ItemObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? item, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A line item.
 @immutable final class Item {const Item({required this.amountDiscount, required this.amountSubtotal, required this.amountTax, required this.amountTotal, required this.currency, required this.id, required this.object, this.adjustableQuantity = const Omittable.absent(), this.description = const Omittable.absent(), this.discounts, this.metadata = const Omittable.absent(), this.price = const Omittable.absent(), this.quantity = const Omittable.absent(), this.taxes, });
 
-factory Item.fromJson(Map<String, dynamic> json) { return Item(
+factory Item.fromJson(Map<String, dynamic> json) {return Item(
   adjustableQuantity: json.containsKey('adjustable_quantity') ? Omittable(json['adjustable_quantity'] != null ? LineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   amountDiscount: (json['amount_discount'] as num).toInt(),
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
@@ -72,7 +72,7 @@ factory Item.fromJson(Map<String, dynamic> json) { return Item(
   price: json.containsKey('price') ? Omittable(json['price'] != null ? Price.fromJson(json['price'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   quantity: json.containsKey('quantity') ? Omittable(json['quantity'] != null ? (json['quantity'] as num).toInt() : null) : const Omittable.absent(),
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => LineItemsTaxAmount.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final Omittable<LineItemsAdjustableQuantity?> adjustableQuantity;
 
@@ -115,7 +115,7 @@ final Omittable<int?> quantity;
 /// The taxes applied to the line item.
 final List<LineItemsTaxAmount>? taxes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adjustableQuantity.isPresent) 'adjustable_quantity': adjustableQuantity.value?.toJson(),
   'amount_discount': amountDiscount,
   'amount_subtotal': amountSubtotal,
@@ -130,23 +130,23 @@ Map<String, dynamic> toJson() { return {
   if (price.isPresent) 'price': price.value?.toJson(),
   if (quantity.isPresent) 'quantity': quantity.value,
   if (taxes != null) 'taxes': taxes?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_discount') && json['amount_discount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_discount') && json['amount_discount'] is num &&
       json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-Item copyWith({Omittable<LineItemsAdjustableQuantity?>? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, Omittable<String?>? description, List<LineItemsDiscountAmount>? Function()? discounts, String? id, Omittable<Map<String,String>?>? metadata, ItemObject? object, Omittable<Price?>? price, Omittable<int?>? quantity, List<LineItemsTaxAmount>? Function()? taxes, }) { return Item(
+return errors;}
+Item copyWith({Omittable<LineItemsAdjustableQuantity?>? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, Omittable<String?>? description, List<LineItemsDiscountAmount>? Function()? discounts, String? id, Omittable<Map<String,String>?>? metadata, ItemObject? object, Omittable<Price?>? price, Omittable<int?>? quantity, List<LineItemsTaxAmount>? Function()? taxes, }) {return Item(
   adjustableQuantity: adjustableQuantity ?? this.adjustableQuantity,
   amountDiscount: amountDiscount ?? this.amountDiscount,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
@@ -161,7 +161,7 @@ Item copyWith({Omittable<LineItemsAdjustableQuantity?>? adjustableQuantity, int?
   price: price ?? this.price,
   quantity: quantity ?? this.quantity,
   taxes: taxes != null ? taxes() : this.taxes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Item &&
           adjustableQuantity == other.adjustableQuantity &&
@@ -183,4 +183,4 @@ Item copyWith({Omittable<LineItemsAdjustableQuantity?>? adjustableQuantity, int?
 
 @override String toString() => 'Item(\n  adjustableQuantity: $adjustableQuantity,\n  amountDiscount: $amountDiscount,\n  amountSubtotal: $amountSubtotal,\n  amountTax: $amountTax,\n  amountTotal: $amountTotal,\n  currency: $currency,\n  description: $description,\n  discounts: $discounts,\n  id: $id,\n  metadata: $metadata,\n  object: $object,\n  price: $price,\n  quantity: $quantity,\n  taxes: $taxes,\n)';
 
- }
+}

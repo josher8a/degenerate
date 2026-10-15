@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DisputesListFeatures {const DisputesListFeatures({this.capturePayments, this.destinationOnBehalfOfChargeManagement, this.disputeManagement, this.refundManagement, });
 
-factory DisputesListFeatures.fromJson(Map<String, dynamic> json) { return DisputesListFeatures(
+factory DisputesListFeatures.fromJson(Map<String, dynamic> json) {return DisputesListFeatures(
   capturePayments: json['capture_payments'] as bool?,
   destinationOnBehalfOfChargeManagement: json['destination_on_behalf_of_charge_management'] as bool?,
   disputeManagement: json['dispute_management'] as bool?,
   refundManagement: json['refund_management'] as bool?,
-); }
+);}
 
 final bool? capturePayments;
 
@@ -18,19 +18,19 @@ final bool? disputeManagement;
 
 final bool? refundManagement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'capture_payments': ?capturePayments,
   'destination_on_behalf_of_charge_management': ?destinationOnBehalfOfChargeManagement,
   'dispute_management': ?disputeManagement,
   'refund_management': ?refundManagement,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_payments', 'destination_on_behalf_of_charge_management', 'dispute_management', 'refund_management'}.contains(key)); } 
-DisputesListFeatures copyWith({bool? Function()? capturePayments, bool? Function()? destinationOnBehalfOfChargeManagement, bool? Function()? disputeManagement, bool? Function()? refundManagement, }) { return DisputesListFeatures(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_payments', 'destination_on_behalf_of_charge_management', 'dispute_management', 'refund_management'}.contains(key));}
+DisputesListFeatures copyWith({bool? Function()? capturePayments, bool? Function()? destinationOnBehalfOfChargeManagement, bool? Function()? disputeManagement, bool? Function()? refundManagement, }) {return DisputesListFeatures(
   capturePayments: capturePayments != null ? capturePayments() : this.capturePayments,
   destinationOnBehalfOfChargeManagement: destinationOnBehalfOfChargeManagement != null ? destinationOnBehalfOfChargeManagement() : this.destinationOnBehalfOfChargeManagement,
   disputeManagement: disputeManagement != null ? disputeManagement() : this.disputeManagement,
   refundManagement: refundManagement != null ? refundManagement() : this.refundManagement,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DisputesListFeatures &&
           capturePayments == other.capturePayments &&
@@ -42,4 +42,4 @@ DisputesListFeatures copyWith({bool? Function()? capturePayments, bool? Function
 
 @override String toString() => 'DisputesListFeatures(capturePayments: $capturePayments, destinationOnBehalfOfChargeManagement: $destinationOnBehalfOfChargeManagement, disputeManagement: $disputeManagement, refundManagement: $refundManagement)';
 
- }
+}

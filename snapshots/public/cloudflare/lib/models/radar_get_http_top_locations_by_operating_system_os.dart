@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating system.
 sealed class RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs();
 
-factory RadarGetHttpTopLocationsByOperatingSystemOs.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopLocationsByOperatingSystemOs.fromJson(String json) {return switch (json) {
   'WINDOWS' => windows,
   'MACOSX' => macosx,
   'IOS' => ios,
@@ -13,7 +13,7 @@ factory RadarGetHttpTopLocationsByOperatingSystemOs.fromJson(String json) { retu
   'LINUX' => linux,
   'SMART_TV' => smartTv,
   _ => RadarGetHttpTopLocationsByOperatingSystemOs$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopLocationsByOperatingSystemOs windows = RadarGetHttpTopLocationsByOperatingSystemOs$windows._();
 
@@ -32,9 +32,9 @@ static const RadarGetHttpTopLocationsByOperatingSystemOs smartTv = RadarGetHttpT
 static const List<RadarGetHttpTopLocationsByOperatingSystemOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'WINDOWS' => 'windows',
   'MACOSX' => 'macosx',
   'IOS' => 'ios',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'LINUX' => 'linux',
   'SMART_TV' => 'smartTv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopLocationsByOperatingSystemOs$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopLocationsByOperatingSystemOs$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByOperatingSystemOs$windows() => windows(),
       RadarGetHttpTopLocationsByOperatingSystemOs$macosx() => macosx(),
       RadarGetHttpTopLocationsByOperatingSystemOs$ios() => ios(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() windows, required W Function() macosx, required
       RadarGetHttpTopLocationsByOperatingSystemOs$linux() => linux(),
       RadarGetHttpTopLocationsByOperatingSystemOs$smartTv() => smartTv(),
       RadarGetHttpTopLocationsByOperatingSystemOs$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopLocationsByOperatingSystemOs$windows() => windows != null ? windows() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemOs$macosx() => macosx != null ? macosx() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemOs$ios() => ios != null ? ios() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
       RadarGetHttpTopLocationsByOperatingSystemOs$linux() => linux != null ? linux() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemOs$smartTv() => smartTv != null ? smartTv() : orElse(value),
       RadarGetHttpTopLocationsByOperatingSystemOs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopLocationsByOperatingSystemOs($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemOs$windows extends RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs$windows._();
 
 @override String get value => 'WINDOWS';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'WINDOWS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemOs$macosx extends RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs$macosx._();
 
 @override String get value => 'MACOSX';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'MACOSX'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemOs$ios extends RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs$ios._();
 
 @override String get value => 'IOS';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'IOS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemOs$android extends RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs$android._();
 
 @override String get value => 'ANDROID';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'ANDROID'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemOs$chromeos extends RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs$chromeos._();
 
 @override String get value => 'CHROMEOS';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'CHROMEOS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemOs$linux extends RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs$linux._();
 
 @override String get value => 'LINUX';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'LINUX'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemOs$smartTv extends RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs$smartTv._();
 
 @override String get value => 'SMART_TV';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => 'SMART_TV'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopLocationsByOperatingSystemOs$Unknown extends RadarGetHttpTopLocationsByOperatingSystemOs {const RadarGetHttpTopLocationsByOperatingSystemOs$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

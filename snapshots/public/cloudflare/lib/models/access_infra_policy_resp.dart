@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_connection_rules_infra.dart';import 'package:pub_cloudflare/models/access_decision.dart';import 'package:pub_cloudflare/models/access_policy_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_rule.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessInfraPolicyResp {const AccessInfraPolicyResp({this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, this.connectionRules, });
 
-factory AccessInfraPolicyResp.fromJson(Map<String, dynamic> json) { return AccessInfraPolicyResp(
+factory AccessInfraPolicyResp.fromJson(Map<String, dynamic> json) {return AccessInfraPolicyResp(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   decision: json['decision'] != null ? AccessDecision.fromJson(json['decision'] as String) : null,
   exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
@@ -13,7 +13,7 @@ factory AccessInfraPolicyResp.fromJson(Map<String, dynamic> json) { return Acces
   require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
   connectionRules: json['connection_rules'] != null ? AccessConnectionRulesInfra.fromJson(json['connection_rules'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -34,7 +34,7 @@ final AccessTimestamp? updatedAt;
 
 final AccessConnectionRulesInfra? connectionRules;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (decision != null) 'decision': decision?.toJson(),
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
@@ -44,9 +44,9 @@ Map<String, dynamic> toJson() { return {
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (connectionRules != null) 'connection_rules': connectionRules?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'connection_rules'}.contains(key)); } 
-AccessInfraPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, AccessConnectionRulesInfra? Function()? connectionRules, }) { return AccessInfraPolicyResp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'connection_rules'}.contains(key));}
+AccessInfraPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, AccessConnectionRulesInfra? Function()? connectionRules, }) {return AccessInfraPolicyResp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   decision: decision != null ? decision() : this.decision,
   exclude: exclude != null ? exclude() : this.exclude,
@@ -56,7 +56,7 @@ AccessInfraPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDe
   require: require != null ? require() : this.require,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   connectionRules: connectionRules != null ? connectionRules() : this.connectionRules,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessInfraPolicyResp &&
           createdAt == other.createdAt &&
@@ -73,4 +73,4 @@ AccessInfraPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDe
 
 @override String toString() => 'AccessInfraPolicyResp(\n  createdAt: $createdAt,\n  decision: $decision,\n  exclude: $exclude,\n  id: $id,\n  include: $include,\n  name: $name,\n  require: $require,\n  updatedAt: $updatedAt,\n  connectionRules: $connectionRules,\n)';
 
- }
+}

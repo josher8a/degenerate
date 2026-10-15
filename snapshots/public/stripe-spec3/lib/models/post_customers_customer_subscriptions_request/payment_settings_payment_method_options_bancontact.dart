@@ -7,11 +7,11 @@ const PaymentSettingsPaymentMethodOptionsBancontact({this.invoicePaymentMethodOp
 const PaymentSettingsPaymentMethodOptionsBancontact._({required this.rawValue, required this.invoicePaymentMethodOptionsParam16, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PaymentSettingsPaymentMethodOptionsBancontact.fromJson(Object? json) { return PaymentSettingsPaymentMethodOptionsBancontact._(
+factory PaymentSettingsPaymentMethodOptionsBancontact.fromJson(Object? json) {return PaymentSettingsPaymentMethodOptionsBancontact._(
   rawValue: Omittable(json),
   invoicePaymentMethodOptionsParam16: json is Map<String, dynamic> && InvoicePaymentMethodOptionsParam16.canParse(json) ? parseAnyOfVariant<InvoicePaymentMethodOptionsParam16>(json, (value) => InvoicePaymentMethodOptionsParam16.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PaymentSettingsPaymentMethodOptionsBancontact(${toJson()})';
 
- }
+}

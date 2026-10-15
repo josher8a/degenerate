@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InfraResolverNetwork {const InfraResolverNetwork({required this.tunnelId, this.resolverIps = const Omittable.absent(), });
 
-factory InfraResolverNetwork.fromJson(Map<String, dynamic> json) { return InfraResolverNetwork(
+factory InfraResolverNetwork.fromJson(Map<String, dynamic> json) {return InfraResolverNetwork(
   resolverIps: json.containsKey('resolver_ips') ? Omittable((json['resolver_ips'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   tunnelId: json['tunnel_id'] as String,
-); }
+);}
 
 final Omittable<List<String>?> resolverIps;
 
 /// Example: `'0191dce4-9ab4-7fce-b660-8e5dec5172da'`
 final String tunnelId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (resolverIps.isPresent) 'resolver_ips': resolverIps.value,
   'tunnel_id': tunnelId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tunnel_id') && json['tunnel_id'] is String; } 
-InfraResolverNetwork copyWith({Omittable<List<String>?>? resolverIps, String? tunnelId, }) { return InfraResolverNetwork(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tunnel_id') && json['tunnel_id'] is String;}
+InfraResolverNetwork copyWith({Omittable<List<String>?>? resolverIps, String? tunnelId, }) {return InfraResolverNetwork(
   resolverIps: resolverIps ?? this.resolverIps,
   tunnelId: tunnelId ?? this.tunnelId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InfraResolverNetwork &&
           resolverIps.isPresent == other.resolverIps.isPresent &&
@@ -32,4 +32,4 @@ InfraResolverNetwork copyWith({Omittable<List<String>?>? resolverIps, String? tu
 
 @override String toString() => 'InfraResolverNetwork(resolverIps: $resolverIps, tunnelId: $tunnelId)';
 
- }
+}

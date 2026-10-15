@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';@immutable final class ZeroTrustGatewayApplicationsReviewStatusResponseContent {const ZeroTrustGatewayApplicationsReviewStatusResponseContent({this.approvedApps, this.createdAt, this.inReviewApps, this.unapprovedApps, this.updatedAt, });
 
-factory ZeroTrustGatewayApplicationsReviewStatusResponseContent.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayApplicationsReviewStatusResponseContent(
+factory ZeroTrustGatewayApplicationsReviewStatusResponseContent.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayApplicationsReviewStatusResponseContent(
   approvedApps: (json['approved_apps'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
   inReviewApps: (json['in_review_apps'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   unapprovedApps: (json['unapproved_apps'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final List<int>? approvedApps;
 
@@ -21,21 +21,21 @@ final List<int>? unapprovedApps;
 
 final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'approved_apps': ?approvedApps,
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   'in_review_apps': ?inReviewApps,
   'unapproved_apps': ?unapprovedApps,
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approved_apps', 'created_at', 'in_review_apps', 'unapproved_apps', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewayApplicationsReviewStatusResponseContent copyWith({List<int>? Function()? approvedApps, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, List<int>? Function()? inReviewApps, List<int>? Function()? unapprovedApps, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayApplicationsReviewStatusResponseContent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'approved_apps', 'created_at', 'in_review_apps', 'unapproved_apps', 'updated_at'}.contains(key));}
+ZeroTrustGatewayApplicationsReviewStatusResponseContent copyWith({List<int>? Function()? approvedApps, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, List<int>? Function()? inReviewApps, List<int>? Function()? unapprovedApps, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) {return ZeroTrustGatewayApplicationsReviewStatusResponseContent(
   approvedApps: approvedApps != null ? approvedApps() : this.approvedApps,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   inReviewApps: inReviewApps != null ? inReviewApps() : this.inReviewApps,
   unapprovedApps: unapprovedApps != null ? unapprovedApps() : this.unapprovedApps,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayApplicationsReviewStatusResponseContent &&
           listEquals(approvedApps, other.approvedApps) &&
@@ -48,4 +48,4 @@ ZeroTrustGatewayApplicationsReviewStatusResponseContent copyWith({List<int>? Fun
 
 @override String toString() => 'ZeroTrustGatewayApplicationsReviewStatusResponseContent(approvedApps: $approvedApps, createdAt: $createdAt, inReviewApps: $inReviewApps, unapprovedApps: $unapprovedApps, updatedAt: $updatedAt)';
 
- }
+}

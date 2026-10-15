@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';import 'package:pub_cloudflare/models/zones_schemas_messages2.dart';@immutable final class ResponseSingleId9 {const ResponseSingleId9({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
-factory ResponseSingleId9.fromJson(Map<String, dynamic> json) { return ResponseSingleId9(
+factory ResponseSingleId9.fromJson(Map<String, dynamic> json) {return ResponseSingleId9(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZonesSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json.containsKey('result') ? Omittable(json['result'] != null ? ResponseSingleId3Result.fromJson(json['result'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final List<ZonesSchemasMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final Omittable<ResponseSingleId3Result?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result.isPresent) 'result': result.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseSingleId9 copyWith({List<ZonesSchemasMessages2>? errors, List<ZonesSchemasMessages2>? messages, bool? success, Omittable<ResponseSingleId3Result?>? result, }) { return ResponseSingleId9(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseSingleId9 copyWith({List<ZonesSchemasMessages2>? errors, List<ZonesSchemasMessages2>? messages, bool? success, Omittable<ResponseSingleId3Result?>? result, }) {return ResponseSingleId9(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseSingleId9 &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ResponseSingleId9 copyWith({List<ZonesSchemasMessages2>? errors, List<ZonesSchem
 
 @override String toString() => 'ResponseSingleId9(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

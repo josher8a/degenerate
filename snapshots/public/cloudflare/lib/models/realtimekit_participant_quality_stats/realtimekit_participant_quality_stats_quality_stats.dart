@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participant_quality_stats/audio_stats.dart';import 'package:pub_cloudflare/models/realtimekit_participant_quality_stats/video_stats.dart';@immutable final class RealtimekitParticipantQualityStatsQualityStats {const RealtimekitParticipantQualityStatsQualityStats({this.audioBandwidth, this.audioPacketLoss, this.audioStats, this.averageQuality, this.end, this.peerId, this.start, this.videoBandwidth, this.videoPacketLoss, this.videoStats, });
 
-factory RealtimekitParticipantQualityStatsQualityStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantQualityStatsQualityStats(
+factory RealtimekitParticipantQualityStatsQualityStats.fromJson(Map<String, dynamic> json) {return RealtimekitParticipantQualityStatsQualityStats(
   audioBandwidth: json['audio_bandwidth'] != null ? (json['audio_bandwidth'] as num).toDouble() : null,
   audioPacketLoss: json['audio_packet_loss'] != null ? (json['audio_packet_loss'] as num).toDouble() : null,
   audioStats: (json['audio_stats'] as List<dynamic>?)?.map((e) => AudioStats.fromJson(e as Map<String, dynamic>)).toList(),
@@ -14,7 +14,7 @@ factory RealtimekitParticipantQualityStatsQualityStats.fromJson(Map<String, dyna
   videoBandwidth: json['video_bandwidth'] != null ? (json['video_bandwidth'] as num).toDouble() : null,
   videoPacketLoss: json['video_packet_loss'] != null ? (json['video_packet_loss'] as num).toDouble() : null,
   videoStats: (json['video_stats'] as List<dynamic>?)?.map((e) => VideoStats.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final double? audioBandwidth;
 
@@ -36,7 +36,7 @@ final double? videoPacketLoss;
 
 final List<VideoStats>? videoStats;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'audio_bandwidth': ?audioBandwidth,
   'audio_packet_loss': ?audioPacketLoss,
   if (audioStats != null) 'audio_stats': audioStats?.map((e) => e.toJson()).toList(),
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'video_bandwidth': ?videoBandwidth,
   'video_packet_loss': ?videoPacketLoss,
   if (videoStats != null) 'video_stats': videoStats?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_bandwidth', 'audio_packet_loss', 'audio_stats', 'average_quality', 'end', 'peer_id', 'start', 'video_bandwidth', 'video_packet_loss', 'video_stats'}.contains(key)); } 
-RealtimekitParticipantQualityStatsQualityStats copyWith({double? Function()? audioBandwidth, double? Function()? audioPacketLoss, List<AudioStats>? Function()? audioStats, double? Function()? averageQuality, String? Function()? end, String? Function()? peerId, String? Function()? start, double? Function()? videoBandwidth, double? Function()? videoPacketLoss, List<VideoStats>? Function()? videoStats, }) { return RealtimekitParticipantQualityStatsQualityStats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'audio_bandwidth', 'audio_packet_loss', 'audio_stats', 'average_quality', 'end', 'peer_id', 'start', 'video_bandwidth', 'video_packet_loss', 'video_stats'}.contains(key));}
+RealtimekitParticipantQualityStatsQualityStats copyWith({double? Function()? audioBandwidth, double? Function()? audioPacketLoss, List<AudioStats>? Function()? audioStats, double? Function()? averageQuality, String? Function()? end, String? Function()? peerId, String? Function()? start, double? Function()? videoBandwidth, double? Function()? videoPacketLoss, List<VideoStats>? Function()? videoStats, }) {return RealtimekitParticipantQualityStatsQualityStats(
   audioBandwidth: audioBandwidth != null ? audioBandwidth() : this.audioBandwidth,
   audioPacketLoss: audioPacketLoss != null ? audioPacketLoss() : this.audioPacketLoss,
   audioStats: audioStats != null ? audioStats() : this.audioStats,
@@ -60,7 +60,7 @@ RealtimekitParticipantQualityStatsQualityStats copyWith({double? Function()? aud
   videoBandwidth: videoBandwidth != null ? videoBandwidth() : this.videoBandwidth,
   videoPacketLoss: videoPacketLoss != null ? videoPacketLoss() : this.videoPacketLoss,
   videoStats: videoStats != null ? videoStats() : this.videoStats,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipantQualityStatsQualityStats &&
           audioBandwidth == other.audioBandwidth &&
@@ -78,4 +78,4 @@ RealtimekitParticipantQualityStatsQualityStats copyWith({double? Function()? aud
 
 @override String toString() => 'RealtimekitParticipantQualityStatsQualityStats(\n  audioBandwidth: $audioBandwidth,\n  audioPacketLoss: $audioPacketLoss,\n  audioStats: $audioStats,\n  averageQuality: $averageQuality,\n  end: $end,\n  peerId: $peerId,\n  start: $start,\n  videoBandwidth: $videoBandwidth,\n  videoPacketLoss: $videoPacketLoss,\n  videoStats: $videoStats,\n)';
 
- }
+}

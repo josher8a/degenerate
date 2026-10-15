@@ -7,11 +7,11 @@ const EvidenceCanceled({this.canceled = const Omittable.absent(), this.getPaymen
 const EvidenceCanceled._({required this.rawValue, required this.canceled, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory EvidenceCanceled.fromJson(Object? json) { return EvidenceCanceled._(
+factory EvidenceCanceled.fromJson(Object? json) {return EvidenceCanceled._(
   rawValue: Omittable(json),
   canceled: json is Map<String, dynamic> && Canceled.canParse(json) ? parseAnyOfVariant<Canceled>(json, (value) => Canceled.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'EvidenceCanceled(${toJson()})';
 
- }
+}

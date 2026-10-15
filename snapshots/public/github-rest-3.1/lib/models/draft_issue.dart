@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A draft issue in a project
 @immutable final class DraftIssue {const DraftIssue({required this.id, required this.nodeId, required this.title, required this.user, required this.createdAt, required this.updatedAt, this.body = const Omittable.absent(), });
 
-factory DraftIssue.fromJson(Map<String, dynamic> json) { return DraftIssue(
+factory DraftIssue.fromJson(Map<String, dynamic> json) {return DraftIssue(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String,
   title: json['title'] as String,
@@ -12,7 +12,7 @@ factory DraftIssue.fromJson(Map<String, dynamic> json) { return DraftIssue(
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// The ID of the draft issue
 final double id;
@@ -34,7 +34,7 @@ final DateTime createdAt;
 /// The time the draft issue was last updated
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'title': title,
@@ -42,14 +42,14 @@ Map<String, dynamic> toJson() { return {
   'user': user?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('user') &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-DraftIssue copyWith({double? id, String? nodeId, String? title, Omittable<String?>? body, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, }) { return DraftIssue(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+DraftIssue copyWith({double? id, String? nodeId, String? title, Omittable<String?>? body, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, }) {return DraftIssue(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   title: title ?? this.title,
@@ -57,7 +57,7 @@ DraftIssue copyWith({double? id, String? nodeId, String? title, Omittable<String
   user: user != null ? user() : this.user,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DraftIssue &&
           id == other.id &&
@@ -72,4 +72,4 @@ DraftIssue copyWith({double? id, String? nodeId, String? title, Omittable<String
 
 @override String toString() => 'DraftIssue(id: $id, nodeId: $nodeId, title: $title, body: $body, user: $user, createdAt: $createdAt, updatedAt: $updatedAt)';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/organization/organization_meta.dart';import 'package:pub_cloudflare/models/organization/organization_parent.dart';import 'package:pub_cloudflare/models/organization_id.dart';import 'package:pub_cloudflare/models/profile.dart';/// References an Organization in the Cloudflare data model.
 @immutable final class Organization {const Organization({required this.createTime, required this.id, required this.meta, required this.name, this.parent, this.profile, });
 
-factory Organization.fromJson(Map<String, dynamic> json) { return Organization(
+factory Organization.fromJson(Map<String, dynamic> json) {return Organization(
   createTime: DateTime.parse(json['create_time'] as String),
   id: OrganizationId.fromJson(json['id'] as String),
   meta: OrganizationMeta.fromJson(json['meta'] as Map<String, dynamic>),
   name: json['name'] as String,
   parent: json['parent'] != null ? OrganizationParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   profile: json['profile'] != null ? Profile.fromJson(json['profile'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DateTime createTime;
 
@@ -25,26 +25,26 @@ final OrganizationParent? parent;
 
 final Profile? profile;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'create_time': createTime.toIso8601String(),
   'id': id.toJson(),
   'meta': meta.toJson(),
   'name': name,
   if (parent != null) 'parent': parent?.toJson(),
   if (profile != null) 'profile': profile?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('create_time') && json['create_time'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('create_time') && json['create_time'] is String &&
       json.containsKey('id') &&
       json.containsKey('meta') &&
-      json.containsKey('name') && json['name'] is String; } 
-Organization copyWith({DateTime? createTime, OrganizationId? id, OrganizationMeta? meta, String? name, OrganizationParent? Function()? parent, Profile? Function()? profile, }) { return Organization(
+      json.containsKey('name') && json['name'] is String;}
+Organization copyWith({DateTime? createTime, OrganizationId? id, OrganizationMeta? meta, String? name, OrganizationParent? Function()? parent, Profile? Function()? profile, }) {return Organization(
   createTime: createTime ?? this.createTime,
   id: id ?? this.id,
   meta: meta ?? this.meta,
   name: name ?? this.name,
   parent: parent != null ? parent() : this.parent,
   profile: profile != null ? profile() : this.profile,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Organization &&
           createTime == other.createTime &&
@@ -58,4 +58,4 @@ Organization copyWith({DateTime? createTime, OrganizationId? id, OrganizationMet
 
 @override String toString() => 'Organization(createTime: $createTime, id: $id, meta: $meta, name: $name, parent: $parent, profile: $profile)';
 
- }
+}

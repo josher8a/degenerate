@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If Stripe disabled automatic tax, this enum describes why.
 sealed class SchedulesPhaseAutomaticTaxDisabledReason {const SchedulesPhaseAutomaticTaxDisabledReason();
 
-factory SchedulesPhaseAutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
+factory SchedulesPhaseAutomaticTaxDisabledReason.fromJson(String json) {return switch (json) {
   'requires_location_inputs' => requiresLocationInputs,
   _ => SchedulesPhaseAutomaticTaxDisabledReason$Unknown(json),
-}; }
+};}
 
 static const SchedulesPhaseAutomaticTaxDisabledReason requiresLocationInputs = SchedulesPhaseAutomaticTaxDisabledReason$requiresLocationInputs._();
 
 static const List<SchedulesPhaseAutomaticTaxDisabledReason> values = [requiresLocationInputs];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'requires_location_inputs' => 'requiresLocationInputs',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SchedulesPhaseAutomaticTaxDisabledReason$Unknown; } 
+bool get isUnknown {return this is SchedulesPhaseAutomaticTaxDisabledReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() requiresLocationInputs, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() requiresLocationInputs, required W Function(String value) $unknown, }) {return switch (this) {
       SchedulesPhaseAutomaticTaxDisabledReason$requiresLocationInputs() => requiresLocationInputs(),
       SchedulesPhaseAutomaticTaxDisabledReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? requiresLocationInputs, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? requiresLocationInputs, W Function(String value)? $unknown, }) {return switch (this) {
       SchedulesPhaseAutomaticTaxDisabledReason$requiresLocationInputs() => requiresLocationInputs != null ? requiresLocationInputs() : orElse(value),
       SchedulesPhaseAutomaticTaxDisabledReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SchedulesPhaseAutomaticTaxDisabledReason($value)';
 
- }
+}
 @immutable final class SchedulesPhaseAutomaticTaxDisabledReason$requiresLocationInputs extends SchedulesPhaseAutomaticTaxDisabledReason {const SchedulesPhaseAutomaticTaxDisabledReason$requiresLocationInputs._();
 
 @override String get value => 'requires_location_inputs';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requires
 
 @override int get hashCode => 'requires_location_inputs'.hashCode;
 
- }
+}
 @immutable final class SchedulesPhaseAutomaticTaxDisabledReason$Unknown extends SchedulesPhaseAutomaticTaxDisabledReason {const SchedulesPhaseAutomaticTaxDisabledReason$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? requires
 
 @override int get hashCode => value.hashCode;
 
- }
+}

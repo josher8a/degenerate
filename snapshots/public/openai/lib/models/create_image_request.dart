@@ -10,7 +10,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class CreateImageRequestQuality {const CreateImageRequestQuality();
 
-factory CreateImageRequestQuality.fromJson(String json) { return switch (json) {
+factory CreateImageRequestQuality.fromJson(String json) {return switch (json) {
   'standard' => standard,
   'hd' => hd,
   'low' => low,
@@ -18,7 +18,7 @@ factory CreateImageRequestQuality.fromJson(String json) { return switch (json) {
   'high' => high,
   'auto' => auto,
   _ => CreateImageRequestQuality$Unknown(json),
-}; }
+};}
 
 static const CreateImageRequestQuality standard = CreateImageRequestQuality$standard._();
 
@@ -35,9 +35,9 @@ static const CreateImageRequestQuality auto = CreateImageRequestQuality$auto._()
 static const List<CreateImageRequestQuality> values = [standard, hd, low, medium, high, auto];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'standard' => 'standard',
   'hd' => 'hd',
   'low' => 'low',
@@ -45,11 +45,11 @@ String get name { return switch (value) {
   'high' => 'high',
   'auto' => 'auto',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateImageRequestQuality$Unknown; } 
+bool get isUnknown {return this is CreateImageRequestQuality$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() standard, required W Function() hd, required W Function() low, required W Function() medium, required W Function() high, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() standard, required W Function() hd, required W Function() low, required W Function() medium, required W Function() high, required W Function() auto, required W Function(String value) $unknown, }) {return switch (this) {
       CreateImageRequestQuality$standard() => standard(),
       CreateImageRequestQuality$hd() => hd(),
       CreateImageRequestQuality$low() => low(),
@@ -57,9 +57,9 @@ W when<W>({required W Function() standard, required W Function() hd, required W 
       CreateImageRequestQuality$high() => high(),
       CreateImageRequestQuality$auto() => auto(),
       CreateImageRequestQuality$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? hd, W Function()? low, W Function()? medium, W Function()? high, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? hd, W Function()? low, W Function()? medium, W Function()? high, W Function()? auto, W Function(String value)? $unknown, }) {return switch (this) {
       CreateImageRequestQuality$standard() => standard != null ? standard() : orElse(value),
       CreateImageRequestQuality$hd() => hd != null ? hd() : orElse(value),
       CreateImageRequestQuality$low() => low != null ? low() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
       CreateImageRequestQuality$high() => high != null ? high() : orElse(value),
       CreateImageRequestQuality$auto() => auto != null ? auto() : orElse(value),
       CreateImageRequestQuality$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateImageRequestQuality($value)';
 
- }
+}
 @immutable final class CreateImageRequestQuality$standard extends CreateImageRequestQuality {const CreateImageRequestQuality$standard._();
 
 @override String get value => 'standard';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => 'standard'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestQuality$hd extends CreateImageRequestQuality {const CreateImageRequestQuality$hd._();
 
 @override String get value => 'hd';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => 'hd'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestQuality$low extends CreateImageRequestQuality {const CreateImageRequestQuality$low._();
 
 @override String get value => 'low';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestQuality$medium extends CreateImageRequestQuality {const CreateImageRequestQuality$medium._();
 
 @override String get value => 'medium';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => 'medium'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestQuality$high extends CreateImageRequestQuality {const CreateImageRequestQuality$high._();
 
 @override String get value => 'high';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestQuality$auto extends CreateImageRequestQuality {const CreateImageRequestQuality$auto._();
 
 @override String get value => 'auto';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestQuality$Unknown extends CreateImageRequestQuality {const CreateImageRequestQuality$Unknown(this.value);
 
 @override final String value;
@@ -134,11 +134,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`, and one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3`.
 sealed class CreateImageRequestSize {const CreateImageRequestSize();
 
-factory CreateImageRequestSize.fromJson(String json) { return switch (json) {
+factory CreateImageRequestSize.fromJson(String json) {return switch (json) {
   'auto' => auto,
   '1024x1024' => $1024x1024,
   '1536x1024' => $1536x1024,
@@ -148,7 +148,7 @@ factory CreateImageRequestSize.fromJson(String json) { return switch (json) {
   '1792x1024' => $1792x1024,
   '1024x1792' => $1024x1792,
   _ => CreateImageRequestSize$Unknown(json),
-}; }
+};}
 
 static const CreateImageRequestSize auto = CreateImageRequestSize$auto._();
 
@@ -169,9 +169,9 @@ static const CreateImageRequestSize $1024x1792 = CreateImageRequestSize$$1024x17
 static const List<CreateImageRequestSize> values = [auto, $1024x1024, $1536x1024, $1024x1536, $256x256, $512x512, $1792x1024, $1024x1792];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   '1024x1024' => r'$1024x1024',
   '1536x1024' => r'$1536x1024',
@@ -181,11 +181,11 @@ String get name { return switch (value) {
   '1792x1024' => r'$1792x1024',
   '1024x1792' => r'$1024x1792',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateImageRequestSize$Unknown; } 
+bool get isUnknown {return this is CreateImageRequestSize$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() $1024x1024, required W Function() $1536x1024, required W Function() $1024x1536, required W Function() $256x256, required W Function() $512x512, required W Function() $1792x1024, required W Function() $1024x1792, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() $1024x1024, required W Function() $1536x1024, required W Function() $1024x1536, required W Function() $256x256, required W Function() $512x512, required W Function() $1792x1024, required W Function() $1024x1792, required W Function(String value) $unknown, }) {return switch (this) {
       CreateImageRequestSize$auto() => auto(),
       CreateImageRequestSize$$1024x1024() => $1024x1024(),
       CreateImageRequestSize$$1536x1024() => $1536x1024(),
@@ -195,9 +195,9 @@ W when<W>({required W Function() auto, required W Function() $1024x1024, require
       CreateImageRequestSize$$1792x1024() => $1792x1024(),
       CreateImageRequestSize$$1024x1792() => $1024x1792(),
       CreateImageRequestSize$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $1024x1024, W Function()? $1536x1024, W Function()? $1024x1536, W Function()? $256x256, W Function()? $512x512, W Function()? $1792x1024, W Function()? $1024x1792, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $1024x1024, W Function()? $1536x1024, W Function()? $1024x1536, W Function()? $256x256, W Function()? $512x512, W Function()? $1792x1024, W Function()? $1024x1792, W Function(String value)? $unknown, }) {return switch (this) {
       CreateImageRequestSize$auto() => auto != null ? auto() : orElse(value),
       CreateImageRequestSize$$1024x1024() => $1024x1024 != null ? $1024x1024() : orElse(value),
       CreateImageRequestSize$$1536x1024() => $1536x1024 != null ? $1536x1024() : orElse(value),
@@ -207,10 +207,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
       CreateImageRequestSize$$1792x1024() => $1792x1024 != null ? $1792x1024() : orElse(value),
       CreateImageRequestSize$$1024x1792() => $1024x1792 != null ? $1024x1792() : orElse(value),
       CreateImageRequestSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateImageRequestSize($value)';
 
- }
+}
 @immutable final class CreateImageRequestSize$auto extends CreateImageRequestSize {const CreateImageRequestSize$auto._();
 
 @override String get value => 'auto';
@@ -219,7 +219,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestSize$$1024x1024 extends CreateImageRequestSize {const CreateImageRequestSize$$1024x1024._();
 
 @override String get value => '1024x1024';
@@ -228,7 +228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => '1024x1024'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestSize$$1536x1024 extends CreateImageRequestSize {const CreateImageRequestSize$$1536x1024._();
 
 @override String get value => '1536x1024';
@@ -237,7 +237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => '1536x1024'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestSize$$1024x1536 extends CreateImageRequestSize {const CreateImageRequestSize$$1024x1536._();
 
 @override String get value => '1024x1536';
@@ -246,7 +246,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => '1024x1536'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestSize$$256x256 extends CreateImageRequestSize {const CreateImageRequestSize$$256x256._();
 
 @override String get value => '256x256';
@@ -255,7 +255,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => '256x256'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestSize$$512x512 extends CreateImageRequestSize {const CreateImageRequestSize$$512x512._();
 
 @override String get value => '512x512';
@@ -264,7 +264,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => '512x512'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestSize$$1792x1024 extends CreateImageRequestSize {const CreateImageRequestSize$$1792x1024._();
 
 @override String get value => '1792x1024';
@@ -273,7 +273,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => '1792x1024'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestSize$$1024x1792 extends CreateImageRequestSize {const CreateImageRequestSize$$1024x1792._();
 
 @override String get value => '1024x1792';
@@ -282,7 +282,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => '1024x1792'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestSize$Unknown extends CreateImageRequestSize {const CreateImageRequestSize$Unknown(this.value);
 
 @override final String value;
@@ -292,15 +292,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Control the content-moderation level for images generated by the GPT image models. Must be either `low` for less restrictive filtering or `auto` (default value).
 sealed class CreateImageRequestModeration {const CreateImageRequestModeration();
 
-factory CreateImageRequestModeration.fromJson(String json) { return switch (json) {
+factory CreateImageRequestModeration.fromJson(String json) {return switch (json) {
   'low' => low,
   'auto' => auto,
   _ => CreateImageRequestModeration$Unknown(json),
-}; }
+};}
 
 static const CreateImageRequestModeration low = CreateImageRequestModeration$low._();
 
@@ -309,30 +309,30 @@ static const CreateImageRequestModeration auto = CreateImageRequestModeration$au
 static const List<CreateImageRequestModeration> values = [low, auto];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'low' => 'low',
   'auto' => 'auto',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateImageRequestModeration$Unknown; } 
+bool get isUnknown {return this is CreateImageRequestModeration$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() low, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() low, required W Function() auto, required W Function(String value) $unknown, }) {return switch (this) {
       CreateImageRequestModeration$low() => low(),
       CreateImageRequestModeration$auto() => auto(),
       CreateImageRequestModeration$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? auto, W Function(String value)? $unknown, }) {return switch (this) {
       CreateImageRequestModeration$low() => low != null ? low() : orElse(value),
       CreateImageRequestModeration$auto() => auto != null ? auto() : orElse(value),
       CreateImageRequestModeration$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateImageRequestModeration($value)';
 
- }
+}
 @immutable final class CreateImageRequestModeration$low extends CreateImageRequestModeration {const CreateImageRequestModeration$low._();
 
 @override String get value => 'low';
@@ -341,7 +341,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestModeration$auto extends CreateImageRequestModeration {const CreateImageRequestModeration$auto._();
 
 @override String get value => 'auto';
@@ -350,7 +350,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class CreateImageRequestModeration$Unknown extends CreateImageRequestModeration {const CreateImageRequestModeration$Unknown(this.value);
 
 @override final String value;
@@ -360,15 +360,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.
 sealed class Style {const Style();
 
-factory Style.fromJson(String json) { return switch (json) {
+factory Style.fromJson(String json) {return switch (json) {
   'vivid' => vivid,
   'natural' => natural,
   _ => Style$Unknown(json),
-}; }
+};}
 
 static const Style vivid = Style$vivid._();
 
@@ -377,30 +377,30 @@ static const Style natural = Style$natural._();
 static const List<Style> values = [vivid, natural];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'vivid' => 'vivid',
   'natural' => 'natural',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Style$Unknown; } 
+bool get isUnknown {return this is Style$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() vivid, required W Function() natural, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() vivid, required W Function() natural, required W Function(String value) $unknown, }) {return switch (this) {
       Style$vivid() => vivid(),
       Style$natural() => natural(),
       Style$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? vivid, W Function()? natural, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? vivid, W Function()? natural, W Function(String value)? $unknown, }) {return switch (this) {
       Style$vivid() => vivid != null ? vivid() : orElse(value),
       Style$natural() => natural != null ? natural() : orElse(value),
       Style$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Style($value)';
 
- }
+}
 @immutable final class Style$vivid extends Style {const Style$vivid._();
 
 @override String get value => 'vivid';
@@ -409,7 +409,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vivid, W
 
 @override int get hashCode => 'vivid'.hashCode;
 
- }
+}
 @immutable final class Style$natural extends Style {const Style$natural._();
 
 @override String get value => 'natural';
@@ -418,7 +418,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vivid, W
 
 @override int get hashCode => 'natural'.hashCode;
 
- }
+}
 @immutable final class Style$Unknown extends Style {const Style$Unknown(this.value);
 
 @override final String value;
@@ -428,10 +428,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vivid, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CreateImageRequest {const CreateImageRequest({required this.prompt, this.model = const Omittable.absent(), this.n = const Omittable.absent(), this.quality = const Omittable.absent(), this.responseFormat = const Omittable.absent(), this.outputFormat = const Omittable.absent(), this.outputCompression = const Omittable.absent(), this.stream = const Omittable.absent(), this.partialImages = const Omittable.absent(), this.size = const Omittable.absent(), this.moderation = const Omittable.absent(), this.background = const Omittable.absent(), this.style = const Omittable.absent(), this.user, });
 
-factory CreateImageRequest.fromJson(Map<String, dynamic> json) { return CreateImageRequest(
+factory CreateImageRequest.fromJson(Map<String, dynamic> json) {return CreateImageRequest(
   prompt: json['prompt'] as String,
   model: json.containsKey('model') ? Omittable(json['model'] != null ? CreateImageRequestModel.fromJson(json['model']) : null) : const Omittable.absent(),
   n: json.containsKey('n') ? Omittable(json['n'] != null ? (json['n'] as num).toInt() : null) : const Omittable.absent(),
@@ -446,7 +446,7 @@ factory CreateImageRequest.fromJson(Map<String, dynamic> json) { return CreateIm
   background: json.containsKey('background') ? Omittable(json['background'] != null ? CreateImageEditRequestBackground.fromJson(json['background'] as String) : null) : const Omittable.absent(),
   style: json.containsKey('style') ? Omittable(json['style'] != null ? Style.fromJson(json['style'] as String) : null) : const Omittable.absent(),
   user: json['user'] as String?,
-); }
+);}
 
 /// A text description of the desired image(s). The maximum length is 32000 characters for the GPT image models, 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.
 /// 
@@ -562,7 +562,7 @@ CreateImageEditRequestBackground? get backgroundOrDefault => background.valueOr(
 /// The value of `style`, or its schema default when absent.
 Style? get styleOrDefault => style.valueOr(Style.fromJson('vivid'));
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'prompt': prompt,
   if (model.isPresent) 'model': model.value?.toJson(),
   if (n.isPresent) 'n': n.value,
@@ -577,17 +577,17 @@ Map<String, dynamic> toJson() { return {
   if (background.isPresent) 'background': background.value?.toJson(),
   if (style.isPresent) 'style': style.value?.toJson(),
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final n$ = n.value;
 if (n$ != null) {
   if (n$ < 1) { errors.add('n: must be >= 1'); }
   if (n$ > 10) { errors.add('n: must be <= 10'); }
 }
-return errors; } 
-CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>? model, Omittable<int?>? n, Omittable<CreateImageRequestQuality?>? quality, Omittable<CreateImageRequestResponseFormat?>? responseFormat, Omittable<CreateImageEditRequestOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, Omittable<CreateImageRequestSize?>? size, Omittable<CreateImageRequestModeration?>? moderation, Omittable<CreateImageEditRequestBackground?>? background, Omittable<Style?>? style, String? Function()? user, }) { return CreateImageRequest(
+return errors;}
+CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>? model, Omittable<int?>? n, Omittable<CreateImageRequestQuality?>? quality, Omittable<CreateImageRequestResponseFormat?>? responseFormat, Omittable<CreateImageEditRequestOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, Omittable<CreateImageRequestSize?>? size, Omittable<CreateImageRequestModeration?>? moderation, Omittable<CreateImageEditRequestBackground?>? background, Omittable<Style?>? style, String? Function()? user, }) {return CreateImageRequest(
   prompt: prompt ?? this.prompt,
   model: model ?? this.model,
   n: n ?? this.n,
@@ -602,7 +602,7 @@ CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>
   background: background ?? this.background,
   style: style ?? this.style,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateImageRequest &&
           prompt == other.prompt &&
@@ -624,4 +624,4 @@ CreateImageRequest copyWith({String? prompt, Omittable<CreateImageRequestModel?>
 
 @override String toString() => 'CreateImageRequest(\n  prompt: $prompt,\n  model: $model,\n  n: $n,\n  quality: $quality,\n  responseFormat: $responseFormat,\n  outputFormat: $outputFormat,\n  outputCompression: $outputCompression,\n  stream: $stream,\n  partialImages: $partialImages,\n  size: $size,\n  moderation: $moderation,\n  background: $background,\n  style: $style,\n  user: $user,\n)';
 
- }
+}

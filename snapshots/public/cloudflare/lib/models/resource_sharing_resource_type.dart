@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource Type.
 sealed class ResourceSharingResourceType {const ResourceSharingResourceType();
 
-factory ResourceSharingResourceType.fromJson(String json) { return switch (json) {
+factory ResourceSharingResourceType.fromJson(String json) {return switch (json) {
   'custom-ruleset' => customRuleset,
   'widget' => widget,
   'gateway-policy' => gatewayPolicy,
@@ -12,7 +12,7 @@ factory ResourceSharingResourceType.fromJson(String json) { return switch (json)
   'gateway-block-page-settings' => gatewayBlockPageSettings,
   'gateway-extended-email-matching' => gatewayExtendedEmailMatching,
   _ => ResourceSharingResourceType$Unknown(json),
-}; }
+};}
 
 static const ResourceSharingResourceType customRuleset = ResourceSharingResourceType$customRuleset._();
 
@@ -29,9 +29,9 @@ static const ResourceSharingResourceType gatewayExtendedEmailMatching = Resource
 static const List<ResourceSharingResourceType> values = [customRuleset, widget, gatewayPolicy, gatewayDestinationIp, gatewayBlockPageSettings, gatewayExtendedEmailMatching];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'custom-ruleset' => 'customRuleset',
   'widget' => 'widget',
   'gateway-policy' => 'gatewayPolicy',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'gateway-block-page-settings' => 'gatewayBlockPageSettings',
   'gateway-extended-email-matching' => 'gatewayExtendedEmailMatching',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResourceSharingResourceType$Unknown; } 
+bool get isUnknown {return this is ResourceSharingResourceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customRuleset, required W Function() widget, required W Function() gatewayPolicy, required W Function() gatewayDestinationIp, required W Function() gatewayBlockPageSettings, required W Function() gatewayExtendedEmailMatching, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customRuleset, required W Function() widget, required W Function() gatewayPolicy, required W Function() gatewayDestinationIp, required W Function() gatewayBlockPageSettings, required W Function() gatewayExtendedEmailMatching, required W Function(String value) $unknown, }) {return switch (this) {
       ResourceSharingResourceType$customRuleset() => customRuleset(),
       ResourceSharingResourceType$widget() => widget(),
       ResourceSharingResourceType$gatewayPolicy() => gatewayPolicy(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() customRuleset, required W Function() widget, re
       ResourceSharingResourceType$gatewayBlockPageSettings() => gatewayBlockPageSettings(),
       ResourceSharingResourceType$gatewayExtendedEmailMatching() => gatewayExtendedEmailMatching(),
       ResourceSharingResourceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRuleset, W Function()? widget, W Function()? gatewayPolicy, W Function()? gatewayDestinationIp, W Function()? gatewayBlockPageSettings, W Function()? gatewayExtendedEmailMatching, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRuleset, W Function()? widget, W Function()? gatewayPolicy, W Function()? gatewayDestinationIp, W Function()? gatewayBlockPageSettings, W Function()? gatewayExtendedEmailMatching, W Function(String value)? $unknown, }) {return switch (this) {
       ResourceSharingResourceType$customRuleset() => customRuleset != null ? customRuleset() : orElse(value),
       ResourceSharingResourceType$widget() => widget != null ? widget() : orElse(value),
       ResourceSharingResourceType$gatewayPolicy() => gatewayPolicy != null ? gatewayPolicy() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRu
       ResourceSharingResourceType$gatewayBlockPageSettings() => gatewayBlockPageSettings != null ? gatewayBlockPageSettings() : orElse(value),
       ResourceSharingResourceType$gatewayExtendedEmailMatching() => gatewayExtendedEmailMatching != null ? gatewayExtendedEmailMatching() : orElse(value),
       ResourceSharingResourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResourceSharingResourceType($value)';
 
- }
+}
 @immutable final class ResourceSharingResourceType$customRuleset extends ResourceSharingResourceType {const ResourceSharingResourceType$customRuleset._();
 
 @override String get value => 'custom-ruleset';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRu
 
 @override int get hashCode => 'custom-ruleset'.hashCode;
 
- }
+}
 @immutable final class ResourceSharingResourceType$widget extends ResourceSharingResourceType {const ResourceSharingResourceType$widget._();
 
 @override String get value => 'widget';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRu
 
 @override int get hashCode => 'widget'.hashCode;
 
- }
+}
 @immutable final class ResourceSharingResourceType$gatewayPolicy extends ResourceSharingResourceType {const ResourceSharingResourceType$gatewayPolicy._();
 
 @override String get value => 'gateway-policy';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRu
 
 @override int get hashCode => 'gateway-policy'.hashCode;
 
- }
+}
 @immutable final class ResourceSharingResourceType$gatewayDestinationIp extends ResourceSharingResourceType {const ResourceSharingResourceType$gatewayDestinationIp._();
 
 @override String get value => 'gateway-destination-ip';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRu
 
 @override int get hashCode => 'gateway-destination-ip'.hashCode;
 
- }
+}
 @immutable final class ResourceSharingResourceType$gatewayBlockPageSettings extends ResourceSharingResourceType {const ResourceSharingResourceType$gatewayBlockPageSettings._();
 
 @override String get value => 'gateway-block-page-settings';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRu
 
 @override int get hashCode => 'gateway-block-page-settings'.hashCode;
 
- }
+}
 @immutable final class ResourceSharingResourceType$gatewayExtendedEmailMatching extends ResourceSharingResourceType {const ResourceSharingResourceType$gatewayExtendedEmailMatching._();
 
 @override String get value => 'gateway-extended-email-matching';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRu
 
 @override int get hashCode => 'gateway-extended-email-matching'.hashCode;
 
- }
+}
 @immutable final class ResourceSharingResourceType$Unknown extends ResourceSharingResourceType {const ResourceSharingResourceType$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

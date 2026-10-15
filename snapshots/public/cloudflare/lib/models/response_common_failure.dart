@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_messages2.dart';@immutable final class ResponseCommonFailure {const ResponseCommonFailure({required this.errors, required this.messages, required this.success, });
 
-factory ResponseCommonFailure.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure(
+factory ResponseCommonFailure.fromJson(Map<String, dynamic> json) {return ResponseCommonFailure(
   errors: (json['errors'] as List<dynamic>).map((e) => AaaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AaaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 /// Example: `[{code: 7003, message: No route for the URI}]`
 final List<AaaMessages2> errors;
@@ -19,19 +19,19 @@ final List<AaaMessages2> messages;
 /// Example: `false`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure copyWith({List<AaaMessages2>? errors, List<AaaMessages2>? messages, bool? success, }) { return ResponseCommonFailure(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommonFailure copyWith({List<AaaMessages2>? errors, List<AaaMessages2>? messages, bool? success, }) {return ResponseCommonFailure(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommonFailure &&
           listEquals(errors, other.errors) &&
@@ -42,4 +42,4 @@ ResponseCommonFailure copyWith({List<AaaMessages2>? errors, List<AaaMessages2>? 
 
 @override String toString() => 'ResponseCommonFailure(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

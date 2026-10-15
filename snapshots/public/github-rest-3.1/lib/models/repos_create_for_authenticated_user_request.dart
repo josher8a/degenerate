@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';@immutable final class ReposCreateForAuthenticatedUserRequest {const ReposCreateForAuthenticatedUserRequest({required this.name, this.description, this.homepage, this.private, this.hasIssues, this.hasProjects, this.hasWiki, this.hasDiscussions, this.teamId, this.autoInit, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge, this.allowMergeCommit, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.hasDownloads, this.isTemplate, });
 
-factory ReposCreateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return ReposCreateForAuthenticatedUserRequest(
+factory ReposCreateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) {return ReposCreateForAuthenticatedUserRequest(
   name: json['name'] as String,
   description: json['description'] as String?,
   homepage: json['homepage'] as String?,
@@ -27,7 +27,7 @@ factory ReposCreateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> jso
   mergeCommitMessage: json['merge_commit_message'] != null ? MergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
   hasDownloads: json['has_downloads'] as bool?,
   isTemplate: json['is_template'] as bool?,
-); }
+);}
 
 /// The name of the repository.
 final String name;
@@ -155,7 +155,7 @@ bool get hasDownloadsOrDefault => hasDownloads ?? true;
 /// The value of `isTemplate`, or its schema default when absent.
 bool get isTemplateOrDefault => isTemplate ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': ?description,
   'homepage': ?homepage,
@@ -179,9 +179,9 @@ Map<String, dynamic> toJson() { return {
   if (mergeCommitMessage != null) 'merge_commit_message': mergeCommitMessage?.toJson(),
   'has_downloads': ?hasDownloads,
   'is_template': ?isTemplate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ReposCreateForAuthenticatedUserRequest copyWith({String? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasDiscussions, int? Function()? teamId, bool? Function()? autoInit, String? Function()? gitignoreTemplate, String? Function()? licenseTemplate, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? hasDownloads, bool? Function()? isTemplate, }) { return ReposCreateForAuthenticatedUserRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+ReposCreateForAuthenticatedUserRequest copyWith({String? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasDiscussions, int? Function()? teamId, bool? Function()? autoInit, String? Function()? gitignoreTemplate, String? Function()? licenseTemplate, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, SquashMergeCommitTitle? Function()? squashMergeCommitTitle, SquashMergeCommitMessage? Function()? squashMergeCommitMessage, MergeCommitTitle? Function()? mergeCommitTitle, MergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? hasDownloads, bool? Function()? isTemplate, }) {return ReposCreateForAuthenticatedUserRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,
@@ -205,7 +205,7 @@ ReposCreateForAuthenticatedUserRequest copyWith({String? name, String? Function(
   mergeCommitMessage: mergeCommitMessage != null ? mergeCommitMessage() : this.mergeCommitMessage,
   hasDownloads: hasDownloads != null ? hasDownloads() : this.hasDownloads,
   isTemplate: isTemplate != null ? isTemplate() : this.isTemplate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateForAuthenticatedUserRequest &&
           name == other.name &&
@@ -236,4 +236,4 @@ ReposCreateForAuthenticatedUserRequest copyWith({String? name, String? Function(
 
 @override String toString() => 'ReposCreateForAuthenticatedUserRequest(\n  name: $name,\n  description: $description,\n  homepage: $homepage,\n  private: $private,\n  hasIssues: $hasIssues,\n  hasProjects: $hasProjects,\n  hasWiki: $hasWiki,\n  hasDiscussions: $hasDiscussions,\n  teamId: $teamId,\n  autoInit: $autoInit,\n  gitignoreTemplate: $gitignoreTemplate,\n  licenseTemplate: $licenseTemplate,\n  allowSquashMerge: $allowSquashMerge,\n  allowMergeCommit: $allowMergeCommit,\n  allowRebaseMerge: $allowRebaseMerge,\n  allowAutoMerge: $allowAutoMerge,\n  deleteBranchOnMerge: $deleteBranchOnMerge,\n  squashMergeCommitTitle: $squashMergeCommitTitle,\n  squashMergeCommitMessage: $squashMergeCommitMessage,\n  mergeCommitTitle: $mergeCommitTitle,\n  mergeCommitMessage: $mergeCommitMessage,\n  hasDownloads: $hasDownloads,\n  isTemplate: $isTemplate,\n)';
 
- }
+}

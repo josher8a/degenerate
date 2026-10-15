@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The category of the bot.
 sealed class RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory();
 
-factory RadarGetBotsTimeseriesBotCategory.fromJson(String json) { return switch (json) {
+factory RadarGetBotsTimeseriesBotCategory.fromJson(String json) {return switch (json) {
   'SEARCH_ENGINE_CRAWLER' => searchEngineCrawler,
   'SEARCH_ENGINE_OPTIMIZATION' => searchEngineOptimization,
   'MONITORING_AND_ANALYTICS' => monitoringAndAnalytics,
@@ -22,7 +22,7 @@ factory RadarGetBotsTimeseriesBotCategory.fromJson(String json) { return switch 
   'AI_SEARCH' => aiSearch,
   'ARCHIVER' => archiver,
   _ => RadarGetBotsTimeseriesBotCategory$Unknown(json),
-}; }
+};}
 
 static const RadarGetBotsTimeseriesBotCategory searchEngineCrawler = RadarGetBotsTimeseriesBotCategory$searchEngineCrawler._();
 
@@ -59,9 +59,9 @@ static const RadarGetBotsTimeseriesBotCategory archiver = RadarGetBotsTimeseries
 static const List<RadarGetBotsTimeseriesBotCategory> values = [searchEngineCrawler, searchEngineOptimization, monitoringAndAnalytics, advertisingAndMarketing, socialMediaMarketing, pagePreview, academicResearch, security, accessibility, webhooks, feedFetcher, aiCrawler, aggregator, aiAssistant, aiSearch, archiver];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'SEARCH_ENGINE_CRAWLER' => 'searchEngineCrawler',
   'SEARCH_ENGINE_OPTIMIZATION' => 'searchEngineOptimization',
   'MONITORING_AND_ANALYTICS' => 'monitoringAndAnalytics',
@@ -79,11 +79,11 @@ String get name { return switch (value) {
   'AI_SEARCH' => 'aiSearch',
   'ARCHIVER' => 'archiver',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetBotsTimeseriesBotCategory$Unknown; } 
+bool get isUnknown {return this is RadarGetBotsTimeseriesBotCategory$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() searchEngineCrawler, required W Function() searchEngineOptimization, required W Function() monitoringAndAnalytics, required W Function() advertisingAndMarketing, required W Function() socialMediaMarketing, required W Function() pagePreview, required W Function() academicResearch, required W Function() security, required W Function() accessibility, required W Function() webhooks, required W Function() feedFetcher, required W Function() aiCrawler, required W Function() aggregator, required W Function() aiAssistant, required W Function() aiSearch, required W Function() archiver, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() searchEngineCrawler, required W Function() searchEngineOptimization, required W Function() monitoringAndAnalytics, required W Function() advertisingAndMarketing, required W Function() socialMediaMarketing, required W Function() pagePreview, required W Function() academicResearch, required W Function() security, required W Function() accessibility, required W Function() webhooks, required W Function() feedFetcher, required W Function() aiCrawler, required W Function() aggregator, required W Function() aiAssistant, required W Function() aiSearch, required W Function() archiver, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetBotsTimeseriesBotCategory$searchEngineCrawler() => searchEngineCrawler(),
       RadarGetBotsTimeseriesBotCategory$searchEngineOptimization() => searchEngineOptimization(),
       RadarGetBotsTimeseriesBotCategory$monitoringAndAnalytics() => monitoringAndAnalytics(),
@@ -101,9 +101,9 @@ W when<W>({required W Function() searchEngineCrawler, required W Function() sear
       RadarGetBotsTimeseriesBotCategory$aiSearch() => aiSearch(),
       RadarGetBotsTimeseriesBotCategory$archiver() => archiver(),
       RadarGetBotsTimeseriesBotCategory$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEngineCrawler, W Function()? searchEngineOptimization, W Function()? monitoringAndAnalytics, W Function()? advertisingAndMarketing, W Function()? socialMediaMarketing, W Function()? pagePreview, W Function()? academicResearch, W Function()? security, W Function()? accessibility, W Function()? webhooks, W Function()? feedFetcher, W Function()? aiCrawler, W Function()? aggregator, W Function()? aiAssistant, W Function()? aiSearch, W Function()? archiver, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEngineCrawler, W Function()? searchEngineOptimization, W Function()? monitoringAndAnalytics, W Function()? advertisingAndMarketing, W Function()? socialMediaMarketing, W Function()? pagePreview, W Function()? academicResearch, W Function()? security, W Function()? accessibility, W Function()? webhooks, W Function()? feedFetcher, W Function()? aiCrawler, W Function()? aggregator, W Function()? aiAssistant, W Function()? aiSearch, W Function()? archiver, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetBotsTimeseriesBotCategory$searchEngineCrawler() => searchEngineCrawler != null ? searchEngineCrawler() : orElse(value),
       RadarGetBotsTimeseriesBotCategory$searchEngineOptimization() => searchEngineOptimization != null ? searchEngineOptimization() : orElse(value),
       RadarGetBotsTimeseriesBotCategory$monitoringAndAnalytics() => monitoringAndAnalytics != null ? monitoringAndAnalytics() : orElse(value),
@@ -121,10 +121,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
       RadarGetBotsTimeseriesBotCategory$aiSearch() => aiSearch != null ? aiSearch() : orElse(value),
       RadarGetBotsTimeseriesBotCategory$archiver() => archiver != null ? archiver() : orElse(value),
       RadarGetBotsTimeseriesBotCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetBotsTimeseriesBotCategory($value)';
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$searchEngineCrawler extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$searchEngineCrawler._();
 
 @override String get value => 'SEARCH_ENGINE_CRAWLER';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'SEARCH_ENGINE_CRAWLER'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$searchEngineOptimization extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$searchEngineOptimization._();
 
 @override String get value => 'SEARCH_ENGINE_OPTIMIZATION';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'SEARCH_ENGINE_OPTIMIZATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$monitoringAndAnalytics extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$monitoringAndAnalytics._();
 
 @override String get value => 'MONITORING_AND_ANALYTICS';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'MONITORING_AND_ANALYTICS'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$advertisingAndMarketing extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$advertisingAndMarketing._();
 
 @override String get value => 'ADVERTISING_AND_MARKETING';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'ADVERTISING_AND_MARKETING'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$socialMediaMarketing extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$socialMediaMarketing._();
 
 @override String get value => 'SOCIAL_MEDIA_MARKETING';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'SOCIAL_MEDIA_MARKETING'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$pagePreview extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$pagePreview._();
 
 @override String get value => 'PAGE_PREVIEW';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'PAGE_PREVIEW'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$academicResearch extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$academicResearch._();
 
 @override String get value => 'ACADEMIC_RESEARCH';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'ACADEMIC_RESEARCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$security extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$security._();
 
 @override String get value => 'SECURITY';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'SECURITY'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$accessibility extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$accessibility._();
 
 @override String get value => 'ACCESSIBILITY';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'ACCESSIBILITY'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$webhooks extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$webhooks._();
 
 @override String get value => 'WEBHOOKS';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'WEBHOOKS'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$feedFetcher extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$feedFetcher._();
 
 @override String get value => 'FEED_FETCHER';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'FEED_FETCHER'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$aiCrawler extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$aiCrawler._();
 
 @override String get value => 'AI_CRAWLER';
@@ -232,7 +232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'AI_CRAWLER'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$aggregator extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$aggregator._();
 
 @override String get value => 'AGGREGATOR';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'AGGREGATOR'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$aiAssistant extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$aiAssistant._();
 
 @override String get value => 'AI_ASSISTANT';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'AI_ASSISTANT'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$aiSearch extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$aiSearch._();
 
 @override String get value => 'AI_SEARCH';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'AI_SEARCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$archiver extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$archiver._();
 
 @override String get value => 'ARCHIVER';
@@ -268,7 +268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => 'ARCHIVER'.hashCode;
 
- }
+}
 @immutable final class RadarGetBotsTimeseriesBotCategory$Unknown extends RadarGetBotsTimeseriesBotCategory {const RadarGetBotsTimeseriesBotCategory$Unknown(this.value);
 
 @override final String value;
@@ -278,4 +278,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEn
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindTextBlob {const WorkersBindingKindTextBlob({required this.name, required this.$part, required this.type, });
 
-factory WorkersBindingKindTextBlob.fromJson(Map<String, dynamic> json) { return WorkersBindingKindTextBlob(
+factory WorkersBindingKindTextBlob.fromJson(Map<String, dynamic> json) {return WorkersBindingKindTextBlob(
   name: WorkersBindingName.fromJson(json['name'] as String),
   $part: json['part'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final WorkersBindingName name;
 
@@ -19,19 +19,19 @@ final String $part;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
   'part': $part,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('part') && json['part'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindTextBlob copyWith({WorkersBindingName? name, String? $part, String? type, }) { return WorkersBindingKindTextBlob(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindTextBlob copyWith({WorkersBindingName? name, String? $part, String? type, }) {return WorkersBindingKindTextBlob(
   name: name ?? this.name,
   $part: $part ?? this.$part,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindTextBlob &&
           name == other.name &&
@@ -42,4 +42,4 @@ WorkersBindingKindTextBlob copyWith({WorkersBindingName? name, String? $part, St
 
 @override String toString() => 'WorkersBindingKindTextBlob(name: $name, \$part: ${$part}, type: $type)';
 
- }
+}

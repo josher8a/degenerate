@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/object_detection/box.dart';@immutable final class ObjectDetection2 {const ObjectDetection2({this.box, this.label, this.score, });
 
-factory ObjectDetection2.fromJson(Map<String, dynamic> json) { return ObjectDetection2(
+factory ObjectDetection2.fromJson(Map<String, dynamic> json) {return ObjectDetection2(
   box: json['box'] != null ? Box.fromJson(json['box'] as Map<String, dynamic>) : null,
   label: json['label'] as String?,
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
-); }
+);}
 
 /// Coordinates defining the bounding box around the detected object
 final Box? box;
@@ -18,17 +18,17 @@ final String? label;
 /// Confidence score indicating the likelihood that the detection is correct
 final double? score;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (box != null) 'box': box?.toJson(),
   'label': ?label,
   'score': ?score,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'box', 'label', 'score'}.contains(key)); } 
-ObjectDetection2 copyWith({Box? Function()? box, String? Function()? label, double? Function()? score, }) { return ObjectDetection2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'box', 'label', 'score'}.contains(key));}
+ObjectDetection2 copyWith({Box? Function()? box, String? Function()? label, double? Function()? score, }) {return ObjectDetection2(
   box: box != null ? box() : this.box,
   label: label != null ? label() : this.label,
   score: score != null ? score() : this.score,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ObjectDetection2 &&
           box == other.box &&
@@ -39,4 +39,4 @@ ObjectDetection2 copyWith({Box? Function()? box, String? Function()? label, doub
 
 @override String toString() => 'ObjectDetection2(box: $box, label: $label, score: $score)';
 
- }
+}

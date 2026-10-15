@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_variant_never_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/images_image_variant_options.dart';@immutable final class ImagesImageVariantPatchRequest {const ImagesImageVariantPatchRequest({required this.options, this.neverRequireSignedUrLs, });
 
-factory ImagesImageVariantPatchRequest.fromJson(Map<String, dynamic> json) { return ImagesImageVariantPatchRequest(
+factory ImagesImageVariantPatchRequest.fromJson(Map<String, dynamic> json) {return ImagesImageVariantPatchRequest(
   neverRequireSignedUrLs: json['neverRequireSignedURLs'] != null ? ImagesImageVariantNeverRequireSignedUrLs.fromJson(json['neverRequireSignedURLs'] as bool) : null,
   options: ImagesImageVariantOptions.fromJson(json['options'] as Map<String, dynamic>),
-); }
+);}
 
 /// Indicates whether the variant can access an image without a signature, regardless of image access control.
 final ImagesImageVariantNeverRequireSignedUrLs? neverRequireSignedUrLs;
 
 final ImagesImageVariantOptions options;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (neverRequireSignedUrLs != null) 'neverRequireSignedURLs': neverRequireSignedUrLs?.toJson(),
   'options': options.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('options'); } 
-ImagesImageVariantPatchRequest copyWith({ImagesImageVariantNeverRequireSignedUrLs? Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) { return ImagesImageVariantPatchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('options');}
+ImagesImageVariantPatchRequest copyWith({ImagesImageVariantNeverRequireSignedUrLs? Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) {return ImagesImageVariantPatchRequest(
   neverRequireSignedUrLs: neverRequireSignedUrLs != null ? neverRequireSignedUrLs() : this.neverRequireSignedUrLs,
   options: options ?? this.options,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageVariantPatchRequest &&
           neverRequireSignedUrLs == other.neverRequireSignedUrLs &&
@@ -31,4 +31,4 @@ ImagesImageVariantPatchRequest copyWith({ImagesImageVariantNeverRequireSignedUrL
 
 @override String toString() => 'ImagesImageVariantPatchRequest(neverRequireSignedUrLs: $neverRequireSignedUrLs, options: $options)';
 
- }
+}

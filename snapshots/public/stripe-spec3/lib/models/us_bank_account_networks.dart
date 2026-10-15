@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Supported {const Supported();
 
-factory Supported.fromJson(String json) { return switch (json) {
+factory Supported.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
   _ => Supported$Unknown(json),
-}; }
+};}
 
 static const Supported ach = Supported$ach._();
 
@@ -16,30 +16,30 @@ static const Supported usDomesticWire = Supported$usDomesticWire._();
 static const List<Supported> values = [ach, usDomesticWire];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ach' => 'ach',
   'us_domestic_wire' => 'usDomesticWire',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Supported$Unknown; } 
+bool get isUnknown {return this is Supported$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ach, required W Function() usDomesticWire, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ach, required W Function() usDomesticWire, required W Function(String value) $unknown, }) {return switch (this) {
       Supported$ach() => ach(),
       Supported$usDomesticWire() => usDomesticWire(),
       Supported$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? usDomesticWire, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? usDomesticWire, W Function(String value)? $unknown, }) {return switch (this) {
       Supported$ach() => ach != null ? ach() : orElse(value),
       Supported$usDomesticWire() => usDomesticWire != null ? usDomesticWire() : orElse(value),
       Supported$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Supported($value)';
 
- }
+}
 @immutable final class Supported$ach extends Supported {const Supported$ach._();
 
 @override String get value => 'ach';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'ach'.hashCode;
 
- }
+}
 @immutable final class Supported$usDomesticWire extends Supported {const Supported$usDomesticWire._();
 
 @override String get value => 'us_domestic_wire';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'us_domestic_wire'.hashCode;
 
- }
+}
 @immutable final class Supported$Unknown extends Supported {const Supported$Unknown(this.value);
 
 @override final String value;
@@ -67,14 +67,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class UsBankAccountNetworks {const UsBankAccountNetworks({required this.supported, this.preferred = const Omittable.absent(), });
 
-factory UsBankAccountNetworks.fromJson(Map<String, dynamic> json) { return UsBankAccountNetworks(
+factory UsBankAccountNetworks.fromJson(Map<String, dynamic> json) {return UsBankAccountNetworks(
   preferred: json.containsKey('preferred') ? Omittable(json['preferred'] as String?) : const Omittable.absent(),
   supported: (json['supported'] as List<dynamic>).map((e) => Supported.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The preferred network.
 final Omittable<String?> preferred;
@@ -82,22 +82,22 @@ final Omittable<String?> preferred;
 /// All supported networks.
 final List<Supported> supported;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (preferred.isPresent) 'preferred': preferred.value,
   'supported': supported.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('supported');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final preferred$ = preferred.value;
 if (preferred$ != null) {
   if (preferred$.runes.length > 5000) { errors.add('preferred: length must be <= 5000'); }
 }
-return errors; } 
-UsBankAccountNetworks copyWith({Omittable<String?>? preferred, List<Supported>? supported, }) { return UsBankAccountNetworks(
+return errors;}
+UsBankAccountNetworks copyWith({Omittable<String?>? preferred, List<Supported>? supported, }) {return UsBankAccountNetworks(
   preferred: preferred ?? this.preferred,
   supported: supported ?? this.supported,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsBankAccountNetworks &&
           preferred == other.preferred &&
@@ -107,4 +107,4 @@ UsBankAccountNetworks copyWith({Omittable<String?>? preferred, List<Supported>? 
 
 @override String toString() => 'UsBankAccountNetworks(preferred: $preferred, supported: $supported)';
 
- }
+}

@@ -5,26 +5,26 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ChatCompletionTool {const ChatCompletionTool({required this.type, required this.function, });
 
-factory ChatCompletionTool.fromJson(Map<String, dynamic> json) { return ChatCompletionTool(
+factory ChatCompletionTool.fromJson(Map<String, dynamic> json) {return ChatCompletionTool(
   type: AssistantToolsFunctionType.fromJson(json['type'] as String),
   function: FunctionObject.fromJson(json['function'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the tool. Currently, only `function` is supported.
 final AssistantToolsFunctionType type;
 
 final FunctionObject function;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'function': function.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'function' &&
-      json.containsKey('function'); } 
-ChatCompletionTool copyWith({AssistantToolsFunctionType? type, FunctionObject? function, }) { return ChatCompletionTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'function' &&
+      json.containsKey('function');}
+ChatCompletionTool copyWith({AssistantToolsFunctionType? type, FunctionObject? function, }) {return ChatCompletionTool(
   type: type ?? this.type,
   function: function ?? this.function,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionTool &&
           type == other.type &&
@@ -34,4 +34,4 @@ ChatCompletionTool copyWith({AssistantToolsFunctionType? type, FunctionObject? f
 
 @override String toString() => 'ChatCompletionTool(type: $type, function: $function)';
 
- }
+}

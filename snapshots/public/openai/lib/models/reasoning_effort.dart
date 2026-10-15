@@ -14,7 +14,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains effor
 /// 
 sealed class ReasoningEffort {const ReasoningEffort();
 
-factory ReasoningEffort.fromJson(String json) { return switch (json) {
+factory ReasoningEffort.fromJson(String json) {return switch (json) {
   'none' => none,
   'minimal' => minimal,
   'low' => low,
@@ -22,7 +22,7 @@ factory ReasoningEffort.fromJson(String json) { return switch (json) {
   'high' => high,
   'xhigh' => xhigh,
   _ => ReasoningEffort$Unknown(json),
-}; }
+};}
 
 static const ReasoningEffort none = ReasoningEffort$none._();
 
@@ -39,9 +39,9 @@ static const ReasoningEffort xhigh = ReasoningEffort$xhigh._();
 static const List<ReasoningEffort> values = [none, minimal, low, medium, high, xhigh];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'minimal' => 'minimal',
   'low' => 'low',
@@ -49,11 +49,11 @@ String get name { return switch (value) {
   'high' => 'high',
   'xhigh' => 'xhigh',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReasoningEffort$Unknown; } 
+bool get isUnknown {return this is ReasoningEffort$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() minimal, required W Function() low, required W Function() medium, required W Function() high, required W Function() xhigh, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() minimal, required W Function() low, required W Function() medium, required W Function() high, required W Function() xhigh, required W Function(String value) $unknown, }) {return switch (this) {
       ReasoningEffort$none() => none(),
       ReasoningEffort$minimal() => minimal(),
       ReasoningEffort$low() => low(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() none, required W Function() minimal, required W
       ReasoningEffort$high() => high(),
       ReasoningEffort$xhigh() => xhigh(),
       ReasoningEffort$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? minimal, W Function()? low, W Function()? medium, W Function()? high, W Function()? xhigh, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? minimal, W Function()? low, W Function()? medium, W Function()? high, W Function()? xhigh, W Function(String value)? $unknown, }) {return switch (this) {
       ReasoningEffort$none() => none != null ? none() : orElse(value),
       ReasoningEffort$minimal() => minimal != null ? minimal() : orElse(value),
       ReasoningEffort$low() => low != null ? low() : orElse(value),
@@ -71,10 +71,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
       ReasoningEffort$high() => high != null ? high() : orElse(value),
       ReasoningEffort$xhigh() => xhigh != null ? xhigh() : orElse(value),
       ReasoningEffort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReasoningEffort($value)';
 
- }
+}
 @immutable final class ReasoningEffort$none extends ReasoningEffort {const ReasoningEffort$none._();
 
 @override String get value => 'none';
@@ -83,7 +83,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class ReasoningEffort$minimal extends ReasoningEffort {const ReasoningEffort$minimal._();
 
 @override String get value => 'minimal';
@@ -92,7 +92,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'minimal'.hashCode;
 
- }
+}
 @immutable final class ReasoningEffort$low extends ReasoningEffort {const ReasoningEffort$low._();
 
 @override String get value => 'low';
@@ -101,7 +101,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class ReasoningEffort$medium extends ReasoningEffort {const ReasoningEffort$medium._();
 
 @override String get value => 'medium';
@@ -110,7 +110,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'medium'.hashCode;
 
- }
+}
 @immutable final class ReasoningEffort$high extends ReasoningEffort {const ReasoningEffort$high._();
 
 @override String get value => 'high';
@@ -119,7 +119,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class ReasoningEffort$xhigh extends ReasoningEffort {const ReasoningEffort$xhigh._();
 
 @override String get value => 'xhigh';
@@ -128,7 +128,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'xhigh'.hashCode;
 
- }
+}
 @immutable final class ReasoningEffort$Unknown extends ReasoningEffort {const ReasoningEffort$Unknown(this.value);
 
 @override final String value;
@@ -138,4 +138,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

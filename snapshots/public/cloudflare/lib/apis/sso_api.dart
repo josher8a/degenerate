@@ -12,7 +12,7 @@ final class SsoApi with ApiExecutor {const SsoApi(this.apiConfig);
 /// Get all SSO connectors
 ///
 /// `GET /accounts/{account_id}/sso_connectors`
-Future<ApiResult<List<IamSsoConnector>?, TokensCreateTokenError>> getAllSsoConnectors({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IamSsoConnector>?, TokensCreateTokenError>> getAllSsoConnectors({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,11 +29,11 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Initialize new SSO connector
 ///
 /// `POST /accounts/{account_id}/sso_connectors`
-Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> initNewSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, InitNewSsoConnectorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> initNewSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, InitNewSsoConnectorRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,11 +52,11 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Get single SSO connector
 ///
 /// `GET /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> getSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> getSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -73,11 +73,11 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Update SSO connector state
 ///
 /// `PATCH /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> updateSsoConnectorState({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, UpdateSsoConnectorStateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> updateSsoConnectorState({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, UpdateSsoConnectorStateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,11 +96,11 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Delete SSO connector
 ///
 /// `DELETE /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<ResponseSingleId4Result?, TokensCreateTokenError>> deleteSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, TokensCreateTokenError>> deleteSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -117,11 +117,11 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Begin SSO connector verification
 ///
 /// `POST /accounts/{account_id}/sso_connectors/{sso_connector_id}/begin_verification`
-Future<ApiResult<ResponseCommon35, TokensCreateTokenError>> beginSsoConnectorVerification({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon35, TokensCreateTokenError>> beginSsoConnectorVerification({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -137,5 +137,5 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
- }
+}
+}

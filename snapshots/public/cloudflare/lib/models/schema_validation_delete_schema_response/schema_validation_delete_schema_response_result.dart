@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemaValidationDeleteSchemaResponseResult {const SchemaValidationDeleteSchemaResponseResult({required this.id});
 
-factory SchemaValidationDeleteSchemaResponseResult.fromJson(Map<String, dynamic> json) { return SchemaValidationDeleteSchemaResponseResult(
+factory SchemaValidationDeleteSchemaResponseResult.fromJson(Map<String, dynamic> json) {return SchemaValidationDeleteSchemaResponseResult(
   id: json['id'] as String,
-); }
+);}
 
 /// The ID of the schema that was just deleted
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-SchemaValidationDeleteSchemaResponseResult copyWith({String? id}) { return SchemaValidationDeleteSchemaResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+SchemaValidationDeleteSchemaResponseResult copyWith({String? id}) {return SchemaValidationDeleteSchemaResponseResult(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SchemaValidationDeleteSchemaResponseResult &&
           id == other.id;
@@ -25,4 +25,4 @@ SchemaValidationDeleteSchemaResponseResult copyWith({String? id}) { return Schem
 
 @override String toString() => 'SchemaValidationDeleteSchemaResponseResult(id: $id)';
 
- }
+}

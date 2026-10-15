@@ -12,7 +12,7 @@ final class ProjectsApi with ApiExecutor {const ProjectsApi(this.apiConfig);
 /// Returns a list of projects.
 ///
 /// `GET /organization/projects`
-Future<ApiResult<ProjectListResponse, Never>> listProjects({int? limit, String? after, bool? includeArchived, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ProjectListResponse, Never>> listProjects({int? limit, String? after, bool? includeArchived, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -41,11 +41,11 @@ return await execute(
     return ProjectListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
 ///
 /// `POST /organization/projects`
-Future<ApiResult<Project, Never>> createProject({required ProjectCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Project, Never>> createProject({required ProjectCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,11 +62,11 @@ return await execute(
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieves a project.
 ///
 /// `GET /organization/projects/{project_id}`
-Future<ApiResult<Project, Never>> retrieveProject({required String projectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Project, Never>> retrieveProject({required String projectId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -81,11 +81,11 @@ return await execute(
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Modifies a project in the organization.
 ///
 /// `POST /organization/projects/{project_id}`
-Future<ApiResult<Project, CreateProjectServiceAccountError>> modifyProject({required String projectId, required ProjectUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Project, CreateProjectServiceAccountError>> modifyProject({required String projectId, required ProjectUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,11 +103,11 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
+}
 /// Returns a list of API keys in the project.
 ///
 /// `GET /organization/projects/{project_id}/api_keys`
-Future<ApiResult<KeyListResponse, Never>> listProjectApiKeys({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<KeyListResponse, Never>> listProjectApiKeys({required String projectId, int? limit, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -133,11 +133,11 @@ return await execute(
     return KeyListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieves an API key in the project.
 ///
 /// `GET /organization/projects/{project_id}/api_keys/{key_id}`
-Future<ApiResult<Key3, Never>> retrieveProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Key3, Never>> retrieveProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -152,7 +152,7 @@ return await execute(
     return Key3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Deletes an API key from the project.
 /// 
 /// Returns confirmation of the key deletion, or an error if the key belonged to
@@ -160,7 +160,7 @@ return await execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/api_keys/{key_id}`
-Future<ApiResult<KeyDeleteResponse, CreateProjectServiceAccountError>> deleteProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<KeyDeleteResponse, CreateProjectServiceAccountError>> deleteProjectApiKey({required String projectId, required String keyId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -176,11 +176,11 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
+}
 /// Archives a project in the organization. Archived projects cannot be used or updated.
 ///
 /// `POST /organization/projects/{project_id}/archive`
-Future<ApiResult<Project, Never>> archiveProject({required String projectId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Project, Never>> archiveProject({required String projectId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -195,11 +195,11 @@ return await execute(
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Returns the rate limits per model for a project.
 ///
 /// `GET /organization/projects/{project_id}/rate_limits`
-Future<ApiResult<ProjectRateLimitListResponse, Never>> listProjectRateLimits({required String projectId, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ProjectRateLimitListResponse, Never>> listProjectRateLimits({required String projectId, int? limit, String? after, String? before, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -228,11 +228,11 @@ return await execute(
     return ProjectRateLimitListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Updates a project rate limit.
 ///
 /// `POST /organization/projects/{project_id}/rate_limits/{rate_limit_id}`
-Future<ApiResult<ProjectRateLimit, CreateProjectServiceAccountError>> updateProjectRateLimits({required String projectId, required String rateLimitId, required ProjectRateLimitUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectRateLimit, CreateProjectServiceAccountError>> updateProjectRateLimits({required String projectId, required String rateLimitId, required ProjectRateLimitUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -250,11 +250,11 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
+}
 /// Returns a list of service accounts in the project.
 ///
 /// `GET /organization/projects/{project_id}/service_accounts`
-Future<ApiResult<ProjectServiceAccountListResponse, CreateProjectServiceAccountError>> listProjectServiceAccounts({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ProjectServiceAccountListResponse, CreateProjectServiceAccountError>> listProjectServiceAccounts({required String projectId, int? limit, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -281,11 +281,11 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
+}
 /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
 ///
 /// `POST /organization/projects/{project_id}/service_accounts`
-Future<ApiResult<ProjectServiceAccountCreateResponse, CreateProjectServiceAccountError>> createProjectServiceAccount({required String projectId, required ProjectServiceAccountCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectServiceAccountCreateResponse, CreateProjectServiceAccountError>> createProjectServiceAccount({required String projectId, required ProjectServiceAccountCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -303,11 +303,11 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
+}
 /// Retrieves a service account in the project.
 ///
 /// `GET /organization/projects/{project_id}/service_accounts/{service_account_id}`
-Future<ApiResult<ProjectServiceAccount, Never>> retrieveProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectServiceAccount, Never>> retrieveProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -322,7 +322,7 @@ return await execute(
     return ProjectServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Deletes a service account from the project.
 /// 
 /// Returns confirmation of service account deletion, or an error if the project
@@ -330,7 +330,7 @@ return await execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/service_accounts/{service_account_id}`
-Future<ApiResult<ProjectServiceAccountDeleteResponse, Never>> deleteProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectServiceAccountDeleteResponse, Never>> deleteProjectServiceAccount({required String projectId, required String serviceAccountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -345,11 +345,11 @@ return await execute(
     return ProjectServiceAccountDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Returns a list of users in the project.
 ///
 /// `GET /organization/projects/{project_id}/users`
-Future<ApiResult<ProjectUserListResponse, CreateProjectServiceAccountError>> listProjectUsers({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ProjectUserListResponse, CreateProjectServiceAccountError>> listProjectUsers({required String projectId, int? limit, String? after, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -376,11 +376,11 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
+}
 /// Adds a user to the project. Users must already be members of the organization to be added to a project.
 ///
 /// `POST /organization/projects/{project_id}/users`
-Future<ApiResult<ProjectUser, CreateProjectServiceAccountError>> createProjectUser({required String projectId, required ProjectUserCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectUser, CreateProjectServiceAccountError>> createProjectUser({required String projectId, required ProjectUserCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -398,11 +398,11 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
+}
 /// Retrieves a user in the project.
 ///
 /// `GET /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUser, Never>> retrieveProjectUser({required String projectId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectUser, Never>> retrieveProjectUser({required String projectId, required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -417,11 +417,11 @@ return await execute(
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Modifies a user's role in the project.
 ///
 /// `POST /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUser, CreateProjectServiceAccountError>> modifyProjectUser({required String projectId, required String userId, required ProjectUserUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectUser, CreateProjectServiceAccountError>> modifyProjectUser({required String projectId, required String userId, required ProjectUserUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -439,7 +439,7 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
+}
 /// Deletes a user from the project.
 /// 
 /// Returns confirmation of project user deletion, or an error if the project is
@@ -447,7 +447,7 @@ return await execute(
 /// 
 ///
 /// `DELETE /organization/projects/{project_id}/users/{user_id}`
-Future<ApiResult<ProjectUserDeleteResponse, CreateProjectServiceAccountError>> deleteProjectUser({required String projectId, required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectUserDeleteResponse, CreateProjectServiceAccountError>> deleteProjectUser({required String projectId, required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -463,5 +463,5 @@ return await execute(
   },
   onError: CreateProjectServiceAccountError.fromResponse,
 );
- } 
- }
+}
+}

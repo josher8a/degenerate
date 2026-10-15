@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group.user.deleted`.
 sealed class GroupUserDeletedResourceObject {const GroupUserDeletedResourceObject();
 
-factory GroupUserDeletedResourceObject.fromJson(String json) { return switch (json) {
+factory GroupUserDeletedResourceObject.fromJson(String json) {return switch (json) {
   'group.user.deleted' => groupUserDeleted,
   _ => GroupUserDeletedResourceObject$Unknown(json),
-}; }
+};}
 
 static const GroupUserDeletedResourceObject groupUserDeleted = GroupUserDeletedResourceObject$groupUserDeleted._();
 
 static const List<GroupUserDeletedResourceObject> values = [groupUserDeleted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'group.user.deleted' => 'groupUserDeleted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GroupUserDeletedResourceObject$Unknown; } 
+bool get isUnknown {return this is GroupUserDeletedResourceObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() groupUserDeleted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() groupUserDeleted, required W Function(String value) $unknown, }) {return switch (this) {
       GroupUserDeletedResourceObject$groupUserDeleted() => groupUserDeleted(),
       GroupUserDeletedResourceObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? groupUserDeleted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? groupUserDeleted, W Function(String value)? $unknown, }) {return switch (this) {
       GroupUserDeletedResourceObject$groupUserDeleted() => groupUserDeleted != null ? groupUserDeleted() : orElse(value),
       GroupUserDeletedResourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GroupUserDeletedResourceObject($value)';
 
- }
+}
 @immutable final class GroupUserDeletedResourceObject$groupUserDeleted extends GroupUserDeletedResourceObject {const GroupUserDeletedResourceObject$groupUserDeleted._();
 
 @override String get value => 'group.user.deleted';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? groupUse
 
 @override int get hashCode => 'group.user.deleted'.hashCode;
 
- }
+}
 @immutable final class GroupUserDeletedResourceObject$Unknown extends GroupUserDeletedResourceObject {const GroupUserDeletedResourceObject$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? groupUse
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Confirmation payload returned after removing a user from a group.
 @immutable final class GroupUserDeletedResource {const GroupUserDeletedResource({required this.object, required this.deleted, });
 
-factory GroupUserDeletedResource.fromJson(Map<String, dynamic> json) { return GroupUserDeletedResource(
+factory GroupUserDeletedResource.fromJson(Map<String, dynamic> json) {return GroupUserDeletedResource(
   object: GroupUserDeletedResourceObject.fromJson(json['object'] as String),
   deleted: json['deleted'] as bool,
-); }
+);}
 
 /// Always `group.user.deleted`.
 final GroupUserDeletedResourceObject object;
@@ -68,16 +68,16 @@ final GroupUserDeletedResourceObject object;
 /// Whether the group membership was removed.
 final bool deleted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'deleted': deleted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
-      json.containsKey('deleted') && json['deleted'] is bool; } 
-GroupUserDeletedResource copyWith({GroupUserDeletedResourceObject? object, bool? deleted, }) { return GroupUserDeletedResource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
+      json.containsKey('deleted') && json['deleted'] is bool;}
+GroupUserDeletedResource copyWith({GroupUserDeletedResourceObject? object, bool? deleted, }) {return GroupUserDeletedResource(
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GroupUserDeletedResource &&
           object == other.object &&
@@ -87,4 +87,4 @@ GroupUserDeletedResource copyWith({GroupUserDeletedResourceObject? object, bool?
 
 @override String toString() => 'GroupUserDeletedResource(object: $object, deleted: $deleted)';
 
- }
+}

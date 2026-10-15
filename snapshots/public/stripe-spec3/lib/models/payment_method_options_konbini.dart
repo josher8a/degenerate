@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentMethodOptionsKonbini {const PaymentMethodOptionsKonbini({this.confirmationNumber = const Omittable.absent(), this.expiresAfterDays = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentMethodOptionsKonbini.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsKonbini(
+factory PaymentMethodOptionsKonbini.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsKonbini(
   confirmationNumber: json.containsKey('confirmation_number') ? Omittable(json['confirmation_number'] as String?) : const Omittable.absent(),
   expiresAfterDays: json.containsKey('expires_after_days') ? Omittable(json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null) : const Omittable.absent(),
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   productDescription: json.containsKey('product_description') ? Omittable(json['product_description'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// An optional 10 to 11 digit numeric-only string determining the confirmation code at applicable convenience stores.
 final Omittable<String?> confirmationNumber;
@@ -33,16 +33,16 @@ final Omittable<String?> productDescription;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (confirmationNumber.isPresent) 'confirmation_number': confirmationNumber.value,
   if (expiresAfterDays.isPresent) 'expires_after_days': expiresAfterDays.value,
   if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   if (productDescription.isPresent) 'product_description': productDescription.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final confirmationNumber$ = confirmationNumber.value;
 if (confirmationNumber$ != null) {
   if (confirmationNumber$.runes.length > 5000) { errors.add('confirmationNumber: length must be <= 5000'); }
@@ -51,14 +51,14 @@ final productDescription$ = productDescription.value;
 if (productDescription$ != null) {
   if (productDescription$.runes.length > 5000) { errors.add('productDescription: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodOptionsKonbini copyWith({Omittable<String?>? confirmationNumber, Omittable<int?>? expiresAfterDays, Omittable<int?>? expiresAt, Omittable<String?>? productDescription, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsKonbini(
+return errors;}
+PaymentMethodOptionsKonbini copyWith({Omittable<String?>? confirmationNumber, Omittable<int?>? expiresAfterDays, Omittable<int?>? expiresAt, Omittable<String?>? productDescription, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsKonbini(
   confirmationNumber: confirmationNumber ?? this.confirmationNumber,
   expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
   expiresAt: expiresAt ?? this.expiresAt,
   productDescription: productDescription ?? this.productDescription,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsKonbini &&
           confirmationNumber == other.confirmationNumber &&
@@ -71,4 +71,4 @@ PaymentMethodOptionsKonbini copyWith({Omittable<String?>? confirmationNumber, Om
 
 @override String toString() => 'PaymentMethodOptionsKonbini(confirmationNumber: $confirmationNumber, expiresAfterDays: $expiresAfterDays, expiresAt: $expiresAt, productDescription: $productDescription, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

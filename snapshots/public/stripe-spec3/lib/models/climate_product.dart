@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_removals_products_price.dart';import 'package:pub_stripe_spec3/models/climate_supplier.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ClimateProductObject {const ClimateProductObject();
 
-factory ClimateProductObject.fromJson(String json) { return switch (json) {
+factory ClimateProductObject.fromJson(String json) {return switch (json) {
   'climate.product' => climateProduct,
   _ => ClimateProductObject$Unknown(json),
-}; }
+};}
 
 static const ClimateProductObject climateProduct = ClimateProductObject$climateProduct._();
 
 static const List<ClimateProductObject> values = [climateProduct];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'climate.product' => 'climateProduct',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ClimateProductObject$Unknown; } 
+bool get isUnknown {return this is ClimateProductObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() climateProduct, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() climateProduct, required W Function(String value) $unknown, }) {return switch (this) {
       ClimateProductObject$climateProduct() => climateProduct(),
       ClimateProductObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateProduct, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateProduct, W Function(String value)? $unknown, }) {return switch (this) {
       ClimateProductObject$climateProduct() => climateProduct != null ? climateProduct() : orElse(value),
       ClimateProductObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ClimateProductObject($value)';
 
- }
+}
 @immutable final class ClimateProductObject$climateProduct extends ClimateProductObject {const ClimateProductObject$climateProduct._();
 
 @override String get value => 'climate.product';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateP
 
 @override int get hashCode => 'climate.product'.hashCode;
 
- }
+}
 @immutable final class ClimateProductObject$Unknown extends ClimateProductObject {const ClimateProductObject$Unknown(this.value);
 
 @override final String value;
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateP
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Climate product represents a type of carbon removal unit available for reservation.
 /// You can retrieve it to see the current price and availability.
 @immutable final class ClimateProduct {const ClimateProduct({required this.created, required this.currentPricesPerMetricTon, required this.id, required this.livemode, required this.metricTonsAvailable, required this.name, required this.object, required this.suppliers, this.deliveryYear = const Omittable.absent(), });
 
-factory ClimateProduct.fromJson(Map<String, dynamic> json) { return ClimateProduct(
+factory ClimateProduct.fromJson(Map<String, dynamic> json) {return ClimateProduct(
   created: (json['created'] as num).toInt(),
   currentPricesPerMetricTon: (json['current_prices_per_metric_ton'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ClimateRemovalsProductsPrice.fromJson(v as Map<String, dynamic>))),
   deliveryYear: json.containsKey('delivery_year') ? Omittable(json['delivery_year'] != null ? (json['delivery_year'] as num).toInt() : null) : const Omittable.absent(),
@@ -68,7 +68,7 @@ factory ClimateProduct.fromJson(Map<String, dynamic> json) { return ClimateProdu
   name: json['name'] as String,
   object: ClimateProductObject.fromJson(json['object'] as String),
   suppliers: (json['suppliers'] as List<dynamic>).map((e) => ClimateSupplier.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -99,7 +99,7 @@ final ClimateProductObject object;
 /// The carbon removal suppliers that fulfill orders for this Climate product.
 final List<ClimateSupplier> suppliers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'current_prices_per_metric_ton': currentPricesPerMetricTon.map((k, v) => MapEntry(k, v.toJson())),
   if (deliveryYear.isPresent) 'delivery_year': deliveryYear.value,
@@ -109,21 +109,21 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'object': object.toJson(),
   'suppliers': suppliers.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('current_prices_per_metric_ton') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metric_tons_available') && json['metric_tons_available'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
-      json.containsKey('suppliers'); } 
+      json.containsKey('suppliers');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-return errors; } 
-ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>? currentPricesPerMetricTon, Omittable<int?>? deliveryYear, String? id, bool? livemode, String? metricTonsAvailable, String? name, ClimateProductObject? object, List<ClimateSupplier>? suppliers, }) { return ClimateProduct(
+return errors;}
+ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>? currentPricesPerMetricTon, Omittable<int?>? deliveryYear, String? id, bool? livemode, String? metricTonsAvailable, String? name, ClimateProductObject? object, List<ClimateSupplier>? suppliers, }) {return ClimateProduct(
   created: created ?? this.created,
   currentPricesPerMetricTon: currentPricesPerMetricTon ?? this.currentPricesPerMetricTon,
   deliveryYear: deliveryYear ?? this.deliveryYear,
@@ -133,7 +133,7 @@ ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>?
   name: name ?? this.name,
   object: object ?? this.object,
   suppliers: suppliers ?? this.suppliers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ClimateProduct &&
           created == other.created &&
@@ -150,4 +150,4 @@ ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>?
 
 @override String toString() => 'ClimateProduct(\n  created: $created,\n  currentPricesPerMetricTon: $currentPricesPerMetricTon,\n  deliveryYear: $deliveryYear,\n  id: $id,\n  livemode: $livemode,\n  metricTonsAvailable: $metricTonsAvailable,\n  name: $name,\n  object: $object,\n  suppliers: $suppliers,\n)';
 
- }
+}

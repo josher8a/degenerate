@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_cursor.dart';@immutable final class BuildsBuildLogsResponse {const BuildsBuildLogsResponse({this.cursor, this.lines, this.truncated, });
 
-factory BuildsBuildLogsResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildLogsResponse(
+factory BuildsBuildLogsResponse.fromJson(Map<String, dynamic> json) {return BuildsBuildLogsResponse(
   cursor: json['cursor'] != null ? BuildsCursor.fromJson(json['cursor'] as String) : null,
   lines: (json['lines'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e).toList()).toList(),
   truncated: json['truncated'] as bool?,
-); }
+);}
 
 final BuildsCursor? cursor;
 
@@ -16,17 +16,17 @@ final List<List<dynamic>>? lines;
 /// Example: `false`
 final bool? truncated;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cursor != null) 'cursor': cursor?.toJson(),
   if (lines != null) 'lines': lines?.map((e) => e).toList(),
   'truncated': ?truncated,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cursor', 'lines', 'truncated'}.contains(key)); } 
-BuildsBuildLogsResponse copyWith({BuildsCursor? Function()? cursor, List<List<dynamic>>? Function()? lines, bool? Function()? truncated, }) { return BuildsBuildLogsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cursor', 'lines', 'truncated'}.contains(key));}
+BuildsBuildLogsResponse copyWith({BuildsCursor? Function()? cursor, List<List<dynamic>>? Function()? lines, bool? Function()? truncated, }) {return BuildsBuildLogsResponse(
   cursor: cursor != null ? cursor() : this.cursor,
   lines: lines != null ? lines() : this.lines,
   truncated: truncated != null ? truncated() : this.truncated,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildLogsResponse &&
           cursor == other.cursor &&
@@ -37,4 +37,4 @@ BuildsBuildLogsResponse copyWith({BuildsCursor? Function()? cursor, List<List<dy
 
 @override String toString() => 'BuildsBuildLogsResponse(cursor: $cursor, lines: $lines, truncated: $truncated)';
 
- }
+}

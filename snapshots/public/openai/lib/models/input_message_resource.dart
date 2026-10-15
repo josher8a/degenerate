@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/input_content.dart';import 'package:pub_openai/models/input_message_resource/input_message_resource_role.dart';@immutable final class InputMessageResource {const InputMessageResource({required this.role, required this.content, required this.id, this.type, this.status, });
 
-factory InputMessageResource.fromJson(Map<String, dynamic> json) { return InputMessageResource(
+factory InputMessageResource.fromJson(Map<String, dynamic> json) {return InputMessageResource(
   type: json['type'] as String?,
   role: InputMessageResourceRole.fromJson(json['role'] as String),
   status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
   content: (json['content'] as List<dynamic>).map((e) => InputContent.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
-); }
+);}
 
 /// The type of the message input. Always set to `message`.
 /// 
@@ -33,23 +33,23 @@ final List<InputContent> content;
 /// 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': ?type,
   'role': role.toJson(),
   if (status != null) 'status': status?.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role') &&
       json.containsKey('content') &&
-      json.containsKey('id') && json['id'] is String; } 
-InputMessageResource copyWith({String? Function()? type, InputMessageResourceRole? role, ComputerToolCallOutputResourceStatus? Function()? status, List<InputContent>? content, String? id, }) { return InputMessageResource(
+      json.containsKey('id') && json['id'] is String;}
+InputMessageResource copyWith({String? Function()? type, InputMessageResourceRole? role, ComputerToolCallOutputResourceStatus? Function()? status, List<InputContent>? content, String? id, }) {return InputMessageResource(
   type: type != null ? type() : this.type,
   role: role ?? this.role,
   status: status != null ? status() : this.status,
   content: content ?? this.content,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InputMessageResource &&
           type == other.type &&
@@ -62,4 +62,4 @@ InputMessageResource copyWith({String? Function()? type, InputMessageResourceRol
 
 @override String toString() => 'InputMessageResource(type: $type, role: $role, status: $status, content: $content, id: $id)';
 
- }
+}

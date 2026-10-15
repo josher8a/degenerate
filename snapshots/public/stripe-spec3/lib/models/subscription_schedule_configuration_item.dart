@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/stackable_discount_with_discount_settings.dart';import 'package:pub_stripe_spec3/models/subscription_item_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_add_invoice_item/subscription_schedule_add_invoice_item_price.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// A phase item describes the price and quantity of a phase.
 @immutable final class SubscriptionScheduleConfigurationItem {const SubscriptionScheduleConfigurationItem({required this.discounts, required this.price, this.billingThresholds = const Omittable.absent(), this.metadata = const Omittable.absent(), this.quantity, this.taxRates = const Omittable.absent(), });
 
-factory SubscriptionScheduleConfigurationItem.fromJson(Map<String, dynamic> json) { return SubscriptionScheduleConfigurationItem(
+factory SubscriptionScheduleConfigurationItem.fromJson(Map<String, dynamic> json) {return SubscriptionScheduleConfigurationItem(
   billingThresholds: json.containsKey('billing_thresholds') ? Omittable(json['billing_thresholds'] != null ? SubscriptionItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   discounts: (json['discounts'] as List<dynamic>).map((e) => StackableDiscountWithDiscountSettings.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   price: SubscriptionScheduleAddInvoiceItemPrice.fromJson(json['price']),
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: json.containsKey('tax_rates') ? Omittable((json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Define thresholds at which an invoice will be sent, and the related subscription advanced to a new billing period
 final Omittable<SubscriptionItemBillingThresholds?> billingThresholds;
@@ -31,24 +31,24 @@ final int? quantity;
 /// The tax rates which apply to this `phase_item`. When set, the `default_tax_rates` on the phase do not apply to this `phase_item`.
 final Omittable<List<TaxRate>?> taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingThresholds.isPresent) 'billing_thresholds': billingThresholds.value?.toJson(),
   'discounts': discounts.map((e) => e.toJson()).toList(),
   if (metadata.isPresent) 'metadata': metadata.value,
   'price': price.toJson(),
   'quantity': ?quantity,
   if (taxRates.isPresent) 'tax_rates': taxRates.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('discounts') &&
-      json.containsKey('price'); } 
-SubscriptionScheduleConfigurationItem copyWith({Omittable<SubscriptionItemBillingThresholds?>? billingThresholds, List<StackableDiscountWithDiscountSettings>? discounts, Omittable<Map<String,String>?>? metadata, SubscriptionScheduleAddInvoiceItemPrice? price, int? Function()? quantity, Omittable<List<TaxRate>?>? taxRates, }) { return SubscriptionScheduleConfigurationItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('discounts') &&
+      json.containsKey('price');}
+SubscriptionScheduleConfigurationItem copyWith({Omittable<SubscriptionItemBillingThresholds?>? billingThresholds, List<StackableDiscountWithDiscountSettings>? discounts, Omittable<Map<String,String>?>? metadata, SubscriptionScheduleAddInvoiceItemPrice? price, int? Function()? quantity, Omittable<List<TaxRate>?>? taxRates, }) {return SubscriptionScheduleConfigurationItem(
   billingThresholds: billingThresholds ?? this.billingThresholds,
   discounts: discounts ?? this.discounts,
   metadata: metadata ?? this.metadata,
   price: price ?? this.price,
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates ?? this.taxRates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionScheduleConfigurationItem &&
           billingThresholds == other.billingThresholds &&
@@ -63,4 +63,4 @@ SubscriptionScheduleConfigurationItem copyWith({Omittable<SubscriptionItemBillin
 
 @override String toString() => 'SubscriptionScheduleConfigurationItem(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, quantity: $quantity, taxRates: $taxRates)';
 
- }
+}

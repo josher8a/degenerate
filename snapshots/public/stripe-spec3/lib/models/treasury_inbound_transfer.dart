@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_failure_details.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TreasuryInboundTransferObject {const TreasuryInboundTransferObject();
 
-factory TreasuryInboundTransferObject.fromJson(String json) { return switch (json) {
+factory TreasuryInboundTransferObject.fromJson(String json) {return switch (json) {
   'treasury.inbound_transfer' => treasuryInboundTransfer,
   _ => TreasuryInboundTransferObject$Unknown(json),
-}; }
+};}
 
 static const TreasuryInboundTransferObject treasuryInboundTransfer = TreasuryInboundTransferObject$treasuryInboundTransfer._();
 
 static const List<TreasuryInboundTransferObject> values = [treasuryInboundTransfer];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'treasury.inbound_transfer' => 'treasuryInboundTransfer',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryInboundTransferObject$Unknown; } 
+bool get isUnknown {return this is TreasuryInboundTransferObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() treasuryInboundTransfer, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() treasuryInboundTransfer, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryInboundTransferObject$treasuryInboundTransfer() => treasuryInboundTransfer(),
       TreasuryInboundTransferObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryInboundTransfer, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryInboundTransfer, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryInboundTransferObject$treasuryInboundTransfer() => treasuryInboundTransfer != null ? treasuryInboundTransfer() : orElse(value),
       TreasuryInboundTransferObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryInboundTransferObject($value)';
 
- }
+}
 @immutable final class TreasuryInboundTransferObject$treasuryInboundTransfer extends TreasuryInboundTransferObject {const TreasuryInboundTransferObject$treasuryInboundTransfer._();
 
 @override String get value => 'treasury.inbound_transfer';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => 'treasury.inbound_transfer'.hashCode;
 
- }
+}
 @immutable final class TreasuryInboundTransferObject$Unknown extends TreasuryInboundTransferObject {const TreasuryInboundTransferObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Status of the InboundTransfer: `processing`, `succeeded`, `failed`, and `canceled`. An InboundTransfer is `processing` if it is created and pending. The status changes to `succeeded` once the funds have been "confirmed" and a `transaction` is created and posted. The status changes to `failed` if the transfer fails.
 sealed class TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus();
 
-factory TreasuryInboundTransferStatus.fromJson(String json) { return switch (json) {
+factory TreasuryInboundTransferStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'failed' => failed,
   'processing' => processing,
   'succeeded' => succeeded,
   _ => TreasuryInboundTransferStatus$Unknown(json),
-}; }
+};}
 
 static const TreasuryInboundTransferStatus canceled = TreasuryInboundTransferStatus$canceled._();
 
@@ -76,36 +76,36 @@ static const TreasuryInboundTransferStatus succeeded = TreasuryInboundTransferSt
 static const List<TreasuryInboundTransferStatus> values = [canceled, failed, processing, succeeded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'failed' => 'failed',
   'processing' => 'processing',
   'succeeded' => 'succeeded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryInboundTransferStatus$Unknown; } 
+bool get isUnknown {return this is TreasuryInboundTransferStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() failed, required W Function() processing, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() failed, required W Function() processing, required W Function() succeeded, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryInboundTransferStatus$canceled() => canceled(),
       TreasuryInboundTransferStatus$failed() => failed(),
       TreasuryInboundTransferStatus$processing() => processing(),
       TreasuryInboundTransferStatus$succeeded() => succeeded(),
       TreasuryInboundTransferStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? processing, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? processing, W Function()? succeeded, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryInboundTransferStatus$canceled() => canceled != null ? canceled() : orElse(value),
       TreasuryInboundTransferStatus$failed() => failed != null ? failed() : orElse(value),
       TreasuryInboundTransferStatus$processing() => processing != null ? processing() : orElse(value),
       TreasuryInboundTransferStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
       TreasuryInboundTransferStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryInboundTransferStatus($value)';
 
- }
+}
 @immutable final class TreasuryInboundTransferStatus$canceled extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class TreasuryInboundTransferStatus$failed extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$failed._();
 
 @override String get value => 'failed';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class TreasuryInboundTransferStatus$processing extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$processing._();
 
 @override String get value => 'processing';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class TreasuryInboundTransferStatus$succeeded extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$succeeded._();
 
 @override String get value => 'succeeded';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'succeeded'.hashCode;
 
- }
+}
 @immutable final class TreasuryInboundTransferStatus$Unknown extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$Unknown(this.value);
 
 @override final String value;
@@ -151,13 +151,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Use [InboundTransfers](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers) to add funds to your [FinancialAccount](https://api.stripe.com#financial_accounts) via a PaymentMethod that is owned by you. The funds will be transferred via an ACH debit.
 /// 
 /// Related guide: [Moving money with Treasury using InboundTransfer objects](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers)
 @immutable final class TreasuryInboundTransfer {const TreasuryInboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.financialAccount, required this.id, required this.linkedFlows, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, this.description = const Omittable.absent(), this.failureDetails = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.originPaymentMethod = const Omittable.absent(), this.originPaymentMethodDetails = const Omittable.absent(), this.returned = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
-factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransfer(
+factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) {return TreasuryInboundTransfer(
   amount: (json['amount'] as num).toInt(),
   cancelable: json['cancelable'] as bool,
   created: (json['created'] as num).toInt(),
@@ -178,7 +178,7 @@ factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return Tre
   status: TreasuryInboundTransferStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryCreditReversalTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount (in cents) transferred.
 final int amount;
@@ -238,7 +238,7 @@ final TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions s
 /// The Transaction associated with this object.
 final Omittable<TreasuryCreditReversalTransaction?> transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'cancelable': cancelable,
   'created': created,
@@ -259,8 +259,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
   if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('cancelable') && json['cancelable'] is bool &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -272,9 +272,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('statement_descriptor') && json['statement_descriptor'] is String &&
       json.containsKey('status') &&
-      json.containsKey('status_transitions'); } 
+      json.containsKey('status_transitions');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -290,8 +290,8 @@ if (originPaymentMethod$ != null) {
   if (originPaymentMethod$.runes.length > 5000) { errors.add('originPaymentMethod: length must be <= 5000'); }
 }
 if (statementDescriptor.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
-return errors; } 
-TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, Omittable<String?>? description, Omittable<TreasuryInboundTransfersResourceFailureDetails?>? failureDetails, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, Omittable<String?>? originPaymentMethod, Omittable<InboundTransfers?>? originPaymentMethodDetails, Omittable<bool?>? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, Omittable<TreasuryCreditReversalTransaction?>? transaction, }) { return TreasuryInboundTransfer(
+return errors;}
+TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, Omittable<String?>? description, Omittable<TreasuryInboundTransfersResourceFailureDetails?>? failureDetails, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, Omittable<String?>? originPaymentMethod, Omittable<InboundTransfers?>? originPaymentMethodDetails, Omittable<bool?>? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, Omittable<TreasuryCreditReversalTransaction?>? transaction, }) {return TreasuryInboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,
@@ -312,7 +312,7 @@ TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, S
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
   transaction: transaction ?? this.transaction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryInboundTransfer &&
           amount == other.amount &&
@@ -340,4 +340,4 @@ TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, S
 
 @override String toString() => 'TreasuryInboundTransfer(\n  amount: $amount,\n  cancelable: $cancelable,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  failureDetails: $failureDetails,\n  financialAccount: $financialAccount,\n  hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl,\n  id: $id,\n  linkedFlows: $linkedFlows,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  originPaymentMethod: $originPaymentMethod,\n  originPaymentMethodDetails: $originPaymentMethodDetails,\n  returned: $returned,\n  statementDescriptor: $statementDescriptor,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  transaction: $transaction,\n)';
 
- }
+}

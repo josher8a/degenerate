@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions_chat.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions_connected_meetings.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions_media.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions_plugins.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions_polls.dart';import 'package:pub_cloudflare/models/realtimekit_preset/recorder_type.dart';import 'package:pub_cloudflare/models/realtimekit_preset/waiting_room_type.dart';@immutable final class RealtimekitPresetPermissions {const RealtimekitPresetPermissions({required this.acceptWaitingRequests, required this.canAcceptProductionRequests, required this.canChangeParticipantPermissions, required this.canEditDisplayName, required this.canLivestream, required this.canRecord, required this.canSpotlight, required this.chat, required this.connectedMeetings, required this.disableParticipantAudio, required this.disableParticipantScreensharing, required this.disableParticipantVideo, required this.hiddenParticipant, required this.kickParticipant, required this.media, required this.pinParticipant, required this.plugins, required this.polls, required this.recorderType, required this.showParticipantList, required this.waitingRoomType, this.isRecorder, });
 
-factory RealtimekitPresetPermissions.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissions(
+factory RealtimekitPresetPermissions.fromJson(Map<String, dynamic> json) {return RealtimekitPresetPermissions(
   acceptWaitingRequests: json['accept_waiting_requests'] as bool,
   canAcceptProductionRequests: json['can_accept_production_requests'] as bool,
   canChangeParticipantPermissions: json['can_change_participant_permissions'] as bool,
@@ -26,7 +26,7 @@ factory RealtimekitPresetPermissions.fromJson(Map<String, dynamic> json) { retur
   recorderType: RecorderType.fromJson(json['recorder_type'] as String),
   showParticipantList: json['show_participant_list'] as bool,
   waitingRoomType: WaitingRoomType.fromJson(json['waiting_room_type'] as String),
-); }
+);}
 
 /// Whether this participant can accept waiting requests
 final bool acceptWaitingRequests;
@@ -83,7 +83,7 @@ final WaitingRoomType waitingRoomType;
 /// The value of `isRecorder`, or its schema default when absent.
 bool get isRecorderOrDefault => isRecorder ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accept_waiting_requests': acceptWaitingRequests,
   'can_accept_production_requests': canAcceptProductionRequests,
   'can_change_participant_permissions': canChangeParticipantPermissions,
@@ -106,8 +106,8 @@ Map<String, dynamic> toJson() { return {
   'recorder_type': recorderType.toJson(),
   'show_participant_list': showParticipantList,
   'waiting_room_type': waitingRoomType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accept_waiting_requests') && json['accept_waiting_requests'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accept_waiting_requests') && json['accept_waiting_requests'] is bool &&
       json.containsKey('can_accept_production_requests') && json['can_accept_production_requests'] is bool &&
       json.containsKey('can_change_participant_permissions') && json['can_change_participant_permissions'] is bool &&
       json.containsKey('can_edit_display_name') && json['can_edit_display_name'] is bool &&
@@ -127,8 +127,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accep
       json.containsKey('polls') &&
       json.containsKey('recorder_type') &&
       json.containsKey('show_participant_list') && json['show_participant_list'] is bool &&
-      json.containsKey('waiting_room_type'); } 
-RealtimekitPresetPermissions copyWith({bool? acceptWaitingRequests, bool? canAcceptProductionRequests, bool? canChangeParticipantPermissions, bool? canEditDisplayName, bool? canLivestream, bool? canRecord, bool? canSpotlight, RealtimekitPresetPermissionsChat? chat, RealtimekitPresetPermissionsConnectedMeetings? connectedMeetings, bool? disableParticipantAudio, bool? disableParticipantScreensharing, bool? disableParticipantVideo, bool? hiddenParticipant, bool? Function()? isRecorder, bool? kickParticipant, RealtimekitPresetPermissionsMedia? media, bool? pinParticipant, RealtimekitPresetPermissionsPlugins? plugins, RealtimekitPresetPermissionsPolls? polls, RecorderType? recorderType, bool? showParticipantList, WaitingRoomType? waitingRoomType, }) { return RealtimekitPresetPermissions(
+      json.containsKey('waiting_room_type');}
+RealtimekitPresetPermissions copyWith({bool? acceptWaitingRequests, bool? canAcceptProductionRequests, bool? canChangeParticipantPermissions, bool? canEditDisplayName, bool? canLivestream, bool? canRecord, bool? canSpotlight, RealtimekitPresetPermissionsChat? chat, RealtimekitPresetPermissionsConnectedMeetings? connectedMeetings, bool? disableParticipantAudio, bool? disableParticipantScreensharing, bool? disableParticipantVideo, bool? hiddenParticipant, bool? Function()? isRecorder, bool? kickParticipant, RealtimekitPresetPermissionsMedia? media, bool? pinParticipant, RealtimekitPresetPermissionsPlugins? plugins, RealtimekitPresetPermissionsPolls? polls, RecorderType? recorderType, bool? showParticipantList, WaitingRoomType? waitingRoomType, }) {return RealtimekitPresetPermissions(
   acceptWaitingRequests: acceptWaitingRequests ?? this.acceptWaitingRequests,
   canAcceptProductionRequests: canAcceptProductionRequests ?? this.canAcceptProductionRequests,
   canChangeParticipantPermissions: canChangeParticipantPermissions ?? this.canChangeParticipantPermissions,
@@ -151,7 +151,7 @@ RealtimekitPresetPermissions copyWith({bool? acceptWaitingRequests, bool? canAcc
   recorderType: recorderType ?? this.recorderType,
   showParticipantList: showParticipantList ?? this.showParticipantList,
   waitingRoomType: waitingRoomType ?? this.waitingRoomType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissions &&
           acceptWaitingRequests == other.acceptWaitingRequests &&
@@ -181,4 +181,4 @@ RealtimekitPresetPermissions copyWith({bool? acceptWaitingRequests, bool? canAcc
 
 @override String toString() => 'RealtimekitPresetPermissions(\n  acceptWaitingRequests: $acceptWaitingRequests,\n  canAcceptProductionRequests: $canAcceptProductionRequests,\n  canChangeParticipantPermissions: $canChangeParticipantPermissions,\n  canEditDisplayName: $canEditDisplayName,\n  canLivestream: $canLivestream,\n  canRecord: $canRecord,\n  canSpotlight: $canSpotlight,\n  chat: $chat,\n  connectedMeetings: $connectedMeetings,\n  disableParticipantAudio: $disableParticipantAudio,\n  disableParticipantScreensharing: $disableParticipantScreensharing,\n  disableParticipantVideo: $disableParticipantVideo,\n  hiddenParticipant: $hiddenParticipant,\n  isRecorder: $isRecorder,\n  kickParticipant: $kickParticipant,\n  media: $media,\n  pinParticipant: $pinParticipant,\n  plugins: $plugins,\n  polls: $polls,\n  recorderType: $recorderType,\n  showParticipantList: $showParticipantList,\n  waitingRoomType: $waitingRoomType,\n)';
 
- }
+}

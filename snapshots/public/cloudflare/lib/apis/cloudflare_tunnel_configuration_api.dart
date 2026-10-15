@@ -14,7 +14,7 @@ final class CloudflareTunnelConfigurationApi with ApiExecutor {const CloudflareT
 /// Gets the configuration for a remotely-managed tunnel
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations`
-Future<ApiResult<TunnelConfiguration?, CloudflareTunnelConfigurationGetConfigurationError>> cloudflareTunnelConfigurationGetConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelConfiguration?, CloudflareTunnelConfigurationGetConfigurationError>> cloudflareTunnelConfigurationGetConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: CloudflareTunnelConfigurationGetConfigurationError.fromResponse,
 );
- } 
+}
 /// Put configuration
 ///
 /// Adds or updates the configuration for a remotely-managed tunnel.
 ///
 /// `PUT /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations`
-Future<ApiResult<TunnelConfiguration?, CloudflareTunnelConfigurationGetConfigurationError>> cloudflareTunnelConfigurationPutConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, required CloudflareTunnelConfigurationPutConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelConfiguration?, CloudflareTunnelConfigurationGetConfigurationError>> cloudflareTunnelConfigurationPutConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, required CloudflareTunnelConfigurationPutConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,5 +56,5 @@ return await execute(
   },
   onError: CloudflareTunnelConfigurationGetConfigurationError.fromResponse,
 );
- } 
- }
+}
+}

@@ -10,7 +10,7 @@ final class JsonlApi with ApiExecutor {const JsonlApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /jsonl`
-Future<ApiResult<JsonlStreamResponse, Never>> jsonlStream({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<JsonlStreamResponse, Never>> jsonlStream({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,11 +26,11 @@ return await execute(
 throw UnsupportedError('Cannot decode application/jsonl response into JsonlStreamResponse');
   },
 );
- } 
+}
 /// The response object has camelCase properties. The sdk should be able to deserialize these properties
 ///
 /// `GET /jsonl/deserialization_verification`
-Future<ApiResult<JsonlDeserializationVerificationResponse, Never>> jsonlDeserializationVerification({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<JsonlDeserializationVerificationResponse, Never>> jsonlDeserializationVerification({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,9 +46,9 @@ return await execute(
 throw UnsupportedError('Cannot decode application/jsonl response into JsonlDeserializationVerificationResponse');
   },
 );
- } 
+}
 /// `GET /jsonl/chunks`
-Future<ApiResult<JsonlStreamChunksResponse, Never>> jsonlStreamChunks({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<JsonlStreamChunksResponse, Never>> jsonlStreamChunks({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -64,9 +64,9 @@ return await execute(
 throw UnsupportedError('Cannot decode application/jsonl response into JsonlStreamChunksResponse');
   },
 );
- } 
+}
 /// `GET /x-ndjson`
-Future<ApiResult<XNdjsonStreamResponse, Never>> xNdjsonStream({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<XNdjsonStreamResponse, Never>> xNdjsonStream({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -82,9 +82,9 @@ return await execute(
 throw UnsupportedError('Cannot decode application/x-ndjson response into XNdjsonStreamResponse');
   },
 );
- } 
+}
 /// `GET /x-ndjson/chunks`
-Future<ApiResult<XNdjsonStreamChunksResponse, Never>> xNdjsonStreamChunks({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<XNdjsonStreamChunksResponse, Never>> xNdjsonStreamChunks({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -100,11 +100,11 @@ return await execute(
 throw UnsupportedError('Cannot decode application/x-ndjson response into XNdjsonStreamChunksResponse');
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /jsonl`
-Stream<JsonlStreamResponse> jsonlStreamStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<JsonlStreamResponse> jsonlStreamStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,11 +119,11 @@ return executeJsonlStreaming(
     return JsonlStreamResponse.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /jsonl/deserialization_verification`
-Stream<JsonlDeserializationVerificationResponse> jsonlDeserializationVerificationStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<JsonlDeserializationVerificationResponse> jsonlDeserializationVerificationStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -138,11 +138,11 @@ return executeJsonlStreaming(
     return JsonlDeserializationVerificationResponse.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /jsonl/chunks`
-Stream<JsonlStreamChunksResponse> jsonlStreamChunksStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<JsonlStreamChunksResponse> jsonlStreamChunksStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -157,11 +157,11 @@ return executeJsonlStreaming(
     return JsonlStreamChunksResponse.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /x-ndjson`
-Stream<XNdjsonStreamResponse> xNdjsonStreamStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<XNdjsonStreamResponse> xNdjsonStreamStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -176,11 +176,11 @@ return executeJsonlStreaming(
     return XNdjsonStreamResponse.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stream response.
 ///
 /// `GET /x-ndjson/chunks`
-Stream<XNdjsonStreamChunksResponse> xNdjsonStreamChunksStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<XNdjsonStreamChunksResponse> xNdjsonStreamChunksStream({RequestOptions? options}) {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -195,5 +195,5 @@ return executeJsonlStreaming(
     return XNdjsonStreamChunksResponse.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

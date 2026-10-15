@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_at.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_cancellation_reason.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_description.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_type.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_return_status.dart';import 'package:pub_stripe_spec3/models/canceled/cancellation_policy_provided.dart';import 'package:pub_stripe_spec3/models/canceled/expected_at.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/canceled/returned_at.dart';@immutable final class Canceled {const Canceled({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
-factory Canceled.fromJson(Map<String, dynamic> json) { return Canceled(
+factory Canceled.fromJson(Map<String, dynamic> json) {return Canceled(
   additionalDocumentation: json['additional_documentation'] != null ? CanceledAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
   canceledAt: json['canceled_at'] != null ? CanceledAt.fromJson(json['canceled_at']) : null,
   cancellationPolicyProvided: json['cancellation_policy_provided'] != null ? CancellationPolicyProvided.fromJson(json['cancellation_policy_provided']) : null,
@@ -14,7 +14,7 @@ factory Canceled.fromJson(Map<String, dynamic> json) { return Canceled(
   productType: json['product_type'] != null ? CanceledProductType.fromJson(json['product_type'] as String) : null,
   returnStatus: json['return_status'] != null ? CanceledReturnStatus.fromJson(json['return_status'] as String) : null,
   returnedAt: json['returned_at'] != null ? ReturnedAt.fromJson(json['returned_at']) : null,
-); }
+);}
 
 final CanceledAdditionalDocumentation? additionalDocumentation;
 
@@ -36,7 +36,7 @@ final CanceledReturnStatus? returnStatus;
 
 final ReturnedAt? returnedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
   if (canceledAt != null) 'canceled_at': canceledAt?.toJson(),
   if (cancellationPolicyProvided != null) 'cancellation_policy_provided': cancellationPolicyProvided?.toJson(),
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   if (productType != null) 'product_type': productType?.toJson(),
   if (returnStatus != null) 'return_status': returnStatus?.toJson(),
   if (returnedAt != null) 'returned_at': returnedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_policy_provided', 'cancellation_reason', 'expected_at', 'explanation', 'product_description', 'product_type', 'return_status', 'returned_at'}.contains(key)); } 
-Canceled copyWith({CanceledAdditionalDocumentation? Function()? additionalDocumentation, CanceledAt? Function()? canceledAt, CancellationPolicyProvided? Function()? cancellationPolicyProvided, CanceledCancellationReason? Function()? cancellationReason, ExpectedAt? Function()? expectedAt, Explanation? Function()? explanation, CanceledProductDescription? Function()? productDescription, CanceledProductType? Function()? productType, CanceledReturnStatus? Function()? returnStatus, ReturnedAt? Function()? returnedAt, }) { return Canceled(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_policy_provided', 'cancellation_reason', 'expected_at', 'explanation', 'product_description', 'product_type', 'return_status', 'returned_at'}.contains(key));}
+Canceled copyWith({CanceledAdditionalDocumentation? Function()? additionalDocumentation, CanceledAt? Function()? canceledAt, CancellationPolicyProvided? Function()? cancellationPolicyProvided, CanceledCancellationReason? Function()? cancellationReason, ExpectedAt? Function()? expectedAt, Explanation? Function()? explanation, CanceledProductDescription? Function()? productDescription, CanceledProductType? Function()? productType, CanceledReturnStatus? Function()? returnStatus, ReturnedAt? Function()? returnedAt, }) {return Canceled(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   cancellationPolicyProvided: cancellationPolicyProvided != null ? cancellationPolicyProvided() : this.cancellationPolicyProvided,
@@ -60,7 +60,7 @@ Canceled copyWith({CanceledAdditionalDocumentation? Function()? additionalDocume
   productType: productType != null ? productType() : this.productType,
   returnStatus: returnStatus != null ? returnStatus() : this.returnStatus,
   returnedAt: returnedAt != null ? returnedAt() : this.returnedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Canceled &&
           additionalDocumentation == other.additionalDocumentation &&
@@ -78,4 +78,4 @@ Canceled copyWith({CanceledAdditionalDocumentation? Function()? additionalDocume
 
 @override String toString() => 'Canceled(\n  additionalDocumentation: $additionalDocumentation,\n  canceledAt: $canceledAt,\n  cancellationPolicyProvided: $cancellationPolicyProvided,\n  cancellationReason: $cancellationReason,\n  expectedAt: $expectedAt,\n  explanation: $explanation,\n  productDescription: $productDescription,\n  productType: $productType,\n  returnStatus: $returnStatus,\n  returnedAt: $returnedAt,\n)';
 
- }
+}

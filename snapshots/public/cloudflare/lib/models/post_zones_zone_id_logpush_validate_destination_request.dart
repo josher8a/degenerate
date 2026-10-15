@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_destination_conf.dart';@immutable final class PostZonesZoneIdLogpushValidateDestinationRequest {const PostZonesZoneIdLogpushValidateDestinationRequest({required this.destinationConf});
 
-factory PostZonesZoneIdLogpushValidateDestinationRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushValidateDestinationRequest(
+factory PostZonesZoneIdLogpushValidateDestinationRequest.fromJson(Map<String, dynamic> json) {return PostZonesZoneIdLogpushValidateDestinationRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
-); }
+);}
 
 /// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
 final LogpushDestinationConf destinationConf;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination_conf': destinationConf.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
-PostZonesZoneIdLogpushValidateDestinationRequest copyWith({LogpushDestinationConf? destinationConf}) { return PostZonesZoneIdLogpushValidateDestinationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination_conf');}
+PostZonesZoneIdLogpushValidateDestinationRequest copyWith({LogpushDestinationConf? destinationConf}) {return PostZonesZoneIdLogpushValidateDestinationRequest(
   destinationConf: destinationConf ?? this.destinationConf,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostZonesZoneIdLogpushValidateDestinationRequest &&
           destinationConf == other.destinationConf;
@@ -25,4 +25,4 @@ PostZonesZoneIdLogpushValidateDestinationRequest copyWith({LogpushDestinationCon
 
 @override String toString() => 'PostZonesZoneIdLogpushValidateDestinationRequest(destinationConf: $destinationConf)';
 
- }
+}

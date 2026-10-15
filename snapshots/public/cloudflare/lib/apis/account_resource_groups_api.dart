@@ -14,7 +14,7 @@ final class AccountResourceGroupsApi with ApiExecutor {const AccountResourceGrou
 /// List all the resource groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<List<IamResourceGroup>?, TokensCreateTokenError>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamResourceGroup>?, TokensCreateTokenError>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id.toJson();
@@ -42,13 +42,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Create Resource Group
 ///
 /// Create a new Resource Group under the specified account.
 ///
 /// `POST /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<IamResourceGroup?, TokensCreateTokenError>> accountResourceGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamRequestCreateResourceGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResourceGroup?, TokensCreateTokenError>> accountResourceGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamRequestCreateResourceGroup body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,13 +67,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Resource Group Details
 ///
 /// Get information about a specific resource group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<IamResourceGroup?, TokensCreateTokenError>> accountResourceGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResourceGroup?, TokensCreateTokenError>> accountResourceGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -90,13 +90,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Update Resource Group
 ///
 /// Modify an existing resource group.
 ///
 /// `PUT /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<IamResourceGroup?, TokensCreateTokenError>> accountResourceGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, required IamRequestUpdateResourceGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResourceGroup?, TokensCreateTokenError>> accountResourceGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, required IamRequestUpdateResourceGroup body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,13 +115,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Remove Resource Group
 ///
 /// Remove a resource group from an account.
 ///
 /// `DELETE /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseSingleId4Result?, TokensCreateTokenError>> accountResourceGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, TokensCreateTokenError>> accountResourceGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -138,5 +138,5 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
- }
+}
+}

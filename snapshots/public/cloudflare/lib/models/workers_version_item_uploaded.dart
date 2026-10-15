@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_version_item_full/workers_version_item_full_metadata.dart';import 'package:pub_cloudflare/models/workers_version_item_full/workers_version_item_full_resources.dart';@immutable final class WorkersVersionItemUploaded {const WorkersVersionItemUploaded({required this.resources, this.id, this.metadata, this.number, this.startupTimeMs, });
 
-factory WorkersVersionItemUploaded.fromJson(Map<String, dynamic> json) { return WorkersVersionItemUploaded(
+factory WorkersVersionItemUploaded.fromJson(Map<String, dynamic> json) {return WorkersVersionItemUploaded(
   id: json['id'] as String?,
   metadata: json['metadata'] != null ? WorkersVersionItemFullMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   number: json['number'] != null ? (json['number'] as num).toDouble() : null,
   resources: WorkersVersionItemFullResources.fromJson(json['resources'] as Map<String, dynamic>),
   startupTimeMs: json['startup_time_ms'] != null ? (json['startup_time_ms'] as num).toInt() : null,
-); }
+);}
 
 /// Unique identifier for the version.
 /// 
@@ -66,21 +66,21 @@ final WorkersVersionItemFullResources resources;
 /// Example: `10`
 final int? startupTimeMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'number': ?number,
   'resources': resources.toJson(),
   'startup_time_ms': ?startupTimeMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('resources'); } 
-WorkersVersionItemUploaded copyWith({String? Function()? id, WorkersVersionItemFullMetadata? Function()? metadata, double? Function()? number, WorkersVersionItemFullResources? resources, int? Function()? startupTimeMs, }) { return WorkersVersionItemUploaded(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('resources');}
+WorkersVersionItemUploaded copyWith({String? Function()? id, WorkersVersionItemFullMetadata? Function()? metadata, double? Function()? number, WorkersVersionItemFullResources? resources, int? Function()? startupTimeMs, }) {return WorkersVersionItemUploaded(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   number: number != null ? number() : this.number,
   resources: resources ?? this.resources,
   startupTimeMs: startupTimeMs != null ? startupTimeMs() : this.startupTimeMs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionItemUploaded &&
           id == other.id &&
@@ -93,4 +93,4 @@ WorkersVersionItemUploaded copyWith({String? Function()? id, WorkersVersionItemF
 
 @override String toString() => 'WorkersVersionItemUploaded(id: $id, metadata: $metadata, number: $number, resources: $resources, startupTimeMs: $startupTimeMs)';
 
- }
+}

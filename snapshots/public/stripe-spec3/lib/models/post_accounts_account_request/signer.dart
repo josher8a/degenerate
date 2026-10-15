@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Signer {const Signer({this.person});
 
-factory Signer.fromJson(Map<String, dynamic> json) { return Signer(
+factory Signer.fromJson(Map<String, dynamic> json) {return Signer(
   person: json['person'] as String?,
-); }
+);}
 
 final String? person;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'person': ?person,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'person'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'person'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final person$ = person;
 if (person$ != null) {
   if (person$.runes.length > 5000) { errors.add('person: length must be <= 5000'); }
 }
-return errors; } 
-Signer copyWith({String? Function()? person}) { return Signer(
+return errors;}
+Signer copyWith({String? Function()? person}) {return Signer(
   person: person != null ? person() : this.person,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Signer &&
           person == other.person;
@@ -31,4 +31,4 @@ Signer copyWith({String? Function()? person}) { return Signer(
 
 @override String toString() => 'Signer(person: $person)';
 
- }
+}

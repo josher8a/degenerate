@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/customer/customer_tax_exempt.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_tax_id.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomerDetails {const PaymentPagesCheckoutSessionCustomerDetails({this.address = const Omittable.absent(), this.businessName = const Omittable.absent(), this.email = const Omittable.absent(), this.individualName = const Omittable.absent(), this.name = const Omittable.absent(), this.phone = const Omittable.absent(), this.taxExempt = const Omittable.absent(), this.taxIds = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomerDetails(
+factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionCustomerDetails(
   address: json.containsKey('address') ? Omittable(json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   businessName: json.containsKey('business_name') ? Omittable(json['business_name'] as String?) : const Omittable.absent(),
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
@@ -13,7 +13,7 @@ factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic>
   phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
   taxExempt: json.containsKey('tax_exempt') ? Omittable(json['tax_exempt'] != null ? CustomerTaxExempt.fromJson(json['tax_exempt'] as String) : null) : const Omittable.absent(),
   taxIds: json.containsKey('tax_ids') ? Omittable((json['tax_ids'] as List<dynamic>?)?.map((e) => PaymentPagesCheckoutSessionTaxId.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// The customer's address after a completed Checkout Session. Note: This property is populated only for sessions on or after March 30, 2022.
 final Omittable<Address?> address;
@@ -40,7 +40,7 @@ final Omittable<CustomerTaxExempt?> taxExempt;
 /// The customer’s tax IDs after a completed Checkout Session.
 final Omittable<List<PaymentPagesCheckoutSessionTaxId>?> taxIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address.isPresent) 'address': address.value?.toJson(),
   if (businessName.isPresent) 'business_name': businessName.value,
   if (email.isPresent) 'email': email.value,
@@ -49,10 +49,10 @@ Map<String, dynamic> toJson() { return {
   if (phone.isPresent) 'phone': phone.value,
   if (taxExempt.isPresent) 'tax_exempt': taxExempt.value?.toJson(),
   if (taxIds.isPresent) 'tax_ids': taxIds.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'business_name', 'email', 'individual_name', 'name', 'phone', 'tax_exempt', 'tax_ids'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'business_name', 'email', 'individual_name', 'name', 'phone', 'tax_exempt', 'tax_ids'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final businessName$ = businessName.value;
 if (businessName$ != null) {
   if (businessName$.runes.length > 150) { errors.add('businessName: length must be <= 150'); }
@@ -73,8 +73,8 @@ final phone$ = phone.value;
 if (phone$ != null) {
   if (phone$.runes.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
-return errors; } 
-PaymentPagesCheckoutSessionCustomerDetails copyWith({Omittable<Address?>? address, Omittable<String?>? businessName, Omittable<String?>? email, Omittable<String?>? individualName, Omittable<String?>? name, Omittable<String?>? phone, Omittable<CustomerTaxExempt?>? taxExempt, Omittable<List<PaymentPagesCheckoutSessionTaxId>?>? taxIds, }) { return PaymentPagesCheckoutSessionCustomerDetails(
+return errors;}
+PaymentPagesCheckoutSessionCustomerDetails copyWith({Omittable<Address?>? address, Omittable<String?>? businessName, Omittable<String?>? email, Omittable<String?>? individualName, Omittable<String?>? name, Omittable<String?>? phone, Omittable<CustomerTaxExempt?>? taxExempt, Omittable<List<PaymentPagesCheckoutSessionTaxId>?>? taxIds, }) {return PaymentPagesCheckoutSessionCustomerDetails(
   address: address ?? this.address,
   businessName: businessName ?? this.businessName,
   email: email ?? this.email,
@@ -83,7 +83,7 @@ PaymentPagesCheckoutSessionCustomerDetails copyWith({Omittable<Address?>? addres
   phone: phone ?? this.phone,
   taxExempt: taxExempt ?? this.taxExempt,
   taxIds: taxIds ?? this.taxIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomerDetails &&
           address == other.address &&
@@ -100,4 +100,4 @@ PaymentPagesCheckoutSessionCustomerDetails copyWith({Omittable<Address?>? addres
 
 @override String toString() => 'PaymentPagesCheckoutSessionCustomerDetails(address: $address, businessName: $businessName, email: $email, individualName: $individualName, name: $name, phone: $phone, taxExempt: $taxExempt, taxIds: $taxIds)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Organization Invitation
 @immutable final class OrganizationInvitation {const OrganizationInvitation({required this.id, required this.login, required this.email, required this.role, required this.createdAt, required this.inviter, required this.teamCount, required this.nodeId, required this.invitationTeamsUrl, this.failedAt = const Omittable.absent(), this.failedReason = const Omittable.absent(), this.invitationSource, });
 
-factory OrganizationInvitation.fromJson(Map<String, dynamic> json) { return OrganizationInvitation(
+factory OrganizationInvitation.fromJson(Map<String, dynamic> json) {return OrganizationInvitation(
   id: (json['id'] as num).toInt(),
   login: json['login'] as String?,
   email: json['email'] as String?,
@@ -17,7 +17,7 @@ factory OrganizationInvitation.fromJson(Map<String, dynamic> json) { return Orga
   nodeId: json['node_id'] as String,
   invitationTeamsUrl: json['invitation_teams_url'] as String,
   invitationSource: json['invitation_source'] as String?,
-); }
+);}
 
 final int id;
 
@@ -43,7 +43,7 @@ final String invitationTeamsUrl;
 
 final String? invitationSource;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'login': login,
   'email': email,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'invitation_teams_url': invitationTeamsUrl,
   'invitation_source': ?invitationSource,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && (json['login'] == null || json['login'] is String) &&
       json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
       json.containsKey('role') && json['role'] is String &&
@@ -65,8 +65,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('inviter') &&
       json.containsKey('team_count') && json['team_count'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('invitation_teams_url') && json['invitation_teams_url'] is String; } 
-OrganizationInvitation copyWith({int? id, String? Function()? login, String? Function()? email, String? role, String? createdAt, Omittable<String?>? failedAt, Omittable<String?>? failedReason, SimpleUser? inviter, int? teamCount, String? nodeId, String? invitationTeamsUrl, String? Function()? invitationSource, }) { return OrganizationInvitation(
+      json.containsKey('invitation_teams_url') && json['invitation_teams_url'] is String;}
+OrganizationInvitation copyWith({int? id, String? Function()? login, String? Function()? email, String? role, String? createdAt, Omittable<String?>? failedAt, Omittable<String?>? failedReason, SimpleUser? inviter, int? teamCount, String? nodeId, String? invitationTeamsUrl, String? Function()? invitationSource, }) {return OrganizationInvitation(
   id: id ?? this.id,
   login: login != null ? login() : this.login,
   email: email != null ? email() : this.email,
@@ -79,7 +79,7 @@ OrganizationInvitation copyWith({int? id, String? Function()? login, String? Fun
   nodeId: nodeId ?? this.nodeId,
   invitationTeamsUrl: invitationTeamsUrl ?? this.invitationTeamsUrl,
   invitationSource: invitationSource != null ? invitationSource() : this.invitationSource,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationInvitation &&
           id == other.id &&
@@ -99,4 +99,4 @@ OrganizationInvitation copyWith({int? id, String? Function()? login, String? Fun
 
 @override String toString() => 'OrganizationInvitation(\n  id: $id,\n  login: $login,\n  email: $email,\n  role: $role,\n  createdAt: $createdAt,\n  failedAt: $failedAt,\n  failedReason: $failedReason,\n  inviter: $inviter,\n  teamCount: $teamCount,\n  nodeId: $nodeId,\n  invitationTeamsUrl: $invitationTeamsUrl,\n  invitationSource: $invitationSource,\n)';
 
- }
+}

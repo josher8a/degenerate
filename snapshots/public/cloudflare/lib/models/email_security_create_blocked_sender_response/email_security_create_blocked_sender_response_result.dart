@@ -15,7 +15,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class EmailSecurityCreateBlockedSenderResponseResult {const EmailSecurityCreateBlockedSenderResponseResult({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), });
 
-factory EmailSecurityCreateBlockedSenderResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSenderResponseResult(
+factory EmailSecurityCreateBlockedSenderResponseResult.fromJson(Map<String, dynamic> json) {return EmailSecurityCreateBlockedSenderResponseResult(
   comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
@@ -23,7 +23,7 @@ factory EmailSecurityCreateBlockedSenderResponseResult.fromJson(Map<String, dyna
   createdAt: DateTime.parse(json['created_at'] as String),
   id: EmailSecurityBlockedSenderId.fromJson(json['id'] as num),
   lastModified: DateTime.parse(json['last_modified'] as String),
-); }
+);}
 
 final Omittable<String?> comments;
 
@@ -40,7 +40,7 @@ final EmailSecurityBlockedSenderId id;
 
 final DateTime lastModified;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
@@ -48,23 +48,23 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),
   'last_modified': lastModified.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('pattern_type') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') &&
-      json.containsKey('last_modified') && json['last_modified'] is String; } 
+      json.containsKey('last_modified') && json['last_modified'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
-return errors; } 
-EmailSecurityCreateBlockedSenderResponseResult copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) { return EmailSecurityCreateBlockedSenderResponseResult(
+return errors;}
+EmailSecurityCreateBlockedSenderResponseResult copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) {return EmailSecurityCreateBlockedSenderResponseResult(
   comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
@@ -72,7 +72,7 @@ EmailSecurityCreateBlockedSenderResponseResult copyWith({Omittable<String?>? com
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateBlockedSenderResponseResult &&
           comments == other.comments &&
@@ -87,4 +87,4 @@ EmailSecurityCreateBlockedSenderResponseResult copyWith({Omittable<String?>? com
 
 @override String toString() => 'EmailSecurityCreateBlockedSenderResponseResult(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType, createdAt: $createdAt, id: $id, lastModified: $lastModified)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_status_check_configuration.dart';@immutable final class RepositoryRuleRequiredStatusChecksParameters {const RepositoryRuleRequiredStatusChecksParameters({required this.requiredStatusChecks, required this.strictRequiredStatusChecksPolicy, this.doNotEnforceOnCreate, });
 
-factory RepositoryRuleRequiredStatusChecksParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredStatusChecksParameters(
+factory RepositoryRuleRequiredStatusChecksParameters.fromJson(Map<String, dynamic> json) {return RepositoryRuleRequiredStatusChecksParameters(
   doNotEnforceOnCreate: json['do_not_enforce_on_create'] as bool?,
   requiredStatusChecks: (json['required_status_checks'] as List<dynamic>).map((e) => RepositoryRuleParamsStatusCheckConfiguration.fromJson(e as Map<String, dynamic>)).toList(),
   strictRequiredStatusChecksPolicy: json['strict_required_status_checks_policy'] as bool,
-); }
+);}
 
 /// Allow repositories and branches to be created if a check would otherwise prohibit it.
 final bool? doNotEnforceOnCreate;
@@ -18,18 +18,18 @@ final List<RepositoryRuleParamsStatusCheckConfiguration> requiredStatusChecks;
 /// Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.
 final bool strictRequiredStatusChecksPolicy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'do_not_enforce_on_create': ?doNotEnforceOnCreate,
   'required_status_checks': requiredStatusChecks.map((e) => e.toJson()).toList(),
   'strict_required_status_checks_policy': strictRequiredStatusChecksPolicy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('required_status_checks') &&
-      json.containsKey('strict_required_status_checks_policy') && json['strict_required_status_checks_policy'] is bool; } 
-RepositoryRuleRequiredStatusChecksParameters copyWith({bool? Function()? doNotEnforceOnCreate, List<RepositoryRuleParamsStatusCheckConfiguration>? requiredStatusChecks, bool? strictRequiredStatusChecksPolicy, }) { return RepositoryRuleRequiredStatusChecksParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('required_status_checks') &&
+      json.containsKey('strict_required_status_checks_policy') && json['strict_required_status_checks_policy'] is bool;}
+RepositoryRuleRequiredStatusChecksParameters copyWith({bool? Function()? doNotEnforceOnCreate, List<RepositoryRuleParamsStatusCheckConfiguration>? requiredStatusChecks, bool? strictRequiredStatusChecksPolicy, }) {return RepositoryRuleRequiredStatusChecksParameters(
   doNotEnforceOnCreate: doNotEnforceOnCreate != null ? doNotEnforceOnCreate() : this.doNotEnforceOnCreate,
   requiredStatusChecks: requiredStatusChecks ?? this.requiredStatusChecks,
   strictRequiredStatusChecksPolicy: strictRequiredStatusChecksPolicy ?? this.strictRequiredStatusChecksPolicy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredStatusChecksParameters &&
           doNotEnforceOnCreate == other.doNotEnforceOnCreate &&
@@ -40,4 +40,4 @@ RepositoryRuleRequiredStatusChecksParameters copyWith({bool? Function()? doNotEn
 
 @override String toString() => 'RepositoryRuleRequiredStatusChecksParameters(doNotEnforceOnCreate: $doNotEnforceOnCreate, requiredStatusChecks: $requiredStatusChecks, strictRequiredStatusChecksPolicy: $strictRequiredStatusChecksPolicy)';
 
- }
+}

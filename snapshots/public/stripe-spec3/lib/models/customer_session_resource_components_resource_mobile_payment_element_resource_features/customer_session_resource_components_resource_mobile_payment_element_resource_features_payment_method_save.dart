@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether
 /// If a customer checks the box, the [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) value on the PaymentMethod is set to `'always'` at confirmation time. For PaymentIntents, the [`setup_future_usage`](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-setup_future_usage) value is also set to the value defined in `payment_method_save_usage`.
 sealed class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave();
 
-factory CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave.fromJson(String json) { return switch (json) {
+factory CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
   _ => CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$Unknown(json),
-}; }
+};}
 
 static const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave disabled = CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$disabled._();
 
@@ -19,30 +19,30 @@ static const CustomerSessionResourceComponentsResourceMobilePaymentElementResour
 static const List<CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave> values = [disabled, enabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'disabled' => 'disabled',
   'enabled' => 'enabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$Unknown; } 
+bool get isUnknown {return this is CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$disabled() => disabled(),
       CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$enabled() => enabled(),
       CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$disabled() => disabled != null ? disabled() : orElse(value),
       CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$enabled() => enabled != null ? enabled() : orElse(value),
       CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave($value)';
 
- }
+}
 @immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$disabled extends CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$disabled._();
 
 @override String get value => 'disabled';
@@ -51,7 +51,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$enabled extends CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$enabled._();
 
 @override String get value => 'enabled';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$Unknown extends CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave {const CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeaturesPaymentMethodSave$Unknown(this.value);
 
 @override final String value;
@@ -70,4 +70,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => value.hashCode;
 
- }
+}

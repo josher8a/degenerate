@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipDomainSipCredentialListMapping {const AccountSipSipDomainSipCredentialListMapping({this.accountSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.domainSid = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.sid = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountSipSipDomainSipCredentialListMapping.fromJson(Map<String, dynamic> json) { return AccountSipSipDomainSipCredentialListMapping(
+factory AccountSipSipDomainSipCredentialListMapping.fromJson(Map<String, dynamic> json) {return AccountSipSipDomainSipCredentialListMapping(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
@@ -11,7 +11,7 @@ factory AccountSipSipDomainSipCredentialListMapping.fromJson(Map<String, dynamic
   friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique id of the Account that is responsible for this resource.
 final Omittable<String?> accountSid;
@@ -34,7 +34,7 @@ final Omittable<String?> sid;
 /// The URI for this resource, relative to `https://api.twilio.com`
 final Omittable<String?> uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
@@ -42,10 +42,10 @@ Map<String, dynamic> toJson() { return {
   if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
   if (sid.isPresent) 'sid': sid.value,
   if (uri.isPresent) 'uri': uri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'domain_sid', 'friendly_name', 'sid', 'uri'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'domain_sid', 'friendly_name', 'sid', 'uri'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -64,8 +64,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^CL[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^CL[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountSipSipDomainSipCredentialListMapping copyWith({Omittable<String?>? accountSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? domainSid, Omittable<String?>? friendlyName, Omittable<String?>? sid, Omittable<String?>? uri, }) { return AccountSipSipDomainSipCredentialListMapping(
+return errors;}
+AccountSipSipDomainSipCredentialListMapping copyWith({Omittable<String?>? accountSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? domainSid, Omittable<String?>? friendlyName, Omittable<String?>? sid, Omittable<String?>? uri, }) {return AccountSipSipDomainSipCredentialListMapping(
   accountSid: accountSid ?? this.accountSid,
   dateCreated: dateCreated ?? this.dateCreated,
   dateUpdated: dateUpdated ?? this.dateUpdated,
@@ -73,7 +73,7 @@ AccountSipSipDomainSipCredentialListMapping copyWith({Omittable<String?>? accoun
   friendlyName: friendlyName ?? this.friendlyName,
   sid: sid ?? this.sid,
   uri: uri ?? this.uri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSipSipDomainSipCredentialListMapping &&
           accountSid == other.accountSid &&
@@ -88,4 +88,4 @@ AccountSipSipDomainSipCredentialListMapping copyWith({Omittable<String?>? accoun
 
 @override String toString() => 'AccountSipSipDomainSipCredentialListMapping(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, domainSid: $domainSid, friendlyName: $friendlyName, sid: $sid, uri: $uri)';
 
- }
+}

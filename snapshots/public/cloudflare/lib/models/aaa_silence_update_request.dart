@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_silence_id.dart';@immutable final class AaaSilenceUpdateRequest {const AaaSilenceUpdateRequest({this.endTime, this.id, this.startTime, });
 
-factory AaaSilenceUpdateRequest.fromJson(Map<String, dynamic> json) { return AaaSilenceUpdateRequest(
+factory AaaSilenceUpdateRequest.fromJson(Map<String, dynamic> json) {return AaaSilenceUpdateRequest(
   endTime: json['end_time'] as String?,
   id: json['id'] != null ? AaaSilenceId.fromJson(json['id'] as String) : null,
   startTime: json['start_time'] as String?,
-); }
+);}
 
 /// When the silence ends.
 /// 
@@ -22,17 +22,17 @@ final AaaSilenceId? id;
 /// Example: `'2022-01-01T00:00:00Z'`
 final String? startTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_time': ?endTime,
   if (id != null) 'id': id?.toJson(),
   'start_time': ?startTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end_time', 'id', 'start_time'}.contains(key)); } 
-AaaSilenceUpdateRequest copyWith({String? Function()? endTime, AaaSilenceId? Function()? id, String? Function()? startTime, }) { return AaaSilenceUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'end_time', 'id', 'start_time'}.contains(key));}
+AaaSilenceUpdateRequest copyWith({String? Function()? endTime, AaaSilenceId? Function()? id, String? Function()? startTime, }) {return AaaSilenceUpdateRequest(
   endTime: endTime != null ? endTime() : this.endTime,
   id: id != null ? id() : this.id,
   startTime: startTime != null ? startTime() : this.startTime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AaaSilenceUpdateRequest &&
           endTime == other.endTime &&
@@ -43,4 +43,4 @@ AaaSilenceUpdateRequest copyWith({String? Function()? endTime, AaaSilenceId? Fun
 
 @override String toString() => 'AaaSilenceUpdateRequest(endTime: $endTime, id: $id, startTime: $startTime)';
 
- }
+}

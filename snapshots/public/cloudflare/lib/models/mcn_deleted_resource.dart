@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_id.dart';@immutable final class McnDeletedResource {const McnDeletedResource({required this.id});
 
-factory McnDeletedResource.fromJson(Map<String, dynamic> json) { return McnDeletedResource(
+factory McnDeletedResource.fromJson(Map<String, dynamic> json) {return McnDeletedResource(
   id: McnResourceId.fromJson(json['id'] as String),
-); }
+);}
 
 final McnResourceId id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-McnDeletedResource copyWith({McnResourceId? id}) { return McnDeletedResource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+McnDeletedResource copyWith({McnResourceId? id}) {return McnDeletedResource(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnDeletedResource &&
           id == other.id;
@@ -24,4 +24,4 @@ McnDeletedResource copyWith({McnResourceId? id}) { return McnDeletedResource(
 
 @override String toString() => 'McnDeletedResource(id: $id)';
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class VoiceConsentDeletedResourceObject {const VoiceConsentDeletedResourceObject();
 
-factory VoiceConsentDeletedResourceObject.fromJson(String json) { return switch (json) {
+factory VoiceConsentDeletedResourceObject.fromJson(String json) {return switch (json) {
   'audio.voice_consent' => audioVoiceConsent,
   _ => VoiceConsentDeletedResourceObject$Unknown(json),
-}; }
+};}
 
 static const VoiceConsentDeletedResourceObject audioVoiceConsent = VoiceConsentDeletedResourceObject$audioVoiceConsent._();
 
 static const List<VoiceConsentDeletedResourceObject> values = [audioVoiceConsent];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'audio.voice_consent' => 'audioVoiceConsent',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VoiceConsentDeletedResourceObject$Unknown; } 
+bool get isUnknown {return this is VoiceConsentDeletedResourceObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() audioVoiceConsent, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() audioVoiceConsent, required W Function(String value) $unknown, }) {return switch (this) {
       VoiceConsentDeletedResourceObject$audioVoiceConsent() => audioVoiceConsent(),
       VoiceConsentDeletedResourceObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioVoiceConsent, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioVoiceConsent, W Function(String value)? $unknown, }) {return switch (this) {
       VoiceConsentDeletedResourceObject$audioVoiceConsent() => audioVoiceConsent != null ? audioVoiceConsent() : orElse(value),
       VoiceConsentDeletedResourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VoiceConsentDeletedResourceObject($value)';
 
- }
+}
 @immutable final class VoiceConsentDeletedResourceObject$audioVoiceConsent extends VoiceConsentDeletedResourceObject {const VoiceConsentDeletedResourceObject$audioVoiceConsent._();
 
 @override String get value => 'audio.voice_consent';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioVoi
 
 @override int get hashCode => 'audio.voice_consent'.hashCode;
 
- }
+}
 @immutable final class VoiceConsentDeletedResourceObject$Unknown extends VoiceConsentDeletedResourceObject {const VoiceConsentDeletedResourceObject$Unknown(this.value);
 
 @override final String value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioVoi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

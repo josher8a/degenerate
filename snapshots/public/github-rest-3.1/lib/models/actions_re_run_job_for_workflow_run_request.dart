@@ -3,9 +3,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsReRunJobForWorkflowRunRequest {const ActionsReRunJobForWorkflowRunRequest({this.enableDebugLogging});
 
-factory ActionsReRunJobForWorkflowRunRequest.fromJson(Map<String, dynamic> json) { return ActionsReRunJobForWorkflowRunRequest(
+factory ActionsReRunJobForWorkflowRunRequest.fromJson(Map<String, dynamic> json) {return ActionsReRunJobForWorkflowRunRequest(
   enableDebugLogging: json['enable_debug_logging'] as bool?,
-); }
+);}
 
 /// Whether to enable debug logging for the re-run.
 final bool? enableDebugLogging;
@@ -13,13 +13,13 @@ final bool? enableDebugLogging;
 /// The value of `enableDebugLogging`, or its schema default when absent.
 bool get enableDebugLoggingOrDefault => enableDebugLogging ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enable_debug_logging': ?enableDebugLogging,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_debug_logging'}.contains(key)); } 
-ActionsReRunJobForWorkflowRunRequest copyWith({bool? Function()? enableDebugLogging}) { return ActionsReRunJobForWorkflowRunRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enable_debug_logging'}.contains(key));}
+ActionsReRunJobForWorkflowRunRequest copyWith({bool? Function()? enableDebugLogging}) {return ActionsReRunJobForWorkflowRunRequest(
   enableDebugLogging: enableDebugLogging != null ? enableDebugLogging() : this.enableDebugLogging,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsReRunJobForWorkflowRunRequest &&
           enableDebugLogging == other.enableDebugLogging;
@@ -28,4 +28,4 @@ ActionsReRunJobForWorkflowRunRequest copyWith({bool? Function()? enableDebugLogg
 
 @override String toString() => 'ActionsReRunJobForWorkflowRunRequest(enableDebugLogging: $enableDebugLogging)';
 
- }
+}

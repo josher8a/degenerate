@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_status_transitions.dart';/// The rails used to reverse the funds.
 sealed class TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork();
 
-factory TreasuryCreditReversalNetwork.fromJson(String json) { return switch (json) {
+factory TreasuryCreditReversalNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'stripe' => stripe,
   _ => TreasuryCreditReversalNetwork$Unknown(json),
-}; }
+};}
 
 static const TreasuryCreditReversalNetwork ach = TreasuryCreditReversalNetwork$ach._();
 
@@ -17,30 +17,30 @@ static const TreasuryCreditReversalNetwork stripe = TreasuryCreditReversalNetwor
 static const List<TreasuryCreditReversalNetwork> values = [ach, stripe];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ach' => 'ach',
   'stripe' => 'stripe',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryCreditReversalNetwork$Unknown; } 
+bool get isUnknown {return this is TreasuryCreditReversalNetwork$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ach, required W Function() stripe, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ach, required W Function() stripe, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryCreditReversalNetwork$ach() => ach(),
       TreasuryCreditReversalNetwork$stripe() => stripe(),
       TreasuryCreditReversalNetwork$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? stripe, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? stripe, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryCreditReversalNetwork$ach() => ach != null ? ach() : orElse(value),
       TreasuryCreditReversalNetwork$stripe() => stripe != null ? stripe() : orElse(value),
       TreasuryCreditReversalNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryCreditReversalNetwork($value)';
 
- }
+}
 @immutable final class TreasuryCreditReversalNetwork$ach extends TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork$ach._();
 
 @override String get value => 'ach';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'ach'.hashCode;
 
- }
+}
 @immutable final class TreasuryCreditReversalNetwork$stripe extends TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork$stripe._();
 
 @override String get value => 'stripe';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'stripe'.hashCode;
 
- }
+}
 @immutable final class TreasuryCreditReversalNetwork$Unknown extends TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork$Unknown(this.value);
 
 @override final String value;
@@ -68,41 +68,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class TreasuryCreditReversalObject {const TreasuryCreditReversalObject();
 
-factory TreasuryCreditReversalObject.fromJson(String json) { return switch (json) {
+factory TreasuryCreditReversalObject.fromJson(String json) {return switch (json) {
   'treasury.credit_reversal' => treasuryCreditReversal,
   _ => TreasuryCreditReversalObject$Unknown(json),
-}; }
+};}
 
 static const TreasuryCreditReversalObject treasuryCreditReversal = TreasuryCreditReversalObject$treasuryCreditReversal._();
 
 static const List<TreasuryCreditReversalObject> values = [treasuryCreditReversal];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'treasury.credit_reversal' => 'treasuryCreditReversal',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryCreditReversalObject$Unknown; } 
+bool get isUnknown {return this is TreasuryCreditReversalObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() treasuryCreditReversal, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() treasuryCreditReversal, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryCreditReversalObject$treasuryCreditReversal() => treasuryCreditReversal(),
       TreasuryCreditReversalObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryCreditReversal, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryCreditReversal, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryCreditReversalObject$treasuryCreditReversal() => treasuryCreditReversal != null ? treasuryCreditReversal() : orElse(value),
       TreasuryCreditReversalObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryCreditReversalObject($value)';
 
- }
+}
 @immutable final class TreasuryCreditReversalObject$treasuryCreditReversal extends TreasuryCreditReversalObject {const TreasuryCreditReversalObject$treasuryCreditReversal._();
 
 @override String get value => 'treasury.credit_reversal';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => 'treasury.credit_reversal'.hashCode;
 
- }
+}
 @immutable final class TreasuryCreditReversalObject$Unknown extends TreasuryCreditReversalObject {const TreasuryCreditReversalObject$Unknown(this.value);
 
 @override final String value;
@@ -121,16 +121,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Status of the CreditReversal
 sealed class TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus();
 
-factory TreasuryCreditReversalStatus.fromJson(String json) { return switch (json) {
+factory TreasuryCreditReversalStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'posted' => posted,
   'processing' => processing,
   _ => TreasuryCreditReversalStatus$Unknown(json),
-}; }
+};}
 
 static const TreasuryCreditReversalStatus canceled = TreasuryCreditReversalStatus$canceled._();
 
@@ -141,33 +141,33 @@ static const TreasuryCreditReversalStatus processing = TreasuryCreditReversalSta
 static const List<TreasuryCreditReversalStatus> values = [canceled, posted, processing];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'posted' => 'posted',
   'processing' => 'processing',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryCreditReversalStatus$Unknown; } 
+bool get isUnknown {return this is TreasuryCreditReversalStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() posted, required W Function() processing, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() posted, required W Function() processing, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryCreditReversalStatus$canceled() => canceled(),
       TreasuryCreditReversalStatus$posted() => posted(),
       TreasuryCreditReversalStatus$processing() => processing(),
       TreasuryCreditReversalStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? posted, W Function()? processing, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? posted, W Function()? processing, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryCreditReversalStatus$canceled() => canceled != null ? canceled() : orElse(value),
       TreasuryCreditReversalStatus$posted() => posted != null ? posted() : orElse(value),
       TreasuryCreditReversalStatus$processing() => processing != null ? processing() : orElse(value),
       TreasuryCreditReversalStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryCreditReversalStatus($value)';
 
- }
+}
 @immutable final class TreasuryCreditReversalStatus$canceled extends TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -176,7 +176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class TreasuryCreditReversalStatus$posted extends TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus$posted._();
 
 @override String get value => 'posted';
@@ -185,7 +185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'posted'.hashCode;
 
- }
+}
 @immutable final class TreasuryCreditReversalStatus$processing extends TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus$processing._();
 
 @override String get value => 'processing';
@@ -194,7 +194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class TreasuryCreditReversalStatus$Unknown extends TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus$Unknown(this.value);
 
 @override final String value;
@@ -204,11 +204,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// You can reverse some [ReceivedCredits](https://api.stripe.com#received_credits) depending on their network and source flow. Reversing a ReceivedCredit leads to the creation of a new object known as a CreditReversal.
 @immutable final class TreasuryCreditReversal {const TreasuryCreditReversal({required this.amount, required this.created, required this.currency, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedCredit, required this.status, required this.statusTransitions, this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
-factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) { return TreasuryCreditReversal(
+factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) {return TreasuryCreditReversal(
   amount: (json['amount'] as num).toInt(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -223,7 +223,7 @@ factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) { return Trea
   status: TreasuryCreditReversalStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryReceivedCreditsResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryCreditReversalTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount (in cents) transferred.
 final int amount;
@@ -266,7 +266,7 @@ final TreasuryReceivedCreditsResourceStatusTransitions statusTransitions;
 /// The Transaction associated with this object.
 final Omittable<TreasuryCreditReversalTransaction?> transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'created': created,
   'currency': currency,
@@ -281,8 +281,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
   if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String &&
@@ -293,9 +293,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('received_credit') && json['received_credit'] is String &&
       json.containsKey('status') &&
-      json.containsKey('status_transitions'); } 
+      json.containsKey('status_transitions');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (financialAccount.runes.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl.value;
 if (hostedRegulatoryReceiptUrl$ != null) {
@@ -303,8 +303,8 @@ if (hostedRegulatoryReceiptUrl$ != null) {
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (receivedCredit.runes.length > 5000) { errors.add('receivedCredit: length must be <= 5000'); }
-return errors; } 
-TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryCreditReversalNetwork? network, TreasuryCreditReversalObject? object, String? receivedCredit, TreasuryCreditReversalStatus? status, TreasuryReceivedCreditsResourceStatusTransitions? statusTransitions, Omittable<TreasuryCreditReversalTransaction?>? transaction, }) { return TreasuryCreditReversal(
+return errors;}
+TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryCreditReversalNetwork? network, TreasuryCreditReversalObject? object, String? receivedCredit, TreasuryCreditReversalStatus? status, TreasuryReceivedCreditsResourceStatusTransitions? statusTransitions, Omittable<TreasuryCreditReversalTransaction?>? transaction, }) {return TreasuryCreditReversal(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,
@@ -319,7 +319,7 @@ TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, St
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
   transaction: transaction ?? this.transaction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryCreditReversal &&
           amount == other.amount &&
@@ -341,4 +341,4 @@ TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, St
 
 @override String toString() => 'TreasuryCreditReversal(\n  amount: $amount,\n  created: $created,\n  currency: $currency,\n  financialAccount: $financialAccount,\n  hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  network: $network,\n  object: $object,\n  receivedCredit: $receivedCredit,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  transaction: $transaction,\n)';
 
- }
+}

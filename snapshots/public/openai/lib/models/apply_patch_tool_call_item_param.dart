@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_operation_param.dart';/// A tool call representing a request to create, delete, or update files using diff patches.
 @immutable final class ApplyPatchToolCallItemParam {const ApplyPatchToolCallItemParam({required this.type, required this.callId, required this.status, required this.operation, this.id = const Omittable.absent(), });
 
-factory ApplyPatchToolCallItemParam.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCallItemParam(
+factory ApplyPatchToolCallItemParam.fromJson(Map<String, dynamic> json) {return ApplyPatchToolCallItemParam(
   type: json['type'] as String,
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   callId: json['call_id'] as String,
   status: ApplyPatchCallStatus.fromJson(json['status'] as String),
   operation: ApplyPatchOperationParam.fromJson(json['operation'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the item. Always `apply_patch_call`.
 final String type;
@@ -27,29 +27,29 @@ final ApplyPatchCallStatus status;
 /// The specific create, delete, or update instruction for the apply_patch tool call.
 final ApplyPatchOperationParam operation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   if (id.isPresent) 'id': id.value,
   'call_id': callId,
   'status': status.toJson(),
   'operation': operation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('status') &&
-      json.containsKey('operation'); } 
+      json.containsKey('operation');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (callId.isEmpty) { errors.add('callId: length must be >= 1'); }
 if (callId.runes.length > 64) { errors.add('callId: length must be <= 64'); }
-return errors; } 
-ApplyPatchToolCallItemParam copyWith({String? type, Omittable<String?>? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchOperationParam? operation, }) { return ApplyPatchToolCallItemParam(
+return errors;}
+ApplyPatchToolCallItemParam copyWith({String? type, Omittable<String?>? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchOperationParam? operation, }) {return ApplyPatchToolCallItemParam(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
   status: status ?? this.status,
   operation: operation ?? this.operation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchToolCallItemParam &&
           type == other.type &&
@@ -62,4 +62,4 @@ ApplyPatchToolCallItemParam copyWith({String? type, Omittable<String?>? id, Stri
 
 @override String toString() => 'ApplyPatchToolCallItemParam(type: $type, id: $id, callId: $callId, status: $status, operation: $operation)';
 
- }
+}

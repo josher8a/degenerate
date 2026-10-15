@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.failed`.
 sealed class RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType();
 
-factory RealtimeBetaServerEventMcpListToolsFailedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventMcpListToolsFailedType.fromJson(String json) {return switch (json) {
   'mcp_list_tools.failed' => mcpListToolsFailed,
   _ => RealtimeBetaServerEventMcpListToolsFailedType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventMcpListToolsFailedType mcpListToolsFailed = RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed._();
 
 static const List<RealtimeBetaServerEventMcpListToolsFailedType> values = [mcpListToolsFailed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mcp_list_tools.failed' => 'mcpListToolsFailed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventMcpListToolsFailedType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventMcpListToolsFailedType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mcpListToolsFailed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mcpListToolsFailed, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed() => mcpListToolsFailed(),
       RealtimeBetaServerEventMcpListToolsFailedType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcpListToolsFailed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcpListToolsFailed, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed() => mcpListToolsFailed != null ? mcpListToolsFailed() : orElse(value),
       RealtimeBetaServerEventMcpListToolsFailedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventMcpListToolsFailedType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed extends RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed._();
 
 @override String get value => 'mcp_list_tools.failed';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcpListT
 
 @override int get hashCode => 'mcp_list_tools.failed'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventMcpListToolsFailedType$Unknown extends RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcpListT
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when listing MCP tools has failed for an item.
 @immutable final class RealtimeBetaServerEventMcpListToolsFailed {const RealtimeBetaServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId, });
 
-factory RealtimeBetaServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventMcpListToolsFailed(
+factory RealtimeBetaServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventMcpListToolsFailed(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventMcpListToolsFailedType.fromJson(json['type'] as String),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -72,19 +72,19 @@ final RealtimeBetaServerEventMcpListToolsFailedType type;
 /// The ID of the MCP list tools item.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeBetaServerEventMcpListToolsFailed copyWith({String? eventId, RealtimeBetaServerEventMcpListToolsFailedType? type, String? itemId, }) { return RealtimeBetaServerEventMcpListToolsFailed(
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeBetaServerEventMcpListToolsFailed copyWith({String? eventId, RealtimeBetaServerEventMcpListToolsFailedType? type, String? itemId, }) {return RealtimeBetaServerEventMcpListToolsFailed(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventMcpListToolsFailed &&
           eventId == other.eventId &&
@@ -95,4 +95,4 @@ RealtimeBetaServerEventMcpListToolsFailed copyWith({String? eventId, RealtimeBet
 
 @override String toString() => 'RealtimeBetaServerEventMcpListToolsFailed(eventId: $eventId, type: $type, itemId: $itemId)';
 
- }
+}

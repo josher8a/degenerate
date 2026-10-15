@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/nullable_typed_object1.dart';@immutable final class NullableTypedObjectPostResponse {const NullableTypedObjectPostResponse({required this.json});
 
-factory NullableTypedObjectPostResponse.fromJson(Map<String, dynamic> json) { return NullableTypedObjectPostResponse(
+factory NullableTypedObjectPostResponse.fromJson(Map<String, dynamic> json) {return NullableTypedObjectPostResponse(
   json: json['json'] != null ? NullableTypedObject1.fromJson(json['json']) : null,
-); }
+);}
 
 final NullableTypedObject1? json;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'json': json?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('json'); } 
-NullableTypedObjectPostResponse copyWith({NullableTypedObject1? Function()? json}) { return NullableTypedObjectPostResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('json');}
+NullableTypedObjectPostResponse copyWith({NullableTypedObject1? Function()? json}) {return NullableTypedObjectPostResponse(
   json: json != null ? json() : this.json,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NullableTypedObjectPostResponse &&
           json == other.json;
@@ -24,4 +24,4 @@ NullableTypedObjectPostResponse copyWith({NullableTypedObject1? Function()? json
 
 @override String toString() => 'NullableTypedObjectPostResponse(json: $json)';
 
- }
+}

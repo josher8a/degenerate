@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0({required this.http, required this.https, required this.timestamps, });
 
-factory RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(
+factory RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(
   http: (json['http'] as List<dynamic>).map((e) => e as String).toList(),
   https: (json['https'] as List<dynamic>).map((e) => e as String).toList(),
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
-); }
+);}
 
 final List<String> http;
 
@@ -15,19 +15,19 @@ final List<String> https;
 
 final List<DateTime> timestamps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'http': http,
   'https': https,
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('http') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('http') &&
       json.containsKey('https') &&
-      json.containsKey('timestamps'); } 
-RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 copyWith({List<String>? http, List<String>? https, List<DateTime>? timestamps, }) { return RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(
+      json.containsKey('timestamps');}
+RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 copyWith({List<String>? http, List<String>? https, List<DateTime>? timestamps, }) {return RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(
   http: http ?? this.http,
   https: https ?? this.https,
   timestamps: timestamps ?? this.timestamps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 &&
           listEquals(http, other.http) &&
@@ -38,4 +38,4 @@ RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 copyWith({List<Str
 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(http: $http, https: $https, timestamps: $timestamps)';
 
- }
+}

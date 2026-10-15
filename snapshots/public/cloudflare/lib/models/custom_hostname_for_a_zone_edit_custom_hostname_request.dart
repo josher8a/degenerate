@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_origin_server.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_origin_sni.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslpost.dart';@immutable final class CustomHostnameForAZoneEditCustomHostnameRequest {const CustomHostnameForAZoneEditCustomHostnameRequest({this.customMetadata, this.customOriginServer, this.customOriginSni, this.ssl, });
 
-factory CustomHostnameForAZoneEditCustomHostnameRequest.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneEditCustomHostnameRequest(
+factory CustomHostnameForAZoneEditCustomHostnameRequest.fromJson(Map<String, dynamic> json) {return CustomHostnameForAZoneEditCustomHostnameRequest(
   customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   customOriginServer: json['custom_origin_server'] != null ? TlsCertificatesAndHostnamesCustomOriginServer.fromJson(json['custom_origin_server'] as String) : null,
   customOriginSni: json['custom_origin_sni'] != null ? TlsCertificatesAndHostnamesCustomOriginSni.fromJson(json['custom_origin_sni'] as String) : null,
   ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl']) : null,
-); }
+);}
 
 /// Unique key/value metadata for this hostname. These are per-hostname (customer) settings.
 final Map<String,String>? customMetadata;
@@ -21,19 +21,19 @@ final TlsCertificatesAndHostnamesCustomOriginSni? customOriginSni;
 
 final TlsCertificatesAndHostnamesSslpost? ssl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'custom_metadata': ?customMetadata,
   if (customOriginServer != null) 'custom_origin_server': customOriginServer?.toJson(),
   if (customOriginSni != null) 'custom_origin_sni': customOriginSni?.toJson(),
   if (ssl != null) 'ssl': ssl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_metadata', 'custom_origin_server', 'custom_origin_sni', 'ssl'}.contains(key)); } 
-CustomHostnameForAZoneEditCustomHostnameRequest copyWith({Map<String, String>? Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer? Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni? Function()? customOriginSni, TlsCertificatesAndHostnamesSslpost? Function()? ssl, }) { return CustomHostnameForAZoneEditCustomHostnameRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'custom_metadata', 'custom_origin_server', 'custom_origin_sni', 'ssl'}.contains(key));}
+CustomHostnameForAZoneEditCustomHostnameRequest copyWith({Map<String, String>? Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer? Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni? Function()? customOriginSni, TlsCertificatesAndHostnamesSslpost? Function()? ssl, }) {return CustomHostnameForAZoneEditCustomHostnameRequest(
   customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,
   customOriginServer: customOriginServer != null ? customOriginServer() : this.customOriginServer,
   customOriginSni: customOriginSni != null ? customOriginSni() : this.customOriginSni,
   ssl: ssl != null ? ssl() : this.ssl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomHostnameForAZoneEditCustomHostnameRequest &&
           customMetadata == other.customMetadata &&
@@ -45,4 +45,4 @@ CustomHostnameForAZoneEditCustomHostnameRequest copyWith({Map<String, String>? F
 
 @override String toString() => 'CustomHostnameForAZoneEditCustomHostnameRequest(customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, ssl: $ssl)';
 
- }
+}

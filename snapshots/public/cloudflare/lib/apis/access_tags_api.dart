@@ -12,7 +12,7 @@ final class AccessTagsApi with ApiExecutor {const AccessTagsApi(this.apiConfig);
 /// List tags
 ///
 /// `GET /accounts/{account_id}/access/tags`
-Future<ApiResult<List<AccessTag>?, AccessApplicationsAddAnApplicationError>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessTag>?, AccessApplicationsAddAnApplicationError>> accessTagsListTags({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -40,11 +40,11 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Create a tag
 ///
 /// `POST /accounts/{account_id}/access/tags`
-Future<ApiResult<AccessTag?, AccessApplicationsAddAnApplicationError>> accessTagsCreateTag({required AccessIdentifier accountId, AccessTagsCreateTagRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessTag?, AccessApplicationsAddAnApplicationError>> accessTagsCreateTag({required AccessIdentifier accountId, AccessTagsCreateTagRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,11 +63,11 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get a tag
 ///
 /// `GET /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<AccessTag?, AccessApplicationsAddAnApplicationError>> accessTagsGetATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessTag?, AccessApplicationsAddAnApplicationError>> accessTagsGetATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -84,11 +84,11 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update a tag
 ///
 /// `PUT /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<AccessTag?, AccessApplicationsAddAnApplicationError>> accessTagsUpdateATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, AccessTagWithoutAppCount? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessTag?, AccessApplicationsAddAnApplicationError>> accessTagsUpdateATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, AccessTagWithoutAppCount? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,11 +107,11 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete a tag
 ///
 /// `DELETE /accounts/{account_id}/access/tags/{tag_name}`
-Future<ApiResult<AccessNameResponseResult?, AccessApplicationsAddAnApplicationError>> accessTagsDeleteATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessNameResponseResult?, AccessApplicationsAddAnApplicationError>> accessTagsDeleteATag({required AccessIdentifier accountId, required AccessTagsComponentsSchemasName tagName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -128,5 +128,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

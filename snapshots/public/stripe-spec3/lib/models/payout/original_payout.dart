@@ -8,11 +8,11 @@ const OriginalPayout({this.string = const Omittable.absent(), this.payout = cons
 const OriginalPayout._({required this.rawValue, required this.string, required this.payout, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory OriginalPayout.fromJson(Object? json) { return OriginalPayout._(
+factory OriginalPayout.fromJson(Object? json) {return OriginalPayout._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   payout: json is Map<String, dynamic> && Payout.canParse(json) ? parseAnyOfVariant<Payout>(json, (value) => Payout.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'OriginalPayout(${toJson()})';
 
- }
+}

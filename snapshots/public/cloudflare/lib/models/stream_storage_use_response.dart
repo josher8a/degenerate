@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_messages2.dart';import 'package:pub_cloudflare/models/stream_storage_use_response/stream_storage_use_response_result.dart';@immutable final class StreamStorageUseResponse {const StreamStorageUseResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory StreamStorageUseResponse.fromJson(Map<String, dynamic> json) { return StreamStorageUseResponse(
+factory StreamStorageUseResponse.fromJson(Map<String, dynamic> json) {return StreamStorageUseResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? StreamStorageUseResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<StreamMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final StreamStorageUseResponseResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-StreamStorageUseResponse copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, StreamStorageUseResponseResult? Function()? result, }) { return StreamStorageUseResponse(
+      json.containsKey('success') && json['success'] is bool;}
+StreamStorageUseResponse copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, StreamStorageUseResponseResult? Function()? result, }) {return StreamStorageUseResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamStorageUseResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ StreamStorageUseResponse copyWith({List<StreamMessages2>? errors, List<StreamMes
 
 @override String toString() => 'StreamStorageUseResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

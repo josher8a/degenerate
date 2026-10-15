@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_ach_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details_type.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_us_domestic_wire_tracking_details.dart';/// 
 @immutable final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails({required this.type, this.ach, this.usDomesticWire, });
 
-factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
+factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails.fromJson(Map<String, dynamic> json) {return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
   ach: json['ach'] != null ? TreasuryOutboundPaymentsResourceAchTrackingDetails.fromJson(json['ach'] as Map<String, dynamic>) : null,
   type: TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType.fromJson(json['type'] as String),
   usDomesticWire: json['us_domestic_wire'] != null ? TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final TreasuryOutboundPaymentsResourceAchTrackingDetails? ach;
 
@@ -17,17 +17,17 @@ final TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType
 
 final TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails? usDomesticWire;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ach != null) 'ach': ach?.toJson(),
   'type': type.toJson(),
   if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails copyWith({TreasuryOutboundPaymentsResourceAchTrackingDetails? Function()? ach, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType? type, TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails? Function()? usDomesticWire, }) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails copyWith({TreasuryOutboundPaymentsResourceAchTrackingDetails? Function()? ach, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType? type, TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails? Function()? usDomesticWire, }) {return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
   ach: ach != null ? ach() : this.ach,
   type: type ?? this.type,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails &&
           ach == other.ach &&
@@ -38,4 +38,4 @@ TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails copyWith(
 
 @override String toString() => 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(ach: $ach, type: $type, usDomesticWire: $usDomesticWire)';
 
- }
+}

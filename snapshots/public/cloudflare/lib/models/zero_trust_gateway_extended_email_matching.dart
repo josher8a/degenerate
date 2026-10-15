@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures user email settings for firewall policies. When you enable this, the system standardizes email addresses in the identity portion of the rule to match extended email variants in firewall policies. When you disable this setting, the system matches email addresses exactly as you provide them. Enable this setting if your email uses `.` or `+` modifiers.
 @immutable final class ZeroTrustGatewayExtendedEmailMatching {const ZeroTrustGatewayExtendedEmailMatching({this.enabled = const Omittable.absent(), this.readOnly, this.sourceAccount, this.version, });
 
-factory ZeroTrustGatewayExtendedEmailMatching.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayExtendedEmailMatching(
+factory ZeroTrustGatewayExtendedEmailMatching.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayExtendedEmailMatching(
   enabled: json.containsKey('enabled') ? Omittable(json['enabled'] as bool?) : const Omittable.absent(),
   readOnly: json['read_only'] as bool?,
   sourceAccount: json['source_account'] as String?,
   version: json['version'] != null ? (json['version'] as num).toInt() : null,
-); }
+);}
 
 /// Specify whether to match all variants of user emails (with + or . modifiers) used as criteria in Firewall policies.
 /// 
@@ -27,19 +27,19 @@ final String? sourceAccount;
 /// Example: `1`
 final int? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enabled.isPresent) 'enabled': enabled.value,
   'read_only': ?readOnly,
   'source_account': ?sourceAccount,
   'version': ?version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'read_only', 'source_account', 'version'}.contains(key)); } 
-ZeroTrustGatewayExtendedEmailMatching copyWith({Omittable<bool?>? enabled, bool? Function()? readOnly, String? Function()? sourceAccount, int? Function()? version, }) { return ZeroTrustGatewayExtendedEmailMatching(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'read_only', 'source_account', 'version'}.contains(key));}
+ZeroTrustGatewayExtendedEmailMatching copyWith({Omittable<bool?>? enabled, bool? Function()? readOnly, String? Function()? sourceAccount, int? Function()? version, }) {return ZeroTrustGatewayExtendedEmailMatching(
   enabled: enabled ?? this.enabled,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   sourceAccount: sourceAccount != null ? sourceAccount() : this.sourceAccount,
   version: version != null ? version() : this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayExtendedEmailMatching &&
           enabled == other.enabled &&
@@ -51,4 +51,4 @@ ZeroTrustGatewayExtendedEmailMatching copyWith({Omittable<bool?>? enabled, bool?
 
 @override String toString() => 'ZeroTrustGatewayExtendedEmailMatching(enabled: $enabled, readOnly: $readOnly, sourceAccount: $sourceAccount, version: $version)';
 
- }
+}

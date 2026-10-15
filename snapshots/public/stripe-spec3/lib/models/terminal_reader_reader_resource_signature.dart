@@ -4,27 +4,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about a signature being collected using a reader
 @immutable final class TerminalReaderReaderResourceSignature {const TerminalReaderReaderResourceSignature({this.value = const Omittable.absent()});
 
-factory TerminalReaderReaderResourceSignature.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSignature(
+factory TerminalReaderReaderResourceSignature.fromJson(Map<String, dynamic> json) {return TerminalReaderReaderResourceSignature(
   value: json.containsKey('value') ? Omittable(json['value'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The File ID of a collected signature image
 final Omittable<String?> value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (value.isPresent) 'value': value.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'value'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final value$ = value.value;
 if (value$ != null) {
   if (value$.runes.length > 5000) { errors.add('value: length must be <= 5000'); }
 }
-return errors; } 
-TerminalReaderReaderResourceSignature copyWith({Omittable<String?>? value}) { return TerminalReaderReaderResourceSignature(
+return errors;}
+TerminalReaderReaderResourceSignature copyWith({Omittable<String?>? value}) {return TerminalReaderReaderResourceSignature(
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceSignature &&
           value == other.value;
@@ -33,4 +33,4 @@ TerminalReaderReaderResourceSignature copyWith({Omittable<String?>? value}) { re
 
 @override String toString() => 'TerminalReaderReaderResourceSignature(value: $value)';
 
- }
+}

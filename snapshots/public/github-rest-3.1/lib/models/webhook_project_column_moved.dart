@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/webhook_project_card_moved_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_column.dart';@immutable final class WebhookProjectColumnMoved {const WebhookProjectColumnMoved({required this.action, required this.projectColumn, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookProjectColumnMoved.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnMoved(
+factory WebhookProjectColumnMoved.fromJson(Map<String, dynamic> json) {return WebhookProjectColumnMoved(
   action: WebhookProjectCardMovedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookProjectColumnMoved.fromJson(Map<String, dynamic> json) { return W
   projectColumn: WebhooksProjectColumn.fromJson(json['project_column'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookProjectCardMovedAction action;
 
@@ -27,7 +27,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,11 +35,11 @@ Map<String, dynamic> toJson() { return {
   'project_column': projectColumn.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('project_column') &&
-      json.containsKey('sender'); } 
-WebhookProjectColumnMoved copyWith({WebhookProjectCardMovedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProjectColumn? projectColumn, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookProjectColumnMoved(
+      json.containsKey('sender');}
+WebhookProjectColumnMoved copyWith({WebhookProjectCardMovedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProjectColumn? projectColumn, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) {return WebhookProjectColumnMoved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -47,7 +47,7 @@ WebhookProjectColumnMoved copyWith({WebhookProjectCardMovedAction? action, Enter
   projectColumn: projectColumn ?? this.projectColumn,
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectColumnMoved &&
           action == other.action &&
@@ -62,4 +62,4 @@ WebhookProjectColumnMoved copyWith({WebhookProjectCardMovedAction? action, Enter
 
 @override String toString() => 'WebhookProjectColumnMoved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectColumn: $projectColumn, repository: $repository, sender: $sender)';
 
- }
+}

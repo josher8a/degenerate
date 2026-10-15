@@ -10,7 +10,7 @@ bool toJson() => value;
 }
 @immutable final class IamSingleUserResponseResult {const IamSingleUserResponseResult({this.betas, this.country = const Omittable.absent(), this.firstName = const Omittable.absent(), this.hasBusinessZones, this.hasEnterpriseZones, this.hasProZones, this.id, this.lastName = const Omittable.absent(), this.organizations, this.suspended, this.telephone = const Omittable.absent(), this.twoFactorAuthenticationEnabled, this.twoFactorAuthenticationLocked, this.zipcode = const Omittable.absent(), });
 
-factory IamSingleUserResponseResult.fromJson(Map<String, dynamic> json) { return IamSingleUserResponseResult(
+factory IamSingleUserResponseResult.fromJson(Map<String, dynamic> json) {return IamSingleUserResponseResult(
   betas: (json['betas'] as List<dynamic>?)?.map((e) => e as String).toList(),
   country: json.containsKey('country') ? Omittable(json['country'] != null ? IamCountry.fromJson(json['country'] as String) : null) : const Omittable.absent(),
   firstName: json.containsKey('first_name') ? Omittable(json['first_name'] != null ? IamFirstName.fromJson(json['first_name'] as String) : null) : const Omittable.absent(),
@@ -25,7 +25,7 @@ factory IamSingleUserResponseResult.fromJson(Map<String, dynamic> json) { return
   twoFactorAuthenticationEnabled: json['two_factor_authentication_enabled'] != null ? IamTwoFactorAuthenticationEnabled.fromJson(json['two_factor_authentication_enabled'] as bool) : null,
   twoFactorAuthenticationLocked: json['two_factor_authentication_locked'] != null ? IamTwoFactorAuthenticationLocked.fromJson(json['two_factor_authentication_locked'] as bool) : null,
   zipcode: json.containsKey('zipcode') ? Omittable(json['zipcode'] != null ? IamZipcode.fromJson(json['zipcode'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Lists the betas that the user is participating in.
 final List<String>? betas;
@@ -78,7 +78,7 @@ bool get hasProZonesOrDefault => hasProZones ?? false;
 /// The value of `suspended`, or its schema default when absent.
 bool get suspendedOrDefault => suspended ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'betas': ?betas,
   if (country.isPresent) 'country': country.value?.toJson(),
   if (firstName.isPresent) 'first_name': firstName.value?.toJson(),
@@ -93,9 +93,9 @@ Map<String, dynamic> toJson() { return {
   if (twoFactorAuthenticationEnabled != null) 'two_factor_authentication_enabled': twoFactorAuthenticationEnabled?.toJson(),
   if (twoFactorAuthenticationLocked != null) 'two_factor_authentication_locked': twoFactorAuthenticationLocked?.toJson(),
   if (zipcode.isPresent) 'zipcode': zipcode.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'betas', 'country', 'first_name', 'has_business_zones', 'has_enterprise_zones', 'has_pro_zones', 'id', 'last_name', 'organizations', 'suspended', 'telephone', 'two_factor_authentication_enabled', 'two_factor_authentication_locked', 'zipcode'}.contains(key)); } 
-IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable<IamCountry?>? country, Omittable<IamFirstName?>? firstName, bool? Function()? hasBusinessZones, bool? Function()? hasEnterpriseZones, bool? Function()? hasProZones, String? Function()? id, Omittable<IamLastName?>? lastName, List<IamOrganization>? Function()? organizations, bool? Function()? suspended, Omittable<IamTelephone?>? telephone, IamTwoFactorAuthenticationEnabled? Function()? twoFactorAuthenticationEnabled, IamTwoFactorAuthenticationLocked? Function()? twoFactorAuthenticationLocked, Omittable<IamZipcode?>? zipcode, }) { return IamSingleUserResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'betas', 'country', 'first_name', 'has_business_zones', 'has_enterprise_zones', 'has_pro_zones', 'id', 'last_name', 'organizations', 'suspended', 'telephone', 'two_factor_authentication_enabled', 'two_factor_authentication_locked', 'zipcode'}.contains(key));}
+IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable<IamCountry?>? country, Omittable<IamFirstName?>? firstName, bool? Function()? hasBusinessZones, bool? Function()? hasEnterpriseZones, bool? Function()? hasProZones, String? Function()? id, Omittable<IamLastName?>? lastName, List<IamOrganization>? Function()? organizations, bool? Function()? suspended, Omittable<IamTelephone?>? telephone, IamTwoFactorAuthenticationEnabled? Function()? twoFactorAuthenticationEnabled, IamTwoFactorAuthenticationLocked? Function()? twoFactorAuthenticationLocked, Omittable<IamZipcode?>? zipcode, }) {return IamSingleUserResponseResult(
   betas: betas != null ? betas() : this.betas,
   country: country ?? this.country,
   firstName: firstName ?? this.firstName,
@@ -110,7 +110,7 @@ IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable
   twoFactorAuthenticationEnabled: twoFactorAuthenticationEnabled != null ? twoFactorAuthenticationEnabled() : this.twoFactorAuthenticationEnabled,
   twoFactorAuthenticationLocked: twoFactorAuthenticationLocked != null ? twoFactorAuthenticationLocked() : this.twoFactorAuthenticationLocked,
   zipcode: zipcode ?? this.zipcode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamSingleUserResponseResult &&
           listEquals(betas, other.betas) &&
@@ -132,4 +132,4 @@ IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable
 
 @override String toString() => 'IamSingleUserResponseResult(\n  betas: $betas,\n  country: $country,\n  firstName: $firstName,\n  hasBusinessZones: $hasBusinessZones,\n  hasEnterpriseZones: $hasEnterpriseZones,\n  hasProZones: $hasProZones,\n  id: $id,\n  lastName: $lastName,\n  organizations: $organizations,\n  suspended: $suspended,\n  telephone: $telephone,\n  twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled,\n  twoFactorAuthenticationLocked: $twoFactorAuthenticationLocked,\n  zipcode: $zipcode,\n)';
 
- }
+}

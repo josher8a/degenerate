@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_acss_debit_data.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_bacs_debit_data.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_sepa_debit_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class SourceMandateNotificationObject {const SourceMandateNotificationObject();
 
-factory SourceMandateNotificationObject.fromJson(String json) { return switch (json) {
+factory SourceMandateNotificationObject.fromJson(String json) {return switch (json) {
   'source_mandate_notification' => sourceMandateNotification,
   _ => SourceMandateNotificationObject$Unknown(json),
-}; }
+};}
 
 static const SourceMandateNotificationObject sourceMandateNotification = SourceMandateNotificationObject$sourceMandateNotification._();
 
 static const List<SourceMandateNotificationObject> values = [sourceMandateNotification];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'source_mandate_notification' => 'sourceMandateNotification',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SourceMandateNotificationObject$Unknown; } 
+bool get isUnknown {return this is SourceMandateNotificationObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() sourceMandateNotification, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() sourceMandateNotification, required W Function(String value) $unknown, }) {return switch (this) {
       SourceMandateNotificationObject$sourceMandateNotification() => sourceMandateNotification(),
       SourceMandateNotificationObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceMandateNotification, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceMandateNotification, W Function(String value)? $unknown, }) {return switch (this) {
       SourceMandateNotificationObject$sourceMandateNotification() => sourceMandateNotification != null ? sourceMandateNotification() : orElse(value),
       SourceMandateNotificationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SourceMandateNotificationObject($value)';
 
- }
+}
 @immutable final class SourceMandateNotificationObject$sourceMandateNotification extends SourceMandateNotificationObject {const SourceMandateNotificationObject$sourceMandateNotification._();
 
 @override String get value => 'source_mandate_notification';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceMa
 
 @override int get hashCode => 'source_mandate_notification'.hashCode;
 
- }
+}
 @immutable final class SourceMandateNotificationObject$Unknown extends SourceMandateNotificationObject {const SourceMandateNotificationObject$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceMa
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Source mandate notifications should be created when a notification related to
 /// a source mandate must be sent to the payer. They will trigger a webhook or
 /// deliver an email to the customer.
 @immutable final class SourceMandateNotification {const SourceMandateNotification({required this.created, required this.id, required this.livemode, required this.object, required this.reason, required this.source, required this.status, required this.type, this.acssDebit, this.amount = const Omittable.absent(), this.bacsDebit, this.sepaDebit, });
 
-factory SourceMandateNotification.fromJson(Map<String, dynamic> json) { return SourceMandateNotification(
+factory SourceMandateNotification.fromJson(Map<String, dynamic> json) {return SourceMandateNotification(
   acssDebit: json['acss_debit'] != null ? SourceMandateNotificationAcssDebitData.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   bacsDebit: json['bacs_debit'] != null ? SourceMandateNotificationBacsDebitData.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
@@ -72,7 +72,7 @@ factory SourceMandateNotification.fromJson(Map<String, dynamic> json) { return S
   source: Source.fromJson(json['source'] as Map<String, dynamic>),
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final SourceMandateNotificationAcssDebitData? acssDebit;
 
@@ -106,7 +106,7 @@ final String status;
 /// The type of source this mandate notification is attached to. Should be the source type identifier code for the payment method, such as `three_d_secure`.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (amount.isPresent) 'amount': amount.value,
   if (bacsDebit != null) 'bacs_debit': bacsDebit?.toJson(),
@@ -119,23 +119,23 @@ Map<String, dynamic> toJson() { return {
   'source': source.toJson(),
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('source') &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
+      json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (reason.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
 if (type.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
-return errors; } 
-SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Function()? acssDebit, Omittable<int?>? amount, SourceMandateNotificationBacsDebitData? Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData? Function()? sepaDebit, Source? source, String? status, String? type, }) { return SourceMandateNotification(
+return errors;}
+SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Function()? acssDebit, Omittable<int?>? amount, SourceMandateNotificationBacsDebitData? Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData? Function()? sepaDebit, Source? source, String? status, String? type, }) {return SourceMandateNotification(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amount: amount ?? this.amount,
   bacsDebit: bacsDebit != null ? bacsDebit() : this.bacsDebit,
@@ -148,7 +148,7 @@ SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Func
   source: source ?? this.source,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SourceMandateNotification &&
           acssDebit == other.acssDebit &&
@@ -168,4 +168,4 @@ SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Func
 
 @override String toString() => 'SourceMandateNotification(\n  acssDebit: $acssDebit,\n  amount: $amount,\n  bacsDebit: $bacsDebit,\n  created: $created,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  reason: $reason,\n  sepaDebit: $sepaDebit,\n  source: $source,\n  status: $status,\n  type: $type,\n)';
 
- }
+}

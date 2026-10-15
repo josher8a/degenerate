@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Zones0HoldPatchRequest {const Zones0HoldPatchRequest({this.holdAfter, this.includeSubdomains, });
 
-factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) { return Zones0HoldPatchRequest(
+factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) {return Zones0HoldPatchRequest(
   holdAfter: json['hold_after'] as String?,
   includeSubdomains: json['include_subdomains'] as bool?,
-); }
+);}
 
 /// If `hold_after` is provided and future-dated, the hold will be temporarily disabled,
 /// then automatically re-enabled by the system at the time specified
@@ -31,15 +31,15 @@ String get holdAfterOrDefault => holdAfter ?? '';
 /// The value of `includeSubdomains`, or its schema default when absent.
 bool get includeSubdomainsOrDefault => includeSubdomains ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hold_after': ?holdAfter,
   'include_subdomains': ?includeSubdomains,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hold_after', 'include_subdomains'}.contains(key)); } 
-Zones0HoldPatchRequest copyWith({String? Function()? holdAfter, bool? Function()? includeSubdomains, }) { return Zones0HoldPatchRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hold_after', 'include_subdomains'}.contains(key));}
+Zones0HoldPatchRequest copyWith({String? Function()? holdAfter, bool? Function()? includeSubdomains, }) {return Zones0HoldPatchRequest(
   holdAfter: holdAfter != null ? holdAfter() : this.holdAfter,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Zones0HoldPatchRequest &&
           holdAfter == other.holdAfter &&
@@ -49,4 +49,4 @@ Zones0HoldPatchRequest copyWith({String? Function()? holdAfter, bool? Function()
 
 @override String toString() => 'Zones0HoldPatchRequest(holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)';
 
- }
+}

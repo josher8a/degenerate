@@ -14,7 +14,7 @@ final class DevicesResilienceApi with ApiExecutor {const DevicesResilienceApi(th
 /// Fetch the Global WARP override state.
 ///
 /// `GET /accounts/{account_id}/devices/resilience/disconnect`
-Future<ApiResult<TeamsDevicesGlobalWarpOverride, DevicesResilienceRetrieveGlobalWarpOverrideError>> devicesResilienceRetrieveGlobalWarpOverride({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesGlobalWarpOverride, DevicesResilienceRetrieveGlobalWarpOverrideError>> devicesResilienceRetrieveGlobalWarpOverride({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: DevicesResilienceRetrieveGlobalWarpOverrideError.fromResponse,
 );
- } 
+}
 /// Set Global WARP override state
 ///
 /// Sets the Global WARP override state.
 ///
 /// `POST /accounts/{account_id}/devices/resilience/disconnect`
-Future<ApiResult<TeamsDevicesGlobalWarpOverride, DevicesResilienceRetrieveGlobalWarpOverrideError>> devicesResilienceSetGlobalWarpOverride({required TeamsDevicesIdentifier accountId, required TeamsDevicesGlobalWarpOverrideRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesGlobalWarpOverride, DevicesResilienceRetrieveGlobalWarpOverrideError>> devicesResilienceSetGlobalWarpOverride({required TeamsDevicesIdentifier accountId, required TeamsDevicesGlobalWarpOverrideRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,5 +56,5 @@ return await execute(
   },
   onError: DevicesResilienceRetrieveGlobalWarpOverrideError.fromResponse,
 );
- } 
- }
+}
+}

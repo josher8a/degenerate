@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/one_of_circular_reference_object/child.dart';import 'package:pub_speakeasy/models/simple_object.dart';@immutable final class OneOfCircularReferenceObject {const OneOfCircularReferenceObject({required this.child});
 
-factory OneOfCircularReferenceObject.fromJson(Map<String, dynamic> json) { return OneOfCircularReferenceObject(
+factory OneOfCircularReferenceObject.fromJson(Map<String, dynamic> json) {return OneOfCircularReferenceObject(
   child: OneOf2.parse(json['child'], fromA: (v) => OneOfCircularReferenceObject.fromJson(v as Map<String, dynamic>), fromB: (v) => SimpleObject.fromJson(v as Map<String, dynamic>),),
-); }
+);}
 
 final Child child;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'child': child.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('child'); } 
-OneOfCircularReferenceObject copyWith({Child? child}) { return OneOfCircularReferenceObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('child');}
+OneOfCircularReferenceObject copyWith({Child? child}) {return OneOfCircularReferenceObject(
   child: child ?? this.child,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OneOfCircularReferenceObject &&
           child == other.child;
@@ -24,4 +24,4 @@ OneOfCircularReferenceObject copyWith({Child? child}) { return OneOfCircularRefe
 
 @override String toString() => 'OneOfCircularReferenceObject(child: $child)';
 
- }
+}

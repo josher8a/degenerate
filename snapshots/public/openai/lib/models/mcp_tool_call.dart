@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class McpToolCallStatus {const McpToolCallStatus();
 
-factory McpToolCallStatus.fromJson(String json) { return switch (json) {
+factory McpToolCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   'calling' => calling,
   'failed' => failed,
   _ => McpToolCallStatus$Unknown(json),
-}; }
+};}
 
 static const McpToolCallStatus inProgress = McpToolCallStatus$inProgress._();
 
@@ -25,39 +25,39 @@ static const McpToolCallStatus failed = McpToolCallStatus$failed._();
 static const List<McpToolCallStatus> values = [inProgress, completed, incomplete, calling, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'incomplete' => 'incomplete',
   'calling' => 'calling',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is McpToolCallStatus$Unknown; } 
+bool get isUnknown {return this is McpToolCallStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function() calling, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function() calling, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       McpToolCallStatus$inProgress() => inProgress(),
       McpToolCallStatus$completed() => completed(),
       McpToolCallStatus$incomplete() => incomplete(),
       McpToolCallStatus$calling() => calling(),
       McpToolCallStatus$failed() => failed(),
       McpToolCallStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function()? calling, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function()? calling, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       McpToolCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       McpToolCallStatus$completed() => completed != null ? completed() : orElse(value),
       McpToolCallStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
       McpToolCallStatus$calling() => calling != null ? calling() : orElse(value),
       McpToolCallStatus$failed() => failed != null ? failed() : orElse(value),
       McpToolCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'McpToolCallStatus($value)';
 
- }
+}
 @immutable final class McpToolCallStatus$inProgress extends McpToolCallStatus {const McpToolCallStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class McpToolCallStatus$completed extends McpToolCallStatus {const McpToolCallStatus$completed._();
 
 @override String get value => 'completed';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class McpToolCallStatus$incomplete extends McpToolCallStatus {const McpToolCallStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class McpToolCallStatus$calling extends McpToolCallStatus {const McpToolCallStatus$calling._();
 
 @override String get value => 'calling';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'calling'.hashCode;
 
- }
+}
 @immutable final class McpToolCallStatus$failed extends McpToolCallStatus {const McpToolCallStatus$failed._();
 
 @override String get value => 'failed';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class McpToolCallStatus$Unknown extends McpToolCallStatus {const McpToolCallStatus$Unknown(this.value);
 
 @override final String value;
@@ -112,12 +112,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An invocation of a tool on an MCP server.
 /// 
 @immutable final class McpToolCall {const McpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.output = const Omittable.absent(), this.error = const Omittable.absent(), this.status, this.approvalRequestId = const Omittable.absent(), });
 
-factory McpToolCall.fromJson(Map<String, dynamic> json) { return McpToolCall(
+factory McpToolCall.fromJson(Map<String, dynamic> json) {return McpToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   serverLabel: json['server_label'] as String,
@@ -127,7 +127,7 @@ factory McpToolCall.fromJson(Map<String, dynamic> json) { return McpToolCall(
   error: json.containsKey('error') ? Omittable(json['error'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? McpToolCallStatus.fromJson(json['status'] as String) : null,
   approvalRequestId: json.containsKey('approval_request_id') ? Omittable(json['approval_request_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of the item. Always `mcp_call`.
 /// 
@@ -166,7 +166,7 @@ final McpToolCallStatus? status;
 /// 
 final Omittable<String?> approvalRequestId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'server_label': serverLabel,
@@ -176,13 +176,13 @@ Map<String, dynamic> toJson() { return {
   if (error.isPresent) 'error': error.value,
   if (status != null) 'status': status?.toJson(),
   if (approvalRequestId.isPresent) 'approval_request_id': approvalRequestId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('server_label') && json['server_label'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('arguments') && json['arguments'] is String; } 
-McpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) { return McpToolCall(
+      json.containsKey('arguments') && json['arguments'] is String;}
+McpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) {return McpToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   serverLabel: serverLabel ?? this.serverLabel,
@@ -192,7 +192,7 @@ McpToolCall copyWith({String? type, String? id, String? serverLabel, String? nam
   error: error ?? this.error,
   status: status != null ? status() : this.status,
   approvalRequestId: approvalRequestId ?? this.approvalRequestId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McpToolCall &&
           type == other.type &&
@@ -209,4 +209,4 @@ McpToolCall copyWith({String? type, String? id, String? serverLabel, String? nam
 
 @override String toString() => 'McpToolCall(\n  type: $type,\n  id: $id,\n  serverLabel: $serverLabel,\n  name: $name,\n  arguments: $arguments,\n  output: $output,\n  error: $error,\n  status: $status,\n  approvalRequestId: $approvalRequestId,\n)';
 
- }
+}

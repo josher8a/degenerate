@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsTransactionRefundRequest {const PostTestHelpersIssuingTransactionsTransactionRefundRequest({this.expand, this.refundAmount, });
 
-factory PostTestHelpersIssuingTransactionsTransactionRefundRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsTransactionRefundRequest(
+factory PostTestHelpersIssuingTransactionsTransactionRefundRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingTransactionsTransactionRefundRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   refundAmount: json['refund_amount'] != null ? (json['refund_amount'] as num).toInt() : null,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -14,15 +14,15 @@ final List<String>? expand;
 /// The total amount to attempt to refund. This amount is in the provided currency, or defaults to the cards currency, and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int? refundAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'refund_amount': ?refundAmount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'refund_amount'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsTransactionRefundRequest copyWith({List<String>? Function()? expand, int? Function()? refundAmount, }) { return PostTestHelpersIssuingTransactionsTransactionRefundRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand', 'refund_amount'}.contains(key));}
+PostTestHelpersIssuingTransactionsTransactionRefundRequest copyWith({List<String>? Function()? expand, int? Function()? refundAmount, }) {return PostTestHelpersIssuingTransactionsTransactionRefundRequest(
   expand: expand != null ? expand() : this.expand,
   refundAmount: refundAmount != null ? refundAmount() : this.refundAmount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsTransactionRefundRequest &&
           listEquals(expand, other.expand) &&
@@ -32,4 +32,4 @@ PostTestHelpersIssuingTransactionsTransactionRefundRequest copyWith({List<String
 
 @override String toString() => 'PostTestHelpersIssuingTransactionsTransactionRefundRequest(expand: $expand, refundAmount: $refundAmount)';
 
- }
+}

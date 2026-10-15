@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_links.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_start_side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Pull Request Review Comments are comments on a portion of the Pull Request's diff.
 @immutable final class PullRequestReviewComment {const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.position, this.originalPosition, this.inReplyToId, this.startLine = const Omittable.absent(), this.originalStartLine = const Omittable.absent(), this.startSide = const Omittable.absent(), this.line, this.originalLine, this.side, this.subjectType, this.reactions, this.bodyHtml, this.bodyText, });
 
-factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return PullRequestReviewComment(
+factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) {return PullRequestReviewComment(
   url: json['url'] as String,
   pullRequestReviewId: json['pull_request_review_id'] != null ? (json['pull_request_review_id'] as num).toInt() : null,
   id: (json['id'] as num).toInt(),
@@ -34,7 +34,7 @@ factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return Pu
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
-); }
+);}
 
 /// URL for the pull request review comment
 final String url;
@@ -122,7 +122,7 @@ PullRequestReviewCommentStartSide? get startSideOrDefault => startSide.valueOr(P
 /// The value of `side`, or its schema default when absent.
 PullRequestReviewCommentSide get sideOrDefault => side ?? PullRequestReviewCommentSide.fromJson('RIGHT');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url,
   'pull_request_review_id': pullRequestReviewId,
   'id': id,
@@ -152,8 +152,8 @@ Map<String, dynamic> toJson() { return {
   if (reactions != null) 'reactions': reactions?.toJson(),
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('pull_request_review_id') && (json['pull_request_review_id'] == null || json['pull_request_review_id'] is num) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -168,8 +168,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('author_association') &&
-      json.containsKey('_links'); } 
-PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int? Function()? position, int? Function()? originalPosition, String? commitId, String? originalCommitId, int? Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, PullRequestReviewCommentLinks? links, Omittable<int?>? startLine, Omittable<int?>? originalStartLine, Omittable<PullRequestReviewCommentStartSide?>? startSide, int? Function()? line, int? Function()? originalLine, PullRequestReviewCommentSide? Function()? side, SubjectType? Function()? subjectType, ReactionRollup? Function()? reactions, String? Function()? bodyHtml, String? Function()? bodyText, }) { return PullRequestReviewComment(
+      json.containsKey('_links');}
+PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int? Function()? position, int? Function()? originalPosition, String? commitId, String? originalCommitId, int? Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, PullRequestReviewCommentLinks? links, Omittable<int?>? startLine, Omittable<int?>? originalStartLine, Omittable<PullRequestReviewCommentStartSide?>? startSide, int? Function()? line, int? Function()? originalLine, PullRequestReviewCommentSide? Function()? side, SubjectType? Function()? subjectType, ReactionRollup? Function()? reactions, String? Function()? bodyHtml, String? Function()? bodyText, }) {return PullRequestReviewComment(
   url: url ?? this.url,
   pullRequestReviewId: pullRequestReviewId != null ? pullRequestReviewId() : this.pullRequestReviewId,
   id: id ?? this.id,
@@ -199,7 +199,7 @@ PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestRevi
   reactions: reactions != null ? reactions() : this.reactions,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
   bodyText: bodyText != null ? bodyText() : this.bodyText,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewComment &&
           url == other.url &&
@@ -236,4 +236,4 @@ PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestRevi
 
 @override String toString() => 'PullRequestReviewComment(\n  url: $url,\n  pullRequestReviewId: $pullRequestReviewId,\n  id: $id,\n  nodeId: $nodeId,\n  diffHunk: $diffHunk,\n  path: $path,\n  position: $position,\n  originalPosition: $originalPosition,\n  commitId: $commitId,\n  originalCommitId: $originalCommitId,\n  inReplyToId: $inReplyToId,\n  user: $user,\n  body: $body,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  authorAssociation: $authorAssociation,\n  links: $links,\n  startLine: $startLine,\n  originalStartLine: $originalStartLine,\n  startSide: $startSide,\n  line: $line,\n  originalLine: $originalLine,\n  side: $side,\n  subjectType: $subjectType,\n  reactions: $reactions,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n)';
 
- }
+}

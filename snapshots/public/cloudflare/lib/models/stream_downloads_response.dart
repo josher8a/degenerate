@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_downloads_response/stream_downloads_response_result.dart';import 'package:pub_cloudflare/models/stream_messages2.dart';@immutable final class StreamDownloadsResponse {const StreamDownloadsResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory StreamDownloadsResponse.fromJson(Map<String, dynamic> json) { return StreamDownloadsResponse(
+factory StreamDownloadsResponse.fromJson(Map<String, dynamic> json) {return StreamDownloadsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? StreamDownloadsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<StreamMessages2> errors;
 
@@ -22,21 +22,21 @@ final bool success;
 /// An object with download type keys. Each key is optional and only present if that download type has been created.
 final StreamDownloadsResponseResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-StreamDownloadsResponse copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, StreamDownloadsResponseResult? Function()? result, }) { return StreamDownloadsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+StreamDownloadsResponse copyWith({List<StreamMessages2>? errors, List<StreamMessages2>? messages, bool? success, StreamDownloadsResponseResult? Function()? result, }) {return StreamDownloadsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamDownloadsResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ StreamDownloadsResponse copyWith({List<StreamMessages2>? errors, List<StreamMess
 
 @override String toString() => 'StreamDownloadsResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class FunctionToolCallOutput {const FunctionToolCallOutput({required this.type, required this.callId, required this.output, this.id, this.status, });
 
-factory FunctionToolCallOutput.fromJson(Map<String, dynamic> json) { return FunctionToolCallOutput(
+factory FunctionToolCallOutput.fromJson(Map<String, dynamic> json) {return FunctionToolCallOutput(
   id: json['id'] as String?,
   type: json['type'] as String,
   callId: json['call_id'] as String,
   output: OneOf2.parse(json['output'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => FunctionAndCustomToolCallOutput.fromJson(e as Map<String, dynamic>)).toList(),),
   status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The unique ID of the function tool call output. Populated when this item
 /// is returned via API.
@@ -36,23 +36,23 @@ final CustomToolCallOutputOutput output;
 /// 
 final ComputerToolCallOutputResourceStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'type': type,
   'call_id': callId,
   'output': output.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
-      json.containsKey('output'); } 
-FunctionToolCallOutput copyWith({String? Function()? id, String? type, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputResourceStatus? Function()? status, }) { return FunctionToolCallOutput(
+      json.containsKey('output');}
+FunctionToolCallOutput copyWith({String? Function()? id, String? type, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputResourceStatus? Function()? status, }) {return FunctionToolCallOutput(
   id: id != null ? id() : this.id,
   type: type ?? this.type,
   callId: callId ?? this.callId,
   output: output ?? this.output,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionToolCallOutput &&
           id == other.id &&
@@ -65,4 +65,4 @@ FunctionToolCallOutput copyWith({String? Function()? id, String? type, String? c
 
 @override String toString() => 'FunctionToolCallOutput(id: $id, type: $type, callId: $callId, output: $output, status: $status)';
 
- }
+}

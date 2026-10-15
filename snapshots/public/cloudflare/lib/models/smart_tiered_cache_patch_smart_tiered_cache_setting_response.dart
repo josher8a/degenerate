@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_messages2.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_response_value/cache_rules_smart_tiered_cache_response_value_result.dart';@immutable final class SmartTieredCachePatchSmartTieredCacheSettingResponse {const SmartTieredCachePatchSmartTieredCacheSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory SmartTieredCachePatchSmartTieredCacheSettingResponse.fromJson(Map<String, dynamic> json) { return SmartTieredCachePatchSmartTieredCacheSettingResponse(
+factory SmartTieredCachePatchSmartTieredCacheSettingResponse.fromJson(Map<String, dynamic> json) {return SmartTieredCachePatchSmartTieredCacheSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? CacheRulesSmartTieredCacheResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<CacheRulesMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final CacheRulesSmartTieredCacheResponseValueResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-SmartTieredCachePatchSmartTieredCacheSettingResponse copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, CacheRulesSmartTieredCacheResponseValueResult? Function()? result, }) { return SmartTieredCachePatchSmartTieredCacheSettingResponse(
+      json.containsKey('success') && json['success'] is bool;}
+SmartTieredCachePatchSmartTieredCacheSettingResponse copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, CacheRulesSmartTieredCacheResponseValueResult? Function()? result, }) {return SmartTieredCachePatchSmartTieredCacheSettingResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartTieredCachePatchSmartTieredCacheSettingResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ SmartTieredCachePatchSmartTieredCacheSettingResponse copyWith({List<CacheRulesMe
 
 @override String toString() => 'SmartTieredCachePatchSmartTieredCacheSettingResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

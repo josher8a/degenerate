@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_worker_response400.dart';import 'package:pub_cloudflare/models/delete_worker_response401.dart';import 'package:pub_cloudflare/models/delete_worker_response404.dart';import 'package:pub_cloudflare/models/delete_worker_response500.dart';sealed class DeleteWorkerError {const DeleteWorkerError();
 
-factory DeleteWorkerError.fromResponse(ApiResponse response) {     try {
+factory DeleteWorkerError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         400 => DeleteWorkerError$400(DeleteWorkerResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         401 => DeleteWorkerError$401(DeleteWorkerResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -12,12 +12,12 @@ factory DeleteWorkerError.fromResponse(ApiResponse response) {     try {
       };
     } on Object {
       return DeleteWorkerError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class DeleteWorkerError$400 extends DeleteWorkerError {const DeleteWorkerError$400(this.error);
 
 final DeleteWorkerResponse400 error;
@@ -26,7 +26,7 @@ final DeleteWorkerResponse400 error;
 
 @override int get statusCode => 400;
 
- }
+}
 final class DeleteWorkerError$401 extends DeleteWorkerError {const DeleteWorkerError$401(this.error);
 
 final DeleteWorkerResponse401 error;
@@ -35,7 +35,7 @@ final DeleteWorkerResponse401 error;
 
 @override int get statusCode => 401;
 
- }
+}
 final class DeleteWorkerError$404 extends DeleteWorkerError {const DeleteWorkerError$404(this.error);
 
 final DeleteWorkerResponse404 error;
@@ -44,7 +44,7 @@ final DeleteWorkerResponse404 error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class DeleteWorkerError$500 extends DeleteWorkerError {const DeleteWorkerError$500(this.error);
 
 final DeleteWorkerResponse500 error;
@@ -53,11 +53,11 @@ final DeleteWorkerResponse500 error;
 
 @override int get statusCode => 500;
 
- }
+}
 final class DeleteWorkerError$Unknown extends DeleteWorkerError {const DeleteWorkerError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}

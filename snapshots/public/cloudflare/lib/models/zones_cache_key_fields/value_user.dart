@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Feature fields t
 /// 
 @immutable final class ValueUser {const ValueUser({this.deviceType, this.geo, this.lang, });
 
-factory ValueUser.fromJson(Map<String, dynamic> json) { return ValueUser(
+factory ValueUser.fromJson(Map<String, dynamic> json) {return ValueUser(
   deviceType: json['device_type'] as bool?,
   geo: json['geo'] as bool?,
   lang: json['lang'] as bool?,
-); }
+);}
 
 /// Classifies a request as `mobile`, `desktop`, or `tablet`
 /// based on the User Agent.
@@ -26,17 +26,17 @@ final bool? geo;
 /// 
 final bool? lang;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'device_type': ?deviceType,
   'geo': ?geo,
   'lang': ?lang,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_type', 'geo', 'lang'}.contains(key)); } 
-ValueUser copyWith({bool? Function()? deviceType, bool? Function()? geo, bool? Function()? lang, }) { return ValueUser(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'device_type', 'geo', 'lang'}.contains(key));}
+ValueUser copyWith({bool? Function()? deviceType, bool? Function()? geo, bool? Function()? lang, }) {return ValueUser(
   deviceType: deviceType != null ? deviceType() : this.deviceType,
   geo: geo != null ? geo() : this.geo,
   lang: lang != null ? lang() : this.lang,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ValueUser &&
           deviceType == other.deviceType &&
@@ -47,4 +47,4 @@ ValueUser copyWith({bool? Function()? deviceType, bool? Function()? geo, bool? F
 
 @override String toString() => 'ValueUser(deviceType: $deviceType, geo: $geo, lang: $lang)';
 
- }
+}

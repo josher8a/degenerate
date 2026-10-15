@@ -10,7 +10,7 @@ final class GenerationApi with ApiExecutor {const GenerationApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /anything/operationId/colon`
-Future<ApiResult<void, Never>> operationIdColonget({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> operationIdColonget({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,9 +23,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/{emptyObject}`
-Future<ApiResult<void, Never>> emptyObjectGet({required EmptyObjectGetEmptyObject emptyObject, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> emptyObjectGet({required EmptyObjectGetEmptyObject emptyObject, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -38,9 +38,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/reactHookGetAsMutation`
-Future<ApiResult<String, Never>> reactHookGetAsMutation({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> reactHookGetAsMutation({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -55,9 +55,9 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// `GET /anything/reactHookPostAsQuery`
-Future<ApiResult<String, Never>> reactHookPostAsQuery({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> reactHookPostAsQuery({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,9 +72,9 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// `POST /anything/reactHookRenamed`
-Future<ApiResult<Map<String, dynamic>, Never>> reactHookRenamed({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> reactHookRenamed({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -89,9 +89,9 @@ return await execute(
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// `POST /anything/reactHookDisabled`
-Future<ApiResult<Map<String, dynamic>, Never>> reactHookDisabled({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> reactHookDisabled({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -106,9 +106,9 @@ return await execute(
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// `POST /anything/reactHookCombinedOptions`
-Future<ApiResult<Map<String, dynamic>, Never>> reactHookCombinedOptions({required int page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, Never>> reactHookCombinedOptions({required int page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 
@@ -129,9 +129,9 @@ return await execute(
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
 );
- } 
+}
 /// `GET /anything/circularReference`
-Future<ApiResult<ValidCircularReferenceObject, Never>> circularReferenceGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ValidCircularReferenceObject, Never>> circularReferenceGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -146,9 +146,9 @@ return await execute(
     return ValidCircularReferenceObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/arrayCircularReference`
-Future<ApiResult<List<ArrayCircularReferenceObject2>, Never>> arrayCircularReferenceGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ArrayCircularReferenceObject2>, Never>> arrayCircularReferenceGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -164,9 +164,9 @@ return await execute(
     return json.map((e) => ArrayCircularReferenceObject2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// `GET /anything/objectCircularReference`
-Future<ApiResult<ObjectCircularReferenceObject, Never>> objectCircularReferenceGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ObjectCircularReferenceObject, Never>> objectCircularReferenceGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -181,9 +181,9 @@ return await execute(
     return ObjectCircularReferenceObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/oneOfCircularReference`
-Future<ApiResult<OneOfCircularReferenceObject, Never>> oneOfCircularReferenceGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOfCircularReferenceObject, Never>> oneOfCircularReferenceGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -198,9 +198,9 @@ return await execute(
     return OneOfCircularReferenceObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/requestBodyCircularReference`
-Future<ApiResult<RequestBodyCircularReferenceResponse, Never>> requestBodyCircularReference({required ValidCircularReferenceObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RequestBodyCircularReferenceResponse, Never>> requestBodyCircularReference({required ValidCircularReferenceObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -217,11 +217,11 @@ return await execute(
     return RequestBodyCircularReferenceResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// A reference cycle that spans three models separated by one degree
 ///
 /// `POST /anything/circularReferenceOneDegree`
-Future<ApiResult<CircularReferenceOneDegreeResponse, Never>> circularReferenceOneDegree({FigmaComponentNode? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CircularReferenceOneDegreeResponse, Never>> circularReferenceOneDegree({FigmaComponentNode? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -238,9 +238,9 @@ return await execute(
     return CircularReferenceOneDegreeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/circularReferenceOneOfWithMapAndArrayVariants`
-Future<ApiResult<void, Never>> circularReferenceOneOfWithMapAndArrayVariants({required Map<String,CircularOneOfUnion> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> circularReferenceOneOfWithMapAndArrayVariants({required Map<String,CircularOneOfUnion> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -255,9 +255,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `POST /anything/circularReferenceTreeNode`
-Future<ApiResult<void, Never>> circularReferenceTreeNode({CircularTreeNode? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> circularReferenceTreeNode({CircularTreeNode? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -272,9 +272,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/circularReferenceOneOfMultiLevel`
-Future<ApiResult<CircularMultiLevelRoot, Never>> circularReferenceOneOfMultiLevel({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CircularMultiLevelRoot, Never>> circularReferenceOneOfMultiLevel({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -289,9 +289,9 @@ return await execute(
     return CircularMultiLevelRoot.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/emptyResponseObjectWithComment`
-Future<ApiResult<Map<String, dynamic>, EmptyResponseObjectWithCommentGetError>> emptyResponseObjectWithCommentGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, EmptyResponseObjectWithCommentGetError>> emptyResponseObjectWithCommentGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -308,9 +308,9 @@ throw UnsupportedError('Cannot decode application/octet-stream response into Map
   },
   onError: EmptyResponseObjectWithCommentGetError.fromResponse,
 );
- } 
+}
 /// `GET /anything/ignores`
-Future<ApiResult<void, Never>> ignoresGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> ignoresGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -323,9 +323,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `POST /anything/ignores`
-Future<ApiResult<HttpBinSimpleJsonObject, Never>> ignoresPost({required IgnoresPostRequest body, String? testParam, String? testParam2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<HttpBinSimpleJsonObject?, Never>> ignoresPost({required IgnoresPostRequest body, String? testParam, String? testParam2, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (testParam != null) {
   queryParameters['testParam'] = testParam;
@@ -350,12 +350,13 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (response) {
+    if (response.statusCode == 201) return null;
     return HttpBinSimpleJsonObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/ignoreAll`
-Future<ApiResult<void, Never>> ignoreAllGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> ignoreAllGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -368,13 +369,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// An operation used for testing usage examples
 ///
 /// An operation used for testing usage examples that includes a large array of parameters and input types to ensure that all are handled correctly
 ///
 /// `POST /anything/usageExample`
-Future<ApiResult<UsageExamplePostResponse, Never>> usageExamplePost({required String strParameter, required int intParameter, required int int64Parameter, required String int64StringParameter, required String float64StringParameter, required int bigintParameter, required String bigintStrParameter, required double floatParameter, required double float32Parameter, required double decimalParameter, required String decimalStrParameter, required double doubleParameter, required bool boolParameter, required String dateParameter, required DateTime dateTimeParameter, required DateTime dateTimeDefaultParameter, required UsageExamplePostEnumParameter enumParameter, required double falseyNumberParameter, int? bigintParameterOptional, String? bigintStrParameterOptional, double? decimalParameterOptional, String? decimalStrParameterOptional, UsageExamplePostOptEnumParameter? optEnumParameter, UsageExamplePostRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<UsageExamplePostResponse, Never>> usageExamplePost({required String strParameter, required int intParameter, required int int64Parameter, required String int64StringParameter, required String float64StringParameter, required int bigintParameter, required String bigintStrParameter, required double floatParameter, required double float32Parameter, required double decimalParameter, required String decimalStrParameter, required double doubleParameter, required bool boolParameter, required String dateParameter, required DateTime dateTimeParameter, required DateTime dateTimeDefaultParameter, required UsageExamplePostEnumParameter enumParameter, required double falseyNumberParameter, int? bigintParameterOptional, String? bigintStrParameterOptional, double? decimalParameterOptional, String? decimalStrParameterOptional, UsageExamplePostOptEnumParameter? optEnumParameter, UsageExamplePostRequest? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['strParameter'] = strParameter;
 queryParameters['intParameter'] = intParameter.toString();
@@ -429,9 +430,9 @@ return await execute(
     return UsageExamplePostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/dateParamWithDefault`
-Future<ApiResult<void, Never>> dateParamWithDefault({required String dateInput, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> dateParamWithDefault({required String dateInput, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['dateInput'] = dateInput;
 
@@ -450,9 +451,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/dateTimeParamWithDefault`
-Future<ApiResult<void, Never>> dateTimeParamWithDefault({required DateTime dateTimeInput, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> dateTimeParamWithDefault({required DateTime dateTimeInput, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['dateTimeInput'] = dateTimeInput.toIso8601String();
 
@@ -471,9 +472,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/decimalParamWithDefault`
-Future<ApiResult<void, Never>> decimalParamWithDefault({required double decimalInput, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> decimalParamWithDefault({required double decimalInput, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['decimalInput'] = decimalInput.toString();
 
@@ -492,9 +493,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/anchorTypes`
-Future<ApiResult<AnchorTypesGetResponse, Never>> anchorTypesGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AnchorTypesGetResponse, Never>> anchorTypesGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -509,7 +510,7 @@ return await execute(
     return AnchorTypesGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Tests x-speakeasy-name-override behavior across schema composition patterns.
 /// When nameOverrideFeb2026 is enabled, child-level name-overrides in allOf schemas
 /// are no longer hoisted into the parent, preventing unintended renames.
@@ -519,7 +520,7 @@ return await execute(
 /// 
 ///
 /// `GET /anything/nameOverride`
-Future<ApiResult<NameOverrideGetResponse, Never>> nameOverrideGet({required String nameOverride, required NameOverrideGetEnumNameOverride enumNameOverride, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<NameOverrideGetResponse, Never>> nameOverrideGet({required String nameOverride, required NameOverrideGetEnumNameOverride enumNameOverride, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['nameOverride'] = nameOverride;
 queryParameters['enumNameOverride'] = enumNameOverride.toJson();
@@ -541,9 +542,9 @@ return await execute(
     return NameOverrideGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/globalNameOverride`
-Future<ApiResult<GetGlobalNameOverrideResponse, Never>> getGlobalNameOverride({SimpleObject? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetGlobalNameOverrideResponse, Never>> getGlobalNameOverride({SimpleObject? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -560,9 +561,9 @@ return await execute(
     return GetGlobalNameOverrideResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/ignoredGeneration`
-Future<ApiResult<IgnoredGenerationGetResponse, Never>> ignoredGenerationGet({required String ignoredParameter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IgnoredGenerationGetResponse, Never>> ignoredGenerationGet({required String ignoredParameter, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ignoredParameter'] = ignoredParameter;
 
@@ -583,9 +584,9 @@ return await execute(
     return IgnoredGenerationGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/deprecatedObjectInSchema`
-Future<ApiResult<DeprecatedObjectInSchemaGetResponse, Never>> deprecatedObjectInSchemaGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeprecatedObjectInSchemaGetResponse, Never>> deprecatedObjectInSchemaGet({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -600,9 +601,9 @@ return await execute(
     return DeprecatedObjectInSchemaGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/deprecatedFieldInSchema`
-Future<ApiResult<void, Never>> deprecatedFieldInSchemaPost({required DeprecatedFieldInObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deprecatedFieldInSchemaPost({required DeprecatedFieldInObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -617,9 +618,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/typedParameterGeneration`
-Future<ApiResult<void, Never>> typedParameterGenerationGet({String? date, int? bigint, double? decimal, TypedParameterGenerationGetObj? obj, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> typedParameterGenerationGet({String? date, int? bigint, double? decimal, TypedParameterGenerationGetObj? obj, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (date != null) {
   queryParameters['date'] = date;
@@ -651,9 +652,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /anything/flattenedRequestFieldsNameConflicts`
-Future<ApiResult<void, Never>> flattenedRequestFieldsNameConflicts({required ConflictingObject body, String? reason, String? security, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> flattenedRequestFieldsNameConflicts({required ConflictingObject body, String? reason, String? security, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (reason != null) {
   queryParameters['reason'] = reason;
@@ -679,9 +680,9 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// `GET /recursiveTypes`
-Future<ApiResult<RecursiveNodeContainer, Never>> getRecursiveTypes({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RecursiveNodeContainer, Never>> getRecursiveTypes({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -696,9 +697,9 @@ return await execute(
     return RecursiveNodeContainer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /objects`
-Future<ApiResult<ObjectModel, Never>> listObjects({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ObjectModel, Never>> listObjects({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -713,9 +714,9 @@ return await execute(
     return ObjectModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /promotional_draw`
-Future<ApiResult<PromotionalDrawTest, Never>> getPromotionalDraw({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PromotionalDrawTest, Never>> getPromotionalDraw({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -730,5 +731,5 @@ return await execute(
     return PromotionalDrawTest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

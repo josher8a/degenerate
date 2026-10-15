@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_request_rule_request.dart';@immutable final class UpdateZoneEntrypointRulesetRequest {const UpdateZoneEntrypointRulesetRequest({this.description, this.name, this.rules, });
 
-factory UpdateZoneEntrypointRulesetRequest.fromJson(Map<String, dynamic> json) { return UpdateZoneEntrypointRulesetRequest(
+factory UpdateZoneEntrypointRulesetRequest.fromJson(Map<String, dynamic> json) {return UpdateZoneEntrypointRulesetRequest(
   description: json['description'] as String?,
   name: json['name'] as String?,
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RulesetsRequestRuleRequest.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// An informative description of the ruleset.
 /// 
@@ -25,24 +25,24 @@ final List<RulesetsRequestRuleRequest>? rules;
 /// The value of `description`, or its schema default when absent.
 String get descriptionOrDefault => description ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'name': ?name,
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'rules'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'name', 'rules'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.isEmpty) { errors.add('name: length must be >= 1'); }
 }
-return errors; } 
-UpdateZoneEntrypointRulesetRequest copyWith({String? Function()? description, String? Function()? name, List<RulesetsRequestRuleRequest>? Function()? rules, }) { return UpdateZoneEntrypointRulesetRequest(
+return errors;}
+UpdateZoneEntrypointRulesetRequest copyWith({String? Function()? description, String? Function()? name, List<RulesetsRequestRuleRequest>? Function()? rules, }) {return UpdateZoneEntrypointRulesetRequest(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
   rules: rules != null ? rules() : this.rules,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateZoneEntrypointRulesetRequest &&
           description == other.description &&
@@ -53,4 +53,4 @@ UpdateZoneEntrypointRulesetRequest copyWith({String? Function()? description, St
 
 @override String toString() => 'UpdateZoneEntrypointRulesetRequest(description: $description, name: $name, rules: $rules)';
 
- }
+}

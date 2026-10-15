@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the cached tokens used as input for the Response.
 @immutable final class CachedTokensDetails {const CachedTokensDetails({this.textTokens, this.imageTokens, this.audioTokens, });
 
-factory CachedTokensDetails.fromJson(Map<String, dynamic> json) { return CachedTokensDetails(
+factory CachedTokensDetails.fromJson(Map<String, dynamic> json) {return CachedTokensDetails(
   textTokens: json['text_tokens'] != null ? (json['text_tokens'] as num).toInt() : null,
   imageTokens: json['image_tokens'] != null ? (json['image_tokens'] as num).toInt() : null,
   audioTokens: json['audio_tokens'] != null ? (json['audio_tokens'] as num).toInt() : null,
-); }
+);}
 
 /// The number of cached text tokens used as input for the Response.
 final int? textTokens;
@@ -19,17 +19,17 @@ final int? imageTokens;
 /// The number of cached audio tokens used as input for the Response.
 final int? audioTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text_tokens': ?textTokens,
   'image_tokens': ?imageTokens,
   'audio_tokens': ?audioTokens,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text_tokens', 'image_tokens', 'audio_tokens'}.contains(key)); } 
-CachedTokensDetails copyWith({int? Function()? textTokens, int? Function()? imageTokens, int? Function()? audioTokens, }) { return CachedTokensDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'text_tokens', 'image_tokens', 'audio_tokens'}.contains(key));}
+CachedTokensDetails copyWith({int? Function()? textTokens, int? Function()? imageTokens, int? Function()? audioTokens, }) {return CachedTokensDetails(
   textTokens: textTokens != null ? textTokens() : this.textTokens,
   imageTokens: imageTokens != null ? imageTokens() : this.imageTokens,
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CachedTokensDetails &&
           textTokens == other.textTokens &&
@@ -40,4 +40,4 @@ CachedTokensDetails copyWith({int? Function()? textTokens, int? Function()? imag
 
 @override String toString() => 'CachedTokensDetails(textTokens: $textTokens, imageTokens: $imageTokens, audioTokens: $audioTokens)';
 
- }
+}

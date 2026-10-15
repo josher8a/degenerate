@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_annotations.dart';import 'package:pub_cloudflare/models/workers_deployment_request/workers_deployment_request_strategy.dart';import 'package:pub_cloudflare/models/workers_deployment_request/workers_deployment_request_versions.dart';@immutable final class WorkersDeployment {const WorkersDeployment({required this.createdOn, required this.id, required this.source, required this.strategy, required this.versions, this.annotations, this.authorEmail, });
 
-factory WorkersDeployment.fromJson(Map<String, dynamic> json) { return WorkersDeployment(
+factory WorkersDeployment.fromJson(Map<String, dynamic> json) {return WorkersDeployment(
   annotations: json['annotations'] != null ? WorkersDeploymentAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
   authorEmail: json['author_email'] as String?,
   createdOn: DateTime.parse(json['created_on'] as String),
@@ -11,7 +11,7 @@ factory WorkersDeployment.fromJson(Map<String, dynamic> json) { return WorkersDe
   source: json['source'] as String,
   strategy: WorkersDeploymentRequestStrategy.fromJson(json['strategy'] as String),
   versions: (json['versions'] as List<dynamic>).map((e) => WorkersDeploymentRequestVersions.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final WorkersDeploymentAnnotations? annotations;
 
@@ -28,7 +28,7 @@ final WorkersDeploymentRequestStrategy strategy;
 
 final List<WorkersDeploymentRequestVersions> versions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (annotations != null) 'annotations': annotations?.toJson(),
   'author_email': ?authorEmail,
   'created_on': createdOn.toIso8601String(),
@@ -36,13 +36,13 @@ Map<String, dynamic> toJson() { return {
   'source': source,
   'strategy': strategy.toJson(),
   'versions': versions.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('strategy') &&
-      json.containsKey('versions'); } 
-WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotations, String? Function()? authorEmail, DateTime? createdOn, String? id, String? source, WorkersDeploymentRequestStrategy? strategy, List<WorkersDeploymentRequestVersions>? versions, }) { return WorkersDeployment(
+      json.containsKey('versions');}
+WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotations, String? Function()? authorEmail, DateTime? createdOn, String? id, String? source, WorkersDeploymentRequestStrategy? strategy, List<WorkersDeploymentRequestVersions>? versions, }) {return WorkersDeployment(
   annotations: annotations != null ? annotations() : this.annotations,
   authorEmail: authorEmail != null ? authorEmail() : this.authorEmail,
   createdOn: createdOn ?? this.createdOn,
@@ -50,7 +50,7 @@ WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotation
   source: source ?? this.source,
   strategy: strategy ?? this.strategy,
   versions: versions ?? this.versions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersDeployment &&
           annotations == other.annotations &&
@@ -65,4 +65,4 @@ WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotation
 
 @override String toString() => 'WorkersDeployment(annotations: $annotations, authorEmail: $authorEmail, createdOn: $createdOn, id: $id, source: $source, strategy: $strategy, versions: $versions)';
 
- }
+}

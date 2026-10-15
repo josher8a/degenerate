@@ -1,0 +1,28 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';@immutable final class CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse {const CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse({this.id});
+
+factory CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse.fromJson(Map<String, dynamic> json) {return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse(
+  id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
+);}
+
+/// Identifier.
+final TlsCertificatesAndHostnamesIdentifier? id;
+
+Map<String, dynamic> toJson() {return {
+  if (id != null) 'id': id?.toJson(),
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id'}.contains(key));}
+CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse copyWith({TlsCertificatesAndHostnamesIdentifier? Function()? id}) {return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse(
+  id: id != null ? id() : this.id,
+);}
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse &&
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse(id: $id)';
+
+}

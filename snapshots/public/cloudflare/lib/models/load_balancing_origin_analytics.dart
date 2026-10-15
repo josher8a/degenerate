@@ -31,7 +31,7 @@ String toJson() => value;
 }
 @immutable final class LoadBalancingOriginAnalytics {const LoadBalancingOriginAnalytics({this.address, this.changed, this.enabled, this.failureReason, this.healthy, this.ip, this.name, });
 
-factory LoadBalancingOriginAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginAnalytics(
+factory LoadBalancingOriginAnalytics.fromJson(Map<String, dynamic> json) {return LoadBalancingOriginAnalytics(
   address: json['address'] != null ? LoadBalancingAddress.fromJson(json['address'] as String) : null,
   changed: json['changed'] != null ? LoadBalancingOriginChanged.fromJson(json['changed'] as bool) : null,
   enabled: json['enabled'] != null ? LoadBalancingSchemasEnabled.fromJson(json['enabled'] as bool) : null,
@@ -39,7 +39,7 @@ factory LoadBalancingOriginAnalytics.fromJson(Map<String, dynamic> json) { retur
   healthy: json['healthy'] != null ? LoadBalancingOriginHealthy.fromJson(json['healthy'] as bool) : null,
   ip: json['ip'] != null ? LoadBalancingOriginIp.fromJson(json['ip'] as String) : null,
   name: json['name'] != null ? LoadBalancingSchemasName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// The IP address (IPv4 or IPv6) of the origin, or its publicly addressable hostname. Hostnames entered here should resolve directly to the origin, and not be a hostname proxied by Cloudflare. To set an internal/reserved address, virtual_network_id must also be set.
 final LoadBalancingAddress? address;
@@ -56,7 +56,7 @@ final LoadBalancingOriginIp? ip;
 
 final LoadBalancingSchemasName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (changed != null) 'changed': changed?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -64,9 +64,9 @@ Map<String, dynamic> toJson() { return {
   if (healthy != null) 'healthy': healthy?.toJson(),
   if (ip != null) 'ip': ip?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'changed', 'enabled', 'failure_reason', 'healthy', 'ip', 'name'}.contains(key)); } 
-LoadBalancingOriginAnalytics copyWith({LoadBalancingAddress? Function()? address, LoadBalancingOriginChanged? Function()? changed, LoadBalancingSchemasEnabled? Function()? enabled, LoadBalancingOriginFailureReason? Function()? failureReason, LoadBalancingOriginHealthy? Function()? healthy, LoadBalancingOriginIp? Function()? ip, LoadBalancingSchemasName? Function()? name, }) { return LoadBalancingOriginAnalytics(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'changed', 'enabled', 'failure_reason', 'healthy', 'ip', 'name'}.contains(key));}
+LoadBalancingOriginAnalytics copyWith({LoadBalancingAddress? Function()? address, LoadBalancingOriginChanged? Function()? changed, LoadBalancingSchemasEnabled? Function()? enabled, LoadBalancingOriginFailureReason? Function()? failureReason, LoadBalancingOriginHealthy? Function()? healthy, LoadBalancingOriginIp? Function()? ip, LoadBalancingSchemasName? Function()? name, }) {return LoadBalancingOriginAnalytics(
   address: address != null ? address() : this.address,
   changed: changed != null ? changed() : this.changed,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -74,7 +74,7 @@ LoadBalancingOriginAnalytics copyWith({LoadBalancingAddress? Function()? address
   healthy: healthy != null ? healthy() : this.healthy,
   ip: ip != null ? ip() : this.ip,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingOriginAnalytics &&
           address == other.address &&
@@ -89,4 +89,4 @@ LoadBalancingOriginAnalytics copyWith({LoadBalancingAddress? Function()? address
 
 @override String toString() => 'LoadBalancingOriginAnalytics(address: $address, changed: $changed, enabled: $enabled, failureReason: $failureReason, healthy: $healthy, ip: $ip, name: $name)';
 
- }
+}

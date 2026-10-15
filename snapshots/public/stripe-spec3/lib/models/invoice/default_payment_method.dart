@@ -8,11 +8,11 @@ const DefaultPaymentMethod({this.string = const Omittable.absent(), this.payment
 const DefaultPaymentMethod._({required this.rawValue, required this.string, required this.paymentMethod, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DefaultPaymentMethod.fromJson(Object? json) { return DefaultPaymentMethod._(
+factory DefaultPaymentMethod.fromJson(Object? json) {return DefaultPaymentMethod._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   paymentMethod: json is Map<String, dynamic> && PaymentMethod.canParse(json) ? parseAnyOfVariant<PaymentMethod>(json, (value) => PaymentMethod.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DefaultPaymentMethod(${toJson()})';
 
- }
+}

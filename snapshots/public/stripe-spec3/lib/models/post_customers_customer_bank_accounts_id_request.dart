@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account/customer_payment_source_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request/post_customers_customer_bank_accounts_id_request_owner.dart';@immutable final class PostCustomersCustomerBankAccountsIdRequest {const PostCustomersCustomerBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.expMonth, this.expYear, this.expand, this.metadata, this.name, this.owner, });
 
-factory PostCustomersCustomerBankAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBankAccountsIdRequest(
+factory PostCustomersCustomerBankAccountsIdRequest.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerBankAccountsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,
   accountHolderType: json['account_holder_type'] != null ? CustomerPaymentSourceBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   addressCity: json['address_city'] as String?,
@@ -18,7 +18,7 @@ factory PostCustomersCustomerBankAccountsIdRequest.fromJson(Map<String, dynamic>
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
   owner: json['owner'] != null ? PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The name of the person or business that owns the bank account.
 final String? accountHolderName;
@@ -61,7 +61,7 @@ final String? name;
 
 final PostCustomersCustomerBankAccountsIdRequestOwner? owner;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_holder_name': ?accountHolderName,
   if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
   'address_city': ?addressCity,
@@ -76,10 +76,10 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'name': ?name,
   if (owner != null) 'owner': owner?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'exp_month', 'exp_year', 'expand', 'metadata', 'name', 'owner'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'exp_month', 'exp_year', 'expand', 'metadata', 'name', 'owner'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountHolderName$ = accountHolderName;
 if (accountHolderName$ != null) {
   if (accountHolderName$.runes.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
@@ -120,8 +120,8 @@ final name$ = name;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-return errors; } 
-PostCustomersCustomerBankAccountsIdRequest copyWith({String? Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? expMonth, String? Function()? expYear, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, PostCustomersCustomerBankAccountsIdRequestOwner? Function()? owner, }) { return PostCustomersCustomerBankAccountsIdRequest(
+return errors;}
+PostCustomersCustomerBankAccountsIdRequest copyWith({String? Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? expMonth, String? Function()? expYear, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, PostCustomersCustomerBankAccountsIdRequestOwner? Function()? owner, }) {return PostCustomersCustomerBankAccountsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   addressCity: addressCity != null ? addressCity() : this.addressCity,
@@ -136,7 +136,7 @@ PostCustomersCustomerBankAccountsIdRequest copyWith({String? Function()? account
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
   owner: owner != null ? owner() : this.owner,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerBankAccountsIdRequest &&
           accountHolderName == other.accountHolderName &&
@@ -158,4 +158,4 @@ PostCustomersCustomerBankAccountsIdRequest copyWith({String? Function()? account
 
 @override String toString() => 'PostCustomersCustomerBankAccountsIdRequest(\n  accountHolderName: $accountHolderName,\n  accountHolderType: $accountHolderType,\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  expand: $expand,\n  metadata: $metadata,\n  name: $name,\n  owner: $owner,\n)';
 
- }
+}

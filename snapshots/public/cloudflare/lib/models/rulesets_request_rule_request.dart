@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_block_rule/rulesets_block_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_block_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_challenge_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_compress_response_rule/rulesets_compress_response_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_compress_response_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_d_do_s_dynamic_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_execute_rule/rulesets_execute_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_execute_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_force_connection_close_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_js_challenge_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_log_custom_field_rule/rulesets_log_custom_field_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_log_custom_field_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_log_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_managed_challenge_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_redirect_rule/rulesets_redirect_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_redirect_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_rule_request/rulesets_rewrite_rule_request_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_route_rule/rulesets_route_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_route_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';import 'package:pub_cloudflare/models/rulesets_score_rule/rulesets_score_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_score_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_serve_error_rule/rulesets_serve_error_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_serve_error_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_rule/rulesets_set_cache_control_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_rule/rulesets_set_cache_settings_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_tags_rule/rulesets_set_cache_tags_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_tags_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_set_config_rule/rulesets_set_config_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_set_config_rule_request.dart';import 'package:pub_cloudflare/models/rulesets_skip_rule/rulesets_skip_rule_action_parameters.dart';import 'package:pub_cloudflare/models/rulesets_skip_rule_request.dart';sealed class RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction();
 
-factory RulesetsRequestRuleRequestAction.fromJson(String json) { return switch (json) {
+factory RulesetsRequestRuleRequestAction.fromJson(String json) {return switch (json) {
   'block' => block,
   'challenge' => challenge,
   'compress_response' => compressResponse,
@@ -25,7 +25,7 @@ factory RulesetsRequestRuleRequestAction.fromJson(String json) { return switch (
   'set_config' => setConfig,
   'skip' => skip,
   _ => RulesetsRequestRuleRequestAction$Unknown(json),
-}; }
+};}
 
 static const RulesetsRequestRuleRequestAction block = RulesetsRequestRuleRequestAction$block._();
 
@@ -74,7 +74,7 @@ String toJson() => value;
 
 bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$block extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$block._();
 
 @override String get value => 'block';
@@ -85,7 +85,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(block)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$challenge extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$challenge._();
 
 @override String get value => 'challenge';
@@ -96,7 +96,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(challenge)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$compressResponse extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$compressResponse._();
 
 @override String get value => 'compress_response';
@@ -107,7 +107,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(compress_response)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$ddosDynamic extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$ddosDynamic._();
 
 @override String get value => 'ddos_dynamic';
@@ -118,7 +118,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(ddos_dynamic)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$execute extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$execute._();
 
 @override String get value => 'execute';
@@ -129,7 +129,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(execute)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$forceConnectionClose extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$forceConnectionClose._();
 
 @override String get value => 'force_connection_close';
@@ -140,7 +140,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(force_connection_close)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$jsChallenge extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$jsChallenge._();
 
 @override String get value => 'js_challenge';
@@ -151,7 +151,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(js_challenge)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$log extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$log._();
 
 @override String get value => 'log';
@@ -162,7 +162,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(log)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$logCustomField extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$logCustomField._();
 
 @override String get value => 'log_custom_field';
@@ -173,7 +173,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(log_custom_field)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$managedChallenge extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$managedChallenge._();
 
 @override String get value => 'managed_challenge';
@@ -184,7 +184,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(managed_challenge)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$redirect extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$redirect._();
 
 @override String get value => 'redirect';
@@ -195,7 +195,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(redirect)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$rewrite extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$rewrite._();
 
 @override String get value => 'rewrite';
@@ -206,7 +206,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(rewrite)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$route extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$route._();
 
 @override String get value => 'route';
@@ -217,7 +217,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(route)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$score extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$score._();
 
 @override String get value => 'score';
@@ -228,7 +228,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(score)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$serveError extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$serveError._();
 
 @override String get value => 'serve_error';
@@ -239,7 +239,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(serve_error)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$setCacheControl extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$setCacheControl._();
 
 @override String get value => 'set_cache_control';
@@ -250,7 +250,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(set_cache_control)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$setCacheSettings extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$setCacheSettings._();
 
 @override String get value => 'set_cache_settings';
@@ -261,7 +261,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(set_cache_settings)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$setCacheTags extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$setCacheTags._();
 
 @override String get value => 'set_cache_tags';
@@ -272,7 +272,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(set_cache_tags)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$setConfig extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$setConfig._();
 
 @override String get value => 'set_config';
@@ -283,7 +283,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(set_config)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$skip extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$skip._();
 
 @override String get value => 'skip';
@@ -294,7 +294,7 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction(skip)';
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestAction$Unknown extends RulesetsRequestRuleRequestAction {const RulesetsRequestRuleRequestAction$Unknown(this.value);
 
 @override final String value;
@@ -305,11 +305,11 @@ bool get isUnknown => this is RulesetsRequestRuleRequestAction$Unknown;
 
 @override String toString() => 'RulesetsRequestRuleRequestAction($value)';
 
- }
+}
 sealed class RulesetsRequestRuleRequest {const RulesetsRequestRuleRequest();
 
 /// Deserialize from JSON, dispatching on the `action` discriminator.
-factory RulesetsRequestRuleRequest.fromJson(Map<String, dynamic> json) { return switch (json['action']) {
+factory RulesetsRequestRuleRequest.fromJson(Map<String, dynamic> json) {return switch (json['action']) {
   'block' => RulesetsRequestRuleRequestBlock.fromJson(json),
   'challenge' => RulesetsRequestRuleRequestChallenge.fromJson(json),
   'compress_response' => RulesetsRequestRuleRequestCompressResponse.fromJson(json),
@@ -331,67 +331,67 @@ factory RulesetsRequestRuleRequest.fromJson(Map<String, dynamic> json) { return 
   'set_config' => RulesetsRequestRuleRequestSetConfig.fromJson(json),
   'skip' => RulesetsRequestRuleRequestSkip.fromJson(json),
   _ => RulesetsRequestRuleRequest$Unknown(json),
-}; }
+};}
 
 /// Build the `block` variant.
-factory RulesetsRequestRuleRequest.block({RulesetsBlockRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestBlock(RulesetsBlockRuleRequest(action: Omittable('block'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.block({RulesetsBlockRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestBlock(RulesetsBlockRuleRequest(action: Omittable('block'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `challenge` variant.
-factory RulesetsRequestRuleRequest.challenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestChallenge(RulesetsChallengeRuleRequest(action: Omittable('challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.challenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestChallenge(RulesetsChallengeRuleRequest(action: Omittable('challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `compress_response` variant.
-factory RulesetsRequestRuleRequest.compressResponse({RulesetsCompressResponseRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestCompressResponse(RulesetsCompressResponseRuleRequest(action: Omittable('compress_response'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.compressResponse({RulesetsCompressResponseRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestCompressResponse(RulesetsCompressResponseRuleRequest(action: Omittable('compress_response'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `ddos_dynamic` variant.
-factory RulesetsRequestRuleRequest.ddosDynamic({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestDdosDynamic(RulesetsDDoSDynamicRuleRequest(action: Omittable('ddos_dynamic'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.ddosDynamic({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestDdosDynamic(RulesetsDDoSDynamicRuleRequest(action: Omittable('ddos_dynamic'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `execute` variant.
-factory RulesetsRequestRuleRequest.execute({RulesetsExecuteRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestExecute(RulesetsExecuteRuleRequest(action: Omittable('execute'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.execute({RulesetsExecuteRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestExecute(RulesetsExecuteRuleRequest(action: Omittable('execute'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `force_connection_close` variant.
-factory RulesetsRequestRuleRequest.forceConnectionClose({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestForceConnectionClose(RulesetsForceConnectionCloseRuleRequest(action: Omittable('force_connection_close'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.forceConnectionClose({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestForceConnectionClose(RulesetsForceConnectionCloseRuleRequest(action: Omittable('force_connection_close'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `js_challenge` variant.
-factory RulesetsRequestRuleRequest.jsChallenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestJsChallenge(RulesetsJsChallengeRuleRequest(action: Omittable('js_challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.jsChallenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestJsChallenge(RulesetsJsChallengeRuleRequest(action: Omittable('js_challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `log` variant.
-factory RulesetsRequestRuleRequest.log({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestLog(RulesetsLogRuleRequest(action: Omittable('log'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.log({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestLog(RulesetsLogRuleRequest(action: Omittable('log'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `log_custom_field` variant.
-factory RulesetsRequestRuleRequest.logCustomField({RulesetsLogCustomFieldRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestLogCustomField(RulesetsLogCustomFieldRuleRequest(action: Omittable('log_custom_field'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.logCustomField({RulesetsLogCustomFieldRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestLogCustomField(RulesetsLogCustomFieldRuleRequest(action: Omittable('log_custom_field'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `managed_challenge` variant.
-factory RulesetsRequestRuleRequest.managedChallenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestManagedChallenge(RulesetsManagedChallengeRuleRequest(action: Omittable('managed_challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.managedChallenge({Map<String,dynamic>? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestManagedChallenge(RulesetsManagedChallengeRuleRequest(action: Omittable('managed_challenge'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `redirect` variant.
-factory RulesetsRequestRuleRequest.redirect({RulesetsRedirectRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestRedirect(RulesetsRedirectRuleRequest(action: Omittable('redirect'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.redirect({RulesetsRedirectRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestRedirect(RulesetsRedirectRuleRequest(action: Omittable('redirect'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `rewrite` variant.
-factory RulesetsRequestRuleRequest.rewrite({RulesetsRewriteRuleRequestActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestRewrite(RulesetsRewriteRuleRequest(action: Omittable('rewrite'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.rewrite({RulesetsRewriteRuleRequestActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestRewrite(RulesetsRewriteRuleRequest(action: Omittable('rewrite'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `route` variant.
-factory RulesetsRequestRuleRequest.route({RulesetsRouteRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestRoute(RulesetsRouteRuleRequest(action: Omittable('route'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.route({RulesetsRouteRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestRoute(RulesetsRouteRuleRequest(action: Omittable('route'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `score` variant.
-factory RulesetsRequestRuleRequest.score({RulesetsScoreRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestScore(RulesetsScoreRuleRequest(action: Omittable('score'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.score({RulesetsScoreRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestScore(RulesetsScoreRuleRequest(action: Omittable('score'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `serve_error` variant.
-factory RulesetsRequestRuleRequest.serveError({RulesetsServeErrorRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestServeError(RulesetsServeErrorRuleRequest(action: Omittable('serve_error'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.serveError({RulesetsServeErrorRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestServeError(RulesetsServeErrorRuleRequest(action: Omittable('serve_error'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `set_cache_control` variant.
-factory RulesetsRequestRuleRequest.setCacheControl({RulesetsSetCacheControlRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestSetCacheControl(RulesetsSetCacheControlRuleRequest(action: Omittable('set_cache_control'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.setCacheControl({RulesetsSetCacheControlRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestSetCacheControl(RulesetsSetCacheControlRuleRequest(action: Omittable('set_cache_control'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `set_cache_settings` variant.
-factory RulesetsRequestRuleRequest.setCacheSettings({RulesetsSetCacheSettingsRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestSetCacheSettings(RulesetsSetCacheSettingsRuleRequest(action: Omittable('set_cache_settings'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.setCacheSettings({RulesetsSetCacheSettingsRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestSetCacheSettings(RulesetsSetCacheSettingsRuleRequest(action: Omittable('set_cache_settings'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `set_cache_tags` variant.
-factory RulesetsRequestRuleRequest.setCacheTags({RulesetsSetCacheTagsRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestSetCacheTags(RulesetsSetCacheTagsRuleRequest(action: Omittable('set_cache_tags'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.setCacheTags({RulesetsSetCacheTagsRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestSetCacheTags(RulesetsSetCacheTagsRuleRequest(action: Omittable('set_cache_tags'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `set_config` variant.
-factory RulesetsRequestRuleRequest.setConfig({RulesetsSetConfigRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestSetConfig(RulesetsSetConfigRuleRequest(action: Omittable('set_config'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.setConfig({RulesetsSetConfigRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestSetConfig(RulesetsSetConfigRuleRequest(action: Omittable('set_config'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// Build the `skip` variant.
-factory RulesetsRequestRuleRequest.skip({RulesetsSkipRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleRequestSkip(RulesetsSkipRuleRequest(action: Omittable('skip'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref)); }
+factory RulesetsRequestRuleRequest.skip({RulesetsSkipRuleActionParameters? actionParameters, Omittable<dynamic> description = const Omittable.absent(), RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) {return RulesetsRequestRuleRequestSkip(RulesetsSkipRuleRequest(action: Omittable('skip'), actionParameters: actionParameters, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, logging: logging, ratelimit: ratelimit, ref: ref));}
 
 /// The discriminator value identifying this variant.
 RulesetsRequestRuleRequestAction get action;
@@ -413,7 +413,7 @@ RulesetsRuleLogging? get logging;
 RulesetsRuleRatelimit? get ratelimit;
 /// Shared by all variants of this union.
 String? get ref;
-R when<R>({required R Function(RulesetsRequestRuleRequestBlock) block, required R Function(RulesetsRequestRuleRequestChallenge) challenge, required R Function(RulesetsRequestRuleRequestCompressResponse) compressResponse, required R Function(RulesetsRequestRuleRequestDdosDynamic) ddosDynamic, required R Function(RulesetsRequestRuleRequestExecute) execute, required R Function(RulesetsRequestRuleRequestForceConnectionClose) forceConnectionClose, required R Function(RulesetsRequestRuleRequestJsChallenge) jsChallenge, required R Function(RulesetsRequestRuleRequestLog) log, required R Function(RulesetsRequestRuleRequestLogCustomField) logCustomField, required R Function(RulesetsRequestRuleRequestManagedChallenge) managedChallenge, required R Function(RulesetsRequestRuleRequestRedirect) redirect, required R Function(RulesetsRequestRuleRequestRewrite) rewrite, required R Function(RulesetsRequestRuleRequestRoute) route, required R Function(RulesetsRequestRuleRequestScore) score, required R Function(RulesetsRequestRuleRequestServeError) serveError, required R Function(RulesetsRequestRuleRequestSetCacheControl) setCacheControl, required R Function(RulesetsRequestRuleRequestSetCacheSettings) setCacheSettings, required R Function(RulesetsRequestRuleRequestSetCacheTags) setCacheTags, required R Function(RulesetsRequestRuleRequestSetConfig) setConfig, required R Function(RulesetsRequestRuleRequestSkip) skip, required R Function(RulesetsRequestRuleRequest$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(RulesetsRequestRuleRequestBlock) block, required R Function(RulesetsRequestRuleRequestChallenge) challenge, required R Function(RulesetsRequestRuleRequestCompressResponse) compressResponse, required R Function(RulesetsRequestRuleRequestDdosDynamic) ddosDynamic, required R Function(RulesetsRequestRuleRequestExecute) execute, required R Function(RulesetsRequestRuleRequestForceConnectionClose) forceConnectionClose, required R Function(RulesetsRequestRuleRequestJsChallenge) jsChallenge, required R Function(RulesetsRequestRuleRequestLog) log, required R Function(RulesetsRequestRuleRequestLogCustomField) logCustomField, required R Function(RulesetsRequestRuleRequestManagedChallenge) managedChallenge, required R Function(RulesetsRequestRuleRequestRedirect) redirect, required R Function(RulesetsRequestRuleRequestRewrite) rewrite, required R Function(RulesetsRequestRuleRequestRoute) route, required R Function(RulesetsRequestRuleRequestScore) score, required R Function(RulesetsRequestRuleRequestServeError) serveError, required R Function(RulesetsRequestRuleRequestSetCacheControl) setCacheControl, required R Function(RulesetsRequestRuleRequestSetCacheSettings) setCacheSettings, required R Function(RulesetsRequestRuleRequestSetCacheTags) setCacheTags, required R Function(RulesetsRequestRuleRequestSetConfig) setConfig, required R Function(RulesetsRequestRuleRequestSkip) skip, required R Function(RulesetsRequestRuleRequest$Unknown) unknown, }) {return switch (this) {
   final RulesetsRequestRuleRequestBlock v => block(v),
   final RulesetsRequestRuleRequestChallenge v => challenge(v),
   final RulesetsRequestRuleRequestCompressResponse v => compressResponse(v),
@@ -435,11 +435,11 @@ R when<R>({required R Function(RulesetsRequestRuleRequestBlock) block, required 
   final RulesetsRequestRuleRequestSetConfig v => setConfig(v),
   final RulesetsRequestRuleRequestSkip v => skip(v),
   final RulesetsRequestRuleRequest$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class RulesetsRequestRuleRequestBlock extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestBlock(this.rulesetsBlockRuleRequest);
 
-factory RulesetsRequestRuleRequestBlock.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestBlock(RulesetsBlockRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestBlock.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestBlock(RulesetsBlockRuleRequest.fromJson(json));}
 
 final RulesetsBlockRuleRequest rulesetsBlockRuleRequest;
 
@@ -447,7 +447,7 @@ final RulesetsBlockRuleRequest rulesetsBlockRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsBlockRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestBlock copyWith({RulesetsBlockRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestBlock(rulesetsBlockRuleRequest.copyWith(
+RulesetsRequestRuleRequestBlock copyWith({RulesetsBlockRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestBlock(rulesetsBlockRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -457,7 +457,7 @@ RulesetsRequestRuleRequestBlock copyWith({RulesetsBlockRuleActionParameters? Fun
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestBlock && rulesetsBlockRuleRequest == other.rulesetsBlockRuleRequest;
 
@@ -479,10 +479,10 @@ RulesetsRequestRuleRequestBlock copyWith({RulesetsBlockRuleActionParameters? Fun
 
 @override String? get ref => rulesetsBlockRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestChallenge extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestChallenge(this.rulesetsChallengeRuleRequest);
 
-factory RulesetsRequestRuleRequestChallenge.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestChallenge(RulesetsChallengeRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestChallenge.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestChallenge(RulesetsChallengeRuleRequest.fromJson(json));}
 
 final RulesetsChallengeRuleRequest rulesetsChallengeRuleRequest;
 
@@ -490,7 +490,7 @@ final RulesetsChallengeRuleRequest rulesetsChallengeRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestChallenge(rulesetsChallengeRuleRequest.copyWith(
+RulesetsRequestRuleRequestChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestChallenge(rulesetsChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -500,7 +500,7 @@ RulesetsRequestRuleRequestChallenge copyWith({Map<String, dynamic>? Function()? 
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestChallenge && rulesetsChallengeRuleRequest == other.rulesetsChallengeRuleRequest;
 
@@ -522,10 +522,10 @@ RulesetsRequestRuleRequestChallenge copyWith({Map<String, dynamic>? Function()? 
 
 @override String? get ref => rulesetsChallengeRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestCompressResponse extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestCompressResponse(this.rulesetsCompressResponseRuleRequest);
 
-factory RulesetsRequestRuleRequestCompressResponse.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestCompressResponse(RulesetsCompressResponseRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestCompressResponse.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestCompressResponse(RulesetsCompressResponseRuleRequest.fromJson(json));}
 
 final RulesetsCompressResponseRuleRequest rulesetsCompressResponseRuleRequest;
 
@@ -533,7 +533,7 @@ final RulesetsCompressResponseRuleRequest rulesetsCompressResponseRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsCompressResponseRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestCompressResponse copyWith({RulesetsCompressResponseRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestCompressResponse(rulesetsCompressResponseRuleRequest.copyWith(
+RulesetsRequestRuleRequestCompressResponse copyWith({RulesetsCompressResponseRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestCompressResponse(rulesetsCompressResponseRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -543,7 +543,7 @@ RulesetsRequestRuleRequestCompressResponse copyWith({RulesetsCompressResponseRul
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestCompressResponse && rulesetsCompressResponseRuleRequest == other.rulesetsCompressResponseRuleRequest;
 
@@ -565,10 +565,10 @@ RulesetsRequestRuleRequestCompressResponse copyWith({RulesetsCompressResponseRul
 
 @override String? get ref => rulesetsCompressResponseRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestDdosDynamic extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestDdosDynamic(this.rulesetsDDoSDynamicRuleRequest);
 
-factory RulesetsRequestRuleRequestDdosDynamic.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestDdosDynamic(RulesetsDDoSDynamicRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestDdosDynamic.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestDdosDynamic(RulesetsDDoSDynamicRuleRequest.fromJson(json));}
 
 final RulesetsDDoSDynamicRuleRequest rulesetsDDoSDynamicRuleRequest;
 
@@ -576,7 +576,7 @@ final RulesetsDDoSDynamicRuleRequest rulesetsDDoSDynamicRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsDDoSDynamicRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestDdosDynamic copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestDdosDynamic(rulesetsDDoSDynamicRuleRequest.copyWith(
+RulesetsRequestRuleRequestDdosDynamic copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestDdosDynamic(rulesetsDDoSDynamicRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -586,7 +586,7 @@ RulesetsRequestRuleRequestDdosDynamic copyWith({Map<String, dynamic>? Function()
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestDdosDynamic && rulesetsDDoSDynamicRuleRequest == other.rulesetsDDoSDynamicRuleRequest;
 
@@ -608,10 +608,10 @@ RulesetsRequestRuleRequestDdosDynamic copyWith({Map<String, dynamic>? Function()
 
 @override String? get ref => rulesetsDDoSDynamicRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestExecute extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestExecute(this.rulesetsExecuteRuleRequest);
 
-factory RulesetsRequestRuleRequestExecute.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestExecute(RulesetsExecuteRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestExecute.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestExecute(RulesetsExecuteRuleRequest.fromJson(json));}
 
 final RulesetsExecuteRuleRequest rulesetsExecuteRuleRequest;
 
@@ -619,7 +619,7 @@ final RulesetsExecuteRuleRequest rulesetsExecuteRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsExecuteRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestExecute copyWith({RulesetsExecuteRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestExecute(rulesetsExecuteRuleRequest.copyWith(
+RulesetsRequestRuleRequestExecute copyWith({RulesetsExecuteRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestExecute(rulesetsExecuteRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -629,7 +629,7 @@ RulesetsRequestRuleRequestExecute copyWith({RulesetsExecuteRuleActionParameters?
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestExecute && rulesetsExecuteRuleRequest == other.rulesetsExecuteRuleRequest;
 
@@ -651,10 +651,10 @@ RulesetsRequestRuleRequestExecute copyWith({RulesetsExecuteRuleActionParameters?
 
 @override String? get ref => rulesetsExecuteRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestForceConnectionClose extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestForceConnectionClose(this.rulesetsForceConnectionCloseRuleRequest);
 
-factory RulesetsRequestRuleRequestForceConnectionClose.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestForceConnectionClose(RulesetsForceConnectionCloseRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestForceConnectionClose.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestForceConnectionClose(RulesetsForceConnectionCloseRuleRequest.fromJson(json));}
 
 final RulesetsForceConnectionCloseRuleRequest rulesetsForceConnectionCloseRuleRequest;
 
@@ -662,7 +662,7 @@ final RulesetsForceConnectionCloseRuleRequest rulesetsForceConnectionCloseRuleRe
 
 @override Map<String, dynamic> toJson() => {...rulesetsForceConnectionCloseRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestForceConnectionClose copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestForceConnectionClose(rulesetsForceConnectionCloseRuleRequest.copyWith(
+RulesetsRequestRuleRequestForceConnectionClose copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestForceConnectionClose(rulesetsForceConnectionCloseRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -672,7 +672,7 @@ RulesetsRequestRuleRequestForceConnectionClose copyWith({Map<String, dynamic>? F
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestForceConnectionClose && rulesetsForceConnectionCloseRuleRequest == other.rulesetsForceConnectionCloseRuleRequest;
 
@@ -694,10 +694,10 @@ RulesetsRequestRuleRequestForceConnectionClose copyWith({Map<String, dynamic>? F
 
 @override String? get ref => rulesetsForceConnectionCloseRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestJsChallenge extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestJsChallenge(this.rulesetsJsChallengeRuleRequest);
 
-factory RulesetsRequestRuleRequestJsChallenge.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestJsChallenge(RulesetsJsChallengeRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestJsChallenge.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestJsChallenge(RulesetsJsChallengeRuleRequest.fromJson(json));}
 
 final RulesetsJsChallengeRuleRequest rulesetsJsChallengeRuleRequest;
 
@@ -705,7 +705,7 @@ final RulesetsJsChallengeRuleRequest rulesetsJsChallengeRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsJsChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestJsChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestJsChallenge(rulesetsJsChallengeRuleRequest.copyWith(
+RulesetsRequestRuleRequestJsChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestJsChallenge(rulesetsJsChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -715,7 +715,7 @@ RulesetsRequestRuleRequestJsChallenge copyWith({Map<String, dynamic>? Function()
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestJsChallenge && rulesetsJsChallengeRuleRequest == other.rulesetsJsChallengeRuleRequest;
 
@@ -737,10 +737,10 @@ RulesetsRequestRuleRequestJsChallenge copyWith({Map<String, dynamic>? Function()
 
 @override String? get ref => rulesetsJsChallengeRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestLog extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestLog(this.rulesetsLogRuleRequest);
 
-factory RulesetsRequestRuleRequestLog.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestLog(RulesetsLogRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestLog.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestLog(RulesetsLogRuleRequest.fromJson(json));}
 
 final RulesetsLogRuleRequest rulesetsLogRuleRequest;
 
@@ -748,7 +748,7 @@ final RulesetsLogRuleRequest rulesetsLogRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsLogRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestLog copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestLog(rulesetsLogRuleRequest.copyWith(
+RulesetsRequestRuleRequestLog copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestLog(rulesetsLogRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -758,7 +758,7 @@ RulesetsRequestRuleRequestLog copyWith({Map<String, dynamic>? Function()? action
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestLog && rulesetsLogRuleRequest == other.rulesetsLogRuleRequest;
 
@@ -780,10 +780,10 @@ RulesetsRequestRuleRequestLog copyWith({Map<String, dynamic>? Function()? action
 
 @override String? get ref => rulesetsLogRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestLogCustomField extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestLogCustomField(this.rulesetsLogCustomFieldRuleRequest);
 
-factory RulesetsRequestRuleRequestLogCustomField.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestLogCustomField(RulesetsLogCustomFieldRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestLogCustomField.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestLogCustomField(RulesetsLogCustomFieldRuleRequest.fromJson(json));}
 
 final RulesetsLogCustomFieldRuleRequest rulesetsLogCustomFieldRuleRequest;
 
@@ -791,7 +791,7 @@ final RulesetsLogCustomFieldRuleRequest rulesetsLogCustomFieldRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsLogCustomFieldRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestLogCustomField copyWith({RulesetsLogCustomFieldRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestLogCustomField(rulesetsLogCustomFieldRuleRequest.copyWith(
+RulesetsRequestRuleRequestLogCustomField copyWith({RulesetsLogCustomFieldRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestLogCustomField(rulesetsLogCustomFieldRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -801,7 +801,7 @@ RulesetsRequestRuleRequestLogCustomField copyWith({RulesetsLogCustomFieldRuleAct
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestLogCustomField && rulesetsLogCustomFieldRuleRequest == other.rulesetsLogCustomFieldRuleRequest;
 
@@ -823,10 +823,10 @@ RulesetsRequestRuleRequestLogCustomField copyWith({RulesetsLogCustomFieldRuleAct
 
 @override String? get ref => rulesetsLogCustomFieldRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestManagedChallenge extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestManagedChallenge(this.rulesetsManagedChallengeRuleRequest);
 
-factory RulesetsRequestRuleRequestManagedChallenge.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestManagedChallenge(RulesetsManagedChallengeRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestManagedChallenge.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestManagedChallenge(RulesetsManagedChallengeRuleRequest.fromJson(json));}
 
 final RulesetsManagedChallengeRuleRequest rulesetsManagedChallengeRuleRequest;
 
@@ -834,7 +834,7 @@ final RulesetsManagedChallengeRuleRequest rulesetsManagedChallengeRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsManagedChallengeRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestManagedChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestManagedChallenge(rulesetsManagedChallengeRuleRequest.copyWith(
+RulesetsRequestRuleRequestManagedChallenge copyWith({Map<String, dynamic>? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestManagedChallenge(rulesetsManagedChallengeRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -844,7 +844,7 @@ RulesetsRequestRuleRequestManagedChallenge copyWith({Map<String, dynamic>? Funct
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestManagedChallenge && rulesetsManagedChallengeRuleRequest == other.rulesetsManagedChallengeRuleRequest;
 
@@ -866,10 +866,10 @@ RulesetsRequestRuleRequestManagedChallenge copyWith({Map<String, dynamic>? Funct
 
 @override String? get ref => rulesetsManagedChallengeRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestRedirect extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestRedirect(this.rulesetsRedirectRuleRequest);
 
-factory RulesetsRequestRuleRequestRedirect.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestRedirect(RulesetsRedirectRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestRedirect.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestRedirect(RulesetsRedirectRuleRequest.fromJson(json));}
 
 final RulesetsRedirectRuleRequest rulesetsRedirectRuleRequest;
 
@@ -877,7 +877,7 @@ final RulesetsRedirectRuleRequest rulesetsRedirectRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsRedirectRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestRedirect copyWith({RulesetsRedirectRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestRedirect(rulesetsRedirectRuleRequest.copyWith(
+RulesetsRequestRuleRequestRedirect copyWith({RulesetsRedirectRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestRedirect(rulesetsRedirectRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -887,7 +887,7 @@ RulesetsRequestRuleRequestRedirect copyWith({RulesetsRedirectRuleActionParameter
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestRedirect && rulesetsRedirectRuleRequest == other.rulesetsRedirectRuleRequest;
 
@@ -909,10 +909,10 @@ RulesetsRequestRuleRequestRedirect copyWith({RulesetsRedirectRuleActionParameter
 
 @override String? get ref => rulesetsRedirectRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestRewrite extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestRewrite(this.rulesetsRewriteRuleRequest);
 
-factory RulesetsRequestRuleRequestRewrite.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestRewrite(RulesetsRewriteRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestRewrite.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestRewrite(RulesetsRewriteRuleRequest.fromJson(json));}
 
 final RulesetsRewriteRuleRequest rulesetsRewriteRuleRequest;
 
@@ -920,7 +920,7 @@ final RulesetsRewriteRuleRequest rulesetsRewriteRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsRewriteRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestRewrite copyWith({RulesetsRewriteRuleRequestActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestRewrite(rulesetsRewriteRuleRequest.copyWith(
+RulesetsRequestRuleRequestRewrite copyWith({RulesetsRewriteRuleRequestActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestRewrite(rulesetsRewriteRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -930,7 +930,7 @@ RulesetsRequestRuleRequestRewrite copyWith({RulesetsRewriteRuleRequestActionPara
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestRewrite && rulesetsRewriteRuleRequest == other.rulesetsRewriteRuleRequest;
 
@@ -952,10 +952,10 @@ RulesetsRequestRuleRequestRewrite copyWith({RulesetsRewriteRuleRequestActionPara
 
 @override String? get ref => rulesetsRewriteRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestRoute extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestRoute(this.rulesetsRouteRuleRequest);
 
-factory RulesetsRequestRuleRequestRoute.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestRoute(RulesetsRouteRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestRoute.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestRoute(RulesetsRouteRuleRequest.fromJson(json));}
 
 final RulesetsRouteRuleRequest rulesetsRouteRuleRequest;
 
@@ -963,7 +963,7 @@ final RulesetsRouteRuleRequest rulesetsRouteRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsRouteRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestRoute copyWith({RulesetsRouteRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestRoute(rulesetsRouteRuleRequest.copyWith(
+RulesetsRequestRuleRequestRoute copyWith({RulesetsRouteRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestRoute(rulesetsRouteRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -973,7 +973,7 @@ RulesetsRequestRuleRequestRoute copyWith({RulesetsRouteRuleActionParameters? Fun
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestRoute && rulesetsRouteRuleRequest == other.rulesetsRouteRuleRequest;
 
@@ -995,10 +995,10 @@ RulesetsRequestRuleRequestRoute copyWith({RulesetsRouteRuleActionParameters? Fun
 
 @override String? get ref => rulesetsRouteRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestScore extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestScore(this.rulesetsScoreRuleRequest);
 
-factory RulesetsRequestRuleRequestScore.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestScore(RulesetsScoreRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestScore.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestScore(RulesetsScoreRuleRequest.fromJson(json));}
 
 final RulesetsScoreRuleRequest rulesetsScoreRuleRequest;
 
@@ -1006,7 +1006,7 @@ final RulesetsScoreRuleRequest rulesetsScoreRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsScoreRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestScore copyWith({RulesetsScoreRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestScore(rulesetsScoreRuleRequest.copyWith(
+RulesetsRequestRuleRequestScore copyWith({RulesetsScoreRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestScore(rulesetsScoreRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -1016,7 +1016,7 @@ RulesetsRequestRuleRequestScore copyWith({RulesetsScoreRuleActionParameters? Fun
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestScore && rulesetsScoreRuleRequest == other.rulesetsScoreRuleRequest;
 
@@ -1038,10 +1038,10 @@ RulesetsRequestRuleRequestScore copyWith({RulesetsScoreRuleActionParameters? Fun
 
 @override String? get ref => rulesetsScoreRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestServeError extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestServeError(this.rulesetsServeErrorRuleRequest);
 
-factory RulesetsRequestRuleRequestServeError.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestServeError(RulesetsServeErrorRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestServeError.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestServeError(RulesetsServeErrorRuleRequest.fromJson(json));}
 
 final RulesetsServeErrorRuleRequest rulesetsServeErrorRuleRequest;
 
@@ -1049,7 +1049,7 @@ final RulesetsServeErrorRuleRequest rulesetsServeErrorRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsServeErrorRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestServeError copyWith({RulesetsServeErrorRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestServeError(rulesetsServeErrorRuleRequest.copyWith(
+RulesetsRequestRuleRequestServeError copyWith({RulesetsServeErrorRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestServeError(rulesetsServeErrorRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -1059,7 +1059,7 @@ RulesetsRequestRuleRequestServeError copyWith({RulesetsServeErrorRuleActionParam
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestServeError && rulesetsServeErrorRuleRequest == other.rulesetsServeErrorRuleRequest;
 
@@ -1081,10 +1081,10 @@ RulesetsRequestRuleRequestServeError copyWith({RulesetsServeErrorRuleActionParam
 
 @override String? get ref => rulesetsServeErrorRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestSetCacheControl extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestSetCacheControl(this.rulesetsSetCacheControlRuleRequest);
 
-factory RulesetsRequestRuleRequestSetCacheControl.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestSetCacheControl(RulesetsSetCacheControlRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestSetCacheControl.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestSetCacheControl(RulesetsSetCacheControlRuleRequest.fromJson(json));}
 
 final RulesetsSetCacheControlRuleRequest rulesetsSetCacheControlRuleRequest;
 
@@ -1092,7 +1092,7 @@ final RulesetsSetCacheControlRuleRequest rulesetsSetCacheControlRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsSetCacheControlRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestSetCacheControl copyWith({RulesetsSetCacheControlRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestSetCacheControl(rulesetsSetCacheControlRuleRequest.copyWith(
+RulesetsRequestRuleRequestSetCacheControl copyWith({RulesetsSetCacheControlRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestSetCacheControl(rulesetsSetCacheControlRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -1102,7 +1102,7 @@ RulesetsRequestRuleRequestSetCacheControl copyWith({RulesetsSetCacheControlRuleA
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestSetCacheControl && rulesetsSetCacheControlRuleRequest == other.rulesetsSetCacheControlRuleRequest;
 
@@ -1124,10 +1124,10 @@ RulesetsRequestRuleRequestSetCacheControl copyWith({RulesetsSetCacheControlRuleA
 
 @override String? get ref => rulesetsSetCacheControlRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestSetCacheSettings extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestSetCacheSettings(this.rulesetsSetCacheSettingsRuleRequest);
 
-factory RulesetsRequestRuleRequestSetCacheSettings.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestSetCacheSettings(RulesetsSetCacheSettingsRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestSetCacheSettings.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestSetCacheSettings(RulesetsSetCacheSettingsRuleRequest.fromJson(json));}
 
 final RulesetsSetCacheSettingsRuleRequest rulesetsSetCacheSettingsRuleRequest;
 
@@ -1135,7 +1135,7 @@ final RulesetsSetCacheSettingsRuleRequest rulesetsSetCacheSettingsRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsSetCacheSettingsRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestSetCacheSettings copyWith({RulesetsSetCacheSettingsRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestSetCacheSettings(rulesetsSetCacheSettingsRuleRequest.copyWith(
+RulesetsRequestRuleRequestSetCacheSettings copyWith({RulesetsSetCacheSettingsRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestSetCacheSettings(rulesetsSetCacheSettingsRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -1145,7 +1145,7 @@ RulesetsRequestRuleRequestSetCacheSettings copyWith({RulesetsSetCacheSettingsRul
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestSetCacheSettings && rulesetsSetCacheSettingsRuleRequest == other.rulesetsSetCacheSettingsRuleRequest;
 
@@ -1167,10 +1167,10 @@ RulesetsRequestRuleRequestSetCacheSettings copyWith({RulesetsSetCacheSettingsRul
 
 @override String? get ref => rulesetsSetCacheSettingsRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestSetCacheTags extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestSetCacheTags(this.rulesetsSetCacheTagsRuleRequest);
 
-factory RulesetsRequestRuleRequestSetCacheTags.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestSetCacheTags(RulesetsSetCacheTagsRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestSetCacheTags.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestSetCacheTags(RulesetsSetCacheTagsRuleRequest.fromJson(json));}
 
 final RulesetsSetCacheTagsRuleRequest rulesetsSetCacheTagsRuleRequest;
 
@@ -1178,7 +1178,7 @@ final RulesetsSetCacheTagsRuleRequest rulesetsSetCacheTagsRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsSetCacheTagsRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestSetCacheTags(rulesetsSetCacheTagsRuleRequest.copyWith(
+RulesetsRequestRuleRequestSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestSetCacheTags(rulesetsSetCacheTagsRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -1188,7 +1188,7 @@ RulesetsRequestRuleRequestSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionP
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestSetCacheTags && rulesetsSetCacheTagsRuleRequest == other.rulesetsSetCacheTagsRuleRequest;
 
@@ -1210,10 +1210,10 @@ RulesetsRequestRuleRequestSetCacheTags copyWith({RulesetsSetCacheTagsRuleActionP
 
 @override String? get ref => rulesetsSetCacheTagsRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestSetConfig extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestSetConfig(this.rulesetsSetConfigRuleRequest);
 
-factory RulesetsRequestRuleRequestSetConfig.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestSetConfig(RulesetsSetConfigRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestSetConfig.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestSetConfig(RulesetsSetConfigRuleRequest.fromJson(json));}
 
 final RulesetsSetConfigRuleRequest rulesetsSetConfigRuleRequest;
 
@@ -1221,7 +1221,7 @@ final RulesetsSetConfigRuleRequest rulesetsSetConfigRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsSetConfigRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestSetConfig copyWith({RulesetsSetConfigRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestSetConfig(rulesetsSetConfigRuleRequest.copyWith(
+RulesetsRequestRuleRequestSetConfig copyWith({RulesetsSetConfigRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestSetConfig(rulesetsSetConfigRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -1231,7 +1231,7 @@ RulesetsRequestRuleRequestSetConfig copyWith({RulesetsSetConfigRuleActionParamet
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestSetConfig && rulesetsSetConfigRuleRequest == other.rulesetsSetConfigRuleRequest;
 
@@ -1253,10 +1253,10 @@ RulesetsRequestRuleRequestSetConfig copyWith({RulesetsSetConfigRuleActionParamet
 
 @override String? get ref => rulesetsSetConfigRuleRequest.ref;
 
- }
+}
 @immutable final class RulesetsRequestRuleRequestSkip extends RulesetsRequestRuleRequest {const RulesetsRequestRuleRequestSkip(this.rulesetsSkipRuleRequest);
 
-factory RulesetsRequestRuleRequestSkip.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRequestSkip(RulesetsSkipRuleRequest.fromJson(json)); }
+factory RulesetsRequestRuleRequestSkip.fromJson(Map<String, dynamic> json) {return RulesetsRequestRuleRequestSkip(RulesetsSkipRuleRequest.fromJson(json));}
 
 final RulesetsSkipRuleRequest rulesetsSkipRuleRequest;
 
@@ -1264,7 +1264,7 @@ final RulesetsSkipRuleRequest rulesetsSkipRuleRequest;
 
 @override Map<String, dynamic> toJson() => {...rulesetsSkipRuleRequest.toJson(), 'action': action.toJson()};
 
-RulesetsRequestRuleRequestSkip copyWith({RulesetsSkipRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRequestRuleRequestSkip(rulesetsSkipRuleRequest.copyWith(
+RulesetsRequestRuleRequestSkip copyWith({RulesetsSkipRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRequestRuleRequestSkip(rulesetsSkipRuleRequest.copyWith(
   actionParameters: actionParameters,
   description: description,
   enabled: enabled,
@@ -1274,7 +1274,7 @@ RulesetsRequestRuleRequestSkip copyWith({RulesetsSkipRuleActionParameters? Funct
   logging: logging,
   ratelimit: ratelimit,
   ref: ref,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is RulesetsRequestRuleRequestSkip && rulesetsSkipRuleRequest == other.rulesetsSkipRuleRequest;
 
@@ -1296,7 +1296,7 @@ RulesetsRequestRuleRequestSkip copyWith({RulesetsSkipRuleActionParameters? Funct
 
 @override String? get ref => rulesetsSkipRuleRequest.ref;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class RulesetsRequestRuleRequest$Unknown extends RulesetsRequestRuleRequest {RulesetsRequestRuleRequest$Unknown(this.json);
@@ -1342,4 +1342,4 @@ late final String? _ref = json['ref'] as String?;
 
 @override String? get ref => _ref;
 
- }
+}

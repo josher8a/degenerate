@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_created.dart';import 'package:pub_cloudflare/models/resource_sharing_modified.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_status.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_type.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_version.dart';@immutable final class ResourceSharingShareResourceObject {const ResourceSharingShareResourceObject({required this.created, required this.id, required this.meta, required this.modified, required this.resourceAccountId, required this.resourceId, required this.resourceType, required this.resourceVersion, required this.status, });
 
-factory ResourceSharingShareResourceObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareResourceObject(
+factory ResourceSharingShareResourceObject.fromJson(Map<String, dynamic> json) {return ResourceSharingShareResourceObject(
   created: ResourceSharingCreated.fromJson(json['created'] as String),
   id: ResourceSharingResourceId.fromJson(json['id'] as String),
   meta: json['meta'] as Map<String, dynamic>,
@@ -13,7 +13,7 @@ factory ResourceSharingShareResourceObject.fromJson(Map<String, dynamic> json) {
   resourceType: ResourceSharingResourceType.fromJson(json['resource_type'] as String),
   resourceVersion: ResourceSharingResourceVersion.fromJson(json['resource_version'] as num),
   status: ResourceSharingResourceStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// When the share was created.
 final ResourceSharingCreated created;
@@ -42,7 +42,7 @@ final ResourceSharingResourceVersion resourceVersion;
 /// Resource Status.
 final ResourceSharingResourceStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created.toJson(),
   'id': id.toJson(),
   'meta': meta,
@@ -52,8 +52,8 @@ Map<String, dynamic> toJson() { return {
   'resource_type': resourceType.toJson(),
   'resource_version': resourceVersion.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') &&
       json.containsKey('id') &&
       json.containsKey('meta') &&
       json.containsKey('modified') &&
@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('resource_id') &&
       json.containsKey('resource_type') &&
       json.containsKey('resource_version') &&
-      json.containsKey('status'); } 
-ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, ResourceSharingResourceId? id, Map<String,dynamic>? meta, ResourceSharingModified? modified, ResourceSharingAccountId? resourceAccountId, ResourceSharingResourceResourceId? resourceId, ResourceSharingResourceType? resourceType, ResourceSharingResourceVersion? resourceVersion, ResourceSharingResourceStatus? status, }) { return ResourceSharingShareResourceObject(
+      json.containsKey('status');}
+ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, ResourceSharingResourceId? id, Map<String,dynamic>? meta, ResourceSharingModified? modified, ResourceSharingAccountId? resourceAccountId, ResourceSharingResourceResourceId? resourceId, ResourceSharingResourceType? resourceType, ResourceSharingResourceVersion? resourceVersion, ResourceSharingResourceStatus? status, }) {return ResourceSharingShareResourceObject(
   created: created ?? this.created,
   id: id ?? this.id,
   meta: meta ?? this.meta,
@@ -72,7 +72,7 @@ ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, Re
   resourceType: resourceType ?? this.resourceType,
   resourceVersion: resourceVersion ?? this.resourceVersion,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingShareResourceObject &&
           created == other.created &&
@@ -89,4 +89,4 @@ ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, Re
 
 @override String toString() => 'ResourceSharingShareResourceObject(\n  created: $created,\n  id: $id,\n  meta: $meta,\n  modified: $modified,\n  resourceAccountId: $resourceAccountId,\n  resourceId: $resourceId,\n  resourceType: $resourceType,\n  resourceVersion: $resourceVersion,\n  status: $status,\n)';
 
- }
+}

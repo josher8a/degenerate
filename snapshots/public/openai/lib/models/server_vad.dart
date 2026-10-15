@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
 @immutable final class ServerVad {const ServerVad({required this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, this.createResponse, this.interruptResponse, this.idleTimeoutMs = const Omittable.absent(), });
 
-factory ServerVad.fromJson(Map<String, dynamic> json) { return ServerVad(
+factory ServerVad.fromJson(Map<String, dynamic> json) {return ServerVad(
   type: json['type'] as String,
   threshold: json['threshold'] != null ? (json['threshold'] as num).toDouble() : null,
   prefixPaddingMs: json['prefix_padding_ms'] != null ? (json['prefix_padding_ms'] as num).toInt() : null,
@@ -12,7 +12,7 @@ factory ServerVad.fromJson(Map<String, dynamic> json) { return ServerVad(
   createResponse: json['create_response'] as bool?,
   interruptResponse: json['interrupt_response'] as bool?,
   idleTimeoutMs: json.containsKey('idle_timeout_ms') ? Omittable(json['idle_timeout_ms'] != null ? (json['idle_timeout_ms'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// Type of turn detection, `server_vad` to turn on simple Server VAD.
 /// 
@@ -68,7 +68,7 @@ bool get createResponseOrDefault => createResponse ?? true;
 /// The value of `interruptResponse`, or its schema default when absent.
 bool get interruptResponseOrDefault => interruptResponse ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'threshold': ?threshold,
   'prefix_padding_ms': ?prefixPaddingMs,
@@ -76,17 +76,17 @@ Map<String, dynamic> toJson() { return {
   'create_response': ?createResponse,
   'interrupt_response': ?interruptResponse,
   if (idleTimeoutMs.isPresent) 'idle_timeout_ms': idleTimeoutMs.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final idleTimeoutMs$ = idleTimeoutMs.value;
 if (idleTimeoutMs$ != null) {
   if (idleTimeoutMs$ < 5000) { errors.add('idleTimeoutMs: must be >= 5000'); }
   if (idleTimeoutMs$ > 30000) { errors.add('idleTimeoutMs: must be <= 30000'); }
 }
-return errors; } 
-ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool? Function()? createResponse, bool? Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) { return ServerVad(
+return errors;}
+ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool? Function()? createResponse, bool? Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) {return ServerVad(
   type: type ?? this.type,
   threshold: threshold != null ? threshold() : this.threshold,
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,
@@ -94,7 +94,7 @@ ServerVad copyWith({String? type, double? Function()? threshold, int? Function()
   createResponse: createResponse != null ? createResponse() : this.createResponse,
   interruptResponse: interruptResponse != null ? interruptResponse() : this.interruptResponse,
   idleTimeoutMs: idleTimeoutMs ?? this.idleTimeoutMs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ServerVad &&
           type == other.type &&
@@ -109,4 +109,4 @@ ServerVad copyWith({String? type, double? Function()? threshold, int? Function()
 
 @override String toString() => 'ServerVad(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs, createResponse: $createResponse, interruptResponse: $interruptResponse, idleTimeoutMs: $idleTimeoutMs)';
 
- }
+}

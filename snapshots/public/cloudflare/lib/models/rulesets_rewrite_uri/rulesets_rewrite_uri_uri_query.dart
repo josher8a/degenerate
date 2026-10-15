@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_uri_query.dart';/// A URI query rewrite.
 @immutable final class RulesetsRewriteUriUriQuery {const RulesetsRewriteUriUriQuery({required this.query, this.origin, });
 
-factory RulesetsRewriteUriUriQuery.fromJson(Map<String, dynamic> json) { return RulesetsRewriteUriUriQuery(
+factory RulesetsRewriteUriUriQuery.fromJson(Map<String, dynamic> json) {return RulesetsRewriteUriUriQuery(
   query: RulesetsRewriteUriQuery.fromJson(json['query'] as Map<String, dynamic>),
   origin: json['origin'] as bool?,
-); }
+);}
 
 final RulesetsRewriteUriQuery query;
 
@@ -16,15 +16,15 @@ final RulesetsRewriteUriQuery query;
 /// Example: `false`
 final bool? origin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'query': query.toJson(),
   'origin': ?origin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('query'); } 
-RulesetsRewriteUriUriQuery copyWith({RulesetsRewriteUriQuery? query, bool? Function()? origin, }) { return RulesetsRewriteUriUriQuery(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('query');}
+RulesetsRewriteUriUriQuery copyWith({RulesetsRewriteUriQuery? query, bool? Function()? origin, }) {return RulesetsRewriteUriUriQuery(
   query: query ?? this.query,
   origin: origin != null ? origin() : this.origin,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRewriteUriUriQuery &&
           query == other.query &&
@@ -34,4 +34,4 @@ RulesetsRewriteUriUriQuery copyWith({RulesetsRewriteUriQuery? query, bool? Funct
 
 @override String toString() => 'RulesetsRewriteUriUriQuery(query: $query, origin: $origin)';
 
- }
+}

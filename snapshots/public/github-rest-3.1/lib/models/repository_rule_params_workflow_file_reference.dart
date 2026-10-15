@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A workflow that must run for this rule to pass
 @immutable final class RepositoryRuleParamsWorkflowFileReference {const RepositoryRuleParamsWorkflowFileReference({required this.path, required this.repositoryId, this.ref, this.sha, });
 
-factory RepositoryRuleParamsWorkflowFileReference.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsWorkflowFileReference(
+factory RepositoryRuleParamsWorkflowFileReference.fromJson(Map<String, dynamic> json) {return RepositoryRuleParamsWorkflowFileReference(
   path: json['path'] as String,
   ref: json['ref'] as String?,
   repositoryId: (json['repository_id'] as num).toInt(),
   sha: json['sha'] as String?,
-); }
+);}
 
 /// The path to the workflow file
 final String path;
@@ -23,20 +23,20 @@ final int repositoryId;
 /// The commit SHA of the workflow file to use
 final String? sha;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'ref': ?ref,
   'repository_id': repositoryId,
   'sha': ?sha,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
-      json.containsKey('repository_id') && json['repository_id'] is num; } 
-RepositoryRuleParamsWorkflowFileReference copyWith({String? path, String? Function()? ref, int? repositoryId, String? Function()? sha, }) { return RepositoryRuleParamsWorkflowFileReference(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
+      json.containsKey('repository_id') && json['repository_id'] is num;}
+RepositoryRuleParamsWorkflowFileReference copyWith({String? path, String? Function()? ref, int? repositoryId, String? Function()? sha, }) {return RepositoryRuleParamsWorkflowFileReference(
   path: path ?? this.path,
   ref: ref != null ? ref() : this.ref,
   repositoryId: repositoryId ?? this.repositoryId,
   sha: sha != null ? sha() : this.sha,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleParamsWorkflowFileReference &&
           path == other.path &&
@@ -48,4 +48,4 @@ RepositoryRuleParamsWorkflowFileReference copyWith({String? path, String? Functi
 
 @override String toString() => 'RepositoryRuleParamsWorkflowFileReference(path: $path, ref: $ref, repositoryId: $repositoryId, sha: $sha)';
 
- }
+}

@@ -2,18 +2,18 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/error_model.dart';sealed class DeleteAccountsAccountError {const DeleteAccountsAccountError();
 
-factory DeleteAccountsAccountError.fromResponse(ApiResponse response) {     try {
+factory DeleteAccountsAccountError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ => DeleteAccountsAccountError$ErrorModel(ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
       };
     } on Object {
       rethrow;
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class DeleteAccountsAccountError$ErrorModel extends DeleteAccountsAccountError {const DeleteAccountsAccountError$ErrorModel(this.error, this.statusCode, );
 
 final ErrorModel error;
@@ -22,7 +22,7 @@ final ErrorModel error;
 
 @override Object get typedError => error;
 
- }
+}
 typedef DeleteAccountsAccountBankAccountsIdError = DeleteAccountsAccountError;
 typedef DeleteAccountsAccountExternalAccountsIdError = DeleteAccountsAccountError;
 typedef DeleteAccountsAccountPeoplePersonError = DeleteAccountsAccountError;

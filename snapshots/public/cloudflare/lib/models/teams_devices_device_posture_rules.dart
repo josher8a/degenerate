@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_description.dart';import 'package:pub_cloudflare/models/teams_devices_expiration.dart';import 'package:pub_cloudflare/models/teams_devices_input.dart';import 'package:pub_cloudflare/models/teams_devices_match_item.dart';import 'package:pub_cloudflare/models/teams_devices_name.dart';import 'package:pub_cloudflare/models/teams_devices_schedule.dart';import 'package:pub_cloudflare/models/teams_devices_type.dart';import 'package:pub_cloudflare/models/teams_devices_uuid.dart';@immutable final class TeamsDevicesDevicePostureRules {const TeamsDevicesDevicePostureRules({this.description, this.expiration, this.id, this.input, this.match, this.name, this.schedule, this.type, });
 
-factory TeamsDevicesDevicePostureRules.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevicePostureRules(
+factory TeamsDevicesDevicePostureRules.fromJson(Map<String, dynamic> json) {return TeamsDevicesDevicePostureRules(
   description: json['description'] != null ? TeamsDevicesDescription.fromJson(json['description'] as String) : null,
   expiration: json['expiration'] != null ? TeamsDevicesExpiration.fromJson(json['expiration'] as String) : null,
   id: json['id'] != null ? TeamsDevicesUuid.fromJson(json['id'] as String) : null,
@@ -12,7 +12,7 @@ factory TeamsDevicesDevicePostureRules.fromJson(Map<String, dynamic> json) { ret
   name: json['name'] != null ? TeamsDevicesName.fromJson(json['name'] as String) : null,
   schedule: json['schedule'] != null ? TeamsDevicesSchedule.fromJson(json['schedule'] as String) : null,
   type: json['type'] != null ? TeamsDevicesType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// The description of the device posture rule.
 final TeamsDevicesDescription? description;
@@ -31,7 +31,7 @@ final TeamsDevicesSchedule? schedule;
 
 final TeamsDevicesType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (expiration != null) 'expiration': expiration?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -40,9 +40,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (schedule != null) 'schedule': schedule?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'expiration', 'id', 'input', 'match', 'name', 'schedule', 'type'}.contains(key)); } 
-TeamsDevicesDevicePostureRules copyWith({TeamsDevicesDescription? Function()? description, TeamsDevicesExpiration? Function()? expiration, TeamsDevicesUuid? Function()? id, TeamsDevicesInput? Function()? input, List<TeamsDevicesMatchItem>? Function()? match, TeamsDevicesName? Function()? name, TeamsDevicesSchedule? Function()? schedule, TeamsDevicesType? Function()? type, }) { return TeamsDevicesDevicePostureRules(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'expiration', 'id', 'input', 'match', 'name', 'schedule', 'type'}.contains(key));}
+TeamsDevicesDevicePostureRules copyWith({TeamsDevicesDescription? Function()? description, TeamsDevicesExpiration? Function()? expiration, TeamsDevicesUuid? Function()? id, TeamsDevicesInput? Function()? input, List<TeamsDevicesMatchItem>? Function()? match, TeamsDevicesName? Function()? name, TeamsDevicesSchedule? Function()? schedule, TeamsDevicesType? Function()? type, }) {return TeamsDevicesDevicePostureRules(
   description: description != null ? description() : this.description,
   expiration: expiration != null ? expiration() : this.expiration,
   id: id != null ? id() : this.id,
@@ -51,7 +51,7 @@ TeamsDevicesDevicePostureRules copyWith({TeamsDevicesDescription? Function()? de
   name: name != null ? name() : this.name,
   schedule: schedule != null ? schedule() : this.schedule,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDevicePostureRules &&
           description == other.description &&
@@ -67,4 +67,4 @@ TeamsDevicesDevicePostureRules copyWith({TeamsDevicesDescription? Function()? de
 
 @override String toString() => 'TeamsDevicesDevicePostureRules(description: $description, expiration: $expiration, id: $id, input: $input, match: $match, name: $name, schedule: $schedule, type: $type)';
 
- }
+}

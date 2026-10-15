@@ -14,7 +14,7 @@ final class StreamMp4DownloadsApi with ApiExecutor {const StreamMp4DownloadsApi(
 /// Lists the downloads created for a video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<StreamDownloadsResponseResult?, AddAudioTrackError>> streamMP4DownloadsListDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamDownloadsResponseResult?, AddAudioTrackError>> streamMP4DownloadsListDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Create downloads
 ///
 /// Creates a download for a video when a video is ready to view. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<StreamDownloads?, AddAudioTrackError>> streamMP4DownloadsCreateDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamDownloads?, AddAudioTrackError>> streamMP4DownloadsCreateDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Delete downloads
 ///
 /// Delete the downloads for a video. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/downloads`
-Future<ApiResult<String?, AddAudioTrackError>> streamMP4DownloadsDeleteDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, AddAudioTrackError>> streamMP4DownloadsDeleteDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -77,13 +77,13 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Create download
 ///
 /// Creates a download for a video of specified type. For backwards-compatibility, POST requests to /downloads will enable the default download.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/downloads/{download_type}`
-Future<ApiResult<StreamDownloadsResponseResult?, AddAudioTrackError>> streamDownloadsCreateTypeSpecificDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamDownloadType downloadType, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamDownloadsResponseResult?, AddAudioTrackError>> streamDownloadsCreateTypeSpecificDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamDownloadType downloadType, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -100,13 +100,13 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
+}
 /// Delete download
 ///
 /// Delete specific type of download. For backwards-compatibility, DELETE requests to /downloads will delete the default download.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/downloads/{download_type}`
-Future<ApiResult<String?, AddAudioTrackError>> streamDownloadsDeleteTypeSpecificDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamDownloadType downloadType, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, AddAudioTrackError>> streamDownloadsDeleteTypeSpecificDownloads({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamDownloadType downloadType, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -123,5 +123,5 @@ return await execute(
   },
   onError: AddAudioTrackError.fromResponse,
 );
- } 
- }
+}
+}

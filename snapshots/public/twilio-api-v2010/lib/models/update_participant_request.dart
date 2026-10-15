@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_participant_request/wait_method.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request/announce_method.dart';/// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
 sealed class HoldMethod {const HoldMethod();
 
-factory HoldMethod.fromJson(String json) { return switch (json) {
+factory HoldMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => HoldMethod$Unknown(json),
-}; }
+};}
 
 static const HoldMethod $get = HoldMethod$$get._();
 
@@ -17,30 +17,30 @@ static const HoldMethod post = HoldMethod$post._();
 static const List<HoldMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is HoldMethod$Unknown; } 
+bool get isUnknown {return this is HoldMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       HoldMethod$$get() => $get(),
       HoldMethod$post() => post(),
       HoldMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       HoldMethod$$get() => $get != null ? $get() : orElse(value),
       HoldMethod$post() => post != null ? post() : orElse(value),
       HoldMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'HoldMethod($value)';
 
- }
+}
 @immutable final class HoldMethod$$get extends HoldMethod {const HoldMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class HoldMethod$post extends HoldMethod {const HoldMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class HoldMethod$Unknown extends HoldMethod {const HoldMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class UpdateParticipantRequest {const UpdateParticipantRequest({this.muted, this.hold, this.holdUrl, this.holdMethod, this.announceUrl, this.announceMethod, this.waitUrl, this.waitMethod, this.beepOnExit, this.endConferenceOnExit, this.coaching, this.callSidToCoach, });
 
-factory UpdateParticipantRequest.fromJson(Map<String, dynamic> json) { return UpdateParticipantRequest(
+factory UpdateParticipantRequest.fromJson(Map<String, dynamic> json) {return UpdateParticipantRequest(
   muted: json['Muted'] as bool?,
   hold: json['Hold'] as bool?,
   holdUrl: json['HoldUrl'] != null ? Uri.parse(json['HoldUrl'] as String) : null,
@@ -84,7 +84,7 @@ factory UpdateParticipantRequest.fromJson(Map<String, dynamic> json) { return Up
   endConferenceOnExit: json['EndConferenceOnExit'] as bool?,
   coaching: json['Coaching'] as bool?,
   callSidToCoach: json['CallSidToCoach'] as String?,
-); }
+);}
 
 /// Whether the participant should be muted. Can be `true` or `false`. `true` will mute the participant, and `false` will un-mute them. Anything value other than `true` or `false` is interpreted as `false`.
 final bool? muted;
@@ -122,7 +122,7 @@ final bool? coaching;
 /// The SID of the participant who is being `coached`. The participant being coached is the only participant who can hear the participant who is `coaching`.
 final String? callSidToCoach;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'Muted': ?muted,
   'Hold': ?hold,
   if (holdUrl != null) 'HoldUrl': holdUrl?.toString(),
@@ -135,18 +135,18 @@ Map<String, dynamic> toJson() { return {
   'EndConferenceOnExit': ?endConferenceOnExit,
   'Coaching': ?coaching,
   'CallSidToCoach': ?callSidToCoach,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Muted', 'Hold', 'HoldUrl', 'HoldMethod', 'AnnounceUrl', 'AnnounceMethod', 'WaitUrl', 'WaitMethod', 'BeepOnExit', 'EndConferenceOnExit', 'Coaching', 'CallSidToCoach'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'Muted', 'Hold', 'HoldUrl', 'HoldMethod', 'AnnounceUrl', 'AnnounceMethod', 'WaitUrl', 'WaitMethod', 'BeepOnExit', 'EndConferenceOnExit', 'Coaching', 'CallSidToCoach'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final callSidToCoach$ = callSidToCoach;
 if (callSidToCoach$ != null) {
   if (callSidToCoach$.runes.length < 34) { errors.add('callSidToCoach: length must be >= 34'); }
   if (callSidToCoach$.runes.length > 34) { errors.add('callSidToCoach: length must be <= 34'); }
   if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSidToCoach$)) { errors.add(r'callSidToCoach: must match pattern ^CA[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? hold, Uri? Function()? holdUrl, HoldMethod? Function()? holdMethod, Uri? Function()? announceUrl, AnnounceMethod? Function()? announceMethod, Uri? Function()? waitUrl, WaitMethod? Function()? waitMethod, bool? Function()? beepOnExit, bool? Function()? endConferenceOnExit, bool? Function()? coaching, String? Function()? callSidToCoach, }) { return UpdateParticipantRequest(
+return errors;}
+UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? hold, Uri? Function()? holdUrl, HoldMethod? Function()? holdMethod, Uri? Function()? announceUrl, AnnounceMethod? Function()? announceMethod, Uri? Function()? waitUrl, WaitMethod? Function()? waitMethod, bool? Function()? beepOnExit, bool? Function()? endConferenceOnExit, bool? Function()? coaching, String? Function()? callSidToCoach, }) {return UpdateParticipantRequest(
   muted: muted != null ? muted() : this.muted,
   hold: hold != null ? hold() : this.hold,
   holdUrl: holdUrl != null ? holdUrl() : this.holdUrl,
@@ -159,7 +159,7 @@ UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? ho
   endConferenceOnExit: endConferenceOnExit != null ? endConferenceOnExit() : this.endConferenceOnExit,
   coaching: coaching != null ? coaching() : this.coaching,
   callSidToCoach: callSidToCoach != null ? callSidToCoach() : this.callSidToCoach,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateParticipantRequest &&
           muted == other.muted &&
@@ -179,4 +179,4 @@ UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? ho
 
 @override String toString() => 'UpdateParticipantRequest(\n  muted: $muted,\n  hold: $hold,\n  holdUrl: $holdUrl,\n  holdMethod: $holdMethod,\n  announceUrl: $announceUrl,\n  announceMethod: $announceMethod,\n  waitUrl: $waitUrl,\n  waitMethod: $waitMethod,\n  beepOnExit: $beepOnExit,\n  endConferenceOnExit: $endConferenceOnExit,\n  coaching: $coaching,\n  callSidToCoach: $callSidToCoach,\n)';
 
- }
+}

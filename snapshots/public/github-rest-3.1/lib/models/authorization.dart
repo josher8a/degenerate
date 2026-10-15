@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/authorization/authorization_app.dart';import 'package:pub_github_rest_3_1/models/scoped_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The authorization for an OAuth app, GitHub App, or a Personal Access Token.
 @immutable final class Authorization {const Authorization({required this.id, required this.url, required this.scopes, required this.token, required this.tokenLastEight, required this.hashedToken, required this.app, required this.note, required this.noteUrl, required this.updatedAt, required this.createdAt, required this.fingerprint, required this.expiresAt, this.user = const Omittable.absent(), this.installation = const Omittable.absent(), });
 
-factory Authorization.fromJson(Map<String, dynamic> json) { return Authorization(
+factory Authorization.fromJson(Map<String, dynamic> json) {return Authorization(
   id: (json['id'] as num).toInt(),
   url: Uri.parse(json['url'] as String),
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -20,7 +20,7 @@ factory Authorization.fromJson(Map<String, dynamic> json) { return Authorization
   user: json.containsKey('user') ? Omittable(json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   installation: json.containsKey('installation') ? Omittable(json['installation'] != null ? ScopedInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   expiresAt: json['expires_at'] != null ? DateTime.parse(json['expires_at'] as String) : null,
-); }
+);}
 
 final int id;
 
@@ -53,7 +53,7 @@ final Omittable<ScopedInstallation?> installation;
 
 final DateTime? expiresAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'url': url.toString(),
   'scopes': scopes,
@@ -69,8 +69,8 @@ Map<String, dynamic> toJson() { return {
   if (user.isPresent) 'user': user.value?.toJson(),
   if (installation.isPresent) 'installation': installation.value?.toJson(),
   'expires_at': expiresAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('scopes') &&
       json.containsKey('token') && json['token'] is String &&
@@ -82,8 +82,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('fingerprint') && (json['fingerprint'] == null || json['fingerprint'] is String) &&
-      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is String); } 
-Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, String? token, String? Function()? tokenLastEight, String? Function()? hashedToken, AuthorizationApp? app, String? Function()? note, Uri? Function()? noteUrl, DateTime? updatedAt, DateTime? createdAt, String? Function()? fingerprint, Omittable<SimpleUser?>? user, Omittable<ScopedInstallation?>? installation, DateTime? Function()? expiresAt, }) { return Authorization(
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is String);}
+Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, String? token, String? Function()? tokenLastEight, String? Function()? hashedToken, AuthorizationApp? app, String? Function()? note, Uri? Function()? noteUrl, DateTime? updatedAt, DateTime? createdAt, String? Function()? fingerprint, Omittable<SimpleUser?>? user, Omittable<ScopedInstallation?>? installation, DateTime? Function()? expiresAt, }) {return Authorization(
   id: id ?? this.id,
   url: url ?? this.url,
   scopes: scopes != null ? scopes() : this.scopes,
@@ -99,7 +99,7 @@ Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, Str
   user: user ?? this.user,
   installation: installation ?? this.installation,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Authorization &&
           id == other.id &&
@@ -122,4 +122,4 @@ Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, Str
 
 @override String toString() => 'Authorization(\n  id: $id,\n  url: $url,\n  scopes: $scopes,\n  token: $token,\n  tokenLastEight: $tokenLastEight,\n  hashedToken: $hashedToken,\n  app: $app,\n  note: $note,\n  noteUrl: $noteUrl,\n  updatedAt: $updatedAt,\n  createdAt: $createdAt,\n  fingerprint: $fingerprint,\n  user: $user,\n  installation: $installation,\n  expiresAt: $expiresAt,\n)';
 
- }
+}

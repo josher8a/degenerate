@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_messages2.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response.dart';@immutable final class DexEndpointsTracerouteTestNetworkPathResponse {const DexEndpointsTracerouteTestNetworkPathResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory DexEndpointsTracerouteTestNetworkPathResponse.fromJson(Map<String, dynamic> json) { return DexEndpointsTracerouteTestNetworkPathResponse(
+factory DexEndpointsTracerouteTestNetworkPathResponse.fromJson(Map<String, dynamic> json) {return DexEndpointsTracerouteTestNetworkPathResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? DigitalExperienceMonitoringTracerouteTestNetworkPathResponse.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<DigitalExperienceMonitoringMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final DigitalExperienceMonitoringTracerouteTestNetworkPathResponse? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DexEndpointsTracerouteTestNetworkPathResponse copyWith({List<DigitalExperienceMonitoringMessages2>? errors, List<DigitalExperienceMonitoringMessages2>? messages, bool? success, DigitalExperienceMonitoringTracerouteTestNetworkPathResponse? Function()? result, }) { return DexEndpointsTracerouteTestNetworkPathResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DexEndpointsTracerouteTestNetworkPathResponse copyWith({List<DigitalExperienceMonitoringMessages2>? errors, List<DigitalExperienceMonitoringMessages2>? messages, bool? success, DigitalExperienceMonitoringTracerouteTestNetworkPathResponse? Function()? result, }) {return DexEndpointsTracerouteTestNetworkPathResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DexEndpointsTracerouteTestNetworkPathResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ DexEndpointsTracerouteTestNetworkPathResponse copyWith({List<DigitalExperienceMo
 
 @override String toString() => 'DexEndpointsTracerouteTestNetworkPathResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

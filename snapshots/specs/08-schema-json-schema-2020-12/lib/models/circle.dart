@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Circle {const Circle({required this.kind, required this.radius, this.color = const Omittable.absent(), });
 
-factory Circle.fromJson(Map<String, dynamic> json) { return Circle(
+factory Circle.fromJson(Map<String, dynamic> json) {return Circle(
   kind: json['kind'],
   radius: (json['radius'] as num).toDouble(),
   color: json.containsKey('color') ? Omittable(json['color'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final dynamic kind;
 
@@ -15,22 +15,22 @@ final double radius;
 
 final Omittable<String?> color;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kind': kind,
   'radius': radius,
   if (color.isPresent) 'color': color.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
-      json.containsKey('radius') && json['radius'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') &&
+      json.containsKey('radius') && json['radius'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (radius <= 0) { errors.add('radius: must be > 0'); }
-return errors; } 
-Circle copyWith({dynamic Function()? kind, double? radius, Omittable<String?>? color, }) { return Circle(
+return errors;}
+Circle copyWith({dynamic Function()? kind, double? radius, Omittable<String?>? color, }) {return Circle(
   kind: kind != null ? kind() : this.kind,
   radius: radius ?? this.radius,
   color: color ?? this.color,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Circle &&
           kind == other.kind &&
@@ -41,4 +41,4 @@ Circle copyWith({dynamic Function()? kind, double? radius, Omittable<String?>? c
 
 @override String toString() => 'Circle(kind: $kind, radius: $radius, color: $color)';
 
- }
+}

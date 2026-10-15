@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DomainStats {const DomainStats({required this.count, required this.countries, required this.domain, required this.encodedSize, required this.index, required this.initiators, required this.ips, required this.redirects, required this.size, });
 
-factory DomainStats.fromJson(Map<String, dynamic> json) { return DomainStats(
+factory DomainStats.fromJson(Map<String, dynamic> json) {return DomainStats(
   count: (json['count'] as num).toDouble(),
   countries: (json['countries'] as List<dynamic>).map((e) => e as String).toList(),
   domain: json['domain'] as String,
@@ -13,7 +13,7 @@ factory DomainStats.fromJson(Map<String, dynamic> json) { return DomainStats(
   ips: (json['ips'] as List<dynamic>).map((e) => e as String).toList(),
   redirects: (json['redirects'] as num).toDouble(),
   size: (json['size'] as num).toDouble(),
-); }
+);}
 
 final double count;
 
@@ -33,7 +33,7 @@ final double redirects;
 
 final double size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'countries': countries,
   'domain': domain,
@@ -43,8 +43,8 @@ Map<String, dynamic> toJson() { return {
   'ips': ips,
   'redirects': redirects,
   'size': size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('countries') &&
       json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('encodedSize') && json['encodedSize'] is num &&
@@ -52,8 +52,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('initiators') &&
       json.containsKey('ips') &&
       json.containsKey('redirects') && json['redirects'] is num &&
-      json.containsKey('size') && json['size'] is num; } 
-DomainStats copyWith({double? count, List<String>? countries, String? domain, double? encodedSize, double? index, List<String>? initiators, List<String>? ips, double? redirects, double? size, }) { return DomainStats(
+      json.containsKey('size') && json['size'] is num;}
+DomainStats copyWith({double? count, List<String>? countries, String? domain, double? encodedSize, double? index, List<String>? initiators, List<String>? ips, double? redirects, double? size, }) {return DomainStats(
   count: count ?? this.count,
   countries: countries ?? this.countries,
   domain: domain ?? this.domain,
@@ -63,7 +63,7 @@ DomainStats copyWith({double? count, List<String>? countries, String? domain, do
   ips: ips ?? this.ips,
   redirects: redirects ?? this.redirects,
   size: size ?? this.size,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DomainStats &&
           count == other.count &&
@@ -80,4 +80,4 @@ DomainStats copyWith({double? count, List<String>? countries, String? domain, do
 
 @override String toString() => 'DomainStats(\n  count: $count,\n  countries: $countries,\n  domain: $domain,\n  encodedSize: $encodedSize,\n  index: $index,\n  initiators: $initiators,\n  ips: $ips,\n  redirects: $redirects,\n  size: $size,\n)';
 
- }
+}

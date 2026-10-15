@@ -5,14 +5,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Electronic C
 /// indicating what degree of authentication was performed.
 sealed class ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator();
 
-factory ThreeDSecureDetailsChargeElectronicCommerceIndicator.fromJson(String json) { return switch (json) {
+factory ThreeDSecureDetailsChargeElectronicCommerceIndicator.fromJson(String json) {return switch (json) {
   '01' => $01,
   '02' => $02,
   '05' => $05,
   '06' => $06,
   '07' => $07,
   _ => ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown(json),
-}; }
+};}
 
 static const ThreeDSecureDetailsChargeElectronicCommerceIndicator $01 = ThreeDSecureDetailsChargeElectronicCommerceIndicator$$01._();
 
@@ -27,39 +27,39 @@ static const ThreeDSecureDetailsChargeElectronicCommerceIndicator $07 = ThreeDSe
 static const List<ThreeDSecureDetailsChargeElectronicCommerceIndicator> values = [$01, $02, $05, $06, $07];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '01' => r'$01',
   '02' => r'$02',
   '05' => r'$05',
   '06' => r'$06',
   '07' => r'$07',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown; } 
+bool get isUnknown {return this is ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $01, required W Function() $02, required W Function() $05, required W Function() $06, required W Function() $07, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $01, required W Function() $02, required W Function() $05, required W Function() $06, required W Function() $07, required W Function(String value) $unknown, }) {return switch (this) {
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$01() => $01(),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$02() => $02(),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$05() => $05(),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$06() => $06(),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$07() => $07(),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W Function()? $02, W Function()? $05, W Function()? $06, W Function()? $07, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W Function()? $02, W Function()? $05, W Function()? $06, W Function()? $07, W Function(String value)? $unknown, }) {return switch (this) {
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$01() => $01 != null ? $01() : orElse(value),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$02() => $02 != null ? $02() : orElse(value),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$05() => $05 != null ? $05() : orElse(value),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$06() => $06 != null ? $06() : orElse(value),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$$07() => $07 != null ? $07() : orElse(value),
       ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ThreeDSecureDetailsChargeElectronicCommerceIndicator($value)';
 
- }
+}
 @immutable final class ThreeDSecureDetailsChargeElectronicCommerceIndicator$$01 extends ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator$$01._();
 
 @override String get value => '01';
@@ -68,7 +68,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W F
 
 @override int get hashCode => '01'.hashCode;
 
- }
+}
 @immutable final class ThreeDSecureDetailsChargeElectronicCommerceIndicator$$02 extends ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator$$02._();
 
 @override String get value => '02';
@@ -77,7 +77,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W F
 
 @override int get hashCode => '02'.hashCode;
 
- }
+}
 @immutable final class ThreeDSecureDetailsChargeElectronicCommerceIndicator$$05 extends ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator$$05._();
 
 @override String get value => '05';
@@ -86,7 +86,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W F
 
 @override int get hashCode => '05'.hashCode;
 
- }
+}
 @immutable final class ThreeDSecureDetailsChargeElectronicCommerceIndicator$$06 extends ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator$$06._();
 
 @override String get value => '06';
@@ -95,7 +95,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W F
 
 @override int get hashCode => '06'.hashCode;
 
- }
+}
 @immutable final class ThreeDSecureDetailsChargeElectronicCommerceIndicator$$07 extends ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator$$07._();
 
 @override String get value => '07';
@@ -104,7 +104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W F
 
 @override int get hashCode => '07'.hashCode;
 
- }
+}
 @immutable final class ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown extends ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown(this.value);
 
 @override final String value;
@@ -114,4 +114,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

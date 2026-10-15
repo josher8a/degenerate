@@ -7,12 +7,12 @@ const PostPaymentIntentsIntentConfirmRequestMandateData({this.secretKeyParam = c
 const PostPaymentIntentsIntentConfirmRequestMandateData._({required this.rawValue, required this.secretKeyParam, required this.getPaymentMethodConfigurationsApplicationVariant2, required this.clientKeyParam, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostPaymentIntentsIntentConfirmRequestMandateData.fromJson(Object? json) { return PostPaymentIntentsIntentConfirmRequestMandateData._(
+factory PostPaymentIntentsIntentConfirmRequestMandateData.fromJson(Object? json) {return PostPaymentIntentsIntentConfirmRequestMandateData._(
   rawValue: Omittable(json),
   secretKeyParam: json is Map<String, dynamic> && SecretKeyParam.canParse(json) ? parseAnyOfVariant<SecretKeyParam>(json, (value) => SecretKeyParam.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
   clientKeyParam: json is Map<String, dynamic> && ClientKeyParam.canParse(json) ? parseAnyOfVariant<ClientKeyParam>(json, (value) => ClientKeyParam.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -46,4 +46,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostPaymentIntentsIntentConfirmRequestMandateData(${toJson()})';
 
- }
+}

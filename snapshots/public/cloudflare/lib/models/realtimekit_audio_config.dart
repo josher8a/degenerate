@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Audio signal pathway within an audio file that carries a specific sound source.
 sealed class Channel {const Channel();
 
-factory Channel.fromJson(String json) { return switch (json) {
+factory Channel.fromJson(String json) {return switch (json) {
   'mono' => mono,
   'stereo' => stereo,
   _ => Channel$Unknown(json),
-}; }
+};}
 
 static const Channel mono = Channel$mono._();
 
@@ -17,30 +17,30 @@ static const Channel stereo = Channel$stereo._();
 static const List<Channel> values = [mono, stereo];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mono' => 'mono',
   'stereo' => 'stereo',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Channel$Unknown; } 
+bool get isUnknown {return this is Channel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mono, required W Function() stereo, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mono, required W Function() stereo, required W Function(String value) $unknown, }) {return switch (this) {
       Channel$mono() => mono(),
       Channel$stereo() => stereo(),
       Channel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mono, W Function()? stereo, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mono, W Function()? stereo, W Function(String value)? $unknown, }) {return switch (this) {
       Channel$mono() => mono != null ? mono() : orElse(value),
       Channel$stereo() => stereo != null ? stereo() : orElse(value),
       Channel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Channel($value)';
 
- }
+}
 @immutable final class Channel$mono extends Channel {const Channel$mono._();
 
 @override String get value => 'mono';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mono, W 
 
 @override int get hashCode => 'mono'.hashCode;
 
- }
+}
 @immutable final class Channel$stereo extends Channel {const Channel$stereo._();
 
 @override String get value => 'stereo';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mono, W 
 
 @override int get hashCode => 'stereo'.hashCode;
 
- }
+}
 @immutable final class Channel$Unknown extends Channel {const Channel$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mono, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.
 sealed class RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec();
 
-factory RealtimekitAudioConfigCodec.fromJson(String json) { return switch (json) {
+factory RealtimekitAudioConfigCodec.fromJson(String json) {return switch (json) {
   'MP3' => mp3,
   'AAC' => aac,
   _ => RealtimekitAudioConfigCodec$Unknown(json),
-}; }
+};}
 
 static const RealtimekitAudioConfigCodec mp3 = RealtimekitAudioConfigCodec$mp3._();
 
@@ -85,30 +85,30 @@ static const RealtimekitAudioConfigCodec aac = RealtimekitAudioConfigCodec$aac._
 static const List<RealtimekitAudioConfigCodec> values = [mp3, aac];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'MP3' => 'mp3',
   'AAC' => 'aac',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimekitAudioConfigCodec$Unknown; } 
+bool get isUnknown {return this is RealtimekitAudioConfigCodec$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mp3, required W Function() aac, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mp3, required W Function() aac, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimekitAudioConfigCodec$mp3() => mp3(),
       RealtimekitAudioConfigCodec$aac() => aac(),
       RealtimekitAudioConfigCodec$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W Function()? aac, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W Function()? aac, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimekitAudioConfigCodec$mp3() => mp3 != null ? mp3() : orElse(value),
       RealtimekitAudioConfigCodec$aac() => aac != null ? aac() : orElse(value),
       RealtimekitAudioConfigCodec$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimekitAudioConfigCodec($value)';
 
- }
+}
 @immutable final class RealtimekitAudioConfigCodec$mp3 extends RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec$mp3._();
 
 @override String get value => 'MP3';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => 'MP3'.hashCode;
 
- }
+}
 @immutable final class RealtimekitAudioConfigCodec$aac extends RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec$aac._();
 
 @override String get value => 'AAC';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => 'AAC'.hashCode;
 
- }
+}
 @immutable final class RealtimekitAudioConfigCodec$Unknown extends RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec$Unknown(this.value);
 
 @override final String value;
@@ -136,15 +136,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Object containing configuration regarding the audio that is being recorded.
 @immutable final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel, this.codec, this.exportFile, });
 
-factory RealtimekitAudioConfig.fromJson(Map<String, dynamic> json) { return RealtimekitAudioConfig(
+factory RealtimekitAudioConfig.fromJson(Map<String, dynamic> json) {return RealtimekitAudioConfig(
   channel: json['channel'] != null ? Channel.fromJson(json['channel'] as String) : null,
   codec: json['codec'] != null ? RealtimekitAudioConfigCodec.fromJson(json['codec'] as String) : null,
   exportFile: json['export_file'] as bool?,
-); }
+);}
 
 /// Audio signal pathway within an audio file that carries a specific sound source.
 final Channel? channel;
@@ -164,17 +164,17 @@ RealtimekitAudioConfigCodec get codecOrDefault => codec ?? RealtimekitAudioConfi
 /// The value of `exportFile`, or its schema default when absent.
 bool get exportFileOrDefault => exportFile ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (channel != null) 'channel': channel?.toJson(),
   if (codec != null) 'codec': codec?.toJson(),
   'export_file': ?exportFile,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'channel', 'codec', 'export_file'}.contains(key)); } 
-RealtimekitAudioConfig copyWith({Channel? Function()? channel, RealtimekitAudioConfigCodec? Function()? codec, bool? Function()? exportFile, }) { return RealtimekitAudioConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'channel', 'codec', 'export_file'}.contains(key));}
+RealtimekitAudioConfig copyWith({Channel? Function()? channel, RealtimekitAudioConfigCodec? Function()? codec, bool? Function()? exportFile, }) {return RealtimekitAudioConfig(
   channel: channel != null ? channel() : this.channel,
   codec: codec != null ? codec() : this.codec,
   exportFile: exportFile != null ? exportFile() : this.exportFile,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitAudioConfig &&
           channel == other.channel &&
@@ -185,4 +185,4 @@ RealtimekitAudioConfig copyWith({Channel? Function()? channel, RealtimekitAudioC
 
 @override String toString() => 'RealtimekitAudioConfig(channel: $channel, codec: $codec, exportFile: $exportFile)';
 
- }
+}

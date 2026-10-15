@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/renamed_issue_event/rename.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Renamed Issue Event
 @immutable final class RenamedIssueEvent {const RenamedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.rename, });
 
-factory RenamedIssueEvent.fromJson(Map<String, dynamic> json) { return RenamedIssueEvent(
+factory RenamedIssueEvent.fromJson(Map<String, dynamic> json) {return RenamedIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -15,7 +15,7 @@ factory RenamedIssueEvent.fromJson(Map<String, dynamic> json) { return RenamedIs
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   rename: Rename.fromJson(json['rename'] as Map<String, dynamic>),
-); }
+);}
 
 final int id;
 
@@ -37,7 +37,7 @@ final Integration? performedViaGithubApp;
 
 final Rename rename;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -48,8 +48,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'performed_via_github_app': performedViaGithubApp?.toJson(),
   'rename': rename.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
@@ -58,8 +58,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
-      json.containsKey('rename'); } 
-RenamedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, Rename? rename, }) { return RenamedIssueEvent(
+      json.containsKey('rename');}
+RenamedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, Rename? rename, }) {return RenamedIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -70,7 +70,7 @@ RenamedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? ac
   createdAt: createdAt ?? this.createdAt,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   rename: rename ?? this.rename,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RenamedIssueEvent &&
           id == other.id &&
@@ -88,4 +88,4 @@ RenamedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? ac
 
 @override String toString() => 'RenamedIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  rename: $rename,\n)';
 
- }
+}

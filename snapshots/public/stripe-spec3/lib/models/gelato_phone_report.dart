@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_phone_report_error.dart';/// Result from a phone check
 @immutable final class GelatoPhoneReport {const GelatoPhoneReport({required this.status, this.error = const Omittable.absent(), this.phone = const Omittable.absent(), });
 
-factory GelatoPhoneReport.fromJson(Map<String, dynamic> json) { return GelatoPhoneReport(
+factory GelatoPhoneReport.fromJson(Map<String, dynamic> json) {return GelatoPhoneReport(
   error: json.containsKey('error') ? Omittable(json['error'] != null ? GelatoPhoneReportError.fromJson(json['error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
   status: GelatoDocumentReportStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Details on the verification error. Present when status is `unverified`.
 final Omittable<GelatoPhoneReportError?> error;
@@ -19,24 +19,24 @@ final Omittable<String?> phone;
 /// Status of this `phone` check.
 final GelatoDocumentReportStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (error.isPresent) 'error': error.value?.toJson(),
   if (phone.isPresent) 'phone': phone.value,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final phone$ = phone.value;
 if (phone$ != null) {
   if (phone$.runes.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
-return errors; } 
-GelatoPhoneReport copyWith({Omittable<GelatoPhoneReportError?>? error, Omittable<String?>? phone, GelatoDocumentReportStatus? status, }) { return GelatoPhoneReport(
+return errors;}
+GelatoPhoneReport copyWith({Omittable<GelatoPhoneReportError?>? error, Omittable<String?>? phone, GelatoDocumentReportStatus? status, }) {return GelatoPhoneReport(
   error: error ?? this.error,
   phone: phone ?? this.phone,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoPhoneReport &&
           error == other.error &&
@@ -47,4 +47,4 @@ GelatoPhoneReport copyWith({Omittable<GelatoPhoneReportError?>? error, Omittable
 
 @override String toString() => 'GelatoPhoneReport(error: $error, phone: $phone, status: $status)';
 
- }
+}

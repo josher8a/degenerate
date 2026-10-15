@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';/// The object type, which is always `thread`.
 sealed class ThreadObjectObject {const ThreadObjectObject();
 
-factory ThreadObjectObject.fromJson(String json) { return switch (json) {
+factory ThreadObjectObject.fromJson(String json) {return switch (json) {
   'thread' => thread,
   _ => ThreadObjectObject$Unknown(json),
-}; }
+};}
 
 static const ThreadObjectObject thread = ThreadObjectObject$thread._();
 
 static const List<ThreadObjectObject> values = [thread];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'thread' => 'thread',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ThreadObjectObject$Unknown; } 
+bool get isUnknown {return this is ThreadObjectObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() thread, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() thread, required W Function(String value) $unknown, }) {return switch (this) {
       ThreadObjectObject$thread() => thread(),
       ThreadObjectObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? thread, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? thread, W Function(String value)? $unknown, }) {return switch (this) {
       ThreadObjectObject$thread() => thread != null ? thread() : orElse(value),
       ThreadObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ThreadObjectObject($value)';
 
- }
+}
 @immutable final class ThreadObjectObject$thread extends ThreadObjectObject {const ThreadObjectObject$thread._();
 
 @override String get value => 'thread';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? thread, 
 
 @override int get hashCode => 'thread'.hashCode;
 
- }
+}
 @immutable final class ThreadObjectObject$Unknown extends ThreadObjectObject {const ThreadObjectObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? thread, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents a thread that contains [messages](/docs/api-reference/messages).
 @immutable final class ThreadObject {const ThreadObject({required this.id, required this.object, required this.createdAt, required this.toolResources, required this.metadata, });
 
-factory ThreadObject.fromJson(Map<String, dynamic> json) { return ThreadObject(
+factory ThreadObject.fromJson(Map<String, dynamic> json) {return ThreadObject(
   id: json['id'] as String,
   object: ThreadObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
   toolResources: json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -87,25 +87,25 @@ final AssistantObjectToolResources? toolResources;
 /// 
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
   'tool_resources': toolResources?.toJson(),
   'metadata': metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('tool_resources') &&
-      json.containsKey('metadata'); } 
-ThreadObject copyWith({String? id, ThreadObjectObject? object, int? createdAt, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, }) { return ThreadObject(
+      json.containsKey('metadata');}
+ThreadObject copyWith({String? id, ThreadObjectObject? object, int? createdAt, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, }) {return ThreadObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
   toolResources: toolResources != null ? toolResources() : this.toolResources,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadObject &&
           id == other.id &&
@@ -118,4 +118,4 @@ ThreadObject copyWith({String? id, ThreadObjectObject? object, int? createdAt, A
 
 @override String toString() => 'ThreadObject(id: $id, object: $object, createdAt: $createdAt, toolResources: $toolResources, metadata: $metadata)';
 
- }
+}

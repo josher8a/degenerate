@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitRealtimekitBucketConfig {const RealtimekitRealtimekitBucketConfig({required this.enabled});
 
-factory RealtimekitRealtimekitBucketConfig.fromJson(Map<String, dynamic> json) { return RealtimekitRealtimekitBucketConfig(
+factory RealtimekitRealtimekitBucketConfig.fromJson(Map<String, dynamic> json) {return RealtimekitRealtimekitBucketConfig(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// Controls whether recordings are uploaded to RealtimeKit's bucket. If set to false, `download_url`, `audio_download_url`, `download_url_expiry` won't be generated for a recording.
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-RealtimekitRealtimekitBucketConfig copyWith({bool? enabled}) { return RealtimekitRealtimekitBucketConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+RealtimekitRealtimekitBucketConfig copyWith({bool? enabled}) {return RealtimekitRealtimekitBucketConfig(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitRealtimekitBucketConfig &&
           enabled == other.enabled;
@@ -25,4 +25,4 @@ RealtimekitRealtimekitBucketConfig copyWith({bool? enabled}) { return Realtimeki
 
 @override String toString() => 'RealtimekitRealtimekitBucketConfig(enabled: $enabled)';
 
- }
+}

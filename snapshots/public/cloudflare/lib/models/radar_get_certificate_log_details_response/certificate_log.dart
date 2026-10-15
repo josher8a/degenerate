@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/api.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/certificate_log_performance.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/certificate_log_related.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/certificate_log_state.dart';@immutable final class CertificateLog {const CertificateLog({required this.api, required this.avgThroughput, required this.description, required this.endExclusive, required this.lastUpdate, required this.$operator, required this.performance, required this.related, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.submittableCertCount, required this.submittedCertCount, required this.url, });
 
-factory CertificateLog.fromJson(Map<String, dynamic> json) { return CertificateLog(
+factory CertificateLog.fromJson(Map<String, dynamic> json) {return CertificateLog(
   api: Api.fromJson(json['api'] as String),
   avgThroughput: (json['avgThroughput'] as num).toDouble(),
   description: json['description'] as String,
@@ -19,7 +19,7 @@ factory CertificateLog.fromJson(Map<String, dynamic> json) { return CertificateL
   submittableCertCount: json['submittableCertCount'] as String?,
   submittedCertCount: json['submittedCertCount'] as String?,
   url: json['url'] as String,
-); }
+);}
 
 /// The API standard that the certificate log follows.
 final Api api;
@@ -86,7 +86,7 @@ final String? submittedCertCount;
 /// Example: `'https://ct.googleapis.com/logs/us1/argon2024/'`
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'api': api.toJson(),
   'avgThroughput': avgThroughput,
   'description': description,
@@ -102,8 +102,8 @@ Map<String, dynamic> toJson() { return {
   'submittableCertCount': submittableCertCount,
   'submittedCertCount': submittedCertCount,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('api') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('api') &&
       json.containsKey('avgThroughput') && json['avgThroughput'] is num &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('endExclusive') && json['endExclusive'] is String &&
@@ -117,9 +117,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('stateTimestamp') && json['stateTimestamp'] is String &&
       json.containsKey('submittableCertCount') && (json['submittableCertCount'] == null || json['submittableCertCount'] is String) &&
       json.containsKey('submittedCertCount') && (json['submittedCertCount'] == null || json['submittedCertCount'] is String) &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final submittableCertCount$ = submittableCertCount;
 if (submittableCertCount$ != null) {
   if (!RegExp(r'^\d+$').hasMatch(submittableCertCount$)) { errors.add(r'submittableCertCount: must match pattern ^\d+$'); }
@@ -128,8 +128,8 @@ final submittedCertCount$ = submittedCertCount;
 if (submittedCertCount$ != null) {
   if (!RegExp(r'^\d+$').hasMatch(submittedCertCount$)) { errors.add(r'submittedCertCount: must match pattern ^\d+$'); }
 }
-return errors; } 
-CertificateLog copyWith({Api? api, double? avgThroughput, String? description, DateTime? endExclusive, DateTime? lastUpdate, String? $operator, CertificateLogPerformance? Function()? performance, List<CertificateLogRelated>? related, String? slug, DateTime? startInclusive, CertificateLogState? state, DateTime? stateTimestamp, String? Function()? submittableCertCount, String? Function()? submittedCertCount, String? url, }) { return CertificateLog(
+return errors;}
+CertificateLog copyWith({Api? api, double? avgThroughput, String? description, DateTime? endExclusive, DateTime? lastUpdate, String? $operator, CertificateLogPerformance? Function()? performance, List<CertificateLogRelated>? related, String? slug, DateTime? startInclusive, CertificateLogState? state, DateTime? stateTimestamp, String? Function()? submittableCertCount, String? Function()? submittedCertCount, String? url, }) {return CertificateLog(
   api: api ?? this.api,
   avgThroughput: avgThroughput ?? this.avgThroughput,
   description: description ?? this.description,
@@ -145,7 +145,7 @@ CertificateLog copyWith({Api? api, double? avgThroughput, String? description, D
   submittableCertCount: submittableCertCount != null ? submittableCertCount() : this.submittableCertCount,
   submittedCertCount: submittedCertCount != null ? submittedCertCount() : this.submittedCertCount,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateLog &&
           api == other.api &&
@@ -168,4 +168,4 @@ CertificateLog copyWith({Api? api, double? avgThroughput, String? description, D
 
 @override String toString() => 'CertificateLog(\n  api: $api,\n  avgThroughput: $avgThroughput,\n  description: $description,\n  endExclusive: $endExclusive,\n  lastUpdate: $lastUpdate,\n  \$operator: ${$operator},\n  performance: $performance,\n  related: $related,\n  slug: $slug,\n  startInclusive: $startInclusive,\n  state: $state,\n  stateTimestamp: $stateTimestamp,\n  submittableCertCount: $submittableCertCount,\n  submittedCertCount: $submittedCertCount,\n  url: $url,\n)';
 
- }
+}

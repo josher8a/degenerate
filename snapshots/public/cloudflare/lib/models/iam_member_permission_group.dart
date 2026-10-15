@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of permissions.
 @immutable final class IamMemberPermissionGroup {const IamMemberPermissionGroup({required this.id});
 
-factory IamMemberPermissionGroup.fromJson(Map<String, dynamic> json) { return IamMemberPermissionGroup(
+factory IamMemberPermissionGroup.fromJson(Map<String, dynamic> json) {return IamMemberPermissionGroup(
   id: json['id'] as String,
-); }
+);}
 
 /// Identifier of the group.
 /// 
 /// Example: `'c8fed203ed3043cba015a93ad1616f1f'`
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-IamMemberPermissionGroup copyWith({String? id}) { return IamMemberPermissionGroup(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+IamMemberPermissionGroup copyWith({String? id}) {return IamMemberPermissionGroup(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamMemberPermissionGroup &&
           id == other.id;
@@ -28,4 +28,4 @@ IamMemberPermissionGroup copyWith({String? id}) { return IamMemberPermissionGrou
 
 @override String toString() => 'IamMemberPermissionGroup(id: $id)';
 
- }
+}

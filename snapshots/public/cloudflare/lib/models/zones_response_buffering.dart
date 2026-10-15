@@ -8,37 +8,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class ZonesResponseBufferingId {const ZonesResponseBufferingId();
 
-factory ZonesResponseBufferingId.fromJson(String json) { return switch (json) {
+factory ZonesResponseBufferingId.fromJson(String json) {return switch (json) {
   'response_buffering' => responseBuffering,
   _ => ZonesResponseBufferingId$Unknown(json),
-}; }
+};}
 
 static const ZonesResponseBufferingId responseBuffering = ZonesResponseBufferingId$responseBuffering._();
 
 static const List<ZonesResponseBufferingId> values = [responseBuffering];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response_buffering' => 'responseBuffering',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesResponseBufferingId$Unknown; } 
+bool get isUnknown {return this is ZonesResponseBufferingId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() responseBuffering, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() responseBuffering, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesResponseBufferingId$responseBuffering() => responseBuffering(),
       ZonesResponseBufferingId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseBuffering, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseBuffering, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesResponseBufferingId$responseBuffering() => responseBuffering != null ? responseBuffering() : orElse(value),
       ZonesResponseBufferingId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesResponseBufferingId($value)';
 
- }
+}
 @immutable final class ZonesResponseBufferingId$responseBuffering extends ZonesResponseBufferingId {const ZonesResponseBufferingId$responseBuffering._();
 
 @override String get value => 'response_buffering';
@@ -47,7 +47,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response_buffering'.hashCode;
 
- }
+}
 @immutable final class ZonesResponseBufferingId$Unknown extends ZonesResponseBufferingId {const ZonesResponseBufferingId$Unknown(this.value);
 
 @override final String value;
@@ -57,13 +57,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesResponseBuffering {const ZonesResponseBuffering({this.id, this.value, });
 
-factory ZonesResponseBuffering.fromJson(Map<String, dynamic> json) { return ZonesResponseBuffering(
+factory ZonesResponseBuffering.fromJson(Map<String, dynamic> json) {return ZonesResponseBuffering(
   id: json['id'] != null ? ZonesResponseBufferingId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Turn on or off whether Cloudflare should wait for an entire file
 /// from the origin server before forwarding it to the site visitor. By
@@ -78,15 +78,15 @@ final ZonesResponseBufferingId? id;
 /// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesResponseBuffering copyWith({ZonesResponseBufferingId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesResponseBuffering(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesResponseBuffering copyWith({ZonesResponseBufferingId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) {return ZonesResponseBuffering(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesResponseBuffering &&
           id == other.id &&
@@ -96,4 +96,4 @@ ZonesResponseBuffering copyWith({ZonesResponseBufferingId? Function()? id, Cache
 
 @override String toString() => 'ZonesResponseBuffering(id: $id, value: $value)';
 
- }
+}

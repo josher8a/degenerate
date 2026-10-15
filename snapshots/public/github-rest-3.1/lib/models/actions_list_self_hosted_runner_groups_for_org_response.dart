@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner_groups_org.dart';@immutable final class ActionsListSelfHostedRunnerGroupsForOrgResponse {const ActionsListSelfHostedRunnerGroupsForOrgResponse({required this.totalCount, required this.runnerGroups, });
 
-factory ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelfHostedRunnerGroupsForOrgResponse(
+factory ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsListSelfHostedRunnerGroupsForOrgResponse(
   totalCount: (json['total_count'] as num).toDouble(),
   runnerGroups: (json['runner_groups'] as List<dynamic>).map((e) => RunnerGroupsOrg.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final double totalCount;
 
 final List<RunnerGroupsOrg> runnerGroups;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'runner_groups': runnerGroups.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('runner_groups'); } 
-ActionsListSelfHostedRunnerGroupsForOrgResponse copyWith({double? totalCount, List<RunnerGroupsOrg>? runnerGroups, }) { return ActionsListSelfHostedRunnerGroupsForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('runner_groups');}
+ActionsListSelfHostedRunnerGroupsForOrgResponse copyWith({double? totalCount, List<RunnerGroupsOrg>? runnerGroups, }) {return ActionsListSelfHostedRunnerGroupsForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   runnerGroups: runnerGroups ?? this.runnerGroups,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelfHostedRunnerGroupsForOrgResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListSelfHostedRunnerGroupsForOrgResponse copyWith({double? totalCount, Li
 
 @override String toString() => 'ActionsListSelfHostedRunnerGroupsForOrgResponse(totalCount: $totalCount, runnerGroups: $runnerGroups)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartUnionAnyFieldA {const SmartUnionAnyFieldA({this.a});
 
-factory SmartUnionAnyFieldA.fromJson(Map<String, dynamic> json) { return SmartUnionAnyFieldA(
+factory SmartUnionAnyFieldA.fromJson(Map<String, dynamic> json) {return SmartUnionAnyFieldA(
   a: json['a'] as String?,
-); }
+);}
 
 final String? a;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'a': ?a,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'a'}.contains(key)); } 
-SmartUnionAnyFieldA copyWith({String? Function()? a}) { return SmartUnionAnyFieldA(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'a'}.contains(key));}
+SmartUnionAnyFieldA copyWith({String? Function()? a}) {return SmartUnionAnyFieldA(
   a: a != null ? a() : this.a,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartUnionAnyFieldA &&
           a == other.a;
@@ -24,4 +24,4 @@ SmartUnionAnyFieldA copyWith({String? Function()? a}) { return SmartUnionAnyFiel
 
 @override String toString() => 'SmartUnionAnyFieldA(a: $a)';
 
- }
+}

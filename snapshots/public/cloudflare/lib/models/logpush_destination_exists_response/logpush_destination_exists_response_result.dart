@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogpushDestinationExistsResponseResult {const LogpushDestinationExistsResponseResult({this.exists});
 
-factory LogpushDestinationExistsResponseResult.fromJson(Map<String, dynamic> json) { return LogpushDestinationExistsResponseResult(
+factory LogpushDestinationExistsResponseResult.fromJson(Map<String, dynamic> json) {return LogpushDestinationExistsResponseResult(
   exists: json['exists'] as bool?,
-); }
+);}
 
 /// Example: `false`
 final bool? exists;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'exists': ?exists,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exists'}.contains(key)); } 
-LogpushDestinationExistsResponseResult copyWith({bool? Function()? exists}) { return LogpushDestinationExistsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'exists'}.contains(key));}
+LogpushDestinationExistsResponseResult copyWith({bool? Function()? exists}) {return LogpushDestinationExistsResponseResult(
   exists: exists != null ? exists() : this.exists,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushDestinationExistsResponseResult &&
           exists == other.exists;
@@ -25,4 +25,4 @@ LogpushDestinationExistsResponseResult copyWith({bool? Function()? exists}) { re
 
 @override String toString() => 'LogpushDestinationExistsResponseResult(exists: $exists)';
 
- }
+}

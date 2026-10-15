@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/invoice_payment/invoice_payment_invoice.dart';import 'package:pub_stripe_spec3/models/invoice_setting_quote_setting.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/quote/quote_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/quote/quote_subscription_schedule.dart';import 'package:pub_stripe_spec3/models/quotes_resource_automatic_tax.dart';import 'package:pub_stripe_spec3/models/quotes_resource_computed.dart';import 'package:pub_stripe_spec3/models/quotes_resource_from_quote.dart';import 'package:pub_stripe_spec3/models/quotes_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/quotes_resource_subscription_data_subscription_data.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details.dart';import 'package:pub_stripe_spec3/models/quotes_resource_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class QuoteObject {const QuoteObject();
 
-factory QuoteObject.fromJson(String json) { return switch (json) {
+factory QuoteObject.fromJson(String json) {return switch (json) {
   'quote' => quote,
   _ => QuoteObject$Unknown(json),
-}; }
+};}
 
 static const QuoteObject quote = QuoteObject$quote._();
 
 static const List<QuoteObject> values = [quote];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'quote' => 'quote',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is QuoteObject$Unknown; } 
+bool get isUnknown {return this is QuoteObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() quote, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() quote, required W Function(String value) $unknown, }) {return switch (this) {
       QuoteObject$quote() => quote(),
       QuoteObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? quote, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? quote, W Function(String value)? $unknown, }) {return switch (this) {
       QuoteObject$quote() => quote != null ? quote() : orElse(value),
       QuoteObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'QuoteObject($value)';
 
- }
+}
 @immutable final class QuoteObject$quote extends QuoteObject {const QuoteObject$quote._();
 
 @override String get value => 'quote';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? quote, W
 
 @override int get hashCode => 'quote'.hashCode;
 
- }
+}
 @immutable final class QuoteObject$Unknown extends QuoteObject {const QuoteObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? quote, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the quote.
 sealed class QuoteStatus {const QuoteStatus();
 
-factory QuoteStatus.fromJson(String json) { return switch (json) {
+factory QuoteStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'canceled' => canceled,
   'draft' => draft,
   'open' => open,
   _ => QuoteStatus$Unknown(json),
-}; }
+};}
 
 static const QuoteStatus accepted = QuoteStatus$accepted._();
 
@@ -76,36 +76,36 @@ static const QuoteStatus open = QuoteStatus$open._();
 static const List<QuoteStatus> values = [accepted, canceled, draft, open];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'accepted' => 'accepted',
   'canceled' => 'canceled',
   'draft' => 'draft',
   'open' => 'open',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is QuoteStatus$Unknown; } 
+bool get isUnknown {return this is QuoteStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accepted, required W Function() canceled, required W Function() draft, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accepted, required W Function() canceled, required W Function() draft, required W Function() open, required W Function(String value) $unknown, }) {return switch (this) {
       QuoteStatus$accepted() => accepted(),
       QuoteStatus$canceled() => canceled(),
       QuoteStatus$draft() => draft(),
       QuoteStatus$open() => open(),
       QuoteStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? canceled, W Function()? draft, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? canceled, W Function()? draft, W Function()? open, W Function(String value)? $unknown, }) {return switch (this) {
       QuoteStatus$accepted() => accepted != null ? accepted() : orElse(value),
       QuoteStatus$canceled() => canceled != null ? canceled() : orElse(value),
       QuoteStatus$draft() => draft != null ? draft() : orElse(value),
       QuoteStatus$open() => open != null ? open() : orElse(value),
       QuoteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'QuoteStatus($value)';
 
- }
+}
 @immutable final class QuoteStatus$accepted extends QuoteStatus {const QuoteStatus$accepted._();
 
 @override String get value => 'accepted';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class QuoteStatus$canceled extends QuoteStatus {const QuoteStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class QuoteStatus$draft extends QuoteStatus {const QuoteStatus$draft._();
 
 @override String get value => 'draft';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'draft'.hashCode;
 
- }
+}
 @immutable final class QuoteStatus$open extends QuoteStatus {const QuoteStatus$open._();
 
 @override String get value => 'open';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class QuoteStatus$Unknown extends QuoteStatus {const QuoteStatus$Unknown(this.value);
 
 @override final String value;
@@ -151,12 +151,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Quote is a way to model prices that you'd like to provide to a customer.
 /// Once accepted, it will automatically create an invoice, subscription or subscription schedule.
 @immutable final class Quote {const Quote({required this.statusTransitions, required this.amountTotal, required this.automaticTax, required this.collectionMethod, required this.computed, required this.created, required this.amountSubtotal, required this.discounts, required this.expiresAt, required this.object, required this.metadata, required this.subscriptionData, required this.invoiceSettings, required this.id, required this.status, required this.totalDetails, required this.livemode, this.footer = const Omittable.absent(), this.header = const Omittable.absent(), this.description = const Omittable.absent(), this.invoice = const Omittable.absent(), this.defaultTaxRates, this.lineItems, this.transferData = const Omittable.absent(), this.customer = const Omittable.absent(), this.number = const Omittable.absent(), this.currency = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.applicationFeePercent = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.subscription = const Omittable.absent(), this.applicationFeeAmount = const Omittable.absent(), this.subscriptionSchedule = const Omittable.absent(), this.testClock = const Omittable.absent(), this.application = const Omittable.absent(), this.fromQuote = const Omittable.absent(), });
 
-factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
+factory Quote.fromJson(Map<String, dynamic> json) {return Quote(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
   application: json.containsKey('application') ? Omittable(json['application'] != null ? BillingPortalConfigurationApplication.fromJson(json['application']) : null) : const Omittable.absent(),
@@ -193,7 +193,7 @@ factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
   testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? TestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
   totalDetails: QuotesResourceTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>),
   transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? QuotesResourceTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Total before any discounts or taxes are applied.
 final int amountSubtotal;
@@ -297,7 +297,7 @@ final QuotesResourceTotalDetails totalDetails;
 /// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to for each of the invoices.
 final Omittable<QuotesResourceTransferData?> transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_subtotal': amountSubtotal,
   'amount_total': amountTotal,
   if (application.isPresent) 'application': application.value?.toJson(),
@@ -334,8 +334,8 @@ Map<String, dynamic> toJson() { return {
   if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
   'total_details': totalDetails.toJson(),
   if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('automatic_tax') &&
       json.containsKey('collection_method') &&
@@ -351,9 +351,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('subscription_data') &&
-      json.containsKey('total_details'); } 
+      json.containsKey('total_details');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final currency$ = currency.value;
 if (currency$ != null) {
   if (currency$.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
@@ -379,8 +379,8 @@ final number$ = number.value;
 if (number$ != null) {
   if (number$.runes.length > 5000) { errors.add('number: length must be <= 5000'); }
 }
-return errors; } 
-Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<BillingPortalConfigurationApplication?>? application, Omittable<int?>? applicationFeeAmount, Omittable<double?>? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, InvoiceCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, Omittable<String?>? currency, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, List<QuoteDefaultTaxRates>? Function()? defaultTaxRates, Omittable<String?>? description, List<InvoiceitemDiscounts>? discounts, int? expiresAt, Omittable<String?>? footer, Omittable<QuotesResourceFromQuote?>? fromQuote, Omittable<String?>? header, String? id, Omittable<InvoicePaymentInvoice?>? invoice, InvoiceSettingQuoteSetting? invoiceSettings, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, Omittable<String?>? number, QuoteObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription?>? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, Omittable<QuoteSubscriptionSchedule?>? subscriptionSchedule, Omittable<TestClock?>? testClock, QuotesResourceTotalDetails? totalDetails, Omittable<QuotesResourceTransferData?>? transferData, }) { return Quote(
+return errors;}
+Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<BillingPortalConfigurationApplication?>? application, Omittable<int?>? applicationFeeAmount, Omittable<double?>? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, InvoiceCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, Omittable<String?>? currency, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, List<QuoteDefaultTaxRates>? Function()? defaultTaxRates, Omittable<String?>? description, List<InvoiceitemDiscounts>? discounts, int? expiresAt, Omittable<String?>? footer, Omittable<QuotesResourceFromQuote?>? fromQuote, Omittable<String?>? header, String? id, Omittable<InvoicePaymentInvoice?>? invoice, InvoiceSettingQuoteSetting? invoiceSettings, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, Omittable<String?>? number, QuoteObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription?>? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, Omittable<QuoteSubscriptionSchedule?>? subscriptionSchedule, Omittable<TestClock?>? testClock, QuotesResourceTotalDetails? totalDetails, Omittable<QuotesResourceTransferData?>? transferData, }) {return Quote(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   application: application ?? this.application,
@@ -417,7 +417,7 @@ Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<BillingPortalCo
   testClock: testClock ?? this.testClock,
   totalDetails: totalDetails ?? this.totalDetails,
   transferData: transferData ?? this.transferData,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Quote &&
           amountSubtotal == other.amountSubtotal &&
@@ -461,4 +461,4 @@ Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<BillingPortalCo
 
 @override String toString() => 'Quote(\n  amountSubtotal: $amountSubtotal,\n  amountTotal: $amountTotal,\n  application: $application,\n  applicationFeeAmount: $applicationFeeAmount,\n  applicationFeePercent: $applicationFeePercent,\n  automaticTax: $automaticTax,\n  collectionMethod: $collectionMethod,\n  computed: $computed,\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  discounts: $discounts,\n  expiresAt: $expiresAt,\n  footer: $footer,\n  fromQuote: $fromQuote,\n  header: $header,\n  id: $id,\n  invoice: $invoice,\n  invoiceSettings: $invoiceSettings,\n  lineItems: $lineItems,\n  livemode: $livemode,\n  metadata: $metadata,\n  number: $number,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  subscription: $subscription,\n  subscriptionData: $subscriptionData,\n  subscriptionSchedule: $subscriptionSchedule,\n  testClock: $testClock,\n  totalDetails: $totalDetails,\n  transferData: $transferData,\n)';
 
- }
+}

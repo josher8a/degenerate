@@ -7,7 +7,7 @@ const AccessSchemasIdentityProvidersRequest({this.accessSchemasAzureAdRequest = 
 const AccessSchemasIdentityProvidersRequest._({required this.rawValue, required this.accessSchemasAzureAdRequest, required this.accessSchemasCentrifyRequest, required this.accessSchemasFacebookRequest, required this.accessSchemasGithubRequest, required this.accessSchemasGoogleRequest, required this.accessSchemasGoogleAppsRequest, required this.accessSchemasLinkedinRequest, required this.accessSchemasOidcRequest, required this.accessSchemasOktaRequest, required this.accessSchemasOneloginRequest, required this.accessSchemasPingoneRequest, required this.accessSchemasSamlRequest, required this.accessSchemasYandexRequest, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory AccessSchemasIdentityProvidersRequest.fromJson(Object? json) { return AccessSchemasIdentityProvidersRequest._(
+factory AccessSchemasIdentityProvidersRequest.fromJson(Object? json) {return AccessSchemasIdentityProvidersRequest._(
   rawValue: Omittable(json),
   accessSchemasAzureAdRequest: json is Map<String, dynamic> && AccessSchemasAzureAdRequest.canParse(json) ? parseAnyOfVariant<AccessSchemasAzureAdRequest>(json, (value) => AccessSchemasAzureAdRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessSchemasCentrifyRequest: json is Map<String, dynamic> && AccessSchemasCentrifyRequest.canParse(json) ? parseAnyOfVariant<AccessSchemasCentrifyRequest>(json, (value) => AccessSchemasCentrifyRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -22,7 +22,7 @@ factory AccessSchemasIdentityProvidersRequest.fromJson(Object? json) { return Ac
   accessSchemasPingoneRequest: json is Map<String, dynamic> && AccessSchemasPingoneRequest.canParse(json) ? parseAnyOfVariant<AccessSchemasPingoneRequest>(json, (value) => AccessSchemasPingoneRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessSchemasSamlRequest: json is Map<String, dynamic> && AccessSchemasSamlRequest.canParse(json) ? parseAnyOfVariant<AccessSchemasSamlRequest>(json, (value) => AccessSchemasSamlRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessSchemasYandexRequest: json is Map<String, dynamic> && AccessSchemasYandexRequest.canParse(json) ? parseAnyOfVariant<AccessSchemasYandexRequest>(json, (value) => AccessSchemasYandexRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -96,4 +96,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'AccessSchemasIdentityProvidersRequest(${toJson()})';
 
- }
+}

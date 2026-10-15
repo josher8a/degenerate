@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_output_enabled.dart';import 'package:pub_cloudflare/models/stream_output_stream_key.dart';import 'package:pub_cloudflare/models/stream_output_url.dart';@immutable final class StreamCreateOutputRequest {const StreamCreateOutputRequest({required this.streamKey, required this.url, this.enabled, });
 
-factory StreamCreateOutputRequest.fromJson(Map<String, dynamic> json) { return StreamCreateOutputRequest(
+factory StreamCreateOutputRequest.fromJson(Map<String, dynamic> json) {return StreamCreateOutputRequest(
   enabled: json['enabled'] != null ? StreamOutputEnabled.fromJson(json['enabled'] as bool) : null,
   streamKey: StreamOutputStreamKey.fromJson(json['streamKey'] as String),
   url: StreamOutputUrl.fromJson(json['url'] as String),
-); }
+);}
 
 final StreamOutputEnabled? enabled;
 
@@ -15,18 +15,18 @@ final StreamOutputStreamKey streamKey;
 
 final StreamOutputUrl url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (enabled != null) 'enabled': enabled?.toJson(),
   'streamKey': streamKey.toJson(),
   'url': url.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('streamKey') &&
-      json.containsKey('url'); } 
-StreamCreateOutputRequest copyWith({StreamOutputEnabled? Function()? enabled, StreamOutputStreamKey? streamKey, StreamOutputUrl? url, }) { return StreamCreateOutputRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('streamKey') &&
+      json.containsKey('url');}
+StreamCreateOutputRequest copyWith({StreamOutputEnabled? Function()? enabled, StreamOutputStreamKey? streamKey, StreamOutputUrl? url, }) {return StreamCreateOutputRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   streamKey: streamKey ?? this.streamKey,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamCreateOutputRequest &&
           enabled == other.enabled &&
@@ -37,4 +37,4 @@ StreamCreateOutputRequest copyWith({StreamOutputEnabled? Function()? enabled, St
 
 @override String toString() => 'StreamCreateOutputRequest(enabled: $enabled, streamKey: $streamKey, url: $url)';
 
- }
+}

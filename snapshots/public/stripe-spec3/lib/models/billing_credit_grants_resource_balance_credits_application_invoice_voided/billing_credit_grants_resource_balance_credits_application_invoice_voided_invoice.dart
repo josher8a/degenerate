@@ -8,11 +8,11 @@ const BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice({
 const BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice._({required this.rawValue, required this.string, required this.invoice, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice.fromJson(Object? json) { return BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice._(
+factory BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice.fromJson(Object? json) {return BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   invoice: json is Map<String, dynamic> && Invoice.canParse(json) ? parseAnyOfVariant<Invoice>(json, (value) => Invoice.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice(${toJson()})';
 
- }
+}

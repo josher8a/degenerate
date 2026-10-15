@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';sealed class WebhookInstallationSuspendAction {const WebhookInstallationSuspendAction();
 
-factory WebhookInstallationSuspendAction.fromJson(String json) { return switch (json) {
+factory WebhookInstallationSuspendAction.fromJson(String json) {return switch (json) {
   'suspend' => suspend,
   _ => WebhookInstallationSuspendAction$Unknown(json),
-}; }
+};}
 
 static const WebhookInstallationSuspendAction suspend = WebhookInstallationSuspendAction$suspend._();
 
 static const List<WebhookInstallationSuspendAction> values = [suspend];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'suspend' => 'suspend',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookInstallationSuspendAction$Unknown; } 
+bool get isUnknown {return this is WebhookInstallationSuspendAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() suspend, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() suspend, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookInstallationSuspendAction$suspend() => suspend(),
       WebhookInstallationSuspendAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? suspend, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? suspend, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookInstallationSuspendAction$suspend() => suspend != null ? suspend() : orElse(value),
       WebhookInstallationSuspendAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookInstallationSuspendAction($value)';
 
- }
+}
 @immutable final class WebhookInstallationSuspendAction$suspend extends WebhookInstallationSuspendAction {const WebhookInstallationSuspendAction$suspend._();
 
 @override String get value => 'suspend';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? suspend,
 
 @override int get hashCode => 'suspend'.hashCode;
 
- }
+}
 @immutable final class WebhookInstallationSuspendAction$Unknown extends WebhookInstallationSuspendAction {const WebhookInstallationSuspendAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? suspend,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookInstallationSuspend {const WebhookInstallationSuspend({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester = const Omittable.absent(), });
 
-factory WebhookInstallationSuspend.fromJson(Map<String, dynamic> json) { return WebhookInstallationSuspend(
+factory WebhookInstallationSuspend.fromJson(Map<String, dynamic> json) {return WebhookInstallationSuspend(
   action: WebhookInstallationSuspendAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
@@ -64,7 +64,7 @@ factory WebhookInstallationSuspend.fromJson(Map<String, dynamic> json) { return 
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   requester: json.containsKey('requester') ? Omittable(json['requester']) : const Omittable.absent(),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookInstallationSuspendAction action;
 
@@ -83,7 +83,7 @@ final Omittable<dynamic> requester;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'installation': installation.toJson(),
@@ -92,11 +92,11 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   if (requester.isPresent) 'requester': requester.value,
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('installation') &&
-      json.containsKey('sender'); } 
-WebhookInstallationSuspend copyWith({WebhookInstallationSuspendAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositories2>? Function()? repositories, RepositoryWebhooks? Function()? repository, Omittable<dynamic>? requester, SimpleUser? sender, }) { return WebhookInstallationSuspend(
+      json.containsKey('sender');}
+WebhookInstallationSuspend copyWith({WebhookInstallationSuspendAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositories2>? Function()? repositories, RepositoryWebhooks? Function()? repository, Omittable<dynamic>? requester, SimpleUser? sender, }) {return WebhookInstallationSuspend(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,
@@ -105,7 +105,7 @@ WebhookInstallationSuspend copyWith({WebhookInstallationSuspendAction? action, E
   repository: repository != null ? repository() : this.repository,
   requester: requester ?? this.requester,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationSuspend &&
           action == other.action &&
@@ -121,4 +121,4 @@ WebhookInstallationSuspend copyWith({WebhookInstallationSuspendAction? action, E
 
 @override String toString() => 'WebhookInstallationSuspend(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)';
 
- }
+}

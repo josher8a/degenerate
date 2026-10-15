@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/sampling_params_text.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/tool.dart';@immutable final class CreateEvalResponsesRunDataSourceSamplingParams {const CreateEvalResponsesRunDataSourceSamplingParams({this.reasoningEffort = const Omittable.absent(), this.temperature, this.maxCompletionTokens, this.topP, this.seed, this.tools, this.text, });
 
-factory CreateEvalResponsesRunDataSourceSamplingParams.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSourceSamplingParams(
+factory CreateEvalResponsesRunDataSourceSamplingParams.fromJson(Map<String, dynamic> json) {return CreateEvalResponsesRunDataSourceSamplingParams(
   reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
@@ -11,7 +11,7 @@ factory CreateEvalResponsesRunDataSourceSamplingParams.fromJson(Map<String, dyna
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   text: json['text'] != null ? SamplingParamsText.fromJson(json['text'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Omittable<ReasoningEffort?> reasoningEffort;
 
@@ -58,7 +58,7 @@ double get topPOrDefault => topP ?? 1.0;
 /// The value of `seed`, or its schema default when absent.
 int get seedOrDefault => seed ?? 42;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
   'temperature': ?temperature,
   'max_completion_tokens': ?maxCompletionTokens,
@@ -66,9 +66,9 @@ Map<String, dynamic> toJson() { return {
   'seed': ?seed,
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (text != null) 'text': text?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reasoning_effort', 'temperature', 'max_completion_tokens', 'top_p', 'seed', 'tools', 'text'}.contains(key)); } 
-CreateEvalResponsesRunDataSourceSamplingParams copyWith({Omittable<ReasoningEffort?>? reasoningEffort, double? Function()? temperature, int? Function()? maxCompletionTokens, double? Function()? topP, int? Function()? seed, List<Tool>? Function()? tools, SamplingParamsText? Function()? text, }) { return CreateEvalResponsesRunDataSourceSamplingParams(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reasoning_effort', 'temperature', 'max_completion_tokens', 'top_p', 'seed', 'tools', 'text'}.contains(key));}
+CreateEvalResponsesRunDataSourceSamplingParams copyWith({Omittable<ReasoningEffort?>? reasoningEffort, double? Function()? temperature, int? Function()? maxCompletionTokens, double? Function()? topP, int? Function()? seed, List<Tool>? Function()? tools, SamplingParamsText? Function()? text, }) {return CreateEvalResponsesRunDataSourceSamplingParams(
   reasoningEffort: reasoningEffort ?? this.reasoningEffort,
   temperature: temperature != null ? temperature() : this.temperature,
   maxCompletionTokens: maxCompletionTokens != null ? maxCompletionTokens() : this.maxCompletionTokens,
@@ -76,7 +76,7 @@ CreateEvalResponsesRunDataSourceSamplingParams copyWith({Omittable<ReasoningEffo
   seed: seed != null ? seed() : this.seed,
   tools: tools != null ? tools() : this.tools,
   text: text != null ? text() : this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalResponsesRunDataSourceSamplingParams &&
           reasoningEffort == other.reasoningEffort &&
@@ -91,4 +91,4 @@ CreateEvalResponsesRunDataSourceSamplingParams copyWith({Omittable<ReasoningEffo
 
 @override String toString() => 'CreateEvalResponsesRunDataSourceSamplingParams(reasoningEffort: $reasoningEffort, temperature: $temperature, maxCompletionTokens: $maxCompletionTokens, topP: $topP, seed: $seed, tools: $tools, text: $text)';
 
- }
+}

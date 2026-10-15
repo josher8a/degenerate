@@ -14,7 +14,7 @@ final class MagicIPsecTunnelsApi with ApiExecutor {const MagicIPsecTunnelsApi(th
 /// Lists IPsec tunnels associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<MagicSchemasTunnelsCollectionResponseResult, MagicIpsecTunnelsListIpsecTunnelsError>> magicIpsecTunnelsListIpsecTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasTunnelsCollectionResponseResult, MagicIpsecTunnelsListIpsecTunnelsError>> magicIpsecTunnelsListIpsecTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -34,13 +34,13 @@ return await execute(
   },
   onError: MagicIpsecTunnelsListIpsecTunnelsError.fromResponse,
 );
- } 
+}
 /// Create an IPsec tunnel
 ///
 /// Creates a new IPsec tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<MagicIpsecTunnel, MagicIpsecTunnelsCreateIpsecTunnelsError>> magicIpsecTunnelsCreateIpsecTunnels({required MagicIdentifier accountId, required MagicIpsecTunnelAddSingleRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicIpsecTunnel, MagicIpsecTunnelsCreateIpsecTunnelsError>> magicIpsecTunnelsCreateIpsecTunnels({required MagicIdentifier accountId, required MagicIpsecTunnelAddSingleRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -62,13 +62,13 @@ return await execute(
   },
   onError: MagicIpsecTunnelsCreateIpsecTunnelsError.fromResponse,
 );
- } 
+}
 /// Update multiple IPsec tunnels
 ///
 /// Update multiple IPsec tunnels associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<MagicSchemasModifiedTunnelsCollectionResponseResult, MagicIpsecTunnelsUpdateMultipleIpsecTunnelsError>> magicIpsecTunnelsUpdateMultipleIpsecTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasModifiedTunnelsCollectionResponseResult, MagicIpsecTunnelsUpdateMultipleIpsecTunnelsError>> magicIpsecTunnelsUpdateMultipleIpsecTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -90,13 +90,13 @@ return await execute(
   },
   onError: MagicIpsecTunnelsUpdateMultipleIpsecTunnelsError.fromResponse,
 );
- } 
+}
 /// List IPsec tunnel details
 ///
 /// Lists details for a specific IPsec tunnel.
 ///
 /// `GET /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<MagicSchemasTunnelSingleResponseResult, MagicIpsecTunnelsListIpsecTunnelDetailsError>> magicIpsecTunnelsListIpsecTunnelDetails({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasTunnelSingleResponseResult, MagicIpsecTunnelsListIpsecTunnelDetailsError>> magicIpsecTunnelsListIpsecTunnelDetails({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -116,13 +116,13 @@ return await execute(
   },
   onError: MagicIpsecTunnelsListIpsecTunnelDetailsError.fromResponse,
 );
- } 
+}
 /// Update IPsec Tunnel
 ///
 /// Updates a specific IPsec tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<MagicSchemasTunnelModifiedResponseResult, MagicIpsecTunnelsUpdateIpsecTunnelError>> magicIpsecTunnelsUpdateIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, required MagicIpsecTunnelAddSingleRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasTunnelModifiedResponseResult, MagicIpsecTunnelsUpdateIpsecTunnelError>> magicIpsecTunnelsUpdateIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, required MagicIpsecTunnelAddSingleRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -144,13 +144,13 @@ return await execute(
   },
   onError: MagicIpsecTunnelsUpdateIpsecTunnelError.fromResponse,
 );
- } 
+}
 /// Delete IPsec Tunnel
 ///
 /// Disables and removes a specific static IPsec Tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `DELETE /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<MagicSchemasTunnelDeletedResponseResult, MagicIpsecTunnelsDeleteIpsecTunnelError>> magicIpsecTunnelsDeleteIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasTunnelDeletedResponseResult, MagicIpsecTunnelsDeleteIpsecTunnelError>> magicIpsecTunnelsDeleteIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -170,13 +170,13 @@ return await execute(
   },
   onError: MagicIpsecTunnelsDeleteIpsecTunnelError.fromResponse,
 );
- } 
+}
 /// Generate Pre Shared Key (PSK) for IPsec tunnels
 ///
 /// Generates a Pre Shared Key for a specific IPsec tunnel used in the IKE session. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes. After a PSK is generated, the PSK is immediately persisted to Cloudflare's edge and cannot be retrieved later. Note the PSK in a safe place.
 ///
 /// `POST /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}/psk_generate`
-Future<ApiResult<MagicPskGenerationResponseResult, MagicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnelsError>> magicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnels({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicPskGenerationResponseResult, MagicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnelsError>> magicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnels({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -193,5 +193,5 @@ return await execute(
   },
   onError: MagicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnelsError.fromResponse,
 );
- } 
- }
+}
+}

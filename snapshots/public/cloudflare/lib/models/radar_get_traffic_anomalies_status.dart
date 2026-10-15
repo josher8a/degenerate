@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetTrafficAnomaliesStatus {const RadarGetTrafficAnomaliesStatus();
 
-factory RadarGetTrafficAnomaliesStatus.fromJson(String json) { return switch (json) {
+factory RadarGetTrafficAnomaliesStatus.fromJson(String json) {return switch (json) {
   'VERIFIED' => verified,
   'UNVERIFIED' => unverified,
   _ => RadarGetTrafficAnomaliesStatus$Unknown(json),
-}; }
+};}
 
 static const RadarGetTrafficAnomaliesStatus verified = RadarGetTrafficAnomaliesStatus$verified._();
 
@@ -16,30 +16,30 @@ static const RadarGetTrafficAnomaliesStatus unverified = RadarGetTrafficAnomalie
 static const List<RadarGetTrafficAnomaliesStatus> values = [verified, unverified];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'VERIFIED' => 'verified',
   'UNVERIFIED' => 'unverified',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetTrafficAnomaliesStatus$Unknown; } 
+bool get isUnknown {return this is RadarGetTrafficAnomaliesStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() verified, required W Function() unverified, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() verified, required W Function() unverified, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetTrafficAnomaliesStatus$verified() => verified(),
       RadarGetTrafficAnomaliesStatus$unverified() => unverified(),
       RadarGetTrafficAnomaliesStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified, W Function()? unverified, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified, W Function()? unverified, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetTrafficAnomaliesStatus$verified() => verified != null ? verified() : orElse(value),
       RadarGetTrafficAnomaliesStatus$unverified() => unverified != null ? unverified() : orElse(value),
       RadarGetTrafficAnomaliesStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetTrafficAnomaliesStatus($value)';
 
- }
+}
 @immutable final class RadarGetTrafficAnomaliesStatus$verified extends RadarGetTrafficAnomaliesStatus {const RadarGetTrafficAnomaliesStatus$verified._();
 
 @override String get value => 'VERIFIED';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified
 
 @override int get hashCode => 'VERIFIED'.hashCode;
 
- }
+}
 @immutable final class RadarGetTrafficAnomaliesStatus$unverified extends RadarGetTrafficAnomaliesStatus {const RadarGetTrafficAnomaliesStatus$unverified._();
 
 @override String get value => 'UNVERIFIED';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified
 
 @override int get hashCode => 'UNVERIFIED'.hashCode;
 
- }
+}
 @immutable final class RadarGetTrafficAnomaliesStatus$Unknown extends RadarGetTrafficAnomaliesStatus {const RadarGetTrafficAnomaliesStatus$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? verified
 
 @override int get hashCode => value.hashCode;
 
- }
+}

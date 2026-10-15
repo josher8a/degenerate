@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetEmailSecurityTimeseriesGroupBySpfFormat {const RadarGetEmailSecurityTimeseriesGroupBySpfFormat();
 
-factory RadarGetEmailSecurityTimeseriesGroupBySpfFormat.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTimeseriesGroupBySpfFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecurityTimeseriesGroupBySpfFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTimeseriesGroupBySpfFormat $json = RadarGetEmailSecurityTimeseriesGroupBySpfFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetEmailSecurityTimeseriesGroupBySpfFormat csv = RadarGetEmail
 static const List<RadarGetEmailSecurityTimeseriesGroupBySpfFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupBySpfFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailSecurityTimeseriesGroupBySpfFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTimeseriesGroupBySpfFormat$$json() => $json(),
       RadarGetEmailSecurityTimeseriesGroupBySpfFormat$csv() => csv(),
       RadarGetEmailSecurityTimeseriesGroupBySpfFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTimeseriesGroupBySpfFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupBySpfFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetEmailSecurityTimeseriesGroupBySpfFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpfFormat($value)';
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfFormat$$json extends RadarGetEmailSecurityTimeseriesGroupBySpfFormat {const RadarGetEmailSecurityTimeseriesGroupBySpfFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfFormat$csv extends RadarGetEmailSecurityTimeseriesGroupBySpfFormat {const RadarGetEmailSecurityTimeseriesGroupBySpfFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfFormat$Unknown extends RadarGetEmailSecurityTimeseriesGroupBySpfFormat {const RadarGetEmailSecurityTimeseriesGroupBySpfFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

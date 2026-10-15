@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_poll.dart';@immutable final class CreatePollResponseData {const CreatePollResponseData({this.action, this.poll, });
 
-factory CreatePollResponseData.fromJson(Map<String, dynamic> json) { return CreatePollResponseData(
+factory CreatePollResponseData.fromJson(Map<String, dynamic> json) {return CreatePollResponseData(
   action: json['action'] as String?,
   poll: json['poll'] != null ? RealtimekitPoll.fromJson(json['poll'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? action;
 
 final RealtimekitPoll? poll;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': ?action,
   if (poll != null) 'poll': poll?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'poll'}.contains(key)); } 
-CreatePollResponseData copyWith({String? Function()? action, RealtimekitPoll? Function()? poll, }) { return CreatePollResponseData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'poll'}.contains(key));}
+CreatePollResponseData copyWith({String? Function()? action, RealtimekitPoll? Function()? poll, }) {return CreatePollResponseData(
   action: action != null ? action() : this.action,
   poll: poll != null ? poll() : this.poll,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePollResponseData &&
           action == other.action &&
@@ -30,4 +30,4 @@ CreatePollResponseData copyWith({String? Function()? action, RealtimekitPoll? Fu
 
 @override String toString() => 'CreatePollResponseData(action: $action, poll: $poll)';
 
- }
+}

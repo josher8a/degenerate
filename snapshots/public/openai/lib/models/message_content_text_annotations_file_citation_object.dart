@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_text_annotations_file_citation_object/message_content_text_annotations_file_citation_object_file_citation.dart';import 'package:pub_openai/models/message_content_text_annotations_file_citation_object/message_content_text_annotations_file_citation_object_type.dart';/// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
 @immutable final class MessageContentTextAnnotationsFileCitationObject {const MessageContentTextAnnotationsFileCitationObject({required this.type, required this.text, required this.fileCitation, required this.startIndex, required this.endIndex, });
 
-factory MessageContentTextAnnotationsFileCitationObject.fromJson(Map<String, dynamic> json) { return MessageContentTextAnnotationsFileCitationObject(
+factory MessageContentTextAnnotationsFileCitationObject.fromJson(Map<String, dynamic> json) {return MessageContentTextAnnotationsFileCitationObject(
   type: MessageContentTextAnnotationsFileCitationObjectType.fromJson(json['type'] as String),
   text: json['text'] as String,
   fileCitation: MessageContentTextAnnotationsFileCitationObjectFileCitation.fromJson(json['file_citation'] as Map<String, dynamic>),
   startIndex: (json['start_index'] as num).toInt(),
   endIndex: (json['end_index'] as num).toInt(),
-); }
+);}
 
 /// Always `file_citation`.
 final MessageContentTextAnnotationsFileCitationObjectType type;
@@ -24,30 +24,30 @@ final int startIndex;
 
 final int endIndex;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'text': text,
   'file_citation': fileCitation.toJson(),
   'start_index': startIndex,
   'end_index': endIndex,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'file_citation' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'file_citation' &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('file_citation') &&
       json.containsKey('start_index') && json['start_index'] is num &&
-      json.containsKey('end_index') && json['end_index'] is num; } 
+      json.containsKey('end_index') && json['end_index'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (startIndex < 0) { errors.add('startIndex: must be >= 0'); }
 if (endIndex < 0) { errors.add('endIndex: must be >= 0'); }
-return errors; } 
-MessageContentTextAnnotationsFileCitationObject copyWith({MessageContentTextAnnotationsFileCitationObjectType? type, String? text, MessageContentTextAnnotationsFileCitationObjectFileCitation? fileCitation, int? startIndex, int? endIndex, }) { return MessageContentTextAnnotationsFileCitationObject(
+return errors;}
+MessageContentTextAnnotationsFileCitationObject copyWith({MessageContentTextAnnotationsFileCitationObjectType? type, String? text, MessageContentTextAnnotationsFileCitationObjectFileCitation? fileCitation, int? startIndex, int? endIndex, }) {return MessageContentTextAnnotationsFileCitationObject(
   type: type ?? this.type,
   text: text ?? this.text,
   fileCitation: fileCitation ?? this.fileCitation,
   startIndex: startIndex ?? this.startIndex,
   endIndex: endIndex ?? this.endIndex,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentTextAnnotationsFileCitationObject &&
           type == other.type &&
@@ -60,4 +60,4 @@ MessageContentTextAnnotationsFileCitationObject copyWith({MessageContentTextAnno
 
 @override String toString() => 'MessageContentTextAnnotationsFileCitationObject(type: $type, text: $text, fileCitation: $fileCitation, startIndex: $startIndex, endIndex: $endIndex)';
 
- }
+}

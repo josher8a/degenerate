@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/codespaces_check_permissions_for_devcontainer_response503.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';sealed class CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError();
 
-factory CodespacesCheckPermissionsForDevcontainerError.fromResponse(ApiResponse response) {     try {
+factory CodespacesCheckPermissionsForDevcontainerError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         401 => CodespacesCheckPermissionsForDevcontainerError$401(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         403 => CodespacesCheckPermissionsForDevcontainerError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -13,12 +13,12 @@ factory CodespacesCheckPermissionsForDevcontainerError.fromResponse(ApiResponse 
       };
     } on Object {
       return CodespacesCheckPermissionsForDevcontainerError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class CodespacesCheckPermissionsForDevcontainerError$401 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$401(this.error);
 
 final BasicError error;
@@ -27,7 +27,7 @@ final BasicError error;
 
 @override int get statusCode => 401;
 
- }
+}
 final class CodespacesCheckPermissionsForDevcontainerError$403 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$403(this.error);
 
 final BasicError error;
@@ -36,7 +36,7 @@ final BasicError error;
 
 @override int get statusCode => 403;
 
- }
+}
 final class CodespacesCheckPermissionsForDevcontainerError$404 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$404(this.error);
 
 final BasicError error;
@@ -45,7 +45,7 @@ final BasicError error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class CodespacesCheckPermissionsForDevcontainerError$422 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$422(this.error);
 
 final ValidationError error;
@@ -54,7 +54,7 @@ final ValidationError error;
 
 @override int get statusCode => 422;
 
- }
+}
 final class CodespacesCheckPermissionsForDevcontainerError$503 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$503(this.error);
 
 final CodespacesCheckPermissionsForDevcontainerResponse503 error;
@@ -63,11 +63,11 @@ final CodespacesCheckPermissionsForDevcontainerResponse503 error;
 
 @override int get statusCode => 503;
 
- }
+}
 final class CodespacesCheckPermissionsForDevcontainerError$Unknown extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}

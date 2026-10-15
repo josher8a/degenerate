@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostReviewsReviewApproveRequest {const PostReviewsReviewApproveRequest({this.expand});
 
-factory PostReviewsReviewApproveRequest.fromJson(Map<String, dynamic> json) { return PostReviewsReviewApproveRequest(
+factory PostReviewsReviewApproveRequest.fromJson(Map<String, dynamic> json) {return PostReviewsReviewApproveRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
-PostReviewsReviewApproveRequest copyWith({List<String>? Function()? expand}) { return PostReviewsReviewApproveRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand'}.contains(key));}
+PostReviewsReviewApproveRequest copyWith({List<String>? Function()? expand}) {return PostReviewsReviewApproveRequest(
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostReviewsReviewApproveRequest &&
           listEquals(expand, other.expand);
@@ -25,4 +25,4 @@ PostReviewsReviewApproveRequest copyWith({List<String>? Function()? expand}) { r
 
 @override String toString() => 'PostReviewsReviewApproveRequest(expand: $expand)';
 
- }
+}

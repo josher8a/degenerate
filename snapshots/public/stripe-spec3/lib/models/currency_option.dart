@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';/// 
 @immutable final class CurrencyOption {const CurrencyOption({this.customUnitAmount = const Omittable.absent(), this.taxBehavior = const Omittable.absent(), this.tiers, this.unitAmount = const Omittable.absent(), this.unitAmountDecimal = const Omittable.absent(), });
 
-factory CurrencyOption.fromJson(Map<String, dynamic> json) { return CurrencyOption(
+factory CurrencyOption.fromJson(Map<String, dynamic> json) {return CurrencyOption(
   customUnitAmount: json.containsKey('custom_unit_amount') ? Omittable(json['custom_unit_amount'] != null ? CustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PriceTier.fromJson(e as Map<String, dynamic>)).toList(),
   unitAmount: json.containsKey('unit_amount') ? Omittable(json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null) : const Omittable.absent(),
   unitAmountDecimal: json.containsKey('unit_amount_decimal') ? Omittable(json['unit_amount_decimal'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
 final Omittable<CustomUnitAmount?> customUnitAmount;
@@ -27,21 +27,21 @@ final Omittable<int?> unitAmount;
 /// The unit amount in cents (or local equivalent) to be charged, represented as a decimal string with at most 12 decimal places. Only set if `billing_scheme=per_unit`.
 final Omittable<String?> unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customUnitAmount.isPresent) 'custom_unit_amount': customUnitAmount.value?.toJson(),
   if (taxBehavior.isPresent) 'tax_behavior': taxBehavior.value?.toJson(),
   if (tiers != null) 'tiers': tiers?.map((e) => e.toJson()).toList(),
   if (unitAmount.isPresent) 'unit_amount': unitAmount.value,
   if (unitAmountDecimal.isPresent) 'unit_amount_decimal': unitAmountDecimal.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_unit_amount', 'tax_behavior', 'tiers', 'unit_amount', 'unit_amount_decimal'}.contains(key)); } 
-CurrencyOption copyWith({Omittable<CustomUnitAmount?>? customUnitAmount, Omittable<CurrencyOptionTaxBehavior?>? taxBehavior, List<PriceTier>? Function()? tiers, Omittable<int?>? unitAmount, Omittable<String?>? unitAmountDecimal, }) { return CurrencyOption(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'custom_unit_amount', 'tax_behavior', 'tiers', 'unit_amount', 'unit_amount_decimal'}.contains(key));}
+CurrencyOption copyWith({Omittable<CustomUnitAmount?>? customUnitAmount, Omittable<CurrencyOptionTaxBehavior?>? taxBehavior, List<PriceTier>? Function()? tiers, Omittable<int?>? unitAmount, Omittable<String?>? unitAmountDecimal, }) {return CurrencyOption(
   customUnitAmount: customUnitAmount ?? this.customUnitAmount,
   taxBehavior: taxBehavior ?? this.taxBehavior,
   tiers: tiers != null ? tiers() : this.tiers,
   unitAmount: unitAmount ?? this.unitAmount,
   unitAmountDecimal: unitAmountDecimal ?? this.unitAmountDecimal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CurrencyOption &&
           customUnitAmount == other.customUnitAmount &&
@@ -54,4 +54,4 @@ CurrencyOption copyWith({Omittable<CustomUnitAmount?>? customUnitAmount, Omittab
 
 @override String toString() => 'CurrencyOption(customUnitAmount: $customUnitAmount, taxBehavior: $taxBehavior, tiers: $tiers, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
 
- }
+}

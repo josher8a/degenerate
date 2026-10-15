@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.
 @immutable final class NfsVolumeSource {const NfsVolumeSource({required this.path, required this.server, this.readOnly, });
 
-factory NfsVolumeSource.fromJson(Map<String, dynamic> json) { return NfsVolumeSource(
+factory NfsVolumeSource.fromJson(Map<String, dynamic> json) {return NfsVolumeSource(
   path: json['path'] as String,
   readOnly: json['readOnly'] as bool?,
   server: json['server'] as String,
-); }
+);}
 
 /// path that is exported by the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
 final String path;
@@ -19,18 +19,18 @@ final bool? readOnly;
 /// server is the hostname or IP address of the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
 final String server;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'path': path,
   'readOnly': ?readOnly,
   'server': server,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
-      json.containsKey('server') && json['server'] is String; } 
-NfsVolumeSource copyWith({String? path, bool? Function()? readOnly, String? server, }) { return NfsVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String &&
+      json.containsKey('server') && json['server'] is String;}
+NfsVolumeSource copyWith({String? path, bool? Function()? readOnly, String? server, }) {return NfsVolumeSource(
   path: path ?? this.path,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   server: server ?? this.server,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NfsVolumeSource &&
           path == other.path &&
@@ -41,4 +41,4 @@ NfsVolumeSource copyWith({String? path, bool? Function()? readOnly, String? serv
 
 @override String toString() => 'NfsVolumeSource(path: $path, readOnly: $readOnly, server: $server)';
 
- }
+}

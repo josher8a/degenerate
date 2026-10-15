@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
 sealed class GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode();
 
-factory GelatoIdNumberReportErrorCode.fromJson(String json) { return switch (json) {
+factory GelatoIdNumberReportErrorCode.fromJson(String json) {return switch (json) {
   'id_number_insufficient_document_data' => idNumberInsufficientDocumentData,
   'id_number_mismatch' => idNumberMismatch,
   'id_number_unverified_other' => idNumberUnverifiedOther,
   _ => GelatoIdNumberReportErrorCode$Unknown(json),
-}; }
+};}
 
 static const GelatoIdNumberReportErrorCode idNumberInsufficientDocumentData = GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData._();
 
@@ -20,33 +20,33 @@ static const GelatoIdNumberReportErrorCode idNumberUnverifiedOther = GelatoIdNum
 static const List<GelatoIdNumberReportErrorCode> values = [idNumberInsufficientDocumentData, idNumberMismatch, idNumberUnverifiedOther];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'id_number_insufficient_document_data' => 'idNumberInsufficientDocumentData',
   'id_number_mismatch' => 'idNumberMismatch',
   'id_number_unverified_other' => 'idNumberUnverifiedOther',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GelatoIdNumberReportErrorCode$Unknown; } 
+bool get isUnknown {return this is GelatoIdNumberReportErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() idNumberInsufficientDocumentData, required W Function() idNumberMismatch, required W Function() idNumberUnverifiedOther, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() idNumberInsufficientDocumentData, required W Function() idNumberMismatch, required W Function() idNumberUnverifiedOther, required W Function(String value) $unknown, }) {return switch (this) {
       GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData() => idNumberInsufficientDocumentData(),
       GelatoIdNumberReportErrorCode$idNumberMismatch() => idNumberMismatch(),
       GelatoIdNumberReportErrorCode$idNumberUnverifiedOther() => idNumberUnverifiedOther(),
       GelatoIdNumberReportErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? idNumberInsufficientDocumentData, W Function()? idNumberMismatch, W Function()? idNumberUnverifiedOther, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? idNumberInsufficientDocumentData, W Function()? idNumberMismatch, W Function()? idNumberUnverifiedOther, W Function(String value)? $unknown, }) {return switch (this) {
       GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData() => idNumberInsufficientDocumentData != null ? idNumberInsufficientDocumentData() : orElse(value),
       GelatoIdNumberReportErrorCode$idNumberMismatch() => idNumberMismatch != null ? idNumberMismatch() : orElse(value),
       GelatoIdNumberReportErrorCode$idNumberUnverifiedOther() => idNumberUnverifiedOther != null ? idNumberUnverifiedOther() : orElse(value),
       GelatoIdNumberReportErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GelatoIdNumberReportErrorCode($value)';
 
- }
+}
 @immutable final class GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData extends GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData._();
 
 @override String get value => 'id_number_insufficient_document_data';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? idNumber
 
 @override int get hashCode => 'id_number_insufficient_document_data'.hashCode;
 
- }
+}
 @immutable final class GelatoIdNumberReportErrorCode$idNumberMismatch extends GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode$idNumberMismatch._();
 
 @override String get value => 'id_number_mismatch';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? idNumber
 
 @override int get hashCode => 'id_number_mismatch'.hashCode;
 
- }
+}
 @immutable final class GelatoIdNumberReportErrorCode$idNumberUnverifiedOther extends GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode$idNumberUnverifiedOther._();
 
 @override String get value => 'id_number_unverified_other';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? idNumber
 
 @override int get hashCode => 'id_number_unverified_other'.hashCode;
 
- }
+}
 @immutable final class GelatoIdNumberReportErrorCode$Unknown extends GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -83,14 +83,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? idNumber
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class GelatoIdNumberReportError {const GelatoIdNumberReportError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
-factory GelatoIdNumberReportError.fromJson(Map<String, dynamic> json) { return GelatoIdNumberReportError(
+factory GelatoIdNumberReportError.fromJson(Map<String, dynamic> json) {return GelatoIdNumberReportError(
   code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoIdNumberReportErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// A short machine-readable string giving the reason for the verification failure.
 final Omittable<GelatoIdNumberReportErrorCode?> code;
@@ -98,22 +98,22 @@ final Omittable<GelatoIdNumberReportErrorCode?> code;
 /// A human-readable message giving the reason for the failure. These messages can be shown to your users.
 final Omittable<String?> reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (code.isPresent) 'code': code.value?.toJson(),
   if (reason.isPresent) 'reason': reason.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'reason'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final reason$ = reason.value;
 if (reason$ != null) {
   if (reason$.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
 }
-return errors; } 
-GelatoIdNumberReportError copyWith({Omittable<GelatoIdNumberReportErrorCode?>? code, Omittable<String?>? reason, }) { return GelatoIdNumberReportError(
+return errors;}
+GelatoIdNumberReportError copyWith({Omittable<GelatoIdNumberReportErrorCode?>? code, Omittable<String?>? reason, }) {return GelatoIdNumberReportError(
   code: code ?? this.code,
   reason: reason ?? this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoIdNumberReportError &&
           code == other.code &&
@@ -123,4 +123,4 @@ GelatoIdNumberReportError copyWith({Omittable<GelatoIdNumberReportErrorCode?>? c
 
 @override String toString() => 'GelatoIdNumberReportError(code: $code, reason: $reason)';
 
- }
+}

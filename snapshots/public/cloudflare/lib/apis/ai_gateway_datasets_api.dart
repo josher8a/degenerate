@@ -14,7 +14,7 @@ final class AiGatewayDatasetsApi with ApiExecutor {const AiGatewayDatasetsApi(th
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets`
-Future<ApiResult<List<AigConfigCreateDatasetResponseResult>, AigConfigListDatasetError>> aigConfigListDataset({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? enable, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AigConfigCreateDatasetResponseResult>, AigConfigListDatasetError>> aigConfigListDataset({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? enable, String? search, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -51,13 +51,13 @@ return await execute(
   },
   onError: AigConfigListDatasetError.fromResponse,
 );
- } 
+}
 /// Create a new Dataset
 ///
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets`
-Future<ApiResult<AigConfigCreateDatasetResponseResult, AigConfigCreateDatasetError>> aigConfigCreateDataset({required String gatewayId, required String accountId, AigConfigCreateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateDatasetResponseResult, AigConfigCreateDatasetError>> aigConfigCreateDataset({required String gatewayId, required String accountId, AigConfigCreateDatasetRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -76,13 +76,13 @@ return await execute(
   },
   onError: AigConfigCreateDatasetError.fromResponse,
 );
- } 
+}
 /// Fetch a Dataset
 ///
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigCreateDatasetResponseResult, AigConfigFetchDatasetError>> aigConfigFetchDataset({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateDatasetResponseResult, AigConfigFetchDatasetError>> aigConfigFetchDataset({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -99,13 +99,13 @@ return await execute(
   },
   onError: AigConfigFetchDatasetError.fromResponse,
 );
- } 
+}
 /// Update a Dataset
 ///
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigCreateDatasetResponseResult, AigConfigUpdateDatasetError>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateDatasetResponseResult, AigConfigUpdateDatasetError>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,13 +124,13 @@ return await execute(
   },
   onError: AigConfigUpdateDatasetError.fromResponse,
 );
- } 
+}
 /// Delete a Dataset
 ///
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigCreateDatasetResponseResult, AigConfigDeleteDatasetError>> aigConfigDeleteDataset({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateDatasetResponseResult, AigConfigDeleteDatasetError>> aigConfigDeleteDataset({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -147,5 +147,5 @@ return await execute(
   },
   onError: AigConfigDeleteDatasetError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AllowResourceTypes {const AllowResourceTypes();
 
-factory AllowResourceTypes.fromJson(String json) { return switch (json) {
+factory AllowResourceTypes.fromJson(String json) {return switch (json) {
   'document' => document,
   'stylesheet' => stylesheet,
   'image' => image,
@@ -23,7 +23,7 @@ factory AllowResourceTypes.fromJson(String json) { return switch (json) {
   'preflight' => preflight,
   'other' => $other,
   _ => AllowResourceTypes$Unknown(json),
-}; }
+};}
 
 static const AllowResourceTypes document = AllowResourceTypes$document._();
 
@@ -64,9 +64,9 @@ static const AllowResourceTypes $other = AllowResourceTypes$$other._();
 static const List<AllowResourceTypes> values = [document, stylesheet, image, media, font, script, texttrack, xhr, fetch, prefetch, eventsource, websocket, manifest, signedexchange, ping, cspviolationreport, preflight, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'document' => 'document',
   'stylesheet' => 'stylesheet',
   'image' => 'image',
@@ -86,11 +86,11 @@ String get name { return switch (value) {
   'preflight' => 'preflight',
   'other' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AllowResourceTypes$Unknown; } 
+bool get isUnknown {return this is AllowResourceTypes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() document, required W Function() stylesheet, required W Function() image, required W Function() media, required W Function() font, required W Function() script, required W Function() texttrack, required W Function() xhr, required W Function() fetch, required W Function() prefetch, required W Function() eventsource, required W Function() websocket, required W Function() manifest, required W Function() signedexchange, required W Function() ping, required W Function() cspviolationreport, required W Function() preflight, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() document, required W Function() stylesheet, required W Function() image, required W Function() media, required W Function() font, required W Function() script, required W Function() texttrack, required W Function() xhr, required W Function() fetch, required W Function() prefetch, required W Function() eventsource, required W Function() websocket, required W Function() manifest, required W Function() signedexchange, required W Function() ping, required W Function() cspviolationreport, required W Function() preflight, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       AllowResourceTypes$document() => document(),
       AllowResourceTypes$stylesheet() => stylesheet(),
       AllowResourceTypes$image() => image(),
@@ -110,9 +110,9 @@ W when<W>({required W Function() document, required W Function() stylesheet, req
       AllowResourceTypes$preflight() => preflight(),
       AllowResourceTypes$$other() => $other(),
       AllowResourceTypes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? document, W Function()? stylesheet, W Function()? image, W Function()? media, W Function()? font, W Function()? script, W Function()? texttrack, W Function()? xhr, W Function()? fetch, W Function()? prefetch, W Function()? eventsource, W Function()? websocket, W Function()? manifest, W Function()? signedexchange, W Function()? ping, W Function()? cspviolationreport, W Function()? preflight, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? document, W Function()? stylesheet, W Function()? image, W Function()? media, W Function()? font, W Function()? script, W Function()? texttrack, W Function()? xhr, W Function()? fetch, W Function()? prefetch, W Function()? eventsource, W Function()? websocket, W Function()? manifest, W Function()? signedexchange, W Function()? ping, W Function()? cspviolationreport, W Function()? preflight, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       AllowResourceTypes$document() => document != null ? document() : orElse(value),
       AllowResourceTypes$stylesheet() => stylesheet != null ? stylesheet() : orElse(value),
       AllowResourceTypes$image() => image != null ? image() : orElse(value),
@@ -132,10 +132,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
       AllowResourceTypes$preflight() => preflight != null ? preflight() : orElse(value),
       AllowResourceTypes$$other() => $other != null ? $other() : orElse(value),
       AllowResourceTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AllowResourceTypes($value)';
 
- }
+}
 @immutable final class AllowResourceTypes$document extends AllowResourceTypes {const AllowResourceTypes$document._();
 
 @override String get value => 'document';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'document'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$stylesheet extends AllowResourceTypes {const AllowResourceTypes$stylesheet._();
 
 @override String get value => 'stylesheet';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'stylesheet'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$image extends AllowResourceTypes {const AllowResourceTypes$image._();
 
 @override String get value => 'image';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'image'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$media extends AllowResourceTypes {const AllowResourceTypes$media._();
 
 @override String get value => 'media';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'media'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$font extends AllowResourceTypes {const AllowResourceTypes$font._();
 
 @override String get value => 'font';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'font'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$script extends AllowResourceTypes {const AllowResourceTypes$script._();
 
 @override String get value => 'script';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'script'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$texttrack extends AllowResourceTypes {const AllowResourceTypes$texttrack._();
 
 @override String get value => 'texttrack';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'texttrack'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$xhr extends AllowResourceTypes {const AllowResourceTypes$xhr._();
 
 @override String get value => 'xhr';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'xhr'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$fetch extends AllowResourceTypes {const AllowResourceTypes$fetch._();
 
 @override String get value => 'fetch';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'fetch'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$prefetch extends AllowResourceTypes {const AllowResourceTypes$prefetch._();
 
 @override String get value => 'prefetch';
@@ -225,7 +225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'prefetch'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$eventsource extends AllowResourceTypes {const AllowResourceTypes$eventsource._();
 
 @override String get value => 'eventsource';
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'eventsource'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$websocket extends AllowResourceTypes {const AllowResourceTypes$websocket._();
 
 @override String get value => 'websocket';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'websocket'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$manifest extends AllowResourceTypes {const AllowResourceTypes$manifest._();
 
 @override String get value => 'manifest';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'manifest'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$signedexchange extends AllowResourceTypes {const AllowResourceTypes$signedexchange._();
 
 @override String get value => 'signedexchange';
@@ -261,7 +261,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'signedexchange'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$ping extends AllowResourceTypes {const AllowResourceTypes$ping._();
 
 @override String get value => 'ping';
@@ -270,7 +270,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'ping'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$cspviolationreport extends AllowResourceTypes {const AllowResourceTypes$cspviolationreport._();
 
 @override String get value => 'cspviolationreport';
@@ -279,7 +279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'cspviolationreport'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$preflight extends AllowResourceTypes {const AllowResourceTypes$preflight._();
 
 @override String get value => 'preflight';
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'preflight'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$$other extends AllowResourceTypes {const AllowResourceTypes$$other._();
 
 @override String get value => 'other';
@@ -297,7 +297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class AllowResourceTypes$Unknown extends AllowResourceTypes {const AllowResourceTypes$Unknown(this.value);
 
 @override final String value;
@@ -307,4 +307,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? document
 
 @override int get hashCode => value.hashCode;
 
- }
+}

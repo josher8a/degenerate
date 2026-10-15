@@ -7,11 +7,11 @@ const SchemaValidationExtractOperationsFromSchemaResponseResult({this.shieldOper
 const SchemaValidationExtractOperationsFromSchemaResponseResult._({required this.rawValue, required this.shieldOperation, required this.shieldBasicOperation, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory SchemaValidationExtractOperationsFromSchemaResponseResult.fromJson(Object? json) { return SchemaValidationExtractOperationsFromSchemaResponseResult._(
+factory SchemaValidationExtractOperationsFromSchemaResponseResult.fromJson(Object? json) {return SchemaValidationExtractOperationsFromSchemaResponseResult._(
   rawValue: Omittable(json),
   shieldOperation: parseAnyOfVariant<ShieldOperation?>(json, (value) => value != null ? ShieldOperation.fromJson(value as Map<String, dynamic>) : null),
   shieldBasicOperation: json is Map<String, dynamic> && ShieldBasicOperation.canParse(json) ? parseAnyOfVariant<ShieldBasicOperation>(json, (value) => ShieldBasicOperation.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'SchemaValidationExtractOperationsFromSchemaResponseResult(${toJson()})';
 
- }
+}

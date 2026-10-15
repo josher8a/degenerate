@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// The event type, must be `response.output_item.done`.
 sealed class RealtimeBetaServerEventResponseOutputItemDoneType {const RealtimeBetaServerEventResponseOutputItemDoneType();
 
-factory RealtimeBetaServerEventResponseOutputItemDoneType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseOutputItemDoneType.fromJson(String json) {return switch (json) {
   'response.output_item.done' => responseOutputItemDone,
   _ => RealtimeBetaServerEventResponseOutputItemDoneType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseOutputItemDoneType responseOutputItemDone = RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone._();
 
 static const List<RealtimeBetaServerEventResponseOutputItemDoneType> values = [responseOutputItemDone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response.output_item.done' => 'responseOutputItemDone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventResponseOutputItemDoneType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventResponseOutputItemDoneType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() responseOutputItemDone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() responseOutputItemDone, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone() => responseOutputItemDone(),
       RealtimeBetaServerEventResponseOutputItemDoneType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseOutputItemDone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseOutputItemDone, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone() => responseOutputItemDone != null ? responseOutputItemDone() : orElse(value),
       RealtimeBetaServerEventResponseOutputItemDoneType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventResponseOutputItemDoneType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone extends RealtimeBetaServerEventResponseOutputItemDoneType {const RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone._();
 
 @override String get value => 'response.output_item.done';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response.output_item.done'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseOutputItemDoneType$Unknown extends RealtimeBetaServerEventResponseOutputItemDoneType {const RealtimeBetaServerEventResponseOutputItemDoneType$Unknown(this.value);
 
 @override final String value;
@@ -53,19 +53,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when an Item is done streaming. Also emitted when a Response is
 /// interrupted, incomplete, or cancelled.
 /// 
 @immutable final class RealtimeBetaServerEventResponseOutputItemDone {const RealtimeBetaServerEventResponseOutputItemDone({required this.eventId, required this.type, required this.responseId, required this.outputIndex, required this.item, });
 
-factory RealtimeBetaServerEventResponseOutputItemDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseOutputItemDone(
+factory RealtimeBetaServerEventResponseOutputItemDone.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseOutputItemDone(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseOutputItemDoneType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   item: RealtimeConversationItem.fromJson(json['item'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -81,25 +81,25 @@ final int outputIndex;
 
 final RealtimeConversationItem item;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response_id': responseId,
   'output_index': outputIndex,
   'item': item.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
-      json.containsKey('item'); } 
-RealtimeBetaServerEventResponseOutputItemDone copyWith({String? eventId, RealtimeBetaServerEventResponseOutputItemDoneType? type, String? responseId, int? outputIndex, RealtimeConversationItem? item, }) { return RealtimeBetaServerEventResponseOutputItemDone(
+      json.containsKey('item');}
+RealtimeBetaServerEventResponseOutputItemDone copyWith({String? eventId, RealtimeBetaServerEventResponseOutputItemDoneType? type, String? responseId, int? outputIndex, RealtimeConversationItem? item, }) {return RealtimeBetaServerEventResponseOutputItemDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
   outputIndex: outputIndex ?? this.outputIndex,
   item: item ?? this.item,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseOutputItemDone &&
           eventId == other.eventId &&
@@ -112,4 +112,4 @@ RealtimeBetaServerEventResponseOutputItemDone copyWith({String? eventId, Realtim
 
 @override String toString() => 'RealtimeBetaServerEventResponseOutputItemDone(eventId: $eventId, type: $type, responseId: $responseId, outputIndex: $outputIndex, item: $item)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Sessions {const Sessions({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.startedTime, this.stoppedTime, this.updatedAt, });
 
-factory Sessions.fromJson(Map<String, dynamic> json) { return Sessions(
+factory Sessions.fromJson(Map<String, dynamic> json) {return Sessions(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   errMessage: json['err_message'] as String?,
   id: json['id'] as String?,
@@ -13,7 +13,7 @@ factory Sessions.fromJson(Map<String, dynamic> json) { return Sessions(
   startedTime: json['started_time'] != null ? DateTime.parse(json['started_time'] as String) : null,
   stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The timestamp at which the livestream was created. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -41,7 +41,7 @@ final DateTime? stoppedTime;
 /// The timestamp at which the livestream was updated. The time is returned in ISO format.
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'err_message': ?errMessage,
   'id': ?id,
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   if (startedTime != null) 'started_time': startedTime?.toIso8601String(),
   if (stoppedTime != null) 'stopped_time': stoppedTime?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'invoked_time', 'livestream_id', 'started_time', 'stopped_time', 'updated_at'}.contains(key)); } 
-Sessions copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, String? Function()? ingestSeconds, DateTime? Function()? invokedTime, String? Function()? livestreamId, DateTime? Function()? startedTime, DateTime? Function()? stoppedTime, DateTime? Function()? updatedAt, }) { return Sessions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'invoked_time', 'livestream_id', 'started_time', 'stopped_time', 'updated_at'}.contains(key));}
+Sessions copyWith({DateTime? Function()? createdAt, String? Function()? errMessage, String? Function()? id, String? Function()? ingestSeconds, DateTime? Function()? invokedTime, String? Function()? livestreamId, DateTime? Function()? startedTime, DateTime? Function()? stoppedTime, DateTime? Function()? updatedAt, }) {return Sessions(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   errMessage: errMessage != null ? errMessage() : this.errMessage,
   id: id != null ? id() : this.id,
@@ -63,7 +63,7 @@ Sessions copyWith({DateTime? Function()? createdAt, String? Function()? errMessa
   startedTime: startedTime != null ? startedTime() : this.startedTime,
   stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Sessions &&
           createdAt == other.createdAt &&
@@ -80,4 +80,4 @@ Sessions copyWith({DateTime? Function()? createdAt, String? Function()? errMessa
 
 @override String toString() => 'Sessions(\n  createdAt: $createdAt,\n  errMessage: $errMessage,\n  id: $id,\n  ingestSeconds: $ingestSeconds,\n  invokedTime: $invokedTime,\n  livestreamId: $livestreamId,\n  startedTime: $startedTime,\n  stoppedTime: $stoppedTime,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

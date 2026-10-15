@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_messages2.dart';import 'package:pub_cloudflare/models/ip_address_management_service_bindings_list_services_response/ip_address_management_service_bindings_list_services_response_result.dart';@immutable final class IpAddressManagementServiceBindingsListServicesResponse {const IpAddressManagementServiceBindingsListServicesResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory IpAddressManagementServiceBindingsListServicesResponse.fromJson(Map<String, dynamic> json) { return IpAddressManagementServiceBindingsListServicesResponse(
+factory IpAddressManagementServiceBindingsListServicesResponse.fromJson(Map<String, dynamic> json) {return IpAddressManagementServiceBindingsListServicesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => AddressingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AddressingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => IpAddressManagementServiceBindingsListServicesResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<AddressingMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final List<IpAddressManagementServiceBindingsListServicesResponseResult>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-IpAddressManagementServiceBindingsListServicesResponse copyWith({List<AddressingMessages2>? errors, List<AddressingMessages2>? messages, bool? success, List<IpAddressManagementServiceBindingsListServicesResponseResult>? Function()? result, }) { return IpAddressManagementServiceBindingsListServicesResponse(
+      json.containsKey('success') && json['success'] is bool;}
+IpAddressManagementServiceBindingsListServicesResponse copyWith({List<AddressingMessages2>? errors, List<AddressingMessages2>? messages, bool? success, List<IpAddressManagementServiceBindingsListServicesResponseResult>? Function()? result, }) {return IpAddressManagementServiceBindingsListServicesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementServiceBindingsListServicesResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ IpAddressManagementServiceBindingsListServicesResponse copyWith({List<Addressing
 
 @override String toString() => 'IpAddressManagementServiceBindingsListServicesResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

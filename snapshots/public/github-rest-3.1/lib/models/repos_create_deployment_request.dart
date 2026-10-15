@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment/deployment_payload.dart';@immutable final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task, this.autoMerge, this.requiredContexts, this.payload, this.environment, this.description = const Omittable.absent(), this.transientEnvironment, this.productionEnvironment, });
 
-factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentRequest(
+factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) {return ReposCreateDeploymentRequest(
   ref: json['ref'] as String,
   task: json['task'] as String?,
   autoMerge: json['auto_merge'] as bool?,
@@ -13,7 +13,7 @@ factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { retur
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   transientEnvironment: json['transient_environment'] as bool?,
   productionEnvironment: json['production_environment'] as bool?,
-); }
+);}
 
 /// The ref to deploy. This can be a branch, tag, or SHA.
 final String ref;
@@ -56,7 +56,7 @@ String? get descriptionOrDefault => description.valueOr('');
 /// The value of `transientEnvironment`, or its schema default when absent.
 bool get transientEnvironmentOrDefault => transientEnvironment ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ref': ref,
   'task': ?task,
   'auto_merge': ?autoMerge,
@@ -66,9 +66,9 @@ Map<String, dynamic> toJson() { return {
   if (description.isPresent) 'description': description.value,
   'transient_environment': ?transientEnvironment,
   'production_environment': ?productionEnvironment,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String; } 
-ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bool? Function()? autoMerge, List<String>? Function()? requiredContexts, DeploymentPayload? Function()? payload, String? Function()? environment, Omittable<String?>? description, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, }) { return ReposCreateDeploymentRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ref') && json['ref'] is String;}
+ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bool? Function()? autoMerge, List<String>? Function()? requiredContexts, DeploymentPayload? Function()? payload, String? Function()? environment, Omittable<String?>? description, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, }) {return ReposCreateDeploymentRequest(
   ref: ref ?? this.ref,
   task: task != null ? task() : this.task,
   autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,
@@ -78,7 +78,7 @@ ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bo
   description: description ?? this.description,
   transientEnvironment: transientEnvironment != null ? transientEnvironment() : this.transientEnvironment,
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateDeploymentRequest &&
           ref == other.ref &&
@@ -95,4 +95,4 @@ ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bo
 
 @override String toString() => 'ReposCreateDeploymentRequest(\n  ref: $ref,\n  task: $task,\n  autoMerge: $autoMerge,\n  requiredContexts: $requiredContexts,\n  payload: $payload,\n  environment: $environment,\n  description: $description,\n  transientEnvironment: $transientEnvironment,\n  productionEnvironment: $productionEnvironment,\n)';
 
- }
+}

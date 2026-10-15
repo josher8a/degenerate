@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasOidcConfig {const AccessSchemasOidcConfig({this.clientId, this.clientSecret, this.authUrl, this.certsUrl, this.claims, this.scopes, this.tokenUrl, });
 
-factory AccessSchemasOidcConfig.fromJson(Map<String, dynamic> json) { return AccessSchemasOidcConfig(
+factory AccessSchemasOidcConfig.fromJson(Map<String, dynamic> json) {return AccessSchemasOidcConfig(
   clientId: json['client_id'] as String?,
   clientSecret: json['client_secret'] as String?,
   authUrl: json['auth_url'] as String?,
@@ -11,7 +11,7 @@ factory AccessSchemasOidcConfig.fromJson(Map<String, dynamic> json) { return Acc
   claims: (json['claims'] as List<dynamic>?)?.map((e) => e as String).toList(),
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   tokenUrl: json['token_url'] as String?,
-); }
+);}
 
 /// Your OAuth Client ID
 /// 
@@ -48,7 +48,7 @@ final List<String>? scopes;
 /// Example: `'https://accounts.google.com/o/oauth2/token'`
 final String? tokenUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'client_secret': ?clientSecret,
   'auth_url': ?authUrl,
@@ -56,9 +56,9 @@ Map<String, dynamic> toJson() { return {
   'claims': ?claims,
   'scopes': ?scopes,
   'token_url': ?tokenUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'auth_url', 'certs_url', 'claims', 'scopes', 'token_url'}.contains(key)); } 
-AccessSchemasOidcConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, String? Function()? authUrl, String? Function()? certsUrl, List<String>? Function()? claims, List<String>? Function()? scopes, String? Function()? tokenUrl, }) { return AccessSchemasOidcConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'client_secret', 'auth_url', 'certs_url', 'claims', 'scopes', 'token_url'}.contains(key));}
+AccessSchemasOidcConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, String? Function()? authUrl, String? Function()? certsUrl, List<String>? Function()? claims, List<String>? Function()? scopes, String? Function()? tokenUrl, }) {return AccessSchemasOidcConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   authUrl: authUrl != null ? authUrl() : this.authUrl,
@@ -66,7 +66,7 @@ AccessSchemasOidcConfig copyWith({String? Function()? clientId, String? Function
   claims: claims != null ? claims() : this.claims,
   scopes: scopes != null ? scopes() : this.scopes,
   tokenUrl: tokenUrl != null ? tokenUrl() : this.tokenUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasOidcConfig &&
           clientId == other.clientId &&
@@ -81,4 +81,4 @@ AccessSchemasOidcConfig copyWith({String? Function()? clientId, String? Function
 
 @override String toString() => 'AccessSchemasOidcConfig(clientId: $clientId, clientSecret: $clientSecret, authUrl: $authUrl, certsUrl: $certsUrl, claims: $claims, scopes: $scopes, tokenUrl: $tokenUrl)';
 
- }
+}

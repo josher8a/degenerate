@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account/account_object.dart';import 'package:pub_stripe_spec3/models/account/external_accounts.dart';import 'package:pub_stripe_spec3/models/account_business_profile.dart';import 'package:pub_stripe_spec3/models/account_capabilities.dart';import 'package:pub_stripe_spec3/models/account_future_requirements.dart';import 'package:pub_stripe_spec3/models/account_group_membership.dart';import 'package:pub_stripe_spec3/models/account_requirements.dart';import 'package:pub_stripe_spec3/models/account_settings.dart';import 'package:pub_stripe_spec3/models/account_tos_acceptance.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller.dart';import 'package:pub_stripe_spec3/models/legal_entity_company.dart';import 'package:pub_stripe_spec3/models/person.dart';/// The business type.
 sealed class AccountBusinessType {const AccountBusinessType();
 
-factory AccountBusinessType.fromJson(String json) { return switch (json) {
+factory AccountBusinessType.fromJson(String json) {return switch (json) {
   'company' => company,
   'government_entity' => governmentEntity,
   'individual' => individual,
   'non_profit' => nonProfit,
   _ => AccountBusinessType$Unknown(json),
-}; }
+};}
 
 static const AccountBusinessType company = AccountBusinessType$company._();
 
@@ -23,36 +23,36 @@ static const AccountBusinessType nonProfit = AccountBusinessType$nonProfit._();
 static const List<AccountBusinessType> values = [company, governmentEntity, individual, nonProfit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'company' => 'company',
   'government_entity' => 'governmentEntity',
   'individual' => 'individual',
   'non_profit' => 'nonProfit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountBusinessType$Unknown; } 
+bool get isUnknown {return this is AccountBusinessType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() company, required W Function() governmentEntity, required W Function() individual, required W Function() nonProfit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() company, required W Function() governmentEntity, required W Function() individual, required W Function() nonProfit, required W Function(String value) $unknown, }) {return switch (this) {
       AccountBusinessType$company() => company(),
       AccountBusinessType$governmentEntity() => governmentEntity(),
       AccountBusinessType$individual() => individual(),
       AccountBusinessType$nonProfit() => nonProfit(),
       AccountBusinessType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? company, W Function()? governmentEntity, W Function()? individual, W Function()? nonProfit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? company, W Function()? governmentEntity, W Function()? individual, W Function()? nonProfit, W Function(String value)? $unknown, }) {return switch (this) {
       AccountBusinessType$company() => company != null ? company() : orElse(value),
       AccountBusinessType$governmentEntity() => governmentEntity != null ? governmentEntity() : orElse(value),
       AccountBusinessType$individual() => individual != null ? individual() : orElse(value),
       AccountBusinessType$nonProfit() => nonProfit != null ? nonProfit() : orElse(value),
       AccountBusinessType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountBusinessType($value)';
 
- }
+}
 @immutable final class AccountBusinessType$company extends AccountBusinessType {const AccountBusinessType$company._();
 
 @override String get value => 'company';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? company,
 
 @override int get hashCode => 'company'.hashCode;
 
- }
+}
 @immutable final class AccountBusinessType$governmentEntity extends AccountBusinessType {const AccountBusinessType$governmentEntity._();
 
 @override String get value => 'government_entity';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? company,
 
 @override int get hashCode => 'government_entity'.hashCode;
 
- }
+}
 @immutable final class AccountBusinessType$individual extends AccountBusinessType {const AccountBusinessType$individual._();
 
 @override String get value => 'individual';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? company,
 
 @override int get hashCode => 'individual'.hashCode;
 
- }
+}
 @immutable final class AccountBusinessType$nonProfit extends AccountBusinessType {const AccountBusinessType$nonProfit._();
 
 @override String get value => 'non_profit';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? company,
 
 @override int get hashCode => 'non_profit'.hashCode;
 
- }
+}
 @immutable final class AccountBusinessType$Unknown extends AccountBusinessType {const AccountBusinessType$Unknown(this.value);
 
 @override final String value;
@@ -98,17 +98,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? company,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The Stripe account type. Can be `standard`, `express`, `custom`, or `none`.
 sealed class AccountType {const AccountType();
 
-factory AccountType.fromJson(String json) { return switch (json) {
+factory AccountType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'express' => express,
   'none' => none,
   'standard' => standard,
   _ => AccountType$Unknown(json),
-}; }
+};}
 
 static const AccountType custom = AccountType$custom._();
 
@@ -121,36 +121,36 @@ static const AccountType standard = AccountType$standard._();
 static const List<AccountType> values = [custom, express, none, standard];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'custom' => 'custom',
   'express' => 'express',
   'none' => 'none',
   'standard' => 'standard',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountType$Unknown; } 
+bool get isUnknown {return this is AccountType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() custom, required W Function() express, required W Function() none, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() custom, required W Function() express, required W Function() none, required W Function() standard, required W Function(String value) $unknown, }) {return switch (this) {
       AccountType$custom() => custom(),
       AccountType$express() => express(),
       AccountType$none() => none(),
       AccountType$standard() => standard(),
       AccountType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? express, W Function()? none, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? express, W Function()? none, W Function()? standard, W Function(String value)? $unknown, }) {return switch (this) {
       AccountType$custom() => custom != null ? custom() : orElse(value),
       AccountType$express() => express != null ? express() : orElse(value),
       AccountType$none() => none != null ? none() : orElse(value),
       AccountType$standard() => standard != null ? standard() : orElse(value),
       AccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountType($value)';
 
- }
+}
 @immutable final class AccountType$custom extends AccountType {const AccountType$custom._();
 
 @override String get value => 'custom';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'custom'.hashCode;
 
- }
+}
 @immutable final class AccountType$express extends AccountType {const AccountType$express._();
 
 @override String get value => 'express';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'express'.hashCode;
 
- }
+}
 @immutable final class AccountType$none extends AccountType {const AccountType$none._();
 
 @override String get value => 'none';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class AccountType$standard extends AccountType {const AccountType$standard._();
 
 @override String get value => 'standard';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'standard'.hashCode;
 
- }
+}
 @immutable final class AccountType$Unknown extends AccountType {const AccountType$Unknown(this.value);
 
 @override final String value;
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// This is an object representing a Stripe account. You can retrieve it to see
 /// properties on the account like its current requirements or if the account is
 /// enabled to make live charges or receive payouts.
@@ -211,7 +211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 /// to start Connect Onboarding. Learn about the [differences between accounts](/connect/accounts).
 @immutable final class Account {const Account({required this.id, required this.object, this.businessProfile = const Omittable.absent(), this.businessType = const Omittable.absent(), this.capabilities, this.chargesEnabled, this.company, this.controller, this.country, this.created, this.defaultCurrency, this.detailsSubmitted, this.email = const Omittable.absent(), this.externalAccounts, this.futureRequirements, this.groups = const Omittable.absent(), this.individual, this.metadata, this.payoutsEnabled, this.requirements, this.settings = const Omittable.absent(), this.tosAcceptance, this.type, });
 
-factory Account.fromJson(Map<String, dynamic> json) { return Account(
+factory Account.fromJson(Map<String, dynamic> json) {return Account(
   businessProfile: json.containsKey('business_profile') ? Omittable(json['business_profile'] != null ? AccountBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   businessType: json.containsKey('business_type') ? Omittable(json['business_type'] != null ? AccountBusinessType.fromJson(json['business_type'] as String) : null) : const Omittable.absent(),
   capabilities: json['capabilities'] != null ? AccountCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
@@ -235,7 +235,7 @@ factory Account.fromJson(Map<String, dynamic> json) { return Account(
   settings: json.containsKey('settings') ? Omittable(json['settings'] != null ? AccountSettings.fromJson(json['settings'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tosAcceptance: json['tos_acceptance'] != null ? AccountTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? AccountType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Business information about the account.
 final Omittable<AccountBusinessProfile?> businessProfile;
@@ -299,7 +299,7 @@ final AccountTosAcceptance? tosAcceptance;
 /// The Stripe account type. Can be `standard`, `express`, `custom`, or `none`.
 final AccountType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (businessProfile.isPresent) 'business_profile': businessProfile.value?.toJson(),
   if (businessType.isPresent) 'business_type': businessType.value?.toJson(),
   if (capabilities != null) 'capabilities': capabilities?.toJson(),
@@ -323,11 +323,11 @@ Map<String, dynamic> toJson() { return {
   if (settings.isPresent) 'settings': settings.value?.toJson(),
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'account'; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') && json['object'] == 'account';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final country$ = country;
 if (country$ != null) {
   if (country$.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
@@ -341,8 +341,8 @@ if (email$ != null) {
   if (email$.runes.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable<AccountBusinessType?>? businessType, AccountCapabilities? Function()? capabilities, bool? Function()? chargesEnabled, LegalEntityCompany? Function()? company, AccountUnificationAccountController? Function()? controller, String? Function()? country, int? Function()? created, String? Function()? defaultCurrency, bool? Function()? detailsSubmitted, Omittable<String?>? email, ExternalAccounts? Function()? externalAccounts, AccountFutureRequirements? Function()? futureRequirements, Omittable<AccountGroupMembership?>? groups, String? id, Person? Function()? individual, Map<String, String>? Function()? metadata, AccountObject? object, bool? Function()? payoutsEnabled, AccountRequirements? Function()? requirements, Omittable<AccountSettings?>? settings, AccountTosAcceptance? Function()? tosAcceptance, AccountType? Function()? type, }) { return Account(
+return errors;}
+Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable<AccountBusinessType?>? businessType, AccountCapabilities? Function()? capabilities, bool? Function()? chargesEnabled, LegalEntityCompany? Function()? company, AccountUnificationAccountController? Function()? controller, String? Function()? country, int? Function()? created, String? Function()? defaultCurrency, bool? Function()? detailsSubmitted, Omittable<String?>? email, ExternalAccounts? Function()? externalAccounts, AccountFutureRequirements? Function()? futureRequirements, Omittable<AccountGroupMembership?>? groups, String? id, Person? Function()? individual, Map<String, String>? Function()? metadata, AccountObject? object, bool? Function()? payoutsEnabled, AccountRequirements? Function()? requirements, Omittable<AccountSettings?>? settings, AccountTosAcceptance? Function()? tosAcceptance, AccountType? Function()? type, }) {return Account(
   businessProfile: businessProfile ?? this.businessProfile,
   businessType: businessType ?? this.businessType,
   capabilities: capabilities != null ? capabilities() : this.capabilities,
@@ -366,7 +366,7 @@ Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable
   settings: settings ?? this.settings,
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Account &&
           businessProfile == other.businessProfile &&
@@ -397,4 +397,4 @@ Account copyWith({Omittable<AccountBusinessProfile?>? businessProfile, Omittable
 
 @override String toString() => 'Account(\n  businessProfile: $businessProfile,\n  businessType: $businessType,\n  capabilities: $capabilities,\n  chargesEnabled: $chargesEnabled,\n  company: $company,\n  controller: $controller,\n  country: $country,\n  created: $created,\n  defaultCurrency: $defaultCurrency,\n  detailsSubmitted: $detailsSubmitted,\n  email: $email,\n  externalAccounts: $externalAccounts,\n  futureRequirements: $futureRequirements,\n  groups: $groups,\n  id: $id,\n  individual: $individual,\n  metadata: $metadata,\n  object: $object,\n  payoutsEnabled: $payoutsEnabled,\n  requirements: $requirements,\n  settings: $settings,\n  tosAcceptance: $tosAcceptance,\n  type: $type,\n)';
 
- }
+}

@@ -2,15 +2,15 @@
 // Source: #/components/schemas/IntelIp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const IntelIpv4(String value) {
-factory IntelIpv4.fromJson(String json) { if (!RegExp(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$').hasMatch(json)) throw FormatException('Invalid ipv4', json);
-return IntelIpv4(json); }
+factory IntelIpv4.fromJson(String json) {if (!RegExp(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$').hasMatch(json)) throw FormatException('Invalid ipv4', json);
+return IntelIpv4(json);}
 
 String toJson() => value;
 
 }
 extension type const IntelIpv6(String value) {
-factory IntelIpv6.fromJson(String json) { if (!RegExp(r'^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$').hasMatch(json)) throw FormatException('Invalid ipv6', json);
-return IntelIpv6(json); }
+factory IntelIpv6.fromJson(String json) {if (!RegExp(r'^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$').hasMatch(json)) throw FormatException('Invalid ipv6', json);
+return IntelIpv6(json);}
 
 String toJson() => value;
 
@@ -21,11 +21,11 @@ const IntelIp({this.intelIpv4 = const Omittable.absent(), this.intelIpv6 = const
 const IntelIp._({required this.rawValue, required this.intelIpv4, required this.intelIpv6, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory IntelIp.fromJson(Object? json) { return IntelIp._(
+factory IntelIp.fromJson(Object? json) {return IntelIp._(
   rawValue: Omittable(json),
   intelIpv4: parseAnyOfVariant<IntelIpv4>(json, (value) => IntelIpv4.fromJson(value! as String)),
   intelIpv6: parseAnyOfVariant<IntelIpv6>(json, (value) => IntelIpv6.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -55,4 +55,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'IntelIp(${toJson()})';
 
- }
+}

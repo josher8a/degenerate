@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the convenience store chain where the payment was completed.
 sealed class Chain {const Chain();
 
-factory Chain.fromJson(String json) { return switch (json) {
+factory Chain.fromJson(String json) {return switch (json) {
   'familymart' => familymart,
   'lawson' => lawson,
   'ministop' => ministop,
   'seicomart' => seicomart,
   _ => Chain$Unknown(json),
-}; }
+};}
 
 static const Chain familymart = Chain$familymart._();
 
@@ -23,36 +23,36 @@ static const Chain seicomart = Chain$seicomart._();
 static const List<Chain> values = [familymart, lawson, ministop, seicomart];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'familymart' => 'familymart',
   'lawson' => 'lawson',
   'ministop' => 'ministop',
   'seicomart' => 'seicomart',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Chain$Unknown; } 
+bool get isUnknown {return this is Chain$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() familymart, required W Function() lawson, required W Function() ministop, required W Function() seicomart, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() familymart, required W Function() lawson, required W Function() ministop, required W Function() seicomart, required W Function(String value) $unknown, }) {return switch (this) {
       Chain$familymart() => familymart(),
       Chain$lawson() => lawson(),
       Chain$ministop() => ministop(),
       Chain$seicomart() => seicomart(),
       Chain$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? familymart, W Function()? lawson, W Function()? ministop, W Function()? seicomart, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? familymart, W Function()? lawson, W Function()? ministop, W Function()? seicomart, W Function(String value)? $unknown, }) {return switch (this) {
       Chain$familymart() => familymart != null ? familymart() : orElse(value),
       Chain$lawson() => lawson != null ? lawson() : orElse(value),
       Chain$ministop() => ministop != null ? ministop() : orElse(value),
       Chain$seicomart() => seicomart != null ? seicomart() : orElse(value),
       Chain$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Chain($value)';
 
- }
+}
 @immutable final class Chain$familymart extends Chain {const Chain$familymart._();
 
 @override String get value => 'familymart';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? familyma
 
 @override int get hashCode => 'familymart'.hashCode;
 
- }
+}
 @immutable final class Chain$lawson extends Chain {const Chain$lawson._();
 
 @override String get value => 'lawson';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? familyma
 
 @override int get hashCode => 'lawson'.hashCode;
 
- }
+}
 @immutable final class Chain$ministop extends Chain {const Chain$ministop._();
 
 @override String get value => 'ministop';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? familyma
 
 @override int get hashCode => 'ministop'.hashCode;
 
- }
+}
 @immutable final class Chain$seicomart extends Chain {const Chain$seicomart._();
 
 @override String get value => 'seicomart';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? familyma
 
 @override int get hashCode => 'seicomart'.hashCode;
 
- }
+}
 @immutable final class Chain$Unknown extends Chain {const Chain$Unknown(this.value);
 
 @override final String value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? familyma
 
 @override int get hashCode => value.hashCode;
 
- }
+}

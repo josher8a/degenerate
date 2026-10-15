@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SuccessfulDatasets {const SuccessfulDatasets({required this.type});
 
-factory SuccessfulDatasets.fromJson(Map<String, dynamic> json) { return SuccessfulDatasets(
+factory SuccessfulDatasets.fromJson(Map<String, dynamic> json) {return SuccessfulDatasets(
   type: json['type'] as String,
-); }
+);}
 
 /// Example: `'number'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SuccessfulDatasets copyWith({String? type}) { return SuccessfulDatasets(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+SuccessfulDatasets copyWith({String? type}) {return SuccessfulDatasets(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SuccessfulDatasets &&
           type == other.type;
@@ -25,4 +25,4 @@ SuccessfulDatasets copyWith({String? type}) { return SuccessfulDatasets(
 
 @override String toString() => 'SuccessfulDatasets(type: $type)';
 
- }
+}

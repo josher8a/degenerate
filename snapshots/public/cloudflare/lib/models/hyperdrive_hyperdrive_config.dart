@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_protected_database_behind_cloudflare_tunnel.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_caching.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_config/hyperdrive_hyperdrive_config_origin.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_mtls.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_name.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_origin_connection_limit.dart';import 'package:pub_cloudflare/models/hyperdrive_identifier.dart';import 'package:pub_cloudflare/models/public_database.dart';@immutable final class HyperdriveHyperdriveConfig {const HyperdriveHyperdriveConfig({required this.id, required this.name, required this.origin, this.caching, this.createdOn, this.modifiedOn, this.mtls, this.originConnectionLimit, });
 
-factory HyperdriveHyperdriveConfig.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveConfig(
+factory HyperdriveHyperdriveConfig.fromJson(Map<String, dynamic> json) {return HyperdriveHyperdriveConfig(
   caching: json['caching'] != null ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>) : null,
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   id: HyperdriveIdentifier.fromJson(json['id'] as String),
@@ -12,7 +12,7 @@ factory HyperdriveHyperdriveConfig.fromJson(Map<String, dynamic> json) { return 
   name: HyperdriveHyperdriveName.fromJson(json['name'] as String),
   origin: OneOf2.parse(json['origin'], fromA: (v) => PublicDatabase.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessProtectedDatabaseBehindCloudflareTunnel.fromJson(v as Map<String, dynamic>),),
   originConnectionLimit: json['origin_connection_limit'] != null ? HyperdriveHyperdriveOriginConnectionLimit.fromJson(json['origin_connection_limit'] as num) : null,
-); }
+);}
 
 final HyperdriveHyperdriveCaching? caching;
 
@@ -36,7 +36,7 @@ final HyperdriveHyperdriveConfigOrigin origin;
 
 final HyperdriveHyperdriveOriginConnectionLimit? originConnectionLimit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (caching != null) 'caching': caching?.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
   'id': id.toJson(),
@@ -45,11 +45,11 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   'origin': origin.toJson(),
   if (originConnectionLimit != null) 'origin_connection_limit': originConnectionLimit?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('name') &&
-      json.containsKey('origin'); } 
-HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching? Function()? caching, DateTime? Function()? createdOn, HyperdriveIdentifier? id, DateTime? Function()? modifiedOn, HyperdriveHyperdriveMtls? Function()? mtls, HyperdriveHyperdriveName? name, HyperdriveHyperdriveConfigOrigin? origin, HyperdriveHyperdriveOriginConnectionLimit? Function()? originConnectionLimit, }) { return HyperdriveHyperdriveConfig(
+      json.containsKey('origin');}
+HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching? Function()? caching, DateTime? Function()? createdOn, HyperdriveIdentifier? id, DateTime? Function()? modifiedOn, HyperdriveHyperdriveMtls? Function()? mtls, HyperdriveHyperdriveName? name, HyperdriveHyperdriveConfigOrigin? origin, HyperdriveHyperdriveOriginConnectionLimit? Function()? originConnectionLimit, }) {return HyperdriveHyperdriveConfig(
   caching: caching != null ? caching() : this.caching,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   id: id ?? this.id,
@@ -58,7 +58,7 @@ HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching? Function()? ca
   name: name ?? this.name,
   origin: origin ?? this.origin,
   originConnectionLimit: originConnectionLimit != null ? originConnectionLimit() : this.originConnectionLimit,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveConfig &&
           caching == other.caching &&
@@ -74,4 +74,4 @@ HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching? Function()? ca
 
 @override String toString() => 'HyperdriveHyperdriveConfig(caching: $caching, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, mtls: $mtls, name: $name, origin: $origin, originConnectionLimit: $originConnectionLimit)';
 
- }
+}

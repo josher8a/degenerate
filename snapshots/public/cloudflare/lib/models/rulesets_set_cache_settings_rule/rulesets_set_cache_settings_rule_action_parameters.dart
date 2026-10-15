@@ -59,7 +59,7 @@ bool toJson() => value;
 }
 @immutable final class RulesetsSetCacheSettingsRuleActionParameters {const RulesetsSetCacheSettingsRuleActionParameters({this.additionalCacheablePorts, this.browserTtl, this.cache, this.cacheKey, this.cacheReserve, this.edgeTtl, this.originCacheControl, this.originErrorPagePassthru, this.readTimeout, this.respectStrongEtags, this.serveStale, this.stripEtags, this.stripLastModified, this.stripSetCookie, });
 
-factory RulesetsSetCacheSettingsRuleActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsRuleActionParameters(
+factory RulesetsSetCacheSettingsRuleActionParameters.fromJson(Map<String, dynamic> json) {return RulesetsSetCacheSettingsRuleActionParameters(
   additionalCacheablePorts: (json['additional_cacheable_ports'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   browserTtl: json['browser_ttl'] != null ? RulesetsSetCacheSettingsBrowserTtl.fromJson(json['browser_ttl'] as Map<String, dynamic>) : null,
   cache: json['cache'] != null ? RulesetsSetCacheSettingsCache.fromJson(json['cache'] as bool) : null,
@@ -74,7 +74,7 @@ factory RulesetsSetCacheSettingsRuleActionParameters.fromJson(Map<String, dynami
   stripEtags: json['strip_etags'] != null ? RulesetsSetCacheSettingsStripETags.fromJson(json['strip_etags'] as bool) : null,
   stripLastModified: json['strip_last_modified'] != null ? RulesetsSetCacheSettingsStripLastModified.fromJson(json['strip_last_modified'] as bool) : null,
   stripSetCookie: json['strip_set_cookie'] != null ? RulesetsSetCacheSettingsStripSetCookie.fromJson(json['strip_set_cookie'] as bool) : null,
-); }
+);}
 
 /// A list of additional ports that caching should be enabled on.
 final List<int>? additionalCacheablePorts;
@@ -110,7 +110,7 @@ final RulesetsSetCacheSettingsStripLastModified? stripLastModified;
 
 final RulesetsSetCacheSettingsStripSetCookie? stripSetCookie;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'additional_cacheable_ports': ?additionalCacheablePorts,
   if (browserTtl != null) 'browser_ttl': browserTtl?.toJson(),
   if (cache != null) 'cache': cache?.toJson(),
@@ -125,17 +125,17 @@ Map<String, dynamic> toJson() { return {
   if (stripEtags != null) 'strip_etags': stripEtags?.toJson(),
   if (stripLastModified != null) 'strip_last_modified': stripLastModified?.toJson(),
   if (stripSetCookie != null) 'strip_set_cookie': stripSetCookie?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_cacheable_ports', 'browser_ttl', 'cache', 'cache_key', 'cache_reserve', 'edge_ttl', 'origin_cache_control', 'origin_error_page_passthru', 'read_timeout', 'respect_strong_etags', 'serve_stale', 'strip_etags', 'strip_last_modified', 'strip_set_cookie'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_cacheable_ports', 'browser_ttl', 'cache', 'cache_key', 'cache_reserve', 'edge_ttl', 'origin_cache_control', 'origin_error_page_passthru', 'read_timeout', 'respect_strong_etags', 'serve_stale', 'strip_etags', 'strip_last_modified', 'strip_set_cookie'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final additionalCacheablePorts$ = additionalCacheablePorts;
 if (additionalCacheablePorts$ != null) {
   if (additionalCacheablePorts$.isEmpty) { errors.add('additionalCacheablePorts: must have >= 1 items'); }
   if (additionalCacheablePorts$.toSet().length != additionalCacheablePorts$.length) { errors.add('additionalCacheablePorts: items must be unique'); }
 }
-return errors; } 
-RulesetsSetCacheSettingsRuleActionParameters copyWith({List<int>? Function()? additionalCacheablePorts, RulesetsSetCacheSettingsBrowserTtl? Function()? browserTtl, RulesetsSetCacheSettingsCache? Function()? cache, RulesetsSetCacheSettingsCacheKey? Function()? cacheKey, RulesetsSetCacheSettingsCacheReserve? Function()? cacheReserve, RulesetsSetCacheSettingsEdgeTtl? Function()? edgeTtl, RulesetsSetCacheSettingsOriginCacheControl? Function()? originCacheControl, RulesetsSetCacheSettingsOriginErrorPagePassthru? Function()? originErrorPagePassthru, RulesetsSetCacheSettingsReadTimeout? Function()? readTimeout, RulesetsSetCacheSettingsRespectStrongEtags? Function()? respectStrongEtags, RulesetsSetCacheSettingsServeStale? Function()? serveStale, RulesetsSetCacheSettingsStripETags? Function()? stripEtags, RulesetsSetCacheSettingsStripLastModified? Function()? stripLastModified, RulesetsSetCacheSettingsStripSetCookie? Function()? stripSetCookie, }) { return RulesetsSetCacheSettingsRuleActionParameters(
+return errors;}
+RulesetsSetCacheSettingsRuleActionParameters copyWith({List<int>? Function()? additionalCacheablePorts, RulesetsSetCacheSettingsBrowserTtl? Function()? browserTtl, RulesetsSetCacheSettingsCache? Function()? cache, RulesetsSetCacheSettingsCacheKey? Function()? cacheKey, RulesetsSetCacheSettingsCacheReserve? Function()? cacheReserve, RulesetsSetCacheSettingsEdgeTtl? Function()? edgeTtl, RulesetsSetCacheSettingsOriginCacheControl? Function()? originCacheControl, RulesetsSetCacheSettingsOriginErrorPagePassthru? Function()? originErrorPagePassthru, RulesetsSetCacheSettingsReadTimeout? Function()? readTimeout, RulesetsSetCacheSettingsRespectStrongEtags? Function()? respectStrongEtags, RulesetsSetCacheSettingsServeStale? Function()? serveStale, RulesetsSetCacheSettingsStripETags? Function()? stripEtags, RulesetsSetCacheSettingsStripLastModified? Function()? stripLastModified, RulesetsSetCacheSettingsStripSetCookie? Function()? stripSetCookie, }) {return RulesetsSetCacheSettingsRuleActionParameters(
   additionalCacheablePorts: additionalCacheablePorts != null ? additionalCacheablePorts() : this.additionalCacheablePorts,
   browserTtl: browserTtl != null ? browserTtl() : this.browserTtl,
   cache: cache != null ? cache() : this.cache,
@@ -150,7 +150,7 @@ RulesetsSetCacheSettingsRuleActionParameters copyWith({List<int>? Function()? ad
   stripEtags: stripEtags != null ? stripEtags() : this.stripEtags,
   stripLastModified: stripLastModified != null ? stripLastModified() : this.stripLastModified,
   stripSetCookie: stripSetCookie != null ? stripSetCookie() : this.stripSetCookie,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsRuleActionParameters &&
           listEquals(additionalCacheablePorts, other.additionalCacheablePorts) &&
@@ -172,4 +172,4 @@ RulesetsSetCacheSettingsRuleActionParameters copyWith({List<int>? Function()? ad
 
 @override String toString() => 'RulesetsSetCacheSettingsRuleActionParameters(\n  additionalCacheablePorts: $additionalCacheablePorts,\n  browserTtl: $browserTtl,\n  cache: $cache,\n  cacheKey: $cacheKey,\n  cacheReserve: $cacheReserve,\n  edgeTtl: $edgeTtl,\n  originCacheControl: $originCacheControl,\n  originErrorPagePassthru: $originErrorPagePassthru,\n  readTimeout: $readTimeout,\n  respectStrongEtags: $respectStrongEtags,\n  serveStale: $serveStale,\n  stripEtags: $stripEtags,\n  stripLastModified: $stripLastModified,\n  stripSetCookie: $stripSetCookie,\n)';
 
- }
+}

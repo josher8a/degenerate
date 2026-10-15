@@ -15,7 +15,7 @@ final class DlpPredefinedEntriesApi with ApiExecutor {const DlpPredefinedEntries
 /// This is needed for our generated terraform API.
 ///
 /// `POST /accounts/{account_id}/dlp/entries/predefined`
-Future<ApiResult<DlpPredefinedEntry?, DlpDatasetsCreateError>> dlpEntriesCreatePredefinedEntry({required String accountId, required DlpNewPredefinedEntry body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpPredefinedEntry?, DlpDatasetsCreateError>> dlpEntriesCreatePredefinedEntry({required String accountId, required DlpNewPredefinedEntry body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -34,13 +34,13 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Delete predefined entry
 ///
 /// This is a no-op as predefined entires can't be deleted but is needed for our generated terraform API.
 ///
 /// `DELETE /accounts/{account_id}/dlp/entries/predefined/{entry_id}`
-Future<ApiResult<Map<String, dynamic>?, DlpDatasetsCreateError>> dlpEntriesDeletePredefinedEntry({required String accountId, required String entryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DlpDatasetsCreateError>> dlpEntriesDeletePredefinedEntry({required String accountId, required String entryId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -57,5 +57,5 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
- }
+}
+}

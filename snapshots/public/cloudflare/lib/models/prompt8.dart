@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt8 {const Prompt8({required this.prompt, this.frequencyPenalty, this.guidedJson, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.seed, this.stream, this.temperature, this.topK, this.topP, });
 
-factory Prompt8.fromJson(Map<String, dynamic> json) { return Prompt8(
+factory Prompt8.fromJson(Map<String, dynamic> json) {return Prompt8(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   guidedJson: json['guided_json'] as Map<String, dynamic>?,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
@@ -16,7 +16,7 @@ factory Prompt8.fromJson(Map<String, dynamic> json) { return Prompt8(
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -66,7 +66,7 @@ bool get streamOrDefault => stream ?? false;
 /// The value of `temperature`, or its schema default when absent.
 double get temperatureOrDefault => temperature ?? 0.6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   'guided_json': ?guidedJson,
   'max_tokens': ?maxTokens,
@@ -79,10 +79,10 @@ Map<String, dynamic> toJson() { return {
   'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
   if (frequencyPenalty$ < 0) { errors.add('frequencyPenalty: must be >= 0'); }
@@ -119,8 +119,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 2) { errors.add('topP: must be <= 2'); }
 }
-return errors; } 
-Prompt8 copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>? Function()? guidedJson, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, int? Function()? topK, double? Function()? topP, }) { return Prompt8(
+return errors;}
+Prompt8 copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>? Function()? guidedJson, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, int? Function()? topK, double? Function()? topP, }) {return Prompt8(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
@@ -133,7 +133,7 @@ Prompt8 copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>? Fu
   temperature: temperature != null ? temperature() : this.temperature,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Prompt8 &&
           frequencyPenalty == other.frequencyPenalty &&
@@ -153,4 +153,4 @@ Prompt8 copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>? Fu
 
 @override String toString() => 'Prompt8(\n  frequencyPenalty: $frequencyPenalty,\n  guidedJson: $guidedJson,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  raw: $raw,\n  repetitionPenalty: $repetitionPenalty,\n  seed: $seed,\n  stream: $stream,\n  temperature: $temperature,\n  topK: $topK,\n  topP: $topP,\n)';
 
- }
+}

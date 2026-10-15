@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';import 'package:pub_cloudflare/models/integration_entry/integration_entry_type.dart';@immutable final class DlpEntryWithUploadStatusIntegrationEntry {const DlpEntryWithUploadStatusIntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, this.profileId = const Omittable.absent(), this.uploadStatus, });
 
-factory DlpEntryWithUploadStatusIntegrationEntry.fromJson(Map<String, dynamic> json) { return DlpEntryWithUploadStatusIntegrationEntry(
+factory DlpEntryWithUploadStatusIntegrationEntry.fromJson(Map<String, dynamic> json) {return DlpEntryWithUploadStatusIntegrationEntry(
   createdAt: DateTime.parse(json['created_at'] as String),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
@@ -12,7 +12,7 @@ factory DlpEntryWithUploadStatusIntegrationEntry.fromJson(Map<String, dynamic> j
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: IntegrationEntryType.fromJson(json['type'] as String),
   uploadStatus: json['upload_status'] != null ? DlpDatasetUploadStatus.fromJson(json['upload_status'] as String) : null,
-); }
+);}
 
 final DateTime createdAt;
 
@@ -30,7 +30,7 @@ final IntegrationEntryType type;
 
 final DlpDatasetUploadStatus? uploadStatus;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'enabled': enabled,
   'id': id,
@@ -39,14 +39,14 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'type': type.toJson(),
   if (uploadStatus != null) 'upload_status': uploadStatus?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('type') && json['type'] == 'integration'; } 
-DlpEntryWithUploadStatusIntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, IntegrationEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, }) { return DlpEntryWithUploadStatusIntegrationEntry(
+      json.containsKey('type') && json['type'] == 'integration';}
+DlpEntryWithUploadStatusIntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DateTime? updatedAt, IntegrationEntryType? type, DlpDatasetUploadStatus? Function()? uploadStatus, }) {return DlpEntryWithUploadStatusIntegrationEntry(
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
@@ -55,7 +55,7 @@ DlpEntryWithUploadStatusIntegrationEntry copyWith({DateTime? createdAt, bool? en
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
   uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryWithUploadStatusIntegrationEntry &&
           createdAt == other.createdAt &&
@@ -71,4 +71,4 @@ DlpEntryWithUploadStatusIntegrationEntry copyWith({DateTime? createdAt, bool? en
 
 @override String toString() => 'DlpEntryWithUploadStatusIntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, type: $type, uploadStatus: $uploadStatus)';
 
- }
+}

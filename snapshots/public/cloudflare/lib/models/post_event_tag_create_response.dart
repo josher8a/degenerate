@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_event_reference_delete_response/delete_event_reference_delete_response_result.dart';@immutable final class PostEventTagCreateResponse {const PostEventTagCreateResponse({required this.result, required this.success, });
 
-factory PostEventTagCreateResponse.fromJson(Map<String, dynamic> json) { return PostEventTagCreateResponse(
+factory PostEventTagCreateResponse.fromJson(Map<String, dynamic> json) {return PostEventTagCreateResponse(
   result: DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final DeleteEventReferenceDeleteResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-PostEventTagCreateResponse copyWith({DeleteEventReferenceDeleteResponseResult? result, bool? success, }) { return PostEventTagCreateResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+PostEventTagCreateResponse copyWith({DeleteEventReferenceDeleteResponseResult? result, bool? success, }) {return PostEventTagCreateResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventTagCreateResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ PostEventTagCreateResponse copyWith({DeleteEventReferenceDeleteResponseResult? r
 
 @override String toString() => 'PostEventTagCreateResponse(result: $result, success: $success)';
 
- }
+}

@@ -8,11 +8,11 @@ const PostPaymentLinksPaymentLinkRequestShippingAddressCollection({this.shipping
 const PostPaymentLinksPaymentLinkRequestShippingAddressCollection._({required this.rawValue, required this.shippingAddressCollectionParams, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostPaymentLinksPaymentLinkRequestShippingAddressCollection.fromJson(Object? json) { return PostPaymentLinksPaymentLinkRequestShippingAddressCollection._(
+factory PostPaymentLinksPaymentLinkRequestShippingAddressCollection.fromJson(Object? json) {return PostPaymentLinksPaymentLinkRequestShippingAddressCollection._(
   rawValue: Omittable(json),
   shippingAddressCollectionParams: json is Map<String, dynamic> && ShippingAddressCollectionParams.canParse(json) ? parseAnyOfVariant<ShippingAddressCollectionParams>(json, (value) => ShippingAddressCollectionParams.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostPaymentLinksPaymentLinkRequestShippingAddressCollection(${toJson()})';
 
- }
+}

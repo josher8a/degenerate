@@ -12,4 +12,4 @@ final ApiConfig _config;
 
 late final DefaultApi $default = DefaultApi(_config);
 
- }
+}

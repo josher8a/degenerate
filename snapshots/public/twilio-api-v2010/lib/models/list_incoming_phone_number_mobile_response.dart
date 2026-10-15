@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_incoming_phone_number_incoming_phone_number_mobile.dart';@immutable final class ListIncomingPhoneNumberMobileResponse {const ListIncomingPhoneNumberMobileResponse({this.incomingPhoneNumbers, this.end, this.firstPageUri, this.nextPageUri = const Omittable.absent(), this.page, this.pageSize, this.previousPageUri = const Omittable.absent(), this.start, this.uri, });
 
-factory ListIncomingPhoneNumberMobileResponse.fromJson(Map<String, dynamic> json) { return ListIncomingPhoneNumberMobileResponse(
+factory ListIncomingPhoneNumberMobileResponse.fromJson(Map<String, dynamic> json) {return ListIncomingPhoneNumberMobileResponse(
   incomingPhoneNumbers: (json['incoming_phone_numbers'] as List<dynamic>?)?.map((e) => AccountIncomingPhoneNumberIncomingPhoneNumberMobile.fromJson(e as Map<String, dynamic>)).toList(),
   end: json['end'] != null ? (json['end'] as num).toInt() : null,
   firstPageUri: json['first_page_uri'] != null ? Uri.parse(json['first_page_uri'] as String) : null,
@@ -13,7 +13,7 @@ factory ListIncomingPhoneNumberMobileResponse.fromJson(Map<String, dynamic> json
   previousPageUri: json.containsKey('previous_page_uri') ? Omittable(json['previous_page_uri'] != null ? Uri.parse(json['previous_page_uri'] as String) : null) : const Omittable.absent(),
   start: json['start'] != null ? (json['start'] as num).toInt() : null,
   uri: json['uri'] != null ? Uri.parse(json['uri'] as String) : null,
-); }
+);}
 
 final List<AccountIncomingPhoneNumberIncomingPhoneNumberMobile>? incomingPhoneNumbers;
 
@@ -33,7 +33,7 @@ final int? start;
 
 final Uri? uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (incomingPhoneNumbers != null) 'incoming_phone_numbers': incomingPhoneNumbers?.map((e) => e.toJson()).toList(),
   'end': ?end,
   if (firstPageUri != null) 'first_page_uri': firstPageUri?.toString(),
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   if (previousPageUri.isPresent) 'previous_page_uri': previousPageUri.value?.toString(),
   'start': ?start,
   if (uri != null) 'uri': uri?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'incoming_phone_numbers', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key)); } 
-ListIncomingPhoneNumberMobileResponse copyWith({List<AccountIncomingPhoneNumberIncomingPhoneNumberMobile>? Function()? incomingPhoneNumbers, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) { return ListIncomingPhoneNumberMobileResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'incoming_phone_numbers', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key));}
+ListIncomingPhoneNumberMobileResponse copyWith({List<AccountIncomingPhoneNumberIncomingPhoneNumberMobile>? Function()? incomingPhoneNumbers, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) {return ListIncomingPhoneNumberMobileResponse(
   incomingPhoneNumbers: incomingPhoneNumbers != null ? incomingPhoneNumbers() : this.incomingPhoneNumbers,
   end: end != null ? end() : this.end,
   firstPageUri: firstPageUri != null ? firstPageUri() : this.firstPageUri,
@@ -55,7 +55,7 @@ ListIncomingPhoneNumberMobileResponse copyWith({List<AccountIncomingPhoneNumberI
   previousPageUri: previousPageUri ?? this.previousPageUri,
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListIncomingPhoneNumberMobileResponse &&
           listEquals(incomingPhoneNumbers, other.incomingPhoneNumbers) &&
@@ -72,4 +72,4 @@ ListIncomingPhoneNumberMobileResponse copyWith({List<AccountIncomingPhoneNumberI
 
 @override String toString() => 'ListIncomingPhoneNumberMobileResponse(\n  incomingPhoneNumbers: $incomingPhoneNumbers,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
- }
+}

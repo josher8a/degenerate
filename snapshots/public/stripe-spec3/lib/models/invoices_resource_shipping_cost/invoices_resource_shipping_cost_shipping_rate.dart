@@ -8,11 +8,11 @@ const InvoicesResourceShippingCostShippingRate({this.string = const Omittable.ab
 const InvoicesResourceShippingCostShippingRate._({required this.rawValue, required this.string, required this.shippingRate, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory InvoicesResourceShippingCostShippingRate.fromJson(Object? json) { return InvoicesResourceShippingCostShippingRate._(
+factory InvoicesResourceShippingCostShippingRate.fromJson(Object? json) {return InvoicesResourceShippingCostShippingRate._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   shippingRate: json is Map<String, dynamic> && ShippingRate.canParse(json) ? parseAnyOfVariant<ShippingRate>(json, (value) => ShippingRate.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'InvoicesResourceShippingCostShippingRate(${toJson()})';
 
- }
+}

@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageCompletionsResultObject {const UsageCompletionsResultObject();
 
-factory UsageCompletionsResultObject.fromJson(String json) { return switch (json) {
+factory UsageCompletionsResultObject.fromJson(String json) {return switch (json) {
   'organization.usage.completions.result' => organizationUsageCompletionsResult,
   _ => UsageCompletionsResultObject$Unknown(json),
-}; }
+};}
 
 static const UsageCompletionsResultObject organizationUsageCompletionsResult = UsageCompletionsResultObject$organizationUsageCompletionsResult._();
 
 static const List<UsageCompletionsResultObject> values = [organizationUsageCompletionsResult];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.usage.completions.result' => 'organizationUsageCompletionsResult',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UsageCompletionsResultObject$Unknown; } 
+bool get isUnknown {return this is UsageCompletionsResultObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationUsageCompletionsResult, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationUsageCompletionsResult, required W Function(String value) $unknown, }) {return switch (this) {
       UsageCompletionsResultObject$organizationUsageCompletionsResult() => organizationUsageCompletionsResult(),
       UsageCompletionsResultObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageCompletionsResult, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageCompletionsResult, W Function(String value)? $unknown, }) {return switch (this) {
       UsageCompletionsResultObject$organizationUsageCompletionsResult() => organizationUsageCompletionsResult != null ? organizationUsageCompletionsResult() : orElse(value),
       UsageCompletionsResultObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UsageCompletionsResultObject($value)';
 
- }
+}
 @immutable final class UsageCompletionsResultObject$organizationUsageCompletionsResult extends UsageCompletionsResultObject {const UsageCompletionsResultObject$organizationUsageCompletionsResult._();
 
 @override String get value => 'organization.usage.completions.result';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.usage.completions.result'.hashCode;
 
- }
+}
 @immutable final class UsageCompletionsResultObject$Unknown extends UsageCompletionsResultObject {const UsageCompletionsResultObject$Unknown(this.value);
 
 @override final String value;
@@ -52,11 +52,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The aggregated completions usage details of the specific time bucket.
 @immutable final class UsageCompletionsResult {const UsageCompletionsResult({required this.object, required this.inputTokens, required this.outputTokens, required this.numModelRequests, this.inputCachedTokens, this.inputAudioTokens, this.outputAudioTokens, this.projectId = const Omittable.absent(), this.userId = const Omittable.absent(), this.apiKeyId = const Omittable.absent(), this.model = const Omittable.absent(), this.batch = const Omittable.absent(), this.serviceTier = const Omittable.absent(), });
 
-factory UsageCompletionsResult.fromJson(Map<String, dynamic> json) { return UsageCompletionsResult(
+factory UsageCompletionsResult.fromJson(Map<String, dynamic> json) {return UsageCompletionsResult(
   object: UsageCompletionsResultObject.fromJson(json['object'] as String),
   inputTokens: (json['input_tokens'] as num).toInt(),
   inputCachedTokens: json['input_cached_tokens'] != null ? (json['input_cached_tokens'] as num).toInt() : null,
@@ -70,7 +70,7 @@ factory UsageCompletionsResult.fromJson(Map<String, dynamic> json) { return Usag
   model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
   batch: json.containsKey('batch') ? Omittable(json['batch'] as bool?) : const Omittable.absent(),
   serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final UsageCompletionsResultObject object;
 
@@ -110,7 +110,7 @@ final Omittable<bool?> batch;
 /// When `group_by=service_tier`, this field provides the service tier of the grouped usage result.
 final Omittable<String?> serviceTier;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'input_tokens': inputTokens,
   'input_cached_tokens': ?inputCachedTokens,
@@ -124,12 +124,12 @@ Map<String, dynamic> toJson() { return {
   if (model.isPresent) 'model': model.value,
   if (batch.isPresent) 'batch': batch.value,
   if (serviceTier.isPresent) 'service_tier': serviceTier.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.usage.completions.result' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] == 'organization.usage.completions.result' &&
       json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
-      json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 
-UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inputTokens, int? Function()? inputCachedTokens, int? outputTokens, int? Function()? inputAudioTokens, int? Function()? outputAudioTokens, int? numModelRequests, Omittable<String?>? projectId, Omittable<String?>? userId, Omittable<String?>? apiKeyId, Omittable<String?>? model, Omittable<bool?>? batch, Omittable<String?>? serviceTier, }) { return UsageCompletionsResult(
+      json.containsKey('num_model_requests') && json['num_model_requests'] is num;}
+UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inputTokens, int? Function()? inputCachedTokens, int? outputTokens, int? Function()? inputAudioTokens, int? Function()? outputAudioTokens, int? numModelRequests, Omittable<String?>? projectId, Omittable<String?>? userId, Omittable<String?>? apiKeyId, Omittable<String?>? model, Omittable<bool?>? batch, Omittable<String?>? serviceTier, }) {return UsageCompletionsResult(
   object: object ?? this.object,
   inputTokens: inputTokens ?? this.inputTokens,
   inputCachedTokens: inputCachedTokens != null ? inputCachedTokens() : this.inputCachedTokens,
@@ -143,7 +143,7 @@ UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inpu
   model: model ?? this.model,
   batch: batch ?? this.batch,
   serviceTier: serviceTier ?? this.serviceTier,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsageCompletionsResult &&
           object == other.object &&
@@ -164,4 +164,4 @@ UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inpu
 
 @override String toString() => 'UsageCompletionsResult(\n  object: $object,\n  inputTokens: $inputTokens,\n  inputCachedTokens: $inputCachedTokens,\n  outputTokens: $outputTokens,\n  inputAudioTokens: $inputAudioTokens,\n  outputAudioTokens: $outputAudioTokens,\n  numModelRequests: $numModelRequests,\n  projectId: $projectId,\n  userId: $userId,\n  apiKeyId: $apiKeyId,\n  model: $model,\n  batch: $batch,\n  serviceTier: $serviceTier,\n)';
 
- }
+}

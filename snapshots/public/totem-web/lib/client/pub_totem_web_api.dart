@@ -16,4 +16,4 @@ late final EventsApi events = EventsApi(_config);
 
 late final SpacesApi spaces = SpacesApi(_config);
 
- }
+}

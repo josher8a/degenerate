@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_query_alert_list_response/get_event_query_alert_list_response_frequency.dart';@immutable final class PatchEventQueryAlertUpdateResponse {const PatchEventQueryAlertUpdateResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
 
-factory PatchEventQueryAlertUpdateResponse.fromJson(Map<String, dynamic> json) { return PatchEventQueryAlertUpdateResponse(
+factory PatchEventQueryAlertUpdateResponse.fromJson(Map<String, dynamic> json) {return PatchEventQueryAlertUpdateResponse(
   accountId: (json['account_id'] as num).toInt(),
   createdAt: json['created_at'] as String,
   enabled: json['enabled'] as bool,
@@ -14,7 +14,7 @@ factory PatchEventQueryAlertUpdateResponse.fromJson(Map<String, dynamic> json) {
   queryId: (json['query_id'] as num).toInt(),
   updatedAt: json['updated_at'] as String,
   userEmail: json['user_email'] as String,
-); }
+);}
 
 /// Account ID
 final int accountId;
@@ -46,7 +46,7 @@ final String updatedAt;
 /// Email of the user who created the alert
 final String userEmail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId,
   'created_at': createdAt,
   'enabled': enabled,
@@ -57,8 +57,8 @@ Map<String, dynamic> toJson() { return {
   'query_id': queryId,
   'updated_at': updatedAt,
   'user_email': userEmail,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') && json['account_id'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('frequency') &&
@@ -66,8 +66,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('notification_type') && json['notification_type'] is String &&
       json.containsKey('query_id') && json['query_id'] is num &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('user_email') && json['user_email'] is String; } 
-PatchEventQueryAlertUpdateResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertListResponseFrequency? frequency, int? id, String? Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return PatchEventQueryAlertUpdateResponse(
+      json.containsKey('user_email') && json['user_email'] is String;}
+PatchEventQueryAlertUpdateResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertListResponseFrequency? frequency, int? id, String? Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) {return PatchEventQueryAlertUpdateResponse(
   accountId: accountId ?? this.accountId,
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,
@@ -78,7 +78,7 @@ PatchEventQueryAlertUpdateResponse copyWith({int? accountId, String? createdAt, 
   queryId: queryId ?? this.queryId,
   updatedAt: updatedAt ?? this.updatedAt,
   userEmail: userEmail ?? this.userEmail,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PatchEventQueryAlertUpdateResponse &&
           accountId == other.accountId &&
@@ -96,4 +96,4 @@ PatchEventQueryAlertUpdateResponse copyWith({int? accountId, String? createdAt, 
 
 @override String toString() => 'PatchEventQueryAlertUpdateResponse(\n  accountId: $accountId,\n  createdAt: $createdAt,\n  enabled: $enabled,\n  frequency: $frequency,\n  id: $id,\n  lastSentAt: $lastSentAt,\n  notificationType: $notificationType,\n  queryId: $queryId,\n  updatedAt: $updatedAt,\n  userEmail: $userEmail,\n)';
 
- }
+}

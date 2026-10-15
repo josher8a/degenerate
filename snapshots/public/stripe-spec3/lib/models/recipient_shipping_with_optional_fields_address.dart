@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';import 'package:pub_stripe_spec3/models/recipient_shipping_with_optional_fields_address/recipient_shipping_with_optional_fields_address_phone.dart';@immutable final class RecipientShippingWithOptionalFieldsAddress {const RecipientShippingWithOptionalFieldsAddress({required this.address, required this.name, this.phone, });
 
-factory RecipientShippingWithOptionalFieldsAddress.fromJson(Map<String, dynamic> json) { return RecipientShippingWithOptionalFieldsAddress(
+factory RecipientShippingWithOptionalFieldsAddress.fromJson(Map<String, dynamic> json) {return RecipientShippingWithOptionalFieldsAddress(
   address: CustomerShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
   phone: json['phone'] != null ? RecipientShippingWithOptionalFieldsAddressPhone.fromJson(json['phone']) : null,
-); }
+);}
 
 final CustomerShippingAddress address;
 
@@ -15,22 +15,22 @@ final String name;
 
 final RecipientShippingWithOptionalFieldsAddressPhone? phone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   'name': name,
   if (phone != null) 'phone': phone?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
-      json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
-return errors; } 
-RecipientShippingWithOptionalFieldsAddress copyWith({CustomerShippingAddress? address, String? name, RecipientShippingWithOptionalFieldsAddressPhone? Function()? phone, }) { return RecipientShippingWithOptionalFieldsAddress(
+return errors;}
+RecipientShippingWithOptionalFieldsAddress copyWith({CustomerShippingAddress? address, String? name, RecipientShippingWithOptionalFieldsAddressPhone? Function()? phone, }) {return RecipientShippingWithOptionalFieldsAddress(
   address: address ?? this.address,
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RecipientShippingWithOptionalFieldsAddress &&
           address == other.address &&
@@ -41,4 +41,4 @@ RecipientShippingWithOptionalFieldsAddress copyWith({CustomerShippingAddress? ad
 
 @override String toString() => 'RecipientShippingWithOptionalFieldsAddress(address: $address, name: $name, phone: $phone)';
 
- }
+}

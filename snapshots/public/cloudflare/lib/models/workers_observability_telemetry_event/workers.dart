@@ -8,11 +8,11 @@ const Workers({this.workersVariant1 = const Omittable.absent(), this.workersVari
 const Workers._({required this.rawValue, required this.workersVariant1, required this.workersVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Workers.fromJson(Object? json) { return Workers._(
+factory Workers.fromJson(Object? json) {return Workers._(
   rawValue: Omittable(json),
   workersVariant1: json is Map<String, dynamic> && WorkersVariant1.canParse(json) ? parseAnyOfVariant<WorkersVariant1>(json, (value) => WorkersVariant1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   workersVariant2: json is Map<String, dynamic> && WorkersVariant2.canParse(json) ? parseAnyOfVariant<WorkersVariant2>(json, (value) => WorkersVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Workers(${toJson()})';
 
- }
+}

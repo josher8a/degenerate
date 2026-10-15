@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AudioProducer {const AudioProducer({this.bytesSent, this.jitter, this.mid, this.mosQuality, this.packetsLost, this.packetsSent, this.producerId, this.rtt, this.ssrc, this.timestamp, });
 
-factory AudioProducer.fromJson(Map<String, dynamic> json) { return AudioProducer(
+factory AudioProducer.fromJson(Map<String, dynamic> json) {return AudioProducer(
   bytesSent: json['bytes_sent'] != null ? (json['bytes_sent'] as num).toInt() : null,
   jitter: json['jitter'] != null ? (json['jitter'] as num).toInt() : null,
   mid: json['mid'] as String?,
@@ -14,7 +14,7 @@ factory AudioProducer.fromJson(Map<String, dynamic> json) { return AudioProducer
   rtt: json['rtt'] != null ? (json['rtt'] as num).toDouble() : null,
   ssrc: json['ssrc'] != null ? (json['ssrc'] as num).toInt() : null,
   timestamp: json['timestamp'] as String?,
-); }
+);}
 
 final int? bytesSent;
 
@@ -36,7 +36,7 @@ final int? ssrc;
 
 final String? timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bytes_sent': ?bytesSent,
   'jitter': ?jitter,
   'mid': ?mid,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   'rtt': ?rtt,
   'ssrc': ?ssrc,
   'timestamp': ?timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bytes_sent', 'jitter', 'mid', 'mos_quality', 'packets_lost', 'packets_sent', 'producer_id', 'rtt', 'ssrc', 'timestamp'}.contains(key)); } 
-AudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, String? Function()? mid, int? Function()? mosQuality, int? Function()? packetsLost, int? Function()? packetsSent, String? Function()? producerId, double? Function()? rtt, int? Function()? ssrc, String? Function()? timestamp, }) { return AudioProducer(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bytes_sent', 'jitter', 'mid', 'mos_quality', 'packets_lost', 'packets_sent', 'producer_id', 'rtt', 'ssrc', 'timestamp'}.contains(key));}
+AudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, String? Function()? mid, int? Function()? mosQuality, int? Function()? packetsLost, int? Function()? packetsSent, String? Function()? producerId, double? Function()? rtt, int? Function()? ssrc, String? Function()? timestamp, }) {return AudioProducer(
   bytesSent: bytesSent != null ? bytesSent() : this.bytesSent,
   jitter: jitter != null ? jitter() : this.jitter,
   mid: mid != null ? mid() : this.mid,
@@ -60,7 +60,7 @@ AudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, Str
   rtt: rtt != null ? rtt() : this.rtt,
   ssrc: ssrc != null ? ssrc() : this.ssrc,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AudioProducer &&
           bytesSent == other.bytesSent &&
@@ -78,4 +78,4 @@ AudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, Str
 
 @override String toString() => 'AudioProducer(\n  bytesSent: $bytesSent,\n  jitter: $jitter,\n  mid: $mid,\n  mosQuality: $mosQuality,\n  packetsLost: $packetsLost,\n  packetsSent: $packetsSent,\n  producerId: $producerId,\n  rtt: $rtt,\n  ssrc: $ssrc,\n  timestamp: $timestamp,\n)';
 
- }
+}

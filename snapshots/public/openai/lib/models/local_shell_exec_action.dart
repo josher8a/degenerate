@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the local shell action. Always `exec`.
 sealed class LocalShellExecActionType {const LocalShellExecActionType();
 
-factory LocalShellExecActionType.fromJson(String json) { return switch (json) {
+factory LocalShellExecActionType.fromJson(String json) {return switch (json) {
   'exec' => exec,
   _ => LocalShellExecActionType$Unknown(json),
-}; }
+};}
 
 static const LocalShellExecActionType exec = LocalShellExecActionType$exec._();
 
 static const List<LocalShellExecActionType> values = [exec];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'exec' => 'exec',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LocalShellExecActionType$Unknown; } 
+bool get isUnknown {return this is LocalShellExecActionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() exec, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() exec, required W Function(String value) $unknown, }) {return switch (this) {
       LocalShellExecActionType$exec() => exec(),
       LocalShellExecActionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? exec, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exec, W Function(String value)? $unknown, }) {return switch (this) {
       LocalShellExecActionType$exec() => exec != null ? exec() : orElse(value),
       LocalShellExecActionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LocalShellExecActionType($value)';
 
- }
+}
 @immutable final class LocalShellExecActionType$exec extends LocalShellExecActionType {const LocalShellExecActionType$exec._();
 
 @override String get value => 'exec';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exec, W 
 
 @override int get hashCode => 'exec'.hashCode;
 
- }
+}
 @immutable final class LocalShellExecActionType$Unknown extends LocalShellExecActionType {const LocalShellExecActionType$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exec, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Execute a shell command on the server.
 @immutable final class LocalShellExecAction {const LocalShellExecAction({required this.type, required this.command, required this.env, this.timeoutMs = const Omittable.absent(), this.workingDirectory = const Omittable.absent(), this.user = const Omittable.absent(), });
 
-factory LocalShellExecAction.fromJson(Map<String, dynamic> json) { return LocalShellExecAction(
+factory LocalShellExecAction.fromJson(Map<String, dynamic> json) {return LocalShellExecAction(
   type: LocalShellExecActionType.fromJson(json['type'] as String),
   command: (json['command'] as List<dynamic>).map((e) => e as String).toList(),
   timeoutMs: json.containsKey('timeout_ms') ? Omittable(json['timeout_ms'] != null ? (json['timeout_ms'] as num).toInt() : null) : const Omittable.absent(),
   workingDirectory: json.containsKey('working_directory') ? Omittable(json['working_directory'] as String?) : const Omittable.absent(),
   env: (json['env'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   user: json.containsKey('user') ? Omittable(json['user'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of the local shell action. Always `exec`.
 final LocalShellExecActionType type;
@@ -84,25 +84,25 @@ final Map<String,String> env;
 /// Optional user to run the command as.
 final Omittable<String?> user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'command': command,
   if (timeoutMs.isPresent) 'timeout_ms': timeoutMs.value,
   if (workingDirectory.isPresent) 'working_directory': workingDirectory.value,
   'env': env,
   if (user.isPresent) 'user': user.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('command') &&
-      json.containsKey('env'); } 
-LocalShellExecAction copyWith({LocalShellExecActionType? type, List<String>? command, Omittable<int?>? timeoutMs, Omittable<String?>? workingDirectory, Map<String,String>? env, Omittable<String?>? user, }) { return LocalShellExecAction(
+      json.containsKey('env');}
+LocalShellExecAction copyWith({LocalShellExecActionType? type, List<String>? command, Omittable<int?>? timeoutMs, Omittable<String?>? workingDirectory, Map<String,String>? env, Omittable<String?>? user, }) {return LocalShellExecAction(
   type: type ?? this.type,
   command: command ?? this.command,
   timeoutMs: timeoutMs ?? this.timeoutMs,
   workingDirectory: workingDirectory ?? this.workingDirectory,
   env: env ?? this.env,
   user: user ?? this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LocalShellExecAction &&
           type == other.type &&
@@ -116,4 +116,4 @@ LocalShellExecAction copyWith({LocalShellExecActionType? type, List<String>? com
 
 @override String toString() => 'LocalShellExecAction(type: $type, command: $command, timeoutMs: $timeoutMs, workingDirectory: $workingDirectory, env: $env, user: $user)';
 
- }
+}

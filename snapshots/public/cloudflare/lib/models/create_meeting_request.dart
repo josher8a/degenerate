@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_ai_config.dart';import 'package:pub_cloudflare/models/realtimekit_recording_config.dart';@immutable final class CreateMeetingRequest {const CreateMeetingRequest({this.aiConfig, this.liveStreamOnStart = const Omittable.absent(), this.persistChat, this.recordOnStart = const Omittable.absent(), this.recordingConfig, this.sessionKeepAliveTimeInSecs, this.summarizeOnEnd, this.title = const Omittable.absent(), });
 
-factory CreateMeetingRequest.fromJson(Map<String, dynamic> json) { return CreateMeetingRequest(
+factory CreateMeetingRequest.fromJson(Map<String, dynamic> json) {return CreateMeetingRequest(
   aiConfig: json['ai_config'] != null ? RealtimekitAiConfig.fromJson(json['ai_config'] as Map<String, dynamic>) : null,
   liveStreamOnStart: json.containsKey('live_stream_on_start') ? Omittable(json['live_stream_on_start'] as bool?) : const Omittable.absent(),
   persistChat: json['persist_chat'] as bool?,
@@ -12,7 +12,7 @@ factory CreateMeetingRequest.fromJson(Map<String, dynamic> json) { return Create
   sessionKeepAliveTimeInSecs: json['session_keep_alive_time_in_secs'] != null ? (json['session_keep_alive_time_in_secs'] as num).toDouble() : null,
   summarizeOnEnd: json['summarize_on_end'] as bool?,
   title: json.containsKey('title') ? Omittable(json['title'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final RealtimekitAiConfig? aiConfig;
 
@@ -51,7 +51,7 @@ double get sessionKeepAliveTimeInSecsOrDefault => sessionKeepAliveTimeInSecs ?? 
 /// The value of `summarizeOnEnd`, or its schema default when absent.
 bool get summarizeOnEndOrDefault => summarizeOnEnd ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aiConfig != null) 'ai_config': aiConfig?.toJson(),
   if (liveStreamOnStart.isPresent) 'live_stream_on_start': liveStreamOnStart.value,
   'persist_chat': ?persistChat,
@@ -60,17 +60,17 @@ Map<String, dynamic> toJson() { return {
   'session_keep_alive_time_in_secs': ?sessionKeepAliveTimeInSecs,
   'summarize_on_end': ?summarizeOnEnd,
   if (title.isPresent) 'title': title.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_config', 'live_stream_on_start', 'persist_chat', 'record_on_start', 'recording_config', 'session_keep_alive_time_in_secs', 'summarize_on_end', 'title'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ai_config', 'live_stream_on_start', 'persist_chat', 'record_on_start', 'recording_config', 'session_keep_alive_time_in_secs', 'summarize_on_end', 'title'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final sessionKeepAliveTimeInSecs$ = sessionKeepAliveTimeInSecs;
 if (sessionKeepAliveTimeInSecs$ != null) {
   if (sessionKeepAliveTimeInSecs$ < 60) { errors.add('sessionKeepAliveTimeInSecs: must be >= 60'); }
   if (sessionKeepAliveTimeInSecs$ > 600) { errors.add('sessionKeepAliveTimeInSecs: must be <= 600'); }
 }
-return errors; } 
-CreateMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, Omittable<bool?>? liveStreamOnStart, bool? Function()? persistChat, Omittable<bool?>? recordOnStart, RealtimekitRecordingConfig? Function()? recordingConfig, double? Function()? sessionKeepAliveTimeInSecs, bool? Function()? summarizeOnEnd, Omittable<String?>? title, }) { return CreateMeetingRequest(
+return errors;}
+CreateMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, Omittable<bool?>? liveStreamOnStart, bool? Function()? persistChat, Omittable<bool?>? recordOnStart, RealtimekitRecordingConfig? Function()? recordingConfig, double? Function()? sessionKeepAliveTimeInSecs, bool? Function()? summarizeOnEnd, Omittable<String?>? title, }) {return CreateMeetingRequest(
   aiConfig: aiConfig != null ? aiConfig() : this.aiConfig,
   liveStreamOnStart: liveStreamOnStart ?? this.liveStreamOnStart,
   persistChat: persistChat != null ? persistChat() : this.persistChat,
@@ -79,7 +79,7 @@ CreateMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, Omitta
   sessionKeepAliveTimeInSecs: sessionKeepAliveTimeInSecs != null ? sessionKeepAliveTimeInSecs() : this.sessionKeepAliveTimeInSecs,
   summarizeOnEnd: summarizeOnEnd != null ? summarizeOnEnd() : this.summarizeOnEnd,
   title: title ?? this.title,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateMeetingRequest &&
           aiConfig == other.aiConfig &&
@@ -95,4 +95,4 @@ CreateMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, Omitta
 
 @override String toString() => 'CreateMeetingRequest(aiConfig: $aiConfig, liveStreamOnStart: $liveStreamOnStart, persistChat: $persistChat, recordOnStart: $recordOnStart, recordingConfig: $recordingConfig, sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs, summarizeOnEnd: $summarizeOnEnd, title: $title)';
 
- }
+}

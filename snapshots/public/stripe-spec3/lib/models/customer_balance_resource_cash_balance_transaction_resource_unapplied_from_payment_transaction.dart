@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction({required this.paymentIntent});
 
-factory CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction(
+factory CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction.fromJson(Map<String, dynamic> json) {return CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction(
   paymentIntent: ChargePaymentIntent.fromJson(json['payment_intent']),
-); }
+);}
 
 /// The [Payment Intent](https://docs.stripe.com/api/payment_intents/object) that funds were unapplied from.
 final ChargePaymentIntent paymentIntent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'payment_intent': paymentIntent.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent'); } 
-CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction copyWith({ChargePaymentIntent? paymentIntent}) { return CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payment_intent');}
+CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction copyWith({ChargePaymentIntent? paymentIntent}) {return CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction(
   paymentIntent: paymentIntent ?? this.paymentIntent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction &&
           paymentIntent == other.paymentIntent;
@@ -26,4 +26,4 @@ CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransac
 
 @override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction(paymentIntent: $paymentIntent)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetDnsAs112TimeseriesByResponseCodesFormat {const RadarGetDnsAs112TimeseriesByResponseCodesFormat();
 
-factory RadarGetDnsAs112TimeseriesByResponseCodesFormat.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TimeseriesByResponseCodesFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetDnsAs112TimeseriesByResponseCodesFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TimeseriesByResponseCodesFormat $json = RadarGetDnsAs112TimeseriesByResponseCodesFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetDnsAs112TimeseriesByResponseCodesFormat csv = RadarGetDnsAs
 static const List<RadarGetDnsAs112TimeseriesByResponseCodesFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsAs112TimeseriesByResponseCodesFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsAs112TimeseriesByResponseCodesFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsAs112TimeseriesByResponseCodesFormat$$json() => $json(),
       RadarGetDnsAs112TimeseriesByResponseCodesFormat$csv() => csv(),
       RadarGetDnsAs112TimeseriesByResponseCodesFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsAs112TimeseriesByResponseCodesFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetDnsAs112TimeseriesByResponseCodesFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetDnsAs112TimeseriesByResponseCodesFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsAs112TimeseriesByResponseCodesFormat($value)';
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByResponseCodesFormat$$json extends RadarGetDnsAs112TimeseriesByResponseCodesFormat {const RadarGetDnsAs112TimeseriesByResponseCodesFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByResponseCodesFormat$csv extends RadarGetDnsAs112TimeseriesByResponseCodesFormat {const RadarGetDnsAs112TimeseriesByResponseCodesFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesByResponseCodesFormat$Unknown extends RadarGetDnsAs112TimeseriesByResponseCodesFormat {const RadarGetDnsAs112TimeseriesByResponseCodesFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestReviewLinksHtml {const PullRequestReviewLinksHtml({required this.href});
 
-factory PullRequestReviewLinksHtml.fromJson(Map<String, dynamic> json) { return PullRequestReviewLinksHtml(
+factory PullRequestReviewLinksHtml.fromJson(Map<String, dynamic> json) {return PullRequestReviewLinksHtml(
   href: json['href'] as String,
-); }
+);}
 
 final String href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
-PullRequestReviewLinksHtml copyWith({String? href}) { return PullRequestReviewLinksHtml(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('href') && json['href'] is String;}
+PullRequestReviewLinksHtml copyWith({String? href}) {return PullRequestReviewLinksHtml(
   href: href ?? this.href,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewLinksHtml &&
           href == other.href;
@@ -24,4 +24,4 @@ PullRequestReviewLinksHtml copyWith({String? href}) { return PullRequestReviewLi
 
 @override String toString() => 'PullRequestReviewLinksHtml(href: $href)';
 
- }
+}

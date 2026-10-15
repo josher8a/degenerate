@@ -7,11 +7,11 @@ const DeveloperContent({this.string = const Omittable.absent(), this.listDevelop
 const DeveloperContent._({required this.rawValue, required this.string, required this.listDeveloperContentVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DeveloperContent.fromJson(Object? json) { return DeveloperContent._(
+factory DeveloperContent.fromJson(Object? json) {return DeveloperContent._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   listDeveloperContentVariant2: parseAnyOfVariant<List<DeveloperContentVariant2>>(json, (value) => (value! as List<dynamic>).map((e) => DeveloperContentVariant2.fromJson(e as Map<String, dynamic>)).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DeveloperContent(${toJson()})';
 
- }
+}

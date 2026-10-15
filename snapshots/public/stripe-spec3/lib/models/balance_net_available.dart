@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount_by_source_type.dart';/// 
 @immutable final class BalanceNetAvailable {const BalanceNetAvailable({required this.amount, required this.destination, this.sourceTypes, });
 
-factory BalanceNetAvailable.fromJson(Map<String, dynamic> json) { return BalanceNetAvailable(
+factory BalanceNetAvailable.fromJson(Map<String, dynamic> json) {return BalanceNetAvailable(
   amount: (json['amount'] as num).toInt(),
   destination: json['destination'] as String,
   sourceTypes: json['source_types'] != null ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Net balance amount, subtracting fees from platform-set pricing.
 final int amount;
@@ -18,22 +18,22 @@ final String destination;
 
 final BalanceAmountBySourceType? sourceTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'destination': destination,
   if (sourceTypes != null) 'source_types': sourceTypes?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('destination') && json['destination'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('destination') && json['destination'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (destination.runes.length > 5000) { errors.add('destination: length must be <= 5000'); }
-return errors; } 
-BalanceNetAvailable copyWith({int? amount, String? destination, BalanceAmountBySourceType? Function()? sourceTypes, }) { return BalanceNetAvailable(
+return errors;}
+BalanceNetAvailable copyWith({int? amount, String? destination, BalanceAmountBySourceType? Function()? sourceTypes, }) {return BalanceNetAvailable(
   amount: amount ?? this.amount,
   destination: destination ?? this.destination,
   sourceTypes: sourceTypes != null ? sourceTypes() : this.sourceTypes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceNetAvailable &&
           amount == other.amount &&
@@ -44,4 +44,4 @@ BalanceNetAvailable copyWith({int? amount, String? destination, BalanceAmountByS
 
 @override String toString() => 'BalanceNetAvailable(amount: $amount, destination: $destination, sourceTypes: $sourceTypes)';
 
- }
+}

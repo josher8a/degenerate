@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of this membership.
 sealed class UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus();
 
-factory UserSAccountMembershipsListMembershipsStatus.fromJson(String json) { return switch (json) {
+factory UserSAccountMembershipsListMembershipsStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'rejected' => rejected,
   _ => UserSAccountMembershipsListMembershipsStatus$Unknown(json),
-}; }
+};}
 
 static const UserSAccountMembershipsListMembershipsStatus accepted = UserSAccountMembershipsListMembershipsStatus$accepted._();
 
@@ -20,33 +20,33 @@ static const UserSAccountMembershipsListMembershipsStatus rejected = UserSAccoun
 static const List<UserSAccountMembershipsListMembershipsStatus> values = [accepted, pending, rejected];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'accepted' => 'accepted',
   'pending' => 'pending',
   'rejected' => 'rejected',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UserSAccountMembershipsListMembershipsStatus$Unknown; } 
+bool get isUnknown {return this is UserSAccountMembershipsListMembershipsStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accepted, required W Function() pending, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accepted, required W Function() pending, required W Function() rejected, required W Function(String value) $unknown, }) {return switch (this) {
       UserSAccountMembershipsListMembershipsStatus$accepted() => accepted(),
       UserSAccountMembershipsListMembershipsStatus$pending() => pending(),
       UserSAccountMembershipsListMembershipsStatus$rejected() => rejected(),
       UserSAccountMembershipsListMembershipsStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function()? rejected, W Function(String value)? $unknown, }) {return switch (this) {
       UserSAccountMembershipsListMembershipsStatus$accepted() => accepted != null ? accepted() : orElse(value),
       UserSAccountMembershipsListMembershipsStatus$pending() => pending != null ? pending() : orElse(value),
       UserSAccountMembershipsListMembershipsStatus$rejected() => rejected != null ? rejected() : orElse(value),
       UserSAccountMembershipsListMembershipsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UserSAccountMembershipsListMembershipsStatus($value)';
 
- }
+}
 @immutable final class UserSAccountMembershipsListMembershipsStatus$accepted extends UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus$accepted._();
 
 @override String get value => 'accepted';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class UserSAccountMembershipsListMembershipsStatus$pending extends UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus$pending._();
 
 @override String get value => 'pending';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class UserSAccountMembershipsListMembershipsStatus$rejected extends UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus$rejected._();
 
 @override String get value => 'rejected';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class UserSAccountMembershipsListMembershipsStatus$Unknown extends UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => value.hashCode;
 
- }
+}

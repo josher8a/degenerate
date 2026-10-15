@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount_by_source_type.dart';/// 
 @immutable final class BalanceAmount {const BalanceAmount({required this.amount, required this.currency, this.sourceTypes, });
 
-factory BalanceAmount.fromJson(Map<String, dynamic> json) { return BalanceAmount(
+factory BalanceAmount.fromJson(Map<String, dynamic> json) {return BalanceAmount(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   sourceTypes: json['source_types'] != null ? BalanceAmountBySourceType.fromJson(json['source_types'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Balance amount.
 final int amount;
@@ -18,18 +18,18 @@ final String currency;
 
 final BalanceAmountBySourceType? sourceTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   if (sourceTypes != null) 'source_types': sourceTypes?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('currency') && json['currency'] is String; } 
-BalanceAmount copyWith({int? amount, String? currency, BalanceAmountBySourceType? Function()? sourceTypes, }) { return BalanceAmount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String;}
+BalanceAmount copyWith({int? amount, String? currency, BalanceAmountBySourceType? Function()? sourceTypes, }) {return BalanceAmount(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   sourceTypes: sourceTypes != null ? sourceTypes() : this.sourceTypes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceAmount &&
           amount == other.amount &&
@@ -40,4 +40,4 @@ BalanceAmount copyWith({int? amount, String? currency, BalanceAmountBySourceType
 
 @override String toString() => 'BalanceAmount(amount: $amount, currency: $currency, sourceTypes: $sourceTypes)';
 
- }
+}

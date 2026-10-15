@@ -12,24 +12,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 /// ```
 @immutable final class UsersAddEmailForAuthenticatedUserRequestVariant1 {const UsersAddEmailForAuthenticatedUserRequestVariant1({required this.emails});
 
-factory UsersAddEmailForAuthenticatedUserRequestVariant1.fromJson(Map<String, dynamic> json) { return UsersAddEmailForAuthenticatedUserRequestVariant1(
+factory UsersAddEmailForAuthenticatedUserRequestVariant1.fromJson(Map<String, dynamic> json) {return UsersAddEmailForAuthenticatedUserRequestVariant1(
   emails: (json['emails'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
 final List<String> emails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'emails': emails,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('emails'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('emails');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (emails.isEmpty) { errors.add('emails: must have >= 1 items'); }
-return errors; } 
-UsersAddEmailForAuthenticatedUserRequestVariant1 copyWith({List<String>? emails}) { return UsersAddEmailForAuthenticatedUserRequestVariant1(
+return errors;}
+UsersAddEmailForAuthenticatedUserRequestVariant1 copyWith({List<String>? emails}) {return UsersAddEmailForAuthenticatedUserRequestVariant1(
   emails: emails ?? this.emails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsersAddEmailForAuthenticatedUserRequestVariant1 &&
           listEquals(emails, other.emails);
@@ -38,4 +38,4 @@ UsersAddEmailForAuthenticatedUserRequestVariant1 copyWith({List<String>? emails}
 
 @override String toString() => 'UsersAddEmailForAuthenticatedUserRequestVariant1(emails: $emails)';
 
- }
+}

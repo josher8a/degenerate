@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_check_suite_app_permissions.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';sealed class WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents();
 
-factory WebhookCheckSuiteRerequestedCheckSuiteAppEvents.fromJson(String json) { return switch (json) {
+factory WebhookCheckSuiteRerequestedCheckSuiteAppEvents.fromJson(String json) {return switch (json) {
   'branch_protection_rule' => branchProtectionRule,
   'check_run' => checkRun,
   'check_suite' => checkSuite,
@@ -53,7 +53,7 @@ factory WebhookCheckSuiteRerequestedCheckSuiteAppEvents.fromJson(String json) { 
   'merge_queue_entry' => mergeQueueEntry,
   'workflow_job' => workflowJob,
   _ => WebhookCheckSuiteRerequestedCheckSuiteAppEvents$Unknown(json),
-}; }
+};}
 
 static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents branchProtectionRule = WebhookCheckSuiteRerequestedCheckSuiteAppEvents$branchProtectionRule._();
 
@@ -154,9 +154,9 @@ static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents workflowJob = Webho
 static const List<WebhookCheckSuiteRerequestedCheckSuiteAppEvents> values = [branchProtectionRule, checkRun, checkSuite, codeScanningAlert, commitComment, contentReference, create, delete, deployment, deploymentReview, deploymentStatus, deployKey, discussion, discussionComment, fork, gollum, issues, issueComment, label, member, membership, milestone, organization, orgBlock, pageBuild, project, projectCard, projectColumn, public, pullRequest, pullRequestReview, pullRequestReviewComment, push, registryPackage, release, repository, repositoryDispatch, secretScanningAlert, star, status, team, teamAdd, watch, workflowDispatch, workflowRun, pullRequestReviewThread, mergeQueueEntry, workflowJob];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'branch_protection_rule' => 'branchProtectionRule',
   'check_run' => 'checkRun',
   'check_suite' => 'checkSuite',
@@ -206,11 +206,11 @@ String get name { return switch (value) {
   'merge_queue_entry' => 'mergeQueueEntry',
   'workflow_job' => 'workflowJob',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookCheckSuiteRerequestedCheckSuiteAppEvents$Unknown; } 
+bool get isUnknown {return this is WebhookCheckSuiteRerequestedCheckSuiteAppEvents$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() branchProtectionRule, required W Function() checkRun, required W Function() checkSuite, required W Function() codeScanningAlert, required W Function() commitComment, required W Function() contentReference, required W Function() create, required W Function() delete, required W Function() deployment, required W Function() deploymentReview, required W Function() deploymentStatus, required W Function() deployKey, required W Function() discussion, required W Function() discussionComment, required W Function() fork, required W Function() gollum, required W Function() issues, required W Function() issueComment, required W Function() label, required W Function() member, required W Function() membership, required W Function() milestone, required W Function() organization, required W Function() orgBlock, required W Function() pageBuild, required W Function() project, required W Function() projectCard, required W Function() projectColumn, required W Function() public, required W Function() pullRequest, required W Function() pullRequestReview, required W Function() pullRequestReviewComment, required W Function() push, required W Function() registryPackage, required W Function() release, required W Function() repository, required W Function() repositoryDispatch, required W Function() secretScanningAlert, required W Function() star, required W Function() status, required W Function() team, required W Function() teamAdd, required W Function() watch, required W Function() workflowDispatch, required W Function() workflowRun, required W Function() pullRequestReviewThread, required W Function() mergeQueueEntry, required W Function() workflowJob, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() branchProtectionRule, required W Function() checkRun, required W Function() checkSuite, required W Function() codeScanningAlert, required W Function() commitComment, required W Function() contentReference, required W Function() create, required W Function() delete, required W Function() deployment, required W Function() deploymentReview, required W Function() deploymentStatus, required W Function() deployKey, required W Function() discussion, required W Function() discussionComment, required W Function() fork, required W Function() gollum, required W Function() issues, required W Function() issueComment, required W Function() label, required W Function() member, required W Function() membership, required W Function() milestone, required W Function() organization, required W Function() orgBlock, required W Function() pageBuild, required W Function() project, required W Function() projectCard, required W Function() projectColumn, required W Function() public, required W Function() pullRequest, required W Function() pullRequestReview, required W Function() pullRequestReviewComment, required W Function() push, required W Function() registryPackage, required W Function() release, required W Function() repository, required W Function() repositoryDispatch, required W Function() secretScanningAlert, required W Function() star, required W Function() status, required W Function() team, required W Function() teamAdd, required W Function() watch, required W Function() workflowDispatch, required W Function() workflowRun, required W Function() pullRequestReviewThread, required W Function() mergeQueueEntry, required W Function() workflowJob, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$branchProtectionRule() => branchProtectionRule(),
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$checkRun() => checkRun(),
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$checkSuite() => checkSuite(),
@@ -260,9 +260,9 @@ W when<W>({required W Function() branchProtectionRule, required W Function() che
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$mergeQueueEntry() => mergeQueueEntry(),
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$workflowJob() => workflowJob(),
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchProtectionRule, W Function()? checkRun, W Function()? checkSuite, W Function()? codeScanningAlert, W Function()? commitComment, W Function()? contentReference, W Function()? create, W Function()? delete, W Function()? deployment, W Function()? deploymentReview, W Function()? deploymentStatus, W Function()? deployKey, W Function()? discussion, W Function()? discussionComment, W Function()? fork, W Function()? gollum, W Function()? issues, W Function()? issueComment, W Function()? label, W Function()? member, W Function()? membership, W Function()? milestone, W Function()? organization, W Function()? orgBlock, W Function()? pageBuild, W Function()? project, W Function()? projectCard, W Function()? projectColumn, W Function()? public, W Function()? pullRequest, W Function()? pullRequestReview, W Function()? pullRequestReviewComment, W Function()? push, W Function()? registryPackage, W Function()? release, W Function()? repository, W Function()? repositoryDispatch, W Function()? secretScanningAlert, W Function()? star, W Function()? status, W Function()? team, W Function()? teamAdd, W Function()? watch, W Function()? workflowDispatch, W Function()? workflowRun, W Function()? pullRequestReviewThread, W Function()? mergeQueueEntry, W Function()? workflowJob, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchProtectionRule, W Function()? checkRun, W Function()? checkSuite, W Function()? codeScanningAlert, W Function()? commitComment, W Function()? contentReference, W Function()? create, W Function()? delete, W Function()? deployment, W Function()? deploymentReview, W Function()? deploymentStatus, W Function()? deployKey, W Function()? discussion, W Function()? discussionComment, W Function()? fork, W Function()? gollum, W Function()? issues, W Function()? issueComment, W Function()? label, W Function()? member, W Function()? membership, W Function()? milestone, W Function()? organization, W Function()? orgBlock, W Function()? pageBuild, W Function()? project, W Function()? projectCard, W Function()? projectColumn, W Function()? public, W Function()? pullRequest, W Function()? pullRequestReview, W Function()? pullRequestReviewComment, W Function()? push, W Function()? registryPackage, W Function()? release, W Function()? repository, W Function()? repositoryDispatch, W Function()? secretScanningAlert, W Function()? star, W Function()? status, W Function()? team, W Function()? teamAdd, W Function()? watch, W Function()? workflowDispatch, W Function()? workflowRun, W Function()? pullRequestReviewThread, W Function()? mergeQueueEntry, W Function()? workflowJob, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$branchProtectionRule() => branchProtectionRule != null ? branchProtectionRule() : orElse(value),
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$checkRun() => checkRun != null ? checkRun() : orElse(value),
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$checkSuite() => checkSuite != null ? checkSuite() : orElse(value),
@@ -312,10 +312,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$mergeQueueEntry() => mergeQueueEntry != null ? mergeQueueEntry() : orElse(value),
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$workflowJob() => workflowJob != null ? workflowJob() : orElse(value),
       WebhookCheckSuiteRerequestedCheckSuiteAppEvents$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookCheckSuiteRerequestedCheckSuiteAppEvents($value)';
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$branchProtectionRule extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$branchProtectionRule._();
 
 @override String get value => 'branch_protection_rule';
@@ -324,7 +324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'branch_protection_rule'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$checkRun extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$checkRun._();
 
 @override String get value => 'check_run';
@@ -333,7 +333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'check_run'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$checkSuite extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$checkSuite._();
 
 @override String get value => 'check_suite';
@@ -342,7 +342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'check_suite'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$codeScanningAlert extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$codeScanningAlert._();
 
 @override String get value => 'code_scanning_alert';
@@ -351,7 +351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'code_scanning_alert'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$commitComment extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$commitComment._();
 
 @override String get value => 'commit_comment';
@@ -360,7 +360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'commit_comment'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$contentReference extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$contentReference._();
 
 @override String get value => 'content_reference';
@@ -369,7 +369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'content_reference'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$create extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$create._();
 
 @override String get value => 'create';
@@ -378,7 +378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'create'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$delete extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$delete._();
 
 @override String get value => 'delete';
@@ -387,7 +387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'delete'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$deployment extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$deployment._();
 
 @override String get value => 'deployment';
@@ -396,7 +396,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'deployment'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$deploymentReview extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$deploymentReview._();
 
 @override String get value => 'deployment_review';
@@ -405,7 +405,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'deployment_review'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$deploymentStatus extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$deploymentStatus._();
 
 @override String get value => 'deployment_status';
@@ -414,7 +414,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'deployment_status'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$deployKey extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$deployKey._();
 
 @override String get value => 'deploy_key';
@@ -423,7 +423,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'deploy_key'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$discussion extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$discussion._();
 
 @override String get value => 'discussion';
@@ -432,7 +432,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'discussion'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$discussionComment extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$discussionComment._();
 
 @override String get value => 'discussion_comment';
@@ -441,7 +441,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'discussion_comment'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$fork extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$fork._();
 
 @override String get value => 'fork';
@@ -450,7 +450,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'fork'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$gollum extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$gollum._();
 
 @override String get value => 'gollum';
@@ -459,7 +459,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'gollum'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$issues extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$issues._();
 
 @override String get value => 'issues';
@@ -468,7 +468,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'issues'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$issueComment extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$issueComment._();
 
 @override String get value => 'issue_comment';
@@ -477,7 +477,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'issue_comment'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$label extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$label._();
 
 @override String get value => 'label';
@@ -486,7 +486,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'label'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$member extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$member._();
 
 @override String get value => 'member';
@@ -495,7 +495,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'member'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$membership extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$membership._();
 
 @override String get value => 'membership';
@@ -504,7 +504,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'membership'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$milestone extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$milestone._();
 
 @override String get value => 'milestone';
@@ -513,7 +513,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'milestone'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$organization extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$organization._();
 
 @override String get value => 'organization';
@@ -522,7 +522,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'organization'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$orgBlock extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$orgBlock._();
 
 @override String get value => 'org_block';
@@ -531,7 +531,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'org_block'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pageBuild extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pageBuild._();
 
 @override String get value => 'page_build';
@@ -540,7 +540,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'page_build'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$project extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$project._();
 
 @override String get value => 'project';
@@ -549,7 +549,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'project'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$projectCard extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$projectCard._();
 
 @override String get value => 'project_card';
@@ -558,7 +558,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'project_card'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$projectColumn extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$projectColumn._();
 
 @override String get value => 'project_column';
@@ -567,7 +567,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'project_column'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$public extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$public._();
 
 @override String get value => 'public';
@@ -576,7 +576,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'public'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pullRequest extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pullRequest._();
 
 @override String get value => 'pull_request';
@@ -585,7 +585,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'pull_request'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pullRequestReview extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pullRequestReview._();
 
 @override String get value => 'pull_request_review';
@@ -594,7 +594,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'pull_request_review'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pullRequestReviewComment extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pullRequestReviewComment._();
 
 @override String get value => 'pull_request_review_comment';
@@ -603,7 +603,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'pull_request_review_comment'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$push extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$push._();
 
 @override String get value => 'push';
@@ -612,7 +612,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'push'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$registryPackage extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$registryPackage._();
 
 @override String get value => 'registry_package';
@@ -621,7 +621,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'registry_package'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$release extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$release._();
 
 @override String get value => 'release';
@@ -630,7 +630,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'release'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$repository extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$repository._();
 
 @override String get value => 'repository';
@@ -639,7 +639,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'repository'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$repositoryDispatch extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$repositoryDispatch._();
 
 @override String get value => 'repository_dispatch';
@@ -648,7 +648,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'repository_dispatch'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$secretScanningAlert extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$secretScanningAlert._();
 
 @override String get value => 'secret_scanning_alert';
@@ -657,7 +657,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'secret_scanning_alert'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$star extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$star._();
 
 @override String get value => 'star';
@@ -666,7 +666,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'star'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$status extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$status._();
 
 @override String get value => 'status';
@@ -675,7 +675,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'status'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$team extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$team._();
 
 @override String get value => 'team';
@@ -684,7 +684,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'team'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$teamAdd extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$teamAdd._();
 
 @override String get value => 'team_add';
@@ -693,7 +693,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'team_add'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$watch extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$watch._();
 
 @override String get value => 'watch';
@@ -702,7 +702,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'watch'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$workflowDispatch extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$workflowDispatch._();
 
 @override String get value => 'workflow_dispatch';
@@ -711,7 +711,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'workflow_dispatch'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$workflowRun extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$workflowRun._();
 
 @override String get value => 'workflow_run';
@@ -720,7 +720,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'workflow_run'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pullRequestReviewThread extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$pullRequestReviewThread._();
 
 @override String get value => 'pull_request_review_thread';
@@ -729,7 +729,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'pull_request_review_thread'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$mergeQueueEntry extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$mergeQueueEntry._();
 
 @override String get value => 'merge_queue_entry';
@@ -738,7 +738,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'merge_queue_entry'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$workflowJob extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$workflowJob._();
 
 @override String get value => 'workflow_job';
@@ -747,7 +747,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => 'workflow_job'.hashCode;
 
- }
+}
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents$Unknown extends WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents$Unknown(this.value);
 
 @override final String value;
@@ -757,11 +757,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? branchPr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteApp {const WebhookCheckSuiteRerequestedCheckSuiteApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.clientId = const Omittable.absent(), this.permissions, this.slug, });
 
-factory WebhookCheckSuiteRerequestedCheckSuiteApp.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRerequestedCheckSuiteApp(
+factory WebhookCheckSuiteRerequestedCheckSuiteApp.fromJson(Map<String, dynamic> json) {return WebhookCheckSuiteRerequestedCheckSuiteApp(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   description: json['description'] as String?,
   events: (json['events'] as List<dynamic>?)?.map((e) => WebhookCheckSuiteRerequestedCheckSuiteAppEvents.fromJson(e as String)).toList(),
@@ -775,7 +775,7 @@ factory WebhookCheckSuiteRerequestedCheckSuiteApp.fromJson(Map<String, dynamic> 
   permissions: json['permissions'] != null ? WebhookCheckSuiteRequestedCheckSuiteAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   slug: json['slug'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 final DateTime? createdAt;
 
@@ -809,7 +809,7 @@ final String? slug;
 
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt?.toIso8601String(),
   'description': description,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
@@ -823,8 +823,8 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
   'slug': ?slug,
   'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('external_url') && (json['external_url'] == null || json['external_url'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -832,8 +832,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
-      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
-WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookCheckSuiteRerequestedCheckSuiteAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, Omittable<String?>? clientId, String? name, String? nodeId, PackageOwner? Function()? owner, WebhookCheckSuiteRequestedCheckSuiteAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookCheckSuiteRerequestedCheckSuiteApp(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String);}
+WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookCheckSuiteRerequestedCheckSuiteAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, Omittable<String?>? clientId, String? name, String? nodeId, PackageOwner? Function()? owner, WebhookCheckSuiteRequestedCheckSuiteAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) {return WebhookCheckSuiteRerequestedCheckSuiteApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   events: events != null ? events() : this.events,
@@ -847,7 +847,7 @@ WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? create
   permissions: permissions != null ? permissions() : this.permissions,
   slug: slug != null ? slug() : this.slug,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckSuiteRerequestedCheckSuiteApp &&
           createdAt == other.createdAt &&
@@ -868,4 +868,4 @@ WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? create
 
 @override String toString() => 'WebhookCheckSuiteRerequestedCheckSuiteApp(\n  createdAt: $createdAt,\n  description: $description,\n  events: $events,\n  externalUrl: $externalUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  clientId: $clientId,\n  name: $name,\n  nodeId: $nodeId,\n  owner: $owner,\n  permissions: $permissions,\n  slug: $slug,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

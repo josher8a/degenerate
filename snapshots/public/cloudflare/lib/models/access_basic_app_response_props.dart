@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_aud.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessBasicAppResponseProps {const AccessBasicAppResponseProps({this.aud, this.createdAt, this.id, this.updatedAt, });
 
-factory AccessBasicAppResponseProps.fromJson(Map<String, dynamic> json) { return AccessBasicAppResponseProps(
+factory AccessBasicAppResponseProps.fromJson(Map<String, dynamic> json) {return AccessBasicAppResponseProps(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -18,19 +18,19 @@ final AccessUuid? id;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aud', 'created_at', 'id', 'updated_at'}.contains(key)); } 
-AccessBasicAppResponseProps copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, }) { return AccessBasicAppResponseProps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'aud', 'created_at', 'id', 'updated_at'}.contains(key));}
+AccessBasicAppResponseProps copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, }) {return AccessBasicAppResponseProps(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessBasicAppResponseProps &&
           aud == other.aud &&
@@ -42,4 +42,4 @@ AccessBasicAppResponseProps copyWith({AccessSchemasAud? Function()? aud, AccessT
 
 @override String toString() => 'AccessBasicAppResponseProps(aud: $aud, createdAt: $createdAt, id: $id, updatedAt: $updatedAt)';
 
- }
+}

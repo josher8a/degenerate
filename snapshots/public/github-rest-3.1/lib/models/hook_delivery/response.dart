@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Response {const Response({required this.headers, required this.payload, });
 
-factory Response.fromJson(Map<String, dynamic> json) { return Response(
+factory Response.fromJson(Map<String, dynamic> json) {return Response(
   headers: json['headers'] as Map<String, dynamic>?,
   payload: json['payload'] as Map<String, dynamic>?,
-); }
+);}
 
 /// The response headers received when the delivery was made.
 final Map<String,dynamic>? headers;
@@ -14,16 +14,16 @@ final Map<String,dynamic>? headers;
 /// The response payload received.
 final Map<String,dynamic>? payload;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'headers': headers,
   'payload': payload,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('headers') &&
-      json.containsKey('payload'); } 
-Response copyWith({Map<String, dynamic>? Function()? headers, Map<String, dynamic>? Function()? payload, }) { return Response(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('headers') &&
+      json.containsKey('payload');}
+Response copyWith({Map<String, dynamic>? Function()? headers, Map<String, dynamic>? Function()? payload, }) {return Response(
   headers: headers != null ? headers() : this.headers,
   payload: payload != null ? payload() : this.payload,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Response &&
           headers == other.headers &&
@@ -33,4 +33,4 @@ Response copyWith({Map<String, dynamic>? Function()? headers, Map<String, dynami
 
 @override String toString() => 'Response(headers: $headers, payload: $payload)';
 
- }
+}

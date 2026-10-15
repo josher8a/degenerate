@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnCustomerDevice {const MconnCustomerDevice({required this.id, this.serialNumber, });
 
-factory MconnCustomerDevice.fromJson(Map<String, dynamic> json) { return MconnCustomerDevice(
+factory MconnCustomerDevice.fromJson(Map<String, dynamic> json) {return MconnCustomerDevice(
   id: MconnUuid.fromJson(json['id'] as String),
   serialNumber: json['serial_number'] as String?,
-); }
+);}
 
 final MconnUuid id;
 
 final String? serialNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
   'serial_number': ?serialNumber,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-MconnCustomerDevice copyWith({MconnUuid? id, String? Function()? serialNumber, }) { return MconnCustomerDevice(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+MconnCustomerDevice copyWith({MconnUuid? id, String? Function()? serialNumber, }) {return MconnCustomerDevice(
   id: id ?? this.id,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerDevice &&
           id == other.id &&
@@ -30,4 +30,4 @@ MconnCustomerDevice copyWith({MconnUuid? id, String? Function()? serialNumber, }
 
 @override String toString() => 'MconnCustomerDevice(id: $id, serialNumber: $serialNumber)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ValidationDataMethod {const ValidationDataMethod();
 
-factory ValidationDataMethod.fromJson(String json) { return switch (json) {
+factory ValidationDataMethod.fromJson(String json) {return switch (json) {
   'http' => http,
   'txt' => txt,
   _ => ValidationDataMethod$Unknown(json),
-}; }
+};}
 
 static const ValidationDataMethod http = ValidationDataMethod$http._();
 
@@ -16,30 +16,30 @@ static const ValidationDataMethod txt = ValidationDataMethod$txt._();
 static const List<ValidationDataMethod> values = [http, txt];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'http' => 'http',
   'txt' => 'txt',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ValidationDataMethod$Unknown; } 
+bool get isUnknown {return this is ValidationDataMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() http, required W Function() txt, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() http, required W Function() txt, required W Function(String value) $unknown, }) {return switch (this) {
       ValidationDataMethod$http() => http(),
       ValidationDataMethod$txt() => txt(),
       ValidationDataMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? txt, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? txt, W Function(String value)? $unknown, }) {return switch (this) {
       ValidationDataMethod$http() => http != null ? http() : orElse(value),
       ValidationDataMethod$txt() => txt != null ? txt() : orElse(value),
       ValidationDataMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ValidationDataMethod($value)';
 
- }
+}
 @immutable final class ValidationDataMethod$http extends ValidationDataMethod {const ValidationDataMethod$http._();
 
 @override String get value => 'http';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'http'.hashCode;
 
- }
+}
 @immutable final class ValidationDataMethod$txt extends ValidationDataMethod {const ValidationDataMethod$txt._();
 
 @override String get value => 'txt';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'txt'.hashCode;
 
- }
+}
 @immutable final class ValidationDataMethod$Unknown extends ValidationDataMethod {const ValidationDataMethod$Unknown(this.value);
 
 @override final String value;
@@ -67,17 +67,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class ValidationDataStatus {const ValidationDataStatus();
 
-factory ValidationDataStatus.fromJson(String json) { return switch (json) {
+factory ValidationDataStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending' => pending,
   'active' => active,
   'deactivated' => deactivated,
   'error' => error,
   _ => ValidationDataStatus$Unknown(json),
-}; }
+};}
 
 static const ValidationDataStatus initializing = ValidationDataStatus$initializing._();
 
@@ -92,39 +92,39 @@ static const ValidationDataStatus error = ValidationDataStatus$error._();
 static const List<ValidationDataStatus> values = [initializing, pending, active, deactivated, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'initializing' => 'initializing',
   'pending' => 'pending',
   'active' => 'active',
   'deactivated' => 'deactivated',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ValidationDataStatus$Unknown; } 
+bool get isUnknown {return this is ValidationDataStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       ValidationDataStatus$initializing() => initializing(),
       ValidationDataStatus$pending() => pending(),
       ValidationDataStatus$active() => active(),
       ValidationDataStatus$deactivated() => deactivated(),
       ValidationDataStatus$error() => error(),
       ValidationDataStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       ValidationDataStatus$initializing() => initializing != null ? initializing() : orElse(value),
       ValidationDataStatus$pending() => pending != null ? pending() : orElse(value),
       ValidationDataStatus$active() => active != null ? active() : orElse(value),
       ValidationDataStatus$deactivated() => deactivated != null ? deactivated() : orElse(value),
       ValidationDataStatus$error() => error != null ? error() : orElse(value),
       ValidationDataStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ValidationDataStatus($value)';
 
- }
+}
 @immutable final class ValidationDataStatus$initializing extends ValidationDataStatus {const ValidationDataStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class ValidationDataStatus$pending extends ValidationDataStatus {const ValidationDataStatus$pending._();
 
 @override String get value => 'pending';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class ValidationDataStatus$active extends ValidationDataStatus {const ValidationDataStatus$active._();
 
 @override String get value => 'active';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class ValidationDataStatus$deactivated extends ValidationDataStatus {const ValidationDataStatus$deactivated._();
 
 @override String get value => 'deactivated';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deactivated'.hashCode;
 
- }
+}
 @immutable final class ValidationDataStatus$error extends ValidationDataStatus {const ValidationDataStatus$error._();
 
 @override String get value => 'error';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class ValidationDataStatus$Unknown extends ValidationDataStatus {const ValidationDataStatus$Unknown(this.value);
 
 @override final String value;
@@ -179,16 +179,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ValidationData {const ValidationData({required this.method, required this.status, this.errorMessage, this.txtName, this.txtValue, });
 
-factory ValidationData.fromJson(Map<String, dynamic> json) { return ValidationData(
+factory ValidationData.fromJson(Map<String, dynamic> json) {return ValidationData(
   errorMessage: json['error_message'] as String?,
   method: ValidationDataMethod.fromJson(json['method'] as String),
   status: ValidationDataStatus.fromJson(json['status'] as String),
   txtName: json['txt_name'] as String?,
   txtValue: json['txt_value'] as String?,
-); }
+);}
 
 final String? errorMessage;
 
@@ -200,22 +200,22 @@ final String? txtName;
 
 final String? txtValue;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error_message': ?errorMessage,
   'method': method.toJson(),
   'status': status.toJson(),
   'txt_name': ?txtName,
   'txt_value': ?txtValue,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('method') &&
-      json.containsKey('status'); } 
-ValidationData copyWith({String? Function()? errorMessage, ValidationDataMethod? method, ValidationDataStatus? status, String? Function()? txtName, String? Function()? txtValue, }) { return ValidationData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('method') &&
+      json.containsKey('status');}
+ValidationData copyWith({String? Function()? errorMessage, ValidationDataMethod? method, ValidationDataStatus? status, String? Function()? txtName, String? Function()? txtValue, }) {return ValidationData(
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
   method: method ?? this.method,
   status: status ?? this.status,
   txtName: txtName != null ? txtName() : this.txtName,
   txtValue: txtValue != null ? txtValue() : this.txtValue,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ValidationData &&
           errorMessage == other.errorMessage &&
@@ -228,4 +228,4 @@ ValidationData copyWith({String? Function()? errorMessage, ValidationDataMethod?
 
 @override String toString() => 'ValidationData(errorMessage: $errorMessage, method: $method, status: $status, txtName: $txtName, txtValue: $txtValue)';
 
- }
+}

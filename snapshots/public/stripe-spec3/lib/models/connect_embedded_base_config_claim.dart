@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_base_features.dart';/// 
 @immutable final class ConnectEmbeddedBaseConfigClaim {const ConnectEmbeddedBaseConfigClaim({required this.enabled, required this.features, });
 
-factory ConnectEmbeddedBaseConfigClaim.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedBaseConfigClaim(
+factory ConnectEmbeddedBaseConfigClaim.fromJson(Map<String, dynamic> json) {return ConnectEmbeddedBaseConfigClaim(
   enabled: json['enabled'] as bool,
   features: ConnectEmbeddedBaseFeatures.fromJson(json['features'] as Map<String, dynamic>),
-); }
+);}
 
 /// Whether the embedded component is enabled.
 final bool enabled;
 
 final ConnectEmbeddedBaseFeatures features;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'features': features.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('features'); } 
-ConnectEmbeddedBaseConfigClaim copyWith({bool? enabled, ConnectEmbeddedBaseFeatures? features, }) { return ConnectEmbeddedBaseConfigClaim(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('features');}
+ConnectEmbeddedBaseConfigClaim copyWith({bool? enabled, ConnectEmbeddedBaseFeatures? features, }) {return ConnectEmbeddedBaseConfigClaim(
   enabled: enabled ?? this.enabled,
   features: features ?? this.features,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedBaseConfigClaim &&
           enabled == other.enabled &&
@@ -33,4 +33,4 @@ ConnectEmbeddedBaseConfigClaim copyWith({bool? enabled, ConnectEmbeddedBaseFeatu
 
 @override String toString() => 'ConnectEmbeddedBaseConfigClaim(enabled: $enabled, features: $features)';
 
- }
+}

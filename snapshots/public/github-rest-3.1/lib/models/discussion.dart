@@ -6,14 +6,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// `transferring` means that the discussion is being transferred from another repository.
 sealed class DiscussionState {const DiscussionState();
 
-factory DiscussionState.fromJson(String json) { return switch (json) {
+factory DiscussionState.fromJson(String json) {return switch (json) {
   'open' => open,
   'closed' => closed,
   'locked' => locked,
   'converting' => converting,
   'transferring' => transferring,
   _ => DiscussionState$Unknown(json),
-}; }
+};}
 
 static const DiscussionState open = DiscussionState$open._();
 
@@ -28,39 +28,39 @@ static const DiscussionState transferring = DiscussionState$transferring._();
 static const List<DiscussionState> values = [open, closed, locked, converting, transferring];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'open' => 'open',
   'closed' => 'closed',
   'locked' => 'locked',
   'converting' => 'converting',
   'transferring' => 'transferring',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DiscussionState$Unknown; } 
+bool get isUnknown {return this is DiscussionState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() open, required W Function() closed, required W Function() locked, required W Function() converting, required W Function() transferring, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() open, required W Function() closed, required W Function() locked, required W Function() converting, required W Function() transferring, required W Function(String value) $unknown, }) {return switch (this) {
       DiscussionState$open() => open(),
       DiscussionState$closed() => closed(),
       DiscussionState$locked() => locked(),
       DiscussionState$converting() => converting(),
       DiscussionState$transferring() => transferring(),
       DiscussionState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? closed, W Function()? locked, W Function()? converting, W Function()? transferring, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? closed, W Function()? locked, W Function()? converting, W Function()? transferring, W Function(String value)? $unknown, }) {return switch (this) {
       DiscussionState$open() => open != null ? open() : orElse(value),
       DiscussionState$closed() => closed != null ? closed() : orElse(value),
       DiscussionState$locked() => locked != null ? locked() : orElse(value),
       DiscussionState$converting() => converting != null ? converting() : orElse(value),
       DiscussionState$transferring() => transferring != null ? transferring() : orElse(value),
       DiscussionState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DiscussionState($value)';
 
- }
+}
 @immutable final class DiscussionState$open extends DiscussionState {const DiscussionState$open._();
 
 @override String get value => 'open';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class DiscussionState$closed extends DiscussionState {const DiscussionState$closed._();
 
 @override String get value => 'closed';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'closed'.hashCode;
 
- }
+}
 @immutable final class DiscussionState$locked extends DiscussionState {const DiscussionState$locked._();
 
 @override String get value => 'locked';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'locked'.hashCode;
 
- }
+}
 @immutable final class DiscussionState$converting extends DiscussionState {const DiscussionState$converting._();
 
 @override String get value => 'converting';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'converting'.hashCode;
 
- }
+}
 @immutable final class DiscussionState$transferring extends DiscussionState {const DiscussionState$transferring._();
 
 @override String get value => 'transferring';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'transferring'.hashCode;
 
- }
+}
 @immutable final class DiscussionState$Unknown extends DiscussionState {const DiscussionState$Unknown(this.value);
 
 @override final String value;
@@ -115,18 +115,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The reason for the current state
 sealed class DiscussionStateReason {const DiscussionStateReason();
 
-factory DiscussionStateReason.fromJson(String json) { return switch (json) {
+factory DiscussionStateReason.fromJson(String json) {return switch (json) {
   'resolved' => resolved,
   'outdated' => outdated,
   'duplicate' => duplicate,
   'reopened' => reopened,
   'null' => $null,
   _ => DiscussionStateReason$Unknown(json),
-}; }
+};}
 
 static const DiscussionStateReason resolved = DiscussionStateReason$resolved._();
 
@@ -141,39 +141,39 @@ static const DiscussionStateReason $null = DiscussionStateReason$$null._();
 static const List<DiscussionStateReason> values = [resolved, outdated, duplicate, reopened, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'resolved' => 'resolved',
   'outdated' => 'outdated',
   'duplicate' => 'duplicate',
   'reopened' => 'reopened',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DiscussionStateReason$Unknown; } 
+bool get isUnknown {return this is DiscussionStateReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() resolved, required W Function() outdated, required W Function() duplicate, required W Function() reopened, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() resolved, required W Function() outdated, required W Function() duplicate, required W Function() reopened, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       DiscussionStateReason$resolved() => resolved(),
       DiscussionStateReason$outdated() => outdated(),
       DiscussionStateReason$duplicate() => duplicate(),
       DiscussionStateReason$reopened() => reopened(),
       DiscussionStateReason$$null() => $null(),
       DiscussionStateReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved, W Function()? outdated, W Function()? duplicate, W Function()? reopened, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved, W Function()? outdated, W Function()? duplicate, W Function()? reopened, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       DiscussionStateReason$resolved() => resolved != null ? resolved() : orElse(value),
       DiscussionStateReason$outdated() => outdated != null ? outdated() : orElse(value),
       DiscussionStateReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
       DiscussionStateReason$reopened() => reopened != null ? reopened() : orElse(value),
       DiscussionStateReason$$null() => $null != null ? $null() : orElse(value),
       DiscussionStateReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DiscussionStateReason($value)';
 
- }
+}
 @immutable final class DiscussionStateReason$resolved extends DiscussionStateReason {const DiscussionStateReason$resolved._();
 
 @override String get value => 'resolved';
@@ -182,7 +182,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved
 
 @override int get hashCode => 'resolved'.hashCode;
 
- }
+}
 @immutable final class DiscussionStateReason$outdated extends DiscussionStateReason {const DiscussionStateReason$outdated._();
 
 @override String get value => 'outdated';
@@ -191,7 +191,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved
 
 @override int get hashCode => 'outdated'.hashCode;
 
- }
+}
 @immutable final class DiscussionStateReason$duplicate extends DiscussionStateReason {const DiscussionStateReason$duplicate._();
 
 @override String get value => 'duplicate';
@@ -200,7 +200,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved
 
 @override int get hashCode => 'duplicate'.hashCode;
 
- }
+}
 @immutable final class DiscussionStateReason$reopened extends DiscussionStateReason {const DiscussionStateReason$reopened._();
 
 @override String get value => 'reopened';
@@ -209,7 +209,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved
 
 @override int get hashCode => 'reopened'.hashCode;
 
- }
+}
 @immutable final class DiscussionStateReason$$null extends DiscussionStateReason {const DiscussionStateReason$$null._();
 
 @override String get value => 'null';
@@ -218,7 +218,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class DiscussionStateReason$Unknown extends DiscussionStateReason {const DiscussionStateReason$Unknown(this.value);
 
 @override final String value;
@@ -228,11 +228,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Discussion in a repository.
 @immutable final class Discussion {const Discussion({required this.activeLockReason, required this.answerChosenAt, required this.answerChosenBy, required this.answerHtmlUrl, required this.body, required this.category, required this.comments, required this.createdAt, required this.htmlUrl, required this.id, required this.locked, required this.nodeId, required this.number, required this.repositoryUrl, required this.state, required this.stateReason, required this.title, required this.updatedAt, required this.user, this.authorAssociation, this.reactions, this.timelineUrl, this.labels, });
 
-factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
+factory Discussion.fromJson(Map<String, dynamic> json) {return Discussion(
   activeLockReason: json['active_lock_reason'] as String?,
   answerChosenAt: json['answer_chosen_at'] as String?,
   answerChosenBy: json['answer_chosen_by'] != null ? AnswerChosenBy.fromJson(json['answer_chosen_by'] as Map<String, dynamic>) : null,
@@ -256,7 +256,7 @@ factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   labels: (json['labels'] as List<dynamic>?)?.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String? activeLockReason;
 
@@ -309,7 +309,7 @@ final DiscussionUser? user;
 
 final List<Label>? labels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_lock_reason': activeLockReason,
   'answer_chosen_at': answerChosenAt,
   'answer_chosen_by': answerChosenBy?.toJson(),
@@ -333,8 +333,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'user': user?.toJson(),
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
       json.containsKey('answer_chosen_at') && (json['answer_chosen_at'] == null || json['answer_chosen_at'] is String) &&
       json.containsKey('answer_chosen_by') &&
       json.containsKey('answer_html_url') && (json['answer_html_url'] == null || json['answer_html_url'] is String) &&
@@ -352,8 +352,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('state_reason') &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('user'); } 
-Discussion copyWith({String? Function()? activeLockReason, String? Function()? answerChosenAt, AnswerChosenBy? Function()? answerChosenBy, String? Function()? answerHtmlUrl, AuthorAssociation? Function()? authorAssociation, String? body, DiscussionCategory? category, int? comments, DateTime? createdAt, String? htmlUrl, int? id, bool? locked, String? nodeId, int? number, DiscussionReactions? Function()? reactions, String? repositoryUrl, DiscussionState? state, DiscussionStateReason? Function()? stateReason, String? Function()? timelineUrl, String? title, DateTime? updatedAt, DiscussionUser? Function()? user, List<Label>? Function()? labels, }) { return Discussion(
+      json.containsKey('user');}
+Discussion copyWith({String? Function()? activeLockReason, String? Function()? answerChosenAt, AnswerChosenBy? Function()? answerChosenBy, String? Function()? answerHtmlUrl, AuthorAssociation? Function()? authorAssociation, String? body, DiscussionCategory? category, int? comments, DateTime? createdAt, String? htmlUrl, int? id, bool? locked, String? nodeId, int? number, DiscussionReactions? Function()? reactions, String? repositoryUrl, DiscussionState? state, DiscussionStateReason? Function()? stateReason, String? Function()? timelineUrl, String? title, DateTime? updatedAt, DiscussionUser? Function()? user, List<Label>? Function()? labels, }) {return Discussion(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   answerChosenAt: answerChosenAt != null ? answerChosenAt() : this.answerChosenAt,
   answerChosenBy: answerChosenBy != null ? answerChosenBy() : this.answerChosenBy,
@@ -377,7 +377,7 @@ Discussion copyWith({String? Function()? activeLockReason, String? Function()? a
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
   labels: labels != null ? labels() : this.labels,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Discussion &&
           activeLockReason == other.activeLockReason &&
@@ -408,4 +408,4 @@ Discussion copyWith({String? Function()? activeLockReason, String? Function()? a
 
 @override String toString() => 'Discussion(\n  activeLockReason: $activeLockReason,\n  answerChosenAt: $answerChosenAt,\n  answerChosenBy: $answerChosenBy,\n  answerHtmlUrl: $answerHtmlUrl,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  category: $category,\n  comments: $comments,\n  createdAt: $createdAt,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  locked: $locked,\n  nodeId: $nodeId,\n  number: $number,\n  reactions: $reactions,\n  repositoryUrl: $repositoryUrl,\n  state: $state,\n  stateReason: $stateReason,\n  timelineUrl: $timelineUrl,\n  title: $title,\n  updatedAt: $updatedAt,\n  user: $user,\n  labels: $labels,\n)';
 
- }
+}

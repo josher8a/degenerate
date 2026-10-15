@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAsnsRelResponseResultMeta {const RadarGetAsnsRelResponseResultMeta({required this.dataTime, required this.queryTime, required this.totalPeers, });
 
-factory RadarGetAsnsRelResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAsnsRelResponseResultMeta(
+factory RadarGetAsnsRelResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetAsnsRelResponseResultMeta(
   dataTime: json['data_time'] as String,
   queryTime: json['query_time'] as String,
   totalPeers: (json['total_peers'] as num).toInt(),
-); }
+);}
 
 final String dataTime;
 
@@ -15,19 +15,19 @@ final String queryTime;
 
 final int totalPeers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data_time': dataTime,
   'query_time': queryTime,
   'total_peers': totalPeers,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_time') && json['data_time'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data_time') && json['data_time'] is String &&
       json.containsKey('query_time') && json['query_time'] is String &&
-      json.containsKey('total_peers') && json['total_peers'] is num; } 
-RadarGetAsnsRelResponseResultMeta copyWith({String? dataTime, String? queryTime, int? totalPeers, }) { return RadarGetAsnsRelResponseResultMeta(
+      json.containsKey('total_peers') && json['total_peers'] is num;}
+RadarGetAsnsRelResponseResultMeta copyWith({String? dataTime, String? queryTime, int? totalPeers, }) {return RadarGetAsnsRelResponseResultMeta(
   dataTime: dataTime ?? this.dataTime,
   queryTime: queryTime ?? this.queryTime,
   totalPeers: totalPeers ?? this.totalPeers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAsnsRelResponseResultMeta &&
           dataTime == other.dataTime &&
@@ -38,4 +38,4 @@ RadarGetAsnsRelResponseResultMeta copyWith({String? dataTime, String? queryTime,
 
 @override String toString() => 'RadarGetAsnsRelResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalPeers: $totalPeers)';
 
- }
+}

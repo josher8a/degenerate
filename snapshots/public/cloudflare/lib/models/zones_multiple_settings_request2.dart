@@ -7,7 +7,7 @@ const ZonesMultipleSettingsRequest2({this.zones0rttRequest = const Omittable.abs
 const ZonesMultipleSettingsRequest2._({required this.rawValue, required this.zones0rttRequest, required this.zonesAdvancedDdosRequest, required this.zonesCacheRulesAegisRequest, required this.zonesAlwaysOnlineRequest, required this.zonesSchemasAlwaysUseHttpsRequest, required this.zonesSchemasAutomaticHttpsRewritesRequest, required this.zonesBrotliRequest, required this.zonesSchemasBrowserCacheTtlRequest, required this.zonesSchemasBrowserCheckRequest, required this.zonesSchemasCacheLevelRequest, required this.zonesChallengeTtlRequest, required this.zonesChinaNetworkEnabledRequest, required this.zonesContentConverterRequest, required this.zonesCiphersRequest, required this.zonesCnameFlatteningRequest, required this.zonesDevelopmentModeRequest, required this.zonesEarlyHintsRequest, required this.zonesSchemasEdgeCacheTtlRequest, required this.zonesSchemasEmailObfuscationRequest, required this.zonesH2PrioritizationRequest, required this.zonesHotlinkProtectionRequest, required this.zonesHttp2Request, required this.zonesHttp3Request, required this.zonesSchemasIpGeolocationRequest, required this.zonesIpv6Request, required this.zonesMaxUploadRequest, required this.zonesMinTlsVersionRequest, required this.zonesSchemasMirageRequest, required this.zonesNelRequest, required this.zonesSchemasOpportunisticEncryptionRequest, required this.zonesOpportunisticOnionRequest, required this.zonesOrangeToOrangeRequest, required this.zonesSchemasOriginErrorPagePassThruRequest, required this.zonesCacheRulesOriginH2MaxStreamsRequest, required this.zonesCacheRulesOriginMaxHttpVersionRequest, required this.zonesSchemasPolishRequest, required this.zonesPrefetchPreloadRequest, required this.zonesPrivacyPassRequest, required this.zonesProxyReadTimeoutRequest, required this.zonesPseudoIpv4Request, required this.zonesRedirectsForAiTrainingRequest, required this.zonesReplaceInsecureJsRequest, required this.zonesSchemasResponseBufferingRequest, required this.zonesSchemasRocketLoaderRequest, required this.zonesSchemasAutomaticPlatformOptimizationRequest, required this.zonesSecurityHeaderRequest, required this.zonesSchemasSecurityLevelRequest, required this.zonesServerSideExcludeRequest, required this.zonesSha1SupportRequest, required this.zonesSchemasSortQueryStringForCacheRequest, required this.zonesSchemasSslRequest, required this.zonesSslRecommender, required this.zonesTls12OnlyRequest, required this.zonesTls13Request, required this.zonesTlsClientAuthRequest, required this.zonesSchemasTrueClientIpHeaderRequest, required this.zonesSchemasWafRequest, required this.zonesWebpRequest, required this.zonesWebsocketsRequest, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ZonesMultipleSettingsRequest2.fromJson(Object? json) { return ZonesMultipleSettingsRequest2._(
+factory ZonesMultipleSettingsRequest2.fromJson(Object? json) {return ZonesMultipleSettingsRequest2._(
   rawValue: Omittable(json),
   zones0rttRequest: json is Map<String, dynamic> && Zones0rttRequest.canParse(json) ? parseAnyOfVariant<Zones0rttRequest>(json, (value) => Zones0rttRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zonesAdvancedDdosRequest: json is Map<String, dynamic> && ZonesAdvancedDdosRequest.canParse(json) ? parseAnyOfVariant<ZonesAdvancedDdosRequest>(json, (value) => ZonesAdvancedDdosRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -68,7 +68,7 @@ factory ZonesMultipleSettingsRequest2.fromJson(Object? json) { return ZonesMulti
   zonesSchemasWafRequest: json is Map<String, dynamic> && ZonesSchemasWafRequest.canParse(json) ? parseAnyOfVariant<ZonesSchemasWafRequest>(json, (value) => ZonesSchemasWafRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zonesWebpRequest: json is Map<String, dynamic> && ZonesWebpRequest.canParse(json) ? parseAnyOfVariant<ZonesWebpRequest>(json, (value) => ZonesWebpRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   zonesWebsocketsRequest: json is Map<String, dynamic> && ZonesWebsocketsRequest.canParse(json) ? parseAnyOfVariant<ZonesWebsocketsRequest>(json, (value) => ZonesWebsocketsRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -326,4 +326,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ZonesMultipleSettingsRequest2(${toJson()})';
 
- }
+}

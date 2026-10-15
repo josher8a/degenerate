@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Related guides: [Customer tax identification numbers](https://docs.stripe.com/billing/taxes/tax-ids), [Account tax IDs](https://docs.stripe.com/invoicing/connect#account-tax-ids)
 @immutable final class TaxId {const TaxId({required this.created, required this.id, required this.livemode, required this.object, required this.type, required this.value, this.country = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.owner = const Omittable.absent(), this.verification = const Omittable.absent(), });
 
-factory TaxId.fromJson(Map<String, dynamic> json) { return TaxId(
+factory TaxId.fromJson(Map<String, dynamic> json) {return TaxId(
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? BankConnectionsResourceAccountholderCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
@@ -19,7 +19,7 @@ factory TaxId.fromJson(Map<String, dynamic> json) { return TaxId(
   type: InvoicesResourceInvoiceTaxIdType.fromJson(json['type'] as String),
   value: json['value'] as String,
   verification: json.containsKey('verification') ? Omittable(json['verification'] != null ? TaxIdVerification.fromJson(json['verification'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Two-letter ISO code representing the country of the tax ID.
 final Omittable<String?> country;
@@ -54,7 +54,7 @@ final String value;
 /// Tax ID verification information.
 final Omittable<TaxIdVerification?> verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (country.isPresent) 'country': country.value,
   'created': created,
   if (customer.isPresent) 'customer': customer.value?.toJson(),
@@ -66,15 +66,15 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'value': value,
   if (verification.isPresent) 'verification': verification.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') && json['object'] == 'tax_id' &&
       json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
+      json.containsKey('value') && json['value'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final country$ = country.value;
 if (country$ != null) {
   if (country$.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
@@ -85,8 +85,8 @@ if (customerAccount$ != null) {
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (value.runes.length > 5000) { errors.add('value: length must be <= 5000'); }
-return errors; } 
-TaxId copyWith({Omittable<String?>? country, int? created, Omittable<BankConnectionsResourceAccountholderCustomer?>? customer, Omittable<String?>? customerAccount, String? id, bool? livemode, DeletedTaxIdObject? object, Omittable<TaxIDsOwner?>? owner, InvoicesResourceInvoiceTaxIdType? type, String? value, Omittable<TaxIdVerification?>? verification, }) { return TaxId(
+return errors;}
+TaxId copyWith({Omittable<String?>? country, int? created, Omittable<BankConnectionsResourceAccountholderCustomer?>? customer, Omittable<String?>? customerAccount, String? id, bool? livemode, DeletedTaxIdObject? object, Omittable<TaxIDsOwner?>? owner, InvoicesResourceInvoiceTaxIdType? type, String? value, Omittable<TaxIdVerification?>? verification, }) {return TaxId(
   country: country ?? this.country,
   created: created ?? this.created,
   customer: customer ?? this.customer,
@@ -98,7 +98,7 @@ TaxId copyWith({Omittable<String?>? country, int? created, Omittable<BankConnect
   type: type ?? this.type,
   value: value ?? this.value,
   verification: verification ?? this.verification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxId &&
           country == other.country &&
@@ -117,4 +117,4 @@ TaxId copyWith({Omittable<String?>? country, int? created, Omittable<BankConnect
 
 @override String toString() => 'TaxId(\n  country: $country,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  owner: $owner,\n  type: $type,\n  value: $value,\n  verification: $verification,\n)';
 
- }
+}

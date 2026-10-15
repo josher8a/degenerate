@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel();
 
-factory EmailSecurityDispositionLabel.fromJson(String json) { return switch (json) {
+factory EmailSecurityDispositionLabel.fromJson(String json) {return switch (json) {
   'MALICIOUS' => malicious,
   'MALICIOUS-BEC' => maliciousBec,
   'SUSPICIOUS' => suspicious,
@@ -15,7 +15,7 @@ factory EmailSecurityDispositionLabel.fromJson(String json) { return switch (jso
   'UNKNOWN' => unknown,
   'NONE' => none,
   _ => EmailSecurityDispositionLabel$Unknown(json),
-}; }
+};}
 
 static const EmailSecurityDispositionLabel malicious = EmailSecurityDispositionLabel$malicious._();
 
@@ -40,9 +40,9 @@ static const EmailSecurityDispositionLabel none = EmailSecurityDispositionLabel$
 static const List<EmailSecurityDispositionLabel> values = [malicious, maliciousBec, suspicious, spoof, spam, bulk, encrypted, $external, unknown, none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'MALICIOUS' => 'malicious',
   'MALICIOUS-BEC' => 'maliciousBec',
   'SUSPICIOUS' => 'suspicious',
@@ -54,11 +54,11 @@ String get name { return switch (value) {
   'UNKNOWN' => 'unknown',
   'NONE' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EmailSecurityDispositionLabel$Unknown; } 
+bool get isUnknown {return this is EmailSecurityDispositionLabel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() malicious, required W Function() maliciousBec, required W Function() suspicious, required W Function() spoof, required W Function() spam, required W Function() bulk, required W Function() encrypted, required W Function() $external, required W Function() unknown, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() malicious, required W Function() maliciousBec, required W Function() suspicious, required W Function() spoof, required W Function() spam, required W Function() bulk, required W Function() encrypted, required W Function() $external, required W Function() unknown, required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       EmailSecurityDispositionLabel$malicious() => malicious(),
       EmailSecurityDispositionLabel$maliciousBec() => maliciousBec(),
       EmailSecurityDispositionLabel$suspicious() => suspicious(),
@@ -70,9 +70,9 @@ W when<W>({required W Function() malicious, required W Function() maliciousBec, 
       EmailSecurityDispositionLabel$unknown() => unknown(),
       EmailSecurityDispositionLabel$none() => none(),
       EmailSecurityDispositionLabel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? malicious, W Function()? maliciousBec, W Function()? suspicious, W Function()? spoof, W Function()? spam, W Function()? bulk, W Function()? encrypted, W Function()? $external, W Function()? unknown, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? malicious, W Function()? maliciousBec, W Function()? suspicious, W Function()? spoof, W Function()? spam, W Function()? bulk, W Function()? encrypted, W Function()? $external, W Function()? unknown, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       EmailSecurityDispositionLabel$malicious() => malicious != null ? malicious() : orElse(value),
       EmailSecurityDispositionLabel$maliciousBec() => maliciousBec != null ? maliciousBec() : orElse(value),
       EmailSecurityDispositionLabel$suspicious() => suspicious != null ? suspicious() : orElse(value),
@@ -84,10 +84,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
       EmailSecurityDispositionLabel$unknown() => unknown != null ? unknown() : orElse(value),
       EmailSecurityDispositionLabel$none() => none != null ? none() : orElse(value),
       EmailSecurityDispositionLabel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EmailSecurityDispositionLabel($value)';
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$malicious extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$malicious._();
 
 @override String get value => 'MALICIOUS';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'MALICIOUS'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$maliciousBec extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$maliciousBec._();
 
 @override String get value => 'MALICIOUS-BEC';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'MALICIOUS-BEC'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$suspicious extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$suspicious._();
 
 @override String get value => 'SUSPICIOUS';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'SUSPICIOUS'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$spoof extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$spoof._();
 
 @override String get value => 'SPOOF';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'SPOOF'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$spam extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$spam._();
 
 @override String get value => 'SPAM';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'SPAM'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$bulk extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$bulk._();
 
 @override String get value => 'BULK';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'BULK'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$encrypted extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$encrypted._();
 
 @override String get value => 'ENCRYPTED';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'ENCRYPTED'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$$external extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$$external._();
 
 @override String get value => 'EXTERNAL';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'EXTERNAL'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$unknown extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$unknown._();
 
 @override String get value => 'UNKNOWN';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'UNKNOWN'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$none extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$none._();
 
 @override String get value => 'NONE';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'NONE'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityDispositionLabel$Unknown extends EmailSecurityDispositionLabel {const EmailSecurityDispositionLabel$Unknown(this.value);
 
 @override final String value;
@@ -187,4 +187,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesDeploymentLogData {const PagesDeploymentLogData({required this.line, required this.ts, });
 
-factory PagesDeploymentLogData.fromJson(Map<String, dynamic> json) { return PagesDeploymentLogData(
+factory PagesDeploymentLogData.fromJson(Map<String, dynamic> json) {return PagesDeploymentLogData(
   line: json['line'] as String,
   ts: json['ts'] as String,
-); }
+);}
 
 final String line;
 
 final String ts;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'line': line,
   'ts': ts,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('line') && json['line'] is String &&
-      json.containsKey('ts') && json['ts'] is String; } 
-PagesDeploymentLogData copyWith({String? line, String? ts, }) { return PagesDeploymentLogData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('line') && json['line'] is String &&
+      json.containsKey('ts') && json['ts'] is String;}
+PagesDeploymentLogData copyWith({String? line, String? ts, }) {return PagesDeploymentLogData(
   line: line ?? this.line,
   ts: ts ?? this.ts,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentLogData &&
           line == other.line &&
@@ -31,4 +31,4 @@ PagesDeploymentLogData copyWith({String? line, String? ts, }) { return PagesDepl
 
 @override String toString() => 'PagesDeploymentLogData(line: $line, ts: $ts)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Counts per account plan.
 @immutable final class ObservatoryPlanPropertiesInfo {const ObservatoryPlanPropertiesInfo({this.business, this.enterprise, this.free, this.pro, });
 
-factory ObservatoryPlanPropertiesInfo.fromJson(Map<String, dynamic> json) { return ObservatoryPlanPropertiesInfo(
+factory ObservatoryPlanPropertiesInfo.fromJson(Map<String, dynamic> json) {return ObservatoryPlanPropertiesInfo(
   business: json['business'] != null ? (json['business'] as num).toInt() : null,
   enterprise: json['enterprise'] != null ? (json['enterprise'] as num).toInt() : null,
   free: json['free'] != null ? (json['free'] as num).toInt() : null,
   pro: json['pro'] != null ? (json['pro'] as num).toInt() : null,
-); }
+);}
 
 /// Example: `1`
 final int? business;
@@ -23,19 +23,19 @@ final int? free;
 /// Example: `1`
 final int? pro;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'business': ?business,
   'enterprise': ?enterprise,
   'free': ?free,
   'pro': ?pro,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'enterprise', 'free', 'pro'}.contains(key)); } 
-ObservatoryPlanPropertiesInfo copyWith({int? Function()? business, int? Function()? enterprise, int? Function()? free, int? Function()? pro, }) { return ObservatoryPlanPropertiesInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'business', 'enterprise', 'free', 'pro'}.contains(key));}
+ObservatoryPlanPropertiesInfo copyWith({int? Function()? business, int? Function()? enterprise, int? Function()? free, int? Function()? pro, }) {return ObservatoryPlanPropertiesInfo(
   business: business != null ? business() : this.business,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   free: free != null ? free() : this.free,
   pro: pro != null ? pro() : this.pro,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryPlanPropertiesInfo &&
           business == other.business &&
@@ -47,4 +47,4 @@ ObservatoryPlanPropertiesInfo copyWith({int? Function()? business, int? Function
 
 @override String toString() => 'ObservatoryPlanPropertiesInfo(business: $business, enterprise: $enterprise, free: $free, pro: $pro)';
 
- }
+}

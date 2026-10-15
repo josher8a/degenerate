@@ -2,19 +2,19 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure7.dart';sealed class DiscoveryRetrieveDiscoveredOperationsOnAZoneError {const DiscoveryRetrieveDiscoveredOperationsOnAZoneError();
 
-factory DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse(ApiResponse response) {     try {
+factory DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ when response.statusCode >= 400 && response.statusCode <= 499 => DiscoveryRetrieveDiscoveredOperationsOnAZoneError$4XX(ResponseCommonFailure7.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => DiscoveryRetrieveDiscoveredOperationsOnAZoneError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return DiscoveryRetrieveDiscoveredOperationsOnAZoneError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class DiscoveryRetrieveDiscoveredOperationsOnAZoneError$4XX extends DiscoveryRetrieveDiscoveredOperationsOnAZoneError {const DiscoveryRetrieveDiscoveredOperationsOnAZoneError$4XX(this.error, this.statusCode, );
 
 final ResponseCommonFailure7 error;
@@ -23,14 +23,14 @@ final ResponseCommonFailure7 error;
 
 @override Object get typedError => error;
 
- }
+}
 final class DiscoveryRetrieveDiscoveredOperationsOnAZoneError$Unknown extends DiscoveryRetrieveDiscoveredOperationsOnAZoneError {const DiscoveryRetrieveDiscoveredOperationsOnAZoneError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef PatchDiscoveredOperationError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
 typedef PatchDiscoveredOperationsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
 typedef ShieldEndpointManagementAddOperationToAZoneError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;

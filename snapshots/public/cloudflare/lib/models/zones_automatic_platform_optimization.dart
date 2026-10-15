@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesAutomaticPlatformOptimization {const ZonesAutomaticPlatformOptimization({required this.cacheByDeviceType, required this.cf, required this.enabled, required this.hostnames, required this.wordpress, required this.wpPlugin, });
 
-factory ZonesAutomaticPlatformOptimization.fromJson(Map<String, dynamic> json) { return ZonesAutomaticPlatformOptimization(
+factory ZonesAutomaticPlatformOptimization.fromJson(Map<String, dynamic> json) {return ZonesAutomaticPlatformOptimization(
   cacheByDeviceType: json['cache_by_device_type'] as bool,
   cf: json['cf'] as bool,
   enabled: json['enabled'] as bool,
   hostnames: (json['hostnames'] as List<dynamic>).map((e) => e as String).toList(),
   wordpress: json['wordpress'] as bool,
   wpPlugin: json['wp_plugin'] as bool,
-); }
+);}
 
 /// Indicates whether or not [cache by device type](https://developers.cloudflare.com/automatic-platform-optimization/reference/cache-device-type/) is enabled.
 /// 
@@ -42,28 +42,28 @@ final bool wordpress;
 /// Example: `true`
 final bool wpPlugin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cache_by_device_type': cacheByDeviceType,
   'cf': cf,
   'enabled': enabled,
   'hostnames': hostnames,
   'wordpress': wordpress,
   'wp_plugin': wpPlugin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache_by_device_type') && json['cache_by_device_type'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cache_by_device_type') && json['cache_by_device_type'] is bool &&
       json.containsKey('cf') && json['cf'] is bool &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('hostnames') &&
       json.containsKey('wordpress') && json['wordpress'] is bool &&
-      json.containsKey('wp_plugin') && json['wp_plugin'] is bool; } 
-ZonesAutomaticPlatformOptimization copyWith({bool? cacheByDeviceType, bool? cf, bool? enabled, List<String>? hostnames, bool? wordpress, bool? wpPlugin, }) { return ZonesAutomaticPlatformOptimization(
+      json.containsKey('wp_plugin') && json['wp_plugin'] is bool;}
+ZonesAutomaticPlatformOptimization copyWith({bool? cacheByDeviceType, bool? cf, bool? enabled, List<String>? hostnames, bool? wordpress, bool? wpPlugin, }) {return ZonesAutomaticPlatformOptimization(
   cacheByDeviceType: cacheByDeviceType ?? this.cacheByDeviceType,
   cf: cf ?? this.cf,
   enabled: enabled ?? this.enabled,
   hostnames: hostnames ?? this.hostnames,
   wordpress: wordpress ?? this.wordpress,
   wpPlugin: wpPlugin ?? this.wpPlugin,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesAutomaticPlatformOptimization &&
           cacheByDeviceType == other.cacheByDeviceType &&
@@ -77,4 +77,4 @@ ZonesAutomaticPlatformOptimization copyWith({bool? cacheByDeviceType, bool? cf, 
 
 @override String toString() => 'ZonesAutomaticPlatformOptimization(cacheByDeviceType: $cacheByDeviceType, cf: $cf, enabled: $enabled, hostnames: $hostnames, wordpress: $wordpress, wpPlugin: $wpPlugin)';
 
- }
+}

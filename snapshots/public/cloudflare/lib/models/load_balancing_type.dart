@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The protocol to use for the health check. Currently supported protocols are 'HTTP','HTTPS', 'TCP', 'ICMP-PING', 'UDP-ICMP', and 'SMTP'.
 sealed class LoadBalancingType {const LoadBalancingType();
 
-factory LoadBalancingType.fromJson(String json) { return switch (json) {
+factory LoadBalancingType.fromJson(String json) {return switch (json) {
   'http' => http,
   'https' => https,
   'tcp' => tcp,
@@ -12,7 +12,7 @@ factory LoadBalancingType.fromJson(String json) { return switch (json) {
   'icmp_ping' => icmpPing,
   'smtp' => smtp,
   _ => LoadBalancingType$Unknown(json),
-}; }
+};}
 
 static const LoadBalancingType http = LoadBalancingType$http._();
 
@@ -29,9 +29,9 @@ static const LoadBalancingType smtp = LoadBalancingType$smtp._();
 static const List<LoadBalancingType> values = [http, https, tcp, udpIcmp, icmpPing, smtp];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'http' => 'http',
   'https' => 'https',
   'tcp' => 'tcp',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'icmp_ping' => 'icmpPing',
   'smtp' => 'smtp',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LoadBalancingType$Unknown; } 
+bool get isUnknown {return this is LoadBalancingType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() http, required W Function() https, required W Function() tcp, required W Function() udpIcmp, required W Function() icmpPing, required W Function() smtp, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() http, required W Function() https, required W Function() tcp, required W Function() udpIcmp, required W Function() icmpPing, required W Function() smtp, required W Function(String value) $unknown, }) {return switch (this) {
       LoadBalancingType$http() => http(),
       LoadBalancingType$https() => https(),
       LoadBalancingType$tcp() => tcp(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() http, required W Function() https, required W F
       LoadBalancingType$icmpPing() => icmpPing(),
       LoadBalancingType$smtp() => smtp(),
       LoadBalancingType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? https, W Function()? tcp, W Function()? udpIcmp, W Function()? icmpPing, W Function()? smtp, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? https, W Function()? tcp, W Function()? udpIcmp, W Function()? icmpPing, W Function()? smtp, W Function(String value)? $unknown, }) {return switch (this) {
       LoadBalancingType$http() => http != null ? http() : orElse(value),
       LoadBalancingType$https() => https != null ? https() : orElse(value),
       LoadBalancingType$tcp() => tcp != null ? tcp() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
       LoadBalancingType$icmpPing() => icmpPing != null ? icmpPing() : orElse(value),
       LoadBalancingType$smtp() => smtp != null ? smtp() : orElse(value),
       LoadBalancingType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LoadBalancingType($value)';
 
- }
+}
 @immutable final class LoadBalancingType$http extends LoadBalancingType {const LoadBalancingType$http._();
 
 @override String get value => 'http';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'http'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingType$https extends LoadBalancingType {const LoadBalancingType$https._();
 
 @override String get value => 'https';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'https'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingType$tcp extends LoadBalancingType {const LoadBalancingType$tcp._();
 
 @override String get value => 'tcp';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'tcp'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingType$udpIcmp extends LoadBalancingType {const LoadBalancingType$udpIcmp._();
 
 @override String get value => 'udp_icmp';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'udp_icmp'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingType$icmpPing extends LoadBalancingType {const LoadBalancingType$icmpPing._();
 
 @override String get value => 'icmp_ping';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'icmp_ping'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingType$smtp extends LoadBalancingType {const LoadBalancingType$smtp._();
 
 @override String get value => 'smtp';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'smtp'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingType$Unknown extends LoadBalancingType {const LoadBalancingType$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

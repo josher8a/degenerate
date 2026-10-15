@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsPaymentMethodAttachRequest {const PostPaymentMethodsPaymentMethodAttachRequest({this.customer, this.customerAccount, this.expand, });
 
-factory PostPaymentMethodsPaymentMethodAttachRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodAttachRequest(
+factory PostPaymentMethodsPaymentMethodAttachRequest.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsPaymentMethodAttachRequest(
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The ID of the customer to which to attach the PaymentMethod.
 final String? customer;
@@ -18,14 +18,14 @@ final String? customerAccount;
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer': ?customer,
   'customer_account': ?customerAccount,
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'customer_account', 'expand'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer', 'customer_account', 'expand'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
   if (customer$.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
@@ -34,12 +34,12 @@ final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-return errors; } 
-PostPaymentMethodsPaymentMethodAttachRequest copyWith({String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) { return PostPaymentMethodsPaymentMethodAttachRequest(
+return errors;}
+PostPaymentMethodsPaymentMethodAttachRequest copyWith({String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) {return PostPaymentMethodsPaymentMethodAttachRequest(
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodAttachRequest &&
           customer == other.customer &&
@@ -50,4 +50,4 @@ PostPaymentMethodsPaymentMethodAttachRequest copyWith({String? Function()? custo
 
 @override String toString() => 'PostPaymentMethodsPaymentMethodAttachRequest(customer: $customer, customerAccount: $customerAccount, expand: $expand)';
 
- }
+}

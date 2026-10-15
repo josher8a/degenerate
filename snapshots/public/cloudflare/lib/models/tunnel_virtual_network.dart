@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_is_default_network.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_comment.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_name.dart';@immutable final class TunnelVirtualNetwork {const TunnelVirtualNetwork({required this.comment, required this.createdAt, required this.id, required this.isDefaultNetwork, required this.name, this.deletedAt, });
 
-factory TunnelVirtualNetwork.fromJson(Map<String, dynamic> json) { return TunnelVirtualNetwork(
+factory TunnelVirtualNetwork.fromJson(Map<String, dynamic> json) {return TunnelVirtualNetwork(
   comment: TunnelVirtualNetworkComment.fromJson(json['comment'] as String),
   createdAt: TunnelCreatedAt.fromJson(json['created_at'] as String),
   deletedAt: json['deleted_at'] != null ? TunnelDeletedAt.fromJson(json['deleted_at'] as String) : null,
   id: TunnelVirtualNetworkId.fromJson(json['id'] as String),
   isDefaultNetwork: TunnelIsDefaultNetwork.fromJson(json['is_default_network'] as bool),
   name: TunnelVirtualNetworkName.fromJson(json['name'] as String),
-); }
+);}
 
 final TunnelVirtualNetworkComment comment;
 
@@ -27,27 +27,27 @@ final TunnelIsDefaultNetwork isDefaultNetwork;
 
 final TunnelVirtualNetworkName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comment': comment.toJson(),
   'created_at': createdAt.toJson(),
   if (deletedAt != null) 'deleted_at': deletedAt?.toJson(),
   'id': id.toJson(),
   'is_default_network': isDefaultNetwork.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comment') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comment') &&
       json.containsKey('created_at') &&
       json.containsKey('id') &&
       json.containsKey('is_default_network') &&
-      json.containsKey('name'); } 
-TunnelVirtualNetwork copyWith({TunnelVirtualNetworkComment? comment, TunnelCreatedAt? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelVirtualNetworkId? id, TunnelIsDefaultNetwork? isDefaultNetwork, TunnelVirtualNetworkName? name, }) { return TunnelVirtualNetwork(
+      json.containsKey('name');}
+TunnelVirtualNetwork copyWith({TunnelVirtualNetworkComment? comment, TunnelCreatedAt? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelVirtualNetworkId? id, TunnelIsDefaultNetwork? isDefaultNetwork, TunnelVirtualNetworkName? name, }) {return TunnelVirtualNetwork(
   comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
   id: id ?? this.id,
   isDefaultNetwork: isDefaultNetwork ?? this.isDefaultNetwork,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelVirtualNetwork &&
           comment == other.comment &&
@@ -61,4 +61,4 @@ TunnelVirtualNetwork copyWith({TunnelVirtualNetworkComment? comment, TunnelCreat
 
 @override String toString() => 'TunnelVirtualNetwork(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, isDefaultNetwork: $isDefaultNetwork, name: $name)';
 
- }
+}

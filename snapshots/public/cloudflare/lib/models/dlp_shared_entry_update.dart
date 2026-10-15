@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpSharedEntryUpdate {const DlpSharedEntryUpdate({required this.enabled, required this.entryId, });
 
-factory DlpSharedEntryUpdate.fromJson(Map<String, dynamic> json) { return DlpSharedEntryUpdate(
+factory DlpSharedEntryUpdate.fromJson(Map<String, dynamic> json) {return DlpSharedEntryUpdate(
   enabled: json['enabled'] as bool,
   entryId: json['entry_id'] as String,
-); }
+);}
 
 final bool enabled;
 
 final String entryId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'entry_id': entryId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('entry_id') && json['entry_id'] is String; } 
-DlpSharedEntryUpdate copyWith({bool? enabled, String? entryId, }) { return DlpSharedEntryUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('entry_id') && json['entry_id'] is String;}
+DlpSharedEntryUpdate copyWith({bool? enabled, String? entryId, }) {return DlpSharedEntryUpdate(
   enabled: enabled ?? this.enabled,
   entryId: entryId ?? this.entryId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpSharedEntryUpdate &&
           enabled == other.enabled &&
@@ -31,4 +31,4 @@ DlpSharedEntryUpdate copyWith({bool? enabled, String? entryId, }) { return DlpSh
 
 @override String toString() => 'DlpSharedEntryUpdate(enabled: $enabled, entryId: $entryId)';
 
- }
+}

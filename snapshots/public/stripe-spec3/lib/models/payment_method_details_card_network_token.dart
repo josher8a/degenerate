@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsCardNetworkToken {const PaymentMethodDetailsCardNetworkToken({required this.used});
 
-factory PaymentMethodDetailsCardNetworkToken.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardNetworkToken(
+factory PaymentMethodDetailsCardNetworkToken.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCardNetworkToken(
   used: json['used'] as bool,
-); }
+);}
 
 /// Indicates if Stripe used a network token, either user provided or Stripe managed when processing the transaction.
 final bool used;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'used': used,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('used') && json['used'] is bool; } 
-PaymentMethodDetailsCardNetworkToken copyWith({bool? used}) { return PaymentMethodDetailsCardNetworkToken(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('used') && json['used'] is bool;}
+PaymentMethodDetailsCardNetworkToken copyWith({bool? used}) {return PaymentMethodDetailsCardNetworkToken(
   used: used ?? this.used,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCardNetworkToken &&
           used == other.used;
@@ -26,4 +26,4 @@ PaymentMethodDetailsCardNetworkToken copyWith({bool? used}) { return PaymentMeth
 
 @override String toString() => 'PaymentMethodDetailsCardNetworkToken(used: $used)';
 
- }
+}

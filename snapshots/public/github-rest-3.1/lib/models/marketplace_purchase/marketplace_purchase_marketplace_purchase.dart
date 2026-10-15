@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan.dart';@immutable final class MarketplacePurchaseMarketplacePurchase {const MarketplacePurchaseMarketplacePurchase({this.billingCycle, this.nextBillingDate = const Omittable.absent(), this.isInstalled, this.unitCount = const Omittable.absent(), this.onFreeTrial, this.freeTrialEndsOn = const Omittable.absent(), this.updatedAt, this.plan, });
 
-factory MarketplacePurchaseMarketplacePurchase.fromJson(Map<String, dynamic> json) { return MarketplacePurchaseMarketplacePurchase(
+factory MarketplacePurchaseMarketplacePurchase.fromJson(Map<String, dynamic> json) {return MarketplacePurchaseMarketplacePurchase(
   billingCycle: json['billing_cycle'] as String?,
   nextBillingDate: json.containsKey('next_billing_date') ? Omittable(json['next_billing_date'] as String?) : const Omittable.absent(),
   isInstalled: json['is_installed'] as bool?,
@@ -12,7 +12,7 @@ factory MarketplacePurchaseMarketplacePurchase.fromJson(Map<String, dynamic> jso
   freeTrialEndsOn: json.containsKey('free_trial_ends_on') ? Omittable(json['free_trial_ends_on'] as String?) : const Omittable.absent(),
   updatedAt: json['updated_at'] as String?,
   plan: json['plan'] != null ? MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final String? billingCycle;
 
@@ -30,7 +30,7 @@ final String? updatedAt;
 
 final MarketplaceListingPlan? plan;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'billing_cycle': ?billingCycle,
   if (nextBillingDate.isPresent) 'next_billing_date': nextBillingDate.value,
   'is_installed': ?isInstalled,
@@ -39,9 +39,9 @@ Map<String, dynamic> toJson() { return {
   if (freeTrialEndsOn.isPresent) 'free_trial_ends_on': freeTrialEndsOn.value,
   'updated_at': ?updatedAt,
   if (plan != null) 'plan': plan?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_cycle', 'next_billing_date', 'is_installed', 'unit_count', 'on_free_trial', 'free_trial_ends_on', 'updated_at', 'plan'}.contains(key)); } 
-MarketplacePurchaseMarketplacePurchase copyWith({String? Function()? billingCycle, Omittable<String?>? nextBillingDate, bool? Function()? isInstalled, Omittable<int?>? unitCount, bool? Function()? onFreeTrial, Omittable<String?>? freeTrialEndsOn, String? Function()? updatedAt, MarketplaceListingPlan? Function()? plan, }) { return MarketplacePurchaseMarketplacePurchase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_cycle', 'next_billing_date', 'is_installed', 'unit_count', 'on_free_trial', 'free_trial_ends_on', 'updated_at', 'plan'}.contains(key));}
+MarketplacePurchaseMarketplacePurchase copyWith({String? Function()? billingCycle, Omittable<String?>? nextBillingDate, bool? Function()? isInstalled, Omittable<int?>? unitCount, bool? Function()? onFreeTrial, Omittable<String?>? freeTrialEndsOn, String? Function()? updatedAt, MarketplaceListingPlan? Function()? plan, }) {return MarketplacePurchaseMarketplacePurchase(
   billingCycle: billingCycle != null ? billingCycle() : this.billingCycle,
   nextBillingDate: nextBillingDate ?? this.nextBillingDate,
   isInstalled: isInstalled != null ? isInstalled() : this.isInstalled,
@@ -50,7 +50,7 @@ MarketplacePurchaseMarketplacePurchase copyWith({String? Function()? billingCycl
   freeTrialEndsOn: freeTrialEndsOn ?? this.freeTrialEndsOn,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   plan: plan != null ? plan() : this.plan,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MarketplacePurchaseMarketplacePurchase &&
           billingCycle == other.billingCycle &&
@@ -66,4 +66,4 @@ MarketplacePurchaseMarketplacePurchase copyWith({String? Function()? billingCycl
 
 @override String toString() => 'MarketplacePurchaseMarketplacePurchase(billingCycle: $billingCycle, nextBillingDate: $nextBillingDate, isInstalled: $isInstalled, unitCount: $unitCount, onFreeTrial: $onFreeTrial, freeTrialEndsOn: $freeTrialEndsOn, updatedAt: $updatedAt, plan: $plan)';
 
- }
+}

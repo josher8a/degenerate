@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_allow_iframe.dart';import 'package:pub_cloudflare/models/access_app_launcher_visible.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_components_schemas_domain.dart';import 'package:pub_cloudflare/models/access_custom_deny_message.dart';import 'package:pub_cloudflare/models/access_enable_binding_cookie.dart';import 'package:pub_cloudflare/models/access_http_only_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_same_site_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_cors_headers.dart';import 'package:pub_cloudflare/models/access_schemas_custom_deny_url.dart';import 'package:pub_cloudflare/models/access_schemas_options_preflight_bypass.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config.dart';import 'package:pub_cloudflare/models/access_service_auth401_redirect.dart';import 'package:pub_cloudflare/models/access_skip_interstitial.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_use_clientless_isolation_app_launcher_url.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class SelfHostedApplication5 {const SelfHostedApplication5({required this.domain, required this.type, this.createdAt, this.id, this.scimConfig, this.updatedAt, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.name, this.optionsPreflightBypass, this.sameSiteCookieAttribute, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.useClientlessIsolationAppLauncherUrl, });
 
-factory SelfHostedApplication5.fromJson(Map<String, dynamic> json) { return SelfHostedApplication5(
+factory SelfHostedApplication5.fromJson(Map<String, dynamic> json) {return SelfHostedApplication5(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   scimConfig: json['scim_config'] != null ? AccessSchemasScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
@@ -27,7 +27,7 @@ factory SelfHostedApplication5.fromJson(Map<String, dynamic> json) { return Self
   skipInterstitial: json['skip_interstitial'] != null ? AccessSkipInterstitial.fromJson(json['skip_interstitial'] as bool) : null,
   type: json['type'] as String,
   useClientlessIsolationAppLauncherUrl: json['use_clientless_isolation_app_launcher_url'] != null ? AccessUseClientlessIsolationAppLauncherUrl.fromJson(json['use_clientless_isolation_app_launcher_url'] as bool) : null,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -99,7 +99,7 @@ final String type;
 /// 
 final AccessUseClientlessIsolationAppLauncherUrl? useClientlessIsolationAppLauncherUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
@@ -123,10 +123,10 @@ Map<String, dynamic> toJson() { return {
   if (skipInterstitial != null) 'skip_interstitial': skipInterstitial?.toJson(),
   'type': type,
   if (useClientlessIsolationAppLauncherUrl != null) 'use_clientless_isolation_app_launcher_url': useClientlessIsolationAppLauncherUrl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
-      json.containsKey('type') && json['type'] is String; } 
-SelfHostedApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessSchemasCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessSchemasCustomDenyUrl? Function()? customDenyUrl, AccessComponentsSchemasDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, String? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, }) { return SelfHostedApplication5(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') &&
+      json.containsKey('type') && json['type'] is String;}
+SelfHostedApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessSchemasCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessSchemasCustomDenyUrl? Function()? customDenyUrl, AccessComponentsSchemasDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, String? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, }) {return SelfHostedApplication5(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
@@ -150,7 +150,7 @@ SelfHostedApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessU
   skipInterstitial: skipInterstitial != null ? skipInterstitial() : this.skipInterstitial,
   type: type ?? this.type,
   useClientlessIsolationAppLauncherUrl: useClientlessIsolationAppLauncherUrl != null ? useClientlessIsolationAppLauncherUrl() : this.useClientlessIsolationAppLauncherUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SelfHostedApplication5 &&
           createdAt == other.createdAt &&
@@ -181,4 +181,4 @@ SelfHostedApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessU
 
 @override String toString() => 'SelfHostedApplication5(\n  createdAt: $createdAt,\n  id: $id,\n  scimConfig: $scimConfig,\n  updatedAt: $updatedAt,\n  allowIframe: $allowIframe,\n  allowedIdps: $allowedIdps,\n  appLauncherVisible: $appLauncherVisible,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  corsHeaders: $corsHeaders,\n  customDenyMessage: $customDenyMessage,\n  customDenyUrl: $customDenyUrl,\n  domain: $domain,\n  enableBindingCookie: $enableBindingCookie,\n  httpOnlyCookieAttribute: $httpOnlyCookieAttribute,\n  logoUrl: $logoUrl,\n  name: $name,\n  optionsPreflightBypass: $optionsPreflightBypass,\n  sameSiteCookieAttribute: $sameSiteCookieAttribute,\n  serviceAuth401Redirect: $serviceAuth401Redirect,\n  sessionDuration: $sessionDuration,\n  skipInterstitial: $skipInterstitial,\n  type: $type,\n  useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl,\n)';
 
- }
+}

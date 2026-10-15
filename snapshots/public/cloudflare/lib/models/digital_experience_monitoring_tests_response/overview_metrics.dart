@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OverviewMetrics {const OverviewMetrics({required this.testsTotal, this.avgHttpAvailabilityPct = const Omittable.absent(), this.avgTracerouteAvailabilityPct = const Omittable.absent(), });
 
-factory OverviewMetrics.fromJson(Map<String, dynamic> json) { return OverviewMetrics(
+factory OverviewMetrics.fromJson(Map<String, dynamic> json) {return OverviewMetrics(
   avgHttpAvailabilityPct: json.containsKey('avgHttpAvailabilityPct') ? Omittable(json['avgHttpAvailabilityPct'] != null ? (json['avgHttpAvailabilityPct'] as num).toDouble() : null) : const Omittable.absent(),
   avgTracerouteAvailabilityPct: json.containsKey('avgTracerouteAvailabilityPct') ? Omittable(json['avgTracerouteAvailabilityPct'] != null ? (json['avgTracerouteAvailabilityPct'] as num).toDouble() : null) : const Omittable.absent(),
   testsTotal: (json['testsTotal'] as num).toInt(),
-); }
+);}
 
 /// percentage availability for all HTTP test results in response
 final Omittable<double?> avgHttpAvailabilityPct;
@@ -18,17 +18,17 @@ final Omittable<double?> avgTracerouteAvailabilityPct;
 /// number of  tests.
 final int testsTotal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (avgHttpAvailabilityPct.isPresent) 'avgHttpAvailabilityPct': avgHttpAvailabilityPct.value,
   if (avgTracerouteAvailabilityPct.isPresent) 'avgTracerouteAvailabilityPct': avgTracerouteAvailabilityPct.value,
   'testsTotal': testsTotal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('testsTotal') && json['testsTotal'] is num; } 
-OverviewMetrics copyWith({Omittable<double?>? avgHttpAvailabilityPct, Omittable<double?>? avgTracerouteAvailabilityPct, int? testsTotal, }) { return OverviewMetrics(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('testsTotal') && json['testsTotal'] is num;}
+OverviewMetrics copyWith({Omittable<double?>? avgHttpAvailabilityPct, Omittable<double?>? avgTracerouteAvailabilityPct, int? testsTotal, }) {return OverviewMetrics(
   avgHttpAvailabilityPct: avgHttpAvailabilityPct ?? this.avgHttpAvailabilityPct,
   avgTracerouteAvailabilityPct: avgTracerouteAvailabilityPct ?? this.avgTracerouteAvailabilityPct,
   testsTotal: testsTotal ?? this.testsTotal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OverviewMetrics &&
           avgHttpAvailabilityPct == other.avgHttpAvailabilityPct &&
@@ -39,4 +39,4 @@ OverviewMetrics copyWith({Omittable<double?>? avgHttpAvailabilityPct, Omittable<
 
 @override String toString() => 'OverviewMetrics(avgHttpAvailabilityPct: $avgHttpAvailabilityPct, avgTracerouteAvailabilityPct: $avgTracerouteAvailabilityPct, testsTotal: $testsTotal)';
 
- }
+}

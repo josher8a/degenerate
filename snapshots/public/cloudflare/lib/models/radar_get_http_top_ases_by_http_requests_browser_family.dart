@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByHttpRequestsBrowserFamily {const RadarGetHttpTopAsesByHttpRequestsBrowserFamily();
 
-factory RadarGetHttpTopAsesByHttpRequestsBrowserFamily.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByHttpRequestsBrowserFamily.fromJson(String json) {return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
   _ => RadarGetHttpTopAsesByHttpRequestsBrowserFamily$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByHttpRequestsBrowserFamily chrome = RadarGetHttpTopAsesByHttpRequestsBrowserFamily$chrome._();
 
@@ -22,36 +22,36 @@ static const RadarGetHttpTopAsesByHttpRequestsBrowserFamily safari = RadarGetHtt
 static const List<RadarGetHttpTopAsesByHttpRequestsBrowserFamily> values = [chrome, edge, firefox, safari];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'CHROME' => 'chrome',
   'EDGE' => 'edge',
   'FIREFOX' => 'firefox',
   'SAFARI' => 'safari',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopAsesByHttpRequestsBrowserFamily$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopAsesByHttpRequestsBrowserFamily$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$chrome() => chrome(),
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$edge() => edge(),
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$firefox() => firefox(),
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$safari() => safari(),
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$chrome() => chrome != null ? chrome() : orElse(value),
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$edge() => edge != null ? edge() : orElse(value),
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$firefox() => firefox != null ? firefox() : orElse(value),
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$safari() => safari != null ? safari() : orElse(value),
       RadarGetHttpTopAsesByHttpRequestsBrowserFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopAsesByHttpRequestsBrowserFamily($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByHttpRequestsBrowserFamily$chrome extends RadarGetHttpTopAsesByHttpRequestsBrowserFamily {const RadarGetHttpTopAsesByHttpRequestsBrowserFamily$chrome._();
 
 @override String get value => 'CHROME';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'CHROME'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByHttpRequestsBrowserFamily$edge extends RadarGetHttpTopAsesByHttpRequestsBrowserFamily {const RadarGetHttpTopAsesByHttpRequestsBrowserFamily$edge._();
 
 @override String get value => 'EDGE';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'EDGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByHttpRequestsBrowserFamily$firefox extends RadarGetHttpTopAsesByHttpRequestsBrowserFamily {const RadarGetHttpTopAsesByHttpRequestsBrowserFamily$firefox._();
 
 @override String get value => 'FIREFOX';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'FIREFOX'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByHttpRequestsBrowserFamily$safari extends RadarGetHttpTopAsesByHttpRequestsBrowserFamily {const RadarGetHttpTopAsesByHttpRequestsBrowserFamily$safari._();
 
 @override String get value => 'SAFARI';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => 'SAFARI'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByHttpRequestsBrowserFamily$Unknown extends RadarGetHttpTopAsesByHttpRequestsBrowserFamily {const RadarGetHttpTopAsesByHttpRequestsBrowserFamily$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

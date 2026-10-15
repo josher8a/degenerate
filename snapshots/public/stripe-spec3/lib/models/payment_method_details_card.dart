@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_checks.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_installments.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_network_token.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet.dart';import 'package:pub_stripe_spec3/models/resource_enterprise_features_extended_authorization_extended_authorization.dart';import 'package:pub_stripe_spec3/models/resource_enterprise_features_incremental_authorization_incremental_authorization.dart';import 'package:pub_stripe_spec3/models/resource_enterprise_features_overcapture_overcapture.dart';import 'package:pub_stripe_spec3/models/resource_multicapture.dart';import 'package:pub_stripe_spec3/models/three_d_secure_details_charge.dart';/// 
 @immutable final class PaymentMethodDetailsCard {const PaymentMethodDetailsCard({required this.expMonth, required this.expYear, this.amountAuthorized = const Omittable.absent(), this.authorizationCode = const Omittable.absent(), this.brand = const Omittable.absent(), this.captureBefore, this.checks = const Omittable.absent(), this.country = const Omittable.absent(), this.extendedAuthorization, this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.incrementalAuthorization, this.installments = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate = const Omittable.absent(), this.multicapture, this.network = const Omittable.absent(), this.networkToken = const Omittable.absent(), this.networkTransactionId = const Omittable.absent(), this.overcapture, this.regulatedStatus = const Omittable.absent(), this.threeDSecure = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCard(
+factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCard(
   amountAuthorized: json.containsKey('amount_authorized') ? Omittable(json['amount_authorized'] != null ? (json['amount_authorized'] as num).toInt() : null) : const Omittable.absent(),
   authorizationCode: json.containsKey('authorization_code') ? Omittable(json['authorization_code'] as String?) : const Omittable.absent(),
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
@@ -28,7 +28,7 @@ factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return Pa
   regulatedStatus: json.containsKey('regulated_status') ? Omittable(json['regulated_status'] != null ? RegulatedStatus.fromJson(json['regulated_status'] as String) : null) : const Omittable.absent(),
   threeDSecure: json.containsKey('three_d_secure') ? Omittable(json['three_d_secure'] != null ? ThreeDSecureDetailsCharge.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? PaymentMethodDetailsCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The authorized amount.
 final Omittable<int?> amountAuthorized;
@@ -99,7 +99,7 @@ final Omittable<ThreeDSecureDetailsCharge?> threeDSecure;
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
 final Omittable<PaymentMethodDetailsCardWallet?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountAuthorized.isPresent) 'amount_authorized': amountAuthorized.value,
   if (authorizationCode.isPresent) 'authorization_code': authorizationCode.value,
   if (brand.isPresent) 'brand': brand.value,
@@ -123,11 +123,11 @@ Map<String, dynamic> toJson() { return {
   if (regulatedStatus.isPresent) 'regulated_status': regulatedStatus.value?.toJson(),
   if (threeDSecure.isPresent) 'three_d_secure': threeDSecure.value?.toJson(),
   if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
-      json.containsKey('exp_year') && json['exp_year'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
+      json.containsKey('exp_year') && json['exp_year'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final authorizationCode$ = authorizationCode.value;
 if (authorizationCode$ != null) {
   if (authorizationCode$.runes.length > 5000) { errors.add('authorizationCode: length must be <= 5000'); }
@@ -164,8 +164,8 @@ final networkTransactionId$ = networkTransactionId.value;
 if (networkTransactionId$ != null) {
   if (networkTransactionId$.runes.length > 5000) { errors.add('networkTransactionId: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsCard copyWith({Omittable<int?>? amountAuthorized, Omittable<String?>? authorizationCode, Omittable<String?>? brand, int? Function()? captureBefore, Omittable<PaymentMethodDetailsCardChecks?>? checks, Omittable<String?>? country, int? expMonth, int? expYear, ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization? Function()? extendedAuthorization, Omittable<String?>? fingerprint, Omittable<String?>? funding, ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization? Function()? incrementalAuthorization, Omittable<PaymentMethodDetailsCardInstallments?>? installments, Omittable<String?>? last4, Omittable<String?>? mandate, ResourceMulticapture? Function()? multicapture, Omittable<String?>? network, Omittable<PaymentMethodDetailsCardNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, ResourceEnterpriseFeaturesOvercaptureOvercapture? Function()? overcapture, Omittable<RegulatedStatus?>? regulatedStatus, Omittable<ThreeDSecureDetailsCharge?>? threeDSecure, Omittable<PaymentMethodDetailsCardWallet?>? wallet, }) { return PaymentMethodDetailsCard(
+return errors;}
+PaymentMethodDetailsCard copyWith({Omittable<int?>? amountAuthorized, Omittable<String?>? authorizationCode, Omittable<String?>? brand, int? Function()? captureBefore, Omittable<PaymentMethodDetailsCardChecks?>? checks, Omittable<String?>? country, int? expMonth, int? expYear, ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization? Function()? extendedAuthorization, Omittable<String?>? fingerprint, Omittable<String?>? funding, ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization? Function()? incrementalAuthorization, Omittable<PaymentMethodDetailsCardInstallments?>? installments, Omittable<String?>? last4, Omittable<String?>? mandate, ResourceMulticapture? Function()? multicapture, Omittable<String?>? network, Omittable<PaymentMethodDetailsCardNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, ResourceEnterpriseFeaturesOvercaptureOvercapture? Function()? overcapture, Omittable<RegulatedStatus?>? regulatedStatus, Omittable<ThreeDSecureDetailsCharge?>? threeDSecure, Omittable<PaymentMethodDetailsCardWallet?>? wallet, }) {return PaymentMethodDetailsCard(
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   authorizationCode: authorizationCode ?? this.authorizationCode,
   brand: brand ?? this.brand,
@@ -189,7 +189,7 @@ PaymentMethodDetailsCard copyWith({Omittable<int?>? amountAuthorized, Omittable<
   regulatedStatus: regulatedStatus ?? this.regulatedStatus,
   threeDSecure: threeDSecure ?? this.threeDSecure,
   wallet: wallet ?? this.wallet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCard &&
           amountAuthorized == other.amountAuthorized &&
@@ -220,4 +220,4 @@ PaymentMethodDetailsCard copyWith({Omittable<int?>? amountAuthorized, Omittable<
 
 @override String toString() => 'PaymentMethodDetailsCard(\n  amountAuthorized: $amountAuthorized,\n  authorizationCode: $authorizationCode,\n  brand: $brand,\n  captureBefore: $captureBefore,\n  checks: $checks,\n  country: $country,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  extendedAuthorization: $extendedAuthorization,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  incrementalAuthorization: $incrementalAuthorization,\n  installments: $installments,\n  last4: $last4,\n  mandate: $mandate,\n  multicapture: $multicapture,\n  network: $network,\n  networkToken: $networkToken,\n  networkTransactionId: $networkTransactionId,\n  overcapture: $overcapture,\n  regulatedStatus: $regulatedStatus,\n  threeDSecure: $threeDSecure,\n  wallet: $wallet,\n)';
 
- }
+}

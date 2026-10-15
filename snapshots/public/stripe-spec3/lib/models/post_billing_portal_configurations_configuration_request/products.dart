@@ -7,11 +7,11 @@ const Products({this.listProductsVariant1 = const Omittable.absent(), this.getPa
 const Products._({required this.rawValue, required this.listProductsVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Products.fromJson(Object? json) { return Products._(
+factory Products.fromJson(Object? json) {return Products._(
   rawValue: Omittable(json),
   listProductsVariant1: parseAnyOfVariant<List<ProductsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => ProductsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Products(${toJson()})';
 
- }
+}

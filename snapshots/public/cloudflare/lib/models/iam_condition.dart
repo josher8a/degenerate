@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_request_ip.dart';@immutable final class IamCondition {const IamCondition({this.requestIp});
 
-factory IamCondition.fromJson(Map<String, dynamic> json) { return IamCondition(
+factory IamCondition.fromJson(Map<String, dynamic> json) {return IamCondition(
   requestIp: json['request_ip'] != null ? IamRequestIp.fromJson(json['request_ip'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final IamRequestIp? requestIp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (requestIp != null) 'request_ip': requestIp?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'request_ip'}.contains(key)); } 
-IamCondition copyWith({IamRequestIp? Function()? requestIp}) { return IamCondition(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'request_ip'}.contains(key));}
+IamCondition copyWith({IamRequestIp? Function()? requestIp}) {return IamCondition(
   requestIp: requestIp != null ? requestIp() : this.requestIp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamCondition &&
           requestIp == other.requestIp;
@@ -24,4 +24,4 @@ IamCondition copyWith({IamRequestIp? Function()? requestIp}) { return IamConditi
 
 @override String toString() => 'IamCondition(requestIp: $requestIp)';
 
- }
+}

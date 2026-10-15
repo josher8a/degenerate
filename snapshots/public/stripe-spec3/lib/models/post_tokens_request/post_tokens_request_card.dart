@@ -8,11 +8,11 @@ const PostTokensRequestCard({this.creditCardSpecs = const Omittable.absent(), th
 const PostTokensRequestCard._({required this.rawValue, required this.creditCardSpecs, required this.string, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTokensRequestCard.fromJson(Object? json) { return PostTokensRequestCard._(
+factory PostTokensRequestCard.fromJson(Object? json) {return PostTokensRequestCard._(
   rawValue: Omittable(json),
   creditCardSpecs: json is Map<String, dynamic> && CreditCardSpecs.canParse(json) ? parseAnyOfVariant<CreditCardSpecs>(json, (value) => CreditCardSpecs.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTokensRequestCard(${toJson()})';
 
- }
+}

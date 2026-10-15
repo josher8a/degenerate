@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ParameterShadowingTestRequest {const ParameterShadowingTestRequest({required this.request, this.req, this.baseUrl, this.urlVariables, this.retryConfig, this.httpRes, this.responseData, this.httpResText, this.utils, this.models, this.errors, this.operations, this.types, this.shared, });
 
-factory ParameterShadowingTestRequest.fromJson(Map<String, dynamic> json) { return ParameterShadowingTestRequest(
+factory ParameterShadowingTestRequest.fromJson(Map<String, dynamic> json) {return ParameterShadowingTestRequest(
   request: json['request'] as String,
   req: json['req'] as String?,
   baseUrl: json['base_url'] as String?,
@@ -18,7 +18,7 @@ factory ParameterShadowingTestRequest.fromJson(Map<String, dynamic> json) { retu
   operations: json['operations'] as String?,
   types: json['types'] as String?,
   shared: json['shared'] as String?,
-); }
+);}
 
 /// A field named request to conflict with internal local
 final String request;
@@ -62,7 +62,7 @@ final String? types;
 /// Conflicts with shared module import
 final String? shared;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'request': request,
   'req': ?req,
   'base_url': ?baseUrl,
@@ -77,9 +77,9 @@ Map<String, dynamic> toJson() { return {
   'operations': ?operations,
   'types': ?types,
   'shared': ?shared,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('request') && json['request'] is String; } 
-ParameterShadowingTestRequest copyWith({String? request, String? Function()? req, String? Function()? baseUrl, String? Function()? urlVariables, String? Function()? retryConfig, int? Function()? httpRes, String? Function()? responseData, String? Function()? httpResText, String? Function()? utils, String? Function()? models, String? Function()? errors, String? Function()? operations, String? Function()? types, String? Function()? shared, }) { return ParameterShadowingTestRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('request') && json['request'] is String;}
+ParameterShadowingTestRequest copyWith({String? request, String? Function()? req, String? Function()? baseUrl, String? Function()? urlVariables, String? Function()? retryConfig, int? Function()? httpRes, String? Function()? responseData, String? Function()? httpResText, String? Function()? utils, String? Function()? models, String? Function()? errors, String? Function()? operations, String? Function()? types, String? Function()? shared, }) {return ParameterShadowingTestRequest(
   request: request ?? this.request,
   req: req != null ? req() : this.req,
   baseUrl: baseUrl != null ? baseUrl() : this.baseUrl,
@@ -94,7 +94,7 @@ ParameterShadowingTestRequest copyWith({String? request, String? Function()? req
   operations: operations != null ? operations() : this.operations,
   types: types != null ? types() : this.types,
   shared: shared != null ? shared() : this.shared,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ParameterShadowingTestRequest &&
           request == other.request &&
@@ -116,4 +116,4 @@ ParameterShadowingTestRequest copyWith({String? request, String? Function()? req
 
 @override String toString() => 'ParameterShadowingTestRequest(\n  request: $request,\n  req: $req,\n  baseUrl: $baseUrl,\n  urlVariables: $urlVariables,\n  retryConfig: $retryConfig,\n  httpRes: $httpRes,\n  responseData: $responseData,\n  httpResText: $httpResText,\n  utils: $utils,\n  models: $models,\n  errors: $errors,\n  operations: $operations,\n  types: $types,\n  shared: $shared,\n)';
 
- }
+}

@@ -17,7 +17,7 @@ String toJson() => value;
 }
 @immutable final class FirewallZonelockdown {const FirewallZonelockdown({required this.configurations, required this.createdOn, required this.description, required this.id, required this.modifiedOn, required this.paused, required this.urls, });
 
-factory FirewallZonelockdown.fromJson(Map<String, dynamic> json) { return FirewallZonelockdown(
+factory FirewallZonelockdown.fromJson(Map<String, dynamic> json) {return FirewallZonelockdown(
   configurations: (json['configurations'] as List<dynamic>).map(FirewallConfigurations2.fromJson).toList(),
   createdOn: FirewallCreatedOn.fromJson(json['created_on'] as String),
   description: FirewallLockdownsComponentsSchemasDescription.fromJson(json['description'] as String),
@@ -25,7 +25,7 @@ factory FirewallZonelockdown.fromJson(Map<String, dynamic> json) { return Firewa
   modifiedOn: FirewallModifiedOn.fromJson(json['modified_on'] as String),
   paused: FirewallSchemasPaused.fromJson(json['paused'] as bool),
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// A list of IP addresses or CIDR ranges that will be allowed to access the URLs specified in the Zone Lockdown rule. You can include any number of `ip` or `ip_range` configurations.
 final List<FirewallConfigurations2> configurations;
@@ -48,7 +48,7 @@ final FirewallSchemasPaused paused;
 /// The URLs to include in the rule definition. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 final List<String> urls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'configurations': configurations.map((e) => e.toJson()).toList(),
   'created_on': createdOn.toJson(),
   'description': description.toJson(),
@@ -56,15 +56,15 @@ Map<String, dynamic> toJson() { return {
   'modified_on': modifiedOn.toJson(),
   'paused': paused.toJson(),
   'urls': urls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('configurations') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('configurations') &&
       json.containsKey('created_on') &&
       json.containsKey('description') &&
       json.containsKey('id') &&
       json.containsKey('modified_on') &&
       json.containsKey('paused') &&
-      json.containsKey('urls'); } 
-FirewallZonelockdown copyWith({List<FirewallConfigurations2>? configurations, FirewallCreatedOn? createdOn, FirewallLockdownsComponentsSchemasDescription? description, FirewallLockdownsComponentsSchemasId? id, FirewallModifiedOn? modifiedOn, FirewallSchemasPaused? paused, List<String>? urls, }) { return FirewallZonelockdown(
+      json.containsKey('urls');}
+FirewallZonelockdown copyWith({List<FirewallConfigurations2>? configurations, FirewallCreatedOn? createdOn, FirewallLockdownsComponentsSchemasDescription? description, FirewallLockdownsComponentsSchemasId? id, FirewallModifiedOn? modifiedOn, FirewallSchemasPaused? paused, List<String>? urls, }) {return FirewallZonelockdown(
   configurations: configurations ?? this.configurations,
   createdOn: createdOn ?? this.createdOn,
   description: description ?? this.description,
@@ -72,7 +72,7 @@ FirewallZonelockdown copyWith({List<FirewallConfigurations2>? configurations, Fi
   modifiedOn: modifiedOn ?? this.modifiedOn,
   paused: paused ?? this.paused,
   urls: urls ?? this.urls,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallZonelockdown &&
           listEquals(configurations, other.configurations) &&
@@ -87,4 +87,4 @@ FirewallZonelockdown copyWith({List<FirewallConfigurations2>? configurations, Fi
 
 @override String toString() => 'FirewallZonelockdown(configurations: $configurations, createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, paused: $paused, urls: $urls)';
 
- }
+}

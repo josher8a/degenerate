@@ -14,7 +14,7 @@ final class TriggersApi with ApiExecutor {const TriggersApi(this.apiConfig);
 /// Create a new CI/CD trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers`
-Future<ApiResult<BuildsTriggerResponse, Never>> createTrigger({required BuildsAccountId accountId, required BuildsCreateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsTriggerResponse, Never>> createTrigger({required BuildsAccountId accountId, required BuildsCreateTriggerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -32,13 +32,13 @@ return await execute(
     return BuildsTriggerResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update trigger
 ///
 /// Update an existing CI/CD trigger
 ///
 /// `PATCH /accounts/{account_id}/builds/triggers/{trigger_uuid}`
-Future<ApiResult<BuildsTriggerResponse, CancelBuildByUuidError>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsTriggerResponse, CancelBuildByUuidError>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -57,13 +57,13 @@ return await execute(
   },
   onError: CancelBuildByUuidError.fromResponse,
 );
- } 
+}
 /// Delete trigger
 ///
 /// Remove a CI/CD trigger
 ///
 /// `DELETE /accounts/{account_id}/builds/triggers/{trigger_uuid}`
-Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> deleteTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> deleteTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -80,13 +80,13 @@ return await execute(
   },
   onError: CancelBuildByUuidError.fromResponse,
 );
- } 
+}
 /// Create manual build
 ///
 /// Trigger a manual build for a specific trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers/{trigger_uuid}/builds`
-Future<ApiResult<BuildsInsertBuildResponse, Never>> createManualBuild({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsCreateBuildRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsInsertBuildResponse, Never>> createManualBuild({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsCreateBuildRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
     return BuildsInsertBuildResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Purge build cache
 ///
 /// Clear the build cache for a specific trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers/{trigger_uuid}/purge_build_cache`
-Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> purgeBuildCache({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> purgeBuildCache({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -127,5 +127,5 @@ return await execute(
   },
   onError: CancelBuildByUuidError.fromResponse,
 );
- } 
- }
+}
+}

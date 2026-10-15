@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_r2_action.dart';@immutable final class R2Rule {const R2Rule({required this.actions, this.description, this.prefix, this.suffix, });
 
-factory R2Rule.fromJson(Map<String, dynamic> json) { return R2Rule(
+factory R2Rule.fromJson(Map<String, dynamic> json) {return R2Rule(
   actions: (json['actions'] as List<dynamic>).map((e) => R2R2Action.fromJson(e as String)).toList(),
   description: json['description'] as String?,
   prefix: json['prefix'] as String?,
   suffix: json['suffix'] as String?,
-); }
+);}
 
 /// Array of R2 object actions that will trigger notifications.
 /// 
@@ -30,23 +30,23 @@ final String? prefix;
 /// Example: `'.jpeg'`
 final String? suffix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actions': actions.map((e) => e.toJson()).toList(),
   'description': ?description,
   'prefix': ?prefix,
   'suffix': ?suffix,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actions');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (actions.toSet().length != actions.length) { errors.add('actions: items must be unique'); }
-return errors; } 
-R2Rule copyWith({List<R2R2Action>? actions, String? Function()? description, String? Function()? prefix, String? Function()? suffix, }) { return R2Rule(
+return errors;}
+R2Rule copyWith({List<R2R2Action>? actions, String? Function()? description, String? Function()? prefix, String? Function()? suffix, }) {return R2Rule(
   actions: actions ?? this.actions,
   description: description != null ? description() : this.description,
   prefix: prefix != null ? prefix() : this.prefix,
   suffix: suffix != null ? suffix() : this.suffix,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2Rule &&
           listEquals(actions, other.actions) &&
@@ -58,4 +58,4 @@ R2Rule copyWith({List<R2R2Action>? actions, String? Function()? description, Str
 
 @override String toString() => 'R2Rule(actions: $actions, description: $description, prefix: $prefix, suffix: $suffix)';
 
- }
+}

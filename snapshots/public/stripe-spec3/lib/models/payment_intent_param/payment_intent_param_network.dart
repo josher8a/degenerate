@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PaymentIntentParamNetwork {const PaymentIntentParamNetwork();
 
-factory PaymentIntentParamNetwork.fromJson(String json) { return switch (json) {
+factory PaymentIntentParamNetwork.fromJson(String json) {return switch (json) {
   'amex' => amex,
   'cartes_bancaires' => cartesBancaires,
   'diners' => diners,
@@ -18,7 +18,7 @@ factory PaymentIntentParamNetwork.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'visa' => visa,
   _ => PaymentIntentParamNetwork$Unknown(json),
-}; }
+};}
 
 static const PaymentIntentParamNetwork amex = PaymentIntentParamNetwork$amex._();
 
@@ -49,9 +49,9 @@ static const PaymentIntentParamNetwork visa = PaymentIntentParamNetwork$visa._()
 static const List<PaymentIntentParamNetwork> values = [amex, cartesBancaires, diners, discover, eftposAu, girocard, interac, jcb, link, mastercard, unionpay, unknown, visa];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'amex' => 'amex',
   'cartes_bancaires' => 'cartesBancaires',
   'diners' => 'diners',
@@ -66,11 +66,11 @@ String get name { return switch (value) {
   'unknown' => 'unknown',
   'visa' => 'visa',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentIntentParamNetwork$Unknown; } 
+bool get isUnknown {return this is PaymentIntentParamNetwork$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() girocard, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() girocard, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentIntentParamNetwork$amex() => amex(),
       PaymentIntentParamNetwork$cartesBancaires() => cartesBancaires(),
       PaymentIntentParamNetwork$diners() => diners(),
@@ -85,9 +85,9 @@ W when<W>({required W Function() amex, required W Function() cartesBancaires, re
       PaymentIntentParamNetwork$unknown() => unknown(),
       PaymentIntentParamNetwork$visa() => visa(),
       PaymentIntentParamNetwork$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? girocard, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? girocard, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentIntentParamNetwork$amex() => amex != null ? amex() : orElse(value),
       PaymentIntentParamNetwork$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
       PaymentIntentParamNetwork$diners() => diners != null ? diners() : orElse(value),
@@ -102,10 +102,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
       PaymentIntentParamNetwork$unknown() => unknown != null ? unknown() : orElse(value),
       PaymentIntentParamNetwork$visa() => visa != null ? visa() : orElse(value),
       PaymentIntentParamNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentIntentParamNetwork($value)';
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$amex extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$amex._();
 
 @override String get value => 'amex';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'amex'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$cartesBancaires extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$cartesBancaires._();
 
 @override String get value => 'cartes_bancaires';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'cartes_bancaires'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$diners extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$diners._();
 
 @override String get value => 'diners';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'diners'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$discover extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$discover._();
 
 @override String get value => 'discover';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'discover'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$eftposAu extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$eftposAu._();
 
 @override String get value => 'eftpos_au';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'eftpos_au'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$girocard extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$girocard._();
 
 @override String get value => 'girocard';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'girocard'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$interac extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$interac._();
 
 @override String get value => 'interac';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'interac'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$jcb extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$jcb._();
 
 @override String get value => 'jcb';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'jcb'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$link extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$link._();
 
 @override String get value => 'link';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$mastercard extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$mastercard._();
 
 @override String get value => 'mastercard';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'mastercard'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$unionpay extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$unionpay._();
 
 @override String get value => 'unionpay';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'unionpay'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$unknown extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$unknown._();
 
 @override String get value => 'unknown';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$visa extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$visa._();
 
 @override String get value => 'visa';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'visa'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamNetwork$Unknown extends PaymentIntentParamNetwork {const PaymentIntentParamNetwork$Unknown(this.value);
 
 @override final String value;
@@ -232,4 +232,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

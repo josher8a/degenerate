@@ -7,12 +7,12 @@ const GetEventListGetSearchValue({this.string = const Omittable.absent(), this.$
 const GetEventListGetSearchValue._({required this.rawValue, required this.string, required this.$double, required this.listdynamic, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory GetEventListGetSearchValue.fromJson(Object? json) { return GetEventListGetSearchValue._(
+factory GetEventListGetSearchValue.fromJson(Object? json) {return GetEventListGetSearchValue._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
   listdynamic: parseAnyOfVariant<List<dynamic>>(json, (value) => (value! as List<dynamic>).map((e) => e).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -46,4 +46,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'GetEventListGetSearchValue(${toJson()})';
 
- }
+}

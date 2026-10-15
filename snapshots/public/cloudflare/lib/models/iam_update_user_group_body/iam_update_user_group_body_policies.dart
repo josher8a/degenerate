@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_access.dart';import 'package:pub_cloudflare/models/iam_permission_group_ids2.dart';import 'package:pub_cloudflare/models/iam_resource_group_ids2.dart';@immutable final class IamUpdateUserGroupBodyPolicies {const IamUpdateUserGroupBodyPolicies({required this.access, required this.permissionGroups, required this.resourceGroups, required this.id, });
 
-factory IamUpdateUserGroupBodyPolicies.fromJson(Map<String, dynamic> json) { return IamUpdateUserGroupBodyPolicies(
+factory IamUpdateUserGroupBodyPolicies.fromJson(Map<String, dynamic> json) {return IamUpdateUserGroupBodyPolicies(
   access: IamAccess.fromJson(json['access'] as String),
   permissionGroups: (json['permission_groups'] as List<dynamic>).map((e) => IamPermissionGroupIds2.fromJson(e as Map<String, dynamic>)).toList(),
   resourceGroups: (json['resource_groups'] as List<dynamic>).map((e) => IamResourceGroupIds2.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
-); }
+);}
 
 /// Allow or deny operations against the resources.
 final IamAccess access;
@@ -24,22 +24,22 @@ final List<IamResourceGroupIds2> resourceGroups;
 /// Example: `'f267e341f3dd4697bd3b9f71dd96247f'`
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access': access.toJson(),
   'permission_groups': permissionGroups.map((e) => e.toJson()).toList(),
   'resource_groups': resourceGroups.map((e) => e.toJson()).toList(),
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('access') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('access') &&
       json.containsKey('permission_groups') &&
       json.containsKey('resource_groups') &&
-      json.containsKey('id') && json['id'] is String; } 
-IamUpdateUserGroupBodyPolicies copyWith({IamAccess? access, List<IamPermissionGroupIds2>? permissionGroups, List<IamResourceGroupIds2>? resourceGroups, String? id, }) { return IamUpdateUserGroupBodyPolicies(
+      json.containsKey('id') && json['id'] is String;}
+IamUpdateUserGroupBodyPolicies copyWith({IamAccess? access, List<IamPermissionGroupIds2>? permissionGroups, List<IamResourceGroupIds2>? resourceGroups, String? id, }) {return IamUpdateUserGroupBodyPolicies(
   access: access ?? this.access,
   permissionGroups: permissionGroups ?? this.permissionGroups,
   resourceGroups: resourceGroups ?? this.resourceGroups,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamUpdateUserGroupBodyPolicies &&
           access == other.access &&
@@ -51,4 +51,4 @@ IamUpdateUserGroupBodyPolicies copyWith({IamAccess? access, List<IamPermissionGr
 
 @override String toString() => 'IamUpdateUserGroupBodyPolicies(access: $access, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups, id: $id)';
 
- }
+}

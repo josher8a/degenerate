@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite/simple_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_check_suite_conclusion.dart';@immutable final class WebhookDeploymentStatusCreatedCheckRun {const WebhookDeploymentStatusCreatedCheckRun({required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.startedAt, required this.status, required this.url, });
 
-factory WebhookDeploymentStatusCreatedCheckRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedCheckRun(
+factory WebhookDeploymentStatusCreatedCheckRun.fromJson(Map<String, dynamic> json) {return WebhookDeploymentStatusCreatedCheckRun(
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
   conclusion: json['conclusion'] != null ? WebhookCheckSuiteRequestedCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
   detailsUrl: Uri.parse(json['details_url'] as String),
@@ -16,7 +16,7 @@ factory WebhookDeploymentStatusCreatedCheckRun.fromJson(Map<String, dynamic> jso
   startedAt: DateTime.parse(json['started_at'] as String),
   status: SimpleCheckSuiteStatus.fromJson(json['status'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final DateTime? completedAt;
 
@@ -47,7 +47,7 @@ final SimpleCheckSuiteStatus status;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completed_at': completedAt?.toIso8601String(),
   'conclusion': conclusion?.toJson(),
   'details_url': detailsUrl.toString(),
@@ -60,8 +60,8 @@ Map<String, dynamic> toJson() { return {
   'started_at': startedAt.toIso8601String(),
   'status': status.toJson(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is String) &&
       json.containsKey('conclusion') &&
       json.containsKey('details_url') && json['details_url'] is String &&
       json.containsKey('external_id') && json['external_id'] is String &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('compl
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completedAt, WebhookCheckSuiteRequestedCheckSuiteConclusion? Function()? conclusion, Uri? detailsUrl, String? externalId, String? headSha, Uri? htmlUrl, int? id, String? name, String? nodeId, DateTime? startedAt, SimpleCheckSuiteStatus? status, Uri? url, }) { return WebhookDeploymentStatusCreatedCheckRun(
+      json.containsKey('url') && json['url'] is String;}
+WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completedAt, WebhookCheckSuiteRequestedCheckSuiteConclusion? Function()? conclusion, Uri? detailsUrl, String? externalId, String? headSha, Uri? htmlUrl, int? id, String? name, String? nodeId, DateTime? startedAt, SimpleCheckSuiteStatus? status, Uri? url, }) {return WebhookDeploymentStatusCreatedCheckRun(
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   detailsUrl: detailsUrl ?? this.detailsUrl,
@@ -86,7 +86,7 @@ WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completed
   startedAt: startedAt ?? this.startedAt,
   status: status ?? this.status,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentStatusCreatedCheckRun &&
           completedAt == other.completedAt &&
@@ -106,4 +106,4 @@ WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completed
 
 @override String toString() => 'WebhookDeploymentStatusCreatedCheckRun(\n  completedAt: $completedAt,\n  conclusion: $conclusion,\n  detailsUrl: $detailsUrl,\n  externalId: $externalId,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  startedAt: $startedAt,\n  status: $status,\n  url: $url,\n)';
 
- }
+}

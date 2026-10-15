@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetIdentityVerificationSessionsStatus {const GetIdentityVerificationSessionsStatus();
 
-factory GetIdentityVerificationSessionsStatus.fromJson(String json) { return switch (json) {
+factory GetIdentityVerificationSessionsStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'processing' => processing,
   'requires_input' => requiresInput,
   'verified' => verified,
   _ => GetIdentityVerificationSessionsStatus$Unknown(json),
-}; }
+};}
 
 static const GetIdentityVerificationSessionsStatus canceled = GetIdentityVerificationSessionsStatus$canceled._();
 
@@ -22,36 +22,36 @@ static const GetIdentityVerificationSessionsStatus verified = GetIdentityVerific
 static const List<GetIdentityVerificationSessionsStatus> values = [canceled, processing, requiresInput, verified];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'processing' => 'processing',
   'requires_input' => 'requiresInput',
   'verified' => 'verified',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is GetIdentityVerificationSessionsStatus$Unknown; } 
+bool get isUnknown {return this is GetIdentityVerificationSessionsStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() processing, required W Function() requiresInput, required W Function() verified, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() processing, required W Function() requiresInput, required W Function() verified, required W Function(String value) $unknown, }) {return switch (this) {
       GetIdentityVerificationSessionsStatus$canceled() => canceled(),
       GetIdentityVerificationSessionsStatus$processing() => processing(),
       GetIdentityVerificationSessionsStatus$requiresInput() => requiresInput(),
       GetIdentityVerificationSessionsStatus$verified() => verified(),
       GetIdentityVerificationSessionsStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? processing, W Function()? requiresInput, W Function()? verified, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? processing, W Function()? requiresInput, W Function()? verified, W Function(String value)? $unknown, }) {return switch (this) {
       GetIdentityVerificationSessionsStatus$canceled() => canceled != null ? canceled() : orElse(value),
       GetIdentityVerificationSessionsStatus$processing() => processing != null ? processing() : orElse(value),
       GetIdentityVerificationSessionsStatus$requiresInput() => requiresInput != null ? requiresInput() : orElse(value),
       GetIdentityVerificationSessionsStatus$verified() => verified != null ? verified() : orElse(value),
       GetIdentityVerificationSessionsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'GetIdentityVerificationSessionsStatus($value)';
 
- }
+}
 @immutable final class GetIdentityVerificationSessionsStatus$canceled extends GetIdentityVerificationSessionsStatus {const GetIdentityVerificationSessionsStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class GetIdentityVerificationSessionsStatus$processing extends GetIdentityVerificationSessionsStatus {const GetIdentityVerificationSessionsStatus$processing._();
 
 @override String get value => 'processing';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class GetIdentityVerificationSessionsStatus$requiresInput extends GetIdentityVerificationSessionsStatus {const GetIdentityVerificationSessionsStatus$requiresInput._();
 
 @override String get value => 'requires_input';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'requires_input'.hashCode;
 
- }
+}
 @immutable final class GetIdentityVerificationSessionsStatus$verified extends GetIdentityVerificationSessionsStatus {const GetIdentityVerificationSessionsStatus$verified._();
 
 @override String get value => 'verified';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'verified'.hashCode;
 
- }
+}
 @immutable final class GetIdentityVerificationSessionsStatus$Unknown extends GetIdentityVerificationSessionsStatus {const GetIdentityVerificationSessionsStatus$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -10,7 +10,7 @@ String toJson() => value;
 }
 @immutable final class DigitalExperienceMonitoringDevice {const DigitalExperienceMonitoringDevice({required this.version, required this.colo, required this.mode, required this.deviceId, required this.platform, required this.status, required this.timestamp, this.diskReadBps = const Omittable.absent(), this.batteryPct = const Omittable.absent(), this.deviceIpv4, this.deviceIpv6, this.deviceName, this.alwaysOn = const Omittable.absent(), this.diskUsagePct = const Omittable.absent(), this.diskWriteBps = const Omittable.absent(), this.dohSubdomain = const Omittable.absent(), this.estimatedLossPct = const Omittable.absent(), this.firewallEnabled = const Omittable.absent(), this.gatewayIpv4, this.gatewayIpv6, this.handshakeLatencyMs = const Omittable.absent(), this.ispIpv4, this.ispIpv6, this.metal = const Omittable.absent(), this.wifiStrengthDbm = const Omittable.absent(), this.networkRcvdBps = const Omittable.absent(), this.networkSentBps = const Omittable.absent(), this.networkSsid = const Omittable.absent(), this.personEmail, this.batteryCharging = const Omittable.absent(), this.ramAvailableKb = const Omittable.absent(), this.ramUsedPct = const Omittable.absent(), this.ramUsedPctByApp = const Omittable.absent(), this.connectionType = const Omittable.absent(), this.switchLocked = const Omittable.absent(), this.batteryCycles = const Omittable.absent(), this.cpuPctByApp = const Omittable.absent(), this.cpuPct = const Omittable.absent(), });
 
-factory DigitalExperienceMonitoringDevice.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDevice(
+factory DigitalExperienceMonitoringDevice.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringDevice(
   alwaysOn: json.containsKey('alwaysOn') ? Omittable(json['alwaysOn'] as bool?) : const Omittable.absent(),
   batteryCharging: json.containsKey('batteryCharging') ? Omittable(json['batteryCharging'] as bool?) : const Omittable.absent(),
   batteryCycles: json.containsKey('batteryCycles') ? Omittable(json['batteryCycles'] != null ? (json['batteryCycles'] as num).toInt() : null) : const Omittable.absent(),
@@ -49,7 +49,7 @@ factory DigitalExperienceMonitoringDevice.fromJson(Map<String, dynamic> json) { 
   timestamp: DigitalExperienceMonitoringTimestamp.fromJson(json['timestamp'] as String),
   version: DigitalExperienceMonitoringVersion.fromJson(json['version'] as String),
   wifiStrengthDbm: json.containsKey('wifiStrengthDbm') ? Omittable(json['wifiStrengthDbm'] != null ? (json['wifiStrengthDbm'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<bool?> alwaysOn;
 
@@ -130,7 +130,7 @@ final DigitalExperienceMonitoringVersion version;
 
 final Omittable<int?> wifiStrengthDbm;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (alwaysOn.isPresent) 'alwaysOn': alwaysOn.value,
   if (batteryCharging.isPresent) 'batteryCharging': batteryCharging.value,
   if (batteryCycles.isPresent) 'batteryCycles': batteryCycles.value,
@@ -169,15 +169,15 @@ Map<String, dynamic> toJson() { return {
   'timestamp': timestamp.toJson(),
   'version': version.toJson(),
   if (wifiStrengthDbm.isPresent) 'wifiStrengthDbm': wifiStrengthDbm.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('colo') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('colo') &&
       json.containsKey('deviceId') && json['deviceId'] is String &&
       json.containsKey('mode') &&
       json.containsKey('platform') &&
       json.containsKey('status') &&
       json.containsKey('timestamp') &&
-      json.containsKey('version'); } 
-DigitalExperienceMonitoringDevice copyWith({Omittable<bool?>? alwaysOn, Omittable<bool?>? batteryCharging, Omittable<int?>? batteryCycles, Omittable<double?>? batteryPct, DigitalExperienceMonitoringColo? colo, Omittable<String?>? connectionType, Omittable<double?>? cpuPct, Omittable<List<List<DigitalExperienceMonitoringCpuPctByApp2>>?>? cpuPctByApp, String? deviceId, DigitalExperienceMonitoringIpInfo? Function()? deviceIpv4, DigitalExperienceMonitoringIpInfo? Function()? deviceIpv6, String? Function()? deviceName, Omittable<int?>? diskReadBps, Omittable<double?>? diskUsagePct, Omittable<int?>? diskWriteBps, Omittable<String?>? dohSubdomain, Omittable<double?>? estimatedLossPct, Omittable<bool?>? firewallEnabled, DigitalExperienceMonitoringIpInfo? Function()? gatewayIpv4, DigitalExperienceMonitoringIpInfo? Function()? gatewayIpv6, Omittable<double?>? handshakeLatencyMs, DigitalExperienceMonitoringIpInfo? Function()? ispIpv4, DigitalExperienceMonitoringIpInfo? Function()? ispIpv6, Omittable<String?>? metal, DigitalExperienceMonitoringMode? mode, Omittable<int?>? networkRcvdBps, Omittable<int?>? networkSentBps, Omittable<String?>? networkSsid, DigitalExperienceMonitoringPersonEmail? Function()? personEmail, DigitalExperienceMonitoringPlatform? platform, Omittable<int?>? ramAvailableKb, Omittable<double?>? ramUsedPct, Omittable<List<List<DigitalExperienceMonitoringRamUsedPctByApp2>>?>? ramUsedPctByApp, DigitalExperienceMonitoringStatus? status, Omittable<bool?>? switchLocked, DigitalExperienceMonitoringTimestamp? timestamp, DigitalExperienceMonitoringVersion? version, Omittable<int?>? wifiStrengthDbm, }) { return DigitalExperienceMonitoringDevice(
+      json.containsKey('version');}
+DigitalExperienceMonitoringDevice copyWith({Omittable<bool?>? alwaysOn, Omittable<bool?>? batteryCharging, Omittable<int?>? batteryCycles, Omittable<double?>? batteryPct, DigitalExperienceMonitoringColo? colo, Omittable<String?>? connectionType, Omittable<double?>? cpuPct, Omittable<List<List<DigitalExperienceMonitoringCpuPctByApp2>>?>? cpuPctByApp, String? deviceId, DigitalExperienceMonitoringIpInfo? Function()? deviceIpv4, DigitalExperienceMonitoringIpInfo? Function()? deviceIpv6, String? Function()? deviceName, Omittable<int?>? diskReadBps, Omittable<double?>? diskUsagePct, Omittable<int?>? diskWriteBps, Omittable<String?>? dohSubdomain, Omittable<double?>? estimatedLossPct, Omittable<bool?>? firewallEnabled, DigitalExperienceMonitoringIpInfo? Function()? gatewayIpv4, DigitalExperienceMonitoringIpInfo? Function()? gatewayIpv6, Omittable<double?>? handshakeLatencyMs, DigitalExperienceMonitoringIpInfo? Function()? ispIpv4, DigitalExperienceMonitoringIpInfo? Function()? ispIpv6, Omittable<String?>? metal, DigitalExperienceMonitoringMode? mode, Omittable<int?>? networkRcvdBps, Omittable<int?>? networkSentBps, Omittable<String?>? networkSsid, DigitalExperienceMonitoringPersonEmail? Function()? personEmail, DigitalExperienceMonitoringPlatform? platform, Omittable<int?>? ramAvailableKb, Omittable<double?>? ramUsedPct, Omittable<List<List<DigitalExperienceMonitoringRamUsedPctByApp2>>?>? ramUsedPctByApp, DigitalExperienceMonitoringStatus? status, Omittable<bool?>? switchLocked, DigitalExperienceMonitoringTimestamp? timestamp, DigitalExperienceMonitoringVersion? version, Omittable<int?>? wifiStrengthDbm, }) {return DigitalExperienceMonitoringDevice(
   alwaysOn: alwaysOn ?? this.alwaysOn,
   batteryCharging: batteryCharging ?? this.batteryCharging,
   batteryCycles: batteryCycles ?? this.batteryCycles,
@@ -216,7 +216,7 @@ DigitalExperienceMonitoringDevice copyWith({Omittable<bool?>? alwaysOn, Omittabl
   timestamp: timestamp ?? this.timestamp,
   version: version ?? this.version,
   wifiStrengthDbm: wifiStrengthDbm ?? this.wifiStrengthDbm,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDevice &&
           alwaysOn == other.alwaysOn &&
@@ -264,4 +264,4 @@ DigitalExperienceMonitoringDevice copyWith({Omittable<bool?>? alwaysOn, Omittabl
 
 @override String toString() => 'DigitalExperienceMonitoringDevice(\n  alwaysOn: $alwaysOn,\n  batteryCharging: $batteryCharging,\n  batteryCycles: $batteryCycles,\n  batteryPct: $batteryPct,\n  colo: $colo,\n  connectionType: $connectionType,\n  cpuPct: $cpuPct,\n  cpuPctByApp: $cpuPctByApp,\n  deviceId: $deviceId,\n  deviceIpv4: $deviceIpv4,\n  deviceIpv6: $deviceIpv6,\n  deviceName: $deviceName,\n  diskReadBps: $diskReadBps,\n  diskUsagePct: $diskUsagePct,\n  diskWriteBps: $diskWriteBps,\n  dohSubdomain: $dohSubdomain,\n  estimatedLossPct: $estimatedLossPct,\n  firewallEnabled: $firewallEnabled,\n  gatewayIpv4: $gatewayIpv4,\n  gatewayIpv6: $gatewayIpv6,\n  handshakeLatencyMs: $handshakeLatencyMs,\n  ispIpv4: $ispIpv4,\n  ispIpv6: $ispIpv6,\n  metal: $metal,\n  mode: $mode,\n  networkRcvdBps: $networkRcvdBps,\n  networkSentBps: $networkSentBps,\n  networkSsid: $networkSsid,\n  personEmail: $personEmail,\n  platform: $platform,\n  ramAvailableKb: $ramAvailableKb,\n  ramUsedPct: $ramUsedPct,\n  ramUsedPctByApp: $ramUsedPctByApp,\n  status: $status,\n  switchLocked: $switchLocked,\n  timestamp: $timestamp,\n  version: $version,\n  wifiStrengthDbm: $wifiStrengthDbm,\n)';
 
- }
+}

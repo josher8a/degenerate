@@ -12,7 +12,7 @@ final class Api20100401AuthorizedConnectAppApi with ApiExecutor {const Api201004
 /// Fetch an instance of an authorized-connect-app
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps/{ConnectAppSid}.json`
-Future<ApiResult<AccountAuthorizedConnectApp, Never>> fetchAuthorizedConnectApp({required String accountSid, required String connectAppSid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountAuthorizedConnectApp, Never>> fetchAuthorizedConnectApp({required String accountSid, required String connectAppSid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ return await execute(
     return AccountAuthorizedConnectApp.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Retrieve a list of authorized-connect-apps belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps.json`
-Future<ApiResult<ListAuthorizedConnectAppResponse, Never>> listAuthorizedConnectApp({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListAuthorizedConnectAppResponse, Never>> listAuthorizedConnectApp({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -60,5 +60,5 @@ return await execute(
     return ListAuthorizedConnectAppResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

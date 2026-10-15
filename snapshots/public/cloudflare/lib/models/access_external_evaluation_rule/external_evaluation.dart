@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExternalEvaluation {const ExternalEvaluation({required this.evaluateUrl, required this.keysUrl, });
 
-factory ExternalEvaluation.fromJson(Map<String, dynamic> json) { return ExternalEvaluation(
+factory ExternalEvaluation.fromJson(Map<String, dynamic> json) {return ExternalEvaluation(
   evaluateUrl: json['evaluate_url'] as String,
   keysUrl: json['keys_url'] as String,
-); }
+);}
 
 /// The API endpoint containing your business logic.
 /// 
@@ -18,16 +18,16 @@ final String evaluateUrl;
 /// Example: `'https://eval.example.com/keys'`
 final String keysUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'evaluate_url': evaluateUrl,
   'keys_url': keysUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('evaluate_url') && json['evaluate_url'] is String &&
-      json.containsKey('keys_url') && json['keys_url'] is String; } 
-ExternalEvaluation copyWith({String? evaluateUrl, String? keysUrl, }) { return ExternalEvaluation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('evaluate_url') && json['evaluate_url'] is String &&
+      json.containsKey('keys_url') && json['keys_url'] is String;}
+ExternalEvaluation copyWith({String? evaluateUrl, String? keysUrl, }) {return ExternalEvaluation(
   evaluateUrl: evaluateUrl ?? this.evaluateUrl,
   keysUrl: keysUrl ?? this.keysUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ExternalEvaluation &&
           evaluateUrl == other.evaluateUrl &&
@@ -37,4 +37,4 @@ ExternalEvaluation copyWith({String? evaluateUrl, String? keysUrl, }) { return E
 
 @override String toString() => 'ExternalEvaluation(evaluateUrl: $evaluateUrl, keysUrl: $keysUrl)';
 
- }
+}

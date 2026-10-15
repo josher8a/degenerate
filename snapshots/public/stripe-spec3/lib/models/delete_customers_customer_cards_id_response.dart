@@ -7,11 +7,11 @@ const DeleteCustomersCustomerCardsIdResponse({this.paymentSource = const Omittab
 const DeleteCustomersCustomerCardsIdResponse._({required this.rawValue, required this.paymentSource, required this.deletedPaymentSource, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DeleteCustomersCustomerCardsIdResponse.fromJson(Object? json) { return DeleteCustomersCustomerCardsIdResponse._(
+factory DeleteCustomersCustomerCardsIdResponse.fromJson(Object? json) {return DeleteCustomersCustomerCardsIdResponse._(
   rawValue: Omittable(json),
   paymentSource: parseAnyOfVariant<PaymentSource>(json, PaymentSource.fromJson, isValid: (value) => value.isValid),
   deletedPaymentSource: parseAnyOfVariant<DeletedPaymentSource>(json, DeletedPaymentSource.fromJson, isValid: (value) => value.isValid),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DeleteCustomersCustomerCardsIdResponse(${toJson()})';
 
- }
+}

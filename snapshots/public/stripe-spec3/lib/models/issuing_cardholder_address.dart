@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class IssuingCardholderAddress {const IssuingCardholderAddress({required this.address});
 
-factory IssuingCardholderAddress.fromJson(Map<String, dynamic> json) { return IssuingCardholderAddress(
+factory IssuingCardholderAddress.fromJson(Map<String, dynamic> json) {return IssuingCardholderAddress(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
-); }
+);}
 
 final Address address;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-IssuingCardholderAddress copyWith({Address? address}) { return IssuingCardholderAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address');}
+IssuingCardholderAddress copyWith({Address? address}) {return IssuingCardholderAddress(
   address: address ?? this.address,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardholderAddress &&
           address == other.address;
@@ -25,4 +25,4 @@ IssuingCardholderAddress copyWith({Address? address}) { return IssuingCardholder
 
 @override String toString() => 'IssuingCardholderAddress(address: $address)';
 
- }
+}

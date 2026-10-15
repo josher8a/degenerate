@@ -7,11 +7,11 @@ const BrapiPostPdfRequest({this.brapiPostPdfRequestVariant1 = const Omittable.ab
 const BrapiPostPdfRequest._({required this.rawValue, required this.brapiPostPdfRequestVariant1, required this.brapiPostPdfRequestVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BrapiPostPdfRequest.fromJson(Object? json) { return BrapiPostPdfRequest._(
+factory BrapiPostPdfRequest.fromJson(Object? json) {return BrapiPostPdfRequest._(
   rawValue: Omittable(json),
   brapiPostPdfRequestVariant1: json is Map<String, dynamic> && BrapiPostPdfRequestVariant1.canParse(json) ? parseAnyOfVariant<BrapiPostPdfRequestVariant1>(json, (value) => BrapiPostPdfRequestVariant1.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   brapiPostPdfRequestVariant2: json is Map<String, dynamic> && BrapiPostPdfRequestVariant2.canParse(json) ? parseAnyOfVariant<BrapiPostPdfRequestVariant2>(json, (value) => BrapiPostPdfRequestVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BrapiPostPdfRequest(${toJson()})';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_status_info/down.dart';import 'package:pub_cloudflare/models/nsc_status_info/healthy.dart';import 'package:pub_cloudflare/models/nsc_status_info/pending.dart';import 'package:pub_cloudflare/models/nsc_status_info/unhealthy.dart';sealed class NscStatusInfoState {const NscStatusInfoState();
 
-factory NscStatusInfoState.fromJson(String json) { return switch (json) {
+factory NscStatusInfoState.fromJson(String json) {return switch (json) {
   'Pending' => pending,
   'Down' => down,
   'Unhealthy' => unhealthy,
   'Healthy' => healthy,
   _ => NscStatusInfoState$Unknown(json),
-}; }
+};}
 
 static const NscStatusInfoState pending = NscStatusInfoState$pending._();
 
@@ -26,7 +26,7 @@ String toJson() => value;
 
 bool get isUnknown => this is NscStatusInfoState$Unknown;
 
- }
+}
 @immutable final class NscStatusInfoState$pending extends NscStatusInfoState {const NscStatusInfoState$pending._();
 
 @override String get value => 'Pending';
@@ -37,7 +37,7 @@ bool get isUnknown => this is NscStatusInfoState$Unknown;
 
 @override String toString() => 'NscStatusInfoState(Pending)';
 
- }
+}
 @immutable final class NscStatusInfoState$down extends NscStatusInfoState {const NscStatusInfoState$down._();
 
 @override String get value => 'Down';
@@ -48,7 +48,7 @@ bool get isUnknown => this is NscStatusInfoState$Unknown;
 
 @override String toString() => 'NscStatusInfoState(Down)';
 
- }
+}
 @immutable final class NscStatusInfoState$unhealthy extends NscStatusInfoState {const NscStatusInfoState$unhealthy._();
 
 @override String get value => 'Unhealthy';
@@ -59,7 +59,7 @@ bool get isUnknown => this is NscStatusInfoState$Unknown;
 
 @override String toString() => 'NscStatusInfoState(Unhealthy)';
 
- }
+}
 @immutable final class NscStatusInfoState$healthy extends NscStatusInfoState {const NscStatusInfoState$healthy._();
 
 @override String get value => 'Healthy';
@@ -70,7 +70,7 @@ bool get isUnknown => this is NscStatusInfoState$Unknown;
 
 @override String toString() => 'NscStatusInfoState(Healthy)';
 
- }
+}
 @immutable final class NscStatusInfoState$Unknown extends NscStatusInfoState {const NscStatusInfoState$Unknown(this.value);
 
 @override final String value;
@@ -81,23 +81,23 @@ bool get isUnknown => this is NscStatusInfoState$Unknown;
 
 @override String toString() => 'NscStatusInfoState($value)';
 
- }
+}
 sealed class NscStatusInfo {const NscStatusInfo();
 
 /// Deserialize from JSON, dispatching on the `state` discriminator.
-factory NscStatusInfo.fromJson(Map<String, dynamic> json) { return switch (json['state']) {
+factory NscStatusInfo.fromJson(Map<String, dynamic> json) {return switch (json['state']) {
   'Pending' => NscStatusInfoPending.fromJson(json),
   'Down' => NscStatusInfoDown.fromJson(json),
   'Unhealthy' => NscStatusInfoUnhealthy.fromJson(json),
   'Healthy' => NscStatusInfoHealthy.fromJson(json),
   _ => NscStatusInfo$Unknown(json),
-}; }
+};}
 
 /// Build the `Down` variant.
-factory NscStatusInfo.down({Omittable<String?> reason = const Omittable.absent()}) { return NscStatusInfoDown(Down(state: 'Down', reason: reason)); }
+factory NscStatusInfo.down({Omittable<String?> reason = const Omittable.absent()}) {return NscStatusInfoDown(Down(state: 'Down', reason: reason));}
 
 /// Build the `Unhealthy` variant.
-factory NscStatusInfo.unhealthy({Omittable<String?> reason = const Omittable.absent()}) { return NscStatusInfoUnhealthy(Unhealthy(state: 'Unhealthy', reason: reason)); }
+factory NscStatusInfo.unhealthy({Omittable<String?> reason = const Omittable.absent()}) {return NscStatusInfoUnhealthy(Unhealthy(state: 'Unhealthy', reason: reason));}
 
 /// The discriminator value identifying this variant.
 NscStatusInfoState get state;
@@ -105,17 +105,17 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is NscStatusInfo$Unknown;
 
-R when<R>({required R Function(NscStatusInfoPending) pending, required R Function(NscStatusInfoDown) down, required R Function(NscStatusInfoUnhealthy) unhealthy, required R Function(NscStatusInfoHealthy) healthy, required R Function(NscStatusInfo$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(NscStatusInfoPending) pending, required R Function(NscStatusInfoDown) down, required R Function(NscStatusInfoUnhealthy) unhealthy, required R Function(NscStatusInfoHealthy) healthy, required R Function(NscStatusInfo$Unknown) unknown, }) {return switch (this) {
   final NscStatusInfoPending v => pending(v),
   final NscStatusInfoDown v => down(v),
   final NscStatusInfoUnhealthy v => unhealthy(v),
   final NscStatusInfoHealthy v => healthy(v),
   final NscStatusInfo$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class NscStatusInfoPending extends NscStatusInfo {const NscStatusInfoPending(this.pending);
 
-factory NscStatusInfoPending.fromJson(Map<String, dynamic> json) { return NscStatusInfoPending(Pending.fromJson(json)); }
+factory NscStatusInfoPending.fromJson(Map<String, dynamic> json) {return NscStatusInfoPending(Pending.fromJson(json));}
 
 final Pending pending;
 
@@ -123,7 +123,7 @@ final Pending pending;
 
 @override Map<String, dynamic> toJson() => {...pending.toJson(), 'state': state.toJson()};
 
-NscStatusInfoPending copyWith({Pending? pending}) { return NscStatusInfoPending(pending ?? this.pending); } 
+NscStatusInfoPending copyWith({Pending? pending}) {return NscStatusInfoPending(pending ?? this.pending);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is NscStatusInfoPending && pending == other.pending;
 
@@ -131,10 +131,10 @@ NscStatusInfoPending copyWith({Pending? pending}) { return NscStatusInfoPending(
 
 @override String toString() => 'NscStatusInfo.pending($pending)';
 
- }
+}
 @immutable final class NscStatusInfoDown extends NscStatusInfo {const NscStatusInfoDown(this.down);
 
-factory NscStatusInfoDown.fromJson(Map<String, dynamic> json) { return NscStatusInfoDown(Down.fromJson(json)); }
+factory NscStatusInfoDown.fromJson(Map<String, dynamic> json) {return NscStatusInfoDown(Down.fromJson(json));}
 
 final Down down;
 
@@ -142,9 +142,9 @@ final Down down;
 
 @override Map<String, dynamic> toJson() => {...down.toJson(), 'state': state.toJson()};
 
-NscStatusInfoDown copyWith({Omittable<String?>? reason}) { return NscStatusInfoDown(down.copyWith(
+NscStatusInfoDown copyWith({Omittable<String?>? reason}) {return NscStatusInfoDown(down.copyWith(
   reason: reason,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is NscStatusInfoDown && down == other.down;
 
@@ -152,10 +152,10 @@ NscStatusInfoDown copyWith({Omittable<String?>? reason}) { return NscStatusInfoD
 
 @override String toString() => 'NscStatusInfo.down($down)';
 
- }
+}
 @immutable final class NscStatusInfoUnhealthy extends NscStatusInfo {const NscStatusInfoUnhealthy(this.unhealthy);
 
-factory NscStatusInfoUnhealthy.fromJson(Map<String, dynamic> json) { return NscStatusInfoUnhealthy(Unhealthy.fromJson(json)); }
+factory NscStatusInfoUnhealthy.fromJson(Map<String, dynamic> json) {return NscStatusInfoUnhealthy(Unhealthy.fromJson(json));}
 
 final Unhealthy unhealthy;
 
@@ -163,9 +163,9 @@ final Unhealthy unhealthy;
 
 @override Map<String, dynamic> toJson() => {...unhealthy.toJson(), 'state': state.toJson()};
 
-NscStatusInfoUnhealthy copyWith({Omittable<String?>? reason}) { return NscStatusInfoUnhealthy(unhealthy.copyWith(
+NscStatusInfoUnhealthy copyWith({Omittable<String?>? reason}) {return NscStatusInfoUnhealthy(unhealthy.copyWith(
   reason: reason,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is NscStatusInfoUnhealthy && unhealthy == other.unhealthy;
 
@@ -173,10 +173,10 @@ NscStatusInfoUnhealthy copyWith({Omittable<String?>? reason}) { return NscStatus
 
 @override String toString() => 'NscStatusInfo.unhealthy($unhealthy)';
 
- }
+}
 @immutable final class NscStatusInfoHealthy extends NscStatusInfo {const NscStatusInfoHealthy(this.healthy);
 
-factory NscStatusInfoHealthy.fromJson(Map<String, dynamic> json) { return NscStatusInfoHealthy(Healthy.fromJson(json)); }
+factory NscStatusInfoHealthy.fromJson(Map<String, dynamic> json) {return NscStatusInfoHealthy(Healthy.fromJson(json));}
 
 final Healthy healthy;
 
@@ -184,7 +184,7 @@ final Healthy healthy;
 
 @override Map<String, dynamic> toJson() => {...healthy.toJson(), 'state': state.toJson()};
 
-NscStatusInfoHealthy copyWith({Healthy? healthy}) { return NscStatusInfoHealthy(healthy ?? this.healthy); } 
+NscStatusInfoHealthy copyWith({Healthy? healthy}) {return NscStatusInfoHealthy(healthy ?? this.healthy);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is NscStatusInfoHealthy && healthy == other.healthy;
 
@@ -192,7 +192,7 @@ NscStatusInfoHealthy copyWith({Healthy? healthy}) { return NscStatusInfoHealthy(
 
 @override String toString() => 'NscStatusInfo.healthy($healthy)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class NscStatusInfo$Unknown extends NscStatusInfo {const NscStatusInfo$Unknown(this.json);
@@ -210,4 +210,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'NscStatusInfo.unknown($json)';
 
- }
+}

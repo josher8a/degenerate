@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/deleted_terminal_reader_object.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/device_type.dart';import 'package:pub_stripe_spec3/models/terminal_reader/location.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_reader_action.dart';/// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
 sealed class TerminalReaderStatus {const TerminalReaderStatus();
 
-factory TerminalReaderStatus.fromJson(String json) { return switch (json) {
+factory TerminalReaderStatus.fromJson(String json) {return switch (json) {
   'offline' => offline,
   'online' => online,
   _ => TerminalReaderStatus$Unknown(json),
-}; }
+};}
 
 static const TerminalReaderStatus offline = TerminalReaderStatus$offline._();
 
@@ -17,30 +17,30 @@ static const TerminalReaderStatus online = TerminalReaderStatus$online._();
 static const List<TerminalReaderStatus> values = [offline, online];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'offline' => 'offline',
   'online' => 'online',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TerminalReaderStatus$Unknown; } 
+bool get isUnknown {return this is TerminalReaderStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() offline, required W Function() online, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() offline, required W Function() online, required W Function(String value) $unknown, }) {return switch (this) {
       TerminalReaderStatus$offline() => offline(),
       TerminalReaderStatus$online() => online(),
       TerminalReaderStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline, W Function()? online, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline, W Function()? online, W Function(String value)? $unknown, }) {return switch (this) {
       TerminalReaderStatus$offline() => offline != null ? offline() : orElse(value),
       TerminalReaderStatus$online() => online != null ? online() : orElse(value),
       TerminalReaderStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TerminalReaderStatus($value)';
 
- }
+}
 @immutable final class TerminalReaderStatus$offline extends TerminalReaderStatus {const TerminalReaderStatus$offline._();
 
 @override String get value => 'offline';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline,
 
 @override int get hashCode => 'offline'.hashCode;
 
- }
+}
 @immutable final class TerminalReaderStatus$online extends TerminalReaderStatus {const TerminalReaderStatus$online._();
 
 @override String get value => 'online';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline,
 
 @override int get hashCode => 'online'.hashCode;
 
- }
+}
 @immutable final class TerminalReaderStatus$Unknown extends TerminalReaderStatus {const TerminalReaderStatus$Unknown(this.value);
 
 @override final String value;
@@ -68,13 +68,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Reader represents a physical device for accepting payment details.
 /// 
 /// Related guide: [Connecting to a reader](https://docs.stripe.com/terminal/payments/connect-reader)
 @immutable final class TerminalReader {const TerminalReader({required this.deviceType, required this.id, required this.label, required this.livemode, required this.metadata, required this.object, required this.serialNumber, this.action = const Omittable.absent(), this.deviceSwVersion = const Omittable.absent(), this.ipAddress = const Omittable.absent(), this.lastSeenAt = const Omittable.absent(), this.location = const Omittable.absent(), this.status = const Omittable.absent(), });
 
-factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalReader(
+factory TerminalReader.fromJson(Map<String, dynamic> json) {return TerminalReader(
   action: json.containsKey('action') ? Omittable(json['action'] != null ? TerminalReaderReaderResourceReaderAction.fromJson(json['action'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   deviceSwVersion: json.containsKey('device_sw_version') ? Omittable(json['device_sw_version'] as String?) : const Omittable.absent(),
   deviceType: DeviceType.fromJson(json['device_type'] as String),
@@ -88,7 +88,7 @@ factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalRead
   object: DeletedTerminalReaderObject.fromJson(json['object'] as String),
   serialNumber: json['serial_number'] as String,
   status: json.containsKey('status') ? Omittable(json['status'] != null ? TerminalReaderStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The most recent action performed by the reader.
 final Omittable<TerminalReaderReaderResourceReaderAction?> action;
@@ -129,7 +129,7 @@ final String serialNumber;
 /// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
 final Omittable<TerminalReaderStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action.isPresent) 'action': action.value?.toJson(),
   if (deviceSwVersion.isPresent) 'device_sw_version': deviceSwVersion.value,
   'device_type': deviceType.toJson(),
@@ -143,16 +143,16 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'serial_number': serialNumber,
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('device_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('device_type') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('label') && json['label'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object') && json['object'] == 'terminal.reader' &&
-      json.containsKey('serial_number') && json['serial_number'] is String; } 
+      json.containsKey('serial_number') && json['serial_number'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final deviceSwVersion$ = deviceSwVersion.value;
 if (deviceSwVersion$ != null) {
   if (deviceSwVersion$.runes.length > 5000) { errors.add('deviceSwVersion: length must be <= 5000'); }
@@ -164,8 +164,8 @@ if (ipAddress$ != null) {
 }
 if (label.runes.length > 5000) { errors.add('label: length must be <= 5000'); }
 if (serialNumber.runes.length > 5000) { errors.add('serialNumber: length must be <= 5000'); }
-return errors; } 
-TerminalReader copyWith({Omittable<TerminalReaderReaderResourceReaderAction?>? action, Omittable<String?>? deviceSwVersion, DeviceType? deviceType, String? id, Omittable<String?>? ipAddress, String? label, Omittable<int?>? lastSeenAt, bool? livemode, Omittable<Location?>? location, Map<String,String>? metadata, DeletedTerminalReaderObject? object, String? serialNumber, Omittable<TerminalReaderStatus?>? status, }) { return TerminalReader(
+return errors;}
+TerminalReader copyWith({Omittable<TerminalReaderReaderResourceReaderAction?>? action, Omittable<String?>? deviceSwVersion, DeviceType? deviceType, String? id, Omittable<String?>? ipAddress, String? label, Omittable<int?>? lastSeenAt, bool? livemode, Omittable<Location?>? location, Map<String,String>? metadata, DeletedTerminalReaderObject? object, String? serialNumber, Omittable<TerminalReaderStatus?>? status, }) {return TerminalReader(
   action: action ?? this.action,
   deviceSwVersion: deviceSwVersion ?? this.deviceSwVersion,
   deviceType: deviceType ?? this.deviceType,
@@ -179,7 +179,7 @@ TerminalReader copyWith({Omittable<TerminalReaderReaderResourceReaderAction?>? a
   object: object ?? this.object,
   serialNumber: serialNumber ?? this.serialNumber,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReader &&
           action == other.action &&
@@ -200,4 +200,4 @@ TerminalReader copyWith({Omittable<TerminalReaderReaderResourceReaderAction?>? a
 
 @override String toString() => 'TerminalReader(\n  action: $action,\n  deviceSwVersion: $deviceSwVersion,\n  deviceType: $deviceType,\n  id: $id,\n  ipAddress: $ipAddress,\n  label: $label,\n  lastSeenAt: $lastSeenAt,\n  livemode: $livemode,\n  location: $location,\n  metadata: $metadata,\n  object: $object,\n  serialNumber: $serialNumber,\n  status: $status,\n)';
 
- }
+}

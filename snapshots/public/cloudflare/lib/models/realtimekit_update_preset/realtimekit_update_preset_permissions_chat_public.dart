@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetPermissionsChatPublic {const RealtimekitUpdatePresetPermissionsChatPublic({this.canSend, this.files, this.text, });
 
-factory RealtimekitUpdatePresetPermissionsChatPublic.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsChatPublic(
+factory RealtimekitUpdatePresetPermissionsChatPublic.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetPermissionsChatPublic(
   canSend: json['can_send'] as bool?,
   files: json['files'] as bool?,
   text: json['text'] as bool?,
-); }
+);}
 
 /// Can send messages in general
 final bool? canSend;
@@ -18,17 +18,17 @@ final bool? files;
 /// Can send text messages
 final bool? text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'can_send': ?canSend,
   'files': ?files,
   'text': ?text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_send', 'files', 'text'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsChatPublic copyWith({bool? Function()? canSend, bool? Function()? files, bool? Function()? text, }) { return RealtimekitUpdatePresetPermissionsChatPublic(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'can_send', 'files', 'text'}.contains(key));}
+RealtimekitUpdatePresetPermissionsChatPublic copyWith({bool? Function()? canSend, bool? Function()? files, bool? Function()? text, }) {return RealtimekitUpdatePresetPermissionsChatPublic(
   canSend: canSend != null ? canSend() : this.canSend,
   files: files != null ? files() : this.files,
   text: text != null ? text() : this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsChatPublic &&
           canSend == other.canSend &&
@@ -39,4 +39,4 @@ RealtimekitUpdatePresetPermissionsChatPublic copyWith({bool? Function()? canSend
 
 @override String toString() => 'RealtimekitUpdatePresetPermissionsChatPublic(canSend: $canSend, files: $files, text: $text)';
 
- }
+}

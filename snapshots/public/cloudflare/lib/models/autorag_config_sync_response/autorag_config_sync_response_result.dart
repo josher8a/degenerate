@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigSyncResponseResult {const AutoragConfigSyncResponseResult({required this.jobId});
 
-factory AutoragConfigSyncResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigSyncResponseResult(
+factory AutoragConfigSyncResponseResult.fromJson(Map<String, dynamic> json) {return AutoragConfigSyncResponseResult(
   jobId: json['job_id'] as String,
-); }
+);}
 
 final String jobId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'job_id': jobId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('job_id') && json['job_id'] is String; } 
-AutoragConfigSyncResponseResult copyWith({String? jobId}) { return AutoragConfigSyncResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('job_id') && json['job_id'] is String;}
+AutoragConfigSyncResponseResult copyWith({String? jobId}) {return AutoragConfigSyncResponseResult(
   jobId: jobId ?? this.jobId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigSyncResponseResult &&
           jobId == other.jobId;
@@ -24,4 +24,4 @@ AutoragConfigSyncResponseResult copyWith({String? jobId}) { return AutoragConfig
 
 @override String toString() => 'AutoragConfigSyncResponseResult(jobId: $jobId)';
 
- }
+}

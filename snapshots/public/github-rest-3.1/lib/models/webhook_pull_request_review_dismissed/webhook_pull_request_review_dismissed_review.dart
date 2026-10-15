@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review/webhooks_review_links.dart';sealed class ReviewState {const ReviewState();
 
-factory ReviewState.fromJson(String json) { return switch (json) {
+factory ReviewState.fromJson(String json) {return switch (json) {
   'dismissed' => dismissed,
   'approved' => approved,
   'changes_requested' => changesRequested,
   _ => ReviewState$Unknown(json),
-}; }
+};}
 
 static const ReviewState dismissed = ReviewState$dismissed._();
 
@@ -19,33 +19,33 @@ static const ReviewState changesRequested = ReviewState$changesRequested._();
 static const List<ReviewState> values = [dismissed, approved, changesRequested];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'dismissed' => 'dismissed',
   'approved' => 'approved',
   'changes_requested' => 'changesRequested',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReviewState$Unknown; } 
+bool get isUnknown {return this is ReviewState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dismissed, required W Function() approved, required W Function() changesRequested, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dismissed, required W Function() approved, required W Function() changesRequested, required W Function(String value) $unknown, }) {return switch (this) {
       ReviewState$dismissed() => dismissed(),
       ReviewState$approved() => approved(),
       ReviewState$changesRequested() => changesRequested(),
       ReviewState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismissed, W Function()? approved, W Function()? changesRequested, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismissed, W Function()? approved, W Function()? changesRequested, W Function(String value)? $unknown, }) {return switch (this) {
       ReviewState$dismissed() => dismissed != null ? dismissed() : orElse(value),
       ReviewState$approved() => approved != null ? approved() : orElse(value),
       ReviewState$changesRequested() => changesRequested != null ? changesRequested() : orElse(value),
       ReviewState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReviewState($value)';
 
- }
+}
 @immutable final class ReviewState$dismissed extends ReviewState {const ReviewState$dismissed._();
 
 @override String get value => 'dismissed';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismisse
 
 @override int get hashCode => 'dismissed'.hashCode;
 
- }
+}
 @immutable final class ReviewState$approved extends ReviewState {const ReviewState$approved._();
 
 @override String get value => 'approved';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismisse
 
 @override int get hashCode => 'approved'.hashCode;
 
- }
+}
 @immutable final class ReviewState$changesRequested extends ReviewState {const ReviewState$changesRequested._();
 
 @override String get value => 'changes_requested';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismisse
 
 @override int get hashCode => 'changes_requested'.hashCode;
 
- }
+}
 @immutable final class ReviewState$Unknown extends ReviewState {const ReviewState$Unknown(this.value);
 
 @override final String value;
@@ -82,11 +82,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dismisse
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The review that was affected.
 @immutable final class WebhookPullRequestReviewDismissedReview {const WebhookPullRequestReviewDismissedReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt = const Omittable.absent(), });
 
-factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewDismissedReview(
+factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewDismissedReview(
   links: WebhooksReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String?,
@@ -99,7 +99,7 @@ factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> js
   submittedAt: DateTime.parse(json['submitted_at'] as String),
   updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
   user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhooksReviewLinks links;
 
@@ -129,7 +129,7 @@ final Omittable<DateTime?> updatedAt;
 
 final WebhooksIssueCommentUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
   'body': body,
@@ -142,8 +142,8 @@ Map<String, dynamic> toJson() { return {
   'submitted_at': submittedAt.toIso8601String(),
   if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('author_association') &&
       json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
@@ -153,8 +153,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('state') &&
       json.containsKey('submitted_at') && json['submitted_at'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, ReviewState? state, DateTime? submittedAt, Omittable<DateTime?>? updatedAt, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestReviewDismissedReview(
+      json.containsKey('user');}
+WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, ReviewState? state, DateTime? submittedAt, Omittable<DateTime?>? updatedAt, WebhooksIssueCommentUser? Function()? user, }) {return WebhookPullRequestReviewDismissedReview(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body != null ? body() : this.body,
@@ -167,7 +167,7 @@ WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, Au
   submittedAt: submittedAt ?? this.submittedAt,
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewDismissedReview &&
           links == other.links &&
@@ -187,4 +187,4 @@ WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, Au
 
 @override String toString() => 'WebhookPullRequestReviewDismissedReview(\n  links: $links,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  commitId: $commitId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  nodeId: $nodeId,\n  pullRequestUrl: $pullRequestUrl,\n  state: $state,\n  submittedAt: $submittedAt,\n  updatedAt: $updatedAt,\n  user: $user,\n)';
 
- }
+}

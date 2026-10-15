@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/user_location.dart';sealed class SearchContextSize {const SearchContextSize();
 
-factory SearchContextSize.fromJson(String json) { return switch (json) {
+factory SearchContextSize.fromJson(String json) {return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   _ => SearchContextSize$Unknown(json),
-}; }
+};}
 
 static const SearchContextSize low = SearchContextSize$low._();
 
@@ -19,33 +19,33 @@ static const SearchContextSize high = SearchContextSize$high._();
 static const List<SearchContextSize> values = [low, medium, high];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'low' => 'low',
   'medium' => 'medium',
   'high' => 'high',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SearchContextSize$Unknown; } 
+bool get isUnknown {return this is SearchContextSize$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) {return switch (this) {
       SearchContextSize$low() => low(),
       SearchContextSize$medium() => medium(),
       SearchContextSize$high() => high(),
       SearchContextSize$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) {return switch (this) {
       SearchContextSize$low() => low != null ? low() : orElse(value),
       SearchContextSize$medium() => medium != null ? medium() : orElse(value),
       SearchContextSize$high() => high != null ? high() : orElse(value),
       SearchContextSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SearchContextSize($value)';
 
- }
+}
 @immutable final class SearchContextSize$low extends SearchContextSize {const SearchContextSize$low._();
 
 @override String get value => 'low';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class SearchContextSize$medium extends SearchContextSize {const SearchContextSize$medium._();
 
 @override String get value => 'medium';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'medium'.hashCode;
 
- }
+}
 @immutable final class SearchContextSize$high extends SearchContextSize {const SearchContextSize$high._();
 
 @override String get value => 'high';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class SearchContextSize$Unknown extends SearchContextSize {const SearchContextSize$Unknown(this.value);
 
 @override final String value;
@@ -82,14 +82,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Options for the web search tool (when using built-in web search).
 @immutable final class WebSearchOptionsVariant1 {const WebSearchOptionsVariant1({this.searchContextSize, this.userLocation, });
 
-factory WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) { return WebSearchOptionsVariant1(
+factory WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) {return WebSearchOptionsVariant1(
   searchContextSize: json['search_context_size'] != null ? SearchContextSize.fromJson(json['search_context_size'] as String) : null,
   userLocation: json['user_location'] != null ? UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final SearchContextSize? searchContextSize;
 
@@ -98,15 +98,15 @@ final UserLocation? userLocation;
 /// The value of `searchContextSize`, or its schema default when absent.
 SearchContextSize get searchContextSizeOrDefault => searchContextSize ?? SearchContextSize.fromJson('medium');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
   if (userLocation != null) 'user_location': userLocation?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'search_context_size', 'user_location'}.contains(key)); } 
-WebSearchOptionsVariant1 copyWith({SearchContextSize? Function()? searchContextSize, UserLocation? Function()? userLocation, }) { return WebSearchOptionsVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'search_context_size', 'user_location'}.contains(key));}
+WebSearchOptionsVariant1 copyWith({SearchContextSize? Function()? searchContextSize, UserLocation? Function()? userLocation, }) {return WebSearchOptionsVariant1(
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchOptionsVariant1 &&
           searchContextSize == other.searchContextSize &&
@@ -116,4 +116,4 @@ WebSearchOptionsVariant1 copyWith({SearchContextSize? Function()? searchContextS
 
 @override String toString() => 'WebSearchOptionsVariant1(searchContextSize: $searchContextSize, userLocation: $userLocation)';
 
- }
+}

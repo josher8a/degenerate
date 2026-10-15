@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_request/post_climate_orders_request_beneficiary.dart';@immutable final class PostClimateOrdersRequest {const PostClimateOrdersRequest({required this.product, this.amount, this.beneficiary, this.currency, this.expand, this.metadata, this.metricTons, });
 
-factory PostClimateOrdersRequest.fromJson(Map<String, dynamic> json) { return PostClimateOrdersRequest(
+factory PostClimateOrdersRequest.fromJson(Map<String, dynamic> json) {return PostClimateOrdersRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   beneficiary: json['beneficiary'] != null ? PostClimateOrdersRequestBeneficiary.fromJson(json['beneficiary'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
@@ -11,7 +11,7 @@ factory PostClimateOrdersRequest.fromJson(Map<String, dynamic> json) { return Po
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   metricTons: json['metric_tons'] as String?,
   product: json['product'] as String,
-); }
+);}
 
 /// Requested amount of carbon removal units. Either this or `metric_tons` must be specified.
 final int? amount;
@@ -34,7 +34,7 @@ final String? metricTons;
 /// Unique identifier of the Climate product.
 final String product;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   if (beneficiary != null) 'beneficiary': beneficiary?.toJson(),
   'currency': ?currency,
@@ -42,17 +42,17 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'metric_tons': ?metricTons,
   'product': product,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('product') && json['product'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('product') && json['product'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final currency$ = currency;
 if (currency$ != null) {
   if (currency$.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 }
 if (product.runes.length > 5000) { errors.add('product: length must be <= 5000'); }
-return errors; } 
-PostClimateOrdersRequest copyWith({int? Function()? amount, PostClimateOrdersRequestBeneficiary? Function()? beneficiary, String? Function()? currency, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? metricTons, String? product, }) { return PostClimateOrdersRequest(
+return errors;}
+PostClimateOrdersRequest copyWith({int? Function()? amount, PostClimateOrdersRequestBeneficiary? Function()? beneficiary, String? Function()? currency, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? metricTons, String? product, }) {return PostClimateOrdersRequest(
   amount: amount != null ? amount() : this.amount,
   beneficiary: beneficiary != null ? beneficiary() : this.beneficiary,
   currency: currency != null ? currency() : this.currency,
@@ -60,7 +60,7 @@ PostClimateOrdersRequest copyWith({int? Function()? amount, PostClimateOrdersReq
   metadata: metadata != null ? metadata() : this.metadata,
   metricTons: metricTons != null ? metricTons() : this.metricTons,
   product: product ?? this.product,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostClimateOrdersRequest &&
           amount == other.amount &&
@@ -75,4 +75,4 @@ PostClimateOrdersRequest copyWith({int? Function()? amount, PostClimateOrdersReq
 
 @override String toString() => 'PostClimateOrdersRequest(amount: $amount, beneficiary: $beneficiary, currency: $currency, expand: $expand, metadata: $metadata, metricTons: $metricTons, product: $product)';
 
- }
+}

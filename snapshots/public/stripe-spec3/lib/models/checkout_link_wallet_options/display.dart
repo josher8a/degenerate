@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes whether Checkout should display Link. Defaults to `auto`.
 sealed class Display {const Display();
 
-factory Display.fromJson(String json) { return switch (json) {
+factory Display.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'never' => never,
   _ => Display$Unknown(json),
-}; }
+};}
 
 static const Display auto = Display$auto._();
 
@@ -17,30 +17,30 @@ static const Display never = Display$never._();
 static const List<Display> values = [auto, never];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   'never' => 'never',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Display$Unknown; } 
+bool get isUnknown {return this is Display$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() never, required W Function(String value) $unknown, }) {return switch (this) {
       Display$auto() => auto(),
       Display$never() => never(),
       Display$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? never, W Function(String value)? $unknown, }) {return switch (this) {
       Display$auto() => auto != null ? auto() : orElse(value),
       Display$never() => never != null ? never() : orElse(value),
       Display$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Display($value)';
 
- }
+}
 @immutable final class Display$auto extends Display {const Display$auto._();
 
 @override String get value => 'auto';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class Display$never extends Display {const Display$never._();
 
 @override String get value => 'never';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'never'.hashCode;
 
- }
+}
 @immutable final class Display$Unknown extends Display {const Display$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

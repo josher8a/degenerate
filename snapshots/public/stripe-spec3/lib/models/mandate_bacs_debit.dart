@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the mandate on the Bacs network. Can be one of `pending`, `revoked`, `refused`, or `accepted`.
 sealed class NetworkStatus {const NetworkStatus();
 
-factory NetworkStatus.fromJson(String json) { return switch (json) {
+factory NetworkStatus.fromJson(String json) {return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'refused' => refused,
   'revoked' => revoked,
   _ => NetworkStatus$Unknown(json),
-}; }
+};}
 
 static const NetworkStatus accepted = NetworkStatus$accepted._();
 
@@ -23,36 +23,36 @@ static const NetworkStatus revoked = NetworkStatus$revoked._();
 static const List<NetworkStatus> values = [accepted, pending, refused, revoked];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'accepted' => 'accepted',
   'pending' => 'pending',
   'refused' => 'refused',
   'revoked' => 'revoked',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NetworkStatus$Unknown; } 
+bool get isUnknown {return this is NetworkStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accepted, required W Function() pending, required W Function() refused, required W Function() revoked, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accepted, required W Function() pending, required W Function() refused, required W Function() revoked, required W Function(String value) $unknown, }) {return switch (this) {
       NetworkStatus$accepted() => accepted(),
       NetworkStatus$pending() => pending(),
       NetworkStatus$refused() => refused(),
       NetworkStatus$revoked() => revoked(),
       NetworkStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function()? refused, W Function()? revoked, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function()? refused, W Function()? revoked, W Function(String value)? $unknown, }) {return switch (this) {
       NetworkStatus$accepted() => accepted != null ? accepted() : orElse(value),
       NetworkStatus$pending() => pending != null ? pending() : orElse(value),
       NetworkStatus$refused() => refused != null ? refused() : orElse(value),
       NetworkStatus$revoked() => revoked != null ? revoked() : orElse(value),
       NetworkStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'NetworkStatus($value)';
 
- }
+}
 @immutable final class NetworkStatus$accepted extends NetworkStatus {const NetworkStatus$accepted._();
 
 @override String get value => 'accepted';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class NetworkStatus$pending extends NetworkStatus {const NetworkStatus$pending._();
 
 @override String get value => 'pending';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class NetworkStatus$refused extends NetworkStatus {const NetworkStatus$refused._();
 
 @override String get value => 'refused';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'refused'.hashCode;
 
- }
+}
 @immutable final class NetworkStatus$revoked extends NetworkStatus {const NetworkStatus$revoked._();
 
 @override String get value => 'revoked';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => 'revoked'.hashCode;
 
- }
+}
 @immutable final class NetworkStatus$Unknown extends NetworkStatus {const NetworkStatus$Unknown(this.value);
 
 @override final String value;
@@ -98,18 +98,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// When the mandate is revoked on the Bacs network this field displays the reason for the revocation.
 sealed class RevocationReason {const RevocationReason();
 
-factory RevocationReason.fromJson(String json) { return switch (json) {
+factory RevocationReason.fromJson(String json) {return switch (json) {
   'account_closed' => accountClosed,
   'bank_account_restricted' => bankAccountRestricted,
   'bank_ownership_changed' => bankOwnershipChanged,
   'could_not_process' => couldNotProcess,
   'debit_not_authorized' => debitNotAuthorized,
   _ => RevocationReason$Unknown(json),
-}; }
+};}
 
 static const RevocationReason accountClosed = RevocationReason$accountClosed._();
 
@@ -124,39 +124,39 @@ static const RevocationReason debitNotAuthorized = RevocationReason$debitNotAuth
 static const List<RevocationReason> values = [accountClosed, bankAccountRestricted, bankOwnershipChanged, couldNotProcess, debitNotAuthorized];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'account_closed' => 'accountClosed',
   'bank_account_restricted' => 'bankAccountRestricted',
   'bank_ownership_changed' => 'bankOwnershipChanged',
   'could_not_process' => 'couldNotProcess',
   'debit_not_authorized' => 'debitNotAuthorized',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RevocationReason$Unknown; } 
+bool get isUnknown {return this is RevocationReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accountClosed, required W Function() bankAccountRestricted, required W Function() bankOwnershipChanged, required W Function() couldNotProcess, required W Function() debitNotAuthorized, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accountClosed, required W Function() bankAccountRestricted, required W Function() bankOwnershipChanged, required W Function() couldNotProcess, required W Function() debitNotAuthorized, required W Function(String value) $unknown, }) {return switch (this) {
       RevocationReason$accountClosed() => accountClosed(),
       RevocationReason$bankAccountRestricted() => bankAccountRestricted(),
       RevocationReason$bankOwnershipChanged() => bankOwnershipChanged(),
       RevocationReason$couldNotProcess() => couldNotProcess(),
       RevocationReason$debitNotAuthorized() => debitNotAuthorized(),
       RevocationReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountClosed, W Function()? bankAccountRestricted, W Function()? bankOwnershipChanged, W Function()? couldNotProcess, W Function()? debitNotAuthorized, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountClosed, W Function()? bankAccountRestricted, W Function()? bankOwnershipChanged, W Function()? couldNotProcess, W Function()? debitNotAuthorized, W Function(String value)? $unknown, }) {return switch (this) {
       RevocationReason$accountClosed() => accountClosed != null ? accountClosed() : orElse(value),
       RevocationReason$bankAccountRestricted() => bankAccountRestricted != null ? bankAccountRestricted() : orElse(value),
       RevocationReason$bankOwnershipChanged() => bankOwnershipChanged != null ? bankOwnershipChanged() : orElse(value),
       RevocationReason$couldNotProcess() => couldNotProcess != null ? couldNotProcess() : orElse(value),
       RevocationReason$debitNotAuthorized() => debitNotAuthorized != null ? debitNotAuthorized() : orElse(value),
       RevocationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RevocationReason($value)';
 
- }
+}
 @immutable final class RevocationReason$accountClosed extends RevocationReason {const RevocationReason$accountClosed._();
 
 @override String get value => 'account_closed';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'account_closed'.hashCode;
 
- }
+}
 @immutable final class RevocationReason$bankAccountRestricted extends RevocationReason {const RevocationReason$bankAccountRestricted._();
 
 @override String get value => 'bank_account_restricted';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'bank_account_restricted'.hashCode;
 
- }
+}
 @immutable final class RevocationReason$bankOwnershipChanged extends RevocationReason {const RevocationReason$bankOwnershipChanged._();
 
 @override String get value => 'bank_ownership_changed';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'bank_ownership_changed'.hashCode;
 
- }
+}
 @immutable final class RevocationReason$couldNotProcess extends RevocationReason {const RevocationReason$couldNotProcess._();
 
 @override String get value => 'could_not_process';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'could_not_process'.hashCode;
 
- }
+}
 @immutable final class RevocationReason$debitNotAuthorized extends RevocationReason {const RevocationReason$debitNotAuthorized._();
 
 @override String get value => 'debit_not_authorized';
@@ -201,7 +201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'debit_not_authorized'.hashCode;
 
- }
+}
 @immutable final class RevocationReason$Unknown extends RevocationReason {const RevocationReason$Unknown(this.value);
 
 @override final String value;
@@ -211,18 +211,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class MandateBacsDebit {const MandateBacsDebit({required this.networkStatus, required this.reference, required this.url, this.displayName = const Omittable.absent(), this.revocationReason = const Omittable.absent(), this.serviceUserNumber = const Omittable.absent(), });
 
-factory MandateBacsDebit.fromJson(Map<String, dynamic> json) { return MandateBacsDebit(
+factory MandateBacsDebit.fromJson(Map<String, dynamic> json) {return MandateBacsDebit(
   displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
   networkStatus: NetworkStatus.fromJson(json['network_status'] as String),
   reference: json['reference'] as String,
   revocationReason: json.containsKey('revocation_reason') ? Omittable(json['revocation_reason'] != null ? RevocationReason.fromJson(json['revocation_reason'] as String) : null) : const Omittable.absent(),
   serviceUserNumber: json.containsKey('service_user_number') ? Omittable(json['service_user_number'] as String?) : const Omittable.absent(),
   url: json['url'] as String,
-); }
+);}
 
 /// The display name for the account on this mandate.
 final Omittable<String?> displayName;
@@ -242,19 +242,19 @@ final Omittable<String?> serviceUserNumber;
 /// The URL that will contain the mandate that the customer has signed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayName.isPresent) 'display_name': displayName.value,
   'network_status': networkStatus.toJson(),
   'reference': reference,
   if (revocationReason.isPresent) 'revocation_reason': revocationReason.value?.toJson(),
   if (serviceUserNumber.isPresent) 'service_user_number': serviceUserNumber.value,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('network_status') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('network_status') &&
       json.containsKey('reference') && json['reference'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final displayName$ = displayName.value;
 if (displayName$ != null) {
   if (displayName$.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
@@ -265,15 +265,15 @@ if (serviceUserNumber$ != null) {
   if (serviceUserNumber$.runes.length > 5000) { errors.add('serviceUserNumber: length must be <= 5000'); }
 }
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
-return errors; } 
-MandateBacsDebit copyWith({Omittable<String?>? displayName, NetworkStatus? networkStatus, String? reference, Omittable<RevocationReason?>? revocationReason, Omittable<String?>? serviceUserNumber, String? url, }) { return MandateBacsDebit(
+return errors;}
+MandateBacsDebit copyWith({Omittable<String?>? displayName, NetworkStatus? networkStatus, String? reference, Omittable<RevocationReason?>? revocationReason, Omittable<String?>? serviceUserNumber, String? url, }) {return MandateBacsDebit(
   displayName: displayName ?? this.displayName,
   networkStatus: networkStatus ?? this.networkStatus,
   reference: reference ?? this.reference,
   revocationReason: revocationReason ?? this.revocationReason,
   serviceUserNumber: serviceUserNumber ?? this.serviceUserNumber,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MandateBacsDebit &&
           displayName == other.displayName &&
@@ -287,4 +287,4 @@ MandateBacsDebit copyWith({Omittable<String?>? displayName, NetworkStatus? netwo
 
 @override String toString() => 'MandateBacsDebit(displayName: $displayName, networkStatus: $networkStatus, reference: $reference, revocationReason: $revocationReason, serviceUserNumber: $serviceUserNumber, url: $url)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_csam_report/abuse_reports_csam_report_owner_notification.dart';@immutable final class AbuseReportsRegistrarWhoisReport {const AbuseReportsRegistrarWhoisReport({required this.act, required this.email, required this.email2, required this.name, required this.urls, required this.ownerNotification, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, });
 
-factory AbuseReportsRegistrarWhoisReport.fromJson(Map<String, dynamic> json) { return AbuseReportsRegistrarWhoisReport(
+factory AbuseReportsRegistrarWhoisReport.fromJson(Map<String, dynamic> json) {return AbuseReportsRegistrarWhoisReport(
   act: json['act'],
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -16,7 +16,7 @@ factory AbuseReportsRegistrarWhoisReport.fromJson(Map<String, dynamic> json) { r
   title: json['title'] as String?,
   urls: json['urls'] as String,
   ownerNotification: AbuseReportsCsamReportOwnerNotification.fromJson(json['owner_notification'] as String),
-); }
+);}
 
 final dynamic act;
 
@@ -54,7 +54,7 @@ final String urls;
 /// 
 final AbuseReportsCsamReportOwnerNotification ownerNotification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act,
   'comments': ?comments,
   'company': ?company,
@@ -67,15 +67,15 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
   'urls': urls,
   'owner_notification': ownerNotification.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('urls') && json['urls'] is String &&
-      json.containsKey('owner_notification'); } 
+      json.containsKey('owner_notification');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.isEmpty) { errors.add('comments: length must be >= 1'); }
@@ -108,8 +108,8 @@ if (title$ != null) {
   if (title$.isEmpty) { errors.add('title: length must be >= 1'); }
   if (title$.runes.length > 255) { errors.add('title: length must be <= 255'); }
 }
-return errors; } 
-AbuseReportsRegistrarWhoisReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) { return AbuseReportsRegistrarWhoisReport(
+return errors;}
+AbuseReportsRegistrarWhoisReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) {return AbuseReportsRegistrarWhoisReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -122,7 +122,7 @@ AbuseReportsRegistrarWhoisReport copyWith({dynamic Function()? act, String? Func
   title: title != null ? title() : this.title,
   urls: urls ?? this.urls,
   ownerNotification: ownerNotification ?? this.ownerNotification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsRegistrarWhoisReport &&
           act == other.act &&
@@ -142,4 +142,4 @@ AbuseReportsRegistrarWhoisReport copyWith({dynamic Function()? act, String? Func
 
 @override String toString() => 'AbuseReportsRegistrarWhoisReport(\n  act: $act,\n  comments: $comments,\n  company: $company,\n  email: $email,\n  email2: $email2,\n  name: $name,\n  reportedCountry: $reportedCountry,\n  reportedUserAgent: $reportedUserAgent,\n  tele: $tele,\n  title: $title,\n  urls: $urls,\n  ownerNotification: $ownerNotification,\n)';
 
- }
+}

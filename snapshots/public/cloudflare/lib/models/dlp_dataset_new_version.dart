@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_column.dart';@immutable final class DlpDatasetNewVersion {const DlpDatasetNewVersion({required this.encodingVersion, required this.maxCells, required this.version, this.caseSensitive, this.columns, this.secret, });
 
-factory DlpDatasetNewVersion.fromJson(Map<String, dynamic> json) { return DlpDatasetNewVersion(
+factory DlpDatasetNewVersion.fromJson(Map<String, dynamic> json) {return DlpDatasetNewVersion(
   caseSensitive: json['case_sensitive'] as bool?,
   columns: (json['columns'] as List<dynamic>?)?.map((e) => DlpDatasetColumn.fromJson(e as Map<String, dynamic>)).toList(),
   encodingVersion: (json['encoding_version'] as num).toInt(),
   maxCells: (json['max_cells'] as num).toInt(),
   secret: json['secret'] as String?,
   version: (json['version'] as num).toInt(),
-); }
+);}
 
 final bool? caseSensitive;
 
@@ -24,30 +24,30 @@ final String? secret;
 
 final int version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'case_sensitive': ?caseSensitive,
   if (columns != null) 'columns': columns?.map((e) => e.toJson()).toList(),
   'encoding_version': encodingVersion,
   'max_cells': maxCells,
   'secret': ?secret,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('encoding_version') && json['encoding_version'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('encoding_version') && json['encoding_version'] is num &&
       json.containsKey('max_cells') && json['max_cells'] is num &&
-      json.containsKey('version') && json['version'] is num; } 
+      json.containsKey('version') && json['version'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (encodingVersion < 0) { errors.add('encodingVersion: must be >= 0'); }
 if (maxCells < 0) { errors.add('maxCells: must be >= 0'); }
-return errors; } 
-DlpDatasetNewVersion copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? Function()? columns, int? encodingVersion, int? maxCells, String? Function()? secret, int? version, }) { return DlpDatasetNewVersion(
+return errors;}
+DlpDatasetNewVersion copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? Function()? columns, int? encodingVersion, int? maxCells, String? Function()? secret, int? version, }) {return DlpDatasetNewVersion(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
   columns: columns != null ? columns() : this.columns,
   encodingVersion: encodingVersion ?? this.encodingVersion,
   maxCells: maxCells ?? this.maxCells,
   secret: secret != null ? secret() : this.secret,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetNewVersion &&
           caseSensitive == other.caseSensitive &&
@@ -61,4 +61,4 @@ DlpDatasetNewVersion copyWith({bool? Function()? caseSensitive, List<DlpDatasetC
 
 @override String toString() => 'DlpDatasetNewVersion(caseSensitive: $caseSensitive, columns: $columns, encodingVersion: $encodingVersion, maxCells: $maxCells, secret: $secret, version: $version)';
 
- }
+}

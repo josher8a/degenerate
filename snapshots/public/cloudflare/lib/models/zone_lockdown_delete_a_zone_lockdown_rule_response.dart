@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';@immutable final class ZoneLockdownDeleteAZoneLockdownRuleResponse {const ZoneLockdownDeleteAZoneLockdownRuleResponse({this.result});
 
-factory ZoneLockdownDeleteAZoneLockdownRuleResponse.fromJson(Map<String, dynamic> json) { return ZoneLockdownDeleteAZoneLockdownRuleResponse(
+factory ZoneLockdownDeleteAZoneLockdownRuleResponse.fromJson(Map<String, dynamic> json) {return ZoneLockdownDeleteAZoneLockdownRuleResponse(
   result: json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final AaaIdResponseResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-ZoneLockdownDeleteAZoneLockdownRuleResponse copyWith({AaaIdResponseResult? Function()? result}) { return ZoneLockdownDeleteAZoneLockdownRuleResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'result'}.contains(key));}
+ZoneLockdownDeleteAZoneLockdownRuleResponse copyWith({AaaIdResponseResult? Function()? result}) {return ZoneLockdownDeleteAZoneLockdownRuleResponse(
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLockdownDeleteAZoneLockdownRuleResponse &&
           result == other.result;
@@ -24,4 +24,4 @@ ZoneLockdownDeleteAZoneLockdownRuleResponse copyWith({AaaIdResponseResult? Funct
 
 @override String toString() => 'ZoneLockdownDeleteAZoneLockdownRuleResponse(result: $result)';
 
- }
+}

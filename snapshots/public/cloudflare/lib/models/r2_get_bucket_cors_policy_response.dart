@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_errors2.dart';import 'package:pub_cloudflare/models/r2_get_bucket_cors_policy_response/r2_get_bucket_cors_policy_response_result.dart';@immutable final class R2GetBucketCorsPolicyResponse {const R2GetBucketCorsPolicyResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory R2GetBucketCorsPolicyResponse.fromJson(Map<String, dynamic> json) { return R2GetBucketCorsPolicyResponse(
+factory R2GetBucketCorsPolicyResponse.fromJson(Map<String, dynamic> json) {return R2GetBucketCorsPolicyResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => R2Errors2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
   result: R2GetBucketCorsPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<R2Errors2> errors;
 
@@ -19,22 +19,22 @@ final R2GetBucketCorsPolicyResponseResult result;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages,
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-R2GetBucketCorsPolicyResponse copyWith({List<R2Errors2>? errors, List<String>? messages, R2GetBucketCorsPolicyResponseResult? result, bool? success, }) { return R2GetBucketCorsPolicyResponse(
+      json.containsKey('success') && json['success'] is bool;}
+R2GetBucketCorsPolicyResponse copyWith({List<R2Errors2>? errors, List<String>? messages, R2GetBucketCorsPolicyResponseResult? result, bool? success, }) {return R2GetBucketCorsPolicyResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2GetBucketCorsPolicyResponse &&
           listEquals(errors, other.errors) &&
@@ -46,4 +46,4 @@ R2GetBucketCorsPolicyResponse copyWith({List<R2Errors2>? errors, List<String>? m
 
 @override String toString() => 'R2GetBucketCorsPolicyResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_konbini_store.dart';/// 
 @immutable final class PaymentMethodDetailsKonbini {const PaymentMethodDetailsKonbini({this.store = const Omittable.absent()});
 
-factory PaymentMethodDetailsKonbini.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKonbini(
+factory PaymentMethodDetailsKonbini.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsKonbini(
   store: json.containsKey('store') ? Omittable(json['store'] != null ? PaymentMethodDetailsKonbiniStore.fromJson(json['store'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// If the payment succeeded, this contains the details of the convenience store where the payment was completed.
 final Omittable<PaymentMethodDetailsKonbiniStore?> store;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (store.isPresent) 'store': store.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'store'}.contains(key)); } 
-PaymentMethodDetailsKonbini copyWith({Omittable<PaymentMethodDetailsKonbiniStore?>? store}) { return PaymentMethodDetailsKonbini(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'store'}.contains(key));}
+PaymentMethodDetailsKonbini copyWith({Omittable<PaymentMethodDetailsKonbiniStore?>? store}) {return PaymentMethodDetailsKonbini(
   store: store ?? this.store,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsKonbini &&
           store == other.store;
@@ -26,4 +26,4 @@ PaymentMethodDetailsKonbini copyWith({Omittable<PaymentMethodDetailsKonbiniStore
 
 @override String toString() => 'PaymentMethodDetailsKonbini(store: $store)';
 
- }
+}

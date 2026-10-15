@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_address.dart';/// The method used for tokenizing a card.
 sealed class CardNumberSource {const CardNumberSource();
 
-factory CardNumberSource.fromJson(String json) { return switch (json) {
+factory CardNumberSource.fromJson(String json) {return switch (json) {
   'app' => app,
   'manual' => manual,
   'on_file' => onFile,
   'other' => $other,
   _ => CardNumberSource$Unknown(json),
-}; }
+};}
 
 static const CardNumberSource app = CardNumberSource$app._();
 
@@ -23,36 +23,36 @@ static const CardNumberSource $other = CardNumberSource$$other._();
 static const List<CardNumberSource> values = [app, manual, onFile, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'app' => 'app',
   'manual' => 'manual',
   'on_file' => 'onFile',
   'other' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CardNumberSource$Unknown; } 
+bool get isUnknown {return this is CardNumberSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() app, required W Function() manual, required W Function() onFile, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() app, required W Function() manual, required W Function() onFile, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       CardNumberSource$app() => app(),
       CardNumberSource$manual() => manual(),
       CardNumberSource$onFile() => onFile(),
       CardNumberSource$$other() => $other(),
       CardNumberSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? app, W Function()? manual, W Function()? onFile, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? app, W Function()? manual, W Function()? onFile, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       CardNumberSource$app() => app != null ? app() : orElse(value),
       CardNumberSource$manual() => manual != null ? manual() : orElse(value),
       CardNumberSource$onFile() => onFile != null ? onFile() : orElse(value),
       CardNumberSource$$other() => $other != null ? $other() : orElse(value),
       CardNumberSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CardNumberSource($value)';
 
- }
+}
 @immutable final class CardNumberSource$app extends CardNumberSource {const CardNumberSource$app._();
 
 @override String get value => 'app';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? app, W F
 
 @override int get hashCode => 'app'.hashCode;
 
- }
+}
 @immutable final class CardNumberSource$manual extends CardNumberSource {const CardNumberSource$manual._();
 
 @override String get value => 'manual';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? app, W F
 
 @override int get hashCode => 'manual'.hashCode;
 
- }
+}
 @immutable final class CardNumberSource$onFile extends CardNumberSource {const CardNumberSource$onFile._();
 
 @override String get value => 'on_file';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? app, W F
 
 @override int get hashCode => 'on_file'.hashCode;
 
- }
+}
 @immutable final class CardNumberSource$$other extends CardNumberSource {const CardNumberSource$$other._();
 
 @override String get value => 'other';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? app, W F
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class CardNumberSource$Unknown extends CardNumberSource {const CardNumberSource$Unknown(this.value);
 
 @override final String value;
@@ -98,10 +98,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? app, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class ReasonCodes {const ReasonCodes();
 
-factory ReasonCodes.fromJson(String json) { return switch (json) {
+factory ReasonCodes.fromJson(String json) {return switch (json) {
   'account_card_too_new' => accountCardTooNew,
   'account_recently_changed' => accountRecentlyChanged,
   'account_too_new' => accountTooNew,
@@ -131,7 +131,7 @@ factory ReasonCodes.fromJson(String json) { return switch (json) {
   'too_many_recent_attempts' => tooManyRecentAttempts,
   'too_many_recent_tokens' => tooManyRecentTokens,
   _ => ReasonCodes$Unknown(json),
-}; }
+};}
 
 static const ReasonCodes accountCardTooNew = ReasonCodes$accountCardTooNew._();
 
@@ -192,9 +192,9 @@ static const ReasonCodes tooManyRecentTokens = ReasonCodes$tooManyRecentTokens._
 static const List<ReasonCodes> values = [accountCardTooNew, accountRecentlyChanged, accountTooNew, accountTooNewSinceLaunch, additionalDevice, dataExpired, deferIdVDecision, deviceRecentlyLost, goodActivityHistory, hasSuspendedTokens, highRisk, inactiveAccount, longAccountTenure, lowAccountScore, lowDeviceScore, lowPhoneNumberScore, networkServiceError, outsideHomeTerritory, provisioningCardholderMismatch, provisioningDeviceAndCardholderMismatch, provisioningDeviceMismatch, sameDeviceNoPriorAuthentication, sameDeviceSuccessfulPriorAuthentication, softwareUpdate, suspiciousActivity, tooManyDifferentCardholders, tooManyRecentAttempts, tooManyRecentTokens];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'account_card_too_new' => 'accountCardTooNew',
   'account_recently_changed' => 'accountRecentlyChanged',
   'account_too_new' => 'accountTooNew',
@@ -224,11 +224,11 @@ String get name { return switch (value) {
   'too_many_recent_attempts' => 'tooManyRecentAttempts',
   'too_many_recent_tokens' => 'tooManyRecentTokens',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReasonCodes$Unknown; } 
+bool get isUnknown {return this is ReasonCodes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accountCardTooNew, required W Function() accountRecentlyChanged, required W Function() accountTooNew, required W Function() accountTooNewSinceLaunch, required W Function() additionalDevice, required W Function() dataExpired, required W Function() deferIdVDecision, required W Function() deviceRecentlyLost, required W Function() goodActivityHistory, required W Function() hasSuspendedTokens, required W Function() highRisk, required W Function() inactiveAccount, required W Function() longAccountTenure, required W Function() lowAccountScore, required W Function() lowDeviceScore, required W Function() lowPhoneNumberScore, required W Function() networkServiceError, required W Function() outsideHomeTerritory, required W Function() provisioningCardholderMismatch, required W Function() provisioningDeviceAndCardholderMismatch, required W Function() provisioningDeviceMismatch, required W Function() sameDeviceNoPriorAuthentication, required W Function() sameDeviceSuccessfulPriorAuthentication, required W Function() softwareUpdate, required W Function() suspiciousActivity, required W Function() tooManyDifferentCardholders, required W Function() tooManyRecentAttempts, required W Function() tooManyRecentTokens, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accountCardTooNew, required W Function() accountRecentlyChanged, required W Function() accountTooNew, required W Function() accountTooNewSinceLaunch, required W Function() additionalDevice, required W Function() dataExpired, required W Function() deferIdVDecision, required W Function() deviceRecentlyLost, required W Function() goodActivityHistory, required W Function() hasSuspendedTokens, required W Function() highRisk, required W Function() inactiveAccount, required W Function() longAccountTenure, required W Function() lowAccountScore, required W Function() lowDeviceScore, required W Function() lowPhoneNumberScore, required W Function() networkServiceError, required W Function() outsideHomeTerritory, required W Function() provisioningCardholderMismatch, required W Function() provisioningDeviceAndCardholderMismatch, required W Function() provisioningDeviceMismatch, required W Function() sameDeviceNoPriorAuthentication, required W Function() sameDeviceSuccessfulPriorAuthentication, required W Function() softwareUpdate, required W Function() suspiciousActivity, required W Function() tooManyDifferentCardholders, required W Function() tooManyRecentAttempts, required W Function() tooManyRecentTokens, required W Function(String value) $unknown, }) {return switch (this) {
       ReasonCodes$accountCardTooNew() => accountCardTooNew(),
       ReasonCodes$accountRecentlyChanged() => accountRecentlyChanged(),
       ReasonCodes$accountTooNew() => accountTooNew(),
@@ -258,9 +258,9 @@ W when<W>({required W Function() accountCardTooNew, required W Function() accoun
       ReasonCodes$tooManyRecentAttempts() => tooManyRecentAttempts(),
       ReasonCodes$tooManyRecentTokens() => tooManyRecentTokens(),
       ReasonCodes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountCardTooNew, W Function()? accountRecentlyChanged, W Function()? accountTooNew, W Function()? accountTooNewSinceLaunch, W Function()? additionalDevice, W Function()? dataExpired, W Function()? deferIdVDecision, W Function()? deviceRecentlyLost, W Function()? goodActivityHistory, W Function()? hasSuspendedTokens, W Function()? highRisk, W Function()? inactiveAccount, W Function()? longAccountTenure, W Function()? lowAccountScore, W Function()? lowDeviceScore, W Function()? lowPhoneNumberScore, W Function()? networkServiceError, W Function()? outsideHomeTerritory, W Function()? provisioningCardholderMismatch, W Function()? provisioningDeviceAndCardholderMismatch, W Function()? provisioningDeviceMismatch, W Function()? sameDeviceNoPriorAuthentication, W Function()? sameDeviceSuccessfulPriorAuthentication, W Function()? softwareUpdate, W Function()? suspiciousActivity, W Function()? tooManyDifferentCardholders, W Function()? tooManyRecentAttempts, W Function()? tooManyRecentTokens, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountCardTooNew, W Function()? accountRecentlyChanged, W Function()? accountTooNew, W Function()? accountTooNewSinceLaunch, W Function()? additionalDevice, W Function()? dataExpired, W Function()? deferIdVDecision, W Function()? deviceRecentlyLost, W Function()? goodActivityHistory, W Function()? hasSuspendedTokens, W Function()? highRisk, W Function()? inactiveAccount, W Function()? longAccountTenure, W Function()? lowAccountScore, W Function()? lowDeviceScore, W Function()? lowPhoneNumberScore, W Function()? networkServiceError, W Function()? outsideHomeTerritory, W Function()? provisioningCardholderMismatch, W Function()? provisioningDeviceAndCardholderMismatch, W Function()? provisioningDeviceMismatch, W Function()? sameDeviceNoPriorAuthentication, W Function()? sameDeviceSuccessfulPriorAuthentication, W Function()? softwareUpdate, W Function()? suspiciousActivity, W Function()? tooManyDifferentCardholders, W Function()? tooManyRecentAttempts, W Function()? tooManyRecentTokens, W Function(String value)? $unknown, }) {return switch (this) {
       ReasonCodes$accountCardTooNew() => accountCardTooNew != null ? accountCardTooNew() : orElse(value),
       ReasonCodes$accountRecentlyChanged() => accountRecentlyChanged != null ? accountRecentlyChanged() : orElse(value),
       ReasonCodes$accountTooNew() => accountTooNew != null ? accountTooNew() : orElse(value),
@@ -290,10 +290,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
       ReasonCodes$tooManyRecentAttempts() => tooManyRecentAttempts != null ? tooManyRecentAttempts() : orElse(value),
       ReasonCodes$tooManyRecentTokens() => tooManyRecentTokens != null ? tooManyRecentTokens() : orElse(value),
       ReasonCodes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReasonCodes($value)';
 
- }
+}
 @immutable final class ReasonCodes$accountCardTooNew extends ReasonCodes {const ReasonCodes$accountCardTooNew._();
 
 @override String get value => 'account_card_too_new';
@@ -302,7 +302,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'account_card_too_new'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$accountRecentlyChanged extends ReasonCodes {const ReasonCodes$accountRecentlyChanged._();
 
 @override String get value => 'account_recently_changed';
@@ -311,7 +311,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'account_recently_changed'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$accountTooNew extends ReasonCodes {const ReasonCodes$accountTooNew._();
 
 @override String get value => 'account_too_new';
@@ -320,7 +320,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'account_too_new'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$accountTooNewSinceLaunch extends ReasonCodes {const ReasonCodes$accountTooNewSinceLaunch._();
 
 @override String get value => 'account_too_new_since_launch';
@@ -329,7 +329,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'account_too_new_since_launch'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$additionalDevice extends ReasonCodes {const ReasonCodes$additionalDevice._();
 
 @override String get value => 'additional_device';
@@ -338,7 +338,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'additional_device'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$dataExpired extends ReasonCodes {const ReasonCodes$dataExpired._();
 
 @override String get value => 'data_expired';
@@ -347,7 +347,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'data_expired'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$deferIdVDecision extends ReasonCodes {const ReasonCodes$deferIdVDecision._();
 
 @override String get value => 'defer_id_v_decision';
@@ -356,7 +356,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'defer_id_v_decision'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$deviceRecentlyLost extends ReasonCodes {const ReasonCodes$deviceRecentlyLost._();
 
 @override String get value => 'device_recently_lost';
@@ -365,7 +365,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'device_recently_lost'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$goodActivityHistory extends ReasonCodes {const ReasonCodes$goodActivityHistory._();
 
 @override String get value => 'good_activity_history';
@@ -374,7 +374,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'good_activity_history'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$hasSuspendedTokens extends ReasonCodes {const ReasonCodes$hasSuspendedTokens._();
 
 @override String get value => 'has_suspended_tokens';
@@ -383,7 +383,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'has_suspended_tokens'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$highRisk extends ReasonCodes {const ReasonCodes$highRisk._();
 
 @override String get value => 'high_risk';
@@ -392,7 +392,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'high_risk'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$inactiveAccount extends ReasonCodes {const ReasonCodes$inactiveAccount._();
 
 @override String get value => 'inactive_account';
@@ -401,7 +401,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'inactive_account'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$longAccountTenure extends ReasonCodes {const ReasonCodes$longAccountTenure._();
 
 @override String get value => 'long_account_tenure';
@@ -410,7 +410,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'long_account_tenure'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$lowAccountScore extends ReasonCodes {const ReasonCodes$lowAccountScore._();
 
 @override String get value => 'low_account_score';
@@ -419,7 +419,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'low_account_score'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$lowDeviceScore extends ReasonCodes {const ReasonCodes$lowDeviceScore._();
 
 @override String get value => 'low_device_score';
@@ -428,7 +428,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'low_device_score'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$lowPhoneNumberScore extends ReasonCodes {const ReasonCodes$lowPhoneNumberScore._();
 
 @override String get value => 'low_phone_number_score';
@@ -437,7 +437,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'low_phone_number_score'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$networkServiceError extends ReasonCodes {const ReasonCodes$networkServiceError._();
 
 @override String get value => 'network_service_error';
@@ -446,7 +446,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'network_service_error'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$outsideHomeTerritory extends ReasonCodes {const ReasonCodes$outsideHomeTerritory._();
 
 @override String get value => 'outside_home_territory';
@@ -455,7 +455,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'outside_home_territory'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$provisioningCardholderMismatch extends ReasonCodes {const ReasonCodes$provisioningCardholderMismatch._();
 
 @override String get value => 'provisioning_cardholder_mismatch';
@@ -464,7 +464,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'provisioning_cardholder_mismatch'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$provisioningDeviceAndCardholderMismatch extends ReasonCodes {const ReasonCodes$provisioningDeviceAndCardholderMismatch._();
 
 @override String get value => 'provisioning_device_and_cardholder_mismatch';
@@ -473,7 +473,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'provisioning_device_and_cardholder_mismatch'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$provisioningDeviceMismatch extends ReasonCodes {const ReasonCodes$provisioningDeviceMismatch._();
 
 @override String get value => 'provisioning_device_mismatch';
@@ -482,7 +482,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'provisioning_device_mismatch'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$sameDeviceNoPriorAuthentication extends ReasonCodes {const ReasonCodes$sameDeviceNoPriorAuthentication._();
 
 @override String get value => 'same_device_no_prior_authentication';
@@ -491,7 +491,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'same_device_no_prior_authentication'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$sameDeviceSuccessfulPriorAuthentication extends ReasonCodes {const ReasonCodes$sameDeviceSuccessfulPriorAuthentication._();
 
 @override String get value => 'same_device_successful_prior_authentication';
@@ -500,7 +500,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'same_device_successful_prior_authentication'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$softwareUpdate extends ReasonCodes {const ReasonCodes$softwareUpdate._();
 
 @override String get value => 'software_update';
@@ -509,7 +509,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'software_update'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$suspiciousActivity extends ReasonCodes {const ReasonCodes$suspiciousActivity._();
 
 @override String get value => 'suspicious_activity';
@@ -518,7 +518,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'suspicious_activity'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$tooManyDifferentCardholders extends ReasonCodes {const ReasonCodes$tooManyDifferentCardholders._();
 
 @override String get value => 'too_many_different_cardholders';
@@ -527,7 +527,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'too_many_different_cardholders'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$tooManyRecentAttempts extends ReasonCodes {const ReasonCodes$tooManyRecentAttempts._();
 
 @override String get value => 'too_many_recent_attempts';
@@ -536,7 +536,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'too_many_recent_attempts'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$tooManyRecentTokens extends ReasonCodes {const ReasonCodes$tooManyRecentTokens._();
 
 @override String get value => 'too_many_recent_tokens';
@@ -545,7 +545,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => 'too_many_recent_tokens'.hashCode;
 
- }
+}
 @immutable final class ReasonCodes$Unknown extends ReasonCodes {const ReasonCodes$Unknown(this.value);
 
 @override final String value;
@@ -555,16 +555,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The recommendation on responding to the tokenization request.
 sealed class SuggestedDecision {const SuggestedDecision();
 
-factory SuggestedDecision.fromJson(String json) { return switch (json) {
+factory SuggestedDecision.fromJson(String json) {return switch (json) {
   'approve' => approve,
   'decline' => decline,
   'require_auth' => requireAuth,
   _ => SuggestedDecision$Unknown(json),
-}; }
+};}
 
 static const SuggestedDecision approve = SuggestedDecision$approve._();
 
@@ -575,33 +575,33 @@ static const SuggestedDecision requireAuth = SuggestedDecision$requireAuth._();
 static const List<SuggestedDecision> values = [approve, decline, requireAuth];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'approve' => 'approve',
   'decline' => 'decline',
   'require_auth' => 'requireAuth',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SuggestedDecision$Unknown; } 
+bool get isUnknown {return this is SuggestedDecision$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() approve, required W Function() decline, required W Function() requireAuth, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() approve, required W Function() decline, required W Function() requireAuth, required W Function(String value) $unknown, }) {return switch (this) {
       SuggestedDecision$approve() => approve(),
       SuggestedDecision$decline() => decline(),
       SuggestedDecision$requireAuth() => requireAuth(),
       SuggestedDecision$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve, W Function()? decline, W Function()? requireAuth, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve, W Function()? decline, W Function()? requireAuth, W Function(String value)? $unknown, }) {return switch (this) {
       SuggestedDecision$approve() => approve != null ? approve() : orElse(value),
       SuggestedDecision$decline() => decline != null ? decline() : orElse(value),
       SuggestedDecision$requireAuth() => requireAuth != null ? requireAuth() : orElse(value),
       SuggestedDecision$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SuggestedDecision($value)';
 
- }
+}
 @immutable final class SuggestedDecision$approve extends SuggestedDecision {const SuggestedDecision$approve._();
 
 @override String get value => 'approve';
@@ -610,7 +610,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve,
 
 @override int get hashCode => 'approve'.hashCode;
 
- }
+}
 @immutable final class SuggestedDecision$decline extends SuggestedDecision {const SuggestedDecision$decline._();
 
 @override String get value => 'decline';
@@ -619,7 +619,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve,
 
 @override int get hashCode => 'decline'.hashCode;
 
- }
+}
 @immutable final class SuggestedDecision$requireAuth extends SuggestedDecision {const SuggestedDecision$requireAuth._();
 
 @override String get value => 'require_auth';
@@ -628,7 +628,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve,
 
 @override int get hashCode => 'require_auth'.hashCode;
 
- }
+}
 @immutable final class SuggestedDecision$Unknown extends SuggestedDecision {const SuggestedDecision$Unknown(this.value);
 
 @override final String value;
@@ -638,11 +638,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class IssuingNetworkTokenWalletProvider {const IssuingNetworkTokenWalletProvider({this.accountId, this.accountTrustScore, this.cardNumberSource, this.cardholderAddress, this.cardholderName, this.deviceTrustScore, this.hashedAccountEmailAddress, this.reasonCodes, this.suggestedDecision, this.suggestedDecisionVersion, });
 
-factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenWalletProvider(
+factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) {return IssuingNetworkTokenWalletProvider(
   accountId: json['account_id'] as String?,
   accountTrustScore: json['account_trust_score'] != null ? (json['account_trust_score'] as num).toInt() : null,
   cardNumberSource: json['card_number_source'] != null ? CardNumberSource.fromJson(json['card_number_source'] as String) : null,
@@ -653,7 +653,7 @@ factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) { 
   reasonCodes: (json['reason_codes'] as List<dynamic>?)?.map((e) => ReasonCodes.fromJson(e as String)).toList(),
   suggestedDecision: json['suggested_decision'] != null ? SuggestedDecision.fromJson(json['suggested_decision'] as String) : null,
   suggestedDecisionVersion: json['suggested_decision_version'] as String?,
-); }
+);}
 
 /// The wallet provider-given account ID of the digital wallet the token belongs to.
 final String? accountId;
@@ -684,7 +684,7 @@ final SuggestedDecision? suggestedDecision;
 /// The version of the standard for mapping reason codes followed by the wallet provider.
 final String? suggestedDecisionVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': ?accountId,
   'account_trust_score': ?accountTrustScore,
   if (cardNumberSource != null) 'card_number_source': cardNumberSource?.toJson(),
@@ -695,10 +695,10 @@ Map<String, dynamic> toJson() { return {
   if (reasonCodes != null) 'reason_codes': reasonCodes?.map((e) => e.toJson()).toList(),
   if (suggestedDecision != null) 'suggested_decision': suggestedDecision?.toJson(),
   'suggested_decision_version': ?suggestedDecisionVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'account_trust_score', 'card_number_source', 'cardholder_address', 'cardholder_name', 'device_trust_score', 'hashed_account_email_address', 'reason_codes', 'suggested_decision', 'suggested_decision_version'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_id', 'account_trust_score', 'card_number_source', 'cardholder_address', 'cardholder_name', 'device_trust_score', 'hashed_account_email_address', 'reason_codes', 'suggested_decision', 'suggested_decision_version'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountId$ = accountId;
 if (accountId$ != null) {
   if (accountId$.runes.length > 5000) { errors.add('accountId: length must be <= 5000'); }
@@ -715,8 +715,8 @@ final suggestedDecisionVersion$ = suggestedDecisionVersion;
 if (suggestedDecisionVersion$ != null) {
   if (suggestedDecisionVersion$.runes.length > 5000) { errors.add('suggestedDecisionVersion: length must be <= 5000'); }
 }
-return errors; } 
-IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? Function()? accountTrustScore, CardNumberSource? Function()? cardNumberSource, IssuingNetworkTokenAddress? Function()? cardholderAddress, String? Function()? cardholderName, int? Function()? deviceTrustScore, String? Function()? hashedAccountEmailAddress, List<ReasonCodes>? Function()? reasonCodes, SuggestedDecision? Function()? suggestedDecision, String? Function()? suggestedDecisionVersion, }) { return IssuingNetworkTokenWalletProvider(
+return errors;}
+IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? Function()? accountTrustScore, CardNumberSource? Function()? cardNumberSource, IssuingNetworkTokenAddress? Function()? cardholderAddress, String? Function()? cardholderName, int? Function()? deviceTrustScore, String? Function()? hashedAccountEmailAddress, List<ReasonCodes>? Function()? reasonCodes, SuggestedDecision? Function()? suggestedDecision, String? Function()? suggestedDecisionVersion, }) {return IssuingNetworkTokenWalletProvider(
   accountId: accountId != null ? accountId() : this.accountId,
   accountTrustScore: accountTrustScore != null ? accountTrustScore() : this.accountTrustScore,
   cardNumberSource: cardNumberSource != null ? cardNumberSource() : this.cardNumberSource,
@@ -727,7 +727,7 @@ IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? 
   reasonCodes: reasonCodes != null ? reasonCodes() : this.reasonCodes,
   suggestedDecision: suggestedDecision != null ? suggestedDecision() : this.suggestedDecision,
   suggestedDecisionVersion: suggestedDecisionVersion != null ? suggestedDecisionVersion() : this.suggestedDecisionVersion,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenWalletProvider &&
           accountId == other.accountId &&
@@ -745,4 +745,4 @@ IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? 
 
 @override String toString() => 'IssuingNetworkTokenWalletProvider(\n  accountId: $accountId,\n  accountTrustScore: $accountTrustScore,\n  cardNumberSource: $cardNumberSource,\n  cardholderAddress: $cardholderAddress,\n  cardholderName: $cardholderName,\n  deviceTrustScore: $deviceTrustScore,\n  hashedAccountEmailAddress: $hashedAccountEmailAddress,\n  reasonCodes: $reasonCodes,\n  suggestedDecision: $suggestedDecision,\n  suggestedDecisionVersion: $suggestedDecisionVersion,\n)';
 
- }
+}

@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionPixDisplayQrCode {const PaymentIntentNextActionPixDisplayQrCode({this.data, this.expiresAt, this.hostedInstructionsUrl, this.imageUrlPng, this.imageUrlSvg, });
 
-factory PaymentIntentNextActionPixDisplayQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionPixDisplayQrCode(
+factory PaymentIntentNextActionPixDisplayQrCode.fromJson(Map<String, dynamic> json) {return PaymentIntentNextActionPixDisplayQrCode(
   data: json['data'] as String?,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   hostedInstructionsUrl: json['hosted_instructions_url'] as String?,
   imageUrlPng: json['image_url_png'] as String?,
   imageUrlSvg: json['image_url_svg'] as String?,
-); }
+);}
 
 /// The raw data string used to generate QR code, it should be used together with QR code library.
 final String? data;
@@ -27,16 +27,16 @@ final String? imageUrlPng;
 /// The image_url_svg string used to render svg QR code
 final String? imageUrlSvg;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': ?data,
   'expires_at': ?expiresAt,
   'hosted_instructions_url': ?hostedInstructionsUrl,
   'image_url_png': ?imageUrlPng,
   'image_url_svg': ?imageUrlSvg,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'expires_at', 'hosted_instructions_url', 'image_url_png', 'image_url_svg'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'expires_at', 'hosted_instructions_url', 'image_url_png', 'image_url_svg'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final data$ = data;
 if (data$ != null) {
   if (data$.runes.length > 5000) { errors.add('data: length must be <= 5000'); }
@@ -53,14 +53,14 @@ final imageUrlSvg$ = imageUrlSvg;
 if (imageUrlSvg$ != null) {
   if (imageUrlSvg$.runes.length > 5000) { errors.add('imageUrlSvg: length must be <= 5000'); }
 }
-return errors; } 
-PaymentIntentNextActionPixDisplayQrCode copyWith({String? Function()? data, int? Function()? expiresAt, String? Function()? hostedInstructionsUrl, String? Function()? imageUrlPng, String? Function()? imageUrlSvg, }) { return PaymentIntentNextActionPixDisplayQrCode(
+return errors;}
+PaymentIntentNextActionPixDisplayQrCode copyWith({String? Function()? data, int? Function()? expiresAt, String? Function()? hostedInstructionsUrl, String? Function()? imageUrlPng, String? Function()? imageUrlSvg, }) {return PaymentIntentNextActionPixDisplayQrCode(
   data: data != null ? data() : this.data,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   hostedInstructionsUrl: hostedInstructionsUrl != null ? hostedInstructionsUrl() : this.hostedInstructionsUrl,
   imageUrlPng: imageUrlPng != null ? imageUrlPng() : this.imageUrlPng,
   imageUrlSvg: imageUrlSvg != null ? imageUrlSvg() : this.imageUrlSvg,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionPixDisplayQrCode &&
           data == other.data &&
@@ -73,4 +73,4 @@ PaymentIntentNextActionPixDisplayQrCode copyWith({String? Function()? data, int?
 
 @override String toString() => 'PaymentIntentNextActionPixDisplayQrCode(data: $data, expiresAt: $expiresAt, hostedInstructionsUrl: $hostedInstructionsUrl, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)';
 
- }
+}

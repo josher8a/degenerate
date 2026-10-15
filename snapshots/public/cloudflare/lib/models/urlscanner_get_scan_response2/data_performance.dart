@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DataPerformance {const DataPerformance({required this.duration, required this.entryType, required this.name, required this.startTime, });
 
-factory DataPerformance.fromJson(Map<String, dynamic> json) { return DataPerformance(
+factory DataPerformance.fromJson(Map<String, dynamic> json) {return DataPerformance(
   duration: (json['duration'] as num).toDouble(),
   entryType: json['entryType'] as String,
   name: json['name'] as String,
   startTime: (json['startTime'] as num).toDouble(),
-); }
+);}
 
 final double duration;
 
@@ -18,22 +18,22 @@ final String name;
 
 final double startTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'duration': duration,
   'entryType': entryType,
   'name': name,
   'startTime': startTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('duration') && json['duration'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('entryType') && json['entryType'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('startTime') && json['startTime'] is num; } 
-DataPerformance copyWith({double? duration, String? entryType, String? name, double? startTime, }) { return DataPerformance(
+      json.containsKey('startTime') && json['startTime'] is num;}
+DataPerformance copyWith({double? duration, String? entryType, String? name, double? startTime, }) {return DataPerformance(
   duration: duration ?? this.duration,
   entryType: entryType ?? this.entryType,
   name: name ?? this.name,
   startTime: startTime ?? this.startTime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DataPerformance &&
           duration == other.duration &&
@@ -45,4 +45,4 @@ DataPerformance copyWith({double? duration, String? entryType, String? name, dou
 
 @override String toString() => 'DataPerformance(duration: $duration, entryType: $entryType, name: $name, startTime: $startTime)';
 
- }
+}

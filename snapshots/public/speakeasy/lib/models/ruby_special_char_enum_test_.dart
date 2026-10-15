@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RubySpecialCharEnumTest {const RubySpecialCharEnumTest();
 
-factory RubySpecialCharEnumTest.fromJson(String json) { return switch (json) {
+factory RubySpecialCharEnumTest.fromJson(String json) {return switch (json) {
   'Polar::Models::Organization' => polarModelsOrganization,
   'simple_value' => simpleValue,
   'value;with;semicolons' => valuewithsemicolons,
@@ -11,7 +11,7 @@ factory RubySpecialCharEnumTest.fromJson(String json) { return switch (json) {
   "it's quoted" => itsQuoted,
   r'back\slash' => backslash,
   _ => RubySpecialCharEnumTest$Unknown(json),
-}; }
+};}
 
 static const RubySpecialCharEnumTest polarModelsOrganization = RubySpecialCharEnumTest$polarModelsOrganization._();
 
@@ -28,9 +28,9 @@ static const RubySpecialCharEnumTest backslash = RubySpecialCharEnumTest$backsla
 static const List<RubySpecialCharEnumTest> values = [polarModelsOrganization, simpleValue, valuewithsemicolons, keyvalue, itsQuoted, backslash];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Polar::Models::Organization' => 'polarModelsOrganization',
   'simple_value' => 'simpleValue',
   'value;with;semicolons' => 'valuewithsemicolons',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   "it's quoted" => 'itsQuoted',
   r'back\slash' => 'backslash',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RubySpecialCharEnumTest$Unknown; } 
+bool get isUnknown {return this is RubySpecialCharEnumTest$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() polarModelsOrganization, required W Function() simpleValue, required W Function() valuewithsemicolons, required W Function() keyvalue, required W Function() itsQuoted, required W Function() backslash, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() polarModelsOrganization, required W Function() simpleValue, required W Function() valuewithsemicolons, required W Function() keyvalue, required W Function() itsQuoted, required W Function() backslash, required W Function(String value) $unknown, }) {return switch (this) {
       RubySpecialCharEnumTest$polarModelsOrganization() => polarModelsOrganization(),
       RubySpecialCharEnumTest$simpleValue() => simpleValue(),
       RubySpecialCharEnumTest$valuewithsemicolons() => valuewithsemicolons(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() polarModelsOrganization, required W Function() 
       RubySpecialCharEnumTest$itsQuoted() => itsQuoted(),
       RubySpecialCharEnumTest$backslash() => backslash(),
       RubySpecialCharEnumTest$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarModelsOrganization, W Function()? simpleValue, W Function()? valuewithsemicolons, W Function()? keyvalue, W Function()? itsQuoted, W Function()? backslash, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarModelsOrganization, W Function()? simpleValue, W Function()? valuewithsemicolons, W Function()? keyvalue, W Function()? itsQuoted, W Function()? backslash, W Function(String value)? $unknown, }) {return switch (this) {
       RubySpecialCharEnumTest$polarModelsOrganization() => polarModelsOrganization != null ? polarModelsOrganization() : orElse(value),
       RubySpecialCharEnumTest$simpleValue() => simpleValue != null ? simpleValue() : orElse(value),
       RubySpecialCharEnumTest$valuewithsemicolons() => valuewithsemicolons != null ? valuewithsemicolons() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarMod
       RubySpecialCharEnumTest$itsQuoted() => itsQuoted != null ? itsQuoted() : orElse(value),
       RubySpecialCharEnumTest$backslash() => backslash != null ? backslash() : orElse(value),
       RubySpecialCharEnumTest$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RubySpecialCharEnumTest($value)';
 
- }
+}
 @immutable final class RubySpecialCharEnumTest$polarModelsOrganization extends RubySpecialCharEnumTest {const RubySpecialCharEnumTest$polarModelsOrganization._();
 
 @override String get value => 'Polar::Models::Organization';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarMod
 
 @override int get hashCode => 'Polar::Models::Organization'.hashCode;
 
- }
+}
 @immutable final class RubySpecialCharEnumTest$simpleValue extends RubySpecialCharEnumTest {const RubySpecialCharEnumTest$simpleValue._();
 
 @override String get value => 'simple_value';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarMod
 
 @override int get hashCode => 'simple_value'.hashCode;
 
- }
+}
 @immutable final class RubySpecialCharEnumTest$valuewithsemicolons extends RubySpecialCharEnumTest {const RubySpecialCharEnumTest$valuewithsemicolons._();
 
 @override String get value => 'value;with;semicolons';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarMod
 
 @override int get hashCode => 'value;with;semicolons'.hashCode;
 
- }
+}
 @immutable final class RubySpecialCharEnumTest$keyvalue extends RubySpecialCharEnumTest {const RubySpecialCharEnumTest$keyvalue._();
 
 @override String get value => 'key=value';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarMod
 
 @override int get hashCode => 'key=value'.hashCode;
 
- }
+}
 @immutable final class RubySpecialCharEnumTest$itsQuoted extends RubySpecialCharEnumTest {const RubySpecialCharEnumTest$itsQuoted._();
 
 @override String get value => "it's quoted";
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarMod
 
 @override int get hashCode => "it's quoted".hashCode;
 
- }
+}
 @immutable final class RubySpecialCharEnumTest$backslash extends RubySpecialCharEnumTest {const RubySpecialCharEnumTest$backslash._();
 
 @override String get value => r'back\slash';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarMod
 
 @override int get hashCode => r'back\slash'.hashCode;
 
- }
+}
 @immutable final class RubySpecialCharEnumTest$Unknown extends RubySpecialCharEnumTest {const RubySpecialCharEnumTest$Unknown(this.value);
 
 @override final String value;
@@ -127,4 +127,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarMod
 
 @override int get hashCode => value.hashCode;
 
- }
+}

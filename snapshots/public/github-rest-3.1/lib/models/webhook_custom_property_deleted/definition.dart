@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Definition {const Definition({required this.propertyName});
 
-factory Definition.fromJson(Map<String, dynamic> json) { return Definition(
+factory Definition.fromJson(Map<String, dynamic> json) {return Definition(
   propertyName: json['property_name'] as String,
-); }
+);}
 
 /// The name of the property that was deleted.
 final String propertyName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'property_name': propertyName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('property_name') && json['property_name'] is String; } 
-Definition copyWith({String? propertyName}) { return Definition(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('property_name') && json['property_name'] is String;}
+Definition copyWith({String? propertyName}) {return Definition(
   propertyName: propertyName ?? this.propertyName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Definition &&
           propertyName == other.propertyName;
@@ -25,4 +25,4 @@ Definition copyWith({String? propertyName}) { return Definition(
 
 @override String toString() => 'Definition(propertyName: $propertyName)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack/validation_errors.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslsettings.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_record.dart';/// Status of the hostname's SSL certificates.
 sealed class DvStatus {const DvStatus();
 
-factory DvStatus.fromJson(String json) { return switch (json) {
+factory DvStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending_validation' => pendingValidation,
   'deleted' => deleted,
@@ -27,7 +27,7 @@ factory DvStatus.fromJson(String json) { return switch (json) {
   'backup_issued' => backupIssued,
   'holding_deployment' => holdingDeployment,
   _ => DvStatus$Unknown(json),
-}; }
+};}
 
 static const DvStatus initializing = DvStatus$initializing._();
 
@@ -74,9 +74,9 @@ static const DvStatus holdingDeployment = DvStatus$holdingDeployment._();
 static const List<DvStatus> values = [initializing, pendingValidation, deleted, pendingIssuance, pendingDeployment, pendingDeletion, pendingExpiration, expired, active, initializingTimedOut, validationTimedOut, issuanceTimedOut, deploymentTimedOut, deletionTimedOut, pendingCleanup, stagingDeployment, stagingActive, deactivating, inactive, backupIssued, holdingDeployment];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'initializing' => 'initializing',
   'pending_validation' => 'pendingValidation',
   'deleted' => 'deleted',
@@ -99,11 +99,11 @@ String get name { return switch (value) {
   'backup_issued' => 'backupIssued',
   'holding_deployment' => 'holdingDeployment',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DvStatus$Unknown; } 
+bool get isUnknown {return this is DvStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() initializing, required W Function() pendingValidation, required W Function() deleted, required W Function() pendingIssuance, required W Function() pendingDeployment, required W Function() pendingDeletion, required W Function() pendingExpiration, required W Function() expired, required W Function() active, required W Function() initializingTimedOut, required W Function() validationTimedOut, required W Function() issuanceTimedOut, required W Function() deploymentTimedOut, required W Function() deletionTimedOut, required W Function() pendingCleanup, required W Function() stagingDeployment, required W Function() stagingActive, required W Function() deactivating, required W Function() inactive, required W Function() backupIssued, required W Function() holdingDeployment, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() initializing, required W Function() pendingValidation, required W Function() deleted, required W Function() pendingIssuance, required W Function() pendingDeployment, required W Function() pendingDeletion, required W Function() pendingExpiration, required W Function() expired, required W Function() active, required W Function() initializingTimedOut, required W Function() validationTimedOut, required W Function() issuanceTimedOut, required W Function() deploymentTimedOut, required W Function() deletionTimedOut, required W Function() pendingCleanup, required W Function() stagingDeployment, required W Function() stagingActive, required W Function() deactivating, required W Function() inactive, required W Function() backupIssued, required W Function() holdingDeployment, required W Function(String value) $unknown, }) {return switch (this) {
       DvStatus$initializing() => initializing(),
       DvStatus$pendingValidation() => pendingValidation(),
       DvStatus$deleted() => deleted(),
@@ -126,9 +126,9 @@ W when<W>({required W Function() initializing, required W Function() pendingVali
       DvStatus$backupIssued() => backupIssued(),
       DvStatus$holdingDeployment() => holdingDeployment(),
       DvStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingValidation, W Function()? deleted, W Function()? pendingIssuance, W Function()? pendingDeployment, W Function()? pendingDeletion, W Function()? pendingExpiration, W Function()? expired, W Function()? active, W Function()? initializingTimedOut, W Function()? validationTimedOut, W Function()? issuanceTimedOut, W Function()? deploymentTimedOut, W Function()? deletionTimedOut, W Function()? pendingCleanup, W Function()? stagingDeployment, W Function()? stagingActive, W Function()? deactivating, W Function()? inactive, W Function()? backupIssued, W Function()? holdingDeployment, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingValidation, W Function()? deleted, W Function()? pendingIssuance, W Function()? pendingDeployment, W Function()? pendingDeletion, W Function()? pendingExpiration, W Function()? expired, W Function()? active, W Function()? initializingTimedOut, W Function()? validationTimedOut, W Function()? issuanceTimedOut, W Function()? deploymentTimedOut, W Function()? deletionTimedOut, W Function()? pendingCleanup, W Function()? stagingDeployment, W Function()? stagingActive, W Function()? deactivating, W Function()? inactive, W Function()? backupIssued, W Function()? holdingDeployment, W Function(String value)? $unknown, }) {return switch (this) {
       DvStatus$initializing() => initializing != null ? initializing() : orElse(value),
       DvStatus$pendingValidation() => pendingValidation != null ? pendingValidation() : orElse(value),
       DvStatus$deleted() => deleted != null ? deleted() : orElse(value),
@@ -151,10 +151,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
       DvStatus$backupIssued() => backupIssued != null ? backupIssued() : orElse(value),
       DvStatus$holdingDeployment() => holdingDeployment != null ? holdingDeployment() : orElse(value),
       DvStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DvStatus($value)';
 
- }
+}
 @immutable final class DvStatus$initializing extends DvStatus {const DvStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class DvStatus$pendingValidation extends DvStatus {const DvStatus$pendingValidation._();
 
 @override String get value => 'pending_validation';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_validation'.hashCode;
 
- }
+}
 @immutable final class DvStatus$deleted extends DvStatus {const DvStatus$deleted._();
 
 @override String get value => 'deleted';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deleted'.hashCode;
 
- }
+}
 @immutable final class DvStatus$pendingIssuance extends DvStatus {const DvStatus$pendingIssuance._();
 
 @override String get value => 'pending_issuance';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_issuance'.hashCode;
 
- }
+}
 @immutable final class DvStatus$pendingDeployment extends DvStatus {const DvStatus$pendingDeployment._();
 
 @override String get value => 'pending_deployment';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_deployment'.hashCode;
 
- }
+}
 @immutable final class DvStatus$pendingDeletion extends DvStatus {const DvStatus$pendingDeletion._();
 
 @override String get value => 'pending_deletion';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_deletion'.hashCode;
 
- }
+}
 @immutable final class DvStatus$pendingExpiration extends DvStatus {const DvStatus$pendingExpiration._();
 
 @override String get value => 'pending_expiration';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_expiration'.hashCode;
 
- }
+}
 @immutable final class DvStatus$expired extends DvStatus {const DvStatus$expired._();
 
 @override String get value => 'expired';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class DvStatus$active extends DvStatus {const DvStatus$active._();
 
 @override String get value => 'active';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class DvStatus$initializingTimedOut extends DvStatus {const DvStatus$initializingTimedOut._();
 
 @override String get value => 'initializing_timed_out';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing_timed_out'.hashCode;
 
- }
+}
 @immutable final class DvStatus$validationTimedOut extends DvStatus {const DvStatus$validationTimedOut._();
 
 @override String get value => 'validation_timed_out';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'validation_timed_out'.hashCode;
 
- }
+}
 @immutable final class DvStatus$issuanceTimedOut extends DvStatus {const DvStatus$issuanceTimedOut._();
 
 @override String get value => 'issuance_timed_out';
@@ -262,7 +262,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'issuance_timed_out'.hashCode;
 
- }
+}
 @immutable final class DvStatus$deploymentTimedOut extends DvStatus {const DvStatus$deploymentTimedOut._();
 
 @override String get value => 'deployment_timed_out';
@@ -271,7 +271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deployment_timed_out'.hashCode;
 
- }
+}
 @immutable final class DvStatus$deletionTimedOut extends DvStatus {const DvStatus$deletionTimedOut._();
 
 @override String get value => 'deletion_timed_out';
@@ -280,7 +280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deletion_timed_out'.hashCode;
 
- }
+}
 @immutable final class DvStatus$pendingCleanup extends DvStatus {const DvStatus$pendingCleanup._();
 
 @override String get value => 'pending_cleanup';
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_cleanup'.hashCode;
 
- }
+}
 @immutable final class DvStatus$stagingDeployment extends DvStatus {const DvStatus$stagingDeployment._();
 
 @override String get value => 'staging_deployment';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'staging_deployment'.hashCode;
 
- }
+}
 @immutable final class DvStatus$stagingActive extends DvStatus {const DvStatus$stagingActive._();
 
 @override String get value => 'staging_active';
@@ -307,7 +307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'staging_active'.hashCode;
 
- }
+}
 @immutable final class DvStatus$deactivating extends DvStatus {const DvStatus$deactivating._();
 
 @override String get value => 'deactivating';
@@ -316,7 +316,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deactivating'.hashCode;
 
- }
+}
 @immutable final class DvStatus$inactive extends DvStatus {const DvStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -325,7 +325,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class DvStatus$backupIssued extends DvStatus {const DvStatus$backupIssued._();
 
 @override String get value => 'backup_issued';
@@ -334,7 +334,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'backup_issued'.hashCode;
 
- }
+}
 @immutable final class DvStatus$holdingDeployment extends DvStatus {const DvStatus$holdingDeployment._();
 
 @override String get value => 'holding_deployment';
@@ -343,7 +343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'holding_deployment'.hashCode;
 
- }
+}
 @immutable final class DvStatus$Unknown extends DvStatus {const DvStatus$Unknown(this.value);
 
 @override final String value;
@@ -353,10 +353,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesSslDv {const TlsCertificatesAndHostnamesSslDv({this.bundleMethod, this.certificateAuthority, this.customCertificate, this.customCsrId, this.customKey, this.dcvDelegationRecords, this.expiresOn, this.hosts, this.id, this.issuer, this.method, this.serialNumber, this.settings, this.signature, this.status, this.type, this.uploadedOn, this.validationErrors, this.validationRecords, this.wildcard, });
 
-factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslDv(
+factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) {return TlsCertificatesAndHostnamesSslDv(
   bundleMethod: json['bundle_method'] != null ? BundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
   customCertificate: json['custom_certificate'] as String?,
@@ -377,7 +377,7 @@ factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { r
   validationErrors: (json['validation_errors'] as List<dynamic>?)?.map((e) => ValidationErrors.fromJson(e as Map<String, dynamic>)).toList(),
   validationRecords: (json['validation_records'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesValidationRecord.fromJson(e as Map<String, dynamic>)).toList(),
   wildcard: json['wildcard'] as bool?,
-); }
+);}
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 /// 
@@ -502,7 +502,7 @@ final bool? wildcard;
 /// The value of `bundleMethod`, or its schema default when absent.
 BundleMethod get bundleMethodOrDefault => bundleMethod ?? BundleMethod.fromJson('ubiquitous');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
   'custom_certificate': ?customCertificate,
@@ -523,17 +523,17 @@ Map<String, dynamic> toJson() { return {
   if (validationErrors != null) 'validation_errors': validationErrors?.map((e) => e.toJson()).toList(),
   if (validationRecords != null) 'validation_records': validationRecords?.map((e) => e.toJson()).toList(),
   'wildcard': ?wildcard,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'custom_certificate', 'custom_csr_id', 'custom_key', 'dcv_delegation_records', 'expires_on', 'hosts', 'id', 'issuer', 'method', 'serial_number', 'settings', 'signature', 'status', 'type', 'uploaded_on', 'validation_errors', 'validation_records', 'wildcard'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'custom_certificate', 'custom_csr_id', 'custom_key', 'dcv_delegation_records', 'expires_on', 'hosts', 'id', 'issuer', 'method', 'serial_number', 'settings', 'signature', 'status', 'type', 'uploaded_on', 'validation_errors', 'validation_records', 'wildcard'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
   if (id$.runes.length < 36) { errors.add('id: length must be >= 36'); }
   if (id$.runes.length > 36) { errors.add('id: length must be <= 36'); }
 }
-return errors; } 
-TlsCertificatesAndHostnamesSslDv copyWith({BundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, String? Function()? customCertificate, String? Function()? customCsrId, String? Function()? customKey, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, DateTime? Function()? expiresOn, List<String>? Function()? hosts, String? Function()? id, String? Function()? issuer, DvMethod? Function()? method, String? Function()? serialNumber, TlsCertificatesAndHostnamesSslsettings? Function()? settings, String? Function()? signature, DvStatus? Function()? status, DvType? Function()? type, DateTime? Function()? uploadedOn, List<ValidationErrors>? Function()? validationErrors, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslDv(
+return errors;}
+TlsCertificatesAndHostnamesSslDv copyWith({BundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, String? Function()? customCertificate, String? Function()? customCsrId, String? Function()? customKey, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, DateTime? Function()? expiresOn, List<String>? Function()? hosts, String? Function()? id, String? Function()? issuer, DvMethod? Function()? method, String? Function()? serialNumber, TlsCertificatesAndHostnamesSslsettings? Function()? settings, String? Function()? signature, DvStatus? Function()? status, DvType? Function()? type, DateTime? Function()? uploadedOn, List<ValidationErrors>? Function()? validationErrors, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, bool? Function()? wildcard, }) {return TlsCertificatesAndHostnamesSslDv(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   customCertificate: customCertificate != null ? customCertificate() : this.customCertificate,
@@ -554,7 +554,7 @@ TlsCertificatesAndHostnamesSslDv copyWith({BundleMethod? Function()? bundleMetho
   validationErrors: validationErrors != null ? validationErrors() : this.validationErrors,
   validationRecords: validationRecords != null ? validationRecords() : this.validationRecords,
   wildcard: wildcard != null ? wildcard() : this.wildcard,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslDv &&
           bundleMethod == other.bundleMethod &&
@@ -582,4 +582,4 @@ TlsCertificatesAndHostnamesSslDv copyWith({BundleMethod? Function()? bundleMetho
 
 @override String toString() => 'TlsCertificatesAndHostnamesSslDv(\n  bundleMethod: $bundleMethod,\n  certificateAuthority: $certificateAuthority,\n  customCertificate: $customCertificate,\n  customCsrId: $customCsrId,\n  customKey: $customKey,\n  dcvDelegationRecords: $dcvDelegationRecords,\n  expiresOn: $expiresOn,\n  hosts: $hosts,\n  id: $id,\n  issuer: $issuer,\n  method: $method,\n  serialNumber: $serialNumber,\n  settings: $settings,\n  signature: $signature,\n  status: $status,\n  type: $type,\n  uploadedOn: $uploadedOn,\n  validationErrors: $validationErrors,\n  validationRecords: $validationRecords,\n  wildcard: $wildcard,\n)';
 
- }
+}

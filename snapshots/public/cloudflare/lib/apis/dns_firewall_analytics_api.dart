@@ -16,7 +16,7 @@ final class DnsFirewallAnalyticsApi with ApiExecutor {const DnsFirewallAnalytics
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report`
-Future<ApiResult<DnsAnalyticsReport?, DnsFirewallAnalyticsTableError>> dnsFirewallAnalyticsTable({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DnsAnalyticsReport?, DnsFirewallAnalyticsTableError>> dnsFirewallAnalyticsTable({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
   queryParameters['metrics'] = metrics.toJson();
@@ -59,7 +59,7 @@ return await execute(
   },
   onError: DnsFirewallAnalyticsTableError.fromResponse,
 );
- } 
+}
 /// By Time
 ///
 /// Retrieves a list of aggregate metrics grouped by time interval.
@@ -67,7 +67,7 @@ return await execute(
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report/bytime`
-Future<ApiResult<DnsAnalyticsReportBytime?, DnsFirewallAnalyticsByTimeError>> dnsFirewallAnalyticsByTime({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DnsAnalyticsReportBytime?, DnsFirewallAnalyticsByTimeError>> dnsFirewallAnalyticsByTime({required DnsAnalyticsIdentifier dnsFirewallId, required DnsAnalyticsIdentifier accountId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
   queryParameters['metrics'] = metrics.toJson();
@@ -113,5 +113,5 @@ return await execute(
   },
   onError: DnsFirewallAnalyticsByTimeError.fromResponse,
 );
- } 
- }
+}
+}

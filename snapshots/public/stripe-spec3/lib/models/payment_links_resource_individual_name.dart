@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentLinksResourceIndividualName {const PaymentLinksResourceIndividualName({required this.enabled, required this.optional, });
 
-factory PaymentLinksResourceIndividualName.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceIndividualName(
+factory PaymentLinksResourceIndividualName.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceIndividualName(
   enabled: json['enabled'] as bool,
   optional: json['optional'] as bool,
-); }
+);}
 
 /// Indicates whether individual name collection is enabled for the payment link.
 final bool enabled;
@@ -15,16 +15,16 @@ final bool enabled;
 /// Whether the customer is required to complete the field before checking out. Defaults to `false`.
 final bool optional;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'optional': optional,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('optional') && json['optional'] is bool; } 
-PaymentLinksResourceIndividualName copyWith({bool? enabled, bool? optional, }) { return PaymentLinksResourceIndividualName(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('optional') && json['optional'] is bool;}
+PaymentLinksResourceIndividualName copyWith({bool? enabled, bool? optional, }) {return PaymentLinksResourceIndividualName(
   enabled: enabled ?? this.enabled,
   optional: optional ?? this.optional,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceIndividualName &&
           enabled == other.enabled &&
@@ -34,4 +34,4 @@ PaymentLinksResourceIndividualName copyWith({bool? enabled, bool? optional, }) {
 
 @override String toString() => 'PaymentLinksResourceIndividualName(enabled: $enabled, optional: $optional)';
 
- }
+}

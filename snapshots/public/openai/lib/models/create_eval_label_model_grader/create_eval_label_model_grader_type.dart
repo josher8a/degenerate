@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `label_model`.
 sealed class CreateEvalLabelModelGraderType {const CreateEvalLabelModelGraderType();
 
-factory CreateEvalLabelModelGraderType.fromJson(String json) { return switch (json) {
+factory CreateEvalLabelModelGraderType.fromJson(String json) {return switch (json) {
   'label_model' => labelModel,
   _ => CreateEvalLabelModelGraderType$Unknown(json),
-}; }
+};}
 
 static const CreateEvalLabelModelGraderType labelModel = CreateEvalLabelModelGraderType$labelModel._();
 
 static const List<CreateEvalLabelModelGraderType> values = [labelModel];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'label_model' => 'labelModel',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateEvalLabelModelGraderType$Unknown; } 
+bool get isUnknown {return this is CreateEvalLabelModelGraderType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() labelModel, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() labelModel, required W Function(String value) $unknown, }) {return switch (this) {
       CreateEvalLabelModelGraderType$labelModel() => labelModel(),
       CreateEvalLabelModelGraderType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? labelModel, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? labelModel, W Function(String value)? $unknown, }) {return switch (this) {
       CreateEvalLabelModelGraderType$labelModel() => labelModel != null ? labelModel() : orElse(value),
       CreateEvalLabelModelGraderType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateEvalLabelModelGraderType($value)';
 
- }
+}
 @immutable final class CreateEvalLabelModelGraderType$labelModel extends CreateEvalLabelModelGraderType {const CreateEvalLabelModelGraderType$labelModel._();
 
 @override String get value => 'label_model';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? labelMod
 
 @override int get hashCode => 'label_model'.hashCode;
 
- }
+}
 @immutable final class CreateEvalLabelModelGraderType$Unknown extends CreateEvalLabelModelGraderType {const CreateEvalLabelModelGraderType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? labelMod
 
 @override int get hashCode => value.hashCode;
 
- }
+}

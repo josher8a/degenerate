@@ -14,7 +14,7 @@ final class CallsAppsApi with ApiExecutor {const CallsAppsApi(this.apiConfig);
 /// Lists all apps in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/apps`
-Future<ApiResult<List<CallsApp>?, CallsAppsListError>> callsAppsList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CallsApp>?, CallsAppsListError>> callsAppsList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: CallsAppsListError.fromResponse,
 );
- } 
+}
 /// Create a new app
 ///
 /// Creates a new Cloudflare calls app. An app is an unique enviroment where each Session can access all Tracks within the app.
 ///
 /// `POST /accounts/{account_id}/calls/apps`
-Future<ApiResult<CallsAppWithSecret?, Never>> callsAppsCreateANewApp({required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsAppWithSecret?, Never>> callsAppsCreateANewApp({required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,13 +55,13 @@ return await execute(
     return json['result'] != null ? CallsAppWithSecret.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
+}
 /// Retrieve app details
 ///
 /// Fetches details for a single Calls app.
 ///
 /// `GET /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<CallsApp?, CallsAppsListError>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsApp?, CallsAppsListError>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,13 +78,13 @@ return await execute(
   },
   onError: CallsAppsListError.fromResponse,
 );
- } 
+}
 /// Edit app details
 ///
 /// Edit details for a single app.
 ///
 /// `PUT /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<CallsApp?, CallsAppsListError>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsApp?, CallsAppsListError>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,13 +103,13 @@ return await execute(
   },
   onError: CallsAppsListError.fromResponse,
 );
- } 
+}
 /// Delete app
 ///
 /// Deletes an app from Cloudflare Calls
 ///
 /// `DELETE /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<CallsApp?, Never>> callsAppsDeleteApp({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsApp?, Never>> callsAppsDeleteApp({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,5 +125,5 @@ return await execute(
     return json['result'] != null ? CallsApp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
- } 
- }
+}
+}

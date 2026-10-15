@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A tool available
 /// 
 @immutable final class McpListToolsTool {const McpListToolsTool({required this.name, required this.inputSchema, this.description = const Omittable.absent(), this.annotations = const Omittable.absent(), });
 
-factory McpListToolsTool.fromJson(Map<String, dynamic> json) { return McpListToolsTool(
+factory McpListToolsTool.fromJson(Map<String, dynamic> json) {return McpListToolsTool(
   name: json['name'] as String,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   inputSchema: json['input_schema'] as Map<String, dynamic>,
   annotations: json.containsKey('annotations') ? Omittable(json['annotations'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 /// The name of the tool.
 /// 
@@ -28,20 +28,20 @@ final Map<String,dynamic> inputSchema;
 /// 
 final Omittable<Map<String,dynamic>?> annotations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (description.isPresent) 'description': description.value,
   'input_schema': inputSchema,
   if (annotations.isPresent) 'annotations': annotations.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('input_schema'); } 
-McpListToolsTool copyWith({String? name, Omittable<String?>? description, Map<String,dynamic>? inputSchema, Omittable<Map<String,dynamic>?>? annotations, }) { return McpListToolsTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('input_schema');}
+McpListToolsTool copyWith({String? name, Omittable<String?>? description, Map<String,dynamic>? inputSchema, Omittable<Map<String,dynamic>?>? annotations, }) {return McpListToolsTool(
   name: name ?? this.name,
   description: description ?? this.description,
   inputSchema: inputSchema ?? this.inputSchema,
   annotations: annotations ?? this.annotations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McpListToolsTool &&
           name == other.name &&
@@ -53,4 +53,4 @@ McpListToolsTool copyWith({String? name, Omittable<String?>? description, Map<St
 
 @override String toString() => 'McpListToolsTool(name: $name, description: $description, inputSchema: $inputSchema, annotations: $annotations)';
 
- }
+}

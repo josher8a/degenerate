@@ -5,19 +5,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Requires an Okta identity provider.
 @immutable final class AccessOktaGroupRule {const AccessOktaGroupRule({required this.okta});
 
-factory AccessOktaGroupRule.fromJson(Map<String, dynamic> json) { return AccessOktaGroupRule(
+factory AccessOktaGroupRule.fromJson(Map<String, dynamic> json) {return AccessOktaGroupRule(
   okta: Okta.fromJson(json['okta'] as Map<String, dynamic>),
-); }
+);}
 
 final Okta okta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'okta': okta.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('okta'); } 
-AccessOktaGroupRule copyWith({Okta? okta}) { return AccessOktaGroupRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('okta');}
+AccessOktaGroupRule copyWith({Okta? okta}) {return AccessOktaGroupRule(
   okta: okta ?? this.okta,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOktaGroupRule &&
           okta == other.okta;
@@ -26,4 +26,4 @@ AccessOktaGroupRule copyWith({Okta? okta}) { return AccessOktaGroupRule(
 
 @override String toString() => 'AccessOktaGroupRule(okta: $okta)';
 
- }
+}

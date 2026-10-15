@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
 sealed class LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason();
 
-factory LineItemsTaxAmountTaxabilityReason.fromJson(String json) { return switch (json) {
+factory LineItemsTaxAmountTaxabilityReason.fromJson(String json) {return switch (json) {
   'customer_exempt' => customerExempt,
   'not_collecting' => notCollecting,
   'not_subject_to_tax' => notSubjectToTax,
@@ -21,7 +21,7 @@ factory LineItemsTaxAmountTaxabilityReason.fromJson(String json) { return switch
   'taxable_basis_reduced' => taxableBasisReduced,
   'zero_rated' => zeroRated,
   _ => LineItemsTaxAmountTaxabilityReason$Unknown(json),
-}; }
+};}
 
 static const LineItemsTaxAmountTaxabilityReason customerExempt = LineItemsTaxAmountTaxabilityReason$customerExempt._();
 
@@ -56,9 +56,9 @@ static const LineItemsTaxAmountTaxabilityReason zeroRated = LineItemsTaxAmountTa
 static const List<LineItemsTaxAmountTaxabilityReason> values = [customerExempt, notCollecting, notSubjectToTax, notSupported, portionProductExempt, portionReducedRated, portionStandardRated, productExempt, productExemptHoliday, proportionallyRated, reducedRated, reverseCharge, standardRated, taxableBasisReduced, zeroRated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'customer_exempt' => 'customerExempt',
   'not_collecting' => 'notCollecting',
   'not_subject_to_tax' => 'notSubjectToTax',
@@ -75,11 +75,11 @@ String get name { return switch (value) {
   'taxable_basis_reduced' => 'taxableBasisReduced',
   'zero_rated' => 'zeroRated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LineItemsTaxAmountTaxabilityReason$Unknown; } 
+bool get isUnknown {return this is LineItemsTaxAmountTaxabilityReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customerExempt, required W Function() notCollecting, required W Function() notSubjectToTax, required W Function() notSupported, required W Function() portionProductExempt, required W Function() portionReducedRated, required W Function() portionStandardRated, required W Function() productExempt, required W Function() productExemptHoliday, required W Function() proportionallyRated, required W Function() reducedRated, required W Function() reverseCharge, required W Function() standardRated, required W Function() taxableBasisReduced, required W Function() zeroRated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customerExempt, required W Function() notCollecting, required W Function() notSubjectToTax, required W Function() notSupported, required W Function() portionProductExempt, required W Function() portionReducedRated, required W Function() portionStandardRated, required W Function() productExempt, required W Function() productExemptHoliday, required W Function() proportionallyRated, required W Function() reducedRated, required W Function() reverseCharge, required W Function() standardRated, required W Function() taxableBasisReduced, required W Function() zeroRated, required W Function(String value) $unknown, }) {return switch (this) {
       LineItemsTaxAmountTaxabilityReason$customerExempt() => customerExempt(),
       LineItemsTaxAmountTaxabilityReason$notCollecting() => notCollecting(),
       LineItemsTaxAmountTaxabilityReason$notSubjectToTax() => notSubjectToTax(),
@@ -96,9 +96,9 @@ W when<W>({required W Function() customerExempt, required W Function() notCollec
       LineItemsTaxAmountTaxabilityReason$taxableBasisReduced() => taxableBasisReduced(),
       LineItemsTaxAmountTaxabilityReason$zeroRated() => zeroRated(),
       LineItemsTaxAmountTaxabilityReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerExempt, W Function()? notCollecting, W Function()? notSubjectToTax, W Function()? notSupported, W Function()? portionProductExempt, W Function()? portionReducedRated, W Function()? portionStandardRated, W Function()? productExempt, W Function()? productExemptHoliday, W Function()? proportionallyRated, W Function()? reducedRated, W Function()? reverseCharge, W Function()? standardRated, W Function()? taxableBasisReduced, W Function()? zeroRated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerExempt, W Function()? notCollecting, W Function()? notSubjectToTax, W Function()? notSupported, W Function()? portionProductExempt, W Function()? portionReducedRated, W Function()? portionStandardRated, W Function()? productExempt, W Function()? productExemptHoliday, W Function()? proportionallyRated, W Function()? reducedRated, W Function()? reverseCharge, W Function()? standardRated, W Function()? taxableBasisReduced, W Function()? zeroRated, W Function(String value)? $unknown, }) {return switch (this) {
       LineItemsTaxAmountTaxabilityReason$customerExempt() => customerExempt != null ? customerExempt() : orElse(value),
       LineItemsTaxAmountTaxabilityReason$notCollecting() => notCollecting != null ? notCollecting() : orElse(value),
       LineItemsTaxAmountTaxabilityReason$notSubjectToTax() => notSubjectToTax != null ? notSubjectToTax() : orElse(value),
@@ -115,10 +115,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
       LineItemsTaxAmountTaxabilityReason$taxableBasisReduced() => taxableBasisReduced != null ? taxableBasisReduced() : orElse(value),
       LineItemsTaxAmountTaxabilityReason$zeroRated() => zeroRated != null ? zeroRated() : orElse(value),
       LineItemsTaxAmountTaxabilityReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LineItemsTaxAmountTaxabilityReason($value)';
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$customerExempt extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$customerExempt._();
 
 @override String get value => 'customer_exempt';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'customer_exempt'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$notCollecting extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$notCollecting._();
 
 @override String get value => 'not_collecting';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'not_collecting'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$notSubjectToTax extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$notSubjectToTax._();
 
 @override String get value => 'not_subject_to_tax';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'not_subject_to_tax'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$notSupported extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$notSupported._();
 
 @override String get value => 'not_supported';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'not_supported'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$portionProductExempt extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$portionProductExempt._();
 
 @override String get value => 'portion_product_exempt';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'portion_product_exempt'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$portionReducedRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$portionReducedRated._();
 
 @override String get value => 'portion_reduced_rated';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'portion_reduced_rated'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$portionStandardRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$portionStandardRated._();
 
 @override String get value => 'portion_standard_rated';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'portion_standard_rated'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$productExempt extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$productExempt._();
 
 @override String get value => 'product_exempt';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'product_exempt'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$productExemptHoliday extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$productExemptHoliday._();
 
 @override String get value => 'product_exempt_holiday';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'product_exempt_holiday'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$proportionallyRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$proportionallyRated._();
 
 @override String get value => 'proportionally_rated';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'proportionally_rated'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$reducedRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$reducedRated._();
 
 @override String get value => 'reduced_rated';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'reduced_rated'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$reverseCharge extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$reverseCharge._();
 
 @override String get value => 'reverse_charge';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'reverse_charge'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$standardRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$standardRated._();
 
 @override String get value => 'standard_rated';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'standard_rated'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$taxableBasisReduced extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$taxableBasisReduced._();
 
 @override String get value => 'taxable_basis_reduced';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'taxable_basis_reduced'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$zeroRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$zeroRated._();
 
 @override String get value => 'zero_rated';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'zero_rated'.hashCode;
 
- }
+}
 @immutable final class LineItemsTaxAmountTaxabilityReason$Unknown extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$Unknown(this.value);
 
 @override final String value;
@@ -263,16 +263,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class LineItemsTaxAmount {const LineItemsTaxAmount({required this.amount, required this.rate, this.taxabilityReason = const Omittable.absent(), this.taxableAmount = const Omittable.absent(), });
 
-factory LineItemsTaxAmount.fromJson(Map<String, dynamic> json) { return LineItemsTaxAmount(
+factory LineItemsTaxAmount.fromJson(Map<String, dynamic> json) {return LineItemsTaxAmount(
   amount: (json['amount'] as num).toInt(),
   rate: TaxRate.fromJson(json['rate'] as Map<String, dynamic>),
   taxabilityReason: json.containsKey('taxability_reason') ? Omittable(json['taxability_reason'] != null ? LineItemsTaxAmountTaxabilityReason.fromJson(json['taxability_reason'] as String) : null) : const Omittable.absent(),
   taxableAmount: json.containsKey('taxable_amount') ? Omittable(json['taxable_amount'] != null ? (json['taxable_amount'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount of tax applied for this rate.
 final int amount;
@@ -285,20 +285,20 @@ final Omittable<LineItemsTaxAmountTaxabilityReason?> taxabilityReason;
 /// The amount on which tax is calculated, in cents (or local equivalent).
 final Omittable<int?> taxableAmount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'rate': rate.toJson(),
   if (taxabilityReason.isPresent) 'taxability_reason': taxabilityReason.value?.toJson(),
   if (taxableAmount.isPresent) 'taxable_amount': taxableAmount.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
-      json.containsKey('rate'); } 
-LineItemsTaxAmount copyWith({int? amount, TaxRate? rate, Omittable<LineItemsTaxAmountTaxabilityReason?>? taxabilityReason, Omittable<int?>? taxableAmount, }) { return LineItemsTaxAmount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('rate');}
+LineItemsTaxAmount copyWith({int? amount, TaxRate? rate, Omittable<LineItemsTaxAmountTaxabilityReason?>? taxabilityReason, Omittable<int?>? taxableAmount, }) {return LineItemsTaxAmount(
   amount: amount ?? this.amount,
   rate: rate ?? this.rate,
   taxabilityReason: taxabilityReason ?? this.taxabilityReason,
   taxableAmount: taxableAmount ?? this.taxableAmount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LineItemsTaxAmount &&
           amount == other.amount &&
@@ -310,4 +310,4 @@ LineItemsTaxAmount copyWith({int? amount, TaxRate? rate, Omittable<LineItemsTaxA
 
 @override String toString() => 'LineItemsTaxAmount(amount: $amount, rate: $rate, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)';
 
- }
+}

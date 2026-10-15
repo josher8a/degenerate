@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details_card_checks.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details_card_wallet.dart';import 'package:pub_stripe_spec3/models/three_d_secure_details.dart';/// 
 @immutable final class SetupAttemptPaymentMethodDetailsCard {const SetupAttemptPaymentMethodDetailsCard({this.brand = const Omittable.absent(), this.checks = const Omittable.absent(), this.country = const Omittable.absent(), this.expMonth = const Omittable.absent(), this.expYear = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.last4 = const Omittable.absent(), this.network = const Omittable.absent(), this.threeDSecure = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCard(
+factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) {return SetupAttemptPaymentMethodDetailsCard(
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
   checks: json.containsKey('checks') ? Omittable(json['checks'] != null ? SetupAttemptPaymentMethodDetailsCardChecks.fromJson(json['checks'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
@@ -16,7 +16,7 @@ factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json)
   network: json.containsKey('network') ? Omittable(json['network'] as String?) : const Omittable.absent(),
   threeDSecure: json.containsKey('three_d_secure') ? Omittable(json['three_d_secure'] != null ? ThreeDSecureDetails.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? SetupAttemptPaymentMethodDetailsCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 final Omittable<String?> brand;
@@ -53,7 +53,7 @@ final Omittable<ThreeDSecureDetails?> threeDSecure;
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
 final Omittable<SetupAttemptPaymentMethodDetailsCardWallet?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brand.isPresent) 'brand': brand.value,
   if (checks.isPresent) 'checks': checks.value?.toJson(),
   if (country.isPresent) 'country': country.value,
@@ -65,10 +65,10 @@ Map<String, dynamic> toJson() { return {
   if (network.isPresent) 'network': network.value,
   if (threeDSecure.isPresent) 'three_d_secure': threeDSecure.value?.toJson(),
   if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'checks', 'country', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'network', 'three_d_secure', 'wallet'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'brand', 'checks', 'country', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'network', 'three_d_secure', 'wallet'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final brand$ = brand.value;
 if (brand$ != null) {
   if (brand$.runes.length > 5000) { errors.add('brand: length must be <= 5000'); }
@@ -93,8 +93,8 @@ final network$ = network.value;
 if (network$ != null) {
   if (network$.runes.length > 5000) { errors.add('network: length must be <= 5000'); }
 }
-return errors; } 
-SetupAttemptPaymentMethodDetailsCard copyWith({Omittable<String?>? brand, Omittable<SetupAttemptPaymentMethodDetailsCardChecks?>? checks, Omittable<String?>? country, Omittable<int?>? expMonth, Omittable<int?>? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? last4, Omittable<String?>? network, Omittable<ThreeDSecureDetails?>? threeDSecure, Omittable<SetupAttemptPaymentMethodDetailsCardWallet?>? wallet, }) { return SetupAttemptPaymentMethodDetailsCard(
+return errors;}
+SetupAttemptPaymentMethodDetailsCard copyWith({Omittable<String?>? brand, Omittable<SetupAttemptPaymentMethodDetailsCardChecks?>? checks, Omittable<String?>? country, Omittable<int?>? expMonth, Omittable<int?>? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? last4, Omittable<String?>? network, Omittable<ThreeDSecureDetails?>? threeDSecure, Omittable<SetupAttemptPaymentMethodDetailsCardWallet?>? wallet, }) {return SetupAttemptPaymentMethodDetailsCard(
   brand: brand ?? this.brand,
   checks: checks ?? this.checks,
   country: country ?? this.country,
@@ -106,7 +106,7 @@ SetupAttemptPaymentMethodDetailsCard copyWith({Omittable<String?>? brand, Omitta
   network: network ?? this.network,
   threeDSecure: threeDSecure ?? this.threeDSecure,
   wallet: wallet ?? this.wallet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SetupAttemptPaymentMethodDetailsCard &&
           brand == other.brand &&
@@ -125,4 +125,4 @@ SetupAttemptPaymentMethodDetailsCard copyWith({Omittable<String?>? brand, Omitta
 
 @override String toString() => 'SetupAttemptPaymentMethodDetailsCard(\n  brand: $brand,\n  checks: $checks,\n  country: $country,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  last4: $last4,\n  network: $network,\n  threeDSecure: $threeDSecure,\n  wallet: $wallet,\n)';
 
- }
+}

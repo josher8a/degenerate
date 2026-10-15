@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/requests_initiator.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/requests_requests_request.dart';@immutable final class RequestsRequests {const RequestsRequests({required this.documentUrl, required this.frameId, required this.hasUserGesture, required this.initiator, required this.loaderId, required this.redirectHasExtraInfo, required this.request, required this.requestId, required this.type, required this.wallTime, });
 
-factory RequestsRequests.fromJson(Map<String, dynamic> json) { return RequestsRequests(
+factory RequestsRequests.fromJson(Map<String, dynamic> json) {return RequestsRequests(
   documentUrl: json['documentURL'] as String,
   frameId: json['frameId'] as String,
   hasUserGesture: json['hasUserGesture'] as bool,
@@ -14,7 +14,7 @@ factory RequestsRequests.fromJson(Map<String, dynamic> json) { return RequestsRe
   requestId: json['requestId'] as String,
   type: json['type'] as String,
   wallTime: (json['wallTime'] as num).toDouble(),
-); }
+);}
 
 final String documentUrl;
 
@@ -36,7 +36,7 @@ final String type;
 
 final double wallTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'documentURL': documentUrl,
   'frameId': frameId,
   'hasUserGesture': hasUserGesture,
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'requestId': requestId,
   'type': type,
   'wallTime': wallTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('documentURL') && json['documentURL'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('documentURL') && json['documentURL'] is String &&
       json.containsKey('frameId') && json['frameId'] is String &&
       json.containsKey('hasUserGesture') && json['hasUserGesture'] is bool &&
       json.containsKey('initiator') &&
@@ -57,8 +57,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('docum
       json.containsKey('request') &&
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('wallTime') && json['wallTime'] is num; } 
-RequestsRequests copyWith({String? documentUrl, String? frameId, bool? hasUserGesture, RequestsInitiator? initiator, String? loaderId, bool? redirectHasExtraInfo, RequestsRequestsRequest? request, String? requestId, String? type, double? wallTime, }) { return RequestsRequests(
+      json.containsKey('wallTime') && json['wallTime'] is num;}
+RequestsRequests copyWith({String? documentUrl, String? frameId, bool? hasUserGesture, RequestsInitiator? initiator, String? loaderId, bool? redirectHasExtraInfo, RequestsRequestsRequest? request, String? requestId, String? type, double? wallTime, }) {return RequestsRequests(
   documentUrl: documentUrl ?? this.documentUrl,
   frameId: frameId ?? this.frameId,
   hasUserGesture: hasUserGesture ?? this.hasUserGesture,
@@ -69,7 +69,7 @@ RequestsRequests copyWith({String? documentUrl, String? frameId, bool? hasUserGe
   requestId: requestId ?? this.requestId,
   type: type ?? this.type,
   wallTime: wallTime ?? this.wallTime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestsRequests &&
           documentUrl == other.documentUrl &&
@@ -87,4 +87,4 @@ RequestsRequests copyWith({String? documentUrl, String? frameId, bool? hasUserGe
 
 @override String toString() => 'RequestsRequests(\n  documentUrl: $documentUrl,\n  frameId: $frameId,\n  hasUserGesture: $hasUserGesture,\n  initiator: $initiator,\n  loaderId: $loaderId,\n  redirectHasExtraInfo: $redirectHasExtraInfo,\n  request: $request,\n  requestId: $requestId,\n  type: $type,\n  wallTime: $wallTime,\n)';
 
- }
+}

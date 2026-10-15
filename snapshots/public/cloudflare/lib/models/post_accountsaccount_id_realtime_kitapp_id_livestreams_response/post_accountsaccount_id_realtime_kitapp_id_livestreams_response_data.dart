@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData({this.disabled, this.id, this.ingestServer, this.meetingId = const Omittable.absent(), this.name, this.playbackUrl, this.status, this.streamKey, });
 
-factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData.fromJson(Map<String, dynamic> json) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
+factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData.fromJson(Map<String, dynamic> json) {return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
   disabled: json['disabled'] as bool?,
   id: json['id'] as String?,
   ingestServer: json['ingest_server'] as String?,
@@ -12,7 +12,7 @@ factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData.fromJson(Ma
   playbackUrl: json['playback_url'] as String?,
   status: json['status'] != null ? RealtimekitLivestreamBaseStatus.fromJson(json['status'] as String) : null,
   streamKey: json['stream_key'] as String?,
-); }
+);}
 
 /// Specifies if the livestream was disabled.
 final bool? disabled;
@@ -35,7 +35,7 @@ final RealtimekitLivestreamBaseStatus? status;
 /// Unique key for accessing each livestream.
 final String? streamKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'disabled': ?disabled,
   'id': ?id,
   'ingest_server': ?ingestServer,
@@ -44,9 +44,9 @@ Map<String, dynamic> toJson() { return {
   'playback_url': ?playbackUrl,
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key'}.contains(key)); } 
-PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, Omittable<String?>? meetingId, String? Function()? name, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, }) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key'}.contains(key));}
+PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, Omittable<String?>? meetingId, String? Function()? name, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, }) {return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,
   ingestServer: ingestServer != null ? ingestServer() : this.ingestServer,
@@ -55,7 +55,7 @@ PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool? Fun
   playbackUrl: playbackUrl != null ? playbackUrl() : this.playbackUrl,
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData &&
           disabled == other.disabled &&
@@ -71,4 +71,4 @@ PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool? Fun
 
 @override String toString() => 'PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey)';
 
- }
+}

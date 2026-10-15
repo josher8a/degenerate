@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `POST /jobs`
-Future<ApiResult<Job, CreateJobError>> createJob({NewJob? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Job, CreateJobError>> createJob({NewJob? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -28,9 +28,9 @@ return await execute(
   },
   onError: CreateJobError.fromResponse,
 );
- } 
+}
 /// `GET /jobs/{jobId}`
-Future<ApiResult<Job, Never>> getJob({required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Job, Never>> getJob({required String jobId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -45,5 +45,5 @@ return await execute(
     return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

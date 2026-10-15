@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_pricing_pricing_price_details/billing_bill_resource_invoicing_pricing_pricing_price_details_price.dart';/// 
 @immutable final class BillingBillResourceInvoicingPricingPricingPriceDetails {const BillingBillResourceInvoicingPricingPricingPriceDetails({required this.price, required this.product, });
 
-factory BillingBillResourceInvoicingPricingPricingPriceDetails.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingPricingPricingPriceDetails(
+factory BillingBillResourceInvoicingPricingPricingPriceDetails.fromJson(Map<String, dynamic> json) {return BillingBillResourceInvoicingPricingPricingPriceDetails(
   price: BillingBillResourceInvoicingPricingPricingPriceDetailsPrice.fromJson(json['price']),
   product: json['product'] as String,
-); }
+);}
 
 /// The ID of the price this item is associated with.
 final BillingBillResourceInvoicingPricingPricingPriceDetailsPrice price;
@@ -15,20 +15,20 @@ final BillingBillResourceInvoicingPricingPricingPriceDetailsPrice price;
 /// The ID of the product this item is associated with.
 final String product;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'price': price.toJson(),
   'product': product,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('price') &&
-      json.containsKey('product') && json['product'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('price') &&
+      json.containsKey('product') && json['product'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (product.runes.length > 5000) { errors.add('product: length must be <= 5000'); }
-return errors; } 
-BillingBillResourceInvoicingPricingPricingPriceDetails copyWith({BillingBillResourceInvoicingPricingPricingPriceDetailsPrice? price, String? product, }) { return BillingBillResourceInvoicingPricingPricingPriceDetails(
+return errors;}
+BillingBillResourceInvoicingPricingPricingPriceDetails copyWith({BillingBillResourceInvoicingPricingPricingPriceDetailsPrice? price, String? product, }) {return BillingBillResourceInvoicingPricingPricingPriceDetails(
   price: price ?? this.price,
   product: product ?? this.product,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingPricingPricingPriceDetails &&
           price == other.price &&
@@ -38,4 +38,4 @@ BillingBillResourceInvoicingPricingPricingPriceDetails copyWith({BillingBillReso
 
 @override String toString() => 'BillingBillResourceInvoicingPricingPricingPriceDetails(price: $price, product: $product)';
 
- }
+}

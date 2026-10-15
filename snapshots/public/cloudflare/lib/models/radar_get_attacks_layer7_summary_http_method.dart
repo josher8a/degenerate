@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod();
 
-factory RadarGetAttacksLayer7SummaryHttpMethod.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer7SummaryHttpMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   'DELETE' => delete,
@@ -51,7 +51,7 @@ factory RadarGetAttacksLayer7SummaryHttpMethod.fromJson(String json) { return sw
   'COOK' => cook,
   'TRACK' => track,
   _ => RadarGetAttacksLayer7SummaryHttpMethod$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer7SummaryHttpMethod $get = RadarGetAttacksLayer7SummaryHttpMethod$$get._();
 
@@ -148,9 +148,9 @@ static const RadarGetAttacksLayer7SummaryHttpMethod track = RadarGetAttacksLayer
 static const List<RadarGetAttacksLayer7SummaryHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   'DELETE' => 'delete',
@@ -198,11 +198,11 @@ String get name { return switch (value) {
   'COOK' => 'cook',
   'TRACK' => 'track',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer7SummaryHttpMethod$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer7SummaryHttpMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function() delete, required W Function() put, required W Function() head, required W Function() purge, required W Function() options, required W Function() propfind, required W Function() mkcol, required W Function() patch, required W Function() acl, required W Function() bcopy, required W Function() bdelete, required W Function() bmove, required W Function() bpropfind, required W Function() bproppatch, required W Function() checkin, required W Function() checkout, required W Function() connect, required W Function() copy, required W Function() label, required W Function() lock, required W Function() merge, required W Function() mkactivity, required W Function() mkworkspace, required W Function() move, required W Function() notify, required W Function() orderpatch, required W Function() poll, required W Function() proppatch, required W Function() report, required W Function() search, required W Function() subscribe, required W Function() trace, required W Function() uncheckout, required W Function() unlock, required W Function() unsubscribe, required W Function() update, required W Function() versioncontrol, required W Function() baselinecontrol, required W Function() xmsenumatts, required W Function() rpcOutData, required W Function() rpcInData, required W Function() $json, required W Function() cook, required W Function() track, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function() delete, required W Function() put, required W Function() head, required W Function() purge, required W Function() options, required W Function() propfind, required W Function() mkcol, required W Function() patch, required W Function() acl, required W Function() bcopy, required W Function() bdelete, required W Function() bmove, required W Function() bpropfind, required W Function() bproppatch, required W Function() checkin, required W Function() checkout, required W Function() connect, required W Function() copy, required W Function() label, required W Function() lock, required W Function() merge, required W Function() mkactivity, required W Function() mkworkspace, required W Function() move, required W Function() notify, required W Function() orderpatch, required W Function() poll, required W Function() proppatch, required W Function() report, required W Function() search, required W Function() subscribe, required W Function() trace, required W Function() uncheckout, required W Function() unlock, required W Function() unsubscribe, required W Function() update, required W Function() versioncontrol, required W Function() baselinecontrol, required W Function() xmsenumatts, required W Function() rpcOutData, required W Function() rpcInData, required W Function() $json, required W Function() cook, required W Function() track, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer7SummaryHttpMethod$$get() => $get(),
       RadarGetAttacksLayer7SummaryHttpMethod$post() => post(),
       RadarGetAttacksLayer7SummaryHttpMethod$delete() => delete(),
@@ -250,9 +250,9 @@ W when<W>({required W Function() $get, required W Function() post, required W Fu
       RadarGetAttacksLayer7SummaryHttpMethod$cook() => cook(),
       RadarGetAttacksLayer7SummaryHttpMethod$track() => track(),
       RadarGetAttacksLayer7SummaryHttpMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function()? delete, W Function()? put, W Function()? head, W Function()? purge, W Function()? options, W Function()? propfind, W Function()? mkcol, W Function()? patch, W Function()? acl, W Function()? bcopy, W Function()? bdelete, W Function()? bmove, W Function()? bpropfind, W Function()? bproppatch, W Function()? checkin, W Function()? checkout, W Function()? connect, W Function()? copy, W Function()? label, W Function()? lock, W Function()? merge, W Function()? mkactivity, W Function()? mkworkspace, W Function()? move, W Function()? notify, W Function()? orderpatch, W Function()? poll, W Function()? proppatch, W Function()? report, W Function()? search, W Function()? subscribe, W Function()? trace, W Function()? uncheckout, W Function()? unlock, W Function()? unsubscribe, W Function()? update, W Function()? versioncontrol, W Function()? baselinecontrol, W Function()? xmsenumatts, W Function()? rpcOutData, W Function()? rpcInData, W Function()? $json, W Function()? cook, W Function()? track, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function()? delete, W Function()? put, W Function()? head, W Function()? purge, W Function()? options, W Function()? propfind, W Function()? mkcol, W Function()? patch, W Function()? acl, W Function()? bcopy, W Function()? bdelete, W Function()? bmove, W Function()? bpropfind, W Function()? bproppatch, W Function()? checkin, W Function()? checkout, W Function()? connect, W Function()? copy, W Function()? label, W Function()? lock, W Function()? merge, W Function()? mkactivity, W Function()? mkworkspace, W Function()? move, W Function()? notify, W Function()? orderpatch, W Function()? poll, W Function()? proppatch, W Function()? report, W Function()? search, W Function()? subscribe, W Function()? trace, W Function()? uncheckout, W Function()? unlock, W Function()? unsubscribe, W Function()? update, W Function()? versioncontrol, W Function()? baselinecontrol, W Function()? xmsenumatts, W Function()? rpcOutData, W Function()? rpcInData, W Function()? $json, W Function()? cook, W Function()? track, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer7SummaryHttpMethod$$get() => $get != null ? $get() : orElse(value),
       RadarGetAttacksLayer7SummaryHttpMethod$post() => post != null ? post() : orElse(value),
       RadarGetAttacksLayer7SummaryHttpMethod$delete() => delete != null ? delete() : orElse(value),
@@ -300,10 +300,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
       RadarGetAttacksLayer7SummaryHttpMethod$cook() => cook != null ? cook() : orElse(value),
       RadarGetAttacksLayer7SummaryHttpMethod$track() => track != null ? track() : orElse(value),
       RadarGetAttacksLayer7SummaryHttpMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer7SummaryHttpMethod($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$$get extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$$get._();
 
 @override String get value => 'GET';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$post extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$post._();
 
 @override String get value => 'POST';
@@ -321,7 +321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$delete extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$delete._();
 
 @override String get value => 'DELETE';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'DELETE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$put extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$put._();
 
 @override String get value => 'PUT';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PUT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$head extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$head._();
 
 @override String get value => 'HEAD';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'HEAD'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$purge extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$purge._();
 
 @override String get value => 'PURGE';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PURGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$options extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$options._();
 
 @override String get value => 'OPTIONS';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'OPTIONS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$propfind extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$propfind._();
 
 @override String get value => 'PROPFIND';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PROPFIND'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$mkcol extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$mkcol._();
 
 @override String get value => 'MKCOL';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MKCOL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$patch extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$patch._();
 
 @override String get value => 'PATCH';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PATCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$acl extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$acl._();
 
 @override String get value => 'ACL';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'ACL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$bcopy extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$bcopy._();
 
 @override String get value => 'BCOPY';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BCOPY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$bdelete extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$bdelete._();
 
 @override String get value => 'BDELETE';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BDELETE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$bmove extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$bmove._();
 
 @override String get value => 'BMOVE';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BMOVE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$bpropfind extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$bpropfind._();
 
 @override String get value => 'BPROPFIND';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BPROPFIND'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$bproppatch extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$bproppatch._();
 
 @override String get value => 'BPROPPATCH';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BPROPPATCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$checkin extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$checkin._();
 
 @override String get value => 'CHECKIN';
@@ -456,7 +456,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'CHECKIN'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$checkout extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$checkout._();
 
 @override String get value => 'CHECKOUT';
@@ -465,7 +465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'CHECKOUT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$connect extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$connect._();
 
 @override String get value => 'CONNECT';
@@ -474,7 +474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'CONNECT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$copy extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$copy._();
 
 @override String get value => 'COPY';
@@ -483,7 +483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'COPY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$label extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$label._();
 
 @override String get value => 'LABEL';
@@ -492,7 +492,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'LABEL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$lock extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$lock._();
 
 @override String get value => 'LOCK';
@@ -501,7 +501,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'LOCK'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$merge extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$merge._();
 
 @override String get value => 'MERGE';
@@ -510,7 +510,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MERGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$mkactivity extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$mkactivity._();
 
 @override String get value => 'MKACTIVITY';
@@ -519,7 +519,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MKACTIVITY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$mkworkspace extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$mkworkspace._();
 
 @override String get value => 'MKWORKSPACE';
@@ -528,7 +528,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MKWORKSPACE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$move extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$move._();
 
 @override String get value => 'MOVE';
@@ -537,7 +537,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'MOVE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$notify extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$notify._();
 
 @override String get value => 'NOTIFY';
@@ -546,7 +546,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'NOTIFY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$orderpatch extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$orderpatch._();
 
 @override String get value => 'ORDERPATCH';
@@ -555,7 +555,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'ORDERPATCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$poll extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$poll._();
 
 @override String get value => 'POLL';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POLL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$proppatch extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$proppatch._();
 
 @override String get value => 'PROPPATCH';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'PROPPATCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$report extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$report._();
 
 @override String get value => 'REPORT';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'REPORT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$search extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$search._();
 
 @override String get value => 'SEARCH';
@@ -591,7 +591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'SEARCH'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$subscribe extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$subscribe._();
 
 @override String get value => 'SUBSCRIBE';
@@ -600,7 +600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'SUBSCRIBE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$trace extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$trace._();
 
 @override String get value => 'TRACE';
@@ -609,7 +609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'TRACE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$uncheckout extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$uncheckout._();
 
 @override String get value => 'UNCHECKOUT';
@@ -618,7 +618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'UNCHECKOUT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$unlock extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$unlock._();
 
 @override String get value => 'UNLOCK';
@@ -627,7 +627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'UNLOCK'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$unsubscribe extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$unsubscribe._();
 
 @override String get value => 'UNSUBSCRIBE';
@@ -636,7 +636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'UNSUBSCRIBE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$update extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$update._();
 
 @override String get value => 'UPDATE';
@@ -645,7 +645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'UPDATE'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$versioncontrol extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$versioncontrol._();
 
 @override String get value => 'VERSIONCONTROL';
@@ -654,7 +654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'VERSIONCONTROL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$baselinecontrol extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$baselinecontrol._();
 
 @override String get value => 'BASELINECONTROL';
@@ -663,7 +663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'BASELINECONTROL'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$xmsenumatts extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$xmsenumatts._();
 
 @override String get value => 'XMSENUMATTS';
@@ -672,7 +672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'XMSENUMATTS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$rpcOutData extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$rpcOutData._();
 
 @override String get value => 'RPC_OUT_DATA';
@@ -681,7 +681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'RPC_OUT_DATA'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$rpcInData extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$rpcInData._();
 
 @override String get value => 'RPC_IN_DATA';
@@ -690,7 +690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'RPC_IN_DATA'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$$json extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$$json._();
 
 @override String get value => 'JSON';
@@ -699,7 +699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$cook extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$cook._();
 
 @override String get value => 'COOK';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'COOK'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$track extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$track._();
 
 @override String get value => 'TRACK';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'TRACK'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer7SummaryHttpMethod$Unknown extends RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod$Unknown(this.value);
 
 @override final String value;
@@ -727,4 +727,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

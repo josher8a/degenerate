@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchUpdateTokensRequest {const AiSearchUpdateTokensRequest({required this.cfApiId, required this.cfApiKey, required this.name, });
 
-factory AiSearchUpdateTokensRequest.fromJson(Map<String, dynamic> json) { return AiSearchUpdateTokensRequest(
+factory AiSearchUpdateTokensRequest.fromJson(Map<String, dynamic> json) {return AiSearchUpdateTokensRequest(
   cfApiId: json['cf_api_id'] as String,
   cfApiKey: json['cf_api_key'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String cfApiId;
 
@@ -15,19 +15,19 @@ final String cfApiKey;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cf_api_id': cfApiId,
   'cf_api_key': cfApiKey,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cf_api_id') && json['cf_api_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cf_api_id') && json['cf_api_id'] is String &&
       json.containsKey('cf_api_key') && json['cf_api_key'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-AiSearchUpdateTokensRequest copyWith({String? cfApiId, String? cfApiKey, String? name, }) { return AiSearchUpdateTokensRequest(
+      json.containsKey('name') && json['name'] is String;}
+AiSearchUpdateTokensRequest copyWith({String? cfApiId, String? cfApiKey, String? name, }) {return AiSearchUpdateTokensRequest(
   cfApiId: cfApiId ?? this.cfApiId,
   cfApiKey: cfApiKey ?? this.cfApiKey,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchUpdateTokensRequest &&
           cfApiId == other.cfApiId &&
@@ -38,4 +38,4 @@ AiSearchUpdateTokensRequest copyWith({String? cfApiId, String? cfApiKey, String?
 
 @override String toString() => 'AiSearchUpdateTokensRequest(cfApiId: $cfApiId, cfApiKey: $cfApiKey, name: $name)';
 
- }
+}

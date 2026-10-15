@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_messages2.dart';import 'package:pub_cloudflare/models/magic_wan.dart';@immutable final class MagicWanSingleResponse {const MagicWanSingleResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory MagicWanSingleResponse.fromJson(Map<String, dynamic> json) { return MagicWanSingleResponse(
+factory MagicWanSingleResponse.fromJson(Map<String, dynamic> json) {return MagicWanSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: MagicWan.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<MagicMessages2> errors;
 
@@ -21,22 +21,22 @@ final MagicWan result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-MagicWanSingleResponse copyWith({List<MagicMessages2>? errors, List<MagicMessages2>? messages, MagicWan? result, bool? success, }) { return MagicWanSingleResponse(
+      json.containsKey('success') && json['success'] is bool;}
+MagicWanSingleResponse copyWith({List<MagicMessages2>? errors, List<MagicMessages2>? messages, MagicWan? result, bool? success, }) {return MagicWanSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicWanSingleResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ MagicWanSingleResponse copyWith({List<MagicMessages2>? errors, List<MagicMessage
 
 @override String toString() => 'MagicWanSingleResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

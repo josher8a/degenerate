@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/cancellation_details.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/customer/customer_default_source.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/subscription/latest_invoice.dart';import 'package:pub_stripe_spec3/models/subscription/pending_setup_intent.dart';import 'package:pub_stripe_spec3/models/subscription/subscription_items.dart';import 'package:pub_stripe_spec3/models/subscription/subscription_schedule2.dart';import 'package:pub_stripe_spec3/models/subscription_automatic_tax.dart';import 'package:pub_stripe_spec3/models/subscription_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_pending_invoice_item_interval.dart';import 'package:pub_stripe_spec3/models/subscription_transfer_data.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_cycle_anchor_config.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_pause_collection.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_payment_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_pending_update.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_subscription_invoice_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_trial_settings_trial_settings.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class SubscriptionObject {const SubscriptionObject();
 
-factory SubscriptionObject.fromJson(String json) { return switch (json) {
+factory SubscriptionObject.fromJson(String json) {return switch (json) {
   'subscription' => subscription,
   _ => SubscriptionObject$Unknown(json),
-}; }
+};}
 
 static const SubscriptionObject subscription = SubscriptionObject$subscription._();
 
 static const List<SubscriptionObject> values = [subscription];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'subscription' => 'subscription',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SubscriptionObject$Unknown; } 
+bool get isUnknown {return this is SubscriptionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() subscription, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() subscription, required W Function(String value) $unknown, }) {return switch (this) {
       SubscriptionObject$subscription() => subscription(),
       SubscriptionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscription, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscription, W Function(String value)? $unknown, }) {return switch (this) {
       SubscriptionObject$subscription() => subscription != null ? subscription() : orElse(value),
       SubscriptionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SubscriptionObject($value)';
 
- }
+}
 @immutable final class SubscriptionObject$subscription extends SubscriptionObject {const SubscriptionObject$subscription._();
 
 @override String get value => 'subscription';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscrip
 
 @override int get hashCode => 'subscription'.hashCode;
 
- }
+}
 @immutable final class SubscriptionObject$Unknown extends SubscriptionObject {const SubscriptionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscrip
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Possible values are `incomplete`, `incomplete_expired`, `trialing`, `active`, `past_due`, `canceled`, `unpaid`, or `paused`.
 /// 
 /// For `collection_method=charge_automatically` a subscription moves into `incomplete` if the initial payment attempt fails. A subscription in this status can only have metadata and default_source updated. Once the first invoice is paid, the subscription moves into an `active` status. If the first invoice is not paid within 23 hours, the subscription transitions to `incomplete_expired`. This is a terminal status, the open invoice will be voided and no further invoices will be generated.
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscrip
 /// If subscription `collection_method=send_invoice` it becomes `past_due` when its invoice is not paid by the due date, and `canceled` or `unpaid` if it is still not paid by an additional deadline after that. Note that when a subscription has a status of `unpaid`, no subsequent invoices will be attempted (invoices will be created, but then immediately automatically closed). After receiving updated payment information from a customer, you may choose to reopen and pay their closed invoices.
 sealed class SubscriptionStatus {const SubscriptionStatus();
 
-factory SubscriptionStatus.fromJson(String json) { return switch (json) {
+factory SubscriptionStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'canceled' => canceled,
   'incomplete' => incomplete,
@@ -77,7 +77,7 @@ factory SubscriptionStatus.fromJson(String json) { return switch (json) {
   'trialing' => trialing,
   'unpaid' => unpaid,
   _ => SubscriptionStatus$Unknown(json),
-}; }
+};}
 
 static const SubscriptionStatus active = SubscriptionStatus$active._();
 
@@ -98,9 +98,9 @@ static const SubscriptionStatus unpaid = SubscriptionStatus$unpaid._();
 static const List<SubscriptionStatus> values = [active, canceled, incomplete, incompleteExpired, pastDue, paused, trialing, unpaid];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'canceled' => 'canceled',
   'incomplete' => 'incomplete',
@@ -110,11 +110,11 @@ String get name { return switch (value) {
   'trialing' => 'trialing',
   'unpaid' => 'unpaid',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SubscriptionStatus$Unknown; } 
+bool get isUnknown {return this is SubscriptionStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() canceled, required W Function() incomplete, required W Function() incompleteExpired, required W Function() pastDue, required W Function() paused, required W Function() trialing, required W Function() unpaid, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() canceled, required W Function() incomplete, required W Function() incompleteExpired, required W Function() pastDue, required W Function() paused, required W Function() trialing, required W Function() unpaid, required W Function(String value) $unknown, }) {return switch (this) {
       SubscriptionStatus$active() => active(),
       SubscriptionStatus$canceled() => canceled(),
       SubscriptionStatus$incomplete() => incomplete(),
@@ -124,9 +124,9 @@ W when<W>({required W Function() active, required W Function() canceled, require
       SubscriptionStatus$trialing() => trialing(),
       SubscriptionStatus$unpaid() => unpaid(),
       SubscriptionStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? canceled, W Function()? incomplete, W Function()? incompleteExpired, W Function()? pastDue, W Function()? paused, W Function()? trialing, W Function()? unpaid, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? canceled, W Function()? incomplete, W Function()? incompleteExpired, W Function()? pastDue, W Function()? paused, W Function()? trialing, W Function()? unpaid, W Function(String value)? $unknown, }) {return switch (this) {
       SubscriptionStatus$active() => active != null ? active() : orElse(value),
       SubscriptionStatus$canceled() => canceled != null ? canceled() : orElse(value),
       SubscriptionStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
@@ -136,10 +136,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
       SubscriptionStatus$trialing() => trialing != null ? trialing() : orElse(value),
       SubscriptionStatus$unpaid() => unpaid != null ? unpaid() : orElse(value),
       SubscriptionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SubscriptionStatus($value)';
 
- }
+}
 @immutable final class SubscriptionStatus$active extends SubscriptionStatus {const SubscriptionStatus$active._();
 
 @override String get value => 'active';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class SubscriptionStatus$canceled extends SubscriptionStatus {const SubscriptionStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class SubscriptionStatus$incomplete extends SubscriptionStatus {const SubscriptionStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class SubscriptionStatus$incompleteExpired extends SubscriptionStatus {const SubscriptionStatus$incompleteExpired._();
 
 @override String get value => 'incomplete_expired';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'incomplete_expired'.hashCode;
 
- }
+}
 @immutable final class SubscriptionStatus$pastDue extends SubscriptionStatus {const SubscriptionStatus$pastDue._();
 
 @override String get value => 'past_due';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'past_due'.hashCode;
 
- }
+}
 @immutable final class SubscriptionStatus$paused extends SubscriptionStatus {const SubscriptionStatus$paused._();
 
 @override String get value => 'paused';
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'paused'.hashCode;
 
- }
+}
 @immutable final class SubscriptionStatus$trialing extends SubscriptionStatus {const SubscriptionStatus$trialing._();
 
 @override String get value => 'trialing';
@@ -202,7 +202,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'trialing'.hashCode;
 
- }
+}
 @immutable final class SubscriptionStatus$unpaid extends SubscriptionStatus {const SubscriptionStatus$unpaid._();
 
 @override String get value => 'unpaid';
@@ -211,7 +211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'unpaid'.hashCode;
 
- }
+}
 @immutable final class SubscriptionStatus$Unknown extends SubscriptionStatus {const SubscriptionStatus$Unknown(this.value);
 
 @override final String value;
@@ -221,13 +221,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Subscriptions allow you to charge a customer on a recurring basis.
 /// 
 /// Related guide: [Creating subscriptions](https://docs.stripe.com/billing/subscriptions/creating)
 @immutable final class Subscription {const Subscription({required this.status, required this.automaticTax, required this.billingCycleAnchor, required this.billingMode, required this.cancelAtPeriodEnd, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.discounts, required this.id, required this.invoiceSettings, required this.items, required this.livemode, required this.metadata, required this.object, required this.startDate, this.customerAccount = const Omittable.absent(), this.defaultSource = const Omittable.absent(), this.defaultTaxRates = const Omittable.absent(), this.description = const Omittable.absent(), this.canceledAt = const Omittable.absent(), this.endedAt = const Omittable.absent(), this.cancellationDetails = const Omittable.absent(), this.applicationFeePercent = const Omittable.absent(), this.billingThresholds = const Omittable.absent(), this.latestInvoice = const Omittable.absent(), this.cancelAt = const Omittable.absent(), this.billingCycleAnchorConfig = const Omittable.absent(), this.trialStart = const Omittable.absent(), this.application = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.pauseCollection = const Omittable.absent(), this.paymentSettings = const Omittable.absent(), this.pendingInvoiceItemInterval = const Omittable.absent(), this.pendingSetupIntent = const Omittable.absent(), this.pendingUpdate = const Omittable.absent(), this.schedule = const Omittable.absent(), this.daysUntilDue = const Omittable.absent(), this.defaultPaymentMethod = const Omittable.absent(), this.testClock = const Omittable.absent(), this.transferData = const Omittable.absent(), this.trialEnd = const Omittable.absent(), this.trialSettings = const Omittable.absent(), this.nextPendingInvoiceItemInvoice = const Omittable.absent(), });
 
-factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
+factory Subscription.fromJson(Map<String, dynamic> json) {return Subscription(
   application: json.containsKey('application') ? Omittable(json['application'] != null ? BillingPortalConfigurationApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   applicationFeePercent: json.containsKey('application_fee_percent') ? Omittable(json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null) : const Omittable.absent(),
   automaticTax: SubscriptionAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
@@ -273,7 +273,7 @@ factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
   trialEnd: json.containsKey('trial_end') ? Omittable(json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null) : const Omittable.absent(),
   trialSettings: json.containsKey('trial_settings') ? Omittable(json['trial_settings'] != null ? SubscriptionsResourceTrialSettingsTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   trialStart: json.containsKey('trial_start') ? Omittable(json['trial_start'] != null ? (json['trial_start'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the Connect Application that created the subscription.
 final Omittable<BillingPortalConfigurationApplication?> application;
@@ -417,7 +417,7 @@ final Omittable<SubscriptionsResourceTrialSettingsTrialSettings?> trialSettings;
 /// If the subscription has a trial, the beginning of that trial.
 final Omittable<int?> trialStart;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (application.isPresent) 'application': application.value?.toJson(),
   if (applicationFeePercent.isPresent) 'application_fee_percent': applicationFeePercent.value,
   'automatic_tax': automaticTax.toJson(),
@@ -463,8 +463,8 @@ Map<String, dynamic> toJson() { return {
   if (trialEnd.isPresent) 'trial_end': trialEnd.value,
   if (trialSettings.isPresent) 'trial_settings': trialSettings.value?.toJson(),
   if (trialStart.isPresent) 'trial_start': trialStart.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_tax') &&
       json.containsKey('billing_cycle_anchor') && json['billing_cycle_anchor'] is num &&
       json.containsKey('billing_mode') &&
       json.containsKey('cancel_at_period_end') && json['cancel_at_period_end'] is bool &&
@@ -480,9 +480,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autom
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('start_date') && json['start_date'] is num &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
@@ -492,8 +492,8 @@ if (description$ != null) {
   if (description$.runes.length > 500) { errors.add('description: length must be <= 500'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-Subscription copyWith({Omittable<BillingPortalConfigurationApplication?>? application, Omittable<double?>? applicationFeePercent, SubscriptionAutomaticTax? automaticTax, int? billingCycleAnchor, Omittable<SubscriptionsResourceBillingCycleAnchorConfig?>? billingCycleAnchorConfig, SubscriptionsResourceBillingMode? billingMode, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<int?>? cancelAt, bool? cancelAtPeriodEnd, Omittable<int?>? canceledAt, Omittable<CancellationDetails?>? cancellationDetails, InvoiceCollectionMethod? collectionMethod, int? created, String? currency, BankAccountCustomer? customer, Omittable<String?>? customerAccount, Omittable<int?>? daysUntilDue, Omittable<DefaultPaymentMethod?>? defaultPaymentMethod, Omittable<CustomerDefaultSource?>? defaultSource, Omittable<List<TaxRate>?>? defaultTaxRates, Omittable<String?>? description, List<InvoiceitemDiscounts>? discounts, Omittable<int?>? endedAt, String? id, SubscriptionsResourceSubscriptionInvoiceSettings? invoiceSettings, SubscriptionItems? items, Omittable<LatestInvoice?>? latestInvoice, bool? livemode, Map<String,String>? metadata, Omittable<int?>? nextPendingInvoiceItemInvoice, SubscriptionObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<SubscriptionsResourcePauseCollection?>? pauseCollection, Omittable<SubscriptionsResourcePaymentSettings?>? paymentSettings, Omittable<SubscriptionPendingInvoiceItemInterval?>? pendingInvoiceItemInterval, Omittable<PendingSetupIntent?>? pendingSetupIntent, Omittable<SubscriptionsResourcePendingUpdate?>? pendingUpdate, Omittable<SubscriptionSchedule2?>? schedule, int? startDate, SubscriptionStatus? status, Omittable<TestClock?>? testClock, Omittable<SubscriptionTransferData?>? transferData, Omittable<int?>? trialEnd, Omittable<SubscriptionsResourceTrialSettingsTrialSettings?>? trialSettings, Omittable<int?>? trialStart, }) { return Subscription(
+return errors;}
+Subscription copyWith({Omittable<BillingPortalConfigurationApplication?>? application, Omittable<double?>? applicationFeePercent, SubscriptionAutomaticTax? automaticTax, int? billingCycleAnchor, Omittable<SubscriptionsResourceBillingCycleAnchorConfig?>? billingCycleAnchorConfig, SubscriptionsResourceBillingMode? billingMode, Omittable<SubscriptionBillingThresholds?>? billingThresholds, Omittable<int?>? cancelAt, bool? cancelAtPeriodEnd, Omittable<int?>? canceledAt, Omittable<CancellationDetails?>? cancellationDetails, InvoiceCollectionMethod? collectionMethod, int? created, String? currency, BankAccountCustomer? customer, Omittable<String?>? customerAccount, Omittable<int?>? daysUntilDue, Omittable<DefaultPaymentMethod?>? defaultPaymentMethod, Omittable<CustomerDefaultSource?>? defaultSource, Omittable<List<TaxRate>?>? defaultTaxRates, Omittable<String?>? description, List<InvoiceitemDiscounts>? discounts, Omittable<int?>? endedAt, String? id, SubscriptionsResourceSubscriptionInvoiceSettings? invoiceSettings, SubscriptionItems? items, Omittable<LatestInvoice?>? latestInvoice, bool? livemode, Map<String,String>? metadata, Omittable<int?>? nextPendingInvoiceItemInvoice, SubscriptionObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<SubscriptionsResourcePauseCollection?>? pauseCollection, Omittable<SubscriptionsResourcePaymentSettings?>? paymentSettings, Omittable<SubscriptionPendingInvoiceItemInterval?>? pendingInvoiceItemInterval, Omittable<PendingSetupIntent?>? pendingSetupIntent, Omittable<SubscriptionsResourcePendingUpdate?>? pendingUpdate, Omittable<SubscriptionSchedule2?>? schedule, int? startDate, SubscriptionStatus? status, Omittable<TestClock?>? testClock, Omittable<SubscriptionTransferData?>? transferData, Omittable<int?>? trialEnd, Omittable<SubscriptionsResourceTrialSettingsTrialSettings?>? trialSettings, Omittable<int?>? trialStart, }) {return Subscription(
   application: application ?? this.application,
   applicationFeePercent: applicationFeePercent ?? this.applicationFeePercent,
   automaticTax: automaticTax ?? this.automaticTax,
@@ -539,7 +539,7 @@ Subscription copyWith({Omittable<BillingPortalConfigurationApplication?>? applic
   trialEnd: trialEnd ?? this.trialEnd,
   trialSettings: trialSettings ?? this.trialSettings,
   trialStart: trialStart ?? this.trialStart,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Subscription &&
           application == other.application &&
@@ -593,4 +593,4 @@ Subscription copyWith({Omittable<BillingPortalConfigurationApplication?>? applic
 
 @override String toString() => 'Subscription(\n  application: $application,\n  applicationFeePercent: $applicationFeePercent,\n  automaticTax: $automaticTax,\n  billingCycleAnchor: $billingCycleAnchor,\n  billingCycleAnchorConfig: $billingCycleAnchorConfig,\n  billingMode: $billingMode,\n  billingThresholds: $billingThresholds,\n  cancelAt: $cancelAt,\n  cancelAtPeriodEnd: $cancelAtPeriodEnd,\n  canceledAt: $canceledAt,\n  cancellationDetails: $cancellationDetails,\n  collectionMethod: $collectionMethod,\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  daysUntilDue: $daysUntilDue,\n  defaultPaymentMethod: $defaultPaymentMethod,\n  defaultSource: $defaultSource,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  discounts: $discounts,\n  endedAt: $endedAt,\n  id: $id,\n  invoiceSettings: $invoiceSettings,\n  items: $items,\n  latestInvoice: $latestInvoice,\n  livemode: $livemode,\n  metadata: $metadata,\n  nextPendingInvoiceItemInvoice: $nextPendingInvoiceItemInvoice,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  pauseCollection: $pauseCollection,\n  paymentSettings: $paymentSettings,\n  pendingInvoiceItemInterval: $pendingInvoiceItemInterval,\n  pendingSetupIntent: $pendingSetupIntent,\n  pendingUpdate: $pendingUpdate,\n  schedule: $schedule,\n  startDate: $startDate,\n  status: $status,\n  testClock: $testClock,\n  transferData: $transferData,\n  trialEnd: $trialEnd,\n  trialSettings: $trialSettings,\n  trialStart: $trialStart,\n)';
 
- }
+}

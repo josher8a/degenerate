@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReviewCustomGatesCommentRequired {const ReviewCustomGatesCommentRequired({required this.environmentName, required this.comment, });
 
-factory ReviewCustomGatesCommentRequired.fromJson(Map<String, dynamic> json) { return ReviewCustomGatesCommentRequired(
+factory ReviewCustomGatesCommentRequired.fromJson(Map<String, dynamic> json) {return ReviewCustomGatesCommentRequired(
   environmentName: json['environment_name'] as String,
   comment: json['comment'] as String,
-); }
+);}
 
 /// The name of the environment to approve or reject.
 final String environmentName;
@@ -14,16 +14,16 @@ final String environmentName;
 /// Comment associated with the pending deployment protection rule. **Required when state is not provided.**
 final String comment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'environment_name': environmentName,
   'comment': comment,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('environment_name') && json['environment_name'] is String &&
-      json.containsKey('comment') && json['comment'] is String; } 
-ReviewCustomGatesCommentRequired copyWith({String? environmentName, String? comment, }) { return ReviewCustomGatesCommentRequired(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('environment_name') && json['environment_name'] is String &&
+      json.containsKey('comment') && json['comment'] is String;}
+ReviewCustomGatesCommentRequired copyWith({String? environmentName, String? comment, }) {return ReviewCustomGatesCommentRequired(
   environmentName: environmentName ?? this.environmentName,
   comment: comment ?? this.comment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewCustomGatesCommentRequired &&
           environmentName == other.environmentName &&
@@ -33,4 +33,4 @@ ReviewCustomGatesCommentRequired copyWith({String? environmentName, String? comm
 
 @override String toString() => 'ReviewCustomGatesCommentRequired(environmentName: $environmentName, comment: $comment)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCategoryCreateResponse {const PostCategoryCreateResponse({required this.killChain, required this.name, required this.uuid, this.mitreAttack, this.shortname, });
 
-factory PostCategoryCreateResponse.fromJson(Map<String, dynamic> json) { return PostCategoryCreateResponse(
+factory PostCategoryCreateResponse.fromJson(Map<String, dynamic> json) {return PostCategoryCreateResponse(
   killChain: (json['killChain'] as num).toDouble(),
   mitreAttack: (json['mitreAttack'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String,
   shortname: json['shortname'] as String?,
   uuid: json['uuid'] as String,
-); }
+);}
 
 final double killChain;
 
@@ -24,23 +24,23 @@ final String? shortname;
 /// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'killChain': killChain,
   'mitreAttack': ?mitreAttack,
   'name': name,
   'shortname': ?shortname,
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('killChain') && json['killChain'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('killChain') && json['killChain'] is num &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-PostCategoryCreateResponse copyWith({double? killChain, List<String>? Function()? mitreAttack, String? name, String? Function()? shortname, String? uuid, }) { return PostCategoryCreateResponse(
+      json.containsKey('uuid') && json['uuid'] is String;}
+PostCategoryCreateResponse copyWith({double? killChain, List<String>? Function()? mitreAttack, String? name, String? Function()? shortname, String? uuid, }) {return PostCategoryCreateResponse(
   killChain: killChain ?? this.killChain,
   mitreAttack: mitreAttack != null ? mitreAttack() : this.mitreAttack,
   name: name ?? this.name,
   shortname: shortname != null ? shortname() : this.shortname,
   uuid: uuid ?? this.uuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCategoryCreateResponse &&
           killChain == other.killChain &&
@@ -53,4 +53,4 @@ PostCategoryCreateResponse copyWith({double? killChain, List<String>? Function()
 
 @override String toString() => 'PostCategoryCreateResponse(killChain: $killChain, mitreAttack: $mitreAttack, name: $name, shortname: $shortname, uuid: $uuid)';
 
- }
+}

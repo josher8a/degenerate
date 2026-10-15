@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel();
 
-factory AllowDeletionsEnforcementLevel.fromJson(String json) { return switch (json) {
+factory AllowDeletionsEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => AllowDeletionsEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const AllowDeletionsEnforcementLevel off = AllowDeletionsEnforcementLevel$off._();
 
@@ -19,33 +19,33 @@ static const AllowDeletionsEnforcementLevel everyone = AllowDeletionsEnforcement
 static const List<AllowDeletionsEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AllowDeletionsEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is AllowDeletionsEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       AllowDeletionsEnforcementLevel$off() => off(),
       AllowDeletionsEnforcementLevel$nonAdmins() => nonAdmins(),
       AllowDeletionsEnforcementLevel$everyone() => everyone(),
       AllowDeletionsEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       AllowDeletionsEnforcementLevel$off() => off != null ? off() : orElse(value),
       AllowDeletionsEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       AllowDeletionsEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       AllowDeletionsEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AllowDeletionsEnforcementLevel($value)';
 
- }
+}
 @immutable final class AllowDeletionsEnforcementLevel$off extends AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class AllowDeletionsEnforcementLevel$nonAdmins extends AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class AllowDeletionsEnforcementLevel$everyone extends AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class AllowDeletionsEnforcementLevel$Unknown extends AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -82,15 +82,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel();
 
-factory AllowForcePushesEnforcementLevel.fromJson(String json) { return switch (json) {
+factory AllowForcePushesEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => AllowForcePushesEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const AllowForcePushesEnforcementLevel off = AllowForcePushesEnforcementLevel$off._();
 
@@ -101,33 +101,33 @@ static const AllowForcePushesEnforcementLevel everyone = AllowForcePushesEnforce
 static const List<AllowForcePushesEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AllowForcePushesEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is AllowForcePushesEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       AllowForcePushesEnforcementLevel$off() => off(),
       AllowForcePushesEnforcementLevel$nonAdmins() => nonAdmins(),
       AllowForcePushesEnforcementLevel$everyone() => everyone(),
       AllowForcePushesEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       AllowForcePushesEnforcementLevel$off() => off != null ? off() : orElse(value),
       AllowForcePushesEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       AllowForcePushesEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       AllowForcePushesEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AllowForcePushesEnforcementLevel($value)';
 
- }
+}
 @immutable final class AllowForcePushesEnforcementLevel$off extends AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class AllowForcePushesEnforcementLevel$nonAdmins extends AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class AllowForcePushesEnforcementLevel$everyone extends AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class AllowForcePushesEnforcementLevel$Unknown extends AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -164,15 +164,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel();
 
-factory WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const WebhooksRuleLinearHistoryRequirementEnforcementLevel off = WebhooksRuleLinearHistoryRequirementEnforcementLevel$off._();
 
@@ -183,33 +183,33 @@ static const WebhooksRuleLinearHistoryRequirementEnforcementLevel everyone = Web
 static const List<WebhooksRuleLinearHistoryRequirementEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       WebhooksRuleLinearHistoryRequirementEnforcementLevel$off() => off(),
       WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins() => nonAdmins(),
       WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone() => everyone(),
       WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       WebhooksRuleLinearHistoryRequirementEnforcementLevel$off() => off != null ? off() : orElse(value),
       WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhooksRuleLinearHistoryRequirementEnforcementLevel($value)';
 
- }
+}
 @immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel$off extends WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -218,7 +218,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins extends WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -227,7 +227,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone extends WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -236,7 +236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown extends WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -246,16 +246,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
 sealed class WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel();
 
-factory WebhooksRuleLockBranchEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleLockBranchEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleLockBranchEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const WebhooksRuleLockBranchEnforcementLevel off = WebhooksRuleLockBranchEnforcementLevel$off._();
 
@@ -266,33 +266,33 @@ static const WebhooksRuleLockBranchEnforcementLevel everyone = WebhooksRuleLockB
 static const List<WebhooksRuleLockBranchEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhooksRuleLockBranchEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is WebhooksRuleLockBranchEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       WebhooksRuleLockBranchEnforcementLevel$off() => off(),
       WebhooksRuleLockBranchEnforcementLevel$nonAdmins() => nonAdmins(),
       WebhooksRuleLockBranchEnforcementLevel$everyone() => everyone(),
       WebhooksRuleLockBranchEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       WebhooksRuleLockBranchEnforcementLevel$off() => off != null ? off() : orElse(value),
       WebhooksRuleLockBranchEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       WebhooksRuleLockBranchEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       WebhooksRuleLockBranchEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhooksRuleLockBranchEnforcementLevel($value)';
 
- }
+}
 @immutable final class WebhooksRuleLockBranchEnforcementLevel$off extends WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -301,7 +301,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleLockBranchEnforcementLevel$nonAdmins extends WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -310,7 +310,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleLockBranchEnforcementLevel$everyone extends WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -319,7 +319,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleLockBranchEnforcementLevel$Unknown extends WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -329,15 +329,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel();
 
-factory MergeQueueEnforcementLevel.fromJson(String json) { return switch (json) {
+factory MergeQueueEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => MergeQueueEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const MergeQueueEnforcementLevel off = MergeQueueEnforcementLevel$off._();
 
@@ -348,33 +348,33 @@ static const MergeQueueEnforcementLevel everyone = MergeQueueEnforcementLevel$ev
 static const List<MergeQueueEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MergeQueueEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is MergeQueueEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       MergeQueueEnforcementLevel$off() => off(),
       MergeQueueEnforcementLevel$nonAdmins() => nonAdmins(),
       MergeQueueEnforcementLevel$everyone() => everyone(),
       MergeQueueEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       MergeQueueEnforcementLevel$off() => off != null ? off() : orElse(value),
       MergeQueueEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       MergeQueueEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       MergeQueueEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MergeQueueEnforcementLevel($value)';
 
- }
+}
 @immutable final class MergeQueueEnforcementLevel$off extends MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -383,7 +383,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class MergeQueueEnforcementLevel$nonAdmins extends MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -392,7 +392,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class MergeQueueEnforcementLevel$everyone extends MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -401,7 +401,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class MergeQueueEnforcementLevel$Unknown extends MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -411,15 +411,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel();
 
-factory WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRulePullRequestReviewsEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const WebhooksRulePullRequestReviewsEnforcementLevel off = WebhooksRulePullRequestReviewsEnforcementLevel$off._();
 
@@ -430,33 +430,33 @@ static const WebhooksRulePullRequestReviewsEnforcementLevel everyone = WebhooksR
 static const List<WebhooksRulePullRequestReviewsEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhooksRulePullRequestReviewsEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is WebhooksRulePullRequestReviewsEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       WebhooksRulePullRequestReviewsEnforcementLevel$off() => off(),
       WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins() => nonAdmins(),
       WebhooksRulePullRequestReviewsEnforcementLevel$everyone() => everyone(),
       WebhooksRulePullRequestReviewsEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       WebhooksRulePullRequestReviewsEnforcementLevel$off() => off != null ? off() : orElse(value),
       WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       WebhooksRulePullRequestReviewsEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       WebhooksRulePullRequestReviewsEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhooksRulePullRequestReviewsEnforcementLevel($value)';
 
- }
+}
 @immutable final class WebhooksRulePullRequestReviewsEnforcementLevel$off extends WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -465,7 +465,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins extends WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -474,7 +474,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class WebhooksRulePullRequestReviewsEnforcementLevel$everyone extends WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -483,7 +483,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class WebhooksRulePullRequestReviewsEnforcementLevel$Unknown extends WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -493,15 +493,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel();
 
-factory RequiredConversationResolutionLevel.fromJson(String json) { return switch (json) {
+factory RequiredConversationResolutionLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => RequiredConversationResolutionLevel$Unknown(json),
-}; }
+};}
 
 static const RequiredConversationResolutionLevel off = RequiredConversationResolutionLevel$off._();
 
@@ -512,33 +512,33 @@ static const RequiredConversationResolutionLevel everyone = RequiredConversation
 static const List<RequiredConversationResolutionLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RequiredConversationResolutionLevel$Unknown; } 
+bool get isUnknown {return this is RequiredConversationResolutionLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       RequiredConversationResolutionLevel$off() => off(),
       RequiredConversationResolutionLevel$nonAdmins() => nonAdmins(),
       RequiredConversationResolutionLevel$everyone() => everyone(),
       RequiredConversationResolutionLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       RequiredConversationResolutionLevel$off() => off != null ? off() : orElse(value),
       RequiredConversationResolutionLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       RequiredConversationResolutionLevel$everyone() => everyone != null ? everyone() : orElse(value),
       RequiredConversationResolutionLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RequiredConversationResolutionLevel($value)';
 
- }
+}
 @immutable final class RequiredConversationResolutionLevel$off extends RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel$off._();
 
 @override String get value => 'off';
@@ -547,7 +547,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class RequiredConversationResolutionLevel$nonAdmins extends RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -556,7 +556,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class RequiredConversationResolutionLevel$everyone extends RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -565,7 +565,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class RequiredConversationResolutionLevel$Unknown extends RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel$Unknown(this.value);
 
 @override final String value;
@@ -575,15 +575,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel();
 
-factory RequiredDeploymentsEnforcementLevel.fromJson(String json) { return switch (json) {
+factory RequiredDeploymentsEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => RequiredDeploymentsEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const RequiredDeploymentsEnforcementLevel off = RequiredDeploymentsEnforcementLevel$off._();
 
@@ -594,33 +594,33 @@ static const RequiredDeploymentsEnforcementLevel everyone = RequiredDeploymentsE
 static const List<RequiredDeploymentsEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RequiredDeploymentsEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is RequiredDeploymentsEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       RequiredDeploymentsEnforcementLevel$off() => off(),
       RequiredDeploymentsEnforcementLevel$nonAdmins() => nonAdmins(),
       RequiredDeploymentsEnforcementLevel$everyone() => everyone(),
       RequiredDeploymentsEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       RequiredDeploymentsEnforcementLevel$off() => off != null ? off() : orElse(value),
       RequiredDeploymentsEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       RequiredDeploymentsEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       RequiredDeploymentsEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RequiredDeploymentsEnforcementLevel($value)';
 
- }
+}
 @immutable final class RequiredDeploymentsEnforcementLevel$off extends RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -629,7 +629,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class RequiredDeploymentsEnforcementLevel$nonAdmins extends RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -638,7 +638,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class RequiredDeploymentsEnforcementLevel$everyone extends RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -647,7 +647,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class RequiredDeploymentsEnforcementLevel$Unknown extends RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -657,15 +657,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel();
 
-factory WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(String json) { return switch (json) {
+factory WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const WebhooksRuleRequiredStatusChecksEnforcementLevel off = WebhooksRuleRequiredStatusChecksEnforcementLevel$off._();
 
@@ -676,33 +676,33 @@ static const WebhooksRuleRequiredStatusChecksEnforcementLevel everyone = Webhook
 static const List<WebhooksRuleRequiredStatusChecksEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       WebhooksRuleRequiredStatusChecksEnforcementLevel$off() => off(),
       WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins() => nonAdmins(),
       WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone() => everyone(),
       WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       WebhooksRuleRequiredStatusChecksEnforcementLevel$off() => off != null ? off() : orElse(value),
       WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhooksRuleRequiredStatusChecksEnforcementLevel($value)';
 
- }
+}
 @immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel$off extends WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -711,7 +711,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins extends WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -720,7 +720,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone extends WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -729,7 +729,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown extends WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -739,15 +739,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel();
 
-factory SignatureRequirementEnforcementLevel.fromJson(String json) { return switch (json) {
+factory SignatureRequirementEnforcementLevel.fromJson(String json) {return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
   _ => SignatureRequirementEnforcementLevel$Unknown(json),
-}; }
+};}
 
 static const SignatureRequirementEnforcementLevel off = SignatureRequirementEnforcementLevel$off._();
 
@@ -758,33 +758,33 @@ static const SignatureRequirementEnforcementLevel everyone = SignatureRequiremen
 static const List<SignatureRequirementEnforcementLevel> values = [off, nonAdmins, everyone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'non_admins' => 'nonAdmins',
   'everyone' => 'everyone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SignatureRequirementEnforcementLevel$Unknown; } 
+bool get isUnknown {return this is SignatureRequirementEnforcementLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) {return switch (this) {
       SignatureRequirementEnforcementLevel$off() => off(),
       SignatureRequirementEnforcementLevel$nonAdmins() => nonAdmins(),
       SignatureRequirementEnforcementLevel$everyone() => everyone(),
       SignatureRequirementEnforcementLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) {return switch (this) {
       SignatureRequirementEnforcementLevel$off() => off != null ? off() : orElse(value),
       SignatureRequirementEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
       SignatureRequirementEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
       SignatureRequirementEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SignatureRequirementEnforcementLevel($value)';
 
- }
+}
 @immutable final class SignatureRequirementEnforcementLevel$off extends SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel$off._();
 
 @override String get value => 'off';
@@ -793,7 +793,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class SignatureRequirementEnforcementLevel$nonAdmins extends SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel$nonAdmins._();
 
 @override String get value => 'non_admins';
@@ -802,7 +802,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'non_admins'.hashCode;
 
- }
+}
 @immutable final class SignatureRequirementEnforcementLevel$everyone extends SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel$everyone._();
 
 @override String get value => 'everyone';
@@ -811,7 +811,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'everyone'.hashCode;
 
- }
+}
 @immutable final class SignatureRequirementEnforcementLevel$Unknown extends SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel$Unknown(this.value);
 
 @override final String value;
@@ -821,11 +821,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.
 @immutable final class WebhooksRule {const WebhooksRule({required this.adminEnforced, required this.allowDeletionsEnforcementLevel, required this.allowForcePushesEnforcementLevel, required this.authorizedActorNames, required this.authorizedActorsOnly, required this.authorizedDismissalActorsOnly, required this.createdAt, required this.dismissStaleReviewsOnPush, required this.id, required this.ignoreApprovalsFromContributors, required this.linearHistoryRequirementEnforcementLevel, required this.lockBranchEnforcementLevel, required this.mergeQueueEnforcementLevel, required this.name, required this.pullRequestReviewsEnforcementLevel, required this.repositoryId, required this.requireCodeOwnerReview, required this.requiredApprovingReviewCount, required this.requiredConversationResolutionLevel, required this.requiredDeploymentsEnforcementLevel, required this.requiredStatusChecks, required this.requiredStatusChecksEnforcementLevel, required this.signatureRequirementEnforcementLevel, required this.strictRequiredStatusChecksPolicy, required this.updatedAt, this.createProtected, this.lockAllowsForkSync, this.requireLastPushApproval, });
 
-factory WebhooksRule.fromJson(Map<String, dynamic> json) { return WebhooksRule(
+factory WebhooksRule.fromJson(Map<String, dynamic> json) {return WebhooksRule(
   adminEnforced: json['admin_enforced'] as bool,
   allowDeletionsEnforcementLevel: AllowDeletionsEnforcementLevel.fromJson(json['allow_deletions_enforcement_level'] as String),
   allowForcePushesEnforcementLevel: AllowForcePushesEnforcementLevel.fromJson(json['allow_force_pushes_enforcement_level'] as String),
@@ -854,7 +854,7 @@ factory WebhooksRule.fromJson(Map<String, dynamic> json) { return WebhooksRule(
   signatureRequirementEnforcementLevel: SignatureRequirementEnforcementLevel.fromJson(json['signature_requirement_enforcement_level'] as String),
   strictRequiredStatusChecksPolicy: json['strict_required_status_checks_policy'] as bool,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final bool adminEnforced;
 
@@ -915,7 +915,7 @@ final bool strictRequiredStatusChecksPolicy;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'admin_enforced': adminEnforced,
   'allow_deletions_enforcement_level': allowDeletionsEnforcementLevel.toJson(),
   'allow_force_pushes_enforcement_level': allowForcePushesEnforcementLevel.toJson(),
@@ -944,8 +944,8 @@ Map<String, dynamic> toJson() { return {
   'signature_requirement_enforcement_level': signatureRequirementEnforcementLevel.toJson(),
   'strict_required_status_checks_policy': strictRequiredStatusChecksPolicy,
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('admin_enforced') && json['admin_enforced'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('admin_enforced') && json['admin_enforced'] is bool &&
       json.containsKey('allow_deletions_enforcement_level') &&
       json.containsKey('allow_force_pushes_enforcement_level') &&
       json.containsKey('authorized_actor_names') &&
@@ -969,8 +969,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('admin
       json.containsKey('required_status_checks_enforcement_level') &&
       json.containsKey('signature_requirement_enforcement_level') &&
       json.containsKey('strict_required_status_checks_policy') && json['strict_required_status_checks_policy'] is bool &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhooksRule copyWith({bool? adminEnforced, AllowDeletionsEnforcementLevel? allowDeletionsEnforcementLevel, AllowForcePushesEnforcementLevel? allowForcePushesEnforcementLevel, List<String>? authorizedActorNames, bool? authorizedActorsOnly, bool? authorizedDismissalActorsOnly, bool? Function()? createProtected, DateTime? createdAt, bool? dismissStaleReviewsOnPush, int? id, bool? ignoreApprovalsFromContributors, WebhooksRuleLinearHistoryRequirementEnforcementLevel? linearHistoryRequirementEnforcementLevel, WebhooksRuleLockBranchEnforcementLevel? lockBranchEnforcementLevel, bool? Function()? lockAllowsForkSync, MergeQueueEnforcementLevel? mergeQueueEnforcementLevel, String? name, WebhooksRulePullRequestReviewsEnforcementLevel? pullRequestReviewsEnforcementLevel, int? repositoryId, bool? requireCodeOwnerReview, bool? Function()? requireLastPushApproval, int? requiredApprovingReviewCount, RequiredConversationResolutionLevel? requiredConversationResolutionLevel, RequiredDeploymentsEnforcementLevel? requiredDeploymentsEnforcementLevel, List<String>? requiredStatusChecks, WebhooksRuleRequiredStatusChecksEnforcementLevel? requiredStatusChecksEnforcementLevel, SignatureRequirementEnforcementLevel? signatureRequirementEnforcementLevel, bool? strictRequiredStatusChecksPolicy, DateTime? updatedAt, }) { return WebhooksRule(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhooksRule copyWith({bool? adminEnforced, AllowDeletionsEnforcementLevel? allowDeletionsEnforcementLevel, AllowForcePushesEnforcementLevel? allowForcePushesEnforcementLevel, List<String>? authorizedActorNames, bool? authorizedActorsOnly, bool? authorizedDismissalActorsOnly, bool? Function()? createProtected, DateTime? createdAt, bool? dismissStaleReviewsOnPush, int? id, bool? ignoreApprovalsFromContributors, WebhooksRuleLinearHistoryRequirementEnforcementLevel? linearHistoryRequirementEnforcementLevel, WebhooksRuleLockBranchEnforcementLevel? lockBranchEnforcementLevel, bool? Function()? lockAllowsForkSync, MergeQueueEnforcementLevel? mergeQueueEnforcementLevel, String? name, WebhooksRulePullRequestReviewsEnforcementLevel? pullRequestReviewsEnforcementLevel, int? repositoryId, bool? requireCodeOwnerReview, bool? Function()? requireLastPushApproval, int? requiredApprovingReviewCount, RequiredConversationResolutionLevel? requiredConversationResolutionLevel, RequiredDeploymentsEnforcementLevel? requiredDeploymentsEnforcementLevel, List<String>? requiredStatusChecks, WebhooksRuleRequiredStatusChecksEnforcementLevel? requiredStatusChecksEnforcementLevel, SignatureRequirementEnforcementLevel? signatureRequirementEnforcementLevel, bool? strictRequiredStatusChecksPolicy, DateTime? updatedAt, }) {return WebhooksRule(
   adminEnforced: adminEnforced ?? this.adminEnforced,
   allowDeletionsEnforcementLevel: allowDeletionsEnforcementLevel ?? this.allowDeletionsEnforcementLevel,
   allowForcePushesEnforcementLevel: allowForcePushesEnforcementLevel ?? this.allowForcePushesEnforcementLevel,
@@ -999,7 +999,7 @@ WebhooksRule copyWith({bool? adminEnforced, AllowDeletionsEnforcementLevel? allo
   signatureRequirementEnforcementLevel: signatureRequirementEnforcementLevel ?? this.signatureRequirementEnforcementLevel,
   strictRequiredStatusChecksPolicy: strictRequiredStatusChecksPolicy ?? this.strictRequiredStatusChecksPolicy,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksRule &&
           adminEnforced == other.adminEnforced &&
@@ -1035,4 +1035,4 @@ WebhooksRule copyWith({bool? adminEnforced, AllowDeletionsEnforcementLevel? allo
 
 @override String toString() => 'WebhooksRule(\n  adminEnforced: $adminEnforced,\n  allowDeletionsEnforcementLevel: $allowDeletionsEnforcementLevel,\n  allowForcePushesEnforcementLevel: $allowForcePushesEnforcementLevel,\n  authorizedActorNames: $authorizedActorNames,\n  authorizedActorsOnly: $authorizedActorsOnly,\n  authorizedDismissalActorsOnly: $authorizedDismissalActorsOnly,\n  createProtected: $createProtected,\n  createdAt: $createdAt,\n  dismissStaleReviewsOnPush: $dismissStaleReviewsOnPush,\n  id: $id,\n  ignoreApprovalsFromContributors: $ignoreApprovalsFromContributors,\n  linearHistoryRequirementEnforcementLevel: $linearHistoryRequirementEnforcementLevel,\n  lockBranchEnforcementLevel: $lockBranchEnforcementLevel,\n  lockAllowsForkSync: $lockAllowsForkSync,\n  mergeQueueEnforcementLevel: $mergeQueueEnforcementLevel,\n  name: $name,\n  pullRequestReviewsEnforcementLevel: $pullRequestReviewsEnforcementLevel,\n  repositoryId: $repositoryId,\n  requireCodeOwnerReview: $requireCodeOwnerReview,\n  requireLastPushApproval: $requireLastPushApproval,\n  requiredApprovingReviewCount: $requiredApprovingReviewCount,\n  requiredConversationResolutionLevel: $requiredConversationResolutionLevel,\n  requiredDeploymentsEnforcementLevel: $requiredDeploymentsEnforcementLevel,\n  requiredStatusChecks: $requiredStatusChecks,\n  requiredStatusChecksEnforcementLevel: $requiredStatusChecksEnforcementLevel,\n  signatureRequirementEnforcementLevel: $signatureRequirementEnforcementLevel,\n  strictRequiredStatusChecksPolicy: $strictRequiredStatusChecksPolicy,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

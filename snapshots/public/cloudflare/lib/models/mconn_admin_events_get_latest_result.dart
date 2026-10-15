@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_recorded_event.dart';@immutable final class MconnAdminEventsGetLatestResult {const MconnAdminEventsGetLatestResult({required this.count, required this.items, });
 
-factory MconnAdminEventsGetLatestResult.fromJson(Map<String, dynamic> json) { return MconnAdminEventsGetLatestResult(
+factory MconnAdminEventsGetLatestResult.fromJson(Map<String, dynamic> json) {return MconnAdminEventsGetLatestResult(
   count: (json['count'] as num).toDouble(),
   items: (json['items'] as List<dynamic>).map((e) => MconnRecordedEvent.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final double count;
 
 final List<MconnRecordedEvent> items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'items': items.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
-      json.containsKey('items'); } 
-MconnAdminEventsGetLatestResult copyWith({double? count, List<MconnRecordedEvent>? items, }) { return MconnAdminEventsGetLatestResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
+      json.containsKey('items');}
+MconnAdminEventsGetLatestResult copyWith({double? count, List<MconnRecordedEvent>? items, }) {return MconnAdminEventsGetLatestResult(
   count: count ?? this.count,
   items: items ?? this.items,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminEventsGetLatestResult &&
           count == other.count &&
@@ -31,4 +31,4 @@ MconnAdminEventsGetLatestResult copyWith({double? count, List<MconnRecordedEvent
 
 @override String toString() => 'MconnAdminEventsGetLatestResult(count: $count, items: $items)';
 
- }
+}

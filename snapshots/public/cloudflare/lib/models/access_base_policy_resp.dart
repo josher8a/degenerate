@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_decision.dart';import 'package:pub_cloudflare/models/access_policy_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_rule.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessBasePolicyResp {const AccessBasePolicyResp({this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, });
 
-factory AccessBasePolicyResp.fromJson(Map<String, dynamic> json) { return AccessBasePolicyResp(
+factory AccessBasePolicyResp.fromJson(Map<String, dynamic> json) {return AccessBasePolicyResp(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   decision: json['decision'] != null ? AccessDecision.fromJson(json['decision'] as String) : null,
   exclude: (json['exclude'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
@@ -12,7 +12,7 @@ factory AccessBasePolicyResp.fromJson(Map<String, dynamic> json) { return Access
   name: json['name'] != null ? AccessPolicyComponentsSchemasName.fromJson(json['name'] as String) : null,
   require: (json['require'] as List<dynamic>?)?.map(AccessRule.fromJson).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -30,7 +30,7 @@ final List<AccessRule>? require;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (decision != null) 'decision': decision?.toJson(),
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
@@ -39,9 +39,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at'}.contains(key)); } 
-AccessBasePolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, }) { return AccessBasePolicyResp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at'}.contains(key));}
+AccessBasePolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, }) {return AccessBasePolicyResp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   decision: decision != null ? decision() : this.decision,
   exclude: exclude != null ? exclude() : this.exclude,
@@ -50,7 +50,7 @@ AccessBasePolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDec
   name: name != null ? name() : this.name,
   require: require != null ? require() : this.require,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessBasePolicyResp &&
           createdAt == other.createdAt &&
@@ -66,4 +66,4 @@ AccessBasePolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDec
 
 @override String toString() => 'AccessBasePolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt)';
 
- }
+}

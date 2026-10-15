@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate_payto/mandate_payto_amount_type.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options/payment_method_options_card_mandate_options_interval.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options/supported_types.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsCardMandateOptions {const SetupIntentPaymentMethodOptionsCardMandateOptions({required this.amount, required this.amountType, required this.currency, required this.interval, required this.reference, required this.startDate, this.description = const Omittable.absent(), this.endDate = const Omittable.absent(), this.intervalCount = const Omittable.absent(), this.supportedTypes = const Omittable.absent(), });
 
-factory SetupIntentPaymentMethodOptionsCardMandateOptions.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsCardMandateOptions(
+factory SetupIntentPaymentMethodOptionsCardMandateOptions.fromJson(Map<String, dynamic> json) {return SetupIntentPaymentMethodOptionsCardMandateOptions(
   amount: (json['amount'] as num).toInt(),
   amountType: MandatePaytoAmountType.fromJson(json['amount_type'] as String),
   currency: json['currency'] as String,
@@ -15,7 +15,7 @@ factory SetupIntentPaymentMethodOptionsCardMandateOptions.fromJson(Map<String, d
   reference: json['reference'] as String,
   startDate: (json['start_date'] as num).toInt(),
   supportedTypes: json.containsKey('supported_types') ? Omittable((json['supported_types'] as List<dynamic>?)?.map((e) => SupportedTypes.fromJson(e as String)).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Amount to be charged for future payments.
 final int amount;
@@ -47,7 +47,7 @@ final int startDate;
 /// Specifies the type of mandates supported. Possible values are `india`.
 final Omittable<List<SupportedTypes>?> supportedTypes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'amount_type': amountType.toJson(),
   'currency': currency,
@@ -58,22 +58,22 @@ Map<String, dynamic> toJson() { return {
   'reference': reference,
   'start_date': startDate,
   if (supportedTypes.isPresent) 'supported_types': supportedTypes.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_type') &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String &&
-      json.containsKey('start_date') && json['start_date'] is num; } 
+      json.containsKey('start_date') && json['start_date'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 200) { errors.add('description: length must be <= 200'); }
 }
 if (reference.runes.length > 80) { errors.add('reference: length must be <= 80'); }
-return errors; } 
-SetupIntentPaymentMethodOptionsCardMandateOptions copyWith({int? amount, MandatePaytoAmountType? amountType, String? currency, Omittable<String?>? description, Omittable<int?>? endDate, PaymentMethodOptionsCardMandateOptionsInterval? interval, Omittable<int?>? intervalCount, String? reference, int? startDate, Omittable<List<SupportedTypes>?>? supportedTypes, }) { return SetupIntentPaymentMethodOptionsCardMandateOptions(
+return errors;}
+SetupIntentPaymentMethodOptionsCardMandateOptions copyWith({int? amount, MandatePaytoAmountType? amountType, String? currency, Omittable<String?>? description, Omittable<int?>? endDate, PaymentMethodOptionsCardMandateOptionsInterval? interval, Omittable<int?>? intervalCount, String? reference, int? startDate, Omittable<List<SupportedTypes>?>? supportedTypes, }) {return SetupIntentPaymentMethodOptionsCardMandateOptions(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   currency: currency ?? this.currency,
@@ -84,7 +84,7 @@ SetupIntentPaymentMethodOptionsCardMandateOptions copyWith({int? amount, Mandate
   reference: reference ?? this.reference,
   startDate: startDate ?? this.startDate,
   supportedTypes: supportedTypes ?? this.supportedTypes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsCardMandateOptions &&
           amount == other.amount &&
@@ -103,4 +103,4 @@ SetupIntentPaymentMethodOptionsCardMandateOptions copyWith({int? amount, Mandate
 
 @override String toString() => 'SetupIntentPaymentMethodOptionsCardMandateOptions(\n  amount: $amount,\n  amountType: $amountType,\n  currency: $currency,\n  description: $description,\n  endDate: $endDate,\n  interval: $interval,\n  intervalCount: $intervalCount,\n  reference: $reference,\n  startDate: $startDate,\n  supportedTypes: $supportedTypes,\n)';
 
- }
+}

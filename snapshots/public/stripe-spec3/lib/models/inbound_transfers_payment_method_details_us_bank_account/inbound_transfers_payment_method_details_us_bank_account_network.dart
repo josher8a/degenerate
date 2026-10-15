@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The network rails used. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
 sealed class InboundTransfersPaymentMethodDetailsUsBankAccountNetwork {const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork();
 
-factory InboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) { return switch (json) {
+factory InboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   _ => InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$Unknown(json),
-}; }
+};}
 
 static const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork ach = InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$ach._();
 
 static const List<InboundTransfersPaymentMethodDetailsUsBankAccountNetwork> values = [ach];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ach' => 'ach',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$Unknown; } 
+bool get isUnknown {return this is InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ach, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ach, required W Function(String value) $unknown, }) {return switch (this) {
       InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$ach() => ach(),
       InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function(String value)? $unknown, }) {return switch (this) {
       InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$ach() => ach != null ? ach() : orElse(value),
       InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InboundTransfersPaymentMethodDetailsUsBankAccountNetwork($value)';
 
- }
+}
 @immutable final class InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$ach extends InboundTransfersPaymentMethodDetailsUsBankAccountNetwork {const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$ach._();
 
 @override String get value => 'ach';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'ach'.hashCode;
 
- }
+}
 @immutable final class InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$Unknown extends InboundTransfersPaymentMethodDetailsUsBankAccountNetwork {const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

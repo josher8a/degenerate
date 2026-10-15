@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_list_response/destination_list_response_messages.dart';import 'package:pub_cloudflare/models/telemetry_values_list_response/telemetry_values_list_response_result.dart';@immutable final class TelemetryValuesListResponse {const TelemetryValuesListResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory TelemetryValuesListResponse.fromJson(Map<String, dynamic> json) { return TelemetryValuesListResponse(
+factory TelemetryValuesListResponse.fromJson(Map<String, dynamic> json) {return TelemetryValuesListResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DestinationListResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => TelemetryValuesListResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
@@ -18,22 +18,22 @@ final List<TelemetryValuesListResponseResult> result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-TelemetryValuesListResponse copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationListResponseMessages>? messages, List<TelemetryValuesListResponseResult>? result, bool? success, }) { return TelemetryValuesListResponse(
+      json.containsKey('success') && json['success'] is bool;}
+TelemetryValuesListResponse copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationListResponseMessages>? messages, List<TelemetryValuesListResponseResult>? result, bool? success, }) {return TelemetryValuesListResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryValuesListResponse &&
           listEquals(errors, other.errors) &&
@@ -45,4 +45,4 @@ TelemetryValuesListResponse copyWith({List<AiSearchInstanceChangeJobStatusRespon
 
 @override String toString() => 'TelemetryValuesListResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

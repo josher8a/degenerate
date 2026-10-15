@@ -30,8 +30,8 @@ static final testGroupParametersRequirements = [const ApiSecurityRequirement({'b
 
 static final fakeHttpSignatureTestRequirements = [const ApiSecurityRequirement({'http_signature_test': []})];
 
-static ApiConfig applyApiKey(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'api_key': value}); } 
-static ApiConfig applyApiKeyQuery(ApiConfig config, String value, ) { return config.copyWith(defaultQueryParameters: {...config.defaultQueryParameters, 'api_key_query': value}); } 
-static ApiConfig applyHttpBasicTest(ApiConfig config, {required String username, required String password, }) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'}); } 
-static ApiConfig applyBearerTest(ApiConfig config, String token, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'}); } 
- }
+static ApiConfig applyApiKey(ApiConfig config, String value, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'api_key': value});}
+static ApiConfig applyApiKeyQuery(ApiConfig config, String value, ) {return config.copyWith(defaultQueryParameters: {...config.defaultQueryParameters, 'api_key_query': value});}
+static ApiConfig applyHttpBasicTest(ApiConfig config, {required String username, required String password, }) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});}
+static ApiConfig applyBearerTest(ApiConfig config, String token, ) {return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});}
+}

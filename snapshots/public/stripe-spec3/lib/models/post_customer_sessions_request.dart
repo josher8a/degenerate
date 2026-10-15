@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/post_customer_sessions_request_components.dart';@immutable final class PostCustomerSessionsRequest {const PostCustomerSessionsRequest({required this.components, this.customer, this.customerAccount, this.expand, });
 
-factory PostCustomerSessionsRequest.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequest(
+factory PostCustomerSessionsRequest.fromJson(Map<String, dynamic> json) {return PostCustomerSessionsRequest(
   components: PostCustomerSessionsRequestComponents.fromJson(json['components'] as Map<String, dynamic>),
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Configuration for each component. At least 1 component must be enabled.
 final PostCustomerSessionsRequestComponents components;
@@ -22,15 +22,15 @@ final String? customerAccount;
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'components': components.toJson(),
   'customer': ?customer,
   'customer_account': ?customerAccount,
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('components'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('components');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
   if (customer$.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
@@ -39,13 +39,13 @@ final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-return errors; } 
-PostCustomerSessionsRequest copyWith({PostCustomerSessionsRequestComponents? components, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) { return PostCustomerSessionsRequest(
+return errors;}
+PostCustomerSessionsRequest copyWith({PostCustomerSessionsRequestComponents? components, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) {return PostCustomerSessionsRequest(
   components: components ?? this.components,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomerSessionsRequest &&
           components == other.components &&
@@ -57,4 +57,4 @@ PostCustomerSessionsRequest copyWith({PostCustomerSessionsRequestComponents? com
 
 @override String toString() => 'PostCustomerSessionsRequest(components: $components, customer: $customer, customerAccount: $customerAccount, expand: $expand)';
 
- }
+}

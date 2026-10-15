@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';@immutable final class TeamParent {const TeamParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
-factory TeamParent.fromJson(Map<String, dynamic> json) { return TeamParent(
+factory TeamParent.fromJson(Map<String, dynamic> json) {return TeamParent(
   description: json['description'] as String?,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -15,7 +15,7 @@ factory TeamParent.fromJson(Map<String, dynamic> json) { return TeamParent(
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   slug: json['slug'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// Description of the team
 final String? description;
@@ -44,7 +44,7 @@ final String slug;
 /// URL for the team
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description,
   'html_url': htmlUrl.toString(),
   'id': id,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'repositories_url': repositoriesUrl.toString(),
   'slug': slug,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('members_url') && json['members_url'] is String &&
@@ -67,8 +67,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('privacy') &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-TeamParent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, TeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return TeamParent(
+      json.containsKey('url') && json['url'] is String;}
+TeamParent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, TeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) {return TeamParent(
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   id: id ?? this.id,
@@ -80,7 +80,7 @@ TeamParent copyWith({String? Function()? description, Uri? htmlUrl, int? id, Str
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
   slug: slug ?? this.slug,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamParent &&
           description == other.description &&
@@ -99,4 +99,4 @@ TeamParent copyWith({String? Function()? description, Uri? htmlUrl, int? id, Str
 
 @override String toString() => 'TeamParent(\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  permission: $permission,\n  privacy: $privacy,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n)';
 
- }
+}

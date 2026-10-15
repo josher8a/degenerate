@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchTagCategoryUpdateRequest {const PatchTagCategoryUpdateRequest({this.description, this.name, });
 
-factory PatchTagCategoryUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchTagCategoryUpdateRequest(
+factory PatchTagCategoryUpdateRequest.fromJson(Map<String, dynamic> json) {return PatchTagCategoryUpdateRequest(
   description: json['description'] as String?,
   name: json['name'] as String?,
-); }
+);}
 
 final String? description;
 
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name'}.contains(key)); } 
-PatchTagCategoryUpdateRequest copyWith({String? Function()? description, String? Function()? name, }) { return PatchTagCategoryUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'name'}.contains(key));}
+PatchTagCategoryUpdateRequest copyWith({String? Function()? description, String? Function()? name, }) {return PatchTagCategoryUpdateRequest(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PatchTagCategoryUpdateRequest &&
           description == other.description &&
@@ -30,4 +30,4 @@ PatchTagCategoryUpdateRequest copyWith({String? Function()? description, String?
 
 @override String toString() => 'PatchTagCategoryUpdateRequest(description: $description, name: $name)';
 
- }
+}

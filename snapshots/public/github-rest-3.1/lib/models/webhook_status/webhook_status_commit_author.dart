@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/user/user10_type.dart';@immutable final class WebhookStatusCommitAuthor {const WebhookStatusCommitAuthor({this.avatarUrl, this.deleted, this.email = const Omittable.absent(), this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
-factory WebhookStatusCommitAuthor.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitAuthor(
+factory WebhookStatusCommitAuthor.fromJson(Map<String, dynamic> json) {return WebhookStatusCommitAuthor(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   deleted: json['deleted'] as bool?,
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
@@ -25,7 +25,7 @@ factory WebhookStatusCommitAuthor.fromJson(Map<String, dynamic> json) { return W
   subscriptionsUrl: json['subscriptions_url'] != null ? Uri.parse(json['subscriptions_url'] as String) : null,
   type: json['type'] != null ? User10Type.fromJson(json['type'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 final Uri? avatarUrl;
 
@@ -69,7 +69,7 @@ final User10Type? type;
 
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
   'deleted': ?deleted,
   if (email.isPresent) 'email': email.value,
@@ -91,9 +91,9 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionsUrl != null) 'subscriptions_url': subscriptionsUrl?.toString(),
   if (type != null) 'type': type?.toJson(),
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avatar_url', 'deleted', 'email', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'name', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url'}.contains(key)); } 
-WebhookStatusCommitAuthor copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, User10Type? Function()? type, Uri? Function()? url, }) { return WebhookStatusCommitAuthor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'avatar_url', 'deleted', 'email', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'name', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url'}.contains(key));}
+WebhookStatusCommitAuthor copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, User10Type? Function()? type, Uri? Function()? url, }) {return WebhookStatusCommitAuthor(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
   email: email ?? this.email,
@@ -115,7 +115,7 @@ WebhookStatusCommitAuthor copyWith({Uri? Function()? avatarUrl, bool? Function()
   subscriptionsUrl: subscriptionsUrl != null ? subscriptionsUrl() : this.subscriptionsUrl,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookStatusCommitAuthor &&
           avatarUrl == other.avatarUrl &&
@@ -144,4 +144,4 @@ WebhookStatusCommitAuthor copyWith({Uri? Function()? avatarUrl, bool? Function()
 
 @override String toString() => 'WebhookStatusCommitAuthor(\n  avatarUrl: $avatarUrl,\n  deleted: $deleted,\n  email: $email,\n  eventsUrl: $eventsUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  gravatarId: $gravatarId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  login: $login,\n  name: $name,\n  nodeId: $nodeId,\n  organizationsUrl: $organizationsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  reposUrl: $reposUrl,\n  siteAdmin: $siteAdmin,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  type: $type,\n  url: $url,\n)';
 
- }
+}

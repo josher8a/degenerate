@@ -12,7 +12,7 @@ final class Api20100401StreamApi with ApiExecutor {const Api20100401StreamApi(th
 /// Create a Stream
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams.json`
-Future<ApiResult<AccountCallStream, Never>> createStream({required String accountSid, required String callSid, CreateStreamRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallStream, Never>> createStream({required String accountSid, required String callSid, CreateStreamRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -435,11 +435,11 @@ return await execute(
     return AccountCallStream.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Stop a Stream using either the SID of the Stream resource or the `name` used when creating the resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Streams/{Sid}.json`
-Future<ApiResult<AccountCallStream, Never>> updateStream({required String accountSid, required String callSid, required String sid, UpdateStreamRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallStream, Never>> updateStream({required String accountSid, required String callSid, required String sid, UpdateStreamRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -458,5 +458,5 @@ return await execute(
     return AccountCallStream.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request/create_servers_request_auth_type.dart';@immutable final class CreateServersRequest {const CreateServersRequest({required this.authType, required this.hostname, required this.id, required this.name, this.authCredentials, this.description = const Omittable.absent(), });
 
-factory CreateServersRequest.fromJson(Map<String, dynamic> json) { return CreateServersRequest(
+factory CreateServersRequest.fromJson(Map<String, dynamic> json) {return CreateServersRequest(
   authCredentials: json['auth_credentials'] as String?,
   authType: CreateServersRequestAuthType.fromJson(json['auth_type'] as String),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   hostname: Uri.parse(json['hostname'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String? authCredentials;
 
@@ -31,20 +31,20 @@ final String id;
 /// Example: `'My MCP Server'`
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'auth_credentials': ?authCredentials,
   'auth_type': authType.toJson(),
   if (description.isPresent) 'description': description.value,
   'hostname': hostname.toString(),
   'id': id,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('auth_type') &&
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 512) { errors.add('description: length must be <= 512'); }
@@ -53,15 +53,15 @@ if (id.isEmpty) { errors.add('id: length must be >= 1'); }
 if (id.runes.length > 32) { errors.add('id: length must be <= 32'); }
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 if (name.runes.length > 350) { errors.add('name: length must be <= 350'); }
-return errors; } 
-CreateServersRequest copyWith({String? Function()? authCredentials, CreateServersRequestAuthType? authType, Omittable<String?>? description, Uri? hostname, String? id, String? name, }) { return CreateServersRequest(
+return errors;}
+CreateServersRequest copyWith({String? Function()? authCredentials, CreateServersRequestAuthType? authType, Omittable<String?>? description, Uri? hostname, String? id, String? name, }) {return CreateServersRequest(
   authCredentials: authCredentials != null ? authCredentials() : this.authCredentials,
   authType: authType ?? this.authType,
   description: description ?? this.description,
   hostname: hostname ?? this.hostname,
   id: id ?? this.id,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateServersRequest &&
           authCredentials == other.authCredentials &&
@@ -75,4 +75,4 @@ CreateServersRequest copyWith({String? Function()? authCredentials, CreateServer
 
 @override String toString() => 'CreateServersRequest(authCredentials: $authCredentials, authType: $authType, description: $description, hostname: $hostname, id: $id, name: $name)';
 
- }
+}

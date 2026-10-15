@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Account settings
 @immutable final class IamAccountRequestSettings {const IamAccountRequestSettings({this.abuseContactEmail, this.enforceTwofactor, });
 
-factory IamAccountRequestSettings.fromJson(Map<String, dynamic> json) { return IamAccountRequestSettings(
+factory IamAccountRequestSettings.fromJson(Map<String, dynamic> json) {return IamAccountRequestSettings(
   abuseContactEmail: json['abuse_contact_email'] as String?,
   enforceTwofactor: json['enforce_twofactor'] as bool?,
-); }
+);}
 
 /// Sets an abuse contact email to notify for abuse reports.
 final String? abuseContactEmail;
@@ -19,15 +19,15 @@ final bool? enforceTwofactor;
 /// The value of `enforceTwofactor`, or its schema default when absent.
 bool get enforceTwofactorOrDefault => enforceTwofactor ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'abuse_contact_email': ?abuseContactEmail,
   'enforce_twofactor': ?enforceTwofactor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'abuse_contact_email', 'enforce_twofactor'}.contains(key)); } 
-IamAccountRequestSettings copyWith({String? Function()? abuseContactEmail, bool? Function()? enforceTwofactor, }) { return IamAccountRequestSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'abuse_contact_email', 'enforce_twofactor'}.contains(key));}
+IamAccountRequestSettings copyWith({String? Function()? abuseContactEmail, bool? Function()? enforceTwofactor, }) {return IamAccountRequestSettings(
   abuseContactEmail: abuseContactEmail != null ? abuseContactEmail() : this.abuseContactEmail,
   enforceTwofactor: enforceTwofactor != null ? enforceTwofactor() : this.enforceTwofactor,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamAccountRequestSettings &&
           abuseContactEmail == other.abuseContactEmail &&
@@ -37,4 +37,4 @@ IamAccountRequestSettings copyWith({String? Function()? abuseContactEmail, bool?
 
 @override String toString() => 'IamAccountRequestSettings(abuseContactEmail: $abuseContactEmail, enforceTwofactor: $enforceTwofactor)';
 
- }
+}

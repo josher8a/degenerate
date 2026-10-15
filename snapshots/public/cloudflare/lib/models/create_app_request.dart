@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAppRequest {const CreateAppRequest({required this.name});
 
-factory CreateAppRequest.fromJson(Map<String, dynamic> json) { return CreateAppRequest(
+factory CreateAppRequest.fromJson(Map<String, dynamic> json) {return CreateAppRequest(
   name: json['name'] as String,
-); }
+);}
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-CreateAppRequest copyWith({String? name}) { return CreateAppRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+CreateAppRequest copyWith({String? name}) {return CreateAppRequest(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateAppRequest &&
           name == other.name;
@@ -24,4 +24,4 @@ CreateAppRequest copyWith({String? name}) { return CreateAppRequest(
 
 @override String toString() => 'CreateAppRequest(name: $name)';
 
- }
+}

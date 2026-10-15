@@ -10,11 +10,11 @@ const PostPaymentLinksPaymentLinkRequestOptionalItems({this.listOptionalItemsVar
 const PostPaymentLinksPaymentLinkRequestOptionalItems._({required this.rawValue, required this.listOptionalItemsVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostPaymentLinksPaymentLinkRequestOptionalItems.fromJson(Object? json) { return PostPaymentLinksPaymentLinkRequestOptionalItems._(
+factory PostPaymentLinksPaymentLinkRequestOptionalItems.fromJson(Object? json) {return PostPaymentLinksPaymentLinkRequestOptionalItems._(
   rawValue: Omittable(json),
   listOptionalItemsVariant1: parseAnyOfVariant<List<OptionalItemsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => OptionalItemsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -44,4 +44,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostPaymentLinksPaymentLinkRequestOptionalItems(${toJson()})';
 
- }
+}

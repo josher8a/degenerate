@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecuritySubmissionsCustomerStatus {const EmailSecuritySubmissionsCustomerStatus();
 
-factory EmailSecuritySubmissionsCustomerStatus.fromJson(String json) { return switch (json) {
+factory EmailSecuritySubmissionsCustomerStatus.fromJson(String json) {return switch (json) {
   'escalated' => escalated,
   'reviewed' => reviewed,
   'unreviewed' => unreviewed,
   _ => EmailSecuritySubmissionsCustomerStatus$Unknown(json),
-}; }
+};}
 
 static const EmailSecuritySubmissionsCustomerStatus escalated = EmailSecuritySubmissionsCustomerStatus$escalated._();
 
@@ -19,33 +19,33 @@ static const EmailSecuritySubmissionsCustomerStatus unreviewed = EmailSecuritySu
 static const List<EmailSecuritySubmissionsCustomerStatus> values = [escalated, reviewed, unreviewed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'escalated' => 'escalated',
   'reviewed' => 'reviewed',
   'unreviewed' => 'unreviewed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EmailSecuritySubmissionsCustomerStatus$Unknown; } 
+bool get isUnknown {return this is EmailSecuritySubmissionsCustomerStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() escalated, required W Function() reviewed, required W Function() unreviewed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() escalated, required W Function() reviewed, required W Function() unreviewed, required W Function(String value) $unknown, }) {return switch (this) {
       EmailSecuritySubmissionsCustomerStatus$escalated() => escalated(),
       EmailSecuritySubmissionsCustomerStatus$reviewed() => reviewed(),
       EmailSecuritySubmissionsCustomerStatus$unreviewed() => unreviewed(),
       EmailSecuritySubmissionsCustomerStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? escalated, W Function()? reviewed, W Function()? unreviewed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? escalated, W Function()? reviewed, W Function()? unreviewed, W Function(String value)? $unknown, }) {return switch (this) {
       EmailSecuritySubmissionsCustomerStatus$escalated() => escalated != null ? escalated() : orElse(value),
       EmailSecuritySubmissionsCustomerStatus$reviewed() => reviewed != null ? reviewed() : orElse(value),
       EmailSecuritySubmissionsCustomerStatus$unreviewed() => unreviewed != null ? unreviewed() : orElse(value),
       EmailSecuritySubmissionsCustomerStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EmailSecuritySubmissionsCustomerStatus($value)';
 
- }
+}
 @immutable final class EmailSecuritySubmissionsCustomerStatus$escalated extends EmailSecuritySubmissionsCustomerStatus {const EmailSecuritySubmissionsCustomerStatus$escalated._();
 
 @override String get value => 'escalated';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? escalate
 
 @override int get hashCode => 'escalated'.hashCode;
 
- }
+}
 @immutable final class EmailSecuritySubmissionsCustomerStatus$reviewed extends EmailSecuritySubmissionsCustomerStatus {const EmailSecuritySubmissionsCustomerStatus$reviewed._();
 
 @override String get value => 'reviewed';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? escalate
 
 @override int get hashCode => 'reviewed'.hashCode;
 
- }
+}
 @immutable final class EmailSecuritySubmissionsCustomerStatus$unreviewed extends EmailSecuritySubmissionsCustomerStatus {const EmailSecuritySubmissionsCustomerStatus$unreviewed._();
 
 @override String get value => 'unreviewed';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? escalate
 
 @override int get hashCode => 'unreviewed'.hashCode;
 
- }
+}
 @immutable final class EmailSecuritySubmissionsCustomerStatus$Unknown extends EmailSecuritySubmissionsCustomerStatus {const EmailSecuritySubmissionsCustomerStatus$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? escalate
 
 @override int get hashCode => value.hashCode;
 
- }
+}

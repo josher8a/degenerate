@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_summary_by_http_version_response/radar_get_attacks_layer7_summary_by_http_version_response_result_summary0.dart';@immutable final class RadarGetAttacksLayer7SummaryByHttpVersionResponseResult {const RadarGetAttacksLayer7SummaryByHttpVersionResponseResult({required this.meta, required this.summary0, });
 
-factory RadarGetAttacksLayer7SummaryByHttpVersionResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByHttpVersionResponseResult(
+factory RadarGetAttacksLayer7SummaryByHttpVersionResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7SummaryByHttpVersionResponseResult(
   meta: RadarGetAiBotsSummaryByUserAgentResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   summary0: RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0.fromJson(json['summary_0'] as Map<String, dynamic>),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetAiBotsSummaryByUserAgentResponseResultMeta meta;
@@ -23,16 +23,16 @@ final RadarGetAiBotsSummaryByUserAgentResponseResultMeta meta;
 /// Example: `{HTTP/1.x: 21.722365, HTTP/2: 77.056555, HTTP/3: 1.22108}`
 final RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0 summary0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'summary_0': summary0.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('summary_0'); } 
-RadarGetAttacksLayer7SummaryByHttpVersionResponseResult copyWith({RadarGetAiBotsSummaryByUserAgentResponseResultMeta? meta, RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0? summary0, }) { return RadarGetAttacksLayer7SummaryByHttpVersionResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('summary_0');}
+RadarGetAttacksLayer7SummaryByHttpVersionResponseResult copyWith({RadarGetAiBotsSummaryByUserAgentResponseResultMeta? meta, RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0? summary0, }) {return RadarGetAttacksLayer7SummaryByHttpVersionResponseResult(
   meta: meta ?? this.meta,
   summary0: summary0 ?? this.summary0,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7SummaryByHttpVersionResponseResult &&
           meta == other.meta &&
@@ -42,4 +42,4 @@ RadarGetAttacksLayer7SummaryByHttpVersionResponseResult copyWith({RadarGetAiBots
 
 @override String toString() => 'RadarGetAttacksLayer7SummaryByHttpVersionResponseResult(meta: $meta, summary0: $summary0)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome type. Always `exit`.
 sealed class FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType();
 
-factory FunctionShellCallOutputExitOutcomeType.fromJson(String json) { return switch (json) {
+factory FunctionShellCallOutputExitOutcomeType.fromJson(String json) {return switch (json) {
   'exit' => exit,
   _ => FunctionShellCallOutputExitOutcomeType$Unknown(json),
-}; }
+};}
 
 static const FunctionShellCallOutputExitOutcomeType exit = FunctionShellCallOutputExitOutcomeType$exit._();
 
 static const List<FunctionShellCallOutputExitOutcomeType> values = [exit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'exit' => 'exit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionShellCallOutputExitOutcomeType$Unknown; } 
+bool get isUnknown {return this is FunctionShellCallOutputExitOutcomeType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() exit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() exit, required W Function(String value) $unknown, }) {return switch (this) {
       FunctionShellCallOutputExitOutcomeType$exit() => exit(),
       FunctionShellCallOutputExitOutcomeType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? exit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exit, W Function(String value)? $unknown, }) {return switch (this) {
       FunctionShellCallOutputExitOutcomeType$exit() => exit != null ? exit() : orElse(value),
       FunctionShellCallOutputExitOutcomeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FunctionShellCallOutputExitOutcomeType($value)';
 
- }
+}
 @immutable final class FunctionShellCallOutputExitOutcomeType$exit extends FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType$exit._();
 
 @override String get value => 'exit';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exit, W 
 
 @override int get hashCode => 'exit'.hashCode;
 
- }
+}
 @immutable final class FunctionShellCallOutputExitOutcomeType$Unknown extends FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exit, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Indicates that the shell commands finished and returned an exit code.
 @immutable final class FunctionShellCallOutputExitOutcome {const FunctionShellCallOutputExitOutcome({required this.type, required this.exitCode, });
 
-factory FunctionShellCallOutputExitOutcome.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputExitOutcome(
+factory FunctionShellCallOutputExitOutcome.fromJson(Map<String, dynamic> json) {return FunctionShellCallOutputExitOutcome(
   type: FunctionShellCallOutputExitOutcomeType.fromJson(json['type'] as String),
   exitCode: (json['exit_code'] as num).toInt(),
-); }
+);}
 
 /// The outcome type. Always `exit`.
 final FunctionShellCallOutputExitOutcomeType type;
@@ -68,16 +68,16 @@ final FunctionShellCallOutputExitOutcomeType type;
 /// Exit code from the shell process.
 final int exitCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'exit_code': exitCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('exit_code') && json['exit_code'] is num; } 
-FunctionShellCallOutputExitOutcome copyWith({FunctionShellCallOutputExitOutcomeType? type, int? exitCode, }) { return FunctionShellCallOutputExitOutcome(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('exit_code') && json['exit_code'] is num;}
+FunctionShellCallOutputExitOutcome copyWith({FunctionShellCallOutputExitOutcomeType? type, int? exitCode, }) {return FunctionShellCallOutputExitOutcome(
   type: type ?? this.type,
   exitCode: exitCode ?? this.exitCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutputExitOutcome &&
           type == other.type &&
@@ -87,4 +87,4 @@ FunctionShellCallOutputExitOutcome copyWith({FunctionShellCallOutputExitOutcomeT
 
 @override String toString() => 'FunctionShellCallOutputExitOutcome(type: $type, exitCode: $exitCode)';
 
- }
+}

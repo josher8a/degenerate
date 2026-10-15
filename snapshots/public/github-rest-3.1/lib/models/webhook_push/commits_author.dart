@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
 @immutable final class CommitsAuthor {const CommitsAuthor({required this.email, required this.name, this.date, this.username, });
 
-factory CommitsAuthor.fromJson(Map<String, dynamic> json) { return CommitsAuthor(
+factory CommitsAuthor.fromJson(Map<String, dynamic> json) {return CommitsAuthor(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,
   email: json['email'] as String?,
   name: json['name'] as String,
   username: json['username'] as String?,
-); }
+);}
 
 final DateTime? date;
 
@@ -20,20 +20,20 @@ final String name;
 
 final String? username;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (date != null) 'date': date?.toIso8601String(),
   'email': email,
   'name': name,
   'username': ?username,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
-      json.containsKey('name') && json['name'] is String; } 
-CommitsAuthor copyWith({DateTime? Function()? date, String? Function()? email, String? name, String? Function()? username, }) { return CommitsAuthor(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
+      json.containsKey('name') && json['name'] is String;}
+CommitsAuthor copyWith({DateTime? Function()? date, String? Function()? email, String? name, String? Function()? username, }) {return CommitsAuthor(
   date: date != null ? date() : this.date,
   email: email != null ? email() : this.email,
   name: name ?? this.name,
   username: username != null ? username() : this.username,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CommitsAuthor &&
           date == other.date &&
@@ -45,4 +45,4 @@ CommitsAuthor copyWith({DateTime? Function()? date, String? Function()? email, S
 
 @override String toString() => 'CommitsAuthor(date: $date, email: $email, name: $name, username: $username)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the submitter of the report.
 @immutable final class AbuseReportsSubmitterDetails {const AbuseReportsSubmitterDetails({this.company, this.email, this.name, this.telephone, });
 
-factory AbuseReportsSubmitterDetails.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitterDetails(
+factory AbuseReportsSubmitterDetails.fromJson(Map<String, dynamic> json) {return AbuseReportsSubmitterDetails(
   company: json['company'] as String?,
   email: json['email'] as String?,
   name: json['name'] as String?,
   telephone: json['telephone'] as String?,
-); }
+);}
 
 final String? company;
 
@@ -19,19 +19,19 @@ final String? name;
 
 final String? telephone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'company': ?company,
   'email': ?email,
   'name': ?name,
   'telephone': ?telephone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'company', 'email', 'name', 'telephone'}.contains(key)); } 
-AbuseReportsSubmitterDetails copyWith({String? Function()? company, String? Function()? email, String? Function()? name, String? Function()? telephone, }) { return AbuseReportsSubmitterDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'company', 'email', 'name', 'telephone'}.contains(key));}
+AbuseReportsSubmitterDetails copyWith({String? Function()? company, String? Function()? email, String? Function()? name, String? Function()? telephone, }) {return AbuseReportsSubmitterDetails(
   company: company != null ? company() : this.company,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
   telephone: telephone != null ? telephone() : this.telephone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsSubmitterDetails &&
           company == other.company &&
@@ -43,4 +43,4 @@ AbuseReportsSubmitterDetails copyWith({String? Function()? company, String? Func
 
 @override String toString() => 'AbuseReportsSubmitterDetails(company: $company, email: $email, name: $name, telephone: $telephone)';
 
- }
+}

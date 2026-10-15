@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamPermissions {const TeamPermissions({required this.pull, required this.triage, required this.push, required this.maintain, required this.admin, });
 
-factory TeamPermissions.fromJson(Map<String, dynamic> json) { return TeamPermissions(
+factory TeamPermissions.fromJson(Map<String, dynamic> json) {return TeamPermissions(
   pull: json['pull'] as bool,
   triage: json['triage'] as bool,
   push: json['push'] as bool,
   maintain: json['maintain'] as bool,
   admin: json['admin'] as bool,
-); }
+);}
 
 final bool pull;
 
@@ -21,25 +21,25 @@ final bool maintain;
 
 final bool admin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pull': pull,
   'triage': triage,
   'push': push,
   'maintain': maintain,
   'admin': admin,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull') && json['pull'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pull') && json['pull'] is bool &&
       json.containsKey('triage') && json['triage'] is bool &&
       json.containsKey('push') && json['push'] is bool &&
       json.containsKey('maintain') && json['maintain'] is bool &&
-      json.containsKey('admin') && json['admin'] is bool; } 
-TeamPermissions copyWith({bool? pull, bool? triage, bool? push, bool? maintain, bool? admin, }) { return TeamPermissions(
+      json.containsKey('admin') && json['admin'] is bool;}
+TeamPermissions copyWith({bool? pull, bool? triage, bool? push, bool? maintain, bool? admin, }) {return TeamPermissions(
   pull: pull ?? this.pull,
   triage: triage ?? this.triage,
   push: push ?? this.push,
   maintain: maintain ?? this.maintain,
   admin: admin ?? this.admin,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamPermissions &&
           pull == other.pull &&
@@ -52,4 +52,4 @@ TeamPermissions copyWith({bool? pull, bool? triage, bool? push, bool? maintain, 
 
 @override String toString() => 'TeamPermissions(pull: $pull, triage: $triage, push: $push, maintain: $maintain, admin: $admin)';
 
- }
+}

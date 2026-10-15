@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunStepDetailsMessageCreationObjectMessageCreation {const RunStepDetailsMessageCreationObjectMessageCreation({required this.messageId});
 
-factory RunStepDetailsMessageCreationObjectMessageCreation.fromJson(Map<String, dynamic> json) { return RunStepDetailsMessageCreationObjectMessageCreation(
+factory RunStepDetailsMessageCreationObjectMessageCreation.fromJson(Map<String, dynamic> json) {return RunStepDetailsMessageCreationObjectMessageCreation(
   messageId: json['message_id'] as String,
-); }
+);}
 
 /// The ID of the message that was created by this run step.
 final String messageId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message_id': messageId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message_id') && json['message_id'] is String; } 
-RunStepDetailsMessageCreationObjectMessageCreation copyWith({String? messageId}) { return RunStepDetailsMessageCreationObjectMessageCreation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message_id') && json['message_id'] is String;}
+RunStepDetailsMessageCreationObjectMessageCreation copyWith({String? messageId}) {return RunStepDetailsMessageCreationObjectMessageCreation(
   messageId: messageId ?? this.messageId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsMessageCreationObjectMessageCreation &&
           messageId == other.messageId;
@@ -25,4 +25,4 @@ RunStepDetailsMessageCreationObjectMessageCreation copyWith({String? messageId})
 
 @override String toString() => 'RunStepDetailsMessageCreationObjectMessageCreation(messageId: $messageId)';
 
- }
+}

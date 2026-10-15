@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_permissions.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';import 'package:pub_github_rest_3_1/models/team_role_assignment/assignment.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// The Relationship a Team has with a role.
 @immutable final class TeamRoleAssignment {const TeamRoleAssignment({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.parent, required this.type, this.assignment, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });
 
-factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) { return TeamRoleAssignment(
+factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) {return TeamRoleAssignment(
   assignment: json['assignment'] != null ? Assignment.fromJson(json['assignment'] as String) : null,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -23,7 +23,7 @@ factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) { return TeamRole
   type: TeamFullType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
-); }
+);}
 
 /// Determines if the team has a direct, indirect, or mixed relationship to a role
 final Assignment? assignment;
@@ -65,7 +65,7 @@ final int? organizationId;
 /// Unique identifier of the enterprise to which this team belongs
 final int? enterpriseId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignment != null) 'assignment': assignment?.toJson(),
   'id': id,
   'node_id': nodeId,
@@ -84,8 +84,8 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
@@ -96,8 +96,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('parent') &&
-      json.containsKey('type'); } 
-TeamRoleAssignment copyWith({Assignment? Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamRoleAssignment(
+      json.containsKey('type');}
+TeamRoleAssignment copyWith({Assignment? Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) {return TeamRoleAssignment(
   assignment: assignment != null ? assignment() : this.assignment,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -116,7 +116,7 @@ TeamRoleAssignment copyWith({Assignment? Function()? assignment, int? id, String
   type: type ?? this.type,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamRoleAssignment &&
           assignment == other.assignment &&
@@ -142,4 +142,4 @@ TeamRoleAssignment copyWith({Assignment? Function()? assignment, int? id, String
 
 @override String toString() => 'TeamRoleAssignment(\n  assignment: $assignment,\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  slug: $slug,\n  description: $description,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  permission: $permission,\n  permissions: $permissions,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  membersUrl: $membersUrl,\n  repositoriesUrl: $repositoriesUrl,\n  parent: $parent,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
- }
+}

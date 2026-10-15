@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_csam_report/abuse_reports_csam_report_host_notification.dart';import 'package:pub_cloudflare/models/abuse_reports_general_report/abuse_reports_general_report_owner_notification.dart';@immutable final class AbuseReportsPhishingReport {const AbuseReportsPhishingReport({required this.act, required this.email, required this.email2, required this.name, required this.urls, required this.hostNotification, required this.justification, required this.ownerNotification, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, this.originalWork, });
 
-factory AbuseReportsPhishingReport.fromJson(Map<String, dynamic> json) { return AbuseReportsPhishingReport(
+factory AbuseReportsPhishingReport.fromJson(Map<String, dynamic> json) {return AbuseReportsPhishingReport(
   act: json['act'],
   comments: json['comments'] as String?,
   company: json['company'] as String?,
@@ -19,7 +19,7 @@ factory AbuseReportsPhishingReport.fromJson(Map<String, dynamic> json) { return 
   justification: json['justification'] as String,
   originalWork: json['original_work'] as String?,
   ownerNotification: AbuseReportsGeneralReportOwnerNotification.fromJson(json['owner_notification'] as String),
-); }
+);}
 
 final dynamic act;
 
@@ -69,7 +69,7 @@ final String? originalWork;
 /// 
 final AbuseReportsGeneralReportOwnerNotification ownerNotification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'act': act,
   'comments': ?comments,
   'company': ?company,
@@ -85,17 +85,17 @@ Map<String, dynamic> toJson() { return {
   'justification': justification,
   'original_work': ?originalWork,
   'owner_notification': ownerNotification.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('act') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('act') &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('urls') && json['urls'] is String &&
       json.containsKey('host_notification') &&
       json.containsKey('justification') && json['justification'] is String &&
-      json.containsKey('owner_notification'); } 
+      json.containsKey('owner_notification');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
   if (comments$.isEmpty) { errors.add('comments: length must be >= 1'); }
@@ -135,8 +135,8 @@ if (originalWork$ != null) {
   if (originalWork$.isEmpty) { errors.add('originalWork: length must be >= 1'); }
   if (originalWork$.runes.length > 255) { errors.add('originalWork: length must be <= 255'); }
 }
-return errors; } 
-AbuseReportsPhishingReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, String? Function()? originalWork, AbuseReportsGeneralReportOwnerNotification? ownerNotification, }) { return AbuseReportsPhishingReport(
+return errors;}
+AbuseReportsPhishingReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, String? Function()? originalWork, AbuseReportsGeneralReportOwnerNotification? ownerNotification, }) {return AbuseReportsPhishingReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,
@@ -152,7 +152,7 @@ AbuseReportsPhishingReport copyWith({dynamic Function()? act, String? Function()
   justification: justification ?? this.justification,
   originalWork: originalWork != null ? originalWork() : this.originalWork,
   ownerNotification: ownerNotification ?? this.ownerNotification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsPhishingReport &&
           act == other.act &&
@@ -175,4 +175,4 @@ AbuseReportsPhishingReport copyWith({dynamic Function()? act, String? Function()
 
 @override String toString() => 'AbuseReportsPhishingReport(\n  act: $act,\n  comments: $comments,\n  company: $company,\n  email: $email,\n  email2: $email2,\n  name: $name,\n  reportedCountry: $reportedCountry,\n  reportedUserAgent: $reportedUserAgent,\n  tele: $tele,\n  title: $title,\n  urls: $urls,\n  hostNotification: $hostNotification,\n  justification: $justification,\n  originalWork: $originalWork,\n  ownerNotification: $ownerNotification,\n)';
 
- }
+}

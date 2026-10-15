@@ -12,7 +12,7 @@ final class Api20100401OutgoingCallerIdApi with ApiExecutor {const Api20100401Ou
 /// Fetch an outgoing-caller-id belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json`
-Future<ApiResult<AccountOutgoingCallerId, Never>> fetchOutgoingCallerId({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountOutgoingCallerId, Never>> fetchOutgoingCallerId({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ return await execute(
     return AccountOutgoingCallerId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Updates the caller-id
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json`
-Future<ApiResult<AccountOutgoingCallerId, Never>> updateOutgoingCallerId({required String accountSid, required String sid, UpdateOutgoingCallerIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountOutgoingCallerId, Never>> updateOutgoingCallerId({required String accountSid, required String sid, UpdateOutgoingCallerIdRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -51,11 +51,11 @@ return await execute(
     return AccountOutgoingCallerId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete the caller-id specified from the account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json`
-Future<ApiResult<void, Never>> deleteOutgoingCallerId({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteOutgoingCallerId({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -68,11 +68,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of outgoing-caller-ids belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json`
-Future<ApiResult<ListOutgoingCallerIdResponse, Never>> listOutgoingCallerId({required String accountSid, String? phoneNumber, String? friendlyName, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListOutgoingCallerIdResponse, Never>> listOutgoingCallerId({required String accountSid, String? phoneNumber, String? friendlyName, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (phoneNumber != null) {
   queryParameters['PhoneNumber'] = phoneNumber;
@@ -107,5 +107,5 @@ return await execute(
     return ListOutgoingCallerIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

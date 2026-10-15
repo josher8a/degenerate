@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/voice_consent_deleted_resource/voice_consent_deleted_resource_object.dart';@immutable final class VoiceConsentDeletedResource {const VoiceConsentDeletedResource({required this.id, required this.object, required this.deleted, });
 
-factory VoiceConsentDeletedResource.fromJson(Map<String, dynamic> json) { return VoiceConsentDeletedResource(
+factory VoiceConsentDeletedResource.fromJson(Map<String, dynamic> json) {return VoiceConsentDeletedResource(
   id: json['id'] as String,
   object: VoiceConsentDeletedResourceObject.fromJson(json['object'] as String),
   deleted: json['deleted'] as bool,
-); }
+);}
 
 /// The consent recording identifier.
 /// 
@@ -18,19 +18,19 @@ final VoiceConsentDeletedResourceObject object;
 
 final bool deleted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'deleted': deleted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
-      json.containsKey('deleted') && json['deleted'] is bool; } 
-VoiceConsentDeletedResource copyWith({String? id, VoiceConsentDeletedResourceObject? object, bool? deleted, }) { return VoiceConsentDeletedResource(
+      json.containsKey('deleted') && json['deleted'] is bool;}
+VoiceConsentDeletedResource copyWith({String? id, VoiceConsentDeletedResourceObject? object, bool? deleted, }) {return VoiceConsentDeletedResource(
   id: id ?? this.id,
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VoiceConsentDeletedResource &&
           id == other.id &&
@@ -41,4 +41,4 @@ VoiceConsentDeletedResource copyWith({String? id, VoiceConsentDeletedResourceObj
 
 @override String toString() => 'VoiceConsentDeletedResource(id: $id, object: $object, deleted: $deleted)';
 
- }
+}

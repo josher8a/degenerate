@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 sealed class RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval {const RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval();
 
-factory RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval.fromJson(String json) {return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
   _ => RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval $15m = RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$15m._();
 
@@ -23,36 +23,36 @@ static const RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval $1w = RadarGetHt
 static const List<RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval> values = [$15m, $1h, $1d, $1w];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '15m' => r'$15m',
   '1h' => r'$1h',
   '1d' => r'$1d',
   '1w' => r'$1w',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $15m, required W Function() $1h, required W Function() $1d, required W Function() $1w, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $15m, required W Function() $1h, required W Function() $1d, required W Function() $1w, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$15m() => $15m(),
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1h() => $1h(),
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1d() => $1d(),
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1w() => $1w(),
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W Function()? $1h, W Function()? $1d, W Function()? $1w, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W Function()? $1h, W Function()? $1d, W Function()? $1w, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$15m() => $15m != null ? $15m() : orElse(value),
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1h() => $1h != null ? $1h() : orElse(value),
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1d() => $1d != null ? $1d() : orElse(value),
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1w() => $1w != null ? $1w() : orElse(value),
       RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval($value)';
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$15m extends RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval {const RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$15m._();
 
 @override String get value => '15m';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W 
 
 @override int get hashCode => '15m'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1h extends RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval {const RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1h._();
 
 @override String get value => '1h';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W 
 
 @override int get hashCode => '1h'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1d extends RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval {const RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1d._();
 
 @override String get value => '1d';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W 
 
 @override int get hashCode => '1d'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1w extends RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval {const RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$$1w._();
 
 @override String get value => '1w';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W 
 
 @override int get hashCode => '1w'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$Unknown extends RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval {const RadarGetHttpTimeseriesGroupByDeviceTypeAggInterval$Unknown(this.value);
 
 @override final String value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class RealtimekitLivestreamBase {const RealtimekitLivestreamBase({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId = const Omittable.absent(), this.name = const Omittable.absent(), this.orgId, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
-factory RealtimekitLivestreamBase.fromJson(Map<String, dynamic> json) { return RealtimekitLivestreamBase(
+factory RealtimekitLivestreamBase.fromJson(Map<String, dynamic> json) {return RealtimekitLivestreamBase(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   disabled: json['disabled'] as bool?,
   id: json['id'] as String?,
@@ -15,7 +15,7 @@ factory RealtimekitLivestreamBase.fromJson(Map<String, dynamic> json) { return R
   status: json['status'] != null ? RealtimekitLivestreamBaseStatus.fromJson(json['status'] as String) : null,
   streamKey: json['stream_key'] as String?,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// The timestamp at which the livestream was created. The time is returned in ISO format.
 final DateTime? createdAt;
@@ -49,7 +49,7 @@ final String? streamKey;
 /// The timestamp at which the livestream was updated. The time is returned in ISO format.
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   'disabled': ?disabled,
   'id': ?id,
@@ -61,9 +61,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'org_id', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key)); } 
-RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, Omittable<String?>? meetingId, Omittable<String?>? name, String? Function()? orgId, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) { return RealtimekitLivestreamBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'org_id', 'playback_url', 'status', 'stream_key', 'updated_at'}.contains(key));}
+RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Function()? disabled, String? Function()? id, String? Function()? ingestServer, Omittable<String?>? meetingId, Omittable<String?>? name, String? Function()? orgId, String? Function()? playbackUrl, RealtimekitLivestreamBaseStatus? Function()? status, String? Function()? streamKey, DateTime? Function()? updatedAt, }) {return RealtimekitLivestreamBase(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,
@@ -75,7 +75,7 @@ RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Funct
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitLivestreamBase &&
           createdAt == other.createdAt &&
@@ -94,4 +94,4 @@ RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Funct
 
 @override String toString() => 'RealtimekitLivestreamBase(\n  createdAt: $createdAt,\n  disabled: $disabled,\n  id: $id,\n  ingestServer: $ingestServer,\n  meetingId: $meetingId,\n  name: $name,\n  orgId: $orgId,\n  playbackUrl: $playbackUrl,\n  status: $status,\n  streamKey: $streamKey,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

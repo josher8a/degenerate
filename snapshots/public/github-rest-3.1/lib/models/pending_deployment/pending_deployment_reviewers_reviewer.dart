@@ -7,11 +7,11 @@ const PendingDeploymentReviewersReviewer({this.simpleUser = const Omittable.abse
 const PendingDeploymentReviewersReviewer._({required this.rawValue, required this.simpleUser, required this.team, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PendingDeploymentReviewersReviewer.fromJson(Object? json) { return PendingDeploymentReviewersReviewer._(
+factory PendingDeploymentReviewersReviewer.fromJson(Object? json) {return PendingDeploymentReviewersReviewer._(
   rawValue: Omittable(json),
   simpleUser: json is Map<String, dynamic> && SimpleUser.canParse(json) ? parseAnyOfVariant<SimpleUser>(json, (value) => SimpleUser.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   team: json is Map<String, dynamic> && Team.canParse(json) ? parseAnyOfVariant<Team>(json, (value) => Team.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PendingDeploymentReviewersReviewer(${toJson()})';
 
- }
+}

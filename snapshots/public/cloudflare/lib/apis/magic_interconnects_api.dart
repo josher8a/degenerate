@@ -14,7 +14,7 @@ final class MagicInterconnectsApi with ApiExecutor {const MagicInterconnectsApi(
 /// Lists interconnects associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/cf_interconnects`
-Future<ApiResult<MagicComponentsSchemasTunnelsCollectionResponseResult, MagicInterconnectsListInterconnectsError>> magicInterconnectsListInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasTunnelsCollectionResponseResult, MagicInterconnectsListInterconnectsError>> magicInterconnectsListInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -34,13 +34,13 @@ return await execute(
   },
   onError: MagicInterconnectsListInterconnectsError.fromResponse,
 );
- } 
+}
 /// Update multiple interconnects
 ///
 /// Updates multiple interconnects associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects`
-Future<ApiResult<MagicComponentsSchemasModifiedTunnelsCollectionResponseResult, MagicInterconnectsUpdateMultipleInterconnectsError>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasModifiedTunnelsCollectionResponseResult, MagicInterconnectsUpdateMultipleInterconnectsError>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -62,13 +62,13 @@ return await execute(
   },
   onError: MagicInterconnectsUpdateMultipleInterconnectsError.fromResponse,
 );
- } 
+}
 /// List interconnect Details
 ///
 /// Lists details for a specific interconnect.
 ///
 /// `GET /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
-Future<ApiResult<MagicComponentsSchemasTunnelSingleResponseResult, MagicInterconnectsListInterconnectDetailsError>> magicInterconnectsListInterconnectDetails({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasTunnelSingleResponseResult, MagicInterconnectsListInterconnectDetailsError>> magicInterconnectsListInterconnectDetails({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -88,13 +88,13 @@ return await execute(
   },
   onError: MagicInterconnectsListInterconnectDetailsError.fromResponse,
 );
- } 
+}
 /// Update interconnect
 ///
 /// Updates a specific interconnect associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
-Future<ApiResult<MagicComponentsSchemasTunnelModifiedResponseResult, MagicInterconnectsUpdateInterconnectError>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, required MagicInterconnectTunnelUpdateRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasTunnelModifiedResponseResult, MagicInterconnectsUpdateInterconnectError>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, required MagicInterconnectTunnelUpdateRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -116,5 +116,5 @@ return await execute(
   },
   onError: MagicInterconnectsUpdateInterconnectError.fromResponse,
 );
- } 
- }
+}
+}

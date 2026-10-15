@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cancel_build_by_uuid_response/cancel_build_by_uuid_response_errors.dart';@immutable final class ResponseCommonFailure55 {const ResponseCommonFailure55({this.errors, this.messages, this.success, });
 
-factory ResponseCommonFailure55.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure55(
+factory ResponseCommonFailure55.fromJson(Map<String, dynamic> json) {return ResponseCommonFailure55(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => CancelBuildByUuidResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool?,
-); }
+);}
 
 final List<CancelBuildByUuidResponseErrors>? errors;
 
@@ -15,24 +15,24 @@ final List<Map<String,dynamic>>? messages;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e).toList(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 final errors$$ = errors;
 if (errors$$ != null) {
   if (errors$$.isEmpty) { errors$.add('errors: must have >= 1 items'); }
 }
-return errors$; } 
-ResponseCommonFailure55 copyWith({List<CancelBuildByUuidResponseErrors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) { return ResponseCommonFailure55(
+return errors$;}
+ResponseCommonFailure55 copyWith({List<CancelBuildByUuidResponseErrors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) {return ResponseCommonFailure55(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommonFailure55 &&
           listEquals(errors, other.errors) &&
@@ -43,4 +43,4 @@ ResponseCommonFailure55 copyWith({List<CancelBuildByUuidResponseErrors>? Functio
 
 @override String toString() => 'ResponseCommonFailure55(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

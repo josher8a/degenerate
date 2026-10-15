@@ -7,12 +7,12 @@ const InvoiceAccountTaxIds({this.string = const Omittable.absent(), this.taxId =
 const InvoiceAccountTaxIds._({required this.rawValue, required this.string, required this.taxId, required this.deletedTaxId, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory InvoiceAccountTaxIds.fromJson(Object? json) { return InvoiceAccountTaxIds._(
+factory InvoiceAccountTaxIds.fromJson(Object? json) {return InvoiceAccountTaxIds._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   taxId: json is Map<String, dynamic> && TaxId.canParse(json) ? parseAnyOfVariant<TaxId>(json, (value) => TaxId.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   deletedTaxId: json is Map<String, dynamic> && DeletedTaxId.canParse(json) ? parseAnyOfVariant<DeletedTaxId>(json, (value) => DeletedTaxId.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -46,4 +46,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'InvoiceAccountTaxIds(${toJson()})';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_edited/webhook_discussion_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_edited/webhook_issues_edited_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';@immutable final class WebhookIssuesEdited {const WebhookIssuesEdited({required this.action, required this.changes, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.label, this.organization, });
 
-factory WebhookIssuesEdited.fromJson(Map<String, dynamic> json) { return WebhookIssuesEdited(
+factory WebhookIssuesEdited.fromJson(Map<String, dynamic> json) {return WebhookIssuesEdited(
   action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookDiscussionEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory WebhookIssuesEdited.fromJson(Map<String, dynamic> json) { return Webhook
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemEditedAction action;
 
@@ -35,7 +35,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -45,13 +45,13 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('issue') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookIssuesEdited copyWith({ItemEditedAction? action, WebhookDiscussionEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhookIssuesEditedIssue? issue, WebhooksLabel? Function()? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesEdited(
+      json.containsKey('sender');}
+WebhookIssuesEdited copyWith({ItemEditedAction? action, WebhookDiscussionEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhookIssuesEditedIssue? issue, WebhooksLabel? Function()? label, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookIssuesEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -61,7 +61,7 @@ WebhookIssuesEdited copyWith({ItemEditedAction? action, WebhookDiscussionEditedC
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesEdited &&
           action == other.action &&
@@ -78,4 +78,4 @@ WebhookIssuesEdited copyWith({ItemEditedAction? action, WebhookDiscussionEditedC
 
 @override String toString() => 'WebhookIssuesEdited(\n  action: $action,\n  changes: $changes,\n  enterprise: $enterprise,\n  installation: $installation,\n  issue: $issue,\n  label: $label,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

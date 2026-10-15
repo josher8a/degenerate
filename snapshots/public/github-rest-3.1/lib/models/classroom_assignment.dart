@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/classroom.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment/classroom_assignment_type.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_repository.dart';/// A GitHub Classroom assignment
 @immutable final class ClassroomAssignment {const ClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.maxTeams, required this.maxMembers, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.starterCodeRepository, required this.classroom, });
 
-factory ClassroomAssignment.fromJson(Map<String, dynamic> json) { return ClassroomAssignment(
+factory ClassroomAssignment.fromJson(Map<String, dynamic> json) {return ClassroomAssignment(
   id: (json['id'] as num).toInt(),
   publicRepo: json['public_repo'] as bool,
   title: json['title'] as String,
@@ -24,7 +24,7 @@ factory ClassroomAssignment.fromJson(Map<String, dynamic> json) { return Classro
   deadline: json['deadline'] != null ? DateTime.parse(json['deadline'] as String) : null,
   starterCodeRepository: SimpleClassroomRepository.fromJson(json['starter_code_repository'] as Map<String, dynamic>),
   classroom: Classroom.fromJson(json['classroom'] as Map<String, dynamic>),
-); }
+);}
 
 /// Unique identifier of the repository.
 final int id;
@@ -81,7 +81,7 @@ final SimpleClassroomRepository starterCodeRepository;
 
 final Classroom classroom;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'public_repo': publicRepo,
   'title': title,
@@ -101,8 +101,8 @@ Map<String, dynamic> toJson() { return {
   'deadline': deadline?.toIso8601String(),
   'starter_code_repository': starterCodeRepository.toJson(),
   'classroom': classroom.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('public_repo') && json['public_repo'] is bool &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('type') &&
@@ -120,8 +120,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('language') && json['language'] is String &&
       json.containsKey('deadline') && (json['deadline'] == null || json['deadline'] is String) &&
       json.containsKey('starter_code_repository') &&
-      json.containsKey('classroom'); } 
-ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, ClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, int? Function()? maxTeams, int? Function()? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroomRepository? starterCodeRepository, Classroom? classroom, }) { return ClassroomAssignment(
+      json.containsKey('classroom');}
+ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, ClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, int? Function()? maxTeams, int? Function()? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroomRepository? starterCodeRepository, Classroom? classroom, }) {return ClassroomAssignment(
   id: id ?? this.id,
   publicRepo: publicRepo ?? this.publicRepo,
   title: title ?? this.title,
@@ -141,7 +141,7 @@ ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Classroo
   deadline: deadline != null ? deadline() : this.deadline,
   starterCodeRepository: starterCodeRepository ?? this.starterCodeRepository,
   classroom: classroom ?? this.classroom,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ClassroomAssignment &&
           id == other.id &&
@@ -168,4 +168,4 @@ ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Classroo
 
 @override String toString() => 'ClassroomAssignment(\n  id: $id,\n  publicRepo: $publicRepo,\n  title: $title,\n  type: $type,\n  inviteLink: $inviteLink,\n  invitationsEnabled: $invitationsEnabled,\n  slug: $slug,\n  studentsAreRepoAdmins: $studentsAreRepoAdmins,\n  feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled,\n  maxTeams: $maxTeams,\n  maxMembers: $maxMembers,\n  editor: $editor,\n  accepted: $accepted,\n  submitted: $submitted,\n  passing: $passing,\n  language: $language,\n  deadline: $deadline,\n  starterCodeRepository: $starterCodeRepository,\n  classroom: $classroom,\n)';
 
- }
+}

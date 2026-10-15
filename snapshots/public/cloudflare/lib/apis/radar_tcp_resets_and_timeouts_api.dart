@@ -14,7 +14,7 @@ final class RadarTcpResetsAndTimeoutsApi with ApiExecutor {const RadarTcpResetsA
 /// Retrieves the distribution of connection stage by TCP connections terminated within the first 10 packets by a reset or timeout.
 ///
 /// `GET /radar/tcp_resets_timeouts/summary`
-Future<ApiResult<RadarGetTcpResetsTimeoutsSummaryResponseResult, RadarGetTcpResetsTimeoutsSummaryError>> radarGetTcpResetsTimeoutsSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetTcpResetsTimeoutsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTcpResetsTimeoutsSummaryResponseResult, RadarGetTcpResetsTimeoutsSummaryError>> radarGetTcpResetsTimeoutsSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetTcpResetsTimeoutsSummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -74,13 +74,13 @@ return await execute(
   },
   onError: RadarGetTcpResetsTimeoutsSummaryError.fromResponse,
 );
- } 
+}
 /// Get TCP resets and timeouts time series
 ///
 /// Retrieves the distribution of connection stage by TCP connections terminated within the first 10 packets by a reset or timeout over time.
 ///
 /// `GET /radar/tcp_resets_timeouts/timeseries_groups`
-Future<ApiResult<RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResult, RadarGetTcpResetsTimeoutsTimeseriesGroupError>> radarGetTcpResetsTimeoutsTimeseriesGroup({RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetTcpResetsTimeoutsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResult, RadarGetTcpResetsTimeoutsTimeseriesGroupError>> radarGetTcpResetsTimeoutsTimeseriesGroup({RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetTcpResetsTimeoutsTimeseriesGroupFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -143,5 +143,5 @@ return await execute(
   },
   onError: RadarGetTcpResetsTimeoutsTimeseriesGroupError.fromResponse,
 );
- } 
- }
+}
+}

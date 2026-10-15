@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_status_checks/repository_rule_required_status_checks_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_status_checks/repository_rule_required_status_checks_type.dart';/// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
 @immutable final class RepositoryRuleRequiredStatusChecks {const RepositoryRuleRequiredStatusChecks({required this.type, this.parameters, });
 
-factory RepositoryRuleRequiredStatusChecks.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredStatusChecks(
+factory RepositoryRuleRequiredStatusChecks.fromJson(Map<String, dynamic> json) {return RepositoryRuleRequiredStatusChecks(
   type: RepositoryRuleRequiredStatusChecksType.fromJson(json['type'] as String),
   parameters: json['parameters'] != null ? RepositoryRuleRequiredStatusChecksParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RepositoryRuleRequiredStatusChecksType type;
 
 final RepositoryRuleRequiredStatusChecksParameters? parameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'required_status_checks'; } 
-RepositoryRuleRequiredStatusChecks copyWith({RepositoryRuleRequiredStatusChecksType? type, RepositoryRuleRequiredStatusChecksParameters? Function()? parameters, }) { return RepositoryRuleRequiredStatusChecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'required_status_checks';}
+RepositoryRuleRequiredStatusChecks copyWith({RepositoryRuleRequiredStatusChecksType? type, RepositoryRuleRequiredStatusChecksParameters? Function()? parameters, }) {return RepositoryRuleRequiredStatusChecks(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredStatusChecks &&
           type == other.type &&
@@ -31,4 +31,4 @@ RepositoryRuleRequiredStatusChecks copyWith({RepositoryRuleRequiredStatusChecksT
 
 @override String toString() => 'RepositoryRuleRequiredStatusChecks(type: $type, parameters: $parameters)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_messages2.dart';import 'package:pub_cloudflare/models/firewall_zonelockdown.dart';@immutable final class FirewallZonelockdownResponseSingle {const FirewallZonelockdownResponseSingle({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory FirewallZonelockdownResponseSingle.fromJson(Map<String, dynamic> json) { return FirewallZonelockdownResponseSingle(
+factory FirewallZonelockdownResponseSingle.fromJson(Map<String, dynamic> json) {return FirewallZonelockdownResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: FirewallZonelockdown.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<FirewallMessages2> errors;
 
@@ -21,22 +21,22 @@ final FirewallZonelockdown result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-FirewallZonelockdownResponseSingle copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, FirewallZonelockdown? result, bool? success, }) { return FirewallZonelockdownResponseSingle(
+      json.containsKey('success') && json['success'] is bool;}
+FirewallZonelockdownResponseSingle copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, FirewallZonelockdown? result, bool? success, }) {return FirewallZonelockdownResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallZonelockdownResponseSingle &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ FirewallZonelockdownResponseSingle copyWith({List<FirewallMessages2>? errors, Li
 
 @override String toString() => 'FirewallZonelockdownResponseSingle(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

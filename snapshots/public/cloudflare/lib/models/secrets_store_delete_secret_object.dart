@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';@immutable final class SecretsStoreDeleteSecretObject {const SecretsStoreDeleteSecretObject({required this.id});
 
-factory SecretsStoreDeleteSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStoreDeleteSecretObject(
+factory SecretsStoreDeleteSecretObject.fromJson(Map<String, dynamic> json) {return SecretsStoreDeleteSecretObject(
   id: SecretsStoreIdentifier.fromJson(json['id'] as String),
-); }
+);}
 
 final SecretsStoreIdentifier id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-SecretsStoreDeleteSecretObject copyWith({SecretsStoreIdentifier? id}) { return SecretsStoreDeleteSecretObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+SecretsStoreDeleteSecretObject copyWith({SecretsStoreIdentifier? id}) {return SecretsStoreDeleteSecretObject(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreDeleteSecretObject &&
           id == other.id;
@@ -24,4 +24,4 @@ SecretsStoreDeleteSecretObject copyWith({SecretsStoreIdentifier? id}) { return S
 
 @override String toString() => 'SecretsStoreDeleteSecretObject(id: $id)';
 
- }
+}

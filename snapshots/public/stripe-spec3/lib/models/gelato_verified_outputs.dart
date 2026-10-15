@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/gelato_data_verified_outputs_date.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/sex.dart';import 'package:pub_stripe_spec3/models/gelato_id_number_report/id_number_type.dart';/// 
 @immutable final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address = const Omittable.absent(), this.dob = const Omittable.absent(), this.email = const Omittable.absent(), this.firstName = const Omittable.absent(), this.idNumber = const Omittable.absent(), this.idNumberType = const Omittable.absent(), this.lastName = const Omittable.absent(), this.phone = const Omittable.absent(), this.sex = const Omittable.absent(), this.unparsedPlaceOfBirth = const Omittable.absent(), this.unparsedSex = const Omittable.absent(), });
 
-factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return GelatoVerifiedOutputs(
+factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) {return GelatoVerifiedOutputs(
   address: json.containsKey('address') ? Omittable(json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   dob: json.containsKey('dob') ? Omittable(json['dob'] != null ? GelatoDataVerifiedOutputsDate.fromJson(json['dob'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
@@ -16,7 +16,7 @@ factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return Gelat
   sex: json.containsKey('sex') ? Omittable(json['sex'] != null ? Sex.fromJson(json['sex'] as String) : null) : const Omittable.absent(),
   unparsedPlaceOfBirth: json.containsKey('unparsed_place_of_birth') ? Omittable(json['unparsed_place_of_birth'] as String?) : const Omittable.absent(),
   unparsedSex: json.containsKey('unparsed_sex') ? Omittable(json['unparsed_sex'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The user's verified address.
 final Omittable<Address?> address;
@@ -51,7 +51,7 @@ final Omittable<String?> unparsedPlaceOfBirth;
 /// The user's verified sex as it appears in the document.
 final Omittable<String?> unparsedSex;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address.isPresent) 'address': address.value?.toJson(),
   if (dob.isPresent) 'dob': dob.value?.toJson(),
   if (email.isPresent) 'email': email.value,
@@ -63,10 +63,10 @@ Map<String, dynamic> toJson() { return {
   if (sex.isPresent) 'sex': sex.value?.toJson(),
   if (unparsedPlaceOfBirth.isPresent) 'unparsed_place_of_birth': unparsedPlaceOfBirth.value,
   if (unparsedSex.isPresent) 'unparsed_sex': unparsedSex.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'dob', 'email', 'first_name', 'id_number', 'id_number_type', 'last_name', 'phone', 'sex', 'unparsed_place_of_birth', 'unparsed_sex'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'dob', 'email', 'first_name', 'id_number', 'id_number_type', 'last_name', 'phone', 'sex', 'unparsed_place_of_birth', 'unparsed_sex'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final email$ = email.value;
 if (email$ != null) {
   if (email$.runes.length > 5000) { errors.add('email: length must be <= 5000'); }
@@ -95,8 +95,8 @@ final unparsedSex$ = unparsedSex.value;
 if (unparsedSex$ != null) {
   if (unparsedSex$.runes.length > 5000) { errors.add('unparsedSex: length must be <= 5000'); }
 }
-return errors; } 
-GelatoVerifiedOutputs copyWith({Omittable<Address?>? address, Omittable<GelatoDataVerifiedOutputsDate?>? dob, Omittable<String?>? email, Omittable<String?>? firstName, Omittable<String?>? idNumber, Omittable<IdNumberType?>? idNumberType, Omittable<String?>? lastName, Omittable<String?>? phone, Omittable<Sex?>? sex, Omittable<String?>? unparsedPlaceOfBirth, Omittable<String?>? unparsedSex, }) { return GelatoVerifiedOutputs(
+return errors;}
+GelatoVerifiedOutputs copyWith({Omittable<Address?>? address, Omittable<GelatoDataVerifiedOutputsDate?>? dob, Omittable<String?>? email, Omittable<String?>? firstName, Omittable<String?>? idNumber, Omittable<IdNumberType?>? idNumberType, Omittable<String?>? lastName, Omittable<String?>? phone, Omittable<Sex?>? sex, Omittable<String?>? unparsedPlaceOfBirth, Omittable<String?>? unparsedSex, }) {return GelatoVerifiedOutputs(
   address: address ?? this.address,
   dob: dob ?? this.dob,
   email: email ?? this.email,
@@ -108,7 +108,7 @@ GelatoVerifiedOutputs copyWith({Omittable<Address?>? address, Omittable<GelatoDa
   sex: sex ?? this.sex,
   unparsedPlaceOfBirth: unparsedPlaceOfBirth ?? this.unparsedPlaceOfBirth,
   unparsedSex: unparsedSex ?? this.unparsedSex,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoVerifiedOutputs &&
           address == other.address &&
@@ -127,4 +127,4 @@ GelatoVerifiedOutputs copyWith({Omittable<Address?>? address, Omittable<GelatoDa
 
 @override String toString() => 'GelatoVerifiedOutputs(\n  address: $address,\n  dob: $dob,\n  email: $email,\n  firstName: $firstName,\n  idNumber: $idNumber,\n  idNumberType: $idNumberType,\n  lastName: $lastName,\n  phone: $phone,\n  sex: $sex,\n  unparsedPlaceOfBirth: $unparsedPlaceOfBirth,\n  unparsedSex: $unparsedSex,\n)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SearchReposSort {const SearchReposSort();
 
-factory SearchReposSort.fromJson(String json) { return switch (json) {
+factory SearchReposSort.fromJson(String json) {return switch (json) {
   'stars' => stars,
   'forks' => forks,
   'help-wanted-issues' => helpWantedIssues,
   'updated' => updated,
   _ => SearchReposSort$Unknown(json),
-}; }
+};}
 
 static const SearchReposSort stars = SearchReposSort$stars._();
 
@@ -22,36 +22,36 @@ static const SearchReposSort updated = SearchReposSort$updated._();
 static const List<SearchReposSort> values = [stars, forks, helpWantedIssues, updated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'stars' => 'stars',
   'forks' => 'forks',
   'help-wanted-issues' => 'helpWantedIssues',
   'updated' => 'updated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SearchReposSort$Unknown; } 
+bool get isUnknown {return this is SearchReposSort$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() stars, required W Function() forks, required W Function() helpWantedIssues, required W Function() updated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() stars, required W Function() forks, required W Function() helpWantedIssues, required W Function() updated, required W Function(String value) $unknown, }) {return switch (this) {
       SearchReposSort$stars() => stars(),
       SearchReposSort$forks() => forks(),
       SearchReposSort$helpWantedIssues() => helpWantedIssues(),
       SearchReposSort$updated() => updated(),
       SearchReposSort$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? stars, W Function()? forks, W Function()? helpWantedIssues, W Function()? updated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stars, W Function()? forks, W Function()? helpWantedIssues, W Function()? updated, W Function(String value)? $unknown, }) {return switch (this) {
       SearchReposSort$stars() => stars != null ? stars() : orElse(value),
       SearchReposSort$forks() => forks != null ? forks() : orElse(value),
       SearchReposSort$helpWantedIssues() => helpWantedIssues != null ? helpWantedIssues() : orElse(value),
       SearchReposSort$updated() => updated != null ? updated() : orElse(value),
       SearchReposSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SearchReposSort($value)';
 
- }
+}
 @immutable final class SearchReposSort$stars extends SearchReposSort {const SearchReposSort$stars._();
 
 @override String get value => 'stars';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stars, W
 
 @override int get hashCode => 'stars'.hashCode;
 
- }
+}
 @immutable final class SearchReposSort$forks extends SearchReposSort {const SearchReposSort$forks._();
 
 @override String get value => 'forks';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stars, W
 
 @override int get hashCode => 'forks'.hashCode;
 
- }
+}
 @immutable final class SearchReposSort$helpWantedIssues extends SearchReposSort {const SearchReposSort$helpWantedIssues._();
 
 @override String get value => 'help-wanted-issues';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stars, W
 
 @override int get hashCode => 'help-wanted-issues'.hashCode;
 
- }
+}
 @immutable final class SearchReposSort$updated extends SearchReposSort {const SearchReposSort$updated._();
 
 @override String get value => 'updated';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stars, W
 
 @override int get hashCode => 'updated'.hashCode;
 
- }
+}
 @immutable final class SearchReposSort$Unknown extends SearchReposSort {const SearchReposSort$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stars, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

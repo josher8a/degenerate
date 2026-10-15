@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_rate_limits_updated/rate_limits.dart';/// The event type, must be `rate_limits.updated`.
 sealed class RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType();
 
-factory RealtimeBetaServerEventRateLimitsUpdatedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventRateLimitsUpdatedType.fromJson(String json) {return switch (json) {
   'rate_limits.updated' => rateLimitsUpdated,
   _ => RealtimeBetaServerEventRateLimitsUpdatedType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventRateLimitsUpdatedType rateLimitsUpdated = RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated._();
 
 static const List<RealtimeBetaServerEventRateLimitsUpdatedType> values = [rateLimitsUpdated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'rate_limits.updated' => 'rateLimitsUpdated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventRateLimitsUpdatedType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventRateLimitsUpdatedType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() rateLimitsUpdated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() rateLimitsUpdated, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated() => rateLimitsUpdated(),
       RealtimeBetaServerEventRateLimitsUpdatedType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? rateLimitsUpdated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rateLimitsUpdated, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated() => rateLimitsUpdated != null ? rateLimitsUpdated() : orElse(value),
       RealtimeBetaServerEventRateLimitsUpdatedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventRateLimitsUpdatedType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated extends RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated._();
 
 @override String get value => 'rate_limits.updated';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rateLimi
 
 @override int get hashCode => 'rate_limits.updated'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventRateLimitsUpdatedType$Unknown extends RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rateLimi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Emitted at the beginning of a Response to indicate the updated rate limits.
 /// When a Response is created some tokens will be "reserved" for the output
 /// tokens, the rate limits shown here reflect that reservation, which is then
@@ -61,11 +61,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rateLimi
 /// 
 @immutable final class RealtimeBetaServerEventRateLimitsUpdated {const RealtimeBetaServerEventRateLimitsUpdated({required this.eventId, required this.type, required this.rateLimits, });
 
-factory RealtimeBetaServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventRateLimitsUpdated(
+factory RealtimeBetaServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventRateLimitsUpdated(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventRateLimitsUpdatedType.fromJson(json['type'] as String),
   rateLimits: (json['rate_limits'] as List<dynamic>).map((e) => RateLimits.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -76,19 +76,19 @@ final RealtimeBetaServerEventRateLimitsUpdatedType type;
 /// List of rate limit information.
 final List<RateLimits> rateLimits;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'rate_limits': rateLimits.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
-      json.containsKey('rate_limits'); } 
-RealtimeBetaServerEventRateLimitsUpdated copyWith({String? eventId, RealtimeBetaServerEventRateLimitsUpdatedType? type, List<RateLimits>? rateLimits, }) { return RealtimeBetaServerEventRateLimitsUpdated(
+      json.containsKey('rate_limits');}
+RealtimeBetaServerEventRateLimitsUpdated copyWith({String? eventId, RealtimeBetaServerEventRateLimitsUpdatedType? type, List<RateLimits>? rateLimits, }) {return RealtimeBetaServerEventRateLimitsUpdated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   rateLimits: rateLimits ?? this.rateLimits,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventRateLimitsUpdated &&
           eventId == other.eventId &&
@@ -99,4 +99,4 @@ RealtimeBetaServerEventRateLimitsUpdated copyWith({String? eventId, RealtimeBeta
 
 @override String toString() => 'RealtimeBetaServerEventRateLimitsUpdated(eventId: $eventId, type: $type, rateLimits: $rateLimits)';
 
- }
+}

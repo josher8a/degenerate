@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details on the account's acceptance of the [Stripe Services Agreement](/connect/updating-accounts#tos-acceptance). This property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts. This property defaults to a `full` service agreement when empty.
 @immutable final class PostAccountsAccountRequestTosAcceptance {const PostAccountsAccountRequestTosAcceptance({this.date, this.ip, this.serviceAgreement, this.userAgent, });
 
-factory PostAccountsAccountRequestTosAcceptance.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestTosAcceptance(
+factory PostAccountsAccountRequestTosAcceptance.fromJson(Map<String, dynamic> json) {return PostAccountsAccountRequestTosAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
   serviceAgreement: json['service_agreement'] as String?,
   userAgent: json['user_agent'] as String?,
-); }
+);}
 
 final int? date;
 
@@ -19,15 +19,15 @@ final String? serviceAgreement;
 
 final String? userAgent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'date': ?date,
   'ip': ?ip,
   'service_agreement': ?serviceAgreement,
   'user_agent': ?userAgent,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'service_agreement', 'user_agent'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'date', 'ip', 'service_agreement', 'user_agent'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final serviceAgreement$ = serviceAgreement;
 if (serviceAgreement$ != null) {
   if (serviceAgreement$.runes.length > 5000) { errors.add('serviceAgreement: length must be <= 5000'); }
@@ -36,13 +36,13 @@ final userAgent$ = userAgent;
 if (userAgent$ != null) {
   if (userAgent$.runes.length > 5000) { errors.add('userAgent: length must be <= 5000'); }
 }
-return errors; } 
-PostAccountsAccountRequestTosAcceptance copyWith({int? Function()? date, String? Function()? ip, String? Function()? serviceAgreement, String? Function()? userAgent, }) { return PostAccountsAccountRequestTosAcceptance(
+return errors;}
+PostAccountsAccountRequestTosAcceptance copyWith({int? Function()? date, String? Function()? ip, String? Function()? serviceAgreement, String? Function()? userAgent, }) {return PostAccountsAccountRequestTosAcceptance(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,
   serviceAgreement: serviceAgreement != null ? serviceAgreement() : this.serviceAgreement,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestTosAcceptance &&
           date == other.date &&
@@ -54,4 +54,4 @@ PostAccountsAccountRequestTosAcceptance copyWith({int? Function()? date, String?
 
 @override String toString() => 'PostAccountsAccountRequestTosAcceptance(date: $date, ip: $ip, serviceAgreement: $serviceAgreement, userAgent: $userAgent)';
 
- }
+}

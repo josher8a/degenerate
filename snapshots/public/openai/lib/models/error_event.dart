@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error_model.dart';sealed class ErrorEventEvent {const ErrorEventEvent();
 
-factory ErrorEventEvent.fromJson(String json) { return switch (json) {
+factory ErrorEventEvent.fromJson(String json) {return switch (json) {
   'error' => error,
   _ => ErrorEventEvent$Unknown(json),
-}; }
+};}
 
 static const ErrorEventEvent error = ErrorEventEvent$error._();
 
 static const List<ErrorEventEvent> values = [error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ErrorEventEvent$Unknown; } 
+bool get isUnknown {return this is ErrorEventEvent$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       ErrorEventEvent$error() => error(),
       ErrorEventEvent$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       ErrorEventEvent$error() => error != null ? error() : orElse(value),
       ErrorEventEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ErrorEventEvent($value)';
 
- }
+}
 @immutable final class ErrorEventEvent$error extends ErrorEventEvent {const ErrorEventEvent$error._();
 
 @override String get value => 'error';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class ErrorEventEvent$Unknown extends ErrorEventEvent {const ErrorEventEvent$Unknown(this.value);
 
 @override final String value;
@@ -52,29 +52,29 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
 @immutable final class ErrorEvent {const ErrorEvent({required this.event, required this.data, });
 
-factory ErrorEvent.fromJson(Map<String, dynamic> json) { return ErrorEvent(
+factory ErrorEvent.fromJson(Map<String, dynamic> json) {return ErrorEvent(
   event: ErrorEventEvent.fromJson(json['event'] as String),
   data: ErrorModel.fromJson(json['data'] as Map<String, dynamic>),
-); }
+);}
 
 final ErrorEventEvent event;
 
 final ErrorModel data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] == 'error' &&
-      json.containsKey('data'); } 
-ErrorEvent copyWith({ErrorEventEvent? event, ErrorModel? data, }) { return ErrorEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') && json['event'] == 'error' &&
+      json.containsKey('data');}
+ErrorEvent copyWith({ErrorEventEvent? event, ErrorModel? data, }) {return ErrorEvent(
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorEvent &&
           event == other.event &&
@@ -84,4 +84,4 @@ ErrorEvent copyWith({ErrorEventEvent? event, ErrorModel? data, }) { return Error
 
 @override String toString() => 'ErrorEvent(event: $event, data: $data)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/payment_behavior.dart';@immutable final class DeleteSubscriptionItemsItemRequest {const DeleteSubscriptionItemsItemRequest({this.clearUsage, this.paymentBehavior, this.prorationBehavior, this.prorationDate, });
 
-factory DeleteSubscriptionItemsItemRequest.fromJson(Map<String, dynamic> json) { return DeleteSubscriptionItemsItemRequest(
+factory DeleteSubscriptionItemsItemRequest.fromJson(Map<String, dynamic> json) {return DeleteSubscriptionItemsItemRequest(
   clearUsage: json['clear_usage'] as bool?,
   paymentBehavior: json['payment_behavior'] != null ? PaymentBehavior.fromJson(json['payment_behavior'] as String) : null,
   prorationBehavior: json['proration_behavior'] != null ? DeleteSubscriptionItemsItemRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
   prorationDate: json['proration_date'] != null ? (json['proration_date'] as num).toInt() : null,
-); }
+);}
 
 /// Delete all usage for the given subscription item. Allowed only when the current plan's `usage_type` is `metered`.
 final bool? clearUsage;
@@ -28,19 +28,19 @@ final DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior;
 /// If set, the proration will be calculated as though the subscription was updated at the given time. This can be used to apply the same proration that was previewed with the [upcoming invoice](https://api.stripe.com#retrieve_customer_invoice) endpoint.
 final int? prorationDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'clear_usage': ?clearUsage,
   if (paymentBehavior != null) 'payment_behavior': paymentBehavior?.toJson(),
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
   'proration_date': ?prorationDate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'clear_usage', 'payment_behavior', 'proration_behavior', 'proration_date'}.contains(key)); } 
-DeleteSubscriptionItemsItemRequest copyWith({bool? Function()? clearUsage, PaymentBehavior? Function()? paymentBehavior, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, }) { return DeleteSubscriptionItemsItemRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'clear_usage', 'payment_behavior', 'proration_behavior', 'proration_date'}.contains(key));}
+DeleteSubscriptionItemsItemRequest copyWith({bool? Function()? clearUsage, PaymentBehavior? Function()? paymentBehavior, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, }) {return DeleteSubscriptionItemsItemRequest(
   clearUsage: clearUsage != null ? clearUsage() : this.clearUsage,
   paymentBehavior: paymentBehavior != null ? paymentBehavior() : this.paymentBehavior,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
   prorationDate: prorationDate != null ? prorationDate() : this.prorationDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteSubscriptionItemsItemRequest &&
           clearUsage == other.clearUsage &&
@@ -52,4 +52,4 @@ DeleteSubscriptionItemsItemRequest copyWith({bool? Function()? clearUsage, Payme
 
 @override String toString() => 'DeleteSubscriptionItemsItemRequest(clearUsage: $clearUsage, paymentBehavior: $paymentBehavior, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate)';
 
- }
+}

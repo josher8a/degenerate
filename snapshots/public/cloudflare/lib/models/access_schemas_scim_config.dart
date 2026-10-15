@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config/access_schemas_scim_config_authentication.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config_authentication_oauth_bearer_token.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_access_service_token.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_http_basic.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_oauth2.dart';import 'package:pub_cloudflare/models/access_scim_config_mapping.dart';/// Configuration for provisioning to this application via SCIM. This is currently in closed beta.
 @immutable final class AccessSchemasScimConfig {const AccessSchemasScimConfig({required this.idpUid, required this.remoteUri, this.authentication, this.deactivateOnDelete, this.enabled, this.mappings, });
 
-factory AccessSchemasScimConfig.fromJson(Map<String, dynamic> json) { return AccessSchemasScimConfig(
+factory AccessSchemasScimConfig.fromJson(Map<String, dynamic> json) {return AccessSchemasScimConfig(
   authentication: json['authentication'] != null ? OneOf2.parse(json['authentication'], fromA: (v) => OneOf4.parse(v, fromA: (v) => AccessScimConfigAuthenticationHttpBasic.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasScimConfigAuthenticationOauthBearerToken.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessScimConfigAuthenticationOauth2.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessScimConfigAuthenticationAccessServiceToken.fromJson(v as Map<String, dynamic>),), fromB: (v) => (v as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => AccessScimConfigAuthenticationHttpBasic.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasScimConfigAuthenticationOauthBearerToken.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessScimConfigAuthenticationOauth2.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessScimConfigAuthenticationAccessServiceToken.fromJson(v as Map<String, dynamic>),)).toList(),) : null,
   deactivateOnDelete: json['deactivate_on_delete'] as bool?,
   enabled: json['enabled'] as bool?,
   idpUid: json['idp_uid'] as String,
   mappings: (json['mappings'] as List<dynamic>?)?.map((e) => AccessScimConfigMapping.fromJson(e as Map<String, dynamic>)).toList(),
   remoteUri: json['remote_uri'] as String,
-); }
+);}
 
 final AccessSchemasScimConfigAuthentication? authentication;
 
@@ -30,24 +30,24 @@ final List<AccessScimConfigMapping>? mappings;
 /// The base URI for the application's SCIM-compatible API.
 final String remoteUri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authentication != null) 'authentication': authentication?.toJson(),
   'deactivate_on_delete': ?deactivateOnDelete,
   'enabled': ?enabled,
   'idp_uid': idpUid,
   if (mappings != null) 'mappings': mappings?.map((e) => e.toJson()).toList(),
   'remote_uri': remoteUri,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('idp_uid') && json['idp_uid'] is String &&
-      json.containsKey('remote_uri') && json['remote_uri'] is String; } 
-AccessSchemasScimConfig copyWith({AccessSchemasScimConfigAuthentication? Function()? authentication, bool? Function()? deactivateOnDelete, bool? Function()? enabled, String? idpUid, List<AccessScimConfigMapping>? Function()? mappings, String? remoteUri, }) { return AccessSchemasScimConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('idp_uid') && json['idp_uid'] is String &&
+      json.containsKey('remote_uri') && json['remote_uri'] is String;}
+AccessSchemasScimConfig copyWith({AccessSchemasScimConfigAuthentication? Function()? authentication, bool? Function()? deactivateOnDelete, bool? Function()? enabled, String? idpUid, List<AccessScimConfigMapping>? Function()? mappings, String? remoteUri, }) {return AccessSchemasScimConfig(
   authentication: authentication != null ? authentication() : this.authentication,
   deactivateOnDelete: deactivateOnDelete != null ? deactivateOnDelete() : this.deactivateOnDelete,
   enabled: enabled != null ? enabled() : this.enabled,
   idpUid: idpUid ?? this.idpUid,
   mappings: mappings != null ? mappings() : this.mappings,
   remoteUri: remoteUri ?? this.remoteUri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasScimConfig &&
           authentication == other.authentication &&
@@ -61,4 +61,4 @@ AccessSchemasScimConfig copyWith({AccessSchemasScimConfigAuthentication? Functio
 
 @override String toString() => 'AccessSchemasScimConfig(authentication: $authentication, deactivateOnDelete: $deactivateOnDelete, enabled: $enabled, idpUid: $idpUid, mappings: $mappings, remoteUri: $remoteUri)';
 
- }
+}

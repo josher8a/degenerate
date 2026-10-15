@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShapeRectangle {const ShapeRectangle({required this.kind, required this.width, required this.height, required this.id, this.meta = const Omittable.absent(), this.createdAt, });
 
-factory ShapeRectangle.fromJson(Map<String, dynamic> json) { return ShapeRectangle(
+factory ShapeRectangle.fromJson(Map<String, dynamic> json) {return ShapeRectangle(
   kind: json['kind'],
   width: (json['width'] as num).toDouble(),
   height: (json['height'] as num).toDouble(),
   meta: json.containsKey('meta') ? Omittable(json['meta']) : const Omittable.absent(),
   id: json['id'] as String,
   createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : null,
-); }
+);}
 
 final dynamic kind;
 
@@ -24,26 +24,26 @@ final String id;
 
 final DateTime? createdAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kind': kind,
   'width': width,
   'height': height,
   if (meta.isPresent) 'meta': meta.value,
   'id': id,
   if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') &&
       json.containsKey('width') && json['width'] is num &&
       json.containsKey('height') && json['height'] is num &&
-      json.containsKey('id') && json['id'] is String; } 
-ShapeRectangle copyWith({dynamic Function()? kind, double? width, double? height, Omittable<dynamic>? meta, String? id, DateTime? Function()? createdAt, }) { return ShapeRectangle(
+      json.containsKey('id') && json['id'] is String;}
+ShapeRectangle copyWith({dynamic Function()? kind, double? width, double? height, Omittable<dynamic>? meta, String? id, DateTime? Function()? createdAt, }) {return ShapeRectangle(
   kind: kind != null ? kind() : this.kind,
   width: width ?? this.width,
   height: height ?? this.height,
   meta: meta ?? this.meta,
   id: id ?? this.id,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShapeRectangle &&
           kind == other.kind &&
@@ -57,4 +57,4 @@ ShapeRectangle copyWith({dynamic Function()? kind, double? width, double? height
 
 @override String toString() => 'ShapeRectangle(kind: $kind, width: $width, height: $height, meta: $meta, id: $id, createdAt: $createdAt)';
 
- }
+}

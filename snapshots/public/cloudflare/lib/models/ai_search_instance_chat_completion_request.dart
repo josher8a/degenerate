@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_messages.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_model.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_options.dart';@immutable final class AiSearchInstanceChatCompletionRequest {const AiSearchInstanceChatCompletionRequest({required this.messages, this.aiSearchOptions, this.model, this.stream, this.additionalProperties = const {}, });
 
-factory AiSearchInstanceChatCompletionRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequest(
+factory AiSearchInstanceChatCompletionRequest.fromJson(Map<String, dynamic> json) {return AiSearchInstanceChatCompletionRequest(
   aiSearchOptions: json['ai_search_options'] != null ? AiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>) : null,
   messages: (json['messages'] as List<dynamic>).map((e) => AiSearchInstanceChatCompletionRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
   model: json['model'] != null ? AiSearchInstanceChatCompletionRequestModel.fromJson(json['model']) : null,
   stream: json['stream'] as bool?,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'ai_search_options', 'messages', 'model', 'stream'}.contains(e.key))),
-); }
+);}
 
 final AiSearchOptions? aiSearchOptions;
 
@@ -21,25 +21,25 @@ final bool? stream;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aiSearchOptions != null) 'ai_search_options': aiSearchOptions?.toJson(),
   'messages': messages.map((e) => e.toJson()).toList(),
   if (model != null) 'model': model?.toJson(),
   'stream': ?stream,
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (messages.isEmpty) { errors.add('messages: must have >= 1 items'); }
-return errors; } 
-AiSearchInstanceChatCompletionRequest copyWith({AiSearchOptions? Function()? aiSearchOptions, List<AiSearchInstanceChatCompletionRequestMessages>? messages, AiSearchInstanceChatCompletionRequestModel? Function()? model, bool? Function()? stream, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionRequest(
+return errors;}
+AiSearchInstanceChatCompletionRequest copyWith({AiSearchOptions? Function()? aiSearchOptions, List<AiSearchInstanceChatCompletionRequestMessages>? messages, AiSearchInstanceChatCompletionRequestModel? Function()? model, bool? Function()? stream, Map<String, dynamic>? additionalProperties, }) {return AiSearchInstanceChatCompletionRequest(
   aiSearchOptions: aiSearchOptions != null ? aiSearchOptions() : this.aiSearchOptions,
   messages: messages ?? this.messages,
   model: model != null ? model() : this.model,
   stream: stream != null ? stream() : this.stream,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceChatCompletionRequest &&
           aiSearchOptions == other.aiSearchOptions &&
@@ -52,4 +52,4 @@ AiSearchInstanceChatCompletionRequest copyWith({AiSearchOptions? Function()? aiS
 
 @override String toString() => 'AiSearchInstanceChatCompletionRequest(aiSearchOptions: $aiSearchOptions, messages: $messages, model: $model, stream: $stream, additionalProperties: $additionalProperties)';
 
- }
+}

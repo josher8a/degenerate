@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
 sealed class PostInvoiceitemsInvoiceitemRequestTaxBehavior {const PostInvoiceitemsInvoiceitemRequestTaxBehavior();
 
-factory PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(String json) { return switch (json) {
+factory PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'unspecified' => unspecified,
   _ => PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown(json),
-}; }
+};}
 
 static const PostInvoiceitemsInvoiceitemRequestTaxBehavior exclusive = PostInvoiceitemsInvoiceitemRequestTaxBehavior$exclusive._();
 
@@ -20,33 +20,33 @@ static const PostInvoiceitemsInvoiceitemRequestTaxBehavior unspecified = PostInv
 static const List<PostInvoiceitemsInvoiceitemRequestTaxBehavior> values = [exclusive, inclusive, unspecified];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'exclusive' => 'exclusive',
   'inclusive' => 'inclusive',
   'unspecified' => 'unspecified',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown; } 
+bool get isUnknown {return this is PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() exclusive, required W Function() inclusive, required W Function() unspecified, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() exclusive, required W Function() inclusive, required W Function() unspecified, required W Function(String value) $unknown, }) {return switch (this) {
       PostInvoiceitemsInvoiceitemRequestTaxBehavior$exclusive() => exclusive(),
       PostInvoiceitemsInvoiceitemRequestTaxBehavior$inclusive() => inclusive(),
       PostInvoiceitemsInvoiceitemRequestTaxBehavior$unspecified() => unspecified(),
       PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusive, W Function()? inclusive, W Function()? unspecified, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusive, W Function()? inclusive, W Function()? unspecified, W Function(String value)? $unknown, }) {return switch (this) {
       PostInvoiceitemsInvoiceitemRequestTaxBehavior$exclusive() => exclusive != null ? exclusive() : orElse(value),
       PostInvoiceitemsInvoiceitemRequestTaxBehavior$inclusive() => inclusive != null ? inclusive() : orElse(value),
       PostInvoiceitemsInvoiceitemRequestTaxBehavior$unspecified() => unspecified != null ? unspecified() : orElse(value),
       PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostInvoiceitemsInvoiceitemRequestTaxBehavior($value)';
 
- }
+}
 @immutable final class PostInvoiceitemsInvoiceitemRequestTaxBehavior$exclusive extends PostInvoiceitemsInvoiceitemRequestTaxBehavior {const PostInvoiceitemsInvoiceitemRequestTaxBehavior$exclusive._();
 
 @override String get value => 'exclusive';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
 @override int get hashCode => 'exclusive'.hashCode;
 
- }
+}
 @immutable final class PostInvoiceitemsInvoiceitemRequestTaxBehavior$inclusive extends PostInvoiceitemsInvoiceitemRequestTaxBehavior {const PostInvoiceitemsInvoiceitemRequestTaxBehavior$inclusive._();
 
 @override String get value => 'inclusive';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
 @override int get hashCode => 'inclusive'.hashCode;
 
- }
+}
 @immutable final class PostInvoiceitemsInvoiceitemRequestTaxBehavior$unspecified extends PostInvoiceitemsInvoiceitemRequestTaxBehavior {const PostInvoiceitemsInvoiceitemRequestTaxBehavior$unspecified._();
 
 @override String get value => 'unspecified';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
 @override int get hashCode => 'unspecified'.hashCode;
 
- }
+}
 @immutable final class PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown extends PostInvoiceitemsInvoiceitemRequestTaxBehavior {const PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
 @override int get hashCode => value.hashCode;
 
- }
+}

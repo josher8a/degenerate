@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindSecretText {const WorkersBindingKindSecretText({required this.name, required this.text, required this.type, });
 
-factory WorkersBindingKindSecretText.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSecretText(
+factory WorkersBindingKindSecretText.fromJson(Map<String, dynamic> json) {return WorkersBindingKindSecretText(
   name: WorkersBindingName.fromJson(json['name'] as String),
   text: json['text'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final WorkersBindingName name;
 
@@ -19,19 +19,19 @@ final String text;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
   'text': text,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('text') && json['text'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindSecretText copyWith({WorkersBindingName? name, String? text, String? type, }) { return WorkersBindingKindSecretText(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindSecretText copyWith({WorkersBindingName? name, String? text, String? type, }) {return WorkersBindingKindSecretText(
   name: name ?? this.name,
   text: text ?? this.text,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindSecretText &&
           name == other.name &&
@@ -42,4 +42,4 @@ WorkersBindingKindSecretText copyWith({WorkersBindingName? name, String? text, S
 
 @override String toString() => 'WorkersBindingKindSecretText(name: $name, text: $text, type: $type)';
 
- }
+}

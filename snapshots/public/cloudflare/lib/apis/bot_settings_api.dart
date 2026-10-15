@@ -14,7 +14,7 @@ final class BotSettingsApi with ApiExecutor {const BotSettingsApi(this.apiConfig
 /// Retrieve a zone's Bot Management Config
 ///
 /// `GET /zones/{zone_id}/bot_management`
-Future<ApiResult<BotManagementBotManagementResponseBodyResult?, BotManagementForAZoneGetConfigError>> botManagementForAZoneGetConfig({required BotManagementIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotManagementBotManagementResponseBodyResult?, BotManagementForAZoneGetConfigError>> botManagementForAZoneGetConfig({required BotManagementIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,7 +31,7 @@ return await execute(
   },
   onError: BotManagementForAZoneGetConfigError.fromResponse,
 );
- } 
+}
 /// Update Zone Bot Management Config
 ///
 /// Updates the Bot Management configuration for a zone.
@@ -84,7 +84,7 @@ return await execute(
 /// 
 ///
 /// `PUT /zones/{zone_id}/bot_management`
-Future<ApiResult<BotManagementBotManagementResponseBodyResult?, BotManagementForAZoneUpdateConfigError>> botManagementForAZoneUpdateConfig({required BotManagementIdentifier zoneId, required BotManagementConfigSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotManagementBotManagementResponseBodyResult?, BotManagementForAZoneUpdateConfigError>> botManagementForAZoneUpdateConfig({required BotManagementIdentifier zoneId, required BotManagementConfigSingleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,5 +103,5 @@ return await execute(
   },
   onError: BotManagementForAZoneUpdateConfigError.fromResponse,
 );
- } 
- }
+}
+}

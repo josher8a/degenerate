@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Control how long
 /// 
 sealed class ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId();
 
-factory ZonesBrowserCacheTtlId.fromJson(String json) { return switch (json) {
+factory ZonesBrowserCacheTtlId.fromJson(String json) {return switch (json) {
   'browser_cache_ttl' => browserCacheTtl,
   _ => ZonesBrowserCacheTtlId$Unknown(json),
-}; }
+};}
 
 static const ZonesBrowserCacheTtlId browserCacheTtl = ZonesBrowserCacheTtlId$browserCacheTtl._();
 
 static const List<ZonesBrowserCacheTtlId> values = [browserCacheTtl];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'browser_cache_ttl' => 'browserCacheTtl',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesBrowserCacheTtlId$Unknown; } 
+bool get isUnknown {return this is ZonesBrowserCacheTtlId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() browserCacheTtl, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() browserCacheTtl, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesBrowserCacheTtlId$browserCacheTtl() => browserCacheTtl(),
       ZonesBrowserCacheTtlId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? browserCacheTtl, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? browserCacheTtl, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesBrowserCacheTtlId$browserCacheTtl() => browserCacheTtl != null ? browserCacheTtl() : orElse(value),
       ZonesBrowserCacheTtlId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesBrowserCacheTtlId($value)';
 
- }
+}
 @immutable final class ZonesBrowserCacheTtlId$browserCacheTtl extends ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId$browserCacheTtl._();
 
 @override String get value => 'browser_cache_ttl';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? browserC
 
 @override int get hashCode => 'browser_cache_ttl'.hashCode;
 
- }
+}
 @immutable final class ZonesBrowserCacheTtlId$Unknown extends ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId$Unknown(this.value);
 
 @override final String value;
@@ -54,13 +54,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? browserC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesBrowserCacheTtl {const ZonesBrowserCacheTtl({this.id, this.value, });
 
-factory ZonesBrowserCacheTtl.fromJson(Map<String, dynamic> json) { return ZonesBrowserCacheTtl(
+factory ZonesBrowserCacheTtl.fromJson(Map<String, dynamic> json) {return ZonesBrowserCacheTtl(
   id: json['id'] != null ? ZonesBrowserCacheTtlId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? (json['value'] as num).toInt() : null,
-); }
+);}
 
 /// Control how long resources cached by client browsers remain valid.
 /// 
@@ -73,23 +73,23 @@ final ZonesBrowserCacheTtlId? id;
 /// Example: `3600`
 final int? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final value$ = value;
 if (value$ != null) {
   if (value$ < 0) { errors.add('value: must be >= 0'); }
   if (value$ > 31536000.0) { errors.add('value: must be <= 31536000.0'); }
 }
-return errors; } 
-ZonesBrowserCacheTtl copyWith({ZonesBrowserCacheTtlId? Function()? id, int? Function()? value, }) { return ZonesBrowserCacheTtl(
+return errors;}
+ZonesBrowserCacheTtl copyWith({ZonesBrowserCacheTtlId? Function()? id, int? Function()? value, }) {return ZonesBrowserCacheTtl(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesBrowserCacheTtl &&
           id == other.id &&
@@ -99,4 +99,4 @@ ZonesBrowserCacheTtl copyWith({ZonesBrowserCacheTtlId? Function()? id, int? Func
 
 @override String toString() => 'ZonesBrowserCacheTtl(id: $id, value: $value)';
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides information about the result of the request, including count and cursor.
 @immutable final class AaaResultInfo {const AaaResultInfo({this.count, this.cursor, });
 
-factory AaaResultInfo.fromJson(Map<String, dynamic> json) { return AaaResultInfo(
+factory AaaResultInfo.fromJson(Map<String, dynamic> json) {return AaaResultInfo(
   count: json['count'] as String?,
   cursor: json['cursor'] as String?,
-); }
+);}
 
 /// The number of records returned in the response.
 /// 
@@ -19,15 +19,15 @@ final String? count;
 /// Example: `'ASqdKd7dKgxh-aZ8bm0mZos1BtW4BdEqifCzNkEeGRzi_5SN_-362Y8sF-C1TRn60_6rd3z2dIajf9EAPyQ_NmIeAMkacmaJPXipqvP7PLU4t72wyqBeJfjmjdE='`
 final String? cursor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': ?count,
   'cursor': ?cursor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'cursor'}.contains(key)); } 
-AaaResultInfo copyWith({String? Function()? count, String? Function()? cursor, }) { return AaaResultInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'count', 'cursor'}.contains(key));}
+AaaResultInfo copyWith({String? Function()? count, String? Function()? cursor, }) {return AaaResultInfo(
   count: count != null ? count() : this.count,
   cursor: cursor != null ? cursor() : this.cursor,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AaaResultInfo &&
           count == other.count &&
@@ -37,4 +37,4 @@ AaaResultInfo copyWith({String? Function()? count, String? Function()? cursor, }
 
 @override String toString() => 'AaaResultInfo(count: $count, cursor: $cursor)';
 
- }
+}

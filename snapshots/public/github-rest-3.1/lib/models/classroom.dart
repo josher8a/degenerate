@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_organization.dart';/// A GitHub Classroom classroom
 @immutable final class Classroom {const Classroom({required this.id, required this.name, required this.archived, required this.organization, required this.url, });
 
-factory Classroom.fromJson(Map<String, dynamic> json) { return Classroom(
+factory Classroom.fromJson(Map<String, dynamic> json) {return Classroom(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   archived: json['archived'] as bool,
   organization: SimpleClassroomOrganization.fromJson(json['organization'] as Map<String, dynamic>),
   url: json['url'] as String,
-); }
+);}
 
 /// Unique identifier of the classroom.
 final int id;
@@ -26,25 +26,25 @@ final SimpleClassroomOrganization organization;
 /// The URL of the classroom on GitHub Classroom.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'archived': archived,
   'organization': organization.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('archived') && json['archived'] is bool &&
       json.containsKey('organization') &&
-      json.containsKey('url') && json['url'] is String; } 
-Classroom copyWith({int? id, String? name, bool? archived, SimpleClassroomOrganization? organization, String? url, }) { return Classroom(
+      json.containsKey('url') && json['url'] is String;}
+Classroom copyWith({int? id, String? name, bool? archived, SimpleClassroomOrganization? organization, String? url, }) {return Classroom(
   id: id ?? this.id,
   name: name ?? this.name,
   archived: archived ?? this.archived,
   organization: organization ?? this.organization,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Classroom &&
           id == other.id &&
@@ -57,4 +57,4 @@ Classroom copyWith({int? id, String? name, bool? archived, SimpleClassroomOrgani
 
 @override String toString() => 'Classroom(id: $id, name: $name, archived: $archived, organization: $organization, url: $url)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call_arguments.done`.
 sealed class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType();
 
-factory RealtimeBetaServerEventResponseMcpCallArgumentsDoneType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventResponseMcpCallArgumentsDoneType.fromJson(String json) {return switch (json) {
   'response.mcp_call_arguments.done' => responseMcpCallArgumentsDone,
   _ => RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType responseMcpCallArgumentsDone = RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone._();
 
 static const List<RealtimeBetaServerEventResponseMcpCallArgumentsDoneType> values = [responseMcpCallArgumentsDone];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response.mcp_call_arguments.done' => 'responseMcpCallArgumentsDone',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() responseMcpCallArgumentsDone, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() responseMcpCallArgumentsDone, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone() => responseMcpCallArgumentsDone(),
       RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseMcpCallArgumentsDone, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseMcpCallArgumentsDone, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone() => responseMcpCallArgumentsDone != null ? responseMcpCallArgumentsDone() : orElse(value),
       RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDoneType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone extends RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone._();
 
 @override String get value => 'response.mcp_call_arguments.done';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response.mcp_call_arguments.done'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown extends RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when MCP tool call arguments are finalized during response generation.
 @immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDone {const RealtimeBetaServerEventResponseMcpCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.arguments, });
 
-factory RealtimeBetaServerEventResponseMcpCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseMcpCallArgumentsDone(
+factory RealtimeBetaServerEventResponseMcpCallArgumentsDone.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventResponseMcpCallArgumentsDone(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventResponseMcpCallArgumentsDoneType.fromJson(json['type'] as String),
   responseId: json['response_id'] as String,
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   arguments: json['arguments'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -84,28 +84,28 @@ final int outputIndex;
 /// The final JSON-encoded arguments string.
 final String arguments;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'response_id': responseId,
   'item_id': itemId,
   'output_index': outputIndex,
   'arguments': arguments,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('response_id') && json['response_id'] is String &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
-      json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeBetaServerEventResponseMcpCallArgumentsDone copyWith({String? eventId, RealtimeBetaServerEventResponseMcpCallArgumentsDoneType? type, String? responseId, String? itemId, int? outputIndex, String? arguments, }) { return RealtimeBetaServerEventResponseMcpCallArgumentsDone(
+      json.containsKey('arguments') && json['arguments'] is String;}
+RealtimeBetaServerEventResponseMcpCallArgumentsDone copyWith({String? eventId, RealtimeBetaServerEventResponseMcpCallArgumentsDoneType? type, String? responseId, String? itemId, int? outputIndex, String? arguments, }) {return RealtimeBetaServerEventResponseMcpCallArgumentsDone(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
   arguments: arguments ?? this.arguments,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseMcpCallArgumentsDone &&
           eventId == other.eventId &&
@@ -119,4 +119,4 @@ RealtimeBetaServerEventResponseMcpCallArgumentsDone copyWith({String? eventId, R
 
 @override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, arguments: $arguments)';
 
- }
+}

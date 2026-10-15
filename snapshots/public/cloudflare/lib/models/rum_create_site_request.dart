@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_auto_install.dart';import 'package:pub_cloudflare/models/rum_host.dart';import 'package:pub_cloudflare/models/rum_zone_tag.dart';@immutable final class RumCreateSiteRequest {const RumCreateSiteRequest({this.autoInstall, this.host, this.zoneTag, });
 
-factory RumCreateSiteRequest.fromJson(Map<String, dynamic> json) { return RumCreateSiteRequest(
+factory RumCreateSiteRequest.fromJson(Map<String, dynamic> json) {return RumCreateSiteRequest(
   autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,
   host: json['host'] != null ? RumHost.fromJson(json['host'] as String) : null,
   zoneTag: json['zone_tag'] != null ? RumZoneTag.fromJson(json['zone_tag'] as String) : null,
-); }
+);}
 
 /// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 final RumAutoInstall? autoInstall;
@@ -16,17 +16,17 @@ final RumHost? host;
 
 final RumZoneTag? zoneTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (autoInstall != null) 'auto_install': autoInstall?.toJson(),
   if (host != null) 'host': host?.toJson(),
   if (zoneTag != null) 'zone_tag': zoneTag?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_install', 'host', 'zone_tag'}.contains(key)); } 
-RumCreateSiteRequest copyWith({RumAutoInstall? Function()? autoInstall, RumHost? Function()? host, RumZoneTag? Function()? zoneTag, }) { return RumCreateSiteRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auto_install', 'host', 'zone_tag'}.contains(key));}
+RumCreateSiteRequest copyWith({RumAutoInstall? Function()? autoInstall, RumHost? Function()? host, RumZoneTag? Function()? zoneTag, }) {return RumCreateSiteRequest(
   autoInstall: autoInstall != null ? autoInstall() : this.autoInstall,
   host: host != null ? host() : this.host,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RumCreateSiteRequest &&
           autoInstall == other.autoInstall &&
@@ -37,4 +37,4 @@ RumCreateSiteRequest copyWith({RumAutoInstall? Function()? autoInstall, RumHost?
 
 @override String toString() => 'RumCreateSiteRequest(autoInstall: $autoInstall, host: $host, zoneTag: $zoneTag)';
 
- }
+}

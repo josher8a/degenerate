@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ServiceAccountTokenProjection represents a projected service account token volume. This projection can be used to insert a service account token into the pods runtime filesystem for use against APIs (Kubernetes API Server or otherwise).
 @immutable final class ServiceAccountTokenProjection {const ServiceAccountTokenProjection({required this.path, this.audience, this.expirationSeconds, });
 
-factory ServiceAccountTokenProjection.fromJson(Map<String, dynamic> json) { return ServiceAccountTokenProjection(
+factory ServiceAccountTokenProjection.fromJson(Map<String, dynamic> json) {return ServiceAccountTokenProjection(
   audience: json['audience'] as String?,
   expirationSeconds: json['expirationSeconds'] != null ? (json['expirationSeconds'] as num).toInt() : null,
   path: json['path'] as String,
-); }
+);}
 
 /// audience is the intended audience of the token. A recipient of a token must identify itself with an identifier specified in the audience of the token, and otherwise should reject the token. The audience defaults to the identifier of the apiserver.
 final String? audience;
@@ -19,17 +19,17 @@ final int? expirationSeconds;
 /// path is the path relative to the mount point of the file to project the token into.
 final String path;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'audience': ?audience,
   'expirationSeconds': ?expirationSeconds,
   'path': path,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-ServiceAccountTokenProjection copyWith({String? Function()? audience, int? Function()? expirationSeconds, String? path, }) { return ServiceAccountTokenProjection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('path') && json['path'] is String;}
+ServiceAccountTokenProjection copyWith({String? Function()? audience, int? Function()? expirationSeconds, String? path, }) {return ServiceAccountTokenProjection(
   audience: audience != null ? audience() : this.audience,
   expirationSeconds: expirationSeconds != null ? expirationSeconds() : this.expirationSeconds,
   path: path ?? this.path,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ServiceAccountTokenProjection &&
           audience == other.audience &&
@@ -40,4 +40,4 @@ ServiceAccountTokenProjection copyWith({String? Function()? audience, int? Funct
 
 @override String toString() => 'ServiceAccountTokenProjection(audience: $audience, expirationSeconds: $expirationSeconds, path: $path)';
 
- }
+}

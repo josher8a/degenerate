@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_enabled.dart';import 'package:pub_cloudflare/models/page_shield_updated_at.dart';import 'package:pub_cloudflare/models/page_shield_use_cloudflare_reporting_endpoint.dart';import 'package:pub_cloudflare/models/page_shield_use_connection_url_path.dart';@immutable final class PageShieldGetZoneSettingsResponse {const PageShieldGetZoneSettingsResponse({required this.enabled, required this.updatedAt, required this.useCloudflareReportingEndpoint, required this.useConnectionUrlPath, });
 
-factory PageShieldGetZoneSettingsResponse.fromJson(Map<String, dynamic> json) { return PageShieldGetZoneSettingsResponse(
+factory PageShieldGetZoneSettingsResponse.fromJson(Map<String, dynamic> json) {return PageShieldGetZoneSettingsResponse(
   enabled: PageShieldEnabled.fromJson(json['enabled'] as bool),
   updatedAt: PageShieldUpdatedAt.fromJson(json['updated_at'] as String),
   useCloudflareReportingEndpoint: PageShieldUseCloudflareReportingEndpoint.fromJson(json['use_cloudflare_reporting_endpoint'] as bool),
   useConnectionUrlPath: PageShieldUseConnectionUrlPath.fromJson(json['use_connection_url_path'] as bool),
-); }
+);}
 
 /// When true, indicates that Page Shield is enabled.
 final PageShieldEnabled enabled;
@@ -19,22 +19,22 @@ final PageShieldUseCloudflareReportingEndpoint useCloudflareReportingEndpoint;
 
 final PageShieldUseConnectionUrlPath useConnectionUrlPath;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled.toJson(),
   'updated_at': updatedAt.toJson(),
   'use_cloudflare_reporting_endpoint': useCloudflareReportingEndpoint.toJson(),
   'use_connection_url_path': useConnectionUrlPath.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') &&
       json.containsKey('updated_at') &&
       json.containsKey('use_cloudflare_reporting_endpoint') &&
-      json.containsKey('use_connection_url_path'); } 
-PageShieldGetZoneSettingsResponse copyWith({PageShieldEnabled? enabled, PageShieldUpdatedAt? updatedAt, PageShieldUseCloudflareReportingEndpoint? useCloudflareReportingEndpoint, PageShieldUseConnectionUrlPath? useConnectionUrlPath, }) { return PageShieldGetZoneSettingsResponse(
+      json.containsKey('use_connection_url_path');}
+PageShieldGetZoneSettingsResponse copyWith({PageShieldEnabled? enabled, PageShieldUpdatedAt? updatedAt, PageShieldUseCloudflareReportingEndpoint? useCloudflareReportingEndpoint, PageShieldUseConnectionUrlPath? useConnectionUrlPath, }) {return PageShieldGetZoneSettingsResponse(
   enabled: enabled ?? this.enabled,
   updatedAt: updatedAt ?? this.updatedAt,
   useCloudflareReportingEndpoint: useCloudflareReportingEndpoint ?? this.useCloudflareReportingEndpoint,
   useConnectionUrlPath: useConnectionUrlPath ?? this.useConnectionUrlPath,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldGetZoneSettingsResponse &&
           enabled == other.enabled &&
@@ -46,4 +46,4 @@ PageShieldGetZoneSettingsResponse copyWith({PageShieldEnabled? enabled, PageShie
 
 @override String toString() => 'PageShieldGetZoneSettingsResponse(enabled: $enabled, updatedAt: $updatedAt, useCloudflareReportingEndpoint: $useCloudflareReportingEndpoint, useConnectionUrlPath: $useConnectionUrlPath)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_message.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigation_appeal_result/abuse_reports_mitigation_appeal_result_result_info.dart';import 'package:pub_cloudflare/models/list_abuse_reports_response/list_abuse_reports_response_result.dart';@immutable final class ListAbuseReportsResponse {const ListAbuseReportsResponse({required this.success, this.errors, this.messages, this.result, this.resultInfo, });
 
-factory ListAbuseReportsResponse.fromJson(Map<String, dynamic> json) { return ListAbuseReportsResponse(
+factory ListAbuseReportsResponse.fromJson(Map<String, dynamic> json) {return ListAbuseReportsResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] != null ? ListAbuseReportsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
   resultInfo: json['result_info'] != null ? AbuseReportsMitigationAppealResultResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
-); }
+);}
 
 final List<AbuseReportsMessage>? errors;
 
@@ -21,21 +21,21 @@ final AbuseReportsMitigationAppealResultResultInfo? resultInfo;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
   if (result != null) 'result': result?.toJson(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-ListAbuseReportsResponse copyWith({List<AbuseReportsMessage>? Function()? errors, List<AbuseReportsMessage>? Function()? messages, ListAbuseReportsResponseResult? Function()? result, AbuseReportsMitigationAppealResultResultInfo? Function()? resultInfo, bool? success, }) { return ListAbuseReportsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('success') && json['success'] is bool;}
+ListAbuseReportsResponse copyWith({List<AbuseReportsMessage>? Function()? errors, List<AbuseReportsMessage>? Function()? messages, ListAbuseReportsResponseResult? Function()? result, AbuseReportsMitigationAppealResultResultInfo? Function()? resultInfo, bool? success, }) {return ListAbuseReportsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListAbuseReportsResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ ListAbuseReportsResponse copyWith({List<AbuseReportsMessage>? Function()? errors
 
 @override String toString() => 'ListAbuseReportsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)';
 
- }
+}

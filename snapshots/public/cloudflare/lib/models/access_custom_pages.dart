@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessCustomPages {const AccessCustomPages({this.forbidden, this.identityDenied, });
 
-factory AccessCustomPages.fromJson(Map<String, dynamic> json) { return AccessCustomPages(
+factory AccessCustomPages.fromJson(Map<String, dynamic> json) {return AccessCustomPages(
   forbidden: json['forbidden'] as String?,
   identityDenied: json['identity_denied'] as String?,
-); }
+);}
 
 /// The uid of the custom page to use when a user is denied access after failing a non-identity rule.
 /// 
@@ -18,15 +18,15 @@ final String? forbidden;
 /// Example: `'699d98642c564d2e855e9661899b7252'`
 final String? identityDenied;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'forbidden': ?forbidden,
   'identity_denied': ?identityDenied,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'forbidden', 'identity_denied'}.contains(key)); } 
-AccessCustomPages copyWith({String? Function()? forbidden, String? Function()? identityDenied, }) { return AccessCustomPages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'forbidden', 'identity_denied'}.contains(key));}
+AccessCustomPages copyWith({String? Function()? forbidden, String? Function()? identityDenied, }) {return AccessCustomPages(
   forbidden: forbidden != null ? forbidden() : this.forbidden,
   identityDenied: identityDenied != null ? identityDenied() : this.identityDenied,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCustomPages &&
           forbidden == other.forbidden &&
@@ -36,4 +36,4 @@ AccessCustomPages copyWith({String? Function()? forbidden, String? Function()? i
 
 @override String toString() => 'AccessCustomPages(forbidden: $forbidden, identityDenied: $identityDenied)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullableRequiredEmptyObjectPostResponseJson {const NullableRequiredEmptyObjectPostResponseJson({required this.requiredObj, required this.nullableRequiredObj, this.nullableOptionalObj = const Omittable.absent(), });
 
-factory NullableRequiredEmptyObjectPostResponseJson.fromJson(Map<String, dynamic> json) { return NullableRequiredEmptyObjectPostResponseJson(
+factory NullableRequiredEmptyObjectPostResponseJson.fromJson(Map<String, dynamic> json) {return NullableRequiredEmptyObjectPostResponseJson(
   requiredObj: json['RequiredObj'] as Map<String, dynamic>,
   nullableOptionalObj: json.containsKey('NullableOptionalObj') ? Omittable(json['NullableOptionalObj'] as Map<String, dynamic>?) : const Omittable.absent(),
   nullableRequiredObj: json['NullableRequiredObj'] as Map<String, dynamic>?,
-); }
+);}
 
 final Map<String,dynamic> requiredObj;
 
@@ -15,18 +15,18 @@ final Omittable<Map<String,dynamic>?> nullableOptionalObj;
 
 final Map<String,dynamic>? nullableRequiredObj;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'RequiredObj': requiredObj,
   if (nullableOptionalObj.isPresent) 'NullableOptionalObj': nullableOptionalObj.value,
   'NullableRequiredObj': nullableRequiredObj,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('RequiredObj') &&
-      json.containsKey('NullableRequiredObj'); } 
-NullableRequiredEmptyObjectPostResponseJson copyWith({Map<String,dynamic>? requiredObj, Omittable<Map<String,dynamic>?>? nullableOptionalObj, Map<String, dynamic>? Function()? nullableRequiredObj, }) { return NullableRequiredEmptyObjectPostResponseJson(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('RequiredObj') &&
+      json.containsKey('NullableRequiredObj');}
+NullableRequiredEmptyObjectPostResponseJson copyWith({Map<String,dynamic>? requiredObj, Omittable<Map<String,dynamic>?>? nullableOptionalObj, Map<String, dynamic>? Function()? nullableRequiredObj, }) {return NullableRequiredEmptyObjectPostResponseJson(
   requiredObj: requiredObj ?? this.requiredObj,
   nullableOptionalObj: nullableOptionalObj ?? this.nullableOptionalObj,
   nullableRequiredObj: nullableRequiredObj != null ? nullableRequiredObj() : this.nullableRequiredObj,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NullableRequiredEmptyObjectPostResponseJson &&
           requiredObj == other.requiredObj &&
@@ -37,4 +37,4 @@ NullableRequiredEmptyObjectPostResponseJson copyWith({Map<String,dynamic>? requi
 
 @override String toString() => 'NullableRequiredEmptyObjectPostResponseJson(requiredObj: $requiredObj, nullableOptionalObj: $nullableOptionalObj, nullableRequiredObj: $nullableRequiredObj)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_tax_ids_request/post_customers_customer_tax_ids_request_type.dart';@immutable final class PostCustomersCustomerTaxIdsRequest {const PostCustomersCustomerTaxIdsRequest({required this.type, required this.value, this.expand, });
 
-factory PostCustomersCustomerTaxIdsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerTaxIdsRequest(
+factory PostCustomersCustomerTaxIdsRequest.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerTaxIdsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: PostCustomersCustomerTaxIdsRequestType.fromJson(json['type'] as String),
   value: json['value'] as String,
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -18,18 +18,18 @@ final PostCustomersCustomerTaxIdsRequestType type;
 /// Value of the tax ID.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'type': type.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('value') && json['value'] is String; } 
-PostCustomersCustomerTaxIdsRequest copyWith({List<String>? Function()? expand, PostCustomersCustomerTaxIdsRequestType? type, String? value, }) { return PostCustomersCustomerTaxIdsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String;}
+PostCustomersCustomerTaxIdsRequest copyWith({List<String>? Function()? expand, PostCustomersCustomerTaxIdsRequestType? type, String? value, }) {return PostCustomersCustomerTaxIdsRequest(
   expand: expand != null ? expand() : this.expand,
   type: type ?? this.type,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerTaxIdsRequest &&
           listEquals(expand, other.expand) &&
@@ -40,4 +40,4 @@ PostCustomersCustomerTaxIdsRequest copyWith({List<String>? Function()? expand, P
 
 @override String toString() => 'PostCustomersCustomerTaxIdsRequest(expand: $expand, type: $type, value: $value)';
 
- }
+}

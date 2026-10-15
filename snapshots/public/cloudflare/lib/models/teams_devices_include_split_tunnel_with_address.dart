@@ -10,10 +10,10 @@ String toJson() => value;
 }
 @immutable final class TeamsDevicesIncludeSplitTunnelWithAddress {const TeamsDevicesIncludeSplitTunnelWithAddress({required this.address, this.description, });
 
-factory TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(Map<String, dynamic> json) { return TeamsDevicesIncludeSplitTunnelWithAddress(
+factory TeamsDevicesIncludeSplitTunnelWithAddress.fromJson(Map<String, dynamic> json) {return TeamsDevicesIncludeSplitTunnelWithAddress(
   address: TeamsDevicesIncludeSplitTunnelAddress.fromJson(json['address'] as String),
   description: json['description'] != null ? TeamsDevicesIncludeSplitTunnelDescription.fromJson(json['description'] as String) : null,
-); }
+);}
 
 /// The address in CIDR format to include in the tunnel. If `address` is present, `host` must not be present.
 final TeamsDevicesIncludeSplitTunnelAddress address;
@@ -21,15 +21,15 @@ final TeamsDevicesIncludeSplitTunnelAddress address;
 /// A description of the Split Tunnel item, displayed in the client UI.
 final TeamsDevicesIncludeSplitTunnelDescription? description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (description != null) 'description': description?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-TeamsDevicesIncludeSplitTunnelWithAddress copyWith({TeamsDevicesIncludeSplitTunnelAddress? address, TeamsDevicesIncludeSplitTunnelDescription? Function()? description, }) { return TeamsDevicesIncludeSplitTunnelWithAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address');}
+TeamsDevicesIncludeSplitTunnelWithAddress copyWith({TeamsDevicesIncludeSplitTunnelAddress? address, TeamsDevicesIncludeSplitTunnelDescription? Function()? description, }) {return TeamsDevicesIncludeSplitTunnelWithAddress(
   address: address ?? this.address,
   description: description != null ? description() : this.description,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIncludeSplitTunnelWithAddress &&
           address == other.address &&
@@ -39,4 +39,4 @@ TeamsDevicesIncludeSplitTunnelWithAddress copyWith({TeamsDevicesIncludeSplitTunn
 
 @override String toString() => 'TeamsDevicesIncludeSplitTunnelWithAddress(address: $address, description: $description)';
 
- }
+}

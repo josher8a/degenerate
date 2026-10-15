@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementTargetVariant2 {const WorkersPlacementTargetVariant2({required this.hostname});
 
-factory WorkersPlacementTargetVariant2.fromJson(Map<String, dynamic> json) { return WorkersPlacementTargetVariant2(
+factory WorkersPlacementTargetVariant2.fromJson(Map<String, dynamic> json) {return WorkersPlacementTargetVariant2(
   hostname: json['hostname'] as String,
-); }
+);}
 
 /// HTTP hostname for targeted placement.
 /// 
 /// Example: `'api.example.com'`
 final String hostname;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'hostname': hostname,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String; } 
-WorkersPlacementTargetVariant2 copyWith({String? hostname}) { return WorkersPlacementTargetVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') && json['hostname'] is String;}
+WorkersPlacementTargetVariant2 copyWith({String? hostname}) {return WorkersPlacementTargetVariant2(
   hostname: hostname ?? this.hostname,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersPlacementTargetVariant2 &&
           hostname == other.hostname;
@@ -27,4 +27,4 @@ WorkersPlacementTargetVariant2 copyWith({String? hostname}) { return WorkersPlac
 
 @override String toString() => 'WorkersPlacementTargetVariant2(hostname: $hostname)';
 
- }
+}

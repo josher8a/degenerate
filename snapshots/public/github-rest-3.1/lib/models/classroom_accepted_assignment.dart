@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_assignment.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_repository.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_user.dart';/// A GitHub Classroom accepted assignment
 @immutable final class ClassroomAcceptedAssignment {const ClassroomAcceptedAssignment({required this.id, required this.submitted, required this.passing, required this.commitCount, required this.grade, required this.students, required this.repository, required this.assignment, });
 
-factory ClassroomAcceptedAssignment.fromJson(Map<String, dynamic> json) { return ClassroomAcceptedAssignment(
+factory ClassroomAcceptedAssignment.fromJson(Map<String, dynamic> json) {return ClassroomAcceptedAssignment(
   id: (json['id'] as num).toInt(),
   submitted: json['submitted'] as bool,
   passing: json['passing'] as bool,
@@ -13,7 +13,7 @@ factory ClassroomAcceptedAssignment.fromJson(Map<String, dynamic> json) { return
   students: (json['students'] as List<dynamic>).map((e) => SimpleClassroomUser.fromJson(e as Map<String, dynamic>)).toList(),
   repository: SimpleClassroomRepository.fromJson(json['repository'] as Map<String, dynamic>),
   assignment: SimpleClassroomAssignment.fromJson(json['assignment'] as Map<String, dynamic>),
-); }
+);}
 
 /// Unique identifier of the repository.
 final int id;
@@ -36,7 +36,7 @@ final SimpleClassroomRepository repository;
 
 final SimpleClassroomAssignment assignment;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'submitted': submitted,
   'passing': passing,
@@ -45,16 +45,16 @@ Map<String, dynamic> toJson() { return {
   'students': students.map((e) => e.toJson()).toList(),
   'repository': repository.toJson(),
   'assignment': assignment.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('submitted') && json['submitted'] is bool &&
       json.containsKey('passing') && json['passing'] is bool &&
       json.containsKey('commit_count') && json['commit_count'] is num &&
       json.containsKey('grade') && json['grade'] is String &&
       json.containsKey('students') &&
       json.containsKey('repository') &&
-      json.containsKey('assignment'); } 
-ClassroomAcceptedAssignment copyWith({int? id, bool? submitted, bool? passing, int? commitCount, String? grade, List<SimpleClassroomUser>? students, SimpleClassroomRepository? repository, SimpleClassroomAssignment? assignment, }) { return ClassroomAcceptedAssignment(
+      json.containsKey('assignment');}
+ClassroomAcceptedAssignment copyWith({int? id, bool? submitted, bool? passing, int? commitCount, String? grade, List<SimpleClassroomUser>? students, SimpleClassroomRepository? repository, SimpleClassroomAssignment? assignment, }) {return ClassroomAcceptedAssignment(
   id: id ?? this.id,
   submitted: submitted ?? this.submitted,
   passing: passing ?? this.passing,
@@ -63,7 +63,7 @@ ClassroomAcceptedAssignment copyWith({int? id, bool? submitted, bool? passing, i
   students: students ?? this.students,
   repository: repository ?? this.repository,
   assignment: assignment ?? this.assignment,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ClassroomAcceptedAssignment &&
           id == other.id &&
@@ -79,4 +79,4 @@ ClassroomAcceptedAssignment copyWith({int? id, bool? submitted, bool? passing, i
 
 @override String toString() => 'ClassroomAcceptedAssignment(id: $id, submitted: $submitted, passing: $passing, commitCount: $commitCount, grade: $grade, students: $students, repository: $repository, assignment: $assignment)';
 
- }
+}

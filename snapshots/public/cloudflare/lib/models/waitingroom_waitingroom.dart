@@ -17,7 +17,7 @@ String toJson() => value;
 }
 @immutable final class WaitingroomWaitingroom {const WaitingroomWaitingroom({this.additionalRoutes, this.cookieAttributes, this.cookieSuffix, this.createdOn, this.customPageHtml, this.defaultTemplateLanguage, this.description, this.disableSessionRenewal, this.enabledOriginCommands, this.host, this.id, this.jsonResponseEnabled, this.modifiedOn, this.name, this.newUsersPerMinute, this.nextEventPrequeueStartTime = const Omittable.absent(), this.nextEventStartTime = const Omittable.absent(), this.path, this.queueAll, this.queueingMethod, this.queueingStatusCode, this.sessionDuration, this.suspended, this.totalActiveUsers, this.turnstileAction, this.turnstileMode, });
 
-factory WaitingroomWaitingroom.fromJson(Map<String, dynamic> json) { return WaitingroomWaitingroom(
+factory WaitingroomWaitingroom.fromJson(Map<String, dynamic> json) {return WaitingroomWaitingroom(
   additionalRoutes: (json['additional_routes'] as List<dynamic>?)?.map((e) => WaitingroomAdditionalRoutes2.fromJson(e as Map<String, dynamic>)).toList(),
   cookieAttributes: json['cookie_attributes'] != null ? WaitingroomCookieAttributes.fromJson(json['cookie_attributes'] as Map<String, dynamic>) : null,
   cookieSuffix: json['cookie_suffix'] != null ? WaitingroomCookieSuffix.fromJson(json['cookie_suffix'] as String) : null,
@@ -44,7 +44,7 @@ factory WaitingroomWaitingroom.fromJson(Map<String, dynamic> json) { return Wait
   totalActiveUsers: json['total_active_users'] != null ? WaitingroomTotalActiveUsers.fromJson(json['total_active_users'] as num) : null,
   turnstileAction: json['turnstile_action'] != null ? WaitingroomTurnstileAction.fromJson(json['turnstile_action'] as String) : null,
   turnstileMode: json['turnstile_mode'] != null ? WaitingroomTurnstileMode.fromJson(json['turnstile_mode'] as String) : null,
-); }
+);}
 
 /// Only available for the Waiting Room Advanced subscription. Additional hostname and path combinations to which this waiting room will be applied. There is an implied wildcard at the end of the path. The hostname and path combination must be unique to this and all other waiting rooms.
 final List<WaitingroomAdditionalRoutes2>? additionalRoutes;
@@ -232,7 +232,7 @@ final WaitingroomTurnstileAction? turnstileAction;
 /// 
 final WaitingroomTurnstileMode? turnstileMode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalRoutes != null) 'additional_routes': additionalRoutes?.map((e) => e.toJson()).toList(),
   if (cookieAttributes != null) 'cookie_attributes': cookieAttributes?.toJson(),
   if (cookieSuffix != null) 'cookie_suffix': cookieSuffix?.toJson(),
@@ -259,9 +259,9 @@ Map<String, dynamic> toJson() { return {
   if (totalActiveUsers != null) 'total_active_users': totalActiveUsers?.toJson(),
   if (turnstileAction != null) 'turnstile_action': turnstileAction?.toJson(),
   if (turnstileMode != null) 'turnstile_mode': turnstileMode?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_routes', 'cookie_attributes', 'cookie_suffix', 'created_on', 'custom_page_html', 'default_template_language', 'description', 'disable_session_renewal', 'enabled_origin_commands', 'host', 'id', 'json_response_enabled', 'modified_on', 'name', 'new_users_per_minute', 'next_event_prequeue_start_time', 'next_event_start_time', 'path', 'queue_all', 'queueing_method', 'queueing_status_code', 'session_duration', 'suspended', 'total_active_users', 'turnstile_action', 'turnstile_mode'}.contains(key)); } 
-WaitingroomWaitingroom copyWith({List<WaitingroomAdditionalRoutes2>? Function()? additionalRoutes, WaitingroomCookieAttributes? Function()? cookieAttributes, WaitingroomCookieSuffix? Function()? cookieSuffix, WaitingroomTimestamp? Function()? createdOn, WaitingroomCustomPageHtml? Function()? customPageHtml, WaitingroomDefaultTemplateLanguage? Function()? defaultTemplateLanguage, WaitingroomDescription? Function()? description, WaitingroomDisableSessionRenewal? Function()? disableSessionRenewal, List<WaitingroomEnabledOriginCommands2>? Function()? enabledOriginCommands, WaitingroomHost? Function()? host, WaitingroomWaitingRoomId? Function()? id, WaitingroomJsonResponseEnabled? Function()? jsonResponseEnabled, WaitingroomTimestamp? Function()? modifiedOn, WaitingroomName? Function()? name, WaitingroomNewUsersPerMinute? Function()? newUsersPerMinute, Omittable<WaitingroomNextEventPrequeueStartTime?>? nextEventPrequeueStartTime, Omittable<WaitingroomNextEventStartTime?>? nextEventStartTime, WaitingroomPath? Function()? path, WaitingroomQueueAll? Function()? queueAll, WaitingroomQueueingMethod? Function()? queueingMethod, WaitingroomQueueingStatusCode? Function()? queueingStatusCode, WaitingroomSessionDuration? Function()? sessionDuration, WaitingroomSuspended? Function()? suspended, WaitingroomTotalActiveUsers? Function()? totalActiveUsers, WaitingroomTurnstileAction? Function()? turnstileAction, WaitingroomTurnstileMode? Function()? turnstileMode, }) { return WaitingroomWaitingroom(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_routes', 'cookie_attributes', 'cookie_suffix', 'created_on', 'custom_page_html', 'default_template_language', 'description', 'disable_session_renewal', 'enabled_origin_commands', 'host', 'id', 'json_response_enabled', 'modified_on', 'name', 'new_users_per_minute', 'next_event_prequeue_start_time', 'next_event_start_time', 'path', 'queue_all', 'queueing_method', 'queueing_status_code', 'session_duration', 'suspended', 'total_active_users', 'turnstile_action', 'turnstile_mode'}.contains(key));}
+WaitingroomWaitingroom copyWith({List<WaitingroomAdditionalRoutes2>? Function()? additionalRoutes, WaitingroomCookieAttributes? Function()? cookieAttributes, WaitingroomCookieSuffix? Function()? cookieSuffix, WaitingroomTimestamp? Function()? createdOn, WaitingroomCustomPageHtml? Function()? customPageHtml, WaitingroomDefaultTemplateLanguage? Function()? defaultTemplateLanguage, WaitingroomDescription? Function()? description, WaitingroomDisableSessionRenewal? Function()? disableSessionRenewal, List<WaitingroomEnabledOriginCommands2>? Function()? enabledOriginCommands, WaitingroomHost? Function()? host, WaitingroomWaitingRoomId? Function()? id, WaitingroomJsonResponseEnabled? Function()? jsonResponseEnabled, WaitingroomTimestamp? Function()? modifiedOn, WaitingroomName? Function()? name, WaitingroomNewUsersPerMinute? Function()? newUsersPerMinute, Omittable<WaitingroomNextEventPrequeueStartTime?>? nextEventPrequeueStartTime, Omittable<WaitingroomNextEventStartTime?>? nextEventStartTime, WaitingroomPath? Function()? path, WaitingroomQueueAll? Function()? queueAll, WaitingroomQueueingMethod? Function()? queueingMethod, WaitingroomQueueingStatusCode? Function()? queueingStatusCode, WaitingroomSessionDuration? Function()? sessionDuration, WaitingroomSuspended? Function()? suspended, WaitingroomTotalActiveUsers? Function()? totalActiveUsers, WaitingroomTurnstileAction? Function()? turnstileAction, WaitingroomTurnstileMode? Function()? turnstileMode, }) {return WaitingroomWaitingroom(
   additionalRoutes: additionalRoutes != null ? additionalRoutes() : this.additionalRoutes,
   cookieAttributes: cookieAttributes != null ? cookieAttributes() : this.cookieAttributes,
   cookieSuffix: cookieSuffix != null ? cookieSuffix() : this.cookieSuffix,
@@ -288,7 +288,7 @@ WaitingroomWaitingroom copyWith({List<WaitingroomAdditionalRoutes2>? Function()?
   totalActiveUsers: totalActiveUsers != null ? totalActiveUsers() : this.totalActiveUsers,
   turnstileAction: turnstileAction != null ? turnstileAction() : this.turnstileAction,
   turnstileMode: turnstileMode != null ? turnstileMode() : this.turnstileMode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomWaitingroom &&
           listEquals(additionalRoutes, other.additionalRoutes) &&
@@ -322,4 +322,4 @@ WaitingroomWaitingroom copyWith({List<WaitingroomAdditionalRoutes2>? Function()?
 
 @override String toString() => 'WaitingroomWaitingroom(\n  additionalRoutes: $additionalRoutes,\n  cookieAttributes: $cookieAttributes,\n  cookieSuffix: $cookieSuffix,\n  createdOn: $createdOn,\n  customPageHtml: $customPageHtml,\n  defaultTemplateLanguage: $defaultTemplateLanguage,\n  description: $description,\n  disableSessionRenewal: $disableSessionRenewal,\n  enabledOriginCommands: $enabledOriginCommands,\n  host: $host,\n  id: $id,\n  jsonResponseEnabled: $jsonResponseEnabled,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  newUsersPerMinute: $newUsersPerMinute,\n  nextEventPrequeueStartTime: $nextEventPrequeueStartTime,\n  nextEventStartTime: $nextEventStartTime,\n  path: $path,\n  queueAll: $queueAll,\n  queueingMethod: $queueingMethod,\n  queueingStatusCode: $queueingStatusCode,\n  sessionDuration: $sessionDuration,\n  suspended: $suspended,\n  totalActiveUsers: $totalActiveUsers,\n  turnstileAction: $turnstileAction,\n  turnstileMode: $turnstileMode,\n)';
 
- }
+}

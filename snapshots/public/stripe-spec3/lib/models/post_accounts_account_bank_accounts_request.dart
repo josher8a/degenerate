@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request/post_accounts_account_bank_accounts_request_bank_account.dart';@immutable final class PostAccountsAccountBankAccountsRequest {const PostAccountsAccountBankAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
 
-factory PostAccountsAccountBankAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountBankAccountsRequest(
+factory PostAccountsAccountBankAccountsRequest.fromJson(Map<String, dynamic> json) {return PostAccountsAccountBankAccountsRequest(
   bankAccount: json['bank_account'] != null ? PostAccountsAccountBankAccountsRequestBankAccount.fromJson(json['bank_account']) : null,
   defaultForCurrency: json['default_for_currency'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   externalAccount: json['external_account'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// Either a token, like the ones returned by [Stripe.js](https://stripe.com/docs/js), or a dictionary containing a user's bank account details.
 final PostAccountsAccountBankAccountsRequestBankAccount? bankAccount;
@@ -26,28 +26,28 @@ final String? externalAccount;
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankAccount != null) 'bank_account': bankAccount?.toJson(),
   'default_for_currency': ?defaultForCurrency,
   'expand': ?expand,
   'external_account': ?externalAccount,
   'metadata': ?metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account', 'default_for_currency', 'expand', 'external_account', 'metadata'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_account', 'default_for_currency', 'expand', 'external_account', 'metadata'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final externalAccount$ = externalAccount;
 if (externalAccount$ != null) {
   if (externalAccount$.runes.length > 5000) { errors.add('externalAccount: length must be <= 5000'); }
 }
-return errors; } 
-PostAccountsAccountBankAccountsRequest copyWith({PostAccountsAccountBankAccountsRequestBankAccount? Function()? bankAccount, bool? Function()? defaultForCurrency, List<String>? Function()? expand, String? Function()? externalAccount, Map<String, String>? Function()? metadata, }) { return PostAccountsAccountBankAccountsRequest(
+return errors;}
+PostAccountsAccountBankAccountsRequest copyWith({PostAccountsAccountBankAccountsRequestBankAccount? Function()? bankAccount, bool? Function()? defaultForCurrency, List<String>? Function()? expand, String? Function()? externalAccount, Map<String, String>? Function()? metadata, }) {return PostAccountsAccountBankAccountsRequest(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   defaultForCurrency: defaultForCurrency != null ? defaultForCurrency() : this.defaultForCurrency,
   expand: expand != null ? expand() : this.expand,
   externalAccount: externalAccount != null ? externalAccount() : this.externalAccount,
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountBankAccountsRequest &&
           bankAccount == other.bankAccount &&
@@ -60,4 +60,4 @@ PostAccountsAccountBankAccountsRequest copyWith({PostAccountsAccountBankAccounts
 
 @override String toString() => 'PostAccountsAccountBankAccountsRequest(bankAccount: $bankAccount, defaultForCurrency: $defaultForCurrency, expand: $expand, externalAccount: $externalAccount, metadata: $metadata)';
 
- }
+}

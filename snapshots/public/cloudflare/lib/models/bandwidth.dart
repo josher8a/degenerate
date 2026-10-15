@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bandwidth structure as visible through the customer-facing API.
 sealed class Bandwidth {const Bandwidth();
 
-factory Bandwidth.fromJson(String json) { return switch (json) {
+factory Bandwidth.fromJson(String json) {return switch (json) {
   '50M' => $50M,
   '100M' => $100M,
   '200M' => $200M,
@@ -18,7 +18,7 @@ factory Bandwidth.fromJson(String json) { return switch (json) {
   '20G' => $20G,
   '50G' => $50G,
   _ => Bandwidth$Unknown(json),
-}; }
+};}
 
 static const Bandwidth $50M = Bandwidth$$50M._();
 
@@ -47,9 +47,9 @@ static const Bandwidth $50G = Bandwidth$$50G._();
 static const List<Bandwidth> values = [$50M, $100M, $200M, $300M, $400M, $500M, $1G, $2G, $5G, $10G, $20G, $50G];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '50M' => r'$50M',
   '100M' => r'$100M',
   '200M' => r'$200M',
@@ -63,11 +63,11 @@ String get name { return switch (value) {
   '20G' => r'$20G',
   '50G' => r'$50G',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Bandwidth$Unknown; } 
+bool get isUnknown {return this is Bandwidth$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $50M, required W Function() $100M, required W Function() $200M, required W Function() $300M, required W Function() $400M, required W Function() $500M, required W Function() $1G, required W Function() $2G, required W Function() $5G, required W Function() $10G, required W Function() $20G, required W Function() $50G, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $50M, required W Function() $100M, required W Function() $200M, required W Function() $300M, required W Function() $400M, required W Function() $500M, required W Function() $1G, required W Function() $2G, required W Function() $5G, required W Function() $10G, required W Function() $20G, required W Function() $50G, required W Function(String value) $unknown, }) {return switch (this) {
       Bandwidth$$50M() => $50M(),
       Bandwidth$$100M() => $100M(),
       Bandwidth$$200M() => $200M(),
@@ -81,9 +81,9 @@ W when<W>({required W Function() $50M, required W Function() $100M, required W F
       Bandwidth$$20G() => $20G(),
       Bandwidth$$50G() => $50G(),
       Bandwidth$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W Function()? $100M, W Function()? $200M, W Function()? $300M, W Function()? $400M, W Function()? $500M, W Function()? $1G, W Function()? $2G, W Function()? $5G, W Function()? $10G, W Function()? $20G, W Function()? $50G, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W Function()? $100M, W Function()? $200M, W Function()? $300M, W Function()? $400M, W Function()? $500M, W Function()? $1G, W Function()? $2G, W Function()? $5G, W Function()? $10G, W Function()? $20G, W Function()? $50G, W Function(String value)? $unknown, }) {return switch (this) {
       Bandwidth$$50M() => $50M != null ? $50M() : orElse(value),
       Bandwidth$$100M() => $100M != null ? $100M() : orElse(value),
       Bandwidth$$200M() => $200M != null ? $200M() : orElse(value),
@@ -97,10 +97,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
       Bandwidth$$20G() => $20G != null ? $20G() : orElse(value),
       Bandwidth$$50G() => $50G != null ? $50G() : orElse(value),
       Bandwidth$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Bandwidth($value)';
 
- }
+}
 @immutable final class Bandwidth$$50M extends Bandwidth {const Bandwidth$$50M._();
 
 @override String get value => '50M';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '50M'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$100M extends Bandwidth {const Bandwidth$$100M._();
 
 @override String get value => '100M';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '100M'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$200M extends Bandwidth {const Bandwidth$$200M._();
 
 @override String get value => '200M';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '200M'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$300M extends Bandwidth {const Bandwidth$$300M._();
 
 @override String get value => '300M';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '300M'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$400M extends Bandwidth {const Bandwidth$$400M._();
 
 @override String get value => '400M';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '400M'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$500M extends Bandwidth {const Bandwidth$$500M._();
 
 @override String get value => '500M';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '500M'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$1G extends Bandwidth {const Bandwidth$$1G._();
 
 @override String get value => '1G';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '1G'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$2G extends Bandwidth {const Bandwidth$$2G._();
 
 @override String get value => '2G';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '2G'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$5G extends Bandwidth {const Bandwidth$$5G._();
 
 @override String get value => '5G';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '5G'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$10G extends Bandwidth {const Bandwidth$$10G._();
 
 @override String get value => '10G';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '10G'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$20G extends Bandwidth {const Bandwidth$$20G._();
 
 @override String get value => '20G';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '20G'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$$50G extends Bandwidth {const Bandwidth$$50G._();
 
 @override String get value => '50G';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => '50G'.hashCode;
 
- }
+}
 @immutable final class Bandwidth$Unknown extends Bandwidth {const Bandwidth$Unknown(this.value);
 
 @override final String value;
@@ -218,4 +218,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

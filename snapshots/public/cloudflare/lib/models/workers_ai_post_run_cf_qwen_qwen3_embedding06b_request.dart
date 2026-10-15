@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_request/documents.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_request/queries.dart';@immutable final class WorkersAiPostRunCfQwenQwen3Embedding06bRequest {const WorkersAiPostRunCfQwenQwen3Embedding06bRequest({this.documents, this.instruction, this.queries, this.text, });
 
-factory WorkersAiPostRunCfQwenQwen3Embedding06bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
+factory WorkersAiPostRunCfQwenQwen3Embedding06bRequest.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
   documents: json['documents'] != null ? OneOf2.parse(json['documents'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   instruction: json['instruction'] as String?,
   queries: json['queries'] != null ? OneOf2.parse(json['queries'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   text: json['text'] != null ? OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
-); }
+);}
 
 final Documents? documents;
 
@@ -22,19 +22,19 @@ final InputEmbeddingText? text;
 /// The value of `instruction`, or its schema default when absent.
 String get instructionOrDefault => instruction ?? 'Given a web search query, retrieve relevant passages that answer the query';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (documents != null) 'documents': documents?.toJson(),
   'instruction': ?instruction,
   if (queries != null) 'queries': queries?.toJson(),
   if (text != null) 'text': text?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'documents', 'instruction', 'queries', 'text'}.contains(key)); } 
-WorkersAiPostRunCfQwenQwen3Embedding06bRequest copyWith({Documents? Function()? documents, String? Function()? instruction, Queries? Function()? queries, InputEmbeddingText? Function()? text, }) { return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'documents', 'instruction', 'queries', 'text'}.contains(key));}
+WorkersAiPostRunCfQwenQwen3Embedding06bRequest copyWith({Documents? Function()? documents, String? Function()? instruction, Queries? Function()? queries, InputEmbeddingText? Function()? text, }) {return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
   documents: documents != null ? documents() : this.documents,
   instruction: instruction != null ? instruction() : this.instruction,
   queries: queries != null ? queries() : this.queries,
   text: text != null ? text() : this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfQwenQwen3Embedding06bRequest &&
           documents == other.documents &&
@@ -46,4 +46,4 @@ WorkersAiPostRunCfQwenQwen3Embedding06bRequest copyWith({Documents? Function()? 
 
 @override String toString() => 'WorkersAiPostRunCfQwenQwen3Embedding06bRequest(documents: $documents, instruction: $instruction, queries: $queries, text: $text)';
 
- }
+}

@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Issue Event Rename
 @immutable final class IssueEventRename {const IssueEventRename({required this.from, required this.to, });
 
-factory IssueEventRename.fromJson(Map<String, dynamic> json) { return IssueEventRename(
+factory IssueEventRename.fromJson(Map<String, dynamic> json) {return IssueEventRename(
   from: json['from'] as String,
   to: json['to'] as String,
-); }
+);}
 
 final String from;
 
 final String to;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
   'to': to,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String &&
-      json.containsKey('to') && json['to'] is String; } 
-IssueEventRename copyWith({String? from, String? to, }) { return IssueEventRename(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && json['from'] is String &&
+      json.containsKey('to') && json['to'] is String;}
+IssueEventRename copyWith({String? from, String? to, }) {return IssueEventRename(
   from: from ?? this.from,
   to: to ?? this.to,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssueEventRename &&
           from == other.from &&
@@ -32,4 +32,4 @@ IssueEventRename copyWith({String? from, String? to, }) { return IssueEventRenam
 
 @override String toString() => 'IssueEventRename(from: $from, to: $to)';
 
- }
+}

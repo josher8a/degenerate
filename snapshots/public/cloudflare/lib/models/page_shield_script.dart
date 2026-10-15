@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_cryptomining_score.dart';import 'package:pub_cloudflare/models/page_shield_dataflow_score.dart';import 'package:pub_cloudflare/models/page_shield_fetched_at.dart';import 'package:pub_cloudflare/models/page_shield_hash.dart';import 'package:pub_cloudflare/models/page_shield_id.dart';import 'package:pub_cloudflare/models/page_shield_js_integrity_score.dart';import 'package:pub_cloudflare/models/page_shield_magecart_score.dart';import 'package:pub_cloudflare/models/page_shield_malware_score.dart';import 'package:pub_cloudflare/models/page_shield_obfuscation_score.dart';@immutable final class PageShieldScript {const PageShieldScript({required this.addedAt, required this.firstSeenAt, required this.host, required this.id, required this.lastSeenAt, required this.url, required this.urlContainsCdnCgiPath, this.cryptominingScore = const Omittable.absent(), this.dataflowScore = const Omittable.absent(), this.domainReportedMalicious, this.fetchedAt = const Omittable.absent(), this.firstPageUrl, this.hash = const Omittable.absent(), this.jsIntegrityScore = const Omittable.absent(), this.magecartScore = const Omittable.absent(), this.maliciousDomainCategories, this.maliciousUrlCategories, this.malwareScore = const Omittable.absent(), this.obfuscationScore = const Omittable.absent(), this.pageUrls, this.urlReportedMalicious, });
 
-factory PageShieldScript.fromJson(Map<String, dynamic> json) { return PageShieldScript(
+factory PageShieldScript.fromJson(Map<String, dynamic> json) {return PageShieldScript(
   addedAt: DateTime.parse(json['added_at'] as String),
   cryptominingScore: json.containsKey('cryptomining_score') ? Omittable(json['cryptomining_score'] != null ? PageShieldCryptominingScore.fromJson(json['cryptomining_score'] as num) : null) : const Omittable.absent(),
   dataflowScore: json.containsKey('dataflow_score') ? Omittable(json['dataflow_score'] != null ? PageShieldDataflowScore.fromJson(json['dataflow_score'] as num) : null) : const Omittable.absent(),
@@ -25,7 +25,7 @@ factory PageShieldScript.fromJson(Map<String, dynamic> json) { return PageShield
   url: json['url'] as String,
   urlContainsCdnCgiPath: json['url_contains_cdn_cgi_path'] as bool,
   urlReportedMalicious: json['url_reported_malicious'] as bool?,
-); }
+);}
 
 /// Example: `'2021-08-18T10:51:10.09615Z'`
 final DateTime addedAt;
@@ -90,7 +90,7 @@ final bool urlContainsCdnCgiPath;
 /// Example: `false`
 final bool? urlReportedMalicious;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'added_at': addedAt.toIso8601String(),
   if (cryptominingScore.isPresent) 'cryptomining_score': cryptominingScore.value?.toJson(),
   if (dataflowScore.isPresent) 'dataflow_score': dataflowScore.value?.toJson(),
@@ -112,15 +112,15 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'url_contains_cdn_cgi_path': urlContainsCdnCgiPath,
   'url_reported_malicious': ?urlReportedMalicious,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('added_at') && json['added_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('added_at') && json['added_at'] is String &&
       json.containsKey('first_seen_at') && json['first_seen_at'] is String &&
       json.containsKey('host') && json['host'] is String &&
       json.containsKey('id') &&
       json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('url_contains_cdn_cgi_path') && json['url_contains_cdn_cgi_path'] is bool; } 
-PageShieldScript copyWith({DateTime? addedAt, Omittable<PageShieldCryptominingScore?>? cryptominingScore, Omittable<PageShieldDataflowScore?>? dataflowScore, bool? Function()? domainReportedMalicious, Omittable<PageShieldFetchedAt?>? fetchedAt, String? Function()? firstPageUrl, DateTime? firstSeenAt, Omittable<PageShieldHash?>? hash, String? host, PageShieldId? id, Omittable<PageShieldJsIntegrityScore?>? jsIntegrityScore, DateTime? lastSeenAt, Omittable<PageShieldMagecartScore?>? magecartScore, List<String>? Function()? maliciousDomainCategories, List<String>? Function()? maliciousUrlCategories, Omittable<PageShieldMalwareScore?>? malwareScore, Omittable<PageShieldObfuscationScore?>? obfuscationScore, List<String>? Function()? pageUrls, String? url, bool? urlContainsCdnCgiPath, bool? Function()? urlReportedMalicious, }) { return PageShieldScript(
+      json.containsKey('url_contains_cdn_cgi_path') && json['url_contains_cdn_cgi_path'] is bool;}
+PageShieldScript copyWith({DateTime? addedAt, Omittable<PageShieldCryptominingScore?>? cryptominingScore, Omittable<PageShieldDataflowScore?>? dataflowScore, bool? Function()? domainReportedMalicious, Omittable<PageShieldFetchedAt?>? fetchedAt, String? Function()? firstPageUrl, DateTime? firstSeenAt, Omittable<PageShieldHash?>? hash, String? host, PageShieldId? id, Omittable<PageShieldJsIntegrityScore?>? jsIntegrityScore, DateTime? lastSeenAt, Omittable<PageShieldMagecartScore?>? magecartScore, List<String>? Function()? maliciousDomainCategories, List<String>? Function()? maliciousUrlCategories, Omittable<PageShieldMalwareScore?>? malwareScore, Omittable<PageShieldObfuscationScore?>? obfuscationScore, List<String>? Function()? pageUrls, String? url, bool? urlContainsCdnCgiPath, bool? Function()? urlReportedMalicious, }) {return PageShieldScript(
   addedAt: addedAt ?? this.addedAt,
   cryptominingScore: cryptominingScore ?? this.cryptominingScore,
   dataflowScore: dataflowScore ?? this.dataflowScore,
@@ -142,7 +142,7 @@ PageShieldScript copyWith({DateTime? addedAt, Omittable<PageShieldCryptominingSc
   url: url ?? this.url,
   urlContainsCdnCgiPath: urlContainsCdnCgiPath ?? this.urlContainsCdnCgiPath,
   urlReportedMalicious: urlReportedMalicious != null ? urlReportedMalicious() : this.urlReportedMalicious,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldScript &&
           addedAt == other.addedAt &&
@@ -171,4 +171,4 @@ PageShieldScript copyWith({DateTime? addedAt, Omittable<PageShieldCryptominingSc
 
 @override String toString() => 'PageShieldScript(\n  addedAt: $addedAt,\n  cryptominingScore: $cryptominingScore,\n  dataflowScore: $dataflowScore,\n  domainReportedMalicious: $domainReportedMalicious,\n  fetchedAt: $fetchedAt,\n  firstPageUrl: $firstPageUrl,\n  firstSeenAt: $firstSeenAt,\n  hash: $hash,\n  host: $host,\n  id: $id,\n  jsIntegrityScore: $jsIntegrityScore,\n  lastSeenAt: $lastSeenAt,\n  magecartScore: $magecartScore,\n  maliciousDomainCategories: $maliciousDomainCategories,\n  maliciousUrlCategories: $maliciousUrlCategories,\n  malwareScore: $malwareScore,\n  obfuscationScore: $obfuscationScore,\n  pageUrls: $pageUrls,\n  url: $url,\n  urlContainsCdnCgiPath: $urlContainsCdnCgiPath,\n  urlReportedMalicious: $urlReportedMalicious,\n)';
 
- }
+}

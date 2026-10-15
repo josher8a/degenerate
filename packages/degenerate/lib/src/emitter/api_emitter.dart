@@ -3,6 +3,7 @@ import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/success_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Shared request context for an operation: partitioned parameters, optional
@@ -28,6 +29,7 @@ final class ApiEmitter {
     this.ctx = EmitContext.empty,
     this.unwrapFields = const [],
     this.errorUnionMap = const {},
+    this.successUnionMap = const {},
   });
 
   /// The API group to emit.
@@ -41,6 +43,10 @@ final class ApiEmitter {
 
   /// Per-operation error union info (operationId -> ErrorUnionInfo).
   final Map<String, ErrorUnionInfo> errorUnionMap;
+
+  /// Per-operation success unions (operationId -> SuccessUnionInfo), for
+  /// operations whose success statuses carry differently typed bodies.
+  final Map<String, SuccessUnionInfo> successUnionMap;
 
   /// Emit the API client class as code_builder specs.
   List<Spec> emit() {
@@ -381,14 +387,29 @@ final class ApiEmitter {
     final errorResponseContent = errorUnion == null
         ? _errorResponseContent(op)
         : null;
+    // A nullable body (`type: [T, 'null']`, or an optional unwrapped field)
+    // can legitimately be null on the wire, so the result type says so.
     final needsNullableSuffix =
-        unwrapResult.unwrappedField != null &&
         returnType != null &&
         returnType.isNullable &&
         !(returnType is IrPrimitive &&
             returnType.kind == PrimitiveKind.dynamic_);
-    final returnTypeStr = returnType != null
-        ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
+    final shape = successShapeOf(op);
+    final successUnion = successUnionMap[op.operationId];
+    // A declared bodiless success status (a 204 next to a 200) yields null.
+    final emptyStatuses = switch (shape) {
+      SuccessSingle(:final emptyStatuses) => emptyStatuses,
+      _ => const <int>{},
+    };
+    final nullableResult = needsNullableSuffix ||
+        (emptyStatuses.isNotEmpty &&
+            returnType != null &&
+            !(returnType is IrPrimitive &&
+                returnType.kind == PrimitiveKind.dynamic_));
+    final returnTypeStr = successUnion != null
+        ? successUnion.className
+        : returnType != null
+        ? '${irTypeName(returnType)}${nullableResult ? '?' : ''}'
         : 'void';
     final String errorTypeStr;
     if (errorUnion != null) {
@@ -415,6 +436,8 @@ final class ApiEmitter {
       successResponseContent: successResponseContent,
       errorResponseContent: errorResponseContent,
       errorUnion: errorUnion,
+      successUnion: successUnion,
+      emptyStatuses: emptyStatuses,
       unwrappedField: unwrapResult.unwrappedField,
       unwrappedFieldIsOptional: unwrappedFieldIsOptional,
     );
@@ -458,6 +481,8 @@ final class ApiEmitter {
     (SpecString, IrMediaType)? successResponseContent,
     (SpecString, IrMediaType)? errorResponseContent,
     ErrorUnionInfo? errorUnion,
+    SuccessUnionInfo? successUnion,
+    Set<int> emptyStatuses = const {},
     String? unwrappedField,
     bool unwrappedFieldIsOptional = false,
   }) {
@@ -467,10 +492,22 @@ final class ApiEmitter {
     }
 
     // Build onSuccess callback
-    if (returnType != null) {
+    if (successUnion != null) {
+      buf.writeln('return await execute(');
+      buf.writeln('  request,');
+      buf.writeln('  onSuccess: ${successUnion.className}.fromResponse,');
+    } else if (returnType != null) {
       buf.writeln('return await execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (response) {');
+      if (emptyStatuses.isNotEmpty) {
+        final statuses = (emptyStatuses.toList()..sort()).join(', ');
+        final test = emptyStatuses.length == 1
+            ? 'response.statusCode == $statuses'
+            : 'const {$statuses}.contains(response.statusCode)';
+        // Declared without a body: nothing to decode.
+        buf.writeln('    if ($test) return null;');
+      }
       if (unwrappedField != null) {
         // Unwrap: parse full JSON, extract the field, deserialize it.
         buf.writeln(
@@ -531,15 +568,11 @@ final class ApiEmitter {
         }
         return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
       }(),
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.string => 'return response.body;',
-        PrimitiveKind.int => 'return int.parse(response.body);',
-        PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-        PrimitiveKind.bytes =>
-          'return ${ctx.fromJson(type, 'jsonDecode(response.body)')};',
-        _ => 'return jsonDecode(response.body);',
-      },
+      // A JSON body is JSON even for a scalar schema: a string arrives quoted
+      // (`"hello"`), a number may be spelled `1.0`, and a nullable body may be
+      // `null` — so decode it, then convert like any JSON value.
+      IrPrimitive() =>
+        'return ${ctx.fromJson(type, 'jsonDecode(response.body)', isOptional: type.isNullable)};',
       _ => null,
     };
   }
@@ -547,7 +580,7 @@ final class ApiEmitter {
   String _buildDeserializeExpr(SpecString mediaType, IrType returnType) {
     if (mediaType.test(isJsonLikeMediaType)) {
       return _sharedJsonDeserialize(returnType) ??
-          'return ${ctx.fromJson(returnType, 'jsonDecode(response.body)')};';
+          'return ${ctx.fromJson(returnType, 'jsonDecode(response.body)', isOptional: returnType.isNullable)};';
     }
 
     final unsupportedMessage = mediaType.rebuild(
@@ -1106,34 +1139,14 @@ final class ApiEmitter {
         'throw UnsupportedError(${unsupportedMessage.literal});';
   }
 
-  (SpecString, IrMediaType)? _successResponseContent(IrOperation op) {
-    // Find the first 2xx response with content.
-    // Check common codes first, then any other 2xx code.
-    const priorityCodes = {200, 201, 202, 203, 204};
-    for (final code in priorityCodes) {
-      final resp = op.responses[code];
-      if (resp != null) {
-        final content = preferredContent(resp.content);
-        if (content != null) return content;
-        // 201/204 with no content means void
-        if (resp.content.isEmpty) return null;
-      }
-    }
-    // Check remaining 2xx codes (206, 207, etc.), then the 2XX range
-    // sentinel.
-    for (final MapEntry(:key, :value) in op.responses.entries) {
-      if (key >= 200 && key < 300 && !priorityCodes.contains(key)) {
-        final content = preferredContent(value.content);
-        if (content != null) return content;
-        if (value.content.isEmpty) return null;
-      }
-    }
-    if (op.responses[kStatusRange2xx] case final resp?) {
-      final content = preferredContent(resp.content);
-      if (content != null) return content;
-    }
-    return null;
-  }
+  /// The single success body content, or `null` for a void result or a
+  /// success union (see [successShapeOf]).
+  (SpecString, IrMediaType)? _successResponseContent(IrOperation op) =>
+      switch (successShapeOf(op)) {
+        SuccessSingle(:final content) => content,
+        _ => null,
+      };
+
 
   String _buildRequestBodyExpr(
     SpecString mediaType,

@@ -14,7 +14,7 @@ final class QueryRunApi with ApiExecutor {const QueryRunApi(this.apiConfig);
 /// Run a temporary or saved query.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/query`
-Future<ApiResult<WorkersObservabilityQueryResults, TelemetryQueryError>> telemetryQuery({required String accountId, required TelemetryQueryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersObservabilityQueryResults, TelemetryQueryError>> telemetryQuery({required String accountId, required TelemetryQueryRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -33,5 +33,5 @@ return await execute(
   },
   onError: TelemetryQueryError.fromResponse,
 );
- } 
- }
+}
+}

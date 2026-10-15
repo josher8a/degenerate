@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey();
 
-factory AigConfigDeleteGatewayLogsFiltersKey.fromJson(String json) { return switch (json) {
+factory AigConfigDeleteGatewayLogsFiltersKey.fromJson(String json) {return switch (json) {
   'id' => id,
   'created_at' => createdAt,
   'request_content_type' => requestContentType,
@@ -30,7 +30,7 @@ factory AigConfigDeleteGatewayLogsFiltersKey.fromJson(String json) { return swit
   'compatibilityMode' => compatibilityMode,
   'dlp_action' => dlpAction,
   _ => AigConfigDeleteGatewayLogsFiltersKey$Unknown(json),
-}; }
+};}
 
 static const AigConfigDeleteGatewayLogsFiltersKey id = AigConfigDeleteGatewayLogsFiltersKey$id._();
 
@@ -85,9 +85,9 @@ static const AigConfigDeleteGatewayLogsFiltersKey dlpAction = AigConfigDeleteGat
 static const List<AigConfigDeleteGatewayLogsFiltersKey> values = [id, createdAt, requestContentType, responseContentType, requestType, success, cached, provider, model, modelType, cost, tokens, tokensIn, tokensOut, duration, feedback, eventId, metadataKey, metadataValue, promptsPromptId, promptsVersionId, authentication, wholesale, compatibilityMode, dlpAction];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'id' => 'id',
   'created_at' => 'createdAt',
   'request_content_type' => 'requestContentType',
@@ -114,11 +114,11 @@ String get name { return switch (value) {
   'compatibilityMode' => 'compatibilityMode',
   'dlp_action' => 'dlpAction',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AigConfigDeleteGatewayLogsFiltersKey$Unknown; } 
+bool get isUnknown {return this is AigConfigDeleteGatewayLogsFiltersKey$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() id, required W Function() createdAt, required W Function() requestContentType, required W Function() responseContentType, required W Function() requestType, required W Function() success, required W Function() cached, required W Function() provider, required W Function() model, required W Function() modelType, required W Function() cost, required W Function() tokens, required W Function() tokensIn, required W Function() tokensOut, required W Function() duration, required W Function() feedback, required W Function() eventId, required W Function() metadataKey, required W Function() metadataValue, required W Function() promptsPromptId, required W Function() promptsVersionId, required W Function() authentication, required W Function() wholesale, required W Function() compatibilityMode, required W Function() dlpAction, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() id, required W Function() createdAt, required W Function() requestContentType, required W Function() responseContentType, required W Function() requestType, required W Function() success, required W Function() cached, required W Function() provider, required W Function() model, required W Function() modelType, required W Function() cost, required W Function() tokens, required W Function() tokensIn, required W Function() tokensOut, required W Function() duration, required W Function() feedback, required W Function() eventId, required W Function() metadataKey, required W Function() metadataValue, required W Function() promptsPromptId, required W Function() promptsVersionId, required W Function() authentication, required W Function() wholesale, required W Function() compatibilityMode, required W Function() dlpAction, required W Function(String value) $unknown, }) {return switch (this) {
       AigConfigDeleteGatewayLogsFiltersKey$id() => id(),
       AigConfigDeleteGatewayLogsFiltersKey$createdAt() => createdAt(),
       AigConfigDeleteGatewayLogsFiltersKey$requestContentType() => requestContentType(),
@@ -145,9 +145,9 @@ W when<W>({required W Function() id, required W Function() createdAt, required W
       AigConfigDeleteGatewayLogsFiltersKey$compatibilityMode() => compatibilityMode(),
       AigConfigDeleteGatewayLogsFiltersKey$dlpAction() => dlpAction(),
       AigConfigDeleteGatewayLogsFiltersKey$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Function()? createdAt, W Function()? requestContentType, W Function()? responseContentType, W Function()? requestType, W Function()? success, W Function()? cached, W Function()? provider, W Function()? model, W Function()? modelType, W Function()? cost, W Function()? tokens, W Function()? tokensIn, W Function()? tokensOut, W Function()? duration, W Function()? feedback, W Function()? eventId, W Function()? metadataKey, W Function()? metadataValue, W Function()? promptsPromptId, W Function()? promptsVersionId, W Function()? authentication, W Function()? wholesale, W Function()? compatibilityMode, W Function()? dlpAction, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Function()? createdAt, W Function()? requestContentType, W Function()? responseContentType, W Function()? requestType, W Function()? success, W Function()? cached, W Function()? provider, W Function()? model, W Function()? modelType, W Function()? cost, W Function()? tokens, W Function()? tokensIn, W Function()? tokensOut, W Function()? duration, W Function()? feedback, W Function()? eventId, W Function()? metadataKey, W Function()? metadataValue, W Function()? promptsPromptId, W Function()? promptsVersionId, W Function()? authentication, W Function()? wholesale, W Function()? compatibilityMode, W Function()? dlpAction, W Function(String value)? $unknown, }) {return switch (this) {
       AigConfigDeleteGatewayLogsFiltersKey$id() => id != null ? id() : orElse(value),
       AigConfigDeleteGatewayLogsFiltersKey$createdAt() => createdAt != null ? createdAt() : orElse(value),
       AigConfigDeleteGatewayLogsFiltersKey$requestContentType() => requestContentType != null ? requestContentType() : orElse(value),
@@ -174,10 +174,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
       AigConfigDeleteGatewayLogsFiltersKey$compatibilityMode() => compatibilityMode != null ? compatibilityMode() : orElse(value),
       AigConfigDeleteGatewayLogsFiltersKey$dlpAction() => dlpAction != null ? dlpAction() : orElse(value),
       AigConfigDeleteGatewayLogsFiltersKey$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AigConfigDeleteGatewayLogsFiltersKey($value)';
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$id extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$id._();
 
 @override String get value => 'id';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'id'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$createdAt extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$createdAt._();
 
 @override String get value => 'created_at';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'created_at'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$requestContentType extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$requestContentType._();
 
 @override String get value => 'request_content_type';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'request_content_type'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$responseContentType extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$responseContentType._();
 
 @override String get value => 'response_content_type';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'response_content_type'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$requestType extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$requestType._();
 
 @override String get value => 'request_type';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'request_type'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$success extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$success._();
 
 @override String get value => 'success';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$cached extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$cached._();
 
 @override String get value => 'cached';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'cached'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$provider extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$provider._();
 
 @override String get value => 'provider';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'provider'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$model extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$model._();
 
 @override String get value => 'model';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'model'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$modelType extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$modelType._();
 
 @override String get value => 'model_type';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'model_type'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$cost extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$cost._();
 
 @override String get value => 'cost';
@@ -276,7 +276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'cost'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$tokens extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$tokens._();
 
 @override String get value => 'tokens';
@@ -285,7 +285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'tokens'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$tokensIn extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$tokensIn._();
 
 @override String get value => 'tokens_in';
@@ -294,7 +294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'tokens_in'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$tokensOut extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$tokensOut._();
 
 @override String get value => 'tokens_out';
@@ -303,7 +303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'tokens_out'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$duration extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$duration._();
 
 @override String get value => 'duration';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'duration'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$feedback extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$feedback._();
 
 @override String get value => 'feedback';
@@ -321,7 +321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'feedback'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$eventId extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$eventId._();
 
 @override String get value => 'event_id';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'event_id'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$metadataKey extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$metadataKey._();
 
 @override String get value => 'metadata.key';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'metadata.key'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$metadataValue extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$metadataValue._();
 
 @override String get value => 'metadata.value';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'metadata.value'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$promptsPromptId extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$promptsPromptId._();
 
 @override String get value => 'prompts.prompt_id';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'prompts.prompt_id'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$promptsVersionId extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$promptsVersionId._();
 
 @override String get value => 'prompts.version_id';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'prompts.version_id'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$authentication extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$authentication._();
 
 @override String get value => 'authentication';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'authentication'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$wholesale extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$wholesale._();
 
 @override String get value => 'wholesale';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'wholesale'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$compatibilityMode extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$compatibilityMode._();
 
 @override String get value => 'compatibilityMode';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'compatibilityMode'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$dlpAction extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$dlpAction._();
 
 @override String get value => 'dlp_action';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => 'dlp_action'.hashCode;
 
- }
+}
 @immutable final class AigConfigDeleteGatewayLogsFiltersKey$Unknown extends AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey$Unknown(this.value);
 
 @override final String value;
@@ -412,4 +412,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

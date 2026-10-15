@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design/issuing_personalization_design_card_logo.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design/physical_bundle.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_carrier_text.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_preferences.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_rejection_reasons.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject();
 
-factory IssuingPersonalizationDesignObject.fromJson(String json) { return switch (json) {
+factory IssuingPersonalizationDesignObject.fromJson(String json) {return switch (json) {
   'issuing.personalization_design' => issuingPersonalizationDesign,
   _ => IssuingPersonalizationDesignObject$Unknown(json),
-}; }
+};}
 
 static const IssuingPersonalizationDesignObject issuingPersonalizationDesign = IssuingPersonalizationDesignObject$issuingPersonalizationDesign._();
 
 static const List<IssuingPersonalizationDesignObject> values = [issuingPersonalizationDesign];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issuing.personalization_design' => 'issuingPersonalizationDesign',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingPersonalizationDesignObject$Unknown; } 
+bool get isUnknown {return this is IssuingPersonalizationDesignObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issuingPersonalizationDesign, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issuingPersonalizationDesign, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingPersonalizationDesignObject$issuingPersonalizationDesign() => issuingPersonalizationDesign(),
       IssuingPersonalizationDesignObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingPersonalizationDesign, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingPersonalizationDesign, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingPersonalizationDesignObject$issuingPersonalizationDesign() => issuingPersonalizationDesign != null ? issuingPersonalizationDesign() : orElse(value),
       IssuingPersonalizationDesignObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingPersonalizationDesignObject($value)';
 
- }
+}
 @immutable final class IssuingPersonalizationDesignObject$issuingPersonalizationDesign extends IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject$issuingPersonalizationDesign._();
 
 @override String get value => 'issuing.personalization_design';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingP
 
 @override int get hashCode => 'issuing.personalization_design'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignObject$Unknown extends IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject$Unknown(this.value);
 
 @override final String value;
@@ -53,17 +53,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingP
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Whether this personalization design can be used to create cards.
 sealed class IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus();
 
-factory IssuingPersonalizationDesignStatus.fromJson(String json) { return switch (json) {
+factory IssuingPersonalizationDesignStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'rejected' => rejected,
   'review' => review,
   _ => IssuingPersonalizationDesignStatus$Unknown(json),
-}; }
+};}
 
 static const IssuingPersonalizationDesignStatus active = IssuingPersonalizationDesignStatus$active._();
 
@@ -76,36 +76,36 @@ static const IssuingPersonalizationDesignStatus review = IssuingPersonalizationD
 static const List<IssuingPersonalizationDesignStatus> values = [active, inactive, rejected, review];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'inactive' => 'inactive',
   'rejected' => 'rejected',
   'review' => 'review',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingPersonalizationDesignStatus$Unknown; } 
+bool get isUnknown {return this is IssuingPersonalizationDesignStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() inactive, required W Function() rejected, required W Function() review, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() inactive, required W Function() rejected, required W Function() review, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingPersonalizationDesignStatus$active() => active(),
       IssuingPersonalizationDesignStatus$inactive() => inactive(),
       IssuingPersonalizationDesignStatus$rejected() => rejected(),
       IssuingPersonalizationDesignStatus$review() => review(),
       IssuingPersonalizationDesignStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? rejected, W Function()? review, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? rejected, W Function()? review, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingPersonalizationDesignStatus$active() => active != null ? active() : orElse(value),
       IssuingPersonalizationDesignStatus$inactive() => inactive != null ? inactive() : orElse(value),
       IssuingPersonalizationDesignStatus$rejected() => rejected != null ? rejected() : orElse(value),
       IssuingPersonalizationDesignStatus$review() => review != null ? review() : orElse(value),
       IssuingPersonalizationDesignStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingPersonalizationDesignStatus($value)';
 
- }
+}
 @immutable final class IssuingPersonalizationDesignStatus$active extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$active._();
 
 @override String get value => 'active';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignStatus$inactive extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignStatus$rejected extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$rejected._();
 
 @override String get value => 'rejected';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'rejected'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignStatus$review extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$review._();
 
 @override String get value => 'review';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'review'.hashCode;
 
- }
+}
 @immutable final class IssuingPersonalizationDesignStatus$Unknown extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$Unknown(this.value);
 
 @override final String value;
@@ -151,11 +151,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Personalization Design is a logical grouping of a Physical Bundle, card logo, and carrier text that represents a product line.
 @immutable final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, this.cardLogo = const Omittable.absent(), this.carrierText = const Omittable.absent(), this.lookupKey = const Omittable.absent(), this.name = const Omittable.absent(), });
 
-factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesign(
+factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) {return IssuingPersonalizationDesign(
   cardLogo: json.containsKey('card_logo') ? Omittable(json['card_logo'] != null ? IssuingPersonalizationDesignCardLogo.fromJson(json['card_logo']) : null) : const Omittable.absent(),
   carrierText: json.containsKey('carrier_text') ? Omittable(json['carrier_text'] != null ? IssuingPersonalizationDesignCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -169,7 +169,7 @@ factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { retur
   preferences: IssuingPersonalizationDesignPreferences.fromJson(json['preferences'] as Map<String, dynamic>),
   rejectionReasons: IssuingPersonalizationDesignRejectionReasons.fromJson(json['rejection_reasons'] as Map<String, dynamic>),
   status: IssuingPersonalizationDesignStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// The file for the card logo to use with physical bundles that support card logos. Must have a `purpose` value of `issuing_logo`.
 final Omittable<IssuingPersonalizationDesignCardLogo?> cardLogo;
@@ -208,7 +208,7 @@ final IssuingPersonalizationDesignRejectionReasons rejectionReasons;
 /// Whether this personalization design can be used to create cards.
 final IssuingPersonalizationDesignStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cardLogo.isPresent) 'card_logo': cardLogo.value?.toJson(),
   if (carrierText.isPresent) 'carrier_text': carrierText.value?.toJson(),
   'created': created,
@@ -222,8 +222,8 @@ Map<String, dynamic> toJson() { return {
   'preferences': preferences.toJson(),
   'rejection_reasons': rejectionReasons.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
@@ -231,9 +231,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('physical_bundle') &&
       json.containsKey('preferences') &&
       json.containsKey('rejection_reasons') &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final lookupKey$ = lookupKey.value;
 if (lookupKey$ != null) {
@@ -243,8 +243,8 @@ final name$ = name.value;
 if (name$ != null) {
   if (name$.runes.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
-return errors; } 
-IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCardLogo?>? cardLogo, Omittable<IssuingPersonalizationDesignCarrierText?>? carrierText, int? created, String? id, bool? livemode, Omittable<String?>? lookupKey, Map<String,String>? metadata, Omittable<String?>? name, IssuingPersonalizationDesignObject? object, PhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) { return IssuingPersonalizationDesign(
+return errors;}
+IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCardLogo?>? cardLogo, Omittable<IssuingPersonalizationDesignCarrierText?>? carrierText, int? created, String? id, bool? livemode, Omittable<String?>? lookupKey, Map<String,String>? metadata, Omittable<String?>? name, IssuingPersonalizationDesignObject? object, PhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) {return IssuingPersonalizationDesign(
   cardLogo: cardLogo ?? this.cardLogo,
   carrierText: carrierText ?? this.carrierText,
   created: created ?? this.created,
@@ -258,7 +258,7 @@ IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCar
   preferences: preferences ?? this.preferences,
   rejectionReasons: rejectionReasons ?? this.rejectionReasons,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingPersonalizationDesign &&
           cardLogo == other.cardLogo &&
@@ -279,4 +279,4 @@ IssuingPersonalizationDesign copyWith({Omittable<IssuingPersonalizationDesignCar
 
 @override String toString() => 'IssuingPersonalizationDesign(\n  cardLogo: $cardLogo,\n  carrierText: $carrierText,\n  created: $created,\n  id: $id,\n  livemode: $livemode,\n  lookupKey: $lookupKey,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  physicalBundle: $physicalBundle,\n  preferences: $preferences,\n  rejectionReasons: $rejectionReasons,\n  status: $status,\n)';
 
- }
+}

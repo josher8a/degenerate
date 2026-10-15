@@ -16,11 +16,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Deprecated: This API is deprecated in v1.33+.
 @immutable final class EndpointSubset {const EndpointSubset({this.addresses, this.notReadyAddresses, this.ports, });
 
-factory EndpointSubset.fromJson(Map<String, dynamic> json) { return EndpointSubset(
+factory EndpointSubset.fromJson(Map<String, dynamic> json) {return EndpointSubset(
   addresses: (json['addresses'] as List<dynamic>?)?.map((e) => EndpointAddress.fromJson(e as Map<String, dynamic>)).toList(),
   notReadyAddresses: (json['notReadyAddresses'] as List<dynamic>?)?.map((e) => EndpointAddress.fromJson(e as Map<String, dynamic>)).toList(),
   ports: (json['ports'] as List<dynamic>?)?.map((e) => EndpointPort.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// IP addresses which offer the related ports that are marked as ready. These endpoints should be considered safe for load balancers and clients to utilize.
 final List<EndpointAddress>? addresses;
@@ -31,17 +31,17 @@ final List<EndpointAddress>? notReadyAddresses;
 /// Port numbers available on the related IP addresses.
 final List<EndpointPort>? ports;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addresses != null) 'addresses': addresses?.map((e) => e.toJson()).toList(),
   if (notReadyAddresses != null) 'notReadyAddresses': notReadyAddresses?.map((e) => e.toJson()).toList(),
   if (ports != null) 'ports': ports?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'addresses', 'notReadyAddresses', 'ports'}.contains(key)); } 
-EndpointSubset copyWith({List<EndpointAddress>? Function()? addresses, List<EndpointAddress>? Function()? notReadyAddresses, List<EndpointPort>? Function()? ports, }) { return EndpointSubset(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'addresses', 'notReadyAddresses', 'ports'}.contains(key));}
+EndpointSubset copyWith({List<EndpointAddress>? Function()? addresses, List<EndpointAddress>? Function()? notReadyAddresses, List<EndpointPort>? Function()? ports, }) {return EndpointSubset(
   addresses: addresses != null ? addresses() : this.addresses,
   notReadyAddresses: notReadyAddresses != null ? notReadyAddresses() : this.notReadyAddresses,
   ports: ports != null ? ports() : this.ports,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EndpointSubset &&
           listEquals(addresses, other.addresses) &&
@@ -52,4 +52,4 @@ EndpointSubset copyWith({List<EndpointAddress>? Function()? addresses, List<Endp
 
 @override String toString() => 'EndpointSubset(addresses: $addresses, notReadyAddresses: $notReadyAddresses, ports: $ports)';
 
- }
+}

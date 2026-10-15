@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot DHCP lease
 @immutable final class MconnSnapshotDhcpLease {const MconnSnapshotDhcpLease({required this.clientId, required this.expiryTime, required this.hostname, required this.interfaceName, required this.ipAddress, required this.macAddress, this.connectorId, });
 
-factory MconnSnapshotDhcpLease.fromJson(Map<String, dynamic> json) { return MconnSnapshotDhcpLease(
+factory MconnSnapshotDhcpLease.fromJson(Map<String, dynamic> json) {return MconnSnapshotDhcpLease(
   clientId: json['client_id'] as String,
   connectorId: json['connector_id'] as String?,
   expiryTime: (json['expiry_time'] as num).toDouble(),
@@ -12,7 +12,7 @@ factory MconnSnapshotDhcpLease.fromJson(Map<String, dynamic> json) { return Mcon
   interfaceName: json['interface_name'] as String,
   ipAddress: json['ip_address'] as String,
   macAddress: json['mac_address'] as String,
-); }
+);}
 
 /// Client ID of the device the IP Address was leased to
 final String clientId;
@@ -35,7 +35,7 @@ final String ipAddress;
 /// MAC Address of the device the IP Address was leased to
 final String macAddress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': clientId,
   'connector_id': ?connectorId,
   'expiry_time': expiryTime,
@@ -43,14 +43,14 @@ Map<String, dynamic> toJson() { return {
   'interface_name': interfaceName,
   'ip_address': ipAddress,
   'mac_address': macAddress,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_id') && json['client_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_id') && json['client_id'] is String &&
       json.containsKey('expiry_time') && json['expiry_time'] is num &&
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('interface_name') && json['interface_name'] is String &&
       json.containsKey('ip_address') && json['ip_address'] is String &&
-      json.containsKey('mac_address') && json['mac_address'] is String; } 
-MconnSnapshotDhcpLease copyWith({String? clientId, String? Function()? connectorId, double? expiryTime, String? hostname, String? interfaceName, String? ipAddress, String? macAddress, }) { return MconnSnapshotDhcpLease(
+      json.containsKey('mac_address') && json['mac_address'] is String;}
+MconnSnapshotDhcpLease copyWith({String? clientId, String? Function()? connectorId, double? expiryTime, String? hostname, String? interfaceName, String? ipAddress, String? macAddress, }) {return MconnSnapshotDhcpLease(
   clientId: clientId ?? this.clientId,
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   expiryTime: expiryTime ?? this.expiryTime,
@@ -58,7 +58,7 @@ MconnSnapshotDhcpLease copyWith({String? clientId, String? Function()? connector
   interfaceName: interfaceName ?? this.interfaceName,
   ipAddress: ipAddress ?? this.ipAddress,
   macAddress: macAddress ?? this.macAddress,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotDhcpLease &&
           clientId == other.clientId &&
@@ -73,4 +73,4 @@ MconnSnapshotDhcpLease copyWith({String? clientId, String? Function()? connector
 
 @override String toString() => 'MconnSnapshotDhcpLease(clientId: $clientId, connectorId: $connectorId, expiryTime: $expiryTime, hostname: $hostname, interfaceName: $interfaceName, ipAddress: $ipAddress, macAddress: $macAddress)';
 
- }
+}

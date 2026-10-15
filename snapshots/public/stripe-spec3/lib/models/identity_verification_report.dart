@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_document_report.dart';import 'package:pub_stripe_spec3/models/gelato_email_report.dart';import 'package:pub_stripe_spec3/models/gelato_id_number_report.dart';import 'package:pub_stripe_spec3/models/gelato_phone_report.dart';import 'package:pub_stripe_spec3/models/gelato_selfie_report.dart';import 'package:pub_stripe_spec3/models/gelato_verification_report_options.dart';import 'package:pub_stripe_spec3/models/identity_verification_report/identity_verification_report_type.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class IdentityVerificationReportObject {const IdentityVerificationReportObject();
 
-factory IdentityVerificationReportObject.fromJson(String json) { return switch (json) {
+factory IdentityVerificationReportObject.fromJson(String json) {return switch (json) {
   'identity.verification_report' => identityVerificationReport,
   _ => IdentityVerificationReportObject$Unknown(json),
-}; }
+};}
 
 static const IdentityVerificationReportObject identityVerificationReport = IdentityVerificationReportObject$identityVerificationReport._();
 
 static const List<IdentityVerificationReportObject> values = [identityVerificationReport];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'identity.verification_report' => 'identityVerificationReport',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IdentityVerificationReportObject$Unknown; } 
+bool get isUnknown {return this is IdentityVerificationReportObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() identityVerificationReport, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() identityVerificationReport, required W Function(String value) $unknown, }) {return switch (this) {
       IdentityVerificationReportObject$identityVerificationReport() => identityVerificationReport(),
       IdentityVerificationReportObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? identityVerificationReport, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? identityVerificationReport, W Function(String value)? $unknown, }) {return switch (this) {
       IdentityVerificationReportObject$identityVerificationReport() => identityVerificationReport != null ? identityVerificationReport() : orElse(value),
       IdentityVerificationReportObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IdentityVerificationReportObject($value)';
 
- }
+}
 @immutable final class IdentityVerificationReportObject$identityVerificationReport extends IdentityVerificationReportObject {const IdentityVerificationReportObject$identityVerificationReport._();
 
 @override String get value => 'identity.verification_report';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? identity
 
 @override int get hashCode => 'identity.verification_report'.hashCode;
 
- }
+}
 @immutable final class IdentityVerificationReportObject$Unknown extends IdentityVerificationReportObject {const IdentityVerificationReportObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? identity
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A VerificationReport is the result of an attempt to collect and verify data from a user.
 /// The collection of verification checks performed is determined from the `type` and `options`
 /// parameters used. You can find the result of each verification check performed in the
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? identity
 /// Related guide: [Accessing verification results](https://docs.stripe.com/identity/verification-sessions#results).
 @immutable final class IdentityVerificationReport {const IdentityVerificationReport({required this.created, required this.id, required this.livemode, required this.object, required this.type, this.clientReferenceId = const Omittable.absent(), this.document, this.email, this.idNumber, this.options, this.phone, this.selfie, this.verificationFlow, this.verificationSession = const Omittable.absent(), });
 
-factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) { return IdentityVerificationReport(
+factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) {return IdentityVerificationReport(
   clientReferenceId: json.containsKey('client_reference_id') ? Omittable(json['client_reference_id'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   document: json['document'] != null ? GelatoDocumentReport.fromJson(json['document'] as Map<String, dynamic>) : null,
@@ -82,7 +82,7 @@ factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) { return 
   type: IdentityVerificationReportType.fromJson(json['type'] as String),
   verificationFlow: json['verification_flow'] as String?,
   verificationSession: json.containsKey('verification_session') ? Omittable(json['verification_session'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.
 final Omittable<String?> clientReferenceId;
@@ -120,7 +120,7 @@ final String? verificationFlow;
 /// ID of the VerificationSession that created this report.
 final Omittable<String?> verificationSession;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (clientReferenceId.isPresent) 'client_reference_id': clientReferenceId.value,
   'created': created,
   if (document != null) 'document': document?.toJson(),
@@ -135,14 +135,14 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'verification_flow': ?verificationFlow,
   if (verificationSession.isPresent) 'verification_session': verificationSession.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final clientReferenceId$ = clientReferenceId.value;
 if (clientReferenceId$ != null) {
   if (clientReferenceId$.runes.length > 5000) { errors.add('clientReferenceId: length must be <= 5000'); }
@@ -156,8 +156,8 @@ final verificationSession$ = verificationSession.value;
 if (verificationSession$ != null) {
   if (verificationSession$.runes.length > 5000) { errors.add('verificationSession: length must be <= 5000'); }
 }
-return errors; } 
-IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int? created, GelatoDocumentReport? Function()? document, GelatoEmailReport? Function()? email, String? id, GelatoIdNumberReport? Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions? Function()? options, GelatoPhoneReport? Function()? phone, GelatoSelfieReport? Function()? selfie, IdentityVerificationReportType? type, String? Function()? verificationFlow, Omittable<String?>? verificationSession, }) { return IdentityVerificationReport(
+return errors;}
+IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int? created, GelatoDocumentReport? Function()? document, GelatoEmailReport? Function()? email, String? id, GelatoIdNumberReport? Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions? Function()? options, GelatoPhoneReport? Function()? phone, GelatoSelfieReport? Function()? selfie, IdentityVerificationReportType? type, String? Function()? verificationFlow, Omittable<String?>? verificationSession, }) {return IdentityVerificationReport(
   clientReferenceId: clientReferenceId ?? this.clientReferenceId,
   created: created ?? this.created,
   document: document != null ? document() : this.document,
@@ -172,7 +172,7 @@ IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int?
   type: type ?? this.type,
   verificationFlow: verificationFlow != null ? verificationFlow() : this.verificationFlow,
   verificationSession: verificationSession ?? this.verificationSession,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IdentityVerificationReport &&
           clientReferenceId == other.clientReferenceId &&
@@ -194,4 +194,4 @@ IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int?
 
 @override String toString() => 'IdentityVerificationReport(\n  clientReferenceId: $clientReferenceId,\n  created: $created,\n  document: $document,\n  email: $email,\n  id: $id,\n  idNumber: $idNumber,\n  livemode: $livemode,\n  object: $object,\n  options: $options,\n  phone: $phone,\n  selfie: $selfie,\n  type: $type,\n  verificationFlow: $verificationFlow,\n  verificationSession: $verificationSession,\n)';
 
- }
+}

@@ -7,10 +7,10 @@ const MagicAppUpdateRequest({this.$dynamic = const Omittable.absent()}) : rawVal
 const MagicAppUpdateRequest._({required this.rawValue, required this.$dynamic, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory MagicAppUpdateRequest.fromJson(Object? json) { return MagicAppUpdateRequest._(
+factory MagicAppUpdateRequest.fromJson(Object? json) {return MagicAppUpdateRequest._(
   rawValue: Omittable(json),
   $dynamic: parseAnyOfVariant<dynamic>(json, (value) => value),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -36,4 +36,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'MagicAppUpdateRequest(${toJson()})';
 
- }
+}

@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to match
 /// 
 sealed class DnsSettingsMatch {const DnsSettingsMatch();
 
-factory DnsSettingsMatch.fromJson(String json) { return switch (json) {
+factory DnsSettingsMatch.fromJson(String json) {return switch (json) {
   'any' => any,
   'all' => all,
   _ => DnsSettingsMatch$Unknown(json),
-}; }
+};}
 
 static const DnsSettingsMatch any = DnsSettingsMatch$any._();
 
@@ -18,30 +18,30 @@ static const DnsSettingsMatch all = DnsSettingsMatch$all._();
 static const List<DnsSettingsMatch> values = [any, all];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'any' => 'any',
   'all' => 'all',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnsSettingsMatch$Unknown; } 
+bool get isUnknown {return this is DnsSettingsMatch$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() any, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() any, required W Function() all, required W Function(String value) $unknown, }) {return switch (this) {
       DnsSettingsMatch$any() => any(),
       DnsSettingsMatch$all() => all(),
       DnsSettingsMatch$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? any, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? any, W Function()? all, W Function(String value)? $unknown, }) {return switch (this) {
       DnsSettingsMatch$any() => any != null ? any() : orElse(value),
       DnsSettingsMatch$all() => all != null ? all() : orElse(value),
       DnsSettingsMatch$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DnsSettingsMatch($value)';
 
- }
+}
 @immutable final class DnsSettingsMatch$any extends DnsSettingsMatch {const DnsSettingsMatch$any._();
 
 @override String get value => 'any';
@@ -50,7 +50,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? any, W F
 
 @override int get hashCode => 'any'.hashCode;
 
- }
+}
 @immutable final class DnsSettingsMatch$all extends DnsSettingsMatch {const DnsSettingsMatch$all._();
 
 @override String get value => 'all';
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? any, W F
 
 @override int get hashCode => 'all'.hashCode;
 
- }
+}
 @immutable final class DnsSettingsMatch$Unknown extends DnsSettingsMatch {const DnsSettingsMatch$Unknown(this.value);
 
 @override final String value;
@@ -69,4 +69,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? any, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

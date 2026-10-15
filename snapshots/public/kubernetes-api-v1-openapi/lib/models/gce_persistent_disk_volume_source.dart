@@ -6,12 +6,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Per
 /// A GCE PD must exist before mounting to a container. The disk must also be in the same GCE project and zone as the kubelet. A GCE PD can only be mounted as read/write once or read-only many times. GCE PDs support ownership management and SELinux relabeling.
 @immutable final class GcePersistentDiskVolumeSource {const GcePersistentDiskVolumeSource({required this.pdName, this.fsType, this.partition, this.readOnly, });
 
-factory GcePersistentDiskVolumeSource.fromJson(Map<String, dynamic> json) { return GcePersistentDiskVolumeSource(
+factory GcePersistentDiskVolumeSource.fromJson(Map<String, dynamic> json) {return GcePersistentDiskVolumeSource(
   fsType: json['fsType'] as String?,
   partition: json['partition'] != null ? (json['partition'] as num).toInt() : null,
   pdName: json['pdName'] as String,
   readOnly: json['readOnly'] as bool?,
-); }
+);}
 
 /// fsType is filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
 final String? fsType;
@@ -25,19 +25,19 @@ final String pdName;
 /// readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
 final bool? readOnly;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'partition': ?partition,
   'pdName': pdName,
   'readOnly': ?readOnly,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('pdName') && json['pdName'] is String; } 
-GcePersistentDiskVolumeSource copyWith({String? Function()? fsType, int? Function()? partition, String? pdName, bool? Function()? readOnly, }) { return GcePersistentDiskVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('pdName') && json['pdName'] is String;}
+GcePersistentDiskVolumeSource copyWith({String? Function()? fsType, int? Function()? partition, String? pdName, bool? Function()? readOnly, }) {return GcePersistentDiskVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   partition: partition != null ? partition() : this.partition,
   pdName: pdName ?? this.pdName,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GcePersistentDiskVolumeSource &&
           fsType == other.fsType &&
@@ -49,4 +49,4 @@ GcePersistentDiskVolumeSource copyWith({String? Function()? fsType, int? Functio
 
 @override String toString() => 'GcePersistentDiskVolumeSource(fsType: $fsType, partition: $partition, pdName: $pdName, readOnly: $readOnly)';
 
- }
+}

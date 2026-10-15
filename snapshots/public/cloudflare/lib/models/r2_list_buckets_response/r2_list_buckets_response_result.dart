@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket.dart';@immutable final class R2ListBucketsResponseResult {const R2ListBucketsResponseResult({this.buckets});
 
-factory R2ListBucketsResponseResult.fromJson(Map<String, dynamic> json) { return R2ListBucketsResponseResult(
+factory R2ListBucketsResponseResult.fromJson(Map<String, dynamic> json) {return R2ListBucketsResponseResult(
   buckets: (json['buckets'] as List<dynamic>?)?.map((e) => R2Bucket.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<R2Bucket>? buckets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buckets != null) 'buckets': buckets?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buckets'}.contains(key)); } 
-R2ListBucketsResponseResult copyWith({List<R2Bucket>? Function()? buckets}) { return R2ListBucketsResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'buckets'}.contains(key));}
+R2ListBucketsResponseResult copyWith({List<R2Bucket>? Function()? buckets}) {return R2ListBucketsResponseResult(
   buckets: buckets != null ? buckets() : this.buckets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2ListBucketsResponseResult &&
           listEquals(buckets, other.buckets);
@@ -24,4 +24,4 @@ R2ListBucketsResponseResult copyWith({List<R2Bucket>? Function()? buckets}) { re
 
 @override String toString() => 'R2ListBucketsResponseResult(buckets: $buckets)';
 
- }
+}

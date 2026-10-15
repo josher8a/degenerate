@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages10Functions {const Messages10Functions({required this.code, required this.name, });
 
-factory Messages10Functions.fromJson(Map<String, dynamic> json) { return Messages10Functions(
+factory Messages10Functions.fromJson(Map<String, dynamic> json) {return Messages10Functions(
   code: json['code'] as String,
   name: json['name'] as String,
-); }
+);}
 
 final String code;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-Messages10Functions copyWith({String? code, String? name, }) { return Messages10Functions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+Messages10Functions copyWith({String? code, String? name, }) {return Messages10Functions(
   code: code ?? this.code,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Messages10Functions &&
           code == other.code &&
@@ -31,4 +31,4 @@ Messages10Functions copyWith({String? code, String? name, }) { return Messages10
 
 @override String toString() => 'Messages10Functions(code: $code, name: $name)';
 
- }
+}

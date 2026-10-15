@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindVpcService {const WorkersBindingKindVpcService({required this.name, required this.serviceId, required this.type, });
 
-factory WorkersBindingKindVpcService.fromJson(Map<String, dynamic> json) { return WorkersBindingKindVpcService(
+factory WorkersBindingKindVpcService.fromJson(Map<String, dynamic> json) {return WorkersBindingKindVpcService(
   name: WorkersBindingName.fromJson(json['name'] as String),
   serviceId: json['service_id'] as String,
   type: json['type'] as String,
-); }
+);}
 
 final WorkersBindingName name;
 
@@ -19,19 +19,19 @@ final String serviceId;
 /// The kind of resource that the binding provides.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
   'service_id': serviceId,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('service_id') && json['service_id'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindVpcService copyWith({WorkersBindingName? name, String? serviceId, String? type, }) { return WorkersBindingKindVpcService(
+      json.containsKey('type') && json['type'] is String;}
+WorkersBindingKindVpcService copyWith({WorkersBindingName? name, String? serviceId, String? type, }) {return WorkersBindingKindVpcService(
   name: name ?? this.name,
   serviceId: serviceId ?? this.serviceId,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindVpcService &&
           name == other.name &&
@@ -42,4 +42,4 @@ WorkersBindingKindVpcService copyWith({WorkersBindingName? name, String? service
 
 @override String toString() => 'WorkersBindingKindVpcService(name: $name, serviceId: $serviceId, type: $type)';
 
- }
+}

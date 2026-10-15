@@ -21,7 +21,7 @@ final class ChecksApi with ApiExecutor {const ChecksApi(this.apiConfig);
 /// > The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
 ///
 /// `POST /repos/{owner}/{repo}/check-runs`
-Future<ApiResult<CheckRun, Never>> checksCreate({required String owner, required String repo, required ChecksCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckRun, Never>> checksCreate({required String owner, required String repo, required ChecksCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -38,7 +38,7 @@ return await execute(
     return CheckRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get a check run
 ///
 /// Gets a single check run using its `id`.
@@ -49,7 +49,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/check-runs/{check_run_id}`
-Future<ApiResult<CheckRun, Never>> checksGet({required String owner, required String repo, required int checkRunId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckRun, Never>> checksGet({required String owner, required String repo, required int checkRunId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -64,7 +64,7 @@ return await execute(
     return CheckRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update a check run
 ///
 /// Updates a check run for a specific commit in a repository.
@@ -75,7 +75,7 @@ return await execute(
 /// OAuth apps and personal access tokens (classic) cannot use this endpoint.
 ///
 /// `PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}`
-Future<ApiResult<CheckRun, Never>> checksUpdate({required String owner, required String repo, required int checkRunId, required ChecksUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckRun, Never>> checksUpdate({required String owner, required String repo, required int checkRunId, required ChecksUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +92,7 @@ return await execute(
     return CheckRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// List check run annotations
 ///
 /// Lists annotations for a check run using the annotation `id`.
@@ -100,7 +100,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations`
-Future<ApiResult<List<CheckAnnotation>, Never>> checksListAnnotations({required String owner, required String repo, required int checkRunId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CheckAnnotation>, Never>> checksListAnnotations({required String owner, required String repo, required int checkRunId, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -127,7 +127,7 @@ return await execute(
     return json.map((e) => CheckAnnotation.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Rerequest a check run
 ///
 /// Triggers GitHub to rerequest an existing check run, without pushing new code to a repository. This endpoint will trigger the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) event with the action `rerequested`. When a check run is `rerequested`, the `status` of the check suite it belongs to is reset to `queued` and the `conclusion` is cleared. The check run itself is not updated. GitHub apps recieving the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) with the `rerequested` action should then decide if the check run should be reset or updated and call the [update `check_run` endpoint](https://docs.github.com/rest/checks/runs#update-a-check-run) to update the check_run if desired.
@@ -135,7 +135,7 @@ return await execute(
 /// For more information about how to re-run GitHub Actions jobs, see "[Re-run a job from a workflow run](https://docs.github.com/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run)".
 ///
 /// `POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest`
-Future<ApiResult<EmptyObject, ChecksRerequestRunError>> checksRerequestRun({required String owner, required String repo, required int checkRunId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject, ChecksRerequestRunError>> checksRerequestRun({required String owner, required String repo, required int checkRunId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -151,7 +151,7 @@ return await execute(
   },
   onError: ChecksRerequestRunError.fromResponse,
 );
- } 
+}
 /// Create a check suite
 ///
 /// Creates a check suite manually. By default, check suites are automatically created when you create a [check run](https://docs.github.com/rest/checks/runs). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using "[Update repository preferences for check suites](https://docs.github.com/rest/checks/suites#update-repository-preferences-for-check-suites)".
@@ -162,7 +162,7 @@ return await execute(
 /// OAuth apps and personal access tokens (classic) cannot use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/check-suites`
-Future<ApiResult<CheckSuite, Never>> checksCreateSuite({required String owner, required String repo, required ChecksCreateSuiteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckSuite, Never>> checksCreateSuite({required String owner, required String repo, required ChecksCreateSuiteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -179,14 +179,14 @@ return await execute(
     return CheckSuite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update repository preferences for check suites
 ///
 /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite).
 /// You must have admin permissions in the repository to set preferences for check suites.
 ///
 /// `PATCH /repos/{owner}/{repo}/check-suites/preferences`
-Future<ApiResult<CheckSuitePreference, Never>> checksSetSuitesPreferences({required String owner, required String repo, required ChecksSetSuitesPreferencesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckSuitePreference, Never>> checksSetSuitesPreferences({required String owner, required String repo, required ChecksSetSuitesPreferencesRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -203,7 +203,7 @@ return await execute(
     return CheckSuitePreference.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get a check suite
 ///
 /// Gets a single check suite using its `id`.
@@ -214,7 +214,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/check-suites/{check_suite_id}`
-Future<ApiResult<CheckSuite, Never>> checksGetSuite({required String owner, required String repo, required int checkSuiteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckSuite, Never>> checksGetSuite({required String owner, required String repo, required int checkSuiteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -229,7 +229,7 @@ return await execute(
     return CheckSuite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// List check runs in a check suite
 ///
 /// Lists check runs for a check suite using its `id`.
@@ -240,7 +240,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs`
-Future<ApiResult<ChecksListForSuiteResponse, Never>> checksListForSuite({required String owner, required String repo, required int checkSuiteId, String? checkName, ChecksListForSuiteStatus? status, ChecksListForSuiteFilter? filter, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ChecksListForSuiteResponse, Never>> checksListForSuite({required String owner, required String repo, required int checkSuiteId, String? checkName, ChecksListForSuiteStatus? status, ChecksListForSuiteFilter? filter, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (checkName != null) {
   queryParameters['check_name'] = checkName;
@@ -275,13 +275,13 @@ return await execute(
     return ChecksListForSuiteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Rerequest a check suite
 ///
 /// Triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://docs.github.com/webhooks/event-payloads/#check_suite) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.
 ///
 /// `POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest`
-Future<ApiResult<EmptyObject, Never>> checksRerequestSuite({required String owner, required String repo, required int checkSuiteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject, Never>> checksRerequestSuite({required String owner, required String repo, required int checkSuiteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -296,7 +296,7 @@ return await execute(
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// List check runs for a Git reference
 ///
 /// Lists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag name.
@@ -309,7 +309,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{ref}/check-runs`
-Future<ApiResult<ChecksListForRefResponse, Never>> checksListForRef({required String owner, required String repo, required String ref, String? checkName, ChecksListForRefStatus? status, ChecksListForRefFilter? filter, int? perPage, int? page, int? appId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ChecksListForRefResponse, Never>> checksListForRef({required String owner, required String repo, required String ref, String? checkName, ChecksListForRefStatus? status, ChecksListForRefFilter? filter, int? perPage, int? page, int? appId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (checkName != null) {
   queryParameters['check_name'] = checkName;
@@ -347,7 +347,7 @@ return await execute(
     return ChecksListForRefResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// List check suites for a Git reference
 ///
 /// Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.
@@ -358,7 +358,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 ///
 /// `GET /repos/{owner}/{repo}/commits/{ref}/check-suites`
-Future<ApiResult<ChecksListSuitesForRefResponse, Never>> checksListSuitesForRef({required String owner, required String repo, required String ref, int? appId, String? checkName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ChecksListSuitesForRefResponse, Never>> checksListSuitesForRef({required String owner, required String repo, required String ref, int? appId, String? checkName, int? perPage, int? page, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (appId != null) {
   queryParameters['app_id'] = appId.toString();
@@ -390,5 +390,5 @@ return await execute(
     return ChecksListSuitesForRefResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

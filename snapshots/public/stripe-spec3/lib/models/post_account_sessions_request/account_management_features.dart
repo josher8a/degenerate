@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountManagementFeatures {const AccountManagementFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, });
 
-factory AccountManagementFeatures.fromJson(Map<String, dynamic> json) { return AccountManagementFeatures(
+factory AccountManagementFeatures.fromJson(Map<String, dynamic> json) {return AccountManagementFeatures(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool?,
   externalAccountCollection: json['external_account_collection'] as bool?,
-); }
+);}
 
 final bool? disableStripeUserAuthentication;
 
 final bool? externalAccountCollection;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'disable_stripe_user_authentication': ?disableStripeUserAuthentication,
   'external_account_collection': ?externalAccountCollection,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disable_stripe_user_authentication', 'external_account_collection'}.contains(key)); } 
-AccountManagementFeatures copyWith({bool? Function()? disableStripeUserAuthentication, bool? Function()? externalAccountCollection, }) { return AccountManagementFeatures(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'disable_stripe_user_authentication', 'external_account_collection'}.contains(key));}
+AccountManagementFeatures copyWith({bool? Function()? disableStripeUserAuthentication, bool? Function()? externalAccountCollection, }) {return AccountManagementFeatures(
   disableStripeUserAuthentication: disableStripeUserAuthentication != null ? disableStripeUserAuthentication() : this.disableStripeUserAuthentication,
   externalAccountCollection: externalAccountCollection != null ? externalAccountCollection() : this.externalAccountCollection,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountManagementFeatures &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
@@ -30,4 +30,4 @@ AccountManagementFeatures copyWith({bool? Function()? disableStripeUserAuthentic
 
 @override String toString() => 'AccountManagementFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection)';
 
- }
+}

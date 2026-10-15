@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enables Tiered Caching.
 sealed class CacheRulesValue {const CacheRulesValue();
 
-factory CacheRulesValue.fromJson(String json) { return switch (json) {
+factory CacheRulesValue.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => CacheRulesValue$Unknown(json),
-}; }
+};}
 
 static const CacheRulesValue $on = CacheRulesValue$$on._();
 
@@ -17,30 +17,30 @@ static const CacheRulesValue off = CacheRulesValue$off._();
 static const List<CacheRulesValue> values = [$on, off];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'on' => r'$on',
   'off' => 'off',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CacheRulesValue$Unknown; } 
+bool get isUnknown {return this is CacheRulesValue$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) {return switch (this) {
       CacheRulesValue$$on() => $on(),
       CacheRulesValue$off() => off(),
       CacheRulesValue$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) {return switch (this) {
       CacheRulesValue$$on() => $on != null ? $on() : orElse(value),
       CacheRulesValue$off() => off != null ? off() : orElse(value),
       CacheRulesValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CacheRulesValue($value)';
 
- }
+}
 @immutable final class CacheRulesValue$$on extends CacheRulesValue {const CacheRulesValue$$on._();
 
 @override String get value => 'on';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class CacheRulesValue$off extends CacheRulesValue {const CacheRulesValue$off._();
 
 @override String get value => 'off';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class CacheRulesValue$Unknown extends CacheRulesValue {const CacheRulesValue$Unknown(this.value);
 
 @override final String value;
@@ -68,23 +68,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Update enablement of Tiered Caching.
 @immutable final class CacheRulesPatch {const CacheRulesPatch({required this.value});
 
-factory CacheRulesPatch.fromJson(Map<String, dynamic> json) { return CacheRulesPatch(
+factory CacheRulesPatch.fromJson(Map<String, dynamic> json) {return CacheRulesPatch(
   value: CacheRulesValue.fromJson(json['value'] as String),
-); }
+);}
 
 final CacheRulesValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-CacheRulesPatch copyWith({CacheRulesValue? value}) { return CacheRulesPatch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value');}
+CacheRulesPatch copyWith({CacheRulesValue? value}) {return CacheRulesPatch(
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesPatch &&
           value == other.value;
@@ -93,4 +93,4 @@ CacheRulesPatch copyWith({CacheRulesValue? value}) { return CacheRulesPatch(
 
 @override String toString() => 'CacheRulesPatch(value: $value)';
 
- }
+}

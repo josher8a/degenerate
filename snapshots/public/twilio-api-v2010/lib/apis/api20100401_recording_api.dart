@@ -12,7 +12,7 @@ final class Api20100401RecordingApi with ApiExecutor {const Api20100401Recording
 /// Fetch an instance of a recording
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountRecording, Never>> fetchRecording({required String accountSid, required String sid, bool? includeSoftDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AccountRecording, Never>> fetchRecording({required String accountSid, required String sid, bool? includeSoftDeleted, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeSoftDeleted != null) {
   queryParameters['IncludeSoftDeleted'] = includeSoftDeleted.toString();
@@ -35,11 +35,11 @@ return await execute(
     return AccountRecording.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a recording from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json`
-Future<ApiResult<void, Never>> deleteRecording({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteRecording({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -52,11 +52,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of recordings belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings.json`
-Future<ApiResult<ListRecordingResponse, Never>> listRecording({required String accountSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, String? callSid, String? conferenceSid, bool? includeSoftDeleted, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListRecordingResponse, Never>> listRecording({required String accountSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, String? callSid, String? conferenceSid, bool? includeSoftDeleted, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateCreated != null) {
   queryParameters['DateCreated'] = dateCreated.toIso8601String();
@@ -103,5 +103,5 @@ return await execute(
     return ListRecordingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

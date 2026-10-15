@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_cursor.dart';/// The set of cursors.
 @immutable final class RulesetsResultInfoCursors {const RulesetsResultInfoCursors({required this.after});
 
-factory RulesetsResultInfoCursors.fromJson(Map<String, dynamic> json) { return RulesetsResultInfoCursors(
+factory RulesetsResultInfoCursors.fromJson(Map<String, dynamic> json) {return RulesetsResultInfoCursors(
   after: RulesetsCursor.fromJson(json['after'] as String),
-); }
+);}
 
 /// The cursor to use for the next page.
 final RulesetsCursor after;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after': after.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after'); } 
-RulesetsResultInfoCursors copyWith({RulesetsCursor? after}) { return RulesetsResultInfoCursors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('after');}
+RulesetsResultInfoCursors copyWith({RulesetsCursor? after}) {return RulesetsResultInfoCursors(
   after: after ?? this.after,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsResultInfoCursors &&
           after == other.after;
@@ -26,4 +26,4 @@ RulesetsResultInfoCursors copyWith({RulesetsCursor? after}) { return RulesetsRes
 
 @override String toString() => 'RulesetsResultInfoCursors(after: $after)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions/actions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_checks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_deployments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_environments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pull_requests.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_statuses.dart';import 'package:pub_github_rest_3_1/models/app_permissions/contents.dart';import 'package:pub_github_rest_3_1/models/app_permissions/discussions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/issues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/members.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_self_hosted_runners.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_user_blocking.dart';import 'package:pub_github_rest_3_1/models/app_permissions/repository_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secret_scanning_alerts.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/security_events.dart';import 'package:pub_github_rest_3_1/models/app_permissions/single_file.dart';import 'package:pub_github_rest_3_1/models/app_permissions/vulnerability_alerts.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/content_references.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/keys.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_emails.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_organization_plan.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_repository_projects.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_workflows.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/security_scanning_alert.dart';sealed class PermissionsOrganizationProjects {const PermissionsOrganizationProjects();
 
-factory PermissionsOrganizationProjects.fromJson(String json) { return switch (json) {
+factory PermissionsOrganizationProjects.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => PermissionsOrganizationProjects$Unknown(json),
-}; }
+};}
 
 static const PermissionsOrganizationProjects read = PermissionsOrganizationProjects$read._();
 
@@ -16,30 +16,30 @@ static const PermissionsOrganizationProjects write = PermissionsOrganizationProj
 static const List<PermissionsOrganizationProjects> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PermissionsOrganizationProjects$Unknown; } 
+bool get isUnknown {return this is PermissionsOrganizationProjects$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       PermissionsOrganizationProjects$read() => read(),
       PermissionsOrganizationProjects$write() => write(),
       PermissionsOrganizationProjects$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       PermissionsOrganizationProjects$read() => read != null ? read() : orElse(value),
       PermissionsOrganizationProjects$write() => write != null ? write() : orElse(value),
       PermissionsOrganizationProjects$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PermissionsOrganizationProjects($value)';
 
- }
+}
 @immutable final class PermissionsOrganizationProjects$read extends PermissionsOrganizationProjects {const PermissionsOrganizationProjects$read._();
 
 @override String get value => 'read';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class PermissionsOrganizationProjects$write extends PermissionsOrganizationProjects {const PermissionsOrganizationProjects$write._();
 
 @override String get value => 'write';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class PermissionsOrganizationProjects$Unknown extends PermissionsOrganizationProjects {const PermissionsOrganizationProjects$Unknown(this.value);
 
 @override final String value;
@@ -67,11 +67,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The set of permissions for the GitHub app
 @immutable final class WebhooksIssue2PerformedViaGithubAppPermissions {const WebhooksIssue2PerformedViaGithubAppPermissions({this.members, this.administration, this.checks, this.contentReferences, this.contents, this.deployments, this.discussions, this.emails, this.environments, this.issues, this.keys, this.actions, this.metadata, this.organizationAdministration, this.organizationHooks, this.organizationPackages, this.organizationPlan, this.organizationProjects, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.workflows, this.pages, this.pullRequests, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.securityScanningAlert, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.packages, });
 
-factory WebhooksIssue2PerformedViaGithubAppPermissions.fromJson(Map<String, dynamic> json) { return WebhooksIssue2PerformedViaGithubAppPermissions(
+factory WebhooksIssue2PerformedViaGithubAppPermissions.fromJson(Map<String, dynamic> json) {return WebhooksIssue2PerformedViaGithubAppPermissions(
   actions: json['actions'] != null ? Actions.fromJson(json['actions'] as String) : null,
   administration: json['administration'] != null ? Administration.fromJson(json['administration'] as String) : null,
   checks: json['checks'] != null ? AppPermissionsChecks.fromJson(json['checks'] as String) : null,
@@ -106,7 +106,7 @@ factory WebhooksIssue2PerformedViaGithubAppPermissions.fromJson(Map<String, dyna
   statuses: json['statuses'] != null ? AppPermissionsStatuses.fromJson(json['statuses'] as String) : null,
   vulnerabilityAlerts: json['vulnerability_alerts'] != null ? VulnerabilityAlerts.fromJson(json['vulnerability_alerts'] as String) : null,
   workflows: json['workflows'] != null ? PermissionsWorkflows.fromJson(json['workflows'] as String) : null,
-); }
+);}
 
 final Actions? actions;
 
@@ -176,7 +176,7 @@ final VulnerabilityAlerts? vulnerabilityAlerts;
 
 final PermissionsWorkflows? workflows;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (actions != null) 'actions': actions?.toJson(),
   if (administration != null) 'administration': administration?.toJson(),
   if (checks != null) 'checks': checks?.toJson(),
@@ -211,9 +211,9 @@ Map<String, dynamic> toJson() { return {
   if (statuses != null) 'statuses': statuses?.toJson(),
   if (vulnerabilityAlerts != null) 'vulnerability_alerts': vulnerabilityAlerts?.toJson(),
   if (workflows != null) 'workflows': workflows?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'administration', 'checks', 'content_references', 'contents', 'deployments', 'discussions', 'emails', 'environments', 'issues', 'keys', 'members', 'metadata', 'organization_administration', 'organization_hooks', 'organization_packages', 'organization_plan', 'organization_projects', 'organization_secrets', 'organization_self_hosted_runners', 'organization_user_blocking', 'packages', 'pages', 'pull_requests', 'repository_hooks', 'repository_projects', 'secret_scanning_alerts', 'secrets', 'security_events', 'security_scanning_alert', 'single_file', 'statuses', 'vulnerability_alerts', 'workflows'}.contains(key)); } 
-WebhooksIssue2PerformedViaGithubAppPermissions copyWith({Actions? Function()? actions, Administration? Function()? administration, AppPermissionsChecks? Function()? checks, ContentReferences? Function()? contentReferences, Contents? Function()? contents, AppPermissionsDeployments? Function()? deployments, Discussions? Function()? discussions, PermissionsEmails? Function()? emails, AppPermissionsEnvironments? Function()? environments, Issues? Function()? issues, Keys? Function()? keys, Members? Function()? members, AppPermissionsMetadata? Function()? metadata, OrganizationAdministration? Function()? organizationAdministration, OrganizationHooks? Function()? organizationHooks, OrganizationPackages? Function()? organizationPackages, PermissionsOrganizationPlan? Function()? organizationPlan, PermissionsOrganizationProjects? Function()? organizationProjects, OrganizationSecrets? Function()? organizationSecrets, OrganizationSelfHostedRunners? Function()? organizationSelfHostedRunners, OrganizationUserBlocking? Function()? organizationUserBlocking, AppPermissionsPackages? Function()? packages, AppPermissionsPages? Function()? pages, AppPermissionsPullRequests? Function()? pullRequests, RepositoryHooks? Function()? repositoryHooks, PermissionsRepositoryProjects? Function()? repositoryProjects, SecretScanningAlerts? Function()? secretScanningAlerts, Secrets? Function()? secrets, SecurityEvents? Function()? securityEvents, SecurityScanningAlert? Function()? securityScanningAlert, SingleFile? Function()? singleFile, AppPermissionsStatuses? Function()? statuses, VulnerabilityAlerts? Function()? vulnerabilityAlerts, PermissionsWorkflows? Function()? workflows, }) { return WebhooksIssue2PerformedViaGithubAppPermissions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actions', 'administration', 'checks', 'content_references', 'contents', 'deployments', 'discussions', 'emails', 'environments', 'issues', 'keys', 'members', 'metadata', 'organization_administration', 'organization_hooks', 'organization_packages', 'organization_plan', 'organization_projects', 'organization_secrets', 'organization_self_hosted_runners', 'organization_user_blocking', 'packages', 'pages', 'pull_requests', 'repository_hooks', 'repository_projects', 'secret_scanning_alerts', 'secrets', 'security_events', 'security_scanning_alert', 'single_file', 'statuses', 'vulnerability_alerts', 'workflows'}.contains(key));}
+WebhooksIssue2PerformedViaGithubAppPermissions copyWith({Actions? Function()? actions, Administration? Function()? administration, AppPermissionsChecks? Function()? checks, ContentReferences? Function()? contentReferences, Contents? Function()? contents, AppPermissionsDeployments? Function()? deployments, Discussions? Function()? discussions, PermissionsEmails? Function()? emails, AppPermissionsEnvironments? Function()? environments, Issues? Function()? issues, Keys? Function()? keys, Members? Function()? members, AppPermissionsMetadata? Function()? metadata, OrganizationAdministration? Function()? organizationAdministration, OrganizationHooks? Function()? organizationHooks, OrganizationPackages? Function()? organizationPackages, PermissionsOrganizationPlan? Function()? organizationPlan, PermissionsOrganizationProjects? Function()? organizationProjects, OrganizationSecrets? Function()? organizationSecrets, OrganizationSelfHostedRunners? Function()? organizationSelfHostedRunners, OrganizationUserBlocking? Function()? organizationUserBlocking, AppPermissionsPackages? Function()? packages, AppPermissionsPages? Function()? pages, AppPermissionsPullRequests? Function()? pullRequests, RepositoryHooks? Function()? repositoryHooks, PermissionsRepositoryProjects? Function()? repositoryProjects, SecretScanningAlerts? Function()? secretScanningAlerts, Secrets? Function()? secrets, SecurityEvents? Function()? securityEvents, SecurityScanningAlert? Function()? securityScanningAlert, SingleFile? Function()? singleFile, AppPermissionsStatuses? Function()? statuses, VulnerabilityAlerts? Function()? vulnerabilityAlerts, PermissionsWorkflows? Function()? workflows, }) {return WebhooksIssue2PerformedViaGithubAppPermissions(
   actions: actions != null ? actions() : this.actions,
   administration: administration != null ? administration() : this.administration,
   checks: checks != null ? checks() : this.checks,
@@ -248,7 +248,7 @@ WebhooksIssue2PerformedViaGithubAppPermissions copyWith({Actions? Function()? ac
   statuses: statuses != null ? statuses() : this.statuses,
   vulnerabilityAlerts: vulnerabilityAlerts != null ? vulnerabilityAlerts() : this.vulnerabilityAlerts,
   workflows: workflows != null ? workflows() : this.workflows,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksIssue2PerformedViaGithubAppPermissions &&
           actions == other.actions &&
@@ -290,4 +290,4 @@ WebhooksIssue2PerformedViaGithubAppPermissions copyWith({Actions? Function()? ac
 
 @override String toString() => 'WebhooksIssue2PerformedViaGithubAppPermissions(\n  actions: $actions,\n  administration: $administration,\n  checks: $checks,\n  contentReferences: $contentReferences,\n  contents: $contents,\n  deployments: $deployments,\n  discussions: $discussions,\n  emails: $emails,\n  environments: $environments,\n  issues: $issues,\n  keys: $keys,\n  members: $members,\n  metadata: $metadata,\n  organizationAdministration: $organizationAdministration,\n  organizationHooks: $organizationHooks,\n  organizationPackages: $organizationPackages,\n  organizationPlan: $organizationPlan,\n  organizationProjects: $organizationProjects,\n  organizationSecrets: $organizationSecrets,\n  organizationSelfHostedRunners: $organizationSelfHostedRunners,\n  organizationUserBlocking: $organizationUserBlocking,\n  packages: $packages,\n  pages: $pages,\n  pullRequests: $pullRequests,\n  repositoryHooks: $repositoryHooks,\n  repositoryProjects: $repositoryProjects,\n  secretScanningAlerts: $secretScanningAlerts,\n  secrets: $secrets,\n  securityEvents: $securityEvents,\n  securityScanningAlert: $securityScanningAlert,\n  singleFile: $singleFile,\n  statuses: $statuses,\n  vulnerabilityAlerts: $vulnerabilityAlerts,\n  workflows: $workflows,\n)';
 
- }
+}

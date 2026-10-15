@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_customer_device.dart';import 'package:pub_cloudflare/models/mconn_day_of_week.dart';import 'package:pub_cloudflare/models/mconn_embargo_date.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnCustomerConnector {const MconnCustomerConnector({required this.activated, required this.id, required this.interruptWindowDaysOfWeek, required this.interruptWindowDurationHours, required this.interruptWindowEmbargoDates, required this.interruptWindowHourOfDay, required this.lastUpdated, required this.notes, required this.timezone, this.device, this.lastHeartbeat, this.lastSeenVersion, this.licenseKey, });
 
-factory MconnCustomerConnector.fromJson(Map<String, dynamic> json) { return MconnCustomerConnector(
+factory MconnCustomerConnector.fromJson(Map<String, dynamic> json) {return MconnCustomerConnector(
   activated: json['activated'] as bool,
   device: json['device'] != null ? MconnCustomerDevice.fromJson(json['device'] as Map<String, dynamic>) : null,
   id: MconnUuid.fromJson(json['id'] as String),
@@ -17,7 +17,7 @@ factory MconnCustomerConnector.fromJson(Map<String, dynamic> json) { return Mcon
   licenseKey: json['license_key'] as String?,
   notes: json['notes'] as String,
   timezone: json['timezone'] as String,
-); }
+);}
 
 final bool activated;
 
@@ -47,7 +47,7 @@ final String notes;
 
 final String timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activated': activated,
   if (device != null) 'device': device?.toJson(),
   'id': id.toJson(),
@@ -61,8 +61,8 @@ Map<String, dynamic> toJson() { return {
   'license_key': ?licenseKey,
   'notes': notes,
   'timezone': timezone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('activated') && json['activated'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('activated') && json['activated'] is bool &&
       json.containsKey('id') &&
       json.containsKey('interrupt_window_days_of_week') &&
       json.containsKey('interrupt_window_duration_hours') && json['interrupt_window_duration_hours'] is num &&
@@ -70,14 +70,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('interrupt_window_hour_of_day') && json['interrupt_window_hour_of_day'] is num &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('notes') && json['notes'] is String &&
-      json.containsKey('timezone') && json['timezone'] is String; } 
+      json.containsKey('timezone') && json['timezone'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (interruptWindowDurationHours < 1) { errors.add('interruptWindowDurationHours: must be >= 1'); }
 if (interruptWindowDurationHours > 24) { errors.add('interruptWindowDurationHours: must be <= 24'); }
 if (interruptWindowEmbargoDates.length > 100) { errors.add('interruptWindowEmbargoDates: must have <= 100 items'); }
-return errors; } 
-MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function()? device, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? Function()? licenseKey, String? notes, String? timezone, }) { return MconnCustomerConnector(
+return errors;}
+MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function()? device, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? Function()? licenseKey, String? notes, String? timezone, }) {return MconnCustomerConnector(
   activated: activated ?? this.activated,
   device: device != null ? device() : this.device,
   id: id ?? this.id,
@@ -91,7 +91,7 @@ MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function(
   licenseKey: licenseKey != null ? licenseKey() : this.licenseKey,
   notes: notes ?? this.notes,
   timezone: timezone ?? this.timezone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerConnector &&
           activated == other.activated &&
@@ -112,4 +112,4 @@ MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function(
 
 @override String toString() => 'MconnCustomerConnector(\n  activated: $activated,\n  device: $device,\n  id: $id,\n  interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek,\n  interruptWindowDurationHours: $interruptWindowDurationHours,\n  interruptWindowEmbargoDates: $interruptWindowEmbargoDates,\n  interruptWindowHourOfDay: $interruptWindowHourOfDay,\n  lastHeartbeat: $lastHeartbeat,\n  lastSeenVersion: $lastSeenVersion,\n  lastUpdated: $lastUpdated,\n  licenseKey: $licenseKey,\n  notes: $notes,\n  timezone: $timezone,\n)';
 
- }
+}

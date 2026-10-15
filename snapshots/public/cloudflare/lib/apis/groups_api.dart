@@ -12,7 +12,7 @@ final class GroupsApi with ApiExecutor {const GroupsApi(this.apiConfig);
 /// List groups for an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups`
-Future<ApiResult<List<GetGroupListResponse>, GetGroupListError>> getGroupList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetGroupListResponse>, GetGroupListError>> getGroupList({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,11 +29,11 @@ return await execute(
   },
   onError: GetGroupListError.fromResponse,
 );
- } 
+}
 /// Create a group
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups`
-Future<ApiResult<PostGroupCreateResponse, PostGroupCreateError>> postGroupCreate({required String accountId, PostGroupCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostGroupCreateResponse, PostGroupCreateError>> postGroupCreate({required String accountId, PostGroupCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,11 +51,11 @@ return await execute(
   },
   onError: PostGroupCreateError.fromResponse,
 );
- } 
+}
 /// Read a group for an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<GetGroupReadResponse, GetGroupReadError>> getGroupRead({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetGroupReadResponse, GetGroupReadError>> getGroupRead({required String accountId, required String groupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,11 +71,11 @@ return await execute(
   },
   onError: GetGroupReadError.fromResponse,
 );
- } 
+}
 /// Update a group
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<PutGroupUpdateResponse, PutGroupUpdateError>> putGroupUpdate({required String accountId, required String groupId, PutGroupUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PutGroupUpdateResponse, PutGroupUpdateError>> putGroupUpdate({required String accountId, required String groupId, PutGroupUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -93,11 +93,11 @@ return await execute(
   },
   onError: PutGroupUpdateError.fromResponse,
 );
- } 
+}
 /// Delete a group for an account
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<DeleteGroupDeleteResponse, DeleteGroupDeleteError>> deleteGroupDelete({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteGroupDeleteResponse, DeleteGroupDeleteError>> deleteGroupDelete({required String accountId, required String groupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -113,11 +113,11 @@ return await execute(
   },
   onError: DeleteGroupDeleteError.fromResponse,
 );
- } 
+}
 /// List group members
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members`
-Future<ApiResult<List<GetGroupMemberListResponse>, GetGroupMemberListError>> getGroupMemberList({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetGroupMemberListResponse>, GetGroupMemberListError>> getGroupMemberList({required String accountId, required String groupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -134,11 +134,11 @@ return await execute(
   },
   onError: GetGroupMemberListError.fromResponse,
 );
- } 
+}
 /// Create a group member
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members`
-Future<ApiResult<PostGroupMemberCreateResponse, PostGroupMemberCreateError>> postGroupMemberCreate({required String accountId, required String groupId, PostGroupMemberCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostGroupMemberCreateResponse, PostGroupMemberCreateError>> postGroupMemberCreate({required String accountId, required String groupId, PostGroupMemberCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,11 +156,11 @@ return await execute(
   },
   onError: PostGroupMemberCreateError.fromResponse,
 );
- } 
+}
 /// Delete a group member
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members/{member_id}`
-Future<ApiResult<DeleteGroupMemberDeleteResponse, DeleteGroupMemberDeleteError>> deleteGroupMemberDelete({required String accountId, required String groupId, required String memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteGroupMemberDeleteResponse, DeleteGroupMemberDeleteError>> deleteGroupMemberDelete({required String accountId, required String groupId, required String memberId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -176,5 +176,5 @@ return await execute(
   },
   onError: DeleteGroupMemberDeleteError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpIpsTimeseriesResponseResultSerie0 {const RadarGetBgpIpsTimeseriesResponseResultSerie0({required this.ipv4, required this.ipv6, required this.timestamps, });
 
-factory RadarGetBgpIpsTimeseriesResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetBgpIpsTimeseriesResponseResultSerie0(
+factory RadarGetBgpIpsTimeseriesResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetBgpIpsTimeseriesResponseResultSerie0(
   ipv4: (json['ipv4'] as List<dynamic>).map((e) => e as String).toList(),
   ipv6: (json['ipv6'] as List<dynamic>).map((e) => e as String).toList(),
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
-); }
+);}
 
 final List<String> ipv4;
 
@@ -15,19 +15,19 @@ final List<String> ipv6;
 
 final List<DateTime> timestamps;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ipv4': ipv4,
   'ipv6': ipv6,
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ipv4') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ipv4') &&
       json.containsKey('ipv6') &&
-      json.containsKey('timestamps'); } 
-RadarGetBgpIpsTimeseriesResponseResultSerie0 copyWith({List<String>? ipv4, List<String>? ipv6, List<DateTime>? timestamps, }) { return RadarGetBgpIpsTimeseriesResponseResultSerie0(
+      json.containsKey('timestamps');}
+RadarGetBgpIpsTimeseriesResponseResultSerie0 copyWith({List<String>? ipv4, List<String>? ipv6, List<DateTime>? timestamps, }) {return RadarGetBgpIpsTimeseriesResponseResultSerie0(
   ipv4: ipv4 ?? this.ipv4,
   ipv6: ipv6 ?? this.ipv6,
   timestamps: timestamps ?? this.timestamps,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpIpsTimeseriesResponseResultSerie0 &&
           listEquals(ipv4, other.ipv4) &&
@@ -38,4 +38,4 @@ RadarGetBgpIpsTimeseriesResponseResultSerie0 copyWith({List<String>? ipv4, List<
 
 @override String toString() => 'RadarGetBgpIpsTimeseriesResponseResultSerie0(ipv4: $ipv4, ipv6: $ipv6, timestamps: $timestamps)';
 
- }
+}

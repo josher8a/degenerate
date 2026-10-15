@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_share_name.dart';@immutable final class ResourceSharingUpdateShareRequest {const ResourceSharingUpdateShareRequest({required this.name});
 
-factory ResourceSharingUpdateShareRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingUpdateShareRequest(
+factory ResourceSharingUpdateShareRequest.fromJson(Map<String, dynamic> json) {return ResourceSharingUpdateShareRequest(
   name: ResourceSharingShareName.fromJson(json['name'] as String),
-); }
+);}
 
 /// The name of the share.
 final ResourceSharingShareName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-ResourceSharingUpdateShareRequest copyWith({ResourceSharingShareName? name}) { return ResourceSharingUpdateShareRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+ResourceSharingUpdateShareRequest copyWith({ResourceSharingShareName? name}) {return ResourceSharingUpdateShareRequest(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingUpdateShareRequest &&
           name == other.name;
@@ -25,4 +25,4 @@ ResourceSharingUpdateShareRequest copyWith({ResourceSharingShareName? name}) { r
 
 @override String toString() => 'ResourceSharingUpdateShareRequest(name: $name)';
 
- }
+}

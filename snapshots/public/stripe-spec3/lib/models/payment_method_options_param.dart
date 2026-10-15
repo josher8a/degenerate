@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';@immutable final class PaymentMethodOptionsParam {const PaymentMethodOptionsParam({this.captureMethod, this.preferredLocale, this.setupFutureUsage, });
 
-factory PaymentMethodOptionsParam.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam(
+factory PaymentMethodOptionsParam.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsParam(
   captureMethod: json['capture_method'] != null ? PaymentIntentParamCaptureMethod.fromJson(json['capture_method'] as String) : null,
   preferredLocale: json['preferred_locale'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final PaymentIntentParamCaptureMethod? captureMethod;
 
@@ -15,24 +15,24 @@ final String? preferredLocale;
 
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   'preferred_locale': ?preferredLocale,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'setup_future_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'setup_future_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final preferredLocale$ = preferredLocale;
 if (preferredLocale$ != null) {
   if (preferredLocale$.runes.length > 30) { errors.add('preferredLocale: length must be <= 30'); }
 }
-return errors; } 
-PaymentMethodOptionsParam copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, String? Function()? preferredLocale, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam(
+return errors;}
+PaymentMethodOptionsParam copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, String? Function()? preferredLocale, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsParam(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam &&
           captureMethod == other.captureMethod &&
@@ -43,4 +43,4 @@ PaymentMethodOptionsParam copyWith({PaymentIntentParamCaptureMethod? Function()?
 
 @override String toString() => 'PaymentMethodOptionsParam(captureMethod: $captureMethod, preferredLocale: $preferredLocale, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

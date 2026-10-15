@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/event_series.dart';import 'package:pub_kubernetes_api_v1_openapi/models/event_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/micro_time.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_reference.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// Event is a report of an event somewhere in the cluster.  Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.
 @immutable final class Event {const Event({required this.involvedObject, required this.metadata, this.action, this.apiVersion, this.count, this.eventTime, this.firstTimestamp, this.kind, this.lastTimestamp, this.message, this.reason, this.related, this.reportingComponent, this.reportingInstance, this.series, this.source, this.type, });
 
-factory Event.fromJson(Map<String, dynamic> json) { return Event(
+factory Event.fromJson(Map<String, dynamic> json) {return Event(
   action: json['action'] as String?,
   apiVersion: json['apiVersion'] as String?,
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
@@ -22,7 +22,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   series: json['series'] != null ? EventSeries.fromJson(json['series'] as Map<String, dynamic>) : null,
   source: json['source'] != null ? EventSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
-); }
+);}
 
 /// What action was taken/failed regarding to the Regarding object.
 final String? action;
@@ -81,7 +81,7 @@ String get reportingComponentOrDefault => reportingComponent ?? '';
 /// The value of `reportingInstance`, or its schema default when absent.
 String get reportingInstanceOrDefault => reportingInstance ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': ?action,
   'apiVersion': ?apiVersion,
   'count': ?count,
@@ -99,10 +99,10 @@ Map<String, dynamic> toJson() { return {
   if (series != null) 'series': series?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('involvedObject') &&
-      json.containsKey('metadata'); } 
-Event copyWith({String? Function()? action, String? Function()? apiVersion, int? Function()? count, MicroTime? Function()? eventTime, Time? Function()? firstTimestamp, ObjectReference? involvedObject, String? Function()? kind, Time? Function()? lastTimestamp, String? Function()? message, ObjectMeta? metadata, String? Function()? reason, ObjectReference? Function()? related, String? Function()? reportingComponent, String? Function()? reportingInstance, EventSeries? Function()? series, EventSource? Function()? source, String? Function()? type, }) { return Event(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('involvedObject') &&
+      json.containsKey('metadata');}
+Event copyWith({String? Function()? action, String? Function()? apiVersion, int? Function()? count, MicroTime? Function()? eventTime, Time? Function()? firstTimestamp, ObjectReference? involvedObject, String? Function()? kind, Time? Function()? lastTimestamp, String? Function()? message, ObjectMeta? metadata, String? Function()? reason, ObjectReference? Function()? related, String? Function()? reportingComponent, String? Function()? reportingInstance, EventSeries? Function()? series, EventSource? Function()? source, String? Function()? type, }) {return Event(
   action: action != null ? action() : this.action,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   count: count != null ? count() : this.count,
@@ -120,7 +120,7 @@ Event copyWith({String? Function()? action, String? Function()? apiVersion, int?
   series: series != null ? series() : this.series,
   source: source != null ? source() : this.source,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Event &&
           action == other.action &&
@@ -145,4 +145,4 @@ Event copyWith({String? Function()? action, String? Function()? apiVersion, int?
 
 @override String toString() => 'Event(\n  action: $action,\n  apiVersion: $apiVersion,\n  count: $count,\n  eventTime: $eventTime,\n  firstTimestamp: $firstTimestamp,\n  involvedObject: $involvedObject,\n  kind: $kind,\n  lastTimestamp: $lastTimestamp,\n  message: $message,\n  metadata: $metadata,\n  reason: $reason,\n  related: $related,\n  reportingComponent: $reportingComponent,\n  reportingInstance: $reportingInstance,\n  series: $series,\n  source: $source,\n  type: $type,\n)';
 
- }
+}

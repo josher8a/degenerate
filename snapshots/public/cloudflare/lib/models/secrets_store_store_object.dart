@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_created.dart';import 'package:pub_cloudflare/models/secrets_store_modified.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_store_name.dart';@immutable final class SecretsStoreStoreObject {const SecretsStoreStoreObject({required this.created, required this.id, required this.modified, required this.name, });
 
-factory SecretsStoreStoreObject.fromJson(Map<String, dynamic> json) { return SecretsStoreStoreObject(
+factory SecretsStoreStoreObject.fromJson(Map<String, dynamic> json) {return SecretsStoreStoreObject(
   created: SecretsStoreCreated.fromJson(json['created'] as String),
   id: SecretsStoreStoreIdentifier.fromJson(json['id'] as String),
   modified: SecretsStoreModified.fromJson(json['modified'] as String),
   name: SecretsStoreStoreName.fromJson(json['name'] as String),
-); }
+);}
 
 /// Whenthe secret was created.
 final SecretsStoreCreated created;
@@ -22,22 +22,22 @@ final SecretsStoreModified modified;
 /// The name of the store
 final SecretsStoreStoreName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created.toJson(),
   'id': id.toJson(),
   'modified': modified.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') &&
       json.containsKey('id') &&
       json.containsKey('modified') &&
-      json.containsKey('name'); } 
-SecretsStoreStoreObject copyWith({SecretsStoreCreated? created, SecretsStoreStoreIdentifier? id, SecretsStoreModified? modified, SecretsStoreStoreName? name, }) { return SecretsStoreStoreObject(
+      json.containsKey('name');}
+SecretsStoreStoreObject copyWith({SecretsStoreCreated? created, SecretsStoreStoreIdentifier? id, SecretsStoreModified? modified, SecretsStoreStoreName? name, }) {return SecretsStoreStoreObject(
   created: created ?? this.created,
   id: id ?? this.id,
   modified: modified ?? this.modified,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreStoreObject &&
           created == other.created &&
@@ -49,4 +49,4 @@ SecretsStoreStoreObject copyWith({SecretsStoreCreated? created, SecretsStoreStor
 
 @override String toString() => 'SecretsStoreStoreObject(created: $created, id: $id, modified: $modified, name: $name)';
 
- }
+}

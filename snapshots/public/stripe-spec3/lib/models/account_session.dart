@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_account_session_create_components.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class AccountSessionObject {const AccountSessionObject();
 
-factory AccountSessionObject.fromJson(String json) { return switch (json) {
+factory AccountSessionObject.fromJson(String json) {return switch (json) {
   'account_session' => accountSession,
   _ => AccountSessionObject$Unknown(json),
-}; }
+};}
 
 static const AccountSessionObject accountSession = AccountSessionObject$accountSession._();
 
 static const List<AccountSessionObject> values = [accountSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'account_session' => 'accountSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountSessionObject$Unknown; } 
+bool get isUnknown {return this is AccountSessionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() accountSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() accountSession, required W Function(String value) $unknown, }) {return switch (this) {
       AccountSessionObject$accountSession() => accountSession(),
       AccountSessionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountSession, W Function(String value)? $unknown, }) {return switch (this) {
       AccountSessionObject$accountSession() => accountSession != null ? accountSession() : orElse(value),
       AccountSessionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountSessionObject($value)';
 
- }
+}
 @immutable final class AccountSessionObject$accountSession extends AccountSessionObject {const AccountSessionObject$accountSession._();
 
 @override String get value => 'account_session';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountS
 
 @override int get hashCode => 'account_session'.hashCode;
 
- }
+}
 @immutable final class AccountSessionObject$Unknown extends AccountSessionObject {const AccountSessionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountS
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An AccountSession allows a Connect platform to grant access to a connected account in Connect embedded components.
 /// 
 /// We recommend that you create an AccountSession each time you need to display an embedded component
@@ -63,14 +63,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountS
 /// Related guide: [Connect embedded components](https://docs.stripe.com/connect/get-started-connect-embedded-components)
 @immutable final class AccountSession {const AccountSession({required this.account, required this.clientSecret, required this.components, required this.expiresAt, required this.livemode, required this.object, });
 
-factory AccountSession.fromJson(Map<String, dynamic> json) { return AccountSession(
+factory AccountSession.fromJson(Map<String, dynamic> json) {return AccountSession(
   account: json['account'] as String,
   clientSecret: json['client_secret'] as String,
   components: ConnectEmbeddedAccountSessionCreateComponents.fromJson(json['components'] as Map<String, dynamic>),
   expiresAt: (json['expires_at'] as num).toInt(),
   livemode: json['livemode'] as bool,
   object: AccountSessionObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// The ID of the account the AccountSession was created for
 final String account;
@@ -93,33 +93,33 @@ final bool livemode;
 /// String representing the object's type. Objects of the same type share the same value.
 final AccountSessionObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   'client_secret': clientSecret,
   'components': components.toJson(),
   'expires_at': expiresAt,
   'livemode': livemode,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
       json.containsKey('client_secret') && json['client_secret'] is String &&
       json.containsKey('components') &&
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (account.runes.length > 5000) { errors.add('account: length must be <= 5000'); }
 if (clientSecret.runes.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
-return errors; } 
-AccountSession copyWith({String? account, String? clientSecret, ConnectEmbeddedAccountSessionCreateComponents? components, int? expiresAt, bool? livemode, AccountSessionObject? object, }) { return AccountSession(
+return errors;}
+AccountSession copyWith({String? account, String? clientSecret, ConnectEmbeddedAccountSessionCreateComponents? components, int? expiresAt, bool? livemode, AccountSessionObject? object, }) {return AccountSession(
   account: account ?? this.account,
   clientSecret: clientSecret ?? this.clientSecret,
   components: components ?? this.components,
   expiresAt: expiresAt ?? this.expiresAt,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSession &&
           account == other.account &&
@@ -133,4 +133,4 @@ AccountSession copyWith({String? account, String? clientSecret, ConnectEmbeddedA
 
 @override String toString() => 'AccountSession(account: $account, clientSecret: $clientSecret, components: $components, expiresAt: $expiresAt, livemode: $livemode, object: $object)';
 
- }
+}

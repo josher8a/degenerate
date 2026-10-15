@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_checks.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_network_token.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand();
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(String json) {return switch (json) {
   'amex' => amex,
   'cartes_bancaires' => cartesBancaires,
   'diners' => diners,
@@ -18,7 +18,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fr
   'unknown' => unknown,
   'visa' => visa,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand amex = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex._();
 
@@ -47,9 +47,9 @@ static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBra
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand> values = [amex, cartesBancaires, diners, discover, eftposAu, interac, jcb, link, mastercard, unionpay, unknown, visa];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'amex' => 'amex',
   'cartes_bancaires' => 'cartesBancaires',
   'diners' => 'diners',
@@ -63,11 +63,11 @@ String get name { return switch (value) {
   'unknown' => 'unknown',
   'visa' => 'visa',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown; } 
+bool get isUnknown {return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex() => amex(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires() => cartesBancaires(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners() => diners(),
@@ -81,9 +81,9 @@ W when<W>({required W Function() amex, required W Function() cartesBancaires, re
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown() => unknown(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa() => visa(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex() => amex != null ? amex() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners() => diners != null ? diners() : orElse(value),
@@ -97,10 +97,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown() => unknown != null ? unknown() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa() => visa != null ? visa() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand($value)';
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex._();
 
 @override String get value => 'amex';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'amex'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires._();
 
 @override String get value => 'cartes_bancaires';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'cartes_bancaires'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners._();
 
 @override String get value => 'diners';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'diners'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$discover extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$discover._();
 
 @override String get value => 'discover';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'discover'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$eftposAu extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$eftposAu._();
 
 @override String get value => 'eftpos_au';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'eftpos_au'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$interac extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$interac._();
 
 @override String get value => 'interac';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'interac'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$jcb extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$jcb._();
 
 @override String get value => 'jcb';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'jcb'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$link extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$link._();
 
 @override String get value => 'link';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$mastercard extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$mastercard._();
 
 @override String get value => 'mastercard';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'mastercard'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unionpay extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unionpay._();
 
 @override String get value => 'unionpay';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'unionpay'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown._();
 
 @override String get value => 'unknown';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa._();
 
 @override String get value => 'visa';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'visa'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown(this.value);
 
 @override final String value;
@@ -218,17 +218,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Card funding type. Can be `credit`, `debit`, `prepaid`, or `unknown`.
 sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding();
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(String json) {return switch (json) {
   'credit' => credit,
   'debit' => debit,
   'prepaid' => prepaid,
   'unknown' => unknown,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding credit = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit._();
 
@@ -241,36 +241,36 @@ static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFun
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding> values = [credit, debit, prepaid, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'credit' => 'credit',
   'debit' => 'debit',
   'prepaid' => 'prepaid',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown; } 
+bool get isUnknown {return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() credit, required W Function() debit, required W Function() prepaid, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() credit, required W Function() debit, required W Function() prepaid, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit() => credit(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit() => debit(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid() => prepaid(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown() => unknown(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, W Function()? debit, W Function()? prepaid, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, W Function()? debit, W Function()? prepaid, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit() => credit != null ? credit() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit() => debit != null ? debit() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid() => prepaid != null ? prepaid() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown() => unknown != null ? unknown() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding($value)';
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit._();
 
 @override String get value => 'credit';
@@ -279,7 +279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, 
 
 @override int get hashCode => 'credit'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit._();
 
 @override String get value => 'debit';
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, 
 
 @override int get hashCode => 'debit'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid._();
 
 @override String get value => 'prepaid';
@@ -297,7 +297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, 
 
 @override int get hashCode => 'prepaid'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown._();
 
 @override String get value => 'unknown';
@@ -306,7 +306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, 
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown(this.value);
 
 @override final String value;
@@ -316,11 +316,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Identifies which network this charge was processed on. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `interac`, `jcb`, `link`, `mastercard`, `unionpay`, `visa`, or `unknown`.
 sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork();
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(String json) { return switch (json) {
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(String json) {return switch (json) {
   'amex' => amex,
   'cartes_bancaires' => cartesBancaires,
   'diners' => diners,
@@ -334,7 +334,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.
   'unknown' => unknown,
   'visa' => visa,
   _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown(json),
-}; }
+};}
 
 static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork amex = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex._();
 
@@ -363,9 +363,9 @@ static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNet
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork> values = [amex, cartesBancaires, diners, discover, eftposAu, interac, jcb, link, mastercard, unionpay, unknown, visa];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'amex' => 'amex',
   'cartes_bancaires' => 'cartesBancaires',
   'diners' => 'diners',
@@ -379,11 +379,11 @@ String get name { return switch (value) {
   'unknown' => 'unknown',
   'visa' => 'visa',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown; } 
+bool get isUnknown {return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex() => amex(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires() => cartesBancaires(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners() => diners(),
@@ -397,9 +397,9 @@ W when<W>({required W Function() amex, required W Function() cartesBancaires, re
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown() => unknown(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa() => visa(),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex() => amex != null ? amex() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners() => diners != null ? diners() : orElse(value),
@@ -413,10 +413,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown() => unknown != null ? unknown() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa() => visa != null ? visa() : orElse(value),
       PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)';
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex._();
 
 @override String get value => 'amex';
@@ -425,7 +425,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'amex'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires._();
 
 @override String get value => 'cartes_bancaires';
@@ -434,7 +434,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'cartes_bancaires'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners._();
 
 @override String get value => 'diners';
@@ -443,7 +443,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'diners'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$discover extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$discover._();
 
 @override String get value => 'discover';
@@ -452,7 +452,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'discover'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$eftposAu extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$eftposAu._();
 
 @override String get value => 'eftpos_au';
@@ -461,7 +461,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'eftpos_au'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$interac extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$interac._();
 
 @override String get value => 'interac';
@@ -470,7 +470,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'interac'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$jcb extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$jcb._();
 
 @override String get value => 'jcb';
@@ -479,7 +479,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'jcb'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$link extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$link._();
 
 @override String get value => 'link';
@@ -488,7 +488,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$mastercard extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$mastercard._();
 
 @override String get value => 'mastercard';
@@ -497,7 +497,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'mastercard'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unionpay extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unionpay._();
 
 @override String get value => 'unionpay';
@@ -506,7 +506,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'unionpay'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown._();
 
 @override String get value => 'unknown';
@@ -515,7 +515,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa._();
 
 @override String get value => 'visa';
@@ -524,7 +524,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => 'visa'.hashCode;
 
- }
+}
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown(this.value);
 
 @override final String value;
@@ -534,15 +534,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The transaction type that was passed for an off-session, Merchant-Initiated transaction, one of `recurring` or `unscheduled`.
 sealed class StoredCredentialUsage {const StoredCredentialUsage();
 
-factory StoredCredentialUsage.fromJson(String json) { return switch (json) {
+factory StoredCredentialUsage.fromJson(String json) {return switch (json) {
   'recurring' => recurring,
   'unscheduled' => unscheduled,
   _ => StoredCredentialUsage$Unknown(json),
-}; }
+};}
 
 static const StoredCredentialUsage recurring = StoredCredentialUsage$recurring._();
 
@@ -551,30 +551,30 @@ static const StoredCredentialUsage unscheduled = StoredCredentialUsage$unschedul
 static const List<StoredCredentialUsage> values = [recurring, unscheduled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'recurring' => 'recurring',
   'unscheduled' => 'unscheduled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StoredCredentialUsage$Unknown; } 
+bool get isUnknown {return this is StoredCredentialUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() recurring, required W Function() unscheduled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() recurring, required W Function() unscheduled, required W Function(String value) $unknown, }) {return switch (this) {
       StoredCredentialUsage$recurring() => recurring(),
       StoredCredentialUsage$unscheduled() => unscheduled(),
       StoredCredentialUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? recurring, W Function()? unscheduled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? recurring, W Function()? unscheduled, W Function(String value)? $unknown, }) {return switch (this) {
       StoredCredentialUsage$recurring() => recurring != null ? recurring() : orElse(value),
       StoredCredentialUsage$unscheduled() => unscheduled != null ? unscheduled() : orElse(value),
       StoredCredentialUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StoredCredentialUsage($value)';
 
- }
+}
 @immutable final class StoredCredentialUsage$recurring extends StoredCredentialUsage {const StoredCredentialUsage$recurring._();
 
 @override String get value => 'recurring';
@@ -583,7 +583,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? recurrin
 
 @override int get hashCode => 'recurring'.hashCode;
 
- }
+}
 @immutable final class StoredCredentialUsage$unscheduled extends StoredCredentialUsage {const StoredCredentialUsage$unscheduled._();
 
 @override String get value => 'unscheduled';
@@ -592,7 +592,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? recurrin
 
 @override int get hashCode => 'unscheduled'.hashCode;
 
- }
+}
 @immutable final class StoredCredentialUsage$Unknown extends StoredCredentialUsage {const StoredCredentialUsage$Unknown(this.value);
 
 @override final String value;
@@ -602,11 +602,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? recurrin
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Details of the card used for this payment attempt.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.authorizationCode = const Omittable.absent(), this.captureBefore, this.checks = const Omittable.absent(), this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.iin = const Omittable.absent(), this.installments = const Omittable.absent(), this.issuer = const Omittable.absent(), this.network = const Omittable.absent(), this.networkAdviceCode = const Omittable.absent(), this.networkDeclineCode = const Omittable.absent(), this.networkToken = const Omittable.absent(), this.networkTransactionId = const Omittable.absent(), this.storedCredentialUsage = const Omittable.absent(), this.threeDSecure = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJson(Map<String, dynamic> json) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
   authorizationCode: json.containsKey('authorization_code') ? Omittable(json['authorization_code'] as String?) : const Omittable.absent(),
   brand: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(json['brand'] as String),
   captureBefore: json['capture_before'] != null ? (json['capture_before'] as num).toInt() : null,
@@ -629,7 +629,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJso
   storedCredentialUsage: json.containsKey('stored_credential_usage') ? Omittable(json['stored_credential_usage'] != null ? StoredCredentialUsage.fromJson(json['stored_credential_usage'] as String) : null) : const Omittable.absent(),
   threeDSecure: json.containsKey('three_d_secure') ? Omittable(json['three_d_secure'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The authorization code of the payment.
 final Omittable<String?> authorizationCode;
@@ -699,7 +699,7 @@ final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
 final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?> wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authorizationCode.isPresent) 'authorization_code': authorizationCode.value,
   'brand': brand.toJson(),
   'capture_before': ?captureBefore,
@@ -722,14 +722,14 @@ Map<String, dynamic> toJson() { return {
   if (storedCredentialUsage.isPresent) 'stored_credential_usage': storedCredentialUsage.value?.toJson(),
   if (threeDSecure.isPresent) 'three_d_secure': threeDSecure.value?.toJson(),
   if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('brand') &&
       json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') &&
-      json.containsKey('last4') && json['last4'] is String; } 
+      json.containsKey('last4') && json['last4'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final authorizationCode$ = authorizationCode.value;
 if (authorizationCode$ != null) {
   if (authorizationCode$.runes.length > 5000) { errors.add('authorizationCode: length must be <= 5000'); }
@@ -767,8 +767,8 @@ final networkTransactionId$ = networkTransactionId.value;
 if (networkTransactionId$ != null) {
   if (networkTransactionId$.runes.length > 5000) { errors.add('networkTransactionId: length must be <= 5000'); }
 }
-return errors; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omittable<String?>? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int? Function()? captureBefore, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks?>? checks, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, Omittable<String?>? iin, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments?>? installments, Omittable<String?>? issuer, String? last4, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork?>? network, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, Omittable<StoredCredentialUsage?>? storedCredentialUsage, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure?>? threeDSecure, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?>? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
+return errors;}
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omittable<String?>? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int? Function()? captureBefore, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks?>? checks, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, Omittable<String?>? iin, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments?>? installments, Omittable<String?>? issuer, String? last4, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork?>? network, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, Omittable<StoredCredentialUsage?>? storedCredentialUsage, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure?>? threeDSecure, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?>? wallet, }) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
   authorizationCode: authorizationCode ?? this.authorizationCode,
   brand: brand ?? this.brand,
   captureBefore: captureBefore != null ? captureBefore() : this.captureBefore,
@@ -791,7 +791,7 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omitt
   storedCredentialUsage: storedCredentialUsage ?? this.storedCredentialUsage,
   threeDSecure: threeDSecure ?? this.threeDSecure,
   wallet: wallet ?? this.wallet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails &&
           authorizationCode == other.authorizationCode &&
@@ -821,4 +821,4 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omitt
 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(\n  authorizationCode: $authorizationCode,\n  brand: $brand,\n  captureBefore: $captureBefore,\n  checks: $checks,\n  country: $country,\n  description: $description,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  iin: $iin,\n  installments: $installments,\n  issuer: $issuer,\n  last4: $last4,\n  network: $network,\n  networkAdviceCode: $networkAdviceCode,\n  networkDeclineCode: $networkDeclineCode,\n  networkToken: $networkToken,\n  networkTransactionId: $networkTransactionId,\n  storedCredentialUsage: $storedCredentialUsage,\n  threeDSecure: $threeDSecure,\n  wallet: $wallet,\n)';
 
- }
+}

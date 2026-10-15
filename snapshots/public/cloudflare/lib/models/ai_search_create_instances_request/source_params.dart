@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/web_crawler.dart';@immutable final class SourceParams {const SourceParams({this.excludeItems, this.includeItems, this.prefix, this.r2Jurisdiction, this.webCrawler, });
 
-factory SourceParams.fromJson(Map<String, dynamic> json) { return SourceParams(
+factory SourceParams.fromJson(Map<String, dynamic> json) {return SourceParams(
   excludeItems: (json['exclude_items'] as List<dynamic>?)?.map((e) => e as String).toList(),
   includeItems: (json['include_items'] as List<dynamic>?)?.map((e) => e as String).toList(),
   prefix: json['prefix'] as String?,
   r2Jurisdiction: json['r2_jurisdiction'] as String?,
   webCrawler: json['web_crawler'] != null ? WebCrawler.fromJson(json['web_crawler'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced)
 /// 
@@ -30,16 +30,16 @@ final WebCrawler? webCrawler;
 /// The value of `r2Jurisdiction`, or its schema default when absent.
 String get r2JurisdictionOrDefault => r2Jurisdiction ?? 'default';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'exclude_items': ?excludeItems,
   'include_items': ?includeItems,
   'prefix': ?prefix,
   'r2_jurisdiction': ?r2Jurisdiction,
   if (webCrawler != null) 'web_crawler': webCrawler?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude_items', 'include_items', 'prefix', 'r2_jurisdiction', 'web_crawler'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'exclude_items', 'include_items', 'prefix', 'r2_jurisdiction', 'web_crawler'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final excludeItems$ = excludeItems;
 if (excludeItems$ != null) {
   if (excludeItems$.length > 10) { errors.add('excludeItems: must have <= 10 items'); }
@@ -48,14 +48,14 @@ final includeItems$ = includeItems;
 if (includeItems$ != null) {
   if (includeItems$.length > 10) { errors.add('includeItems: must have <= 10 items'); }
 }
-return errors; } 
-SourceParams copyWith({List<String>? Function()? excludeItems, List<String>? Function()? includeItems, String? Function()? prefix, String? Function()? r2Jurisdiction, WebCrawler? Function()? webCrawler, }) { return SourceParams(
+return errors;}
+SourceParams copyWith({List<String>? Function()? excludeItems, List<String>? Function()? includeItems, String? Function()? prefix, String? Function()? r2Jurisdiction, WebCrawler? Function()? webCrawler, }) {return SourceParams(
   excludeItems: excludeItems != null ? excludeItems() : this.excludeItems,
   includeItems: includeItems != null ? includeItems() : this.includeItems,
   prefix: prefix != null ? prefix() : this.prefix,
   r2Jurisdiction: r2Jurisdiction != null ? r2Jurisdiction() : this.r2Jurisdiction,
   webCrawler: webCrawler != null ? webCrawler() : this.webCrawler,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SourceParams &&
           listEquals(excludeItems, other.excludeItems) &&
@@ -68,4 +68,4 @@ SourceParams copyWith({List<String>? Function()? excludeItems, List<String>? Fun
 
 @override String toString() => 'SourceParams(excludeItems: $excludeItems, includeItems: $includeItems, prefix: $prefix, r2Jurisdiction: $r2Jurisdiction, webCrawler: $webCrawler)';
 
- }
+}

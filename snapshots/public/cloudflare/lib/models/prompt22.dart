@@ -3,7 +3,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_image.dart';@immutable final class Prompt22 {const Prompt22({required this.prompt, this.frequencyPenalty, this.image, this.lora, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.seed, this.stream, this.temperature, this.topK, this.topP, });
 
-factory Prompt22.fromJson(Map<String, dynamic> json) { return Prompt22(
+factory Prompt22.fromJson(Map<String, dynamic> json) {return Prompt22(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   image: json['image'] != null ? OneOf2.parse(json['image'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => base64Decode(v as String),) : null,
   lora: json['lora'] as String?,
@@ -17,7 +17,7 @@ factory Prompt22.fromJson(Map<String, dynamic> json) { return Prompt22(
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -69,7 +69,7 @@ bool get streamOrDefault => stream ?? false;
 /// The value of `temperature`, or its schema default when absent.
 double get temperatureOrDefault => temperature ?? 0.6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   if (image != null) 'image': image?.toJson(),
   'lora': ?lora,
@@ -83,10 +83,10 @@ Map<String, dynamic> toJson() { return {
   'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
   if (frequencyPenalty$ < 0) { errors.add('frequencyPenalty: must be >= 0'); }
@@ -124,8 +124,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 2) { errors.add('topP: must be <= 2'); }
 }
-return errors; } 
-Prompt22 copyWith({double? Function()? frequencyPenalty, MessagesImage? Function()? image, String? Function()? lora, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, int? Function()? topK, double? Function()? topP, }) { return Prompt22(
+return errors;}
+Prompt22 copyWith({double? Function()? frequencyPenalty, MessagesImage? Function()? image, String? Function()? lora, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, int? Function()? topK, double? Function()? topP, }) {return Prompt22(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   image: image != null ? image() : this.image,
   lora: lora != null ? lora() : this.lora,
@@ -139,7 +139,7 @@ Prompt22 copyWith({double? Function()? frequencyPenalty, MessagesImage? Function
   temperature: temperature != null ? temperature() : this.temperature,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Prompt22 &&
           frequencyPenalty == other.frequencyPenalty &&
@@ -160,4 +160,4 @@ Prompt22 copyWith({double? Function()? frequencyPenalty, MessagesImage? Function
 
 @override String toString() => 'Prompt22(\n  frequencyPenalty: $frequencyPenalty,\n  image: $image,\n  lora: $lora,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  raw: $raw,\n  repetitionPenalty: $repetitionPenalty,\n  seed: $seed,\n  stream: $stream,\n  temperature: $temperature,\n  topK: $topK,\n  topP: $topP,\n)';
 
- }
+}

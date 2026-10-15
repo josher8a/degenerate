@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_email_settings_properties.dart';import 'package:pub_cloudflare/models/email_messages2.dart';@immutable final class EmailEmailSettingsResponseSingle {const EmailEmailSettingsResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
-factory EmailEmailSettingsResponseSingle.fromJson(Map<String, dynamic> json) { return EmailEmailSettingsResponseSingle(
+factory EmailEmailSettingsResponseSingle.fromJson(Map<String, dynamic> json) {return EmailEmailSettingsResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<EmailMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final EmailEmailSettingsProperties? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-EmailEmailSettingsResponseSingle copyWith({List<EmailMessages2>? errors, List<EmailMessages2>? messages, bool? success, EmailEmailSettingsProperties? Function()? result, }) { return EmailEmailSettingsResponseSingle(
+      json.containsKey('success') && json['success'] is bool;}
+EmailEmailSettingsResponseSingle copyWith({List<EmailMessages2>? errors, List<EmailMessages2>? messages, bool? success, EmailEmailSettingsProperties? Function()? result, }) {return EmailEmailSettingsResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailEmailSettingsResponseSingle &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ EmailEmailSettingsResponseSingle copyWith({List<EmailMessages2>? errors, List<Em
 
 @override String toString() => 'EmailEmailSettingsResponseSingle(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

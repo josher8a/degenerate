@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CreateServersRequestAuthType {const CreateServersRequestAuthType();
 
-factory CreateServersRequestAuthType.fromJson(String json) { return switch (json) {
+factory CreateServersRequestAuthType.fromJson(String json) {return switch (json) {
   'oauth' => oauth,
   'bearer' => bearer,
   'unauthenticated' => unauthenticated,
   _ => CreateServersRequestAuthType$Unknown(json),
-}; }
+};}
 
 static const CreateServersRequestAuthType oauth = CreateServersRequestAuthType$oauth._();
 
@@ -19,33 +19,33 @@ static const CreateServersRequestAuthType unauthenticated = CreateServersRequest
 static const List<CreateServersRequestAuthType> values = [oauth, bearer, unauthenticated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'oauth' => 'oauth',
   'bearer' => 'bearer',
   'unauthenticated' => 'unauthenticated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateServersRequestAuthType$Unknown; } 
+bool get isUnknown {return this is CreateServersRequestAuthType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() oauth, required W Function() bearer, required W Function() unauthenticated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() oauth, required W Function() bearer, required W Function() unauthenticated, required W Function(String value) $unknown, }) {return switch (this) {
       CreateServersRequestAuthType$oauth() => oauth(),
       CreateServersRequestAuthType$bearer() => bearer(),
       CreateServersRequestAuthType$unauthenticated() => unauthenticated(),
       CreateServersRequestAuthType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauth, W Function()? bearer, W Function()? unauthenticated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauth, W Function()? bearer, W Function()? unauthenticated, W Function(String value)? $unknown, }) {return switch (this) {
       CreateServersRequestAuthType$oauth() => oauth != null ? oauth() : orElse(value),
       CreateServersRequestAuthType$bearer() => bearer != null ? bearer() : orElse(value),
       CreateServersRequestAuthType$unauthenticated() => unauthenticated != null ? unauthenticated() : orElse(value),
       CreateServersRequestAuthType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateServersRequestAuthType($value)';
 
- }
+}
 @immutable final class CreateServersRequestAuthType$oauth extends CreateServersRequestAuthType {const CreateServersRequestAuthType$oauth._();
 
 @override String get value => 'oauth';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauth, W
 
 @override int get hashCode => 'oauth'.hashCode;
 
- }
+}
 @immutable final class CreateServersRequestAuthType$bearer extends CreateServersRequestAuthType {const CreateServersRequestAuthType$bearer._();
 
 @override String get value => 'bearer';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauth, W
 
 @override int get hashCode => 'bearer'.hashCode;
 
- }
+}
 @immutable final class CreateServersRequestAuthType$unauthenticated extends CreateServersRequestAuthType {const CreateServersRequestAuthType$unauthenticated._();
 
 @override String get value => 'unauthenticated';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauth, W
 
 @override int get hashCode => 'unauthenticated'.hashCode;
 
- }
+}
 @immutable final class CreateServersRequestAuthType$Unknown extends CreateServersRequestAuthType {const CreateServersRequestAuthType$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauth, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

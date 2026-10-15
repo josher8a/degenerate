@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages10_functions.dart';import 'package:pub_cloudflare/models/messages/messages10_tools.dart';import 'package:pub_cloudflare/models/messages/messages13_messages.dart';import 'package:pub_cloudflare/models/messages/tools_variant1.dart';import 'package:pub_cloudflare/models/messages/tools_variant2.dart';@immutable final class Messages13 {const Messages13({required this.messages, this.frequencyPenalty, this.functions, this.guidedJson, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.seed, this.stream, this.temperature, this.tools, this.topK, this.topP, });
 
-factory Messages13.fromJson(Map<String, dynamic> json) { return Messages13(
+factory Messages13.fromJson(Map<String, dynamic> json) {return Messages13(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages10Functions.fromJson(e as Map<String, dynamic>)).toList(),
   guidedJson: json['guided_json'] as Map<String, dynamic>?,
@@ -18,7 +18,7 @@ factory Messages13.fromJson(Map<String, dynamic> json) { return Messages13(
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ToolsVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ToolsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
@@ -73,7 +73,7 @@ bool get streamOrDefault => stream ?? false;
 /// The value of `temperature`, or its schema default when absent.
 double get temperatureOrDefault => temperature ?? 0.6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'frequency_penalty': ?frequencyPenalty,
   if (functions != null) 'functions': functions?.map((e) => e.toJson()).toList(),
   'guided_json': ?guidedJson,
@@ -88,10 +88,10 @@ Map<String, dynamic> toJson() { return {
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   'top_k': ?topK,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
   if (frequencyPenalty$ < 0) { errors.add('frequencyPenalty: must be >= 0'); }
@@ -127,8 +127,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 2) { errors.add('topP: must be <= 2'); }
 }
-return errors; } 
-Messages13 copyWith({double? Function()? frequencyPenalty, List<Messages10Functions>? Function()? functions, Map<String, dynamic>? Function()? guidedJson, int? Function()? maxTokens, List<Messages13Messages>? messages, double? Function()? presencePenalty, bool? Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, List<Messages10Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return Messages13(
+return errors;}
+Messages13 copyWith({double? Function()? frequencyPenalty, List<Messages10Functions>? Function()? functions, Map<String, dynamic>? Function()? guidedJson, int? Function()? maxTokens, List<Messages13Messages>? messages, double? Function()? presencePenalty, bool? Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, List<Messages10Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) {return Messages13(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,
@@ -143,7 +143,7 @@ Messages13 copyWith({double? Function()? frequencyPenalty, List<Messages10Functi
   tools: tools != null ? tools() : this.tools,
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Messages13 &&
           frequencyPenalty == other.frequencyPenalty &&
@@ -165,4 +165,4 @@ Messages13 copyWith({double? Function()? frequencyPenalty, List<Messages10Functi
 
 @override String toString() => 'Messages13(\n  frequencyPenalty: $frequencyPenalty,\n  functions: $functions,\n  guidedJson: $guidedJson,\n  maxTokens: $maxTokens,\n  messages: $messages,\n  presencePenalty: $presencePenalty,\n  raw: $raw,\n  repetitionPenalty: $repetitionPenalty,\n  seed: $seed,\n  stream: $stream,\n  temperature: $temperature,\n  tools: $tools,\n  topK: $topK,\n  topP: $topP,\n)';
 
- }
+}

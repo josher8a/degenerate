@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';import 'package:pub_cloudflare/models/load_balancing_preview_response/load_balancing_preview_response_result.dart';@immutable final class LoadBalancingPreviewResponse {const LoadBalancingPreviewResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory LoadBalancingPreviewResponse.fromJson(Map<String, dynamic> json) { return LoadBalancingPreviewResponse(
+factory LoadBalancingPreviewResponse.fromJson(Map<String, dynamic> json) {return LoadBalancingPreviewResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: LoadBalancingPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<LoadBalancingMessages2> errors;
 
@@ -21,22 +21,22 @@ final bool success;
 
 final LoadBalancingPreviewResponseResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-LoadBalancingPreviewResponse copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingPreviewResponseResult? result, }) { return LoadBalancingPreviewResponse(
+      json.containsKey('result');}
+LoadBalancingPreviewResponse copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingPreviewResponseResult? result, }) {return LoadBalancingPreviewResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingPreviewResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ LoadBalancingPreviewResponse copyWith({List<LoadBalancingMessages2>? errors, Lis
 
 @override String toString() => 'LoadBalancingPreviewResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

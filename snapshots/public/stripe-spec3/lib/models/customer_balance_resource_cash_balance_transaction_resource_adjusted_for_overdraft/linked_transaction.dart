@@ -8,11 +8,11 @@ const LinkedTransaction({this.string = const Omittable.absent(), this.customerCa
 const LinkedTransaction._({required this.rawValue, required this.string, required this.customerCashBalanceTransaction, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory LinkedTransaction.fromJson(Object? json) { return LinkedTransaction._(
+factory LinkedTransaction.fromJson(Object? json) {return LinkedTransaction._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   customerCashBalanceTransaction: json is Map<String, dynamic> && CustomerCashBalanceTransaction.canParse(json) ? parseAnyOfVariant<CustomerCashBalanceTransaction>(json, (value) => CustomerCashBalanceTransaction.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'LinkedTransaction(${toJson()})';
 
- }
+}

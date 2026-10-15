@@ -7,12 +7,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The settings for
 /// 
 @immutable final class Wandb {const Wandb({required this.project, this.name = const Omittable.absent(), this.entity = const Omittable.absent(), this.tags, });
 
-factory Wandb.fromJson(Map<String, dynamic> json) { return Wandb(
+factory Wandb.fromJson(Map<String, dynamic> json) {return Wandb(
   project: json['project'] as String,
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   entity: json.containsKey('entity') ? Omittable(json['entity'] as String?) : const Omittable.absent(),
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// The name of the project that the new run will be created under.
 /// 
@@ -34,19 +34,19 @@ final Omittable<String?> entity;
 /// 
 final List<String>? tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'project': project,
   if (name.isPresent) 'name': name.value,
   if (entity.isPresent) 'entity': entity.value,
   'tags': ?tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('project') && json['project'] is String; } 
-Wandb copyWith({String? project, Omittable<String?>? name, Omittable<String?>? entity, List<String>? Function()? tags, }) { return Wandb(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('project') && json['project'] is String;}
+Wandb copyWith({String? project, Omittable<String?>? name, Omittable<String?>? entity, List<String>? Function()? tags, }) {return Wandb(
   project: project ?? this.project,
   name: name ?? this.name,
   entity: entity ?? this.entity,
   tags: tags != null ? tags() : this.tags,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Wandb &&
           project == other.project &&
@@ -58,4 +58,4 @@ Wandb copyWith({String? project, Omittable<String?>? name, Omittable<String?>? e
 
 @override String toString() => 'Wandb(project: $project, name: $name, entity: $entity, tags: $tags)';
 
- }
+}

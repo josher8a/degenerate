@@ -14,7 +14,7 @@ final class MTlsCertificateManagementApi with ApiExecutor {const MTlsCertificate
 /// Lists all mTLS certificates uploaded to your account, such as Bring Your Own CA (BYO-CA) for mTLS. To list certificates issued by the Cloudflare managed CA, use the [List Client Certificates endpoint](/api/resources/client_certificates/methods/list/).
 ///
 /// `GET /accounts/{account_id}/mtls_certificates`
-Future<ApiResult<List<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject>?, MTlsCertificateManagementListMTlsCertificatesError>> mTlsCertificateManagementListMTlsCertificates({required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject>?, MTlsCertificateManagementListMTlsCertificatesError>> mTlsCertificateManagementListMTlsCertificates({required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: MTlsCertificateManagementListMTlsCertificatesError.fromResponse,
 );
- } 
+}
 /// Upload mTLS certificate
 ///
 /// Upload a certificate that you want to use with mTLS-enabled Cloudflare services, such as Bring Your Own CA (BYO-CA) for mTLS. To create certificates issued by the Cloudflare managed CA, use the [Create Client Certificate endpoint](/api/resources/client_certificates/methods/create/).
 ///
 /// `POST /accounts/{account_id}/mtls_certificates`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificateObjectPost?, MTlsCertificateManagementUploadMTlsCertificateError>> mTlsCertificateManagementUploadMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier accountId, required MTlsCertificateManagementUploadMTlsCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateObjectPost?, MTlsCertificateManagementUploadMTlsCertificateError>> mTlsCertificateManagementUploadMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier accountId, required MTlsCertificateManagementUploadMTlsCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: MTlsCertificateManagementUploadMTlsCertificateError.fromResponse,
 );
- } 
+}
 /// Get mTLS certificate
 ///
 /// Fetches a single mTLS certificate uploaded to your account. To get a certificate issued by the Cloudflare managed CA, use the [Client Certificate Details endpoint](/api/resources/client_certificates/methods/get/).
 ///
 /// `GET /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?, MTlsCertificateManagementGetMTlsCertificateError>> mTlsCertificateManagementGetMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?, MTlsCertificateManagementGetMTlsCertificateError>> mTlsCertificateManagementGetMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: MTlsCertificateManagementGetMTlsCertificateError.fromResponse,
 );
- } 
+}
 /// Delete mTLS certificate
 ///
 /// Deletes the mTLS certificate unless the certificate is in use by one or more Cloudflare services.
 ///
 /// `DELETE /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?, MTlsCertificateManagementDeleteMTlsCertificateError>> mTlsCertificateManagementDeleteMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?, MTlsCertificateManagementDeleteMTlsCertificateError>> mTlsCertificateManagementDeleteMTlsCertificate({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -102,13 +102,13 @@ return await execute(
   },
   onError: MTlsCertificateManagementDeleteMTlsCertificateError.fromResponse,
 );
- } 
+}
 /// List mTLS certificate associations
 ///
 /// Lists all active associations between the certificate and Cloudflare services.
 ///
 /// `GET /accounts/{account_id}/mtls_certificates/{mtls_certificate_id}/associations`
-Future<ApiResult<List<TlsCertificatesAndHostnamesAssociationObject>?, MTlsCertificateManagementListMTlsCertificateAssociationsError>> mTlsCertificateManagementListMTlsCertificateAssociations({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesAssociationObject>?, MTlsCertificateManagementListMTlsCertificateAssociationsError>> mTlsCertificateManagementListMTlsCertificateAssociations({required TlsCertificatesAndHostnamesIdentifier mtlsCertificateId, required TlsCertificatesAndHostnamesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -125,5 +125,5 @@ return await execute(
   },
   onError: MTlsCertificateManagementListMTlsCertificateAssociationsError.fromResponse,
 );
- } 
- }
+}
+}

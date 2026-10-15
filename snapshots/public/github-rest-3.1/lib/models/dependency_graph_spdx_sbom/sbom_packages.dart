@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/external_refs.dart';@immutable final class SbomPackages {const SbomPackages({this.spdxid, this.name, this.versionInfo, this.downloadLocation, this.filesAnalyzed, this.licenseConcluded, this.licenseDeclared, this.supplier, this.copyrightText, this.externalRefs, });
 
-factory SbomPackages.fromJson(Map<String, dynamic> json) { return SbomPackages(
+factory SbomPackages.fromJson(Map<String, dynamic> json) {return SbomPackages(
   spdxid: json['SPDXID'] as String?,
   name: json['name'] as String?,
   versionInfo: json['versionInfo'] as String?,
@@ -14,7 +14,7 @@ factory SbomPackages.fromJson(Map<String, dynamic> json) { return SbomPackages(
   supplier: json['supplier'] as String?,
   copyrightText: json['copyrightText'] as String?,
   externalRefs: (json['externalRefs'] as List<dynamic>?)?.map((e) => ExternalRefs.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// A unique SPDX identifier for the package.
 final String? spdxid;
@@ -49,7 +49,7 @@ final String? copyrightText;
 
 final List<ExternalRefs>? externalRefs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'SPDXID': ?spdxid,
   'name': ?name,
   'versionInfo': ?versionInfo,
@@ -60,9 +60,9 @@ Map<String, dynamic> toJson() { return {
   'supplier': ?supplier,
   'copyrightText': ?copyrightText,
   if (externalRefs != null) 'externalRefs': externalRefs?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'SPDXID', 'name', 'versionInfo', 'downloadLocation', 'filesAnalyzed', 'licenseConcluded', 'licenseDeclared', 'supplier', 'copyrightText', 'externalRefs'}.contains(key)); } 
-SbomPackages copyWith({String? Function()? spdxid, String? Function()? name, String? Function()? versionInfo, String? Function()? downloadLocation, bool? Function()? filesAnalyzed, String? Function()? licenseConcluded, String? Function()? licenseDeclared, String? Function()? supplier, String? Function()? copyrightText, List<ExternalRefs>? Function()? externalRefs, }) { return SbomPackages(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'SPDXID', 'name', 'versionInfo', 'downloadLocation', 'filesAnalyzed', 'licenseConcluded', 'licenseDeclared', 'supplier', 'copyrightText', 'externalRefs'}.contains(key));}
+SbomPackages copyWith({String? Function()? spdxid, String? Function()? name, String? Function()? versionInfo, String? Function()? downloadLocation, bool? Function()? filesAnalyzed, String? Function()? licenseConcluded, String? Function()? licenseDeclared, String? Function()? supplier, String? Function()? copyrightText, List<ExternalRefs>? Function()? externalRefs, }) {return SbomPackages(
   spdxid: spdxid != null ? spdxid() : this.spdxid,
   name: name != null ? name() : this.name,
   versionInfo: versionInfo != null ? versionInfo() : this.versionInfo,
@@ -73,7 +73,7 @@ SbomPackages copyWith({String? Function()? spdxid, String? Function()? name, Str
   supplier: supplier != null ? supplier() : this.supplier,
   copyrightText: copyrightText != null ? copyrightText() : this.copyrightText,
   externalRefs: externalRefs != null ? externalRefs() : this.externalRefs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SbomPackages &&
           spdxid == other.spdxid &&
@@ -91,4 +91,4 @@ SbomPackages copyWith({String? Function()? spdxid, String? Function()? name, Str
 
 @override String toString() => 'SbomPackages(\n  spdxid: $spdxid,\n  name: $name,\n  versionInfo: $versionInfo,\n  downloadLocation: $downloadLocation,\n  filesAnalyzed: $filesAnalyzed,\n  licenseConcluded: $licenseConcluded,\n  licenseDeclared: $licenseDeclared,\n  supplier: $supplier,\n  copyrightText: $copyrightText,\n  externalRefs: $externalRefs,\n)';
 
- }
+}

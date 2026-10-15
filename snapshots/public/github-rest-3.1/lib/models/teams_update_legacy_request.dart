@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_privacy.dart';import 'package:pub_github_rest_3_1/models/teams_update_in_org_request/teams_update_in_org_request_permission.dart';@immutable final class TeamsUpdateLegacyRequest {const TeamsUpdateLegacyRequest({required this.name, this.description, this.privacy, this.notificationSetting, this.permission, this.parentTeamId = const Omittable.absent(), });
 
-factory TeamsUpdateLegacyRequest.fromJson(Map<String, dynamic> json) { return TeamsUpdateLegacyRequest(
+factory TeamsUpdateLegacyRequest.fromJson(Map<String, dynamic> json) {return TeamsUpdateLegacyRequest(
   name: json['name'] as String,
   description: json['description'] as String?,
   privacy: json['privacy'] != null ? TeamFullPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? TeamFullNotificationSetting.fromJson(json['notification_setting'] as String) : null,
   permission: json['permission'] != null ? TeamsUpdateInOrgRequestPermission.fromJson(json['permission'] as String) : null,
   parentTeamId: json.containsKey('parent_team_id') ? Omittable(json['parent_team_id'] != null ? (json['parent_team_id'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The name of the team.
 final String name;
@@ -40,23 +40,23 @@ final Omittable<int?> parentTeamId;
 /// The value of `permission`, or its schema default when absent.
 TeamsUpdateInOrgRequestPermission get permissionOrDefault => permission ?? TeamsUpdateInOrgRequestPermission.fromJson('pull');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': ?description,
   if (privacy != null) 'privacy': privacy?.toJson(),
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
   if (permission != null) 'permission': permission?.toJson(),
   if (parentTeamId.isPresent) 'parent_team_id': parentTeamId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-TeamsUpdateLegacyRequest copyWith({String? name, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, TeamsUpdateInOrgRequestPermission? Function()? permission, Omittable<int?>? parentTeamId, }) { return TeamsUpdateLegacyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+TeamsUpdateLegacyRequest copyWith({String? name, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, TeamsUpdateInOrgRequestPermission? Function()? permission, Omittable<int?>? parentTeamId, }) {return TeamsUpdateLegacyRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   privacy: privacy != null ? privacy() : this.privacy,
   notificationSetting: notificationSetting != null ? notificationSetting() : this.notificationSetting,
   permission: permission != null ? permission() : this.permission,
   parentTeamId: parentTeamId ?? this.parentTeamId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsUpdateLegacyRequest &&
           name == other.name &&
@@ -70,4 +70,4 @@ TeamsUpdateLegacyRequest copyWith({String? name, String? Function()? description
 
 @override String toString() => 'TeamsUpdateLegacyRequest(name: $name, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)';
 
- }
+}

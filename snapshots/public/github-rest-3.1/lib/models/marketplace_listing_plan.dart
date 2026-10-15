@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan/price_model.dart';/// Marketplace Listing Plan
 @immutable final class MarketplaceListingPlan {const MarketplaceListingPlan({required this.url, required this.accountsUrl, required this.id, required this.number, required this.name, required this.description, required this.monthlyPriceInCents, required this.yearlyPriceInCents, required this.priceModel, required this.hasFreeTrial, required this.unitName, required this.state, required this.bullets, });
 
-factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) { return MarketplaceListingPlan(
+factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) {return MarketplaceListingPlan(
   url: Uri.parse(json['url'] as String),
   accountsUrl: Uri.parse(json['accounts_url'] as String),
   id: (json['id'] as num).toInt(),
@@ -18,7 +18,7 @@ factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) { return Mark
   unitName: json['unit_name'] as String?,
   state: json['state'] as String,
   bullets: (json['bullets'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -46,7 +46,7 @@ final String state;
 
 final List<String> bullets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'accounts_url': accountsUrl.toString(),
   'id': id,
@@ -60,8 +60,8 @@ Map<String, dynamic> toJson() { return {
   'unit_name': unitName,
   'state': state,
   'bullets': bullets,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('accounts_url') && json['accounts_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('number') && json['number'] is num &&
@@ -73,8 +73,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('has_free_trial') && json['has_free_trial'] is bool &&
       json.containsKey('unit_name') && (json['unit_name'] == null || json['unit_name'] is String) &&
       json.containsKey('state') && json['state'] is String &&
-      json.containsKey('bullets'); } 
-MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? number, String? name, String? description, int? monthlyPriceInCents, int? yearlyPriceInCents, PriceModel? priceModel, bool? hasFreeTrial, String? Function()? unitName, String? state, List<String>? bullets, }) { return MarketplaceListingPlan(
+      json.containsKey('bullets');}
+MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? number, String? name, String? description, int? monthlyPriceInCents, int? yearlyPriceInCents, PriceModel? priceModel, bool? hasFreeTrial, String? Function()? unitName, String? state, List<String>? bullets, }) {return MarketplaceListingPlan(
   url: url ?? this.url,
   accountsUrl: accountsUrl ?? this.accountsUrl,
   id: id ?? this.id,
@@ -88,7 +88,7 @@ MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? numbe
   unitName: unitName != null ? unitName() : this.unitName,
   state: state ?? this.state,
   bullets: bullets ?? this.bullets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MarketplaceListingPlan &&
           url == other.url &&
@@ -109,4 +109,4 @@ MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? numbe
 
 @override String toString() => 'MarketplaceListingPlan(\n  url: $url,\n  accountsUrl: $accountsUrl,\n  id: $id,\n  number: $number,\n  name: $name,\n  description: $description,\n  monthlyPriceInCents: $monthlyPriceInCents,\n  yearlyPriceInCents: $yearlyPriceInCents,\n  priceModel: $priceModel,\n  hasFreeTrial: $hasFreeTrial,\n  unitName: $unitName,\n  state: $state,\n  bullets: $bullets,\n)';
 
- }
+}

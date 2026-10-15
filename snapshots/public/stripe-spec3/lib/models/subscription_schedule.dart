@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_current_phase.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class SubscriptionScheduleObject {const SubscriptionScheduleObject();
 
-factory SubscriptionScheduleObject.fromJson(String json) { return switch (json) {
+factory SubscriptionScheduleObject.fromJson(String json) {return switch (json) {
   'subscription_schedule' => subscriptionSchedule,
   _ => SubscriptionScheduleObject$Unknown(json),
-}; }
+};}
 
 static const SubscriptionScheduleObject subscriptionSchedule = SubscriptionScheduleObject$subscriptionSchedule._();
 
 static const List<SubscriptionScheduleObject> values = [subscriptionSchedule];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'subscription_schedule' => 'subscriptionSchedule',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SubscriptionScheduleObject$Unknown; } 
+bool get isUnknown {return this is SubscriptionScheduleObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() subscriptionSchedule, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() subscriptionSchedule, required W Function(String value) $unknown, }) {return switch (this) {
       SubscriptionScheduleObject$subscriptionSchedule() => subscriptionSchedule(),
       SubscriptionScheduleObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscriptionSchedule, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscriptionSchedule, W Function(String value)? $unknown, }) {return switch (this) {
       SubscriptionScheduleObject$subscriptionSchedule() => subscriptionSchedule != null ? subscriptionSchedule() : orElse(value),
       SubscriptionScheduleObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SubscriptionScheduleObject($value)';
 
- }
+}
 @immutable final class SubscriptionScheduleObject$subscriptionSchedule extends SubscriptionScheduleObject {const SubscriptionScheduleObject$subscriptionSchedule._();
 
 @override String get value => 'subscription_schedule';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscrip
 
 @override int get hashCode => 'subscription_schedule'.hashCode;
 
- }
+}
 @immutable final class SubscriptionScheduleObject$Unknown extends SubscriptionScheduleObject {const SubscriptionScheduleObject$Unknown(this.value);
 
 @override final String value;
@@ -53,18 +53,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscrip
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The present status of the subscription schedule. Possible values are `not_started`, `active`, `completed`, `released`, and `canceled`. You can read more about the different states in our [behavior guide](https://docs.stripe.com/billing/subscriptions/subscription-schedules).
 sealed class SubscriptionScheduleStatus {const SubscriptionScheduleStatus();
 
-factory SubscriptionScheduleStatus.fromJson(String json) { return switch (json) {
+factory SubscriptionScheduleStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'canceled' => canceled,
   'completed' => completed,
   'not_started' => notStarted,
   'released' => released,
   _ => SubscriptionScheduleStatus$Unknown(json),
-}; }
+};}
 
 static const SubscriptionScheduleStatus active = SubscriptionScheduleStatus$active._();
 
@@ -79,39 +79,39 @@ static const SubscriptionScheduleStatus released = SubscriptionScheduleStatus$re
 static const List<SubscriptionScheduleStatus> values = [active, canceled, completed, notStarted, released];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'canceled' => 'canceled',
   'completed' => 'completed',
   'not_started' => 'notStarted',
   'released' => 'released',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SubscriptionScheduleStatus$Unknown; } 
+bool get isUnknown {return this is SubscriptionScheduleStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() canceled, required W Function() completed, required W Function() notStarted, required W Function() released, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() canceled, required W Function() completed, required W Function() notStarted, required W Function() released, required W Function(String value) $unknown, }) {return switch (this) {
       SubscriptionScheduleStatus$active() => active(),
       SubscriptionScheduleStatus$canceled() => canceled(),
       SubscriptionScheduleStatus$completed() => completed(),
       SubscriptionScheduleStatus$notStarted() => notStarted(),
       SubscriptionScheduleStatus$released() => released(),
       SubscriptionScheduleStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? canceled, W Function()? completed, W Function()? notStarted, W Function()? released, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? canceled, W Function()? completed, W Function()? notStarted, W Function()? released, W Function(String value)? $unknown, }) {return switch (this) {
       SubscriptionScheduleStatus$active() => active != null ? active() : orElse(value),
       SubscriptionScheduleStatus$canceled() => canceled != null ? canceled() : orElse(value),
       SubscriptionScheduleStatus$completed() => completed != null ? completed() : orElse(value),
       SubscriptionScheduleStatus$notStarted() => notStarted != null ? notStarted() : orElse(value),
       SubscriptionScheduleStatus$released() => released != null ? released() : orElse(value),
       SubscriptionScheduleStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SubscriptionScheduleStatus($value)';
 
- }
+}
 @immutable final class SubscriptionScheduleStatus$active extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$active._();
 
 @override String get value => 'active';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class SubscriptionScheduleStatus$canceled extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class SubscriptionScheduleStatus$completed extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$completed._();
 
 @override String get value => 'completed';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class SubscriptionScheduleStatus$notStarted extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$notStarted._();
 
 @override String get value => 'not_started';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'not_started'.hashCode;
 
- }
+}
 @immutable final class SubscriptionScheduleStatus$released extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$released._();
 
 @override String get value => 'released';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'released'.hashCode;
 
- }
+}
 @immutable final class SubscriptionScheduleStatus$Unknown extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$Unknown(this.value);
 
 @override final String value;
@@ -166,13 +166,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.
 /// 
 /// Related guide: [Subscription schedules](https://docs.stripe.com/billing/subscriptions/subscription-schedules)
 @immutable final class SubscriptionSchedule {const SubscriptionSchedule({required this.billingMode, required this.created, required this.customer, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, required this.object, required this.phases, required this.status, this.application = const Omittable.absent(), this.canceledAt = const Omittable.absent(), this.completedAt = const Omittable.absent(), this.currentPhase = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.metadata = const Omittable.absent(), this.releasedAt = const Omittable.absent(), this.releasedSubscription = const Omittable.absent(), this.subscription = const Omittable.absent(), this.testClock = const Omittable.absent(), });
 
-factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return SubscriptionSchedule(
+factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) {return SubscriptionSchedule(
   application: json.containsKey('application') ? Omittable(json['application'] != null ? BillingPortalConfigurationApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   billingMode: SubscriptionsResourceBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),
   canceledAt: json.containsKey('canceled_at') ? Omittable(json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null) : const Omittable.absent(),
@@ -193,7 +193,7 @@ factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return Subscr
   status: SubscriptionScheduleStatus.fromJson(json['status'] as String),
   subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription.fromJson(json['subscription']) : null) : const Omittable.absent(),
   testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? TestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the Connect Application that created the schedule.
 final Omittable<BillingPortalConfigurationApplication?> application;
@@ -253,7 +253,7 @@ final Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubs
 /// ID of the test clock this subscription schedule belongs to.
 final Omittable<TestClock?> testClock;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (application.isPresent) 'application': application.value?.toJson(),
   'billing_mode': billingMode.toJson(),
   if (canceledAt.isPresent) 'canceled_at': canceledAt.value,
@@ -274,8 +274,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   if (subscription.isPresent) 'subscription': subscription.value?.toJson(),
   if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_mode') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing_mode') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('customer') &&
       json.containsKey('default_settings') &&
@@ -284,9 +284,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('phases') &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
@@ -296,8 +296,8 @@ final releasedSubscription$ = releasedSubscription.value;
 if (releasedSubscription$ != null) {
   if (releasedSubscription$.runes.length > 5000) { errors.add('releasedSubscription: length must be <= 5000'); }
 }
-return errors; } 
-SubscriptionSchedule copyWith({Omittable<BillingPortalConfigurationApplication?>? application, SubscriptionsResourceBillingMode? billingMode, Omittable<int?>? canceledAt, Omittable<int?>? completedAt, int? created, Omittable<SubscriptionScheduleCurrentPhase?>? currentPhase, BankAccountCustomer? customer, Omittable<String?>? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? endBehavior, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, Omittable<int?>? releasedAt, Omittable<String?>? releasedSubscription, SubscriptionScheduleStatus? status, Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription?>? subscription, Omittable<TestClock?>? testClock, }) { return SubscriptionSchedule(
+return errors;}
+SubscriptionSchedule copyWith({Omittable<BillingPortalConfigurationApplication?>? application, SubscriptionsResourceBillingMode? billingMode, Omittable<int?>? canceledAt, Omittable<int?>? completedAt, int? created, Omittable<SubscriptionScheduleCurrentPhase?>? currentPhase, BankAccountCustomer? customer, Omittable<String?>? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? endBehavior, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, Omittable<int?>? releasedAt, Omittable<String?>? releasedSubscription, SubscriptionScheduleStatus? status, Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription?>? subscription, Omittable<TestClock?>? testClock, }) {return SubscriptionSchedule(
   application: application ?? this.application,
   billingMode: billingMode ?? this.billingMode,
   canceledAt: canceledAt ?? this.canceledAt,
@@ -318,7 +318,7 @@ SubscriptionSchedule copyWith({Omittable<BillingPortalConfigurationApplication?>
   status: status ?? this.status,
   subscription: subscription ?? this.subscription,
   testClock: testClock ?? this.testClock,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionSchedule &&
           application == other.application &&
@@ -346,4 +346,4 @@ SubscriptionSchedule copyWith({Omittable<BillingPortalConfigurationApplication?>
 
 @override String toString() => 'SubscriptionSchedule(\n  application: $application,\n  billingMode: $billingMode,\n  canceledAt: $canceledAt,\n  completedAt: $completedAt,\n  created: $created,\n  currentPhase: $currentPhase,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  defaultSettings: $defaultSettings,\n  endBehavior: $endBehavior,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  phases: $phases,\n  releasedAt: $releasedAt,\n  releasedSubscription: $releasedSubscription,\n  status: $status,\n  subscription: $subscription,\n  testClock: $testClock,\n)';
 
- }
+}

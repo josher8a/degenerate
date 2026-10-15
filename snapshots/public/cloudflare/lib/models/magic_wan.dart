@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_port.dart';import 'package:pub_cloudflare/models/magic_vlan_tag.dart';import 'package:pub_cloudflare/models/magic_wan_static_addressing.dart';/// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
 sealed class HealthCheckRate {const HealthCheckRate();
 
-factory HealthCheckRate.fromJson(String json) { return switch (json) {
+factory HealthCheckRate.fromJson(String json) {return switch (json) {
   'low' => low,
   'mid' => mid,
   'high' => high,
   _ => HealthCheckRate$Unknown(json),
-}; }
+};}
 
 static const HealthCheckRate low = HealthCheckRate$low._();
 
@@ -20,33 +20,33 @@ static const HealthCheckRate high = HealthCheckRate$high._();
 static const List<HealthCheckRate> values = [low, mid, high];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'low' => 'low',
   'mid' => 'mid',
   'high' => 'high',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is HealthCheckRate$Unknown; } 
+bool get isUnknown {return this is HealthCheckRate$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() low, required W Function() mid, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() low, required W Function() mid, required W Function() high, required W Function(String value) $unknown, }) {return switch (this) {
       HealthCheckRate$low() => low(),
       HealthCheckRate$mid() => mid(),
       HealthCheckRate$high() => high(),
       HealthCheckRate$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? mid, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? mid, W Function()? high, W Function(String value)? $unknown, }) {return switch (this) {
       HealthCheckRate$low() => low != null ? low() : orElse(value),
       HealthCheckRate$mid() => mid != null ? mid() : orElse(value),
       HealthCheckRate$high() => high != null ? high() : orElse(value),
       HealthCheckRate$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'HealthCheckRate($value)';
 
- }
+}
 @immutable final class HealthCheckRate$low extends HealthCheckRate {const HealthCheckRate$low._();
 
 @override String get value => 'low';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'low'.hashCode;
 
- }
+}
 @immutable final class HealthCheckRate$mid extends HealthCheckRate {const HealthCheckRate$mid._();
 
 @override String get value => 'mid';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'mid'.hashCode;
 
- }
+}
 @immutable final class HealthCheckRate$high extends HealthCheckRate {const HealthCheckRate$high._();
 
 @override String get value => 'high';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => 'high'.hashCode;
 
- }
+}
 @immutable final class HealthCheckRate$Unknown extends HealthCheckRate {const HealthCheckRate$Unknown(this.value);
 
 @override final String value;
@@ -83,10 +83,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class MagicWan {const MagicWan({this.healthCheckRate, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });
 
-factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
+factory MagicWan.fromJson(Map<String, dynamic> json) {return MagicWan(
   healthCheckRate: json['health_check_rate'] != null ? HealthCheckRate.fromJson(json['health_check_rate'] as String) : null,
   id: json['id'] != null ? MagicIdentifier.fromJson(json['id'] as String) : null,
   name: json['name'] as String?,
@@ -95,7 +95,7 @@ factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
   siteId: json['site_id'] != null ? MagicIdentifier.fromJson(json['site_id'] as String) : null,
   staticAddressing: json['static_addressing'] != null ? MagicWanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>) : null,
   vlanTag: json['vlan_tag'] != null ? MagicVlanTag.fromJson(json['vlan_tag'] as num) : null,
-); }
+);}
 
 /// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
 /// 
@@ -123,7 +123,7 @@ final MagicVlanTag? vlanTag;
 /// The value of `healthCheckRate`, or its schema default when absent.
 HealthCheckRate get healthCheckRateOrDefault => healthCheckRate ?? HealthCheckRate.fromJson('mid');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (healthCheckRate != null) 'health_check_rate': healthCheckRate?.toJson(),
   if (id != null) 'id': id?.toJson(),
   'name': ?name,
@@ -132,9 +132,9 @@ Map<String, dynamic> toJson() { return {
   if (siteId != null) 'site_id': siteId?.toJson(),
   if (staticAddressing != null) 'static_addressing': staticAddressing?.toJson(),
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'health_check_rate', 'id', 'name', 'physport', 'priority', 'site_id', 'static_addressing', 'vlan_tag'}.contains(key)); } 
-MagicWan copyWith({HealthCheckRate? Function()? healthCheckRate, MagicIdentifier? Function()? id, String? Function()? name, MagicPort? Function()? physport, int? Function()? priority, MagicIdentifier? Function()? siteId, MagicWanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) { return MagicWan(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'health_check_rate', 'id', 'name', 'physport', 'priority', 'site_id', 'static_addressing', 'vlan_tag'}.contains(key));}
+MagicWan copyWith({HealthCheckRate? Function()? healthCheckRate, MagicIdentifier? Function()? id, String? Function()? name, MagicPort? Function()? physport, int? Function()? priority, MagicIdentifier? Function()? siteId, MagicWanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) {return MagicWan(
   healthCheckRate: healthCheckRate != null ? healthCheckRate() : this.healthCheckRate,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
@@ -143,7 +143,7 @@ MagicWan copyWith({HealthCheckRate? Function()? healthCheckRate, MagicIdentifier
   siteId: siteId != null ? siteId() : this.siteId,
   staticAddressing: staticAddressing != null ? staticAddressing() : this.staticAddressing,
   vlanTag: vlanTag != null ? vlanTag() : this.vlanTag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicWan &&
           healthCheckRate == other.healthCheckRate &&
@@ -159,4 +159,4 @@ MagicWan copyWith({HealthCheckRate? Function()? healthCheckRate, MagicIdentifier
 
 @override String toString() => 'MagicWan(healthCheckRate: $healthCheckRate, id: $id, name: $name, physport: $physport, priority: $priority, siteId: $siteId, staticAddressing: $staticAddressing, vlanTag: $vlanTag)';
 
- }
+}

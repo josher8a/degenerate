@@ -10,12 +10,12 @@ String toJson() => value;
 }
 @immutable final class MagicVisibilityMnmMnmVpcFlowsSingleResponse {const MagicVisibilityMnmMnmVpcFlowsSingleResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory MagicVisibilityMnmMnmVpcFlowsSingleResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmVpcFlowsSingleResponse(
+factory MagicVisibilityMnmMnmVpcFlowsSingleResponse.fromJson(Map<String, dynamic> json) {return MagicVisibilityMnmMnmVpcFlowsSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: MagicVisibilityMnmMnmVpcFlowsToken.fromJson(json['result'] as String),
   success: json['success'] as bool,
-); }
+);}
 
 final List<MagicVisibilityMnmMessages2> errors;
 
@@ -28,22 +28,22 @@ final MagicVisibilityMnmMnmVpcFlowsToken result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-MagicVisibilityMnmMnmVpcFlowsSingleResponse copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, MagicVisibilityMnmMnmVpcFlowsToken? result, bool? success, }) { return MagicVisibilityMnmMnmVpcFlowsSingleResponse(
+      json.containsKey('success') && json['success'] is bool;}
+MagicVisibilityMnmMnmVpcFlowsSingleResponse copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, MagicVisibilityMnmMnmVpcFlowsToken? result, bool? success, }) {return MagicVisibilityMnmMnmVpcFlowsSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMnmVpcFlowsSingleResponse &&
           listEquals(errors, other.errors) &&
@@ -55,4 +55,4 @@ MagicVisibilityMnmMnmVpcFlowsSingleResponse copyWith({List<MagicVisibilityMnmMes
 
 @override String toString() => 'MagicVisibilityMnmMnmVpcFlowsSingleResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

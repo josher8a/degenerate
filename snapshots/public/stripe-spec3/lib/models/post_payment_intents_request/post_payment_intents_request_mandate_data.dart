@@ -8,11 +8,11 @@ const PostPaymentIntentsRequestMandateData({this.secretKeyParam = const Omittabl
 const PostPaymentIntentsRequestMandateData._({required this.rawValue, required this.secretKeyParam, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostPaymentIntentsRequestMandateData.fromJson(Object? json) { return PostPaymentIntentsRequestMandateData._(
+factory PostPaymentIntentsRequestMandateData.fromJson(Object? json) {return PostPaymentIntentsRequestMandateData._(
   rawValue: Omittable(json),
   secretKeyParam: json is Map<String, dynamic> && SecretKeyParam.canParse(json) ? parseAnyOfVariant<SecretKeyParam>(json, (value) => SecretKeyParam.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostPaymentIntentsRequestMandateData(${toJson()})';
 
- }
+}

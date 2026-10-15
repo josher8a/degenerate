@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetEmailSecurityTopTldsByMessagesFormat {const RadarGetEmailSecurityTopTldsByMessagesFormat();
 
-factory RadarGetEmailSecurityTopTldsByMessagesFormat.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTopTldsByMessagesFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetEmailSecurityTopTldsByMessagesFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTopTldsByMessagesFormat $json = RadarGetEmailSecurityTopTldsByMessagesFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetEmailSecurityTopTldsByMessagesFormat csv = RadarGetEmailSec
 static const List<RadarGetEmailSecurityTopTldsByMessagesFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailSecurityTopTldsByMessagesFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailSecurityTopTldsByMessagesFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTopTldsByMessagesFormat$$json() => $json(),
       RadarGetEmailSecurityTopTldsByMessagesFormat$csv() => csv(),
       RadarGetEmailSecurityTopTldsByMessagesFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTopTldsByMessagesFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetEmailSecurityTopTldsByMessagesFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetEmailSecurityTopTldsByMessagesFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailSecurityTopTldsByMessagesFormat($value)';
 
- }
+}
 @immutable final class RadarGetEmailSecurityTopTldsByMessagesFormat$$json extends RadarGetEmailSecurityTopTldsByMessagesFormat {const RadarGetEmailSecurityTopTldsByMessagesFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTopTldsByMessagesFormat$csv extends RadarGetEmailSecurityTopTldsByMessagesFormat {const RadarGetEmailSecurityTopTldsByMessagesFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTopTldsByMessagesFormat$Unknown extends RadarGetEmailSecurityTopTldsByMessagesFormat {const RadarGetEmailSecurityTopTldsByMessagesFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

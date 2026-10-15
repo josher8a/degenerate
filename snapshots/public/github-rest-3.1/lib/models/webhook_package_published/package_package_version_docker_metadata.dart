@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagePackageVersionDockerMetadata {const PackagePackageVersionDockerMetadata({this.tags});
 
-factory PackagePackageVersionDockerMetadata.fromJson(Map<String, dynamic> json) { return PackagePackageVersionDockerMetadata(
+factory PackagePackageVersionDockerMetadata.fromJson(Map<String, dynamic> json) {return PackagePackageVersionDockerMetadata(
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final List<String>? tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tags': ?tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tags'}.contains(key)); } 
-PackagePackageVersionDockerMetadata copyWith({List<String>? Function()? tags}) { return PackagePackageVersionDockerMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tags'}.contains(key));}
+PackagePackageVersionDockerMetadata copyWith({List<String>? Function()? tags}) {return PackagePackageVersionDockerMetadata(
   tags: tags != null ? tags() : this.tags,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PackagePackageVersionDockerMetadata &&
           listEquals(tags, other.tags);
@@ -24,4 +24,4 @@ PackagePackageVersionDockerMetadata copyWith({List<String>? Function()? tags}) {
 
 @override String toString() => 'PackagePackageVersionDockerMetadata(tags: $tags)';
 
- }
+}

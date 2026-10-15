@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_entry_of_new_profile.dart';import 'package:pub_cloudflare/models/dlp_new_custom_entry.dart';import 'package:pub_cloudflare/models/dlp_new_shared_entry.dart';import 'package:pub_cloudflare/models/dlp_new_word_list_entry.dart';@immutable final class DlpNewCustomProfile {const DlpNewCustomProfile({required this.name, this.aiContextEnabled, this.allowedMatchCount, this.confidenceThreshold = const Omittable.absent(), this.contextAwareness, this.dataClasses, this.dataTags, this.description = const Omittable.absent(), this.entries, this.ocrEnabled, this.sensitivityLevels, this.sharedEntries, });
 
-factory DlpNewCustomProfile.fromJson(Map<String, dynamic> json) { return DlpNewCustomProfile(
+factory DlpNewCustomProfile.fromJson(Map<String, dynamic> json) {return DlpNewCustomProfile(
   aiContextEnabled: json['ai_context_enabled'] as bool?,
   allowedMatchCount: json['allowed_match_count'] != null ? (json['allowed_match_count'] as num).toInt() : null,
   confidenceThreshold: json.containsKey('confidence_threshold') ? Omittable(json['confidence_threshold'] as String?) : const Omittable.absent(),
@@ -16,7 +16,7 @@ factory DlpNewCustomProfile.fromJson(Map<String, dynamic> json) { return DlpNewC
   ocrEnabled: json['ocr_enabled'] as bool?,
   sensitivityLevels: (json['sensitivity_levels'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e as String).toList()).toList(),
   sharedEntries: (json['shared_entries'] as List<dynamic>?)?.map((e) => DlpNewSharedEntry.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final bool? aiContextEnabled;
 
@@ -62,7 +62,7 @@ String? get confidenceThresholdOrDefault => confidenceThreshold.valueOr('low');
 /// The value of `ocrEnabled`, or its schema default when absent.
 bool get ocrEnabledOrDefault => ocrEnabled ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ai_context_enabled': ?aiContextEnabled,
   'allowed_match_count': ?allowedMatchCount,
   if (confidenceThreshold.isPresent) 'confidence_threshold': confidenceThreshold.value,
@@ -75,17 +75,17 @@ Map<String, dynamic> toJson() { return {
   'ocr_enabled': ?ocrEnabled,
   if (sensitivityLevels != null) 'sensitivity_levels': sensitivityLevels?.map((e) => e).toList(),
   if (sharedEntries != null) 'shared_entries': sharedEntries?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final allowedMatchCount$ = allowedMatchCount;
 if (allowedMatchCount$ != null) {
   if (allowedMatchCount$ < 0) { errors.add('allowedMatchCount: must be >= 0'); }
   if (allowedMatchCount$ > 1000) { errors.add('allowedMatchCount: must be <= 1000'); }
 }
-return errors; } 
-DlpNewCustomProfile copyWith({bool? Function()? aiContextEnabled, int? Function()? allowedMatchCount, Omittable<String?>? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, Omittable<String?>? description, List<DlpEntryOfNewProfile>? Function()? entries, String? name, bool? Function()? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpNewSharedEntry>? Function()? sharedEntries, }) { return DlpNewCustomProfile(
+return errors;}
+DlpNewCustomProfile copyWith({bool? Function()? aiContextEnabled, int? Function()? allowedMatchCount, Omittable<String?>? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, Omittable<String?>? description, List<DlpEntryOfNewProfile>? Function()? entries, String? name, bool? Function()? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpNewSharedEntry>? Function()? sharedEntries, }) {return DlpNewCustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount != null ? allowedMatchCount() : this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold ?? this.confidenceThreshold,
@@ -98,7 +98,7 @@ DlpNewCustomProfile copyWith({bool? Function()? aiContextEnabled, int? Function(
   ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
   sensitivityLevels: sensitivityLevels != null ? sensitivityLevels() : this.sensitivityLevels,
   sharedEntries: sharedEntries != null ? sharedEntries() : this.sharedEntries,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewCustomProfile &&
           aiContextEnabled == other.aiContextEnabled &&
@@ -118,4 +118,4 @@ DlpNewCustomProfile copyWith({bool? Function()? aiContextEnabled, int? Function(
 
 @override String toString() => 'DlpNewCustomProfile(\n  aiContextEnabled: $aiContextEnabled,\n  allowedMatchCount: $allowedMatchCount,\n  confidenceThreshold: $confidenceThreshold,\n  contextAwareness: $contextAwareness,\n  dataClasses: $dataClasses,\n  dataTags: $dataTags,\n  description: $description,\n  entries: $entries,\n  name: $name,\n  ocrEnabled: $ocrEnabled,\n  sensitivityLevels: $sensitivityLevels,\n  sharedEntries: $sharedEntries,\n)';
 
- }
+}

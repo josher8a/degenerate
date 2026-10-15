@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingCreditGrantsRequest {const GetBillingCreditGrantsRequest();
 
-factory GetBillingCreditGrantsRequest.fromJson(Map<String, dynamic> _) { return const GetBillingCreditGrantsRequest(); }
+factory GetBillingCreditGrantsRequest.fromJson(Map<String, dynamic> _) {return const GetBillingCreditGrantsRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-GetBillingCreditGrantsRequest copyWith() { return const GetBillingCreditGrantsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+GetBillingCreditGrantsRequest copyWith() {return const GetBillingCreditGrantsRequest(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is GetBillingCreditGrantsRequest;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'GetBillingCreditGrantsRequest()';
 
- }
+}

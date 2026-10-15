@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the recording.
 sealed class RealtimekitRecordingStatus {const RealtimekitRecordingStatus();
 
-factory RealtimekitRecordingStatus.fromJson(String json) { return switch (json) {
+factory RealtimekitRecordingStatus.fromJson(String json) {return switch (json) {
   'INVOKED' => invoked,
   'RECORDING' => recording,
   'UPLOADING' => uploading,
@@ -12,7 +12,7 @@ factory RealtimekitRecordingStatus.fromJson(String json) { return switch (json) 
   'ERRORED' => errored,
   'PAUSED' => paused,
   _ => RealtimekitRecordingStatus$Unknown(json),
-}; }
+};}
 
 static const RealtimekitRecordingStatus invoked = RealtimekitRecordingStatus$invoked._();
 
@@ -29,9 +29,9 @@ static const RealtimekitRecordingStatus paused = RealtimekitRecordingStatus$paus
 static const List<RealtimekitRecordingStatus> values = [invoked, recording, uploading, uploaded, errored, paused];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'INVOKED' => 'invoked',
   'RECORDING' => 'recording',
   'UPLOADING' => 'uploading',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'ERRORED' => 'errored',
   'PAUSED' => 'paused',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimekitRecordingStatus$Unknown; } 
+bool get isUnknown {return this is RealtimekitRecordingStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() invoked, required W Function() recording, required W Function() uploading, required W Function() uploaded, required W Function() errored, required W Function() paused, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() invoked, required W Function() recording, required W Function() uploading, required W Function() uploaded, required W Function() errored, required W Function() paused, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimekitRecordingStatus$invoked() => invoked(),
       RealtimekitRecordingStatus$recording() => recording(),
       RealtimekitRecordingStatus$uploading() => uploading(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() invoked, required W Function() recording, requi
       RealtimekitRecordingStatus$errored() => errored(),
       RealtimekitRecordingStatus$paused() => paused(),
       RealtimekitRecordingStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked, W Function()? recording, W Function()? uploading, W Function()? uploaded, W Function()? errored, W Function()? paused, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked, W Function()? recording, W Function()? uploading, W Function()? uploaded, W Function()? errored, W Function()? paused, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimekitRecordingStatus$invoked() => invoked != null ? invoked() : orElse(value),
       RealtimekitRecordingStatus$recording() => recording != null ? recording() : orElse(value),
       RealtimekitRecordingStatus$uploading() => uploading != null ? uploading() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked,
       RealtimekitRecordingStatus$errored() => errored != null ? errored() : orElse(value),
       RealtimekitRecordingStatus$paused() => paused != null ? paused() : orElse(value),
       RealtimekitRecordingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimekitRecordingStatus($value)';
 
- }
+}
 @immutable final class RealtimekitRecordingStatus$invoked extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$invoked._();
 
 @override String get value => 'INVOKED';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked,
 
 @override int get hashCode => 'INVOKED'.hashCode;
 
- }
+}
 @immutable final class RealtimekitRecordingStatus$recording extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$recording._();
 
 @override String get value => 'RECORDING';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked,
 
 @override int get hashCode => 'RECORDING'.hashCode;
 
- }
+}
 @immutable final class RealtimekitRecordingStatus$uploading extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$uploading._();
 
 @override String get value => 'UPLOADING';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked,
 
 @override int get hashCode => 'UPLOADING'.hashCode;
 
- }
+}
 @immutable final class RealtimekitRecordingStatus$uploaded extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$uploaded._();
 
 @override String get value => 'UPLOADED';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked,
 
 @override int get hashCode => 'UPLOADED'.hashCode;
 
- }
+}
 @immutable final class RealtimekitRecordingStatus$errored extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$errored._();
 
 @override String get value => 'ERRORED';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked,
 
 @override int get hashCode => 'ERRORED'.hashCode;
 
- }
+}
 @immutable final class RealtimekitRecordingStatus$paused extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$paused._();
 
 @override String get value => 'PAUSED';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked,
 
 @override int get hashCode => 'PAUSED'.hashCode;
 
- }
+}
 @immutable final class RealtimekitRecordingStatus$Unknown extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

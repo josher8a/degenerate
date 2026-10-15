@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/links_comments.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/links_commits.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/links_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/links_review_comment.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/links_statuses.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/review_comments.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_links_html.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_links_self.dart';@immutable final class WebhooksPullRequest5Links {const WebhooksPullRequest5Links({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses, });
 
-factory WebhooksPullRequest5Links.fromJson(Map<String, dynamic> json) { return WebhooksPullRequest5Links(
+factory WebhooksPullRequest5Links.fromJson(Map<String, dynamic> json) {return WebhooksPullRequest5Links(
   comments: LinksComments.fromJson(json['comments'] as Map<String, dynamic>),
   commits: LinksCommits.fromJson(json['commits'] as Map<String, dynamic>),
   html: WebhooksPullRequest5LinksHtml.fromJson(json['html'] as Map<String, dynamic>),
@@ -12,7 +12,7 @@ factory WebhooksPullRequest5Links.fromJson(Map<String, dynamic> json) { return W
   reviewComments: ReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>),
   self: WebhooksPullRequest5LinksSelf.fromJson(json['self'] as Map<String, dynamic>),
   statuses: LinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>),
-); }
+);}
 
 final LinksComments comments;
 
@@ -30,7 +30,7 @@ final WebhooksPullRequest5LinksSelf self;
 
 final LinksStatuses statuses;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'comments': comments.toJson(),
   'commits': commits.toJson(),
   'html': html.toJson(),
@@ -39,16 +39,16 @@ Map<String, dynamic> toJson() { return {
   'review_comments': reviewComments.toJson(),
   'self': self.toJson(),
   'statuses': statuses.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('comments') &&
       json.containsKey('commits') &&
       json.containsKey('html') &&
       json.containsKey('issue') &&
       json.containsKey('review_comment') &&
       json.containsKey('review_comments') &&
       json.containsKey('self') &&
-      json.containsKey('statuses'); } 
-WebhooksPullRequest5Links copyWith({LinksComments? comments, LinksCommits? commits, WebhooksPullRequest5LinksHtml? html, LinksIssue? issue, LinksReviewComment? reviewComment, ReviewComments? reviewComments, WebhooksPullRequest5LinksSelf? self, LinksStatuses? statuses, }) { return WebhooksPullRequest5Links(
+      json.containsKey('statuses');}
+WebhooksPullRequest5Links copyWith({LinksComments? comments, LinksCommits? commits, WebhooksPullRequest5LinksHtml? html, LinksIssue? issue, LinksReviewComment? reviewComment, ReviewComments? reviewComments, WebhooksPullRequest5LinksSelf? self, LinksStatuses? statuses, }) {return WebhooksPullRequest5Links(
   comments: comments ?? this.comments,
   commits: commits ?? this.commits,
   html: html ?? this.html,
@@ -57,7 +57,7 @@ WebhooksPullRequest5Links copyWith({LinksComments? comments, LinksCommits? commi
   reviewComments: reviewComments ?? this.reviewComments,
   self: self ?? this.self,
   statuses: statuses ?? this.statuses,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksPullRequest5Links &&
           comments == other.comments &&
@@ -73,4 +73,4 @@ WebhooksPullRequest5Links copyWith({LinksComments? comments, LinksCommits? commi
 
 @override String toString() => 'WebhooksPullRequest5Links(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)';
 
- }
+}

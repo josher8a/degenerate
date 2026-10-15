@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/default_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request/post_subscription_schedules_schedule_request_phases.dart';@immutable final class PostSubscriptionSchedulesScheduleRequest {const PostSubscriptionSchedulesScheduleRequest({this.defaultSettings, this.endBehavior, this.expand, this.metadata, this.phases, this.prorationBehavior, });
 
-factory PostSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequest(
+factory PostSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesScheduleRequest(
   defaultSettings: json['default_settings'] != null ? DefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesScheduleRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
   prorationBehavior: json['proration_behavior'] != null ? DeleteSubscriptionItemsItemRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-); }
+);}
 
 /// Object representing the subscription schedule's default settings.
 final DefaultSettings? defaultSettings;
@@ -30,23 +30,23 @@ final List<PostSubscriptionSchedulesScheduleRequestPhases>? phases;
 /// If the update changes the billing configuration (item price, quantity, etc.) of the current phase, indicates how prorations from this change should be handled. The default value is `create_prorations`.
 final DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (defaultSettings != null) 'default_settings': defaultSettings?.toJson(),
   if (endBehavior != null) 'end_behavior': endBehavior?.toJson(),
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (phases != null) 'phases': phases?.map((e) => e.toJson()).toList(),
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_settings', 'end_behavior', 'expand', 'metadata', 'phases', 'proration_behavior'}.contains(key)); } 
-PostSubscriptionSchedulesScheduleRequest copyWith({DefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, Metadata? Function()? metadata, List<PostSubscriptionSchedulesScheduleRequestPhases>? Function()? phases, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, }) { return PostSubscriptionSchedulesScheduleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'default_settings', 'end_behavior', 'expand', 'metadata', 'phases', 'proration_behavior'}.contains(key));}
+PostSubscriptionSchedulesScheduleRequest copyWith({DefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, Metadata? Function()? metadata, List<PostSubscriptionSchedulesScheduleRequestPhases>? Function()? phases, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, }) {return PostSubscriptionSchedulesScheduleRequest(
   defaultSettings: defaultSettings != null ? defaultSettings() : this.defaultSettings,
   endBehavior: endBehavior != null ? endBehavior() : this.endBehavior,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   phases: phases != null ? phases() : this.phases,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionSchedulesScheduleRequest &&
           defaultSettings == other.defaultSettings &&
@@ -60,4 +60,4 @@ PostSubscriptionSchedulesScheduleRequest copyWith({DefaultSettings? Function()? 
 
 @override String toString() => 'PostSubscriptionSchedulesScheduleRequest(defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, metadata: $metadata, phases: $phases, prorationBehavior: $prorationBehavior)';
 
- }
+}

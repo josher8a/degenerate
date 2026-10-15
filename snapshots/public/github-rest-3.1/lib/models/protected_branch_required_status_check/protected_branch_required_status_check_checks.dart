@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchRequiredStatusCheckChecks {const ProtectedBranchRequiredStatusCheckChecks({required this.context, required this.appId, });
 
-factory ProtectedBranchRequiredStatusCheckChecks.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredStatusCheckChecks(
+factory ProtectedBranchRequiredStatusCheckChecks.fromJson(Map<String, dynamic> json) {return ProtectedBranchRequiredStatusCheckChecks(
   context: json['context'] as String,
   appId: json['app_id'] != null ? (json['app_id'] as num).toInt() : null,
-); }
+);}
 
 final String context;
 
 final int? appId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'context': context,
   'app_id': appId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('context') && json['context'] is String &&
-      json.containsKey('app_id') && (json['app_id'] == null || json['app_id'] is num); } 
-ProtectedBranchRequiredStatusCheckChecks copyWith({String? context, int? Function()? appId, }) { return ProtectedBranchRequiredStatusCheckChecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('context') && json['context'] is String &&
+      json.containsKey('app_id') && (json['app_id'] == null || json['app_id'] is num);}
+ProtectedBranchRequiredStatusCheckChecks copyWith({String? context, int? Function()? appId, }) {return ProtectedBranchRequiredStatusCheckChecks(
   context: context ?? this.context,
   appId: appId != null ? appId() : this.appId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchRequiredStatusCheckChecks &&
           context == other.context &&
@@ -31,4 +31,4 @@ ProtectedBranchRequiredStatusCheckChecks copyWith({String? context, int? Functio
 
 @override String toString() => 'ProtectedBranchRequiredStatusCheckChecks(context: $context, appId: $appId)';
 
- }
+}

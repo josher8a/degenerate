@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_schemas_aud.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class BrowserIsolationPermissionsApplication3 {const BrowserIsolationPermissionsApplication3({required this.type, this.aud, this.createdAt, this.id, this.scimConfig, this.updatedAt, this.allowedIdps, this.autoRedirectToIdentity, this.domain = const Omittable.absent(), this.name = const Omittable.absent(), this.sessionDuration, });
 
-factory BrowserIsolationPermissionsApplication3.fromJson(Map<String, dynamic> json) { return BrowserIsolationPermissionsApplication3(
+factory BrowserIsolationPermissionsApplication3.fromJson(Map<String, dynamic> json) {return BrowserIsolationPermissionsApplication3(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -15,7 +15,7 @@ factory BrowserIsolationPermissionsApplication3.fromJson(Map<String, dynamic> js
   name: json.containsKey('name') ? Omittable(json['name']) : const Omittable.absent(),
   sessionDuration: json['session_duration'] != null ? AccessAppsComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: json['type'] as String,
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -45,7 +45,7 @@ final AccessAppsComponentsSchemasSessionDuration? sessionDuration;
 /// Example: `'biso'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   if (name.isPresent) 'name': name.value,
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-BrowserIsolationPermissionsApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, String? type, }) { return BrowserIsolationPermissionsApplication3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+BrowserIsolationPermissionsApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, String? type, }) {return BrowserIsolationPermissionsApplication3(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -71,7 +71,7 @@ BrowserIsolationPermissionsApplication3 copyWith({AccessSchemasAud? Function()? 
   name: name ?? this.name,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BrowserIsolationPermissionsApplication3 &&
           aud == other.aud &&
@@ -90,4 +90,4 @@ BrowserIsolationPermissionsApplication3 copyWith({AccessSchemasAud? Function()? 
 
 @override String toString() => 'BrowserIsolationPermissionsApplication3(\n  aud: $aud,\n  createdAt: $createdAt,\n  id: $id,\n  scimConfig: $scimConfig,\n  updatedAt: $updatedAt,\n  allowedIdps: $allowedIdps,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  domain: $domain,\n  name: $name,\n  sessionDuration: $sessionDuration,\n  type: $type,\n)';
 
- }
+}

@@ -7,11 +7,11 @@ const SummarizationModel({this.aiSearchModelVariant1 = const Omittable.absent(),
 const SummarizationModel._({required this.rawValue, required this.aiSearchModelVariant1, required this.aiSearchModelVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory SummarizationModel.fromJson(Object? json) { return SummarizationModel._(
+factory SummarizationModel.fromJson(Object? json) {return SummarizationModel._(
   rawValue: Omittable(json),
   aiSearchModelVariant1: parseAnyOfVariant<AiSearchModelVariant1>(json, (value) => AiSearchModelVariant1.fromJson(value! as String)),
   aiSearchModelVariant2: parseAnyOfVariant<AiSearchModelVariant2>(json, (value) => AiSearchModelVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'SummarizationModel(${toJson()})';
 
- }
+}

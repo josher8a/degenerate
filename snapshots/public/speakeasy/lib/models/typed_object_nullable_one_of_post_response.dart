@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/typed_object1.dart';import 'package:pub_speakeasy/models/typed_object2.dart';import 'package:pub_speakeasy/models/typed_object_nullable_one_of.dart';@immutable final class TypedObjectNullableOneOfPostResponse {const TypedObjectNullableOneOfPostResponse({required this.json});
 
-factory TypedObjectNullableOneOfPostResponse.fromJson(Map<String, dynamic> json) { return TypedObjectNullableOneOfPostResponse(
+factory TypedObjectNullableOneOfPostResponse.fromJson(Map<String, dynamic> json) {return TypedObjectNullableOneOfPostResponse(
   json: json['json'] != null ? OneOf2.parse(json['json'], fromA: (v) => TypedObject1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypedObject2.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 final TypedObjectNullableOneOf? json;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'json': json?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('json'); } 
-TypedObjectNullableOneOfPostResponse copyWith({TypedObjectNullableOneOf? Function()? json}) { return TypedObjectNullableOneOfPostResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('json');}
+TypedObjectNullableOneOfPostResponse copyWith({TypedObjectNullableOneOf? Function()? json}) {return TypedObjectNullableOneOfPostResponse(
   json: json != null ? json() : this.json,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TypedObjectNullableOneOfPostResponse &&
           json == other.json;
@@ -24,4 +24,4 @@ TypedObjectNullableOneOfPostResponse copyWith({TypedObjectNullableOneOf? Functio
 
 @override String toString() => 'TypedObjectNullableOneOfPostResponse(json: $json)';
 
- }
+}

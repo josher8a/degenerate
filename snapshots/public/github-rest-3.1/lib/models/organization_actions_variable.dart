@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';/// Organization variable for GitHub Actions.
 @immutable final class OrganizationActionsVariable {const OrganizationActionsVariable({required this.name, required this.value, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
 
-factory OrganizationActionsVariable.fromJson(Map<String, dynamic> json) { return OrganizationActionsVariable(
+factory OrganizationActionsVariable.fromJson(Map<String, dynamic> json) {return OrganizationActionsVariable(
   name: json['name'] as String,
   value: json['value'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoriesUrl: json['selected_repositories_url'] != null ? Uri.parse(json['selected_repositories_url'] as String) : null,
-); }
+);}
 
 /// The name of the variable.
 final String name;
@@ -30,27 +30,27 @@ final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 
 final Uri? selectedRepositoriesUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'visibility': visibility.toJson(),
   if (selectedRepositoriesUrl != null) 'selected_repositories_url': selectedRepositoriesUrl?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('value') && json['value'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('visibility'); } 
-OrganizationActionsVariable copyWith({String? name, String? value, DateTime? createdAt, DateTime? updatedAt, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, Uri? Function()? selectedRepositoriesUrl, }) { return OrganizationActionsVariable(
+      json.containsKey('visibility');}
+OrganizationActionsVariable copyWith({String? name, String? value, DateTime? createdAt, DateTime? updatedAt, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, Uri? Function()? selectedRepositoriesUrl, }) {return OrganizationActionsVariable(
   name: name ?? this.name,
   value: value ?? this.value,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   visibility: visibility ?? this.visibility,
   selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationActionsVariable &&
           name == other.name &&
@@ -64,4 +64,4 @@ OrganizationActionsVariable copyWith({String? name, String? value, DateTime? cre
 
 @override String toString() => 'OrganizationActionsVariable(name: $name, value: $value, createdAt: $createdAt, updatedAt: $updatedAt, visibility: $visibility, selectedRepositoriesUrl: $selectedRepositoriesUrl)';
 
- }
+}

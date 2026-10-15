@@ -7,11 +7,11 @@ const KlarnaSubscriptions({this.listKlarnaSubscriptionsVariant1 = const Omittabl
 const KlarnaSubscriptions._({required this.rawValue, required this.listKlarnaSubscriptionsVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory KlarnaSubscriptions.fromJson(Object? json) { return KlarnaSubscriptions._(
+factory KlarnaSubscriptions.fromJson(Object? json) {return KlarnaSubscriptions._(
   rawValue: Omittable(json),
   listKlarnaSubscriptionsVariant1: parseAnyOfVariant<List<KlarnaSubscriptionsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => KlarnaSubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'KlarnaSubscriptions(${toJson()})';
 
- }
+}

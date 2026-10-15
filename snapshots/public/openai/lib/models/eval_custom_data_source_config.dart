@@ -8,10 +8,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.type, required this.schema, });
 
-factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
+factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) {return EvalCustomDataSourceConfig(
   type: CreateEvalCustomDataSourceConfigType.fromJson(json['type'] as String),
   schema: json['schema'] as Map<String, dynamic>,
-); }
+);}
 
 /// The type of data source. Always `custom`.
 final CreateEvalCustomDataSourceConfigType type;
@@ -36,16 +36,16 @@ final CreateEvalCustomDataSourceConfigType type;
 /// '``
 final Map<String,dynamic> schema;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'schema': schema,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'custom' &&
-      json.containsKey('schema'); } 
-EvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType? type, Map<String,dynamic>? schema, }) { return EvalCustomDataSourceConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'custom' &&
+      json.containsKey('schema');}
+EvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType? type, Map<String,dynamic>? schema, }) {return EvalCustomDataSourceConfig(
   type: type ?? this.type,
   schema: schema ?? this.schema,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EvalCustomDataSourceConfig &&
           type == other.type &&
@@ -55,4 +55,4 @@ EvalCustomDataSourceConfig copyWith({CreateEvalCustomDataSourceConfigType? type,
 
 @override String toString() => 'EvalCustomDataSourceConfig(type: $type, schema: $schema)';
 
- }
+}

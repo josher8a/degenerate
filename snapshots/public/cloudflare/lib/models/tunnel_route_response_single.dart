@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_messages2.dart';import 'package:pub_cloudflare/models/tunnel_route.dart';@immutable final class TunnelRouteResponseSingle {const TunnelRouteResponseSingle({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory TunnelRouteResponseSingle.fromJson(Map<String, dynamic> json) { return TunnelRouteResponseSingle(
+factory TunnelRouteResponseSingle.fromJson(Map<String, dynamic> json) {return TunnelRouteResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => TunnelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TunnelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: TunnelRoute.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<TunnelMessages2> errors;
 
@@ -21,22 +21,22 @@ final TunnelRoute result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-TunnelRouteResponseSingle copyWith({List<TunnelMessages2>? errors, List<TunnelMessages2>? messages, TunnelRoute? result, bool? success, }) { return TunnelRouteResponseSingle(
+      json.containsKey('success') && json['success'] is bool;}
+TunnelRouteResponseSingle copyWith({List<TunnelMessages2>? errors, List<TunnelMessages2>? messages, TunnelRoute? result, bool? success, }) {return TunnelRouteResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelRouteResponseSingle &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ TunnelRouteResponseSingle copyWith({List<TunnelMessages2>? errors, List<TunnelMe
 
 @override String toString() => 'TunnelRouteResponseSingle(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_description.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_id.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_attributable.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_downloadable.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_public.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_name.dart';@immutable final class CustomIndicatorFeedsPermissionListItem {const CustomIndicatorFeedsPermissionListItem({this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.name, });
 
-factory CustomIndicatorFeedsPermissionListItem.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsPermissionListItem(
+factory CustomIndicatorFeedsPermissionListItem.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsPermissionListItem(
   description: json['description'] != null ? CustomIndicatorFeedsDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? CustomIndicatorFeedsId.fromJson(json['id'] as num) : null,
   isAttributable: json['is_attributable'] != null ? CustomIndicatorFeedsIsAttributable.fromJson(json['is_attributable'] as bool) : null,
   isDownloadable: json['is_downloadable'] != null ? CustomIndicatorFeedsIsDownloadable.fromJson(json['is_downloadable'] as bool) : null,
   isPublic: json['is_public'] != null ? CustomIndicatorFeedsIsPublic.fromJson(json['is_public'] as bool) : null,
   name: json['name'] != null ? CustomIndicatorFeedsName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// The description of the example test
 final CustomIndicatorFeedsDescription? description;
@@ -30,23 +30,23 @@ final CustomIndicatorFeedsIsPublic? isPublic;
 /// The name of the indicator feed
 final CustomIndicatorFeedsName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (isAttributable != null) 'is_attributable': isAttributable?.toJson(),
   if (isDownloadable != null) 'is_downloadable': isDownloadable?.toJson(),
   if (isPublic != null) 'is_public': isPublic?.toJson(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'name'}.contains(key)); } 
-CustomIndicatorFeedsPermissionListItem copyWith({CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, CustomIndicatorFeedsName? Function()? name, }) { return CustomIndicatorFeedsPermissionListItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'name'}.contains(key));}
+CustomIndicatorFeedsPermissionListItem copyWith({CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, CustomIndicatorFeedsName? Function()? name, }) {return CustomIndicatorFeedsPermissionListItem(
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
   isAttributable: isAttributable != null ? isAttributable() : this.isAttributable,
   isDownloadable: isDownloadable != null ? isDownloadable() : this.isDownloadable,
   isPublic: isPublic != null ? isPublic() : this.isPublic,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsPermissionListItem &&
           description == other.description &&
@@ -60,4 +60,4 @@ CustomIndicatorFeedsPermissionListItem copyWith({CustomIndicatorFeedsDescription
 
 @override String toString() => 'CustomIndicatorFeedsPermissionListItem(description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, name: $name)';
 
- }
+}

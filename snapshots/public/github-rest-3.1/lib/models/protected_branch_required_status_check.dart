@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/protected_branch_required_status_check/protected_branch_required_status_check_checks.dart';/// Protected Branch Required Status Check
 @immutable final class ProtectedBranchRequiredStatusCheck {const ProtectedBranchRequiredStatusCheck({required this.contexts, required this.checks, this.url, this.enforcementLevel, this.contextsUrl, this.strict, });
 
-factory ProtectedBranchRequiredStatusCheck.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredStatusCheck(
+factory ProtectedBranchRequiredStatusCheck.fromJson(Map<String, dynamic> json) {return ProtectedBranchRequiredStatusCheck(
   url: json['url'] as String?,
   enforcementLevel: json['enforcement_level'] as String?,
   contexts: (json['contexts'] as List<dynamic>).map((e) => e as String).toList(),
   checks: (json['checks'] as List<dynamic>).map((e) => ProtectedBranchRequiredStatusCheckChecks.fromJson(e as Map<String, dynamic>)).toList(),
   contextsUrl: json['contexts_url'] as String?,
   strict: json['strict'] as bool?,
-); }
+);}
 
 final String? url;
 
@@ -25,24 +25,24 @@ final String? contextsUrl;
 
 final bool? strict;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': ?url,
   'enforcement_level': ?enforcementLevel,
   'contexts': contexts,
   'checks': checks.map((e) => e.toJson()).toList(),
   'contexts_url': ?contextsUrl,
   'strict': ?strict,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts') &&
-      json.containsKey('checks'); } 
-ProtectedBranchRequiredStatusCheck copyWith({String? Function()? url, String? Function()? enforcementLevel, List<String>? contexts, List<ProtectedBranchRequiredStatusCheckChecks>? checks, String? Function()? contextsUrl, bool? Function()? strict, }) { return ProtectedBranchRequiredStatusCheck(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('contexts') &&
+      json.containsKey('checks');}
+ProtectedBranchRequiredStatusCheck copyWith({String? Function()? url, String? Function()? enforcementLevel, List<String>? contexts, List<ProtectedBranchRequiredStatusCheckChecks>? checks, String? Function()? contextsUrl, bool? Function()? strict, }) {return ProtectedBranchRequiredStatusCheck(
   url: url != null ? url() : this.url,
   enforcementLevel: enforcementLevel != null ? enforcementLevel() : this.enforcementLevel,
   contexts: contexts ?? this.contexts,
   checks: checks ?? this.checks,
   contextsUrl: contextsUrl != null ? contextsUrl() : this.contextsUrl,
   strict: strict != null ? strict() : this.strict,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchRequiredStatusCheck &&
           url == other.url &&
@@ -56,4 +56,4 @@ ProtectedBranchRequiredStatusCheck copyWith({String? Function()? url, String? Fu
 
 @override String toString() => 'ProtectedBranchRequiredStatusCheck(url: $url, enforcementLevel: $enforcementLevel, contexts: $contexts, checks: $checks, contextsUrl: $contextsUrl, strict: $strict)';
 
- }
+}

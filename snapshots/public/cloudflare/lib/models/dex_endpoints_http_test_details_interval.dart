@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DexEndpointsHttpTestDetailsInterval {const DexEndpointsHttpTestDetailsInterval();
 
-factory DexEndpointsHttpTestDetailsInterval.fromJson(String json) { return switch (json) {
+factory DexEndpointsHttpTestDetailsInterval.fromJson(String json) {return switch (json) {
   'minute' => minute,
   'hour' => hour,
   _ => DexEndpointsHttpTestDetailsInterval$Unknown(json),
-}; }
+};}
 
 static const DexEndpointsHttpTestDetailsInterval minute = DexEndpointsHttpTestDetailsInterval$minute._();
 
@@ -16,30 +16,30 @@ static const DexEndpointsHttpTestDetailsInterval hour = DexEndpointsHttpTestDeta
 static const List<DexEndpointsHttpTestDetailsInterval> values = [minute, hour];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'minute' => 'minute',
   'hour' => 'hour',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DexEndpointsHttpTestDetailsInterval$Unknown; } 
+bool get isUnknown {return this is DexEndpointsHttpTestDetailsInterval$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() minute, required W Function() hour, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() minute, required W Function() hour, required W Function(String value) $unknown, }) {return switch (this) {
       DexEndpointsHttpTestDetailsInterval$minute() => minute(),
       DexEndpointsHttpTestDetailsInterval$hour() => hour(),
       DexEndpointsHttpTestDetailsInterval$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? minute, W Function()? hour, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? minute, W Function()? hour, W Function(String value)? $unknown, }) {return switch (this) {
       DexEndpointsHttpTestDetailsInterval$minute() => minute != null ? minute() : orElse(value),
       DexEndpointsHttpTestDetailsInterval$hour() => hour != null ? hour() : orElse(value),
       DexEndpointsHttpTestDetailsInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DexEndpointsHttpTestDetailsInterval($value)';
 
- }
+}
 @immutable final class DexEndpointsHttpTestDetailsInterval$minute extends DexEndpointsHttpTestDetailsInterval {const DexEndpointsHttpTestDetailsInterval$minute._();
 
 @override String get value => 'minute';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? minute, 
 
 @override int get hashCode => 'minute'.hashCode;
 
- }
+}
 @immutable final class DexEndpointsHttpTestDetailsInterval$hour extends DexEndpointsHttpTestDetailsInterval {const DexEndpointsHttpTestDetailsInterval$hour._();
 
 @override String get value => 'hour';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? minute, 
 
 @override int get hashCode => 'hour'.hashCode;
 
- }
+}
 @immutable final class DexEndpointsHttpTestDetailsInterval$Unknown extends DexEndpointsHttpTestDetailsInterval {const DexEndpointsHttpTestDetailsInterval$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? minute, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

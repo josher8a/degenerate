@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// See the [Standard onboarding](/connect/standard-accounts) or [Express onboarding](/connect/express-accounts) documentation for information about prefilling information and account onboarding steps. Learn more about [handling identity verification with the API](/connect/handling-api-verification#person-information).
 @immutable final class Person {const Person({required this.account, required this.created, required this.id, required this.object, this.additionalTosAcceptances, this.address, this.addressKana = const Omittable.absent(), this.addressKanji = const Omittable.absent(), this.dob, this.email = const Omittable.absent(), this.firstName = const Omittable.absent(), this.firstNameKana = const Omittable.absent(), this.firstNameKanji = const Omittable.absent(), this.fullNameAliases, this.futureRequirements = const Omittable.absent(), this.gender = const Omittable.absent(), this.idNumberProvided, this.idNumberSecondaryProvided, this.lastName = const Omittable.absent(), this.lastNameKana = const Omittable.absent(), this.lastNameKanji = const Omittable.absent(), this.maidenName = const Omittable.absent(), this.metadata, this.nationality = const Omittable.absent(), this.phone = const Omittable.absent(), this.politicalExposure, this.registeredAddress, this.relationship, this.requirements = const Omittable.absent(), this.ssnLast4Provided, this.usCfpbData = const Omittable.absent(), this.verification, });
 
-factory Person.fromJson(Map<String, dynamic> json) { return Person(
+factory Person.fromJson(Map<String, dynamic> json) {return Person(
   account: json['account'] as String,
   additionalTosAcceptances: json['additional_tos_acceptances'] != null ? PersonAdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>) : null,
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
@@ -41,7 +41,7 @@ factory Person.fromJson(Map<String, dynamic> json) { return Person(
   ssnLast4Provided: json['ssn_last_4_provided'] as bool?,
   usCfpbData: json.containsKey('us_cfpb_data') ? Omittable(json['us_cfpb_data'] != null ? PersonUsCfpbData.fromJson(json['us_cfpb_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   verification: json['verification'] != null ? LegalEntityPersonVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The account the person is associated with.
 final String account;
@@ -129,7 +129,7 @@ final Omittable<PersonUsCfpbData?> usCfpbData;
 
 final LegalEntityPersonVerification? verification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   if (additionalTosAcceptances != null) 'additional_tos_acceptances': additionalTosAcceptances?.toJson(),
   if (address != null) 'address': address?.toJson(),
@@ -162,13 +162,13 @@ Map<String, dynamic> toJson() { return {
   'ssn_last_4_provided': ?ssnLast4Provided,
   if (usCfpbData.isPresent) 'us_cfpb_data': usCfpbData.value?.toJson(),
   if (verification != null) 'verification': verification?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (account.runes.length > 5000) { errors.add('account: length must be <= 5000'); }
 final email$ = email.value;
 if (email$ != null) {
@@ -211,8 +211,8 @@ final phone$ = phone.value;
 if (phone$ != null) {
   if (phone$.runes.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
-return errors; } 
-Person copyWith({String? account, PersonAdditionalTosAcceptances? Function()? additionalTosAcceptances, Address? Function()? address, Omittable<LegalEntityJapanAddress?>? addressKana, Omittable<LegalEntityJapanAddress?>? addressKanji, int? created, LegalEntityDob? Function()? dob, Omittable<String?>? email, Omittable<String?>? firstName, Omittable<String?>? firstNameKana, Omittable<String?>? firstNameKanji, List<String>? Function()? fullNameAliases, Omittable<PersonFutureRequirements?>? futureRequirements, Omittable<String?>? gender, String? id, bool? Function()? idNumberProvided, bool? Function()? idNumberSecondaryProvided, Omittable<String?>? lastName, Omittable<String?>? lastNameKana, Omittable<String?>? lastNameKanji, Omittable<String?>? maidenName, Map<String, String>? Function()? metadata, Omittable<String?>? nationality, DeletedPersonObject? object, Omittable<String?>? phone, PoliticalExposure? Function()? politicalExposure, Address? Function()? registeredAddress, PersonRelationship? Function()? relationship, Omittable<PersonRequirements?>? requirements, bool? Function()? ssnLast4Provided, Omittable<PersonUsCfpbData?>? usCfpbData, LegalEntityPersonVerification? Function()? verification, }) { return Person(
+return errors;}
+Person copyWith({String? account, PersonAdditionalTosAcceptances? Function()? additionalTosAcceptances, Address? Function()? address, Omittable<LegalEntityJapanAddress?>? addressKana, Omittable<LegalEntityJapanAddress?>? addressKanji, int? created, LegalEntityDob? Function()? dob, Omittable<String?>? email, Omittable<String?>? firstName, Omittable<String?>? firstNameKana, Omittable<String?>? firstNameKanji, List<String>? Function()? fullNameAliases, Omittable<PersonFutureRequirements?>? futureRequirements, Omittable<String?>? gender, String? id, bool? Function()? idNumberProvided, bool? Function()? idNumberSecondaryProvided, Omittable<String?>? lastName, Omittable<String?>? lastNameKana, Omittable<String?>? lastNameKanji, Omittable<String?>? maidenName, Map<String, String>? Function()? metadata, Omittable<String?>? nationality, DeletedPersonObject? object, Omittable<String?>? phone, PoliticalExposure? Function()? politicalExposure, Address? Function()? registeredAddress, PersonRelationship? Function()? relationship, Omittable<PersonRequirements?>? requirements, bool? Function()? ssnLast4Provided, Omittable<PersonUsCfpbData?>? usCfpbData, LegalEntityPersonVerification? Function()? verification, }) {return Person(
   account: account ?? this.account,
   additionalTosAcceptances: additionalTosAcceptances != null ? additionalTosAcceptances() : this.additionalTosAcceptances,
   address: address != null ? address() : this.address,
@@ -245,7 +245,7 @@ Person copyWith({String? account, PersonAdditionalTosAcceptances? Function()? ad
   ssnLast4Provided: ssnLast4Provided != null ? ssnLast4Provided() : this.ssnLast4Provided,
   usCfpbData: usCfpbData ?? this.usCfpbData,
   verification: verification != null ? verification() : this.verification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Person &&
           account == other.account &&
@@ -285,4 +285,4 @@ Person copyWith({String? account, PersonAdditionalTosAcceptances? Function()? ad
 
 @override String toString() => 'Person(\n  account: $account,\n  additionalTosAcceptances: $additionalTosAcceptances,\n  address: $address,\n  addressKana: $addressKana,\n  addressKanji: $addressKanji,\n  created: $created,\n  dob: $dob,\n  email: $email,\n  firstName: $firstName,\n  firstNameKana: $firstNameKana,\n  firstNameKanji: $firstNameKanji,\n  fullNameAliases: $fullNameAliases,\n  futureRequirements: $futureRequirements,\n  gender: $gender,\n  id: $id,\n  idNumberProvided: $idNumberProvided,\n  idNumberSecondaryProvided: $idNumberSecondaryProvided,\n  lastName: $lastName,\n  lastNameKana: $lastNameKana,\n  lastNameKanji: $lastNameKanji,\n  maidenName: $maidenName,\n  metadata: $metadata,\n  nationality: $nationality,\n  object: $object,\n  phone: $phone,\n  politicalExposure: $politicalExposure,\n  registeredAddress: $registeredAddress,\n  relationship: $relationship,\n  requirements: $requirements,\n  ssnLast4Provided: $ssnLast4Provided,\n  usCfpbData: $usCfpbData,\n  verification: $verification,\n)';
 
- }
+}

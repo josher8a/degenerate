@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_filter_rule_response.dart';import 'package:pub_cloudflare/models/firewall_messages2.dart';@immutable final class FirewallFilterRulesSingleResponseDelete {const FirewallFilterRulesSingleResponseDelete({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory FirewallFilterRulesSingleResponseDelete.fromJson(Map<String, dynamic> json) { return FirewallFilterRulesSingleResponseDelete(
+factory FirewallFilterRulesSingleResponseDelete.fromJson(Map<String, dynamic> json) {return FirewallFilterRulesSingleResponseDelete(
   errors: (json['errors'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: FirewallFilterRuleResponse.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<FirewallMessages2> errors;
 
@@ -21,22 +21,22 @@ final FirewallFilterRuleResponse result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-FirewallFilterRulesSingleResponseDelete copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, FirewallFilterRuleResponse? result, bool? success, }) { return FirewallFilterRulesSingleResponseDelete(
+      json.containsKey('success') && json['success'] is bool;}
+FirewallFilterRulesSingleResponseDelete copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, FirewallFilterRuleResponse? result, bool? success, }) {return FirewallFilterRulesSingleResponseDelete(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallFilterRulesSingleResponseDelete &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ FirewallFilterRulesSingleResponseDelete copyWith({List<FirewallMessages2>? error
 
 @override String toString() => 'FirewallFilterRulesSingleResponseDelete(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

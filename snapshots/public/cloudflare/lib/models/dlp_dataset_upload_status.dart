@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DlpDatasetUploadStatus {const DlpDatasetUploadStatus();
 
-factory DlpDatasetUploadStatus.fromJson(String json) { return switch (json) {
+factory DlpDatasetUploadStatus.fromJson(String json) {return switch (json) {
   'empty' => empty,
   'uploading' => uploading,
   'pending' => pending,
@@ -11,7 +11,7 @@ factory DlpDatasetUploadStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
   'complete' => complete,
   _ => DlpDatasetUploadStatus$Unknown(json),
-}; }
+};}
 
 static const DlpDatasetUploadStatus empty = DlpDatasetUploadStatus$empty._();
 
@@ -28,9 +28,9 @@ static const DlpDatasetUploadStatus complete = DlpDatasetUploadStatus$complete._
 static const List<DlpDatasetUploadStatus> values = [empty, uploading, pending, processing, failed, complete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'empty' => 'empty',
   'uploading' => 'uploading',
   'pending' => 'pending',
@@ -38,11 +38,11 @@ String get name { return switch (value) {
   'failed' => 'failed',
   'complete' => 'complete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DlpDatasetUploadStatus$Unknown; } 
+bool get isUnknown {return this is DlpDatasetUploadStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() empty, required W Function() uploading, required W Function() pending, required W Function() processing, required W Function() failed, required W Function() complete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() empty, required W Function() uploading, required W Function() pending, required W Function() processing, required W Function() failed, required W Function() complete, required W Function(String value) $unknown, }) {return switch (this) {
       DlpDatasetUploadStatus$empty() => empty(),
       DlpDatasetUploadStatus$uploading() => uploading(),
       DlpDatasetUploadStatus$pending() => pending(),
@@ -50,9 +50,9 @@ W when<W>({required W Function() empty, required W Function() uploading, require
       DlpDatasetUploadStatus$failed() => failed(),
       DlpDatasetUploadStatus$complete() => complete(),
       DlpDatasetUploadStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W Function()? uploading, W Function()? pending, W Function()? processing, W Function()? failed, W Function()? complete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W Function()? uploading, W Function()? pending, W Function()? processing, W Function()? failed, W Function()? complete, W Function(String value)? $unknown, }) {return switch (this) {
       DlpDatasetUploadStatus$empty() => empty != null ? empty() : orElse(value),
       DlpDatasetUploadStatus$uploading() => uploading != null ? uploading() : orElse(value),
       DlpDatasetUploadStatus$pending() => pending != null ? pending() : orElse(value),
@@ -60,10 +60,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W
       DlpDatasetUploadStatus$failed() => failed != null ? failed() : orElse(value),
       DlpDatasetUploadStatus$complete() => complete != null ? complete() : orElse(value),
       DlpDatasetUploadStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DlpDatasetUploadStatus($value)';
 
- }
+}
 @immutable final class DlpDatasetUploadStatus$empty extends DlpDatasetUploadStatus {const DlpDatasetUploadStatus$empty._();
 
 @override String get value => 'empty';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W
 
 @override int get hashCode => 'empty'.hashCode;
 
- }
+}
 @immutable final class DlpDatasetUploadStatus$uploading extends DlpDatasetUploadStatus {const DlpDatasetUploadStatus$uploading._();
 
 @override String get value => 'uploading';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W
 
 @override int get hashCode => 'uploading'.hashCode;
 
- }
+}
 @immutable final class DlpDatasetUploadStatus$pending extends DlpDatasetUploadStatus {const DlpDatasetUploadStatus$pending._();
 
 @override String get value => 'pending';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class DlpDatasetUploadStatus$processing extends DlpDatasetUploadStatus {const DlpDatasetUploadStatus$processing._();
 
 @override String get value => 'processing';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class DlpDatasetUploadStatus$failed extends DlpDatasetUploadStatus {const DlpDatasetUploadStatus$failed._();
 
 @override String get value => 'failed';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class DlpDatasetUploadStatus$complete extends DlpDatasetUploadStatus {const DlpDatasetUploadStatus$complete._();
 
 @override String get value => 'complete';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W
 
 @override int get hashCode => 'complete'.hashCode;
 
- }
+}
 @immutable final class DlpDatasetUploadStatus$Unknown extends DlpDatasetUploadStatus {const DlpDatasetUploadStatus$Unknown(this.value);
 
 @override final String value;
@@ -127,4 +127,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

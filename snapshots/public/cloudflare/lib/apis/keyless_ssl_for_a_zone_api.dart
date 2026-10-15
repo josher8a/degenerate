@@ -14,7 +14,7 @@ final class KeylessSslForAZoneApi with ApiExecutor {const KeylessSslForAZoneApi(
 /// List all Keyless SSL configurations for a given zone.
 ///
 /// `GET /zones/{zone_id}/keyless_certificates`
-Future<ApiResult<List<TlsCertificatesAndHostnamesBase>?, KeylessSslForAZoneListKeylessSslConfigurationsError>> keylessSslForAZoneListKeylessSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesBase>?, KeylessSslForAZoneListKeylessSslConfigurationsError>> keylessSslForAZoneListKeylessSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: KeylessSslForAZoneListKeylessSslConfigurationsError.fromResponse,
 );
- } 
+}
 /// Create Keyless SSL Configuration
 ///
 /// Creates a Keyless SSL configuration that allows SSL/TLS termination without exposing private keys to Cloudflare. Keys remain on your infrastructure.
 ///
 /// `POST /zones/{zone_id}/keyless_certificates`
-Future<ApiResult<TlsCertificatesAndHostnamesBase?, KeylessSslForAZoneCreateKeylessSslConfigurationError>> keylessSslForAZoneCreateKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier zoneId, required KeylessSslForAZoneCreateKeylessSslConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesBase?, KeylessSslForAZoneCreateKeylessSslConfigurationError>> keylessSslForAZoneCreateKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier zoneId, required KeylessSslForAZoneCreateKeylessSslConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: KeylessSslForAZoneCreateKeylessSslConfigurationError.fromResponse,
 );
- } 
+}
 /// Get Keyless SSL Configuration
 ///
 /// Get details for one Keyless SSL configuration.
 ///
 /// `GET /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesBase?, KeylessSslForAZoneGetKeylessSslConfigurationError>> keylessSslForAZoneGetKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesBase?, KeylessSslForAZoneGetKeylessSslConfigurationError>> keylessSslForAZoneGetKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: KeylessSslForAZoneGetKeylessSslConfigurationError.fromResponse,
 );
- } 
+}
 /// Edit Keyless SSL Configuration
 ///
 /// This will update attributes of a Keyless SSL. Consists of one or more of the following:  host,name,port.
 ///
 /// `PATCH /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesBase?, KeylessSslForAZoneEditKeylessSslConfigurationError>> keylessSslForAZoneEditKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required KeylessSslForAZoneEditKeylessSslConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesBase?, KeylessSslForAZoneEditKeylessSslConfigurationError>> keylessSslForAZoneEditKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required KeylessSslForAZoneEditKeylessSslConfigurationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: KeylessSslForAZoneEditKeylessSslConfigurationError.fromResponse,
 );
- } 
+}
 /// Delete Keyless SSL Configuration
 ///
 /// Removes a Keyless SSL configuration. SSL connections will no longer use the keyless server for cryptographic operations.
 ///
 /// `DELETE /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<AaaIdResponseResult?, KeylessSslForAZoneDeleteKeylessSslConfigurationError>> keylessSslForAZoneDeleteKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, KeylessSslForAZoneDeleteKeylessSslConfigurationError>> keylessSslForAZoneDeleteKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,5 +127,5 @@ return await execute(
   },
   onError: KeylessSslForAZoneDeleteKeylessSslConfigurationError.fromResponse,
 );
- } 
- }
+}
+}

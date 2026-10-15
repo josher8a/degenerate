@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 sealed class ZonesRedirectsForAiTrainingValue {const ZonesRedirectsForAiTrainingValue();
 
-factory ZonesRedirectsForAiTrainingValue.fromJson(String json) { return switch (json) {
+factory ZonesRedirectsForAiTrainingValue.fromJson(String json) {return switch (json) {
   'off' => off,
   'on' => $on,
   _ => ZonesRedirectsForAiTrainingValue$Unknown(json),
-}; }
+};}
 
 static const ZonesRedirectsForAiTrainingValue off = ZonesRedirectsForAiTrainingValue$off._();
 
@@ -17,30 +17,30 @@ static const ZonesRedirectsForAiTrainingValue $on = ZonesRedirectsForAiTrainingV
 static const List<ZonesRedirectsForAiTrainingValue> values = [off, $on];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'on' => r'$on',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesRedirectsForAiTrainingValue$Unknown; } 
+bool get isUnknown {return this is ZonesRedirectsForAiTrainingValue$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesRedirectsForAiTrainingValue$off() => off(),
       ZonesRedirectsForAiTrainingValue$$on() => $on(),
       ZonesRedirectsForAiTrainingValue$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesRedirectsForAiTrainingValue$off() => off != null ? off() : orElse(value),
       ZonesRedirectsForAiTrainingValue$$on() => $on != null ? $on() : orElse(value),
       ZonesRedirectsForAiTrainingValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesRedirectsForAiTrainingValue($value)';
 
- }
+}
 @immutable final class ZonesRedirectsForAiTrainingValue$off extends ZonesRedirectsForAiTrainingValue {const ZonesRedirectsForAiTrainingValue$off._();
 
 @override String get value => 'off';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class ZonesRedirectsForAiTrainingValue$$on extends ZonesRedirectsForAiTrainingValue {const ZonesRedirectsForAiTrainingValue$$on._();
 
 @override String get value => 'on';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class ZonesRedirectsForAiTrainingValue$Unknown extends ZonesRedirectsForAiTrainingValue {const ZonesRedirectsForAiTrainingValue$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -1,0 +1,7 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicPcapCollectionAddBucketsForFullPacketCapturesResponseDefault
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_single_response.dart';import 'package:pub_cloudflare/models/response_common_failure49.dart';/// Variants:
+/// - `.a` → [MagicVisibilityPcapsPcapsOwnershipSingleResponse]
+/// - `.b` → [ResponseCommonFailure49]
+typedef MagicPcapCollectionAddBucketsForFullPacketCapturesResponseDefault = OneOf2<MagicVisibilityPcapsPcapsOwnershipSingleResponse,ResponseCommonFailure49>;

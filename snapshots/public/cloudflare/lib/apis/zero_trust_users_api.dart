@@ -14,7 +14,7 @@ final class ZeroTrustUsersApi with ApiExecutor {const ZeroTrustUsersApi(this.api
 /// Gets a list of users for an account.
 ///
 /// `GET /accounts/{account_id}/access/users`
-Future<ApiResult<List<AccessSchemasUsers>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetUsers({required AccessIdentifier accountId, String? name, String? email, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessSchemasUsers>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetUsers({required AccessIdentifier accountId, String? name, String? email, String? search, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -51,13 +51,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Create a user
 ///
 /// Creates a new user.
 ///
 /// `POST /accounts/{account_id}/access/users`
-Future<ApiResult<AccessSchemasUsers?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersCreateUser({required AccessIdentifier accountId, required ZeroTrustUsersCreateUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasUsers?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersCreateUser({required AccessIdentifier accountId, required ZeroTrustUsersCreateUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -76,13 +76,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get a user
 ///
 /// Gets a specific user for an account.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<AccessSchemasUsers?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasUsers?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -99,13 +99,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update a user
 ///
 /// Updates a specific user's name for an account. Requires the user's current email as confirmation (email cannot be changed).
 ///
 /// `PUT /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<AccessSchemasUsers?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersUpdateUser({required AccessUuid userId, required AccessIdentifier accountId, required ZeroTrustUsersUpdateUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasUsers?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersUpdateUser({required AccessUuid userId, required AccessIdentifier accountId, required ZeroTrustUsersUpdateUserRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -124,13 +124,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete a user
 ///
 /// Deletes a specific user for an account. This will also revoke any active seats and tokens for the user.
 ///
 /// `DELETE /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersDeleteUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersDeleteUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -147,13 +147,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get active sessions
 ///
 /// Get active sessions for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/active_sessions`
-Future<ApiResult<List<AccessActiveSessionsResponseResult>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetActiveSessions({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessActiveSessionsResponseResult>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetActiveSessions({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -170,13 +170,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get single active session
 ///
 /// Get an active session for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/active_sessions/{nonce}`
-Future<ApiResult<AccessActiveSessionResponseResult?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetActiveSession({required AccessUuid userId, required AccessIdentifier accountId, required AccessNonce nonce, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessActiveSessionResponseResult?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetActiveSession({required AccessUuid userId, required AccessIdentifier accountId, required AccessNonce nonce, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -193,13 +193,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get failed logins
 ///
 /// Get all failed login attempts for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/failed_logins`
-Future<ApiResult<List<AccessFailedLoginResponseResult>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetFailedLogins({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessFailedLoginResponseResult>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetFailedLogins({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -216,13 +216,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get last seen identity
 ///
 /// Get last seen identity for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/last_seen_identity`
-Future<ApiResult<AccessIdentity?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetLastSeenIdentity({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentity?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersGetLastSeenIdentity({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -239,13 +239,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete a user's MFA device
 ///
 /// Deletes a specific MFA device for a user. This action is only available if MFA is turned on for the organization.
 ///
 /// `DELETE /accounts/{account_id}/access/users/{user_id}/mfa_authenticators/{authenticator_id}`
-Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersDeleteMfaAuthenticator({required AccessUuid userId, required AccessIdentifier accountId, required AccessAuthenticatorId authenticatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> zeroTrustUsersDeleteMfaAuthenticator({required AccessUuid userId, required AccessIdentifier accountId, required AccessAuthenticatorId authenticatorId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -262,5 +262,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the 
 /// 
 sealed class OutputAudioType {const OutputAudioType();
 
-factory OutputAudioType.fromJson(String json) { return switch (json) {
+factory OutputAudioType.fromJson(String json) {return switch (json) {
   'output_audio' => outputAudio,
   _ => OutputAudioType$Unknown(json),
-}; }
+};}
 
 static const OutputAudioType outputAudio = OutputAudioType$outputAudio._();
 
 static const List<OutputAudioType> values = [outputAudio];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'output_audio' => 'outputAudio',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OutputAudioType$Unknown; } 
+bool get isUnknown {return this is OutputAudioType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() outputAudio, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() outputAudio, required W Function(String value) $unknown, }) {return switch (this) {
       OutputAudioType$outputAudio() => outputAudio(),
       OutputAudioType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? outputAudio, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? outputAudio, W Function(String value)? $unknown, }) {return switch (this) {
       OutputAudioType$outputAudio() => outputAudio != null ? outputAudio() : orElse(value),
       OutputAudioType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OutputAudioType($value)';
 
- }
+}
 @immutable final class OutputAudioType$outputAudio extends OutputAudioType {const OutputAudioType$outputAudio._();
 
 @override String get value => 'output_audio';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? outputAu
 
 @override int get hashCode => 'output_audio'.hashCode;
 
- }
+}
 @immutable final class OutputAudioType$Unknown extends OutputAudioType {const OutputAudioType$Unknown(this.value);
 
 @override final String value;
@@ -54,16 +54,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? outputAu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An audio output from the model.
 /// 
 @immutable final class OutputAudio {const OutputAudio({required this.type, required this.data, required this.transcript, });
 
-factory OutputAudio.fromJson(Map<String, dynamic> json) { return OutputAudio(
+factory OutputAudio.fromJson(Map<String, dynamic> json) {return OutputAudio(
   type: OutputAudioType.fromJson(json['type'] as String),
   data: json['data'] as String,
   transcript: json['transcript'] as String,
-); }
+);}
 
 /// The type of the output audio. Always `output_audio`.
 /// 
@@ -77,19 +77,19 @@ final String data;
 /// 
 final String transcript;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'data': data,
   'transcript': transcript,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('data') && json['data'] is String &&
-      json.containsKey('transcript') && json['transcript'] is String; } 
-OutputAudio copyWith({OutputAudioType? type, String? data, String? transcript, }) { return OutputAudio(
+      json.containsKey('transcript') && json['transcript'] is String;}
+OutputAudio copyWith({OutputAudioType? type, String? data, String? transcript, }) {return OutputAudio(
   type: type ?? this.type,
   data: data ?? this.data,
   transcript: transcript ?? this.transcript,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OutputAudio &&
           type == other.type &&
@@ -100,4 +100,4 @@ OutputAudio copyWith({OutputAudioType? type, String? data, String? transcript, }
 
 @override String toString() => 'OutputAudio(type: $type, data: $data, transcript: $transcript)';
 
- }
+}

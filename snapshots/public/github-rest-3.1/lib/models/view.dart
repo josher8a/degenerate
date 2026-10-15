@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_create_view_for_org_request/layout.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A view inside a projects v2 project
 @immutable final class View {const View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy, this.filter = const Omittable.absent(), });
 
-factory View.fromJson(Map<String, dynamic> json) { return View(
+factory View.fromJson(Map<String, dynamic> json) {return View(
   id: (json['id'] as num).toInt(),
   number: (json['number'] as num).toInt(),
   name: json['name'] as String,
@@ -20,7 +20,7 @@ factory View.fromJson(Map<String, dynamic> json) { return View(
   sortBy: (json['sort_by'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => e).toList()).toList(),
   groupBy: (json['group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   verticalGroupBy: (json['vertical_group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The unique identifier of the view.
 final int id;
@@ -66,7 +66,7 @@ final List<int> groupBy;
 /// The list of field IDs used for vertical grouping (board layout).
 final List<int> verticalGroupBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'number': number,
   'name': name,
@@ -82,8 +82,8 @@ Map<String, dynamic> toJson() { return {
   'sort_by': sortBy.map((e) => e).toList(),
   'group_by': groupBy,
   'vertical_group_by': verticalGroupBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('layout') &&
@@ -96,8 +96,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('visible_fields') &&
       json.containsKey('sort_by') &&
       json.containsKey('group_by') &&
-      json.containsKey('vertical_group_by'); } 
-View copyWith({int? id, int? number, String? name, Layout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<String?>? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) { return View(
+      json.containsKey('vertical_group_by');}
+View copyWith({int? id, int? number, String? name, Layout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<String?>? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) {return View(
   id: id ?? this.id,
   number: number ?? this.number,
   name: name ?? this.name,
@@ -113,7 +113,7 @@ View copyWith({int? id, int? number, String? name, Layout? layout, String? nodeI
   sortBy: sortBy ?? this.sortBy,
   groupBy: groupBy ?? this.groupBy,
   verticalGroupBy: verticalGroupBy ?? this.verticalGroupBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is View &&
           id == other.id &&
@@ -136,4 +136,4 @@ View copyWith({int? id, int? number, String? name, Layout? layout, String? nodeI
 
 @override String toString() => 'View(\n  id: $id,\n  number: $number,\n  name: $name,\n  layout: $layout,\n  nodeId: $nodeId,\n  projectUrl: $projectUrl,\n  htmlUrl: $htmlUrl,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  filter: $filter,\n  visibleFields: $visibleFields,\n  sortBy: $sortBy,\n  groupBy: $groupBy,\n  verticalGroupBy: $verticalGroupBy,\n)';
 
- }
+}

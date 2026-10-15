@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/assistants_named_tool_choice.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';import 'package:pub_openai/models/run_completion_usage.dart';import 'package:pub_openai/models/run_object/required_action.dart';import 'package:pub_openai/models/run_object/run_object_incomplete_details.dart';import 'package:pub_openai/models/run_object/run_object_last_error.dart';import 'package:pub_openai/models/tool_choice_option.dart';import 'package:pub_openai/models/truncation_object.dart';/// The object type, which is always `thread.run`.
 sealed class RunObjectObject {const RunObjectObject();
 
-factory RunObjectObject.fromJson(String json) { return switch (json) {
+factory RunObjectObject.fromJson(String json) {return switch (json) {
   'thread.run' => threadRun,
   _ => RunObjectObject$Unknown(json),
-}; }
+};}
 
 static const RunObjectObject threadRun = RunObjectObject$threadRun._();
 
 static const List<RunObjectObject> values = [threadRun];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'thread.run' => 'threadRun',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RunObjectObject$Unknown; } 
+bool get isUnknown {return this is RunObjectObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() threadRun, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() threadRun, required W Function(String value) $unknown, }) {return switch (this) {
       RunObjectObject$threadRun() => threadRun(),
       RunObjectObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRun, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRun, W Function(String value)? $unknown, }) {return switch (this) {
       RunObjectObject$threadRun() => threadRun != null ? threadRun() : orElse(value),
       RunObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RunObjectObject($value)';
 
- }
+}
 @immutable final class RunObjectObject$threadRun extends RunObjectObject {const RunObjectObject$threadRun._();
 
 @override String get value => 'thread.run';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRu
 
 @override int get hashCode => 'thread.run'.hashCode;
 
- }
+}
 @immutable final class RunObjectObject$Unknown extends RunObjectObject {const RunObjectObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
 sealed class RunObjectStatus {const RunObjectStatus();
 
-factory RunObjectStatus.fromJson(String json) { return switch (json) {
+factory RunObjectStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'requires_action' => requiresAction,
@@ -68,7 +68,7 @@ factory RunObjectStatus.fromJson(String json) { return switch (json) {
   'incomplete' => incomplete,
   'expired' => expired,
   _ => RunObjectStatus$Unknown(json),
-}; }
+};}
 
 static const RunObjectStatus queued = RunObjectStatus$queued._();
 
@@ -91,9 +91,9 @@ static const RunObjectStatus expired = RunObjectStatus$expired._();
 static const List<RunObjectStatus> values = [queued, inProgress, requiresAction, cancelling, cancelled, failed, completed, incomplete, expired];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'queued' => 'queued',
   'in_progress' => 'inProgress',
   'requires_action' => 'requiresAction',
@@ -104,11 +104,11 @@ String get name { return switch (value) {
   'incomplete' => 'incomplete',
   'expired' => 'expired',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RunObjectStatus$Unknown; } 
+bool get isUnknown {return this is RunObjectStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() queued, required W Function() inProgress, required W Function() requiresAction, required W Function() cancelling, required W Function() cancelled, required W Function() failed, required W Function() completed, required W Function() incomplete, required W Function() expired, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() requiresAction, required W Function() cancelling, required W Function() cancelled, required W Function() failed, required W Function() completed, required W Function() incomplete, required W Function() expired, required W Function(String value) $unknown, }) {return switch (this) {
       RunObjectStatus$queued() => queued(),
       RunObjectStatus$inProgress() => inProgress(),
       RunObjectStatus$requiresAction() => requiresAction(),
@@ -119,9 +119,9 @@ W when<W>({required W Function() queued, required W Function() inProgress, requi
       RunObjectStatus$incomplete() => incomplete(),
       RunObjectStatus$expired() => expired(),
       RunObjectStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? requiresAction, W Function()? cancelling, W Function()? cancelled, W Function()? failed, W Function()? completed, W Function()? incomplete, W Function()? expired, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? requiresAction, W Function()? cancelling, W Function()? cancelled, W Function()? failed, W Function()? completed, W Function()? incomplete, W Function()? expired, W Function(String value)? $unknown, }) {return switch (this) {
       RunObjectStatus$queued() => queued != null ? queued() : orElse(value),
       RunObjectStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       RunObjectStatus$requiresAction() => requiresAction != null ? requiresAction() : orElse(value),
@@ -132,10 +132,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
       RunObjectStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
       RunObjectStatus$expired() => expired != null ? expired() : orElse(value),
       RunObjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RunObjectStatus($value)';
 
- }
+}
 @immutable final class RunObjectStatus$queued extends RunObjectStatus {const RunObjectStatus$queued._();
 
 @override String get value => 'queued';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$inProgress extends RunObjectStatus {const RunObjectStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$requiresAction extends RunObjectStatus {const RunObjectStatus$requiresAction._();
 
 @override String get value => 'requires_action';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'requires_action'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$cancelling extends RunObjectStatus {const RunObjectStatus$cancelling._();
 
 @override String get value => 'cancelling';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'cancelling'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$cancelled extends RunObjectStatus {const RunObjectStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$failed extends RunObjectStatus {const RunObjectStatus$failed._();
 
 @override String get value => 'failed';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$completed extends RunObjectStatus {const RunObjectStatus$completed._();
 
 @override String get value => 'completed';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$incomplete extends RunObjectStatus {const RunObjectStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$expired extends RunObjectStatus {const RunObjectStatus$expired._();
 
 @override String get value => 'expired';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class RunObjectStatus$Unknown extends RunObjectStatus {const RunObjectStatus$Unknown(this.value);
 
 @override final String value;
@@ -226,11 +226,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents an execution run on a [thread](/docs/api-reference/threads).
 @immutable final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, required this.tools, required this.metadata, required this.usage, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), });
 
-factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
+factory RunObject.fromJson(Map<String, dynamic> json) {return RunObject(
   id: json['id'] as String,
   object: RunObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -258,7 +258,7 @@ factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   toolChoice: json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null,
   parallelToolCalls: ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool),
   responseFormat: json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints.
 final String id;
@@ -345,7 +345,7 @@ final ParallelToolCalls parallelToolCalls;
 
 final ResponseFormatOption? responseFormat;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -373,8 +373,8 @@ Map<String, dynamic> toJson() { return {
   'tool_choice': toolChoice?.toJson(),
   'parallel_tool_calls': parallelToolCalls.toJson(),
   'response_format': responseFormat?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('thread_id') && json['thread_id'] is String &&
@@ -398,9 +398,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('truncation_strategy') &&
       json.containsKey('tool_choice') &&
       json.containsKey('parallel_tool_calls') &&
-      json.containsKey('response_format'); } 
+      json.containsKey('response_format');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (tools.length > 20) { errors.add('tools: must have <= 20 items'); }
 final maxPromptTokens$ = maxPromptTokens;
 if (maxPromptTokens$ != null) {
@@ -410,8 +410,8 @@ final maxCompletionTokens$ = maxCompletionTokens;
 if (maxCompletionTokens$ != null) {
   if (maxCompletionTokens$ < 256) { errors.add('maxCompletionTokens: must be >= 256'); }
 }
-return errors; } 
-RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<AssistantObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? Function()? usage, Omittable<double?>? temperature, Omittable<double?>? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(
+return errors;}
+RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<AssistantObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? Function()? usage, Omittable<double?>? temperature, Omittable<double?>? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) {return RunObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -439,7 +439,7 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   parallelToolCalls: parallelToolCalls ?? this.parallelToolCalls,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunObject &&
           id == other.id &&
@@ -474,4 +474,4 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
 
 @override String toString() => 'RunObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  threadId: $threadId,\n  assistantId: $assistantId,\n  status: $status,\n  requiredAction: $requiredAction,\n  lastError: $lastError,\n  expiresAt: $expiresAt,\n  startedAt: $startedAt,\n  cancelledAt: $cancelledAt,\n  failedAt: $failedAt,\n  completedAt: $completedAt,\n  incompleteDetails: $incompleteDetails,\n  model: $model,\n  instructions: $instructions,\n  tools: $tools,\n  metadata: $metadata,\n  usage: $usage,\n  temperature: $temperature,\n  topP: $topP,\n  maxPromptTokens: $maxPromptTokens,\n  maxCompletionTokens: $maxCompletionTokens,\n  truncationStrategy: $truncationStrategy,\n  toolChoice: $toolChoice,\n  parallelToolCalls: $parallelToolCalls,\n  responseFormat: $responseFormat,\n)';
 
- }
+}

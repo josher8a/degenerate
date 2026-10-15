@@ -7,11 +7,11 @@ const Notification({this.emailDetails = const Omittable.absent(), this.smsDetail
 const Notification._({required this.rawValue, required this.emailDetails, required this.smsDetails, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Notification.fromJson(Object? json) { return Notification._(
+factory Notification.fromJson(Object? json) {return Notification._(
   rawValue: Omittable(json),
   emailDetails: json is Map<String, dynamic> && EmailDetails.canParse(json) ? parseAnyOfVariant<EmailDetails>(json, (value) => EmailDetails.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   smsDetails: json is Map<String, dynamic> && SmsDetails.canParse(json) ? parseAnyOfVariant<SmsDetails>(json, (value) => SmsDetails.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Notification(${toJson()})';
 
- }
+}

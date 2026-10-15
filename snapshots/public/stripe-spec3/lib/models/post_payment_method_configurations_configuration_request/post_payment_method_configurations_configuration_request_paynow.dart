@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// PayNow is a Singapore-based payment method that allows customers to make a payment using their preferred app from participating banks and participating non-bank financial institutions. Check this [page](https://docs.stripe.com/payments/paynow) for more details.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestPaynow {const PostPaymentMethodConfigurationsConfigurationRequestPaynow({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestPaynow.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPaynow(
+factory PostPaymentMethodConfigurationsConfigurationRequestPaynow.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestPaynow(
   displayPreference: json['display_preference'] != null ? DisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestPaynow copyWith({DisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestPaynow(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestPaynow copyWith({DisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsConfigurationRequestPaynow(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestPaynow &&
           displayPreference == other.displayPreference;
@@ -25,4 +25,4 @@ PostPaymentMethodConfigurationsConfigurationRequestPaynow copyWith({DisplayPrefe
 
 @override String toString() => 'PostPaymentMethodConfigurationsConfigurationRequestPaynow(displayPreference: $displayPreference)';
 
- }
+}

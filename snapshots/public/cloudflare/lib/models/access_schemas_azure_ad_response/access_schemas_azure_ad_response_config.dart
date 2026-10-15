@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_ad/config_prompt.dart';@immutable final class AccessSchemasAzureAdResponseConfig {const AccessSchemasAzureAdResponseConfig({this.clientId, this.conditionalAccessEnabled, this.directoryId, this.prompt, this.supportGroups, });
 
-factory AccessSchemasAzureAdResponseConfig.fromJson(Map<String, dynamic> json) { return AccessSchemasAzureAdResponseConfig(
+factory AccessSchemasAzureAdResponseConfig.fromJson(Map<String, dynamic> json) {return AccessSchemasAzureAdResponseConfig(
   clientId: json['client_id'] as String?,
   conditionalAccessEnabled: json['conditional_access_enabled'] as bool?,
   directoryId: json['directory_id'] as String?,
   prompt: json['prompt'] != null ? ConfigPrompt.fromJson(json['prompt'] as String) : null,
   supportGroups: json['support_groups'] as bool?,
-); }
+);}
 
 /// Your OAuth Client ID
 /// 
@@ -30,21 +30,21 @@ final ConfigPrompt? prompt;
 /// Should Cloudflare try to load groups from your account
 final bool? supportGroups;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'conditional_access_enabled': ?conditionalAccessEnabled,
   'directory_id': ?directoryId,
   if (prompt != null) 'prompt': prompt?.toJson(),
   'support_groups': ?supportGroups,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'conditional_access_enabled', 'directory_id', 'prompt', 'support_groups'}.contains(key)); } 
-AccessSchemasAzureAdResponseConfig copyWith({String? Function()? clientId, bool? Function()? conditionalAccessEnabled, String? Function()? directoryId, ConfigPrompt? Function()? prompt, bool? Function()? supportGroups, }) { return AccessSchemasAzureAdResponseConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'conditional_access_enabled', 'directory_id', 'prompt', 'support_groups'}.contains(key));}
+AccessSchemasAzureAdResponseConfig copyWith({String? Function()? clientId, bool? Function()? conditionalAccessEnabled, String? Function()? directoryId, ConfigPrompt? Function()? prompt, bool? Function()? supportGroups, }) {return AccessSchemasAzureAdResponseConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   conditionalAccessEnabled: conditionalAccessEnabled != null ? conditionalAccessEnabled() : this.conditionalAccessEnabled,
   directoryId: directoryId != null ? directoryId() : this.directoryId,
   prompt: prompt != null ? prompt() : this.prompt,
   supportGroups: supportGroups != null ? supportGroups() : this.supportGroups,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasAzureAdResponseConfig &&
           clientId == other.clientId &&
@@ -57,4 +57,4 @@ AccessSchemasAzureAdResponseConfig copyWith({String? Function()? clientId, bool?
 
 @override String toString() => 'AccessSchemasAzureAdResponseConfig(clientId: $clientId, conditionalAccessEnabled: $conditionalAccessEnabled, directoryId: $directoryId, prompt: $prompt, supportGroups: $supportGroups)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_variable.dart';@immutable final class ActionsListRepoOrganizationVariablesResponse {const ActionsListRepoOrganizationVariablesResponse({required this.totalCount, required this.variables, });
 
-factory ActionsListRepoOrganizationVariablesResponse.fromJson(Map<String, dynamic> json) { return ActionsListRepoOrganizationVariablesResponse(
+factory ActionsListRepoOrganizationVariablesResponse.fromJson(Map<String, dynamic> json) {return ActionsListRepoOrganizationVariablesResponse(
   totalCount: (json['total_count'] as num).toInt(),
   variables: (json['variables'] as List<dynamic>).map((e) => ActionsVariable.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<ActionsVariable> variables;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'variables': variables.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('variables'); } 
-ActionsListRepoOrganizationVariablesResponse copyWith({int? totalCount, List<ActionsVariable>? variables, }) { return ActionsListRepoOrganizationVariablesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('variables');}
+ActionsListRepoOrganizationVariablesResponse copyWith({int? totalCount, List<ActionsVariable>? variables, }) {return ActionsListRepoOrganizationVariablesResponse(
   totalCount: totalCount ?? this.totalCount,
   variables: variables ?? this.variables,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListRepoOrganizationVariablesResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListRepoOrganizationVariablesResponse copyWith({int? totalCount, List<Act
 
 @override String toString() => 'ActionsListRepoOrganizationVariablesResponse(totalCount: $totalCount, variables: $variables)';
 
- }
+}

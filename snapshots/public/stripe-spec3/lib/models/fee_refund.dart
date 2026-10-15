@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_fee.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class FeeRefundObject {const FeeRefundObject();
 
-factory FeeRefundObject.fromJson(String json) { return switch (json) {
+factory FeeRefundObject.fromJson(String json) {return switch (json) {
   'fee_refund' => feeRefund,
   _ => FeeRefundObject$Unknown(json),
-}; }
+};}
 
 static const FeeRefundObject feeRefund = FeeRefundObject$feeRefund._();
 
 static const List<FeeRefundObject> values = [feeRefund];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fee_refund' => 'feeRefund',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FeeRefundObject$Unknown; } 
+bool get isUnknown {return this is FeeRefundObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() feeRefund, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() feeRefund, required W Function(String value) $unknown, }) {return switch (this) {
       FeeRefundObject$feeRefund() => feeRefund(),
       FeeRefundObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeRefund, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeRefund, W Function(String value)? $unknown, }) {return switch (this) {
       FeeRefundObject$feeRefund() => feeRefund != null ? feeRefund() : orElse(value),
       FeeRefundObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FeeRefundObject($value)';
 
- }
+}
 @immutable final class FeeRefundObject$feeRefund extends FeeRefundObject {const FeeRefundObject$feeRefund._();
 
 @override String get value => 'fee_refund';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeRefun
 
 @override int get hashCode => 'fee_refund'.hashCode;
 
- }
+}
 @immutable final class FeeRefundObject$Unknown extends FeeRefundObject {const FeeRefundObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeRefun
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// `Application Fee Refund` objects allow you to refund an application fee that
 /// has previously been created but not yet refunded. Funds will be refunded to
 /// the Stripe account from which the fee was originally collected.
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? feeRefun
 /// Related guide: [Refunding application fees](https://docs.stripe.com/connect/destination-charges#refunding-app-fee)
 @immutable final class FeeRefund {const FeeRefund({required this.amount, required this.created, required this.currency, required this.fee, required this.id, required this.object, this.balanceTransaction = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
-factory FeeRefund.fromJson(Map<String, dynamic> json) { return FeeRefund(
+factory FeeRefund.fromJson(Map<String, dynamic> json) {return FeeRefund(
   amount: (json['amount'] as num).toInt(),
   balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -70,7 +70,7 @@ factory FeeRefund.fromJson(Map<String, dynamic> json) { return FeeRefund(
   id: json['id'] as String,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: FeeRefundObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Amount, in cents (or local equivalent).
 final int amount;
@@ -96,7 +96,7 @@ final Omittable<Map<String,String>?> metadata;
 /// String representing the object's type. Objects of the same type share the same value.
 final FeeRefundObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'created': created,
@@ -105,18 +105,18 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('fee') &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'fee_refund'; } 
+      json.containsKey('object') && json['object'] == 'fee_refund';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-FeeRefund copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, int? created, String? currency, FeeRefundFee? fee, String? id, Omittable<Map<String,String>?>? metadata, FeeRefundObject? object, }) { return FeeRefund(
+return errors;}
+FeeRefund copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, int? created, String? currency, FeeRefundFee? fee, String? id, Omittable<Map<String,String>?>? metadata, FeeRefundObject? object, }) {return FeeRefund(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   created: created ?? this.created,
@@ -125,7 +125,7 @@ FeeRefund copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? b
   id: id ?? this.id,
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FeeRefund &&
           amount == other.amount &&
@@ -141,4 +141,4 @@ FeeRefund copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? b
 
 @override String toString() => 'FeeRefund(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, fee: $fee, id: $id, metadata: $metadata, object: $object)';
 
- }
+}

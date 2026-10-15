@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsForAZoneImportDnsRecordsRequest {const DnsRecordsForAZoneImportDnsRecordsRequest({required this.file, this.proxied, });
 
-factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneImportDnsRecordsRequest(
+factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> json) {return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: json['file'] as String,
   proxied: json['proxied'] as String?,
-); }
+);}
 
 /// BIND config to import.
 /// 
@@ -26,15 +26,15 @@ final String? proxied;
 /// The value of `proxied`, or its schema default when absent.
 String get proxiedOrDefault => proxied ?? 'false';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': file,
   'proxied': ?proxied,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
-DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String? Function()? proxied, }) { return DnsRecordsForAZoneImportDnsRecordsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') && json['file'] is String;}
+DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String? Function()? proxied, }) {return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: file ?? this.file,
   proxied: proxied != null ? proxied() : this.proxied,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsForAZoneImportDnsRecordsRequest &&
           file == other.file &&
@@ -44,4 +44,4 @@ DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String? Functi
 
 @override String toString() => 'DnsRecordsForAZoneImportDnsRecordsRequest(file: $file, proxied: $proxied)';
 
- }
+}

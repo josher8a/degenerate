@@ -5,14 +5,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus();
 
-factory CodeInterpreterToolCallStatus.fromJson(String json) { return switch (json) {
+factory CodeInterpreterToolCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   'interpreting' => interpreting,
   'failed' => failed,
   _ => CodeInterpreterToolCallStatus$Unknown(json),
-}; }
+};}
 
 static const CodeInterpreterToolCallStatus inProgress = CodeInterpreterToolCallStatus$inProgress._();
 
@@ -27,39 +27,39 @@ static const CodeInterpreterToolCallStatus failed = CodeInterpreterToolCallStatu
 static const List<CodeInterpreterToolCallStatus> values = [inProgress, completed, incomplete, interpreting, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'incomplete' => 'incomplete',
   'interpreting' => 'interpreting',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeInterpreterToolCallStatus$Unknown; } 
+bool get isUnknown {return this is CodeInterpreterToolCallStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function() interpreting, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function() interpreting, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       CodeInterpreterToolCallStatus$inProgress() => inProgress(),
       CodeInterpreterToolCallStatus$completed() => completed(),
       CodeInterpreterToolCallStatus$incomplete() => incomplete(),
       CodeInterpreterToolCallStatus$interpreting() => interpreting(),
       CodeInterpreterToolCallStatus$failed() => failed(),
       CodeInterpreterToolCallStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function()? interpreting, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function()? interpreting, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       CodeInterpreterToolCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       CodeInterpreterToolCallStatus$completed() => completed != null ? completed() : orElse(value),
       CodeInterpreterToolCallStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
       CodeInterpreterToolCallStatus$interpreting() => interpreting != null ? interpreting() : orElse(value),
       CodeInterpreterToolCallStatus$failed() => failed != null ? failed() : orElse(value),
       CodeInterpreterToolCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeInterpreterToolCallStatus($value)';
 
- }
+}
 @immutable final class CodeInterpreterToolCallStatus$inProgress extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -68,7 +68,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class CodeInterpreterToolCallStatus$completed extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$completed._();
 
 @override String get value => 'completed';
@@ -77,7 +77,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class CodeInterpreterToolCallStatus$incomplete extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$incomplete._();
 
 @override String get value => 'incomplete';
@@ -86,7 +86,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class CodeInterpreterToolCallStatus$interpreting extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$interpreting._();
 
 @override String get value => 'interpreting';
@@ -95,7 +95,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'interpreting'.hashCode;
 
- }
+}
 @immutable final class CodeInterpreterToolCallStatus$failed extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$failed._();
 
 @override String get value => 'failed';
@@ -104,7 +104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class CodeInterpreterToolCallStatus$Unknown extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$Unknown(this.value);
 
 @override final String value;
@@ -114,19 +114,19 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A tool call to run code.
 /// 
 @immutable final class CodeInterpreterToolCall {const CodeInterpreterToolCall({required this.type, required this.id, required this.status, required this.containerId, required this.code, required this.outputs, });
 
-factory CodeInterpreterToolCall.fromJson(Map<String, dynamic> json) { return CodeInterpreterToolCall(
+factory CodeInterpreterToolCall.fromJson(Map<String, dynamic> json) {return CodeInterpreterToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   status: CodeInterpreterToolCallStatus.fromJson(json['status'] as String),
   containerId: json['container_id'] as String,
   code: json['code'] as String?,
   outputs: (json['outputs'] as List<dynamic>?)?.map((e) => CodeInterpreterToolCallOutputs.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// The type of the code interpreter tool call. Always `code_interpreter_call`.
 /// 
@@ -153,28 +153,28 @@ final String? code;
 /// 
 final List<CodeInterpreterToolCallOutputs>? outputs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'status': status.toJson(),
   'container_id': containerId,
   'code': code,
   'outputs': outputs?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
       json.containsKey('container_id') && json['container_id'] is String &&
       json.containsKey('code') && (json['code'] == null || json['code'] is String) &&
-      json.containsKey('outputs'); } 
-CodeInterpreterToolCall copyWith({String? type, String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) { return CodeInterpreterToolCall(
+      json.containsKey('outputs');}
+CodeInterpreterToolCall copyWith({String? type, String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) {return CodeInterpreterToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   status: status ?? this.status,
   containerId: containerId ?? this.containerId,
   code: code != null ? code() : this.code,
   outputs: outputs != null ? outputs() : this.outputs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterToolCall &&
           type == other.type &&
@@ -188,4 +188,4 @@ CodeInterpreterToolCall copyWith({String? type, String? id, CodeInterpreterToolC
 
 @override String toString() => 'CodeInterpreterToolCall(type: $type, id: $id, status: $status, containerId: $containerId, code: $code, outputs: $outputs)';
 
- }
+}

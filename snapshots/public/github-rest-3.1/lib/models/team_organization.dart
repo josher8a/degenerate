@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_full/organization_full_plan.dart';/// Team Organization
 @immutable final class TeamOrganization {const TeamOrganization({required this.following, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, required this.login, required this.hasOrganizationProjects, required this.hasRepositoryProjects, required this.publicRepos, required this.publicGists, required this.htmlUrl, required this.followers, required this.archivedAt, required this.type, required this.createdAt, required this.updatedAt, this.isVerified, this.email, this.twitterUsername = const Omittable.absent(), this.location, this.blog, this.totalPrivateRepos, this.ownedPrivateRepos, this.privateGists = const Omittable.absent(), this.diskUsage = const Omittable.absent(), this.company, this.billingEmail = const Omittable.absent(), this.plan, this.defaultRepositoryPermission = const Omittable.absent(), this.membersCanCreateRepositories = const Omittable.absent(), this.twoFactorRequirementEnabled = const Omittable.absent(), this.membersAllowedRepositoryCreationType, this.membersCanCreatePublicRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreateInternalRepositories, this.membersCanCreatePages, this.membersCanCreatePublicPages, this.membersCanCreatePrivatePages, this.membersCanForkPrivateRepositories = const Omittable.absent(), this.webCommitSignoffRequired, this.name, this.collaborators = const Omittable.absent(), });
 
-factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrganization(
+factory TeamOrganization.fromJson(Map<String, dynamic> json) {return TeamOrganization(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -54,7 +54,7 @@ factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrgani
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
-); }
+);}
 
 final String login;
 
@@ -154,7 +154,7 @@ final DateTime updatedAt;
 
 final DateTime? archivedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   'node_id': nodeId,
@@ -204,8 +204,8 @@ Map<String, dynamic> toJson() { return {
   'web_commit_signoff_required': ?webCommitSignoffRequired,
   'updated_at': updatedAt.toIso8601String(),
   'archived_at': archivedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
@@ -227,8 +227,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String); } 
-TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String? Function()? name, String? Function()? company, Uri? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? twitterUsername, bool? Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, DateTime? createdAt, String? type, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, Omittable<int?>? privateGists, Omittable<int?>? diskUsage, Omittable<int?>? collaborators, Omittable<String?>? billingEmail, OrganizationFullPlan? Function()? plan, Omittable<String?>? defaultRepositoryPermission, Omittable<bool?>? membersCanCreateRepositories, Omittable<bool?>? twoFactorRequirementEnabled, String? Function()? membersAllowedRepositoryCreationType, bool? Function()? membersCanCreatePublicRepositories, bool? Function()? membersCanCreatePrivateRepositories, bool? Function()? membersCanCreateInternalRepositories, bool? Function()? membersCanCreatePages, bool? Function()? membersCanCreatePublicPages, bool? Function()? membersCanCreatePrivatePages, Omittable<bool?>? membersCanForkPrivateRepositories, bool? Function()? webCommitSignoffRequired, DateTime? updatedAt, DateTime? Function()? archivedAt, }) { return TeamOrganization(
+      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String);}
+TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String? Function()? name, String? Function()? company, Uri? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? twitterUsername, bool? Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, DateTime? createdAt, String? type, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, Omittable<int?>? privateGists, Omittable<int?>? diskUsage, Omittable<int?>? collaborators, Omittable<String?>? billingEmail, OrganizationFullPlan? Function()? plan, Omittable<String?>? defaultRepositoryPermission, Omittable<bool?>? membersCanCreateRepositories, Omittable<bool?>? twoFactorRequirementEnabled, String? Function()? membersAllowedRepositoryCreationType, bool? Function()? membersCanCreatePublicRepositories, bool? Function()? membersCanCreatePrivateRepositories, bool? Function()? membersCanCreateInternalRepositories, bool? Function()? membersCanCreatePages, bool? Function()? membersCanCreatePublicPages, bool? Function()? membersCanCreatePrivatePages, Omittable<bool?>? membersCanForkPrivateRepositories, bool? Function()? webCommitSignoffRequired, DateTime? updatedAt, DateTime? Function()? archivedAt, }) {return TeamOrganization(
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -278,7 +278,7 @@ TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
   updatedAt: updatedAt ?? this.updatedAt,
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamOrganization &&
           login == other.login &&
@@ -335,4 +335,4 @@ TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri
 
 @override String toString() => 'TeamOrganization(\n  login: $login,\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  hooksUrl: $hooksUrl,\n  issuesUrl: $issuesUrl,\n  membersUrl: $membersUrl,\n  publicMembersUrl: $publicMembersUrl,\n  avatarUrl: $avatarUrl,\n  description: $description,\n  name: $name,\n  company: $company,\n  blog: $blog,\n  location: $location,\n  email: $email,\n  twitterUsername: $twitterUsername,\n  isVerified: $isVerified,\n  hasOrganizationProjects: $hasOrganizationProjects,\n  hasRepositoryProjects: $hasRepositoryProjects,\n  publicRepos: $publicRepos,\n  publicGists: $publicGists,\n  followers: $followers,\n  following: $following,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  type: $type,\n  totalPrivateRepos: $totalPrivateRepos,\n  ownedPrivateRepos: $ownedPrivateRepos,\n  privateGists: $privateGists,\n  diskUsage: $diskUsage,\n  collaborators: $collaborators,\n  billingEmail: $billingEmail,\n  plan: $plan,\n  defaultRepositoryPermission: $defaultRepositoryPermission,\n  membersCanCreateRepositories: $membersCanCreateRepositories,\n  twoFactorRequirementEnabled: $twoFactorRequirementEnabled,\n  membersAllowedRepositoryCreationType: $membersAllowedRepositoryCreationType,\n  membersCanCreatePublicRepositories: $membersCanCreatePublicRepositories,\n  membersCanCreatePrivateRepositories: $membersCanCreatePrivateRepositories,\n  membersCanCreateInternalRepositories: $membersCanCreateInternalRepositories,\n  membersCanCreatePages: $membersCanCreatePages,\n  membersCanCreatePublicPages: $membersCanCreatePublicPages,\n  membersCanCreatePrivatePages: $membersCanCreatePrivatePages,\n  membersCanForkPrivateRepositories: $membersCanForkPrivateRepositories,\n  webCommitSignoffRequired: $webCommitSignoffRequired,\n  updatedAt: $updatedAt,\n  archivedAt: $archivedAt,\n)';
 
- }
+}

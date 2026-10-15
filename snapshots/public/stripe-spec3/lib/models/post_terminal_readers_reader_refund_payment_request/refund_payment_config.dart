@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration overrides for this refund, such as customer cancellation settings.
 @immutable final class RefundPaymentConfig {const RefundPaymentConfig({this.enableCustomerCancellation});
 
-factory RefundPaymentConfig.fromJson(Map<String, dynamic> json) { return RefundPaymentConfig(
+factory RefundPaymentConfig.fromJson(Map<String, dynamic> json) {return RefundPaymentConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
-); }
+);}
 
 final bool? enableCustomerCancellation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enable_customer_cancellation': ?enableCustomerCancellation,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_customer_cancellation'}.contains(key)); } 
-RefundPaymentConfig copyWith({bool? Function()? enableCustomerCancellation}) { return RefundPaymentConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enable_customer_cancellation'}.contains(key));}
+RefundPaymentConfig copyWith({bool? Function()? enableCustomerCancellation}) {return RefundPaymentConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RefundPaymentConfig &&
           enableCustomerCancellation == other.enableCustomerCancellation;
@@ -25,4 +25,4 @@ RefundPaymentConfig copyWith({bool? Function()? enableCustomerCancellation}) { r
 
 @override String toString() => 'RefundPaymentConfig(enableCustomerCancellation: $enableCustomerCancellation)';
 
- }
+}

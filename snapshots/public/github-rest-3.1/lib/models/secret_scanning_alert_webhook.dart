@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_created_at.dart';import 'package:pub_github_rest_3_1/models/alert_html_url.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/alert_updated_at.dart';import 'package:pub_github_rest_3_1/models/alert_url.dart';import 'package:pub_github_rest_3_1/models/organization_secret_scanning_alert/validity.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The reason for resolving the alert.
 sealed class SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook();
 
-factory SecretScanningAlertResolutionWebhook.fromJson(String json) { return switch (json) {
+factory SecretScanningAlertResolutionWebhook.fromJson(String json) {return switch (json) {
   'false_positive' => falsePositive,
   'wont_fix' => wontFix,
   'revoked' => revoked,
@@ -13,7 +13,7 @@ factory SecretScanningAlertResolutionWebhook.fromJson(String json) { return swit
   'pattern_edited' => patternEdited,
   'null' => $null,
   _ => SecretScanningAlertResolutionWebhook$Unknown(json),
-}; }
+};}
 
 static const SecretScanningAlertResolutionWebhook falsePositive = SecretScanningAlertResolutionWebhook$falsePositive._();
 
@@ -32,9 +32,9 @@ static const SecretScanningAlertResolutionWebhook $null = SecretScanningAlertRes
 static const List<SecretScanningAlertResolutionWebhook> values = [falsePositive, wontFix, revoked, usedInTests, patternDeleted, patternEdited, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'false_positive' => 'falsePositive',
   'wont_fix' => 'wontFix',
   'revoked' => 'revoked',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'pattern_edited' => 'patternEdited',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SecretScanningAlertResolutionWebhook$Unknown; } 
+bool get isUnknown {return this is SecretScanningAlertResolutionWebhook$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() falsePositive, required W Function() wontFix, required W Function() revoked, required W Function() usedInTests, required W Function() patternDeleted, required W Function() patternEdited, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() falsePositive, required W Function() wontFix, required W Function() revoked, required W Function() usedInTests, required W Function() patternDeleted, required W Function() patternEdited, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       SecretScanningAlertResolutionWebhook$falsePositive() => falsePositive(),
       SecretScanningAlertResolutionWebhook$wontFix() => wontFix(),
       SecretScanningAlertResolutionWebhook$revoked() => revoked(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() falsePositive, required W Function() wontFix, r
       SecretScanningAlertResolutionWebhook$patternEdited() => patternEdited(),
       SecretScanningAlertResolutionWebhook$$null() => $null(),
       SecretScanningAlertResolutionWebhook$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? wontFix, W Function()? revoked, W Function()? usedInTests, W Function()? patternDeleted, W Function()? patternEdited, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? wontFix, W Function()? revoked, W Function()? usedInTests, W Function()? patternDeleted, W Function()? patternEdited, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       SecretScanningAlertResolutionWebhook$falsePositive() => falsePositive != null ? falsePositive() : orElse(value),
       SecretScanningAlertResolutionWebhook$wontFix() => wontFix != null ? wontFix() : orElse(value),
       SecretScanningAlertResolutionWebhook$revoked() => revoked != null ? revoked() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
       SecretScanningAlertResolutionWebhook$patternEdited() => patternEdited != null ? patternEdited() : orElse(value),
       SecretScanningAlertResolutionWebhook$$null() => $null != null ? $null() : orElse(value),
       SecretScanningAlertResolutionWebhook$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SecretScanningAlertResolutionWebhook($value)';
 
- }
+}
 @immutable final class SecretScanningAlertResolutionWebhook$falsePositive extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$falsePositive._();
 
 @override String get value => 'false_positive';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'false_positive'.hashCode;
 
- }
+}
 @immutable final class SecretScanningAlertResolutionWebhook$wontFix extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$wontFix._();
 
 @override String get value => 'wont_fix';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'wont_fix'.hashCode;
 
- }
+}
 @immutable final class SecretScanningAlertResolutionWebhook$revoked extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$revoked._();
 
 @override String get value => 'revoked';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'revoked'.hashCode;
 
- }
+}
 @immutable final class SecretScanningAlertResolutionWebhook$usedInTests extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$usedInTests._();
 
 @override String get value => 'used_in_tests';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'used_in_tests'.hashCode;
 
- }
+}
 @immutable final class SecretScanningAlertResolutionWebhook$patternDeleted extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$patternDeleted._();
 
 @override String get value => 'pattern_deleted';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'pattern_deleted'.hashCode;
 
- }
+}
 @immutable final class SecretScanningAlertResolutionWebhook$patternEdited extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$patternEdited._();
 
 @override String get value => 'pattern_edited';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'pattern_edited'.hashCode;
 
- }
+}
 @immutable final class SecretScanningAlertResolutionWebhook$$null extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$$null._();
 
 @override String get value => 'null';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class SecretScanningAlertResolutionWebhook$Unknown extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$Unknown(this.value);
 
 @override final String value;
@@ -143,10 +143,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePos
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class SecretScanningAlertWebhook {const SecretScanningAlertWebhook({this.number, this.createdAt, this.updatedAt = const Omittable.absent(), this.url, this.htmlUrl, this.locationsUrl, this.resolution = const Omittable.absent(), this.resolvedAt = const Omittable.absent(), this.resolvedBy = const Omittable.absent(), this.resolutionComment = const Omittable.absent(), this.secretType, this.secretTypeDisplayName, this.validity, this.pushProtectionBypassed = const Omittable.absent(), this.pushProtectionBypassedBy = const Omittable.absent(), this.pushProtectionBypassedAt = const Omittable.absent(), this.pushProtectionBypassRequestReviewer = const Omittable.absent(), this.pushProtectionBypassRequestReviewerComment = const Omittable.absent(), this.pushProtectionBypassRequestComment = const Omittable.absent(), this.pushProtectionBypassRequestHtmlUrl = const Omittable.absent(), this.publiclyLeaked = const Omittable.absent(), this.multiRepo = const Omittable.absent(), this.assignedTo = const Omittable.absent(), });
 
-factory SecretScanningAlertWebhook.fromJson(Map<String, dynamic> json) { return SecretScanningAlertWebhook(
+factory SecretScanningAlertWebhook.fromJson(Map<String, dynamic> json) {return SecretScanningAlertWebhook(
   number: json['number'] != null ? AlertNumber.fromJson(json['number'] as num) : null,
   createdAt: json['created_at'] != null ? AlertCreatedAt.fromJson(json['created_at'] as String) : null,
   updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? AlertUpdatedAt.fromJson(json['updated_at'] as String) : null) : const Omittable.absent(),
@@ -170,7 +170,7 @@ factory SecretScanningAlertWebhook.fromJson(Map<String, dynamic> json) { return 
   publiclyLeaked: json.containsKey('publicly_leaked') ? Omittable(json['publicly_leaked'] as bool?) : const Omittable.absent(),
   multiRepo: json.containsKey('multi_repo') ? Omittable(json['multi_repo'] as bool?) : const Omittable.absent(),
   assignedTo: json.containsKey('assigned_to') ? Omittable(json['assigned_to'] != null ? SimpleUser.fromJson(json['assigned_to'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The security alert number.
 final AlertNumber? number;
@@ -238,7 +238,7 @@ final Omittable<bool?> multiRepo;
 
 final Omittable<SimpleUser?> assignedTo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (number != null) 'number': number?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toJson(),
@@ -262,9 +262,9 @@ Map<String, dynamic> toJson() { return {
   if (publiclyLeaked.isPresent) 'publicly_leaked': publiclyLeaked.value,
   if (multiRepo.isPresent) 'multi_repo': multiRepo.value,
   if (assignedTo.isPresent) 'assigned_to': assignedTo.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'number', 'created_at', 'updated_at', 'url', 'html_url', 'locations_url', 'resolution', 'resolved_at', 'resolved_by', 'resolution_comment', 'secret_type', 'secret_type_display_name', 'validity', 'push_protection_bypassed', 'push_protection_bypassed_by', 'push_protection_bypassed_at', 'push_protection_bypass_request_reviewer', 'push_protection_bypass_request_reviewer_comment', 'push_protection_bypass_request_comment', 'push_protection_bypass_request_html_url', 'publicly_leaked', 'multi_repo', 'assigned_to'}.contains(key)); } 
-SecretScanningAlertWebhook copyWith({AlertNumber? Function()? number, AlertCreatedAt? Function()? createdAt, Omittable<AlertUpdatedAt?>? updatedAt, AlertUrl? Function()? url, AlertHtmlUrl? Function()? htmlUrl, Uri? Function()? locationsUrl, Omittable<SecretScanningAlertResolutionWebhook?>? resolution, Omittable<DateTime?>? resolvedAt, Omittable<SimpleUser?>? resolvedBy, Omittable<String?>? resolutionComment, String? Function()? secretType, String? Function()? secretTypeDisplayName, Validity? Function()? validity, Omittable<bool?>? pushProtectionBypassed, Omittable<SimpleUser?>? pushProtectionBypassedBy, Omittable<DateTime?>? pushProtectionBypassedAt, Omittable<SimpleUser?>? pushProtectionBypassRequestReviewer, Omittable<String?>? pushProtectionBypassRequestReviewerComment, Omittable<String?>? pushProtectionBypassRequestComment, Omittable<Uri?>? pushProtectionBypassRequestHtmlUrl, Omittable<bool?>? publiclyLeaked, Omittable<bool?>? multiRepo, Omittable<SimpleUser?>? assignedTo, }) { return SecretScanningAlertWebhook(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'number', 'created_at', 'updated_at', 'url', 'html_url', 'locations_url', 'resolution', 'resolved_at', 'resolved_by', 'resolution_comment', 'secret_type', 'secret_type_display_name', 'validity', 'push_protection_bypassed', 'push_protection_bypassed_by', 'push_protection_bypassed_at', 'push_protection_bypass_request_reviewer', 'push_protection_bypass_request_reviewer_comment', 'push_protection_bypass_request_comment', 'push_protection_bypass_request_html_url', 'publicly_leaked', 'multi_repo', 'assigned_to'}.contains(key));}
+SecretScanningAlertWebhook copyWith({AlertNumber? Function()? number, AlertCreatedAt? Function()? createdAt, Omittable<AlertUpdatedAt?>? updatedAt, AlertUrl? Function()? url, AlertHtmlUrl? Function()? htmlUrl, Uri? Function()? locationsUrl, Omittable<SecretScanningAlertResolutionWebhook?>? resolution, Omittable<DateTime?>? resolvedAt, Omittable<SimpleUser?>? resolvedBy, Omittable<String?>? resolutionComment, String? Function()? secretType, String? Function()? secretTypeDisplayName, Validity? Function()? validity, Omittable<bool?>? pushProtectionBypassed, Omittable<SimpleUser?>? pushProtectionBypassedBy, Omittable<DateTime?>? pushProtectionBypassedAt, Omittable<SimpleUser?>? pushProtectionBypassRequestReviewer, Omittable<String?>? pushProtectionBypassRequestReviewerComment, Omittable<String?>? pushProtectionBypassRequestComment, Omittable<Uri?>? pushProtectionBypassRequestHtmlUrl, Omittable<bool?>? publiclyLeaked, Omittable<bool?>? multiRepo, Omittable<SimpleUser?>? assignedTo, }) {return SecretScanningAlertWebhook(
   number: number != null ? number() : this.number,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
@@ -288,7 +288,7 @@ SecretScanningAlertWebhook copyWith({AlertNumber? Function()? number, AlertCreat
   publiclyLeaked: publiclyLeaked ?? this.publiclyLeaked,
   multiRepo: multiRepo ?? this.multiRepo,
   assignedTo: assignedTo ?? this.assignedTo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningAlertWebhook &&
           number == other.number &&
@@ -319,4 +319,4 @@ SecretScanningAlertWebhook copyWith({AlertNumber? Function()? number, AlertCreat
 
 @override String toString() => 'SecretScanningAlertWebhook(\n  number: $number,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  locationsUrl: $locationsUrl,\n  resolution: $resolution,\n  resolvedAt: $resolvedAt,\n  resolvedBy: $resolvedBy,\n  resolutionComment: $resolutionComment,\n  secretType: $secretType,\n  secretTypeDisplayName: $secretTypeDisplayName,\n  validity: $validity,\n  pushProtectionBypassed: $pushProtectionBypassed,\n  pushProtectionBypassedBy: $pushProtectionBypassedBy,\n  pushProtectionBypassedAt: $pushProtectionBypassedAt,\n  pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer,\n  pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment,\n  pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment,\n  pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl,\n  publiclyLeaked: $publiclyLeaked,\n  multiRepo: $multiRepo,\n  assignedTo: $assignedTo,\n)';
 
- }
+}

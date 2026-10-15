@@ -7,11 +7,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ChatCompletionRequestDeveloperMessage {const ChatCompletionRequestDeveloperMessage({required this.content, required this.role, this.name, });
 
-factory ChatCompletionRequestDeveloperMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestDeveloperMessage(
+factory ChatCompletionRequestDeveloperMessage.fromJson(Map<String, dynamic> json) {return ChatCompletionRequestDeveloperMessage(
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => ChatCompletionRequestMessageContentPartText.fromJson(e as Map<String, dynamic>)).toList(),),
   role: json['role'] as String,
   name: json['name'] as String?,
-); }
+);}
 
 /// The contents of the developer message.
 final ChatCompletionRequestDeveloperMessageContent content;
@@ -22,18 +22,18 @@ final String role;
 /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content.toJson(),
   'role': role,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
-      json.containsKey('role') && json['role'] is String; } 
-ChatCompletionRequestDeveloperMessage copyWith({ChatCompletionRequestDeveloperMessageContent? content, String? role, String? Function()? name, }) { return ChatCompletionRequestDeveloperMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') &&
+      json.containsKey('role') && json['role'] is String;}
+ChatCompletionRequestDeveloperMessage copyWith({ChatCompletionRequestDeveloperMessageContent? content, String? role, String? Function()? name, }) {return ChatCompletionRequestDeveloperMessage(
   content: content ?? this.content,
   role: role ?? this.role,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestDeveloperMessage &&
           content == other.content &&
@@ -44,4 +44,4 @@ ChatCompletionRequestDeveloperMessage copyWith({ChatCompletionRequestDeveloperMe
 
 @override String toString() => 'ChatCompletionRequestDeveloperMessage(content: $content, role: $role, name: $name)';
 
- }
+}

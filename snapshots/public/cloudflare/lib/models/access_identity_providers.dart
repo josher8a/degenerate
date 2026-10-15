@@ -7,7 +7,7 @@ const AccessIdentityProviders({this.accessAzureAd = const Omittable.absent(), th
 const AccessIdentityProviders._({required this.rawValue, required this.accessAzureAd, required this.accessCentrify, required this.accessFacebook, required this.accessGithub, required this.accessGoogle, required this.accessGoogleApps, required this.accessLinkedin, required this.accessOidc, required this.accessOkta, required this.accessOnelogin, required this.accessPingone, required this.accessSaml, required this.accessYandex, required this.accessOnetimepin, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory AccessIdentityProviders.fromJson(Object? json) { return AccessIdentityProviders._(
+factory AccessIdentityProviders.fromJson(Object? json) {return AccessIdentityProviders._(
   rawValue: Omittable(json),
   accessAzureAd: json is Map<String, dynamic> && AccessAzureAd.canParse(json) ? parseAnyOfVariant<AccessAzureAd>(json, (value) => AccessAzureAd.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessCentrify: json is Map<String, dynamic> && AccessCentrify.canParse(json) ? parseAnyOfVariant<AccessCentrify>(json, (value) => AccessCentrify.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -23,7 +23,7 @@ factory AccessIdentityProviders.fromJson(Object? json) { return AccessIdentityPr
   accessSaml: json is Map<String, dynamic> && AccessSaml.canParse(json) ? parseAnyOfVariant<AccessSaml>(json, (value) => AccessSaml.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessYandex: json is Map<String, dynamic> && AccessYandex.canParse(json) ? parseAnyOfVariant<AccessYandex>(json, (value) => AccessYandex.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessOnetimepin: json is Map<String, dynamic> && AccessOnetimepin.canParse(json) ? parseAnyOfVariant<AccessOnetimepin>(json, (value) => AccessOnetimepin.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -101,4 +101,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'AccessIdentityProviders(${toJson()})';
 
- }
+}

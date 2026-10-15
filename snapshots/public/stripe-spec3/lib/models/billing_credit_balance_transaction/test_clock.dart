@@ -8,11 +8,11 @@ const TestClock({this.string = const Omittable.absent(), this.testHelpersTestClo
 const TestClock._({required this.rawValue, required this.string, required this.testHelpersTestClock, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory TestClock.fromJson(Object? json) { return TestClock._(
+factory TestClock.fromJson(Object? json) {return TestClock._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   testHelpersTestClock: json is Map<String, dynamic> && TestHelpersTestClock.canParse(json) ? parseAnyOfVariant<TestHelpersTestClock>(json, (value) => TestHelpersTestClock.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'TestClock(${toJson()})';
 
- }
+}

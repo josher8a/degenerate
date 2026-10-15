@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_billing_details.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_card.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_payto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_us_bank_account.dart';@immutable final class PostPaymentMethodsPaymentMethodRequest {const PostPaymentMethodsPaymentMethodRequest({this.allowRedisplay, this.billingDetails, this.card, this.expand, this.metadata, this.payto, this.usBankAccount, });
 
-factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequest(
+factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsPaymentMethodRequest(
   allowRedisplay: json['allow_redisplay'] != null ? ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
   billingDetails: json['billing_details'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
   card: json['card'] != null ? PostPaymentMethodsPaymentMethodRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> jso
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   payto: json['payto'] != null ? PostPaymentMethodsPaymentMethodRequestPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
   usBankAccount: json['us_bank_account'] != null ? PostPaymentMethodsPaymentMethodRequestUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to `unspecified`.
 final ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? allowRedisplay;
@@ -34,7 +34,7 @@ final PostPaymentMethodsPaymentMethodRequestPayto? payto;
 /// If this is an `us_bank_account` PaymentMethod, this hash contains details about the US bank account payment method.
 final PostPaymentMethodsPaymentMethodRequestUsBankAccount? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowRedisplay != null) 'allow_redisplay': allowRedisplay?.toJson(),
   if (billingDetails != null) 'billing_details': billingDetails?.toJson(),
   if (card != null) 'card': card?.toJson(),
@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (payto != null) 'payto': payto?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'billing_details', 'card', 'expand', 'metadata', 'payto', 'us_bank_account'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodRequest copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, PostPaymentMethodsPaymentMethodRequestBillingDetails? Function()? billingDetails, PostPaymentMethodsPaymentMethodRequestCard? Function()? card, List<String>? Function()? expand, Metadata? Function()? metadata, PostPaymentMethodsPaymentMethodRequestPayto? Function()? payto, PostPaymentMethodsPaymentMethodRequestUsBankAccount? Function()? usBankAccount, }) { return PostPaymentMethodsPaymentMethodRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_redisplay', 'billing_details', 'card', 'expand', 'metadata', 'payto', 'us_bank_account'}.contains(key));}
+PostPaymentMethodsPaymentMethodRequest copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, PostPaymentMethodsPaymentMethodRequestBillingDetails? Function()? billingDetails, PostPaymentMethodsPaymentMethodRequestCard? Function()? card, List<String>? Function()? expand, Metadata? Function()? metadata, PostPaymentMethodsPaymentMethodRequestPayto? Function()? payto, PostPaymentMethodsPaymentMethodRequestUsBankAccount? Function()? usBankAccount, }) {return PostPaymentMethodsPaymentMethodRequest(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
   card: card != null ? card() : this.card,
@@ -52,7 +52,7 @@ PostPaymentMethodsPaymentMethodRequest copyWith({ConfirmationTokensResourcePayme
   metadata: metadata != null ? metadata() : this.metadata,
   payto: payto != null ? payto() : this.payto,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodRequest &&
           allowRedisplay == other.allowRedisplay &&
@@ -67,4 +67,4 @@ PostPaymentMethodsPaymentMethodRequest copyWith({ConfirmationTokensResourcePayme
 
 @override String toString() => 'PostPaymentMethodsPaymentMethodRequest(allowRedisplay: $allowRedisplay, billingDetails: $billingDetails, card: $card, expand: $expand, metadata: $metadata, payto: $payto, usBankAccount: $usBankAccount)';
 
- }
+}

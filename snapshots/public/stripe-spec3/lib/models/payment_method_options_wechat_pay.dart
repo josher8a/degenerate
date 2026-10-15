@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// The client type that the end customer will pay from
 sealed class PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient();
 
-factory PaymentMethodOptionsWechatPayClient.fromJson(String json) { return switch (json) {
+factory PaymentMethodOptionsWechatPayClient.fromJson(String json) {return switch (json) {
   'android' => android,
   'ios' => ios,
   'web' => web,
   _ => PaymentMethodOptionsWechatPayClient$Unknown(json),
-}; }
+};}
 
 static const PaymentMethodOptionsWechatPayClient android = PaymentMethodOptionsWechatPayClient$android._();
 
@@ -20,33 +20,33 @@ static const PaymentMethodOptionsWechatPayClient web = PaymentMethodOptionsWecha
 static const List<PaymentMethodOptionsWechatPayClient> values = [android, ios, web];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'android' => 'android',
   'ios' => 'ios',
   'web' => 'web',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentMethodOptionsWechatPayClient$Unknown; } 
+bool get isUnknown {return this is PaymentMethodOptionsWechatPayClient$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() android, required W Function() ios, required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() android, required W Function() ios, required W Function() web, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentMethodOptionsWechatPayClient$android() => android(),
       PaymentMethodOptionsWechatPayClient$ios() => ios(),
       PaymentMethodOptionsWechatPayClient$web() => web(),
       PaymentMethodOptionsWechatPayClient$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? android, W Function()? ios, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? android, W Function()? ios, W Function()? web, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentMethodOptionsWechatPayClient$android() => android != null ? android() : orElse(value),
       PaymentMethodOptionsWechatPayClient$ios() => ios != null ? ios() : orElse(value),
       PaymentMethodOptionsWechatPayClient$web() => web != null ? web() : orElse(value),
       PaymentMethodOptionsWechatPayClient$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentMethodOptionsWechatPayClient($value)';
 
- }
+}
 @immutable final class PaymentMethodOptionsWechatPayClient$android extends PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient$android._();
 
 @override String get value => 'android';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
 @override int get hashCode => 'android'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsWechatPayClient$ios extends PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient$ios._();
 
 @override String get value => 'ios';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
 @override int get hashCode => 'ios'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsWechatPayClient$web extends PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient$web._();
 
 @override String get value => 'web';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
 @override int get hashCode => 'web'.hashCode;
 
- }
+}
 @immutable final class PaymentMethodOptionsWechatPayClient$Unknown extends PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient$Unknown(this.value);
 
 @override final String value;
@@ -83,15 +83,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? android,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PaymentMethodOptionsWechatPay {const PaymentMethodOptionsWechatPay({this.appId = const Omittable.absent(), this.client = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentMethodOptionsWechatPay.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsWechatPay(
+factory PaymentMethodOptionsWechatPay.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsWechatPay(
   appId: json.containsKey('app_id') ? Omittable(json['app_id'] as String?) : const Omittable.absent(),
   client: json.containsKey('client') ? Omittable(json['client'] != null ? PaymentMethodOptionsWechatPayClient.fromJson(json['client'] as String) : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// The app ID registered with WeChat Pay. Only required when client is ios or android.
 final Omittable<String?> appId;
@@ -108,24 +108,24 @@ final Omittable<PaymentMethodOptionsWechatPayClient?> client;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (appId.isPresent) 'app_id': appId.value,
   if (client.isPresent) 'client': client.value?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_id', 'client', 'setup_future_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'app_id', 'client', 'setup_future_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final appId$ = appId.value;
 if (appId$ != null) {
   if (appId$.runes.length > 5000) { errors.add('appId: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodOptionsWechatPay copyWith({Omittable<String?>? appId, Omittable<PaymentMethodOptionsWechatPayClient?>? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsWechatPay(
+return errors;}
+PaymentMethodOptionsWechatPay copyWith({Omittable<String?>? appId, Omittable<PaymentMethodOptionsWechatPayClient?>? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsWechatPay(
   appId: appId ?? this.appId,
   client: client ?? this.client,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsWechatPay &&
           appId == other.appId &&
@@ -136,4 +136,4 @@ PaymentMethodOptionsWechatPay copyWith({Omittable<String?>? appId, Omittable<Pay
 
 @override String toString() => 'PaymentMethodOptionsWechatPay(appId: $appId, client: $client, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

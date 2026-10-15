@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DefaultBranch {const DefaultBranch({required this.from});
 
-factory DefaultBranch.fromJson(Map<String, dynamic> json) { return DefaultBranch(
+factory DefaultBranch.fromJson(Map<String, dynamic> json) {return DefaultBranch(
   from: json['from'] as String,
-); }
+);}
 
 final String from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
-DefaultBranch copyWith({String? from}) { return DefaultBranch(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && json['from'] is String;}
+DefaultBranch copyWith({String? from}) {return DefaultBranch(
   from: from ?? this.from,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DefaultBranch &&
           from == other.from;
@@ -24,4 +24,4 @@ DefaultBranch copyWith({String? from}) { return DefaultBranch(
 
 @override String toString() => 'DefaultBranch(from: $from)';
 
- }
+}

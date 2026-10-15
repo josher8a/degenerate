@@ -8,11 +8,11 @@ const IssuingAuthorizationToken({this.string = const Omittable.absent(), this.is
 const IssuingAuthorizationToken._({required this.rawValue, required this.string, required this.issuingToken, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory IssuingAuthorizationToken.fromJson(Object? json) { return IssuingAuthorizationToken._(
+factory IssuingAuthorizationToken.fromJson(Object? json) {return IssuingAuthorizationToken._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   issuingToken: json is Map<String, dynamic> && IssuingToken.canParse(json) ? parseAnyOfVariant<IssuingToken>(json, (value) => IssuingToken.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'IssuingAuthorizationToken(${toJson()})';
 
- }
+}

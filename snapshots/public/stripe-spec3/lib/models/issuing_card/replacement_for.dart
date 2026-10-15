@@ -8,11 +8,11 @@ const ReplacementFor({this.string = const Omittable.absent(), this.issuingCard =
 const ReplacementFor._({required this.rawValue, required this.string, required this.issuingCard, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ReplacementFor.fromJson(Object? json) { return ReplacementFor._(
+factory ReplacementFor.fromJson(Object? json) {return ReplacementFor._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   issuingCard: json is Map<String, dynamic> && IssuingCard.canParse(json) ? parseAnyOfVariant<IssuingCard>(json, (value) => IssuingCard.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ReplacementFor(${toJson()})';
 
- }
+}

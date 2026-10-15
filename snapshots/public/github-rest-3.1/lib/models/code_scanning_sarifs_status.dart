@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
 sealed class ProcessingStatus {const ProcessingStatus();
 
-factory ProcessingStatus.fromJson(String json) { return switch (json) {
+factory ProcessingStatus.fromJson(String json) {return switch (json) {
   'pending' => pending,
   'complete' => complete,
   'failed' => failed,
   _ => ProcessingStatus$Unknown(json),
-}; }
+};}
 
 static const ProcessingStatus pending = ProcessingStatus$pending._();
 
@@ -20,33 +20,33 @@ static const ProcessingStatus failed = ProcessingStatus$failed._();
 static const List<ProcessingStatus> values = [pending, complete, failed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending' => 'pending',
   'complete' => 'complete',
   'failed' => 'failed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ProcessingStatus$Unknown; } 
+bool get isUnknown {return this is ProcessingStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pending, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pending, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) {return switch (this) {
       ProcessingStatus$pending() => pending(),
       ProcessingStatus$complete() => complete(),
       ProcessingStatus$failed() => failed(),
       ProcessingStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) {return switch (this) {
       ProcessingStatus$pending() => pending != null ? pending() : orElse(value),
       ProcessingStatus$complete() => complete != null ? complete() : orElse(value),
       ProcessingStatus$failed() => failed != null ? failed() : orElse(value),
       ProcessingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ProcessingStatus($value)';
 
- }
+}
 @immutable final class ProcessingStatus$pending extends ProcessingStatus {const ProcessingStatus$pending._();
 
 @override String get value => 'pending';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class ProcessingStatus$complete extends ProcessingStatus {const ProcessingStatus$complete._();
 
 @override String get value => 'complete';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'complete'.hashCode;
 
- }
+}
 @immutable final class ProcessingStatus$failed extends ProcessingStatus {const ProcessingStatus$failed._();
 
 @override String get value => 'failed';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class ProcessingStatus$Unknown extends ProcessingStatus {const ProcessingStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,14 +83,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CodeScanningSarifsStatus {const CodeScanningSarifsStatus({this.processingStatus, this.analysesUrl = const Omittable.absent(), this.errors = const Omittable.absent(), });
 
-factory CodeScanningSarifsStatus.fromJson(Map<String, dynamic> json) { return CodeScanningSarifsStatus(
+factory CodeScanningSarifsStatus.fromJson(Map<String, dynamic> json) {return CodeScanningSarifsStatus(
   processingStatus: json['processing_status'] != null ? ProcessingStatus.fromJson(json['processing_status'] as String) : null,
   analysesUrl: json.containsKey('analyses_url') ? Omittable(json['analyses_url'] != null ? Uri.parse(json['analyses_url'] as String) : null) : const Omittable.absent(),
   errors: json.containsKey('errors') ? Omittable((json['errors'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
 final ProcessingStatus? processingStatus;
@@ -101,17 +101,17 @@ final Omittable<Uri?> analysesUrl;
 /// Any errors that ocurred during processing of the delivery.
 final Omittable<List<String>?> errors;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (processingStatus != null) 'processing_status': processingStatus?.toJson(),
   if (analysesUrl.isPresent) 'analyses_url': analysesUrl.value?.toString(),
   if (errors.isPresent) 'errors': errors.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'processing_status', 'analyses_url', 'errors'}.contains(key)); } 
-CodeScanningSarifsStatus copyWith({ProcessingStatus? Function()? processingStatus, Omittable<Uri?>? analysesUrl, Omittable<List<String>?>? errors, }) { return CodeScanningSarifsStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'processing_status', 'analyses_url', 'errors'}.contains(key));}
+CodeScanningSarifsStatus copyWith({ProcessingStatus? Function()? processingStatus, Omittable<Uri?>? analysesUrl, Omittable<List<String>?>? errors, }) {return CodeScanningSarifsStatus(
   processingStatus: processingStatus != null ? processingStatus() : this.processingStatus,
   analysesUrl: analysesUrl ?? this.analysesUrl,
   errors: errors ?? this.errors,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningSarifsStatus &&
           processingStatus == other.processingStatus &&
@@ -123,4 +123,4 @@ CodeScanningSarifsStatus copyWith({ProcessingStatus? Function()? processingStatu
 
 @override String toString() => 'CodeScanningSarifsStatus(processingStatus: $processingStatus, analysesUrl: $analysesUrl, errors: $errors)';
 
- }
+}

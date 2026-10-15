@@ -14,7 +14,7 @@ final class LogcontrolCmbConfigForAnAccountApi with ApiExecutor {const Logcontro
 /// Gets CMB config.
 ///
 /// `GET /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<LogcontrolCmbConfig?, DeleteAccountsAccountIdLogsControlCmbConfigError>> getAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogcontrolCmbConfig?, DeleteAccountsAccountIdLogsControlCmbConfigError>> getAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogsControlCmbConfigError.fromResponse,
 );
- } 
+}
 /// Update CMB config
 ///
 /// Updates CMB config.
 ///
 /// `POST /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<LogcontrolCmbConfig?, DeleteAccountsAccountIdLogsControlCmbConfigError>> postAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, required LogcontrolCmbConfig? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogcontrolCmbConfig?, DeleteAccountsAccountIdLogsControlCmbConfigError>> postAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, required LogcontrolCmbConfig? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogsControlCmbConfigError.fromResponse,
 );
- } 
+}
 /// Delete CMB config
 ///
 /// Deletes CMB config.
 ///
 /// `DELETE /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<Map<String, dynamic>?, DeleteAccountsAccountIdLogsControlCmbConfigError>> deleteAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DeleteAccountsAccountIdLogsControlCmbConfigError>> deleteAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -79,5 +79,5 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogsControlCmbConfigError.fromResponse,
 );
- } 
- }
+}
+}

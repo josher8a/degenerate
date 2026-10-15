@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Selects a key from a ConfigMap.
 @immutable final class ConfigMapKeySelector {const ConfigMapKeySelector({required this.key, this.name, this.optional, });
 
-factory ConfigMapKeySelector.fromJson(Map<String, dynamic> json) { return ConfigMapKeySelector(
+factory ConfigMapKeySelector.fromJson(Map<String, dynamic> json) {return ConfigMapKeySelector(
   key: json['key'] as String,
   name: json['name'] as String?,
   optional: json['optional'] as bool?,
-); }
+);}
 
 /// The key to select.
 final String key;
@@ -22,17 +22,17 @@ final bool? optional;
 /// The value of `name`, or its schema default when absent.
 String get nameOrDefault => name ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'name': ?name,
   'optional': ?optional,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-ConfigMapKeySelector copyWith({String? key, String? Function()? name, bool? Function()? optional, }) { return ConfigMapKeySelector(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String;}
+ConfigMapKeySelector copyWith({String? key, String? Function()? name, bool? Function()? optional, }) {return ConfigMapKeySelector(
   key: key ?? this.key,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConfigMapKeySelector &&
           key == other.key &&
@@ -43,4 +43,4 @@ ConfigMapKeySelector copyWith({String? key, String? Function()? name, bool? Func
 
 @override String toString() => 'ConfigMapKeySelector(key: $key, name: $name, optional: $optional)';
 
- }
+}

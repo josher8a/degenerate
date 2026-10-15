@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// HTTP protocol (HTTP vs. HTTPS).
 sealed class RadarGetHttpTopAsesByHttpProtocolHttpProtocol {const RadarGetHttpTopAsesByHttpProtocolHttpProtocol();
 
-factory RadarGetHttpTopAsesByHttpProtocolHttpProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTopAsesByHttpProtocolHttpProtocol.fromJson(String json) {return switch (json) {
   'HTTP' => http,
   'HTTPS' => https,
   _ => RadarGetHttpTopAsesByHttpProtocolHttpProtocol$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTopAsesByHttpProtocolHttpProtocol http = RadarGetHttpTopAsesByHttpProtocolHttpProtocol$http._();
 
@@ -17,30 +17,30 @@ static const RadarGetHttpTopAsesByHttpProtocolHttpProtocol https = RadarGetHttpT
 static const List<RadarGetHttpTopAsesByHttpProtocolHttpProtocol> values = [http, https];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'HTTP' => 'http',
   'HTTPS' => 'https',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTopAsesByHttpProtocolHttpProtocol$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTopAsesByHttpProtocolHttpProtocol$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() http, required W Function() https, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() http, required W Function() https, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByHttpProtocolHttpProtocol$http() => http(),
       RadarGetHttpTopAsesByHttpProtocolHttpProtocol$https() => https(),
       RadarGetHttpTopAsesByHttpProtocolHttpProtocol$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? https, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? https, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTopAsesByHttpProtocolHttpProtocol$http() => http != null ? http() : orElse(value),
       RadarGetHttpTopAsesByHttpProtocolHttpProtocol$https() => https != null ? https() : orElse(value),
       RadarGetHttpTopAsesByHttpProtocolHttpProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTopAsesByHttpProtocolHttpProtocol($value)';
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByHttpProtocolHttpProtocol$http extends RadarGetHttpTopAsesByHttpProtocolHttpProtocol {const RadarGetHttpTopAsesByHttpProtocolHttpProtocol$http._();
 
 @override String get value => 'HTTP';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'HTTP'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByHttpProtocolHttpProtocol$https extends RadarGetHttpTopAsesByHttpProtocolHttpProtocol {const RadarGetHttpTopAsesByHttpProtocolHttpProtocol$https._();
 
 @override String get value => 'HTTPS';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => 'HTTPS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTopAsesByHttpProtocolHttpProtocol$Unknown extends RadarGetHttpTopAsesByHttpProtocolHttpProtocol {const RadarGetHttpTopAsesByHttpProtocolHttpProtocol$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

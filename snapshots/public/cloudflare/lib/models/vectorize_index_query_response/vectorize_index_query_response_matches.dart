@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeIndexQueryResponseMatches {const VectorizeIndexQueryResponseMatches({this.id, this.metadata = const Omittable.absent(), this.score, this.values = const Omittable.absent(), });
 
-factory VectorizeIndexQueryResponseMatches.fromJson(Map<String, dynamic> json) { return VectorizeIndexQueryResponseMatches(
+factory VectorizeIndexQueryResponseMatches.fromJson(Map<String, dynamic> json) {return VectorizeIndexQueryResponseMatches(
   id: json['id'] != null ? VectorizeVectorIdentifier.fromJson(json['id'] as String) : null,
   metadata: json.containsKey('metadata') ? Omittable(json['metadata'] as Map<String, dynamic>?) : const Omittable.absent(),
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
   values: json.containsKey('values') ? Omittable((json['values'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList()) : const Omittable.absent(),
-); }
+);}
 
 final VectorizeVectorIdentifier? id;
 
@@ -19,19 +19,19 @@ final double? score;
 
 final Omittable<List<double>?> values;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
   'score': ?score,
   if (values.isPresent) 'values': values.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'score', 'values'}.contains(key)); } 
-VectorizeIndexQueryResponseMatches copyWith({VectorizeVectorIdentifier? Function()? id, Omittable<Map<String,dynamic>?>? metadata, double? Function()? score, Omittable<List<double>?>? values, }) { return VectorizeIndexQueryResponseMatches(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'metadata', 'score', 'values'}.contains(key));}
+VectorizeIndexQueryResponseMatches copyWith({VectorizeVectorIdentifier? Function()? id, Omittable<Map<String,dynamic>?>? metadata, double? Function()? score, Omittable<List<double>?>? values, }) {return VectorizeIndexQueryResponseMatches(
   id: id != null ? id() : this.id,
   metadata: metadata ?? this.metadata,
   score: score != null ? score() : this.score,
   values: values ?? this.values,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexQueryResponseMatches &&
           id == other.id &&
@@ -44,4 +44,4 @@ VectorizeIndexQueryResponseMatches copyWith({VectorizeVectorIdentifier? Function
 
 @override String toString() => 'VectorizeIndexQueryResponseMatches(id: $id, metadata: $metadata, score: $score, values: $values)';
 
- }
+}

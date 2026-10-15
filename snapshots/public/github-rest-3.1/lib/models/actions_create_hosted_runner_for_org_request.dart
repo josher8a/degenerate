@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_hosted_runner_for_org_request/actions_create_hosted_runner_for_org_request_image.dart';@immutable final class ActionsCreateHostedRunnerForOrgRequest {const ActionsCreateHostedRunnerForOrgRequest({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.imageGen, });
 
-factory ActionsCreateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateHostedRunnerForOrgRequest(
+factory ActionsCreateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) {return ActionsCreateHostedRunnerForOrgRequest(
   name: json['name'] as String,
   image: ActionsCreateHostedRunnerForOrgRequestImage.fromJson(json['image'] as Map<String, dynamic>),
   size: json['size'] as String,
@@ -11,7 +11,7 @@ factory ActionsCreateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> jso
   maximumRunners: json['maximum_runners'] != null ? (json['maximum_runners'] as num).toInt() : null,
   enableStaticIp: json['enable_static_ip'] as bool?,
   imageGen: json['image_gen'] as bool?,
-); }
+);}
 
 /// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
 final String name;
@@ -37,7 +37,7 @@ final bool? imageGen;
 /// The value of `imageGen`, or its schema default when absent.
 bool get imageGenOrDefault => imageGen ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'image': image.toJson(),
   'size': size,
@@ -45,12 +45,12 @@ Map<String, dynamic> toJson() { return {
   'maximum_runners': ?maximumRunners,
   'enable_static_ip': ?enableStaticIp,
   'image_gen': ?imageGen,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('image') &&
       json.containsKey('size') && json['size'] is String &&
-      json.containsKey('runner_group_id') && json['runner_group_id'] is num; } 
-ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHostedRunnerForOrgRequestImage? image, String? size, int? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, bool? Function()? imageGen, }) { return ActionsCreateHostedRunnerForOrgRequest(
+      json.containsKey('runner_group_id') && json['runner_group_id'] is num;}
+ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHostedRunnerForOrgRequestImage? image, String? size, int? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, bool? Function()? imageGen, }) {return ActionsCreateHostedRunnerForOrgRequest(
   name: name ?? this.name,
   image: image ?? this.image,
   size: size ?? this.size,
@@ -58,7 +58,7 @@ ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHost
   maximumRunners: maximumRunners != null ? maximumRunners() : this.maximumRunners,
   enableStaticIp: enableStaticIp != null ? enableStaticIp() : this.enableStaticIp,
   imageGen: imageGen != null ? imageGen() : this.imageGen,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCreateHostedRunnerForOrgRequest &&
           name == other.name &&
@@ -73,4 +73,4 @@ ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHost
 
 @override String toString() => 'ActionsCreateHostedRunnerForOrgRequest(name: $name, image: $image, size: $size, runnerGroupId: $runnerGroupId, maximumRunners: $maximumRunners, enableStaticIp: $enableStaticIp, imageGen: $imageGen)';
 
- }
+}

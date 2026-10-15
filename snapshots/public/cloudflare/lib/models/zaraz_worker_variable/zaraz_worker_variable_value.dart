@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazWorkerVariableValue {const ZarazWorkerVariableValue({required this.escapedWorkerName, required this.workerTag, });
 
-factory ZarazWorkerVariableValue.fromJson(Map<String, dynamic> json) { return ZarazWorkerVariableValue(
+factory ZarazWorkerVariableValue.fromJson(Map<String, dynamic> json) {return ZarazWorkerVariableValue(
   escapedWorkerName: json['escapedWorkerName'] as String,
   workerTag: json['workerTag'] as String,
-); }
+);}
 
 final String escapedWorkerName;
 
 final String workerTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'escapedWorkerName': escapedWorkerName,
   'workerTag': workerTag,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('escapedWorkerName') && json['escapedWorkerName'] is String &&
-      json.containsKey('workerTag') && json['workerTag'] is String; } 
-ZarazWorkerVariableValue copyWith({String? escapedWorkerName, String? workerTag, }) { return ZarazWorkerVariableValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('escapedWorkerName') && json['escapedWorkerName'] is String &&
+      json.containsKey('workerTag') && json['workerTag'] is String;}
+ZarazWorkerVariableValue copyWith({String? escapedWorkerName, String? workerTag, }) {return ZarazWorkerVariableValue(
   escapedWorkerName: escapedWorkerName ?? this.escapedWorkerName,
   workerTag: workerTag ?? this.workerTag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazWorkerVariableValue &&
           escapedWorkerName == other.escapedWorkerName &&
@@ -31,4 +31,4 @@ ZarazWorkerVariableValue copyWith({String? escapedWorkerName, String? workerTag,
 
 @override String toString() => 'ZarazWorkerVariableValue(escapedWorkerName: $escapedWorkerName, workerTag: $workerTag)';
 
- }
+}

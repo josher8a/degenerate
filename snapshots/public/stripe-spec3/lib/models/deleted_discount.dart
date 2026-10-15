@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_object.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source.dart';/// 
 @immutable final class DeletedDiscount {const DeletedDiscount({required this.deleted, required this.id, required this.object, required this.source, required this.start, this.checkoutSession = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.invoice = const Omittable.absent(), this.invoiceItem = const Omittable.absent(), this.promotionCode = const Omittable.absent(), this.subscription = const Omittable.absent(), this.subscriptionItem = const Omittable.absent(), });
 
-factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDiscount(
+factory DeletedDiscount.fromJson(Map<String, dynamic> json) {return DeletedDiscount(
   checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] as String?) : const Omittable.absent(),
   customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? BankAccountCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
@@ -18,7 +18,7 @@ factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDisc
   start: (json['start'] as num).toInt(),
   subscription: json.containsKey('subscription') ? Omittable(json['subscription'] as String?) : const Omittable.absent(),
   subscriptionItem: json.containsKey('subscription_item') ? Omittable(json['subscription_item'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The Checkout session that this coupon is applied to, if it is applied to a particular session in payment mode. Will not be present for subscription mode.
 final Omittable<String?> checkoutSession;
@@ -58,7 +58,7 @@ final Omittable<String?> subscription;
 /// The subscription item that this coupon is applied to, if it is applied to a particular subscription item.
 final Omittable<String?> subscriptionItem;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (checkoutSession.isPresent) 'checkout_session': checkoutSession.value,
   if (customer.isPresent) 'customer': customer.value?.toJson(),
   if (customerAccount.isPresent) 'customer_account': customerAccount.value,
@@ -72,14 +72,14 @@ Map<String, dynamic> toJson() { return {
   'start': start,
   if (subscription.isPresent) 'subscription': subscription.value,
   if (subscriptionItem.isPresent) 'subscription_item': subscriptionItem.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') && json['object'] == 'discount' &&
       json.containsKey('source') &&
-      json.containsKey('start') && json['start'] is num; } 
+      json.containsKey('start') && json['start'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final checkoutSession$ = checkoutSession.value;
 if (checkoutSession$ != null) {
   if (checkoutSession$.runes.length > 5000) { errors.add('checkoutSession: length must be <= 5000'); }
@@ -105,8 +105,8 @@ final subscriptionItem$ = subscriptionItem.value;
 if (subscriptionItem$ != null) {
   if (subscriptionItem$.runes.length > 5000) { errors.add('subscriptionItem: length must be <= 5000'); }
 }
-return errors; } 
-DeletedDiscount copyWith({Omittable<String?>? checkoutSession, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, bool? deleted, String? id, Omittable<String?>? invoice, Omittable<String?>? invoiceItem, DeletedDiscountObject? object, Omittable<DeletedDiscountPromotionCode?>? promotionCode, DiscountSource? source, int? start, Omittable<String?>? subscription, Omittable<String?>? subscriptionItem, }) { return DeletedDiscount(
+return errors;}
+DeletedDiscount copyWith({Omittable<String?>? checkoutSession, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, bool? deleted, String? id, Omittable<String?>? invoice, Omittable<String?>? invoiceItem, DeletedDiscountObject? object, Omittable<DeletedDiscountPromotionCode?>? promotionCode, DiscountSource? source, int? start, Omittable<String?>? subscription, Omittable<String?>? subscriptionItem, }) {return DeletedDiscount(
   checkoutSession: checkoutSession ?? this.checkoutSession,
   customer: customer ?? this.customer,
   customerAccount: customerAccount ?? this.customerAccount,
@@ -120,7 +120,7 @@ DeletedDiscount copyWith({Omittable<String?>? checkoutSession, Omittable<BankAcc
   start: start ?? this.start,
   subscription: subscription ?? this.subscription,
   subscriptionItem: subscriptionItem ?? this.subscriptionItem,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedDiscount &&
           checkoutSession == other.checkoutSession &&
@@ -141,4 +141,4 @@ DeletedDiscount copyWith({Omittable<String?>? checkoutSession, Omittable<BankAcc
 
 @override String toString() => 'DeletedDiscount(\n  checkoutSession: $checkoutSession,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  deleted: $deleted,\n  id: $id,\n  invoice: $invoice,\n  invoiceItem: $invoiceItem,\n  object: $object,\n  promotionCode: $promotionCode,\n  source: $source,\n  start: $start,\n  subscription: $subscription,\n  subscriptionItem: $subscriptionItem,\n)';
 
- }
+}

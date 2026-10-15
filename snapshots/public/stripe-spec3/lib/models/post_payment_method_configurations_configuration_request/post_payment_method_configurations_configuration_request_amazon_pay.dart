@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Amazon Pay is a wallet payment method that lets your customers check out the same way as on Amazon.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestAmazonPay {const PostPaymentMethodConfigurationsConfigurationRequestAmazonPay({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestAmazonPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAmazonPay(
+factory PostPaymentMethodConfigurationsConfigurationRequestAmazonPay.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestAmazonPay(
   displayPreference: json['display_preference'] != null ? DisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestAmazonPay copyWith({DisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestAmazonPay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestAmazonPay copyWith({DisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsConfigurationRequestAmazonPay(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestAmazonPay &&
           displayPreference == other.displayPreference;
@@ -25,4 +25,4 @@ PostPaymentMethodConfigurationsConfigurationRequestAmazonPay copyWith({DisplayPr
 
 @override String toString() => 'PostPaymentMethodConfigurationsConfigurationRequestAmazonPay(displayPreference: $displayPreference)';
 
- }
+}

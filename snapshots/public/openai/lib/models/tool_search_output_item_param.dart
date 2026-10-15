@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';@immutable final class ToolSearchOutputItemParam {const ToolSearchOutputItemParam({required this.type, required this.tools, this.id = const Omittable.absent(), this.callId = const Omittable.absent(), this.execution, this.status = const Omittable.absent(), });
 
-factory ToolSearchOutputItemParam.fromJson(Map<String, dynamic> json) { return ToolSearchOutputItemParam(
+factory ToolSearchOutputItemParam.fromJson(Map<String, dynamic> json) {return ToolSearchOutputItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   callId: json.containsKey('call_id') ? Omittable(json['call_id'] as String?) : const Omittable.absent(),
   type: json['type'] as String,
   execution: json['execution'] != null ? ToolSearchExecutionType.fromJson(json['execution'] as String) : null,
   tools: (json['tools'] as List<dynamic>).map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? FunctionCallItemStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The unique ID of this tool search output.
 final Omittable<String?> id;
@@ -29,32 +29,32 @@ final List<Tool> tools;
 
 final Omittable<FunctionCallItemStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id.isPresent) 'id': id.value,
   if (callId.isPresent) 'call_id': callId.value,
   'type': type,
   if (execution != null) 'execution': execution?.toJson(),
   'tools': tools.map((e) => e.toJson()).toList(),
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('tools'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('tools');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final callId$ = callId.value;
 if (callId$ != null) {
   if (callId$.isEmpty) { errors.add('callId: length must be >= 1'); }
   if (callId$.runes.length > 64) { errors.add('callId: length must be <= 64'); }
 }
-return errors; } 
-ToolSearchOutputItemParam copyWith({Omittable<String?>? id, Omittable<String?>? callId, String? type, ToolSearchExecutionType? Function()? execution, List<Tool>? tools, Omittable<FunctionCallItemStatus?>? status, }) { return ToolSearchOutputItemParam(
+return errors;}
+ToolSearchOutputItemParam copyWith({Omittable<String?>? id, Omittable<String?>? callId, String? type, ToolSearchExecutionType? Function()? execution, List<Tool>? tools, Omittable<FunctionCallItemStatus?>? status, }) {return ToolSearchOutputItemParam(
   id: id ?? this.id,
   callId: callId ?? this.callId,
   type: type ?? this.type,
   execution: execution != null ? execution() : this.execution,
   tools: tools ?? this.tools,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToolSearchOutputItemParam &&
           id == other.id &&
@@ -68,4 +68,4 @@ ToolSearchOutputItemParam copyWith({Omittable<String?>? id, Omittable<String?>? 
 
 @override String toString() => 'ToolSearchOutputItemParam(id: $id, callId: $callId, type: $type, execution: $execution, tools: $tools, status: $status)';
 
- }
+}

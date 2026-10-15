@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CachePurgeFlexPurgeByPrefixes {const CachePurgeFlexPurgeByPrefixes({this.prefixes});
 
-factory CachePurgeFlexPurgeByPrefixes.fromJson(Map<String, dynamic> json) { return CachePurgeFlexPurgeByPrefixes(
+factory CachePurgeFlexPurgeByPrefixes.fromJson(Map<String, dynamic> json) {return CachePurgeFlexPurgeByPrefixes(
   prefixes: (json['prefixes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// For more information on purging by prefixes, please refer to [purge by prefix documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge_by_prefix/).
 /// 
 /// Example: `[www.example.com/foo, images.example.com/bar/baz]`
 final List<String>? prefixes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'prefixes': ?prefixes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'prefixes'}.contains(key)); } 
-CachePurgeFlexPurgeByPrefixes copyWith({List<String>? Function()? prefixes}) { return CachePurgeFlexPurgeByPrefixes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'prefixes'}.contains(key));}
+CachePurgeFlexPurgeByPrefixes copyWith({List<String>? Function()? prefixes}) {return CachePurgeFlexPurgeByPrefixes(
   prefixes: prefixes != null ? prefixes() : this.prefixes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CachePurgeFlexPurgeByPrefixes &&
           listEquals(prefixes, other.prefixes);
@@ -27,4 +27,4 @@ CachePurgeFlexPurgeByPrefixes copyWith({List<String>? Function()? prefixes}) { r
 
 @override String toString() => 'CachePurgeFlexPurgeByPrefixes(prefixes: $prefixes)';
 
- }
+}

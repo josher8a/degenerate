@@ -14,7 +14,7 @@ final class RadarAutonomousSystemsApi with ApiExecutor {const RadarAutonomousSys
 /// Retrieves a list of autonomous systems.
 ///
 /// `GET /radar/entities/asns`
-Future<ApiResult<RadarGetEntitiesAsnListResponseResult, RadarGetEntitiesAsnListError>> radarGetEntitiesAsnList({int? limit, int? offset, String? asn, String? location, RadarGetEntitiesAsnListOrderBy? orderBy, RadarGetEntitiesAsnListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnListResponseResult, RadarGetEntitiesAsnListError>> radarGetEntitiesAsnList({int? limit, int? offset, String? asn, String? location, RadarGetEntitiesAsnListOrderBy? orderBy, RadarGetEntitiesAsnListFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: RadarGetEntitiesAsnListError.fromResponse,
 );
- } 
+}
 /// Get AS details by ASN
 ///
 /// Retrieves the requested autonomous system information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this AS). Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 ///
 /// `GET /radar/entities/asns/{asn}`
-Future<ApiResult<RadarGetEntitiesAsnByIdResponseResult, RadarGetEntitiesAsnByIdError>> radarGetEntitiesAsnById({required int asn, RadarGetEntitiesAsnByIdFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnByIdResponseResult, RadarGetEntitiesAsnByIdError>> radarGetEntitiesAsnById({required int asn, RadarGetEntitiesAsnByIdFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -85,13 +85,13 @@ return await execute(
   },
   onError: RadarGetEntitiesAsnByIdError.fromResponse,
 );
- } 
+}
 /// Get IRR AS-SETs that an AS is a member of
 ///
 /// Retrieves Internet Routing Registry AS-SETs that an AS is a member of.
 ///
 /// `GET /radar/entities/asns/{asn}/as_set`
-Future<ApiResult<RadarGetAsnsAsSetResponseResult, RadarGetAsnsAsSetError>> radarGetAsnsAsSet({required int asn, RadarGetAsnsAsSetFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAsnsAsSetResponseResult, RadarGetAsnsAsSetError>> radarGetAsnsAsSet({required int asn, RadarGetAsnsAsSetFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -116,13 +116,13 @@ return await execute(
   },
   onError: RadarGetAsnsAsSetError.fromResponse,
 );
- } 
+}
 /// Get AS-level relationships by ASN
 ///
 /// Retrieves AS-level relationship for given networks.
 ///
 /// `GET /radar/entities/asns/{asn}/rel`
-Future<ApiResult<RadarGetAsnsRelResponseResult, RadarGetAsnsRelError>> radarGetAsnsRel({required int asn, int? asn2, RadarGetAsnsRelFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAsnsRelResponseResult, RadarGetAsnsRelError>> radarGetAsnsRel({required int asn, int? asn2, RadarGetAsnsRelFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (asn2 != null) {
   queryParameters['asn2'] = asn2.toString();
@@ -150,13 +150,13 @@ return await execute(
   },
   onError: RadarGetAsnsRelError.fromResponse,
 );
- } 
+}
 /// Get AS rankings by botnet threat feed activity
 ///
 /// Retrieves a ranked list of Autonomous Systems based on their presence in the Cloudflare Botnet Threat Feed. Rankings can be sorted by offense count or number of bad IPs. Optionally compare to a previous date to see rank changes.
 ///
 /// `GET /radar/entities/asns/botnet_threat_feed`
-Future<ApiResult<RadarGetAsBotnetThreatFeedResponseResult, RadarGetAsBotnetThreatFeedError>> radarGetAsBotnetThreatFeed({int? limit, int? offset, RadarGetAsBotnetThreatFeedMetric? metric, String? date, String? compareDateRange, String? location, List<String>? asn, RadarGetAsBotnetThreatFeedSortOrder? sortOrder, RadarGetAsBotnetThreatFeedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAsBotnetThreatFeedResponseResult, RadarGetAsBotnetThreatFeedError>> radarGetAsBotnetThreatFeed({int? limit, int? offset, RadarGetAsBotnetThreatFeedMetric? metric, String? date, String? compareDateRange, String? location, List<String>? asn, RadarGetAsBotnetThreatFeedSortOrder? sortOrder, RadarGetAsBotnetThreatFeedFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -207,13 +207,13 @@ return await execute(
   },
   onError: RadarGetAsBotnetThreatFeedError.fromResponse,
 );
- } 
+}
 /// Get AS details by IP address
 ///
 /// Retrieves the requested autonomous system information based on IP address. Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 ///
 /// `GET /radar/entities/asns/ip`
-Future<ApiResult<RadarGetEntitiesAsnByIpResponseResult, RadarGetEntitiesAsnByIpError>> radarGetEntitiesAsnByIp({required String ip, RadarGetEntitiesAsnByIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnByIpResponseResult, RadarGetEntitiesAsnByIpError>> radarGetEntitiesAsnByIp({required String ip, RadarGetEntitiesAsnByIpFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ip'] = ip;
 if (format != null) {
@@ -239,5 +239,5 @@ return await execute(
   },
   onError: RadarGetEntitiesAsnByIpError.fromResponse,
 );
- } 
- }
+}
+}

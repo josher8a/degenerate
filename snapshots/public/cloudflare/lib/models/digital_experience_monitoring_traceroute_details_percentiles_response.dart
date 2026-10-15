@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_percentiles.dart';@immutable final class DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse {const DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse({this.hopsCount, this.packetLossPct, this.roundTripTimeMs, });
 
-factory DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(
+factory DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(
   hopsCount: json['hopsCount'] != null ? DigitalExperienceMonitoringPercentiles.fromJson(json['hopsCount'] as Map<String, dynamic>) : null,
   packetLossPct: json['packetLossPct'] != null ? DigitalExperienceMonitoringPercentiles.fromJson(json['packetLossPct'] as Map<String, dynamic>) : null,
   roundTripTimeMs: json['roundTripTimeMs'] != null ? DigitalExperienceMonitoringPercentiles.fromJson(json['roundTripTimeMs'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DigitalExperienceMonitoringPercentiles? hopsCount;
 
@@ -15,17 +15,17 @@ final DigitalExperienceMonitoringPercentiles? packetLossPct;
 
 final DigitalExperienceMonitoringPercentiles? roundTripTimeMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (hopsCount != null) 'hopsCount': hopsCount?.toJson(),
   if (packetLossPct != null) 'packetLossPct': packetLossPct?.toJson(),
   if (roundTripTimeMs != null) 'roundTripTimeMs': roundTripTimeMs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hopsCount', 'packetLossPct', 'roundTripTimeMs'}.contains(key)); } 
-DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse copyWith({DigitalExperienceMonitoringPercentiles? Function()? hopsCount, DigitalExperienceMonitoringPercentiles? Function()? packetLossPct, DigitalExperienceMonitoringPercentiles? Function()? roundTripTimeMs, }) { return DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'hopsCount', 'packetLossPct', 'roundTripTimeMs'}.contains(key));}
+DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse copyWith({DigitalExperienceMonitoringPercentiles? Function()? hopsCount, DigitalExperienceMonitoringPercentiles? Function()? packetLossPct, DigitalExperienceMonitoringPercentiles? Function()? roundTripTimeMs, }) {return DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(
   hopsCount: hopsCount != null ? hopsCount() : this.hopsCount,
   packetLossPct: packetLossPct != null ? packetLossPct() : this.packetLossPct,
   roundTripTimeMs: roundTripTimeMs != null ? roundTripTimeMs() : this.roundTripTimeMs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse &&
           hopsCount == other.hopsCount &&
@@ -36,4 +36,4 @@ DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse copyWith({Digita
 
 @override String toString() => 'DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(hopsCount: $hopsCount, packetLossPct: $packetLossPct, roundTripTimeMs: $roundTripTimeMs)';
 
- }
+}

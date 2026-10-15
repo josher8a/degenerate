@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n0_response400/n0_response400_errors.dart';@immutable final class WorkersAiPostRunCfMetaLlama321bInstructResponse400 {const WorkersAiPostRunCfMetaLlama321bInstructResponse400({required this.errors, required this.result, required this.success, });
 
-factory WorkersAiPostRunCfMetaLlama321bInstructResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlama321bInstructResponse400(
+factory WorkersAiPostRunCfMetaLlama321bInstructResponse400.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfMetaLlama321bInstructResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => $0Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
-); }
+);}
 
 final List<$0Response400Errors> errors;
 
@@ -15,19 +15,19 @@ final Map<String,dynamic> result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-WorkersAiPostRunCfMetaLlama321bInstructResponse400 copyWith({List<$0Response400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return WorkersAiPostRunCfMetaLlama321bInstructResponse400(
+      json.containsKey('success') && json['success'] is bool;}
+WorkersAiPostRunCfMetaLlama321bInstructResponse400 copyWith({List<$0Response400Errors>? errors, Map<String,dynamic>? result, bool? success, }) {return WorkersAiPostRunCfMetaLlama321bInstructResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfMetaLlama321bInstructResponse400 &&
           listEquals(errors, other.errors) &&
@@ -38,4 +38,4 @@ WorkersAiPostRunCfMetaLlama321bInstructResponse400 copyWith({List<$0Response400E
 
 @override String toString() => 'WorkersAiPostRunCfMetaLlama321bInstructResponse400(errors: $errors, result: $result, success: $success)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [`deploy key`](https://docs.github.com/rest/deploy-keys/deploy-keys#get-a-deploy-key) resource.
 @immutable final class WebhooksDeployKey {const WebhooksDeployKey({required this.createdAt, required this.id, required this.key, required this.readOnly, required this.title, required this.url, required this.verified, this.addedBy = const Omittable.absent(), this.lastUsed = const Omittable.absent(), this.enabled, });
 
-factory WebhooksDeployKey.fromJson(Map<String, dynamic> json) { return WebhooksDeployKey(
+factory WebhooksDeployKey.fromJson(Map<String, dynamic> json) {return WebhooksDeployKey(
   addedBy: json.containsKey('added_by') ? Omittable(json['added_by'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   id: (json['id'] as num).toInt(),
@@ -15,7 +15,7 @@ factory WebhooksDeployKey.fromJson(Map<String, dynamic> json) { return WebhooksD
   url: Uri.parse(json['url'] as String),
   verified: json['verified'] as bool,
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 final Omittable<String?> addedBy;
 
@@ -37,7 +37,7 @@ final bool verified;
 
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addedBy.isPresent) 'added_by': addedBy.value,
   'created_at': createdAt,
   'id': id,
@@ -48,15 +48,15 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'verified': verified,
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('key') && json['key'] is String &&
       json.containsKey('read_only') && json['read_only'] is bool &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('verified') && json['verified'] is bool; } 
-WebhooksDeployKey copyWith({Omittable<String?>? addedBy, String? createdAt, int? id, String? key, Omittable<String?>? lastUsed, bool? readOnly, String? title, Uri? url, bool? verified, bool? Function()? enabled, }) { return WebhooksDeployKey(
+      json.containsKey('verified') && json['verified'] is bool;}
+WebhooksDeployKey copyWith({Omittable<String?>? addedBy, String? createdAt, int? id, String? key, Omittable<String?>? lastUsed, bool? readOnly, String? title, Uri? url, bool? verified, bool? Function()? enabled, }) {return WebhooksDeployKey(
   addedBy: addedBy ?? this.addedBy,
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
@@ -67,7 +67,7 @@ WebhooksDeployKey copyWith({Omittable<String?>? addedBy, String? createdAt, int?
   url: url ?? this.url,
   verified: verified ?? this.verified,
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksDeployKey &&
           addedBy == other.addedBy &&
@@ -85,4 +85,4 @@ WebhooksDeployKey copyWith({Omittable<String?>? addedBy, String? createdAt, int?
 
 @override String toString() => 'WebhooksDeployKey(\n  addedBy: $addedBy,\n  createdAt: $createdAt,\n  id: $id,\n  key: $key,\n  lastUsed: $lastUsed,\n  readOnly: $readOnly,\n  title: $title,\n  url: $url,\n  verified: $verified,\n  enabled: $enabled,\n)';
 
- }
+}

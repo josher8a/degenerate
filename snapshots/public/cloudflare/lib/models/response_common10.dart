@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_messages2.dart';@immutable final class ResponseCommon10 {const ResponseCommon10({required this.errors, required this.messages, required this.success, });
 
-factory ResponseCommon10.fromJson(Map<String, dynamic> json) { return ResponseCommon10(
+factory ResponseCommon10.fromJson(Map<String, dynamic> json) {return ResponseCommon10(
   errors: (json['errors'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<CacheRulesMessages2> errors;
 
@@ -18,19 +18,19 @@ final List<CacheRulesMessages2> messages;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon10 copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, }) { return ResponseCommon10(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon10 copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, }) {return ResponseCommon10(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon10 &&
           listEquals(errors, other.errors) &&
@@ -41,4 +41,4 @@ ResponseCommon10 copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMes
 
 @override String toString() => 'ResponseCommon10(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

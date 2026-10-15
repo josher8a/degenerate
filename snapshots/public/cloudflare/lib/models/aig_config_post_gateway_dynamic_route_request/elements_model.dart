@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_properties.dart';sealed class ModelType {const ModelType();
 
-factory ModelType.fromJson(String json) { return switch (json) {
+factory ModelType.fromJson(String json) {return switch (json) {
   'model' => model,
   _ => ModelType$Unknown(json),
-}; }
+};}
 
 static const ModelType model = ModelType$model._();
 
 static const List<ModelType> values = [model];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'model' => 'model',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ModelType$Unknown; } 
+bool get isUnknown {return this is ModelType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() model, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() model, required W Function(String value) $unknown, }) {return switch (this) {
       ModelType$model() => model(),
       ModelType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? model, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? model, W Function(String value)? $unknown, }) {return switch (this) {
       ModelType$model() => model != null ? model() : orElse(value),
       ModelType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ModelType($value)';
 
- }
+}
 @immutable final class ModelType$model extends ModelType {const ModelType$model._();
 
 @override String get value => 'model';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? model, W
 
 @override int get hashCode => 'model'.hashCode;
 
- }
+}
 @immutable final class ModelType$Unknown extends ModelType {const ModelType$Unknown(this.value);
 
 @override final String value;
@@ -52,15 +52,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? model, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ElementsModel {const ElementsModel({required this.id, required this.outputs, required this.properties, required this.type, });
 
-factory ElementsModel.fromJson(Map<String, dynamic> json) { return ElementsModel(
+factory ElementsModel.fromJson(Map<String, dynamic> json) {return ElementsModel(
   id: json['id'] as String,
   outputs: ModelOutputs.fromJson(json['outputs'] as Map<String, dynamic>),
   properties: ModelProperties.fromJson(json['properties'] as Map<String, dynamic>),
   type: ModelType.fromJson(json['type'] as String),
-); }
+);}
 
 final String id;
 
@@ -70,22 +70,22 @@ final ModelProperties properties;
 
 final ModelType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'outputs': outputs.toJson(),
   'properties': properties.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('outputs') &&
       json.containsKey('properties') &&
-      json.containsKey('type') && json['type'] == 'model'; } 
-ElementsModel copyWith({String? id, ModelOutputs? outputs, ModelProperties? properties, ModelType? type, }) { return ElementsModel(
+      json.containsKey('type') && json['type'] == 'model';}
+ElementsModel copyWith({String? id, ModelOutputs? outputs, ModelProperties? properties, ModelType? type, }) {return ElementsModel(
   id: id ?? this.id,
   outputs: outputs ?? this.outputs,
   properties: properties ?? this.properties,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ElementsModel &&
           id == other.id &&
@@ -97,4 +97,4 @@ ElementsModel copyWith({String? id, ModelOutputs? outputs, ModelProperties? prop
 
 @override String toString() => 'ElementsModel(id: $id, outputs: $outputs, properties: $properties, type: $type)';
 
- }
+}

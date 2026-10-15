@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object.dart';@immutable final class ListAssistantsResponse {const ListAssistantsResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
-factory ListAssistantsResponse.fromJson(Map<String, dynamic> json) { return ListAssistantsResponse(
+factory ListAssistantsResponse.fromJson(Map<String, dynamic> json) {return ListAssistantsResponse(
   object: json['object'] as String,
   data: (json['data'] as List<dynamic>).map((e) => AssistantObject.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
   hasMore: json['has_more'] as bool,
-); }
+);}
 
 /// Example: `'list'`
 final String object;
@@ -25,25 +25,25 @@ final String lastId;
 /// Example: `false`
 final bool hasMore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object,
   'data': data.map((e) => e.toJson()).toList(),
   'first_id': firstId,
   'last_id': lastId,
   'has_more': hasMore,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] is String &&
       json.containsKey('data') &&
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
-      json.containsKey('has_more') && json['has_more'] is bool; } 
-ListAssistantsResponse copyWith({String? object, List<AssistantObject>? data, String? firstId, String? lastId, bool? hasMore, }) { return ListAssistantsResponse(
+      json.containsKey('has_more') && json['has_more'] is bool;}
+ListAssistantsResponse copyWith({String? object, List<AssistantObject>? data, String? firstId, String? lastId, bool? hasMore, }) {return ListAssistantsResponse(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,
   lastId: lastId ?? this.lastId,
   hasMore: hasMore ?? this.hasMore,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListAssistantsResponse &&
           object == other.object &&
@@ -56,4 +56,4 @@ ListAssistantsResponse copyWith({String? object, List<AssistantObject>? data, St
 
 @override String toString() => 'ListAssistantsResponse(object: $object, data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)';
 
- }
+}

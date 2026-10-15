@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_curated_image/actions_hosted_runner_curated_image_source.dart';/// Provides details of a hosted runner image
 @immutable final class ActionsHostedRunnerPoolImage {const ActionsHostedRunnerPoolImage({required this.id, required this.sizeGb, required this.displayName, required this.source, this.version, });
 
-factory ActionsHostedRunnerPoolImage.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerPoolImage(
+factory ActionsHostedRunnerPoolImage.fromJson(Map<String, dynamic> json) {return ActionsHostedRunnerPoolImage(
   id: json['id'] as String,
   sizeGb: (json['size_gb'] as num).toInt(),
   displayName: json['display_name'] as String,
   source: ActionsHostedRunnerCuratedImageSource.fromJson(json['source'] as String),
   version: json['version'] as String?,
-); }
+);}
 
 /// The ID of the image. Use this ID for the `image` parameter when creating a new larger runner.
 final String id;
@@ -27,24 +27,24 @@ final ActionsHostedRunnerCuratedImageSource source;
 /// The image version of the hosted runner pool.
 final String? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'size_gb': sizeGb,
   'display_name': displayName,
   'source': source.toJson(),
   'version': ?version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('size_gb') && json['size_gb'] is num &&
       json.containsKey('display_name') && json['display_name'] is String &&
-      json.containsKey('source'); } 
-ActionsHostedRunnerPoolImage copyWith({String? id, int? sizeGb, String? displayName, ActionsHostedRunnerCuratedImageSource? source, String? Function()? version, }) { return ActionsHostedRunnerPoolImage(
+      json.containsKey('source');}
+ActionsHostedRunnerPoolImage copyWith({String? id, int? sizeGb, String? displayName, ActionsHostedRunnerCuratedImageSource? source, String? Function()? version, }) {return ActionsHostedRunnerPoolImage(
   id: id ?? this.id,
   sizeGb: sizeGb ?? this.sizeGb,
   displayName: displayName ?? this.displayName,
   source: source ?? this.source,
   version: version != null ? version() : this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsHostedRunnerPoolImage &&
           id == other.id &&
@@ -57,4 +57,4 @@ ActionsHostedRunnerPoolImage copyWith({String? id, int? sizeGb, String? displayN
 
 @override String toString() => 'ActionsHostedRunnerPoolImage(id: $id, sizeGb: $sizeGb, displayName: $displayName, source: $source, version: $version)';
 
- }
+}

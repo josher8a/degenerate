@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_messages2.dart';@immutable final class DnsCustomNameserversGetResponse {const DnsCustomNameserversGetResponse({required this.errors, required this.messages, required this.success, this.resultInfo, this.enabled, this.nsSet, });
 
-factory DnsCustomNameserversGetResponse.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversGetResponse(
+factory DnsCustomNameserversGetResponse.fromJson(Map<String, dynamic> json) {return DnsCustomNameserversGetResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsCustomNameserversMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DnsCustomNameserversMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   enabled: json['enabled'] as bool?,
   nsSet: json['ns_set'] != null ? (json['ns_set'] as num).toDouble() : null,
-); }
+);}
 
 final List<DnsCustomNameserversMessages2> errors;
 
@@ -36,33 +36,33 @@ final double? nsSet;
 /// The value of `nsSet`, or its schema default when absent.
 double get nsSetOrDefault => nsSet ?? 1.0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'enabled': ?enabled,
   'ns_set': ?nsSet,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
+      json.containsKey('success') && json['success'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors$ = <String>[];
+List<String> validate() {final errors$ = <String>[];
 final nsSet$ = nsSet;
 if (nsSet$ != null) {
   if (nsSet$ < 1) { errors$.add('nsSet: must be >= 1'); }
   if (nsSet$ > 5) { errors$.add('nsSet: must be <= 5'); }
 }
-return errors$; } 
-DnsCustomNameserversGetResponse copyWith({List<DnsCustomNameserversMessages2>? errors, List<DnsCustomNameserversMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, bool? Function()? enabled, double? Function()? nsSet, }) { return DnsCustomNameserversGetResponse(
+return errors$;}
+DnsCustomNameserversGetResponse copyWith({List<DnsCustomNameserversMessages2>? errors, List<DnsCustomNameserversMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, bool? Function()? enabled, double? Function()? nsSet, }) {return DnsCustomNameserversGetResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   enabled: enabled != null ? enabled() : this.enabled,
   nsSet: nsSet != null ? nsSet() : this.nsSet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsCustomNameserversGetResponse &&
           listEquals(errors, other.errors) &&
@@ -76,4 +76,4 @@ DnsCustomNameserversGetResponse copyWith({List<DnsCustomNameserversMessages2>? e
 
 @override String toString() => 'DnsCustomNameserversGetResponse(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, enabled: $enabled, nsSet: $nsSet)';
 
- }
+}

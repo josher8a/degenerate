@@ -17,14 +17,14 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class EmailDestinationAddressProperties {const EmailDestinationAddressProperties({this.created, this.email, this.id, this.modified, this.tag, this.verified, });
 
-factory EmailDestinationAddressProperties.fromJson(Map<String, dynamic> json) { return EmailDestinationAddressProperties(
+factory EmailDestinationAddressProperties.fromJson(Map<String, dynamic> json) {return EmailDestinationAddressProperties(
   created: json['created'] != null ? EmailCreated.fromJson(json['created'] as String) : null,
   email: json['email'] != null ? EmailEmail.fromJson(json['email'] as String) : null,
   id: json['id'] != null ? EmailDestinationAddressIdentifier.fromJson(json['id'] as String) : null,
   modified: json['modified'] != null ? EmailModified.fromJson(json['modified'] as String) : null,
   tag: json['tag'] != null ? EmailDestinationAddressTag.fromJson(json['tag'] as String) : null,
   verified: json['verified'] != null ? EmailVerified.fromJson(json['verified'] as String) : null,
-); }
+);}
 
 /// The date and time the destination address has been created.
 final EmailCreated? created;
@@ -40,23 +40,23 @@ final EmailDestinationAddressTag? tag;
 
 final EmailVerified? verified;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   if (email != null) 'email': email?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (modified != null) 'modified': modified?.toJson(),
   if (tag != null) 'tag': tag?.toJson(),
   if (verified != null) 'verified': verified?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'email', 'id', 'modified', 'tag', 'verified'}.contains(key)); } 
-EmailDestinationAddressProperties copyWith({EmailCreated? Function()? created, EmailEmail? Function()? email, EmailDestinationAddressIdentifier? Function()? id, EmailModified? Function()? modified, EmailDestinationAddressTag? Function()? tag, EmailVerified? Function()? verified, }) { return EmailDestinationAddressProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created', 'email', 'id', 'modified', 'tag', 'verified'}.contains(key));}
+EmailDestinationAddressProperties copyWith({EmailCreated? Function()? created, EmailEmail? Function()? email, EmailDestinationAddressIdentifier? Function()? id, EmailModified? Function()? modified, EmailDestinationAddressTag? Function()? tag, EmailVerified? Function()? verified, }) {return EmailDestinationAddressProperties(
   created: created != null ? created() : this.created,
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,
   modified: modified != null ? modified() : this.modified,
   tag: tag != null ? tag() : this.tag,
   verified: verified != null ? verified() : this.verified,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailDestinationAddressProperties &&
           created == other.created &&
@@ -70,4 +70,4 @@ EmailDestinationAddressProperties copyWith({EmailCreated? Function()? created, E
 
 @override String toString() => 'EmailDestinationAddressProperties(created: $created, email: $email, id: $id, modified: $modified, tag: $tag, verified: $verified)';
 
- }
+}

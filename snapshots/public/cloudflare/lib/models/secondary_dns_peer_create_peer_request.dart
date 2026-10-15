@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_components_schemas_name.dart';@immutable final class SecondaryDnsPeerCreatePeerRequest {const SecondaryDnsPeerCreatePeerRequest({required this.name});
 
-factory SecondaryDnsPeerCreatePeerRequest.fromJson(Map<String, dynamic> json) { return SecondaryDnsPeerCreatePeerRequest(
+factory SecondaryDnsPeerCreatePeerRequest.fromJson(Map<String, dynamic> json) {return SecondaryDnsPeerCreatePeerRequest(
   name: SecondaryDnsComponentsSchemasName.fromJson(json['name'] as String),
-); }
+);}
 
 /// The name of the peer.
 final SecondaryDnsComponentsSchemasName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-SecondaryDnsPeerCreatePeerRequest copyWith({SecondaryDnsComponentsSchemasName? name}) { return SecondaryDnsPeerCreatePeerRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name');}
+SecondaryDnsPeerCreatePeerRequest copyWith({SecondaryDnsComponentsSchemasName? name}) {return SecondaryDnsPeerCreatePeerRequest(
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsPeerCreatePeerRequest &&
           name == other.name;
@@ -25,4 +25,4 @@ SecondaryDnsPeerCreatePeerRequest copyWith({SecondaryDnsComponentsSchemasName? n
 
 @override String toString() => 'SecondaryDnsPeerCreatePeerRequest(name: $name)';
 
- }
+}

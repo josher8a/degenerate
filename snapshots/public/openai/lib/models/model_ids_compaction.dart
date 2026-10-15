@@ -8,11 +8,11 @@ const ModelIdsCompaction({this.modelIdsResponses = const Omittable.absent(), thi
 const ModelIdsCompaction._({required this.rawValue, required this.modelIdsResponses, required this.string, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ModelIdsCompaction.fromJson(Object? json) { return ModelIdsCompaction._(
+factory ModelIdsCompaction.fromJson(Object? json) {return ModelIdsCompaction._(
   rawValue: Omittable(json),
   modelIdsResponses: parseAnyOfVariant<ModelIdsResponses>(json, ModelIdsResponses.fromJson, isValid: (value) => value.isValid),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ModelIdsCompaction(${toJson()})';
 
- }
+}

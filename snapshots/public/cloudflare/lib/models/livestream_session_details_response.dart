@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/livestream_session_details_response/livestream_session_details_response_data.dart';@immutable final class LivestreamSessionDetailsResponse {const LivestreamSessionDetailsResponse({this.data, this.success, });
 
-factory LivestreamSessionDetailsResponse.fromJson(Map<String, dynamic> json) { return LivestreamSessionDetailsResponse(
+factory LivestreamSessionDetailsResponse.fromJson(Map<String, dynamic> json) {return LivestreamSessionDetailsResponse(
   data: json['data'] != null ? LivestreamSessionDetailsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final LivestreamSessionDetailsResponseData? data;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-LivestreamSessionDetailsResponse copyWith({LivestreamSessionDetailsResponseData? Function()? data, bool? Function()? success, }) { return LivestreamSessionDetailsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'success'}.contains(key));}
+LivestreamSessionDetailsResponse copyWith({LivestreamSessionDetailsResponseData? Function()? data, bool? Function()? success, }) {return LivestreamSessionDetailsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LivestreamSessionDetailsResponse &&
           data == other.data &&
@@ -30,4 +30,4 @@ LivestreamSessionDetailsResponse copyWith({LivestreamSessionDetailsResponseData?
 
 @override String toString() => 'LivestreamSessionDetailsResponse(data: $data, success: $success)';
 
- }
+}

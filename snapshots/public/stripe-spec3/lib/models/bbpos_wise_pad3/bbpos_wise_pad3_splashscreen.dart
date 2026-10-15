@@ -7,11 +7,11 @@ const BbposWisePad3Splashscreen({this.string = const Omittable.absent(), this.ge
 const BbposWisePad3Splashscreen._({required this.rawValue, required this.string, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BbposWisePad3Splashscreen.fromJson(Object? json) { return BbposWisePad3Splashscreen._(
+factory BbposWisePad3Splashscreen.fromJson(Object? json) {return BbposWisePad3Splashscreen._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BbposWisePad3Splashscreen(${toJson()})';
 
- }
+}

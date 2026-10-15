@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';/// A ruleset object.
 @immutable final class RulesetsRuleset {const RulesetsRuleset({required this.id, required this.lastUpdated, required this.version, this.description, this.name, });
 
-factory RulesetsRuleset.fromJson(Map<String, dynamic> json) { return RulesetsRuleset(
+factory RulesetsRuleset.fromJson(Map<String, dynamic> json) {return RulesetsRuleset(
   description: json['description'] as String?,
   id: RulesetsRulesetId.fromJson(json['id'] as String),
   lastUpdated: DateTime.parse(json['last_updated'] as String),
   name: json['name'] as String?,
   version: RulesetsRulesetVersion.fromJson(json['version'] as String),
-); }
+);}
 
 /// An informative description of the ruleset.
 /// 
@@ -34,30 +34,30 @@ final RulesetsRulesetVersion version;
 /// The value of `description`, or its schema default when absent.
 String get descriptionOrDefault => description ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'id': id.toJson(),
   'last_updated': lastUpdated.toIso8601String(),
   'name': ?name,
   'version': version.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
-      json.containsKey('version'); } 
+      json.containsKey('version');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.isEmpty) { errors.add('name: length must be >= 1'); }
 }
-return errors; } 
-RulesetsRuleset copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, }) { return RulesetsRuleset(
+return errors;}
+RulesetsRuleset copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, }) {return RulesetsRuleset(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   name: name != null ? name() : this.name,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRuleset &&
           description == other.description &&
@@ -70,4 +70,4 @@ RulesetsRuleset copyWith({String? Function()? description, RulesetsRulesetId? id
 
 @override String toString() => 'RulesetsRuleset(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version)';
 
- }
+}

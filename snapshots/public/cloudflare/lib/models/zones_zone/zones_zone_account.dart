@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';/// The account the zone belongs to.
 @immutable final class ZonesZoneAccount {const ZonesZoneAccount({this.id, this.name, });
 
-factory ZonesZoneAccount.fromJson(Map<String, dynamic> json) { return ZonesZoneAccount(
+factory ZonesZoneAccount.fromJson(Map<String, dynamic> json) {return ZonesZoneAccount(
   id: json['id'] != null ? ZonesIdentifier.fromJson(json['id'] as String) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// Identifier
 final ZonesIdentifier? id;
@@ -17,15 +17,15 @@ final ZonesIdentifier? id;
 /// Example: `'Example Account Name'`
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name'}.contains(key)); } 
-ZonesZoneAccount copyWith({ZonesIdentifier? Function()? id, String? Function()? name, }) { return ZonesZoneAccount(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name'}.contains(key));}
+ZonesZoneAccount copyWith({ZonesIdentifier? Function()? id, String? Function()? name, }) {return ZonesZoneAccount(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZoneAccount &&
           id == other.id &&
@@ -35,4 +35,4 @@ ZonesZoneAccount copyWith({ZonesIdentifier? Function()? id, String? Function()? 
 
 @override String toString() => 'ZonesZoneAccount(id: $id, name: $name)';
 
- }
+}

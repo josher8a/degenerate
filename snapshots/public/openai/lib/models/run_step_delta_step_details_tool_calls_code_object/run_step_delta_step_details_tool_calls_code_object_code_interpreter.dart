@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_code_object/run_step_delta_step_details_tool_calls_code_object_code_interpreter_outputs.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_code_output_image_object.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_code_output_logs_object.dart';/// The Code Interpreter tool call definition.
 @immutable final class RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter {const RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter({this.input, this.outputs, });
 
-factory RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(
+factory RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(Map<String, dynamic> json) {return RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(
   input: json['input'] as String?,
   outputs: (json['outputs'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsCodeOutputImageObject.fromJson(v as Map<String, dynamic>),)).toList(),
-); }
+);}
 
 /// The input to the Code Interpreter tool call.
 final String? input;
@@ -15,15 +15,15 @@ final String? input;
 /// The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.
 final List<RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputs>? outputs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input': ?input,
   if (outputs != null) 'outputs': outputs?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input', 'outputs'}.contains(key)); } 
-RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String? Function()? input, List<RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputs>? Function()? outputs, }) { return RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'input', 'outputs'}.contains(key));}
+RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String? Function()? input, List<RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutputs>? Function()? outputs, }) {return RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(
   input: input != null ? input() : this.input,
   outputs: outputs != null ? outputs() : this.outputs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter &&
           input == other.input &&
@@ -33,4 +33,4 @@ RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String? Func
 
 @override String toString() => 'RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(input: $input, outputs: $outputs)';
 
- }
+}

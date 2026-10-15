@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies fleet status details source
 sealed class DigitalExperienceMonitoringSource {const DigitalExperienceMonitoringSource();
 
-factory DigitalExperienceMonitoringSource.fromJson(String json) { return switch (json) {
+factory DigitalExperienceMonitoringSource.fromJson(String json) {return switch (json) {
   'last_seen' => lastSeen,
   'hourly' => hourly,
   'raw' => raw,
   _ => DigitalExperienceMonitoringSource$Unknown(json),
-}; }
+};}
 
 static const DigitalExperienceMonitoringSource lastSeen = DigitalExperienceMonitoringSource$lastSeen._();
 
@@ -20,33 +20,33 @@ static const DigitalExperienceMonitoringSource raw = DigitalExperienceMonitoring
 static const List<DigitalExperienceMonitoringSource> values = [lastSeen, hourly, raw];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'last_seen' => 'lastSeen',
   'hourly' => 'hourly',
   'raw' => 'raw',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DigitalExperienceMonitoringSource$Unknown; } 
+bool get isUnknown {return this is DigitalExperienceMonitoringSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() lastSeen, required W Function() hourly, required W Function() raw, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() lastSeen, required W Function() hourly, required W Function() raw, required W Function(String value) $unknown, }) {return switch (this) {
       DigitalExperienceMonitoringSource$lastSeen() => lastSeen(),
       DigitalExperienceMonitoringSource$hourly() => hourly(),
       DigitalExperienceMonitoringSource$raw() => raw(),
       DigitalExperienceMonitoringSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastSeen, W Function()? hourly, W Function()? raw, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastSeen, W Function()? hourly, W Function()? raw, W Function(String value)? $unknown, }) {return switch (this) {
       DigitalExperienceMonitoringSource$lastSeen() => lastSeen != null ? lastSeen() : orElse(value),
       DigitalExperienceMonitoringSource$hourly() => hourly != null ? hourly() : orElse(value),
       DigitalExperienceMonitoringSource$raw() => raw != null ? raw() : orElse(value),
       DigitalExperienceMonitoringSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DigitalExperienceMonitoringSource($value)';
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSource$lastSeen extends DigitalExperienceMonitoringSource {const DigitalExperienceMonitoringSource$lastSeen._();
 
 @override String get value => 'last_seen';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastSeen
 
 @override int get hashCode => 'last_seen'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSource$hourly extends DigitalExperienceMonitoringSource {const DigitalExperienceMonitoringSource$hourly._();
 
 @override String get value => 'hourly';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastSeen
 
 @override int get hashCode => 'hourly'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSource$raw extends DigitalExperienceMonitoringSource {const DigitalExperienceMonitoringSource$raw._();
 
 @override String get value => 'raw';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastSeen
 
 @override int get hashCode => 'raw'.hashCode;
 
- }
+}
 @immutable final class DigitalExperienceMonitoringSource$Unknown extends DigitalExperienceMonitoringSource {const DigitalExperienceMonitoringSource$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastSeen
 
 @override int get hashCode => value.hashCode;
 
- }
+}

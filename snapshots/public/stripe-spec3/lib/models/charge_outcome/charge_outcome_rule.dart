@@ -8,11 +8,11 @@ const ChargeOutcomeRule({this.string = const Omittable.absent(), this.rule = con
 const ChargeOutcomeRule._({required this.rawValue, required this.string, required this.rule, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ChargeOutcomeRule.fromJson(Object? json) { return ChargeOutcomeRule._(
+factory ChargeOutcomeRule.fromJson(Object? json) {return ChargeOutcomeRule._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   rule: json is Map<String, dynamic> && Rule.canParse(json) ? parseAnyOfVariant<Rule>(json, (value) => Rule.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ChargeOutcomeRule(${toJson()})';
 
- }
+}

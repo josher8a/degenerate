@@ -5,19 +5,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Requires a SAML identity provider.
 @immutable final class AccessSamlGroupRule {const AccessSamlGroupRule({required this.saml});
 
-factory AccessSamlGroupRule.fromJson(Map<String, dynamic> json) { return AccessSamlGroupRule(
+factory AccessSamlGroupRule.fromJson(Map<String, dynamic> json) {return AccessSamlGroupRule(
   saml: Saml.fromJson(json['saml'] as Map<String, dynamic>),
-); }
+);}
 
 final Saml saml;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'saml': saml.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('saml'); } 
-AccessSamlGroupRule copyWith({Saml? saml}) { return AccessSamlGroupRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('saml');}
+AccessSamlGroupRule copyWith({Saml? saml}) {return AccessSamlGroupRule(
   saml: saml ?? this.saml,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSamlGroupRule &&
           saml == other.saml;
@@ -26,4 +26,4 @@ AccessSamlGroupRule copyWith({Saml? saml}) { return AccessSamlGroupRule(
 
 @override String toString() => 'AccessSamlGroupRule(saml: $saml)';
 
- }
+}

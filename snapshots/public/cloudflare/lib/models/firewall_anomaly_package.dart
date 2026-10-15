@@ -24,7 +24,7 @@ String toJson() => value;
 }
 @immutable final class FirewallAnomalyPackage {const FirewallAnomalyPackage({required this.description, required this.detectionMode, required this.id, required this.name, required this.zoneId, required this.actionMode, required this.sensitivity, this.status, });
 
-factory FirewallAnomalyPackage.fromJson(Map<String, dynamic> json) { return FirewallAnomalyPackage(
+factory FirewallAnomalyPackage.fromJson(Map<String, dynamic> json) {return FirewallAnomalyPackage(
   description: FirewallAnomalyDescription.fromJson(json['description'] as String),
   detectionMode: FirewallAnomalyDetectionMode.fromJson(json['detection_mode'] as String),
   id: FirewallIdentifier.fromJson(json['id'] as String),
@@ -33,7 +33,7 @@ factory FirewallAnomalyPackage.fromJson(Map<String, dynamic> json) { return Fire
   zoneId: FirewallIdentifier.fromJson(json['zone_id'] as String),
   actionMode: FirewallActionMode.fromJson(json['action_mode'] as String),
   sensitivity: FirewallSensitivity.fromJson(json['sensitivity'] as String),
-); }
+);}
 
 /// A summary of the purpose/function of the WAF package.
 final FirewallAnomalyDescription description;
@@ -55,7 +55,7 @@ final FirewallActionMode actionMode;
 
 final FirewallSensitivity sensitivity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description.toJson(),
   'detection_mode': detectionMode.toJson(),
   'id': id.toJson(),
@@ -64,15 +64,15 @@ Map<String, dynamic> toJson() { return {
   'zone_id': zoneId.toJson(),
   'action_mode': actionMode.toJson(),
   'sensitivity': sensitivity.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') &&
       json.containsKey('detection_mode') &&
       json.containsKey('id') &&
       json.containsKey('name') &&
       json.containsKey('zone_id') &&
       json.containsKey('action_mode') &&
-      json.containsKey('sensitivity'); } 
-FirewallAnomalyPackage copyWith({FirewallAnomalyDescription? description, FirewallAnomalyDetectionMode? detectionMode, FirewallIdentifier? id, FirewallAnomalyName? name, FirewallStatus? Function()? status, FirewallIdentifier? zoneId, FirewallActionMode? actionMode, FirewallSensitivity? sensitivity, }) { return FirewallAnomalyPackage(
+      json.containsKey('sensitivity');}
+FirewallAnomalyPackage copyWith({FirewallAnomalyDescription? description, FirewallAnomalyDetectionMode? detectionMode, FirewallIdentifier? id, FirewallAnomalyName? name, FirewallStatus? Function()? status, FirewallIdentifier? zoneId, FirewallActionMode? actionMode, FirewallSensitivity? sensitivity, }) {return FirewallAnomalyPackage(
   description: description ?? this.description,
   detectionMode: detectionMode ?? this.detectionMode,
   id: id ?? this.id,
@@ -81,7 +81,7 @@ FirewallAnomalyPackage copyWith({FirewallAnomalyDescription? description, Firewa
   zoneId: zoneId ?? this.zoneId,
   actionMode: actionMode ?? this.actionMode,
   sensitivity: sensitivity ?? this.sensitivity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallAnomalyPackage &&
           description == other.description &&
@@ -97,4 +97,4 @@ FirewallAnomalyPackage copyWith({FirewallAnomalyDescription? description, Firewa
 
 @override String toString() => 'FirewallAnomalyPackage(description: $description, detectionMode: $detectionMode, id: $id, name: $name, status: $status, zoneId: $zoneId, actionMode: $actionMode, sensitivity: $sensitivity)';
 
- }
+}

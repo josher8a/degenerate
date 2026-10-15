@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsArtifactAndLogRetentionResponse {const ActionsArtifactAndLogRetentionResponse({required this.days, required this.maximumAllowedDays, });
 
-factory ActionsArtifactAndLogRetentionResponse.fromJson(Map<String, dynamic> json) { return ActionsArtifactAndLogRetentionResponse(
+factory ActionsArtifactAndLogRetentionResponse.fromJson(Map<String, dynamic> json) {return ActionsArtifactAndLogRetentionResponse(
   days: (json['days'] as num).toInt(),
   maximumAllowedDays: (json['maximum_allowed_days'] as num).toInt(),
-); }
+);}
 
 /// The number of days artifacts and logs are retained
 final int days;
@@ -14,16 +14,16 @@ final int days;
 /// The maximum number of days that can be configured
 final int maximumAllowedDays;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'days': days,
   'maximum_allowed_days': maximumAllowedDays,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('days') && json['days'] is num &&
-      json.containsKey('maximum_allowed_days') && json['maximum_allowed_days'] is num; } 
-ActionsArtifactAndLogRetentionResponse copyWith({int? days, int? maximumAllowedDays, }) { return ActionsArtifactAndLogRetentionResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('days') && json['days'] is num &&
+      json.containsKey('maximum_allowed_days') && json['maximum_allowed_days'] is num;}
+ActionsArtifactAndLogRetentionResponse copyWith({int? days, int? maximumAllowedDays, }) {return ActionsArtifactAndLogRetentionResponse(
   days: days ?? this.days,
   maximumAllowedDays: maximumAllowedDays ?? this.maximumAllowedDays,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsArtifactAndLogRetentionResponse &&
           days == other.days &&
@@ -33,4 +33,4 @@ ActionsArtifactAndLogRetentionResponse copyWith({int? days, int? maximumAllowedD
 
 @override String toString() => 'ActionsArtifactAndLogRetentionResponse(days: $days, maximumAllowedDays: $maximumAllowedDays)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsUpdatePublicFieldRequest {const CustomIndicatorFeedsUpdatePublicFieldRequest({this.description, this.isAttributable, this.isDownloadable, this.isPublic, this.name, });
 
-factory CustomIndicatorFeedsUpdatePublicFieldRequest.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdatePublicFieldRequest(
+factory CustomIndicatorFeedsUpdatePublicFieldRequest.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsUpdatePublicFieldRequest(
   description: json['description'] as String?,
   isAttributable: json['is_attributable'] as bool?,
   isDownloadable: json['is_downloadable'] as bool?,
   isPublic: json['is_public'] as bool?,
   name: json['name'] as String?,
-); }
+);}
 
 /// The new description of the feed
 /// 
@@ -36,21 +36,21 @@ final bool? isPublic;
 /// Example: `'indicator_list'`
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'is_attributable': ?isAttributable,
   'is_downloadable': ?isDownloadable,
   'is_public': ?isPublic,
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'is_attributable', 'is_downloadable', 'is_public', 'name'}.contains(key)); } 
-CustomIndicatorFeedsUpdatePublicFieldRequest copyWith({String? Function()? description, bool? Function()? isAttributable, bool? Function()? isDownloadable, bool? Function()? isPublic, String? Function()? name, }) { return CustomIndicatorFeedsUpdatePublicFieldRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'is_attributable', 'is_downloadable', 'is_public', 'name'}.contains(key));}
+CustomIndicatorFeedsUpdatePublicFieldRequest copyWith({String? Function()? description, bool? Function()? isAttributable, bool? Function()? isDownloadable, bool? Function()? isPublic, String? Function()? name, }) {return CustomIndicatorFeedsUpdatePublicFieldRequest(
   description: description != null ? description() : this.description,
   isAttributable: isAttributable != null ? isAttributable() : this.isAttributable,
   isDownloadable: isDownloadable != null ? isDownloadable() : this.isDownloadable,
   isPublic: isPublic != null ? isPublic() : this.isPublic,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsUpdatePublicFieldRequest &&
           description == other.description &&
@@ -63,4 +63,4 @@ CustomIndicatorFeedsUpdatePublicFieldRequest copyWith({String? Function()? descr
 
 @override String toString() => 'CustomIndicatorFeedsUpdatePublicFieldRequest(description: $description, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, name: $name)';
 
- }
+}

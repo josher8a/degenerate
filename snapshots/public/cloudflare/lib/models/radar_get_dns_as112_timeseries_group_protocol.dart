@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsAs112TimeseriesGroupProtocol {const RadarGetDnsAs112TimeseriesGroupProtocol();
 
-factory RadarGetDnsAs112TimeseriesGroupProtocol.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TimeseriesGroupProtocol.fromJson(String json) {return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
   _ => RadarGetDnsAs112TimeseriesGroupProtocol$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TimeseriesGroupProtocol udp = RadarGetDnsAs112TimeseriesGroupProtocol$udp._();
 
@@ -22,36 +22,36 @@ static const RadarGetDnsAs112TimeseriesGroupProtocol tls = RadarGetDnsAs112Times
 static const List<RadarGetDnsAs112TimeseriesGroupProtocol> values = [udp, tcp, https, tls];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'UDP' => 'udp',
   'TCP' => 'tcp',
   'HTTPS' => 'https',
   'TLS' => 'tls',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsAs112TimeseriesGroupProtocol$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsAs112TimeseriesGroupProtocol$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() udp, required W Function() tcp, required W Function() https, required W Function() tls, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() udp, required W Function() tcp, required W Function() https, required W Function() tls, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsAs112TimeseriesGroupProtocol$udp() => udp(),
       RadarGetDnsAs112TimeseriesGroupProtocol$tcp() => tcp(),
       RadarGetDnsAs112TimeseriesGroupProtocol$https() => https(),
       RadarGetDnsAs112TimeseriesGroupProtocol$tls() => tls(),
       RadarGetDnsAs112TimeseriesGroupProtocol$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? https, W Function()? tls, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? https, W Function()? tls, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsAs112TimeseriesGroupProtocol$udp() => udp != null ? udp() : orElse(value),
       RadarGetDnsAs112TimeseriesGroupProtocol$tcp() => tcp != null ? tcp() : orElse(value),
       RadarGetDnsAs112TimeseriesGroupProtocol$https() => https != null ? https() : orElse(value),
       RadarGetDnsAs112TimeseriesGroupProtocol$tls() => tls != null ? tls() : orElse(value),
       RadarGetDnsAs112TimeseriesGroupProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsAs112TimeseriesGroupProtocol($value)';
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesGroupProtocol$udp extends RadarGetDnsAs112TimeseriesGroupProtocol {const RadarGetDnsAs112TimeseriesGroupProtocol$udp._();
 
 @override String get value => 'UDP';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'UDP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesGroupProtocol$tcp extends RadarGetDnsAs112TimeseriesGroupProtocol {const RadarGetDnsAs112TimeseriesGroupProtocol$tcp._();
 
 @override String get value => 'TCP';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'TCP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesGroupProtocol$https extends RadarGetDnsAs112TimeseriesGroupProtocol {const RadarGetDnsAs112TimeseriesGroupProtocol$https._();
 
 @override String get value => 'HTTPS';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'HTTPS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesGroupProtocol$tls extends RadarGetDnsAs112TimeseriesGroupProtocol {const RadarGetDnsAs112TimeseriesGroupProtocol$tls._();
 
 @override String get value => 'TLS';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => 'TLS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesGroupProtocol$Unknown extends RadarGetDnsAs112TimeseriesGroupProtocol {const RadarGetDnsAs112TimeseriesGroupProtocol$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

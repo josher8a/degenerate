@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_create_event_relationship_response/post_create_event_relationship_response_errors.dart';import 'package:pub_cloudflare/models/post_create_event_relationship_response/relationships.dart';@immutable final class PostCreateEventRelationshipResponse {const PostCreateEventRelationshipResponse({required this.message, required this.relationships, required this.success, this.childIds, this.errors, this.relationshipsCreated, });
 
-factory PostCreateEventRelationshipResponse.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponse(
+factory PostCreateEventRelationshipResponse.fromJson(Map<String, dynamic> json) {return PostCreateEventRelationshipResponse(
   childIds: (json['childIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PostCreateEventRelationshipResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String,
   relationships: (json['relationships'] as List<dynamic>).map((e) => Relationships.fromJson(e as Map<String, dynamic>)).toList(),
   relationshipsCreated: json['relationshipsCreated'] != null ? (json['relationshipsCreated'] as num).toDouble() : null,
   success: json['success'] as bool,
-); }
+);}
 
 /// Array of child event UUIDs that were processed
 final List<String>? childIds;
@@ -30,25 +30,25 @@ final double? relationshipsCreated;
 /// Whether the relationship creation operation completed successfully
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'childIds': ?childIds,
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
   'message': message,
   'relationships': relationships.map((e) => e.toJson()).toList(),
   'relationshipsCreated': ?relationshipsCreated,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String &&
       json.containsKey('relationships') &&
-      json.containsKey('success') && json['success'] is bool; } 
-PostCreateEventRelationshipResponse copyWith({List<String>? Function()? childIds, List<PostCreateEventRelationshipResponseErrors>? Function()? errors, String? message, List<Relationships>? relationships, double? Function()? relationshipsCreated, bool? success, }) { return PostCreateEventRelationshipResponse(
+      json.containsKey('success') && json['success'] is bool;}
+PostCreateEventRelationshipResponse copyWith({List<String>? Function()? childIds, List<PostCreateEventRelationshipResponseErrors>? Function()? errors, String? message, List<Relationships>? relationships, double? Function()? relationshipsCreated, bool? success, }) {return PostCreateEventRelationshipResponse(
   childIds: childIds != null ? childIds() : this.childIds,
   errors: errors != null ? errors() : this.errors,
   message: message ?? this.message,
   relationships: relationships ?? this.relationships,
   relationshipsCreated: relationshipsCreated != null ? relationshipsCreated() : this.relationshipsCreated,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCreateEventRelationshipResponse &&
           listEquals(childIds, other.childIds) &&
@@ -62,4 +62,4 @@ PostCreateEventRelationshipResponse copyWith({List<String>? Function()? childIds
 
 @override String toString() => 'PostCreateEventRelationshipResponse(childIds: $childIds, errors: $errors, message: $message, relationships: $relationships, relationshipsCreated: $relationshipsCreated, success: $success)';
 
- }
+}

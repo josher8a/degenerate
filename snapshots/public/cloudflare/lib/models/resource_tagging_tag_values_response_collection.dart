@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_cursor_result_info.dart';import 'package:pub_cloudflare/models/resource_tagging_messages2.dart';@immutable final class ResourceTaggingTagValuesResponseCollection {const ResourceTaggingTagValuesResponseCollection({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
 
-factory ResourceTaggingTagValuesResponseCollection.fromJson(Map<String, dynamic> json) { return ResourceTaggingTagValuesResponseCollection(
+factory ResourceTaggingTagValuesResponseCollection.fromJson(Map<String, dynamic> json) {return ResourceTaggingTagValuesResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceTaggingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResourceTaggingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as List<dynamic>?)?.map((e) => e as String).toList(),
   resultInfo: json['result_info'] != null ? ResourceTaggingCursorResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<ResourceTaggingMessages2> errors;
 
@@ -25,23 +25,23 @@ final List<String>? result;
 
 final ResourceTaggingCursorResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': ?result,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResourceTaggingTagValuesResponseCollection copyWith({List<ResourceTaggingMessages2>? errors, List<ResourceTaggingMessages2>? messages, bool? success, List<String>? Function()? result, ResourceTaggingCursorResultInfo? Function()? resultInfo, }) { return ResourceTaggingTagValuesResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+ResourceTaggingTagValuesResponseCollection copyWith({List<ResourceTaggingMessages2>? errors, List<ResourceTaggingMessages2>? messages, bool? success, List<String>? Function()? result, ResourceTaggingCursorResultInfo? Function()? resultInfo, }) {return ResourceTaggingTagValuesResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingTagValuesResponseCollection &&
           listEquals(errors, other.errors) &&
@@ -54,4 +54,4 @@ ResourceTaggingTagValuesResponseCollection copyWith({List<ResourceTaggingMessage
 
 @override String toString() => 'ResourceTaggingTagValuesResponseCollection(errors: $errors, messages: $messages, success: $success, result: $result, resultInfo: $resultInfo)';
 
- }
+}

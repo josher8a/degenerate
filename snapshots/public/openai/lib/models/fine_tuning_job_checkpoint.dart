@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint/metrics.dart';/// The object type, which is always "fine_tuning.job.checkpoint".
 sealed class FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject();
 
-factory FineTuningJobCheckpointObject.fromJson(String json) { return switch (json) {
+factory FineTuningJobCheckpointObject.fromJson(String json) {return switch (json) {
   'fine_tuning.job.checkpoint' => fineTuningJobCheckpoint,
   _ => FineTuningJobCheckpointObject$Unknown(json),
-}; }
+};}
 
 static const FineTuningJobCheckpointObject fineTuningJobCheckpoint = FineTuningJobCheckpointObject$fineTuningJobCheckpoint._();
 
 static const List<FineTuningJobCheckpointObject> values = [fineTuningJobCheckpoint];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fine_tuning.job.checkpoint' => 'fineTuningJobCheckpoint',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FineTuningJobCheckpointObject$Unknown; } 
+bool get isUnknown {return this is FineTuningJobCheckpointObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fineTuningJobCheckpoint, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fineTuningJobCheckpoint, required W Function(String value) $unknown, }) {return switch (this) {
       FineTuningJobCheckpointObject$fineTuningJobCheckpoint() => fineTuningJobCheckpoint(),
       FineTuningJobCheckpointObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuningJobCheckpoint, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuningJobCheckpoint, W Function(String value)? $unknown, }) {return switch (this) {
       FineTuningJobCheckpointObject$fineTuningJobCheckpoint() => fineTuningJobCheckpoint != null ? fineTuningJobCheckpoint() : orElse(value),
       FineTuningJobCheckpointObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FineTuningJobCheckpointObject($value)';
 
- }
+}
 @immutable final class FineTuningJobCheckpointObject$fineTuningJobCheckpoint extends FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject$fineTuningJobCheckpoint._();
 
 @override String get value => 'fine_tuning.job.checkpoint';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuni
 
 @override int get hashCode => 'fine_tuning.job.checkpoint'.hashCode;
 
- }
+}
 @immutable final class FineTuningJobCheckpointObject$Unknown extends FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject$Unknown(this.value);
 
 @override final String value;
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuni
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine-tuning job that is ready to use.
 /// 
 @immutable final class FineTuningJobCheckpoint {const FineTuningJobCheckpoint({required this.id, required this.createdAt, required this.fineTunedModelCheckpoint, required this.stepNumber, required this.metrics, required this.fineTuningJobId, required this.object, });
 
-factory FineTuningJobCheckpoint.fromJson(Map<String, dynamic> json) { return FineTuningJobCheckpoint(
+factory FineTuningJobCheckpoint.fromJson(Map<String, dynamic> json) {return FineTuningJobCheckpoint(
   id: json['id'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   fineTunedModelCheckpoint: json['fine_tuned_model_checkpoint'] as String,
@@ -66,7 +66,7 @@ factory FineTuningJobCheckpoint.fromJson(Map<String, dynamic> json) { return Fin
   metrics: Metrics.fromJson(json['metrics'] as Map<String, dynamic>),
   fineTuningJobId: json['fine_tuning_job_id'] as String,
   object: FineTuningJobCheckpointObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// The checkpoint identifier, which can be referenced in the API endpoints.
 final String id;
@@ -89,7 +89,7 @@ final String fineTuningJobId;
 /// The object type, which is always "fine_tuning.job.checkpoint".
 final FineTuningJobCheckpointObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'created_at': createdAt,
   'fine_tuned_model_checkpoint': fineTunedModelCheckpoint,
@@ -97,15 +97,15 @@ Map<String, dynamic> toJson() { return {
   'metrics': metrics.toJson(),
   'fine_tuning_job_id': fineTuningJobId,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('fine_tuned_model_checkpoint') && json['fine_tuned_model_checkpoint'] is String &&
       json.containsKey('step_number') && json['step_number'] is num &&
       json.containsKey('metrics') &&
       json.containsKey('fine_tuning_job_id') && json['fine_tuning_job_id'] is String &&
-      json.containsKey('object'); } 
-FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedModelCheckpoint, int? stepNumber, Metrics? metrics, String? fineTuningJobId, FineTuningJobCheckpointObject? object, }) { return FineTuningJobCheckpoint(
+      json.containsKey('object');}
+FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedModelCheckpoint, int? stepNumber, Metrics? metrics, String? fineTuningJobId, FineTuningJobCheckpointObject? object, }) {return FineTuningJobCheckpoint(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   fineTunedModelCheckpoint: fineTunedModelCheckpoint ?? this.fineTunedModelCheckpoint,
@@ -113,7 +113,7 @@ FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedM
   metrics: metrics ?? this.metrics,
   fineTuningJobId: fineTuningJobId ?? this.fineTuningJobId,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuningJobCheckpoint &&
           id == other.id &&
@@ -128,4 +128,4 @@ FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedM
 
 @override String toString() => 'FineTuningJobCheckpoint(id: $id, createdAt: $createdAt, fineTunedModelCheckpoint: $fineTunedModelCheckpoint, stepNumber: $stepNumber, metrics: $metrics, fineTuningJobId: $fineTuningJobId, object: $object)';
 
- }
+}

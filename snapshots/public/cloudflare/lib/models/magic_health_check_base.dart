@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_rate.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_target.dart';import 'package:pub_cloudflare/models/magic_health_check_base_request/magic_health_check_base_request_type.dart';import 'package:pub_cloudflare/models/magic_health_check_target.dart';@immutable final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled, this.rate, this.target, this.type, });
 
-factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) { return MagicHealthCheckBase(
+factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) {return MagicHealthCheckBase(
   enabled: json['enabled'] as bool?,
   rate: json['rate'] != null ? MagicHealthCheckBaseRate.fromJson(json['rate'] as String) : null,
   target: json['target'] != null ? OneOf2.parse(json['target'], fromA: (v) => MagicHealthCheckTarget.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   type: json['type'] != null ? MagicHealthCheckBaseRequestType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Determines whether to run healthchecks for a tunnel.
 /// 
@@ -37,19 +37,19 @@ MagicHealthCheckBaseRate get rateOrDefault => rate ?? MagicHealthCheckBaseRate.f
 /// The value of `type`, or its schema default when absent.
 MagicHealthCheckBaseRequestType get typeOrDefault => type ?? MagicHealthCheckBaseRequestType.fromJson('reply');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (rate != null) 'rate': rate?.toJson(),
   if (target != null) 'target': target?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type'}.contains(key)); } 
-MagicHealthCheckBase copyWith({bool? Function()? enabled, MagicHealthCheckBaseRate? Function()? rate, MagicHealthCheckBaseTarget? Function()? target, MagicHealthCheckBaseRequestType? Function()? type, }) { return MagicHealthCheckBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type'}.contains(key));}
+MagicHealthCheckBase copyWith({bool? Function()? enabled, MagicHealthCheckBaseRate? Function()? rate, MagicHealthCheckBaseTarget? Function()? target, MagicHealthCheckBaseRequestType? Function()? type, }) {return MagicHealthCheckBase(
   enabled: enabled != null ? enabled() : this.enabled,
   rate: rate != null ? rate() : this.rate,
   target: target != null ? target() : this.target,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicHealthCheckBase &&
           enabled == other.enabled &&
@@ -61,4 +61,4 @@ MagicHealthCheckBase copyWith({bool? Function()? enabled, MagicHealthCheckBaseRa
 
 @override String toString() => 'MagicHealthCheckBase(enabled: $enabled, rate: $rate, target: $target, type: $type)';
 
- }
+}

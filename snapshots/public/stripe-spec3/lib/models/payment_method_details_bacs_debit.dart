@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsBacsDebit {const PaymentMethodDetailsBacsDebit({this.expectedDebitDate, this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate = const Omittable.absent(), this.sortCode = const Omittable.absent(), });
 
-factory PaymentMethodDetailsBacsDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsBacsDebit(
+factory PaymentMethodDetailsBacsDebit.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsBacsDebit(
   expectedDebitDate: json['expected_debit_date'] as String?,
   fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
   last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   mandate: json.containsKey('mandate') ? Omittable(json['mandate'] as String?) : const Omittable.absent(),
   sortCode: json.containsKey('sort_code') ? Omittable(json['sort_code'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Estimated date to debit the customer's bank account. A date string in YYYY-MM-DD format.
 final String? expectedDebitDate;
@@ -27,16 +27,16 @@ final Omittable<String?> mandate;
 /// Sort code of the bank account. (e.g., `10-20-30`)
 final Omittable<String?> sortCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expected_debit_date': ?expectedDebitDate,
   if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
   if (last4.isPresent) 'last4': last4.value,
   if (mandate.isPresent) 'mandate': mandate.value,
   if (sortCode.isPresent) 'sort_code': sortCode.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expected_debit_date', 'fingerprint', 'last4', 'mandate', 'sort_code'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expected_debit_date', 'fingerprint', 'last4', 'mandate', 'sort_code'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final expectedDebitDate$ = expectedDebitDate;
 if (expectedDebitDate$ != null) {
   if (expectedDebitDate$.runes.length > 5000) { errors.add('expectedDebitDate: length must be <= 5000'); }
@@ -57,14 +57,14 @@ final sortCode$ = sortCode.value;
 if (sortCode$ != null) {
   if (sortCode$.runes.length > 5000) { errors.add('sortCode: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsBacsDebit copyWith({String? Function()? expectedDebitDate, Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<String?>? mandate, Omittable<String?>? sortCode, }) { return PaymentMethodDetailsBacsDebit(
+return errors;}
+PaymentMethodDetailsBacsDebit copyWith({String? Function()? expectedDebitDate, Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<String?>? mandate, Omittable<String?>? sortCode, }) {return PaymentMethodDetailsBacsDebit(
   expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
   fingerprint: fingerprint ?? this.fingerprint,
   last4: last4 ?? this.last4,
   mandate: mandate ?? this.mandate,
   sortCode: sortCode ?? this.sortCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsBacsDebit &&
           expectedDebitDate == other.expectedDebitDate &&
@@ -77,4 +77,4 @@ PaymentMethodDetailsBacsDebit copyWith({String? Function()? expectedDebitDate, O
 
 @override String toString() => 'PaymentMethodDetailsBacsDebit(expectedDebitDate: $expectedDebitDate, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, sortCode: $sortCode)';
 
- }
+}

@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentFlowsAmountDetailsClientResourceTip {const PaymentFlowsAmountDetailsClientResourceTip({this.amount});
 
-factory PaymentFlowsAmountDetailsClientResourceTip.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsClientResourceTip(
+factory PaymentFlowsAmountDetailsClientResourceTip.fromJson(Map<String, dynamic> json) {return PaymentFlowsAmountDetailsClientResourceTip(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-); }
+);}
 
 /// Portion of the amount that corresponds to a tip.
 final int? amount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount'}.contains(key)); } 
-PaymentFlowsAmountDetailsClientResourceTip copyWith({int? Function()? amount}) { return PaymentFlowsAmountDetailsClientResourceTip(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount'}.contains(key));}
+PaymentFlowsAmountDetailsClientResourceTip copyWith({int? Function()? amount}) {return PaymentFlowsAmountDetailsClientResourceTip(
   amount: amount != null ? amount() : this.amount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetailsClientResourceTip &&
           amount == other.amount;
@@ -26,4 +26,4 @@ PaymentFlowsAmountDetailsClientResourceTip copyWith({int? Function()? amount}) {
 
 @override String toString() => 'PaymentFlowsAmountDetailsClientResourceTip(amount: $amount)';
 
- }
+}

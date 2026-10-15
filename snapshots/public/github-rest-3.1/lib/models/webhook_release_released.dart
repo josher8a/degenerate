@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_release.dart';sealed class WebhookReleaseReleasedAction {const WebhookReleaseReleasedAction();
 
-factory WebhookReleaseReleasedAction.fromJson(String json) { return switch (json) {
+factory WebhookReleaseReleasedAction.fromJson(String json) {return switch (json) {
   'released' => released,
   _ => WebhookReleaseReleasedAction$Unknown(json),
-}; }
+};}
 
 static const WebhookReleaseReleasedAction released = WebhookReleaseReleasedAction$released._();
 
 static const List<WebhookReleaseReleasedAction> values = [released];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'released' => 'released',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookReleaseReleasedAction$Unknown; } 
+bool get isUnknown {return this is WebhookReleaseReleasedAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() released, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() released, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookReleaseReleasedAction$released() => released(),
       WebhookReleaseReleasedAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? released, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? released, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookReleaseReleasedAction$released() => released != null ? released() : orElse(value),
       WebhookReleaseReleasedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookReleaseReleasedAction($value)';
 
- }
+}
 @immutable final class WebhookReleaseReleasedAction$released extends WebhookReleaseReleasedAction {const WebhookReleaseReleasedAction$released._();
 
 @override String get value => 'released';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? released
 
 @override int get hashCode => 'released'.hashCode;
 
- }
+}
 @immutable final class WebhookReleaseReleasedAction$Unknown extends WebhookReleaseReleasedAction {const WebhookReleaseReleasedAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? released
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookReleaseReleased {const WebhookReleaseReleased({required this.action, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookReleaseReleased.fromJson(Map<String, dynamic> json) { return WebhookReleaseReleased(
+factory WebhookReleaseReleased.fromJson(Map<String, dynamic> json) {return WebhookReleaseReleased(
   action: WebhookReleaseReleasedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -63,7 +63,7 @@ factory WebhookReleaseReleased.fromJson(Map<String, dynamic> json) { return Webh
   release: WebhooksRelease.fromJson(json['release'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookReleaseReleasedAction action;
 
@@ -79,7 +79,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -87,11 +87,11 @@ Map<String, dynamic> toJson() { return {
   'release': release.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('release') &&
-      json.containsKey('repository'); } 
-WebhookReleaseReleased copyWith({WebhookReleaseReleasedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease? release, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookReleaseReleased(
+      json.containsKey('repository');}
+WebhookReleaseReleased copyWith({WebhookReleaseReleasedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksRelease? release, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookReleaseReleased(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -99,7 +99,7 @@ WebhookReleaseReleased copyWith({WebhookReleaseReleasedAction? action, Enterpris
   release: release ?? this.release,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookReleaseReleased &&
           action == other.action &&
@@ -114,4 +114,4 @@ WebhookReleaseReleased copyWith({WebhookReleaseReleasedAction? action, Enterpris
 
 @override String toString() => 'WebhookReleaseReleased(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)';
 
- }
+}

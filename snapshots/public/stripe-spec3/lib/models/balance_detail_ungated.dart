@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount.dart';/// 
 @immutable final class BalanceDetailUngated {const BalanceDetailUngated({required this.available, required this.pending, });
 
-factory BalanceDetailUngated.fromJson(Map<String, dynamic> json) { return BalanceDetailUngated(
+factory BalanceDetailUngated.fromJson(Map<String, dynamic> json) {return BalanceDetailUngated(
   available: (json['available'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
   pending: (json['pending'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Funds that are available for use.
 final List<BalanceAmount> available;
@@ -15,16 +15,16 @@ final List<BalanceAmount> available;
 /// Funds that are pending
 final List<BalanceAmount> pending;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'available': available.map((e) => e.toJson()).toList(),
   'pending': pending.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('available') &&
-      json.containsKey('pending'); } 
-BalanceDetailUngated copyWith({List<BalanceAmount>? available, List<BalanceAmount>? pending, }) { return BalanceDetailUngated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('available') &&
+      json.containsKey('pending');}
+BalanceDetailUngated copyWith({List<BalanceAmount>? available, List<BalanceAmount>? pending, }) {return BalanceDetailUngated(
   available: available ?? this.available,
   pending: pending ?? this.pending,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceDetailUngated &&
           listEquals(available, other.available) &&
@@ -34,4 +34,4 @@ BalanceDetailUngated copyWith({List<BalanceAmount>? available, List<BalanceAmoun
 
 @override String toString() => 'BalanceDetailUngated(available: $available, pending: $pending)';
 
- }
+}

@@ -16,7 +16,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class CustomIndicatorFeedsIndicatorFeedItem {const CustomIndicatorFeedsIndicatorFeedItem({this.createdOn, this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.modifiedOn, this.name, });
 
-factory CustomIndicatorFeedsIndicatorFeedItem.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedItem(
+factory CustomIndicatorFeedsIndicatorFeedItem.fromJson(Map<String, dynamic> json) {return CustomIndicatorFeedsIndicatorFeedItem(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
   description: json['description'] != null ? CustomIndicatorFeedsDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? CustomIndicatorFeedsId.fromJson(json['id'] as num) : null,
@@ -25,7 +25,7 @@ factory CustomIndicatorFeedsIndicatorFeedItem.fromJson(Map<String, dynamic> json
   isPublic: json['is_public'] != null ? CustomIndicatorFeedsIsPublic.fromJson(json['is_public'] as bool) : null,
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
   name: json['name'] != null ? CustomIndicatorFeedsName.fromJson(json['name'] as String) : null,
-); }
+);}
 
 /// The date and time when the data entry was created
 final DateTime? createdOn;
@@ -47,7 +47,7 @@ final DateTime? modifiedOn;
 
 final CustomIndicatorFeedsName? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
   if (description != null) 'description': description?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -56,9 +56,9 @@ Map<String, dynamic> toJson() { return {
   if (isPublic != null) 'is_public': isPublic?.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
   if (name != null) 'name': name?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'modified_on', 'name'}.contains(key)); } 
-CustomIndicatorFeedsIndicatorFeedItem copyWith({DateTime? Function()? createdOn, CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, DateTime? Function()? modifiedOn, CustomIndicatorFeedsName? Function()? name, }) { return CustomIndicatorFeedsIndicatorFeedItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'modified_on', 'name'}.contains(key));}
+CustomIndicatorFeedsIndicatorFeedItem copyWith({DateTime? Function()? createdOn, CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, DateTime? Function()? modifiedOn, CustomIndicatorFeedsName? Function()? name, }) {return CustomIndicatorFeedsIndicatorFeedItem(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
@@ -67,7 +67,7 @@ CustomIndicatorFeedsIndicatorFeedItem copyWith({DateTime? Function()? createdOn,
   isPublic: isPublic != null ? isPublic() : this.isPublic,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsIndicatorFeedItem &&
           createdOn == other.createdOn &&
@@ -83,4 +83,4 @@ CustomIndicatorFeedsIndicatorFeedItem copyWith({DateTime? Function()? createdOn,
 
 @override String toString() => 'CustomIndicatorFeedsIndicatorFeedItem(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, modifiedOn: $modifiedOn, name: $name)';
 
- }
+}

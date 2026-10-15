@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunnerGroupsOrg {const RunnerGroupsOrg({required this.id, required this.name, required this.visibility, required this.$default, required this.runnersUrl, required this.inherited, required this.allowsPublicRepositories, this.selectedRepositoriesUrl, this.hostedRunnersUrl, this.networkConfigurationId, this.inheritedAllowsPublicRepositories, this.workflowRestrictionsReadOnly, this.restrictedToWorkflows, this.selectedWorkflows, });
 
-factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) { return RunnerGroupsOrg(
+factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) {return RunnerGroupsOrg(
   id: (json['id'] as num).toDouble(),
   name: json['name'] as String,
   visibility: json['visibility'] as String,
@@ -18,7 +18,7 @@ factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) { return RunnerGroup
   workflowRestrictionsReadOnly: json['workflow_restrictions_read_only'] as bool?,
   restrictedToWorkflows: json['restricted_to_workflows'] as bool?,
   selectedWorkflows: (json['selected_workflows'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final double id;
 
@@ -59,7 +59,7 @@ bool get workflowRestrictionsReadOnlyOrDefault => workflowRestrictionsReadOnly ?
 /// The value of `restrictedToWorkflows`, or its schema default when absent.
 bool get restrictedToWorkflowsOrDefault => restrictedToWorkflows ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'visibility': visibility,
@@ -74,15 +74,15 @@ Map<String, dynamic> toJson() { return {
   'workflow_restrictions_read_only': ?workflowRestrictionsReadOnly,
   'restricted_to_workflows': ?restrictedToWorkflows,
   'selected_workflows': ?selectedWorkflows,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('visibility') && json['visibility'] is String &&
       json.containsKey('default') && json['default'] is bool &&
       json.containsKey('runners_url') && json['runners_url'] is String &&
       json.containsKey('inherited') && json['inherited'] is bool &&
-      json.containsKey('allows_public_repositories') && json['allows_public_repositories'] is bool; } 
-RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $default, String? Function()? selectedRepositoriesUrl, String? runnersUrl, String? Function()? hostedRunnersUrl, String? Function()? networkConfigurationId, bool? inherited, bool? Function()? inheritedAllowsPublicRepositories, bool? allowsPublicRepositories, bool? Function()? workflowRestrictionsReadOnly, bool? Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, }) { return RunnerGroupsOrg(
+      json.containsKey('allows_public_repositories') && json['allows_public_repositories'] is bool;}
+RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $default, String? Function()? selectedRepositoriesUrl, String? runnersUrl, String? Function()? hostedRunnersUrl, String? Function()? networkConfigurationId, bool? inherited, bool? Function()? inheritedAllowsPublicRepositories, bool? allowsPublicRepositories, bool? Function()? workflowRestrictionsReadOnly, bool? Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, }) {return RunnerGroupsOrg(
   id: id ?? this.id,
   name: name ?? this.name,
   visibility: visibility ?? this.visibility,
@@ -97,7 +97,7 @@ RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $d
   workflowRestrictionsReadOnly: workflowRestrictionsReadOnly != null ? workflowRestrictionsReadOnly() : this.workflowRestrictionsReadOnly,
   restrictedToWorkflows: restrictedToWorkflows != null ? restrictedToWorkflows() : this.restrictedToWorkflows,
   selectedWorkflows: selectedWorkflows != null ? selectedWorkflows() : this.selectedWorkflows,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RunnerGroupsOrg &&
           id == other.id &&
@@ -119,4 +119,4 @@ RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $d
 
 @override String toString() => 'RunnerGroupsOrg(\n  id: $id,\n  name: $name,\n  visibility: $visibility,\n  \$default: ${$default},\n  selectedRepositoriesUrl: $selectedRepositoriesUrl,\n  runnersUrl: $runnersUrl,\n  hostedRunnersUrl: $hostedRunnersUrl,\n  networkConfigurationId: $networkConfigurationId,\n  inherited: $inherited,\n  inheritedAllowsPublicRepositories: $inheritedAllowsPublicRepositories,\n  allowsPublicRepositories: $allowsPublicRepositories,\n  workflowRestrictionsReadOnly: $workflowRestrictionsReadOnly,\n  restrictedToWorkflows: $restrictedToWorkflows,\n  selectedWorkflows: $selectedWorkflows,\n)';
 
- }
+}

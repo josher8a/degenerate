@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit();
 
-factory CloudflarePipelinesTimestampUnit.fromJson(String json) { return switch (json) {
+factory CloudflarePipelinesTimestampUnit.fromJson(String json) {return switch (json) {
   'second' => second,
   'millisecond' => millisecond,
   'microsecond' => microsecond,
   'nanosecond' => nanosecond,
   _ => CloudflarePipelinesTimestampUnit$Unknown(json),
-}; }
+};}
 
 static const CloudflarePipelinesTimestampUnit second = CloudflarePipelinesTimestampUnit$second._();
 
@@ -22,36 +22,36 @@ static const CloudflarePipelinesTimestampUnit nanosecond = CloudflarePipelinesTi
 static const List<CloudflarePipelinesTimestampUnit> values = [second, millisecond, microsecond, nanosecond];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'second' => 'second',
   'millisecond' => 'millisecond',
   'microsecond' => 'microsecond',
   'nanosecond' => 'nanosecond',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CloudflarePipelinesTimestampUnit$Unknown; } 
+bool get isUnknown {return this is CloudflarePipelinesTimestampUnit$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() second, required W Function() millisecond, required W Function() microsecond, required W Function() nanosecond, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() second, required W Function() millisecond, required W Function() microsecond, required W Function() nanosecond, required W Function(String value) $unknown, }) {return switch (this) {
       CloudflarePipelinesTimestampUnit$second() => second(),
       CloudflarePipelinesTimestampUnit$millisecond() => millisecond(),
       CloudflarePipelinesTimestampUnit$microsecond() => microsecond(),
       CloudflarePipelinesTimestampUnit$nanosecond() => nanosecond(),
       CloudflarePipelinesTimestampUnit$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? second, W Function()? millisecond, W Function()? microsecond, W Function()? nanosecond, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? second, W Function()? millisecond, W Function()? microsecond, W Function()? nanosecond, W Function(String value)? $unknown, }) {return switch (this) {
       CloudflarePipelinesTimestampUnit$second() => second != null ? second() : orElse(value),
       CloudflarePipelinesTimestampUnit$millisecond() => millisecond != null ? millisecond() : orElse(value),
       CloudflarePipelinesTimestampUnit$microsecond() => microsecond != null ? microsecond() : orElse(value),
       CloudflarePipelinesTimestampUnit$nanosecond() => nanosecond != null ? nanosecond() : orElse(value),
       CloudflarePipelinesTimestampUnit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CloudflarePipelinesTimestampUnit($value)';
 
- }
+}
 @immutable final class CloudflarePipelinesTimestampUnit$second extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$second._();
 
 @override String get value => 'second';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? second, 
 
 @override int get hashCode => 'second'.hashCode;
 
- }
+}
 @immutable final class CloudflarePipelinesTimestampUnit$millisecond extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$millisecond._();
 
 @override String get value => 'millisecond';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? second, 
 
 @override int get hashCode => 'millisecond'.hashCode;
 
- }
+}
 @immutable final class CloudflarePipelinesTimestampUnit$microsecond extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$microsecond._();
 
 @override String get value => 'microsecond';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? second, 
 
 @override int get hashCode => 'microsecond'.hashCode;
 
- }
+}
 @immutable final class CloudflarePipelinesTimestampUnit$nanosecond extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$nanosecond._();
 
 @override String get value => 'nanosecond';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? second, 
 
 @override int get hashCode => 'nanosecond'.hashCode;
 
- }
+}
 @immutable final class CloudflarePipelinesTimestampUnit$Unknown extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$Unknown(this.value);
 
 @override final String value;
@@ -97,4 +97,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? second, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

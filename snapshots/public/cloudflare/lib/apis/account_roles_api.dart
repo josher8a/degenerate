@@ -14,7 +14,7 @@ final class AccountRolesApi with ApiExecutor {const AccountRolesApi(this.apiConf
 /// Get all available roles for an account.
 ///
 /// `GET /accounts/{account_id}/roles`
-Future<ApiResult<List<IamRole>?, TokensCreateTokenError>> accountRolesListRoles({required IamCommonComponentsSchemasIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamRole>?, TokensCreateTokenError>> accountRolesListRoles({required IamCommonComponentsSchemasIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,13 +42,13 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
+}
 /// Role Details
 ///
 /// Get information about a specific role for an account.
 ///
 /// `GET /accounts/{account_id}/roles/{role_id}`
-Future<ApiResult<IamRole?, TokensCreateTokenError>> accountRolesRoleDetails({required IamRoleComponentsSchemasIdentifier roleId, required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamRole?, TokensCreateTokenError>> accountRolesRoleDetails({required IamRoleComponentsSchemasIdentifier roleId, required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -65,5 +65,5 @@ return await execute(
   },
   onError: TokensCreateTokenError.fromResponse,
 );
- } 
- }
+}
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Interval (or event) to which the amount applies.
 sealed class IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval();
 
-factory IssuingCardSpendingLimitInterval.fromJson(String json) { return switch (json) {
+factory IssuingCardSpendingLimitInterval.fromJson(String json) {return switch (json) {
   'all_time' => allTime,
   'daily' => daily,
   'monthly' => monthly,
@@ -12,7 +12,7 @@ factory IssuingCardSpendingLimitInterval.fromJson(String json) { return switch (
   'weekly' => weekly,
   'yearly' => yearly,
   _ => IssuingCardSpendingLimitInterval$Unknown(json),
-}; }
+};}
 
 static const IssuingCardSpendingLimitInterval allTime = IssuingCardSpendingLimitInterval$allTime._();
 
@@ -29,9 +29,9 @@ static const IssuingCardSpendingLimitInterval yearly = IssuingCardSpendingLimitI
 static const List<IssuingCardSpendingLimitInterval> values = [allTime, daily, monthly, perAuthorization, weekly, yearly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'all_time' => 'allTime',
   'daily' => 'daily',
   'monthly' => 'monthly',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'weekly' => 'weekly',
   'yearly' => 'yearly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardSpendingLimitInterval$Unknown; } 
+bool get isUnknown {return this is IssuingCardSpendingLimitInterval$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() allTime, required W Function() daily, required W Function() monthly, required W Function() perAuthorization, required W Function() weekly, required W Function() yearly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() allTime, required W Function() daily, required W Function() monthly, required W Function() perAuthorization, required W Function() weekly, required W Function() yearly, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardSpendingLimitInterval$allTime() => allTime(),
       IssuingCardSpendingLimitInterval$daily() => daily(),
       IssuingCardSpendingLimitInterval$monthly() => monthly(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() allTime, required W Function() daily, required 
       IssuingCardSpendingLimitInterval$weekly() => weekly(),
       IssuingCardSpendingLimitInterval$yearly() => yearly(),
       IssuingCardSpendingLimitInterval$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime, W Function()? daily, W Function()? monthly, W Function()? perAuthorization, W Function()? weekly, W Function()? yearly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime, W Function()? daily, W Function()? monthly, W Function()? perAuthorization, W Function()? weekly, W Function()? yearly, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardSpendingLimitInterval$allTime() => allTime != null ? allTime() : orElse(value),
       IssuingCardSpendingLimitInterval$daily() => daily != null ? daily() : orElse(value),
       IssuingCardSpendingLimitInterval$monthly() => monthly != null ? monthly() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime,
       IssuingCardSpendingLimitInterval$weekly() => weekly != null ? weekly() : orElse(value),
       IssuingCardSpendingLimitInterval$yearly() => yearly != null ? yearly() : orElse(value),
       IssuingCardSpendingLimitInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardSpendingLimitInterval($value)';
 
- }
+}
 @immutable final class IssuingCardSpendingLimitInterval$allTime extends IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval$allTime._();
 
 @override String get value => 'all_time';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime,
 
 @override int get hashCode => 'all_time'.hashCode;
 
- }
+}
 @immutable final class IssuingCardSpendingLimitInterval$daily extends IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval$daily._();
 
 @override String get value => 'daily';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime,
 
 @override int get hashCode => 'daily'.hashCode;
 
- }
+}
 @immutable final class IssuingCardSpendingLimitInterval$monthly extends IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval$monthly._();
 
 @override String get value => 'monthly';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime,
 
 @override int get hashCode => 'monthly'.hashCode;
 
- }
+}
 @immutable final class IssuingCardSpendingLimitInterval$perAuthorization extends IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval$perAuthorization._();
 
 @override String get value => 'per_authorization';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime,
 
 @override int get hashCode => 'per_authorization'.hashCode;
 
- }
+}
 @immutable final class IssuingCardSpendingLimitInterval$weekly extends IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval$weekly._();
 
 @override String get value => 'weekly';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime,
 
 @override int get hashCode => 'weekly'.hashCode;
 
- }
+}
 @immutable final class IssuingCardSpendingLimitInterval$yearly extends IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval$yearly._();
 
 @override String get value => 'yearly';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime,
 
 @override int get hashCode => 'yearly'.hashCode;
 
- }
+}
 @immutable final class IssuingCardSpendingLimitInterval$Unknown extends IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

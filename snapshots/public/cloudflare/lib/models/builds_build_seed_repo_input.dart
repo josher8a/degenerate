@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_branch.dart';import 'package:pub_cloudflare/models/builds_build_seed_repo_input_file.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';@immutable final class BuildsBuildSeedRepoInput {const BuildsBuildSeedRepoInput({required this.branch, required this.owner, required this.path, required this.provider, required this.repository, this.files, });
 
-factory BuildsBuildSeedRepoInput.fromJson(Map<String, dynamic> json) { return BuildsBuildSeedRepoInput(
+factory BuildsBuildSeedRepoInput.fromJson(Map<String, dynamic> json) {return BuildsBuildSeedRepoInput(
   branch: BuildsBranch.fromJson(json['branch'] as String),
   files: (json['files'] as List<dynamic>?)?.map((e) => BuildsBuildSeedRepoInputFile.fromJson(e as Map<String, dynamic>)).toList(),
   owner: json['owner'] as String,
   path: json['path'] as String,
   provider: BuildsScmProviderType.fromJson(json['provider'] as String),
   repository: json['repository'] as String,
-); }
+);}
 
 final BuildsBranch branch;
 
@@ -27,34 +27,34 @@ final BuildsScmProviderType provider;
 /// Example: `'workers-sdk'`
 final String repository;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'branch': branch.toJson(),
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
   'owner': owner,
   'path': path,
   'provider': provider.toJson(),
   'repository': repository,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('branch') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('branch') &&
       json.containsKey('owner') && json['owner'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('provider') &&
-      json.containsKey('repository') && json['repository'] is String; } 
+      json.containsKey('repository') && json['repository'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final files$ = files;
 if (files$ != null) {
   if (files$.length > 2) { errors.add('files: must have <= 2 items'); }
 }
-return errors; } 
-BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRepoInputFile>? Function()? files, String? owner, String? path, BuildsScmProviderType? provider, String? repository, }) { return BuildsBuildSeedRepoInput(
+return errors;}
+BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRepoInputFile>? Function()? files, String? owner, String? path, BuildsScmProviderType? provider, String? repository, }) {return BuildsBuildSeedRepoInput(
   branch: branch ?? this.branch,
   files: files != null ? files() : this.files,
   owner: owner ?? this.owner,
   path: path ?? this.path,
   provider: provider ?? this.provider,
   repository: repository ?? this.repository,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildSeedRepoInput &&
           branch == other.branch &&
@@ -68,4 +68,4 @@ BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRep
 
 @override String toString() => 'BuildsBuildSeedRepoInput(branch: $branch, files: $files, owner: $owner, path: $path, provider: $provider, repository: $repository)';
 
- }
+}

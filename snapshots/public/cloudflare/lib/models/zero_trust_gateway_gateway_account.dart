@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account/zero_trust_gateway_gateway_account_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';@immutable final class ZeroTrustGatewayGatewayAccount {const ZeroTrustGatewayGatewayAccount({required this.errors, required this.messages, required this.success, this.result, });
 
-factory ZeroTrustGatewayGatewayAccount.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccount(
+factory ZeroTrustGatewayGatewayAccount.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayGatewayAccount(
   errors: (json['errors'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? ZeroTrustGatewayGatewayAccountResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<ZeroTrustGatewayMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final ZeroTrustGatewayGatewayAccountResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ZeroTrustGatewayGatewayAccount copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayGatewayAccountResult? Function()? result, }) { return ZeroTrustGatewayGatewayAccount(
+      json.containsKey('success') && json['success'] is bool;}
+ZeroTrustGatewayGatewayAccount copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayGatewayAccountResult? Function()? result, }) {return ZeroTrustGatewayGatewayAccount(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayGatewayAccount &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ZeroTrustGatewayGatewayAccount copyWith({List<ZeroTrustGatewayMessages2>? errors
 
 @override String toString() => 'ZeroTrustGatewayGatewayAccount(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

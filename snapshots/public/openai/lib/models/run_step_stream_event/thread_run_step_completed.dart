@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';sealed class ThreadRunStepCompletedEvent {const ThreadRunStepCompletedEvent();
 
-factory ThreadRunStepCompletedEvent.fromJson(String json) { return switch (json) {
+factory ThreadRunStepCompletedEvent.fromJson(String json) {return switch (json) {
   'thread.run.step.completed' => threadRunStepCompleted,
   _ => ThreadRunStepCompletedEvent$Unknown(json),
-}; }
+};}
 
 static const ThreadRunStepCompletedEvent threadRunStepCompleted = ThreadRunStepCompletedEvent$threadRunStepCompleted._();
 
 static const List<ThreadRunStepCompletedEvent> values = [threadRunStepCompleted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'thread.run.step.completed' => 'threadRunStepCompleted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ThreadRunStepCompletedEvent$Unknown; } 
+bool get isUnknown {return this is ThreadRunStepCompletedEvent$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() threadRunStepCompleted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() threadRunStepCompleted, required W Function(String value) $unknown, }) {return switch (this) {
       ThreadRunStepCompletedEvent$threadRunStepCompleted() => threadRunStepCompleted(),
       ThreadRunStepCompletedEvent$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRunStepCompleted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRunStepCompleted, W Function(String value)? $unknown, }) {return switch (this) {
       ThreadRunStepCompletedEvent$threadRunStepCompleted() => threadRunStepCompleted != null ? threadRunStepCompleted() : orElse(value),
       ThreadRunStepCompletedEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ThreadRunStepCompletedEvent($value)';
 
- }
+}
 @immutable final class ThreadRunStepCompletedEvent$threadRunStepCompleted extends ThreadRunStepCompletedEvent {const ThreadRunStepCompletedEvent$threadRunStepCompleted._();
 
 @override String get value => 'thread.run.step.completed';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRu
 
 @override int get hashCode => 'thread.run.step.completed'.hashCode;
 
- }
+}
 @immutable final class ThreadRunStepCompletedEvent$Unknown extends ThreadRunStepCompletedEvent {const ThreadRunStepCompletedEvent$Unknown(this.value);
 
 @override final String value;
@@ -52,29 +52,29 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
 @immutable final class ThreadRunStepCompleted {const ThreadRunStepCompleted({required this.event, required this.data, });
 
-factory ThreadRunStepCompleted.fromJson(Map<String, dynamic> json) { return ThreadRunStepCompleted(
+factory ThreadRunStepCompleted.fromJson(Map<String, dynamic> json) {return ThreadRunStepCompleted(
   event: ThreadRunStepCompletedEvent.fromJson(json['event'] as String),
   data: RunStepObject.fromJson(json['data'] as Map<String, dynamic>),
-); }
+);}
 
 final ThreadRunStepCompletedEvent event;
 
 final RunStepObject data;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': event.toJson(),
   'data': data.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') && json['event'] == 'thread.run.step.completed' &&
-      json.containsKey('data'); } 
-ThreadRunStepCompleted copyWith({ThreadRunStepCompletedEvent? event, RunStepObject? data, }) { return ThreadRunStepCompleted(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event') && json['event'] == 'thread.run.step.completed' &&
+      json.containsKey('data');}
+ThreadRunStepCompleted copyWith({ThreadRunStepCompletedEvent? event, RunStepObject? data, }) {return ThreadRunStepCompleted(
   event: event ?? this.event,
   data: data ?? this.data,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadRunStepCompleted &&
           event == other.event &&
@@ -84,4 +84,4 @@ ThreadRunStepCompleted copyWith({ThreadRunStepCompletedEvent? event, RunStepObje
 
 @override String toString() => 'ThreadRunStepCompleted(event: $event, data: $data)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';/// The HTTP method we use to call `voice_status_callback_url`. Either `GET` or `POST`.
 sealed class AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod();
 
-factory AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(String json) {return switch (json) {
   'GET' => $get,
   'POST' => post,
   _ => AccountSipSipDomainVoiceStatusCallbackMethod$Unknown(json),
-}; }
+};}
 
 static const AccountSipSipDomainVoiceStatusCallbackMethod $get = AccountSipSipDomainVoiceStatusCallbackMethod$$get._();
 
@@ -17,30 +17,30 @@ static const AccountSipSipDomainVoiceStatusCallbackMethod post = AccountSipSipDo
 static const List<AccountSipSipDomainVoiceStatusCallbackMethod> values = [$get, post];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'GET' => r'$get',
   'POST' => 'post',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountSipSipDomainVoiceStatusCallbackMethod$Unknown; } 
+bool get isUnknown {return this is AccountSipSipDomainVoiceStatusCallbackMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) {return switch (this) {
       AccountSipSipDomainVoiceStatusCallbackMethod$$get() => $get(),
       AccountSipSipDomainVoiceStatusCallbackMethod$post() => post(),
       AccountSipSipDomainVoiceStatusCallbackMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) {return switch (this) {
       AccountSipSipDomainVoiceStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
       AccountSipSipDomainVoiceStatusCallbackMethod$post() => post != null ? post() : orElse(value),
       AccountSipSipDomainVoiceStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountSipSipDomainVoiceStatusCallbackMethod($value)';
 
- }
+}
 @immutable final class AccountSipSipDomainVoiceStatusCallbackMethod$$get extends AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod$$get._();
 
 @override String get value => 'GET';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'GET'.hashCode;
 
- }
+}
 @immutable final class AccountSipSipDomainVoiceStatusCallbackMethod$post extends AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod$post._();
 
 @override String get value => 'POST';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => 'POST'.hashCode;
 
- }
+}
 @immutable final class AccountSipSipDomainVoiceStatusCallbackMethod$Unknown extends AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccountSipSipDomain {const AccountSipSipDomain({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.authType = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.domainName = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.sid = const Omittable.absent(), this.uri = const Omittable.absent(), this.voiceFallbackMethod = const Omittable.absent(), this.voiceFallbackUrl = const Omittable.absent(), this.voiceMethod = const Omittable.absent(), this.voiceStatusCallbackMethod = const Omittable.absent(), this.voiceStatusCallbackUrl = const Omittable.absent(), this.voiceUrl = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), this.sipRegistration = const Omittable.absent(), this.emergencyCallingEnabled = const Omittable.absent(), this.secure = const Omittable.absent(), this.byocTrunkSid = const Omittable.absent(), this.emergencyCallerSid = const Omittable.absent(), });
 
-factory AccountSipSipDomain.fromJson(Map<String, dynamic> json) { return AccountSipSipDomain(
+factory AccountSipSipDomain.fromJson(Map<String, dynamic> json) {return AccountSipSipDomain(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   authType: json.containsKey('auth_type') ? Omittable(json['auth_type'] as String?) : const Omittable.absent(),
@@ -93,7 +93,7 @@ factory AccountSipSipDomain.fromJson(Map<String, dynamic> json) { return Account
   secure: json.containsKey('secure') ? Omittable(json['secure'] as bool?) : const Omittable.absent(),
   byocTrunkSid: json.containsKey('byoc_trunk_sid') ? Omittable(json['byoc_trunk_sid'] as String?) : const Omittable.absent(),
   emergencyCallerSid: json.containsKey('emergency_caller_sid') ? Omittable(json['emergency_caller_sid'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the SipDomain resource.
 final Omittable<String?> accountSid;
@@ -158,7 +158,7 @@ final Omittable<String?> byocTrunkSid;
 /// Whether an emergency caller sid is configured for the domain. If present, this phone number will be used as the callback for the emergency call.
 final Omittable<String?> emergencyCallerSid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (authType.isPresent) 'auth_type': authType.value,
@@ -180,10 +180,10 @@ Map<String, dynamic> toJson() { return {
   if (secure.isPresent) 'secure': secure.value,
   if (byocTrunkSid.isPresent) 'byoc_trunk_sid': byocTrunkSid.value,
   if (emergencyCallerSid.isPresent) 'emergency_caller_sid': emergencyCallerSid.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'auth_type', 'date_created', 'date_updated', 'domain_name', 'friendly_name', 'sid', 'uri', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_status_callback_method', 'voice_status_callback_url', 'voice_url', 'subresource_uris', 'sip_registration', 'emergency_calling_enabled', 'secure', 'byoc_trunk_sid', 'emergency_caller_sid'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'auth_type', 'date_created', 'date_updated', 'domain_name', 'friendly_name', 'sid', 'uri', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_status_callback_method', 'voice_status_callback_url', 'voice_url', 'subresource_uris', 'sip_registration', 'emergency_calling_enabled', 'secure', 'byoc_trunk_sid', 'emergency_caller_sid'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -208,8 +208,8 @@ if (emergencyCallerSid$ != null) {
   if (emergencyCallerSid$.runes.length > 34) { errors.add('emergencyCallerSid: length must be <= 34'); }
   if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(emergencyCallerSid$)) { errors.add(r'emergencyCallerSid: must match pattern ^PN[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountSipSipDomain copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? authType, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? domainName, Omittable<String?>? friendlyName, Omittable<String?>? sid, Omittable<String?>? uri, Omittable<AccountAddressDependentPhoneNumberVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountAddressDependentPhoneNumberVoiceMethod?>? voiceMethod, Omittable<AccountSipSipDomainVoiceStatusCallbackMethod?>? voiceStatusCallbackMethod, Omittable<Uri?>? voiceStatusCallbackUrl, Omittable<Uri?>? voiceUrl, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<bool?>? sipRegistration, Omittable<bool?>? emergencyCallingEnabled, Omittable<bool?>? secure, Omittable<String?>? byocTrunkSid, Omittable<String?>? emergencyCallerSid, }) { return AccountSipSipDomain(
+return errors;}
+AccountSipSipDomain copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? authType, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? domainName, Omittable<String?>? friendlyName, Omittable<String?>? sid, Omittable<String?>? uri, Omittable<AccountAddressDependentPhoneNumberVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountAddressDependentPhoneNumberVoiceMethod?>? voiceMethod, Omittable<AccountSipSipDomainVoiceStatusCallbackMethod?>? voiceStatusCallbackMethod, Omittable<Uri?>? voiceStatusCallbackUrl, Omittable<Uri?>? voiceUrl, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<bool?>? sipRegistration, Omittable<bool?>? emergencyCallingEnabled, Omittable<bool?>? secure, Omittable<String?>? byocTrunkSid, Omittable<String?>? emergencyCallerSid, }) {return AccountSipSipDomain(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   authType: authType ?? this.authType,
@@ -231,7 +231,7 @@ AccountSipSipDomain copyWith({Omittable<String?>? accountSid, Omittable<String?>
   secure: secure ?? this.secure,
   byocTrunkSid: byocTrunkSid ?? this.byocTrunkSid,
   emergencyCallerSid: emergencyCallerSid ?? this.emergencyCallerSid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSipSipDomain &&
           accountSid == other.accountSid &&
@@ -260,4 +260,4 @@ AccountSipSipDomain copyWith({Omittable<String?>? accountSid, Omittable<String?>
 
 @override String toString() => 'AccountSipSipDomain(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  authType: $authType,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  domainName: $domainName,\n  friendlyName: $friendlyName,\n  sid: $sid,\n  uri: $uri,\n  voiceFallbackMethod: $voiceFallbackMethod,\n  voiceFallbackUrl: $voiceFallbackUrl,\n  voiceMethod: $voiceMethod,\n  voiceStatusCallbackMethod: $voiceStatusCallbackMethod,\n  voiceStatusCallbackUrl: $voiceStatusCallbackUrl,\n  voiceUrl: $voiceUrl,\n  subresourceUris: $subresourceUris,\n  sipRegistration: $sipRegistration,\n  emergencyCallingEnabled: $emergencyCallingEnabled,\n  secure: $secure,\n  byocTrunkSid: $byocTrunkSid,\n  emergencyCallerSid: $emergencyCallerSid,\n)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_secret.dart';@immutable final class ActionsListRepoOrganizationSecretsResponse {const ActionsListRepoOrganizationSecretsResponse({required this.totalCount, required this.secrets, });
 
-factory ActionsListRepoOrganizationSecretsResponse.fromJson(Map<String, dynamic> json) { return ActionsListRepoOrganizationSecretsResponse(
+factory ActionsListRepoOrganizationSecretsResponse.fromJson(Map<String, dynamic> json) {return ActionsListRepoOrganizationSecretsResponse(
   totalCount: (json['total_count'] as num).toInt(),
   secrets: (json['secrets'] as List<dynamic>).map((e) => ActionsSecret.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<ActionsSecret> secrets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'secrets': secrets.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('secrets'); } 
-ActionsListRepoOrganizationSecretsResponse copyWith({int? totalCount, List<ActionsSecret>? secrets, }) { return ActionsListRepoOrganizationSecretsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('secrets');}
+ActionsListRepoOrganizationSecretsResponse copyWith({int? totalCount, List<ActionsSecret>? secrets, }) {return ActionsListRepoOrganizationSecretsResponse(
   totalCount: totalCount ?? this.totalCount,
   secrets: secrets ?? this.secrets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListRepoOrganizationSecretsResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListRepoOrganizationSecretsResponse copyWith({int? totalCount, List<Actio
 
 @override String toString() => 'ActionsListRepoOrganizationSecretsResponse(totalCount: $totalCount, secrets: $secrets)';
 
- }
+}

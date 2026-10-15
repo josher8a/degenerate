@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Pull Request Reviews are reviews on pull requests.
 @immutable final class PullRequestReview {const PullRequestReview({required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.commitId, required this.authorAssociation, this.submittedAt, this.bodyHtml, this.bodyText, });
 
-factory PullRequestReview.fromJson(Map<String, dynamic> json) { return PullRequestReview(
+factory PullRequestReview.fromJson(Map<String, dynamic> json) {return PullRequestReview(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
@@ -18,7 +18,7 @@ factory PullRequestReview.fromJson(Map<String, dynamic> json) { return PullReque
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
-); }
+);}
 
 /// Unique identifier of the review
 final int id;
@@ -50,7 +50,7 @@ final String? bodyText;
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'user': user?.toJson(),
@@ -64,8 +64,8 @@ Map<String, dynamic> toJson() { return {
   'body_html': ?bodyHtml,
   'body_text': ?bodyText,
   'author_association': authorAssociation.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('user') &&
       json.containsKey('body') && json['body'] is String &&
@@ -74,8 +74,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('_links') &&
       json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
-      json.containsKey('author_association'); } 
-PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? user, String? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime? Function()? submittedAt, String? Function()? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) { return PullRequestReview(
+      json.containsKey('author_association');}
+PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? user, String? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime? Function()? submittedAt, String? Function()? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) {return PullRequestReview(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   user: user != null ? user() : this.user,
@@ -89,7 +89,7 @@ PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? use
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
   bodyText: bodyText != null ? bodyText() : this.bodyText,
   authorAssociation: authorAssociation ?? this.authorAssociation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReview &&
           id == other.id &&
@@ -110,4 +110,4 @@ PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? use
 
 @override String toString() => 'PullRequestReview(\n  id: $id,\n  nodeId: $nodeId,\n  user: $user,\n  body: $body,\n  state: $state,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  links: $links,\n  submittedAt: $submittedAt,\n  commitId: $commitId,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  authorAssociation: $authorAssociation,\n)';
 
- }
+}

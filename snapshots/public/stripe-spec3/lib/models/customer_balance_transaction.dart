@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_checkout_session.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_credit_note.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject();
 
-factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
+factory CustomerBalanceTransactionObject.fromJson(String json) {return switch (json) {
   'customer_balance_transaction' => customerBalanceTransaction,
   _ => CustomerBalanceTransactionObject$Unknown(json),
-}; }
+};}
 
 static const CustomerBalanceTransactionObject customerBalanceTransaction = CustomerBalanceTransactionObject$customerBalanceTransaction._();
 
 static const List<CustomerBalanceTransactionObject> values = [customerBalanceTransaction];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'customer_balance_transaction' => 'customerBalanceTransaction',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerBalanceTransactionObject$Unknown; } 
+bool get isUnknown {return this is CustomerBalanceTransactionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customerBalanceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customerBalanceTransaction, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerBalanceTransactionObject$customerBalanceTransaction() => customerBalanceTransaction(),
       CustomerBalanceTransactionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerBalanceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerBalanceTransaction, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerBalanceTransactionObject$customerBalanceTransaction() => customerBalanceTransaction != null ? customerBalanceTransaction() : orElse(value),
       CustomerBalanceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerBalanceTransactionObject($value)';
 
- }
+}
 @immutable final class CustomerBalanceTransactionObject$customerBalanceTransaction extends CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject$customerBalanceTransaction._();
 
 @override String get value => 'customer_balance_transaction';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'customer_balance_transaction'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionObject$Unknown extends CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
 sealed class CustomerBalanceTransactionType {const CustomerBalanceTransactionType();
 
-factory CustomerBalanceTransactionType.fromJson(String json) { return switch (json) {
+factory CustomerBalanceTransactionType.fromJson(String json) {return switch (json) {
   'adjustment' => adjustment,
   'applied_to_invoice' => appliedToInvoice,
   'checkout_session_subscription_payment' => checkoutSessionSubscriptionPayment,
@@ -71,7 +71,7 @@ factory CustomerBalanceTransactionType.fromJson(String json) { return switch (js
   'unapplied_from_invoice' => unappliedFromInvoice,
   'unspent_receiver_credit' => unspentReceiverCredit,
   _ => CustomerBalanceTransactionType$Unknown(json),
-}; }
+};}
 
 static const CustomerBalanceTransactionType adjustment = CustomerBalanceTransactionType$adjustment._();
 
@@ -100,9 +100,9 @@ static const CustomerBalanceTransactionType unspentReceiverCredit = CustomerBala
 static const List<CustomerBalanceTransactionType> values = [adjustment, appliedToInvoice, checkoutSessionSubscriptionPayment, checkoutSessionSubscriptionPaymentCanceled, creditNote, initial, invoiceOverpaid, invoiceTooLarge, invoiceTooSmall, migration, unappliedFromInvoice, unspentReceiverCredit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'adjustment' => 'adjustment',
   'applied_to_invoice' => 'appliedToInvoice',
   'checkout_session_subscription_payment' => 'checkoutSessionSubscriptionPayment',
@@ -116,11 +116,11 @@ String get name { return switch (value) {
   'unapplied_from_invoice' => 'unappliedFromInvoice',
   'unspent_receiver_credit' => 'unspentReceiverCredit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerBalanceTransactionType$Unknown; } 
+bool get isUnknown {return this is CustomerBalanceTransactionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() adjustment, required W Function() appliedToInvoice, required W Function() checkoutSessionSubscriptionPayment, required W Function() checkoutSessionSubscriptionPaymentCanceled, required W Function() creditNote, required W Function() initial, required W Function() invoiceOverpaid, required W Function() invoiceTooLarge, required W Function() invoiceTooSmall, required W Function() migration, required W Function() unappliedFromInvoice, required W Function() unspentReceiverCredit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() adjustment, required W Function() appliedToInvoice, required W Function() checkoutSessionSubscriptionPayment, required W Function() checkoutSessionSubscriptionPaymentCanceled, required W Function() creditNote, required W Function() initial, required W Function() invoiceOverpaid, required W Function() invoiceTooLarge, required W Function() invoiceTooSmall, required W Function() migration, required W Function() unappliedFromInvoice, required W Function() unspentReceiverCredit, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerBalanceTransactionType$adjustment() => adjustment(),
       CustomerBalanceTransactionType$appliedToInvoice() => appliedToInvoice(),
       CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment() => checkoutSessionSubscriptionPayment(),
@@ -134,9 +134,9 @@ W when<W>({required W Function() adjustment, required W Function() appliedToInvo
       CustomerBalanceTransactionType$unappliedFromInvoice() => unappliedFromInvoice(),
       CustomerBalanceTransactionType$unspentReceiverCredit() => unspentReceiverCredit(),
       CustomerBalanceTransactionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustment, W Function()? appliedToInvoice, W Function()? checkoutSessionSubscriptionPayment, W Function()? checkoutSessionSubscriptionPaymentCanceled, W Function()? creditNote, W Function()? initial, W Function()? invoiceOverpaid, W Function()? invoiceTooLarge, W Function()? invoiceTooSmall, W Function()? migration, W Function()? unappliedFromInvoice, W Function()? unspentReceiverCredit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustment, W Function()? appliedToInvoice, W Function()? checkoutSessionSubscriptionPayment, W Function()? checkoutSessionSubscriptionPaymentCanceled, W Function()? creditNote, W Function()? initial, W Function()? invoiceOverpaid, W Function()? invoiceTooLarge, W Function()? invoiceTooSmall, W Function()? migration, W Function()? unappliedFromInvoice, W Function()? unspentReceiverCredit, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerBalanceTransactionType$adjustment() => adjustment != null ? adjustment() : orElse(value),
       CustomerBalanceTransactionType$appliedToInvoice() => appliedToInvoice != null ? appliedToInvoice() : orElse(value),
       CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment() => checkoutSessionSubscriptionPayment != null ? checkoutSessionSubscriptionPayment() : orElse(value),
@@ -150,10 +150,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
       CustomerBalanceTransactionType$unappliedFromInvoice() => unappliedFromInvoice != null ? unappliedFromInvoice() : orElse(value),
       CustomerBalanceTransactionType$unspentReceiverCredit() => unspentReceiverCredit != null ? unspentReceiverCredit() : orElse(value),
       CustomerBalanceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerBalanceTransactionType($value)';
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$adjustment extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$adjustment._();
 
 @override String get value => 'adjustment';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'adjustment'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$appliedToInvoice extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$appliedToInvoice._();
 
 @override String get value => 'applied_to_invoice';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'applied_to_invoice'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment._();
 
 @override String get value => 'checkout_session_subscription_payment';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'checkout_session_subscription_payment'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$checkoutSessionSubscriptionPaymentCanceled extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$checkoutSessionSubscriptionPaymentCanceled._();
 
 @override String get value => 'checkout_session_subscription_payment_canceled';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'checkout_session_subscription_payment_canceled'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$creditNote extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$creditNote._();
 
 @override String get value => 'credit_note';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'credit_note'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$initial extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$initial._();
 
 @override String get value => 'initial';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'initial'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$invoiceOverpaid extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$invoiceOverpaid._();
 
 @override String get value => 'invoice_overpaid';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'invoice_overpaid'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$invoiceTooLarge extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$invoiceTooLarge._();
 
 @override String get value => 'invoice_too_large';
@@ -225,7 +225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'invoice_too_large'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$invoiceTooSmall extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$invoiceTooSmall._();
 
 @override String get value => 'invoice_too_small';
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'invoice_too_small'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$migration extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$migration._();
 
 @override String get value => 'migration';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'migration'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$unappliedFromInvoice extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$unappliedFromInvoice._();
 
 @override String get value => 'unapplied_from_invoice';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'unapplied_from_invoice'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$unspentReceiverCredit extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$unspentReceiverCredit._();
 
 @override String get value => 'unspent_receiver_credit';
@@ -261,7 +261,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'unspent_receiver_credit'.hashCode;
 
- }
+}
 @immutable final class CustomerBalanceTransactionType$Unknown extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$Unknown(this.value);
 
 @override final String value;
@@ -271,7 +271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Each customer has a [Balance](https://docs.stripe.com/api/customers/object#customer_object-balance) value,
 /// which denotes a debit or credit that's automatically applied to their next invoice upon finalization.
 /// You may modify the value directly by using the [update customer API](https://docs.stripe.com/api/customers/update),
@@ -280,7 +280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 /// Related guide: [Customer balance](https://docs.stripe.com/billing/customer/balance)
 @immutable final class CustomerBalanceTransaction {const CustomerBalanceTransaction({required this.amount, required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.object, required this.type, this.checkoutSession = const Omittable.absent(), this.creditNote = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.invoice = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
-factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceTransaction(
+factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) {return CustomerBalanceTransaction(
   amount: (json['amount'] as num).toInt(),
   checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] != null ? CustomerBalanceTransactionCheckoutSession.fromJson(json['checkout_session']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -296,7 +296,7 @@ factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return 
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: CustomerBalanceTransactionObject.fromJson(json['object'] as String),
   type: CustomerBalanceTransactionType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The amount of the transaction. A negative value is a credit for the customer's balance, and a positive value is a debit to the customer's `balance`.
 final int amount;
@@ -343,7 +343,7 @@ final CustomerBalanceTransactionObject object;
 /// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
 final CustomerBalanceTransactionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (checkoutSession.isPresent) 'checkout_session': checkoutSession.value?.toJson(),
   'created': created,
@@ -359,8 +359,8 @@ Map<String, dynamic> toJson() { return {
   if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('customer') &&
@@ -368,9 +368,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
@@ -380,8 +380,8 @@ if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTransactionCheckoutSession?>? checkoutSession, int? created, Omittable<CustomerBalanceTransactionCreditNote?>? creditNote, String? currency, BankConnectionsResourceAccountholderCustomer? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, int? endingBalance, String? id, Omittable<BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
+return errors;}
+CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTransactionCheckoutSession?>? checkoutSession, int? created, Omittable<CustomerBalanceTransactionCreditNote?>? creditNote, String? currency, BankConnectionsResourceAccountholderCustomer? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, int? endingBalance, String? id, Omittable<BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) {return CustomerBalanceTransaction(
   amount: amount ?? this.amount,
   checkoutSession: checkoutSession ?? this.checkoutSession,
   created: created ?? this.created,
@@ -397,7 +397,7 @@ CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTrans
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceTransaction &&
           amount == other.amount &&
@@ -420,4 +420,4 @@ CustomerBalanceTransaction copyWith({int? amount, Omittable<CustomerBalanceTrans
 
 @override String toString() => 'CustomerBalanceTransaction(\n  amount: $amount,\n  checkoutSession: $checkoutSession,\n  created: $created,\n  creditNote: $creditNote,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  description: $description,\n  endingBalance: $endingBalance,\n  id: $id,\n  invoice: $invoice,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  type: $type,\n)';
 
- }
+}

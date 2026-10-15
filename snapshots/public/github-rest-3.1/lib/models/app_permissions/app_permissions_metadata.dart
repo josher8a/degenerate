@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
 sealed class AppPermissionsMetadata {const AppPermissionsMetadata();
 
-factory AppPermissionsMetadata.fromJson(String json) { return switch (json) {
+factory AppPermissionsMetadata.fromJson(String json) {return switch (json) {
   'read' => read,
   'write' => write,
   _ => AppPermissionsMetadata$Unknown(json),
-}; }
+};}
 
 static const AppPermissionsMetadata read = AppPermissionsMetadata$read._();
 
@@ -17,30 +17,30 @@ static const AppPermissionsMetadata write = AppPermissionsMetadata$write._();
 static const List<AppPermissionsMetadata> values = [read, write];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'read' => 'read',
   'write' => 'write',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AppPermissionsMetadata$Unknown; } 
+bool get isUnknown {return this is AppPermissionsMetadata$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) {return switch (this) {
       AppPermissionsMetadata$read() => read(),
       AppPermissionsMetadata$write() => write(),
       AppPermissionsMetadata$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) {return switch (this) {
       AppPermissionsMetadata$read() => read != null ? read() : orElse(value),
       AppPermissionsMetadata$write() => write != null ? write() : orElse(value),
       AppPermissionsMetadata$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AppPermissionsMetadata($value)';
 
- }
+}
 @immutable final class AppPermissionsMetadata$read extends AppPermissionsMetadata {const AppPermissionsMetadata$read._();
 
 @override String get value => 'read';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class AppPermissionsMetadata$write extends AppPermissionsMetadata {const AppPermissionsMetadata$write._();
 
 @override String get value => 'write';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => 'write'.hashCode;
 
- }
+}
 @immutable final class AppPermissionsMetadata$Unknown extends AppPermissionsMetadata {const AppPermissionsMetadata$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

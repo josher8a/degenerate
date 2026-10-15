@@ -7,11 +7,11 @@ const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts({this.listPostInvoices
 const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts._({required this.rawValue, required this.listPostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts.fromJson(Object? json) { return PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts._(
+factory PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts.fromJson(Object? json) {return PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts._(
   rawValue: Omittable(json),
   listPostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1: parseAnyOfVariant<List<PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts(${toJson()})';
 
- }
+}

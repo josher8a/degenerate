@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetUiDesignTokensColorsBrand {const RealtimekitUpdatePresetUiDesignTokensColorsBrand({this.$300, this.$400, this.$500, this.$600, this.$700, });
 
-factory RealtimekitUpdatePresetUiDesignTokensColorsBrand.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokensColorsBrand(
+factory RealtimekitUpdatePresetUiDesignTokensColorsBrand.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetUiDesignTokensColorsBrand(
   $300: json['300'] as String?,
   $400: json['400'] as String?,
   $500: json['500'] as String?,
   $600: json['600'] as String?,
   $700: json['700'] as String?,
-); }
+);}
 
 final String? $300;
 
@@ -36,21 +36,21 @@ String get $600OrDefault => $600 ?? '#d37c30';
 /// The value of `$700`, or its schema default when absent.
 String get $700OrDefault => $700 ?? '#d9904f';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '300': ?$300,
   '400': ?$400,
   '500': ?$500,
   '600': ?$600,
   '700': ?$700,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'300', '400', '500', '600', '700'}.contains(key)); } 
-RealtimekitUpdatePresetUiDesignTokensColorsBrand copyWith({String? Function()? $300, String? Function()? $400, String? Function()? $500, String? Function()? $600, String? Function()? $700, }) { return RealtimekitUpdatePresetUiDesignTokensColorsBrand(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'300', '400', '500', '600', '700'}.contains(key));}
+RealtimekitUpdatePresetUiDesignTokensColorsBrand copyWith({String? Function()? $300, String? Function()? $400, String? Function()? $500, String? Function()? $600, String? Function()? $700, }) {return RealtimekitUpdatePresetUiDesignTokensColorsBrand(
   $300: $300 != null ? $300() : this.$300,
   $400: $400 != null ? $400() : this.$400,
   $500: $500 != null ? $500() : this.$500,
   $600: $600 != null ? $600() : this.$600,
   $700: $700 != null ? $700() : this.$700,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetUiDesignTokensColorsBrand &&
           $300 == other.$300 &&
@@ -63,4 +63,4 @@ RealtimekitUpdatePresetUiDesignTokensColorsBrand copyWith({String? Function()? $
 
 @override String toString() => 'RealtimekitUpdatePresetUiDesignTokensColorsBrand(\$300: ${$300}, \$400: ${$400}, \$500: ${$500}, \$600: ${$600}, \$700: ${$700})';
 
- }
+}

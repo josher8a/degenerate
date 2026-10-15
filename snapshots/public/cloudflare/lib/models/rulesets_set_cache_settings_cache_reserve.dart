@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings to determine whether the request's response from origin is eligible for Cache Reserve (requires a Cache Reserve add-on plan).
 @immutable final class RulesetsSetCacheSettingsCacheReserve {const RulesetsSetCacheSettingsCacheReserve({required this.eligible, this.minimumFileSize, });
 
-factory RulesetsSetCacheSettingsCacheReserve.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCacheReserve(
+factory RulesetsSetCacheSettingsCacheReserve.fromJson(Map<String, dynamic> json) {return RulesetsSetCacheSettingsCacheReserve(
   eligible: json['eligible'] as bool,
   minimumFileSize: json['minimum_file_size'] != null ? (json['minimum_file_size'] as num).toInt() : null,
-); }
+);}
 
 /// Whether Cache Reserve is enabled. If this is true and a request meets eligibility criteria, Cloudflare will write the resource to Cache Reserve.
 /// 
@@ -19,22 +19,22 @@ final bool eligible;
 /// Example: `1024`
 final int? minimumFileSize;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'eligible': eligible,
   'minimum_file_size': ?minimumFileSize,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('eligible') && json['eligible'] is bool; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('eligible') && json['eligible'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final minimumFileSize$ = minimumFileSize;
 if (minimumFileSize$ != null) {
   if (minimumFileSize$ < 0) { errors.add('minimumFileSize: must be >= 0'); }
 }
-return errors; } 
-RulesetsSetCacheSettingsCacheReserve copyWith({bool? eligible, int? Function()? minimumFileSize, }) { return RulesetsSetCacheSettingsCacheReserve(
+return errors;}
+RulesetsSetCacheSettingsCacheReserve copyWith({bool? eligible, int? Function()? minimumFileSize, }) {return RulesetsSetCacheSettingsCacheReserve(
   eligible: eligible ?? this.eligible,
   minimumFileSize: minimumFileSize != null ? minimumFileSize() : this.minimumFileSize,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsCacheReserve &&
           eligible == other.eligible &&
@@ -44,4 +44,4 @@ RulesetsSetCacheSettingsCacheReserve copyWith({bool? eligible, int? Function()? 
 
 @override String toString() => 'RulesetsSetCacheSettingsCacheReserve(eligible: $eligible, minimumFileSize: $minimumFileSize)';
 
- }
+}

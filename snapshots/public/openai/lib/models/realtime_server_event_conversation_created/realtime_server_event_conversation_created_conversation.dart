@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The conversation resource.
 @immutable final class RealtimeServerEventConversationCreatedConversation {const RealtimeServerEventConversationCreatedConversation({this.id, this.object, });
 
-factory RealtimeServerEventConversationCreatedConversation.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationCreatedConversation(
+factory RealtimeServerEventConversationCreatedConversation.fromJson(Map<String, dynamic> json) {return RealtimeServerEventConversationCreatedConversation(
   id: json['id'] as String?,
   object: json['object'] as String?,
-); }
+);}
 
 /// The unique ID of the conversation.
 final String? id;
@@ -15,15 +15,15 @@ final String? id;
 /// The object type, must be `realtime.conversation`.
 final String? object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'object': ?object,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object'}.contains(key)); } 
-RealtimeServerEventConversationCreatedConversation copyWith({String? Function()? id, String? Function()? object, }) { return RealtimeServerEventConversationCreatedConversation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'object'}.contains(key));}
+RealtimeServerEventConversationCreatedConversation copyWith({String? Function()? id, String? Function()? object, }) {return RealtimeServerEventConversationCreatedConversation(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationCreatedConversation &&
           id == other.id &&
@@ -33,4 +33,4 @@ RealtimeServerEventConversationCreatedConversation copyWith({String? Function()?
 
 @override String toString() => 'RealtimeServerEventConversationCreatedConversation(id: $id, object: $object)';
 
- }
+}

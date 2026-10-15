@@ -4,27 +4,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentLinksResourceCompletionBehaviorConfirmationPage {const PaymentLinksResourceCompletionBehaviorConfirmationPage({this.customMessage = const Omittable.absent()});
 
-factory PaymentLinksResourceCompletionBehaviorConfirmationPage.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCompletionBehaviorConfirmationPage(
+factory PaymentLinksResourceCompletionBehaviorConfirmationPage.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceCompletionBehaviorConfirmationPage(
   customMessage: json.containsKey('custom_message') ? Omittable(json['custom_message'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The custom message that is displayed to the customer after the purchase is complete.
 final Omittable<String?> customMessage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customMessage.isPresent) 'custom_message': customMessage.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_message'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'custom_message'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customMessage$ = customMessage.value;
 if (customMessage$ != null) {
   if (customMessage$.runes.length > 5000) { errors.add('customMessage: length must be <= 5000'); }
 }
-return errors; } 
-PaymentLinksResourceCompletionBehaviorConfirmationPage copyWith({Omittable<String?>? customMessage}) { return PaymentLinksResourceCompletionBehaviorConfirmationPage(
+return errors;}
+PaymentLinksResourceCompletionBehaviorConfirmationPage copyWith({Omittable<String?>? customMessage}) {return PaymentLinksResourceCompletionBehaviorConfirmationPage(
   customMessage: customMessage ?? this.customMessage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCompletionBehaviorConfirmationPage &&
           customMessage == other.customMessage;
@@ -33,4 +33,4 @@ PaymentLinksResourceCompletionBehaviorConfirmationPage copyWith({Omittable<Strin
 
 @override String toString() => 'PaymentLinksResourceCompletionBehaviorConfirmationPage(customMessage: $customMessage)';
 
- }
+}

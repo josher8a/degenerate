@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The account's display preference.
 sealed class Preference {const Preference();
 
-factory Preference.fromJson(String json) { return switch (json) {
+factory Preference.fromJson(String json) {return switch (json) {
   'none' => none,
   'off' => off,
   'on' => $on,
   _ => Preference$Unknown(json),
-}; }
+};}
 
 static const Preference none = Preference$none._();
 
@@ -20,33 +20,33 @@ static const Preference $on = Preference$$on._();
 static const List<Preference> values = [none, off, $on];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'off' => 'off',
   'on' => r'$on',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Preference$Unknown; } 
+bool get isUnknown {return this is Preference$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) {return switch (this) {
       Preference$none() => none(),
       Preference$off() => off(),
       Preference$$on() => $on(),
       Preference$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) {return switch (this) {
       Preference$none() => none != null ? none() : orElse(value),
       Preference$off() => off != null ? off() : orElse(value),
       Preference$$on() => $on != null ? $on() : orElse(value),
       Preference$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Preference($value)';
 
- }
+}
 @immutable final class Preference$none extends Preference {const Preference$none._();
 
 @override String get value => 'none';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class Preference$off extends Preference {const Preference$off._();
 
 @override String get value => 'off';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class Preference$$on extends Preference {const Preference$$on._();
 
 @override String get value => 'on';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class Preference$Unknown extends Preference {const Preference$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OutputsValue {const OutputsValue({required this.elementId});
 
-factory OutputsValue.fromJson(Map<String, dynamic> json) { return OutputsValue(
+factory OutputsValue.fromJson(Map<String, dynamic> json) {return OutputsValue(
   elementId: json['elementId'] as String,
-); }
+);}
 
 final String elementId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'elementId': elementId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
-OutputsValue copyWith({String? elementId}) { return OutputsValue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('elementId') && json['elementId'] is String;}
+OutputsValue copyWith({String? elementId}) {return OutputsValue(
   elementId: elementId ?? this.elementId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OutputsValue &&
           elementId == other.elementId;
@@ -24,4 +24,4 @@ OutputsValue copyWith({String? elementId}) { return OutputsValue(
 
 @override String toString() => 'OutputsValue(elementId: $elementId)';
 
- }
+}

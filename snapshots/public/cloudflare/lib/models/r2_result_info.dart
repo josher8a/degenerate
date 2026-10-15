@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2ResultInfo {const R2ResultInfo({this.cursor, this.perPage, });
 
-factory R2ResultInfo.fromJson(Map<String, dynamic> json) { return R2ResultInfo(
+factory R2ResultInfo.fromJson(Map<String, dynamic> json) {return R2ResultInfo(
   cursor: json['cursor'] as String?,
   perPage: json['per_page'] != null ? (json['per_page'] as num).toDouble() : null,
-); }
+);}
 
 /// A continuation token that should be used to fetch the next page of results.
 /// 
@@ -18,15 +18,15 @@ final String? cursor;
 /// Example: `20`
 final double? perPage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cursor': ?cursor,
   'per_page': ?perPage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cursor', 'per_page'}.contains(key)); } 
-R2ResultInfo copyWith({String? Function()? cursor, double? Function()? perPage, }) { return R2ResultInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'cursor', 'per_page'}.contains(key));}
+R2ResultInfo copyWith({String? Function()? cursor, double? Function()? perPage, }) {return R2ResultInfo(
   cursor: cursor != null ? cursor() : this.cursor,
   perPage: perPage != null ? perPage() : this.perPage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2ResultInfo &&
           cursor == other.cursor &&
@@ -36,4 +36,4 @@ R2ResultInfo copyWith({String? Function()? cursor, double? Function()? perPage, 
 
 @override String toString() => 'R2ResultInfo(cursor: $cursor, perPage: $perPage)';
 
- }
+}

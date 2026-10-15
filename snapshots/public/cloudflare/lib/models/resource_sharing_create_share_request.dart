@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_recipient_request.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_resource_request.dart';import 'package:pub_cloudflare/models/resource_sharing_share_name.dart';@immutable final class ResourceSharingCreateShareRequest {const ResourceSharingCreateShareRequest({required this.name, required this.recipients, required this.resources, });
 
-factory ResourceSharingCreateShareRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingCreateShareRequest(
+factory ResourceSharingCreateShareRequest.fromJson(Map<String, dynamic> json) {return ResourceSharingCreateShareRequest(
   name: ResourceSharingShareName.fromJson(json['name'] as String),
   recipients: (json['recipients'] as List<dynamic>).map((e) => ResourceSharingCreateShareRecipientRequest.fromJson(e as Map<String, dynamic>)).toList(),
   resources: (json['resources'] as List<dynamic>).map((e) => ResourceSharingCreateShareResourceRequest.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final ResourceSharingShareName name;
 
@@ -15,19 +15,19 @@ final List<ResourceSharingCreateShareRecipientRequest> recipients;
 
 final List<ResourceSharingCreateShareResourceRequest> resources;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name.toJson(),
   'recipients': recipients.map((e) => e.toJson()).toList(),
   'resources': resources.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
       json.containsKey('recipients') &&
-      json.containsKey('resources'); } 
-ResourceSharingCreateShareRequest copyWith({ResourceSharingShareName? name, List<ResourceSharingCreateShareRecipientRequest>? recipients, List<ResourceSharingCreateShareResourceRequest>? resources, }) { return ResourceSharingCreateShareRequest(
+      json.containsKey('resources');}
+ResourceSharingCreateShareRequest copyWith({ResourceSharingShareName? name, List<ResourceSharingCreateShareRecipientRequest>? recipients, List<ResourceSharingCreateShareResourceRequest>? resources, }) {return ResourceSharingCreateShareRequest(
   name: name ?? this.name,
   recipients: recipients ?? this.recipients,
   resources: resources ?? this.resources,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingCreateShareRequest &&
           name == other.name &&
@@ -38,4 +38,4 @@ ResourceSharingCreateShareRequest copyWith({ResourceSharingShareName? name, List
 
 @override String toString() => 'ResourceSharingCreateShareRequest(name: $name, recipients: $recipients, resources: $resources)';
 
- }
+}

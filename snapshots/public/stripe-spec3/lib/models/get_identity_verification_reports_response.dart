@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';/// 
 @immutable final class GetIdentityVerificationReportsResponse {const GetIdentityVerificationReportsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
-factory GetIdentityVerificationReportsResponse.fromJson(Map<String, dynamic> json) { return GetIdentityVerificationReportsResponse(
+factory GetIdentityVerificationReportsResponse.fromJson(Map<String, dynamic> json) {return GetIdentityVerificationReportsResponse(
   data: (json['data'] as List<dynamic>).map((e) => IdentityVerificationReport.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 final List<IdentityVerificationReport> data;
 
@@ -22,27 +22,27 @@ final GetAccountsAccountCapabilitiesResponseObject object;
 /// The URL where this list can be accessed.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'has_more': hasMore,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 if (!RegExp('^/v1/identity/verification_reports').hasMatch(url)) { errors.add('url: must match pattern ^/v1/identity/verification_reports'); }
-return errors; } 
-GetIdentityVerificationReportsResponse copyWith({List<IdentityVerificationReport>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetIdentityVerificationReportsResponse(
+return errors;}
+GetIdentityVerificationReportsResponse copyWith({List<IdentityVerificationReport>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) {return GetIdentityVerificationReportsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetIdentityVerificationReportsResponse &&
           listEquals(data, other.data) &&
@@ -54,4 +54,4 @@ GetIdentityVerificationReportsResponse copyWith({List<IdentityVerificationReport
 
 @override String toString() => 'GetIdentityVerificationReportsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';
 
- }
+}

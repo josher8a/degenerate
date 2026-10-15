@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_triggering_actor.dart';sealed class WorkflowRunConclusion {const WorkflowRunConclusion();
 
-factory WorkflowRunConclusion.fromJson(String json) { return switch (json) {
+factory WorkflowRunConclusion.fromJson(String json) {return switch (json) {
   'success' => success,
   'failure' => failure,
   'neutral' => neutral,
@@ -14,7 +14,7 @@ factory WorkflowRunConclusion.fromJson(String json) { return switch (json) {
   'null' => $null,
   'startup_failure' => startupFailure,
   _ => WorkflowRunConclusion$Unknown(json),
-}; }
+};}
 
 static const WorkflowRunConclusion success = WorkflowRunConclusion$success._();
 
@@ -37,9 +37,9 @@ static const WorkflowRunConclusion startupFailure = WorkflowRunConclusion$startu
 static const List<WorkflowRunConclusion> values = [success, failure, neutral, cancelled, timedOut, actionRequired, stale, $null, startupFailure];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'success' => 'success',
   'failure' => 'failure',
   'neutral' => 'neutral',
@@ -50,11 +50,11 @@ String get name { return switch (value) {
   'null' => r'$null',
   'startup_failure' => 'startupFailure',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkflowRunConclusion$Unknown; } 
+bool get isUnknown {return this is WorkflowRunConclusion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() timedOut, required W Function() actionRequired, required W Function() stale, required W Function() $null, required W Function() startupFailure, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() timedOut, required W Function() actionRequired, required W Function() stale, required W Function() $null, required W Function() startupFailure, required W Function(String value) $unknown, }) {return switch (this) {
       WorkflowRunConclusion$success() => success(),
       WorkflowRunConclusion$failure() => failure(),
       WorkflowRunConclusion$neutral() => neutral(),
@@ -65,9 +65,9 @@ W when<W>({required W Function() success, required W Function() failure, require
       WorkflowRunConclusion$$null() => $null(),
       WorkflowRunConclusion$startupFailure() => startupFailure(),
       WorkflowRunConclusion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? timedOut, W Function()? actionRequired, W Function()? stale, W Function()? $null, W Function()? startupFailure, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? timedOut, W Function()? actionRequired, W Function()? stale, W Function()? $null, W Function()? startupFailure, W Function(String value)? $unknown, }) {return switch (this) {
       WorkflowRunConclusion$success() => success != null ? success() : orElse(value),
       WorkflowRunConclusion$failure() => failure != null ? failure() : orElse(value),
       WorkflowRunConclusion$neutral() => neutral != null ? neutral() : orElse(value),
@@ -78,10 +78,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
       WorkflowRunConclusion$$null() => $null != null ? $null() : orElse(value),
       WorkflowRunConclusion$startupFailure() => startupFailure != null ? startupFailure() : orElse(value),
       WorkflowRunConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkflowRunConclusion($value)';
 
- }
+}
 @immutable final class WorkflowRunConclusion$success extends WorkflowRunConclusion {const WorkflowRunConclusion$success._();
 
 @override String get value => 'success';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'success'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$failure extends WorkflowRunConclusion {const WorkflowRunConclusion$failure._();
 
 @override String get value => 'failure';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'failure'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$neutral extends WorkflowRunConclusion {const WorkflowRunConclusion$neutral._();
 
 @override String get value => 'neutral';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'neutral'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$cancelled extends WorkflowRunConclusion {const WorkflowRunConclusion$cancelled._();
 
 @override String get value => 'cancelled';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$timedOut extends WorkflowRunConclusion {const WorkflowRunConclusion$timedOut._();
 
 @override String get value => 'timed_out';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'timed_out'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$actionRequired extends WorkflowRunConclusion {const WorkflowRunConclusion$actionRequired._();
 
 @override String get value => 'action_required';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'action_required'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$stale extends WorkflowRunConclusion {const WorkflowRunConclusion$stale._();
 
 @override String get value => 'stale';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'stale'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$$null extends WorkflowRunConclusion {const WorkflowRunConclusion$$null._();
 
 @override String get value => 'null';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$startupFailure extends WorkflowRunConclusion {const WorkflowRunConclusion$startupFailure._();
 
 @override String get value => 'startup_failure';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => 'startup_failure'.hashCode;
 
- }
+}
 @immutable final class WorkflowRunConclusion$Unknown extends WorkflowRunConclusion {const WorkflowRunConclusion$Unknown(this.value);
 
 @override final String value;
@@ -172,10 +172,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? success,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookDeploymentStatusCreatedWorkflowRun {const WebhookDeploymentStatusCreatedWorkflowRun({required this.status, required this.checkSuiteId, required this.checkSuiteNodeId, required this.pullRequests, required this.conclusion, required this.createdAt, required this.displayTitle, required this.event, required this.headBranch, required this.actor, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.path, required this.triggeringActor, required this.runStartedAt, required this.url, required this.updatedAt, required this.workflowId, required this.runNumber, required this.runAttempt, this.referencedWorkflows = const Omittable.absent(), this.repository, this.rerunUrl, this.workflowUrl, this.previousAttemptUrl = const Omittable.absent(), this.logsUrl, this.headRepository, this.jobsUrl, this.headCommit = const Omittable.absent(), this.cancelUrl, this.artifactsUrl, this.checkSuiteUrl, });
 
-factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedWorkflowRun(
+factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(Map<String, dynamic> json) {return WebhookDeploymentStatusCreatedWorkflowRun(
   actor: json['actor'] != null ? WebhookDeploymentCreatedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
   artifactsUrl: json['artifacts_url'] as String?,
   cancelUrl: json['cancel_url'] as String?,
@@ -211,7 +211,7 @@ factory WebhookDeploymentStatusCreatedWorkflowRun.fromJson(Map<String, dynamic> 
   url: Uri.parse(json['url'] as String),
   workflowId: (json['workflow_id'] as num).toInt(),
   workflowUrl: json['workflow_url'] as String?,
-); }
+);}
 
 final WebhookDeploymentCreatedWorkflowRunActor? actor;
 
@@ -283,7 +283,7 @@ final int workflowId;
 
 final String? workflowUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actor': actor?.toJson(),
   'artifacts_url': ?artifactsUrl,
   'cancel_url': ?cancelUrl,
@@ -319,8 +319,8 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'workflow_id': workflowId,
   'workflow_url': ?workflowUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('actor') &&
       json.containsKey('check_suite_id') && json['check_suite_id'] is num &&
       json.containsKey('check_suite_node_id') && json['check_suite_node_id'] is String &&
       json.containsKey('conclusion') &&
@@ -342,8 +342,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('triggering_actor') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('workflow_id') && json['workflow_id'] is num; } 
-WebhookDeploymentStatusCreatedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflowRunActor? Function()? actor, String? Function()? artifactsUrl, String? Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String? Function()? checkSuiteUrl, WorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? displayTitle, String? event, String? headBranch, Omittable<dynamic>? headCommit, WebhookDeploymentCreatedWorkflowRunHeadRepository? Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String? Function()? jobsUrl, String? Function()? logsUrl, String? name, String? nodeId, String? path, Omittable<dynamic>? previousAttemptUrl, List<CheckSuitePullRequests>? pullRequests, Omittable<List<ReferencedWorkflows>?>? referencedWorkflows, WebhookDeploymentCreatedWorkflowRunRepository? Function()? repository, String? Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, CheckRunStatus? status, WebhookDeploymentCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String? Function()? workflowUrl, }) { return WebhookDeploymentStatusCreatedWorkflowRun(
+      json.containsKey('workflow_id') && json['workflow_id'] is num;}
+WebhookDeploymentStatusCreatedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflowRunActor? Function()? actor, String? Function()? artifactsUrl, String? Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String? Function()? checkSuiteUrl, WorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? displayTitle, String? event, String? headBranch, Omittable<dynamic>? headCommit, WebhookDeploymentCreatedWorkflowRunHeadRepository? Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String? Function()? jobsUrl, String? Function()? logsUrl, String? name, String? nodeId, String? path, Omittable<dynamic>? previousAttemptUrl, List<CheckSuitePullRequests>? pullRequests, Omittable<List<ReferencedWorkflows>?>? referencedWorkflows, WebhookDeploymentCreatedWorkflowRunRepository? Function()? repository, String? Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, CheckRunStatus? status, WebhookDeploymentCreatedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String? Function()? workflowUrl, }) {return WebhookDeploymentStatusCreatedWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl != null ? artifactsUrl() : this.artifactsUrl,
   cancelUrl: cancelUrl != null ? cancelUrl() : this.cancelUrl,
@@ -379,7 +379,7 @@ WebhookDeploymentStatusCreatedWorkflowRun copyWith({WebhookDeploymentCreatedWork
   url: url ?? this.url,
   workflowId: workflowId ?? this.workflowId,
   workflowUrl: workflowUrl != null ? workflowUrl() : this.workflowUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentStatusCreatedWorkflowRun &&
           actor == other.actor &&
@@ -423,4 +423,4 @@ WebhookDeploymentStatusCreatedWorkflowRun copyWith({WebhookDeploymentCreatedWork
 
 @override String toString() => 'WebhookDeploymentStatusCreatedWorkflowRun(\n  actor: $actor,\n  artifactsUrl: $artifactsUrl,\n  cancelUrl: $cancelUrl,\n  checkSuiteId: $checkSuiteId,\n  checkSuiteNodeId: $checkSuiteNodeId,\n  checkSuiteUrl: $checkSuiteUrl,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  displayTitle: $displayTitle,\n  event: $event,\n  headBranch: $headBranch,\n  headCommit: $headCommit,\n  headRepository: $headRepository,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  jobsUrl: $jobsUrl,\n  logsUrl: $logsUrl,\n  name: $name,\n  nodeId: $nodeId,\n  path: $path,\n  previousAttemptUrl: $previousAttemptUrl,\n  pullRequests: $pullRequests,\n  referencedWorkflows: $referencedWorkflows,\n  repository: $repository,\n  rerunUrl: $rerunUrl,\n  runAttempt: $runAttempt,\n  runNumber: $runNumber,\n  runStartedAt: $runStartedAt,\n  status: $status,\n  triggeringActor: $triggeringActor,\n  updatedAt: $updatedAt,\n  url: $url,\n  workflowId: $workflowId,\n  workflowUrl: $workflowUrl,\n)';
 
- }
+}

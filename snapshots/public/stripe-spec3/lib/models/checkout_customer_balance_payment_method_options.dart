@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_customer_balance_bank_transfer_payment_method_options.dart';import 'package:pub_stripe_spec3/models/checkout_customer_balance_payment_method_options/checkout_customer_balance_payment_method_options_funding_type.dart';/// 
 @immutable final class CheckoutCustomerBalancePaymentMethodOptions {const CheckoutCustomerBalancePaymentMethodOptions({this.bankTransfer, this.fundingType = const Omittable.absent(), this.setupFutureUsage, });
 
-factory CheckoutCustomerBalancePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutCustomerBalancePaymentMethodOptions(
+factory CheckoutCustomerBalancePaymentMethodOptions.fromJson(Map<String, dynamic> json) {return CheckoutCustomerBalancePaymentMethodOptions(
   bankTransfer: json['bank_transfer'] != null ? CheckoutCustomerBalanceBankTransferPaymentMethodOptions.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
   fundingType: json.containsKey('funding_type') ? Omittable(json['funding_type'] != null ? CheckoutCustomerBalancePaymentMethodOptionsFundingType.fromJson(json['funding_type'] as String) : null) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 final CheckoutCustomerBalanceBankTransferPaymentMethodOptions? bankTransfer;
 
@@ -24,17 +24,17 @@ final Omittable<CheckoutCustomerBalancePaymentMethodOptionsFundingType?> funding
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankTransfer != null) 'bank_transfer': bankTransfer?.toJson(),
   if (fundingType.isPresent) 'funding_type': fundingType.value?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type', 'setup_future_usage'}.contains(key)); } 
-CheckoutCustomerBalancePaymentMethodOptions copyWith({CheckoutCustomerBalanceBankTransferPaymentMethodOptions? Function()? bankTransfer, Omittable<CheckoutCustomerBalancePaymentMethodOptionsFundingType?>? fundingType, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutCustomerBalancePaymentMethodOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_transfer', 'funding_type', 'setup_future_usage'}.contains(key));}
+CheckoutCustomerBalancePaymentMethodOptions copyWith({CheckoutCustomerBalanceBankTransferPaymentMethodOptions? Function()? bankTransfer, Omittable<CheckoutCustomerBalancePaymentMethodOptionsFundingType?>? fundingType, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return CheckoutCustomerBalancePaymentMethodOptions(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType ?? this.fundingType,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutCustomerBalancePaymentMethodOptions &&
           bankTransfer == other.bankTransfer &&
@@ -45,4 +45,4 @@ CheckoutCustomerBalancePaymentMethodOptions copyWith({CheckoutCustomerBalanceBan
 
 @override String toString() => 'CheckoutCustomerBalancePaymentMethodOptions(bankTransfer: $bankTransfer, fundingType: $fundingType, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

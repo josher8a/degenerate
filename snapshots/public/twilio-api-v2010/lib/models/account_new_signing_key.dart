@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountNewSigningKey {const AccountNewSigningKey({this.sid = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.secret = const Omittable.absent(), });
 
-factory AccountNewSigningKey.fromJson(Map<String, dynamic> json) { return AccountNewSigningKey(
+factory AccountNewSigningKey.fromJson(Map<String, dynamic> json) {return AccountNewSigningKey(
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
   secret: json.containsKey('secret') ? Omittable(json['secret'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique string that that we created to identify the NewSigningKey resource.
 final Omittable<String?> sid;
@@ -26,30 +26,30 @@ final Omittable<String?> dateUpdated;
 /// The secret your application uses to sign Access Tokens and to authenticate to the REST API (you will use this as the basic-auth `password`).  **Note that for security reasons, this field is ONLY returned when the API Key is first created.**
 final Omittable<String?> secret;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (sid.isPresent) 'sid': sid.value,
   if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
   if (secret.isPresent) 'secret': secret.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'friendly_name', 'date_created', 'date_updated', 'secret'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sid', 'friendly_name', 'date_created', 'date_updated', 'secret'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final sid$ = sid.value;
 if (sid$ != null) {
   if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^SK[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^SK[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountNewSigningKey copyWith({Omittable<String?>? sid, Omittable<String?>? friendlyName, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? secret, }) { return AccountNewSigningKey(
+return errors;}
+AccountNewSigningKey copyWith({Omittable<String?>? sid, Omittable<String?>? friendlyName, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? secret, }) {return AccountNewSigningKey(
   sid: sid ?? this.sid,
   friendlyName: friendlyName ?? this.friendlyName,
   dateCreated: dateCreated ?? this.dateCreated,
   dateUpdated: dateUpdated ?? this.dateUpdated,
   secret: secret ?? this.secret,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountNewSigningKey &&
           sid == other.sid &&
@@ -62,4 +62,4 @@ AccountNewSigningKey copyWith({Omittable<String?>? sid, Omittable<String?>? frie
 
 @override String toString() => 'AccountNewSigningKey(sid: $sid, friendlyName: $friendlyName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, secret: $secret)';
 
- }
+}

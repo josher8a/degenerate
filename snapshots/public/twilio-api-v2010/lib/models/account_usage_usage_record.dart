@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountUsageUsageRecord {const AccountUsageUsageRecord({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.asOf = const Omittable.absent(), this.category = const Omittable.absent(), this.count = const Omittable.absent(), this.countUnit = const Omittable.absent(), this.description = const Omittable.absent(), this.endDate = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.startDate = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), this.uri = const Omittable.absent(), this.usage = const Omittable.absent(), this.usageUnit = const Omittable.absent(), });
 
-factory AccountUsageUsageRecord.fromJson(Map<String, dynamic> json) { return AccountUsageUsageRecord(
+factory AccountUsageUsageRecord.fromJson(Map<String, dynamic> json) {return AccountUsageUsageRecord(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   asOf: json.containsKey('as_of') ? Omittable(json['as_of'] as String?) : const Omittable.absent(),
@@ -19,7 +19,7 @@ factory AccountUsageUsageRecord.fromJson(Map<String, dynamic> json) { return Acc
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
   usage: json.containsKey('usage') ? Omittable(json['usage'] as String?) : const Omittable.absent(),
   usageUnit: json.containsKey('usage_unit') ? Omittable(json['usage_unit'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that accrued the usage.
 final Omittable<String?> accountSid;
@@ -66,7 +66,7 @@ final Omittable<String?> usage;
 /// The units in which `usage` is measured, such as `minutes` for calls or `messages` for SMS.
 final Omittable<String?> usageUnit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (asOf.isPresent) 'as_of': asOf.value,
@@ -82,18 +82,18 @@ Map<String, dynamic> toJson() { return {
   if (uri.isPresent) 'uri': uri.value,
   if (usage.isPresent) 'usage': usage.value,
   if (usageUnit.isPresent) 'usage_unit': usageUnit.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'as_of', 'category', 'count', 'count_unit', 'description', 'end_date', 'price', 'price_unit', 'start_date', 'subresource_uris', 'uri', 'usage', 'usage_unit'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'as_of', 'category', 'count', 'count_unit', 'description', 'end_date', 'price', 'price_unit', 'start_date', 'subresource_uris', 'uri', 'usage', 'usage_unit'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
   if (accountSid$.runes.length > 34) { errors.add('accountSid: length must be <= 34'); }
   if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) { errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountUsageUsageRecord copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? asOf, Omittable<String?>? category, Omittable<String?>? count, Omittable<String?>? countUnit, Omittable<String?>? description, Omittable<String?>? endDate, Omittable<double?>? price, Omittable<String?>? priceUnit, Omittable<String?>? startDate, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<String?>? uri, Omittable<String?>? usage, Omittable<String?>? usageUnit, }) { return AccountUsageUsageRecord(
+return errors;}
+AccountUsageUsageRecord copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? asOf, Omittable<String?>? category, Omittable<String?>? count, Omittable<String?>? countUnit, Omittable<String?>? description, Omittable<String?>? endDate, Omittable<double?>? price, Omittable<String?>? priceUnit, Omittable<String?>? startDate, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<String?>? uri, Omittable<String?>? usage, Omittable<String?>? usageUnit, }) {return AccountUsageUsageRecord(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   asOf: asOf ?? this.asOf,
@@ -109,7 +109,7 @@ AccountUsageUsageRecord copyWith({Omittable<String?>? accountSid, Omittable<Stri
   uri: uri ?? this.uri,
   usage: usage ?? this.usage,
   usageUnit: usageUnit ?? this.usageUnit,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUsageUsageRecord &&
           accountSid == other.accountSid &&
@@ -132,4 +132,4 @@ AccountUsageUsageRecord copyWith({Omittable<String?>? accountSid, Omittable<Stri
 
 @override String toString() => 'AccountUsageUsageRecord(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  asOf: $asOf,\n  category: $category,\n  count: $count,\n  countUnit: $countUnit,\n  description: $description,\n  endDate: $endDate,\n  price: $price,\n  priceUnit: $priceUnit,\n  startDate: $startDate,\n  subresourceUris: $subresourceUris,\n  uri: $uri,\n  usage: $usage,\n  usageUnit: $usageUnit,\n)';
 
- }
+}

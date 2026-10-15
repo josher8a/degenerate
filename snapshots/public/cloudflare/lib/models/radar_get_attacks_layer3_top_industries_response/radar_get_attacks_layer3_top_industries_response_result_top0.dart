@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TopIndustriesResponseResultTop0 {const RadarGetAttacksLayer3TopIndustriesResponseResultTop0({required this.name, required this.value, });
 
-factory RadarGetAttacksLayer3TopIndustriesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopIndustriesResponseResultTop0(
+factory RadarGetAttacksLayer3TopIndustriesResponseResultTop0.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TopIndustriesResponseResultTop0(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// Example: `'Computer Software'`
 final String name;
@@ -14,16 +14,16 @@ final String name;
 /// Example: `'65'`
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-RadarGetAttacksLayer3TopIndustriesResponseResultTop0 copyWith({String? name, String? value, }) { return RadarGetAttacksLayer3TopIndustriesResponseResultTop0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+RadarGetAttacksLayer3TopIndustriesResponseResultTop0 copyWith({String? name, String? value, }) {return RadarGetAttacksLayer3TopIndustriesResponseResultTop0(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TopIndustriesResponseResultTop0 &&
           name == other.name &&
@@ -33,4 +33,4 @@ RadarGetAttacksLayer3TopIndustriesResponseResultTop0 copyWith({String? name, Str
 
 @override String toString() => 'RadarGetAttacksLayer3TopIndustriesResponseResultTop0(name: $name, value: $value)';
 
- }
+}

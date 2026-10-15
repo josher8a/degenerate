@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_add_invoice_items_period_end.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_add_invoice_items_period_start.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod {const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod({required this.end, required this.start, });
 
-factory PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod(
+factory PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) {return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod(
   end: PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd.fromJson(json['end'] as Map<String, dynamic>),
   start: PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart.fromJson(json['start'] as Map<String, dynamic>),
-); }
+);}
 
 final PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd end;
 
 final PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart start;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end': end.toJson(),
   'start': start.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') &&
-      json.containsKey('start'); } 
-PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod copyWith({PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd? end, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart? start, }) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end') &&
+      json.containsKey('start');}
+PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod copyWith({PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd? end, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart? start, }) {return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod(
   end: end ?? this.end,
   start: start ?? this.start,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod &&
           end == other.end &&
@@ -31,4 +31,4 @@ PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod copyWith({PostCus
 
 @override String toString() => 'PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod(end: $end, start: $start)';
 
- }
+}

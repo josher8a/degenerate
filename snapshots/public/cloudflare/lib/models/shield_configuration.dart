@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_auth_id_characteristics2.dart';@immutable final class ShieldConfiguration {const ShieldConfiguration({required this.authIdCharacteristics});
 
-factory ShieldConfiguration.fromJson(Map<String, dynamic> json) { return ShieldConfiguration(
+factory ShieldConfiguration.fromJson(Map<String, dynamic> json) {return ShieldConfiguration(
   authIdCharacteristics: (json['auth_id_characteristics'] as List<dynamic>).map(ShieldAuthIdCharacteristics2.fromJson).toList(),
-); }
+);}
 
 final List<ShieldAuthIdCharacteristics2> authIdCharacteristics;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'auth_id_characteristics': authIdCharacteristics.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_id_characteristics'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('auth_id_characteristics');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (authIdCharacteristics.length > 10) { errors.add('authIdCharacteristics: must have <= 10 items'); }
 if (authIdCharacteristics.toSet().length != authIdCharacteristics.length) { errors.add('authIdCharacteristics: items must be unique'); }
-return errors; } 
-ShieldConfiguration copyWith({List<ShieldAuthIdCharacteristics2>? authIdCharacteristics}) { return ShieldConfiguration(
+return errors;}
+ShieldConfiguration copyWith({List<ShieldAuthIdCharacteristics2>? authIdCharacteristics}) {return ShieldConfiguration(
   authIdCharacteristics: authIdCharacteristics ?? this.authIdCharacteristics,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldConfiguration &&
           listEquals(authIdCharacteristics, other.authIdCharacteristics);
@@ -29,4 +29,4 @@ ShieldConfiguration copyWith({List<ShieldAuthIdCharacteristics2>? authIdCharacte
 
 @override String toString() => 'ShieldConfiguration(authIdCharacteristics: $authIdCharacteristics)';
 
- }
+}

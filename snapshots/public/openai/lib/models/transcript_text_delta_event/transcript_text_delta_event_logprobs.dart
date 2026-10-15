@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TranscriptTextDeltaEventLogprobs {const TranscriptTextDeltaEventLogprobs({this.token, this.logprob, this.bytes, });
 
-factory TranscriptTextDeltaEventLogprobs.fromJson(Map<String, dynamic> json) { return TranscriptTextDeltaEventLogprobs(
+factory TranscriptTextDeltaEventLogprobs.fromJson(Map<String, dynamic> json) {return TranscriptTextDeltaEventLogprobs(
   token: json['token'] as String?,
   logprob: json['logprob'] != null ? (json['logprob'] as num).toDouble() : null,
   bytes: (json['bytes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The token that was used to generate the log probability.
 /// 
@@ -21,17 +21,17 @@ final double? logprob;
 /// 
 final List<int>? bytes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token': ?token,
   'logprob': ?logprob,
   'bytes': ?bytes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token', 'logprob', 'bytes'}.contains(key)); } 
-TranscriptTextDeltaEventLogprobs copyWith({String? Function()? token, double? Function()? logprob, List<int>? Function()? bytes, }) { return TranscriptTextDeltaEventLogprobs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'token', 'logprob', 'bytes'}.contains(key));}
+TranscriptTextDeltaEventLogprobs copyWith({String? Function()? token, double? Function()? logprob, List<int>? Function()? bytes, }) {return TranscriptTextDeltaEventLogprobs(
   token: token != null ? token() : this.token,
   logprob: logprob != null ? logprob() : this.logprob,
   bytes: bytes != null ? bytes() : this.bytes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextDeltaEventLogprobs &&
           token == other.token &&
@@ -42,4 +42,4 @@ TranscriptTextDeltaEventLogprobs copyWith({String? Function()? token, double? Fu
 
 @override String toString() => 'TranscriptTextDeltaEventLogprobs(token: $token, logprob: $logprob, bytes: $bytes)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_shipping_param/amount_details_shipping_param_amount.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance.dart';sealed class MandateInterval {const MandateInterval();
 
-factory MandateInterval.fromJson(String json) { return switch (json) {
+factory MandateInterval.fromJson(String json) {return switch (json) {
   'one_time' => oneTime,
   'scheduled' => scheduled,
   'variable' => variable,
   _ => MandateInterval$Unknown(json),
-}; }
+};}
 
 static const MandateInterval oneTime = MandateInterval$oneTime._();
 
@@ -19,33 +19,33 @@ static const MandateInterval variable = MandateInterval$variable._();
 static const List<MandateInterval> values = [oneTime, scheduled, variable];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'one_time' => 'oneTime',
   'scheduled' => 'scheduled',
   'variable' => 'variable',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MandateInterval$Unknown; } 
+bool get isUnknown {return this is MandateInterval$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() oneTime, required W Function() scheduled, required W Function() variable, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() oneTime, required W Function() scheduled, required W Function() variable, required W Function(String value) $unknown, }) {return switch (this) {
       MandateInterval$oneTime() => oneTime(),
       MandateInterval$scheduled() => scheduled(),
       MandateInterval$variable() => variable(),
       MandateInterval$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? scheduled, W Function()? variable, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? scheduled, W Function()? variable, W Function(String value)? $unknown, }) {return switch (this) {
       MandateInterval$oneTime() => oneTime != null ? oneTime() : orElse(value),
       MandateInterval$scheduled() => scheduled != null ? scheduled() : orElse(value),
       MandateInterval$variable() => variable != null ? variable() : orElse(value),
       MandateInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MandateInterval($value)';
 
- }
+}
 @immutable final class MandateInterval$oneTime extends MandateInterval {const MandateInterval$oneTime._();
 
 @override String get value => 'one_time';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => 'one_time'.hashCode;
 
- }
+}
 @immutable final class MandateInterval$scheduled extends MandateInterval {const MandateInterval$scheduled._();
 
 @override String get value => 'scheduled';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => 'scheduled'.hashCode;
 
- }
+}
 @immutable final class MandateInterval$variable extends MandateInterval {const MandateInterval$variable._();
 
 @override String get value => 'variable';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => 'variable'.hashCode;
 
- }
+}
 @immutable final class MandateInterval$Unknown extends MandateInterval {const MandateInterval$Unknown(this.value);
 
 @override final String value;
@@ -82,17 +82,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class NotificationMethod {const NotificationMethod();
 
-factory NotificationMethod.fromJson(String json) { return switch (json) {
+factory NotificationMethod.fromJson(String json) {return switch (json) {
   'deprecated_none' => deprecatedNone,
   'email' => email,
   'manual' => manual,
   'none' => none,
   'stripe_email' => stripeEmail,
   _ => NotificationMethod$Unknown(json),
-}; }
+};}
 
 static const NotificationMethod deprecatedNone = NotificationMethod$deprecatedNone._();
 
@@ -107,39 +107,39 @@ static const NotificationMethod stripeEmail = NotificationMethod$stripeEmail._()
 static const List<NotificationMethod> values = [deprecatedNone, email, manual, none, stripeEmail];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'deprecated_none' => 'deprecatedNone',
   'email' => 'email',
   'manual' => 'manual',
   'none' => 'none',
   'stripe_email' => 'stripeEmail',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NotificationMethod$Unknown; } 
+bool get isUnknown {return this is NotificationMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() deprecatedNone, required W Function() email, required W Function() manual, required W Function() none, required W Function() stripeEmail, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() deprecatedNone, required W Function() email, required W Function() manual, required W Function() none, required W Function() stripeEmail, required W Function(String value) $unknown, }) {return switch (this) {
       NotificationMethod$deprecatedNone() => deprecatedNone(),
       NotificationMethod$email() => email(),
       NotificationMethod$manual() => manual(),
       NotificationMethod$none() => none(),
       NotificationMethod$stripeEmail() => stripeEmail(),
       NotificationMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecatedNone, W Function()? email, W Function()? manual, W Function()? none, W Function()? stripeEmail, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecatedNone, W Function()? email, W Function()? manual, W Function()? none, W Function()? stripeEmail, W Function(String value)? $unknown, }) {return switch (this) {
       NotificationMethod$deprecatedNone() => deprecatedNone != null ? deprecatedNone() : orElse(value),
       NotificationMethod$email() => email != null ? email() : orElse(value),
       NotificationMethod$manual() => manual != null ? manual() : orElse(value),
       NotificationMethod$none() => none != null ? none() : orElse(value),
       NotificationMethod$stripeEmail() => stripeEmail != null ? stripeEmail() : orElse(value),
       NotificationMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'NotificationMethod($value)';
 
- }
+}
 @immutable final class NotificationMethod$deprecatedNone extends NotificationMethod {const NotificationMethod$deprecatedNone._();
 
 @override String get value => 'deprecated_none';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecat
 
 @override int get hashCode => 'deprecated_none'.hashCode;
 
- }
+}
 @immutable final class NotificationMethod$email extends NotificationMethod {const NotificationMethod$email._();
 
 @override String get value => 'email';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecat
 
 @override int get hashCode => 'email'.hashCode;
 
- }
+}
 @immutable final class NotificationMethod$manual extends NotificationMethod {const NotificationMethod$manual._();
 
 @override String get value => 'manual';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecat
 
 @override int get hashCode => 'manual'.hashCode;
 
- }
+}
 @immutable final class NotificationMethod$none extends NotificationMethod {const NotificationMethod$none._();
 
 @override String get value => 'none';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecat
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class NotificationMethod$stripeEmail extends NotificationMethod {const NotificationMethod$stripeEmail._();
 
 @override String get value => 'stripe_email';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecat
 
 @override int get hashCode => 'stripe_email'.hashCode;
 
- }
+}
 @immutable final class NotificationMethod$Unknown extends NotificationMethod {const NotificationMethod$Unknown(this.value);
 
 @override final String value;
@@ -194,17 +194,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecat
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Information about a mandate possibility attached to a source object (generally for bank debits) as well as its acceptance status.
 @immutable final class PostSourcesRequestMandate {const PostSourcesRequestMandate({this.acceptance, this.amount, this.currency, this.interval, this.notificationMethod, });
 
-factory PostSourcesRequestMandate.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandate(
+factory PostSourcesRequestMandate.fromJson(Map<String, dynamic> json) {return PostSourcesRequestMandate(
   acceptance: json['acceptance'] != null ? Acceptance.fromJson(json['acceptance'] as Map<String, dynamic>) : null,
   amount: json['amount'] != null ? AmountDetailsShippingParamAmount.fromJson(json['amount']) : null,
   currency: json['currency'] as String?,
   interval: json['interval'] != null ? MandateInterval.fromJson(json['interval'] as String) : null,
   notificationMethod: json['notification_method'] != null ? NotificationMethod.fromJson(json['notification_method'] as String) : null,
-); }
+);}
 
 final Acceptance? acceptance;
 
@@ -216,21 +216,21 @@ final MandateInterval? interval;
 
 final NotificationMethod? notificationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (acceptance != null) 'acceptance': acceptance?.toJson(),
   if (amount != null) 'amount': amount?.toJson(),
   'currency': ?currency,
   if (interval != null) 'interval': interval?.toJson(),
   if (notificationMethod != null) 'notification_method': notificationMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acceptance', 'amount', 'currency', 'interval', 'notification_method'}.contains(key)); } 
-PostSourcesRequestMandate copyWith({Acceptance? Function()? acceptance, AmountDetailsShippingParamAmount? Function()? amount, String? Function()? currency, MandateInterval? Function()? interval, NotificationMethod? Function()? notificationMethod, }) { return PostSourcesRequestMandate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'acceptance', 'amount', 'currency', 'interval', 'notification_method'}.contains(key));}
+PostSourcesRequestMandate copyWith({Acceptance? Function()? acceptance, AmountDetailsShippingParamAmount? Function()? amount, String? Function()? currency, MandateInterval? Function()? interval, NotificationMethod? Function()? notificationMethod, }) {return PostSourcesRequestMandate(
   acceptance: acceptance != null ? acceptance() : this.acceptance,
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   interval: interval != null ? interval() : this.interval,
   notificationMethod: notificationMethod != null ? notificationMethod() : this.notificationMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSourcesRequestMandate &&
           acceptance == other.acceptance &&
@@ -243,4 +243,4 @@ PostSourcesRequestMandate copyWith({Acceptance? Function()? acceptance, AmountDe
 
 @override String toString() => 'PostSourcesRequestMandate(acceptance: $acceptance, amount: $amount, currency: $currency, interval: $interval, notificationMethod: $notificationMethod)';
 
- }
+}

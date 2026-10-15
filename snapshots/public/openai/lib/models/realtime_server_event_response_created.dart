@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeServerEventResponseCreated {const RealtimeServerEventResponseCreated({required this.eventId, required this.type, required this.response, });
 
-factory RealtimeServerEventResponseCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseCreated(
+factory RealtimeServerEventResponseCreated.fromJson(Map<String, dynamic> json) {return RealtimeServerEventResponseCreated(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   response: RealtimeResponse.fromJson(json['response'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -20,19 +20,19 @@ final String type;
 
 final RealtimeResponse response;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'response': response.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('response'); } 
-RealtimeServerEventResponseCreated copyWith({String? eventId, String? type, RealtimeResponse? response, }) { return RealtimeServerEventResponseCreated(
+      json.containsKey('response');}
+RealtimeServerEventResponseCreated copyWith({String? eventId, String? type, RealtimeResponse? response, }) {return RealtimeServerEventResponseCreated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   response: response ?? this.response,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseCreated &&
           eventId == other.eventId &&
@@ -43,4 +43,4 @@ RealtimeServerEventResponseCreated copyWith({String? eventId, String? type, Real
 
 @override String toString() => 'RealtimeServerEventResponseCreated(eventId: $eventId, type: $type, response: $response)';
 
- }
+}

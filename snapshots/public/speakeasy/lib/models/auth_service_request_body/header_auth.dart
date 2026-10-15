@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HeaderAuth {const HeaderAuth({required this.headerName, required this.expectedValue, });
 
-factory HeaderAuth.fromJson(Map<String, dynamic> json) { return HeaderAuth(
+factory HeaderAuth.fromJson(Map<String, dynamic> json) {return HeaderAuth(
   headerName: json['headerName'] as String,
   expectedValue: json['expectedValue'] as String,
-); }
+);}
 
 final String headerName;
 
 final String expectedValue;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'headerName': headerName,
   'expectedValue': expectedValue,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('headerName') && json['headerName'] is String &&
-      json.containsKey('expectedValue') && json['expectedValue'] is String; } 
-HeaderAuth copyWith({String? headerName, String? expectedValue, }) { return HeaderAuth(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('headerName') && json['headerName'] is String &&
+      json.containsKey('expectedValue') && json['expectedValue'] is String;}
+HeaderAuth copyWith({String? headerName, String? expectedValue, }) {return HeaderAuth(
   headerName: headerName ?? this.headerName,
   expectedValue: expectedValue ?? this.expectedValue,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HeaderAuth &&
           headerName == other.headerName &&
@@ -31,4 +31,4 @@ HeaderAuth copyWith({String? headerName, String? expectedValue, }) { return Head
 
 @override String toString() => 'HeaderAuth(headerName: $headerName, expectedValue: $expectedValue)';
 
- }
+}

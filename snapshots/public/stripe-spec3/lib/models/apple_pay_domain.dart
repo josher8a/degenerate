@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/apple_pay_domain/apple_pay_domain_object.dart';/// 
 @immutable final class ApplePayDomain {const ApplePayDomain({required this.created, required this.domainName, required this.id, required this.livemode, required this.object, });
 
-factory ApplePayDomain.fromJson(Map<String, dynamic> json) { return ApplePayDomain(
+factory ApplePayDomain.fromJson(Map<String, dynamic> json) {return ApplePayDomain(
   created: (json['created'] as num).toInt(),
   domainName: json['domain_name'] as String,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ApplePayDomainObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -26,30 +26,30 @@ final bool livemode;
 /// String representing the object's type. Objects of the same type share the same value.
 final ApplePayDomainObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'domain_name': domainName,
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('domain_name') && json['domain_name'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object'); } 
+      json.containsKey('object');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (domainName.runes.length > 5000) { errors.add('domainName: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-ApplePayDomain copyWith({int? created, String? domainName, String? id, bool? livemode, ApplePayDomainObject? object, }) { return ApplePayDomain(
+return errors;}
+ApplePayDomain copyWith({int? created, String? domainName, String? id, bool? livemode, ApplePayDomainObject? object, }) {return ApplePayDomain(
   created: created ?? this.created,
   domainName: domainName ?? this.domainName,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ApplePayDomain &&
           created == other.created &&
@@ -62,4 +62,4 @@ ApplePayDomain copyWith({int? created, String? domainName, String? id, bool? liv
 
 @override String toString() => 'ApplePayDomain(created: $created, domainName: $domainName, id: $id, livemode: $livemode, object: $object)';
 
- }
+}

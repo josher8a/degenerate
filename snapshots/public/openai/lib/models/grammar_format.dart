@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/grammar_format/grammar.dart';import 'package:pub_openai/models/grammar_format/grammar_format_type.dart';/// A grammar defined by the user.
 @immutable final class GrammarFormat {const GrammarFormat({required this.type, required this.grammar, });
 
-factory GrammarFormat.fromJson(Map<String, dynamic> json) { return GrammarFormat(
+factory GrammarFormat.fromJson(Map<String, dynamic> json) {return GrammarFormat(
   type: GrammarFormatType.fromJson(json['type'] as String),
   grammar: Grammar.fromJson(json['grammar'] as Map<String, dynamic>),
-); }
+);}
 
 /// Grammar format. Always `grammar`.
 final GrammarFormatType type;
@@ -15,16 +15,16 @@ final GrammarFormatType type;
 /// Your chosen grammar.
 final Grammar grammar;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'grammar': grammar.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'grammar' &&
-      json.containsKey('grammar'); } 
-GrammarFormat copyWith({GrammarFormatType? type, Grammar? grammar, }) { return GrammarFormat(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'grammar' &&
+      json.containsKey('grammar');}
+GrammarFormat copyWith({GrammarFormatType? type, Grammar? grammar, }) {return GrammarFormat(
   type: type ?? this.type,
   grammar: grammar ?? this.grammar,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GrammarFormat &&
           type == other.type &&
@@ -34,4 +34,4 @@ GrammarFormat copyWith({GrammarFormatType? type, Grammar? grammar, }) { return G
 
 @override String toString() => 'GrammarFormat(type: $type, grammar: $grammar)';
 
- }
+}

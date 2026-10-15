@@ -3,9 +3,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateChatCompletionRequest {const UpdateChatCompletionRequest({required this.metadata});
 
-factory UpdateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return UpdateChatCompletionRequest(
+factory UpdateChatCompletionRequest.fromJson(Map<String, dynamic> json) {return UpdateChatCompletionRequest(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -16,13 +16,13 @@ factory UpdateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return
 /// 
 final Map<String,String>? metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'metadata': metadata,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
-UpdateChatCompletionRequest copyWith({Map<String, String>? Function()? metadata}) { return UpdateChatCompletionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('metadata');}
+UpdateChatCompletionRequest copyWith({Map<String, String>? Function()? metadata}) {return UpdateChatCompletionRequest(
   metadata: metadata != null ? metadata() : this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateChatCompletionRequest &&
           metadata == other.metadata;
@@ -31,4 +31,4 @@ UpdateChatCompletionRequest copyWith({Map<String, String>? Function()? metadata}
 
 @override String toString() => 'UpdateChatCompletionRequest(metadata: $metadata)';
 
- }
+}

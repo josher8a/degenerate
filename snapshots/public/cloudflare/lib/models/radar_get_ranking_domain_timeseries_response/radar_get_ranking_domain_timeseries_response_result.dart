@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_ranking_domain_timeseries_response/radar_get_ranking_domain_timeseries_response_result_serie0.dart';@immutable final class RadarGetRankingDomainTimeseriesResponseResult {const RadarGetRankingDomainTimeseriesResponseResult({required this.meta, required this.serie0, });
 
-factory RadarGetRankingDomainTimeseriesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetRankingDomainTimeseriesResponseResult(
+factory RadarGetRankingDomainTimeseriesResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetRankingDomainTimeseriesResponseResult(
   meta: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   serie0: RadarGetRankingDomainTimeseriesResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
@@ -26,16 +26,16 @@ final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 /// Example: `{Google: [2], timestamps: [2022-09-02]}`
 final RadarGetRankingDomainTimeseriesResponseResultSerie0 serie0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'serie_0': serie0.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('serie_0'); } 
-RadarGetRankingDomainTimeseriesResponseResult copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta? meta, RadarGetRankingDomainTimeseriesResponseResultSerie0? serie0, }) { return RadarGetRankingDomainTimeseriesResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('serie_0');}
+RadarGetRankingDomainTimeseriesResponseResult copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta? meta, RadarGetRankingDomainTimeseriesResponseResultSerie0? serie0, }) {return RadarGetRankingDomainTimeseriesResponseResult(
   meta: meta ?? this.meta,
   serie0: serie0 ?? this.serie0,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRankingDomainTimeseriesResponseResult &&
           meta == other.meta &&
@@ -45,4 +45,4 @@ RadarGetRankingDomainTimeseriesResponseResult copyWith({RadarGetAiBotsTimeseries
 
 @override String toString() => 'RadarGetRankingDomainTimeseriesResponseResult(meta: $meta, serie0: $serie0)';
 
- }
+}

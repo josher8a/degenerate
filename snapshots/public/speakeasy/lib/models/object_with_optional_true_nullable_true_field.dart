@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/object_with_optional_false_nullable_true_field/object_with_optional_false_nullable_true_field_medical_record.dart';@immutable final class ObjectWithOptionalTrueNullableTrueField {const ObjectWithOptionalTrueNullableTrueField({required this.id, this.type, this.medicalRecord = const Omittable.absent(), });
 
-factory ObjectWithOptionalTrueNullableTrueField.fromJson(Map<String, dynamic> json) { return ObjectWithOptionalTrueNullableTrueField(
+factory ObjectWithOptionalTrueNullableTrueField.fromJson(Map<String, dynamic> json) {return ObjectWithOptionalTrueNullableTrueField(
   id: (json['id'] as num).toInt(),
   type: json['type'] as String?,
   medicalRecord: json.containsKey('medicalRecord') ? Omittable(json['medicalRecord'] != null ? ObjectWithOptionalFalseNullableTrueFieldMedicalRecord.fromJson(json['medicalRecord'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Example: `1`
 final int id;
@@ -16,17 +16,17 @@ final String? type;
 
 final Omittable<ObjectWithOptionalFalseNullableTrueFieldMedicalRecord?> medicalRecord;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'type': ?type,
   if (medicalRecord.isPresent) 'medicalRecord': medicalRecord.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num; } 
-ObjectWithOptionalTrueNullableTrueField copyWith({int? id, String? Function()? type, Omittable<ObjectWithOptionalFalseNullableTrueFieldMedicalRecord?>? medicalRecord, }) { return ObjectWithOptionalTrueNullableTrueField(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num;}
+ObjectWithOptionalTrueNullableTrueField copyWith({int? id, String? Function()? type, Omittable<ObjectWithOptionalFalseNullableTrueFieldMedicalRecord?>? medicalRecord, }) {return ObjectWithOptionalTrueNullableTrueField(
   id: id ?? this.id,
   type: type != null ? type() : this.type,
   medicalRecord: medicalRecord ?? this.medicalRecord,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ObjectWithOptionalTrueNullableTrueField &&
           id == other.id &&
@@ -37,4 +37,4 @@ ObjectWithOptionalTrueNullableTrueField copyWith({int? id, String? Function()? t
 
 @override String toString() => 'ObjectWithOptionalTrueNullableTrueField(id: $id, type: $type, medicalRecord: $medicalRecord)';
 
- }
+}

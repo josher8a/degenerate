@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_ai_bots_protection.dart';import 'package:pub_cloudflare/models/bot_management_auto_update_model.dart';import 'package:pub_cloudflare/models/bot_management_bm_cookie_enabled.dart';import 'package:pub_cloudflare/models/bot_management_bm_subscription_config/bot_management_bm_subscription_config_stale_zone_configuration.dart';import 'package:pub_cloudflare/models/bot_management_cf_robots_variant.dart';import 'package:pub_cloudflare/models/bot_management_crawler_protection.dart';import 'package:pub_cloudflare/models/bot_management_enable_js.dart';import 'package:pub_cloudflare/models/bot_management_is_robots_txt_managed.dart';import 'package:pub_cloudflare/models/bot_management_suppress_session_score.dart';import 'package:pub_cloudflare/models/bot_management_using_latest_model.dart';@immutable final class BotManagementBmSubscriptionConfig {const BotManagementBmSubscriptionConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, this.autoUpdateModel, this.bmCookieEnabled, this.staleZoneConfiguration, this.suppressSessionScore, });
 
-factory BotManagementBmSubscriptionConfig.fromJson(Map<String, dynamic> json) { return BotManagementBmSubscriptionConfig(
+factory BotManagementBmSubscriptionConfig.fromJson(Map<String, dynamic> json) {return BotManagementBmSubscriptionConfig(
   aiBotsProtection: json['ai_bots_protection'] != null ? BotManagementAiBotsProtection.fromJson(json['ai_bots_protection'] as String) : null,
   cfRobotsVariant: json['cf_robots_variant'] != null ? BotManagementCfRobotsVariant.fromJson(json['cf_robots_variant'] as String) : null,
   crawlerProtection: json['crawler_protection'] != null ? BotManagementCrawlerProtection.fromJson(json['crawler_protection'] as String) : null,
@@ -14,7 +14,7 @@ factory BotManagementBmSubscriptionConfig.fromJson(Map<String, dynamic> json) { 
   bmCookieEnabled: json['bm_cookie_enabled'] != null ? BotManagementBmCookieEnabled.fromJson(json['bm_cookie_enabled'] as bool) : null,
   staleZoneConfiguration: json['stale_zone_configuration'] != null ? BotManagementBmSubscriptionConfigStaleZoneConfiguration.fromJson(json['stale_zone_configuration'] as Map<String, dynamic>) : null,
   suppressSessionScore: json['suppress_session_score'] != null ? BotManagementSuppressSessionScore.fromJson(json['suppress_session_score'] as bool) : null,
-); }
+);}
 
 /// Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.
 final BotManagementAiBotsProtection? aiBotsProtection;
@@ -40,7 +40,7 @@ final BotManagementBmSubscriptionConfigStaleZoneConfiguration? staleZoneConfigur
 
 final BotManagementSuppressSessionScore? suppressSessionScore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aiBotsProtection != null) 'ai_bots_protection': aiBotsProtection?.toJson(),
   if (cfRobotsVariant != null) 'cf_robots_variant': cfRobotsVariant?.toJson(),
   if (crawlerProtection != null) 'crawler_protection': crawlerProtection?.toJson(),
@@ -51,9 +51,9 @@ Map<String, dynamic> toJson() { return {
   if (bmCookieEnabled != null) 'bm_cookie_enabled': bmCookieEnabled?.toJson(),
   if (staleZoneConfiguration != null) 'stale_zone_configuration': staleZoneConfiguration?.toJson(),
   if (suppressSessionScore != null) 'suppress_session_score': suppressSessionScore?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_bots_protection', 'cf_robots_variant', 'crawler_protection', 'enable_js', 'is_robots_txt_managed', 'using_latest_model', 'auto_update_model', 'bm_cookie_enabled', 'stale_zone_configuration', 'suppress_session_score'}.contains(key)); } 
-BotManagementBmSubscriptionConfig copyWith({BotManagementAiBotsProtection? Function()? aiBotsProtection, BotManagementCfRobotsVariant? Function()? cfRobotsVariant, BotManagementCrawlerProtection? Function()? crawlerProtection, BotManagementEnableJs? Function()? enableJs, BotManagementIsRobotsTxtManaged? Function()? isRobotsTxtManaged, BotManagementUsingLatestModel? Function()? usingLatestModel, BotManagementAutoUpdateModel? Function()? autoUpdateModel, BotManagementBmCookieEnabled? Function()? bmCookieEnabled, BotManagementBmSubscriptionConfigStaleZoneConfiguration? Function()? staleZoneConfiguration, BotManagementSuppressSessionScore? Function()? suppressSessionScore, }) { return BotManagementBmSubscriptionConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ai_bots_protection', 'cf_robots_variant', 'crawler_protection', 'enable_js', 'is_robots_txt_managed', 'using_latest_model', 'auto_update_model', 'bm_cookie_enabled', 'stale_zone_configuration', 'suppress_session_score'}.contains(key));}
+BotManagementBmSubscriptionConfig copyWith({BotManagementAiBotsProtection? Function()? aiBotsProtection, BotManagementCfRobotsVariant? Function()? cfRobotsVariant, BotManagementCrawlerProtection? Function()? crawlerProtection, BotManagementEnableJs? Function()? enableJs, BotManagementIsRobotsTxtManaged? Function()? isRobotsTxtManaged, BotManagementUsingLatestModel? Function()? usingLatestModel, BotManagementAutoUpdateModel? Function()? autoUpdateModel, BotManagementBmCookieEnabled? Function()? bmCookieEnabled, BotManagementBmSubscriptionConfigStaleZoneConfiguration? Function()? staleZoneConfiguration, BotManagementSuppressSessionScore? Function()? suppressSessionScore, }) {return BotManagementBmSubscriptionConfig(
   aiBotsProtection: aiBotsProtection != null ? aiBotsProtection() : this.aiBotsProtection,
   cfRobotsVariant: cfRobotsVariant != null ? cfRobotsVariant() : this.cfRobotsVariant,
   crawlerProtection: crawlerProtection != null ? crawlerProtection() : this.crawlerProtection,
@@ -64,7 +64,7 @@ BotManagementBmSubscriptionConfig copyWith({BotManagementAiBotsProtection? Funct
   bmCookieEnabled: bmCookieEnabled != null ? bmCookieEnabled() : this.bmCookieEnabled,
   staleZoneConfiguration: staleZoneConfiguration != null ? staleZoneConfiguration() : this.staleZoneConfiguration,
   suppressSessionScore: suppressSessionScore != null ? suppressSessionScore() : this.suppressSessionScore,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementBmSubscriptionConfig &&
           aiBotsProtection == other.aiBotsProtection &&
@@ -82,4 +82,4 @@ BotManagementBmSubscriptionConfig copyWith({BotManagementAiBotsProtection? Funct
 
 @override String toString() => 'BotManagementBmSubscriptionConfig(\n  aiBotsProtection: $aiBotsProtection,\n  cfRobotsVariant: $cfRobotsVariant,\n  crawlerProtection: $crawlerProtection,\n  enableJs: $enableJs,\n  isRobotsTxtManaged: $isRobotsTxtManaged,\n  usingLatestModel: $usingLatestModel,\n  autoUpdateModel: $autoUpdateModel,\n  bmCookieEnabled: $bmCookieEnabled,\n  staleZoneConfiguration: $staleZoneConfiguration,\n  suppressSessionScore: $suppressSessionScore,\n)';
 
- }
+}

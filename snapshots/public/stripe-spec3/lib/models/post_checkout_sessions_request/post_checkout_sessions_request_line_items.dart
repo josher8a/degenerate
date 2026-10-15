@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/adjustable_quantity.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_line_items_price_data.dart';@immutable final class PostCheckoutSessionsRequestLineItems {const PostCheckoutSessionsRequestLineItems({this.adjustableQuantity, this.dynamicTaxRates, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
-factory PostCheckoutSessionsRequestLineItems.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestLineItems(
+factory PostCheckoutSessionsRequestLineItems.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestLineItems(
   adjustableQuantity: json['adjustable_quantity'] != null ? AdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   dynamicTaxRates: (json['dynamic_tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -11,7 +11,7 @@ factory PostCheckoutSessionsRequestLineItems.fromJson(Map<String, dynamic> json)
   priceData: json['price_data'] != null ? PostCheckoutSessionsRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: (json['tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final AdjustableQuantity? adjustableQuantity;
 
@@ -27,7 +27,7 @@ final int? quantity;
 
 final List<String>? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adjustableQuantity != null) 'adjustable_quantity': adjustableQuantity?.toJson(),
   'dynamic_tax_rates': ?dynamicTaxRates,
   'metadata': ?metadata,
@@ -35,16 +35,16 @@ Map<String, dynamic> toJson() { return {
   if (priceData != null) 'price_data': priceData?.toJson(),
   'quantity': ?quantity,
   'tax_rates': ?taxRates,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adjustable_quantity', 'dynamic_tax_rates', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'adjustable_quantity', 'dynamic_tax_rates', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final price$ = price;
 if (price$ != null) {
   if (price$.runes.length > 5000) { errors.add('price: length must be <= 5000'); }
 }
-return errors; } 
-PostCheckoutSessionsRequestLineItems copyWith({AdjustableQuantity? Function()? adjustableQuantity, List<String>? Function()? dynamicTaxRates, Map<String, String>? Function()? metadata, String? Function()? price, PostCheckoutSessionsRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, List<String>? Function()? taxRates, }) { return PostCheckoutSessionsRequestLineItems(
+return errors;}
+PostCheckoutSessionsRequestLineItems copyWith({AdjustableQuantity? Function()? adjustableQuantity, List<String>? Function()? dynamicTaxRates, Map<String, String>? Function()? metadata, String? Function()? price, PostCheckoutSessionsRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, List<String>? Function()? taxRates, }) {return PostCheckoutSessionsRequestLineItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   dynamicTaxRates: dynamicTaxRates != null ? dynamicTaxRates() : this.dynamicTaxRates,
   metadata: metadata != null ? metadata() : this.metadata,
@@ -52,7 +52,7 @@ PostCheckoutSessionsRequestLineItems copyWith({AdjustableQuantity? Function()? a
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestLineItems &&
           adjustableQuantity == other.adjustableQuantity &&
@@ -67,4 +67,4 @@ PostCheckoutSessionsRequestLineItems copyWith({AdjustableQuantity? Function()? a
 
 @override String toString() => 'PostCheckoutSessionsRequestLineItems(adjustableQuantity: $adjustableQuantity, dynamicTaxRates: $dynamicTaxRates, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_create_response400/destination_create_response400_messages.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/urlscanner_create_scan_response409_result.dart';@immutable final class UrlscannerCreateScanResponse409 {const UrlscannerCreateScanResponse409({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory UrlscannerCreateScanResponse409.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse409(
+factory UrlscannerCreateScanResponse409.fromJson(Map<String, dynamic> json) {return UrlscannerCreateScanResponse409(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DestinationCreateResponse400Messages.fromJson(e as Map<String, dynamic>)).toList(),
   result: UrlscannerCreateScanResponse409Result.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
@@ -19,22 +19,22 @@ final UrlscannerCreateScanResponse409Result result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-UrlscannerCreateScanResponse409 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationCreateResponse400Messages>? messages, UrlscannerCreateScanResponse409Result? result, bool? success, }) { return UrlscannerCreateScanResponse409(
+      json.containsKey('success') && json['success'] is bool;}
+UrlscannerCreateScanResponse409 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationCreateResponse400Messages>? messages, UrlscannerCreateScanResponse409Result? result, bool? success, }) {return UrlscannerCreateScanResponse409(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanResponse409 &&
           listEquals(errors, other.errors) &&
@@ -46,4 +46,4 @@ UrlscannerCreateScanResponse409 copyWith({List<AiSearchInstanceChangeJobStatusRe
 
 @override String toString() => 'UrlscannerCreateScanResponse409(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

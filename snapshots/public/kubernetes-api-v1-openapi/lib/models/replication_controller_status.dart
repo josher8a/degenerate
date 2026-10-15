@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/replication_controller_condition.dart';/// ReplicationControllerStatus represents the current status of a replication controller.
 @immutable final class ReplicationControllerStatus {const ReplicationControllerStatus({required this.replicas, this.availableReplicas, this.conditions, this.fullyLabeledReplicas, this.observedGeneration, this.readyReplicas, });
 
-factory ReplicationControllerStatus.fromJson(Map<String, dynamic> json) { return ReplicationControllerStatus(
+factory ReplicationControllerStatus.fromJson(Map<String, dynamic> json) {return ReplicationControllerStatus(
   availableReplicas: json['availableReplicas'] != null ? (json['availableReplicas'] as num).toInt() : null,
   conditions: (json['conditions'] as List<dynamic>?)?.map((e) => ReplicationControllerCondition.fromJson(e as Map<String, dynamic>)).toList(),
   fullyLabeledReplicas: json['fullyLabeledReplicas'] != null ? (json['fullyLabeledReplicas'] as num).toInt() : null,
   observedGeneration: json['observedGeneration'] != null ? (json['observedGeneration'] as num).toInt() : null,
   readyReplicas: json['readyReplicas'] != null ? (json['readyReplicas'] as num).toInt() : null,
   replicas: (json['replicas'] as num).toInt(),
-); }
+);}
 
 /// The number of available replicas (ready for at least minReadySeconds) for this replication controller.
 final int? availableReplicas;
@@ -31,23 +31,23 @@ final int? readyReplicas;
 /// Replicas is the most recently observed number of replicas. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#what-is-a-replicationcontroller
 final int replicas;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'availableReplicas': ?availableReplicas,
   if (conditions != null) 'conditions': conditions?.map((e) => e.toJson()).toList(),
   'fullyLabeledReplicas': ?fullyLabeledReplicas,
   'observedGeneration': ?observedGeneration,
   'readyReplicas': ?readyReplicas,
   'replicas': replicas,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('replicas') && json['replicas'] is num; } 
-ReplicationControllerStatus copyWith({int? Function()? availableReplicas, List<ReplicationControllerCondition>? Function()? conditions, int? Function()? fullyLabeledReplicas, int? Function()? observedGeneration, int? Function()? readyReplicas, int? replicas, }) { return ReplicationControllerStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('replicas') && json['replicas'] is num;}
+ReplicationControllerStatus copyWith({int? Function()? availableReplicas, List<ReplicationControllerCondition>? Function()? conditions, int? Function()? fullyLabeledReplicas, int? Function()? observedGeneration, int? Function()? readyReplicas, int? replicas, }) {return ReplicationControllerStatus(
   availableReplicas: availableReplicas != null ? availableReplicas() : this.availableReplicas,
   conditions: conditions != null ? conditions() : this.conditions,
   fullyLabeledReplicas: fullyLabeledReplicas != null ? fullyLabeledReplicas() : this.fullyLabeledReplicas,
   observedGeneration: observedGeneration != null ? observedGeneration() : this.observedGeneration,
   readyReplicas: readyReplicas != null ? readyReplicas() : this.readyReplicas,
   replicas: replicas ?? this.replicas,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReplicationControllerStatus &&
           availableReplicas == other.availableReplicas &&
@@ -61,4 +61,4 @@ ReplicationControllerStatus copyWith({int? Function()? availableReplicas, List<R
 
 @override String toString() => 'ReplicationControllerStatus(availableReplicas: $availableReplicas, conditions: $conditions, fullyLabeledReplicas: $fullyLabeledReplicas, observedGeneration: $observedGeneration, readyReplicas: $readyReplicas, replicas: $replicas)';
 
- }
+}

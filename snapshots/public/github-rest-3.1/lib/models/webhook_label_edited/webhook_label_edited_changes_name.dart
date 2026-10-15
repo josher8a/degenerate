@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookLabelEditedChangesName {const WebhookLabelEditedChangesName({required this.from});
 
-factory WebhookLabelEditedChangesName.fromJson(Map<String, dynamic> json) { return WebhookLabelEditedChangesName(
+factory WebhookLabelEditedChangesName.fromJson(Map<String, dynamic> json) {return WebhookLabelEditedChangesName(
   from: json['from'] as String,
-); }
+);}
 
 /// The previous version of the name if the action was `edited`.
 final String from;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'from': from,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
-WebhookLabelEditedChangesName copyWith({String? from}) { return WebhookLabelEditedChangesName(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('from') && json['from'] is String;}
+WebhookLabelEditedChangesName copyWith({String? from}) {return WebhookLabelEditedChangesName(
   from: from ?? this.from,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookLabelEditedChangesName &&
           from == other.from;
@@ -25,4 +25,4 @@ WebhookLabelEditedChangesName copyWith({String? from}) { return WebhookLabelEdit
 
 @override String toString() => 'WebhookLabelEditedChangesName(from: $from)';
 
- }
+}

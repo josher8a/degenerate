@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_plain_text_env_var.dart';import 'package:pub_cloudflare/models/pages_secret_text_env_var.dart';sealed class PagesEnvVarsValueType {const PagesEnvVarsValueType();
 
-factory PagesEnvVarsValueType.fromJson(String json) { return switch (json) {
+factory PagesEnvVarsValueType.fromJson(String json) {return switch (json) {
   'plain_text' => plainText,
   'secret_text' => secretText,
   _ => PagesEnvVarsValueType$Unknown(json),
-}; }
+};}
 
 static const PagesEnvVarsValueType plainText = PagesEnvVarsValueType$plainText._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is PagesEnvVarsValueType$Unknown;
 
- }
+}
 @immutable final class PagesEnvVarsValueType$plainText extends PagesEnvVarsValueType {const PagesEnvVarsValueType$plainText._();
 
 @override String get value => 'plain_text';
@@ -31,7 +31,7 @@ bool get isUnknown => this is PagesEnvVarsValueType$Unknown;
 
 @override String toString() => 'PagesEnvVarsValueType(plain_text)';
 
- }
+}
 @immutable final class PagesEnvVarsValueType$secretText extends PagesEnvVarsValueType {const PagesEnvVarsValueType$secretText._();
 
 @override String get value => 'secret_text';
@@ -42,7 +42,7 @@ bool get isUnknown => this is PagesEnvVarsValueType$Unknown;
 
 @override String toString() => 'PagesEnvVarsValueType(secret_text)';
 
- }
+}
 @immutable final class PagesEnvVarsValueType$Unknown extends PagesEnvVarsValueType {const PagesEnvVarsValueType$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is PagesEnvVarsValueType$Unknown;
 
 @override String toString() => 'PagesEnvVarsValueType($value)';
 
- }
+}
 sealed class PagesEnvVarsValue {const PagesEnvVarsValue();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
-factory PagesEnvVarsValue.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+factory PagesEnvVarsValue.fromJson(Map<String, dynamic> json) {return switch (json['type']) {
   'plain_text' => PagesEnvVarsValuePlainText.fromJson(json),
   'secret_text' => PagesEnvVarsValueSecretText.fromJson(json),
   _ => PagesEnvVarsValue$Unknown(json),
-}; }
+};}
 
 /// Build the `plain_text` variant.
-factory PagesEnvVarsValue.plainText({required String value}) { return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar(type: PagesPlainTextEnvVarType.fromJson('plain_text'), value: value)); }
+factory PagesEnvVarsValue.plainText({required String value}) {return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar(type: PagesPlainTextEnvVarType.fromJson('plain_text'), value: value));}
 
 /// Build the `secret_text` variant.
-factory PagesEnvVarsValue.secretText({required String value}) { return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar(type: PagesSecretTextEnvVarType.fromJson('secret_text'), value: value)); }
+factory PagesEnvVarsValue.secretText({required String value}) {return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar(type: PagesSecretTextEnvVarType.fromJson('secret_text'), value: value));}
 
 /// The discriminator value identifying this variant.
 PagesEnvVarsValueType get type;
@@ -77,15 +77,15 @@ bool get isUnknown => this is PagesEnvVarsValue$Unknown;
 
 /// Shared by all variants of this union.
 String? get value;
-R when<R>({required R Function(PagesEnvVarsValuePlainText) plainText, required R Function(PagesEnvVarsValueSecretText) secretText, required R Function(PagesEnvVarsValue$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(PagesEnvVarsValuePlainText) plainText, required R Function(PagesEnvVarsValueSecretText) secretText, required R Function(PagesEnvVarsValue$Unknown) unknown, }) {return switch (this) {
   final PagesEnvVarsValuePlainText v => plainText(v),
   final PagesEnvVarsValueSecretText v => secretText(v),
   final PagesEnvVarsValue$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class PagesEnvVarsValuePlainText extends PagesEnvVarsValue {const PagesEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
 
-factory PagesEnvVarsValuePlainText.fromJson(Map<String, dynamic> json) { return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar.fromJson(json)); }
+factory PagesEnvVarsValuePlainText.fromJson(Map<String, dynamic> json) {return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar.fromJson(json));}
 
 final PagesPlainTextEnvVar? pagesPlainTextEnvVar;
 
@@ -93,7 +93,7 @@ final PagesPlainTextEnvVar? pagesPlainTextEnvVar;
 
 @override Map<String, dynamic> toJson() => {...?pagesPlainTextEnvVar?.toJson(), 'type': type.toJson()};
 
-PagesEnvVarsValuePlainText copyWith({PagesPlainTextEnvVar? pagesPlainTextEnvVar}) { return PagesEnvVarsValuePlainText(pagesPlainTextEnvVar ?? this.pagesPlainTextEnvVar); } 
+PagesEnvVarsValuePlainText copyWith({PagesPlainTextEnvVar? pagesPlainTextEnvVar}) {return PagesEnvVarsValuePlainText(pagesPlainTextEnvVar ?? this.pagesPlainTextEnvVar);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is PagesEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar;
 
@@ -103,10 +103,10 @@ PagesEnvVarsValuePlainText copyWith({PagesPlainTextEnvVar? pagesPlainTextEnvVar}
 
 @override String? get value => pagesPlainTextEnvVar?.value;
 
- }
+}
 @immutable final class PagesEnvVarsValueSecretText extends PagesEnvVarsValue {const PagesEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
 
-factory PagesEnvVarsValueSecretText.fromJson(Map<String, dynamic> json) { return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar.fromJson(json)); }
+factory PagesEnvVarsValueSecretText.fromJson(Map<String, dynamic> json) {return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar.fromJson(json));}
 
 final PagesSecretTextEnvVar? pagesSecretTextEnvVar;
 
@@ -114,7 +114,7 @@ final PagesSecretTextEnvVar? pagesSecretTextEnvVar;
 
 @override Map<String, dynamic> toJson() => {...?pagesSecretTextEnvVar?.toJson(), 'type': type.toJson()};
 
-PagesEnvVarsValueSecretText copyWith({PagesSecretTextEnvVar? pagesSecretTextEnvVar}) { return PagesEnvVarsValueSecretText(pagesSecretTextEnvVar ?? this.pagesSecretTextEnvVar); } 
+PagesEnvVarsValueSecretText copyWith({PagesSecretTextEnvVar? pagesSecretTextEnvVar}) {return PagesEnvVarsValueSecretText(pagesSecretTextEnvVar ?? this.pagesSecretTextEnvVar);}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is PagesEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar;
 
@@ -124,7 +124,7 @@ PagesEnvVarsValueSecretText copyWith({PagesSecretTextEnvVar? pagesSecretTextEnvV
 
 @override String? get value => pagesSecretTextEnvVar?.value;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class PagesEnvVarsValue$Unknown extends PagesEnvVarsValue {PagesEnvVarsValue$Unknown(this.json);
@@ -146,4 +146,4 @@ late final String _value = json['value'] as String;
 
 @override String get value => _value;
 
- }
+}

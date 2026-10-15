@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/text_generation/usage.dart';import 'package:pub_cloudflare/models/text_generation/variant1_tool_calls.dart';@immutable final class TextGenerationVariant1 {const TextGenerationVariant1({required this.response, this.toolCalls, this.usage, });
 
-factory TextGenerationVariant1.fromJson(Map<String, dynamic> json) { return TextGenerationVariant1(
+factory TextGenerationVariant1.fromJson(Map<String, dynamic> json) {return TextGenerationVariant1(
   response: json['response'] as String,
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => Variant1ToolCalls.fromJson(e as Map<String, dynamic>)).toList(),
   usage: json['usage'] != null ? Usage.fromJson(json['usage'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The generated text response from the model
 final String response;
@@ -18,17 +18,17 @@ final List<Variant1ToolCalls>? toolCalls;
 /// Usage statistics for the inference request
 final Usage? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'response': response,
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
   if (usage != null) 'usage': usage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('response') && json['response'] is String; } 
-TextGenerationVariant1 copyWith({String? response, List<Variant1ToolCalls>? Function()? toolCalls, Usage? Function()? usage, }) { return TextGenerationVariant1(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('response') && json['response'] is String;}
+TextGenerationVariant1 copyWith({String? response, List<Variant1ToolCalls>? Function()? toolCalls, Usage? Function()? usage, }) {return TextGenerationVariant1(
   response: response ?? this.response,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
   usage: usage != null ? usage() : this.usage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TextGenerationVariant1 &&
           response == other.response &&
@@ -39,4 +39,4 @@ TextGenerationVariant1 copyWith({String? response, List<Variant1ToolCalls>? Func
 
 @override String toString() => 'TextGenerationVariant1(response: $response, toolCalls: $toolCalls, usage: $usage)';
 
- }
+}

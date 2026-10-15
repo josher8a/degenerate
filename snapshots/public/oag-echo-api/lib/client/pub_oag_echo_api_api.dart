@@ -24,6 +24,6 @@ late final BodyApi body = BodyApi(_config);
 
 late final AuthApi auth = AuthApi(_config);
 
-PubOagEchoApi withHttpAuth({required String username, required String password, }) { return PubOagEchoApi(PubOagEchoSecurity.applyHttpAuth(_config, username: username, password: password)); } 
-PubOagEchoApi withHttpBearerAuth(String token) { return PubOagEchoApi(PubOagEchoSecurity.applyHttpBearerAuth(_config, token)); } 
- }
+PubOagEchoApi withHttpAuth({required String username, required String password, }) {return PubOagEchoApi(PubOagEchoSecurity.applyHttpAuth(_config, username: username, password: password));}
+PubOagEchoApi withHttpBearerAuth(String token) {return PubOagEchoApi(PubOagEchoSecurity.applyHttpBearerAuth(_config, token));}
+}

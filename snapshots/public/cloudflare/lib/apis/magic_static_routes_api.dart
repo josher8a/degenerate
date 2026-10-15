@@ -14,7 +14,7 @@ final class MagicStaticRoutesApi with ApiExecutor {const MagicStaticRoutesApi(th
 /// List all Magic static routes.
 ///
 /// `GET /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicRoutesCollectionResponseResult, MagicStaticRoutesListRoutesError>> magicStaticRoutesListRoutes({required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRoutesCollectionResponseResult, MagicStaticRoutesListRoutesError>> magicStaticRoutesListRoutes({required MagicIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: MagicStaticRoutesListRoutesError.fromResponse,
 );
- } 
+}
 /// Create a Route
 ///
 /// Creates a new Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicRoute, MagicStaticRoutesCreateRoutesError>> magicStaticRoutesCreateRoutes({required MagicIdentifier accountId, required MagicCreateRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRoute, MagicStaticRoutesCreateRoutesError>> magicStaticRoutesCreateRoutes({required MagicIdentifier accountId, required MagicCreateRouteRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: MagicStaticRoutesCreateRoutesError.fromResponse,
 );
- } 
+}
 /// Update Many Routes
 ///
 /// Update multiple Magic static routes. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes. Only fields for a route that need to be changed need be provided.
 ///
 /// `PUT /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicMultipleRouteModifiedResponseResult, MagicStaticRoutesUpdateManyRoutesError>> magicStaticRoutesUpdateManyRoutes({required MagicIdentifier accountId, required MagicRouteUpdateManyRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicMultipleRouteModifiedResponseResult, MagicStaticRoutesUpdateManyRoutesError>> magicStaticRoutesUpdateManyRoutes({required MagicIdentifier accountId, required MagicRouteUpdateManyRequestRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,13 +81,13 @@ return await execute(
   },
   onError: MagicStaticRoutesUpdateManyRoutesError.fromResponse,
 );
- } 
+}
 /// Delete Many Routes
 ///
 /// Delete multiple Magic static routes.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes`
-Future<ApiResult<MagicMultipleRouteDeleteResponseResult, MagicStaticRoutesDeleteManyRoutesError>> magicStaticRoutesDeleteManyRoutes({required MagicIdentifier accountId, required MagicRouteDeleteManyRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicMultipleRouteDeleteResponseResult, MagicStaticRoutesDeleteManyRoutesError>> magicStaticRoutesDeleteManyRoutes({required MagicIdentifier accountId, required MagicRouteDeleteManyRequestRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,13 +106,13 @@ return await execute(
   },
   onError: MagicStaticRoutesDeleteManyRoutesError.fromResponse,
 );
- } 
+}
 /// Route Details
 ///
 /// Get a specific Magic static route.
 ///
 /// `GET /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<MagicRouteSingleResponseResult, MagicStaticRoutesRouteDetailsError>> magicStaticRoutesRouteDetails({required MagicIdentifier routeId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRouteSingleResponseResult, MagicStaticRoutesRouteDetailsError>> magicStaticRoutesRouteDetails({required MagicIdentifier routeId, required MagicIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -129,13 +129,13 @@ return await execute(
   },
   onError: MagicStaticRoutesRouteDetailsError.fromResponse,
 );
- } 
+}
 /// Update Route
 ///
 /// Update a specific Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<MagicRouteModifiedResponseResult, MagicStaticRoutesUpdateRouteError>> magicStaticRoutesUpdateRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, required MagicRouteAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRouteModifiedResponseResult, MagicStaticRoutesUpdateRouteError>> magicStaticRoutesUpdateRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, required MagicRouteAddSingleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,13 +154,13 @@ return await execute(
   },
   onError: MagicStaticRoutesUpdateRouteError.fromResponse,
 );
- } 
+}
 /// Delete Route
 ///
 /// Disable and remove a specific Magic static route.
 ///
 /// `DELETE /accounts/{account_id}/magic/routes/{route_id}`
-Future<ApiResult<MagicRouteDeletedResponseResult, MagicStaticRoutesDeleteRouteError>> magicStaticRoutesDeleteRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicRouteDeletedResponseResult, MagicStaticRoutesDeleteRouteError>> magicStaticRoutesDeleteRoute({required MagicIdentifier routeId, required MagicIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -177,5 +177,5 @@ return await execute(
   },
   onError: MagicStaticRoutesDeleteRouteError.fromResponse,
 );
- } 
- }
+}
+}

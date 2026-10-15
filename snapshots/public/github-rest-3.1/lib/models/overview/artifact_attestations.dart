@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArtifactAttestations {const ArtifactAttestations({this.trustDomain, this.services, });
 
-factory ArtifactAttestations.fromJson(Map<String, dynamic> json) { return ArtifactAttestations(
+factory ArtifactAttestations.fromJson(Map<String, dynamic> json) {return ArtifactAttestations(
   trustDomain: json['trust_domain'] as String?,
   services: (json['services'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final String? trustDomain;
 
 final List<String>? services;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'trust_domain': ?trustDomain,
   'services': ?services,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'trust_domain', 'services'}.contains(key)); } 
-ArtifactAttestations copyWith({String? Function()? trustDomain, List<String>? Function()? services, }) { return ArtifactAttestations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'trust_domain', 'services'}.contains(key));}
+ArtifactAttestations copyWith({String? Function()? trustDomain, List<String>? Function()? services, }) {return ArtifactAttestations(
   trustDomain: trustDomain != null ? trustDomain() : this.trustDomain,
   services: services != null ? services() : this.services,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ArtifactAttestations &&
           trustDomain == other.trustDomain &&
@@ -30,4 +30,4 @@ ArtifactAttestations copyWith({String? Function()? trustDomain, List<String>? Fu
 
 @override String toString() => 'ArtifactAttestations(trustDomain: $trustDomain, services: $services)';
 
- }
+}

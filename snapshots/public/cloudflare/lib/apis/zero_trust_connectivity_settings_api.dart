@@ -14,7 +14,7 @@ final class ZeroTrustConnectivitySettingsApi with ApiExecutor {const ZeroTrustCo
 /// Gets the Zero Trust Connectivity Settings for the given account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ZeroTrustAccountsGetConnectivitySettingsError>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ZeroTrustAccountsGetConnectivitySettingsError>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: ZeroTrustAccountsGetConnectivitySettingsError.fromResponse,
 );
- } 
+}
 /// Updates the Zero Trust Connectivity Settings
 ///
 /// Updates the Zero Trust Connectivity Settings for the given account.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ZeroTrustAccountsGetConnectivitySettingsError>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelZeroTrustConnectivitySettingsResponseResult, ZeroTrustAccountsGetConnectivitySettingsError>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,5 +56,5 @@ return await execute(
   },
   onError: ZeroTrustAccountsGetConnectivitySettingsError.fromResponse,
 );
- } 
- }
+}
+}

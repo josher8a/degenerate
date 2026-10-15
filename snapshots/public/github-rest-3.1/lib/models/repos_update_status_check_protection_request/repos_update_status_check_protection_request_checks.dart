@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposUpdateStatusCheckProtectionRequestChecks {const ReposUpdateStatusCheckProtectionRequestChecks({required this.context, this.appId, });
 
-factory ReposUpdateStatusCheckProtectionRequestChecks.fromJson(Map<String, dynamic> json) { return ReposUpdateStatusCheckProtectionRequestChecks(
+factory ReposUpdateStatusCheckProtectionRequestChecks.fromJson(Map<String, dynamic> json) {return ReposUpdateStatusCheckProtectionRequestChecks(
   context: json['context'] as String,
   appId: json['app_id'] != null ? (json['app_id'] as num).toInt() : null,
-); }
+);}
 
 /// The name of the required check
 final String context;
@@ -14,15 +14,15 @@ final String context;
 /// The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
 final int? appId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'context': context,
   'app_id': ?appId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('context') && json['context'] is String; } 
-ReposUpdateStatusCheckProtectionRequestChecks copyWith({String? context, int? Function()? appId, }) { return ReposUpdateStatusCheckProtectionRequestChecks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('context') && json['context'] is String;}
+ReposUpdateStatusCheckProtectionRequestChecks copyWith({String? context, int? Function()? appId, }) {return ReposUpdateStatusCheckProtectionRequestChecks(
   context: context ?? this.context,
   appId: appId != null ? appId() : this.appId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateStatusCheckProtectionRequestChecks &&
           context == other.context &&
@@ -32,4 +32,4 @@ ReposUpdateStatusCheckProtectionRequestChecks copyWith({String? context, int? Fu
 
 @override String toString() => 'ReposUpdateStatusCheckProtectionRequestChecks(context: $context, appId: $appId)';
 
- }
+}

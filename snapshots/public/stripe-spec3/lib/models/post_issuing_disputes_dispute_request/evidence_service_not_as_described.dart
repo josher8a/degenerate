@@ -7,11 +7,11 @@ const EvidenceServiceNotAsDescribed({this.serviceNotAsDescribed = const Omittabl
 const EvidenceServiceNotAsDescribed._({required this.rawValue, required this.serviceNotAsDescribed, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory EvidenceServiceNotAsDescribed.fromJson(Object? json) { return EvidenceServiceNotAsDescribed._(
+factory EvidenceServiceNotAsDescribed.fromJson(Object? json) {return EvidenceServiceNotAsDescribed._(
   rawValue: Omittable(json),
   serviceNotAsDescribed: json is Map<String, dynamic> && ServiceNotAsDescribed.canParse(json) ? parseAnyOfVariant<ServiceNotAsDescribed>(json, (value) => ServiceNotAsDescribed.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'EvidenceServiceNotAsDescribed(${toJson()})';
 
- }
+}

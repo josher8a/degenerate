@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksWorkflow {const WebhooksWorkflow({required this.badgeUrl, required this.createdAt, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.path, required this.state, required this.updatedAt, required this.url, });
 
-factory WebhooksWorkflow.fromJson(Map<String, dynamic> json) { return WebhooksWorkflow(
+factory WebhooksWorkflow.fromJson(Map<String, dynamic> json) {return WebhooksWorkflow(
   badgeUrl: Uri.parse(json['badge_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -14,7 +14,7 @@ factory WebhooksWorkflow.fromJson(Map<String, dynamic> json) { return WebhooksWo
   state: json['state'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Uri badgeUrl;
 
@@ -36,7 +36,7 @@ final DateTime updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'badge_url': badgeUrl.toString(),
   'created_at': createdAt.toIso8601String(),
   'html_url': htmlUrl.toString(),
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'state': state,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('badge_url') && json['badge_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('badge_url') && json['badge_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -57,8 +57,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('badge
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int? id, String? name, String? nodeId, String? path, String? state, DateTime? updatedAt, Uri? url, }) { return WebhooksWorkflow(
+      json.containsKey('url') && json['url'] is String;}
+WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int? id, String? name, String? nodeId, String? path, String? state, DateTime? updatedAt, Uri? url, }) {return WebhooksWorkflow(
   badgeUrl: badgeUrl ?? this.badgeUrl,
   createdAt: createdAt ?? this.createdAt,
   htmlUrl: htmlUrl ?? this.htmlUrl,
@@ -69,7 +69,7 @@ WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int
   state: state ?? this.state,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksWorkflow &&
           badgeUrl == other.badgeUrl &&
@@ -87,4 +87,4 @@ WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int
 
 @override String toString() => 'WebhooksWorkflow(\n  badgeUrl: $badgeUrl,\n  createdAt: $createdAt,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  path: $path,\n  state: $state,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
- }
+}

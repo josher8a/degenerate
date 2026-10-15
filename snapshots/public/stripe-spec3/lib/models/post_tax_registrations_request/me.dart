@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request/ae_standard.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_default_inbound_goods/tax_product_registrations_resource_country_options_default_inbound_goods_type.dart';@immutable final class Me {const Me({required this.type, this.standard, });
 
-factory Me.fromJson(Map<String, dynamic> json) { return Me(
+factory Me.fromJson(Map<String, dynamic> json) {return Me(
   standard: json['standard'] != null ? AeStandard.fromJson(json['standard'] as Map<String, dynamic>) : null,
   type: TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType.fromJson(json['type'] as String),
-); }
+);}
 
 final AeStandard? standard;
 
 final TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (standard != null) 'standard': standard?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Me copyWith({AeStandard? Function()? standard, TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType? type, }) { return Me(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+Me copyWith({AeStandard? Function()? standard, TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType? type, }) {return Me(
   standard: standard != null ? standard() : this.standard,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Me &&
           standard == other.standard &&
@@ -30,4 +30,4 @@ Me copyWith({AeStandard? Function()? standard, TaxProductRegistrationsResourceCo
 
 @override String toString() => 'Me(standard: $standard, type: $type)';
 
- }
+}

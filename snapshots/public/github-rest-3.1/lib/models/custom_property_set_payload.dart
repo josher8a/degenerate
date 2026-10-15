@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property/default_value.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload/value_type.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload/values_editable_by.dart';/// Custom property set payload
 @immutable final class CustomPropertySetPayload {const CustomPropertySetPayload({required this.valueType, this.$required, this.defaultValue = const Omittable.absent(), this.description = const Omittable.absent(), this.allowedValues = const Omittable.absent(), this.valuesEditableBy = const Omittable.absent(), this.requireExplicitValues, });
 
-factory CustomPropertySetPayload.fromJson(Map<String, dynamic> json) { return CustomPropertySetPayload(
+factory CustomPropertySetPayload.fromJson(Map<String, dynamic> json) {return CustomPropertySetPayload(
   valueType: ValueType.fromJson(json['value_type'] as String),
   $required: json['required'] as bool?,
   defaultValue: json.containsKey('default_value') ? Omittable(json['default_value'] != null ? OneOf2.parse(json['default_value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null) : const Omittable.absent(),
@@ -12,7 +12,7 @@ factory CustomPropertySetPayload.fromJson(Map<String, dynamic> json) { return Cu
   allowedValues: json.containsKey('allowed_values') ? Omittable((json['allowed_values'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   valuesEditableBy: json.containsKey('values_editable_by') ? Omittable(json['values_editable_by'] != null ? ValuesEditableBy.fromJson(json['values_editable_by'] as String) : null) : const Omittable.absent(),
   requireExplicitValues: json['require_explicit_values'] as bool?,
-); }
+);}
 
 /// The type of the value for the property
 final ValueType valueType;
@@ -36,7 +36,7 @@ final Omittable<ValuesEditableBy?> valuesEditableBy;
 /// Whether setting properties values is mandatory
 final bool? requireExplicitValues;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value_type': valueType.toJson(),
   'required': ?$required,
   if (defaultValue.isPresent) 'default_value': defaultValue.value?.toJson(),
@@ -44,9 +44,9 @@ Map<String, dynamic> toJson() { return {
   if (allowedValues.isPresent) 'allowed_values': allowedValues.value,
   if (valuesEditableBy.isPresent) 'values_editable_by': valuesEditableBy.value?.toJson(),
   'require_explicit_values': ?requireExplicitValues,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value_type'); } 
-CustomPropertySetPayload copyWith({ValueType? valueType, bool? Function()? $required, Omittable<DefaultValue?>? defaultValue, Omittable<String?>? description, Omittable<List<String>?>? allowedValues, Omittable<ValuesEditableBy?>? valuesEditableBy, bool? Function()? requireExplicitValues, }) { return CustomPropertySetPayload(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value_type');}
+CustomPropertySetPayload copyWith({ValueType? valueType, bool? Function()? $required, Omittable<DefaultValue?>? defaultValue, Omittable<String?>? description, Omittable<List<String>?>? allowedValues, Omittable<ValuesEditableBy?>? valuesEditableBy, bool? Function()? requireExplicitValues, }) {return CustomPropertySetPayload(
   valueType: valueType ?? this.valueType,
   $required: $required != null ? $required() : this.$required,
   defaultValue: defaultValue ?? this.defaultValue,
@@ -54,7 +54,7 @@ CustomPropertySetPayload copyWith({ValueType? valueType, bool? Function()? $requ
   allowedValues: allowedValues ?? this.allowedValues,
   valuesEditableBy: valuesEditableBy ?? this.valuesEditableBy,
   requireExplicitValues: requireExplicitValues != null ? requireExplicitValues() : this.requireExplicitValues,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomPropertySetPayload &&
           valueType == other.valueType &&
@@ -70,4 +70,4 @@ CustomPropertySetPayload copyWith({ValueType? valueType, bool? Function()? $requ
 
 @override String toString() => 'CustomPropertySetPayload(valueType: $valueType, \$required: ${$required}, defaultValue: $defaultValue, description: $description, allowedValues: $allowedValues, valuesEditableBy: $valuesEditableBy, requireExplicitValues: $requireExplicitValues)';
 
- }
+}

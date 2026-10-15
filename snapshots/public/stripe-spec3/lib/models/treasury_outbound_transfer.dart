@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_transfers_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment/treasury_outbound_payment_status.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_outbound_transfer_resource_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_returned_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TreasuryOutboundTransferObject {const TreasuryOutboundTransferObject();
 
-factory TreasuryOutboundTransferObject.fromJson(String json) { return switch (json) {
+factory TreasuryOutboundTransferObject.fromJson(String json) {return switch (json) {
   'treasury.outbound_transfer' => treasuryOutboundTransfer,
   _ => TreasuryOutboundTransferObject$Unknown(json),
-}; }
+};}
 
 static const TreasuryOutboundTransferObject treasuryOutboundTransfer = TreasuryOutboundTransferObject$treasuryOutboundTransfer._();
 
 static const List<TreasuryOutboundTransferObject> values = [treasuryOutboundTransfer];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'treasury.outbound_transfer' => 'treasuryOutboundTransfer',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryOutboundTransferObject$Unknown; } 
+bool get isUnknown {return this is TreasuryOutboundTransferObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() treasuryOutboundTransfer, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() treasuryOutboundTransfer, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryOutboundTransferObject$treasuryOutboundTransfer() => treasuryOutboundTransfer(),
       TreasuryOutboundTransferObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryOutboundTransfer, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryOutboundTransfer, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryOutboundTransferObject$treasuryOutboundTransfer() => treasuryOutboundTransfer != null ? treasuryOutboundTransfer() : orElse(value),
       TreasuryOutboundTransferObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryOutboundTransferObject($value)';
 
- }
+}
 @immutable final class TreasuryOutboundTransferObject$treasuryOutboundTransfer extends TreasuryOutboundTransferObject {const TreasuryOutboundTransferObject$treasuryOutboundTransfer._();
 
 @override String get value => 'treasury.outbound_transfer';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => 'treasury.outbound_transfer'.hashCode;
 
- }
+}
 @immutable final class TreasuryOutboundTransferObject$Unknown extends TreasuryOutboundTransferObject {const TreasuryOutboundTransferObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Use [OutboundTransfers](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-transfers) to transfer funds from a [FinancialAccount](https://api.stripe.com#financial_accounts) to a PaymentMethod belonging to the same entity. To send funds to a different party, use [OutboundPayments](https://api.stripe.com#outbound_payments) instead. You can send funds over ACH rails or through a domestic wire transfer to a user's own external bank account.
 /// 
 /// Simulate OutboundTransfer state changes with the `/v1/test_helpers/treasury/outbound_transfers` endpoints. These methods can only be called on test mode objects.
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasury
 /// Related guide: [Moving money with Treasury using OutboundTransfer objects](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-transfers)
 @immutable final class TreasuryOutboundTransfer {const TreasuryOutboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.destinationPaymentMethodDetails, required this.expectedArrivalDate, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, required this.transaction, this.description = const Omittable.absent(), this.destinationPaymentMethod = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.returnedDetails = const Omittable.absent(), this.trackingDetails = const Omittable.absent(), });
 
-factory TreasuryOutboundTransfer.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfer(
+factory TreasuryOutboundTransfer.fromJson(Map<String, dynamic> json) {return TreasuryOutboundTransfer(
   amount: (json['amount'] as num).toInt(),
   cancelable: json['cancelable'] as bool,
   created: (json['created'] as num).toInt(),
@@ -82,7 +82,7 @@ factory TreasuryOutboundTransfer.fromJson(Map<String, dynamic> json) { return Tr
   statusTransitions: TreasuryOutboundTransfersResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   trackingDetails: json.containsKey('tracking_details') ? Omittable(json['tracking_details'] != null ? TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   transaction: TreasuryCreditReversalTransaction.fromJson(json['transaction']),
-); }
+);}
 
 /// Amount (in cents) transferred.
 final int amount;
@@ -142,7 +142,7 @@ final Omittable<TreasuryOutboundTransfersResourceOutboundTransferResourceTrackin
 /// The Transaction associated with this object.
 final TreasuryCreditReversalTransaction transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'cancelable': cancelable,
   'created': created,
@@ -163,8 +163,8 @@ Map<String, dynamic> toJson() { return {
   'status_transitions': statusTransitions.toJson(),
   if (trackingDetails.isPresent) 'tracking_details': trackingDetails.value?.toJson(),
   'transaction': transaction.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('cancelable') && json['cancelable'] is bool &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -178,9 +178,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('statement_descriptor') && json['statement_descriptor'] is String &&
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
-      json.containsKey('transaction'); } 
+      json.containsKey('transaction');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -196,8 +196,8 @@ if (hostedRegulatoryReceiptUrl$ != null) {
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (statementDescriptor.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
-return errors; } 
-TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, Omittable<String?>? description, Omittable<String?>? destinationPaymentMethod, OutboundTransfersPaymentMethodDetails? destinationPaymentMethodDetails, int? expectedArrivalDate, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundTransferObject? object, Omittable<TreasuryOutboundTransfersResourceReturnedDetails?>? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundTransfersResourceStatusTransitions? statusTransitions, Omittable<TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails?>? trackingDetails, TreasuryCreditReversalTransaction? transaction, }) { return TreasuryOutboundTransfer(
+return errors;}
+TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, Omittable<String?>? description, Omittable<String?>? destinationPaymentMethod, OutboundTransfersPaymentMethodDetails? destinationPaymentMethodDetails, int? expectedArrivalDate, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundTransferObject? object, Omittable<TreasuryOutboundTransfersResourceReturnedDetails?>? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundTransfersResourceStatusTransitions? statusTransitions, Omittable<TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails?>? trackingDetails, TreasuryCreditReversalTransaction? transaction, }) {return TreasuryOutboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,
@@ -218,7 +218,7 @@ TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, 
   statusTransitions: statusTransitions ?? this.statusTransitions,
   trackingDetails: trackingDetails ?? this.trackingDetails,
   transaction: transaction ?? this.transaction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundTransfer &&
           amount == other.amount &&
@@ -246,4 +246,4 @@ TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, 
 
 @override String toString() => 'TreasuryOutboundTransfer(\n  amount: $amount,\n  cancelable: $cancelable,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  destinationPaymentMethod: $destinationPaymentMethod,\n  destinationPaymentMethodDetails: $destinationPaymentMethodDetails,\n  expectedArrivalDate: $expectedArrivalDate,\n  financialAccount: $financialAccount,\n  hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  returnedDetails: $returnedDetails,\n  statementDescriptor: $statementDescriptor,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  trackingDetails: $trackingDetails,\n  transaction: $transaction,\n)';
 
- }
+}

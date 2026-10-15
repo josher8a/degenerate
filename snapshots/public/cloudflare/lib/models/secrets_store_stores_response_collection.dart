@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/secrets_store_messages2.dart';import 'package:pub_cloudflare/models/secrets_store_store_object.dart';@immutable final class SecretsStoreStoresResponseCollection {const SecretsStoreStoresResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
-factory SecretsStoreStoresResponseCollection.fromJson(Map<String, dynamic> json) { return SecretsStoreStoresResponseCollection(
+factory SecretsStoreStoresResponseCollection.fromJson(Map<String, dynamic> json) {return SecretsStoreStoresResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => SecretsStoreMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SecretsStoreMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreStoreObject.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<SecretsStoreMessages2> errors;
 
@@ -24,23 +24,23 @@ final AccessActiveSessionsResponseResultInfo? resultInfo;
 
 final List<SecretsStoreStoreObject>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-SecretsStoreStoresResponseCollection copyWith({List<SecretsStoreMessages2>? errors, List<SecretsStoreMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, List<SecretsStoreStoreObject>? Function()? result, }) { return SecretsStoreStoresResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+SecretsStoreStoresResponseCollection copyWith({List<SecretsStoreMessages2>? errors, List<SecretsStoreMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, List<SecretsStoreStoreObject>? Function()? result, }) {return SecretsStoreStoresResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreStoresResponseCollection &&
           listEquals(errors, other.errors) &&
@@ -53,4 +53,4 @@ SecretsStoreStoresResponseCollection copyWith({List<SecretsStoreMessages2>? erro
 
 @override String toString() => 'SecretsStoreStoresResponseCollection(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
 
- }
+}

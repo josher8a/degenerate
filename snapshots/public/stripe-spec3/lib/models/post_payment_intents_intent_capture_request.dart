@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request/post_charges_charge_capture_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_payment_details.dart';@immutable final class PostPaymentIntentsIntentCaptureRequest {const PostPaymentIntentsIntentCaptureRequest({this.amountDetails, this.amountToCapture, this.applicationFeeAmount, this.expand, this.finalCapture, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, });
 
-factory PostPaymentIntentsIntentCaptureRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequest(
+factory PostPaymentIntentsIntentCaptureRequest.fromJson(Map<String, dynamic> json) {return PostPaymentIntentsIntentCaptureRequest(
   amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   amountToCapture: json['amount_to_capture'] != null ? (json['amount_to_capture'] as num).toInt() : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
@@ -15,7 +15,7 @@ factory PostPaymentIntentsIntentCaptureRequest.fromJson(Map<String, dynamic> jso
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferData: json['transfer_data'] != null ? PostChargesChargeCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Provides industry-specific information about the amount.
 final PostPaymentIntentsIntentCaptureRequestAmountDetails? amountDetails;
@@ -53,7 +53,7 @@ final String? statementDescriptorSuffix;
 /// is captured. Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
 final PostChargesChargeCaptureRequestTransferData? transferData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
   'amount_to_capture': ?amountToCapture,
   'application_fee_amount': ?applicationFeeAmount,
@@ -65,10 +65,10 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor': ?statementDescriptor,
   'statement_descriptor_suffix': ?statementDescriptorSuffix,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_details', 'amount_to_capture', 'application_fee_amount', 'expand', 'final_capture', 'hooks', 'metadata', 'payment_details', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount_details', 'amount_to_capture', 'application_fee_amount', 'expand', 'final_capture', 'hooks', 'metadata', 'payment_details', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
@@ -77,8 +77,8 @@ final statementDescriptorSuffix$ = statementDescriptorSuffix;
 if (statementDescriptorSuffix$ != null) {
   if (statementDescriptorSuffix$.runes.length > 22) { errors.add('statementDescriptorSuffix: length must be <= 22'); }
 }
-return errors; } 
-PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetails? Function()? amountDetails, int? Function()? amountToCapture, int? Function()? applicationFeeAmount, List<String>? Function()? expand, bool? Function()? finalCapture, Hooks? Function()? hooks, Metadata? Function()? metadata, PostPaymentIntentsIntentCaptureRequestPaymentDetails? Function()? paymentDetails, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData? Function()? transferData, }) { return PostPaymentIntentsIntentCaptureRequest(
+return errors;}
+PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetails? Function()? amountDetails, int? Function()? amountToCapture, int? Function()? applicationFeeAmount, List<String>? Function()? expand, bool? Function()? finalCapture, Hooks? Function()? hooks, Metadata? Function()? metadata, PostPaymentIntentsIntentCaptureRequestPaymentDetails? Function()? paymentDetails, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData? Function()? transferData, }) {return PostPaymentIntentsIntentCaptureRequest(
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   amountToCapture: amountToCapture != null ? amountToCapture() : this.amountToCapture,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
@@ -90,7 +90,7 @@ PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCapture
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferData: transferData != null ? transferData() : this.transferData,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentCaptureRequest &&
           amountDetails == other.amountDetails &&
@@ -109,4 +109,4 @@ PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCapture
 
 @override String toString() => 'PostPaymentIntentsIntentCaptureRequest(\n  amountDetails: $amountDetails,\n  amountToCapture: $amountToCapture,\n  applicationFeeAmount: $applicationFeeAmount,\n  expand: $expand,\n  finalCapture: $finalCapture,\n  hooks: $hooks,\n  metadata: $metadata,\n  paymentDetails: $paymentDetails,\n  statementDescriptor: $statementDescriptor,\n  statementDescriptorSuffix: $statementDescriptorSuffix,\n  transferData: $transferData,\n)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 sealed class Normalization {const Normalization();
 
-factory Normalization.fromJson(String json) { return switch (json) {
+factory Normalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
   'MIN_MAX' => minMax,
@@ -14,7 +14,7 @@ factory Normalization.fromJson(String json) { return switch (json) {
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
   _ => Normalization$Unknown(json),
-}; }
+};}
 
 static const Normalization percentage = Normalization$percentage._();
 
@@ -35,9 +35,9 @@ static const Normalization ratio = Normalization$ratio._();
 static const List<Normalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'PERCENTAGE' => 'percentage',
   'MIN0_MAX' => 'min0Max',
   'MIN_MAX' => 'minMax',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'OVERLAPPED_PERCENTAGE' => 'overlappedPercentage',
   'RATIO' => 'ratio',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Normalization$Unknown; } 
+bool get isUnknown {return this is Normalization$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() percentage, required W Function() min0Max, required W Function() minMax, required W Function() rawValues, required W Function() percentageChange, required W Function() rollingAverage, required W Function() overlappedPercentage, required W Function() ratio, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() percentage, required W Function() min0Max, required W Function() minMax, required W Function() rawValues, required W Function() percentageChange, required W Function() rollingAverage, required W Function() overlappedPercentage, required W Function() ratio, required W Function(String value) $unknown, }) {return switch (this) {
       Normalization$percentage() => percentage(),
       Normalization$min0Max() => min0Max(),
       Normalization$minMax() => minMax(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() percentage, required W Function() min0Max, requ
       Normalization$overlappedPercentage() => overlappedPercentage(),
       Normalization$ratio() => ratio(),
       Normalization$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentage, W Function()? min0Max, W Function()? minMax, W Function()? rawValues, W Function()? percentageChange, W Function()? rollingAverage, W Function()? overlappedPercentage, W Function()? ratio, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentage, W Function()? min0Max, W Function()? minMax, W Function()? rawValues, W Function()? percentageChange, W Function()? rollingAverage, W Function()? overlappedPercentage, W Function()? ratio, W Function(String value)? $unknown, }) {return switch (this) {
       Normalization$percentage() => percentage != null ? percentage() : orElse(value),
       Normalization$min0Max() => min0Max != null ? min0Max() : orElse(value),
       Normalization$minMax() => minMax != null ? minMax() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
       Normalization$overlappedPercentage() => overlappedPercentage != null ? overlappedPercentage() : orElse(value),
       Normalization$ratio() => ratio != null ? ratio() : orElse(value),
       Normalization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Normalization($value)';
 
- }
+}
 @immutable final class Normalization$percentage extends Normalization {const Normalization$percentage._();
 
 @override String get value => 'PERCENTAGE';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'PERCENTAGE'.hashCode;
 
- }
+}
 @immutable final class Normalization$min0Max extends Normalization {const Normalization$min0Max._();
 
 @override String get value => 'MIN0_MAX';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'MIN0_MAX'.hashCode;
 
- }
+}
 @immutable final class Normalization$minMax extends Normalization {const Normalization$minMax._();
 
 @override String get value => 'MIN_MAX';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'MIN_MAX'.hashCode;
 
- }
+}
 @immutable final class Normalization$rawValues extends Normalization {const Normalization$rawValues._();
 
 @override String get value => 'RAW_VALUES';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'RAW_VALUES'.hashCode;
 
- }
+}
 @immutable final class Normalization$percentageChange extends Normalization {const Normalization$percentageChange._();
 
 @override String get value => 'PERCENTAGE_CHANGE';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'PERCENTAGE_CHANGE'.hashCode;
 
- }
+}
 @immutable final class Normalization$rollingAverage extends Normalization {const Normalization$rollingAverage._();
 
 @override String get value => 'ROLLING_AVERAGE';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'ROLLING_AVERAGE'.hashCode;
 
- }
+}
 @immutable final class Normalization$overlappedPercentage extends Normalization {const Normalization$overlappedPercentage._();
 
 @override String get value => 'OVERLAPPED_PERCENTAGE';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'OVERLAPPED_PERCENTAGE'.hashCode;
 
- }
+}
 @immutable final class Normalization$ratio extends Normalization {const Normalization$ratio._();
 
 @override String get value => 'RATIO';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'RATIO'.hashCode;
 
- }
+}
 @immutable final class Normalization$Unknown extends Normalization {const Normalization$Unknown(this.value);
 
 @override final String value;
@@ -158,4 +158,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => value.hashCode;
 
- }
+}

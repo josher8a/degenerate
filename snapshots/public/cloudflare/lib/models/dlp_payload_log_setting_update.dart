@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// (both mean "not provided" for PATCH, "reset to default" for PUT).
 @immutable final class DlpPayloadLogSettingUpdate {const DlpPayloadLogSettingUpdate({this.maskingLevel, this.publicKey = const Omittable.absent(), });
 
-factory DlpPayloadLogSettingUpdate.fromJson(Map<String, dynamic> json) { return DlpPayloadLogSettingUpdate(
+factory DlpPayloadLogSettingUpdate.fromJson(Map<String, dynamic> json) {return DlpPayloadLogSettingUpdate(
   maskingLevel: json['masking_level'] != null ? DlpPayloadLogMaskingLevel.fromJson(json['masking_level'] as String) : null,
   publicKey: json.containsKey('public_key') ? Omittable(json['public_key'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Masking level for payload logs.
 /// 
@@ -29,15 +29,15 @@ final Omittable<String?> publicKey;
 /// The value of `maskingLevel`, or its schema default when absent.
 DlpPayloadLogMaskingLevel get maskingLevelOrDefault => maskingLevel ?? DlpPayloadLogMaskingLevel.fromJson('default');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (maskingLevel != null) 'masking_level': maskingLevel?.toJson(),
   if (publicKey.isPresent) 'public_key': publicKey.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'masking_level', 'public_key'}.contains(key)); } 
-DlpPayloadLogSettingUpdate copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLevel, Omittable<String?>? publicKey, }) { return DlpPayloadLogSettingUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'masking_level', 'public_key'}.contains(key));}
+DlpPayloadLogSettingUpdate copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLevel, Omittable<String?>? publicKey, }) {return DlpPayloadLogSettingUpdate(
   maskingLevel: maskingLevel != null ? maskingLevel() : this.maskingLevel,
   publicKey: publicKey ?? this.publicKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpPayloadLogSettingUpdate &&
           maskingLevel == other.maskingLevel &&
@@ -47,4 +47,4 @@ DlpPayloadLogSettingUpdate copyWith({DlpPayloadLogMaskingLevel? Function()? mask
 
 @override String toString() => 'DlpPayloadLogSettingUpdate(maskingLevel: $maskingLevel, publicKey: $publicKey)';
 
- }
+}

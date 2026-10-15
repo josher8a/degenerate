@@ -14,7 +14,7 @@ final class ZoneLevelAuthenticatedOriginPullsApi with ApiExecutor {const ZoneLev
 /// Lists all client certificates configured for zone-level authenticated origin pulls.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth`
-Future<ApiResult<List<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull>?, ZoneLevelAuthenticatedOriginPullsListCertificatesError>> zoneLevelAuthenticatedOriginPullsListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull>?, ZoneLevelAuthenticatedOriginPullsListCertificatesError>> zoneLevelAuthenticatedOriginPullsListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: ZoneLevelAuthenticatedOriginPullsListCertificatesError.fromResponse,
 );
- } 
+}
 /// Upload Certificate
 ///
 /// Upload your own certificate you want Cloudflare to use for edge-to-origin communication to override the shared certificate. Please note that it is important to keep only one certificate active. Also, make sure to enable zone-level authenticated origin pulls by making a PUT call to settings endpoint to see the uploaded certificate in use.
 ///
 /// `POST /zones/{zone_id}/origin_tls_client_auth`
-Future<ApiResult<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull?, ZoneLevelAuthenticatedOriginPullsUploadCertificateError>> zoneLevelAuthenticatedOriginPullsUploadCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull?, ZoneLevelAuthenticatedOriginPullsUploadCertificateError>> zoneLevelAuthenticatedOriginPullsUploadCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: ZoneLevelAuthenticatedOriginPullsUploadCertificateError.fromResponse,
 );
- } 
+}
 /// Get Certificate Details
 ///
 /// Retrieves details for a specific client certificate used in zone-level authenticated origin pulls.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull?, ZoneLevelAuthenticatedOriginPullsGetCertificateDetailsError>> zoneLevelAuthenticatedOriginPullsGetCertificateDetails({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull?, ZoneLevelAuthenticatedOriginPullsGetCertificateDetailsError>> zoneLevelAuthenticatedOriginPullsGetCertificateDetails({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: ZoneLevelAuthenticatedOriginPullsGetCertificateDetailsError.fromResponse,
 );
- } 
+}
 /// Delete Certificate
 ///
 /// Removes a client certificate used for zone-level authenticated origin pulls.
 ///
 /// `DELETE /zones/{zone_id}/origin_tls_client_auth/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull?, ZoneLevelAuthenticatedOriginPullsDeleteCertificateError>> zoneLevelAuthenticatedOriginPullsDeleteCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull?, ZoneLevelAuthenticatedOriginPullsDeleteCertificateError>> zoneLevelAuthenticatedOriginPullsDeleteCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -102,13 +102,13 @@ return await execute(
   },
   onError: ZoneLevelAuthenticatedOriginPullsDeleteCertificateError.fromResponse,
 );
- } 
+}
 /// Get Enablement Setting for Zone
 ///
 /// Get whether zone-level authenticated origin pulls is enabled or not. It is false by default.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/settings`
-Future<ApiResult<TlsCertificatesAndHostnamesEnabledResponseResult?, ZoneLevelAuthenticatedOriginPullsGetEnablementSettingForZoneError>> zoneLevelAuthenticatedOriginPullsGetEnablementSettingForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesEnabledResponseResult?, ZoneLevelAuthenticatedOriginPullsGetEnablementSettingForZoneError>> zoneLevelAuthenticatedOriginPullsGetEnablementSettingForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -125,13 +125,13 @@ return await execute(
   },
   onError: ZoneLevelAuthenticatedOriginPullsGetEnablementSettingForZoneError.fromResponse,
 );
- } 
+}
 /// Set Enablement for Zone
 ///
 /// Enable or disable zone-level authenticated origin pulls. 'enabled' should be set true either before/after the certificate is uploaded to see the certificate in use.
 ///
 /// `PUT /zones/{zone_id}/origin_tls_client_auth/settings`
-Future<ApiResult<TlsCertificatesAndHostnamesEnabledResponseResult?, ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneError>> zoneLevelAuthenticatedOriginPullsSetEnablementForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesEnabledResponseResult?, ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneError>> zoneLevelAuthenticatedOriginPullsSetEnablementForZone({required TlsCertificatesAndHostnamesIdentifier zoneId, required ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -150,5 +150,5 @@ return await execute(
   },
   onError: ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneError.fromResponse,
 );
- } 
- }
+}
+}

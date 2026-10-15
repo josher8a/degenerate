@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/notification_event_data.dart';import 'package:pub_stripe_spec3/models/notification_event_request.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class EventObject {const EventObject();
 
-factory EventObject.fromJson(String json) { return switch (json) {
+factory EventObject.fromJson(String json) {return switch (json) {
   'event' => event,
   _ => EventObject$Unknown(json),
-}; }
+};}
 
 static const EventObject event = EventObject$event._();
 
 static const List<EventObject> values = [event];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'event' => 'event',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EventObject$Unknown; } 
+bool get isUnknown {return this is EventObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() event, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() event, required W Function(String value) $unknown, }) {return switch (this) {
       EventObject$event() => event(),
       EventObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function(String value)? $unknown, }) {return switch (this) {
       EventObject$event() => event != null ? event() : orElse(value),
       EventObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EventObject($value)';
 
- }
+}
 @immutable final class EventObject$event extends EventObject {const EventObject$event._();
 
 @override String get value => 'event';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'event'.hashCode;
 
- }
+}
 @immutable final class EventObject$Unknown extends EventObject {const EventObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Snapshot events allow you to track and react to activity in your Stripe integration. When
 /// the state of another API resource changes, Stripe creates an `Event` object that contains
 /// all the relevant information associated with that action, including the affected API
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 /// for 30 days.
 @immutable final class Event {const Event({required this.created, required this.data, required this.id, required this.livemode, required this.object, required this.pendingWebhooks, required this.type, this.account, this.apiVersion = const Omittable.absent(), this.context, this.request = const Omittable.absent(), });
 
-factory Event.fromJson(Map<String, dynamic> json) { return Event(
+factory Event.fromJson(Map<String, dynamic> json) {return Event(
   account: json['account'] as String?,
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   context: json['context'] as String?,
@@ -86,7 +86,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   pendingWebhooks: (json['pending_webhooks'] as num).toInt(),
   request: json.containsKey('request') ? Omittable(json['request'] != null ? NotificationEventRequest.fromJson(json['request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: json['type'] as String,
-); }
+);}
 
 /// The connected account that originates the event.
 final String? account;
@@ -120,7 +120,7 @@ final Omittable<NotificationEventRequest?> request;
 /// Description of the event (for example, `invoice.created` or `charge.refunded`).
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': ?account,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   'context': ?context,
@@ -132,16 +132,16 @@ Map<String, dynamic> toJson() { return {
   'pending_webhooks': pendingWebhooks,
   if (request.isPresent) 'request': request.value?.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('data') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('pending_webhooks') && json['pending_webhooks'] is num &&
-      json.containsKey('type') && json['type'] is String; } 
+      json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final account$ = account;
 if (account$ != null) {
   if (account$.runes.length > 5000) { errors.add('account: length must be <= 5000'); }
@@ -156,8 +156,8 @@ if (context$ != null) {
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (type.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
-return errors; } 
-Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, String? Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, Omittable<NotificationEventRequest?>? request, String? type, }) { return Event(
+return errors;}
+Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, String? Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, Omittable<NotificationEventRequest?>? request, String? type, }) {return Event(
   account: account != null ? account() : this.account,
   apiVersion: apiVersion ?? this.apiVersion,
   context: context != null ? context() : this.context,
@@ -169,7 +169,7 @@ Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, Str
   pendingWebhooks: pendingWebhooks ?? this.pendingWebhooks,
   request: request ?? this.request,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Event &&
           account == other.account &&
@@ -188,4 +188,4 @@ Event copyWith({String? Function()? account, Omittable<String?>? apiVersion, Str
 
 @override String toString() => 'Event(\n  account: $account,\n  apiVersion: $apiVersion,\n  context: $context,\n  created: $created,\n  data: $data,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  pendingWebhooks: $pendingWebhooks,\n  request: $request,\n  type: $type,\n)';
 
- }
+}

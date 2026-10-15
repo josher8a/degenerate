@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_reference.dart';/// ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
 @immutable final class ScaleIoPersistentVolumeSource {const ScaleIoPersistentVolumeSource({required this.gateway, required this.secretRef, required this.system, this.fsType, this.protectionDomain, this.readOnly, this.sslEnabled, this.storageMode, this.storagePool, this.volumeName, });
 
-factory ScaleIoPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return ScaleIoPersistentVolumeSource(
+factory ScaleIoPersistentVolumeSource.fromJson(Map<String, dynamic> json) {return ScaleIoPersistentVolumeSource(
   fsType: json['fsType'] as String?,
   gateway: json['gateway'] as String,
   protectionDomain: json['protectionDomain'] as String?,
@@ -15,7 +15,7 @@ factory ScaleIoPersistentVolumeSource.fromJson(Map<String, dynamic> json) { retu
   storagePool: json['storagePool'] as String?,
   system: json['system'] as String,
   volumeName: json['volumeName'] as String?,
-); }
+);}
 
 /// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Default is "xfs"
 final String? fsType;
@@ -53,7 +53,7 @@ String get fsTypeOrDefault => fsType ?? 'xfs';
 /// The value of `storageMode`, or its schema default when absent.
 String get storageModeOrDefault => storageMode ?? 'ThinProvisioned';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'gateway': gateway,
   'protectionDomain': ?protectionDomain,
@@ -64,11 +64,11 @@ Map<String, dynamic> toJson() { return {
   'storagePool': ?storagePool,
   'system': system,
   'volumeName': ?volumeName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('gateway') && json['gateway'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('gateway') && json['gateway'] is String &&
       json.containsKey('secretRef') &&
-      json.containsKey('system') && json['system'] is String; } 
-ScaleIoPersistentVolumeSource copyWith({String? Function()? fsType, String? gateway, String? Function()? protectionDomain, bool? Function()? readOnly, SecretReference? secretRef, bool? Function()? sslEnabled, String? Function()? storageMode, String? Function()? storagePool, String? system, String? Function()? volumeName, }) { return ScaleIoPersistentVolumeSource(
+      json.containsKey('system') && json['system'] is String;}
+ScaleIoPersistentVolumeSource copyWith({String? Function()? fsType, String? gateway, String? Function()? protectionDomain, bool? Function()? readOnly, SecretReference? secretRef, bool? Function()? sslEnabled, String? Function()? storageMode, String? Function()? storagePool, String? system, String? Function()? volumeName, }) {return ScaleIoPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   gateway: gateway ?? this.gateway,
   protectionDomain: protectionDomain != null ? protectionDomain() : this.protectionDomain,
@@ -79,7 +79,7 @@ ScaleIoPersistentVolumeSource copyWith({String? Function()? fsType, String? gate
   storagePool: storagePool != null ? storagePool() : this.storagePool,
   system: system ?? this.system,
   volumeName: volumeName != null ? volumeName() : this.volumeName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ScaleIoPersistentVolumeSource &&
           fsType == other.fsType &&
@@ -97,4 +97,4 @@ ScaleIoPersistentVolumeSource copyWith({String? Function()? fsType, String? gate
 
 @override String toString() => 'ScaleIoPersistentVolumeSource(\n  fsType: $fsType,\n  gateway: $gateway,\n  protectionDomain: $protectionDomain,\n  readOnly: $readOnly,\n  secretRef: $secretRef,\n  sslEnabled: $sslEnabled,\n  storageMode: $storageMode,\n  storagePool: $storagePool,\n  system: $system,\n  volumeName: $volumeName,\n)';
 
- }
+}

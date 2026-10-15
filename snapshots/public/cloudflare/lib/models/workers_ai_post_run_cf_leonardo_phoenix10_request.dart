@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoPhoenix10Request {const WorkersAiPostRunCfLeonardoPhoenix10Request({required this.prompt, this.guidance, this.height, this.negativePrompt, this.numSteps, this.seed, this.width, });
 
-factory WorkersAiPostRunCfLeonardoPhoenix10Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfLeonardoPhoenix10Request(
+factory WorkersAiPostRunCfLeonardoPhoenix10Request.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfLeonardoPhoenix10Request(
   guidance: json['guidance'] != null ? (json['guidance'] as num).toDouble() : null,
   height: json['height'] != null ? (json['height'] as num).toInt() : null,
   negativePrompt: json['negative_prompt'] as String?,
@@ -11,7 +11,7 @@ factory WorkersAiPostRunCfLeonardoPhoenix10Request.fromJson(Map<String, dynamic>
   prompt: json['prompt'] as String,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   width: json['width'] != null ? (json['width'] as num).toInt() : null,
-); }
+);}
 
 /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
 final double? guidance;
@@ -46,7 +46,7 @@ int get numStepsOrDefault => numSteps ?? 25;
 /// The value of `width`, or its schema default when absent.
 int get widthOrDefault => width ?? 1024;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'guidance': ?guidance,
   'height': ?height,
   'negative_prompt': ?negativePrompt,
@@ -54,10 +54,10 @@ Map<String, dynamic> toJson() { return {
   'prompt': prompt,
   'seed': ?seed,
   'width': ?width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final guidance$ = guidance;
 if (guidance$ != null) {
   if (guidance$ < 2) { errors.add('guidance: must be >= 2'); }
@@ -87,8 +87,8 @@ if (width$ != null) {
   if (width$ < 0) { errors.add('width: must be >= 0'); }
   if (width$ > 2048) { errors.add('width: must be <= 2048'); }
 }
-return errors; } 
-WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double? Function()? guidance, int? Function()? height, String? Function()? negativePrompt, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? width, }) { return WorkersAiPostRunCfLeonardoPhoenix10Request(
+return errors;}
+WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double? Function()? guidance, int? Function()? height, String? Function()? negativePrompt, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? width, }) {return WorkersAiPostRunCfLeonardoPhoenix10Request(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   negativePrompt: negativePrompt != null ? negativePrompt() : this.negativePrompt,
@@ -96,7 +96,7 @@ WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double? Function()? guidanc
   prompt: prompt ?? this.prompt,
   seed: seed != null ? seed() : this.seed,
   width: width != null ? width() : this.width,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfLeonardoPhoenix10Request &&
           guidance == other.guidance &&
@@ -111,4 +111,4 @@ WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double? Function()? guidanc
 
 @override String toString() => 'WorkersAiPostRunCfLeonardoPhoenix10Request(guidance: $guidance, height: $height, negativePrompt: $negativePrompt, numSteps: $numSteps, prompt: $prompt, seed: $seed, width: $width)';
 
- }
+}

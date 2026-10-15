@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The background s
 /// 
 sealed class ImageEditCompletedEventBackground {const ImageEditCompletedEventBackground();
 
-factory ImageEditCompletedEventBackground.fromJson(String json) { return switch (json) {
+factory ImageEditCompletedEventBackground.fromJson(String json) {return switch (json) {
   'transparent' => transparent,
   'opaque' => opaque,
   'auto' => auto,
   _ => ImageEditCompletedEventBackground$Unknown(json),
-}; }
+};}
 
 static const ImageEditCompletedEventBackground transparent = ImageEditCompletedEventBackground$transparent._();
 
@@ -21,33 +21,33 @@ static const ImageEditCompletedEventBackground auto = ImageEditCompletedEventBac
 static const List<ImageEditCompletedEventBackground> values = [transparent, opaque, auto];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'transparent' => 'transparent',
   'opaque' => 'opaque',
   'auto' => 'auto',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ImageEditCompletedEventBackground$Unknown; } 
+bool get isUnknown {return this is ImageEditCompletedEventBackground$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() transparent, required W Function() opaque, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() transparent, required W Function() opaque, required W Function() auto, required W Function(String value) $unknown, }) {return switch (this) {
       ImageEditCompletedEventBackground$transparent() => transparent(),
       ImageEditCompletedEventBackground$opaque() => opaque(),
       ImageEditCompletedEventBackground$auto() => auto(),
       ImageEditCompletedEventBackground$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? transparent, W Function()? opaque, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transparent, W Function()? opaque, W Function()? auto, W Function(String value)? $unknown, }) {return switch (this) {
       ImageEditCompletedEventBackground$transparent() => transparent != null ? transparent() : orElse(value),
       ImageEditCompletedEventBackground$opaque() => opaque != null ? opaque() : orElse(value),
       ImageEditCompletedEventBackground$auto() => auto != null ? auto() : orElse(value),
       ImageEditCompletedEventBackground$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ImageEditCompletedEventBackground($value)';
 
- }
+}
 @immutable final class ImageEditCompletedEventBackground$transparent extends ImageEditCompletedEventBackground {const ImageEditCompletedEventBackground$transparent._();
 
 @override String get value => 'transparent';
@@ -56,7 +56,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transpar
 
 @override int get hashCode => 'transparent'.hashCode;
 
- }
+}
 @immutable final class ImageEditCompletedEventBackground$opaque extends ImageEditCompletedEventBackground {const ImageEditCompletedEventBackground$opaque._();
 
 @override String get value => 'opaque';
@@ -65,7 +65,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transpar
 
 @override int get hashCode => 'opaque'.hashCode;
 
- }
+}
 @immutable final class ImageEditCompletedEventBackground$auto extends ImageEditCompletedEventBackground {const ImageEditCompletedEventBackground$auto._();
 
 @override String get value => 'auto';
@@ -74,7 +74,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transpar
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class ImageEditCompletedEventBackground$Unknown extends ImageEditCompletedEventBackground {const ImageEditCompletedEventBackground$Unknown(this.value);
 
 @override final String value;
@@ -84,4 +84,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transpar
 
 @override int get hashCode => value.hashCode;
 
- }
+}

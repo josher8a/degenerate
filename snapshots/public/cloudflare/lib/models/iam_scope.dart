@@ -11,26 +11,26 @@ dynamic toJson() => value;
 /// A scope is a combination of scope objects which provides additional context.
 @immutable final class IamScope {const IamScope({required this.key, required this.objects, });
 
-factory IamScope.fromJson(Map<String, dynamic> json) { return IamScope(
+factory IamScope.fromJson(Map<String, dynamic> json) {return IamScope(
   key: json['key'] != null ? IamScopeKey.fromJson(json['key'] as dynamic) : null,
   objects: (json['objects'] as List<dynamic>).map((e) => IamScopeObject.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final IamScopeKey? key;
 
 /// A list of scope objects for additional context.
 final List<IamScopeObject> objects;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key?.toJson(),
   'objects': objects.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
-      json.containsKey('objects'); } 
-IamScope copyWith({IamScopeKey? Function()? key, List<IamScopeObject>? objects, }) { return IamScope(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') &&
+      json.containsKey('objects');}
+IamScope copyWith({IamScopeKey? Function()? key, List<IamScopeObject>? objects, }) {return IamScope(
   key: key != null ? key() : this.key,
   objects: objects ?? this.objects,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamScope &&
           key == other.key &&
@@ -40,4 +40,4 @@ IamScope copyWith({IamScopeKey? Function()? key, List<IamScopeObject>? objects, 
 
 @override String toString() => 'IamScope(key: $key, objects: $objects)';
 
- }
+}

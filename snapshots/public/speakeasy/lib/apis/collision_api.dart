@@ -18,7 +18,7 @@ final class CollisionApi with ApiExecutor {const CollisionApi(this.apiConfig);
 /// a class called ResultTypedDict.
 ///
 /// `POST /inline-type-name-collision`
-Future<ApiResult<InlineTypeNameCollisionResponse, Never>> inlineTypeNameCollision({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InlineTypeNameCollisionResponse, Never>> inlineTypeNameCollision({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -33,7 +33,7 @@ return await execute(
     return InlineTypeNameCollisionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Test cascading TypedDict companion name disambiguation
 ///
 /// Exercises every level of the cascading TypedDict suffix strategy.
@@ -44,7 +44,7 @@ return await execute(
 /// "item_typed_dict_companion_model" (level 5: TypedDict2 numeric fallback).
 ///
 /// `POST /inline-type-name-collision-cascading`
-Future<ApiResult<InlineTypeNameCollisionCascadingResponse, Never>> inlineTypeNameCollisionCascading({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InlineTypeNameCollisionCascadingResponse, Never>> inlineTypeNameCollisionCascading({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -59,5 +59,5 @@ return await execute(
     return InlineTypeNameCollisionCascadingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

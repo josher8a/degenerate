@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_settings.dart';@immutable final class ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse {const ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse(
+factory ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? ZeroTrustGatewaySettings.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<ZeroTrustGatewayMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final ZeroTrustGatewaySettings? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewaySettings? Function()? result, }) { return ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse(
+      json.containsKey('success') && json['success'] is bool;}
+ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewaySettings? Function()? result, }) {return ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse copyWith({List<Z
 
 @override String toString() => 'ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

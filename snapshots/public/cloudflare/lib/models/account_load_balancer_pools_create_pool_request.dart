@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_enabled.dart';import 'package:pub_cloudflare/models/load_balancing_latitude.dart';import 'package:pub_cloudflare/models/load_balancing_load_shedding.dart';import 'package:pub_cloudflare/models/load_balancing_longitude.dart';import 'package:pub_cloudflare/models/load_balancing_minimum_origins.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_id.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_id.dart';import 'package:pub_cloudflare/models/load_balancing_name.dart';import 'package:pub_cloudflare/models/load_balancing_notification_email.dart';import 'package:pub_cloudflare/models/load_balancing_notification_filter.dart';import 'package:pub_cloudflare/models/load_balancing_origin_request.dart';import 'package:pub_cloudflare/models/load_balancing_origin_steering.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_description.dart';@immutable final class AccountLoadBalancerPoolsCreatePoolRequest {const AccountLoadBalancerPoolsCreatePoolRequest({required this.name, required this.origins, this.description, this.enabled, this.latitude, this.loadShedding = const Omittable.absent(), this.longitude, this.minimumOrigins, this.monitor, this.monitorGroup, this.notificationEmail, this.notificationFilter = const Omittable.absent(), this.originSteering = const Omittable.absent(), });
 
-factory AccountLoadBalancerPoolsCreatePoolRequest.fromJson(Map<String, dynamic> json) { return AccountLoadBalancerPoolsCreatePoolRequest(
+factory AccountLoadBalancerPoolsCreatePoolRequest.fromJson(Map<String, dynamic> json) {return AccountLoadBalancerPoolsCreatePoolRequest(
   description: json['description'] != null ? LoadBalancingSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? LoadBalancingEnabled.fromJson(json['enabled'] as bool) : null,
   latitude: json['latitude'] != null ? LoadBalancingLatitude.fromJson(json['latitude'] as num) : null,
@@ -17,7 +17,7 @@ factory AccountLoadBalancerPoolsCreatePoolRequest.fromJson(Map<String, dynamic> 
   notificationFilter: json.containsKey('notification_filter') ? Omittable(json['notification_filter'] != null ? LoadBalancingNotificationFilter.fromJson(json['notification_filter'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   originSteering: json.containsKey('origin_steering') ? Omittable(json['origin_steering'] != null ? LoadBalancingOriginSteering.fromJson(json['origin_steering'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   origins: (json['origins'] as List<dynamic>).map((e) => LoadBalancingOriginRequest.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// A human-readable description of the pool.
 final LoadBalancingSchemasDescription? description;
@@ -55,7 +55,7 @@ final Omittable<LoadBalancingOriginSteering?> originSteering;
 /// The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
 final List<LoadBalancingOriginRequest> origins;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (latitude != null) 'latitude': latitude?.toJson(),
@@ -69,10 +69,10 @@ Map<String, dynamic> toJson() { return {
   if (notificationFilter.isPresent) 'notification_filter': notificationFilter.value?.toJson(),
   if (originSteering.isPresent) 'origin_steering': originSteering.value?.toJson(),
   'origins': origins.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
-      json.containsKey('origins'); } 
-AccountLoadBalancerPoolsCreatePoolRequest copyWith({LoadBalancingSchemasDescription? Function()? description, LoadBalancingEnabled? Function()? enabled, LoadBalancingLatitude? Function()? latitude, Omittable<LoadBalancingLoadShedding?>? loadShedding, LoadBalancingLongitude? Function()? longitude, LoadBalancingMinimumOrigins? Function()? minimumOrigins, LoadBalancingMonitorId? Function()? monitor, LoadBalancingMonitorGroupId? Function()? monitorGroup, LoadBalancingName? name, LoadBalancingNotificationEmail? Function()? notificationEmail, Omittable<LoadBalancingNotificationFilter?>? notificationFilter, Omittable<LoadBalancingOriginSteering?>? originSteering, List<LoadBalancingOriginRequest>? origins, }) { return AccountLoadBalancerPoolsCreatePoolRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') &&
+      json.containsKey('origins');}
+AccountLoadBalancerPoolsCreatePoolRequest copyWith({LoadBalancingSchemasDescription? Function()? description, LoadBalancingEnabled? Function()? enabled, LoadBalancingLatitude? Function()? latitude, Omittable<LoadBalancingLoadShedding?>? loadShedding, LoadBalancingLongitude? Function()? longitude, LoadBalancingMinimumOrigins? Function()? minimumOrigins, LoadBalancingMonitorId? Function()? monitor, LoadBalancingMonitorGroupId? Function()? monitorGroup, LoadBalancingName? name, LoadBalancingNotificationEmail? Function()? notificationEmail, Omittable<LoadBalancingNotificationFilter?>? notificationFilter, Omittable<LoadBalancingOriginSteering?>? originSteering, List<LoadBalancingOriginRequest>? origins, }) {return AccountLoadBalancerPoolsCreatePoolRequest(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   latitude: latitude != null ? latitude() : this.latitude,
@@ -86,7 +86,7 @@ AccountLoadBalancerPoolsCreatePoolRequest copyWith({LoadBalancingSchemasDescript
   notificationFilter: notificationFilter ?? this.notificationFilter,
   originSteering: originSteering ?? this.originSteering,
   origins: origins ?? this.origins,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountLoadBalancerPoolsCreatePoolRequest &&
           description == other.description &&
@@ -107,4 +107,4 @@ AccountLoadBalancerPoolsCreatePoolRequest copyWith({LoadBalancingSchemasDescript
 
 @override String toString() => 'AccountLoadBalancerPoolsCreatePoolRequest(\n  description: $description,\n  enabled: $enabled,\n  latitude: $latitude,\n  loadShedding: $loadShedding,\n  longitude: $longitude,\n  minimumOrigins: $minimumOrigins,\n  monitor: $monitor,\n  monitorGroup: $monitorGroup,\n  name: $name,\n  notificationEmail: $notificationEmail,\n  notificationFilter: $notificationFilter,\n  originSteering: $originSteering,\n  origins: $origins,\n)';
 
- }
+}

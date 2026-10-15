@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingTransactionReceiptData {const IssuingTransactionReceiptData({this.description = const Omittable.absent(), this.quantity = const Omittable.absent(), this.total = const Omittable.absent(), this.unitCost = const Omittable.absent(), });
 
-factory IssuingTransactionReceiptData.fromJson(Map<String, dynamic> json) { return IssuingTransactionReceiptData(
+factory IssuingTransactionReceiptData.fromJson(Map<String, dynamic> json) {return IssuingTransactionReceiptData(
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   quantity: json.containsKey('quantity') ? Omittable(json['quantity'] != null ? (json['quantity'] as num).toDouble() : null) : const Omittable.absent(),
   total: json.containsKey('total') ? Omittable(json['total'] != null ? (json['total'] as num).toInt() : null) : const Omittable.absent(),
   unitCost: json.containsKey('unit_cost') ? Omittable(json['unit_cost'] != null ? (json['unit_cost'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The description of the item. The maximum length of this field is 26 characters.
 final Omittable<String?> description;
@@ -23,26 +23,26 @@ final Omittable<int?> total;
 /// The unit cost of the item in cents.
 final Omittable<int?> unitCost;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value,
   if (quantity.isPresent) 'quantity': quantity.value,
   if (total.isPresent) 'total': total.value,
   if (unitCost.isPresent) 'unit_cost': unitCost.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'quantity', 'total', 'unit_cost'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'quantity', 'total', 'unit_cost'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-return errors; } 
-IssuingTransactionReceiptData copyWith({Omittable<String?>? description, Omittable<double?>? quantity, Omittable<int?>? total, Omittable<int?>? unitCost, }) { return IssuingTransactionReceiptData(
+return errors;}
+IssuingTransactionReceiptData copyWith({Omittable<String?>? description, Omittable<double?>? quantity, Omittable<int?>? total, Omittable<int?>? unitCost, }) {return IssuingTransactionReceiptData(
   description: description ?? this.description,
   quantity: quantity ?? this.quantity,
   total: total ?? this.total,
   unitCost: unitCost ?? this.unitCost,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionReceiptData &&
           description == other.description &&
@@ -54,4 +54,4 @@ IssuingTransactionReceiptData copyWith({Omittable<String?>? description, Omittab
 
 @override String toString() => 'IssuingTransactionReceiptData(description: $description, quantity: $quantity, total: $total, unitCost: $unitCost)';
 
- }
+}

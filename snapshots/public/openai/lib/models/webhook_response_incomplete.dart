@@ -5,37 +5,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class WebhookResponseIncompleteType {const WebhookResponseIncompleteType();
 
-factory WebhookResponseIncompleteType.fromJson(String json) { return switch (json) {
+factory WebhookResponseIncompleteType.fromJson(String json) {return switch (json) {
   'response.incomplete' => responseIncomplete,
   _ => WebhookResponseIncompleteType$Unknown(json),
-}; }
+};}
 
 static const WebhookResponseIncompleteType responseIncomplete = WebhookResponseIncompleteType$responseIncomplete._();
 
 static const List<WebhookResponseIncompleteType> values = [responseIncomplete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'response.incomplete' => 'responseIncomplete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookResponseIncompleteType$Unknown; } 
+bool get isUnknown {return this is WebhookResponseIncompleteType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() responseIncomplete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() responseIncomplete, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookResponseIncompleteType$responseIncomplete() => responseIncomplete(),
       WebhookResponseIncompleteType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseIncomplete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseIncomplete, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookResponseIncompleteType$responseIncomplete() => responseIncomplete != null ? responseIncomplete() : orElse(value),
       WebhookResponseIncompleteType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookResponseIncompleteType($value)';
 
- }
+}
 @immutable final class WebhookResponseIncompleteType$responseIncomplete extends WebhookResponseIncompleteType {const WebhookResponseIncompleteType$responseIncomplete._();
 
 @override String get value => 'response.incomplete';
@@ -44,7 +44,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => 'response.incomplete'.hashCode;
 
- }
+}
 @immutable final class WebhookResponseIncompleteType$Unknown extends WebhookResponseIncompleteType {const WebhookResponseIncompleteType$Unknown(this.value);
 
 @override final String value;
@@ -54,18 +54,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Sent when a background response has been interrupted.
 /// 
 @immutable final class WebhookResponseIncomplete {const WebhookResponseIncomplete({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
-factory WebhookResponseIncomplete.fromJson(Map<String, dynamic> json) { return WebhookResponseIncomplete(
+factory WebhookResponseIncomplete.fromJson(Map<String, dynamic> json) {return WebhookResponseIncomplete(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
   data: WebhookBatchCancelledData.fromJson(json['data'] as Map<String, dynamic>),
   object: json['object'] != null ? WebhookBatchCancelledObject.fromJson(json['object'] as String) : null,
   type: WebhookResponseIncompleteType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The Unix timestamp (in seconds) of when the model response was interrupted.
 /// 
@@ -87,24 +87,24 @@ final WebhookBatchCancelledObject? object;
 /// 
 final WebhookResponseIncompleteType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'data': data.toJson(),
   if (object != null) 'object': object?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
-      json.containsKey('type'); } 
-WebhookResponseIncomplete copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject? Function()? object, WebhookResponseIncompleteType? type, }) { return WebhookResponseIncomplete(
+      json.containsKey('type');}
+WebhookResponseIncomplete copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject? Function()? object, WebhookResponseIncompleteType? type, }) {return WebhookResponseIncomplete(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,
   object: object != null ? object() : this.object,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookResponseIncomplete &&
           createdAt == other.createdAt &&
@@ -117,4 +117,4 @@ WebhookResponseIncomplete copyWith({int? createdAt, String? id, WebhookBatchCanc
 
 @override String toString() => 'WebhookResponseIncomplete(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';
 
- }
+}

@@ -8,11 +8,11 @@ const TreasuryCreditReversalTransaction({this.string = const Omittable.absent(),
 const TreasuryCreditReversalTransaction._({required this.rawValue, required this.string, required this.treasuryTransaction, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory TreasuryCreditReversalTransaction.fromJson(Object? json) { return TreasuryCreditReversalTransaction._(
+factory TreasuryCreditReversalTransaction.fromJson(Object? json) {return TreasuryCreditReversalTransaction._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   treasuryTransaction: json is Map<String, dynamic> && TreasuryTransaction.canParse(json) ? parseAnyOfVariant<TreasuryTransaction>(json, (value) => TreasuryTransaction.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'TreasuryCreditReversalTransaction(${toJson()})';
 
- }
+}

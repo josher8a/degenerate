@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_poll_response/create_poll_response_data.dart';@immutable final class CreatePollResponse {const CreatePollResponse({this.data, this.success, });
 
-factory CreatePollResponse.fromJson(Map<String, dynamic> json) { return CreatePollResponse(
+factory CreatePollResponse.fromJson(Map<String, dynamic> json) {return CreatePollResponse(
   data: json['data'] != null ? CreatePollResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
   success: json['success'] as bool?,
-); }
+);}
 
 final CreatePollResponseData? data;
 
 final bool? success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (data != null) 'data': data?.toJson(),
   'success': ?success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-CreatePollResponse copyWith({CreatePollResponseData? Function()? data, bool? Function()? success, }) { return CreatePollResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'data', 'success'}.contains(key));}
+CreatePollResponse copyWith({CreatePollResponseData? Function()? data, bool? Function()? success, }) {return CreatePollResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePollResponse &&
           data == other.data &&
@@ -30,4 +30,4 @@ CreatePollResponse copyWith({CreatePollResponseData? Function()? data, bool? Fun
 
 @override String toString() => 'CreatePollResponse(data: $data, success: $success)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_cloudflare_only.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_operation.dart';/// Set the directive with a duration value in seconds.
 @immutable final class SetDirective3 {const SetDirective3({required this.operation, required this.value, this.cloudflareOnly, });
 
-factory SetDirective3.fromJson(Map<String, dynamic> json) { return SetDirective3(
+factory SetDirective3.fromJson(Map<String, dynamic> json) {return SetDirective3(
   cloudflareOnly: json['cloudflare_only'] != null ? RulesetsSetCacheControlCloudflareOnly.fromJson(json['cloudflare_only'] as bool) : null,
   operation: RulesetsSetCacheControlOperation.fromJson(json['operation'] as String),
   value: (json['value'] as num).toInt(),
-); }
+);}
 
 /// Whether the directive should only be applied to the Cloudflare CDN cache.
 final RulesetsSetCacheControlCloudflareOnly? cloudflareOnly;
@@ -20,22 +20,22 @@ final RulesetsSetCacheControlOperation operation;
 /// Example: `3600`
 final int value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cloudflareOnly != null) 'cloudflare_only': cloudflareOnly?.toJson(),
   'operation': operation.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('operation') &&
-      json.containsKey('value') && json['value'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('operation') &&
+      json.containsKey('value') && json['value'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (value < 0) { errors.add('value: must be >= 0'); }
-return errors; } 
-SetDirective3 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, int? value, }) { return SetDirective3(
+return errors;}
+SetDirective3 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, int? value, }) {return SetDirective3(
   cloudflareOnly: cloudflareOnly != null ? cloudflareOnly() : this.cloudflareOnly,
   operation: operation ?? this.operation,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SetDirective3 &&
           cloudflareOnly == other.cloudflareOnly &&
@@ -46,4 +46,4 @@ SetDirective3 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloud
 
 @override String toString() => 'SetDirective3(cloudflareOnly: $cloudflareOnly, operation: $operation, value: $value)';
 
- }
+}

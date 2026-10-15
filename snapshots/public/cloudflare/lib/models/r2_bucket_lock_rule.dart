@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket_lock_rule/r2_bucket_lock_rule_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_age_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_date_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_indefinite_condition.dart';@immutable final class R2BucketLockRule {const R2BucketLockRule({required this.condition, required this.enabled, required this.id, this.prefix, });
 
-factory R2BucketLockRule.fromJson(Map<String, dynamic> json) { return R2BucketLockRule(
+factory R2BucketLockRule.fromJson(Map<String, dynamic> json) {return R2BucketLockRule(
   condition: OneOf3.parse(json['condition'], fromA: (v) => R2LockRuleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LockRuleDateCondition.fromJson(v as Map<String, dynamic>), fromC: (v) => R2LockRuleIndefiniteCondition.fromJson(v as Map<String, dynamic>),),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   prefix: json['prefix'] as String?,
-); }
+);}
 
 final R2BucketLockRuleCondition condition;
 
@@ -23,21 +23,21 @@ final String id;
 /// Rule will only apply to objects/uploads in the bucket that start with the given prefix, an empty prefix can be provided to scope rule to all objects/uploads.
 final String? prefix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'condition': condition.toJson(),
   'enabled': enabled,
   'id': id,
   'prefix': ?prefix,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('condition') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('condition') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('id') && json['id'] is String; } 
-R2BucketLockRule copyWith({R2BucketLockRuleCondition? condition, bool? enabled, String? id, String? Function()? prefix, }) { return R2BucketLockRule(
+      json.containsKey('id') && json['id'] is String;}
+R2BucketLockRule copyWith({R2BucketLockRuleCondition? condition, bool? enabled, String? id, String? Function()? prefix, }) {return R2BucketLockRule(
   condition: condition ?? this.condition,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   prefix: prefix != null ? prefix() : this.prefix,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2BucketLockRule &&
           condition == other.condition &&
@@ -49,4 +49,4 @@ R2BucketLockRule copyWith({R2BucketLockRuleCondition? condition, bool? enabled, 
 
 @override String toString() => 'R2BucketLockRule(condition: $condition, enabled: $enabled, id: $id, prefix: $prefix)';
 
- }
+}

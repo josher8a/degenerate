@@ -94,7 +94,7 @@ String toJson() => value;
 }
 @immutable final class ContactProperties {const ContactProperties({required this.address, required this.city, required this.country, required this.firstName, required this.lastName, required this.organization, required this.phone, required this.state, required this.zip, this.address2, this.email, this.fax, this.id, });
 
-factory ContactProperties.fromJson(Map<String, dynamic> json) { return ContactProperties(
+factory ContactProperties.fromJson(Map<String, dynamic> json) {return ContactProperties(
   address: Address.fromJson(json['address'] as String),
   address2: json['address2'] != null ? Address2.fromJson(json['address2'] as String) : null,
   city: City.fromJson(json['city'] as String),
@@ -108,7 +108,7 @@ factory ContactProperties.fromJson(Map<String, dynamic> json) { return ContactPr
   phone: json['phone'] != null ? Telephone.fromJson(json['phone'] as String) : null,
   state: State2.fromJson(json['state'] as String),
   zip: json['zip'] != null ? Zipcode.fromJson(json['zip'] as String) : null,
-); }
+);}
 
 /// Address.
 final Address address;
@@ -140,7 +140,7 @@ final State2 state;
 
 final Zipcode? zip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (address2 != null) 'address2': address2?.toJson(),
   'city': city.toJson(),
@@ -154,8 +154,8 @@ Map<String, dynamic> toJson() { return {
   'phone': phone?.toJson(),
   'state': state.toJson(),
   'zip': zip?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address') &&
       json.containsKey('city') &&
       json.containsKey('country') &&
       json.containsKey('first_name') &&
@@ -163,8 +163,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('organization') &&
       json.containsKey('phone') &&
       json.containsKey('state') &&
-      json.containsKey('zip'); } 
-ContactProperties copyWith({Address? address, Address2? Function()? address2, City? city, Country? Function()? country, Email? Function()? email, Fax? Function()? fax, FirstName? Function()? firstName, ContactIdentifier? Function()? id, LastName? Function()? lastName, Organization2? organization, Telephone? Function()? phone, State2? state, Zipcode? Function()? zip, }) { return ContactProperties(
+      json.containsKey('zip');}
+ContactProperties copyWith({Address? address, Address2? Function()? address2, City? city, Country? Function()? country, Email? Function()? email, Fax? Function()? fax, FirstName? Function()? firstName, ContactIdentifier? Function()? id, LastName? Function()? lastName, Organization2? organization, Telephone? Function()? phone, State2? state, Zipcode? Function()? zip, }) {return ContactProperties(
   address: address ?? this.address,
   address2: address2 != null ? address2() : this.address2,
   city: city ?? this.city,
@@ -178,7 +178,7 @@ ContactProperties copyWith({Address? address, Address2? Function()? address2, Ci
   phone: phone != null ? phone() : this.phone,
   state: state ?? this.state,
   zip: zip != null ? zip() : this.zip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ContactProperties &&
           address == other.address &&
@@ -199,4 +199,4 @@ ContactProperties copyWith({Address? address, Address2? Function()? address2, Ci
 
 @override String toString() => 'ContactProperties(\n  address: $address,\n  address2: $address2,\n  city: $city,\n  country: $country,\n  email: $email,\n  fax: $fax,\n  firstName: $firstName,\n  id: $id,\n  lastName: $lastName,\n  organization: $organization,\n  phone: $phone,\n  state: $state,\n  zip: $zip,\n)';
 
- }
+}

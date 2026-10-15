@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/empty_model_param.dart';sealed class FunctionToolParamType {const FunctionToolParamType();
 
-factory FunctionToolParamType.fromJson(String json) { return switch (json) {
+factory FunctionToolParamType.fromJson(String json) {return switch (json) {
   'function' => function,
   _ => FunctionToolParamType$Unknown(json),
-}; }
+};}
 
 static const FunctionToolParamType function = FunctionToolParamType$function._();
 
 static const List<FunctionToolParamType> values = [function];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'function' => 'function',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionToolParamType$Unknown; } 
+bool get isUnknown {return this is FunctionToolParamType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() function, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() function, required W Function(String value) $unknown, }) {return switch (this) {
       FunctionToolParamType$function() => function(),
       FunctionToolParamType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? function, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? function, W Function(String value)? $unknown, }) {return switch (this) {
       FunctionToolParamType$function() => function != null ? function() : orElse(value),
       FunctionToolParamType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FunctionToolParamType($value)';
 
- }
+}
 @immutable final class FunctionToolParamType$function extends FunctionToolParamType {const FunctionToolParamType$function._();
 
 @override String get value => 'function';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? function
 
 @override int get hashCode => 'function'.hashCode;
 
- }
+}
 @immutable final class FunctionToolParamType$Unknown extends FunctionToolParamType {const FunctionToolParamType$Unknown(this.value);
 
 @override final String value;
@@ -52,16 +52,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? function
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class FunctionToolParam {const FunctionToolParam({required this.name, required this.type, this.description = const Omittable.absent(), this.parameters = const Omittable.absent(), this.strict = const Omittable.absent(), });
 
-factory FunctionToolParam.fromJson(Map<String, dynamic> json) { return FunctionToolParam(
+factory FunctionToolParam.fromJson(Map<String, dynamic> json) {return FunctionToolParam(
   name: json['name'] as String,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   parameters: json.containsKey('parameters') ? Omittable(json['parameters'] != null ? EmptyModelParam.fromJson(json['parameters'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
   type: FunctionToolParamType.fromJson(json['type'] as String),
-); }
+);}
 
 final String name;
 
@@ -73,28 +73,28 @@ final Omittable<bool?> strict;
 
 final FunctionToolParamType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (description.isPresent) 'description': description.value,
   if (parameters.isPresent) 'parameters': parameters.value?.toJson(),
   if (strict.isPresent) 'strict': strict.value,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
 if (!RegExp(r'^[a-zA-Z0-9_-]+$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-zA-Z0-9_-]+$'); }
-return errors; } 
-FunctionToolParam copyWith({String? name, Omittable<String?>? description, Omittable<EmptyModelParam?>? parameters, Omittable<bool?>? strict, FunctionToolParamType? type, }) { return FunctionToolParam(
+return errors;}
+FunctionToolParam copyWith({String? name, Omittable<String?>? description, Omittable<EmptyModelParam?>? parameters, Omittable<bool?>? strict, FunctionToolParamType? type, }) {return FunctionToolParam(
   name: name ?? this.name,
   description: description ?? this.description,
   parameters: parameters ?? this.parameters,
   strict: strict ?? this.strict,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionToolParam &&
           name == other.name &&
@@ -107,4 +107,4 @@ FunctionToolParam copyWith({String? name, Omittable<String?>? description, Omitt
 
 @override String toString() => 'FunctionToolParam(name: $name, description: $description, parameters: $parameters, strict: $strict, type: $type)';
 
- }
+}

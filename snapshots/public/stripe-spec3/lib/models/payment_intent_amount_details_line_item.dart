@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_payment_method_options.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_tax.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PaymentIntentAmountDetailsLineItemObject {const PaymentIntentAmountDetailsLineItemObject();
 
-factory PaymentIntentAmountDetailsLineItemObject.fromJson(String json) { return switch (json) {
+factory PaymentIntentAmountDetailsLineItemObject.fromJson(String json) {return switch (json) {
   'payment_intent_amount_details_line_item' => paymentIntentAmountDetailsLineItem,
   _ => PaymentIntentAmountDetailsLineItemObject$Unknown(json),
-}; }
+};}
 
 static const PaymentIntentAmountDetailsLineItemObject paymentIntentAmountDetailsLineItem = PaymentIntentAmountDetailsLineItemObject$paymentIntentAmountDetailsLineItem._();
 
 static const List<PaymentIntentAmountDetailsLineItemObject> values = [paymentIntentAmountDetailsLineItem];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'payment_intent_amount_details_line_item' => 'paymentIntentAmountDetailsLineItem',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentIntentAmountDetailsLineItemObject$Unknown; } 
+bool get isUnknown {return this is PaymentIntentAmountDetailsLineItemObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() paymentIntentAmountDetailsLineItem, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() paymentIntentAmountDetailsLineItem, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentIntentAmountDetailsLineItemObject$paymentIntentAmountDetailsLineItem() => paymentIntentAmountDetailsLineItem(),
       PaymentIntentAmountDetailsLineItemObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentIntentAmountDetailsLineItem, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentIntentAmountDetailsLineItem, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentIntentAmountDetailsLineItemObject$paymentIntentAmountDetailsLineItem() => paymentIntentAmountDetailsLineItem != null ? paymentIntentAmountDetailsLineItem() : orElse(value),
       PaymentIntentAmountDetailsLineItemObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentIntentAmountDetailsLineItemObject($value)';
 
- }
+}
 @immutable final class PaymentIntentAmountDetailsLineItemObject$paymentIntentAmountDetailsLineItem extends PaymentIntentAmountDetailsLineItemObject {const PaymentIntentAmountDetailsLineItemObject$paymentIntentAmountDetailsLineItem._();
 
 @override String get value => 'payment_intent_amount_details_line_item';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentI
 
 @override int get hashCode => 'payment_intent_amount_details_line_item'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentAmountDetailsLineItemObject$Unknown extends PaymentIntentAmountDetailsLineItemObject {const PaymentIntentAmountDetailsLineItemObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentI
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class PaymentIntentAmountDetailsLineItem {const PaymentIntentAmountDetailsLineItem({required this.id, required this.object, required this.productName, required this.quantity, required this.unitCost, this.discountAmount = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), this.productCode = const Omittable.absent(), this.tax = const Omittable.absent(), this.unitOfMeasure = const Omittable.absent(), });
 
-factory PaymentIntentAmountDetailsLineItem.fromJson(Map<String, dynamic> json) { return PaymentIntentAmountDetailsLineItem(
+factory PaymentIntentAmountDetailsLineItem.fromJson(Map<String, dynamic> json) {return PaymentIntentAmountDetailsLineItem(
   discountAmount: json.containsKey('discount_amount') ? Omittable(json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   object: PaymentIntentAmountDetailsLineItemObject.fromJson(json['object'] as String),
@@ -68,7 +68,7 @@ factory PaymentIntentAmountDetailsLineItem.fromJson(Map<String, dynamic> json) {
   tax: json.containsKey('tax') ? Omittable(json['tax'] != null ? PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax.fromJson(json['tax'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   unitCost: (json['unit_cost'] as num).toInt(),
   unitOfMeasure: json.containsKey('unit_of_measure') ? Omittable(json['unit_of_measure'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The discount applied on this line item represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). An integer greater than 0.
 /// 
@@ -104,7 +104,7 @@ final int unitCost;
 /// A unit of measure for the line item, such as gallons, feet, meters, etc. Required for L3 rates. At most 12 alphanumeric characters long.
 final Omittable<String?> unitOfMeasure;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (discountAmount.isPresent) 'discount_amount': discountAmount.value,
   'id': id,
   'object': object.toJson(),
@@ -115,14 +115,14 @@ Map<String, dynamic> toJson() { return {
   if (tax.isPresent) 'tax': tax.value?.toJson(),
   'unit_cost': unitCost,
   if (unitOfMeasure.isPresent) 'unit_of_measure': unitOfMeasure.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('product_name') && json['product_name'] is String &&
       json.containsKey('quantity') && json['quantity'] is num &&
-      json.containsKey('unit_cost') && json['unit_cost'] is num; } 
+      json.containsKey('unit_cost') && json['unit_cost'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final productCode$ = productCode.value;
 if (productCode$ != null) {
@@ -133,8 +133,8 @@ final unitOfMeasure$ = unitOfMeasure.value;
 if (unitOfMeasure$ != null) {
   if (unitOfMeasure$.runes.length > 5000) { errors.add('unitOfMeasure: length must be <= 5000'); }
 }
-return errors; } 
-PaymentIntentAmountDetailsLineItem copyWith({Omittable<int?>? discountAmount, String? id, PaymentIntentAmountDetailsLineItemObject? object, Omittable<PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions?>? paymentMethodOptions, Omittable<String?>? productCode, String? productName, int? quantity, Omittable<PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax?>? tax, int? unitCost, Omittable<String?>? unitOfMeasure, }) { return PaymentIntentAmountDetailsLineItem(
+return errors;}
+PaymentIntentAmountDetailsLineItem copyWith({Omittable<int?>? discountAmount, String? id, PaymentIntentAmountDetailsLineItemObject? object, Omittable<PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions?>? paymentMethodOptions, Omittable<String?>? productCode, String? productName, int? quantity, Omittable<PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax?>? tax, int? unitCost, Omittable<String?>? unitOfMeasure, }) {return PaymentIntentAmountDetailsLineItem(
   discountAmount: discountAmount ?? this.discountAmount,
   id: id ?? this.id,
   object: object ?? this.object,
@@ -145,7 +145,7 @@ PaymentIntentAmountDetailsLineItem copyWith({Omittable<int?>? discountAmount, St
   tax: tax ?? this.tax,
   unitCost: unitCost ?? this.unitCost,
   unitOfMeasure: unitOfMeasure ?? this.unitOfMeasure,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentAmountDetailsLineItem &&
           discountAmount == other.discountAmount &&
@@ -163,4 +163,4 @@ PaymentIntentAmountDetailsLineItem copyWith({Omittable<int?>? discountAmount, St
 
 @override String toString() => 'PaymentIntentAmountDetailsLineItem(\n  discountAmount: $discountAmount,\n  id: $id,\n  object: $object,\n  paymentMethodOptions: $paymentMethodOptions,\n  productCode: $productCode,\n  productName: $productName,\n  quantity: $quantity,\n  tax: $tax,\n  unitCost: $unitCost,\n  unitOfMeasure: $unitOfMeasure,\n)';
 
- }
+}

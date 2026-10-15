@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NamespaceSpec describes the attributes on a Namespace.
 @immutable final class NamespaceSpec {const NamespaceSpec({this.finalizers});
 
-factory NamespaceSpec.fromJson(Map<String, dynamic> json) { return NamespaceSpec(
+factory NamespaceSpec.fromJson(Map<String, dynamic> json) {return NamespaceSpec(
   finalizers: (json['finalizers'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
 final List<String>? finalizers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'finalizers': ?finalizers,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'finalizers'}.contains(key)); } 
-NamespaceSpec copyWith({List<String>? Function()? finalizers}) { return NamespaceSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'finalizers'}.contains(key));}
+NamespaceSpec copyWith({List<String>? Function()? finalizers}) {return NamespaceSpec(
   finalizers: finalizers != null ? finalizers() : this.finalizers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceSpec &&
           listEquals(finalizers, other.finalizers);
@@ -26,4 +26,4 @@ NamespaceSpec copyWith({List<String>? Function()? finalizers}) { return Namespac
 
 @override String toString() => 'NamespaceSpec(finalizers: $finalizers)';
 
- }
+}

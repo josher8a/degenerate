@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaginationMetadata {const PaginationMetadata({this.firstPage, this.lastPage, this.nextPage, this.page, this.previousPage, this.total, this.totalPages, });
 
-factory PaginationMetadata.fromJson(Map<String, dynamic> json) { return PaginationMetadata(
+factory PaginationMetadata.fromJson(Map<String, dynamic> json) {return PaginationMetadata(
   firstPage: json['first_page'] != null ? (json['first_page'] as num).toInt() : null,
   lastPage: json['last_page'] != null ? (json['last_page'] as num).toInt() : null,
   nextPage: json['next_page'] != null ? (json['next_page'] as num).toInt() : null,
@@ -11,7 +11,7 @@ factory PaginationMetadata.fromJson(Map<String, dynamic> json) { return Paginati
   previousPage: json['previous_page'] != null ? (json['previous_page'] as num).toInt() : null,
   total: json['total'] != null ? (json['total'] as num).toInt() : null,
   totalPages: json['total_pages'] != null ? (json['total_pages'] as num).toInt() : null,
-); }
+);}
 
 final int? firstPage;
 
@@ -27,7 +27,7 @@ final int? total;
 
 final int? totalPages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'first_page': ?firstPage,
   'last_page': ?lastPage,
   'next_page': ?nextPage,
@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   'previous_page': ?previousPage,
   'total': ?total,
   'total_pages': ?totalPages,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'first_page', 'last_page', 'next_page', 'page', 'previous_page', 'total', 'total_pages'}.contains(key)); } 
-PaginationMetadata copyWith({int? Function()? firstPage, int? Function()? lastPage, int? Function()? nextPage, int? Function()? page, int? Function()? previousPage, int? Function()? total, int? Function()? totalPages, }) { return PaginationMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'first_page', 'last_page', 'next_page', 'page', 'previous_page', 'total', 'total_pages'}.contains(key));}
+PaginationMetadata copyWith({int? Function()? firstPage, int? Function()? lastPage, int? Function()? nextPage, int? Function()? page, int? Function()? previousPage, int? Function()? total, int? Function()? totalPages, }) {return PaginationMetadata(
   firstPage: firstPage != null ? firstPage() : this.firstPage,
   lastPage: lastPage != null ? lastPage() : this.lastPage,
   nextPage: nextPage != null ? nextPage() : this.nextPage,
@@ -45,7 +45,7 @@ PaginationMetadata copyWith({int? Function()? firstPage, int? Function()? lastPa
   previousPage: previousPage != null ? previousPage() : this.previousPage,
   total: total != null ? total() : this.total,
   totalPages: totalPages != null ? totalPages() : this.totalPages,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaginationMetadata &&
           firstPage == other.firstPage &&
@@ -60,4 +60,4 @@ PaginationMetadata copyWith({int? Function()? firstPage, int? Function()? lastPa
 
 @override String toString() => 'PaginationMetadata(firstPage: $firstPage, lastPage: $lastPage, nextPage: $nextPage, page: $page, previousPage: $previousPage, total: $total, totalPages: $totalPages)';
 
- }
+}

@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Structured Outpu
 /// 
 @immutable final class JsonSchema {const JsonSchema({required this.name, this.description, this.schema, this.strict = const Omittable.absent(), });
 
-factory JsonSchema.fromJson(Map<String, dynamic> json) { return JsonSchema(
+factory JsonSchema.fromJson(Map<String, dynamic> json) {return JsonSchema(
   description: json['description'] as String?,
   name: json['name'] as String,
   schema: json['schema'] as Map<String, dynamic>?,
   strict: json.containsKey('strict') ? Omittable(json['strict'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 /// A description of what the response format is for, used by the model to
 /// determine how to respond in the format.
@@ -32,19 +32,19 @@ final Map<String,dynamic>? schema;
 /// 
 final Omittable<bool?> strict;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'name': name,
   'schema': ?schema,
   if (strict.isPresent) 'strict': strict.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-JsonSchema copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? schema, Omittable<bool?>? strict, }) { return JsonSchema(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+JsonSchema copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? schema, Omittable<bool?>? strict, }) {return JsonSchema(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   schema: schema != null ? schema() : this.schema,
   strict: strict ?? this.strict,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is JsonSchema &&
           description == other.description &&
@@ -56,4 +56,4 @@ JsonSchema copyWith({String? Function()? description, String? name, Map<String, 
 
 @override String toString() => 'JsonSchema(description: $description, name: $name, schema: $schema, strict: $strict)';
 
- }
+}

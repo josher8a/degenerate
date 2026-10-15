@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssuesDemilestonedIssueLabels {const WebhookIssuesDemilestonedIssueLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
 
-factory WebhookIssuesDemilestonedIssueLabels.fromJson(Map<String, dynamic> json) { return WebhookIssuesDemilestonedIssueLabels(
+factory WebhookIssuesDemilestonedIssueLabels.fromJson(Map<String, dynamic> json) {return WebhookIssuesDemilestonedIssueLabels(
   color: json['color'] as String,
   $default: json['default'] as bool,
   description: json['description'] as String?,
@@ -11,7 +11,7 @@ factory WebhookIssuesDemilestonedIssueLabels.fromJson(Map<String, dynamic> json)
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 /// 6-character hex code, without the leading #, identifying the color
 final String color;
@@ -30,7 +30,7 @@ final String nodeId;
 /// URL for the label
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'color': color,
   'default': $default,
   'description': description,
@@ -38,15 +38,15 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'node_id': nodeId,
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('color') && json['color'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('color') && json['color'] is String &&
       json.containsKey('default') && json['default'] is bool &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookIssuesDemilestonedIssueLabels copyWith({String? color, bool? $default, String? Function()? description, int? id, String? name, String? nodeId, Uri? url, }) { return WebhookIssuesDemilestonedIssueLabels(
+      json.containsKey('url') && json['url'] is String;}
+WebhookIssuesDemilestonedIssueLabels copyWith({String? color, bool? $default, String? Function()? description, int? id, String? name, String? nodeId, Uri? url, }) {return WebhookIssuesDemilestonedIssueLabels(
   color: color ?? this.color,
   $default: $default ?? this.$default,
   description: description != null ? description() : this.description,
@@ -54,7 +54,7 @@ WebhookIssuesDemilestonedIssueLabels copyWith({String? color, bool? $default, St
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesDemilestonedIssueLabels &&
           color == other.color &&
@@ -69,4 +69,4 @@ WebhookIssuesDemilestonedIssueLabels copyWith({String? color, bool? $default, St
 
 @override String toString() => 'WebhookIssuesDemilestonedIssueLabels(color: $color, \$default: ${$default}, description: $description, id: $id, name: $name, nodeId: $nodeId, url: $url)';
 
- }
+}

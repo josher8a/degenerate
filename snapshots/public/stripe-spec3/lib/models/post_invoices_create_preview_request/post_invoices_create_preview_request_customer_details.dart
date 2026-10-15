@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax_exempt.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_customer_details_address.dart';/// Details about the customer you want to invoice or overrides for an existing customer. If `automatic_tax` is enabled then one of `customer`, `customer_details`, `subscription`, or `schedule` must be set.
 @immutable final class PostInvoicesCreatePreviewRequestCustomerDetails {const PostInvoicesCreatePreviewRequestCustomerDetails({this.address, this.shipping, this.tax, this.taxExempt, this.taxIds, });
 
-factory PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetails(
+factory PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequestCustomerDetails(
   address: json['address'] != null ? PostInvoicesCreatePreviewRequestCustomerDetailsAddress.fromJson(json['address']) : null,
   shipping: json['shipping'] != null ? PostCustomersCustomerRequestShipping.fromJson(json['shipping']) : null,
   tax: json['tax'] != null ? CustomerDetailsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostCustomersCustomerRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
   taxIds: (json['tax_ids'] as List<dynamic>?)?.map((e) => CustomerDetailsTaxIds.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final PostInvoicesCreatePreviewRequestCustomerDetailsAddress? address;
 
@@ -22,21 +22,21 @@ final PostCustomersCustomerRequestTaxExempt? taxExempt;
 
 final List<CustomerDetailsTaxIds>? taxIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (shipping != null) 'shipping': shipping?.toJson(),
   if (tax != null) 'tax': tax?.toJson(),
   if (taxExempt != null) 'tax_exempt': taxExempt?.toJson(),
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'shipping', 'tax', 'tax_exempt', 'tax_ids'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestCustomerDetails copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsAddress? Function()? address, PostCustomersCustomerRequestShipping? Function()? shipping, CustomerDetailsTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, List<CustomerDetailsTaxIds>? Function()? taxIds, }) { return PostInvoicesCreatePreviewRequestCustomerDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'shipping', 'tax', 'tax_exempt', 'tax_ids'}.contains(key));}
+PostInvoicesCreatePreviewRequestCustomerDetails copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsAddress? Function()? address, PostCustomersCustomerRequestShipping? Function()? shipping, CustomerDetailsTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, List<CustomerDetailsTaxIds>? Function()? taxIds, }) {return PostInvoicesCreatePreviewRequestCustomerDetails(
   address: address != null ? address() : this.address,
   shipping: shipping != null ? shipping() : this.shipping,
   tax: tax != null ? tax() : this.tax,
   taxExempt: taxExempt != null ? taxExempt() : this.taxExempt,
   taxIds: taxIds != null ? taxIds() : this.taxIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestCustomerDetails &&
           address == other.address &&
@@ -49,4 +49,4 @@ PostInvoicesCreatePreviewRequestCustomerDetails copyWith({PostInvoicesCreatePrev
 
 @override String toString() => 'PostInvoicesCreatePreviewRequestCustomerDetails(address: $address, shipping: $shipping, tax: $tax, taxExempt: $taxExempt, taxIds: $taxIds)';
 
- }
+}

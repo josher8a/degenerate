@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Technique {const Technique();
 
-factory Technique.fromJson(String json) { return switch (json) {
+factory Technique.fromJson(String json) {return switch (json) {
   'fixed' => fixed,
   'sliding' => sliding,
   _ => Technique$Unknown(json),
-}; }
+};}
 
 static const Technique fixed = Technique$fixed._();
 
@@ -16,30 +16,30 @@ static const Technique sliding = Technique$sliding._();
 static const List<Technique> values = [fixed, sliding];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fixed' => 'fixed',
   'sliding' => 'sliding',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Technique$Unknown; } 
+bool get isUnknown {return this is Technique$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fixed, required W Function() sliding, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fixed, required W Function() sliding, required W Function(String value) $unknown, }) {return switch (this) {
       Technique$fixed() => fixed(),
       Technique$sliding() => sliding(),
       Technique$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function()? sliding, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function()? sliding, W Function(String value)? $unknown, }) {return switch (this) {
       Technique$fixed() => fixed != null ? fixed() : orElse(value),
       Technique$sliding() => sliding != null ? sliding() : orElse(value),
       Technique$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Technique($value)';
 
- }
+}
 @immutable final class Technique$fixed extends Technique {const Technique$fixed._();
 
 @override String get value => 'fixed';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => 'fixed'.hashCode;
 
- }
+}
 @immutable final class Technique$sliding extends Technique {const Technique$sliding._();
 
 @override String get value => 'sliding';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => 'sliding'.hashCode;
 
- }
+}
 @immutable final class Technique$Unknown extends Technique {const Technique$Unknown(this.value);
 
 @override final String value;
@@ -67,14 +67,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class RateLimit {const RateLimit({this.periodMs, this.requests, this.technique, });
 
-factory RateLimit.fromJson(Map<String, dynamic> json) { return RateLimit(
+factory RateLimit.fromJson(Map<String, dynamic> json) {return RateLimit(
   periodMs: json['period_ms'] != null ? (json['period_ms'] as num).toInt() : null,
   requests: json['requests'] != null ? (json['requests'] as num).toInt() : null,
   technique: json['technique'] != null ? Technique.fromJson(json['technique'] as String) : null,
-); }
+);}
 
 final int? periodMs;
 
@@ -82,14 +82,14 @@ final int? requests;
 
 final Technique? technique;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'period_ms': ?periodMs,
   'requests': ?requests,
   if (technique != null) 'technique': technique?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final periodMs$ = periodMs;
 if (periodMs$ != null) {
   if (periodMs$ < 60000) { errors.add('periodMs: must be >= 60000'); }
@@ -99,12 +99,12 @@ final requests$ = requests;
 if (requests$ != null) {
   if (requests$ < 1) { errors.add('requests: must be >= 1'); }
 }
-return errors; } 
-RateLimit copyWith({int? Function()? periodMs, int? Function()? requests, Technique? Function()? technique, }) { return RateLimit(
+return errors;}
+RateLimit copyWith({int? Function()? periodMs, int? Function()? requests, Technique? Function()? technique, }) {return RateLimit(
   periodMs: periodMs != null ? periodMs() : this.periodMs,
   requests: requests != null ? requests() : this.requests,
   technique: technique != null ? technique() : this.technique,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimit &&
           periodMs == other.periodMs &&
@@ -115,4 +115,4 @@ RateLimit copyWith({int? Function()? periodMs, int? Function()? requests, Techni
 
 @override String toString() => 'RateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)';
 
- }
+}

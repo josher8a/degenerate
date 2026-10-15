@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the requests.
 sealed class OrgsReviewPatGrantRequestRequestAction {const OrgsReviewPatGrantRequestRequestAction();
 
-factory OrgsReviewPatGrantRequestRequestAction.fromJson(String json) { return switch (json) {
+factory OrgsReviewPatGrantRequestRequestAction.fromJson(String json) {return switch (json) {
   'approve' => approve,
   'deny' => deny,
   _ => OrgsReviewPatGrantRequestRequestAction$Unknown(json),
-}; }
+};}
 
 static const OrgsReviewPatGrantRequestRequestAction approve = OrgsReviewPatGrantRequestRequestAction$approve._();
 
@@ -17,30 +17,30 @@ static const OrgsReviewPatGrantRequestRequestAction deny = OrgsReviewPatGrantReq
 static const List<OrgsReviewPatGrantRequestRequestAction> values = [approve, deny];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'approve' => 'approve',
   'deny' => 'deny',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrgsReviewPatGrantRequestRequestAction$Unknown; } 
+bool get isUnknown {return this is OrgsReviewPatGrantRequestRequestAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() approve, required W Function() deny, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() approve, required W Function() deny, required W Function(String value) $unknown, }) {return switch (this) {
       OrgsReviewPatGrantRequestRequestAction$approve() => approve(),
       OrgsReviewPatGrantRequestRequestAction$deny() => deny(),
       OrgsReviewPatGrantRequestRequestAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve, W Function()? deny, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve, W Function()? deny, W Function(String value)? $unknown, }) {return switch (this) {
       OrgsReviewPatGrantRequestRequestAction$approve() => approve != null ? approve() : orElse(value),
       OrgsReviewPatGrantRequestRequestAction$deny() => deny != null ? deny() : orElse(value),
       OrgsReviewPatGrantRequestRequestAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrgsReviewPatGrantRequestRequestAction($value)';
 
- }
+}
 @immutable final class OrgsReviewPatGrantRequestRequestAction$approve extends OrgsReviewPatGrantRequestRequestAction {const OrgsReviewPatGrantRequestRequestAction$approve._();
 
 @override String get value => 'approve';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve,
 
 @override int get hashCode => 'approve'.hashCode;
 
- }
+}
 @immutable final class OrgsReviewPatGrantRequestRequestAction$deny extends OrgsReviewPatGrantRequestRequestAction {const OrgsReviewPatGrantRequestRequestAction$deny._();
 
 @override String get value => 'deny';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve,
 
 @override int get hashCode => 'deny'.hashCode;
 
- }
+}
 @immutable final class OrgsReviewPatGrantRequestRequestAction$Unknown extends OrgsReviewPatGrantRequestRequestAction {const OrgsReviewPatGrantRequestRequestAction$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

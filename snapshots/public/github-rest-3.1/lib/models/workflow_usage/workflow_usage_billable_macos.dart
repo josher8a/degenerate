@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowUsageBillableMacos {const WorkflowUsageBillableMacos({this.totalMs});
 
-factory WorkflowUsageBillableMacos.fromJson(Map<String, dynamic> json) { return WorkflowUsageBillableMacos(
+factory WorkflowUsageBillableMacos.fromJson(Map<String, dynamic> json) {return WorkflowUsageBillableMacos(
   totalMs: json['total_ms'] != null ? (json['total_ms'] as num).toInt() : null,
-); }
+);}
 
 final int? totalMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_ms': ?totalMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_ms'}.contains(key)); } 
-WorkflowUsageBillableMacos copyWith({int? Function()? totalMs}) { return WorkflowUsageBillableMacos(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'total_ms'}.contains(key));}
+WorkflowUsageBillableMacos copyWith({int? Function()? totalMs}) {return WorkflowUsageBillableMacos(
   totalMs: totalMs != null ? totalMs() : this.totalMs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowUsageBillableMacos &&
           totalMs == other.totalMs;
@@ -24,4 +24,4 @@ WorkflowUsageBillableMacos copyWith({int? Function()? totalMs}) { return Workflo
 
 @override String toString() => 'WorkflowUsageBillableMacos(totalMs: $totalMs)';
 
- }
+}

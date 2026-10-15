@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/nullable_required_property_post_request/nullable_required_enum.dart';@immutable final class NullableRequiredPropertyPostRequest {const NullableRequiredPropertyPostRequest({required this.nullableRequiredInt, required this.nullableRequiredArray, required this.nullableRequiredEnum, required this.nullableRequiredDateTime, required this.nullableRequiredBigIntStr, required this.nullableRequiredDecimalStr, this.nullableOptionalInt = const Omittable.absent(), });
 
-factory NullableRequiredPropertyPostRequest.fromJson(Map<String, dynamic> json) { return NullableRequiredPropertyPostRequest(
+factory NullableRequiredPropertyPostRequest.fromJson(Map<String, dynamic> json) {return NullableRequiredPropertyPostRequest(
   nullableOptionalInt: json.containsKey('NullableOptionalInt') ? Omittable(json['NullableOptionalInt'] != null ? (json['NullableOptionalInt'] as num).toInt() : null) : const Omittable.absent(),
   nullableRequiredInt: json['NullableRequiredInt'] != null ? (json['NullableRequiredInt'] as num).toInt() : null,
   nullableRequiredArray: (json['NullableRequiredArray'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
@@ -11,7 +11,7 @@ factory NullableRequiredPropertyPostRequest.fromJson(Map<String, dynamic> json) 
   nullableRequiredDateTime: json['NullableRequiredDateTime'] != null ? DateTime.parse(json['NullableRequiredDateTime'] as String) : null,
   nullableRequiredBigIntStr: json['NullableRequiredBigIntStr'] as String?,
   nullableRequiredDecimalStr: json['NullableRequiredDecimalStr'] as String?,
-); }
+);}
 
 final Omittable<int?> nullableOptionalInt;
 
@@ -27,7 +27,7 @@ final String? nullableRequiredBigIntStr;
 
 final String? nullableRequiredDecimalStr;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (nullableOptionalInt.isPresent) 'NullableOptionalInt': nullableOptionalInt.value,
   'NullableRequiredInt': nullableRequiredInt,
   'NullableRequiredArray': nullableRequiredArray,
@@ -35,14 +35,14 @@ Map<String, dynamic> toJson() { return {
   'NullableRequiredDateTime': nullableRequiredDateTime?.toIso8601String(),
   'NullableRequiredBigIntStr': nullableRequiredBigIntStr,
   'NullableRequiredDecimalStr': nullableRequiredDecimalStr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('NullableRequiredInt') && (json['NullableRequiredInt'] == null || json['NullableRequiredInt'] is num) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('NullableRequiredInt') && (json['NullableRequiredInt'] == null || json['NullableRequiredInt'] is num) &&
       json.containsKey('NullableRequiredArray') &&
       json.containsKey('NullableRequiredEnum') &&
       json.containsKey('NullableRequiredDateTime') && (json['NullableRequiredDateTime'] == null || json['NullableRequiredDateTime'] is String) &&
       json.containsKey('NullableRequiredBigIntStr') && (json['NullableRequiredBigIntStr'] == null || json['NullableRequiredBigIntStr'] is String) &&
-      json.containsKey('NullableRequiredDecimalStr') && (json['NullableRequiredDecimalStr'] == null || json['NullableRequiredDecimalStr'] is String); } 
-NullableRequiredPropertyPostRequest copyWith({Omittable<int?>? nullableOptionalInt, int? Function()? nullableRequiredInt, List<double>? Function()? nullableRequiredArray, NullableRequiredEnum? Function()? nullableRequiredEnum, DateTime? Function()? nullableRequiredDateTime, String? Function()? nullableRequiredBigIntStr, String? Function()? nullableRequiredDecimalStr, }) { return NullableRequiredPropertyPostRequest(
+      json.containsKey('NullableRequiredDecimalStr') && (json['NullableRequiredDecimalStr'] == null || json['NullableRequiredDecimalStr'] is String);}
+NullableRequiredPropertyPostRequest copyWith({Omittable<int?>? nullableOptionalInt, int? Function()? nullableRequiredInt, List<double>? Function()? nullableRequiredArray, NullableRequiredEnum? Function()? nullableRequiredEnum, DateTime? Function()? nullableRequiredDateTime, String? Function()? nullableRequiredBigIntStr, String? Function()? nullableRequiredDecimalStr, }) {return NullableRequiredPropertyPostRequest(
   nullableOptionalInt: nullableOptionalInt ?? this.nullableOptionalInt,
   nullableRequiredInt: nullableRequiredInt != null ? nullableRequiredInt() : this.nullableRequiredInt,
   nullableRequiredArray: nullableRequiredArray != null ? nullableRequiredArray() : this.nullableRequiredArray,
@@ -50,7 +50,7 @@ NullableRequiredPropertyPostRequest copyWith({Omittable<int?>? nullableOptionalI
   nullableRequiredDateTime: nullableRequiredDateTime != null ? nullableRequiredDateTime() : this.nullableRequiredDateTime,
   nullableRequiredBigIntStr: nullableRequiredBigIntStr != null ? nullableRequiredBigIntStr() : this.nullableRequiredBigIntStr,
   nullableRequiredDecimalStr: nullableRequiredDecimalStr != null ? nullableRequiredDecimalStr() : this.nullableRequiredDecimalStr,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NullableRequiredPropertyPostRequest &&
           nullableOptionalInt == other.nullableOptionalInt &&
@@ -65,4 +65,4 @@ NullableRequiredPropertyPostRequest copyWith({Omittable<int?>? nullableOptionalI
 
 @override String toString() => 'NullableRequiredPropertyPostRequest(nullableOptionalInt: $nullableOptionalInt, nullableRequiredInt: $nullableRequiredInt, nullableRequiredArray: $nullableRequiredArray, nullableRequiredEnum: $nullableRequiredEnum, nullableRequiredDateTime: $nullableRequiredDateTime, nullableRequiredBigIntStr: $nullableRequiredBigIntStr, nullableRequiredDecimalStr: $nullableRequiredDecimalStr)';
 
- }
+}

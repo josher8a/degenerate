@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayDnsResolverSettings {const ZeroTrustGatewayDnsResolverSettings({required this.ip, this.port, this.routeThroughPrivateNetwork, this.vnetId, });
 
-factory ZeroTrustGatewayDnsResolverSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayDnsResolverSettings(
+factory ZeroTrustGatewayDnsResolverSettings.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayDnsResolverSettings(
   ip: json['ip'] as String,
   port: json['port'] != null ? (json['port'] as num).toInt() : null,
   routeThroughPrivateNetwork: json['route_through_private_network'] as bool?,
   vnetId: json['vnet_id'] as String?,
-); }
+);}
 
 /// Specify the IPv4 address of the upstream resolver.
 /// 
@@ -30,19 +30,19 @@ final bool? routeThroughPrivateNetwork;
 /// Example: `'f174e90a-fafe-4643-bbbc-4a0ed4fc8415'`
 final String? vnetId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ip': ip,
   'port': ?port,
   'route_through_private_network': ?routeThroughPrivateNetwork,
   'vnet_id': ?vnetId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') && json['ip'] is String; } 
-ZeroTrustGatewayDnsResolverSettings copyWith({String? ip, int? Function()? port, bool? Function()? routeThroughPrivateNetwork, String? Function()? vnetId, }) { return ZeroTrustGatewayDnsResolverSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ip') && json['ip'] is String;}
+ZeroTrustGatewayDnsResolverSettings copyWith({String? ip, int? Function()? port, bool? Function()? routeThroughPrivateNetwork, String? Function()? vnetId, }) {return ZeroTrustGatewayDnsResolverSettings(
   ip: ip ?? this.ip,
   port: port != null ? port() : this.port,
   routeThroughPrivateNetwork: routeThroughPrivateNetwork != null ? routeThroughPrivateNetwork() : this.routeThroughPrivateNetwork,
   vnetId: vnetId != null ? vnetId() : this.vnetId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayDnsResolverSettings &&
           ip == other.ip &&
@@ -54,4 +54,4 @@ ZeroTrustGatewayDnsResolverSettings copyWith({String? ip, int? Function()? port,
 
 @override String toString() => 'ZeroTrustGatewayDnsResolverSettings(ip: $ip, port: $port, routeThroughPrivateNetwork: $routeThroughPrivateNetwork, vnetId: $vnetId)';
 
- }
+}

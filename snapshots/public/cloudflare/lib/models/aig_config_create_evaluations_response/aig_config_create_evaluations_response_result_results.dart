@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateEvaluationsResponseResultResults {const AigConfigCreateEvaluationsResponseResultResults({required this.createdAt, required this.evaluationId, required this.evaluationTypeId, required this.id, required this.modifiedAt, required this.result, required this.status, required this.statusDescription, required this.totalLogs, });
 
-factory AigConfigCreateEvaluationsResponseResultResults.fromJson(Map<String, dynamic> json) { return AigConfigCreateEvaluationsResponseResultResults(
+factory AigConfigCreateEvaluationsResponseResultResults.fromJson(Map<String, dynamic> json) {return AigConfigCreateEvaluationsResponseResultResults(
   createdAt: DateTime.parse(json['created_at'] as String),
   evaluationId: json['evaluation_id'] as String,
   evaluationTypeId: json['evaluation_type_id'] as String,
@@ -13,7 +13,7 @@ factory AigConfigCreateEvaluationsResponseResultResults.fromJson(Map<String, dyn
   status: (json['status'] as num).toDouble(),
   statusDescription: json['status_description'] as String,
   totalLogs: (json['total_logs'] as num).toDouble(),
-); }
+);}
 
 final DateTime createdAt;
 
@@ -33,7 +33,7 @@ final String statusDescription;
 
 final double totalLogs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt.toIso8601String(),
   'evaluation_id': evaluationId,
   'evaluation_type_id': evaluationTypeId,
@@ -43,8 +43,8 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'status_description': statusDescription,
   'total_logs': totalLogs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('evaluation_id') && json['evaluation_id'] is String &&
       json.containsKey('evaluation_type_id') && json['evaluation_type_id'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -52,8 +52,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('result') && json['result'] is String &&
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('status_description') && json['status_description'] is String &&
-      json.containsKey('total_logs') && json['total_logs'] is num; } 
-AigConfigCreateEvaluationsResponseResultResults copyWith({DateTime? createdAt, String? evaluationId, String? evaluationTypeId, String? id, DateTime? modifiedAt, String? result, double? status, String? statusDescription, double? totalLogs, }) { return AigConfigCreateEvaluationsResponseResultResults(
+      json.containsKey('total_logs') && json['total_logs'] is num;}
+AigConfigCreateEvaluationsResponseResultResults copyWith({DateTime? createdAt, String? evaluationId, String? evaluationTypeId, String? id, DateTime? modifiedAt, String? result, double? status, String? statusDescription, double? totalLogs, }) {return AigConfigCreateEvaluationsResponseResultResults(
   createdAt: createdAt ?? this.createdAt,
   evaluationId: evaluationId ?? this.evaluationId,
   evaluationTypeId: evaluationTypeId ?? this.evaluationTypeId,
@@ -63,7 +63,7 @@ AigConfigCreateEvaluationsResponseResultResults copyWith({DateTime? createdAt, S
   status: status ?? this.status,
   statusDescription: statusDescription ?? this.statusDescription,
   totalLogs: totalLogs ?? this.totalLogs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateEvaluationsResponseResultResults &&
           createdAt == other.createdAt &&
@@ -80,4 +80,4 @@ AigConfigCreateEvaluationsResponseResultResults copyWith({DateTime? createdAt, S
 
 @override String toString() => 'AigConfigCreateEvaluationsResponseResultResults(\n  createdAt: $createdAt,\n  evaluationId: $evaluationId,\n  evaluationTypeId: $evaluationTypeId,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  result: $result,\n  status: $status,\n  statusDescription: $statusDescription,\n  totalLogs: $totalLogs,\n)';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_caa_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_cert_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_dnskey_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_ds_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_https_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_loc_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_naptr_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_smimea_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_srv_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_sshfp_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_svcb_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_tlsa_record_request.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_batch_patch_request/dns_records_dns_record_batch_patch_request_dns_records_dns_record_with_data_request_dns_records_uri_record_request.dart';/// A value that is one of: `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCertRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnskeyRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDsRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsHttpsRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsLocRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsNaptrRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSmimeaRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSrvRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSshfpRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSvcbRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsTlsaRecordRequest`, `DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest`.
 sealed class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest();
 
-factory DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.fromJson(Object? json) {   if (json is Map<String, dynamic> && DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest.canParse(json)) {
+factory DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.fromJson(Object? json) {  if (json is Map<String, dynamic> && DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest.canParse(json)) {
     return DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest(DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest.fromJson(json));
   }
   if (json is Map<String, dynamic> && DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCertRecordRequest.canParse(json)) {
@@ -43,19 +43,19 @@ factory DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.f
   if (json is Map<String, dynamic> && DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest.canParse(json)) {
     return DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest(DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest.fromJson(json));
   }
-  return DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest$Unknown(json); }
+  return DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest$Unknown(json);}
 
 /// The underlying raw value.
 dynamic get value;
-dynamic toJson() { return value; } 
- }
+dynamic toJson() {return value;}
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest && _value == other._value;
 
@@ -63,14 +63,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCaaRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCertRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCertRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCertRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCertRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCertRecordRequest && _value == other._value;
 
@@ -78,14 +78,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsCertRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnskeyRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnskeyRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnskeyRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnskeyRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnskeyRecordRequest && _value == other._value;
 
@@ -93,14 +93,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnskeyRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDsRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDsRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDsRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDsRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDsRecordRequest && _value == other._value;
 
@@ -108,14 +108,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDsRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsHttpsRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsHttpsRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsHttpsRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsHttpsRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsHttpsRecordRequest && _value == other._value;
 
@@ -123,14 +123,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsHttpsRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsLocRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsLocRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsLocRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsLocRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsLocRecordRequest && _value == other._value;
 
@@ -138,14 +138,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsLocRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsNaptrRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsNaptrRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsNaptrRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsNaptrRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsNaptrRecordRequest && _value == other._value;
 
@@ -153,14 +153,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsNaptrRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSmimeaRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSmimeaRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSmimeaRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSmimeaRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSmimeaRecordRequest && _value == other._value;
 
@@ -168,14 +168,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSmimeaRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSrvRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSrvRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSrvRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSrvRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSrvRecordRequest && _value == other._value;
 
@@ -183,14 +183,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSrvRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSshfpRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSshfpRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSshfpRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSshfpRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSshfpRecordRequest && _value == other._value;
 
@@ -198,14 +198,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSshfpRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSvcbRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSvcbRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSvcbRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSvcbRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSvcbRecordRequest && _value == other._value;
 
@@ -213,14 +213,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsSvcbRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsTlsaRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsTlsaRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsTlsaRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsTlsaRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsTlsaRecordRequest && _value == other._value;
 
@@ -228,14 +228,14 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsTlsaRecordRequest($_value)';
 
- }
+}
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest(this._value);
 
 final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest _value;
 
 @override DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest get value => _value;
 
-@override dynamic toJson() { return value.toJson(); } 
+@override dynamic toJson() {return value.toJson();}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest && _value == other._value;
 
@@ -243,7 +243,7 @@ final DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsR
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.dnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequestDnsRecordsUriRecordRequest($_value)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest$Unknown extends DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest {const DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest$Unknown(this._value);
 
@@ -258,4 +258,4 @@ final dynamic _value;
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchRequestDnsRecordsDnsRecordWithDataRequest.unknown($_value)';
 
- }
+}

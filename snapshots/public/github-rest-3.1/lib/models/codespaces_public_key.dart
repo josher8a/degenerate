@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The public key used for setting Codespaces secrets.
 @immutable final class CodespacesPublicKey {const CodespacesPublicKey({required this.keyId, required this.key, this.id, this.url, this.title, this.createdAt, });
 
-factory CodespacesPublicKey.fromJson(Map<String, dynamic> json) { return CodespacesPublicKey(
+factory CodespacesPublicKey.fromJson(Map<String, dynamic> json) {return CodespacesPublicKey(
   keyId: json['key_id'] as String,
   key: json['key'] as String,
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   url: json['url'] as String?,
   title: json['title'] as String?,
   createdAt: json['created_at'] as String?,
-); }
+);}
 
 /// The identifier for the key.
 final String keyId;
@@ -27,24 +27,24 @@ final String? title;
 
 final String? createdAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key_id': keyId,
   'key': key,
   'id': ?id,
   'url': ?url,
   'title': ?title,
   'created_at': ?createdAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String &&
-      json.containsKey('key') && json['key'] is String; } 
-CodespacesPublicKey copyWith({String? keyId, String? key, int? Function()? id, String? Function()? url, String? Function()? title, String? Function()? createdAt, }) { return CodespacesPublicKey(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key_id') && json['key_id'] is String &&
+      json.containsKey('key') && json['key'] is String;}
+CodespacesPublicKey copyWith({String? keyId, String? key, int? Function()? id, String? Function()? url, String? Function()? title, String? Function()? createdAt, }) {return CodespacesPublicKey(
   keyId: keyId ?? this.keyId,
   key: key ?? this.key,
   id: id != null ? id() : this.id,
   url: url != null ? url() : this.url,
   title: title != null ? title() : this.title,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesPublicKey &&
           keyId == other.keyId &&
@@ -58,4 +58,4 @@ CodespacesPublicKey copyWith({String? keyId, String? key, int? Function()? id, S
 
 @override String toString() => 'CodespacesPublicKey(keyId: $keyId, key: $key, id: $id, url: $url, title: $title, createdAt: $createdAt)';
 
- }
+}

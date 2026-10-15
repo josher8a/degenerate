@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 sealed class ZonesChallengeTtlValue {const ZonesChallengeTtlValue();
 
-factory ZonesChallengeTtlValue.fromJson(double json) { return switch (json) {
+factory ZonesChallengeTtlValue.fromJson(double json) {return switch (json) {
   300 => $300,
   900 => $900,
   1800 => $1800,
@@ -20,7 +20,7 @@ factory ZonesChallengeTtlValue.fromJson(double json) { return switch (json) {
   2592000.0 => $25920000,
   31536000.0 => $315360000,
   _ => ZonesChallengeTtlValue$Unknown(json),
-}; }
+};}
 
 static const ZonesChallengeTtlValue $300 = ZonesChallengeTtlValue$$300._();
 
@@ -53,9 +53,9 @@ static const ZonesChallengeTtlValue $315360000 = ZonesChallengeTtlValue$$3153600
 static const List<ZonesChallengeTtlValue> values = [$300, $900, $1800, $2700, $3600, $7200, $10800, $14400, $28800, $57600, $86400, $604800, $25920000, $315360000];
 
 double get value;
-double toJson() { return value; } 
+double toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   300 => r'$300',
   900 => r'$900',
   1800 => r'$1800',
@@ -71,11 +71,11 @@ String get name { return switch (value) {
   2592000.0 => r'$25920000',
   31536000.0 => r'$315360000',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesChallengeTtlValue$Unknown; } 
+bool get isUnknown {return this is ZonesChallengeTtlValue$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $300, required W Function() $900, required W Function() $1800, required W Function() $2700, required W Function() $3600, required W Function() $7200, required W Function() $10800, required W Function() $14400, required W Function() $28800, required W Function() $57600, required W Function() $86400, required W Function() $604800, required W Function() $25920000, required W Function() $315360000, required W Function(double value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $300, required W Function() $900, required W Function() $1800, required W Function() $2700, required W Function() $3600, required W Function() $7200, required W Function() $10800, required W Function() $14400, required W Function() $28800, required W Function() $57600, required W Function() $86400, required W Function() $604800, required W Function() $25920000, required W Function() $315360000, required W Function(double value) $unknown, }) {return switch (this) {
       ZonesChallengeTtlValue$$300() => $300(),
       ZonesChallengeTtlValue$$900() => $900(),
       ZonesChallengeTtlValue$$1800() => $1800(),
@@ -91,9 +91,9 @@ W when<W>({required W Function() $300, required W Function() $900, required W Fu
       ZonesChallengeTtlValue$$25920000() => $25920000(),
       ZonesChallengeTtlValue$$315360000() => $315360000(),
       ZonesChallengeTtlValue$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W Function()? $900, W Function()? $1800, W Function()? $2700, W Function()? $3600, W Function()? $7200, W Function()? $10800, W Function()? $14400, W Function()? $28800, W Function()? $57600, W Function()? $86400, W Function()? $604800, W Function()? $25920000, W Function()? $315360000, W Function(double value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W Function()? $900, W Function()? $1800, W Function()? $2700, W Function()? $3600, W Function()? $7200, W Function()? $10800, W Function()? $14400, W Function()? $28800, W Function()? $57600, W Function()? $86400, W Function()? $604800, W Function()? $25920000, W Function()? $315360000, W Function(double value)? $unknown, }) {return switch (this) {
       ZonesChallengeTtlValue$$300() => $300 != null ? $300() : orElse(value),
       ZonesChallengeTtlValue$$900() => $900 != null ? $900() : orElse(value),
       ZonesChallengeTtlValue$$1800() => $1800 != null ? $1800() : orElse(value),
@@ -109,10 +109,10 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
       ZonesChallengeTtlValue$$25920000() => $25920000 != null ? $25920000() : orElse(value),
       ZonesChallengeTtlValue$$315360000() => $315360000 != null ? $315360000() : orElse(value),
       ZonesChallengeTtlValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesChallengeTtlValue($value)';
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$300 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$300._();
 
 @override double get value => 300;
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 300.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$900 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$900._();
 
 @override double get value => 900;
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 900.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$1800 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$1800._();
 
 @override double get value => 1800;
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 1800.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$2700 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$2700._();
 
 @override double get value => 2700;
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 2700.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$3600 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$3600._();
 
 @override double get value => 3600;
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 3600.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$7200 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$7200._();
 
 @override double get value => 7200;
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 7200.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$10800 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$10800._();
 
 @override double get value => 10800;
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 10800.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$14400 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$14400._();
 
 @override double get value => 14400;
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 14400.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$28800 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$28800._();
 
 @override double get value => 28800;
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 28800.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$57600 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$57600._();
 
 @override double get value => 57600;
@@ -202,7 +202,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 57600.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$86400 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$86400._();
 
 @override double get value => 86400;
@@ -211,7 +211,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 86400.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$604800 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$604800._();
 
 @override double get value => 604800;
@@ -220,7 +220,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 604800.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$25920000 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$25920000._();
 
 @override double get value => 2592000.0;
@@ -229,7 +229,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 2592000.0.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$$315360000 extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$$315360000._();
 
 @override double get value => 31536000.0;
@@ -238,7 +238,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => 31536000.0.hashCode;
 
- }
+}
 @immutable final class ZonesChallengeTtlValue$Unknown extends ZonesChallengeTtlValue {const ZonesChallengeTtlValue$Unknown(this.value);
 
 @override final double value;
@@ -248,4 +248,4 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

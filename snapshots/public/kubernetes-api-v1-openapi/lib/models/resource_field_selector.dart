@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// ResourceFieldSelector represents container resources (cpu, memory) and their output format
 @immutable final class ResourceFieldSelector {const ResourceFieldSelector({required this.resource, this.containerName, this.divisor, });
 
-factory ResourceFieldSelector.fromJson(Map<String, dynamic> json) { return ResourceFieldSelector(
+factory ResourceFieldSelector.fromJson(Map<String, dynamic> json) {return ResourceFieldSelector(
   containerName: json['containerName'] as String?,
   divisor: json['divisor'] != null ? OneOf2.parse(json['divisor'], fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),) : null,
   resource: json['resource'] as String,
-); }
+);}
 
 /// Container name: required for volumes, optional for env vars
 final String? containerName;
@@ -19,17 +19,17 @@ final ResourceQuantity? divisor;
 /// Required: resource to select
 final String resource;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'containerName': ?containerName,
   if (divisor != null) 'divisor': divisor?.toJson(),
   'resource': resource,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource') && json['resource'] is String; } 
-ResourceFieldSelector copyWith({String? Function()? containerName, ResourceQuantity? Function()? divisor, String? resource, }) { return ResourceFieldSelector(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('resource') && json['resource'] is String;}
+ResourceFieldSelector copyWith({String? Function()? containerName, ResourceQuantity? Function()? divisor, String? resource, }) {return ResourceFieldSelector(
   containerName: containerName != null ? containerName() : this.containerName,
   divisor: divisor != null ? divisor() : this.divisor,
   resource: resource ?? this.resource,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceFieldSelector &&
           containerName == other.containerName &&
@@ -40,4 +40,4 @@ ResourceFieldSelector copyWith({String? Function()? containerName, ResourceQuant
 
 @override String toString() => 'ResourceFieldSelector(containerName: $containerName, divisor: $divisor, resource: $resource)';
 
- }
+}

@@ -14,7 +14,7 @@ final class EndpointHealthChecksApi with ApiExecutor {const EndpointHealthChecks
 /// List Endpoint Health Checks.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks`
-Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckCreateError>> diagnosticsEndpointHealthcheckList({required MagicTransitIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckCreateError>> diagnosticsEndpointHealthcheckList({required MagicTransitIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: DiagnosticsEndpointHealthcheckCreateError.fromResponse,
 );
- } 
+}
 /// Endpoint Health Check
 ///
 /// Create Endpoint Health Check.
 ///
 /// `POST /accounts/{account_id}/diagnostics/endpoint-healthchecks`
-Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckCreateError>> diagnosticsEndpointHealthcheckCreate({required MagicTransitIdentifier accountId, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckCreateError>> diagnosticsEndpointHealthcheckCreate({required MagicTransitIdentifier accountId, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: DiagnosticsEndpointHealthcheckCreateError.fromResponse,
 );
- } 
+}
 /// Get Endpoint Health Check
 ///
 /// Get a single Endpoint Health Check.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckGetError>> diagnosticsEndpointHealthcheckGet({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckGetError>> diagnosticsEndpointHealthcheckGet({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: DiagnosticsEndpointHealthcheckGetError.fromResponse,
 );
- } 
+}
 /// Update Endpoint Health Check
 ///
 /// Update a Endpoint Health Check.
 ///
 /// `PUT /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckCreateError>> diagnosticsEndpointHealthcheckUpdate({required MagicTransitIdentifier accountId, required MagicTransitUuid id, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckCreateError>> diagnosticsEndpointHealthcheckUpdate({required MagicTransitIdentifier accountId, required MagicTransitUuid id, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: DiagnosticsEndpointHealthcheckCreateError.fromResponse,
 );
- } 
+}
 /// Delete Endpoint Health Check
 ///
 /// Delete Endpoint Health Check.
 ///
 /// `DELETE /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45, DiagnosticsEndpointHealthcheckCreateError>> diagnosticsEndpointHealthcheckDelete({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon45, DiagnosticsEndpointHealthcheckCreateError>> diagnosticsEndpointHealthcheckDelete({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -126,5 +126,5 @@ return await execute(
   },
   onError: DiagnosticsEndpointHealthcheckCreateError.fromResponse,
 );
- } 
- }
+}
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AspaObjects {const AspaObjects({required this.customerAsn, required this.providers, });
 
-factory AspaObjects.fromJson(Map<String, dynamic> json) { return AspaObjects(
+factory AspaObjects.fromJson(Map<String, dynamic> json) {return AspaObjects(
   customerAsn: (json['customerAsn'] as num).toInt(),
   providers: (json['providers'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The customer ASN publishing the ASPA object.
 final int customerAsn;
 
 final List<int> providers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customerAsn': customerAsn,
   'providers': providers,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('customerAsn') && json['customerAsn'] is num &&
-      json.containsKey('providers'); } 
-AspaObjects copyWith({int? customerAsn, List<int>? providers, }) { return AspaObjects(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('customerAsn') && json['customerAsn'] is num &&
+      json.containsKey('providers');}
+AspaObjects copyWith({int? customerAsn, List<int>? providers, }) {return AspaObjects(
   customerAsn: customerAsn ?? this.customerAsn,
   providers: providers ?? this.providers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AspaObjects &&
           customerAsn == other.customerAsn &&
@@ -32,4 +32,4 @@ AspaObjects copyWith({int? customerAsn, List<int>? providers, }) { return AspaOb
 
 @override String toString() => 'AspaObjects(customerAsn: $customerAsn, providers: $providers)';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/status_cause.dart';/// StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
 @immutable final class StatusDetails {const StatusDetails({this.causes, this.group, this.kind, this.name, this.retryAfterSeconds, this.uid, });
 
-factory StatusDetails.fromJson(Map<String, dynamic> json) { return StatusDetails(
+factory StatusDetails.fromJson(Map<String, dynamic> json) {return StatusDetails(
   causes: (json['causes'] as List<dynamic>?)?.map((e) => StatusCause.fromJson(e as Map<String, dynamic>)).toList(),
   group: json['group'] as String?,
   kind: json['kind'] as String?,
   name: json['name'] as String?,
   retryAfterSeconds: json['retryAfterSeconds'] != null ? (json['retryAfterSeconds'] as num).toInt() : null,
   uid: json['uid'] as String?,
-); }
+);}
 
 /// The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.
 final List<StatusCause>? causes;
@@ -31,23 +31,23 @@ final int? retryAfterSeconds;
 /// UID of the resource. (when there is a single resource which can be described). More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
 final String? uid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (causes != null) 'causes': causes?.map((e) => e.toJson()).toList(),
   'group': ?group,
   'kind': ?kind,
   'name': ?name,
   'retryAfterSeconds': ?retryAfterSeconds,
   'uid': ?uid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'causes', 'group', 'kind', 'name', 'retryAfterSeconds', 'uid'}.contains(key)); } 
-StatusDetails copyWith({List<StatusCause>? Function()? causes, String? Function()? group, String? Function()? kind, String? Function()? name, int? Function()? retryAfterSeconds, String? Function()? uid, }) { return StatusDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'causes', 'group', 'kind', 'name', 'retryAfterSeconds', 'uid'}.contains(key));}
+StatusDetails copyWith({List<StatusCause>? Function()? causes, String? Function()? group, String? Function()? kind, String? Function()? name, int? Function()? retryAfterSeconds, String? Function()? uid, }) {return StatusDetails(
   causes: causes != null ? causes() : this.causes,
   group: group != null ? group() : this.group,
   kind: kind != null ? kind() : this.kind,
   name: name != null ? name() : this.name,
   retryAfterSeconds: retryAfterSeconds != null ? retryAfterSeconds() : this.retryAfterSeconds,
   uid: uid != null ? uid() : this.uid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StatusDetails &&
           listEquals(causes, other.causes) &&
@@ -61,4 +61,4 @@ StatusDetails copyWith({List<StatusCause>? Function()? causes, String? Function(
 
 @override String toString() => 'StatusDetails(causes: $causes, group: $group, kind: $kind, name: $name, retryAfterSeconds: $retryAfterSeconds, uid: $uid)';
 
- }
+}

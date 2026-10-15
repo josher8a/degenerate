@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gists_get_comment_response403/block.dart';@immutable final class GistsGetResponse403 {const GistsGetResponse403({this.block, this.message, this.documentationUrl, });
 
-factory GistsGetResponse403.fromJson(Map<String, dynamic> json) { return GistsGetResponse403(
+factory GistsGetResponse403.fromJson(Map<String, dynamic> json) {return GistsGetResponse403(
   block: json['block'] != null ? Block.fromJson(json['block'] as Map<String, dynamic>) : null,
   message: json['message'] as String?,
   documentationUrl: json['documentation_url'] as String?,
-); }
+);}
 
 final Block? block;
 
@@ -15,17 +15,17 @@ final String? message;
 
 final String? documentationUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (block != null) 'block': block?.toJson(),
   'message': ?message,
   'documentation_url': ?documentationUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'block', 'message', 'documentation_url'}.contains(key)); } 
-GistsGetResponse403 copyWith({Block? Function()? block, String? Function()? message, String? Function()? documentationUrl, }) { return GistsGetResponse403(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'block', 'message', 'documentation_url'}.contains(key));}
+GistsGetResponse403 copyWith({Block? Function()? block, String? Function()? message, String? Function()? documentationUrl, }) {return GistsGetResponse403(
   block: block != null ? block() : this.block,
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GistsGetResponse403 &&
           block == other.block &&
@@ -36,4 +36,4 @@ GistsGetResponse403 copyWith({Block? Function()? block, String? Function()? mess
 
 @override String toString() => 'GistsGetResponse403(block: $block, message: $message, documentationUrl: $documentationUrl)';
 
- }
+}

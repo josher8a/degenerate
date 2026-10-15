@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zon
 /// Notes: Depends on the zone's plan level
 sealed class ZonesSslValue {const ZonesSslValue();
 
-factory ZonesSslValue.fromJson(String json) { return switch (json) {
+factory ZonesSslValue.fromJson(String json) {return switch (json) {
   'off' => off,
   'flexible' => flexible,
   'full' => full,
   'strict' => strict,
   _ => ZonesSslValue$Unknown(json),
-}; }
+};}
 
 static const ZonesSslValue off = ZonesSslValue$off._();
 
@@ -24,36 +24,36 @@ static const ZonesSslValue strict = ZonesSslValue$strict._();
 static const List<ZonesSslValue> values = [off, flexible, full, strict];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off' => 'off',
   'flexible' => 'flexible',
   'full' => 'full',
   'strict' => 'strict',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesSslValue$Unknown; } 
+bool get isUnknown {return this is ZonesSslValue$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() off, required W Function() flexible, required W Function() full, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() off, required W Function() flexible, required W Function() full, required W Function() strict, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesSslValue$off() => off(),
       ZonesSslValue$flexible() => flexible(),
       ZonesSslValue$full() => full(),
       ZonesSslValue$strict() => strict(),
       ZonesSslValue$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? flexible, W Function()? full, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? flexible, W Function()? full, W Function()? strict, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesSslValue$off() => off != null ? off() : orElse(value),
       ZonesSslValue$flexible() => flexible != null ? flexible() : orElse(value),
       ZonesSslValue$full() => full != null ? full() : orElse(value),
       ZonesSslValue$strict() => strict != null ? strict() : orElse(value),
       ZonesSslValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesSslValue($value)';
 
- }
+}
 @immutable final class ZonesSslValue$off extends ZonesSslValue {const ZonesSslValue$off._();
 
 @override String get value => 'off';
@@ -62,7 +62,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class ZonesSslValue$flexible extends ZonesSslValue {const ZonesSslValue$flexible._();
 
 @override String get value => 'flexible';
@@ -71,7 +71,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'flexible'.hashCode;
 
- }
+}
 @immutable final class ZonesSslValue$full extends ZonesSslValue {const ZonesSslValue$full._();
 
 @override String get value => 'full';
@@ -80,7 +80,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'full'.hashCode;
 
- }
+}
 @immutable final class ZonesSslValue$strict extends ZonesSslValue {const ZonesSslValue$strict._();
 
 @override String get value => 'strict';
@@ -89,7 +89,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => 'strict'.hashCode;
 
- }
+}
 @immutable final class ZonesSslValue$Unknown extends ZonesSslValue {const ZonesSslValue$Unknown(this.value);
 
 @override final String value;
@@ -99,4 +99,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

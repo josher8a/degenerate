@@ -7,11 +7,11 @@ const RepositoryRulesetConditions2({this.repositoryRulesetConditions = const Omi
 const RepositoryRulesetConditions2._({required this.rawValue, required this.repositoryRulesetConditions, required this.orgRulesetConditions, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory RepositoryRulesetConditions2.fromJson(Object? json) { return RepositoryRulesetConditions2._(
+factory RepositoryRulesetConditions2.fromJson(Object? json) {return RepositoryRulesetConditions2._(
   rawValue: Omittable(json),
   repositoryRulesetConditions: json is Map<String, dynamic> && RepositoryRulesetConditions.canParse(json) ? parseAnyOfVariant<RepositoryRulesetConditions>(json, (value) => RepositoryRulesetConditions.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   orgRulesetConditions: parseAnyOfVariant<OrgRulesetConditions>(json, (value) => OneOf3.parse(value, fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'RepositoryRulesetConditions2(${toJson()})';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the selected option (only present for single_select fields)
 @immutable final class IssueFieldValueSingleSelectOption {const IssueFieldValueSingleSelectOption({required this.id, required this.name, required this.color, });
 
-factory IssueFieldValueSingleSelectOption.fromJson(Map<String, dynamic> json) { return IssueFieldValueSingleSelectOption(
+factory IssueFieldValueSingleSelectOption.fromJson(Map<String, dynamic> json) {return IssueFieldValueSingleSelectOption(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   color: json['color'] as String,
-); }
+);}
 
 /// Unique identifier for the option.
 final int id;
@@ -19,19 +19,19 @@ final String name;
 /// The color of the option
 final String color;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'color': color,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('color') && json['color'] is String; } 
-IssueFieldValueSingleSelectOption copyWith({int? id, String? name, String? color, }) { return IssueFieldValueSingleSelectOption(
+      json.containsKey('color') && json['color'] is String;}
+IssueFieldValueSingleSelectOption copyWith({int? id, String? name, String? color, }) {return IssueFieldValueSingleSelectOption(
   id: id ?? this.id,
   name: name ?? this.name,
   color: color ?? this.color,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssueFieldValueSingleSelectOption &&
           id == other.id &&
@@ -42,4 +42,4 @@ IssueFieldValueSingleSelectOption copyWith({int? id, String? name, String? color
 
 @override String toString() => 'IssueFieldValueSingleSelectOption(id: $id, name: $name, color: $color)';
 
- }
+}

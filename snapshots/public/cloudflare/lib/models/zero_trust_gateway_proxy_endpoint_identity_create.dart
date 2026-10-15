@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';/// The proxy endpoint kind
 sealed class ZeroTrustGatewayProxyEndpointIdentityCreateKind {const ZeroTrustGatewayProxyEndpointIdentityCreateKind();
 
-factory ZeroTrustGatewayProxyEndpointIdentityCreateKind.fromJson(String json) { return switch (json) {
+factory ZeroTrustGatewayProxyEndpointIdentityCreateKind.fromJson(String json) {return switch (json) {
   'identity' => identity,
   _ => ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown(json),
-}; }
+};}
 
 static const ZeroTrustGatewayProxyEndpointIdentityCreateKind identity = ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity._();
 
 static const List<ZeroTrustGatewayProxyEndpointIdentityCreateKind> values = [identity];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'identity' => 'identity',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown; } 
+bool get isUnknown {return this is ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() identity, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() identity, required W Function(String value) $unknown, }) {return switch (this) {
       ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity() => identity(),
       ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? identity, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? identity, W Function(String value)? $unknown, }) {return switch (this) {
       ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity() => identity != null ? identity() : orElse(value),
       ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZeroTrustGatewayProxyEndpointIdentityCreateKind($value)';
 
- }
+}
 @immutable final class ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity extends ZeroTrustGatewayProxyEndpointIdentityCreateKind {const ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity._();
 
 @override String get value => 'identity';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? identity
 
 @override int get hashCode => 'identity'.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown extends ZeroTrustGatewayProxyEndpointIdentityCreateKind {const ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? identity
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZeroTrustGatewayProxyEndpointIdentityCreate {const ZeroTrustGatewayProxyEndpointIdentityCreate({required this.kind, required this.name, });
 
-factory ZeroTrustGatewayProxyEndpointIdentityCreate.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointIdentityCreate(
+factory ZeroTrustGatewayProxyEndpointIdentityCreate.fromJson(Map<String, dynamic> json) {return ZeroTrustGatewayProxyEndpointIdentityCreate(
   kind: ZeroTrustGatewayProxyEndpointIdentityCreateKind.fromJson(json['kind'] as String),
   name: ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String),
-); }
+);}
 
 /// The proxy endpoint kind
 /// 
@@ -68,16 +68,16 @@ final ZeroTrustGatewayProxyEndpointIdentityCreateKind kind;
 
 final ZeroTrustGatewayProxyEndpointsComponentsSchemasName name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'kind': kind.toJson(),
   'name': name.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
-      json.containsKey('name'); } 
-ZeroTrustGatewayProxyEndpointIdentityCreate copyWith({ZeroTrustGatewayProxyEndpointIdentityCreateKind? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, }) { return ZeroTrustGatewayProxyEndpointIdentityCreate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('kind') &&
+      json.containsKey('name');}
+ZeroTrustGatewayProxyEndpointIdentityCreate copyWith({ZeroTrustGatewayProxyEndpointIdentityCreateKind? kind, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, }) {return ZeroTrustGatewayProxyEndpointIdentityCreate(
   kind: kind ?? this.kind,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayProxyEndpointIdentityCreate &&
           kind == other.kind &&
@@ -87,4 +87,4 @@ ZeroTrustGatewayProxyEndpointIdentityCreate copyWith({ZeroTrustGatewayProxyEndpo
 
 @override String toString() => 'ZeroTrustGatewayProxyEndpointIdentityCreate(kind: $kind, name: $name)';
 
- }
+}

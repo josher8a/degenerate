@@ -14,7 +14,7 @@ final class RegistrarDomainsApi with ApiExecutor {const RegistrarDomainsApi(this
 /// List domains handled by Registrar.
 ///
 /// `GET /accounts/{account_id}/registrar/domains`
-Future<ApiResult<List<DomainProperties>, RegistrarDomainsListDomainsError>> registrarDomainsListDomains({required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DomainProperties>, RegistrarDomainsListDomainsError>> registrarDomainsListDomains({required Identifier3 accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: RegistrarDomainsListDomainsError.fromResponse,
 );
- } 
+}
 /// Get domain
 ///
 /// Show individual domain.
 ///
 /// `GET /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>, RegistrarDomainsGetDomainError>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, RegistrarDomainsGetDomainError>> registrarDomainsGetDomain({required DomainName domainName, required Identifier3 accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: RegistrarDomainsGetDomainError.fromResponse,
 );
- } 
+}
 /// Update domain
 ///
 /// Update individual domain.
 ///
 /// `PUT /accounts/{account_id}/registrar/domains/{domain_name}`
-Future<ApiResult<Map<String, dynamic>, RegistrarDomainsUpdateDomainError>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, RegistrarDomainsUpdateDomainError>> registrarDomainsUpdateDomain({required DomainName domainName, required Identifier3 accountId, required DomainUpdateProperties body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -79,5 +79,5 @@ return await execute(
   },
   onError: RegistrarDomainsUpdateDomainError.fromResponse,
 );
- } 
- }
+}
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key3/key3_owner.dart';/// The object type, which is always `organization.project.api_key`
 sealed class Key3Object {const Key3Object();
 
-factory Key3Object.fromJson(String json) { return switch (json) {
+factory Key3Object.fromJson(String json) {return switch (json) {
   'organization.project.api_key' => organizationProjectApiKey,
   _ => Key3Object$Unknown(json),
-}; }
+};}
 
 static const Key3Object organizationProjectApiKey = Key3Object$organizationProjectApiKey._();
 
 static const List<Key3Object> values = [organizationProjectApiKey];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.project.api_key' => 'organizationProjectApiKey',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Key3Object$Unknown; } 
+bool get isUnknown {return this is Key3Object$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationProjectApiKey, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationProjectApiKey, required W Function(String value) $unknown, }) {return switch (this) {
       Key3Object$organizationProjectApiKey() => organizationProjectApiKey(),
       Key3Object$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationProjectApiKey, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationProjectApiKey, W Function(String value)? $unknown, }) {return switch (this) {
       Key3Object$organizationProjectApiKey() => organizationProjectApiKey != null ? organizationProjectApiKey() : orElse(value),
       Key3Object$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Key3Object($value)';
 
- }
+}
 @immutable final class Key3Object$organizationProjectApiKey extends Key3Object {const Key3Object$organizationProjectApiKey._();
 
 @override String get value => 'organization.project.api_key';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.project.api_key'.hashCode;
 
- }
+}
 @immutable final class Key3Object$Unknown extends Key3Object {const Key3Object$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents an individual API key in a project.
 @immutable final class Key3 {const Key3({required this.object, required this.redactedValue, required this.name, required this.createdAt, required this.lastUsedAt, required this.id, required this.owner, });
 
-factory Key3.fromJson(Map<String, dynamic> json) { return Key3(
+factory Key3.fromJson(Map<String, dynamic> json) {return Key3(
   object: Key3Object.fromJson(json['object'] as String),
   redactedValue: json['redacted_value'] as String,
   name: json['name'] as String,
@@ -65,7 +65,7 @@ factory Key3.fromJson(Map<String, dynamic> json) { return Key3(
   lastUsedAt: (json['last_used_at'] as num).toInt(),
   id: json['id'] as String,
   owner: Key3Owner.fromJson(json['owner'] as Map<String, dynamic>),
-); }
+);}
 
 /// The object type, which is always `organization.project.api_key`
 final Key3Object object;
@@ -87,7 +87,7 @@ final String id;
 
 final Key3Owner owner;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'redacted_value': redactedValue,
   'name': name,
@@ -95,15 +95,15 @@ Map<String, dynamic> toJson() { return {
   'last_used_at': lastUsedAt,
   'id': id,
   'owner': owner.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('redacted_value') && json['redacted_value'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('last_used_at') && json['last_used_at'] is num &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('owner'); } 
-Key3 copyWith({Key3Object? object, String? redactedValue, String? name, int? createdAt, int? lastUsedAt, String? id, Key3Owner? owner, }) { return Key3(
+      json.containsKey('owner');}
+Key3 copyWith({Key3Object? object, String? redactedValue, String? name, int? createdAt, int? lastUsedAt, String? id, Key3Owner? owner, }) {return Key3(
   object: object ?? this.object,
   redactedValue: redactedValue ?? this.redactedValue,
   name: name ?? this.name,
@@ -111,7 +111,7 @@ Key3 copyWith({Key3Object? object, String? redactedValue, String? name, int? cre
   lastUsedAt: lastUsedAt ?? this.lastUsedAt,
   id: id ?? this.id,
   owner: owner ?? this.owner,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Key3 &&
           object == other.object &&
@@ -126,4 +126,4 @@ Key3 copyWith({Key3Object? object, String? redactedValue, String? name, int? cre
 
 @override String toString() => 'Key3(object: $object, redactedValue: $redactedValue, name: $name, createdAt: $createdAt, lastUsedAt: $lastUsedAt, id: $id, owner: $owner)';
 
- }
+}

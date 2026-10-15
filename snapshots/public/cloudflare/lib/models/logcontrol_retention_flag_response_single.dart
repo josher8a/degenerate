@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logcontrol_messages2.dart';import 'package:pub_cloudflare/models/logcontrol_retention_flag.dart';@immutable final class LogcontrolRetentionFlagResponseSingle {const LogcontrolRetentionFlagResponseSingle({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
-factory LogcontrolRetentionFlagResponseSingle.fromJson(Map<String, dynamic> json) { return LogcontrolRetentionFlagResponseSingle(
+factory LogcontrolRetentionFlagResponseSingle.fromJson(Map<String, dynamic> json) {return LogcontrolRetentionFlagResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => LogcontrolMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LogcontrolMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json.containsKey('result') ? Omittable(json['result'] != null ? LogcontrolRetentionFlag.fromJson(json['result'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 final List<LogcontrolMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final Omittable<LogcontrolRetentionFlag?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result.isPresent) 'result': result.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-LogcontrolRetentionFlagResponseSingle copyWith({List<LogcontrolMessages2>? errors, List<LogcontrolMessages2>? messages, bool? success, Omittable<LogcontrolRetentionFlag?>? result, }) { return LogcontrolRetentionFlagResponseSingle(
+      json.containsKey('success') && json['success'] is bool;}
+LogcontrolRetentionFlagResponseSingle copyWith({List<LogcontrolMessages2>? errors, List<LogcontrolMessages2>? messages, bool? success, Omittable<LogcontrolRetentionFlag?>? result, }) {return LogcontrolRetentionFlagResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LogcontrolRetentionFlagResponseSingle &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ LogcontrolRetentionFlagResponseSingle copyWith({List<LogcontrolMessages2>? error
 
 @override String toString() => 'LogcontrolRetentionFlagResponseSingle(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

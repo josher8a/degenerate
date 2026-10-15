@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_order/climate_order_product.dart';import 'package:pub_stripe_spec3/models/climate_removals_beneficiary.dart';import 'package:pub_stripe_spec3/models/climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
 sealed class ClimateOrderCancellationReason {const ClimateOrderCancellationReason();
 
-factory ClimateOrderCancellationReason.fromJson(String json) { return switch (json) {
+factory ClimateOrderCancellationReason.fromJson(String json) {return switch (json) {
   'expired' => expired,
   'product_unavailable' => productUnavailable,
   'requested' => requested,
   _ => ClimateOrderCancellationReason$Unknown(json),
-}; }
+};}
 
 static const ClimateOrderCancellationReason expired = ClimateOrderCancellationReason$expired._();
 
@@ -20,33 +20,33 @@ static const ClimateOrderCancellationReason requested = ClimateOrderCancellation
 static const List<ClimateOrderCancellationReason> values = [expired, productUnavailable, requested];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'expired' => 'expired',
   'product_unavailable' => 'productUnavailable',
   'requested' => 'requested',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ClimateOrderCancellationReason$Unknown; } 
+bool get isUnknown {return this is ClimateOrderCancellationReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() expired, required W Function() productUnavailable, required W Function() requested, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() expired, required W Function() productUnavailable, required W Function() requested, required W Function(String value) $unknown, }) {return switch (this) {
       ClimateOrderCancellationReason$expired() => expired(),
       ClimateOrderCancellationReason$productUnavailable() => productUnavailable(),
       ClimateOrderCancellationReason$requested() => requested(),
       ClimateOrderCancellationReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? productUnavailable, W Function()? requested, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? productUnavailable, W Function()? requested, W Function(String value)? $unknown, }) {return switch (this) {
       ClimateOrderCancellationReason$expired() => expired != null ? expired() : orElse(value),
       ClimateOrderCancellationReason$productUnavailable() => productUnavailable != null ? productUnavailable() : orElse(value),
       ClimateOrderCancellationReason$requested() => requested != null ? requested() : orElse(value),
       ClimateOrderCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ClimateOrderCancellationReason($value)';
 
- }
+}
 @immutable final class ClimateOrderCancellationReason$expired extends ClimateOrderCancellationReason {const ClimateOrderCancellationReason$expired._();
 
 @override String get value => 'expired';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderCancellationReason$productUnavailable extends ClimateOrderCancellationReason {const ClimateOrderCancellationReason$productUnavailable._();
 
 @override String get value => 'product_unavailable';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'product_unavailable'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderCancellationReason$requested extends ClimateOrderCancellationReason {const ClimateOrderCancellationReason$requested._();
 
 @override String get value => 'requested';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => 'requested'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderCancellationReason$Unknown extends ClimateOrderCancellationReason {const ClimateOrderCancellationReason$Unknown(this.value);
 
 @override final String value;
@@ -83,41 +83,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class ClimateOrderObject {const ClimateOrderObject();
 
-factory ClimateOrderObject.fromJson(String json) { return switch (json) {
+factory ClimateOrderObject.fromJson(String json) {return switch (json) {
   'climate.order' => climateOrder,
   _ => ClimateOrderObject$Unknown(json),
-}; }
+};}
 
 static const ClimateOrderObject climateOrder = ClimateOrderObject$climateOrder._();
 
 static const List<ClimateOrderObject> values = [climateOrder];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'climate.order' => 'climateOrder',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ClimateOrderObject$Unknown; } 
+bool get isUnknown {return this is ClimateOrderObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() climateOrder, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() climateOrder, required W Function(String value) $unknown, }) {return switch (this) {
       ClimateOrderObject$climateOrder() => climateOrder(),
       ClimateOrderObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateOrder, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateOrder, W Function(String value)? $unknown, }) {return switch (this) {
       ClimateOrderObject$climateOrder() => climateOrder != null ? climateOrder() : orElse(value),
       ClimateOrderObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ClimateOrderObject($value)';
 
- }
+}
 @immutable final class ClimateOrderObject$climateOrder extends ClimateOrderObject {const ClimateOrderObject$climateOrder._();
 
 @override String get value => 'climate.order';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateO
 
 @override int get hashCode => 'climate.order'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderObject$Unknown extends ClimateOrderObject {const ClimateOrderObject$Unknown(this.value);
 
 @override final String value;
@@ -136,18 +136,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateO
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The current status of this order.
 sealed class ClimateOrderStatus {const ClimateOrderStatus();
 
-factory ClimateOrderStatus.fromJson(String json) { return switch (json) {
+factory ClimateOrderStatus.fromJson(String json) {return switch (json) {
   'awaiting_funds' => awaitingFunds,
   'canceled' => canceled,
   'confirmed' => confirmed,
   'delivered' => delivered,
   'open' => open,
   _ => ClimateOrderStatus$Unknown(json),
-}; }
+};}
 
 static const ClimateOrderStatus awaitingFunds = ClimateOrderStatus$awaitingFunds._();
 
@@ -162,39 +162,39 @@ static const ClimateOrderStatus open = ClimateOrderStatus$open._();
 static const List<ClimateOrderStatus> values = [awaitingFunds, canceled, confirmed, delivered, open];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'awaiting_funds' => 'awaitingFunds',
   'canceled' => 'canceled',
   'confirmed' => 'confirmed',
   'delivered' => 'delivered',
   'open' => 'open',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ClimateOrderStatus$Unknown; } 
+bool get isUnknown {return this is ClimateOrderStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() awaitingFunds, required W Function() canceled, required W Function() confirmed, required W Function() delivered, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() awaitingFunds, required W Function() canceled, required W Function() confirmed, required W Function() delivered, required W Function() open, required W Function(String value) $unknown, }) {return switch (this) {
       ClimateOrderStatus$awaitingFunds() => awaitingFunds(),
       ClimateOrderStatus$canceled() => canceled(),
       ClimateOrderStatus$confirmed() => confirmed(),
       ClimateOrderStatus$delivered() => delivered(),
       ClimateOrderStatus$open() => open(),
       ClimateOrderStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaitingFunds, W Function()? canceled, W Function()? confirmed, W Function()? delivered, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaitingFunds, W Function()? canceled, W Function()? confirmed, W Function()? delivered, W Function()? open, W Function(String value)? $unknown, }) {return switch (this) {
       ClimateOrderStatus$awaitingFunds() => awaitingFunds != null ? awaitingFunds() : orElse(value),
       ClimateOrderStatus$canceled() => canceled != null ? canceled() : orElse(value),
       ClimateOrderStatus$confirmed() => confirmed != null ? confirmed() : orElse(value),
       ClimateOrderStatus$delivered() => delivered != null ? delivered() : orElse(value),
       ClimateOrderStatus$open() => open != null ? open() : orElse(value),
       ClimateOrderStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ClimateOrderStatus($value)';
 
- }
+}
 @immutable final class ClimateOrderStatus$awaitingFunds extends ClimateOrderStatus {const ClimateOrderStatus$awaitingFunds._();
 
 @override String get value => 'awaiting_funds';
@@ -203,7 +203,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaiting
 
 @override int get hashCode => 'awaiting_funds'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderStatus$canceled extends ClimateOrderStatus {const ClimateOrderStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -212,7 +212,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaiting
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderStatus$confirmed extends ClimateOrderStatus {const ClimateOrderStatus$confirmed._();
 
 @override String get value => 'confirmed';
@@ -221,7 +221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaiting
 
 @override int get hashCode => 'confirmed'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderStatus$delivered extends ClimateOrderStatus {const ClimateOrderStatus$delivered._();
 
 @override String get value => 'delivered';
@@ -230,7 +230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaiting
 
 @override int get hashCode => 'delivered'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderStatus$open extends ClimateOrderStatus {const ClimateOrderStatus$open._();
 
 @override String get value => 'open';
@@ -239,7 +239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaiting
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class ClimateOrderStatus$Unknown extends ClimateOrderStatus {const ClimateOrderStatus$Unknown(this.value);
 
 @override final String value;
@@ -249,12 +249,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaiting
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Orders represent your intent to purchase a particular Climate product. When you create an order, the
 /// payment is deducted from your merchant balance.
 @immutable final class ClimateOrder {const ClimateOrder({required this.amountFees, required this.amountSubtotal, required this.amountTotal, required this.created, required this.currency, required this.deliveryDetails, required this.expectedDeliveryYear, required this.id, required this.livemode, required this.metadata, required this.metricTons, required this.object, required this.product, required this.status, this.beneficiary, this.canceledAt = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.certificate = const Omittable.absent(), this.confirmedAt = const Omittable.absent(), this.delayedAt = const Omittable.absent(), this.deliveredAt = const Omittable.absent(), this.productSubstitutedAt = const Omittable.absent(), });
 
-factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
+factory ClimateOrder.fromJson(Map<String, dynamic> json) {return ClimateOrder(
   amountFees: (json['amount_fees'] as num).toInt(),
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
@@ -277,7 +277,7 @@ factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
   product: ClimateOrderProduct.fromJson(json['product']),
   productSubstitutedAt: json.containsKey('product_substituted_at') ? Omittable(json['product_substituted_at'] != null ? (json['product_substituted_at'] as num).toInt() : null) : const Omittable.absent(),
   status: ClimateOrderStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Total amount of [Frontier](https://frontierclimate.com/)'s service fees in the currency's smallest unit.
 final int amountFees;
@@ -344,7 +344,7 @@ final Omittable<int?> productSubstitutedAt;
 /// The current status of this order.
 final ClimateOrderStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_fees': amountFees,
   'amount_subtotal': amountSubtotal,
   'amount_total': amountTotal,
@@ -367,8 +367,8 @@ Map<String, dynamic> toJson() { return {
   'product': product.toJson(),
   if (productSubstitutedAt.isPresent) 'product_substituted_at': productSubstitutedAt.value,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_fees') && json['amount_fees'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_fees') && json['amount_fees'] is num &&
       json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('created') && json['created'] is num &&
@@ -381,17 +381,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metric_tons') && json['metric_tons'] is String &&
       json.containsKey('object') &&
       json.containsKey('product') &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final certificate$ = certificate.value;
 if (certificate$ != null) {
   if (certificate$.runes.length > 5000) { errors.add('certificate: length must be <= 5000'); }
 }
 if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary? Function()? beneficiary, Omittable<int?>? canceledAt, Omittable<ClimateOrderCancellationReason?>? cancellationReason, Omittable<String?>? certificate, Omittable<int?>? confirmedAt, int? created, String? currency, Omittable<int?>? delayedAt, Omittable<int?>? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, Omittable<int?>? productSubstitutedAt, ClimateOrderStatus? status, }) { return ClimateOrder(
+return errors;}
+ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary? Function()? beneficiary, Omittable<int?>? canceledAt, Omittable<ClimateOrderCancellationReason?>? cancellationReason, Omittable<String?>? certificate, Omittable<int?>? confirmedAt, int? created, String? currency, Omittable<int?>? delayedAt, Omittable<int?>? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, Omittable<int?>? productSubstitutedAt, ClimateOrderStatus? status, }) {return ClimateOrder(
   amountFees: amountFees ?? this.amountFees,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
@@ -414,7 +414,7 @@ ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, C
   product: product ?? this.product,
   productSubstitutedAt: productSubstitutedAt ?? this.productSubstitutedAt,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ClimateOrder &&
           amountFees == other.amountFees &&
@@ -444,4 +444,4 @@ ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, C
 
 @override String toString() => 'ClimateOrder(\n  amountFees: $amountFees,\n  amountSubtotal: $amountSubtotal,\n  amountTotal: $amountTotal,\n  beneficiary: $beneficiary,\n  canceledAt: $canceledAt,\n  cancellationReason: $cancellationReason,\n  certificate: $certificate,\n  confirmedAt: $confirmedAt,\n  created: $created,\n  currency: $currency,\n  delayedAt: $delayedAt,\n  deliveredAt: $deliveredAt,\n  deliveryDetails: $deliveryDetails,\n  expectedDeliveryYear: $expectedDeliveryYear,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  metricTons: $metricTons,\n  object: $object,\n  product: $product,\n  productSubstitutedAt: $productSubstitutedAt,\n  status: $status,\n)';
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages10MessagesContentVariant2 {const Messages10MessagesContentVariant2({this.text, this.type, });
 
-factory Messages10MessagesContentVariant2.fromJson(Map<String, dynamic> json) { return Messages10MessagesContentVariant2(
+factory Messages10MessagesContentVariant2.fromJson(Map<String, dynamic> json) {return Messages10MessagesContentVariant2(
   text: json['text'] as String?,
   type: json['type'] as String?,
-); }
+);}
 
 /// Text content
 final String? text;
@@ -14,15 +14,15 @@ final String? text;
 /// Type of the content (text)
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text': ?text,
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text', 'type'}.contains(key)); } 
-Messages10MessagesContentVariant2 copyWith({String? Function()? text, String? Function()? type, }) { return Messages10MessagesContentVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'text', 'type'}.contains(key));}
+Messages10MessagesContentVariant2 copyWith({String? Function()? text, String? Function()? type, }) {return Messages10MessagesContentVariant2(
   text: text != null ? text() : this.text,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Messages10MessagesContentVariant2 &&
           text == other.text &&
@@ -32,4 +32,4 @@ Messages10MessagesContentVariant2 copyWith({String? Function()? text, String? Fu
 
 @override String toString() => 'Messages10MessagesContentVariant2(text: $text, type: $type)';
 
- }
+}

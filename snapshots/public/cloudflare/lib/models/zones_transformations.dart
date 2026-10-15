@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_image_resizing_value.dart';/// Media Transformations provides on-demand resizing, conversion and optimization for images and video served through Cloudflare's network. Refer to the [Image Transformations](https://developers.cloudflare.com/images/) and [Video Transformations](https://developers.cloudflare.com/stream/transform-videos/#getting-started) documentation for more information.
 @immutable final class ZonesTransformations {const ZonesTransformations({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
-factory ZonesTransformations.fromJson(Map<String, dynamic> json) { return ZonesTransformations(
+factory ZonesTransformations.fromJson(Map<String, dynamic> json) {return ZonesTransformations(
   editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesImageResizingValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -30,20 +30,20 @@ final ZonesImageResizingValue value;
 /// The value of `editable`, or its schema default when absent.
 bool get editableOrDefault => editable ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesTransformations copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesImageResizingValue? value, }) { return ZonesTransformations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesTransformations copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesImageResizingValue? value, }) {return ZonesTransformations(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesTransformations &&
           editable == other.editable &&
@@ -55,4 +55,4 @@ ZonesTransformations copyWith({bool? Function()? editable, dynamic Function()? i
 
 @override String toString() => 'ZonesTransformations(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

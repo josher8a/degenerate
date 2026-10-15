@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_extended_resource_request.dart';/// PodExtendedResourceClaimStatus is stored in the PodStatus for the extended resource requests backed by DRA. It stores the generated name for the corresponding special ResourceClaim created by the scheduler.
 @immutable final class PodExtendedResourceClaimStatus {const PodExtendedResourceClaimStatus({required this.requestMappings, required this.resourceClaimName, });
 
-factory PodExtendedResourceClaimStatus.fromJson(Map<String, dynamic> json) { return PodExtendedResourceClaimStatus(
+factory PodExtendedResourceClaimStatus.fromJson(Map<String, dynamic> json) {return PodExtendedResourceClaimStatus(
   requestMappings: (json['requestMappings'] as List<dynamic>).map((e) => ContainerExtendedResourceRequest.fromJson(e as Map<String, dynamic>)).toList(),
   resourceClaimName: json['resourceClaimName'] as String,
-); }
+);}
 
 /// RequestMappings identifies the mapping of `<container, extended resource backed by DRA>` to  device request in the generated ResourceClaim.
 final List<ContainerExtendedResourceRequest> requestMappings;
@@ -15,16 +15,16 @@ final List<ContainerExtendedResourceRequest> requestMappings;
 /// ResourceClaimName is the name of the ResourceClaim that was generated for the Pod in the namespace of the Pod.
 final String resourceClaimName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requestMappings': requestMappings.map((e) => e.toJson()).toList(),
   'resourceClaimName': resourceClaimName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requestMappings') &&
-      json.containsKey('resourceClaimName') && json['resourceClaimName'] is String; } 
-PodExtendedResourceClaimStatus copyWith({List<ContainerExtendedResourceRequest>? requestMappings, String? resourceClaimName, }) { return PodExtendedResourceClaimStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requestMappings') &&
+      json.containsKey('resourceClaimName') && json['resourceClaimName'] is String;}
+PodExtendedResourceClaimStatus copyWith({List<ContainerExtendedResourceRequest>? requestMappings, String? resourceClaimName, }) {return PodExtendedResourceClaimStatus(
   requestMappings: requestMappings ?? this.requestMappings,
   resourceClaimName: resourceClaimName ?? this.resourceClaimName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PodExtendedResourceClaimStatus &&
           listEquals(requestMappings, other.requestMappings) &&
@@ -34,4 +34,4 @@ PodExtendedResourceClaimStatus copyWith({List<ContainerExtendedResourceRequest>?
 
 @override String toString() => 'PodExtendedResourceClaimStatus(requestMappings: $requestMappings, resourceClaimName: $resourceClaimName)';
 
- }
+}

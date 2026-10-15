@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesDevicesPolicyCertificates {const TeamsDevicesDevicesPolicyCertificates({required this.enabled});
 
-factory TeamsDevicesDevicesPolicyCertificates.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevicesPolicyCertificates(
+factory TeamsDevicesDevicesPolicyCertificates.fromJson(Map<String, dynamic> json) {return TeamsDevicesDevicesPolicyCertificates(
   enabled: json['enabled'] as bool,
-); }
+);}
 
 /// The current status of the device policy certificate provisioning feature for WARP clients.
 /// 
 /// Example: `true`
 final bool enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-TeamsDevicesDevicesPolicyCertificates copyWith({bool? enabled}) { return TeamsDevicesDevicesPolicyCertificates(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+TeamsDevicesDevicesPolicyCertificates copyWith({bool? enabled}) {return TeamsDevicesDevicesPolicyCertificates(
   enabled: enabled ?? this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDevicesPolicyCertificates &&
           enabled == other.enabled;
@@ -27,4 +27,4 @@ TeamsDevicesDevicesPolicyCertificates copyWith({bool? enabled}) { return TeamsDe
 
 @override String toString() => 'TeamsDevicesDevicesPolicyCertificates(enabled: $enabled)';
 
- }
+}

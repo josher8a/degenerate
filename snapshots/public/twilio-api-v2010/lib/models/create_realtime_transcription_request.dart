@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';/// One of `inbound_track`, `outbound_track`, `both_tracks`.
 sealed class RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack();
 
-factory RealtimeTranscriptionEnumTrack.fromJson(String json) { return switch (json) {
+factory RealtimeTranscriptionEnumTrack.fromJson(String json) {return switch (json) {
   'inbound_track' => inboundTrack,
   'outbound_track' => outboundTrack,
   'both_tracks' => bothTracks,
   _ => RealtimeTranscriptionEnumTrack$Unknown(json),
-}; }
+};}
 
 static const RealtimeTranscriptionEnumTrack inboundTrack = RealtimeTranscriptionEnumTrack$inboundTrack._();
 
@@ -20,33 +20,33 @@ static const RealtimeTranscriptionEnumTrack bothTracks = RealtimeTranscriptionEn
 static const List<RealtimeTranscriptionEnumTrack> values = [inboundTrack, outboundTrack, bothTracks];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'inbound_track' => 'inboundTrack',
   'outbound_track' => 'outboundTrack',
   'both_tracks' => 'bothTracks',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeTranscriptionEnumTrack$Unknown; } 
+bool get isUnknown {return this is RealtimeTranscriptionEnumTrack$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inboundTrack, required W Function() outboundTrack, required W Function() bothTracks, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inboundTrack, required W Function() outboundTrack, required W Function() bothTracks, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeTranscriptionEnumTrack$inboundTrack() => inboundTrack(),
       RealtimeTranscriptionEnumTrack$outboundTrack() => outboundTrack(),
       RealtimeTranscriptionEnumTrack$bothTracks() => bothTracks(),
       RealtimeTranscriptionEnumTrack$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundTrack, W Function()? outboundTrack, W Function()? bothTracks, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundTrack, W Function()? outboundTrack, W Function()? bothTracks, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeTranscriptionEnumTrack$inboundTrack() => inboundTrack != null ? inboundTrack() : orElse(value),
       RealtimeTranscriptionEnumTrack$outboundTrack() => outboundTrack != null ? outboundTrack() : orElse(value),
       RealtimeTranscriptionEnumTrack$bothTracks() => bothTracks != null ? bothTracks() : orElse(value),
       RealtimeTranscriptionEnumTrack$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeTranscriptionEnumTrack($value)';
 
- }
+}
 @immutable final class RealtimeTranscriptionEnumTrack$inboundTrack extends RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack$inboundTrack._();
 
 @override String get value => 'inbound_track';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundT
 
 @override int get hashCode => 'inbound_track'.hashCode;
 
- }
+}
 @immutable final class RealtimeTranscriptionEnumTrack$outboundTrack extends RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack$outboundTrack._();
 
 @override String get value => 'outbound_track';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundT
 
 @override int get hashCode => 'outbound_track'.hashCode;
 
- }
+}
 @immutable final class RealtimeTranscriptionEnumTrack$bothTracks extends RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack$bothTracks._();
 
 @override String get value => 'both_tracks';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundT
 
 @override int get hashCode => 'both_tracks'.hashCode;
 
- }
+}
 @immutable final class RealtimeTranscriptionEnumTrack$Unknown extends RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack$Unknown(this.value);
 
 @override final String value;
@@ -83,10 +83,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundT
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CreateRealtimeTranscriptionRequest {const CreateRealtimeTranscriptionRequest({this.name, this.track, this.statusCallbackUrl, this.statusCallbackMethod, this.inboundTrackLabel, this.outboundTrackLabel, this.partialResults, this.languageCode, this.transcriptionEngine, this.profanityFilter, this.speechModel, this.hints, this.enableAutomaticPunctuation, this.intelligenceService, this.enableProviderData, });
 
-factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateRealtimeTranscriptionRequest(
+factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) {return CreateRealtimeTranscriptionRequest(
   name: json['Name'] as String?,
   track: json['Track'] != null ? RealtimeTranscriptionEnumTrack.fromJson(json['Track'] as String) : null,
   statusCallbackUrl: json['StatusCallbackUrl'] != null ? Uri.parse(json['StatusCallbackUrl'] as String) : null,
@@ -102,7 +102,7 @@ factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) {
   enableAutomaticPunctuation: json['EnableAutomaticPunctuation'] as bool?,
   intelligenceService: json['IntelligenceService'] as String?,
   enableProviderData: json['EnableProviderData'] as bool?,
-); }
+);}
 
 /// The user-specified name of this Transcription, if one was given when the Transcription was created. This may be used to stop the Transcription.
 final String? name;
@@ -149,7 +149,7 @@ final String? intelligenceService;
 /// Whether the callback includes raw provider data.
 final bool? enableProviderData;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'Name': ?name,
   if (track != null) 'Track': track?.toJson(),
   if (statusCallbackUrl != null) 'StatusCallbackUrl': statusCallbackUrl?.toString(),
@@ -165,9 +165,9 @@ Map<String, dynamic> toJson() { return {
   'EnableAutomaticPunctuation': ?enableAutomaticPunctuation,
   'IntelligenceService': ?intelligenceService,
   'EnableProviderData': ?enableProviderData,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Name', 'Track', 'StatusCallbackUrl', 'StatusCallbackMethod', 'InboundTrackLabel', 'OutboundTrackLabel', 'PartialResults', 'LanguageCode', 'TranscriptionEngine', 'ProfanityFilter', 'SpeechModel', 'Hints', 'EnableAutomaticPunctuation', 'IntelligenceService', 'EnableProviderData'}.contains(key)); } 
-CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeTranscriptionEnumTrack? Function()? track, Uri? Function()? statusCallbackUrl, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? inboundTrackLabel, String? Function()? outboundTrackLabel, bool? Function()? partialResults, String? Function()? languageCode, String? Function()? transcriptionEngine, bool? Function()? profanityFilter, String? Function()? speechModel, String? Function()? hints, bool? Function()? enableAutomaticPunctuation, String? Function()? intelligenceService, bool? Function()? enableProviderData, }) { return CreateRealtimeTranscriptionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'Name', 'Track', 'StatusCallbackUrl', 'StatusCallbackMethod', 'InboundTrackLabel', 'OutboundTrackLabel', 'PartialResults', 'LanguageCode', 'TranscriptionEngine', 'ProfanityFilter', 'SpeechModel', 'Hints', 'EnableAutomaticPunctuation', 'IntelligenceService', 'EnableProviderData'}.contains(key));}
+CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeTranscriptionEnumTrack? Function()? track, Uri? Function()? statusCallbackUrl, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? inboundTrackLabel, String? Function()? outboundTrackLabel, bool? Function()? partialResults, String? Function()? languageCode, String? Function()? transcriptionEngine, bool? Function()? profanityFilter, String? Function()? speechModel, String? Function()? hints, bool? Function()? enableAutomaticPunctuation, String? Function()? intelligenceService, bool? Function()? enableProviderData, }) {return CreateRealtimeTranscriptionRequest(
   name: name != null ? name() : this.name,
   track: track != null ? track() : this.track,
   statusCallbackUrl: statusCallbackUrl != null ? statusCallbackUrl() : this.statusCallbackUrl,
@@ -183,7 +183,7 @@ CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeT
   enableAutomaticPunctuation: enableAutomaticPunctuation != null ? enableAutomaticPunctuation() : this.enableAutomaticPunctuation,
   intelligenceService: intelligenceService != null ? intelligenceService() : this.intelligenceService,
   enableProviderData: enableProviderData != null ? enableProviderData() : this.enableProviderData,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateRealtimeTranscriptionRequest &&
           name == other.name &&
@@ -206,4 +206,4 @@ CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeT
 
 @override String toString() => 'CreateRealtimeTranscriptionRequest(\n  name: $name,\n  track: $track,\n  statusCallbackUrl: $statusCallbackUrl,\n  statusCallbackMethod: $statusCallbackMethod,\n  inboundTrackLabel: $inboundTrackLabel,\n  outboundTrackLabel: $outboundTrackLabel,\n  partialResults: $partialResults,\n  languageCode: $languageCode,\n  transcriptionEngine: $transcriptionEngine,\n  profanityFilter: $profanityFilter,\n  speechModel: $speechModel,\n  hints: $hints,\n  enableAutomaticPunctuation: $enableAutomaticPunctuation,\n  intelligenceService: $intelligenceService,\n  enableProviderData: $enableProviderData,\n)';
 
- }
+}

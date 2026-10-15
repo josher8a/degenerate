@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes an API message.
 @immutable final class SnippetsMessage {const SnippetsMessage({required this.message, this.code, });
 
-factory SnippetsMessage.fromJson(Map<String, dynamic> json) { return SnippetsMessage(
+factory SnippetsMessage.fromJson(Map<String, dynamic> json) {return SnippetsMessage(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
   message: json['message'] as String,
-); }
+);}
 
 /// Identify the message code.
 /// 
@@ -19,19 +19,19 @@ final int? code;
 /// Example: `'something bad happened'`
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (message.isEmpty) { errors.add('message: length must be >= 1'); }
-return errors; } 
-SnippetsMessage copyWith({int? Function()? code, String? message, }) { return SnippetsMessage(
+return errors;}
+SnippetsMessage copyWith({int? Function()? code, String? message, }) {return SnippetsMessage(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SnippetsMessage &&
           code == other.code &&
@@ -41,4 +41,4 @@ SnippetsMessage copyWith({int? Function()? code, String? message, }) { return Sn
 
 @override String toString() => 'SnippetsMessage(code: $code, message: $message)';
 
- }
+}

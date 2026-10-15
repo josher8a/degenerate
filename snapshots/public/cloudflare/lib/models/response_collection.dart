@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_components_schemas_messages2.dart';import 'package:pub_cloudflare/models/aaa_schemas_result_info.dart';@immutable final class ResponseCollection {const ResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
-factory ResponseCollection.fromJson(Map<String, dynamic> json) { return ResponseCollection(
+factory ResponseCollection.fromJson(Map<String, dynamic> json) {return ResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => AaaComponentsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AaaComponentsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AaaSchemasResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<AaaComponentsSchemasMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final AaaSchemasResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCollection copyWith({List<AaaComponentsSchemasMessages2>? errors, List<AaaComponentsSchemasMessages2>? messages, bool? success, AaaSchemasResultInfo? Function()? resultInfo, }) { return ResponseCollection(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCollection copyWith({List<AaaComponentsSchemasMessages2>? errors, List<AaaComponentsSchemasMessages2>? messages, bool? success, AaaSchemasResultInfo? Function()? resultInfo, }) {return ResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCollection &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ResponseCollection copyWith({List<AaaComponentsSchemasMessages2>? errors, List<A
 
 @override String toString() => 'ResponseCollection(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo)';
 
- }
+}

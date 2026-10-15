@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_items.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_description.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/default_settings_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/phases_add_invoice_items.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/phases_duration.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_start_date.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request/phases_end_date.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request/phases_trial_end.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings/subscription_schedules_resource_default_settings_billing_cycle_anchor.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhases {const PostSubscriptionSchedulesScheduleRequestPhases({required this.items, this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.startDate, this.transferData, this.trial, this.trialEnd, });
 
-factory PostSubscriptionSchedulesScheduleRequestPhases.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestPhases(
+factory PostSubscriptionSchedulesScheduleRequestPhases.fromJson(Map<String, dynamic> json) {return PostSubscriptionSchedulesScheduleRequestPhases(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PhasesAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
@@ -25,7 +25,7 @@ factory PostSubscriptionSchedulesScheduleRequestPhases.fromJson(Map<String, dyna
   transferData: json['transfer_data'] != null ? PostCustomersCustomerSubscriptionsRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trial: json['trial'] as bool?,
   trialEnd: json['trial_end'] != null ? PhasesTrialEnd.fromJson(json['trial_end']) : null,
-); }
+);}
 
 final List<PhasesAddInvoiceItems>? addInvoiceItems;
 
@@ -69,7 +69,7 @@ final bool? trial;
 
 final PhasesTrialEnd? trialEnd;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (addInvoiceItems != null) 'add_invoice_items': addInvoiceItems?.map((e) => e.toJson()).toList(),
   'application_fee_percent': ?applicationFeePercent,
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -91,16 +91,16 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'trial': ?trial,
   if (trialEnd != null) 'trial_end': trialEnd?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('items');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final defaultPaymentMethod$ = defaultPaymentMethod;
 if (defaultPaymentMethod$ != null) {
   if (defaultPaymentMethod$.runes.length > 5000) { errors.add('defaultPaymentMethod: length must be <= 5000'); }
 }
-return errors; } 
-PostSubscriptionSchedulesScheduleRequestPhases copyWith({List<PhasesAddInvoiceItems>? Function()? addInvoiceItems, double? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? defaultPaymentMethod, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, PostQuotesQuoteRequestDescription? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, PhasesDuration? Function()? duration, PhasesEndDate? Function()? endDate, DefaultSettingsInvoiceSettings? Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsRequestItems>? items, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, PostSubscriptionSchedulesRequestStartDate? Function()? startDate, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, bool? Function()? trial, PhasesTrialEnd? Function()? trialEnd, }) { return PostSubscriptionSchedulesScheduleRequestPhases(
+return errors;}
+PostSubscriptionSchedulesScheduleRequestPhases copyWith({List<PhasesAddInvoiceItems>? Function()? addInvoiceItems, double? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? defaultPaymentMethod, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, PostQuotesQuoteRequestDescription? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, PhasesDuration? Function()? duration, PhasesEndDate? Function()? endDate, DefaultSettingsInvoiceSettings? Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsRequestItems>? items, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, PostSubscriptionSchedulesRequestStartDate? Function()? startDate, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, bool? Function()? trial, PhasesTrialEnd? Function()? trialEnd, }) {return PostSubscriptionSchedulesScheduleRequestPhases(
   addInvoiceItems: addInvoiceItems != null ? addInvoiceItems() : this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
@@ -122,7 +122,7 @@ PostSubscriptionSchedulesScheduleRequestPhases copyWith({List<PhasesAddInvoiceIt
   transferData: transferData != null ? transferData() : this.transferData,
   trial: trial != null ? trial() : this.trial,
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionSchedulesScheduleRequestPhases &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
@@ -151,4 +151,4 @@ PostSubscriptionSchedulesScheduleRequestPhases copyWith({List<PhasesAddInvoiceIt
 
 @override String toString() => 'PostSubscriptionSchedulesScheduleRequestPhases(\n  addInvoiceItems: $addInvoiceItems,\n  applicationFeePercent: $applicationFeePercent,\n  automaticTax: $automaticTax,\n  billingCycleAnchor: $billingCycleAnchor,\n  billingThresholds: $billingThresholds,\n  collectionMethod: $collectionMethod,\n  defaultPaymentMethod: $defaultPaymentMethod,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  discounts: $discounts,\n  duration: $duration,\n  endDate: $endDate,\n  invoiceSettings: $invoiceSettings,\n  items: $items,\n  metadata: $metadata,\n  onBehalfOf: $onBehalfOf,\n  prorationBehavior: $prorationBehavior,\n  startDate: $startDate,\n  transferData: $transferData,\n  trial: $trial,\n  trialEnd: $trialEnd,\n)';
 
- }
+}

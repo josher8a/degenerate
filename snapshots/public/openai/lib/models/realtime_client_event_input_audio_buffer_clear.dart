@@ -6,10 +6,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event 
 /// 
 @immutable final class RealtimeClientEventInputAudioBufferClear {const RealtimeClientEventInputAudioBufferClear({required this.type, this.eventId, });
 
-factory RealtimeClientEventInputAudioBufferClear.fromJson(Map<String, dynamic> json) { return RealtimeClientEventInputAudioBufferClear(
+factory RealtimeClientEventInputAudioBufferClear.fromJson(Map<String, dynamic> json) {return RealtimeClientEventInputAudioBufferClear(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
-); }
+);}
 
 /// Optional client-generated ID used to identify this event.
 final String? eventId;
@@ -17,22 +17,22 @@ final String? eventId;
 /// The event type, must be `input_audio_buffer.clear`.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
   if (eventId$.runes.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
-return errors; } 
-RealtimeClientEventInputAudioBufferClear copyWith({String? Function()? eventId, String? type, }) { return RealtimeClientEventInputAudioBufferClear(
+return errors;}
+RealtimeClientEventInputAudioBufferClear copyWith({String? Function()? eventId, String? type, }) {return RealtimeClientEventInputAudioBufferClear(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventInputAudioBufferClear &&
           eventId == other.eventId &&
@@ -42,4 +42,4 @@ RealtimeClientEventInputAudioBufferClear copyWith({String? Function()? eventId, 
 
 @override String toString() => 'RealtimeClientEventInputAudioBufferClear(eventId: $eventId, type: $type)';
 
- }
+}

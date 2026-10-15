@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dos_event_create_bulk_with_relationships_request/post_dos_event_create_bulk_with_relationships_request_data.dart';@immutable final class PostEventCreateBulkRequest {const PostEventCreateBulkRequest({required this.data, required this.datasetId, this.includeCreatedEvents, });
 
-factory PostEventCreateBulkRequest.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkRequest(
+factory PostEventCreateBulkRequest.fromJson(Map<String, dynamic> json) {return PostEventCreateBulkRequest(
   data: (json['data'] as List<dynamic>).map((e) => PostDosEventCreateBulkWithRelationshipsRequestData.fromJson(e as Map<String, dynamic>)).toList(),
   datasetId: json['datasetId'] as String,
   includeCreatedEvents: json['includeCreatedEvents'] as bool?,
-); }
+);}
 
 final List<PostDosEventCreateBulkWithRelationshipsRequestData> data;
 
@@ -17,18 +17,18 @@ final String datasetId;
 /// When true, response includes array of created event UUIDs and shard IDs. Useful for tracking which events were created and where.
 final bool? includeCreatedEvents;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'datasetId': datasetId,
   'includeCreatedEvents': ?includeCreatedEvents,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
-      json.containsKey('datasetId') && json['datasetId'] is String; } 
-PostEventCreateBulkRequest copyWith({List<PostDosEventCreateBulkWithRelationshipsRequestData>? data, String? datasetId, bool? Function()? includeCreatedEvents, }) { return PostEventCreateBulkRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
+      json.containsKey('datasetId') && json['datasetId'] is String;}
+PostEventCreateBulkRequest copyWith({List<PostDosEventCreateBulkWithRelationshipsRequestData>? data, String? datasetId, bool? Function()? includeCreatedEvents, }) {return PostEventCreateBulkRequest(
   data: data ?? this.data,
   datasetId: datasetId ?? this.datasetId,
   includeCreatedEvents: includeCreatedEvents != null ? includeCreatedEvents() : this.includeCreatedEvents,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventCreateBulkRequest &&
           listEquals(data, other.data) &&
@@ -39,4 +39,4 @@ PostEventCreateBulkRequest copyWith({List<PostDosEventCreateBulkWithRelationship
 
 @override String toString() => 'PostEventCreateBulkRequest(data: $data, datasetId: $datasetId, includeCreatedEvents: $includeCreatedEvents)';
 
- }
+}

@@ -8,12 +8,12 @@ const BillingPortalConfigurationApplication({this.string = const Omittable.absen
 const BillingPortalConfigurationApplication._({required this.rawValue, required this.string, required this.application, required this.deletedApplication, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BillingPortalConfigurationApplication.fromJson(Object? json) { return BillingPortalConfigurationApplication._(
+factory BillingPortalConfigurationApplication.fromJson(Object? json) {return BillingPortalConfigurationApplication._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   application: json is Map<String, dynamic> && Application.canParse(json) ? parseAnyOfVariant<Application>(json, (value) => Application.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   deletedApplication: json is Map<String, dynamic> && DeletedApplication.canParse(json) ? parseAnyOfVariant<DeletedApplication>(json, (value) => DeletedApplication.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -47,4 +47,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BillingPortalConfigurationApplication(${toJson()})';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// EndpointPort is a tuple that describes a single port. Deprecated: This API is deprecated in v1.33+.
 @immutable final class EndpointPort {const EndpointPort({required this.port, this.appProtocol, this.name, this.protocol, });
 
-factory EndpointPort.fromJson(Map<String, dynamic> json) { return EndpointPort(
+factory EndpointPort.fromJson(Map<String, dynamic> json) {return EndpointPort(
   appProtocol: json['appProtocol'] as String?,
   name: json['name'] as String?,
   port: (json['port'] as num).toInt(),
   protocol: json['protocol'] as String?,
-); }
+);}
 
 /// The application protocol for this port. This is used as a hint for implementations to offer richer behavior for protocols that they understand. This field follows standard Kubernetes label syntax. Valid values are either:
 /// 
@@ -32,19 +32,19 @@ final int port;
 /// The IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.
 final String? protocol;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'appProtocol': ?appProtocol,
   'name': ?name,
   'port': port,
   'protocol': ?protocol,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num; } 
-EndpointPort copyWith({String? Function()? appProtocol, String? Function()? name, int? port, String? Function()? protocol, }) { return EndpointPort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('port') && json['port'] is num;}
+EndpointPort copyWith({String? Function()? appProtocol, String? Function()? name, int? port, String? Function()? protocol, }) {return EndpointPort(
   appProtocol: appProtocol != null ? appProtocol() : this.appProtocol,
   name: name != null ? name() : this.name,
   port: port ?? this.port,
   protocol: protocol != null ? protocol() : this.protocol,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EndpointPort &&
           appProtocol == other.appProtocol &&
@@ -56,4 +56,4 @@ EndpointPort copyWith({String? Function()? appProtocol, String? Function()? name
 
 @override String toString() => 'EndpointPort(appProtocol: $appProtocol, name: $name, port: $port, protocol: $protocol)';
 
- }
+}

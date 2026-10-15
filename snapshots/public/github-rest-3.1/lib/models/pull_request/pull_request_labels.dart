@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestLabels {const PullRequestLabels({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
 
-factory PullRequestLabels.fromJson(Map<String, dynamic> json) { return PullRequestLabels(
+factory PullRequestLabels.fromJson(Map<String, dynamic> json) {return PullRequestLabels(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -11,7 +11,7 @@ factory PullRequestLabels.fromJson(Map<String, dynamic> json) { return PullReque
   description: json['description'] as String?,
   color: json['color'] as String,
   $default: json['default'] as bool,
-); }
+);}
 
 final int id;
 
@@ -27,7 +27,7 @@ final String color;
 
 final bool $default;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -35,15 +35,15 @@ Map<String, dynamic> toJson() { return {
   'description': description,
   'color': color,
   'default': $default,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('color') && json['color'] is String &&
-      json.containsKey('default') && json['default'] is bool; } 
-PullRequestLabels copyWith({int? id, String? nodeId, String? url, String? name, String? Function()? description, String? color, bool? $default, }) { return PullRequestLabels(
+      json.containsKey('default') && json['default'] is bool;}
+PullRequestLabels copyWith({int? id, String? nodeId, String? url, String? name, String? Function()? description, String? color, bool? $default, }) {return PullRequestLabels(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -51,7 +51,7 @@ PullRequestLabels copyWith({int? id, String? nodeId, String? url, String? name, 
   description: description != null ? description() : this.description,
   color: color ?? this.color,
   $default: $default ?? this.$default,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestLabels &&
           id == other.id &&
@@ -66,4 +66,4 @@ PullRequestLabels copyWith({int? id, String? nodeId, String? url, String? name, 
 
 @override String toString() => 'PullRequestLabels(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})';
 
- }
+}

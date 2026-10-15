@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_collect_config.dart';/// Represents a reader action to collect a payment method
 @immutable final class TerminalReaderReaderResourceCollectPaymentMethodAction {const TerminalReaderReaderResourceCollectPaymentMethodAction({required this.paymentIntent, this.collectConfig, this.paymentMethod, });
 
-factory TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
+factory TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(Map<String, dynamic> json) {return TerminalReaderReaderResourceCollectPaymentMethodAction(
   collectConfig: json['collect_config'] != null ? TerminalReaderReaderResourceCollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>) : null,
   paymentIntent: ChargePaymentIntent.fromJson(json['payment_intent']),
   paymentMethod: json['payment_method'] != null ? PaymentMethod.fromJson(json['payment_method'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final TerminalReaderReaderResourceCollectConfig? collectConfig;
 
@@ -17,17 +17,17 @@ final ChargePaymentIntent paymentIntent;
 
 final PaymentMethod? paymentMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (collectConfig != null) 'collect_config': collectConfig?.toJson(),
   'payment_intent': paymentIntent.toJson(),
   if (paymentMethod != null) 'payment_method': paymentMethod?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent'); } 
-TerminalReaderReaderResourceCollectPaymentMethodAction copyWith({TerminalReaderReaderResourceCollectConfig? Function()? collectConfig, ChargePaymentIntent? paymentIntent, PaymentMethod? Function()? paymentMethod, }) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('payment_intent');}
+TerminalReaderReaderResourceCollectPaymentMethodAction copyWith({TerminalReaderReaderResourceCollectConfig? Function()? collectConfig, ChargePaymentIntent? paymentIntent, PaymentMethod? Function()? paymentMethod, }) {return TerminalReaderReaderResourceCollectPaymentMethodAction(
   collectConfig: collectConfig != null ? collectConfig() : this.collectConfig,
   paymentIntent: paymentIntent ?? this.paymentIntent,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceCollectPaymentMethodAction &&
           collectConfig == other.collectConfig &&
@@ -38,4 +38,4 @@ TerminalReaderReaderResourceCollectPaymentMethodAction copyWith({TerminalReaderR
 
 @override String toString() => 'TerminalReaderReaderResourceCollectPaymentMethodAction(collectConfig: $collectConfig, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod)';
 
- }
+}

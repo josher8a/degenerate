@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_scope.dart';/// 
 @immutable final class BillingCreditGrantsResourceApplicabilityConfig {const BillingCreditGrantsResourceApplicabilityConfig({required this.scope});
 
-factory BillingCreditGrantsResourceApplicabilityConfig.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceApplicabilityConfig(
+factory BillingCreditGrantsResourceApplicabilityConfig.fromJson(Map<String, dynamic> json) {return BillingCreditGrantsResourceApplicabilityConfig(
   scope: BillingCreditGrantsResourceScope.fromJson(json['scope'] as Map<String, dynamic>),
-); }
+);}
 
 final BillingCreditGrantsResourceScope scope;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'scope': scope.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('scope'); } 
-BillingCreditGrantsResourceApplicabilityConfig copyWith({BillingCreditGrantsResourceScope? scope}) { return BillingCreditGrantsResourceApplicabilityConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('scope');}
+BillingCreditGrantsResourceApplicabilityConfig copyWith({BillingCreditGrantsResourceScope? scope}) {return BillingCreditGrantsResourceApplicabilityConfig(
   scope: scope ?? this.scope,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCreditGrantsResourceApplicabilityConfig &&
           scope == other.scope;
@@ -25,4 +25,4 @@ BillingCreditGrantsResourceApplicabilityConfig copyWith({BillingCreditGrantsReso
 
 @override String toString() => 'BillingCreditGrantsResourceApplicabilityConfig(scope: $scope)';
 
- }
+}

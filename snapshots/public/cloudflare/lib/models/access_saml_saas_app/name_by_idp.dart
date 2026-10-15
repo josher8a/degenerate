@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NameByIdp {const NameByIdp({this.idpId, this.sourceName, });
 
-factory NameByIdp.fromJson(Map<String, dynamic> json) { return NameByIdp(
+factory NameByIdp.fromJson(Map<String, dynamic> json) {return NameByIdp(
   idpId: json['idp_id'] as String?,
   sourceName: json['source_name'] as String?,
-); }
+);}
 
 /// The UID of the IdP.
 /// 
@@ -18,15 +18,15 @@ final String? idpId;
 /// Example: `'AttributeName1'`
 final String? sourceName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'idp_id': ?idpId,
   'source_name': ?sourceName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'idp_id', 'source_name'}.contains(key)); } 
-NameByIdp copyWith({String? Function()? idpId, String? Function()? sourceName, }) { return NameByIdp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'idp_id', 'source_name'}.contains(key));}
+NameByIdp copyWith({String? Function()? idpId, String? Function()? sourceName, }) {return NameByIdp(
   idpId: idpId != null ? idpId() : this.idpId,
   sourceName: sourceName != null ? sourceName() : this.sourceName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NameByIdp &&
           idpId == other.idpId &&
@@ -36,4 +36,4 @@ NameByIdp copyWith({String? Function()? idpId, String? Function()? sourceName, }
 
 @override String toString() => 'NameByIdp(idpId: $idpId, sourceName: $sourceName)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/credit_note_line_item/credit_note_line_item_type.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class CreditNoteLineItemObject {const CreditNoteLineItemObject();
 
-factory CreditNoteLineItemObject.fromJson(String json) { return switch (json) {
+factory CreditNoteLineItemObject.fromJson(String json) {return switch (json) {
   'credit_note_line_item' => creditNoteLineItem,
   _ => CreditNoteLineItemObject$Unknown(json),
-}; }
+};}
 
 static const CreditNoteLineItemObject creditNoteLineItem = CreditNoteLineItemObject$creditNoteLineItem._();
 
 static const List<CreditNoteLineItemObject> values = [creditNoteLineItem];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'credit_note_line_item' => 'creditNoteLineItem',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreditNoteLineItemObject$Unknown; } 
+bool get isUnknown {return this is CreditNoteLineItemObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() creditNoteLineItem, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() creditNoteLineItem, required W Function(String value) $unknown, }) {return switch (this) {
       CreditNoteLineItemObject$creditNoteLineItem() => creditNoteLineItem(),
       CreditNoteLineItemObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNoteLineItem, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNoteLineItem, W Function(String value)? $unknown, }) {return switch (this) {
       CreditNoteLineItemObject$creditNoteLineItem() => creditNoteLineItem != null ? creditNoteLineItem() : orElse(value),
       CreditNoteLineItemObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreditNoteLineItemObject($value)';
 
- }
+}
 @immutable final class CreditNoteLineItemObject$creditNoteLineItem extends CreditNoteLineItemObject {const CreditNoteLineItemObject$creditNoteLineItem._();
 
 @override String get value => 'credit_note_line_item';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNo
 
 @override int get hashCode => 'credit_note_line_item'.hashCode;
 
- }
+}
 @immutable final class CreditNoteLineItemObject$Unknown extends CreditNoteLineItemObject {const CreditNoteLineItemObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNo
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The credit note line item object
 @immutable final class CreditNoteLineItem {const CreditNoteLineItem({required this.amount, required this.discountAmount, required this.discountAmounts, required this.id, required this.livemode, required this.object, required this.pretaxCreditAmounts, required this.taxRates, required this.type, this.description = const Omittable.absent(), this.invoiceLineItem, this.quantity = const Omittable.absent(), this.taxes = const Omittable.absent(), this.unitAmount = const Omittable.absent(), this.unitAmountDecimal = const Omittable.absent(), });
 
-factory CreditNoteLineItem.fromJson(Map<String, dynamic> json) { return CreditNoteLineItem(
+factory CreditNoteLineItem.fromJson(Map<String, dynamic> json) {return CreditNoteLineItem(
   amount: (json['amount'] as num).toInt(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   discountAmount: (json['discount_amount'] as num).toInt(),
@@ -73,7 +73,7 @@ factory CreditNoteLineItem.fromJson(Map<String, dynamic> json) { return CreditNo
   type: CreditNoteLineItemType.fromJson(json['type'] as String),
   unitAmount: json.containsKey('unit_amount') ? Omittable(json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null) : const Omittable.absent(),
   unitAmountDecimal: json.containsKey('unit_amount_decimal') ? Omittable(json['unit_amount_decimal'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The integer amount in cents (or local equivalent) representing the gross amount being credited for this line item, excluding (exclusive) tax and discounts.
 final int amount;
@@ -120,7 +120,7 @@ final Omittable<int?> unitAmount;
 /// Same as `unit_amount`, but contains a decimal value with at most 12 decimal places.
 final Omittable<String?> unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (description.isPresent) 'description': description.value,
   'discount_amount': discountAmount,
@@ -136,8 +136,8 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (unitAmount.isPresent) 'unit_amount': unitAmount.value,
   if (unitAmountDecimal.isPresent) 'unit_amount_decimal': unitAmountDecimal.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('discount_amount') && json['discount_amount'] is num &&
       json.containsKey('discount_amounts') &&
       json.containsKey('id') && json['id'] is String &&
@@ -145,9 +145,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('pretax_credit_amounts') &&
       json.containsKey('tax_rates') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -157,8 +157,8 @@ final invoiceLineItem$ = invoiceLineItem;
 if (invoiceLineItem$ != null) {
   if (invoiceLineItem$.runes.length > 5000) { errors.add('invoiceLineItem: length must be <= 5000'); }
 }
-return errors; } 
-CreditNoteLineItem copyWith({int? amount, Omittable<String?>? description, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, String? id, String? Function()? invoiceLineItem, bool? livemode, CreditNoteLineItemObject? object, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, Omittable<int?>? quantity, List<TaxRate>? taxRates, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? taxes, CreditNoteLineItemType? type, Omittable<int?>? unitAmount, Omittable<String?>? unitAmountDecimal, }) { return CreditNoteLineItem(
+return errors;}
+CreditNoteLineItem copyWith({int? amount, Omittable<String?>? description, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, String? id, String? Function()? invoiceLineItem, bool? livemode, CreditNoteLineItemObject? object, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, Omittable<int?>? quantity, List<TaxRate>? taxRates, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? taxes, CreditNoteLineItemType? type, Omittable<int?>? unitAmount, Omittable<String?>? unitAmountDecimal, }) {return CreditNoteLineItem(
   amount: amount ?? this.amount,
   description: description ?? this.description,
   discountAmount: discountAmount ?? this.discountAmount,
@@ -174,7 +174,7 @@ CreditNoteLineItem copyWith({int? amount, Omittable<String?>? description, int? 
   type: type ?? this.type,
   unitAmount: unitAmount ?? this.unitAmount,
   unitAmountDecimal: unitAmountDecimal ?? this.unitAmountDecimal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreditNoteLineItem &&
           amount == other.amount &&
@@ -198,4 +198,4 @@ CreditNoteLineItem copyWith({int? amount, Omittable<String?>? description, int? 
 
 @override String toString() => 'CreditNoteLineItem(\n  amount: $amount,\n  description: $description,\n  discountAmount: $discountAmount,\n  discountAmounts: $discountAmounts,\n  id: $id,\n  invoiceLineItem: $invoiceLineItem,\n  livemode: $livemode,\n  object: $object,\n  pretaxCreditAmounts: $pretaxCreditAmounts,\n  quantity: $quantity,\n  taxRates: $taxRates,\n  taxes: $taxes,\n  type: $type,\n  unitAmount: $unitAmount,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
- }
+}

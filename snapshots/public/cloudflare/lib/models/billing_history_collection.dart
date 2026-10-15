@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/billing_history.dart';import 'package:pub_cloudflare/models/messages5.dart';import 'package:pub_cloudflare/models/result_info.dart';@immutable final class BillingHistoryCollection {const BillingHistoryCollection({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
-factory BillingHistoryCollection.fromJson(Map<String, dynamic> json) { return BillingHistoryCollection(
+factory BillingHistoryCollection.fromJson(Map<String, dynamic> json) {return BillingHistoryCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => BillingHistory.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? ResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<Messages5> errors;
 
@@ -24,24 +24,24 @@ final bool success;
 
 final ResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-BillingHistoryCollection copyWith({List<Messages5>? errors, List<Messages5>? messages, List<BillingHistory>? result, bool? success, ResultInfo? Function()? resultInfo, }) { return BillingHistoryCollection(
+      json.containsKey('success') && json['success'] is bool;}
+BillingHistoryCollection copyWith({List<Messages5>? errors, List<Messages5>? messages, List<BillingHistory>? result, bool? success, ResultInfo? Function()? resultInfo, }) {return BillingHistoryCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingHistoryCollection &&
           listEquals(errors, other.errors) &&
@@ -54,4 +54,4 @@ BillingHistoryCollection copyWith({List<Messages5>? errors, List<Messages5>? mes
 
 @override String toString() => 'BillingHistoryCollection(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_rate.dart';import 'package:pub_cloudflare/models/magic_health_check_base_request/magic_health_check_base_request_target.dart';import 'package:pub_cloudflare/models/magic_health_check_base_request/magic_health_check_base_request_type.dart';import 'package:pub_cloudflare/models/magic_health_check_target_request.dart';import 'package:pub_cloudflare/models/magic_tunnel_health_check/magic_tunnel_health_check_direction.dart';@immutable final class MagicTunnelHealthCheckRequest {const MagicTunnelHealthCheckRequest({this.enabled, this.rate, this.target, this.type, this.direction, });
 
-factory MagicTunnelHealthCheckRequest.fromJson(Map<String, dynamic> json) { return MagicTunnelHealthCheckRequest(
+factory MagicTunnelHealthCheckRequest.fromJson(Map<String, dynamic> json) {return MagicTunnelHealthCheckRequest(
   enabled: json['enabled'] as bool?,
   rate: json['rate'] != null ? MagicHealthCheckBaseRate.fromJson(json['rate'] as String) : null,
   target: json['target'] != null ? OneOf2.parse(json['target'], fromA: (v) => MagicHealthCheckTargetRequest.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   type: json['type'] != null ? MagicHealthCheckBaseRequestType.fromJson(json['type'] as String) : null,
   direction: json['direction'] != null ? MagicTunnelHealthCheckDirection.fromJson(json['direction'] as String) : null,
-); }
+);}
 
 /// Determines whether to run healthchecks for a tunnel.
 /// 
@@ -46,21 +46,21 @@ MagicHealthCheckBaseRequestType get typeOrDefault => type ?? MagicHealthCheckBas
 /// The value of `direction`, or its schema default when absent.
 MagicTunnelHealthCheckDirection get directionOrDefault => direction ?? MagicTunnelHealthCheckDirection.fromJson('unidirectional');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
   if (rate != null) 'rate': rate?.toJson(),
   if (target != null) 'target': target?.toJson(),
   if (type != null) 'type': type?.toJson(),
   if (direction != null) 'direction': direction?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type', 'direction'}.contains(key)); } 
-MagicTunnelHealthCheckRequest copyWith({bool? Function()? enabled, MagicHealthCheckBaseRate? Function()? rate, MagicHealthCheckBaseRequestTarget? Function()? target, MagicHealthCheckBaseRequestType? Function()? type, MagicTunnelHealthCheckDirection? Function()? direction, }) { return MagicTunnelHealthCheckRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type', 'direction'}.contains(key));}
+MagicTunnelHealthCheckRequest copyWith({bool? Function()? enabled, MagicHealthCheckBaseRate? Function()? rate, MagicHealthCheckBaseRequestTarget? Function()? target, MagicHealthCheckBaseRequestType? Function()? type, MagicTunnelHealthCheckDirection? Function()? direction, }) {return MagicTunnelHealthCheckRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   rate: rate != null ? rate() : this.rate,
   target: target != null ? target() : this.target,
   type: type != null ? type() : this.type,
   direction: direction != null ? direction() : this.direction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTunnelHealthCheckRequest &&
           enabled == other.enabled &&
@@ -73,4 +73,4 @@ MagicTunnelHealthCheckRequest copyWith({bool? Function()? enabled, MagicHealthCh
 
 @override String toString() => 'MagicTunnelHealthCheckRequest(enabled: $enabled, rate: $rate, target: $target, type: $type, direction: $direction)';
 
- }
+}

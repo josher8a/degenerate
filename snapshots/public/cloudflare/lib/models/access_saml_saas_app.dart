@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_auth_type.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/access_saml_saas_app_custom_attributes.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/name_id_format.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessSamlSaasApp {const AccessSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.defaultRelayState, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.samlAttributeTransformJsonata, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
 
-factory AccessSamlSaasApp.fromJson(Map<String, dynamic> json) { return AccessSamlSaasApp(
+factory AccessSamlSaasApp.fromJson(Map<String, dynamic> json) {return AccessSamlSaasApp(
   authType: json['auth_type'] != null ? AccessOidcSaasAppAuthType.fromJson(json['auth_type'] as String) : null,
   consumerServiceUrl: json['consumer_service_url'] as String?,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
@@ -17,7 +17,7 @@ factory AccessSamlSaasApp.fromJson(Map<String, dynamic> json) { return AccessSam
   spEntityId: json['sp_entity_id'] as String?,
   ssoEndpoint: json['sso_endpoint'] as String?,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
-); }
+);}
 
 /// Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is "saml"
 /// 
@@ -77,7 +77,7 @@ final String? ssoEndpoint;
 
 final AccessTimestamp? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (authType != null) 'auth_type': authType?.toJson(),
   'consumer_service_url': ?consumerServiceUrl,
   if (createdAt != null) 'created_at': createdAt?.toJson(),
@@ -91,9 +91,9 @@ Map<String, dynamic> toJson() { return {
   'sp_entity_id': ?spEntityId,
   'sso_endpoint': ?ssoEndpoint,
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_type', 'consumer_service_url', 'created_at', 'custom_attributes', 'default_relay_state', 'idp_entity_id', 'name_id_format', 'name_id_transform_jsonata', 'public_key', 'saml_attribute_transform_jsonata', 'sp_entity_id', 'sso_endpoint', 'updated_at'}.contains(key)); } 
-AccessSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authType, String? Function()? consumerServiceUrl, AccessTimestamp? Function()? createdAt, List<AccessSamlSaasAppCustomAttributes>? Function()? customAttributes, String? Function()? defaultRelayState, String? Function()? idpEntityId, NameIdFormat? Function()? nameIdFormat, String? Function()? nameIdTransformJsonata, String? Function()? publicKey, String? Function()? samlAttributeTransformJsonata, String? Function()? spEntityId, String? Function()? ssoEndpoint, AccessTimestamp? Function()? updatedAt, }) { return AccessSamlSaasApp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'auth_type', 'consumer_service_url', 'created_at', 'custom_attributes', 'default_relay_state', 'idp_entity_id', 'name_id_format', 'name_id_transform_jsonata', 'public_key', 'saml_attribute_transform_jsonata', 'sp_entity_id', 'sso_endpoint', 'updated_at'}.contains(key));}
+AccessSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authType, String? Function()? consumerServiceUrl, AccessTimestamp? Function()? createdAt, List<AccessSamlSaasAppCustomAttributes>? Function()? customAttributes, String? Function()? defaultRelayState, String? Function()? idpEntityId, NameIdFormat? Function()? nameIdFormat, String? Function()? nameIdTransformJsonata, String? Function()? publicKey, String? Function()? samlAttributeTransformJsonata, String? Function()? spEntityId, String? Function()? ssoEndpoint, AccessTimestamp? Function()? updatedAt, }) {return AccessSamlSaasApp(
   authType: authType != null ? authType() : this.authType,
   consumerServiceUrl: consumerServiceUrl != null ? consumerServiceUrl() : this.consumerServiceUrl,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
@@ -107,7 +107,7 @@ AccessSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authType, Str
   spEntityId: spEntityId != null ? spEntityId() : this.spEntityId,
   ssoEndpoint: ssoEndpoint != null ? ssoEndpoint() : this.ssoEndpoint,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSamlSaasApp &&
           authType == other.authType &&
@@ -128,4 +128,4 @@ AccessSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authType, Str
 
 @override String toString() => 'AccessSamlSaasApp(\n  authType: $authType,\n  consumerServiceUrl: $consumerServiceUrl,\n  createdAt: $createdAt,\n  customAttributes: $customAttributes,\n  defaultRelayState: $defaultRelayState,\n  idpEntityId: $idpEntityId,\n  nameIdFormat: $nameIdFormat,\n  nameIdTransformJsonata: $nameIdTransformJsonata,\n  publicKey: $publicKey,\n  samlAttributeTransformJsonata: $samlAttributeTransformJsonata,\n  spEntityId: $spEntityId,\n  ssoEndpoint: $ssoEndpoint,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

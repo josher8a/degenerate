@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/validation_error/errors_value.dart';@immutable final class ValidationErrorErrors {const ValidationErrorErrors({required this.code, this.resource, this.field, this.message, this.index, this.value = const Omittable.absent(), });
 
-factory ValidationErrorErrors.fromJson(Map<String, dynamic> json) { return ValidationErrorErrors(
+factory ValidationErrorErrors.fromJson(Map<String, dynamic> json) {return ValidationErrorErrors(
   resource: json['resource'] as String?,
   field: json['field'] as String?,
   message: json['message'] as String?,
   code: json['code'] as String,
   index: json['index'] != null ? (json['index'] as num).toInt() : null,
   value: json.containsKey('value') ? Omittable(json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(), fromC: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null) : const Omittable.absent(),
-); }
+);}
 
 final String? resource;
 
@@ -24,23 +24,23 @@ final int? index;
 
 final Omittable<ErrorsValue?> value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'resource': ?resource,
   'field': ?field,
   'message': ?message,
   'code': code,
   'index': ?index,
   if (value.isPresent) 'value': value.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String; } 
-ValidationErrorErrors copyWith({String? Function()? resource, String? Function()? field, String? Function()? message, String? code, int? Function()? index, Omittable<ErrorsValue?>? value, }) { return ValidationErrorErrors(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is String;}
+ValidationErrorErrors copyWith({String? Function()? resource, String? Function()? field, String? Function()? message, String? code, int? Function()? index, Omittable<ErrorsValue?>? value, }) {return ValidationErrorErrors(
   resource: resource != null ? resource() : this.resource,
   field: field != null ? field() : this.field,
   message: message != null ? message() : this.message,
   code: code ?? this.code,
   index: index != null ? index() : this.index,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ValidationErrorErrors &&
           resource == other.resource &&
@@ -54,4 +54,4 @@ ValidationErrorErrors copyWith({String? Function()? resource, String? Function()
 
 @override String toString() => 'ValidationErrorErrors(resource: $resource, field: $field, message: $message, code: $code, index: $index, value: $value)';
 
- }
+}

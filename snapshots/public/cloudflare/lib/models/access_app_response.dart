@@ -7,7 +7,7 @@ const AccessAppResponse({this.selfHostedApplication2 = const Omittable.absent(),
 const AccessAppResponse._({required this.rawValue, required this.selfHostedApplication2, required this.saaSApplication2, required this.browserSshApplication2, required this.browserVncApplication2, required this.appLauncherApplication2, required this.deviceEnrollmentPermissionsApplication2, required this.browserIsolationPermissionsApplication2, required this.gatewayIdentityProxyEndpointApplication2, required this.bookmarkApplication2, required this.infrastructureApplication2, required this.browserRdpApplication2, required this.mcpServerApplication2, required this.mcpServerPortalApplication2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory AccessAppResponse.fromJson(Object? json) { return AccessAppResponse._(
+factory AccessAppResponse.fromJson(Object? json) {return AccessAppResponse._(
   rawValue: Omittable(json),
   selfHostedApplication2: json is Map<String, dynamic> && SelfHostedApplication2.canParse(json) ? parseAnyOfVariant<SelfHostedApplication2>(json, (value) => SelfHostedApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   saaSApplication2: json is Map<String, dynamic> && SaaSApplication2.canParse(json) ? parseAnyOfVariant<SaaSApplication2>(json, (value) => SaaSApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -22,7 +22,7 @@ factory AccessAppResponse.fromJson(Object? json) { return AccessAppResponse._(
   browserRdpApplication2: json is Map<String, dynamic> && BrowserRdpApplication2.canParse(json) ? parseAnyOfVariant<BrowserRdpApplication2>(json, (value) => BrowserRdpApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   mcpServerApplication2: json is Map<String, dynamic> && McpServerApplication2.canParse(json) ? parseAnyOfVariant<McpServerApplication2>(json, (value) => McpServerApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   mcpServerPortalApplication2: json is Map<String, dynamic> && McpServerPortalApplication2.canParse(json) ? parseAnyOfVariant<McpServerPortalApplication2>(json, (value) => McpServerPortalApplication2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -96,4 +96,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'AccessAppResponse(${toJson()})';
 
- }
+}

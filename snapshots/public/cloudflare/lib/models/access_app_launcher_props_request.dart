@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_launcher_logo_url.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_bg_color.dart';import 'package:pub_cloudflare/models/access_custom_deny_url.dart';import 'package:pub_cloudflare/models/access_custom_non_identity_deny_url.dart';import 'package:pub_cloudflare/models/access_domain.dart';import 'package:pub_cloudflare/models/access_footer_links2.dart';import 'package:pub_cloudflare/models/access_header_bg_color.dart';import 'package:pub_cloudflare/models/access_landing_page_design.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_skip_app_launcher_login_page.dart';import 'package:pub_cloudflare/models/access_type.dart';@immutable final class AccessAppLauncherPropsRequest {const AccessAppLauncherPropsRequest({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain, this.name, this.sessionDuration, this.appLauncherLogoUrl, this.bgColor, this.footerLinks, this.headerBgColor, this.landingPageDesign, this.skipAppLauncherLoginPage, });
 
-factory AccessAppLauncherPropsRequest.fromJson(Map<String, dynamic> json) { return AccessAppLauncherPropsRequest(
+factory AccessAppLauncherPropsRequest.fromJson(Map<String, dynamic> json) {return AccessAppLauncherPropsRequest(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
   customDenyUrl: json['custom_deny_url'] != null ? AccessCustomDenyUrl.fromJson(json['custom_deny_url'] as String) : null,
@@ -19,7 +19,7 @@ factory AccessAppLauncherPropsRequest.fromJson(Map<String, dynamic> json) { retu
   headerBgColor: json['header_bg_color'] != null ? AccessHeaderBgColor.fromJson(json['header_bg_color'] as String) : null,
   landingPageDesign: json['landing_page_design'] != null ? AccessLandingPageDesign.fromJson(json['landing_page_design'] as Map<String, dynamic>) : null,
   skipAppLauncherLoginPage: json['skip_app_launcher_login_page'] != null ? AccessSkipAppLauncherLoginPage.fromJson(json['skip_app_launcher_login_page'] as bool) : null,
-); }
+);}
 
 /// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
@@ -65,7 +65,7 @@ final AccessLandingPageDesign? landingPageDesign;
 /// Determines when to skip the App Launcher landing page.
 final AccessSkipAppLauncherLoginPage? skipAppLauncherLoginPage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_idps': ?allowedIdps,
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
   if (customDenyUrl != null) 'custom_deny_url': customDenyUrl?.toJson(),
@@ -81,9 +81,9 @@ Map<String, dynamic> toJson() { return {
   if (headerBgColor != null) 'header_bg_color': headerBgColor?.toJson(),
   if (landingPageDesign != null) 'landing_page_design': landingPageDesign?.toJson(),
   if (skipAppLauncherLoginPage != null) 'skip_app_launcher_login_page': skipAppLauncherLoginPage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccessAppLauncherPropsRequest copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, AccessDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, AccessAppLauncherLogoUrl? Function()? appLauncherLogoUrl, AccessBgColor? Function()? bgColor, List<AccessFooterLinks2>? Function()? footerLinks, AccessHeaderBgColor? Function()? headerBgColor, AccessLandingPageDesign? Function()? landingPageDesign, AccessSkipAppLauncherLoginPage? Function()? skipAppLauncherLoginPage, }) { return AccessAppLauncherPropsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AccessAppLauncherPropsRequest copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, AccessDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, AccessAppLauncherLogoUrl? Function()? appLauncherLogoUrl, AccessBgColor? Function()? bgColor, List<AccessFooterLinks2>? Function()? footerLinks, AccessHeaderBgColor? Function()? headerBgColor, AccessLandingPageDesign? Function()? landingPageDesign, AccessSkipAppLauncherLoginPage? Function()? skipAppLauncherLoginPage, }) {return AccessAppLauncherPropsRequest(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
   customDenyUrl: customDenyUrl != null ? customDenyUrl() : this.customDenyUrl,
@@ -99,7 +99,7 @@ AccessAppLauncherPropsRequest copyWith({List<String>? Function()? allowedIdps, A
   headerBgColor: headerBgColor != null ? headerBgColor() : this.headerBgColor,
   landingPageDesign: landingPageDesign != null ? landingPageDesign() : this.landingPageDesign,
   skipAppLauncherLoginPage: skipAppLauncherLoginPage != null ? skipAppLauncherLoginPage() : this.skipAppLauncherLoginPage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppLauncherPropsRequest &&
           listEquals(allowedIdps, other.allowedIdps) &&
@@ -122,4 +122,4 @@ AccessAppLauncherPropsRequest copyWith({List<String>? Function()? allowedIdps, A
 
 @override String toString() => 'AccessAppLauncherPropsRequest(\n  allowedIdps: $allowedIdps,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customDenyUrl: $customDenyUrl,\n  customNonIdentityDenyUrl: $customNonIdentityDenyUrl,\n  customPages: $customPages,\n  domain: $domain,\n  name: $name,\n  sessionDuration: $sessionDuration,\n  type: $type,\n  appLauncherLogoUrl: $appLauncherLogoUrl,\n  bgColor: $bgColor,\n  footerLinks: $footerLinks,\n  headerBgColor: $headerBgColor,\n  landingPageDesign: $landingPageDesign,\n  skipAppLauncherLoginPage: $skipAppLauncherLoginPage,\n)';
 
- }
+}

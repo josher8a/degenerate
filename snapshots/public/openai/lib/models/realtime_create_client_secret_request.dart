@@ -7,10 +7,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeCreateClientSecretRequest {const RealtimeCreateClientSecretRequest({this.expiresAfter, this.session, });
 
-factory RealtimeCreateClientSecretRequest.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequest(
+factory RealtimeCreateClientSecretRequest.fromJson(Map<String, dynamic> json) {return RealtimeCreateClientSecretRequest(
   expiresAfter: json['expires_after'] != null ? RealtimeCreateClientSecretRequestExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   session: json['session'] != null ? OneOf2.parse(json['session'], fromA: (v) => RealtimeSessionCreateRequestGa.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeTranscriptionSessionCreateRequestGa.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 /// Configuration for the client secret expiration. Expiration refers to the time after which
 /// a client secret will no longer be valid for creating sessions. The session itself may
@@ -24,15 +24,15 @@ final RealtimeCreateClientSecretRequestExpiresAfter? expiresAfter;
 /// 
 final RealtimeClientEventSessionUpdateSession? session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
   if (session != null) 'session': session?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after', 'session'}.contains(key)); } 
-RealtimeCreateClientSecretRequest copyWith({RealtimeCreateClientSecretRequestExpiresAfter? Function()? expiresAfter, RealtimeClientEventSessionUpdateSession? Function()? session, }) { return RealtimeCreateClientSecretRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expires_after', 'session'}.contains(key));}
+RealtimeCreateClientSecretRequest copyWith({RealtimeCreateClientSecretRequestExpiresAfter? Function()? expiresAfter, RealtimeClientEventSessionUpdateSession? Function()? session, }) {return RealtimeCreateClientSecretRequest(
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
   session: session != null ? session() : this.session,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCreateClientSecretRequest &&
           expiresAfter == other.expiresAfter &&
@@ -42,4 +42,4 @@ RealtimeCreateClientSecretRequest copyWith({RealtimeCreateClientSecretRequestExp
 
 @override String toString() => 'RealtimeCreateClientSecretRequest(expiresAfter: $expiresAfter, session: $session)';
 
- }
+}

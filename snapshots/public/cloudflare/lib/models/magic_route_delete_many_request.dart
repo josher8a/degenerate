@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route_delete_id.dart';@immutable final class MagicRouteDeleteManyRequest {const MagicRouteDeleteManyRequest({required this.routes});
 
-factory MagicRouteDeleteManyRequest.fromJson(Map<String, dynamic> json) { return MagicRouteDeleteManyRequest(
+factory MagicRouteDeleteManyRequest.fromJson(Map<String, dynamic> json) {return MagicRouteDeleteManyRequest(
   routes: (json['routes'] as List<dynamic>).map((e) => MagicRouteDeleteId.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<MagicRouteDeleteId> routes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'routes': routes.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('routes'); } 
-MagicRouteDeleteManyRequest copyWith({List<MagicRouteDeleteId>? routes}) { return MagicRouteDeleteManyRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('routes');}
+MagicRouteDeleteManyRequest copyWith({List<MagicRouteDeleteId>? routes}) {return MagicRouteDeleteManyRequest(
   routes: routes ?? this.routes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRouteDeleteManyRequest &&
           listEquals(routes, other.routes);
@@ -24,4 +24,4 @@ MagicRouteDeleteManyRequest copyWith({List<MagicRouteDeleteId>? routes}) { retur
 
 @override String toString() => 'MagicRouteDeleteManyRequest(routes: $routes)';
 
- }
+}

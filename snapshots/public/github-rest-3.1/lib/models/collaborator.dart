@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/collaborator/collaborator_permissions.dart';/// Collaborator
 @immutable final class Collaborator {const Collaborator({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.roleName, this.email = const Omittable.absent(), this.name = const Omittable.absent(), this.permissions, this.userViewType, });
 
-factory Collaborator.fromJson(Map<String, dynamic> json) { return Collaborator(
+factory Collaborator.fromJson(Map<String, dynamic> json) {return Collaborator(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
@@ -28,7 +28,7 @@ factory Collaborator.fromJson(Map<String, dynamic> json) { return Collaborator(
   permissions: json['permissions'] != null ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   roleName: json['role_name'] as String,
   userViewType: json['user_view_type'] as String?,
-); }
+);}
 
 final String login;
 
@@ -76,7 +76,7 @@ final String roleName;
 
 final String? userViewType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   if (email.isPresent) 'email': email.value,
@@ -100,8 +100,8 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
   'role_name': roleName,
   'user_view_type': ?userViewType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
@@ -119,8 +119,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('received_events_url') && json['received_events_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool &&
-      json.containsKey('role_name') && json['role_name'] is String; } 
-Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omittable<String?>? name, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, CollaboratorPermissions? Function()? permissions, String? roleName, String? Function()? userViewType, }) { return Collaborator(
+      json.containsKey('role_name') && json['role_name'] is String;}
+Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omittable<String?>? name, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, CollaboratorPermissions? Function()? permissions, String? roleName, String? Function()? userViewType, }) {return Collaborator(
   login: login ?? this.login,
   id: id ?? this.id,
   email: email ?? this.email,
@@ -144,7 +144,7 @@ Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omitta
   permissions: permissions != null ? permissions() : this.permissions,
   roleName: roleName ?? this.roleName,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Collaborator &&
           login == other.login &&
@@ -175,4 +175,4 @@ Collaborator copyWith({String? login, int? id, Omittable<String?>? email, Omitta
 
 @override String toString() => 'Collaborator(\n  login: $login,\n  id: $id,\n  email: $email,\n  name: $name,\n  nodeId: $nodeId,\n  avatarUrl: $avatarUrl,\n  gravatarId: $gravatarId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  organizationsUrl: $organizationsUrl,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  type: $type,\n  siteAdmin: $siteAdmin,\n  permissions: $permissions,\n  roleName: $roleName,\n  userViewType: $userViewType,\n)';
 
- }
+}

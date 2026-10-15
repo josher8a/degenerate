@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_origin.dart';@immutable final class CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest {const CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest({required this.origin});
 
-factory CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest.fromJson(Map<String, dynamic> json) { return CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest(
+factory CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest.fromJson(Map<String, dynamic> json) {return CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest(
   origin: TlsCertificatesAndHostnamesOrigin.fromJson(json['origin'] as String),
-); }
+);}
 
 /// Your origin hostname that requests to your custom hostnames will be sent to.
 final TlsCertificatesAndHostnamesOrigin origin;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'origin': origin.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('origin'); } 
-CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest copyWith({TlsCertificatesAndHostnamesOrigin? origin}) { return CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('origin');}
+CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest copyWith({TlsCertificatesAndHostnamesOrigin? origin}) {return CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest(
   origin: origin ?? this.origin,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest &&
           origin == other.origin;
@@ -25,4 +25,4 @@ CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesReques
 
 @override String toString() => 'CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest(origin: $origin)';
 
- }
+}

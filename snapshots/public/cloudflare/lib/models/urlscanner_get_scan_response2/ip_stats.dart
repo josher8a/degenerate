@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/ip_stats_asn.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/ip_stats_geoip.dart';@immutable final class IpStats {const IpStats({required this.asn, required this.countries, required this.domains, required this.encodedSize, required this.geoip, required this.index, required this.ip, required this.ipv6, required this.redirects, required this.requests, required this.size, this.count, });
 
-factory IpStats.fromJson(Map<String, dynamic> json) { return IpStats(
+factory IpStats.fromJson(Map<String, dynamic> json) {return IpStats(
   asn: IpStatsAsn.fromJson(json['asn'] as Map<String, dynamic>),
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,
   countries: (json['countries'] as List<dynamic>).map((e) => e as String).toList(),
@@ -16,7 +16,7 @@ factory IpStats.fromJson(Map<String, dynamic> json) { return IpStats(
   redirects: (json['redirects'] as num).toDouble(),
   requests: (json['requests'] as num).toDouble(),
   size: (json['size'] as num).toDouble(),
-); }
+);}
 
 final IpStatsAsn asn;
 
@@ -42,7 +42,7 @@ final double requests;
 
 final double size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn.toJson(),
   'count': ?count,
   'countries': countries,
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'redirects': redirects,
   'requests': requests,
   'size': size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') &&
       json.containsKey('countries') &&
       json.containsKey('domains') &&
       json.containsKey('encodedSize') && json['encodedSize'] is num &&
@@ -66,8 +66,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('ipv6') && json['ipv6'] is bool &&
       json.containsKey('redirects') && json['redirects'] is num &&
       json.containsKey('requests') && json['requests'] is num &&
-      json.containsKey('size') && json['size'] is num; } 
-IpStats copyWith({IpStatsAsn? asn, double? Function()? count, List<String>? countries, List<String>? domains, double? encodedSize, IpStatsGeoip? geoip, double? index, String? ip, bool? ipv6, double? redirects, double? requests, double? size, }) { return IpStats(
+      json.containsKey('size') && json['size'] is num;}
+IpStats copyWith({IpStatsAsn? asn, double? Function()? count, List<String>? countries, List<String>? domains, double? encodedSize, IpStatsGeoip? geoip, double? index, String? ip, bool? ipv6, double? redirects, double? requests, double? size, }) {return IpStats(
   asn: asn ?? this.asn,
   count: count != null ? count() : this.count,
   countries: countries ?? this.countries,
@@ -80,7 +80,7 @@ IpStats copyWith({IpStatsAsn? asn, double? Function()? count, List<String>? coun
   redirects: redirects ?? this.redirects,
   requests: requests ?? this.requests,
   size: size ?? this.size,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpStats &&
           asn == other.asn &&
@@ -100,4 +100,4 @@ IpStats copyWith({IpStatsAsn? asn, double? Function()? count, List<String>? coun
 
 @override String toString() => 'IpStats(\n  asn: $asn,\n  count: $count,\n  countries: $countries,\n  domains: $domains,\n  encodedSize: $encodedSize,\n  geoip: $geoip,\n  index: $index,\n  ip: $ip,\n  ipv6: $ipv6,\n  redirects: $redirects,\n  requests: $requests,\n  size: $size,\n)';
 
- }
+}

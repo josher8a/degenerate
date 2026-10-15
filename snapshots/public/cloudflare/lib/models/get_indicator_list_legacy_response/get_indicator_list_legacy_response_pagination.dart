@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorListLegacyResponsePagination {const GetIndicatorListLegacyResponsePagination({required this.page, required this.pageSize, required this.totalCount, required this.totalPages, });
 
-factory GetIndicatorListLegacyResponsePagination.fromJson(Map<String, dynamic> json) { return GetIndicatorListLegacyResponsePagination(
+factory GetIndicatorListLegacyResponsePagination.fromJson(Map<String, dynamic> json) {return GetIndicatorListLegacyResponsePagination(
   page: (json['page'] as num).toDouble(),
   pageSize: (json['pageSize'] as num).toDouble(),
   totalCount: (json['totalCount'] as num).toDouble(),
   totalPages: (json['totalPages'] as num).toDouble(),
-); }
+);}
 
 final double page;
 
@@ -18,22 +18,22 @@ final double totalCount;
 
 final double totalPages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'page': page,
   'pageSize': pageSize,
   'totalCount': totalCount,
   'totalPages': totalPages,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('page') && json['page'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('page') && json['page'] is num &&
       json.containsKey('pageSize') && json['pageSize'] is num &&
       json.containsKey('totalCount') && json['totalCount'] is num &&
-      json.containsKey('totalPages') && json['totalPages'] is num; } 
-GetIndicatorListLegacyResponsePagination copyWith({double? page, double? pageSize, double? totalCount, double? totalPages, }) { return GetIndicatorListLegacyResponsePagination(
+      json.containsKey('totalPages') && json['totalPages'] is num;}
+GetIndicatorListLegacyResponsePagination copyWith({double? page, double? pageSize, double? totalCount, double? totalPages, }) {return GetIndicatorListLegacyResponsePagination(
   page: page ?? this.page,
   pageSize: pageSize ?? this.pageSize,
   totalCount: totalCount ?? this.totalCount,
   totalPages: totalPages ?? this.totalPages,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetIndicatorListLegacyResponsePagination &&
           page == other.page &&
@@ -45,4 +45,4 @@ GetIndicatorListLegacyResponsePagination copyWith({double? page, double? pageSiz
 
 @override String toString() => 'GetIndicatorListLegacyResponsePagination(page: $page, pageSize: $pageSize, totalCount: $totalCount, totalPages: $totalPages)';
 
- }
+}

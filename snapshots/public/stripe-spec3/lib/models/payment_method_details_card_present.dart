@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present/read_method.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_offline.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_receipt.dart';/// 
 @immutable final class PaymentMethodDetailsCardPresent {const PaymentMethodDetailsCardPresent({required this.expMonth, required this.expYear, required this.incrementalAuthorizationSupported, required this.overcaptureSupported, this.amountAuthorized = const Omittable.absent(), this.brand = const Omittable.absent(), this.brandProduct = const Omittable.absent(), this.captureBefore, this.cardholderName = const Omittable.absent(), this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.emvAuthData = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.generatedCard = const Omittable.absent(), this.issuer = const Omittable.absent(), this.last4 = const Omittable.absent(), this.location, this.network = const Omittable.absent(), this.networkTransactionId = const Omittable.absent(), this.offline = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.readMethod = const Omittable.absent(), this.reader, this.receipt = const Omittable.absent(), this.wallet, });
 
-factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresent(
+factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsCardPresent(
   amountAuthorized: json.containsKey('amount_authorized') ? Omittable(json['amount_authorized'] != null ? (json['amount_authorized'] as num).toInt() : null) : const Omittable.absent(),
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
   brandProduct: json.containsKey('brand_product') ? Omittable(json['brand_product'] as String?) : const Omittable.absent(),
@@ -31,7 +31,7 @@ factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { re
   reader: json['reader'] as String?,
   receipt: json.containsKey('receipt') ? Omittable(json['receipt'] != null ? PaymentMethodDetailsCardPresentReceipt.fromJson(json['receipt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   wallet: json['wallet'] != null ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The authorized amount
 final Omittable<int?> amountAuthorized;
@@ -112,7 +112,7 @@ final Omittable<PaymentMethodDetailsCardPresentReceipt?> receipt;
 
 final PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? wallet;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amountAuthorized.isPresent) 'amount_authorized': amountAuthorized.value,
   if (brand.isPresent) 'brand': brand.value,
   if (brandProduct.isPresent) 'brand_product': brandProduct.value,
@@ -139,13 +139,13 @@ Map<String, dynamic> toJson() { return {
   'reader': ?reader,
   if (receipt.isPresent) 'receipt': receipt.value?.toJson(),
   if (wallet != null) 'wallet': wallet?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('incremental_authorization_supported') && json['incremental_authorization_supported'] is bool &&
-      json.containsKey('overcapture_supported') && json['overcapture_supported'] is bool; } 
+      json.containsKey('overcapture_supported') && json['overcapture_supported'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final brand$ = brand.value;
 if (brand$ != null) {
   if (brand$.runes.length > 5000) { errors.add('brand: length must be <= 5000'); }
@@ -206,8 +206,8 @@ final reader$ = reader;
 if (reader$ != null) {
   if (reader$.runes.length > 5000) { errors.add('reader: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsCardPresent copyWith({Omittable<int?>? amountAuthorized, Omittable<String?>? brand, Omittable<String?>? brandProduct, int? Function()? captureBefore, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, Omittable<String?>? emvAuthData, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? generatedCard, bool? incrementalAuthorizationSupported, Omittable<String?>? issuer, Omittable<String?>? last4, String? Function()? location, Omittable<String?>? network, Omittable<String?>? networkTransactionId, Omittable<PaymentMethodDetailsCardPresentOffline?>? offline, bool? overcaptureSupported, Omittable<List<String>?>? preferredLocales, Omittable<ReadMethod?>? readMethod, String? Function()? reader, Omittable<PaymentMethodDetailsCardPresentReceipt?>? receipt, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? Function()? wallet, }) { return PaymentMethodDetailsCardPresent(
+return errors;}
+PaymentMethodDetailsCardPresent copyWith({Omittable<int?>? amountAuthorized, Omittable<String?>? brand, Omittable<String?>? brandProduct, int? Function()? captureBefore, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, Omittable<String?>? emvAuthData, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? generatedCard, bool? incrementalAuthorizationSupported, Omittable<String?>? issuer, Omittable<String?>? last4, String? Function()? location, Omittable<String?>? network, Omittable<String?>? networkTransactionId, Omittable<PaymentMethodDetailsCardPresentOffline?>? offline, bool? overcaptureSupported, Omittable<List<String>?>? preferredLocales, Omittable<ReadMethod?>? readMethod, String? Function()? reader, Omittable<PaymentMethodDetailsCardPresentReceipt?>? receipt, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? Function()? wallet, }) {return PaymentMethodDetailsCardPresent(
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   brand: brand ?? this.brand,
   brandProduct: brandProduct ?? this.brandProduct,
@@ -234,7 +234,7 @@ PaymentMethodDetailsCardPresent copyWith({Omittable<int?>? amountAuthorized, Omi
   reader: reader != null ? reader() : this.reader,
   receipt: receipt ?? this.receipt,
   wallet: wallet != null ? wallet() : this.wallet,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCardPresent &&
           amountAuthorized == other.amountAuthorized &&
@@ -269,4 +269,4 @@ PaymentMethodDetailsCardPresent copyWith({Omittable<int?>? amountAuthorized, Omi
 
 @override String toString() => 'PaymentMethodDetailsCardPresent(\n  amountAuthorized: $amountAuthorized,\n  brand: $brand,\n  brandProduct: $brandProduct,\n  captureBefore: $captureBefore,\n  cardholderName: $cardholderName,\n  country: $country,\n  description: $description,\n  emvAuthData: $emvAuthData,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  generatedCard: $generatedCard,\n  incrementalAuthorizationSupported: $incrementalAuthorizationSupported,\n  issuer: $issuer,\n  last4: $last4,\n  location: $location,\n  network: $network,\n  networkTransactionId: $networkTransactionId,\n  offline: $offline,\n  overcaptureSupported: $overcaptureSupported,\n  preferredLocales: $preferredLocales,\n  readMethod: $readMethod,\n  reader: $reader,\n  receipt: $receipt,\n  wallet: $wallet,\n)';
 
- }
+}

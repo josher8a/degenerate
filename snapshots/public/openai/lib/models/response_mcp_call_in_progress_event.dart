@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an 
 /// 
 @immutable final class ResponseMcpCallInProgressEvent {const ResponseMcpCallInProgressEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, });
 
-factory ResponseMcpCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpCallInProgressEvent(
+factory ResponseMcpCallInProgressEvent.fromJson(Map<String, dynamic> json) {return ResponseMcpCallInProgressEvent(
   type: json['type'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   outputIndex: (json['output_index'] as num).toInt(),
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The type of the event. Always 'response.mcp_call.in_progress'.
 final String type;
@@ -24,22 +24,22 @@ final int outputIndex;
 /// The unique identifier of the MCP tool call item being processed.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'sequence_number': sequenceNumber,
   'output_index': outputIndex,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('output_index') && json['output_index'] is num &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-ResponseMcpCallInProgressEvent copyWith({String? type, int? sequenceNumber, int? outputIndex, String? itemId, }) { return ResponseMcpCallInProgressEvent(
+      json.containsKey('item_id') && json['item_id'] is String;}
+ResponseMcpCallInProgressEvent copyWith({String? type, int? sequenceNumber, int? outputIndex, String? itemId, }) {return ResponseMcpCallInProgressEvent(
   type: type ?? this.type,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseMcpCallInProgressEvent &&
           type == other.type &&
@@ -51,4 +51,4 @@ ResponseMcpCallInProgressEvent copyWith({String? type, int? sequenceNumber, int?
 
 @override String toString() => 'ResponseMcpCallInProgressEvent(type: $type, sequenceNumber: $sequenceNumber, outputIndex: $outputIndex, itemId: $itemId)';
 
- }
+}

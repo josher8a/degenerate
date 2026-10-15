@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rate_limit.dart';@immutable final class Resources {const Resources({required this.core, required this.search, this.graphql, this.codeSearch, this.sourceImport, this.integrationManifest, this.codeScanningUpload, this.actionsRunnerRegistration, this.scim, this.dependencySnapshots, this.dependencySbom, this.codeScanningAutofix, });
 
-factory Resources.fromJson(Map<String, dynamic> json) { return Resources(
+factory Resources.fromJson(Map<String, dynamic> json) {return Resources(
   core: RateLimit.fromJson(json['core'] as Map<String, dynamic>),
   graphql: json['graphql'] != null ? RateLimit.fromJson(json['graphql'] as Map<String, dynamic>) : null,
   search: RateLimit.fromJson(json['search'] as Map<String, dynamic>),
@@ -16,7 +16,7 @@ factory Resources.fromJson(Map<String, dynamic> json) { return Resources(
   dependencySnapshots: json['dependency_snapshots'] != null ? RateLimit.fromJson(json['dependency_snapshots'] as Map<String, dynamic>) : null,
   dependencySbom: json['dependency_sbom'] != null ? RateLimit.fromJson(json['dependency_sbom'] as Map<String, dynamic>) : null,
   codeScanningAutofix: json['code_scanning_autofix'] != null ? RateLimit.fromJson(json['code_scanning_autofix'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RateLimit core;
 
@@ -42,7 +42,7 @@ final RateLimit? dependencySbom;
 
 final RateLimit? codeScanningAutofix;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'core': core.toJson(),
   if (graphql != null) 'graphql': graphql?.toJson(),
   'search': search.toJson(),
@@ -55,10 +55,10 @@ Map<String, dynamic> toJson() { return {
   if (dependencySnapshots != null) 'dependency_snapshots': dependencySnapshots?.toJson(),
   if (dependencySbom != null) 'dependency_sbom': dependencySbom?.toJson(),
   if (codeScanningAutofix != null) 'code_scanning_autofix': codeScanningAutofix?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('core') &&
-      json.containsKey('search'); } 
-Resources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? search, RateLimit? Function()? codeSearch, RateLimit? Function()? sourceImport, RateLimit? Function()? integrationManifest, RateLimit? Function()? codeScanningUpload, RateLimit? Function()? actionsRunnerRegistration, RateLimit? Function()? scim, RateLimit? Function()? dependencySnapshots, RateLimit? Function()? dependencySbom, RateLimit? Function()? codeScanningAutofix, }) { return Resources(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('core') &&
+      json.containsKey('search');}
+Resources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? search, RateLimit? Function()? codeSearch, RateLimit? Function()? sourceImport, RateLimit? Function()? integrationManifest, RateLimit? Function()? codeScanningUpload, RateLimit? Function()? actionsRunnerRegistration, RateLimit? Function()? scim, RateLimit? Function()? dependencySnapshots, RateLimit? Function()? dependencySbom, RateLimit? Function()? codeScanningAutofix, }) {return Resources(
   core: core ?? this.core,
   graphql: graphql != null ? graphql() : this.graphql,
   search: search ?? this.search,
@@ -71,7 +71,7 @@ Resources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? 
   dependencySnapshots: dependencySnapshots != null ? dependencySnapshots() : this.dependencySnapshots,
   dependencySbom: dependencySbom != null ? dependencySbom() : this.dependencySbom,
   codeScanningAutofix: codeScanningAutofix != null ? codeScanningAutofix() : this.codeScanningAutofix,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Resources &&
           core == other.core &&
@@ -91,4 +91,4 @@ Resources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? 
 
 @override String toString() => 'Resources(\n  core: $core,\n  graphql: $graphql,\n  search: $search,\n  codeSearch: $codeSearch,\n  sourceImport: $sourceImport,\n  integrationManifest: $integrationManifest,\n  codeScanningUpload: $codeScanningUpload,\n  actionsRunnerRegistration: $actionsRunnerRegistration,\n  scim: $scim,\n  dependencySnapshots: $dependencySnapshots,\n  dependencySbom: $dependencySbom,\n  codeScanningAutofix: $codeScanningAutofix,\n)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType();
 
-factory RadarGetDnsSummaryByMatchingAnswerStatusQueryType.fromJson(String json) { return switch (json) {
+factory RadarGetDnsSummaryByMatchingAnswerStatusQueryType.fromJson(String json) {return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
   'A6' => a6,
@@ -93,7 +93,7 @@ factory RadarGetDnsSummaryByMatchingAnswerStatusQueryType.fromJson(String json) 
   'X25' => x25,
   'ZONEMD' => zonemd,
   _ => RadarGetDnsSummaryByMatchingAnswerStatusQueryType$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsSummaryByMatchingAnswerStatusQueryType a = RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a._();
 
@@ -274,9 +274,9 @@ static const RadarGetDnsSummaryByMatchingAnswerStatusQueryType zonemd = RadarGet
 static const List<RadarGetDnsSummaryByMatchingAnswerStatusQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'A' => 'a',
   'AAAA' => 'aaaa',
   'A6' => 'a6',
@@ -366,11 +366,11 @@ String get name { return switch (value) {
   'X25' => 'x25',
   'ZONEMD' => 'zonemd',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsSummaryByMatchingAnswerStatusQueryType$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsSummaryByMatchingAnswerStatusQueryType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() a, required W Function() aaaa, required W Function() a6, required W Function() afsdb, required W Function() any, required W Function() apl, required W Function() atma, required W Function() axfr, required W Function() caa, required W Function() cdnskey, required W Function() cds, required W Function() cert, required W Function() cname, required W Function() csync, required W Function() dhcid, required W Function() dlv, required W Function() dname, required W Function() dnskey, required W Function() doa, required W Function() ds, required W Function() eid, required W Function() eui48, required W Function() eui64, required W Function() gpos, required W Function() gid, required W Function() hinfo, required W Function() hip, required W Function() https, required W Function() ipseckey, required W Function() isdn, required W Function() ixfr, required W Function() key, required W Function() kx, required W Function() l32, required W Function() l64, required W Function() loc, required W Function() lp, required W Function() maila, required W Function() mailb, required W Function() mb, required W Function() md, required W Function() mf, required W Function() mg, required W Function() minfo, required W Function() mr, required W Function() mx, required W Function() naptr, required W Function() nb, required W Function() nbstat, required W Function() nid, required W Function() nimloc, required W Function() ninfo, required W Function() ns, required W Function() nsap, required W Function() nsec, required W Function() nsec3, required W Function() nsec3Param, required W Function() $null, required W Function() nxt, required W Function() openpgpkey, required W Function() opt, required W Function() ptr, required W Function() px, required W Function() rkey, required W Function() rp, required W Function() rrsig, required W Function() rt, required W Function() sig, required W Function() sink, required W Function() smimea, required W Function() soa, required W Function() spf, required W Function() srv, required W Function() sshfp, required W Function() svcb, required W Function() ta, required W Function() talink, required W Function() tkey, required W Function() tlsa, required W Function() tsig, required W Function() txt, required W Function() uinfo, required W Function() uid, required W Function() unspec, required W Function() uri, required W Function() wks, required W Function() x25, required W Function() zonemd, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() a, required W Function() aaaa, required W Function() a6, required W Function() afsdb, required W Function() any, required W Function() apl, required W Function() atma, required W Function() axfr, required W Function() caa, required W Function() cdnskey, required W Function() cds, required W Function() cert, required W Function() cname, required W Function() csync, required W Function() dhcid, required W Function() dlv, required W Function() dname, required W Function() dnskey, required W Function() doa, required W Function() ds, required W Function() eid, required W Function() eui48, required W Function() eui64, required W Function() gpos, required W Function() gid, required W Function() hinfo, required W Function() hip, required W Function() https, required W Function() ipseckey, required W Function() isdn, required W Function() ixfr, required W Function() key, required W Function() kx, required W Function() l32, required W Function() l64, required W Function() loc, required W Function() lp, required W Function() maila, required W Function() mailb, required W Function() mb, required W Function() md, required W Function() mf, required W Function() mg, required W Function() minfo, required W Function() mr, required W Function() mx, required W Function() naptr, required W Function() nb, required W Function() nbstat, required W Function() nid, required W Function() nimloc, required W Function() ninfo, required W Function() ns, required W Function() nsap, required W Function() nsec, required W Function() nsec3, required W Function() nsec3Param, required W Function() $null, required W Function() nxt, required W Function() openpgpkey, required W Function() opt, required W Function() ptr, required W Function() px, required W Function() rkey, required W Function() rp, required W Function() rrsig, required W Function() rt, required W Function() sig, required W Function() sink, required W Function() smimea, required W Function() soa, required W Function() spf, required W Function() srv, required W Function() sshfp, required W Function() svcb, required W Function() ta, required W Function() talink, required W Function() tkey, required W Function() tlsa, required W Function() tsig, required W Function() txt, required W Function() uinfo, required W Function() uid, required W Function() unspec, required W Function() uri, required W Function() wks, required W Function() x25, required W Function() zonemd, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a() => a(),
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$aaaa() => aaaa(),
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a6() => a6(),
@@ -460,9 +460,9 @@ W when<W>({required W Function() a, required W Function() aaaa, required W Funct
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$x25() => x25(),
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$zonemd() => zonemd(),
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? a6, W Function()? afsdb, W Function()? any, W Function()? apl, W Function()? atma, W Function()? axfr, W Function()? caa, W Function()? cdnskey, W Function()? cds, W Function()? cert, W Function()? cname, W Function()? csync, W Function()? dhcid, W Function()? dlv, W Function()? dname, W Function()? dnskey, W Function()? doa, W Function()? ds, W Function()? eid, W Function()? eui48, W Function()? eui64, W Function()? gpos, W Function()? gid, W Function()? hinfo, W Function()? hip, W Function()? https, W Function()? ipseckey, W Function()? isdn, W Function()? ixfr, W Function()? key, W Function()? kx, W Function()? l32, W Function()? l64, W Function()? loc, W Function()? lp, W Function()? maila, W Function()? mailb, W Function()? mb, W Function()? md, W Function()? mf, W Function()? mg, W Function()? minfo, W Function()? mr, W Function()? mx, W Function()? naptr, W Function()? nb, W Function()? nbstat, W Function()? nid, W Function()? nimloc, W Function()? ninfo, W Function()? ns, W Function()? nsap, W Function()? nsec, W Function()? nsec3, W Function()? nsec3Param, W Function()? $null, W Function()? nxt, W Function()? openpgpkey, W Function()? opt, W Function()? ptr, W Function()? px, W Function()? rkey, W Function()? rp, W Function()? rrsig, W Function()? rt, W Function()? sig, W Function()? sink, W Function()? smimea, W Function()? soa, W Function()? spf, W Function()? srv, W Function()? sshfp, W Function()? svcb, W Function()? ta, W Function()? talink, W Function()? tkey, W Function()? tlsa, W Function()? tsig, W Function()? txt, W Function()? uinfo, W Function()? uid, W Function()? unspec, W Function()? uri, W Function()? wks, W Function()? x25, W Function()? zonemd, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? a6, W Function()? afsdb, W Function()? any, W Function()? apl, W Function()? atma, W Function()? axfr, W Function()? caa, W Function()? cdnskey, W Function()? cds, W Function()? cert, W Function()? cname, W Function()? csync, W Function()? dhcid, W Function()? dlv, W Function()? dname, W Function()? dnskey, W Function()? doa, W Function()? ds, W Function()? eid, W Function()? eui48, W Function()? eui64, W Function()? gpos, W Function()? gid, W Function()? hinfo, W Function()? hip, W Function()? https, W Function()? ipseckey, W Function()? isdn, W Function()? ixfr, W Function()? key, W Function()? kx, W Function()? l32, W Function()? l64, W Function()? loc, W Function()? lp, W Function()? maila, W Function()? mailb, W Function()? mb, W Function()? md, W Function()? mf, W Function()? mg, W Function()? minfo, W Function()? mr, W Function()? mx, W Function()? naptr, W Function()? nb, W Function()? nbstat, W Function()? nid, W Function()? nimloc, W Function()? ninfo, W Function()? ns, W Function()? nsap, W Function()? nsec, W Function()? nsec3, W Function()? nsec3Param, W Function()? $null, W Function()? nxt, W Function()? openpgpkey, W Function()? opt, W Function()? ptr, W Function()? px, W Function()? rkey, W Function()? rp, W Function()? rrsig, W Function()? rt, W Function()? sig, W Function()? sink, W Function()? smimea, W Function()? soa, W Function()? spf, W Function()? srv, W Function()? sshfp, W Function()? svcb, W Function()? ta, W Function()? talink, W Function()? tkey, W Function()? tlsa, W Function()? tsig, W Function()? txt, W Function()? uinfo, W Function()? uid, W Function()? unspec, W Function()? uri, W Function()? wks, W Function()? x25, W Function()? zonemd, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a() => a != null ? a() : orElse(value),
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$aaaa() => aaaa != null ? aaaa() : orElse(value),
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a6() => a6 != null ? a6() : orElse(value),
@@ -552,10 +552,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$x25() => x25 != null ? x25() : orElse(value),
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$zonemd() => zonemd != null ? zonemd() : orElse(value),
       RadarGetDnsSummaryByMatchingAnswerStatusQueryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsSummaryByMatchingAnswerStatusQueryType($value)';
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a._();
 
 @override String get value => 'A';
@@ -564,7 +564,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'A'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$aaaa extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$aaaa._();
 
 @override String get value => 'AAAA';
@@ -573,7 +573,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'AAAA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a6 extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$a6._();
 
 @override String get value => 'A6';
@@ -582,7 +582,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'A6'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$afsdb extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$afsdb._();
 
 @override String get value => 'AFSDB';
@@ -591,7 +591,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'AFSDB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$any extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$any._();
 
 @override String get value => 'ANY';
@@ -600,7 +600,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'ANY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$apl extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$apl._();
 
 @override String get value => 'APL';
@@ -609,7 +609,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'APL'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$atma extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$atma._();
 
 @override String get value => 'ATMA';
@@ -618,7 +618,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'ATMA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$axfr extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$axfr._();
 
 @override String get value => 'AXFR';
@@ -627,7 +627,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'AXFR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$caa extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$caa._();
 
 @override String get value => 'CAA';
@@ -636,7 +636,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CAA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$cdnskey extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$cdnskey._();
 
 @override String get value => 'CDNSKEY';
@@ -645,7 +645,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CDNSKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$cds extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$cds._();
 
 @override String get value => 'CDS';
@@ -654,7 +654,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CDS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$cert extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$cert._();
 
 @override String get value => 'CERT';
@@ -663,7 +663,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CERT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$cname extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$cname._();
 
 @override String get value => 'CNAME';
@@ -672,7 +672,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CNAME'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$csync extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$csync._();
 
 @override String get value => 'CSYNC';
@@ -681,7 +681,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'CSYNC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$dhcid extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$dhcid._();
 
 @override String get value => 'DHCID';
@@ -690,7 +690,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DHCID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$dlv extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$dlv._();
 
 @override String get value => 'DLV';
@@ -699,7 +699,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DLV'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$dname extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$dname._();
 
 @override String get value => 'DNAME';
@@ -708,7 +708,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DNAME'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$dnskey extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$dnskey._();
 
 @override String get value => 'DNSKEY';
@@ -717,7 +717,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DNSKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$doa extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$doa._();
 
 @override String get value => 'DOA';
@@ -726,7 +726,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DOA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ds extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ds._();
 
 @override String get value => 'DS';
@@ -735,7 +735,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'DS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$eid extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$eid._();
 
 @override String get value => 'EID';
@@ -744,7 +744,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'EID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$eui48 extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$eui48._();
 
 @override String get value => 'EUI48';
@@ -753,7 +753,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'EUI48'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$eui64 extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$eui64._();
 
 @override String get value => 'EUI64';
@@ -762,7 +762,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'EUI64'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$gpos extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$gpos._();
 
 @override String get value => 'GPOS';
@@ -771,7 +771,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'GPOS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$gid extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$gid._();
 
 @override String get value => 'GID';
@@ -780,7 +780,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'GID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$hinfo extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$hinfo._();
 
 @override String get value => 'HINFO';
@@ -789,7 +789,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'HINFO'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$hip extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$hip._();
 
 @override String get value => 'HIP';
@@ -798,7 +798,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'HIP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$https extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$https._();
 
 @override String get value => 'HTTPS';
@@ -807,7 +807,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'HTTPS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ipseckey extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ipseckey._();
 
 @override String get value => 'IPSECKEY';
@@ -816,7 +816,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'IPSECKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$isdn extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$isdn._();
 
 @override String get value => 'ISDN';
@@ -825,7 +825,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'ISDN'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ixfr extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ixfr._();
 
 @override String get value => 'IXFR';
@@ -834,7 +834,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'IXFR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$key extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$key._();
 
 @override String get value => 'KEY';
@@ -843,7 +843,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'KEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$kx extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$kx._();
 
 @override String get value => 'KX';
@@ -852,7 +852,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'KX'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$l32 extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$l32._();
 
 @override String get value => 'L32';
@@ -861,7 +861,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'L32'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$l64 extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$l64._();
 
 @override String get value => 'L64';
@@ -870,7 +870,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'L64'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$loc extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$loc._();
 
 @override String get value => 'LOC';
@@ -879,7 +879,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'LOC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$lp extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$lp._();
 
 @override String get value => 'LP';
@@ -888,7 +888,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'LP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$maila extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$maila._();
 
 @override String get value => 'MAILA';
@@ -897,7 +897,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MAILA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mailb extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mailb._();
 
 @override String get value => 'MAILB';
@@ -906,7 +906,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MAILB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mb extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mb._();
 
 @override String get value => 'MB';
@@ -915,7 +915,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$md extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$md._();
 
 @override String get value => 'MD';
@@ -924,7 +924,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MD'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mf extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mf._();
 
 @override String get value => 'MF';
@@ -933,7 +933,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MF'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mg extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mg._();
 
 @override String get value => 'MG';
@@ -942,7 +942,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$minfo extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$minfo._();
 
 @override String get value => 'MINFO';
@@ -951,7 +951,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MINFO'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mr extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mr._();
 
 @override String get value => 'MR';
@@ -960,7 +960,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mx extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$mx._();
 
 @override String get value => 'MX';
@@ -969,7 +969,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'MX'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$naptr extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$naptr._();
 
 @override String get value => 'NAPTR';
@@ -978,7 +978,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NAPTR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nb extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nb._();
 
 @override String get value => 'NB';
@@ -987,7 +987,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nbstat extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nbstat._();
 
 @override String get value => 'NBSTAT';
@@ -996,7 +996,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NBSTAT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nid extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nid._();
 
 @override String get value => 'NID';
@@ -1005,7 +1005,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nimloc extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nimloc._();
 
 @override String get value => 'NIMLOC';
@@ -1014,7 +1014,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NIMLOC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ninfo extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ninfo._();
 
 @override String get value => 'NINFO';
@@ -1023,7 +1023,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NINFO'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ns extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ns._();
 
 @override String get value => 'NS';
@@ -1032,7 +1032,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nsap extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nsap._();
 
 @override String get value => 'NSAP';
@@ -1041,7 +1041,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NSAP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nsec extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nsec._();
 
 @override String get value => 'NSEC';
@@ -1050,7 +1050,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NSEC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nsec3 extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nsec3._();
 
 @override String get value => 'NSEC3';
@@ -1059,7 +1059,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NSEC3'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nsec3Param extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nsec3Param._();
 
 @override String get value => 'NSEC3PARAM';
@@ -1068,7 +1068,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NSEC3PARAM'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$$null extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$$null._();
 
 @override String get value => 'NULL';
@@ -1077,7 +1077,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NULL'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nxt extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$nxt._();
 
 @override String get value => 'NXT';
@@ -1086,7 +1086,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'NXT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$openpgpkey extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$openpgpkey._();
 
 @override String get value => 'OPENPGPKEY';
@@ -1095,7 +1095,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'OPENPGPKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$opt extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$opt._();
 
 @override String get value => 'OPT';
@@ -1104,7 +1104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'OPT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ptr extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ptr._();
 
 @override String get value => 'PTR';
@@ -1113,7 +1113,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'PTR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$px extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$px._();
 
 @override String get value => 'PX';
@@ -1122,7 +1122,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'PX'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$rkey extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$rkey._();
 
 @override String get value => 'RKEY';
@@ -1131,7 +1131,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'RKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$rp extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$rp._();
 
 @override String get value => 'RP';
@@ -1140,7 +1140,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'RP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$rrsig extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$rrsig._();
 
 @override String get value => 'RRSIG';
@@ -1149,7 +1149,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'RRSIG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$rt extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$rt._();
 
 @override String get value => 'RT';
@@ -1158,7 +1158,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'RT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$sig extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$sig._();
 
 @override String get value => 'SIG';
@@ -1167,7 +1167,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SIG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$sink extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$sink._();
 
 @override String get value => 'SINK';
@@ -1176,7 +1176,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SINK'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$smimea extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$smimea._();
 
 @override String get value => 'SMIMEA';
@@ -1185,7 +1185,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SMIMEA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$soa extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$soa._();
 
 @override String get value => 'SOA';
@@ -1194,7 +1194,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SOA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$spf extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$spf._();
 
 @override String get value => 'SPF';
@@ -1203,7 +1203,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SPF'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$srv extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$srv._();
 
 @override String get value => 'SRV';
@@ -1212,7 +1212,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SRV'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$sshfp extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$sshfp._();
 
 @override String get value => 'SSHFP';
@@ -1221,7 +1221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SSHFP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$svcb extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$svcb._();
 
 @override String get value => 'SVCB';
@@ -1230,7 +1230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'SVCB'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ta extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$ta._();
 
 @override String get value => 'TA';
@@ -1239,7 +1239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$talink extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$talink._();
 
 @override String get value => 'TALINK';
@@ -1248,7 +1248,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TALINK'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$tkey extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$tkey._();
 
 @override String get value => 'TKEY';
@@ -1257,7 +1257,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$tlsa extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$tlsa._();
 
 @override String get value => 'TLSA';
@@ -1266,7 +1266,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TLSA'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$tsig extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$tsig._();
 
 @override String get value => 'TSIG';
@@ -1275,7 +1275,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TSIG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$txt extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$txt._();
 
 @override String get value => 'TXT';
@@ -1284,7 +1284,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'TXT'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$uinfo extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$uinfo._();
 
 @override String get value => 'UINFO';
@@ -1293,7 +1293,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'UINFO'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$uid extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$uid._();
 
 @override String get value => 'UID';
@@ -1302,7 +1302,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'UID'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$unspec extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$unspec._();
 
 @override String get value => 'UNSPEC';
@@ -1311,7 +1311,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'UNSPEC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$uri extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$uri._();
 
 @override String get value => 'URI';
@@ -1320,7 +1320,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'URI'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$wks extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$wks._();
 
 @override String get value => 'WKS';
@@ -1329,7 +1329,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'WKS'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$x25 extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$x25._();
 
 @override String get value => 'X25';
@@ -1338,7 +1338,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'X25'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$zonemd extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$zonemd._();
 
 @override String get value => 'ZONEMD';
@@ -1347,7 +1347,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => 'ZONEMD'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryByMatchingAnswerStatusQueryType$Unknown extends RadarGetDnsSummaryByMatchingAnswerStatusQueryType {const RadarGetDnsSummaryByMatchingAnswerStatusQueryType$Unknown(this.value);
 
 @override final String value;
@@ -1357,4 +1357,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Fun
 
 @override int get hashCode => value.hashCode;
 
- }
+}

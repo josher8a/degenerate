@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class WorkersNamespaceScriptAndVersionSettingsItem {const WorkersNamespaceScriptAndVersionSettingsItem({this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.logpush, this.migrations, this.observability, this.placement, this.tags = const Omittable.absent(), this.tailConsumers = const Omittable.absent(), this.usageModel, });
 
-factory WorkersNamespaceScriptAndVersionSettingsItem.fromJson(Map<String, dynamic> json) { return WorkersNamespaceScriptAndVersionSettingsItem(
+factory WorkersNamespaceScriptAndVersionSettingsItem.fromJson(Map<String, dynamic> json) {return WorkersNamespaceScriptAndVersionSettingsItem(
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
@@ -17,7 +17,7 @@ factory WorkersNamespaceScriptAndVersionSettingsItem.fromJson(Map<String, dynami
   tags: json.containsKey('tags') ? Omittable((json['tags'] as List<dynamic>?)?.map((e) => WorkersTag.fromJson(e as String)).toList()) : const Omittable.absent(),
   tailConsumers: json.containsKey('tail_consumers') ? Omittable((json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
-); }
+);}
 
 /// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 final List<WorkersBindingItem>? bindings;
@@ -47,7 +47,7 @@ final Omittable<List<WorkersTailConsumersScript>?> tailConsumers;
 
 final WorkersUsageModel? usageModel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
   if (compatibilityDate != null) 'compatibility_date': compatibilityDate?.toJson(),
   if (compatibilityFlags != null) 'compatibility_flags': compatibilityFlags?.map((e) => e.toJson()).toList(),
@@ -59,16 +59,16 @@ Map<String, dynamic> toJson() { return {
   if (tags.isPresent) 'tags': tags.value?.map((e) => e.toJson()).toList(),
   if (tailConsumers.isPresent) 'tail_consumers': tailConsumers.value?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'logpush', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'logpush', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final tags$ = tags.value;
 if (tags$ != null) {
   if (tags$.length > 10) { errors.add('tags: must have <= 10 items'); }
 }
-return errors; } 
-WorkersNamespaceScriptAndVersionSettingsItem copyWith({List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, WorkersNamespaceScriptAndVersionSettingsItemMigrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfoNoStatus? Function()? placement, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, }) { return WorkersNamespaceScriptAndVersionSettingsItem(
+return errors;}
+WorkersNamespaceScriptAndVersionSettingsItem copyWith({List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, WorkersNamespaceScriptAndVersionSettingsItemMigrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfoNoStatus? Function()? placement, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, }) {return WorkersNamespaceScriptAndVersionSettingsItem(
   bindings: bindings != null ? bindings() : this.bindings,
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
   compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,
@@ -80,7 +80,7 @@ WorkersNamespaceScriptAndVersionSettingsItem copyWith({List<WorkersBindingItem>?
   tags: tags ?? this.tags,
   tailConsumers: tailConsumers ?? this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersNamespaceScriptAndVersionSettingsItem &&
           listEquals(bindings, other.bindings) &&
@@ -101,4 +101,4 @@ WorkersNamespaceScriptAndVersionSettingsItem copyWith({List<WorkersBindingItem>?
 
 @override String toString() => 'WorkersNamespaceScriptAndVersionSettingsItem(\n  bindings: $bindings,\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  limits: $limits,\n  logpush: $logpush,\n  migrations: $migrations,\n  observability: $observability,\n  placement: $placement,\n  tags: $tags,\n  tailConsumers: $tailConsumers,\n  usageModel: $usageModel,\n)';
 
- }
+}

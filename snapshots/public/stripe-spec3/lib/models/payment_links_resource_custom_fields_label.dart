@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label/payment_links_resource_custom_fields_label_type.dart';/// 
 @immutable final class PaymentLinksResourceCustomFieldsLabel {const PaymentLinksResourceCustomFieldsLabel({required this.type, this.custom = const Omittable.absent(), });
 
-factory PaymentLinksResourceCustomFieldsLabel.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFieldsLabel(
+factory PaymentLinksResourceCustomFieldsLabel.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceCustomFieldsLabel(
   custom: json.containsKey('custom') ? Omittable(json['custom'] as String?) : const Omittable.absent(),
   type: PaymentLinksResourceCustomFieldsLabelType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Custom text for the label, displayed to the customer. Up to 50 characters.
 final Omittable<String?> custom;
@@ -15,22 +15,22 @@ final Omittable<String?> custom;
 /// The type of the label.
 final PaymentLinksResourceCustomFieldsLabelType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (custom.isPresent) 'custom': custom.value,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final custom$ = custom.value;
 if (custom$ != null) {
   if (custom$.runes.length > 5000) { errors.add('custom: length must be <= 5000'); }
 }
-return errors; } 
-PaymentLinksResourceCustomFieldsLabel copyWith({Omittable<String?>? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return PaymentLinksResourceCustomFieldsLabel(
+return errors;}
+PaymentLinksResourceCustomFieldsLabel copyWith({Omittable<String?>? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) {return PaymentLinksResourceCustomFieldsLabel(
   custom: custom ?? this.custom,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomFieldsLabel &&
           custom == other.custom &&
@@ -40,4 +40,4 @@ PaymentLinksResourceCustomFieldsLabel copyWith({Omittable<String?>? custom, Paym
 
 @override String toString() => 'PaymentLinksResourceCustomFieldsLabel(custom: $custom, type: $type)';
 
- }
+}

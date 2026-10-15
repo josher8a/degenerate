@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/post_identity_verification_sessions_request_options.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/post_identity_verification_sessions_request_type.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/provided_details.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/related_person.dart';@immutable final class PostIdentityVerificationSessionsRequest {const PostIdentityVerificationSessionsRequest({this.clientReferenceId, this.expand, this.metadata, this.options, this.providedDetails, this.relatedCustomer, this.relatedCustomerAccount, this.relatedPerson, this.returnUrl, this.type, this.verificationFlow, });
 
-factory PostIdentityVerificationSessionsRequest.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequest(
+factory PostIdentityVerificationSessionsRequest.fromJson(Map<String, dynamic> json) {return PostIdentityVerificationSessionsRequest(
   clientReferenceId: json['client_reference_id'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -15,7 +15,7 @@ factory PostIdentityVerificationSessionsRequest.fromJson(Map<String, dynamic> js
   returnUrl: json['return_url'] as String?,
   type: json['type'] != null ? PostIdentityVerificationSessionsRequestType.fromJson(json['type'] as String) : null,
   verificationFlow: json['verification_flow'] as String?,
-); }
+);}
 
 /// A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.
 final String? clientReferenceId;
@@ -50,7 +50,7 @@ final PostIdentityVerificationSessionsRequestType? type;
 /// The ID of a verification flow from the Dashboard. See https://docs.stripe.com/identity/verification-flows.
 final String? verificationFlow;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_reference_id': ?clientReferenceId,
   'expand': ?expand,
   'metadata': ?metadata,
@@ -62,10 +62,10 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
   if (type != null) 'type': type?.toJson(),
   'verification_flow': ?verificationFlow,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_reference_id', 'expand', 'metadata', 'options', 'provided_details', 'related_customer', 'related_customer_account', 'related_person', 'return_url', 'type', 'verification_flow'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_reference_id', 'expand', 'metadata', 'options', 'provided_details', 'related_customer', 'related_customer_account', 'related_person', 'return_url', 'type', 'verification_flow'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final clientReferenceId$ = clientReferenceId;
 if (clientReferenceId$ != null) {
   if (clientReferenceId$.runes.length > 5000) { errors.add('clientReferenceId: length must be <= 5000'); }
@@ -82,8 +82,8 @@ final verificationFlow$ = verificationFlow;
 if (verificationFlow$ != null) {
   if (verificationFlow$.runes.length > 5000) { errors.add('verificationFlow: length must be <= 5000'); }
 }
-return errors; } 
-PostIdentityVerificationSessionsRequest copyWith({String? Function()? clientReferenceId, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostIdentityVerificationSessionsRequestOptions? Function()? options, ProvidedDetails? Function()? providedDetails, String? Function()? relatedCustomer, String? Function()? relatedCustomerAccount, RelatedPerson? Function()? relatedPerson, String? Function()? returnUrl, PostIdentityVerificationSessionsRequestType? Function()? type, String? Function()? verificationFlow, }) { return PostIdentityVerificationSessionsRequest(
+return errors;}
+PostIdentityVerificationSessionsRequest copyWith({String? Function()? clientReferenceId, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostIdentityVerificationSessionsRequestOptions? Function()? options, ProvidedDetails? Function()? providedDetails, String? Function()? relatedCustomer, String? Function()? relatedCustomerAccount, RelatedPerson? Function()? relatedPerson, String? Function()? returnUrl, PostIdentityVerificationSessionsRequestType? Function()? type, String? Function()? verificationFlow, }) {return PostIdentityVerificationSessionsRequest(
   clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
@@ -95,7 +95,7 @@ PostIdentityVerificationSessionsRequest copyWith({String? Function()? clientRefe
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   type: type != null ? type() : this.type,
   verificationFlow: verificationFlow != null ? verificationFlow() : this.verificationFlow,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostIdentityVerificationSessionsRequest &&
           clientReferenceId == other.clientReferenceId &&
@@ -114,4 +114,4 @@ PostIdentityVerificationSessionsRequest copyWith({String? Function()? clientRefe
 
 @override String toString() => 'PostIdentityVerificationSessionsRequest(\n  clientReferenceId: $clientReferenceId,\n  expand: $expand,\n  metadata: $metadata,\n  options: $options,\n  providedDetails: $providedDetails,\n  relatedCustomer: $relatedCustomer,\n  relatedCustomerAccount: $relatedCustomerAccount,\n  relatedPerson: $relatedPerson,\n  returnUrl: $returnUrl,\n  type: $type,\n  verificationFlow: $verificationFlow,\n)';
 
- }
+}

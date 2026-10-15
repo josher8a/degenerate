@@ -8,11 +8,11 @@ const PostTerminalConfigurationsConfigurationRequestRebootWindow({this.rebootWin
 const PostTerminalConfigurationsConfigurationRequestRebootWindow._({required this.rawValue, required this.rebootWindow, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTerminalConfigurationsConfigurationRequestRebootWindow.fromJson(Object? json) { return PostTerminalConfigurationsConfigurationRequestRebootWindow._(
+factory PostTerminalConfigurationsConfigurationRequestRebootWindow.fromJson(Object? json) {return PostTerminalConfigurationsConfigurationRequestRebootWindow._(
   rawValue: Omittable(json),
   rebootWindow: json is Map<String, dynamic> && RebootWindow.canParse(json) ? parseAnyOfVariant<RebootWindow>(json, (value) => RebootWindow.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTerminalConfigurationsConfigurationRequestRebootWindow(${toJson()})';
 
- }
+}

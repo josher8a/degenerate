@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_gen_input_usage_details.dart';import 'package:pub_openai/models/image_gen_output_tokens_details.dart';/// For `gpt-image-1` only, the token usage information for the image generation.
 @immutable final class ImageGenUsage {const ImageGenUsage({required this.inputTokens, required this.totalTokens, required this.outputTokens, required this.inputTokensDetails, this.outputTokensDetails, });
 
-factory ImageGenUsage.fromJson(Map<String, dynamic> json) { return ImageGenUsage(
+factory ImageGenUsage.fromJson(Map<String, dynamic> json) {return ImageGenUsage(
   inputTokens: (json['input_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
   outputTokens: (json['output_tokens'] as num).toInt(),
   outputTokensDetails: json['output_tokens_details'] != null ? ImageGenOutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>) : null,
   inputTokensDetails: ImageGenInputUsageDetails.fromJson(json['input_tokens_details'] as Map<String, dynamic>),
-); }
+);}
 
 /// The number of tokens (images and text) in the input prompt.
 final int inputTokens;
@@ -25,24 +25,24 @@ final ImageGenOutputTokensDetails? outputTokensDetails;
 
 final ImageGenInputUsageDetails inputTokensDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'input_tokens': inputTokens,
   'total_tokens': totalTokens,
   'output_tokens': outputTokens,
   if (outputTokensDetails != null) 'output_tokens_details': outputTokensDetails?.toJson(),
   'input_tokens_details': inputTokensDetails.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_tokens') && json['input_tokens'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('total_tokens') && json['total_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
-      json.containsKey('input_tokens_details'); } 
-ImageGenUsage copyWith({int? inputTokens, int? totalTokens, int? outputTokens, ImageGenOutputTokensDetails? Function()? outputTokensDetails, ImageGenInputUsageDetails? inputTokensDetails, }) { return ImageGenUsage(
+      json.containsKey('input_tokens_details');}
+ImageGenUsage copyWith({int? inputTokens, int? totalTokens, int? outputTokens, ImageGenOutputTokensDetails? Function()? outputTokensDetails, ImageGenInputUsageDetails? inputTokensDetails, }) {return ImageGenUsage(
   inputTokens: inputTokens ?? this.inputTokens,
   totalTokens: totalTokens ?? this.totalTokens,
   outputTokens: outputTokens ?? this.outputTokens,
   outputTokensDetails: outputTokensDetails != null ? outputTokensDetails() : this.outputTokensDetails,
   inputTokensDetails: inputTokensDetails ?? this.inputTokensDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenUsage &&
           inputTokens == other.inputTokens &&
@@ -55,4 +55,4 @@ ImageGenUsage copyWith({int? inputTokens, int? totalTokens, int? outputTokens, I
 
 @override String toString() => 'ImageGenUsage(inputTokens: $inputTokens, totalTokens: $totalTokens, outputTokens: $outputTokens, outputTokensDetails: $outputTokensDetails, inputTokensDetails: $inputTokensDetails)';
 
- }
+}

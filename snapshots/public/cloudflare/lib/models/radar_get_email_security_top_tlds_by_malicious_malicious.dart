@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Malicious classification.
 sealed class RadarGetEmailSecurityTopTldsByMaliciousMalicious {const RadarGetEmailSecurityTopTldsByMaliciousMalicious();
 
-factory RadarGetEmailSecurityTopTldsByMaliciousMalicious.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecurityTopTldsByMaliciousMalicious.fromJson(String json) {return switch (json) {
   'MALICIOUS' => malicious,
   'NOT_MALICIOUS' => notMalicious,
   _ => RadarGetEmailSecurityTopTldsByMaliciousMalicious$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailSecurityTopTldsByMaliciousMalicious malicious = RadarGetEmailSecurityTopTldsByMaliciousMalicious$malicious._();
 
@@ -17,30 +17,30 @@ static const RadarGetEmailSecurityTopTldsByMaliciousMalicious notMalicious = Rad
 static const List<RadarGetEmailSecurityTopTldsByMaliciousMalicious> values = [malicious, notMalicious];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'MALICIOUS' => 'malicious',
   'NOT_MALICIOUS' => 'notMalicious',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailSecurityTopTldsByMaliciousMalicious$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailSecurityTopTldsByMaliciousMalicious$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() malicious, required W Function() notMalicious, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() malicious, required W Function() notMalicious, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTopTldsByMaliciousMalicious$malicious() => malicious(),
       RadarGetEmailSecurityTopTldsByMaliciousMalicious$notMalicious() => notMalicious(),
       RadarGetEmailSecurityTopTldsByMaliciousMalicious$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? malicious, W Function()? notMalicious, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? malicious, W Function()? notMalicious, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailSecurityTopTldsByMaliciousMalicious$malicious() => malicious != null ? malicious() : orElse(value),
       RadarGetEmailSecurityTopTldsByMaliciousMalicious$notMalicious() => notMalicious != null ? notMalicious() : orElse(value),
       RadarGetEmailSecurityTopTldsByMaliciousMalicious$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailSecurityTopTldsByMaliciousMalicious($value)';
 
- }
+}
 @immutable final class RadarGetEmailSecurityTopTldsByMaliciousMalicious$malicious extends RadarGetEmailSecurityTopTldsByMaliciousMalicious {const RadarGetEmailSecurityTopTldsByMaliciousMalicious$malicious._();
 
 @override String get value => 'MALICIOUS';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'MALICIOUS'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTopTldsByMaliciousMalicious$notMalicious extends RadarGetEmailSecurityTopTldsByMaliciousMalicious {const RadarGetEmailSecurityTopTldsByMaliciousMalicious$notMalicious._();
 
 @override String get value => 'NOT_MALICIOUS';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => 'NOT_MALICIOUS'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecurityTopTldsByMaliciousMalicious$Unknown extends RadarGetEmailSecurityTopTldsByMaliciousMalicious {const RadarGetEmailSecurityTopTldsByMaliciousMalicious$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? maliciou
 
 @override int get hashCode => value.hashCode;
 
- }
+}

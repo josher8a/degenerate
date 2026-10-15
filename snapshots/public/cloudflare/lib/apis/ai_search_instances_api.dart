@@ -12,7 +12,7 @@ final class AiSearchInstancesApi with ApiExecutor {const AiSearchInstancesApi(th
 /// List instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances`
-Future<ApiResult<List<AiSearchCreateInstancesResponseResult>, AiSearchListInstancesError>> aiSearchListInstances({required String accountId, int? page, int? perPage, String? search, AiSearchListInstancesOrderBy? orderBy, AiSearchListInstancesOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchCreateInstancesResponseResult>, AiSearchListInstancesError>> aiSearchListInstances({required String accountId, int? page, int? perPage, String? search, AiSearchListInstancesOrderBy? orderBy, AiSearchListInstancesOrderByDirection? orderByDirection, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -49,13 +49,13 @@ return await execute(
   },
   onError: AiSearchListInstancesError.fromResponse,
 );
- } 
+}
 /// Create new instances.
 ///
 /// Create a new instances.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances`
-Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchCreateInstancesError>> aiSearchCreateInstances({required String accountId, AiSearchCreateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchCreateInstancesError>> aiSearchCreateInstances({required String accountId, AiSearchCreateInstancesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -74,11 +74,11 @@ return await execute(
   },
   onError: AiSearchCreateInstancesError.fromResponse,
 );
- } 
+}
 /// Read instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchFetchInstancesError>> aiSearchFetchInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchFetchInstancesError>> aiSearchFetchInstances({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -95,11 +95,11 @@ return await execute(
   },
   onError: AiSearchFetchInstancesError.fromResponse,
 );
- } 
+}
 /// Update instances.
 ///
 /// `PUT /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchUpdateInstancesError>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchUpdateInstancesError>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -118,11 +118,11 @@ return await execute(
   },
   onError: AiSearchUpdateInstancesError.fromResponse,
 );
- } 
+}
 /// Delete instances.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchDeleteInstancesError>> aiSearchDeleteInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchDeleteInstancesError>> aiSearchDeleteInstances({required String accountId, required String id, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -139,13 +139,13 @@ return await execute(
   },
   onError: AiSearchDeleteInstancesError.fromResponse,
 );
- } 
+}
 /// Chat Completions
 ///
 /// Performs a chat completion request against an AI Search instance, using indexed content as context for generating responses.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/chat/completions`
-Future<ApiResult<AiSearchInstanceChatCompletionResponse, AiSearchInstanceChatCompletionError>> aiSearchInstanceChatCompletion({required String id, required String accountId, AiSearchInstanceChatCompletionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchInstanceChatCompletionResponse, AiSearchInstanceChatCompletionError>> aiSearchInstanceChatCompletion({required String id, required String accountId, AiSearchInstanceChatCompletionRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -163,13 +163,13 @@ return await execute(
   },
   onError: AiSearchInstanceChatCompletionError.fromResponse,
 );
- } 
+}
 /// Search
 ///
 /// Executes a semantic search query against an AI Search instance to find relevant indexed content.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/search`
-Future<ApiResult<AiSearchInstanceSearchResponseResult, AiSearchInstanceSearchError>> aiSearchInstanceSearch({required String id, required String accountId, AiSearchInstanceSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchInstanceSearchResponseResult, AiSearchInstanceSearchError>> aiSearchInstanceSearch({required String id, required String accountId, AiSearchInstanceSearchRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -188,13 +188,13 @@ return await execute(
   },
   onError: AiSearchInstanceSearchError.fromResponse,
 );
- } 
+}
 /// Stats
 ///
 /// Retrieves usage statistics for AI Search instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/stats`
-Future<ApiResult<AiSearchStatsResponseResult, AiSearchStatsError>> aiSearchStats({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchStatsResponseResult, AiSearchStatsError>> aiSearchStats({required String id, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -211,5 +211,5 @@ return await execute(
   },
   onError: AiSearchStatsError.fromResponse,
 );
- } 
- }
+}
+}

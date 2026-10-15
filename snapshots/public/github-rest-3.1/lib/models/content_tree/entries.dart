@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';@immutable final class Entries {const Entries({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
 
-factory Entries.fromJson(Map<String, dynamic> json) { return Entries(
+factory Entries.fromJson(Map<String, dynamic> json) {return Entries(
   type: json['type'] as String,
   size: (json['size'] as num).toInt(),
   name: json['name'] as String,
@@ -14,7 +14,7 @@ factory Entries.fromJson(Map<String, dynamic> json) { return Entries(
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
   links: ContentDirectoryLinks.fromJson(json['_links'] as Map<String, dynamic>),
-); }
+);}
 
 final String type;
 
@@ -36,7 +36,7 @@ final Uri? downloadUrl;
 
 final ContentDirectoryLinks links;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'size': size,
   'name': name,
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl?.toString(),
   'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('path') && json['path'] is String &&
@@ -57,8 +57,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
       json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
       json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
-      json.containsKey('_links'); } 
-Entries copyWith({String? type, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return Entries(
+      json.containsKey('_links');}
+Entries copyWith({String? type, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) {return Entries(
   type: type ?? this.type,
   size: size ?? this.size,
   name: name ?? this.name,
@@ -69,7 +69,7 @@ Entries copyWith({String? type, int? size, String? name, String? path, String? s
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   links: links ?? this.links,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Entries &&
           type == other.type &&
@@ -87,4 +87,4 @@ Entries copyWith({String? type, int? size, String? name, String? path, String? s
 
 @override String toString() => 'Entries(\n  type: $type,\n  size: $size,\n  name: $name,\n  path: $path,\n  sha: $sha,\n  url: $url,\n  gitUrl: $gitUrl,\n  htmlUrl: $htmlUrl,\n  downloadUrl: $downloadUrl,\n  links: $links,\n)';
 
- }
+}

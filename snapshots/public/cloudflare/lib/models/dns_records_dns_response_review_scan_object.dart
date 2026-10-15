@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';@immutable final class DnsRecordsDnsResponseReviewScanObject {const DnsRecordsDnsResponseReviewScanObject({this.accepts, this.rejects, });
 
-factory DnsRecordsDnsResponseReviewScanObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseReviewScanObject(
+factory DnsRecordsDnsResponseReviewScanObject.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsResponseReviewScanObject(
   accepts: (json['accepts'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   rejects: (json['rejects'] as List<dynamic>?)?.map((e) => DnsRecordsIdentifier.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<Map<String,dynamic>>? accepts;
 
 final List<DnsRecordsIdentifier>? rejects;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accepts != null) 'accepts': accepts?.map((e) => e).toList(),
   if (rejects != null) 'rejects': rejects?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accepts', 'rejects'}.contains(key)); } 
-DnsRecordsDnsResponseReviewScanObject copyWith({List<Map<String, dynamic>>? Function()? accepts, List<DnsRecordsIdentifier>? Function()? rejects, }) { return DnsRecordsDnsResponseReviewScanObject(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'accepts', 'rejects'}.contains(key));}
+DnsRecordsDnsResponseReviewScanObject copyWith({List<Map<String, dynamic>>? Function()? accepts, List<DnsRecordsIdentifier>? Function()? rejects, }) {return DnsRecordsDnsResponseReviewScanObject(
   accepts: accepts != null ? accepts() : this.accepts,
   rejects: rejects != null ? rejects() : this.rejects,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsResponseReviewScanObject &&
           listEquals(accepts, other.accepts) &&
@@ -30,4 +30,4 @@ DnsRecordsDnsResponseReviewScanObject copyWith({List<Map<String, dynamic>>? Func
 
 @override String toString() => 'DnsRecordsDnsResponseReviewScanObject(accepts: $accepts, rejects: $rejects)';
 
- }
+}

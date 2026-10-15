@@ -8,11 +8,11 @@ const Meter({this.string = const Omittable.absent(), this.billingMeter = const O
 const Meter._({required this.rawValue, required this.string, required this.billingMeter, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Meter.fromJson(Object? json) { return Meter._(
+factory Meter.fromJson(Object? json) {return Meter._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   billingMeter: json is Map<String, dynamic> && BillingMeter.canParse(json) ? parseAnyOfVariant<BillingMeter>(json, (value) => BillingMeter.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Meter(${toJson()})';
 
- }
+}

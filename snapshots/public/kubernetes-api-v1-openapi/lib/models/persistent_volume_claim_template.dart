@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim_spec.dart';/// PersistentVolumeClaimTemplate is used to produce PersistentVolumeClaim objects as part of an EphemeralVolumeSource.
 @immutable final class PersistentVolumeClaimTemplate {const PersistentVolumeClaimTemplate({required this.spec, this.metadata, });
 
-factory PersistentVolumeClaimTemplate.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimTemplate(
+factory PersistentVolumeClaimTemplate.fromJson(Map<String, dynamic> json) {return PersistentVolumeClaimTemplate(
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   spec: PersistentVolumeClaimSpec.fromJson(json['spec'] as Map<String, dynamic>),
-); }
+);}
 
 /// May contain labels and annotations that will be copied into the PVC when creating it. No other fields are allowed and will be rejected during validation.
 final ObjectMeta? metadata;
@@ -15,15 +15,15 @@ final ObjectMeta? metadata;
 /// The specification for the PersistentVolumeClaim. The entire content is copied unchanged into the PVC that gets created from this template. The same fields as in a PersistentVolumeClaim are also valid here.
 final PersistentVolumeClaimSpec spec;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'spec': spec.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('spec'); } 
-PersistentVolumeClaimTemplate copyWith({ObjectMeta? Function()? metadata, PersistentVolumeClaimSpec? spec, }) { return PersistentVolumeClaimTemplate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('spec');}
+PersistentVolumeClaimTemplate copyWith({ObjectMeta? Function()? metadata, PersistentVolumeClaimSpec? spec, }) {return PersistentVolumeClaimTemplate(
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec ?? this.spec,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeClaimTemplate &&
           metadata == other.metadata &&
@@ -33,4 +33,4 @@ PersistentVolumeClaimTemplate copyWith({ObjectMeta? Function()? metadata, Persis
 
 @override String toString() => 'PersistentVolumeClaimTemplate(metadata: $metadata, spec: $spec)';
 
- }
+}

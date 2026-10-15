@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the a
 /// - `"resolver_ip"`: Use the DNS resolver GeoIP location. If the GeoIP lookup is unsuccessful, use the Cloudflare PoP location.
 sealed class LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode();
 
-factory LoadBalancingLocationStrategyMode.fromJson(String json) { return switch (json) {
+factory LoadBalancingLocationStrategyMode.fromJson(String json) {return switch (json) {
   'pop' => pop,
   'resolver_ip' => resolverIp,
   _ => LoadBalancingLocationStrategyMode$Unknown(json),
-}; }
+};}
 
 static const LoadBalancingLocationStrategyMode pop = LoadBalancingLocationStrategyMode$pop._();
 
@@ -19,30 +19,30 @@ static const LoadBalancingLocationStrategyMode resolverIp = LoadBalancingLocatio
 static const List<LoadBalancingLocationStrategyMode> values = [pop, resolverIp];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pop' => 'pop',
   'resolver_ip' => 'resolverIp',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LoadBalancingLocationStrategyMode$Unknown; } 
+bool get isUnknown {return this is LoadBalancingLocationStrategyMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pop, required W Function() resolverIp, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pop, required W Function() resolverIp, required W Function(String value) $unknown, }) {return switch (this) {
       LoadBalancingLocationStrategyMode$pop() => pop(),
       LoadBalancingLocationStrategyMode$resolverIp() => resolverIp(),
       LoadBalancingLocationStrategyMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pop, W Function()? resolverIp, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pop, W Function()? resolverIp, W Function(String value)? $unknown, }) {return switch (this) {
       LoadBalancingLocationStrategyMode$pop() => pop != null ? pop() : orElse(value),
       LoadBalancingLocationStrategyMode$resolverIp() => resolverIp != null ? resolverIp() : orElse(value),
       LoadBalancingLocationStrategyMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LoadBalancingLocationStrategyMode($value)';
 
- }
+}
 @immutable final class LoadBalancingLocationStrategyMode$pop extends LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode$pop._();
 
 @override String get value => 'pop';
@@ -51,7 +51,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pop, W F
 
 @override int get hashCode => 'pop'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingLocationStrategyMode$resolverIp extends LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode$resolverIp._();
 
 @override String get value => 'resolver_ip';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pop, W F
 
 @override int get hashCode => 'resolver_ip'.hashCode;
 
- }
+}
 @immutable final class LoadBalancingLocationStrategyMode$Unknown extends LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode$Unknown(this.value);
 
 @override final String value;
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pop, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the authoritative location.
 /// - `"always"`: Always prefer ECS.
 /// - `"never"`: Never prefer ECS.
@@ -78,13 +78,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pop, W F
 /// - `"geo"`: Prefer ECS only when `steering_policy="geo"`.
 sealed class PreferEcs {const PreferEcs();
 
-factory PreferEcs.fromJson(String json) { return switch (json) {
+factory PreferEcs.fromJson(String json) {return switch (json) {
   'always' => always,
   'never' => never,
   'proximity' => proximity,
   'geo' => geo,
   _ => PreferEcs$Unknown(json),
-}; }
+};}
 
 static const PreferEcs always = PreferEcs$always._();
 
@@ -97,36 +97,36 @@ static const PreferEcs geo = PreferEcs$geo._();
 static const List<PreferEcs> values = [always, never, proximity, geo];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'always' => 'always',
   'never' => 'never',
   'proximity' => 'proximity',
   'geo' => 'geo',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PreferEcs$Unknown; } 
+bool get isUnknown {return this is PreferEcs$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() always, required W Function() never, required W Function() proximity, required W Function() geo, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() always, required W Function() never, required W Function() proximity, required W Function() geo, required W Function(String value) $unknown, }) {return switch (this) {
       PreferEcs$always() => always(),
       PreferEcs$never() => never(),
       PreferEcs$proximity() => proximity(),
       PreferEcs$geo() => geo(),
       PreferEcs$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? never, W Function()? proximity, W Function()? geo, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? never, W Function()? proximity, W Function()? geo, W Function(String value)? $unknown, }) {return switch (this) {
       PreferEcs$always() => always != null ? always() : orElse(value),
       PreferEcs$never() => never != null ? never() : orElse(value),
       PreferEcs$proximity() => proximity != null ? proximity() : orElse(value),
       PreferEcs$geo() => geo != null ? geo() : orElse(value),
       PreferEcs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PreferEcs($value)';
 
- }
+}
 @immutable final class PreferEcs$always extends PreferEcs {const PreferEcs$always._();
 
 @override String get value => 'always';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'always'.hashCode;
 
- }
+}
 @immutable final class PreferEcs$never extends PreferEcs {const PreferEcs$never._();
 
 @override String get value => 'never';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'never'.hashCode;
 
- }
+}
 @immutable final class PreferEcs$proximity extends PreferEcs {const PreferEcs$proximity._();
 
 @override String get value => 'proximity';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'proximity'.hashCode;
 
- }
+}
 @immutable final class PreferEcs$geo extends PreferEcs {const PreferEcs$geo._();
 
 @override String get value => 'geo';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'geo'.hashCode;
 
- }
+}
 @immutable final class PreferEcs$Unknown extends PreferEcs {const PreferEcs$Unknown(this.value);
 
 @override final String value;
@@ -172,14 +172,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Controls location-based steering for non-proxied requests. See `steering_policy` to learn how steering is affected.
 @immutable final class LoadBalancingLocationStrategy {const LoadBalancingLocationStrategy({this.mode, this.preferEcs, });
 
-factory LoadBalancingLocationStrategy.fromJson(Map<String, dynamic> json) { return LoadBalancingLocationStrategy(
+factory LoadBalancingLocationStrategy.fromJson(Map<String, dynamic> json) {return LoadBalancingLocationStrategy(
   mode: json['mode'] != null ? LoadBalancingLocationStrategyMode.fromJson(json['mode'] as String) : null,
   preferEcs: json['prefer_ecs'] != null ? PreferEcs.fromJson(json['prefer_ecs'] as String) : null,
-); }
+);}
 
 /// Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.
 /// - `"pop"`: Use the Cloudflare PoP location.
@@ -203,15 +203,15 @@ LoadBalancingLocationStrategyMode get modeOrDefault => mode ?? LoadBalancingLoca
 /// The value of `preferEcs`, or its schema default when absent.
 PreferEcs get preferEcsOrDefault => preferEcs ?? PreferEcs.fromJson('proximity');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (mode != null) 'mode': mode?.toJson(),
   if (preferEcs != null) 'prefer_ecs': preferEcs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode', 'prefer_ecs'}.contains(key)); } 
-LoadBalancingLocationStrategy copyWith({LoadBalancingLocationStrategyMode? Function()? mode, PreferEcs? Function()? preferEcs, }) { return LoadBalancingLocationStrategy(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'mode', 'prefer_ecs'}.contains(key));}
+LoadBalancingLocationStrategy copyWith({LoadBalancingLocationStrategyMode? Function()? mode, PreferEcs? Function()? preferEcs, }) {return LoadBalancingLocationStrategy(
   mode: mode != null ? mode() : this.mode,
   preferEcs: preferEcs != null ? preferEcs() : this.preferEcs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingLocationStrategy &&
           mode == other.mode &&
@@ -221,4 +221,4 @@ LoadBalancingLocationStrategy copyWith({LoadBalancingLocationStrategyMode? Funct
 
 @override String toString() => 'LoadBalancingLocationStrategy(mode: $mode, preferEcs: $preferEcs)';
 
- }
+}

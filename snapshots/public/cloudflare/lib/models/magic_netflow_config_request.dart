@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicNetflowConfigRequest {const MagicNetflowConfigRequest({this.activeTimeout, this.collectorIp, this.collectorPort, this.inactiveTimeout, this.samplingRate, });
 
-factory MagicNetflowConfigRequest.fromJson(Map<String, dynamic> json) { return MagicNetflowConfigRequest(
+factory MagicNetflowConfigRequest.fromJson(Map<String, dynamic> json) {return MagicNetflowConfigRequest(
   activeTimeout: json['active_timeout'] != null ? (json['active_timeout'] as num).toInt() : null,
   collectorIp: json['collector_ip'] as String?,
   collectorPort: json['collector_port'] != null ? (json['collector_port'] as num).toInt() : null,
   inactiveTimeout: json['inactive_timeout'] != null ? (json['inactive_timeout'] as num).toInt() : null,
   samplingRate: json['sampling_rate'] != null ? (json['sampling_rate'] as num).toInt() : null,
-); }
+);}
 
 /// Timeout in seconds for active flows.
 /// 
@@ -36,16 +36,16 @@ final int? inactiveTimeout;
 /// Example: `100`
 final int? samplingRate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active_timeout': ?activeTimeout,
   'collector_ip': ?collectorIp,
   'collector_port': ?collectorPort,
   'inactive_timeout': ?inactiveTimeout,
   'sampling_rate': ?samplingRate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active_timeout', 'collector_ip', 'collector_port', 'inactive_timeout', 'sampling_rate'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active_timeout', 'collector_ip', 'collector_port', 'inactive_timeout', 'sampling_rate'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final activeTimeout$ = activeTimeout;
 if (activeTimeout$ != null) {
   if (activeTimeout$ < 1) { errors.add('activeTimeout: must be >= 1'); }
@@ -66,14 +66,14 @@ if (samplingRate$ != null) {
   if (samplingRate$ < 1) { errors.add('samplingRate: must be >= 1'); }
   if (samplingRate$ > 10000) { errors.add('samplingRate: must be <= 10000'); }
 }
-return errors; } 
-MagicNetflowConfigRequest copyWith({int? Function()? activeTimeout, String? Function()? collectorIp, int? Function()? collectorPort, int? Function()? inactiveTimeout, int? Function()? samplingRate, }) { return MagicNetflowConfigRequest(
+return errors;}
+MagicNetflowConfigRequest copyWith({int? Function()? activeTimeout, String? Function()? collectorIp, int? Function()? collectorPort, int? Function()? inactiveTimeout, int? Function()? samplingRate, }) {return MagicNetflowConfigRequest(
   activeTimeout: activeTimeout != null ? activeTimeout() : this.activeTimeout,
   collectorIp: collectorIp != null ? collectorIp() : this.collectorIp,
   collectorPort: collectorPort != null ? collectorPort() : this.collectorPort,
   inactiveTimeout: inactiveTimeout != null ? inactiveTimeout() : this.inactiveTimeout,
   samplingRate: samplingRate != null ? samplingRate() : this.samplingRate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicNetflowConfigRequest &&
           activeTimeout == other.activeTimeout &&
@@ -86,4 +86,4 @@ MagicNetflowConfigRequest copyWith({int? Function()? activeTimeout, String? Func
 
 @override String toString() => 'MagicNetflowConfigRequest(activeTimeout: $activeTimeout, collectorIp: $collectorIp, collectorPort: $collectorPort, inactiveTimeout: $inactiveTimeout, samplingRate: $samplingRate)';
 
- }
+}

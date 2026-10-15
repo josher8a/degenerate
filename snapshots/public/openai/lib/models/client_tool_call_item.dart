@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';sealed class ClientToolCallStatus {const ClientToolCallStatus();
 
-factory ClientToolCallStatus.fromJson(String json) { return switch (json) {
+factory ClientToolCallStatus.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   _ => ClientToolCallStatus$Unknown(json),
-}; }
+};}
 
 static const ClientToolCallStatus inProgress = ClientToolCallStatus$inProgress._();
 
@@ -16,30 +16,30 @@ static const ClientToolCallStatus completed = ClientToolCallStatus$completed._()
 static const List<ClientToolCallStatus> values = [inProgress, completed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ClientToolCallStatus$Unknown; } 
+bool get isUnknown {return this is ClientToolCallStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) {return switch (this) {
       ClientToolCallStatus$inProgress() => inProgress(),
       ClientToolCallStatus$completed() => completed(),
       ClientToolCallStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) {return switch (this) {
       ClientToolCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       ClientToolCallStatus$completed() => completed != null ? completed() : orElse(value),
       ClientToolCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ClientToolCallStatus($value)';
 
- }
+}
 @immutable final class ClientToolCallStatus$inProgress extends ClientToolCallStatus {const ClientToolCallStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class ClientToolCallStatus$completed extends ClientToolCallStatus {const ClientToolCallStatus$completed._();
 
 @override String get value => 'completed';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class ClientToolCallStatus$Unknown extends ClientToolCallStatus {const ClientToolCallStatus$Unknown(this.value);
 
 @override final String value;
@@ -67,11 +67,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Record of a client side tool invocation initiated by the assistant.
 @immutable final class ClientToolCallItem {const ClientToolCallItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.status, required this.callId, required this.name, required this.arguments, required this.output, });
 
-factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientToolCallItem(
+factory ClientToolCallItem.fromJson(Map<String, dynamic> json) {return ClientToolCallItem(
   id: json['id'] as String,
   object: AssistantMessageItemObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
@@ -82,7 +82,7 @@ factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientTo
   name: json['name'] as String,
   arguments: json['arguments'] as String,
   output: json['output'] as String?,
-); }
+);}
 
 /// Identifier of the thread item.
 final String id;
@@ -114,7 +114,7 @@ final String arguments;
 /// JSON-encoded output captured from the tool. Defaults to null while execution is in progress.
 final String? output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
@@ -125,8 +125,8 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'arguments': arguments,
   'output': output,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('thread_id') && json['thread_id'] is String &&
@@ -135,8 +135,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String &&
-      json.containsKey('output') && (json['output'] == null || json['output'] is String); } 
-ClientToolCallItem copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? type, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ClientToolCallItem(
+      json.containsKey('output') && (json['output'] == null || json['output'] is String);}
+ClientToolCallItem copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? type, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) {return ClientToolCallItem(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -147,7 +147,7 @@ ClientToolCallItem copyWith({String? id, AssistantMessageItemObject? object, int
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
   output: output != null ? output() : this.output,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ClientToolCallItem &&
           id == other.id &&
@@ -165,4 +165,4 @@ ClientToolCallItem copyWith({String? id, AssistantMessageItemObject? object, int
 
 @override String toString() => 'ClientToolCallItem(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  threadId: $threadId,\n  type: $type,\n  status: $status,\n  callId: $callId,\n  name: $name,\n  arguments: $arguments,\n  output: $output,\n)';
 
- }
+}

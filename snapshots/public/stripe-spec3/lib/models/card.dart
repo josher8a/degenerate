@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Related guide: [Card payments with Sources](https://docs.stripe.com/sources/cards)
 @immutable final class Card {const Card({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.id, required this.last4, required this.object, this.account = const Omittable.absent(), this.addressCity = const Omittable.absent(), this.addressCountry = const Omittable.absent(), this.addressLine1 = const Omittable.absent(), this.addressLine1Check = const Omittable.absent(), this.addressLine2 = const Omittable.absent(), this.addressState = const Omittable.absent(), this.addressZip = const Omittable.absent(), this.addressZipCheck = const Omittable.absent(), this.allowRedisplay = const Omittable.absent(), this.availablePayoutMethods = const Omittable.absent(), this.country = const Omittable.absent(), this.currency = const Omittable.absent(), this.customer = const Omittable.absent(), this.cvcCheck = const Omittable.absent(), this.defaultForCurrency = const Omittable.absent(), this.dynamicLast4 = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.iin, this.metadata = const Omittable.absent(), this.name = const Omittable.absent(), this.networks, this.regulatedStatus = const Omittable.absent(), this.status = const Omittable.absent(), this.tokenizationMethod = const Omittable.absent(), });
 
-factory Card.fromJson(Map<String, dynamic> json) { return Card(
+factory Card.fromJson(Map<String, dynamic> json) {return Card(
   account: json.containsKey('account') ? Omittable(json['account'] != null ? ApplicationFeeAccount.fromJson(json['account']) : null) : const Omittable.absent(),
   addressCity: json.containsKey('address_city') ? Omittable(json['address_city'] as String?) : const Omittable.absent(),
   addressCountry: json.containsKey('address_country') ? Omittable(json['address_country'] as String?) : const Omittable.absent(),
@@ -41,7 +41,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   regulatedStatus: json.containsKey('regulated_status') ? Omittable(json['regulated_status'] != null ? RegulatedStatus.fromJson(json['regulated_status'] as String) : null) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] as String?) : const Omittable.absent(),
   tokenizationMethod: json.containsKey('tokenization_method') ? Omittable(json['tokenization_method'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<ApplicationFeeAccount?> account;
 
@@ -139,7 +139,7 @@ final Omittable<String?> status;
 /// If the card number is tokenized, this is the method that was used. Can be `android_pay` (includes Google Pay), `apple_pay`, `masterpass`, `visa_checkout`, or null.
 final Omittable<String?> tokenizationMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (account.isPresent) 'account': account.value?.toJson(),
   if (addressCity.isPresent) 'address_city': addressCity.value,
   if (addressCountry.isPresent) 'address_country': addressCountry.value,
@@ -172,16 +172,16 @@ Map<String, dynamic> toJson() { return {
   if (regulatedStatus.isPresent) 'regulated_status': regulatedStatus.value?.toJson(),
   if (status.isPresent) 'status': status.value,
   if (tokenizationMethod.isPresent) 'tokenization_method': tokenizationMethod.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') && json['brand'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('brand') && json['brand'] is String &&
       json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') && json['funding'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('last4') && json['last4'] is String &&
-      json.containsKey('object') && json['object'] == 'card'; } 
+      json.containsKey('object') && json['object'] == 'card';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final addressCity$ = addressCity.value;
 if (addressCity$ != null) {
   if (addressCity$.runes.length > 5000) { errors.add('addressCity: length must be <= 5000'); }
@@ -250,8 +250,8 @@ final tokenizationMethod$ = tokenizationMethod.value;
 if (tokenizationMethod$ != null) {
   if (tokenizationMethod$.runes.length > 5000) { errors.add('tokenizationMethod: length must be <= 5000'); }
 }
-return errors; } 
-Card copyWith({Omittable<ApplicationFeeAccount?>? account, Omittable<String?>? addressCity, Omittable<String?>? addressCountry, Omittable<String?>? addressLine1, Omittable<String?>? addressLine1Check, Omittable<String?>? addressLine2, Omittable<String?>? addressState, Omittable<String?>? addressZip, Omittable<String?>? addressZipCheck, Omittable<CardAllowRedisplay?>? allowRedisplay, Omittable<List<AvailablePayoutMethods>?>? availablePayoutMethods, String? brand, Omittable<String?>? country, Omittable<String?>? currency, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? cvcCheck, Omittable<bool?>? defaultForCurrency, Omittable<String?>? dynamicLast4, int? expMonth, int? expYear, Omittable<String?>? fingerprint, String? funding, String? id, String? Function()? iin, String? last4, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, TokenCardNetworks? Function()? networks, CardObject? object, Omittable<RegulatedStatus?>? regulatedStatus, Omittable<String?>? status, Omittable<String?>? tokenizationMethod, }) { return Card(
+return errors;}
+Card copyWith({Omittable<ApplicationFeeAccount?>? account, Omittable<String?>? addressCity, Omittable<String?>? addressCountry, Omittable<String?>? addressLine1, Omittable<String?>? addressLine1Check, Omittable<String?>? addressLine2, Omittable<String?>? addressState, Omittable<String?>? addressZip, Omittable<String?>? addressZipCheck, Omittable<CardAllowRedisplay?>? allowRedisplay, Omittable<List<AvailablePayoutMethods>?>? availablePayoutMethods, String? brand, Omittable<String?>? country, Omittable<String?>? currency, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? cvcCheck, Omittable<bool?>? defaultForCurrency, Omittable<String?>? dynamicLast4, int? expMonth, int? expYear, Omittable<String?>? fingerprint, String? funding, String? id, String? Function()? iin, String? last4, Omittable<Map<String,String>?>? metadata, Omittable<String?>? name, TokenCardNetworks? Function()? networks, CardObject? object, Omittable<RegulatedStatus?>? regulatedStatus, Omittable<String?>? status, Omittable<String?>? tokenizationMethod, }) {return Card(
   account: account ?? this.account,
   addressCity: addressCity ?? this.addressCity,
   addressCountry: addressCountry ?? this.addressCountry,
@@ -284,7 +284,7 @@ Card copyWith({Omittable<ApplicationFeeAccount?>? account, Omittable<String?>? a
   regulatedStatus: regulatedStatus ?? this.regulatedStatus,
   status: status ?? this.status,
   tokenizationMethod: tokenizationMethod ?? this.tokenizationMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Card &&
           account == other.account &&
@@ -325,4 +325,4 @@ Card copyWith({Omittable<ApplicationFeeAccount?>? account, Omittable<String?>? a
 
 @override String toString() => 'Card(\n  account: $account,\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine1Check: $addressLine1Check,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  addressZipCheck: $addressZipCheck,\n  allowRedisplay: $allowRedisplay,\n  availablePayoutMethods: $availablePayoutMethods,\n  brand: $brand,\n  country: $country,\n  currency: $currency,\n  customer: $customer,\n  cvcCheck: $cvcCheck,\n  defaultForCurrency: $defaultForCurrency,\n  dynamicLast4: $dynamicLast4,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  id: $id,\n  iin: $iin,\n  last4: $last4,\n  metadata: $metadata,\n  name: $name,\n  networks: $networks,\n  object: $object,\n  regulatedStatus: $regulatedStatus,\n  status: $status,\n  tokenizationMethod: $tokenizationMethod,\n)';
 
- }
+}

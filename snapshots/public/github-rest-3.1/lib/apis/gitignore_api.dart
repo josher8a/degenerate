@@ -14,7 +14,7 @@ final class GitignoreApi with ApiExecutor {const GitignoreApi(this.apiConfig);
 /// List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
 ///
 /// `GET /gitignore/templates`
-Future<ApiResult<List<String>, Never>> gitignoreGetAllTemplates({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>, Never>> gitignoreGetAllTemplates({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -30,7 +30,7 @@ return await execute(
     return json.map((e) => e as String).toList();
   },
 );
- } 
+}
 /// Get a gitignore template
 ///
 /// Get the content of a gitignore template.
@@ -40,7 +40,7 @@ return await execute(
 /// - **`application/vnd.github.raw+json`**: Returns the raw .gitignore contents.
 ///
 /// `GET /gitignore/templates/{name}`
-Future<ApiResult<GitignoreTemplate, Never>> gitignoreGetTemplate({required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GitignoreTemplate, Never>> gitignoreGetTemplate({required String name, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -55,5 +55,5 @@ return await execute(
     return GitignoreTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

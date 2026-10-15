@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details/payment_flows_amount_details_line_items.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_client_resource_tip.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_resource_error.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_resource_shipping.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_resource_tax.dart';/// 
 @immutable final class PaymentFlowsAmountDetails {const PaymentFlowsAmountDetails({this.discountAmount, this.error, this.lineItems, this.shipping, this.tax, this.tip, });
 
-factory PaymentFlowsAmountDetails.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetails(
+factory PaymentFlowsAmountDetails.fromJson(Map<String, dynamic> json) {return PaymentFlowsAmountDetails(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,
   error: json['error'] != null ? PaymentFlowsAmountDetailsResourceError.fromJson(json['error'] as Map<String, dynamic>) : null,
   lineItems: json['line_items'] != null ? PaymentFlowsAmountDetailsLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   shipping: json['shipping'] != null ? PaymentFlowsAmountDetailsResourceShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   tax: json['tax'] != null ? PaymentFlowsAmountDetailsResourceTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   tip: json['tip'] != null ? PaymentFlowsAmountDetailsClientResourceTip.fromJson(json['tip'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The total discount applied on the transaction represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). An integer greater than 0.
 /// 
@@ -29,23 +29,23 @@ final PaymentFlowsAmountDetailsResourceTax? tax;
 
 final PaymentFlowsAmountDetailsClientResourceTip? tip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'discount_amount': ?discountAmount,
   if (error != null) 'error': error?.toJson(),
   if (lineItems != null) 'line_items': lineItems?.toJson(),
   if (shipping != null) 'shipping': shipping?.toJson(),
   if (tax != null) 'tax': tax?.toJson(),
   if (tip != null) 'tip': tip?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discount_amount', 'error', 'line_items', 'shipping', 'tax', 'tip'}.contains(key)); } 
-PaymentFlowsAmountDetails copyWith({int? Function()? discountAmount, PaymentFlowsAmountDetailsResourceError? Function()? error, PaymentFlowsAmountDetailsLineItems? Function()? lineItems, PaymentFlowsAmountDetailsResourceShipping? Function()? shipping, PaymentFlowsAmountDetailsResourceTax? Function()? tax, PaymentFlowsAmountDetailsClientResourceTip? Function()? tip, }) { return PaymentFlowsAmountDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'discount_amount', 'error', 'line_items', 'shipping', 'tax', 'tip'}.contains(key));}
+PaymentFlowsAmountDetails copyWith({int? Function()? discountAmount, PaymentFlowsAmountDetailsResourceError? Function()? error, PaymentFlowsAmountDetailsLineItems? Function()? lineItems, PaymentFlowsAmountDetailsResourceShipping? Function()? shipping, PaymentFlowsAmountDetailsResourceTax? Function()? tax, PaymentFlowsAmountDetailsClientResourceTip? Function()? tip, }) {return PaymentFlowsAmountDetails(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   error: error != null ? error() : this.error,
   lineItems: lineItems != null ? lineItems() : this.lineItems,
   shipping: shipping != null ? shipping() : this.shipping,
   tax: tax != null ? tax() : this.tax,
   tip: tip != null ? tip() : this.tip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetails &&
           discountAmount == other.discountAmount &&
@@ -59,4 +59,4 @@ PaymentFlowsAmountDetails copyWith({int? Function()? discountAmount, PaymentFlow
 
 @override String toString() => 'PaymentFlowsAmountDetails(discountAmount: $discountAmount, error: $error, lineItems: $lineItems, shipping: $shipping, tax: $tax, tip: $tip)';
 
- }
+}

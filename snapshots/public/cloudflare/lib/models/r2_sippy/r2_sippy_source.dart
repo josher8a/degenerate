@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2SippySourceProvider {const R2SippySourceProvider();
 
-factory R2SippySourceProvider.fromJson(String json) { return switch (json) {
+factory R2SippySourceProvider.fromJson(String json) {return switch (json) {
   'aws' => aws,
   'gcs' => gcs,
   's3' => s3,
   _ => R2SippySourceProvider$Unknown(json),
-}; }
+};}
 
 static const R2SippySourceProvider aws = R2SippySourceProvider$aws._();
 
@@ -19,33 +19,33 @@ static const R2SippySourceProvider s3 = R2SippySourceProvider$s3._();
 static const List<R2SippySourceProvider> values = [aws, gcs, s3];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'aws' => 'aws',
   'gcs' => 'gcs',
   's3' => 's3',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is R2SippySourceProvider$Unknown; } 
+bool get isUnknown {return this is R2SippySourceProvider$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() aws, required W Function() gcs, required W Function() s3, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() aws, required W Function() gcs, required W Function() s3, required W Function(String value) $unknown, }) {return switch (this) {
       R2SippySourceProvider$aws() => aws(),
       R2SippySourceProvider$gcs() => gcs(),
       R2SippySourceProvider$s3() => s3(),
       R2SippySourceProvider$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W Function()? gcs, W Function()? s3, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W Function()? gcs, W Function()? s3, W Function(String value)? $unknown, }) {return switch (this) {
       R2SippySourceProvider$aws() => aws != null ? aws() : orElse(value),
       R2SippySourceProvider$gcs() => gcs != null ? gcs() : orElse(value),
       R2SippySourceProvider$s3() => s3 != null ? s3() : orElse(value),
       R2SippySourceProvider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'R2SippySourceProvider($value)';
 
- }
+}
 @immutable final class R2SippySourceProvider$aws extends R2SippySourceProvider {const R2SippySourceProvider$aws._();
 
 @override String get value => 'aws';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W F
 
 @override int get hashCode => 'aws'.hashCode;
 
- }
+}
 @immutable final class R2SippySourceProvider$gcs extends R2SippySourceProvider {const R2SippySourceProvider$gcs._();
 
 @override String get value => 'gcs';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W F
 
 @override int get hashCode => 'gcs'.hashCode;
 
- }
+}
 @immutable final class R2SippySourceProvider$s3 extends R2SippySourceProvider {const R2SippySourceProvider$s3._();
 
 @override String get value => 's3';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W F
 
 @override int get hashCode => 's3'.hashCode;
 
- }
+}
 @immutable final class R2SippySourceProvider$Unknown extends R2SippySourceProvider {const R2SippySourceProvider$Unknown(this.value);
 
 @override final String value;
@@ -82,16 +82,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Details about the configured source bucket.
 @immutable final class R2SippySource {const R2SippySource({this.bucket = const Omittable.absent(), this.bucketUrl = const Omittable.absent(), this.provider, this.region = const Omittable.absent(), });
 
-factory R2SippySource.fromJson(Map<String, dynamic> json) { return R2SippySource(
+factory R2SippySource.fromJson(Map<String, dynamic> json) {return R2SippySource(
   bucket: json.containsKey('bucket') ? Omittable(json['bucket'] as String?) : const Omittable.absent(),
   bucketUrl: json.containsKey('bucketUrl') ? Omittable(json['bucketUrl'] as String?) : const Omittable.absent(),
   provider: json['provider'] != null ? R2SippySourceProvider.fromJson(json['provider'] as String) : null,
   region: json.containsKey('region') ? Omittable(json['region'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Name of the bucket on the provider (AWS, GCS only).
 final Omittable<String?> bucket;
@@ -104,19 +104,19 @@ final R2SippySourceProvider? provider;
 /// Region where the bucket resides (AWS only).
 final Omittable<String?> region;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bucket.isPresent) 'bucket': bucket.value,
   if (bucketUrl.isPresent) 'bucketUrl': bucketUrl.value,
   if (provider != null) 'provider': provider?.toJson(),
   if (region.isPresent) 'region': region.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'bucketUrl', 'provider', 'region'}.contains(key)); } 
-R2SippySource copyWith({Omittable<String?>? bucket, Omittable<String?>? bucketUrl, R2SippySourceProvider? Function()? provider, Omittable<String?>? region, }) { return R2SippySource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bucket', 'bucketUrl', 'provider', 'region'}.contains(key));}
+R2SippySource copyWith({Omittable<String?>? bucket, Omittable<String?>? bucketUrl, R2SippySourceProvider? Function()? provider, Omittable<String?>? region, }) {return R2SippySource(
   bucket: bucket ?? this.bucket,
   bucketUrl: bucketUrl ?? this.bucketUrl,
   provider: provider != null ? provider() : this.provider,
   region: region ?? this.region,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2SippySource &&
           bucket == other.bucket &&
@@ -128,4 +128,4 @@ R2SippySource copyWith({Omittable<String?>? bucket, Omittable<String?>? bucketUr
 
 @override String toString() => 'R2SippySource(bucket: $bucket, bucketUrl: $bucketUrl, provider: $provider, region: $region)';
 
- }
+}

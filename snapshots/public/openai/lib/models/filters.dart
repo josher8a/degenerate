@@ -7,11 +7,11 @@ const Filters({this.comparisonFilter = const Omittable.absent(), this.compoundFi
 const Filters._({required this.rawValue, required this.comparisonFilter, required this.compoundFilter, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Filters.fromJson(Object? json) { return Filters._(
+factory Filters.fromJson(Object? json) {return Filters._(
   rawValue: Omittable(json),
   comparisonFilter: json is Map<String, dynamic> && ComparisonFilter.canParse(json) ? parseAnyOfVariant<ComparisonFilter>(json, (value) => ComparisonFilter.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   compoundFilter: json is Map<String, dynamic> && CompoundFilter.canParse(json) ? parseAnyOfVariant<CompoundFilter>(json, (value) => CompoundFilter.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Filters(${toJson()})';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UploadFileRequest {const UploadFileRequest({required this.file, required this.description, this.tags, });
 
-factory UploadFileRequest.fromJson(Map<String, dynamic> json) { return UploadFileRequest(
+factory UploadFileRequest.fromJson(Map<String, dynamic> json) {return UploadFileRequest(
   file: base64Decode(json['file'] as String),
   description: json['description'] as String,
   tags: json['tags'] as String?,
-); }
+);}
 
 final Uint8List file;
 
@@ -15,18 +15,18 @@ final String description;
 
 final String? tags;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file': base64Encode(file),
   'description': description,
   'tags': ?tags,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
-      json.containsKey('description') && json['description'] is String; } 
-UploadFileRequest copyWith({Uint8List? file, String? description, String? Function()? tags, }) { return UploadFileRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file') &&
+      json.containsKey('description') && json['description'] is String;}
+UploadFileRequest copyWith({Uint8List? file, String? description, String? Function()? tags, }) {return UploadFileRequest(
   file: file ?? this.file,
   description: description ?? this.description,
   tags: tags != null ? tags() : this.tags,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UploadFileRequest &&
           listEquals(file, other.file) &&
@@ -37,4 +37,4 @@ UploadFileRequest copyWith({Uint8List? file, String? description, String? Functi
 
 @override String toString() => 'UploadFileRequest(file: $file, description: $description, tags: $tags)';
 
- }
+}

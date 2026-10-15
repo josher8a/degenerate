@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessMessagesSource {const AccessMessagesSource({this.pointer});
 
-factory AccessMessagesSource.fromJson(Map<String, dynamic> json) { return AccessMessagesSource(
+factory AccessMessagesSource.fromJson(Map<String, dynamic> json) {return AccessMessagesSource(
   pointer: json['pointer'] as String?,
-); }
+);}
 
 final String? pointer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'pointer': ?pointer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pointer'}.contains(key)); } 
-AccessMessagesSource copyWith({String? Function()? pointer}) { return AccessMessagesSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'pointer'}.contains(key));}
+AccessMessagesSource copyWith({String? Function()? pointer}) {return AccessMessagesSource(
   pointer: pointer != null ? pointer() : this.pointer,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessMessagesSource &&
           pointer == other.pointer;
@@ -24,4 +24,4 @@ AccessMessagesSource copyWith({String? Function()? pointer}) { return AccessMess
 
 @override String toString() => 'AccessMessagesSource(pointer: $pointer)';
 
- }
+}

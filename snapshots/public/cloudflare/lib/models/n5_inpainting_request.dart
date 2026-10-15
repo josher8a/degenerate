@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class $5InpaintingRequest {const $5InpaintingRequest({required this.prompt, this.guidance, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps, this.seed, this.strength, this.width, });
 
-factory $5InpaintingRequest.fromJson(Map<String, dynamic> json) { return $5InpaintingRequest(
+factory $5InpaintingRequest.fromJson(Map<String, dynamic> json) {return $5InpaintingRequest(
   guidance: json['guidance'] != null ? (json['guidance'] as num).toDouble() : null,
   height: json['height'] != null ? (json['height'] as num).toInt() : null,
   image: (json['image'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
@@ -15,7 +15,7 @@ factory $5InpaintingRequest.fromJson(Map<String, dynamic> json) { return $5Inpai
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   strength: json['strength'] != null ? (json['strength'] as num).toDouble() : null,
   width: json['width'] != null ? (json['width'] as num).toInt() : null,
-); }
+);}
 
 /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
 final double? guidance;
@@ -59,7 +59,7 @@ int get numStepsOrDefault => numSteps ?? 20;
 /// The value of `strength`, or its schema default when absent.
 double get strengthOrDefault => strength ?? 1.0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'guidance': ?guidance,
   'height': ?height,
   'image': ?image,
@@ -71,10 +71,10 @@ Map<String, dynamic> toJson() { return {
   'seed': ?seed,
   'strength': ?strength,
   'width': ?width,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final height$ = height;
 if (height$ != null) {
   if (height$ < 256) { errors.add('height: must be >= 256'); }
@@ -90,8 +90,8 @@ if (width$ != null) {
   if (width$ < 256) { errors.add('width: must be >= 256'); }
   if (width$ > 2048) { errors.add('width: must be <= 2048'); }
 }
-return errors; } 
-$5InpaintingRequest copyWith({double? Function()? guidance, int? Function()? height, List<double>? Function()? image, String? Function()? imageB64, List<double>? Function()? mask, String? Function()? negativePrompt, int? Function()? numSteps, String? prompt, int? Function()? seed, double? Function()? strength, int? Function()? width, }) { return $5InpaintingRequest(
+return errors;}
+$5InpaintingRequest copyWith({double? Function()? guidance, int? Function()? height, List<double>? Function()? image, String? Function()? imageB64, List<double>? Function()? mask, String? Function()? negativePrompt, int? Function()? numSteps, String? prompt, int? Function()? seed, double? Function()? strength, int? Function()? width, }) {return $5InpaintingRequest(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   image: image != null ? image() : this.image,
@@ -103,7 +103,7 @@ $5InpaintingRequest copyWith({double? Function()? guidance, int? Function()? hei
   seed: seed != null ? seed() : this.seed,
   strength: strength != null ? strength() : this.strength,
   width: width != null ? width() : this.width,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is $5InpaintingRequest &&
           guidance == other.guidance &&
@@ -122,4 +122,4 @@ $5InpaintingRequest copyWith({double? Function()? guidance, int? Function()? hei
 
 @override String toString() => '\$5InpaintingRequest(\n  guidance: $guidance,\n  height: $height,\n  image: $image,\n  imageB64: $imageB64,\n  mask: $mask,\n  negativePrompt: $negativePrompt,\n  numSteps: $numSteps,\n  prompt: $prompt,\n  seed: $seed,\n  strength: $strength,\n  width: $width,\n)';
 
- }
+}

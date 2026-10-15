@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_snippet_name.dart';/// Define a snippet rule.
 @immutable final class SnippetsSnippetRules2 {const SnippetsSnippetRules2({required this.expression, required this.id, required this.lastUpdated, required this.snippetName, this.description, this.enabled, });
 
-factory SnippetsSnippetRules2.fromJson(Map<String, dynamic> json) { return SnippetsSnippetRules2(
+factory SnippetsSnippetRules2.fromJson(Map<String, dynamic> json) {return SnippetsSnippetRules2(
   description: json['description'] as String?,
   enabled: json['enabled'] as bool?,
   expression: json['expression'] as String,
   id: json['id'] as String,
   lastUpdated: DateTime.parse(json['last_updated'] as String),
   snippetName: SnippetsSnippetName.fromJson(json['snippet_name'] as String),
-); }
+);}
 
 /// Provide an informative description of the rule.
 /// 
@@ -47,31 +47,31 @@ String get descriptionOrDefault => description ?? '';
 /// The value of `enabled`, or its schema default when absent.
 bool get enabledOrDefault => enabled ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'enabled': ?enabled,
   'expression': expression,
   'id': id,
   'last_updated': lastUpdated.toIso8601String(),
   'snippet_name': snippetName.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expression') && json['expression'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expression') && json['expression'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
-      json.containsKey('snippet_name'); } 
+      json.containsKey('snippet_name');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (expression.isEmpty) { errors.add('expression: length must be >= 1'); }
 if (!RegExp(r'^[0-9a-f]{32}$').hasMatch(id)) { errors.add(r'id: must match pattern ^[0-9a-f]{32}$'); }
-return errors; } 
-SnippetsSnippetRules2 copyWith({String? Function()? description, bool? Function()? enabled, String? expression, String? id, DateTime? lastUpdated, SnippetsSnippetName? snippetName, }) { return SnippetsSnippetRules2(
+return errors;}
+SnippetsSnippetRules2 copyWith({String? Function()? description, bool? Function()? enabled, String? expression, String? id, DateTime? lastUpdated, SnippetsSnippetName? snippetName, }) {return SnippetsSnippetRules2(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   expression: expression ?? this.expression,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,
   snippetName: snippetName ?? this.snippetName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SnippetsSnippetRules2 &&
           description == other.description &&
@@ -85,4 +85,4 @@ SnippetsSnippetRules2 copyWith({String? Function()? description, bool? Function(
 
 @override String toString() => 'SnippetsSnippetRules2(description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, snippetName: $snippetName)';
 
- }
+}

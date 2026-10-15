@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_message_request/attachments.dart';import 'package:pub_openai/models/create_message_request/create_message_request_content.dart';import 'package:pub_openai/models/create_message_request/create_message_request_role.dart';import 'package:pub_openai/models/message_content_image_file_object.dart';import 'package:pub_openai/models/message_content_image_url_object.dart';import 'package:pub_openai/models/message_request_content_text_object.dart';@immutable final class CreateMessageRequest {const CreateMessageRequest({required this.role, required this.content, this.attachments = const Omittable.absent(), this.metadata = const Omittable.absent(), });
 
-factory CreateMessageRequest.fromJson(Map<String, dynamic> json) { return CreateMessageRequest(
+factory CreateMessageRequest.fromJson(Map<String, dynamic> json) {return CreateMessageRequest(
   role: CreateMessageRequestRole.fromJson(json['role'] as String),
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => MessageContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageContentImageUrlObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageRequestContentTextObject.fromJson(v as Map<String, dynamic>),)).toList(),),
   attachments: json.containsKey('attachments') ? Omittable((json['attachments'] as List<dynamic>?)?.map((e) => Attachments.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-); }
+);}
 
 /// The role of the entity that is creating the message. Allowed values include:
 /// - `user`: Indicates the message is sent by an actual user and should be used in most cases to represent user-generated messages.
@@ -23,20 +23,20 @@ final Omittable<List<Attachments>?> attachments;
 
 final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'role': role.toJson(),
   'content': content.toJson(),
   if (attachments.isPresent) 'attachments': attachments.value?.map((e) => e.toJson()).toList(),
   if (metadata.isPresent) 'metadata': metadata.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
-      json.containsKey('content'); } 
-CreateMessageRequest copyWith({CreateMessageRequestRole? role, CreateMessageRequestContent? content, Omittable<List<Attachments>?>? attachments, Omittable<Map<String,String>?>? metadata, }) { return CreateMessageRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role') &&
+      json.containsKey('content');}
+CreateMessageRequest copyWith({CreateMessageRequestRole? role, CreateMessageRequestContent? content, Omittable<List<Attachments>?>? attachments, Omittable<Map<String,String>?>? metadata, }) {return CreateMessageRequest(
   role: role ?? this.role,
   content: content ?? this.content,
   attachments: attachments ?? this.attachments,
   metadata: metadata ?? this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateMessageRequest &&
           role == other.role &&
@@ -49,4 +49,4 @@ CreateMessageRequest copyWith({CreateMessageRequestRole? role, CreateMessageRequ
 
 @override String toString() => 'CreateMessageRequest(role: $role, content: $content, attachments: $attachments, metadata: $metadata)';
 
- }
+}

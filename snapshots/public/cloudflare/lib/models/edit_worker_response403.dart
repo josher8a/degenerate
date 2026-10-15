@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_worker_response403/create_worker_response403_errors.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';@immutable final class EditWorkerResponse403 {const EditWorkerResponse403({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory EditWorkerResponse403.fromJson(Map<String, dynamic> json) { return EditWorkerResponse403(
+factory EditWorkerResponse403.fromJson(Map<String, dynamic> json) {return EditWorkerResponse403(
   errors: (json['errors'] as List<dynamic>).map((e) => CreateWorkerResponse403Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
-); }
+);}
 
 final List<CreateWorkerResponse403Errors> errors;
 
@@ -22,22 +22,22 @@ final Map<String,dynamic>? result;
 /// Example: `false`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-EditWorkerResponse403 copyWith({List<CreateWorkerResponse403Errors>? errors, List<WorkersMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return EditWorkerResponse403(
+      json.containsKey('success') && json['success'] is bool;}
+EditWorkerResponse403 copyWith({List<CreateWorkerResponse403Errors>? errors, List<WorkersMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) {return EditWorkerResponse403(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EditWorkerResponse403 &&
           listEquals(errors, other.errors) &&
@@ -49,4 +49,4 @@ EditWorkerResponse403 copyWith({List<CreateWorkerResponse403Errors>? errors, Lis
 
 @override String toString() => 'EditWorkerResponse403(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

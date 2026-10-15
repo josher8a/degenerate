@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set secrets for Dependabot.
 @immutable final class DependabotSecret {const DependabotSecret({required this.name, required this.createdAt, required this.updatedAt, });
 
-factory DependabotSecret.fromJson(Map<String, dynamic> json) { return DependabotSecret(
+factory DependabotSecret.fromJson(Map<String, dynamic> json) {return DependabotSecret(
   name: json['name'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// The name of the secret.
 final String name;
@@ -17,19 +17,19 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-DependabotSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, }) { return DependabotSecret(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+DependabotSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, }) {return DependabotSecret(
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotSecret &&
           name == other.name &&
@@ -40,4 +40,4 @@ DependabotSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedA
 
 @override String toString() => 'DependabotSecret(name: $name, createdAt: $createdAt, updatedAt: $updatedAt)';
 
- }
+}

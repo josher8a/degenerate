@@ -8,11 +8,11 @@ const ClimateOrderProduct({this.string = const Omittable.absent(), this.climateP
 const ClimateOrderProduct._({required this.rawValue, required this.string, required this.climateProduct, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ClimateOrderProduct.fromJson(Object? json) { return ClimateOrderProduct._(
+factory ClimateOrderProduct.fromJson(Object? json) {return ClimateOrderProduct._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   climateProduct: json is Map<String, dynamic> && ClimateProduct.canParse(json) ? parseAnyOfVariant<ClimateProduct>(json, (value) => ClimateProduct.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ClimateOrderProduct(${toJson()})';
 
- }
+}

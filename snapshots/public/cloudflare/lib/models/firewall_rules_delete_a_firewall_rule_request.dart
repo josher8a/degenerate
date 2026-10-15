@@ -10,20 +10,20 @@ bool toJson() => value;
 }
 @immutable final class FirewallRulesDeleteAFirewallRuleRequest {const FirewallRulesDeleteAFirewallRuleRequest({this.deleteFilterIfUnused});
 
-factory FirewallRulesDeleteAFirewallRuleRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesDeleteAFirewallRuleRequest(
+factory FirewallRulesDeleteAFirewallRuleRequest.fromJson(Map<String, dynamic> json) {return FirewallRulesDeleteAFirewallRuleRequest(
   deleteFilterIfUnused: json['delete_filter_if_unused'] != null ? FirewallDeleteFilterIfUnused.fromJson(json['delete_filter_if_unused'] as bool) : null,
-); }
+);}
 
 /// When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.
 final FirewallDeleteFilterIfUnused? deleteFilterIfUnused;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (deleteFilterIfUnused != null) 'delete_filter_if_unused': deleteFilterIfUnused?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delete_filter_if_unused'}.contains(key)); } 
-FirewallRulesDeleteAFirewallRuleRequest copyWith({FirewallDeleteFilterIfUnused? Function()? deleteFilterIfUnused}) { return FirewallRulesDeleteAFirewallRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'delete_filter_if_unused'}.contains(key));}
+FirewallRulesDeleteAFirewallRuleRequest copyWith({FirewallDeleteFilterIfUnused? Function()? deleteFilterIfUnused}) {return FirewallRulesDeleteAFirewallRuleRequest(
   deleteFilterIfUnused: deleteFilterIfUnused != null ? deleteFilterIfUnused() : this.deleteFilterIfUnused,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallRulesDeleteAFirewallRuleRequest &&
           deleteFilterIfUnused == other.deleteFilterIfUnused;
@@ -32,4 +32,4 @@ FirewallRulesDeleteAFirewallRuleRequest copyWith({FirewallDeleteFilterIfUnused? 
 
 @override String toString() => 'FirewallRulesDeleteAFirewallRuleRequest(deleteFilterIfUnused: $deleteFilterIfUnused)';
 
- }
+}

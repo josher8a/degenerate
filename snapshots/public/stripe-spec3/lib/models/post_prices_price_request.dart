@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_prices_price_request/currency_options.dart';@immutable final class PostPricesPriceRequest {const PostPricesPriceRequest({this.active, this.currencyOptions, this.expand, this.lookupKey, this.metadata, this.nickname, this.taxBehavior, this.transferLookupKey, });
 
-factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return PostPricesPriceRequest(
+factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) {return PostPricesPriceRequest(
   active: json['active'] as bool?,
   currencyOptions: json['currency_options'] != null ? CurrencyOptions.fromJson(json['currency_options']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return Post
   nickname: json['nickname'] as String?,
   taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
-); }
+);}
 
 /// Whether the price can be used for new purchases. Defaults to `true`.
 final bool? active;
@@ -38,7 +38,7 @@ final PostInvoiceitemsInvoiceitemRequestTaxBehavior? taxBehavior;
 /// If set to true, will atomically remove the lookup key from the existing price, and assign it to this price.
 final bool? transferLookupKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   if (currencyOptions != null) 'currency_options': currencyOptions?.toJson(),
   'expand': ?expand,
@@ -47,10 +47,10 @@ Map<String, dynamic> toJson() { return {
   'nickname': ?nickname,
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
   'transfer_lookup_key': ?transferLookupKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'currency_options', 'expand', 'lookup_key', 'metadata', 'nickname', 'tax_behavior', 'transfer_lookup_key'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'currency_options', 'expand', 'lookup_key', 'metadata', 'nickname', 'tax_behavior', 'transfer_lookup_key'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final lookupKey$ = lookupKey;
 if (lookupKey$ != null) {
   if (lookupKey$.runes.length > 200) { errors.add('lookupKey: length must be <= 200'); }
@@ -59,8 +59,8 @@ final nickname$ = nickname;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
-return errors; } 
-PostPricesPriceRequest copyWith({bool? Function()? active, CurrencyOptions? Function()? currencyOptions, List<String>? Function()? expand, String? Function()? lookupKey, Metadata? Function()? metadata, String? Function()? nickname, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, bool? Function()? transferLookupKey, }) { return PostPricesPriceRequest(
+return errors;}
+PostPricesPriceRequest copyWith({bool? Function()? active, CurrencyOptions? Function()? currencyOptions, List<String>? Function()? expand, String? Function()? lookupKey, Metadata? Function()? metadata, String? Function()? nickname, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, bool? Function()? transferLookupKey, }) {return PostPricesPriceRequest(
   active: active != null ? active() : this.active,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   expand: expand != null ? expand() : this.expand,
@@ -69,7 +69,7 @@ PostPricesPriceRequest copyWith({bool? Function()? active, CurrencyOptions? Func
   nickname: nickname != null ? nickname() : this.nickname,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   transferLookupKey: transferLookupKey != null ? transferLookupKey() : this.transferLookupKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPricesPriceRequest &&
           active == other.active &&
@@ -85,4 +85,4 @@ PostPricesPriceRequest copyWith({bool? Function()? active, CurrencyOptions? Func
 
 @override String toString() => 'PostPricesPriceRequest(active: $active, currencyOptions: $currencyOptions, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, taxBehavior: $taxBehavior, transferLookupKey: $transferLookupKey)';
 
- }
+}

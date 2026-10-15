@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_search_response/autorag_config_search_response_result.dart';@immutable final class AutoragConfigSearchResponse {const AutoragConfigSearchResponse({required this.result, required this.success, });
 
-factory AutoragConfigSearchResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchResponse(
+factory AutoragConfigSearchResponse.fromJson(Map<String, dynamic> json) {return AutoragConfigSearchResponse(
   result: AutoragConfigSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AutoragConfigSearchResponseResult result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AutoragConfigSearchResponse copyWith({AutoragConfigSearchResponseResult? result, bool? success, }) { return AutoragConfigSearchResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+AutoragConfigSearchResponse copyWith({AutoragConfigSearchResponseResult? result, bool? success, }) {return AutoragConfigSearchResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigSearchResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ AutoragConfigSearchResponse copyWith({AutoragConfigSearchResponseResult? result,
 
 @override String toString() => 'AutoragConfigSearchResponse(result: $result, success: $success)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosTcpFlowProtectionRuleUpdate {const DosTcpFlowProtectionRuleUpdate({this.burstSensitivity, this.mode, this.rateSensitivity, });
 
-factory DosTcpFlowProtectionRuleUpdate.fromJson(Map<String, dynamic> json) { return DosTcpFlowProtectionRuleUpdate(
+factory DosTcpFlowProtectionRuleUpdate.fromJson(Map<String, dynamic> json) {return DosTcpFlowProtectionRuleUpdate(
   burstSensitivity: json['burst_sensitivity'] as String?,
   mode: json['mode'] as String?,
   rateSensitivity: json['rate_sensitivity'] as String?,
-); }
+);}
 
 /// The new burst sensitivity. Optional. Must be one of 'low', 'medium', 'high'.
 final String? burstSensitivity;
@@ -18,17 +18,17 @@ final String? mode;
 /// The new rate sensitivity. Optional. Must be one of 'low', 'medium', 'high'.
 final String? rateSensitivity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'burst_sensitivity': ?burstSensitivity,
   'mode': ?mode,
   'rate_sensitivity': ?rateSensitivity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'burst_sensitivity', 'mode', 'rate_sensitivity'}.contains(key)); } 
-DosTcpFlowProtectionRuleUpdate copyWith({String? Function()? burstSensitivity, String? Function()? mode, String? Function()? rateSensitivity, }) { return DosTcpFlowProtectionRuleUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'burst_sensitivity', 'mode', 'rate_sensitivity'}.contains(key));}
+DosTcpFlowProtectionRuleUpdate copyWith({String? Function()? burstSensitivity, String? Function()? mode, String? Function()? rateSensitivity, }) {return DosTcpFlowProtectionRuleUpdate(
   burstSensitivity: burstSensitivity != null ? burstSensitivity() : this.burstSensitivity,
   mode: mode != null ? mode() : this.mode,
   rateSensitivity: rateSensitivity != null ? rateSensitivity() : this.rateSensitivity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DosTcpFlowProtectionRuleUpdate &&
           burstSensitivity == other.burstSensitivity &&
@@ -39,4 +39,4 @@ DosTcpFlowProtectionRuleUpdate copyWith({String? Function()? burstSensitivity, S
 
 @override String toString() => 'DosTcpFlowProtectionRuleUpdate(burstSensitivity: $burstSensitivity, mode: $mode, rateSensitivity: $rateSensitivity)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_ipsec_tunnel.dart';@immutable final class MagicSchemasTunnelDeletedResponseResult {const MagicSchemasTunnelDeletedResponseResult({this.deleted, this.deletedIpsecTunnel, });
 
-factory MagicSchemasTunnelDeletedResponseResult.fromJson(Map<String, dynamic> json) { return MagicSchemasTunnelDeletedResponseResult(
+factory MagicSchemasTunnelDeletedResponseResult.fromJson(Map<String, dynamic> json) {return MagicSchemasTunnelDeletedResponseResult(
   deleted: json['deleted'] as bool?,
   deletedIpsecTunnel: json['deleted_ipsec_tunnel'] != null ? MagicIpsecTunnel.fromJson(json['deleted_ipsec_tunnel'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Example: `true`
 final bool? deleted;
 
 final MagicIpsecTunnel? deletedIpsecTunnel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': ?deleted,
   if (deletedIpsecTunnel != null) 'deleted_ipsec_tunnel': deletedIpsecTunnel?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deleted', 'deleted_ipsec_tunnel'}.contains(key)); } 
-MagicSchemasTunnelDeletedResponseResult copyWith({bool? Function()? deleted, MagicIpsecTunnel? Function()? deletedIpsecTunnel, }) { return MagicSchemasTunnelDeletedResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'deleted', 'deleted_ipsec_tunnel'}.contains(key));}
+MagicSchemasTunnelDeletedResponseResult copyWith({bool? Function()? deleted, MagicIpsecTunnel? Function()? deletedIpsecTunnel, }) {return MagicSchemasTunnelDeletedResponseResult(
   deleted: deleted != null ? deleted() : this.deleted,
   deletedIpsecTunnel: deletedIpsecTunnel != null ? deletedIpsecTunnel() : this.deletedIpsecTunnel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSchemasTunnelDeletedResponseResult &&
           deleted == other.deleted &&
@@ -31,4 +31,4 @@ MagicSchemasTunnelDeletedResponseResult copyWith({bool? Function()? deleted, Mag
 
 @override String toString() => 'MagicSchemasTunnelDeletedResponseResult(deleted: $deleted, deletedIpsecTunnel: $deletedIpsecTunnel)';
 
- }
+}

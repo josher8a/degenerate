@@ -6,37 +6,37 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType();
 
-factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType.fromJson(String json) { return switch (json) {
+factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType.fromJson(String json) {return switch (json) {
   'conversation.item.input_audio_transcription.failed' => conversationItemInputAudioTranscriptionFailed,
   _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown(json),
-}; }
+};}
 
 static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType conversationItemInputAudioTranscriptionFailed = RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed._();
 
 static const List<RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType> values = [conversationItemInputAudioTranscriptionFailed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'conversation.item.input_audio_transcription.failed' => 'conversationItemInputAudioTranscriptionFailed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown; } 
+bool get isUnknown {return this is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() conversationItemInputAudioTranscriptionFailed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() conversationItemInputAudioTranscriptionFailed, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed() => conversationItemInputAudioTranscriptionFailed(),
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversationItemInputAudioTranscriptionFailed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversationItemInputAudioTranscriptionFailed, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed() => conversationItemInputAudioTranscriptionFailed != null ? conversationItemInputAudioTranscriptionFailed() : orElse(value),
       RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType($value)';
 
- }
+}
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed._();
 
 @override String get value => 'conversation.item.input_audio_transcription.failed';
@@ -45,7 +45,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversa
 
 @override int get hashCode => 'conversation.item.input_audio_transcription.failed'.hashCode;
 
- }
+}
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown(this.value);
 
 @override final String value;
@@ -55,20 +55,20 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversa
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Returned when input audio transcription is configured, and a transcription
 /// request for a user message failed. These events are separate from other
 /// `error` events so that the client can identify the related Item.
 /// 
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.error, });
 
-factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed(
+factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed.fromJson(Map<String, dynamic> json) {return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType.fromJson(json['type'] as String),
   itemId: json['item_id'] as String,
   contentIndex: (json['content_index'] as num).toInt(),
   error: RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError.fromJson(json['error'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -87,25 +87,25 @@ final int contentIndex;
 /// Details of the transcription error.
 final RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type.toJson(),
   'item_id': itemId,
   'content_index': contentIndex,
   'error': error.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
-      json.containsKey('error'); } 
-RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType? type, String? itemId, int? contentIndex, RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError? error, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed(
+      json.containsKey('error');}
+RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType? type, String? itemId, int? contentIndex, RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError? error, }) {return RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   contentIndex: contentIndex ?? this.contentIndex,
   error: error ?? this.error,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed &&
           eventId == other.eventId &&
@@ -118,4 +118,4 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed copyWith({S
 
 @override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, error: $error)';
 
- }
+}

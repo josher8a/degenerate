@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingMeterEventsRequest {const PostBillingMeterEventsRequest({required this.eventName, required this.payload, this.expand, this.identifier, this.timestamp, });
 
-factory PostBillingMeterEventsRequest.fromJson(Map<String, dynamic> json) { return PostBillingMeterEventsRequest(
+factory PostBillingMeterEventsRequest.fromJson(Map<String, dynamic> json) {return PostBillingMeterEventsRequest(
   eventName: json['event_name'] as String,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   identifier: json['identifier'] as String?,
   payload: (json['payload'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,
-); }
+);}
 
 /// The name of the meter event. Corresponds with the `event_name` field on a meter.
 final String eventName;
@@ -26,30 +26,30 @@ final Map<String,String> payload;
 /// The time of the event. Measured in seconds since the Unix epoch. Must be within the past 35 calendar days or up to 5 minutes in the future. Defaults to current timestamp if not specified.
 final int? timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_name': eventName,
   'expand': ?expand,
   'identifier': ?identifier,
   'payload': payload,
   'timestamp': ?timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_name') && json['event_name'] is String &&
-      json.containsKey('payload'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_name') && json['event_name'] is String &&
+      json.containsKey('payload');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (eventName.runes.length > 100) { errors.add('eventName: length must be <= 100'); }
 final identifier$ = identifier;
 if (identifier$ != null) {
   if (identifier$.runes.length > 100) { errors.add('identifier: length must be <= 100'); }
 }
-return errors; } 
-PostBillingMeterEventsRequest copyWith({String? eventName, List<String>? Function()? expand, String? Function()? identifier, Map<String,String>? payload, int? Function()? timestamp, }) { return PostBillingMeterEventsRequest(
+return errors;}
+PostBillingMeterEventsRequest copyWith({String? eventName, List<String>? Function()? expand, String? Function()? identifier, Map<String,String>? payload, int? Function()? timestamp, }) {return PostBillingMeterEventsRequest(
   eventName: eventName ?? this.eventName,
   expand: expand != null ? expand() : this.expand,
   identifier: identifier != null ? identifier() : this.identifier,
   payload: payload ?? this.payload,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingMeterEventsRequest &&
           eventName == other.eventName &&
@@ -62,4 +62,4 @@ PostBillingMeterEventsRequest copyWith({String? eventName, List<String>? Functio
 
 @override String toString() => 'PostBillingMeterEventsRequest(eventName: $eventName, expand: $expand, identifier: $identifier, payload: $payload, timestamp: $timestamp)';
 
- }
+}

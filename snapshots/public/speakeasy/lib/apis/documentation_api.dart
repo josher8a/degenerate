@@ -12,7 +12,7 @@ final class DocumentationApi with ApiExecutor {const DocumentationApi(this.apiCo
 /// Gets documentation for some language, I guess.
 ///
 /// `GET /docs/per-language-docs`
-Future<ApiResult<void, Never>> getDocumentationPerLanguage({required String language, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, Never>> getDocumentationPerLanguage({required String language, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['language'] = language;
 
@@ -31,5 +31,5 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
- }
+}
+}

@@ -8,11 +8,11 @@ const PostPaymentLinksPaymentLinkRequestRestrictions({this.restrictionsParams = 
 const PostPaymentLinksPaymentLinkRequestRestrictions._({required this.rawValue, required this.restrictionsParams, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostPaymentLinksPaymentLinkRequestRestrictions.fromJson(Object? json) { return PostPaymentLinksPaymentLinkRequestRestrictions._(
+factory PostPaymentLinksPaymentLinkRequestRestrictions.fromJson(Object? json) {return PostPaymentLinksPaymentLinkRequestRestrictions._(
   rawValue: Omittable(json),
   restrictionsParams: json is Map<String, dynamic> && RestrictionsParams.canParse(json) ? parseAnyOfVariant<RestrictionsParams>(json, (value) => RestrictionsParams.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostPaymentLinksPaymentLinkRequestRestrictions(${toJson()})';
 
- }
+}

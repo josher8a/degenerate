@@ -7,11 +7,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Labels an `assis
 /// 
 sealed class MessagePhase {const MessagePhase();
 
-factory MessagePhase.fromJson(String json) { return switch (json) {
+factory MessagePhase.fromJson(String json) {return switch (json) {
   'commentary' => commentary,
   'final_answer' => finalAnswer,
   _ => MessagePhase$Unknown(json),
-}; }
+};}
 
 static const MessagePhase commentary = MessagePhase$commentary._();
 
@@ -20,30 +20,30 @@ static const MessagePhase finalAnswer = MessagePhase$finalAnswer._();
 static const List<MessagePhase> values = [commentary, finalAnswer];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'commentary' => 'commentary',
   'final_answer' => 'finalAnswer',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessagePhase$Unknown; } 
+bool get isUnknown {return this is MessagePhase$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() commentary, required W Function() finalAnswer, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() commentary, required W Function() finalAnswer, required W Function(String value) $unknown, }) {return switch (this) {
       MessagePhase$commentary() => commentary(),
       MessagePhase$finalAnswer() => finalAnswer(),
       MessagePhase$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? commentary, W Function()? finalAnswer, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? commentary, W Function()? finalAnswer, W Function(String value)? $unknown, }) {return switch (this) {
       MessagePhase$commentary() => commentary != null ? commentary() : orElse(value),
       MessagePhase$finalAnswer() => finalAnswer != null ? finalAnswer() : orElse(value),
       MessagePhase$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MessagePhase($value)';
 
- }
+}
 @immutable final class MessagePhase$commentary extends MessagePhase {const MessagePhase$commentary._();
 
 @override String get value => 'commentary';
@@ -52,7 +52,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? commenta
 
 @override int get hashCode => 'commentary'.hashCode;
 
- }
+}
 @immutable final class MessagePhase$finalAnswer extends MessagePhase {const MessagePhase$finalAnswer._();
 
 @override String get value => 'final_answer';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? commenta
 
 @override int get hashCode => 'final_answer'.hashCode;
 
- }
+}
 @immutable final class MessagePhase$Unknown extends MessagePhase {const MessagePhase$Unknown(this.value);
 
 @override final String value;
@@ -71,4 +71,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? commenta
 
 @override int get hashCode => value.hashCode;
 
- }
+}

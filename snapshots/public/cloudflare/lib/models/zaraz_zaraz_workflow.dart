@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Zaraz workflow
 sealed class ZarazZarazWorkflow {const ZarazZarazWorkflow();
 
-factory ZarazZarazWorkflow.fromJson(String json) { return switch (json) {
+factory ZarazZarazWorkflow.fromJson(String json) {return switch (json) {
   'realtime' => realtime,
   'preview' => preview,
   _ => ZarazZarazWorkflow$Unknown(json),
-}; }
+};}
 
 static const ZarazZarazWorkflow realtime = ZarazZarazWorkflow$realtime._();
 
@@ -17,30 +17,30 @@ static const ZarazZarazWorkflow preview = ZarazZarazWorkflow$preview._();
 static const List<ZarazZarazWorkflow> values = [realtime, preview];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'realtime' => 'realtime',
   'preview' => 'preview',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZarazZarazWorkflow$Unknown; } 
+bool get isUnknown {return this is ZarazZarazWorkflow$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() realtime, required W Function() preview, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() realtime, required W Function() preview, required W Function(String value) $unknown, }) {return switch (this) {
       ZarazZarazWorkflow$realtime() => realtime(),
       ZarazZarazWorkflow$preview() => preview(),
       ZarazZarazWorkflow$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime, W Function()? preview, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime, W Function()? preview, W Function(String value)? $unknown, }) {return switch (this) {
       ZarazZarazWorkflow$realtime() => realtime != null ? realtime() : orElse(value),
       ZarazZarazWorkflow$preview() => preview != null ? preview() : orElse(value),
       ZarazZarazWorkflow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZarazZarazWorkflow($value)';
 
- }
+}
 @immutable final class ZarazZarazWorkflow$realtime extends ZarazZarazWorkflow {const ZarazZarazWorkflow$realtime._();
 
 @override String get value => 'realtime';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime
 
 @override int get hashCode => 'realtime'.hashCode;
 
- }
+}
 @immutable final class ZarazZarazWorkflow$preview extends ZarazZarazWorkflow {const ZarazZarazWorkflow$preview._();
 
 @override String get value => 'preview';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime
 
 @override int get hashCode => 'preview'.hashCode;
 
- }
+}
 @immutable final class ZarazZarazWorkflow$Unknown extends ZarazZarazWorkflow {const ZarazZarazWorkflow$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime
 
 @override int get hashCode => value.hashCode;
 
- }
+}

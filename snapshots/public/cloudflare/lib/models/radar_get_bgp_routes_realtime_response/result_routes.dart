@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultRoutes {const ResultRoutes({required this.asPath, required this.collector, required this.communities, required this.prefix, required this.timestamp, });
 
-factory ResultRoutes.fromJson(Map<String, dynamic> json) { return ResultRoutes(
+factory ResultRoutes.fromJson(Map<String, dynamic> json) {return ResultRoutes(
   asPath: (json['as_path'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   collector: json['collector'] as String,
   communities: (json['communities'] as List<dynamic>).map((e) => e as String).toList(),
   prefix: json['prefix'] as String,
   timestamp: json['timestamp'] as String,
-); }
+);}
 
 /// AS-level path for this route, from collector to origin.
 final List<int> asPath;
@@ -26,25 +26,25 @@ final String prefix;
 /// Latest timestamp of change for this route.
 final String timestamp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'as_path': asPath,
   'collector': collector,
   'communities': communities,
   'prefix': prefix,
   'timestamp': timestamp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('as_path') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('as_path') &&
       json.containsKey('collector') && json['collector'] is String &&
       json.containsKey('communities') &&
       json.containsKey('prefix') && json['prefix'] is String &&
-      json.containsKey('timestamp') && json['timestamp'] is String; } 
-ResultRoutes copyWith({List<int>? asPath, String? collector, List<String>? communities, String? prefix, String? timestamp, }) { return ResultRoutes(
+      json.containsKey('timestamp') && json['timestamp'] is String;}
+ResultRoutes copyWith({List<int>? asPath, String? collector, List<String>? communities, String? prefix, String? timestamp, }) {return ResultRoutes(
   asPath: asPath ?? this.asPath,
   collector: collector ?? this.collector,
   communities: communities ?? this.communities,
   prefix: prefix ?? this.prefix,
   timestamp: timestamp ?? this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultRoutes &&
           listEquals(asPath, other.asPath) &&
@@ -57,4 +57,4 @@ ResultRoutes copyWith({List<int>? asPath, String? collector, List<String>? commu
 
 @override String toString() => 'ResultRoutes(asPath: $asPath, collector: $collector, communities: $communities, prefix: $prefix, timestamp: $timestamp)';
 
- }
+}

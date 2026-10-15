@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_email_rule/access_email_rule_email.dart';/// Matches a specific email.
 @immutable final class AccessEmailRule {const AccessEmailRule({required this.email});
 
-factory AccessEmailRule.fromJson(Map<String, dynamic> json) { return AccessEmailRule(
+factory AccessEmailRule.fromJson(Map<String, dynamic> json) {return AccessEmailRule(
   email: AccessEmailRuleEmail.fromJson(json['email'] as Map<String, dynamic>),
-); }
+);}
 
 final AccessEmailRuleEmail email;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': email.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email'); } 
-AccessEmailRule copyWith({AccessEmailRuleEmail? email}) { return AccessEmailRule(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email');}
+AccessEmailRule copyWith({AccessEmailRuleEmail? email}) {return AccessEmailRule(
   email: email ?? this.email,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessEmailRule &&
           email == other.email;
@@ -25,4 +25,4 @@ AccessEmailRule copyWith({AccessEmailRuleEmail? email}) { return AccessEmailRule
 
 @override String toString() => 'AccessEmailRule(email: $email)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response/radar_get_entities_asn_by_id_response_result_asn.dart';@immutable final class RadarGetEntitiesAsnByIdResponseResult {const RadarGetEntitiesAsnByIdResponseResult({required this.asn});
 
-factory RadarGetEntitiesAsnByIdResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIdResponseResult(
+factory RadarGetEntitiesAsnByIdResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetEntitiesAsnByIdResponseResult(
   asn: RadarGetEntitiesAsnByIdResponseResultAsn.fromJson(json['asn'] as Map<String, dynamic>),
-); }
+);}
 
 final RadarGetEntitiesAsnByIdResponseResultAsn asn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn'); } 
-RadarGetEntitiesAsnByIdResponseResult copyWith({RadarGetEntitiesAsnByIdResponseResultAsn? asn}) { return RadarGetEntitiesAsnByIdResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn');}
+RadarGetEntitiesAsnByIdResponseResult copyWith({RadarGetEntitiesAsnByIdResponseResultAsn? asn}) {return RadarGetEntitiesAsnByIdResponseResult(
   asn: asn ?? this.asn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEntitiesAsnByIdResponseResult &&
           asn == other.asn;
@@ -24,4 +24,4 @@ RadarGetEntitiesAsnByIdResponseResult copyWith({RadarGetEntitiesAsnByIdResponseR
 
 @override String toString() => 'RadarGetEntitiesAsnByIdResponseResult(asn: $asn)';
 
- }
+}

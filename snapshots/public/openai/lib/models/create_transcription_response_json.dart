@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_response_json/create_transcription_response_json_logprobs.dart';import 'package:pub_openai/models/create_transcription_response_json/create_transcription_response_json_usage.dart';import 'package:pub_openai/models/transcript_text_usage_duration.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';/// Represents a transcription response returned by model, based on the provided input.
 @immutable final class CreateTranscriptionResponseJson {const CreateTranscriptionResponseJson({required this.text, this.logprobs, this.usage, });
 
-factory CreateTranscriptionResponseJson.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseJson(
+factory CreateTranscriptionResponseJson.fromJson(Map<String, dynamic> json) {return CreateTranscriptionResponseJson(
   text: json['text'] as String,
   logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => CreateTranscriptionResponseJsonLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
   usage: json['usage'] != null ? OneOf2.parse(json['usage'], fromA: (v) => TranscriptTextUsageTokens.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextUsageDuration.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 /// The transcribed text.
 final String text;
@@ -20,17 +20,17 @@ final List<CreateTranscriptionResponseJsonLogprobs>? logprobs;
 /// Token usage statistics for the request.
 final CreateTranscriptionResponseJsonUsage? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text': text,
   if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
   if (usage != null) 'usage': usage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-CreateTranscriptionResponseJson copyWith({String? text, List<CreateTranscriptionResponseJsonLogprobs>? Function()? logprobs, CreateTranscriptionResponseJsonUsage? Function()? usage, }) { return CreateTranscriptionResponseJson(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text') && json['text'] is String;}
+CreateTranscriptionResponseJson copyWith({String? text, List<CreateTranscriptionResponseJsonLogprobs>? Function()? logprobs, CreateTranscriptionResponseJsonUsage? Function()? usage, }) {return CreateTranscriptionResponseJson(
   text: text ?? this.text,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   usage: usage != null ? usage() : this.usage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranscriptionResponseJson &&
           text == other.text &&
@@ -41,4 +41,4 @@ CreateTranscriptionResponseJson copyWith({String? text, List<CreateTranscription
 
 @override String toString() => 'CreateTranscriptionResponseJson(text: $text, logprobs: $logprobs, usage: $usage)';
 
- }
+}

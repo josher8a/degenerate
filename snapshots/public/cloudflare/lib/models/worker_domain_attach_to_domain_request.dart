@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_hostname.dart';import 'package:pub_cloudflare/models/workers_schemas_environment.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';@immutable final class WorkerDomainAttachToDomainRequest {const WorkerDomainAttachToDomainRequest({required this.hostname, required this.service, required this.zoneId, this.environment, });
 
-factory WorkerDomainAttachToDomainRequest.fromJson(Map<String, dynamic> json) { return WorkerDomainAttachToDomainRequest(
+factory WorkerDomainAttachToDomainRequest.fromJson(Map<String, dynamic> json) {return WorkerDomainAttachToDomainRequest(
   environment: json['environment'] != null ? WorkersSchemasEnvironment.fromJson(json['environment'] as String) : null,
   hostname: WorkersHostname.fromJson(json['hostname'] as String),
   service: WorkersSchemasService.fromJson(json['service'] as String),
   zoneId: WorkersZoneIdentifier.fromJson(json['zone_id'] as String),
-); }
+);}
 
 /// Worker environment associated with the zone and hostname.
 final WorkersSchemasEnvironment? environment;
@@ -22,21 +22,21 @@ final WorkersSchemasService service;
 /// Identifier of the zone.
 final WorkersZoneIdentifier zoneId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (environment != null) 'environment': environment?.toJson(),
   'hostname': hostname.toJson(),
   'service': service.toJson(),
   'zone_id': zoneId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('hostname') &&
       json.containsKey('service') &&
-      json.containsKey('zone_id'); } 
-WorkerDomainAttachToDomainRequest copyWith({WorkersSchemasEnvironment? Function()? environment, WorkersHostname? hostname, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, }) { return WorkerDomainAttachToDomainRequest(
+      json.containsKey('zone_id');}
+WorkerDomainAttachToDomainRequest copyWith({WorkersSchemasEnvironment? Function()? environment, WorkersHostname? hostname, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, }) {return WorkerDomainAttachToDomainRequest(
   environment: environment != null ? environment() : this.environment,
   hostname: hostname ?? this.hostname,
   service: service ?? this.service,
   zoneId: zoneId ?? this.zoneId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerDomainAttachToDomainRequest &&
           environment == other.environment &&
@@ -48,4 +48,4 @@ WorkerDomainAttachToDomainRequest copyWith({WorkersSchemasEnvironment? Function(
 
 @override String toString() => 'WorkerDomainAttachToDomainRequest(environment: $environment, hostname: $hostname, service: $service, zoneId: $zoneId)';
 
- }
+}

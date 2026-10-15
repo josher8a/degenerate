@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_settlement/issuing_settlement_network.dart';@immutable final class PostTestHelpersIssuingSettlementsRequest {const PostTestHelpersIssuingSettlementsRequest({required this.bin, required this.clearingDate, required this.currency, required this.netTotalAmount, this.expand, this.interchangeFeesAmount, this.network, this.networkSettlementIdentifier, this.transactionAmount, this.transactionCount, });
 
-factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingSettlementsRequest(
+factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersIssuingSettlementsRequest(
   bin: json['bin'] as String,
   clearingDate: (json['clearing_date'] as num).toInt(),
   currency: json['currency'] as String,
@@ -14,7 +14,7 @@ factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> j
   networkSettlementIdentifier: json['network_settlement_identifier'] as String?,
   transactionAmount: json['transaction_amount'] != null ? (json['transaction_amount'] as num).toInt() : null,
   transactionCount: json['transaction_count'] != null ? (json['transaction_count'] as num).toInt() : null,
-); }
+);}
 
 /// The Bank Identification Number reflecting this settlement record.
 final String bin;
@@ -46,7 +46,7 @@ final int? transactionAmount;
 /// The total number of transactions reflected in this settlement.
 final int? transactionCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bin': bin,
   'clearing_date': clearingDate,
   'currency': currency,
@@ -57,20 +57,20 @@ Map<String, dynamic> toJson() { return {
   'network_settlement_identifier': ?networkSettlementIdentifier,
   'transaction_amount': ?transactionAmount,
   'transaction_count': ?transactionCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin') && json['bin'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bin') && json['bin'] is String &&
       json.containsKey('clearing_date') && json['clearing_date'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('net_total_amount') && json['net_total_amount'] is num; } 
+      json.containsKey('net_total_amount') && json['net_total_amount'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (bin.runes.length > 5000) { errors.add('bin: length must be <= 5000'); }
 final networkSettlementIdentifier$ = networkSettlementIdentifier;
 if (networkSettlementIdentifier$ != null) {
   if (networkSettlementIdentifier$.runes.length > 5000) { errors.add('networkSettlementIdentifier: length must be <= 5000'); }
 }
-return errors; } 
-PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDate, String? currency, List<String>? Function()? expand, int? Function()? interchangeFeesAmount, int? netTotalAmount, IssuingSettlementNetwork? Function()? network, String? Function()? networkSettlementIdentifier, int? Function()? transactionAmount, int? Function()? transactionCount, }) { return PostTestHelpersIssuingSettlementsRequest(
+return errors;}
+PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDate, String? currency, List<String>? Function()? expand, int? Function()? interchangeFeesAmount, int? netTotalAmount, IssuingSettlementNetwork? Function()? network, String? Function()? networkSettlementIdentifier, int? Function()? transactionAmount, int? Function()? transactionCount, }) {return PostTestHelpersIssuingSettlementsRequest(
   bin: bin ?? this.bin,
   clearingDate: clearingDate ?? this.clearingDate,
   currency: currency ?? this.currency,
@@ -81,7 +81,7 @@ PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDat
   networkSettlementIdentifier: networkSettlementIdentifier != null ? networkSettlementIdentifier() : this.networkSettlementIdentifier,
   transactionAmount: transactionAmount != null ? transactionAmount() : this.transactionAmount,
   transactionCount: transactionCount != null ? transactionCount() : this.transactionCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingSettlementsRequest &&
           bin == other.bin &&
@@ -99,4 +99,4 @@ PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDat
 
 @override String toString() => 'PostTestHelpersIssuingSettlementsRequest(\n  bin: $bin,\n  clearingDate: $clearingDate,\n  currency: $currency,\n  expand: $expand,\n  interchangeFeesAmount: $interchangeFeesAmount,\n  netTotalAmount: $netTotalAmount,\n  network: $network,\n  networkSettlementIdentifier: $networkSettlementIdentifier,\n  transactionAmount: $transactionAmount,\n  transactionCount: $transactionCount,\n)';
 
- }
+}

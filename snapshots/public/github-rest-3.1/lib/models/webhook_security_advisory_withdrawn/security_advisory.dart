@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/references.dart';import 'package:pub_github_rest_3_1/models/webhooks_security_advisory/webhooks_security_advisory_cvss.dart';import 'package:pub_github_rest_3_1/models/webhooks_security_advisory/webhooks_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/webhooks_security_advisory/webhooks_security_advisory_vulnerabilities.dart';/// The details of the security advisory, including summary, description, and severity.
 @immutable final class SecurityAdvisory {const SecurityAdvisory({required this.cvss, required this.cwes, required this.description, required this.ghsaId, required this.identifiers, required this.publishedAt, required this.references, required this.severity, required this.summary, required this.updatedAt, required this.vulnerabilities, required this.withdrawnAt, this.cvssSeverities = const Omittable.absent(), });
 
-factory SecurityAdvisory.fromJson(Map<String, dynamic> json) { return SecurityAdvisory(
+factory SecurityAdvisory.fromJson(Map<String, dynamic> json) {return SecurityAdvisory(
   cvss: WebhooksSecurityAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),
   cvssSeverities: json.containsKey('cvss_severities') ? Omittable(json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cwes: (json['cwes'] as List<dynamic>).map((e) => Cwes.fromJson(e as Map<String, dynamic>)).toList(),
@@ -18,7 +18,7 @@ factory SecurityAdvisory.fromJson(Map<String, dynamic> json) { return SecurityAd
   updatedAt: json['updated_at'] as String,
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => WebhooksSecurityAdvisoryVulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
   withdrawnAt: json['withdrawn_at'] as String,
-); }
+);}
 
 final WebhooksSecurityAdvisoryCvss cvss;
 
@@ -46,7 +46,7 @@ final List<WebhooksSecurityAdvisoryVulnerabilities> vulnerabilities;
 
 final String withdrawnAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cvss': cvss.toJson(),
   if (cvssSeverities.isPresent) 'cvss_severities': cvssSeverities.value?.toJson(),
   'cwes': cwes.map((e) => e.toJson()).toList(),
@@ -60,8 +60,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt,
   'vulnerabilities': vulnerabilities.map((e) => e.toJson()).toList(),
   'withdrawn_at': withdrawnAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvss') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cvss') &&
       json.containsKey('cwes') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvss'
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('vulnerabilities') &&
-      json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
-SecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, Omittable<CvssSeverities?>? cvssSeverities, List<Cwes>? cwes, String? description, String? ghsaId, List<WebhooksSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<References>? references, String? severity, String? summary, String? updatedAt, List<WebhooksSecurityAdvisoryVulnerabilities>? vulnerabilities, String? withdrawnAt, }) { return SecurityAdvisory(
+      json.containsKey('withdrawn_at') && json['withdrawn_at'] is String;}
+SecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, Omittable<CvssSeverities?>? cvssSeverities, List<Cwes>? cwes, String? description, String? ghsaId, List<WebhooksSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<References>? references, String? severity, String? summary, String? updatedAt, List<WebhooksSecurityAdvisoryVulnerabilities>? vulnerabilities, String? withdrawnAt, }) {return SecurityAdvisory(
   cvss: cvss ?? this.cvss,
   cvssSeverities: cvssSeverities ?? this.cvssSeverities,
   cwes: cwes ?? this.cwes,
@@ -87,7 +87,7 @@ SecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, Omittable<CvssSev
   updatedAt: updatedAt ?? this.updatedAt,
   vulnerabilities: vulnerabilities ?? this.vulnerabilities,
   withdrawnAt: withdrawnAt ?? this.withdrawnAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityAdvisory &&
           cvss == other.cvss &&
@@ -108,4 +108,4 @@ SecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, Omittable<CvssSev
 
 @override String toString() => 'SecurityAdvisory(\n  cvss: $cvss,\n  cvssSeverities: $cvssSeverities,\n  cwes: $cwes,\n  description: $description,\n  ghsaId: $ghsaId,\n  identifiers: $identifiers,\n  publishedAt: $publishedAt,\n  references: $references,\n  severity: $severity,\n  summary: $summary,\n  updatedAt: $updatedAt,\n  vulnerabilities: $vulnerabilities,\n  withdrawnAt: $withdrawnAt,\n)';
 
- }
+}

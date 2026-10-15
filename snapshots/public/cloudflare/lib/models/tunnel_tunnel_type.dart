@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tunnel.
 sealed class TunnelTunnelType {const TunnelTunnelType();
 
-factory TunnelTunnelType.fromJson(String json) { return switch (json) {
+factory TunnelTunnelType.fromJson(String json) {return switch (json) {
   'cfd_tunnel' => cfdTunnel,
   'warp_connector' => warpConnector,
   'warp' => warp,
@@ -13,7 +13,7 @@ factory TunnelTunnelType.fromJson(String json) { return switch (json) {
   'gre' => gre,
   'cni' => cni,
   _ => TunnelTunnelType$Unknown(json),
-}; }
+};}
 
 static const TunnelTunnelType cfdTunnel = TunnelTunnelType$cfdTunnel._();
 
@@ -32,9 +32,9 @@ static const TunnelTunnelType cni = TunnelTunnelType$cni._();
 static const List<TunnelTunnelType> values = [cfdTunnel, warpConnector, warp, magic, ipSec, gre, cni];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cfd_tunnel' => 'cfdTunnel',
   'warp_connector' => 'warpConnector',
   'warp' => 'warp',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'gre' => 'gre',
   'cni' => 'cni',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TunnelTunnelType$Unknown; } 
+bool get isUnknown {return this is TunnelTunnelType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cfdTunnel, required W Function() warpConnector, required W Function() warp, required W Function() magic, required W Function() ipSec, required W Function() gre, required W Function() cni, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cfdTunnel, required W Function() warpConnector, required W Function() warp, required W Function() magic, required W Function() ipSec, required W Function() gre, required W Function() cni, required W Function(String value) $unknown, }) {return switch (this) {
       TunnelTunnelType$cfdTunnel() => cfdTunnel(),
       TunnelTunnelType$warpConnector() => warpConnector(),
       TunnelTunnelType$warp() => warp(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() cfdTunnel, required W Function() warpConnector,
       TunnelTunnelType$gre() => gre(),
       TunnelTunnelType$cni() => cni(),
       TunnelTunnelType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunnel, W Function()? warpConnector, W Function()? warp, W Function()? magic, W Function()? ipSec, W Function()? gre, W Function()? cni, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunnel, W Function()? warpConnector, W Function()? warp, W Function()? magic, W Function()? ipSec, W Function()? gre, W Function()? cni, W Function(String value)? $unknown, }) {return switch (this) {
       TunnelTunnelType$cfdTunnel() => cfdTunnel != null ? cfdTunnel() : orElse(value),
       TunnelTunnelType$warpConnector() => warpConnector != null ? warpConnector() : orElse(value),
       TunnelTunnelType$warp() => warp != null ? warp() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
       TunnelTunnelType$gre() => gre != null ? gre() : orElse(value),
       TunnelTunnelType$cni() => cni != null ? cni() : orElse(value),
       TunnelTunnelType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TunnelTunnelType($value)';
 
- }
+}
 @immutable final class TunnelTunnelType$cfdTunnel extends TunnelTunnelType {const TunnelTunnelType$cfdTunnel._();
 
 @override String get value => 'cfd_tunnel';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
 
 @override int get hashCode => 'cfd_tunnel'.hashCode;
 
- }
+}
 @immutable final class TunnelTunnelType$warpConnector extends TunnelTunnelType {const TunnelTunnelType$warpConnector._();
 
 @override String get value => 'warp_connector';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
 
 @override int get hashCode => 'warp_connector'.hashCode;
 
- }
+}
 @immutable final class TunnelTunnelType$warp extends TunnelTunnelType {const TunnelTunnelType$warp._();
 
 @override String get value => 'warp';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
 
 @override int get hashCode => 'warp'.hashCode;
 
- }
+}
 @immutable final class TunnelTunnelType$magic extends TunnelTunnelType {const TunnelTunnelType$magic._();
 
 @override String get value => 'magic';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
 
 @override int get hashCode => 'magic'.hashCode;
 
- }
+}
 @immutable final class TunnelTunnelType$ipSec extends TunnelTunnelType {const TunnelTunnelType$ipSec._();
 
 @override String get value => 'ip_sec';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
 
 @override int get hashCode => 'ip_sec'.hashCode;
 
- }
+}
 @immutable final class TunnelTunnelType$gre extends TunnelTunnelType {const TunnelTunnelType$gre._();
 
 @override String get value => 'gre';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
 
 @override int get hashCode => 'gre'.hashCode;
 
- }
+}
 @immutable final class TunnelTunnelType$cni extends TunnelTunnelType {const TunnelTunnelType$cni._();
 
 @override String get value => 'cni';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
 
 @override int get hashCode => 'cni'.hashCode;
 
- }
+}
 @immutable final class TunnelTunnelType$Unknown extends TunnelTunnelType {const TunnelTunnelType$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunne
 
 @override int get hashCode => value.hashCode;
 
- }
+}

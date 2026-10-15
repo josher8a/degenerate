@@ -12,7 +12,7 @@ final class DlpEmailApi with ApiExecutor {const DlpEmailApi(this.apiConfig);
 /// Get mapping
 ///
 /// `GET /accounts/{account_id}/dlp/email/account_mapping`
-Future<ApiResult<DlpAddinAccountMapping?, DlpDatasetsCreateError>> dlpEmailScannerGetAccountMapping({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpAddinAccountMapping?, DlpDatasetsCreateError>> dlpEmailScannerGetAccountMapping({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,11 +29,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Create mapping
 ///
 /// `POST /accounts/{account_id}/dlp/email/account_mapping`
-Future<ApiResult<DlpAddinAccountMapping?, DlpDatasetsCreateError>> dlpEmailScannerCreateAccountMapping({required String accountId, required DlpUpdateAddinAccountMapping body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpAddinAccountMapping?, DlpDatasetsCreateError>> dlpEmailScannerCreateAccountMapping({required String accountId, required DlpUpdateAddinAccountMapping body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,13 +52,13 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// List all email scanner rules
 ///
 /// Lists all email scanner rules for an account.
 ///
 /// `GET /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<List<DlpEmailRule>?, DlpDatasetsCreateError>> dlpEmailScannerListAllRules({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlpEmailRule>?, DlpDatasetsCreateError>> dlpEmailScannerListAllRules({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,11 +75,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Create email scanner rule
 ///
 /// `POST /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerCreateRule({required String accountId, required DlpCreateEmailRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerCreateRule({required String accountId, required DlpCreateEmailRule body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,11 +98,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Update email scanner rule priorities
 ///
 /// `PATCH /accounts/{account_id}/dlp/email/rules`
-Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerUpdateRulePriorities({required String accountId, required DlpUpdateEmailRulePriorities body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerUpdateRulePriorities({required String accountId, required DlpUpdateEmailRulePriorities body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,11 +121,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Get an email scanner rule
 ///
 /// `GET /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerGetRule({required String accountId, required String ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerGetRule({required String accountId, required String ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -142,11 +142,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Update email scanner rule
 ///
 /// `PUT /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerUpdateRule({required String accountId, required String ruleId, required DlpCreateEmailRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerUpdateRule({required String accountId, required String ruleId, required DlpCreateEmailRule body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,11 +165,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Delete email scanner rule
 ///
 /// `DELETE /accounts/{account_id}/dlp/email/rules/{rule_id}`
-Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerDeleteRule({required String accountId, required String ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpEmailRule?, DlpDatasetsCreateError>> dlpEmailScannerDeleteRule({required String accountId, required String ruleId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -186,5 +186,5 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
- }
+}
+}

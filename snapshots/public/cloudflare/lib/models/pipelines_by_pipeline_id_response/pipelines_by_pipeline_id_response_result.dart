@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pipelines_by_pipeline_id_response/tables.dart';@immutable final class PipelinesByPipelineIdResponseResult {const PipelinesByPipelineIdResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, required this.tables, });
 
-factory PipelinesByPipelineIdResponseResult.fromJson(Map<String, dynamic> json) { return PipelinesByPipelineIdResponseResult(
+factory PipelinesByPipelineIdResponseResult.fromJson(Map<String, dynamic> json) {return PipelinesByPipelineIdResponseResult(
   createdAt: json['created_at'] as String,
   id: json['id'] as String,
   modifiedAt: json['modified_at'] as String,
@@ -11,7 +11,7 @@ factory PipelinesByPipelineIdResponseResult.fromJson(Map<String, dynamic> json) 
   sql: json['sql'] as String,
   status: json['status'] as String,
   tables: (json['tables'] as List<dynamic>).map((e) => Tables.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String createdAt;
 
@@ -38,7 +38,7 @@ final String status;
 /// List of streams and sinks used by this pipeline.
 final List<Tables> tables;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   'id': id,
   'modified_at': modifiedAt,
@@ -46,20 +46,20 @@ Map<String, dynamic> toJson() { return {
   'sql': sql,
   'status': status,
   'tables': tables.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('sql') && json['sql'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('tables'); } 
+      json.containsKey('tables');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 128) { errors.add('name: length must be <= 128'); }
-return errors; } 
-PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, String? modifiedAt, String? name, String? sql, String? status, List<Tables>? tables, }) { return PipelinesByPipelineIdResponseResult(
+return errors;}
+PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, String? modifiedAt, String? name, String? sql, String? status, List<Tables>? tables, }) {return PipelinesByPipelineIdResponseResult(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   modifiedAt: modifiedAt ?? this.modifiedAt,
@@ -67,7 +67,7 @@ PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, Str
   sql: sql ?? this.sql,
   status: status ?? this.status,
   tables: tables ?? this.tables,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PipelinesByPipelineIdResponseResult &&
           createdAt == other.createdAt &&
@@ -82,4 +82,4 @@ PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, Str
 
 @override String toString() => 'PipelinesByPipelineIdResponseResult(createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, name: $name, sql: $sql, status: $status, tables: $tables)';
 
- }
+}

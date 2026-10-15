@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';@immutable final class IssuesCreateMilestoneRequest {const IssuesCreateMilestoneRequest({required this.title, this.state, this.description, this.dueOn, });
 
-factory IssuesCreateMilestoneRequest.fromJson(Map<String, dynamic> json) { return IssuesCreateMilestoneRequest(
+factory IssuesCreateMilestoneRequest.fromJson(Map<String, dynamic> json) {return IssuesCreateMilestoneRequest(
   title: json['title'] as String,
   state: json['state'] != null ? IssuesCreateMilestoneRequestState.fromJson(json['state'] as String) : null,
   description: json['description'] as String?,
   dueOn: json['due_on'] != null ? DateTime.parse(json['due_on'] as String) : null,
-); }
+);}
 
 /// The title of the milestone.
 final String title;
@@ -25,19 +25,19 @@ final DateTime? dueOn;
 /// The value of `state`, or its schema default when absent.
 IssuesCreateMilestoneRequestState get stateOrDefault => state ?? IssuesCreateMilestoneRequestState.fromJson('open');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'title': title,
   if (state != null) 'state': state?.toJson(),
   'description': ?description,
   if (dueOn != null) 'due_on': dueOn?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String; } 
-IssuesCreateMilestoneRequest copyWith({String? title, IssuesCreateMilestoneRequestState? Function()? state, String? Function()? description, DateTime? Function()? dueOn, }) { return IssuesCreateMilestoneRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('title') && json['title'] is String;}
+IssuesCreateMilestoneRequest copyWith({String? title, IssuesCreateMilestoneRequestState? Function()? state, String? Function()? description, DateTime? Function()? dueOn, }) {return IssuesCreateMilestoneRequest(
   title: title ?? this.title,
   state: state != null ? state() : this.state,
   description: description != null ? description() : this.description,
   dueOn: dueOn != null ? dueOn() : this.dueOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesCreateMilestoneRequest &&
           title == other.title &&
@@ -49,4 +49,4 @@ IssuesCreateMilestoneRequest copyWith({String? title, IssuesCreateMilestoneReque
 
 @override String toString() => 'IssuesCreateMilestoneRequest(title: $title, state: $state, description: $description, dueOn: $dueOn)';
 
- }
+}

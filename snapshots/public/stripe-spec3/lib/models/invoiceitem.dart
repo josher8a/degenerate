@@ -11,7 +11,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Related guides: [Integrate with the Invoicing API](https://docs.stripe.com/invoicing/integration), [Subscription Invoices](https://docs.stripe.com/billing/invoices/subscription#adding-upcoming-invoice-items).
 @immutable final class Invoiceitem {const Invoiceitem({required this.amount, required this.currency, required this.customer, required this.date, required this.discountable, required this.id, required this.livemode, required this.object, required this.period, required this.proration, required this.quantity, this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.discounts = const Omittable.absent(), this.invoice = const Omittable.absent(), this.metadata = const Omittable.absent(), this.netAmount, this.parent = const Omittable.absent(), this.pricing = const Omittable.absent(), this.prorationDetails, this.taxRates = const Omittable.absent(), this.testClock = const Omittable.absent(), });
 
-factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
+factory Invoiceitem.fromJson(Map<String, dynamic> json) {return Invoiceitem(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   customer: BankAccountCustomer.fromJson(json['customer']),
@@ -34,7 +34,7 @@ factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
   quantity: (json['quantity'] as num).toInt(),
   taxRates: json.containsKey('tax_rates') ? Omittable((json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? TestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Amount (in the `currency` specified) of the invoice item. This should always be equal to `unit_amount * quantity`.
 final int amount;
@@ -100,7 +100,7 @@ final Omittable<List<TaxRate>?> taxRates;
 /// ID of the test clock this invoice item belongs to.
 final Omittable<TestClock?> testClock;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'customer': customer.toJson(),
@@ -123,8 +123,8 @@ Map<String, dynamic> toJson() { return {
   'quantity': quantity,
   if (taxRates.isPresent) 'tax_rates': taxRates.value?.map((e) => e.toJson()).toList(),
   if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('customer') &&
       json.containsKey('date') && json['date'] is num &&
@@ -134,9 +134,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('period') &&
       json.containsKey('proration') && json['proration'] is bool &&
-      json.containsKey('quantity') && json['quantity'] is num; } 
+      json.containsKey('quantity') && json['quantity'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customerAccount$ = customerAccount.value;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
@@ -146,8 +146,8 @@ if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-Invoiceitem copyWith({int? amount, String? currency, BankAccountCustomer? customer, Omittable<String?>? customerAccount, int? date, Omittable<String?>? description, bool? discountable, Omittable<List<InvoiceitemDiscounts>?>? discounts, String? id, Omittable<BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, int? Function()? netAmount, DeletedInvoiceitemObject? object, Omittable<BillingBillResourceInvoiceItemParentsInvoiceItemParent?>? parent, InvoiceLineItemPeriod? period, Omittable<BillingBillResourceInvoicingPricingPricing?>? pricing, bool? proration, ProrationDetails? Function()? prorationDetails, int? quantity, Omittable<List<TaxRate>?>? taxRates, Omittable<TestClock?>? testClock, }) { return Invoiceitem(
+return errors;}
+Invoiceitem copyWith({int? amount, String? currency, BankAccountCustomer? customer, Omittable<String?>? customerAccount, int? date, Omittable<String?>? description, bool? discountable, Omittable<List<InvoiceitemDiscounts>?>? discounts, String? id, Omittable<BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice?>? invoice, bool? livemode, Omittable<Map<String,String>?>? metadata, int? Function()? netAmount, DeletedInvoiceitemObject? object, Omittable<BillingBillResourceInvoiceItemParentsInvoiceItemParent?>? parent, InvoiceLineItemPeriod? period, Omittable<BillingBillResourceInvoicingPricingPricing?>? pricing, bool? proration, ProrationDetails? Function()? prorationDetails, int? quantity, Omittable<List<TaxRate>?>? taxRates, Omittable<TestClock?>? testClock, }) {return Invoiceitem(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,
@@ -170,7 +170,7 @@ Invoiceitem copyWith({int? amount, String? currency, BankAccountCustomer? custom
   quantity: quantity ?? this.quantity,
   taxRates: taxRates ?? this.taxRates,
   testClock: testClock ?? this.testClock,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Invoiceitem &&
           amount == other.amount &&
@@ -202,4 +202,4 @@ Invoiceitem copyWith({int? amount, String? currency, BankAccountCustomer? custom
 
 @override String toString() => 'Invoiceitem(\n  amount: $amount,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  date: $date,\n  description: $description,\n  discountable: $discountable,\n  discounts: $discounts,\n  id: $id,\n  invoice: $invoice,\n  livemode: $livemode,\n  metadata: $metadata,\n  netAmount: $netAmount,\n  object: $object,\n  parent: $parent,\n  period: $period,\n  pricing: $pricing,\n  proration: $proration,\n  prorationDetails: $prorationDetails,\n  quantity: $quantity,\n  taxRates: $taxRates,\n  testClock: $testClock,\n)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl();
 
-factory RadarGetDnsSummaryResponseTtl.fromJson(String json) { return switch (json) {
+factory RadarGetDnsSummaryResponseTtl.fromJson(String json) {return switch (json) {
   'LTE_1M' => lte1M,
   'GT_1M_LTE_5M' => gt1MLte5M,
   'GT_5M_LTE_15M' => gt5MLte15M,
@@ -12,7 +12,7 @@ factory RadarGetDnsSummaryResponseTtl.fromJson(String json) { return switch (jso
   'GT_1D_LTE_1W' => gt1DLte1W,
   'GT_1W' => gt1W,
   _ => RadarGetDnsSummaryResponseTtl$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsSummaryResponseTtl lte1M = RadarGetDnsSummaryResponseTtl$lte1M._();
 
@@ -31,9 +31,9 @@ static const RadarGetDnsSummaryResponseTtl gt1W = RadarGetDnsSummaryResponseTtl$
 static const List<RadarGetDnsSummaryResponseTtl> values = [lte1M, gt1MLte5M, gt5MLte15M, gt15MLte1H, gt1HLte1D, gt1DLte1W, gt1W];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'LTE_1M' => 'lte1M',
   'GT_1M_LTE_5M' => 'gt1MLte5M',
   'GT_5M_LTE_15M' => 'gt5MLte15M',
@@ -42,11 +42,11 @@ String get name { return switch (value) {
   'GT_1D_LTE_1W' => 'gt1DLte1W',
   'GT_1W' => 'gt1W',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsSummaryResponseTtl$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsSummaryResponseTtl$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() lte1M, required W Function() gt1MLte5M, required W Function() gt5MLte15M, required W Function() gt15MLte1H, required W Function() gt1HLte1D, required W Function() gt1DLte1W, required W Function() gt1W, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() lte1M, required W Function() gt1MLte5M, required W Function() gt5MLte15M, required W Function() gt15MLte1H, required W Function() gt1HLte1D, required W Function() gt1DLte1W, required W Function() gt1W, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsSummaryResponseTtl$lte1M() => lte1M(),
       RadarGetDnsSummaryResponseTtl$gt1MLte5M() => gt1MLte5M(),
       RadarGetDnsSummaryResponseTtl$gt5MLte15M() => gt5MLte15M(),
@@ -55,9 +55,9 @@ W when<W>({required W Function() lte1M, required W Function() gt1MLte5M, require
       RadarGetDnsSummaryResponseTtl$gt1DLte1W() => gt1DLte1W(),
       RadarGetDnsSummaryResponseTtl$gt1W() => gt1W(),
       RadarGetDnsSummaryResponseTtl$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W Function()? gt1MLte5M, W Function()? gt5MLte15M, W Function()? gt15MLte1H, W Function()? gt1HLte1D, W Function()? gt1DLte1W, W Function()? gt1W, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W Function()? gt1MLte5M, W Function()? gt5MLte15M, W Function()? gt15MLte1H, W Function()? gt1HLte1D, W Function()? gt1DLte1W, W Function()? gt1W, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsSummaryResponseTtl$lte1M() => lte1M != null ? lte1M() : orElse(value),
       RadarGetDnsSummaryResponseTtl$gt1MLte5M() => gt1MLte5M != null ? gt1MLte5M() : orElse(value),
       RadarGetDnsSummaryResponseTtl$gt5MLte15M() => gt5MLte15M != null ? gt5MLte15M() : orElse(value),
@@ -66,10 +66,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
       RadarGetDnsSummaryResponseTtl$gt1DLte1W() => gt1DLte1W != null ? gt1DLte1W() : orElse(value),
       RadarGetDnsSummaryResponseTtl$gt1W() => gt1W != null ? gt1W() : orElse(value),
       RadarGetDnsSummaryResponseTtl$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsSummaryResponseTtl($value)';
 
- }
+}
 @immutable final class RadarGetDnsSummaryResponseTtl$lte1M extends RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl$lte1M._();
 
 @override String get value => 'LTE_1M';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
 
 @override int get hashCode => 'LTE_1M'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryResponseTtl$gt1MLte5M extends RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl$gt1MLte5M._();
 
 @override String get value => 'GT_1M_LTE_5M';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
 
 @override int get hashCode => 'GT_1M_LTE_5M'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryResponseTtl$gt5MLte15M extends RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl$gt5MLte15M._();
 
 @override String get value => 'GT_5M_LTE_15M';
@@ -96,7 +96,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
 
 @override int get hashCode => 'GT_5M_LTE_15M'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryResponseTtl$gt15MLte1H extends RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl$gt15MLte1H._();
 
 @override String get value => 'GT_15M_LTE_1H';
@@ -105,7 +105,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
 
 @override int get hashCode => 'GT_15M_LTE_1H'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryResponseTtl$gt1HLte1D extends RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl$gt1HLte1D._();
 
 @override String get value => 'GT_1H_LTE_1D';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
 
 @override int get hashCode => 'GT_1H_LTE_1D'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryResponseTtl$gt1DLte1W extends RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl$gt1DLte1W._();
 
 @override String get value => 'GT_1D_LTE_1W';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
 
 @override int get hashCode => 'GT_1D_LTE_1W'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryResponseTtl$gt1W extends RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl$gt1W._();
 
 @override String get value => 'GT_1W';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
 
 @override int get hashCode => 'GT_1W'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsSummaryResponseTtl$Unknown extends RadarGetDnsSummaryResponseTtl {const RadarGetDnsSummaryResponseTtl$Unknown(this.value);
 
 @override final String value;
@@ -142,4 +142,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

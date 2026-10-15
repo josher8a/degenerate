@@ -3,23 +3,23 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_single_member.dart';@immutable final class BatchCreateMembersRequest {const BatchCreateMembersRequest({required this.members});
 
-factory BatchCreateMembersRequest.fromJson(Map<String, dynamic> json) { return BatchCreateMembersRequest(
+factory BatchCreateMembersRequest.fromJson(Map<String, dynamic> json) {return BatchCreateMembersRequest(
   members: (json['members'] as List<dynamic>).map((e) => CreateSingleMember.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<CreateSingleMember> members;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'members': members.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('members'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('members');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (members.length > 10) { errors.add('members: must have <= 10 items'); }
-return errors; } 
-BatchCreateMembersRequest copyWith({List<CreateSingleMember>? members}) { return BatchCreateMembersRequest(
+return errors;}
+BatchCreateMembersRequest copyWith({List<CreateSingleMember>? members}) {return BatchCreateMembersRequest(
   members: members ?? this.members,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BatchCreateMembersRequest &&
           listEquals(members, other.members);
@@ -28,4 +28,4 @@ BatchCreateMembersRequest copyWith({List<CreateSingleMember>? members}) { return
 
 @override String toString() => 'BatchCreateMembersRequest(members: $members)';
 
- }
+}

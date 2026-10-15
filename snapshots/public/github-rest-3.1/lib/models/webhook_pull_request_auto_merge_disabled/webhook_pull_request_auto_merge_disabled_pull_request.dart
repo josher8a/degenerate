@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';import 'package:pub_github_rest_3_1/models/team10.dart';import 'package:pub_github_rest_3_1/models/user12.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_milestoned/issue_assignees.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_assigned/pull_request_merged_by.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_assigned/webhook_pull_request_assigned_pull_request_requested_reviewers.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/active_lock_reason.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_assignee.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_labels.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_milestone.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_auto_merge.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_base.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_head.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_links.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_requested_teams.dart';@immutable final class WebhookPullRequestAutoMergeDisabledPullRequest {const WebhookPullRequestAutoMergeDisabledPullRequest({required this.createdAt, required this.activeLockReason, required this.url, required this.assignee, required this.assignees, required this.authorAssociation, required this.autoMerge, required this.base, required this.body, required this.updatedAt, required this.closedAt, required this.title, required this.commentsUrl, required this.statusesUrl, required this.commitsUrl, required this.links, required this.state, required this.diffUrl, required this.draft, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.reviewCommentsUrl, required this.mergeCommitSha, required this.requestedTeams, required this.requestedReviewers, required this.patchUrl, required this.mergedAt, required this.user, required this.milestone, required this.nodeId, required this.number, required this.reviewCommentUrl, this.rebaseable = const Omittable.absent(), this.mergeableState, this.mergeable = const Omittable.absent(), this.mergedBy = const Omittable.absent(), this.reviewComments, this.maintainerCanModify, this.deletions, this.commits, this.comments, this.changedFiles, this.additions, this.merged = const Omittable.absent(), });
 
-factory WebhookPullRequestAutoMergeDisabledPullRequest.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeDisabledPullRequest(
+factory WebhookPullRequestAutoMergeDisabledPullRequest.fromJson(Map<String, dynamic> json) {return WebhookPullRequestAutoMergeDisabledPullRequest(
   links: WebhooksPullRequest5Links.fromJson(json['_links'] as Map<String, dynamic>),
   activeLockReason: json['active_lock_reason'] != null ? ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   additions: json['additions'] != null ? (json['additions'] as num).toInt() : null,
@@ -52,7 +52,7 @@ factory WebhookPullRequestAutoMergeDisabledPullRequest.fromJson(Map<String, dyna
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhooksPullRequest5Links links;
 
@@ -158,7 +158,7 @@ final Uri url;
 
 final WebhooksIssueCommentUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_links': links.toJson(),
   'active_lock_reason': activeLockReason?.toJson(),
   'additions': ?additions,
@@ -207,8 +207,8 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_links') &&
       json.containsKey('active_lock_reason') &&
       json.containsKey('assignee') &&
       json.containsKey('assignees') &&
@@ -243,8 +243,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('user'); } 
-WebhookPullRequestAutoMergeDisabledPullRequest copyWith({WebhooksPullRequest5Links? links, ActiveLockReason? Function()? activeLockReason, int? Function()? additions, WebhooksIssue2Assignee? Function()? assignee, List<IssueAssignees?>? assignees, AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhooksPullRequest5Base? base, String? Function()? body, int? Function()? changedFiles, DateTime? Function()? closedAt, int? Function()? comments, Uri? commentsUrl, int? Function()? commits, Uri? commitsUrl, DateTime? createdAt, int? Function()? deletions, Uri? diffUrl, bool? draft, WebhooksPullRequest5Head? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksIssue2Labels>? labels, bool? locked, bool? Function()? maintainerCanModify, String? Function()? mergeCommitSha, Omittable<bool?>? mergeable, String? Function()? mergeableState, Omittable<bool?>? merged, DateTime? Function()? mergedAt, Omittable<PullRequestMergedBy?>? mergedBy, WebhooksIssue2Milestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, Omittable<bool?>? rebaseable, List<WebhookPullRequestAssignedPullRequestRequestedReviewers?>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, int? Function()? reviewComments, Uri? reviewCommentsUrl, IssuesUpdateRequestState? state, Uri? statusesUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestAutoMergeDisabledPullRequest(
+      json.containsKey('user');}
+WebhookPullRequestAutoMergeDisabledPullRequest copyWith({WebhooksPullRequest5Links? links, ActiveLockReason? Function()? activeLockReason, int? Function()? additions, WebhooksIssue2Assignee? Function()? assignee, List<IssueAssignees?>? assignees, AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhooksPullRequest5Base? base, String? Function()? body, int? Function()? changedFiles, DateTime? Function()? closedAt, int? Function()? comments, Uri? commentsUrl, int? Function()? commits, Uri? commitsUrl, DateTime? createdAt, int? Function()? deletions, Uri? diffUrl, bool? draft, WebhooksPullRequest5Head? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksIssue2Labels>? labels, bool? locked, bool? Function()? maintainerCanModify, String? Function()? mergeCommitSha, Omittable<bool?>? mergeable, String? Function()? mergeableState, Omittable<bool?>? merged, DateTime? Function()? mergedAt, Omittable<PullRequestMergedBy?>? mergedBy, WebhooksIssue2Milestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, Omittable<bool?>? rebaseable, List<WebhookPullRequestAssignedPullRequestRequestedReviewers?>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, int? Function()? reviewComments, Uri? reviewCommentsUrl, IssuesUpdateRequestState? state, Uri? statusesUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) {return WebhookPullRequestAutoMergeDisabledPullRequest(
   links: links ?? this.links,
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   additions: additions != null ? additions() : this.additions,
@@ -293,7 +293,7 @@ WebhookPullRequestAutoMergeDisabledPullRequest copyWith({WebhooksPullRequest5Lin
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestAutoMergeDisabledPullRequest &&
           links == other.links &&
@@ -349,4 +349,4 @@ WebhookPullRequestAutoMergeDisabledPullRequest copyWith({WebhooksPullRequest5Lin
 
 @override String toString() => 'WebhookPullRequestAutoMergeDisabledPullRequest(\n  links: $links,\n  activeLockReason: $activeLockReason,\n  additions: $additions,\n  assignee: $assignee,\n  assignees: $assignees,\n  authorAssociation: $authorAssociation,\n  autoMerge: $autoMerge,\n  base: $base,\n  body: $body,\n  changedFiles: $changedFiles,\n  closedAt: $closedAt,\n  comments: $comments,\n  commentsUrl: $commentsUrl,\n  commits: $commits,\n  commitsUrl: $commitsUrl,\n  createdAt: $createdAt,\n  deletions: $deletions,\n  diffUrl: $diffUrl,\n  draft: $draft,\n  head: $head,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  issueUrl: $issueUrl,\n  labels: $labels,\n  locked: $locked,\n  maintainerCanModify: $maintainerCanModify,\n  mergeCommitSha: $mergeCommitSha,\n  mergeable: $mergeable,\n  mergeableState: $mergeableState,\n  merged: $merged,\n  mergedAt: $mergedAt,\n  mergedBy: $mergedBy,\n  milestone: $milestone,\n  nodeId: $nodeId,\n  number: $number,\n  patchUrl: $patchUrl,\n  rebaseable: $rebaseable,\n  requestedReviewers: $requestedReviewers,\n  requestedTeams: $requestedTeams,\n  reviewCommentUrl: $reviewCommentUrl,\n  reviewComments: $reviewComments,\n  reviewCommentsUrl: $reviewCommentsUrl,\n  state: $state,\n  statusesUrl: $statusesUrl,\n  title: $title,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
- }
+}

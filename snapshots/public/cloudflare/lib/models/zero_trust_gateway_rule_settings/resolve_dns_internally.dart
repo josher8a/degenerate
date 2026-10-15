@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the fallback behavior to apply when the internal DNS response code differs from 'NOERROR' or when the response data contains only CNAME records for 'A' or 'AAAA' queries.
 sealed class ResolveDnsInternallyFallback {const ResolveDnsInternallyFallback();
 
-factory ResolveDnsInternallyFallback.fromJson(String json) { return switch (json) {
+factory ResolveDnsInternallyFallback.fromJson(String json) {return switch (json) {
   'none' => none,
   'public_dns' => publicDns,
   _ => ResolveDnsInternallyFallback$Unknown(json),
-}; }
+};}
 
 static const ResolveDnsInternallyFallback none = ResolveDnsInternallyFallback$none._();
 
@@ -17,30 +17,30 @@ static const ResolveDnsInternallyFallback publicDns = ResolveDnsInternallyFallba
 static const List<ResolveDnsInternallyFallback> values = [none, publicDns];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'public_dns' => 'publicDns',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResolveDnsInternallyFallback$Unknown; } 
+bool get isUnknown {return this is ResolveDnsInternallyFallback$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() publicDns, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() publicDns, required W Function(String value) $unknown, }) {return switch (this) {
       ResolveDnsInternallyFallback$none() => none(),
       ResolveDnsInternallyFallback$publicDns() => publicDns(),
       ResolveDnsInternallyFallback$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? publicDns, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? publicDns, W Function(String value)? $unknown, }) {return switch (this) {
       ResolveDnsInternallyFallback$none() => none != null ? none() : orElse(value),
       ResolveDnsInternallyFallback$publicDns() => publicDns != null ? publicDns() : orElse(value),
       ResolveDnsInternallyFallback$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResolveDnsInternallyFallback($value)';
 
- }
+}
 @immutable final class ResolveDnsInternallyFallback$none extends ResolveDnsInternallyFallback {const ResolveDnsInternallyFallback$none._();
 
 @override String get value => 'none';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class ResolveDnsInternallyFallback$publicDns extends ResolveDnsInternallyFallback {const ResolveDnsInternallyFallback$publicDns._();
 
 @override String get value => 'public_dns';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'public_dns'.hashCode;
 
- }
+}
 @immutable final class ResolveDnsInternallyFallback$Unknown extends ResolveDnsInternallyFallback {const ResolveDnsInternallyFallback$Unknown(this.value);
 
 @override final String value;
@@ -68,14 +68,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure to forward the query to the internal DNS service, passing the specified 'view_id' as input. Not used when 'dns_resolvers' is specified or 'resolve_dns_through_cloudflare' is set. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules.
 @immutable final class ResolveDnsInternally {const ResolveDnsInternally({this.fallback, this.viewId, });
 
-factory ResolveDnsInternally.fromJson(Map<String, dynamic> json) { return ResolveDnsInternally(
+factory ResolveDnsInternally.fromJson(Map<String, dynamic> json) {return ResolveDnsInternally(
   fallback: json['fallback'] != null ? ResolveDnsInternallyFallback.fromJson(json['fallback'] as String) : null,
   viewId: json['view_id'] as String?,
-); }
+);}
 
 /// Specify the fallback behavior to apply when the internal DNS response code differs from 'NOERROR' or when the response data contains only CNAME records for 'A' or 'AAAA' queries.
 final ResolveDnsInternallyFallback? fallback;
@@ -83,15 +83,15 @@ final ResolveDnsInternallyFallback? fallback;
 /// Specify the internal DNS view identifier to pass to the internal DNS service.
 final String? viewId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fallback != null) 'fallback': fallback?.toJson(),
   'view_id': ?viewId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fallback', 'view_id'}.contains(key)); } 
-ResolveDnsInternally copyWith({ResolveDnsInternallyFallback? Function()? fallback, String? Function()? viewId, }) { return ResolveDnsInternally(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'fallback', 'view_id'}.contains(key));}
+ResolveDnsInternally copyWith({ResolveDnsInternallyFallback? Function()? fallback, String? Function()? viewId, }) {return ResolveDnsInternally(
   fallback: fallback != null ? fallback() : this.fallback,
   viewId: viewId != null ? viewId() : this.viewId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResolveDnsInternally &&
           fallback == other.fallback &&
@@ -101,4 +101,4 @@ ResolveDnsInternally copyWith({ResolveDnsInternallyFallback? Function()? fallbac
 
 @override String toString() => 'ResolveDnsInternally(fallback: $fallback, viewId: $viewId)';
 
- }
+}

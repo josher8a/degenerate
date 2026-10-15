@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 sealed class AccessAzureAdRequestType {const AccessAzureAdRequestType();
 
-factory AccessAzureAdRequestType.fromJson(String json) { return switch (json) {
+factory AccessAzureAdRequestType.fromJson(String json) {return switch (json) {
   'onetimepin' => onetimepin,
   'azureAD' => azureAd,
   'saml' => saml,
@@ -20,7 +20,7 @@ factory AccessAzureAdRequestType.fromJson(String json) { return switch (json) {
   'pingone' => pingone,
   'yandex' => yandex,
   _ => AccessAzureAdRequestType$Unknown(json),
-}; }
+};}
 
 static const AccessAzureAdRequestType onetimepin = AccessAzureAdRequestType$onetimepin._();
 
@@ -53,9 +53,9 @@ static const AccessAzureAdRequestType yandex = AccessAzureAdRequestType$yandex._
 static const List<AccessAzureAdRequestType> values = [onetimepin, azureAd, saml, centrify, facebook, github, googleApps, google, linkedin, oidc, okta, onelogin, pingone, yandex];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'onetimepin' => 'onetimepin',
   'azureAD' => 'azureAd',
   'saml' => 'saml',
@@ -71,11 +71,11 @@ String get name { return switch (value) {
   'pingone' => 'pingone',
   'yandex' => 'yandex',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccessAzureAdRequestType$Unknown; } 
+bool get isUnknown {return this is AccessAzureAdRequestType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() onetimepin, required W Function() azureAd, required W Function() saml, required W Function() centrify, required W Function() facebook, required W Function() github, required W Function() googleApps, required W Function() google, required W Function() linkedin, required W Function() oidc, required W Function() okta, required W Function() onelogin, required W Function() pingone, required W Function() yandex, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() onetimepin, required W Function() azureAd, required W Function() saml, required W Function() centrify, required W Function() facebook, required W Function() github, required W Function() googleApps, required W Function() google, required W Function() linkedin, required W Function() oidc, required W Function() okta, required W Function() onelogin, required W Function() pingone, required W Function() yandex, required W Function(String value) $unknown, }) {return switch (this) {
       AccessAzureAdRequestType$onetimepin() => onetimepin(),
       AccessAzureAdRequestType$azureAd() => azureAd(),
       AccessAzureAdRequestType$saml() => saml(),
@@ -91,9 +91,9 @@ W when<W>({required W Function() onetimepin, required W Function() azureAd, requ
       AccessAzureAdRequestType$pingone() => pingone(),
       AccessAzureAdRequestType$yandex() => yandex(),
       AccessAzureAdRequestType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimepin, W Function()? azureAd, W Function()? saml, W Function()? centrify, W Function()? facebook, W Function()? github, W Function()? googleApps, W Function()? google, W Function()? linkedin, W Function()? oidc, W Function()? okta, W Function()? onelogin, W Function()? pingone, W Function()? yandex, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimepin, W Function()? azureAd, W Function()? saml, W Function()? centrify, W Function()? facebook, W Function()? github, W Function()? googleApps, W Function()? google, W Function()? linkedin, W Function()? oidc, W Function()? okta, W Function()? onelogin, W Function()? pingone, W Function()? yandex, W Function(String value)? $unknown, }) {return switch (this) {
       AccessAzureAdRequestType$onetimepin() => onetimepin != null ? onetimepin() : orElse(value),
       AccessAzureAdRequestType$azureAd() => azureAd != null ? azureAd() : orElse(value),
       AccessAzureAdRequestType$saml() => saml != null ? saml() : orElse(value),
@@ -109,10 +109,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
       AccessAzureAdRequestType$pingone() => pingone != null ? pingone() : orElse(value),
       AccessAzureAdRequestType$yandex() => yandex != null ? yandex() : orElse(value),
       AccessAzureAdRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccessAzureAdRequestType($value)';
 
- }
+}
 @immutable final class AccessAzureAdRequestType$onetimepin extends AccessAzureAdRequestType {const AccessAzureAdRequestType$onetimepin._();
 
 @override String get value => 'onetimepin';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'onetimepin'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$azureAd extends AccessAzureAdRequestType {const AccessAzureAdRequestType$azureAd._();
 
 @override String get value => 'azureAD';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'azureAD'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$saml extends AccessAzureAdRequestType {const AccessAzureAdRequestType$saml._();
 
 @override String get value => 'saml';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'saml'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$centrify extends AccessAzureAdRequestType {const AccessAzureAdRequestType$centrify._();
 
 @override String get value => 'centrify';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'centrify'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$facebook extends AccessAzureAdRequestType {const AccessAzureAdRequestType$facebook._();
 
 @override String get value => 'facebook';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'facebook'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$github extends AccessAzureAdRequestType {const AccessAzureAdRequestType$github._();
 
 @override String get value => 'github';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'github'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$googleApps extends AccessAzureAdRequestType {const AccessAzureAdRequestType$googleApps._();
 
 @override String get value => 'google-apps';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'google-apps'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$google extends AccessAzureAdRequestType {const AccessAzureAdRequestType$google._();
 
 @override String get value => 'google';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'google'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$linkedin extends AccessAzureAdRequestType {const AccessAzureAdRequestType$linkedin._();
 
 @override String get value => 'linkedin';
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'linkedin'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$oidc extends AccessAzureAdRequestType {const AccessAzureAdRequestType$oidc._();
 
 @override String get value => 'oidc';
@@ -202,7 +202,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'oidc'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$okta extends AccessAzureAdRequestType {const AccessAzureAdRequestType$okta._();
 
 @override String get value => 'okta';
@@ -211,7 +211,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'okta'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$onelogin extends AccessAzureAdRequestType {const AccessAzureAdRequestType$onelogin._();
 
 @override String get value => 'onelogin';
@@ -220,7 +220,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'onelogin'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$pingone extends AccessAzureAdRequestType {const AccessAzureAdRequestType$pingone._();
 
 @override String get value => 'pingone';
@@ -229,7 +229,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'pingone'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$yandex extends AccessAzureAdRequestType {const AccessAzureAdRequestType$yandex._();
 
 @override String get value => 'yandex';
@@ -238,7 +238,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => 'yandex'.hashCode;
 
- }
+}
 @immutable final class AccessAzureAdRequestType$Unknown extends AccessAzureAdRequestType {const AccessAzureAdRequestType$Unknown(this.value);
 
 @override final String value;
@@ -248,4 +248,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimep
 
 @override int get hashCode => value.hashCode;
 
- }
+}

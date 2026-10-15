@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';@immutable final class WebhooksAnswer {const WebhooksAnswer({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, required this.repositoryUrl, required this.updatedAt, required this.user, this.reactions, });
 
-factory WebhooksAnswer.fromJson(Map<String, dynamic> json) { return WebhooksAnswer(
+factory WebhooksAnswer.fromJson(Map<String, dynamic> json) {return WebhooksAnswer(
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   childCommentCount: (json['child_comment_count'] as num).toInt(),
@@ -17,7 +17,7 @@ factory WebhooksAnswer.fromJson(Map<String, dynamic> json) { return WebhooksAnsw
   repositoryUrl: json['repository_url'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
@@ -46,7 +46,7 @@ final DateTime updatedAt;
 
 final DiscussionUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author_association': authorAssociation.toJson(),
   'body': body,
   'child_comment_count': childCommentCount,
@@ -60,8 +60,8 @@ Map<String, dynamic> toJson() { return {
   'repository_url': repositoryUrl,
   'updated_at': updatedAt.toIso8601String(),
   'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('child_comment_count') && json['child_comment_count'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('parent_id') &&
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('user'); } 
-WebhooksAnswer copyWith({AuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, dynamic Function()? parentId, DiscussionReactions? Function()? reactions, String? repositoryUrl, DateTime? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksAnswer(
+      json.containsKey('user');}
+WebhooksAnswer copyWith({AuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, dynamic Function()? parentId, DiscussionReactions? Function()? reactions, String? repositoryUrl, DateTime? updatedAt, DiscussionUser? Function()? user, }) {return WebhooksAnswer(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   childCommentCount: childCommentCount ?? this.childCommentCount,
@@ -87,7 +87,7 @@ WebhooksAnswer copyWith({AuthorAssociation? authorAssociation, String? body, int
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksAnswer &&
           authorAssociation == other.authorAssociation &&
@@ -108,4 +108,4 @@ WebhooksAnswer copyWith({AuthorAssociation? authorAssociation, String? body, int
 
 @override String toString() => 'WebhooksAnswer(\n  authorAssociation: $authorAssociation,\n  body: $body,\n  childCommentCount: $childCommentCount,\n  createdAt: $createdAt,\n  discussionId: $discussionId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  nodeId: $nodeId,\n  parentId: $parentId,\n  reactions: $reactions,\n  repositoryUrl: $repositoryUrl,\n  updatedAt: $updatedAt,\n  user: $user,\n)';
 
- }
+}

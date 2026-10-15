@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpSummaryByPostQuantumDeviceType {const RadarGetHttpSummaryByPostQuantumDeviceType();
 
-factory RadarGetHttpSummaryByPostQuantumDeviceType.fromJson(String json) { return switch (json) {
+factory RadarGetHttpSummaryByPostQuantumDeviceType.fromJson(String json) {return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
   _ => RadarGetHttpSummaryByPostQuantumDeviceType$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpSummaryByPostQuantumDeviceType desktop = RadarGetHttpSummaryByPostQuantumDeviceType$desktop._();
 
@@ -19,33 +19,33 @@ static const RadarGetHttpSummaryByPostQuantumDeviceType $other = RadarGetHttpSum
 static const List<RadarGetHttpSummaryByPostQuantumDeviceType> values = [desktop, mobile, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DESKTOP' => 'desktop',
   'MOBILE' => 'mobile',
   'OTHER' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpSummaryByPostQuantumDeviceType$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpSummaryByPostQuantumDeviceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpSummaryByPostQuantumDeviceType$desktop() => desktop(),
       RadarGetHttpSummaryByPostQuantumDeviceType$mobile() => mobile(),
       RadarGetHttpSummaryByPostQuantumDeviceType$$other() => $other(),
       RadarGetHttpSummaryByPostQuantumDeviceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpSummaryByPostQuantumDeviceType$desktop() => desktop != null ? desktop() : orElse(value),
       RadarGetHttpSummaryByPostQuantumDeviceType$mobile() => mobile != null ? mobile() : orElse(value),
       RadarGetHttpSummaryByPostQuantumDeviceType$$other() => $other != null ? $other() : orElse(value),
       RadarGetHttpSummaryByPostQuantumDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpSummaryByPostQuantumDeviceType($value)';
 
- }
+}
 @immutable final class RadarGetHttpSummaryByPostQuantumDeviceType$desktop extends RadarGetHttpSummaryByPostQuantumDeviceType {const RadarGetHttpSummaryByPostQuantumDeviceType$desktop._();
 
 @override String get value => 'DESKTOP';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'DESKTOP'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpSummaryByPostQuantumDeviceType$mobile extends RadarGetHttpSummaryByPostQuantumDeviceType {const RadarGetHttpSummaryByPostQuantumDeviceType$mobile._();
 
 @override String get value => 'MOBILE';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'MOBILE'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpSummaryByPostQuantumDeviceType$$other extends RadarGetHttpSummaryByPostQuantumDeviceType {const RadarGetHttpSummaryByPostQuantumDeviceType$$other._();
 
 @override String get value => 'OTHER';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => 'OTHER'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpSummaryByPostQuantumDeviceType$Unknown extends RadarGetHttpSummaryByPostQuantumDeviceType {const RadarGetHttpSummaryByPostQuantumDeviceType$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

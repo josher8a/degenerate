@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Deployments {const Deployments({required this.createdAt, required this.deploymentId, required this.versionId, this.comment = const Omittable.absent(), });
 
-factory Deployments.fromJson(Map<String, dynamic> json) { return Deployments(
+factory Deployments.fromJson(Map<String, dynamic> json) {return Deployments(
   comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   deploymentId: json['deployment_id'] as String,
   versionId: json['version_id'] as String,
-); }
+);}
 
 final Omittable<String?> comment;
 
@@ -18,21 +18,21 @@ final String deploymentId;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
   'deployment_id': deploymentId,
   'version_id': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('deployment_id') && json['deployment_id'] is String &&
-      json.containsKey('version_id') && json['version_id'] is String; } 
-Deployments copyWith({Omittable<String?>? comment, String? createdAt, String? deploymentId, String? versionId, }) { return Deployments(
+      json.containsKey('version_id') && json['version_id'] is String;}
+Deployments copyWith({Omittable<String?>? comment, String? createdAt, String? deploymentId, String? versionId, }) {return Deployments(
   comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   deploymentId: deploymentId ?? this.deploymentId,
   versionId: versionId ?? this.versionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Deployments &&
           comment == other.comment &&
@@ -44,4 +44,4 @@ Deployments copyWith({Omittable<String?>? comment, String? createdAt, String? de
 
 @override String toString() => 'Deployments(comment: $comment, createdAt: $createdAt, deploymentId: $deploymentId, versionId: $versionId)';
 
- }
+}

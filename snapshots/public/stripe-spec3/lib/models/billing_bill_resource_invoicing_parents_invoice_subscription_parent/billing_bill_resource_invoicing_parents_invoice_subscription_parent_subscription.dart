@@ -8,11 +8,11 @@ const BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription({
 const BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription._({required this.rawValue, required this.string, required this.subscription, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription.fromJson(Object? json) { return BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription._(
+factory BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription.fromJson(Object? json) {return BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   subscription: json is Map<String, dynamic> && Subscription.canParse(json) ? parseAnyOfVariant<Subscription>(json, (value) => Subscription.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription(${toJson()})';
 
- }
+}

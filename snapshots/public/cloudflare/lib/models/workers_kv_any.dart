@@ -7,7 +7,7 @@ const WorkersKvAny({this.string = const Omittable.absent(), this.$double = const
 const WorkersKvAny._({required this.rawValue, required this.string, required this.$double, required this.$int, required this.$bool, required this.mapStringdynamic, required this.listWorkersKvAnyOrNull, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory WorkersKvAny.fromJson(Object? json) { return WorkersKvAny._(
+factory WorkersKvAny.fromJson(Object? json) {return WorkersKvAny._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
@@ -15,7 +15,7 @@ factory WorkersKvAny.fromJson(Object? json) { return WorkersKvAny._(
   $bool: parseAnyOfVariant<bool>(json, (value) => value! as bool),
   mapStringdynamic: parseAnyOfVariant<Map<String, dynamic>?>(json, (value) => value as Map<String, dynamic>?),
   listWorkersKvAnyOrNull: parseAnyOfVariant<List<WorkersKvAny?>>(json, (value) => (value! as List<dynamic>).map((e) => e == null ? null : WorkersKvAny.fromJson(e)).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -61,4 +61,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'WorkersKvAny(${toJson()})';
 
- }
+}

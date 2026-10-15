@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_schema_info/schema_info.dart';@immutable final class ShieldOperationFeatureSchemaInfo {const ShieldOperationFeatureSchemaInfo({this.schemaInfo});
 
-factory ShieldOperationFeatureSchemaInfo.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureSchemaInfo(
+factory ShieldOperationFeatureSchemaInfo.fromJson(Map<String, dynamic> json) {return ShieldOperationFeatureSchemaInfo(
   schemaInfo: json['schema_info'] != null ? SchemaInfo.fromJson(json['schema_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final SchemaInfo? schemaInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (schemaInfo != null) 'schema_info': schemaInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'schema_info'}.contains(key)); } 
-ShieldOperationFeatureSchemaInfo copyWith({SchemaInfo? Function()? schemaInfo}) { return ShieldOperationFeatureSchemaInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'schema_info'}.contains(key));}
+ShieldOperationFeatureSchemaInfo copyWith({SchemaInfo? Function()? schemaInfo}) {return ShieldOperationFeatureSchemaInfo(
   schemaInfo: schemaInfo != null ? schemaInfo() : this.schemaInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOperationFeatureSchemaInfo &&
           schemaInfo == other.schemaInfo;
@@ -24,4 +24,4 @@ ShieldOperationFeatureSchemaInfo copyWith({SchemaInfo? Function()? schemaInfo}) 
 
 @override String toString() => 'ShieldOperationFeatureSchemaInfo(schemaInfo: $schemaInfo)';
 
- }
+}

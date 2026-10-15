@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeepObjectQueryParamsObjectResponseArgs {const DeepObjectQueryParamsObjectResponseArgs({required this.objArrParamarr, required this.objParamany, required this.objParamboolOpt, required this.objParambool, required this.objParamdateTime, required this.objParamdate, required this.objParamenum, required this.objParamfloat32, required this.objParamint32, required this.objParamint, required this.objParamnum, required this.objParamstrOpt, required this.objParamstr, required this.objParamintEnum, required this.objParamint32Enum, this.objParamfloat64Str, this.objParamint64Str, this.objParambigint, this.objParambigintStr, this.objParamdecimal, this.objParamdecimalStr, });
 
-factory DeepObjectQueryParamsObjectResponseArgs.fromJson(Map<String, dynamic> json) { return DeepObjectQueryParamsObjectResponseArgs(
+factory DeepObjectQueryParamsObjectResponseArgs.fromJson(Map<String, dynamic> json) {return DeepObjectQueryParamsObjectResponseArgs(
   objArrParamarr: (json['objArrParam[arr]'] as List<dynamic>).map((e) => e as String).toList(),
   objParamany: json['objParam[any]'] as String,
   objParamboolOpt: json['objParam[boolOpt]'] as String,
@@ -25,7 +25,7 @@ factory DeepObjectQueryParamsObjectResponseArgs.fromJson(Map<String, dynamic> js
   objParambigintStr: json['objParam[bigintStr]'] as String?,
   objParamdecimal: json['objParam[decimal]'] as String?,
   objParamdecimalStr: json['objParam[decimalStr]'] as String?,
-); }
+);}
 
 final List<String> objArrParamarr;
 
@@ -89,7 +89,7 @@ final String? objParamdecimal;
 /// Example: `'3.14159265358979344719667586'`
 final String? objParamdecimalStr;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'objArrParam[arr]': objArrParamarr,
   'objParam[any]': objParamany,
   'objParam[boolOpt]': objParamboolOpt,
@@ -111,8 +111,8 @@ Map<String, dynamic> toJson() { return {
   'objParam[bigintStr]': ?objParambigintStr,
   'objParam[decimal]': ?objParamdecimal,
   'objParam[decimalStr]': ?objParamdecimalStr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('objArrParam[arr]') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('objArrParam[arr]') &&
       json.containsKey('objParam[any]') && json['objParam[any]'] is String &&
       json.containsKey('objParam[boolOpt]') && json['objParam[boolOpt]'] is String &&
       json.containsKey('objParam[bool]') && json['objParam[bool]'] is String &&
@@ -126,8 +126,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objAr
       json.containsKey('objParam[strOpt]') && json['objParam[strOpt]'] is String &&
       json.containsKey('objParam[str]') && json['objParam[str]'] is String &&
       json.containsKey('objParam[intEnum]') && json['objParam[intEnum]'] is String &&
-      json.containsKey('objParam[int32Enum]') && json['objParam[int32Enum]'] is String; } 
-DeepObjectQueryParamsObjectResponseArgs copyWith({List<String>? objArrParamarr, String? objParamany, String? objParamboolOpt, String? objParambool, String? objParamdateTime, String? objParamdate, String? objParamenum, String? objParamfloat32, String? Function()? objParamfloat64Str, String? objParamint32, String? objParamint, String? objParamnum, String? objParamstrOpt, String? objParamstr, String? objParamintEnum, String? objParamint32Enum, String? Function()? objParamint64Str, String? Function()? objParambigint, String? Function()? objParambigintStr, String? Function()? objParamdecimal, String? Function()? objParamdecimalStr, }) { return DeepObjectQueryParamsObjectResponseArgs(
+      json.containsKey('objParam[int32Enum]') && json['objParam[int32Enum]'] is String;}
+DeepObjectQueryParamsObjectResponseArgs copyWith({List<String>? objArrParamarr, String? objParamany, String? objParamboolOpt, String? objParambool, String? objParamdateTime, String? objParamdate, String? objParamenum, String? objParamfloat32, String? Function()? objParamfloat64Str, String? objParamint32, String? objParamint, String? objParamnum, String? objParamstrOpt, String? objParamstr, String? objParamintEnum, String? objParamint32Enum, String? Function()? objParamint64Str, String? Function()? objParambigint, String? Function()? objParambigintStr, String? Function()? objParamdecimal, String? Function()? objParamdecimalStr, }) {return DeepObjectQueryParamsObjectResponseArgs(
   objArrParamarr: objArrParamarr ?? this.objArrParamarr,
   objParamany: objParamany ?? this.objParamany,
   objParamboolOpt: objParamboolOpt ?? this.objParamboolOpt,
@@ -149,7 +149,7 @@ DeepObjectQueryParamsObjectResponseArgs copyWith({List<String>? objArrParamarr, 
   objParambigintStr: objParambigintStr != null ? objParambigintStr() : this.objParambigintStr,
   objParamdecimal: objParamdecimal != null ? objParamdecimal() : this.objParamdecimal,
   objParamdecimalStr: objParamdecimalStr != null ? objParamdecimalStr() : this.objParamdecimalStr,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeepObjectQueryParamsObjectResponseArgs &&
           listEquals(objArrParamarr, other.objArrParamarr) &&
@@ -178,4 +178,4 @@ DeepObjectQueryParamsObjectResponseArgs copyWith({List<String>? objArrParamarr, 
 
 @override String toString() => 'DeepObjectQueryParamsObjectResponseArgs(\n  objArrParamarr: $objArrParamarr,\n  objParamany: $objParamany,\n  objParamboolOpt: $objParamboolOpt,\n  objParambool: $objParambool,\n  objParamdateTime: $objParamdateTime,\n  objParamdate: $objParamdate,\n  objParamenum: $objParamenum,\n  objParamfloat32: $objParamfloat32,\n  objParamfloat64Str: $objParamfloat64Str,\n  objParamint32: $objParamint32,\n  objParamint: $objParamint,\n  objParamnum: $objParamnum,\n  objParamstrOpt: $objParamstrOpt,\n  objParamstr: $objParamstr,\n  objParamintEnum: $objParamintEnum,\n  objParamint32Enum: $objParamint32Enum,\n  objParamint64Str: $objParamint64Str,\n  objParambigint: $objParambigint,\n  objParambigintStr: $objParambigintStr,\n  objParamdecimal: $objParamdecimal,\n  objParamdecimalStr: $objParamdecimalStr,\n)';
 
- }
+}

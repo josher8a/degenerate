@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ScanGeo {const ScanGeo({required this.continents, required this.locations, });
 
-factory ScanGeo.fromJson(Map<String, dynamic> json) { return ScanGeo(
+factory ScanGeo.fromJson(Map<String, dynamic> json) {return ScanGeo(
   continents: (json['continents'] as List<dynamic>).map((e) => e as String).toList(),
   locations: (json['locations'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> continents;
 
 final List<String> locations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'continents': continents,
   'locations': locations,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('continents') &&
-      json.containsKey('locations'); } 
-ScanGeo copyWith({List<String>? continents, List<String>? locations, }) { return ScanGeo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('continents') &&
+      json.containsKey('locations');}
+ScanGeo copyWith({List<String>? continents, List<String>? locations, }) {return ScanGeo(
   continents: continents ?? this.continents,
   locations: locations ?? this.locations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ScanGeo &&
           listEquals(continents, other.continents) &&
@@ -31,4 +31,4 @@ ScanGeo copyWith({List<String>? continents, List<String>? locations, }) { return
 
 @override String toString() => 'ScanGeo(continents: $continents, locations: $locations)';
 
- }
+}

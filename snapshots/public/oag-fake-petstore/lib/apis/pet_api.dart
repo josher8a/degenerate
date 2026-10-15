@@ -14,7 +14,7 @@ final class PetApi with ApiExecutor {const PetApi(this.apiConfig);
 /// 
 ///
 /// `POST /pet`
-Future<ApiResult<void, Never>> addPet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> addPet({required Pet body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -29,13 +29,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Update an existing pet
 ///
 /// 
 ///
 /// `PUT /pet`
-Future<ApiResult<void, Never>> updatePet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updatePet({required Pet body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,13 +50,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Finds Pets by status
 ///
 /// Multiple status values can be provided with comma separated strings
 ///
 /// `GET /pet/findByStatus`
-Future<ApiResult<List<Pet>, Never>> findPetsByStatus({required List<FindPetsByStatusStatus> status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Pet>, Never>> findPetsByStatus({required List<FindPetsByStatusStatus> status, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['status'] = status.map((item) => item.toJson()).join(',');
 
@@ -78,13 +78,13 @@ return await execute(
     return json.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
+}
 /// Find pet by ID
 ///
 /// Returns a single pet
 ///
 /// `GET /pet/{petId}`
-Future<ApiResult<Pet, Never>> getPetById({required int petId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Pet, Never>> getPetById({required int petId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -99,13 +99,13 @@ return await execute(
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Updates a pet in the store with form data
 ///
 /// 
 ///
 /// `POST /pet/{petId}`
-Future<ApiResult<void, Never>> updatePetWithForm({required int petId, UpdatePetWithFormRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> updatePetWithForm({required int petId, UpdatePetWithFormRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -125,13 +125,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Deletes a pet
 ///
 /// 
 ///
 /// `DELETE /pet/{petId}`
-Future<ApiResult<void, Never>> deletePet({required int petId, String? apiKey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deletePet({required int petId, String? apiKey, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (apiKey != null) {
   headers['api_key'] = apiKey;
 }
@@ -147,13 +147,13 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// uploads an image
 ///
 /// 
 ///
 /// `POST /pet/{petId}/uploadImage`
-Future<ApiResult<Response, Never>> uploadFile({required int petId, UploadFileRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Response, Never>> uploadFile({required int petId, UploadFileRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -175,13 +175,13 @@ return await execute(
     return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// uploads an image (required)
 ///
 /// 
 ///
 /// `POST /fake/{petId}/uploadImageWithRequiredFile`
-Future<ApiResult<Response, Never>> uploadFileWithRequiredFile({required int petId, UploadFileWithRequiredFileRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Response, Never>> uploadFileWithRequiredFile({required int petId, UploadFileWithRequiredFileRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -202,5 +202,5 @@ return await execute(
     return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

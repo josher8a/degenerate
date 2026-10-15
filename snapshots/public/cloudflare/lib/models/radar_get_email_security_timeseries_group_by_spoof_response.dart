@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_timeseries_group_by_spoof_response/radar_get_email_security_timeseries_group_by_spoof_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponse {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponse({required this.result, required this.success, });
 
-factory RadarGetEmailSecurityTimeseriesGroupBySpoofResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpoofResponse(
+factory RadarGetEmailSecurityTimeseriesGroupBySpoofResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupBySpoofResponse(
   result: RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecurityTimeseriesGroupBySpoofResponse copyWith({RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResult? result, bool? success, }) { return RadarGetEmailSecurityTimeseriesGroupBySpoofResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailSecurityTimeseriesGroupBySpoofResponse copyWith({RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResult? result, bool? success, }) {return RadarGetEmailSecurityTimeseriesGroupBySpoofResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupBySpoofResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailSecurityTimeseriesGroupBySpoofResponse copyWith({RadarGetEmailSecur
 
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpoofResponse(result: $result, success: $success)';
 
- }
+}

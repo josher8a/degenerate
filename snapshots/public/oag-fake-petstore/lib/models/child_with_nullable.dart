@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_fake_petstore/models/child_with_nullable/child_with_nullable_type.dart';@immutable final class ChildWithNullable {const ChildWithNullable({this.type, this.nullableProperty = const Omittable.absent(), this.otherProperty, });
 
-factory ChildWithNullable.fromJson(Map<String, dynamic> json) { return ChildWithNullable(
+factory ChildWithNullable.fromJson(Map<String, dynamic> json) {return ChildWithNullable(
   type: json['type'] != null ? ChildWithNullableType.fromJson(json['type'] as String) : null,
   nullableProperty: json.containsKey('nullableProperty') ? Omittable(json['nullableProperty'] as String?) : const Omittable.absent(),
   otherProperty: json['otherProperty'] as String?,
-); }
+);}
 
 final ChildWithNullableType? type;
 
@@ -15,17 +15,17 @@ final Omittable<String?> nullableProperty;
 
 final String? otherProperty;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
   if (nullableProperty.isPresent) 'nullableProperty': nullableProperty.value,
   'otherProperty': ?otherProperty,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'nullableProperty', 'otherProperty'}.contains(key)); } 
-ChildWithNullable copyWith({ChildWithNullableType? Function()? type, Omittable<String?>? nullableProperty, String? Function()? otherProperty, }) { return ChildWithNullable(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type', 'nullableProperty', 'otherProperty'}.contains(key));}
+ChildWithNullable copyWith({ChildWithNullableType? Function()? type, Omittable<String?>? nullableProperty, String? Function()? otherProperty, }) {return ChildWithNullable(
   type: type != null ? type() : this.type,
   nullableProperty: nullableProperty ?? this.nullableProperty,
   otherProperty: otherProperty != null ? otherProperty() : this.otherProperty,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChildWithNullable &&
           type == other.type &&
@@ -36,4 +36,4 @@ ChildWithNullable copyWith({ChildWithNullableType? Function()? type, Omittable<S
 
 @override String toString() => 'ChildWithNullable(type: $type, nullableProperty: $nullableProperty, otherProperty: $otherProperty)';
 
- }
+}

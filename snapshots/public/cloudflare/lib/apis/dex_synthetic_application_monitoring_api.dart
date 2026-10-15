@@ -14,7 +14,7 @@ final class DexSyntheticApplicationMonitoringApi with ApiExecutor {const DexSynt
 /// List Cloudflare colos that account's devices were connected to during a time period, sorted by usage starting from the most used colo. Colos without traffic are also returned and sorted alphabetically.
 ///
 /// `GET /accounts/{account_id}/dex/colos`
-Future<ApiResult<List<DigitalExperienceMonitoringColosResponse2>?, CreateDexRuleError>> dexEndpointsListColos({required DigitalExperienceMonitoringAccountIdentifier accountId, required String from, required String to, DexEndpointsListColosSortBy? sortBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringColosResponse2>?, CreateDexRuleError>> dexEndpointsListColos({required DigitalExperienceMonitoringAccountIdentifier accountId, required String from, required String to, DexEndpointsListColosSortBy? sortBy, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['from'] = from;
 queryParameters['to'] = to;
@@ -41,13 +41,13 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Get the live status of a latest device
 ///
 /// Get the live status of a latest device given device_id from the device_state table
 ///
 /// `GET /accounts/{account_id}/dex/devices/{device_id}/fleet-status/live`
-Future<ApiResult<DigitalExperienceMonitoringDevice, DevicesLiveStatusError>> devicesLiveStatus({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceId deviceId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, DigitalExperienceMonitoringTimeNow? timeNow, DigitalExperienceMonitoringColo? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringDevice, DevicesLiveStatusError>> devicesLiveStatus({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceId deviceId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, DigitalExperienceMonitoringTimeNow? timeNow, DigitalExperienceMonitoringColo? colo, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['since_minutes'] = sinceMinutes.toJson().toString();
 if (timeNow != null) {
@@ -75,13 +75,13 @@ return await execute(
   },
   onError: DevicesLiveStatusError.fromResponse,
 );
- } 
+}
 /// List fleet status devices
 ///
 /// List details for devices using WARP
 ///
 /// `GET /accounts/{account_id}/dex/fleet-status/devices`
-Future<ApiResult<List<DigitalExperienceMonitoringDevice>?, DexFleetStatusDevicesError>> dexFleetStatusDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, required DigitalExperienceMonitoringPage page, required DigitalExperienceMonitoringPerPage perPage, DigitalExperienceMonitoringSortBy? sortBy, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, DigitalExperienceMonitoringMode? mode, DigitalExperienceMonitoringStatus? status, DigitalExperienceMonitoringPlatform? platform, DigitalExperienceMonitoringVersion? version, DigitalExperienceMonitoringSource? source, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringDevice>?, DexFleetStatusDevicesError>> dexFleetStatusDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, required DigitalExperienceMonitoringPage page, required DigitalExperienceMonitoringPerPage perPage, DigitalExperienceMonitoringSortBy? sortBy, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, DigitalExperienceMonitoringMode? mode, DigitalExperienceMonitoringStatus? status, DigitalExperienceMonitoringPlatform? platform, DigitalExperienceMonitoringVersion? version, DigitalExperienceMonitoringSource? source, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['to'] = to.toJson();
 queryParameters['from'] = from.toJson();
@@ -131,13 +131,13 @@ return await execute(
   },
   onError: DexFleetStatusDevicesError.fromResponse,
 );
- } 
+}
 /// List fleet status details by dimension
 ///
 /// List details for live (up to 60 minutes) devices using WARP
 ///
 /// `GET /accounts/{account_id}/dex/fleet-status/live`
-Future<ApiResult<DigitalExperienceMonitoringFleetStatusLiveResponseResult?, DexFleetStatusLiveError>> dexFleetStatusLive({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringFleetStatusLiveResponseResult?, DexFleetStatusLiveError>> dexFleetStatusLive({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['since_minutes'] = sinceMinutes.toJson().toString();
 
@@ -160,13 +160,13 @@ return await execute(
   },
   onError: DexFleetStatusLiveError.fromResponse,
 );
- } 
+}
 /// List fleet status aggregate details by dimension
 ///
 /// List details for devices using WARP, up to 7 days
 ///
 /// `GET /accounts/{account_id}/dex/fleet-status/over-time`
-Future<ApiResult<DigitalExperienceMonitoringFleetStatusOverTimeResponseResult?, DexFleetStatusOverTimeError>> dexFleetStatusOverTime({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringFleetStatusOverTimeResponseResult?, DexFleetStatusOverTimeError>> dexFleetStatusOverTime({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['to'] = to.toJson();
 queryParameters['from'] = from.toJson();
@@ -196,13 +196,13 @@ return await execute(
   },
   onError: DexFleetStatusOverTimeError.fromResponse,
 );
- } 
+}
 /// Get details and aggregate metrics for an http test
 ///
 /// Get test details and aggregate performance metrics for an http test for a given time period between 1 hour and 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/http-tests/{test_id}`
-Future<ApiResult<DigitalExperienceMonitoringHttpDetailsResponse?, CreateDexRuleError>> dexEndpointsHttpTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, required DexEndpointsHttpTestDetailsInterval interval, List<String>? deviceId, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringHttpDetailsResponse?, CreateDexRuleError>> dexEndpointsHttpTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, required DexEndpointsHttpTestDetailsInterval interval, List<String>? deviceId, String? colo, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
@@ -235,13 +235,13 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Get percentiles for an http test
 ///
 /// Get percentiles for an http test for a given time period between 1 hour and 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/http-tests/{test_id}/percentiles`
-Future<ApiResult<DigitalExperienceMonitoringHttpDetailsPercentilesResponse?, CreateDexRuleError>> dexEndpointsHttpTestPercentiles({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, List<String>? deviceId, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringHttpDetailsPercentilesResponse?, CreateDexRuleError>> dexEndpointsHttpTestPercentiles({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, List<String>? deviceId, String? colo, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
@@ -273,13 +273,13 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// List DEX test analytics
 ///
 /// List DEX tests with overview metrics
 ///
 /// `GET /accounts/{account_id}/dex/tests/overview`
-Future<ApiResult<DigitalExperienceMonitoringTestsResponse?, CreateDexRuleError>> dexEndpointsListTestsOverview({required DigitalExperienceMonitoringAccountIdentifier accountId, String? colo, String? testName, List<String>? deviceId, double? page, double? perPage, DexEndpointsListTestsOverviewKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringTestsResponse?, CreateDexRuleError>> dexEndpointsListTestsOverview({required DigitalExperienceMonitoringAccountIdentifier accountId, String? colo, String? testName, List<String>? deviceId, double? page, double? perPage, DexEndpointsListTestsOverviewKind? kind, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (colo != null) {
   queryParameters['colo'] = colo;
@@ -321,13 +321,13 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Get count of devices targeted
 ///
 /// Returns unique count of devices that have run synthetic application monitoring tests in the past 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/tests/unique-devices`
-Future<ApiResult<DigitalExperienceMonitoringUniqueDevicesResponse?, CreateDexRuleError>> dexEndpointsTestsUniqueDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, String? testName, List<String>? deviceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringUniqueDevicesResponse?, CreateDexRuleError>> dexEndpointsTestsUniqueDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, String? testName, List<String>? deviceId, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (testName != null) {
   queryParameters['testName'] = testName;
@@ -357,13 +357,13 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Get details for a specific traceroute test run
 ///
 /// Get a breakdown of hops and performance metrics for a specific traceroute test run
 ///
 /// `GET /accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path`
-Future<ApiResult<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse?, CreateDexRuleError>> dexEndpointsTracerouteTestResultNetworkPath({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testResultId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse?, CreateDexRuleError>> dexEndpointsTracerouteTestResultNetworkPath({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testResultId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -380,13 +380,13 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Get details and aggregate metrics for a traceroute test
 ///
 /// Get test details and aggregate performance metrics for an traceroute test for a given time period between 1 hour and 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/traceroute-tests/{test_id}`
-Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsResponse?, CreateDexRuleError>> dexEndpointsTracerouteTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, required DexEndpointsTracerouteTestDetailsInterval interval, List<String>? deviceId, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsResponse?, CreateDexRuleError>> dexEndpointsTracerouteTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, required DexEndpointsTracerouteTestDetailsInterval interval, List<String>? deviceId, String? colo, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
@@ -419,13 +419,13 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Get network path breakdown for a traceroute test
 ///
 /// Get a breakdown of metrics by hop for individual traceroute test runs
 ///
 /// `GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path`
-Future<ApiResult<DigitalExperienceMonitoringTracerouteTestNetworkPathResponse?, CreateDexRuleError>> dexEndpointsTracerouteTestNetworkPath({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String deviceId, required String from, required String to, required DexEndpointsTracerouteTestNetworkPathInterval interval, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringTracerouteTestNetworkPathResponse?, CreateDexRuleError>> dexEndpointsTracerouteTestNetworkPath({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String deviceId, required String from, required String to, required DexEndpointsTracerouteTestNetworkPathInterval interval, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['deviceId'] = deviceId;
 queryParameters['from'] = from;
@@ -451,13 +451,13 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
+}
 /// Get percentiles for a traceroute test
 ///
 /// Get percentiles for a traceroute test for a given time period between 1 hour and 7 days.
 ///
 /// `GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles`
-Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse?, CreateDexRuleError>> dexEndpointsTracerouteTestPercentiles({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, List<String>? deviceId, String? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse?, CreateDexRuleError>> dexEndpointsTracerouteTestPercentiles({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid testId, required String from, required String to, List<String>? deviceId, String? colo, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceId != null) {
 for (final item in deviceId) {
@@ -489,5 +489,5 @@ return await execute(
   },
   onError: CreateDexRuleError.fromResponse,
 );
- } 
- }
+}
+}

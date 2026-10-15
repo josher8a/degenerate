@@ -7,11 +7,11 @@ const Metadata({this.mapStringString = const Omittable.absent(), this.getPayment
 const Metadata._({required this.rawValue, required this.mapStringString, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Metadata.fromJson(Object? json) { return Metadata._(
+factory Metadata.fromJson(Object? json) {return Metadata._(
   rawValue: Omittable(json),
   mapStringString: parseAnyOfVariant<Map<String, String>>(json, (value) => (value! as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Metadata(${toJson()})';
 
- }
+}

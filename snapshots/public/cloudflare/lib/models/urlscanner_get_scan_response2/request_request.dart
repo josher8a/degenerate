@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequestRequest {const RequestRequest({required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, this.headers, });
 
-factory RequestRequest.fromJson(Map<String, dynamic> json) { return RequestRequest(
+factory RequestRequest.fromJson(Map<String, dynamic> json) {return RequestRequest(
   headers: json['headers'] as Map<String, dynamic>?,
   initialPriority: json['initialPriority'] as String,
   isSameSite: json['isSameSite'] as bool,
@@ -11,7 +11,7 @@ factory RequestRequest.fromJson(Map<String, dynamic> json) { return RequestReque
   mixedContentType: json['mixedContentType'] as String,
   referrerPolicy: json['referrerPolicy'] as String,
   url: json['url'] as String,
-); }
+);}
 
 final Map<String,dynamic>? headers;
 
@@ -27,7 +27,7 @@ final String referrerPolicy;
 
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'headers': ?headers,
   'initialPriority': initialPriority,
   'isSameSite': isSameSite,
@@ -35,14 +35,14 @@ Map<String, dynamic> toJson() { return {
   'mixedContentType': mixedContentType,
   'referrerPolicy': referrerPolicy,
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('initialPriority') && json['initialPriority'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('initialPriority') && json['initialPriority'] is String &&
       json.containsKey('isSameSite') && json['isSameSite'] is bool &&
       json.containsKey('method') && json['method'] is String &&
       json.containsKey('mixedContentType') && json['mixedContentType'] is String &&
       json.containsKey('referrerPolicy') && json['referrerPolicy'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-RequestRequest copyWith({Map<String, dynamic>? Function()? headers, String? initialPriority, bool? isSameSite, String? method, String? mixedContentType, String? referrerPolicy, String? url, }) { return RequestRequest(
+      json.containsKey('url') && json['url'] is String;}
+RequestRequest copyWith({Map<String, dynamic>? Function()? headers, String? initialPriority, bool? isSameSite, String? method, String? mixedContentType, String? referrerPolicy, String? url, }) {return RequestRequest(
   headers: headers != null ? headers() : this.headers,
   initialPriority: initialPriority ?? this.initialPriority,
   isSameSite: isSameSite ?? this.isSameSite,
@@ -50,7 +50,7 @@ RequestRequest copyWith({Map<String, dynamic>? Function()? headers, String? init
   mixedContentType: mixedContentType ?? this.mixedContentType,
   referrerPolicy: referrerPolicy ?? this.referrerPolicy,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestRequest &&
           headers == other.headers &&
@@ -65,4 +65,4 @@ RequestRequest copyWith({Map<String, dynamic>? Function()? headers, String? init
 
 @override String toString() => 'RequestRequest(headers: $headers, initialPriority: $initialPriority, isSameSite: $isSameSite, method: $method, mixedContentType: $mixedContentType, referrerPolicy: $referrerPolicy, url: $url)';
 
- }
+}

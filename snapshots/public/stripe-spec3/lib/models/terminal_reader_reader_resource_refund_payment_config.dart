@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a per-transaction override of a reader configuration
 @immutable final class TerminalReaderReaderResourceRefundPaymentConfig {const TerminalReaderReaderResourceRefundPaymentConfig({this.enableCustomerCancellation});
 
-factory TerminalReaderReaderResourceRefundPaymentConfig.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentConfig(
+factory TerminalReaderReaderResourceRefundPaymentConfig.fromJson(Map<String, dynamic> json) {return TerminalReaderReaderResourceRefundPaymentConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
-); }
+);}
 
 /// Enable customer-initiated cancellation when refunding this payment.
 final bool? enableCustomerCancellation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enable_customer_cancellation': ?enableCustomerCancellation,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_customer_cancellation'}.contains(key)); } 
-TerminalReaderReaderResourceRefundPaymentConfig copyWith({bool? Function()? enableCustomerCancellation}) { return TerminalReaderReaderResourceRefundPaymentConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enable_customer_cancellation'}.contains(key));}
+TerminalReaderReaderResourceRefundPaymentConfig copyWith({bool? Function()? enableCustomerCancellation}) {return TerminalReaderReaderResourceRefundPaymentConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceRefundPaymentConfig &&
           enableCustomerCancellation == other.enableCustomerCancellation;
@@ -26,4 +26,4 @@ TerminalReaderReaderResourceRefundPaymentConfig copyWith({bool? Function()? enab
 
 @override String toString() => 'TerminalReaderReaderResourceRefundPaymentConfig(enableCustomerCancellation: $enableCustomerCancellation)';
 
- }
+}

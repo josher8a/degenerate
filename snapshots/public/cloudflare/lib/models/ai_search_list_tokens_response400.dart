@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_response400/ai_search_create_instances_response400_errors.dart';@immutable final class AiSearchListTokensResponse400 {const AiSearchListTokensResponse400({required this.errors, required this.success, });
 
-factory AiSearchListTokensResponse400.fromJson(Map<String, dynamic> json) { return AiSearchListTokensResponse400(
+factory AiSearchListTokensResponse400.fromJson(Map<String, dynamic> json) {return AiSearchListTokensResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchCreateInstancesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<AiSearchCreateInstancesResponse400Errors> errors;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AiSearchListTokensResponse400 copyWith({List<AiSearchCreateInstancesResponse400Errors>? errors, bool? success, }) { return AiSearchListTokensResponse400(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool;}
+AiSearchListTokensResponse400 copyWith({List<AiSearchCreateInstancesResponse400Errors>? errors, bool? success, }) {return AiSearchListTokensResponse400(
   errors: errors ?? this.errors,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchListTokensResponse400 &&
           listEquals(errors, other.errors) &&
@@ -31,4 +31,4 @@ AiSearchListTokensResponse400 copyWith({List<AiSearchCreateInstancesResponse400E
 
 @override String toString() => 'AiSearchListTokensResponse400(errors: $errors, success: $success)';
 
- }
+}

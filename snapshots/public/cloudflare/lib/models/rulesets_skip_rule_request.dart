@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';import 'package:pub_cloudflare/models/rulesets_skip_rule/rulesets_skip_rule_action_parameters.dart';@immutable final class RulesetsSkipRuleRequest {const RulesetsSkipRuleRequest({this.action = const Omittable.absent(), this.actionParameters, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
-factory RulesetsSkipRuleRequest.fromJson(Map<String, dynamic> json) { return RulesetsSkipRuleRequest(
+factory RulesetsSkipRuleRequest.fromJson(Map<String, dynamic> json) {return RulesetsSkipRuleRequest(
   action: json.containsKey('action') ? Omittable(json['action']) : const Omittable.absent(),
   actionParameters: json['action_parameters'] != null ? RulesetsSkipRuleActionParameters.fromJson(json['action_parameters'] as Map<String, dynamic>) : null,
   description: json.containsKey('description') ? Omittable(json['description']) : const Omittable.absent(),
@@ -14,7 +14,7 @@ factory RulesetsSkipRuleRequest.fromJson(Map<String, dynamic> json) { return Rul
   logging: json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null,
   ratelimit: json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String?,
-); }
+);}
 
 final Omittable<dynamic> action;
 
@@ -45,7 +45,7 @@ final RulesetsRuleRatelimit? ratelimit;
 /// Example: `'my_ref'`
 final String? ref;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action.isPresent) 'action': action.value,
   if (actionParameters != null) 'action_parameters': actionParameters?.toJson(),
   if (description.isPresent) 'description': description.value,
@@ -56,10 +56,10 @@ Map<String, dynamic> toJson() { return {
   if (logging != null) 'logging': logging?.toJson(),
   if (ratelimit != null) 'ratelimit': ratelimit?.toJson(),
   'ref': ?ref,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'enabled', 'exposed_credential_check', 'expression', 'id', 'logging', 'ratelimit', 'ref'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'enabled', 'exposed_credential_check', 'expression', 'id', 'logging', 'ratelimit', 'ref'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final expression$ = expression;
 if (expression$ != null) {
   if (expression$.isEmpty) { errors.add('expression: length must be >= 1'); }
@@ -68,8 +68,8 @@ final ref$ = ref;
 if (ref$ != null) {
   if (ref$.isEmpty) { errors.add('ref: length must be >= 1'); }
 }
-return errors; } 
-RulesetsSkipRuleRequest copyWith({Omittable<dynamic>? action, RulesetsSkipRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsSkipRuleRequest(
+return errors;}
+RulesetsSkipRuleRequest copyWith({Omittable<dynamic>? action, RulesetsSkipRuleActionParameters? Function()? actionParameters, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsSkipRuleRequest(
   action: action ?? this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   description: description ?? this.description,
@@ -80,7 +80,7 @@ RulesetsSkipRuleRequest copyWith({Omittable<dynamic>? action, RulesetsSkipRuleAc
   logging: logging != null ? logging() : this.logging,
   ratelimit: ratelimit != null ? ratelimit() : this.ratelimit,
   ref: ref != null ? ref() : this.ref,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSkipRuleRequest &&
           action == other.action &&
@@ -98,4 +98,4 @@ RulesetsSkipRuleRequest copyWith({Omittable<dynamic>? action, RulesetsSkipRuleAc
 
 @override String toString() => 'RulesetsSkipRuleRequest(\n  action: $action,\n  actionParameters: $actionParameters,\n  description: $description,\n  enabled: $enabled,\n  exposedCredentialCheck: $exposedCredentialCheck,\n  expression: $expression,\n  id: $id,\n  logging: $logging,\n  ratelimit: $ratelimit,\n  ref: $ref,\n)';
 
- }
+}

@@ -18,10 +18,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Client IP restri
 /// ```
 @immutable final class IamRequestIp {const IamRequestIp({this.$in, this.notIn, });
 
-factory IamRequestIp.fromJson(Map<String, dynamic> json) { return IamRequestIp(
+factory IamRequestIp.fromJson(Map<String, dynamic> json) {return IamRequestIp(
   $in: (json['in'] as List<dynamic>?)?.map((e) => e as String).toList(),
   notIn: (json['not_in'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// List of IPv4/IPv6 CIDR addresses.
 final List<String>? $in;
@@ -29,15 +29,15 @@ final List<String>? $in;
 /// List of IPv4/IPv6 CIDR addresses.
 final List<String>? notIn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'in': ?$in,
   'not_in': ?notIn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'in', 'not_in'}.contains(key)); } 
-IamRequestIp copyWith({List<String>? Function()? $in, List<String>? Function()? notIn, }) { return IamRequestIp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'in', 'not_in'}.contains(key));}
+IamRequestIp copyWith({List<String>? Function()? $in, List<String>? Function()? notIn, }) {return IamRequestIp(
   $in: $in != null ? $in() : this.$in,
   notIn: notIn != null ? notIn() : this.notIn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamRequestIp &&
           listEquals($in, other.$in) &&
@@ -47,4 +47,4 @@ IamRequestIp copyWith({List<String>? Function()? $in, List<String>? Function()? 
 
 @override String toString() => 'IamRequestIp(\$in: ${$in}, notIn: $notIn)';
 
- }
+}

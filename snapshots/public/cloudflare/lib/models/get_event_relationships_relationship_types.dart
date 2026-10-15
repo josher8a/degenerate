@@ -8,11 +8,11 @@ const GetEventRelationshipsRelationshipTypes({this.string = const Omittable.abse
 const GetEventRelationshipsRelationshipTypes._({required this.rawValue, required this.string, required this.listString, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory GetEventRelationshipsRelationshipTypes.fromJson(Object? json) { return GetEventRelationshipsRelationshipTypes._(
+factory GetEventRelationshipsRelationshipTypes.fromJson(Object? json) {return GetEventRelationshipsRelationshipTypes._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'GetEventRelationshipsRelationshipTypes(${toJson()})';
 
- }
+}

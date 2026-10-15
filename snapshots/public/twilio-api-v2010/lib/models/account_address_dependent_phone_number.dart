@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 sealed class DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement();
 
-factory DependentPhoneNumberEnumAddressRequirement.fromJson(String json) { return switch (json) {
+factory DependentPhoneNumberEnumAddressRequirement.fromJson(String json) {return switch (json) {
   'none' => none,
   'any' => any,
   'local' => local,
   'foreign' => foreign,
   _ => DependentPhoneNumberEnumAddressRequirement$Unknown(json),
-}; }
+};}
 
 static const DependentPhoneNumberEnumAddressRequirement none = DependentPhoneNumberEnumAddressRequirement$none._();
 
@@ -23,36 +23,36 @@ static const DependentPhoneNumberEnumAddressRequirement foreign = DependentPhone
 static const List<DependentPhoneNumberEnumAddressRequirement> values = [none, any, local, foreign];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'any' => 'any',
   'local' => 'local',
   'foreign' => 'foreign',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DependentPhoneNumberEnumAddressRequirement$Unknown; } 
+bool get isUnknown {return this is DependentPhoneNumberEnumAddressRequirement$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() any, required W Function() local, required W Function() foreign, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() any, required W Function() local, required W Function() foreign, required W Function(String value) $unknown, }) {return switch (this) {
       DependentPhoneNumberEnumAddressRequirement$none() => none(),
       DependentPhoneNumberEnumAddressRequirement$any() => any(),
       DependentPhoneNumberEnumAddressRequirement$local() => local(),
       DependentPhoneNumberEnumAddressRequirement$foreign() => foreign(),
       DependentPhoneNumberEnumAddressRequirement$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? any, W Function()? local, W Function()? foreign, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? any, W Function()? local, W Function()? foreign, W Function(String value)? $unknown, }) {return switch (this) {
       DependentPhoneNumberEnumAddressRequirement$none() => none != null ? none() : orElse(value),
       DependentPhoneNumberEnumAddressRequirement$any() => any != null ? any() : orElse(value),
       DependentPhoneNumberEnumAddressRequirement$local() => local != null ? local() : orElse(value),
       DependentPhoneNumberEnumAddressRequirement$foreign() => foreign != null ? foreign() : orElse(value),
       DependentPhoneNumberEnumAddressRequirement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DependentPhoneNumberEnumAddressRequirement($value)';
 
- }
+}
 @immutable final class DependentPhoneNumberEnumAddressRequirement$none extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$none._();
 
 @override String get value => 'none';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class DependentPhoneNumberEnumAddressRequirement$any extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$any._();
 
 @override String get value => 'any';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'any'.hashCode;
 
- }
+}
 @immutable final class DependentPhoneNumberEnumAddressRequirement$local extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$local._();
 
 @override String get value => 'local';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'local'.hashCode;
 
- }
+}
 @immutable final class DependentPhoneNumberEnumAddressRequirement$foreign extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$foreign._();
 
 @override String get value => 'foreign';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'foreign'.hashCode;
 
- }
+}
 @immutable final class DependentPhoneNumberEnumAddressRequirement$Unknown extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$Unknown(this.value);
 
 @override final String value;
@@ -98,15 +98,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Whether the phone number is enabled for emergency calling.
 sealed class DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus();
 
-factory DependentPhoneNumberEnumEmergencyStatus.fromJson(String json) { return switch (json) {
+factory DependentPhoneNumberEnumEmergencyStatus.fromJson(String json) {return switch (json) {
   'Active' => active,
   'Inactive' => inactive,
   _ => DependentPhoneNumberEnumEmergencyStatus$Unknown(json),
-}; }
+};}
 
 static const DependentPhoneNumberEnumEmergencyStatus active = DependentPhoneNumberEnumEmergencyStatus$active._();
 
@@ -115,30 +115,30 @@ static const DependentPhoneNumberEnumEmergencyStatus inactive = DependentPhoneNu
 static const List<DependentPhoneNumberEnumEmergencyStatus> values = [active, inactive];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Active' => 'active',
   'Inactive' => 'inactive',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DependentPhoneNumberEnumEmergencyStatus$Unknown; } 
+bool get isUnknown {return this is DependentPhoneNumberEnumEmergencyStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() inactive, required W Function(String value) $unknown, }) {return switch (this) {
       DependentPhoneNumberEnumEmergencyStatus$active() => active(),
       DependentPhoneNumberEnumEmergencyStatus$inactive() => inactive(),
       DependentPhoneNumberEnumEmergencyStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function(String value)? $unknown, }) {return switch (this) {
       DependentPhoneNumberEnumEmergencyStatus$active() => active != null ? active() : orElse(value),
       DependentPhoneNumberEnumEmergencyStatus$inactive() => inactive != null ? inactive() : orElse(value),
       DependentPhoneNumberEnumEmergencyStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DependentPhoneNumberEnumEmergencyStatus($value)';
 
- }
+}
 @immutable final class DependentPhoneNumberEnumEmergencyStatus$active extends DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus$active._();
 
 @override String get value => 'Active';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'Active'.hashCode;
 
- }
+}
 @immutable final class DependentPhoneNumberEnumEmergencyStatus$inactive extends DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus$inactive._();
 
 @override String get value => 'Inactive';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'Inactive'.hashCode;
 
- }
+}
 @immutable final class DependentPhoneNumberEnumEmergencyStatus$Unknown extends DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus$Unknown(this.value);
 
 @override final String value;
@@ -166,10 +166,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class AccountAddressDependentPhoneNumber {const AccountAddressDependentPhoneNumber({this.sid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.voiceUrl = const Omittable.absent(), this.voiceMethod = const Omittable.absent(), this.voiceFallbackMethod = const Omittable.absent(), this.voiceFallbackUrl = const Omittable.absent(), this.voiceCallerIdLookup = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.smsFallbackMethod = const Omittable.absent(), this.smsFallbackUrl = const Omittable.absent(), this.smsMethod = const Omittable.absent(), this.smsUrl = const Omittable.absent(), this.addressRequirements, this.capabilities = const Omittable.absent(), this.statusCallback = const Omittable.absent(), this.statusCallbackMethod = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.smsApplicationSid = const Omittable.absent(), this.voiceApplicationSid = const Omittable.absent(), this.trunkSid = const Omittable.absent(), this.emergencyStatus, this.emergencyAddressSid = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
-factory AccountAddressDependentPhoneNumber.fromJson(Map<String, dynamic> json) { return AccountAddressDependentPhoneNumber(
+factory AccountAddressDependentPhoneNumber.fromJson(Map<String, dynamic> json) {return AccountAddressDependentPhoneNumber(
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
@@ -196,7 +196,7 @@ factory AccountAddressDependentPhoneNumber.fromJson(Map<String, dynamic> json) {
   emergencyStatus: json['emergency_status'] != null ? DependentPhoneNumberEnumEmergencyStatus.fromJson(json['emergency_status'] as String) : null,
   emergencyAddressSid: json.containsKey('emergency_address_sid') ? Omittable(json['emergency_address_sid'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique string that that we created to identify the DependentPhoneNumber resource.
 final Omittable<String?> sid;
@@ -274,7 +274,7 @@ final Omittable<String?> emergencyAddressSid;
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final Omittable<String?> uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (sid.isPresent) 'sid': sid.value,
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
@@ -301,10 +301,10 @@ Map<String, dynamic> toJson() { return {
   if (emergencyStatus != null) 'emergency_status': emergencyStatus?.toJson(),
   if (emergencyAddressSid.isPresent) 'emergency_address_sid': emergencyAddressSid.value,
   if (uri.isPresent) 'uri': uri.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'phone_number', 'voice_url', 'voice_method', 'voice_fallback_method', 'voice_fallback_url', 'voice_caller_id_lookup', 'date_created', 'date_updated', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'address_requirements', 'capabilities', 'status_callback', 'status_callback_method', 'api_version', 'sms_application_sid', 'voice_application_sid', 'trunk_sid', 'emergency_status', 'emergency_address_sid', 'uri'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'phone_number', 'voice_url', 'voice_method', 'voice_fallback_method', 'voice_fallback_url', 'voice_caller_id_lookup', 'date_created', 'date_updated', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'address_requirements', 'capabilities', 'status_callback', 'status_callback_method', 'api_version', 'sms_application_sid', 'voice_application_sid', 'trunk_sid', 'emergency_status', 'emergency_address_sid', 'uri'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final sid$ = sid.value;
 if (sid$ != null) {
   if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
@@ -341,8 +341,8 @@ if (emergencyAddressSid$ != null) {
   if (emergencyAddressSid$.runes.length > 34) { errors.add('emergencyAddressSid: length must be <= 34'); }
   if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(emergencyAddressSid$)) { errors.add(r'emergencyAddressSid: must match pattern ^AD[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountAddressDependentPhoneNumber copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, Omittable<String?>? friendlyName, Omittable<String?>? phoneNumber, Omittable<Uri?>? voiceUrl, Omittable<AccountAddressDependentPhoneNumberVoiceMethod?>? voiceMethod, Omittable<AccountAddressDependentPhoneNumberVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<bool?>? voiceCallerIdLookup, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<AccountAddressDependentPhoneNumberSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountAddressDependentPhoneNumberSmsMethod?>? smsMethod, Omittable<Uri?>? smsUrl, DependentPhoneNumberEnumAddressRequirement? Function()? addressRequirements, Omittable<dynamic>? capabilities, Omittable<Uri?>? statusCallback, Omittable<AccountAddressDependentPhoneNumberStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? apiVersion, Omittable<String?>? smsApplicationSid, Omittable<String?>? voiceApplicationSid, Omittable<String?>? trunkSid, DependentPhoneNumberEnumEmergencyStatus? Function()? emergencyStatus, Omittable<String?>? emergencyAddressSid, Omittable<String?>? uri, }) { return AccountAddressDependentPhoneNumber(
+return errors;}
+AccountAddressDependentPhoneNumber copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, Omittable<String?>? friendlyName, Omittable<String?>? phoneNumber, Omittable<Uri?>? voiceUrl, Omittable<AccountAddressDependentPhoneNumberVoiceMethod?>? voiceMethod, Omittable<AccountAddressDependentPhoneNumberVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<bool?>? voiceCallerIdLookup, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<AccountAddressDependentPhoneNumberSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountAddressDependentPhoneNumberSmsMethod?>? smsMethod, Omittable<Uri?>? smsUrl, DependentPhoneNumberEnumAddressRequirement? Function()? addressRequirements, Omittable<dynamic>? capabilities, Omittable<Uri?>? statusCallback, Omittable<AccountAddressDependentPhoneNumberStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? apiVersion, Omittable<String?>? smsApplicationSid, Omittable<String?>? voiceApplicationSid, Omittable<String?>? trunkSid, DependentPhoneNumberEnumEmergencyStatus? Function()? emergencyStatus, Omittable<String?>? emergencyAddressSid, Omittable<String?>? uri, }) {return AccountAddressDependentPhoneNumber(
   sid: sid ?? this.sid,
   accountSid: accountSid ?? this.accountSid,
   friendlyName: friendlyName ?? this.friendlyName,
@@ -369,7 +369,7 @@ AccountAddressDependentPhoneNumber copyWith({Omittable<String?>? sid, Omittable<
   emergencyStatus: emergencyStatus != null ? emergencyStatus() : this.emergencyStatus,
   emergencyAddressSid: emergencyAddressSid ?? this.emergencyAddressSid,
   uri: uri ?? this.uri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountAddressDependentPhoneNumber &&
           sid == other.sid &&
@@ -403,4 +403,4 @@ AccountAddressDependentPhoneNumber copyWith({Omittable<String?>? sid, Omittable<
 
 @override String toString() => 'AccountAddressDependentPhoneNumber(\n  sid: $sid,\n  accountSid: $accountSid,\n  friendlyName: $friendlyName,\n  phoneNumber: $phoneNumber,\n  voiceUrl: $voiceUrl,\n  voiceMethod: $voiceMethod,\n  voiceFallbackMethod: $voiceFallbackMethod,\n  voiceFallbackUrl: $voiceFallbackUrl,\n  voiceCallerIdLookup: $voiceCallerIdLookup,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  smsFallbackMethod: $smsFallbackMethod,\n  smsFallbackUrl: $smsFallbackUrl,\n  smsMethod: $smsMethod,\n  smsUrl: $smsUrl,\n  addressRequirements: $addressRequirements,\n  capabilities: $capabilities,\n  statusCallback: $statusCallback,\n  statusCallbackMethod: $statusCallbackMethod,\n  apiVersion: $apiVersion,\n  smsApplicationSid: $smsApplicationSid,\n  voiceApplicationSid: $voiceApplicationSid,\n  trunkSid: $trunkSid,\n  emergencyStatus: $emergencyStatus,\n  emergencyAddressSid: $emergencyAddressSid,\n  uri: $uri,\n)';
 
- }
+}

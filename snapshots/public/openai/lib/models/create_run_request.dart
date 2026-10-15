@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/assistants_named_tool_choice.dart';import 'package:pub_openai/models/create_assistant_request/create_assistant_request_model.dart';import 'package:pub_openai/models/create_message_request.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';import 'package:pub_openai/models/tool_choice_option.dart';import 'package:pub_openai/models/truncation_object.dart';@immutable final class CreateRunRequest {const CreateRunRequest({required this.assistantId, this.model = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.instructions = const Omittable.absent(), this.additionalInstructions = const Omittable.absent(), this.additionalMessages = const Omittable.absent(), this.tools = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.stream = const Omittable.absent(), this.maxPromptTokens = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.truncationStrategy = const Omittable.absent(), this.toolChoice = const Omittable.absent(), this.parallelToolCalls, this.responseFormat = const Omittable.absent(), });
 
-factory CreateRunRequest.fromJson(Map<String, dynamic> json) { return CreateRunRequest(
+factory CreateRunRequest.fromJson(Map<String, dynamic> json) {return CreateRunRequest(
   assistantId: json['assistant_id'] as String,
   model: json.containsKey('model') ? Omittable(json['model'] != null ? CreateAssistantRequestModel.fromJson(json['model']) : null) : const Omittable.absent(),
   reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
@@ -21,7 +21,7 @@ factory CreateRunRequest.fromJson(Map<String, dynamic> json) { return CreateRunR
   toolChoice: json.containsKey('tool_choice') ? Omittable(json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   parallelToolCalls: json['parallel_tool_calls'] != null ? ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool) : null,
   responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
 final String assistantId;
@@ -87,7 +87,7 @@ double? get temperatureOrDefault => temperature.valueOr(1.0);
 /// The value of `topP`, or its schema default when absent.
 double? get topPOrDefault => topP.valueOr(1.0);
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'assistant_id': assistantId,
   if (model.isPresent) 'model': model.value?.toJson(),
   if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
@@ -105,10 +105,10 @@ Map<String, dynamic> toJson() { return {
   if (toolChoice.isPresent) 'tool_choice': toolChoice.value?.toJson(),
   if (parallelToolCalls != null) 'parallel_tool_calls': parallelToolCalls?.toJson(),
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('assistant_id') && json['assistant_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('assistant_id') && json['assistant_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final tools$ = tools.value;
 if (tools$ != null) {
   if (tools$.length > 20) { errors.add('tools: must have <= 20 items'); }
@@ -131,8 +131,8 @@ final maxCompletionTokens$ = maxCompletionTokens.value;
 if (maxCompletionTokens$ != null) {
   if (maxCompletionTokens$ < 256) { errors.add('maxCompletionTokens: must be >= 256'); }
 }
-return errors; } 
-CreateRunRequest copyWith({String? assistantId, Omittable<CreateAssistantRequestModel?>? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? instructions, Omittable<String?>? additionalInstructions, Omittable<List<CreateMessageRequest>?>? additionalMessages, Omittable<List<AssistantObjectTools>?>? tools, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<bool?>? stream, Omittable<int?>? maxPromptTokens, Omittable<int?>? maxCompletionTokens, Omittable<TruncationObject?>? truncationStrategy, Omittable<ToolChoiceOption?>? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, Omittable<ResponseFormatOption?>? responseFormat, }) { return CreateRunRequest(
+return errors;}
+CreateRunRequest copyWith({String? assistantId, Omittable<CreateAssistantRequestModel?>? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? instructions, Omittable<String?>? additionalInstructions, Omittable<List<CreateMessageRequest>?>? additionalMessages, Omittable<List<AssistantObjectTools>?>? tools, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<bool?>? stream, Omittable<int?>? maxPromptTokens, Omittable<int?>? maxCompletionTokens, Omittable<TruncationObject?>? truncationStrategy, Omittable<ToolChoiceOption?>? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, Omittable<ResponseFormatOption?>? responseFormat, }) {return CreateRunRequest(
   assistantId: assistantId ?? this.assistantId,
   model: model ?? this.model,
   reasoningEffort: reasoningEffort ?? this.reasoningEffort,
@@ -150,7 +150,7 @@ CreateRunRequest copyWith({String? assistantId, Omittable<CreateAssistantRequest
   toolChoice: toolChoice ?? this.toolChoice,
   parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
   responseFormat: responseFormat ?? this.responseFormat,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateRunRequest &&
           assistantId == other.assistantId &&
@@ -177,4 +177,4 @@ CreateRunRequest copyWith({String? assistantId, Omittable<CreateAssistantRequest
 
 @override String toString() => 'CreateRunRequest(\n  assistantId: $assistantId,\n  model: $model,\n  reasoningEffort: $reasoningEffort,\n  instructions: $instructions,\n  additionalInstructions: $additionalInstructions,\n  additionalMessages: $additionalMessages,\n  tools: $tools,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  stream: $stream,\n  maxPromptTokens: $maxPromptTokens,\n  maxCompletionTokens: $maxCompletionTokens,\n  truncationStrategy: $truncationStrategy,\n  toolChoice: $toolChoice,\n  parallelToolCalls: $parallelToolCalls,\n  responseFormat: $responseFormat,\n)';
 
- }
+}

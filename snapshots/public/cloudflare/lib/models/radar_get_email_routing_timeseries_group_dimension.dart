@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 sealed class RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension();
 
-factory RadarGetEmailRoutingTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetEmailRoutingTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'IP_VERSION' => ipVersion,
   'ENCRYPTED' => encrypted,
   'ARC' => arc,
@@ -12,7 +12,7 @@ factory RadarGetEmailRoutingTimeseriesGroupDimension.fromJson(String json) { ret
   'DMARC' => dmarc,
   'SPF' => spf,
   _ => RadarGetEmailRoutingTimeseriesGroupDimension$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailRoutingTimeseriesGroupDimension ipVersion = RadarGetEmailRoutingTimeseriesGroupDimension$ipVersion._();
 
@@ -29,9 +29,9 @@ static const RadarGetEmailRoutingTimeseriesGroupDimension spf = RadarGetEmailRou
 static const List<RadarGetEmailRoutingTimeseriesGroupDimension> values = [ipVersion, encrypted, arc, dkim, dmarc, spf];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'IP_VERSION' => 'ipVersion',
   'ENCRYPTED' => 'encrypted',
   'ARC' => 'arc',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'DMARC' => 'dmarc',
   'SPF' => 'spf',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupDimension$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailRoutingTimeseriesGroupDimension$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ipVersion, required W Function() encrypted, required W Function() arc, required W Function() dkim, required W Function() dmarc, required W Function() spf, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ipVersion, required W Function() encrypted, required W Function() arc, required W Function() dkim, required W Function() dmarc, required W Function() spf, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailRoutingTimeseriesGroupDimension$ipVersion() => ipVersion(),
       RadarGetEmailRoutingTimeseriesGroupDimension$encrypted() => encrypted(),
       RadarGetEmailRoutingTimeseriesGroupDimension$arc() => arc(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() ipVersion, required W Function() encrypted, req
       RadarGetEmailRoutingTimeseriesGroupDimension$dmarc() => dmarc(),
       RadarGetEmailRoutingTimeseriesGroupDimension$spf() => spf(),
       RadarGetEmailRoutingTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersion, W Function()? encrypted, W Function()? arc, W Function()? dkim, W Function()? dmarc, W Function()? spf, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersion, W Function()? encrypted, W Function()? arc, W Function()? dkim, W Function()? dmarc, W Function()? spf, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailRoutingTimeseriesGroupDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
       RadarGetEmailRoutingTimeseriesGroupDimension$encrypted() => encrypted != null ? encrypted() : orElse(value),
       RadarGetEmailRoutingTimeseriesGroupDimension$arc() => arc != null ? arc() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersio
       RadarGetEmailRoutingTimeseriesGroupDimension$dmarc() => dmarc != null ? dmarc() : orElse(value),
       RadarGetEmailRoutingTimeseriesGroupDimension$spf() => spf != null ? spf() : orElse(value),
       RadarGetEmailRoutingTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailRoutingTimeseriesGroupDimension($value)';
 
- }
+}
 @immutable final class RadarGetEmailRoutingTimeseriesGroupDimension$ipVersion extends RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension$ipVersion._();
 
 @override String get value => 'IP_VERSION';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersio
 
 @override int get hashCode => 'IP_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingTimeseriesGroupDimension$encrypted extends RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension$encrypted._();
 
 @override String get value => 'ENCRYPTED';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersio
 
 @override int get hashCode => 'ENCRYPTED'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingTimeseriesGroupDimension$arc extends RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension$arc._();
 
 @override String get value => 'ARC';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersio
 
 @override int get hashCode => 'ARC'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingTimeseriesGroupDimension$dkim extends RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension$dkim._();
 
 @override String get value => 'DKIM';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersio
 
 @override int get hashCode => 'DKIM'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingTimeseriesGroupDimension$dmarc extends RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension$dmarc._();
 
 @override String get value => 'DMARC';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersio
 
 @override int get hashCode => 'DMARC'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingTimeseriesGroupDimension$spf extends RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension$spf._();
 
 @override String get value => 'SPF';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersio
 
 @override int get hashCode => 'SPF'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailRoutingTimeseriesGroupDimension$Unknown extends RadarGetEmailRoutingTimeseriesGroupDimension {const RadarGetEmailRoutingTimeseriesGroupDimension$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersio
 
 @override int get hashCode => value.hashCode;
 
- }
+}

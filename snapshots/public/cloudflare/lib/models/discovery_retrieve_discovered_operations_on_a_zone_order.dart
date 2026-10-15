@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order by
 sealed class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder();
 
-factory DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder.fromJson(String json) { return switch (json) {
+factory DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder.fromJson(String json) {return switch (json) {
   'host' => host,
   'method' => method,
   'endpoint' => endpoint,
   'traffic_stats.requests' => trafficStatsRequests,
   'traffic_stats.last_updated' => trafficStatsLastUpdated,
   _ => DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown(json),
-}; }
+};}
 
 static const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder host = DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$host._();
 
@@ -26,39 +26,39 @@ static const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder trafficStatsLastU
 static const List<DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder> values = [host, method, endpoint, trafficStatsRequests, trafficStatsLastUpdated];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'host' => 'host',
   'method' => 'method',
   'endpoint' => 'endpoint',
   'traffic_stats.requests' => 'trafficStatsRequests',
   'traffic_stats.last_updated' => 'trafficStatsLastUpdated',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown; } 
+bool get isUnknown {return this is DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() host, required W Function() method, required W Function() endpoint, required W Function() trafficStatsRequests, required W Function() trafficStatsLastUpdated, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() host, required W Function() method, required W Function() endpoint, required W Function() trafficStatsRequests, required W Function() trafficStatsLastUpdated, required W Function(String value) $unknown, }) {return switch (this) {
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$host() => host(),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$method() => method(),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$endpoint() => endpoint(),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsRequests() => trafficStatsRequests(),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsLastUpdated() => trafficStatsLastUpdated(),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W Function()? method, W Function()? endpoint, W Function()? trafficStatsRequests, W Function()? trafficStatsLastUpdated, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W Function()? method, W Function()? endpoint, W Function()? trafficStatsRequests, W Function()? trafficStatsLastUpdated, W Function(String value)? $unknown, }) {return switch (this) {
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$host() => host != null ? host() : orElse(value),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$method() => method != null ? method() : orElse(value),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$endpoint() => endpoint != null ? endpoint() : orElse(value),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsRequests() => trafficStatsRequests != null ? trafficStatsRequests() : orElse(value),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsLastUpdated() => trafficStatsLastUpdated != null ? trafficStatsLastUpdated() : orElse(value),
       DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder($value)';
 
- }
+}
 @immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$host extends DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$host._();
 
 @override String get value => 'host';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W 
 
 @override int get hashCode => 'host'.hashCode;
 
- }
+}
 @immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$method extends DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$method._();
 
 @override String get value => 'method';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W 
 
 @override int get hashCode => 'method'.hashCode;
 
- }
+}
 @immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$endpoint extends DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$endpoint._();
 
 @override String get value => 'endpoint';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W 
 
 @override int get hashCode => 'endpoint'.hashCode;
 
- }
+}
 @immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsRequests extends DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsRequests._();
 
 @override String get value => 'traffic_stats.requests';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W 
 
 @override int get hashCode => 'traffic_stats.requests'.hashCode;
 
- }
+}
 @immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsLastUpdated extends DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsLastUpdated._();
 
 @override String get value => 'traffic_stats.last_updated';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W 
 
 @override int get hashCode => 'traffic_stats.last_updated'.hashCode;
 
- }
+}
 @immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown extends DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown(this.value);
 
 @override final String value;
@@ -113,4 +113,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

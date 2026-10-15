@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_srv_record/dns_records_srv_record_data.dart';import 'package:pub_cloudflare/models/dns_records_srv_record_request/dns_records_srv_record_request_type.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';@immutable final class DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord {const DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord({required this.id, this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
-factory DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(
+factory DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord.fromJson(Map<String, dynamic> json) {return DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,
   name: json['name'] != null ? DnsRecordsName.fromJson(json['name'] as String) : null,
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
@@ -14,7 +14,7 @@ factory DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRec
   data: json['data'] != null ? DnsRecordsSrvRecordData.fromJson(json['data'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? DnsRecordsSrvRecordRequestType.fromJson(json['type'] as String) : null,
   id: DnsRecordsIdentifier.fromJson(json['id'] as String),
-); }
+);}
 
 /// Comments or notes about the DNS record. This field has no effect on DNS responses.
 final DnsRecordsComment? comment;
@@ -44,7 +44,7 @@ final DnsRecordsSrvRecordRequestType? type;
 
 final DnsRecordsIdentifier id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment != null) 'comment': comment?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (proxied != null) 'proxied': proxied?.toJson(),
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   if (data != null) 'data': data?.toJson(),
   if (type != null) 'type': type?.toJson(),
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsSrvRecordData? Function()? data, DnsRecordsSrvRecordRequestType? Function()? type, DnsRecordsIdentifier? id, }) { return DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id');}
+DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsName? Function()? name, DnsRecordsProxied? Function()? proxied, DnsRecordsSettings? Function()? settings, List<String>? Function()? tags, DnsRecordsTtl? Function()? ttl, String? Function()? content, DnsRecordsSrvRecordData? Function()? data, DnsRecordsSrvRecordRequestType? Function()? type, DnsRecordsIdentifier? id, }) {return DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,
@@ -68,7 +68,7 @@ DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord copy
   data: data != null ? data() : this.data,
   type: type != null ? type() : this.type,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord &&
           comment == other.comment &&
@@ -86,4 +86,4 @@ DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord copy
 
 @override String toString() => 'DnsRecordsDnsRecordBatchPatchDnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(\n  comment: $comment,\n  name: $name,\n  proxied: $proxied,\n  settings: $settings,\n  tags: $tags,\n  ttl: $ttl,\n  content: $content,\n  data: $data,\n  type: $type,\n  id: $id,\n)';
 
- }
+}

@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_attacks_response/radar_get_attacks_layer3_top_attacks_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_response/radar_get_quality_speed_top_ases_response_result_top0.dart';@immutable final class RadarGetQualitySpeedTopAsesResponseResult {const RadarGetQualitySpeedTopAsesResponseResult({required this.meta, required this.top0, });
 
-factory RadarGetQualitySpeedTopAsesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedTopAsesResponseResult(
+factory RadarGetQualitySpeedTopAsesResponseResult.fromJson(Map<String, dynamic> json) {return RadarGetQualitySpeedTopAsesResponseResult(
   meta: RadarGetAttacksLayer3TopAttacksResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
   top0: (json['top_0'] as List<dynamic>).map((e) => RadarGetQualitySpeedTopAsesResponseResultTop0.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Metadata for the results.
 final RadarGetAttacksLayer3TopAttacksResponseResultMeta meta;
 
 final List<RadarGetQualitySpeedTopAsesResponseResultTop0> top0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'meta': meta.toJson(),
   'top_0': top0.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
-      json.containsKey('top_0'); } 
-RadarGetQualitySpeedTopAsesResponseResult copyWith({RadarGetAttacksLayer3TopAttacksResponseResultMeta? meta, List<RadarGetQualitySpeedTopAsesResponseResultTop0>? top0, }) { return RadarGetQualitySpeedTopAsesResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('meta') &&
+      json.containsKey('top_0');}
+RadarGetQualitySpeedTopAsesResponseResult copyWith({RadarGetAttacksLayer3TopAttacksResponseResultMeta? meta, List<RadarGetQualitySpeedTopAsesResponseResultTop0>? top0, }) {return RadarGetQualitySpeedTopAsesResponseResult(
   meta: meta ?? this.meta,
   top0: top0 ?? this.top0,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedTopAsesResponseResult &&
           meta == other.meta &&
@@ -32,4 +32,4 @@ RadarGetQualitySpeedTopAsesResponseResult copyWith({RadarGetAttacksLayer3TopAtta
 
 @override String toString() => 'RadarGetQualitySpeedTopAsesResponseResult(meta: $meta, top0: $top0)';
 
- }
+}

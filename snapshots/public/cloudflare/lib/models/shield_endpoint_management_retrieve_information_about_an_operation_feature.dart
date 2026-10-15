@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature {const ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature();
 
-factory ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature.fromJson(String json) { return switch (json) {
+factory ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature.fromJson(String json) {return switch (json) {
   'thresholds' => thresholds,
   'parameter_schemas' => parameterSchemas,
   'schema_info' => schemaInfo,
   _ => ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$Unknown(json),
-}; }
+};}
 
 static const ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature thresholds = ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$thresholds._();
 
@@ -19,33 +19,33 @@ static const ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature 
 static const List<ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature> values = [thresholds, parameterSchemas, schemaInfo];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'thresholds' => 'thresholds',
   'parameter_schemas' => 'parameterSchemas',
   'schema_info' => 'schemaInfo',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$Unknown; } 
+bool get isUnknown {return this is ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() thresholds, required W Function() parameterSchemas, required W Function() schemaInfo, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() thresholds, required W Function() parameterSchemas, required W Function() schemaInfo, required W Function(String value) $unknown, }) {return switch (this) {
       ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$thresholds() => thresholds(),
       ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$parameterSchemas() => parameterSchemas(),
       ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$schemaInfo() => schemaInfo(),
       ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? thresholds, W Function()? parameterSchemas, W Function()? schemaInfo, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? thresholds, W Function()? parameterSchemas, W Function()? schemaInfo, W Function(String value)? $unknown, }) {return switch (this) {
       ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$thresholds() => thresholds != null ? thresholds() : orElse(value),
       ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$parameterSchemas() => parameterSchemas != null ? parameterSchemas() : orElse(value),
       ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$schemaInfo() => schemaInfo != null ? schemaInfo() : orElse(value),
       ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature($value)';
 
- }
+}
 @immutable final class ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$thresholds extends ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature {const ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$thresholds._();
 
 @override String get value => 'thresholds';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshol
 
 @override int get hashCode => 'thresholds'.hashCode;
 
- }
+}
 @immutable final class ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$parameterSchemas extends ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature {const ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$parameterSchemas._();
 
 @override String get value => 'parameter_schemas';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshol
 
 @override int get hashCode => 'parameter_schemas'.hashCode;
 
- }
+}
 @immutable final class ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$schemaInfo extends ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature {const ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$schemaInfo._();
 
 @override String get value => 'schema_info';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshol
 
 @override int get hashCode => 'schema_info'.hashCode;
 
- }
+}
 @immutable final class ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$Unknown extends ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature {const ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshol
 
 @override int get hashCode => value.hashCode;
 
- }
+}

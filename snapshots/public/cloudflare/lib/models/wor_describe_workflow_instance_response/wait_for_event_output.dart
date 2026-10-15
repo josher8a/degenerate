@@ -7,13 +7,13 @@ const WaitForEventOutput({this.mapStringdynamic = const Omittable.absent(), this
 const WaitForEventOutput._({required this.rawValue, required this.mapStringdynamic, required this.string, required this.$double, required this.$bool, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory WaitForEventOutput.fromJson(Object? json) { return WaitForEventOutput._(
+factory WaitForEventOutput.fromJson(Object? json) {return WaitForEventOutput._(
   rawValue: Omittable(json),
   mapStringdynamic: parseAnyOfVariant<Map<String, dynamic>>(json, (value) => value! as Map<String, dynamic>),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
   $bool: parseAnyOfVariant<bool>(json, (value) => value! as bool),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -51,4 +51,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'WaitForEventOutput(${toJson()})';
 
- }
+}

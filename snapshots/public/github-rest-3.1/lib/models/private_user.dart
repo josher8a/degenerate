@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_user/private_user_plan.dart';/// Private User
 @immutable final class PrivateUser {const PrivateUser({required this.reposUrl, required this.id, required this.twoFactorAuthentication, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.login, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.name, required this.company, required this.blog, required this.location, required this.email, required this.collaborators, required this.hireable, required this.bio, required this.diskUsage, required this.ownedPrivateRepos, required this.publicGists, required this.followers, required this.following, required this.createdAt, required this.updatedAt, required this.privateGists, required this.totalPrivateRepos, required this.publicRepos, this.twitterUsername = const Omittable.absent(), this.notificationEmail = const Omittable.absent(), this.userViewType, this.plan, this.businessPlus, this.ldapDn, });
 
-factory PrivateUser.fromJson(Map<String, dynamic> json) { return PrivateUser(
+factory PrivateUser.fromJson(Map<String, dynamic> json) {return PrivateUser(
   login: json['login'] as String,
   id: (json['id'] as num).toInt(),
   userViewType: json['user_view_type'] as String?,
@@ -48,7 +48,7 @@ factory PrivateUser.fromJson(Map<String, dynamic> json) { return PrivateUser(
   plan: json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   businessPlus: json['business_plus'] as bool?,
   ldapDn: json['ldap_dn'] as String?,
-); }
+);}
 
 final String login;
 
@@ -136,7 +136,7 @@ final bool? businessPlus;
 
 final String? ldapDn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'login': login,
   'id': id,
   'user_view_type': ?userViewType,
@@ -180,8 +180,8 @@ Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
   'business_plus': ?businessPlus,
   'ldap_dn': ?ldapDn,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('login') && json['login'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
@@ -217,8 +217,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('owned_private_repos') && json['owned_private_repos'] is num &&
       json.containsKey('disk_usage') && json['disk_usage'] is num &&
       json.containsKey('collaborators') && json['collaborators'] is num &&
-      json.containsKey('two_factor_authentication') && json['two_factor_authentication'] is bool; } 
-PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) { return PrivateUser(
+      json.containsKey('two_factor_authentication') && json['two_factor_authentication'] is bool;}
+PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) {return PrivateUser(
   login: login ?? this.login,
   id: id ?? this.id,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
@@ -262,7 +262,7 @@ PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, 
   plan: plan != null ? plan() : this.plan,
   businessPlus: businessPlus != null ? businessPlus() : this.businessPlus,
   ldapDn: ldapDn != null ? ldapDn() : this.ldapDn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PrivateUser &&
           login == other.login &&
@@ -313,4 +313,4 @@ PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, 
 
 @override String toString() => 'PrivateUser(\n  login: $login,\n  id: $id,\n  userViewType: $userViewType,\n  nodeId: $nodeId,\n  avatarUrl: $avatarUrl,\n  gravatarId: $gravatarId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  organizationsUrl: $organizationsUrl,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  type: $type,\n  siteAdmin: $siteAdmin,\n  name: $name,\n  company: $company,\n  blog: $blog,\n  location: $location,\n  email: $email,\n  notificationEmail: $notificationEmail,\n  hireable: $hireable,\n  bio: $bio,\n  twitterUsername: $twitterUsername,\n  publicRepos: $publicRepos,\n  publicGists: $publicGists,\n  followers: $followers,\n  following: $following,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  privateGists: $privateGists,\n  totalPrivateRepos: $totalPrivateRepos,\n  ownedPrivateRepos: $ownedPrivateRepos,\n  diskUsage: $diskUsage,\n  collaborators: $collaborators,\n  twoFactorAuthentication: $twoFactorAuthentication,\n  plan: $plan,\n  businessPlus: $businessPlus,\n  ldapDn: $ldapDn,\n)';
 
- }
+}

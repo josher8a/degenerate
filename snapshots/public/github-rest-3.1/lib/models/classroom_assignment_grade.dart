@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Grade for a student or groups GitHub Classroom assignment
 @immutable final class ClassroomAssignmentGrade {const ClassroomAssignmentGrade({required this.assignmentName, required this.assignmentUrl, required this.starterCodeUrl, required this.githubUsername, required this.rosterIdentifier, required this.studentRepositoryName, required this.studentRepositoryUrl, required this.submissionTimestamp, required this.pointsAwarded, required this.pointsAvailable, this.groupName, });
 
-factory ClassroomAssignmentGrade.fromJson(Map<String, dynamic> json) { return ClassroomAssignmentGrade(
+factory ClassroomAssignmentGrade.fromJson(Map<String, dynamic> json) {return ClassroomAssignmentGrade(
   assignmentName: json['assignment_name'] as String,
   assignmentUrl: json['assignment_url'] as String,
   starterCodeUrl: json['starter_code_url'] as String,
@@ -16,7 +16,7 @@ factory ClassroomAssignmentGrade.fromJson(Map<String, dynamic> json) { return Cl
   pointsAwarded: (json['points_awarded'] as num).toInt(),
   pointsAvailable: (json['points_available'] as num).toInt(),
   groupName: json['group_name'] as String?,
-); }
+);}
 
 /// Name of the assignment
 final String assignmentName;
@@ -51,7 +51,7 @@ final int pointsAvailable;
 /// If a group assignment, name of the group the student is in
 final String? groupName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'assignment_name': assignmentName,
   'assignment_url': assignmentUrl,
   'starter_code_url': starterCodeUrl,
@@ -63,8 +63,8 @@ Map<String, dynamic> toJson() { return {
   'points_awarded': pointsAwarded,
   'points_available': pointsAvailable,
   'group_name': ?groupName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('assignment_name') && json['assignment_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('assignment_name') && json['assignment_name'] is String &&
       json.containsKey('assignment_url') && json['assignment_url'] is String &&
       json.containsKey('starter_code_url') && json['starter_code_url'] is String &&
       json.containsKey('github_username') && json['github_username'] is String &&
@@ -73,8 +73,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('assig
       json.containsKey('student_repository_url') && json['student_repository_url'] is String &&
       json.containsKey('submission_timestamp') && json['submission_timestamp'] is String &&
       json.containsKey('points_awarded') && json['points_awarded'] is num &&
-      json.containsKey('points_available') && json['points_available'] is num; } 
-ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl, String? starterCodeUrl, String? githubUsername, String? rosterIdentifier, String? studentRepositoryName, String? studentRepositoryUrl, String? submissionTimestamp, int? pointsAwarded, int? pointsAvailable, String? Function()? groupName, }) { return ClassroomAssignmentGrade(
+      json.containsKey('points_available') && json['points_available'] is num;}
+ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl, String? starterCodeUrl, String? githubUsername, String? rosterIdentifier, String? studentRepositoryName, String? studentRepositoryUrl, String? submissionTimestamp, int? pointsAwarded, int? pointsAvailable, String? Function()? groupName, }) {return ClassroomAssignmentGrade(
   assignmentName: assignmentName ?? this.assignmentName,
   assignmentUrl: assignmentUrl ?? this.assignmentUrl,
   starterCodeUrl: starterCodeUrl ?? this.starterCodeUrl,
@@ -86,7 +86,7 @@ ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl
   pointsAwarded: pointsAwarded ?? this.pointsAwarded,
   pointsAvailable: pointsAvailable ?? this.pointsAvailable,
   groupName: groupName != null ? groupName() : this.groupName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ClassroomAssignmentGrade &&
           assignmentName == other.assignmentName &&
@@ -105,4 +105,4 @@ ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl
 
 @override String toString() => 'ClassroomAssignmentGrade(\n  assignmentName: $assignmentName,\n  assignmentUrl: $assignmentUrl,\n  starterCodeUrl: $starterCodeUrl,\n  githubUsername: $githubUsername,\n  rosterIdentifier: $rosterIdentifier,\n  studentRepositoryName: $studentRepositoryName,\n  studentRepositoryUrl: $studentRepositoryUrl,\n  submissionTimestamp: $submissionTimestamp,\n  pointsAwarded: $pointsAwarded,\n  pointsAvailable: $pointsAvailable,\n  groupName: $groupName,\n)';
 
- }
+}

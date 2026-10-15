@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report/email_security_phish_guard_report_fields.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report_tag.dart';@immutable final class EmailSecurityPhishGuardReport {const EmailSecurityPhishGuardReport({required this.content, required this.createdAt, required this.disposition, required this.fields, required this.id, required this.priority, required this.title, required this.ts, required this.updatedAt, this.tags = const Omittable.absent(), });
 
-factory EmailSecurityPhishGuardReport.fromJson(Map<String, dynamic> json) { return EmailSecurityPhishGuardReport(
+factory EmailSecurityPhishGuardReport.fromJson(Map<String, dynamic> json) {return EmailSecurityPhishGuardReport(
   content: json['content'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   disposition: json['disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['disposition'] as String) : null,
@@ -14,7 +14,7 @@ factory EmailSecurityPhishGuardReport.fromJson(Map<String, dynamic> json) { retu
   title: json['title'] as String,
   ts: DateTime.parse(json['ts'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 final String content;
 
@@ -36,7 +36,7 @@ final DateTime ts;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content,
   'created_at': createdAt.toIso8601String(),
   'disposition': disposition?.toJson(),
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'ts': ts.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') && json['content'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('disposition') &&
       json.containsKey('fields') &&
@@ -56,8 +56,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
       json.containsKey('priority') && json['priority'] is String &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('ts') && json['ts'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, EmailSecurityDispositionLabel? Function()? disposition, EmailSecurityPhishGuardReportFields? fields, int? id, String? priority, Omittable<List<EmailSecurityPhishGuardReportTag>?>? tags, String? title, DateTime? ts, DateTime? updatedAt, }) { return EmailSecurityPhishGuardReport(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, EmailSecurityDispositionLabel? Function()? disposition, EmailSecurityPhishGuardReportFields? fields, int? id, String? priority, Omittable<List<EmailSecurityPhishGuardReportTag>?>? tags, String? title, DateTime? ts, DateTime? updatedAt, }) {return EmailSecurityPhishGuardReport(
   content: content ?? this.content,
   createdAt: createdAt ?? this.createdAt,
   disposition: disposition != null ? disposition() : this.disposition,
@@ -68,7 +68,7 @@ EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, Em
   title: title ?? this.title,
   ts: ts ?? this.ts,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPhishGuardReport &&
           content == other.content &&
@@ -87,4 +87,4 @@ EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, Em
 
 @override String toString() => 'EmailSecurityPhishGuardReport(\n  content: $content,\n  createdAt: $createdAt,\n  disposition: $disposition,\n  fields: $fields,\n  id: $id,\n  priority: $priority,\n  tags: $tags,\n  title: $title,\n  ts: $ts,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

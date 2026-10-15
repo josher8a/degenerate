@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the recording peer
 sealed class RecorderType {const RecorderType();
 
-factory RecorderType.fromJson(String json) { return switch (json) {
+factory RecorderType.fromJson(String json) {return switch (json) {
   'RECORDER' => recorder,
   'LIVESTREAMER' => livestreamer,
   'NONE' => none,
   _ => RecorderType$Unknown(json),
-}; }
+};}
 
 static const RecorderType recorder = RecorderType$recorder._();
 
@@ -20,33 +20,33 @@ static const RecorderType none = RecorderType$none._();
 static const List<RecorderType> values = [recorder, livestreamer, none];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'RECORDER' => 'recorder',
   'LIVESTREAMER' => 'livestreamer',
   'NONE' => 'none',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RecorderType$Unknown; } 
+bool get isUnknown {return this is RecorderType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() recorder, required W Function() livestreamer, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() recorder, required W Function() livestreamer, required W Function() none, required W Function(String value) $unknown, }) {return switch (this) {
       RecorderType$recorder() => recorder(),
       RecorderType$livestreamer() => livestreamer(),
       RecorderType$none() => none(),
       RecorderType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? recorder, W Function()? livestreamer, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? recorder, W Function()? livestreamer, W Function()? none, W Function(String value)? $unknown, }) {return switch (this) {
       RecorderType$recorder() => recorder != null ? recorder() : orElse(value),
       RecorderType$livestreamer() => livestreamer != null ? livestreamer() : orElse(value),
       RecorderType$none() => none != null ? none() : orElse(value),
       RecorderType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RecorderType($value)';
 
- }
+}
 @immutable final class RecorderType$recorder extends RecorderType {const RecorderType$recorder._();
 
 @override String get value => 'RECORDER';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? recorder
 
 @override int get hashCode => 'RECORDER'.hashCode;
 
- }
+}
 @immutable final class RecorderType$livestreamer extends RecorderType {const RecorderType$livestreamer._();
 
 @override String get value => 'LIVESTREAMER';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? recorder
 
 @override int get hashCode => 'LIVESTREAMER'.hashCode;
 
- }
+}
 @immutable final class RecorderType$none extends RecorderType {const RecorderType$none._();
 
 @override String get value => 'NONE';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? recorder
 
 @override int get hashCode => 'NONE'.hashCode;
 
- }
+}
 @immutable final class RecorderType$Unknown extends RecorderType {const RecorderType$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? recorder
 
 @override int get hashCode => value.hashCode;
 
- }
+}

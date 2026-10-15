@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRulesetLinksHtml {const RepositoryRulesetLinksHtml({this.href});
 
-factory RepositoryRulesetLinksHtml.fromJson(Map<String, dynamic> json) { return RepositoryRulesetLinksHtml(
+factory RepositoryRulesetLinksHtml.fromJson(Map<String, dynamic> json) {return RepositoryRulesetLinksHtml(
   href: json['href'] as String?,
-); }
+);}
 
 /// The html URL of the ruleset
 final String? href;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'href': ?href,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'href'}.contains(key)); } 
-RepositoryRulesetLinksHtml copyWith({String? Function()? href}) { return RepositoryRulesetLinksHtml(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'href'}.contains(key));}
+RepositoryRulesetLinksHtml copyWith({String? Function()? href}) {return RepositoryRulesetLinksHtml(
   href: href != null ? href() : this.href,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulesetLinksHtml &&
           href == other.href;
@@ -25,4 +25,4 @@ RepositoryRulesetLinksHtml copyWith({String? Function()? href}) { return Reposit
 
 @override String toString() => 'RepositoryRulesetLinksHtml(href: $href)';
 
- }
+}

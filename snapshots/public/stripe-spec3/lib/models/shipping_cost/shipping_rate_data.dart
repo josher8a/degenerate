@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/delivery_estimate.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/post_shipping_rates_request_fixed_amount.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/post_shipping_rates_request_type.dart';@immutable final class ShippingRateData {const ShippingRateData({required this.displayName, this.deliveryEstimate, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
 
-factory ShippingRateData.fromJson(Map<String, dynamic> json) { return ShippingRateData(
+factory ShippingRateData.fromJson(Map<String, dynamic> json) {return ShippingRateData(
   deliveryEstimate: json['delivery_estimate'] != null ? DeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
   displayName: json['display_name'] as String,
   fixedAmount: json['fixed_amount'] != null ? PostShippingRatesRequestFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory ShippingRateData.fromJson(Map<String, dynamic> json) { return ShippingRa
   taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   taxCode: json['tax_code'] as String?,
   type: json['type'] != null ? PostShippingRatesRequestType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final DeliveryEstimate? deliveryEstimate;
 
@@ -27,7 +27,7 @@ final String? taxCode;
 
 final PostShippingRatesRequestType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (deliveryEstimate != null) 'delivery_estimate': deliveryEstimate?.toJson(),
   'display_name': displayName,
   if (fixedAmount != null) 'fixed_amount': fixedAmount?.toJson(),
@@ -35,13 +35,13 @@ Map<String, dynamic> toJson() { return {
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
   'tax_code': ?taxCode,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('display_name') && json['display_name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (displayName.runes.length > 100) { errors.add('displayName: length must be <= 100'); }
-return errors; } 
-ShippingRateData copyWith({DeliveryEstimate? Function()? deliveryEstimate, String? displayName, PostShippingRatesRequestFixedAmount? Function()? fixedAmount, Map<String, String>? Function()? metadata, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, PostShippingRatesRequestType? Function()? type, }) { return ShippingRateData(
+return errors;}
+ShippingRateData copyWith({DeliveryEstimate? Function()? deliveryEstimate, String? displayName, PostShippingRatesRequestFixedAmount? Function()? fixedAmount, Map<String, String>? Function()? metadata, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, PostShippingRatesRequestType? Function()? type, }) {return ShippingRateData(
   deliveryEstimate: deliveryEstimate != null ? deliveryEstimate() : this.deliveryEstimate,
   displayName: displayName ?? this.displayName,
   fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,
@@ -49,7 +49,7 @@ ShippingRateData copyWith({DeliveryEstimate? Function()? deliveryEstimate, Strin
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingRateData &&
           deliveryEstimate == other.deliveryEstimate &&
@@ -64,4 +64,4 @@ ShippingRateData copyWith({DeliveryEstimate? Function()? deliveryEstimate, Strin
 
 @override String toString() => 'ShippingRateData(deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)';
 
- }
+}

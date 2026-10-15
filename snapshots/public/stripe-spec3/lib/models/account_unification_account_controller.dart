@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller/requirement_collection.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_fees.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_losses.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_stripe_dashboard.dart';/// The controller type. Can be `application`, if a Connect application controls the account, or `account`, if the account controls itself.
 sealed class AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType();
 
-factory AccountUnificationAccountControllerType.fromJson(String json) { return switch (json) {
+factory AccountUnificationAccountControllerType.fromJson(String json) {return switch (json) {
   'account' => account,
   'application' => application,
   _ => AccountUnificationAccountControllerType$Unknown(json),
-}; }
+};}
 
 static const AccountUnificationAccountControllerType account = AccountUnificationAccountControllerType$account._();
 
@@ -17,30 +17,30 @@ static const AccountUnificationAccountControllerType application = AccountUnific
 static const List<AccountUnificationAccountControllerType> values = [account, application];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'account' => 'account',
   'application' => 'application',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountUnificationAccountControllerType$Unknown; } 
+bool get isUnknown {return this is AccountUnificationAccountControllerType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() account, required W Function() application, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() account, required W Function() application, required W Function(String value) $unknown, }) {return switch (this) {
       AccountUnificationAccountControllerType$account() => account(),
       AccountUnificationAccountControllerType$application() => application(),
       AccountUnificationAccountControllerType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? account, W Function()? application, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? account, W Function()? application, W Function(String value)? $unknown, }) {return switch (this) {
       AccountUnificationAccountControllerType$account() => account != null ? account() : orElse(value),
       AccountUnificationAccountControllerType$application() => application != null ? application() : orElse(value),
       AccountUnificationAccountControllerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountUnificationAccountControllerType($value)';
 
- }
+}
 @immutable final class AccountUnificationAccountControllerType$account extends AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType$account._();
 
 @override String get value => 'account';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? account,
 
 @override int get hashCode => 'account'.hashCode;
 
- }
+}
 @immutable final class AccountUnificationAccountControllerType$application extends AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType$application._();
 
 @override String get value => 'application';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? account,
 
 @override int get hashCode => 'application'.hashCode;
 
- }
+}
 @immutable final class AccountUnificationAccountControllerType$Unknown extends AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType$Unknown(this.value);
 
 @override final String value;
@@ -68,18 +68,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? account,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class AccountUnificationAccountController {const AccountUnificationAccountController({required this.type, this.fees, this.isController, this.losses, this.requirementCollection, this.stripeDashboard, });
 
-factory AccountUnificationAccountController.fromJson(Map<String, dynamic> json) { return AccountUnificationAccountController(
+factory AccountUnificationAccountController.fromJson(Map<String, dynamic> json) {return AccountUnificationAccountController(
   fees: json['fees'] != null ? AccountUnificationAccountControllerFees.fromJson(json['fees'] as Map<String, dynamic>) : null,
   isController: json['is_controller'] as bool?,
   losses: json['losses'] != null ? AccountUnificationAccountControllerLosses.fromJson(json['losses'] as Map<String, dynamic>) : null,
   requirementCollection: json['requirement_collection'] != null ? RequirementCollection.fromJson(json['requirement_collection'] as String) : null,
   stripeDashboard: json['stripe_dashboard'] != null ? AccountUnificationAccountControllerStripeDashboard.fromJson(json['stripe_dashboard'] as Map<String, dynamic>) : null,
   type: AccountUnificationAccountControllerType.fromJson(json['type'] as String),
-); }
+);}
 
 final AccountUnificationAccountControllerFees? fees;
 
@@ -96,23 +96,23 @@ final AccountUnificationAccountControllerStripeDashboard? stripeDashboard;
 /// The controller type. Can be `application`, if a Connect application controls the account, or `account`, if the account controls itself.
 final AccountUnificationAccountControllerType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (fees != null) 'fees': fees?.toJson(),
   'is_controller': ?isController,
   if (losses != null) 'losses': losses?.toJson(),
   if (requirementCollection != null) 'requirement_collection': requirementCollection?.toJson(),
   if (stripeDashboard != null) 'stripe_dashboard': stripeDashboard?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccountUnificationAccountController copyWith({AccountUnificationAccountControllerFees? Function()? fees, bool? Function()? isController, AccountUnificationAccountControllerLosses? Function()? losses, RequirementCollection? Function()? requirementCollection, AccountUnificationAccountControllerStripeDashboard? Function()? stripeDashboard, AccountUnificationAccountControllerType? type, }) { return AccountUnificationAccountController(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AccountUnificationAccountController copyWith({AccountUnificationAccountControllerFees? Function()? fees, bool? Function()? isController, AccountUnificationAccountControllerLosses? Function()? losses, RequirementCollection? Function()? requirementCollection, AccountUnificationAccountControllerStripeDashboard? Function()? stripeDashboard, AccountUnificationAccountControllerType? type, }) {return AccountUnificationAccountController(
   fees: fees != null ? fees() : this.fees,
   isController: isController != null ? isController() : this.isController,
   losses: losses != null ? losses() : this.losses,
   requirementCollection: requirementCollection != null ? requirementCollection() : this.requirementCollection,
   stripeDashboard: stripeDashboard != null ? stripeDashboard() : this.stripeDashboard,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUnificationAccountController &&
           fees == other.fees &&
@@ -126,4 +126,4 @@ AccountUnificationAccountController copyWith({AccountUnificationAccountControlle
 
 @override String toString() => 'AccountUnificationAccountController(fees: $fees, isController: $isController, losses: $losses, requirementCollection: $requirementCollection, stripeDashboard: $stripeDashboard, type: $type)';
 
- }
+}

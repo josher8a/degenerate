@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status/treasury_outbound_payments_resource_returned_status_code.dart';/// 
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatus {const TreasuryOutboundPaymentsResourceReturnedStatus({required this.code, required this.transaction, });
 
-factory TreasuryOutboundPaymentsResourceReturnedStatus.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceReturnedStatus(
+factory TreasuryOutboundPaymentsResourceReturnedStatus.fromJson(Map<String, dynamic> json) {return TreasuryOutboundPaymentsResourceReturnedStatus(
   code: TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(json['code'] as String),
   transaction: TreasuryCreditReversalTransaction.fromJson(json['transaction']),
-); }
+);}
 
 /// Reason for the return.
 final TreasuryOutboundPaymentsResourceReturnedStatusCode code;
@@ -15,16 +15,16 @@ final TreasuryOutboundPaymentsResourceReturnedStatusCode code;
 /// The Transaction associated with this object.
 final TreasuryCreditReversalTransaction transaction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'transaction': transaction.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
-      json.containsKey('transaction'); } 
-TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPaymentsResourceReturnedStatusCode? code, TreasuryCreditReversalTransaction? transaction, }) { return TreasuryOutboundPaymentsResourceReturnedStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
+      json.containsKey('transaction');}
+TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPaymentsResourceReturnedStatusCode? code, TreasuryCreditReversalTransaction? transaction, }) {return TreasuryOutboundPaymentsResourceReturnedStatus(
   code: code ?? this.code,
   transaction: transaction ?? this.transaction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceReturnedStatus &&
           code == other.code &&
@@ -34,4 +34,4 @@ TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPayment
 
 @override String toString() => 'TreasuryOutboundPaymentsResourceReturnedStatus(code: $code, transaction: $transaction)';
 
- }
+}

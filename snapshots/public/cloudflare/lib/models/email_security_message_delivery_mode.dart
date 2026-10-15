@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode();
 
-factory EmailSecurityMessageDeliveryMode.fromJson(String json) { return switch (json) {
+factory EmailSecurityMessageDeliveryMode.fromJson(String json) {return switch (json) {
   'DIRECT' => direct,
   'BCC' => bcc,
   'JOURNAL' => journal,
@@ -16,7 +16,7 @@ factory EmailSecurityMessageDeliveryMode.fromJson(String json) { return switch (
   'API' => api,
   'RETRO_SCAN' => retroScan,
   _ => EmailSecurityMessageDeliveryMode$Unknown(json),
-}; }
+};}
 
 static const EmailSecurityMessageDeliveryMode direct = EmailSecurityMessageDeliveryMode$direct._();
 
@@ -43,9 +43,9 @@ static const EmailSecurityMessageDeliveryMode retroScan = EmailSecurityMessageDe
 static const List<EmailSecurityMessageDeliveryMode> values = [direct, bcc, journal, reviewSubmission, dmarcUnverified, dmarcFailureReport, dmarcAggregateReport, threatIntelSubmission, simulationSubmission, api, retroScan];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DIRECT' => 'direct',
   'BCC' => 'bcc',
   'JOURNAL' => 'journal',
@@ -58,11 +58,11 @@ String get name { return switch (value) {
   'API' => 'api',
   'RETRO_SCAN' => 'retroScan',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EmailSecurityMessageDeliveryMode$Unknown; } 
+bool get isUnknown {return this is EmailSecurityMessageDeliveryMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() direct, required W Function() bcc, required W Function() journal, required W Function() reviewSubmission, required W Function() dmarcUnverified, required W Function() dmarcFailureReport, required W Function() dmarcAggregateReport, required W Function() threatIntelSubmission, required W Function() simulationSubmission, required W Function() api, required W Function() retroScan, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() direct, required W Function() bcc, required W Function() journal, required W Function() reviewSubmission, required W Function() dmarcUnverified, required W Function() dmarcFailureReport, required W Function() dmarcAggregateReport, required W Function() threatIntelSubmission, required W Function() simulationSubmission, required W Function() api, required W Function() retroScan, required W Function(String value) $unknown, }) {return switch (this) {
       EmailSecurityMessageDeliveryMode$direct() => direct(),
       EmailSecurityMessageDeliveryMode$bcc() => bcc(),
       EmailSecurityMessageDeliveryMode$journal() => journal(),
@@ -75,9 +75,9 @@ W when<W>({required W Function() direct, required W Function() bcc, required W F
       EmailSecurityMessageDeliveryMode$api() => api(),
       EmailSecurityMessageDeliveryMode$retroScan() => retroScan(),
       EmailSecurityMessageDeliveryMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? bcc, W Function()? journal, W Function()? reviewSubmission, W Function()? dmarcUnverified, W Function()? dmarcFailureReport, W Function()? dmarcAggregateReport, W Function()? threatIntelSubmission, W Function()? simulationSubmission, W Function()? api, W Function()? retroScan, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? bcc, W Function()? journal, W Function()? reviewSubmission, W Function()? dmarcUnverified, W Function()? dmarcFailureReport, W Function()? dmarcAggregateReport, W Function()? threatIntelSubmission, W Function()? simulationSubmission, W Function()? api, W Function()? retroScan, W Function(String value)? $unknown, }) {return switch (this) {
       EmailSecurityMessageDeliveryMode$direct() => direct != null ? direct() : orElse(value),
       EmailSecurityMessageDeliveryMode$bcc() => bcc != null ? bcc() : orElse(value),
       EmailSecurityMessageDeliveryMode$journal() => journal != null ? journal() : orElse(value),
@@ -90,10 +90,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
       EmailSecurityMessageDeliveryMode$api() => api != null ? api() : orElse(value),
       EmailSecurityMessageDeliveryMode$retroScan() => retroScan != null ? retroScan() : orElse(value),
       EmailSecurityMessageDeliveryMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EmailSecurityMessageDeliveryMode($value)';
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$direct extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$direct._();
 
 @override String get value => 'DIRECT';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'DIRECT'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$bcc extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$bcc._();
 
 @override String get value => 'BCC';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'BCC'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$journal extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$journal._();
 
 @override String get value => 'JOURNAL';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'JOURNAL'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$reviewSubmission extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$reviewSubmission._();
 
 @override String get value => 'REVIEW_SUBMISSION';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'REVIEW_SUBMISSION'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$dmarcUnverified extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$dmarcUnverified._();
 
 @override String get value => 'DMARC_UNVERIFIED';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'DMARC_UNVERIFIED'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$dmarcFailureReport extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$dmarcFailureReport._();
 
 @override String get value => 'DMARC_FAILURE_REPORT';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'DMARC_FAILURE_REPORT'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$dmarcAggregateReport extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$dmarcAggregateReport._();
 
 @override String get value => 'DMARC_AGGREGATE_REPORT';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'DMARC_AGGREGATE_REPORT'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$threatIntelSubmission extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$threatIntelSubmission._();
 
 @override String get value => 'THREAT_INTEL_SUBMISSION';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'THREAT_INTEL_SUBMISSION'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$simulationSubmission extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$simulationSubmission._();
 
 @override String get value => 'SIMULATION_SUBMISSION';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'SIMULATION_SUBMISSION'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$api extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$api._();
 
 @override String get value => 'API';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'API'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$retroScan extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$retroScan._();
 
 @override String get value => 'RETRO_SCAN';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => 'RETRO_SCAN'.hashCode;
 
- }
+}
 @immutable final class EmailSecurityMessageDeliveryMode$Unknown extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$Unknown(this.value);
 
 @override final String value;
@@ -202,4 +202,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

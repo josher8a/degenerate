@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GpgKeyEmails {const GpgKeyEmails({this.email, this.verified, });
 
-factory GpgKeyEmails.fromJson(Map<String, dynamic> json) { return GpgKeyEmails(
+factory GpgKeyEmails.fromJson(Map<String, dynamic> json) {return GpgKeyEmails(
   email: json['email'] as String?,
   verified: json['verified'] as bool?,
-); }
+);}
 
 final String? email;
 
 final bool? verified;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': ?email,
   'verified': ?verified,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'verified'}.contains(key)); } 
-GpgKeyEmails copyWith({String? Function()? email, bool? Function()? verified, }) { return GpgKeyEmails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'email', 'verified'}.contains(key));}
+GpgKeyEmails copyWith({String? Function()? email, bool? Function()? verified, }) {return GpgKeyEmails(
   email: email != null ? email() : this.email,
   verified: verified != null ? verified() : this.verified,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GpgKeyEmails &&
           email == other.email &&
@@ -30,4 +30,4 @@ GpgKeyEmails copyWith({String? Function()? email, bool? Function()? verified, })
 
 @override String toString() => 'GpgKeyEmails(email: $email, verified: $verified)';
 
- }
+}

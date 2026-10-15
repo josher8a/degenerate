@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimeMcpToolExecutionErrorType {const RealtimeMcpToolExecutionErrorType();
 
-factory RealtimeMcpToolExecutionErrorType.fromJson(String json) { return switch (json) {
+factory RealtimeMcpToolExecutionErrorType.fromJson(String json) {return switch (json) {
   'tool_execution_error' => toolExecutionError,
   _ => RealtimeMcpToolExecutionErrorType$Unknown(json),
-}; }
+};}
 
 static const RealtimeMcpToolExecutionErrorType toolExecutionError = RealtimeMcpToolExecutionErrorType$toolExecutionError._();
 
 static const List<RealtimeMcpToolExecutionErrorType> values = [toolExecutionError];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tool_execution_error' => 'toolExecutionError',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeMcpToolExecutionErrorType$Unknown; } 
+bool get isUnknown {return this is RealtimeMcpToolExecutionErrorType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() toolExecutionError, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() toolExecutionError, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimeMcpToolExecutionErrorType$toolExecutionError() => toolExecutionError(),
       RealtimeMcpToolExecutionErrorType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? toolExecutionError, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? toolExecutionError, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimeMcpToolExecutionErrorType$toolExecutionError() => toolExecutionError != null ? toolExecutionError() : orElse(value),
       RealtimeMcpToolExecutionErrorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimeMcpToolExecutionErrorType($value)';
 
- }
+}
 @immutable final class RealtimeMcpToolExecutionErrorType$toolExecutionError extends RealtimeMcpToolExecutionErrorType {const RealtimeMcpToolExecutionErrorType$toolExecutionError._();
 
 @override String get value => 'tool_execution_error';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? toolExec
 
 @override int get hashCode => 'tool_execution_error'.hashCode;
 
- }
+}
 @immutable final class RealtimeMcpToolExecutionErrorType$Unknown extends RealtimeMcpToolExecutionErrorType {const RealtimeMcpToolExecutionErrorType$Unknown(this.value);
 
 @override final String value;
@@ -52,28 +52,28 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? toolExec
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class RealtimeMcpToolExecutionError {const RealtimeMcpToolExecutionError({required this.type, required this.message, });
 
-factory RealtimeMcpToolExecutionError.fromJson(Map<String, dynamic> json) { return RealtimeMcpToolExecutionError(
+factory RealtimeMcpToolExecutionError.fromJson(Map<String, dynamic> json) {return RealtimeMcpToolExecutionError(
   type: RealtimeMcpToolExecutionErrorType.fromJson(json['type'] as String),
   message: json['message'] as String,
-); }
+);}
 
 final RealtimeMcpToolExecutionErrorType type;
 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'tool_execution_error' &&
-      json.containsKey('message') && json['message'] is String; } 
-RealtimeMcpToolExecutionError copyWith({RealtimeMcpToolExecutionErrorType? type, String? message, }) { return RealtimeMcpToolExecutionError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'tool_execution_error' &&
+      json.containsKey('message') && json['message'] is String;}
+RealtimeMcpToolExecutionError copyWith({RealtimeMcpToolExecutionErrorType? type, String? message, }) {return RealtimeMcpToolExecutionError(
   type: type ?? this.type,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeMcpToolExecutionError &&
           type == other.type &&
@@ -83,4 +83,4 @@ RealtimeMcpToolExecutionError copyWith({RealtimeMcpToolExecutionErrorType? type,
 
 @override String toString() => 'RealtimeMcpToolExecutionError(type: $type, message: $message)';
 
- }
+}

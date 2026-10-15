@@ -16,7 +16,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class IamPermissions {const IamPermissions({this.analytics, this.billing, this.cachePurge, this.dns, this.dnsRecords, this.lb, this.logs, this.organization, this.ssl, this.waf, this.zoneSettings, this.zones, });
 
-factory IamPermissions.fromJson(Map<String, dynamic> json) { return IamPermissions(
+factory IamPermissions.fromJson(Map<String, dynamic> json) {return IamPermissions(
   analytics: json['analytics'] != null ? IamGrants.fromJson(json['analytics'] as Map<String, dynamic>) : null,
   billing: json['billing'] != null ? IamGrants.fromJson(json['billing'] as Map<String, dynamic>) : null,
   cachePurge: json['cache_purge'] != null ? IamGrants.fromJson(json['cache_purge'] as Map<String, dynamic>) : null,
@@ -29,7 +29,7 @@ factory IamPermissions.fromJson(Map<String, dynamic> json) { return IamPermissio
   waf: json['waf'] != null ? IamGrants.fromJson(json['waf'] as Map<String, dynamic>) : null,
   zoneSettings: json['zone_settings'] != null ? IamGrants.fromJson(json['zone_settings'] as Map<String, dynamic>) : null,
   zones: json['zones'] != null ? IamGrants.fromJson(json['zones'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final IamGrants? analytics;
 
@@ -55,7 +55,7 @@ final IamGrants? zoneSettings;
 
 final IamGrants? zones;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (analytics != null) 'analytics': analytics?.toJson(),
   if (billing != null) 'billing': billing?.toJson(),
   if (cachePurge != null) 'cache_purge': cachePurge?.toJson(),
@@ -68,9 +68,9 @@ Map<String, dynamic> toJson() { return {
   if (waf != null) 'waf': waf?.toJson(),
   if (zoneSettings != null) 'zone_settings': zoneSettings?.toJson(),
   if (zones != null) 'zones': zones?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'analytics', 'billing', 'cache_purge', 'dns', 'dns_records', 'lb', 'logs', 'organization', 'ssl', 'waf', 'zone_settings', 'zones'}.contains(key)); } 
-IamPermissions copyWith({IamGrants? Function()? analytics, IamGrants? Function()? billing, IamGrants? Function()? cachePurge, IamGrants? Function()? dns, IamGrants? Function()? dnsRecords, IamGrants? Function()? lb, IamGrants? Function()? logs, IamGrants? Function()? organization, IamGrants? Function()? ssl, IamGrants? Function()? waf, IamGrants? Function()? zoneSettings, IamGrants? Function()? zones, }) { return IamPermissions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'analytics', 'billing', 'cache_purge', 'dns', 'dns_records', 'lb', 'logs', 'organization', 'ssl', 'waf', 'zone_settings', 'zones'}.contains(key));}
+IamPermissions copyWith({IamGrants? Function()? analytics, IamGrants? Function()? billing, IamGrants? Function()? cachePurge, IamGrants? Function()? dns, IamGrants? Function()? dnsRecords, IamGrants? Function()? lb, IamGrants? Function()? logs, IamGrants? Function()? organization, IamGrants? Function()? ssl, IamGrants? Function()? waf, IamGrants? Function()? zoneSettings, IamGrants? Function()? zones, }) {return IamPermissions(
   analytics: analytics != null ? analytics() : this.analytics,
   billing: billing != null ? billing() : this.billing,
   cachePurge: cachePurge != null ? cachePurge() : this.cachePurge,
@@ -83,7 +83,7 @@ IamPermissions copyWith({IamGrants? Function()? analytics, IamGrants? Function()
   waf: waf != null ? waf() : this.waf,
   zoneSettings: zoneSettings != null ? zoneSettings() : this.zoneSettings,
   zones: zones != null ? zones() : this.zones,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamPermissions &&
           analytics == other.analytics &&
@@ -103,4 +103,4 @@ IamPermissions copyWith({IamGrants? Function()? analytics, IamGrants? Function()
 
 @override String toString() => 'IamPermissions(\n  analytics: $analytics,\n  billing: $billing,\n  cachePurge: $cachePurge,\n  dns: $dns,\n  dnsRecords: $dnsRecords,\n  lb: $lb,\n  logs: $logs,\n  organization: $organization,\n  ssl: $ssl,\n  waf: $waf,\n  zoneSettings: $zoneSettings,\n  zones: $zones,\n)';
 
- }
+}

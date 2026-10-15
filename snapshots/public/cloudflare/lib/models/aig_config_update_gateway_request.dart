@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/log_management_strategy.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/rate_limiting_technique.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request/workers_ai_billing_mode.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/dlp.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/otel.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/stripe.dart';@immutable final class AigConfigUpdateGatewayRequest {const AigConfigUpdateGatewayRequest({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.dlp, this.logManagement = const Omittable.absent(), this.logManagementStrategy = const Omittable.absent(), this.logpush, this.logpushPublicKey = const Omittable.absent(), this.otel = const Omittable.absent(), this.storeId = const Omittable.absent(), this.stripe = const Omittable.absent(), this.workersAiBillingMode, this.zdr, });
 
-factory AigConfigUpdateGatewayRequest.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequest(
+factory AigConfigUpdateGatewayRequest.fromJson(Map<String, dynamic> json) {return AigConfigUpdateGatewayRequest(
   authentication: json['authentication'] as bool?,
   cacheInvalidateOnUpdate: json['cache_invalidate_on_update'] as bool,
   cacheTtl: json['cache_ttl'] != null ? (json['cache_ttl'] as num).toInt() : null,
@@ -21,7 +21,7 @@ factory AigConfigUpdateGatewayRequest.fromJson(Map<String, dynamic> json) { retu
   stripe: json.containsKey('stripe') ? Omittable(json['stripe'] != null ? Stripe.fromJson(json['stripe'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   workersAiBillingMode: json['workers_ai_billing_mode'] != null ? WorkersAiBillingMode.fromJson(json['workers_ai_billing_mode'] as String) : null,
   zdr: json['zdr'] as bool?,
-); }
+);}
 
 final bool? authentication;
 
@@ -61,7 +61,7 @@ final bool? zdr;
 /// The value of `workersAiBillingMode`, or its schema default when absent.
 WorkersAiBillingMode get workersAiBillingModeOrDefault => workersAiBillingMode ?? WorkersAiBillingMode.fromJson('postpaid');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'authentication': ?authentication,
   'cache_invalidate_on_update': cacheInvalidateOnUpdate,
   'cache_ttl': cacheTtl,
@@ -79,15 +79,15 @@ Map<String, dynamic> toJson() { return {
   if (stripe.isPresent) 'stripe': stripe.value?.toJson(),
   if (workersAiBillingMode != null) 'workers_ai_billing_mode': workersAiBillingMode?.toJson(),
   'zdr': ?zdr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache_invalidate_on_update') && json['cache_invalidate_on_update'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cache_invalidate_on_update') && json['cache_invalidate_on_update'] is bool &&
       json.containsKey('cache_ttl') && (json['cache_ttl'] == null || json['cache_ttl'] is num) &&
       json.containsKey('collect_logs') && json['collect_logs'] is bool &&
       json.containsKey('rate_limiting_interval') && (json['rate_limiting_interval'] == null || json['rate_limiting_interval'] is num) &&
       json.containsKey('rate_limiting_limit') && (json['rate_limiting_limit'] == null || json['rate_limiting_limit'] is num) &&
-      json.containsKey('rate_limiting_technique'); } 
+      json.containsKey('rate_limiting_technique');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final cacheTtl$ = cacheTtl;
 if (cacheTtl$ != null) {
   if (cacheTtl$ < 0) { errors.add('cacheTtl: must be >= 0'); }
@@ -110,8 +110,8 @@ final rateLimitingLimit$ = rateLimitingLimit;
 if (rateLimitingLimit$ != null) {
   if (rateLimitingLimit$ < 0) { errors.add('rateLimitingLimit: must be >= 0'); }
 }
-return errors; } 
-AigConfigUpdateGatewayRequest copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, Dlp? Function()? dlp, Omittable<int?>? logManagement, Omittable<LogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, Omittable<List<Otel>?>? otel, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, Omittable<String?>? storeId, Omittable<Stripe?>? stripe, WorkersAiBillingMode? Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigUpdateGatewayRequest(
+return errors;}
+AigConfigUpdateGatewayRequest copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, Dlp? Function()? dlp, Omittable<int?>? logManagement, Omittable<LogManagementStrategy?>? logManagementStrategy, bool? Function()? logpush, Omittable<String?>? logpushPublicKey, Omittable<List<Otel>?>? otel, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, Omittable<String?>? storeId, Omittable<Stripe?>? stripe, WorkersAiBillingMode? Function()? workersAiBillingMode, bool? Function()? zdr, }) {return AigConfigUpdateGatewayRequest(
   authentication: authentication != null ? authentication() : this.authentication,
   cacheInvalidateOnUpdate: cacheInvalidateOnUpdate ?? this.cacheInvalidateOnUpdate,
   cacheTtl: cacheTtl != null ? cacheTtl() : this.cacheTtl,
@@ -129,7 +129,7 @@ AigConfigUpdateGatewayRequest copyWith({bool? Function()? authentication, bool? 
   stripe: stripe ?? this.stripe,
   workersAiBillingMode: workersAiBillingMode != null ? workersAiBillingMode() : this.workersAiBillingMode,
   zdr: zdr != null ? zdr() : this.zdr,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigUpdateGatewayRequest &&
           authentication == other.authentication &&
@@ -155,4 +155,4 @@ AigConfigUpdateGatewayRequest copyWith({bool? Function()? authentication, bool? 
 
 @override String toString() => 'AigConfigUpdateGatewayRequest(\n  authentication: $authentication,\n  cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate,\n  cacheTtl: $cacheTtl,\n  collectLogs: $collectLogs,\n  dlp: $dlp,\n  logManagement: $logManagement,\n  logManagementStrategy: $logManagementStrategy,\n  logpush: $logpush,\n  logpushPublicKey: $logpushPublicKey,\n  otel: $otel,\n  rateLimitingInterval: $rateLimitingInterval,\n  rateLimitingLimit: $rateLimitingLimit,\n  rateLimitingTechnique: $rateLimitingTechnique,\n  storeId: $storeId,\n  stripe: $stripe,\n  workersAiBillingMode: $workersAiBillingMode,\n  zdr: $zdr,\n)';
 
- }
+}

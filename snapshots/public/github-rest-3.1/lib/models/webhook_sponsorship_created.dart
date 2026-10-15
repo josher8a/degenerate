@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipCreated {const WebhookSponsorshipCreated({required this.action, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookSponsorshipCreated.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipCreated(
+factory WebhookSponsorshipCreated.fromJson(Map<String, dynamic> json) {return WebhookSponsorshipCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookSponsorshipCreated.fromJson(Map<String, dynamic> json) { return W
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemCreatedAction action;
 
@@ -27,7 +27,7 @@ final SimpleUser sender;
 
 final WebhooksSponsorship sponsorship;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,11 +35,11 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
   'sponsorship': sponsorship.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('sender') &&
-      json.containsKey('sponsorship'); } 
-WebhookSponsorshipCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipCreated(
+      json.containsKey('sponsorship');}
+WebhookSponsorshipCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) {return WebhookSponsorshipCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -47,7 +47,7 @@ WebhookSponsorshipCreated copyWith({ItemCreatedAction? action, EnterpriseWebhook
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSponsorshipCreated &&
           action == other.action &&
@@ -62,4 +62,4 @@ WebhookSponsorshipCreated copyWith({ItemCreatedAction? action, EnterpriseWebhook
 
 @override String toString() => 'WebhookSponsorshipCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';
 
- }
+}

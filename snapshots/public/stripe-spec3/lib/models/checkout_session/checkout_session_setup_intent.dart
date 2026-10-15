@@ -8,11 +8,11 @@ const CheckoutSessionSetupIntent({this.string = const Omittable.absent(), this.s
 const CheckoutSessionSetupIntent._({required this.rawValue, required this.string, required this.setupIntent, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CheckoutSessionSetupIntent.fromJson(Object? json) { return CheckoutSessionSetupIntent._(
+factory CheckoutSessionSetupIntent.fromJson(Object? json) {return CheckoutSessionSetupIntent._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   setupIntent: json is Map<String, dynamic> && SetupIntent.canParse(json) ? parseAnyOfVariant<SetupIntent>(json, (value) => SetupIntent.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CheckoutSessionSetupIntent(${toJson()})';
 
- }
+}

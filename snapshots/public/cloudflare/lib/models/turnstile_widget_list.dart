@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turnstile_bot_fight_mode.dart';import 'package:pub_cloudflare/models/turnstile_clearance_level.dart';import 'package:pub_cloudflare/models/turnstile_created_on.dart';import 'package:pub_cloudflare/models/turnstile_ephemeral_id.dart';import 'package:pub_cloudflare/models/turnstile_modified_on.dart';import 'package:pub_cloudflare/models/turnstile_name.dart';import 'package:pub_cloudflare/models/turnstile_offlabel.dart';import 'package:pub_cloudflare/models/turnstile_region.dart';import 'package:pub_cloudflare/models/turnstile_sitekey.dart';import 'package:pub_cloudflare/models/turnstile_widget_mode.dart';/// A Turnstile Widgets configuration as it appears in listings
 @immutable final class TurnstileWidgetList {const TurnstileWidgetList({required this.botFightMode, required this.clearanceLevel, required this.createdOn, required this.domains, required this.ephemeralId, required this.mode, required this.modifiedOn, required this.name, required this.offlabel, required this.region, required this.sitekey, });
 
-factory TurnstileWidgetList.fromJson(Map<String, dynamic> json) { return TurnstileWidgetList(
+factory TurnstileWidgetList.fromJson(Map<String, dynamic> json) {return TurnstileWidgetList(
   botFightMode: TurnstileBotFightMode.fromJson(json['bot_fight_mode'] as bool),
   clearanceLevel: TurnstileClearanceLevel.fromJson(json['clearance_level'] as String),
   createdOn: TurnstileCreatedOn.fromJson(json['created_on'] as String),
@@ -16,7 +16,7 @@ factory TurnstileWidgetList.fromJson(Map<String, dynamic> json) { return Turnsti
   offlabel: TurnstileOfflabel.fromJson(json['offlabel'] as bool),
   region: TurnstileRegion.fromJson(json['region'] as String),
   sitekey: TurnstileSitekey.fromJson(json['sitekey'] as String),
-); }
+);}
 
 /// If bot_fight_mode is set to `true`, Cloudflare issues computationally
 /// expensive challenges in response to malicious bots (ENT only).
@@ -59,7 +59,7 @@ final TurnstileRegion region;
 /// Widget item identifier tag.
 final TurnstileSitekey sitekey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bot_fight_mode': botFightMode.toJson(),
   'clearance_level': clearanceLevel.toJson(),
   'created_on': createdOn.toJson(),
@@ -71,8 +71,8 @@ Map<String, dynamic> toJson() { return {
   'offlabel': offlabel.toJson(),
   'region': region.toJson(),
   'sitekey': sitekey.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bot_fight_mode') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bot_fight_mode') &&
       json.containsKey('clearance_level') &&
       json.containsKey('created_on') &&
       json.containsKey('domains') &&
@@ -82,8 +82,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bot_f
       json.containsKey('name') &&
       json.containsKey('offlabel') &&
       json.containsKey('region') &&
-      json.containsKey('sitekey'); } 
-TurnstileWidgetList copyWith({TurnstileBotFightMode? botFightMode, TurnstileClearanceLevel? clearanceLevel, TurnstileCreatedOn? createdOn, List<String>? domains, TurnstileEphemeralId? ephemeralId, TurnstileWidgetMode? mode, TurnstileModifiedOn? modifiedOn, TurnstileName? name, TurnstileOfflabel? offlabel, TurnstileRegion? region, TurnstileSitekey? sitekey, }) { return TurnstileWidgetList(
+      json.containsKey('sitekey');}
+TurnstileWidgetList copyWith({TurnstileBotFightMode? botFightMode, TurnstileClearanceLevel? clearanceLevel, TurnstileCreatedOn? createdOn, List<String>? domains, TurnstileEphemeralId? ephemeralId, TurnstileWidgetMode? mode, TurnstileModifiedOn? modifiedOn, TurnstileName? name, TurnstileOfflabel? offlabel, TurnstileRegion? region, TurnstileSitekey? sitekey, }) {return TurnstileWidgetList(
   botFightMode: botFightMode ?? this.botFightMode,
   clearanceLevel: clearanceLevel ?? this.clearanceLevel,
   createdOn: createdOn ?? this.createdOn,
@@ -95,7 +95,7 @@ TurnstileWidgetList copyWith({TurnstileBotFightMode? botFightMode, TurnstileClea
   offlabel: offlabel ?? this.offlabel,
   region: region ?? this.region,
   sitekey: sitekey ?? this.sitekey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TurnstileWidgetList &&
           botFightMode == other.botFightMode &&
@@ -114,4 +114,4 @@ TurnstileWidgetList copyWith({TurnstileBotFightMode? botFightMode, TurnstileClea
 
 @override String toString() => 'TurnstileWidgetList(\n  botFightMode: $botFightMode,\n  clearanceLevel: $clearanceLevel,\n  createdOn: $createdOn,\n  domains: $domains,\n  ephemeralId: $ephemeralId,\n  mode: $mode,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  offlabel: $offlabel,\n  region: $region,\n  sitekey: $sitekey,\n)';
 
- }
+}

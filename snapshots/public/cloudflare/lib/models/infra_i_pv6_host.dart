@@ -12,26 +12,26 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class InfraIPv6Host {const InfraIPv6Host({required this.ipv6, required this.network, });
 
-factory InfraIPv6Host.fromJson(Map<String, dynamic> json) { return InfraIPv6Host(
+factory InfraIPv6Host.fromJson(Map<String, dynamic> json) {return InfraIPv6Host(
   ipv6: json['ipv6'] as String,
   network: InfraNetwork.fromJson(json['network'] as Map<String, dynamic>),
-); }
+);}
 
 /// Example: `'fe80::1'`
 final String ipv6;
 
 final InfraNetwork network;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ipv6': ipv6,
   'network': network.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ipv6') && json['ipv6'] is String &&
-      json.containsKey('network'); } 
-InfraIPv6Host copyWith({String? ipv6, InfraNetwork? network, }) { return InfraIPv6Host(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ipv6') && json['ipv6'] is String &&
+      json.containsKey('network');}
+InfraIPv6Host copyWith({String? ipv6, InfraNetwork? network, }) {return InfraIPv6Host(
   ipv6: ipv6 ?? this.ipv6,
   network: network ?? this.network,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InfraIPv6Host &&
           ipv6 == other.ipv6 &&
@@ -41,4 +41,4 @@ InfraIPv6Host copyWith({String? ipv6, InfraNetwork? network, }) { return InfraIP
 
 @override String toString() => 'InfraIPv6Host(ipv6: $ipv6, network: $network)';
 
- }
+}

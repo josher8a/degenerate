@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request/budget_type.dart';import 'package:pub_github_rest_3_1/models/budget/budget_budget_alerting.dart';@immutable final class Budget {const Budget({required this.id, required this.budgetType, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetScope, required this.budgetProductSku, required this.budgetAlerting, this.budgetEntityName, });
 
-factory Budget.fromJson(Map<String, dynamic> json) { return Budget(
+factory Budget.fromJson(Map<String, dynamic> json) {return Budget(
   id: json['id'] as String,
   budgetType: BudgetType.fromJson(json['budget_type'] as String),
   budgetAmount: (json['budget_amount'] as num).toInt(),
@@ -12,7 +12,7 @@ factory Budget.fromJson(Map<String, dynamic> json) { return Budget(
   budgetEntityName: json['budget_entity_name'] as String?,
   budgetProductSku: json['budget_product_sku'] as String,
   budgetAlerting: BudgetBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>),
-); }
+);}
 
 /// The unique identifier for the budget
 final String id;
@@ -37,7 +37,7 @@ final String budgetProductSku;
 
 final BudgetBudgetAlerting budgetAlerting;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'budget_type': budgetType.toJson(),
   'budget_amount': budgetAmount,
@@ -46,15 +46,15 @@ Map<String, dynamic> toJson() { return {
   'budget_entity_name': ?budgetEntityName,
   'budget_product_sku': budgetProductSku,
   'budget_alerting': budgetAlerting.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('budget_type') &&
       json.containsKey('budget_amount') && json['budget_amount'] is num &&
       json.containsKey('prevent_further_usage') && json['prevent_further_usage'] is bool &&
       json.containsKey('budget_scope') && json['budget_scope'] is String &&
       json.containsKey('budget_product_sku') && json['budget_product_sku'] is String &&
-      json.containsKey('budget_alerting'); } 
-Budget copyWith({String? id, BudgetType? budgetType, int? budgetAmount, bool? preventFurtherUsage, String? budgetScope, String? Function()? budgetEntityName, String? budgetProductSku, BudgetBudgetAlerting? budgetAlerting, }) { return Budget(
+      json.containsKey('budget_alerting');}
+Budget copyWith({String? id, BudgetType? budgetType, int? budgetAmount, bool? preventFurtherUsage, String? budgetScope, String? Function()? budgetEntityName, String? budgetProductSku, BudgetBudgetAlerting? budgetAlerting, }) {return Budget(
   id: id ?? this.id,
   budgetType: budgetType ?? this.budgetType,
   budgetAmount: budgetAmount ?? this.budgetAmount,
@@ -63,7 +63,7 @@ Budget copyWith({String? id, BudgetType? budgetType, int? budgetAmount, bool? pr
   budgetEntityName: budgetEntityName != null ? budgetEntityName() : this.budgetEntityName,
   budgetProductSku: budgetProductSku ?? this.budgetProductSku,
   budgetAlerting: budgetAlerting ?? this.budgetAlerting,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Budget &&
           id == other.id &&
@@ -79,4 +79,4 @@ Budget copyWith({String? id, BudgetType? budgetType, int? budgetAmount, bool? pr
 
 @override String toString() => 'Budget(id: $id, budgetType: $budgetType, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetProductSku: $budgetProductSku, budgetAlerting: $budgetAlerting)';
 
- }
+}

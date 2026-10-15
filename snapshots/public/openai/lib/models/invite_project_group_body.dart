@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for granting a group access to a project.
 @immutable final class InviteProjectGroupBody {const InviteProjectGroupBody({required this.groupId, required this.role, });
 
-factory InviteProjectGroupBody.fromJson(Map<String, dynamic> json) { return InviteProjectGroupBody(
+factory InviteProjectGroupBody.fromJson(Map<String, dynamic> json) {return InviteProjectGroupBody(
   groupId: json['group_id'] as String,
   role: json['role'] as String,
-); }
+);}
 
 /// Identifier of the group to add to the project.
 final String groupId;
@@ -15,16 +15,16 @@ final String groupId;
 /// Identifier of the project role to grant to the group.
 final String role;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'group_id': groupId,
   'role': role,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('group_id') && json['group_id'] is String &&
-      json.containsKey('role') && json['role'] is String; } 
-InviteProjectGroupBody copyWith({String? groupId, String? role, }) { return InviteProjectGroupBody(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('group_id') && json['group_id'] is String &&
+      json.containsKey('role') && json['role'] is String;}
+InviteProjectGroupBody copyWith({String? groupId, String? role, }) {return InviteProjectGroupBody(
   groupId: groupId ?? this.groupId,
   role: role ?? this.role,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InviteProjectGroupBody &&
           groupId == other.groupId &&
@@ -34,4 +34,4 @@ InviteProjectGroupBody copyWith({String? groupId, String? role, }) { return Invi
 
 @override String toString() => 'InviteProjectGroupBody(groupId: $groupId, role: $role)';
 
- }
+}

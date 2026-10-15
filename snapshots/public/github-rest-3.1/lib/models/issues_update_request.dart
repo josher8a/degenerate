@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue/issue_state_reason.dart';import 'package:pub_github_rest_3_1/models/issues_create_request/issues_create_request_labels.dart';import 'package:pub_github_rest_3_1/models/issues_create_request/issues_create_request_labels_variant2.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';@immutable final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title = const Omittable.absent(), this.body = const Omittable.absent(), this.assignee = const Omittable.absent(), this.state, this.stateReason = const Omittable.absent(), this.milestone = const Omittable.absent(), this.labels, this.assignees, this.type = const Omittable.absent(), });
 
-factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesUpdateRequest(
+factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) {return IssuesUpdateRequest(
   title: json.containsKey('title') ? Omittable(json['title']) : const Omittable.absent(),
   body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
   assignee: json.containsKey('assignee') ? Omittable(json['assignee'] as String?) : const Omittable.absent(),
@@ -13,7 +13,7 @@ factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesU
   labels: (json['labels'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => IssuesCreateRequestLabelsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The title of the issue.
 /// 
@@ -46,7 +46,7 @@ final List<String>? assignees;
 /// The name of the issue type to associate with this issue or use `null` to remove the current issue type. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
 final Omittable<String?> type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (title.isPresent) 'title': title.value,
   if (body.isPresent) 'body': body.value,
   if (assignee.isPresent) 'assignee': assignee.value,
@@ -56,9 +56,9 @@ Map<String, dynamic> toJson() { return {
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
   'assignees': ?assignees,
   if (type.isPresent) 'type': type.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'assignee', 'state', 'state_reason', 'milestone', 'labels', 'assignees', 'type'}.contains(key)); } 
-IssuesUpdateRequest copyWith({Omittable<dynamic>? title, Omittable<String?>? body, Omittable<String?>? assignee, IssuesUpdateRequestState? Function()? state, Omittable<IssueStateReason?>? stateReason, Omittable<dynamic>? milestone, List<IssuesCreateRequestLabels>? Function()? labels, List<String>? Function()? assignees, Omittable<String?>? type, }) { return IssuesUpdateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'title', 'body', 'assignee', 'state', 'state_reason', 'milestone', 'labels', 'assignees', 'type'}.contains(key));}
+IssuesUpdateRequest copyWith({Omittable<dynamic>? title, Omittable<String?>? body, Omittable<String?>? assignee, IssuesUpdateRequestState? Function()? state, Omittable<IssueStateReason?>? stateReason, Omittable<dynamic>? milestone, List<IssuesCreateRequestLabels>? Function()? labels, List<String>? Function()? assignees, Omittable<String?>? type, }) {return IssuesUpdateRequest(
   title: title ?? this.title,
   body: body ?? this.body,
   assignee: assignee ?? this.assignee,
@@ -68,7 +68,7 @@ IssuesUpdateRequest copyWith({Omittable<dynamic>? title, Omittable<String?>? bod
   labels: labels != null ? labels() : this.labels,
   assignees: assignees != null ? assignees() : this.assignees,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesUpdateRequest &&
           title == other.title &&
@@ -85,4 +85,4 @@ IssuesUpdateRequest copyWith({Omittable<dynamic>? title, Omittable<String?>? bod
 
 @override String toString() => 'IssuesUpdateRequest(\n  title: $title,\n  body: $body,\n  assignee: $assignee,\n  state: $state,\n  stateReason: $stateReason,\n  milestone: $milestone,\n  labels: $labels,\n  assignees: $assignees,\n  type: $type,\n)';
 
- }
+}

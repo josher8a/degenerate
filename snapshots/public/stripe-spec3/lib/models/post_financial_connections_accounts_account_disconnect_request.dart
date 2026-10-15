@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFinancialConnectionsAccountsAccountDisconnectRequest {const PostFinancialConnectionsAccountsAccountDisconnectRequest({this.expand});
 
-factory PostFinancialConnectionsAccountsAccountDisconnectRequest.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsAccountsAccountDisconnectRequest(
+factory PostFinancialConnectionsAccountsAccountDisconnectRequest.fromJson(Map<String, dynamic> json) {return PostFinancialConnectionsAccountsAccountDisconnectRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
-PostFinancialConnectionsAccountsAccountDisconnectRequest copyWith({List<String>? Function()? expand}) { return PostFinancialConnectionsAccountsAccountDisconnectRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'expand'}.contains(key));}
+PostFinancialConnectionsAccountsAccountDisconnectRequest copyWith({List<String>? Function()? expand}) {return PostFinancialConnectionsAccountsAccountDisconnectRequest(
   expand: expand != null ? expand() : this.expand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostFinancialConnectionsAccountsAccountDisconnectRequest &&
           listEquals(expand, other.expand);
@@ -25,4 +25,4 @@ PostFinancialConnectionsAccountsAccountDisconnectRequest copyWith({List<String>?
 
 @override String toString() => 'PostFinancialConnectionsAccountsAccountDisconnectRequest(expand: $expand)';
 
- }
+}

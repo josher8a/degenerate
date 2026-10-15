@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Counters summarizing the outcomes of the evaluation run.
 @immutable final class ResultCounts {const ResultCounts({required this.total, required this.errored, required this.failed, required this.passed, });
 
-factory ResultCounts.fromJson(Map<String, dynamic> json) { return ResultCounts(
+factory ResultCounts.fromJson(Map<String, dynamic> json) {return ResultCounts(
   total: (json['total'] as num).toInt(),
   errored: (json['errored'] as num).toInt(),
   failed: (json['failed'] as num).toInt(),
   passed: (json['passed'] as num).toInt(),
-); }
+);}
 
 /// Total number of executed output items.
 final int total;
@@ -23,22 +23,22 @@ final int failed;
 /// Number of output items that passed the evaluation.
 final int passed;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total': total,
   'errored': errored,
   'failed': failed,
   'passed': passed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total') && json['total'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total') && json['total'] is num &&
       json.containsKey('errored') && json['errored'] is num &&
       json.containsKey('failed') && json['failed'] is num &&
-      json.containsKey('passed') && json['passed'] is num; } 
-ResultCounts copyWith({int? total, int? errored, int? failed, int? passed, }) { return ResultCounts(
+      json.containsKey('passed') && json['passed'] is num;}
+ResultCounts copyWith({int? total, int? errored, int? failed, int? passed, }) {return ResultCounts(
   total: total ?? this.total,
   errored: errored ?? this.errored,
   failed: failed ?? this.failed,
   passed: passed ?? this.passed,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultCounts &&
           total == other.total &&
@@ -50,4 +50,4 @@ ResultCounts copyWith({int? total, int? errored, int? failed, int? passed, }) { 
 
 @override String toString() => 'ResultCounts(total: $total, errored: $errored, failed: $failed, passed: $passed)';
 
- }
+}

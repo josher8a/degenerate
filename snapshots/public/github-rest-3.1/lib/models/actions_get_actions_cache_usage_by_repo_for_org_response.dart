@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_cache_usage_by_repository.dart';@immutable final class ActionsGetActionsCacheUsageByRepoForOrgResponse {const ActionsGetActionsCacheUsageByRepoForOrgResponse({required this.totalCount, required this.repositoryCacheUsages, });
 
-factory ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsGetActionsCacheUsageByRepoForOrgResponse(
+factory ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsGetActionsCacheUsageByRepoForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),
   repositoryCacheUsages: (json['repository_cache_usages'] as List<dynamic>).map((e) => ActionsCacheUsageByRepository.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<ActionsCacheUsageByRepository> repositoryCacheUsages;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'repository_cache_usages': repositoryCacheUsages.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('repository_cache_usages'); } 
-ActionsGetActionsCacheUsageByRepoForOrgResponse copyWith({int? totalCount, List<ActionsCacheUsageByRepository>? repositoryCacheUsages, }) { return ActionsGetActionsCacheUsageByRepoForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('repository_cache_usages');}
+ActionsGetActionsCacheUsageByRepoForOrgResponse copyWith({int? totalCount, List<ActionsCacheUsageByRepository>? repositoryCacheUsages, }) {return ActionsGetActionsCacheUsageByRepoForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   repositoryCacheUsages: repositoryCacheUsages ?? this.repositoryCacheUsages,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGetActionsCacheUsageByRepoForOrgResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsGetActionsCacheUsageByRepoForOrgResponse copyWith({int? totalCount, List<
 
 @override String toString() => 'ActionsGetActionsCacheUsageByRepoForOrgResponse(totalCount: $totalCount, repositoryCacheUsages: $repositoryCacheUsages)';
 
- }
+}

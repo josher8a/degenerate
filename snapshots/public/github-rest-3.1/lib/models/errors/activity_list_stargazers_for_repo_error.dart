@@ -2,19 +2,19 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';sealed class ActivityListStargazersForRepoError {const ActivityListStargazersForRepoError();
 
-factory ActivityListStargazersForRepoError.fromResponse(ApiResponse response) {     try {
+factory ActivityListStargazersForRepoError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         422 => ActivityListStargazersForRepoError$422(ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => ActivityListStargazersForRepoError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return ActivityListStargazersForRepoError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class ActivityListStargazersForRepoError$422 extends ActivityListStargazersForRepoError {const ActivityListStargazersForRepoError$422(this.error);
 
 final ValidationError error;
@@ -23,14 +23,14 @@ final ValidationError error;
 
 @override int get statusCode => 422;
 
- }
+}
 final class ActivityListStargazersForRepoError$Unknown extends ActivityListStargazersForRepoError {const ActivityListStargazersForRepoError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef AppsDeleteAuthorizationError = ActivityListStargazersForRepoError;
 typedef AppsDeleteTokenError = ActivityListStargazersForRepoError;
 typedef AppsResetTokenError = ActivityListStargazersForRepoError;

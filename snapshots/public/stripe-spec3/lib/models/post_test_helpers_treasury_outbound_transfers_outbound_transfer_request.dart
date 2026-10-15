@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_request/tracking_details.dart';@immutable final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest({required this.trackingDetails, this.expand, });
 
-factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest(
+factory PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest.fromJson(Map<String, dynamic> json) {return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   trackingDetails: TrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>),
-); }
+);}
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -14,15 +14,15 @@ final List<String>? expand;
 /// Details about network-specific tracking information.
 final TrackingDetails trackingDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'expand': ?expand,
   'tracking_details': trackingDetails.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tracking_details'); } 
-PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest copyWith({List<String>? Function()? expand, TrackingDetails? trackingDetails, }) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tracking_details');}
+PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest copyWith({List<String>? Function()? expand, TrackingDetails? trackingDetails, }) {return PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest(
   expand: expand != null ? expand() : this.expand,
   trackingDetails: trackingDetails ?? this.trackingDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest &&
           listEquals(expand, other.expand) &&
@@ -32,4 +32,4 @@ PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest copyWith({List<S
 
 @override String toString() => 'PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest(expand: $expand, trackingDetails: $trackingDetails)';
 
- }
+}

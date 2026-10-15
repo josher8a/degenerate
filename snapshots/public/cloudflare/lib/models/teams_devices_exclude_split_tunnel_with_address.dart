@@ -10,24 +10,24 @@ String toJson() => value;
 }
 @immutable final class TeamsDevicesExcludeSplitTunnelWithAddress {const TeamsDevicesExcludeSplitTunnelWithAddress({required this.address, this.description, });
 
-factory TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(Map<String, dynamic> json) { return TeamsDevicesExcludeSplitTunnelWithAddress(
+factory TeamsDevicesExcludeSplitTunnelWithAddress.fromJson(Map<String, dynamic> json) {return TeamsDevicesExcludeSplitTunnelWithAddress(
   address: TeamsDevicesSplitTunnelAddress.fromJson(json['address'] as String),
   description: json['description'] != null ? TeamsDevicesSplitTunnelDescription.fromJson(json['description'] as String) : null,
-); }
+);}
 
 final TeamsDevicesSplitTunnelAddress address;
 
 final TeamsDevicesSplitTunnelDescription? description;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'address': address.toJson(),
   if (description != null) 'description': description?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-TeamsDevicesExcludeSplitTunnelWithAddress copyWith({TeamsDevicesSplitTunnelAddress? address, TeamsDevicesSplitTunnelDescription? Function()? description, }) { return TeamsDevicesExcludeSplitTunnelWithAddress(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('address');}
+TeamsDevicesExcludeSplitTunnelWithAddress copyWith({TeamsDevicesSplitTunnelAddress? address, TeamsDevicesSplitTunnelDescription? Function()? description, }) {return TeamsDevicesExcludeSplitTunnelWithAddress(
   address: address ?? this.address,
   description: description != null ? description() : this.description,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesExcludeSplitTunnelWithAddress &&
           address == other.address &&
@@ -37,4 +37,4 @@ TeamsDevicesExcludeSplitTunnelWithAddress copyWith({TeamsDevicesSplitTunnelAddre
 
 @override String toString() => 'TeamsDevicesExcludeSplitTunnelWithAddress(address: $address, description: $description)';
 
- }
+}

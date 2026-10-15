@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_geolocation_details_response/geolocation_type.dart';import 'package:pub_cloudflare/models/radar_get_geolocation_details_response/parent_parent.dart';@immutable final class GeolocationParent {const GeolocationParent({required this.geoId, required this.latitude, required this.longitude, required this.name, required this.parent, required this.type, this.code, });
 
-factory GeolocationParent.fromJson(Map<String, dynamic> json) { return GeolocationParent(
+factory GeolocationParent.fromJson(Map<String, dynamic> json) {return GeolocationParent(
   code: json['code'] as String?,
   geoId: json['geoId'] as String,
   latitude: json['latitude'] as String,
@@ -11,7 +11,7 @@ factory GeolocationParent.fromJson(Map<String, dynamic> json) { return Geolocati
   name: json['name'] as String,
   parent: ParentParent.fromJson(json['parent'] as Map<String, dynamic>),
   type: GeolocationType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Example: `'PT'`
 final String? code;
@@ -37,7 +37,7 @@ final ParentParent parent;
 /// The type of the geolocation.
 final GeolocationType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'geoId': geoId,
   'latitude': latitude,
@@ -45,19 +45,19 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'parent': parent.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('geoId') && json['geoId'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('geoId') && json['geoId'] is String &&
       json.containsKey('latitude') && json['latitude'] is String &&
       json.containsKey('longitude') && json['longitude'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('parent') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch(latitude)) { errors.add(r'latitude: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(longitude)) { errors.add(r'longitude: must match pattern ^\d+$'); }
-return errors; } 
-GeolocationParent copyWith({String? Function()? code, String? geoId, String? latitude, String? longitude, String? name, ParentParent? parent, GeolocationType? type, }) { return GeolocationParent(
+return errors;}
+GeolocationParent copyWith({String? Function()? code, String? geoId, String? latitude, String? longitude, String? name, ParentParent? parent, GeolocationType? type, }) {return GeolocationParent(
   code: code != null ? code() : this.code,
   geoId: geoId ?? this.geoId,
   latitude: latitude ?? this.latitude,
@@ -65,7 +65,7 @@ GeolocationParent copyWith({String? Function()? code, String? geoId, String? lat
   name: name ?? this.name,
   parent: parent ?? this.parent,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GeolocationParent &&
           code == other.code &&
@@ -80,4 +80,4 @@ GeolocationParent copyWith({String? Function()? code, String? geoId, String? lat
 
 @override String toString() => 'GeolocationParent(code: $code, geoId: $geoId, latitude: $latitude, longitude: $longitude, name: $name, parent: $parent, type: $type)';
 
- }
+}

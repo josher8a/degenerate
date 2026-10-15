@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_industries_response/radar_get_attacks_layer3_top_industries_response_result.dart';@immutable final class RadarGetAttacksLayer3TopIndustriesResponse {const RadarGetAttacksLayer3TopIndustriesResponse({required this.result, required this.success, });
 
-factory RadarGetAttacksLayer3TopIndustriesResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopIndustriesResponse(
+factory RadarGetAttacksLayer3TopIndustriesResponse.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer3TopIndustriesResponse(
   result: RadarGetAttacksLayer3TopIndustriesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAttacksLayer3TopIndustriesResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer3TopIndustriesResponse copyWith({RadarGetAttacksLayer3TopIndustriesResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3TopIndustriesResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAttacksLayer3TopIndustriesResponse copyWith({RadarGetAttacksLayer3TopIndustriesResponseResult? result, bool? success, }) {return RadarGetAttacksLayer3TopIndustriesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TopIndustriesResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAttacksLayer3TopIndustriesResponse copyWith({RadarGetAttacksLayer3TopInd
 
 @override String toString() => 'RadarGetAttacksLayer3TopIndustriesResponse(result: $result, success: $success)';
 
- }
+}

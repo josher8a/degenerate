@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite/check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_commit.dart';/// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
 sealed class CheckSuiteStatus {const CheckSuiteStatus();
 
-factory CheckSuiteStatus.fromJson(String json) { return switch (json) {
+factory CheckSuiteStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
@@ -13,7 +13,7 @@ factory CheckSuiteStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'null' => $null,
   _ => CheckSuiteStatus$Unknown(json),
-}; }
+};}
 
 static const CheckSuiteStatus queued = CheckSuiteStatus$queued._();
 
@@ -32,9 +32,9 @@ static const CheckSuiteStatus $null = CheckSuiteStatus$$null._();
 static const List<CheckSuiteStatus> values = [queued, inProgress, completed, waiting, requested, pending, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'queued' => 'queued',
   'in_progress' => 'inProgress',
   'completed' => 'completed',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'pending' => 'pending',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckSuiteStatus$Unknown; } 
+bool get isUnknown {return this is CheckSuiteStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function() waiting, required W Function() requested, required W Function() pending, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function() waiting, required W Function() requested, required W Function() pending, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       CheckSuiteStatus$queued() => queued(),
       CheckSuiteStatus$inProgress() => inProgress(),
       CheckSuiteStatus$completed() => completed(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() queued, required W Function() inProgress, requi
       CheckSuiteStatus$pending() => pending(),
       CheckSuiteStatus$$null() => $null(),
       CheckSuiteStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function()? waiting, W Function()? requested, W Function()? pending, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function()? waiting, W Function()? requested, W Function()? pending, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       CheckSuiteStatus$queued() => queued != null ? queued() : orElse(value),
       CheckSuiteStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
       CheckSuiteStatus$completed() => completed != null ? completed() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
       CheckSuiteStatus$pending() => pending != null ? pending() : orElse(value),
       CheckSuiteStatus$$null() => $null != null ? $null() : orElse(value),
       CheckSuiteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckSuiteStatus($value)';
 
- }
+}
 @immutable final class CheckSuiteStatus$queued extends CheckSuiteStatus {const CheckSuiteStatus$queued._();
 
 @override String get value => 'queued';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class CheckSuiteStatus$inProgress extends CheckSuiteStatus {const CheckSuiteStatus$inProgress._();
 
 @override String get value => 'in_progress';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class CheckSuiteStatus$completed extends CheckSuiteStatus {const CheckSuiteStatus$completed._();
 
 @override String get value => 'completed';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class CheckSuiteStatus$waiting extends CheckSuiteStatus {const CheckSuiteStatus$waiting._();
 
 @override String get value => 'waiting';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'waiting'.hashCode;
 
- }
+}
 @immutable final class CheckSuiteStatus$requested extends CheckSuiteStatus {const CheckSuiteStatus$requested._();
 
 @override String get value => 'requested';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'requested'.hashCode;
 
- }
+}
 @immutable final class CheckSuiteStatus$pending extends CheckSuiteStatus {const CheckSuiteStatus$pending._();
 
 @override String get value => 'pending';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'pending'.hashCode;
 
- }
+}
 @immutable final class CheckSuiteStatus$$null extends CheckSuiteStatus {const CheckSuiteStatus$$null._();
 
 @override String get value => 'null';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class CheckSuiteStatus$Unknown extends CheckSuiteStatus {const CheckSuiteStatus$Unknown(this.value);
 
 @override final String value;
@@ -143,11 +143,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A suite of checks performed on the code of a given code change
 @immutable final class CheckSuite {const CheckSuite({required this.id, required this.nodeId, required this.headBranch, required this.headSha, required this.status, required this.conclusion, required this.url, required this.before, required this.after, required this.pullRequests, required this.app, required this.repository, required this.createdAt, required this.updatedAt, required this.headCommit, required this.latestCheckRunsCount, required this.checkRunsUrl, this.rerequestable, this.runsRerequestable, });
 
-factory CheckSuite.fromJson(Map<String, dynamic> json) { return CheckSuite(
+factory CheckSuite.fromJson(Map<String, dynamic> json) {return CheckSuite(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   headBranch: json['head_branch'] as String?,
@@ -167,7 +167,7 @@ factory CheckSuite.fromJson(Map<String, dynamic> json) { return CheckSuite(
   checkRunsUrl: json['check_runs_url'] as String,
   rerequestable: json['rerequestable'] as bool?,
   runsRerequestable: json['runs_rerequestable'] as bool?,
-); }
+);}
 
 final int id;
 
@@ -209,7 +209,7 @@ final bool? rerequestable;
 
 final bool? runsRerequestable;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'head_branch': headBranch,
@@ -229,8 +229,8 @@ Map<String, dynamic> toJson() { return {
   'check_runs_url': checkRunsUrl,
   'rerequestable': ?rerequestable,
   'runs_rerequestable': ?runsRerequestable,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
       json.containsKey('head_sha') && json['head_sha'] is String &&
@@ -246,8 +246,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('head_commit') &&
       json.containsKey('latest_check_runs_count') && json['latest_check_runs_count'] is num &&
-      json.containsKey('check_runs_url') && json['check_runs_url'] is String; } 
-CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, String? headSha, CheckSuiteStatus? Function()? status, CheckSuiteConclusion? Function()? conclusion, String? Function()? url, String? Function()? before, String? Function()? after, List<PullRequestMinimal>? Function()? pullRequests, Integration? Function()? app, MinimalRepository? repository, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, SimpleCommit? headCommit, int? latestCheckRunsCount, String? checkRunsUrl, bool? Function()? rerequestable, bool? Function()? runsRerequestable, }) { return CheckSuite(
+      json.containsKey('check_runs_url') && json['check_runs_url'] is String;}
+CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, String? headSha, CheckSuiteStatus? Function()? status, CheckSuiteConclusion? Function()? conclusion, String? Function()? url, String? Function()? before, String? Function()? after, List<PullRequestMinimal>? Function()? pullRequests, Integration? Function()? app, MinimalRepository? repository, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, SimpleCommit? headCommit, int? latestCheckRunsCount, String? checkRunsUrl, bool? Function()? rerequestable, bool? Function()? runsRerequestable, }) {return CheckSuite(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   headBranch: headBranch != null ? headBranch() : this.headBranch,
@@ -267,7 +267,7 @@ CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, St
   checkRunsUrl: checkRunsUrl ?? this.checkRunsUrl,
   rerequestable: rerequestable != null ? rerequestable() : this.rerequestable,
   runsRerequestable: runsRerequestable != null ? runsRerequestable() : this.runsRerequestable,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckSuite &&
           id == other.id &&
@@ -294,4 +294,4 @@ CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, St
 
 @override String toString() => 'CheckSuite(\n  id: $id,\n  nodeId: $nodeId,\n  headBranch: $headBranch,\n  headSha: $headSha,\n  status: $status,\n  conclusion: $conclusion,\n  url: $url,\n  before: $before,\n  after: $after,\n  pullRequests: $pullRequests,\n  app: $app,\n  repository: $repository,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  headCommit: $headCommit,\n  latestCheckRunsCount: $latestCheckRunsCount,\n  checkRunsUrl: $checkRunsUrl,\n  rerequestable: $rerequestable,\n  runsRerequestable: $runsRerequestable,\n)';
 
- }
+}

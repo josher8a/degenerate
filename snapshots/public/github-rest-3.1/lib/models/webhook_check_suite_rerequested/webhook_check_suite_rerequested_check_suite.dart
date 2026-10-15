@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_head_commit.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_rerequested/webhook_check_suite_rerequested_check_suite_app.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_rerequested/webhook_check_suite_rerequested_check_suite_conclusion.dart';/// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).
 @immutable final class WebhookCheckSuiteRerequestedCheckSuite {const WebhookCheckSuiteRerequestedCheckSuite({required this.after, required this.app, required this.before, required this.checkRunsUrl, required this.conclusion, required this.createdAt, required this.headBranch, required this.headCommit, required this.headSha, required this.id, required this.latestCheckRunsCount, required this.nodeId, required this.pullRequests, required this.status, required this.updatedAt, required this.url, this.rerequestable, this.runsRerequestable, });
 
-factory WebhookCheckSuiteRerequestedCheckSuite.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRerequestedCheckSuite(
+factory WebhookCheckSuiteRerequestedCheckSuite.fromJson(Map<String, dynamic> json) {return WebhookCheckSuiteRerequestedCheckSuite(
   after: json['after'] as String?,
   app: WebhookCheckSuiteRerequestedCheckSuiteApp.fromJson(json['app'] as Map<String, dynamic>),
   before: json['before'] as String?,
@@ -23,7 +23,7 @@ factory WebhookCheckSuiteRerequestedCheckSuite.fromJson(Map<String, dynamic> jso
   status: json['status'] != null ? WebhookCheckSuiteRequestedCheckSuiteStatus.fromJson(json['status'] as String) : null,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String? after;
 
@@ -68,7 +68,7 @@ final DateTime updatedAt;
 /// URL that points to the check suite API resource.
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'after': after,
   'app': app.toJson(),
   'before': before,
@@ -87,8 +87,8 @@ Map<String, dynamic> toJson() { return {
   'status': status?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('after') && (json['after'] == null || json['after'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('after') && (json['after'] == null || json['after'] is String) &&
       json.containsKey('app') &&
       json.containsKey('before') && (json['before'] == null || json['before'] is String) &&
       json.containsKey('check_runs_url') && json['check_runs_url'] is String &&
@@ -103,8 +103,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('pull_requests') &&
       json.containsKey('status') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookCheckSuiteRerequestedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteRerequestedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, WebhookCheckSuiteRerequestedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, CheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<CheckSuitePullRequests>? pullRequests, bool? Function()? rerequestable, bool? Function()? runsRerequestable, WebhookCheckSuiteRequestedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) { return WebhookCheckSuiteRerequestedCheckSuite(
+      json.containsKey('url') && json['url'] is String;}
+WebhookCheckSuiteRerequestedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteRerequestedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, WebhookCheckSuiteRerequestedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, CheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<CheckSuitePullRequests>? pullRequests, bool? Function()? rerequestable, bool? Function()? runsRerequestable, WebhookCheckSuiteRequestedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) {return WebhookCheckSuiteRerequestedCheckSuite(
   after: after != null ? after() : this.after,
   app: app ?? this.app,
   before: before != null ? before() : this.before,
@@ -123,7 +123,7 @@ WebhookCheckSuiteRerequestedCheckSuite copyWith({String? Function()? after, Webh
   status: status != null ? status() : this.status,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckSuiteRerequestedCheckSuite &&
           after == other.after &&
@@ -149,4 +149,4 @@ WebhookCheckSuiteRerequestedCheckSuite copyWith({String? Function()? after, Webh
 
 @override String toString() => 'WebhookCheckSuiteRerequestedCheckSuite(\n  after: $after,\n  app: $app,\n  before: $before,\n  checkRunsUrl: $checkRunsUrl,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  headBranch: $headBranch,\n  headCommit: $headCommit,\n  headSha: $headSha,\n  id: $id,\n  latestCheckRunsCount: $latestCheckRunsCount,\n  nodeId: $nodeId,\n  pullRequests: $pullRequests,\n  rerequestable: $rerequestable,\n  runsRerequestable: $runsRerequestable,\n  status: $status,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
- }
+}

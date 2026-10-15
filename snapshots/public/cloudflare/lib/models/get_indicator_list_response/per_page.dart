@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PerPage {const PerPage({required this.type});
 
-factory PerPage.fromJson(Map<String, dynamic> json) { return PerPage(
+factory PerPage.fromJson(Map<String, dynamic> json) {return PerPage(
   type: json['type'] as String,
-); }
+);}
 
 /// Example: `'number'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-PerPage copyWith({String? type}) { return PerPage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+PerPage copyWith({String? type}) {return PerPage(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PerPage &&
           type == other.type;
@@ -25,4 +25,4 @@ PerPage copyWith({String? type}) { return PerPage(
 
 @override String toString() => 'PerPage(type: $type)';
 
- }
+}

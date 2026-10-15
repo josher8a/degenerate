@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposTransferRequest {const ReposTransferRequest({required this.newOwner, this.newName, this.teamIds, });
 
-factory ReposTransferRequest.fromJson(Map<String, dynamic> json) { return ReposTransferRequest(
+factory ReposTransferRequest.fromJson(Map<String, dynamic> json) {return ReposTransferRequest(
   newOwner: json['new_owner'] as String,
   newName: json['new_name'] as String?,
   teamIds: (json['team_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 /// The username or organization name the repository will be transferred to.
 final String newOwner;
@@ -18,17 +18,17 @@ final String? newName;
 /// ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
 final List<int>? teamIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'new_owner': newOwner,
   'new_name': ?newName,
   'team_ids': ?teamIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('new_owner') && json['new_owner'] is String; } 
-ReposTransferRequest copyWith({String? newOwner, String? Function()? newName, List<int>? Function()? teamIds, }) { return ReposTransferRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('new_owner') && json['new_owner'] is String;}
+ReposTransferRequest copyWith({String? newOwner, String? Function()? newName, List<int>? Function()? teamIds, }) {return ReposTransferRequest(
   newOwner: newOwner ?? this.newOwner,
   newName: newName != null ? newName() : this.newName,
   teamIds: teamIds != null ? teamIds() : this.teamIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReposTransferRequest &&
           newOwner == other.newOwner &&
@@ -39,4 +39,4 @@ ReposTransferRequest copyWith({String? newOwner, String? Function()? newName, Li
 
 @override String toString() => 'ReposTransferRequest(newOwner: $newOwner, newName: $newName, teamIds: $teamIds)';
 
- }
+}

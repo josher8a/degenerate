@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A path to a file
 /// 
 @immutable final class FilePath {const FilePath({required this.type, required this.fileId, required this.index, });
 
-factory FilePath.fromJson(Map<String, dynamic> json) { return FilePath(
+factory FilePath.fromJson(Map<String, dynamic> json) {return FilePath(
   type: json['type'] as String,
   fileId: json['file_id'] as String,
   index: (json['index'] as num).toInt(),
-); }
+);}
 
 /// The type of the file path. Always `file_path`.
 /// 
@@ -23,19 +23,19 @@ final String fileId;
 /// 
 final int index;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'file_id': fileId,
   'index': index,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('file_id') && json['file_id'] is String &&
-      json.containsKey('index') && json['index'] is num; } 
-FilePath copyWith({String? type, String? fileId, int? index, }) { return FilePath(
+      json.containsKey('index') && json['index'] is num;}
+FilePath copyWith({String? type, String? fileId, int? index, }) {return FilePath(
   type: type ?? this.type,
   fileId: fileId ?? this.fileId,
   index: index ?? this.index,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FilePath &&
           type == other.type &&
@@ -46,4 +46,4 @@ FilePath copyWith({String? type, String? fileId, int? index, }) { return FilePat
 
 @override String toString() => 'FilePath(type: $type, fileId: $fileId, index: $index)';
 
- }
+}

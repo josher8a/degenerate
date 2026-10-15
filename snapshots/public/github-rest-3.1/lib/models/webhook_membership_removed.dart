@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_removed/webhook_installation_repositories_removed_action.dart';import 'package:pub_github_rest_3_1/models/webhook_membership_added/sender.dart';import 'package:pub_github_rest_3_1/models/webhooks_team.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';/// The scope of the membership. Currently, can only be `team`.
 sealed class WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope();
 
-factory WebhookMembershipRemovedScope.fromJson(String json) { return switch (json) {
+factory WebhookMembershipRemovedScope.fromJson(String json) {return switch (json) {
   'team' => team,
   'organization' => organization,
   _ => WebhookMembershipRemovedScope$Unknown(json),
-}; }
+};}
 
 static const WebhookMembershipRemovedScope team = WebhookMembershipRemovedScope$team._();
 
@@ -17,30 +17,30 @@ static const WebhookMembershipRemovedScope organization = WebhookMembershipRemov
 static const List<WebhookMembershipRemovedScope> values = [team, organization];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'team' => 'team',
   'organization' => 'organization',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookMembershipRemovedScope$Unknown; } 
+bool get isUnknown {return this is WebhookMembershipRemovedScope$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() team, required W Function() organization, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() team, required W Function() organization, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookMembershipRemovedScope$team() => team(),
       WebhookMembershipRemovedScope$organization() => organization(),
       WebhookMembershipRemovedScope$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W Function()? organization, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W Function()? organization, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookMembershipRemovedScope$team() => team != null ? team() : orElse(value),
       WebhookMembershipRemovedScope$organization() => organization != null ? organization() : orElse(value),
       WebhookMembershipRemovedScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookMembershipRemovedScope($value)';
 
- }
+}
 @immutable final class WebhookMembershipRemovedScope$team extends WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope$team._();
 
 @override String get value => 'team';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W 
 
 @override int get hashCode => 'team'.hashCode;
 
- }
+}
 @immutable final class WebhookMembershipRemovedScope$organization extends WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope$organization._();
 
 @override String get value => 'organization';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W 
 
 @override int get hashCode => 'organization'.hashCode;
 
- }
+}
 @immutable final class WebhookMembershipRemovedScope$Unknown extends WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookMembershipRemoved {const WebhookMembershipRemoved({required this.action, required this.member, required this.organization, required this.scope, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
 
-factory WebhookMembershipRemoved.fromJson(Map<String, dynamic> json) { return WebhookMembershipRemoved(
+factory WebhookMembershipRemoved.fromJson(Map<String, dynamic> json) {return WebhookMembershipRemoved(
   action: WebhookInstallationRepositoriesRemovedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -81,7 +81,7 @@ factory WebhookMembershipRemoved.fromJson(Map<String, dynamic> json) { return We
   scope: WebhookMembershipRemovedScope.fromJson(json['scope'] as String),
   sender: json['sender'] != null ? Sender.fromJson(json['sender'] as Map<String, dynamic>) : null,
   team: WebhooksTeam.fromJson(json['team'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookInstallationRepositoriesRemovedAction action;
 
@@ -102,7 +102,7 @@ final Sender? sender;
 
 final WebhooksTeam team;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -112,14 +112,14 @@ Map<String, dynamic> toJson() { return {
   'scope': scope.toJson(),
   'sender': sender?.toJson(),
   'team': team.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('member') &&
       json.containsKey('organization') &&
       json.containsKey('scope') &&
       json.containsKey('sender') &&
-      json.containsKey('team'); } 
-WebhookMembershipRemoved copyWith({WebhookInstallationRepositoriesRemovedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? Function()? member, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, WebhookMembershipRemovedScope? scope, Sender? Function()? sender, WebhooksTeam? team, }) { return WebhookMembershipRemoved(
+      json.containsKey('team');}
+WebhookMembershipRemoved copyWith({WebhookInstallationRepositoriesRemovedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? Function()? member, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, WebhookMembershipRemovedScope? scope, Sender? Function()? sender, WebhooksTeam? team, }) {return WebhookMembershipRemoved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -129,7 +129,7 @@ WebhookMembershipRemoved copyWith({WebhookInstallationRepositoriesRemovedAction?
   scope: scope ?? this.scope,
   sender: sender != null ? sender() : this.sender,
   team: team ?? this.team,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMembershipRemoved &&
           action == other.action &&
@@ -146,4 +146,4 @@ WebhookMembershipRemoved copyWith({WebhookInstallationRepositoriesRemovedAction?
 
 @override String toString() => 'WebhookMembershipRemoved(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  member: $member,\n  organization: $organization,\n  repository: $repository,\n  scope: $scope,\n  sender: $sender,\n  team: $team,\n)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_action.dart';import 'package:pub_cloudflare/models/shield_after.dart';import 'package:pub_cloudflare/models/shield_before.dart';import 'package:pub_cloudflare/models/shield_enabled.dart';import 'package:pub_cloudflare/models/shield_expression.dart';import 'package:pub_cloudflare/models/shield_index.dart';import 'package:pub_cloudflare/models/shield_position.dart';import 'package:pub_cloudflare/models/shield_schemas_description.dart';import 'package:pub_cloudflare/models/shield_schemas_title.dart';import 'package:pub_cloudflare/models/shield_selector.dart';@immutable final class ShieldEditSingleRuleRequest {const ShieldEditSingleRuleRequest({this.action, this.description, this.enabled, this.expression, this.selector, this.title, this.position, });
 
-factory ShieldEditSingleRuleRequest.fromJson(Map<String, dynamic> json) { return ShieldEditSingleRuleRequest(
+factory ShieldEditSingleRuleRequest.fromJson(Map<String, dynamic> json) {return ShieldEditSingleRuleRequest(
   action: json['action'] != null ? ShieldAction.fromJson(json['action'] as String) : null,
   description: json['description'] != null ? ShieldSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: json['enabled'] != null ? ShieldEnabled.fromJson(json['enabled'] as bool) : null,
@@ -11,7 +11,7 @@ factory ShieldEditSingleRuleRequest.fromJson(Map<String, dynamic> json) { return
   selector: json['selector'] != null ? ShieldSelector.fromJson(json['selector'] as Map<String, dynamic>) : null,
   title: json['title'] != null ? ShieldSchemasTitle.fromJson(json['title'] as String) : null,
   position: json['position'] != null ? OneOf3.parse(json['position'], fromA: (v) => ShieldIndex.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldBefore.fromJson(v as Map<String, dynamic>), fromC: (v) => ShieldAfter.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 /// Action to take on requests that match operations included in `selector` and fail `expression`.
 final ShieldAction? action;
@@ -28,7 +28,7 @@ final ShieldSchemasTitle? title;
 
 final ShieldPosition? position;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -36,9 +36,9 @@ Map<String, dynamic> toJson() { return {
   if (selector != null) 'selector': selector?.toJson(),
   if (title != null) 'title': title?.toJson(),
   if (position != null) 'position': position?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'selector', 'title', 'position'}.contains(key)); } 
-ShieldEditSingleRuleRequest copyWith({ShieldAction? Function()? action, ShieldSchemasDescription? Function()? description, ShieldEnabled? Function()? enabled, ShieldExpression? Function()? expression, ShieldSelector? Function()? selector, ShieldSchemasTitle? Function()? title, ShieldPosition? Function()? position, }) { return ShieldEditSingleRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'selector', 'title', 'position'}.contains(key));}
+ShieldEditSingleRuleRequest copyWith({ShieldAction? Function()? action, ShieldSchemasDescription? Function()? description, ShieldEnabled? Function()? enabled, ShieldExpression? Function()? expression, ShieldSelector? Function()? selector, ShieldSchemasTitle? Function()? title, ShieldPosition? Function()? position, }) {return ShieldEditSingleRuleRequest(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -46,7 +46,7 @@ ShieldEditSingleRuleRequest copyWith({ShieldAction? Function()? action, ShieldSc
   selector: selector != null ? selector() : this.selector,
   title: title != null ? title() : this.title,
   position: position != null ? position() : this.position,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldEditSingleRuleRequest &&
           action == other.action &&
@@ -61,4 +61,4 @@ ShieldEditSingleRuleRequest copyWith({ShieldAction? Function()? action, ShieldSc
 
 @override String toString() => 'ShieldEditSingleRuleRequest(action: $action, description: $description, enabled: $enabled, expression: $expression, selector: $selector, title: $title, position: $position)';
 
- }
+}

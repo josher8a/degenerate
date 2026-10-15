@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOidcConfig {const AccessOidcConfig({this.clientId, this.clientSecret, this.claims, this.emailClaimName, this.authUrl, this.certsUrl, this.pkceEnabled, this.scopes, this.tokenUrl, });
 
-factory AccessOidcConfig.fromJson(Map<String, dynamic> json) { return AccessOidcConfig(
+factory AccessOidcConfig.fromJson(Map<String, dynamic> json) {return AccessOidcConfig(
   clientId: json['client_id'] as String?,
   clientSecret: json['client_secret'] as String?,
   claims: (json['claims'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -13,7 +13,7 @@ factory AccessOidcConfig.fromJson(Map<String, dynamic> json) { return AccessOidc
   pkceEnabled: json['pkce_enabled'] as bool?,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   tokenUrl: json['token_url'] as String?,
-); }
+);}
 
 /// Your OAuth Client ID
 /// 
@@ -58,7 +58,7 @@ final List<String>? scopes;
 /// Example: `'https://accounts.google.com/o/oauth2/token'`
 final String? tokenUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': ?clientId,
   'client_secret': ?clientSecret,
   'claims': ?claims,
@@ -68,9 +68,9 @@ Map<String, dynamic> toJson() { return {
   'pkce_enabled': ?pkceEnabled,
   'scopes': ?scopes,
   'token_url': ?tokenUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'auth_url', 'certs_url', 'pkce_enabled', 'scopes', 'token_url'}.contains(key)); } 
-AccessOidcConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authUrl, String? Function()? certsUrl, bool? Function()? pkceEnabled, List<String>? Function()? scopes, String? Function()? tokenUrl, }) { return AccessOidcConfig(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'auth_url', 'certs_url', 'pkce_enabled', 'scopes', 'token_url'}.contains(key));}
+AccessOidcConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authUrl, String? Function()? certsUrl, bool? Function()? pkceEnabled, List<String>? Function()? scopes, String? Function()? tokenUrl, }) {return AccessOidcConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,
@@ -80,7 +80,7 @@ AccessOidcConfig copyWith({String? Function()? clientId, String? Function()? cli
   pkceEnabled: pkceEnabled != null ? pkceEnabled() : this.pkceEnabled,
   scopes: scopes != null ? scopes() : this.scopes,
   tokenUrl: tokenUrl != null ? tokenUrl() : this.tokenUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOidcConfig &&
           clientId == other.clientId &&
@@ -97,4 +97,4 @@ AccessOidcConfig copyWith({String? Function()? clientId, String? Function()? cli
 
 @override String toString() => 'AccessOidcConfig(\n  clientId: $clientId,\n  clientSecret: $clientSecret,\n  claims: $claims,\n  emailClaimName: $emailClaimName,\n  authUrl: $authUrl,\n  certsUrl: $certsUrl,\n  pkceEnabled: $pkceEnabled,\n  scopes: $scopes,\n  tokenUrl: $tokenUrl,\n)';
 
- }
+}

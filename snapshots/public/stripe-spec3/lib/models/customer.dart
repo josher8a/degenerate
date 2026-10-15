@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// and track payments that belong to the same customer.
 @immutable final class Customer {const Customer({required this.created, required this.id, required this.livemode, required this.object, this.address = const Omittable.absent(), this.balance, this.businessName, this.cashBalance = const Omittable.absent(), this.currency = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.defaultSource = const Omittable.absent(), this.delinquent = const Omittable.absent(), this.description = const Omittable.absent(), this.discount = const Omittable.absent(), this.email = const Omittable.absent(), this.individualName, this.invoiceCreditBalance, this.invoicePrefix = const Omittable.absent(), this.invoiceSettings, this.metadata, this.name = const Omittable.absent(), this.nextInvoiceSequence, this.phone = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.shipping = const Omittable.absent(), this.sources, this.subscriptions, this.tax, this.taxExempt = const Omittable.absent(), this.taxIds, this.testClock = const Omittable.absent(), });
 
-factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
+factory Customer.fromJson(Map<String, dynamic> json) {return Customer(
   address: json.containsKey('address') ? Omittable(json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
   businessName: json['business_name'] as String?,
@@ -37,7 +37,7 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   taxExempt: json.containsKey('tax_exempt') ? Omittable(json['tax_exempt'] != null ? CustomerTaxExempt.fromJson(json['tax_exempt'] as String) : null) : const Omittable.absent(),
   taxIds: json['tax_ids'] != null ? CustomerTaxIds.fromJson(json['tax_ids'] as Map<String, dynamic>) : null,
   testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? TestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The customer's address.
 final Omittable<Address?> address;
@@ -136,7 +136,7 @@ final CustomerTaxIds? taxIds;
 /// ID of the test clock that this customer belongs to.
 final Omittable<TestClock?> testClock;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address.isPresent) 'address': address.value?.toJson(),
   'balance': ?balance,
   'business_name': ?businessName,
@@ -168,13 +168,13 @@ Map<String, dynamic> toJson() { return {
   if (taxExempt.isPresent) 'tax_exempt': taxExempt.value?.toJson(),
   if (taxIds != null) 'tax_ids': taxIds?.toJson(),
   if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
-      json.containsKey('object') && json['object'] == 'customer'; } 
+      json.containsKey('object') && json['object'] == 'customer';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final businessName$ = businessName;
 if (businessName$ != null) {
   if (businessName$.runes.length > 150) { errors.add('businessName: length must be <= 150'); }
@@ -212,8 +212,8 @@ final phone$ = phone.value;
 if (phone$ != null) {
   if (phone$.runes.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
-return errors; } 
-Customer copyWith({Omittable<Address?>? address, int? Function()? balance, String? Function()? businessName, Omittable<CashBalance?>? cashBalance, int? created, Omittable<String?>? currency, Omittable<String?>? customerAccount, Omittable<CustomerDefaultSource?>? defaultSource, Omittable<bool?>? delinquent, Omittable<String?>? description, Omittable<Discount?>? discount, Omittable<String?>? email, String? id, String? Function()? individualName, Map<String, int>? Function()? invoiceCreditBalance, Omittable<String?>? invoicePrefix, InvoiceSettingCustomerSetting? Function()? invoiceSettings, bool? livemode, Map<String, String>? Function()? metadata, Omittable<String?>? name, int? Function()? nextInvoiceSequence, CustomerObject? object, Omittable<String?>? phone, Omittable<List<String>?>? preferredLocales, Omittable<Shipping?>? shipping, Sources? Function()? sources, CustomerSubscriptions? Function()? subscriptions, CustomerTax? Function()? tax, Omittable<CustomerTaxExempt?>? taxExempt, CustomerTaxIds? Function()? taxIds, Omittable<TestClock?>? testClock, }) { return Customer(
+return errors;}
+Customer copyWith({Omittable<Address?>? address, int? Function()? balance, String? Function()? businessName, Omittable<CashBalance?>? cashBalance, int? created, Omittable<String?>? currency, Omittable<String?>? customerAccount, Omittable<CustomerDefaultSource?>? defaultSource, Omittable<bool?>? delinquent, Omittable<String?>? description, Omittable<Discount?>? discount, Omittable<String?>? email, String? id, String? Function()? individualName, Map<String, int>? Function()? invoiceCreditBalance, Omittable<String?>? invoicePrefix, InvoiceSettingCustomerSetting? Function()? invoiceSettings, bool? livemode, Map<String, String>? Function()? metadata, Omittable<String?>? name, int? Function()? nextInvoiceSequence, CustomerObject? object, Omittable<String?>? phone, Omittable<List<String>?>? preferredLocales, Omittable<Shipping?>? shipping, Sources? Function()? sources, CustomerSubscriptions? Function()? subscriptions, CustomerTax? Function()? tax, Omittable<CustomerTaxExempt?>? taxExempt, CustomerTaxIds? Function()? taxIds, Omittable<TestClock?>? testClock, }) {return Customer(
   address: address ?? this.address,
   balance: balance != null ? balance() : this.balance,
   businessName: businessName != null ? businessName() : this.businessName,
@@ -245,7 +245,7 @@ Customer copyWith({Omittable<Address?>? address, int? Function()? balance, Strin
   taxExempt: taxExempt ?? this.taxExempt,
   taxIds: taxIds != null ? taxIds() : this.taxIds,
   testClock: testClock ?? this.testClock,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Customer &&
           address == other.address &&
@@ -285,4 +285,4 @@ Customer copyWith({Omittable<Address?>? address, int? Function()? balance, Strin
 
 @override String toString() => 'Customer(\n  address: $address,\n  balance: $balance,\n  businessName: $businessName,\n  cashBalance: $cashBalance,\n  created: $created,\n  currency: $currency,\n  customerAccount: $customerAccount,\n  defaultSource: $defaultSource,\n  delinquent: $delinquent,\n  description: $description,\n  discount: $discount,\n  email: $email,\n  id: $id,\n  individualName: $individualName,\n  invoiceCreditBalance: $invoiceCreditBalance,\n  invoicePrefix: $invoicePrefix,\n  invoiceSettings: $invoiceSettings,\n  livemode: $livemode,\n  metadata: $metadata,\n  name: $name,\n  nextInvoiceSequence: $nextInvoiceSequence,\n  object: $object,\n  phone: $phone,\n  preferredLocales: $preferredLocales,\n  shipping: $shipping,\n  sources: $sources,\n  subscriptions: $subscriptions,\n  tax: $tax,\n  taxExempt: $taxExempt,\n  taxIds: $taxIds,\n  testClock: $testClock,\n)';
 
- }
+}

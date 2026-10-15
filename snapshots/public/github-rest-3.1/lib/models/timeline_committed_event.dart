@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_author.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_committer.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_parents.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/verification.dart';/// Timeline Committed Event
 @immutable final class TimelineCommittedEvent {const TimelineCommittedEvent({required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl, this.event, });
 
-factory TimelineCommittedEvent.fromJson(Map<String, dynamic> json) { return TimelineCommittedEvent(
+factory TimelineCommittedEvent.fromJson(Map<String, dynamic> json) {return TimelineCommittedEvent(
   event: json['event'] as String?,
   sha: json['sha'] as String,
   nodeId: json['node_id'] as String,
@@ -16,7 +16,7 @@ factory TimelineCommittedEvent.fromJson(Map<String, dynamic> json) { return Time
   parents: (json['parents'] as List<dynamic>).map((e) => GitCommitParents.fromJson(e as Map<String, dynamic>)).toList(),
   verification: Verification.fromJson(json['verification'] as Map<String, dynamic>),
   htmlUrl: Uri.parse(json['html_url'] as String),
-); }
+);}
 
 final String? event;
 
@@ -44,7 +44,7 @@ final Verification verification;
 
 final Uri htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event': ?event,
   'sha': sha,
   'node_id': nodeId,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'parents': parents.map((e) => e.toJson()).toList(),
   'verification': verification.toJson(),
   'html_url': htmlUrl.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('author') &&
@@ -66,8 +66,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha')
       json.containsKey('tree') &&
       json.containsKey('parents') &&
       json.containsKey('verification') &&
-      json.containsKey('html_url') && json['html_url'] is String; } 
-TimelineCommittedEvent copyWith({String? Function()? event, String? sha, String? nodeId, Uri? url, GitCommitAuthor? author, GitCommitCommitter? committer, String? message, GitCommitTree? tree, List<GitCommitParents>? parents, Verification? verification, Uri? htmlUrl, }) { return TimelineCommittedEvent(
+      json.containsKey('html_url') && json['html_url'] is String;}
+TimelineCommittedEvent copyWith({String? Function()? event, String? sha, String? nodeId, Uri? url, GitCommitAuthor? author, GitCommitCommitter? committer, String? message, GitCommitTree? tree, List<GitCommitParents>? parents, Verification? verification, Uri? htmlUrl, }) {return TimelineCommittedEvent(
   event: event != null ? event() : this.event,
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,
@@ -79,7 +79,7 @@ TimelineCommittedEvent copyWith({String? Function()? event, String? sha, String?
   parents: parents ?? this.parents,
   verification: verification ?? this.verification,
   htmlUrl: htmlUrl ?? this.htmlUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineCommittedEvent &&
           event == other.event &&
@@ -98,4 +98,4 @@ TimelineCommittedEvent copyWith({String? Function()? event, String? sha, String?
 
 @override String toString() => 'TimelineCommittedEvent(\n  event: $event,\n  sha: $sha,\n  nodeId: $nodeId,\n  url: $url,\n  author: $author,\n  committer: $committer,\n  message: $message,\n  tree: $tree,\n  parents: $parents,\n  verification: $verification,\n  htmlUrl: $htmlUrl,\n)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType();
 
-factory RadarGetAiBotsSummaryContentType.fromJson(String json) { return switch (json) {
+factory RadarGetAiBotsSummaryContentType.fromJson(String json) {return switch (json) {
   'HTML' => html,
   'IMAGES' => images,
   'JSON' => $json,
@@ -21,7 +21,7 @@ factory RadarGetAiBotsSummaryContentType.fromJson(String json) { return switch (
   'SERIALIZATION' => serialization,
   'OTHER' => $other,
   _ => RadarGetAiBotsSummaryContentType$Unknown(json),
-}; }
+};}
 
 static const RadarGetAiBotsSummaryContentType html = RadarGetAiBotsSummaryContentType$html._();
 
@@ -58,9 +58,9 @@ static const RadarGetAiBotsSummaryContentType $other = RadarGetAiBotsSummaryCont
 static const List<RadarGetAiBotsSummaryContentType> values = [html, images, $json, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'HTML' => 'html',
   'IMAGES' => 'images',
   'JSON' => r'$json',
@@ -78,11 +78,11 @@ String get name { return switch (value) {
   'SERIALIZATION' => 'serialization',
   'OTHER' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAiBotsSummaryContentType$Unknown; } 
+bool get isUnknown {return this is RadarGetAiBotsSummaryContentType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() html, required W Function() images, required W Function() $json, required W Function() javascript, required W Function() css, required W Function() plainText, required W Function() fonts, required W Function() xml, required W Function() yaml, required W Function() video, required W Function() audio, required W Function() markdown, required W Function() documents, required W Function() binary, required W Function() serialization, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() html, required W Function() images, required W Function() $json, required W Function() javascript, required W Function() css, required W Function() plainText, required W Function() fonts, required W Function() xml, required W Function() yaml, required W Function() video, required W Function() audio, required W Function() markdown, required W Function() documents, required W Function() binary, required W Function() serialization, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAiBotsSummaryContentType$html() => html(),
       RadarGetAiBotsSummaryContentType$images() => images(),
       RadarGetAiBotsSummaryContentType$$json() => $json(),
@@ -100,9 +100,9 @@ W when<W>({required W Function() html, required W Function() images, required W 
       RadarGetAiBotsSummaryContentType$serialization() => serialization(),
       RadarGetAiBotsSummaryContentType$$other() => $other(),
       RadarGetAiBotsSummaryContentType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W Function()? images, W Function()? $json, W Function()? javascript, W Function()? css, W Function()? plainText, W Function()? fonts, W Function()? xml, W Function()? yaml, W Function()? video, W Function()? audio, W Function()? markdown, W Function()? documents, W Function()? binary, W Function()? serialization, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W Function()? images, W Function()? $json, W Function()? javascript, W Function()? css, W Function()? plainText, W Function()? fonts, W Function()? xml, W Function()? yaml, W Function()? video, W Function()? audio, W Function()? markdown, W Function()? documents, W Function()? binary, W Function()? serialization, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAiBotsSummaryContentType$html() => html != null ? html() : orElse(value),
       RadarGetAiBotsSummaryContentType$images() => images != null ? images() : orElse(value),
       RadarGetAiBotsSummaryContentType$$json() => $json != null ? $json() : orElse(value),
@@ -120,10 +120,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
       RadarGetAiBotsSummaryContentType$serialization() => serialization != null ? serialization() : orElse(value),
       RadarGetAiBotsSummaryContentType$$other() => $other != null ? $other() : orElse(value),
       RadarGetAiBotsSummaryContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAiBotsSummaryContentType($value)';
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$html extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$html._();
 
 @override String get value => 'HTML';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'HTML'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$images extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$images._();
 
 @override String get value => 'IMAGES';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'IMAGES'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$$json extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$$json._();
 
 @override String get value => 'JSON';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$javascript extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$javascript._();
 
 @override String get value => 'JAVASCRIPT';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'JAVASCRIPT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$css extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$css._();
 
 @override String get value => 'CSS';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'CSS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$plainText extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$plainText._();
 
 @override String get value => 'PLAIN_TEXT';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'PLAIN_TEXT'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$fonts extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$fonts._();
 
 @override String get value => 'FONTS';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'FONTS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$xml extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$xml._();
 
 @override String get value => 'XML';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'XML'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$yaml extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$yaml._();
 
 @override String get value => 'YAML';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'YAML'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$video extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$video._();
 
 @override String get value => 'VIDEO';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'VIDEO'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$audio extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$audio._();
 
 @override String get value => 'AUDIO';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'AUDIO'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$markdown extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$markdown._();
 
 @override String get value => 'MARKDOWN';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'MARKDOWN'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$documents extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$documents._();
 
 @override String get value => 'DOCUMENTS';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'DOCUMENTS'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$binary extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$binary._();
 
 @override String get value => 'BINARY';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'BINARY'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$serialization extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$serialization._();
 
 @override String get value => 'SERIALIZATION';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'SERIALIZATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$$other extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$$other._();
 
 @override String get value => 'OTHER';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => 'OTHER'.hashCode;
 
- }
+}
 @immutable final class RadarGetAiBotsSummaryContentType$Unknown extends RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType$Unknown(this.value);
 
 @override final String value;
@@ -277,4 +277,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

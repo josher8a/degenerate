@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_messages2.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_history_response/zaraz_zaraz_config_history_response_result_value.dart';@immutable final class ZarazZarazConfigHistoryResponse {const ZarazZarazConfigHistoryResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory ZarazZarazConfigHistoryResponse.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigHistoryResponse(
+factory ZarazZarazConfigHistoryResponse.fromJson(Map<String, dynamic> json) {return ZarazZarazConfigHistoryResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZarazMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZarazMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v == null ? null : ZarazZarazConfigHistoryResponseResultValue.fromJson(v as Map<String, dynamic>))),
-); }
+);}
 
 final List<ZarazMessages2> errors;
 
@@ -24,22 +24,22 @@ final bool success;
 /// Example: `{12345: {config: {consent: {cookieName: zaraz-consent, customIntroDisclaimerDismissed: true, enabled: false}, dataLayer: true, debugKey: my-debug-key, settings: {autoInjectScript: true}, tools: {aJvt: {component: facebook-pixel, defaultFields: {testKey: TEST123456}, enabled: true, name: Facebook Pixel, neoEvents: [{actionType: pageview, blockingTriggers: [], data: {__zaraz_setting_name: Page view, ev: PageView}, firingTriggers: [Pageview]}], permissions: [access_client_kv], settings: {accessToken: ABcdEFg, ecommerce: true, property: 12345}, type: component}}, triggers: {ktBn: {Pageview: {clientRules: [], description: All page loads, excludeRules: [], loadRules: [{match: {{ client.__zarazTrack }}, op: EQUALS, value: Pageview}], name: Pageview, system: pageload}}}, variables: {Autd: {name: ip, type: string, value: {{ system.device.ip }}}}, zarazVersion: 43}, createdAt: 2023-02-23T05:05:55.155273Z, id: 12345, updatedAt: 2023-02-23T05:05:55.155273Z, userId: 278d0d0g123cd8e49d45ea64f12faa37}, 23456: null}`
 final Map<String,ZarazZarazConfigHistoryResponseResultValue?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.map((k, v) => MapEntry(k, v?.toJson())),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-ZarazZarazConfigHistoryResponse copyWith({List<ZarazMessages2>? errors, List<ZarazMessages2>? messages, bool? success, Map<String,ZarazZarazConfigHistoryResponseResultValue?>? result, }) { return ZarazZarazConfigHistoryResponse(
+      json.containsKey('result');}
+ZarazZarazConfigHistoryResponse copyWith({List<ZarazMessages2>? errors, List<ZarazMessages2>? messages, bool? success, Map<String,ZarazZarazConfigHistoryResponseResultValue?>? result, }) {return ZarazZarazConfigHistoryResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazConfigHistoryResponse &&
           listEquals(errors, other.errors) &&
@@ -51,4 +51,4 @@ ZarazZarazConfigHistoryResponse copyWith({List<ZarazMessages2>? errors, List<Zar
 
 @override String toString() => 'ZarazZarazConfigHistoryResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

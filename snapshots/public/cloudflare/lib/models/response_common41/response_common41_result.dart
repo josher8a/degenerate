@@ -7,11 +7,11 @@ const ResponseCommon41Result({this.mapStringdynamic = const Omittable.absent(), 
 const ResponseCommon41Result._({required this.rawValue, required this.mapStringdynamic, required this.listMapStringdynamic, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ResponseCommon41Result.fromJson(Object? json) { return ResponseCommon41Result._(
+factory ResponseCommon41Result.fromJson(Object? json) {return ResponseCommon41Result._(
   rawValue: Omittable(json),
   mapStringdynamic: parseAnyOfVariant<Map<String, dynamic>>(json, (value) => value! as Map<String, dynamic>),
   listMapStringdynamic: parseAnyOfVariant<List<Map<String, dynamic>>>(json, (value) => (value! as List<dynamic>).map((e) => e as Map<String, dynamic>).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ResponseCommon41Result(${toJson()})';
 
- }
+}

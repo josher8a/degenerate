@@ -3,30 +3,30 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonalPsk {const PersonalPsk({required this.password, required this.ssid, });
 
-factory PersonalPsk.fromJson(Map<String, dynamic> json) { return PersonalPsk(
+factory PersonalPsk.fromJson(Map<String, dynamic> json) {return PersonalPsk(
   password: json['password'] as String,
   ssid: json['ssid'] as String,
-); }
+);}
 
 final String password;
 
 final String ssid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'password': password,
   'ssid': ssid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('password') && json['password'] is String &&
-      json.containsKey('ssid') && json['ssid'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('password') && json['password'] is String &&
+      json.containsKey('ssid') && json['ssid'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (password.runes.length > 63) { errors.add('password: length must be <= 63'); }
 if (ssid.runes.length > 5000) { errors.add('ssid: length must be <= 5000'); }
-return errors; } 
-PersonalPsk copyWith({String? password, String? ssid, }) { return PersonalPsk(
+return errors;}
+PersonalPsk copyWith({String? password, String? ssid, }) {return PersonalPsk(
   password: password ?? this.password,
   ssid: ssid ?? this.ssid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PersonalPsk &&
           password == other.password &&
@@ -36,4 +36,4 @@ PersonalPsk copyWith({String? password, String? ssid, }) { return PersonalPsk(
 
 @override String toString() => 'PersonalPsk(password: $password, ssid: $ssid)';
 
- }
+}

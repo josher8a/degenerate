@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers/inbound_transfers_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_billing_details.dart';/// 
 @immutable final class InboundTransfers {const InboundTransfers({required this.billingDetails, required this.type, this.usBankAccount, });
 
-factory InboundTransfers.fromJson(Map<String, dynamic> json) { return InboundTransfers(
+factory InboundTransfers.fromJson(Map<String, dynamic> json) {return InboundTransfers(
   billingDetails: TreasurySharedResourceBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),
   type: InboundTransfersType.fromJson(json['type'] as String),
   usBankAccount: json['us_bank_account'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final TreasurySharedResourceBillingDetails billingDetails;
 
@@ -17,18 +17,18 @@ final InboundTransfersType type;
 
 final InboundTransfersPaymentMethodDetailsUsBankAccount? usBankAccount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'billing_details': billingDetails.toJson(),
   'type': type.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
-      json.containsKey('type'); } 
-InboundTransfers copyWith({TreasurySharedResourceBillingDetails? billingDetails, InboundTransfersType? type, InboundTransfersPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return InboundTransfers(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('billing_details') &&
+      json.containsKey('type');}
+InboundTransfers copyWith({TreasurySharedResourceBillingDetails? billingDetails, InboundTransfersType? type, InboundTransfersPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) {return InboundTransfers(
   billingDetails: billingDetails ?? this.billingDetails,
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InboundTransfers &&
           billingDetails == other.billingDetails &&
@@ -39,4 +39,4 @@ InboundTransfers copyWith({TreasurySharedResourceBillingDetails? billingDetails,
 
 @override String toString() => 'InboundTransfers(billingDetails: $billingDetails, type: $type, usBankAccount: $usBankAccount)';
 
- }
+}

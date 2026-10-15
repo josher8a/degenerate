@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_poll/votes.dart';@immutable final class RealtimekitPollOptions {const RealtimekitPollOptions({required this.count, required this.text, required this.votes, });
 
-factory RealtimekitPollOptions.fromJson(Map<String, dynamic> json) { return RealtimekitPollOptions(
+factory RealtimekitPollOptions.fromJson(Map<String, dynamic> json) {return RealtimekitPollOptions(
   count: (json['count'] as num).toDouble(),
   text: json['text'] as String,
   votes: (json['votes'] as List<dynamic>).map((e) => Votes.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final double count;
 
@@ -16,19 +16,19 @@ final String text;
 
 final List<Votes> votes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'text': text,
   'votes': votes.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('text') && json['text'] is String &&
-      json.containsKey('votes'); } 
-RealtimekitPollOptions copyWith({double? count, String? text, List<Votes>? votes, }) { return RealtimekitPollOptions(
+      json.containsKey('votes');}
+RealtimekitPollOptions copyWith({double? count, String? text, List<Votes>? votes, }) {return RealtimekitPollOptions(
   count: count ?? this.count,
   text: text ?? this.text,
   votes: votes ?? this.votes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPollOptions &&
           count == other.count &&
@@ -39,4 +39,4 @@ RealtimekitPollOptions copyWith({double? count, String? text, List<Votes>? votes
 
 @override String toString() => 'RealtimekitPollOptions(count: $count, text: $text, votes: $votes)';
 
- }
+}

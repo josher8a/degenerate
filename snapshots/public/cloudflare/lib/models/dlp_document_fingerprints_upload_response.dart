@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint_upload.dart';import 'package:pub_cloudflare/models/dlp_messages2.dart';@immutable final class DlpDocumentFingerprintsUploadResponse {const DlpDocumentFingerprintsUploadResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory DlpDocumentFingerprintsUploadResponse.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprintsUploadResponse(
+factory DlpDocumentFingerprintsUploadResponse.fromJson(Map<String, dynamic> json) {return DlpDocumentFingerprintsUploadResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? DlpDocumentFingerprintUpload.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<DlpMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final DlpDocumentFingerprintUpload? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DlpDocumentFingerprintsUploadResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, DlpDocumentFingerprintUpload? Function()? result, }) { return DlpDocumentFingerprintsUploadResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DlpDocumentFingerprintsUploadResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, DlpDocumentFingerprintUpload? Function()? result, }) {return DlpDocumentFingerprintsUploadResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDocumentFingerprintsUploadResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ DlpDocumentFingerprintsUploadResponse copyWith({List<DlpMessages2>? errors, List
 
 @override String toString() => 'DlpDocumentFingerprintsUploadResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_routes_response/data_routes.dart';@immutable final class AigConfigListGatewayDynamicRoutesResponseData {const AigConfigListGatewayDynamicRoutesResponseData({required this.orderBy, required this.orderByDirection, required this.page, required this.perPage, required this.routes, });
 
-factory AigConfigListGatewayDynamicRoutesResponseData.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRoutesResponseData(
+factory AigConfigListGatewayDynamicRoutesResponseData.fromJson(Map<String, dynamic> json) {return AigConfigListGatewayDynamicRoutesResponseData(
   orderBy: json['order_by'] as String,
   orderByDirection: json['order_by_direction'] as String,
   page: (json['page'] as num).toDouble(),
   perPage: (json['per_page'] as num).toDouble(),
   routes: (json['routes'] as List<dynamic>).map((e) => DataRoutes.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String orderBy;
 
@@ -21,25 +21,25 @@ final double perPage;
 
 final List<DataRoutes> routes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'order_by': orderBy,
   'order_by_direction': orderByDirection,
   'page': page,
   'per_page': perPage,
   'routes': routes.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('order_by') && json['order_by'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('order_by') && json['order_by'] is String &&
       json.containsKey('order_by_direction') && json['order_by_direction'] is String &&
       json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num &&
-      json.containsKey('routes'); } 
-AigConfigListGatewayDynamicRoutesResponseData copyWith({String? orderBy, String? orderByDirection, double? page, double? perPage, List<DataRoutes>? routes, }) { return AigConfigListGatewayDynamicRoutesResponseData(
+      json.containsKey('routes');}
+AigConfigListGatewayDynamicRoutesResponseData copyWith({String? orderBy, String? orderByDirection, double? page, double? perPage, List<DataRoutes>? routes, }) {return AigConfigListGatewayDynamicRoutesResponseData(
   orderBy: orderBy ?? this.orderBy,
   orderByDirection: orderByDirection ?? this.orderByDirection,
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,
   routes: routes ?? this.routes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListGatewayDynamicRoutesResponseData &&
           orderBy == other.orderBy &&
@@ -52,4 +52,4 @@ AigConfigListGatewayDynamicRoutesResponseData copyWith({String? orderBy, String?
 
 @override String toString() => 'AigConfigListGatewayDynamicRoutesResponseData(orderBy: $orderBy, orderByDirection: $orderByDirection, page: $page, perPage: $perPage, routes: $routes)';
 
- }
+}

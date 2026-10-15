@@ -7,11 +7,11 @@ const PaymentIntentPaymentMethodOptionsMobilepay2({this.paymentIntentPaymentMeth
 const PaymentIntentPaymentMethodOptionsMobilepay2._({required this.rawValue, required this.paymentIntentPaymentMethodOptionsMobilepay, required this.paymentIntentTypeSpecificPaymentMethodOptionsClient, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PaymentIntentPaymentMethodOptionsMobilepay2.fromJson(Object? json) { return PaymentIntentPaymentMethodOptionsMobilepay2._(
+factory PaymentIntentPaymentMethodOptionsMobilepay2.fromJson(Object? json) {return PaymentIntentPaymentMethodOptionsMobilepay2._(
   rawValue: Omittable(json),
   paymentIntentPaymentMethodOptionsMobilepay: json is Map<String, dynamic> && PaymentIntentPaymentMethodOptionsMobilepay.canParse(json) ? parseAnyOfVariant<PaymentIntentPaymentMethodOptionsMobilepay>(json, (value) => PaymentIntentPaymentMethodOptionsMobilepay.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   paymentIntentTypeSpecificPaymentMethodOptionsClient: json is Map<String, dynamic> && PaymentIntentTypeSpecificPaymentMethodOptionsClient.canParse(json) ? parseAnyOfVariant<PaymentIntentTypeSpecificPaymentMethodOptionsClient>(json, (value) => PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsMobilepay2(${toJson()})';
 
- }
+}

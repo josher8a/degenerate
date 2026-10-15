@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode();
 
-factory RadarGetDnsAs112TimeseriesResponseCode.fromJson(String json) { return switch (json) {
+factory RadarGetDnsAs112TimeseriesResponseCode.fromJson(String json) {return switch (json) {
   'NOERROR' => noerror,
   'FORMERR' => formerr,
   'SERVFAIL' => servfail,
@@ -24,7 +24,7 @@ factory RadarGetDnsAs112TimeseriesResponseCode.fromJson(String json) { return sw
   'BADTRUNC' => badtrunc,
   'BADCOOKIE' => badcookie,
   _ => RadarGetDnsAs112TimeseriesResponseCode$Unknown(json),
-}; }
+};}
 
 static const RadarGetDnsAs112TimeseriesResponseCode noerror = RadarGetDnsAs112TimeseriesResponseCode$noerror._();
 
@@ -67,9 +67,9 @@ static const RadarGetDnsAs112TimeseriesResponseCode badcookie = RadarGetDnsAs112
 static const List<RadarGetDnsAs112TimeseriesResponseCode> values = [noerror, formerr, servfail, nxdomain, notimp, refused, yxdomain, yxrrset, nxrrset, notauth, notzone, badsig, badkey, badtime, badmode, badname, badalg, badtrunc, badcookie];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'NOERROR' => 'noerror',
   'FORMERR' => 'formerr',
   'SERVFAIL' => 'servfail',
@@ -90,11 +90,11 @@ String get name { return switch (value) {
   'BADTRUNC' => 'badtrunc',
   'BADCOOKIE' => 'badcookie',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetDnsAs112TimeseriesResponseCode$Unknown; } 
+bool get isUnknown {return this is RadarGetDnsAs112TimeseriesResponseCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() noerror, required W Function() formerr, required W Function() servfail, required W Function() nxdomain, required W Function() notimp, required W Function() refused, required W Function() yxdomain, required W Function() yxrrset, required W Function() nxrrset, required W Function() notauth, required W Function() notzone, required W Function() badsig, required W Function() badkey, required W Function() badtime, required W Function() badmode, required W Function() badname, required W Function() badalg, required W Function() badtrunc, required W Function() badcookie, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() noerror, required W Function() formerr, required W Function() servfail, required W Function() nxdomain, required W Function() notimp, required W Function() refused, required W Function() yxdomain, required W Function() yxrrset, required W Function() nxrrset, required W Function() notauth, required W Function() notzone, required W Function() badsig, required W Function() badkey, required W Function() badtime, required W Function() badmode, required W Function() badname, required W Function() badalg, required W Function() badtrunc, required W Function() badcookie, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetDnsAs112TimeseriesResponseCode$noerror() => noerror(),
       RadarGetDnsAs112TimeseriesResponseCode$formerr() => formerr(),
       RadarGetDnsAs112TimeseriesResponseCode$servfail() => servfail(),
@@ -115,9 +115,9 @@ W when<W>({required W Function() noerror, required W Function() formerr, require
       RadarGetDnsAs112TimeseriesResponseCode$badtrunc() => badtrunc(),
       RadarGetDnsAs112TimeseriesResponseCode$badcookie() => badcookie(),
       RadarGetDnsAs112TimeseriesResponseCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror, W Function()? formerr, W Function()? servfail, W Function()? nxdomain, W Function()? notimp, W Function()? refused, W Function()? yxdomain, W Function()? yxrrset, W Function()? nxrrset, W Function()? notauth, W Function()? notzone, W Function()? badsig, W Function()? badkey, W Function()? badtime, W Function()? badmode, W Function()? badname, W Function()? badalg, W Function()? badtrunc, W Function()? badcookie, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror, W Function()? formerr, W Function()? servfail, W Function()? nxdomain, W Function()? notimp, W Function()? refused, W Function()? yxdomain, W Function()? yxrrset, W Function()? nxrrset, W Function()? notauth, W Function()? notzone, W Function()? badsig, W Function()? badkey, W Function()? badtime, W Function()? badmode, W Function()? badname, W Function()? badalg, W Function()? badtrunc, W Function()? badcookie, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetDnsAs112TimeseriesResponseCode$noerror() => noerror != null ? noerror() : orElse(value),
       RadarGetDnsAs112TimeseriesResponseCode$formerr() => formerr != null ? formerr() : orElse(value),
       RadarGetDnsAs112TimeseriesResponseCode$servfail() => servfail != null ? servfail() : orElse(value),
@@ -138,10 +138,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
       RadarGetDnsAs112TimeseriesResponseCode$badtrunc() => badtrunc != null ? badtrunc() : orElse(value),
       RadarGetDnsAs112TimeseriesResponseCode$badcookie() => badcookie != null ? badcookie() : orElse(value),
       RadarGetDnsAs112TimeseriesResponseCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetDnsAs112TimeseriesResponseCode($value)';
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$noerror extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$noerror._();
 
 @override String get value => 'NOERROR';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'NOERROR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$formerr extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$formerr._();
 
 @override String get value => 'FORMERR';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'FORMERR'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$servfail extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$servfail._();
 
 @override String get value => 'SERVFAIL';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'SERVFAIL'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$nxdomain extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$nxdomain._();
 
 @override String get value => 'NXDOMAIN';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'NXDOMAIN'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$notimp extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$notimp._();
 
 @override String get value => 'NOTIMP';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'NOTIMP'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$refused extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$refused._();
 
 @override String get value => 'REFUSED';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'REFUSED'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$yxdomain extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$yxdomain._();
 
 @override String get value => 'YXDOMAIN';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'YXDOMAIN'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$yxrrset extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$yxrrset._();
 
 @override String get value => 'YXRRSET';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'YXRRSET'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$nxrrset extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$nxrrset._();
 
 @override String get value => 'NXRRSET';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'NXRRSET'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$notauth extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$notauth._();
 
 @override String get value => 'NOTAUTH';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'NOTAUTH'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$notzone extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$notzone._();
 
 @override String get value => 'NOTZONE';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'NOTZONE'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$badsig extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$badsig._();
 
 @override String get value => 'BADSIG';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'BADSIG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$badkey extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$badkey._();
 
 @override String get value => 'BADKEY';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'BADKEY'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$badtime extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$badtime._();
 
 @override String get value => 'BADTIME';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'BADTIME'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$badmode extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$badmode._();
 
 @override String get value => 'BADMODE';
@@ -276,7 +276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'BADMODE'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$badname extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$badname._();
 
 @override String get value => 'BADNAME';
@@ -285,7 +285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'BADNAME'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$badalg extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$badalg._();
 
 @override String get value => 'BADALG';
@@ -294,7 +294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'BADALG'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$badtrunc extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$badtrunc._();
 
 @override String get value => 'BADTRUNC';
@@ -303,7 +303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'BADTRUNC'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$badcookie extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$badcookie._();
 
 @override String get value => 'BADCOOKIE';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => 'BADCOOKIE'.hashCode;
 
- }
+}
 @immutable final class RadarGetDnsAs112TimeseriesResponseCode$Unknown extends RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode$Unknown(this.value);
 
 @override final String value;
@@ -322,4 +322,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

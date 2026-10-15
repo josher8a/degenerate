@@ -11,22 +11,22 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Placement settin
 /// ```
 @immutable final class Placement {const Placement({required this.mode});
 
-factory Placement.fromJson(Map<String, dynamic> json) { return Placement(
+factory Placement.fromJson(Map<String, dynamic> json) {return Placement(
   mode: json['mode'] as String,
-); }
+);}
 
 /// Placement mode.
 /// 
 /// Example: `'smart'`
 final String mode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'mode': mode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') && json['mode'] is String; } 
-Placement copyWith({String? mode}) { return Placement(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('mode') && json['mode'] is String;}
+Placement copyWith({String? mode}) {return Placement(
   mode: mode ?? this.mode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Placement &&
           mode == other.mode;
@@ -35,4 +35,4 @@ Placement copyWith({String? mode}) { return Placement(
 
 @override String toString() => 'Placement(mode: $mode)';
 
- }
+}

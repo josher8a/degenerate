@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_action.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_requested/webhook_workflow_run_requested_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow.dart';@immutable final class WebhookWorkflowRunRequested {const WebhookWorkflowRunRequested({required this.action, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
 
-factory WebhookWorkflowRunRequested.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunRequested(
+factory WebhookWorkflowRunRequested.fromJson(Map<String, dynamic> json) {return WebhookWorkflowRunRequested(
   action: WebhookCheckSuiteRequestedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookWorkflowRunRequested.fromJson(Map<String, dynamic> json) { return
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   workflow: json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null,
   workflowRun: WebhookWorkflowRunRequestedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookCheckSuiteRequestedAction action;
 
@@ -30,7 +30,7 @@ final WebhooksWorkflow? workflow;
 
 final WebhookWorkflowRunRequestedWorkflowRun workflowRun;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -39,13 +39,13 @@ Map<String, dynamic> toJson() { return {
   'sender': sender.toJson(),
   'workflow': workflow?.toJson(),
   'workflow_run': workflowRun.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('workflow') &&
-      json.containsKey('workflow_run'); } 
-WebhookWorkflowRunRequested copyWith({WebhookCheckSuiteRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, WebhookWorkflowRunRequestedWorkflowRun? workflowRun, }) { return WebhookWorkflowRunRequested(
+      json.containsKey('workflow_run');}
+WebhookWorkflowRunRequested copyWith({WebhookCheckSuiteRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, WebhookWorkflowRunRequestedWorkflowRun? workflowRun, }) {return WebhookWorkflowRunRequested(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -54,7 +54,7 @@ WebhookWorkflowRunRequested copyWith({WebhookCheckSuiteRequestedAction? action, 
   sender: sender ?? this.sender,
   workflow: workflow != null ? workflow() : this.workflow,
   workflowRun: workflowRun ?? this.workflowRun,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowRunRequested &&
           action == other.action &&
@@ -70,4 +70,4 @@ WebhookWorkflowRunRequested copyWith({WebhookCheckSuiteRequestedAction? action, 
 
 @override String toString() => 'WebhookWorkflowRunRequested(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)';
 
- }
+}

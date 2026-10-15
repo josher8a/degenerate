@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request/organization_selection_type.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request/sync_to_organizations.dart';@immutable final class EnterpriseTeamsCreateRequest {const EnterpriseTeamsCreateRequest({required this.name, this.description = const Omittable.absent(), this.syncToOrganizations, this.organizationSelectionType, this.groupId = const Omittable.absent(), });
 
-factory EnterpriseTeamsCreateRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamsCreateRequest(
+factory EnterpriseTeamsCreateRequest.fromJson(Map<String, dynamic> json) {return EnterpriseTeamsCreateRequest(
   name: json['name'] as String,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   syncToOrganizations: json['sync_to_organizations'] != null ? SyncToOrganizations.fromJson(json['sync_to_organizations'] as String) : null,
   organizationSelectionType: json['organization_selection_type'] != null ? OrganizationSelectionType.fromJson(json['organization_selection_type'] as String) : null,
   groupId: json.containsKey('group_id') ? Omittable(json['group_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The name of the team.
 final String name;
@@ -39,21 +39,21 @@ SyncToOrganizations get syncToOrganizationsOrDefault => syncToOrganizations ?? S
 /// The value of `organizationSelectionType`, or its schema default when absent.
 OrganizationSelectionType get organizationSelectionTypeOrDefault => organizationSelectionType ?? OrganizationSelectionType.fromJson('disabled');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   if (description.isPresent) 'description': description.value,
   if (syncToOrganizations != null) 'sync_to_organizations': syncToOrganizations?.toJson(),
   if (organizationSelectionType != null) 'organization_selection_type': organizationSelectionType?.toJson(),
   if (groupId.isPresent) 'group_id': groupId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-EnterpriseTeamsCreateRequest copyWith({String? name, Omittable<String?>? description, SyncToOrganizations? Function()? syncToOrganizations, OrganizationSelectionType? Function()? organizationSelectionType, Omittable<String?>? groupId, }) { return EnterpriseTeamsCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+EnterpriseTeamsCreateRequest copyWith({String? name, Omittable<String?>? description, SyncToOrganizations? Function()? syncToOrganizations, OrganizationSelectionType? Function()? organizationSelectionType, Omittable<String?>? groupId, }) {return EnterpriseTeamsCreateRequest(
   name: name ?? this.name,
   description: description ?? this.description,
   syncToOrganizations: syncToOrganizations != null ? syncToOrganizations() : this.syncToOrganizations,
   organizationSelectionType: organizationSelectionType != null ? organizationSelectionType() : this.organizationSelectionType,
   groupId: groupId ?? this.groupId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EnterpriseTeamsCreateRequest &&
           name == other.name &&
@@ -66,4 +66,4 @@ EnterpriseTeamsCreateRequest copyWith({String? name, Omittable<String?>? descrip
 
 @override String toString() => 'EnterpriseTeamsCreateRequest(name: $name, description: $description, syncToOrganizations: $syncToOrganizations, organizationSelectionType: $organizationSelectionType, groupId: $groupId)';
 
- }
+}

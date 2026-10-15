@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_connector_id.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_secondary_connector_id.dart';import 'package:pub_cloudflare/models/magic_site_location.dart';import 'package:pub_cloudflare/models/magic_site_name.dart';@immutable final class MagicSite {const MagicSite({this.connectorId, this.description, this.haMode, this.id, this.location, this.name, this.secondaryConnectorId, });
 
-factory MagicSite.fromJson(Map<String, dynamic> json) { return MagicSite(
+factory MagicSite.fromJson(Map<String, dynamic> json) {return MagicSite(
   connectorId: json['connector_id'] != null ? MagicConnectorId.fromJson(json['connector_id'] as String) : null,
   description: json['description'] as String?,
   haMode: json['ha_mode'] as bool?,
@@ -11,7 +11,7 @@ factory MagicSite.fromJson(Map<String, dynamic> json) { return MagicSite(
   location: json['location'] != null ? MagicSiteLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? MagicSiteName.fromJson(json['name'] as String) : null,
   secondaryConnectorId: json['secondary_connector_id'] != null ? MagicSecondaryConnectorId.fromJson(json['secondary_connector_id'] as String) : null,
-); }
+);}
 
 /// Magic Connector identifier tag.
 final MagicConnectorId? connectorId;
@@ -33,7 +33,7 @@ final MagicSiteName? name;
 /// Magic Connector identifier tag. Used when high availability mode is on.
 final MagicSecondaryConnectorId? secondaryConnectorId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (connectorId != null) 'connector_id': connectorId?.toJson(),
   'description': ?description,
   'ha_mode': ?haMode,
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   if (location != null) 'location': location?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (secondaryConnectorId != null) 'secondary_connector_id': secondaryConnectorId?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connector_id', 'description', 'ha_mode', 'id', 'location', 'name', 'secondary_connector_id'}.contains(key)); } 
-MagicSite copyWith({MagicConnectorId? Function()? connectorId, String? Function()? description, bool? Function()? haMode, MagicIdentifier? Function()? id, MagicSiteLocation? Function()? location, MagicSiteName? Function()? name, MagicSecondaryConnectorId? Function()? secondaryConnectorId, }) { return MagicSite(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'connector_id', 'description', 'ha_mode', 'id', 'location', 'name', 'secondary_connector_id'}.contains(key));}
+MagicSite copyWith({MagicConnectorId? Function()? connectorId, String? Function()? description, bool? Function()? haMode, MagicIdentifier? Function()? id, MagicSiteLocation? Function()? location, MagicSiteName? Function()? name, MagicSecondaryConnectorId? Function()? secondaryConnectorId, }) {return MagicSite(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   description: description != null ? description() : this.description,
   haMode: haMode != null ? haMode() : this.haMode,
@@ -51,7 +51,7 @@ MagicSite copyWith({MagicConnectorId? Function()? connectorId, String? Function(
   location: location != null ? location() : this.location,
   name: name != null ? name() : this.name,
   secondaryConnectorId: secondaryConnectorId != null ? secondaryConnectorId() : this.secondaryConnectorId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSite &&
           connectorId == other.connectorId &&
@@ -66,4 +66,4 @@ MagicSite copyWith({MagicConnectorId? Function()? connectorId, String? Function(
 
 @override String toString() => 'MagicSite(connectorId: $connectorId, description: $description, haMode: $haMode, id: $id, location: $location, name: $name, secondaryConnectorId: $secondaryConnectorId)';
 
- }
+}

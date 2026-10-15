@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restricted commit
 @immutable final class RepositoryRuleParamsRestrictedCommits {const RepositoryRuleParamsRestrictedCommits({required this.oid, this.reason, });
 
-factory RepositoryRuleParamsRestrictedCommits.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsRestrictedCommits(
+factory RepositoryRuleParamsRestrictedCommits.fromJson(Map<String, dynamic> json) {return RepositoryRuleParamsRestrictedCommits(
   oid: json['oid'] as String,
   reason: json['reason'] as String?,
-); }
+);}
 
 /// Full or abbreviated commit hash to reject
 final String oid;
@@ -15,15 +15,15 @@ final String oid;
 /// Reason for restriction
 final String? reason;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'oid': oid,
   'reason': ?reason,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('oid') && json['oid'] is String; } 
-RepositoryRuleParamsRestrictedCommits copyWith({String? oid, String? Function()? reason, }) { return RepositoryRuleParamsRestrictedCommits(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('oid') && json['oid'] is String;}
+RepositoryRuleParamsRestrictedCommits copyWith({String? oid, String? Function()? reason, }) {return RepositoryRuleParamsRestrictedCommits(
   oid: oid ?? this.oid,
   reason: reason != null ? reason() : this.reason,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleParamsRestrictedCommits &&
           oid == other.oid &&
@@ -33,4 +33,4 @@ RepositoryRuleParamsRestrictedCommits copyWith({String? oid, String? Function()?
 
 @override String toString() => 'RepositoryRuleParamsRestrictedCommits(oid: $oid, reason: $reason)';
 
- }
+}

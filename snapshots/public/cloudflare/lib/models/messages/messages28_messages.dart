@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/content_variant3.dart';import 'package:pub_cloudflare/models/messages/messages13_messages_content_variant2.dart';import 'package:pub_cloudflare/models/messages/messages28_messages_content.dart';@immutable final class Messages28Messages {const Messages28Messages({this.content, this.role, this.toolCallId, });
 
-factory Messages28Messages.fromJson(Map<String, dynamic> json) { return Messages28Messages(
+factory Messages28Messages.fromJson(Map<String, dynamic> json) {return Messages28Messages(
   content: json['content'] != null ? OneOf3.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages13MessagesContentVariant2.fromJson(e as Map<String, dynamic>)).toList(), fromC: (v) => ContentVariant3.fromJson(v as Map<String, dynamic>),) : null,
   role: json['role'] as String?,
   toolCallId: json['tool_call_id'] as String?,
-); }
+);}
 
 final Messages28MessagesContent? content;
 
@@ -17,24 +17,24 @@ final String? role;
 /// The tool call id. Must be supplied for tool calls for Mistral-3. If you don't know what to put here you can fall back to 000000001
 final String? toolCallId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (content != null) 'content': content?.toJson(),
   'role': ?role,
   'tool_call_id': ?toolCallId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'role', 'tool_call_id'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'content', 'role', 'tool_call_id'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final toolCallId$ = toolCallId;
 if (toolCallId$ != null) {
   if (!RegExp('[a-zA-Z0-9]{9}').hasMatch(toolCallId$)) { errors.add('toolCallId: must match pattern [a-zA-Z0-9]{9}'); }
 }
-return errors; } 
-Messages28Messages copyWith({Messages28MessagesContent? Function()? content, String? Function()? role, String? Function()? toolCallId, }) { return Messages28Messages(
+return errors;}
+Messages28Messages copyWith({Messages28MessagesContent? Function()? content, String? Function()? role, String? Function()? toolCallId, }) {return Messages28Messages(
   content: content != null ? content() : this.content,
   role: role != null ? role() : this.role,
   toolCallId: toolCallId != null ? toolCallId() : this.toolCallId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Messages28Messages &&
           content == other.content &&
@@ -45,4 +45,4 @@ Messages28Messages copyWith({Messages28MessagesContent? Function()? content, Str
 
 @override String toString() => 'Messages28Messages(content: $content, role: $role, toolCallId: $toolCallId)';
 
- }
+}

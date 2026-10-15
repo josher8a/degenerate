@@ -161,12 +161,12 @@ Library emitErrorUnionLibrary({
 
   final importedTypes = <String>{};
   for (final MapEntry(:value) in sortedEntries) {
-    // A discriminated union deserializes via its sealed base alone —
-    // importing its variants trips unused_import. OneOf-eligible unions DO
+    // A discriminated union or anyOf class deserializes itself — importing
+    // its variants trips unused_import. OneOf-eligible unions DO
     // inline variant parse code, so everything else keeps the full walk.
     final resolved = value.$2.resolveRef(ctx.typeRegistry);
-    if (resolved is IrDiscriminatedUnion) {
-      importedTypes.add(resolved.name);
+    if (resolved case IrDiscriminatedUnion(:final name) || IrAnyOf(:final name)) {
+      importedTypes.add(name);
     } else {
       collectTypeRefs(value.$2, importedTypes,
           typeRegistry: ctx.typeRegistry, walkFields: false);

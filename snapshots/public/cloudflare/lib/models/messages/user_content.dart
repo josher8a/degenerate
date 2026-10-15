@@ -7,11 +7,11 @@ const UserContent({this.string = const Omittable.absent(), this.listUserContentV
 const UserContent._({required this.rawValue, required this.string, required this.listUserContentVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory UserContent.fromJson(Object? json) { return UserContent._(
+factory UserContent.fromJson(Object? json) {return UserContent._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   listUserContentVariant2: parseAnyOfVariant<List<UserContentVariant2>>(json, (value) => (value! as List<dynamic>).map((e) => UserContentVariant2.fromJson(e as Map<String, dynamic>)).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'UserContent(${toJson()})';
 
- }
+}

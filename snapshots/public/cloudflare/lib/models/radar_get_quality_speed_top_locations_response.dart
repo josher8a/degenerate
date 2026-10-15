@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_locations_response/radar_get_quality_speed_top_locations_response_result.dart';@immutable final class RadarGetQualitySpeedTopLocationsResponse {const RadarGetQualitySpeedTopLocationsResponse({required this.result, required this.success, });
 
-factory RadarGetQualitySpeedTopLocationsResponse.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedTopLocationsResponse(
+factory RadarGetQualitySpeedTopLocationsResponse.fromJson(Map<String, dynamic> json) {return RadarGetQualitySpeedTopLocationsResponse(
   result: RadarGetQualitySpeedTopLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetQualitySpeedTopLocationsResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetQualitySpeedTopLocationsResponse copyWith({RadarGetQualitySpeedTopLocationsResponseResult? result, bool? success, }) { return RadarGetQualitySpeedTopLocationsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetQualitySpeedTopLocationsResponse copyWith({RadarGetQualitySpeedTopLocationsResponseResult? result, bool? success, }) {return RadarGetQualitySpeedTopLocationsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedTopLocationsResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetQualitySpeedTopLocationsResponse copyWith({RadarGetQualitySpeedTopLocati
 
 @override String toString() => 'RadarGetQualitySpeedTopLocationsResponse(result: $result, success: $success)';
 
- }
+}

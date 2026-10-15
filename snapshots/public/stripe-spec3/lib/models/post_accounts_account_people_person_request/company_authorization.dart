@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/files.dart';@immutable final class CompanyAuthorization {const CompanyAuthorization({this.files});
 
-factory CompanyAuthorization.fromJson(Map<String, dynamic> json) { return CompanyAuthorization(
+factory CompanyAuthorization.fromJson(Map<String, dynamic> json) {return CompanyAuthorization(
   files: (json['files'] as List<dynamic>?)?.map(Files.fromJson).toList(),
-); }
+);}
 
 final List<Files>? files;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
-CompanyAuthorization copyWith({List<Files>? Function()? files}) { return CompanyAuthorization(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'files'}.contains(key));}
+CompanyAuthorization copyWith({List<Files>? Function()? files}) {return CompanyAuthorization(
   files: files != null ? files() : this.files,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CompanyAuthorization &&
           listEquals(files, other.files);
@@ -24,4 +24,4 @@ CompanyAuthorization copyWith({List<Files>? Function()? files}) { return Company
 
 @override String toString() => 'CompanyAuthorization(files: $files)';
 
- }
+}

@@ -38,7 +38,7 @@ num toJson() => value;
 }
 @immutable final class StreamWatermarks {const StreamWatermarks({this.created, this.downloadedFrom, this.height, this.name, this.opacity, this.padding, this.position, this.scale, this.size, this.uid, this.width, });
 
-factory StreamWatermarks.fromJson(Map<String, dynamic> json) { return StreamWatermarks(
+factory StreamWatermarks.fromJson(Map<String, dynamic> json) {return StreamWatermarks(
   created: json['created'] != null ? StreamWatermarkCreated.fromJson(json['created'] as String) : null,
   downloadedFrom: json['downloadedFrom'] != null ? StreamDownloadedFrom.fromJson(json['downloadedFrom'] as String) : null,
   height: json['height'] != null ? StreamHeight.fromJson(json['height'] as num) : null,
@@ -50,7 +50,7 @@ factory StreamWatermarks.fromJson(Map<String, dynamic> json) { return StreamWate
   size: json['size'] != null ? StreamWatermarkSize.fromJson(json['size'] as num) : null,
   uid: json['uid'] != null ? StreamWatermarkIdentifier.fromJson(json['uid'] as String) : null,
   width: json['width'] != null ? StreamWidth.fromJson(json['width'] as num) : null,
-); }
+);}
 
 /// The date and a time a watermark profile was created.
 final StreamWatermarkCreated? created;
@@ -84,7 +84,7 @@ final StreamWatermarkIdentifier? uid;
 
 final StreamWidth? width;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (created != null) 'created': created?.toJson(),
   if (downloadedFrom != null) 'downloadedFrom': downloadedFrom?.toJson(),
   if (height != null) 'height': height?.toJson(),
@@ -96,9 +96,9 @@ Map<String, dynamic> toJson() { return {
   if (size != null) 'size': size?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
   if (width != null) 'width': width?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'downloadedFrom', 'height', 'name', 'opacity', 'padding', 'position', 'scale', 'size', 'uid', 'width'}.contains(key)); } 
-StreamWatermarks copyWith({StreamWatermarkCreated? Function()? created, StreamDownloadedFrom? Function()? downloadedFrom, StreamHeight? Function()? height, StreamName? Function()? name, StreamOpacity? Function()? opacity, StreamPadding? Function()? padding, StreamPosition? Function()? position, StreamScale? Function()? scale, StreamWatermarkSize? Function()? size, StreamWatermarkIdentifier? Function()? uid, StreamWidth? Function()? width, }) { return StreamWatermarks(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created', 'downloadedFrom', 'height', 'name', 'opacity', 'padding', 'position', 'scale', 'size', 'uid', 'width'}.contains(key));}
+StreamWatermarks copyWith({StreamWatermarkCreated? Function()? created, StreamDownloadedFrom? Function()? downloadedFrom, StreamHeight? Function()? height, StreamName? Function()? name, StreamOpacity? Function()? opacity, StreamPadding? Function()? padding, StreamPosition? Function()? position, StreamScale? Function()? scale, StreamWatermarkSize? Function()? size, StreamWatermarkIdentifier? Function()? uid, StreamWidth? Function()? width, }) {return StreamWatermarks(
   created: created != null ? created() : this.created,
   downloadedFrom: downloadedFrom != null ? downloadedFrom() : this.downloadedFrom,
   height: height != null ? height() : this.height,
@@ -110,7 +110,7 @@ StreamWatermarks copyWith({StreamWatermarkCreated? Function()? created, StreamDo
   size: size != null ? size() : this.size,
   uid: uid != null ? uid() : this.uid,
   width: width != null ? width() : this.width,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamWatermarks &&
           created == other.created &&
@@ -129,4 +129,4 @@ StreamWatermarks copyWith({StreamWatermarkCreated? Function()? created, StreamDo
 
 @override String toString() => 'StreamWatermarks(\n  created: $created,\n  downloadedFrom: $downloadedFrom,\n  height: $height,\n  name: $name,\n  opacity: $opacity,\n  padding: $padding,\n  position: $position,\n  scale: $scale,\n  size: $size,\n  uid: $uid,\n  width: $width,\n)';
 
- }
+}

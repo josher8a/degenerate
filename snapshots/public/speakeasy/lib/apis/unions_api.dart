@@ -13,7 +13,7 @@ final class UnionsApi with ApiExecutor {const UnionsApi(this.apiConfig);
 /// 
 ///
 /// `POST /anything/circularReferenceRecursiveOneOf`
-Future<ApiResult<CircularReferenceRecursiveOneOfResponse, Never>> circularReferenceRecursiveOneOf({required CircularReferenceRecursiveOneOfRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CircularReferenceRecursiveOneOfResponse, Never>> circularReferenceRecursiveOneOf({required CircularReferenceRecursiveOneOfRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -30,9 +30,9 @@ return await execute(
     return CircularReferenceRecursiveOneOfResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/stronglyTypedOneOf`
-Future<ApiResult<StronglyTypedOneOfPostResponse, Never>> stronglyTypedOneOfPost({required StronglyTypedOneOfObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StronglyTypedOneOfPostResponse, Never>> stronglyTypedOneOfPost({required StronglyTypedOneOfObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,9 +49,9 @@ return await execute(
     return StronglyTypedOneOfPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/stronglyTypedNullableOneOf`
-Future<ApiResult<StronglyTypedNullableOneOfPostResponse, Never>> stronglyTypedNullableOneOfPost({required StronglyTypedNullableOneOfObject? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StronglyTypedNullableOneOfPostResponse, Never>> stronglyTypedNullableOneOfPost({required StronglyTypedNullableOneOfObject? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -68,9 +68,9 @@ return await execute(
     return StronglyTypedNullableOneOfPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/stronglyTypedOneOfWithNonStandardDiscriminatorName`
-Future<ApiResult<StronglyTypedOneOfPostWithNonStandardDiscriminatorNameResponse, Never>> stronglyTypedOneOfPostWithNonStandardDiscriminatorName({required StronglyTypedOneOfObjectWithNonStandardDiscriminatorName body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StronglyTypedOneOfPostWithNonStandardDiscriminatorNameResponse, Never>> stronglyTypedOneOfPostWithNonStandardDiscriminatorName({required StronglyTypedOneOfObjectWithNonStandardDiscriminatorName body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,9 +87,9 @@ return await execute(
     return StronglyTypedOneOfPostWithNonStandardDiscriminatorNameResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/stronglyTypedOneOfDiscriminated`
-Future<ApiResult<StronglyTypedOneOfDiscriminatedPostResponse, Never>> stronglyTypedOneOfDiscriminatedPost({required StronglyTypedOneOfDiscriminatedObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StronglyTypedOneOfDiscriminatedPostResponse, Never>> stronglyTypedOneOfDiscriminatedPost({required StronglyTypedOneOfDiscriminatedObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,9 +106,9 @@ return await execute(
     return StronglyTypedOneOfDiscriminatedPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/constDiscriminatedOneOf`
-Future<ApiResult<ConstDiscriminatedOneOfResponse, Never>> constDiscriminatedOneOf({required ConstDiscriminatedOneOf body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConstDiscriminatedOneOfResponse, Never>> constDiscriminatedOneOf({required ConstDiscriminatedOneOf body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -125,9 +125,9 @@ return await execute(
     return ConstDiscriminatedOneOfResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/conflictingDiscriminatorMappingKey`
-Future<ApiResult<ConflictingDiscriminatorMappingKeyResponse, Never>> conflictingDiscriminatorMappingKey({required ConflictingDiscriminatorMappingKey body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConflictingDiscriminatorMappingKeyResponse, Never>> conflictingDiscriminatorMappingKey({required ConflictingDiscriminatorMappingKey body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,9 +144,9 @@ return await execute(
     return ConflictingDiscriminatorMappingKeyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/discriminatedOneMultipleMemberships`
-Future<ApiResult<DiscriminatedOneMultipleMembershipsResponse, Never>> discriminatedOneMultipleMemberships({required Vehicle body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DiscriminatedOneMultipleMembershipsResponse, Never>> discriminatedOneMultipleMemberships({required Vehicle body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -163,9 +163,9 @@ return await execute(
     return DiscriminatedOneMultipleMembershipsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/discriminatedOneMultipleMembershipsHasWheels`
-Future<ApiResult<DiscriminatedOneMultipleMembershipsHasWheelsResponse, Never>> discriminatedOneMultipleMembershipsHasWheels({required HasWheels body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DiscriminatedOneMultipleMembershipsHasWheelsResponse, Never>> discriminatedOneMultipleMembershipsHasWheels({required HasWheels body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -182,9 +182,9 @@ return await execute(
     return DiscriminatedOneMultipleMembershipsHasWheelsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/discriminatedNestedUnion`
-Future<ApiResult<NestedDiscUnionResponse, Never>> nestedDiscUnion({required NestedDiscUnion body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NestedDiscUnionResponse, Never>> nestedDiscUnion({required NestedDiscUnion body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -201,9 +201,9 @@ return await execute(
     return NestedDiscUnionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/infectedWithAny`
-Future<ApiResult<InfectedWithAnyResponse, Never>> infectedWithAny({required InfectedWithAny body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfectedWithAnyResponse, Never>> infectedWithAny({required InfectedWithAny body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -220,9 +220,9 @@ return await execute(
     return InfectedWithAnyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/mixedUnions`
-Future<ApiResult<MixedUnionTypesResponse, Never>> mixedUnionTypes({required MixedUnionTypes body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MixedUnionTypesResponse, Never>> mixedUnionTypes({required MixedUnionTypes body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -239,9 +239,9 @@ return await execute(
     return MixedUnionTypesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/discriminatedOpenEnum`
-Future<ApiResult<DiscriminatedOpenEnumResponse, Never>> discriminatedOpenEnum({required DiscriminatedOpenEnumUnion body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DiscriminatedOpenEnumResponse, Never>> discriminatedOpenEnum({required DiscriminatedOpenEnumUnion body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -258,14 +258,14 @@ return await execute(
     return DiscriminatedOpenEnumResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Test that union types with generic container variants (e.g. array of freeform objects
 /// producing List`<Map<String, Object>`> in Java) generate valid accessor method names.
 /// Regression test for: generic type params leaking into Java union accessor names.
 /// 
 ///
 /// `POST /anything/unionWithGenericVariant`
-Future<ApiResult<UnionWithGenericVariantPostResponse, Never>> unionWithGenericVariantPost({required UnionWithGenericVariant body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionWithGenericVariantPostResponse, Never>> unionWithGenericVariantPost({required UnionWithGenericVariant body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -282,9 +282,9 @@ return await execute(
     return UnionWithGenericVariantPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/unionOfArrays`
-Future<ApiResult<UnionOfArraysPostResponse, Never>> unionOfArraysPost({required UnionOfArrays body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionOfArraysPostResponse, Never>> unionOfArraysPost({required UnionOfArrays body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -301,9 +301,9 @@ return await execute(
     return UnionOfArraysPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/weaklyTypedOneOf`
-Future<ApiResult<WeaklyTypedOneOfPostResponse, Never>> weaklyTypedOneOfPost({required WeaklyTypedOneOfObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WeaklyTypedOneOfPostResponse, Never>> weaklyTypedOneOfPost({required WeaklyTypedOneOfObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -320,9 +320,9 @@ return await execute(
     return WeaklyTypedOneOfPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/weaklyTypedOneOfNullEnum`
-Future<ApiResult<WeaklyTypedOneOfNullEnumPostResponse, Never>> weaklyTypedOneOfNullEnumPost({required WeaklyTypedOneOfNullEnumObject? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WeaklyTypedOneOfNullEnumPostResponse, Never>> weaklyTypedOneOfNullEnumPost({required WeaklyTypedOneOfNullEnumObject? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -339,9 +339,9 @@ return await execute(
     return WeaklyTypedOneOfNullEnumPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/oneOfOverlappingObjects`
-Future<ApiResult<OneOfOverlappingObjectsResponse, Never>> oneOfOverlappingObjects({required OneOfOverlappingObjectsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOfOverlappingObjectsResponse, Never>> oneOfOverlappingObjects({required OneOfOverlappingObjectsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -358,9 +358,9 @@ return await execute(
     return OneOfOverlappingObjectsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/typedObjectOneOf`
-Future<ApiResult<TypedObjectOneOfPostResponse, Never>> typedObjectOneOfPost({required TypedObjectOneOf body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TypedObjectOneOfPostResponse, Never>> typedObjectOneOfPost({required TypedObjectOneOf body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -377,9 +377,9 @@ return await execute(
     return TypedObjectOneOfPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/typedObjectNullableOneOf`
-Future<ApiResult<TypedObjectNullableOneOfPostResponse, Never>> typedObjectNullableOneOfPost({required TypedObjectNullableOneOf? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TypedObjectNullableOneOfPostResponse, Never>> typedObjectNullableOneOfPost({required TypedObjectNullableOneOf? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -396,9 +396,9 @@ return await execute(
     return TypedObjectNullableOneOfPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/collectionOneOf`
-Future<ApiResult<CollectionOneOfPostResponse, Never>> collectionOneOfPost({required CollectionOneOfObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CollectionOneOfPostResponse, Never>> collectionOneOfPost({required CollectionOneOfObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -415,9 +415,9 @@ return await execute(
     return CollectionOneOfPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/oneOfCollectionEnum`
-Future<ApiResult<OneOfCollectionEnumResponse, Never>> oneOfCollectionEnum({OneOfCollectionEnum? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOfCollectionEnumResponse, Never>> oneOfCollectionEnum({OneOfCollectionEnum? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -434,9 +434,9 @@ return await execute(
     return OneOfCollectionEnumResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/flattenedTypedObject`
-Future<ApiResult<FlattenedTypedObjectPostResponse, Never>> flattenedTypedObjectPost({required FlattenedTypedObject1 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FlattenedTypedObjectPostResponse, Never>> flattenedTypedObjectPost({required FlattenedTypedObject1 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -453,9 +453,9 @@ return await execute(
     return FlattenedTypedObjectPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/nullableTypedObject`
-Future<ApiResult<NullableTypedObjectPostResponse, Never>> nullableTypedObjectPost({required NullableTypedObject1? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NullableTypedObjectPostResponse, Never>> nullableTypedObjectPost({required NullableTypedObject1? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -472,9 +472,9 @@ return await execute(
     return NullableTypedObjectPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/nullableOneOfSchema`
-Future<ApiResult<NullableOneOfSchemaPostResponse, Never>> nullableOneOfSchemaPost({required NullableOneOfSchemaPostRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NullableOneOfSchemaPostResponse, Never>> nullableOneOfSchemaPost({required NullableOneOfSchemaPostRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -491,9 +491,9 @@ return await execute(
     return NullableOneOfSchemaPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/nullableOneOfInObject`
-Future<ApiResult<NullableOneOfTypeInObjectPostResponse, Never>> nullableOneOfTypeInObjectPost({required NullableOneOfTypeInObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NullableOneOfTypeInObjectPostResponse, Never>> nullableOneOfTypeInObjectPost({required NullableOneOfTypeInObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -510,9 +510,9 @@ return await execute(
     return NullableOneOfTypeInObjectPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/nullableOneOfRefInObject`
-Future<ApiResult<NullableOneOfRefInObjectPostResponse, Never>> nullableOneOfRefInObjectPost({required NullableOneOfRefInObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NullableOneOfRefInObjectPostResponse, Never>> nullableOneOfRefInObjectPost({required NullableOneOfRefInObject body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -529,9 +529,9 @@ return await execute(
     return NullableOneOfRefInObjectPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/primitiveTypeOneOf`
-Future<ApiResult<PrimitiveTypeOneOfPostResponse, Never>> primitiveTypeOneOfPost({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PrimitiveTypeOneOfPostResponse, Never>> primitiveTypeOneOfPost({required dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -548,9 +548,9 @@ return await execute(
     return PrimitiveTypeOneOfPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/mixedTypeOneOf`
-Future<ApiResult<MixedTypeOneOfPostResponse, Never>> mixedTypeOneOfPost({required MixedTypeOneOfPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MixedTypeOneOfPostResponse, Never>> mixedTypeOneOfPost({required MixedTypeOneOfPostRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -567,11 +567,11 @@ return await execute(
     return MixedTypeOneOfPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// simulating a scenario where union of boolean and string enum was resulting in deserialization issue in ruby target
 ///
 /// `POST /anything/oneOfbooleanAndStringEnum`
-Future<ApiResult<OneOfBooleanAndStringEnumResponse, Never>> oneOfBooleanAndStringEnum({OneOfBooleanAndStringEnumRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOfBooleanAndStringEnumResponse, Never>> oneOfBooleanAndStringEnum({OneOfBooleanAndStringEnumRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -588,9 +588,9 @@ return await execute(
     return OneOfBooleanAndStringEnumResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/unionDateNull`
-Future<ApiResult<UnionDateNullResponse, Never>> unionDateNull({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionDateNullResponse, Never>> unionDateNull({required dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -607,9 +607,9 @@ return await execute(
     return UnionDateNullResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/unionDateTimeNull`
-Future<ApiResult<UnionDateTimeNullResponse, Never>> unionDateTimeNull({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionDateTimeNullResponse, Never>> unionDateTimeNull({required dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -626,9 +626,9 @@ return await execute(
     return UnionDateTimeNullResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/unionDateTimeBigInt`
-Future<ApiResult<UnionDateTimeBigIntResponse, Never>> unionDateTimeBigInt({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionDateTimeBigIntResponse, Never>> unionDateTimeBigInt({required dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -645,9 +645,9 @@ return await execute(
     return UnionDateTimeBigIntResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/unionBigIntStrDecimal`
-Future<ApiResult<UnionBigIntStrDecimalResponse, Never>> unionBigIntStrDecimal({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionBigIntStrDecimalResponse, Never>> unionBigIntStrDecimal({required dynamic body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -664,9 +664,9 @@ return await execute(
     return UnionBigIntStrDecimalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/unionMap`
-Future<ApiResult<UnionMapResponse, Never>> unionMap({required UnionMapRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionMapResponse, Never>> unionMap({required UnionMapRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -683,9 +683,9 @@ return await execute(
     return UnionMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/union/unionMapOptional`
-Future<ApiResult<UnionMapOptionalResponse, Never>> unionMapOptional({required UnionMapOptionalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionMapOptionalResponse, Never>> unionMapOptional({required UnionMapOptionalRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -702,9 +702,9 @@ return await execute(
     return UnionMapOptionalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/union/forms/nestedEnums`
-Future<ApiResult<UnionNestedEnumsResponse, Never>> unionNestedEnums({required UnionNestedEnumsRequest2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UnionNestedEnumsResponse, Never>> unionNestedEnums({required UnionNestedEnumsRequest2 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -723,9 +723,9 @@ return await execute(
     return UnionNestedEnumsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/arrayOfDiscriminatedUnions`
-Future<ApiResult<ArrayOfDiscriminatedUnionsResponse, Never>> arrayOfDiscriminatedUnions({required List<StronglyTypedOneOfObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ArrayOfDiscriminatedUnionsResponse, Never>> arrayOfDiscriminatedUnions({required List<StronglyTypedOneOfObject> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -742,9 +742,9 @@ return await execute(
     return ArrayOfDiscriminatedUnionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/enumWithDuplicateMembers`
-Future<ApiResult<EnumWithDuplicateMembersResponse, Never>> enumWithDuplicateMembers({required EnumWithDuplicateMembers body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EnumWithDuplicateMembersResponse, Never>> enumWithDuplicateMembers({required EnumWithDuplicateMembers body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -761,9 +761,9 @@ return await execute(
     return EnumWithDuplicateMembersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/arrayOfDiscriminatedUnionsMap`
-Future<ApiResult<ArrayOfDiscriminatedUnionsMapResponse, Never>> arrayOfDiscriminatedUnionsMap({required ArrayOfDiscriminatedUnionsMap body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ArrayOfDiscriminatedUnionsMapResponse, Never>> arrayOfDiscriminatedUnionsMap({required ArrayOfDiscriminatedUnionsMap body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -780,9 +780,9 @@ return await execute(
     return ArrayOfDiscriminatedUnionsMapResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `POST /anything/nestedArrayOfDiscriminatedUnions`
-Future<ApiResult<NestedArrayOfDiscriminatedUnionsResponse, Never>> nestedArrayOfDiscriminatedUnions({required NestedArrayOfDiscriminatedUnions body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<NestedArrayOfDiscriminatedUnionsResponse, Never>> nestedArrayOfDiscriminatedUnions({required NestedArrayOfDiscriminatedUnions body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -799,9 +799,9 @@ return await execute(
     return NestedArrayOfDiscriminatedUnionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// `GET /anything/multiMatchAnyOf`
-Future<ApiResult<AnyOfMultiMatch, Never>> multiMatchAnyOf({required AnyOfMultiMatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AnyOfMultiMatch, Never>> multiMatchAnyOf({required AnyOfMultiMatch body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -818,7 +818,7 @@ return await execute(
     return AnyOfMultiMatch.fromJson(jsonDecode(response.body));
   },
 );
- } 
+}
 /// GEN-2264 - Test cross-referencing discriminated unions
 ///
 /// Tests two mutually referencing unions where one union's array variant
@@ -827,7 +827,7 @@ return await execute(
 /// 
 ///
 /// `GET /anything/crossRefUnions`
-Future<ApiResult<CrossRefUnionsResponse, Never>> crossRefUnions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CrossRefUnionsResponse, Never>> crossRefUnions({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -842,7 +842,7 @@ return await execute(
     return CrossRefUnionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Respect affinity of open enums
 ///
 /// Test case: respect affinity of open enums
@@ -851,7 +851,7 @@ return await execute(
 /// 
 ///
 /// `POST /anything/smartUnion/openEnums`
-Future<ApiResult<SmartUnionOpenEnumsResponse, Never>> smartUnionOpenEnums({required SmartUnionOpenEnumsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionOpenEnumsResponse, Never>> smartUnionOpenEnums({required SmartUnionOpenEnumsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -868,7 +868,7 @@ return await execute(
     return SmartUnionOpenEnumsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Discriminate between types with all const fields
 ///
 /// Test case: discriminate based on const field presence when both types have all consts
@@ -878,7 +878,7 @@ return await execute(
 /// 
 ///
 /// `POST /anything/smartUnion/allConsts`
-Future<ApiResult<SmartUnionAllConstsResponse, Never>> smartUnionAllConsts({required SmartUnionAllConstsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionAllConstsResponse, Never>> smartUnionAllConsts({required SmartUnionAllConstsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -895,7 +895,7 @@ return await execute(
     return SmartUnionAllConstsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Respect affinity of size and tolerate open enum
 ///
 /// Test case: respect affinity of size and tolerate open enum
@@ -904,7 +904,7 @@ return await execute(
 /// 
 ///
 /// `POST /anything/smartUnion/openEnumsAndSize`
-Future<ApiResult<SmartUnionOpenEnumsAndSizeResponse, Never>> smartUnionOpenEnumsAndSize({required SmartUnionOpenEnumsAndSizeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionOpenEnumsAndSizeResponse, Never>> smartUnionOpenEnumsAndSize({required SmartUnionOpenEnumsAndSizeRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -921,7 +921,7 @@ return await execute(
     return SmartUnionOpenEnumsAndSizeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Respect size with deeply nested array
 ///
 /// Test case: respect size with deeply nested array
@@ -930,7 +930,7 @@ return await execute(
 /// 
 ///
 /// `POST /anything/smartUnion/deeplyNestedArray`
-Future<ApiResult<SmartUnionDeeplyNestedArrayResponse, Never>> smartUnionDeeplyNestedArray({required SmartUnionDeeplyNestedArrayRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionDeeplyNestedArrayResponse, Never>> smartUnionDeeplyNestedArray({required SmartUnionDeeplyNestedArrayRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -947,7 +947,7 @@ return await execute(
     return SmartUnionDeeplyNestedArrayResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Respect empty string
 ///
 /// Test case: respect empty string
@@ -956,7 +956,7 @@ return await execute(
 /// 
 ///
 /// `POST /anything/smartUnion/emptyString`
-Future<ApiResult<SmartUnionEmptyStringResponse, Never>> smartUnionEmptyString({required SmartUnionEmptyStringRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionEmptyStringResponse, Never>> smartUnionEmptyString({required SmartUnionEmptyStringRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -973,7 +973,7 @@ return await execute(
     return SmartUnionEmptyStringResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Nested union should only count winning inner option's unrecognized
 ///
 /// Test case: nested union count propagation
@@ -994,7 +994,7 @@ return await execute(
 /// 
 ///
 /// `POST /smartunion/nestedunion`
-Future<ApiResult<SmartUnionNestedUnionResponse, Never>> smartUnionNestedUnion({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionNestedUnionResponse, Never>> smartUnionNestedUnion({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -1009,11 +1009,11 @@ return await execute(
     return SmartUnionNestedUnionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Selects type with more matched fields
 ///
 /// `POST /anything/smartUnion/selectsMoreMatchedFields`
-Future<ApiResult<SmartUnionSelectsMoreMatchedFieldsResponse, Never>> smartUnionSelectsMoreMatchedFields({required SmartUnionSelectsMoreMatchedFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionSelectsMoreMatchedFieldsResponse, Never>> smartUnionSelectsMoreMatchedFields({required SmartUnionSelectsMoreMatchedFieldsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1030,11 +1030,11 @@ return await execute(
     return SmartUnionSelectsMoreMatchedFieldsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Prefers type with fewer unmatched fields
 ///
 /// `POST /anything/smartUnion/prefersFewerUnmatchedFields`
-Future<ApiResult<SmartUnionPrefersFewerUnmatchedFieldsResponse, Never>> smartUnionPrefersFewerUnmatchedFields({required SmartUnionPrefersFewerUnmatchedFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionPrefersFewerUnmatchedFieldsResponse, Never>> smartUnionPrefersFewerUnmatchedFields({required SmartUnionPrefersFewerUnmatchedFieldsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1051,11 +1051,11 @@ return await execute(
     return SmartUnionPrefersFewerUnmatchedFieldsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Handles nested structs
 ///
 /// `POST /anything/smartUnion/nestedStructs`
-Future<ApiResult<SmartUnionNestedStructsResponse, Never>> smartUnionNestedStructs({required SmartUnionNestedStructsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionNestedStructsResponse, Never>> smartUnionNestedStructs({required SmartUnionNestedStructsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1072,11 +1072,11 @@ return await execute(
     return SmartUnionNestedStructsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Handles array of structs
 ///
 /// `POST /anything/smartUnion/arrayFields`
-Future<ApiResult<SmartUnionArrayFieldsResponse, Never>> smartUnionArrayFields({required SmartUnionArrayFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionArrayFieldsResponse, Never>> smartUnionArrayFields({required SmartUnionArrayFieldsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1093,11 +1093,11 @@ return await execute(
     return SmartUnionArrayFieldsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Preserves order on tie (first wins)
 ///
 /// `POST /anything/smartUnion/preservesOrderOnTie`
-Future<ApiResult<SmartUnionPreservesOrderOnTieResponse, Never>> smartUnionPreservesOrderOnTie({required SmartUnionPreservesOrderOnTieRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionPreservesOrderOnTieResponse, Never>> smartUnionPreservesOrderOnTie({required SmartUnionPreservesOrderOnTieRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1114,11 +1114,11 @@ return await execute(
     return SmartUnionPreservesOrderOnTieResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Handles optional pointer fields
 ///
 /// `POST /anything/smartUnion/optionalPointerFields`
-Future<ApiResult<SmartUnionOptionalPointerFieldsResponse, Never>> smartUnionOptionalPointerFields({required SmartUnionOptionalPointerFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionOptionalPointerFieldsResponse, Never>> smartUnionOptionalPointerFields({required SmartUnionOptionalPointerFieldsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1135,11 +1135,11 @@ return await execute(
     return SmartUnionOptionalPointerFieldsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Handles optional pointer structs
 ///
 /// `POST /anything/smartUnion/optionalPointerStructs`
-Future<ApiResult<SmartUnionOptionalPointerStructsResponse, Never>> smartUnionOptionalPointerStructs({required SmartUnionOptionalPointerStructsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionOptionalPointerStructsResponse, Never>> smartUnionOptionalPointerStructs({required SmartUnionOptionalPointerStructsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1156,11 +1156,11 @@ return await execute(
     return SmartUnionOptionalPointerStructsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Three-way field discrimination
 ///
 /// `POST /anything/smartUnion/threeWayFieldDiscrimination`
-Future<ApiResult<SmartUnionThreeWayFieldDiscriminationResponse, Never>> smartUnionThreeWayFieldDiscrimination({required SmartUnionThreeWayFieldDiscriminationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionThreeWayFieldDiscriminationResponse, Never>> smartUnionThreeWayFieldDiscrimination({required SmartUnionThreeWayFieldDiscriminationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1177,11 +1177,11 @@ return await execute(
     return SmartUnionThreeWayFieldDiscriminationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Const field discrimination
 ///
 /// `POST /anything/smartUnion/constFieldDiscrimination`
-Future<ApiResult<SmartUnionConstFieldDiscriminationResponse, Never>> smartUnionConstFieldDiscrimination({required SmartUnionConstFieldDiscriminationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionConstFieldDiscriminationResponse, Never>> smartUnionConstFieldDiscrimination({required SmartUnionConstFieldDiscriminationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1198,11 +1198,11 @@ return await execute(
     return SmartUnionConstFieldDiscriminationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Any field type
 ///
 /// `POST /anything/smartUnion/anyFieldType`
-Future<ApiResult<SmartUnionAnyFieldTypeResponse, Never>> smartUnionAnyFieldType({required SmartUnionAnyFieldTypeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionAnyFieldTypeResponse, Never>> smartUnionAnyFieldType({required SmartUnionAnyFieldTypeRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1219,7 +1219,7 @@ return await execute(
     return SmartUnionAnyFieldTypeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Nested union vs flat struct - flat struct with more fields wins
 ///
 /// Test case: nested union vs flat struct field count comparison
@@ -1238,7 +1238,7 @@ return await execute(
 /// 
 ///
 /// `POST /anything/smartUnion/nestedUnionVsFlatStruct`
-Future<ApiResult<SmartUnionNestedUnionVsFlatStructResponse, Never>> smartUnionNestedUnionVsFlatStruct({required SmartUnionNestedUnionVsFlatStructRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionNestedUnionVsFlatStructResponse, Never>> smartUnionNestedUnionVsFlatStruct({required SmartUnionNestedUnionVsFlatStructRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1255,7 +1255,7 @@ return await execute(
     return SmartUnionNestedUnionVsFlatStructResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Union vs union - larger inner union wins
 ///
 /// Test case: union vs union field count comparison
@@ -1267,7 +1267,7 @@ return await execute(
 /// 
 ///
 /// `POST /anything/smartUnion/unionVsUnion`
-Future<ApiResult<SmartUnionUnionVsUnionResponse, Never>> smartUnionUnionVsUnion({required SmartUnionUnionVsUnionRequestVariant1 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartUnionUnionVsUnionResponse, Never>> smartUnionUnionVsUnion({required SmartUnionUnionVsUnionRequestVariant1 body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1284,5 +1284,5 @@ return await execute(
     return SmartUnionUnionVsUnionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

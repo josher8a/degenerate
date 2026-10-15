@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order results.
 sealed class TokensListTokensDirection2 {const TokensListTokensDirection2();
 
-factory TokensListTokensDirection2.fromJson(String json) { return switch (json) {
+factory TokensListTokensDirection2.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => TokensListTokensDirection2$Unknown(json),
-}; }
+};}
 
 static const TokensListTokensDirection2 asc = TokensListTokensDirection2$asc._();
 
@@ -17,30 +17,30 @@ static const TokensListTokensDirection2 desc = TokensListTokensDirection2$desc._
 static const List<TokensListTokensDirection2> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TokensListTokensDirection2$Unknown; } 
+bool get isUnknown {return this is TokensListTokensDirection2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       TokensListTokensDirection2$asc() => asc(),
       TokensListTokensDirection2$desc() => desc(),
       TokensListTokensDirection2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       TokensListTokensDirection2$asc() => asc != null ? asc() : orElse(value),
       TokensListTokensDirection2$desc() => desc != null ? desc() : orElse(value),
       TokensListTokensDirection2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TokensListTokensDirection2($value)';
 
- }
+}
 @immutable final class TokensListTokensDirection2$asc extends TokensListTokensDirection2 {const TokensListTokensDirection2$asc._();
 
 @override String get value => 'asc';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class TokensListTokensDirection2$desc extends TokensListTokensDirection2 {const TokensListTokensDirection2$desc._();
 
 @override String get value => 'desc';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class TokensListTokensDirection2$Unknown extends TokensListTokensDirection2 {const TokensListTokensDirection2$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

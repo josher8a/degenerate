@@ -14,7 +14,7 @@ final class DlsRegionalServicesApi with ApiExecutor {const DlsRegionalServicesAp
 /// List all Regional Services regions available for use by this account.
 ///
 /// `GET /accounts/{account_id}/addressing/regional_hostnames/regions`
-Future<ApiResult<List<DlsAccountRegionalHostnamesAccountListRegionsResponseResult>?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountListRegions({required DlsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlsAccountRegionalHostnamesAccountListRegionsResponseResult>?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountListRegions({required DlsIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: DlsAccountRegionalHostnamesAccountCreateHostnameError.fromResponse,
 );
- } 
+}
 /// List Regional Hostnames
 ///
 /// List all Regional Hostnames within a zone.
 ///
 /// `GET /zones/{zone_id}/addressing/regional_hostnames`
-Future<ApiResult<List<DlsRegionalHostnameResponse>?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountListHostnames({required DlsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlsRegionalHostnameResponse>?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountListHostnames({required DlsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: DlsAccountRegionalHostnamesAccountCreateHostnameError.fromResponse,
 );
- } 
+}
 /// Create Regional Hostname
 ///
 /// Create a new Regional Hostname entry. Cloudflare will only use data centers that are physically located within the chosen region to decrypt and service HTTPS traffic. Learn more about [Regional Services](https://developers.cloudflare.com/data-localization/regional-services/get-started/).
 ///
 /// `POST /zones/{zone_id}/addressing/regional_hostnames`
-Future<ApiResult<DlsRegionalHostnameResponse?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountCreateHostname({required DlsIdentifier zoneId, DlsAccountRegionalHostnamesAccountCreateHostnameRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlsRegionalHostnameResponse?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountCreateHostname({required DlsIdentifier zoneId, DlsAccountRegionalHostnamesAccountCreateHostnameRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: DlsAccountRegionalHostnamesAccountCreateHostnameError.fromResponse,
 );
- } 
+}
 /// Fetch Regional Hostname
 ///
 /// Fetch the configuration for a specific Regional Hostname, within a zone.
 ///
 /// `GET /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<DlsRegionalHostnameResponse?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountFetchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlsRegionalHostnameResponse?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountFetchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -102,13 +102,13 @@ return await execute(
   },
   onError: DlsAccountRegionalHostnamesAccountCreateHostnameError.fromResponse,
 );
- } 
+}
 /// Update Regional Hostname
 ///
 /// Update the configuration for a specific Regional Hostname. Only the region_key of a hostname is mutable.
 ///
 /// `PATCH /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<DlsRegionalHostnameResponse?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountPatchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, DlsAccountRegionalHostnamesAccountPatchHostnameRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlsRegionalHostnameResponse?, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountPatchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, DlsAccountRegionalHostnamesAccountPatchHostnameRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -127,13 +127,13 @@ return await execute(
   },
   onError: DlsAccountRegionalHostnamesAccountCreateHostnameError.fromResponse,
 );
- } 
+}
 /// Delete Regional Hostname
 ///
 /// Delete the region configuration for a specific Regional Hostname.
 ///
 /// `DELETE /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<ResponseCommon21, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountDeleteHostname({required DlsIdentifier zoneId, required DlsHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon21, DlsAccountRegionalHostnamesAccountCreateHostnameError>> dlsAccountRegionalHostnamesAccountDeleteHostname({required DlsIdentifier zoneId, required DlsHostname hostname, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -149,5 +149,5 @@ return await execute(
   },
   onError: DlsAccountRegionalHostnamesAccountCreateHostnameError.fromResponse,
 );
- } 
- }
+}
+}

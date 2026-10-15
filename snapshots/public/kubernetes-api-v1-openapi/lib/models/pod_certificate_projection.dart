@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodCertificateProjection provides a private key and X.509 certificate in the pod filesystem.
 @immutable final class PodCertificateProjection {const PodCertificateProjection({required this.keyType, required this.signerName, this.certificateChainPath, this.credentialBundlePath, this.keyPath, this.maxExpirationSeconds, this.userAnnotations, });
 
-factory PodCertificateProjection.fromJson(Map<String, dynamic> json) { return PodCertificateProjection(
+factory PodCertificateProjection.fromJson(Map<String, dynamic> json) {return PodCertificateProjection(
   certificateChainPath: json['certificateChainPath'] as String?,
   credentialBundlePath: json['credentialBundlePath'] as String?,
   keyPath: json['keyPath'] as String?,
@@ -12,7 +12,7 @@ factory PodCertificateProjection.fromJson(Map<String, dynamic> json) { return Po
   maxExpirationSeconds: json['maxExpirationSeconds'] != null ? (json['maxExpirationSeconds'] as num).toInt() : null,
   signerName: json['signerName'] as String,
   userAnnotations: (json['userAnnotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// Write the certificate chain at this path in the projected volume.
 /// 
@@ -59,7 +59,7 @@ final String signerName;
 /// Signers should document the keys and values they support. Signers should deny requests that contain keys they do not recognize.
 final Map<String,String>? userAnnotations;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificateChainPath': ?certificateChainPath,
   'credentialBundlePath': ?credentialBundlePath,
   'keyPath': ?keyPath,
@@ -67,10 +67,10 @@ Map<String, dynamic> toJson() { return {
   'maxExpirationSeconds': ?maxExpirationSeconds,
   'signerName': signerName,
   'userAnnotations': ?userAnnotations,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('keyType') && json['keyType'] is String &&
-      json.containsKey('signerName') && json['signerName'] is String; } 
-PodCertificateProjection copyWith({String? Function()? certificateChainPath, String? Function()? credentialBundlePath, String? Function()? keyPath, String? keyType, int? Function()? maxExpirationSeconds, String? signerName, Map<String, String>? Function()? userAnnotations, }) { return PodCertificateProjection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('keyType') && json['keyType'] is String &&
+      json.containsKey('signerName') && json['signerName'] is String;}
+PodCertificateProjection copyWith({String? Function()? certificateChainPath, String? Function()? credentialBundlePath, String? Function()? keyPath, String? keyType, int? Function()? maxExpirationSeconds, String? signerName, Map<String, String>? Function()? userAnnotations, }) {return PodCertificateProjection(
   certificateChainPath: certificateChainPath != null ? certificateChainPath() : this.certificateChainPath,
   credentialBundlePath: credentialBundlePath != null ? credentialBundlePath() : this.credentialBundlePath,
   keyPath: keyPath != null ? keyPath() : this.keyPath,
@@ -78,7 +78,7 @@ PodCertificateProjection copyWith({String? Function()? certificateChainPath, Str
   maxExpirationSeconds: maxExpirationSeconds != null ? maxExpirationSeconds() : this.maxExpirationSeconds,
   signerName: signerName ?? this.signerName,
   userAnnotations: userAnnotations != null ? userAnnotations() : this.userAnnotations,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PodCertificateProjection &&
           certificateChainPath == other.certificateChainPath &&
@@ -93,4 +93,4 @@ PodCertificateProjection copyWith({String? Function()? certificateChainPath, Str
 
 @override String toString() => 'PodCertificateProjection(certificateChainPath: $certificateChainPath, credentialBundlePath: $credentialBundlePath, keyPath: $keyPath, keyType: $keyType, maxExpirationSeconds: $maxExpirationSeconds, signerName: $signerName, userAnnotations: $userAnnotations)';
 
- }
+}

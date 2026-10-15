@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The phase of the ruleset.
 sealed class RulesetsRulesetPhase {const RulesetsRulesetPhase();
 
-factory RulesetsRulesetPhase.fromJson(String json) { return switch (json) {
+factory RulesetsRulesetPhase.fromJson(String json) {return switch (json) {
   'ddos_l4' => ddosL4,
   'ddos_l7' => ddosL7,
   'http_config_settings' => httpConfigSettings,
@@ -30,7 +30,7 @@ factory RulesetsRulesetPhase.fromJson(String json) { return switch (json) {
   'magic_transit_managed' => magicTransitManaged,
   'magic_transit_ratelimit' => magicTransitRatelimit,
   _ => RulesetsRulesetPhase$Unknown(json),
-}; }
+};}
 
 static const RulesetsRulesetPhase ddosL4 = RulesetsRulesetPhase$ddosL4._();
 
@@ -83,9 +83,9 @@ static const RulesetsRulesetPhase magicTransitRatelimit = RulesetsRulesetPhase$m
 static const List<RulesetsRulesetPhase> values = [ddosL4, ddosL7, httpConfigSettings, httpCustomErrors, httpLogCustomFields, httpRatelimit, httpRequestCacheSettings, httpRequestDynamicRedirect, httpRequestFirewallCustom, httpRequestFirewallManaged, httpRequestLateTransform, httpRequestOrigin, httpRequestRedirect, httpRequestSanitize, httpRequestSbfm, httpRequestTransform, httpResponseCacheSettings, httpResponseCompression, httpResponseFirewallManaged, httpResponseHeadersTransform, magicTransit, magicTransitIdsManaged, magicTransitManaged, magicTransitRatelimit];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ddos_l4' => 'ddosL4',
   'ddos_l7' => 'ddosL7',
   'http_config_settings' => 'httpConfigSettings',
@@ -111,11 +111,11 @@ String get name { return switch (value) {
   'magic_transit_managed' => 'magicTransitManaged',
   'magic_transit_ratelimit' => 'magicTransitRatelimit',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RulesetsRulesetPhase$Unknown; } 
+bool get isUnknown {return this is RulesetsRulesetPhase$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ddosL4, required W Function() ddosL7, required W Function() httpConfigSettings, required W Function() httpCustomErrors, required W Function() httpLogCustomFields, required W Function() httpRatelimit, required W Function() httpRequestCacheSettings, required W Function() httpRequestDynamicRedirect, required W Function() httpRequestFirewallCustom, required W Function() httpRequestFirewallManaged, required W Function() httpRequestLateTransform, required W Function() httpRequestOrigin, required W Function() httpRequestRedirect, required W Function() httpRequestSanitize, required W Function() httpRequestSbfm, required W Function() httpRequestTransform, required W Function() httpResponseCacheSettings, required W Function() httpResponseCompression, required W Function() httpResponseFirewallManaged, required W Function() httpResponseHeadersTransform, required W Function() magicTransit, required W Function() magicTransitIdsManaged, required W Function() magicTransitManaged, required W Function() magicTransitRatelimit, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ddosL4, required W Function() ddosL7, required W Function() httpConfigSettings, required W Function() httpCustomErrors, required W Function() httpLogCustomFields, required W Function() httpRatelimit, required W Function() httpRequestCacheSettings, required W Function() httpRequestDynamicRedirect, required W Function() httpRequestFirewallCustom, required W Function() httpRequestFirewallManaged, required W Function() httpRequestLateTransform, required W Function() httpRequestOrigin, required W Function() httpRequestRedirect, required W Function() httpRequestSanitize, required W Function() httpRequestSbfm, required W Function() httpRequestTransform, required W Function() httpResponseCacheSettings, required W Function() httpResponseCompression, required W Function() httpResponseFirewallManaged, required W Function() httpResponseHeadersTransform, required W Function() magicTransit, required W Function() magicTransitIdsManaged, required W Function() magicTransitManaged, required W Function() magicTransitRatelimit, required W Function(String value) $unknown, }) {return switch (this) {
       RulesetsRulesetPhase$ddosL4() => ddosL4(),
       RulesetsRulesetPhase$ddosL7() => ddosL7(),
       RulesetsRulesetPhase$httpConfigSettings() => httpConfigSettings(),
@@ -141,9 +141,9 @@ W when<W>({required W Function() ddosL4, required W Function() ddosL7, required 
       RulesetsRulesetPhase$magicTransitManaged() => magicTransitManaged(),
       RulesetsRulesetPhase$magicTransitRatelimit() => magicTransitRatelimit(),
       RulesetsRulesetPhase$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, W Function()? ddosL7, W Function()? httpConfigSettings, W Function()? httpCustomErrors, W Function()? httpLogCustomFields, W Function()? httpRatelimit, W Function()? httpRequestCacheSettings, W Function()? httpRequestDynamicRedirect, W Function()? httpRequestFirewallCustom, W Function()? httpRequestFirewallManaged, W Function()? httpRequestLateTransform, W Function()? httpRequestOrigin, W Function()? httpRequestRedirect, W Function()? httpRequestSanitize, W Function()? httpRequestSbfm, W Function()? httpRequestTransform, W Function()? httpResponseCacheSettings, W Function()? httpResponseCompression, W Function()? httpResponseFirewallManaged, W Function()? httpResponseHeadersTransform, W Function()? magicTransit, W Function()? magicTransitIdsManaged, W Function()? magicTransitManaged, W Function()? magicTransitRatelimit, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, W Function()? ddosL7, W Function()? httpConfigSettings, W Function()? httpCustomErrors, W Function()? httpLogCustomFields, W Function()? httpRatelimit, W Function()? httpRequestCacheSettings, W Function()? httpRequestDynamicRedirect, W Function()? httpRequestFirewallCustom, W Function()? httpRequestFirewallManaged, W Function()? httpRequestLateTransform, W Function()? httpRequestOrigin, W Function()? httpRequestRedirect, W Function()? httpRequestSanitize, W Function()? httpRequestSbfm, W Function()? httpRequestTransform, W Function()? httpResponseCacheSettings, W Function()? httpResponseCompression, W Function()? httpResponseFirewallManaged, W Function()? httpResponseHeadersTransform, W Function()? magicTransit, W Function()? magicTransitIdsManaged, W Function()? magicTransitManaged, W Function()? magicTransitRatelimit, W Function(String value)? $unknown, }) {return switch (this) {
       RulesetsRulesetPhase$ddosL4() => ddosL4 != null ? ddosL4() : orElse(value),
       RulesetsRulesetPhase$ddosL7() => ddosL7 != null ? ddosL7() : orElse(value),
       RulesetsRulesetPhase$httpConfigSettings() => httpConfigSettings != null ? httpConfigSettings() : orElse(value),
@@ -169,10 +169,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
       RulesetsRulesetPhase$magicTransitManaged() => magicTransitManaged != null ? magicTransitManaged() : orElse(value),
       RulesetsRulesetPhase$magicTransitRatelimit() => magicTransitRatelimit != null ? magicTransitRatelimit() : orElse(value),
       RulesetsRulesetPhase$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RulesetsRulesetPhase($value)';
 
- }
+}
 @immutable final class RulesetsRulesetPhase$ddosL4 extends RulesetsRulesetPhase {const RulesetsRulesetPhase$ddosL4._();
 
 @override String get value => 'ddos_l4';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'ddos_l4'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$ddosL7 extends RulesetsRulesetPhase {const RulesetsRulesetPhase$ddosL7._();
 
 @override String get value => 'ddos_l7';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'ddos_l7'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpConfigSettings extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpConfigSettings._();
 
 @override String get value => 'http_config_settings';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_config_settings'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpCustomErrors extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpCustomErrors._();
 
 @override String get value => 'http_custom_errors';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_custom_errors'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpLogCustomFields extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpLogCustomFields._();
 
 @override String get value => 'http_log_custom_fields';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_log_custom_fields'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRatelimit extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRatelimit._();
 
 @override String get value => 'http_ratelimit';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_ratelimit'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestCacheSettings extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestCacheSettings._();
 
 @override String get value => 'http_request_cache_settings';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_cache_settings'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestDynamicRedirect extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestDynamicRedirect._();
 
 @override String get value => 'http_request_dynamic_redirect';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_dynamic_redirect'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestFirewallCustom extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestFirewallCustom._();
 
 @override String get value => 'http_request_firewall_custom';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_firewall_custom'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestFirewallManaged extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestFirewallManaged._();
 
 @override String get value => 'http_request_firewall_managed';
@@ -262,7 +262,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_firewall_managed'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestLateTransform extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestLateTransform._();
 
 @override String get value => 'http_request_late_transform';
@@ -271,7 +271,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_late_transform'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestOrigin extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestOrigin._();
 
 @override String get value => 'http_request_origin';
@@ -280,7 +280,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_origin'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestRedirect extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestRedirect._();
 
 @override String get value => 'http_request_redirect';
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_redirect'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestSanitize extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestSanitize._();
 
 @override String get value => 'http_request_sanitize';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_sanitize'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestSbfm extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestSbfm._();
 
 @override String get value => 'http_request_sbfm';
@@ -307,7 +307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_sbfm'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpRequestTransform extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpRequestTransform._();
 
 @override String get value => 'http_request_transform';
@@ -316,7 +316,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_request_transform'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpResponseCacheSettings extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpResponseCacheSettings._();
 
 @override String get value => 'http_response_cache_settings';
@@ -325,7 +325,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_response_cache_settings'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpResponseCompression extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpResponseCompression._();
 
 @override String get value => 'http_response_compression';
@@ -334,7 +334,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_response_compression'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpResponseFirewallManaged extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpResponseFirewallManaged._();
 
 @override String get value => 'http_response_firewall_managed';
@@ -343,7 +343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_response_firewall_managed'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$httpResponseHeadersTransform extends RulesetsRulesetPhase {const RulesetsRulesetPhase$httpResponseHeadersTransform._();
 
 @override String get value => 'http_response_headers_transform';
@@ -352,7 +352,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'http_response_headers_transform'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$magicTransit extends RulesetsRulesetPhase {const RulesetsRulesetPhase$magicTransit._();
 
 @override String get value => 'magic_transit';
@@ -361,7 +361,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'magic_transit'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$magicTransitIdsManaged extends RulesetsRulesetPhase {const RulesetsRulesetPhase$magicTransitIdsManaged._();
 
 @override String get value => 'magic_transit_ids_managed';
@@ -370,7 +370,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'magic_transit_ids_managed'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$magicTransitManaged extends RulesetsRulesetPhase {const RulesetsRulesetPhase$magicTransitManaged._();
 
 @override String get value => 'magic_transit_managed';
@@ -379,7 +379,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'magic_transit_managed'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$magicTransitRatelimit extends RulesetsRulesetPhase {const RulesetsRulesetPhase$magicTransitRatelimit._();
 
 @override String get value => 'magic_transit_ratelimit';
@@ -388,7 +388,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => 'magic_transit_ratelimit'.hashCode;
 
- }
+}
 @immutable final class RulesetsRulesetPhase$Unknown extends RulesetsRulesetPhase {const RulesetsRulesetPhase$Unknown(this.value);
 
 @override final String value;
@@ -398,4 +398,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

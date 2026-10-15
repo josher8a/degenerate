@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesKolideConfigRequest {const TeamsDevicesKolideConfigRequest({required this.clientId, required this.clientSecret, });
 
-factory TeamsDevicesKolideConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesKolideConfigRequest(
+factory TeamsDevicesKolideConfigRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesKolideConfigRequest(
   clientId: json['client_id'] as String,
   clientSecret: json['client_secret'] as String,
-); }
+);}
 
 /// The Kolide client ID.
 /// 
@@ -18,16 +18,16 @@ final String clientId;
 /// Example: `'example client secret'`
 final String clientSecret;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'client_id': clientId,
   'client_secret': clientSecret,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_id') && json['client_id'] is String &&
-      json.containsKey('client_secret') && json['client_secret'] is String; } 
-TeamsDevicesKolideConfigRequest copyWith({String? clientId, String? clientSecret, }) { return TeamsDevicesKolideConfigRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_id') && json['client_id'] is String &&
+      json.containsKey('client_secret') && json['client_secret'] is String;}
+TeamsDevicesKolideConfigRequest copyWith({String? clientId, String? clientSecret, }) {return TeamsDevicesKolideConfigRequest(
   clientId: clientId ?? this.clientId,
   clientSecret: clientSecret ?? this.clientSecret,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesKolideConfigRequest &&
           clientId == other.clientId &&
@@ -37,4 +37,4 @@ TeamsDevicesKolideConfigRequest copyWith({String? clientId, String? clientSecret
 
 @override String toString() => 'TeamsDevicesKolideConfigRequest(clientId: $clientId, clientSecret: $clientSecret)';
 
- }
+}

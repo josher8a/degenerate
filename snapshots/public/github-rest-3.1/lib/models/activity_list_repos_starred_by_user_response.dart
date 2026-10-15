@@ -7,11 +7,11 @@ const ActivityListReposStarredByUserResponse({this.listStarredRepository = const
 const ActivityListReposStarredByUserResponse._({required this.rawValue, required this.listStarredRepository, required this.listRepository, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ActivityListReposStarredByUserResponse.fromJson(Object? json) { return ActivityListReposStarredByUserResponse._(
+factory ActivityListReposStarredByUserResponse.fromJson(Object? json) {return ActivityListReposStarredByUserResponse._(
   rawValue: Omittable(json),
   listStarredRepository: parseAnyOfVariant<List<StarredRepository>>(json, (value) => (value! as List<dynamic>).map((e) => StarredRepository.fromJson(e as Map<String, dynamic>)).toList()),
   listRepository: parseAnyOfVariant<List<Repository>>(json, (value) => (value! as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ActivityListReposStarredByUserResponse(${toJson()})';
 
- }
+}

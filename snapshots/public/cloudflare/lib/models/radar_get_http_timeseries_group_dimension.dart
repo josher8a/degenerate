@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the HTTP attribute by which to group the results.
 sealed class RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension();
 
-factory RadarGetHttpTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
+factory RadarGetHttpTimeseriesGroupDimension.fromJson(String json) {return switch (json) {
   'ADM1' => adm1,
   'AS' => $as,
   'BOT_CLASS' => botClass,
@@ -19,7 +19,7 @@ factory RadarGetHttpTimeseriesGroupDimension.fromJson(String json) { return swit
   'POST_QUANTUM' => postQuantum,
   'TLS_VERSION' => tlsVersion,
   _ => RadarGetHttpTimeseriesGroupDimension$Unknown(json),
-}; }
+};}
 
 static const RadarGetHttpTimeseriesGroupDimension adm1 = RadarGetHttpTimeseriesGroupDimension$adm1._();
 
@@ -50,9 +50,9 @@ static const RadarGetHttpTimeseriesGroupDimension tlsVersion = RadarGetHttpTimes
 static const List<RadarGetHttpTimeseriesGroupDimension> values = [adm1, $as, botClass, browser, browserFamily, deviceType, httpProtocol, httpVersion, ipVersion, location, os, postQuantum, tlsVersion];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ADM1' => 'adm1',
   'AS' => r'$as',
   'BOT_CLASS' => 'botClass',
@@ -67,11 +67,11 @@ String get name { return switch (value) {
   'POST_QUANTUM' => 'postQuantum',
   'TLS_VERSION' => 'tlsVersion',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetHttpTimeseriesGroupDimension$Unknown; } 
+bool get isUnknown {return this is RadarGetHttpTimeseriesGroupDimension$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() adm1, required W Function() $as, required W Function() botClass, required W Function() browser, required W Function() browserFamily, required W Function() deviceType, required W Function() httpProtocol, required W Function() httpVersion, required W Function() ipVersion, required W Function() location, required W Function() os, required W Function() postQuantum, required W Function() tlsVersion, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() adm1, required W Function() $as, required W Function() botClass, required W Function() browser, required W Function() browserFamily, required W Function() deviceType, required W Function() httpProtocol, required W Function() httpVersion, required W Function() ipVersion, required W Function() location, required W Function() os, required W Function() postQuantum, required W Function() tlsVersion, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupDimension$adm1() => adm1(),
       RadarGetHttpTimeseriesGroupDimension$$as() => $as(),
       RadarGetHttpTimeseriesGroupDimension$botClass() => botClass(),
@@ -86,9 +86,9 @@ W when<W>({required W Function() adm1, required W Function() $as, required W Fun
       RadarGetHttpTimeseriesGroupDimension$postQuantum() => postQuantum(),
       RadarGetHttpTimeseriesGroupDimension$tlsVersion() => tlsVersion(),
       RadarGetHttpTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W Function()? $as, W Function()? botClass, W Function()? browser, W Function()? browserFamily, W Function()? deviceType, W Function()? httpProtocol, W Function()? httpVersion, W Function()? ipVersion, W Function()? location, W Function()? os, W Function()? postQuantum, W Function()? tlsVersion, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W Function()? $as, W Function()? botClass, W Function()? browser, W Function()? browserFamily, W Function()? deviceType, W Function()? httpProtocol, W Function()? httpVersion, W Function()? ipVersion, W Function()? location, W Function()? os, W Function()? postQuantum, W Function()? tlsVersion, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetHttpTimeseriesGroupDimension$adm1() => adm1 != null ? adm1() : orElse(value),
       RadarGetHttpTimeseriesGroupDimension$$as() => $as != null ? $as() : orElse(value),
       RadarGetHttpTimeseriesGroupDimension$botClass() => botClass != null ? botClass() : orElse(value),
@@ -103,10 +103,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
       RadarGetHttpTimeseriesGroupDimension$postQuantum() => postQuantum != null ? postQuantum() : orElse(value),
       RadarGetHttpTimeseriesGroupDimension$tlsVersion() => tlsVersion != null ? tlsVersion() : orElse(value),
       RadarGetHttpTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetHttpTimeseriesGroupDimension($value)';
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$adm1 extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$adm1._();
 
 @override String get value => 'ADM1';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'ADM1'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$$as extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$$as._();
 
 @override String get value => 'AS';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'AS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$botClass extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$botClass._();
 
 @override String get value => 'BOT_CLASS';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'BOT_CLASS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$browser extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$browser._();
 
 @override String get value => 'BROWSER';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'BROWSER'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$browserFamily extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$browserFamily._();
 
 @override String get value => 'BROWSER_FAMILY';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'BROWSER_FAMILY'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$deviceType extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$deviceType._();
 
 @override String get value => 'DEVICE_TYPE';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'DEVICE_TYPE'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$httpProtocol extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$httpProtocol._();
 
 @override String get value => 'HTTP_PROTOCOL';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'HTTP_PROTOCOL'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$httpVersion extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$httpVersion._();
 
 @override String get value => 'HTTP_VERSION';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'HTTP_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$ipVersion extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$ipVersion._();
 
 @override String get value => 'IP_VERSION';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'IP_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$location extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$location._();
 
 @override String get value => 'LOCATION';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'LOCATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$os extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$os._();
 
 @override String get value => 'OS';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'OS'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$postQuantum extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$postQuantum._();
 
 @override String get value => 'POST_QUANTUM';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'POST_QUANTUM'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$tlsVersion extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$tlsVersion._();
 
 @override String get value => 'TLS_VERSION';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => 'TLS_VERSION'.hashCode;
 
- }
+}
 @immutable final class RadarGetHttpTimeseriesGroupDimension$Unknown extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$Unknown(this.value);
 
 @override final String value;
@@ -233,4 +233,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

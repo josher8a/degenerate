@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentMethodOptionsAfterpayClearpay {const PaymentMethodOptionsAfterpayClearpay({this.captureMethod, this.reference = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentMethodOptionsAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsAfterpayClearpay(
+factory PaymentMethodOptionsAfterpayClearpay.fromJson(Map<String, dynamic> json) {return PaymentMethodOptionsAfterpayClearpay(
   captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
   reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// Controls when the funds will be captured from the customer's account.
 final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
@@ -26,24 +26,24 @@ final Omittable<String?> reference;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (reference.isPresent) 'reference': reference.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'reference', 'setup_future_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'capture_method', 'reference', 'setup_future_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final reference$ = reference.value;
 if (reference$ != null) {
   if (reference$.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodOptionsAfterpayClearpay copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, Omittable<String?>? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsAfterpayClearpay(
+return errors;}
+PaymentMethodOptionsAfterpayClearpay copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, Omittable<String?>? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentMethodOptionsAfterpayClearpay(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   reference: reference ?? this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsAfterpayClearpay &&
           captureMethod == other.captureMethod &&
@@ -54,4 +54,4 @@ PaymentMethodOptionsAfterpayClearpay copyWith({CheckoutAffirmPaymentMethodOption
 
 @override String toString() => 'PaymentMethodOptionsAfterpayClearpay(captureMethod: $captureMethod, reference: $reference, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_support_cohort.dart';@immutable final class MconnSupportCohortListResponse {const MconnSupportCohortListResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory MconnSupportCohortListResponse.fromJson(Map<String, dynamic> json) { return MconnSupportCohortListResponse(
+factory MconnSupportCohortListResponse.fromJson(Map<String, dynamic> json) {return MconnSupportCohortListResponse(
   messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => MconnSupportCohort.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<MconnCodedMessage> messages;
 
@@ -18,22 +18,22 @@ final List<MconnCodedMessage> errors;
 
 final List<MconnSupportCohort> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'errors': errors.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('errors') &&
-      json.containsKey('result'); } 
-MconnSupportCohortListResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, List<MconnSupportCohort>? result, }) { return MconnSupportCohortListResponse(
+      json.containsKey('result');}
+MconnSupportCohortListResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, List<MconnSupportCohort>? result, }) {return MconnSupportCohortListResponse(
   messages: messages ?? this.messages,
   success: success ?? this.success,
   errors: errors ?? this.errors,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportCohortListResponse &&
           listEquals(messages, other.messages) &&
@@ -45,4 +45,4 @@ MconnSupportCohortListResponse copyWith({List<MconnCodedMessage>? messages, bool
 
 @override String toString() => 'MconnSupportCohortListResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

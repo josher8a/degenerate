@@ -12,7 +12,7 @@ final class SinkholeConfigApi with ApiExecutor {const SinkholeConfigApi(this.api
 /// List sinkholes owned by this account
 ///
 /// `GET /accounts/{account_id}/intel/sinkholes`
-Future<ApiResult<List<IntelSinkholesSinkholeItem>?, Never>> sinkholeConfigGetSinkholes({required IntelSinkholesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IntelSinkholesSinkholeItem>?, Never>> sinkholeConfigGetSinkholes({required IntelSinkholesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -28,5 +28,5 @@ return await execute(
     return (json['result'] as List<dynamic>?)?.map((e) => IntelSinkholesSinkholeItem.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
- } 
- }
+}
+}

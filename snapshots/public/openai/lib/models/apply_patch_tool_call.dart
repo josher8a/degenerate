@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_tool_call/apply_patch_tool_call_operation.dart';/// A tool call that applies file diffs by creating, deleting, or updating files.
 @immutable final class ApplyPatchToolCall {const ApplyPatchToolCall({required this.type, required this.id, required this.callId, required this.status, required this.operation, this.createdBy, });
 
-factory ApplyPatchToolCall.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCall(
+factory ApplyPatchToolCall.fromJson(Map<String, dynamic> json) {return ApplyPatchToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
   status: ApplyPatchCallStatus.fromJson(json['status'] as String),
   operation: ApplyPatchToolCallOperation.fromJson(json['operation'] as Map<String, dynamic>),
   createdBy: json['created_by'] as String?,
-); }
+);}
 
 /// The type of the item. Always `apply_patch_call`.
 final String type;
@@ -31,27 +31,27 @@ final ApplyPatchToolCallOperation operation;
 /// The ID of the entity that created this tool call.
 final String? createdBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
   'status': status.toJson(),
   'operation': operation.toJson(),
   'created_by': ?createdBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('status') &&
-      json.containsKey('operation'); } 
-ApplyPatchToolCall copyWith({String? type, String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String? Function()? createdBy, }) { return ApplyPatchToolCall(
+      json.containsKey('operation');}
+ApplyPatchToolCall copyWith({String? type, String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String? Function()? createdBy, }) {return ApplyPatchToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
   status: status ?? this.status,
   operation: operation ?? this.operation,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchToolCall &&
           type == other.type &&
@@ -65,4 +65,4 @@ ApplyPatchToolCall copyWith({String? type, String? id, String? callId, ApplyPatc
 
 @override String toString() => 'ApplyPatchToolCall(type: $type, id: $id, callId: $callId, status: $status, operation: $operation, createdBy: $createdBy)';
 
- }
+}

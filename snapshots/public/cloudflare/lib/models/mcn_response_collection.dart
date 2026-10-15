@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error.dart';import 'package:pub_cloudflare/models/mcn_result_info.dart';@immutable final class McnResponseCollection {const McnResponseCollection({required this.messages, required this.success, this.resultInfo, });
 
-factory McnResponseCollection.fromJson(Map<String, dynamic> json) { return McnResponseCollection(
+factory McnResponseCollection.fromJson(Map<String, dynamic> json) {return McnResponseCollection(
   messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: json['result_info'] != null ? McnResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
-); }
+);}
 
 final List<McnError> messages;
 
@@ -15,18 +15,18 @@ final McnResultInfo? resultInfo;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'messages': messages.map((e) => e.toJson()).toList(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-McnResponseCollection copyWith({List<McnError>? messages, McnResultInfo? Function()? resultInfo, bool? success, }) { return McnResponseCollection(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool;}
+McnResponseCollection copyWith({List<McnError>? messages, McnResultInfo? Function()? resultInfo, bool? success, }) {return McnResponseCollection(
   messages: messages ?? this.messages,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnResponseCollection &&
           listEquals(messages, other.messages) &&
@@ -37,4 +37,4 @@ McnResponseCollection copyWith({List<McnError>? messages, McnResultInfo? Functio
 
 @override String toString() => 'McnResponseCollection(messages: $messages, resultInfo: $resultInfo, success: $success)';
 
- }
+}

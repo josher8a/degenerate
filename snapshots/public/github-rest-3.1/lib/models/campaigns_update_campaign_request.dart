@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/campaign_state.dart';@immutable final class CampaignsUpdateCampaignRequest {const CampaignsUpdateCampaignRequest({this.name, this.description, this.managers, this.teamManagers, this.endsAt, this.contactLink = const Omittable.absent(), this.state, });
 
-factory CampaignsUpdateCampaignRequest.fromJson(Map<String, dynamic> json) { return CampaignsUpdateCampaignRequest(
+factory CampaignsUpdateCampaignRequest.fromJson(Map<String, dynamic> json) {return CampaignsUpdateCampaignRequest(
   name: json['name'] as String?,
   description: json['description'] as String?,
   managers: (json['managers'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -11,7 +11,7 @@ factory CampaignsUpdateCampaignRequest.fromJson(Map<String, dynamic> json) { ret
   endsAt: json['ends_at'] != null ? DateTime.parse(json['ends_at'] as String) : null,
   contactLink: json.containsKey('contact_link') ? Omittable(json['contact_link'] != null ? Uri.parse(json['contact_link'] as String) : null) : const Omittable.absent(),
   state: json['state'] != null ? CampaignState.fromJson(json['state'] as String) : null,
-); }
+);}
 
 /// The name of the campaign
 final String? name;
@@ -34,7 +34,7 @@ final Omittable<Uri?> contactLink;
 /// Indicates whether a campaign is open or closed
 final CampaignState? state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'description': ?description,
   'managers': ?managers,
@@ -42,10 +42,10 @@ Map<String, dynamic> toJson() { return {
   if (endsAt != null) 'ends_at': endsAt?.toIso8601String(),
   if (contactLink.isPresent) 'contact_link': contactLink.value?.toString(),
   if (state != null) 'state': state?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'managers', 'team_managers', 'ends_at', 'contact_link', 'state'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'description', 'managers', 'team_managers', 'ends_at', 'contact_link', 'state'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
   if (name$.isEmpty) { errors.add('name: length must be >= 1'); }
@@ -64,8 +64,8 @@ final teamManagers$ = teamManagers;
 if (teamManagers$ != null) {
   if (teamManagers$.length > 10) { errors.add('teamManagers: must have <= 10 items'); }
 }
-return errors; } 
-CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Function()? description, List<String>? Function()? managers, List<String>? Function()? teamManagers, DateTime? Function()? endsAt, Omittable<Uri?>? contactLink, CampaignState? Function()? state, }) { return CampaignsUpdateCampaignRequest(
+return errors;}
+CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Function()? description, List<String>? Function()? managers, List<String>? Function()? teamManagers, DateTime? Function()? endsAt, Omittable<Uri?>? contactLink, CampaignState? Function()? state, }) {return CampaignsUpdateCampaignRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   managers: managers != null ? managers() : this.managers,
@@ -73,7 +73,7 @@ CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Funct
   endsAt: endsAt != null ? endsAt() : this.endsAt,
   contactLink: contactLink ?? this.contactLink,
   state: state != null ? state() : this.state,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CampaignsUpdateCampaignRequest &&
           name == other.name &&
@@ -88,4 +88,4 @@ CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Funct
 
 @override String toString() => 'CampaignsUpdateCampaignRequest(name: $name, description: $description, managers: $managers, teamManagers: $teamManagers, endsAt: $endsAt, contactLink: $contactLink, state: $state)';
 
- }
+}

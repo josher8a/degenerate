@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/affinity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container.dart';import 'package:pub_kubernetes_api_v1_openapi/models/ephemeral_container.dart';import 'package:pub_kubernetes_api_v1_openapi/models/host_alias.dart';import 'package:pub_kubernetes_api_v1_openapi/models/local_object_reference.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_dns_config.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_os.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_readiness_gate.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_resource_claim.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_scheduling_gate.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_security_context.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_requirements.dart';import 'package:pub_kubernetes_api_v1_openapi/models/toleration.dart';import 'package:pub_kubernetes_api_v1_openapi/models/topology_spread_constraint.dart';import 'package:pub_kubernetes_api_v1_openapi/models/volume.dart';import 'package:pub_kubernetes_api_v1_openapi/models/workload_reference.dart';/// PodSpec is a description of a pod.
 @immutable final class PodSpec {const PodSpec({required this.containers, this.hostname, this.automountServiceAccountToken, this.affinity, this.dnsConfig, this.dnsPolicy, this.enableServiceLinks, this.ephemeralContainers, this.hostAliases, this.hostIpc, this.hostNetwork, this.hostPid, this.hostUsers, this.activeDeadlineSeconds, this.hostnameOverride, this.imagePullSecrets, this.initContainers, this.nodeName, this.nodeSelector, this.os, this.overhead, this.preemptionPolicy, this.priority, this.priorityClassName, this.readinessGates, this.resourceClaims, this.resources, this.workloadRef, this.runtimeClassName, this.schedulerName, this.schedulingGates, this.securityContext, this.serviceAccount, this.serviceAccountName, this.setHostnameAsFqdn, this.shareProcessNamespace, this.subdomain, this.terminationGracePeriodSeconds, this.tolerations, this.topologySpreadConstraints, this.volumes, this.restartPolicy, });
 
-factory PodSpec.fromJson(Map<String, dynamic> json) { return PodSpec(
+factory PodSpec.fromJson(Map<String, dynamic> json) {return PodSpec(
   activeDeadlineSeconds: json['activeDeadlineSeconds'] != null ? (json['activeDeadlineSeconds'] as num).toInt() : null,
   affinity: json['affinity'] != null ? Affinity.fromJson(json['affinity'] as Map<String, dynamic>) : null,
   automountServiceAccountToken: json['automountServiceAccountToken'] as bool?,
@@ -47,7 +47,7 @@ factory PodSpec.fromJson(Map<String, dynamic> json) { return PodSpec(
   topologySpreadConstraints: (json['topologySpreadConstraints'] as List<dynamic>?)?.map((e) => TopologySpreadConstraint.fromJson(e as Map<String, dynamic>)).toList(),
   volumes: (json['volumes'] as List<dynamic>?)?.map((e) => Volume.fromJson(e as Map<String, dynamic>)).toList(),
   workloadRef: json['workloadRef'] != null ? WorkloadReference.fromJson(json['workloadRef'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
 final int? activeDeadlineSeconds;
@@ -191,7 +191,7 @@ final List<Volume>? volumes;
 /// WorkloadRef provides a reference to the Workload object that this Pod belongs to. This field is used by the scheduler to identify the PodGroup and apply the correct group scheduling policies. The Workload object referenced by this field may not exist at the time the Pod is created. This field is immutable, but a Workload object with the same name may be recreated with different policies. Doing this during pod scheduling may result in the placement not conforming to the expected policies.
 final WorkloadReference? workloadRef;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'activeDeadlineSeconds': ?activeDeadlineSeconds,
   if (affinity != null) 'affinity': affinity?.toJson(),
   'automountServiceAccountToken': ?automountServiceAccountToken,
@@ -234,9 +234,9 @@ Map<String, dynamic> toJson() { return {
   if (topologySpreadConstraints != null) 'topologySpreadConstraints': topologySpreadConstraints?.map((e) => e.toJson()).toList(),
   if (volumes != null) 'volumes': volumes?.map((e) => e.toJson()).toList(),
   if (workloadRef != null) 'workloadRef': workloadRef?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('containers'); } 
-PodSpec copyWith({int? Function()? activeDeadlineSeconds, Affinity? Function()? affinity, bool? Function()? automountServiceAccountToken, List<Container>? containers, PodDnsConfig? Function()? dnsConfig, String? Function()? dnsPolicy, bool? Function()? enableServiceLinks, List<EphemeralContainer>? Function()? ephemeralContainers, List<HostAlias>? Function()? hostAliases, bool? Function()? hostIpc, bool? Function()? hostNetwork, bool? Function()? hostPid, bool? Function()? hostUsers, String? Function()? hostname, String? Function()? hostnameOverride, List<LocalObjectReference>? Function()? imagePullSecrets, List<Container>? Function()? initContainers, String? Function()? nodeName, Map<String, String>? Function()? nodeSelector, PodOs? Function()? os, Map<String, ResourceQuantity>? Function()? overhead, String? Function()? preemptionPolicy, int? Function()? priority, String? Function()? priorityClassName, List<PodReadinessGate>? Function()? readinessGates, List<PodResourceClaim>? Function()? resourceClaims, ResourceRequirements? Function()? resources, String? Function()? restartPolicy, String? Function()? runtimeClassName, String? Function()? schedulerName, List<PodSchedulingGate>? Function()? schedulingGates, PodSecurityContext? Function()? securityContext, String? Function()? serviceAccount, String? Function()? serviceAccountName, bool? Function()? setHostnameAsFqdn, bool? Function()? shareProcessNamespace, String? Function()? subdomain, int? Function()? terminationGracePeriodSeconds, List<Toleration>? Function()? tolerations, List<TopologySpreadConstraint>? Function()? topologySpreadConstraints, List<Volume>? Function()? volumes, WorkloadReference? Function()? workloadRef, }) { return PodSpec(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('containers');}
+PodSpec copyWith({int? Function()? activeDeadlineSeconds, Affinity? Function()? affinity, bool? Function()? automountServiceAccountToken, List<Container>? containers, PodDnsConfig? Function()? dnsConfig, String? Function()? dnsPolicy, bool? Function()? enableServiceLinks, List<EphemeralContainer>? Function()? ephemeralContainers, List<HostAlias>? Function()? hostAliases, bool? Function()? hostIpc, bool? Function()? hostNetwork, bool? Function()? hostPid, bool? Function()? hostUsers, String? Function()? hostname, String? Function()? hostnameOverride, List<LocalObjectReference>? Function()? imagePullSecrets, List<Container>? Function()? initContainers, String? Function()? nodeName, Map<String, String>? Function()? nodeSelector, PodOs? Function()? os, Map<String, ResourceQuantity>? Function()? overhead, String? Function()? preemptionPolicy, int? Function()? priority, String? Function()? priorityClassName, List<PodReadinessGate>? Function()? readinessGates, List<PodResourceClaim>? Function()? resourceClaims, ResourceRequirements? Function()? resources, String? Function()? restartPolicy, String? Function()? runtimeClassName, String? Function()? schedulerName, List<PodSchedulingGate>? Function()? schedulingGates, PodSecurityContext? Function()? securityContext, String? Function()? serviceAccount, String? Function()? serviceAccountName, bool? Function()? setHostnameAsFqdn, bool? Function()? shareProcessNamespace, String? Function()? subdomain, int? Function()? terminationGracePeriodSeconds, List<Toleration>? Function()? tolerations, List<TopologySpreadConstraint>? Function()? topologySpreadConstraints, List<Volume>? Function()? volumes, WorkloadReference? Function()? workloadRef, }) {return PodSpec(
   activeDeadlineSeconds: activeDeadlineSeconds != null ? activeDeadlineSeconds() : this.activeDeadlineSeconds,
   affinity: affinity != null ? affinity() : this.affinity,
   automountServiceAccountToken: automountServiceAccountToken != null ? automountServiceAccountToken() : this.automountServiceAccountToken,
@@ -279,7 +279,7 @@ PodSpec copyWith({int? Function()? activeDeadlineSeconds, Affinity? Function()? 
   topologySpreadConstraints: topologySpreadConstraints != null ? topologySpreadConstraints() : this.topologySpreadConstraints,
   volumes: volumes != null ? volumes() : this.volumes,
   workloadRef: workloadRef != null ? workloadRef() : this.workloadRef,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PodSpec &&
           activeDeadlineSeconds == other.activeDeadlineSeconds &&
@@ -329,4 +329,4 @@ PodSpec copyWith({int? Function()? activeDeadlineSeconds, Affinity? Function()? 
 
 @override String toString() => 'PodSpec(\n  activeDeadlineSeconds: $activeDeadlineSeconds,\n  affinity: $affinity,\n  automountServiceAccountToken: $automountServiceAccountToken,\n  containers: $containers,\n  dnsConfig: $dnsConfig,\n  dnsPolicy: $dnsPolicy,\n  enableServiceLinks: $enableServiceLinks,\n  ephemeralContainers: $ephemeralContainers,\n  hostAliases: $hostAliases,\n  hostIpc: $hostIpc,\n  hostNetwork: $hostNetwork,\n  hostPid: $hostPid,\n  hostUsers: $hostUsers,\n  hostname: $hostname,\n  hostnameOverride: $hostnameOverride,\n  imagePullSecrets: $imagePullSecrets,\n  initContainers: $initContainers,\n  nodeName: $nodeName,\n  nodeSelector: $nodeSelector,\n  os: $os,\n  overhead: $overhead,\n  preemptionPolicy: $preemptionPolicy,\n  priority: $priority,\n  priorityClassName: $priorityClassName,\n  readinessGates: $readinessGates,\n  resourceClaims: $resourceClaims,\n  resources: $resources,\n  restartPolicy: $restartPolicy,\n  runtimeClassName: $runtimeClassName,\n  schedulerName: $schedulerName,\n  schedulingGates: $schedulingGates,\n  securityContext: $securityContext,\n  serviceAccount: $serviceAccount,\n  serviceAccountName: $serviceAccountName,\n  setHostnameAsFqdn: $setHostnameAsFqdn,\n  shareProcessNamespace: $shareProcessNamespace,\n  subdomain: $subdomain,\n  terminationGracePeriodSeconds: $terminationGracePeriodSeconds,\n  tolerations: $tolerations,\n  topologySpreadConstraints: $topologySpreadConstraints,\n  volumes: $volumes,\n  workloadRef: $workloadRef,\n)';
 
- }
+}

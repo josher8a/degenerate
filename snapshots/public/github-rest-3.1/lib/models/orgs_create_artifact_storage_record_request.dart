@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the artifact (e.g., active, inactive).
 sealed class OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus();
 
-factory OrgsCreateArtifactStorageRecordRequestStatus.fromJson(String json) { return switch (json) {
+factory OrgsCreateArtifactStorageRecordRequestStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'eol' => eol,
   'deleted' => deleted,
   _ => OrgsCreateArtifactStorageRecordRequestStatus$Unknown(json),
-}; }
+};}
 
 static const OrgsCreateArtifactStorageRecordRequestStatus active = OrgsCreateArtifactStorageRecordRequestStatus$active._();
 
@@ -20,33 +20,33 @@ static const OrgsCreateArtifactStorageRecordRequestStatus deleted = OrgsCreateAr
 static const List<OrgsCreateArtifactStorageRecordRequestStatus> values = [active, eol, deleted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'eol' => 'eol',
   'deleted' => 'deleted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OrgsCreateArtifactStorageRecordRequestStatus$Unknown; } 
+bool get isUnknown {return this is OrgsCreateArtifactStorageRecordRequestStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() eol, required W Function() deleted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() eol, required W Function() deleted, required W Function(String value) $unknown, }) {return switch (this) {
       OrgsCreateArtifactStorageRecordRequestStatus$active() => active(),
       OrgsCreateArtifactStorageRecordRequestStatus$eol() => eol(),
       OrgsCreateArtifactStorageRecordRequestStatus$deleted() => deleted(),
       OrgsCreateArtifactStorageRecordRequestStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? eol, W Function()? deleted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? eol, W Function()? deleted, W Function(String value)? $unknown, }) {return switch (this) {
       OrgsCreateArtifactStorageRecordRequestStatus$active() => active != null ? active() : orElse(value),
       OrgsCreateArtifactStorageRecordRequestStatus$eol() => eol != null ? eol() : orElse(value),
       OrgsCreateArtifactStorageRecordRequestStatus$deleted() => deleted != null ? deleted() : orElse(value),
       OrgsCreateArtifactStorageRecordRequestStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OrgsCreateArtifactStorageRecordRequestStatus($value)';
 
- }
+}
 @immutable final class OrgsCreateArtifactStorageRecordRequestStatus$active extends OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus$active._();
 
 @override String get value => 'active';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class OrgsCreateArtifactStorageRecordRequestStatus$eol extends OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus$eol._();
 
 @override String get value => 'eol';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'eol'.hashCode;
 
- }
+}
 @immutable final class OrgsCreateArtifactStorageRecordRequestStatus$deleted extends OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus$deleted._();
 
 @override String get value => 'deleted';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'deleted'.hashCode;
 
- }
+}
 @immutable final class OrgsCreateArtifactStorageRecordRequestStatus$Unknown extends OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,10 +83,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class OrgsCreateArtifactStorageRecordRequest {const OrgsCreateArtifactStorageRecordRequest({required this.name, required this.digest, required this.registryUrl, this.version, this.artifactUrl, this.path, this.repository, this.status, this.githubRepository, });
 
-factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactStorageRecordRequest(
+factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> json) {return OrgsCreateArtifactStorageRecordRequest(
   name: json['name'] as String,
   digest: json['digest'] as String,
   version: json['version'] as String?,
@@ -96,7 +96,7 @@ factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> jso
   repository: json['repository'] as String?,
   status: json['status'] != null ? OrgsCreateArtifactStorageRecordRequestStatus.fromJson(json['status'] as String) : null,
   githubRepository: json['github_repository'] as String?,
-); }
+);}
 
 /// The name of the artifact.
 final String name;
@@ -133,7 +133,7 @@ final String? githubRepository;
 /// The value of `status`, or its schema default when absent.
 OrgsCreateArtifactStorageRecordRequestStatus get statusOrDefault => status ?? OrgsCreateArtifactStorageRecordRequestStatus.fromJson('active');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'digest': digest,
   'version': ?version,
@@ -143,12 +143,12 @@ Map<String, dynamic> toJson() { return {
   'repository': ?repository,
   if (status != null) 'status': status?.toJson(),
   'github_repository': ?githubRepository,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('digest') && json['digest'] is String &&
-      json.containsKey('registry_url') && json['registry_url'] is String; } 
+      json.containsKey('registry_url') && json['registry_url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 if (name.runes.length > 256) { errors.add('name: length must be <= 256'); }
 if (digest.runes.length < 71) { errors.add('digest: length must be >= 71'); }
@@ -168,8 +168,8 @@ if (githubRepository$ != null) {
   if (githubRepository$.runes.length > 100) { errors.add('githubRepository: length must be <= 100'); }
   if (!RegExp(r'^[A-Za-z0-9.\-_]+$').hasMatch(githubRepository$)) { errors.add(r'githubRepository: must match pattern ^[A-Za-z0-9.\-_]+$'); }
 }
-return errors; } 
-OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, String? Function()? version, Uri? Function()? artifactUrl, Uri? Function()? path, Uri? registryUrl, String? Function()? repository, OrgsCreateArtifactStorageRecordRequestStatus? Function()? status, String? Function()? githubRepository, }) { return OrgsCreateArtifactStorageRecordRequest(
+return errors;}
+OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, String? Function()? version, Uri? Function()? artifactUrl, Uri? Function()? path, Uri? registryUrl, String? Function()? repository, OrgsCreateArtifactStorageRecordRequestStatus? Function()? status, String? Function()? githubRepository, }) {return OrgsCreateArtifactStorageRecordRequest(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,
@@ -179,7 +179,7 @@ OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, S
   repository: repository != null ? repository() : this.repository,
   status: status != null ? status() : this.status,
   githubRepository: githubRepository != null ? githubRepository() : this.githubRepository,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateArtifactStorageRecordRequest &&
           name == other.name &&
@@ -196,4 +196,4 @@ OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, S
 
 @override String toString() => 'OrgsCreateArtifactStorageRecordRequest(\n  name: $name,\n  digest: $digest,\n  version: $version,\n  artifactUrl: $artifactUrl,\n  path: $path,\n  registryUrl: $registryUrl,\n  repository: $repository,\n  status: $status,\n  githubRepository: $githubRepository,\n)';
 
- }
+}

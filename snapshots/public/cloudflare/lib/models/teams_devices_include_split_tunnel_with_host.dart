@@ -10,10 +10,10 @@ String toJson() => value;
 }
 @immutable final class TeamsDevicesIncludeSplitTunnelWithHost {const TeamsDevicesIncludeSplitTunnelWithHost({required this.host, this.description, });
 
-factory TeamsDevicesIncludeSplitTunnelWithHost.fromJson(Map<String, dynamic> json) { return TeamsDevicesIncludeSplitTunnelWithHost(
+factory TeamsDevicesIncludeSplitTunnelWithHost.fromJson(Map<String, dynamic> json) {return TeamsDevicesIncludeSplitTunnelWithHost(
   description: json['description'] != null ? TeamsDevicesIncludeSplitTunnelDescription.fromJson(json['description'] as String) : null,
   host: TeamsDevicesIncludeSplitTunnelHost.fromJson(json['host'] as String),
-); }
+);}
 
 /// A description of the Split Tunnel item, displayed in the client UI.
 final TeamsDevicesIncludeSplitTunnelDescription? description;
@@ -21,15 +21,15 @@ final TeamsDevicesIncludeSplitTunnelDescription? description;
 /// The domain name to include in the tunnel. If `host` is present, `address` must not be present.
 final TeamsDevicesIncludeSplitTunnelHost host;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   'host': host.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host'); } 
-TeamsDevicesIncludeSplitTunnelWithHost copyWith({TeamsDevicesIncludeSplitTunnelDescription? Function()? description, TeamsDevicesIncludeSplitTunnelHost? host, }) { return TeamsDevicesIncludeSplitTunnelWithHost(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host');}
+TeamsDevicesIncludeSplitTunnelWithHost copyWith({TeamsDevicesIncludeSplitTunnelDescription? Function()? description, TeamsDevicesIncludeSplitTunnelHost? host, }) {return TeamsDevicesIncludeSplitTunnelWithHost(
   description: description != null ? description() : this.description,
   host: host ?? this.host,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIncludeSplitTunnelWithHost &&
           description == other.description &&
@@ -39,4 +39,4 @@ TeamsDevicesIncludeSplitTunnelWithHost copyWith({TeamsDevicesIncludeSplitTunnelD
 
 @override String toString() => 'TeamsDevicesIncludeSplitTunnelWithHost(description: $description, host: $host)';
 
- }
+}

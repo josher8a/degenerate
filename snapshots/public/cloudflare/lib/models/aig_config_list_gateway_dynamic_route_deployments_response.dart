@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_route_deployments_response/aig_config_list_gateway_dynamic_route_deployments_response_data.dart';@immutable final class AigConfigListGatewayDynamicRouteDeploymentsResponse {const AigConfigListGatewayDynamicRouteDeploymentsResponse({required this.data, required this.success, });
 
-factory AigConfigListGatewayDynamicRouteDeploymentsResponse.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRouteDeploymentsResponse(
+factory AigConfigListGatewayDynamicRouteDeploymentsResponse.fromJson(Map<String, dynamic> json) {return AigConfigListGatewayDynamicRouteDeploymentsResponse(
   data: AigConfigListGatewayDynamicRouteDeploymentsResponseData.fromJson(json['data'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final AigConfigListGatewayDynamicRouteDeploymentsResponseData data;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigListGatewayDynamicRouteDeploymentsResponse copyWith({AigConfigListGatewayDynamicRouteDeploymentsResponseData? data, bool? success, }) { return AigConfigListGatewayDynamicRouteDeploymentsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigListGatewayDynamicRouteDeploymentsResponse copyWith({AigConfigListGatewayDynamicRouteDeploymentsResponseData? data, bool? success, }) {return AigConfigListGatewayDynamicRouteDeploymentsResponse(
   data: data ?? this.data,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListGatewayDynamicRouteDeploymentsResponse &&
           data == other.data &&
@@ -31,4 +31,4 @@ AigConfigListGatewayDynamicRouteDeploymentsResponse copyWith({AigConfigListGatew
 
 @override String toString() => 'AigConfigListGatewayDynamicRouteDeploymentsResponse(data: $data, success: $success)';
 
- }
+}

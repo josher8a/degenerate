@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_description.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_enabled.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_interval.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_name.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_target_policy.dart';@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest {const DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest({required this.data, required this.enabled, required this.interval, required this.name, this.description, this.targetPolicies, this.targeted, });
 
-factory DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest(
+factory DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest(
   data: DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(json['data'] as Map<String, dynamic>),
   description: json['description'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasDescription.fromJson(json['description'] as String) : null,
   enabled: DigitalExperienceMonitoringDeviceDexTestSchemasEnabled.fromJson(json['enabled'] as bool),
@@ -11,7 +11,7 @@ factory DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest.fromJson(Map<
   name: DigitalExperienceMonitoringDeviceDexTestSchemasName.fromJson(json['name'] as String),
   targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDexTargetPolicy.fromJson(e as Map<String, dynamic>)).toList(),
   targeted: json['targeted'] as bool?,
-); }
+);}
 
 final DigitalExperienceMonitoringDeviceDexTestSchemasData data;
 
@@ -32,7 +32,7 @@ final List<DigitalExperienceMonitoringDexTargetPolicy>? targetPolicies;
 
 final bool? targeted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.toJson(),
   if (description != null) 'description': description?.toJson(),
   'enabled': enabled.toJson(),
@@ -40,12 +40,12 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
   if (targetPolicies != null) 'target_policies': targetPolicies?.map((e) => e.toJson()).toList(),
   'targeted': ?targeted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('enabled') &&
       json.containsKey('interval') &&
-      json.containsKey('name'); } 
-DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest copyWith({DigitalExperienceMonitoringDeviceDexTestSchemasData? data, DigitalExperienceMonitoringDeviceDexTestSchemasDescription? Function()? description, DigitalExperienceMonitoringDeviceDexTestSchemasEnabled? enabled, DigitalExperienceMonitoringDeviceDexTestSchemasInterval? interval, DigitalExperienceMonitoringDeviceDexTestSchemasName? name, List<DigitalExperienceMonitoringDexTargetPolicy>? Function()? targetPolicies, bool? Function()? targeted, }) { return DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest(
+      json.containsKey('name');}
+DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest copyWith({DigitalExperienceMonitoringDeviceDexTestSchemasData? data, DigitalExperienceMonitoringDeviceDexTestSchemasDescription? Function()? description, DigitalExperienceMonitoringDeviceDexTestSchemasEnabled? enabled, DigitalExperienceMonitoringDeviceDexTestSchemasInterval? interval, DigitalExperienceMonitoringDeviceDexTestSchemasName? name, List<DigitalExperienceMonitoringDexTargetPolicy>? Function()? targetPolicies, bool? Function()? targeted, }) {return DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest(
   data: data ?? this.data,
   description: description != null ? description() : this.description,
   enabled: enabled ?? this.enabled,
@@ -53,7 +53,7 @@ DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest copyWith({DigitalExpe
   name: name ?? this.name,
   targetPolicies: targetPolicies != null ? targetPolicies() : this.targetPolicies,
   targeted: targeted != null ? targeted() : this.targeted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest &&
           data == other.data &&
@@ -68,4 +68,4 @@ DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest copyWith({DigitalExpe
 
 @override String toString() => 'DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest(data: $data, description: $description, enabled: $enabled, interval: $interval, name: $name, targetPolicies: $targetPolicies, targeted: $targeted)';
 
- }
+}

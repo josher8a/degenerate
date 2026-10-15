@@ -4,22 +4,22 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters of Cloud Connector Rule
 @immutable final class CloudConnectorRuleParameters {const CloudConnectorRuleParameters({this.host});
 
-factory CloudConnectorRuleParameters.fromJson(Map<String, dynamic> json) { return CloudConnectorRuleParameters(
+factory CloudConnectorRuleParameters.fromJson(Map<String, dynamic> json) {return CloudConnectorRuleParameters(
   host: json['host'] as String?,
-); }
+);}
 
 /// Host to perform Cloud Connection to
 /// 
 /// Example: `'examplebucket.s3.eu-north-1.amazonaws.com'`
 final String? host;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': ?host,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host'}.contains(key)); } 
-CloudConnectorRuleParameters copyWith({String? Function()? host}) { return CloudConnectorRuleParameters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'host'}.contains(key));}
+CloudConnectorRuleParameters copyWith({String? Function()? host}) {return CloudConnectorRuleParameters(
   host: host != null ? host() : this.host,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudConnectorRuleParameters &&
           host == other.host;
@@ -28,4 +28,4 @@ CloudConnectorRuleParameters copyWith({String? Function()? host}) { return Cloud
 
 @override String toString() => 'CloudConnectorRuleParameters(host: $host)';
 
- }
+}

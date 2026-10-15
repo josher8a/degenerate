@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_project_edited/webhook_project_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_project.dart';@immutable final class WebhookProjectEdited {const WebhookProjectEdited({required this.action, required this.project, this.changes, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
-factory WebhookProjectEdited.fromJson(Map<String, dynamic> json) { return WebhookProjectEdited(
+factory WebhookProjectEdited.fromJson(Map<String, dynamic> json) {return WebhookProjectEdited(
   action: ItemEditedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? WebhookProjectEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory WebhookProjectEdited.fromJson(Map<String, dynamic> json) { return Webhoo
   project: WebhooksProject.fromJson(json['project'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final ItemEditedAction action;
 
@@ -31,7 +31,7 @@ final RepositoryWebhooks? repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (changes != null) 'changes': changes?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -40,10 +40,10 @@ Map<String, dynamic> toJson() { return {
   'project': project.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
-      json.containsKey('project'); } 
-WebhookProjectEdited copyWith({ItemEditedAction? action, WebhookProjectEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProject? project, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookProjectEdited(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
+      json.containsKey('project');}
+WebhookProjectEdited copyWith({ItemEditedAction? action, WebhookProjectEditedChanges? Function()? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProject? project, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) {return WebhookProjectEdited(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -52,7 +52,7 @@ WebhookProjectEdited copyWith({ItemEditedAction? action, WebhookProjectEditedCha
   project: project ?? this.project,
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectEdited &&
           action == other.action &&
@@ -68,4 +68,4 @@ WebhookProjectEdited copyWith({ItemEditedAction? action, WebhookProjectEditedCha
 
 @override String toString() => 'WebhookProjectEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, project: $project, repository: $repository, sender: $sender)';
 
- }
+}

@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ChatCompletionList {const ChatCompletionList({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
-factory ChatCompletionList.fromJson(Map<String, dynamic> json) { return ChatCompletionList(
+factory ChatCompletionList.fromJson(Map<String, dynamic> json) {return ChatCompletionList(
   object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => CreateChatCompletionResponse.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
   hasMore: json['has_more'] as bool,
-); }
+);}
 
 /// The type of this object. It is always set to "list".
 /// 
@@ -30,25 +30,25 @@ final String lastId;
 /// Indicates whether there are more Chat Completions available.
 final bool hasMore;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
   'first_id': firstId,
   'last_id': lastId,
   'has_more': hasMore,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
-      json.containsKey('has_more') && json['has_more'] is bool; } 
-ChatCompletionList copyWith({ChatCompletionListObject? object, List<CreateChatCompletionResponse>? data, String? firstId, String? lastId, bool? hasMore, }) { return ChatCompletionList(
+      json.containsKey('has_more') && json['has_more'] is bool;}
+ChatCompletionList copyWith({ChatCompletionListObject? object, List<CreateChatCompletionResponse>? data, String? firstId, String? lastId, bool? hasMore, }) {return ChatCompletionList(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,
   lastId: lastId ?? this.lastId,
   hasMore: hasMore ?? this.hasMore,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionList &&
           object == other.object &&
@@ -61,4 +61,4 @@ ChatCompletionList copyWith({ChatCompletionListObject? object, List<CreateChatCo
 
 @override String toString() => 'ChatCompletionList(object: $object, data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)';
 
- }
+}

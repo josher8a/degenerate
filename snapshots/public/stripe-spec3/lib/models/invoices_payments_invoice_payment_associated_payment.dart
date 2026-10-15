@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_record.dart';/// Type of payment object associated with this invoice payment.
 sealed class InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType();
 
-factory InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(String json) { return switch (json) {
+factory InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(String json) {return switch (json) {
   'charge' => charge,
   'payment_intent' => paymentIntent,
   'payment_record' => paymentRecord,
   _ => InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown(json),
-}; }
+};}
 
 static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType charge = InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge._();
 
@@ -20,33 +20,33 @@ static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType paymentRecord =
 static const List<InvoicesPaymentsInvoicePaymentAssociatedPaymentType> values = [charge, paymentIntent, paymentRecord];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'charge' => 'charge',
   'payment_intent' => 'paymentIntent',
   'payment_record' => 'paymentRecord',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown; } 
+bool get isUnknown {return this is InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() charge, required W Function() paymentIntent, required W Function() paymentRecord, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() charge, required W Function() paymentIntent, required W Function() paymentRecord, required W Function(String value) $unknown, }) {return switch (this) {
       InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge() => charge(),
       InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentIntent() => paymentIntent(),
       InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentRecord() => paymentRecord(),
       InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, W Function()? paymentIntent, W Function()? paymentRecord, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, W Function()? paymentIntent, W Function()? paymentRecord, W Function(String value)? $unknown, }) {return switch (this) {
       InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge() => charge != null ? charge() : orElse(value),
       InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentIntent() => paymentIntent != null ? paymentIntent() : orElse(value),
       InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentRecord() => paymentRecord != null ? paymentRecord() : orElse(value),
       InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoicesPaymentsInvoicePaymentAssociatedPaymentType($value)';
 
- }
+}
 @immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge extends InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge._();
 
 @override String get value => 'charge';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => 'charge'.hashCode;
 
- }
+}
 @immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentIntent extends InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentIntent._();
 
 @override String get value => 'payment_intent';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => 'payment_intent'.hashCode;
 
- }
+}
 @immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentRecord extends InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentRecord._();
 
 @override String get value => 'payment_record';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => 'payment_record'.hashCode;
 
- }
+}
 @immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown extends InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown(this.value);
 
 @override final String value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class InvoicesPaymentsInvoicePaymentAssociatedPayment {const InvoicesPaymentsInvoicePaymentAssociatedPayment({required this.type, this.charge, this.paymentIntent, this.paymentRecord, });
 
-factory InvoicesPaymentsInvoicePaymentAssociatedPayment.fromJson(Map<String, dynamic> json) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
+factory InvoicesPaymentsInvoicePaymentAssociatedPayment.fromJson(Map<String, dynamic> json) {return InvoicesPaymentsInvoicePaymentAssociatedPayment(
   charge: json['charge'] != null ? ApplicationFeeCharge.fromJson(json['charge']) : null,
   paymentIntent: json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent']) : null,
   paymentRecord: json['payment_record'] != null ? InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord.fromJson(json['payment_record']) : null,
   type: InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(json['type'] as String),
-); }
+);}
 
 /// ID of the successful charge for this payment when `type` is `charge`.Note: charge is only surfaced if the charge object is not associated with a payment intent. If the charge object does have a payment intent, the Invoice Payment surfaces the payment intent instead.
 final ApplicationFeeCharge? charge;
@@ -106,19 +106,19 @@ final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord? paymentRecor
 /// Type of payment object associated with this invoice payment.
 final InvoicesPaymentsInvoicePaymentAssociatedPaymentType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (charge != null) 'charge': charge?.toJson(),
   if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
   if (paymentRecord != null) 'payment_record': paymentRecord?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({ApplicationFeeCharge? Function()? charge, ChargePaymentIntent? Function()? paymentIntent, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord? Function()? paymentRecord, InvoicesPaymentsInvoicePaymentAssociatedPaymentType? type, }) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({ApplicationFeeCharge? Function()? charge, ChargePaymentIntent? Function()? paymentIntent, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord? Function()? paymentRecord, InvoicesPaymentsInvoicePaymentAssociatedPaymentType? type, }) {return InvoicesPaymentsInvoicePaymentAssociatedPayment(
   charge: charge != null ? charge() : this.charge,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesPaymentsInvoicePaymentAssociatedPayment &&
           charge == other.charge &&
@@ -130,4 +130,4 @@ InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({ApplicationFeeCharge? 
 
 @override String toString() => 'InvoicesPaymentsInvoicePaymentAssociatedPayment(charge: $charge, paymentIntent: $paymentIntent, paymentRecord: $paymentRecord, type: $type)';
 
- }
+}

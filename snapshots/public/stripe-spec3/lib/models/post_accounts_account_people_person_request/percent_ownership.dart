@@ -7,11 +7,11 @@ const PercentOwnership({this.$double = const Omittable.absent(), this.getPayment
 const PercentOwnership._({required this.rawValue, required this.$double, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PercentOwnership.fromJson(Object? json) { return PercentOwnership._(
+factory PercentOwnership.fromJson(Object? json) {return PercentOwnership._(
   rawValue: Omittable(json),
   $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PercentOwnership(${toJson()})';
 
- }
+}

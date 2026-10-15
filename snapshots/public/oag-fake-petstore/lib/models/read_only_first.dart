@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReadOnlyFirst {const ReadOnlyFirst({this.bar, this.baz, });
 
-factory ReadOnlyFirst.fromJson(Map<String, dynamic> json) { return ReadOnlyFirst(
+factory ReadOnlyFirst.fromJson(Map<String, dynamic> json) {return ReadOnlyFirst(
   bar: json['bar'] as String?,
   baz: json['baz'] as String?,
-); }
+);}
 
 final String? bar;
 
 final String? baz;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bar': ?bar,
   'baz': ?baz,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bar', 'baz'}.contains(key)); } 
-ReadOnlyFirst copyWith({String? Function()? bar, String? Function()? baz, }) { return ReadOnlyFirst(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bar', 'baz'}.contains(key));}
+ReadOnlyFirst copyWith({String? Function()? bar, String? Function()? baz, }) {return ReadOnlyFirst(
   bar: bar != null ? bar() : this.bar,
   baz: baz != null ? baz() : this.baz,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReadOnlyFirst &&
           bar == other.bar &&
@@ -30,4 +30,4 @@ ReadOnlyFirst copyWith({String? Function()? bar, String? Function()? baz, }) { r
 
 @override String toString() => 'ReadOnlyFirst(bar: $bar, baz: $baz)';
 
- }
+}

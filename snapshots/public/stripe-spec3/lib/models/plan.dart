@@ -11,7 +11,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// Related guides: [Set up a subscription](https://docs.stripe.com/billing/subscriptions/set-up-subscription) and more about [products and prices](https://docs.stripe.com/products-prices/overview).
 @immutable final class Plan {const Plan({required this.active, required this.billingScheme, required this.created, required this.currency, required this.id, required this.interval, required this.intervalCount, required this.livemode, required this.object, required this.usageType, this.amount = const Omittable.absent(), this.amountDecimal = const Omittable.absent(), this.metadata = const Omittable.absent(), this.meter = const Omittable.absent(), this.nickname = const Omittable.absent(), this.product = const Omittable.absent(), this.tiers, this.tiersMode = const Omittable.absent(), this.transformUsage = const Omittable.absent(), this.trialPeriodDays = const Omittable.absent(), });
 
-factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
+factory Plan.fromJson(Map<String, dynamic> json) {return Plan(
   active: json['active'] as bool,
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   amountDecimal: json.containsKey('amount_decimal') ? Omittable(json['amount_decimal'] as String?) : const Omittable.absent(),
@@ -32,7 +32,7 @@ factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   transformUsage: json.containsKey('transform_usage') ? Omittable(json['transform_usage'] != null ? TransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   trialPeriodDays: json.containsKey('trial_period_days') ? Omittable(json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null) : const Omittable.absent(),
   usageType: UsageType.fromJson(json['usage_type'] as String),
-); }
+);}
 
 /// Whether the plan can be used for new purchases.
 final bool active;
@@ -94,7 +94,7 @@ final Omittable<int?> trialPeriodDays;
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
 final UsageType usageType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   if (amount.isPresent) 'amount': amount.value,
   if (amountDecimal.isPresent) 'amount_decimal': amountDecimal.value,
@@ -115,8 +115,8 @@ Map<String, dynamic> toJson() { return {
   if (transformUsage.isPresent) 'transform_usage': transformUsage.value?.toJson(),
   if (trialPeriodDays.isPresent) 'trial_period_days': trialPeriodDays.value,
   'usage_type': usageType.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('billing_scheme') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -125,9 +125,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('interval_count') && json['interval_count'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
-      json.containsKey('usage_type'); } 
+      json.containsKey('usage_type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final meter$ = meter.value;
 if (meter$ != null) {
@@ -137,8 +137,8 @@ final nickname$ = nickname.value;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
-return errors; } 
-Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amountDecimal, BillingScheme? billingScheme, int? created, String? currency, String? id, GetPricesRecurringInterval? interval, int? intervalCount, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? meter, Omittable<String?>? nickname, DeletedPlanObject? object, Omittable<PlanProduct?>? product, List<PlanTier>? Function()? tiers, Omittable<PlanTiersMode?>? tiersMode, Omittable<TransformUsage?>? transformUsage, Omittable<int?>? trialPeriodDays, UsageType? usageType, }) { return Plan(
+return errors;}
+Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amountDecimal, BillingScheme? billingScheme, int? created, String? currency, String? id, GetPricesRecurringInterval? interval, int? intervalCount, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? meter, Omittable<String?>? nickname, DeletedPlanObject? object, Omittable<PlanProduct?>? product, List<PlanTier>? Function()? tiers, Omittable<PlanTiersMode?>? tiersMode, Omittable<TransformUsage?>? transformUsage, Omittable<int?>? trialPeriodDays, UsageType? usageType, }) {return Plan(
   active: active ?? this.active,
   amount: amount ?? this.amount,
   amountDecimal: amountDecimal ?? this.amountDecimal,
@@ -159,7 +159,7 @@ Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amount
   transformUsage: transformUsage ?? this.transformUsage,
   trialPeriodDays: trialPeriodDays ?? this.trialPeriodDays,
   usageType: usageType ?? this.usageType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Plan &&
           active == other.active &&
@@ -187,4 +187,4 @@ Plan copyWith({bool? active, Omittable<int?>? amount, Omittable<String?>? amount
 
 @override String toString() => 'Plan(\n  active: $active,\n  amount: $amount,\n  amountDecimal: $amountDecimal,\n  billingScheme: $billingScheme,\n  created: $created,\n  currency: $currency,\n  id: $id,\n  interval: $interval,\n  intervalCount: $intervalCount,\n  livemode: $livemode,\n  metadata: $metadata,\n  meter: $meter,\n  nickname: $nickname,\n  object: $object,\n  product: $product,\n  tiers: $tiers,\n  tiersMode: $tiersMode,\n  transformUsage: $transformUsage,\n  trialPeriodDays: $trialPeriodDays,\n  usageType: $usageType,\n)';
 
- }
+}

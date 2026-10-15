@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_future_requirements/account_future_requirements_disabled_reason.dart';import 'package:pub_stripe_spec3/models/account_requirements_alternative.dart';import 'package:pub_stripe_spec3/models/account_requirements_error.dart';/// 
 @immutable final class AccountRequirements {const AccountRequirements({this.alternatives = const Omittable.absent(), this.currentDeadline = const Omittable.absent(), this.currentlyDue = const Omittable.absent(), this.disabledReason = const Omittable.absent(), this.errors = const Omittable.absent(), this.eventuallyDue = const Omittable.absent(), this.pastDue = const Omittable.absent(), this.pendingVerification = const Omittable.absent(), });
 
-factory AccountRequirements.fromJson(Map<String, dynamic> json) { return AccountRequirements(
+factory AccountRequirements.fromJson(Map<String, dynamic> json) {return AccountRequirements(
   alternatives: json.containsKey('alternatives') ? Omittable((json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   currentDeadline: json.containsKey('current_deadline') ? Omittable(json['current_deadline'] != null ? (json['current_deadline'] as num).toInt() : null) : const Omittable.absent(),
   currentlyDue: json.containsKey('currently_due') ? Omittable((json['currently_due'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
@@ -13,7 +13,7 @@ factory AccountRequirements.fromJson(Map<String, dynamic> json) { return Account
   eventuallyDue: json.containsKey('eventually_due') ? Omittable((json['eventually_due'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   pastDue: json.containsKey('past_due') ? Omittable((json['past_due'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   pendingVerification: json.containsKey('pending_verification') ? Omittable((json['pending_verification'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
-); }
+);}
 
 /// Fields that are due and can be resolved by providing the corresponding alternative fields instead. Many alternatives can list the same `original_fields_due`, and any of these alternatives can serve as a pathway for attempting to resolve the fields again. Re-providing `original_fields_due` also serves as a pathway for attempting to resolve the fields again.
 final Omittable<List<AccountRequirementsAlternative>?> alternatives;
@@ -39,7 +39,7 @@ final Omittable<List<String>?> pastDue;
 /// Fields that are being reviewed, or might become required depending on the results of a review. If the review fails, these fields can move to `eventually_due`, `currently_due`, `past_due` or `alternatives`. Fields might appear in `eventually_due`, `currently_due`, `past_due` or `alternatives` and in `pending_verification` if one verification fails but another is still pending.
 final Omittable<List<String>?> pendingVerification;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (alternatives.isPresent) 'alternatives': alternatives.value?.map((e) => e.toJson()).toList(),
   if (currentDeadline.isPresent) 'current_deadline': currentDeadline.value,
   if (currentlyDue.isPresent) 'currently_due': currentlyDue.value,
@@ -48,9 +48,9 @@ Map<String, dynamic> toJson() { return {
   if (eventuallyDue.isPresent) 'eventually_due': eventuallyDue.value,
   if (pastDue.isPresent) 'past_due': pastDue.value,
   if (pendingVerification.isPresent) 'pending_verification': pendingVerification.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alternatives', 'current_deadline', 'currently_due', 'disabled_reason', 'errors', 'eventually_due', 'past_due', 'pending_verification'}.contains(key)); } 
-AccountRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? alternatives, Omittable<int?>? currentDeadline, Omittable<List<String>?>? currentlyDue, Omittable<AccountFutureRequirementsDisabledReason?>? disabledReason, Omittable<List<AccountRequirementsError>?>? errors, Omittable<List<String>?>? eventuallyDue, Omittable<List<String>?>? pastDue, Omittable<List<String>?>? pendingVerification, }) { return AccountRequirements(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'alternatives', 'current_deadline', 'currently_due', 'disabled_reason', 'errors', 'eventually_due', 'past_due', 'pending_verification'}.contains(key));}
+AccountRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? alternatives, Omittable<int?>? currentDeadline, Omittable<List<String>?>? currentlyDue, Omittable<AccountFutureRequirementsDisabledReason?>? disabledReason, Omittable<List<AccountRequirementsError>?>? errors, Omittable<List<String>?>? eventuallyDue, Omittable<List<String>?>? pastDue, Omittable<List<String>?>? pendingVerification, }) {return AccountRequirements(
   alternatives: alternatives ?? this.alternatives,
   currentDeadline: currentDeadline ?? this.currentDeadline,
   currentlyDue: currentlyDue ?? this.currentlyDue,
@@ -59,7 +59,7 @@ AccountRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? 
   eventuallyDue: eventuallyDue ?? this.eventuallyDue,
   pastDue: pastDue ?? this.pastDue,
   pendingVerification: pendingVerification ?? this.pendingVerification,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRequirements &&
           alternatives.isPresent == other.alternatives.isPresent &&
@@ -81,4 +81,4 @@ AccountRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? 
 
 @override String toString() => 'AccountRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)';
 
- }
+}

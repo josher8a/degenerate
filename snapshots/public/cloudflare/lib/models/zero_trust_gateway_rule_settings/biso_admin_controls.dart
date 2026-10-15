@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
 sealed class Copy {const Copy();
 
-factory Copy.fromJson(String json) { return switch (json) {
+factory Copy.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
   _ => Copy$Unknown(json),
-}; }
+};}
 
 static const Copy enabled = Copy$enabled._();
 
@@ -20,33 +20,33 @@ static const Copy remoteOnly = Copy$remoteOnly._();
 static const List<Copy> values = [enabled, disabled, remoteOnly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   'remote_only' => 'remoteOnly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Copy$Unknown; } 
+bool get isUnknown {return this is Copy$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) {return switch (this) {
       Copy$enabled() => enabled(),
       Copy$disabled() => disabled(),
       Copy$remoteOnly() => remoteOnly(),
       Copy$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) {return switch (this) {
       Copy$enabled() => enabled != null ? enabled() : orElse(value),
       Copy$disabled() => disabled != null ? disabled() : orElse(value),
       Copy$remoteOnly() => remoteOnly != null ? remoteOnly() : orElse(value),
       Copy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Copy($value)';
 
- }
+}
 @immutable final class Copy$enabled extends Copy {const Copy$enabled._();
 
 @override String get value => 'enabled';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class Copy$disabled extends Copy {const Copy$disabled._();
 
 @override String get value => 'disabled';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class Copy$remoteOnly extends Copy {const Copy$remoteOnly._();
 
 @override String get value => 'remote_only';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'remote_only'.hashCode;
 
- }
+}
 @immutable final class Copy$Unknown extends Copy {const Copy$Unknown(this.value);
 
 @override final String value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure download behavior. When set to remote_only, users can view downloads but cannot save them. Applies only when version == "v2".
 sealed class Download {const Download();
 
-factory Download.fromJson(String json) { return switch (json) {
+factory Download.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
   _ => Download$Unknown(json),
-}; }
+};}
 
 static const Download enabled = Download$enabled._();
 
@@ -103,33 +103,33 @@ static const Download remoteOnly = Download$remoteOnly._();
 static const List<Download> values = [enabled, disabled, remoteOnly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   'remote_only' => 'remoteOnly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Download$Unknown; } 
+bool get isUnknown {return this is Download$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) {return switch (this) {
       Download$enabled() => enabled(),
       Download$disabled() => disabled(),
       Download$remoteOnly() => remoteOnly(),
       Download$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) {return switch (this) {
       Download$enabled() => enabled != null ? enabled() : orElse(value),
       Download$disabled() => disabled != null ? disabled() : orElse(value),
       Download$remoteOnly() => remoteOnly != null ? remoteOnly() : orElse(value),
       Download$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Download($value)';
 
- }
+}
 @immutable final class Download$enabled extends Download {const Download$enabled._();
 
 @override String get value => 'enabled';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class Download$disabled extends Download {const Download$disabled._();
 
 @override String get value => 'disabled';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class Download$remoteOnly extends Download {const Download$remoteOnly._();
 
 @override String get value => 'remote_only';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'remote_only'.hashCode;
 
- }
+}
 @immutable final class Download$Unknown extends Download {const Download$Unknown(this.value);
 
 @override final String value;
@@ -166,15 +166,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == "v2".
 sealed class Keyboard {const Keyboard();
 
-factory Keyboard.fromJson(String json) { return switch (json) {
+factory Keyboard.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => Keyboard$Unknown(json),
-}; }
+};}
 
 static const Keyboard enabled = Keyboard$enabled._();
 
@@ -183,30 +183,30 @@ static const Keyboard disabled = Keyboard$disabled._();
 static const List<Keyboard> values = [enabled, disabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Keyboard$Unknown; } 
+bool get isUnknown {return this is Keyboard$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) {return switch (this) {
       Keyboard$enabled() => enabled(),
       Keyboard$disabled() => disabled(),
       Keyboard$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) {return switch (this) {
       Keyboard$enabled() => enabled != null ? enabled() : orElse(value),
       Keyboard$disabled() => disabled != null ? disabled() : orElse(value),
       Keyboard$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Keyboard($value)';
 
- }
+}
 @immutable final class Keyboard$enabled extends Keyboard {const Keyboard$enabled._();
 
 @override String get value => 'enabled';
@@ -215,7 +215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class Keyboard$disabled extends Keyboard {const Keyboard$disabled._();
 
 @override String get value => 'disabled';
@@ -224,7 +224,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class Keyboard$Unknown extends Keyboard {const Keyboard$Unknown(this.value);
 
 @override final String value;
@@ -234,16 +234,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure paste behavior. If set to remote_only, users cannot paste content from the local clipboard into isolated pages. If this field is absent, pasting remains enabled. Applies only when version == "v2".
 sealed class Paste {const Paste();
 
-factory Paste.fromJson(String json) { return switch (json) {
+factory Paste.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
   _ => Paste$Unknown(json),
-}; }
+};}
 
 static const Paste enabled = Paste$enabled._();
 
@@ -254,33 +254,33 @@ static const Paste remoteOnly = Paste$remoteOnly._();
 static const List<Paste> values = [enabled, disabled, remoteOnly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   'remote_only' => 'remoteOnly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Paste$Unknown; } 
+bool get isUnknown {return this is Paste$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) {return switch (this) {
       Paste$enabled() => enabled(),
       Paste$disabled() => disabled(),
       Paste$remoteOnly() => remoteOnly(),
       Paste$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) {return switch (this) {
       Paste$enabled() => enabled != null ? enabled() : orElse(value),
       Paste$disabled() => disabled != null ? disabled() : orElse(value),
       Paste$remoteOnly() => remoteOnly != null ? remoteOnly() : orElse(value),
       Paste$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Paste($value)';
 
- }
+}
 @immutable final class Paste$enabled extends Paste {const Paste$enabled._();
 
 @override String get value => 'enabled';
@@ -289,7 +289,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class Paste$disabled extends Paste {const Paste$disabled._();
 
 @override String get value => 'disabled';
@@ -298,7 +298,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class Paste$remoteOnly extends Paste {const Paste$remoteOnly._();
 
 @override String get value => 'remote_only';
@@ -307,7 +307,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'remote_only'.hashCode;
 
- }
+}
 @immutable final class Paste$Unknown extends Paste {const Paste$Unknown(this.value);
 
 @override final String value;
@@ -317,15 +317,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure print behavior. Default, Printing is enabled. Applies only when version == "v2".
 sealed class Printing {const Printing();
 
-factory Printing.fromJson(String json) { return switch (json) {
+factory Printing.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => Printing$Unknown(json),
-}; }
+};}
 
 static const Printing enabled = Printing$enabled._();
 
@@ -334,30 +334,30 @@ static const Printing disabled = Printing$disabled._();
 static const List<Printing> values = [enabled, disabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Printing$Unknown; } 
+bool get isUnknown {return this is Printing$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) {return switch (this) {
       Printing$enabled() => enabled(),
       Printing$disabled() => disabled(),
       Printing$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) {return switch (this) {
       Printing$enabled() => enabled != null ? enabled() : orElse(value),
       Printing$disabled() => disabled != null ? disabled() : orElse(value),
       Printing$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Printing($value)';
 
- }
+}
 @immutable final class Printing$enabled extends Printing {const Printing$enabled._();
 
 @override String get value => 'enabled';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class Printing$disabled extends Printing {const Printing$disabled._();
 
 @override String get value => 'disabled';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class Printing$Unknown extends Printing {const Printing$Unknown(this.value);
 
 @override final String value;
@@ -385,15 +385,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == "v2".
 sealed class Upload {const Upload();
 
-factory Upload.fromJson(String json) { return switch (json) {
+factory Upload.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   _ => Upload$Unknown(json),
-}; }
+};}
 
 static const Upload enabled = Upload$enabled._();
 
@@ -402,30 +402,30 @@ static const Upload disabled = Upload$disabled._();
 static const List<Upload> values = [enabled, disabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Upload$Unknown; } 
+bool get isUnknown {return this is Upload$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) {return switch (this) {
       Upload$enabled() => enabled(),
       Upload$disabled() => disabled(),
       Upload$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) {return switch (this) {
       Upload$enabled() => enabled != null ? enabled() : orElse(value),
       Upload$disabled() => disabled != null ? disabled() : orElse(value),
       Upload$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Upload($value)';
 
- }
+}
 @immutable final class Upload$enabled extends Upload {const Upload$enabled._();
 
 @override String get value => 'enabled';
@@ -434,7 +434,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class Upload$disabled extends Upload {const Upload$disabled._();
 
 @override String get value => 'disabled';
@@ -443,7 +443,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class Upload$Unknown extends Upload {const Upload$Unknown(this.value);
 
 @override final String value;
@@ -453,15 +453,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Indicate which version of the browser isolation controls should apply.
 sealed class BisoAdminControlsVersion {const BisoAdminControlsVersion();
 
-factory BisoAdminControlsVersion.fromJson(String json) { return switch (json) {
+factory BisoAdminControlsVersion.fromJson(String json) {return switch (json) {
   'v1' => v1,
   'v2' => v2,
   _ => BisoAdminControlsVersion$Unknown(json),
-}; }
+};}
 
 static const BisoAdminControlsVersion v1 = BisoAdminControlsVersion$v1._();
 
@@ -470,30 +470,30 @@ static const BisoAdminControlsVersion v2 = BisoAdminControlsVersion$v2._();
 static const List<BisoAdminControlsVersion> values = [v1, v2];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'v1' => 'v1',
   'v2' => 'v2',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BisoAdminControlsVersion$Unknown; } 
+bool get isUnknown {return this is BisoAdminControlsVersion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() v1, required W Function() v2, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() v1, required W Function() v2, required W Function(String value) $unknown, }) {return switch (this) {
       BisoAdminControlsVersion$v1() => v1(),
       BisoAdminControlsVersion$v2() => v2(),
       BisoAdminControlsVersion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1, W Function()? v2, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1, W Function()? v2, W Function(String value)? $unknown, }) {return switch (this) {
       BisoAdminControlsVersion$v1() => v1 != null ? v1() : orElse(value),
       BisoAdminControlsVersion$v2() => v2 != null ? v2() : orElse(value),
       BisoAdminControlsVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BisoAdminControlsVersion($value)';
 
- }
+}
 @immutable final class BisoAdminControlsVersion$v1 extends BisoAdminControlsVersion {const BisoAdminControlsVersion$v1._();
 
 @override String get value => 'v1';
@@ -502,7 +502,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1, W Fu
 
 @override int get hashCode => 'v1'.hashCode;
 
- }
+}
 @immutable final class BisoAdminControlsVersion$v2 extends BisoAdminControlsVersion {const BisoAdminControlsVersion$v2._();
 
 @override String get value => 'v2';
@@ -511,7 +511,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1, W Fu
 
 @override int get hashCode => 'v2'.hashCode;
 
- }
+}
 @immutable final class BisoAdminControlsVersion$Unknown extends BisoAdminControlsVersion {const BisoAdminControlsVersion$Unknown(this.value);
 
 @override final String value;
@@ -521,11 +521,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.
 @immutable final class BisoAdminControls {const BisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version, });
 
-factory BisoAdminControls.fromJson(Map<String, dynamic> json) { return BisoAdminControls(
+factory BisoAdminControls.fromJson(Map<String, dynamic> json) {return BisoAdminControls(
   copy: json['copy'] != null ? Copy.fromJson(json['copy'] as String) : null,
   dcp: json['dcp'] as bool?,
   dd: json['dd'] as bool?,
@@ -538,7 +538,7 @@ factory BisoAdminControls.fromJson(Map<String, dynamic> json) { return BisoAdmin
   printing: json['printing'] != null ? Printing.fromJson(json['printing'] as String) : null,
   upload: json['upload'] != null ? Upload.fromJson(json['upload'] as String) : null,
   version: json['version'] != null ? BisoAdminControlsVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 /// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
 /// 
@@ -593,7 +593,7 @@ final BisoAdminControlsVersion? version;
 /// The value of `version`, or its schema default when absent.
 BisoAdminControlsVersion get versionOrDefault => version ?? BisoAdminControlsVersion.fromJson('v1');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (copy != null) 'copy': copy?.toJson(),
   'dcp': ?dcp,
   'dd': ?dd,
@@ -606,9 +606,9 @@ Map<String, dynamic> toJson() { return {
   if (printing != null) 'printing': printing?.toJson(),
   if (upload != null) 'upload': upload?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'copy', 'dcp', 'dd', 'dk', 'download', 'dp', 'du', 'keyboard', 'paste', 'printing', 'upload', 'version'}.contains(key)); } 
-BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, Download? Function()? download, bool? Function()? dp, bool? Function()? du, Keyboard? Function()? keyboard, Paste? Function()? paste, Printing? Function()? printing, Upload? Function()? upload, BisoAdminControlsVersion? Function()? version, }) { return BisoAdminControls(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'copy', 'dcp', 'dd', 'dk', 'download', 'dp', 'du', 'keyboard', 'paste', 'printing', 'upload', 'version'}.contains(key));}
+BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, Download? Function()? download, bool? Function()? dp, bool? Function()? du, Keyboard? Function()? keyboard, Paste? Function()? paste, Printing? Function()? printing, Upload? Function()? upload, BisoAdminControlsVersion? Function()? version, }) {return BisoAdminControls(
   copy: copy != null ? copy() : this.copy,
   dcp: dcp != null ? dcp() : this.dcp,
   dd: dd != null ? dd() : this.dd,
@@ -621,7 +621,7 @@ BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool?
   printing: printing != null ? printing() : this.printing,
   upload: upload != null ? upload() : this.upload,
   version: version != null ? version() : this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BisoAdminControls &&
           copy == other.copy &&
@@ -641,4 +641,4 @@ BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool?
 
 @override String toString() => 'BisoAdminControls(\n  copy: $copy,\n  dcp: $dcp,\n  dd: $dd,\n  dk: $dk,\n  download: $download,\n  dp: $dp,\n  du: $du,\n  keyboard: $keyboard,\n  paste: $paste,\n  printing: $printing,\n  upload: $upload,\n  version: $version,\n)';
 
- }
+}

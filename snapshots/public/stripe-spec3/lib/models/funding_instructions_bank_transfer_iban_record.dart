@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// Iban Records contain E.U. bank account details per the SEPA format.
 @immutable final class FundingInstructionsBankTransferIbanRecord {const FundingInstructionsBankTransferIbanRecord({required this.accountHolderAddress, required this.accountHolderName, required this.bankAddress, required this.bic, required this.country, required this.iban, });
 
-factory FundingInstructionsBankTransferIbanRecord.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferIbanRecord(
+factory FundingInstructionsBankTransferIbanRecord.fromJson(Map<String, dynamic> json) {return FundingInstructionsBankTransferIbanRecord(
   accountHolderAddress: Address.fromJson(json['account_holder_address'] as Map<String, dynamic>),
   accountHolderName: json['account_holder_name'] as String,
   bankAddress: Address.fromJson(json['bank_address'] as Map<String, dynamic>),
   bic: json['bic'] as String,
   country: json['country'] as String,
   iban: json['iban'] as String,
-); }
+);}
 
 final Address accountHolderAddress;
 
@@ -29,35 +29,35 @@ final String country;
 /// The IBAN of the account.
 final String iban;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_holder_address': accountHolderAddress.toJson(),
   'account_holder_name': accountHolderName,
   'bank_address': bankAddress.toJson(),
   'bic': bic,
   'country': country,
   'iban': iban,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_holder_address') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_holder_address') &&
       json.containsKey('account_holder_name') && json['account_holder_name'] is String &&
       json.containsKey('bank_address') &&
       json.containsKey('bic') && json['bic'] is String &&
       json.containsKey('country') && json['country'] is String &&
-      json.containsKey('iban') && json['iban'] is String; } 
+      json.containsKey('iban') && json['iban'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (accountHolderName.runes.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
 if (bic.runes.length > 5000) { errors.add('bic: length must be <= 5000'); }
 if (country.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
 if (iban.runes.length > 5000) { errors.add('iban: length must be <= 5000'); }
-return errors; } 
-FundingInstructionsBankTransferIbanRecord copyWith({Address? accountHolderAddress, String? accountHolderName, Address? bankAddress, String? bic, String? country, String? iban, }) { return FundingInstructionsBankTransferIbanRecord(
+return errors;}
+FundingInstructionsBankTransferIbanRecord copyWith({Address? accountHolderAddress, String? accountHolderName, Address? bankAddress, String? bic, String? country, String? iban, }) {return FundingInstructionsBankTransferIbanRecord(
   accountHolderAddress: accountHolderAddress ?? this.accountHolderAddress,
   accountHolderName: accountHolderName ?? this.accountHolderName,
   bankAddress: bankAddress ?? this.bankAddress,
   bic: bic ?? this.bic,
   country: country ?? this.country,
   iban: iban ?? this.iban,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructionsBankTransferIbanRecord &&
           accountHolderAddress == other.accountHolderAddress &&
@@ -71,4 +71,4 @@ FundingInstructionsBankTransferIbanRecord copyWith({Address? accountHolderAddres
 
 @override String toString() => 'FundingInstructionsBankTransferIbanRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, bankAddress: $bankAddress, bic: $bic, country: $country, iban: $iban)';
 
- }
+}

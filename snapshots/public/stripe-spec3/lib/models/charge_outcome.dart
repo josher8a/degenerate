@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge_outcome/charge_outcome_rule.dart';/// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
 sealed class AdviceCode {const AdviceCode();
 
-factory AdviceCode.fromJson(String json) { return switch (json) {
+factory AdviceCode.fromJson(String json) {return switch (json) {
   'confirm_card_data' => confirmCardData,
   'do_not_try_again' => doNotTryAgain,
   'try_again_later' => tryAgainLater,
   _ => AdviceCode$Unknown(json),
-}; }
+};}
 
 static const AdviceCode confirmCardData = AdviceCode$confirmCardData._();
 
@@ -20,33 +20,33 @@ static const AdviceCode tryAgainLater = AdviceCode$tryAgainLater._();
 static const List<AdviceCode> values = [confirmCardData, doNotTryAgain, tryAgainLater];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'confirm_card_data' => 'confirmCardData',
   'do_not_try_again' => 'doNotTryAgain',
   'try_again_later' => 'tryAgainLater',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AdviceCode$Unknown; } 
+bool get isUnknown {return this is AdviceCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() confirmCardData, required W Function() doNotTryAgain, required W Function() tryAgainLater, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() confirmCardData, required W Function() doNotTryAgain, required W Function() tryAgainLater, required W Function(String value) $unknown, }) {return switch (this) {
       AdviceCode$confirmCardData() => confirmCardData(),
       AdviceCode$doNotTryAgain() => doNotTryAgain(),
       AdviceCode$tryAgainLater() => tryAgainLater(),
       AdviceCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? confirmCardData, W Function()? doNotTryAgain, W Function()? tryAgainLater, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? confirmCardData, W Function()? doNotTryAgain, W Function()? tryAgainLater, W Function(String value)? $unknown, }) {return switch (this) {
       AdviceCode$confirmCardData() => confirmCardData != null ? confirmCardData() : orElse(value),
       AdviceCode$doNotTryAgain() => doNotTryAgain != null ? doNotTryAgain() : orElse(value),
       AdviceCode$tryAgainLater() => tryAgainLater != null ? tryAgainLater() : orElse(value),
       AdviceCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AdviceCode($value)';
 
- }
+}
 @immutable final class AdviceCode$confirmCardData extends AdviceCode {const AdviceCode$confirmCardData._();
 
 @override String get value => 'confirm_card_data';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? confirmC
 
 @override int get hashCode => 'confirm_card_data'.hashCode;
 
- }
+}
 @immutable final class AdviceCode$doNotTryAgain extends AdviceCode {const AdviceCode$doNotTryAgain._();
 
 @override String get value => 'do_not_try_again';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? confirmC
 
 @override int get hashCode => 'do_not_try_again'.hashCode;
 
- }
+}
 @immutable final class AdviceCode$tryAgainLater extends AdviceCode {const AdviceCode$tryAgainLater._();
 
 @override String get value => 'try_again_later';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? confirmC
 
 @override int get hashCode => 'try_again_later'.hashCode;
 
- }
+}
 @immutable final class AdviceCode$Unknown extends AdviceCode {const AdviceCode$Unknown(this.value);
 
 @override final String value;
@@ -83,11 +83,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? confirmC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class ChargeOutcome {const ChargeOutcome({required this.type, this.adviceCode = const Omittable.absent(), this.networkAdviceCode = const Omittable.absent(), this.networkDeclineCode = const Omittable.absent(), this.networkStatus = const Omittable.absent(), this.reason = const Omittable.absent(), this.riskLevel, this.riskScore, this.rule, this.sellerMessage = const Omittable.absent(), });
 
-factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome(
+factory ChargeOutcome.fromJson(Map<String, dynamic> json) {return ChargeOutcome(
   adviceCode: json.containsKey('advice_code') ? Omittable(json['advice_code'] != null ? AdviceCode.fromJson(json['advice_code'] as String) : null) : const Omittable.absent(),
   networkAdviceCode: json.containsKey('network_advice_code') ? Omittable(json['network_advice_code'] as String?) : const Omittable.absent(),
   networkDeclineCode: json.containsKey('network_decline_code') ? Omittable(json['network_decline_code'] as String?) : const Omittable.absent(),
@@ -98,7 +98,7 @@ factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome
   rule: json['rule'] != null ? ChargeOutcomeRule.fromJson(json['rule']) : null,
   sellerMessage: json.containsKey('seller_message') ? Omittable(json['seller_message'] as String?) : const Omittable.absent(),
   type: json['type'] as String,
-); }
+);}
 
 /// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
 final Omittable<AdviceCode?> adviceCode;
@@ -130,7 +130,7 @@ final Omittable<String?> sellerMessage;
 /// Possible values are `authorized`, `manual_review`, `issuer_declined`, `blocked`, and `invalid`. See [understanding declines](https://docs.stripe.com/declines) and [Radar reviews](https://docs.stripe.com/radar/reviews) for details.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adviceCode.isPresent) 'advice_code': adviceCode.value?.toJson(),
   if (networkAdviceCode.isPresent) 'network_advice_code': networkAdviceCode.value,
   if (networkDeclineCode.isPresent) 'network_decline_code': networkDeclineCode.value,
@@ -141,10 +141,10 @@ Map<String, dynamic> toJson() { return {
   if (rule != null) 'rule': rule?.toJson(),
   if (sellerMessage.isPresent) 'seller_message': sellerMessage.value,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final networkAdviceCode$ = networkAdviceCode.value;
 if (networkAdviceCode$ != null) {
   if (networkAdviceCode$.runes.length > 5000) { errors.add('networkAdviceCode: length must be <= 5000'); }
@@ -170,8 +170,8 @@ if (sellerMessage$ != null) {
   if (sellerMessage$.runes.length > 5000) { errors.add('sellerMessage: length must be <= 5000'); }
 }
 if (type.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
-return errors; } 
-ChargeOutcome copyWith({Omittable<AdviceCode?>? adviceCode, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<String?>? networkStatus, Omittable<String?>? reason, String? Function()? riskLevel, int? Function()? riskScore, ChargeOutcomeRule? Function()? rule, Omittable<String?>? sellerMessage, String? type, }) { return ChargeOutcome(
+return errors;}
+ChargeOutcome copyWith({Omittable<AdviceCode?>? adviceCode, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<String?>? networkStatus, Omittable<String?>? reason, String? Function()? riskLevel, int? Function()? riskScore, ChargeOutcomeRule? Function()? rule, Omittable<String?>? sellerMessage, String? type, }) {return ChargeOutcome(
   adviceCode: adviceCode ?? this.adviceCode,
   networkAdviceCode: networkAdviceCode ?? this.networkAdviceCode,
   networkDeclineCode: networkDeclineCode ?? this.networkDeclineCode,
@@ -182,7 +182,7 @@ ChargeOutcome copyWith({Omittable<AdviceCode?>? adviceCode, Omittable<String?>? 
   rule: rule != null ? rule() : this.rule,
   sellerMessage: sellerMessage ?? this.sellerMessage,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChargeOutcome &&
           adviceCode == other.adviceCode &&
@@ -200,4 +200,4 @@ ChargeOutcome copyWith({Omittable<AdviceCode?>? adviceCode, Omittable<String?>? 
 
 @override String toString() => 'ChargeOutcome(\n  adviceCode: $adviceCode,\n  networkAdviceCode: $networkAdviceCode,\n  networkDeclineCode: $networkDeclineCode,\n  networkStatus: $networkStatus,\n  reason: $reason,\n  riskLevel: $riskLevel,\n  riskScore: $riskScore,\n  rule: $rule,\n  sellerMessage: $sellerMessage,\n  type: $type,\n)';
 
- }
+}

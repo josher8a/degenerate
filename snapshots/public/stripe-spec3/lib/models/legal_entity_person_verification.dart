@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/legal_entity_person_verification_document.dart';/// 
 @immutable final class LegalEntityPersonVerification {const LegalEntityPersonVerification({required this.status, this.additionalDocument = const Omittable.absent(), this.details = const Omittable.absent(), this.detailsCode = const Omittable.absent(), this.document, });
 
-factory LegalEntityPersonVerification.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerification(
+factory LegalEntityPersonVerification.fromJson(Map<String, dynamic> json) {return LegalEntityPersonVerification(
   additionalDocument: json.containsKey('additional_document') ? Omittable(json['additional_document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   details: json.containsKey('details') ? Omittable(json['details'] as String?) : const Omittable.absent(),
   detailsCode: json.containsKey('details_code') ? Omittable(json['details_code'] as String?) : const Omittable.absent(),
   document: json['document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
   status: json['status'] as String,
-); }
+);}
 
 /// A document showing address, either a passport, local ID card, or utility bill from a well-known utility company.
 final Omittable<LegalEntityPersonVerificationDocument?> additionalDocument;
@@ -26,16 +26,16 @@ final LegalEntityPersonVerificationDocument? document;
 /// The state of verification for the person. Possible values are `unverified`, `pending`, or `verified`. Please refer [guide](https://docs.stripe.com/connect/handling-api-verification) to handle verification updates.
 final String status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocument.isPresent) 'additional_document': additionalDocument.value?.toJson(),
   if (details.isPresent) 'details': details.value,
   if (detailsCode.isPresent) 'details_code': detailsCode.value,
   if (document != null) 'document': document?.toJson(),
   'status': status,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final details$ = details.value;
 if (details$ != null) {
   if (details$.runes.length > 5000) { errors.add('details: length must be <= 5000'); }
@@ -45,14 +45,14 @@ if (detailsCode$ != null) {
   if (detailsCode$.runes.length > 5000) { errors.add('detailsCode: length must be <= 5000'); }
 }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
-return errors; } 
-LegalEntityPersonVerification copyWith({Omittable<LegalEntityPersonVerificationDocument?>? additionalDocument, Omittable<String?>? details, Omittable<String?>? detailsCode, LegalEntityPersonVerificationDocument? Function()? document, String? status, }) { return LegalEntityPersonVerification(
+return errors;}
+LegalEntityPersonVerification copyWith({Omittable<LegalEntityPersonVerificationDocument?>? additionalDocument, Omittable<String?>? details, Omittable<String?>? detailsCode, LegalEntityPersonVerificationDocument? Function()? document, String? status, }) {return LegalEntityPersonVerification(
   additionalDocument: additionalDocument ?? this.additionalDocument,
   details: details ?? this.details,
   detailsCode: detailsCode ?? this.detailsCode,
   document: document != null ? document() : this.document,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityPersonVerification &&
           additionalDocument == other.additionalDocument &&
@@ -65,4 +65,4 @@ LegalEntityPersonVerification copyWith({Omittable<LegalEntityPersonVerificationD
 
 @override String toString() => 'LegalEntityPersonVerification(additionalDocument: $additionalDocument, details: $details, detailsCode: $detailsCode, document: $document, status: $status)';
 
- }
+}

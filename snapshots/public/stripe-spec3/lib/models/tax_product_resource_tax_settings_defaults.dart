@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_tax/provider.dart';/// Default [tax behavior](https://stripe.com/docs/tax/products-prices-tax-categories-tax-behavior#tax-behavior) used to specify whether the price is considered inclusive of taxes or exclusive of taxes. If the item's price has a tax behavior set, it will take precedence over the default tax behavior.
 sealed class TaxProductResourceTaxSettingsDefaultsTaxBehavior {const TaxProductResourceTaxSettingsDefaultsTaxBehavior();
 
-factory TaxProductResourceTaxSettingsDefaultsTaxBehavior.fromJson(String json) { return switch (json) {
+factory TaxProductResourceTaxSettingsDefaultsTaxBehavior.fromJson(String json) {return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'inferred_by_currency' => inferredByCurrency,
   _ => TaxProductResourceTaxSettingsDefaultsTaxBehavior$Unknown(json),
-}; }
+};}
 
 static const TaxProductResourceTaxSettingsDefaultsTaxBehavior exclusive = TaxProductResourceTaxSettingsDefaultsTaxBehavior$exclusive._();
 
@@ -20,33 +20,33 @@ static const TaxProductResourceTaxSettingsDefaultsTaxBehavior inferredByCurrency
 static const List<TaxProductResourceTaxSettingsDefaultsTaxBehavior> values = [exclusive, inclusive, inferredByCurrency];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'exclusive' => 'exclusive',
   'inclusive' => 'inclusive',
   'inferred_by_currency' => 'inferredByCurrency',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxProductResourceTaxSettingsDefaultsTaxBehavior$Unknown; } 
+bool get isUnknown {return this is TaxProductResourceTaxSettingsDefaultsTaxBehavior$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() exclusive, required W Function() inclusive, required W Function() inferredByCurrency, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() exclusive, required W Function() inclusive, required W Function() inferredByCurrency, required W Function(String value) $unknown, }) {return switch (this) {
       TaxProductResourceTaxSettingsDefaultsTaxBehavior$exclusive() => exclusive(),
       TaxProductResourceTaxSettingsDefaultsTaxBehavior$inclusive() => inclusive(),
       TaxProductResourceTaxSettingsDefaultsTaxBehavior$inferredByCurrency() => inferredByCurrency(),
       TaxProductResourceTaxSettingsDefaultsTaxBehavior$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusive, W Function()? inclusive, W Function()? inferredByCurrency, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusive, W Function()? inclusive, W Function()? inferredByCurrency, W Function(String value)? $unknown, }) {return switch (this) {
       TaxProductResourceTaxSettingsDefaultsTaxBehavior$exclusive() => exclusive != null ? exclusive() : orElse(value),
       TaxProductResourceTaxSettingsDefaultsTaxBehavior$inclusive() => inclusive != null ? inclusive() : orElse(value),
       TaxProductResourceTaxSettingsDefaultsTaxBehavior$inferredByCurrency() => inferredByCurrency != null ? inferredByCurrency() : orElse(value),
       TaxProductResourceTaxSettingsDefaultsTaxBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxProductResourceTaxSettingsDefaultsTaxBehavior($value)';
 
- }
+}
 @immutable final class TaxProductResourceTaxSettingsDefaultsTaxBehavior$exclusive extends TaxProductResourceTaxSettingsDefaultsTaxBehavior {const TaxProductResourceTaxSettingsDefaultsTaxBehavior$exclusive._();
 
 @override String get value => 'exclusive';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
 @override int get hashCode => 'exclusive'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceTaxSettingsDefaultsTaxBehavior$inclusive extends TaxProductResourceTaxSettingsDefaultsTaxBehavior {const TaxProductResourceTaxSettingsDefaultsTaxBehavior$inclusive._();
 
 @override String get value => 'inclusive';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
 @override int get hashCode => 'inclusive'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceTaxSettingsDefaultsTaxBehavior$inferredByCurrency extends TaxProductResourceTaxSettingsDefaultsTaxBehavior {const TaxProductResourceTaxSettingsDefaultsTaxBehavior$inferredByCurrency._();
 
 @override String get value => 'inferred_by_currency';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
 @override int get hashCode => 'inferred_by_currency'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceTaxSettingsDefaultsTaxBehavior$Unknown extends TaxProductResourceTaxSettingsDefaultsTaxBehavior {const TaxProductResourceTaxSettingsDefaultsTaxBehavior$Unknown(this.value);
 
 @override final String value;
@@ -83,15 +83,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusiv
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class TaxProductResourceTaxSettingsDefaults {const TaxProductResourceTaxSettingsDefaults({required this.provider, this.taxBehavior = const Omittable.absent(), this.taxCode = const Omittable.absent(), });
 
-factory TaxProductResourceTaxSettingsDefaults.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsDefaults(
+factory TaxProductResourceTaxSettingsDefaults.fromJson(Map<String, dynamic> json) {return TaxProductResourceTaxSettingsDefaults(
   provider: Provider.fromJson(json['provider'] as String),
   taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? TaxProductResourceTaxSettingsDefaultsTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
   taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The tax calculation provider this account uses. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 final Provider provider;
@@ -102,24 +102,24 @@ final Omittable<TaxProductResourceTaxSettingsDefaultsTaxBehavior?> taxBehavior;
 /// Default [tax code](https://stripe.com/docs/tax/tax-categories) used to classify your products and prices.
 final Omittable<String?> taxCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'provider': provider.toJson(),
   if (taxBehavior.isPresent) 'tax_behavior': taxBehavior.value?.toJson(),
   if (taxCode.isPresent) 'tax_code': taxCode.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('provider'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('provider');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final taxCode$ = taxCode.value;
 if (taxCode$ != null) {
   if (taxCode$.runes.length > 5000) { errors.add('taxCode: length must be <= 5000'); }
 }
-return errors; } 
-TaxProductResourceTaxSettingsDefaults copyWith({Provider? provider, Omittable<TaxProductResourceTaxSettingsDefaultsTaxBehavior?>? taxBehavior, Omittable<String?>? taxCode, }) { return TaxProductResourceTaxSettingsDefaults(
+return errors;}
+TaxProductResourceTaxSettingsDefaults copyWith({Provider? provider, Omittable<TaxProductResourceTaxSettingsDefaultsTaxBehavior?>? taxBehavior, Omittable<String?>? taxCode, }) {return TaxProductResourceTaxSettingsDefaults(
   provider: provider ?? this.provider,
   taxBehavior: taxBehavior ?? this.taxBehavior,
   taxCode: taxCode ?? this.taxCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxSettingsDefaults &&
           provider == other.provider &&
@@ -130,4 +130,4 @@ TaxProductResourceTaxSettingsDefaults copyWith({Provider? provider, Omittable<Ta
 
 @override String toString() => 'TaxProductResourceTaxSettingsDefaults(provider: $provider, taxBehavior: $taxBehavior, taxCode: $taxCode)';
 
- }
+}

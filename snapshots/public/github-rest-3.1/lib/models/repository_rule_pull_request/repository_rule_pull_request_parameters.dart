@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_required_reviewer_configuration.dart';sealed class AllowedMergeMethods {const AllowedMergeMethods();
 
-factory AllowedMergeMethods.fromJson(String json) { return switch (json) {
+factory AllowedMergeMethods.fromJson(String json) {return switch (json) {
   'merge' => merge,
   'squash' => squash,
   'rebase' => rebase,
   _ => AllowedMergeMethods$Unknown(json),
-}; }
+};}
 
 static const AllowedMergeMethods merge = AllowedMergeMethods$merge._();
 
@@ -19,33 +19,33 @@ static const AllowedMergeMethods rebase = AllowedMergeMethods$rebase._();
 static const List<AllowedMergeMethods> values = [merge, squash, rebase];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'merge' => 'merge',
   'squash' => 'squash',
   'rebase' => 'rebase',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AllowedMergeMethods$Unknown; } 
+bool get isUnknown {return this is AllowedMergeMethods$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() merge, required W Function() squash, required W Function() rebase, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() merge, required W Function() squash, required W Function() rebase, required W Function(String value) $unknown, }) {return switch (this) {
       AllowedMergeMethods$merge() => merge(),
       AllowedMergeMethods$squash() => squash(),
       AllowedMergeMethods$rebase() => rebase(),
       AllowedMergeMethods$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W Function()? squash, W Function()? rebase, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W Function()? squash, W Function()? rebase, W Function(String value)? $unknown, }) {return switch (this) {
       AllowedMergeMethods$merge() => merge != null ? merge() : orElse(value),
       AllowedMergeMethods$squash() => squash != null ? squash() : orElse(value),
       AllowedMergeMethods$rebase() => rebase != null ? rebase() : orElse(value),
       AllowedMergeMethods$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AllowedMergeMethods($value)';
 
- }
+}
 @immutable final class AllowedMergeMethods$merge extends AllowedMergeMethods {const AllowedMergeMethods$merge._();
 
 @override String get value => 'merge';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W
 
 @override int get hashCode => 'merge'.hashCode;
 
- }
+}
 @immutable final class AllowedMergeMethods$squash extends AllowedMergeMethods {const AllowedMergeMethods$squash._();
 
 @override String get value => 'squash';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W
 
 @override int get hashCode => 'squash'.hashCode;
 
- }
+}
 @immutable final class AllowedMergeMethods$rebase extends AllowedMergeMethods {const AllowedMergeMethods$rebase._();
 
 @override String get value => 'rebase';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W
 
 @override int get hashCode => 'rebase'.hashCode;
 
- }
+}
 @immutable final class AllowedMergeMethods$Unknown extends AllowedMergeMethods {const AllowedMergeMethods$Unknown(this.value);
 
 @override final String value;
@@ -82,10 +82,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class RepositoryRulePullRequestParameters {const RepositoryRulePullRequestParameters({required this.dismissStaleReviewsOnPush, required this.requireCodeOwnerReview, required this.requireLastPushApproval, required this.requiredApprovingReviewCount, required this.requiredReviewThreadResolution, this.allowedMergeMethods, this.requiredReviewers, });
 
-factory RepositoryRulePullRequestParameters.fromJson(Map<String, dynamic> json) { return RepositoryRulePullRequestParameters(
+factory RepositoryRulePullRequestParameters.fromJson(Map<String, dynamic> json) {return RepositoryRulePullRequestParameters(
   allowedMergeMethods: (json['allowed_merge_methods'] as List<dynamic>?)?.map((e) => AllowedMergeMethods.fromJson(e as String)).toList(),
   dismissStaleReviewsOnPush: json['dismiss_stale_reviews_on_push'] as bool,
   requireCodeOwnerReview: json['require_code_owner_review'] as bool,
@@ -93,7 +93,7 @@ factory RepositoryRulePullRequestParameters.fromJson(Map<String, dynamic> json) 
   requiredApprovingReviewCount: (json['required_approving_review_count'] as num).toInt(),
   requiredReviewThreadResolution: json['required_review_thread_resolution'] as bool,
   requiredReviewers: (json['required_reviewers'] as List<dynamic>?)?.map((e) => RepositoryRuleParamsRequiredReviewerConfiguration.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
 final List<AllowedMergeMethods>? allowedMergeMethods;
@@ -119,7 +119,7 @@ final bool requiredReviewThreadResolution;
 /// A collection of reviewers and associated file patterns. Each reviewer has a list of file patterns which determine the files that reviewer is required to review.
 final List<RepositoryRuleParamsRequiredReviewerConfiguration>? requiredReviewers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowedMergeMethods != null) 'allowed_merge_methods': allowedMergeMethods?.map((e) => e.toJson()).toList(),
   'dismiss_stale_reviews_on_push': dismissStaleReviewsOnPush,
   'require_code_owner_review': requireCodeOwnerReview,
@@ -127,18 +127,18 @@ Map<String, dynamic> toJson() { return {
   'required_approving_review_count': requiredApprovingReviewCount,
   'required_review_thread_resolution': requiredReviewThreadResolution,
   if (requiredReviewers != null) 'required_reviewers': requiredReviewers?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dismiss_stale_reviews_on_push') && json['dismiss_stale_reviews_on_push'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dismiss_stale_reviews_on_push') && json['dismiss_stale_reviews_on_push'] is bool &&
       json.containsKey('require_code_owner_review') && json['require_code_owner_review'] is bool &&
       json.containsKey('require_last_push_approval') && json['require_last_push_approval'] is bool &&
       json.containsKey('required_approving_review_count') && json['required_approving_review_count'] is num &&
-      json.containsKey('required_review_thread_resolution') && json['required_review_thread_resolution'] is bool; } 
+      json.containsKey('required_review_thread_resolution') && json['required_review_thread_resolution'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (requiredApprovingReviewCount < 0) { errors.add('requiredApprovingReviewCount: must be >= 0'); }
 if (requiredApprovingReviewCount > 10) { errors.add('requiredApprovingReviewCount: must be <= 10'); }
-return errors; } 
-RepositoryRulePullRequestParameters copyWith({List<AllowedMergeMethods>? Function()? allowedMergeMethods, bool? dismissStaleReviewsOnPush, bool? requireCodeOwnerReview, bool? requireLastPushApproval, int? requiredApprovingReviewCount, bool? requiredReviewThreadResolution, List<RepositoryRuleParamsRequiredReviewerConfiguration>? Function()? requiredReviewers, }) { return RepositoryRulePullRequestParameters(
+return errors;}
+RepositoryRulePullRequestParameters copyWith({List<AllowedMergeMethods>? Function()? allowedMergeMethods, bool? dismissStaleReviewsOnPush, bool? requireCodeOwnerReview, bool? requireLastPushApproval, int? requiredApprovingReviewCount, bool? requiredReviewThreadResolution, List<RepositoryRuleParamsRequiredReviewerConfiguration>? Function()? requiredReviewers, }) {return RepositoryRulePullRequestParameters(
   allowedMergeMethods: allowedMergeMethods != null ? allowedMergeMethods() : this.allowedMergeMethods,
   dismissStaleReviewsOnPush: dismissStaleReviewsOnPush ?? this.dismissStaleReviewsOnPush,
   requireCodeOwnerReview: requireCodeOwnerReview ?? this.requireCodeOwnerReview,
@@ -146,7 +146,7 @@ RepositoryRulePullRequestParameters copyWith({List<AllowedMergeMethods>? Functio
   requiredApprovingReviewCount: requiredApprovingReviewCount ?? this.requiredApprovingReviewCount,
   requiredReviewThreadResolution: requiredReviewThreadResolution ?? this.requiredReviewThreadResolution,
   requiredReviewers: requiredReviewers != null ? requiredReviewers() : this.requiredReviewers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulePullRequestParameters &&
           listEquals(allowedMergeMethods, other.allowedMergeMethods) &&
@@ -161,4 +161,4 @@ RepositoryRulePullRequestParameters copyWith({List<AllowedMergeMethods>? Functio
 
 @override String toString() => 'RepositoryRulePullRequestParameters(allowedMergeMethods: $allowedMergeMethods, dismissStaleReviewsOnPush: $dismissStaleReviewsOnPush, requireCodeOwnerReview: $requireCodeOwnerReview, requireLastPushApproval: $requireLastPushApproval, requiredApprovingReviewCount: $requiredApprovingReviewCount, requiredReviewThreadResolution: $requiredReviewThreadResolution, requiredReviewers: $requiredReviewers)';
 
- }
+}

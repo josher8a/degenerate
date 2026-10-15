@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DataCookies {const DataCookies({required this.domain, required this.expires, required this.httpOnly, required this.name, required this.path, required this.priority, required this.sameParty, required this.secure, required this.session, required this.size, required this.sourcePort, required this.sourceScheme, required this.value, });
 
-factory DataCookies.fromJson(Map<String, dynamic> json) { return DataCookies(
+factory DataCookies.fromJson(Map<String, dynamic> json) {return DataCookies(
   domain: json['domain'] as String,
   expires: (json['expires'] as num).toDouble(),
   httpOnly: json['httpOnly'] as bool,
@@ -17,7 +17,7 @@ factory DataCookies.fromJson(Map<String, dynamic> json) { return DataCookies(
   sourcePort: (json['sourcePort'] as num).toDouble(),
   sourceScheme: json['sourceScheme'] as String,
   value: json['value'] as String,
-); }
+);}
 
 final String domain;
 
@@ -45,7 +45,7 @@ final String sourceScheme;
 
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domain': domain,
   'expires': expires,
   'httpOnly': httpOnly,
@@ -59,8 +59,8 @@ Map<String, dynamic> toJson() { return {
   'sourcePort': sourcePort,
   'sourceScheme': sourceScheme,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('expires') && json['expires'] is num &&
       json.containsKey('httpOnly') && json['httpOnly'] is bool &&
       json.containsKey('name') && json['name'] is String &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('domai
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('sourcePort') && json['sourcePort'] is num &&
       json.containsKey('sourceScheme') && json['sourceScheme'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-DataCookies copyWith({String? domain, double? expires, bool? httpOnly, String? name, String? path, String? priority, bool? sameParty, bool? secure, bool? session, double? size, double? sourcePort, String? sourceScheme, String? value, }) { return DataCookies(
+      json.containsKey('value') && json['value'] is String;}
+DataCookies copyWith({String? domain, double? expires, bool? httpOnly, String? name, String? path, String? priority, bool? sameParty, bool? secure, bool? session, double? size, double? sourcePort, String? sourceScheme, String? value, }) {return DataCookies(
   domain: domain ?? this.domain,
   expires: expires ?? this.expires,
   httpOnly: httpOnly ?? this.httpOnly,
@@ -87,7 +87,7 @@ DataCookies copyWith({String? domain, double? expires, bool? httpOnly, String? n
   sourcePort: sourcePort ?? this.sourcePort,
   sourceScheme: sourceScheme ?? this.sourceScheme,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DataCookies &&
           domain == other.domain &&
@@ -108,4 +108,4 @@ DataCookies copyWith({String? domain, double? expires, bool? httpOnly, String? n
 
 @override String toString() => 'DataCookies(\n  domain: $domain,\n  expires: $expires,\n  httpOnly: $httpOnly,\n  name: $name,\n  path: $path,\n  priority: $priority,\n  sameParty: $sameParty,\n  secure: $secure,\n  session: $session,\n  size: $size,\n  sourcePort: $sourcePort,\n  sourceScheme: $sourceScheme,\n  value: $value,\n)';
 
- }
+}

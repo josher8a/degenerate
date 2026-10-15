@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/automatic_tax/automatic_tax_status.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
 sealed class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason();
 
-factory AutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
+factory AutomaticTaxDisabledReason.fromJson(String json) {return switch (json) {
   'finalization_requires_location_inputs' => finalizationRequiresLocationInputs,
   'finalization_system_error' => finalizationSystemError,
   _ => AutomaticTaxDisabledReason$Unknown(json),
-}; }
+};}
 
 static const AutomaticTaxDisabledReason finalizationRequiresLocationInputs = AutomaticTaxDisabledReason$finalizationRequiresLocationInputs._();
 
@@ -17,30 +17,30 @@ static const AutomaticTaxDisabledReason finalizationSystemError = AutomaticTaxDi
 static const List<AutomaticTaxDisabledReason> values = [finalizationRequiresLocationInputs, finalizationSystemError];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'finalization_requires_location_inputs' => 'finalizationRequiresLocationInputs',
   'finalization_system_error' => 'finalizationSystemError',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AutomaticTaxDisabledReason$Unknown; } 
+bool get isUnknown {return this is AutomaticTaxDisabledReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() finalizationRequiresLocationInputs, required W Function() finalizationSystemError, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() finalizationRequiresLocationInputs, required W Function() finalizationSystemError, required W Function(String value) $unknown, }) {return switch (this) {
       AutomaticTaxDisabledReason$finalizationRequiresLocationInputs() => finalizationRequiresLocationInputs(),
       AutomaticTaxDisabledReason$finalizationSystemError() => finalizationSystemError(),
       AutomaticTaxDisabledReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? finalizationRequiresLocationInputs, W Function()? finalizationSystemError, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? finalizationRequiresLocationInputs, W Function()? finalizationSystemError, W Function(String value)? $unknown, }) {return switch (this) {
       AutomaticTaxDisabledReason$finalizationRequiresLocationInputs() => finalizationRequiresLocationInputs != null ? finalizationRequiresLocationInputs() : orElse(value),
       AutomaticTaxDisabledReason$finalizationSystemError() => finalizationSystemError != null ? finalizationSystemError() : orElse(value),
       AutomaticTaxDisabledReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AutomaticTaxDisabledReason($value)';
 
- }
+}
 @immutable final class AutomaticTaxDisabledReason$finalizationRequiresLocationInputs extends AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason$finalizationRequiresLocationInputs._();
 
 @override String get value => 'finalization_requires_location_inputs';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? finaliza
 
 @override int get hashCode => 'finalization_requires_location_inputs'.hashCode;
 
- }
+}
 @immutable final class AutomaticTaxDisabledReason$finalizationSystemError extends AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason$finalizationSystemError._();
 
 @override String get value => 'finalization_system_error';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? finaliza
 
 @override int get hashCode => 'finalization_system_error'.hashCode;
 
- }
+}
 @immutable final class AutomaticTaxDisabledReason$Unknown extends AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason$Unknown(this.value);
 
 @override final String value;
@@ -68,17 +68,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? finaliza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class AutomaticTax {const AutomaticTax({required this.enabled, this.disabledReason = const Omittable.absent(), this.liability = const Omittable.absent(), this.provider = const Omittable.absent(), this.status = const Omittable.absent(), });
 
-factory AutomaticTax.fromJson(Map<String, dynamic> json) { return AutomaticTax(
+factory AutomaticTax.fromJson(Map<String, dynamic> json) {return AutomaticTax(
   disabledReason: json.containsKey('disabled_reason') ? Omittable(json['disabled_reason'] != null ? AutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
   liability: json.containsKey('liability') ? Omittable(json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   provider: json.containsKey('provider') ? Omittable(json['provider'] as String?) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] != null ? AutomaticTaxStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// If Stripe disabled automatic tax, this enum describes why.
 final Omittable<AutomaticTaxDisabledReason?> disabledReason;
@@ -95,28 +95,28 @@ final Omittable<String?> provider;
 /// The status of the most recent automated tax calculation for this invoice.
 final Omittable<AutomaticTaxStatus?> status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (disabledReason.isPresent) 'disabled_reason': disabledReason.value?.toJson(),
   'enabled': enabled,
   if (liability.isPresent) 'liability': liability.value?.toJson(),
   if (provider.isPresent) 'provider': provider.value,
   if (status.isPresent) 'status': status.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final provider$ = provider.value;
 if (provider$ != null) {
   if (provider$.runes.length > 5000) { errors.add('provider: length must be <= 5000'); }
 }
-return errors; } 
-AutomaticTax copyWith({Omittable<AutomaticTaxDisabledReason?>? disabledReason, bool? enabled, Omittable<ConnectAccountReference?>? liability, Omittable<String?>? provider, Omittable<AutomaticTaxStatus?>? status, }) { return AutomaticTax(
+return errors;}
+AutomaticTax copyWith({Omittable<AutomaticTaxDisabledReason?>? disabledReason, bool? enabled, Omittable<ConnectAccountReference?>? liability, Omittable<String?>? provider, Omittable<AutomaticTaxStatus?>? status, }) {return AutomaticTax(
   disabledReason: disabledReason ?? this.disabledReason,
   enabled: enabled ?? this.enabled,
   liability: liability ?? this.liability,
   provider: provider ?? this.provider,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AutomaticTax &&
           disabledReason == other.disabledReason &&
@@ -129,4 +129,4 @@ AutomaticTax copyWith({Omittable<AutomaticTaxDisabledReason?>? disabledReason, b
 
 @override String toString() => 'AutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability, provider: $provider, status: $status)';
 
- }
+}

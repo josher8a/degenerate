@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarded_request_context.dart';import 'package:pub_stripe_spec3/models/forwarded_request_details.dart';import 'package:pub_stripe_spec3/models/forwarded_response_details.dart';import 'package:pub_stripe_spec3/models/forwarding_request/replacements.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ForwardingRequestObject {const ForwardingRequestObject();
 
-factory ForwardingRequestObject.fromJson(String json) { return switch (json) {
+factory ForwardingRequestObject.fromJson(String json) {return switch (json) {
   'forwarding.request' => forwardingRequest,
   _ => ForwardingRequestObject$Unknown(json),
-}; }
+};}
 
 static const ForwardingRequestObject forwardingRequest = ForwardingRequestObject$forwardingRequest._();
 
 static const List<ForwardingRequestObject> values = [forwardingRequest];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'forwarding.request' => 'forwardingRequest',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ForwardingRequestObject$Unknown; } 
+bool get isUnknown {return this is ForwardingRequestObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() forwardingRequest, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() forwardingRequest, required W Function(String value) $unknown, }) {return switch (this) {
       ForwardingRequestObject$forwardingRequest() => forwardingRequest(),
       ForwardingRequestObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? forwardingRequest, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? forwardingRequest, W Function(String value)? $unknown, }) {return switch (this) {
       ForwardingRequestObject$forwardingRequest() => forwardingRequest != null ? forwardingRequest() : orElse(value),
       ForwardingRequestObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ForwardingRequestObject($value)';
 
- }
+}
 @immutable final class ForwardingRequestObject$forwardingRequest extends ForwardingRequestObject {const ForwardingRequestObject$forwardingRequest._();
 
 @override String get value => 'forwarding.request';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? forwardi
 
 @override int get hashCode => 'forwarding.request'.hashCode;
 
- }
+}
 @immutable final class ForwardingRequestObject$Unknown extends ForwardingRequestObject {const ForwardingRequestObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? forwardi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Instructs Stripe to make a request on your behalf using the destination URL. The destination URL
 /// is activated by Stripe at the time of onboarding. Stripe verifies requests with your credentials
 /// provided during onboarding, and injects card details from the payment_method into the request.
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? forwardi
 /// Related guide: [Forward card details to third-party API endpoints](https://docs.stripe.com/payments/forwarding).
 @immutable final class ForwardingRequest {const ForwardingRequest({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.replacements, this.metadata = const Omittable.absent(), this.requestContext = const Omittable.absent(), this.requestDetails = const Omittable.absent(), this.responseDetails = const Omittable.absent(), this.url = const Omittable.absent(), });
 
-factory ForwardingRequest.fromJson(Map<String, dynamic> json) { return ForwardingRequest(
+factory ForwardingRequest.fromJson(Map<String, dynamic> json) {return ForwardingRequest(
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -84,7 +84,7 @@ factory ForwardingRequest.fromJson(Map<String, dynamic> json) { return Forwardin
   requestDetails: json.containsKey('request_details') ? Omittable(json['request_details'] != null ? ForwardedRequestDetails.fromJson(json['request_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   responseDetails: json.containsKey('response_details') ? Omittable(json['response_details'] != null ? ForwardedResponseDetails.fromJson(json['response_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -119,7 +119,7 @@ final Omittable<ForwardedResponseDetails?> responseDetails;
 /// The destination URL for the forwarded request. Must be supported by the config.
 final Omittable<String?> url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'id': id,
   'livemode': livemode,
@@ -131,23 +131,23 @@ Map<String, dynamic> toJson() { return {
   if (requestDetails.isPresent) 'request_details': requestDetails.value?.toJson(),
   if (responseDetails.isPresent) 'response_details': responseDetails.value?.toJson(),
   if (url.isPresent) 'url': url.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('payment_method') && json['payment_method'] is String &&
-      json.containsKey('replacements'); } 
+      json.containsKey('replacements');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (paymentMethod.runes.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 final url$ = url.value;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
-return errors; } 
-ForwardingRequest copyWith({int? created, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, ForwardingRequestObject? object, String? paymentMethod, List<Replacements>? replacements, Omittable<ForwardedRequestContext?>? requestContext, Omittable<ForwardedRequestDetails?>? requestDetails, Omittable<ForwardedResponseDetails?>? responseDetails, Omittable<String?>? url, }) { return ForwardingRequest(
+return errors;}
+ForwardingRequest copyWith({int? created, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, ForwardingRequestObject? object, String? paymentMethod, List<Replacements>? replacements, Omittable<ForwardedRequestContext?>? requestContext, Omittable<ForwardedRequestDetails?>? requestDetails, Omittable<ForwardedResponseDetails?>? responseDetails, Omittable<String?>? url, }) {return ForwardingRequest(
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
@@ -159,7 +159,7 @@ ForwardingRequest copyWith({int? created, String? id, bool? livemode, Omittable<
   requestDetails: requestDetails ?? this.requestDetails,
   responseDetails: responseDetails ?? this.responseDetails,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ForwardingRequest &&
           created == other.created &&
@@ -178,4 +178,4 @@ ForwardingRequest copyWith({int? created, String? id, bool? livemode, Omittable<
 
 @override String toString() => 'ForwardingRequest(\n  created: $created,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  paymentMethod: $paymentMethod,\n  replacements: $replacements,\n  requestContext: $requestContext,\n  requestDetails: $requestDetails,\n  responseDetails: $responseDetails,\n  url: $url,\n)';
 
- }
+}

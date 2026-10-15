@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_consumer_response.dart';import 'package:pub_cloudflare/models/mq_producer.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_queue_settings.dart';import 'package:pub_cloudflare/models/mq_r2_producer.dart';import 'package:pub_cloudflare/models/mq_worker_producer.dart';@immutable final class MqQueue {const MqQueue({this.consumers, this.consumersTotalCount, this.createdOn, this.modifiedOn, this.producers, this.producersTotalCount, this.queueId, this.queueName, this.settings, });
 
-factory MqQueue.fromJson(Map<String, dynamic> json) { return MqQueue(
+factory MqQueue.fromJson(Map<String, dynamic> json) {return MqQueue(
   consumers: (json['consumers'] as List<dynamic>?)?.map((e) => MqConsumerResponse.fromJson(e as Map<String, dynamic>)).toList(),
   consumersTotalCount: json['consumers_total_count'] != null ? (json['consumers_total_count'] as num).toDouble() : null,
   createdOn: json['created_on'] as String?,
@@ -13,7 +13,7 @@ factory MqQueue.fromJson(Map<String, dynamic> json) { return MqQueue(
   queueId: json['queue_id'] as String?,
   queueName: json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null,
   settings: json['settings'] != null ? MqQueueSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<MqConsumerResponse>? consumers;
 
@@ -33,7 +33,7 @@ final MqQueueName? queueName;
 
 final MqQueueSettings? settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (consumers != null) 'consumers': consumers?.map((e) => e.toJson()).toList(),
   'consumers_total_count': ?consumersTotalCount,
   'created_on': ?createdOn,
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   'queue_id': ?queueId,
   if (queueName != null) 'queue_name': queueName?.toJson(),
   if (settings != null) 'settings': settings?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'consumers', 'consumers_total_count', 'created_on', 'modified_on', 'producers', 'producers_total_count', 'queue_id', 'queue_name', 'settings'}.contains(key)); } 
-MqQueue copyWith({List<MqConsumerResponse>? Function()? consumers, double? Function()? consumersTotalCount, String? Function()? createdOn, String? Function()? modifiedOn, List<MqProducer>? Function()? producers, double? Function()? producersTotalCount, String? Function()? queueId, MqQueueName? Function()? queueName, MqQueueSettings? Function()? settings, }) { return MqQueue(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'consumers', 'consumers_total_count', 'created_on', 'modified_on', 'producers', 'producers_total_count', 'queue_id', 'queue_name', 'settings'}.contains(key));}
+MqQueue copyWith({List<MqConsumerResponse>? Function()? consumers, double? Function()? consumersTotalCount, String? Function()? createdOn, String? Function()? modifiedOn, List<MqProducer>? Function()? producers, double? Function()? producersTotalCount, String? Function()? queueId, MqQueueName? Function()? queueName, MqQueueSettings? Function()? settings, }) {return MqQueue(
   consumers: consumers != null ? consumers() : this.consumers,
   consumersTotalCount: consumersTotalCount != null ? consumersTotalCount() : this.consumersTotalCount,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
@@ -55,7 +55,7 @@ MqQueue copyWith({List<MqConsumerResponse>? Function()? consumers, double? Funct
   queueId: queueId != null ? queueId() : this.queueId,
   queueName: queueName != null ? queueName() : this.queueName,
   settings: settings != null ? settings() : this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MqQueue &&
           listEquals(consumers, other.consumers) &&
@@ -72,4 +72,4 @@ MqQueue copyWith({List<MqConsumerResponse>? Function()? consumers, double? Funct
 
 @override String toString() => 'MqQueue(\n  consumers: $consumers,\n  consumersTotalCount: $consumersTotalCount,\n  createdOn: $createdOn,\n  modifiedOn: $modifiedOn,\n  producers: $producers,\n  producersTotalCount: $producersTotalCount,\n  queueId: $queueId,\n  queueName: $queueName,\n  settings: $settings,\n)';
 
- }
+}

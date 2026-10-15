@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price, in `graduated` tiering pricing can successively change as the quantity grows.
 sealed class PostPlansRequestTiersMode {const PostPlansRequestTiersMode();
 
-factory PostPlansRequestTiersMode.fromJson(String json) { return switch (json) {
+factory PostPlansRequestTiersMode.fromJson(String json) {return switch (json) {
   'graduated' => graduated,
   'volume' => volume,
   _ => PostPlansRequestTiersMode$Unknown(json),
-}; }
+};}
 
 static const PostPlansRequestTiersMode graduated = PostPlansRequestTiersMode$graduated._();
 
@@ -17,30 +17,30 @@ static const PostPlansRequestTiersMode volume = PostPlansRequestTiersMode$volume
 static const List<PostPlansRequestTiersMode> values = [graduated, volume];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'graduated' => 'graduated',
   'volume' => 'volume',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostPlansRequestTiersMode$Unknown; } 
+bool get isUnknown {return this is PostPlansRequestTiersMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() graduated, required W Function() volume, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() graduated, required W Function() volume, required W Function(String value) $unknown, }) {return switch (this) {
       PostPlansRequestTiersMode$graduated() => graduated(),
       PostPlansRequestTiersMode$volume() => volume(),
       PostPlansRequestTiersMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? graduated, W Function()? volume, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? graduated, W Function()? volume, W Function(String value)? $unknown, }) {return switch (this) {
       PostPlansRequestTiersMode$graduated() => graduated != null ? graduated() : orElse(value),
       PostPlansRequestTiersMode$volume() => volume != null ? volume() : orElse(value),
       PostPlansRequestTiersMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostPlansRequestTiersMode($value)';
 
- }
+}
 @immutable final class PostPlansRequestTiersMode$graduated extends PostPlansRequestTiersMode {const PostPlansRequestTiersMode$graduated._();
 
 @override String get value => 'graduated';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? graduate
 
 @override int get hashCode => 'graduated'.hashCode;
 
- }
+}
 @immutable final class PostPlansRequestTiersMode$volume extends PostPlansRequestTiersMode {const PostPlansRequestTiersMode$volume._();
 
 @override String get value => 'volume';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? graduate
 
 @override int get hashCode => 'volume'.hashCode;
 
- }
+}
 @immutable final class PostPlansRequestTiersMode$Unknown extends PostPlansRequestTiersMode {const PostPlansRequestTiersMode$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? graduate
 
 @override int get hashCode => value.hashCode;
 
- }
+}

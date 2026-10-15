@@ -14,7 +14,7 @@ final class SpectrumApplicationsApi with ApiExecutor {const SpectrumApplications
 /// Retrieves a list of currently existing Spectrum applications inside a zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/apps`
-Future<ApiResult<SpectrumConfigAppConfigCollectionResult?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsListSpectrumApplications({required SpectrumConfigIdentifier zoneId, double? page, double? perPage, SpectrumApplicationsListSpectrumApplicationsDirection? direction, SpectrumApplicationsListSpectrumApplicationsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SpectrumConfigAppConfigCollectionResult?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsListSpectrumApplications({required SpectrumConfigIdentifier zoneId, double? page, double? perPage, SpectrumApplicationsListSpectrumApplicationsDirection? direction, SpectrumApplicationsListSpectrumApplicationsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -48,13 +48,13 @@ return await execute(
   },
   onError: SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError.fromResponse,
 );
- } 
+}
 /// Create Spectrum application using a name for the origin
 ///
 /// Creates a new Spectrum application from a configuration using a name for the origin.
 ///
 /// `POST /zones/{zone_id}/spectrum/apps`
-Future<ApiResult<SpectrumConfigAppConfigSingleResult?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsCreateSpectrumApplicationUsingANameForTheOrigin({required SpectrumConfigIdentifier zoneId, required SpectrumConfigUpdateAppConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpectrumConfigAppConfigSingleResult?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsCreateSpectrumApplicationUsingANameForTheOrigin({required SpectrumConfigIdentifier zoneId, required SpectrumConfigUpdateAppConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,13 +73,13 @@ return await execute(
   },
   onError: SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError.fromResponse,
 );
- } 
+}
 /// Get Spectrum application configuration
 ///
 /// Gets the application configuration of a specific application inside a zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/apps/{app_id}`
-Future<ApiResult<SpectrumConfigAppConfigSingleResult?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsGetSpectrumApplicationConfiguration({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpectrumConfigAppConfigSingleResult?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsGetSpectrumApplicationConfiguration({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -96,13 +96,13 @@ return await execute(
   },
   onError: SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError.fromResponse,
 );
- } 
+}
 /// Update Spectrum application configuration using a name for the origin
 ///
 /// Updates a previously existing application's configuration that uses a name for the origin.
 ///
 /// `PUT /zones/{zone_id}/spectrum/apps/{app_id}`
-Future<ApiResult<SpectrumConfigAppConfigSingleResult?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsUpdateSpectrumApplicationConfigurationUsingANameForTheOrigin({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, required SpectrumConfigUpdateAppConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpectrumConfigAppConfigSingleResult?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsUpdateSpectrumApplicationConfigurationUsingANameForTheOrigin({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, required SpectrumConfigUpdateAppConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,13 +121,13 @@ return await execute(
   },
   onError: SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError.fromResponse,
 );
- } 
+}
 /// Delete Spectrum application
 ///
 /// Deletes a previously existing application.
 ///
 /// `DELETE /zones/{zone_id}/spectrum/apps/{app_id}`
-Future<ApiResult<ResponseSingleId3Result?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsDeleteSpectrumApplication({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsDeleteSpectrumApplication({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -144,5 +144,5 @@ return await execute(
   },
   onError: SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError.fromResponse,
 );
- } 
- }
+}
+}

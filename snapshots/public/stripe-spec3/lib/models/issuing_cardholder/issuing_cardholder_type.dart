@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
 sealed class IssuingCardholderType {const IssuingCardholderType();
 
-factory IssuingCardholderType.fromJson(String json) { return switch (json) {
+factory IssuingCardholderType.fromJson(String json) {return switch (json) {
   'company' => company,
   'individual' => individual,
   _ => IssuingCardholderType$Unknown(json),
-}; }
+};}
 
 static const IssuingCardholderType company = IssuingCardholderType$company._();
 
@@ -17,30 +17,30 @@ static const IssuingCardholderType individual = IssuingCardholderType$individual
 static const List<IssuingCardholderType> values = [company, individual];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'company' => 'company',
   'individual' => 'individual',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardholderType$Unknown; } 
+bool get isUnknown {return this is IssuingCardholderType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() company, required W Function() individual, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() company, required W Function() individual, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardholderType$company() => company(),
       IssuingCardholderType$individual() => individual(),
       IssuingCardholderType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? company, W Function()? individual, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? company, W Function()? individual, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardholderType$company() => company != null ? company() : orElse(value),
       IssuingCardholderType$individual() => individual != null ? individual() : orElse(value),
       IssuingCardholderType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardholderType($value)';
 
- }
+}
 @immutable final class IssuingCardholderType$company extends IssuingCardholderType {const IssuingCardholderType$company._();
 
 @override String get value => 'company';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? company,
 
 @override int get hashCode => 'company'.hashCode;
 
- }
+}
 @immutable final class IssuingCardholderType$individual extends IssuingCardholderType {const IssuingCardholderType$individual._();
 
 @override String get value => 'individual';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? company,
 
 @override int get hashCode => 'individual'.hashCode;
 
- }
+}
 @immutable final class IssuingCardholderType$Unknown extends IssuingCardholderType {const IssuingCardholderType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? company,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

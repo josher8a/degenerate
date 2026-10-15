@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Serie0Variant2 {const Serie0Variant2({required this.rfc6962, required this.$static, });
 
-factory Serie0Variant2.fromJson(Map<String, dynamic> json) { return Serie0Variant2(
+factory Serie0Variant2.fromJson(Map<String, dynamic> json) {return Serie0Variant2(
   rfc6962: (json['rfc6962'] as List<dynamic>).map((e) => e as String).toList(),
   $static: (json['static'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> rfc6962;
 
 final List<String> $static;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'rfc6962': rfc6962,
   'static': $static,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('rfc6962') &&
-      json.containsKey('static'); } 
-Serie0Variant2 copyWith({List<String>? rfc6962, List<String>? $static, }) { return Serie0Variant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('rfc6962') &&
+      json.containsKey('static');}
+Serie0Variant2 copyWith({List<String>? rfc6962, List<String>? $static, }) {return Serie0Variant2(
   rfc6962: rfc6962 ?? this.rfc6962,
   $static: $static ?? this.$static,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant2 &&
           listEquals(rfc6962, other.rfc6962) &&
@@ -31,4 +31,4 @@ Serie0Variant2 copyWith({List<String>? rfc6962, List<String>? $static, }) { retu
 
 @override String toString() => 'Serie0Variant2(rfc6962: $rfc6962, \$static: ${$static})';
 
- }
+}

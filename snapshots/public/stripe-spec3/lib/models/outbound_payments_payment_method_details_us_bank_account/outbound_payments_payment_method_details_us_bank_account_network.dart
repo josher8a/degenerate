@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The network rails used. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
 sealed class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork();
 
-factory OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) { return switch (json) {
+factory OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) {return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
   _ => OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown(json),
-}; }
+};}
 
 static const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork ach = OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach._();
 
@@ -17,30 +17,30 @@ static const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork usDomestic
 static const List<OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork> values = [ach, usDomesticWire];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ach' => 'ach',
   'us_domestic_wire' => 'usDomesticWire',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown; } 
+bool get isUnknown {return this is OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ach, required W Function() usDomesticWire, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ach, required W Function() usDomesticWire, required W Function(String value) $unknown, }) {return switch (this) {
       OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach() => ach(),
       OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$usDomesticWire() => usDomesticWire(),
       OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? usDomesticWire, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? usDomesticWire, W Function(String value)? $unknown, }) {return switch (this) {
       OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach() => ach != null ? ach() : orElse(value),
       OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$usDomesticWire() => usDomesticWire != null ? usDomesticWire() : orElse(value),
       OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork($value)';
 
- }
+}
 @immutable final class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach extends OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach._();
 
 @override String get value => 'ach';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'ach'.hashCode;
 
- }
+}
 @immutable final class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$usDomesticWire extends OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$usDomesticWire._();
 
 @override String get value => 'us_domestic_wire';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => 'us_domestic_wire'.hashCode;
 
- }
+}
 @immutable final class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown extends OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

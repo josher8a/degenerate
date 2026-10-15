@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/added_to_project_issue_event/added_to_project_issue_event_project_card.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Moved Column in Project Issue Event
 @immutable final class MovedColumnInProjectIssueEvent {const MovedColumnInProjectIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard, });
 
-factory MovedColumnInProjectIssueEvent.fromJson(Map<String, dynamic> json) { return MovedColumnInProjectIssueEvent(
+factory MovedColumnInProjectIssueEvent.fromJson(Map<String, dynamic> json) {return MovedColumnInProjectIssueEvent(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: json['url'] as String,
@@ -15,7 +15,7 @@ factory MovedColumnInProjectIssueEvent.fromJson(Map<String, dynamic> json) { ret
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   projectCard: json['project_card'] != null ? AddedToProjectIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final int id;
 
@@ -37,7 +37,7 @@ final Integration? performedViaGithubApp;
 
 final AddedToProjectIssueEventProjectCard? projectCard;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url,
@@ -48,8 +48,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'performed_via_github_app': performedViaGithubApp?.toJson(),
   if (projectCard != null) 'project_card': projectCard?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
@@ -57,8 +57,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
       json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('performed_via_github_app'); } 
-MovedColumnInProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, AddedToProjectIssueEventProjectCard? Function()? projectCard, }) { return MovedColumnInProjectIssueEvent(
+      json.containsKey('performed_via_github_app');}
+MovedColumnInProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, AddedToProjectIssueEventProjectCard? Function()? projectCard, }) {return MovedColumnInProjectIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -69,7 +69,7 @@ MovedColumnInProjectIssueEvent copyWith({int? id, String? nodeId, String? url, S
   createdAt: createdAt ?? this.createdAt,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   projectCard: projectCard != null ? projectCard() : this.projectCard,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MovedColumnInProjectIssueEvent &&
           id == other.id &&
@@ -87,4 +87,4 @@ MovedColumnInProjectIssueEvent copyWith({int? id, String? nodeId, String? url, S
 
 @override String toString() => 'MovedColumnInProjectIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  projectCard: $projectCard,\n)';
 
- }
+}

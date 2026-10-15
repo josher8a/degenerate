@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0({required this.negative, required this.positive, });
 
-factory RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0(
+factory RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0(
   negative: (json['NEGATIVE'] as List<dynamic>).map((e) => e as String).toList(),
   positive: (json['POSITIVE'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> negative;
 
 final List<String> positive;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'NEGATIVE': negative,
   'POSITIVE': positive,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('NEGATIVE') &&
-      json.containsKey('POSITIVE'); } 
-RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 copyWith({List<String>? negative, List<String>? positive, }) { return RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('NEGATIVE') &&
+      json.containsKey('POSITIVE');}
+RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 copyWith({List<String>? negative, List<String>? positive, }) {return RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0(
   negative: negative ?? this.negative,
   positive: positive ?? this.positive,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 &&
           listEquals(negative, other.negative) &&
@@ -31,4 +31,4 @@ RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 copyWith({List<St
 
 @override String toString() => 'RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0(negative: $negative, positive: $positive)';
 
- }
+}

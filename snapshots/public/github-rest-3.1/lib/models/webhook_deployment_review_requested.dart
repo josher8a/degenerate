@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_action.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_requested/webhook_deployment_review_requested_reviewers.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_requested/workflow_job_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookDeploymentReviewRequested {const WebhookDeploymentReviewRequested({required this.action, required this.environment, required this.organization, required this.repository, required this.requestor, required this.reviewers, required this.sender, required this.since, required this.workflowJobRun, required this.workflowRun, this.enterprise, this.installation, });
 
-factory WebhookDeploymentReviewRequested.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequested(
+factory WebhookDeploymentReviewRequested.fromJson(Map<String, dynamic> json) {return WebhookDeploymentReviewRequested(
   action: WebhookCheckSuiteRequestedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   environment: json['environment'] as String,
@@ -16,7 +16,7 @@ factory WebhookDeploymentReviewRequested.fromJson(Map<String, dynamic> json) { r
   since: json['since'] as String,
   workflowJobRun: WorkflowJobRun.fromJson(json['workflow_job_run'] as Map<String, dynamic>),
   workflowRun: json['workflow_run'] != null ? WebhookDeploymentReviewApprovedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookCheckSuiteRequestedAction action;
 
@@ -42,7 +42,7 @@ final WorkflowJobRun workflowJobRun;
 
 final WebhookDeploymentReviewApprovedWorkflowRun? workflowRun;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'environment': environment,
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'since': since,
   'workflow_job_run': workflowJobRun.toJson(),
   'workflow_run': workflowRun?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('organization') &&
       json.containsKey('repository') &&
@@ -65,8 +65,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender') &&
       json.containsKey('since') && json['since'] is String &&
       json.containsKey('workflow_job_run') &&
-      json.containsKey('workflow_run'); } 
-WebhookDeploymentReviewRequested copyWith({WebhookCheckSuiteRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, String? environment, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, WebhooksUser? Function()? requestor, List<WebhookDeploymentReviewRequestedReviewers>? reviewers, SimpleUser? sender, String? since, WorkflowJobRun? workflowJobRun, WebhookDeploymentReviewApprovedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewRequested(
+      json.containsKey('workflow_run');}
+WebhookDeploymentReviewRequested copyWith({WebhookCheckSuiteRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, String? environment, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, WebhooksUser? Function()? requestor, List<WebhookDeploymentReviewRequestedReviewers>? reviewers, SimpleUser? sender, String? since, WorkflowJobRun? workflowJobRun, WebhookDeploymentReviewApprovedWorkflowRun? Function()? workflowRun, }) {return WebhookDeploymentReviewRequested(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   environment: environment ?? this.environment,
@@ -79,7 +79,7 @@ WebhookDeploymentReviewRequested copyWith({WebhookCheckSuiteRequestedAction? act
   since: since ?? this.since,
   workflowJobRun: workflowJobRun ?? this.workflowJobRun,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewRequested &&
           action == other.action &&
@@ -99,4 +99,4 @@ WebhookDeploymentReviewRequested copyWith({WebhookCheckSuiteRequestedAction? act
 
 @override String toString() => 'WebhookDeploymentReviewRequested(\n  action: $action,\n  enterprise: $enterprise,\n  environment: $environment,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  requestor: $requestor,\n  reviewers: $reviewers,\n  sender: $sender,\n  since: $since,\n  workflowJobRun: $workflowJobRun,\n  workflowRun: $workflowRun,\n)';
 
- }
+}

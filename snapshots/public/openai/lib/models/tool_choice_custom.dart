@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ToolChoiceCustom {const ToolChoiceCustom({required this.type, required this.name, });
 
-factory ToolChoiceCustom.fromJson(Map<String, dynamic> json) { return ToolChoiceCustom(
+factory ToolChoiceCustom.fromJson(Map<String, dynamic> json) {return ToolChoiceCustom(
   type: ChatCompletionMessageCustomToolCallType.fromJson(json['type'] as String),
   name: json['name'] as String,
-); }
+);}
 
 /// For custom tool calling, the type is always `custom`.
 final ChatCompletionMessageCustomToolCallType type;
@@ -16,16 +16,16 @@ final ChatCompletionMessageCustomToolCallType type;
 /// The name of the custom tool to call.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'custom' &&
-      json.containsKey('name') && json['name'] is String; } 
-ToolChoiceCustom copyWith({ChatCompletionMessageCustomToolCallType? type, String? name, }) { return ToolChoiceCustom(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'custom' &&
+      json.containsKey('name') && json['name'] is String;}
+ToolChoiceCustom copyWith({ChatCompletionMessageCustomToolCallType? type, String? name, }) {return ToolChoiceCustom(
   type: type ?? this.type,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToolChoiceCustom &&
           type == other.type &&
@@ -35,4 +35,4 @@ ToolChoiceCustom copyWith({ChatCompletionMessageCustomToolCallType? type, String
 
 @override String toString() => 'ToolChoiceCustom(type: $type, name: $name)';
 
- }
+}

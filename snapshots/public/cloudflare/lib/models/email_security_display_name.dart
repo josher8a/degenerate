@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDisplayName {const EmailSecurityDisplayName({required this.email, required this.isEmailRegex, required this.name, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), this.directoryId = const Omittable.absent(), this.directoryNodeId = const Omittable.absent(), this.externalDirectoryNodeId = const Omittable.absent(), this.provenance = const Omittable.absent(), });
 
-factory EmailSecurityDisplayName.fromJson(Map<String, dynamic> json) { return EmailSecurityDisplayName(
+factory EmailSecurityDisplayName.fromJson(Map<String, dynamic> json) {return EmailSecurityDisplayName(
   email: json['email'] as String,
   isEmailRegex: json['is_email_regex'] as bool,
   name: json['name'] as String,
@@ -15,7 +15,7 @@ factory EmailSecurityDisplayName.fromJson(Map<String, dynamic> json) { return Em
   id: (json['id'] as num).toInt(),
   lastModified: DateTime.parse(json['last_modified'] as String),
   provenance: json.containsKey('provenance') ? Omittable(json['provenance'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final String email;
 
@@ -40,7 +40,7 @@ final DateTime lastModified;
 
 final Omittable<String?> provenance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'email': email,
   'is_email_regex': isEmailRegex,
   'name': name,
@@ -52,18 +52,18 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'last_modified': lastModified.toIso8601String(),
   if (provenance.isPresent) 'provenance': provenance.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('email') && json['email'] is String &&
       json.containsKey('is_email_regex') && json['is_email_regex'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('last_modified') && json['last_modified'] is String; } 
+      json.containsKey('last_modified') && json['last_modified'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.runes.length > 1024) { errors.add('name: length must be <= 1024'); }
-return errors; } 
-EmailSecurityDisplayName copyWith({String? email, bool? isEmailRegex, String? name, Omittable<String?>? comments, DateTime? createdAt, Omittable<int?>? directoryId, Omittable<int?>? directoryNodeId, Omittable<String?>? externalDirectoryNodeId, int? id, DateTime? lastModified, Omittable<String?>? provenance, }) { return EmailSecurityDisplayName(
+return errors;}
+EmailSecurityDisplayName copyWith({String? email, bool? isEmailRegex, String? name, Omittable<String?>? comments, DateTime? createdAt, Omittable<int?>? directoryId, Omittable<int?>? directoryNodeId, Omittable<String?>? externalDirectoryNodeId, int? id, DateTime? lastModified, Omittable<String?>? provenance, }) {return EmailSecurityDisplayName(
   email: email ?? this.email,
   isEmailRegex: isEmailRegex ?? this.isEmailRegex,
   name: name ?? this.name,
@@ -75,7 +75,7 @@ EmailSecurityDisplayName copyWith({String? email, bool? isEmailRegex, String? na
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
   provenance: provenance ?? this.provenance,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityDisplayName &&
           email == other.email &&
@@ -94,4 +94,4 @@ EmailSecurityDisplayName copyWith({String? email, bool? isEmailRegex, String? na
 
 @override String toString() => 'EmailSecurityDisplayName(\n  email: $email,\n  isEmailRegex: $isEmailRegex,\n  name: $name,\n  comments: $comments,\n  createdAt: $createdAt,\n  directoryId: $directoryId,\n  directoryNodeId: $directoryNodeId,\n  externalDirectoryNodeId: $externalDirectoryNodeId,\n  id: $id,\n  lastModified: $lastModified,\n  provenance: $provenance,\n)';
 
- }
+}

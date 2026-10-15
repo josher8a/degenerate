@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SecretsStoreSystemSecretsListOrder {const SecretsStoreSystemSecretsListOrder();
 
-factory SecretsStoreSystemSecretsListOrder.fromJson(String json) { return switch (json) {
+factory SecretsStoreSystemSecretsListOrder.fromJson(String json) {return switch (json) {
   'name' => $name,
   'comment' => comment,
   'created' => created,
   'modified' => modified,
   'status' => status,
   _ => SecretsStoreSystemSecretsListOrder$Unknown(json),
-}; }
+};}
 
 static const SecretsStoreSystemSecretsListOrder $name = SecretsStoreSystemSecretsListOrder$$name._();
 
@@ -25,39 +25,39 @@ static const SecretsStoreSystemSecretsListOrder status = SecretsStoreSystemSecre
 static const List<SecretsStoreSystemSecretsListOrder> values = [$name, comment, created, modified, status];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'name' => r'$name',
   'comment' => 'comment',
   'created' => 'created',
   'modified' => 'modified',
   'status' => 'status',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SecretsStoreSystemSecretsListOrder$Unknown; } 
+bool get isUnknown {return this is SecretsStoreSystemSecretsListOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $name, required W Function() comment, required W Function() created, required W Function() modified, required W Function() status, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $name, required W Function() comment, required W Function() created, required W Function() modified, required W Function() status, required W Function(String value) $unknown, }) {return switch (this) {
       SecretsStoreSystemSecretsListOrder$$name() => $name(),
       SecretsStoreSystemSecretsListOrder$comment() => comment(),
       SecretsStoreSystemSecretsListOrder$created() => created(),
       SecretsStoreSystemSecretsListOrder$modified() => modified(),
       SecretsStoreSystemSecretsListOrder$status() => status(),
       SecretsStoreSystemSecretsListOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W Function()? comment, W Function()? created, W Function()? modified, W Function()? status, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W Function()? comment, W Function()? created, W Function()? modified, W Function()? status, W Function(String value)? $unknown, }) {return switch (this) {
       SecretsStoreSystemSecretsListOrder$$name() => $name != null ? $name() : orElse(value),
       SecretsStoreSystemSecretsListOrder$comment() => comment != null ? comment() : orElse(value),
       SecretsStoreSystemSecretsListOrder$created() => created != null ? created() : orElse(value),
       SecretsStoreSystemSecretsListOrder$modified() => modified != null ? modified() : orElse(value),
       SecretsStoreSystemSecretsListOrder$status() => status != null ? status() : orElse(value),
       SecretsStoreSystemSecretsListOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SecretsStoreSystemSecretsListOrder($value)';
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListOrder$$name extends SecretsStoreSystemSecretsListOrder {const SecretsStoreSystemSecretsListOrder$$name._();
 
 @override String get value => 'name';
@@ -66,7 +66,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W
 
 @override int get hashCode => 'name'.hashCode;
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListOrder$comment extends SecretsStoreSystemSecretsListOrder {const SecretsStoreSystemSecretsListOrder$comment._();
 
 @override String get value => 'comment';
@@ -75,7 +75,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W
 
 @override int get hashCode => 'comment'.hashCode;
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListOrder$created extends SecretsStoreSystemSecretsListOrder {const SecretsStoreSystemSecretsListOrder$created._();
 
 @override String get value => 'created';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W
 
 @override int get hashCode => 'created'.hashCode;
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListOrder$modified extends SecretsStoreSystemSecretsListOrder {const SecretsStoreSystemSecretsListOrder$modified._();
 
 @override String get value => 'modified';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W
 
 @override int get hashCode => 'modified'.hashCode;
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListOrder$status extends SecretsStoreSystemSecretsListOrder {const SecretsStoreSystemSecretsListOrder$status._();
 
 @override String get value => 'status';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W
 
 @override int get hashCode => 'status'.hashCode;
 
- }
+}
 @immutable final class SecretsStoreSystemSecretsListOrder$Unknown extends SecretsStoreSystemSecretsListOrder {const SecretsStoreSystemSecretsListOrder$Unknown(this.value);
 
 @override final String value;
@@ -112,4 +112,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

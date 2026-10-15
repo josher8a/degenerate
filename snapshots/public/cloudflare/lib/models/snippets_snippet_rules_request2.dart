@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_snippet_name.dart';/// Define a snippet rule.
 @immutable final class SnippetsSnippetRulesRequest2 {const SnippetsSnippetRulesRequest2({required this.expression, required this.snippetName, this.description, this.enabled, });
 
-factory SnippetsSnippetRulesRequest2.fromJson(Map<String, dynamic> json) { return SnippetsSnippetRulesRequest2(
+factory SnippetsSnippetRulesRequest2.fromJson(Map<String, dynamic> json) {return SnippetsSnippetRulesRequest2(
   description: json['description'] as String?,
   enabled: json['enabled'] as bool?,
   expression: json['expression'] as String,
   snippetName: SnippetsSnippetName.fromJson(json['snippet_name'] as String),
-); }
+);}
 
 /// Provide an informative description of the rule.
 /// 
@@ -35,24 +35,24 @@ String get descriptionOrDefault => description ?? '';
 /// The value of `enabled`, or its schema default when absent.
 bool get enabledOrDefault => enabled ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'enabled': ?enabled,
   'expression': expression,
   'snippet_name': snippetName.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('expression') && json['expression'] is String &&
-      json.containsKey('snippet_name'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('expression') && json['expression'] is String &&
+      json.containsKey('snippet_name');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (expression.isEmpty) { errors.add('expression: length must be >= 1'); }
-return errors; } 
-SnippetsSnippetRulesRequest2 copyWith({String? Function()? description, bool? Function()? enabled, String? expression, SnippetsSnippetName? snippetName, }) { return SnippetsSnippetRulesRequest2(
+return errors;}
+SnippetsSnippetRulesRequest2 copyWith({String? Function()? description, bool? Function()? enabled, String? expression, SnippetsSnippetName? snippetName, }) {return SnippetsSnippetRulesRequest2(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   expression: expression ?? this.expression,
   snippetName: snippetName ?? this.snippetName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SnippetsSnippetRulesRequest2 &&
           description == other.description &&
@@ -64,4 +64,4 @@ SnippetsSnippetRulesRequest2 copyWith({String? Function()? description, bool? Fu
 
 @override String toString() => 'SnippetsSnippetRulesRequest2(description: $description, enabled: $enabled, expression: $expression, snippetName: $snippetName)';
 
- }
+}

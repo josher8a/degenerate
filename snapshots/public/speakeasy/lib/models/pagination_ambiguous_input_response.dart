@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaginationAmbiguousInputResponse {const PaginationAmbiguousInputResponse({required this.numPages, required this.resultArray, this.next, });
 
-factory PaginationAmbiguousInputResponse.fromJson(Map<String, dynamic> json) { return PaginationAmbiguousInputResponse(
+factory PaginationAmbiguousInputResponse.fromJson(Map<String, dynamic> json) {return PaginationAmbiguousInputResponse(
   numPages: (json['numPages'] as num).toInt(),
   next: json['next'] as String?,
   resultArray: (json['resultArray'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
-); }
+);}
 
 final int numPages;
 
@@ -15,18 +15,18 @@ final String? next;
 
 final List<int> resultArray;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'numPages': numPages,
   'next': ?next,
   'resultArray': resultArray,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('numPages') && json['numPages'] is num &&
-      json.containsKey('resultArray'); } 
-PaginationAmbiguousInputResponse copyWith({int? numPages, String? Function()? next, List<int>? resultArray, }) { return PaginationAmbiguousInputResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('numPages') && json['numPages'] is num &&
+      json.containsKey('resultArray');}
+PaginationAmbiguousInputResponse copyWith({int? numPages, String? Function()? next, List<int>? resultArray, }) {return PaginationAmbiguousInputResponse(
   numPages: numPages ?? this.numPages,
   next: next != null ? next() : this.next,
   resultArray: resultArray ?? this.resultArray,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaginationAmbiguousInputResponse &&
           numPages == other.numPages &&
@@ -37,4 +37,4 @@ PaginationAmbiguousInputResponse copyWith({int? numPages, String? Function()? ne
 
 @override String toString() => 'PaginationAmbiguousInputResponse(numPages: $numPages, next: $next, resultArray: $resultArray)';
 
- }
+}

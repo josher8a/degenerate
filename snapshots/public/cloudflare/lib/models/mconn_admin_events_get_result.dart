@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_event_metadata.dart';@immutable final class MconnAdminEventsGetResult {const MconnAdminEventsGetResult({required this.count, required this.items, this.cursor, });
 
-factory MconnAdminEventsGetResult.fromJson(Map<String, dynamic> json) { return MconnAdminEventsGetResult(
+factory MconnAdminEventsGetResult.fromJson(Map<String, dynamic> json) {return MconnAdminEventsGetResult(
   count: (json['count'] as num).toDouble(),
   cursor: json['cursor'] as String?,
   items: (json['items'] as List<dynamic>).map((e) => MconnEventMetadata.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final double count;
 
@@ -15,18 +15,18 @@ final String? cursor;
 
 final List<MconnEventMetadata> items;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'cursor': ?cursor,
   'items': items.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
-      json.containsKey('items'); } 
-MconnAdminEventsGetResult copyWith({double? count, String? Function()? cursor, List<MconnEventMetadata>? items, }) { return MconnAdminEventsGetResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
+      json.containsKey('items');}
+MconnAdminEventsGetResult copyWith({double? count, String? Function()? cursor, List<MconnEventMetadata>? items, }) {return MconnAdminEventsGetResult(
   count: count ?? this.count,
   cursor: cursor != null ? cursor() : this.cursor,
   items: items ?? this.items,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminEventsGetResult &&
           count == other.count &&
@@ -37,4 +37,4 @@ MconnAdminEventsGetResult copyWith({double? count, String? Function()? cursor, L
 
 @override String toString() => 'MconnAdminEventsGetResult(count: $count, cursor: $cursor, items: $items)';
 
- }
+}

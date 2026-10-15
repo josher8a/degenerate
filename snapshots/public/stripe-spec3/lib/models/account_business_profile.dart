@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_annual_revenue.dart';import 'package:pub_stripe_spec3/models/account_business_profile/minority_owned_business_designation.dart';import 'package:pub_stripe_spec3/models/account_monthly_estimated_revenue.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue = const Omittable.absent(), this.estimatedWorkerCount = const Omittable.absent(), this.mcc = const Omittable.absent(), this.minorityOwnedBusinessDesignation = const Omittable.absent(), this.monthlyEstimatedRevenue, this.name = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.supportAddress = const Omittable.absent(), this.supportEmail = const Omittable.absent(), this.supportPhone = const Omittable.absent(), this.supportUrl = const Omittable.absent(), this.url = const Omittable.absent(), });
 
-factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return AccountBusinessProfile(
+factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) {return AccountBusinessProfile(
   annualRevenue: json.containsKey('annual_revenue') ? Omittable(json['annual_revenue'] != null ? AccountAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   estimatedWorkerCount: json.containsKey('estimated_worker_count') ? Omittable(json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null) : const Omittable.absent(),
   mcc: json.containsKey('mcc') ? Omittable(json['mcc'] as String?) : const Omittable.absent(),
@@ -17,7 +17,7 @@ factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return Acco
   supportPhone: json.containsKey('support_phone') ? Omittable(json['support_phone'] as String?) : const Omittable.absent(),
   supportUrl: json.containsKey('support_url') ? Omittable(json['support_url'] as String?) : const Omittable.absent(),
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The applicant's gross annual revenue for its preceding fiscal year.
 final Omittable<AccountAnnualRevenue?> annualRevenue;
@@ -54,7 +54,7 @@ final Omittable<String?> supportUrl;
 /// The business's publicly available website.
 final Omittable<String?> url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (annualRevenue.isPresent) 'annual_revenue': annualRevenue.value?.toJson(),
   if (estimatedWorkerCount.isPresent) 'estimated_worker_count': estimatedWorkerCount.value,
   if (mcc.isPresent) 'mcc': mcc.value,
@@ -67,10 +67,10 @@ Map<String, dynamic> toJson() { return {
   if (supportPhone.isPresent) 'support_phone': supportPhone.value,
   if (supportUrl.isPresent) 'support_url': supportUrl.value,
   if (url.isPresent) 'url': url.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final mcc$ = mcc.value;
 if (mcc$ != null) {
   if (mcc$.runes.length > 5000) { errors.add('mcc: length must be <= 5000'); }
@@ -99,8 +99,8 @@ final url$ = url.value;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
-return errors; } 
-AccountBusinessProfile copyWith({Omittable<AccountAnnualRevenue?>? annualRevenue, Omittable<int?>? estimatedWorkerCount, Omittable<String?>? mcc, Omittable<List<MinorityOwnedBusinessDesignation>?>? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, Omittable<String?>? name, Omittable<String?>? productDescription, Omittable<Address?>? supportAddress, Omittable<String?>? supportEmail, Omittable<String?>? supportPhone, Omittable<String?>? supportUrl, Omittable<String?>? url, }) { return AccountBusinessProfile(
+return errors;}
+AccountBusinessProfile copyWith({Omittable<AccountAnnualRevenue?>? annualRevenue, Omittable<int?>? estimatedWorkerCount, Omittable<String?>? mcc, Omittable<List<MinorityOwnedBusinessDesignation>?>? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, Omittable<String?>? name, Omittable<String?>? productDescription, Omittable<Address?>? supportAddress, Omittable<String?>? supportEmail, Omittable<String?>? supportPhone, Omittable<String?>? supportUrl, Omittable<String?>? url, }) {return AccountBusinessProfile(
   annualRevenue: annualRevenue ?? this.annualRevenue,
   estimatedWorkerCount: estimatedWorkerCount ?? this.estimatedWorkerCount,
   mcc: mcc ?? this.mcc,
@@ -113,7 +113,7 @@ AccountBusinessProfile copyWith({Omittable<AccountAnnualRevenue?>? annualRevenue
   supportPhone: supportPhone ?? this.supportPhone,
   supportUrl: supportUrl ?? this.supportUrl,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountBusinessProfile &&
           annualRevenue == other.annualRevenue &&
@@ -134,4 +134,4 @@ AccountBusinessProfile copyWith({Omittable<AccountAnnualRevenue?>? annualRevenue
 
 @override String toString() => 'AccountBusinessProfile(\n  annualRevenue: $annualRevenue,\n  estimatedWorkerCount: $estimatedWorkerCount,\n  mcc: $mcc,\n  minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation,\n  monthlyEstimatedRevenue: $monthlyEstimatedRevenue,\n  name: $name,\n  productDescription: $productDescription,\n  supportAddress: $supportAddress,\n  supportEmail: $supportEmail,\n  supportPhone: $supportPhone,\n  supportUrl: $supportUrl,\n  url: $url,\n)';
 
- }
+}

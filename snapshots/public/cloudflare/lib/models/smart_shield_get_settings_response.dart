@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_messages2.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_get_response.dart';@immutable final class SmartShieldGetSettingsResponse {const SmartShieldGetSettingsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory SmartShieldGetSettingsResponse.fromJson(Map<String, dynamic> json) { return SmartShieldGetSettingsResponse(
+factory SmartShieldGetSettingsResponse.fromJson(Map<String, dynamic> json) {return SmartShieldGetSettingsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SmartshieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SmartshieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: SmartshieldSmartShieldSettingsGetResponse.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<SmartshieldMessages2> errors;
 
@@ -21,22 +21,22 @@ final SmartshieldSmartShieldSettingsGetResponse result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-SmartShieldGetSettingsResponse copyWith({List<SmartshieldMessages2>? errors, List<SmartshieldMessages2>? messages, SmartshieldSmartShieldSettingsGetResponse? result, bool? success, }) { return SmartShieldGetSettingsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+SmartShieldGetSettingsResponse copyWith({List<SmartshieldMessages2>? errors, List<SmartshieldMessages2>? messages, SmartshieldSmartShieldSettingsGetResponse? result, bool? success, }) {return SmartShieldGetSettingsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SmartShieldGetSettingsResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ SmartShieldGetSettingsResponse copyWith({List<SmartshieldMessages2>? errors, Lis
 
 @override String toString() => 'SmartShieldGetSettingsResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

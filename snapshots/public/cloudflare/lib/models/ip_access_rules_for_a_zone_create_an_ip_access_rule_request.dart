@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_asn_configuration.dart';import 'package:pub_cloudflare/models/firewall_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_configuration.dart';import 'package:pub_cloudflare/models/firewall_country_configuration.dart';import 'package:pub_cloudflare/models/firewall_ip_configuration.dart';import 'package:pub_cloudflare/models/firewall_ipv6_configuration.dart';import 'package:pub_cloudflare/models/firewall_notes.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';@immutable final class IpAccessRulesForAZoneCreateAnIpAccessRuleRequest {const IpAccessRulesForAZoneCreateAnIpAccessRuleRequest({required this.configuration, required this.mode, this.notes, });
 
-factory IpAccessRulesForAZoneCreateAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) { return IpAccessRulesForAZoneCreateAnIpAccessRuleRequest(
+factory IpAccessRulesForAZoneCreateAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) {return IpAccessRulesForAZoneCreateAnIpAccessRuleRequest(
   configuration: OneOf5.parse(json['configuration'], fromA: (v) => FirewallIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallIpv6Configuration.fromJson(v as Map<String, dynamic>), fromC: (v) => FirewallCidrConfiguration.fromJson(v as Map<String, dynamic>), fromD: (v) => FirewallAsnConfiguration.fromJson(v as Map<String, dynamic>), fromE: (v) => FirewallCountryConfiguration.fromJson(v as Map<String, dynamic>),),
   mode: FirewallSchemasMode.fromJson(json['mode'] as String),
   notes: json['notes'] != null ? FirewallNotes.fromJson(json['notes'] as String) : null,
-); }
+);}
 
 final FirewallConfiguration configuration;
 
@@ -17,18 +17,18 @@ final FirewallSchemasMode mode;
 /// An informative summary of the rule, typically used as a reminder or explanation.
 final FirewallNotes? notes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'configuration': configuration.toJson(),
   'mode': mode.toJson(),
   if (notes != null) 'notes': notes?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
-      json.containsKey('mode'); } 
-IpAccessRulesForAZoneCreateAnIpAccessRuleRequest copyWith({FirewallConfiguration? configuration, FirewallSchemasMode? mode, FirewallNotes? Function()? notes, }) { return IpAccessRulesForAZoneCreateAnIpAccessRuleRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('configuration') &&
+      json.containsKey('mode');}
+IpAccessRulesForAZoneCreateAnIpAccessRuleRequest copyWith({FirewallConfiguration? configuration, FirewallSchemasMode? mode, FirewallNotes? Function()? notes, }) {return IpAccessRulesForAZoneCreateAnIpAccessRuleRequest(
   configuration: configuration ?? this.configuration,
   mode: mode ?? this.mode,
   notes: notes != null ? notes() : this.notes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpAccessRulesForAZoneCreateAnIpAccessRuleRequest &&
           configuration == other.configuration &&
@@ -39,4 +39,4 @@ IpAccessRulesForAZoneCreateAnIpAccessRuleRequest copyWith({FirewallConfiguration
 
 @override String toString() => 'IpAccessRulesForAZoneCreateAnIpAccessRuleRequest(configuration: $configuration, mode: $mode, notes: $notes)';
 
- }
+}

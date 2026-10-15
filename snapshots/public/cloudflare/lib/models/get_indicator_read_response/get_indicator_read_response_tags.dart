@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorReadResponseTags {const GetIndicatorReadResponseTags({this.categoryName, this.uuid, this.value, });
 
-factory GetIndicatorReadResponseTags.fromJson(Map<String, dynamic> json) { return GetIndicatorReadResponseTags(
+factory GetIndicatorReadResponseTags.fromJson(Map<String, dynamic> json) {return GetIndicatorReadResponseTags(
   categoryName: json['categoryName'] as String?,
   uuid: json['uuid'] as String?,
   value: json['value'] as String?,
-); }
+);}
 
 final String? categoryName;
 
@@ -15,17 +15,17 @@ final String? uuid;
 
 final String? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'categoryName': ?categoryName,
   'uuid': ?uuid,
   'value': ?value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'categoryName', 'uuid', 'value'}.contains(key)); } 
-GetIndicatorReadResponseTags copyWith({String? Function()? categoryName, String? Function()? uuid, String? Function()? value, }) { return GetIndicatorReadResponseTags(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'categoryName', 'uuid', 'value'}.contains(key));}
+GetIndicatorReadResponseTags copyWith({String? Function()? categoryName, String? Function()? uuid, String? Function()? value, }) {return GetIndicatorReadResponseTags(
   categoryName: categoryName != null ? categoryName() : this.categoryName,
   uuid: uuid != null ? uuid() : this.uuid,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetIndicatorReadResponseTags &&
           categoryName == other.categoryName &&
@@ -36,4 +36,4 @@ GetIndicatorReadResponseTags copyWith({String? Function()? categoryName, String?
 
 @override String toString() => 'GetIndicatorReadResponseTags(categoryName: $categoryName, uuid: $uuid, value: $value)';
 
- }
+}

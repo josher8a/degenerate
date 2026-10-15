@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TenantMembership {const TenantMembership({required this.userEmail, required this.userName, required this.userTag, });
 
-factory TenantMembership.fromJson(Map<String, dynamic> json) { return TenantMembership(
+factory TenantMembership.fromJson(Map<String, dynamic> json) {return TenantMembership(
   userEmail: json['user_email'] as String,
   userName: json['user_name'] as String,
   userTag: json['user_tag'] as String,
-); }
+);}
 
 final String userEmail;
 
@@ -15,19 +15,19 @@ final String userName;
 
 final String userTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'user_email': userEmail,
   'user_name': userName,
   'user_tag': userTag,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('user_email') && json['user_email'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('user_email') && json['user_email'] is String &&
       json.containsKey('user_name') && json['user_name'] is String &&
-      json.containsKey('user_tag') && json['user_tag'] is String; } 
-TenantMembership copyWith({String? userEmail, String? userName, String? userTag, }) { return TenantMembership(
+      json.containsKey('user_tag') && json['user_tag'] is String;}
+TenantMembership copyWith({String? userEmail, String? userName, String? userTag, }) {return TenantMembership(
   userEmail: userEmail ?? this.userEmail,
   userName: userName ?? this.userName,
   userTag: userTag ?? this.userTag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TenantMembership &&
           userEmail == other.userEmail &&
@@ -38,4 +38,4 @@ TenantMembership copyWith({String? userEmail, String? userName, String? userTag,
 
 @override String toString() => 'TenantMembership(userEmail: $userEmail, userName: $userName, userTag: $userTag)';
 
- }
+}

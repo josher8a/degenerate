@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rule_action.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_exposed_credential_check.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_rule_logging.dart';import 'package:pub_cloudflare/models/rulesets_rule_ratelimit.dart';@immutable final class RulesetsRuleRequest {const RulesetsRuleRequest({this.action, this.actionParameters, this.description, this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
-factory RulesetsRuleRequest.fromJson(Map<String, dynamic> json) { return RulesetsRuleRequest(
+factory RulesetsRuleRequest.fromJson(Map<String, dynamic> json) {return RulesetsRuleRequest(
   action: json['action'] != null ? RulesetsRuleAction.fromJson(json['action'] as String) : null,
   actionParameters: json['action_parameters'] as Map<String, dynamic>?,
   description: json['description'] as String?,
@@ -14,7 +14,7 @@ factory RulesetsRuleRequest.fromJson(Map<String, dynamic> json) { return Ruleset
   logging: json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null,
   ratelimit: json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String?,
-); }
+);}
 
 /// The action to perform when the rule matches.
 final RulesetsRuleAction? action;
@@ -53,7 +53,7 @@ Map<String,dynamic> get actionParametersOrDefault => actionParameters ?? const {
 /// The value of `description`, or its schema default when absent.
 String get descriptionOrDefault => description ?? '';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (action != null) 'action': action?.toJson(),
   'action_parameters': ?actionParameters,
   'description': ?description,
@@ -64,10 +64,10 @@ Map<String, dynamic> toJson() { return {
   if (logging != null) 'logging': logging?.toJson(),
   if (ratelimit != null) 'ratelimit': ratelimit?.toJson(),
   'ref': ?ref,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'enabled', 'exposed_credential_check', 'expression', 'id', 'logging', 'ratelimit', 'ref'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'enabled', 'exposed_credential_check', 'expression', 'id', 'logging', 'ratelimit', 'ref'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final expression$ = expression;
 if (expression$ != null) {
   if (expression$.isEmpty) { errors.add('expression: length must be >= 1'); }
@@ -76,8 +76,8 @@ final ref$ = ref;
 if (ref$ != null) {
   if (ref$.isEmpty) { errors.add('ref: length must be >= 1'); }
 }
-return errors; } 
-RulesetsRuleRequest copyWith({RulesetsRuleAction? Function()? action, Map<String, dynamic>? Function()? actionParameters, String? Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) { return RulesetsRuleRequest(
+return errors;}
+RulesetsRuleRequest copyWith({RulesetsRuleAction? Function()? action, Map<String, dynamic>? Function()? actionParameters, String? Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, }) {return RulesetsRuleRequest(
   action: action != null ? action() : this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   description: description != null ? description() : this.description,
@@ -88,7 +88,7 @@ RulesetsRuleRequest copyWith({RulesetsRuleAction? Function()? action, Map<String
   logging: logging != null ? logging() : this.logging,
   ratelimit: ratelimit != null ? ratelimit() : this.ratelimit,
   ref: ref != null ? ref() : this.ref,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRuleRequest &&
           action == other.action &&
@@ -106,4 +106,4 @@ RulesetsRuleRequest copyWith({RulesetsRuleAction? Function()? action, Map<String
 
 @override String toString() => 'RulesetsRuleRequest(\n  action: $action,\n  actionParameters: $actionParameters,\n  description: $description,\n  enabled: $enabled,\n  exposedCredentialCheck: $exposedCredentialCheck,\n  expression: $expression,\n  id: $id,\n  logging: $logging,\n  ratelimit: $ratelimit,\n  ref: $ref,\n)';
 
- }
+}

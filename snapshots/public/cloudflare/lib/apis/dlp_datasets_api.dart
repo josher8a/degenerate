@@ -12,7 +12,7 @@ final class DlpDatasetsApi with ApiExecutor {const DlpDatasetsApi(this.apiConfig
 /// Fetch all datasets
 ///
 /// `GET /accounts/{account_id}/dlp/datasets`
-Future<ApiResult<List<DlpDataset>?, DlpDatasetsCreateError>> dlpDatasetsReadAll({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlpDataset>?, DlpDatasetsCreateError>> dlpDatasetsReadAll({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,11 +29,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Create a new dataset
 ///
 /// `POST /accounts/{account_id}/dlp/datasets`
-Future<ApiResult<DlpDatasetCreation?, DlpDatasetsCreateError>> dlpDatasetsCreate({required String accountId, required DlpDatasetsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDatasetCreation?, DlpDatasetsCreateError>> dlpDatasetsCreate({required String accountId, required DlpDatasetsCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,11 +52,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Fetch a specific dataset
 ///
 /// `GET /accounts/{account_id}/dlp/datasets/{dataset_id}`
-Future<ApiResult<DlpDataset?, DlpDatasetsCreateError>> dlpDatasetsRead({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDataset?, DlpDatasetsCreateError>> dlpDatasetsRead({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -73,11 +73,11 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Update details about a dataset
 ///
 /// `PUT /accounts/{account_id}/dlp/datasets/{dataset_id}`
-Future<ApiResult<DlpDataset?, DlpDatasetsCreateError>> dlpDatasetsUpdate({required String accountId, required String datasetId, required DlpDatasetsUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDataset?, DlpDatasetsCreateError>> dlpDatasetsUpdate({required String accountId, required String datasetId, required DlpDatasetsUpdateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,13 +96,13 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Delete a dataset
 ///
 /// This deletes all versions of the dataset.
 ///
 /// `DELETE /accounts/{account_id}/dlp/datasets/{dataset_id}`
-Future<ApiResult<void, DlpDatasetsCreateError>> dlpDatasetsDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DlpDatasetsCreateError>> dlpDatasetsDelete({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -116,11 +116,11 @@ return await execute(
   onSuccess: (_) {},
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Prepare to upload a new version of a dataset
 ///
 /// `POST /accounts/{account_id}/dlp/datasets/{dataset_id}/upload`
-Future<ApiResult<DlpDatasetNewVersion?, DlpDatasetsCreateError>> dlpDatasetsCreateVersion({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDatasetNewVersion?, DlpDatasetsCreateError>> dlpDatasetsCreateVersion({required String accountId, required String datasetId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -137,7 +137,7 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Upload a new version of a dataset
 ///
 /// This is used for single-column EDMv1 and Custom Word Lists. The EDM format
@@ -146,7 +146,7 @@ return await execute(
 /// be a UTF-8 encoded, newline (NL or CRNL) separated list of words to be matched.
 ///
 /// `POST /accounts/{account_id}/dlp/datasets/{dataset_id}/upload/{version}`
-Future<ApiResult<DlpDataset?, DlpDatasetsCreateError>> dlpDatasetsUploadVersion({required String accountId, required String datasetId, required int version, required Uint8List body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDataset?, DlpDatasetsCreateError>> dlpDatasetsUploadVersion({required String accountId, required String datasetId, required int version, required Uint8List body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
 
 final request = ApiRequest(
@@ -165,7 +165,7 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Sets the column information for a multi-column upload
 ///
 /// This is used for multi-column EDMv2 datasets. The EDMv2 format can only be
@@ -173,7 +173,7 @@ return await execute(
 /// the same order as in the request.
 ///
 /// `POST /accounts/{account_id}/dlp/datasets/{dataset_id}/versions/{version}`
-Future<ApiResult<List<DlpDatasetColumn>?, DlpDatasetsCreateError>> dlpDatasetsDefineColumns({required String accountId, required String datasetId, required int version, required List<DlpDatasetsDefineColumnsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlpDatasetColumn>?, DlpDatasetsCreateError>> dlpDatasetsDefineColumns({required String accountId, required String datasetId, required int version, required List<DlpDatasetsDefineColumnsRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -192,14 +192,14 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
+}
 /// Upload a new version of a multi-column dataset
 ///
 /// This is used for multi-column EDMv2 datasets. The EDMv2 format can only be
 /// created in the Cloudflare dashboard.
 ///
 /// `POST /accounts/{account_id}/dlp/datasets/{dataset_id}/versions/{version}/entries/{entry_id}`
-Future<ApiResult<DlpDatasetColumn?, DlpDatasetsCreateError>> dlpDatasetsUploadDatasetColumn({required String accountId, required String datasetId, required int version, required String entryId, required Uint8List body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDatasetColumn?, DlpDatasetsCreateError>> dlpDatasetsUploadDatasetColumn({required String accountId, required String datasetId, required int version, required String entryId, required Uint8List body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
 
 final request = ApiRequest(
@@ -218,5 +218,5 @@ return await execute(
   },
   onError: DlpDatasetsCreateError.fromResponse,
 );
- } 
- }
+}
+}

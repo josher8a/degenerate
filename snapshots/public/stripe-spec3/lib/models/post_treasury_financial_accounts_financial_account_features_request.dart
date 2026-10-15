@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request/deposit_insurance.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request/financial_addresses.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request/intra_stripe_flows.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request/outbound_payments.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request/outbound_transfers.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request/post_treasury_financial_accounts_financial_account_features_request_card_issuing.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request/post_treasury_financial_accounts_financial_account_features_request_inbound_transfers.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest({this.cardIssuing, this.depositInsurance, this.expand, this.financialAddresses, this.inboundTransfers, this.intraStripeFlows, this.outboundPayments, this.outboundTransfers, });
 
-factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
+factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest.fromJson(Map<String, dynamic> json) {return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
   cardIssuing: json['card_issuing'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
   depositInsurance: json['deposit_insurance'] != null ? DepositInsurance.fromJson(json['deposit_insurance'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -12,7 +12,7 @@ factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest.fromJson(Ma
   intraStripeFlows: json['intra_stripe_flows'] != null ? IntraStripeFlows.fromJson(json['intra_stripe_flows'] as Map<String, dynamic>) : null,
   outboundPayments: json['outbound_payments'] != null ? OutboundPayments.fromJson(json['outbound_payments'] as Map<String, dynamic>) : null,
   outboundTransfers: json['outbound_transfers'] != null ? OutboundTransfers.fromJson(json['outbound_transfers'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Encodes the FinancialAccount's ability to be used with the Issuing product, including attaching cards to and drawing funds from the FinancialAccount.
 final PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing? cardIssuing;
@@ -38,7 +38,7 @@ final OutboundPayments? outboundPayments;
 /// Contains a Feature and settings related to moving money out of the FinancialAccount into another Account with the same owner.
 final OutboundTransfers? outboundTransfers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (cardIssuing != null) 'card_issuing': cardIssuing?.toJson(),
   if (depositInsurance != null) 'deposit_insurance': depositInsurance?.toJson(),
   'expand': ?expand,
@@ -47,9 +47,9 @@ Map<String, dynamic> toJson() { return {
   if (intraStripeFlows != null) 'intra_stripe_flows': intraStripeFlows?.toJson(),
   if (outboundPayments != null) 'outbound_payments': outboundPayments?.toJson(),
   if (outboundTransfers != null) 'outbound_transfers': outboundTransfers?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_issuing', 'deposit_insurance', 'expand', 'financial_addresses', 'inbound_transfers', 'intra_stripe_flows', 'outbound_payments', 'outbound_transfers'}.contains(key)); } 
-PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing? Function()? cardIssuing, DepositInsurance? Function()? depositInsurance, List<String>? Function()? expand, FinancialAddresses? Function()? financialAddresses, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers? Function()? inboundTransfers, IntraStripeFlows? Function()? intraStripeFlows, OutboundPayments? Function()? outboundPayments, OutboundTransfers? Function()? outboundTransfers, }) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'card_issuing', 'deposit_insurance', 'expand', 'financial_addresses', 'inbound_transfers', 'intra_stripe_flows', 'outbound_payments', 'outbound_transfers'}.contains(key));}
+PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing? Function()? cardIssuing, DepositInsurance? Function()? depositInsurance, List<String>? Function()? expand, FinancialAddresses? Function()? financialAddresses, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers? Function()? inboundTransfers, IntraStripeFlows? Function()? intraStripeFlows, OutboundPayments? Function()? outboundPayments, OutboundTransfers? Function()? outboundTransfers, }) {return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   depositInsurance: depositInsurance != null ? depositInsurance() : this.depositInsurance,
   expand: expand != null ? expand() : this.expand,
@@ -58,7 +58,7 @@ PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreas
   intraStripeFlows: intraStripeFlows != null ? intraStripeFlows() : this.intraStripeFlows,
   outboundPayments: outboundPayments != null ? outboundPayments() : this.outboundPayments,
   outboundTransfers: outboundTransfers != null ? outboundTransfers() : this.outboundTransfers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest &&
           cardIssuing == other.cardIssuing &&
@@ -74,4 +74,4 @@ PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreas
 
 @override String toString() => 'PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(cardIssuing: $cardIssuing, depositInsurance: $depositInsurance, expand: $expand, financialAddresses: $financialAddresses, inboundTransfers: $inboundTransfers, intraStripeFlows: $intraStripeFlows, outboundPayments: $outboundPayments, outboundTransfers: $outboundTransfers)';
 
- }
+}

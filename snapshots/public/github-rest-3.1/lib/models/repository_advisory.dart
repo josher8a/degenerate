@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/cvss_severities/cvss_severities_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/repository_advisory/repository_advisory_credits.dart';import 'package:pub_github_rest_3_1/models/repository_advisory/submission.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_credit.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_vulnerability.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The state of the advisory.
 sealed class RepositoryAdvisoryState {const RepositoryAdvisoryState();
 
-factory RepositoryAdvisoryState.fromJson(String json) { return switch (json) {
+factory RepositoryAdvisoryState.fromJson(String json) {return switch (json) {
   'published' => published,
   'closed' => closed,
   'withdrawn' => withdrawn,
   'draft' => draft,
   'triage' => triage,
   _ => RepositoryAdvisoryState$Unknown(json),
-}; }
+};}
 
 static const RepositoryAdvisoryState published = RepositoryAdvisoryState$published._();
 
@@ -26,39 +26,39 @@ static const RepositoryAdvisoryState triage = RepositoryAdvisoryState$triage._()
 static const List<RepositoryAdvisoryState> values = [published, closed, withdrawn, draft, triage];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'published' => 'published',
   'closed' => 'closed',
   'withdrawn' => 'withdrawn',
   'draft' => 'draft',
   'triage' => 'triage',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RepositoryAdvisoryState$Unknown; } 
+bool get isUnknown {return this is RepositoryAdvisoryState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() published, required W Function() closed, required W Function() withdrawn, required W Function() draft, required W Function() triage, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() published, required W Function() closed, required W Function() withdrawn, required W Function() draft, required W Function() triage, required W Function(String value) $unknown, }) {return switch (this) {
       RepositoryAdvisoryState$published() => published(),
       RepositoryAdvisoryState$closed() => closed(),
       RepositoryAdvisoryState$withdrawn() => withdrawn(),
       RepositoryAdvisoryState$draft() => draft(),
       RepositoryAdvisoryState$triage() => triage(),
       RepositoryAdvisoryState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? published, W Function()? closed, W Function()? withdrawn, W Function()? draft, W Function()? triage, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? published, W Function()? closed, W Function()? withdrawn, W Function()? draft, W Function()? triage, W Function(String value)? $unknown, }) {return switch (this) {
       RepositoryAdvisoryState$published() => published != null ? published() : orElse(value),
       RepositoryAdvisoryState$closed() => closed != null ? closed() : orElse(value),
       RepositoryAdvisoryState$withdrawn() => withdrawn != null ? withdrawn() : orElse(value),
       RepositoryAdvisoryState$draft() => draft != null ? draft() : orElse(value),
       RepositoryAdvisoryState$triage() => triage != null ? triage() : orElse(value),
       RepositoryAdvisoryState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RepositoryAdvisoryState($value)';
 
- }
+}
 @immutable final class RepositoryAdvisoryState$published extends RepositoryAdvisoryState {const RepositoryAdvisoryState$published._();
 
 @override String get value => 'published';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publishe
 
 @override int get hashCode => 'published'.hashCode;
 
- }
+}
 @immutable final class RepositoryAdvisoryState$closed extends RepositoryAdvisoryState {const RepositoryAdvisoryState$closed._();
 
 @override String get value => 'closed';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publishe
 
 @override int get hashCode => 'closed'.hashCode;
 
- }
+}
 @immutable final class RepositoryAdvisoryState$withdrawn extends RepositoryAdvisoryState {const RepositoryAdvisoryState$withdrawn._();
 
 @override String get value => 'withdrawn';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publishe
 
 @override int get hashCode => 'withdrawn'.hashCode;
 
- }
+}
 @immutable final class RepositoryAdvisoryState$draft extends RepositoryAdvisoryState {const RepositoryAdvisoryState$draft._();
 
 @override String get value => 'draft';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publishe
 
 @override int get hashCode => 'draft'.hashCode;
 
- }
+}
 @immutable final class RepositoryAdvisoryState$triage extends RepositoryAdvisoryState {const RepositoryAdvisoryState$triage._();
 
 @override String get value => 'triage';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publishe
 
 @override int get hashCode => 'triage'.hashCode;
 
- }
+}
 @immutable final class RepositoryAdvisoryState$Unknown extends RepositoryAdvisoryState {const RepositoryAdvisoryState$Unknown(this.value);
 
 @override final String value;
@@ -113,11 +113,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? publishe
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A repository security advisory.
 @immutable final class RepositoryAdvisory {const RepositoryAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.summary, required this.description, required this.severity, required this.author, required this.publisher, required this.identifiers, required this.state, required this.createdAt, required this.updatedAt, required this.publishedAt, required this.closedAt, required this.withdrawnAt, required this.submission, required this.vulnerabilities, required this.cvss, required this.cwes, required this.cweIds, required this.credits, required this.creditsDetailed, required this.collaboratingUsers, required this.collaboratingTeams, required this.privateFork, this.cvssSeverities = const Omittable.absent(), });
 
-factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return RepositoryAdvisory(
+factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) {return RepositoryAdvisory(
   ghsaId: json['ghsa_id'] as String,
   cveId: json['cve_id'] as String?,
   url: Uri.parse(json['url'] as String),
@@ -145,7 +145,7 @@ factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return Reposito
   collaboratingUsers: (json['collaborating_users'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   collaboratingTeams: (json['collaborating_teams'] as List<dynamic>?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
   privateFork: json['private_fork'] != null ? SimpleRepository.fromJson(json['private_fork'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The GitHub Security Advisory ID.
 final String ghsaId;
@@ -220,7 +220,7 @@ final List<Team>? collaboratingTeams;
 /// A temporary private fork of the advisory's repository for collaborating on a fix.
 final SimpleRepository? privateFork;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ghsa_id': ghsaId,
   'cve_id': cveId,
   'url': url.toString(),
@@ -248,8 +248,8 @@ Map<String, dynamic> toJson() { return {
   'collaborating_users': collaboratingUsers?.map((e) => e.toJson()).toList(),
   'collaborating_teams': collaboratingTeams?.map((e) => e.toJson()).toList(),
   'private_fork': privateFork?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && (json['cve_id'] == null || json['cve_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -274,16 +274,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('credits_detailed') &&
       json.containsKey('collaborating_users') &&
       json.containsKey('collaborating_teams') &&
-      json.containsKey('private_fork'); } 
+      json.containsKey('private_fork');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (summary.runes.length > 1024) { errors.add('summary: length must be <= 1024'); }
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 65535) { errors.add('description: length must be <= 65535'); }
 }
-return errors; } 
-RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, PrivateVulnerabilityReportCreateSeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, Submission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, List<Cwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
+return errors;}
+RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, PrivateVulnerabilityReportCreateSeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, Submission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, List<Cwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) {return RepositoryAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,
@@ -311,7 +311,7 @@ RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url
   collaboratingUsers: collaboratingUsers != null ? collaboratingUsers() : this.collaboratingUsers,
   collaboratingTeams: collaboratingTeams != null ? collaboratingTeams() : this.collaboratingTeams,
   privateFork: privateFork != null ? privateFork() : this.privateFork,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryAdvisory &&
           ghsaId == other.ghsaId &&
@@ -346,4 +346,4 @@ RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url
 
 @override String toString() => 'RepositoryAdvisory(\n  ghsaId: $ghsaId,\n  cveId: $cveId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  summary: $summary,\n  description: $description,\n  severity: $severity,\n  author: $author,\n  publisher: $publisher,\n  identifiers: $identifiers,\n  state: $state,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  publishedAt: $publishedAt,\n  closedAt: $closedAt,\n  withdrawnAt: $withdrawnAt,\n  submission: $submission,\n  vulnerabilities: $vulnerabilities,\n  cvss: $cvss,\n  cvssSeverities: $cvssSeverities,\n  cwes: $cwes,\n  cweIds: $cweIds,\n  credits: $credits,\n  creditsDetailed: $creditsDetailed,\n  collaboratingUsers: $collaboratingUsers,\n  collaboratingTeams: $collaboratingTeams,\n  privateFork: $privateFork,\n)';
 
- }
+}

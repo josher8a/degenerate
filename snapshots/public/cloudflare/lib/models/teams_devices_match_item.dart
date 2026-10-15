@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_platform.dart';@immutable final class TeamsDevicesMatchItem {const TeamsDevicesMatchItem({this.platform});
 
-factory TeamsDevicesMatchItem.fromJson(Map<String, dynamic> json) { return TeamsDevicesMatchItem(
+factory TeamsDevicesMatchItem.fromJson(Map<String, dynamic> json) {return TeamsDevicesMatchItem(
   platform: json['platform'] != null ? TeamsDevicesPlatform.fromJson(json['platform'] as String) : null,
-); }
+);}
 
 final TeamsDevicesPlatform? platform;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (platform != null) 'platform': platform?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'platform'}.contains(key)); } 
-TeamsDevicesMatchItem copyWith({TeamsDevicesPlatform? Function()? platform}) { return TeamsDevicesMatchItem(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'platform'}.contains(key));}
+TeamsDevicesMatchItem copyWith({TeamsDevicesPlatform? Function()? platform}) {return TeamsDevicesMatchItem(
   platform: platform != null ? platform() : this.platform,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesMatchItem &&
           platform == other.platform;
@@ -24,4 +24,4 @@ TeamsDevicesMatchItem copyWith({TeamsDevicesPlatform? Function()? platform}) { r
 
 @override String toString() => 'TeamsDevicesMatchItem(platform: $platform)';
 
- }
+}

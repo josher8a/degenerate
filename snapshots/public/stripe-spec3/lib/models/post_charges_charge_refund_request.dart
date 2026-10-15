@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';@immutable final class PostChargesChargeRefundRequest {const PostChargesChargeRefundRequest({this.amount, this.expand, this.instructionsEmail, this.metadata, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
 
-factory PostChargesChargeRefundRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRefundRequest(
+factory PostChargesChargeRefundRequest.fromJson(Map<String, dynamic> json) {return PostChargesChargeRefundRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   instructionsEmail: json['instructions_email'] as String?,
@@ -12,7 +12,7 @@ factory PostChargesChargeRefundRequest.fromJson(Map<String, dynamic> json) { ret
   reason: json['reason'] != null ? PostChargesChargeRefundRequestReason.fromJson(json['reason'] as String) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
   reverseTransfer: json['reverse_transfer'] as bool?,
-); }
+);}
 
 /// A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) representing how much of this charge to refund. Can refund only up to the remaining, unrefunded amount of the charge.
 final int? amount;
@@ -38,7 +38,7 @@ final bool? refundApplicationFee;
 /// Boolean indicating whether the transfer should be reversed when refunding this charge. The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount).`<br>``<br>`A transfer can be reversed only by the application that created the charge.
 final bool? reverseTransfer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'expand': ?expand,
   'instructions_email': ?instructionsEmail,
@@ -47,16 +47,16 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
   'refund_application_fee': ?refundApplicationFee,
   'reverse_transfer': ?reverseTransfer,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'expand', 'instructions_email', 'metadata', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'amount', 'expand', 'instructions_email', 'metadata', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final paymentIntent$ = paymentIntent;
 if (paymentIntent$ != null) {
   if (paymentIntent$.runes.length > 5000) { errors.add('paymentIntent: length must be <= 5000'); }
 }
-return errors; } 
-PostChargesChargeRefundRequest copyWith({int? Function()? amount, List<String>? Function()? expand, String? Function()? instructionsEmail, Metadata? Function()? metadata, String? Function()? paymentIntent, PostChargesChargeRefundRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) { return PostChargesChargeRefundRequest(
+return errors;}
+PostChargesChargeRefundRequest copyWith({int? Function()? amount, List<String>? Function()? expand, String? Function()? instructionsEmail, Metadata? Function()? metadata, String? Function()? paymentIntent, PostChargesChargeRefundRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) {return PostChargesChargeRefundRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,
   instructionsEmail: instructionsEmail != null ? instructionsEmail() : this.instructionsEmail,
@@ -65,7 +65,7 @@ PostChargesChargeRefundRequest copyWith({int? Function()? amount, List<String>? 
   reason: reason != null ? reason() : this.reason,
   refundApplicationFee: refundApplicationFee != null ? refundApplicationFee() : this.refundApplicationFee,
   reverseTransfer: reverseTransfer != null ? reverseTransfer() : this.reverseTransfer,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesChargeRefundRequest &&
           amount == other.amount &&
@@ -81,4 +81,4 @@ PostChargesChargeRefundRequest copyWith({int? Function()? amount, List<String>? 
 
 @override String toString() => 'PostChargesChargeRefundRequest(amount: $amount, expand: $expand, instructionsEmail: $instructionsEmail, metadata: $metadata, paymentIntent: $paymentIntent, reason: $reason, refundApplicationFee: $refundApplicationFee, reverseTransfer: $reverseTransfer)';
 
- }
+}

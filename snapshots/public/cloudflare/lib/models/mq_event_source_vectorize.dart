@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
 sealed class MqEventSourceVectorizeType {const MqEventSourceVectorizeType();
 
-factory MqEventSourceVectorizeType.fromJson(String json) { return switch (json) {
+factory MqEventSourceVectorizeType.fromJson(String json) {return switch (json) {
   'vectorize' => vectorize,
   _ => MqEventSourceVectorizeType$Unknown(json),
-}; }
+};}
 
 static const MqEventSourceVectorizeType vectorize = MqEventSourceVectorizeType$vectorize._();
 
 static const List<MqEventSourceVectorizeType> values = [vectorize];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'vectorize' => 'vectorize',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MqEventSourceVectorizeType$Unknown; } 
+bool get isUnknown {return this is MqEventSourceVectorizeType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() vectorize, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() vectorize, required W Function(String value) $unknown, }) {return switch (this) {
       MqEventSourceVectorizeType$vectorize() => vectorize(),
       MqEventSourceVectorizeType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorize, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorize, W Function(String value)? $unknown, }) {return switch (this) {
       MqEventSourceVectorizeType$vectorize() => vectorize != null ? vectorize() : orElse(value),
       MqEventSourceVectorizeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MqEventSourceVectorizeType($value)';
 
- }
+}
 @immutable final class MqEventSourceVectorizeType$vectorize extends MqEventSourceVectorizeType {const MqEventSourceVectorizeType$vectorize._();
 
 @override String get value => 'vectorize';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectoriz
 
 @override int get hashCode => 'vectorize'.hashCode;
 
- }
+}
 @immutable final class MqEventSourceVectorizeType$Unknown extends MqEventSourceVectorizeType {const MqEventSourceVectorizeType$Unknown(this.value);
 
 @override final String value;
@@ -53,23 +53,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectoriz
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class MqEventSourceVectorize {const MqEventSourceVectorize({this.type});
 
-factory MqEventSourceVectorize.fromJson(Map<String, dynamic> json) { return MqEventSourceVectorize(
+factory MqEventSourceVectorize.fromJson(Map<String, dynamic> json) {return MqEventSourceVectorize(
   type: json['type'] != null ? MqEventSourceVectorizeType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// Type of source
 final MqEventSourceVectorizeType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-MqEventSourceVectorize copyWith({MqEventSourceVectorizeType? Function()? type}) { return MqEventSourceVectorize(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'type'}.contains(key));}
+MqEventSourceVectorize copyWith({MqEventSourceVectorizeType? Function()? type}) {return MqEventSourceVectorize(
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MqEventSourceVectorize &&
           type == other.type;
@@ -78,4 +78,4 @@ MqEventSourceVectorize copyWith({MqEventSourceVectorizeType? Function()? type}) 
 
 @override String toString() => 'MqEventSourceVectorize(type: $type)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Oauth2AuthResponse {const Oauth2AuthResponse({required this.authenticated, required this.token, });
 
-factory Oauth2AuthResponse.fromJson(Map<String, dynamic> json) { return Oauth2AuthResponse(
+factory Oauth2AuthResponse.fromJson(Map<String, dynamic> json) {return Oauth2AuthResponse(
   authenticated: json['authenticated'] as bool,
   token: json['token'] as String,
-); }
+);}
 
 final bool authenticated;
 
 final String token;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'authenticated': authenticated,
   'token': token,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('authenticated') && json['authenticated'] is bool &&
-      json.containsKey('token') && json['token'] is String; } 
-Oauth2AuthResponse copyWith({bool? authenticated, String? token, }) { return Oauth2AuthResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('authenticated') && json['authenticated'] is bool &&
+      json.containsKey('token') && json['token'] is String;}
+Oauth2AuthResponse copyWith({bool? authenticated, String? token, }) {return Oauth2AuthResponse(
   authenticated: authenticated ?? this.authenticated,
   token: token ?? this.token,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Oauth2AuthResponse &&
           authenticated == other.authenticated &&
@@ -31,4 +31,4 @@ Oauth2AuthResponse copyWith({bool? authenticated, String? token, }) { return Oau
 
 @override String toString() => 'Oauth2AuthResponse(authenticated: $authenticated, token: $token)';
 
- }
+}

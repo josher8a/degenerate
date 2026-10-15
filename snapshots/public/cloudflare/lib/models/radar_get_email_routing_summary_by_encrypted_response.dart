@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_by_encrypted_response/radar_get_email_routing_summary_by_encrypted_response_result.dart';@immutable final class RadarGetEmailRoutingSummaryByEncryptedResponse {const RadarGetEmailRoutingSummaryByEncryptedResponse({required this.result, required this.success, });
 
-factory RadarGetEmailRoutingSummaryByEncryptedResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByEncryptedResponse(
+factory RadarGetEmailRoutingSummaryByEncryptedResponse.fromJson(Map<String, dynamic> json) {return RadarGetEmailRoutingSummaryByEncryptedResponse(
   result: RadarGetEmailRoutingSummaryByEncryptedResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetEmailRoutingSummaryByEncryptedResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailRoutingSummaryByEncryptedResponse copyWith({RadarGetEmailRoutingSummaryByEncryptedResponseResult? result, bool? success, }) { return RadarGetEmailRoutingSummaryByEncryptedResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetEmailRoutingSummaryByEncryptedResponse copyWith({RadarGetEmailRoutingSummaryByEncryptedResponseResult? result, bool? success, }) {return RadarGetEmailRoutingSummaryByEncryptedResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingSummaryByEncryptedResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetEmailRoutingSummaryByEncryptedResponse copyWith({RadarGetEmailRoutingSum
 
 @override String toString() => 'RadarGetEmailRoutingSummaryByEncryptedResponse(result: $result, success: $success)';
 
- }
+}

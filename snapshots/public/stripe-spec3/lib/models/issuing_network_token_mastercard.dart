@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingNetworkTokenMastercard {const IssuingNetworkTokenMastercard({required this.tokenReferenceId, required this.tokenRequestorId, this.cardReferenceId, this.tokenRequestorName, });
 
-factory IssuingNetworkTokenMastercard.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenMastercard(
+factory IssuingNetworkTokenMastercard.fromJson(Map<String, dynamic> json) {return IssuingNetworkTokenMastercard(
   cardReferenceId: json['card_reference_id'] as String?,
   tokenReferenceId: json['token_reference_id'] as String,
   tokenRequestorId: json['token_requestor_id'] as String,
   tokenRequestorName: json['token_requestor_name'] as String?,
-); }
+);}
 
 /// A unique reference ID from MasterCard to represent the card account number.
 final String? cardReferenceId;
@@ -23,16 +23,16 @@ final String tokenRequestorId;
 /// The name of the entity requesting tokenization, if known. This is directly provided from MasterCard.
 final String? tokenRequestorName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'card_reference_id': ?cardReferenceId,
   'token_reference_id': tokenReferenceId,
   'token_requestor_id': tokenRequestorId,
   'token_requestor_name': ?tokenRequestorName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('token_reference_id') && json['token_reference_id'] is String &&
-      json.containsKey('token_requestor_id') && json['token_requestor_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('token_reference_id') && json['token_reference_id'] is String &&
+      json.containsKey('token_requestor_id') && json['token_requestor_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final cardReferenceId$ = cardReferenceId;
 if (cardReferenceId$ != null) {
   if (cardReferenceId$.runes.length > 5000) { errors.add('cardReferenceId: length must be <= 5000'); }
@@ -43,13 +43,13 @@ final tokenRequestorName$ = tokenRequestorName;
 if (tokenRequestorName$ != null) {
   if (tokenRequestorName$.runes.length > 5000) { errors.add('tokenRequestorName: length must be <= 5000'); }
 }
-return errors; } 
-IssuingNetworkTokenMastercard copyWith({String? Function()? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String? Function()? tokenRequestorName, }) { return IssuingNetworkTokenMastercard(
+return errors;}
+IssuingNetworkTokenMastercard copyWith({String? Function()? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String? Function()? tokenRequestorName, }) {return IssuingNetworkTokenMastercard(
   cardReferenceId: cardReferenceId != null ? cardReferenceId() : this.cardReferenceId,
   tokenReferenceId: tokenReferenceId ?? this.tokenReferenceId,
   tokenRequestorId: tokenRequestorId ?? this.tokenRequestorId,
   tokenRequestorName: tokenRequestorName != null ? tokenRequestorName() : this.tokenRequestorName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenMastercard &&
           cardReferenceId == other.cardReferenceId &&
@@ -61,4 +61,4 @@ IssuingNetworkTokenMastercard copyWith({String? Function()? cardReferenceId, Str
 
 @override String toString() => 'IssuingNetworkTokenMastercard(cardReferenceId: $cardReferenceId, tokenReferenceId: $tokenReferenceId, tokenRequestorId: $tokenRequestorId, tokenRequestorName: $tokenRequestorName)';
 
- }
+}

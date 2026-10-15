@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Super Bot Fight Mode (SBFM) action to take on verified bots requests.
 sealed class BotManagementSbfmVerifiedBots {const BotManagementSbfmVerifiedBots();
 
-factory BotManagementSbfmVerifiedBots.fromJson(String json) { return switch (json) {
+factory BotManagementSbfmVerifiedBots.fromJson(String json) {return switch (json) {
   'allow' => allow,
   'block' => block,
   _ => BotManagementSbfmVerifiedBots$Unknown(json),
-}; }
+};}
 
 static const BotManagementSbfmVerifiedBots allow = BotManagementSbfmVerifiedBots$allow._();
 
@@ -17,30 +17,30 @@ static const BotManagementSbfmVerifiedBots block = BotManagementSbfmVerifiedBots
 static const List<BotManagementSbfmVerifiedBots> values = [allow, block];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'allow' => 'allow',
   'block' => 'block',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BotManagementSbfmVerifiedBots$Unknown; } 
+bool get isUnknown {return this is BotManagementSbfmVerifiedBots$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() allow, required W Function() block, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() allow, required W Function() block, required W Function(String value) $unknown, }) {return switch (this) {
       BotManagementSbfmVerifiedBots$allow() => allow(),
       BotManagementSbfmVerifiedBots$block() => block(),
       BotManagementSbfmVerifiedBots$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W Function()? block, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W Function()? block, W Function(String value)? $unknown, }) {return switch (this) {
       BotManagementSbfmVerifiedBots$allow() => allow != null ? allow() : orElse(value),
       BotManagementSbfmVerifiedBots$block() => block != null ? block() : orElse(value),
       BotManagementSbfmVerifiedBots$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BotManagementSbfmVerifiedBots($value)';
 
- }
+}
 @immutable final class BotManagementSbfmVerifiedBots$allow extends BotManagementSbfmVerifiedBots {const BotManagementSbfmVerifiedBots$allow._();
 
 @override String get value => 'allow';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W
 
 @override int get hashCode => 'allow'.hashCode;
 
- }
+}
 @immutable final class BotManagementSbfmVerifiedBots$block extends BotManagementSbfmVerifiedBots {const BotManagementSbfmVerifiedBots$block._();
 
 @override String get value => 'block';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W
 
 @override int get hashCode => 'block'.hashCode;
 
- }
+}
 @immutable final class BotManagementSbfmVerifiedBots$Unknown extends BotManagementSbfmVerifiedBots {const BotManagementSbfmVerifiedBots$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

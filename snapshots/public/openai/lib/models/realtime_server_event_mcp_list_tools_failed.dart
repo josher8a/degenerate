@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when listing MCP tools has failed for an item.
 @immutable final class RealtimeServerEventMcpListToolsFailed {const RealtimeServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId, });
 
-factory RealtimeServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEventMcpListToolsFailed(
+factory RealtimeServerEventMcpListToolsFailed.fromJson(Map<String, dynamic> json) {return RealtimeServerEventMcpListToolsFailed(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
   itemId: json['item_id'] as String,
-); }
+);}
 
 /// The unique ID of the server event.
 final String eventId;
@@ -19,19 +19,19 @@ final String type;
 /// The ID of the MCP list tools item.
 final String itemId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': eventId,
   'type': type,
   'item_id': itemId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeServerEventMcpListToolsFailed copyWith({String? eventId, String? type, String? itemId, }) { return RealtimeServerEventMcpListToolsFailed(
+      json.containsKey('item_id') && json['item_id'] is String;}
+RealtimeServerEventMcpListToolsFailed copyWith({String? eventId, String? type, String? itemId, }) {return RealtimeServerEventMcpListToolsFailed(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventMcpListToolsFailed &&
           eventId == other.eventId &&
@@ -42,4 +42,4 @@ RealtimeServerEventMcpListToolsFailed copyWith({String? eventId, String? type, S
 
 @override String toString() => 'RealtimeServerEventMcpListToolsFailed(eventId: $eventId, type: $type, itemId: $itemId)';
 
- }
+}

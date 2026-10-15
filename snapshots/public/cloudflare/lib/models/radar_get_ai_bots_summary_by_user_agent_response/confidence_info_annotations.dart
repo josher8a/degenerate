@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
 sealed class DataSource {const DataSource();
 
-factory DataSource.fromJson(String json) { return switch (json) {
+factory DataSource.fromJson(String json) {return switch (json) {
   'ALL' => all,
   'AI_BOTS' => aiBots,
   'AI_GATEWAY' => aiGateway,
@@ -31,7 +31,7 @@ factory DataSource.fromJson(String json) { return switch (json) {
   'SPEED' => speed,
   'WORKERS_AI' => workersAi,
   _ => DataSource$Unknown(json),
-}; }
+};}
 
 static const DataSource all = DataSource$all._();
 
@@ -86,9 +86,9 @@ static const DataSource workersAi = DataSource$workersAi._();
 static const List<DataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ALL' => 'all',
   'AI_BOTS' => 'aiBots',
   'AI_GATEWAY' => 'aiGateway',
@@ -115,11 +115,11 @@ String get name { return switch (value) {
   'SPEED' => 'speed',
   'WORKERS_AI' => 'workersAi',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DataSource$Unknown; } 
+bool get isUnknown {return this is DataSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() all, required W Function() aiBots, required W Function() aiGateway, required W Function() bgp, required W Function() bots, required W Function() connectionAnomaly, required W Function() ct, required W Function() dns, required W Function() dnsMagnitude, required W Function() dnsAs112, required W Function() dos, required W Function() emailRouting, required W Function() emailSecurity, required W Function() fw, required W Function() fwPg, required W Function() http, required W Function() httpControl, required W Function() httpCrawlerReferer, required W Function() httpOrigins, required W Function() iqi, required W Function() leakedCredentials, required W Function() net, required W Function() robotsTxt, required W Function() speed, required W Function() workersAi, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() all, required W Function() aiBots, required W Function() aiGateway, required W Function() bgp, required W Function() bots, required W Function() connectionAnomaly, required W Function() ct, required W Function() dns, required W Function() dnsMagnitude, required W Function() dnsAs112, required W Function() dos, required W Function() emailRouting, required W Function() emailSecurity, required W Function() fw, required W Function() fwPg, required W Function() http, required W Function() httpControl, required W Function() httpCrawlerReferer, required W Function() httpOrigins, required W Function() iqi, required W Function() leakedCredentials, required W Function() net, required W Function() robotsTxt, required W Function() speed, required W Function() workersAi, required W Function(String value) $unknown, }) {return switch (this) {
       DataSource$all() => all(),
       DataSource$aiBots() => aiBots(),
       DataSource$aiGateway() => aiGateway(),
@@ -146,9 +146,9 @@ W when<W>({required W Function() all, required W Function() aiBots, required W F
       DataSource$speed() => speed(),
       DataSource$workersAi() => workersAi(),
       DataSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? aiBots, W Function()? aiGateway, W Function()? bgp, W Function()? bots, W Function()? connectionAnomaly, W Function()? ct, W Function()? dns, W Function()? dnsMagnitude, W Function()? dnsAs112, W Function()? dos, W Function()? emailRouting, W Function()? emailSecurity, W Function()? fw, W Function()? fwPg, W Function()? http, W Function()? httpControl, W Function()? httpCrawlerReferer, W Function()? httpOrigins, W Function()? iqi, W Function()? leakedCredentials, W Function()? net, W Function()? robotsTxt, W Function()? speed, W Function()? workersAi, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? aiBots, W Function()? aiGateway, W Function()? bgp, W Function()? bots, W Function()? connectionAnomaly, W Function()? ct, W Function()? dns, W Function()? dnsMagnitude, W Function()? dnsAs112, W Function()? dos, W Function()? emailRouting, W Function()? emailSecurity, W Function()? fw, W Function()? fwPg, W Function()? http, W Function()? httpControl, W Function()? httpCrawlerReferer, W Function()? httpOrigins, W Function()? iqi, W Function()? leakedCredentials, W Function()? net, W Function()? robotsTxt, W Function()? speed, W Function()? workersAi, W Function(String value)? $unknown, }) {return switch (this) {
       DataSource$all() => all != null ? all() : orElse(value),
       DataSource$aiBots() => aiBots != null ? aiBots() : orElse(value),
       DataSource$aiGateway() => aiGateway != null ? aiGateway() : orElse(value),
@@ -175,10 +175,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
       DataSource$speed() => speed != null ? speed() : orElse(value),
       DataSource$workersAi() => workersAi != null ? workersAi() : orElse(value),
       DataSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DataSource($value)';
 
- }
+}
 @immutable final class DataSource$all extends DataSource {const DataSource$all._();
 
 @override String get value => 'ALL';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'ALL'.hashCode;
 
- }
+}
 @immutable final class DataSource$aiBots extends DataSource {const DataSource$aiBots._();
 
 @override String get value => 'AI_BOTS';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'AI_BOTS'.hashCode;
 
- }
+}
 @immutable final class DataSource$aiGateway extends DataSource {const DataSource$aiGateway._();
 
 @override String get value => 'AI_GATEWAY';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'AI_GATEWAY'.hashCode;
 
- }
+}
 @immutable final class DataSource$bgp extends DataSource {const DataSource$bgp._();
 
 @override String get value => 'BGP';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'BGP'.hashCode;
 
- }
+}
 @immutable final class DataSource$bots extends DataSource {const DataSource$bots._();
 
 @override String get value => 'BOTS';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'BOTS'.hashCode;
 
- }
+}
 @immutable final class DataSource$connectionAnomaly extends DataSource {const DataSource$connectionAnomaly._();
 
 @override String get value => 'CONNECTION_ANOMALY';
@@ -232,7 +232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'CONNECTION_ANOMALY'.hashCode;
 
- }
+}
 @immutable final class DataSource$ct extends DataSource {const DataSource$ct._();
 
 @override String get value => 'CT';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'CT'.hashCode;
 
- }
+}
 @immutable final class DataSource$dns extends DataSource {const DataSource$dns._();
 
 @override String get value => 'DNS';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'DNS'.hashCode;
 
- }
+}
 @immutable final class DataSource$dnsMagnitude extends DataSource {const DataSource$dnsMagnitude._();
 
 @override String get value => 'DNS_MAGNITUDE';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'DNS_MAGNITUDE'.hashCode;
 
- }
+}
 @immutable final class DataSource$dnsAs112 extends DataSource {const DataSource$dnsAs112._();
 
 @override String get value => 'DNS_AS112';
@@ -268,7 +268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'DNS_AS112'.hashCode;
 
- }
+}
 @immutable final class DataSource$dos extends DataSource {const DataSource$dos._();
 
 @override String get value => 'DOS';
@@ -277,7 +277,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'DOS'.hashCode;
 
- }
+}
 @immutable final class DataSource$emailRouting extends DataSource {const DataSource$emailRouting._();
 
 @override String get value => 'EMAIL_ROUTING';
@@ -286,7 +286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'EMAIL_ROUTING'.hashCode;
 
- }
+}
 @immutable final class DataSource$emailSecurity extends DataSource {const DataSource$emailSecurity._();
 
 @override String get value => 'EMAIL_SECURITY';
@@ -295,7 +295,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'EMAIL_SECURITY'.hashCode;
 
- }
+}
 @immutable final class DataSource$fw extends DataSource {const DataSource$fw._();
 
 @override String get value => 'FW';
@@ -304,7 +304,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'FW'.hashCode;
 
- }
+}
 @immutable final class DataSource$fwPg extends DataSource {const DataSource$fwPg._();
 
 @override String get value => 'FW_PG';
@@ -313,7 +313,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'FW_PG'.hashCode;
 
- }
+}
 @immutable final class DataSource$http extends DataSource {const DataSource$http._();
 
 @override String get value => 'HTTP';
@@ -322,7 +322,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'HTTP'.hashCode;
 
- }
+}
 @immutable final class DataSource$httpControl extends DataSource {const DataSource$httpControl._();
 
 @override String get value => 'HTTP_CONTROL';
@@ -331,7 +331,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'HTTP_CONTROL'.hashCode;
 
- }
+}
 @immutable final class DataSource$httpCrawlerReferer extends DataSource {const DataSource$httpCrawlerReferer._();
 
 @override String get value => 'HTTP_CRAWLER_REFERER';
@@ -340,7 +340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'HTTP_CRAWLER_REFERER'.hashCode;
 
- }
+}
 @immutable final class DataSource$httpOrigins extends DataSource {const DataSource$httpOrigins._();
 
 @override String get value => 'HTTP_ORIGINS';
@@ -349,7 +349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'HTTP_ORIGINS'.hashCode;
 
- }
+}
 @immutable final class DataSource$iqi extends DataSource {const DataSource$iqi._();
 
 @override String get value => 'IQI';
@@ -358,7 +358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'IQI'.hashCode;
 
- }
+}
 @immutable final class DataSource$leakedCredentials extends DataSource {const DataSource$leakedCredentials._();
 
 @override String get value => 'LEAKED_CREDENTIALS';
@@ -367,7 +367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'LEAKED_CREDENTIALS'.hashCode;
 
- }
+}
 @immutable final class DataSource$net extends DataSource {const DataSource$net._();
 
 @override String get value => 'NET';
@@ -376,7 +376,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'NET'.hashCode;
 
- }
+}
 @immutable final class DataSource$robotsTxt extends DataSource {const DataSource$robotsTxt._();
 
 @override String get value => 'ROBOTS_TXT';
@@ -385,7 +385,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'ROBOTS_TXT'.hashCode;
 
- }
+}
 @immutable final class DataSource$speed extends DataSource {const DataSource$speed._();
 
 @override String get value => 'SPEED';
@@ -394,7 +394,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'SPEED'.hashCode;
 
- }
+}
 @immutable final class DataSource$workersAi extends DataSource {const DataSource$workersAi._();
 
 @override String get value => 'WORKERS_AI';
@@ -403,7 +403,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => 'WORKERS_AI'.hashCode;
 
- }
+}
 @immutable final class DataSource$Unknown extends DataSource {const DataSource$Unknown(this.value);
 
 @override final String value;
@@ -413,11 +413,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Event type for annotations.
 sealed class AnnotationsEventType {const AnnotationsEventType();
 
-factory AnnotationsEventType.fromJson(String json) { return switch (json) {
+factory AnnotationsEventType.fromJson(String json) {return switch (json) {
   'EVENT' => event,
   'GENERAL' => general,
   'OUTAGE' => outage,
@@ -425,7 +425,7 @@ factory AnnotationsEventType.fromJson(String json) { return switch (json) {
   'PIPELINE' => pipeline,
   'TRAFFIC_ANOMALY' => trafficAnomaly,
   _ => AnnotationsEventType$Unknown(json),
-}; }
+};}
 
 static const AnnotationsEventType event = AnnotationsEventType$event._();
 
@@ -442,9 +442,9 @@ static const AnnotationsEventType trafficAnomaly = AnnotationsEventType$trafficA
 static const List<AnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'EVENT' => 'event',
   'GENERAL' => 'general',
   'OUTAGE' => 'outage',
@@ -452,11 +452,11 @@ String get name { return switch (value) {
   'PIPELINE' => 'pipeline',
   'TRAFFIC_ANOMALY' => 'trafficAnomaly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AnnotationsEventType$Unknown; } 
+bool get isUnknown {return this is AnnotationsEventType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() event, required W Function() general, required W Function() outage, required W Function() partialProjection, required W Function() pipeline, required W Function() trafficAnomaly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() event, required W Function() general, required W Function() outage, required W Function() partialProjection, required W Function() pipeline, required W Function() trafficAnomaly, required W Function(String value) $unknown, }) {return switch (this) {
       AnnotationsEventType$event() => event(),
       AnnotationsEventType$general() => general(),
       AnnotationsEventType$outage() => outage(),
@@ -464,9 +464,9 @@ W when<W>({required W Function() event, required W Function() general, required 
       AnnotationsEventType$pipeline() => pipeline(),
       AnnotationsEventType$trafficAnomaly() => trafficAnomaly(),
       AnnotationsEventType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function()? general, W Function()? outage, W Function()? partialProjection, W Function()? pipeline, W Function()? trafficAnomaly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function()? general, W Function()? outage, W Function()? partialProjection, W Function()? pipeline, W Function()? trafficAnomaly, W Function(String value)? $unknown, }) {return switch (this) {
       AnnotationsEventType$event() => event != null ? event() : orElse(value),
       AnnotationsEventType$general() => general != null ? general() : orElse(value),
       AnnotationsEventType$outage() => outage != null ? outage() : orElse(value),
@@ -474,10 +474,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
       AnnotationsEventType$pipeline() => pipeline != null ? pipeline() : orElse(value),
       AnnotationsEventType$trafficAnomaly() => trafficAnomaly != null ? trafficAnomaly() : orElse(value),
       AnnotationsEventType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AnnotationsEventType($value)';
 
- }
+}
 @immutable final class AnnotationsEventType$event extends AnnotationsEventType {const AnnotationsEventType$event._();
 
 @override String get value => 'EVENT';
@@ -486,7 +486,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'EVENT'.hashCode;
 
- }
+}
 @immutable final class AnnotationsEventType$general extends AnnotationsEventType {const AnnotationsEventType$general._();
 
 @override String get value => 'GENERAL';
@@ -495,7 +495,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'GENERAL'.hashCode;
 
- }
+}
 @immutable final class AnnotationsEventType$outage extends AnnotationsEventType {const AnnotationsEventType$outage._();
 
 @override String get value => 'OUTAGE';
@@ -504,7 +504,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'OUTAGE'.hashCode;
 
- }
+}
 @immutable final class AnnotationsEventType$partialProjection extends AnnotationsEventType {const AnnotationsEventType$partialProjection._();
 
 @override String get value => 'PARTIAL_PROJECTION';
@@ -513,7 +513,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'PARTIAL_PROJECTION'.hashCode;
 
- }
+}
 @immutable final class AnnotationsEventType$pipeline extends AnnotationsEventType {const AnnotationsEventType$pipeline._();
 
 @override String get value => 'PIPELINE';
@@ -522,7 +522,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'PIPELINE'.hashCode;
 
- }
+}
 @immutable final class AnnotationsEventType$trafficAnomaly extends AnnotationsEventType {const AnnotationsEventType$trafficAnomaly._();
 
 @override String get value => 'TRAFFIC_ANOMALY';
@@ -531,7 +531,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => 'TRAFFIC_ANOMALY'.hashCode;
 
- }
+}
 @immutable final class AnnotationsEventType$Unknown extends AnnotationsEventType {const AnnotationsEventType$Unknown(this.value);
 
 @override final String value;
@@ -541,11 +541,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Annotation associated with the result (e.g. outage or other type of event).
 @immutable final class ConfidenceInfoAnnotations {const ConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
-factory ConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return ConfidenceInfoAnnotations(
+factory ConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) {return ConfidenceInfoAnnotations(
   dataSource: DataSource.fromJson(json['dataSource'] as String),
   description: json['description'] as String,
   endDate: DateTime.parse(json['endDate'] as String),
@@ -553,7 +553,7 @@ factory ConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return C
   isInstantaneous: json['isInstantaneous'] as bool,
   linkedUrl: Uri.parse(json['linkedUrl'] as String),
   startDate: DateTime.parse(json['startDate'] as String),
-); }
+);}
 
 /// Data source for annotations.
 final DataSource dataSource;
@@ -573,7 +573,7 @@ final Uri linkedUrl;
 
 final DateTime startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataSource': dataSource.toJson(),
   'description': description,
   'endDate': endDate.toIso8601String(),
@@ -581,15 +581,15 @@ Map<String, dynamic> toJson() { return {
   'isInstantaneous': isInstantaneous,
   'linkedUrl': linkedUrl.toString(),
   'startDate': startDate.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataSource') &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('endDate') && json['endDate'] is String &&
       json.containsKey('eventType') &&
       json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
       json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
-      json.containsKey('startDate') && json['startDate'] is String; } 
-ConfidenceInfoAnnotations copyWith({DataSource? dataSource, String? description, DateTime? endDate, AnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return ConfidenceInfoAnnotations(
+      json.containsKey('startDate') && json['startDate'] is String;}
+ConfidenceInfoAnnotations copyWith({DataSource? dataSource, String? description, DateTime? endDate, AnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) {return ConfidenceInfoAnnotations(
   dataSource: dataSource ?? this.dataSource,
   description: description ?? this.description,
   endDate: endDate ?? this.endDate,
@@ -597,7 +597,7 @@ ConfidenceInfoAnnotations copyWith({DataSource? dataSource, String? description,
   isInstantaneous: isInstantaneous ?? this.isInstantaneous,
   linkedUrl: linkedUrl ?? this.linkedUrl,
   startDate: startDate ?? this.startDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ConfidenceInfoAnnotations &&
           dataSource == other.dataSource &&
@@ -612,4 +612,4 @@ ConfidenceInfoAnnotations copyWith({DataSource? dataSource, String? description,
 
 @override String toString() => 'ConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)';
 
- }
+}

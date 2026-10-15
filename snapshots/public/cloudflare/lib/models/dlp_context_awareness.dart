@@ -4,26 +4,26 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_skip_config.dart';/// Scan the context of predefined entries to only return matches surrounded by keywords.
 @immutable final class DlpContextAwareness {const DlpContextAwareness({required this.enabled, required this.skip, });
 
-factory DlpContextAwareness.fromJson(Map<String, dynamic> json) { return DlpContextAwareness(
+factory DlpContextAwareness.fromJson(Map<String, dynamic> json) {return DlpContextAwareness(
   enabled: json['enabled'] as bool,
   skip: DlpSkipConfig.fromJson(json['skip'] as Map<String, dynamic>),
-); }
+);}
 
 /// If true, scan the context of predefined entries to only return matches surrounded by keywords.
 final bool enabled;
 
 final DlpSkipConfig skip;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'skip': skip.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('skip'); } 
-DlpContextAwareness copyWith({bool? enabled, DlpSkipConfig? skip, }) { return DlpContextAwareness(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('skip');}
+DlpContextAwareness copyWith({bool? enabled, DlpSkipConfig? skip, }) {return DlpContextAwareness(
   enabled: enabled ?? this.enabled,
   skip: skip ?? this.skip,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpContextAwareness &&
           enabled == other.enabled &&
@@ -33,4 +33,4 @@ DlpContextAwareness copyWith({bool? enabled, DlpSkipConfig? skip, }) { return Dl
 
 @override String toString() => 'DlpContextAwareness(enabled: $enabled, skip: $skip)';
 
- }
+}

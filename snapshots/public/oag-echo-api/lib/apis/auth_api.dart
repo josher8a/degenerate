@@ -12,7 +12,7 @@ final class AuthApi with ApiExecutor {const AuthApi(this.apiConfig);
 /// To test HTTP basic authentication
 ///
 /// `POST /auth/http/basic`
-Future<ApiResult<String, Never>> testAuthHttpBasic({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testAuthHttpBasic({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -27,11 +27,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// To test HTTP bearer authentication
 ///
 /// `POST /auth/http/bearer`
-Future<ApiResult<String, Never>> testAuthHttpBearer({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testAuthHttpBearer({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -46,5 +46,5 @@ return await execute(
     return response.body;
   },
 );
- } 
- }
+}
+}

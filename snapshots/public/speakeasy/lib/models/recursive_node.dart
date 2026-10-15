@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RecursiveNode {const RecursiveNode({this.value, this.children, });
 
-factory RecursiveNode.fromJson(Map<String, dynamic> json) { return RecursiveNode(
+factory RecursiveNode.fromJson(Map<String, dynamic> json) {return RecursiveNode(
   value: json['value'] as String?,
   children: (json['children'] as List<dynamic>?)?.map((e) => RecursiveNode.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final String? value;
 
 final List<RecursiveNode>? children;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': ?value,
   if (children != null) 'children': children?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value', 'children'}.contains(key)); } 
-RecursiveNode copyWith({String? Function()? value, List<RecursiveNode>? Function()? children, }) { return RecursiveNode(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'value', 'children'}.contains(key));}
+RecursiveNode copyWith({String? Function()? value, List<RecursiveNode>? Function()? children, }) {return RecursiveNode(
   value: value != null ? value() : this.value,
   children: children != null ? children() : this.children,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RecursiveNode &&
           value == other.value &&
@@ -30,4 +30,4 @@ RecursiveNode copyWith({String? Function()? value, List<RecursiveNode>? Function
 
 @override String toString() => 'RecursiveNode(value: $value, children: $children)';
 
- }
+}

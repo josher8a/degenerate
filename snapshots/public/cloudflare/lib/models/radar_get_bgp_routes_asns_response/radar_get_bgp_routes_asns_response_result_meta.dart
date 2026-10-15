@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRoutesAsnsResponseResultMeta {const RadarGetBgpRoutesAsnsResponseResultMeta({required this.dataTime, required this.queryTime, required this.totalPeers, });
 
-factory RadarGetBgpRoutesAsnsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesAsnsResponseResultMeta(
+factory RadarGetBgpRoutesAsnsResponseResultMeta.fromJson(Map<String, dynamic> json) {return RadarGetBgpRoutesAsnsResponseResultMeta(
   dataTime: json['dataTime'] as String,
   queryTime: json['queryTime'] as String,
   totalPeers: (json['totalPeers'] as num).toInt(),
-); }
+);}
 
 /// The timestamp of when the data is generated.
 /// 
@@ -22,19 +22,19 @@ final String queryTime;
 /// Total number of route collector peers used to generate this data.
 final int totalPeers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'dataTime': dataTime,
   'queryTime': queryTime,
   'totalPeers': totalPeers,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataTime') && json['dataTime'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataTime') && json['dataTime'] is String &&
       json.containsKey('queryTime') && json['queryTime'] is String &&
-      json.containsKey('totalPeers') && json['totalPeers'] is num; } 
-RadarGetBgpRoutesAsnsResponseResultMeta copyWith({String? dataTime, String? queryTime, int? totalPeers, }) { return RadarGetBgpRoutesAsnsResponseResultMeta(
+      json.containsKey('totalPeers') && json['totalPeers'] is num;}
+RadarGetBgpRoutesAsnsResponseResultMeta copyWith({String? dataTime, String? queryTime, int? totalPeers, }) {return RadarGetBgpRoutesAsnsResponseResultMeta(
   dataTime: dataTime ?? this.dataTime,
   queryTime: queryTime ?? this.queryTime,
   totalPeers: totalPeers ?? this.totalPeers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRoutesAsnsResponseResultMeta &&
           dataTime == other.dataTime &&
@@ -45,4 +45,4 @@ RadarGetBgpRoutesAsnsResponseResultMeta copyWith({String? dataTime, String? quer
 
 @override String toString() => 'RadarGetBgpRoutesAsnsResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalPeers: $totalPeers)';
 
- }
+}

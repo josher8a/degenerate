@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesSourceFieldBool {const CloudflarePipelinesSourceFieldBool({required this.type, required this.name, this.metadataKey = const Omittable.absent(), this.$required, this.sqlName, });
 
-factory CloudflarePipelinesSourceFieldBool.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesSourceFieldBool(
+factory CloudflarePipelinesSourceFieldBool.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesSourceFieldBool(
   type: json['type'] as String,
   metadataKey: json.containsKey('metadata_key') ? Omittable(json['metadata_key'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   $required: json['required'] as bool?,
   sqlName: json['sql_name'] as String?,
-); }
+);}
 
 final String type;
 
@@ -21,22 +21,22 @@ final bool? $required;
 
 final String? sqlName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   if (metadataKey.isPresent) 'metadata_key': metadataKey.value,
   'name': name,
   'required': ?$required,
   'sql_name': ?sqlName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-CloudflarePipelinesSourceFieldBool copyWith({String? type, Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceFieldBool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('name') && json['name'] is String;}
+CloudflarePipelinesSourceFieldBool copyWith({String? type, Omittable<String?>? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) {return CloudflarePipelinesSourceFieldBool(
   type: type ?? this.type,
   metadataKey: metadataKey ?? this.metadataKey,
   name: name ?? this.name,
   $required: $required != null ? $required() : this.$required,
   sqlName: sqlName != null ? sqlName() : this.sqlName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesSourceFieldBool &&
           type == other.type &&
@@ -49,4 +49,4 @@ CloudflarePipelinesSourceFieldBool copyWith({String? type, Omittable<String?>? m
 
 @override String toString() => 'CloudflarePipelinesSourceFieldBool(type: $type, metadataKey: $metadataKey, name: $name, \$required: ${$required}, sqlName: $sqlName)';
 
- }
+}

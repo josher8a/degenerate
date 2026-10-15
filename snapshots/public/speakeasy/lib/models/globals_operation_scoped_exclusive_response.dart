@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GlobalsOperationScopedExclusiveResponse {const GlobalsOperationScopedExclusiveResponse({required this.args, required this.url, required this.headers, });
 
-factory GlobalsOperationScopedExclusiveResponse.fromJson(Map<String, dynamic> json) { return GlobalsOperationScopedExclusiveResponse(
+factory GlobalsOperationScopedExclusiveResponse.fromJson(Map<String, dynamic> json) {return GlobalsOperationScopedExclusiveResponse(
   args: (json['args'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   url: (json['url'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// Query parameters received
 final Map<String,String> args;
@@ -18,19 +18,19 @@ final Map<String,String> url;
 /// Headers received
 final Map<String,String> headers;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'args': args,
   'url': url,
   'headers': headers,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('args') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('args') &&
       json.containsKey('url') &&
-      json.containsKey('headers'); } 
-GlobalsOperationScopedExclusiveResponse copyWith({Map<String,String>? args, Map<String,String>? url, Map<String,String>? headers, }) { return GlobalsOperationScopedExclusiveResponse(
+      json.containsKey('headers');}
+GlobalsOperationScopedExclusiveResponse copyWith({Map<String,String>? args, Map<String,String>? url, Map<String,String>? headers, }) {return GlobalsOperationScopedExclusiveResponse(
   args: args ?? this.args,
   url: url ?? this.url,
   headers: headers ?? this.headers,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GlobalsOperationScopedExclusiveResponse &&
           args == other.args &&
@@ -41,4 +41,4 @@ GlobalsOperationScopedExclusiveResponse copyWith({Map<String,String>? args, Map<
 
 @override String toString() => 'GlobalsOperationScopedExclusiveResponse(args: $args, url: $url, headers: $headers)';
 
- }
+}

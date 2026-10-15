@@ -14,7 +14,7 @@ final class LogpushJobsForAZoneApi with ApiExecutor {const LogpushJobsForAZoneAp
 /// Lists all fields available for a dataset. The response result is. an object with key-value pairs, where keys are field names, and values are descriptions.
 ///
 /// `GET /zones/{zone_id}/logpush/datasets/{dataset_id}/fields`
-Future<ApiResult<Map<String, dynamic>?, DeleteAccountsAccountIdLogpushJobsJobIdError>> getZonesZoneIdLogpushDatasetsDatasetIdFields({required LogpushDataset datasetId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DeleteAccountsAccountIdLogpushJobsJobIdError>> getZonesZoneIdLogpushDatasetsDatasetIdFields({required LogpushDataset datasetId, required LogpushIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// List Logpush jobs for a dataset
 ///
 /// Lists Logpush jobs for a zone for a dataset.
 ///
 /// `GET /zones/{zone_id}/logpush/datasets/{dataset_id}/jobs`
-Future<ApiResult<List<LogpushLogpushJob?>?, DeleteAccountsAccountIdLogpushJobsJobIdError>> getZonesZoneIdLogpushDatasetsDatasetIdJobs({required LogpushDataset datasetId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LogpushLogpushJob?>?, DeleteAccountsAccountIdLogpushJobsJobIdError>> getZonesZoneIdLogpushDatasetsDatasetIdJobs({required LogpushDataset datasetId, required LogpushIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// List Logpush jobs
 ///
 /// Lists Logpush jobs for a zone.
 ///
 /// `GET /zones/{zone_id}/logpush/jobs`
-Future<ApiResult<List<LogpushLogpushJob?>?, DeleteAccountsAccountIdLogpushJobsJobIdError>> getZonesZoneIdLogpushJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LogpushLogpushJob?>?, DeleteAccountsAccountIdLogpushJobsJobIdError>> getZonesZoneIdLogpushJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -77,13 +77,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Create Logpush job
 ///
 /// Creates a new Logpush job for a zone.
 ///
 /// `POST /zones/{zone_id}/logpush/jobs`
-Future<ApiResult<LogpushLogpushJob?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushJobsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushLogpushJob?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushJobsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,13 +102,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Get Logpush job details
 ///
 /// Gets the details of a Logpush job.
 ///
 /// `GET /zones/{zone_id}/logpush/jobs/{job_id}`
-Future<ApiResult<LogpushLogpushJob?, DeleteAccountsAccountIdLogpushJobsJobIdError>> getZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushLogpushJob?, DeleteAccountsAccountIdLogpushJobsJobIdError>> getZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -125,13 +125,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Update Logpush job
 ///
 /// Updates a Logpush job.
 ///
 /// `PUT /zones/{zone_id}/logpush/jobs/{job_id}`
-Future<ApiResult<LogpushLogpushJob?, DeleteAccountsAccountIdLogpushJobsJobIdError>> putZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, required PutZonesZoneIdLogpushJobsJobIdRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushLogpushJob?, DeleteAccountsAccountIdLogpushJobsJobIdError>> putZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, required PutZonesZoneIdLogpushJobsJobIdRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -150,13 +150,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Delete Logpush job
 ///
 /// Deletes a Logpush job.
 ///
 /// `DELETE /zones/{zone_id}/logpush/jobs/{job_id}`
-Future<ApiResult<DeleteAccountsAccountIdLogpushJobsJobIdResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> deleteZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteAccountsAccountIdLogpushJobsJobIdResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> deleteZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -173,13 +173,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Get ownership challenge
 ///
 /// Gets a new ownership challenge sent to your destination.
 ///
 /// `POST /zones/{zone_id}/logpush/ownership`
-Future<ApiResult<LogpushGetOwnershipResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushOwnership({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushOwnershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushGetOwnershipResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushOwnership({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushOwnershipRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -198,13 +198,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Validate ownership challenge
 ///
 /// Validates ownership challenge of the destination.
 ///
 /// `POST /zones/{zone_id}/logpush/ownership/validate`
-Future<ApiResult<LogpushValidateOwnershipResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushOwnershipValidate({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushOwnershipValidateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushValidateOwnershipResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushOwnershipValidate({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushOwnershipValidateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -223,13 +223,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Validate destination
 ///
 /// Validates destination.
 ///
 /// `POST /zones/{zone_id}/logpush/validate/destination`
-Future<ApiResult<LogpushValidateResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushValidateDestination({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateDestinationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushValidateResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushValidateDestination({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateDestinationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -248,13 +248,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Check destination exists
 ///
 /// Checks if there is an existing job with a destination.
 ///
 /// `POST /zones/{zone_id}/logpush/validate/destination/exists`
-Future<ApiResult<LogpushDestinationExistsResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushValidateDestinationExists({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateDestinationExistsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushDestinationExistsResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushValidateDestinationExists({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateDestinationExistsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -273,13 +273,13 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
+}
 /// Validate origin
 ///
 /// Validates logpull origin with logpull_options.
 ///
 /// `POST /zones/{zone_id}/logpush/validate/origin`
-Future<ApiResult<LogpushValidateResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushValidateOrigin({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateOriginRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushValidateResponseResult?, DeleteAccountsAccountIdLogpushJobsJobIdError>> postZonesZoneIdLogpushValidateOrigin({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateOriginRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -298,5 +298,5 @@ return await execute(
   },
   onError: DeleteAccountsAccountIdLogpushJobsJobIdError.fromResponse,
 );
- } 
- }
+}
+}

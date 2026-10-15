@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/flow_data.dart';/// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
 sealed class PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale();
 
-factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return switch (json) {
+factory PostBillingPortalSessionsRequestLocale.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'bg' => bg,
   'cs' => cs,
@@ -53,7 +53,7 @@ factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return sw
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
   _ => PostBillingPortalSessionsRequestLocale$Unknown(json),
-}; }
+};}
 
 static const PostBillingPortalSessionsRequestLocale auto = PostBillingPortalSessionsRequestLocale$auto._();
 
@@ -152,9 +152,9 @@ static const PostBillingPortalSessionsRequestLocale zhTw = PostBillingPortalSess
 static const List<PostBillingPortalSessionsRequestLocale> values = [auto, bg, cs, da, de, el, en, enAu, enCa, enGb, enIe, enIn, enNz, enSg, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   'bg' => 'bg',
   'cs' => 'cs',
@@ -203,11 +203,11 @@ String get name { return switch (value) {
   'zh-HK' => 'zhHk',
   'zh-TW' => 'zhTw',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostBillingPortalSessionsRequestLocale$Unknown; } 
+bool get isUnknown {return this is PostBillingPortalSessionsRequestLocale$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enAu, required W Function() enCa, required W Function() enGb, required W Function() enIe, required W Function() enIn, required W Function() enNz, required W Function() enSg, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enAu, required W Function() enCa, required W Function() enGb, required W Function() enIe, required W Function() enIn, required W Function() enNz, required W Function() enSg, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) {return switch (this) {
       PostBillingPortalSessionsRequestLocale$auto() => auto(),
       PostBillingPortalSessionsRequestLocale$bg() => bg(),
       PostBillingPortalSessionsRequestLocale$cs() => cs(),
@@ -256,9 +256,9 @@ W when<W>({required W Function() auto, required W Function() bg, required W Func
       PostBillingPortalSessionsRequestLocale$zhHk() => zhHk(),
       PostBillingPortalSessionsRequestLocale$zhTw() => zhTw(),
       PostBillingPortalSessionsRequestLocale$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enAu, W Function()? enCa, W Function()? enGb, W Function()? enIe, W Function()? enIn, W Function()? enNz, W Function()? enSg, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enAu, W Function()? enCa, W Function()? enGb, W Function()? enIe, W Function()? enIn, W Function()? enNz, W Function()? enSg, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) {return switch (this) {
       PostBillingPortalSessionsRequestLocale$auto() => auto != null ? auto() : orElse(value),
       PostBillingPortalSessionsRequestLocale$bg() => bg != null ? bg() : orElse(value),
       PostBillingPortalSessionsRequestLocale$cs() => cs != null ? cs() : orElse(value),
@@ -307,10 +307,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
       PostBillingPortalSessionsRequestLocale$zhHk() => zhHk != null ? zhHk() : orElse(value),
       PostBillingPortalSessionsRequestLocale$zhTw() => zhTw != null ? zhTw() : orElse(value),
       PostBillingPortalSessionsRequestLocale$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostBillingPortalSessionsRequestLocale($value)';
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$auto extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$auto._();
 
 @override String get value => 'auto';
@@ -319,7 +319,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$bg extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$bg._();
 
 @override String get value => 'bg';
@@ -328,7 +328,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'bg'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$cs extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$cs._();
 
 @override String get value => 'cs';
@@ -337,7 +337,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'cs'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$da extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$da._();
 
 @override String get value => 'da';
@@ -346,7 +346,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'da'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$de extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$de._();
 
 @override String get value => 'de';
@@ -355,7 +355,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'de'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$el extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$el._();
 
 @override String get value => 'el';
@@ -364,7 +364,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'el'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$en extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$en._();
 
 @override String get value => 'en';
@@ -373,7 +373,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$enAu extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enAu._();
 
 @override String get value => 'en-AU';
@@ -382,7 +382,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-AU'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$enCa extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enCa._();
 
 @override String get value => 'en-CA';
@@ -391,7 +391,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-CA'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$enGb extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enGb._();
 
 @override String get value => 'en-GB';
@@ -400,7 +400,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-GB'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$enIe extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enIe._();
 
 @override String get value => 'en-IE';
@@ -409,7 +409,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-IE'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$enIn extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enIn._();
 
 @override String get value => 'en-IN';
@@ -418,7 +418,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-IN'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$enNz extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enNz._();
 
 @override String get value => 'en-NZ';
@@ -427,7 +427,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-NZ'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$enSg extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enSg._();
 
 @override String get value => 'en-SG';
@@ -436,7 +436,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-SG'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$es extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$es._();
 
 @override String get value => 'es';
@@ -445,7 +445,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'es'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$es419 extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$es419._();
 
 @override String get value => 'es-419';
@@ -454,7 +454,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'es-419'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$et extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$et._();
 
 @override String get value => 'et';
@@ -463,7 +463,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'et'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$fi extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$fi._();
 
 @override String get value => 'fi';
@@ -472,7 +472,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fi'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$fil extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$fil._();
 
 @override String get value => 'fil';
@@ -481,7 +481,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fil'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$fr extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$fr._();
 
 @override String get value => 'fr';
@@ -490,7 +490,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fr'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$frCa extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$frCa._();
 
 @override String get value => 'fr-CA';
@@ -499,7 +499,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fr-CA'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$hr extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$hr._();
 
 @override String get value => 'hr';
@@ -508,7 +508,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'hr'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$hu extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$hu._();
 
 @override String get value => 'hu';
@@ -517,7 +517,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'hu'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$id extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$id._();
 
 @override String get value => 'id';
@@ -526,7 +526,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'id'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$it extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$it._();
 
 @override String get value => 'it';
@@ -535,7 +535,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'it'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$ja extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ja._();
 
 @override String get value => 'ja';
@@ -544,7 +544,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ja'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$ko extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ko._();
 
 @override String get value => 'ko';
@@ -553,7 +553,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ko'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$lt extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$lt._();
 
 @override String get value => 'lt';
@@ -562,7 +562,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'lt'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$lv extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$lv._();
 
 @override String get value => 'lv';
@@ -571,7 +571,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'lv'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$ms extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ms._();
 
 @override String get value => 'ms';
@@ -580,7 +580,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ms'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$mt extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$mt._();
 
 @override String get value => 'mt';
@@ -589,7 +589,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'mt'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$nb extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$nb._();
 
 @override String get value => 'nb';
@@ -598,7 +598,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'nb'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$nl extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$nl._();
 
 @override String get value => 'nl';
@@ -607,7 +607,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'nl'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$pl extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$pl._();
 
 @override String get value => 'pl';
@@ -616,7 +616,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pl'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$pt extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$pt._();
 
 @override String get value => 'pt';
@@ -625,7 +625,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pt'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$ptBr extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ptBr._();
 
 @override String get value => 'pt-BR';
@@ -634,7 +634,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pt-BR'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$ro extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ro._();
 
 @override String get value => 'ro';
@@ -643,7 +643,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ro'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$ru extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ru._();
 
 @override String get value => 'ru';
@@ -652,7 +652,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ru'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$sk extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$sk._();
 
 @override String get value => 'sk';
@@ -661,7 +661,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sk'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$sl extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$sl._();
 
 @override String get value => 'sl';
@@ -670,7 +670,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sl'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$sv extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$sv._();
 
 @override String get value => 'sv';
@@ -679,7 +679,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sv'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$th extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$th._();
 
 @override String get value => 'th';
@@ -688,7 +688,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'th'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$tr extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$tr._();
 
 @override String get value => 'tr';
@@ -697,7 +697,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'tr'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$vi extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$vi._();
 
 @override String get value => 'vi';
@@ -706,7 +706,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'vi'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$zh extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$zh._();
 
 @override String get value => 'zh';
@@ -715,7 +715,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$zhHk extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$zhHk._();
 
 @override String get value => 'zh-HK';
@@ -724,7 +724,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh-HK'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$zhTw extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$zhTw._();
 
 @override String get value => 'zh-TW';
@@ -733,7 +733,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh-TW'.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequestLocale$Unknown extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$Unknown(this.value);
 
 @override final String value;
@@ -743,10 +743,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostBillingPortalSessionsRequest {const PostBillingPortalSessionsRequest({this.configuration, this.customer, this.customerAccount, this.expand, this.flowData, this.locale, this.onBehalfOf, this.returnUrl, });
 
-factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequest(
+factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) {return PostBillingPortalSessionsRequest(
   configuration: json['configuration'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
@@ -755,7 +755,7 @@ factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) { r
   locale: json['locale'] != null ? PostBillingPortalSessionsRequestLocale.fromJson(json['locale'] as String) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   returnUrl: json['return_url'] as String?,
-); }
+);}
 
 /// The ID of an existing [configuration](https://docs.stripe.com/api/customer_portal/configurations) to use for this session, describing its functionality and features. If not specified, the session uses the default configuration.
 final String? configuration;
@@ -781,7 +781,7 @@ final String? onBehalfOf;
 /// The default URL to redirect customers to when they click on the portal's link to return to your website.
 final String? returnUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'configuration': ?configuration,
   'customer': ?customer,
   'customer_account': ?customerAccount,
@@ -790,10 +790,10 @@ Map<String, dynamic> toJson() { return {
   if (locale != null) 'locale': locale?.toJson(),
   'on_behalf_of': ?onBehalfOf,
   'return_url': ?returnUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration', 'customer', 'customer_account', 'expand', 'flow_data', 'locale', 'on_behalf_of', 'return_url'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'configuration', 'customer', 'customer_account', 'expand', 'flow_data', 'locale', 'on_behalf_of', 'return_url'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final configuration$ = configuration;
 if (configuration$ != null) {
   if (configuration$.runes.length > 5000) { errors.add('configuration: length must be <= 5000'); }
@@ -806,8 +806,8 @@ final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
   if (customerAccount$.runes.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-return errors; } 
-PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, FlowData? Function()? flowData, PostBillingPortalSessionsRequestLocale? Function()? locale, String? Function()? onBehalfOf, String? Function()? returnUrl, }) { return PostBillingPortalSessionsRequest(
+return errors;}
+PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, FlowData? Function()? flowData, PostBillingPortalSessionsRequestLocale? Function()? locale, String? Function()? onBehalfOf, String? Function()? returnUrl, }) {return PostBillingPortalSessionsRequest(
   configuration: configuration != null ? configuration() : this.configuration,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
@@ -816,7 +816,7 @@ PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, St
   locale: locale != null ? locale() : this.locale,
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalSessionsRequest &&
           configuration == other.configuration &&
@@ -832,4 +832,4 @@ PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, St
 
 @override String toString() => 'PostBillingPortalSessionsRequest(configuration: $configuration, customer: $customer, customerAccount: $customerAccount, expand: $expand, flowData: $flowData, locale: $locale, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl)';
 
- }
+}

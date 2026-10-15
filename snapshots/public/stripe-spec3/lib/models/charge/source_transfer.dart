@@ -8,11 +8,11 @@ const SourceTransfer({this.string = const Omittable.absent(), this.transfer = co
 const SourceTransfer._({required this.rawValue, required this.string, required this.transfer, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory SourceTransfer.fromJson(Object? json) { return SourceTransfer._(
+factory SourceTransfer.fromJson(Object? json) {return SourceTransfer._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   transfer: json is Map<String, dynamic> && Transfer.canParse(json) ? parseAnyOfVariant<Transfer>(json, (value) => Transfer.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'SourceTransfer(${toJson()})';
 
- }
+}

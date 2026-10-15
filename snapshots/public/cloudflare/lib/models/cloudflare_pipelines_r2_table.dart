@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table_public/rolling_policy.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/cloudflare_pipelines_r2_table_credentials.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/file_naming.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/partitioning.dart';@immutable final class CloudflarePipelinesR2Table {const CloudflarePipelinesR2Table({required this.accountId, required this.bucket, required this.credentials, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });
 
-factory CloudflarePipelinesR2Table.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2Table(
+factory CloudflarePipelinesR2Table.fromJson(Map<String, dynamic> json) {return CloudflarePipelinesR2Table(
   accountId: json['account_id'] as String,
   bucket: json['bucket'] as String,
   credentials: CloudflarePipelinesR2TableCredentials.fromJson(json['credentials'] as Map<String, dynamic>),
@@ -12,7 +12,7 @@ factory CloudflarePipelinesR2Table.fromJson(Map<String, dynamic> json) { return 
   partitioning: json['partitioning'] != null ? Partitioning.fromJson(json['partitioning'] as Map<String, dynamic>) : null,
   path: json['path'] as String?,
   rollingPolicy: json['rolling_policy'] != null ? RollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Cloudflare Account ID for the bucket
 final String accountId;
@@ -37,7 +37,7 @@ final String? path;
 /// Rolling policy for file sinks (when & why to close a file and open a new one).
 final RollingPolicy? rollingPolicy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_id': accountId,
   'bucket': bucket,
   'credentials': credentials.toJson(),
@@ -46,11 +46,11 @@ Map<String, dynamic> toJson() { return {
   if (partitioning != null) 'partitioning': partitioning?.toJson(),
   'path': ?path,
   if (rollingPolicy != null) 'rolling_policy': rollingPolicy?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account_id') && json['account_id'] is String &&
       json.containsKey('bucket') && json['bucket'] is String &&
-      json.containsKey('credentials'); } 
-CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TableCredentials? credentials, FileNaming? Function()? fileNaming, String? Function()? jurisdiction, Partitioning? Function()? partitioning, String? Function()? path, RollingPolicy? Function()? rollingPolicy, }) { return CloudflarePipelinesR2Table(
+      json.containsKey('credentials');}
+CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TableCredentials? credentials, FileNaming? Function()? fileNaming, String? Function()? jurisdiction, Partitioning? Function()? partitioning, String? Function()? path, RollingPolicy? Function()? rollingPolicy, }) {return CloudflarePipelinesR2Table(
   accountId: accountId ?? this.accountId,
   bucket: bucket ?? this.bucket,
   credentials: credentials ?? this.credentials,
@@ -59,7 +59,7 @@ CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, Cloudfla
   partitioning: partitioning != null ? partitioning() : this.partitioning,
   path: path != null ? path() : this.path,
   rollingPolicy: rollingPolicy != null ? rollingPolicy() : this.rollingPolicy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesR2Table &&
           accountId == other.accountId &&
@@ -75,4 +75,4 @@ CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, Cloudfla
 
 @override String toString() => 'CloudflarePipelinesR2Table(accountId: $accountId, bucket: $bucket, credentials: $credentials, fileNaming: $fileNaming, jurisdiction: $jurisdiction, partitioning: $partitioning, path: $path, rollingPolicy: $rollingPolicy)';
 
- }
+}

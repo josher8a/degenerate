@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Approximate location parameters for the search.
 @immutable final class WebSearchLocation {const WebSearchLocation({this.country, this.region, this.city, this.timezone, });
 
-factory WebSearchLocation.fromJson(Map<String, dynamic> json) { return WebSearchLocation(
+factory WebSearchLocation.fromJson(Map<String, dynamic> json) {return WebSearchLocation(
   country: json['country'] as String?,
   region: json['region'] as String?,
   city: json['city'] as String?,
   timezone: json['timezone'] as String?,
-); }
+);}
 
 /// The two-letter
 /// [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1) of the user,
@@ -30,19 +30,19 @@ final String? city;
 /// 
 final String? timezone;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': ?country,
   'region': ?region,
   'city': ?city,
   'timezone': ?timezone,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'region', 'city', 'timezone'}.contains(key)); } 
-WebSearchLocation copyWith({String? Function()? country, String? Function()? region, String? Function()? city, String? Function()? timezone, }) { return WebSearchLocation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'country', 'region', 'city', 'timezone'}.contains(key));}
+WebSearchLocation copyWith({String? Function()? country, String? Function()? region, String? Function()? city, String? Function()? timezone, }) {return WebSearchLocation(
   country: country != null ? country() : this.country,
   region: region != null ? region() : this.region,
   city: city != null ? city() : this.city,
   timezone: timezone != null ? timezone() : this.timezone,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchLocation &&
           country == other.country &&
@@ -54,4 +54,4 @@ WebSearchLocation copyWith({String? Function()? country, String? Function()? reg
 
 @override String toString() => 'WebSearchLocation(country: $country, region: $region, city: $city, timezone: $timezone)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCurrencyConversion {const PaymentPagesCheckoutSessionCurrencyConversion({required this.amountSubtotal, required this.amountTotal, required this.fxRate, required this.sourceCurrency, });
 
-factory PaymentPagesCheckoutSessionCurrencyConversion.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCurrencyConversion(
+factory PaymentPagesCheckoutSessionCurrencyConversion.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionCurrencyConversion(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
   fxRate: json['fx_rate'] as String,
   sourceCurrency: json['source_currency'] as String,
-); }
+);}
 
 /// Total of all items in source currency before discounts or taxes are applied.
 final int amountSubtotal;
@@ -23,26 +23,26 @@ final String fxRate;
 /// Creation currency of the CheckoutSession before localization
 final String sourceCurrency;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_subtotal': amountSubtotal,
   'amount_total': amountTotal,
   'fx_rate': fxRate,
   'source_currency': sourceCurrency,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('fx_rate') && json['fx_rate'] is String &&
-      json.containsKey('source_currency') && json['source_currency'] is String; } 
+      json.containsKey('source_currency') && json['source_currency'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (sourceCurrency.runes.length > 5000) { errors.add('sourceCurrency: length must be <= 5000'); }
-return errors; } 
-PaymentPagesCheckoutSessionCurrencyConversion copyWith({int? amountSubtotal, int? amountTotal, String? fxRate, String? sourceCurrency, }) { return PaymentPagesCheckoutSessionCurrencyConversion(
+return errors;}
+PaymentPagesCheckoutSessionCurrencyConversion copyWith({int? amountSubtotal, int? amountTotal, String? fxRate, String? sourceCurrency, }) {return PaymentPagesCheckoutSessionCurrencyConversion(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   fxRate: fxRate ?? this.fxRate,
   sourceCurrency: sourceCurrency ?? this.sourceCurrency,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCurrencyConversion &&
           amountSubtotal == other.amountSubtotal &&
@@ -54,4 +54,4 @@ PaymentPagesCheckoutSessionCurrencyConversion copyWith({int? amountSubtotal, int
 
 @override String toString() => 'PaymentPagesCheckoutSessionCurrencyConversion(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, fxRate: $fxRate, sourceCurrency: $sourceCurrency)';
 
- }
+}

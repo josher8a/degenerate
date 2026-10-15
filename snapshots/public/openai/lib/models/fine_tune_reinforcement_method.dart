@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters.dart';import 'package:pub_openai/models/fine_tune_reinforcement_method/grader.dart';import 'package:pub_openai/models/grader_multi.dart';import 'package:pub_openai/models/grader_python.dart';import 'package:pub_openai/models/grader_score_model.dart';import 'package:pub_openai/models/grader_string_check.dart';import 'package:pub_openai/models/grader_text_similarity.dart';/// Configuration for the reinforcement fine-tuning method.
 @immutable final class FineTuneReinforcementMethod {const FineTuneReinforcementMethod({required this.grader, this.hyperparameters, });
 
-factory FineTuneReinforcementMethod.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementMethod(
+factory FineTuneReinforcementMethod.fromJson(Map<String, dynamic> json) {return FineTuneReinforcementMethod(
   grader: OneOf5.parse(json['grader'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderMulti.fromJson(v as Map<String, dynamic>),),
   hyperparameters: json['hyperparameters'] != null ? FineTuneReinforcementHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The grader used for the fine-tuning job.
 final Grader grader;
 
 final FineTuneReinforcementHyperparameters? hyperparameters;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'grader': grader.toJson(),
   if (hyperparameters != null) 'hyperparameters': hyperparameters?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('grader'); } 
-FineTuneReinforcementMethod copyWith({Grader? grader, FineTuneReinforcementHyperparameters? Function()? hyperparameters, }) { return FineTuneReinforcementMethod(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('grader');}
+FineTuneReinforcementMethod copyWith({Grader? grader, FineTuneReinforcementHyperparameters? Function()? hyperparameters, }) {return FineTuneReinforcementMethod(
   grader: grader ?? this.grader,
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneReinforcementMethod &&
           grader == other.grader &&
@@ -32,4 +32,4 @@ FineTuneReinforcementMethod copyWith({Grader? grader, FineTuneReinforcementHyper
 
 @override String toString() => 'FineTuneReinforcementMethod(grader: $grader, hyperparameters: $hyperparameters)';
 
- }
+}

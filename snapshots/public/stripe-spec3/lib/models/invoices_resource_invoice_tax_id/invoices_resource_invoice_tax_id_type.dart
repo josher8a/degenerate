@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the tax ID, one of `ad_nrt`, `ar_cuit`, `eu_vat`, `bo_tin`, `br_cnpj`, `br_cpf`, `cn_tin`, `co_nit`, `cr_tin`, `do_rcn`, `ec_ruc`, `eu_oss_vat`, `hr_oib`, `pe_ruc`, `ro_tin`, `rs_pib`, `sv_nit`, `uy_ruc`, `ve_rif`, `vn_tin`, `gb_vat`, `nz_gst`, `au_abn`, `au_arn`, `in_gst`, `no_vat`, `no_voec`, `za_vat`, `ch_vat`, `mx_rfc`, `sg_uen`, `ru_inn`, `ru_kpp`, `ca_bn`, `hk_br`, `es_cif`, `pl_nip`, `tw_vat`, `th_vat`, `jp_cn`, `jp_rn`, `jp_trn`, `li_uid`, `li_vat`, `lk_vat`, `my_itn`, `us_ein`, `kr_brn`, `ca_qst`, `ca_gst_hst`, `ca_pst_bc`, `ca_pst_mb`, `ca_pst_sk`, `my_sst`, `sg_gst`, `ae_trn`, `cl_tin`, `sa_vat`, `id_npwp`, `my_frp`, `il_vat`, `ge_vat`, `ua_vat`, `is_vat`, `bg_uic`, `hu_tin`, `si_tin`, `ke_pin`, `tr_tin`, `eg_tin`, `ph_tin`, `al_tin`, `bh_vat`, `kz_bin`, `ng_tin`, `om_vat`, `de_stn`, `ch_uid`, `tz_vat`, `uz_vat`, `uz_tin`, `md_vat`, `ma_vat`, `by_tin`, `ao_tin`, `bs_tin`, `bb_tin`, `cd_nif`, `mr_nif`, `me_pib`, `zw_tin`, `ba_tin`, `gn_nif`, `mk_vat`, `sr_fin`, `sn_ninea`, `am_tin`, `np_pan`, `tj_tin`, `ug_tin`, `zm_tin`, `kh_tin`, `aw_tin`, `az_tin`, `bd_bin`, `bj_ifu`, `et_tin`, `kg_tin`, `la_tin`, `cm_niu`, `cv_nif`, `bf_ifu`, or `unknown`
 sealed class InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType();
 
-factory InvoicesResourceInvoiceTaxIdType.fromJson(String json) { return switch (json) {
+factory InvoicesResourceInvoiceTaxIdType.fromJson(String json) {return switch (json) {
   'ad_nrt' => adNrt,
   'ae_trn' => aeTrn,
   'al_tin' => alTin,
@@ -119,7 +119,7 @@ factory InvoicesResourceInvoiceTaxIdType.fromJson(String json) { return switch (
   'zm_tin' => zmTin,
   'zw_tin' => zwTin,
   _ => InvoicesResourceInvoiceTaxIdType$Unknown(json),
-}; }
+};}
 
 static const InvoicesResourceInvoiceTaxIdType adNrt = InvoicesResourceInvoiceTaxIdType$adNrt._();
 
@@ -350,9 +350,9 @@ static const InvoicesResourceInvoiceTaxIdType zwTin = InvoicesResourceInvoiceTax
 static const List<InvoicesResourceInvoiceTaxIdType> values = [adNrt, aeTrn, alTin, amTin, aoTin, arCuit, auAbn, auArn, awTin, azTin, baTin, bbTin, bdBin, bfIfu, bgUic, bhVat, bjIfu, boTin, brCnpj, brCpf, bsTin, byTin, caBn, caGstHst, caPstBc, caPstMb, caPstSk, caQst, cdNif, chUid, chVat, clTin, cmNiu, cnTin, coNit, crTin, cvNif, deStn, doRcn, ecRuc, egTin, esCif, etTin, euOssVat, euVat, gbVat, geVat, gnNif, hkBr, hrOib, huTin, idNpwp, ilVat, inGst, isVat, jpCn, jpRn, jpTrn, kePin, kgTin, khTin, krBrn, kzBin, laTin, liUid, liVat, lkVat, maVat, mdVat, mePib, mkVat, mrNif, mxRfc, myFrp, myItn, mySst, ngTin, noVat, noVoec, npPan, nzGst, omVat, peRuc, phTin, plNip, roTin, rsPib, ruInn, ruKpp, saVat, sgGst, sgUen, siTin, snNinea, srFin, svNit, thVat, tjTin, trTin, twVat, tzVat, uaVat, ugTin, unknown, usEin, uyRuc, uzTin, uzVat, veRif, vnTin, zaVat, zmTin, zwTin];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ad_nrt' => 'adNrt',
   'ae_trn' => 'aeTrn',
   'al_tin' => 'alTin',
@@ -467,11 +467,11 @@ String get name { return switch (value) {
   'zm_tin' => 'zmTin',
   'zw_tin' => 'zwTin',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoicesResourceInvoiceTaxIdType$Unknown; } 
+bool get isUnknown {return this is InvoicesResourceInvoiceTaxIdType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() adNrt, required W Function() aeTrn, required W Function() alTin, required W Function() amTin, required W Function() aoTin, required W Function() arCuit, required W Function() auAbn, required W Function() auArn, required W Function() awTin, required W Function() azTin, required W Function() baTin, required W Function() bbTin, required W Function() bdBin, required W Function() bfIfu, required W Function() bgUic, required W Function() bhVat, required W Function() bjIfu, required W Function() boTin, required W Function() brCnpj, required W Function() brCpf, required W Function() bsTin, required W Function() byTin, required W Function() caBn, required W Function() caGstHst, required W Function() caPstBc, required W Function() caPstMb, required W Function() caPstSk, required W Function() caQst, required W Function() cdNif, required W Function() chUid, required W Function() chVat, required W Function() clTin, required W Function() cmNiu, required W Function() cnTin, required W Function() coNit, required W Function() crTin, required W Function() cvNif, required W Function() deStn, required W Function() doRcn, required W Function() ecRuc, required W Function() egTin, required W Function() esCif, required W Function() etTin, required W Function() euOssVat, required W Function() euVat, required W Function() gbVat, required W Function() geVat, required W Function() gnNif, required W Function() hkBr, required W Function() hrOib, required W Function() huTin, required W Function() idNpwp, required W Function() ilVat, required W Function() inGst, required W Function() isVat, required W Function() jpCn, required W Function() jpRn, required W Function() jpTrn, required W Function() kePin, required W Function() kgTin, required W Function() khTin, required W Function() krBrn, required W Function() kzBin, required W Function() laTin, required W Function() liUid, required W Function() liVat, required W Function() lkVat, required W Function() maVat, required W Function() mdVat, required W Function() mePib, required W Function() mkVat, required W Function() mrNif, required W Function() mxRfc, required W Function() myFrp, required W Function() myItn, required W Function() mySst, required W Function() ngTin, required W Function() noVat, required W Function() noVoec, required W Function() npPan, required W Function() nzGst, required W Function() omVat, required W Function() peRuc, required W Function() phTin, required W Function() plNip, required W Function() roTin, required W Function() rsPib, required W Function() ruInn, required W Function() ruKpp, required W Function() saVat, required W Function() sgGst, required W Function() sgUen, required W Function() siTin, required W Function() snNinea, required W Function() srFin, required W Function() svNit, required W Function() thVat, required W Function() tjTin, required W Function() trTin, required W Function() twVat, required W Function() tzVat, required W Function() uaVat, required W Function() ugTin, required W Function() unknown, required W Function() usEin, required W Function() uyRuc, required W Function() uzTin, required W Function() uzVat, required W Function() veRif, required W Function() vnTin, required W Function() zaVat, required W Function() zmTin, required W Function() zwTin, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() adNrt, required W Function() aeTrn, required W Function() alTin, required W Function() amTin, required W Function() aoTin, required W Function() arCuit, required W Function() auAbn, required W Function() auArn, required W Function() awTin, required W Function() azTin, required W Function() baTin, required W Function() bbTin, required W Function() bdBin, required W Function() bfIfu, required W Function() bgUic, required W Function() bhVat, required W Function() bjIfu, required W Function() boTin, required W Function() brCnpj, required W Function() brCpf, required W Function() bsTin, required W Function() byTin, required W Function() caBn, required W Function() caGstHst, required W Function() caPstBc, required W Function() caPstMb, required W Function() caPstSk, required W Function() caQst, required W Function() cdNif, required W Function() chUid, required W Function() chVat, required W Function() clTin, required W Function() cmNiu, required W Function() cnTin, required W Function() coNit, required W Function() crTin, required W Function() cvNif, required W Function() deStn, required W Function() doRcn, required W Function() ecRuc, required W Function() egTin, required W Function() esCif, required W Function() etTin, required W Function() euOssVat, required W Function() euVat, required W Function() gbVat, required W Function() geVat, required W Function() gnNif, required W Function() hkBr, required W Function() hrOib, required W Function() huTin, required W Function() idNpwp, required W Function() ilVat, required W Function() inGst, required W Function() isVat, required W Function() jpCn, required W Function() jpRn, required W Function() jpTrn, required W Function() kePin, required W Function() kgTin, required W Function() khTin, required W Function() krBrn, required W Function() kzBin, required W Function() laTin, required W Function() liUid, required W Function() liVat, required W Function() lkVat, required W Function() maVat, required W Function() mdVat, required W Function() mePib, required W Function() mkVat, required W Function() mrNif, required W Function() mxRfc, required W Function() myFrp, required W Function() myItn, required W Function() mySst, required W Function() ngTin, required W Function() noVat, required W Function() noVoec, required W Function() npPan, required W Function() nzGst, required W Function() omVat, required W Function() peRuc, required W Function() phTin, required W Function() plNip, required W Function() roTin, required W Function() rsPib, required W Function() ruInn, required W Function() ruKpp, required W Function() saVat, required W Function() sgGst, required W Function() sgUen, required W Function() siTin, required W Function() snNinea, required W Function() srFin, required W Function() svNit, required W Function() thVat, required W Function() tjTin, required W Function() trTin, required W Function() twVat, required W Function() tzVat, required W Function() uaVat, required W Function() ugTin, required W Function() unknown, required W Function() usEin, required W Function() uyRuc, required W Function() uzTin, required W Function() uzVat, required W Function() veRif, required W Function() vnTin, required W Function() zaVat, required W Function() zmTin, required W Function() zwTin, required W Function(String value) $unknown, }) {return switch (this) {
       InvoicesResourceInvoiceTaxIdType$adNrt() => adNrt(),
       InvoicesResourceInvoiceTaxIdType$aeTrn() => aeTrn(),
       InvoicesResourceInvoiceTaxIdType$alTin() => alTin(),
@@ -586,9 +586,9 @@ W when<W>({required W Function() adNrt, required W Function() aeTrn, required W 
       InvoicesResourceInvoiceTaxIdType$zmTin() => zmTin(),
       InvoicesResourceInvoiceTaxIdType$zwTin() => zwTin(),
       InvoicesResourceInvoiceTaxIdType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W Function()? aeTrn, W Function()? alTin, W Function()? amTin, W Function()? aoTin, W Function()? arCuit, W Function()? auAbn, W Function()? auArn, W Function()? awTin, W Function()? azTin, W Function()? baTin, W Function()? bbTin, W Function()? bdBin, W Function()? bfIfu, W Function()? bgUic, W Function()? bhVat, W Function()? bjIfu, W Function()? boTin, W Function()? brCnpj, W Function()? brCpf, W Function()? bsTin, W Function()? byTin, W Function()? caBn, W Function()? caGstHst, W Function()? caPstBc, W Function()? caPstMb, W Function()? caPstSk, W Function()? caQst, W Function()? cdNif, W Function()? chUid, W Function()? chVat, W Function()? clTin, W Function()? cmNiu, W Function()? cnTin, W Function()? coNit, W Function()? crTin, W Function()? cvNif, W Function()? deStn, W Function()? doRcn, W Function()? ecRuc, W Function()? egTin, W Function()? esCif, W Function()? etTin, W Function()? euOssVat, W Function()? euVat, W Function()? gbVat, W Function()? geVat, W Function()? gnNif, W Function()? hkBr, W Function()? hrOib, W Function()? huTin, W Function()? idNpwp, W Function()? ilVat, W Function()? inGst, W Function()? isVat, W Function()? jpCn, W Function()? jpRn, W Function()? jpTrn, W Function()? kePin, W Function()? kgTin, W Function()? khTin, W Function()? krBrn, W Function()? kzBin, W Function()? laTin, W Function()? liUid, W Function()? liVat, W Function()? lkVat, W Function()? maVat, W Function()? mdVat, W Function()? mePib, W Function()? mkVat, W Function()? mrNif, W Function()? mxRfc, W Function()? myFrp, W Function()? myItn, W Function()? mySst, W Function()? ngTin, W Function()? noVat, W Function()? noVoec, W Function()? npPan, W Function()? nzGst, W Function()? omVat, W Function()? peRuc, W Function()? phTin, W Function()? plNip, W Function()? roTin, W Function()? rsPib, W Function()? ruInn, W Function()? ruKpp, W Function()? saVat, W Function()? sgGst, W Function()? sgUen, W Function()? siTin, W Function()? snNinea, W Function()? srFin, W Function()? svNit, W Function()? thVat, W Function()? tjTin, W Function()? trTin, W Function()? twVat, W Function()? tzVat, W Function()? uaVat, W Function()? ugTin, W Function()? unknown, W Function()? usEin, W Function()? uyRuc, W Function()? uzTin, W Function()? uzVat, W Function()? veRif, W Function()? vnTin, W Function()? zaVat, W Function()? zmTin, W Function()? zwTin, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W Function()? aeTrn, W Function()? alTin, W Function()? amTin, W Function()? aoTin, W Function()? arCuit, W Function()? auAbn, W Function()? auArn, W Function()? awTin, W Function()? azTin, W Function()? baTin, W Function()? bbTin, W Function()? bdBin, W Function()? bfIfu, W Function()? bgUic, W Function()? bhVat, W Function()? bjIfu, W Function()? boTin, W Function()? brCnpj, W Function()? brCpf, W Function()? bsTin, W Function()? byTin, W Function()? caBn, W Function()? caGstHst, W Function()? caPstBc, W Function()? caPstMb, W Function()? caPstSk, W Function()? caQst, W Function()? cdNif, W Function()? chUid, W Function()? chVat, W Function()? clTin, W Function()? cmNiu, W Function()? cnTin, W Function()? coNit, W Function()? crTin, W Function()? cvNif, W Function()? deStn, W Function()? doRcn, W Function()? ecRuc, W Function()? egTin, W Function()? esCif, W Function()? etTin, W Function()? euOssVat, W Function()? euVat, W Function()? gbVat, W Function()? geVat, W Function()? gnNif, W Function()? hkBr, W Function()? hrOib, W Function()? huTin, W Function()? idNpwp, W Function()? ilVat, W Function()? inGst, W Function()? isVat, W Function()? jpCn, W Function()? jpRn, W Function()? jpTrn, W Function()? kePin, W Function()? kgTin, W Function()? khTin, W Function()? krBrn, W Function()? kzBin, W Function()? laTin, W Function()? liUid, W Function()? liVat, W Function()? lkVat, W Function()? maVat, W Function()? mdVat, W Function()? mePib, W Function()? mkVat, W Function()? mrNif, W Function()? mxRfc, W Function()? myFrp, W Function()? myItn, W Function()? mySst, W Function()? ngTin, W Function()? noVat, W Function()? noVoec, W Function()? npPan, W Function()? nzGst, W Function()? omVat, W Function()? peRuc, W Function()? phTin, W Function()? plNip, W Function()? roTin, W Function()? rsPib, W Function()? ruInn, W Function()? ruKpp, W Function()? saVat, W Function()? sgGst, W Function()? sgUen, W Function()? siTin, W Function()? snNinea, W Function()? srFin, W Function()? svNit, W Function()? thVat, W Function()? tjTin, W Function()? trTin, W Function()? twVat, W Function()? tzVat, W Function()? uaVat, W Function()? ugTin, W Function()? unknown, W Function()? usEin, W Function()? uyRuc, W Function()? uzTin, W Function()? uzVat, W Function()? veRif, W Function()? vnTin, W Function()? zaVat, W Function()? zmTin, W Function()? zwTin, W Function(String value)? $unknown, }) {return switch (this) {
       InvoicesResourceInvoiceTaxIdType$adNrt() => adNrt != null ? adNrt() : orElse(value),
       InvoicesResourceInvoiceTaxIdType$aeTrn() => aeTrn != null ? aeTrn() : orElse(value),
       InvoicesResourceInvoiceTaxIdType$alTin() => alTin != null ? alTin() : orElse(value),
@@ -703,10 +703,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
       InvoicesResourceInvoiceTaxIdType$zmTin() => zmTin != null ? zmTin() : orElse(value),
       InvoicesResourceInvoiceTaxIdType$zwTin() => zwTin != null ? zwTin() : orElse(value),
       InvoicesResourceInvoiceTaxIdType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoicesResourceInvoiceTaxIdType($value)';
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$adNrt extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$adNrt._();
 
 @override String get value => 'ad_nrt';
@@ -715,7 +715,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ad_nrt'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$aeTrn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$aeTrn._();
 
 @override String get value => 'ae_trn';
@@ -724,7 +724,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ae_trn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$alTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$alTin._();
 
 @override String get value => 'al_tin';
@@ -733,7 +733,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'al_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$amTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$amTin._();
 
 @override String get value => 'am_tin';
@@ -742,7 +742,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'am_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$aoTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$aoTin._();
 
 @override String get value => 'ao_tin';
@@ -751,7 +751,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ao_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$arCuit extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$arCuit._();
 
 @override String get value => 'ar_cuit';
@@ -760,7 +760,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ar_cuit'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$auAbn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$auAbn._();
 
 @override String get value => 'au_abn';
@@ -769,7 +769,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'au_abn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$auArn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$auArn._();
 
 @override String get value => 'au_arn';
@@ -778,7 +778,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'au_arn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$awTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$awTin._();
 
 @override String get value => 'aw_tin';
@@ -787,7 +787,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'aw_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$azTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$azTin._();
 
 @override String get value => 'az_tin';
@@ -796,7 +796,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'az_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$baTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$baTin._();
 
 @override String get value => 'ba_tin';
@@ -805,7 +805,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ba_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$bbTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$bbTin._();
 
 @override String get value => 'bb_tin';
@@ -814,7 +814,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bb_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$bdBin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$bdBin._();
 
 @override String get value => 'bd_bin';
@@ -823,7 +823,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bd_bin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$bfIfu extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$bfIfu._();
 
 @override String get value => 'bf_ifu';
@@ -832,7 +832,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bf_ifu'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$bgUic extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$bgUic._();
 
 @override String get value => 'bg_uic';
@@ -841,7 +841,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bg_uic'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$bhVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$bhVat._();
 
 @override String get value => 'bh_vat';
@@ -850,7 +850,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bh_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$bjIfu extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$bjIfu._();
 
 @override String get value => 'bj_ifu';
@@ -859,7 +859,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bj_ifu'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$boTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$boTin._();
 
 @override String get value => 'bo_tin';
@@ -868,7 +868,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bo_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$brCnpj extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$brCnpj._();
 
 @override String get value => 'br_cnpj';
@@ -877,7 +877,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'br_cnpj'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$brCpf extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$brCpf._();
 
 @override String get value => 'br_cpf';
@@ -886,7 +886,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'br_cpf'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$bsTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$bsTin._();
 
 @override String get value => 'bs_tin';
@@ -895,7 +895,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'bs_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$byTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$byTin._();
 
 @override String get value => 'by_tin';
@@ -904,7 +904,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'by_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$caBn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$caBn._();
 
 @override String get value => 'ca_bn';
@@ -913,7 +913,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_bn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$caGstHst extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$caGstHst._();
 
 @override String get value => 'ca_gst_hst';
@@ -922,7 +922,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_gst_hst'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$caPstBc extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$caPstBc._();
 
 @override String get value => 'ca_pst_bc';
@@ -931,7 +931,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_pst_bc'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$caPstMb extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$caPstMb._();
 
 @override String get value => 'ca_pst_mb';
@@ -940,7 +940,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_pst_mb'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$caPstSk extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$caPstSk._();
 
 @override String get value => 'ca_pst_sk';
@@ -949,7 +949,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_pst_sk'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$caQst extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$caQst._();
 
 @override String get value => 'ca_qst';
@@ -958,7 +958,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ca_qst'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$cdNif extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$cdNif._();
 
 @override String get value => 'cd_nif';
@@ -967,7 +967,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cd_nif'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$chUid extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$chUid._();
 
 @override String get value => 'ch_uid';
@@ -976,7 +976,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ch_uid'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$chVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$chVat._();
 
 @override String get value => 'ch_vat';
@@ -985,7 +985,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ch_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$clTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$clTin._();
 
 @override String get value => 'cl_tin';
@@ -994,7 +994,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cl_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$cmNiu extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$cmNiu._();
 
 @override String get value => 'cm_niu';
@@ -1003,7 +1003,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cm_niu'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$cnTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$cnTin._();
 
 @override String get value => 'cn_tin';
@@ -1012,7 +1012,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cn_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$coNit extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$coNit._();
 
 @override String get value => 'co_nit';
@@ -1021,7 +1021,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'co_nit'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$crTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$crTin._();
 
 @override String get value => 'cr_tin';
@@ -1030,7 +1030,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cr_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$cvNif extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$cvNif._();
 
 @override String get value => 'cv_nif';
@@ -1039,7 +1039,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'cv_nif'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$deStn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$deStn._();
 
 @override String get value => 'de_stn';
@@ -1048,7 +1048,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'de_stn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$doRcn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$doRcn._();
 
 @override String get value => 'do_rcn';
@@ -1057,7 +1057,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'do_rcn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$ecRuc extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$ecRuc._();
 
 @override String get value => 'ec_ruc';
@@ -1066,7 +1066,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ec_ruc'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$egTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$egTin._();
 
 @override String get value => 'eg_tin';
@@ -1075,7 +1075,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'eg_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$esCif extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$esCif._();
 
 @override String get value => 'es_cif';
@@ -1084,7 +1084,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'es_cif'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$etTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$etTin._();
 
 @override String get value => 'et_tin';
@@ -1093,7 +1093,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'et_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$euOssVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$euOssVat._();
 
 @override String get value => 'eu_oss_vat';
@@ -1102,7 +1102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'eu_oss_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$euVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$euVat._();
 
 @override String get value => 'eu_vat';
@@ -1111,7 +1111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'eu_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$gbVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$gbVat._();
 
 @override String get value => 'gb_vat';
@@ -1120,7 +1120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'gb_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$geVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$geVat._();
 
 @override String get value => 'ge_vat';
@@ -1129,7 +1129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ge_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$gnNif extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$gnNif._();
 
 @override String get value => 'gn_nif';
@@ -1138,7 +1138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'gn_nif'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$hkBr extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$hkBr._();
 
 @override String get value => 'hk_br';
@@ -1147,7 +1147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'hk_br'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$hrOib extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$hrOib._();
 
 @override String get value => 'hr_oib';
@@ -1156,7 +1156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'hr_oib'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$huTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$huTin._();
 
 @override String get value => 'hu_tin';
@@ -1165,7 +1165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'hu_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$idNpwp extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$idNpwp._();
 
 @override String get value => 'id_npwp';
@@ -1174,7 +1174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'id_npwp'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$ilVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$ilVat._();
 
 @override String get value => 'il_vat';
@@ -1183,7 +1183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'il_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$inGst extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$inGst._();
 
 @override String get value => 'in_gst';
@@ -1192,7 +1192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'in_gst'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$isVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$isVat._();
 
 @override String get value => 'is_vat';
@@ -1201,7 +1201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'is_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$jpCn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$jpCn._();
 
 @override String get value => 'jp_cn';
@@ -1210,7 +1210,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'jp_cn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$jpRn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$jpRn._();
 
 @override String get value => 'jp_rn';
@@ -1219,7 +1219,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'jp_rn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$jpTrn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$jpTrn._();
 
 @override String get value => 'jp_trn';
@@ -1228,7 +1228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'jp_trn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$kePin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$kePin._();
 
 @override String get value => 'ke_pin';
@@ -1237,7 +1237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ke_pin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$kgTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$kgTin._();
 
 @override String get value => 'kg_tin';
@@ -1246,7 +1246,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'kg_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$khTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$khTin._();
 
 @override String get value => 'kh_tin';
@@ -1255,7 +1255,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'kh_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$krBrn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$krBrn._();
 
 @override String get value => 'kr_brn';
@@ -1264,7 +1264,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'kr_brn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$kzBin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$kzBin._();
 
 @override String get value => 'kz_bin';
@@ -1273,7 +1273,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'kz_bin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$laTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$laTin._();
 
 @override String get value => 'la_tin';
@@ -1282,7 +1282,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'la_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$liUid extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$liUid._();
 
 @override String get value => 'li_uid';
@@ -1291,7 +1291,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'li_uid'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$liVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$liVat._();
 
 @override String get value => 'li_vat';
@@ -1300,7 +1300,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'li_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$lkVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$lkVat._();
 
 @override String get value => 'lk_vat';
@@ -1309,7 +1309,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'lk_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$maVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$maVat._();
 
 @override String get value => 'ma_vat';
@@ -1318,7 +1318,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ma_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$mdVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$mdVat._();
 
 @override String get value => 'md_vat';
@@ -1327,7 +1327,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'md_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$mePib extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$mePib._();
 
 @override String get value => 'me_pib';
@@ -1336,7 +1336,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'me_pib'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$mkVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$mkVat._();
 
 @override String get value => 'mk_vat';
@@ -1345,7 +1345,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'mk_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$mrNif extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$mrNif._();
 
 @override String get value => 'mr_nif';
@@ -1354,7 +1354,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'mr_nif'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$mxRfc extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$mxRfc._();
 
 @override String get value => 'mx_rfc';
@@ -1363,7 +1363,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'mx_rfc'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$myFrp extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$myFrp._();
 
 @override String get value => 'my_frp';
@@ -1372,7 +1372,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'my_frp'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$myItn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$myItn._();
 
 @override String get value => 'my_itn';
@@ -1381,7 +1381,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'my_itn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$mySst extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$mySst._();
 
 @override String get value => 'my_sst';
@@ -1390,7 +1390,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'my_sst'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$ngTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$ngTin._();
 
 @override String get value => 'ng_tin';
@@ -1399,7 +1399,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ng_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$noVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$noVat._();
 
 @override String get value => 'no_vat';
@@ -1408,7 +1408,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'no_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$noVoec extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$noVoec._();
 
 @override String get value => 'no_voec';
@@ -1417,7 +1417,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'no_voec'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$npPan extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$npPan._();
 
 @override String get value => 'np_pan';
@@ -1426,7 +1426,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'np_pan'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$nzGst extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$nzGst._();
 
 @override String get value => 'nz_gst';
@@ -1435,7 +1435,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'nz_gst'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$omVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$omVat._();
 
 @override String get value => 'om_vat';
@@ -1444,7 +1444,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'om_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$peRuc extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$peRuc._();
 
 @override String get value => 'pe_ruc';
@@ -1453,7 +1453,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'pe_ruc'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$phTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$phTin._();
 
 @override String get value => 'ph_tin';
@@ -1462,7 +1462,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ph_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$plNip extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$plNip._();
 
 @override String get value => 'pl_nip';
@@ -1471,7 +1471,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'pl_nip'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$roTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$roTin._();
 
 @override String get value => 'ro_tin';
@@ -1480,7 +1480,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ro_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$rsPib extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$rsPib._();
 
 @override String get value => 'rs_pib';
@@ -1489,7 +1489,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'rs_pib'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$ruInn extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$ruInn._();
 
 @override String get value => 'ru_inn';
@@ -1498,7 +1498,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ru_inn'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$ruKpp extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$ruKpp._();
 
 @override String get value => 'ru_kpp';
@@ -1507,7 +1507,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ru_kpp'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$saVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$saVat._();
 
 @override String get value => 'sa_vat';
@@ -1516,7 +1516,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sa_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$sgGst extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$sgGst._();
 
 @override String get value => 'sg_gst';
@@ -1525,7 +1525,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sg_gst'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$sgUen extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$sgUen._();
 
 @override String get value => 'sg_uen';
@@ -1534,7 +1534,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sg_uen'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$siTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$siTin._();
 
 @override String get value => 'si_tin';
@@ -1543,7 +1543,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'si_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$snNinea extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$snNinea._();
 
 @override String get value => 'sn_ninea';
@@ -1552,7 +1552,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sn_ninea'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$srFin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$srFin._();
 
 @override String get value => 'sr_fin';
@@ -1561,7 +1561,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sr_fin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$svNit extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$svNit._();
 
 @override String get value => 'sv_nit';
@@ -1570,7 +1570,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'sv_nit'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$thVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$thVat._();
 
 @override String get value => 'th_vat';
@@ -1579,7 +1579,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'th_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$tjTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$tjTin._();
 
 @override String get value => 'tj_tin';
@@ -1588,7 +1588,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'tj_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$trTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$trTin._();
 
 @override String get value => 'tr_tin';
@@ -1597,7 +1597,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'tr_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$twVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$twVat._();
 
 @override String get value => 'tw_vat';
@@ -1606,7 +1606,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'tw_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$tzVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$tzVat._();
 
 @override String get value => 'tz_vat';
@@ -1615,7 +1615,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'tz_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$uaVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$uaVat._();
 
 @override String get value => 'ua_vat';
@@ -1624,7 +1624,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ua_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$ugTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$ugTin._();
 
 @override String get value => 'ug_tin';
@@ -1633,7 +1633,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'ug_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$unknown extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$unknown._();
 
 @override String get value => 'unknown';
@@ -1642,7 +1642,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$usEin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$usEin._();
 
 @override String get value => 'us_ein';
@@ -1651,7 +1651,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'us_ein'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$uyRuc extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$uyRuc._();
 
 @override String get value => 'uy_ruc';
@@ -1660,7 +1660,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'uy_ruc'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$uzTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$uzTin._();
 
 @override String get value => 'uz_tin';
@@ -1669,7 +1669,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'uz_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$uzVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$uzVat._();
 
 @override String get value => 'uz_vat';
@@ -1678,7 +1678,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'uz_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$veRif extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$veRif._();
 
 @override String get value => 've_rif';
@@ -1687,7 +1687,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 've_rif'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$vnTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$vnTin._();
 
 @override String get value => 'vn_tin';
@@ -1696,7 +1696,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'vn_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$zaVat extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$zaVat._();
 
 @override String get value => 'za_vat';
@@ -1705,7 +1705,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'za_vat'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$zmTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$zmTin._();
 
 @override String get value => 'zm_tin';
@@ -1714,7 +1714,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'zm_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$zwTin extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$zwTin._();
 
 @override String get value => 'zw_tin';
@@ -1723,7 +1723,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => 'zw_tin'.hashCode;
 
- }
+}
 @immutable final class InvoicesResourceInvoiceTaxIdType$Unknown extends InvoicesResourceInvoiceTaxIdType {const InvoicesResourceInvoiceTaxIdType$Unknown(this.value);
 
 @override final String value;
@@ -1733,4 +1733,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adNrt, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class DependabotCreateOrUpdateOrgSecretRequest {const DependabotCreateOrUpdateOrgSecretRequest({required this.visibility, this.encryptedValue, this.keyId, this.selectedRepositoryIds, });
 
-factory DependabotCreateOrUpdateOrgSecretRequest.fromJson(Map<String, dynamic> json) { return DependabotCreateOrUpdateOrgSecretRequest(
+factory DependabotCreateOrUpdateOrgSecretRequest.fromJson(Map<String, dynamic> json) {return DependabotCreateOrUpdateOrgSecretRequest(
   encryptedValue: json['encrypted_value'] as String?,
   keyId: json['key_id'] as String?,
   visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => e).toList(),
-); }
+);}
 
 /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://docs.github.com/rest/dependabot/secrets#get-an-organization-public-key) endpoint.
 final String? encryptedValue;
@@ -22,26 +22,26 @@ final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 /// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://docs.github.com/rest/dependabot/secrets#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://docs.github.com/rest/dependabot/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
 final List<dynamic>? selectedRepositoryIds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'encrypted_value': ?encryptedValue,
   'key_id': ?keyId,
   'visibility': visibility.toJson(),
   'selected_repository_ids': ?selectedRepositoryIds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('visibility'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('visibility');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final encryptedValue$ = encryptedValue;
 if (encryptedValue$ != null) {
   if (!RegExp(r'^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$').hasMatch(encryptedValue$)) { errors.add(r'encryptedValue: must match pattern ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$'); }
 }
-return errors; } 
-DependabotCreateOrUpdateOrgSecretRequest copyWith({String? Function()? encryptedValue, String? Function()? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<dynamic>? Function()? selectedRepositoryIds, }) { return DependabotCreateOrUpdateOrgSecretRequest(
+return errors;}
+DependabotCreateOrUpdateOrgSecretRequest copyWith({String? Function()? encryptedValue, String? Function()? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<dynamic>? Function()? selectedRepositoryIds, }) {return DependabotCreateOrUpdateOrgSecretRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId != null ? keyId() : this.keyId,
   visibility: visibility ?? this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotCreateOrUpdateOrgSecretRequest &&
           encryptedValue == other.encryptedValue &&
@@ -53,4 +53,4 @@ DependabotCreateOrUpdateOrgSecretRequest copyWith({String? Function()? encrypted
 
 @override String toString() => 'DependabotCreateOrUpdateOrgSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)';
 
- }
+}

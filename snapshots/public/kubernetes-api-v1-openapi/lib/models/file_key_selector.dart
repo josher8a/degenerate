@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// FileKeySelector selects a key of the env file.
 @immutable final class FileKeySelector {const FileKeySelector({required this.key, required this.path, required this.volumeName, this.optional, });
 
-factory FileKeySelector.fromJson(Map<String, dynamic> json) { return FileKeySelector(
+factory FileKeySelector.fromJson(Map<String, dynamic> json) {return FileKeySelector(
   key: json['key'] as String,
   optional: json['optional'] as bool?,
   path: json['path'] as String,
   volumeName: json['volumeName'] as String,
-); }
+);}
 
 /// The key within the env file. An invalid key will prevent the pod from starting. The keys defined within a source may consist of any printable ASCII characters except '='. During Alpha stage of the EnvFiles feature gate, the key size is limited to 128 characters.
 final String key;
@@ -28,21 +28,21 @@ final String volumeName;
 /// The value of `optional`, or its schema default when absent.
 bool get optionalOrDefault => optional ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'key': key,
   'optional': ?optional,
   'path': path,
   'volumeName': volumeName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('path') && json['path'] is String &&
-      json.containsKey('volumeName') && json['volumeName'] is String; } 
-FileKeySelector copyWith({String? key, bool? Function()? optional, String? path, String? volumeName, }) { return FileKeySelector(
+      json.containsKey('volumeName') && json['volumeName'] is String;}
+FileKeySelector copyWith({String? key, bool? Function()? optional, String? path, String? volumeName, }) {return FileKeySelector(
   key: key ?? this.key,
   optional: optional != null ? optional() : this.optional,
   path: path ?? this.path,
   volumeName: volumeName ?? this.volumeName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FileKeySelector &&
           key == other.key &&
@@ -54,4 +54,4 @@ FileKeySelector copyWith({String? key, bool? Function()? optional, String? path,
 
 @override String toString() => 'FileKeySelector(key: $key, optional: $optional, path: $path, volumeName: $volumeName)';
 
- }
+}

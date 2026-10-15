@@ -7,11 +7,11 @@ const SubscriptionDataTrialSettings({this.trialSettingsConfig = const Omittable.
 const SubscriptionDataTrialSettings._({required this.rawValue, required this.trialSettingsConfig, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory SubscriptionDataTrialSettings.fromJson(Object? json) { return SubscriptionDataTrialSettings._(
+factory SubscriptionDataTrialSettings.fromJson(Object? json) {return SubscriptionDataTrialSettings._(
   rawValue: Omittable(json),
   trialSettingsConfig: json is Map<String, dynamic> && TrialSettingsConfig.canParse(json) ? parseAnyOfVariant<TrialSettingsConfig>(json, (value) => TrialSettingsConfig.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'SubscriptionDataTrialSettings(${toJson()})';
 
- }
+}

@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Repository Identifier
 @immutable final class CodeScanningVariantAnalysisRepository {const CodeScanningVariantAnalysisRepository({required this.id, required this.name, required this.fullName, required this.private, required this.stargazersCount, required this.updatedAt, });
 
-factory CodeScanningVariantAnalysisRepository.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysisRepository(
+factory CodeScanningVariantAnalysisRepository.fromJson(Map<String, dynamic> json) {return CodeScanningVariantAnalysisRepository(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   fullName: json['full_name'] as String,
   private: json['private'] as bool,
   stargazersCount: (json['stargazers_count'] as num).toInt(),
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-); }
+);}
 
 /// A unique identifier of the repository.
 final int id;
@@ -29,28 +29,28 @@ final int stargazersCount;
 
 final DateTime? updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   'full_name': fullName,
   'private': private,
   'stargazers_count': stargazersCount,
   'updated_at': updatedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('full_name') && json['full_name'] is String &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('stargazers_count') && json['stargazers_count'] is num &&
-      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
-CodeScanningVariantAnalysisRepository copyWith({int? id, String? name, String? fullName, bool? private, int? stargazersCount, DateTime? Function()? updatedAt, }) { return CodeScanningVariantAnalysisRepository(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String);}
+CodeScanningVariantAnalysisRepository copyWith({int? id, String? name, String? fullName, bool? private, int? stargazersCount, DateTime? Function()? updatedAt, }) {return CodeScanningVariantAnalysisRepository(
   id: id ?? this.id,
   name: name ?? this.name,
   fullName: fullName ?? this.fullName,
   private: private ?? this.private,
   stargazersCount: stargazersCount ?? this.stargazersCount,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningVariantAnalysisRepository &&
           id == other.id &&
@@ -64,4 +64,4 @@ CodeScanningVariantAnalysisRepository copyWith({int? id, String? name, String? f
 
 @override String toString() => 'CodeScanningVariantAnalysisRepository(id: $id, name: $name, fullName: $fullName, private: $private, stargazersCount: $stargazersCount, updatedAt: $updatedAt)';
 
- }
+}

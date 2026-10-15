@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set repository secrets for GitHub Codespaces.
 @immutable final class RepoCodespacesSecret {const RepoCodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, });
 
-factory RepoCodespacesSecret.fromJson(Map<String, dynamic> json) { return RepoCodespacesSecret(
+factory RepoCodespacesSecret.fromJson(Map<String, dynamic> json) {return RepoCodespacesSecret(
   name: json['name'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-); }
+);}
 
 /// The name of the secret.
 final String name;
@@ -17,19 +17,19 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-RepoCodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, }) { return RepoCodespacesSecret(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+RepoCodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, }) {return RepoCodespacesSecret(
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepoCodespacesSecret &&
           name == other.name &&
@@ -40,4 +40,4 @@ RepoCodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? upda
 
 @override String toString() => 'RepoCodespacesSecret(name: $name, createdAt: $createdAt, updatedAt: $updatedAt)';
 
- }
+}

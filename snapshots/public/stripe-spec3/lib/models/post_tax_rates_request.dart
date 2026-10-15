@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request/post_tax_rates_request_tax_type.dart';@immutable final class PostTaxRatesRequest {const PostTaxRatesRequest({required this.displayName, required this.inclusive, required this.percentage, this.active, this.country, this.description, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
 
-factory PostTaxRatesRequest.fromJson(Map<String, dynamic> json) { return PostTaxRatesRequest(
+factory PostTaxRatesRequest.fromJson(Map<String, dynamic> json) {return PostTaxRatesRequest(
   active: json['active'] as bool?,
   country: json['country'] as String?,
   description: json['description'] as String?,
@@ -15,7 +15,7 @@ factory PostTaxRatesRequest.fromJson(Map<String, dynamic> json) { return PostTax
   percentage: (json['percentage'] as num).toDouble(),
   state: json['state'] as String?,
   taxType: json['tax_type'] != null ? PostTaxRatesRequestTaxType.fromJson(json['tax_type'] as String) : null,
-); }
+);}
 
 /// Flag determining whether the tax rate is active or inactive (archived). Inactive tax rates cannot be used with new applications or Checkout Sessions, but will still work for subscriptions and invoices that already have it set.
 final bool? active;
@@ -50,7 +50,7 @@ final String? state;
 /// The high-level tax type, such as `vat` or `sales_tax`.
 final PostTaxRatesRequestTaxType? taxType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'country': ?country,
   'description': ?description,
@@ -62,12 +62,12 @@ Map<String, dynamic> toJson() { return {
   'percentage': percentage,
   'state': ?state,
   if (taxType != null) 'tax_type': taxType?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('inclusive') && json['inclusive'] is bool &&
-      json.containsKey('percentage') && json['percentage'] is num; } 
+      json.containsKey('percentage') && json['percentage'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final country$ = country;
 if (country$ != null) {
   if (country$.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
@@ -85,8 +85,8 @@ final state$ = state;
 if (state$ != null) {
   if (state$.runes.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
-return errors; } 
-PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? country, String? Function()? description, String? displayName, List<String>? Function()? expand, bool? inclusive, String? Function()? jurisdiction, Map<String, String>? Function()? metadata, double? percentage, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) { return PostTaxRatesRequest(
+return errors;}
+PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? country, String? Function()? description, String? displayName, List<String>? Function()? expand, bool? inclusive, String? Function()? jurisdiction, Map<String, String>? Function()? metadata, double? percentage, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) {return PostTaxRatesRequest(
   active: active != null ? active() : this.active,
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,
@@ -98,7 +98,7 @@ PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? coun
   percentage: percentage ?? this.percentage,
   state: state != null ? state() : this.state,
   taxType: taxType != null ? taxType() : this.taxType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxRatesRequest &&
           active == other.active &&
@@ -117,4 +117,4 @@ PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? coun
 
 @override String toString() => 'PostTaxRatesRequest(\n  active: $active,\n  country: $country,\n  description: $description,\n  displayName: $displayName,\n  expand: $expand,\n  inclusive: $inclusive,\n  jurisdiction: $jurisdiction,\n  metadata: $metadata,\n  percentage: $percentage,\n  state: $state,\n  taxType: $taxType,\n)';
 
- }
+}

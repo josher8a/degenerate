@@ -12,7 +12,7 @@ final class FormApi with ApiExecutor {const FormApi(this.apiConfig);
 /// Test form parameter(s)
 ///
 /// `POST /form/integer/boolean/string`
-Future<ApiResult<String, Never>> testFormIntegerBooleanString({TestFormIntegerBooleanStringRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testFormIntegerBooleanString({TestFormIntegerBooleanStringRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -36,16 +36,16 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test form parameter(s) for oneOf schema
 ///
 /// `POST /form/oneof`
-Future<ApiResult<String, Never>> testFormOneof({TestFormOneofRequest? body, RequestOptions? options, }) async  { throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from TestFormOneofRequest');
- } 
+Future<ApiResult<String, Never>> testFormOneof({TestFormOneofRequest? body, RequestOptions? options, }) async {throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from TestFormOneofRequest');
+}
 /// Test form parameter(s) for multipart schema
 ///
 /// `POST /form/object/multipart`
-Future<ApiResult<String, Never>> testFormObjectMultipart({TestFormObjectMultipartRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testFormObjectMultipart({TestFormObjectMultipartRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -64,5 +64,5 @@ return await execute(
     return response.body;
   },
 );
- } 
- }
+}
+}

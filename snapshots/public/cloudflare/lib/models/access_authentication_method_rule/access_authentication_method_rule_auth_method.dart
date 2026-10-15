@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessAuthenticationMethodRuleAuthMethod {const AccessAuthenticationMethodRuleAuthMethod({required this.authMethod});
 
-factory AccessAuthenticationMethodRuleAuthMethod.fromJson(Map<String, dynamic> json) { return AccessAuthenticationMethodRuleAuthMethod(
+factory AccessAuthenticationMethodRuleAuthMethod.fromJson(Map<String, dynamic> json) {return AccessAuthenticationMethodRuleAuthMethod(
   authMethod: json['auth_method'] as String,
-); }
+);}
 
 /// The type of authentication method https://datatracker.ietf.org/doc/html/rfc8176#section-2.
 /// 
 /// Example: `'mfa'`
 final String authMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'auth_method': authMethod,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_method') && json['auth_method'] is String; } 
-AccessAuthenticationMethodRuleAuthMethod copyWith({String? authMethod}) { return AccessAuthenticationMethodRuleAuthMethod(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('auth_method') && json['auth_method'] is String;}
+AccessAuthenticationMethodRuleAuthMethod copyWith({String? authMethod}) {return AccessAuthenticationMethodRuleAuthMethod(
   authMethod: authMethod ?? this.authMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAuthenticationMethodRuleAuthMethod &&
           authMethod == other.authMethod;
@@ -27,4 +27,4 @@ AccessAuthenticationMethodRuleAuthMethod copyWith({String? authMethod}) { return
 
 @override String toString() => 'AccessAuthenticationMethodRuleAuthMethod(authMethod: $authMethod)';
 
- }
+}

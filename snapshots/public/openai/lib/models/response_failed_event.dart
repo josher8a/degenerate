@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ResponseFailedEvent {const ResponseFailedEvent({required this.type, required this.sequenceNumber, required this.response, });
 
-factory ResponseFailedEvent.fromJson(Map<String, dynamic> json) { return ResponseFailedEvent(
+factory ResponseFailedEvent.fromJson(Map<String, dynamic> json) {return ResponseFailedEvent(
   type: json['type'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   response: Response.fromJson(json['response'] as Map<String, dynamic>),
-); }
+);}
 
 /// The type of the event. Always `response.failed`.
 /// 
@@ -22,19 +22,19 @@ final int sequenceNumber;
 /// 
 final Response response;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'sequence_number': sequenceNumber,
   'response': response.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
-      json.containsKey('response'); } 
-ResponseFailedEvent copyWith({String? type, int? sequenceNumber, Response? response, }) { return ResponseFailedEvent(
+      json.containsKey('response');}
+ResponseFailedEvent copyWith({String? type, int? sequenceNumber, Response? response, }) {return ResponseFailedEvent(
   type: type ?? this.type,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   response: response ?? this.response,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFailedEvent &&
           type == other.type &&
@@ -45,4 +45,4 @@ ResponseFailedEvent copyWith({String? type, int? sequenceNumber, Response? respo
 
 @override String toString() => 'ResponseFailedEvent(type: $type, sequenceNumber: $sequenceNumber, response: $response)';
 
- }
+}

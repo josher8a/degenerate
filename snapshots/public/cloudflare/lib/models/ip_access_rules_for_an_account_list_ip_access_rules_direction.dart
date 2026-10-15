@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the direction used to sort returned rules.
 sealed class IpAccessRulesForAnAccountListIpAccessRulesDirection {const IpAccessRulesForAnAccountListIpAccessRulesDirection();
 
-factory IpAccessRulesForAnAccountListIpAccessRulesDirection.fromJson(String json) { return switch (json) {
+factory IpAccessRulesForAnAccountListIpAccessRulesDirection.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => IpAccessRulesForAnAccountListIpAccessRulesDirection$Unknown(json),
-}; }
+};}
 
 static const IpAccessRulesForAnAccountListIpAccessRulesDirection asc = IpAccessRulesForAnAccountListIpAccessRulesDirection$asc._();
 
@@ -17,30 +17,30 @@ static const IpAccessRulesForAnAccountListIpAccessRulesDirection desc = IpAccess
 static const List<IpAccessRulesForAnAccountListIpAccessRulesDirection> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IpAccessRulesForAnAccountListIpAccessRulesDirection$Unknown; } 
+bool get isUnknown {return this is IpAccessRulesForAnAccountListIpAccessRulesDirection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       IpAccessRulesForAnAccountListIpAccessRulesDirection$asc() => asc(),
       IpAccessRulesForAnAccountListIpAccessRulesDirection$desc() => desc(),
       IpAccessRulesForAnAccountListIpAccessRulesDirection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       IpAccessRulesForAnAccountListIpAccessRulesDirection$asc() => asc != null ? asc() : orElse(value),
       IpAccessRulesForAnAccountListIpAccessRulesDirection$desc() => desc != null ? desc() : orElse(value),
       IpAccessRulesForAnAccountListIpAccessRulesDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IpAccessRulesForAnAccountListIpAccessRulesDirection($value)';
 
- }
+}
 @immutable final class IpAccessRulesForAnAccountListIpAccessRulesDirection$asc extends IpAccessRulesForAnAccountListIpAccessRulesDirection {const IpAccessRulesForAnAccountListIpAccessRulesDirection$asc._();
 
 @override String get value => 'asc';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class IpAccessRulesForAnAccountListIpAccessRulesDirection$desc extends IpAccessRulesForAnAccountListIpAccessRulesDirection {const IpAccessRulesForAnAccountListIpAccessRulesDirection$desc._();
 
 @override String get value => 'desc';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class IpAccessRulesForAnAccountListIpAccessRulesDirection$Unknown extends IpAccessRulesForAnAccountListIpAccessRulesDirection {const IpAccessRulesForAnAccountListIpAccessRulesDirection$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

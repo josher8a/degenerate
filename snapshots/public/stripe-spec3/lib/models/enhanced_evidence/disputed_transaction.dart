@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_account_id.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_device_fingerprint.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_device_id.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_email_address.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_purchase_ip.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/disputed_transaction_product_description.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/disputed_transaction_shipping_address.dart';sealed class DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices();
 
-factory DisputedTransactionMerchandiseOrServices.fromJson(String json) { return switch (json) {
+factory DisputedTransactionMerchandiseOrServices.fromJson(String json) {return switch (json) {
   'merchandise' => merchandise,
   'services' => services,
   _ => DisputedTransactionMerchandiseOrServices$Unknown(json),
-}; }
+};}
 
 static const DisputedTransactionMerchandiseOrServices merchandise = DisputedTransactionMerchandiseOrServices$merchandise._();
 
@@ -16,30 +16,30 @@ static const DisputedTransactionMerchandiseOrServices services = DisputedTransac
 static const List<DisputedTransactionMerchandiseOrServices> values = [merchandise, services];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'merchandise' => 'merchandise',
   'services' => 'services',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DisputedTransactionMerchandiseOrServices$Unknown; } 
+bool get isUnknown {return this is DisputedTransactionMerchandiseOrServices$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() merchandise, required W Function() services, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() merchandise, required W Function() services, required W Function(String value) $unknown, }) {return switch (this) {
       DisputedTransactionMerchandiseOrServices$merchandise() => merchandise(),
       DisputedTransactionMerchandiseOrServices$services() => services(),
       DisputedTransactionMerchandiseOrServices$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? merchandise, W Function()? services, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? merchandise, W Function()? services, W Function(String value)? $unknown, }) {return switch (this) {
       DisputedTransactionMerchandiseOrServices$merchandise() => merchandise != null ? merchandise() : orElse(value),
       DisputedTransactionMerchandiseOrServices$services() => services != null ? services() : orElse(value),
       DisputedTransactionMerchandiseOrServices$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DisputedTransactionMerchandiseOrServices($value)';
 
- }
+}
 @immutable final class DisputedTransactionMerchandiseOrServices$merchandise extends DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices$merchandise._();
 
 @override String get value => 'merchandise';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? merchand
 
 @override int get hashCode => 'merchandise'.hashCode;
 
- }
+}
 @immutable final class DisputedTransactionMerchandiseOrServices$services extends DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices$services._();
 
 @override String get value => 'services';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? merchand
 
 @override int get hashCode => 'services'.hashCode;
 
- }
+}
 @immutable final class DisputedTransactionMerchandiseOrServices$Unknown extends DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices$Unknown(this.value);
 
 @override final String value;
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? merchand
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class DisputedTransaction {const DisputedTransaction({this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.merchandiseOrServices, this.productDescription, this.shippingAddress, });
 
-factory DisputedTransaction.fromJson(Map<String, dynamic> json) { return DisputedTransaction(
+factory DisputedTransaction.fromJson(Map<String, dynamic> json) {return DisputedTransaction(
   customerAccountId: json['customer_account_id'] != null ? CustomerAccountId.fromJson(json['customer_account_id']) : null,
   customerDeviceFingerprint: json['customer_device_fingerprint'] != null ? CustomerDeviceFingerprint.fromJson(json['customer_device_fingerprint']) : null,
   customerDeviceId: json['customer_device_id'] != null ? CustomerDeviceId.fromJson(json['customer_device_id']) : null,
@@ -79,7 +79,7 @@ factory DisputedTransaction.fromJson(Map<String, dynamic> json) { return Dispute
   merchandiseOrServices: json['merchandise_or_services'] != null ? DisputedTransactionMerchandiseOrServices.fromJson(json['merchandise_or_services'] as String) : null,
   productDescription: json['product_description'] != null ? DisputedTransactionProductDescription.fromJson(json['product_description']) : null,
   shippingAddress: json['shipping_address'] != null ? DisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final CustomerAccountId? customerAccountId;
 
@@ -97,7 +97,7 @@ final DisputedTransactionProductDescription? productDescription;
 
 final DisputedTransactionShippingAddress? shippingAddress;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (customerAccountId != null) 'customer_account_id': customerAccountId?.toJson(),
   if (customerDeviceFingerprint != null) 'customer_device_fingerprint': customerDeviceFingerprint?.toJson(),
   if (customerDeviceId != null) 'customer_device_id': customerDeviceId?.toJson(),
@@ -106,9 +106,9 @@ Map<String, dynamic> toJson() { return {
   if (merchandiseOrServices != null) 'merchandise_or_services': merchandiseOrServices?.toJson(),
   if (productDescription != null) 'product_description': productDescription?.toJson(),
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_account_id', 'customer_device_fingerprint', 'customer_device_id', 'customer_email_address', 'customer_purchase_ip', 'merchandise_or_services', 'product_description', 'shipping_address'}.contains(key)); } 
-DisputedTransaction copyWith({CustomerAccountId? Function()? customerAccountId, CustomerDeviceFingerprint? Function()? customerDeviceFingerprint, CustomerDeviceId? Function()? customerDeviceId, CustomerEmailAddress? Function()? customerEmailAddress, CustomerPurchaseIp? Function()? customerPurchaseIp, DisputedTransactionMerchandiseOrServices? Function()? merchandiseOrServices, DisputedTransactionProductDescription? Function()? productDescription, DisputedTransactionShippingAddress? Function()? shippingAddress, }) { return DisputedTransaction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'customer_account_id', 'customer_device_fingerprint', 'customer_device_id', 'customer_email_address', 'customer_purchase_ip', 'merchandise_or_services', 'product_description', 'shipping_address'}.contains(key));}
+DisputedTransaction copyWith({CustomerAccountId? Function()? customerAccountId, CustomerDeviceFingerprint? Function()? customerDeviceFingerprint, CustomerDeviceId? Function()? customerDeviceId, CustomerEmailAddress? Function()? customerEmailAddress, CustomerPurchaseIp? Function()? customerPurchaseIp, DisputedTransactionMerchandiseOrServices? Function()? merchandiseOrServices, DisputedTransactionProductDescription? Function()? productDescription, DisputedTransactionShippingAddress? Function()? shippingAddress, }) {return DisputedTransaction(
   customerAccountId: customerAccountId != null ? customerAccountId() : this.customerAccountId,
   customerDeviceFingerprint: customerDeviceFingerprint != null ? customerDeviceFingerprint() : this.customerDeviceFingerprint,
   customerDeviceId: customerDeviceId != null ? customerDeviceId() : this.customerDeviceId,
@@ -117,7 +117,7 @@ DisputedTransaction copyWith({CustomerAccountId? Function()? customerAccountId, 
   merchandiseOrServices: merchandiseOrServices != null ? merchandiseOrServices() : this.merchandiseOrServices,
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DisputedTransaction &&
           customerAccountId == other.customerAccountId &&
@@ -133,4 +133,4 @@ DisputedTransaction copyWith({CustomerAccountId? Function()? customerAccountId, 
 
 @override String toString() => 'DisputedTransaction(customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, merchandiseOrServices: $merchandiseOrServices, productDescription: $productDescription, shippingAddress: $shippingAddress)';
 
- }
+}

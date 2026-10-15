@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopOriginLocationResponse404 {const RadarGetAttacksLayer7TopOriginLocationResponse404({required this.error});
 
-factory RadarGetAttacksLayer7TopOriginLocationResponse404.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopOriginLocationResponse404(
+factory RadarGetAttacksLayer7TopOriginLocationResponse404.fromJson(Map<String, dynamic> json) {return RadarGetAttacksLayer7TopOriginLocationResponse404(
   error: json['error'] as String,
-); }
+);}
 
 /// Example: `'Not Found.'`
 final String error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') && json['error'] is String; } 
-RadarGetAttacksLayer7TopOriginLocationResponse404 copyWith({String? error}) { return RadarGetAttacksLayer7TopOriginLocationResponse404(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error') && json['error'] is String;}
+RadarGetAttacksLayer7TopOriginLocationResponse404 copyWith({String? error}) {return RadarGetAttacksLayer7TopOriginLocationResponse404(
   error: error ?? this.error,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TopOriginLocationResponse404 &&
           error == other.error;
@@ -25,4 +25,4 @@ RadarGetAttacksLayer7TopOriginLocationResponse404 copyWith({String? error}) { re
 
 @override String toString() => 'RadarGetAttacksLayer7TopOriginLocationResponse404(error: $error)';
 
- }
+}

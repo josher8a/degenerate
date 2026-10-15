@@ -14,7 +14,7 @@ final class TokenValidationTokenConfigurationApi with ApiExecutor {const TokenVa
 /// Lists all token validation configurations for this zone
 ///
 /// `GET /zones/{zone_id}/token_validation/config`
-Future<ApiResult<List<ShieldTokenConfiguration>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigList({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldTokenConfiguration>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigList({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,11 +42,11 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Create a new Token Validation configuration
 ///
 /// `POST /zones/{zone_id}/token_validation/config`
-Future<ApiResult<ShieldTokenConfiguration, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigCreate({required ShieldIdentifier zoneId, required TokenValidationConfigCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldTokenConfiguration, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigCreate({required ShieldIdentifier zoneId, required TokenValidationConfigCreateRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,11 +65,11 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Get a single Token Configuration
 ///
 /// `GET /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<ShieldTokenConfiguration, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigGet({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldTokenConfiguration, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigGet({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,13 +86,13 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Edit an existing Token Configuration
 ///
 /// Edit fields of an existing Token Configuration
 ///
 /// `PATCH /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<TokenValidationConfigEditResponseResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigEdit({required ShieldIdentifier zoneId, required ShieldUuid configId, required TokenValidationConfigEditRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TokenValidationConfigEditResponseResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigEdit({required ShieldIdentifier zoneId, required ShieldUuid configId, required TokenValidationConfigEditRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -111,11 +111,11 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Delete Token Configuration
 ///
 /// `DELETE /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigDelete({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigDelete({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -132,11 +132,11 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
+}
 /// Update Token Configuration credentials
 ///
 /// `PUT /zones/{zone_id}/token_validation/config/{config_id}/credentials`
-Future<ApiResult<TokenValidationConfigCredentialsUpdateResponse, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigCredentialsUpdate({required ShieldIdentifier zoneId, required ShieldUuid configId, required ShieldCredentials body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TokenValidationConfigCredentialsUpdateResponse, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationConfigCredentialsUpdate({required ShieldIdentifier zoneId, required ShieldUuid configId, required ShieldCredentials body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,5 +154,5 @@ return await execute(
   },
   onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
- } 
- }
+}
+}

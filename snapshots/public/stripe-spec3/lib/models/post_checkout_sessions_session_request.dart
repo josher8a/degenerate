@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/collected_information.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_shipping_options.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
 
-factory PostCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequest(
+factory PostCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsSessionRequest(
   collectedInformation: json['collected_information'] != null ? CollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsSessionRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   shippingOptions: json['shipping_options'] != null ? PostCheckoutSessionsSessionRequestShippingOptions.fromJson(json['shipping_options']) : null,
-); }
+);}
 
 /// Information about the customer collected within the Checkout Session. Can only be set when updating `embedded` or `custom` sessions.
 final CollectedInformation? collectedInformation;
@@ -38,21 +38,21 @@ final Metadata? metadata;
 /// The shipping rate options to apply to this Session. Up to a maximum of 5.
 final PostCheckoutSessionsSessionRequestShippingOptions? shippingOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (collectedInformation != null) 'collected_information': collectedInformation?.toJson(),
   'expand': ?expand,
   if (lineItems != null) 'line_items': lineItems?.map((e) => e.toJson()).toList(),
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (shippingOptions != null) 'shipping_options': shippingOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'collected_information', 'expand', 'line_items', 'metadata', 'shipping_options'}.contains(key)); } 
-PostCheckoutSessionsSessionRequest copyWith({CollectedInformation? Function()? collectedInformation, List<String>? Function()? expand, List<PostCheckoutSessionsSessionRequestLineItems>? Function()? lineItems, Metadata? Function()? metadata, PostCheckoutSessionsSessionRequestShippingOptions? Function()? shippingOptions, }) { return PostCheckoutSessionsSessionRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'collected_information', 'expand', 'line_items', 'metadata', 'shipping_options'}.contains(key));}
+PostCheckoutSessionsSessionRequest copyWith({CollectedInformation? Function()? collectedInformation, List<String>? Function()? expand, List<PostCheckoutSessionsSessionRequestLineItems>? Function()? lineItems, Metadata? Function()? metadata, PostCheckoutSessionsSessionRequestShippingOptions? Function()? shippingOptions, }) {return PostCheckoutSessionsSessionRequest(
   collectedInformation: collectedInformation != null ? collectedInformation() : this.collectedInformation,
   expand: expand != null ? expand() : this.expand,
   lineItems: lineItems != null ? lineItems() : this.lineItems,
   metadata: metadata != null ? metadata() : this.metadata,
   shippingOptions: shippingOptions != null ? shippingOptions() : this.shippingOptions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsSessionRequest &&
           collectedInformation == other.collectedInformation &&
@@ -65,4 +65,4 @@ PostCheckoutSessionsSessionRequest copyWith({CollectedInformation? Function()? c
 
 @override String toString() => 'PostCheckoutSessionsSessionRequest(collectedInformation: $collectedInformation, expand: $expand, lineItems: $lineItems, metadata: $metadata, shippingOptions: $shippingOptions)';
 
- }
+}

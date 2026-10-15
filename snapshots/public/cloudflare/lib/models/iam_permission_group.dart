@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group/iam_permission_group_meta.dart';/// A named group of permissions that map to a group of operations against resources.
 @immutable final class IamPermissionGroup {const IamPermissionGroup({required this.id, this.meta, this.name, });
 
-factory IamPermissionGroup.fromJson(Map<String, dynamic> json) { return IamPermissionGroup(
+factory IamPermissionGroup.fromJson(Map<String, dynamic> json) {return IamPermissionGroup(
   id: json['id'] as String,
   meta: json['meta'] != null ? IamPermissionGroupMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-); }
+);}
 
 /// Identifier of the permission group.
 /// 
@@ -35,17 +35,17 @@ final IamPermissionGroupMeta? meta;
 /// Example: `'Load Balancer'`
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   if (meta != null) 'meta': meta?.toJson(),
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-IamPermissionGroup copyWith({String? id, IamPermissionGroupMeta? Function()? meta, String? Function()? name, }) { return IamPermissionGroup(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+IamPermissionGroup copyWith({String? id, IamPermissionGroupMeta? Function()? meta, String? Function()? name, }) {return IamPermissionGroup(
   id: id ?? this.id,
   meta: meta != null ? meta() : this.meta,
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamPermissionGroup &&
           id == other.id &&
@@ -56,4 +56,4 @@ IamPermissionGroup copyWith({String? id, IamPermissionGroupMeta? Function()? met
 
 @override String toString() => 'IamPermissionGroup(id: $id, meta: $meta, name: $name)';
 
- }
+}

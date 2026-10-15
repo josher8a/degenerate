@@ -7,12 +7,12 @@ const CopilotSetCopilotContentExclusionForOrganizationRequestValue({this.string 
 const CopilotSetCopilotContentExclusionForOrganizationRequestValue._({required this.rawValue, required this.string, required this.valueVariant2, required this.valueVariant3, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CopilotSetCopilotContentExclusionForOrganizationRequestValue.fromJson(Object? json) { return CopilotSetCopilotContentExclusionForOrganizationRequestValue._(
+factory CopilotSetCopilotContentExclusionForOrganizationRequestValue.fromJson(Object? json) {return CopilotSetCopilotContentExclusionForOrganizationRequestValue._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   valueVariant2: json is Map<String, dynamic> && ValueVariant2.canParse(json) ? parseAnyOfVariant<ValueVariant2>(json, (value) => ValueVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   valueVariant3: json is Map<String, dynamic> && ValueVariant3.canParse(json) ? parseAnyOfVariant<ValueVariant3>(json, (value) => ValueVariant3.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -46,4 +46,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CopilotSetCopilotContentExclusionForOrganizationRequestValue(${toJson()})';
 
- }
+}

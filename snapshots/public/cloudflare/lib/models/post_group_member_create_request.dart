@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostGroupMemberCreateRequest {const PostGroupMemberCreateRequest({required this.accountId});
 
-factory PostGroupMemberCreateRequest.fromJson(Map<String, dynamic> json) { return PostGroupMemberCreateRequest(
+factory PostGroupMemberCreateRequest.fromJson(Map<String, dynamic> json) {return PostGroupMemberCreateRequest(
   accountId: json['accountId'] as String,
-); }
+);}
 
 /// Example: `'123'`
 final String accountId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accountId': accountId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accountId') && json['accountId'] is String; } 
-PostGroupMemberCreateRequest copyWith({String? accountId}) { return PostGroupMemberCreateRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accountId') && json['accountId'] is String;}
+PostGroupMemberCreateRequest copyWith({String? accountId}) {return PostGroupMemberCreateRequest(
   accountId: accountId ?? this.accountId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostGroupMemberCreateRequest &&
           accountId == other.accountId;
@@ -25,4 +25,4 @@ PostGroupMemberCreateRequest copyWith({String? accountId}) { return PostGroupMem
 
 @override String toString() => 'PostGroupMemberCreateRequest(accountId: $accountId)';
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCreateRepoVariableRequest {const ActionsCreateRepoVariableRequest({required this.name, required this.value, });
 
-factory ActionsCreateRepoVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateRepoVariableRequest(
+factory ActionsCreateRepoVariableRequest.fromJson(Map<String, dynamic> json) {return ActionsCreateRepoVariableRequest(
   name: json['name'] as String,
   value: json['value'] as String,
-); }
+);}
 
 /// The name of the variable.
 final String name;
@@ -14,16 +14,16 @@ final String name;
 /// The value of the variable.
 final String value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('value') && json['value'] is String; } 
-ActionsCreateRepoVariableRequest copyWith({String? name, String? value, }) { return ActionsCreateRepoVariableRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String;}
+ActionsCreateRepoVariableRequest copyWith({String? name, String? value, }) {return ActionsCreateRepoVariableRequest(
   name: name ?? this.name,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCreateRepoVariableRequest &&
           name == other.name &&
@@ -33,4 +33,4 @@ ActionsCreateRepoVariableRequest copyWith({String? name, String? value, }) { ret
 
 @override String toString() => 'ActionsCreateRepoVariableRequest(name: $name, value: $value)';
 
- }
+}

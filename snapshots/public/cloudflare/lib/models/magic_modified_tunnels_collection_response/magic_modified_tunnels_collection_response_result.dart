@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_gre_tunnel.dart';@immutable final class MagicModifiedTunnelsCollectionResponseResult {const MagicModifiedTunnelsCollectionResponseResult({this.modified, this.modifiedGreTunnels, });
 
-factory MagicModifiedTunnelsCollectionResponseResult.fromJson(Map<String, dynamic> json) { return MagicModifiedTunnelsCollectionResponseResult(
+factory MagicModifiedTunnelsCollectionResponseResult.fromJson(Map<String, dynamic> json) {return MagicModifiedTunnelsCollectionResponseResult(
   modified: json['modified'] as bool?,
   modifiedGreTunnels: (json['modified_gre_tunnels'] as List<dynamic>?)?.map((e) => MagicGreTunnel.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 /// Example: `true`
 final bool? modified;
 
 final List<MagicGreTunnel>? modifiedGreTunnels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'modified': ?modified,
   if (modifiedGreTunnels != null) 'modified_gre_tunnels': modifiedGreTunnels?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'modified_gre_tunnels'}.contains(key)); } 
-MagicModifiedTunnelsCollectionResponseResult copyWith({bool? Function()? modified, List<MagicGreTunnel>? Function()? modifiedGreTunnels, }) { return MagicModifiedTunnelsCollectionResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'modified', 'modified_gre_tunnels'}.contains(key));}
+MagicModifiedTunnelsCollectionResponseResult copyWith({bool? Function()? modified, List<MagicGreTunnel>? Function()? modifiedGreTunnels, }) {return MagicModifiedTunnelsCollectionResponseResult(
   modified: modified != null ? modified() : this.modified,
   modifiedGreTunnels: modifiedGreTunnels != null ? modifiedGreTunnels() : this.modifiedGreTunnels,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicModifiedTunnelsCollectionResponseResult &&
           modified == other.modified &&
@@ -31,4 +31,4 @@ MagicModifiedTunnelsCollectionResponseResult copyWith({bool? Function()? modifie
 
 @override String toString() => 'MagicModifiedTunnelsCollectionResponseResult(modified: $modified, modifiedGreTunnels: $modifiedGreTunnels)';
 
- }
+}

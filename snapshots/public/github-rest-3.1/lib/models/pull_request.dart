@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/auto_merge.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_base.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_head.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_labels.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
 @immutable final class PullRequest {const PullRequest({required this.title, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.url, required this.user, required this.body, required this.labels, required this.milestone, required this.deletions, required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.additions, required this.commits, required this.maintainerCanModify, required this.head, required this.changedFiles, required this.links, required this.authorAssociation, required this.autoMerge, required this.reviewComments, required this.merged, required this.mergeable, required this.comments, required this.mergeableState, required this.mergedBy, required this.base, this.draft, this.requestedTeams, this.requestedReviewers, this.assignees, this.activeLockReason = const Omittable.absent(), this.rebaseable = const Omittable.absent(), });
 
-factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
+factory PullRequest.fromJson(Map<String, dynamic> json) {return PullRequest(
   url: Uri.parse(json['url'] as String),
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
@@ -53,7 +53,7 @@ factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
   additions: (json['additions'] as num).toInt(),
   deletions: (json['deletions'] as num).toInt(),
   changedFiles: (json['changed_files'] as num).toInt(),
-); }
+);}
 
 final Uri url;
 
@@ -157,7 +157,7 @@ final int deletions;
 
 final int changedFiles;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'id': id,
   'node_id': nodeId,
@@ -206,8 +206,8 @@ Map<String, dynamic> toJson() { return {
   'additions': additions,
   'deletions': deletions,
   'changed_files': changedFiles,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -248,8 +248,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('commits') && json['commits'] is num &&
       json.containsKey('additions') && json['additions'] is num &&
       json.containsKey('deletions') && json['deletions'] is num &&
-      json.containsKey('changed_files') && json['changed_files'] is num; } 
-PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, IssuesUpdateRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) { return PullRequest(
+      json.containsKey('changed_files') && json['changed_files'] is num;}
+PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, IssuesUpdateRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) {return PullRequest(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -298,7 +298,7 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
   additions: additions ?? this.additions,
   deletions: deletions ?? this.deletions,
   changedFiles: changedFiles ?? this.changedFiles,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequest &&
           url == other.url &&
@@ -354,4 +354,4 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
 
 @override String toString() => 'PullRequest(\n  url: $url,\n  id: $id,\n  nodeId: $nodeId,\n  htmlUrl: $htmlUrl,\n  diffUrl: $diffUrl,\n  patchUrl: $patchUrl,\n  issueUrl: $issueUrl,\n  commitsUrl: $commitsUrl,\n  reviewCommentsUrl: $reviewCommentsUrl,\n  reviewCommentUrl: $reviewCommentUrl,\n  commentsUrl: $commentsUrl,\n  statusesUrl: $statusesUrl,\n  number: $number,\n  state: $state,\n  locked: $locked,\n  title: $title,\n  user: $user,\n  body: $body,\n  labels: $labels,\n  milestone: $milestone,\n  activeLockReason: $activeLockReason,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  closedAt: $closedAt,\n  mergedAt: $mergedAt,\n  mergeCommitSha: $mergeCommitSha,\n  assignee: $assignee,\n  assignees: $assignees,\n  requestedReviewers: $requestedReviewers,\n  requestedTeams: $requestedTeams,\n  head: $head,\n  base: $base,\n  links: $links,\n  authorAssociation: $authorAssociation,\n  autoMerge: $autoMerge,\n  draft: $draft,\n  merged: $merged,\n  mergeable: $mergeable,\n  rebaseable: $rebaseable,\n  mergeableState: $mergeableState,\n  mergedBy: $mergedBy,\n  comments: $comments,\n  reviewComments: $reviewComments,\n  maintainerCanModify: $maintainerCanModify,\n  commits: $commits,\n  additions: $additions,\n  deletions: $deletions,\n  changedFiles: $changedFiles,\n)';
 
- }
+}

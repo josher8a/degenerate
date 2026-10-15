@@ -14,7 +14,7 @@ final class WorkersAiObjectDetectionApi with ApiExecutor {const WorkersAiObjectD
 /// Runs inference on the @cf/facebook/nonomni-detr-resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/nonomni-detr-resnet-50`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniDetrResnet50Error>> workersAiPostRunCfFacebookNonomniDetrResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniDetrResnet50Error>> workersAiPostRunCfFacebookNonomniDetrResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -43,5 +43,5 @@ return await execute(
   },
   onError: WorkersAiPostRunCfFacebookNonomniDetrResnet50Error.fromResponse,
 );
- } 
- }
+}
+}

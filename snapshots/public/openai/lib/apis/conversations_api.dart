@@ -12,7 +12,7 @@ final class ConversationsApi with ApiExecutor {const ConversationsApi(this.apiCo
 /// List all items for a conversation with the given ID.
 ///
 /// `GET /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList, Never>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConversationItemList, Never>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -46,11 +46,11 @@ return await execute(
     return ConversationItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create items in a conversation with the given ID.
 ///
 /// `POST /conversations/{conversation_id}/items`
-Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, required CreateConversationItemsRequest body, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConversationItemList, Never>> createConversationItems({required String conversationId, required CreateConversationItemsRequest body, List<IncludeEnum>? include, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -77,11 +77,11 @@ return await execute(
     return ConversationItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get a single item from a conversation with the given IDs.
 ///
 /// `GET /conversations/{conversation_id}/items/{item_id}`
-Future<ApiResult<ConversationItem, Never>> getConversationItem({required String conversationId, required String itemId, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConversationItem, Never>> getConversationItem({required String conversationId, required String itemId, List<IncludeEnum>? include, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
@@ -106,11 +106,11 @@ return await execute(
     return ConversationItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete an item from a conversation with the given IDs.
 ///
 /// `DELETE /conversations/{conversation_id}/items/{item_id}`
-Future<ApiResult<ConversationResource, Never>> deleteConversationItem({required String conversationId, required String itemId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConversationResource, Never>> deleteConversationItem({required String conversationId, required String itemId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,11 +125,11 @@ return await execute(
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a conversation.
 ///
 /// `POST /conversations`
-Future<ApiResult<ConversationResource, Never>> createConversation({CreateConversationBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConversationResource, Never>> createConversation({CreateConversationBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,11 +146,11 @@ return await execute(
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Get a conversation
 ///
 /// `GET /conversations/{conversation_id}`
-Future<ApiResult<ConversationResource, Never>> getConversation({required String conversationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConversationResource, Never>> getConversation({required String conversationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -165,11 +165,11 @@ return await execute(
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update a conversation
 ///
 /// `POST /conversations/{conversation_id}`
-Future<ApiResult<ConversationResource, Never>> updateConversation({required String conversationId, UpdateConversationBody? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConversationResource, Never>> updateConversation({required String conversationId, UpdateConversationBody? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,11 +186,11 @@ return await execute(
     return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Delete a conversation. Items in the conversation will not be deleted.
 ///
 /// `DELETE /conversations/{conversation_id}`
-Future<ApiResult<DeletedConversationResource, Never>> deleteConversation({required String conversationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedConversationResource, Never>> deleteConversation({required String conversationId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -205,5 +205,5 @@ return await execute(
     return DeletedConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

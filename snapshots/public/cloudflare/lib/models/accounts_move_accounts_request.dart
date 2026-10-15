@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsMoveAccountsRequest {const AccountsMoveAccountsRequest({required this.destinationOrganizationId});
 
-factory AccountsMoveAccountsRequest.fromJson(Map<String, dynamic> json) { return AccountsMoveAccountsRequest(
+factory AccountsMoveAccountsRequest.fromJson(Map<String, dynamic> json) {return AccountsMoveAccountsRequest(
   destinationOrganizationId: json['destination_organization_id'] as String,
-); }
+);}
 
 final String destinationOrganizationId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'destination_organization_id': destinationOrganizationId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_organization_id') && json['destination_organization_id'] is String; } 
-AccountsMoveAccountsRequest copyWith({String? destinationOrganizationId}) { return AccountsMoveAccountsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('destination_organization_id') && json['destination_organization_id'] is String;}
+AccountsMoveAccountsRequest copyWith({String? destinationOrganizationId}) {return AccountsMoveAccountsRequest(
   destinationOrganizationId: destinationOrganizationId ?? this.destinationOrganizationId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsMoveAccountsRequest &&
           destinationOrganizationId == other.destinationOrganizationId;
@@ -24,4 +24,4 @@ AccountsMoveAccountsRequest copyWith({String? destinationOrganizationId}) { retu
 
 @override String toString() => 'AccountsMoveAccountsRequest(destinationOrganizationId: $destinationOrganizationId)';
 
- }
+}

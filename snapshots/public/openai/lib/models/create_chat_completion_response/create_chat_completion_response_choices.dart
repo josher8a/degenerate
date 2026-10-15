@@ -8,14 +8,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 sealed class CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason();
 
-factory CreateChatCompletionResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
+factory CreateChatCompletionResponseChoicesFinishReason.fromJson(String json) {return switch (json) {
   'stop' => stop,
   'length' => length,
   'tool_calls' => toolCalls,
   'content_filter' => contentFilter,
   'function_call' => functionCall,
   _ => CreateChatCompletionResponseChoicesFinishReason$Unknown(json),
-}; }
+};}
 
 static const CreateChatCompletionResponseChoicesFinishReason stop = CreateChatCompletionResponseChoicesFinishReason$stop._();
 
@@ -30,39 +30,39 @@ static const CreateChatCompletionResponseChoicesFinishReason functionCall = Crea
 static const List<CreateChatCompletionResponseChoicesFinishReason> values = [stop, length, toolCalls, contentFilter, functionCall];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'stop' => 'stop',
   'length' => 'length',
   'tool_calls' => 'toolCalls',
   'content_filter' => 'contentFilter',
   'function_call' => 'functionCall',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateChatCompletionResponseChoicesFinishReason$Unknown; } 
+bool get isUnknown {return this is CreateChatCompletionResponseChoicesFinishReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() stop, required W Function() length, required W Function() toolCalls, required W Function() contentFilter, required W Function() functionCall, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() stop, required W Function() length, required W Function() toolCalls, required W Function() contentFilter, required W Function() functionCall, required W Function(String value) $unknown, }) {return switch (this) {
       CreateChatCompletionResponseChoicesFinishReason$stop() => stop(),
       CreateChatCompletionResponseChoicesFinishReason$length() => length(),
       CreateChatCompletionResponseChoicesFinishReason$toolCalls() => toolCalls(),
       CreateChatCompletionResponseChoicesFinishReason$contentFilter() => contentFilter(),
       CreateChatCompletionResponseChoicesFinishReason$functionCall() => functionCall(),
       CreateChatCompletionResponseChoicesFinishReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W Function()? length, W Function()? toolCalls, W Function()? contentFilter, W Function()? functionCall, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W Function()? length, W Function()? toolCalls, W Function()? contentFilter, W Function()? functionCall, W Function(String value)? $unknown, }) {return switch (this) {
       CreateChatCompletionResponseChoicesFinishReason$stop() => stop != null ? stop() : orElse(value),
       CreateChatCompletionResponseChoicesFinishReason$length() => length != null ? length() : orElse(value),
       CreateChatCompletionResponseChoicesFinishReason$toolCalls() => toolCalls != null ? toolCalls() : orElse(value),
       CreateChatCompletionResponseChoicesFinishReason$contentFilter() => contentFilter != null ? contentFilter() : orElse(value),
       CreateChatCompletionResponseChoicesFinishReason$functionCall() => functionCall != null ? functionCall() : orElse(value),
       CreateChatCompletionResponseChoicesFinishReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateChatCompletionResponseChoicesFinishReason($value)';
 
- }
+}
 @immutable final class CreateChatCompletionResponseChoicesFinishReason$stop extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$stop._();
 
 @override String get value => 'stop';
@@ -71,7 +71,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W 
 
 @override int get hashCode => 'stop'.hashCode;
 
- }
+}
 @immutable final class CreateChatCompletionResponseChoicesFinishReason$length extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$length._();
 
 @override String get value => 'length';
@@ -80,7 +80,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W 
 
 @override int get hashCode => 'length'.hashCode;
 
- }
+}
 @immutable final class CreateChatCompletionResponseChoicesFinishReason$toolCalls extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$toolCalls._();
 
 @override String get value => 'tool_calls';
@@ -89,7 +89,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W 
 
 @override int get hashCode => 'tool_calls'.hashCode;
 
- }
+}
 @immutable final class CreateChatCompletionResponseChoicesFinishReason$contentFilter extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$contentFilter._();
 
 @override String get value => 'content_filter';
@@ -98,7 +98,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W 
 
 @override int get hashCode => 'content_filter'.hashCode;
 
- }
+}
 @immutable final class CreateChatCompletionResponseChoicesFinishReason$functionCall extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$functionCall._();
 
 @override String get value => 'function_call';
@@ -107,7 +107,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W 
 
 @override int get hashCode => 'function_call'.hashCode;
 
- }
+}
 @immutable final class CreateChatCompletionResponseChoicesFinishReason$Unknown extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$Unknown(this.value);
 
 @override final String value;
@@ -117,15 +117,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CreateChatCompletionResponseChoices {const CreateChatCompletionResponseChoices({required this.finishReason, required this.index, required this.message, required this.logprobs, });
 
-factory CreateChatCompletionResponseChoices.fromJson(Map<String, dynamic> json) { return CreateChatCompletionResponseChoices(
+factory CreateChatCompletionResponseChoices.fromJson(Map<String, dynamic> json) {return CreateChatCompletionResponseChoices(
   finishReason: CreateChatCompletionResponseChoicesFinishReason.fromJson(json['finish_reason'] as String),
   index: (json['index'] as num).toInt(),
   message: ChatCompletionResponseMessage.fromJson(json['message'] as Map<String, dynamic>),
   logprobs: json['logprobs'] != null ? CreateChatCompletionResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
 /// `length` if the maximum number of tokens specified in the request was reached,
@@ -142,22 +142,22 @@ final ChatCompletionResponseMessage message;
 /// Log probability information for the choice.
 final CreateChatCompletionResponseChoicesLogprobs? logprobs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'finish_reason': finishReason.toJson(),
   'index': index,
   'message': message.toJson(),
   'logprobs': logprobs?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('finish_reason') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('finish_reason') &&
       json.containsKey('index') && json['index'] is num &&
       json.containsKey('message') &&
-      json.containsKey('logprobs'); } 
-CreateChatCompletionResponseChoices copyWith({CreateChatCompletionResponseChoicesFinishReason? finishReason, int? index, ChatCompletionResponseMessage? message, CreateChatCompletionResponseChoicesLogprobs? Function()? logprobs, }) { return CreateChatCompletionResponseChoices(
+      json.containsKey('logprobs');}
+CreateChatCompletionResponseChoices copyWith({CreateChatCompletionResponseChoicesFinishReason? finishReason, int? index, ChatCompletionResponseMessage? message, CreateChatCompletionResponseChoicesLogprobs? Function()? logprobs, }) {return CreateChatCompletionResponseChoices(
   finishReason: finishReason ?? this.finishReason,
   index: index ?? this.index,
   message: message ?? this.message,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionResponseChoices &&
           finishReason == other.finishReason &&
@@ -169,4 +169,4 @@ CreateChatCompletionResponseChoices copyWith({CreateChatCompletionResponseChoice
 
 @override String toString() => 'CreateChatCompletionResponseChoices(finishReason: $finishReason, index: $index, message: $message, logprobs: $logprobs)';
 
- }
+}

@@ -14,7 +14,7 @@ final class AccessApplicationsApi with ApiExecutor {const AccessApplicationsApi(
 /// Lists all Access applications in an account.
 ///
 /// `GET /accounts/{account_id}/access/apps`
-Future<ApiResult<List<AccessAppResponse>?, AccessApplicationsAddAnApplicationError>> accessApplicationsListAccessApplications({required AccessIdentifier accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessAppResponse>?, AccessApplicationsAddAnApplicationError>> accessApplicationsListAccessApplications({required AccessIdentifier accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -60,13 +60,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Add an Access application
 ///
 /// Adds a new application to Access.
 ///
 /// `POST /accounts/{account_id}/access/apps`
-Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsAddAnApplication({required AccessIdentifier accountId, required AccessAppRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsAddAnApplication({required AccessIdentifier accountId, required AccessAppRequestRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -85,13 +85,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Get an Access application
 ///
 /// Fetches information about an Access application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -108,13 +108,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update an Access application
 ///
 /// Updates an Access application.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppRequestRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -133,13 +133,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Delete an Access application
 ///
 /// Deletes an application from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, AccessApplicationsAddAnApplicationError>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -156,13 +156,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Revoke application tokens
 ///
 /// Revokes all tokens issued for an application.
 ///
 /// `POST /accounts/{account_id}/access/apps/{app_id}/revoke_tokens`
-Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> accessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, AccessApplicationsAddAnApplicationError>> accessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -179,13 +179,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update Access application settings
 ///
 /// Updates Access application settings.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}/settings`
-Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -204,13 +204,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Update Access application settings
 ///
 /// Updates Access application settings.
 ///
 /// `PATCH /accounts/{account_id}/access/apps/{app_id}/settings`
-Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppSettingsResponse?, AccessApplicationsAddAnApplicationError>> accessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -229,13 +229,13 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
+}
 /// Test Access policies
 ///
 /// Tests if a specific user has permission to access an application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/user_policy_checks`
-Future<ApiResult<AccessPolicyCheckResponseResult?, AccessApplicationsAddAnApplicationError>> accessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicyCheckResponseResult?, AccessApplicationsAddAnApplicationError>> accessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -252,5 +252,5 @@ return await execute(
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
- } 
- }
+}
+}

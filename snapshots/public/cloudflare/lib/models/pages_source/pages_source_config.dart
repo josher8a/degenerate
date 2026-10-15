@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_source/preview_deployment_setting.dart';@immutable final class PagesSourceConfig {const PagesSourceConfig({required this.deploymentsEnabled, required this.owner, required this.ownerId, required this.pathExcludes, required this.pathIncludes, required this.prCommentsEnabled, required this.previewBranchExcludes, required this.previewBranchIncludes, required this.previewDeploymentSetting, required this.productionBranch, required this.productionDeploymentsEnabled, required this.repoId, required this.repoName, });
 
-factory PagesSourceConfig.fromJson(Map<String, dynamic> json) { return PagesSourceConfig(
+factory PagesSourceConfig.fromJson(Map<String, dynamic> json) {return PagesSourceConfig(
   deploymentsEnabled: json['deployments_enabled'] as bool,
   owner: json['owner'] as String,
   ownerId: json['owner_id'] as String,
@@ -17,7 +17,7 @@ factory PagesSourceConfig.fromJson(Map<String, dynamic> json) { return PagesSour
   productionDeploymentsEnabled: json['production_deployments_enabled'] as bool,
   repoId: json['repo_id'] as String,
   repoName: json['repo_name'] as String,
-); }
+);}
 
 /// Whether to enable automatic deployments when pushing to the source repository.
 /// When disabled, no deployments (production or preview) will be triggered automatically.
@@ -70,7 +70,7 @@ final String repoId;
 /// Example: `'my-repo'`
 final String repoName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deployments_enabled': deploymentsEnabled,
   'owner': owner,
   'owner_id': ownerId,
@@ -84,8 +84,8 @@ Map<String, dynamic> toJson() { return {
   'production_deployments_enabled': productionDeploymentsEnabled,
   'repo_id': repoId,
   'repo_name': repoName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deployments_enabled') && json['deployments_enabled'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deployments_enabled') && json['deployments_enabled'] is bool &&
       json.containsKey('owner') && json['owner'] is String &&
       json.containsKey('owner_id') && json['owner_id'] is String &&
       json.containsKey('path_excludes') &&
@@ -97,8 +97,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('deplo
       json.containsKey('production_branch') && json['production_branch'] is String &&
       json.containsKey('production_deployments_enabled') && json['production_deployments_enabled'] is bool &&
       json.containsKey('repo_id') && json['repo_id'] is String &&
-      json.containsKey('repo_name') && json['repo_name'] is String; } 
-PagesSourceConfig copyWith({bool? deploymentsEnabled, String? owner, String? ownerId, List<String>? pathExcludes, List<String>? pathIncludes, bool? prCommentsEnabled, List<String>? previewBranchExcludes, List<String>? previewBranchIncludes, PreviewDeploymentSetting? previewDeploymentSetting, String? productionBranch, bool? productionDeploymentsEnabled, String? repoId, String? repoName, }) { return PagesSourceConfig(
+      json.containsKey('repo_name') && json['repo_name'] is String;}
+PagesSourceConfig copyWith({bool? deploymentsEnabled, String? owner, String? ownerId, List<String>? pathExcludes, List<String>? pathIncludes, bool? prCommentsEnabled, List<String>? previewBranchExcludes, List<String>? previewBranchIncludes, PreviewDeploymentSetting? previewDeploymentSetting, String? productionBranch, bool? productionDeploymentsEnabled, String? repoId, String? repoName, }) {return PagesSourceConfig(
   deploymentsEnabled: deploymentsEnabled ?? this.deploymentsEnabled,
   owner: owner ?? this.owner,
   ownerId: ownerId ?? this.ownerId,
@@ -112,7 +112,7 @@ PagesSourceConfig copyWith({bool? deploymentsEnabled, String? owner, String? own
   productionDeploymentsEnabled: productionDeploymentsEnabled ?? this.productionDeploymentsEnabled,
   repoId: repoId ?? this.repoId,
   repoName: repoName ?? this.repoName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesSourceConfig &&
           deploymentsEnabled == other.deploymentsEnabled &&
@@ -133,4 +133,4 @@ PagesSourceConfig copyWith({bool? deploymentsEnabled, String? owner, String? own
 
 @override String toString() => 'PagesSourceConfig(\n  deploymentsEnabled: $deploymentsEnabled,\n  owner: $owner,\n  ownerId: $ownerId,\n  pathExcludes: $pathExcludes,\n  pathIncludes: $pathIncludes,\n  prCommentsEnabled: $prCommentsEnabled,\n  previewBranchExcludes: $previewBranchExcludes,\n  previewBranchIncludes: $previewBranchIncludes,\n  previewDeploymentSetting: $previewDeploymentSetting,\n  productionBranch: $productionBranch,\n  productionDeploymentsEnabled: $productionDeploymentsEnabled,\n  repoId: $repoId,\n  repoName: $repoName,\n)';
 
- }
+}

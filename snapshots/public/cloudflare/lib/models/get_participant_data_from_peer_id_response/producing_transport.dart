@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProducingTransport {const ProducingTransport({this.availableOutgoingBitrate, this.bytesDiscardedOnSend, this.bytesReceived, this.bytesSent, this.currentRoundTripTime, this.lastPacketReceivedTimestamp, this.lastPacketSentTimestamp, this.localCandidateAddress, this.localCandidateId, this.localCandidateNetworkType, this.localCandidatePort, this.localCandidateProtocol, this.localCandidateRelatedAddress, this.localCandidateRelatedPort, this.localCandidateType, this.nominated, this.packetsDiscardedOnSend, this.packetsReceived, this.packetsSent, this.remoteCandidateAddress, this.remoteCandidateId, this.remoteCandidatePort, this.remoteCandidateProtocol, this.remoteCandidateType, this.totalRoundTripTime, });
 
-factory ProducingTransport.fromJson(Map<String, dynamic> json) { return ProducingTransport(
+factory ProducingTransport.fromJson(Map<String, dynamic> json) {return ProducingTransport(
   availableOutgoingBitrate: json['available_outgoing_bitrate'] != null ? (json['available_outgoing_bitrate'] as num).toInt() : null,
   bytesDiscardedOnSend: json['bytes_discarded_on_send'] != null ? (json['bytes_discarded_on_send'] as num).toInt() : null,
   bytesReceived: json['bytes_received'] != null ? (json['bytes_received'] as num).toInt() : null,
@@ -29,7 +29,7 @@ factory ProducingTransport.fromJson(Map<String, dynamic> json) { return Producin
   remoteCandidateProtocol: json['remote_candidate_protocol'] as String?,
   remoteCandidateType: json['remote_candidate_type'] as String?,
   totalRoundTripTime: json['total_round_trip_time'] != null ? (json['total_round_trip_time'] as num).toDouble() : null,
-); }
+);}
 
 final int? availableOutgoingBitrate;
 
@@ -81,7 +81,7 @@ final String? remoteCandidateType;
 
 final double? totalRoundTripTime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'available_outgoing_bitrate': ?availableOutgoingBitrate,
   'bytes_discarded_on_send': ?bytesDiscardedOnSend,
   'bytes_received': ?bytesReceived,
@@ -107,9 +107,9 @@ Map<String, dynamic> toJson() { return {
   'remote_candidate_protocol': ?remoteCandidateProtocol,
   'remote_candidate_type': ?remoteCandidateType,
   'total_round_trip_time': ?totalRoundTripTime,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'available_outgoing_bitrate', 'bytes_discarded_on_send', 'bytes_received', 'bytes_sent', 'current_round_trip_time', 'last_packet_received_timestamp', 'last_packet_sent_timestamp', 'local_candidate_address', 'local_candidate_id', 'local_candidate_network_type', 'local_candidate_port', 'local_candidate_protocol', 'local_candidate_related_address', 'local_candidate_related_port', 'local_candidate_type', 'nominated', 'packets_discarded_on_send', 'packets_received', 'packets_sent', 'remote_candidate_address', 'remote_candidate_id', 'remote_candidate_port', 'remote_candidate_protocol', 'remote_candidate_type', 'total_round_trip_time'}.contains(key)); } 
-ProducingTransport copyWith({int? Function()? availableOutgoingBitrate, int? Function()? bytesDiscardedOnSend, int? Function()? bytesReceived, int? Function()? bytesSent, double? Function()? currentRoundTripTime, int? Function()? lastPacketReceivedTimestamp, int? Function()? lastPacketSentTimestamp, String? Function()? localCandidateAddress, String? Function()? localCandidateId, String? Function()? localCandidateNetworkType, int? Function()? localCandidatePort, String? Function()? localCandidateProtocol, String? Function()? localCandidateRelatedAddress, int? Function()? localCandidateRelatedPort, String? Function()? localCandidateType, bool? Function()? nominated, int? Function()? packetsDiscardedOnSend, int? Function()? packetsReceived, int? Function()? packetsSent, String? Function()? remoteCandidateAddress, String? Function()? remoteCandidateId, int? Function()? remoteCandidatePort, String? Function()? remoteCandidateProtocol, String? Function()? remoteCandidateType, double? Function()? totalRoundTripTime, }) { return ProducingTransport(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'available_outgoing_bitrate', 'bytes_discarded_on_send', 'bytes_received', 'bytes_sent', 'current_round_trip_time', 'last_packet_received_timestamp', 'last_packet_sent_timestamp', 'local_candidate_address', 'local_candidate_id', 'local_candidate_network_type', 'local_candidate_port', 'local_candidate_protocol', 'local_candidate_related_address', 'local_candidate_related_port', 'local_candidate_type', 'nominated', 'packets_discarded_on_send', 'packets_received', 'packets_sent', 'remote_candidate_address', 'remote_candidate_id', 'remote_candidate_port', 'remote_candidate_protocol', 'remote_candidate_type', 'total_round_trip_time'}.contains(key));}
+ProducingTransport copyWith({int? Function()? availableOutgoingBitrate, int? Function()? bytesDiscardedOnSend, int? Function()? bytesReceived, int? Function()? bytesSent, double? Function()? currentRoundTripTime, int? Function()? lastPacketReceivedTimestamp, int? Function()? lastPacketSentTimestamp, String? Function()? localCandidateAddress, String? Function()? localCandidateId, String? Function()? localCandidateNetworkType, int? Function()? localCandidatePort, String? Function()? localCandidateProtocol, String? Function()? localCandidateRelatedAddress, int? Function()? localCandidateRelatedPort, String? Function()? localCandidateType, bool? Function()? nominated, int? Function()? packetsDiscardedOnSend, int? Function()? packetsReceived, int? Function()? packetsSent, String? Function()? remoteCandidateAddress, String? Function()? remoteCandidateId, int? Function()? remoteCandidatePort, String? Function()? remoteCandidateProtocol, String? Function()? remoteCandidateType, double? Function()? totalRoundTripTime, }) {return ProducingTransport(
   availableOutgoingBitrate: availableOutgoingBitrate != null ? availableOutgoingBitrate() : this.availableOutgoingBitrate,
   bytesDiscardedOnSend: bytesDiscardedOnSend != null ? bytesDiscardedOnSend() : this.bytesDiscardedOnSend,
   bytesReceived: bytesReceived != null ? bytesReceived() : this.bytesReceived,
@@ -135,7 +135,7 @@ ProducingTransport copyWith({int? Function()? availableOutgoingBitrate, int? Fun
   remoteCandidateProtocol: remoteCandidateProtocol != null ? remoteCandidateProtocol() : this.remoteCandidateProtocol,
   remoteCandidateType: remoteCandidateType != null ? remoteCandidateType() : this.remoteCandidateType,
   totalRoundTripTime: totalRoundTripTime != null ? totalRoundTripTime() : this.totalRoundTripTime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ProducingTransport &&
           availableOutgoingBitrate == other.availableOutgoingBitrate &&
@@ -168,4 +168,4 @@ ProducingTransport copyWith({int? Function()? availableOutgoingBitrate, int? Fun
 
 @override String toString() => 'ProducingTransport(\n  availableOutgoingBitrate: $availableOutgoingBitrate,\n  bytesDiscardedOnSend: $bytesDiscardedOnSend,\n  bytesReceived: $bytesReceived,\n  bytesSent: $bytesSent,\n  currentRoundTripTime: $currentRoundTripTime,\n  lastPacketReceivedTimestamp: $lastPacketReceivedTimestamp,\n  lastPacketSentTimestamp: $lastPacketSentTimestamp,\n  localCandidateAddress: $localCandidateAddress,\n  localCandidateId: $localCandidateId,\n  localCandidateNetworkType: $localCandidateNetworkType,\n  localCandidatePort: $localCandidatePort,\n  localCandidateProtocol: $localCandidateProtocol,\n  localCandidateRelatedAddress: $localCandidateRelatedAddress,\n  localCandidateRelatedPort: $localCandidateRelatedPort,\n  localCandidateType: $localCandidateType,\n  nominated: $nominated,\n  packetsDiscardedOnSend: $packetsDiscardedOnSend,\n  packetsReceived: $packetsReceived,\n  packetsSent: $packetsSent,\n  remoteCandidateAddress: $remoteCandidateAddress,\n  remoteCandidateId: $remoteCandidateId,\n  remoteCandidatePort: $remoteCandidatePort,\n  remoteCandidateProtocol: $remoteCandidateProtocol,\n  remoteCandidateType: $remoteCandidateType,\n  totalRoundTripTime: $totalRoundTripTime,\n)';
 
- }
+}

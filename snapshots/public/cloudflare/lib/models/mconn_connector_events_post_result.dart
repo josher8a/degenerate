@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnConnectorEventsPostResult {const MconnConnectorEventsPostResult({required this.count});
 
-factory MconnConnectorEventsPostResult.fromJson(Map<String, dynamic> json) { return MconnConnectorEventsPostResult(
+factory MconnConnectorEventsPostResult.fromJson(Map<String, dynamic> json) {return MconnConnectorEventsPostResult(
   count: (json['count'] as num).toDouble(),
-); }
+);}
 
 final double count;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num; } 
-MconnConnectorEventsPostResult copyWith({double? count}) { return MconnConnectorEventsPostResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num;}
+MconnConnectorEventsPostResult copyWith({double? count}) {return MconnConnectorEventsPostResult(
   count: count ?? this.count,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnConnectorEventsPostResult &&
           count == other.count;
@@ -24,4 +24,4 @@ MconnConnectorEventsPostResult copyWith({double? count}) { return MconnConnector
 
 @override String toString() => 'MconnConnectorEventsPostResult(count: $count)';
 
- }
+}

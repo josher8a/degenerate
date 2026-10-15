@@ -16,7 +16,7 @@ final class TableMaintenanceConfigurationApi with ApiExecutor {const TableMainte
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs`
-Future<ApiResult<R2DataCatalogTableMaintenanceConfigResponse?, DisableCatalogError>> getTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogTableMaintenanceConfigResponse?, DisableCatalogError>> getTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -33,7 +33,7 @@ return await execute(
   },
   onError: DisableCatalogError.fromResponse,
 );
- } 
+}
 /// Update table maintenance configuration
 ///
 /// Update the maintenance configuration for a specific table. This allows you to
@@ -41,7 +41,7 @@ return await execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs`
-Future<ApiResult<R2DataCatalogTableMaintenanceConfig?, DisableCatalogError>> updateTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, required R2DataCatalogMaintenanceUpdateParams body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogTableMaintenanceConfig?, DisableCatalogError>> updateTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, required R2DataCatalogMaintenanceUpdateParams body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -60,5 +60,5 @@ return await execute(
   },
   onError: DisableCatalogError.fromResponse,
 );
- } 
- }
+}
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_amount.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_processor_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/refunded.dart';/// The outcome of the reported refund.
 sealed class PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome();
 
-factory PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(String json) { return switch (json) {
+factory PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(String json) {return switch (json) {
   'refunded' => refunded,
   _ => PostPaymentRecordsIdReportRefundRequestOutcome$Unknown(json),
-}; }
+};}
 
 static const PostPaymentRecordsIdReportRefundRequestOutcome refunded = PostPaymentRecordsIdReportRefundRequestOutcome$refunded._();
 
 static const List<PostPaymentRecordsIdReportRefundRequestOutcome> values = [refunded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'refunded' => 'refunded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostPaymentRecordsIdReportRefundRequestOutcome$Unknown; } 
+bool get isUnknown {return this is PostPaymentRecordsIdReportRefundRequestOutcome$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() refunded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() refunded, required W Function(String value) $unknown, }) {return switch (this) {
       PostPaymentRecordsIdReportRefundRequestOutcome$refunded() => refunded(),
       PostPaymentRecordsIdReportRefundRequestOutcome$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? refunded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? refunded, W Function(String value)? $unknown, }) {return switch (this) {
       PostPaymentRecordsIdReportRefundRequestOutcome$refunded() => refunded != null ? refunded() : orElse(value),
       PostPaymentRecordsIdReportRefundRequestOutcome$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostPaymentRecordsIdReportRefundRequestOutcome($value)';
 
- }
+}
 @immutable final class PostPaymentRecordsIdReportRefundRequestOutcome$refunded extends PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome$refunded._();
 
 @override String get value => 'refunded';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? refunded
 
 @override int get hashCode => 'refunded'.hashCode;
 
- }
+}
 @immutable final class PostPaymentRecordsIdReportRefundRequestOutcome$Unknown extends PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome$Unknown(this.value);
 
 @override final String value;
@@ -53,10 +53,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? refunded
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostPaymentRecordsIdReportRefundRequest {const PostPaymentRecordsIdReportRefundRequest({required this.outcome, required this.processorDetails, required this.refunded, this.amount, this.expand, this.initiatedAt, this.metadata, });
 
-factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequest(
+factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> json) {return PostPaymentRecordsIdReportRefundRequest(
   amount: json['amount'] != null ? PostPaymentRecordsIdReportRefundRequestAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   initiatedAt: json['initiated_at'] != null ? (json['initiated_at'] as num).toInt() : null,
@@ -64,7 +64,7 @@ factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> js
   outcome: PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(json['outcome'] as String),
   processorDetails: PostPaymentRecordsIdReportRefundRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
   refunded: Refunded.fromJson(json['refunded'] as Map<String, dynamic>),
-); }
+);}
 
 /// A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) representing how much of this payment to refund. Can refund only up to the remaining, unrefunded amount of the payment.
 final PostPaymentRecordsIdReportRefundRequestAmount? amount;
@@ -87,7 +87,7 @@ final PostPaymentRecordsIdReportRefundRequestProcessorDetails processorDetails;
 /// Information about the payment attempt refund.
 final Refunded refunded;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount != null) 'amount': amount?.toJson(),
   'expand': ?expand,
   'initiated_at': ?initiatedAt,
@@ -95,11 +95,11 @@ Map<String, dynamic> toJson() { return {
   'outcome': outcome.toJson(),
   'processor_details': processorDetails.toJson(),
   'refunded': refunded.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('outcome') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('outcome') &&
       json.containsKey('processor_details') &&
-      json.containsKey('refunded'); } 
-PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefundRequestAmount? Function()? amount, List<String>? Function()? expand, int? Function()? initiatedAt, Metadata? Function()? metadata, PostPaymentRecordsIdReportRefundRequestOutcome? outcome, PostPaymentRecordsIdReportRefundRequestProcessorDetails? processorDetails, Refunded? refunded, }) { return PostPaymentRecordsIdReportRefundRequest(
+      json.containsKey('refunded');}
+PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefundRequestAmount? Function()? amount, List<String>? Function()? expand, int? Function()? initiatedAt, Metadata? Function()? metadata, PostPaymentRecordsIdReportRefundRequestOutcome? outcome, PostPaymentRecordsIdReportRefundRequestProcessorDetails? processorDetails, Refunded? refunded, }) {return PostPaymentRecordsIdReportRefundRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,
   initiatedAt: initiatedAt != null ? initiatedAt() : this.initiatedAt,
@@ -107,7 +107,7 @@ PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefu
   outcome: outcome ?? this.outcome,
   processorDetails: processorDetails ?? this.processorDetails,
   refunded: refunded ?? this.refunded,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportRefundRequest &&
           amount == other.amount &&
@@ -122,4 +122,4 @@ PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefu
 
 @override String toString() => 'PostPaymentRecordsIdReportRefundRequest(amount: $amount, expand: $expand, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, processorDetails: $processorDetails, refunded: $refunded)';
 
- }
+}

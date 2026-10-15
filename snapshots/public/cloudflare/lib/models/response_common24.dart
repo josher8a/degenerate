@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_messages2.dart';@immutable final class ResponseCommon24 {const ResponseCommon24({required this.errors, required this.messages, required this.success, });
 
-factory ResponseCommon24.fromJson(Map<String, dynamic> json) { return ResponseCommon24(
+factory ResponseCommon24.fromJson(Map<String, dynamic> json) {return ResponseCommon24(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsFirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DnsFirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-); }
+);}
 
 final List<DnsFirewallMessages2> errors;
 
@@ -18,19 +18,19 @@ final List<DnsFirewallMessages2> messages;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon24 copyWith({List<DnsFirewallMessages2>? errors, List<DnsFirewallMessages2>? messages, bool? success, }) { return ResponseCommon24(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCommon24 copyWith({List<DnsFirewallMessages2>? errors, List<DnsFirewallMessages2>? messages, bool? success, }) {return ResponseCommon24(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon24 &&
           listEquals(errors, other.errors) &&
@@ -41,4 +41,4 @@ ResponseCommon24 copyWith({List<DnsFirewallMessages2>? errors, List<DnsFirewallM
 
 @override String toString() => 'ResponseCommon24(errors: $errors, messages: $messages, success: $success)';
 
- }
+}

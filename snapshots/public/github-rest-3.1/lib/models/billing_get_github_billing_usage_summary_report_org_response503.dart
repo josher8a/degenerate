@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingGetGithubBillingUsageSummaryReportOrgResponse503 {const BillingGetGithubBillingUsageSummaryReportOrgResponse503({this.code, this.message, this.documentationUrl, });
 
-factory BillingGetGithubBillingUsageSummaryReportOrgResponse503.fromJson(Map<String, dynamic> json) { return BillingGetGithubBillingUsageSummaryReportOrgResponse503(
+factory BillingGetGithubBillingUsageSummaryReportOrgResponse503.fromJson(Map<String, dynamic> json) {return BillingGetGithubBillingUsageSummaryReportOrgResponse503(
   code: json['code'] as String?,
   message: json['message'] as String?,
   documentationUrl: json['documentation_url'] as String?,
-); }
+);}
 
 final String? code;
 
@@ -15,17 +15,17 @@ final String? message;
 
 final String? documentationUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': ?code,
   'message': ?message,
   'documentation_url': ?documentationUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key)); } 
-BillingGetGithubBillingUsageSummaryReportOrgResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) { return BillingGetGithubBillingUsageSummaryReportOrgResponse503(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key));}
+BillingGetGithubBillingUsageSummaryReportOrgResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) {return BillingGetGithubBillingUsageSummaryReportOrgResponse503(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BillingGetGithubBillingUsageSummaryReportOrgResponse503 &&
           code == other.code &&
@@ -36,4 +36,4 @@ BillingGetGithubBillingUsageSummaryReportOrgResponse503 copyWith({String? Functi
 
 @override String toString() => 'BillingGetGithubBillingUsageSummaryReportOrgResponse503(code: $code, message: $message, documentationUrl: $documentationUrl)';
 
- }
+}

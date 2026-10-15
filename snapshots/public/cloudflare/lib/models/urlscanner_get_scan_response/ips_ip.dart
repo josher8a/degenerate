@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IpsIp {const IpsIp({required this.asn, required this.asnDescription, required this.asnLocationAlpha2, required this.asnName, required this.asnOrgName, required this.continent, required this.geonameId, required this.ip, required this.ipVersion, required this.latitude, required this.locationAlpha2, required this.locationName, required this.longitude, required this.subdivision1Name, required this.subdivision2Name, });
 
-factory IpsIp.fromJson(Map<String, dynamic> json) { return IpsIp(
+factory IpsIp.fromJson(Map<String, dynamic> json) {return IpsIp(
   asn: json['asn'] as String,
   asnDescription: json['asnDescription'] as String,
   asnLocationAlpha2: json['asnLocationAlpha2'] as String,
@@ -19,7 +19,7 @@ factory IpsIp.fromJson(Map<String, dynamic> json) { return IpsIp(
   longitude: json['longitude'] as String,
   subdivision1Name: json['subdivision1Name'] as String,
   subdivision2Name: json['subdivision2Name'] as String,
-); }
+);}
 
 /// Example: `'15133'`
 final String asn;
@@ -64,7 +64,7 @@ final String subdivision1Name;
 
 final String subdivision2Name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asn': asn,
   'asnDescription': asnDescription,
   'asnLocationAlpha2': asnLocationAlpha2,
@@ -80,8 +80,8 @@ Map<String, dynamic> toJson() { return {
   'longitude': longitude,
   'subdivision1Name': subdivision1Name,
   'subdivision2Name': subdivision2Name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asn') && json['asn'] is String &&
       json.containsKey('asnDescription') && json['asnDescription'] is String &&
       json.containsKey('asnLocationAlpha2') && json['asnLocationAlpha2'] is String &&
       json.containsKey('asnName') && json['asnName'] is String &&
@@ -95,8 +95,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('locationName') && json['locationName'] is String &&
       json.containsKey('longitude') && json['longitude'] is String &&
       json.containsKey('subdivision1Name') && json['subdivision1Name'] is String &&
-      json.containsKey('subdivision2Name') && json['subdivision2Name'] is String; } 
-IpsIp copyWith({String? asn, String? asnDescription, String? asnLocationAlpha2, String? asnName, String? asnOrgName, String? continent, String? geonameId, String? ip, String? ipVersion, String? latitude, String? locationAlpha2, String? locationName, String? longitude, String? subdivision1Name, String? subdivision2Name, }) { return IpsIp(
+      json.containsKey('subdivision2Name') && json['subdivision2Name'] is String;}
+IpsIp copyWith({String? asn, String? asnDescription, String? asnLocationAlpha2, String? asnName, String? asnOrgName, String? continent, String? geonameId, String? ip, String? ipVersion, String? latitude, String? locationAlpha2, String? locationName, String? longitude, String? subdivision1Name, String? subdivision2Name, }) {return IpsIp(
   asn: asn ?? this.asn,
   asnDescription: asnDescription ?? this.asnDescription,
   asnLocationAlpha2: asnLocationAlpha2 ?? this.asnLocationAlpha2,
@@ -112,7 +112,7 @@ IpsIp copyWith({String? asn, String? asnDescription, String? asnLocationAlpha2, 
   longitude: longitude ?? this.longitude,
   subdivision1Name: subdivision1Name ?? this.subdivision1Name,
   subdivision2Name: subdivision2Name ?? this.subdivision2Name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IpsIp &&
           asn == other.asn &&
@@ -135,4 +135,4 @@ IpsIp copyWith({String? asn, String? asnDescription, String? asnLocationAlpha2, 
 
 @override String toString() => 'IpsIp(\n  asn: $asn,\n  asnDescription: $asnDescription,\n  asnLocationAlpha2: $asnLocationAlpha2,\n  asnName: $asnName,\n  asnOrgName: $asnOrgName,\n  continent: $continent,\n  geonameId: $geonameId,\n  ip: $ip,\n  ipVersion: $ipVersion,\n  latitude: $latitude,\n  locationAlpha2: $locationAlpha2,\n  locationName: $locationName,\n  longitude: $longitude,\n  subdivision1Name: $subdivision1Name,\n  subdivision2Name: $subdivision2Name,\n)';
 
- }
+}

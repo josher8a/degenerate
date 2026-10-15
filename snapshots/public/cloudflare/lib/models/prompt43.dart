@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/chat_template_kwargs.dart';import 'package:pub_cloudflare/models/messages/function_call.dart';import 'package:pub_cloudflare/models/messages/json_object.dart';import 'package:pub_cloudflare/models/messages/messages51_functions.dart';import 'package:pub_cloudflare/models/messages/messages51_tools.dart';import 'package:pub_cloudflare/models/messages/messages_audio_variant1.dart';import 'package:pub_cloudflare/models/messages/modalities.dart';import 'package:pub_cloudflare/models/messages/prediction_content.dart';import 'package:pub_cloudflare/models/messages/reasoning_effort.dart';import 'package:pub_cloudflare/models/messages/response_format_variant1.dart';import 'package:pub_cloudflare/models/messages/service_tier.dart';import 'package:pub_cloudflare/models/messages/stop.dart';import 'package:pub_cloudflare/models/messages/stream_options_variant1.dart';import 'package:pub_cloudflare/models/messages/tool_choice_variant1.dart';import 'package:pub_cloudflare/models/messages/tools_custom.dart';import 'package:pub_cloudflare/models/messages/tools_function.dart';import 'package:pub_cloudflare/models/messages/variant1_allowed_tools.dart';import 'package:pub_cloudflare/models/messages/variant1_custom.dart';import 'package:pub_cloudflare/models/messages/variant1_function.dart';import 'package:pub_cloudflare/models/messages/variant1_json_schema.dart';import 'package:pub_cloudflare/models/messages/variant1_text.dart';import 'package:pub_cloudflare/models/messages/web_search_options_variant1.dart';@immutable final class Prompt43 {const Prompt43({required this.prompt, this.audio, this.chatTemplateKwargs, this.frequencyPenalty = const Omittable.absent(), this.functionCall, this.functions, this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.maxTokens = const Omittable.absent(), this.metadata = const Omittable.absent(), this.modalities = const Omittable.absent(), this.model, this.n = const Omittable.absent(), this.parallelToolCalls, this.prediction, this.presencePenalty = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.responseFormat, this.seed = const Omittable.absent(), this.serviceTier = const Omittable.absent(), this.stop, this.store = const Omittable.absent(), this.stream = const Omittable.absent(), this.streamOptions, this.temperature = const Omittable.absent(), this.toolChoice, this.tools, this.topLogprobs = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.webSearchOptions, });
 
-factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
+factory Prompt43.fromJson(Map<String, dynamic> json) {return Prompt43(
   audio: json['audio'] != null ? MessagesAudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,
   chatTemplateKwargs: json['chat_template_kwargs'] != null ? ChatTemplateKwargs.fromJson(json['chat_template_kwargs'] as Map<String, dynamic>) : null,
   frequencyPenalty: json.containsKey('frequency_penalty') ? Omittable(json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null) : const Omittable.absent(),
@@ -36,7 +36,7 @@ factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   user: json['user'] as String?,
   webSearchOptions: json['web_search_options'] != null ? WebSearchOptionsVariant1.fromJson(json['web_search_options'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Parameters for audio output. Required when modalities includes 'audio'.
 final MessagesAudioVariant1? audio;
@@ -114,7 +114,7 @@ final WebSearchOptionsVariant1? webSearchOptions;
 /// The value of `parallelToolCalls`, or its schema default when absent.
 bool get parallelToolCallsOrDefault => parallelToolCalls ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (audio != null) 'audio': audio?.toJson(),
   if (chatTemplateKwargs != null) 'chat_template_kwargs': chatTemplateKwargs?.toJson(),
   if (frequencyPenalty.isPresent) 'frequency_penalty': frequencyPenalty.value,
@@ -147,10 +147,10 @@ Map<String, dynamic> toJson() { return {
   if (topP.isPresent) 'top_p': topP.value,
   'user': ?user,
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('prompt') && json['prompt'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty.value;
 if (frequencyPenalty$ != null) {
   if (frequencyPenalty$ < -2) { errors.add('frequencyPenalty: must be >= -2'); }
@@ -187,8 +187,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
-return errors; } 
-Prompt43 copyWith({MessagesAudioVariant1? Function()? audio, ChatTemplateKwargs? Function()? chatTemplateKwargs, Omittable<double?>? frequencyPenalty, FunctionCall? Function()? functionCall, List<Messages51Functions>? Function()? functions, Omittable<Map<String,dynamic>?>? logitBias, Omittable<bool?>? logprobs, Omittable<int?>? maxCompletionTokens, Omittable<int?>? maxTokens, Omittable<Map<String,dynamic>?>? metadata, Omittable<List<Modalities>?>? modalities, String? Function()? model, Omittable<int?>? n, bool? Function()? parallelToolCalls, PredictionContent? Function()? prediction, Omittable<double?>? presencePenalty, String? prompt, Omittable<ReasoningEffort?>? reasoningEffort, ResponseFormatVariant1? Function()? responseFormat, Omittable<int?>? seed, Omittable<ServiceTier?>? serviceTier, Stop? Function()? stop, Omittable<bool?>? store, Omittable<bool?>? stream, StreamOptionsVariant1? Function()? streamOptions, Omittable<double?>? temperature, ToolChoiceVariant1? Function()? toolChoice, List<Messages51Tools>? Function()? tools, Omittable<int?>? topLogprobs, Omittable<double?>? topP, String? Function()? user, WebSearchOptionsVariant1? Function()? webSearchOptions, }) { return Prompt43(
+return errors;}
+Prompt43 copyWith({MessagesAudioVariant1? Function()? audio, ChatTemplateKwargs? Function()? chatTemplateKwargs, Omittable<double?>? frequencyPenalty, FunctionCall? Function()? functionCall, List<Messages51Functions>? Function()? functions, Omittable<Map<String,dynamic>?>? logitBias, Omittable<bool?>? logprobs, Omittable<int?>? maxCompletionTokens, Omittable<int?>? maxTokens, Omittable<Map<String,dynamic>?>? metadata, Omittable<List<Modalities>?>? modalities, String? Function()? model, Omittable<int?>? n, bool? Function()? parallelToolCalls, PredictionContent? Function()? prediction, Omittable<double?>? presencePenalty, String? prompt, Omittable<ReasoningEffort?>? reasoningEffort, ResponseFormatVariant1? Function()? responseFormat, Omittable<int?>? seed, Omittable<ServiceTier?>? serviceTier, Stop? Function()? stop, Omittable<bool?>? store, Omittable<bool?>? stream, StreamOptionsVariant1? Function()? streamOptions, Omittable<double?>? temperature, ToolChoiceVariant1? Function()? toolChoice, List<Messages51Tools>? Function()? tools, Omittable<int?>? topLogprobs, Omittable<double?>? topP, String? Function()? user, WebSearchOptionsVariant1? Function()? webSearchOptions, }) {return Prompt43(
   audio: audio != null ? audio() : this.audio,
   chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
   frequencyPenalty: frequencyPenalty ?? this.frequencyPenalty,
@@ -221,7 +221,7 @@ Prompt43 copyWith({MessagesAudioVariant1? Function()? audio, ChatTemplateKwargs?
   topP: topP ?? this.topP,
   user: user != null ? user() : this.user,
   webSearchOptions: webSearchOptions != null ? webSearchOptions() : this.webSearchOptions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Prompt43 &&
           audio == other.audio &&
@@ -262,4 +262,4 @@ Prompt43 copyWith({MessagesAudioVariant1? Function()? audio, ChatTemplateKwargs?
 
 @override String toString() => 'Prompt43(\n  audio: $audio,\n  chatTemplateKwargs: $chatTemplateKwargs,\n  frequencyPenalty: $frequencyPenalty,\n  functionCall: $functionCall,\n  functions: $functions,\n  logitBias: $logitBias,\n  logprobs: $logprobs,\n  maxCompletionTokens: $maxCompletionTokens,\n  maxTokens: $maxTokens,\n  metadata: $metadata,\n  modalities: $modalities,\n  model: $model,\n  n: $n,\n  parallelToolCalls: $parallelToolCalls,\n  prediction: $prediction,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  reasoningEffort: $reasoningEffort,\n  responseFormat: $responseFormat,\n  seed: $seed,\n  serviceTier: $serviceTier,\n  stop: $stop,\n  store: $store,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  temperature: $temperature,\n  toolChoice: $toolChoice,\n  tools: $tools,\n  topLogprobs: $topLogprobs,\n  topP: $topP,\n  user: $user,\n  webSearchOptions: $webSearchOptions,\n)';
 
- }
+}

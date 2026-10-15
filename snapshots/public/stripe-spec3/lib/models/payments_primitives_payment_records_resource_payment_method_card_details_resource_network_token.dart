@@ -4,20 +4,20 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken({required this.used});
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken.fromJson(Map<String, dynamic> json) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(
   used: json['used'] as bool,
-); }
+);}
 
 /// Indicates if Stripe used a network token, either user provided or Stripe managed when processing the transaction.
 final bool used;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'used': used,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('used') && json['used'] is bool; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken copyWith({bool? used}) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('used') && json['used'] is bool;}
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken copyWith({bool? used}) {return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(
   used: used ?? this.used,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken &&
           used == other.used;
@@ -26,4 +26,4 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkT
 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(used: $used)';
 
- }
+}

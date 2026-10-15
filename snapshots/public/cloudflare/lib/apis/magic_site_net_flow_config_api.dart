@@ -14,7 +14,7 @@ final class MagicSiteNetFlowConfigApi with ApiExecutor {const MagicSiteNetFlowCo
 /// Get NetFlow configuration for a site.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigDetails({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigDetails({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Create NetFlow Configuration
 ///
 /// Creates a NetFlow configuration for a site.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigCreateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigCreateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Update NetFlow Configuration
 ///
 /// Updates NetFlow configuration for a site (partial update).
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigUpdateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigUpdateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,13 +81,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Update NetFlow Configuration
 ///
 /// Updates NetFlow configuration for a site.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigPatchNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigPatchNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,13 +106,13 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
+}
 /// Delete NetFlow Configuration
 ///
 /// Remove NetFlow configuration for a site.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigDeleteNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigDeleteNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -129,5 +129,5 @@ return await execute(
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
- } 
- }
+}
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';/// 
 @immutable final class DeletedCard {const DeletedCard({required this.deleted, required this.id, required this.object, this.currency = const Omittable.absent(), });
 
-factory DeletedCard.fromJson(Map<String, dynamic> json) { return DeletedCard(
+factory DeletedCard.fromJson(Map<String, dynamic> json) {return DeletedCard(
   currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
   object: CardObject.fromJson(json['object'] as String),
-); }
+);}
 
 /// Three-letter [ISO code for the currency](https://stripe.com/docs/payouts) paid out to the bank account.
 final Omittable<String?> currency;
@@ -23,29 +23,29 @@ final String id;
 /// String representing the object's type. Objects of the same type share the same value.
 final CardObject object;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (currency.isPresent) 'currency': currency.value,
   'deleted': deleted,
   'id': id,
   'object': object.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('object') && json['object'] == 'card'; } 
+      json.containsKey('object') && json['object'] == 'card';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final currency$ = currency.value;
 if (currency$ != null) {
   if (currency$.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-DeletedCard copyWith({Omittable<String?>? currency, bool? deleted, String? id, CardObject? object, }) { return DeletedCard(
+return errors;}
+DeletedCard copyWith({Omittable<String?>? currency, bool? deleted, String? id, CardObject? object, }) {return DeletedCard(
   currency: currency ?? this.currency,
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
   object: object ?? this.object,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedCard &&
           currency == other.currency &&
@@ -57,4 +57,4 @@ DeletedCard copyWith({Omittable<String?>? currency, bool? deleted, String? id, C
 
 @override String toString() => 'DeletedCard(currency: $currency, deleted: $deleted, id: $id, object: $object)';
 
- }
+}

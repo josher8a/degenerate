@@ -15,7 +15,7 @@ final class FeedbackApi with ApiExecutor {const FeedbackApi(this.apiConfig);
 /// 
 ///
 /// `GET /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<List<BotManagementFeedbackReport>, BotManagementZoneFeedbackCreateError>> botManagementZoneFeedbackList({required BotManagementIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BotManagementFeedbackReport>, BotManagementZoneFeedbackCreateError>> botManagementZoneFeedbackList({required BotManagementIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return await execute(
   },
   onError: BotManagementZoneFeedbackCreateError.fromResponse,
 );
- } 
+}
 /// Submit a feedback report
 ///
 /// Submit a feedback report for the specified zone. Use `type` to indicate whether the report is a false positive (good traffic flagged as bot) or a false negative (bot traffic missed). Furthermore, you can also use `expression` as a wirefilter to identify the affected traffic sample.
@@ -41,7 +41,7 @@ return await execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<void, BotManagementZoneFeedbackCreateError>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReportRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, BotManagementZoneFeedbackCreateError>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReportRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -57,5 +57,5 @@ return await execute(
   onSuccess: (_) {},
   onError: BotManagementZoneFeedbackCreateError.fromResponse,
 );
- } 
- }
+}
+}

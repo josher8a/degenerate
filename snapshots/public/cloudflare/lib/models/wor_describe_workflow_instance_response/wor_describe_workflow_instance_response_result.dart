@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_status.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_trigger.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/steps.dart';@immutable final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
 
-factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResult(
+factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) {return WorDescribeWorkflowInstanceResponseResult(
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
   error: json['error'] != null ? ResultError.fromJson(json['error'] as Map<String, dynamic>) : null,
   output: json['output'],
@@ -16,7 +16,7 @@ factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> 
   success: json['success'] as bool?,
   trigger: ResultTrigger.fromJson(json['trigger'] as Map<String, dynamic>),
   versionId: json['versionId'] as String,
-); }
+);}
 
 final DateTime? end;
 
@@ -43,7 +43,7 @@ final ResultTrigger trigger;
 
 final String versionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end': end?.toIso8601String(),
   'error': error?.toJson(),
   'output': output,
@@ -56,8 +56,8 @@ Map<String, dynamic> toJson() { return {
   'success': success,
   'trigger': trigger.toJson(),
   'versionId': versionId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end') && (json['end'] == null || json['end'] is String) &&
       json.containsKey('error') &&
       json.containsKey('output') &&
       json.containsKey('params') &&
@@ -68,8 +68,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('end')
       json.containsKey('steps') &&
       json.containsKey('success') && (json['success'] == null || json['success'] is bool) &&
       json.containsKey('trigger') &&
-      json.containsKey('versionId') && json['versionId'] is String; } 
-WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, ResultError? Function()? error, dynamic output, Map<String,dynamic>? params, DateTime? queued, DateTime? Function()? start, WorBatchCreateWorkflowInstanceResponseResultStatus? status, int? stepCount, List<Steps>? steps, bool? Function()? success, ResultTrigger? trigger, String? versionId, }) { return WorDescribeWorkflowInstanceResponseResult(
+      json.containsKey('versionId') && json['versionId'] is String;}
+WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, ResultError? Function()? error, dynamic output, Map<String,dynamic>? params, DateTime? queued, DateTime? Function()? start, WorBatchCreateWorkflowInstanceResponseResultStatus? status, int? stepCount, List<Steps>? steps, bool? Function()? success, ResultTrigger? trigger, String? versionId, }) {return WorDescribeWorkflowInstanceResponseResult(
   end: end != null ? end() : this.end,
   error: error != null ? error() : this.error,
   output: output ?? this.output,
@@ -82,7 +82,7 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, R
   success: success != null ? success() : this.success,
   trigger: trigger ?? this.trigger,
   versionId: versionId ?? this.versionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseResult &&
           end == other.end &&
@@ -102,4 +102,4 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, R
 
 @override String toString() => 'WorDescribeWorkflowInstanceResponseResult(\n  end: $end,\n  error: $error,\n  output: $output,\n  params: $params,\n  queued: $queued,\n  start: $start,\n  status: $status,\n  stepCount: $stepCount,\n  steps: $steps,\n  success: $success,\n  trigger: $trigger,\n  versionId: $versionId,\n)';
 
- }
+}

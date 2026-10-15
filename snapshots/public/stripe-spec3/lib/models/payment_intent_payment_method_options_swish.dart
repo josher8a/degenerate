@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentIntentPaymentMethodOptionsSwish {const PaymentIntentPaymentMethodOptionsSwish({this.reference = const Omittable.absent(), this.setupFutureUsage, });
 
-factory PaymentIntentPaymentMethodOptionsSwish.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsSwish(
+factory PaymentIntentPaymentMethodOptionsSwish.fromJson(Map<String, dynamic> json) {return PaymentIntentPaymentMethodOptionsSwish(
   reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-); }
+);}
 
 /// A reference for this payment to be displayed in the Swish app.
 final Omittable<String?> reference;
@@ -21,22 +21,22 @@ final Omittable<String?> reference;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (reference.isPresent) 'reference': reference.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'setup_future_usage'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'reference', 'setup_future_usage'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final reference$ = reference.value;
 if (reference$ != null) {
   if (reference$.runes.length > 35) { errors.add('reference: length must be <= 35'); }
 }
-return errors; } 
-PaymentIntentPaymentMethodOptionsSwish copyWith({Omittable<String?>? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsSwish(
+return errors;}
+PaymentIntentPaymentMethodOptionsSwish copyWith({Omittable<String?>? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) {return PaymentIntentPaymentMethodOptionsSwish(
   reference: reference ?? this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsSwish &&
           reference == other.reference &&
@@ -46,4 +46,4 @@ PaymentIntentPaymentMethodOptionsSwish copyWith({Omittable<String?>? reference, 
 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsSwish(reference: $reference, setupFutureUsage: $setupFutureUsage)';
 
- }
+}

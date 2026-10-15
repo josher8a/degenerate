@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction/balance_transaction_source.dart';import 'package:pub_stripe_spec3/models/fee.dart';/// The balance that this transaction impacts.
 sealed class BalanceType {const BalanceType();
 
-factory BalanceType.fromJson(String json) { return switch (json) {
+factory BalanceType.fromJson(String json) {return switch (json) {
   'issuing' => issuing,
   'payments' => payments,
   'refund_and_dispute_prefunding' => refundAndDisputePrefunding,
   'risk_reserved' => riskReserved,
   _ => BalanceType$Unknown(json),
-}; }
+};}
 
 static const BalanceType issuing = BalanceType$issuing._();
 
@@ -23,36 +23,36 @@ static const BalanceType riskReserved = BalanceType$riskReserved._();
 static const List<BalanceType> values = [issuing, payments, refundAndDisputePrefunding, riskReserved];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issuing' => 'issuing',
   'payments' => 'payments',
   'refund_and_dispute_prefunding' => 'refundAndDisputePrefunding',
   'risk_reserved' => 'riskReserved',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BalanceType$Unknown; } 
+bool get isUnknown {return this is BalanceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issuing, required W Function() payments, required W Function() refundAndDisputePrefunding, required W Function() riskReserved, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issuing, required W Function() payments, required W Function() refundAndDisputePrefunding, required W Function() riskReserved, required W Function(String value) $unknown, }) {return switch (this) {
       BalanceType$issuing() => issuing(),
       BalanceType$payments() => payments(),
       BalanceType$refundAndDisputePrefunding() => refundAndDisputePrefunding(),
       BalanceType$riskReserved() => riskReserved(),
       BalanceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuing, W Function()? payments, W Function()? refundAndDisputePrefunding, W Function()? riskReserved, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuing, W Function()? payments, W Function()? refundAndDisputePrefunding, W Function()? riskReserved, W Function(String value)? $unknown, }) {return switch (this) {
       BalanceType$issuing() => issuing != null ? issuing() : orElse(value),
       BalanceType$payments() => payments != null ? payments() : orElse(value),
       BalanceType$refundAndDisputePrefunding() => refundAndDisputePrefunding != null ? refundAndDisputePrefunding() : orElse(value),
       BalanceType$riskReserved() => riskReserved != null ? riskReserved() : orElse(value),
       BalanceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BalanceType($value)';
 
- }
+}
 @immutable final class BalanceType$issuing extends BalanceType {const BalanceType$issuing._();
 
 @override String get value => 'issuing';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuing,
 
 @override int get hashCode => 'issuing'.hashCode;
 
- }
+}
 @immutable final class BalanceType$payments extends BalanceType {const BalanceType$payments._();
 
 @override String get value => 'payments';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuing,
 
 @override int get hashCode => 'payments'.hashCode;
 
- }
+}
 @immutable final class BalanceType$refundAndDisputePrefunding extends BalanceType {const BalanceType$refundAndDisputePrefunding._();
 
 @override String get value => 'refund_and_dispute_prefunding';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuing,
 
 @override int get hashCode => 'refund_and_dispute_prefunding'.hashCode;
 
- }
+}
 @immutable final class BalanceType$riskReserved extends BalanceType {const BalanceType$riskReserved._();
 
 @override String get value => 'risk_reserved';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuing,
 
 @override int get hashCode => 'risk_reserved'.hashCode;
 
- }
+}
 @immutable final class BalanceType$Unknown extends BalanceType {const BalanceType$Unknown(this.value);
 
 @override final String value;
@@ -98,41 +98,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuing,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class BalanceTransactionObject {const BalanceTransactionObject();
 
-factory BalanceTransactionObject.fromJson(String json) { return switch (json) {
+factory BalanceTransactionObject.fromJson(String json) {return switch (json) {
   'balance_transaction' => balanceTransaction,
   _ => BalanceTransactionObject$Unknown(json),
-}; }
+};}
 
 static const BalanceTransactionObject balanceTransaction = BalanceTransactionObject$balanceTransaction._();
 
 static const List<BalanceTransactionObject> values = [balanceTransaction];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'balance_transaction' => 'balanceTransaction',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BalanceTransactionObject$Unknown; } 
+bool get isUnknown {return this is BalanceTransactionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() balanceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() balanceTransaction, required W Function(String value) $unknown, }) {return switch (this) {
       BalanceTransactionObject$balanceTransaction() => balanceTransaction(),
       BalanceTransactionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? balanceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? balanceTransaction, W Function(String value)? $unknown, }) {return switch (this) {
       BalanceTransactionObject$balanceTransaction() => balanceTransaction != null ? balanceTransaction() : orElse(value),
       BalanceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BalanceTransactionObject($value)';
 
- }
+}
 @immutable final class BalanceTransactionObject$balanceTransaction extends BalanceTransactionObject {const BalanceTransactionObject$balanceTransaction._();
 
 @override String get value => 'balance_transaction';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? balanceT
 
 @override int get hashCode => 'balance_transaction'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionObject$Unknown extends BalanceTransactionObject {const BalanceTransactionObject$Unknown(this.value);
 
 @override final String value;
@@ -151,11 +151,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? balanceT
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Transaction type: `adjustment`, `advance`, `advance_funding`, `anticipation_repayment`, `application_fee`, `application_fee_refund`, `charge`, `climate_order_purchase`, `climate_order_refund`, `connect_collection_transfer`, `contribution`, `issuing_authorization_hold`, `issuing_authorization_release`, `issuing_dispute`, `issuing_transaction`, `obligation_outbound`, `obligation_reversal_inbound`, `payment`, `payment_failure_refund`, `payment_network_reserve_hold`, `payment_network_reserve_release`, `payment_refund`, `payment_reversal`, `payment_unreconciled`, `payout`, `payout_cancel`, `payout_failure`, `payout_minimum_balance_hold`, `payout_minimum_balance_release`, `refund`, `refund_failure`, `reserve_transaction`, `reserved_funds`, `reserve_hold`, `reserve_release`, `stripe_fee`, `stripe_fx_fee`, `stripe_balance_payment_debit`, `stripe_balance_payment_debit_reversal`, `tax_fee`, `topup`, `topup_reversal`, `transfer`, `transfer_cancel`, `transfer_failure`, or `transfer_refund`. Learn more about [balance transaction types and what they represent](https://stripe.com/docs/reports/balance-transaction-types). To classify transactions for accounting purposes, consider `reporting_category` instead.
 sealed class BalanceTransactionType {const BalanceTransactionType();
 
-factory BalanceTransactionType.fromJson(String json) { return switch (json) {
+factory BalanceTransactionType.fromJson(String json) {return switch (json) {
   'adjustment' => adjustment,
   'advance' => advance,
   'advance_funding' => advanceFunding,
@@ -203,7 +203,7 @@ factory BalanceTransactionType.fromJson(String json) { return switch (json) {
   'transfer_failure' => transferFailure,
   'transfer_refund' => transferRefund,
   _ => BalanceTransactionType$Unknown(json),
-}; }
+};}
 
 static const BalanceTransactionType adjustment = BalanceTransactionType$adjustment._();
 
@@ -300,9 +300,9 @@ static const BalanceTransactionType transferRefund = BalanceTransactionType$tran
 static const List<BalanceTransactionType> values = [adjustment, advance, advanceFunding, anticipationRepayment, applicationFee, applicationFeeRefund, charge, climateOrderPurchase, climateOrderRefund, connectCollectionTransfer, contribution, issuingAuthorizationHold, issuingAuthorizationRelease, issuingDispute, issuingTransaction, obligationOutbound, obligationReversalInbound, payment, paymentFailureRefund, paymentNetworkReserveHold, paymentNetworkReserveRelease, paymentRefund, paymentReversal, paymentUnreconciled, payout, payoutCancel, payoutFailure, payoutMinimumBalanceHold, payoutMinimumBalanceRelease, refund, refundFailure, reserveHold, reserveRelease, reserveTransaction, reservedFunds, stripeBalancePaymentDebit, stripeBalancePaymentDebitReversal, stripeFee, stripeFxFee, taxFee, topup, topupReversal, transfer, transferCancel, transferFailure, transferRefund];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'adjustment' => 'adjustment',
   'advance' => 'advance',
   'advance_funding' => 'advanceFunding',
@@ -350,11 +350,11 @@ String get name { return switch (value) {
   'transfer_failure' => 'transferFailure',
   'transfer_refund' => 'transferRefund',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BalanceTransactionType$Unknown; } 
+bool get isUnknown {return this is BalanceTransactionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() adjustment, required W Function() advance, required W Function() advanceFunding, required W Function() anticipationRepayment, required W Function() applicationFee, required W Function() applicationFeeRefund, required W Function() charge, required W Function() climateOrderPurchase, required W Function() climateOrderRefund, required W Function() connectCollectionTransfer, required W Function() contribution, required W Function() issuingAuthorizationHold, required W Function() issuingAuthorizationRelease, required W Function() issuingDispute, required W Function() issuingTransaction, required W Function() obligationOutbound, required W Function() obligationReversalInbound, required W Function() payment, required W Function() paymentFailureRefund, required W Function() paymentNetworkReserveHold, required W Function() paymentNetworkReserveRelease, required W Function() paymentRefund, required W Function() paymentReversal, required W Function() paymentUnreconciled, required W Function() payout, required W Function() payoutCancel, required W Function() payoutFailure, required W Function() payoutMinimumBalanceHold, required W Function() payoutMinimumBalanceRelease, required W Function() refund, required W Function() refundFailure, required W Function() reserveHold, required W Function() reserveRelease, required W Function() reserveTransaction, required W Function() reservedFunds, required W Function() stripeBalancePaymentDebit, required W Function() stripeBalancePaymentDebitReversal, required W Function() stripeFee, required W Function() stripeFxFee, required W Function() taxFee, required W Function() topup, required W Function() topupReversal, required W Function() transfer, required W Function() transferCancel, required W Function() transferFailure, required W Function() transferRefund, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() adjustment, required W Function() advance, required W Function() advanceFunding, required W Function() anticipationRepayment, required W Function() applicationFee, required W Function() applicationFeeRefund, required W Function() charge, required W Function() climateOrderPurchase, required W Function() climateOrderRefund, required W Function() connectCollectionTransfer, required W Function() contribution, required W Function() issuingAuthorizationHold, required W Function() issuingAuthorizationRelease, required W Function() issuingDispute, required W Function() issuingTransaction, required W Function() obligationOutbound, required W Function() obligationReversalInbound, required W Function() payment, required W Function() paymentFailureRefund, required W Function() paymentNetworkReserveHold, required W Function() paymentNetworkReserveRelease, required W Function() paymentRefund, required W Function() paymentReversal, required W Function() paymentUnreconciled, required W Function() payout, required W Function() payoutCancel, required W Function() payoutFailure, required W Function() payoutMinimumBalanceHold, required W Function() payoutMinimumBalanceRelease, required W Function() refund, required W Function() refundFailure, required W Function() reserveHold, required W Function() reserveRelease, required W Function() reserveTransaction, required W Function() reservedFunds, required W Function() stripeBalancePaymentDebit, required W Function() stripeBalancePaymentDebitReversal, required W Function() stripeFee, required W Function() stripeFxFee, required W Function() taxFee, required W Function() topup, required W Function() topupReversal, required W Function() transfer, required W Function() transferCancel, required W Function() transferFailure, required W Function() transferRefund, required W Function(String value) $unknown, }) {return switch (this) {
       BalanceTransactionType$adjustment() => adjustment(),
       BalanceTransactionType$advance() => advance(),
       BalanceTransactionType$advanceFunding() => advanceFunding(),
@@ -402,9 +402,9 @@ W when<W>({required W Function() adjustment, required W Function() advance, requ
       BalanceTransactionType$transferFailure() => transferFailure(),
       BalanceTransactionType$transferRefund() => transferRefund(),
       BalanceTransactionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustment, W Function()? advance, W Function()? advanceFunding, W Function()? anticipationRepayment, W Function()? applicationFee, W Function()? applicationFeeRefund, W Function()? charge, W Function()? climateOrderPurchase, W Function()? climateOrderRefund, W Function()? connectCollectionTransfer, W Function()? contribution, W Function()? issuingAuthorizationHold, W Function()? issuingAuthorizationRelease, W Function()? issuingDispute, W Function()? issuingTransaction, W Function()? obligationOutbound, W Function()? obligationReversalInbound, W Function()? payment, W Function()? paymentFailureRefund, W Function()? paymentNetworkReserveHold, W Function()? paymentNetworkReserveRelease, W Function()? paymentRefund, W Function()? paymentReversal, W Function()? paymentUnreconciled, W Function()? payout, W Function()? payoutCancel, W Function()? payoutFailure, W Function()? payoutMinimumBalanceHold, W Function()? payoutMinimumBalanceRelease, W Function()? refund, W Function()? refundFailure, W Function()? reserveHold, W Function()? reserveRelease, W Function()? reserveTransaction, W Function()? reservedFunds, W Function()? stripeBalancePaymentDebit, W Function()? stripeBalancePaymentDebitReversal, W Function()? stripeFee, W Function()? stripeFxFee, W Function()? taxFee, W Function()? topup, W Function()? topupReversal, W Function()? transfer, W Function()? transferCancel, W Function()? transferFailure, W Function()? transferRefund, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustment, W Function()? advance, W Function()? advanceFunding, W Function()? anticipationRepayment, W Function()? applicationFee, W Function()? applicationFeeRefund, W Function()? charge, W Function()? climateOrderPurchase, W Function()? climateOrderRefund, W Function()? connectCollectionTransfer, W Function()? contribution, W Function()? issuingAuthorizationHold, W Function()? issuingAuthorizationRelease, W Function()? issuingDispute, W Function()? issuingTransaction, W Function()? obligationOutbound, W Function()? obligationReversalInbound, W Function()? payment, W Function()? paymentFailureRefund, W Function()? paymentNetworkReserveHold, W Function()? paymentNetworkReserveRelease, W Function()? paymentRefund, W Function()? paymentReversal, W Function()? paymentUnreconciled, W Function()? payout, W Function()? payoutCancel, W Function()? payoutFailure, W Function()? payoutMinimumBalanceHold, W Function()? payoutMinimumBalanceRelease, W Function()? refund, W Function()? refundFailure, W Function()? reserveHold, W Function()? reserveRelease, W Function()? reserveTransaction, W Function()? reservedFunds, W Function()? stripeBalancePaymentDebit, W Function()? stripeBalancePaymentDebitReversal, W Function()? stripeFee, W Function()? stripeFxFee, W Function()? taxFee, W Function()? topup, W Function()? topupReversal, W Function()? transfer, W Function()? transferCancel, W Function()? transferFailure, W Function()? transferRefund, W Function(String value)? $unknown, }) {return switch (this) {
       BalanceTransactionType$adjustment() => adjustment != null ? adjustment() : orElse(value),
       BalanceTransactionType$advance() => advance != null ? advance() : orElse(value),
       BalanceTransactionType$advanceFunding() => advanceFunding != null ? advanceFunding() : orElse(value),
@@ -452,10 +452,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
       BalanceTransactionType$transferFailure() => transferFailure != null ? transferFailure() : orElse(value),
       BalanceTransactionType$transferRefund() => transferRefund != null ? transferRefund() : orElse(value),
       BalanceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BalanceTransactionType($value)';
 
- }
+}
 @immutable final class BalanceTransactionType$adjustment extends BalanceTransactionType {const BalanceTransactionType$adjustment._();
 
 @override String get value => 'adjustment';
@@ -464,7 +464,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'adjustment'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$advance extends BalanceTransactionType {const BalanceTransactionType$advance._();
 
 @override String get value => 'advance';
@@ -473,7 +473,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'advance'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$advanceFunding extends BalanceTransactionType {const BalanceTransactionType$advanceFunding._();
 
 @override String get value => 'advance_funding';
@@ -482,7 +482,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'advance_funding'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$anticipationRepayment extends BalanceTransactionType {const BalanceTransactionType$anticipationRepayment._();
 
 @override String get value => 'anticipation_repayment';
@@ -491,7 +491,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'anticipation_repayment'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$applicationFee extends BalanceTransactionType {const BalanceTransactionType$applicationFee._();
 
 @override String get value => 'application_fee';
@@ -500,7 +500,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'application_fee'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$applicationFeeRefund extends BalanceTransactionType {const BalanceTransactionType$applicationFeeRefund._();
 
 @override String get value => 'application_fee_refund';
@@ -509,7 +509,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'application_fee_refund'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$charge extends BalanceTransactionType {const BalanceTransactionType$charge._();
 
 @override String get value => 'charge';
@@ -518,7 +518,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'charge'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$climateOrderPurchase extends BalanceTransactionType {const BalanceTransactionType$climateOrderPurchase._();
 
 @override String get value => 'climate_order_purchase';
@@ -527,7 +527,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'climate_order_purchase'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$climateOrderRefund extends BalanceTransactionType {const BalanceTransactionType$climateOrderRefund._();
 
 @override String get value => 'climate_order_refund';
@@ -536,7 +536,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'climate_order_refund'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$connectCollectionTransfer extends BalanceTransactionType {const BalanceTransactionType$connectCollectionTransfer._();
 
 @override String get value => 'connect_collection_transfer';
@@ -545,7 +545,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'connect_collection_transfer'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$contribution extends BalanceTransactionType {const BalanceTransactionType$contribution._();
 
 @override String get value => 'contribution';
@@ -554,7 +554,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'contribution'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$issuingAuthorizationHold extends BalanceTransactionType {const BalanceTransactionType$issuingAuthorizationHold._();
 
 @override String get value => 'issuing_authorization_hold';
@@ -563,7 +563,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'issuing_authorization_hold'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$issuingAuthorizationRelease extends BalanceTransactionType {const BalanceTransactionType$issuingAuthorizationRelease._();
 
 @override String get value => 'issuing_authorization_release';
@@ -572,7 +572,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'issuing_authorization_release'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$issuingDispute extends BalanceTransactionType {const BalanceTransactionType$issuingDispute._();
 
 @override String get value => 'issuing_dispute';
@@ -581,7 +581,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'issuing_dispute'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$issuingTransaction extends BalanceTransactionType {const BalanceTransactionType$issuingTransaction._();
 
 @override String get value => 'issuing_transaction';
@@ -590,7 +590,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'issuing_transaction'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$obligationOutbound extends BalanceTransactionType {const BalanceTransactionType$obligationOutbound._();
 
 @override String get value => 'obligation_outbound';
@@ -599,7 +599,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'obligation_outbound'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$obligationReversalInbound extends BalanceTransactionType {const BalanceTransactionType$obligationReversalInbound._();
 
 @override String get value => 'obligation_reversal_inbound';
@@ -608,7 +608,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'obligation_reversal_inbound'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$payment extends BalanceTransactionType {const BalanceTransactionType$payment._();
 
 @override String get value => 'payment';
@@ -617,7 +617,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payment'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$paymentFailureRefund extends BalanceTransactionType {const BalanceTransactionType$paymentFailureRefund._();
 
 @override String get value => 'payment_failure_refund';
@@ -626,7 +626,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payment_failure_refund'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$paymentNetworkReserveHold extends BalanceTransactionType {const BalanceTransactionType$paymentNetworkReserveHold._();
 
 @override String get value => 'payment_network_reserve_hold';
@@ -635,7 +635,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payment_network_reserve_hold'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$paymentNetworkReserveRelease extends BalanceTransactionType {const BalanceTransactionType$paymentNetworkReserveRelease._();
 
 @override String get value => 'payment_network_reserve_release';
@@ -644,7 +644,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payment_network_reserve_release'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$paymentRefund extends BalanceTransactionType {const BalanceTransactionType$paymentRefund._();
 
 @override String get value => 'payment_refund';
@@ -653,7 +653,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payment_refund'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$paymentReversal extends BalanceTransactionType {const BalanceTransactionType$paymentReversal._();
 
 @override String get value => 'payment_reversal';
@@ -662,7 +662,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payment_reversal'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$paymentUnreconciled extends BalanceTransactionType {const BalanceTransactionType$paymentUnreconciled._();
 
 @override String get value => 'payment_unreconciled';
@@ -671,7 +671,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payment_unreconciled'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$payout extends BalanceTransactionType {const BalanceTransactionType$payout._();
 
 @override String get value => 'payout';
@@ -680,7 +680,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payout'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$payoutCancel extends BalanceTransactionType {const BalanceTransactionType$payoutCancel._();
 
 @override String get value => 'payout_cancel';
@@ -689,7 +689,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payout_cancel'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$payoutFailure extends BalanceTransactionType {const BalanceTransactionType$payoutFailure._();
 
 @override String get value => 'payout_failure';
@@ -698,7 +698,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payout_failure'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$payoutMinimumBalanceHold extends BalanceTransactionType {const BalanceTransactionType$payoutMinimumBalanceHold._();
 
 @override String get value => 'payout_minimum_balance_hold';
@@ -707,7 +707,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payout_minimum_balance_hold'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$payoutMinimumBalanceRelease extends BalanceTransactionType {const BalanceTransactionType$payoutMinimumBalanceRelease._();
 
 @override String get value => 'payout_minimum_balance_release';
@@ -716,7 +716,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'payout_minimum_balance_release'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$refund extends BalanceTransactionType {const BalanceTransactionType$refund._();
 
 @override String get value => 'refund';
@@ -725,7 +725,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'refund'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$refundFailure extends BalanceTransactionType {const BalanceTransactionType$refundFailure._();
 
 @override String get value => 'refund_failure';
@@ -734,7 +734,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'refund_failure'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$reserveHold extends BalanceTransactionType {const BalanceTransactionType$reserveHold._();
 
 @override String get value => 'reserve_hold';
@@ -743,7 +743,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'reserve_hold'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$reserveRelease extends BalanceTransactionType {const BalanceTransactionType$reserveRelease._();
 
 @override String get value => 'reserve_release';
@@ -752,7 +752,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'reserve_release'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$reserveTransaction extends BalanceTransactionType {const BalanceTransactionType$reserveTransaction._();
 
 @override String get value => 'reserve_transaction';
@@ -761,7 +761,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'reserve_transaction'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$reservedFunds extends BalanceTransactionType {const BalanceTransactionType$reservedFunds._();
 
 @override String get value => 'reserved_funds';
@@ -770,7 +770,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'reserved_funds'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$stripeBalancePaymentDebit extends BalanceTransactionType {const BalanceTransactionType$stripeBalancePaymentDebit._();
 
 @override String get value => 'stripe_balance_payment_debit';
@@ -779,7 +779,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'stripe_balance_payment_debit'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$stripeBalancePaymentDebitReversal extends BalanceTransactionType {const BalanceTransactionType$stripeBalancePaymentDebitReversal._();
 
 @override String get value => 'stripe_balance_payment_debit_reversal';
@@ -788,7 +788,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'stripe_balance_payment_debit_reversal'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$stripeFee extends BalanceTransactionType {const BalanceTransactionType$stripeFee._();
 
 @override String get value => 'stripe_fee';
@@ -797,7 +797,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'stripe_fee'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$stripeFxFee extends BalanceTransactionType {const BalanceTransactionType$stripeFxFee._();
 
 @override String get value => 'stripe_fx_fee';
@@ -806,7 +806,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'stripe_fx_fee'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$taxFee extends BalanceTransactionType {const BalanceTransactionType$taxFee._();
 
 @override String get value => 'tax_fee';
@@ -815,7 +815,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'tax_fee'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$topup extends BalanceTransactionType {const BalanceTransactionType$topup._();
 
 @override String get value => 'topup';
@@ -824,7 +824,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'topup'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$topupReversal extends BalanceTransactionType {const BalanceTransactionType$topupReversal._();
 
 @override String get value => 'topup_reversal';
@@ -833,7 +833,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'topup_reversal'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$transfer extends BalanceTransactionType {const BalanceTransactionType$transfer._();
 
 @override String get value => 'transfer';
@@ -842,7 +842,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'transfer'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$transferCancel extends BalanceTransactionType {const BalanceTransactionType$transferCancel._();
 
 @override String get value => 'transfer_cancel';
@@ -851,7 +851,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'transfer_cancel'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$transferFailure extends BalanceTransactionType {const BalanceTransactionType$transferFailure._();
 
 @override String get value => 'transfer_failure';
@@ -860,7 +860,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'transfer_failure'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$transferRefund extends BalanceTransactionType {const BalanceTransactionType$transferRefund._();
 
 @override String get value => 'transfer_refund';
@@ -869,7 +869,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => 'transfer_refund'.hashCode;
 
- }
+}
 @immutable final class BalanceTransactionType$Unknown extends BalanceTransactionType {const BalanceTransactionType$Unknown(this.value);
 
 @override final String value;
@@ -879,14 +879,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustme
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Balance transactions represent funds moving through your Stripe account.
 /// Stripe creates them for every type of transaction that enters or leaves your Stripe account balance.
 /// 
 /// Related guide: [Balance transaction types](https://docs.stripe.com/reports/balance-transaction-types)
 @immutable final class BalanceTransaction {const BalanceTransaction({required this.amount, required this.availableOn, required this.balanceType, required this.created, required this.currency, required this.fee, required this.feeDetails, required this.id, required this.net, required this.object, required this.reportingCategory, required this.status, required this.type, this.description = const Omittable.absent(), this.exchangeRate = const Omittable.absent(), this.source = const Omittable.absent(), });
 
-factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceTransaction(
+factory BalanceTransaction.fromJson(Map<String, dynamic> json) {return BalanceTransaction(
   amount: (json['amount'] as num).toInt(),
   availableOn: (json['available_on'] as num).toInt(),
   balanceType: BalanceType.fromJson(json['balance_type'] as String),
@@ -903,7 +903,7 @@ factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceT
   source: json.containsKey('source') ? Omittable(json['source'] != null ? BalanceTransactionSource.fromJson(json['source']) : null) : const Omittable.absent(),
   status: json['status'] as String,
   type: BalanceTransactionType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Gross amount of this transaction (in cents (or local equivalent)). A positive value represents funds charged to another party, and a negative value represents funds sent to another party.
 final int amount;
@@ -953,7 +953,7 @@ final String status;
 /// Transaction type: `adjustment`, `advance`, `advance_funding`, `anticipation_repayment`, `application_fee`, `application_fee_refund`, `charge`, `climate_order_purchase`, `climate_order_refund`, `connect_collection_transfer`, `contribution`, `issuing_authorization_hold`, `issuing_authorization_release`, `issuing_dispute`, `issuing_transaction`, `obligation_outbound`, `obligation_reversal_inbound`, `payment`, `payment_failure_refund`, `payment_network_reserve_hold`, `payment_network_reserve_release`, `payment_refund`, `payment_reversal`, `payment_unreconciled`, `payout`, `payout_cancel`, `payout_failure`, `payout_minimum_balance_hold`, `payout_minimum_balance_release`, `refund`, `refund_failure`, `reserve_transaction`, `reserved_funds`, `reserve_hold`, `reserve_release`, `stripe_fee`, `stripe_fx_fee`, `stripe_balance_payment_debit`, `stripe_balance_payment_debit_reversal`, `tax_fee`, `topup`, `topup_reversal`, `transfer`, `transfer_cancel`, `transfer_failure`, or `transfer_refund`. Learn more about [balance transaction types and what they represent](https://stripe.com/docs/reports/balance-transaction-types). To classify transactions for accounting purposes, consider `reporting_category` instead.
 final BalanceTransactionType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'available_on': availableOn,
   'balance_type': balanceType.toJson(),
@@ -970,8 +970,8 @@ Map<String, dynamic> toJson() { return {
   if (source.isPresent) 'source': source.value?.toJson(),
   'status': status,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('available_on') && json['available_on'] is num &&
       json.containsKey('balance_type') &&
       json.containsKey('created') && json['created'] is num &&
@@ -983,9 +983,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('reporting_category') && json['reporting_category'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description.value;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -993,8 +993,8 @@ if (description$ != null) {
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (reportingCategory.runes.length > 5000) { errors.add('reportingCategory: length must be <= 5000'); }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
-return errors; } 
-BalanceTransaction copyWith({int? amount, int? availableOn, BalanceType? balanceType, int? created, String? currency, Omittable<String?>? description, Omittable<double?>? exchangeRate, int? fee, List<Fee>? feeDetails, String? id, int? net, BalanceTransactionObject? object, String? reportingCategory, Omittable<BalanceTransactionSource?>? source, String? status, BalanceTransactionType? type, }) { return BalanceTransaction(
+return errors;}
+BalanceTransaction copyWith({int? amount, int? availableOn, BalanceType? balanceType, int? created, String? currency, Omittable<String?>? description, Omittable<double?>? exchangeRate, int? fee, List<Fee>? feeDetails, String? id, int? net, BalanceTransactionObject? object, String? reportingCategory, Omittable<BalanceTransactionSource?>? source, String? status, BalanceTransactionType? type, }) {return BalanceTransaction(
   amount: amount ?? this.amount,
   availableOn: availableOn ?? this.availableOn,
   balanceType: balanceType ?? this.balanceType,
@@ -1011,7 +1011,7 @@ BalanceTransaction copyWith({int? amount, int? availableOn, BalanceType? balance
   source: source ?? this.source,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceTransaction &&
           amount == other.amount &&
@@ -1035,4 +1035,4 @@ BalanceTransaction copyWith({int? amount, int? availableOn, BalanceType? balance
 
 @override String toString() => 'BalanceTransaction(\n  amount: $amount,\n  availableOn: $availableOn,\n  balanceType: $balanceType,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  exchangeRate: $exchangeRate,\n  fee: $fee,\n  feeDetails: $feeDetails,\n  id: $id,\n  net: $net,\n  object: $object,\n  reportingCategory: $reportingCategory,\n  source: $source,\n  status: $status,\n  type: $type,\n)';
 
- }
+}

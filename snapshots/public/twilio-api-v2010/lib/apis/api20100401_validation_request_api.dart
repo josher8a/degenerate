@@ -12,7 +12,7 @@ final class Api20100401ValidationRequestApi with ApiExecutor {const Api20100401V
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json`
-Future<ApiResult<AccountValidationRequest, Never>> createValidationRequest({required String accountSid, CreateValidationRequestRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountValidationRequest, Never>> createValidationRequest({required String accountSid, CreateValidationRequestRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -41,5 +41,5 @@ return await execute(
     return AccountValidationRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

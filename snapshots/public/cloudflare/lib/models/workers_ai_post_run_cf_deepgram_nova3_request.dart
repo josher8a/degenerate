@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_nova3_request/workers_ai_post_run_cf_deepgram_nova3_request_audio.dart';/// Sets how the model will interpret intents submitted to the custom_intent param. When strict, the model will only return intents submitted using the custom_intent param. When extended, the model will return its own detected intents in addition those submitted using the custom_intents param
 sealed class CustomIntentMode {const CustomIntentMode();
 
-factory CustomIntentMode.fromJson(String json) { return switch (json) {
+factory CustomIntentMode.fromJson(String json) {return switch (json) {
   'extended' => extended,
   'strict' => strict,
   _ => CustomIntentMode$Unknown(json),
-}; }
+};}
 
 static const CustomIntentMode extended = CustomIntentMode$extended._();
 
@@ -17,30 +17,30 @@ static const CustomIntentMode strict = CustomIntentMode$strict._();
 static const List<CustomIntentMode> values = [extended, strict];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'extended' => 'extended',
   'strict' => 'strict',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomIntentMode$Unknown; } 
+bool get isUnknown {return this is CustomIntentMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() extended, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() extended, required W Function() strict, required W Function(String value) $unknown, }) {return switch (this) {
       CustomIntentMode$extended() => extended(),
       CustomIntentMode$strict() => strict(),
       CustomIntentMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended, W Function()? strict, W Function(String value)? $unknown, }) {return switch (this) {
       CustomIntentMode$extended() => extended != null ? extended() : orElse(value),
       CustomIntentMode$strict() => strict != null ? strict() : orElse(value),
       CustomIntentMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomIntentMode($value)';
 
- }
+}
 @immutable final class CustomIntentMode$extended extends CustomIntentMode {const CustomIntentMode$extended._();
 
 @override String get value => 'extended';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended
 
 @override int get hashCode => 'extended'.hashCode;
 
- }
+}
 @immutable final class CustomIntentMode$strict extends CustomIntentMode {const CustomIntentMode$strict._();
 
 @override String get value => 'strict';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended
 
 @override int get hashCode => 'strict'.hashCode;
 
- }
+}
 @immutable final class CustomIntentMode$Unknown extends CustomIntentMode {const CustomIntentMode$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Sets how the model will interpret strings submitted to the custom_topic param. When strict, the model will only return topics submitted using the custom_topic param. When extended, the model will return its own detected topics in addition to those submitted using the custom_topic param.
 sealed class CustomTopicMode {const CustomTopicMode();
 
-factory CustomTopicMode.fromJson(String json) { return switch (json) {
+factory CustomTopicMode.fromJson(String json) {return switch (json) {
   'extended' => extended,
   'strict' => strict,
   _ => CustomTopicMode$Unknown(json),
-}; }
+};}
 
 static const CustomTopicMode extended = CustomTopicMode$extended._();
 
@@ -85,30 +85,30 @@ static const CustomTopicMode strict = CustomTopicMode$strict._();
 static const List<CustomTopicMode> values = [extended, strict];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'extended' => 'extended',
   'strict' => 'strict',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomTopicMode$Unknown; } 
+bool get isUnknown {return this is CustomTopicMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() extended, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() extended, required W Function() strict, required W Function(String value) $unknown, }) {return switch (this) {
       CustomTopicMode$extended() => extended(),
       CustomTopicMode$strict() => strict(),
       CustomTopicMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended, W Function()? strict, W Function(String value)? $unknown, }) {return switch (this) {
       CustomTopicMode$extended() => extended != null ? extended() : orElse(value),
       CustomTopicMode$strict() => strict != null ? strict() : orElse(value),
       CustomTopicMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomTopicMode($value)';
 
- }
+}
 @immutable final class CustomTopicMode$extended extends CustomTopicMode {const CustomTopicMode$extended._();
 
 @override String get value => 'extended';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended
 
 @override int get hashCode => 'extended'.hashCode;
 
- }
+}
 @immutable final class CustomTopicMode$strict extends CustomTopicMode {const CustomTopicMode$strict._();
 
 @override String get value => 'strict';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended
 
 @override int get hashCode => 'strict'.hashCode;
 
- }
+}
 @immutable final class CustomTopicMode$Unknown extends CustomTopicMode {const CustomTopicMode$Unknown(this.value);
 
 @override final String value;
@@ -136,11 +136,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Specify the expected encoding of your submitted audio
 sealed class WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding();
 
-factory WorkersAiPostRunCfDeepgramNova3RequestEncoding.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfDeepgramNova3RequestEncoding.fromJson(String json) {return switch (json) {
   'linear16' => linear16,
   'flac' => flac,
   'mulaw' => mulaw,
@@ -150,7 +150,7 @@ factory WorkersAiPostRunCfDeepgramNova3RequestEncoding.fromJson(String json) { r
   'speex' => speex,
   'g729' => g729,
   _ => WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfDeepgramNova3RequestEncoding linear16 = WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16._();
 
@@ -171,9 +171,9 @@ static const WorkersAiPostRunCfDeepgramNova3RequestEncoding g729 = WorkersAiPost
 static const List<WorkersAiPostRunCfDeepgramNova3RequestEncoding> values = [linear16, flac, mulaw, amrNb, amrWb, opus, speex, g729];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'linear16' => 'linear16',
   'flac' => 'flac',
   'mulaw' => 'mulaw',
@@ -183,11 +183,11 @@ String get name { return switch (value) {
   'speex' => 'speex',
   'g729' => 'g729',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown; } 
+bool get isUnknown {return this is WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() linear16, required W Function() flac, required W Function() mulaw, required W Function() amrNb, required W Function() amrWb, required W Function() opus, required W Function() speex, required W Function() g729, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() linear16, required W Function() flac, required W Function() mulaw, required W Function() amrNb, required W Function() amrWb, required W Function() opus, required W Function() speex, required W Function() g729, required W Function(String value) $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16() => linear16(),
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac() => flac(),
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw() => mulaw(),
@@ -197,9 +197,9 @@ W when<W>({required W Function() linear16, required W Function() flac, required 
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex() => speex(),
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729() => g729(),
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function()? flac, W Function()? mulaw, W Function()? amrNb, W Function()? amrWb, W Function()? opus, W Function()? speex, W Function()? g729, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function()? flac, W Function()? mulaw, W Function()? amrNb, W Function()? amrWb, W Function()? opus, W Function()? speex, W Function()? g729, W Function(String value)? $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16() => linear16 != null ? linear16() : orElse(value),
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac() => flac != null ? flac() : orElse(value),
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw() => mulaw != null ? mulaw() : orElse(value),
@@ -209,10 +209,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex() => speex != null ? speex() : orElse(value),
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729() => g729 != null ? g729() : orElse(value),
       WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestEncoding($value)';
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16 extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16._();
 
 @override String get value => 'linear16';
@@ -221,7 +221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'linear16'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac._();
 
 @override String get value => 'flac';
@@ -230,7 +230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'flac'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw._();
 
 @override String get value => 'mulaw';
@@ -239,7 +239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'mulaw'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrNb extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrNb._();
 
 @override String get value => 'amr-nb';
@@ -248,7 +248,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'amr-nb'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrWb extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrWb._();
 
 @override String get value => 'amr-wb';
@@ -257,7 +257,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'amr-wb'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$opus extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$opus._();
 
 @override String get value => 'opus';
@@ -266,7 +266,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'opus'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex._();
 
 @override String get value => 'speex';
@@ -275,7 +275,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'speex'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729 extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729._();
 
 @override String get value => 'g729';
@@ -284,7 +284,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => 'g729'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown(this.value);
 
 @override final String value;
@@ -294,16 +294,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Mode of operation for the model representing broad area of topic that will be talked about in the supplied audio
 sealed class WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode();
 
-factory WorkersAiPostRunCfDeepgramNova3RequestMode.fromJson(String json) { return switch (json) {
+factory WorkersAiPostRunCfDeepgramNova3RequestMode.fromJson(String json) {return switch (json) {
   'general' => general,
   'medical' => medical,
   'finance' => finance,
   _ => WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown(json),
-}; }
+};}
 
 static const WorkersAiPostRunCfDeepgramNova3RequestMode general = WorkersAiPostRunCfDeepgramNova3RequestMode$general._();
 
@@ -314,33 +314,33 @@ static const WorkersAiPostRunCfDeepgramNova3RequestMode finance = WorkersAiPostR
 static const List<WorkersAiPostRunCfDeepgramNova3RequestMode> values = [general, medical, finance];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'general' => 'general',
   'medical' => 'medical',
   'finance' => 'finance',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown; } 
+bool get isUnknown {return this is WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() general, required W Function() medical, required W Function() finance, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() general, required W Function() medical, required W Function() finance, required W Function(String value) $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramNova3RequestMode$general() => general(),
       WorkersAiPostRunCfDeepgramNova3RequestMode$medical() => medical(),
       WorkersAiPostRunCfDeepgramNova3RequestMode$finance() => finance(),
       WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? general, W Function()? medical, W Function()? finance, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? general, W Function()? medical, W Function()? finance, W Function(String value)? $unknown, }) {return switch (this) {
       WorkersAiPostRunCfDeepgramNova3RequestMode$general() => general != null ? general() : orElse(value),
       WorkersAiPostRunCfDeepgramNova3RequestMode$medical() => medical != null ? medical() : orElse(value),
       WorkersAiPostRunCfDeepgramNova3RequestMode$finance() => finance != null ? finance() : orElse(value),
       WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestMode($value)';
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode$general extends WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode$general._();
 
 @override String get value => 'general';
@@ -349,7 +349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? general,
 
 @override int get hashCode => 'general'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode$medical extends WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode$medical._();
 
 @override String get value => 'medical';
@@ -358,7 +358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? general,
 
 @override int get hashCode => 'medical'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode$finance extends WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode$finance._();
 
 @override String get value => 'finance';
@@ -367,7 +367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? general,
 
 @override int get hashCode => 'finance'.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown extends WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown(this.value);
 
 @override final String value;
@@ -377,10 +377,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? general,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WorkersAiPostRunCfDeepgramNova3Request {const WorkersAiPostRunCfDeepgramNova3Request({required this.audio, this.endpointing, this.customIntent, this.customIntentMode, this.customTopic, this.customTopicMode, this.detectEntities, this.detectLanguage, this.diarize, this.dictation, this.encoding, this.channels, this.extra, this.fillerWords, this.interimResults, this.keyterm, this.keywords, this.language, this.measurements, this.mipOptOut, this.mode, this.multichannel, this.numerals, this.vadEvents, this.profanityFilter, this.punctuate, this.redact, this.replace, this.search, this.sentiment, this.smartFormat, this.topics, this.uttSplit, this.utteranceEndMs, this.utterances, this.paragraphs, });
 
-factory WorkersAiPostRunCfDeepgramNova3Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramNova3Request(
+factory WorkersAiPostRunCfDeepgramNova3Request.fromJson(Map<String, dynamic> json) {return WorkersAiPostRunCfDeepgramNova3Request(
   audio: WorkersAiPostRunCfDeepgramNova3RequestAudio.fromJson(json['audio'] as Map<String, dynamic>),
   channels: json['channels'] != null ? (json['channels'] as num).toDouble() : null,
   customIntent: json['custom_intent'] as String?,
@@ -417,7 +417,7 @@ factory WorkersAiPostRunCfDeepgramNova3Request.fromJson(Map<String, dynamic> jso
   utteranceEndMs: json['utterance_end_ms'] as bool?,
   utterances: json['utterances'] as bool?,
   vadEvents: json['vad_events'] as bool?,
-); }
+);}
 
 final WorkersAiPostRunCfDeepgramNova3RequestAudio audio;
 
@@ -526,7 +526,7 @@ final bool? utterances;
 /// Indicates that speech has started. You'll begin receiving Speech Started messages upon speech starting. Note: Supported only for webosockets.
 final bool? vadEvents;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'audio': audio.toJson(),
   'channels': ?channels,
   'custom_intent': ?customIntent,
@@ -563,9 +563,9 @@ Map<String, dynamic> toJson() { return {
   'utterance_end_ms': ?utteranceEndMs,
   'utterances': ?utterances,
   'vad_events': ?vadEvents,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio'); } 
-WorkersAiPostRunCfDeepgramNova3Request copyWith({WorkersAiPostRunCfDeepgramNova3RequestAudio? audio, double? Function()? channels, String? Function()? customIntent, CustomIntentMode? Function()? customIntentMode, String? Function()? customTopic, CustomTopicMode? Function()? customTopicMode, bool? Function()? detectEntities, bool? Function()? detectLanguage, bool? Function()? diarize, bool? Function()? dictation, WorkersAiPostRunCfDeepgramNova3RequestEncoding? Function()? encoding, String? Function()? endpointing, String? Function()? extra, bool? Function()? fillerWords, bool? Function()? interimResults, String? Function()? keyterm, String? Function()? keywords, String? Function()? language, bool? Function()? measurements, bool? Function()? mipOptOut, WorkersAiPostRunCfDeepgramNova3RequestMode? Function()? mode, bool? Function()? multichannel, bool? Function()? numerals, bool? Function()? paragraphs, bool? Function()? profanityFilter, bool? Function()? punctuate, String? Function()? redact, String? Function()? replace, String? Function()? search, bool? Function()? sentiment, bool? Function()? smartFormat, bool? Function()? topics, double? Function()? uttSplit, bool? Function()? utteranceEndMs, bool? Function()? utterances, bool? Function()? vadEvents, }) { return WorkersAiPostRunCfDeepgramNova3Request(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('audio');}
+WorkersAiPostRunCfDeepgramNova3Request copyWith({WorkersAiPostRunCfDeepgramNova3RequestAudio? audio, double? Function()? channels, String? Function()? customIntent, CustomIntentMode? Function()? customIntentMode, String? Function()? customTopic, CustomTopicMode? Function()? customTopicMode, bool? Function()? detectEntities, bool? Function()? detectLanguage, bool? Function()? diarize, bool? Function()? dictation, WorkersAiPostRunCfDeepgramNova3RequestEncoding? Function()? encoding, String? Function()? endpointing, String? Function()? extra, bool? Function()? fillerWords, bool? Function()? interimResults, String? Function()? keyterm, String? Function()? keywords, String? Function()? language, bool? Function()? measurements, bool? Function()? mipOptOut, WorkersAiPostRunCfDeepgramNova3RequestMode? Function()? mode, bool? Function()? multichannel, bool? Function()? numerals, bool? Function()? paragraphs, bool? Function()? profanityFilter, bool? Function()? punctuate, String? Function()? redact, String? Function()? replace, String? Function()? search, bool? Function()? sentiment, bool? Function()? smartFormat, bool? Function()? topics, double? Function()? uttSplit, bool? Function()? utteranceEndMs, bool? Function()? utterances, bool? Function()? vadEvents, }) {return WorkersAiPostRunCfDeepgramNova3Request(
   audio: audio ?? this.audio,
   channels: channels != null ? channels() : this.channels,
   customIntent: customIntent != null ? customIntent() : this.customIntent,
@@ -602,7 +602,7 @@ WorkersAiPostRunCfDeepgramNova3Request copyWith({WorkersAiPostRunCfDeepgramNova3
   utteranceEndMs: utteranceEndMs != null ? utteranceEndMs() : this.utteranceEndMs,
   utterances: utterances != null ? utterances() : this.utterances,
   vadEvents: vadEvents != null ? vadEvents() : this.vadEvents,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfDeepgramNova3Request &&
           audio == other.audio &&
@@ -646,4 +646,4 @@ WorkersAiPostRunCfDeepgramNova3Request copyWith({WorkersAiPostRunCfDeepgramNova3
 
 @override String toString() => 'WorkersAiPostRunCfDeepgramNova3Request(\n  audio: $audio,\n  channels: $channels,\n  customIntent: $customIntent,\n  customIntentMode: $customIntentMode,\n  customTopic: $customTopic,\n  customTopicMode: $customTopicMode,\n  detectEntities: $detectEntities,\n  detectLanguage: $detectLanguage,\n  diarize: $diarize,\n  dictation: $dictation,\n  encoding: $encoding,\n  endpointing: $endpointing,\n  extra: $extra,\n  fillerWords: $fillerWords,\n  interimResults: $interimResults,\n  keyterm: $keyterm,\n  keywords: $keywords,\n  language: $language,\n  measurements: $measurements,\n  mipOptOut: $mipOptOut,\n  mode: $mode,\n  multichannel: $multichannel,\n  numerals: $numerals,\n  paragraphs: $paragraphs,\n  profanityFilter: $profanityFilter,\n  punctuate: $punctuate,\n  redact: $redact,\n  replace: $replace,\n  search: $search,\n  sentiment: $sentiment,\n  smartFormat: $smartFormat,\n  topics: $topics,\n  uttSplit: $uttSplit,\n  utteranceEndMs: $utteranceEndMs,\n  utterances: $utterances,\n  vadEvents: $vadEvents,\n)';
 
- }
+}

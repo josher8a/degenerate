@@ -14,7 +14,7 @@ final class NotificationDestinationsWithPagerDutyApi with ApiExecutor {const Not
 /// Get a list of all configured PagerDuty services.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/pagerduty`
-Future<ApiResult<List<AaaPagerduty>?, NotificationAlertTypesGetAlertTypesError>> notificationDestinationsWithPagerDutyListPagerDutyServices({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AaaPagerduty>?, NotificationAlertTypesGetAlertTypesError>> notificationDestinationsWithPagerDutyListPagerDutyServices({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: NotificationAlertTypesGetAlertTypesError.fromResponse,
 );
- } 
+}
 /// Delete PagerDuty Services
 ///
 /// Deletes all the PagerDuty Services connected to the account.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/destinations/pagerduty`
-Future<ApiResult<ResponseCommon2, NotificationAlertTypesGetAlertTypesError>> notificationDestinationsWithPagerDutyDeletePagerDutyServices({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon2, NotificationAlertTypesGetAlertTypesError>> notificationDestinationsWithPagerDutyDeletePagerDutyServices({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -53,13 +53,13 @@ return await execute(
   },
   onError: NotificationAlertTypesGetAlertTypesError.fromResponse,
 );
- } 
+}
 /// Create PagerDuty integration token
 ///
 /// Creates a new token for integrating with PagerDuty.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/destinations/pagerduty/connect`
-Future<ApiResult<AaaIdResponseResult?, NotificationDestinationsWithPagerDutyConnectPagerDutyError>> notificationDestinationsWithPagerDutyConnectPagerDuty({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationDestinationsWithPagerDutyConnectPagerDutyError>> notificationDestinationsWithPagerDutyConnectPagerDuty({required AaaAccountId accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -76,13 +76,13 @@ return await execute(
   },
   onError: NotificationDestinationsWithPagerDutyConnectPagerDutyError.fromResponse,
 );
- } 
+}
 /// Connect PagerDuty
 ///
 /// Links PagerDuty with the account using the integration token.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/pagerduty/connect/{token_id}`
-Future<ApiResult<AaaIdResponseResult?, NotificationDestinationsWithPagerDutyConnectPagerDutyTokenError>> notificationDestinationsWithPagerDutyConnectPagerDutyToken({required AaaAccountId accountId, required AaaIntegrationToken tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationDestinationsWithPagerDutyConnectPagerDutyTokenError>> notificationDestinationsWithPagerDutyConnectPagerDutyToken({required AaaAccountId accountId, required AaaIntegrationToken tokenId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -99,5 +99,5 @@ return await execute(
   },
   onError: NotificationDestinationsWithPagerDutyConnectPagerDutyTokenError.fromResponse,
 );
- } 
- }
+}
+}

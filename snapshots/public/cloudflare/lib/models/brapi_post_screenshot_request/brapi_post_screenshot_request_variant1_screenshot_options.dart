@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_request/clip.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_request/screenshot_options_type.dart';sealed class ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding();
 
-factory ScreenshotOptionsEncoding.fromJson(String json) { return switch (json) {
+factory ScreenshotOptionsEncoding.fromJson(String json) {return switch (json) {
   'binary' => binary,
   'base64' => base64,
   _ => ScreenshotOptionsEncoding$Unknown(json),
-}; }
+};}
 
 static const ScreenshotOptionsEncoding binary = ScreenshotOptionsEncoding$binary._();
 
@@ -16,30 +16,30 @@ static const ScreenshotOptionsEncoding base64 = ScreenshotOptionsEncoding$base64
 static const List<ScreenshotOptionsEncoding> values = [binary, base64];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'binary' => 'binary',
   'base64' => 'base64',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ScreenshotOptionsEncoding$Unknown; } 
+bool get isUnknown {return this is ScreenshotOptionsEncoding$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() binary, required W Function() base64, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() binary, required W Function() base64, required W Function(String value) $unknown, }) {return switch (this) {
       ScreenshotOptionsEncoding$binary() => binary(),
       ScreenshotOptionsEncoding$base64() => base64(),
       ScreenshotOptionsEncoding$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? binary, W Function()? base64, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? binary, W Function()? base64, W Function(String value)? $unknown, }) {return switch (this) {
       ScreenshotOptionsEncoding$binary() => binary != null ? binary() : orElse(value),
       ScreenshotOptionsEncoding$base64() => base64 != null ? base64() : orElse(value),
       ScreenshotOptionsEncoding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ScreenshotOptionsEncoding($value)';
 
- }
+}
 @immutable final class ScreenshotOptionsEncoding$binary extends ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding$binary._();
 
 @override String get value => 'binary';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? binary, 
 
 @override int get hashCode => 'binary'.hashCode;
 
- }
+}
 @immutable final class ScreenshotOptionsEncoding$base64 extends ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding$base64._();
 
 @override String get value => 'base64';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? binary, 
 
 @override int get hashCode => 'base64'.hashCode;
 
- }
+}
 @immutable final class ScreenshotOptionsEncoding$Unknown extends ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding$Unknown(this.value);
 
 @override final String value;
@@ -67,11 +67,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? binary, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Check [options](https://pptr.dev/api/puppeteer.screenshotoptions).
 @immutable final class BrapiPostScreenshotRequestVariant1ScreenshotOptions {const BrapiPostScreenshotRequestVariant1ScreenshotOptions({this.captureBeyondViewport, this.clip, this.encoding, this.fromSurface, this.fullPage, this.omitBackground, this.optimizeForSpeed, this.quality, this.type, });
 
-factory BrapiPostScreenshotRequestVariant1ScreenshotOptions.fromJson(Map<String, dynamic> json) { return BrapiPostScreenshotRequestVariant1ScreenshotOptions(
+factory BrapiPostScreenshotRequestVariant1ScreenshotOptions.fromJson(Map<String, dynamic> json) {return BrapiPostScreenshotRequestVariant1ScreenshotOptions(
   captureBeyondViewport: json['captureBeyondViewport'] as bool?,
   clip: json['clip'] != null ? Clip.fromJson(json['clip'] as Map<String, dynamic>) : null,
   encoding: json['encoding'] != null ? ScreenshotOptionsEncoding.fromJson(json['encoding'] as String) : null,
@@ -81,7 +81,7 @@ factory BrapiPostScreenshotRequestVariant1ScreenshotOptions.fromJson(Map<String,
   optimizeForSpeed: json['optimizeForSpeed'] as bool?,
   quality: json['quality'] != null ? (json['quality'] as num).toDouble() : null,
   type: json['type'] != null ? ScreenshotOptionsType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final bool? captureBeyondViewport;
 
@@ -107,7 +107,7 @@ ScreenshotOptionsEncoding get encodingOrDefault => encoding ?? ScreenshotOptions
 /// The value of `type`, or its schema default when absent.
 ScreenshotOptionsType get typeOrDefault => type ?? ScreenshotOptionsType.fromJson('png');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'captureBeyondViewport': ?captureBeyondViewport,
   if (clip != null) 'clip': clip?.toJson(),
   if (encoding != null) 'encoding': encoding?.toJson(),
@@ -117,9 +117,9 @@ Map<String, dynamic> toJson() { return {
   'optimizeForSpeed': ?optimizeForSpeed,
   'quality': ?quality,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'captureBeyondViewport', 'clip', 'encoding', 'fromSurface', 'fullPage', 'omitBackground', 'optimizeForSpeed', 'quality', 'type'}.contains(key)); } 
-BrapiPostScreenshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? captureBeyondViewport, Clip? Function()? clip, ScreenshotOptionsEncoding? Function()? encoding, bool? Function()? fromSurface, bool? Function()? fullPage, bool? Function()? omitBackground, bool? Function()? optimizeForSpeed, double? Function()? quality, ScreenshotOptionsType? Function()? type, }) { return BrapiPostScreenshotRequestVariant1ScreenshotOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'captureBeyondViewport', 'clip', 'encoding', 'fromSurface', 'fullPage', 'omitBackground', 'optimizeForSpeed', 'quality', 'type'}.contains(key));}
+BrapiPostScreenshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? captureBeyondViewport, Clip? Function()? clip, ScreenshotOptionsEncoding? Function()? encoding, bool? Function()? fromSurface, bool? Function()? fullPage, bool? Function()? omitBackground, bool? Function()? optimizeForSpeed, double? Function()? quality, ScreenshotOptionsType? Function()? type, }) {return BrapiPostScreenshotRequestVariant1ScreenshotOptions(
   captureBeyondViewport: captureBeyondViewport != null ? captureBeyondViewport() : this.captureBeyondViewport,
   clip: clip != null ? clip() : this.clip,
   encoding: encoding != null ? encoding() : this.encoding,
@@ -129,7 +129,7 @@ BrapiPostScreenshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? 
   optimizeForSpeed: optimizeForSpeed != null ? optimizeForSpeed() : this.optimizeForSpeed,
   quality: quality != null ? quality() : this.quality,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostScreenshotRequestVariant1ScreenshotOptions &&
           captureBeyondViewport == other.captureBeyondViewport &&
@@ -146,4 +146,4 @@ BrapiPostScreenshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? 
 
 @override String toString() => 'BrapiPostScreenshotRequestVariant1ScreenshotOptions(\n  captureBeyondViewport: $captureBeyondViewport,\n  clip: $clip,\n  encoding: $encoding,\n  fromSurface: $fromSurface,\n  fullPage: $fullPage,\n  omitBackground: $omitBackground,\n  optimizeForSpeed: $optimizeForSpeed,\n  quality: $quality,\n  type: $type,\n)';
 
- }
+}

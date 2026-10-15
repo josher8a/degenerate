@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_rule_action.dart';import 'package:pub_cloudflare/models/email_rule_enabled.dart';import 'package:pub_cloudflare/models/email_rule_identifier.dart';import 'package:pub_cloudflare/models/email_rule_matcher.dart';import 'package:pub_cloudflare/models/email_rule_name.dart';import 'package:pub_cloudflare/models/email_rule_priority.dart';import 'package:pub_cloudflare/models/email_rule_tag.dart';@immutable final class EmailRuleProperties {const EmailRuleProperties({this.actions, this.enabled, this.id, this.matchers, this.name, this.priority, this.tag, });
 
-factory EmailRuleProperties.fromJson(Map<String, dynamic> json) { return EmailRuleProperties(
+factory EmailRuleProperties.fromJson(Map<String, dynamic> json) {return EmailRuleProperties(
   actions: (json['actions'] as List<dynamic>?)?.map((e) => EmailRuleAction.fromJson(e as Map<String, dynamic>)).toList(),
   enabled: json['enabled'] != null ? EmailRuleEnabled.fromJson(json['enabled'] as bool) : null,
   id: json['id'] != null ? EmailRuleIdentifier.fromJson(json['id'] as String) : null,
@@ -11,7 +11,7 @@ factory EmailRuleProperties.fromJson(Map<String, dynamic> json) { return EmailRu
   name: json['name'] != null ? EmailRuleName.fromJson(json['name'] as String) : null,
   priority: json['priority'] != null ? EmailRulePriority.fromJson(json['priority'] as num) : null,
   tag: json['tag'] != null ? EmailRuleTag.fromJson(json['tag'] as String) : null,
-); }
+);}
 
 /// List actions patterns.
 final List<EmailRuleAction>? actions;
@@ -33,7 +33,7 @@ final EmailRulePriority? priority;
 
 final EmailRuleTag? tag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (actions != null) 'actions': actions?.map((e) => e.toJson()).toList(),
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (priority != null) 'priority': priority?.toJson(),
   if (tag != null) 'tag': tag?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'enabled', 'id', 'matchers', 'name', 'priority', 'tag'}.contains(key)); } 
-EmailRuleProperties copyWith({List<EmailRuleAction>? Function()? actions, EmailRuleEnabled? Function()? enabled, EmailRuleIdentifier? Function()? id, List<EmailRuleMatcher>? Function()? matchers, EmailRuleName? Function()? name, EmailRulePriority? Function()? priority, EmailRuleTag? Function()? tag, }) { return EmailRuleProperties(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actions', 'enabled', 'id', 'matchers', 'name', 'priority', 'tag'}.contains(key));}
+EmailRuleProperties copyWith({List<EmailRuleAction>? Function()? actions, EmailRuleEnabled? Function()? enabled, EmailRuleIdentifier? Function()? id, List<EmailRuleMatcher>? Function()? matchers, EmailRuleName? Function()? name, EmailRulePriority? Function()? priority, EmailRuleTag? Function()? tag, }) {return EmailRuleProperties(
   actions: actions != null ? actions() : this.actions,
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,
@@ -51,7 +51,7 @@ EmailRuleProperties copyWith({List<EmailRuleAction>? Function()? actions, EmailR
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,
   tag: tag != null ? tag() : this.tag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailRuleProperties &&
           listEquals(actions, other.actions) &&
@@ -66,4 +66,4 @@ EmailRuleProperties copyWith({List<EmailRuleAction>? Function()? actions, EmailR
 
 @override String toString() => 'EmailRuleProperties(actions: $actions, enabled: $enabled, id: $id, matchers: $matchers, name: $name, priority: $priority, tag: $tag)';
 
- }
+}

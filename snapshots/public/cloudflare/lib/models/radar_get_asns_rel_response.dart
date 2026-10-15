@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response/radar_get_asns_rel_response_result.dart';@immutable final class RadarGetAsnsRelResponse {const RadarGetAsnsRelResponse({required this.result, required this.success, });
 
-factory RadarGetAsnsRelResponse.fromJson(Map<String, dynamic> json) { return RadarGetAsnsRelResponse(
+factory RadarGetAsnsRelResponse.fromJson(Map<String, dynamic> json) {return RadarGetAsnsRelResponse(
   result: RadarGetAsnsRelResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetAsnsRelResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetAsnsRelResponse copyWith({RadarGetAsnsRelResponseResult? result, bool? success, }) { return RadarGetAsnsRelResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetAsnsRelResponse copyWith({RadarGetAsnsRelResponseResult? result, bool? success, }) {return RadarGetAsnsRelResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAsnsRelResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetAsnsRelResponse copyWith({RadarGetAsnsRelResponseResult? result, bool? s
 
 @override String toString() => 'RadarGetAsnsRelResponse(result: $result, success: $success)';
 
- }
+}

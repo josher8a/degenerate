@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0({required this.gt1dLte1w, required this.gt1hLte1d, required this.gt1mLte5m, required this.gt1w, required this.gt5mLte15m, required this.gt15mLte1h, required this.lte1m, });
 
-factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0(
+factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0(
   gt1dLte1w: (json['gt_1d_lte_1w'] as List<dynamic>).map((e) => e as String).toList(),
   gt1hLte1d: (json['gt_1h_lte_1d'] as List<dynamic>).map((e) => e as String).toList(),
   gt1mLte5m: (json['gt_1m_lte_5m'] as List<dynamic>).map((e) => e as String).toList(),
@@ -11,7 +11,7 @@ factory RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0.fromJson(Map
   gt5mLte15m: (json['gt_5m_lte_15m'] as List<dynamic>).map((e) => e as String).toList(),
   gt15mLte1h: (json['gt_15m_lte_1h'] as List<dynamic>).map((e) => e as String).toList(),
   lte1m: (json['lte_1m'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> gt1dLte1w;
 
@@ -27,7 +27,7 @@ final List<String> gt15mLte1h;
 
 final List<String> lte1m;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'gt_1d_lte_1w': gt1dLte1w,
   'gt_1h_lte_1d': gt1hLte1d,
   'gt_1m_lte_5m': gt1mLte5m,
@@ -35,15 +35,15 @@ Map<String, dynamic> toJson() { return {
   'gt_5m_lte_15m': gt5mLte15m,
   'gt_15m_lte_1h': gt15mLte1h,
   'lte_1m': lte1m,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('gt_1d_lte_1w') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('gt_1d_lte_1w') &&
       json.containsKey('gt_1h_lte_1d') &&
       json.containsKey('gt_1m_lte_5m') &&
       json.containsKey('gt_1w') &&
       json.containsKey('gt_5m_lte_15m') &&
       json.containsKey('gt_15m_lte_1h') &&
-      json.containsKey('lte_1m'); } 
-RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 copyWith({List<String>? gt1dLte1w, List<String>? gt1hLte1d, List<String>? gt1mLte5m, List<String>? gt1w, List<String>? gt5mLte15m, List<String>? gt15mLte1h, List<String>? lte1m, }) { return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0(
+      json.containsKey('lte_1m');}
+RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 copyWith({List<String>? gt1dLte1w, List<String>? gt1hLte1d, List<String>? gt1mLte5m, List<String>? gt1w, List<String>? gt5mLte15m, List<String>? gt15mLte1h, List<String>? lte1m, }) {return RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0(
   gt1dLte1w: gt1dLte1w ?? this.gt1dLte1w,
   gt1hLte1d: gt1hLte1d ?? this.gt1hLte1d,
   gt1mLte5m: gt1mLte5m ?? this.gt1mLte5m,
@@ -51,7 +51,7 @@ RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 copyWith({List<Strin
   gt5mLte15m: gt5mLte15m ?? this.gt5mLte15m,
   gt15mLte1h: gt15mLte1h ?? this.gt15mLte1h,
   lte1m: lte1m ?? this.lte1m,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 &&
           listEquals(gt1dLte1w, other.gt1dLte1w) &&
@@ -66,4 +66,4 @@ RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 copyWith({List<Strin
 
 @override String toString() => 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0(gt1dLte1w: $gt1dLte1w, gt1hLte1d: $gt1hLte1d, gt1mLte5m: $gt1mLte5m, gt1w: $gt1w, gt5mLte15m: $gt5mLte15m, gt15mLte1h: $gt15mLte1h, lte1m: $lte1m)';
 
- }
+}

@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_jurisdiction.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_source_schema/r2_slurper_r2_source_schema_vendor.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_like_creds_schema.dart';@immutable final class R2SlurperR2SourceSchema {const R2SlurperR2SourceSchema({required this.bucket, required this.secret, required this.vendor, this.jurisdiction, this.keys = const Omittable.absent(), this.pathPrefix = const Omittable.absent(), });
 
-factory R2SlurperR2SourceSchema.fromJson(Map<String, dynamic> json) { return R2SlurperR2SourceSchema(
+factory R2SlurperR2SourceSchema.fromJson(Map<String, dynamic> json) {return R2SlurperR2SourceSchema(
   bucket: json['bucket'] as String,
   jurisdiction: json['jurisdiction'] != null ? R2SlurperJurisdiction.fromJson(json['jurisdiction'] as String) : null,
   keys: json.containsKey('keys') ? Omittable((json['keys'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   pathPrefix: json.containsKey('pathPrefix') ? Omittable(json['pathPrefix'] as String?) : const Omittable.absent(),
   secret: R2SlurperS3LikeCredsSchema.fromJson(json['secret'] as Map<String, dynamic>),
   vendor: R2SlurperR2SourceSchemaVendor.fromJson(json['vendor'] as String),
-); }
+);}
 
 final String bucket;
 
@@ -24,32 +24,32 @@ final R2SlurperS3LikeCredsSchema secret;
 
 final R2SlurperR2SourceSchemaVendor vendor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucket': bucket,
   if (jurisdiction != null) 'jurisdiction': jurisdiction?.toJson(),
   if (keys.isPresent) 'keys': keys.value,
   if (pathPrefix.isPresent) 'pathPrefix': pathPrefix.value,
   'secret': secret.toJson(),
   'vendor': vendor.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('secret') &&
-      json.containsKey('vendor') && json['vendor'] == 'r2'; } 
+      json.containsKey('vendor') && json['vendor'] == 'r2';}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final keys$ = keys.value;
 if (keys$ != null) {
   if (keys$.length > 10000) { errors.add('keys: must have <= 10000 items'); }
 }
-return errors; } 
-R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction? Function()? jurisdiction, Omittable<List<String>?>? keys, Omittable<String?>? pathPrefix, R2SlurperS3LikeCredsSchema? secret, R2SlurperR2SourceSchemaVendor? vendor, }) { return R2SlurperR2SourceSchema(
+return errors;}
+R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction? Function()? jurisdiction, Omittable<List<String>?>? keys, Omittable<String?>? pathPrefix, R2SlurperS3LikeCredsSchema? secret, R2SlurperR2SourceSchemaVendor? vendor, }) {return R2SlurperR2SourceSchema(
   bucket: bucket ?? this.bucket,
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   keys: keys ?? this.keys,
   pathPrefix: pathPrefix ?? this.pathPrefix,
   secret: secret ?? this.secret,
   vendor: vendor ?? this.vendor,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperR2SourceSchema &&
           bucket == other.bucket &&
@@ -64,4 +64,4 @@ R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction? Functio
 
 @override String toString() => 'R2SlurperR2SourceSchema(bucket: $bucket, jurisdiction: $jurisdiction, keys: $keys, pathPrefix: $pathPrefix, secret: $secret, vendor: $vendor)';
 
- }
+}

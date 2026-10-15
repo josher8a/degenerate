@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthenticatedRequestNoScopesRequest {const AuthenticatedRequestNoScopesRequest({this.name});
 
-factory AuthenticatedRequestNoScopesRequest.fromJson(Map<String, dynamic> json) { return AuthenticatedRequestNoScopesRequest(
+factory AuthenticatedRequestNoScopesRequest.fromJson(Map<String, dynamic> json) {return AuthenticatedRequestNoScopesRequest(
   name: json['name'] as String?,
-); }
+);}
 
 final String? name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-AuthenticatedRequestNoScopesRequest copyWith({String? Function()? name}) { return AuthenticatedRequestNoScopesRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name'}.contains(key));}
+AuthenticatedRequestNoScopesRequest copyWith({String? Function()? name}) {return AuthenticatedRequestNoScopesRequest(
   name: name != null ? name() : this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AuthenticatedRequestNoScopesRequest &&
           name == other.name;
@@ -24,4 +24,4 @@ AuthenticatedRequestNoScopesRequest copyWith({String? Function()? name}) { retur
 
 @override String toString() => 'AuthenticatedRequestNoScopesRequest(name: $name)';
 
- }
+}

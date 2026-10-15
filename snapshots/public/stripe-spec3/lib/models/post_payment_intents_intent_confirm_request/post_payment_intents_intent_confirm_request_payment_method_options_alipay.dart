@@ -7,11 +7,11 @@ const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAlipay({this.pay
 const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAlipay._({required this.rawValue, required this.paymentMethodOptionsParam14, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAlipay.fromJson(Object? json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAlipay._(
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAlipay.fromJson(Object? json) {return PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAlipay._(
   rawValue: Omittable(json),
   paymentMethodOptionsParam14: json is Map<String, dynamic> && PaymentMethodOptionsParam14.canParse(json) ? parseAnyOfVariant<PaymentMethodOptionsParam14>(json, (value) => PaymentMethodOptionsParam14.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAlipay(${toJson()})';
 
- }
+}

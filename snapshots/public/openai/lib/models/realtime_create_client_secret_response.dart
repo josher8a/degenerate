@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeCreateClientSecretResponse {const RealtimeCreateClientSecretResponse({required this.value, required this.expiresAt, required this.session, });
 
-factory RealtimeCreateClientSecretResponse.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretResponse(
+factory RealtimeCreateClientSecretResponse.fromJson(Map<String, dynamic> json) {return RealtimeCreateClientSecretResponse(
   value: json['value'] as String,
   expiresAt: (json['expires_at'] as num).toInt(),
   session: RealtimeCreateClientSecretResponseSession.fromJson(json['session'] as Map<String, dynamic>),
-); }
+);}
 
 /// The generated client secret value.
 final String value;
@@ -21,19 +21,19 @@ final int expiresAt;
 /// 
 final RealtimeCreateClientSecretResponseSession session;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'value': value,
   'expires_at': expiresAt,
   'session': session.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('value') && json['value'] is String &&
       json.containsKey('expires_at') && json['expires_at'] is num &&
-      json.containsKey('session'); } 
-RealtimeCreateClientSecretResponse copyWith({String? value, int? expiresAt, RealtimeCreateClientSecretResponseSession? session, }) { return RealtimeCreateClientSecretResponse(
+      json.containsKey('session');}
+RealtimeCreateClientSecretResponse copyWith({String? value, int? expiresAt, RealtimeCreateClientSecretResponseSession? session, }) {return RealtimeCreateClientSecretResponse(
   value: value ?? this.value,
   expiresAt: expiresAt ?? this.expiresAt,
   session: session ?? this.session,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCreateClientSecretResponse &&
           value == other.value &&
@@ -44,4 +44,4 @@ RealtimeCreateClientSecretResponse copyWith({String? value, int? expiresAt, Real
 
 @override String toString() => 'RealtimeCreateClientSecretResponse(value: $value, expiresAt: $expiresAt, session: $session)';
 
- }
+}

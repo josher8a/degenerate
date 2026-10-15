@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Disable outbound network access. Always `disabled`.
 sealed class ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType();
 
-factory ContainerNetworkPolicyDisabledParamType.fromJson(String json) { return switch (json) {
+factory ContainerNetworkPolicyDisabledParamType.fromJson(String json) {return switch (json) {
   'disabled' => disabled,
   _ => ContainerNetworkPolicyDisabledParamType$Unknown(json),
-}; }
+};}
 
 static const ContainerNetworkPolicyDisabledParamType disabled = ContainerNetworkPolicyDisabledParamType$disabled._();
 
 static const List<ContainerNetworkPolicyDisabledParamType> values = [disabled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'disabled' => 'disabled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ContainerNetworkPolicyDisabledParamType$Unknown; } 
+bool get isUnknown {return this is ContainerNetworkPolicyDisabledParamType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() disabled, required W Function(String value) $unknown, }) {return switch (this) {
       ContainerNetworkPolicyDisabledParamType$disabled() => disabled(),
       ContainerNetworkPolicyDisabledParamType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function(String value)? $unknown, }) {return switch (this) {
       ContainerNetworkPolicyDisabledParamType$disabled() => disabled != null ? disabled() : orElse(value),
       ContainerNetworkPolicyDisabledParamType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ContainerNetworkPolicyDisabledParamType($value)';
 
- }
+}
 @immutable final class ContainerNetworkPolicyDisabledParamType$disabled extends ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType$disabled._();
 
 @override String get value => 'disabled';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class ContainerNetworkPolicyDisabledParamType$Unknown extends ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType$Unknown(this.value);
 
 @override final String value;
@@ -53,23 +53,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ContainerNetworkPolicyDisabledParam {const ContainerNetworkPolicyDisabledParam({required this.type});
 
-factory ContainerNetworkPolicyDisabledParam.fromJson(Map<String, dynamic> json) { return ContainerNetworkPolicyDisabledParam(
+factory ContainerNetworkPolicyDisabledParam.fromJson(Map<String, dynamic> json) {return ContainerNetworkPolicyDisabledParam(
   type: ContainerNetworkPolicyDisabledParamType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Disable outbound network access. Always `disabled`.
 final ContainerNetworkPolicyDisabledParamType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ContainerNetworkPolicyDisabledParam copyWith({ContainerNetworkPolicyDisabledParamType? type}) { return ContainerNetworkPolicyDisabledParam(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+ContainerNetworkPolicyDisabledParam copyWith({ContainerNetworkPolicyDisabledParamType? type}) {return ContainerNetworkPolicyDisabledParam(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerNetworkPolicyDisabledParam &&
           type == other.type;
@@ -78,4 +78,4 @@ ContainerNetworkPolicyDisabledParam copyWith({ContainerNetworkPolicyDisabledPara
 
 @override String toString() => 'ContainerNetworkPolicyDisabledParam(type: $type)';
 
- }
+}

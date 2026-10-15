@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PostPaymentIntentsRequestSetupFutureUsage {const PostPaymentIntentsRequestSetupFutureUsage();
 
-factory PostPaymentIntentsRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
+factory PostPaymentIntentsRequestSetupFutureUsage.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostPaymentIntentsRequestSetupFutureUsage$Unknown(json),
-}; }
+};}
 
 static const PostPaymentIntentsRequestSetupFutureUsage offSession = PostPaymentIntentsRequestSetupFutureUsage$offSession._();
 
@@ -16,30 +16,30 @@ static const PostPaymentIntentsRequestSetupFutureUsage onSession = PostPaymentIn
 static const List<PostPaymentIntentsRequestSetupFutureUsage> values = [offSession, onSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off_session' => 'offSession',
   'on_session' => 'onSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostPaymentIntentsRequestSetupFutureUsage$Unknown; } 
+bool get isUnknown {return this is PostPaymentIntentsRequestSetupFutureUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) {return switch (this) {
       PostPaymentIntentsRequestSetupFutureUsage$offSession() => offSession(),
       PostPaymentIntentsRequestSetupFutureUsage$onSession() => onSession(),
       PostPaymentIntentsRequestSetupFutureUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) {return switch (this) {
       PostPaymentIntentsRequestSetupFutureUsage$offSession() => offSession != null ? offSession() : orElse(value),
       PostPaymentIntentsRequestSetupFutureUsage$onSession() => onSession != null ? onSession() : orElse(value),
       PostPaymentIntentsRequestSetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostPaymentIntentsRequestSetupFutureUsage($value)';
 
- }
+}
 @immutable final class PostPaymentIntentsRequestSetupFutureUsage$offSession extends PostPaymentIntentsRequestSetupFutureUsage {const PostPaymentIntentsRequestSetupFutureUsage$offSession._();
 
 @override String get value => 'off_session';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => 'off_session'.hashCode;
 
- }
+}
 @immutable final class PostPaymentIntentsRequestSetupFutureUsage$onSession extends PostPaymentIntentsRequestSetupFutureUsage {const PostPaymentIntentsRequestSetupFutureUsage$onSession._();
 
 @override String get value => 'on_session';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => 'on_session'.hashCode;
 
- }
+}
 @immutable final class PostPaymentIntentsRequestSetupFutureUsage$Unknown extends PostPaymentIntentsRequestSetupFutureUsage {const PostPaymentIntentsRequestSetupFutureUsage$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => value.hashCode;
 
- }
+}

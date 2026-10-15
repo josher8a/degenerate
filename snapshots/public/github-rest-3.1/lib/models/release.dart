@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/release_asset.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A release.
 @immutable final class Release {const Release({required this.url, required this.htmlUrl, required this.assetsUrl, required this.uploadUrl, required this.tarballUrl, required this.zipballUrl, required this.id, required this.nodeId, required this.tagName, required this.targetCommitish, required this.name, required this.draft, required this.prerelease, required this.createdAt, required this.publishedAt, required this.author, required this.assets, this.body = const Omittable.absent(), this.immutable, this.updatedAt = const Omittable.absent(), this.bodyHtml, this.bodyText, this.mentionsCount, this.discussionUrl, this.reactions, });
 
-factory Release.fromJson(Map<String, dynamic> json) { return Release(
+factory Release.fromJson(Map<String, dynamic> json) {return Release(
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   assetsUrl: Uri.parse(json['assets_url'] as String),
@@ -30,7 +30,7 @@ factory Release.fromJson(Map<String, dynamic> json) { return Release(
   mentionsCount: json['mentions_count'] != null ? (json['mentions_count'] as num).toInt() : null,
   discussionUrl: json['discussion_url'] != null ? Uri.parse(json['discussion_url'] as String) : null,
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Uri url;
 
@@ -88,7 +88,7 @@ final Uri? discussionUrl;
 
 final ReactionRollup? reactions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'assets_url': assetsUrl.toString(),
@@ -114,8 +114,8 @@ Map<String, dynamic> toJson() { return {
   'mentions_count': ?mentionsCount,
   if (discussionUrl != null) 'discussion_url': discussionUrl?.toString(),
   if (reactions != null) 'reactions': reactions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('assets_url') && json['assets_url'] is String &&
       json.containsKey('upload_url') && json['upload_url'] is String &&
@@ -131,8 +131,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('published_at') && (json['published_at'] == null || json['published_at'] is String) &&
       json.containsKey('author') &&
-      json.containsKey('assets'); } 
-Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri? Function()? tarballUrl, Uri? Function()? zipballUrl, int? id, String? nodeId, String? tagName, String? targetCommitish, String? Function()? name, Omittable<String?>? body, bool? draft, bool? prerelease, bool? Function()? immutable, DateTime? createdAt, DateTime? Function()? publishedAt, Omittable<DateTime?>? updatedAt, SimpleUser? author, List<ReleaseAsset>? assets, String? Function()? bodyHtml, String? Function()? bodyText, int? Function()? mentionsCount, Uri? Function()? discussionUrl, ReactionRollup? Function()? reactions, }) { return Release(
+      json.containsKey('assets');}
+Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri? Function()? tarballUrl, Uri? Function()? zipballUrl, int? id, String? nodeId, String? tagName, String? targetCommitish, String? Function()? name, Omittable<String?>? body, bool? draft, bool? prerelease, bool? Function()? immutable, DateTime? createdAt, DateTime? Function()? publishedAt, Omittable<DateTime?>? updatedAt, SimpleUser? author, List<ReleaseAsset>? assets, String? Function()? bodyHtml, String? Function()? bodyText, int? Function()? mentionsCount, Uri? Function()? discussionUrl, ReactionRollup? Function()? reactions, }) {return Release(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   assetsUrl: assetsUrl ?? this.assetsUrl,
@@ -158,7 +158,7 @@ Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri
   mentionsCount: mentionsCount != null ? mentionsCount() : this.mentionsCount,
   discussionUrl: discussionUrl != null ? discussionUrl() : this.discussionUrl,
   reactions: reactions != null ? reactions() : this.reactions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Release &&
           url == other.url &&
@@ -191,4 +191,4 @@ Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri
 
 @override String toString() => 'Release(\n  url: $url,\n  htmlUrl: $htmlUrl,\n  assetsUrl: $assetsUrl,\n  uploadUrl: $uploadUrl,\n  tarballUrl: $tarballUrl,\n  zipballUrl: $zipballUrl,\n  id: $id,\n  nodeId: $nodeId,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  name: $name,\n  body: $body,\n  draft: $draft,\n  prerelease: $prerelease,\n  immutable: $immutable,\n  createdAt: $createdAt,\n  publishedAt: $publishedAt,\n  updatedAt: $updatedAt,\n  author: $author,\n  assets: $assets,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  mentionsCount: $mentionsCount,\n  discussionUrl: $discussionUrl,\n  reactions: $reactions,\n)';
 
- }
+}

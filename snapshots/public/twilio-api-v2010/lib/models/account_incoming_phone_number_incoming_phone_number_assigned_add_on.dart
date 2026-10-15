@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn {const AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn({this.sid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.resourceSid = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.description = const Omittable.absent(), this.configuration = const Omittable.absent(), this.uniqueName = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.uri = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), });
 
-factory AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(Map<String, dynamic> json) { return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(
+factory AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(Map<String, dynamic> json) {return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   resourceSid: json.containsKey('resource_sid') ? Omittable(json['resource_sid'] as String?) : const Omittable.absent(),
@@ -15,7 +15,7 @@ factory AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(Map<
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
   subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
-); }
+);}
 
 /// The unique string that that we created to identify the resource.
 final Omittable<String?> sid;
@@ -50,7 +50,7 @@ final Omittable<String?> uri;
 /// A list of related resources identified by their relative URIs.
 final Omittable<Map<String,dynamic>?> subresourceUris;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (sid.isPresent) 'sid': sid.value,
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (resourceSid.isPresent) 'resource_sid': resourceSid.value,
@@ -62,10 +62,10 @@ Map<String, dynamic> toJson() { return {
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
   if (uri.isPresent) 'uri': uri.value,
   if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'resource_sid', 'friendly_name', 'description', 'configuration', 'unique_name', 'date_created', 'date_updated', 'uri', 'subresource_uris'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'sid', 'account_sid', 'resource_sid', 'friendly_name', 'description', 'configuration', 'unique_name', 'date_created', 'date_updated', 'uri', 'subresource_uris'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final sid$ = sid.value;
 if (sid$ != null) {
   if (sid$.runes.length < 34) { errors.add('sid: length must be >= 34'); }
@@ -84,8 +84,8 @@ if (resourceSid$ != null) {
   if (resourceSid$.runes.length > 34) { errors.add('resourceSid: length must be <= 34'); }
   if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(resourceSid$)) { errors.add(r'resourceSid: must match pattern ^PN[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, Omittable<String?>? resourceSid, Omittable<String?>? friendlyName, Omittable<String?>? description, Omittable<dynamic>? configuration, Omittable<String?>? uniqueName, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? uri, Omittable<Map<String,dynamic>?>? subresourceUris, }) { return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(
+return errors;}
+AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, Omittable<String?>? resourceSid, Omittable<String?>? friendlyName, Omittable<String?>? description, Omittable<dynamic>? configuration, Omittable<String?>? uniqueName, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? uri, Omittable<Map<String,dynamic>?>? subresourceUris, }) {return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(
   sid: sid ?? this.sid,
   accountSid: accountSid ?? this.accountSid,
   resourceSid: resourceSid ?? this.resourceSid,
@@ -97,7 +97,7 @@ AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({Omittable<S
   dateUpdated: dateUpdated ?? this.dateUpdated,
   uri: uri ?? this.uri,
   subresourceUris: subresourceUris ?? this.subresourceUris,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn &&
           sid == other.sid &&
@@ -116,4 +116,4 @@ AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({Omittable<S
 
 @override String toString() => 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(\n  sid: $sid,\n  accountSid: $accountSid,\n  resourceSid: $resourceSid,\n  friendlyName: $friendlyName,\n  description: $description,\n  configuration: $configuration,\n  uniqueName: $uniqueName,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  uri: $uri,\n  subresourceUris: $subresourceUris,\n)';
 
- }
+}

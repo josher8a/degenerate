@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/financial_reporting_finance_report_run_run_parameters.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class ReportingReportRunObject {const ReportingReportRunObject();
 
-factory ReportingReportRunObject.fromJson(String json) { return switch (json) {
+factory ReportingReportRunObject.fromJson(String json) {return switch (json) {
   'reporting.report_run' => reportingReportRun,
   _ => ReportingReportRunObject$Unknown(json),
-}; }
+};}
 
 static const ReportingReportRunObject reportingReportRun = ReportingReportRunObject$reportingReportRun._();
 
 static const List<ReportingReportRunObject> values = [reportingReportRun];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'reporting.report_run' => 'reportingReportRun',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReportingReportRunObject$Unknown; } 
+bool get isUnknown {return this is ReportingReportRunObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() reportingReportRun, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() reportingReportRun, required W Function(String value) $unknown, }) {return switch (this) {
       ReportingReportRunObject$reportingReportRun() => reportingReportRun(),
       ReportingReportRunObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? reportingReportRun, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? reportingReportRun, W Function(String value)? $unknown, }) {return switch (this) {
       ReportingReportRunObject$reportingReportRun() => reportingReportRun != null ? reportingReportRun() : orElse(value),
       ReportingReportRunObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ReportingReportRunObject($value)';
 
- }
+}
 @immutable final class ReportingReportRunObject$reportingReportRun extends ReportingReportRunObject {const ReportingReportRunObject$reportingReportRun._();
 
 @override String get value => 'reporting.report_run';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reportin
 
 @override int get hashCode => 'reporting.report_run'.hashCode;
 
- }
+}
 @immutable final class ReportingReportRunObject$Unknown extends ReportingReportRunObject {const ReportingReportRunObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reportin
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The Report Run object represents an instance of a report type generated with
 /// specific run parameters. Once the object is created, Stripe begins processing the report.
 /// When the report has finished running, it will give you a reference to a file
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? reportin
 /// data), and will error when queried without a [live-mode API key](https://docs.stripe.com/keys#test-live-modes).
 @immutable final class ReportingReportRun {const ReportingReportRun({required this.created, required this.id, required this.livemode, required this.object, required this.parameters, required this.reportType, required this.status, this.error = const Omittable.absent(), this.result = const Omittable.absent(), this.succeededAt = const Omittable.absent(), });
 
-factory ReportingReportRun.fromJson(Map<String, dynamic> json) { return ReportingReportRun(
+factory ReportingReportRun.fromJson(Map<String, dynamic> json) {return ReportingReportRun(
   created: (json['created'] as num).toInt(),
   error: json.containsKey('error') ? Omittable(json['error'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
@@ -75,7 +75,7 @@ factory ReportingReportRun.fromJson(Map<String, dynamic> json) { return Reportin
   result: json.containsKey('result') ? Omittable(json['result'] != null ? File.fromJson(json['result'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: json['status'] as String,
   succeededAt: json.containsKey('succeeded_at') ? Omittable(json['succeeded_at'] != null ? (json['succeeded_at'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -111,7 +111,7 @@ final String status;
 ///  `status=succeeded`). Measured in seconds since the Unix epoch.
 final Omittable<int?> succeededAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   if (error.isPresent) 'error': error.value,
   'id': id,
@@ -122,16 +122,16 @@ Map<String, dynamic> toJson() { return {
   if (result.isPresent) 'result': result.value?.toJson(),
   'status': status,
   if (succeededAt.isPresent) 'succeeded_at': succeededAt.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('parameters') &&
       json.containsKey('report_type') && json['report_type'] is String &&
-      json.containsKey('status') && json['status'] is String; } 
+      json.containsKey('status') && json['status'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final error$ = error.value;
 if (error$ != null) {
   if (error$.runes.length > 5000) { errors.add('error: length must be <= 5000'); }
@@ -139,8 +139,8 @@ if (error$ != null) {
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (reportType.runes.length > 5000) { errors.add('reportType: length must be <= 5000'); }
 if (status.runes.length > 5000) { errors.add('status: length must be <= 5000'); }
-return errors; } 
-ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, Omittable<File?>? result, String? status, Omittable<int?>? succeededAt, }) { return ReportingReportRun(
+return errors;}
+ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, Omittable<File?>? result, String? status, Omittable<int?>? succeededAt, }) {return ReportingReportRun(
   created: created ?? this.created,
   error: error ?? this.error,
   id: id ?? this.id,
@@ -151,7 +151,7 @@ ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id
   result: result ?? this.result,
   status: status ?? this.status,
   succeededAt: succeededAt ?? this.succeededAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReportingReportRun &&
           created == other.created &&
@@ -169,4 +169,4 @@ ReportingReportRun copyWith({int? created, Omittable<String?>? error, String? id
 
 @override String toString() => 'ReportingReportRun(\n  created: $created,\n  error: $error,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  parameters: $parameters,\n  reportType: $reportType,\n  result: $result,\n  status: $status,\n  succeededAt: $succeededAt,\n)';
 
- }
+}

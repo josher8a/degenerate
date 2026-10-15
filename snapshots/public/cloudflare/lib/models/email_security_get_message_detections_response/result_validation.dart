@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_validation_status.dart';@immutable final class ResultValidation {const ResultValidation({this.comment = const Omittable.absent(), this.dkim = const Omittable.absent(), this.dmarc = const Omittable.absent(), this.spf = const Omittable.absent(), });
 
-factory ResultValidation.fromJson(Map<String, dynamic> json) { return ResultValidation(
+factory ResultValidation.fromJson(Map<String, dynamic> json) {return ResultValidation(
   comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   dkim: json.containsKey('dkim') ? Omittable(json['dkim'] != null ? EmailSecurityValidationStatus.fromJson(json['dkim'] as String) : null) : const Omittable.absent(),
   dmarc: json.containsKey('dmarc') ? Omittable(json['dmarc'] != null ? EmailSecurityValidationStatus.fromJson(json['dmarc'] as String) : null) : const Omittable.absent(),
   spf: json.containsKey('spf') ? Omittable(json['spf'] != null ? EmailSecurityValidationStatus.fromJson(json['spf'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<String?> comment;
 
@@ -18,19 +18,19 @@ final Omittable<EmailSecurityValidationStatus?> dmarc;
 
 final Omittable<EmailSecurityValidationStatus?> spf;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comment.isPresent) 'comment': comment.value,
   if (dkim.isPresent) 'dkim': dkim.value?.toJson(),
   if (dmarc.isPresent) 'dmarc': dmarc.value?.toJson(),
   if (spf.isPresent) 'spf': spf.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'dkim', 'dmarc', 'spf'}.contains(key)); } 
-ResultValidation copyWith({Omittable<String?>? comment, Omittable<EmailSecurityValidationStatus?>? dkim, Omittable<EmailSecurityValidationStatus?>? dmarc, Omittable<EmailSecurityValidationStatus?>? spf, }) { return ResultValidation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'comment', 'dkim', 'dmarc', 'spf'}.contains(key));}
+ResultValidation copyWith({Omittable<String?>? comment, Omittable<EmailSecurityValidationStatus?>? dkim, Omittable<EmailSecurityValidationStatus?>? dmarc, Omittable<EmailSecurityValidationStatus?>? spf, }) {return ResultValidation(
   comment: comment ?? this.comment,
   dkim: dkim ?? this.dkim,
   dmarc: dmarc ?? this.dmarc,
   spf: spf ?? this.spf,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultValidation &&
           comment == other.comment &&
@@ -42,4 +42,4 @@ ResultValidation copyWith({Omittable<String?>? comment, Omittable<EmailSecurityV
 
 @override String toString() => 'ResultValidation(comment: $comment, dkim: $dkim, dmarc: $dmarc, spf: $spf)';
 
- }
+}

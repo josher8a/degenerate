@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_type2/error_type2_error.dart';@immutable final class ErrorUnionDiscriminatedPostRequestVariant2 {const ErrorUnionDiscriminatedPostRequestVariant2({required this.tag, required this.error, });
 
-factory ErrorUnionDiscriminatedPostRequestVariant2.fromJson(Map<String, dynamic> json) { return ErrorUnionDiscriminatedPostRequestVariant2(
+factory ErrorUnionDiscriminatedPostRequestVariant2.fromJson(Map<String, dynamic> json) {return ErrorUnionDiscriminatedPostRequestVariant2(
   tag: json['tag'] as String,
   error: ErrorType2Error.fromJson(json['error'] as Map<String, dynamic>),
-); }
+);}
 
 final String tag;
 
 final ErrorType2Error error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tag': tag,
   'error': error.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('tag') && json['tag'] is String &&
-      json.containsKey('error'); } 
-ErrorUnionDiscriminatedPostRequestVariant2 copyWith({String? tag, ErrorType2Error? error, }) { return ErrorUnionDiscriminatedPostRequestVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('tag') && json['tag'] is String &&
+      json.containsKey('error');}
+ErrorUnionDiscriminatedPostRequestVariant2 copyWith({String? tag, ErrorType2Error? error, }) {return ErrorUnionDiscriminatedPostRequestVariant2(
   tag: tag ?? this.tag,
   error: error ?? this.error,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorUnionDiscriminatedPostRequestVariant2 &&
           tag == other.tag &&
@@ -31,4 +31,4 @@ ErrorUnionDiscriminatedPostRequestVariant2 copyWith({String? tag, ErrorType2Erro
 
 @override String toString() => 'ErrorUnionDiscriminatedPostRequestVariant2(tag: $tag, error: $error)';
 
- }
+}

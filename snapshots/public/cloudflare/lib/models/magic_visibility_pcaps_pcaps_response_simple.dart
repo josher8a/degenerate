@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_filter.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_id.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_offset_time.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_status.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_submitted.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_system.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_type.dart';@immutable final class MagicVisibilityPcapsPcapsResponseSimple {const MagicVisibilityPcapsPcapsResponseSimple({this.filterV1, this.id, this.offsetTime, this.status, this.submitted, this.system, this.timeLimit, this.type, });
 
-factory MagicVisibilityPcapsPcapsResponseSimple.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsResponseSimple(
+factory MagicVisibilityPcapsPcapsResponseSimple.fromJson(Map<String, dynamic> json) {return MagicVisibilityPcapsPcapsResponseSimple(
   filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,
   id: json['id'] != null ? MagicVisibilityPcapsPcapsId.fromJson(json['id'] as String) : null,
   offsetTime: json['offset_time'] != null ? MagicVisibilityPcapsPcapsOffsetTime.fromJson(json['offset_time'] as String) : null,
@@ -12,7 +12,7 @@ factory MagicVisibilityPcapsPcapsResponseSimple.fromJson(Map<String, dynamic> js
   system: json['system'] != null ? MagicVisibilityPcapsPcapsSystem.fromJson(json['system'] as String) : null,
   timeLimit: json['time_limit'] != null ? MagicVisibilityPcapsPcapsTimeLimitSampled.fromJson(json['time_limit'] as num) : null,
   type: json['type'] != null ? MagicVisibilityPcapsPcapsType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final MagicVisibilityPcapsPcapsFilter? filterV1;
 
@@ -32,7 +32,7 @@ final MagicVisibilityPcapsPcapsTimeLimitSampled? timeLimit;
 
 final MagicVisibilityPcapsPcapsType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (filterV1 != null) 'filter_v1': filterV1?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (offsetTime != null) 'offset_time': offsetTime?.toJson(),
@@ -41,9 +41,9 @@ Map<String, dynamic> toJson() { return {
   if (system != null) 'system': system?.toJson(),
   if (timeLimit != null) 'time_limit': timeLimit?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filter_v1', 'id', 'offset_time', 'status', 'submitted', 'system', 'time_limit', 'type'}.contains(key)); } 
-MagicVisibilityPcapsPcapsResponseSimple copyWith({MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsId? Function()? id, MagicVisibilityPcapsPcapsOffsetTime? Function()? offsetTime, MagicVisibilityPcapsPcapsStatus? Function()? status, MagicVisibilityPcapsPcapsSubmitted? Function()? submitted, MagicVisibilityPcapsPcapsSystem? Function()? system, MagicVisibilityPcapsPcapsTimeLimitSampled? Function()? timeLimit, MagicVisibilityPcapsPcapsType? Function()? type, }) { return MagicVisibilityPcapsPcapsResponseSimple(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'filter_v1', 'id', 'offset_time', 'status', 'submitted', 'system', 'time_limit', 'type'}.contains(key));}
+MagicVisibilityPcapsPcapsResponseSimple copyWith({MagicVisibilityPcapsPcapsFilter? Function()? filterV1, MagicVisibilityPcapsPcapsId? Function()? id, MagicVisibilityPcapsPcapsOffsetTime? Function()? offsetTime, MagicVisibilityPcapsPcapsStatus? Function()? status, MagicVisibilityPcapsPcapsSubmitted? Function()? submitted, MagicVisibilityPcapsPcapsSystem? Function()? system, MagicVisibilityPcapsPcapsTimeLimitSampled? Function()? timeLimit, MagicVisibilityPcapsPcapsType? Function()? type, }) {return MagicVisibilityPcapsPcapsResponseSimple(
   filterV1: filterV1 != null ? filterV1() : this.filterV1,
   id: id != null ? id() : this.id,
   offsetTime: offsetTime != null ? offsetTime() : this.offsetTime,
@@ -52,7 +52,7 @@ MagicVisibilityPcapsPcapsResponseSimple copyWith({MagicVisibilityPcapsPcapsFilte
   system: system != null ? system() : this.system,
   timeLimit: timeLimit != null ? timeLimit() : this.timeLimit,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityPcapsPcapsResponseSimple &&
           filterV1 == other.filterV1 &&
@@ -68,4 +68,4 @@ MagicVisibilityPcapsPcapsResponseSimple copyWith({MagicVisibilityPcapsPcapsFilte
 
 @override String toString() => 'MagicVisibilityPcapsPcapsResponseSimple(filterV1: $filterV1, id: $id, offsetTime: $offsetTime, status: $status, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)';
 
- }
+}

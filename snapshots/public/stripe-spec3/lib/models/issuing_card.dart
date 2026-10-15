@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_status.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/issuing_card/personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_card/replaced_by.dart';import 'package:pub_stripe_spec3/models/issuing_card/replacement_for.dart';import 'package:pub_stripe_spec3/models/issuing_card_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_card_fraud_warning.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping.dart';import 'package:pub_stripe_spec3/models/issuing_card_wallets.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';/// The reason why the card was canceled.
 sealed class IssuingCardCancellationReason {const IssuingCardCancellationReason();
 
-factory IssuingCardCancellationReason.fromJson(String json) { return switch (json) {
+factory IssuingCardCancellationReason.fromJson(String json) {return switch (json) {
   'design_rejected' => designRejected,
   'lost' => lost,
   'stolen' => stolen,
   _ => IssuingCardCancellationReason$Unknown(json),
-}; }
+};}
 
 static const IssuingCardCancellationReason designRejected = IssuingCardCancellationReason$designRejected._();
 
@@ -20,33 +20,33 @@ static const IssuingCardCancellationReason stolen = IssuingCardCancellationReaso
 static const List<IssuingCardCancellationReason> values = [designRejected, lost, stolen];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'design_rejected' => 'designRejected',
   'lost' => 'lost',
   'stolen' => 'stolen',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardCancellationReason$Unknown; } 
+bool get isUnknown {return this is IssuingCardCancellationReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() designRejected, required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() designRejected, required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardCancellationReason$designRejected() => designRejected(),
       IssuingCardCancellationReason$lost() => lost(),
       IssuingCardCancellationReason$stolen() => stolen(),
       IssuingCardCancellationReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? designRejected, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? designRejected, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardCancellationReason$designRejected() => designRejected != null ? designRejected() : orElse(value),
       IssuingCardCancellationReason$lost() => lost != null ? lost() : orElse(value),
       IssuingCardCancellationReason$stolen() => stolen != null ? stolen() : orElse(value),
       IssuingCardCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardCancellationReason($value)';
 
- }
+}
 @immutable final class IssuingCardCancellationReason$designRejected extends IssuingCardCancellationReason {const IssuingCardCancellationReason$designRejected._();
 
 @override String get value => 'design_rejected';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? designRe
 
 @override int get hashCode => 'design_rejected'.hashCode;
 
- }
+}
 @immutable final class IssuingCardCancellationReason$lost extends IssuingCardCancellationReason {const IssuingCardCancellationReason$lost._();
 
 @override String get value => 'lost';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? designRe
 
 @override int get hashCode => 'lost'.hashCode;
 
- }
+}
 @immutable final class IssuingCardCancellationReason$stolen extends IssuingCardCancellationReason {const IssuingCardCancellationReason$stolen._();
 
 @override String get value => 'stolen';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? designRe
 
 @override int get hashCode => 'stolen'.hashCode;
 
- }
+}
 @immutable final class IssuingCardCancellationReason$Unknown extends IssuingCardCancellationReason {const IssuingCardCancellationReason$Unknown(this.value);
 
 @override final String value;
@@ -83,41 +83,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? designRe
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class IssuingCardObject {const IssuingCardObject();
 
-factory IssuingCardObject.fromJson(String json) { return switch (json) {
+factory IssuingCardObject.fromJson(String json) {return switch (json) {
   'issuing.card' => issuingCard,
   _ => IssuingCardObject$Unknown(json),
-}; }
+};}
 
 static const IssuingCardObject issuingCard = IssuingCardObject$issuingCard._();
 
 static const List<IssuingCardObject> values = [issuingCard];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'issuing.card' => 'issuingCard',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardObject$Unknown; } 
+bool get isUnknown {return this is IssuingCardObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() issuingCard, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() issuingCard, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardObject$issuingCard() => issuingCard(),
       IssuingCardObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingCard, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingCard, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardObject$issuingCard() => issuingCard != null ? issuingCard() : orElse(value),
       IssuingCardObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardObject($value)';
 
- }
+}
 @immutable final class IssuingCardObject$issuingCard extends IssuingCardObject {const IssuingCardObject$issuingCard._();
 
 @override String get value => 'issuing.card';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingC
 
 @override int get hashCode => 'issuing.card'.hashCode;
 
- }
+}
 @immutable final class IssuingCardObject$Unknown extends IssuingCardObject {const IssuingCardObject$Unknown(this.value);
 
 @override final String value;
@@ -136,17 +136,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingC
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The reason why the previous card needed to be replaced.
 sealed class IssuingCardReplacementReason {const IssuingCardReplacementReason();
 
-factory IssuingCardReplacementReason.fromJson(String json) { return switch (json) {
+factory IssuingCardReplacementReason.fromJson(String json) {return switch (json) {
   'damaged' => damaged,
   'expired' => expired,
   'lost' => lost,
   'stolen' => stolen,
   _ => IssuingCardReplacementReason$Unknown(json),
-}; }
+};}
 
 static const IssuingCardReplacementReason damaged = IssuingCardReplacementReason$damaged._();
 
@@ -159,36 +159,36 @@ static const IssuingCardReplacementReason stolen = IssuingCardReplacementReason$
 static const List<IssuingCardReplacementReason> values = [damaged, expired, lost, stolen];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'damaged' => 'damaged',
   'expired' => 'expired',
   'lost' => 'lost',
   'stolen' => 'stolen',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardReplacementReason$Unknown; } 
+bool get isUnknown {return this is IssuingCardReplacementReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() damaged, required W Function() expired, required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() damaged, required W Function() expired, required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardReplacementReason$damaged() => damaged(),
       IssuingCardReplacementReason$expired() => expired(),
       IssuingCardReplacementReason$lost() => lost(),
       IssuingCardReplacementReason$stolen() => stolen(),
       IssuingCardReplacementReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged, W Function()? expired, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged, W Function()? expired, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardReplacementReason$damaged() => damaged != null ? damaged() : orElse(value),
       IssuingCardReplacementReason$expired() => expired != null ? expired() : orElse(value),
       IssuingCardReplacementReason$lost() => lost != null ? lost() : orElse(value),
       IssuingCardReplacementReason$stolen() => stolen != null ? stolen() : orElse(value),
       IssuingCardReplacementReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardReplacementReason($value)';
 
- }
+}
 @immutable final class IssuingCardReplacementReason$damaged extends IssuingCardReplacementReason {const IssuingCardReplacementReason$damaged._();
 
 @override String get value => 'damaged';
@@ -197,7 +197,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => 'damaged'.hashCode;
 
- }
+}
 @immutable final class IssuingCardReplacementReason$expired extends IssuingCardReplacementReason {const IssuingCardReplacementReason$expired._();
 
 @override String get value => 'expired';
@@ -206,7 +206,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class IssuingCardReplacementReason$lost extends IssuingCardReplacementReason {const IssuingCardReplacementReason$lost._();
 
 @override String get value => 'lost';
@@ -215,7 +215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => 'lost'.hashCode;
 
- }
+}
 @immutable final class IssuingCardReplacementReason$stolen extends IssuingCardReplacementReason {const IssuingCardReplacementReason$stolen._();
 
 @override String get value => 'stolen';
@@ -224,7 +224,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => 'stolen'.hashCode;
 
- }
+}
 @immutable final class IssuingCardReplacementReason$Unknown extends IssuingCardReplacementReason {const IssuingCardReplacementReason$Unknown(this.value);
 
 @override final String value;
@@ -234,11 +234,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// You can [create physical or virtual cards](https://docs.stripe.com/issuing) that are issued to cardholders.
 @immutable final class IssuingCard {const IssuingCard({required this.brand, required this.cardholder, required this.created, required this.currency, required this.expMonth, required this.expYear, required this.id, required this.last4, required this.livemode, required this.metadata, required this.object, required this.spendingControls, required this.status, required this.type, this.cancellationReason = const Omittable.absent(), this.cvc, this.financialAccount = const Omittable.absent(), this.latestFraudWarning = const Omittable.absent(), this.number, this.personalizationDesign = const Omittable.absent(), this.replacedBy = const Omittable.absent(), this.replacementFor = const Omittable.absent(), this.replacementReason = const Omittable.absent(), this.secondLine = const Omittable.absent(), this.shipping = const Omittable.absent(), this.wallets = const Omittable.absent(), });
 
-factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
+factory IssuingCard.fromJson(Map<String, dynamic> json) {return IssuingCard(
   brand: json['brand'] as String,
   cancellationReason: json.containsKey('cancellation_reason') ? Omittable(json['cancellation_reason'] != null ? IssuingCardCancellationReason.fromJson(json['cancellation_reason'] as String) : null) : const Omittable.absent(),
   cardholder: IssuingCardholder.fromJson(json['cardholder'] as Map<String, dynamic>),
@@ -265,7 +265,7 @@ factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
   status: IssuingCardStatus.fromJson(json['status'] as String),
   type: IssuingCardType.fromJson(json['type'] as String),
   wallets: json.containsKey('wallets') ? Omittable(json['wallets'] != null ? IssuingCardWallets.fromJson(json['wallets'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The brand of the card.
 final String brand;
@@ -343,7 +343,7 @@ final IssuingCardType type;
 /// Information relating to digital wallets (like Apple Pay and Google Pay).
 final Omittable<IssuingCardWallets?> wallets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'brand': brand,
   if (cancellationReason.isPresent) 'cancellation_reason': cancellationReason.value?.toJson(),
   'cardholder': cardholder.toJson(),
@@ -370,8 +370,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'type': type.toJson(),
   if (wallets.isPresent) 'wallets': wallets.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') && json['brand'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('brand') && json['brand'] is String &&
       json.containsKey('cardholder') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
@@ -384,9 +384,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('object') &&
       json.containsKey('spending_controls') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (brand.runes.length > 5000) { errors.add('brand: length must be <= 5000'); }
 final cvc$ = cvc;
 if (cvc$ != null) {
@@ -406,8 +406,8 @@ final secondLine$ = secondLine.value;
 if (secondLine$ != null) {
   if (secondLine$.runes.length > 5000) { errors.add('secondLine: length must be <= 5000'); }
 }
-return errors; } 
-IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String? Function()? cvc, int? expMonth, int? expYear, Omittable<String?>? financialAccount, String? id, String? last4, Omittable<IssuingCardFraudWarning?>? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String? Function()? number, IssuingCardObject? object, Omittable<PersonalizationDesign?>? personalizationDesign, Omittable<ReplacedBy?>? replacedBy, Omittable<ReplacementFor?>? replacementFor, Omittable<IssuingCardReplacementReason?>? replacementReason, Omittable<String?>? secondLine, Omittable<IssuingCardShipping?>? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, Omittable<IssuingCardWallets?>? wallets, }) { return IssuingCard(
+return errors;}
+IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String? Function()? cvc, int? expMonth, int? expYear, Omittable<String?>? financialAccount, String? id, String? last4, Omittable<IssuingCardFraudWarning?>? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String? Function()? number, IssuingCardObject? object, Omittable<PersonalizationDesign?>? personalizationDesign, Omittable<ReplacedBy?>? replacedBy, Omittable<ReplacementFor?>? replacementFor, Omittable<IssuingCardReplacementReason?>? replacementReason, Omittable<String?>? secondLine, Omittable<IssuingCardShipping?>? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, Omittable<IssuingCardWallets?>? wallets, }) {return IssuingCard(
   brand: brand ?? this.brand,
   cancellationReason: cancellationReason ?? this.cancellationReason,
   cardholder: cardholder ?? this.cardholder,
@@ -434,7 +434,7 @@ IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? 
   status: status ?? this.status,
   type: type ?? this.type,
   wallets: wallets ?? this.wallets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCard &&
           brand == other.brand &&
@@ -468,4 +468,4 @@ IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? 
 
 @override String toString() => 'IssuingCard(\n  brand: $brand,\n  cancellationReason: $cancellationReason,\n  cardholder: $cardholder,\n  created: $created,\n  currency: $currency,\n  cvc: $cvc,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  financialAccount: $financialAccount,\n  id: $id,\n  last4: $last4,\n  latestFraudWarning: $latestFraudWarning,\n  livemode: $livemode,\n  metadata: $metadata,\n  number: $number,\n  object: $object,\n  personalizationDesign: $personalizationDesign,\n  replacedBy: $replacedBy,\n  replacementFor: $replacementFor,\n  replacementReason: $replacementReason,\n  secondLine: $secondLine,\n  shipping: $shipping,\n  spendingControls: $spendingControls,\n  status: $status,\n  type: $type,\n  wallets: $wallets,\n)';
 
- }
+}

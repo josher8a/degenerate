@@ -12,7 +12,7 @@ final class QueryApi with ApiExecutor {const QueryApi(this.apiConfig);
 /// Test query parameter(s)
 ///
 /// `GET /query/enum_ref_string`
-Future<ApiResult<String, Never>> testEnumRefString({TestEnumRefStringEnumNonrefStringQuery? enumNonrefStringQuery, StringEnumRef? enumRefStringQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testEnumRefString({TestEnumRefStringEnumNonrefStringQuery? enumNonrefStringQuery, StringEnumRef? enumRefStringQuery, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (enumNonrefStringQuery != null) {
   queryParameters['enum_nonref_string_query'] = enumNonrefStringQuery.toJson();
@@ -38,11 +38,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/datetime/date/string`
-Future<ApiResult<String, Never>> testQueryDatetimeDateString({DateTime? datetimeQuery, String? dateQuery, String? stringQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryDatetimeDateString({DateTime? datetimeQuery, String? dateQuery, String? stringQuery, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datetimeQuery != null) {
   queryParameters['datetime_query'] = datetimeQuery.toIso8601String();
@@ -71,11 +71,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/integer/boolean/string`
-Future<ApiResult<String, Never>> testQueryIntegerBooleanString({int? integerQuery, bool? booleanQuery, String? stringQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryIntegerBooleanString({int? integerQuery, bool? booleanQuery, String? stringQuery, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (integerQuery != null) {
   queryParameters['integer_query'] = integerQuery.toString();
@@ -104,11 +104,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/style_form/explode_true/array_string`
-Future<ApiResult<String, Never>> testQueryStyleFormExplodeTrueArrayString({TestQueryStyleFormExplodeTrueArrayStringQueryObject? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleFormExplodeTrueArrayString({TestQueryStyleFormExplodeTrueArrayStringQueryObject? queryObject, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
 if (queryObject.values case final values$?) { queryParametersList.add(ApiQueryParameter(name: 'values', value: values$.toString())); }
@@ -131,11 +131,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/style_form/explode_false/array_integer`
-Future<ApiResult<String, Never>> testQueryStyleFormExplodeFalseArrayInteger({List<int>? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleFormExplodeFalseArrayInteger({List<int>? queryObject, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
 queryParameters['query_object'] = queryObject.map((item) => item.toString()).join(',');
@@ -158,11 +158,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/style_form/explode_false/array_string`
-Future<ApiResult<String, Never>> testQueryStyleFormExplodeFalseArrayString({List<String>? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleFormExplodeFalseArrayString({List<String>? queryObject, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
 queryParameters['query_object'] = queryObject.join(',');
@@ -185,11 +185,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/style_form/explode_true/object`
-Future<ApiResult<String, Never>> testQueryStyleFormExplodeTrueObject({Pet? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleFormExplodeTrueObject({Pet? queryObject, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
 if (queryObject.id case final id$?) { queryParametersList.add(ApiQueryParameter(name: 'id', value: id$.toString())); }
@@ -217,11 +217,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/style_form/explode_true/object/allOf`
-Future<ApiResult<String, Never>> testQueryStyleFormExplodeTrueObjectAllOf({DataQuery? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleFormExplodeTrueObjectAllOf({DataQuery? queryObject, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
 if (queryObject.id case final id$?) { queryParametersList.add(ApiQueryParameter(name: 'id', value: id$.toString())); }
@@ -248,11 +248,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/style_deepObject/explode_true/object`
-Future<ApiResult<String, Never>> testQueryStyleDeepObjectExplodeTrueObject({Pet? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleDeepObjectExplodeTrueObject({Pet? queryObject, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
 if (queryObject.id case final id$?) { queryParameters['query_object[id]'] = id$.toString(); }
@@ -280,11 +280,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/style_deepObject/explode_true/object/allOf`
-Future<ApiResult<String, Never>> testQueryStyleDeepObjectExplodeTrueObjectAllOf({TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObject? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleDeepObjectExplodeTrueObjectAllOf({TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObject? queryObject, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
 if (queryObject.size case final size$?) { queryParameters['query_object[size]'] = size$; }
@@ -310,11 +310,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test query parameter(s)
 ///
 /// `GET /query/style_jsonSerialization/object`
-Future<ApiResult<String, Never>> testQueryStyleJsonSerializationObject({Pet? jsonSerializedObjectRefStringQuery, List<Pet>? jsonSerializedObjectArrayRefStringQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleJsonSerializationObject({Pet? jsonSerializedObjectRefStringQuery, List<Pet>? jsonSerializedObjectArrayRefStringQuery, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (jsonSerializedObjectRefStringQuery != null) {
 if (jsonSerializedObjectRefStringQuery.id case final id$?) { queryParametersList.add(ApiQueryParameter(name: 'id', value: id$.toString())); }
@@ -347,5 +347,5 @@ return await execute(
     return response.body;
   },
 );
- } 
- }
+}
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_created_on.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_modified_on.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';@immutable final class WorkerScriptSearchWorkersResponseResult {const WorkerScriptSearchWorkersResponseResult({required this.createdOn, required this.id, required this.modifiedOn, required this.scriptName, this.environmentIsDefault, this.environmentName, this.serviceName, });
 
-factory WorkerScriptSearchWorkersResponseResult.fromJson(Map<String, dynamic> json) { return WorkerScriptSearchWorkersResponseResult(
+factory WorkerScriptSearchWorkersResponseResult.fromJson(Map<String, dynamic> json) {return WorkerScriptSearchWorkersResponseResult(
   createdOn: WorkersCreatedOn.fromJson(json['created_on'] as String),
   environmentIsDefault: json['environment_is_default'] as bool?,
   environmentName: json['environment_name'] as String?,
@@ -11,7 +11,7 @@ factory WorkerScriptSearchWorkersResponseResult.fromJson(Map<String, dynamic> js
   modifiedOn: WorkersModifiedOn.fromJson(json['modified_on'] as String),
   scriptName: WorkersScriptName.fromJson(json['script_name'] as String),
   serviceName: json['service_name'] as String?,
-); }
+);}
 
 /// When the script was created.
 final WorkersCreatedOn createdOn;
@@ -40,7 +40,7 @@ final WorkersScriptName scriptName;
 /// Example: `'my-service'`
 final String? serviceName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_on': createdOn.toJson(),
   'environment_is_default': ?environmentIsDefault,
   'environment_name': ?environmentName,
@@ -48,12 +48,12 @@ Map<String, dynamic> toJson() { return {
   'modified_on': modifiedOn.toJson(),
   'script_name': scriptName.toJson(),
   'service_name': ?serviceName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_on') &&
       json.containsKey('id') &&
       json.containsKey('modified_on') &&
-      json.containsKey('script_name'); } 
-WorkerScriptSearchWorkersResponseResult copyWith({WorkersCreatedOn? createdOn, bool? Function()? environmentIsDefault, String? Function()? environmentName, WorkersIdentifier? id, WorkersModifiedOn? modifiedOn, WorkersScriptName? scriptName, String? Function()? serviceName, }) { return WorkerScriptSearchWorkersResponseResult(
+      json.containsKey('script_name');}
+WorkerScriptSearchWorkersResponseResult copyWith({WorkersCreatedOn? createdOn, bool? Function()? environmentIsDefault, String? Function()? environmentName, WorkersIdentifier? id, WorkersModifiedOn? modifiedOn, WorkersScriptName? scriptName, String? Function()? serviceName, }) {return WorkerScriptSearchWorkersResponseResult(
   createdOn: createdOn ?? this.createdOn,
   environmentIsDefault: environmentIsDefault != null ? environmentIsDefault() : this.environmentIsDefault,
   environmentName: environmentName != null ? environmentName() : this.environmentName,
@@ -61,7 +61,7 @@ WorkerScriptSearchWorkersResponseResult copyWith({WorkersCreatedOn? createdOn, b
   modifiedOn: modifiedOn ?? this.modifiedOn,
   scriptName: scriptName ?? this.scriptName,
   serviceName: serviceName != null ? serviceName() : this.serviceName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerScriptSearchWorkersResponseResult &&
           createdOn == other.createdOn &&
@@ -76,4 +76,4 @@ WorkerScriptSearchWorkersResponseResult copyWith({WorkersCreatedOn? createdOn, b
 
 @override String toString() => 'WorkerScriptSearchWorkersResponseResult(createdOn: $createdOn, environmentIsDefault: $environmentIsDefault, environmentName: $environmentName, id: $id, modifiedOn: $modifiedOn, scriptName: $scriptName, serviceName: $serviceName)';
 
- }
+}

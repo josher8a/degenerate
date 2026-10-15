@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The code for the type of error.
 sealed class AccountRequirementsErrorCode {const AccountRequirementsErrorCode();
 
-factory AccountRequirementsErrorCode.fromJson(String json) { return switch (json) {
+factory AccountRequirementsErrorCode.fromJson(String json) {return switch (json) {
   'external_request' => externalRequest,
   'information_missing' => informationMissing,
   'invalid_address_city_state_postal_code' => invalidAddressCityStatePostalCode,
@@ -102,7 +102,7 @@ factory AccountRequirementsErrorCode.fromJson(String json) { return switch (json
   'verification_requires_additional_proof_of_registration' => verificationRequiresAdditionalProofOfRegistration,
   'verification_supportability' => verificationSupportability,
   _ => AccountRequirementsErrorCode$Unknown(json),
-}; }
+};}
 
 static const AccountRequirementsErrorCode externalRequest = AccountRequirementsErrorCode$externalRequest._();
 
@@ -299,9 +299,9 @@ static const AccountRequirementsErrorCode verificationSupportability = AccountRe
 static const List<AccountRequirementsErrorCode> values = [externalRequest, informationMissing, invalidAddressCityStatePostalCode, invalidAddressHighwayContractBox, invalidAddressPrivateMailbox, invalidBusinessProfileName, invalidBusinessProfileNameDenylisted, invalidCompanyNameDenylisted, invalidDobAgeOverMaximum, invalidDobAgeUnder18, invalidDobAgeUnderMinimum, invalidProductDescriptionLength, invalidProductDescriptionUrlMatch, invalidRepresentativeCountry, invalidSignator, invalidStatementDescriptorBusinessMismatch, invalidStatementDescriptorDenylisted, invalidStatementDescriptorLength, invalidStatementDescriptorPrefixDenylisted, invalidStatementDescriptorPrefixMismatch, invalidStreetAddress, invalidTaxId, invalidTaxIdFormat, invalidTosAcceptance, invalidUrlDenylisted, invalidUrlFormat, invalidUrlWebPresenceDetected, invalidUrlWebsiteBusinessInformationMismatch, invalidUrlWebsiteEmpty, invalidUrlWebsiteInaccessible, invalidUrlWebsiteInaccessibleGeoblocked, invalidUrlWebsiteInaccessiblePasswordProtected, invalidUrlWebsiteIncomplete, invalidUrlWebsiteIncompleteCancellationPolicy, invalidUrlWebsiteIncompleteCustomerServiceDetails, invalidUrlWebsiteIncompleteLegalRestrictions, invalidUrlWebsiteIncompleteRefundPolicy, invalidUrlWebsiteIncompleteReturnPolicy, invalidUrlWebsiteIncompleteTermsAndConditions, invalidUrlWebsiteIncompleteUnderConstruction, invalidUrlWebsiteOther, invalidValueOther, unsupportedBusinessType, verificationDirectorsMismatch, verificationDocumentAddressMismatch, verificationDocumentAddressMissing, verificationDocumentCorrupt, verificationDocumentCountryNotSupported, verificationDocumentDirectorsMismatch, verificationDocumentDobMismatch, verificationDocumentDuplicateType, verificationDocumentExpired, verificationDocumentFailedCopy, verificationDocumentFailedGreyscale, verificationDocumentFailedOther, verificationDocumentFailedTestMode, verificationDocumentFraudulent, verificationDocumentIdNumberMismatch, verificationDocumentIdNumberMissing, verificationDocumentIncomplete, verificationDocumentInvalid, verificationDocumentIssueOrExpiryDateMissing, verificationDocumentManipulated, verificationDocumentMissingBack, verificationDocumentMissingFront, verificationDocumentNameMismatch, verificationDocumentNameMissing, verificationDocumentNationalityMismatch, verificationDocumentNotReadable, verificationDocumentNotSigned, verificationDocumentNotUploaded, verificationDocumentPhotoMismatch, verificationDocumentTooLarge, verificationDocumentTypeNotSupported, verificationExtraneousDirectors, verificationFailedAddressMatch, verificationFailedAuthorizerAuthority, verificationFailedBusinessIecNumber, verificationFailedDocumentMatch, verificationFailedIdNumberMatch, verificationFailedKeyedIdentity, verificationFailedKeyedMatch, verificationFailedNameMatch, verificationFailedOther, verificationFailedRepresentativeAuthority, verificationFailedResidentialAddress, verificationFailedTaxIdMatch, verificationFailedTaxIdNotIssued, verificationLegalEntityStructureMismatch, verificationMissingDirectors, verificationMissingExecutives, verificationMissingOwners, verificationRejectedOwnershipExemptionReason, verificationRequiresAdditionalMemorandumOfAssociations, verificationRequiresAdditionalProofOfRegistration, verificationSupportability];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'external_request' => 'externalRequest',
   'information_missing' => 'informationMissing',
   'invalid_address_city_state_postal_code' => 'invalidAddressCityStatePostalCode',
@@ -399,11 +399,11 @@ String get name { return switch (value) {
   'verification_requires_additional_proof_of_registration' => 'verificationRequiresAdditionalProofOfRegistration',
   'verification_supportability' => 'verificationSupportability',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountRequirementsErrorCode$Unknown; } 
+bool get isUnknown {return this is AccountRequirementsErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() externalRequest, required W Function() informationMissing, required W Function() invalidAddressCityStatePostalCode, required W Function() invalidAddressHighwayContractBox, required W Function() invalidAddressPrivateMailbox, required W Function() invalidBusinessProfileName, required W Function() invalidBusinessProfileNameDenylisted, required W Function() invalidCompanyNameDenylisted, required W Function() invalidDobAgeOverMaximum, required W Function() invalidDobAgeUnder18, required W Function() invalidDobAgeUnderMinimum, required W Function() invalidProductDescriptionLength, required W Function() invalidProductDescriptionUrlMatch, required W Function() invalidRepresentativeCountry, required W Function() invalidSignator, required W Function() invalidStatementDescriptorBusinessMismatch, required W Function() invalidStatementDescriptorDenylisted, required W Function() invalidStatementDescriptorLength, required W Function() invalidStatementDescriptorPrefixDenylisted, required W Function() invalidStatementDescriptorPrefixMismatch, required W Function() invalidStreetAddress, required W Function() invalidTaxId, required W Function() invalidTaxIdFormat, required W Function() invalidTosAcceptance, required W Function() invalidUrlDenylisted, required W Function() invalidUrlFormat, required W Function() invalidUrlWebPresenceDetected, required W Function() invalidUrlWebsiteBusinessInformationMismatch, required W Function() invalidUrlWebsiteEmpty, required W Function() invalidUrlWebsiteInaccessible, required W Function() invalidUrlWebsiteInaccessibleGeoblocked, required W Function() invalidUrlWebsiteInaccessiblePasswordProtected, required W Function() invalidUrlWebsiteIncomplete, required W Function() invalidUrlWebsiteIncompleteCancellationPolicy, required W Function() invalidUrlWebsiteIncompleteCustomerServiceDetails, required W Function() invalidUrlWebsiteIncompleteLegalRestrictions, required W Function() invalidUrlWebsiteIncompleteRefundPolicy, required W Function() invalidUrlWebsiteIncompleteReturnPolicy, required W Function() invalidUrlWebsiteIncompleteTermsAndConditions, required W Function() invalidUrlWebsiteIncompleteUnderConstruction, required W Function() invalidUrlWebsiteOther, required W Function() invalidValueOther, required W Function() unsupportedBusinessType, required W Function() verificationDirectorsMismatch, required W Function() verificationDocumentAddressMismatch, required W Function() verificationDocumentAddressMissing, required W Function() verificationDocumentCorrupt, required W Function() verificationDocumentCountryNotSupported, required W Function() verificationDocumentDirectorsMismatch, required W Function() verificationDocumentDobMismatch, required W Function() verificationDocumentDuplicateType, required W Function() verificationDocumentExpired, required W Function() verificationDocumentFailedCopy, required W Function() verificationDocumentFailedGreyscale, required W Function() verificationDocumentFailedOther, required W Function() verificationDocumentFailedTestMode, required W Function() verificationDocumentFraudulent, required W Function() verificationDocumentIdNumberMismatch, required W Function() verificationDocumentIdNumberMissing, required W Function() verificationDocumentIncomplete, required W Function() verificationDocumentInvalid, required W Function() verificationDocumentIssueOrExpiryDateMissing, required W Function() verificationDocumentManipulated, required W Function() verificationDocumentMissingBack, required W Function() verificationDocumentMissingFront, required W Function() verificationDocumentNameMismatch, required W Function() verificationDocumentNameMissing, required W Function() verificationDocumentNationalityMismatch, required W Function() verificationDocumentNotReadable, required W Function() verificationDocumentNotSigned, required W Function() verificationDocumentNotUploaded, required W Function() verificationDocumentPhotoMismatch, required W Function() verificationDocumentTooLarge, required W Function() verificationDocumentTypeNotSupported, required W Function() verificationExtraneousDirectors, required W Function() verificationFailedAddressMatch, required W Function() verificationFailedAuthorizerAuthority, required W Function() verificationFailedBusinessIecNumber, required W Function() verificationFailedDocumentMatch, required W Function() verificationFailedIdNumberMatch, required W Function() verificationFailedKeyedIdentity, required W Function() verificationFailedKeyedMatch, required W Function() verificationFailedNameMatch, required W Function() verificationFailedOther, required W Function() verificationFailedRepresentativeAuthority, required W Function() verificationFailedResidentialAddress, required W Function() verificationFailedTaxIdMatch, required W Function() verificationFailedTaxIdNotIssued, required W Function() verificationLegalEntityStructureMismatch, required W Function() verificationMissingDirectors, required W Function() verificationMissingExecutives, required W Function() verificationMissingOwners, required W Function() verificationRejectedOwnershipExemptionReason, required W Function() verificationRequiresAdditionalMemorandumOfAssociations, required W Function() verificationRequiresAdditionalProofOfRegistration, required W Function() verificationSupportability, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() externalRequest, required W Function() informationMissing, required W Function() invalidAddressCityStatePostalCode, required W Function() invalidAddressHighwayContractBox, required W Function() invalidAddressPrivateMailbox, required W Function() invalidBusinessProfileName, required W Function() invalidBusinessProfileNameDenylisted, required W Function() invalidCompanyNameDenylisted, required W Function() invalidDobAgeOverMaximum, required W Function() invalidDobAgeUnder18, required W Function() invalidDobAgeUnderMinimum, required W Function() invalidProductDescriptionLength, required W Function() invalidProductDescriptionUrlMatch, required W Function() invalidRepresentativeCountry, required W Function() invalidSignator, required W Function() invalidStatementDescriptorBusinessMismatch, required W Function() invalidStatementDescriptorDenylisted, required W Function() invalidStatementDescriptorLength, required W Function() invalidStatementDescriptorPrefixDenylisted, required W Function() invalidStatementDescriptorPrefixMismatch, required W Function() invalidStreetAddress, required W Function() invalidTaxId, required W Function() invalidTaxIdFormat, required W Function() invalidTosAcceptance, required W Function() invalidUrlDenylisted, required W Function() invalidUrlFormat, required W Function() invalidUrlWebPresenceDetected, required W Function() invalidUrlWebsiteBusinessInformationMismatch, required W Function() invalidUrlWebsiteEmpty, required W Function() invalidUrlWebsiteInaccessible, required W Function() invalidUrlWebsiteInaccessibleGeoblocked, required W Function() invalidUrlWebsiteInaccessiblePasswordProtected, required W Function() invalidUrlWebsiteIncomplete, required W Function() invalidUrlWebsiteIncompleteCancellationPolicy, required W Function() invalidUrlWebsiteIncompleteCustomerServiceDetails, required W Function() invalidUrlWebsiteIncompleteLegalRestrictions, required W Function() invalidUrlWebsiteIncompleteRefundPolicy, required W Function() invalidUrlWebsiteIncompleteReturnPolicy, required W Function() invalidUrlWebsiteIncompleteTermsAndConditions, required W Function() invalidUrlWebsiteIncompleteUnderConstruction, required W Function() invalidUrlWebsiteOther, required W Function() invalidValueOther, required W Function() unsupportedBusinessType, required W Function() verificationDirectorsMismatch, required W Function() verificationDocumentAddressMismatch, required W Function() verificationDocumentAddressMissing, required W Function() verificationDocumentCorrupt, required W Function() verificationDocumentCountryNotSupported, required W Function() verificationDocumentDirectorsMismatch, required W Function() verificationDocumentDobMismatch, required W Function() verificationDocumentDuplicateType, required W Function() verificationDocumentExpired, required W Function() verificationDocumentFailedCopy, required W Function() verificationDocumentFailedGreyscale, required W Function() verificationDocumentFailedOther, required W Function() verificationDocumentFailedTestMode, required W Function() verificationDocumentFraudulent, required W Function() verificationDocumentIdNumberMismatch, required W Function() verificationDocumentIdNumberMissing, required W Function() verificationDocumentIncomplete, required W Function() verificationDocumentInvalid, required W Function() verificationDocumentIssueOrExpiryDateMissing, required W Function() verificationDocumentManipulated, required W Function() verificationDocumentMissingBack, required W Function() verificationDocumentMissingFront, required W Function() verificationDocumentNameMismatch, required W Function() verificationDocumentNameMissing, required W Function() verificationDocumentNationalityMismatch, required W Function() verificationDocumentNotReadable, required W Function() verificationDocumentNotSigned, required W Function() verificationDocumentNotUploaded, required W Function() verificationDocumentPhotoMismatch, required W Function() verificationDocumentTooLarge, required W Function() verificationDocumentTypeNotSupported, required W Function() verificationExtraneousDirectors, required W Function() verificationFailedAddressMatch, required W Function() verificationFailedAuthorizerAuthority, required W Function() verificationFailedBusinessIecNumber, required W Function() verificationFailedDocumentMatch, required W Function() verificationFailedIdNumberMatch, required W Function() verificationFailedKeyedIdentity, required W Function() verificationFailedKeyedMatch, required W Function() verificationFailedNameMatch, required W Function() verificationFailedOther, required W Function() verificationFailedRepresentativeAuthority, required W Function() verificationFailedResidentialAddress, required W Function() verificationFailedTaxIdMatch, required W Function() verificationFailedTaxIdNotIssued, required W Function() verificationLegalEntityStructureMismatch, required W Function() verificationMissingDirectors, required W Function() verificationMissingExecutives, required W Function() verificationMissingOwners, required W Function() verificationRejectedOwnershipExemptionReason, required W Function() verificationRequiresAdditionalMemorandumOfAssociations, required W Function() verificationRequiresAdditionalProofOfRegistration, required W Function() verificationSupportability, required W Function(String value) $unknown, }) {return switch (this) {
       AccountRequirementsErrorCode$externalRequest() => externalRequest(),
       AccountRequirementsErrorCode$informationMissing() => informationMissing(),
       AccountRequirementsErrorCode$invalidAddressCityStatePostalCode() => invalidAddressCityStatePostalCode(),
@@ -501,9 +501,9 @@ W when<W>({required W Function() externalRequest, required W Function() informat
       AccountRequirementsErrorCode$verificationRequiresAdditionalProofOfRegistration() => verificationRequiresAdditionalProofOfRegistration(),
       AccountRequirementsErrorCode$verificationSupportability() => verificationSupportability(),
       AccountRequirementsErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? externalRequest, W Function()? informationMissing, W Function()? invalidAddressCityStatePostalCode, W Function()? invalidAddressHighwayContractBox, W Function()? invalidAddressPrivateMailbox, W Function()? invalidBusinessProfileName, W Function()? invalidBusinessProfileNameDenylisted, W Function()? invalidCompanyNameDenylisted, W Function()? invalidDobAgeOverMaximum, W Function()? invalidDobAgeUnder18, W Function()? invalidDobAgeUnderMinimum, W Function()? invalidProductDescriptionLength, W Function()? invalidProductDescriptionUrlMatch, W Function()? invalidRepresentativeCountry, W Function()? invalidSignator, W Function()? invalidStatementDescriptorBusinessMismatch, W Function()? invalidStatementDescriptorDenylisted, W Function()? invalidStatementDescriptorLength, W Function()? invalidStatementDescriptorPrefixDenylisted, W Function()? invalidStatementDescriptorPrefixMismatch, W Function()? invalidStreetAddress, W Function()? invalidTaxId, W Function()? invalidTaxIdFormat, W Function()? invalidTosAcceptance, W Function()? invalidUrlDenylisted, W Function()? invalidUrlFormat, W Function()? invalidUrlWebPresenceDetected, W Function()? invalidUrlWebsiteBusinessInformationMismatch, W Function()? invalidUrlWebsiteEmpty, W Function()? invalidUrlWebsiteInaccessible, W Function()? invalidUrlWebsiteInaccessibleGeoblocked, W Function()? invalidUrlWebsiteInaccessiblePasswordProtected, W Function()? invalidUrlWebsiteIncomplete, W Function()? invalidUrlWebsiteIncompleteCancellationPolicy, W Function()? invalidUrlWebsiteIncompleteCustomerServiceDetails, W Function()? invalidUrlWebsiteIncompleteLegalRestrictions, W Function()? invalidUrlWebsiteIncompleteRefundPolicy, W Function()? invalidUrlWebsiteIncompleteReturnPolicy, W Function()? invalidUrlWebsiteIncompleteTermsAndConditions, W Function()? invalidUrlWebsiteIncompleteUnderConstruction, W Function()? invalidUrlWebsiteOther, W Function()? invalidValueOther, W Function()? unsupportedBusinessType, W Function()? verificationDirectorsMismatch, W Function()? verificationDocumentAddressMismatch, W Function()? verificationDocumentAddressMissing, W Function()? verificationDocumentCorrupt, W Function()? verificationDocumentCountryNotSupported, W Function()? verificationDocumentDirectorsMismatch, W Function()? verificationDocumentDobMismatch, W Function()? verificationDocumentDuplicateType, W Function()? verificationDocumentExpired, W Function()? verificationDocumentFailedCopy, W Function()? verificationDocumentFailedGreyscale, W Function()? verificationDocumentFailedOther, W Function()? verificationDocumentFailedTestMode, W Function()? verificationDocumentFraudulent, W Function()? verificationDocumentIdNumberMismatch, W Function()? verificationDocumentIdNumberMissing, W Function()? verificationDocumentIncomplete, W Function()? verificationDocumentInvalid, W Function()? verificationDocumentIssueOrExpiryDateMissing, W Function()? verificationDocumentManipulated, W Function()? verificationDocumentMissingBack, W Function()? verificationDocumentMissingFront, W Function()? verificationDocumentNameMismatch, W Function()? verificationDocumentNameMissing, W Function()? verificationDocumentNationalityMismatch, W Function()? verificationDocumentNotReadable, W Function()? verificationDocumentNotSigned, W Function()? verificationDocumentNotUploaded, W Function()? verificationDocumentPhotoMismatch, W Function()? verificationDocumentTooLarge, W Function()? verificationDocumentTypeNotSupported, W Function()? verificationExtraneousDirectors, W Function()? verificationFailedAddressMatch, W Function()? verificationFailedAuthorizerAuthority, W Function()? verificationFailedBusinessIecNumber, W Function()? verificationFailedDocumentMatch, W Function()? verificationFailedIdNumberMatch, W Function()? verificationFailedKeyedIdentity, W Function()? verificationFailedKeyedMatch, W Function()? verificationFailedNameMatch, W Function()? verificationFailedOther, W Function()? verificationFailedRepresentativeAuthority, W Function()? verificationFailedResidentialAddress, W Function()? verificationFailedTaxIdMatch, W Function()? verificationFailedTaxIdNotIssued, W Function()? verificationLegalEntityStructureMismatch, W Function()? verificationMissingDirectors, W Function()? verificationMissingExecutives, W Function()? verificationMissingOwners, W Function()? verificationRejectedOwnershipExemptionReason, W Function()? verificationRequiresAdditionalMemorandumOfAssociations, W Function()? verificationRequiresAdditionalProofOfRegistration, W Function()? verificationSupportability, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? externalRequest, W Function()? informationMissing, W Function()? invalidAddressCityStatePostalCode, W Function()? invalidAddressHighwayContractBox, W Function()? invalidAddressPrivateMailbox, W Function()? invalidBusinessProfileName, W Function()? invalidBusinessProfileNameDenylisted, W Function()? invalidCompanyNameDenylisted, W Function()? invalidDobAgeOverMaximum, W Function()? invalidDobAgeUnder18, W Function()? invalidDobAgeUnderMinimum, W Function()? invalidProductDescriptionLength, W Function()? invalidProductDescriptionUrlMatch, W Function()? invalidRepresentativeCountry, W Function()? invalidSignator, W Function()? invalidStatementDescriptorBusinessMismatch, W Function()? invalidStatementDescriptorDenylisted, W Function()? invalidStatementDescriptorLength, W Function()? invalidStatementDescriptorPrefixDenylisted, W Function()? invalidStatementDescriptorPrefixMismatch, W Function()? invalidStreetAddress, W Function()? invalidTaxId, W Function()? invalidTaxIdFormat, W Function()? invalidTosAcceptance, W Function()? invalidUrlDenylisted, W Function()? invalidUrlFormat, W Function()? invalidUrlWebPresenceDetected, W Function()? invalidUrlWebsiteBusinessInformationMismatch, W Function()? invalidUrlWebsiteEmpty, W Function()? invalidUrlWebsiteInaccessible, W Function()? invalidUrlWebsiteInaccessibleGeoblocked, W Function()? invalidUrlWebsiteInaccessiblePasswordProtected, W Function()? invalidUrlWebsiteIncomplete, W Function()? invalidUrlWebsiteIncompleteCancellationPolicy, W Function()? invalidUrlWebsiteIncompleteCustomerServiceDetails, W Function()? invalidUrlWebsiteIncompleteLegalRestrictions, W Function()? invalidUrlWebsiteIncompleteRefundPolicy, W Function()? invalidUrlWebsiteIncompleteReturnPolicy, W Function()? invalidUrlWebsiteIncompleteTermsAndConditions, W Function()? invalidUrlWebsiteIncompleteUnderConstruction, W Function()? invalidUrlWebsiteOther, W Function()? invalidValueOther, W Function()? unsupportedBusinessType, W Function()? verificationDirectorsMismatch, W Function()? verificationDocumentAddressMismatch, W Function()? verificationDocumentAddressMissing, W Function()? verificationDocumentCorrupt, W Function()? verificationDocumentCountryNotSupported, W Function()? verificationDocumentDirectorsMismatch, W Function()? verificationDocumentDobMismatch, W Function()? verificationDocumentDuplicateType, W Function()? verificationDocumentExpired, W Function()? verificationDocumentFailedCopy, W Function()? verificationDocumentFailedGreyscale, W Function()? verificationDocumentFailedOther, W Function()? verificationDocumentFailedTestMode, W Function()? verificationDocumentFraudulent, W Function()? verificationDocumentIdNumberMismatch, W Function()? verificationDocumentIdNumberMissing, W Function()? verificationDocumentIncomplete, W Function()? verificationDocumentInvalid, W Function()? verificationDocumentIssueOrExpiryDateMissing, W Function()? verificationDocumentManipulated, W Function()? verificationDocumentMissingBack, W Function()? verificationDocumentMissingFront, W Function()? verificationDocumentNameMismatch, W Function()? verificationDocumentNameMissing, W Function()? verificationDocumentNationalityMismatch, W Function()? verificationDocumentNotReadable, W Function()? verificationDocumentNotSigned, W Function()? verificationDocumentNotUploaded, W Function()? verificationDocumentPhotoMismatch, W Function()? verificationDocumentTooLarge, W Function()? verificationDocumentTypeNotSupported, W Function()? verificationExtraneousDirectors, W Function()? verificationFailedAddressMatch, W Function()? verificationFailedAuthorizerAuthority, W Function()? verificationFailedBusinessIecNumber, W Function()? verificationFailedDocumentMatch, W Function()? verificationFailedIdNumberMatch, W Function()? verificationFailedKeyedIdentity, W Function()? verificationFailedKeyedMatch, W Function()? verificationFailedNameMatch, W Function()? verificationFailedOther, W Function()? verificationFailedRepresentativeAuthority, W Function()? verificationFailedResidentialAddress, W Function()? verificationFailedTaxIdMatch, W Function()? verificationFailedTaxIdNotIssued, W Function()? verificationLegalEntityStructureMismatch, W Function()? verificationMissingDirectors, W Function()? verificationMissingExecutives, W Function()? verificationMissingOwners, W Function()? verificationRejectedOwnershipExemptionReason, W Function()? verificationRequiresAdditionalMemorandumOfAssociations, W Function()? verificationRequiresAdditionalProofOfRegistration, W Function()? verificationSupportability, W Function(String value)? $unknown, }) {return switch (this) {
       AccountRequirementsErrorCode$externalRequest() => externalRequest != null ? externalRequest() : orElse(value),
       AccountRequirementsErrorCode$informationMissing() => informationMissing != null ? informationMissing() : orElse(value),
       AccountRequirementsErrorCode$invalidAddressCityStatePostalCode() => invalidAddressCityStatePostalCode != null ? invalidAddressCityStatePostalCode() : orElse(value),
@@ -601,10 +601,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
       AccountRequirementsErrorCode$verificationRequiresAdditionalProofOfRegistration() => verificationRequiresAdditionalProofOfRegistration != null ? verificationRequiresAdditionalProofOfRegistration() : orElse(value),
       AccountRequirementsErrorCode$verificationSupportability() => verificationSupportability != null ? verificationSupportability() : orElse(value),
       AccountRequirementsErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccountRequirementsErrorCode($value)';
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$externalRequest extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$externalRequest._();
 
 @override String get value => 'external_request';
@@ -613,7 +613,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'external_request'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$informationMissing extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$informationMissing._();
 
 @override String get value => 'information_missing';
@@ -622,7 +622,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'information_missing'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidAddressCityStatePostalCode extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidAddressCityStatePostalCode._();
 
 @override String get value => 'invalid_address_city_state_postal_code';
@@ -631,7 +631,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_address_city_state_postal_code'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidAddressHighwayContractBox extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidAddressHighwayContractBox._();
 
 @override String get value => 'invalid_address_highway_contract_box';
@@ -640,7 +640,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_address_highway_contract_box'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidAddressPrivateMailbox extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidAddressPrivateMailbox._();
 
 @override String get value => 'invalid_address_private_mailbox';
@@ -649,7 +649,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_address_private_mailbox'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidBusinessProfileName extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidBusinessProfileName._();
 
 @override String get value => 'invalid_business_profile_name';
@@ -658,7 +658,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_business_profile_name'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidBusinessProfileNameDenylisted extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidBusinessProfileNameDenylisted._();
 
 @override String get value => 'invalid_business_profile_name_denylisted';
@@ -667,7 +667,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_business_profile_name_denylisted'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidCompanyNameDenylisted extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidCompanyNameDenylisted._();
 
 @override String get value => 'invalid_company_name_denylisted';
@@ -676,7 +676,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_company_name_denylisted'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidDobAgeOverMaximum extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidDobAgeOverMaximum._();
 
 @override String get value => 'invalid_dob_age_over_maximum';
@@ -685,7 +685,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_dob_age_over_maximum'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidDobAgeUnder18 extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidDobAgeUnder18._();
 
 @override String get value => 'invalid_dob_age_under_18';
@@ -694,7 +694,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_dob_age_under_18'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidDobAgeUnderMinimum extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidDobAgeUnderMinimum._();
 
 @override String get value => 'invalid_dob_age_under_minimum';
@@ -703,7 +703,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_dob_age_under_minimum'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidProductDescriptionLength extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidProductDescriptionLength._();
 
 @override String get value => 'invalid_product_description_length';
@@ -712,7 +712,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_product_description_length'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidProductDescriptionUrlMatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidProductDescriptionUrlMatch._();
 
 @override String get value => 'invalid_product_description_url_match';
@@ -721,7 +721,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_product_description_url_match'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidRepresentativeCountry extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidRepresentativeCountry._();
 
 @override String get value => 'invalid_representative_country';
@@ -730,7 +730,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_representative_country'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidSignator extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidSignator._();
 
 @override String get value => 'invalid_signator';
@@ -739,7 +739,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_signator'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidStatementDescriptorBusinessMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidStatementDescriptorBusinessMismatch._();
 
 @override String get value => 'invalid_statement_descriptor_business_mismatch';
@@ -748,7 +748,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_statement_descriptor_business_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidStatementDescriptorDenylisted extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidStatementDescriptorDenylisted._();
 
 @override String get value => 'invalid_statement_descriptor_denylisted';
@@ -757,7 +757,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_statement_descriptor_denylisted'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidStatementDescriptorLength extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidStatementDescriptorLength._();
 
 @override String get value => 'invalid_statement_descriptor_length';
@@ -766,7 +766,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_statement_descriptor_length'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidStatementDescriptorPrefixDenylisted extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidStatementDescriptorPrefixDenylisted._();
 
 @override String get value => 'invalid_statement_descriptor_prefix_denylisted';
@@ -775,7 +775,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_statement_descriptor_prefix_denylisted'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidStatementDescriptorPrefixMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidStatementDescriptorPrefixMismatch._();
 
 @override String get value => 'invalid_statement_descriptor_prefix_mismatch';
@@ -784,7 +784,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_statement_descriptor_prefix_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidStreetAddress extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidStreetAddress._();
 
 @override String get value => 'invalid_street_address';
@@ -793,7 +793,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_street_address'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidTaxId extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidTaxId._();
 
 @override String get value => 'invalid_tax_id';
@@ -802,7 +802,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_tax_id'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidTaxIdFormat extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidTaxIdFormat._();
 
 @override String get value => 'invalid_tax_id_format';
@@ -811,7 +811,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_tax_id_format'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidTosAcceptance extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidTosAcceptance._();
 
 @override String get value => 'invalid_tos_acceptance';
@@ -820,7 +820,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_tos_acceptance'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlDenylisted extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlDenylisted._();
 
 @override String get value => 'invalid_url_denylisted';
@@ -829,7 +829,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_denylisted'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlFormat extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlFormat._();
 
 @override String get value => 'invalid_url_format';
@@ -838,7 +838,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_format'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebPresenceDetected extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebPresenceDetected._();
 
 @override String get value => 'invalid_url_web_presence_detected';
@@ -847,7 +847,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_web_presence_detected'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteBusinessInformationMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteBusinessInformationMismatch._();
 
 @override String get value => 'invalid_url_website_business_information_mismatch';
@@ -856,7 +856,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_business_information_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteEmpty extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteEmpty._();
 
 @override String get value => 'invalid_url_website_empty';
@@ -865,7 +865,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_empty'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteInaccessible extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteInaccessible._();
 
 @override String get value => 'invalid_url_website_inaccessible';
@@ -874,7 +874,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_inaccessible'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteInaccessibleGeoblocked extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteInaccessibleGeoblocked._();
 
 @override String get value => 'invalid_url_website_inaccessible_geoblocked';
@@ -883,7 +883,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_inaccessible_geoblocked'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteInaccessiblePasswordProtected extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteInaccessiblePasswordProtected._();
 
 @override String get value => 'invalid_url_website_inaccessible_password_protected';
@@ -892,7 +892,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_inaccessible_password_protected'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteIncomplete extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteIncomplete._();
 
 @override String get value => 'invalid_url_website_incomplete';
@@ -901,7 +901,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_incomplete'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteCancellationPolicy extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteCancellationPolicy._();
 
 @override String get value => 'invalid_url_website_incomplete_cancellation_policy';
@@ -910,7 +910,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_incomplete_cancellation_policy'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteCustomerServiceDetails extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteCustomerServiceDetails._();
 
 @override String get value => 'invalid_url_website_incomplete_customer_service_details';
@@ -919,7 +919,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_incomplete_customer_service_details'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteLegalRestrictions extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteLegalRestrictions._();
 
 @override String get value => 'invalid_url_website_incomplete_legal_restrictions';
@@ -928,7 +928,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_incomplete_legal_restrictions'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteRefundPolicy extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteRefundPolicy._();
 
 @override String get value => 'invalid_url_website_incomplete_refund_policy';
@@ -937,7 +937,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_incomplete_refund_policy'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteReturnPolicy extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteReturnPolicy._();
 
 @override String get value => 'invalid_url_website_incomplete_return_policy';
@@ -946,7 +946,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_incomplete_return_policy'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteTermsAndConditions extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteTermsAndConditions._();
 
 @override String get value => 'invalid_url_website_incomplete_terms_and_conditions';
@@ -955,7 +955,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_incomplete_terms_and_conditions'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteUnderConstruction extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteIncompleteUnderConstruction._();
 
 @override String get value => 'invalid_url_website_incomplete_under_construction';
@@ -964,7 +964,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_incomplete_under_construction'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidUrlWebsiteOther extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidUrlWebsiteOther._();
 
 @override String get value => 'invalid_url_website_other';
@@ -973,7 +973,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_url_website_other'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$invalidValueOther extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$invalidValueOther._();
 
 @override String get value => 'invalid_value_other';
@@ -982,7 +982,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'invalid_value_other'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$unsupportedBusinessType extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$unsupportedBusinessType._();
 
 @override String get value => 'unsupported_business_type';
@@ -991,7 +991,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'unsupported_business_type'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDirectorsMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDirectorsMismatch._();
 
 @override String get value => 'verification_directors_mismatch';
@@ -1000,7 +1000,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_directors_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentAddressMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentAddressMismatch._();
 
 @override String get value => 'verification_document_address_mismatch';
@@ -1009,7 +1009,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_address_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentAddressMissing extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentAddressMissing._();
 
 @override String get value => 'verification_document_address_missing';
@@ -1018,7 +1018,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_address_missing'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentCorrupt extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentCorrupt._();
 
 @override String get value => 'verification_document_corrupt';
@@ -1027,7 +1027,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_corrupt'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentCountryNotSupported extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentCountryNotSupported._();
 
 @override String get value => 'verification_document_country_not_supported';
@@ -1036,7 +1036,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_country_not_supported'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentDirectorsMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentDirectorsMismatch._();
 
 @override String get value => 'verification_document_directors_mismatch';
@@ -1045,7 +1045,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_directors_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentDobMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentDobMismatch._();
 
 @override String get value => 'verification_document_dob_mismatch';
@@ -1054,7 +1054,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_dob_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentDuplicateType extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentDuplicateType._();
 
 @override String get value => 'verification_document_duplicate_type';
@@ -1063,7 +1063,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_duplicate_type'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentExpired extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentExpired._();
 
 @override String get value => 'verification_document_expired';
@@ -1072,7 +1072,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_expired'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentFailedCopy extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentFailedCopy._();
 
 @override String get value => 'verification_document_failed_copy';
@@ -1081,7 +1081,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_failed_copy'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentFailedGreyscale extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentFailedGreyscale._();
 
 @override String get value => 'verification_document_failed_greyscale';
@@ -1090,7 +1090,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_failed_greyscale'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentFailedOther extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentFailedOther._();
 
 @override String get value => 'verification_document_failed_other';
@@ -1099,7 +1099,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_failed_other'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentFailedTestMode extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentFailedTestMode._();
 
 @override String get value => 'verification_document_failed_test_mode';
@@ -1108,7 +1108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_failed_test_mode'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentFraudulent extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentFraudulent._();
 
 @override String get value => 'verification_document_fraudulent';
@@ -1117,7 +1117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_fraudulent'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentIdNumberMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentIdNumberMismatch._();
 
 @override String get value => 'verification_document_id_number_mismatch';
@@ -1126,7 +1126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_id_number_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentIdNumberMissing extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentIdNumberMissing._();
 
 @override String get value => 'verification_document_id_number_missing';
@@ -1135,7 +1135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_id_number_missing'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentIncomplete extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentIncomplete._();
 
 @override String get value => 'verification_document_incomplete';
@@ -1144,7 +1144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_incomplete'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentInvalid extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentInvalid._();
 
 @override String get value => 'verification_document_invalid';
@@ -1153,7 +1153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_invalid'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentIssueOrExpiryDateMissing extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentIssueOrExpiryDateMissing._();
 
 @override String get value => 'verification_document_issue_or_expiry_date_missing';
@@ -1162,7 +1162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_issue_or_expiry_date_missing'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentManipulated extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentManipulated._();
 
 @override String get value => 'verification_document_manipulated';
@@ -1171,7 +1171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_manipulated'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentMissingBack extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentMissingBack._();
 
 @override String get value => 'verification_document_missing_back';
@@ -1180,7 +1180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_missing_back'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentMissingFront extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentMissingFront._();
 
 @override String get value => 'verification_document_missing_front';
@@ -1189,7 +1189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_missing_front'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentNameMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentNameMismatch._();
 
 @override String get value => 'verification_document_name_mismatch';
@@ -1198,7 +1198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_name_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentNameMissing extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentNameMissing._();
 
 @override String get value => 'verification_document_name_missing';
@@ -1207,7 +1207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_name_missing'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentNationalityMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentNationalityMismatch._();
 
 @override String get value => 'verification_document_nationality_mismatch';
@@ -1216,7 +1216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_nationality_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentNotReadable extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentNotReadable._();
 
 @override String get value => 'verification_document_not_readable';
@@ -1225,7 +1225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_not_readable'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentNotSigned extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentNotSigned._();
 
 @override String get value => 'verification_document_not_signed';
@@ -1234,7 +1234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_not_signed'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentNotUploaded extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentNotUploaded._();
 
 @override String get value => 'verification_document_not_uploaded';
@@ -1243,7 +1243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_not_uploaded'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentPhotoMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentPhotoMismatch._();
 
 @override String get value => 'verification_document_photo_mismatch';
@@ -1252,7 +1252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_photo_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentTooLarge extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentTooLarge._();
 
 @override String get value => 'verification_document_too_large';
@@ -1261,7 +1261,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_too_large'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationDocumentTypeNotSupported extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationDocumentTypeNotSupported._();
 
 @override String get value => 'verification_document_type_not_supported';
@@ -1270,7 +1270,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_document_type_not_supported'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationExtraneousDirectors extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationExtraneousDirectors._();
 
 @override String get value => 'verification_extraneous_directors';
@@ -1279,7 +1279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_extraneous_directors'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedAddressMatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedAddressMatch._();
 
 @override String get value => 'verification_failed_address_match';
@@ -1288,7 +1288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_address_match'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedAuthorizerAuthority extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedAuthorizerAuthority._();
 
 @override String get value => 'verification_failed_authorizer_authority';
@@ -1297,7 +1297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_authorizer_authority'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedBusinessIecNumber extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedBusinessIecNumber._();
 
 @override String get value => 'verification_failed_business_iec_number';
@@ -1306,7 +1306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_business_iec_number'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedDocumentMatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedDocumentMatch._();
 
 @override String get value => 'verification_failed_document_match';
@@ -1315,7 +1315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_document_match'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedIdNumberMatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedIdNumberMatch._();
 
 @override String get value => 'verification_failed_id_number_match';
@@ -1324,7 +1324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_id_number_match'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedKeyedIdentity extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedKeyedIdentity._();
 
 @override String get value => 'verification_failed_keyed_identity';
@@ -1333,7 +1333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_keyed_identity'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedKeyedMatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedKeyedMatch._();
 
 @override String get value => 'verification_failed_keyed_match';
@@ -1342,7 +1342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_keyed_match'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedNameMatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedNameMatch._();
 
 @override String get value => 'verification_failed_name_match';
@@ -1351,7 +1351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_name_match'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedOther extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedOther._();
 
 @override String get value => 'verification_failed_other';
@@ -1360,7 +1360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_other'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedRepresentativeAuthority extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedRepresentativeAuthority._();
 
 @override String get value => 'verification_failed_representative_authority';
@@ -1369,7 +1369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_representative_authority'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedResidentialAddress extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedResidentialAddress._();
 
 @override String get value => 'verification_failed_residential_address';
@@ -1378,7 +1378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_residential_address'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedTaxIdMatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedTaxIdMatch._();
 
 @override String get value => 'verification_failed_tax_id_match';
@@ -1387,7 +1387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_tax_id_match'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationFailedTaxIdNotIssued extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationFailedTaxIdNotIssued._();
 
 @override String get value => 'verification_failed_tax_id_not_issued';
@@ -1396,7 +1396,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_failed_tax_id_not_issued'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationLegalEntityStructureMismatch extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationLegalEntityStructureMismatch._();
 
 @override String get value => 'verification_legal_entity_structure_mismatch';
@@ -1405,7 +1405,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_legal_entity_structure_mismatch'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationMissingDirectors extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationMissingDirectors._();
 
 @override String get value => 'verification_missing_directors';
@@ -1414,7 +1414,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_missing_directors'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationMissingExecutives extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationMissingExecutives._();
 
 @override String get value => 'verification_missing_executives';
@@ -1423,7 +1423,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_missing_executives'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationMissingOwners extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationMissingOwners._();
 
 @override String get value => 'verification_missing_owners';
@@ -1432,7 +1432,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_missing_owners'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationRejectedOwnershipExemptionReason extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationRejectedOwnershipExemptionReason._();
 
 @override String get value => 'verification_rejected_ownership_exemption_reason';
@@ -1441,7 +1441,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_rejected_ownership_exemption_reason'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationRequiresAdditionalMemorandumOfAssociations extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationRequiresAdditionalMemorandumOfAssociations._();
 
 @override String get value => 'verification_requires_additional_memorandum_of_associations';
@@ -1450,7 +1450,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_requires_additional_memorandum_of_associations'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationRequiresAdditionalProofOfRegistration extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationRequiresAdditionalProofOfRegistration._();
 
 @override String get value => 'verification_requires_additional_proof_of_registration';
@@ -1459,7 +1459,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_requires_additional_proof_of_registration'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$verificationSupportability extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$verificationSupportability._();
 
 @override String get value => 'verification_supportability';
@@ -1468,7 +1468,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => 'verification_supportability'.hashCode;
 
- }
+}
 @immutable final class AccountRequirementsErrorCode$Unknown extends AccountRequirementsErrorCode {const AccountRequirementsErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -1478,15 +1478,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? external
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class AccountRequirementsError {const AccountRequirementsError({required this.code, required this.reason, required this.requirement, });
 
-factory AccountRequirementsError.fromJson(Map<String, dynamic> json) { return AccountRequirementsError(
+factory AccountRequirementsError.fromJson(Map<String, dynamic> json) {return AccountRequirementsError(
   code: AccountRequirementsErrorCode.fromJson(json['code'] as String),
   reason: json['reason'] as String,
   requirement: json['requirement'] as String,
-); }
+);}
 
 /// The code for the type of error.
 final AccountRequirementsErrorCode code;
@@ -1497,24 +1497,24 @@ final String reason;
 /// The specific user onboarding requirement field (in the requirements hash) that needs to be resolved.
 final String requirement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'reason': reason,
   'requirement': requirement,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
       json.containsKey('reason') && json['reason'] is String &&
-      json.containsKey('requirement') && json['requirement'] is String; } 
+      json.containsKey('requirement') && json['requirement'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (reason.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
 if (requirement.runes.length > 5000) { errors.add('requirement: length must be <= 5000'); }
-return errors; } 
-AccountRequirementsError copyWith({AccountRequirementsErrorCode? code, String? reason, String? requirement, }) { return AccountRequirementsError(
+return errors;}
+AccountRequirementsError copyWith({AccountRequirementsErrorCode? code, String? reason, String? requirement, }) {return AccountRequirementsError(
   code: code ?? this.code,
   reason: reason ?? this.reason,
   requirement: requirement ?? this.requirement,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRequirementsError &&
           code == other.code &&
@@ -1525,4 +1525,4 @@ AccountRequirementsError copyWith({AccountRequirementsErrorCode? code, String? r
 
 @override String toString() => 'AccountRequirementsError(code: $code, reason: $reason, requirement: $requirement)';
 
- }
+}

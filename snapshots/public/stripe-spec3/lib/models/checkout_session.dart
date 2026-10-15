@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_mode.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_payment_link.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_setup_intent.dart';import 'package:pub_stripe_spec3/models/checkout_session/redirect_on_completion.dart';import 'package:pub_stripe_spec3/models/checkout_session_payment_method_options.dart';import 'package:pub_stripe_spec3/models/checkout_session_wallet_options.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_method_config_biz_payment_method_configuration_details.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_adaptive_pricing.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_after_expiration.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_automatic_tax.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_branding_settings.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_collected_information.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_consent.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_consent_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_currency_conversion.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_text.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_customer_details.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_discount.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_invoice_creation.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_name_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_optional_item.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_permissions.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_phone_number_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_saved_payment_method_options.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_cost.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_option.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_tax_id_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_total_details.dart';/// Describes whether Checkout should collect the customer's billing address. Defaults to `auto`.
 sealed class CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection();
 
-factory CheckoutSessionBillingAddressCollection.fromJson(String json) { return switch (json) {
+factory CheckoutSessionBillingAddressCollection.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'required' => $required,
   _ => CheckoutSessionBillingAddressCollection$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionBillingAddressCollection auto = CheckoutSessionBillingAddressCollection$auto._();
 
@@ -17,30 +17,30 @@ static const CheckoutSessionBillingAddressCollection $required = CheckoutSession
 static const List<CheckoutSessionBillingAddressCollection> values = [auto, $required];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   'required' => r'$required',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionBillingAddressCollection$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionBillingAddressCollection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() $required, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() $required, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionBillingAddressCollection$auto() => auto(),
       CheckoutSessionBillingAddressCollection$$required() => $required(),
       CheckoutSessionBillingAddressCollection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $required, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $required, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionBillingAddressCollection$auto() => auto != null ? auto() : orElse(value),
       CheckoutSessionBillingAddressCollection$$required() => $required != null ? $required() : orElse(value),
       CheckoutSessionBillingAddressCollection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionBillingAddressCollection($value)';
 
- }
+}
 @immutable final class CheckoutSessionBillingAddressCollection$auto extends CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection$auto._();
 
 @override String get value => 'auto';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionBillingAddressCollection$$required extends CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection$$required._();
 
 @override String get value => 'required';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'required'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionBillingAddressCollection$Unknown extends CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection$Unknown(this.value);
 
 @override final String value;
@@ -68,15 +68,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure whether a Checkout Session creates a Customer when the Checkout Session completes.
 sealed class CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation();
 
-factory CheckoutSessionCustomerCreation.fromJson(String json) { return switch (json) {
+factory CheckoutSessionCustomerCreation.fromJson(String json) {return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
   _ => CheckoutSessionCustomerCreation$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionCustomerCreation always = CheckoutSessionCustomerCreation$always._();
 
@@ -85,30 +85,30 @@ static const CheckoutSessionCustomerCreation ifRequired = CheckoutSessionCustome
 static const List<CheckoutSessionCustomerCreation> values = [always, ifRequired];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'always' => 'always',
   'if_required' => 'ifRequired',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionCustomerCreation$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionCustomerCreation$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() always, required W Function() ifRequired, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() always, required W Function() ifRequired, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionCustomerCreation$always() => always(),
       CheckoutSessionCustomerCreation$ifRequired() => ifRequired(),
       CheckoutSessionCustomerCreation$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? ifRequired, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? ifRequired, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionCustomerCreation$always() => always != null ? always() : orElse(value),
       CheckoutSessionCustomerCreation$ifRequired() => ifRequired != null ? ifRequired() : orElse(value),
       CheckoutSessionCustomerCreation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionCustomerCreation($value)';
 
- }
+}
 @immutable final class CheckoutSessionCustomerCreation$always extends CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation$always._();
 
 @override String get value => 'always';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'always'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionCustomerCreation$ifRequired extends CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation$ifRequired._();
 
 @override String get value => 'if_required';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'if_required'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionCustomerCreation$Unknown extends CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation$Unknown(this.value);
 
 @override final String value;
@@ -136,11 +136,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
 sealed class CheckoutSessionLocale {const CheckoutSessionLocale();
 
-factory CheckoutSessionLocale.fromJson(String json) { return switch (json) {
+factory CheckoutSessionLocale.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'bg' => bg,
   'cs' => cs,
@@ -183,7 +183,7 @@ factory CheckoutSessionLocale.fromJson(String json) { return switch (json) {
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
   _ => CheckoutSessionLocale$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionLocale auto = CheckoutSessionLocale$auto._();
 
@@ -270,9 +270,9 @@ static const CheckoutSessionLocale zhTw = CheckoutSessionLocale$zhTw._();
 static const List<CheckoutSessionLocale> values = [auto, bg, cs, da, de, el, en, enGb, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   'bg' => 'bg',
   'cs' => 'cs',
@@ -315,11 +315,11 @@ String get name { return switch (value) {
   'zh-HK' => 'zhHk',
   'zh-TW' => 'zhTw',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionLocale$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionLocale$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enGb, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enGb, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionLocale$auto() => auto(),
       CheckoutSessionLocale$bg() => bg(),
       CheckoutSessionLocale$cs() => cs(),
@@ -362,9 +362,9 @@ W when<W>({required W Function() auto, required W Function() bg, required W Func
       CheckoutSessionLocale$zhHk() => zhHk(),
       CheckoutSessionLocale$zhTw() => zhTw(),
       CheckoutSessionLocale$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enGb, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enGb, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionLocale$auto() => auto != null ? auto() : orElse(value),
       CheckoutSessionLocale$bg() => bg != null ? bg() : orElse(value),
       CheckoutSessionLocale$cs() => cs != null ? cs() : orElse(value),
@@ -407,10 +407,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
       CheckoutSessionLocale$zhHk() => zhHk != null ? zhHk() : orElse(value),
       CheckoutSessionLocale$zhTw() => zhTw != null ? zhTw() : orElse(value),
       CheckoutSessionLocale$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionLocale($value)';
 
- }
+}
 @immutable final class CheckoutSessionLocale$auto extends CheckoutSessionLocale {const CheckoutSessionLocale$auto._();
 
 @override String get value => 'auto';
@@ -419,7 +419,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$bg extends CheckoutSessionLocale {const CheckoutSessionLocale$bg._();
 
 @override String get value => 'bg';
@@ -428,7 +428,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'bg'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$cs extends CheckoutSessionLocale {const CheckoutSessionLocale$cs._();
 
 @override String get value => 'cs';
@@ -437,7 +437,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'cs'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$da extends CheckoutSessionLocale {const CheckoutSessionLocale$da._();
 
 @override String get value => 'da';
@@ -446,7 +446,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'da'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$de extends CheckoutSessionLocale {const CheckoutSessionLocale$de._();
 
 @override String get value => 'de';
@@ -455,7 +455,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'de'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$el extends CheckoutSessionLocale {const CheckoutSessionLocale$el._();
 
 @override String get value => 'el';
@@ -464,7 +464,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'el'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$en extends CheckoutSessionLocale {const CheckoutSessionLocale$en._();
 
 @override String get value => 'en';
@@ -473,7 +473,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$enGb extends CheckoutSessionLocale {const CheckoutSessionLocale$enGb._();
 
 @override String get value => 'en-GB';
@@ -482,7 +482,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'en-GB'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$es extends CheckoutSessionLocale {const CheckoutSessionLocale$es._();
 
 @override String get value => 'es';
@@ -491,7 +491,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'es'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$es419 extends CheckoutSessionLocale {const CheckoutSessionLocale$es419._();
 
 @override String get value => 'es-419';
@@ -500,7 +500,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'es-419'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$et extends CheckoutSessionLocale {const CheckoutSessionLocale$et._();
 
 @override String get value => 'et';
@@ -509,7 +509,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'et'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$fi extends CheckoutSessionLocale {const CheckoutSessionLocale$fi._();
 
 @override String get value => 'fi';
@@ -518,7 +518,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fi'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$fil extends CheckoutSessionLocale {const CheckoutSessionLocale$fil._();
 
 @override String get value => 'fil';
@@ -527,7 +527,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fil'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$fr extends CheckoutSessionLocale {const CheckoutSessionLocale$fr._();
 
 @override String get value => 'fr';
@@ -536,7 +536,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fr'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$frCa extends CheckoutSessionLocale {const CheckoutSessionLocale$frCa._();
 
 @override String get value => 'fr-CA';
@@ -545,7 +545,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'fr-CA'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$hr extends CheckoutSessionLocale {const CheckoutSessionLocale$hr._();
 
 @override String get value => 'hr';
@@ -554,7 +554,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'hr'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$hu extends CheckoutSessionLocale {const CheckoutSessionLocale$hu._();
 
 @override String get value => 'hu';
@@ -563,7 +563,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'hu'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$id extends CheckoutSessionLocale {const CheckoutSessionLocale$id._();
 
 @override String get value => 'id';
@@ -572,7 +572,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'id'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$it extends CheckoutSessionLocale {const CheckoutSessionLocale$it._();
 
 @override String get value => 'it';
@@ -581,7 +581,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'it'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$ja extends CheckoutSessionLocale {const CheckoutSessionLocale$ja._();
 
 @override String get value => 'ja';
@@ -590,7 +590,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ja'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$ko extends CheckoutSessionLocale {const CheckoutSessionLocale$ko._();
 
 @override String get value => 'ko';
@@ -599,7 +599,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ko'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$lt extends CheckoutSessionLocale {const CheckoutSessionLocale$lt._();
 
 @override String get value => 'lt';
@@ -608,7 +608,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'lt'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$lv extends CheckoutSessionLocale {const CheckoutSessionLocale$lv._();
 
 @override String get value => 'lv';
@@ -617,7 +617,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'lv'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$ms extends CheckoutSessionLocale {const CheckoutSessionLocale$ms._();
 
 @override String get value => 'ms';
@@ -626,7 +626,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ms'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$mt extends CheckoutSessionLocale {const CheckoutSessionLocale$mt._();
 
 @override String get value => 'mt';
@@ -635,7 +635,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'mt'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$nb extends CheckoutSessionLocale {const CheckoutSessionLocale$nb._();
 
 @override String get value => 'nb';
@@ -644,7 +644,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'nb'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$nl extends CheckoutSessionLocale {const CheckoutSessionLocale$nl._();
 
 @override String get value => 'nl';
@@ -653,7 +653,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'nl'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$pl extends CheckoutSessionLocale {const CheckoutSessionLocale$pl._();
 
 @override String get value => 'pl';
@@ -662,7 +662,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pl'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$pt extends CheckoutSessionLocale {const CheckoutSessionLocale$pt._();
 
 @override String get value => 'pt';
@@ -671,7 +671,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pt'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$ptBr extends CheckoutSessionLocale {const CheckoutSessionLocale$ptBr._();
 
 @override String get value => 'pt-BR';
@@ -680,7 +680,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pt-BR'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$ro extends CheckoutSessionLocale {const CheckoutSessionLocale$ro._();
 
 @override String get value => 'ro';
@@ -689,7 +689,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ro'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$ru extends CheckoutSessionLocale {const CheckoutSessionLocale$ru._();
 
 @override String get value => 'ru';
@@ -698,7 +698,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'ru'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$sk extends CheckoutSessionLocale {const CheckoutSessionLocale$sk._();
 
 @override String get value => 'sk';
@@ -707,7 +707,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sk'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$sl extends CheckoutSessionLocale {const CheckoutSessionLocale$sl._();
 
 @override String get value => 'sl';
@@ -716,7 +716,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sl'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$sv extends CheckoutSessionLocale {const CheckoutSessionLocale$sv._();
 
 @override String get value => 'sv';
@@ -725,7 +725,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'sv'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$th extends CheckoutSessionLocale {const CheckoutSessionLocale$th._();
 
 @override String get value => 'th';
@@ -734,7 +734,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'th'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$tr extends CheckoutSessionLocale {const CheckoutSessionLocale$tr._();
 
 @override String get value => 'tr';
@@ -743,7 +743,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'tr'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$vi extends CheckoutSessionLocale {const CheckoutSessionLocale$vi._();
 
 @override String get value => 'vi';
@@ -752,7 +752,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'vi'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$zh extends CheckoutSessionLocale {const CheckoutSessionLocale$zh._();
 
 @override String get value => 'zh';
@@ -761,7 +761,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$zhHk extends CheckoutSessionLocale {const CheckoutSessionLocale$zhHk._();
 
 @override String get value => 'zh-HK';
@@ -770,7 +770,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh-HK'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$zhTw extends CheckoutSessionLocale {const CheckoutSessionLocale$zhTw._();
 
 @override String get value => 'zh-TW';
@@ -779,7 +779,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'zh-TW'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionLocale$Unknown extends CheckoutSessionLocale {const CheckoutSessionLocale$Unknown(this.value);
 
 @override final String value;
@@ -789,41 +789,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class CheckoutSessionObject {const CheckoutSessionObject();
 
-factory CheckoutSessionObject.fromJson(String json) { return switch (json) {
+factory CheckoutSessionObject.fromJson(String json) {return switch (json) {
   'checkout.session' => checkoutSession,
   _ => CheckoutSessionObject$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionObject checkoutSession = CheckoutSessionObject$checkoutSession._();
 
 static const List<CheckoutSessionObject> values = [checkoutSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'checkout.session' => 'checkoutSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionObject$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() checkoutSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() checkoutSession, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionObject$checkoutSession() => checkoutSession(),
       CheckoutSessionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? checkoutSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checkoutSession, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionObject$checkoutSession() => checkoutSession != null ? checkoutSession() : orElse(value),
       CheckoutSessionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionObject($value)';
 
- }
+}
 @immutable final class CheckoutSessionObject$checkoutSession extends CheckoutSessionObject {const CheckoutSessionObject$checkoutSession._();
 
 @override String get value => 'checkout.session';
@@ -832,7 +832,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checkout
 
 @override int get hashCode => 'checkout.session'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionObject$Unknown extends CheckoutSessionObject {const CheckoutSessionObject$Unknown(this.value);
 
 @override final String value;
@@ -842,15 +842,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checkout
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Where the user is coming from. This informs the optimizations that are applied to the session.
 sealed class CheckoutSessionOriginContext {const CheckoutSessionOriginContext();
 
-factory CheckoutSessionOriginContext.fromJson(String json) { return switch (json) {
+factory CheckoutSessionOriginContext.fromJson(String json) {return switch (json) {
   'mobile_app' => mobileApp,
   'web' => web,
   _ => CheckoutSessionOriginContext$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionOriginContext mobileApp = CheckoutSessionOriginContext$mobileApp._();
 
@@ -859,30 +859,30 @@ static const CheckoutSessionOriginContext web = CheckoutSessionOriginContext$web
 static const List<CheckoutSessionOriginContext> values = [mobileApp, web];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'mobile_app' => 'mobileApp',
   'web' => 'web',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionOriginContext$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionOriginContext$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mobileApp, required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mobileApp, required W Function() web, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionOriginContext$mobileApp() => mobileApp(),
       CheckoutSessionOriginContext$web() => web(),
       CheckoutSessionOriginContext$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileApp, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileApp, W Function()? web, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionOriginContext$mobileApp() => mobileApp != null ? mobileApp() : orElse(value),
       CheckoutSessionOriginContext$web() => web != null ? web() : orElse(value),
       CheckoutSessionOriginContext$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionOriginContext($value)';
 
- }
+}
 @immutable final class CheckoutSessionOriginContext$mobileApp extends CheckoutSessionOriginContext {const CheckoutSessionOriginContext$mobileApp._();
 
 @override String get value => 'mobile_app';
@@ -891,7 +891,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileAp
 
 @override int get hashCode => 'mobile_app'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionOriginContext$web extends CheckoutSessionOriginContext {const CheckoutSessionOriginContext$web._();
 
 @override String get value => 'web';
@@ -900,7 +900,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileAp
 
 @override int get hashCode => 'web'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionOriginContext$Unknown extends CheckoutSessionOriginContext {const CheckoutSessionOriginContext$Unknown(this.value);
 
 @override final String value;
@@ -910,15 +910,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileAp
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Configure whether a Checkout Session should collect a payment method. Defaults to `always`.
 sealed class CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection();
 
-factory CheckoutSessionPaymentMethodCollection.fromJson(String json) { return switch (json) {
+factory CheckoutSessionPaymentMethodCollection.fromJson(String json) {return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
   _ => CheckoutSessionPaymentMethodCollection$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionPaymentMethodCollection always = CheckoutSessionPaymentMethodCollection$always._();
 
@@ -927,30 +927,30 @@ static const CheckoutSessionPaymentMethodCollection ifRequired = CheckoutSession
 static const List<CheckoutSessionPaymentMethodCollection> values = [always, ifRequired];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'always' => 'always',
   'if_required' => 'ifRequired',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionPaymentMethodCollection$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionPaymentMethodCollection$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() always, required W Function() ifRequired, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() always, required W Function() ifRequired, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionPaymentMethodCollection$always() => always(),
       CheckoutSessionPaymentMethodCollection$ifRequired() => ifRequired(),
       CheckoutSessionPaymentMethodCollection$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? ifRequired, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? ifRequired, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionPaymentMethodCollection$always() => always != null ? always() : orElse(value),
       CheckoutSessionPaymentMethodCollection$ifRequired() => ifRequired != null ? ifRequired() : orElse(value),
       CheckoutSessionPaymentMethodCollection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionPaymentMethodCollection($value)';
 
- }
+}
 @immutable final class CheckoutSessionPaymentMethodCollection$always extends CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection$always._();
 
 @override String get value => 'always';
@@ -959,7 +959,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'always'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionPaymentMethodCollection$ifRequired extends CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection$ifRequired._();
 
 @override String get value => 'if_required';
@@ -968,7 +968,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => 'if_required'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionPaymentMethodCollection$Unknown extends CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection$Unknown(this.value);
 
 @override final String value;
@@ -978,17 +978,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The payment status of the Checkout Session, one of `paid`, `unpaid`, or `no_payment_required`.
 /// You can use this value to decide when to fulfill your customer's order.
 sealed class PaymentStatus {const PaymentStatus();
 
-factory PaymentStatus.fromJson(String json) { return switch (json) {
+factory PaymentStatus.fromJson(String json) {return switch (json) {
   'no_payment_required' => noPaymentRequired,
   'paid' => paid,
   'unpaid' => unpaid,
   _ => PaymentStatus$Unknown(json),
-}; }
+};}
 
 static const PaymentStatus noPaymentRequired = PaymentStatus$noPaymentRequired._();
 
@@ -999,33 +999,33 @@ static const PaymentStatus unpaid = PaymentStatus$unpaid._();
 static const List<PaymentStatus> values = [noPaymentRequired, paid, unpaid];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'no_payment_required' => 'noPaymentRequired',
   'paid' => 'paid',
   'unpaid' => 'unpaid',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentStatus$Unknown; } 
+bool get isUnknown {return this is PaymentStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() noPaymentRequired, required W Function() paid, required W Function() unpaid, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() noPaymentRequired, required W Function() paid, required W Function() unpaid, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentStatus$noPaymentRequired() => noPaymentRequired(),
       PaymentStatus$paid() => paid(),
       PaymentStatus$unpaid() => unpaid(),
       PaymentStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPaymentRequired, W Function()? paid, W Function()? unpaid, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPaymentRequired, W Function()? paid, W Function()? unpaid, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentStatus$noPaymentRequired() => noPaymentRequired != null ? noPaymentRequired() : orElse(value),
       PaymentStatus$paid() => paid != null ? paid() : orElse(value),
       PaymentStatus$unpaid() => unpaid != null ? unpaid() : orElse(value),
       PaymentStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentStatus($value)';
 
- }
+}
 @immutable final class PaymentStatus$noPaymentRequired extends PaymentStatus {const PaymentStatus$noPaymentRequired._();
 
 @override String get value => 'no_payment_required';
@@ -1034,7 +1034,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPaymen
 
 @override int get hashCode => 'no_payment_required'.hashCode;
 
- }
+}
 @immutable final class PaymentStatus$paid extends PaymentStatus {const PaymentStatus$paid._();
 
 @override String get value => 'paid';
@@ -1043,7 +1043,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPaymen
 
 @override int get hashCode => 'paid'.hashCode;
 
- }
+}
 @immutable final class PaymentStatus$unpaid extends PaymentStatus {const PaymentStatus$unpaid._();
 
 @override String get value => 'unpaid';
@@ -1052,7 +1052,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPaymen
 
 @override int get hashCode => 'unpaid'.hashCode;
 
- }
+}
 @immutable final class PaymentStatus$Unknown extends PaymentStatus {const PaymentStatus$Unknown(this.value);
 
 @override final String value;
@@ -1062,16 +1062,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPaymen
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the Checkout Session, one of `open`, `complete`, or `expired`.
 sealed class CheckoutSessionStatus {const CheckoutSessionStatus();
 
-factory CheckoutSessionStatus.fromJson(String json) { return switch (json) {
+factory CheckoutSessionStatus.fromJson(String json) {return switch (json) {
   'complete' => complete,
   'expired' => expired,
   'open' => open,
   _ => CheckoutSessionStatus$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionStatus complete = CheckoutSessionStatus$complete._();
 
@@ -1082,33 +1082,33 @@ static const CheckoutSessionStatus open = CheckoutSessionStatus$open._();
 static const List<CheckoutSessionStatus> values = [complete, expired, open];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'complete' => 'complete',
   'expired' => 'expired',
   'open' => 'open',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionStatus$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() complete, required W Function() expired, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() complete, required W Function() expired, required W Function() open, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionStatus$complete() => complete(),
       CheckoutSessionStatus$expired() => expired(),
       CheckoutSessionStatus$open() => open(),
       CheckoutSessionStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? expired, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? expired, W Function()? open, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionStatus$complete() => complete != null ? complete() : orElse(value),
       CheckoutSessionStatus$expired() => expired != null ? expired() : orElse(value),
       CheckoutSessionStatus$open() => open != null ? open() : orElse(value),
       CheckoutSessionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionStatus($value)';
 
- }
+}
 @immutable final class CheckoutSessionStatus$complete extends CheckoutSessionStatus {const CheckoutSessionStatus$complete._();
 
 @override String get value => 'complete';
@@ -1117,7 +1117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'complete'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionStatus$expired extends CheckoutSessionStatus {const CheckoutSessionStatus$expired._();
 
 @override String get value => 'expired';
@@ -1126,7 +1126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionStatus$open extends CheckoutSessionStatus {const CheckoutSessionStatus$open._();
 
 @override String get value => 'open';
@@ -1135,7 +1135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionStatus$Unknown extends CheckoutSessionStatus {const CheckoutSessionStatus$Unknown(this.value);
 
 @override final String value;
@@ -1145,20 +1145,20 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Describes the type of transaction being performed by Checkout in order to customize
 /// relevant text on the page, such as the submit button. `submit_type` can only be
 /// specified on Checkout Sessions in `payment` mode. If blank or `auto`, `pay` is used.
 sealed class CheckoutSessionSubmitType {const CheckoutSessionSubmitType();
 
-factory CheckoutSessionSubmitType.fromJson(String json) { return switch (json) {
+factory CheckoutSessionSubmitType.fromJson(String json) {return switch (json) {
   'auto' => auto,
   'book' => book,
   'donate' => donate,
   'pay' => pay,
   'subscribe' => subscribe,
   _ => CheckoutSessionSubmitType$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionSubmitType auto = CheckoutSessionSubmitType$auto._();
 
@@ -1173,39 +1173,39 @@ static const CheckoutSessionSubmitType subscribe = CheckoutSessionSubmitType$sub
 static const List<CheckoutSessionSubmitType> values = [auto, book, donate, pay, subscribe];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'auto' => 'auto',
   'book' => 'book',
   'donate' => 'donate',
   'pay' => 'pay',
   'subscribe' => 'subscribe',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionSubmitType$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionSubmitType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() auto, required W Function() book, required W Function() donate, required W Function() pay, required W Function() subscribe, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() auto, required W Function() book, required W Function() donate, required W Function() pay, required W Function() subscribe, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionSubmitType$auto() => auto(),
       CheckoutSessionSubmitType$book() => book(),
       CheckoutSessionSubmitType$donate() => donate(),
       CheckoutSessionSubmitType$pay() => pay(),
       CheckoutSessionSubmitType$subscribe() => subscribe(),
       CheckoutSessionSubmitType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? book, W Function()? donate, W Function()? pay, W Function()? subscribe, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? book, W Function()? donate, W Function()? pay, W Function()? subscribe, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionSubmitType$auto() => auto != null ? auto() : orElse(value),
       CheckoutSessionSubmitType$book() => book != null ? book() : orElse(value),
       CheckoutSessionSubmitType$donate() => donate != null ? donate() : orElse(value),
       CheckoutSessionSubmitType$pay() => pay != null ? pay() : orElse(value),
       CheckoutSessionSubmitType$subscribe() => subscribe != null ? subscribe() : orElse(value),
       CheckoutSessionSubmitType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionSubmitType($value)';
 
- }
+}
 @immutable final class CheckoutSessionSubmitType$auto extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$auto._();
 
 @override String get value => 'auto';
@@ -1214,7 +1214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'auto'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionSubmitType$book extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$book._();
 
 @override String get value => 'book';
@@ -1223,7 +1223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'book'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionSubmitType$donate extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$donate._();
 
 @override String get value => 'donate';
@@ -1232,7 +1232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'donate'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionSubmitType$pay extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$pay._();
 
 @override String get value => 'pay';
@@ -1241,7 +1241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'pay'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionSubmitType$subscribe extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$subscribe._();
 
 @override String get value => 'subscribe';
@@ -1250,7 +1250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => 'subscribe'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionSubmitType$Unknown extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$Unknown(this.value);
 
 @override final String value;
@@ -1260,16 +1260,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The UI mode of the Session. Defaults to `hosted`.
 sealed class CheckoutSessionUiMode {const CheckoutSessionUiMode();
 
-factory CheckoutSessionUiMode.fromJson(String json) { return switch (json) {
+factory CheckoutSessionUiMode.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'embedded' => embedded,
   'hosted' => hosted,
   _ => CheckoutSessionUiMode$Unknown(json),
-}; }
+};}
 
 static const CheckoutSessionUiMode custom = CheckoutSessionUiMode$custom._();
 
@@ -1280,33 +1280,33 @@ static const CheckoutSessionUiMode hosted = CheckoutSessionUiMode$hosted._();
 static const List<CheckoutSessionUiMode> values = [custom, embedded, hosted];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'custom' => 'custom',
   'embedded' => 'embedded',
   'hosted' => 'hosted',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CheckoutSessionUiMode$Unknown; } 
+bool get isUnknown {return this is CheckoutSessionUiMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() custom, required W Function() embedded, required W Function() hosted, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() custom, required W Function() embedded, required W Function() hosted, required W Function(String value) $unknown, }) {return switch (this) {
       CheckoutSessionUiMode$custom() => custom(),
       CheckoutSessionUiMode$embedded() => embedded(),
       CheckoutSessionUiMode$hosted() => hosted(),
       CheckoutSessionUiMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? embedded, W Function()? hosted, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? embedded, W Function()? hosted, W Function(String value)? $unknown, }) {return switch (this) {
       CheckoutSessionUiMode$custom() => custom != null ? custom() : orElse(value),
       CheckoutSessionUiMode$embedded() => embedded != null ? embedded() : orElse(value),
       CheckoutSessionUiMode$hosted() => hosted != null ? hosted() : orElse(value),
       CheckoutSessionUiMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CheckoutSessionUiMode($value)';
 
- }
+}
 @immutable final class CheckoutSessionUiMode$custom extends CheckoutSessionUiMode {const CheckoutSessionUiMode$custom._();
 
 @override String get value => 'custom';
@@ -1315,7 +1315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'custom'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionUiMode$embedded extends CheckoutSessionUiMode {const CheckoutSessionUiMode$embedded._();
 
 @override String get value => 'embedded';
@@ -1324,7 +1324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'embedded'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionUiMode$hosted extends CheckoutSessionUiMode {const CheckoutSessionUiMode$hosted._();
 
 @override String get value => 'hosted';
@@ -1333,7 +1333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'hosted'.hashCode;
 
- }
+}
 @immutable final class CheckoutSessionUiMode$Unknown extends CheckoutSessionUiMode {const CheckoutSessionUiMode$Unknown(this.value);
 
 @override final String value;
@@ -1343,7 +1343,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Checkout Session represents your customer's session as they pay for
 /// one-time purchases or subscriptions through [Checkout](https://docs.stripe.com/payments/checkout)
 /// or [Payment Links](https://docs.stripe.com/payments/payment-links). We recommend creating a
@@ -1360,7 +1360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 /// Related guide: [Checkout quickstart](https://docs.stripe.com/checkout/quickstart)
 @immutable final class CheckoutSession {const CheckoutSession({required this.shippingOptions, required this.automaticTax, required this.created, required this.customFields, required this.customText, required this.expiresAt, required this.id, required this.livemode, required this.mode, required this.object, required this.paymentMethodTypes, required this.paymentStatus, this.customerCreation = const Omittable.absent(), this.consentCollection = const Omittable.absent(), this.allowPromotionCodes = const Omittable.absent(), this.currency = const Omittable.absent(), this.currencyConversion = const Omittable.absent(), this.amountSubtotal = const Omittable.absent(), this.amountTotal = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.adaptivePricing = const Omittable.absent(), this.customerDetails = const Omittable.absent(), this.customerEmail = const Omittable.absent(), this.discounts = const Omittable.absent(), this.excludedPaymentMethodTypes, this.afterExpiration = const Omittable.absent(), this.billingAddressCollection = const Omittable.absent(), this.invoice = const Omittable.absent(), this.invoiceCreation = const Omittable.absent(), this.lineItems, this.brandingSettings, this.locale = const Omittable.absent(), this.metadata = const Omittable.absent(), this.cancelUrl = const Omittable.absent(), this.nameCollection, this.clientReferenceId = const Omittable.absent(), this.optionalItems = const Omittable.absent(), this.originContext = const Omittable.absent(), this.paymentIntent = const Omittable.absent(), this.paymentLink = const Omittable.absent(), this.paymentMethodCollection = const Omittable.absent(), this.paymentMethodConfigurationDetails = const Omittable.absent(), this.walletOptions = const Omittable.absent(), this.clientSecret = const Omittable.absent(), this.collectedInformation = const Omittable.absent(), this.permissions = const Omittable.absent(), this.phoneNumberCollection, this.presentmentDetails, this.recoveredFrom = const Omittable.absent(), this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions = const Omittable.absent(), this.setupIntent = const Omittable.absent(), this.shippingAddressCollection = const Omittable.absent(), this.shippingCost = const Omittable.absent(), this.consent = const Omittable.absent(), this.status = const Omittable.absent(), this.submitType = const Omittable.absent(), this.subscription = const Omittable.absent(), this.successUrl = const Omittable.absent(), this.taxIdCollection, this.totalDetails = const Omittable.absent(), this.uiMode = const Omittable.absent(), this.url = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), });
 
-factory CheckoutSession.fromJson(Map<String, dynamic> json) { return CheckoutSession(
+factory CheckoutSession.fromJson(Map<String, dynamic> json) {return CheckoutSession(
   adaptivePricing: json.containsKey('adaptive_pricing') ? Omittable(json['adaptive_pricing'] != null ? PaymentPagesCheckoutSessionAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   afterExpiration: json.containsKey('after_expiration') ? Omittable(json['after_expiration'] != null ? PaymentPagesCheckoutSessionAfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   allowPromotionCodes: json.containsKey('allow_promotion_codes') ? Omittable(json['allow_promotion_codes'] as bool?) : const Omittable.absent(),
@@ -1427,7 +1427,7 @@ factory CheckoutSession.fromJson(Map<String, dynamic> json) { return CheckoutSes
   uiMode: json.containsKey('ui_mode') ? Omittable(json['ui_mode'] != null ? CheckoutSessionUiMode.fromJson(json['ui_mode'] as String) : null) : const Omittable.absent(),
   url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
   walletOptions: json.containsKey('wallet_options') ? Omittable(json['wallet_options'] != null ? CheckoutSessionWalletOptions.fromJson(json['wallet_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing).
 final Omittable<PaymentPagesCheckoutSessionAdaptivePricing?> adaptivePricing;
@@ -1639,7 +1639,7 @@ final Omittable<String?> url;
 /// Wallet-specific configuration for this Checkout Session.
 final Omittable<CheckoutSessionWalletOptions?> walletOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adaptivePricing.isPresent) 'adaptive_pricing': adaptivePricing.value?.toJson(),
   if (afterExpiration.isPresent) 'after_expiration': afterExpiration.value?.toJson(),
   if (allowPromotionCodes.isPresent) 'allow_promotion_codes': allowPromotionCodes.value,
@@ -1706,8 +1706,8 @@ Map<String, dynamic> toJson() { return {
   if (uiMode.isPresent) 'ui_mode': uiMode.value?.toJson(),
   if (url.isPresent) 'url': url.value,
   if (walletOptions.isPresent) 'wallet_options': walletOptions.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_tax') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('custom_fields') &&
       json.containsKey('custom_text') &&
@@ -1718,9 +1718,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autom
       json.containsKey('object') &&
       json.containsKey('payment_method_types') &&
       json.containsKey('payment_status') &&
-      json.containsKey('shipping_options'); } 
+      json.containsKey('shipping_options');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final cancelUrl$ = cancelUrl.value;
 if (cancelUrl$ != null) {
   if (cancelUrl$.runes.length > 5000) { errors.add('cancelUrl: length must be <= 5000'); }
@@ -1758,8 +1758,8 @@ final url$ = url.value;
 if (url$ != null) {
   if (url$.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
-return errors; } 
-CheckoutSession copyWith({Omittable<PaymentPagesCheckoutSessionAdaptivePricing?>? adaptivePricing, Omittable<PaymentPagesCheckoutSessionAfterExpiration?>? afterExpiration, Omittable<bool?>? allowPromotionCodes, Omittable<int?>? amountSubtotal, Omittable<int?>? amountTotal, PaymentPagesCheckoutSessionAutomaticTax? automaticTax, Omittable<CheckoutSessionBillingAddressCollection?>? billingAddressCollection, PaymentPagesCheckoutSessionBrandingSettings? Function()? brandingSettings, Omittable<String?>? cancelUrl, Omittable<String?>? clientReferenceId, Omittable<String?>? clientSecret, Omittable<PaymentPagesCheckoutSessionCollectedInformation?>? collectedInformation, Omittable<PaymentPagesCheckoutSessionConsent?>? consent, Omittable<PaymentPagesCheckoutSessionConsentCollection?>? consentCollection, int? created, Omittable<String?>? currency, Omittable<PaymentPagesCheckoutSessionCurrencyConversion?>? currencyConversion, List<PaymentPagesCheckoutSessionCustomFields>? customFields, PaymentPagesCheckoutSessionCustomText? customText, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<CheckoutSessionCustomerCreation?>? customerCreation, Omittable<PaymentPagesCheckoutSessionCustomerDetails?>? customerDetails, Omittable<String?>? customerEmail, Omittable<List<PaymentPagesCheckoutSessionDiscount>?>? discounts, List<String>? Function()? excludedPaymentMethodTypes, int? expiresAt, String? id, Omittable<BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice?>? invoice, Omittable<PaymentPagesCheckoutSessionInvoiceCreation?>? invoiceCreation, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, Omittable<CheckoutSessionLocale?>? locale, Omittable<Map<String,String>?>? metadata, CheckoutSessionMode? mode, PaymentPagesCheckoutSessionNameCollection? Function()? nameCollection, CheckoutSessionObject? object, Omittable<List<PaymentPagesCheckoutSessionOptionalItem>?>? optionalItems, Omittable<CheckoutSessionOriginContext?>? originContext, Omittable<ChargePaymentIntent?>? paymentIntent, Omittable<CheckoutSessionPaymentLink?>? paymentLink, Omittable<CheckoutSessionPaymentMethodCollection?>? paymentMethodCollection, Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?>? paymentMethodConfigurationDetails, Omittable<CheckoutSessionPaymentMethodOptions?>? paymentMethodOptions, List<String>? paymentMethodTypes, PaymentStatus? paymentStatus, Omittable<PaymentPagesCheckoutSessionPermissions?>? permissions, PaymentPagesCheckoutSessionPhoneNumberCollection? Function()? phoneNumberCollection, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, Omittable<String?>? recoveredFrom, RedirectOnCompletion? Function()? redirectOnCompletion, String? Function()? returnUrl, Omittable<PaymentPagesCheckoutSessionSavedPaymentMethodOptions?>? savedPaymentMethodOptions, Omittable<CheckoutSessionSetupIntent?>? setupIntent, Omittable<PaymentPagesCheckoutSessionShippingAddressCollection?>? shippingAddressCollection, Omittable<PaymentPagesCheckoutSessionShippingCost?>? shippingCost, List<PaymentPagesCheckoutSessionShippingOption>? shippingOptions, Omittable<CheckoutSessionStatus?>? status, Omittable<CheckoutSessionSubmitType?>? submitType, Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription?>? subscription, Omittable<String?>? successUrl, PaymentPagesCheckoutSessionTaxIdCollection? Function()? taxIdCollection, Omittable<PaymentPagesCheckoutSessionTotalDetails?>? totalDetails, Omittable<CheckoutSessionUiMode?>? uiMode, Omittable<String?>? url, Omittable<CheckoutSessionWalletOptions?>? walletOptions, }) { return CheckoutSession(
+return errors;}
+CheckoutSession copyWith({Omittable<PaymentPagesCheckoutSessionAdaptivePricing?>? adaptivePricing, Omittable<PaymentPagesCheckoutSessionAfterExpiration?>? afterExpiration, Omittable<bool?>? allowPromotionCodes, Omittable<int?>? amountSubtotal, Omittable<int?>? amountTotal, PaymentPagesCheckoutSessionAutomaticTax? automaticTax, Omittable<CheckoutSessionBillingAddressCollection?>? billingAddressCollection, PaymentPagesCheckoutSessionBrandingSettings? Function()? brandingSettings, Omittable<String?>? cancelUrl, Omittable<String?>? clientReferenceId, Omittable<String?>? clientSecret, Omittable<PaymentPagesCheckoutSessionCollectedInformation?>? collectedInformation, Omittable<PaymentPagesCheckoutSessionConsent?>? consent, Omittable<PaymentPagesCheckoutSessionConsentCollection?>? consentCollection, int? created, Omittable<String?>? currency, Omittable<PaymentPagesCheckoutSessionCurrencyConversion?>? currencyConversion, List<PaymentPagesCheckoutSessionCustomFields>? customFields, PaymentPagesCheckoutSessionCustomText? customText, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<CheckoutSessionCustomerCreation?>? customerCreation, Omittable<PaymentPagesCheckoutSessionCustomerDetails?>? customerDetails, Omittable<String?>? customerEmail, Omittable<List<PaymentPagesCheckoutSessionDiscount>?>? discounts, List<String>? Function()? excludedPaymentMethodTypes, int? expiresAt, String? id, Omittable<BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice?>? invoice, Omittable<PaymentPagesCheckoutSessionInvoiceCreation?>? invoiceCreation, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, Omittable<CheckoutSessionLocale?>? locale, Omittable<Map<String,String>?>? metadata, CheckoutSessionMode? mode, PaymentPagesCheckoutSessionNameCollection? Function()? nameCollection, CheckoutSessionObject? object, Omittable<List<PaymentPagesCheckoutSessionOptionalItem>?>? optionalItems, Omittable<CheckoutSessionOriginContext?>? originContext, Omittable<ChargePaymentIntent?>? paymentIntent, Omittable<CheckoutSessionPaymentLink?>? paymentLink, Omittable<CheckoutSessionPaymentMethodCollection?>? paymentMethodCollection, Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?>? paymentMethodConfigurationDetails, Omittable<CheckoutSessionPaymentMethodOptions?>? paymentMethodOptions, List<String>? paymentMethodTypes, PaymentStatus? paymentStatus, Omittable<PaymentPagesCheckoutSessionPermissions?>? permissions, PaymentPagesCheckoutSessionPhoneNumberCollection? Function()? phoneNumberCollection, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, Omittable<String?>? recoveredFrom, RedirectOnCompletion? Function()? redirectOnCompletion, String? Function()? returnUrl, Omittable<PaymentPagesCheckoutSessionSavedPaymentMethodOptions?>? savedPaymentMethodOptions, Omittable<CheckoutSessionSetupIntent?>? setupIntent, Omittable<PaymentPagesCheckoutSessionShippingAddressCollection?>? shippingAddressCollection, Omittable<PaymentPagesCheckoutSessionShippingCost?>? shippingCost, List<PaymentPagesCheckoutSessionShippingOption>? shippingOptions, Omittable<CheckoutSessionStatus?>? status, Omittable<CheckoutSessionSubmitType?>? submitType, Omittable<BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription?>? subscription, Omittable<String?>? successUrl, PaymentPagesCheckoutSessionTaxIdCollection? Function()? taxIdCollection, Omittable<PaymentPagesCheckoutSessionTotalDetails?>? totalDetails, Omittable<CheckoutSessionUiMode?>? uiMode, Omittable<String?>? url, Omittable<CheckoutSessionWalletOptions?>? walletOptions, }) {return CheckoutSession(
   adaptivePricing: adaptivePricing ?? this.adaptivePricing,
   afterExpiration: afterExpiration ?? this.afterExpiration,
   allowPromotionCodes: allowPromotionCodes ?? this.allowPromotionCodes,
@@ -1826,7 +1826,7 @@ CheckoutSession copyWith({Omittable<PaymentPagesCheckoutSessionAdaptivePricing?>
   uiMode: uiMode ?? this.uiMode,
   url: url ?? this.url,
   walletOptions: walletOptions ?? this.walletOptions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutSession &&
           adaptivePricing == other.adaptivePricing &&
@@ -1902,4 +1902,4 @@ CheckoutSession copyWith({Omittable<PaymentPagesCheckoutSessionAdaptivePricing?>
 
 @override String toString() => 'CheckoutSession(\n  adaptivePricing: $adaptivePricing,\n  afterExpiration: $afterExpiration,\n  allowPromotionCodes: $allowPromotionCodes,\n  amountSubtotal: $amountSubtotal,\n  amountTotal: $amountTotal,\n  automaticTax: $automaticTax,\n  billingAddressCollection: $billingAddressCollection,\n  brandingSettings: $brandingSettings,\n  cancelUrl: $cancelUrl,\n  clientReferenceId: $clientReferenceId,\n  clientSecret: $clientSecret,\n  collectedInformation: $collectedInformation,\n  consent: $consent,\n  consentCollection: $consentCollection,\n  created: $created,\n  currency: $currency,\n  currencyConversion: $currencyConversion,\n  customFields: $customFields,\n  customText: $customText,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  customerCreation: $customerCreation,\n  customerDetails: $customerDetails,\n  customerEmail: $customerEmail,\n  discounts: $discounts,\n  excludedPaymentMethodTypes: $excludedPaymentMethodTypes,\n  expiresAt: $expiresAt,\n  id: $id,\n  invoice: $invoice,\n  invoiceCreation: $invoiceCreation,\n  lineItems: $lineItems,\n  livemode: $livemode,\n  locale: $locale,\n  metadata: $metadata,\n  mode: $mode,\n  nameCollection: $nameCollection,\n  object: $object,\n  optionalItems: $optionalItems,\n  originContext: $originContext,\n  paymentIntent: $paymentIntent,\n  paymentLink: $paymentLink,\n  paymentMethodCollection: $paymentMethodCollection,\n  paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails,\n  paymentMethodOptions: $paymentMethodOptions,\n  paymentMethodTypes: $paymentMethodTypes,\n  paymentStatus: $paymentStatus,\n  permissions: $permissions,\n  phoneNumberCollection: $phoneNumberCollection,\n  presentmentDetails: $presentmentDetails,\n  recoveredFrom: $recoveredFrom,\n  redirectOnCompletion: $redirectOnCompletion,\n  returnUrl: $returnUrl,\n  savedPaymentMethodOptions: $savedPaymentMethodOptions,\n  setupIntent: $setupIntent,\n  shippingAddressCollection: $shippingAddressCollection,\n  shippingCost: $shippingCost,\n  shippingOptions: $shippingOptions,\n  status: $status,\n  submitType: $submitType,\n  subscription: $subscription,\n  successUrl: $successUrl,\n  taxIdCollection: $taxIdCollection,\n  totalDetails: $totalDetails,\n  uiMode: $uiMode,\n  url: $url,\n  walletOptions: $walletOptions,\n)';
 
- }
+}

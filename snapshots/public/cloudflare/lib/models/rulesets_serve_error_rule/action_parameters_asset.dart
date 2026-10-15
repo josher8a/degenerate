@@ -10,11 +10,11 @@ String toJson() => value;
 }
 @immutable final class ActionParametersAsset {const ActionParametersAsset({required this.assetName, required this.contentType, this.statusCode, });
 
-factory ActionParametersAsset.fromJson(Map<String, dynamic> json) { return ActionParametersAsset(
+factory ActionParametersAsset.fromJson(Map<String, dynamic> json) {return ActionParametersAsset(
   assetName: RulesetsServeErrorAssetName.fromJson(json['asset_name'] as String),
   contentType: RulesetsServeErrorContentType.fromJson(json['content_type'] as String),
   statusCode: json['status_code'] != null ? RulesetsServeErrorStatusCode.fromJson(json['status_code'] as num) : null,
-); }
+);}
 
 /// The name of a custom asset to serve as the error response.
 final RulesetsServeErrorAssetName assetName;
@@ -24,18 +24,18 @@ final RulesetsServeErrorContentType contentType;
 
 final RulesetsServeErrorStatusCode? statusCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'asset_name': assetName.toJson(),
   'content_type': contentType.toJson(),
   if (statusCode != null) 'status_code': statusCode?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('asset_name') &&
-      json.containsKey('content_type'); } 
-ActionParametersAsset copyWith({RulesetsServeErrorAssetName? assetName, RulesetsServeErrorContentType? contentType, RulesetsServeErrorStatusCode? Function()? statusCode, }) { return ActionParametersAsset(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('asset_name') &&
+      json.containsKey('content_type');}
+ActionParametersAsset copyWith({RulesetsServeErrorAssetName? assetName, RulesetsServeErrorContentType? contentType, RulesetsServeErrorStatusCode? Function()? statusCode, }) {return ActionParametersAsset(
   assetName: assetName ?? this.assetName,
   contentType: contentType ?? this.contentType,
   statusCode: statusCode != null ? statusCode() : this.statusCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionParametersAsset &&
           assetName == other.assetName &&
@@ -46,4 +46,4 @@ ActionParametersAsset copyWith({RulesetsServeErrorAssetName? assetName, Rulesets
 
 @override String toString() => 'ActionParametersAsset(assetName: $assetName, contentType: $contentType, statusCode: $statusCode)';
 
- }
+}

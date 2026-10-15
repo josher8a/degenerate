@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigation_summary.dart';import 'package:pub_cloudflare/models/abuse_reports_report_status.dart';import 'package:pub_cloudflare/models/abuse_reports_report_type.dart';import 'package:pub_cloudflare/models/abuse_reports_submitter_details.dart';@immutable final class AbuseReportsAbuseReport {const AbuseReportsAbuseReport({required this.cdate, required this.domain, required this.id, required this.mitigationSummary, required this.status, required this.type, this.justification, this.originalWork, this.submitter, this.urls, });
 
-factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) { return AbuseReportsAbuseReport(
+factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) {return AbuseReportsAbuseReport(
   cdate: json['cdate'] as String,
   domain: json['domain'] as String,
   id: json['id'] as String,
@@ -14,7 +14,7 @@ factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) { return Abu
   submitter: json['submitter'] != null ? AbuseReportsSubmitterDetails.fromJson(json['submitter'] as Map<String, dynamic>) : null,
   type: AbuseReportsReportType.fromJson(json['type'] as String),
   urls: (json['urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Creation date of report. Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)
 /// 
@@ -43,7 +43,7 @@ final AbuseReportsReportType type;
 
 final List<String>? urls;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cdate': cdate,
   'domain': domain,
   'id': id,
@@ -54,14 +54,14 @@ Map<String, dynamic> toJson() { return {
   if (submitter != null) 'submitter': submitter?.toJson(),
   'type': type.toJson(),
   'urls': ?urls,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cdate') && json['cdate'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cdate') && json['cdate'] is String &&
       json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('mitigation_summary') &&
       json.containsKey('status') &&
-      json.containsKey('type'); } 
-AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, String? Function()? justification, AbuseReportsMitigationSummary? mitigationSummary, String? Function()? originalWork, AbuseReportsReportStatus? status, AbuseReportsSubmitterDetails? Function()? submitter, AbuseReportsReportType? type, List<String>? Function()? urls, }) { return AbuseReportsAbuseReport(
+      json.containsKey('type');}
+AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, String? Function()? justification, AbuseReportsMitigationSummary? mitigationSummary, String? Function()? originalWork, AbuseReportsReportStatus? status, AbuseReportsSubmitterDetails? Function()? submitter, AbuseReportsReportType? type, List<String>? Function()? urls, }) {return AbuseReportsAbuseReport(
   cdate: cdate ?? this.cdate,
   domain: domain ?? this.domain,
   id: id ?? this.id,
@@ -72,7 +72,7 @@ AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, Str
   submitter: submitter != null ? submitter() : this.submitter,
   type: type ?? this.type,
   urls: urls != null ? urls() : this.urls,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsAbuseReport &&
           cdate == other.cdate &&
@@ -90,4 +90,4 @@ AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, Str
 
 @override String toString() => 'AbuseReportsAbuseReport(\n  cdate: $cdate,\n  domain: $domain,\n  id: $id,\n  justification: $justification,\n  mitigationSummary: $mitigationSummary,\n  originalWork: $originalWork,\n  status: $status,\n  submitter: $submitter,\n  type: $type,\n  urls: $urls,\n)';
 
- }
+}

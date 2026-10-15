@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_calculation/tax_calculation_line_items.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_ship_from_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_breakdown.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_calculation_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TaxCalculationObject {const TaxCalculationObject();
 
-factory TaxCalculationObject.fromJson(String json) { return switch (json) {
+factory TaxCalculationObject.fromJson(String json) {return switch (json) {
   'tax.calculation' => taxCalculation,
   _ => TaxCalculationObject$Unknown(json),
-}; }
+};}
 
 static const TaxCalculationObject taxCalculation = TaxCalculationObject$taxCalculation._();
 
 static const List<TaxCalculationObject> values = [taxCalculation];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tax.calculation' => 'taxCalculation',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxCalculationObject$Unknown; } 
+bool get isUnknown {return this is TaxCalculationObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() taxCalculation, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() taxCalculation, required W Function(String value) $unknown, }) {return switch (this) {
       TaxCalculationObject$taxCalculation() => taxCalculation(),
       TaxCalculationObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxCalculation, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxCalculation, W Function(String value)? $unknown, }) {return switch (this) {
       TaxCalculationObject$taxCalculation() => taxCalculation != null ? taxCalculation() : orElse(value),
       TaxCalculationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxCalculationObject($value)';
 
- }
+}
 @immutable final class TaxCalculationObject$taxCalculation extends TaxCalculationObject {const TaxCalculationObject$taxCalculation._();
 
 @override String get value => 'tax.calculation';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxCalcu
 
 @override int get hashCode => 'tax.calculation'.hashCode;
 
- }
+}
 @immutable final class TaxCalculationObject$Unknown extends TaxCalculationObject {const TaxCalculationObject$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxCalcu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Tax Calculation allows you to calculate the tax to collect from your customer.
 /// 
 /// Related guide: [Calculate tax in your custom payment flow](https://docs.stripe.com/tax/custom)
 @immutable final class TaxCalculation {const TaxCalculation({required this.amountTotal, required this.currency, required this.customerDetails, required this.livemode, required this.object, required this.taxAmountExclusive, required this.taxAmountInclusive, required this.taxBreakdown, required this.taxDate, this.customer = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.id = const Omittable.absent(), this.lineItems = const Omittable.absent(), this.shipFromDetails = const Omittable.absent(), this.shippingCost = const Omittable.absent(), });
 
-factory TaxCalculation.fromJson(Map<String, dynamic> json) { return TaxCalculation(
+factory TaxCalculation.fromJson(Map<String, dynamic> json) {return TaxCalculation(
   amountTotal: (json['amount_total'] as num).toInt(),
   currency: json['currency'] as String,
   customer: json.containsKey('customer') ? Omittable(json['customer'] as String?) : const Omittable.absent(),
@@ -75,7 +75,7 @@ factory TaxCalculation.fromJson(Map<String, dynamic> json) { return TaxCalculati
   taxAmountInclusive: (json['tax_amount_inclusive'] as num).toInt(),
   taxBreakdown: (json['tax_breakdown'] as List<dynamic>).map((e) => TaxProductResourceTaxBreakdown.fromJson(e as Map<String, dynamic>)).toList(),
   taxDate: (json['tax_date'] as num).toInt(),
-); }
+);}
 
 /// Total amount after taxes in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int amountTotal;
@@ -121,7 +121,7 @@ final List<TaxProductResourceTaxBreakdown> taxBreakdown;
 /// Timestamp of date at which the tax rules and rates in effect applies for the calculation.
 final int taxDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount_total': amountTotal,
   'currency': currency,
   if (customer.isPresent) 'customer': customer.value,
@@ -137,8 +137,8 @@ Map<String, dynamic> toJson() { return {
   'tax_amount_inclusive': taxAmountInclusive,
   'tax_breakdown': taxBreakdown.map((e) => e.toJson()).toList(),
   'tax_date': taxDate,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_total') && json['amount_total'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('customer_details') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
@@ -146,9 +146,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_amount_exclusive') && json['tax_amount_exclusive'] is num &&
       json.containsKey('tax_amount_inclusive') && json['tax_amount_inclusive'] is num &&
       json.containsKey('tax_breakdown') &&
-      json.containsKey('tax_date') && json['tax_date'] is num; } 
+      json.containsKey('tax_date') && json['tax_date'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 final customer$ = customer.value;
 if (customer$ != null) {
@@ -158,8 +158,8 @@ final id$ = id.value;
 if (id$ != null) {
   if (id$.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 }
-return errors; } 
-TaxCalculation copyWith({int? amountTotal, String? currency, Omittable<String?>? customer, TaxProductResourceCustomerDetails? customerDetails, Omittable<int?>? expiresAt, Omittable<String?>? id, Omittable<TaxCalculationLineItems?>? lineItems, bool? livemode, TaxCalculationObject? object, Omittable<TaxProductResourceShipFromDetails?>? shipFromDetails, Omittable<TaxProductResourceTaxCalculationShippingCost?>? shippingCost, int? taxAmountExclusive, int? taxAmountInclusive, List<TaxProductResourceTaxBreakdown>? taxBreakdown, int? taxDate, }) { return TaxCalculation(
+return errors;}
+TaxCalculation copyWith({int? amountTotal, String? currency, Omittable<String?>? customer, TaxProductResourceCustomerDetails? customerDetails, Omittable<int?>? expiresAt, Omittable<String?>? id, Omittable<TaxCalculationLineItems?>? lineItems, bool? livemode, TaxCalculationObject? object, Omittable<TaxProductResourceShipFromDetails?>? shipFromDetails, Omittable<TaxProductResourceTaxCalculationShippingCost?>? shippingCost, int? taxAmountExclusive, int? taxAmountInclusive, List<TaxProductResourceTaxBreakdown>? taxBreakdown, int? taxDate, }) {return TaxCalculation(
   amountTotal: amountTotal ?? this.amountTotal,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,
@@ -175,7 +175,7 @@ TaxCalculation copyWith({int? amountTotal, String? currency, Omittable<String?>?
   taxAmountInclusive: taxAmountInclusive ?? this.taxAmountInclusive,
   taxBreakdown: taxBreakdown ?? this.taxBreakdown,
   taxDate: taxDate ?? this.taxDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxCalculation &&
           amountTotal == other.amountTotal &&
@@ -198,4 +198,4 @@ TaxCalculation copyWith({int? amountTotal, String? currency, Omittable<String?>?
 
 @override String toString() => 'TaxCalculation(\n  amountTotal: $amountTotal,\n  currency: $currency,\n  customer: $customer,\n  customerDetails: $customerDetails,\n  expiresAt: $expiresAt,\n  id: $id,\n  lineItems: $lineItems,\n  livemode: $livemode,\n  object: $object,\n  shipFromDetails: $shipFromDetails,\n  shippingCost: $shippingCost,\n  taxAmountExclusive: $taxAmountExclusive,\n  taxAmountInclusive: $taxAmountInclusive,\n  taxBreakdown: $taxBreakdown,\n  taxDate: $taxDate,\n)';
 
- }
+}

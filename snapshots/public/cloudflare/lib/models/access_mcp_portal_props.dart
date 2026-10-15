@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_custom_deny_message.dart';import 'package:pub_cloudflare/models/access_custom_deny_url.dart';import 'package:pub_cloudflare/models/access_custom_non_identity_deny_url.dart';import 'package:pub_cloudflare/models/access_destinations2.dart';import 'package:pub_cloudflare/models/access_domain.dart';import 'package:pub_cloudflare/models/access_http_only_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_oauth_configuration.dart';import 'package:pub_cloudflare/models/access_options_preflight_bypass.dart';import 'package:pub_cloudflare/models/access_same_site_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_schemas_allow_authenticate_via_warp.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_scim_config.dart';import 'package:pub_cloudflare/models/access_type.dart';import 'package:pub_cloudflare/models/private_destination.dart';import 'package:pub_cloudflare/models/public_destination.dart';import 'package:pub_cloudflare/models/via_mcp_server_portal_destination.dart';@immutable final class AccessMcpPortalProps {const AccessMcpPortalProps({required this.type, this.allowAuthenticateViaWarp, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyMessage, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.destinations, this.domain, this.httpOnlyCookieAttribute, this.logoUrl, this.name, this.oauthConfiguration, this.optionsPreflightBypass, this.sameSiteCookieAttribute, this.scimConfig, this.sessionDuration, this.tags, });
 
-factory AccessMcpPortalProps.fromJson(Map<String, dynamic> json) { return AccessMcpPortalProps(
+factory AccessMcpPortalProps.fromJson(Map<String, dynamic> json) {return AccessMcpPortalProps(
   allowAuthenticateViaWarp: json['allow_authenticate_via_warp'] != null ? AccessSchemasAllowAuthenticateViaWarp.fromJson(json['allow_authenticate_via_warp'] as bool) : null,
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
@@ -23,7 +23,7 @@ factory AccessMcpPortalProps.fromJson(Map<String, dynamic> json) { return Access
   sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: AccessType.fromJson(json['type'] as String),
-); }
+);}
 
 final AccessSchemasAllowAuthenticateViaWarp? allowAuthenticateViaWarp;
 
@@ -73,7 +73,7 @@ final List<String>? tags;
 
 final AccessType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowAuthenticateViaWarp != null) 'allow_authenticate_via_warp': allowAuthenticateViaWarp?.toJson(),
   'allowed_idps': ?allowedIdps,
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
@@ -93,9 +93,9 @@ Map<String, dynamic> toJson() { return {
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'tags': ?tags,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccessMcpPortalProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? Function()? domain, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, AccessSchemasSessionDuration? Function()? sessionDuration, List<String>? Function()? tags, AccessType? type, }) { return AccessMcpPortalProps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+AccessMcpPortalProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? Function()? domain, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, AccessSchemasSessionDuration? Function()? sessionDuration, List<String>? Function()? tags, AccessType? type, }) {return AccessMcpPortalProps(
   allowAuthenticateViaWarp: allowAuthenticateViaWarp != null ? allowAuthenticateViaWarp() : this.allowAuthenticateViaWarp,
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
@@ -115,7 +115,7 @@ AccessMcpPortalProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   tags: tags != null ? tags() : this.tags,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessMcpPortalProps &&
           allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
@@ -142,4 +142,4 @@ AccessMcpPortalProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()
 
 @override String toString() => 'AccessMcpPortalProps(\n  allowAuthenticateViaWarp: $allowAuthenticateViaWarp,\n  allowedIdps: $allowedIdps,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customDenyMessage: $customDenyMessage,\n  customDenyUrl: $customDenyUrl,\n  customNonIdentityDenyUrl: $customNonIdentityDenyUrl,\n  customPages: $customPages,\n  destinations: $destinations,\n  domain: $domain,\n  httpOnlyCookieAttribute: $httpOnlyCookieAttribute,\n  logoUrl: $logoUrl,\n  name: $name,\n  oauthConfiguration: $oauthConfiguration,\n  optionsPreflightBypass: $optionsPreflightBypass,\n  sameSiteCookieAttribute: $sameSiteCookieAttribute,\n  scimConfig: $scimConfig,\n  sessionDuration: $sessionDuration,\n  tags: $tags,\n  type: $type,\n)';
 
- }
+}

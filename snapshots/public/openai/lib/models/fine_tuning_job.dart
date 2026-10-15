@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_method.dart';import 'package:pub_openai/models/fine_tuning_integration.dart';import 'package:pub_openai/models/fine_tuning_job/fine_tuning_job_error.dart';import 'package:pub_openai/models/fine_tuning_job/fine_tuning_job_hyperparameters.dart';/// The object type, which is always "fine_tuning.job".
 sealed class FineTuningJobObject {const FineTuningJobObject();
 
-factory FineTuningJobObject.fromJson(String json) { return switch (json) {
+factory FineTuningJobObject.fromJson(String json) {return switch (json) {
   'fine_tuning.job' => fineTuningJob,
   _ => FineTuningJobObject$Unknown(json),
-}; }
+};}
 
 static const FineTuningJobObject fineTuningJob = FineTuningJobObject$fineTuningJob._();
 
 static const List<FineTuningJobObject> values = [fineTuningJob];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'fine_tuning.job' => 'fineTuningJob',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FineTuningJobObject$Unknown; } 
+bool get isUnknown {return this is FineTuningJobObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() fineTuningJob, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() fineTuningJob, required W Function(String value) $unknown, }) {return switch (this) {
       FineTuningJobObject$fineTuningJob() => fineTuningJob(),
       FineTuningJobObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuningJob, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuningJob, W Function(String value)? $unknown, }) {return switch (this) {
       FineTuningJobObject$fineTuningJob() => fineTuningJob != null ? fineTuningJob() : orElse(value),
       FineTuningJobObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FineTuningJobObject($value)';
 
- }
+}
 @immutable final class FineTuningJobObject$fineTuningJob extends FineTuningJobObject {const FineTuningJobObject$fineTuningJob._();
 
 @override String get value => 'fine_tuning.job';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuni
 
 @override int get hashCode => 'fine_tuning.job'.hashCode;
 
- }
+}
 @immutable final class FineTuningJobObject$Unknown extends FineTuningJobObject {const FineTuningJobObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuni
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
 sealed class FineTuningJobStatus {const FineTuningJobStatus();
 
-factory FineTuningJobStatus.fromJson(String json) { return switch (json) {
+factory FineTuningJobStatus.fromJson(String json) {return switch (json) {
   'validating_files' => validatingFiles,
   'queued' => queued,
   'running' => running,
@@ -65,7 +65,7 @@ factory FineTuningJobStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
   'cancelled' => cancelled,
   _ => FineTuningJobStatus$Unknown(json),
-}; }
+};}
 
 static const FineTuningJobStatus validatingFiles = FineTuningJobStatus$validatingFiles._();
 
@@ -82,9 +82,9 @@ static const FineTuningJobStatus cancelled = FineTuningJobStatus$cancelled._();
 static const List<FineTuningJobStatus> values = [validatingFiles, queued, running, succeeded, failed, cancelled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'validating_files' => 'validatingFiles',
   'queued' => 'queued',
   'running' => 'running',
@@ -92,11 +92,11 @@ String get name { return switch (value) {
   'failed' => 'failed',
   'cancelled' => 'cancelled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FineTuningJobStatus$Unknown; } 
+bool get isUnknown {return this is FineTuningJobStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() validatingFiles, required W Function() queued, required W Function() running, required W Function() succeeded, required W Function() failed, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() validatingFiles, required W Function() queued, required W Function() running, required W Function() succeeded, required W Function() failed, required W Function() cancelled, required W Function(String value) $unknown, }) {return switch (this) {
       FineTuningJobStatus$validatingFiles() => validatingFiles(),
       FineTuningJobStatus$queued() => queued(),
       FineTuningJobStatus$running() => running(),
@@ -104,9 +104,9 @@ W when<W>({required W Function() validatingFiles, required W Function() queued, 
       FineTuningJobStatus$failed() => failed(),
       FineTuningJobStatus$cancelled() => cancelled(),
       FineTuningJobStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? validatingFiles, W Function()? queued, W Function()? running, W Function()? succeeded, W Function()? failed, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? validatingFiles, W Function()? queued, W Function()? running, W Function()? succeeded, W Function()? failed, W Function()? cancelled, W Function(String value)? $unknown, }) {return switch (this) {
       FineTuningJobStatus$validatingFiles() => validatingFiles != null ? validatingFiles() : orElse(value),
       FineTuningJobStatus$queued() => queued != null ? queued() : orElse(value),
       FineTuningJobStatus$running() => running != null ? running() : orElse(value),
@@ -114,10 +114,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
       FineTuningJobStatus$failed() => failed != null ? failed() : orElse(value),
       FineTuningJobStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
       FineTuningJobStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FineTuningJobStatus($value)';
 
- }
+}
 @immutable final class FineTuningJobStatus$validatingFiles extends FineTuningJobStatus {const FineTuningJobStatus$validatingFiles._();
 
 @override String get value => 'validating_files';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'validating_files'.hashCode;
 
- }
+}
 @immutable final class FineTuningJobStatus$queued extends FineTuningJobStatus {const FineTuningJobStatus$queued._();
 
 @override String get value => 'queued';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class FineTuningJobStatus$running extends FineTuningJobStatus {const FineTuningJobStatus$running._();
 
 @override String get value => 'running';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'running'.hashCode;
 
- }
+}
 @immutable final class FineTuningJobStatus$succeeded extends FineTuningJobStatus {const FineTuningJobStatus$succeeded._();
 
 @override String get value => 'succeeded';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'succeeded'.hashCode;
 
- }
+}
 @immutable final class FineTuningJobStatus$failed extends FineTuningJobStatus {const FineTuningJobStatus$failed._();
 
 @override String get value => 'failed';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class FineTuningJobStatus$cancelled extends FineTuningJobStatus {const FineTuningJobStatus$cancelled._();
 
 @override String get value => 'cancelled';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => 'cancelled'.hashCode;
 
- }
+}
 @immutable final class FineTuningJobStatus$Unknown extends FineTuningJobStatus {const FineTuningJobStatus$Unknown(this.value);
 
 @override final String value;
@@ -181,12 +181,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? validati
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
 /// 
 @immutable final class FineTuningJob {const FineTuningJob({required this.id, required this.createdAt, required this.error, required this.fineTunedModel, required this.finishedAt, required this.hyperparameters, required this.model, required this.object, required this.organizationId, required this.resultFiles, required this.status, required this.trainedTokens, required this.trainingFile, required this.validationFile, required this.seed, this.integrations = const Omittable.absent(), this.estimatedFinish = const Omittable.absent(), this.method, this.metadata = const Omittable.absent(), });
 
-factory FineTuningJob.fromJson(Map<String, dynamic> json) { return FineTuningJob(
+factory FineTuningJob.fromJson(Map<String, dynamic> json) {return FineTuningJob(
   id: json['id'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   error: json['error'] != null ? FineTuningJobError.fromJson(json['error'] as Map<String, dynamic>) : null,
@@ -206,7 +206,7 @@ factory FineTuningJob.fromJson(Map<String, dynamic> json) { return FineTuningJob
   estimatedFinish: json.containsKey('estimated_finish') ? Omittable(json['estimated_finish'] != null ? (json['estimated_finish'] as num).toInt() : null) : const Omittable.absent(),
   method: json['method'] != null ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>) : null,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-); }
+);}
 
 /// The object identifier, which can be referenced in the API endpoints.
 final String id;
@@ -263,7 +263,7 @@ final FineTuneMethod? method;
 
 final Omittable<Map<String,String>?> metadata;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'created_at': createdAt,
   'error': error?.toJson(),
@@ -283,8 +283,8 @@ Map<String, dynamic> toJson() { return {
   if (estimatedFinish.isPresent) 'estimated_finish': estimatedFinish.value,
   if (method != null) 'method': method?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('error') &&
       json.containsKey('fine_tuned_model') && (json['fine_tuned_model'] == null || json['fine_tuned_model'] is String) &&
@@ -298,15 +298,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('trained_tokens') && (json['trained_tokens'] == null || json['trained_tokens'] is num) &&
       json.containsKey('training_file') && json['training_file'] is String &&
       json.containsKey('validation_file') && (json['validation_file'] == null || json['validation_file'] is String) &&
-      json.containsKey('seed') && json['seed'] is num; } 
+      json.containsKey('seed') && json['seed'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final integrations$ = integrations.value;
 if (integrations$ != null) {
   if (integrations$.length > 5) { errors.add('integrations: must have <= 5 items'); }
 }
-return errors; } 
-FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, Omittable<List<FineTuningIntegration>?>? integrations, int? seed, Omittable<int?>? estimatedFinish, FineTuneMethod? Function()? method, Omittable<Map<String,String>?>? metadata, }) { return FineTuningJob(
+return errors;}
+FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, Omittable<List<FineTuningIntegration>?>? integrations, int? seed, Omittable<int?>? estimatedFinish, FineTuneMethod? Function()? method, Omittable<Map<String,String>?>? metadata, }) {return FineTuningJob(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   error: error != null ? error() : this.error,
@@ -326,7 +326,7 @@ FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function
   estimatedFinish: estimatedFinish ?? this.estimatedFinish,
   method: method != null ? method() : this.method,
   metadata: metadata ?? this.metadata,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuningJob &&
           id == other.id &&
@@ -354,4 +354,4 @@ FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function
 
 @override String toString() => 'FineTuningJob(\n  id: $id,\n  createdAt: $createdAt,\n  error: $error,\n  fineTunedModel: $fineTunedModel,\n  finishedAt: $finishedAt,\n  hyperparameters: $hyperparameters,\n  model: $model,\n  object: $object,\n  organizationId: $organizationId,\n  resultFiles: $resultFiles,\n  status: $status,\n  trainedTokens: $trainedTokens,\n  trainingFile: $trainingFile,\n  validationFile: $validationFile,\n  integrations: $integrations,\n  seed: $seed,\n  estimatedFinish: $estimatedFinish,\n  method: $method,\n  metadata: $metadata,\n)';
 
- }
+}

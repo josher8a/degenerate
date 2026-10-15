@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// List of steps acting on request/response
 @immutable final class RequestTracerTrace2 {const RequestTracerTrace2({this.action, this.actionParameters, this.description, this.expression, this.kind, this.matched, this.name, this.stepName, this.trace, this.type, });
 
-factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) { return RequestTracerTrace2(
+factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) {return RequestTracerTrace2(
   action: json['action'] as String?,
   actionParameters: json['action_parameters'] as Map<String, dynamic>?,
   description: json['description'] as String?,
@@ -15,7 +15,7 @@ factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) { return Request
   stepName: json['step_name'] as String?,
   trace: (json['trace'] as List<dynamic>?)?.map((e) => RequestTracerTrace2.fromJson(e as Map<String, dynamic>)).toList(),
   type: json['type'] as String?,
-); }
+);}
 
 /// If step type is rule, then action performed by this rule
 /// 
@@ -64,7 +64,7 @@ final List<RequestTracerTrace2>? trace;
 /// Example: `'rule'`
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': ?action,
   'action_parameters': ?actionParameters,
   'description': ?description,
@@ -75,16 +75,16 @@ Map<String, dynamic> toJson() { return {
   'step_name': ?stepName,
   if (trace != null) 'trace': trace?.map((e) => e.toJson()).toList(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'expression', 'kind', 'matched', 'name', 'step_name', 'trace', 'type'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'action', 'action_parameters', 'description', 'expression', 'kind', 'matched', 'name', 'step_name', 'trace', 'type'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final action$ = action;
 if (action$ != null) {
   if (!RegExp(r'^[a-z_]+$').hasMatch(action$)) { errors.add(r'action: must match pattern ^[a-z_]+$'); }
 }
-return errors; } 
-RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? Function()? actionParameters, String? Function()? description, String? Function()? expression, String? Function()? kind, bool? Function()? matched, String? Function()? name, String? Function()? stepName, List<RequestTracerTrace2>? Function()? trace, String? Function()? type, }) { return RequestTracerTrace2(
+return errors;}
+RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? Function()? actionParameters, String? Function()? description, String? Function()? expression, String? Function()? kind, bool? Function()? matched, String? Function()? name, String? Function()? stepName, List<RequestTracerTrace2>? Function()? trace, String? Function()? type, }) {return RequestTracerTrace2(
   action: action != null ? action() : this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   description: description != null ? description() : this.description,
@@ -95,7 +95,7 @@ RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? 
   stepName: stepName != null ? stepName() : this.stepName,
   trace: trace != null ? trace() : this.trace,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RequestTracerTrace2 &&
           action == other.action &&
@@ -113,4 +113,4 @@ RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? 
 
 @override String toString() => 'RequestTracerTrace2(\n  action: $action,\n  actionParameters: $actionParameters,\n  description: $description,\n  expression: $expression,\n  kind: $kind,\n  matched: $matched,\n  name: $name,\n  stepName: $stepName,\n  trace: $trace,\n  type: $type,\n)';
 
- }
+}

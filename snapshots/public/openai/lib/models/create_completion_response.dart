@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage.dart';import 'package:pub_openai/models/create_completion_response/create_completion_response_choices.dart';/// The object type, which is always "text_completion"
 sealed class CreateCompletionResponseObject {const CreateCompletionResponseObject();
 
-factory CreateCompletionResponseObject.fromJson(String json) { return switch (json) {
+factory CreateCompletionResponseObject.fromJson(String json) {return switch (json) {
   'text_completion' => textCompletion,
   _ => CreateCompletionResponseObject$Unknown(json),
-}; }
+};}
 
 static const CreateCompletionResponseObject textCompletion = CreateCompletionResponseObject$textCompletion._();
 
 static const List<CreateCompletionResponseObject> values = [textCompletion];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'text_completion' => 'textCompletion',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateCompletionResponseObject$Unknown; } 
+bool get isUnknown {return this is CreateCompletionResponseObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() textCompletion, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() textCompletion, required W Function(String value) $unknown, }) {return switch (this) {
       CreateCompletionResponseObject$textCompletion() => textCompletion(),
       CreateCompletionResponseObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? textCompletion, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? textCompletion, W Function(String value)? $unknown, }) {return switch (this) {
       CreateCompletionResponseObject$textCompletion() => textCompletion != null ? textCompletion() : orElse(value),
       CreateCompletionResponseObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateCompletionResponseObject($value)';
 
- }
+}
 @immutable final class CreateCompletionResponseObject$textCompletion extends CreateCompletionResponseObject {const CreateCompletionResponseObject$textCompletion._();
 
 @override String get value => 'text_completion';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? textComp
 
 @override int get hashCode => 'text_completion'.hashCode;
 
- }
+}
 @immutable final class CreateCompletionResponseObject$Unknown extends CreateCompletionResponseObject {const CreateCompletionResponseObject$Unknown(this.value);
 
 @override final String value;
@@ -53,12 +53,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? textComp
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents a completion response from the API. Note: both the streamed and non-streamed response objects share the same shape (unlike the chat endpoint).
 /// 
 @immutable final class CreateCompletionResponse {const CreateCompletionResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.systemFingerprint, this.usage, });
 
-factory CreateCompletionResponse.fromJson(Map<String, dynamic> json) { return CreateCompletionResponse(
+factory CreateCompletionResponse.fromJson(Map<String, dynamic> json) {return CreateCompletionResponse(
   id: json['id'] as String,
   choices: (json['choices'] as List<dynamic>).map((e) => CreateCompletionResponseChoices.fromJson(e as Map<String, dynamic>)).toList(),
   created: (json['created'] as num).toInt(),
@@ -66,7 +66,7 @@ factory CreateCompletionResponse.fromJson(Map<String, dynamic> json) { return Cr
   systemFingerprint: json['system_fingerprint'] as String?,
   object: CreateCompletionResponseObject.fromJson(json['object'] as String),
   usage: json['usage'] != null ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// A unique identifier for the completion.
 final String id;
@@ -91,7 +91,7 @@ final CreateCompletionResponseObject object;
 
 final CompletionUsage? usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'choices': choices.map((e) => e.toJson()).toList(),
   'created': created,
@@ -99,13 +99,13 @@ Map<String, dynamic> toJson() { return {
   'system_fingerprint': ?systemFingerprint,
   'object': object.toJson(),
   if (usage != null) 'usage': usage?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('choices') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('model') && json['model'] is String &&
-      json.containsKey('object'); } 
-CreateCompletionResponse copyWith({String? id, List<CreateCompletionResponseChoices>? choices, int? created, String? model, String? Function()? systemFingerprint, CreateCompletionResponseObject? object, CompletionUsage? Function()? usage, }) { return CreateCompletionResponse(
+      json.containsKey('object');}
+CreateCompletionResponse copyWith({String? id, List<CreateCompletionResponseChoices>? choices, int? created, String? model, String? Function()? systemFingerprint, CreateCompletionResponseObject? object, CompletionUsage? Function()? usage, }) {return CreateCompletionResponse(
   id: id ?? this.id,
   choices: choices ?? this.choices,
   created: created ?? this.created,
@@ -113,7 +113,7 @@ CreateCompletionResponse copyWith({String? id, List<CreateCompletionResponseChoi
   systemFingerprint: systemFingerprint != null ? systemFingerprint() : this.systemFingerprint,
   object: object ?? this.object,
   usage: usage != null ? usage() : this.usage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCompletionResponse &&
           id == other.id &&
@@ -128,4 +128,4 @@ CreateCompletionResponse copyWith({String? id, List<CreateCompletionResponseChoi
 
 @override String toString() => 'CreateCompletionResponse(id: $id, choices: $choices, created: $created, model: $model, systemFingerprint: $systemFingerprint, object: $object, usage: $usage)';
 
- }
+}

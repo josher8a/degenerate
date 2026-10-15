@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchProtectionRequiredLinearHistory {const BranchProtectionRequiredLinearHistory({this.enabled});
 
-factory BranchProtectionRequiredLinearHistory.fromJson(Map<String, dynamic> json) { return BranchProtectionRequiredLinearHistory(
+factory BranchProtectionRequiredLinearHistory.fromJson(Map<String, dynamic> json) {return BranchProtectionRequiredLinearHistory(
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-BranchProtectionRequiredLinearHistory copyWith({bool? Function()? enabled}) { return BranchProtectionRequiredLinearHistory(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'enabled'}.contains(key));}
+BranchProtectionRequiredLinearHistory copyWith({bool? Function()? enabled}) {return BranchProtectionRequiredLinearHistory(
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BranchProtectionRequiredLinearHistory &&
           enabled == other.enabled;
@@ -24,4 +24,4 @@ BranchProtectionRequiredLinearHistory copyWith({bool? Function()? enabled}) { re
 
 @override String toString() => 'BranchProtectionRequiredLinearHistory(enabled: $enabled)';
 
- }
+}

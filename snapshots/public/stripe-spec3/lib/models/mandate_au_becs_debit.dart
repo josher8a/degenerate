@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class MandateAuBecsDebit {const MandateAuBecsDebit({required this.url});
 
-factory MandateAuBecsDebit.fromJson(Map<String, dynamic> json) { return MandateAuBecsDebit(
+factory MandateAuBecsDebit.fromJson(Map<String, dynamic> json) {return MandateAuBecsDebit(
   url: json['url'] as String,
-); }
+);}
 
 /// The URL of the mandate. This URL generally contains sensitive information about the customer and should be shared with them exclusively.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
-return errors; } 
-MandateAuBecsDebit copyWith({String? url}) { return MandateAuBecsDebit(
+return errors;}
+MandateAuBecsDebit copyWith({String? url}) {return MandateAuBecsDebit(
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MandateAuBecsDebit &&
           url == other.url;
@@ -30,4 +30,4 @@ MandateAuBecsDebit copyWith({String? url}) { return MandateAuBecsDebit(
 
 @override String toString() => 'MandateAuBecsDebit(url: $url)';
 
- }
+}

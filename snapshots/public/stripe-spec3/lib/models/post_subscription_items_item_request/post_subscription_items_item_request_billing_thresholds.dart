@@ -7,11 +7,11 @@ const PostSubscriptionItemsItemRequestBillingThresholds({this.itemBillingThresho
 const PostSubscriptionItemsItemRequestBillingThresholds._({required this.rawValue, required this.itemBillingThresholdsParam, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostSubscriptionItemsItemRequestBillingThresholds.fromJson(Object? json) { return PostSubscriptionItemsItemRequestBillingThresholds._(
+factory PostSubscriptionItemsItemRequestBillingThresholds.fromJson(Object? json) {return PostSubscriptionItemsItemRequestBillingThresholds._(
   rawValue: Omittable(json),
   itemBillingThresholdsParam: json is Map<String, dynamic> && ItemBillingThresholdsParam.canParse(json) ? parseAnyOfVariant<ItemBillingThresholdsParam>(json, (value) => ItemBillingThresholdsParam.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostSubscriptionItemsItemRequestBillingThresholds(${toJson()})';
 
- }
+}

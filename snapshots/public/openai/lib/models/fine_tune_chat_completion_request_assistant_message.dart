@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_tool_calls2.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_audio.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_content.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_function_call.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message_content_part.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';/// Controls whether the assistant message is trained against (0 or 1)
 sealed class Weight {const Weight();
 
-factory Weight.fromJson(int json) { return switch (json) {
+factory Weight.fromJson(int json) {return switch (json) {
   0 => $0,
   1 => $1,
   _ => Weight$Unknown(json),
-}; }
+};}
 
 static const Weight $0 = Weight$$0._();
 
@@ -17,30 +17,30 @@ static const Weight $1 = Weight$$1._();
 static const List<Weight> values = [$0, $1];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   0 => r'$0',
   1 => r'$1',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Weight$Unknown; } 
+bool get isUnknown {return this is Weight$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $0, required W Function() $1, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $0, required W Function() $1, required W Function(int value) $unknown, }) {return switch (this) {
       Weight$$0() => $0(),
       Weight$$1() => $1(),
       Weight$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $0, W Function()? $1, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $0, W Function()? $1, W Function(int value)? $unknown, }) {return switch (this) {
       Weight$$0() => $0 != null ? $0() : orElse(value),
       Weight$$1() => $1 != null ? $1() : orElse(value),
       Weight$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Weight($value)';
 
- }
+}
 @immutable final class Weight$$0 extends Weight {const Weight$$0._();
 
 @override int get value => 0;
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $0, W Funct
 
 @override int get hashCode => 0.hashCode;
 
- }
+}
 @immutable final class Weight$$1 extends Weight {const Weight$$1._();
 
 @override int get value => 1;
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $0, W Funct
 
 @override int get hashCode => 1.hashCode;
 
- }
+}
 @immutable final class Weight$Unknown extends Weight {const Weight$Unknown(this.value);
 
 @override final int value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $0, W Funct
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class FineTuneChatCompletionRequestAssistantMessage {const FineTuneChatCompletionRequestAssistantMessage({required this.role, this.content = const Omittable.absent(), this.refusal = const Omittable.absent(), this.name, this.audio = const Omittable.absent(), this.toolCalls, this.functionCall = const Omittable.absent(), this.weight, });
 
-factory FineTuneChatCompletionRequestAssistantMessage.fromJson(Map<String, dynamic> json) { return FineTuneChatCompletionRequestAssistantMessage(
+factory FineTuneChatCompletionRequestAssistantMessage.fromJson(Map<String, dynamic> json) {return FineTuneChatCompletionRequestAssistantMessage(
   content: json.containsKey('content') ? Omittable(json['content'] != null ? OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => ChatCompletionRequestAssistantMessageContentPart.fromJson(e as Map<String, dynamic>)).toList(),) : null) : const Omittable.absent(),
   refusal: json.containsKey('refusal') ? Omittable(json['refusal'] as String?) : const Omittable.absent(),
   role: ChatCompletionResponseMessageRole.fromJson(json['role'] as String),
@@ -80,7 +80,7 @@ factory FineTuneChatCompletionRequestAssistantMessage.fromJson(Map<String, dynam
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => ChatCompletionMessageToolCalls2.fromJson(e as Map<String, dynamic>)).toList(),
   functionCall: json.containsKey('function_call') ? Omittable(json['function_call'] != null ? ChatCompletionRequestAssistantMessageFunctionCall.fromJson(json['function_call'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   weight: json['weight'] != null ? Weight.fromJson((json['weight'] as num).toInt()) : null,
-); }
+);}
 
 /// The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified.
 /// 
@@ -109,7 +109,7 @@ final Omittable<ChatCompletionRequestAssistantMessageFunctionCall?> functionCall
 /// Controls whether the assistant message is trained against (0 or 1)
 final Weight? weight;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (content.isPresent) 'content': content.value?.toJson(),
   if (refusal.isPresent) 'refusal': refusal.value,
   'role': role.toJson(),
@@ -118,9 +118,9 @@ Map<String, dynamic> toJson() { return {
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
   if (functionCall.isPresent) 'function_call': functionCall.value?.toJson(),
   if (weight != null) 'weight': weight?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('role'); } 
-FineTuneChatCompletionRequestAssistantMessage copyWith({Omittable<ChatCompletionRequestAssistantMessageContent?>? content, Omittable<String?>? refusal, ChatCompletionResponseMessageRole? role, String? Function()? name, Omittable<ChatCompletionRequestAssistantMessageAudio?>? audio, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, Omittable<ChatCompletionRequestAssistantMessageFunctionCall?>? functionCall, Weight? Function()? weight, }) { return FineTuneChatCompletionRequestAssistantMessage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('role');}
+FineTuneChatCompletionRequestAssistantMessage copyWith({Omittable<ChatCompletionRequestAssistantMessageContent?>? content, Omittable<String?>? refusal, ChatCompletionResponseMessageRole? role, String? Function()? name, Omittable<ChatCompletionRequestAssistantMessageAudio?>? audio, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, Omittable<ChatCompletionRequestAssistantMessageFunctionCall?>? functionCall, Weight? Function()? weight, }) {return FineTuneChatCompletionRequestAssistantMessage(
   content: content ?? this.content,
   refusal: refusal ?? this.refusal,
   role: role ?? this.role,
@@ -129,7 +129,7 @@ FineTuneChatCompletionRequestAssistantMessage copyWith({Omittable<ChatCompletion
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
   functionCall: functionCall ?? this.functionCall,
   weight: weight != null ? weight() : this.weight,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneChatCompletionRequestAssistantMessage &&
           content == other.content &&
@@ -145,4 +145,4 @@ FineTuneChatCompletionRequestAssistantMessage copyWith({Omittable<ChatCompletion
 
 @override String toString() => 'FineTuneChatCompletionRequestAssistantMessage(content: $content, refusal: $refusal, role: $role, name: $name, audio: $audio, toolCalls: $toolCalls, functionCall: $functionCall, weight: $weight)';
 
- }
+}

@@ -9,10 +9,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// **WebRTC/SIP Onl
 /// 
 @immutable final class RealtimeClientEventOutputAudioBufferClear {const RealtimeClientEventOutputAudioBufferClear({required this.type, this.eventId, });
 
-factory RealtimeClientEventOutputAudioBufferClear.fromJson(Map<String, dynamic> json) { return RealtimeClientEventOutputAudioBufferClear(
+factory RealtimeClientEventOutputAudioBufferClear.fromJson(Map<String, dynamic> json) {return RealtimeClientEventOutputAudioBufferClear(
   eventId: json['event_id'] as String?,
   type: json['type'] as String,
-); }
+);}
 
 /// The unique ID of the client event used for error handling.
 final String? eventId;
@@ -20,15 +20,15 @@ final String? eventId;
 /// The event type, must be `output_audio_buffer.clear`.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'event_id': ?eventId,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-RealtimeClientEventOutputAudioBufferClear copyWith({String? Function()? eventId, String? type, }) { return RealtimeClientEventOutputAudioBufferClear(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+RealtimeClientEventOutputAudioBufferClear copyWith({String? Function()? eventId, String? type, }) {return RealtimeClientEventOutputAudioBufferClear(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventOutputAudioBufferClear &&
           eventId == other.eventId &&
@@ -38,4 +38,4 @@ RealtimeClientEventOutputAudioBufferClear copyWith({String? Function()? eventId,
 
 @override String toString() => 'RealtimeClientEventOutputAudioBufferClear(eventId: $eventId, type: $type)';
 
- }
+}

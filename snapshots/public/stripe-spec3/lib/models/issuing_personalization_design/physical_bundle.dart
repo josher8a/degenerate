@@ -8,11 +8,11 @@ const PhysicalBundle({this.string = const Omittable.absent(), this.issuingPhysic
 const PhysicalBundle._({required this.rawValue, required this.string, required this.issuingPhysicalBundle, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PhysicalBundle.fromJson(Object? json) { return PhysicalBundle._(
+factory PhysicalBundle.fromJson(Object? json) {return PhysicalBundle._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   issuingPhysicalBundle: json is Map<String, dynamic> && IssuingPhysicalBundle.canParse(json) ? parseAnyOfVariant<IssuingPhysicalBundle>(json, (value) => IssuingPhysicalBundle.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PhysicalBundle(${toJson()})';
 
- }
+}

@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_update_request/issues_update_request_state.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';/// A collection of related issues and pull requests.
 @immutable final class WebhooksIssue2Milestone {const WebhooksIssue2Milestone({required this.closedAt, required this.closedIssues, required this.createdAt, required this.creator, required this.description, required this.dueOn, required this.htmlUrl, required this.id, required this.labelsUrl, required this.nodeId, required this.number, required this.openIssues, required this.state, required this.title, required this.updatedAt, required this.url, });
 
-factory WebhooksIssue2Milestone.fromJson(Map<String, dynamic> json) { return WebhooksIssue2Milestone(
+factory WebhooksIssue2Milestone.fromJson(Map<String, dynamic> json) {return WebhooksIssue2Milestone(
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   closedIssues: (json['closed_issues'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -21,7 +21,7 @@ factory WebhooksIssue2Milestone.fromJson(Map<String, dynamic> json) { return Web
   title: json['title'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final DateTime? closedAt;
 
@@ -58,7 +58,7 @@ final DateTime updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'closed_at': closedAt?.toIso8601String(),
   'closed_issues': closedIssues,
   'created_at': createdAt.toIso8601String(),
@@ -75,8 +75,8 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('closed_issues') && json['closed_issues'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('creator') &&
@@ -91,8 +91,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('close
       json.containsKey('state') &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhooksIssue2Milestone copyWith({DateTime? Function()? closedAt, int? closedIssues, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, String? Function()? description, DateTime? Function()? dueOn, Uri? htmlUrl, int? id, Uri? labelsUrl, String? nodeId, int? number, int? openIssues, IssuesUpdateRequestState? state, String? title, DateTime? updatedAt, Uri? url, }) { return WebhooksIssue2Milestone(
+      json.containsKey('url') && json['url'] is String;}
+WebhooksIssue2Milestone copyWith({DateTime? Function()? closedAt, int? closedIssues, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, String? Function()? description, DateTime? Function()? dueOn, Uri? htmlUrl, int? id, Uri? labelsUrl, String? nodeId, int? number, int? openIssues, IssuesUpdateRequestState? state, String? title, DateTime? updatedAt, Uri? url, }) {return WebhooksIssue2Milestone(
   closedAt: closedAt != null ? closedAt() : this.closedAt,
   closedIssues: closedIssues ?? this.closedIssues,
   createdAt: createdAt ?? this.createdAt,
@@ -109,7 +109,7 @@ WebhooksIssue2Milestone copyWith({DateTime? Function()? closedAt, int? closedIss
   title: title ?? this.title,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksIssue2Milestone &&
           closedAt == other.closedAt &&
@@ -133,4 +133,4 @@ WebhooksIssue2Milestone copyWith({DateTime? Function()? closedAt, int? closedIss
 
 @override String toString() => 'WebhooksIssue2Milestone(\n  closedAt: $closedAt,\n  closedIssues: $closedIssues,\n  createdAt: $createdAt,\n  creator: $creator,\n  description: $description,\n  dueOn: $dueOn,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  labelsUrl: $labelsUrl,\n  nodeId: $nodeId,\n  number: $number,\n  openIssues: $openIssues,\n  state: $state,\n  title: $title,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
- }
+}

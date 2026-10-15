@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_language.dart';/// The status of a generated caption.
 sealed class StreamCaptionStatus {const StreamCaptionStatus();
 
-factory StreamCaptionStatus.fromJson(String json) { return switch (json) {
+factory StreamCaptionStatus.fromJson(String json) {return switch (json) {
   'ready' => ready,
   'inprogress' => inprogress,
   'error' => error,
   _ => StreamCaptionStatus$Unknown(json),
-}; }
+};}
 
 static const StreamCaptionStatus ready = StreamCaptionStatus$ready._();
 
@@ -20,33 +20,33 @@ static const StreamCaptionStatus error = StreamCaptionStatus$error._();
 static const List<StreamCaptionStatus> values = [ready, inprogress, error];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ready' => 'ready',
   'inprogress' => 'inprogress',
   'error' => 'error',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StreamCaptionStatus$Unknown; } 
+bool get isUnknown {return this is StreamCaptionStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() ready, required W Function() inprogress, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() ready, required W Function() inprogress, required W Function() error, required W Function(String value) $unknown, }) {return switch (this) {
       StreamCaptionStatus$ready() => ready(),
       StreamCaptionStatus$inprogress() => inprogress(),
       StreamCaptionStatus$error() => error(),
       StreamCaptionStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W Function()? inprogress, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W Function()? inprogress, W Function()? error, W Function(String value)? $unknown, }) {return switch (this) {
       StreamCaptionStatus$ready() => ready != null ? ready() : orElse(value),
       StreamCaptionStatus$inprogress() => inprogress != null ? inprogress() : orElse(value),
       StreamCaptionStatus$error() => error != null ? error() : orElse(value),
       StreamCaptionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StreamCaptionStatus($value)';
 
- }
+}
 @immutable final class StreamCaptionStatus$ready extends StreamCaptionStatus {const StreamCaptionStatus$ready._();
 
 @override String get value => 'ready';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W
 
 @override int get hashCode => 'ready'.hashCode;
 
- }
+}
 @immutable final class StreamCaptionStatus$inprogress extends StreamCaptionStatus {const StreamCaptionStatus$inprogress._();
 
 @override String get value => 'inprogress';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W
 
 @override int get hashCode => 'inprogress'.hashCode;
 
- }
+}
 @immutable final class StreamCaptionStatus$error extends StreamCaptionStatus {const StreamCaptionStatus$error._();
 
 @override String get value => 'error';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W
 
 @override int get hashCode => 'error'.hashCode;
 
- }
+}
 @immutable final class StreamCaptionStatus$Unknown extends StreamCaptionStatus {const StreamCaptionStatus$Unknown(this.value);
 
 @override final String value;
@@ -83,7 +83,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Whether the caption was generated via AI.
 extension type const StreamGeneratedCaption(bool value) {
 factory StreamGeneratedCaption.fromJson(bool json) => StreamGeneratedCaption(json);
@@ -100,12 +100,12 @@ String toJson() => value;
 }
 @immutable final class StreamCaptions {const StreamCaptions({this.generated, this.label, this.language, this.status, });
 
-factory StreamCaptions.fromJson(Map<String, dynamic> json) { return StreamCaptions(
+factory StreamCaptions.fromJson(Map<String, dynamic> json) {return StreamCaptions(
   generated: json['generated'] != null ? StreamGeneratedCaption.fromJson(json['generated'] as bool) : null,
   label: json['label'] != null ? StreamLabel.fromJson(json['label'] as String) : null,
   language: json['language'] != null ? StreamLanguage.fromJson(json['language'] as String) : null,
   status: json['status'] != null ? StreamCaptionStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final StreamGeneratedCaption? generated;
 
@@ -116,19 +116,19 @@ final StreamLanguage? language;
 /// The status of a generated caption.
 final StreamCaptionStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (generated != null) 'generated': generated?.toJson(),
   if (label != null) 'label': label?.toJson(),
   if (language != null) 'language': language?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'generated', 'label', 'language', 'status'}.contains(key)); } 
-StreamCaptions copyWith({StreamGeneratedCaption? Function()? generated, StreamLabel? Function()? label, StreamLanguage? Function()? language, StreamCaptionStatus? Function()? status, }) { return StreamCaptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'generated', 'label', 'language', 'status'}.contains(key));}
+StreamCaptions copyWith({StreamGeneratedCaption? Function()? generated, StreamLabel? Function()? label, StreamLanguage? Function()? language, StreamCaptionStatus? Function()? status, }) {return StreamCaptions(
   generated: generated != null ? generated() : this.generated,
   label: label != null ? label() : this.label,
   language: language != null ? language() : this.language,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamCaptions &&
           generated == other.generated &&
@@ -140,4 +140,4 @@ StreamCaptions copyWith({StreamGeneratedCaption? Function()? generated, StreamLa
 
 @override String toString() => 'StreamCaptions(generated: $generated, label: $label, language: $language, status: $status)';
 
- }
+}

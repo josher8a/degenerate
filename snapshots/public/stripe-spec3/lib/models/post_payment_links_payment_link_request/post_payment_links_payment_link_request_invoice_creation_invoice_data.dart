@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/invoice_data_rendering_options.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_custom_fields.dart';@immutable final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
-factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData(
+factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData.fromJson(Map<String, dynamic> json) {return PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData(
   accountTaxIds: json['account_tax_ids'] != null ? PostInvoicesInvoiceRequestAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   customFields: json['custom_fields'] != null ? PostInvoicesInvoiceRequestCustomFields.fromJson(json['custom_fields']) : null,
   description: json['description'] as String?,
@@ -11,7 +11,7 @@ factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData.fromJson(Ma
   issuer: json['issuer'] != null ? Issuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   renderingOptions: json['rendering_options'] != null ? InvoiceDataRenderingOptions.fromJson(json['rendering_options']) : null,
-); }
+);}
 
 final PostInvoicesInvoiceRequestAccountTaxIds? accountTaxIds;
 
@@ -27,7 +27,7 @@ final Metadata? metadata;
 
 final InvoiceDataRenderingOptions? renderingOptions;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
   if (customFields != null) 'custom_fields': customFields?.toJson(),
   'description': ?description,
@@ -35,10 +35,10 @@ Map<String, dynamic> toJson() { return {
   if (issuer != null) 'issuer': issuer?.toJson(),
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 1500) { errors.add('description: length must be <= 1500'); }
@@ -47,8 +47,8 @@ final footer$ = footer;
 if (footer$ != null) {
   if (footer$.runes.length > 5000) { errors.add('footer: length must be <= 5000'); }
 }
-return errors; } 
-PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, String? Function()? description, String? Function()? footer, Issuer? Function()? issuer, Metadata? Function()? metadata, InvoiceDataRenderingOptions? Function()? renderingOptions, }) { return PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData(
+return errors;}
+PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, String? Function()? description, String? Function()? footer, Issuer? Function()? issuer, Metadata? Function()? metadata, InvoiceDataRenderingOptions? Function()? renderingOptions, }) {return PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   customFields: customFields != null ? customFields() : this.customFields,
   description: description != null ? description() : this.description,
@@ -56,7 +56,7 @@ PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData copyWith({PostInvoi
   issuer: issuer != null ? issuer() : this.issuer,
   metadata: metadata != null ? metadata() : this.metadata,
   renderingOptions: renderingOptions != null ? renderingOptions() : this.renderingOptions,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData &&
           accountTaxIds == other.accountTaxIds &&
@@ -71,4 +71,4 @@ PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData copyWith({PostInvoi
 
 @override String toString() => 'PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)';
 
- }
+}

@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTestHelpersTestClocksTestClockRequest {const DeleteTestHelpersTestClocksTestClockRequest();
 
-factory DeleteTestHelpersTestClocksTestClockRequest.fromJson(Map<String, dynamic> _) { return const DeleteTestHelpersTestClocksTestClockRequest(); }
+factory DeleteTestHelpersTestClocksTestClockRequest.fromJson(Map<String, dynamic> _) {return const DeleteTestHelpersTestClocksTestClockRequest();}
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
 
-}; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-DeleteTestHelpersTestClocksTestClockRequest copyWith() { return const DeleteTestHelpersTestClocksTestClockRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return true;}
+DeleteTestHelpersTestClocksTestClockRequest copyWith() {return const DeleteTestHelpersTestClocksTestClockRequest(
 
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) || other is DeleteTestHelpersTestClocksTestClockRequest;
 
 @override int get hashCode => runtimeType.hashCode;
 
 @override String toString() => 'DeleteTestHelpersTestClocksTestClockRequest()';
 
- }
+}

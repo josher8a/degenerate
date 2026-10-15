@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksCreateRequestVariant2 {const ChecksCreateRequestVariant2({this.status = const Omittable.absent(), this.additionalProperties = const {}, });
 
-factory ChecksCreateRequestVariant2.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestVariant2(
+factory ChecksCreateRequestVariant2.fromJson(Map<String, dynamic> json) {return ChecksCreateRequestVariant2(
   status: json.containsKey('status') ? Omittable(json['status']) : const Omittable.absent(),
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'status'}.contains(e.key))),
-); }
+);}
 
 final Omittable<dynamic> status;
 
 final Map<String,dynamic> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status.isPresent) 'status': status.value,
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-ChecksCreateRequestVariant2 copyWith({Omittable<dynamic>? status, Map<String, dynamic>? additionalProperties, }) { return ChecksCreateRequestVariant2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+ChecksCreateRequestVariant2 copyWith({Omittable<dynamic>? status, Map<String, dynamic>? additionalProperties, }) {return ChecksCreateRequestVariant2(
   status: status ?? this.status,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChecksCreateRequestVariant2 &&
           status == other.status &&
@@ -30,4 +30,4 @@ ChecksCreateRequestVariant2 copyWith({Omittable<dynamic>? status, Map<String, dy
 
 @override String toString() => 'ChecksCreateRequestVariant2(status: $status, additionalProperties: $additionalProperties)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 sealed class RadarGetLeakedCredentialChecksTimeseriesGroupNormalization {const RadarGetLeakedCredentialChecksTimeseriesGroupNormalization();
 
-factory RadarGetLeakedCredentialChecksTimeseriesGroupNormalization.fromJson(String json) { return switch (json) {
+factory RadarGetLeakedCredentialChecksTimeseriesGroupNormalization.fromJson(String json) {return switch (json) {
   'PERCENTAGE_CHANGE' => percentageChange,
   'MIN0_MAX' => min0Max,
   _ => RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown(json),
-}; }
+};}
 
 static const RadarGetLeakedCredentialChecksTimeseriesGroupNormalization percentageChange = RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$percentageChange._();
 
@@ -17,30 +17,30 @@ static const RadarGetLeakedCredentialChecksTimeseriesGroupNormalization min0Max 
 static const List<RadarGetLeakedCredentialChecksTimeseriesGroupNormalization> values = [percentageChange, min0Max];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'PERCENTAGE_CHANGE' => 'percentageChange',
   'MIN0_MAX' => 'min0Max',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown; } 
+bool get isUnknown {return this is RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() percentageChange, required W Function() min0Max, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() percentageChange, required W Function() min0Max, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$percentageChange() => percentageChange(),
       RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$min0Max() => min0Max(),
       RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentageChange, W Function()? min0Max, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentageChange, W Function()? min0Max, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$percentageChange() => percentageChange != null ? percentageChange() : orElse(value),
       RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$min0Max() => min0Max != null ? min0Max() : orElse(value),
       RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupNormalization($value)';
 
- }
+}
 @immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$percentageChange extends RadarGetLeakedCredentialChecksTimeseriesGroupNormalization {const RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$percentageChange._();
 
 @override String get value => 'PERCENTAGE_CHANGE';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'PERCENTAGE_CHANGE'.hashCode;
 
- }
+}
 @immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$min0Max extends RadarGetLeakedCredentialChecksTimeseriesGroupNormalization {const RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$min0Max._();
 
 @override String get value => 'MIN0_MAX';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => 'MIN0_MAX'.hashCode;
 
- }
+}
 @immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown extends RadarGetLeakedCredentialChecksTimeseriesGroupNormalization {const RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? percenta
 
 @override int get hashCode => value.hashCode;
 
- }
+}

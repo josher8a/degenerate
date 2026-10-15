@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_content_type.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// An item belonging to a project
 @immutable final class Item {const Item({required this.id, required this.contentNodeId, required this.contentType, required this.createdAt, required this.updatedAt, required this.archivedAt, this.nodeId, this.projectNodeId, this.creator, });
 
-factory Item.fromJson(Map<String, dynamic> json) { return Item(
+factory Item.fromJson(Map<String, dynamic> json) {return Item(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String?,
   projectNodeId: json['project_node_id'] as String?,
@@ -14,7 +14,7 @@ factory Item.fromJson(Map<String, dynamic> json) { return Item(
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
-); }
+);}
 
 /// The unique identifier of the project item.
 final double id;
@@ -42,7 +42,7 @@ final DateTime updatedAt;
 /// The time when the item was archived.
 final DateTime? archivedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': ?nodeId,
   'project_node_id': ?projectNodeId,
@@ -52,14 +52,14 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'archived_at': archivedAt?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('content_node_id') && json['content_node_id'] is String &&
       json.containsKey('content_type') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String); } 
-Item copyWith({double? id, String? Function()? nodeId, String? Function()? projectNodeId, String? contentNodeId, ItemContentType? contentType, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, }) { return Item(
+      json.containsKey('archived_at') && (json['archived_at'] == null || json['archived_at'] is String);}
+Item copyWith({double? id, String? Function()? nodeId, String? Function()? projectNodeId, String? contentNodeId, ItemContentType? contentType, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, }) {return Item(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   projectNodeId: projectNodeId != null ? projectNodeId() : this.projectNodeId,
@@ -69,7 +69,7 @@ Item copyWith({double? id, String? Function()? nodeId, String? Function()? proje
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Item &&
           id == other.id &&
@@ -86,4 +86,4 @@ Item copyWith({double? id, String? Function()? nodeId, String? Function()? proje
 
 @override String toString() => 'Item(\n  id: $id,\n  nodeId: $nodeId,\n  projectNodeId: $projectNodeId,\n  contentNodeId: $contentNodeId,\n  contentType: $contentType,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  archivedAt: $archivedAt,\n)';
 
- }
+}

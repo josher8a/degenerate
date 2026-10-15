@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A set of strings with pascal case fieldnames that lead to relevant examples being generated for them
 @immutable final class FakerPascalCasePropertyNameStrings {const FakerPascalCasePropertyNameStrings({required this.emailAddress, required this.address, required this.username, required this.amount, required this.avatar, required this.city, required this.color, required this.comment, required this.company, required this.continent, required this.createdAt, required this.country, required this.countryCode, required this.currency, required this.currencyCode, required this.currencyIso, required this.datatype, required this.$default, required this.description, required this.directory, required this.domain, required this.domainName, required this.email, required this.emailAddr, required this.account, required this.expiredAt, required this.expires, required this.expiresAt, required this.$extension, required this.filename, required this.filepath, required this.filetype, required this.firstName, required this.fullName, required this.gender, required this.host, required this.hostName, required this.httpStatus, required this.iban, required this.id, required this.ip, required this.ipAddr, required this.ipAddress, required this.ipv4, required this.ipv6, required this.job, required this.json, required this.key, required this.uuid, required this.latitude, required this.longitude, required this.locale, required this.mac, required this.manufacturer, required this.material, required this.middleName, required this.model, required this.password, required this.phone, required this.pin, required this.postalCode, required this.price, required this.product, required this.sex, required this.statusCode, required this.street, required this.timezone, required this.unit, required this.updatedAt, required this.uri, required this.url, required this.lastName, this.addressLine1, });
 
-factory FakerPascalCasePropertyNameStrings.fromJson(Map<String, dynamic> json) { return FakerPascalCasePropertyNameStrings(
+factory FakerPascalCasePropertyNameStrings.fromJson(Map<String, dynamic> json) {return FakerPascalCasePropertyNameStrings(
   account: json['account'] as String,
   address: json['address'] as String,
   addressLine1: json['addressLine1'] as String?,
@@ -78,7 +78,7 @@ factory FakerPascalCasePropertyNameStrings.fromJson(Map<String, dynamic> json) {
   url: json['url'] as String,
   username: json['username'] as String,
   uuid: json['uuid'] as String,
-); }
+);}
 
 final String account;
 
@@ -228,7 +228,7 @@ final String username;
 
 final String uuid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account': account,
   'address': address,
   'addressLine1': ?addressLine1,
@@ -302,8 +302,8 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'username': username,
   'uuid': uuid,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('account') && json['account'] is String &&
       json.containsKey('address') && json['address'] is String &&
       json.containsKey('amount') && json['amount'] is String &&
       json.containsKey('avatar') && json['avatar'] is String &&
@@ -374,8 +374,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('uri') && json['uri'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('username') && json['username'] is String &&
-      json.containsKey('uuid') && json['uuid'] is String; } 
-FakerPascalCasePropertyNameStrings copyWith({String? account, String? address, String? Function()? addressLine1, String? amount, String? avatar, String? city, String? color, String? comment, String? company, String? continent, String? createdAt, String? country, String? countryCode, String? currency, String? currencyCode, String? currencyIso, String? datatype, String? $default, String? description, String? directory, String? domain, String? domainName, String? email, String? emailAddr, String? emailAddress, String? expiredAt, String? expires, String? expiresAt, String? $extension, String? filename, String? filepath, String? filetype, String? firstName, String? fullName, String? gender, String? host, String? hostName, String? httpStatus, String? iban, String? id, String? ip, String? ipAddr, String? ipAddress, String? ipv4, String? ipv6, String? job, String? json, String? key, String? lastName, String? latitude, String? longitude, String? locale, String? mac, String? manufacturer, String? material, String? middleName, String? model, String? password, String? phone, String? pin, String? postalCode, String? price, String? product, String? sex, String? statusCode, String? street, String? timezone, String? unit, String? updatedAt, String? uri, String? url, String? username, String? uuid, }) { return FakerPascalCasePropertyNameStrings(
+      json.containsKey('uuid') && json['uuid'] is String;}
+FakerPascalCasePropertyNameStrings copyWith({String? account, String? address, String? Function()? addressLine1, String? amount, String? avatar, String? city, String? color, String? comment, String? company, String? continent, String? createdAt, String? country, String? countryCode, String? currency, String? currencyCode, String? currencyIso, String? datatype, String? $default, String? description, String? directory, String? domain, String? domainName, String? email, String? emailAddr, String? emailAddress, String? expiredAt, String? expires, String? expiresAt, String? $extension, String? filename, String? filepath, String? filetype, String? firstName, String? fullName, String? gender, String? host, String? hostName, String? httpStatus, String? iban, String? id, String? ip, String? ipAddr, String? ipAddress, String? ipv4, String? ipv6, String? job, String? json, String? key, String? lastName, String? latitude, String? longitude, String? locale, String? mac, String? manufacturer, String? material, String? middleName, String? model, String? password, String? phone, String? pin, String? postalCode, String? price, String? product, String? sex, String? statusCode, String? street, String? timezone, String? unit, String? updatedAt, String? uri, String? url, String? username, String? uuid, }) {return FakerPascalCasePropertyNameStrings(
   account: account ?? this.account,
   address: address ?? this.address,
   addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,
@@ -449,7 +449,7 @@ FakerPascalCasePropertyNameStrings copyWith({String? account, String? address, S
   url: url ?? this.url,
   username: username ?? this.username,
   uuid: uuid ?? this.uuid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FakerPascalCasePropertyNameStrings &&
           account == other.account &&
@@ -530,4 +530,4 @@ FakerPascalCasePropertyNameStrings copyWith({String? account, String? address, S
 
 @override String toString() => 'FakerPascalCasePropertyNameStrings(\n  account: $account,\n  address: $address,\n  addressLine1: $addressLine1,\n  amount: $amount,\n  avatar: $avatar,\n  city: $city,\n  color: $color,\n  comment: $comment,\n  company: $company,\n  continent: $continent,\n  createdAt: $createdAt,\n  country: $country,\n  countryCode: $countryCode,\n  currency: $currency,\n  currencyCode: $currencyCode,\n  currencyIso: $currencyIso,\n  datatype: $datatype,\n  \$default: ${$default},\n  description: $description,\n  directory: $directory,\n  domain: $domain,\n  domainName: $domainName,\n  email: $email,\n  emailAddr: $emailAddr,\n  emailAddress: $emailAddress,\n  expiredAt: $expiredAt,\n  expires: $expires,\n  expiresAt: $expiresAt,\n  \$extension: ${$extension},\n  filename: $filename,\n  filepath: $filepath,\n  filetype: $filetype,\n  firstName: $firstName,\n  fullName: $fullName,\n  gender: $gender,\n  host: $host,\n  hostName: $hostName,\n  httpStatus: $httpStatus,\n  iban: $iban,\n  id: $id,\n  ip: $ip,\n  ipAddr: $ipAddr,\n  ipAddress: $ipAddress,\n  ipv4: $ipv4,\n  ipv6: $ipv6,\n  job: $job,\n  json: $json,\n  key: $key,\n  lastName: $lastName,\n  latitude: $latitude,\n  longitude: $longitude,\n  locale: $locale,\n  mac: $mac,\n  manufacturer: $manufacturer,\n  material: $material,\n  middleName: $middleName,\n  model: $model,\n  password: $password,\n  phone: $phone,\n  pin: $pin,\n  postalCode: $postalCode,\n  price: $price,\n  product: $product,\n  sex: $sex,\n  statusCode: $statusCode,\n  street: $street,\n  timezone: $timezone,\n  unit: $unit,\n  updatedAt: $updatedAt,\n  uri: $uri,\n  url: $url,\n  username: $username,\n  uuid: $uuid,\n)';
 
- }
+}

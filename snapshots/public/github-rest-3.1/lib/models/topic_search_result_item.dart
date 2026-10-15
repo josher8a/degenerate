@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';import 'package:pub_github_rest_3_1/models/topic_search_result_item/aliases.dart';import 'package:pub_github_rest_3_1/models/topic_search_result_item/related.dart';/// Topic Search Result Item
 @immutable final class TopicSearchResultItem {const TopicSearchResultItem({required this.name, required this.displayName, required this.shortDescription, required this.description, required this.createdBy, required this.released, required this.createdAt, required this.updatedAt, required this.featured, required this.curated, required this.score, this.repositoryCount = const Omittable.absent(), this.logoUrl = const Omittable.absent(), this.textMatches, this.related = const Omittable.absent(), this.aliases = const Omittable.absent(), });
 
-factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) { return TopicSearchResultItem(
+factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) {return TopicSearchResultItem(
   name: json['name'] as String,
   displayName: json['display_name'] as String?,
   shortDescription: json['short_description'] as String?,
@@ -21,7 +21,7 @@ factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) { return Topic
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
   related: json.containsKey('related') ? Omittable((json['related'] as List<dynamic>?)?.map((e) => Related.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   aliases: json.containsKey('aliases') ? Omittable((json['aliases'] as List<dynamic>?)?.map((e) => Aliases.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 final String name;
 
@@ -55,7 +55,7 @@ final Omittable<List<Related>?> related;
 
 final Omittable<List<Aliases>?> aliases;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'display_name': displayName,
   'short_description': shortDescription,
@@ -72,8 +72,8 @@ Map<String, dynamic> toJson() { return {
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
   if (related.isPresent) 'related': related.value?.map((e) => e.toJson()).toList(),
   if (aliases.isPresent) 'aliases': aliases.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
       json.containsKey('display_name') && (json['display_name'] == null || json['display_name'] is String) &&
       json.containsKey('short_description') && (json['short_description'] == null || json['short_description'] is String) &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
@@ -83,8 +83,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('featured') && json['featured'] is bool &&
       json.containsKey('curated') && json['curated'] is bool &&
-      json.containsKey('score') && json['score'] is num; } 
-TopicSearchResultItem copyWith({String? name, String? Function()? displayName, String? Function()? shortDescription, String? Function()? description, String? Function()? createdBy, String? Function()? released, DateTime? createdAt, DateTime? updatedAt, bool? featured, bool? curated, double? score, Omittable<int?>? repositoryCount, Omittable<Uri?>? logoUrl, List<SearchResultTextMatches2>? Function()? textMatches, Omittable<List<Related>?>? related, Omittable<List<Aliases>?>? aliases, }) { return TopicSearchResultItem(
+      json.containsKey('score') && json['score'] is num;}
+TopicSearchResultItem copyWith({String? name, String? Function()? displayName, String? Function()? shortDescription, String? Function()? description, String? Function()? createdBy, String? Function()? released, DateTime? createdAt, DateTime? updatedAt, bool? featured, bool? curated, double? score, Omittable<int?>? repositoryCount, Omittable<Uri?>? logoUrl, List<SearchResultTextMatches2>? Function()? textMatches, Omittable<List<Related>?>? related, Omittable<List<Aliases>?>? aliases, }) {return TopicSearchResultItem(
   name: name ?? this.name,
   displayName: displayName != null ? displayName() : this.displayName,
   shortDescription: shortDescription != null ? shortDescription() : this.shortDescription,
@@ -101,7 +101,7 @@ TopicSearchResultItem copyWith({String? name, String? Function()? displayName, S
   textMatches: textMatches != null ? textMatches() : this.textMatches,
   related: related ?? this.related,
   aliases: aliases ?? this.aliases,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TopicSearchResultItem &&
           name == other.name &&
@@ -127,4 +127,4 @@ TopicSearchResultItem copyWith({String? name, String? Function()? displayName, S
 
 @override String toString() => 'TopicSearchResultItem(\n  name: $name,\n  displayName: $displayName,\n  shortDescription: $shortDescription,\n  description: $description,\n  createdBy: $createdBy,\n  released: $released,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  featured: $featured,\n  curated: $curated,\n  score: $score,\n  repositoryCount: $repositoryCount,\n  logoUrl: $logoUrl,\n  textMatches: $textMatches,\n  related: $related,\n  aliases: $aliases,\n)';
 
- }
+}

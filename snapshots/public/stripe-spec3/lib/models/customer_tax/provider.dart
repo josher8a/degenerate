@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 sealed class Provider {const Provider();
 
-factory Provider.fromJson(String json) { return switch (json) {
+factory Provider.fromJson(String json) {return switch (json) {
   'anrok' => anrok,
   'avalara' => avalara,
   'sphere' => sphere,
   'stripe' => stripe,
   _ => Provider$Unknown(json),
-}; }
+};}
 
 static const Provider anrok = Provider$anrok._();
 
@@ -23,36 +23,36 @@ static const Provider stripe = Provider$stripe._();
 static const List<Provider> values = [anrok, avalara, sphere, stripe];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'anrok' => 'anrok',
   'avalara' => 'avalara',
   'sphere' => 'sphere',
   'stripe' => 'stripe',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Provider$Unknown; } 
+bool get isUnknown {return this is Provider$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() anrok, required W Function() avalara, required W Function() sphere, required W Function() stripe, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() anrok, required W Function() avalara, required W Function() sphere, required W Function() stripe, required W Function(String value) $unknown, }) {return switch (this) {
       Provider$anrok() => anrok(),
       Provider$avalara() => avalara(),
       Provider$sphere() => sphere(),
       Provider$stripe() => stripe(),
       Provider$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? anrok, W Function()? avalara, W Function()? sphere, W Function()? stripe, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? anrok, W Function()? avalara, W Function()? sphere, W Function()? stripe, W Function(String value)? $unknown, }) {return switch (this) {
       Provider$anrok() => anrok != null ? anrok() : orElse(value),
       Provider$avalara() => avalara != null ? avalara() : orElse(value),
       Provider$sphere() => sphere != null ? sphere() : orElse(value),
       Provider$stripe() => stripe != null ? stripe() : orElse(value),
       Provider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Provider($value)';
 
- }
+}
 @immutable final class Provider$anrok extends Provider {const Provider$anrok._();
 
 @override String get value => 'anrok';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anrok, W
 
 @override int get hashCode => 'anrok'.hashCode;
 
- }
+}
 @immutable final class Provider$avalara extends Provider {const Provider$avalara._();
 
 @override String get value => 'avalara';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anrok, W
 
 @override int get hashCode => 'avalara'.hashCode;
 
- }
+}
 @immutable final class Provider$sphere extends Provider {const Provider$sphere._();
 
 @override String get value => 'sphere';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anrok, W
 
 @override int get hashCode => 'sphere'.hashCode;
 
- }
+}
 @immutable final class Provider$stripe extends Provider {const Provider$stripe._();
 
 @override String get value => 'stripe';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anrok, W
 
 @override int get hashCode => 'stripe'.hashCode;
 
- }
+}
 @immutable final class Provider$Unknown extends Provider {const Provider$Unknown(this.value);
 
 @override final String value;
@@ -98,4 +98,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? anrok, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

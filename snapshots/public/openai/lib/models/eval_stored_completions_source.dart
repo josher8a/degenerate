@@ -5,14 +5,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({required this.type, this.metadata = const Omittable.absent(), this.model = const Omittable.absent(), this.createdAfter = const Omittable.absent(), this.createdBefore = const Omittable.absent(), this.limit = const Omittable.absent(), });
 
-factory EvalStoredCompletionsSource.fromJson(Map<String, dynamic> json) { return EvalStoredCompletionsSource(
+factory EvalStoredCompletionsSource.fromJson(Map<String, dynamic> json) {return EvalStoredCompletionsSource(
   type: CreateEvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
   createdAfter: json.containsKey('created_after') ? Omittable(json['created_after'] != null ? (json['created_after'] as num).toInt() : null) : const Omittable.absent(),
   createdBefore: json.containsKey('created_before') ? Omittable(json['created_before'] != null ? (json['created_before'] as num).toInt() : null) : const Omittable.absent(),
   limit: json.containsKey('limit') ? Omittable(json['limit'] != null ? (json['limit'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The type of source. Always `stored_completions`.
 final CreateEvalStoredCompletionsDataSourceConfigType type;
@@ -31,23 +31,23 @@ final Omittable<int?> createdBefore;
 /// An optional maximum number of items to return.
 final Omittable<int?> limit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
   if (model.isPresent) 'model': model.value,
   if (createdAfter.isPresent) 'created_after': createdAfter.value,
   if (createdBefore.isPresent) 'created_before': createdBefore.value,
   if (limit.isPresent) 'limit': limit.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'stored_completions'; } 
-EvalStoredCompletionsSource copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Omittable<Map<String,String>?>? metadata, Omittable<String?>? model, Omittable<int?>? createdAfter, Omittable<int?>? createdBefore, Omittable<int?>? limit, }) { return EvalStoredCompletionsSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'stored_completions';}
+EvalStoredCompletionsSource copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Omittable<Map<String,String>?>? metadata, Omittable<String?>? model, Omittable<int?>? createdAfter, Omittable<int?>? createdBefore, Omittable<int?>? limit, }) {return EvalStoredCompletionsSource(
   type: type ?? this.type,
   metadata: metadata ?? this.metadata,
   model: model ?? this.model,
   createdAfter: createdAfter ?? this.createdAfter,
   createdBefore: createdBefore ?? this.createdBefore,
   limit: limit ?? this.limit,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EvalStoredCompletionsSource &&
           type == other.type &&
@@ -61,4 +61,4 @@ EvalStoredCompletionsSource copyWith({CreateEvalStoredCompletionsDataSourceConfi
 
 @override String toString() => 'EvalStoredCompletionsSource(type: $type, metadata: $metadata, model: $model, createdAfter: $createdAfter, createdBefore: $createdBefore, limit: $limit)';
 
- }
+}

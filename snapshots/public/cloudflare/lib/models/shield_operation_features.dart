@@ -7,14 +7,14 @@ const ShieldOperationFeatures({this.shieldOperationFeatureThresholds = const Omi
 const ShieldOperationFeatures._({required this.rawValue, required this.shieldOperationFeatureThresholds, required this.shieldOperationFeatureParameterSchemas, required this.routing, required this.shieldOperationFeatureConfidenceIntervals, required this.shieldOperationFeatureSchemaInfo, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ShieldOperationFeatures.fromJson(Object? json) { return ShieldOperationFeatures._(
+factory ShieldOperationFeatures.fromJson(Object? json) {return ShieldOperationFeatures._(
   rawValue: Omittable(json),
   shieldOperationFeatureThresholds: json is Map<String, dynamic> && ShieldOperationFeatureThresholds.canParse(json) ? parseAnyOfVariant<ShieldOperationFeatureThresholds>(json, (value) => ShieldOperationFeatureThresholds.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   shieldOperationFeatureParameterSchemas: json is Map<String, dynamic> && ShieldOperationFeatureParameterSchemas.canParse(json) ? parseAnyOfVariant<ShieldOperationFeatureParameterSchemas>(json, (value) => ShieldOperationFeatureParameterSchemas.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   routing: json is Map<String, dynamic> && Routing.canParse(json) ? parseAnyOfVariant<Routing>(json, (value) => Routing.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   shieldOperationFeatureConfidenceIntervals: json is Map<String, dynamic> && ShieldOperationFeatureConfidenceIntervals.canParse(json) ? parseAnyOfVariant<ShieldOperationFeatureConfidenceIntervals>(json, (value) => ShieldOperationFeatureConfidenceIntervals.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   shieldOperationFeatureSchemaInfo: json is Map<String, dynamic> && ShieldOperationFeatureSchemaInfo.canParse(json) ? parseAnyOfVariant<ShieldOperationFeatureSchemaInfo>(json, (value) => ShieldOperationFeatureSchemaInfo.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -56,4 +56,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ShieldOperationFeatures(${toJson()})';
 
- }
+}

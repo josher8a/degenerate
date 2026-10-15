@@ -8,7 +8,7 @@ const BalanceTransactionSource({this.string = const Omittable.absent(), this.app
 const BalanceTransactionSource._({required this.rawValue, required this.string, required this.applicationFee, required this.charge, required this.connectCollectionTransfer, required this.customerCashBalanceTransaction, required this.dispute, required this.feeRefund, required this.issuingAuthorization, required this.issuingDispute, required this.issuingTransaction, required this.payout, required this.refund, required this.reserveTransaction, required this.taxDeductedAtSource, required this.topup, required this.transfer, required this.transferReversal, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory BalanceTransactionSource.fromJson(Object? json) { return BalanceTransactionSource._(
+factory BalanceTransactionSource.fromJson(Object? json) {return BalanceTransactionSource._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   applicationFee: json is Map<String, dynamic> && ApplicationFee.canParse(json) ? parseAnyOfVariant<ApplicationFee>(json, (value) => ApplicationFee.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -27,7 +27,7 @@ factory BalanceTransactionSource.fromJson(Object? json) { return BalanceTransact
   topup: json is Map<String, dynamic> && Topup.canParse(json) ? parseAnyOfVariant<Topup>(json, (value) => Topup.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   transfer: json is Map<String, dynamic> && Transfer.canParse(json) ? parseAnyOfVariant<Transfer>(json, (value) => Transfer.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   transferReversal: json is Map<String, dynamic> && TransferReversal.canParse(json) ? parseAnyOfVariant<TransferReversal>(json, (value) => TransferReversal.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -117,4 +117,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'BalanceTransactionSource(${toJson()})';
 
- }
+}

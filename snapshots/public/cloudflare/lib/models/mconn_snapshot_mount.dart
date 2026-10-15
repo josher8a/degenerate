@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Mount
 @immutable final class MconnSnapshotMount {const MconnSnapshotMount({required this.fileSystem, required this.kind, required this.mountPoint, required this.name, this.availableBytes, this.connectorId, this.isReadOnly, this.isRemovable, this.totalBytes, });
 
-factory MconnSnapshotMount.fromJson(Map<String, dynamic> json) { return MconnSnapshotMount(
+factory MconnSnapshotMount.fromJson(Map<String, dynamic> json) {return MconnSnapshotMount(
   availableBytes: json['available_bytes'] != null ? (json['available_bytes'] as num).toDouble() : null,
   connectorId: json['connector_id'] as String?,
   fileSystem: json['file_system'] as String,
@@ -14,7 +14,7 @@ factory MconnSnapshotMount.fromJson(Map<String, dynamic> json) { return MconnSna
   mountPoint: json['mount_point'] as String,
   name: json['name'] as String,
   totalBytes: json['total_bytes'] != null ? (json['total_bytes'] as num).toDouble() : null,
-); }
+);}
 
 /// Available disk size (bytes)
 final double? availableBytes;
@@ -43,7 +43,7 @@ final String name;
 /// Total disk size (bytes)
 final double? totalBytes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'available_bytes': ?availableBytes,
   'connector_id': ?connectorId,
   'file_system': fileSystem,
@@ -53,12 +53,12 @@ Map<String, dynamic> toJson() { return {
   'mount_point': mountPoint,
   'name': name,
   'total_bytes': ?totalBytes,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_system') && json['file_system'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('file_system') && json['file_system'] is String &&
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('mount_point') && json['mount_point'] is String &&
-      json.containsKey('name') && json['name'] is String; } 
-MconnSnapshotMount copyWith({double? Function()? availableBytes, String? Function()? connectorId, String? fileSystem, bool? Function()? isReadOnly, bool? Function()? isRemovable, String? kind, String? mountPoint, String? name, double? Function()? totalBytes, }) { return MconnSnapshotMount(
+      json.containsKey('name') && json['name'] is String;}
+MconnSnapshotMount copyWith({double? Function()? availableBytes, String? Function()? connectorId, String? fileSystem, bool? Function()? isReadOnly, bool? Function()? isRemovable, String? kind, String? mountPoint, String? name, double? Function()? totalBytes, }) {return MconnSnapshotMount(
   availableBytes: availableBytes != null ? availableBytes() : this.availableBytes,
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   fileSystem: fileSystem ?? this.fileSystem,
@@ -68,7 +68,7 @@ MconnSnapshotMount copyWith({double? Function()? availableBytes, String? Functio
   mountPoint: mountPoint ?? this.mountPoint,
   name: name ?? this.name,
   totalBytes: totalBytes != null ? totalBytes() : this.totalBytes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotMount &&
           availableBytes == other.availableBytes &&
@@ -85,4 +85,4 @@ MconnSnapshotMount copyWith({double? Function()? availableBytes, String? Functio
 
 @override String toString() => 'MconnSnapshotMount(\n  availableBytes: $availableBytes,\n  connectorId: $connectorId,\n  fileSystem: $fileSystem,\n  isReadOnly: $isReadOnly,\n  isRemovable: $isRemovable,\n  kind: $kind,\n  mountPoint: $mountPoint,\n  name: $name,\n  totalBytes: $totalBytes,\n)';
 
- }
+}

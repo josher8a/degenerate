@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateUserDefinedMessageRequest {const CreateUserDefinedMessageRequest({required this.content, this.idempotencyKey, });
 
-factory CreateUserDefinedMessageRequest.fromJson(Map<String, dynamic> json) { return CreateUserDefinedMessageRequest(
+factory CreateUserDefinedMessageRequest.fromJson(Map<String, dynamic> json) {return CreateUserDefinedMessageRequest(
   content: json['Content'] as String,
   idempotencyKey: json['IdempotencyKey'] as String?,
-); }
+);}
 
 /// The User Defined Message in the form of URL-encoded JSON string.
 final String content;
@@ -14,15 +14,15 @@ final String content;
 /// A unique string value to identify API call. This should be a unique string value per API call and can be a randomly generated.
 final String? idempotencyKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'Content': content,
   'IdempotencyKey': ?idempotencyKey,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('Content') && json['Content'] is String; } 
-CreateUserDefinedMessageRequest copyWith({String? content, String? Function()? idempotencyKey, }) { return CreateUserDefinedMessageRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('Content') && json['Content'] is String;}
+CreateUserDefinedMessageRequest copyWith({String? content, String? Function()? idempotencyKey, }) {return CreateUserDefinedMessageRequest(
   content: content ?? this.content,
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateUserDefinedMessageRequest &&
           content == other.content &&
@@ -32,4 +32,4 @@ CreateUserDefinedMessageRequest copyWith({String? content, String? Function()? i
 
 @override String toString() => 'CreateUserDefinedMessageRequest(content: $content, idempotencyKey: $idempotencyKey)';
 
- }
+}

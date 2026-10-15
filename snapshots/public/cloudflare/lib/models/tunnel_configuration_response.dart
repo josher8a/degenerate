@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_configuration.dart';import 'package:pub_cloudflare/models/tunnel_schemas_messages2.dart';@immutable final class TunnelConfigurationResponse {const TunnelConfigurationResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory TunnelConfigurationResponse.fromJson(Map<String, dynamic> json) { return TunnelConfigurationResponse(
+factory TunnelConfigurationResponse.fromJson(Map<String, dynamic> json) {return TunnelConfigurationResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => TunnelSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TunnelSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? TunnelConfiguration.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<TunnelSchemasMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final TunnelConfiguration? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-TunnelConfigurationResponse copyWith({List<TunnelSchemasMessages2>? errors, List<TunnelSchemasMessages2>? messages, bool? success, TunnelConfiguration? Function()? result, }) { return TunnelConfigurationResponse(
+      json.containsKey('success') && json['success'] is bool;}
+TunnelConfigurationResponse copyWith({List<TunnelSchemasMessages2>? errors, List<TunnelSchemasMessages2>? messages, bool? success, TunnelConfiguration? Function()? result, }) {return TunnelConfigurationResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelConfigurationResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ TunnelConfigurationResponse copyWith({List<TunnelSchemasMessages2>? errors, List
 
 @override String toString() => 'TunnelConfigurationResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

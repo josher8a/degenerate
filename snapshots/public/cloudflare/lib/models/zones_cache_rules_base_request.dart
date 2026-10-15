@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesCacheRulesBaseRequest {const ZonesCacheRulesBaseRequest({required this.id});
 
-factory ZonesCacheRulesBaseRequest.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesBaseRequest(
+factory ZonesCacheRulesBaseRequest.fromJson(Map<String, dynamic> json) {return ZonesCacheRulesBaseRequest(
   id: json['id'] as String,
-); }
+);}
 
 /// Identifier of the zone setting.
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-ZonesCacheRulesBaseRequest copyWith({String? id}) { return ZonesCacheRulesBaseRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+ZonesCacheRulesBaseRequest copyWith({String? id}) {return ZonesCacheRulesBaseRequest(
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesCacheRulesBaseRequest &&
           id == other.id;
@@ -25,4 +25,4 @@ ZonesCacheRulesBaseRequest copyWith({String? id}) { return ZonesCacheRulesBaseRe
 
 @override String toString() => 'ZonesCacheRulesBaseRequest(id: $id)';
 
- }
+}

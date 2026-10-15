@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicBgpConfig {const MagicBgpConfig({required this.customerAsn, this.extraPrefixes, this.md5Key, });
 
-factory MagicBgpConfig.fromJson(Map<String, dynamic> json) { return MagicBgpConfig(
+factory MagicBgpConfig.fromJson(Map<String, dynamic> json) {return MagicBgpConfig(
   customerAsn: (json['customer_asn'] as num).toInt(),
   extraPrefixes: (json['extra_prefixes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   md5Key: json['md5_key'] as String?,
-); }
+);}
 
 /// ASN used on the customer end of the BGP session
 final int customerAsn;
@@ -33,21 +33,21 @@ final List<String>? extraPrefixes;
 /// these disallowed characters will be rejected.
 final String? md5Key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'customer_asn': customerAsn,
   'extra_prefixes': ?extraPrefixes,
   'md5_key': ?md5Key,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_asn') && json['customer_asn'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('customer_asn') && json['customer_asn'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (customerAsn < 0) { errors.add('customerAsn: must be >= 0'); }
-return errors; } 
-MagicBgpConfig copyWith({int? customerAsn, List<String>? Function()? extraPrefixes, String? Function()? md5Key, }) { return MagicBgpConfig(
+return errors;}
+MagicBgpConfig copyWith({int? customerAsn, List<String>? Function()? extraPrefixes, String? Function()? md5Key, }) {return MagicBgpConfig(
   customerAsn: customerAsn ?? this.customerAsn,
   extraPrefixes: extraPrefixes != null ? extraPrefixes() : this.extraPrefixes,
   md5Key: md5Key != null ? md5Key() : this.md5Key,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicBgpConfig &&
           customerAsn == other.customerAsn &&
@@ -58,4 +58,4 @@ MagicBgpConfig copyWith({int? customerAsn, List<String>? Function()? extraPrefix
 
 @override String toString() => 'MagicBgpConfig(customerAsn: $customerAsn, extraPrefixes: $extraPrefixes, md5Key: $md5Key)';
 
- }
+}

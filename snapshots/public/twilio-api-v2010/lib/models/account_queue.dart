@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueue {const AccountQueue({this.dateUpdated = const Omittable.absent(), this.currentSize, this.friendlyName = const Omittable.absent(), this.uri = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.averageWaitTime, this.sid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.maxSize, });
 
-factory AccountQueue.fromJson(Map<String, dynamic> json) { return AccountQueue(
+factory AccountQueue.fromJson(Map<String, dynamic> json) {return AccountQueue(
   dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
   currentSize: json['current_size'] != null ? (json['current_size'] as num).toInt() : null,
   friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
@@ -13,7 +13,7 @@ factory AccountQueue.fromJson(Map<String, dynamic> json) { return AccountQueue(
   sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
   maxSize: json['max_size'] != null ? (json['max_size'] as num).toInt() : null,
-); }
+);}
 
 /// The date and time in GMT that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
 final Omittable<String?> dateUpdated;
@@ -51,7 +51,7 @@ int get averageWaitTimeOrDefault => averageWaitTime ?? 0;
 /// The value of `maxSize`, or its schema default when absent.
 int get maxSizeOrDefault => maxSize ?? 0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
   'current_size': ?currentSize,
   if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
@@ -61,10 +61,10 @@ Map<String, dynamic> toJson() { return {
   if (sid.isPresent) 'sid': sid.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
   'max_size': ?maxSize,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date_updated', 'current_size', 'friendly_name', 'uri', 'account_sid', 'average_wait_time', 'sid', 'date_created', 'max_size'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'date_updated', 'current_size', 'friendly_name', 'uri', 'account_sid', 'average_wait_time', 'sid', 'date_created', 'max_size'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -77,8 +77,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^QU[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^QU[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountQueue copyWith({Omittable<String?>? dateUpdated, int? Function()? currentSize, Omittable<String?>? friendlyName, Omittable<String?>? uri, Omittable<String?>? accountSid, int? Function()? averageWaitTime, Omittable<String?>? sid, Omittable<String?>? dateCreated, int? Function()? maxSize, }) { return AccountQueue(
+return errors;}
+AccountQueue copyWith({Omittable<String?>? dateUpdated, int? Function()? currentSize, Omittable<String?>? friendlyName, Omittable<String?>? uri, Omittable<String?>? accountSid, int? Function()? averageWaitTime, Omittable<String?>? sid, Omittable<String?>? dateCreated, int? Function()? maxSize, }) {return AccountQueue(
   dateUpdated: dateUpdated ?? this.dateUpdated,
   currentSize: currentSize != null ? currentSize() : this.currentSize,
   friendlyName: friendlyName ?? this.friendlyName,
@@ -88,7 +88,7 @@ AccountQueue copyWith({Omittable<String?>? dateUpdated, int? Function()? current
   sid: sid ?? this.sid,
   dateCreated: dateCreated ?? this.dateCreated,
   maxSize: maxSize != null ? maxSize() : this.maxSize,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountQueue &&
           dateUpdated == other.dateUpdated &&
@@ -105,4 +105,4 @@ AccountQueue copyWith({Omittable<String?>? dateUpdated, int? Function()? current
 
 @override String toString() => 'AccountQueue(\n  dateUpdated: $dateUpdated,\n  currentSize: $currentSize,\n  friendlyName: $friendlyName,\n  uri: $uri,\n  accountSid: $accountSid,\n  averageWaitTime: $averageWaitTime,\n  sid: $sid,\n  dateCreated: $dateCreated,\n  maxSize: $maxSize,\n)';
 
- }
+}

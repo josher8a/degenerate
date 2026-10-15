@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CacheRulesBase {const CacheRulesBase({required this.id, this.modifiedOn = const Omittable.absent(), });
 
-factory CacheRulesBase.fromJson(Map<String, dynamic> json) { return CacheRulesBase(
+factory CacheRulesBase.fromJson(Map<String, dynamic> json) {return CacheRulesBase(
   id: json['id'] as String,
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Identifier of the zone setting.
 final String id;
@@ -16,15 +16,15 @@ final String id;
 /// Example: `'2014-01-01T05:20:00.12345Z'`
 final Omittable<DateTime?> modifiedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-CacheRulesBase copyWith({String? id, Omittable<DateTime?>? modifiedOn, }) { return CacheRulesBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String;}
+CacheRulesBase copyWith({String? id, Omittable<DateTime?>? modifiedOn, }) {return CacheRulesBase(
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesBase &&
           id == other.id &&
@@ -34,4 +34,4 @@ CacheRulesBase copyWith({String? id, Omittable<DateTime?>? modifiedOn, }) { retu
 
 @override String toString() => 'CacheRulesBase(id: $id, modifiedOn: $modifiedOn)';
 
- }
+}

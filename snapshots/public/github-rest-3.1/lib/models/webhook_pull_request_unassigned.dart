@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_unassigned/webhook_issues_unassigned_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_unassigned/webhook_pull_request_unassigned_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';import 'package:pub_github_rest_3_1/models/webhooks_user_mannequin.dart';@immutable final class WebhookPullRequestUnassigned {const WebhookPullRequestUnassigned({required this.action, required this.number, required this.pullRequest, required this.repository, this.assignee = const Omittable.absent(), this.enterprise, this.installation, this.organization, this.sender, });
 
-factory WebhookPullRequestUnassigned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnassigned(
+factory WebhookPullRequestUnassigned.fromJson(Map<String, dynamic> json) {return WebhookPullRequestUnassigned(
   action: WebhookIssuesUnassignedAction.fromJson(json['action'] as String),
   assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? WebhooksUserMannequin.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory WebhookPullRequestUnassigned.fromJson(Map<String, dynamic> json) { retur
   pullRequest: WebhookPullRequestUnassignedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final WebhookIssuesUnassignedAction action;
 
@@ -34,7 +34,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser? sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -44,12 +44,12 @@ Map<String, dynamic> toJson() { return {
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
-      json.containsKey('repository'); } 
-WebhookPullRequestUnassigned copyWith({WebhookIssuesUnassignedAction? action, Omittable<WebhooksUserMannequin?>? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestUnassignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookPullRequestUnassigned(
+      json.containsKey('repository');}
+WebhookPullRequestUnassigned copyWith({WebhookIssuesUnassignedAction? action, Omittable<WebhooksUserMannequin?>? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestUnassignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) {return WebhookPullRequestUnassigned(
   action: action ?? this.action,
   assignee: assignee ?? this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -59,7 +59,7 @@ WebhookPullRequestUnassigned copyWith({WebhookIssuesUnassignedAction? action, Om
   pullRequest: pullRequest ?? this.pullRequest,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestUnassigned &&
           action == other.action &&
@@ -76,4 +76,4 @@ WebhookPullRequestUnassigned copyWith({WebhookIssuesUnassignedAction? action, Om
 
 @override String toString() => 'WebhookPullRequestUnassigned(\n  action: $action,\n  assignee: $assignee,\n  enterprise: $enterprise,\n  installation: $installation,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

@@ -14,7 +14,7 @@ final class AsnIntelligenceApi with ApiExecutor {const AsnIntelligenceApi(this.a
 /// Gets an overview of the Autonomous System Number (ASN) and a list of subnets for it.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}`
-Future<ApiResult<IntelAsn?, AsnIntelligenceGetAsnOverviewError>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IntelAsn?, AsnIntelligenceGetAsnOverviewError>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AsnIntelligenceGetAsnOverviewError.fromResponse,
 );
- } 
+}
 /// Get ASN Subnets
 ///
 /// Get ASN Subnets.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}/subnets`
-Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, AsnIntelligenceGetAsnSubnetsError>> asnIntelligenceGetAsnSubnets({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, AsnIntelligenceGetAsnSubnetsError>> asnIntelligenceGetAsnSubnets({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -53,5 +53,5 @@ return await execute(
   },
   onError: AsnIntelligenceGetAsnSubnetsError.fromResponse,
 );
- } 
- }
+}
+}

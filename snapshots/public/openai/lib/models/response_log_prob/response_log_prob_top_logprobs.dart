@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseLogProbTopLogprobs {const ResponseLogProbTopLogprobs({this.token, this.logprob, });
 
-factory ResponseLogProbTopLogprobs.fromJson(Map<String, dynamic> json) { return ResponseLogProbTopLogprobs(
+factory ResponseLogProbTopLogprobs.fromJson(Map<String, dynamic> json) {return ResponseLogProbTopLogprobs(
   token: json['token'] as String?,
   logprob: json['logprob'] != null ? (json['logprob'] as num).toDouble() : null,
-); }
+);}
 
 /// A possible text token.
 final String? token;
@@ -14,15 +14,15 @@ final String? token;
 /// The log probability of this token.
 final double? logprob;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token': ?token,
   'logprob': ?logprob,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token', 'logprob'}.contains(key)); } 
-ResponseLogProbTopLogprobs copyWith({String? Function()? token, double? Function()? logprob, }) { return ResponseLogProbTopLogprobs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'token', 'logprob'}.contains(key));}
+ResponseLogProbTopLogprobs copyWith({String? Function()? token, double? Function()? logprob, }) {return ResponseLogProbTopLogprobs(
   token: token != null ? token() : this.token,
   logprob: logprob != null ? logprob() : this.logprob,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseLogProbTopLogprobs &&
           token == other.token &&
@@ -32,4 +32,4 @@ ResponseLogProbTopLogprobs copyWith({String? Function()? token, double? Function
 
 @override String toString() => 'ResponseLogProbTopLogprobs(token: $token, logprob: $logprob)';
 
- }
+}

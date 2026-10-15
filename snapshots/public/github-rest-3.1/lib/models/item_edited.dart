@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/item_edited/changes_variant1.dart';import 'package:pub_github_rest_3_1/models/item_edited/changes_variant2.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_changes.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ItemEdited {const ItemEdited({required this.action, required this.organization, required this.projectsV2Item, required this.sender, this.changes, this.installation, });
 
-factory ItemEdited.fromJson(Map<String, dynamic> json) { return ItemEdited(
+factory ItemEdited.fromJson(Map<String, dynamic> json) {return ItemEdited(
   action: ItemEditedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? OneOf2.parse(json['changes'], fromA: (v) => ChangesVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ChangesVariant2.fromJson(v as Map<String, dynamic>),) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2Item: Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemEditedAction action;
 
@@ -26,26 +26,26 @@ final Item projectsV2Item;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (changes != null) 'changes': changes?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'organization': organization.toJson(),
   'projects_v2_item': projectsV2Item.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('organization') &&
       json.containsKey('projects_v2_item') &&
-      json.containsKey('sender'); } 
-ItemEdited copyWith({ItemEditedAction? action, ItemEditedChanges? Function()? changes, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) { return ItemEdited(
+      json.containsKey('sender');}
+ItemEdited copyWith({ItemEditedAction? action, ItemEditedChanges? Function()? changes, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) {return ItemEdited(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,
   projectsV2Item: projectsV2Item ?? this.projectsV2Item,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ItemEdited &&
           action == other.action &&
@@ -59,4 +59,4 @@ ItemEdited copyWith({ItemEditedAction? action, ItemEditedChanges? Function()? ch
 
 @override String toString() => 'ItemEdited(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)';
 
- }
+}

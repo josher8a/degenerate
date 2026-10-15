@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_classification.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_environment.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_instance_list/message.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_location.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_analysis_key.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_category.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';/// State of a code scanning alert instance.
 sealed class CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState();
 
-factory CodeScanningAlertInstanceState.fromJson(String json) { return switch (json) {
+factory CodeScanningAlertInstanceState.fromJson(String json) {return switch (json) {
   'open' => open,
   'fixed' => fixed,
   'null' => $null,
   _ => CodeScanningAlertInstanceState$Unknown(json),
-}; }
+};}
 
 static const CodeScanningAlertInstanceState open = CodeScanningAlertInstanceState$open._();
 
@@ -20,33 +20,33 @@ static const CodeScanningAlertInstanceState $null = CodeScanningAlertInstanceSta
 static const List<CodeScanningAlertInstanceState> values = [open, fixed, $null];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'open' => 'open',
   'fixed' => 'fixed',
   'null' => r'$null',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeScanningAlertInstanceState$Unknown; } 
+bool get isUnknown {return this is CodeScanningAlertInstanceState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() open, required W Function() fixed, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() open, required W Function() fixed, required W Function() $null, required W Function(String value) $unknown, }) {return switch (this) {
       CodeScanningAlertInstanceState$open() => open(),
       CodeScanningAlertInstanceState$fixed() => fixed(),
       CodeScanningAlertInstanceState$$null() => $null(),
       CodeScanningAlertInstanceState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? fixed, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? fixed, W Function()? $null, W Function(String value)? $unknown, }) {return switch (this) {
       CodeScanningAlertInstanceState$open() => open != null ? open() : orElse(value),
       CodeScanningAlertInstanceState$fixed() => fixed != null ? fixed() : orElse(value),
       CodeScanningAlertInstanceState$$null() => $null != null ? $null() : orElse(value),
       CodeScanningAlertInstanceState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeScanningAlertInstanceState($value)';
 
- }
+}
 @immutable final class CodeScanningAlertInstanceState$open extends CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState$open._();
 
 @override String get value => 'open';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertInstanceState$fixed extends CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState$fixed._();
 
 @override String get value => 'fixed';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'fixed'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertInstanceState$$null extends CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState$$null._();
 
 @override String get value => 'null';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'null'.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertInstanceState$Unknown extends CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState$Unknown(this.value);
 
 @override final String value;
@@ -83,10 +83,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CodeScanningAlertInstanceList {const CodeScanningAlertInstanceList({this.ref, this.analysisKey, this.environment, this.category, this.state = const Omittable.absent(), this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
 
-factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { return CodeScanningAlertInstanceList(
+factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) {return CodeScanningAlertInstanceList(
   ref: json['ref'] != null ? CodeScanningRef.fromJson(json['ref'] as String) : null,
   analysisKey: json['analysis_key'] != null ? CodeScanningAnalysisAnalysisKey.fromJson(json['analysis_key'] as String) : null,
   environment: json['environment'] != null ? CodeScanningAlertEnvironment.fromJson(json['environment'] as String) : null,
@@ -97,7 +97,7 @@ factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { retu
   location: json['location'] != null ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   htmlUrl: json['html_url'] as String?,
   classifications: (json['classifications'] as List<dynamic>?)?.map((e) => e == null ? null : CodeScanningAlertClassification.fromJson(e as String)).toList(),
-); }
+);}
 
 /// The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,
 /// `refs/heads/<branch name>` or simply `<branch name>`.
@@ -127,7 +127,7 @@ final String? htmlUrl;
 /// For example identifying it as documentation, or a generated file.
 final List<CodeScanningAlertClassification?>? classifications;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ref != null) 'ref': ref?.toJson(),
   if (analysisKey != null) 'analysis_key': analysisKey?.toJson(),
   if (environment != null) 'environment': environment?.toJson(),
@@ -138,9 +138,9 @@ Map<String, dynamic> toJson() { return {
   if (location != null) 'location': location?.toJson(),
   'html_url': ?htmlUrl,
   if (classifications != null) 'classifications': classifications?.map((e) => e?.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref', 'analysis_key', 'environment', 'category', 'state', 'commit_sha', 'message', 'location', 'html_url', 'classifications'}.contains(key)); } 
-CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeScanningAnalysisAnalysisKey? Function()? analysisKey, CodeScanningAlertEnvironment? Function()? environment, CodeScanningAnalysisCategory? Function()? category, Omittable<CodeScanningAlertInstanceState?>? state, String? Function()? commitSha, Message? Function()? message, CodeScanningAlertLocation? Function()? location, String? Function()? htmlUrl, List<CodeScanningAlertClassification?>? Function()? classifications, }) { return CodeScanningAlertInstanceList(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ref', 'analysis_key', 'environment', 'category', 'state', 'commit_sha', 'message', 'location', 'html_url', 'classifications'}.contains(key));}
+CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeScanningAnalysisAnalysisKey? Function()? analysisKey, CodeScanningAlertEnvironment? Function()? environment, CodeScanningAnalysisCategory? Function()? category, Omittable<CodeScanningAlertInstanceState?>? state, String? Function()? commitSha, Message? Function()? message, CodeScanningAlertLocation? Function()? location, String? Function()? htmlUrl, List<CodeScanningAlertClassification?>? Function()? classifications, }) {return CodeScanningAlertInstanceList(
   ref: ref != null ? ref() : this.ref,
   analysisKey: analysisKey != null ? analysisKey() : this.analysisKey,
   environment: environment != null ? environment() : this.environment,
@@ -151,7 +151,7 @@ CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeSc
   location: location != null ? location() : this.location,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   classifications: classifications != null ? classifications() : this.classifications,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAlertInstanceList &&
           ref == other.ref &&
@@ -169,4 +169,4 @@ CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeSc
 
 @override String toString() => 'CodeScanningAlertInstanceList(\n  ref: $ref,\n  analysisKey: $analysisKey,\n  environment: $environment,\n  category: $category,\n  state: $state,\n  commitSha: $commitSha,\n  message: $message,\n  location: $location,\n  htmlUrl: $htmlUrl,\n  classifications: $classifications,\n)';
 
- }
+}

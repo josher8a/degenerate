@@ -3,11 +3,11 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleEnqueueRequestBase {const SimpleEnqueueRequestBase({this.image, this.sourceId, this.additionalProperties = const {}, });
 
-factory SimpleEnqueueRequestBase.fromJson(Map<String, dynamic> json) { return SimpleEnqueueRequestBase(
+factory SimpleEnqueueRequestBase.fromJson(Map<String, dynamic> json) {return SimpleEnqueueRequestBase(
   image: json['image'] != null ? base64Decode(json['image'] as String) : null,
   sourceId: json['source_id'] as String?,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'image', 'source_id'}.contains(e.key)).map((e) => MapEntry(e.key, e.value as String))),
-); }
+);}
 
 final Uint8List? image;
 
@@ -15,17 +15,17 @@ final String? sourceId;
 
 final Map<String,String> additionalProperties;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (image != null) 'image': switch (image) { final bytes? => base64Encode(bytes), _ => null },
   'source_id': ?sourceId,
   ...additionalProperties,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image', 'source_id'}.contains(key)); } 
-SimpleEnqueueRequestBase copyWith({Uint8List? Function()? image, String? Function()? sourceId, Map<String, String>? additionalProperties, }) { return SimpleEnqueueRequestBase(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'image', 'source_id'}.contains(key));}
+SimpleEnqueueRequestBase copyWith({Uint8List? Function()? image, String? Function()? sourceId, Map<String, String>? additionalProperties, }) {return SimpleEnqueueRequestBase(
   image: image != null ? image() : this.image,
   sourceId: sourceId != null ? sourceId() : this.sourceId,
   additionalProperties: additionalProperties ?? this.additionalProperties,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleEnqueueRequestBase &&
           listEquals(image, other.image) &&
@@ -36,4 +36,4 @@ SimpleEnqueueRequestBase copyWith({Uint8List? Function()? image, String? Functio
 
 @override String toString() => 'SimpleEnqueueRequestBase(image: $image, sourceId: $sourceId, additionalProperties: $additionalProperties)';
 
- }
+}

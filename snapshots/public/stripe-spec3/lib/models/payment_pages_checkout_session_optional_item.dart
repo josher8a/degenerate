@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_optional_item_adjustable_quantity.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionOptionalItem {const PaymentPagesCheckoutSessionOptionalItem({required this.price, required this.quantity, this.adjustableQuantity = const Omittable.absent(), });
 
-factory PaymentPagesCheckoutSessionOptionalItem.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionOptionalItem(
+factory PaymentPagesCheckoutSessionOptionalItem.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionOptionalItem(
   adjustableQuantity: json.containsKey('adjustable_quantity') ? Omittable(json['adjustable_quantity'] != null ? PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   price: json['price'] as String,
   quantity: (json['quantity'] as num).toInt(),
-); }
+);}
 
 final Omittable<PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity?> adjustableQuantity;
 
@@ -16,22 +16,22 @@ final String price;
 
 final int quantity;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (adjustableQuantity.isPresent) 'adjustable_quantity': adjustableQuantity.value?.toJson(),
   'price': price,
   'quantity': quantity,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('price') && json['price'] is String &&
-      json.containsKey('quantity') && json['quantity'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('price') && json['price'] is String &&
+      json.containsKey('quantity') && json['quantity'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (price.runes.length > 5000) { errors.add('price: length must be <= 5000'); }
-return errors; } 
-PaymentPagesCheckoutSessionOptionalItem copyWith({Omittable<PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity?>? adjustableQuantity, String? price, int? quantity, }) { return PaymentPagesCheckoutSessionOptionalItem(
+return errors;}
+PaymentPagesCheckoutSessionOptionalItem copyWith({Omittable<PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity?>? adjustableQuantity, String? price, int? quantity, }) {return PaymentPagesCheckoutSessionOptionalItem(
   adjustableQuantity: adjustableQuantity ?? this.adjustableQuantity,
   price: price ?? this.price,
   quantity: quantity ?? this.quantity,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionOptionalItem &&
           adjustableQuantity == other.adjustableQuantity &&
@@ -42,4 +42,4 @@ PaymentPagesCheckoutSessionOptionalItem copyWith({Omittable<PaymentPagesCheckout
 
 @override String toString() => 'PaymentPagesCheckoutSessionOptionalItem(adjustableQuantity: $adjustableQuantity, price: $price, quantity: $quantity)';
 
- }
+}

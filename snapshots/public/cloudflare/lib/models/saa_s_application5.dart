@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_launcher_visible.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_oidc_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_saas_props/access_schemas_saas_props_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_saml_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class SaaSApplication5 {const SaaSApplication5({this.createdAt, this.id, this.scimConfig, this.updatedAt, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.logoUrl, this.name, this.saasApp, this.type, });
 
-factory SaaSApplication5.fromJson(Map<String, dynamic> json) { return SaaSApplication5(
+factory SaaSApplication5.fromJson(Map<String, dynamic> json) {return SaaSApplication5(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   scimConfig: json['scim_config'] != null ? AccessSchemasScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
@@ -15,7 +15,7 @@ factory SaaSApplication5.fromJson(Map<String, dynamic> json) { return SaaSApplic
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   saasApp: json['saas_app'] != null ? OneOf2.parse(json['saas_app'], fromA: (v) => AccessSchemasSamlSaasApp.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasOidcSaasApp.fromJson(v as Map<String, dynamic>),) : null,
   type: json['type'] as String?,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -48,7 +48,7 @@ final AccessSchemasSaasPropsSaasApp? saasApp;
 /// Example: `'saas'`
 final String? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
@@ -60,9 +60,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (saasApp != null) 'saas_app': saasApp?.toJson(),
   'type': ?type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'id', 'scim_config', 'updated_at', 'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'logo_url', 'name', 'saas_app', 'type'}.contains(key)); } 
-SaaSApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasSaasPropsSaasApp? Function()? saasApp, String? Function()? type, }) { return SaaSApplication5(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'id', 'scim_config', 'updated_at', 'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'logo_url', 'name', 'saas_app', 'type'}.contains(key));}
+SaaSApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasSaasPropsSaasApp? Function()? saasApp, String? Function()? type, }) {return SaaSApplication5(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
@@ -74,7 +74,7 @@ SaaSApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? F
   name: name != null ? name() : this.name,
   saasApp: saasApp != null ? saasApp() : this.saasApp,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SaaSApplication5 &&
           createdAt == other.createdAt &&
@@ -93,4 +93,4 @@ SaaSApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? F
 
 @override String toString() => 'SaaSApplication5(\n  createdAt: $createdAt,\n  id: $id,\n  scimConfig: $scimConfig,\n  updatedAt: $updatedAt,\n  allowedIdps: $allowedIdps,\n  appLauncherVisible: $appLauncherVisible,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  logoUrl: $logoUrl,\n  name: $name,\n  saasApp: $saasApp,\n  type: $type,\n)';
 
- }
+}

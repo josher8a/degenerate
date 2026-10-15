@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagePackageVersionNpmMetadata {const PackagePackageVersionNpmMetadata({this.homepage, this.version, this.npmUser, this.author = const Omittable.absent(), this.bugs = const Omittable.absent(), this.dependencies, this.devDependencies, this.peerDependencies, this.optionalDependencies, this.description, this.dist = const Omittable.absent(), this.gitHead, this.name, this.license, this.main, this.repository = const Omittable.absent(), this.scripts, this.id, this.nodeVersion, this.npmVersion, this.hasShrinkwrap, this.maintainers, this.contributors, this.engines, this.deletedById, this.files, this.bin, this.man, this.directories = const Omittable.absent(), this.os, this.cpu, this.readme, this.installationCommand, this.releaseId, this.commitOid, this.publishedViaActions, this.keywords, });
 
-factory PackagePackageVersionNpmMetadata.fromJson(Map<String, dynamic> json) { return PackagePackageVersionNpmMetadata(
+factory PackagePackageVersionNpmMetadata.fromJson(Map<String, dynamic> json) {return PackagePackageVersionNpmMetadata(
   name: json['name'] as String?,
   version: json['version'] as String?,
   npmUser: json['npm_user'] as String?,
@@ -41,7 +41,7 @@ factory PackagePackageVersionNpmMetadata.fromJson(Map<String, dynamic> json) { r
   commitOid: json['commit_oid'] as String?,
   publishedViaActions: json['published_via_actions'] as bool?,
   deletedById: json['deleted_by_id'] != null ? (json['deleted_by_id'] as num).toInt() : null,
-); }
+);}
 
 final String? name;
 
@@ -117,7 +117,7 @@ final bool? publishedViaActions;
 
 final int? deletedById;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': ?name,
   'version': ?version,
   'npm_user': ?npmUser,
@@ -155,9 +155,9 @@ Map<String, dynamic> toJson() { return {
   'commit_oid': ?commitOid,
   'published_via_actions': ?publishedViaActions,
   'deleted_by_id': ?deletedById,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'version', 'npm_user', 'author', 'bugs', 'dependencies', 'dev_dependencies', 'peer_dependencies', 'optional_dependencies', 'description', 'dist', 'git_head', 'homepage', 'license', 'main', 'repository', 'scripts', 'id', 'node_version', 'npm_version', 'has_shrinkwrap', 'maintainers', 'contributors', 'engines', 'keywords', 'files', 'bin', 'man', 'directories', 'os', 'cpu', 'readme', 'installation_command', 'release_id', 'commit_oid', 'published_via_actions', 'deleted_by_id'}.contains(key)); } 
-PackagePackageVersionNpmMetadata copyWith({String? Function()? name, String? Function()? version, String? Function()? npmUser, Omittable<Map<String,dynamic>?>? author, Omittable<Map<String,dynamic>?>? bugs, Map<String, dynamic>? Function()? dependencies, Map<String, dynamic>? Function()? devDependencies, Map<String, dynamic>? Function()? peerDependencies, Map<String, dynamic>? Function()? optionalDependencies, String? Function()? description, Omittable<Map<String,dynamic>?>? dist, String? Function()? gitHead, String? Function()? homepage, String? Function()? license, String? Function()? main, Omittable<Map<String,dynamic>?>? repository, Map<String, dynamic>? Function()? scripts, String? Function()? id, String? Function()? nodeVersion, String? Function()? npmVersion, bool? Function()? hasShrinkwrap, List<Map<String, dynamic>>? Function()? maintainers, List<Map<String, dynamic>>? Function()? contributors, Map<String, dynamic>? Function()? engines, List<String>? Function()? keywords, List<String>? Function()? files, Map<String, dynamic>? Function()? bin, Map<String, dynamic>? Function()? man, Omittable<Map<String,dynamic>?>? directories, List<String>? Function()? os, List<String>? Function()? cpu, String? Function()? readme, String? Function()? installationCommand, int? Function()? releaseId, String? Function()? commitOid, bool? Function()? publishedViaActions, int? Function()? deletedById, }) { return PackagePackageVersionNpmMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'version', 'npm_user', 'author', 'bugs', 'dependencies', 'dev_dependencies', 'peer_dependencies', 'optional_dependencies', 'description', 'dist', 'git_head', 'homepage', 'license', 'main', 'repository', 'scripts', 'id', 'node_version', 'npm_version', 'has_shrinkwrap', 'maintainers', 'contributors', 'engines', 'keywords', 'files', 'bin', 'man', 'directories', 'os', 'cpu', 'readme', 'installation_command', 'release_id', 'commit_oid', 'published_via_actions', 'deleted_by_id'}.contains(key));}
+PackagePackageVersionNpmMetadata copyWith({String? Function()? name, String? Function()? version, String? Function()? npmUser, Omittable<Map<String,dynamic>?>? author, Omittable<Map<String,dynamic>?>? bugs, Map<String, dynamic>? Function()? dependencies, Map<String, dynamic>? Function()? devDependencies, Map<String, dynamic>? Function()? peerDependencies, Map<String, dynamic>? Function()? optionalDependencies, String? Function()? description, Omittable<Map<String,dynamic>?>? dist, String? Function()? gitHead, String? Function()? homepage, String? Function()? license, String? Function()? main, Omittable<Map<String,dynamic>?>? repository, Map<String, dynamic>? Function()? scripts, String? Function()? id, String? Function()? nodeVersion, String? Function()? npmVersion, bool? Function()? hasShrinkwrap, List<Map<String, dynamic>>? Function()? maintainers, List<Map<String, dynamic>>? Function()? contributors, Map<String, dynamic>? Function()? engines, List<String>? Function()? keywords, List<String>? Function()? files, Map<String, dynamic>? Function()? bin, Map<String, dynamic>? Function()? man, Omittable<Map<String,dynamic>?>? directories, List<String>? Function()? os, List<String>? Function()? cpu, String? Function()? readme, String? Function()? installationCommand, int? Function()? releaseId, String? Function()? commitOid, bool? Function()? publishedViaActions, int? Function()? deletedById, }) {return PackagePackageVersionNpmMetadata(
   name: name != null ? name() : this.name,
   version: version != null ? version() : this.version,
   npmUser: npmUser != null ? npmUser() : this.npmUser,
@@ -195,7 +195,7 @@ PackagePackageVersionNpmMetadata copyWith({String? Function()? name, String? Fun
   commitOid: commitOid != null ? commitOid() : this.commitOid,
   publishedViaActions: publishedViaActions != null ? publishedViaActions() : this.publishedViaActions,
   deletedById: deletedById != null ? deletedById() : this.deletedById,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PackagePackageVersionNpmMetadata &&
           name == other.name &&
@@ -240,4 +240,4 @@ PackagePackageVersionNpmMetadata copyWith({String? Function()? name, String? Fun
 
 @override String toString() => 'PackagePackageVersionNpmMetadata(\n  name: $name,\n  version: $version,\n  npmUser: $npmUser,\n  author: $author,\n  bugs: $bugs,\n  dependencies: $dependencies,\n  devDependencies: $devDependencies,\n  peerDependencies: $peerDependencies,\n  optionalDependencies: $optionalDependencies,\n  description: $description,\n  dist: $dist,\n  gitHead: $gitHead,\n  homepage: $homepage,\n  license: $license,\n  main: $main,\n  repository: $repository,\n  scripts: $scripts,\n  id: $id,\n  nodeVersion: $nodeVersion,\n  npmVersion: $npmVersion,\n  hasShrinkwrap: $hasShrinkwrap,\n  maintainers: $maintainers,\n  contributors: $contributors,\n  engines: $engines,\n  keywords: $keywords,\n  files: $files,\n  bin: $bin,\n  man: $man,\n  directories: $directories,\n  os: $os,\n  cpu: $cpu,\n  readme: $readme,\n  installationCommand: $installationCommand,\n  releaseId: $releaseId,\n  commitOid: $commitOid,\n  publishedViaActions: $publishedViaActions,\n  deletedById: $deletedById,\n)';
 
- }
+}

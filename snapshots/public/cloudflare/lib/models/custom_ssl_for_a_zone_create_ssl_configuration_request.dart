@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_deploy.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_geo_restrictions.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_policy.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_private_key.dart';/// The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
 sealed class TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType();
 
-factory TlsCertificatesAndHostnamesType.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesType.fromJson(String json) {return switch (json) {
   'legacy_custom' => legacyCustom,
   'sni_custom' => sniCustom,
   _ => TlsCertificatesAndHostnamesType$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesType legacyCustom = TlsCertificatesAndHostnamesType$legacyCustom._();
 
@@ -17,30 +17,30 @@ static const TlsCertificatesAndHostnamesType sniCustom = TlsCertificatesAndHostn
 static const List<TlsCertificatesAndHostnamesType> values = [legacyCustom, sniCustom];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'legacy_custom' => 'legacyCustom',
   'sni_custom' => 'sniCustom',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesType$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() legacyCustom, required W Function() sniCustom, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() legacyCustom, required W Function() sniCustom, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesType$legacyCustom() => legacyCustom(),
       TlsCertificatesAndHostnamesType$sniCustom() => sniCustom(),
       TlsCertificatesAndHostnamesType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacyCustom, W Function()? sniCustom, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacyCustom, W Function()? sniCustom, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesType$legacyCustom() => legacyCustom != null ? legacyCustom() : orElse(value),
       TlsCertificatesAndHostnamesType$sniCustom() => sniCustom != null ? sniCustom() : orElse(value),
       TlsCertificatesAndHostnamesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesType($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesType$legacyCustom extends TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType$legacyCustom._();
 
 @override String get value => 'legacy_custom';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacyCu
 
 @override int get hashCode => 'legacy_custom'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesType$sniCustom extends TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType$sniCustom._();
 
 @override String get value => 'sni_custom';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacyCu
 
 @override int get hashCode => 'sni_custom'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesType$Unknown extends TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacyCu
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CustomSslForAZoneCreateSslConfigurationRequest {const CustomSslForAZoneCreateSslConfigurationRequest({required this.certificate, required this.privateKey, this.bundleMethod, this.deploy, this.geoRestrictions, this.policy, this.type, });
 
-factory CustomSslForAZoneCreateSslConfigurationRequest.fromJson(Map<String, dynamic> json) { return CustomSslForAZoneCreateSslConfigurationRequest(
+factory CustomSslForAZoneCreateSslConfigurationRequest.fromJson(Map<String, dynamic> json) {return CustomSslForAZoneCreateSslConfigurationRequest(
   bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesBundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificate: TlsCertificatesAndHostnamesCertificate.fromJson(json['certificate'] as String),
   deploy: json['deploy'] != null ? TlsCertificatesAndHostnamesDeploy.fromJson(json['deploy'] as String) : null,
@@ -79,7 +79,7 @@ factory CustomSslForAZoneCreateSslConfigurationRequest.fromJson(Map<String, dyna
   policy: json['policy'] != null ? TlsCertificatesAndHostnamesPolicy.fromJson(json['policy'] as String) : null,
   privateKey: TlsCertificatesAndHostnamesPrivateKey.fromJson(json['private_key'] as String),
   type: json['type'] != null ? TlsCertificatesAndHostnamesType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 final TlsCertificatesAndHostnamesBundleMethod? bundleMethod;
@@ -102,7 +102,7 @@ final TlsCertificatesAndHostnamesPrivateKey privateKey;
 /// The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
 final TlsCertificatesAndHostnamesType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   'certificate': certificate.toJson(),
   if (deploy != null) 'deploy': deploy?.toJson(),
@@ -110,10 +110,10 @@ Map<String, dynamic> toJson() { return {
   if (policy != null) 'policy': policy?.toJson(),
   'private_key': privateKey.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate') &&
-      json.containsKey('private_key'); } 
-CustomSslForAZoneCreateSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificate? certificate, TlsCertificatesAndHostnamesDeploy? Function()? deploy, TlsCertificatesAndHostnamesGeoRestrictions? Function()? geoRestrictions, TlsCertificatesAndHostnamesPolicy? Function()? policy, TlsCertificatesAndHostnamesPrivateKey? privateKey, TlsCertificatesAndHostnamesType? Function()? type, }) { return CustomSslForAZoneCreateSslConfigurationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificate') &&
+      json.containsKey('private_key');}
+CustomSslForAZoneCreateSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificate? certificate, TlsCertificatesAndHostnamesDeploy? Function()? deploy, TlsCertificatesAndHostnamesGeoRestrictions? Function()? geoRestrictions, TlsCertificatesAndHostnamesPolicy? Function()? policy, TlsCertificatesAndHostnamesPrivateKey? privateKey, TlsCertificatesAndHostnamesType? Function()? type, }) {return CustomSslForAZoneCreateSslConfigurationRequest(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificate: certificate ?? this.certificate,
   deploy: deploy != null ? deploy() : this.deploy,
@@ -121,7 +121,7 @@ CustomSslForAZoneCreateSslConfigurationRequest copyWith({TlsCertificatesAndHostn
   policy: policy != null ? policy() : this.policy,
   privateKey: privateKey ?? this.privateKey,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomSslForAZoneCreateSslConfigurationRequest &&
           bundleMethod == other.bundleMethod &&
@@ -136,4 +136,4 @@ CustomSslForAZoneCreateSslConfigurationRequest copyWith({TlsCertificatesAndHostn
 
 @override String toString() => 'CustomSslForAZoneCreateSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, deploy: $deploy, geoRestrictions: $geoRestrictions, policy: $policy, privateKey: $privateKey, type: $type)';
 
- }
+}

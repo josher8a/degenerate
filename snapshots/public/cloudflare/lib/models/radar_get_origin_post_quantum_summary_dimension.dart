@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the origin post-quantum data dimension by which to group the results.
 sealed class RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension();
 
-factory RadarGetOriginPostQuantumSummaryDimension.fromJson(String json) { return switch (json) {
+factory RadarGetOriginPostQuantumSummaryDimension.fromJson(String json) {return switch (json) {
   'KEY_AGREEMENT' => keyAgreement,
   _ => RadarGetOriginPostQuantumSummaryDimension$Unknown(json),
-}; }
+};}
 
 static const RadarGetOriginPostQuantumSummaryDimension keyAgreement = RadarGetOriginPostQuantumSummaryDimension$keyAgreement._();
 
 static const List<RadarGetOriginPostQuantumSummaryDimension> values = [keyAgreement];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'KEY_AGREEMENT' => 'keyAgreement',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetOriginPostQuantumSummaryDimension$Unknown; } 
+bool get isUnknown {return this is RadarGetOriginPostQuantumSummaryDimension$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() keyAgreement, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() keyAgreement, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetOriginPostQuantumSummaryDimension$keyAgreement() => keyAgreement(),
       RadarGetOriginPostQuantumSummaryDimension$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? keyAgreement, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? keyAgreement, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetOriginPostQuantumSummaryDimension$keyAgreement() => keyAgreement != null ? keyAgreement() : orElse(value),
       RadarGetOriginPostQuantumSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetOriginPostQuantumSummaryDimension($value)';
 
- }
+}
 @immutable final class RadarGetOriginPostQuantumSummaryDimension$keyAgreement extends RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension$keyAgreement._();
 
 @override String get value => 'KEY_AGREEMENT';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? keyAgree
 
 @override int get hashCode => 'KEY_AGREEMENT'.hashCode;
 
- }
+}
 @immutable final class RadarGetOriginPostQuantumSummaryDimension$Unknown extends RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? keyAgree
 
 @override int get hashCode => value.hashCode;
 
- }
+}

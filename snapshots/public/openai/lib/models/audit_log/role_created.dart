@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class RoleCreated {const RoleCreated({this.id, this.roleName, this.permissions, this.resourceType, this.resourceId, });
 
-factory RoleCreated.fromJson(Map<String, dynamic> json) { return RoleCreated(
+factory RoleCreated.fromJson(Map<String, dynamic> json) {return RoleCreated(
   id: json['id'] as String?,
   roleName: json['role_name'] as String?,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => e as String).toList(),
   resourceType: json['resource_type'] as String?,
   resourceId: json['resource_id'] as String?,
-); }
+);}
 
 /// The role ID.
 final String? id;
@@ -27,21 +27,21 @@ final String? resourceType;
 /// The resource the role is scoped to.
 final String? resourceId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'role_name': ?roleName,
   'permissions': ?permissions,
   'resource_type': ?resourceType,
   'resource_id': ?resourceId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'role_name', 'permissions', 'resource_type', 'resource_id'}.contains(key)); } 
-RoleCreated copyWith({String? Function()? id, String? Function()? roleName, List<String>? Function()? permissions, String? Function()? resourceType, String? Function()? resourceId, }) { return RoleCreated(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'role_name', 'permissions', 'resource_type', 'resource_id'}.contains(key));}
+RoleCreated copyWith({String? Function()? id, String? Function()? roleName, List<String>? Function()? permissions, String? Function()? resourceType, String? Function()? resourceId, }) {return RoleCreated(
   id: id != null ? id() : this.id,
   roleName: roleName != null ? roleName() : this.roleName,
   permissions: permissions != null ? permissions() : this.permissions,
   resourceType: resourceType != null ? resourceType() : this.resourceType,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RoleCreated &&
           id == other.id &&
@@ -54,4 +54,4 @@ RoleCreated copyWith({String? Function()? id, String? Function()? roleName, List
 
 @override String toString() => 'RoleCreated(id: $id, roleName: $roleName, permissions: $permissions, resourceType: $resourceType, resourceId: $resourceId)';
 
- }
+}

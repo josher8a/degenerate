@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsArtifactAndLogRetention {const ActionsArtifactAndLogRetention({required this.days});
 
-factory ActionsArtifactAndLogRetention.fromJson(Map<String, dynamic> json) { return ActionsArtifactAndLogRetention(
+factory ActionsArtifactAndLogRetention.fromJson(Map<String, dynamic> json) {return ActionsArtifactAndLogRetention(
   days: (json['days'] as num).toInt(),
-); }
+);}
 
 /// The number of days to retain artifacts and logs
 final int days;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'days': days,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('days') && json['days'] is num; } 
-ActionsArtifactAndLogRetention copyWith({int? days}) { return ActionsArtifactAndLogRetention(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('days') && json['days'] is num;}
+ActionsArtifactAndLogRetention copyWith({int? days}) {return ActionsArtifactAndLogRetention(
   days: days ?? this.days,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsArtifactAndLogRetention &&
           days == other.days;
@@ -25,4 +25,4 @@ ActionsArtifactAndLogRetention copyWith({int? days}) { return ActionsArtifactAnd
 
 @override String toString() => 'ActionsArtifactAndLogRetention(days: $days)';
 
- }
+}

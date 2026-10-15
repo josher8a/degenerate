@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request Status.
 sealed class CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus();
 
-factory CloudforceOneRequestsRequestStatus.fromJson(String json) { return switch (json) {
+factory CloudforceOneRequestsRequestStatus.fromJson(String json) {return switch (json) {
   'open' => open,
   'accepted' => accepted,
   'reported' => reported,
@@ -12,7 +12,7 @@ factory CloudforceOneRequestsRequestStatus.fromJson(String json) { return switch
   'completed' => completed,
   'declined' => declined,
   _ => CloudforceOneRequestsRequestStatus$Unknown(json),
-}; }
+};}
 
 static const CloudforceOneRequestsRequestStatus open = CloudforceOneRequestsRequestStatus$open._();
 
@@ -29,9 +29,9 @@ static const CloudforceOneRequestsRequestStatus declined = CloudforceOneRequests
 static const List<CloudforceOneRequestsRequestStatus> values = [open, accepted, reported, approved, completed, declined];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'open' => 'open',
   'accepted' => 'accepted',
   'reported' => 'reported',
@@ -39,11 +39,11 @@ String get name { return switch (value) {
   'completed' => 'completed',
   'declined' => 'declined',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CloudforceOneRequestsRequestStatus$Unknown; } 
+bool get isUnknown {return this is CloudforceOneRequestsRequestStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() open, required W Function() accepted, required W Function() reported, required W Function() approved, required W Function() completed, required W Function() declined, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() open, required W Function() accepted, required W Function() reported, required W Function() approved, required W Function() completed, required W Function() declined, required W Function(String value) $unknown, }) {return switch (this) {
       CloudforceOneRequestsRequestStatus$open() => open(),
       CloudforceOneRequestsRequestStatus$accepted() => accepted(),
       CloudforceOneRequestsRequestStatus$reported() => reported(),
@@ -51,9 +51,9 @@ W when<W>({required W Function() open, required W Function() accepted, required 
       CloudforceOneRequestsRequestStatus$completed() => completed(),
       CloudforceOneRequestsRequestStatus$declined() => declined(),
       CloudforceOneRequestsRequestStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? accepted, W Function()? reported, W Function()? approved, W Function()? completed, W Function()? declined, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? accepted, W Function()? reported, W Function()? approved, W Function()? completed, W Function()? declined, W Function(String value)? $unknown, }) {return switch (this) {
       CloudforceOneRequestsRequestStatus$open() => open != null ? open() : orElse(value),
       CloudforceOneRequestsRequestStatus$accepted() => accepted != null ? accepted() : orElse(value),
       CloudforceOneRequestsRequestStatus$reported() => reported != null ? reported() : orElse(value),
@@ -61,10 +61,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
       CloudforceOneRequestsRequestStatus$completed() => completed != null ? completed() : orElse(value),
       CloudforceOneRequestsRequestStatus$declined() => declined != null ? declined() : orElse(value),
       CloudforceOneRequestsRequestStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CloudforceOneRequestsRequestStatus($value)';
 
- }
+}
 @immutable final class CloudforceOneRequestsRequestStatus$open extends CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus$open._();
 
 @override String get value => 'open';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsRequestStatus$accepted extends CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus$accepted._();
 
 @override String get value => 'accepted';
@@ -82,7 +82,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsRequestStatus$reported extends CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus$reported._();
 
 @override String get value => 'reported';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'reported'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsRequestStatus$approved extends CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus$approved._();
 
 @override String get value => 'approved';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'approved'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsRequestStatus$completed extends CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus$completed._();
 
 @override String get value => 'completed';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsRequestStatus$declined extends CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus$declined._();
 
 @override String get value => 'declined';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => 'declined'.hashCode;
 
- }
+}
 @immutable final class CloudforceOneRequestsRequestStatus$Unknown extends CloudforceOneRequestsRequestStatus {const CloudforceOneRequestsRequestStatus$Unknown(this.value);
 
 @override final String value;
@@ -128,4 +128,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

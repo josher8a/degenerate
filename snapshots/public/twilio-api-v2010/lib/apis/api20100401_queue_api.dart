@@ -12,7 +12,7 @@ final class Api20100401QueueApi with ApiExecutor {const Api20100401QueueApi(this
 /// Fetch an instance of a queue identified by the QueueSid
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json`
-Future<ApiResult<AccountQueue, Never>> fetchQueue({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountQueue, Never>> fetchQueue({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ return await execute(
     return AccountQueue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Update the queue with the new parameters
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json`
-Future<ApiResult<AccountQueue, Never>> updateQueue({required String accountSid, required String sid, UpdateQueueRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountQueue, Never>> updateQueue({required String accountSid, required String sid, UpdateQueueRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -53,11 +53,11 @@ return await execute(
     return AccountQueue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Remove an empty queue
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json`
-Future<ApiResult<void, Never>> deleteQueue({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteQueue({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -70,11 +70,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// Retrieve a list of queues belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Queues.json`
-Future<ApiResult<ListQueueResponse, Never>> listQueue({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListQueueResponse, Never>> listQueue({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -103,11 +103,11 @@ return await execute(
     return ListQueueResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Create a queue
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Queues.json`
-Future<ApiResult<AccountQueue, Never>> createQueue({required String accountSid, CreateQueueRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountQueue, Never>> createQueue({required String accountSid, CreateQueueRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -128,5 +128,5 @@ return await execute(
     return AccountQueue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

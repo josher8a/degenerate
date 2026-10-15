@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reboot time settings for readers. that support customized reboot time configuration.
 @immutable final class RebootWindow {const RebootWindow({required this.endHour, required this.startHour, });
 
-factory RebootWindow.fromJson(Map<String, dynamic> json) { return RebootWindow(
+factory RebootWindow.fromJson(Map<String, dynamic> json) {return RebootWindow(
   endHour: (json['end_hour'] as num).toInt(),
   startHour: (json['start_hour'] as num).toInt(),
-); }
+);}
 
 final int endHour;
 
 final int startHour;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'end_hour': endHour,
   'start_hour': startHour,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_hour') && json['end_hour'] is num &&
-      json.containsKey('start_hour') && json['start_hour'] is num; } 
-RebootWindow copyWith({int? endHour, int? startHour, }) { return RebootWindow(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('end_hour') && json['end_hour'] is num &&
+      json.containsKey('start_hour') && json['start_hour'] is num;}
+RebootWindow copyWith({int? endHour, int? startHour, }) {return RebootWindow(
   endHour: endHour ?? this.endHour,
   startHour: startHour ?? this.startHour,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RebootWindow &&
           endHour == other.endHour &&
@@ -32,4 +32,4 @@ RebootWindow copyWith({int? endHour, int? startHour, }) { return RebootWindow(
 
 @override String toString() => 'RebootWindow(endHour: $endHour, startHour: $startHour)';
 
- }
+}

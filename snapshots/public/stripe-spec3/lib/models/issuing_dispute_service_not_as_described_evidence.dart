@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_additional_documentation.dart';/// 
 @immutable final class IssuingDisputeServiceNotAsDescribedEvidence {const IssuingDisputeServiceNotAsDescribedEvidence({this.additionalDocumentation = const Omittable.absent(), this.canceledAt = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.explanation = const Omittable.absent(), this.receivedAt = const Omittable.absent(), });
 
-factory IssuingDisputeServiceNotAsDescribedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeServiceNotAsDescribedEvidence(
+factory IssuingDisputeServiceNotAsDescribedEvidence.fromJson(Map<String, dynamic> json) {return IssuingDisputeServiceNotAsDescribedEvidence(
   additionalDocumentation: json.containsKey('additional_documentation') ? Omittable(json['additional_documentation'] != null ? IssuingDisputeCanceledEvidenceAdditionalDocumentation.fromJson(json['additional_documentation']) : null) : const Omittable.absent(),
   canceledAt: json.containsKey('canceled_at') ? Omittable(json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null) : const Omittable.absent(),
   cancellationReason: json.containsKey('cancellation_reason') ? Omittable(json['cancellation_reason'] as String?) : const Omittable.absent(),
   explanation: json.containsKey('explanation') ? Omittable(json['explanation'] as String?) : const Omittable.absent(),
   receivedAt: json.containsKey('received_at') ? Omittable(json['received_at'] != null ? (json['received_at'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Additional documentation supporting the dispute.
 final Omittable<IssuingDisputeCanceledEvidenceAdditionalDocumentation?> additionalDocumentation;
@@ -27,16 +27,16 @@ final Omittable<String?> explanation;
 /// Date when the product was received.
 final Omittable<int?> receivedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (additionalDocumentation.isPresent) 'additional_documentation': additionalDocumentation.value?.toJson(),
   if (canceledAt.isPresent) 'canceled_at': canceledAt.value,
   if (cancellationReason.isPresent) 'cancellation_reason': cancellationReason.value,
   if (explanation.isPresent) 'explanation': explanation.value,
   if (receivedAt.isPresent) 'received_at': receivedAt.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_reason', 'explanation', 'received_at'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_reason', 'explanation', 'received_at'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final cancellationReason$ = cancellationReason.value;
 if (cancellationReason$ != null) {
   if (cancellationReason$.runes.length > 5000) { errors.add('cancellationReason: length must be <= 5000'); }
@@ -45,14 +45,14 @@ final explanation$ = explanation.value;
 if (explanation$ != null) {
   if (explanation$.runes.length > 5000) { errors.add('explanation: length must be <= 5000'); }
 }
-return errors; } 
-IssuingDisputeServiceNotAsDescribedEvidence copyWith({Omittable<IssuingDisputeCanceledEvidenceAdditionalDocumentation?>? additionalDocumentation, Omittable<int?>? canceledAt, Omittable<String?>? cancellationReason, Omittable<String?>? explanation, Omittable<int?>? receivedAt, }) { return IssuingDisputeServiceNotAsDescribedEvidence(
+return errors;}
+IssuingDisputeServiceNotAsDescribedEvidence copyWith({Omittable<IssuingDisputeCanceledEvidenceAdditionalDocumentation?>? additionalDocumentation, Omittable<int?>? canceledAt, Omittable<String?>? cancellationReason, Omittable<String?>? explanation, Omittable<int?>? receivedAt, }) {return IssuingDisputeServiceNotAsDescribedEvidence(
   additionalDocumentation: additionalDocumentation ?? this.additionalDocumentation,
   canceledAt: canceledAt ?? this.canceledAt,
   cancellationReason: cancellationReason ?? this.cancellationReason,
   explanation: explanation ?? this.explanation,
   receivedAt: receivedAt ?? this.receivedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDisputeServiceNotAsDescribedEvidence &&
           additionalDocumentation == other.additionalDocumentation &&
@@ -65,4 +65,4 @@ IssuingDisputeServiceNotAsDescribedEvidence copyWith({Omittable<IssuingDisputeCa
 
 @override String toString() => 'IssuingDisputeServiceNotAsDescribedEvidence(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationReason: $cancellationReason, explanation: $explanation, receivedAt: $receivedAt)';
 
- }
+}

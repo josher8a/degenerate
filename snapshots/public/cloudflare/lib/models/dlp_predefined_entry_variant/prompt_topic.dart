@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DlpPromptTopicType {const DlpPromptTopicType();
 
-factory DlpPromptTopicType.fromJson(String json) { return switch (json) {
+factory DlpPromptTopicType.fromJson(String json) {return switch (json) {
   'Intent' => intent,
   'Content' => content,
   _ => DlpPromptTopicType$Unknown(json),
-}; }
+};}
 
 static const DlpPromptTopicType intent = DlpPromptTopicType$intent._();
 
@@ -16,30 +16,30 @@ static const DlpPromptTopicType content = DlpPromptTopicType$content._();
 static const List<DlpPromptTopicType> values = [intent, content];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'Intent' => 'intent',
   'Content' => 'content',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DlpPromptTopicType$Unknown; } 
+bool get isUnknown {return this is DlpPromptTopicType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() intent, required W Function() content, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() intent, required W Function() content, required W Function(String value) $unknown, }) {return switch (this) {
       DlpPromptTopicType$intent() => intent(),
       DlpPromptTopicType$content() => content(),
       DlpPromptTopicType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? intent, W Function()? content, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? intent, W Function()? content, W Function(String value)? $unknown, }) {return switch (this) {
       DlpPromptTopicType$intent() => intent != null ? intent() : orElse(value),
       DlpPromptTopicType$content() => content != null ? content() : orElse(value),
       DlpPromptTopicType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DlpPromptTopicType($value)';
 
- }
+}
 @immutable final class DlpPromptTopicType$intent extends DlpPromptTopicType {const DlpPromptTopicType$intent._();
 
 @override String get value => 'Intent';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? intent, 
 
 @override int get hashCode => 'Intent'.hashCode;
 
- }
+}
 @immutable final class DlpPromptTopicType$content extends DlpPromptTopicType {const DlpPromptTopicType$content._();
 
 @override String get value => 'Content';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? intent, 
 
 @override int get hashCode => 'Content'.hashCode;
 
- }
+}
 @immutable final class DlpPromptTopicType$Unknown extends DlpPromptTopicType {const DlpPromptTopicType$Unknown(this.value);
 
 @override final String value;
@@ -67,40 +67,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? intent, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class PromptTopicType {const PromptTopicType();
 
-factory PromptTopicType.fromJson(String json) { return switch (json) {
+factory PromptTopicType.fromJson(String json) {return switch (json) {
   'PromptTopic' => promptTopic,
   _ => PromptTopicType$Unknown(json),
-}; }
+};}
 
 static const PromptTopicType promptTopic = PromptTopicType$promptTopic._();
 
 static const List<PromptTopicType> values = [promptTopic];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'PromptTopic' => 'promptTopic',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PromptTopicType$Unknown; } 
+bool get isUnknown {return this is PromptTopicType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() promptTopic, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() promptTopic, required W Function(String value) $unknown, }) {return switch (this) {
       PromptTopicType$promptTopic() => promptTopic(),
       PromptTopicType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? promptTopic, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? promptTopic, W Function(String value)? $unknown, }) {return switch (this) {
       PromptTopicType$promptTopic() => promptTopic != null ? promptTopic() : orElse(value),
       PromptTopicType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PromptTopicType($value)';
 
- }
+}
 @immutable final class PromptTopicType$promptTopic extends PromptTopicType {const PromptTopicType$promptTopic._();
 
 @override String get value => 'PromptTopic';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? promptTo
 
 @override int get hashCode => 'PromptTopic'.hashCode;
 
- }
+}
 @immutable final class PromptTopicType$Unknown extends PromptTopicType {const PromptTopicType$Unknown(this.value);
 
 @override final String value;
@@ -119,14 +119,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? promptTo
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PromptTopic {const PromptTopic({required this.topicType, required this.type, this.description = const Omittable.absent(), });
 
-factory PromptTopic.fromJson(Map<String, dynamic> json) { return PromptTopic(
+factory PromptTopic.fromJson(Map<String, dynamic> json) {return PromptTopic(
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   topicType: DlpPromptTopicType.fromJson(json['topic_type'] as String),
   type: PromptTopicType.fromJson(json['type'] as String),
-); }
+);}
 
 final Omittable<String?> description;
 
@@ -134,18 +134,18 @@ final DlpPromptTopicType topicType;
 
 final PromptTopicType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description.isPresent) 'description': description.value,
   'topic_type': topicType.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('topic_type') &&
-      json.containsKey('type'); } 
-PromptTopic copyWith({Omittable<String?>? description, DlpPromptTopicType? topicType, PromptTopicType? type, }) { return PromptTopic(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('topic_type') &&
+      json.containsKey('type');}
+PromptTopic copyWith({Omittable<String?>? description, DlpPromptTopicType? topicType, PromptTopicType? type, }) {return PromptTopic(
   description: description ?? this.description,
   topicType: topicType ?? this.topicType,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PromptTopic &&
           description == other.description &&
@@ -156,4 +156,4 @@ PromptTopic copyWith({Omittable<String?>? description, DlpPromptTopicType? topic
 
 @override String toString() => 'PromptTopic(description: $description, topicType: $topicType, type: $type)';
 
- }
+}

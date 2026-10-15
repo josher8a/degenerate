@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_response/radar_get_dns_as112_top_locations_by_dnssec_response_result.dart';@immutable final class RadarGetDnsAs112TopLocationsByDnssecResponse {const RadarGetDnsAs112TopLocationsByDnssecResponse({required this.result, required this.success, });
 
-factory RadarGetDnsAs112TopLocationsByDnssecResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TopLocationsByDnssecResponse(
+factory RadarGetDnsAs112TopLocationsByDnssecResponse.fromJson(Map<String, dynamic> json) {return RadarGetDnsAs112TopLocationsByDnssecResponse(
   result: RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetDnsAs112TopLocationsByDnssecResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsAs112TopLocationsByDnssecResponse copyWith({RadarGetDnsAs112TopLocationsByDnssecResponseResult? result, bool? success, }) { return RadarGetDnsAs112TopLocationsByDnssecResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetDnsAs112TopLocationsByDnssecResponse copyWith({RadarGetDnsAs112TopLocationsByDnssecResponseResult? result, bool? success, }) {return RadarGetDnsAs112TopLocationsByDnssecResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TopLocationsByDnssecResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetDnsAs112TopLocationsByDnssecResponse copyWith({RadarGetDnsAs112TopLocati
 
 @override String toString() => 'RadarGetDnsAs112TopLocationsByDnssecResponse(result: $result, success: $success)';
 
- }
+}

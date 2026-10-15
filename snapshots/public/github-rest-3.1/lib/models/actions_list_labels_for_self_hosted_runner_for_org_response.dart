@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner_label.dart';@immutable final class ActionsListLabelsForSelfHostedRunnerForOrgResponse {const ActionsListLabelsForSelfHostedRunnerForOrgResponse({required this.totalCount, required this.labels, });
 
-factory ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListLabelsForSelfHostedRunnerForOrgResponse(
+factory ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(Map<String, dynamic> json) {return ActionsListLabelsForSelfHostedRunnerForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),
   labels: (json['labels'] as List<dynamic>).map((e) => RunnerLabel.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<RunnerLabel> labels;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'labels': labels.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('labels'); } 
-ActionsListLabelsForSelfHostedRunnerForOrgResponse copyWith({int? totalCount, List<RunnerLabel>? labels, }) { return ActionsListLabelsForSelfHostedRunnerForOrgResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('labels');}
+ActionsListLabelsForSelfHostedRunnerForOrgResponse copyWith({int? totalCount, List<RunnerLabel>? labels, }) {return ActionsListLabelsForSelfHostedRunnerForOrgResponse(
   totalCount: totalCount ?? this.totalCount,
   labels: labels ?? this.labels,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListLabelsForSelfHostedRunnerForOrgResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ActionsListLabelsForSelfHostedRunnerForOrgResponse copyWith({int? totalCount, Li
 
 @override String toString() => 'ActionsListLabelsForSelfHostedRunnerForOrgResponse(totalCount: $totalCount, labels: $labels)';
 
- }
+}

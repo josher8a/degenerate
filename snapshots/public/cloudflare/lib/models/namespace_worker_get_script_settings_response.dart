@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item_response.dart';@immutable final class NamespaceWorkerGetScriptSettingsResponse {const NamespaceWorkerGetScriptSettingsResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory NamespaceWorkerGetScriptSettingsResponse.fromJson(Map<String, dynamic> json) { return NamespaceWorkerGetScriptSettingsResponse(
+factory NamespaceWorkerGetScriptSettingsResponse.fromJson(Map<String, dynamic> json) {return NamespaceWorkerGetScriptSettingsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? WorkersNamespaceScriptAndVersionSettingsItemResponse.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<WorkersMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final WorkersNamespaceScriptAndVersionSettingsItemResponse? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-NamespaceWorkerGetScriptSettingsResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, WorkersNamespaceScriptAndVersionSettingsItemResponse? Function()? result, }) { return NamespaceWorkerGetScriptSettingsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+NamespaceWorkerGetScriptSettingsResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, WorkersNamespaceScriptAndVersionSettingsItemResponse? Function()? result, }) {return NamespaceWorkerGetScriptSettingsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceWorkerGetScriptSettingsResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ NamespaceWorkerGetScriptSettingsResponse copyWith({List<WorkersMessages2>? error
 
 @override String toString() => 'NamespaceWorkerGetScriptSettingsResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

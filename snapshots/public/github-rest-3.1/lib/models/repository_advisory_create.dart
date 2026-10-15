@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_vulnerabilities.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_create/repository_advisory_create_credits.dart';@immutable final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, required this.vulnerabilities, this.cveId = const Omittable.absent(), this.cweIds = const Omittable.absent(), this.credits = const Omittable.absent(), this.severity = const Omittable.absent(), this.cvssVectorString = const Omittable.absent(), this.startPrivateFork, });
 
-factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreate(
+factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) {return RepositoryAdvisoryCreate(
   summary: json['summary'] as String,
   description: json['description'] as String,
   cveId: json.containsKey('cve_id') ? Omittable(json['cve_id'] as String?) : const Omittable.absent(),
@@ -13,7 +13,7 @@ factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) { return Re
   severity: json.containsKey('severity') ? Omittable(json['severity'] != null ? PrivateVulnerabilityReportCreateSeverity.fromJson(json['severity'] as String) : null) : const Omittable.absent(),
   cvssVectorString: json.containsKey('cvss_vector_string') ? Omittable(json['cvss_vector_string'] as String?) : const Omittable.absent(),
   startPrivateFork: json['start_private_fork'] as bool?,
-); }
+);}
 
 /// A short summary of the advisory.
 final String summary;
@@ -45,7 +45,7 @@ final bool? startPrivateFork;
 /// The value of `startPrivateFork`, or its schema default when absent.
 bool get startPrivateForkOrDefault => startPrivateFork ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'summary': summary,
   'description': description,
   if (cveId.isPresent) 'cve_id': cveId.value,
@@ -55,16 +55,16 @@ Map<String, dynamic> toJson() { return {
   if (severity.isPresent) 'severity': severity.value?.toJson(),
   if (cvssVectorString.isPresent) 'cvss_vector_string': cvssVectorString.value,
   'start_private_fork': ?startPrivateFork,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('summary') && json['summary'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
-      json.containsKey('vulnerabilities'); } 
+      json.containsKey('vulnerabilities');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (summary.runes.length > 1024) { errors.add('summary: length must be <= 1024'); }
 if (description.runes.length > 65535) { errors.add('description: length must be <= 65535'); }
-return errors; } 
-RepositoryAdvisoryCreate copyWith({String? summary, String? description, Omittable<String?>? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities>? vulnerabilities, Omittable<List<String>?>? cweIds, Omittable<List<RepositoryAdvisoryCreateCredits>?>? credits, Omittable<PrivateVulnerabilityReportCreateSeverity?>? severity, Omittable<String?>? cvssVectorString, bool? Function()? startPrivateFork, }) { return RepositoryAdvisoryCreate(
+return errors;}
+RepositoryAdvisoryCreate copyWith({String? summary, String? description, Omittable<String?>? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities>? vulnerabilities, Omittable<List<String>?>? cweIds, Omittable<List<RepositoryAdvisoryCreateCredits>?>? credits, Omittable<PrivateVulnerabilityReportCreateSeverity?>? severity, Omittable<String?>? cvssVectorString, bool? Function()? startPrivateFork, }) {return RepositoryAdvisoryCreate(
   summary: summary ?? this.summary,
   description: description ?? this.description,
   cveId: cveId ?? this.cveId,
@@ -74,7 +74,7 @@ RepositoryAdvisoryCreate copyWith({String? summary, String? description, Omittab
   severity: severity ?? this.severity,
   cvssVectorString: cvssVectorString ?? this.cvssVectorString,
   startPrivateFork: startPrivateFork != null ? startPrivateFork() : this.startPrivateFork,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryAdvisoryCreate &&
           summary == other.summary &&
@@ -93,4 +93,4 @@ RepositoryAdvisoryCreate copyWith({String? summary, String? description, Omittab
 
 @override String toString() => 'RepositoryAdvisoryCreate(\n  summary: $summary,\n  description: $description,\n  cveId: $cveId,\n  vulnerabilities: $vulnerabilities,\n  cweIds: $cweIds,\n  credits: $credits,\n  severity: $severity,\n  cvssVectorString: $cvssVectorString,\n  startPrivateFork: $startPrivateFork,\n)';
 
- }
+}

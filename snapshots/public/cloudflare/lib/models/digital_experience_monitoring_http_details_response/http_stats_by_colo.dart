@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_status_code.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_over_time.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_pct_over_time.dart';@immutable final class HttpStatsByColo {const HttpStatsByColo({required this.availabilityPct, required this.colo, required this.dnsResponseTimeMs, required this.httpStatusCode, required this.resourceFetchTimeMs, required this.serverResponseTimeMs, required this.uniqueDevicesTotal, });
 
-factory HttpStatsByColo.fromJson(Map<String, dynamic> json) { return HttpStatsByColo(
+factory HttpStatsByColo.fromJson(Map<String, dynamic> json) {return HttpStatsByColo(
   availabilityPct: DigitalExperienceMonitoringTestStatPctOverTime.fromJson(json['availabilityPct'] as Map<String, dynamic>),
   colo: json['colo'] as String,
   dnsResponseTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['dnsResponseTimeMs'] as Map<String, dynamic>),
@@ -11,7 +11,7 @@ factory HttpStatsByColo.fromJson(Map<String, dynamic> json) { return HttpStatsBy
   resourceFetchTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['resourceFetchTimeMs'] as Map<String, dynamic>),
   serverResponseTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['serverResponseTimeMs'] as Map<String, dynamic>),
   uniqueDevicesTotal: (json['uniqueDevicesTotal'] as num).toInt(),
-); }
+);}
 
 final DigitalExperienceMonitoringTestStatPctOverTime availabilityPct;
 
@@ -31,7 +31,7 @@ final DigitalExperienceMonitoringTestStatOverTime serverResponseTimeMs;
 /// Example: `57`
 final int uniqueDevicesTotal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'availabilityPct': availabilityPct.toJson(),
   'colo': colo,
   'dnsResponseTimeMs': dnsResponseTimeMs.toJson(),
@@ -39,15 +39,15 @@ Map<String, dynamic> toJson() { return {
   'resourceFetchTimeMs': resourceFetchTimeMs.toJson(),
   'serverResponseTimeMs': serverResponseTimeMs.toJson(),
   'uniqueDevicesTotal': uniqueDevicesTotal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('availabilityPct') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('availabilityPct') &&
       json.containsKey('colo') && json['colo'] is String &&
       json.containsKey('dnsResponseTimeMs') &&
       json.containsKey('httpStatusCode') &&
       json.containsKey('resourceFetchTimeMs') &&
       json.containsKey('serverResponseTimeMs') &&
-      json.containsKey('uniqueDevicesTotal') && json['uniqueDevicesTotal'] is num; } 
-HttpStatsByColo copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availabilityPct, String? colo, DigitalExperienceMonitoringTestStatOverTime? dnsResponseTimeMs, List<HttpStatusCode>? httpStatusCode, DigitalExperienceMonitoringTestStatOverTime? resourceFetchTimeMs, DigitalExperienceMonitoringTestStatOverTime? serverResponseTimeMs, int? uniqueDevicesTotal, }) { return HttpStatsByColo(
+      json.containsKey('uniqueDevicesTotal') && json['uniqueDevicesTotal'] is num;}
+HttpStatsByColo copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availabilityPct, String? colo, DigitalExperienceMonitoringTestStatOverTime? dnsResponseTimeMs, List<HttpStatusCode>? httpStatusCode, DigitalExperienceMonitoringTestStatOverTime? resourceFetchTimeMs, DigitalExperienceMonitoringTestStatOverTime? serverResponseTimeMs, int? uniqueDevicesTotal, }) {return HttpStatsByColo(
   availabilityPct: availabilityPct ?? this.availabilityPct,
   colo: colo ?? this.colo,
   dnsResponseTimeMs: dnsResponseTimeMs ?? this.dnsResponseTimeMs,
@@ -55,7 +55,7 @@ HttpStatsByColo copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availa
   resourceFetchTimeMs: resourceFetchTimeMs ?? this.resourceFetchTimeMs,
   serverResponseTimeMs: serverResponseTimeMs ?? this.serverResponseTimeMs,
   uniqueDevicesTotal: uniqueDevicesTotal ?? this.uniqueDevicesTotal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is HttpStatsByColo &&
           availabilityPct == other.availabilityPct &&
@@ -70,4 +70,4 @@ HttpStatsByColo copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availa
 
 @override String toString() => 'HttpStatsByColo(availabilityPct: $availabilityPct, colo: $colo, dnsResponseTimeMs: $dnsResponseTimeMs, httpStatusCode: $httpStatusCode, resourceFetchTimeMs: $resourceFetchTimeMs, serverResponseTimeMs: $serverResponseTimeMs, uniqueDevicesTotal: $uniqueDevicesTotal)';
 
- }
+}

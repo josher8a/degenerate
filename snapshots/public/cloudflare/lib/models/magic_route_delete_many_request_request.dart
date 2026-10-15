@@ -9,19 +9,19 @@ dynamic toJson() => value;
 }
 @immutable final class MagicRouteDeleteManyRequestRequest {const MagicRouteDeleteManyRequestRequest({required this.routes});
 
-factory MagicRouteDeleteManyRequestRequest.fromJson(Map<String, dynamic> json) { return MagicRouteDeleteManyRequestRequest(
+factory MagicRouteDeleteManyRequestRequest.fromJson(Map<String, dynamic> json) {return MagicRouteDeleteManyRequestRequest(
   routes: (json['routes'] as List<dynamic>).map((e) => e == null ? null : MagicRouteDeleteIdRequest.fromJson(e as dynamic)).toList(),
-); }
+);}
 
 final List<MagicRouteDeleteIdRequest?> routes;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'routes': routes.map((e) => e?.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('routes'); } 
-MagicRouteDeleteManyRequestRequest copyWith({List<MagicRouteDeleteIdRequest?>? routes}) { return MagicRouteDeleteManyRequestRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('routes');}
+MagicRouteDeleteManyRequestRequest copyWith({List<MagicRouteDeleteIdRequest?>? routes}) {return MagicRouteDeleteManyRequestRequest(
   routes: routes ?? this.routes,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRouteDeleteManyRequestRequest &&
           listEquals(routes, other.routes);
@@ -30,4 +30,4 @@ MagicRouteDeleteManyRequestRequest copyWith({List<MagicRouteDeleteIdRequest?>? r
 
 @override String toString() => 'MagicRouteDeleteManyRequestRequest(routes: $routes)';
 
- }
+}

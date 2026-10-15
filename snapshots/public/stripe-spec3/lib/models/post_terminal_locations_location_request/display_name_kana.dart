@@ -8,11 +8,11 @@ const DisplayNameKana({this.string = const Omittable.absent(), this.getPaymentMe
 const DisplayNameKana._({required this.rawValue, required this.string, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DisplayNameKana.fromJson(Object? json) { return DisplayNameKana._(
+factory DisplayNameKana.fromJson(Object? json) {return DisplayNameKana._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DisplayNameKana(${toJson()})';
 
- }
+}

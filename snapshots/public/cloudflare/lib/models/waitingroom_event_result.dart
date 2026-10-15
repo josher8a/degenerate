@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_event_custom_page_html.dart';import 'package:pub_cloudflare/models/waitingroom_event_description.dart';import 'package:pub_cloudflare/models/waitingroom_event_disable_session_renewal.dart';import 'package:pub_cloudflare/models/waitingroom_event_end_time.dart';import 'package:pub_cloudflare/models/waitingroom_event_id.dart';import 'package:pub_cloudflare/models/waitingroom_event_name.dart';import 'package:pub_cloudflare/models/waitingroom_event_new_users_per_minute.dart';import 'package:pub_cloudflare/models/waitingroom_event_prequeue_start_time.dart';import 'package:pub_cloudflare/models/waitingroom_event_queueing_method.dart';import 'package:pub_cloudflare/models/waitingroom_event_session_duration.dart';import 'package:pub_cloudflare/models/waitingroom_event_shuffle_at_event_start.dart';import 'package:pub_cloudflare/models/waitingroom_event_start_time.dart';import 'package:pub_cloudflare/models/waitingroom_event_suspended.dart';import 'package:pub_cloudflare/models/waitingroom_event_total_active_users.dart';import 'package:pub_cloudflare/models/waitingroom_event_turnstile_action.dart';import 'package:pub_cloudflare/models/waitingroom_event_turnstile_mode.dart';import 'package:pub_cloudflare/models/waitingroom_timestamp.dart';@immutable final class WaitingroomEventResult {const WaitingroomEventResult({this.createdOn, this.customPageHtml = const Omittable.absent(), this.description, this.disableSessionRenewal = const Omittable.absent(), this.eventEndTime, this.eventStartTime, this.id, this.modifiedOn, this.name, this.newUsersPerMinute = const Omittable.absent(), this.prequeueStartTime = const Omittable.absent(), this.queueingMethod = const Omittable.absent(), this.sessionDuration = const Omittable.absent(), this.shuffleAtEventStart, this.suspended, this.totalActiveUsers = const Omittable.absent(), this.turnstileAction = const Omittable.absent(), this.turnstileMode = const Omittable.absent(), });
 
-factory WaitingroomEventResult.fromJson(Map<String, dynamic> json) { return WaitingroomEventResult(
+factory WaitingroomEventResult.fromJson(Map<String, dynamic> json) {return WaitingroomEventResult(
   createdOn: json['created_on'] != null ? WaitingroomTimestamp.fromJson(json['created_on'] as String) : null,
   customPageHtml: json.containsKey('custom_page_html') ? Omittable(json['custom_page_html'] != null ? WaitingroomEventCustomPageHtml.fromJson(json['custom_page_html'] as String) : null) : const Omittable.absent(),
   description: json['description'] != null ? WaitingroomEventDescription.fromJson(json['description'] as String) : null,
@@ -22,7 +22,7 @@ factory WaitingroomEventResult.fromJson(Map<String, dynamic> json) { return Wait
   totalActiveUsers: json.containsKey('total_active_users') ? Omittable(json['total_active_users'] != null ? WaitingroomEventTotalActiveUsers.fromJson(json['total_active_users'] as num) : null) : const Omittable.absent(),
   turnstileAction: json.containsKey('turnstile_action') ? Omittable(json['turnstile_action'] != null ? WaitingroomEventTurnstileAction.fromJson(json['turnstile_action'] as String) : null) : const Omittable.absent(),
   turnstileMode: json.containsKey('turnstile_mode') ? Omittable(json['turnstile_mode'] != null ? WaitingroomEventTurnstileMode.fromJson(json['turnstile_mode'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 final WaitingroomTimestamp? createdOn;
 
@@ -68,7 +68,7 @@ final Omittable<WaitingroomEventTurnstileAction?> turnstileAction;
 
 final Omittable<WaitingroomEventTurnstileMode?> turnstileMode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (customPageHtml.isPresent) 'custom_page_html': customPageHtml.value?.toJson(),
   if (description != null) 'description': description?.toJson(),
@@ -87,9 +87,9 @@ Map<String, dynamic> toJson() { return {
   if (totalActiveUsers.isPresent) 'total_active_users': totalActiveUsers.value?.toJson(),
   if (turnstileAction.isPresent) 'turnstile_action': turnstileAction.value?.toJson(),
   if (turnstileMode.isPresent) 'turnstile_mode': turnstileMode.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'custom_page_html', 'description', 'disable_session_renewal', 'event_end_time', 'event_start_time', 'id', 'modified_on', 'name', 'new_users_per_minute', 'prequeue_start_time', 'queueing_method', 'session_duration', 'shuffle_at_event_start', 'suspended', 'total_active_users', 'turnstile_action', 'turnstile_mode'}.contains(key)); } 
-WaitingroomEventResult copyWith({WaitingroomTimestamp? Function()? createdOn, Omittable<WaitingroomEventCustomPageHtml?>? customPageHtml, WaitingroomEventDescription? Function()? description, Omittable<WaitingroomEventDisableSessionRenewal?>? disableSessionRenewal, WaitingroomEventEndTime? Function()? eventEndTime, WaitingroomEventStartTime? Function()? eventStartTime, WaitingroomEventId? Function()? id, WaitingroomTimestamp? Function()? modifiedOn, WaitingroomEventName? Function()? name, Omittable<WaitingroomEventNewUsersPerMinute?>? newUsersPerMinute, Omittable<WaitingroomEventPrequeueStartTime?>? prequeueStartTime, Omittable<WaitingroomEventQueueingMethod?>? queueingMethod, Omittable<WaitingroomEventSessionDuration?>? sessionDuration, WaitingroomEventShuffleAtEventStart? Function()? shuffleAtEventStart, WaitingroomEventSuspended? Function()? suspended, Omittable<WaitingroomEventTotalActiveUsers?>? totalActiveUsers, Omittable<WaitingroomEventTurnstileAction?>? turnstileAction, Omittable<WaitingroomEventTurnstileMode?>? turnstileMode, }) { return WaitingroomEventResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_on', 'custom_page_html', 'description', 'disable_session_renewal', 'event_end_time', 'event_start_time', 'id', 'modified_on', 'name', 'new_users_per_minute', 'prequeue_start_time', 'queueing_method', 'session_duration', 'shuffle_at_event_start', 'suspended', 'total_active_users', 'turnstile_action', 'turnstile_mode'}.contains(key));}
+WaitingroomEventResult copyWith({WaitingroomTimestamp? Function()? createdOn, Omittable<WaitingroomEventCustomPageHtml?>? customPageHtml, WaitingroomEventDescription? Function()? description, Omittable<WaitingroomEventDisableSessionRenewal?>? disableSessionRenewal, WaitingroomEventEndTime? Function()? eventEndTime, WaitingroomEventStartTime? Function()? eventStartTime, WaitingroomEventId? Function()? id, WaitingroomTimestamp? Function()? modifiedOn, WaitingroomEventName? Function()? name, Omittable<WaitingroomEventNewUsersPerMinute?>? newUsersPerMinute, Omittable<WaitingroomEventPrequeueStartTime?>? prequeueStartTime, Omittable<WaitingroomEventQueueingMethod?>? queueingMethod, Omittable<WaitingroomEventSessionDuration?>? sessionDuration, WaitingroomEventShuffleAtEventStart? Function()? shuffleAtEventStart, WaitingroomEventSuspended? Function()? suspended, Omittable<WaitingroomEventTotalActiveUsers?>? totalActiveUsers, Omittable<WaitingroomEventTurnstileAction?>? turnstileAction, Omittable<WaitingroomEventTurnstileMode?>? turnstileMode, }) {return WaitingroomEventResult(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   customPageHtml: customPageHtml ?? this.customPageHtml,
   description: description != null ? description() : this.description,
@@ -108,7 +108,7 @@ WaitingroomEventResult copyWith({WaitingroomTimestamp? Function()? createdOn, Om
   totalActiveUsers: totalActiveUsers ?? this.totalActiveUsers,
   turnstileAction: turnstileAction ?? this.turnstileAction,
   turnstileMode: turnstileMode ?? this.turnstileMode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomEventResult &&
           createdOn == other.createdOn &&
@@ -134,4 +134,4 @@ WaitingroomEventResult copyWith({WaitingroomTimestamp? Function()? createdOn, Om
 
 @override String toString() => 'WaitingroomEventResult(\n  createdOn: $createdOn,\n  customPageHtml: $customPageHtml,\n  description: $description,\n  disableSessionRenewal: $disableSessionRenewal,\n  eventEndTime: $eventEndTime,\n  eventStartTime: $eventStartTime,\n  id: $id,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  newUsersPerMinute: $newUsersPerMinute,\n  prequeueStartTime: $prequeueStartTime,\n  queueingMethod: $queueingMethod,\n  sessionDuration: $sessionDuration,\n  shuffleAtEventStart: $shuffleAtEventStart,\n  suspended: $suspended,\n  totalActiveUsers: $totalActiveUsers,\n  turnstileAction: $turnstileAction,\n  turnstileMode: $turnstileMode,\n)';
 
- }
+}

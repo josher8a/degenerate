@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/button_text_translations.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/purposes_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/purposes_with_translations_value.dart';/// Consent management configuration.
 @immutable final class Consent {const Consent({required this.enabled, this.buttonTextTranslations, this.companyEmail, this.companyName, this.companyStreetAddress, this.consentModalIntroHtml, this.consentModalIntroHtmlWithTranslations, this.cookieName, this.customCss, this.customIntroDisclaimerDismissed, this.defaultLanguage, this.hideModal, this.purposes, this.purposesWithTranslations, this.tcfCompliant, });
 
-factory Consent.fromJson(Map<String, dynamic> json) { return Consent(
+factory Consent.fromJson(Map<String, dynamic> json) {return Consent(
   buttonTextTranslations: json['buttonTextTranslations'] != null ? ButtonTextTranslations.fromJson(json['buttonTextTranslations'] as Map<String, dynamic>) : null,
   companyEmail: json['companyEmail'] as String?,
   companyName: json['companyName'] as String?,
@@ -20,7 +20,7 @@ factory Consent.fromJson(Map<String, dynamic> json) { return Consent(
   purposes: (json['purposes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PurposesValue.fromJson(v as Map<String, dynamic>))),
   purposesWithTranslations: (json['purposesWithTranslations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PurposesWithTranslationsValue.fromJson(v as Map<String, dynamic>))),
   tcfCompliant: json['tcfCompliant'] as bool?,
-); }
+);}
 
 final ButtonTextTranslations? buttonTextTranslations;
 
@@ -55,7 +55,7 @@ final Map<String,PurposesWithTranslationsValue>? purposesWithTranslations;
 
 final bool? tcfCompliant;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (buttonTextTranslations != null) 'buttonTextTranslations': buttonTextTranslations?.toJson(),
   'companyEmail': ?companyEmail,
   'companyName': ?companyName,
@@ -71,9 +71,9 @@ Map<String, dynamic> toJson() { return {
   if (purposes != null) 'purposes': purposes?.map((k, v) => MapEntry(k, v.toJson())),
   if (purposesWithTranslations != null) 'purposesWithTranslations': purposesWithTranslations?.map((k, v) => MapEntry(k, v.toJson())),
   'tcfCompliant': ?tcfCompliant,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-Consent copyWith({ButtonTextTranslations? Function()? buttonTextTranslations, String? Function()? companyEmail, String? Function()? companyName, String? Function()? companyStreetAddress, String? Function()? consentModalIntroHtml, Map<String, String>? Function()? consentModalIntroHtmlWithTranslations, String? Function()? cookieName, String? Function()? customCss, bool? Function()? customIntroDisclaimerDismissed, String? Function()? defaultLanguage, bool? enabled, bool? Function()? hideModal, Map<String, PurposesValue>? Function()? purposes, Map<String, PurposesWithTranslationsValue>? Function()? purposesWithTranslations, bool? Function()? tcfCompliant, }) { return Consent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+Consent copyWith({ButtonTextTranslations? Function()? buttonTextTranslations, String? Function()? companyEmail, String? Function()? companyName, String? Function()? companyStreetAddress, String? Function()? consentModalIntroHtml, Map<String, String>? Function()? consentModalIntroHtmlWithTranslations, String? Function()? cookieName, String? Function()? customCss, bool? Function()? customIntroDisclaimerDismissed, String? Function()? defaultLanguage, bool? enabled, bool? Function()? hideModal, Map<String, PurposesValue>? Function()? purposes, Map<String, PurposesWithTranslationsValue>? Function()? purposesWithTranslations, bool? Function()? tcfCompliant, }) {return Consent(
   buttonTextTranslations: buttonTextTranslations != null ? buttonTextTranslations() : this.buttonTextTranslations,
   companyEmail: companyEmail != null ? companyEmail() : this.companyEmail,
   companyName: companyName != null ? companyName() : this.companyName,
@@ -89,7 +89,7 @@ Consent copyWith({ButtonTextTranslations? Function()? buttonTextTranslations, St
   purposes: purposes != null ? purposes() : this.purposes,
   purposesWithTranslations: purposesWithTranslations != null ? purposesWithTranslations() : this.purposesWithTranslations,
   tcfCompliant: tcfCompliant != null ? tcfCompliant() : this.tcfCompliant,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Consent &&
           buttonTextTranslations == other.buttonTextTranslations &&
@@ -112,4 +112,4 @@ Consent copyWith({ButtonTextTranslations? Function()? buttonTextTranslations, St
 
 @override String toString() => 'Consent(\n  buttonTextTranslations: $buttonTextTranslations,\n  companyEmail: $companyEmail,\n  companyName: $companyName,\n  companyStreetAddress: $companyStreetAddress,\n  consentModalIntroHtml: $consentModalIntroHtml,\n  consentModalIntroHtmlWithTranslations: $consentModalIntroHtmlWithTranslations,\n  cookieName: $cookieName,\n  customCss: $customCss,\n  customIntroDisclaimerDismissed: $customIntroDisclaimerDismissed,\n  defaultLanguage: $defaultLanguage,\n  enabled: $enabled,\n  hideModal: $hideModal,\n  purposes: $purposes,\n  purposesWithTranslations: $purposesWithTranslations,\n  tcfCompliant: $tcfCompliant,\n)';
 
- }
+}

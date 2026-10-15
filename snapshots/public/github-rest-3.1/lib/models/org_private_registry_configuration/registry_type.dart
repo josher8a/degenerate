@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
 sealed class RegistryType {const RegistryType();
 
-factory RegistryType.fromJson(String json) { return switch (json) {
+factory RegistryType.fromJson(String json) {return switch (json) {
   'maven_repository' => mavenRepository,
   'nuget_feed' => nugetFeed,
   'goproxy_server' => goproxyServer,
@@ -21,7 +21,7 @@ factory RegistryType.fromJson(String json) { return switch (json) {
   'python_index' => pythonIndex,
   'terraform_registry' => terraformRegistry,
   _ => RegistryType$Unknown(json),
-}; }
+};}
 
 static const RegistryType mavenRepository = RegistryType$mavenRepository._();
 
@@ -56,9 +56,9 @@ static const RegistryType terraformRegistry = RegistryType$terraformRegistry._()
 static const List<RegistryType> values = [mavenRepository, nugetFeed, goproxyServer, npmRegistry, rubygemsServer, cargoRegistry, composerRepository, dockerRegistry, gitSource, helmRegistry, hexOrganization, hexRepository, pubRepository, pythonIndex, terraformRegistry];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'maven_repository' => 'mavenRepository',
   'nuget_feed' => 'nugetFeed',
   'goproxy_server' => 'goproxyServer',
@@ -75,11 +75,11 @@ String get name { return switch (value) {
   'python_index' => 'pythonIndex',
   'terraform_registry' => 'terraformRegistry',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RegistryType$Unknown; } 
+bool get isUnknown {return this is RegistryType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() mavenRepository, required W Function() nugetFeed, required W Function() goproxyServer, required W Function() npmRegistry, required W Function() rubygemsServer, required W Function() cargoRegistry, required W Function() composerRepository, required W Function() dockerRegistry, required W Function() gitSource, required W Function() helmRegistry, required W Function() hexOrganization, required W Function() hexRepository, required W Function() pubRepository, required W Function() pythonIndex, required W Function() terraformRegistry, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() mavenRepository, required W Function() nugetFeed, required W Function() goproxyServer, required W Function() npmRegistry, required W Function() rubygemsServer, required W Function() cargoRegistry, required W Function() composerRepository, required W Function() dockerRegistry, required W Function() gitSource, required W Function() helmRegistry, required W Function() hexOrganization, required W Function() hexRepository, required W Function() pubRepository, required W Function() pythonIndex, required W Function() terraformRegistry, required W Function(String value) $unknown, }) {return switch (this) {
       RegistryType$mavenRepository() => mavenRepository(),
       RegistryType$nugetFeed() => nugetFeed(),
       RegistryType$goproxyServer() => goproxyServer(),
@@ -96,9 +96,9 @@ W when<W>({required W Function() mavenRepository, required W Function() nugetFee
       RegistryType$pythonIndex() => pythonIndex(),
       RegistryType$terraformRegistry() => terraformRegistry(),
       RegistryType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRepository, W Function()? nugetFeed, W Function()? goproxyServer, W Function()? npmRegistry, W Function()? rubygemsServer, W Function()? cargoRegistry, W Function()? composerRepository, W Function()? dockerRegistry, W Function()? gitSource, W Function()? helmRegistry, W Function()? hexOrganization, W Function()? hexRepository, W Function()? pubRepository, W Function()? pythonIndex, W Function()? terraformRegistry, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRepository, W Function()? nugetFeed, W Function()? goproxyServer, W Function()? npmRegistry, W Function()? rubygemsServer, W Function()? cargoRegistry, W Function()? composerRepository, W Function()? dockerRegistry, W Function()? gitSource, W Function()? helmRegistry, W Function()? hexOrganization, W Function()? hexRepository, W Function()? pubRepository, W Function()? pythonIndex, W Function()? terraformRegistry, W Function(String value)? $unknown, }) {return switch (this) {
       RegistryType$mavenRepository() => mavenRepository != null ? mavenRepository() : orElse(value),
       RegistryType$nugetFeed() => nugetFeed != null ? nugetFeed() : orElse(value),
       RegistryType$goproxyServer() => goproxyServer != null ? goproxyServer() : orElse(value),
@@ -115,10 +115,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
       RegistryType$pythonIndex() => pythonIndex != null ? pythonIndex() : orElse(value),
       RegistryType$terraformRegistry() => terraformRegistry != null ? terraformRegistry() : orElse(value),
       RegistryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RegistryType($value)';
 
- }
+}
 @immutable final class RegistryType$mavenRepository extends RegistryType {const RegistryType$mavenRepository._();
 
 @override String get value => 'maven_repository';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'maven_repository'.hashCode;
 
- }
+}
 @immutable final class RegistryType$nugetFeed extends RegistryType {const RegistryType$nugetFeed._();
 
 @override String get value => 'nuget_feed';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'nuget_feed'.hashCode;
 
- }
+}
 @immutable final class RegistryType$goproxyServer extends RegistryType {const RegistryType$goproxyServer._();
 
 @override String get value => 'goproxy_server';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'goproxy_server'.hashCode;
 
- }
+}
 @immutable final class RegistryType$npmRegistry extends RegistryType {const RegistryType$npmRegistry._();
 
 @override String get value => 'npm_registry';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'npm_registry'.hashCode;
 
- }
+}
 @immutable final class RegistryType$rubygemsServer extends RegistryType {const RegistryType$rubygemsServer._();
 
 @override String get value => 'rubygems_server';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'rubygems_server'.hashCode;
 
- }
+}
 @immutable final class RegistryType$cargoRegistry extends RegistryType {const RegistryType$cargoRegistry._();
 
 @override String get value => 'cargo_registry';
@@ -172,7 +172,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'cargo_registry'.hashCode;
 
- }
+}
 @immutable final class RegistryType$composerRepository extends RegistryType {const RegistryType$composerRepository._();
 
 @override String get value => 'composer_repository';
@@ -181,7 +181,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'composer_repository'.hashCode;
 
- }
+}
 @immutable final class RegistryType$dockerRegistry extends RegistryType {const RegistryType$dockerRegistry._();
 
 @override String get value => 'docker_registry';
@@ -190,7 +190,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'docker_registry'.hashCode;
 
- }
+}
 @immutable final class RegistryType$gitSource extends RegistryType {const RegistryType$gitSource._();
 
 @override String get value => 'git_source';
@@ -199,7 +199,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'git_source'.hashCode;
 
- }
+}
 @immutable final class RegistryType$helmRegistry extends RegistryType {const RegistryType$helmRegistry._();
 
 @override String get value => 'helm_registry';
@@ -208,7 +208,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'helm_registry'.hashCode;
 
- }
+}
 @immutable final class RegistryType$hexOrganization extends RegistryType {const RegistryType$hexOrganization._();
 
 @override String get value => 'hex_organization';
@@ -217,7 +217,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'hex_organization'.hashCode;
 
- }
+}
 @immutable final class RegistryType$hexRepository extends RegistryType {const RegistryType$hexRepository._();
 
 @override String get value => 'hex_repository';
@@ -226,7 +226,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'hex_repository'.hashCode;
 
- }
+}
 @immutable final class RegistryType$pubRepository extends RegistryType {const RegistryType$pubRepository._();
 
 @override String get value => 'pub_repository';
@@ -235,7 +235,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'pub_repository'.hashCode;
 
- }
+}
 @immutable final class RegistryType$pythonIndex extends RegistryType {const RegistryType$pythonIndex._();
 
 @override String get value => 'python_index';
@@ -244,7 +244,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'python_index'.hashCode;
 
- }
+}
 @immutable final class RegistryType$terraformRegistry extends RegistryType {const RegistryType$terraformRegistry._();
 
 @override String get value => 'terraform_registry';
@@ -253,7 +253,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => 'terraform_registry'.hashCode;
 
- }
+}
 @immutable final class RegistryType$Unknown extends RegistryType {const RegistryType$Unknown(this.value);
 
 @override final String value;
@@ -263,4 +263,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRep
 
 @override int get hashCode => value.hashCode;
 
- }
+}

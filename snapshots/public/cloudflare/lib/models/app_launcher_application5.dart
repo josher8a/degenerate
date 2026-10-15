@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_components_schemas_domain.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AppLauncherApplication5 {const AppLauncherApplication5({required this.type, this.createdAt, this.id, this.scimConfig, this.updatedAt, this.allowedIdps, this.autoRedirectToIdentity, this.domain, this.name, this.sessionDuration, });
 
-factory AppLauncherApplication5.fromJson(Map<String, dynamic> json) { return AppLauncherApplication5(
+factory AppLauncherApplication5.fromJson(Map<String, dynamic> json) {return AppLauncherApplication5(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   scimConfig: json['scim_config'] != null ? AccessSchemasScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
@@ -14,7 +14,7 @@ factory AppLauncherApplication5.fromJson(Map<String, dynamic> json) { return App
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   sessionDuration: json['session_duration'] != null ? AccessAppsComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: json['type'] as String,
-); }
+);}
 
 final AccessTimestamp? createdAt;
 
@@ -45,7 +45,7 @@ final AccessAppsComponentsSchemasSessionDuration? sessionDuration;
 /// Example: `'app_launcher'`
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
@@ -56,9 +56,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-AppLauncherApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessComponentsSchemasDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, String? type, }) { return AppLauncherApplication5(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String;}
+AppLauncherApplication5 copyWith({AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessComponentsSchemasDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, String? type, }) {return AppLauncherApplication5(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
@@ -69,7 +69,7 @@ AppLauncherApplication5 copyWith({AccessTimestamp? Function()? createdAt, Access
   name: name != null ? name() : this.name,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AppLauncherApplication5 &&
           createdAt == other.createdAt &&
@@ -87,4 +87,4 @@ AppLauncherApplication5 copyWith({AccessTimestamp? Function()? createdAt, Access
 
 @override String toString() => 'AppLauncherApplication5(\n  createdAt: $createdAt,\n  id: $id,\n  scimConfig: $scimConfig,\n  updatedAt: $updatedAt,\n  allowedIdps: $allowedIdps,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  domain: $domain,\n  name: $name,\n  sessionDuration: $sessionDuration,\n  type: $type,\n)';
 
- }
+}

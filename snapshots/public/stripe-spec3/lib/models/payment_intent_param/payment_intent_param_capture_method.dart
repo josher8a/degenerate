@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PaymentIntentParamCaptureMethod {const PaymentIntentParamCaptureMethod();
 
-factory PaymentIntentParamCaptureMethod.fromJson(String json) { return switch (json) {
+factory PaymentIntentParamCaptureMethod.fromJson(String json) {return switch (json) {
   '' => $empty,
   'manual' => manual,
   _ => PaymentIntentParamCaptureMethod$Unknown(json),
-}; }
+};}
 
 static const PaymentIntentParamCaptureMethod $empty = PaymentIntentParamCaptureMethod$$empty._();
 
@@ -16,30 +16,30 @@ static const PaymentIntentParamCaptureMethod manual = PaymentIntentParamCaptureM
 static const List<PaymentIntentParamCaptureMethod> values = [$empty, manual];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'manual' => 'manual',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentIntentParamCaptureMethod$Unknown; } 
+bool get isUnknown {return this is PaymentIntentParamCaptureMethod$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() manual, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() manual, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentIntentParamCaptureMethod$$empty() => $empty(),
       PaymentIntentParamCaptureMethod$manual() => manual(),
       PaymentIntentParamCaptureMethod$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? manual, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? manual, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentIntentParamCaptureMethod$$empty() => $empty != null ? $empty() : orElse(value),
       PaymentIntentParamCaptureMethod$manual() => manual != null ? manual() : orElse(value),
       PaymentIntentParamCaptureMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentIntentParamCaptureMethod($value)';
 
- }
+}
 @immutable final class PaymentIntentParamCaptureMethod$$empty extends PaymentIntentParamCaptureMethod {const PaymentIntentParamCaptureMethod$$empty._();
 
 @override String get value => '';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamCaptureMethod$manual extends PaymentIntentParamCaptureMethod {const PaymentIntentParamCaptureMethod$manual._();
 
 @override String get value => 'manual';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'manual'.hashCode;
 
- }
+}
 @immutable final class PaymentIntentParamCaptureMethod$Unknown extends PaymentIntentParamCaptureMethod {const PaymentIntentParamCaptureMethod$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

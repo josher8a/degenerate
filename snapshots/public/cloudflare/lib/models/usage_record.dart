@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a single billable usage record.
 @immutable final class UsageRecord {const UsageRecord({required this.billingCurrency, required this.billingPeriodStart, required this.chargePeriodEnd, required this.chargePeriodStart, required this.consumedQuantity, required this.consumedUnit, required this.contractedCost, required this.cumulatedContractedCost, required this.cumulatedPricingQuantity, required this.pricingQuantity, required this.serviceName, });
 
-factory UsageRecord.fromJson(Map<String, dynamic> json) { return UsageRecord(
+factory UsageRecord.fromJson(Map<String, dynamic> json) {return UsageRecord(
   billingCurrency: json['BillingCurrency'] as String,
   billingPeriodStart: DateTime.parse(json['BillingPeriodStart'] as String),
   chargePeriodEnd: DateTime.parse(json['ChargePeriodEnd'] as String),
@@ -16,7 +16,7 @@ factory UsageRecord.fromJson(Map<String, dynamic> json) { return UsageRecord(
   cumulatedPricingQuantity: (json['CumulatedPricingQuantity'] as num).toInt(),
   pricingQuantity: (json['PricingQuantity'] as num).toInt(),
   serviceName: json['ServiceName'] as String,
-); }
+);}
 
 /// Specifies the billing currency code (ISO 4217).
 /// 
@@ -73,7 +73,7 @@ final int pricingQuantity;
 /// Example: `'Workers Standard'`
 final String serviceName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'BillingCurrency': billingCurrency,
   'BillingPeriodStart': billingPeriodStart.toIso8601String(),
   'ChargePeriodEnd': chargePeriodEnd.toIso8601String(),
@@ -85,8 +85,8 @@ Map<String, dynamic> toJson() { return {
   'CumulatedPricingQuantity': cumulatedPricingQuantity,
   'PricingQuantity': pricingQuantity,
   'ServiceName': serviceName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('BillingCurrency') && json['BillingCurrency'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('BillingCurrency') && json['BillingCurrency'] is String &&
       json.containsKey('BillingPeriodStart') && json['BillingPeriodStart'] is String &&
       json.containsKey('ChargePeriodEnd') && json['ChargePeriodEnd'] is String &&
       json.containsKey('ChargePeriodStart') && json['ChargePeriodStart'] is String &&
@@ -96,8 +96,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('Billi
       json.containsKey('CumulatedContractedCost') && json['CumulatedContractedCost'] is num &&
       json.containsKey('CumulatedPricingQuantity') && json['CumulatedPricingQuantity'] is num &&
       json.containsKey('PricingQuantity') && json['PricingQuantity'] is num &&
-      json.containsKey('ServiceName') && json['ServiceName'] is String; } 
-UsageRecord copyWith({String? billingCurrency, DateTime? billingPeriodStart, DateTime? chargePeriodEnd, DateTime? chargePeriodStart, double? consumedQuantity, String? consumedUnit, double? contractedCost, double? cumulatedContractedCost, int? cumulatedPricingQuantity, int? pricingQuantity, String? serviceName, }) { return UsageRecord(
+      json.containsKey('ServiceName') && json['ServiceName'] is String;}
+UsageRecord copyWith({String? billingCurrency, DateTime? billingPeriodStart, DateTime? chargePeriodEnd, DateTime? chargePeriodStart, double? consumedQuantity, String? consumedUnit, double? contractedCost, double? cumulatedContractedCost, int? cumulatedPricingQuantity, int? pricingQuantity, String? serviceName, }) {return UsageRecord(
   billingCurrency: billingCurrency ?? this.billingCurrency,
   billingPeriodStart: billingPeriodStart ?? this.billingPeriodStart,
   chargePeriodEnd: chargePeriodEnd ?? this.chargePeriodEnd,
@@ -109,7 +109,7 @@ UsageRecord copyWith({String? billingCurrency, DateTime? billingPeriodStart, Dat
   cumulatedPricingQuantity: cumulatedPricingQuantity ?? this.cumulatedPricingQuantity,
   pricingQuantity: pricingQuantity ?? this.pricingQuantity,
   serviceName: serviceName ?? this.serviceName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsageRecord &&
           billingCurrency == other.billingCurrency &&
@@ -128,4 +128,4 @@ UsageRecord copyWith({String? billingCurrency, DateTime? billingPeriodStart, Dat
 
 @override String toString() => 'UsageRecord(\n  billingCurrency: $billingCurrency,\n  billingPeriodStart: $billingPeriodStart,\n  chargePeriodEnd: $chargePeriodEnd,\n  chargePeriodStart: $chargePeriodStart,\n  consumedQuantity: $consumedQuantity,\n  consumedUnit: $consumedUnit,\n  contractedCost: $contractedCost,\n  cumulatedContractedCost: $cumulatedContractedCost,\n  cumulatedPricingQuantity: $cumulatedPricingQuantity,\n  pricingQuantity: $pricingQuantity,\n  serviceName: $serviceName,\n)';
 
- }
+}

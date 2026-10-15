@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/automatic_payment_methods.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_mandate_data.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request/post_setup_intents_intent_confirm_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_request/single_use.dart';/// Indicates how the payment method is intended to be used in the future. If not provided, this value defaults to `off_session`.
 sealed class PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage();
 
-factory PostSetupIntentsRequestUsage.fromJson(String json) { return switch (json) {
+factory PostSetupIntentsRequestUsage.fromJson(String json) {return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
   _ => PostSetupIntentsRequestUsage$Unknown(json),
-}; }
+};}
 
 static const PostSetupIntentsRequestUsage offSession = PostSetupIntentsRequestUsage$offSession._();
 
@@ -17,30 +17,30 @@ static const PostSetupIntentsRequestUsage onSession = PostSetupIntentsRequestUsa
 static const List<PostSetupIntentsRequestUsage> values = [offSession, onSession];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'off_session' => 'offSession',
   'on_session' => 'onSession',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostSetupIntentsRequestUsage$Unknown; } 
+bool get isUnknown {return this is PostSetupIntentsRequestUsage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() offSession, required W Function() onSession, required W Function(String value) $unknown, }) {return switch (this) {
       PostSetupIntentsRequestUsage$offSession() => offSession(),
       PostSetupIntentsRequestUsage$onSession() => onSession(),
       PostSetupIntentsRequestUsage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSession, W Function()? onSession, W Function(String value)? $unknown, }) {return switch (this) {
       PostSetupIntentsRequestUsage$offSession() => offSession != null ? offSession() : orElse(value),
       PostSetupIntentsRequestUsage$onSession() => onSession != null ? onSession() : orElse(value),
       PostSetupIntentsRequestUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostSetupIntentsRequestUsage($value)';
 
- }
+}
 @immutable final class PostSetupIntentsRequestUsage$offSession extends PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage$offSession._();
 
 @override String get value => 'off_session';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => 'off_session'.hashCode;
 
- }
+}
 @immutable final class PostSetupIntentsRequestUsage$onSession extends PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage$onSession._();
 
 @override String get value => 'on_session';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => 'on_session'.hashCode;
 
- }
+}
 @immutable final class PostSetupIntentsRequestUsage$Unknown extends PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? offSessi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostSetupIntentsRequest {const PostSetupIntentsRequest({this.attachToSelf, this.automaticPaymentMethods, this.confirm, this.confirmationToken, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.mandateData, this.metadata, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.returnUrl, this.singleUse, this.usage, this.useStripeSdk, });
 
-factory PostSetupIntentsRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequest(
+factory PostSetupIntentsRequest.fromJson(Map<String, dynamic> json) {return PostSetupIntentsRequest(
   attachToSelf: json['attach_to_self'] as bool?,
   automaticPaymentMethods: json['automatic_payment_methods'] != null ? AutomaticPaymentMethods.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null,
   confirm: json['confirm'] as bool?,
@@ -94,7 +94,7 @@ factory PostSetupIntentsRequest.fromJson(Map<String, dynamic> json) { return Pos
   singleUse: json['single_use'] != null ? SingleUse.fromJson(json['single_use'] as Map<String, dynamic>) : null,
   usage: json['usage'] != null ? PostSetupIntentsRequestUsage.fromJson(json['usage'] as String) : null,
   useStripeSdk: json['use_stripe_sdk'] as bool?,
-); }
+);}
 
 /// If present, the SetupIntent's payment method will be attached to the in-context Stripe Account.
 /// 
@@ -175,7 +175,7 @@ final PostSetupIntentsRequestUsage? usage;
 /// Set to `true` when confirming server-side and using Stripe.js, iOS, or Android client-side SDKs to handle the next actions.
 final bool? useStripeSdk;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'attach_to_self': ?attachToSelf,
   if (automaticPaymentMethods != null) 'automatic_payment_methods': automaticPaymentMethods?.toJson(),
   'confirm': ?confirm,
@@ -198,10 +198,10 @@ Map<String, dynamic> toJson() { return {
   if (singleUse != null) 'single_use': singleUse?.toJson(),
   if (usage != null) 'usage': usage?.toJson(),
   'use_stripe_sdk': ?useStripeSdk,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attach_to_self', 'automatic_payment_methods', 'confirm', 'confirmation_token', 'customer', 'customer_account', 'description', 'excluded_payment_method_types', 'expand', 'flow_directions', 'mandate_data', 'metadata', 'on_behalf_of', 'payment_method', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'return_url', 'single_use', 'usage', 'use_stripe_sdk'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'attach_to_self', 'automatic_payment_methods', 'confirm', 'confirmation_token', 'customer', 'customer_account', 'description', 'excluded_payment_method_types', 'expand', 'flow_directions', 'mandate_data', 'metadata', 'on_behalf_of', 'payment_method', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'return_url', 'single_use', 'usage', 'use_stripe_sdk'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final confirmationToken$ = confirmationToken;
 if (confirmationToken$ != null) {
   if (confirmationToken$.runes.length > 5000) { errors.add('confirmationToken: length must be <= 5000'); }
@@ -226,8 +226,8 @@ final paymentMethodConfiguration$ = paymentMethodConfiguration;
 if (paymentMethodConfiguration$ != null) {
   if (paymentMethodConfiguration$.runes.length > 100) { errors.add('paymentMethodConfiguration: length must be <= 100'); }
 }
-return errors; } 
-PostSetupIntentsRequest copyWith({bool? Function()? attachToSelf, AutomaticPaymentMethods? Function()? automaticPaymentMethods, bool? Function()? confirm, String? Function()? confirmationToken, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, List<FlowDirections>? Function()? flowDirections, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, String? Function()? returnUrl, SingleUse? Function()? singleUse, PostSetupIntentsRequestUsage? Function()? usage, bool? Function()? useStripeSdk, }) { return PostSetupIntentsRequest(
+return errors;}
+PostSetupIntentsRequest copyWith({bool? Function()? attachToSelf, AutomaticPaymentMethods? Function()? automaticPaymentMethods, bool? Function()? confirm, String? Function()? confirmationToken, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, List<FlowDirections>? Function()? flowDirections, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, String? Function()? returnUrl, SingleUse? Function()? singleUse, PostSetupIntentsRequestUsage? Function()? usage, bool? Function()? useStripeSdk, }) {return PostSetupIntentsRequest(
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   automaticPaymentMethods: automaticPaymentMethods != null ? automaticPaymentMethods() : this.automaticPaymentMethods,
   confirm: confirm != null ? confirm() : this.confirm,
@@ -250,7 +250,7 @@ PostSetupIntentsRequest copyWith({bool? Function()? attachToSelf, AutomaticPayme
   singleUse: singleUse != null ? singleUse() : this.singleUse,
   usage: usage != null ? usage() : this.usage,
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsRequest &&
           attachToSelf == other.attachToSelf &&
@@ -280,4 +280,4 @@ PostSetupIntentsRequest copyWith({bool? Function()? attachToSelf, AutomaticPayme
 
 @override String toString() => 'PostSetupIntentsRequest(\n  attachToSelf: $attachToSelf,\n  automaticPaymentMethods: $automaticPaymentMethods,\n  confirm: $confirm,\n  confirmationToken: $confirmationToken,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  description: $description,\n  excludedPaymentMethodTypes: $excludedPaymentMethodTypes,\n  expand: $expand,\n  flowDirections: $flowDirections,\n  mandateData: $mandateData,\n  metadata: $metadata,\n  onBehalfOf: $onBehalfOf,\n  paymentMethod: $paymentMethod,\n  paymentMethodConfiguration: $paymentMethodConfiguration,\n  paymentMethodData: $paymentMethodData,\n  paymentMethodOptions: $paymentMethodOptions,\n  paymentMethodTypes: $paymentMethodTypes,\n  returnUrl: $returnUrl,\n  singleUse: $singleUse,\n  usage: $usage,\n  useStripeSdk: $useStripeSdk,\n)';
 
- }
+}

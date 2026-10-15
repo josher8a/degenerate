@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0({required this.notSpoof, required this.spoof, });
 
-factory RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0(
+factory RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0.fromJson(Map<String, dynamic> json) {return RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0(
   notSpoof: (json['NOT_SPOOF'] as List<dynamic>).map((e) => e as String).toList(),
   spoof: (json['SPOOF'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 final List<String> notSpoof;
 
 final List<String> spoof;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'NOT_SPOOF': notSpoof,
   'SPOOF': spoof,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('NOT_SPOOF') &&
-      json.containsKey('SPOOF'); } 
-RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 copyWith({List<String>? notSpoof, List<String>? spoof, }) { return RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('NOT_SPOOF') &&
+      json.containsKey('SPOOF');}
+RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 copyWith({List<String>? notSpoof, List<String>? spoof, }) {return RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0(
   notSpoof: notSpoof ?? this.notSpoof,
   spoof: spoof ?? this.spoof,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 &&
           listEquals(notSpoof, other.notSpoof) &&
@@ -31,4 +31,4 @@ RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 copyWith({List<S
 
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0(notSpoof: $notSpoof, spoof: $spoof)';
 
- }
+}

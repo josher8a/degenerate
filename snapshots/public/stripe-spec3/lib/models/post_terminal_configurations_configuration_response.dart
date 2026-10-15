@@ -7,11 +7,11 @@ const PostTerminalConfigurationsConfigurationResponse({this.terminalConfiguratio
 const PostTerminalConfigurationsConfigurationResponse._({required this.rawValue, required this.terminalConfiguration, required this.deletedTerminalConfiguration, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostTerminalConfigurationsConfigurationResponse.fromJson(Object? json) { return PostTerminalConfigurationsConfigurationResponse._(
+factory PostTerminalConfigurationsConfigurationResponse.fromJson(Object? json) {return PostTerminalConfigurationsConfigurationResponse._(
   rawValue: Omittable(json),
   terminalConfiguration: json is Map<String, dynamic> && TerminalConfiguration.canParse(json) ? parseAnyOfVariant<TerminalConfiguration>(json, (value) => TerminalConfiguration.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   deletedTerminalConfiguration: json is Map<String, dynamic> && DeletedTerminalConfiguration.canParse(json) ? parseAnyOfVariant<DeletedTerminalConfiguration>(json, (value) => DeletedTerminalConfiguration.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostTerminalConfigurationsConfigurationResponse(${toJson()})';
 
- }
+}

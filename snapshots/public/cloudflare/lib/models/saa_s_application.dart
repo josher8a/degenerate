@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_launcher_visible.dart';import 'package:pub_cloudflare/models/access_app_policy_link.dart';import 'package:pub_cloudflare/models/access_app_req_embedded_policies/access_app_req_embedded_policies_policies.dart';import 'package:pub_cloudflare/models/access_app_req_embedded_policies/policies_variant3.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app.dart';import 'package:pub_cloudflare/models/access_saas_props/access_saas_props_saas_app.dart';import 'package:pub_cloudflare/models/access_saml_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';import 'package:pub_cloudflare/models/access_scim_config.dart';import 'package:pub_cloudflare/models/access_type.dart';@immutable final class SaaSApplication {const SaaSApplication({this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.customPages, this.logoUrl, this.name, this.saasApp, this.scimConfig, this.tags, this.type, this.policies, });
 
-factory SaaSApplication.fromJson(Map<String, dynamic> json) { return SaaSApplication(
+factory SaaSApplication.fromJson(Map<String, dynamic> json) {return SaaSApplication(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   appLauncherVisible: json['app_launcher_visible'] != null ? AccessAppLauncherVisible.fromJson(json['app_launcher_visible'] as bool) : null,
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
@@ -15,7 +15,7 @@ factory SaaSApplication.fromJson(Map<String, dynamic> json) { return SaaSApplica
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: json['type'] != null ? AccessType.fromJson(json['type'] as String) : null,
   policies: (json['policies'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessAppPolicyLink.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasUuid.fromJson(v as String), fromC: (v) => PoliciesVariant3.fromJson(v as Map<String, dynamic>),)).toList(),
-); }
+);}
 
 /// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
@@ -42,7 +42,7 @@ final AccessType? type;
 /// The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application.
 final List<AccessAppReqEmbeddedPoliciesPolicies>? policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_idps': ?allowedIdps,
   if (appLauncherVisible != null) 'app_launcher_visible': appLauncherVisible?.toJson(),
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
@@ -54,9 +54,9 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
   if (type != null) 'type': type?.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'custom_pages', 'logo_url', 'name', 'saas_app', 'scim_config', 'tags', 'type', 'policies'}.contains(key)); } 
-SaaSApplication copyWith({List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, List<String>? Function()? customPages, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSaasPropsSaasApp? Function()? saasApp, AccessScimConfig? Function()? scimConfig, List<String>? Function()? tags, AccessType? Function()? type, List<AccessAppReqEmbeddedPoliciesPolicies>? Function()? policies, }) { return SaaSApplication(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'custom_pages', 'logo_url', 'name', 'saas_app', 'scim_config', 'tags', 'type', 'policies'}.contains(key));}
+SaaSApplication copyWith({List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, List<String>? Function()? customPages, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, AccessSaasPropsSaasApp? Function()? saasApp, AccessScimConfig? Function()? scimConfig, List<String>? Function()? tags, AccessType? Function()? type, List<AccessAppReqEmbeddedPoliciesPolicies>? Function()? policies, }) {return SaaSApplication(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
@@ -68,7 +68,7 @@ SaaSApplication copyWith({List<String>? Function()? allowedIdps, AccessAppLaunch
   tags: tags != null ? tags() : this.tags,
   type: type != null ? type() : this.type,
   policies: policies != null ? policies() : this.policies,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SaaSApplication &&
           listEquals(allowedIdps, other.allowedIdps) &&
@@ -87,4 +87,4 @@ SaaSApplication copyWith({List<String>? Function()? allowedIdps, AccessAppLaunch
 
 @override String toString() => 'SaaSApplication(\n  allowedIdps: $allowedIdps,\n  appLauncherVisible: $appLauncherVisible,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customPages: $customPages,\n  logoUrl: $logoUrl,\n  name: $name,\n  saasApp: $saasApp,\n  scimConfig: $scimConfig,\n  tags: $tags,\n  type: $type,\n  policies: $policies,\n)';
 
- }
+}

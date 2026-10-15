@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished upgrade
 sealed class FinishUpgradeSuccessK {const FinishUpgradeSuccessK();
 
-factory FinishUpgradeSuccessK.fromJson(String json) { return switch (json) {
+factory FinishUpgradeSuccessK.fromJson(String json) {return switch (json) {
   'FinishUpgradeSuccess' => finishUpgradeSuccess,
   _ => FinishUpgradeSuccessK$Unknown(json),
-}; }
+};}
 
 static const FinishUpgradeSuccessK finishUpgradeSuccess = FinishUpgradeSuccessK$finishUpgradeSuccess._();
 
 static const List<FinishUpgradeSuccessK> values = [finishUpgradeSuccess];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'FinishUpgradeSuccess' => 'finishUpgradeSuccess',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinishUpgradeSuccessK$Unknown; } 
+bool get isUnknown {return this is FinishUpgradeSuccessK$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() finishUpgradeSuccess, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() finishUpgradeSuccess, required W Function(String value) $unknown, }) {return switch (this) {
       FinishUpgradeSuccessK$finishUpgradeSuccess() => finishUpgradeSuccess(),
       FinishUpgradeSuccessK$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishUpgradeSuccess, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishUpgradeSuccess, W Function(String value)? $unknown, }) {return switch (this) {
       FinishUpgradeSuccessK$finishUpgradeSuccess() => finishUpgradeSuccess != null ? finishUpgradeSuccess() : orElse(value),
       FinishUpgradeSuccessK$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinishUpgradeSuccessK($value)';
 
- }
+}
 @immutable final class FinishUpgradeSuccessK$finishUpgradeSuccess extends FinishUpgradeSuccessK {const FinishUpgradeSuccessK$finishUpgradeSuccess._();
 
 @override String get value => 'FinishUpgradeSuccess';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishUp
 
 @override int get hashCode => 'FinishUpgradeSuccess'.hashCode;
 
- }
+}
 @immutable final class FinishUpgradeSuccessK$Unknown extends FinishUpgradeSuccessK {const FinishUpgradeSuccessK$Unknown(this.value);
 
 @override final String value;
@@ -53,23 +53,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishUp
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class FinishUpgradeSuccess {const FinishUpgradeSuccess({required this.k});
 
-factory FinishUpgradeSuccess.fromJson(Map<String, dynamic> json) { return FinishUpgradeSuccess(
+factory FinishUpgradeSuccess.fromJson(Map<String, dynamic> json) {return FinishUpgradeSuccess(
   k: FinishUpgradeSuccessK.fromJson(json['k'] as String),
-); }
+);}
 
 /// Finished upgrade
 final FinishUpgradeSuccessK k;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'k': k.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'FinishUpgradeSuccess'; } 
-FinishUpgradeSuccess copyWith({FinishUpgradeSuccessK? k}) { return FinishUpgradeSuccess(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('k') && json['k'] == 'FinishUpgradeSuccess';}
+FinishUpgradeSuccess copyWith({FinishUpgradeSuccessK? k}) {return FinishUpgradeSuccess(
   k: k ?? this.k,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FinishUpgradeSuccess &&
           k == other.k;
@@ -78,4 +78,4 @@ FinishUpgradeSuccess copyWith({FinishUpgradeSuccessK? k}) { return FinishUpgrade
 
 @override String toString() => 'FinishUpgradeSuccess(k: $k)';
 
- }
+}

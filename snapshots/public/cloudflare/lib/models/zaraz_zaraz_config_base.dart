@@ -80,7 +80,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class ZarazZarazConfigBase {const ZarazZarazConfigBase({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, this.analytics, this.consent, this.historyChange, });
 
-factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBase(
+factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) {return ZarazZarazConfigBase(
   analytics: json['analytics'] != null ? Analytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,
   consent: json['consent'] != null ? Consent.fromJson(json['consent'] as Map<String, dynamic>) : null,
   dataLayer: json['dataLayer'] as bool,
@@ -90,7 +90,7 @@ factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZ
   triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, TriggersValue.fromJson(v as Map<String, dynamic>))),
   variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, VariablesValue.fromJson(v as Map<String, dynamic>))),
   zarazVersion: (json['zarazVersion'] as num).toInt(),
-); }
+);}
 
 /// Cloudflare Monitoring settings.
 final Analytics? analytics;
@@ -119,7 +119,7 @@ final Map<String,VariablesValue> variables;
 /// Zaraz internal version of the config.
 final int zarazVersion;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (analytics != null) 'analytics': analytics?.toJson(),
   if (consent != null) 'consent': consent?.toJson(),
   'dataLayer': dataLayer,
@@ -129,14 +129,14 @@ Map<String, dynamic> toJson() { return {
   'triggers': triggers.map((k, v) => MapEntry(k, v.toJson())),
   'variables': variables.map((k, v) => MapEntry(k, v.toJson())),
   'zarazVersion': zarazVersion,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataLayer') && json['dataLayer'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('dataLayer') && json['dataLayer'] is bool &&
       json.containsKey('debugKey') && json['debugKey'] is String &&
       json.containsKey('settings') &&
       json.containsKey('triggers') &&
       json.containsKey('variables') &&
-      json.containsKey('zarazVersion') && json['zarazVersion'] is num; } 
-ZarazZarazConfigBase copyWith({Analytics? Function()? analytics, Consent? Function()? consent, bool? dataLayer, String? debugKey, bool? Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,TriggersValue>? triggers, Map<String,VariablesValue>? variables, int? zarazVersion, }) { return ZarazZarazConfigBase(
+      json.containsKey('zarazVersion') && json['zarazVersion'] is num;}
+ZarazZarazConfigBase copyWith({Analytics? Function()? analytics, Consent? Function()? consent, bool? dataLayer, String? debugKey, bool? Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,TriggersValue>? triggers, Map<String,VariablesValue>? variables, int? zarazVersion, }) {return ZarazZarazConfigBase(
   analytics: analytics != null ? analytics() : this.analytics,
   consent: consent != null ? consent() : this.consent,
   dataLayer: dataLayer ?? this.dataLayer,
@@ -146,7 +146,7 @@ ZarazZarazConfigBase copyWith({Analytics? Function()? analytics, Consent? Functi
   triggers: triggers ?? this.triggers,
   variables: variables ?? this.variables,
   zarazVersion: zarazVersion ?? this.zarazVersion,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazConfigBase &&
           analytics == other.analytics &&
@@ -163,4 +163,4 @@ ZarazZarazConfigBase copyWith({Analytics? Function()? analytics, Consent? Functi
 
 @override String toString() => 'ZarazZarazConfigBase(\n  analytics: $analytics,\n  consent: $consent,\n  dataLayer: $dataLayer,\n  debugKey: $debugKey,\n  historyChange: $historyChange,\n  settings: $settings,\n  triggers: $triggers,\n  variables: $variables,\n  zarazVersion: $zarazVersion,\n)';
 
- }
+}

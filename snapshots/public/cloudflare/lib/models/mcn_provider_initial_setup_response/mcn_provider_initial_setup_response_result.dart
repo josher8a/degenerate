@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_aws_trust_policy.dart';import 'package:pub_cloudflare/models/mcn_azure_setup.dart';import 'package:pub_cloudflare/models/mcn_gcp_setup.dart';sealed class McnProviderInitialSetupResponseResultItemType {const McnProviderInitialSetupResponseResultItemType();
 
-factory McnProviderInitialSetupResponseResultItemType.fromJson(String json) { return switch (json) {
+factory McnProviderInitialSetupResponseResultItemType.fromJson(String json) {return switch (json) {
   'mcn_aws_trust_policy' => mcnAwsTrustPolicy,
   'mcn_azure_setup' => mcnAzureSetup,
   'mcn_gcp_setup' => mcnGcpSetup,
   _ => McnProviderInitialSetupResponseResultItemType$Unknown(json),
-}; }
+};}
 
 static const McnProviderInitialSetupResponseResultItemType mcnAwsTrustPolicy = McnProviderInitialSetupResponseResultItemType$mcnAwsTrustPolicy._();
 
@@ -23,7 +23,7 @@ String toJson() => value;
 
 bool get isUnknown => this is McnProviderInitialSetupResponseResultItemType$Unknown;
 
- }
+}
 @immutable final class McnProviderInitialSetupResponseResultItemType$mcnAwsTrustPolicy extends McnProviderInitialSetupResponseResultItemType {const McnProviderInitialSetupResponseResultItemType$mcnAwsTrustPolicy._();
 
 @override String get value => 'mcn_aws_trust_policy';
@@ -34,7 +34,7 @@ bool get isUnknown => this is McnProviderInitialSetupResponseResultItemType$Unkn
 
 @override String toString() => 'McnProviderInitialSetupResponseResultItemType(mcn_aws_trust_policy)';
 
- }
+}
 @immutable final class McnProviderInitialSetupResponseResultItemType$mcnAzureSetup extends McnProviderInitialSetupResponseResultItemType {const McnProviderInitialSetupResponseResultItemType$mcnAzureSetup._();
 
 @override String get value => 'mcn_azure_setup';
@@ -45,7 +45,7 @@ bool get isUnknown => this is McnProviderInitialSetupResponseResultItemType$Unkn
 
 @override String toString() => 'McnProviderInitialSetupResponseResultItemType(mcn_azure_setup)';
 
- }
+}
 @immutable final class McnProviderInitialSetupResponseResultItemType$mcnGcpSetup extends McnProviderInitialSetupResponseResultItemType {const McnProviderInitialSetupResponseResultItemType$mcnGcpSetup._();
 
 @override String get value => 'mcn_gcp_setup';
@@ -56,7 +56,7 @@ bool get isUnknown => this is McnProviderInitialSetupResponseResultItemType$Unkn
 
 @override String toString() => 'McnProviderInitialSetupResponseResultItemType(mcn_gcp_setup)';
 
- }
+}
 @immutable final class McnProviderInitialSetupResponseResultItemType$Unknown extends McnProviderInitialSetupResponseResultItemType {const McnProviderInitialSetupResponseResultItemType$Unknown(this.value);
 
 @override final String value;
@@ -67,25 +67,25 @@ bool get isUnknown => this is McnProviderInitialSetupResponseResultItemType$Unkn
 
 @override String toString() => 'McnProviderInitialSetupResponseResultItemType($value)';
 
- }
+}
 sealed class McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResult();
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
-factory McnProviderInitialSetupResponseResult.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
+factory McnProviderInitialSetupResponseResult.fromJson(Map<String, dynamic> json) {return switch (json['item_type']) {
   'mcn_aws_trust_policy' => McnProviderInitialSetupResponseResultMcnAwsTrustPolicy.fromJson(json),
   'mcn_azure_setup' => McnProviderInitialSetupResponseResultMcnAzureSetup.fromJson(json),
   'mcn_gcp_setup' => McnProviderInitialSetupResponseResultMcnGcpSetup.fromJson(json),
   _ => McnProviderInitialSetupResponseResult$Unknown(json),
-}; }
+};}
 
 /// Build the `mcn_aws_trust_policy` variant.
-factory McnProviderInitialSetupResponseResult.mcnAwsTrustPolicy({required String awsTrustPolicy}) { return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(McnAwsTrustPolicy(itemType: 'mcn_aws_trust_policy', awsTrustPolicy: awsTrustPolicy)); }
+factory McnProviderInitialSetupResponseResult.mcnAwsTrustPolicy({required String awsTrustPolicy}) {return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(McnAwsTrustPolicy(itemType: 'mcn_aws_trust_policy', awsTrustPolicy: awsTrustPolicy));}
 
 /// Build the `mcn_azure_setup` variant.
-factory McnProviderInitialSetupResponseResult.mcnAzureSetup({required String azureConsentUrl, required String integrationIdentityTag, required String tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnAzureSetup(McnAzureSetup(itemType: 'mcn_azure_setup', azureConsentUrl: azureConsentUrl, integrationIdentityTag: integrationIdentityTag, tagCliCommand: tagCliCommand)); }
+factory McnProviderInitialSetupResponseResult.mcnAzureSetup({required String azureConsentUrl, required String integrationIdentityTag, required String tagCliCommand, }) {return McnProviderInitialSetupResponseResultMcnAzureSetup(McnAzureSetup(itemType: 'mcn_azure_setup', azureConsentUrl: azureConsentUrl, integrationIdentityTag: integrationIdentityTag, tagCliCommand: tagCliCommand));}
 
 /// Build the `mcn_gcp_setup` variant.
-factory McnProviderInitialSetupResponseResult.mcnGcpSetup({required String integrationIdentityTag, required String tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnGcpSetup(McnGcpSetup(itemType: 'mcn_gcp_setup', integrationIdentityTag: integrationIdentityTag, tagCliCommand: tagCliCommand)); }
+factory McnProviderInitialSetupResponseResult.mcnGcpSetup({required String integrationIdentityTag, required String tagCliCommand, }) {return McnProviderInitialSetupResponseResultMcnGcpSetup(McnGcpSetup(itemType: 'mcn_gcp_setup', integrationIdentityTag: integrationIdentityTag, tagCliCommand: tagCliCommand));}
 
 /// The discriminator value identifying this variant.
 McnProviderInitialSetupResponseResultItemType get itemType;
@@ -93,16 +93,16 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is McnProviderInitialSetupResponseResult$Unknown;
 
-R when<R>({required R Function(McnProviderInitialSetupResponseResultMcnAwsTrustPolicy) mcnAwsTrustPolicy, required R Function(McnProviderInitialSetupResponseResultMcnAzureSetup) mcnAzureSetup, required R Function(McnProviderInitialSetupResponseResultMcnGcpSetup) mcnGcpSetup, required R Function(McnProviderInitialSetupResponseResult$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(McnProviderInitialSetupResponseResultMcnAwsTrustPolicy) mcnAwsTrustPolicy, required R Function(McnProviderInitialSetupResponseResultMcnAzureSetup) mcnAzureSetup, required R Function(McnProviderInitialSetupResponseResultMcnGcpSetup) mcnGcpSetup, required R Function(McnProviderInitialSetupResponseResult$Unknown) unknown, }) {return switch (this) {
   final McnProviderInitialSetupResponseResultMcnAwsTrustPolicy v => mcnAwsTrustPolicy(v),
   final McnProviderInitialSetupResponseResultMcnAzureSetup v => mcnAzureSetup(v),
   final McnProviderInitialSetupResponseResultMcnGcpSetup v => mcnGcpSetup(v),
   final McnProviderInitialSetupResponseResult$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class McnProviderInitialSetupResponseResultMcnAwsTrustPolicy extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(this.mcnAwsTrustPolicy);
 
-factory McnProviderInitialSetupResponseResultMcnAwsTrustPolicy.fromJson(Map<String, dynamic> json) { return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(McnAwsTrustPolicy.fromJson(json)); }
+factory McnProviderInitialSetupResponseResultMcnAwsTrustPolicy.fromJson(Map<String, dynamic> json) {return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(McnAwsTrustPolicy.fromJson(json));}
 
 final McnAwsTrustPolicy mcnAwsTrustPolicy;
 
@@ -110,9 +110,9 @@ final McnAwsTrustPolicy mcnAwsTrustPolicy;
 
 @override Map<String, dynamic> toJson() => {...mcnAwsTrustPolicy.toJson(), 'item_type': itemType.toJson()};
 
-McnProviderInitialSetupResponseResultMcnAwsTrustPolicy copyWith({String? awsTrustPolicy}) { return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(mcnAwsTrustPolicy.copyWith(
+McnProviderInitialSetupResponseResultMcnAwsTrustPolicy copyWith({String? awsTrustPolicy}) {return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(mcnAwsTrustPolicy.copyWith(
   awsTrustPolicy: awsTrustPolicy,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnAwsTrustPolicy && mcnAwsTrustPolicy == other.mcnAwsTrustPolicy;
 
@@ -120,10 +120,10 @@ McnProviderInitialSetupResponseResultMcnAwsTrustPolicy copyWith({String? awsTrus
 
 @override String toString() => 'McnProviderInitialSetupResponseResult.mcnAwsTrustPolicy($mcnAwsTrustPolicy)';
 
- }
+}
 @immutable final class McnProviderInitialSetupResponseResultMcnAzureSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAzureSetup(this.mcnAzureSetup);
 
-factory McnProviderInitialSetupResponseResultMcnAzureSetup.fromJson(Map<String, dynamic> json) { return McnProviderInitialSetupResponseResultMcnAzureSetup(McnAzureSetup.fromJson(json)); }
+factory McnProviderInitialSetupResponseResultMcnAzureSetup.fromJson(Map<String, dynamic> json) {return McnProviderInitialSetupResponseResultMcnAzureSetup(McnAzureSetup.fromJson(json));}
 
 final McnAzureSetup mcnAzureSetup;
 
@@ -131,11 +131,11 @@ final McnAzureSetup mcnAzureSetup;
 
 @override Map<String, dynamic> toJson() => {...mcnAzureSetup.toJson(), 'item_type': itemType.toJson()};
 
-McnProviderInitialSetupResponseResultMcnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag, String? tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnAzureSetup(mcnAzureSetup.copyWith(
+McnProviderInitialSetupResponseResultMcnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag, String? tagCliCommand, }) {return McnProviderInitialSetupResponseResultMcnAzureSetup(mcnAzureSetup.copyWith(
   azureConsentUrl: azureConsentUrl,
   integrationIdentityTag: integrationIdentityTag,
   tagCliCommand: tagCliCommand,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnAzureSetup && mcnAzureSetup == other.mcnAzureSetup;
 
@@ -143,10 +143,10 @@ McnProviderInitialSetupResponseResultMcnAzureSetup copyWith({String? azureConsen
 
 @override String toString() => 'McnProviderInitialSetupResponseResult.mcnAzureSetup($mcnAzureSetup)';
 
- }
+}
 @immutable final class McnProviderInitialSetupResponseResultMcnGcpSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnGcpSetup(this.mcnGcpSetup);
 
-factory McnProviderInitialSetupResponseResultMcnGcpSetup.fromJson(Map<String, dynamic> json) { return McnProviderInitialSetupResponseResultMcnGcpSetup(McnGcpSetup.fromJson(json)); }
+factory McnProviderInitialSetupResponseResultMcnGcpSetup.fromJson(Map<String, dynamic> json) {return McnProviderInitialSetupResponseResultMcnGcpSetup(McnGcpSetup.fromJson(json));}
 
 final McnGcpSetup mcnGcpSetup;
 
@@ -154,10 +154,10 @@ final McnGcpSetup mcnGcpSetup;
 
 @override Map<String, dynamic> toJson() => {...mcnGcpSetup.toJson(), 'item_type': itemType.toJson()};
 
-McnProviderInitialSetupResponseResultMcnGcpSetup copyWith({String? integrationIdentityTag, String? tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnGcpSetup(mcnGcpSetup.copyWith(
+McnProviderInitialSetupResponseResultMcnGcpSetup copyWith({String? integrationIdentityTag, String? tagCliCommand, }) {return McnProviderInitialSetupResponseResultMcnGcpSetup(mcnGcpSetup.copyWith(
   integrationIdentityTag: integrationIdentityTag,
   tagCliCommand: tagCliCommand,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnGcpSetup && mcnGcpSetup == other.mcnGcpSetup;
 
@@ -165,7 +165,7 @@ McnProviderInitialSetupResponseResultMcnGcpSetup copyWith({String? integrationId
 
 @override String toString() => 'McnProviderInitialSetupResponseResult.mcnGcpSetup($mcnGcpSetup)';
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class McnProviderInitialSetupResponseResult$Unknown extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResult$Unknown(this.json);
@@ -183,4 +183,4 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'McnProviderInitialSetupResponseResult.unknown($json)';
 
- }
+}

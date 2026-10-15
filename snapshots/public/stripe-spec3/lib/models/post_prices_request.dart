@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_tiers_mode.dart';import 'package:pub_stripe_spec3/models/post_plans_request/tiers.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_product_data.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';@immutable final class PostPricesRequest {const PostPricesRequest({required this.currency, this.active, this.billingScheme, this.currencyOptions, this.customUnitAmount, this.expand, this.lookupKey, this.metadata, this.nickname, this.product, this.productData, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transferLookupKey, this.transformQuantity, this.unitAmount, this.unitAmountDecimal, });
 
-factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPricesRequest(
+factory PostPricesRequest.fromJson(Map<String, dynamic> json) {return PostPricesRequest(
   active: json['active'] as bool?,
   billingScheme: json['billing_scheme'] != null ? BillingScheme.fromJson(json['billing_scheme'] as String) : null,
   currency: json['currency'] as String,
@@ -23,7 +23,7 @@ factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPrice
   transformQuantity: json['transform_quantity'] != null ? TransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 /// Whether the price can be used for new purchases. Defaults to `true`.
 final bool? active;
@@ -82,7 +82,7 @@ final int? unitAmount;
 /// Same as `unit_amount`, but accepts a decimal value in cents (or local equivalent) with at most 12 decimal places. Only one of `unit_amount` and `unit_amount_decimal` can be set.
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   if (billingScheme != null) 'billing_scheme': billingScheme?.toJson(),
   'currency': currency,
@@ -102,10 +102,10 @@ Map<String, dynamic> toJson() { return {
   if (transformQuantity != null) 'transform_quantity': transformQuantity?.toJson(),
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final lookupKey$ = lookupKey;
 if (lookupKey$ != null) {
   if (lookupKey$.runes.length > 200) { errors.add('lookupKey: length must be <= 200'); }
@@ -118,8 +118,8 @@ final product$ = product;
 if (product$ != null) {
   if (product$.runes.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
-return errors; } 
-PostPricesRequest copyWith({bool? Function()? active, BillingScheme? Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue>? Function()? currencyOptions, PostPricesRequestCustomUnitAmount? Function()? customUnitAmount, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? nickname, String? Function()? product, PostPricesRequestProductData? Function()? productData, PostPricesRequestRecurring? Function()? recurring, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, List<Tiers>? Function()? tiers, PostPlansRequestTiersMode? Function()? tiersMode, bool? Function()? transferLookupKey, TransformQuantity? Function()? transformQuantity, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostPricesRequest(
+return errors;}
+PostPricesRequest copyWith({bool? Function()? active, BillingScheme? Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue>? Function()? currencyOptions, PostPricesRequestCustomUnitAmount? Function()? customUnitAmount, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? nickname, String? Function()? product, PostPricesRequestProductData? Function()? productData, PostPricesRequestRecurring? Function()? recurring, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, List<Tiers>? Function()? tiers, PostPlansRequestTiersMode? Function()? tiersMode, bool? Function()? transferLookupKey, TransformQuantity? Function()? transformQuantity, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) {return PostPricesRequest(
   active: active != null ? active() : this.active,
   billingScheme: billingScheme != null ? billingScheme() : this.billingScheme,
   currency: currency ?? this.currency,
@@ -139,7 +139,7 @@ PostPricesRequest copyWith({bool? Function()? active, BillingScheme? Function()?
   transformQuantity: transformQuantity != null ? transformQuantity() : this.transformQuantity,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPricesRequest &&
           active == other.active &&
@@ -166,4 +166,4 @@ PostPricesRequest copyWith({bool? Function()? active, BillingScheme? Function()?
 
 @override String toString() => 'PostPricesRequest(\n  active: $active,\n  billingScheme: $billingScheme,\n  currency: $currency,\n  currencyOptions: $currencyOptions,\n  customUnitAmount: $customUnitAmount,\n  expand: $expand,\n  lookupKey: $lookupKey,\n  metadata: $metadata,\n  nickname: $nickname,\n  product: $product,\n  productData: $productData,\n  recurring: $recurring,\n  taxBehavior: $taxBehavior,\n  tiers: $tiers,\n  tiersMode: $tiersMode,\n  transferLookupKey: $transferLookupKey,\n  transformQuantity: $transformQuantity,\n  unitAmount: $unitAmount,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
- }
+}

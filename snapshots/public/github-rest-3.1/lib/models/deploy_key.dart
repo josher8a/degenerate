@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An SSH key granting access to a single repository.
 @immutable final class DeployKey {const DeployKey({required this.id, required this.key, required this.url, required this.title, required this.verified, required this.createdAt, required this.readOnly, this.addedBy = const Omittable.absent(), this.lastUsed = const Omittable.absent(), this.enabled, });
 
-factory DeployKey.fromJson(Map<String, dynamic> json) { return DeployKey(
+factory DeployKey.fromJson(Map<String, dynamic> json) {return DeployKey(
   id: (json['id'] as num).toInt(),
   key: json['key'] as String,
   url: json['url'] as String,
@@ -15,7 +15,7 @@ factory DeployKey.fromJson(Map<String, dynamic> json) { return DeployKey(
   addedBy: json.containsKey('added_by') ? Omittable(json['added_by'] as String?) : const Omittable.absent(),
   lastUsed: json.containsKey('last_used') ? Omittable(json['last_used'] != null ? DateTime.parse(json['last_used'] as String) : null) : const Omittable.absent(),
   enabled: json['enabled'] as bool?,
-); }
+);}
 
 final int id;
 
@@ -37,7 +37,7 @@ final Omittable<DateTime?> lastUsed;
 
 final bool? enabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'key': key,
   'url': url,
@@ -48,15 +48,15 @@ Map<String, dynamic> toJson() { return {
   if (addedBy.isPresent) 'added_by': addedBy.value,
   if (lastUsed.isPresent) 'last_used': lastUsed.value?.toIso8601String(),
   'enabled': ?enabled,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('key') && json['key'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('verified') && json['verified'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('read_only') && json['read_only'] is bool; } 
-DeployKey copyWith({int? id, String? key, String? url, String? title, bool? verified, String? createdAt, bool? readOnly, Omittable<String?>? addedBy, Omittable<DateTime?>? lastUsed, bool? Function()? enabled, }) { return DeployKey(
+      json.containsKey('read_only') && json['read_only'] is bool;}
+DeployKey copyWith({int? id, String? key, String? url, String? title, bool? verified, String? createdAt, bool? readOnly, Omittable<String?>? addedBy, Omittable<DateTime?>? lastUsed, bool? Function()? enabled, }) {return DeployKey(
   id: id ?? this.id,
   key: key ?? this.key,
   url: url ?? this.url,
@@ -67,7 +67,7 @@ DeployKey copyWith({int? id, String? key, String? url, String? title, bool? veri
   addedBy: addedBy ?? this.addedBy,
   lastUsed: lastUsed ?? this.lastUsed,
   enabled: enabled != null ? enabled() : this.enabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeployKey &&
           id == other.id &&
@@ -85,4 +85,4 @@ DeployKey copyWith({int? id, String? key, String? url, String? title, bool? veri
 
 @override String toString() => 'DeployKey(\n  id: $id,\n  key: $key,\n  url: $url,\n  title: $title,\n  verified: $verified,\n  createdAt: $createdAt,\n  readOnly: $readOnly,\n  addedBy: $addedBy,\n  lastUsed: $lastUsed,\n  enabled: $enabled,\n)';
 
- }
+}

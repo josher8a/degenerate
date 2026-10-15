@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetCreateRequest {const PostDatasetCreateRequest({required this.isPublic, required this.name, });
 
-factory PostDatasetCreateRequest.fromJson(Map<String, dynamic> json) { return PostDatasetCreateRequest(
+factory PostDatasetCreateRequest.fromJson(Map<String, dynamic> json) {return PostDatasetCreateRequest(
   isPublic: json['isPublic'] as bool,
   name: json['name'] as String,
-); }
+);}
 
 /// If true, then anyone can search the dataset. If false, then its limited to the account.
 final bool isPublic;
@@ -14,20 +14,20 @@ final bool isPublic;
 /// Used to describe the dataset within the account context.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'isPublic': isPublic,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('isPublic') && json['isPublic'] is bool &&
-      json.containsKey('name') && json['name'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('isPublic') && json['isPublic'] is bool &&
+      json.containsKey('name') && json['name'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (name.isEmpty) { errors.add('name: length must be >= 1'); }
-return errors; } 
-PostDatasetCreateRequest copyWith({bool? isPublic, String? name, }) { return PostDatasetCreateRequest(
+return errors;}
+PostDatasetCreateRequest copyWith({bool? isPublic, String? name, }) {return PostDatasetCreateRequest(
   isPublic: isPublic ?? this.isPublic,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostDatasetCreateRequest &&
           isPublic == other.isPublic &&
@@ -37,4 +37,4 @@ PostDatasetCreateRequest copyWith({bool? isPublic, String? name, }) { return Pos
 
 @override String toString() => 'PostDatasetCreateRequest(isPublic: $isPublic, name: $name)';
 
- }
+}

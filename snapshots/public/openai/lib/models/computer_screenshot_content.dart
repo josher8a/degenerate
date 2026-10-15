@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_screenshot_content/computer_screenshot_content_type.dart';import 'package:pub_openai/models/image_detail.dart';/// A screenshot of a computer.
 @immutable final class ComputerScreenshotContent {const ComputerScreenshotContent({required this.type, required this.imageUrl, required this.fileId, required this.detail, });
 
-factory ComputerScreenshotContent.fromJson(Map<String, dynamic> json) { return ComputerScreenshotContent(
+factory ComputerScreenshotContent.fromJson(Map<String, dynamic> json) {return ComputerScreenshotContent(
   type: ComputerScreenshotContentType.fromJson(json['type'] as String),
   imageUrl: json['image_url'] as String?,
   fileId: json['file_id'] as String?,
   detail: ImageDetail.fromJson(json['detail'] as String),
-); }
+);}
 
 /// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.
 final ComputerScreenshotContentType type;
@@ -23,22 +23,22 @@ final String? fileId;
 /// The detail level of the screenshot image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`.
 final ImageDetail detail;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'image_url': imageUrl,
   'file_id': fileId,
   'detail': detail.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') &&
       json.containsKey('image_url') && (json['image_url'] == null || json['image_url'] is String) &&
       json.containsKey('file_id') && (json['file_id'] == null || json['file_id'] is String) &&
-      json.containsKey('detail'); } 
-ComputerScreenshotContent copyWith({ComputerScreenshotContentType? type, String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return ComputerScreenshotContent(
+      json.containsKey('detail');}
+ComputerScreenshotContent copyWith({ComputerScreenshotContentType? type, String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) {return ComputerScreenshotContent(
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,
   detail: detail ?? this.detail,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ComputerScreenshotContent &&
           type == other.type &&
@@ -50,4 +50,4 @@ ComputerScreenshotContent copyWith({ComputerScreenshotContentType? type, String?
 
 @override String toString() => 'ComputerScreenshotContent(type: $type, imageUrl: $imageUrl, fileId: $fileId, detail: $detail)';
 
- }
+}

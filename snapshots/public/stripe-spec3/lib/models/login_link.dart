@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class LoginLinkObject {const LoginLinkObject();
 
-factory LoginLinkObject.fromJson(String json) { return switch (json) {
+factory LoginLinkObject.fromJson(String json) {return switch (json) {
   'login_link' => loginLink,
   _ => LoginLinkObject$Unknown(json),
-}; }
+};}
 
 static const LoginLinkObject loginLink = LoginLinkObject$loginLink._();
 
 static const List<LoginLinkObject> values = [loginLink];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'login_link' => 'loginLink',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LoginLinkObject$Unknown; } 
+bool get isUnknown {return this is LoginLinkObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() loginLink, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() loginLink, required W Function(String value) $unknown, }) {return switch (this) {
       LoginLinkObject$loginLink() => loginLink(),
       LoginLinkObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? loginLink, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? loginLink, W Function(String value)? $unknown, }) {return switch (this) {
       LoginLinkObject$loginLink() => loginLink != null ? loginLink() : orElse(value),
       LoginLinkObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LoginLinkObject($value)';
 
- }
+}
 @immutable final class LoginLinkObject$loginLink extends LoginLinkObject {const LoginLinkObject$loginLink._();
 
 @override String get value => 'login_link';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? loginLin
 
 @override int get hashCode => 'login_link'.hashCode;
 
- }
+}
 @immutable final class LoginLinkObject$Unknown extends LoginLinkObject {const LoginLinkObject$Unknown(this.value);
 
 @override final String value;
@@ -53,16 +53,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? loginLin
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Login Links are single-use URLs that takes an Express account to the login page for their Stripe dashboard.
 /// A Login Link differs from an [Account Link](https://docs.stripe.com/api/account_links) in that it takes the user directly to their [Express dashboard for the specified account](https://docs.stripe.com/connect/integrate-express-dashboard#create-login-link)
 @immutable final class LoginLink {const LoginLink({required this.created, required this.object, required this.url, });
 
-factory LoginLink.fromJson(Map<String, dynamic> json) { return LoginLink(
+factory LoginLink.fromJson(Map<String, dynamic> json) {return LoginLink(
   created: (json['created'] as num).toInt(),
   object: LoginLinkObject.fromJson(json['object'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -73,23 +73,23 @@ final LoginLinkObject object;
 /// The URL for the login link.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'object': object.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('object') &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
-return errors; } 
-LoginLink copyWith({int? created, LoginLinkObject? object, String? url, }) { return LoginLink(
+return errors;}
+LoginLink copyWith({int? created, LoginLinkObject? object, String? url, }) {return LoginLink(
   created: created ?? this.created,
   object: object ?? this.object,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoginLink &&
           created == other.created &&
@@ -100,4 +100,4 @@ LoginLink copyWith({int? created, LoginLinkObject? object, String? url, }) { ret
 
 @override String toString() => 'LoginLink(created: $created, object: $object, url: $url)';
 
- }
+}

@@ -8,11 +8,11 @@ const ChargeReview({this.string = const Omittable.absent(), this.review = const 
 const ChargeReview._({required this.rawValue, required this.string, required this.review, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ChargeReview.fromJson(Object? json) { return ChargeReview._(
+factory ChargeReview.fromJson(Object? json) {return ChargeReview._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   review: json is Map<String, dynamic> && Review.canParse(json) ? parseAnyOfVariant<Review>(json, (value) => Review.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ChargeReview(${toJson()})';
 
- }
+}

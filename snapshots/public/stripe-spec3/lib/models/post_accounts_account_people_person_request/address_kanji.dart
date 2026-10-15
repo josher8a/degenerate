@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddressKanji {const AddressKanji({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
 
-factory AddressKanji.fromJson(Map<String, dynamic> json) { return AddressKanji(
+factory AddressKanji.fromJson(Map<String, dynamic> json) {return AddressKanji(
   city: json['city'] as String?,
   country: json['country'] as String?,
   line1: json['line1'] as String?,
@@ -11,7 +11,7 @@ factory AddressKanji.fromJson(Map<String, dynamic> json) { return AddressKanji(
   postalCode: json['postal_code'] as String?,
   state: json['state'] as String?,
   town: json['town'] as String?,
-); }
+);}
 
 final String? city;
 
@@ -27,7 +27,7 @@ final String? state;
 
 final String? town;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'city': ?city,
   'country': ?country,
   'line1': ?line1,
@@ -35,10 +35,10 @@ Map<String, dynamic> toJson() { return {
   'postal_code': ?postalCode,
   'state': ?state,
   'town': ?town,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state', 'town'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state', 'town'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final city$ = city;
 if (city$ != null) {
   if (city$.runes.length > 5000) { errors.add('city: length must be <= 5000'); }
@@ -67,8 +67,8 @@ final town$ = town;
 if (town$ != null) {
   if (town$.runes.length > 5000) { errors.add('town: length must be <= 5000'); }
 }
-return errors; } 
-AddressKanji copyWith({String? Function()? city, String? Function()? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, String? Function()? town, }) { return AddressKanji(
+return errors;}
+AddressKanji copyWith({String? Function()? city, String? Function()? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, String? Function()? town, }) {return AddressKanji(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   line1: line1 != null ? line1() : this.line1,
@@ -76,7 +76,7 @@ AddressKanji copyWith({String? Function()? city, String? Function()? country, St
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   state: state != null ? state() : this.state,
   town: town != null ? town() : this.town,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AddressKanji &&
           city == other.city &&
@@ -91,4 +91,4 @@ AddressKanji copyWith({String? Function()? city, String? Function()? country, St
 
 @override String toString() => 'AddressKanji(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state, town: $town)';
 
- }
+}

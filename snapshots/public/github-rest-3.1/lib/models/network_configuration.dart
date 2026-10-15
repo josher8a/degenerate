@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service the network configuration supports.
 sealed class NetworkConfigurationComputeService {const NetworkConfigurationComputeService();
 
-factory NetworkConfigurationComputeService.fromJson(String json) { return switch (json) {
+factory NetworkConfigurationComputeService.fromJson(String json) {return switch (json) {
   'none' => none,
   'actions' => actions,
   'codespaces' => codespaces,
   _ => NetworkConfigurationComputeService$Unknown(json),
-}; }
+};}
 
 static const NetworkConfigurationComputeService none = NetworkConfigurationComputeService$none._();
 
@@ -20,33 +20,33 @@ static const NetworkConfigurationComputeService codespaces = NetworkConfiguratio
 static const List<NetworkConfigurationComputeService> values = [none, actions, codespaces];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'actions' => 'actions',
   'codespaces' => 'codespaces',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NetworkConfigurationComputeService$Unknown; } 
+bool get isUnknown {return this is NetworkConfigurationComputeService$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() actions, required W Function() codespaces, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() actions, required W Function() codespaces, required W Function(String value) $unknown, }) {return switch (this) {
       NetworkConfigurationComputeService$none() => none(),
       NetworkConfigurationComputeService$actions() => actions(),
       NetworkConfigurationComputeService$codespaces() => codespaces(),
       NetworkConfigurationComputeService$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? actions, W Function()? codespaces, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? actions, W Function()? codespaces, W Function(String value)? $unknown, }) {return switch (this) {
       NetworkConfigurationComputeService$none() => none != null ? none() : orElse(value),
       NetworkConfigurationComputeService$actions() => actions != null ? actions() : orElse(value),
       NetworkConfigurationComputeService$codespaces() => codespaces != null ? codespaces() : orElse(value),
       NetworkConfigurationComputeService$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'NetworkConfigurationComputeService($value)';
 
- }
+}
 @immutable final class NetworkConfigurationComputeService$none extends NetworkConfigurationComputeService {const NetworkConfigurationComputeService$none._();
 
 @override String get value => 'none';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class NetworkConfigurationComputeService$actions extends NetworkConfigurationComputeService {const NetworkConfigurationComputeService$actions._();
 
 @override String get value => 'actions';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'actions'.hashCode;
 
- }
+}
 @immutable final class NetworkConfigurationComputeService$codespaces extends NetworkConfigurationComputeService {const NetworkConfigurationComputeService$codespaces._();
 
 @override String get value => 'codespaces';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'codespaces'.hashCode;
 
- }
+}
 @immutable final class NetworkConfigurationComputeService$Unknown extends NetworkConfigurationComputeService {const NetworkConfigurationComputeService$Unknown(this.value);
 
 @override final String value;
@@ -83,11 +83,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A hosted compute network configuration.
 @immutable final class NetworkConfiguration {const NetworkConfiguration({required this.id, required this.name, required this.createdOn, this.computeService, this.networkSettingsIds, this.failoverNetworkSettingsIds, this.failoverNetworkEnabled, });
 
-factory NetworkConfiguration.fromJson(Map<String, dynamic> json) { return NetworkConfiguration(
+factory NetworkConfiguration.fromJson(Map<String, dynamic> json) {return NetworkConfiguration(
   id: json['id'] as String,
   name: json['name'] as String,
   computeService: json['compute_service'] != null ? NetworkConfigurationComputeService.fromJson(json['compute_service'] as String) : null,
@@ -95,7 +95,7 @@ factory NetworkConfiguration.fromJson(Map<String, dynamic> json) { return Networ
   failoverNetworkSettingsIds: (json['failover_network_settings_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   failoverNetworkEnabled: json['failover_network_enabled'] as bool?,
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
-); }
+);}
 
 /// The unique identifier of the network configuration.
 final String id;
@@ -118,7 +118,7 @@ final bool? failoverNetworkEnabled;
 /// The time at which the network configuration was created, in ISO 8601 format.
 final DateTime? createdOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name,
   if (computeService != null) 'compute_service': computeService?.toJson(),
@@ -126,11 +126,11 @@ Map<String, dynamic> toJson() { return {
   'failover_network_settings_ids': ?failoverNetworkSettingsIds,
   'failover_network_enabled': ?failoverNetworkEnabled,
   'created_on': createdOn?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('created_on') && (json['created_on'] == null || json['created_on'] is String); } 
-NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationComputeService? Function()? computeService, List<String>? Function()? networkSettingsIds, List<String>? Function()? failoverNetworkSettingsIds, bool? Function()? failoverNetworkEnabled, DateTime? Function()? createdOn, }) { return NetworkConfiguration(
+      json.containsKey('created_on') && (json['created_on'] == null || json['created_on'] is String);}
+NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationComputeService? Function()? computeService, List<String>? Function()? networkSettingsIds, List<String>? Function()? failoverNetworkSettingsIds, bool? Function()? failoverNetworkEnabled, DateTime? Function()? createdOn, }) {return NetworkConfiguration(
   id: id ?? this.id,
   name: name ?? this.name,
   computeService: computeService != null ? computeService() : this.computeService,
@@ -138,7 +138,7 @@ NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationCom
   failoverNetworkSettingsIds: failoverNetworkSettingsIds != null ? failoverNetworkSettingsIds() : this.failoverNetworkSettingsIds,
   failoverNetworkEnabled: failoverNetworkEnabled != null ? failoverNetworkEnabled() : this.failoverNetworkEnabled,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NetworkConfiguration &&
           id == other.id &&
@@ -153,4 +153,4 @@ NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationCom
 
 @override String toString() => 'NetworkConfiguration(id: $id, name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds, failoverNetworkSettingsIds: $failoverNetworkSettingsIds, failoverNetworkEnabled: $failoverNetworkEnabled, createdOn: $createdOn)';
 
- }
+}

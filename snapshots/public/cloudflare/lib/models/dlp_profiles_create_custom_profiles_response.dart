@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_profile.dart';import 'package:pub_cloudflare/models/dlp_messages2.dart';import 'package:pub_cloudflare/models/dlp_profile.dart';import 'package:pub_cloudflare/models/integration_profile.dart';import 'package:pub_cloudflare/models/predefined_profile.dart';@immutable final class DlpProfilesCreateCustomProfilesResponse {const DlpProfilesCreateCustomProfilesResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory DlpProfilesCreateCustomProfilesResponse.fromJson(Map<String, dynamic> json) { return DlpProfilesCreateCustomProfilesResponse(
+factory DlpProfilesCreateCustomProfilesResponse.fromJson(Map<String, dynamic> json) {return DlpProfilesCreateCustomProfilesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DlpMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 final List<DlpMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final DlpProfile? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DlpProfilesCreateCustomProfilesResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, DlpProfile? Function()? result, }) { return DlpProfilesCreateCustomProfilesResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DlpProfilesCreateCustomProfilesResponse copyWith({List<DlpMessages2>? errors, List<DlpMessages2>? messages, bool? success, DlpProfile? Function()? result, }) {return DlpProfilesCreateCustomProfilesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpProfilesCreateCustomProfilesResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ DlpProfilesCreateCustomProfilesResponse copyWith({List<DlpMessages2>? errors, Li
 
 @override String toString() => 'DlpProfilesCreateCustomProfilesResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

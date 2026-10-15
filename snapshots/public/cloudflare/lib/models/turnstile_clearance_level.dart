@@ -6,13 +6,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// If Turnstile is 
 /// 
 sealed class TurnstileClearanceLevel {const TurnstileClearanceLevel();
 
-factory TurnstileClearanceLevel.fromJson(String json) { return switch (json) {
+factory TurnstileClearanceLevel.fromJson(String json) {return switch (json) {
   'no_clearance' => noClearance,
   'jschallenge' => jschallenge,
   'managed' => managed,
   'interactive' => interactive,
   _ => TurnstileClearanceLevel$Unknown(json),
-}; }
+};}
 
 static const TurnstileClearanceLevel noClearance = TurnstileClearanceLevel$noClearance._();
 
@@ -25,36 +25,36 @@ static const TurnstileClearanceLevel interactive = TurnstileClearanceLevel$inter
 static const List<TurnstileClearanceLevel> values = [noClearance, jschallenge, managed, interactive];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'no_clearance' => 'noClearance',
   'jschallenge' => 'jschallenge',
   'managed' => 'managed',
   'interactive' => 'interactive',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TurnstileClearanceLevel$Unknown; } 
+bool get isUnknown {return this is TurnstileClearanceLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() noClearance, required W Function() jschallenge, required W Function() managed, required W Function() interactive, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() noClearance, required W Function() jschallenge, required W Function() managed, required W Function() interactive, required W Function(String value) $unknown, }) {return switch (this) {
       TurnstileClearanceLevel$noClearance() => noClearance(),
       TurnstileClearanceLevel$jschallenge() => jschallenge(),
       TurnstileClearanceLevel$managed() => managed(),
       TurnstileClearanceLevel$interactive() => interactive(),
       TurnstileClearanceLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? noClearance, W Function()? jschallenge, W Function()? managed, W Function()? interactive, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noClearance, W Function()? jschallenge, W Function()? managed, W Function()? interactive, W Function(String value)? $unknown, }) {return switch (this) {
       TurnstileClearanceLevel$noClearance() => noClearance != null ? noClearance() : orElse(value),
       TurnstileClearanceLevel$jschallenge() => jschallenge != null ? jschallenge() : orElse(value),
       TurnstileClearanceLevel$managed() => managed != null ? managed() : orElse(value),
       TurnstileClearanceLevel$interactive() => interactive != null ? interactive() : orElse(value),
       TurnstileClearanceLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TurnstileClearanceLevel($value)';
 
- }
+}
 @immutable final class TurnstileClearanceLevel$noClearance extends TurnstileClearanceLevel {const TurnstileClearanceLevel$noClearance._();
 
 @override String get value => 'no_clearance';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noCleara
 
 @override int get hashCode => 'no_clearance'.hashCode;
 
- }
+}
 @immutable final class TurnstileClearanceLevel$jschallenge extends TurnstileClearanceLevel {const TurnstileClearanceLevel$jschallenge._();
 
 @override String get value => 'jschallenge';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noCleara
 
 @override int get hashCode => 'jschallenge'.hashCode;
 
- }
+}
 @immutable final class TurnstileClearanceLevel$managed extends TurnstileClearanceLevel {const TurnstileClearanceLevel$managed._();
 
 @override String get value => 'managed';
@@ -81,7 +81,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noCleara
 
 @override int get hashCode => 'managed'.hashCode;
 
- }
+}
 @immutable final class TurnstileClearanceLevel$interactive extends TurnstileClearanceLevel {const TurnstileClearanceLevel$interactive._();
 
 @override String get value => 'interactive';
@@ -90,7 +90,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noCleara
 
 @override int get hashCode => 'interactive'.hashCode;
 
- }
+}
 @immutable final class TurnstileClearanceLevel$Unknown extends TurnstileClearanceLevel {const TurnstileClearanceLevel$Unknown(this.value);
 
 @override final String value;
@@ -100,4 +100,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? noCleara
 
 @override int get hashCode => value.hashCode;
 
- }
+}

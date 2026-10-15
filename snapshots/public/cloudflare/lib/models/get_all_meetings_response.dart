@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_all_meetings_response/get_all_meetings_response_paging.dart';import 'package:pub_cloudflare/models/realtimekit_meeting.dart';@immutable final class GetAllMeetingsResponse {const GetAllMeetingsResponse({required this.data, required this.paging, required this.success, });
 
-factory GetAllMeetingsResponse.fromJson(Map<String, dynamic> json) { return GetAllMeetingsResponse(
+factory GetAllMeetingsResponse.fromJson(Map<String, dynamic> json) {return GetAllMeetingsResponse(
   data: (json['data'] as List<dynamic>).map((e) => RealtimekitMeeting.fromJson(e as Map<String, dynamic>)).toList(),
   paging: GetAllMeetingsResponsePaging.fromJson(json['paging'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<RealtimekitMeeting> data;
 
@@ -16,19 +16,19 @@ final GetAllMeetingsResponsePaging paging;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'data': data.map((e) => e.toJson()).toList(),
   'paging': paging.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('data') &&
       json.containsKey('paging') &&
-      json.containsKey('success') && json['success'] is bool; } 
-GetAllMeetingsResponse copyWith({List<RealtimekitMeeting>? data, GetAllMeetingsResponsePaging? paging, bool? success, }) { return GetAllMeetingsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+GetAllMeetingsResponse copyWith({List<RealtimekitMeeting>? data, GetAllMeetingsResponsePaging? paging, bool? success, }) {return GetAllMeetingsResponse(
   data: data ?? this.data,
   paging: paging ?? this.paging,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetAllMeetingsResponse &&
           listEquals(data, other.data) &&
@@ -39,4 +39,4 @@ GetAllMeetingsResponse copyWith({List<RealtimekitMeeting>? data, GetAllMeetingsR
 
 @override String toString() => 'GetAllMeetingsResponse(data: $data, paging: $paging, success: $success)';
 
- }
+}

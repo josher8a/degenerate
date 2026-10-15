@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_any.dart';import 'package:pub_cloudflare/models/workers_kv_expiration.dart';import 'package:pub_cloudflare/models/workers_kv_expiration_ttl.dart';import 'package:pub_cloudflare/models/workers_kv_key_name_bulk.dart';@immutable final class WorkersKvBulkWrite2 {const WorkersKvBulkWrite2({required this.key, required this.value, this.base64, this.expiration, this.expirationTtl, this.metadata = const Omittable.absent(), });
 
-factory WorkersKvBulkWrite2.fromJson(Map<String, dynamic> json) { return WorkersKvBulkWrite2(
+factory WorkersKvBulkWrite2.fromJson(Map<String, dynamic> json) {return WorkersKvBulkWrite2(
   base64: json['base64'] as bool?,
   expiration: json['expiration'] != null ? WorkersKvExpiration.fromJson(json['expiration'] as num) : null,
   expirationTtl: json['expiration_ttl'] != null ? WorkersKvExpirationTtl.fromJson(json['expiration_ttl'] as num) : null,
   key: WorkersKvKeyNameBulk.fromJson(json['key'] as String),
   metadata: json.containsKey('metadata') ? Omittable(json['metadata'] != null ? WorkersKvAny.fromJson(json['metadata']) : null) : const Omittable.absent(),
   value: json['value'] as String,
-); }
+);}
 
 /// Indicates whether or not the server should base64 decode the value before storing it. Useful for writing values that wouldn't otherwise be valid JSON strings, such as images.
 final bool? base64;
@@ -31,28 +31,28 @@ final String value;
 /// The value of `base64`, or its schema default when absent.
 bool get base64OrDefault => base64 ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'base64': ?base64,
   if (expiration != null) 'expiration': expiration?.toJson(),
   if (expirationTtl != null) 'expiration_ttl': expirationTtl?.toJson(),
   'key': key.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value?.toJson(),
   'value': value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
-      json.containsKey('value') && json['value'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') &&
+      json.containsKey('value') && json['value'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (value.runes.length > 26214400) { errors.add('value: length must be <= 26214400'); }
-return errors; } 
-WorkersKvBulkWrite2 copyWith({bool? Function()? base64, WorkersKvExpiration? Function()? expiration, WorkersKvExpirationTtl? Function()? expirationTtl, WorkersKvKeyNameBulk? key, Omittable<WorkersKvAny?>? metadata, String? value, }) { return WorkersKvBulkWrite2(
+return errors;}
+WorkersKvBulkWrite2 copyWith({bool? Function()? base64, WorkersKvExpiration? Function()? expiration, WorkersKvExpirationTtl? Function()? expirationTtl, WorkersKvKeyNameBulk? key, Omittable<WorkersKvAny?>? metadata, String? value, }) {return WorkersKvBulkWrite2(
   base64: base64 != null ? base64() : this.base64,
   expiration: expiration != null ? expiration() : this.expiration,
   expirationTtl: expirationTtl != null ? expirationTtl() : this.expirationTtl,
   key: key ?? this.key,
   metadata: metadata ?? this.metadata,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvBulkWrite2 &&
           base64 == other.base64 &&
@@ -66,4 +66,4 @@ WorkersKvBulkWrite2 copyWith({bool? Function()? base64, WorkersKvExpiration? Fun
 
 @override String toString() => 'WorkersKvBulkWrite2(base64: $base64, expiration: $expiration, expirationTtl: $expirationTtl, key: $key, metadata: $metadata, value: $value)';
 
- }
+}

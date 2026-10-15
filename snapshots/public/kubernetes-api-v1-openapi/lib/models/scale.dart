@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/scale_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/scale_status.dart';/// Scale represents a scaling request for a resource.
 @immutable final class Scale {const Scale({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
-factory Scale.fromJson(Map<String, dynamic> json) { return Scale(
+factory Scale.fromJson(Map<String, dynamic> json) {return Scale(
   apiVersion: json['apiVersion'] as String?,
   kind: json['kind'] as String?,
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   spec: json['spec'] != null ? ScaleSpec.fromJson(json['spec'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? ScaleStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 final String? apiVersion;
@@ -27,21 +27,21 @@ final ScaleSpec? spec;
 /// status is the current status of the scale. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status. Read-only.
 final ScaleStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'apiVersion': ?apiVersion,
   'kind': ?kind,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (spec != null) 'spec': spec?.toJson(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key)); } 
-Scale copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, ScaleSpec? Function()? spec, ScaleStatus? Function()? status, }) { return Scale(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key));}
+Scale copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, ScaleSpec? Function()? spec, ScaleStatus? Function()? status, }) {return Scale(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec != null ? spec() : this.spec,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Scale &&
           apiVersion == other.apiVersion &&
@@ -54,4 +54,4 @@ Scale copyWith({String? Function()? apiVersion, String? Function()? kind, Object
 
 @override String toString() => 'Scale(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec, status: $status)';
 
- }
+}

@@ -14,7 +14,7 @@ final class DevicePostureIntegrationsApi with ApiExecutor {const DevicePostureIn
 /// Fetches the list of device posture integrations for an account.
 ///
 /// `GET /accounts/{account_id}/devices/posture/integration`
-Future<ApiResult<List<TeamsDevicesDevicePostureIntegrations>, DevicePostureIntegrationsListDevicePostureIntegrationsError>> devicePostureIntegrationsListDevicePostureIntegrations({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesDevicePostureIntegrations>, DevicePostureIntegrationsListDevicePostureIntegrationsError>> devicePostureIntegrationsListDevicePostureIntegrations({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: DevicePostureIntegrationsListDevicePostureIntegrationsError.fromResponse,
 );
- } 
+}
 /// Create a device posture integration
 ///
 /// Create a new device posture integration.
 ///
 /// `POST /accounts/{account_id}/devices/posture/integration`
-Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsCreateDevicePostureIntegrationError>> devicePostureIntegrationsCreateDevicePostureIntegration({required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsCreateDevicePostureIntegrationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsCreateDevicePostureIntegrationError>> devicePostureIntegrationsCreateDevicePostureIntegration({required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsCreateDevicePostureIntegrationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: DevicePostureIntegrationsCreateDevicePostureIntegrationError.fromResponse,
 );
- } 
+}
 /// Get device posture integration details
 ///
 /// Fetches details for a single device posture integration.
 ///
 /// `GET /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsDevicePostureIntegrationDetailsError>> devicePostureIntegrationsDevicePostureIntegrationDetails({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsDevicePostureIntegrationDetailsError>> devicePostureIntegrationsDevicePostureIntegrationDetails({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,13 +79,13 @@ return await execute(
   },
   onError: DevicePostureIntegrationsDevicePostureIntegrationDetailsError.fromResponse,
 );
- } 
+}
 /// Update a device posture integration
 ///
 /// Updates a configured device posture integration.
 ///
 /// `PATCH /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsUpdateDevicePostureIntegrationError>> devicePostureIntegrationsUpdateDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsUpdateDevicePostureIntegrationError>> devicePostureIntegrationsUpdateDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,13 +104,13 @@ return await execute(
   },
   onError: DevicePostureIntegrationsUpdateDevicePostureIntegrationError.fromResponse,
 );
- } 
+}
 /// Delete a device posture integration
 ///
 /// Delete a configured device posture integration.
 ///
 /// `DELETE /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<Map<String, dynamic>?, DevicePostureIntegrationsDeleteDevicePostureIntegrationError>> devicePostureIntegrationsDeleteDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DevicePostureIntegrationsDeleteDevicePostureIntegrationError>> devicePostureIntegrationsDeleteDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,5 +127,5 @@ return await execute(
   },
   onError: DevicePostureIntegrationsDeleteDevicePostureIntegrationError.fromResponse,
 );
- } 
- }
+}
+}

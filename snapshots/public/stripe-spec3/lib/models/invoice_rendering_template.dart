@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject();
 
-factory InvoiceRenderingTemplateObject.fromJson(String json) { return switch (json) {
+factory InvoiceRenderingTemplateObject.fromJson(String json) {return switch (json) {
   'invoice_rendering_template' => invoiceRenderingTemplate,
   _ => InvoiceRenderingTemplateObject$Unknown(json),
-}; }
+};}
 
 static const InvoiceRenderingTemplateObject invoiceRenderingTemplate = InvoiceRenderingTemplateObject$invoiceRenderingTemplate._();
 
 static const List<InvoiceRenderingTemplateObject> values = [invoiceRenderingTemplate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'invoice_rendering_template' => 'invoiceRenderingTemplate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoiceRenderingTemplateObject$Unknown; } 
+bool get isUnknown {return this is InvoiceRenderingTemplateObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() invoiceRenderingTemplate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() invoiceRenderingTemplate, required W Function(String value) $unknown, }) {return switch (this) {
       InvoiceRenderingTemplateObject$invoiceRenderingTemplate() => invoiceRenderingTemplate(),
       InvoiceRenderingTemplateObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoiceRenderingTemplate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoiceRenderingTemplate, W Function(String value)? $unknown, }) {return switch (this) {
       InvoiceRenderingTemplateObject$invoiceRenderingTemplate() => invoiceRenderingTemplate != null ? invoiceRenderingTemplate() : orElse(value),
       InvoiceRenderingTemplateObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoiceRenderingTemplateObject($value)';
 
- }
+}
 @immutable final class InvoiceRenderingTemplateObject$invoiceRenderingTemplate extends InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject$invoiceRenderingTemplate._();
 
 @override String get value => 'invoice_rendering_template';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoiceR
 
 @override int get hashCode => 'invoice_rendering_template'.hashCode;
 
- }
+}
 @immutable final class InvoiceRenderingTemplateObject$Unknown extends InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoiceR
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the template, one of `active` or `archived`.
 sealed class InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus();
 
-factory InvoiceRenderingTemplateStatus.fromJson(String json) { return switch (json) {
+factory InvoiceRenderingTemplateStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'archived' => archived,
   _ => InvoiceRenderingTemplateStatus$Unknown(json),
-}; }
+};}
 
 static const InvoiceRenderingTemplateStatus active = InvoiceRenderingTemplateStatus$active._();
 
@@ -70,30 +70,30 @@ static const InvoiceRenderingTemplateStatus archived = InvoiceRenderingTemplateS
 static const List<InvoiceRenderingTemplateStatus> values = [active, archived];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'archived' => 'archived',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoiceRenderingTemplateStatus$Unknown; } 
+bool get isUnknown {return this is InvoiceRenderingTemplateStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() archived, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() archived, required W Function(String value) $unknown, }) {return switch (this) {
       InvoiceRenderingTemplateStatus$active() => active(),
       InvoiceRenderingTemplateStatus$archived() => archived(),
       InvoiceRenderingTemplateStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? archived, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? archived, W Function(String value)? $unknown, }) {return switch (this) {
       InvoiceRenderingTemplateStatus$active() => active != null ? active() : orElse(value),
       InvoiceRenderingTemplateStatus$archived() => archived != null ? archived() : orElse(value),
       InvoiceRenderingTemplateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoiceRenderingTemplateStatus($value)';
 
- }
+}
 @immutable final class InvoiceRenderingTemplateStatus$active extends InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus$active._();
 
 @override String get value => 'active';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class InvoiceRenderingTemplateStatus$archived extends InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus$archived._();
 
 @override String get value => 'archived';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'archived'.hashCode;
 
- }
+}
 @immutable final class InvoiceRenderingTemplateStatus$Unknown extends InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus$Unknown(this.value);
 
 @override final String value;
@@ -121,12 +121,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Invoice Rendering Templates are used to configure how invoices are rendered on surfaces like the PDF. Invoice Rendering Templates
 /// can be created from within the Dashboard, and they can be used over the API when creating invoices.
 @immutable final class InvoiceRenderingTemplate {const InvoiceRenderingTemplate({required this.created, required this.id, required this.livemode, required this.object, required this.status, required this.version, this.metadata = const Omittable.absent(), this.nickname = const Omittable.absent(), });
 
-factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) { return InvoiceRenderingTemplate(
+factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) {return InvoiceRenderingTemplate(
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -135,7 +135,7 @@ factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) { return In
   object: InvoiceRenderingTemplateObject.fromJson(json['object'] as String),
   status: InvoiceRenderingTemplateStatus.fromJson(json['status'] as String),
   version: (json['version'] as num).toInt(),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -161,7 +161,7 @@ final InvoiceRenderingTemplateStatus status;
 /// Version of this template; version increases by one when an update on the template changes any field that controls invoice rendering
 final int version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'id': id,
   'livemode': livemode,
@@ -170,22 +170,22 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'status': status.toJson(),
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('status') &&
-      json.containsKey('version') && json['version'] is num; } 
+      json.containsKey('version') && json['version'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final nickname$ = nickname.value;
 if (nickname$ != null) {
   if (nickname$.runes.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
-return errors; } 
-InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, InvoiceRenderingTemplateObject? object, InvoiceRenderingTemplateStatus? status, int? version, }) { return InvoiceRenderingTemplate(
+return errors;}
+InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, InvoiceRenderingTemplateObject? object, InvoiceRenderingTemplateStatus? status, int? version, }) {return InvoiceRenderingTemplate(
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
@@ -194,7 +194,7 @@ InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omi
   object: object ?? this.object,
   status: status ?? this.status,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceRenderingTemplate &&
           created == other.created &&
@@ -210,4 +210,4 @@ InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Omi
 
 @override String toString() => 'InvoiceRenderingTemplate(created: $created, id: $id, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, status: $status, version: $version)';
 
- }
+}

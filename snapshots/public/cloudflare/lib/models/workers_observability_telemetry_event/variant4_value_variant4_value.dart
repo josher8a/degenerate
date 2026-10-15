@@ -7,13 +7,13 @@ const Variant4ValueVariant4Value({this.listdynamic = const Omittable.absent(), t
 const Variant4ValueVariant4Value._({required this.rawValue, required this.listdynamic, required this.string, required this.$double, required this.$bool, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Variant4ValueVariant4Value.fromJson(Object? json) { return Variant4ValueVariant4Value._(
+factory Variant4ValueVariant4Value.fromJson(Object? json) {return Variant4ValueVariant4Value._(
   rawValue: Omittable(json),
   listdynamic: parseAnyOfVariant<List<dynamic>>(json, (value) => (value! as List<dynamic>).map((e) => e).toList()),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
   $bool: parseAnyOfVariant<bool>(json, (value) => value! as bool),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -51,4 +51,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Variant4ValueVariant4Value(${toJson()})';
 
- }
+}

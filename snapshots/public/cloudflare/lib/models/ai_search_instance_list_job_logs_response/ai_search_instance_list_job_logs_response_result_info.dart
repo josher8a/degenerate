@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceListJobLogsResponseResultInfo {const AiSearchInstanceListJobLogsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 
-factory AiSearchInstanceListJobLogsResponseResultInfo.fromJson(Map<String, dynamic> json) { return AiSearchInstanceListJobLogsResponseResultInfo(
+factory AiSearchInstanceListJobLogsResponseResultInfo.fromJson(Map<String, dynamic> json) {return AiSearchInstanceListJobLogsResponseResultInfo(
   count: (json['count'] as num).toInt(),
   page: (json['page'] as num).toInt(),
   perPage: (json['per_page'] as num).toInt(),
   totalCount: (json['total_count'] as num).toInt(),
-); }
+);}
 
 final int count;
 
@@ -18,22 +18,22 @@ final int perPage;
 
 final int totalCount;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'count': count,
   'page': page,
   'per_page': perPage,
   'total_count': totalCount,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('count') && json['count'] is num &&
       json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num &&
-      json.containsKey('total_count') && json['total_count'] is num; } 
-AiSearchInstanceListJobLogsResponseResultInfo copyWith({int? count, int? page, int? perPage, int? totalCount, }) { return AiSearchInstanceListJobLogsResponseResultInfo(
+      json.containsKey('total_count') && json['total_count'] is num;}
+AiSearchInstanceListJobLogsResponseResultInfo copyWith({int? count, int? page, int? perPage, int? totalCount, }) {return AiSearchInstanceListJobLogsResponseResultInfo(
   count: count ?? this.count,
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,
   totalCount: totalCount ?? this.totalCount,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceListJobLogsResponseResultInfo &&
           count == other.count &&
@@ -45,4 +45,4 @@ AiSearchInstanceListJobLogsResponseResultInfo copyWith({int? count, int? page, i
 
 @override String toString() => 'AiSearchInstanceListJobLogsResponseResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
 
- }
+}

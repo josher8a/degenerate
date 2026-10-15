@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_billing_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_customer_creation.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_submit_type.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_after_completion.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_automatic_tax.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_consent_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_text.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_invoice_creation.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_name_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_optional_item.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_payment_intent_data.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_phone_number_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_restrictions.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_option.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_subscription_data.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_tax_id_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class PaymentLinkObject {const PaymentLinkObject();
 
-factory PaymentLinkObject.fromJson(String json) { return switch (json) {
+factory PaymentLinkObject.fromJson(String json) {return switch (json) {
   'payment_link' => paymentLink,
   _ => PaymentLinkObject$Unknown(json),
-}; }
+};}
 
 static const PaymentLinkObject paymentLink = PaymentLinkObject$paymentLink._();
 
 static const List<PaymentLinkObject> values = [paymentLink];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'payment_link' => 'paymentLink',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PaymentLinkObject$Unknown; } 
+bool get isUnknown {return this is PaymentLinkObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() paymentLink, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() paymentLink, required W Function(String value) $unknown, }) {return switch (this) {
       PaymentLinkObject$paymentLink() => paymentLink(),
       PaymentLinkObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentLink, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentLink, W Function(String value)? $unknown, }) {return switch (this) {
       PaymentLinkObject$paymentLink() => paymentLink != null ? paymentLink() : orElse(value),
       PaymentLinkObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PaymentLinkObject($value)';
 
- }
+}
 @immutable final class PaymentLinkObject$paymentLink extends PaymentLinkObject {const PaymentLinkObject$paymentLink._();
 
 @override String get value => 'payment_link';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentL
 
 @override int get hashCode => 'payment_link'.hashCode;
 
- }
+}
 @immutable final class PaymentLinkObject$Unknown extends PaymentLinkObject {const PaymentLinkObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentL
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A payment link is a shareable URL that will take your customers to a hosted payment page. A payment link can be shared and used multiple times.
 /// 
 /// When a customer opens a payment link it will open a new [checkout session](https://docs.stripe.com/api/checkout/sessions) to render the payment page. You can use [checkout session events](https://docs.stripe.com/api/events/types#event_types-checkout.session.completed) to track payments through payment links.
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentL
 /// Related guide: [Payment Links API](https://docs.stripe.com/payment-links)
 @immutable final class PaymentLink {const PaymentLink({required this.livemode, required this.afterCompletion, required this.allowPromotionCodes, required this.customerCreation, required this.automaticTax, required this.billingAddressCollection, required this.currency, required this.customFields, required this.customText, required this.active, required this.id, required this.shippingOptions, required this.metadata, required this.taxIdCollection, required this.paymentMethodCollection, required this.url, required this.object, required this.phoneNumberCollection, required this.submitType, this.nameCollection, this.lineItems, this.onBehalfOf = const Omittable.absent(), this.invoiceCreation = const Omittable.absent(), this.paymentIntentData = const Omittable.absent(), this.inactiveMessage = const Omittable.absent(), this.paymentMethodTypes = const Omittable.absent(), this.consentCollection = const Omittable.absent(), this.restrictions = const Omittable.absent(), this.shippingAddressCollection = const Omittable.absent(), this.optionalItems = const Omittable.absent(), this.applicationFeeAmount = const Omittable.absent(), this.subscriptionData = const Omittable.absent(), this.application = const Omittable.absent(), this.transferData = const Omittable.absent(), this.applicationFeePercent = const Omittable.absent(), });
 
-factory PaymentLink.fromJson(Map<String, dynamic> json) { return PaymentLink(
+factory PaymentLink.fromJson(Map<String, dynamic> json) {return PaymentLink(
   active: json['active'] as bool,
   afterCompletion: PaymentLinksResourceAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),
   allowPromotionCodes: json['allow_promotion_codes'] as bool,
@@ -97,7 +97,7 @@ factory PaymentLink.fromJson(Map<String, dynamic> json) { return PaymentLink(
   taxIdCollection: PaymentLinksResourceTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>),
   transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? PaymentLinksResourceTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: json['url'] as String,
-); }
+);}
 
 /// Whether the payment link's `url` is active. If `false`, customers visiting the URL will be shown a page saying that the link has been deactivated.
 final bool active;
@@ -198,7 +198,7 @@ final Omittable<PaymentLinksResourceTransferData?> transferData;
 /// The public URL that can be shared with customers.
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'after_completion': afterCompletion.toJson(),
   'allow_promotion_codes': allowPromotionCodes,
@@ -234,8 +234,8 @@ Map<String, dynamic> toJson() { return {
   'tax_id_collection': taxIdCollection.toJson(),
   if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('after_completion') &&
       json.containsKey('allow_promotion_codes') && json['allow_promotion_codes'] is bool &&
       json.containsKey('automatic_tax') &&
@@ -253,17 +253,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('shipping_options') &&
       json.containsKey('submit_type') &&
       json.containsKey('tax_id_collection') &&
-      json.containsKey('url') && json['url'] is String; } 
+      json.containsKey('url') && json['url'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 final inactiveMessage$ = inactiveMessage.value;
 if (inactiveMessage$ != null) {
   if (inactiveMessage$.runes.length > 5000) { errors.add('inactiveMessage: length must be <= 5000'); }
 }
 if (url.runes.length > 5000) { errors.add('url: length must be <= 5000'); }
-return errors; } 
-PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCompletion, bool? allowPromotionCodes, Omittable<BillingPortalConfigurationApplication?>? application, Omittable<int?>? applicationFeeAmount, Omittable<double?>? applicationFeePercent, PaymentLinksResourceAutomaticTax? automaticTax, PaymentLinkBillingAddressCollection? billingAddressCollection, Omittable<PaymentLinksResourceConsentCollection?>? consentCollection, String? currency, List<PaymentLinksResourceCustomFields>? customFields, PaymentLinksResourceCustomText? customText, PaymentLinkCustomerCreation? customerCreation, String? id, Omittable<String?>? inactiveMessage, Omittable<PaymentLinksResourceInvoiceCreation?>? invoiceCreation, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, PaymentLinksResourceNameCollection? Function()? nameCollection, PaymentLinkObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<List<PaymentLinksResourceOptionalItem>?>? optionalItems, Omittable<PaymentLinksResourcePaymentIntentData?>? paymentIntentData, PaymentLinkPaymentMethodCollection? paymentMethodCollection, Omittable<List<PaymentLinkPaymentMethodTypes>?>? paymentMethodTypes, PaymentLinksResourcePhoneNumberCollection? phoneNumberCollection, Omittable<PaymentLinksResourceRestrictions?>? restrictions, Omittable<PaymentLinksResourceShippingAddressCollection?>? shippingAddressCollection, List<PaymentLinksResourceShippingOption>? shippingOptions, PaymentLinkSubmitType? submitType, Omittable<PaymentLinksResourceSubscriptionData?>? subscriptionData, PaymentLinksResourceTaxIdCollection? taxIdCollection, Omittable<PaymentLinksResourceTransferData?>? transferData, String? url, }) { return PaymentLink(
+return errors;}
+PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCompletion, bool? allowPromotionCodes, Omittable<BillingPortalConfigurationApplication?>? application, Omittable<int?>? applicationFeeAmount, Omittable<double?>? applicationFeePercent, PaymentLinksResourceAutomaticTax? automaticTax, PaymentLinkBillingAddressCollection? billingAddressCollection, Omittable<PaymentLinksResourceConsentCollection?>? consentCollection, String? currency, List<PaymentLinksResourceCustomFields>? customFields, PaymentLinksResourceCustomText? customText, PaymentLinkCustomerCreation? customerCreation, String? id, Omittable<String?>? inactiveMessage, Omittable<PaymentLinksResourceInvoiceCreation?>? invoiceCreation, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, PaymentLinksResourceNameCollection? Function()? nameCollection, PaymentLinkObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<List<PaymentLinksResourceOptionalItem>?>? optionalItems, Omittable<PaymentLinksResourcePaymentIntentData?>? paymentIntentData, PaymentLinkPaymentMethodCollection? paymentMethodCollection, Omittable<List<PaymentLinkPaymentMethodTypes>?>? paymentMethodTypes, PaymentLinksResourcePhoneNumberCollection? phoneNumberCollection, Omittable<PaymentLinksResourceRestrictions?>? restrictions, Omittable<PaymentLinksResourceShippingAddressCollection?>? shippingAddressCollection, List<PaymentLinksResourceShippingOption>? shippingOptions, PaymentLinkSubmitType? submitType, Omittable<PaymentLinksResourceSubscriptionData?>? subscriptionData, PaymentLinksResourceTaxIdCollection? taxIdCollection, Omittable<PaymentLinksResourceTransferData?>? transferData, String? url, }) {return PaymentLink(
   active: active ?? this.active,
   afterCompletion: afterCompletion ?? this.afterCompletion,
   allowPromotionCodes: allowPromotionCodes ?? this.allowPromotionCodes,
@@ -299,7 +299,7 @@ PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCo
   taxIdCollection: taxIdCollection ?? this.taxIdCollection,
   transferData: transferData ?? this.transferData,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLink &&
           active == other.active &&
@@ -344,4 +344,4 @@ PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCo
 
 @override String toString() => 'PaymentLink(\n  active: $active,\n  afterCompletion: $afterCompletion,\n  allowPromotionCodes: $allowPromotionCodes,\n  application: $application,\n  applicationFeeAmount: $applicationFeeAmount,\n  applicationFeePercent: $applicationFeePercent,\n  automaticTax: $automaticTax,\n  billingAddressCollection: $billingAddressCollection,\n  consentCollection: $consentCollection,\n  currency: $currency,\n  customFields: $customFields,\n  customText: $customText,\n  customerCreation: $customerCreation,\n  id: $id,\n  inactiveMessage: $inactiveMessage,\n  invoiceCreation: $invoiceCreation,\n  lineItems: $lineItems,\n  livemode: $livemode,\n  metadata: $metadata,\n  nameCollection: $nameCollection,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  optionalItems: $optionalItems,\n  paymentIntentData: $paymentIntentData,\n  paymentMethodCollection: $paymentMethodCollection,\n  paymentMethodTypes: $paymentMethodTypes,\n  phoneNumberCollection: $phoneNumberCollection,\n  restrictions: $restrictions,\n  shippingAddressCollection: $shippingAddressCollection,\n  shippingOptions: $shippingOptions,\n  submitType: $submitType,\n  subscriptionData: $subscriptionData,\n  taxIdCollection: $taxIdCollection,\n  transferData: $transferData,\n  url: $url,\n)';
 
- }
+}

@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigFilesResponseResult {const AutoragConfigFilesResponseResult({required this.error, required this.key, });
 
-factory AutoragConfigFilesResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigFilesResponseResult(
+factory AutoragConfigFilesResponseResult.fromJson(Map<String, dynamic> json) {return AutoragConfigFilesResponseResult(
   error: json['error'] as String,
   key: json['key'] as String,
-); }
+);}
 
 final String error;
 
 final String key;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error,
   'key': key,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') && json['error'] is String &&
-      json.containsKey('key') && json['key'] is String; } 
-AutoragConfigFilesResponseResult copyWith({String? error, String? key, }) { return AutoragConfigFilesResponseResult(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error') && json['error'] is String &&
+      json.containsKey('key') && json['key'] is String;}
+AutoragConfigFilesResponseResult copyWith({String? error, String? key, }) {return AutoragConfigFilesResponseResult(
   error: error ?? this.error,
   key: key ?? this.key,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigFilesResponseResult &&
           error == other.error &&
@@ -31,4 +31,4 @@ AutoragConfigFilesResponseResult copyWith({String? error, String? key, }) { retu
 
 @override String toString() => 'AutoragConfigFilesResponseResult(error: $error, key: $key)';
 
- }
+}

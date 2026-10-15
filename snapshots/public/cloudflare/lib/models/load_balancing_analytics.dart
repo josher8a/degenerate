@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_origin_analytics.dart';@immutable final class LoadBalancingAnalytics {const LoadBalancingAnalytics({this.id, this.origins, this.pool, this.timestamp, });
 
-factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingAnalytics(
+factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) {return LoadBalancingAnalytics(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOriginAnalytics.fromJson(e as Map<String, dynamic>)).toList(),
   pool: json['pool'] as Map<String, dynamic>?,
   timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
-); }
+);}
 
 final int? id;
 
@@ -24,19 +24,19 @@ final DateTime? timestamp;
 /// The value of `id`, or its schema default when absent.
 int get idOrDefault => id ?? 1;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (origins != null) 'origins': origins?.map((e) => e.toJson()).toList(),
   'pool': ?pool,
   if (timestamp != null) 'timestamp': timestamp?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'origins', 'pool', 'timestamp'}.contains(key)); } 
-LoadBalancingAnalytics copyWith({int? Function()? id, List<LoadBalancingOriginAnalytics>? Function()? origins, Map<String, dynamic>? Function()? pool, DateTime? Function()? timestamp, }) { return LoadBalancingAnalytics(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'origins', 'pool', 'timestamp'}.contains(key));}
+LoadBalancingAnalytics copyWith({int? Function()? id, List<LoadBalancingOriginAnalytics>? Function()? origins, Map<String, dynamic>? Function()? pool, DateTime? Function()? timestamp, }) {return LoadBalancingAnalytics(
   id: id != null ? id() : this.id,
   origins: origins != null ? origins() : this.origins,
   pool: pool != null ? pool() : this.pool,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingAnalytics &&
           id == other.id &&
@@ -48,4 +48,4 @@ LoadBalancingAnalytics copyWith({int? Function()? id, List<LoadBalancingOriginAn
 
 @override String toString() => 'LoadBalancingAnalytics(id: $id, origins: $origins, pool: $pool, timestamp: $timestamp)';
 
- }
+}

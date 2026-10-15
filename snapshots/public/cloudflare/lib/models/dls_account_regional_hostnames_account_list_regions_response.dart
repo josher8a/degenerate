@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/dls_account_regional_hostnames_account_list_regions_response/dls_account_regional_hostnames_account_list_regions_response_result.dart';import 'package:pub_cloudflare/models/dls_messages2.dart';@immutable final class DlsAccountRegionalHostnamesAccountListRegionsResponse {const DlsAccountRegionalHostnamesAccountListRegionsResponse({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
-factory DlsAccountRegionalHostnamesAccountListRegionsResponse.fromJson(Map<String, dynamic> json) { return DlsAccountRegionalHostnamesAccountListRegionsResponse(
+factory DlsAccountRegionalHostnamesAccountListRegionsResponse.fromJson(Map<String, dynamic> json) {return DlsAccountRegionalHostnamesAccountListRegionsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DlsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DlsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: (json['result'] as List<dynamic>?)?.map((e) => DlsAccountRegionalHostnamesAccountListRegionsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<DlsMessages2> errors;
 
@@ -24,23 +24,23 @@ final AccessActiveSessionsResponseResultInfo? resultInfo;
 
 final List<DlsAccountRegionalHostnamesAccountListRegionsResponseResult>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DlsAccountRegionalHostnamesAccountListRegionsResponse copyWith({List<DlsMessages2>? errors, List<DlsMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, List<DlsAccountRegionalHostnamesAccountListRegionsResponseResult>? Function()? result, }) { return DlsAccountRegionalHostnamesAccountListRegionsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+DlsAccountRegionalHostnamesAccountListRegionsResponse copyWith({List<DlsMessages2>? errors, List<DlsMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, List<DlsAccountRegionalHostnamesAccountListRegionsResponseResult>? Function()? result, }) {return DlsAccountRegionalHostnamesAccountListRegionsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlsAccountRegionalHostnamesAccountListRegionsResponse &&
           listEquals(errors, other.errors) &&
@@ -53,4 +53,4 @@ DlsAccountRegionalHostnamesAccountListRegionsResponse copyWith({List<DlsMessages
 
 @override String toString() => 'DlsAccountRegionalHostnamesAccountListRegionsResponse(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
 
- }
+}

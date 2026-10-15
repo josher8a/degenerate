@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the usage object. Always `duration` for this variant.
 sealed class TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType();
 
-factory TranscriptTextUsageDurationType.fromJson(String json) { return switch (json) {
+factory TranscriptTextUsageDurationType.fromJson(String json) {return switch (json) {
   'duration' => duration,
   _ => TranscriptTextUsageDurationType$Unknown(json),
-}; }
+};}
 
 static const TranscriptTextUsageDurationType duration = TranscriptTextUsageDurationType$duration._();
 
 static const List<TranscriptTextUsageDurationType> values = [duration];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'duration' => 'duration',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TranscriptTextUsageDurationType$Unknown; } 
+bool get isUnknown {return this is TranscriptTextUsageDurationType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() duration, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() duration, required W Function(String value) $unknown, }) {return switch (this) {
       TranscriptTextUsageDurationType$duration() => duration(),
       TranscriptTextUsageDurationType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? duration, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duration, W Function(String value)? $unknown, }) {return switch (this) {
       TranscriptTextUsageDurationType$duration() => duration != null ? duration() : orElse(value),
       TranscriptTextUsageDurationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TranscriptTextUsageDurationType($value)';
 
- }
+}
 @immutable final class TranscriptTextUsageDurationType$duration extends TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType$duration._();
 
 @override String get value => 'duration';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duration
 
 @override int get hashCode => 'duration'.hashCode;
 
- }
+}
 @immutable final class TranscriptTextUsageDurationType$Unknown extends TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType$Unknown(this.value);
 
 @override final String value;
@@ -53,14 +53,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? duration
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Usage statistics for models billed by audio input duration.
 @immutable final class TranscriptTextUsageDuration {const TranscriptTextUsageDuration({required this.type, required this.seconds, });
 
-factory TranscriptTextUsageDuration.fromJson(Map<String, dynamic> json) { return TranscriptTextUsageDuration(
+factory TranscriptTextUsageDuration.fromJson(Map<String, dynamic> json) {return TranscriptTextUsageDuration(
   type: TranscriptTextUsageDurationType.fromJson(json['type'] as String),
   seconds: (json['seconds'] as num).toDouble(),
-); }
+);}
 
 /// The type of the usage object. Always `duration` for this variant.
 final TranscriptTextUsageDurationType type;
@@ -68,16 +68,16 @@ final TranscriptTextUsageDurationType type;
 /// Duration of the input audio in seconds.
 final double seconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'seconds': seconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'duration' &&
-      json.containsKey('seconds') && json['seconds'] is num; } 
-TranscriptTextUsageDuration copyWith({TranscriptTextUsageDurationType? type, double? seconds, }) { return TranscriptTextUsageDuration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'duration' &&
+      json.containsKey('seconds') && json['seconds'] is num;}
+TranscriptTextUsageDuration copyWith({TranscriptTextUsageDurationType? type, double? seconds, }) {return TranscriptTextUsageDuration(
   type: type ?? this.type,
   seconds: seconds ?? this.seconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextUsageDuration &&
           type == other.type &&
@@ -87,4 +87,4 @@ TranscriptTextUsageDuration copyWith({TranscriptTextUsageDurationType? type, dou
 
 @override String toString() => 'TranscriptTextUsageDuration(type: $type, seconds: $seconds)';
 
- }
+}

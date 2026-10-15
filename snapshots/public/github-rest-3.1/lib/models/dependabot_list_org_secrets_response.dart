@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_dependabot_secret.dart';@immutable final class DependabotListOrgSecretsResponse {const DependabotListOrgSecretsResponse({required this.totalCount, required this.secrets, });
 
-factory DependabotListOrgSecretsResponse.fromJson(Map<String, dynamic> json) { return DependabotListOrgSecretsResponse(
+factory DependabotListOrgSecretsResponse.fromJson(Map<String, dynamic> json) {return DependabotListOrgSecretsResponse(
   totalCount: (json['total_count'] as num).toInt(),
   secrets: (json['secrets'] as List<dynamic>).map((e) => OrganizationDependabotSecret.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<OrganizationDependabotSecret> secrets;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'secrets': secrets.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('secrets'); } 
-DependabotListOrgSecretsResponse copyWith({int? totalCount, List<OrganizationDependabotSecret>? secrets, }) { return DependabotListOrgSecretsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('secrets');}
+DependabotListOrgSecretsResponse copyWith({int? totalCount, List<OrganizationDependabotSecret>? secrets, }) {return DependabotListOrgSecretsResponse(
   totalCount: totalCount ?? this.totalCount,
   secrets: secrets ?? this.secrets,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotListOrgSecretsResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ DependabotListOrgSecretsResponse copyWith({int? totalCount, List<OrganizationDep
 
 @override String toString() => 'DependabotListOrgSecretsResponse(totalCount: $totalCount, secrets: $secrets)';
 
- }
+}

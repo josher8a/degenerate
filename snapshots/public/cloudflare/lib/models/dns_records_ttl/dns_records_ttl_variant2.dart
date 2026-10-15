@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DnsRecordsTtlVariant2 {const DnsRecordsTtlVariant2();
 
-factory DnsRecordsTtlVariant2.fromJson(double json) { return switch (json) {
+factory DnsRecordsTtlVariant2.fromJson(double json) {return switch (json) {
   1 => $1,
   _ => DnsRecordsTtlVariant2$Unknown(json),
-}; }
+};}
 
 static const DnsRecordsTtlVariant2 $1 = DnsRecordsTtlVariant2$$1._();
 
 static const List<DnsRecordsTtlVariant2> values = [$1];
 
 double get value;
-double toJson() { return value; } 
+double toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   1 => r'$1',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DnsRecordsTtlVariant2$Unknown; } 
+bool get isUnknown {return this is DnsRecordsTtlVariant2$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1, required W Function(double value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1, required W Function(double value) $unknown, }) {return switch (this) {
       DnsRecordsTtlVariant2$$1() => $1(),
       DnsRecordsTtlVariant2$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(double value) orElse, W Function()? $1, W Function(double value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $1, W Function(double value)? $unknown, }) {return switch (this) {
       DnsRecordsTtlVariant2$$1() => $1 != null ? $1() : orElse(value),
       DnsRecordsTtlVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DnsRecordsTtlVariant2($value)';
 
- }
+}
 @immutable final class DnsRecordsTtlVariant2$$1 extends DnsRecordsTtlVariant2 {const DnsRecordsTtlVariant2$$1._();
 
 @override double get value => 1;
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $1, W Fu
 
 @override int get hashCode => 1.hashCode;
 
- }
+}
 @immutable final class DnsRecordsTtlVariant2$Unknown extends DnsRecordsTtlVariant2 {const DnsRecordsTtlVariant2$Unknown(this.value);
 
 @override final double value;
@@ -52,4 +52,4 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $1, W Fu
 
 @override int get hashCode => value.hashCode;
 
- }
+}

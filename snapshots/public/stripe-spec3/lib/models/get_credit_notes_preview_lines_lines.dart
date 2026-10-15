@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_line_item/credit_note_line_item_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/get_credit_notes_preview_lines_lines_tax_amounts.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';@immutable final class GetCreditNotesPreviewLinesLines {const GetCreditNotesPreviewLinesLines({required this.type, this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
 
-factory GetCreditNotesPreviewLinesLines.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesLines(
+factory GetCreditNotesPreviewLinesLines.fromJson(Map<String, dynamic> json) {return GetCreditNotesPreviewLinesLines(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   invoiceLineItem: json['invoice_line_item'] as String?,
@@ -13,7 +13,7 @@ factory GetCreditNotesPreviewLinesLines.fromJson(Map<String, dynamic> json) { re
   type: CreditNoteLineItemType.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-); }
+);}
 
 final int? amount;
 
@@ -33,7 +33,7 @@ final int? unitAmount;
 
 final String? unitAmountDecimal;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': ?amount,
   'description': ?description,
   'invoice_line_item': ?invoiceLineItem,
@@ -43,10 +43,10 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -55,8 +55,8 @@ final invoiceLineItem$ = invoiceLineItem;
 if (invoiceLineItem$ != null) {
   if (invoiceLineItem$.runes.length > 5000) { errors.add('invoiceLineItem: length must be <= 5000'); }
 }
-return errors; } 
-GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Function()? description, String? Function()? invoiceLineItem, int? Function()? quantity, GetCreditNotesPreviewLinesLinesTaxAmounts? Function()? taxAmounts, TaxRates? Function()? taxRates, CreditNoteLineItemType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return GetCreditNotesPreviewLinesLines(
+return errors;}
+GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Function()? description, String? Function()? invoiceLineItem, int? Function()? quantity, GetCreditNotesPreviewLinesLinesTaxAmounts? Function()? taxAmounts, TaxRates? Function()? taxRates, CreditNoteLineItemType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) {return GetCreditNotesPreviewLinesLines(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   invoiceLineItem: invoiceLineItem != null ? invoiceLineItem() : this.invoiceLineItem,
@@ -66,7 +66,7 @@ GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Funct
   type: type ?? this.type,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetCreditNotesPreviewLinesLines &&
           amount == other.amount &&
@@ -83,4 +83,4 @@ GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Funct
 
 @override String toString() => 'GetCreditNotesPreviewLinesLines(\n  amount: $amount,\n  description: $description,\n  invoiceLineItem: $invoiceLineItem,\n  quantity: $quantity,\n  taxAmounts: $taxAmounts,\n  taxRates: $taxRates,\n  type: $type,\n  unitAmount: $unitAmount,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
- }
+}

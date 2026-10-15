@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/entries_request.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/entries_response.dart';@immutable final class LogEntries {const LogEntries({required this.initialPriority, required this.initiatorType, required this.priority, required this.requestId, required this.requestTime, required this.resourceType, required this.cache, required this.connection, required this.pageref, required this.request, required this.response, required this.serverIpAddress, required this.startedDateTime, required this.time, });
 
-factory LogEntries.fromJson(Map<String, dynamic> json) { return LogEntries(
+factory LogEntries.fromJson(Map<String, dynamic> json) {return LogEntries(
   initialPriority: json['_initialPriority'] as String,
   initiatorType: json['_initiator_type'] as String,
   priority: json['_priority'] as String,
@@ -18,7 +18,7 @@ factory LogEntries.fromJson(Map<String, dynamic> json) { return LogEntries(
   serverIpAddress: json['serverIPAddress'] as String,
   startedDateTime: json['startedDateTime'] as String,
   time: (json['time'] as num).toDouble(),
-); }
+);}
 
 /// Example: `'VeryHigh'`
 final String initialPriority;
@@ -59,7 +59,7 @@ final String startedDateTime;
 /// Example: `268.64`
 final double time;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   '_initialPriority': initialPriority,
   '_initiator_type': initiatorType,
   '_priority': priority,
@@ -74,8 +74,8 @@ Map<String, dynamic> toJson() { return {
   'serverIPAddress': serverIpAddress,
   'startedDateTime': startedDateTime,
   'time': time,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('_initialPriority') && json['_initialPriority'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('_initialPriority') && json['_initialPriority'] is String &&
       json.containsKey('_initiator_type') && json['_initiator_type'] is String &&
       json.containsKey('_priority') && json['_priority'] is String &&
       json.containsKey('_requestId') && json['_requestId'] is String &&
@@ -88,8 +88,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_init
       json.containsKey('response') &&
       json.containsKey('serverIPAddress') && json['serverIPAddress'] is String &&
       json.containsKey('startedDateTime') && json['startedDateTime'] is String &&
-      json.containsKey('time') && json['time'] is num; } 
-LogEntries copyWith({String? initialPriority, String? initiatorType, String? priority, String? requestId, double? requestTime, String? resourceType, Map<String,dynamic>? cache, String? connection, String? pageref, EntriesRequest? request, EntriesResponse? response, String? serverIpAddress, String? startedDateTime, double? time, }) { return LogEntries(
+      json.containsKey('time') && json['time'] is num;}
+LogEntries copyWith({String? initialPriority, String? initiatorType, String? priority, String? requestId, double? requestTime, String? resourceType, Map<String,dynamic>? cache, String? connection, String? pageref, EntriesRequest? request, EntriesResponse? response, String? serverIpAddress, String? startedDateTime, double? time, }) {return LogEntries(
   initialPriority: initialPriority ?? this.initialPriority,
   initiatorType: initiatorType ?? this.initiatorType,
   priority: priority ?? this.priority,
@@ -104,7 +104,7 @@ LogEntries copyWith({String? initialPriority, String? initiatorType, String? pri
   serverIpAddress: serverIpAddress ?? this.serverIpAddress,
   startedDateTime: startedDateTime ?? this.startedDateTime,
   time: time ?? this.time,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LogEntries &&
           initialPriority == other.initialPriority &&
@@ -126,4 +126,4 @@ LogEntries copyWith({String? initialPriority, String? initiatorType, String? pri
 
 @override String toString() => 'LogEntries(\n  initialPriority: $initialPriority,\n  initiatorType: $initiatorType,\n  priority: $priority,\n  requestId: $requestId,\n  requestTime: $requestTime,\n  resourceType: $resourceType,\n  cache: $cache,\n  connection: $connection,\n  pageref: $pageref,\n  request: $request,\n  response: $response,\n  serverIpAddress: $serverIpAddress,\n  startedDateTime: $startedDateTime,\n  time: $time,\n)';
 
- }
+}

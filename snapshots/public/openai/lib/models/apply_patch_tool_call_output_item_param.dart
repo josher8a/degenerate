@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';/// The streamed output emitted by an apply patch tool call.
 @immutable final class ApplyPatchToolCallOutputItemParam {const ApplyPatchToolCallOutputItemParam({required this.type, required this.callId, required this.status, this.id = const Omittable.absent(), this.output = const Omittable.absent(), });
 
-factory ApplyPatchToolCallOutputItemParam.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCallOutputItemParam(
+factory ApplyPatchToolCallOutputItemParam.fromJson(Map<String, dynamic> json) {return ApplyPatchToolCallOutputItemParam(
   type: json['type'] as String,
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   callId: json['call_id'] as String,
   status: ApplyPatchCallOutputStatus.fromJson(json['status'] as String),
   output: json.containsKey('output') ? Omittable(json['output'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of the item. Always `apply_patch_call_output`.
 final String type;
@@ -27,32 +27,32 @@ final ApplyPatchCallOutputStatus status;
 /// Optional human-readable log text from the apply patch tool (e.g., patch results or errors).
 final Omittable<String?> output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   if (id.isPresent) 'id': id.value,
   'call_id': callId,
   'status': status.toJson(),
   if (output.isPresent) 'output': output.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (callId.isEmpty) { errors.add('callId: length must be >= 1'); }
 if (callId.runes.length > 64) { errors.add('callId: length must be <= 64'); }
 final output$ = output.value;
 if (output$ != null) {
   if (output$.runes.length > 10485760) { errors.add('output: length must be <= 10485760'); }
 }
-return errors; } 
-ApplyPatchToolCallOutputItemParam copyWith({String? type, Omittable<String?>? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, }) { return ApplyPatchToolCallOutputItemParam(
+return errors;}
+ApplyPatchToolCallOutputItemParam copyWith({String? type, Omittable<String?>? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, }) {return ApplyPatchToolCallOutputItemParam(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
   status: status ?? this.status,
   output: output ?? this.output,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchToolCallOutputItemParam &&
           type == other.type &&
@@ -65,4 +65,4 @@ ApplyPatchToolCallOutputItemParam copyWith({String? type, Omittable<String?>? id
 
 @override String toString() => 'ApplyPatchToolCallOutputItemParam(type: $type, id: $id, callId: $callId, status: $status, output: $output)';
 
- }
+}

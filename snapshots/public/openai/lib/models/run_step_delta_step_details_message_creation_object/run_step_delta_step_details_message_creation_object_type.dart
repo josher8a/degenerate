@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `message_creation`.
 sealed class RunStepDeltaStepDetailsMessageCreationObjectType {const RunStepDeltaStepDetailsMessageCreationObjectType();
 
-factory RunStepDeltaStepDetailsMessageCreationObjectType.fromJson(String json) { return switch (json) {
+factory RunStepDeltaStepDetailsMessageCreationObjectType.fromJson(String json) {return switch (json) {
   'message_creation' => messageCreation,
   _ => RunStepDeltaStepDetailsMessageCreationObjectType$Unknown(json),
-}; }
+};}
 
 static const RunStepDeltaStepDetailsMessageCreationObjectType messageCreation = RunStepDeltaStepDetailsMessageCreationObjectType$messageCreation._();
 
 static const List<RunStepDeltaStepDetailsMessageCreationObjectType> values = [messageCreation];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'message_creation' => 'messageCreation',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RunStepDeltaStepDetailsMessageCreationObjectType$Unknown; } 
+bool get isUnknown {return this is RunStepDeltaStepDetailsMessageCreationObjectType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() messageCreation, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() messageCreation, required W Function(String value) $unknown, }) {return switch (this) {
       RunStepDeltaStepDetailsMessageCreationObjectType$messageCreation() => messageCreation(),
       RunStepDeltaStepDetailsMessageCreationObjectType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageCreation, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageCreation, W Function(String value)? $unknown, }) {return switch (this) {
       RunStepDeltaStepDetailsMessageCreationObjectType$messageCreation() => messageCreation != null ? messageCreation() : orElse(value),
       RunStepDeltaStepDetailsMessageCreationObjectType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RunStepDeltaStepDetailsMessageCreationObjectType($value)';
 
- }
+}
 @immutable final class RunStepDeltaStepDetailsMessageCreationObjectType$messageCreation extends RunStepDeltaStepDetailsMessageCreationObjectType {const RunStepDeltaStepDetailsMessageCreationObjectType$messageCreation._();
 
 @override String get value => 'message_creation';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageC
 
 @override int get hashCode => 'message_creation'.hashCode;
 
- }
+}
 @immutable final class RunStepDeltaStepDetailsMessageCreationObjectType$Unknown extends RunStepDeltaStepDetailsMessageCreationObjectType {const RunStepDeltaStepDetailsMessageCreationObjectType$Unknown(this.value);
 
 @override final String value;
@@ -53,4 +53,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageC
 
 @override int get hashCode => value.hashCode;
 
- }
+}

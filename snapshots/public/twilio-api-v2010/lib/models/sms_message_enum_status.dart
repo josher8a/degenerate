@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SmsMessageEnumStatus {const SmsMessageEnumStatus();
 
-factory SmsMessageEnumStatus.fromJson(String json) { return switch (json) {
+factory SmsMessageEnumStatus.fromJson(String json) {return switch (json) {
   'queued' => queued,
   'sending' => sending,
   'sent' => sent,
@@ -18,7 +18,7 @@ factory SmsMessageEnumStatus.fromJson(String json) { return switch (json) {
   'partially_delivered' => partiallyDelivered,
   'canceled' => canceled,
   _ => SmsMessageEnumStatus$Unknown(json),
-}; }
+};}
 
 static const SmsMessageEnumStatus queued = SmsMessageEnumStatus$queued._();
 
@@ -49,9 +49,9 @@ static const SmsMessageEnumStatus canceled = SmsMessageEnumStatus$canceled._();
 static const List<SmsMessageEnumStatus> values = [queued, sending, sent, failed, delivered, undelivered, receiving, received, accepted, scheduled, read, partiallyDelivered, canceled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'queued' => 'queued',
   'sending' => 'sending',
   'sent' => 'sent',
@@ -66,11 +66,11 @@ String get name { return switch (value) {
   'partially_delivered' => 'partiallyDelivered',
   'canceled' => 'canceled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SmsMessageEnumStatus$Unknown; } 
+bool get isUnknown {return this is SmsMessageEnumStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() queued, required W Function() sending, required W Function() sent, required W Function() failed, required W Function() delivered, required W Function() undelivered, required W Function() receiving, required W Function() received, required W Function() accepted, required W Function() scheduled, required W Function() read, required W Function() partiallyDelivered, required W Function() canceled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() queued, required W Function() sending, required W Function() sent, required W Function() failed, required W Function() delivered, required W Function() undelivered, required W Function() receiving, required W Function() received, required W Function() accepted, required W Function() scheduled, required W Function() read, required W Function() partiallyDelivered, required W Function() canceled, required W Function(String value) $unknown, }) {return switch (this) {
       SmsMessageEnumStatus$queued() => queued(),
       SmsMessageEnumStatus$sending() => sending(),
       SmsMessageEnumStatus$sent() => sent(),
@@ -85,9 +85,9 @@ W when<W>({required W Function() queued, required W Function() sending, required
       SmsMessageEnumStatus$partiallyDelivered() => partiallyDelivered(),
       SmsMessageEnumStatus$canceled() => canceled(),
       SmsMessageEnumStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? sending, W Function()? sent, W Function()? failed, W Function()? delivered, W Function()? undelivered, W Function()? receiving, W Function()? received, W Function()? accepted, W Function()? scheduled, W Function()? read, W Function()? partiallyDelivered, W Function()? canceled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? sending, W Function()? sent, W Function()? failed, W Function()? delivered, W Function()? undelivered, W Function()? receiving, W Function()? received, W Function()? accepted, W Function()? scheduled, W Function()? read, W Function()? partiallyDelivered, W Function()? canceled, W Function(String value)? $unknown, }) {return switch (this) {
       SmsMessageEnumStatus$queued() => queued != null ? queued() : orElse(value),
       SmsMessageEnumStatus$sending() => sending != null ? sending() : orElse(value),
       SmsMessageEnumStatus$sent() => sent != null ? sent() : orElse(value),
@@ -102,10 +102,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
       SmsMessageEnumStatus$partiallyDelivered() => partiallyDelivered != null ? partiallyDelivered() : orElse(value),
       SmsMessageEnumStatus$canceled() => canceled != null ? canceled() : orElse(value),
       SmsMessageEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SmsMessageEnumStatus($value)';
 
- }
+}
 @immutable final class SmsMessageEnumStatus$queued extends SmsMessageEnumStatus {const SmsMessageEnumStatus$queued._();
 
 @override String get value => 'queued';
@@ -114,7 +114,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'queued'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$sending extends SmsMessageEnumStatus {const SmsMessageEnumStatus$sending._();
 
 @override String get value => 'sending';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'sending'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$sent extends SmsMessageEnumStatus {const SmsMessageEnumStatus$sent._();
 
 @override String get value => 'sent';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'sent'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$failed extends SmsMessageEnumStatus {const SmsMessageEnumStatus$failed._();
 
 @override String get value => 'failed';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$delivered extends SmsMessageEnumStatus {const SmsMessageEnumStatus$delivered._();
 
 @override String get value => 'delivered';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'delivered'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$undelivered extends SmsMessageEnumStatus {const SmsMessageEnumStatus$undelivered._();
 
 @override String get value => 'undelivered';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'undelivered'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$receiving extends SmsMessageEnumStatus {const SmsMessageEnumStatus$receiving._();
 
 @override String get value => 'receiving';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'receiving'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$received extends SmsMessageEnumStatus {const SmsMessageEnumStatus$received._();
 
 @override String get value => 'received';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'received'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$accepted extends SmsMessageEnumStatus {const SmsMessageEnumStatus$accepted._();
 
 @override String get value => 'accepted';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'accepted'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$scheduled extends SmsMessageEnumStatus {const SmsMessageEnumStatus$scheduled._();
 
 @override String get value => 'scheduled';
@@ -195,7 +195,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'scheduled'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$read extends SmsMessageEnumStatus {const SmsMessageEnumStatus$read._();
 
 @override String get value => 'read';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'read'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$partiallyDelivered extends SmsMessageEnumStatus {const SmsMessageEnumStatus$partiallyDelivered._();
 
 @override String get value => 'partially_delivered';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'partially_delivered'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$canceled extends SmsMessageEnumStatus {const SmsMessageEnumStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class SmsMessageEnumStatus$Unknown extends SmsMessageEnumStatus {const SmsMessageEnumStatus$Unknown(this.value);
 
 @override final String value;
@@ -232,4 +232,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

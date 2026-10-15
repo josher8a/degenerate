@@ -10,7 +10,7 @@ final class PetsApi with ApiExecutor {const PetsApi(this.apiConfig);
 @override final ApiConfig apiConfig;
 
 /// `GET /pets`
-Future<ApiResult<List<Pet>, CreatePetError>> listPets({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Pet>, CreatePetError>> listPets({int? limit, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -35,9 +35,9 @@ return await execute(
   },
   onError: CreatePetError.fromResponse,
 );
- } 
+}
 /// `POST /pets`
-Future<ApiResult<void, CreatePetError>> createPet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CreatePetError>> createPet({required Pet body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,9 +53,9 @@ return await execute(
   onSuccess: (_) {},
   onError: CreatePetError.fromResponse,
 );
- } 
+}
 /// `GET /pets/{petId}`
-Future<ApiResult<Pet, CreatePetError>> getPet({required String petId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Pet, CreatePetError>> getPet({required String petId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,5 +71,5 @@ return await execute(
   },
   onError: CreatePetError.fromResponse,
 );
- } 
- }
+}
+}

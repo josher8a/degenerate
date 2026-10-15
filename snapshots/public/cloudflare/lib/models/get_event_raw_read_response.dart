@@ -3,14 +3,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventRawReadResponse {const GetEventRawReadResponse({required this.accountId, required this.created, required this.data, required this.id, required this.source, required this.tlp, });
 
-factory GetEventRawReadResponse.fromJson(Map<String, dynamic> json) { return GetEventRawReadResponse(
+factory GetEventRawReadResponse.fromJson(Map<String, dynamic> json) {return GetEventRawReadResponse(
   accountId: (json['accountId'] as num).toDouble(),
   created: json['created'] as String,
   data: json['data'] as Map<String, dynamic>,
   id: json['id'] as String,
   source: json['source'] as String,
   tlp: json['tlp'] as String,
-); }
+);}
 
 /// Example: `1234`
 final double accountId;
@@ -29,28 +29,28 @@ final String source;
 /// Example: `'amber'`
 final String tlp;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'accountId': accountId,
   'created': created,
   'data': data,
   'id': id,
   'source': source,
   'tlp': tlp,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('accountId') && json['accountId'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('accountId') && json['accountId'] is num &&
       json.containsKey('created') && json['created'] is String &&
       json.containsKey('data') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('source') && json['source'] is String &&
-      json.containsKey('tlp') && json['tlp'] is String; } 
-GetEventRawReadResponse copyWith({double? accountId, String? created, Map<String,dynamic>? data, String? id, String? source, String? tlp, }) { return GetEventRawReadResponse(
+      json.containsKey('tlp') && json['tlp'] is String;}
+GetEventRawReadResponse copyWith({double? accountId, String? created, Map<String,dynamic>? data, String? id, String? source, String? tlp, }) {return GetEventRawReadResponse(
   accountId: accountId ?? this.accountId,
   created: created ?? this.created,
   data: data ?? this.data,
   id: id ?? this.id,
   source: source ?? this.source,
   tlp: tlp ?? this.tlp,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventRawReadResponse &&
           accountId == other.accountId &&
@@ -64,4 +64,4 @@ GetEventRawReadResponse copyWith({double? accountId, String? created, Map<String
 
 @override String toString() => 'GetEventRawReadResponse(accountId: $accountId, created: $created, data: $data, id: $id, source: $source, tlp: $tlp)';
 
- }
+}

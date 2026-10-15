@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/pin.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_spending_controls.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request/post_issuing_cards_request_second_line.dart';/// If `replacement_for` is specified, this should indicate why that card is being replaced.
 sealed class PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason();
 
-factory PostIssuingCardsRequestReplacementReason.fromJson(String json) { return switch (json) {
+factory PostIssuingCardsRequestReplacementReason.fromJson(String json) {return switch (json) {
   'damaged' => damaged,
   'expired' => expired,
   'lost' => lost,
   'stolen' => stolen,
   _ => PostIssuingCardsRequestReplacementReason$Unknown(json),
-}; }
+};}
 
 static const PostIssuingCardsRequestReplacementReason damaged = PostIssuingCardsRequestReplacementReason$damaged._();
 
@@ -23,36 +23,36 @@ static const PostIssuingCardsRequestReplacementReason stolen = PostIssuingCardsR
 static const List<PostIssuingCardsRequestReplacementReason> values = [damaged, expired, lost, stolen];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'damaged' => 'damaged',
   'expired' => 'expired',
   'lost' => 'lost',
   'stolen' => 'stolen',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostIssuingCardsRequestReplacementReason$Unknown; } 
+bool get isUnknown {return this is PostIssuingCardsRequestReplacementReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() damaged, required W Function() expired, required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() damaged, required W Function() expired, required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) {return switch (this) {
       PostIssuingCardsRequestReplacementReason$damaged() => damaged(),
       PostIssuingCardsRequestReplacementReason$expired() => expired(),
       PostIssuingCardsRequestReplacementReason$lost() => lost(),
       PostIssuingCardsRequestReplacementReason$stolen() => stolen(),
       PostIssuingCardsRequestReplacementReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged, W Function()? expired, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged, W Function()? expired, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) {return switch (this) {
       PostIssuingCardsRequestReplacementReason$damaged() => damaged != null ? damaged() : orElse(value),
       PostIssuingCardsRequestReplacementReason$expired() => expired != null ? expired() : orElse(value),
       PostIssuingCardsRequestReplacementReason$lost() => lost != null ? lost() : orElse(value),
       PostIssuingCardsRequestReplacementReason$stolen() => stolen != null ? stolen() : orElse(value),
       PostIssuingCardsRequestReplacementReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostIssuingCardsRequestReplacementReason($value)';
 
- }
+}
 @immutable final class PostIssuingCardsRequestReplacementReason$damaged extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$damaged._();
 
 @override String get value => 'damaged';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => 'damaged'.hashCode;
 
- }
+}
 @immutable final class PostIssuingCardsRequestReplacementReason$expired extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$expired._();
 
 @override String get value => 'expired';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => 'expired'.hashCode;
 
- }
+}
 @immutable final class PostIssuingCardsRequestReplacementReason$lost extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$lost._();
 
 @override String get value => 'lost';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => 'lost'.hashCode;
 
- }
+}
 @immutable final class PostIssuingCardsRequestReplacementReason$stolen extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$stolen._();
 
 @override String get value => 'stolen';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => 'stolen'.hashCode;
 
- }
+}
 @immutable final class PostIssuingCardsRequestReplacementReason$Unknown extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$Unknown(this.value);
 
 @override final String value;
@@ -98,10 +98,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostIssuingCardsRequest {const PostIssuingCardsRequest({required this.currency, required this.type, this.cardholder, this.expMonth, this.expYear, this.expand, this.financialAccount, this.metadata, this.personalizationDesign, this.pin, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.spendingControls, this.status, });
 
-factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequest(
+factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) {return PostIssuingCardsRequest(
   cardholder: json['cardholder'] as String?,
   currency: json['currency'] as String,
   expMonth: json['exp_month'] != null ? (json['exp_month'] as num).toInt() : null,
@@ -118,7 +118,7 @@ factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return Pos
   spendingControls: json['spending_controls'] != null ? PostIssuingCardsCardRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? BillingMeterStatus.fromJson(json['status'] as String) : null,
   type: IssuingCardType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The [Cardholder](https://docs.stripe.com/api#issuing_cardholder_object) object with which the card will be associated.
 final String? cardholder;
@@ -168,7 +168,7 @@ final BillingMeterStatus? status;
 /// The type of card to issue. Possible values are `physical` or `virtual`.
 final IssuingCardType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'cardholder': ?cardholder,
   'currency': currency,
   'exp_month': ?expMonth,
@@ -185,11 +185,11 @@ Map<String, dynamic> toJson() { return {
   if (spendingControls != null) 'spending_controls': spendingControls?.toJson(),
   if (status != null) 'status': status?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('type'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final cardholder$ = cardholder;
 if (cardholder$ != null) {
   if (cardholder$.runes.length > 5000) { errors.add('cardholder: length must be <= 5000'); }
@@ -202,8 +202,8 @@ final replacementFor$ = replacementFor;
 if (replacementFor$ != null) {
   if (replacementFor$.runes.length > 5000) { errors.add('replacementFor: length must be <= 5000'); }
 }
-return errors; } 
-PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? currency, int? Function()? expMonth, int? Function()? expYear, List<String>? Function()? expand, String? Function()? financialAccount, Map<String, String>? Function()? metadata, String? Function()? personalizationDesign, Pin? Function()? pin, String? Function()? replacementFor, PostIssuingCardsRequestReplacementReason? Function()? replacementReason, PostIssuingCardsRequestSecondLine? Function()? secondLine, PostIssuingCardsCardRequestShipping? Function()? shipping, PostIssuingCardsCardRequestSpendingControls? Function()? spendingControls, BillingMeterStatus? Function()? status, IssuingCardType? type, }) { return PostIssuingCardsRequest(
+return errors;}
+PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? currency, int? Function()? expMonth, int? Function()? expYear, List<String>? Function()? expand, String? Function()? financialAccount, Map<String, String>? Function()? metadata, String? Function()? personalizationDesign, Pin? Function()? pin, String? Function()? replacementFor, PostIssuingCardsRequestReplacementReason? Function()? replacementReason, PostIssuingCardsRequestSecondLine? Function()? secondLine, PostIssuingCardsCardRequestShipping? Function()? shipping, PostIssuingCardsCardRequestSpendingControls? Function()? spendingControls, BillingMeterStatus? Function()? status, IssuingCardType? type, }) {return PostIssuingCardsRequest(
   cardholder: cardholder != null ? cardholder() : this.cardholder,
   currency: currency ?? this.currency,
   expMonth: expMonth != null ? expMonth() : this.expMonth,
@@ -220,7 +220,7 @@ PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? curren
   spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
   status: status != null ? status() : this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardsRequest &&
           cardholder == other.cardholder &&
@@ -244,4 +244,4 @@ PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? curren
 
 @override String toString() => 'PostIssuingCardsRequest(\n  cardholder: $cardholder,\n  currency: $currency,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  expand: $expand,\n  financialAccount: $financialAccount,\n  metadata: $metadata,\n  personalizationDesign: $personalizationDesign,\n  pin: $pin,\n  replacementFor: $replacementFor,\n  replacementReason: $replacementReason,\n  secondLine: $secondLine,\n  shipping: $shipping,\n  spendingControls: $spendingControls,\n  status: $status,\n  type: $type,\n)';
 
- }
+}

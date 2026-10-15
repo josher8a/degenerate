@@ -2,7 +2,7 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';sealed class CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError();
 
-factory CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(ApiResponse response) {     try {
+factory CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         401 => CodespacesAddRepositoryForSecretForAuthenticatedUserError$401(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         403 => CodespacesAddRepositoryForSecretForAuthenticatedUserError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -12,12 +12,12 @@ factory CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(A
       };
     } on Object {
       return CodespacesAddRepositoryForSecretForAuthenticatedUserError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$401 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$401(this.error);
 
 final BasicError error;
@@ -26,7 +26,7 @@ final BasicError error;
 
 @override int get statusCode => 401;
 
- }
+}
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$403 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
@@ -35,7 +35,7 @@ final BasicError error;
 
 @override int get statusCode => 403;
 
- }
+}
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$404 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
@@ -44,7 +44,7 @@ final BasicError error;
 
 @override int get statusCode => 404;
 
- }
+}
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$500 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
@@ -53,14 +53,14 @@ final BasicError error;
 
 @override int get statusCode => 500;
 
- }
+}
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$Unknown extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef CodespacesCodespaceMachinesForAuthenticatedUserError = CodespacesAddRepositoryForSecretForAuthenticatedUserError;
 typedef CodespacesDeleteForAuthenticatedUserError = CodespacesAddRepositoryForSecretForAuthenticatedUserError;
 typedef CodespacesDeleteFromOrganizationError = CodespacesAddRepositoryForSecretForAuthenticatedUserError;

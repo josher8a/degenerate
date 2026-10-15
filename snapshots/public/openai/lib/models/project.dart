@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project`
 sealed class ProjectObject {const ProjectObject();
 
-factory ProjectObject.fromJson(String json) { return switch (json) {
+factory ProjectObject.fromJson(String json) {return switch (json) {
   'organization.project' => organizationProject,
   _ => ProjectObject$Unknown(json),
-}; }
+};}
 
 static const ProjectObject organizationProject = ProjectObject$organizationProject._();
 
 static const List<ProjectObject> values = [organizationProject];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.project' => 'organizationProject',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ProjectObject$Unknown; } 
+bool get isUnknown {return this is ProjectObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationProject, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationProject, required W Function(String value) $unknown, }) {return switch (this) {
       ProjectObject$organizationProject() => organizationProject(),
       ProjectObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationProject, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationProject, W Function(String value)? $unknown, }) {return switch (this) {
       ProjectObject$organizationProject() => organizationProject != null ? organizationProject() : orElse(value),
       ProjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ProjectObject($value)';
 
- }
+}
 @immutable final class ProjectObject$organizationProject extends ProjectObject {const ProjectObject$organizationProject._();
 
 @override String get value => 'organization.project';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.project'.hashCode;
 
- }
+}
 @immutable final class ProjectObject$Unknown extends ProjectObject {const ProjectObject$Unknown(this.value);
 
 @override final String value;
@@ -53,15 +53,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// `active` or `archived`
 sealed class ProjectStatus {const ProjectStatus();
 
-factory ProjectStatus.fromJson(String json) { return switch (json) {
+factory ProjectStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'archived' => archived,
   _ => ProjectStatus$Unknown(json),
-}; }
+};}
 
 static const ProjectStatus active = ProjectStatus$active._();
 
@@ -70,30 +70,30 @@ static const ProjectStatus archived = ProjectStatus$archived._();
 static const List<ProjectStatus> values = [active, archived];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'archived' => 'archived',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ProjectStatus$Unknown; } 
+bool get isUnknown {return this is ProjectStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() archived, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() archived, required W Function(String value) $unknown, }) {return switch (this) {
       ProjectStatus$active() => active(),
       ProjectStatus$archived() => archived(),
       ProjectStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? archived, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? archived, W Function(String value)? $unknown, }) {return switch (this) {
       ProjectStatus$active() => active != null ? active() : orElse(value),
       ProjectStatus$archived() => archived != null ? archived() : orElse(value),
       ProjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ProjectStatus($value)';
 
- }
+}
 @immutable final class ProjectStatus$active extends ProjectStatus {const ProjectStatus$active._();
 
 @override String get value => 'active';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class ProjectStatus$archived extends ProjectStatus {const ProjectStatus$archived._();
 
 @override String get value => 'archived';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'archived'.hashCode;
 
- }
+}
 @immutable final class ProjectStatus$Unknown extends ProjectStatus {const ProjectStatus$Unknown(this.value);
 
 @override final String value;
@@ -121,18 +121,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents an individual project.
 @immutable final class Project {const Project({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.archivedAt = const Omittable.absent(), });
 
-factory Project.fromJson(Map<String, dynamic> json) { return Project(
+factory Project.fromJson(Map<String, dynamic> json) {return Project(
   id: json['id'] as String,
   object: ProjectObject.fromJson(json['object'] as String),
   name: json['name'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   archivedAt: json.containsKey('archived_at') ? Omittable(json['archived_at'] != null ? (json['archived_at'] as num).toInt() : null) : const Omittable.absent(),
   status: ProjectStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// The identifier, which can be referenced in API endpoints
 final String id;
@@ -152,27 +152,27 @@ final Omittable<int?> archivedAt;
 /// `active` or `archived`
 final ProjectStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'object': object.toJson(),
   'name': name,
   'created_at': createdAt,
   if (archivedAt.isPresent) 'archived_at': archivedAt.value,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
-      json.containsKey('status'); } 
-Project copyWith({String? id, ProjectObject? object, String? name, int? createdAt, Omittable<int?>? archivedAt, ProjectStatus? status, }) { return Project(
+      json.containsKey('status');}
+Project copyWith({String? id, ProjectObject? object, String? name, int? createdAt, Omittable<int?>? archivedAt, ProjectStatus? status, }) {return Project(
   id: id ?? this.id,
   object: object ?? this.object,
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   archivedAt: archivedAt ?? this.archivedAt,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Project &&
           id == other.id &&
@@ -186,4 +186,4 @@ Project copyWith({String? id, ProjectObject? object, String? name, int? createdA
 
 @override String toString() => 'Project(id: $id, object: $object, name: $name, createdAt: $createdAt, archivedAt: $archivedAt, status: $status)';
 
- }
+}

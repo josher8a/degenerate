@@ -8,11 +8,11 @@ const PostInvoicesInvoicePayRequestMandate({this.string = const Omittable.absent
 const PostInvoicesInvoicePayRequestMandate._({required this.rawValue, required this.string, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostInvoicesInvoicePayRequestMandate.fromJson(Object? json) { return PostInvoicesInvoicePayRequestMandate._(
+factory PostInvoicesInvoicePayRequestMandate.fromJson(Object? json) {return PostInvoicesInvoicePayRequestMandate._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostInvoicesInvoicePayRequestMandate(${toJson()})';
 
- }
+}

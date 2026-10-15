@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_package_version_docker_metadata.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_version_body.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/package_version_author.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/registry_package_package_version_container_metadata.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/registry_package_package_version_npm_metadata.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/registry_package_package_version_nuget_metadata.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/webhook_registry_package_published_registry_package_package_version_package_files.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/webhook_registry_package_published_registry_package_package_version_release.dart';import 'package:pub_github_rest_3_1/models/webhook_rubygems_metadata.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersion {const WebhookRegistryPackagePublishedRegistryPackagePackageVersion({required this.description, required this.htmlUrl, required this.id, required this.installationCommand, required this.metadata, required this.name, required this.packageFiles, required this.packageUrl, required this.summary, required this.version, this.author, this.body, this.bodyHtml, this.containerMetadata, this.createdAt, this.dockerMetadata, this.draft, this.manifest, this.npmMetadata = const Omittable.absent(), this.nugetMetadata = const Omittable.absent(), this.prerelease, this.release, this.rubygemsMetadata, this.tagName, this.targetCommitish, this.targetOid, this.updatedAt, });
 
-factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
+factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) {return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
   author: json['author'] != null ? PackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
   body: json['body'] != null ? OneOf2.parse(json['body'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},) : null,
   bodyHtml: json['body_html'] as String?,
@@ -31,7 +31,7 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Ma
   targetOid: json['target_oid'] as String?,
   updatedAt: json['updated_at'] as String?,
   version: json['version'] as String,
-); }
+);}
 
 final PackageVersionAuthor? author;
 
@@ -87,7 +87,7 @@ final String? updatedAt;
 
 final String version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (author != null) 'author': author?.toJson(),
   if (body != null) 'body': body?.toJson(),
   'body_html': ?bodyHtml,
@@ -115,8 +115,8 @@ Map<String, dynamic> toJson() { return {
   'target_oid': ?targetOid,
   'updated_at': ?updatedAt,
   'version': version,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') && json['description'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('installation_command') && json['installation_command'] is String &&
@@ -125,8 +125,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('package_files') &&
       json.containsKey('package_url') && json['package_url'] is String &&
       json.containsKey('summary') && json['summary'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({PackageVersionAuthor? Function()? author, PackageVersionBody? Function()? body, String? Function()? bodyHtml, RegistryPackagePackageVersionContainerMetadata? Function()? containerMetadata, String? Function()? createdAt, String? description, List<PackagePackageVersionDockerMetadata>? Function()? dockerMetadata, bool? Function()? draft, String? htmlUrl, int? id, String? installationCommand, String? Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, Omittable<RegistryPackagePackageVersionNpmMetadata?>? npmMetadata, Omittable<List<RegistryPackagePackageVersionNugetMetadata>?>? nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool? Function()? prerelease, WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease? Function()? release, List<WebhookRubygemsMetadata>? Function()? rubygemsMetadata, String? summary, String? Function()? tagName, String? Function()? targetCommitish, String? Function()? targetOid, String? Function()? updatedAt, String? version, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
+      json.containsKey('version') && json['version'] is String;}
+WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({PackageVersionAuthor? Function()? author, PackageVersionBody? Function()? body, String? Function()? bodyHtml, RegistryPackagePackageVersionContainerMetadata? Function()? containerMetadata, String? Function()? createdAt, String? description, List<PackagePackageVersionDockerMetadata>? Function()? dockerMetadata, bool? Function()? draft, String? htmlUrl, int? id, String? installationCommand, String? Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, Omittable<RegistryPackagePackageVersionNpmMetadata?>? npmMetadata, Omittable<List<RegistryPackagePackageVersionNugetMetadata>?>? nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool? Function()? prerelease, WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease? Function()? release, List<WebhookRubygemsMetadata>? Function()? rubygemsMetadata, String? summary, String? Function()? tagName, String? Function()? targetCommitish, String? Function()? targetOid, String? Function()? updatedAt, String? version, }) {return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
   author: author != null ? author() : this.author,
   body: body != null ? body() : this.body,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
@@ -154,7 +154,7 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({PackageVe
   targetOid: targetOid != null ? targetOid() : this.targetOid,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   version: version ?? this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackagePublishedRegistryPackagePackageVersion &&
           author == other.author &&
@@ -190,4 +190,4 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({PackageVe
 
 @override String toString() => 'WebhookRegistryPackagePublishedRegistryPackagePackageVersion(\n  author: $author,\n  body: $body,\n  bodyHtml: $bodyHtml,\n  containerMetadata: $containerMetadata,\n  createdAt: $createdAt,\n  description: $description,\n  dockerMetadata: $dockerMetadata,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  installationCommand: $installationCommand,\n  manifest: $manifest,\n  metadata: $metadata,\n  name: $name,\n  npmMetadata: $npmMetadata,\n  nugetMetadata: $nugetMetadata,\n  packageFiles: $packageFiles,\n  packageUrl: $packageUrl,\n  prerelease: $prerelease,\n  release: $release,\n  rubygemsMetadata: $rubygemsMetadata,\n  summary: $summary,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  targetOid: $targetOid,\n  updatedAt: $updatedAt,\n  version: $version,\n)';
 
- }
+}

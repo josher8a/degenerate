@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Porter Large File
 @immutable final class PorterLargeFile {const PorterLargeFile({required this.refName, required this.path, required this.oid, required this.size, });
 
-factory PorterLargeFile.fromJson(Map<String, dynamic> json) { return PorterLargeFile(
+factory PorterLargeFile.fromJson(Map<String, dynamic> json) {return PorterLargeFile(
   refName: json['ref_name'] as String,
   path: json['path'] as String,
   oid: json['oid'] as String,
   size: (json['size'] as num).toInt(),
-); }
+);}
 
 final String refName;
 
@@ -19,22 +19,22 @@ final String oid;
 
 final int size;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ref_name': refName,
   'path': path,
   'oid': oid,
   'size': size,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref_name') && json['ref_name'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ref_name') && json['ref_name'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('oid') && json['oid'] is String &&
-      json.containsKey('size') && json['size'] is num; } 
-PorterLargeFile copyWith({String? refName, String? path, String? oid, int? size, }) { return PorterLargeFile(
+      json.containsKey('size') && json['size'] is num;}
+PorterLargeFile copyWith({String? refName, String? path, String? oid, int? size, }) {return PorterLargeFile(
   refName: refName ?? this.refName,
   path: path ?? this.path,
   oid: oid ?? this.oid,
   size: size ?? this.size,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PorterLargeFile &&
           refName == other.refName &&
@@ -46,4 +46,4 @@ PorterLargeFile copyWith({String? refName, String? path, String? oid, int? size,
 
 @override String toString() => 'PorterLargeFile(refName: $refName, path: $path, oid: $oid, size: $size)';
 
- }
+}

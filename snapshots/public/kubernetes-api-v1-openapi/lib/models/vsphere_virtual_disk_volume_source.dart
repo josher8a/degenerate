@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a vSphere volume resource.
 @immutable final class VsphereVirtualDiskVolumeSource {const VsphereVirtualDiskVolumeSource({required this.volumePath, this.fsType, this.storagePolicyId, this.storagePolicyName, });
 
-factory VsphereVirtualDiskVolumeSource.fromJson(Map<String, dynamic> json) { return VsphereVirtualDiskVolumeSource(
+factory VsphereVirtualDiskVolumeSource.fromJson(Map<String, dynamic> json) {return VsphereVirtualDiskVolumeSource(
   fsType: json['fsType'] as String?,
   storagePolicyId: json['storagePolicyID'] as String?,
   storagePolicyName: json['storagePolicyName'] as String?,
   volumePath: json['volumePath'] as String,
-); }
+);}
 
 /// fsType is filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
 final String? fsType;
@@ -23,19 +23,19 @@ final String? storagePolicyName;
 /// volumePath is the path that identifies vSphere volume vmdk
 final String volumePath;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'storagePolicyID': ?storagePolicyId,
   'storagePolicyName': ?storagePolicyName,
   'volumePath': volumePath,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumePath') && json['volumePath'] is String; } 
-VsphereVirtualDiskVolumeSource copyWith({String? Function()? fsType, String? Function()? storagePolicyId, String? Function()? storagePolicyName, String? volumePath, }) { return VsphereVirtualDiskVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('volumePath') && json['volumePath'] is String;}
+VsphereVirtualDiskVolumeSource copyWith({String? Function()? fsType, String? Function()? storagePolicyId, String? Function()? storagePolicyName, String? volumePath, }) {return VsphereVirtualDiskVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   storagePolicyId: storagePolicyId != null ? storagePolicyId() : this.storagePolicyId,
   storagePolicyName: storagePolicyName != null ? storagePolicyName() : this.storagePolicyName,
   volumePath: volumePath ?? this.volumePath,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VsphereVirtualDiskVolumeSource &&
           fsType == other.fsType &&
@@ -47,4 +47,4 @@ VsphereVirtualDiskVolumeSource copyWith({String? Function()? fsType, String? Fun
 
 @override String toString() => 'VsphereVirtualDiskVolumeSource(fsType: $fsType, storagePolicyId: $storagePolicyId, storagePolicyName: $storagePolicyName, volumePath: $volumePath)';
 
- }
+}

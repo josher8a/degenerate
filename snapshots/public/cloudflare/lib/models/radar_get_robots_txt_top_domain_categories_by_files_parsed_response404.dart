@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404({required this.error});
 
-factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404(
+factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404.fromJson(Map<String, dynamic> json) {return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404(
   error: json['error'] as String,
-); }
+);}
 
 /// Example: `'Not Found.'`
 final String error;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'error': error,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') && json['error'] is String; } 
-RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 copyWith({String? error}) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('error') && json['error'] is String;}
+RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 copyWith({String? error}) {return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404(
   error: error ?? this.error,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 &&
           error == other.error;
@@ -25,4 +25,4 @@ RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 copyWith({String? e
 
 @override String toString() => 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404(error: $error)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/invoice_items.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/schedule_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/subscription_details.dart';/// Customizes the types of values to include when calculating the invoice. Defaults to `next` if unspecified.
 sealed class PreviewMode {const PreviewMode();
 
-factory PreviewMode.fromJson(String json) { return switch (json) {
+factory PreviewMode.fromJson(String json) {return switch (json) {
   'next' => next,
   'recurring' => recurring,
   _ => PreviewMode$Unknown(json),
-}; }
+};}
 
 static const PreviewMode next = PreviewMode$next._();
 
@@ -17,30 +17,30 @@ static const PreviewMode recurring = PreviewMode$recurring._();
 static const List<PreviewMode> values = [next, recurring];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'next' => 'next',
   'recurring' => 'recurring',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PreviewMode$Unknown; } 
+bool get isUnknown {return this is PreviewMode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() next, required W Function() recurring, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() next, required W Function() recurring, required W Function(String value) $unknown, }) {return switch (this) {
       PreviewMode$next() => next(),
       PreviewMode$recurring() => recurring(),
       PreviewMode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? next, W Function()? recurring, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? next, W Function()? recurring, W Function(String value)? $unknown, }) {return switch (this) {
       PreviewMode$next() => next != null ? next() : orElse(value),
       PreviewMode$recurring() => recurring != null ? recurring() : orElse(value),
       PreviewMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PreviewMode($value)';
 
- }
+}
 @immutable final class PreviewMode$next extends PreviewMode {const PreviewMode$next._();
 
 @override String get value => 'next';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? next, W 
 
 @override int get hashCode => 'next'.hashCode;
 
- }
+}
 @immutable final class PreviewMode$recurring extends PreviewMode {const PreviewMode$recurring._();
 
 @override String get value => 'recurring';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? next, W 
 
 @override int get hashCode => 'recurring'.hashCode;
 
- }
+}
 @immutable final class PreviewMode$Unknown extends PreviewMode {const PreviewMode$Unknown(this.value);
 
 @override final String value;
@@ -68,10 +68,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? next, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostInvoicesCreatePreviewRequest {const PostInvoicesCreatePreviewRequest({this.automaticTax, this.currency, this.customer, this.customerAccount, this.customerDetails, this.discounts, this.expand, this.invoiceItems, this.issuer, this.onBehalfOf, this.previewMode, this.schedule, this.scheduleDetails, this.subscription, this.subscriptionDetails, });
 
-factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequest(
+factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) {return PostInvoicesCreatePreviewRequest(
   automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
@@ -87,7 +87,7 @@ factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) { r
   scheduleDetails: json['schedule_details'] != null ? ScheduleDetails.fromJson(json['schedule_details'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String?,
   subscriptionDetails: json['subscription_details'] != null ? SubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Settings for automatic tax lookup for this invoice preview.
 final PostCheckoutSessionsRequestAutomaticTax? automaticTax;
@@ -134,7 +134,7 @@ final String? subscription;
 /// The subscription creation or modification params to apply as a preview. Cannot be used with `schedule` or `schedule_details` fields.
 final SubscriptionDetails? subscriptionDetails;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
   'currency': ?currency,
   'customer': ?customer,
@@ -150,10 +150,10 @@ Map<String, dynamic> toJson() { return {
   if (scheduleDetails != null) 'schedule_details': scheduleDetails?.toJson(),
   'subscription': ?subscription,
   if (subscriptionDetails != null) 'subscription_details': subscriptionDetails?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_tax', 'currency', 'customer', 'customer_account', 'customer_details', 'discounts', 'expand', 'invoice_items', 'issuer', 'on_behalf_of', 'preview_mode', 'schedule', 'schedule_details', 'subscription', 'subscription_details'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'automatic_tax', 'currency', 'customer', 'customer_account', 'customer_details', 'discounts', 'expand', 'invoice_items', 'issuer', 'on_behalf_of', 'preview_mode', 'schedule', 'schedule_details', 'subscription', 'subscription_details'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
   if (customer$.runes.length > 5000) { errors.add('customer: length must be <= 5000'); }
@@ -170,8 +170,8 @@ final subscription$ = subscription;
 if (subscription$ != null) {
   if (subscription$.runes.length > 5000) { errors.add('subscription: length must be <= 5000'); }
 }
-return errors; } 
-PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, PostInvoicesCreatePreviewRequestCustomerDetails? Function()? customerDetails, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, List<InvoiceItems>? Function()? invoiceItems, Issuer? Function()? issuer, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PreviewMode? Function()? previewMode, String? Function()? schedule, ScheduleDetails? Function()? scheduleDetails, String? Function()? subscription, SubscriptionDetails? Function()? subscriptionDetails, }) { return PostInvoicesCreatePreviewRequest(
+return errors;}
+PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, PostInvoicesCreatePreviewRequestCustomerDetails? Function()? customerDetails, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, List<InvoiceItems>? Function()? invoiceItems, Issuer? Function()? issuer, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PreviewMode? Function()? previewMode, String? Function()? schedule, ScheduleDetails? Function()? scheduleDetails, String? Function()? subscription, SubscriptionDetails? Function()? subscriptionDetails, }) {return PostInvoicesCreatePreviewRequest(
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
   currency: currency != null ? currency() : this.currency,
   customer: customer != null ? customer() : this.customer,
@@ -187,7 +187,7 @@ PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticT
   scheduleDetails: scheduleDetails != null ? scheduleDetails() : this.scheduleDetails,
   subscription: subscription != null ? subscription() : this.subscription,
   subscriptionDetails: subscriptionDetails != null ? subscriptionDetails() : this.subscriptionDetails,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesCreatePreviewRequest &&
           automaticTax == other.automaticTax &&
@@ -210,4 +210,4 @@ PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticT
 
 @override String toString() => 'PostInvoicesCreatePreviewRequest(\n  automaticTax: $automaticTax,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  customerDetails: $customerDetails,\n  discounts: $discounts,\n  expand: $expand,\n  invoiceItems: $invoiceItems,\n  issuer: $issuer,\n  onBehalfOf: $onBehalfOf,\n  previewMode: $previewMode,\n  schedule: $schedule,\n  scheduleDetails: $scheduleDetails,\n  subscription: $subscription,\n  subscriptionDetails: $subscriptionDetails,\n)';
 
- }
+}

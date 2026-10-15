@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_tax/provider.dart';import 'package:pub_stripe_spec3/models/customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
 sealed class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax();
 
-factory CustomerTaxAutomaticTax.fromJson(String json) { return switch (json) {
+factory CustomerTaxAutomaticTax.fromJson(String json) {return switch (json) {
   'failed' => failed,
   'not_collecting' => notCollecting,
   'supported' => supported,
   'unrecognized_location' => unrecognizedLocation,
   _ => CustomerTaxAutomaticTax$Unknown(json),
-}; }
+};}
 
 static const CustomerTaxAutomaticTax failed = CustomerTaxAutomaticTax$failed._();
 
@@ -23,36 +23,36 @@ static const CustomerTaxAutomaticTax unrecognizedLocation = CustomerTaxAutomatic
 static const List<CustomerTaxAutomaticTax> values = [failed, notCollecting, supported, unrecognizedLocation];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'failed' => 'failed',
   'not_collecting' => 'notCollecting',
   'supported' => 'supported',
   'unrecognized_location' => 'unrecognizedLocation',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerTaxAutomaticTax$Unknown; } 
+bool get isUnknown {return this is CustomerTaxAutomaticTax$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() failed, required W Function() notCollecting, required W Function() supported, required W Function() unrecognizedLocation, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() failed, required W Function() notCollecting, required W Function() supported, required W Function() unrecognizedLocation, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerTaxAutomaticTax$failed() => failed(),
       CustomerTaxAutomaticTax$notCollecting() => notCollecting(),
       CustomerTaxAutomaticTax$supported() => supported(),
       CustomerTaxAutomaticTax$unrecognizedLocation() => unrecognizedLocation(),
       CustomerTaxAutomaticTax$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? notCollecting, W Function()? supported, W Function()? unrecognizedLocation, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? notCollecting, W Function()? supported, W Function()? unrecognizedLocation, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerTaxAutomaticTax$failed() => failed != null ? failed() : orElse(value),
       CustomerTaxAutomaticTax$notCollecting() => notCollecting != null ? notCollecting() : orElse(value),
       CustomerTaxAutomaticTax$supported() => supported != null ? supported() : orElse(value),
       CustomerTaxAutomaticTax$unrecognizedLocation() => unrecognizedLocation != null ? unrecognizedLocation() : orElse(value),
       CustomerTaxAutomaticTax$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerTaxAutomaticTax($value)';
 
- }
+}
 @immutable final class CustomerTaxAutomaticTax$failed extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$failed._();
 
 @override String get value => 'failed';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'failed'.hashCode;
 
- }
+}
 @immutable final class CustomerTaxAutomaticTax$notCollecting extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$notCollecting._();
 
 @override String get value => 'not_collecting';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'not_collecting'.hashCode;
 
- }
+}
 @immutable final class CustomerTaxAutomaticTax$supported extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$supported._();
 
 @override String get value => 'supported';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'supported'.hashCode;
 
- }
+}
 @immutable final class CustomerTaxAutomaticTax$unrecognizedLocation extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$unrecognizedLocation._();
 
 @override String get value => 'unrecognized_location';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => 'unrecognized_location'.hashCode;
 
- }
+}
 @immutable final class CustomerTaxAutomaticTax$Unknown extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$Unknown(this.value);
 
 @override final String value;
@@ -98,16 +98,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class CustomerTax {const CustomerTax({required this.automaticTax, required this.provider, this.ipAddress = const Omittable.absent(), this.location = const Omittable.absent(), });
 
-factory CustomerTax.fromJson(Map<String, dynamic> json) { return CustomerTax(
+factory CustomerTax.fromJson(Map<String, dynamic> json) {return CustomerTax(
   automaticTax: CustomerTaxAutomaticTax.fromJson(json['automatic_tax'] as String),
   ipAddress: json.containsKey('ip_address') ? Omittable(json['ip_address'] as String?) : const Omittable.absent(),
   location: json.containsKey('location') ? Omittable(json['location'] != null ? CustomerTaxLocation.fromJson(json['location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   provider: Provider.fromJson(json['provider'] as String),
-); }
+);}
 
 /// Surfaces if automatic tax computation is possible given the current customer location information.
 final CustomerTaxAutomaticTax automaticTax;
@@ -121,27 +121,27 @@ final Omittable<CustomerTaxLocation?> location;
 /// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 final Provider provider;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'automatic_tax': automaticTax.toJson(),
   if (ipAddress.isPresent) 'ip_address': ipAddress.value,
   if (location.isPresent) 'location': location.value?.toJson(),
   'provider': provider.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
-      json.containsKey('provider'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('automatic_tax') &&
+      json.containsKey('provider');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final ipAddress$ = ipAddress.value;
 if (ipAddress$ != null) {
   if (ipAddress$.runes.length > 5000) { errors.add('ipAddress: length must be <= 5000'); }
 }
-return errors; } 
-CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, Omittable<String?>? ipAddress, Omittable<CustomerTaxLocation?>? location, Provider? provider, }) { return CustomerTax(
+return errors;}
+CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, Omittable<String?>? ipAddress, Omittable<CustomerTaxLocation?>? location, Provider? provider, }) {return CustomerTax(
   automaticTax: automaticTax ?? this.automaticTax,
   ipAddress: ipAddress ?? this.ipAddress,
   location: location ?? this.location,
   provider: provider ?? this.provider,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerTax &&
           automaticTax == other.automaticTax &&
@@ -153,4 +153,4 @@ CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, Omittable<String?>?
 
 @override String toString() => 'CustomerTax(automaticTax: $automaticTax, ipAddress: $ipAddress, location: $location, provider: $provider)';
 
- }
+}

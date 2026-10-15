@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields/payment_links_resource_custom_fields_type.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/custom_fields_label.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/custom_fields_text.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/dropdown.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/numeric.dart';@immutable final class PostCheckoutSessionsRequestCustomFields {const PostCheckoutSessionsRequestCustomFields({required this.key, required this.label, required this.type, this.dropdown, this.numeric, this.optional, this.text, });
 
-factory PostCheckoutSessionsRequestCustomFields.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomFields(
+factory PostCheckoutSessionsRequestCustomFields.fromJson(Map<String, dynamic> json) {return PostCheckoutSessionsRequestCustomFields(
   dropdown: json['dropdown'] != null ? Dropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,
   key: json['key'] as String,
   label: CustomFieldsLabel.fromJson(json['label'] as Map<String, dynamic>),
@@ -11,7 +11,7 @@ factory PostCheckoutSessionsRequestCustomFields.fromJson(Map<String, dynamic> js
   optional: json['optional'] as bool?,
   text: json['text'] != null ? CustomFieldsText.fromJson(json['text'] as Map<String, dynamic>) : null,
   type: PaymentLinksResourceCustomFieldsType.fromJson(json['type'] as String),
-); }
+);}
 
 final Dropdown? dropdown;
 
@@ -27,7 +27,7 @@ final CustomFieldsText? text;
 
 final PaymentLinksResourceCustomFieldsType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (dropdown != null) 'dropdown': dropdown?.toJson(),
   'key': key,
   'label': label.toJson(),
@@ -35,15 +35,15 @@ Map<String, dynamic> toJson() { return {
   'optional': ?optional,
   if (text != null) 'text': text?.toJson(),
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('key') && json['key'] is String &&
       json.containsKey('label') &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (key.runes.length > 200) { errors.add('key: length must be <= 200'); }
-return errors; } 
-PostCheckoutSessionsRequestCustomFields copyWith({Dropdown? Function()? dropdown, String? key, CustomFieldsLabel? label, Numeric? Function()? numeric, bool? Function()? optional, CustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PostCheckoutSessionsRequestCustomFields(
+return errors;}
+PostCheckoutSessionsRequestCustomFields copyWith({Dropdown? Function()? dropdown, String? key, CustomFieldsLabel? label, Numeric? Function()? numeric, bool? Function()? optional, CustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) {return PostCheckoutSessionsRequestCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,
@@ -51,7 +51,7 @@ PostCheckoutSessionsRequestCustomFields copyWith({Dropdown? Function()? dropdown
   optional: optional != null ? optional() : this.optional,
   text: text != null ? text() : this.text,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestCustomFields &&
           dropdown == other.dropdown &&
@@ -66,4 +66,4 @@ PostCheckoutSessionsRequestCustomFields copyWith({Dropdown? Function()? dropdown
 
 @override String toString() => 'PostCheckoutSessionsRequestCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)';
 
- }
+}

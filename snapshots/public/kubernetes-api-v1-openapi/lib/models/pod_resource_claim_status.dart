@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodResourceClaimStatus is stored in the PodStatus for each PodResourceClaim which references a ResourceClaimTemplate. It stores the generated name for the corresponding ResourceClaim.
 @immutable final class PodResourceClaimStatus {const PodResourceClaimStatus({required this.name, this.resourceClaimName, });
 
-factory PodResourceClaimStatus.fromJson(Map<String, dynamic> json) { return PodResourceClaimStatus(
+factory PodResourceClaimStatus.fromJson(Map<String, dynamic> json) {return PodResourceClaimStatus(
   name: json['name'] as String,
   resourceClaimName: json['resourceClaimName'] as String?,
-); }
+);}
 
 /// Name uniquely identifies this resource claim inside the pod. This must match the name of an entry in pod.spec.resourceClaims, which implies that the string must be a DNS_LABEL.
 final String name;
@@ -15,15 +15,15 @@ final String name;
 /// ResourceClaimName is the name of the ResourceClaim that was generated for the Pod in the namespace of the Pod. If this is unset, then generating a ResourceClaim was not necessary. The pod.spec.resourceClaims entry can be ignored in this case.
 final String? resourceClaimName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'resourceClaimName': ?resourceClaimName,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PodResourceClaimStatus copyWith({String? name, String? Function()? resourceClaimName, }) { return PodResourceClaimStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+PodResourceClaimStatus copyWith({String? name, String? Function()? resourceClaimName, }) {return PodResourceClaimStatus(
   name: name ?? this.name,
   resourceClaimName: resourceClaimName != null ? resourceClaimName() : this.resourceClaimName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PodResourceClaimStatus &&
           name == other.name &&
@@ -33,4 +33,4 @@ PodResourceClaimStatus copyWith({String? name, String? Function()? resourceClaim
 
 @override String toString() => 'PodResourceClaimStatus(name: $name, resourceClaimName: $resourceClaimName)';
 
- }
+}

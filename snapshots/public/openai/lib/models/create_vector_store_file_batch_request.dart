@@ -7,10 +7,10 @@ const CreateVectorStoreFileBatchRequest({this.$dynamic = const Omittable.absent(
 const CreateVectorStoreFileBatchRequest._({required this.rawValue, required this.$dynamic, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CreateVectorStoreFileBatchRequest.fromJson(Object? json) { return CreateVectorStoreFileBatchRequest._(
+factory CreateVectorStoreFileBatchRequest.fromJson(Object? json) {return CreateVectorStoreFileBatchRequest._(
   rawValue: Omittable(json),
   $dynamic: parseAnyOfVariant<dynamic>(json, (value) => value),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -36,4 +36,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CreateVectorStoreFileBatchRequest(${toJson()})';
 
- }
+}

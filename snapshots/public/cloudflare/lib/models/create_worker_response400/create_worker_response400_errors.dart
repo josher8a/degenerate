@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_error_worker_invalid.dart';import 'package:pub_cloudflare/models/workers_error_worker_name_invalid.dart';import 'package:pub_cloudflare/models/workers_error_worker_name_preview_length_limit.dart';import 'package:pub_cloudflare/models/workers_error_worker_name_subdomain_length_limit.dart';import 'package:pub_cloudflare/models/workers_error_worker_observability_sampling_rate_invalid.dart';import 'package:pub_cloudflare/models/workers_error_worker_tag_invalid.dart';import 'package:pub_cloudflare/models/workers_error_worker_tag_length_limit.dart';sealed class CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode();
 
-factory CreateWorkerResponse400ErrorsCode.fromJson(String json) { return switch (json) {
+factory CreateWorkerResponse400ErrorsCode.fromJson(String json) {return switch (json) {
   '10016' => $10016,
   '10021' => $10021,
   '100102' => $100102,
@@ -12,7 +12,7 @@ factory CreateWorkerResponse400ErrorsCode.fromJson(String json) { return switch 
   '100308' => $100308,
   '100315' => $100315,
   _ => CreateWorkerResponse400ErrorsCode$Unknown(json),
-}; }
+};}
 
 static const CreateWorkerResponse400ErrorsCode $10016 = CreateWorkerResponse400ErrorsCode$10016._();
 
@@ -35,7 +35,7 @@ String toJson() => value;
 
 bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
- }
+}
 @immutable final class CreateWorkerResponse400ErrorsCode$10016 extends CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode$10016._();
 
 @override String get value => '10016';
@@ -46,7 +46,7 @@ bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'CreateWorkerResponse400ErrorsCode(10016)';
 
- }
+}
 @immutable final class CreateWorkerResponse400ErrorsCode$10021 extends CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode$10021._();
 
 @override String get value => '10021';
@@ -57,7 +57,7 @@ bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'CreateWorkerResponse400ErrorsCode(10021)';
 
- }
+}
 @immutable final class CreateWorkerResponse400ErrorsCode$100102 extends CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode$100102._();
 
 @override String get value => '100102';
@@ -68,7 +68,7 @@ bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'CreateWorkerResponse400ErrorsCode(100102)';
 
- }
+}
 @immutable final class CreateWorkerResponse400ErrorsCode$100132 extends CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode$100132._();
 
 @override String get value => '100132';
@@ -79,7 +79,7 @@ bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'CreateWorkerResponse400ErrorsCode(100132)';
 
- }
+}
 @immutable final class CreateWorkerResponse400ErrorsCode$100134 extends CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode$100134._();
 
 @override String get value => '100134';
@@ -90,7 +90,7 @@ bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'CreateWorkerResponse400ErrorsCode(100134)';
 
- }
+}
 @immutable final class CreateWorkerResponse400ErrorsCode$100308 extends CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode$100308._();
 
 @override String get value => '100308';
@@ -101,7 +101,7 @@ bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'CreateWorkerResponse400ErrorsCode(100308)';
 
- }
+}
 @immutable final class CreateWorkerResponse400ErrorsCode$100315 extends CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode$100315._();
 
 @override String get value => '100315';
@@ -112,7 +112,7 @@ bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'CreateWorkerResponse400ErrorsCode(100315)';
 
- }
+}
 @immutable final class CreateWorkerResponse400ErrorsCode$Unknown extends CreateWorkerResponse400ErrorsCode {const CreateWorkerResponse400ErrorsCode$Unknown(this.value);
 
 @override final String value;
@@ -123,11 +123,11 @@ bool get isUnknown => this is CreateWorkerResponse400ErrorsCode$Unknown;
 
 @override String toString() => 'CreateWorkerResponse400ErrorsCode($value)';
 
- }
+}
 sealed class CreateWorkerResponse400Errors {const CreateWorkerResponse400Errors();
 
 /// Deserialize from JSON, dispatching on the `code` discriminator.
-factory CreateWorkerResponse400Errors.fromJson(Map<String, dynamic> json) { return switch (json['code']) {
+factory CreateWorkerResponse400Errors.fromJson(Map<String, dynamic> json) {return switch (json['code']) {
   '10016' => CreateWorkerResponse400Errors10016.fromJson(json),
   '10021' => CreateWorkerResponse400Errors10021.fromJson(json),
   '100102' => CreateWorkerResponse400Errors100102.fromJson(json),
@@ -136,28 +136,28 @@ factory CreateWorkerResponse400Errors.fromJson(Map<String, dynamic> json) { retu
   '100308' => CreateWorkerResponse400Errors100308.fromJson(json),
   '100315' => CreateWorkerResponse400Errors100315.fromJson(json),
   _ => CreateWorkerResponse400Errors$Unknown(json),
-}; }
+};}
 
 /// Build the `10016` variant.
-factory CreateWorkerResponse400Errors.$10016({required String message}) { return CreateWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid(code: WorkersErrorWorkerNameInvalidCode.fromJson(10016), message: message)); }
+factory CreateWorkerResponse400Errors.$10016({required String message}) {return CreateWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid(code: WorkersErrorWorkerNameInvalidCode.fromJson(10016), message: message));}
 
 /// Build the `10021` variant.
-factory CreateWorkerResponse400Errors.$10021({required String message}) { return CreateWorkerResponse400Errors10021(WorkersErrorWorkerInvalid(code: WorkersErrorWorkerInvalidCode.fromJson(10021), message: message)); }
+factory CreateWorkerResponse400Errors.$10021({required String message}) {return CreateWorkerResponse400Errors10021(WorkersErrorWorkerInvalid(code: WorkersErrorWorkerInvalidCode.fromJson(10021), message: message));}
 
 /// Build the `100102` variant.
-factory CreateWorkerResponse400Errors.$100102({required String message}) { return CreateWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit(code: WorkersErrorWorkerTagLengthLimitCode.fromJson(100102), message: message)); }
+factory CreateWorkerResponse400Errors.$100102({required String message}) {return CreateWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit(code: WorkersErrorWorkerTagLengthLimitCode.fromJson(100102), message: message));}
 
 /// Build the `100132` variant.
-factory CreateWorkerResponse400Errors.$100132({required String message}) { return CreateWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit(code: WorkersErrorWorkerNameSubdomainLengthLimitCode.fromJson(100132), message: message)); }
+factory CreateWorkerResponse400Errors.$100132({required String message}) {return CreateWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit(code: WorkersErrorWorkerNameSubdomainLengthLimitCode.fromJson(100132), message: message));}
 
 /// Build the `100134` variant.
-factory CreateWorkerResponse400Errors.$100134({required String message}) { return CreateWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid(code: WorkersErrorWorkerTagInvalidCode.fromJson(100134), message: message)); }
+factory CreateWorkerResponse400Errors.$100134({required String message}) {return CreateWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid(code: WorkersErrorWorkerTagInvalidCode.fromJson(100134), message: message));}
 
 /// Build the `100308` variant.
-factory CreateWorkerResponse400Errors.$100308({required String message}) { return CreateWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid(code: WorkersErrorWorkerObservabilitySamplingRateInvalidCode.fromJson(100308), message: message)); }
+factory CreateWorkerResponse400Errors.$100308({required String message}) {return CreateWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid(code: WorkersErrorWorkerObservabilitySamplingRateInvalidCode.fromJson(100308), message: message));}
 
 /// Build the `100315` variant.
-factory CreateWorkerResponse400Errors.$100315({required String message}) { return CreateWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit(code: WorkersErrorWorkerNamePreviewLengthLimitCode.fromJson(100315), message: message)); }
+factory CreateWorkerResponse400Errors.$100315({required String message}) {return CreateWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit(code: WorkersErrorWorkerNamePreviewLengthLimitCode.fromJson(100315), message: message));}
 
 /// The discriminator value identifying this variant.
 CreateWorkerResponse400ErrorsCode get code;
@@ -167,7 +167,7 @@ bool get isUnknown => this is CreateWorkerResponse400Errors$Unknown;
 
 /// Shared by all variants of this union.
 String get message;
-R when<R>({required R Function(CreateWorkerResponse400Errors10016) $10016, required R Function(CreateWorkerResponse400Errors10021) $10021, required R Function(CreateWorkerResponse400Errors100102) $100102, required R Function(CreateWorkerResponse400Errors100132) $100132, required R Function(CreateWorkerResponse400Errors100134) $100134, required R Function(CreateWorkerResponse400Errors100308) $100308, required R Function(CreateWorkerResponse400Errors100315) $100315, required R Function(CreateWorkerResponse400Errors$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(CreateWorkerResponse400Errors10016) $10016, required R Function(CreateWorkerResponse400Errors10021) $10021, required R Function(CreateWorkerResponse400Errors100102) $100102, required R Function(CreateWorkerResponse400Errors100132) $100132, required R Function(CreateWorkerResponse400Errors100134) $100134, required R Function(CreateWorkerResponse400Errors100308) $100308, required R Function(CreateWorkerResponse400Errors100315) $100315, required R Function(CreateWorkerResponse400Errors$Unknown) unknown, }) {return switch (this) {
   final CreateWorkerResponse400Errors10016 v => $10016(v),
   final CreateWorkerResponse400Errors10021 v => $10021(v),
   final CreateWorkerResponse400Errors100102 v => $100102(v),
@@ -176,11 +176,11 @@ R when<R>({required R Function(CreateWorkerResponse400Errors10016) $10016, requi
   final CreateWorkerResponse400Errors100308 v => $100308(v),
   final CreateWorkerResponse400Errors100315 v => $100315(v),
   final CreateWorkerResponse400Errors$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class CreateWorkerResponse400Errors10016 extends CreateWorkerResponse400Errors {const CreateWorkerResponse400Errors10016(this.workersErrorWorkerNameInvalid);
 
-factory CreateWorkerResponse400Errors10016.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid.fromJson(json)); }
+factory CreateWorkerResponse400Errors10016.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse400Errors10016(WorkersErrorWorkerNameInvalid.fromJson(json));}
 
 final WorkersErrorWorkerNameInvalid workersErrorWorkerNameInvalid;
 
@@ -188,9 +188,9 @@ final WorkersErrorWorkerNameInvalid workersErrorWorkerNameInvalid;
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerNameInvalid.toJson(), 'code': code.toJson()};
 
-CreateWorkerResponse400Errors10016 copyWith({String? message}) { return CreateWorkerResponse400Errors10016(workersErrorWorkerNameInvalid.copyWith(
+CreateWorkerResponse400Errors10016 copyWith({String? message}) {return CreateWorkerResponse400Errors10016(workersErrorWorkerNameInvalid.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CreateWorkerResponse400Errors10016 && workersErrorWorkerNameInvalid == other.workersErrorWorkerNameInvalid;
 
@@ -200,10 +200,10 @@ CreateWorkerResponse400Errors10016 copyWith({String? message}) { return CreateWo
 
 @override String get message => workersErrorWorkerNameInvalid.message;
 
- }
+}
 @immutable final class CreateWorkerResponse400Errors10021 extends CreateWorkerResponse400Errors {const CreateWorkerResponse400Errors10021(this.workersErrorWorkerInvalid);
 
-factory CreateWorkerResponse400Errors10021.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse400Errors10021(WorkersErrorWorkerInvalid.fromJson(json)); }
+factory CreateWorkerResponse400Errors10021.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse400Errors10021(WorkersErrorWorkerInvalid.fromJson(json));}
 
 final WorkersErrorWorkerInvalid workersErrorWorkerInvalid;
 
@@ -211,9 +211,9 @@ final WorkersErrorWorkerInvalid workersErrorWorkerInvalid;
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerInvalid.toJson(), 'code': code.toJson()};
 
-CreateWorkerResponse400Errors10021 copyWith({String? message}) { return CreateWorkerResponse400Errors10021(workersErrorWorkerInvalid.copyWith(
+CreateWorkerResponse400Errors10021 copyWith({String? message}) {return CreateWorkerResponse400Errors10021(workersErrorWorkerInvalid.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CreateWorkerResponse400Errors10021 && workersErrorWorkerInvalid == other.workersErrorWorkerInvalid;
 
@@ -223,10 +223,10 @@ CreateWorkerResponse400Errors10021 copyWith({String? message}) { return CreateWo
 
 @override String get message => workersErrorWorkerInvalid.message;
 
- }
+}
 @immutable final class CreateWorkerResponse400Errors100102 extends CreateWorkerResponse400Errors {const CreateWorkerResponse400Errors100102(this.workersErrorWorkerTagLengthLimit);
 
-factory CreateWorkerResponse400Errors100102.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit.fromJson(json)); }
+factory CreateWorkerResponse400Errors100102.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse400Errors100102(WorkersErrorWorkerTagLengthLimit.fromJson(json));}
 
 final WorkersErrorWorkerTagLengthLimit workersErrorWorkerTagLengthLimit;
 
@@ -234,9 +234,9 @@ final WorkersErrorWorkerTagLengthLimit workersErrorWorkerTagLengthLimit;
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerTagLengthLimit.toJson(), 'code': code.toJson()};
 
-CreateWorkerResponse400Errors100102 copyWith({String? message}) { return CreateWorkerResponse400Errors100102(workersErrorWorkerTagLengthLimit.copyWith(
+CreateWorkerResponse400Errors100102 copyWith({String? message}) {return CreateWorkerResponse400Errors100102(workersErrorWorkerTagLengthLimit.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CreateWorkerResponse400Errors100102 && workersErrorWorkerTagLengthLimit == other.workersErrorWorkerTagLengthLimit;
 
@@ -246,10 +246,10 @@ CreateWorkerResponse400Errors100102 copyWith({String? message}) { return CreateW
 
 @override String get message => workersErrorWorkerTagLengthLimit.message;
 
- }
+}
 @immutable final class CreateWorkerResponse400Errors100132 extends CreateWorkerResponse400Errors {const CreateWorkerResponse400Errors100132(this.workersErrorWorkerNameSubdomainLengthLimit);
 
-factory CreateWorkerResponse400Errors100132.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit.fromJson(json)); }
+factory CreateWorkerResponse400Errors100132.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse400Errors100132(WorkersErrorWorkerNameSubdomainLengthLimit.fromJson(json));}
 
 final WorkersErrorWorkerNameSubdomainLengthLimit workersErrorWorkerNameSubdomainLengthLimit;
 
@@ -257,9 +257,9 @@ final WorkersErrorWorkerNameSubdomainLengthLimit workersErrorWorkerNameSubdomain
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerNameSubdomainLengthLimit.toJson(), 'code': code.toJson()};
 
-CreateWorkerResponse400Errors100132 copyWith({String? message}) { return CreateWorkerResponse400Errors100132(workersErrorWorkerNameSubdomainLengthLimit.copyWith(
+CreateWorkerResponse400Errors100132 copyWith({String? message}) {return CreateWorkerResponse400Errors100132(workersErrorWorkerNameSubdomainLengthLimit.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CreateWorkerResponse400Errors100132 && workersErrorWorkerNameSubdomainLengthLimit == other.workersErrorWorkerNameSubdomainLengthLimit;
 
@@ -269,10 +269,10 @@ CreateWorkerResponse400Errors100132 copyWith({String? message}) { return CreateW
 
 @override String get message => workersErrorWorkerNameSubdomainLengthLimit.message;
 
- }
+}
 @immutable final class CreateWorkerResponse400Errors100134 extends CreateWorkerResponse400Errors {const CreateWorkerResponse400Errors100134(this.workersErrorWorkerTagInvalid);
 
-factory CreateWorkerResponse400Errors100134.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid.fromJson(json)); }
+factory CreateWorkerResponse400Errors100134.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse400Errors100134(WorkersErrorWorkerTagInvalid.fromJson(json));}
 
 final WorkersErrorWorkerTagInvalid workersErrorWorkerTagInvalid;
 
@@ -280,9 +280,9 @@ final WorkersErrorWorkerTagInvalid workersErrorWorkerTagInvalid;
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerTagInvalid.toJson(), 'code': code.toJson()};
 
-CreateWorkerResponse400Errors100134 copyWith({String? message}) { return CreateWorkerResponse400Errors100134(workersErrorWorkerTagInvalid.copyWith(
+CreateWorkerResponse400Errors100134 copyWith({String? message}) {return CreateWorkerResponse400Errors100134(workersErrorWorkerTagInvalid.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CreateWorkerResponse400Errors100134 && workersErrorWorkerTagInvalid == other.workersErrorWorkerTagInvalid;
 
@@ -292,10 +292,10 @@ CreateWorkerResponse400Errors100134 copyWith({String? message}) { return CreateW
 
 @override String get message => workersErrorWorkerTagInvalid.message;
 
- }
+}
 @immutable final class CreateWorkerResponse400Errors100308 extends CreateWorkerResponse400Errors {const CreateWorkerResponse400Errors100308(this.workersErrorWorkerObservabilitySamplingRateInvalid);
 
-factory CreateWorkerResponse400Errors100308.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid.fromJson(json)); }
+factory CreateWorkerResponse400Errors100308.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse400Errors100308(WorkersErrorWorkerObservabilitySamplingRateInvalid.fromJson(json));}
 
 final WorkersErrorWorkerObservabilitySamplingRateInvalid workersErrorWorkerObservabilitySamplingRateInvalid;
 
@@ -303,9 +303,9 @@ final WorkersErrorWorkerObservabilitySamplingRateInvalid workersErrorWorkerObser
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerObservabilitySamplingRateInvalid.toJson(), 'code': code.toJson()};
 
-CreateWorkerResponse400Errors100308 copyWith({String? message}) { return CreateWorkerResponse400Errors100308(workersErrorWorkerObservabilitySamplingRateInvalid.copyWith(
+CreateWorkerResponse400Errors100308 copyWith({String? message}) {return CreateWorkerResponse400Errors100308(workersErrorWorkerObservabilitySamplingRateInvalid.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CreateWorkerResponse400Errors100308 && workersErrorWorkerObservabilitySamplingRateInvalid == other.workersErrorWorkerObservabilitySamplingRateInvalid;
 
@@ -315,10 +315,10 @@ CreateWorkerResponse400Errors100308 copyWith({String? message}) { return CreateW
 
 @override String get message => workersErrorWorkerObservabilitySamplingRateInvalid.message;
 
- }
+}
 @immutable final class CreateWorkerResponse400Errors100315 extends CreateWorkerResponse400Errors {const CreateWorkerResponse400Errors100315(this.workersErrorWorkerNamePreviewLengthLimit);
 
-factory CreateWorkerResponse400Errors100315.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit.fromJson(json)); }
+factory CreateWorkerResponse400Errors100315.fromJson(Map<String, dynamic> json) {return CreateWorkerResponse400Errors100315(WorkersErrorWorkerNamePreviewLengthLimit.fromJson(json));}
 
 final WorkersErrorWorkerNamePreviewLengthLimit workersErrorWorkerNamePreviewLengthLimit;
 
@@ -326,9 +326,9 @@ final WorkersErrorWorkerNamePreviewLengthLimit workersErrorWorkerNamePreviewLeng
 
 @override Map<String, dynamic> toJson() => {...workersErrorWorkerNamePreviewLengthLimit.toJson(), 'code': code.toJson()};
 
-CreateWorkerResponse400Errors100315 copyWith({String? message}) { return CreateWorkerResponse400Errors100315(workersErrorWorkerNamePreviewLengthLimit.copyWith(
+CreateWorkerResponse400Errors100315 copyWith({String? message}) {return CreateWorkerResponse400Errors100315(workersErrorWorkerNamePreviewLengthLimit.copyWith(
   message: message,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is CreateWorkerResponse400Errors100315 && workersErrorWorkerNamePreviewLengthLimit == other.workersErrorWorkerNamePreviewLengthLimit;
 
@@ -338,7 +338,7 @@ CreateWorkerResponse400Errors100315 copyWith({String? message}) { return CreateW
 
 @override String get message => workersErrorWorkerNamePreviewLengthLimit.message;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class CreateWorkerResponse400Errors$Unknown extends CreateWorkerResponse400Errors {CreateWorkerResponse400Errors$Unknown(this.json);
@@ -360,4 +360,4 @@ late final String _message = json['message'] as String;
 
 @override String get message => _message;
 
- }
+}

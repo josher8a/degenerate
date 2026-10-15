@@ -31,7 +31,7 @@ final class UploadsApi with ApiExecutor {const UploadsApi(this.apiConfig);
 /// 
 ///
 /// `POST /uploads`
-Future<ApiResult<Upload, Never>> createUpload({required CreateUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Upload, Never>> createUpload({required CreateUploadRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,14 +48,14 @@ return await execute(
     return Upload.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Cancels the Upload. No Parts may be added after an Upload is cancelled.
 /// 
 /// Returns the Upload object with status `cancelled`.
 /// 
 ///
 /// `POST /uploads/{upload_id}/cancel`
-Future<ApiResult<Upload, Never>> cancelUpload({required String uploadId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Upload, Never>> cancelUpload({required String uploadId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -70,7 +70,7 @@ return await execute(
     return Upload.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Completes the [Upload](/docs/api-reference/uploads/object).
 /// 
 /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.
@@ -82,7 +82,7 @@ return await execute(
 /// 
 ///
 /// `POST /uploads/{upload_id}/complete`
-Future<ApiResult<Upload, Never>> completeUpload({required String uploadId, required CompleteUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Upload, Never>> completeUpload({required String uploadId, required CompleteUploadRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,7 +99,7 @@ return await execute(
     return Upload.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload.
 /// 
 /// Each Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.
@@ -108,7 +108,7 @@ return await execute(
 /// 
 ///
 /// `POST /uploads/{upload_id}/parts`
-Future<ApiResult<UploadPart, Never>> addUploadPart({required String uploadId, required AddUploadPartRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UploadPart, Never>> addUploadPart({required String uploadId, required AddUploadPartRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -127,5 +127,5 @@ return await execute(
     return UploadPart.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

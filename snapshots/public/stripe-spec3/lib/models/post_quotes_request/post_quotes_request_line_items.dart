@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_line_items_price_data.dart';@immutable final class PostQuotesRequestLineItems {const PostQuotesRequestLineItems({this.discounts, this.price, this.priceData, this.quantity, this.taxRates, });
 
-factory PostQuotesRequestLineItems.fromJson(Map<String, dynamic> json) { return PostQuotesRequestLineItems(
+factory PostQuotesRequestLineItems.fromJson(Map<String, dynamic> json) {return PostQuotesRequestLineItems(
   discounts: json['discounts'] != null ? PostCustomersCustomerSubscriptionsRequestDiscounts.fromJson(json['discounts']) : null,
   price: json['price'] as String?,
   priceData: json['price_data'] != null ? PostQuotesQuoteRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxRates: json['tax_rates'] != null ? TaxRates.fromJson(json['tax_rates']) : null,
-); }
+);}
 
 final PostCustomersCustomerSubscriptionsRequestDiscounts? discounts;
 
@@ -21,28 +21,28 @@ final int? quantity;
 
 final TaxRates? taxRates;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (discounts != null) 'discounts': discounts?.toJson(),
   'price': ?price,
   if (priceData != null) 'price_data': priceData?.toJson(),
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discounts', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'discounts', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final price$ = price;
 if (price$ != null) {
   if (price$.runes.length > 5000) { errors.add('price: length must be <= 5000'); }
 }
-return errors; } 
-PostQuotesRequestLineItems copyWith({PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, String? Function()? price, PostQuotesQuoteRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, TaxRates? Function()? taxRates, }) { return PostQuotesRequestLineItems(
+return errors;}
+PostQuotesRequestLineItems copyWith({PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, String? Function()? price, PostQuotesQuoteRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, TaxRates? Function()? taxRates, }) {return PostQuotesRequestLineItems(
   discounts: discounts != null ? discounts() : this.discounts,
   price: price != null ? price() : this.price,
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostQuotesRequestLineItems &&
           discounts == other.discounts &&
@@ -55,4 +55,4 @@ PostQuotesRequestLineItems copyWith({PostCustomersCustomerSubscriptionsRequestDi
 
 @override String toString() => 'PostQuotesRequestLineItems(discounts: $discounts, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';
 
- }
+}

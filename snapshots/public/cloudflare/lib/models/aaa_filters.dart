@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IncidentImpact {const IncidentImpact();
 
-factory IncidentImpact.fromJson(String json) { return switch (json) {
+factory IncidentImpact.fromJson(String json) {return switch (json) {
   'INCIDENT_IMPACT_NONE' => incidentImpactNone,
   'INCIDENT_IMPACT_MINOR' => incidentImpactMinor,
   'INCIDENT_IMPACT_MAJOR' => incidentImpactMajor,
   'INCIDENT_IMPACT_CRITICAL' => incidentImpactCritical,
   _ => IncidentImpact$Unknown(json),
-}; }
+};}
 
 static const IncidentImpact incidentImpactNone = IncidentImpact$incidentImpactNone._();
 
@@ -22,36 +22,36 @@ static const IncidentImpact incidentImpactCritical = IncidentImpact$incidentImpa
 static const List<IncidentImpact> values = [incidentImpactNone, incidentImpactMinor, incidentImpactMajor, incidentImpactCritical];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'INCIDENT_IMPACT_NONE' => 'incidentImpactNone',
   'INCIDENT_IMPACT_MINOR' => 'incidentImpactMinor',
   'INCIDENT_IMPACT_MAJOR' => 'incidentImpactMajor',
   'INCIDENT_IMPACT_CRITICAL' => 'incidentImpactCritical',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IncidentImpact$Unknown; } 
+bool get isUnknown {return this is IncidentImpact$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() incidentImpactNone, required W Function() incidentImpactMinor, required W Function() incidentImpactMajor, required W Function() incidentImpactCritical, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() incidentImpactNone, required W Function() incidentImpactMinor, required W Function() incidentImpactMajor, required W Function() incidentImpactCritical, required W Function(String value) $unknown, }) {return switch (this) {
       IncidentImpact$incidentImpactNone() => incidentImpactNone(),
       IncidentImpact$incidentImpactMinor() => incidentImpactMinor(),
       IncidentImpact$incidentImpactMajor() => incidentImpactMajor(),
       IncidentImpact$incidentImpactCritical() => incidentImpactCritical(),
       IncidentImpact$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? incidentImpactNone, W Function()? incidentImpactMinor, W Function()? incidentImpactMajor, W Function()? incidentImpactCritical, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? incidentImpactNone, W Function()? incidentImpactMinor, W Function()? incidentImpactMajor, W Function()? incidentImpactCritical, W Function(String value)? $unknown, }) {return switch (this) {
       IncidentImpact$incidentImpactNone() => incidentImpactNone != null ? incidentImpactNone() : orElse(value),
       IncidentImpact$incidentImpactMinor() => incidentImpactMinor != null ? incidentImpactMinor() : orElse(value),
       IncidentImpact$incidentImpactMajor() => incidentImpactMajor != null ? incidentImpactMajor() : orElse(value),
       IncidentImpact$incidentImpactCritical() => incidentImpactCritical != null ? incidentImpactCritical() : orElse(value),
       IncidentImpact$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IncidentImpact($value)';
 
- }
+}
 @immutable final class IncidentImpact$incidentImpactNone extends IncidentImpact {const IncidentImpact$incidentImpactNone._();
 
 @override String get value => 'INCIDENT_IMPACT_NONE';
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? incident
 
 @override int get hashCode => 'INCIDENT_IMPACT_NONE'.hashCode;
 
- }
+}
 @immutable final class IncidentImpact$incidentImpactMinor extends IncidentImpact {const IncidentImpact$incidentImpactMinor._();
 
 @override String get value => 'INCIDENT_IMPACT_MINOR';
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? incident
 
 @override int get hashCode => 'INCIDENT_IMPACT_MINOR'.hashCode;
 
- }
+}
 @immutable final class IncidentImpact$incidentImpactMajor extends IncidentImpact {const IncidentImpact$incidentImpactMajor._();
 
 @override String get value => 'INCIDENT_IMPACT_MAJOR';
@@ -78,7 +78,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? incident
 
 @override int get hashCode => 'INCIDENT_IMPACT_MAJOR'.hashCode;
 
- }
+}
 @immutable final class IncidentImpact$incidentImpactCritical extends IncidentImpact {const IncidentImpact$incidentImpactCritical._();
 
 @override String get value => 'INCIDENT_IMPACT_CRITICAL';
@@ -87,7 +87,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? incident
 
 @override int get hashCode => 'INCIDENT_IMPACT_CRITICAL'.hashCode;
 
- }
+}
 @immutable final class IncidentImpact$Unknown extends IncidentImpact {const IncidentImpact$Unknown(this.value);
 
 @override final String value;
@@ -97,40 +97,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? incident
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class TrafficExclusions {const TrafficExclusions();
 
-factory TrafficExclusions.fromJson(String json) { return switch (json) {
+factory TrafficExclusions.fromJson(String json) {return switch (json) {
   'security_events' => securityEvents,
   _ => TrafficExclusions$Unknown(json),
-}; }
+};}
 
 static const TrafficExclusions securityEvents = TrafficExclusions$securityEvents._();
 
 static const List<TrafficExclusions> values = [securityEvents];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'security_events' => 'securityEvents',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TrafficExclusions$Unknown; } 
+bool get isUnknown {return this is TrafficExclusions$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() securityEvents, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() securityEvents, required W Function(String value) $unknown, }) {return switch (this) {
       TrafficExclusions$securityEvents() => securityEvents(),
       TrafficExclusions$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? securityEvents, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? securityEvents, W Function(String value)? $unknown, }) {return switch (this) {
       TrafficExclusions$securityEvents() => securityEvents != null ? securityEvents() : orElse(value),
       TrafficExclusions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TrafficExclusions($value)';
 
- }
+}
 @immutable final class TrafficExclusions$securityEvents extends TrafficExclusions {const TrafficExclusions$securityEvents._();
 
 @override String get value => 'security_events';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? security
 
 @override int get hashCode => 'security_events'.hashCode;
 
- }
+}
 @immutable final class TrafficExclusions$Unknown extends TrafficExclusions {const TrafficExclusions$Unknown(this.value);
 
 @override final String value;
@@ -149,7 +149,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? security
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details.
 /// 
 /// Example:
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? security
 /// ```
 @immutable final class AaaFilters {const AaaFilters({this.incidentImpact, this.affectedAsns, this.affectedComponents, this.affectedLocations, this.airportCode, this.alertTriggerPreferences, this.alertTriggerPreferencesValue, this.enabled, this.environment, this.event, this.eventSource, this.eventType, this.groupBy, this.healthCheckId, this.actions, this.inputId, this.insightClass, this.limit, this.logoTag, this.megabitsPerSecond, this.newHealth, this.newStatus, this.packetsPerSecond, this.poolId, this.popNames, this.product, this.projectId, this.protocol, this.zones, this.requestsPerSecond, this.selectors, this.services, this.slo, this.status, this.targetHostname, this.targetIp, this.targetZoneName, this.trafficExclusions, this.tunnelId, this.tunnelName, this.type, this.where, this.queryTag, });
 
-factory AaaFilters.fromJson(Map<String, dynamic> json) { return AaaFilters(
+factory AaaFilters.fromJson(Map<String, dynamic> json) {return AaaFilters(
   actions: (json['actions'] as List<dynamic>?)?.map((e) => e as String).toList(),
   affectedAsns: (json['affected_asns'] as List<dynamic>?)?.map((e) => e as String).toList(),
   affectedComponents: (json['affected_components'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -206,7 +206,7 @@ factory AaaFilters.fromJson(Map<String, dynamic> json) { return AaaFilters(
   type: (json['type'] as List<dynamic>?)?.map((e) => e as String).toList(),
   where: (json['where'] as List<dynamic>?)?.map((e) => e as String).toList(),
   zones: (json['zones'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// Usage depends on specific alert type
 final List<String>? actions;
@@ -339,7 +339,7 @@ final List<String>? where;
 /// Usage depends on specific alert type
 final List<String>? zones;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'actions': ?actions,
   'affected_asns': ?affectedAsns,
   'affected_components': ?affectedComponents,
@@ -383,9 +383,9 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'where': ?where,
   'zones': ?zones,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'affected_asns', 'affected_components', 'affected_locations', 'airport_code', 'alert_trigger_preferences', 'alert_trigger_preferences_value', 'enabled', 'environment', 'event', 'event_source', 'event_type', 'group_by', 'health_check_id', 'incident_impact', 'input_id', 'insight_class', 'limit', 'logo_tag', 'megabits_per_second', 'new_health', 'new_status', 'packets_per_second', 'pool_id', 'pop_names', 'product', 'project_id', 'protocol', 'query_tag', 'requests_per_second', 'selectors', 'services', 'slo', 'status', 'target_hostname', 'target_ip', 'target_zone_name', 'traffic_exclusions', 'tunnel_id', 'tunnel_name', 'type', 'where', 'zones'}.contains(key)); } 
-AaaFilters copyWith({List<String>? Function()? actions, List<String>? Function()? affectedAsns, List<String>? Function()? affectedComponents, List<String>? Function()? affectedLocations, List<String>? Function()? airportCode, List<String>? Function()? alertTriggerPreferences, List<String>? Function()? alertTriggerPreferencesValue, List<String>? Function()? enabled, List<String>? Function()? environment, List<String>? Function()? event, List<String>? Function()? eventSource, List<String>? Function()? eventType, List<String>? Function()? groupBy, List<String>? Function()? healthCheckId, List<IncidentImpact>? Function()? incidentImpact, List<String>? Function()? inputId, List<String>? Function()? insightClass, List<String>? Function()? limit, List<String>? Function()? logoTag, List<String>? Function()? megabitsPerSecond, List<String>? Function()? newHealth, List<String>? Function()? newStatus, List<String>? Function()? packetsPerSecond, List<String>? Function()? poolId, List<String>? Function()? popNames, List<String>? Function()? product, List<String>? Function()? projectId, List<String>? Function()? protocol, List<String>? Function()? queryTag, List<String>? Function()? requestsPerSecond, List<String>? Function()? selectors, List<String>? Function()? services, List<String>? Function()? slo, List<String>? Function()? status, List<String>? Function()? targetHostname, List<String>? Function()? targetIp, List<String>? Function()? targetZoneName, List<TrafficExclusions>? Function()? trafficExclusions, List<String>? Function()? tunnelId, List<String>? Function()? tunnelName, List<String>? Function()? type, List<String>? Function()? where, List<String>? Function()? zones, }) { return AaaFilters(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'actions', 'affected_asns', 'affected_components', 'affected_locations', 'airport_code', 'alert_trigger_preferences', 'alert_trigger_preferences_value', 'enabled', 'environment', 'event', 'event_source', 'event_type', 'group_by', 'health_check_id', 'incident_impact', 'input_id', 'insight_class', 'limit', 'logo_tag', 'megabits_per_second', 'new_health', 'new_status', 'packets_per_second', 'pool_id', 'pop_names', 'product', 'project_id', 'protocol', 'query_tag', 'requests_per_second', 'selectors', 'services', 'slo', 'status', 'target_hostname', 'target_ip', 'target_zone_name', 'traffic_exclusions', 'tunnel_id', 'tunnel_name', 'type', 'where', 'zones'}.contains(key));}
+AaaFilters copyWith({List<String>? Function()? actions, List<String>? Function()? affectedAsns, List<String>? Function()? affectedComponents, List<String>? Function()? affectedLocations, List<String>? Function()? airportCode, List<String>? Function()? alertTriggerPreferences, List<String>? Function()? alertTriggerPreferencesValue, List<String>? Function()? enabled, List<String>? Function()? environment, List<String>? Function()? event, List<String>? Function()? eventSource, List<String>? Function()? eventType, List<String>? Function()? groupBy, List<String>? Function()? healthCheckId, List<IncidentImpact>? Function()? incidentImpact, List<String>? Function()? inputId, List<String>? Function()? insightClass, List<String>? Function()? limit, List<String>? Function()? logoTag, List<String>? Function()? megabitsPerSecond, List<String>? Function()? newHealth, List<String>? Function()? newStatus, List<String>? Function()? packetsPerSecond, List<String>? Function()? poolId, List<String>? Function()? popNames, List<String>? Function()? product, List<String>? Function()? projectId, List<String>? Function()? protocol, List<String>? Function()? queryTag, List<String>? Function()? requestsPerSecond, List<String>? Function()? selectors, List<String>? Function()? services, List<String>? Function()? slo, List<String>? Function()? status, List<String>? Function()? targetHostname, List<String>? Function()? targetIp, List<String>? Function()? targetZoneName, List<TrafficExclusions>? Function()? trafficExclusions, List<String>? Function()? tunnelId, List<String>? Function()? tunnelName, List<String>? Function()? type, List<String>? Function()? where, List<String>? Function()? zones, }) {return AaaFilters(
   actions: actions != null ? actions() : this.actions,
   affectedAsns: affectedAsns != null ? affectedAsns() : this.affectedAsns,
   affectedComponents: affectedComponents != null ? affectedComponents() : this.affectedComponents,
@@ -429,7 +429,7 @@ AaaFilters copyWith({List<String>? Function()? actions, List<String>? Function()
   type: type != null ? type() : this.type,
   where: where != null ? where() : this.where,
   zones: zones != null ? zones() : this.zones,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AaaFilters &&
           listEquals(actions, other.actions) &&
@@ -480,4 +480,4 @@ AaaFilters copyWith({List<String>? Function()? actions, List<String>? Function()
 
 @override String toString() => 'AaaFilters(\n  actions: $actions,\n  affectedAsns: $affectedAsns,\n  affectedComponents: $affectedComponents,\n  affectedLocations: $affectedLocations,\n  airportCode: $airportCode,\n  alertTriggerPreferences: $alertTriggerPreferences,\n  alertTriggerPreferencesValue: $alertTriggerPreferencesValue,\n  enabled: $enabled,\n  environment: $environment,\n  event: $event,\n  eventSource: $eventSource,\n  eventType: $eventType,\n  groupBy: $groupBy,\n  healthCheckId: $healthCheckId,\n  incidentImpact: $incidentImpact,\n  inputId: $inputId,\n  insightClass: $insightClass,\n  limit: $limit,\n  logoTag: $logoTag,\n  megabitsPerSecond: $megabitsPerSecond,\n  newHealth: $newHealth,\n  newStatus: $newStatus,\n  packetsPerSecond: $packetsPerSecond,\n  poolId: $poolId,\n  popNames: $popNames,\n  product: $product,\n  projectId: $projectId,\n  protocol: $protocol,\n  queryTag: $queryTag,\n  requestsPerSecond: $requestsPerSecond,\n  selectors: $selectors,\n  services: $services,\n  slo: $slo,\n  status: $status,\n  targetHostname: $targetHostname,\n  targetIp: $targetIp,\n  targetZoneName: $targetZoneName,\n  trafficExclusions: $trafficExclusions,\n  tunnelId: $tunnelId,\n  tunnelName: $tunnelName,\n  type: $type,\n  where: $where,\n  zones: $zones,\n)';
 
- }
+}

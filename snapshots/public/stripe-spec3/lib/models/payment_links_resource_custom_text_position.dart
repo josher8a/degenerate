@@ -4,24 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentLinksResourceCustomTextPosition {const PaymentLinksResourceCustomTextPosition({required this.message});
 
-factory PaymentLinksResourceCustomTextPosition.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomTextPosition(
+factory PaymentLinksResourceCustomTextPosition.fromJson(Map<String, dynamic> json) {return PaymentLinksResourceCustomTextPosition(
   message: json['message'] as String,
-); }
+);}
 
 /// Text can be up to 1200 characters in length.
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('message') && json['message'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (message.runes.length > 500) { errors.add('message: length must be <= 500'); }
-return errors; } 
-PaymentLinksResourceCustomTextPosition copyWith({String? message}) { return PaymentLinksResourceCustomTextPosition(
+return errors;}
+PaymentLinksResourceCustomTextPosition copyWith({String? message}) {return PaymentLinksResourceCustomTextPosition(
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomTextPosition &&
           message == other.message;
@@ -30,4 +30,4 @@ PaymentLinksResourceCustomTextPosition copyWith({String? message}) { return Paym
 
 @override String toString() => 'PaymentLinksResourceCustomTextPosition(message: $message)';
 
- }
+}

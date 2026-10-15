@@ -6,20 +6,20 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ResponseFormatTextPython {const ResponseFormatTextPython({required this.type});
 
-factory ResponseFormatTextPython.fromJson(Map<String, dynamic> json) { return ResponseFormatTextPython(
+factory ResponseFormatTextPython.fromJson(Map<String, dynamic> json) {return ResponseFormatTextPython(
   type: EvalGraderPythonType.fromJson(json['type'] as String),
-); }
+);}
 
 /// The type of response format being defined. Always `python`.
 final EvalGraderPythonType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ResponseFormatTextPython copyWith({EvalGraderPythonType? type}) { return ResponseFormatTextPython(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+ResponseFormatTextPython copyWith({EvalGraderPythonType? type}) {return ResponseFormatTextPython(
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFormatTextPython &&
           type == other.type;
@@ -28,4 +28,4 @@ ResponseFormatTextPython copyWith({EvalGraderPythonType? type}) { return Respons
 
 @override String toString() => 'ResponseFormatTextPython(type: $type)';
 
- }
+}

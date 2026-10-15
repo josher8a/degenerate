@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_audio_config.dart';import 'package:pub_cloudflare/models/realtimekit_interactive_config.dart';import 'package:pub_cloudflare/models/realtimekit_livestreaming_config.dart';import 'package:pub_cloudflare/models/realtimekit_realtimekit_bucket_config.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config.dart';import 'package:pub_cloudflare/models/realtimekit_video_config.dart';@immutable final class StartRecordingRequest {const StartRecordingRequest({this.allowMultipleRecordings, this.audioConfig, this.fileNamePrefix, this.interactiveConfig, this.maxSeconds, this.meetingId, this.realtimekitBucketConfig, this.rtmpOutConfig, this.storageConfig = const Omittable.absent(), this.url, this.videoConfig, });
 
-factory StartRecordingRequest.fromJson(Map<String, dynamic> json) { return StartRecordingRequest(
+factory StartRecordingRequest.fromJson(Map<String, dynamic> json) {return StartRecordingRequest(
   allowMultipleRecordings: json['allow_multiple_recordings'] as bool?,
   audioConfig: json['audio_config'] != null ? RealtimekitAudioConfig.fromJson(json['audio_config'] as Map<String, dynamic>) : null,
   fileNamePrefix: json['file_name_prefix'] as String?,
@@ -15,7 +15,7 @@ factory StartRecordingRequest.fromJson(Map<String, dynamic> json) { return Start
   storageConfig: json.containsKey('storage_config') ? Omittable(json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   videoConfig: json['video_config'] != null ? RealtimekitVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// By default, a meeting allows only one recording to run at a time. Enabling the `allow_multiple_recordings` parameter to true allows you to initiate multiple recordings concurrently in the same meeting. This allows you to record separate videos of the same meeting with different configurations, such as portrait mode or landscape mode.
 final bool? allowMultipleRecordings;
@@ -47,7 +47,7 @@ final RealtimekitVideoConfig? videoConfig;
 /// The value of `allowMultipleRecordings`, or its schema default when absent.
 bool get allowMultipleRecordingsOrDefault => allowMultipleRecordings ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allow_multiple_recordings': ?allowMultipleRecordings,
   if (audioConfig != null) 'audio_config': audioConfig?.toJson(),
   'file_name_prefix': ?fileNamePrefix,
@@ -59,17 +59,17 @@ Map<String, dynamic> toJson() { return {
   if (storageConfig.isPresent) 'storage_config': storageConfig.value?.toJson(),
   if (url != null) 'url': url?.toString(),
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_multiple_recordings', 'audio_config', 'file_name_prefix', 'interactive_config', 'max_seconds', 'meeting_id', 'realtimekit_bucket_config', 'rtmp_out_config', 'storage_config', 'url', 'video_config'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allow_multiple_recordings', 'audio_config', 'file_name_prefix', 'interactive_config', 'max_seconds', 'meeting_id', 'realtimekit_bucket_config', 'rtmp_out_config', 'storage_config', 'url', 'video_config'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final maxSeconds$ = maxSeconds;
 if (maxSeconds$ != null) {
   if (maxSeconds$ < 60) { errors.add('maxSeconds: must be >= 60'); }
   if (maxSeconds$ > 86400) { errors.add('maxSeconds: must be <= 86400'); }
 }
-return errors; } 
-StartRecordingRequest copyWith({bool? Function()? allowMultipleRecordings, RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitInteractiveConfig? Function()? interactiveConfig, int? Function()? maxSeconds, String? Function()? meetingId, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, RealtimekitLivestreamingConfig? Function()? rtmpOutConfig, Omittable<RealtimekitStorageConfig?>? storageConfig, Uri? Function()? url, RealtimekitVideoConfig? Function()? videoConfig, }) { return StartRecordingRequest(
+return errors;}
+StartRecordingRequest copyWith({bool? Function()? allowMultipleRecordings, RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitInteractiveConfig? Function()? interactiveConfig, int? Function()? maxSeconds, String? Function()? meetingId, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, RealtimekitLivestreamingConfig? Function()? rtmpOutConfig, Omittable<RealtimekitStorageConfig?>? storageConfig, Uri? Function()? url, RealtimekitVideoConfig? Function()? videoConfig, }) {return StartRecordingRequest(
   allowMultipleRecordings: allowMultipleRecordings != null ? allowMultipleRecordings() : this.allowMultipleRecordings,
   audioConfig: audioConfig != null ? audioConfig() : this.audioConfig,
   fileNamePrefix: fileNamePrefix != null ? fileNamePrefix() : this.fileNamePrefix,
@@ -81,7 +81,7 @@ StartRecordingRequest copyWith({bool? Function()? allowMultipleRecordings, Realt
   storageConfig: storageConfig ?? this.storageConfig,
   url: url != null ? url() : this.url,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StartRecordingRequest &&
           allowMultipleRecordings == other.allowMultipleRecordings &&
@@ -100,4 +100,4 @@ StartRecordingRequest copyWith({bool? Function()? allowMultipleRecordings, Realt
 
 @override String toString() => 'StartRecordingRequest(\n  allowMultipleRecordings: $allowMultipleRecordings,\n  audioConfig: $audioConfig,\n  fileNamePrefix: $fileNamePrefix,\n  interactiveConfig: $interactiveConfig,\n  maxSeconds: $maxSeconds,\n  meetingId: $meetingId,\n  realtimekitBucketConfig: $realtimekitBucketConfig,\n  rtmpOutConfig: $rtmpOutConfig,\n  storageConfig: $storageConfig,\n  url: $url,\n  videoConfig: $videoConfig,\n)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';/// For more details on state, please refer to the Crowdstrike documentation.
 sealed class TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState();
 
-factory TeamsDevicesCrowdstrikeInputRequestState.fromJson(String json) { return switch (json) {
+factory TeamsDevicesCrowdstrikeInputRequestState.fromJson(String json) {return switch (json) {
   'online' => online,
   'offline' => offline,
   'unknown' => unknown,
   _ => TeamsDevicesCrowdstrikeInputRequestState$Unknown(json),
-}; }
+};}
 
 static const TeamsDevicesCrowdstrikeInputRequestState online = TeamsDevicesCrowdstrikeInputRequestState$online._();
 
@@ -20,33 +20,33 @@ static const TeamsDevicesCrowdstrikeInputRequestState unknown = TeamsDevicesCrow
 static const List<TeamsDevicesCrowdstrikeInputRequestState> values = [online, offline, unknown];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'online' => 'online',
   'offline' => 'offline',
   'unknown' => 'unknown',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TeamsDevicesCrowdstrikeInputRequestState$Unknown; } 
+bool get isUnknown {return this is TeamsDevicesCrowdstrikeInputRequestState$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() online, required W Function() offline, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() online, required W Function() offline, required W Function() unknown, required W Function(String value) $unknown, }) {return switch (this) {
       TeamsDevicesCrowdstrikeInputRequestState$online() => online(),
       TeamsDevicesCrowdstrikeInputRequestState$offline() => offline(),
       TeamsDevicesCrowdstrikeInputRequestState$unknown() => unknown(),
       TeamsDevicesCrowdstrikeInputRequestState$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? online, W Function()? offline, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? online, W Function()? offline, W Function()? unknown, W Function(String value)? $unknown, }) {return switch (this) {
       TeamsDevicesCrowdstrikeInputRequestState$online() => online != null ? online() : orElse(value),
       TeamsDevicesCrowdstrikeInputRequestState$offline() => offline != null ? offline() : orElse(value),
       TeamsDevicesCrowdstrikeInputRequestState$unknown() => unknown != null ? unknown() : orElse(value),
       TeamsDevicesCrowdstrikeInputRequestState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TeamsDevicesCrowdstrikeInputRequestState($value)';
 
- }
+}
 @immutable final class TeamsDevicesCrowdstrikeInputRequestState$online extends TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState$online._();
 
 @override String get value => 'online';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? online, 
 
 @override int get hashCode => 'online'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesCrowdstrikeInputRequestState$offline extends TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState$offline._();
 
 @override String get value => 'offline';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? online, 
 
 @override int get hashCode => 'offline'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesCrowdstrikeInputRequestState$unknown extends TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState$unknown._();
 
 @override String get value => 'unknown';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? online, 
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesCrowdstrikeInputRequestState$Unknown extends TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState$Unknown(this.value);
 
 @override final String value;
@@ -83,18 +83,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? online, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Version Operator.
 sealed class VersionOperator {const VersionOperator();
 
-factory VersionOperator.fromJson(String json) { return switch (json) {
+factory VersionOperator.fromJson(String json) {return switch (json) {
   '<' => $empty,
   '<=' => $empty2,
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
   _ => VersionOperator$Unknown(json),
-}; }
+};}
 
 static const VersionOperator $empty = VersionOperator$$empty._();
 
@@ -109,39 +109,39 @@ static const VersionOperator $empty5 = VersionOperator$$empty5._();
 static const List<VersionOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '<' => r'$empty',
   '<=' => r'$empty2',
   '>' => r'$empty3',
   '>=' => r'$empty4',
   '==' => r'$empty5',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VersionOperator$Unknown; } 
+bool get isUnknown {return this is VersionOperator$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() $empty2, required W Function() $empty3, required W Function() $empty4, required W Function() $empty5, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() $empty2, required W Function() $empty3, required W Function() $empty4, required W Function() $empty5, required W Function(String value) $unknown, }) {return switch (this) {
       VersionOperator$$empty() => $empty(),
       VersionOperator$$empty2() => $empty2(),
       VersionOperator$$empty3() => $empty3(),
       VersionOperator$$empty4() => $empty4(),
       VersionOperator$$empty5() => $empty5(),
       VersionOperator$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function()? $empty3, W Function()? $empty4, W Function()? $empty5, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function()? $empty3, W Function()? $empty4, W Function()? $empty5, W Function(String value)? $unknown, }) {return switch (this) {
       VersionOperator$$empty() => $empty != null ? $empty() : orElse(value),
       VersionOperator$$empty2() => $empty2 != null ? $empty2() : orElse(value),
       VersionOperator$$empty3() => $empty3 != null ? $empty3() : orElse(value),
       VersionOperator$$empty4() => $empty4 != null ? $empty4() : orElse(value),
       VersionOperator$$empty5() => $empty5 != null ? $empty5() : orElse(value),
       VersionOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'VersionOperator($value)';
 
- }
+}
 @immutable final class VersionOperator$$empty extends VersionOperator {const VersionOperator$$empty._();
 
 @override String get value => '<';
@@ -150,7 +150,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => '<'.hashCode;
 
- }
+}
 @immutable final class VersionOperator$$empty2 extends VersionOperator {const VersionOperator$$empty2._();
 
 @override String get value => '<=';
@@ -159,7 +159,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => '<='.hashCode;
 
- }
+}
 @immutable final class VersionOperator$$empty3 extends VersionOperator {const VersionOperator$$empty3._();
 
 @override String get value => '>';
@@ -168,7 +168,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => '>'.hashCode;
 
- }
+}
 @immutable final class VersionOperator$$empty4 extends VersionOperator {const VersionOperator$$empty4._();
 
 @override String get value => '>=';
@@ -177,7 +177,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => '>='.hashCode;
 
- }
+}
 @immutable final class VersionOperator$$empty5 extends VersionOperator {const VersionOperator$$empty5._();
 
 @override String get value => '==';
@@ -186,7 +186,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => '=='.hashCode;
 
- }
+}
 @immutable final class VersionOperator$Unknown extends VersionOperator {const VersionOperator$Unknown(this.value);
 
 @override final String value;
@@ -196,10 +196,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesCrowdstrikeInputRequest {const TeamsDevicesCrowdstrikeInputRequest({required this.connectionId, this.lastSeen, this.$operator, this.os, this.overall, this.sensorConfig, this.state, this.version, this.versionOperator, });
 
-factory TeamsDevicesCrowdstrikeInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesCrowdstrikeInputRequest(
+factory TeamsDevicesCrowdstrikeInputRequest.fromJson(Map<String, dynamic> json) {return TeamsDevicesCrowdstrikeInputRequest(
   connectionId: json['connection_id'] as String,
   lastSeen: json['last_seen'] as String?,
   $operator: json['operator'] != null ? TeamsDevicesCrowdstrikeInputRequestOperator.fromJson(json['operator'] as String) : null,
@@ -209,7 +209,7 @@ factory TeamsDevicesCrowdstrikeInputRequest.fromJson(Map<String, dynamic> json) 
   state: json['state'] != null ? TeamsDevicesCrowdstrikeInputRequestState.fromJson(json['state'] as String) : null,
   version: json['version'] as String?,
   versionOperator: json['versionOperator'] != null ? VersionOperator.fromJson(json['versionOperator'] as String) : null,
-); }
+);}
 
 /// Posture Integration ID.
 /// 
@@ -256,7 +256,7 @@ final String? version;
 /// Example: `'>'`
 final VersionOperator? versionOperator;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'connection_id': connectionId,
   'last_seen': ?lastSeen,
   if ($operator != null) 'operator': $operator?.toJson(),
@@ -266,9 +266,9 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   'version': ?version,
   if (versionOperator != null) 'versionOperator': versionOperator?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String; } 
-TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String? Function()? lastSeen, TeamsDevicesCrowdstrikeInputRequestOperator? Function()? $operator, String? Function()? os, String? Function()? overall, String? Function()? sensorConfig, TeamsDevicesCrowdstrikeInputRequestState? Function()? state, String? Function()? version, VersionOperator? Function()? versionOperator, }) { return TeamsDevicesCrowdstrikeInputRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('connection_id') && json['connection_id'] is String;}
+TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String? Function()? lastSeen, TeamsDevicesCrowdstrikeInputRequestOperator? Function()? $operator, String? Function()? os, String? Function()? overall, String? Function()? sensorConfig, TeamsDevicesCrowdstrikeInputRequestState? Function()? state, String? Function()? version, VersionOperator? Function()? versionOperator, }) {return TeamsDevicesCrowdstrikeInputRequest(
   connectionId: connectionId ?? this.connectionId,
   lastSeen: lastSeen != null ? lastSeen() : this.lastSeen,
   $operator: $operator != null ? $operator() : this.$operator,
@@ -278,7 +278,7 @@ TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String? Func
   state: state != null ? state() : this.state,
   version: version != null ? version() : this.version,
   versionOperator: versionOperator != null ? versionOperator() : this.versionOperator,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesCrowdstrikeInputRequest &&
           connectionId == other.connectionId &&
@@ -295,4 +295,4 @@ TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String? Func
 
 @override String toString() => 'TeamsDevicesCrowdstrikeInputRequest(\n  connectionId: $connectionId,\n  lastSeen: $lastSeen,\n  \$operator: ${$operator},\n  os: $os,\n  overall: $overall,\n  sensorConfig: $sensorConfig,\n  state: $state,\n  version: $version,\n  versionOperator: $versionOperator,\n)';
 
- }
+}

@@ -55,7 +55,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, required this.clientRecipients, required this.detectionReasons, required this.isPhishSubmission, required this.isQuarantined, required this.postfixId, required this.properties, required this.ts, required this.id, this.alertId = const Omittable.absent(), this.deliveryMode = const Omittable.absent(), this.edfHash = const Omittable.absent(), this.envelopeFrom = const Omittable.absent(), this.envelopeTo = const Omittable.absent(), this.finalDisposition = const Omittable.absent(), this.findings = const Omittable.absent(), this.from = const Omittable.absent(), this.fromName = const Omittable.absent(), this.htmltextStructureHash = const Omittable.absent(), this.messageId = const Omittable.absent(), this.postDeliveryOperations, this.postfixIdOutbound = const Omittable.absent(), this.replyto = const Omittable.absent(), this.sentDate = const Omittable.absent(), this.subject = const Omittable.absent(), this.threatCategories = const Omittable.absent(), this.to = const Omittable.absent(), this.toName = const Omittable.absent(), this.validation = const Omittable.absent(), });
 
-factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessage(
+factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) {return EmailSecurityMailsearchMessage(
   actionLog: json['action_log'],
   alertId: json.containsKey('alert_id') ? Omittable(json['alert_id'] as String?) : const Omittable.absent(),
   clientRecipients: (json['client_recipients'] as List<dynamic>).map((e) => e as String).toList(),
@@ -85,7 +85,7 @@ factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { ret
   ts: json['ts'] as String,
   validation: json.containsKey('validation') ? Omittable(json['validation'] != null ? EmailSecurityMailsearchMessageValidation.fromJson(json['validation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
-); }
+);}
 
 final dynamic actionLog;
 
@@ -145,7 +145,7 @@ final Omittable<EmailSecurityMailsearchMessageValidation?> validation;
 
 final String id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action_log': actionLog,
   if (alertId.isPresent) 'alert_id': alertId.value,
   'client_recipients': clientRecipients,
@@ -175,8 +175,8 @@ Map<String, dynamic> toJson() { return {
   'ts': ts,
   if (validation.isPresent) 'validation': validation.value?.toJson(),
   'id': id,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action_log') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action_log') &&
       json.containsKey('client_recipients') &&
       json.containsKey('detection_reasons') &&
       json.containsKey('is_phish_submission') && json['is_phish_submission'] is bool &&
@@ -184,8 +184,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('postfix_id') &&
       json.containsKey('properties') &&
       json.containsKey('ts') && json['ts'] is String &&
-      json.containsKey('id') && json['id'] is String; } 
-EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, Omittable<String?>? alertId, List<String>? clientRecipients, Omittable<EmailSecurityMessageDeliveryMode?>? deliveryMode, List<String>? detectionReasons, Omittable<String?>? edfHash, Omittable<String?>? envelopeFrom, Omittable<List<String>?>? envelopeTo, Omittable<EmailSecurityDispositionLabel?>? finalDisposition, Omittable<List<Findings>?>? findings, Omittable<String?>? from, Omittable<String?>? fromName, Omittable<String?>? htmltextStructureHash, bool? isPhishSubmission, bool? isQuarantined, Omittable<String?>? messageId, List<PostDeliveryOperations>? Function()? postDeliveryOperations, EmailSecurityPostfixId? postfixId, Omittable<String?>? postfixIdOutbound, EmailSecurityMailsearchMessageProperties? properties, Omittable<String?>? replyto, Omittable<String?>? sentDate, Omittable<String?>? subject, Omittable<List<String>?>? threatCategories, Omittable<List<String>?>? to, Omittable<List<String>?>? toName, String? ts, Omittable<EmailSecurityMailsearchMessageValidation?>? validation, String? id, }) { return EmailSecurityMailsearchMessage(
+      json.containsKey('id') && json['id'] is String;}
+EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, Omittable<String?>? alertId, List<String>? clientRecipients, Omittable<EmailSecurityMessageDeliveryMode?>? deliveryMode, List<String>? detectionReasons, Omittable<String?>? edfHash, Omittable<String?>? envelopeFrom, Omittable<List<String>?>? envelopeTo, Omittable<EmailSecurityDispositionLabel?>? finalDisposition, Omittable<List<Findings>?>? findings, Omittable<String?>? from, Omittable<String?>? fromName, Omittable<String?>? htmltextStructureHash, bool? isPhishSubmission, bool? isQuarantined, Omittable<String?>? messageId, List<PostDeliveryOperations>? Function()? postDeliveryOperations, EmailSecurityPostfixId? postfixId, Omittable<String?>? postfixIdOutbound, EmailSecurityMailsearchMessageProperties? properties, Omittable<String?>? replyto, Omittable<String?>? sentDate, Omittable<String?>? subject, Omittable<List<String>?>? threatCategories, Omittable<List<String>?>? to, Omittable<List<String>?>? toName, String? ts, Omittable<EmailSecurityMailsearchMessageValidation?>? validation, String? id, }) {return EmailSecurityMailsearchMessage(
   actionLog: actionLog != null ? actionLog() : this.actionLog,
   alertId: alertId ?? this.alertId,
   clientRecipients: clientRecipients ?? this.clientRecipients,
@@ -215,7 +215,7 @@ EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, Omittabl
   ts: ts ?? this.ts,
   validation: validation ?? this.validation,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityMailsearchMessage &&
           actionLog == other.actionLog &&
@@ -257,4 +257,4 @@ EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, Omittabl
 
 @override String toString() => 'EmailSecurityMailsearchMessage(\n  actionLog: $actionLog,\n  alertId: $alertId,\n  clientRecipients: $clientRecipients,\n  deliveryMode: $deliveryMode,\n  detectionReasons: $detectionReasons,\n  edfHash: $edfHash,\n  envelopeFrom: $envelopeFrom,\n  envelopeTo: $envelopeTo,\n  finalDisposition: $finalDisposition,\n  findings: $findings,\n  from: $from,\n  fromName: $fromName,\n  htmltextStructureHash: $htmltextStructureHash,\n  isPhishSubmission: $isPhishSubmission,\n  isQuarantined: $isQuarantined,\n  messageId: $messageId,\n  postDeliveryOperations: $postDeliveryOperations,\n  postfixId: $postfixId,\n  postfixIdOutbound: $postfixIdOutbound,\n  properties: $properties,\n  replyto: $replyto,\n  sentDate: $sentDate,\n  subject: $subject,\n  threatCategories: $threatCategories,\n  to: $to,\n  toName: $toName,\n  ts: $ts,\n  validation: $validation,\n  id: $id,\n)';
 
- }
+}

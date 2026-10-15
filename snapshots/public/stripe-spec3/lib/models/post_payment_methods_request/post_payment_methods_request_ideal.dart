@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IdealBank {const IdealBank();
 
-factory IdealBank.fromJson(String json) { return switch (json) {
+factory IdealBank.fromJson(String json) {return switch (json) {
   'abn_amro' => abnAmro,
   'adyen' => adyen,
   'asn_bank' => asnBank,
@@ -25,7 +25,7 @@ factory IdealBank.fromJson(String json) { return switch (json) {
   'van_lanschot' => vanLanschot,
   'yoursafe' => yoursafe,
   _ => IdealBank$Unknown(json),
-}; }
+};}
 
 static const IdealBank abnAmro = IdealBank$abnAmro._();
 
@@ -70,9 +70,9 @@ static const IdealBank yoursafe = IdealBank$yoursafe._();
 static const List<IdealBank> values = [abnAmro, adyen, asnBank, bunq, buut, finom, handelsbanken, ing, knab, mollie, moneyou, n26, nn, rabobank, regiobank, revolut, snsBank, triodosBank, vanLanschot, yoursafe];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'abn_amro' => 'abnAmro',
   'adyen' => 'adyen',
   'asn_bank' => 'asnBank',
@@ -94,11 +94,11 @@ String get name { return switch (value) {
   'van_lanschot' => 'vanLanschot',
   'yoursafe' => 'yoursafe',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IdealBank$Unknown; } 
+bool get isUnknown {return this is IdealBank$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() abnAmro, required W Function() adyen, required W Function() asnBank, required W Function() bunq, required W Function() buut, required W Function() finom, required W Function() handelsbanken, required W Function() ing, required W Function() knab, required W Function() mollie, required W Function() moneyou, required W Function() n26, required W Function() nn, required W Function() rabobank, required W Function() regiobank, required W Function() revolut, required W Function() snsBank, required W Function() triodosBank, required W Function() vanLanschot, required W Function() yoursafe, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() abnAmro, required W Function() adyen, required W Function() asnBank, required W Function() bunq, required W Function() buut, required W Function() finom, required W Function() handelsbanken, required W Function() ing, required W Function() knab, required W Function() mollie, required W Function() moneyou, required W Function() n26, required W Function() nn, required W Function() rabobank, required W Function() regiobank, required W Function() revolut, required W Function() snsBank, required W Function() triodosBank, required W Function() vanLanschot, required W Function() yoursafe, required W Function(String value) $unknown, }) {return switch (this) {
       IdealBank$abnAmro() => abnAmro(),
       IdealBank$adyen() => adyen(),
       IdealBank$asnBank() => asnBank(),
@@ -120,9 +120,9 @@ W when<W>({required W Function() abnAmro, required W Function() adyen, required 
       IdealBank$vanLanschot() => vanLanschot(),
       IdealBank$yoursafe() => yoursafe(),
       IdealBank$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro, W Function()? adyen, W Function()? asnBank, W Function()? bunq, W Function()? buut, W Function()? finom, W Function()? handelsbanken, W Function()? ing, W Function()? knab, W Function()? mollie, W Function()? moneyou, W Function()? n26, W Function()? nn, W Function()? rabobank, W Function()? regiobank, W Function()? revolut, W Function()? snsBank, W Function()? triodosBank, W Function()? vanLanschot, W Function()? yoursafe, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro, W Function()? adyen, W Function()? asnBank, W Function()? bunq, W Function()? buut, W Function()? finom, W Function()? handelsbanken, W Function()? ing, W Function()? knab, W Function()? mollie, W Function()? moneyou, W Function()? n26, W Function()? nn, W Function()? rabobank, W Function()? regiobank, W Function()? revolut, W Function()? snsBank, W Function()? triodosBank, W Function()? vanLanschot, W Function()? yoursafe, W Function(String value)? $unknown, }) {return switch (this) {
       IdealBank$abnAmro() => abnAmro != null ? abnAmro() : orElse(value),
       IdealBank$adyen() => adyen != null ? adyen() : orElse(value),
       IdealBank$asnBank() => asnBank != null ? asnBank() : orElse(value),
@@ -144,10 +144,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
       IdealBank$vanLanschot() => vanLanschot != null ? vanLanschot() : orElse(value),
       IdealBank$yoursafe() => yoursafe != null ? yoursafe() : orElse(value),
       IdealBank$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IdealBank($value)';
 
- }
+}
 @immutable final class IdealBank$abnAmro extends IdealBank {const IdealBank$abnAmro._();
 
 @override String get value => 'abn_amro';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'abn_amro'.hashCode;
 
- }
+}
 @immutable final class IdealBank$adyen extends IdealBank {const IdealBank$adyen._();
 
 @override String get value => 'adyen';
@@ -165,7 +165,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'adyen'.hashCode;
 
- }
+}
 @immutable final class IdealBank$asnBank extends IdealBank {const IdealBank$asnBank._();
 
 @override String get value => 'asn_bank';
@@ -174,7 +174,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'asn_bank'.hashCode;
 
- }
+}
 @immutable final class IdealBank$bunq extends IdealBank {const IdealBank$bunq._();
 
 @override String get value => 'bunq';
@@ -183,7 +183,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'bunq'.hashCode;
 
- }
+}
 @immutable final class IdealBank$buut extends IdealBank {const IdealBank$buut._();
 
 @override String get value => 'buut';
@@ -192,7 +192,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'buut'.hashCode;
 
- }
+}
 @immutable final class IdealBank$finom extends IdealBank {const IdealBank$finom._();
 
 @override String get value => 'finom';
@@ -201,7 +201,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'finom'.hashCode;
 
- }
+}
 @immutable final class IdealBank$handelsbanken extends IdealBank {const IdealBank$handelsbanken._();
 
 @override String get value => 'handelsbanken';
@@ -210,7 +210,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'handelsbanken'.hashCode;
 
- }
+}
 @immutable final class IdealBank$ing extends IdealBank {const IdealBank$ing._();
 
 @override String get value => 'ing';
@@ -219,7 +219,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'ing'.hashCode;
 
- }
+}
 @immutable final class IdealBank$knab extends IdealBank {const IdealBank$knab._();
 
 @override String get value => 'knab';
@@ -228,7 +228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'knab'.hashCode;
 
- }
+}
 @immutable final class IdealBank$mollie extends IdealBank {const IdealBank$mollie._();
 
 @override String get value => 'mollie';
@@ -237,7 +237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'mollie'.hashCode;
 
- }
+}
 @immutable final class IdealBank$moneyou extends IdealBank {const IdealBank$moneyou._();
 
 @override String get value => 'moneyou';
@@ -246,7 +246,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'moneyou'.hashCode;
 
- }
+}
 @immutable final class IdealBank$n26 extends IdealBank {const IdealBank$n26._();
 
 @override String get value => 'n26';
@@ -255,7 +255,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'n26'.hashCode;
 
- }
+}
 @immutable final class IdealBank$nn extends IdealBank {const IdealBank$nn._();
 
 @override String get value => 'nn';
@@ -264,7 +264,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'nn'.hashCode;
 
- }
+}
 @immutable final class IdealBank$rabobank extends IdealBank {const IdealBank$rabobank._();
 
 @override String get value => 'rabobank';
@@ -273,7 +273,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'rabobank'.hashCode;
 
- }
+}
 @immutable final class IdealBank$regiobank extends IdealBank {const IdealBank$regiobank._();
 
 @override String get value => 'regiobank';
@@ -282,7 +282,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'regiobank'.hashCode;
 
- }
+}
 @immutable final class IdealBank$revolut extends IdealBank {const IdealBank$revolut._();
 
 @override String get value => 'revolut';
@@ -291,7 +291,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'revolut'.hashCode;
 
- }
+}
 @immutable final class IdealBank$snsBank extends IdealBank {const IdealBank$snsBank._();
 
 @override String get value => 'sns_bank';
@@ -300,7 +300,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'sns_bank'.hashCode;
 
- }
+}
 @immutable final class IdealBank$triodosBank extends IdealBank {const IdealBank$triodosBank._();
 
 @override String get value => 'triodos_bank';
@@ -309,7 +309,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'triodos_bank'.hashCode;
 
- }
+}
 @immutable final class IdealBank$vanLanschot extends IdealBank {const IdealBank$vanLanschot._();
 
 @override String get value => 'van_lanschot';
@@ -318,7 +318,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'van_lanschot'.hashCode;
 
- }
+}
 @immutable final class IdealBank$yoursafe extends IdealBank {const IdealBank$yoursafe._();
 
 @override String get value => 'yoursafe';
@@ -327,7 +327,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => 'yoursafe'.hashCode;
 
- }
+}
 @immutable final class IdealBank$Unknown extends IdealBank {const IdealBank$Unknown(this.value);
 
 @override final String value;
@@ -337,22 +337,22 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostPaymentMethodsRequestIdeal {const PostPaymentMethodsRequestIdeal({this.bank});
 
-factory PostPaymentMethodsRequestIdeal.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestIdeal(
+factory PostPaymentMethodsRequestIdeal.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsRequestIdeal(
   bank: json['bank'] != null ? IdealBank.fromJson(json['bank'] as String) : null,
-); }
+);}
 
 final IdealBank? bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank != null) 'bank': bank?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostPaymentMethodsRequestIdeal copyWith({IdealBank? Function()? bank}) { return PostPaymentMethodsRequestIdeal(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PostPaymentMethodsRequestIdeal copyWith({IdealBank? Function()? bank}) {return PostPaymentMethodsRequestIdeal(
   bank: bank != null ? bank() : this.bank,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestIdeal &&
           bank == other.bank;
@@ -361,4 +361,4 @@ PostPaymentMethodsRequestIdeal copyWith({IdealBank? Function()? bank}) { return 
 
 @override String toString() => 'PostPaymentMethodsRequestIdeal(bank: $bank)';
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A collection of keypresses the model would like to perform.
 @immutable final class KeyPressAction {const KeyPressAction({required this.type, required this.keys, });
 
-factory KeyPressAction.fromJson(Map<String, dynamic> json) { return KeyPressAction(
+factory KeyPressAction.fromJson(Map<String, dynamic> json) {return KeyPressAction(
   type: json['type'] as String,
   keys: (json['keys'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// Specifies the event type. For a keypress action, this property is always set to `keypress`.
 final String type;
@@ -15,16 +15,16 @@ final String type;
 /// The combination of keys the model is requesting to be pressed. This is an array of strings, each representing a key.
 final List<String> keys;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'keys': keys,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('keys'); } 
-KeyPressAction copyWith({String? type, List<String>? keys, }) { return KeyPressAction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('keys');}
+KeyPressAction copyWith({String? type, List<String>? keys, }) {return KeyPressAction(
   type: type ?? this.type,
   keys: keys ?? this.keys,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is KeyPressAction &&
           type == other.type &&
@@ -34,4 +34,4 @@ KeyPressAction copyWith({String? type, List<String>? keys, }) { return KeyPressA
 
 @override String toString() => 'KeyPressAction(type: $type, keys: $keys)';
 
- }
+}

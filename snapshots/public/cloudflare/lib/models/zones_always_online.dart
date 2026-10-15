@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_always_online_value.dart';/// When enabled, Cloudflare serves limited copies of web pages available from the [Internet Archive's Wayback Machine](https://archive.org/web/) if your server is offline. Refer to [Always Online](https://developers.cloudflare.com/cache/about/always-online) for more information.
 @immutable final class ZonesAlwaysOnline {const ZonesAlwaysOnline({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
-factory ZonesAlwaysOnline.fromJson(Map<String, dynamic> json) { return ZonesAlwaysOnline(
+factory ZonesAlwaysOnline.fromJson(Map<String, dynamic> json) {return ZonesAlwaysOnline(
   editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesAlwaysOnlineValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -29,20 +29,20 @@ final ZonesAlwaysOnlineValue value;
 /// The value of `editable`, or its schema default when absent.
 bool get editableOrDefault => editable ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesAlwaysOnline copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesAlwaysOnlineValue? value, }) { return ZonesAlwaysOnline(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesAlwaysOnline copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesAlwaysOnlineValue? value, }) {return ZonesAlwaysOnline(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesAlwaysOnline &&
           editable == other.editable &&
@@ -54,4 +54,4 @@ ZonesAlwaysOnline copyWith({bool? Function()? editable, dynamic Function()? id, 
 
 @override String toString() => 'ZonesAlwaysOnline(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

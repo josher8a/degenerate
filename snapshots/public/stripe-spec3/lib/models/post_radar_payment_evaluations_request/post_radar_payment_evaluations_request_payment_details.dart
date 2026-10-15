@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/money_movement_details.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/payment_details_payment_method_details.dart';import 'package:pub_stripe_spec3/models/shipping_details.dart';/// Details about the payment.
 @immutable final class PostRadarPaymentEvaluationsRequestPaymentDetails {const PostRadarPaymentEvaluationsRequestPaymentDetails({required this.amount, required this.currency, required this.paymentMethodDetails, this.description, this.moneyMovementDetails, this.shippingDetails, this.statementDescriptor, });
 
-factory PostRadarPaymentEvaluationsRequestPaymentDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetails(
+factory PostRadarPaymentEvaluationsRequestPaymentDetails.fromJson(Map<String, dynamic> json) {return PostRadarPaymentEvaluationsRequestPaymentDetails(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -12,7 +12,7 @@ factory PostRadarPaymentEvaluationsRequestPaymentDetails.fromJson(Map<String, dy
   paymentMethodDetails: PaymentDetailsPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
   shippingDetails: json['shipping_details'] != null ? ShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
-); }
+);}
 
 final int amount;
 
@@ -28,7 +28,7 @@ final ShippingDetails? shippingDetails;
 
 final String? statementDescriptor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'currency': currency,
   'description': ?description,
@@ -36,12 +36,12 @@ Map<String, dynamic> toJson() { return {
   'payment_method_details': paymentMethodDetails.toJson(),
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
   'statement_descriptor': ?statementDescriptor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
-      json.containsKey('payment_method_details'); } 
+      json.containsKey('payment_method_details');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
   if (description$.runes.length > 5000) { errors.add('description: length must be <= 5000'); }
@@ -50,8 +50,8 @@ final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
-return errors; } 
-PostRadarPaymentEvaluationsRequestPaymentDetails copyWith({int? amount, String? currency, String? Function()? description, MoneyMovementDetails? Function()? moneyMovementDetails, PaymentDetailsPaymentMethodDetails? paymentMethodDetails, ShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, }) { return PostRadarPaymentEvaluationsRequestPaymentDetails(
+return errors;}
+PostRadarPaymentEvaluationsRequestPaymentDetails copyWith({int? amount, String? currency, String? Function()? description, MoneyMovementDetails? Function()? moneyMovementDetails, PaymentDetailsPaymentMethodDetails? paymentMethodDetails, ShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, }) {return PostRadarPaymentEvaluationsRequestPaymentDetails(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,
@@ -59,7 +59,7 @@ PostRadarPaymentEvaluationsRequestPaymentDetails copyWith({int? amount, String? 
   paymentMethodDetails: paymentMethodDetails ?? this.paymentMethodDetails,
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostRadarPaymentEvaluationsRequestPaymentDetails &&
           amount == other.amount &&
@@ -74,4 +74,4 @@ PostRadarPaymentEvaluationsRequestPaymentDetails copyWith({int? amount, String? 
 
 @override String toString() => 'PostRadarPaymentEvaluationsRequestPaymentDetails(amount: $amount, currency: $currency, description: $description, moneyMovementDetails: $moneyMovementDetails, paymentMethodDetails: $paymentMethodDetails, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor)';
 
- }
+}

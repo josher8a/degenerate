@@ -5,24 +5,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class RealtimeSessionCreateRequestGaAudio {const RealtimeSessionCreateRequestGaAudio({this.input, this.output, });
 
-factory RealtimeSessionCreateRequestGaAudio.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGaAudio(
+factory RealtimeSessionCreateRequestGaAudio.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequestGaAudio(
   input: json['input'] != null ? RealtimeSessionCreateRequestGaAudioInput.fromJson(json['input'] as Map<String, dynamic>) : null,
   output: json['output'] != null ? RealtimeSessionCreateRequestGaAudioOutput.fromJson(json['output'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final RealtimeSessionCreateRequestGaAudioInput? input;
 
 final RealtimeSessionCreateRequestGaAudioOutput? output;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (input != null) 'input': input?.toJson(),
   if (output != null) 'output': output?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input', 'output'}.contains(key)); } 
-RealtimeSessionCreateRequestGaAudio copyWith({RealtimeSessionCreateRequestGaAudioInput? Function()? input, RealtimeSessionCreateRequestGaAudioOutput? Function()? output, }) { return RealtimeSessionCreateRequestGaAudio(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'input', 'output'}.contains(key));}
+RealtimeSessionCreateRequestGaAudio copyWith({RealtimeSessionCreateRequestGaAudioInput? Function()? input, RealtimeSessionCreateRequestGaAudioOutput? Function()? output, }) {return RealtimeSessionCreateRequestGaAudio(
   input: input != null ? input() : this.input,
   output: output != null ? output() : this.output,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateRequestGaAudio &&
           input == other.input &&
@@ -32,4 +32,4 @@ RealtimeSessionCreateRequestGaAudio copyWith({RealtimeSessionCreateRequestGaAudi
 
 @override String toString() => 'RealtimeSessionCreateRequestGaAudio(input: $input, output: $output)';
 
- }
+}

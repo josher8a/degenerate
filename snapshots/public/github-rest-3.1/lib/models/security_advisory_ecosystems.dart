@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The package's language or package management ecosystem.
 sealed class SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems();
 
-factory SecurityAdvisoryEcosystems.fromJson(String json) { return switch (json) {
+factory SecurityAdvisoryEcosystems.fromJson(String json) {return switch (json) {
   'rubygems' => rubygems,
   'npm' => npm,
   'pip' => pip,
@@ -19,7 +19,7 @@ factory SecurityAdvisoryEcosystems.fromJson(String json) { return switch (json) 
   'other' => $other,
   'swift' => swift,
   _ => SecurityAdvisoryEcosystems$Unknown(json),
-}; }
+};}
 
 static const SecurityAdvisoryEcosystems rubygems = SecurityAdvisoryEcosystems$rubygems._();
 
@@ -50,9 +50,9 @@ static const SecurityAdvisoryEcosystems swift = SecurityAdvisoryEcosystems$swift
 static const List<SecurityAdvisoryEcosystems> values = [rubygems, npm, pip, maven, nuget, composer, go, rust, erlang, actions, pub, $other, swift];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'rubygems' => 'rubygems',
   'npm' => 'npm',
   'pip' => 'pip',
@@ -67,11 +67,11 @@ String get name { return switch (value) {
   'other' => r'$other',
   'swift' => 'swift',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SecurityAdvisoryEcosystems$Unknown; } 
+bool get isUnknown {return this is SecurityAdvisoryEcosystems$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() rubygems, required W Function() npm, required W Function() pip, required W Function() maven, required W Function() nuget, required W Function() composer, required W Function() go, required W Function() rust, required W Function() erlang, required W Function() actions, required W Function() pub, required W Function() $other, required W Function() swift, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() rubygems, required W Function() npm, required W Function() pip, required W Function() maven, required W Function() nuget, required W Function() composer, required W Function() go, required W Function() rust, required W Function() erlang, required W Function() actions, required W Function() pub, required W Function() $other, required W Function() swift, required W Function(String value) $unknown, }) {return switch (this) {
       SecurityAdvisoryEcosystems$rubygems() => rubygems(),
       SecurityAdvisoryEcosystems$npm() => npm(),
       SecurityAdvisoryEcosystems$pip() => pip(),
@@ -86,9 +86,9 @@ W when<W>({required W Function() rubygems, required W Function() npm, required W
       SecurityAdvisoryEcosystems$$other() => $other(),
       SecurityAdvisoryEcosystems$swift() => swift(),
       SecurityAdvisoryEcosystems$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems, W Function()? npm, W Function()? pip, W Function()? maven, W Function()? nuget, W Function()? composer, W Function()? go, W Function()? rust, W Function()? erlang, W Function()? actions, W Function()? pub, W Function()? $other, W Function()? swift, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems, W Function()? npm, W Function()? pip, W Function()? maven, W Function()? nuget, W Function()? composer, W Function()? go, W Function()? rust, W Function()? erlang, W Function()? actions, W Function()? pub, W Function()? $other, W Function()? swift, W Function(String value)? $unknown, }) {return switch (this) {
       SecurityAdvisoryEcosystems$rubygems() => rubygems != null ? rubygems() : orElse(value),
       SecurityAdvisoryEcosystems$npm() => npm != null ? npm() : orElse(value),
       SecurityAdvisoryEcosystems$pip() => pip != null ? pip() : orElse(value),
@@ -103,10 +103,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
       SecurityAdvisoryEcosystems$$other() => $other != null ? $other() : orElse(value),
       SecurityAdvisoryEcosystems$swift() => swift != null ? swift() : orElse(value),
       SecurityAdvisoryEcosystems$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SecurityAdvisoryEcosystems($value)';
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$rubygems extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$rubygems._();
 
 @override String get value => 'rubygems';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'rubygems'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$npm extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$npm._();
 
 @override String get value => 'npm';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'npm'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$pip extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$pip._();
 
 @override String get value => 'pip';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'pip'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$maven extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$maven._();
 
 @override String get value => 'maven';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'maven'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$nuget extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$nuget._();
 
 @override String get value => 'nuget';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'nuget'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$composer extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$composer._();
 
 @override String get value => 'composer';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'composer'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$go extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$go._();
 
 @override String get value => 'go';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'go'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$rust extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$rust._();
 
 @override String get value => 'rust';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'rust'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$erlang extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$erlang._();
 
 @override String get value => 'erlang';
@@ -187,7 +187,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'erlang'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$actions extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$actions._();
 
 @override String get value => 'actions';
@@ -196,7 +196,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'actions'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$pub extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$pub._();
 
 @override String get value => 'pub';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'pub'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$$other extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$$other._();
 
 @override String get value => 'other';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$swift extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$swift._();
 
 @override String get value => 'swift';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => 'swift'.hashCode;
 
- }
+}
 @immutable final class SecurityAdvisoryEcosystems$Unknown extends SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems$Unknown(this.value);
 
 @override final String value;
@@ -233,4 +233,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems
 
 @override int get hashCode => value.hashCode;
 
- }
+}

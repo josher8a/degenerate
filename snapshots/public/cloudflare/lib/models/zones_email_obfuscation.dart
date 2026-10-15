@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off **Email Obfuscation**.
 sealed class ZonesEmailObfuscationId {const ZonesEmailObfuscationId();
 
-factory ZonesEmailObfuscationId.fromJson(String json) { return switch (json) {
+factory ZonesEmailObfuscationId.fromJson(String json) {return switch (json) {
   'email_obfuscation' => emailObfuscation,
   _ => ZonesEmailObfuscationId$Unknown(json),
-}; }
+};}
 
 static const ZonesEmailObfuscationId emailObfuscation = ZonesEmailObfuscationId$emailObfuscation._();
 
 static const List<ZonesEmailObfuscationId> values = [emailObfuscation];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'email_obfuscation' => 'emailObfuscation',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZonesEmailObfuscationId$Unknown; } 
+bool get isUnknown {return this is ZonesEmailObfuscationId$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() emailObfuscation, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() emailObfuscation, required W Function(String value) $unknown, }) {return switch (this) {
       ZonesEmailObfuscationId$emailObfuscation() => emailObfuscation(),
       ZonesEmailObfuscationId$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailObfuscation, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailObfuscation, W Function(String value)? $unknown, }) {return switch (this) {
       ZonesEmailObfuscationId$emailObfuscation() => emailObfuscation != null ? emailObfuscation() : orElse(value),
       ZonesEmailObfuscationId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZonesEmailObfuscationId($value)';
 
- }
+}
 @immutable final class ZonesEmailObfuscationId$emailObfuscation extends ZonesEmailObfuscationId {const ZonesEmailObfuscationId$emailObfuscation._();
 
 @override String get value => 'email_obfuscation';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailObf
 
 @override int get hashCode => 'email_obfuscation'.hashCode;
 
- }
+}
 @immutable final class ZonesEmailObfuscationId$Unknown extends ZonesEmailObfuscationId {const ZonesEmailObfuscationId$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailObf
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZonesEmailObfuscation {const ZonesEmailObfuscation({this.id, this.value, });
 
-factory ZonesEmailObfuscation.fromJson(Map<String, dynamic> json) { return ZonesEmailObfuscation(
+factory ZonesEmailObfuscation.fromJson(Map<String, dynamic> json) {return ZonesEmailObfuscation(
   id: json['id'] != null ? ZonesEmailObfuscationId.fromJson(json['id'] as String) : null,
   value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
-); }
+);}
 
 /// Turn on or off **Email Obfuscation**.
 final ZonesEmailObfuscationId? id;
@@ -70,15 +70,15 @@ final ZonesEmailObfuscationId? id;
 /// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesEmailObfuscation copyWith({ZonesEmailObfuscationId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesEmailObfuscation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'value'}.contains(key));}
+ZonesEmailObfuscation copyWith({ZonesEmailObfuscationId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) {return ZonesEmailObfuscation(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesEmailObfuscation &&
           id == other.id &&
@@ -88,4 +88,4 @@ ZonesEmailObfuscation copyWith({ZonesEmailObfuscationId? Function()? id, CacheRu
 
 @override String toString() => 'ZonesEmailObfuscation(id: $id, value: $value)';
 
- }
+}

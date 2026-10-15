@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecuritySummaryByDmarcSpf {const RadarGetEmailSecuritySummaryByDmarcSpf();
 
-factory RadarGetEmailSecuritySummaryByDmarcSpf.fromJson(String json) { return switch (json) {
+factory RadarGetEmailSecuritySummaryByDmarcSpf.fromJson(String json) {return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
   _ => RadarGetEmailSecuritySummaryByDmarcSpf$Unknown(json),
-}; }
+};}
 
 static const RadarGetEmailSecuritySummaryByDmarcSpf pass = RadarGetEmailSecuritySummaryByDmarcSpf$pass._();
 
@@ -19,33 +19,33 @@ static const RadarGetEmailSecuritySummaryByDmarcSpf fail = RadarGetEmailSecurity
 static const List<RadarGetEmailSecuritySummaryByDmarcSpf> values = [pass, none, fail];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'PASS' => 'pass',
   'NONE' => 'none',
   'FAIL' => 'fail',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetEmailSecuritySummaryByDmarcSpf$Unknown; } 
+bool get isUnknown {return this is RadarGetEmailSecuritySummaryByDmarcSpf$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pass, required W Function() none, required W Function() fail, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pass, required W Function() none, required W Function() fail, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetEmailSecuritySummaryByDmarcSpf$pass() => pass(),
       RadarGetEmailSecuritySummaryByDmarcSpf$none() => none(),
       RadarGetEmailSecuritySummaryByDmarcSpf$fail() => fail(),
       RadarGetEmailSecuritySummaryByDmarcSpf$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? none, W Function()? fail, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? none, W Function()? fail, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetEmailSecuritySummaryByDmarcSpf$pass() => pass != null ? pass() : orElse(value),
       RadarGetEmailSecuritySummaryByDmarcSpf$none() => none != null ? none() : orElse(value),
       RadarGetEmailSecuritySummaryByDmarcSpf$fail() => fail != null ? fail() : orElse(value),
       RadarGetEmailSecuritySummaryByDmarcSpf$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetEmailSecuritySummaryByDmarcSpf($value)';
 
- }
+}
 @immutable final class RadarGetEmailSecuritySummaryByDmarcSpf$pass extends RadarGetEmailSecuritySummaryByDmarcSpf {const RadarGetEmailSecuritySummaryByDmarcSpf$pass._();
 
 @override String get value => 'PASS';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'PASS'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecuritySummaryByDmarcSpf$none extends RadarGetEmailSecuritySummaryByDmarcSpf {const RadarGetEmailSecuritySummaryByDmarcSpf$none._();
 
 @override String get value => 'NONE';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'NONE'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecuritySummaryByDmarcSpf$fail extends RadarGetEmailSecuritySummaryByDmarcSpf {const RadarGetEmailSecuritySummaryByDmarcSpf$fail._();
 
 @override String get value => 'FAIL';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => 'FAIL'.hashCode;
 
- }
+}
 @immutable final class RadarGetEmailSecuritySummaryByDmarcSpf$Unknown extends RadarGetEmailSecuritySummaryByDmarcSpf {const RadarGetEmailSecuritySummaryByDmarcSpf$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

@@ -12,7 +12,7 @@ final class AutoRagJobsApi with ApiExecutor {const AutoRagJobsApi(this.apiConfig
 /// List Jobs
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs`
-Future<ApiResult<List<AutoragConfigGetJobResponseResult>, AutoragConfigListJobsError>> autoragConfigListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AutoragConfigGetJobResponseResult>, AutoragConfigListJobsError>> autoragConfigListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -40,11 +40,11 @@ return await execute(
   },
   onError: AutoragConfigListJobsError.fromResponse,
 );
- } 
+}
 /// Get a Job Details
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}`
-Future<ApiResult<AutoragConfigGetJobResponseResult, AutoragConfigGetJobError>> autoragConfigGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigGetJobResponseResult, AutoragConfigGetJobError>> autoragConfigGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -61,11 +61,11 @@ return await execute(
   },
   onError: AutoragConfigGetJobError.fromResponse,
 );
- } 
+}
 /// List Job Logs
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}/logs`
-Future<ApiResult<List<AiSearchInstanceListJobLogsResponseResult>, AutoragConfigListJobLogsError>> autoragConfigListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchInstanceListJobLogsResponseResult>, AutoragConfigListJobLogsError>> autoragConfigListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -93,5 +93,5 @@ return await execute(
   },
   onError: AutoragConfigListJobLogsError.fromResponse,
 );
- } 
- }
+}
+}

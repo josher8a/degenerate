@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/percent_ownership.dart';/// The relationship that this person has with the account's legal entity.
 @immutable final class PostAccountsAccountPeoplePersonRequestRelationship {const PostAccountsAccountPeoplePersonRequestRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
 
-factory PostAccountsAccountPeoplePersonRequestRelationship.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequestRelationship(
+factory PostAccountsAccountPeoplePersonRequestRelationship.fromJson(Map<String, dynamic> json) {return PostAccountsAccountPeoplePersonRequestRelationship(
   authorizer: json['authorizer'] as bool?,
   director: json['director'] as bool?,
   executive: json['executive'] as bool?,
@@ -13,7 +13,7 @@ factory PostAccountsAccountPeoplePersonRequestRelationship.fromJson(Map<String, 
   percentOwnership: json['percent_ownership'] != null ? PercentOwnership.fromJson(json['percent_ownership']) : null,
   representative: json['representative'] as bool?,
   title: json['title'] as String?,
-); }
+);}
 
 final bool? authorizer;
 
@@ -31,7 +31,7 @@ final bool? representative;
 
 final String? title;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'authorizer': ?authorizer,
   'director': ?director,
   'executive': ?executive,
@@ -40,16 +40,16 @@ Map<String, dynamic> toJson() { return {
   if (percentOwnership != null) 'percent_ownership': percentOwnership?.toJson(),
   'representative': ?representative,
   'title': ?title,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'percent_ownership', 'representative', 'title'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'percent_ownership', 'representative', 'title'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final title$ = title;
 if (title$ != null) {
   if (title$.runes.length > 5000) { errors.add('title: length must be <= 5000'); }
 }
-return errors; } 
-PostAccountsAccountPeoplePersonRequestRelationship copyWith({bool? Function()? authorizer, bool? Function()? director, bool? Function()? executive, bool? Function()? legalGuardian, bool? Function()? owner, PercentOwnership? Function()? percentOwnership, bool? Function()? representative, String? Function()? title, }) { return PostAccountsAccountPeoplePersonRequestRelationship(
+return errors;}
+PostAccountsAccountPeoplePersonRequestRelationship copyWith({bool? Function()? authorizer, bool? Function()? director, bool? Function()? executive, bool? Function()? legalGuardian, bool? Function()? owner, PercentOwnership? Function()? percentOwnership, bool? Function()? representative, String? Function()? title, }) {return PostAccountsAccountPeoplePersonRequestRelationship(
   authorizer: authorizer != null ? authorizer() : this.authorizer,
   director: director != null ? director() : this.director,
   executive: executive != null ? executive() : this.executive,
@@ -58,7 +58,7 @@ PostAccountsAccountPeoplePersonRequestRelationship copyWith({bool? Function()? a
   percentOwnership: percentOwnership != null ? percentOwnership() : this.percentOwnership,
   representative: representative != null ? representative() : this.representative,
   title: title != null ? title() : this.title,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountPeoplePersonRequestRelationship &&
           authorizer == other.authorizer &&
@@ -74,4 +74,4 @@ PostAccountsAccountPeoplePersonRequestRelationship copyWith({bool? Function()? a
 
 @override String toString() => 'PostAccountsAccountPeoplePersonRequestRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)';
 
- }
+}

@@ -24,12 +24,12 @@ String toJson() => value;
 }
 @immutable final class AaaAlertTypes {const AaaAlertTypes({this.description, this.displayName, this.filterOptions, this.type, });
 
-factory AaaAlertTypes.fromJson(Map<String, dynamic> json) { return AaaAlertTypes(
+factory AaaAlertTypes.fromJson(Map<String, dynamic> json) {return AaaAlertTypes(
   description: json['description'] != null ? AaaDescription.fromJson(json['description'] as String) : null,
   displayName: json['display_name'] != null ? AaaDisplayName.fromJson(json['display_name'] as String) : null,
   filterOptions: (json['filter_options'] as List<dynamic>?)?.map((e) => e).toList(),
   type: json['type'] != null ? AaaType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 final AaaDescription? description;
 
@@ -39,19 +39,19 @@ final List<dynamic>? filterOptions;
 
 final AaaType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (displayName != null) 'display_name': displayName?.toJson(),
   'filter_options': ?filterOptions,
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'display_name', 'filter_options', 'type'}.contains(key)); } 
-AaaAlertTypes copyWith({AaaDescription? Function()? description, AaaDisplayName? Function()? displayName, List<dynamic>? Function()? filterOptions, AaaType? Function()? type, }) { return AaaAlertTypes(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'display_name', 'filter_options', 'type'}.contains(key));}
+AaaAlertTypes copyWith({AaaDescription? Function()? description, AaaDisplayName? Function()? displayName, List<dynamic>? Function()? filterOptions, AaaType? Function()? type, }) {return AaaAlertTypes(
   description: description != null ? description() : this.description,
   displayName: displayName != null ? displayName() : this.displayName,
   filterOptions: filterOptions != null ? filterOptions() : this.filterOptions,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAlertTypes &&
           description == other.description &&
@@ -63,4 +63,4 @@ AaaAlertTypes copyWith({AaaDescription? Function()? description, AaaDisplayName?
 
 @override String toString() => 'AaaAlertTypes(description: $description, displayName: $displayName, filterOptions: $filterOptions, type: $type)';
 
- }
+}

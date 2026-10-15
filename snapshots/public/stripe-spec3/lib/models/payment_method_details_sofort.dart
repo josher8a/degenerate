@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit_mandate.dart';import 'package:pub_stripe_spec3/models/payment_method_details_sofort/payment_method_details_sofort_preferred_language.dart';/// 
 @immutable final class PaymentMethodDetailsSofort {const PaymentMethodDetailsSofort({this.bankCode = const Omittable.absent(), this.bankName = const Omittable.absent(), this.bic = const Omittable.absent(), this.country = const Omittable.absent(), this.generatedSepaDebit = const Omittable.absent(), this.generatedSepaDebitMandate = const Omittable.absent(), this.ibanLast4 = const Omittable.absent(), this.preferredLanguage = const Omittable.absent(), this.verifiedName = const Omittable.absent(), });
 
-factory PaymentMethodDetailsSofort.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsSofort(
+factory PaymentMethodDetailsSofort.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsSofort(
   bankCode: json.containsKey('bank_code') ? Omittable(json['bank_code'] as String?) : const Omittable.absent(),
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
   bic: json.containsKey('bic') ? Omittable(json['bic'] as String?) : const Omittable.absent(),
@@ -14,7 +14,7 @@ factory PaymentMethodDetailsSofort.fromJson(Map<String, dynamic> json) { return 
   ibanLast4: json.containsKey('iban_last4') ? Omittable(json['iban_last4'] as String?) : const Omittable.absent(),
   preferredLanguage: json.containsKey('preferred_language') ? Omittable(json['preferred_language'] != null ? PaymentMethodDetailsSofortPreferredLanguage.fromJson(json['preferred_language'] as String) : null) : const Omittable.absent(),
   verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Bank code of bank associated with the bank account.
 final Omittable<String?> bankCode;
@@ -45,7 +45,7 @@ final Omittable<PaymentMethodDetailsSofortPreferredLanguage?> preferredLanguage;
 /// (if supported) at the time of authorization or settlement. They cannot be set or mutated.
 final Omittable<String?> verifiedName;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankCode.isPresent) 'bank_code': bankCode.value,
   if (bankName.isPresent) 'bank_name': bankName.value,
   if (bic.isPresent) 'bic': bic.value,
@@ -55,10 +55,10 @@ Map<String, dynamic> toJson() { return {
   if (ibanLast4.isPresent) 'iban_last4': ibanLast4.value,
   if (preferredLanguage.isPresent) 'preferred_language': preferredLanguage.value?.toJson(),
   if (verifiedName.isPresent) 'verified_name': verifiedName.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'country', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'preferred_language', 'verified_name'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'country', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'preferred_language', 'verified_name'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final bankCode$ = bankCode.value;
 if (bankCode$ != null) {
   if (bankCode$.runes.length > 5000) { errors.add('bankCode: length must be <= 5000'); }
@@ -83,8 +83,8 @@ final verifiedName$ = verifiedName.value;
 if (verifiedName$ != null) {
   if (verifiedName$.runes.length > 5000) { errors.add('verifiedName: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsSofort copyWith({Omittable<String?>? bankCode, Omittable<String?>? bankName, Omittable<String?>? bic, Omittable<String?>? country, Omittable<GeneratedSepaDebit?>? generatedSepaDebit, Omittable<GeneratedSepaDebitMandate?>? generatedSepaDebitMandate, Omittable<String?>? ibanLast4, Omittable<PaymentMethodDetailsSofortPreferredLanguage?>? preferredLanguage, Omittable<String?>? verifiedName, }) { return PaymentMethodDetailsSofort(
+return errors;}
+PaymentMethodDetailsSofort copyWith({Omittable<String?>? bankCode, Omittable<String?>? bankName, Omittable<String?>? bic, Omittable<String?>? country, Omittable<GeneratedSepaDebit?>? generatedSepaDebit, Omittable<GeneratedSepaDebitMandate?>? generatedSepaDebitMandate, Omittable<String?>? ibanLast4, Omittable<PaymentMethodDetailsSofortPreferredLanguage?>? preferredLanguage, Omittable<String?>? verifiedName, }) {return PaymentMethodDetailsSofort(
   bankCode: bankCode ?? this.bankCode,
   bankName: bankName ?? this.bankName,
   bic: bic ?? this.bic,
@@ -94,7 +94,7 @@ PaymentMethodDetailsSofort copyWith({Omittable<String?>? bankCode, Omittable<Str
   ibanLast4: ibanLast4 ?? this.ibanLast4,
   preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   verifiedName: verifiedName ?? this.verifiedName,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsSofort &&
           bankCode == other.bankCode &&
@@ -111,4 +111,4 @@ PaymentMethodDetailsSofort copyWith({Omittable<String?>? bankCode, Omittable<Str
 
 @override String toString() => 'PaymentMethodDetailsSofort(\n  bankCode: $bankCode,\n  bankName: $bankName,\n  bic: $bic,\n  country: $country,\n  generatedSepaDebit: $generatedSepaDebit,\n  generatedSepaDebitMandate: $generatedSepaDebitMandate,\n  ibanLast4: $ibanLast4,\n  preferredLanguage: $preferredLanguage,\n  verifiedName: $verifiedName,\n)';
 
- }
+}

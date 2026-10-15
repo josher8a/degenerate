@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of certificate in the trust chain.
 sealed class CertificateRecordType {const CertificateRecordType();
 
-factory CertificateRecordType.fromJson(String json) { return switch (json) {
+factory CertificateRecordType.fromJson(String json) {return switch (json) {
   'ROOT_CERTIFICATE' => rootCertificate,
   'INTERMEDIATE_CERTIFICATE' => intermediateCertificate,
   _ => CertificateRecordType$Unknown(json),
-}; }
+};}
 
 static const CertificateRecordType rootCertificate = CertificateRecordType$rootCertificate._();
 
@@ -17,30 +17,30 @@ static const CertificateRecordType intermediateCertificate = CertificateRecordTy
 static const List<CertificateRecordType> values = [rootCertificate, intermediateCertificate];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ROOT_CERTIFICATE' => 'rootCertificate',
   'INTERMEDIATE_CERTIFICATE' => 'intermediateCertificate',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CertificateRecordType$Unknown; } 
+bool get isUnknown {return this is CertificateRecordType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() rootCertificate, required W Function() intermediateCertificate, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() rootCertificate, required W Function() intermediateCertificate, required W Function(String value) $unknown, }) {return switch (this) {
       CertificateRecordType$rootCertificate() => rootCertificate(),
       CertificateRecordType$intermediateCertificate() => intermediateCertificate(),
       CertificateRecordType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? rootCertificate, W Function()? intermediateCertificate, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rootCertificate, W Function()? intermediateCertificate, W Function(String value)? $unknown, }) {return switch (this) {
       CertificateRecordType$rootCertificate() => rootCertificate != null ? rootCertificate() : orElse(value),
       CertificateRecordType$intermediateCertificate() => intermediateCertificate != null ? intermediateCertificate() : orElse(value),
       CertificateRecordType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CertificateRecordType($value)';
 
- }
+}
 @immutable final class CertificateRecordType$rootCertificate extends CertificateRecordType {const CertificateRecordType$rootCertificate._();
 
 @override String get value => 'ROOT_CERTIFICATE';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rootCert
 
 @override int get hashCode => 'ROOT_CERTIFICATE'.hashCode;
 
- }
+}
 @immutable final class CertificateRecordType$intermediateCertificate extends CertificateRecordType {const CertificateRecordType$intermediateCertificate._();
 
 @override String get value => 'INTERMEDIATE_CERTIFICATE';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rootCert
 
 @override int get hashCode => 'INTERMEDIATE_CERTIFICATE'.hashCode;
 
- }
+}
 @immutable final class CertificateRecordType$Unknown extends CertificateRecordType {const CertificateRecordType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rootCert
 
 @override int get hashCode => value.hashCode;
 
- }
+}

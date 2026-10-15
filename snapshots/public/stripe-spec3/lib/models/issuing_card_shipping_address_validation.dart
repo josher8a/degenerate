@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_address_validation/issuing_card_shipping_address_validation_mode.dart';/// The validation result for the shipping address.
 sealed class IssuingCardShippingAddressValidationResult {const IssuingCardShippingAddressValidationResult();
 
-factory IssuingCardShippingAddressValidationResult.fromJson(String json) { return switch (json) {
+factory IssuingCardShippingAddressValidationResult.fromJson(String json) {return switch (json) {
   'indeterminate' => indeterminate,
   'likely_deliverable' => likelyDeliverable,
   'likely_undeliverable' => likelyUndeliverable,
   _ => IssuingCardShippingAddressValidationResult$Unknown(json),
-}; }
+};}
 
 static const IssuingCardShippingAddressValidationResult indeterminate = IssuingCardShippingAddressValidationResult$indeterminate._();
 
@@ -20,33 +20,33 @@ static const IssuingCardShippingAddressValidationResult likelyUndeliverable = Is
 static const List<IssuingCardShippingAddressValidationResult> values = [indeterminate, likelyDeliverable, likelyUndeliverable];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'indeterminate' => 'indeterminate',
   'likely_deliverable' => 'likelyDeliverable',
   'likely_undeliverable' => 'likelyUndeliverable',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardShippingAddressValidationResult$Unknown; } 
+bool get isUnknown {return this is IssuingCardShippingAddressValidationResult$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() indeterminate, required W Function() likelyDeliverable, required W Function() likelyUndeliverable, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() indeterminate, required W Function() likelyDeliverable, required W Function() likelyUndeliverable, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardShippingAddressValidationResult$indeterminate() => indeterminate(),
       IssuingCardShippingAddressValidationResult$likelyDeliverable() => likelyDeliverable(),
       IssuingCardShippingAddressValidationResult$likelyUndeliverable() => likelyUndeliverable(),
       IssuingCardShippingAddressValidationResult$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? indeterminate, W Function()? likelyDeliverable, W Function()? likelyUndeliverable, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? indeterminate, W Function()? likelyDeliverable, W Function()? likelyUndeliverable, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardShippingAddressValidationResult$indeterminate() => indeterminate != null ? indeterminate() : orElse(value),
       IssuingCardShippingAddressValidationResult$likelyDeliverable() => likelyDeliverable != null ? likelyDeliverable() : orElse(value),
       IssuingCardShippingAddressValidationResult$likelyUndeliverable() => likelyUndeliverable != null ? likelyUndeliverable() : orElse(value),
       IssuingCardShippingAddressValidationResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardShippingAddressValidationResult($value)';
 
- }
+}
 @immutable final class IssuingCardShippingAddressValidationResult$indeterminate extends IssuingCardShippingAddressValidationResult {const IssuingCardShippingAddressValidationResult$indeterminate._();
 
 @override String get value => 'indeterminate';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? indeterm
 
 @override int get hashCode => 'indeterminate'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingAddressValidationResult$likelyDeliverable extends IssuingCardShippingAddressValidationResult {const IssuingCardShippingAddressValidationResult$likelyDeliverable._();
 
 @override String get value => 'likely_deliverable';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? indeterm
 
 @override int get hashCode => 'likely_deliverable'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingAddressValidationResult$likelyUndeliverable extends IssuingCardShippingAddressValidationResult {const IssuingCardShippingAddressValidationResult$likelyUndeliverable._();
 
 @override String get value => 'likely_undeliverable';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? indeterm
 
 @override int get hashCode => 'likely_undeliverable'.hashCode;
 
- }
+}
 @immutable final class IssuingCardShippingAddressValidationResult$Unknown extends IssuingCardShippingAddressValidationResult {const IssuingCardShippingAddressValidationResult$Unknown(this.value);
 
 @override final String value;
@@ -83,15 +83,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? indeterm
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddressValidation({required this.mode, this.normalizedAddress = const Omittable.absent(), this.result = const Omittable.absent(), });
 
-factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json) { return IssuingCardShippingAddressValidation(
+factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json) {return IssuingCardShippingAddressValidation(
   mode: IssuingCardShippingAddressValidationMode.fromJson(json['mode'] as String),
   normalizedAddress: json.containsKey('normalized_address') ? Omittable(json['normalized_address'] != null ? Address.fromJson(json['normalized_address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   result: json.containsKey('result') ? Omittable(json['result'] != null ? IssuingCardShippingAddressValidationResult.fromJson(json['result'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The address validation capabilities to use.
 final IssuingCardShippingAddressValidationMode mode;
@@ -102,17 +102,17 @@ final Omittable<Address?> normalizedAddress;
 /// The validation result for the shipping address.
 final Omittable<IssuingCardShippingAddressValidationResult?> result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'mode': mode.toJson(),
   if (normalizedAddress.isPresent) 'normalized_address': normalizedAddress.value?.toJson(),
   if (result.isPresent) 'result': result.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
-IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidationMode? mode, Omittable<Address?>? normalizedAddress, Omittable<IssuingCardShippingAddressValidationResult?>? result, }) { return IssuingCardShippingAddressValidation(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('mode');}
+IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidationMode? mode, Omittable<Address?>? normalizedAddress, Omittable<IssuingCardShippingAddressValidationResult?>? result, }) {return IssuingCardShippingAddressValidation(
   mode: mode ?? this.mode,
   normalizedAddress: normalizedAddress ?? this.normalizedAddress,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardShippingAddressValidation &&
           mode == other.mode &&
@@ -123,4 +123,4 @@ IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidat
 
 @override String toString() => 'IssuingCardShippingAddressValidation(mode: $mode, normalizedAddress: $normalizedAddress, result: $result)';
 
- }
+}

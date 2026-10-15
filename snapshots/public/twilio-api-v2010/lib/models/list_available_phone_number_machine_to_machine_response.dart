@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_available_phone_number_country_available_phone_number_machine_to_machine.dart';@immutable final class ListAvailablePhoneNumberMachineToMachineResponse {const ListAvailablePhoneNumberMachineToMachineResponse({this.availablePhoneNumbers, this.end, this.firstPageUri, this.nextPageUri = const Omittable.absent(), this.page, this.pageSize, this.previousPageUri = const Omittable.absent(), this.start, this.uri, });
 
-factory ListAvailablePhoneNumberMachineToMachineResponse.fromJson(Map<String, dynamic> json) { return ListAvailablePhoneNumberMachineToMachineResponse(
+factory ListAvailablePhoneNumberMachineToMachineResponse.fromJson(Map<String, dynamic> json) {return ListAvailablePhoneNumberMachineToMachineResponse(
   availablePhoneNumbers: (json['available_phone_numbers'] as List<dynamic>?)?.map((e) => AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine.fromJson(e as Map<String, dynamic>)).toList(),
   end: json['end'] != null ? (json['end'] as num).toInt() : null,
   firstPageUri: json['first_page_uri'] != null ? Uri.parse(json['first_page_uri'] as String) : null,
@@ -13,7 +13,7 @@ factory ListAvailablePhoneNumberMachineToMachineResponse.fromJson(Map<String, dy
   previousPageUri: json.containsKey('previous_page_uri') ? Omittable(json['previous_page_uri'] != null ? Uri.parse(json['previous_page_uri'] as String) : null) : const Omittable.absent(),
   start: json['start'] != null ? (json['start'] as num).toInt() : null,
   uri: json['uri'] != null ? Uri.parse(json['uri'] as String) : null,
-); }
+);}
 
 final List<AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine>? availablePhoneNumbers;
 
@@ -33,7 +33,7 @@ final int? start;
 
 final Uri? uri;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (availablePhoneNumbers != null) 'available_phone_numbers': availablePhoneNumbers?.map((e) => e.toJson()).toList(),
   'end': ?end,
   if (firstPageUri != null) 'first_page_uri': firstPageUri?.toString(),
@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   if (previousPageUri.isPresent) 'previous_page_uri': previousPageUri.value?.toString(),
   'start': ?start,
   if (uri != null) 'uri': uri?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'available_phone_numbers', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key)); } 
-ListAvailablePhoneNumberMachineToMachineResponse copyWith({List<AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine>? Function()? availablePhoneNumbers, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) { return ListAvailablePhoneNumberMachineToMachineResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'available_phone_numbers', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key));}
+ListAvailablePhoneNumberMachineToMachineResponse copyWith({List<AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine>? Function()? availablePhoneNumbers, int? Function()? end, Uri? Function()? firstPageUri, Omittable<Uri?>? nextPageUri, int? Function()? page, int? Function()? pageSize, Omittable<Uri?>? previousPageUri, int? Function()? start, Uri? Function()? uri, }) {return ListAvailablePhoneNumberMachineToMachineResponse(
   availablePhoneNumbers: availablePhoneNumbers != null ? availablePhoneNumbers() : this.availablePhoneNumbers,
   end: end != null ? end() : this.end,
   firstPageUri: firstPageUri != null ? firstPageUri() : this.firstPageUri,
@@ -55,7 +55,7 @@ ListAvailablePhoneNumberMachineToMachineResponse copyWith({List<AccountAvailable
   previousPageUri: previousPageUri ?? this.previousPageUri,
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ListAvailablePhoneNumberMachineToMachineResponse &&
           listEquals(availablePhoneNumbers, other.availablePhoneNumbers) &&
@@ -72,4 +72,4 @@ ListAvailablePhoneNumberMachineToMachineResponse copyWith({List<AccountAvailable
 
 @override String toString() => 'ListAvailablePhoneNumberMachineToMachineResponse(\n  availablePhoneNumbers: $availablePhoneNumbers,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
- }
+}

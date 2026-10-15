@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started upgrade
 sealed class StartUpgradeK {const StartUpgradeK();
 
-factory StartUpgradeK.fromJson(String json) { return switch (json) {
+factory StartUpgradeK.fromJson(String json) {return switch (json) {
   'StartUpgrade' => startUpgrade,
   _ => StartUpgradeK$Unknown(json),
-}; }
+};}
 
 static const StartUpgradeK startUpgrade = StartUpgradeK$startUpgrade._();
 
 static const List<StartUpgradeK> values = [startUpgrade];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'StartUpgrade' => 'startUpgrade',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is StartUpgradeK$Unknown; } 
+bool get isUnknown {return this is StartUpgradeK$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() startUpgrade, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() startUpgrade, required W Function(String value) $unknown, }) {return switch (this) {
       StartUpgradeK$startUpgrade() => startUpgrade(),
       StartUpgradeK$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? startUpgrade, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? startUpgrade, W Function(String value)? $unknown, }) {return switch (this) {
       StartUpgradeK$startUpgrade() => startUpgrade != null ? startUpgrade() : orElse(value),
       StartUpgradeK$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'StartUpgradeK($value)';
 
- }
+}
 @immutable final class StartUpgradeK$startUpgrade extends StartUpgradeK {const StartUpgradeK$startUpgrade._();
 
 @override String get value => 'StartUpgrade';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? startUpg
 
 @override int get hashCode => 'StartUpgrade'.hashCode;
 
- }
+}
 @immutable final class StartUpgradeK$Unknown extends StartUpgradeK {const StartUpgradeK$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? startUpg
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class StartUpgrade {const StartUpgrade({required this.k, required this.url, });
 
-factory StartUpgrade.fromJson(Map<String, dynamic> json) { return StartUpgrade(
+factory StartUpgrade.fromJson(Map<String, dynamic> json) {return StartUpgrade(
   k: StartUpgradeK.fromJson(json['k'] as String),
   url: json['url'] as String,
-); }
+);}
 
 /// Started upgrade
 final StartUpgradeK k;
@@ -67,16 +67,16 @@ final StartUpgradeK k;
 /// Location of upgrade bundle
 final String url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'k': k.toJson(),
   'url': url,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('k') && json['k'] == 'StartUpgrade' &&
-      json.containsKey('url') && json['url'] is String; } 
-StartUpgrade copyWith({StartUpgradeK? k, String? url, }) { return StartUpgrade(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('k') && json['k'] == 'StartUpgrade' &&
+      json.containsKey('url') && json['url'] is String;}
+StartUpgrade copyWith({StartUpgradeK? k, String? url, }) {return StartUpgrade(
   k: k ?? this.k,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StartUpgrade &&
           k == other.k &&
@@ -86,4 +86,4 @@ StartUpgrade copyWith({StartUpgradeK? k, String? url, }) { return StartUpgrade(
 
 @override String toString() => 'StartUpgrade(k: $k, url: $url)';
 
- }
+}

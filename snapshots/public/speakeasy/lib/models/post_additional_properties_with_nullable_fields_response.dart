@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAdditionalPropertiesWithNullableFieldsResponse {const PostAdditionalPropertiesWithNullableFieldsResponse({required this.json});
 
-factory PostAdditionalPropertiesWithNullableFieldsResponse.fromJson(Map<String, dynamic> json) { return PostAdditionalPropertiesWithNullableFieldsResponse(
+factory PostAdditionalPropertiesWithNullableFieldsResponse.fromJson(Map<String, dynamic> json) {return PostAdditionalPropertiesWithNullableFieldsResponse(
   json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String?)),
-); }
+);}
 
 final Map<String,String?> json;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'json': json,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('json'); } 
-PostAdditionalPropertiesWithNullableFieldsResponse copyWith({Map<String,String?>? json}) { return PostAdditionalPropertiesWithNullableFieldsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('json');}
+PostAdditionalPropertiesWithNullableFieldsResponse copyWith({Map<String,String?>? json}) {return PostAdditionalPropertiesWithNullableFieldsResponse(
   json: json ?? this.json,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAdditionalPropertiesWithNullableFieldsResponse &&
           json == other.json;
@@ -24,4 +24,4 @@ PostAdditionalPropertiesWithNullableFieldsResponse copyWith({Map<String,String?>
 
 @override String toString() => 'PostAdditionalPropertiesWithNullableFieldsResponse(json: $json)';
 
- }
+}

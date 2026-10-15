@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_flight_data_leg.dart';/// 
 @immutable final class IssuingTransactionFlightData {const IssuingTransactionFlightData({this.departureAt = const Omittable.absent(), this.passengerName = const Omittable.absent(), this.refundable = const Omittable.absent(), this.segments = const Omittable.absent(), this.travelAgency = const Omittable.absent(), });
 
-factory IssuingTransactionFlightData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFlightData(
+factory IssuingTransactionFlightData.fromJson(Map<String, dynamic> json) {return IssuingTransactionFlightData(
   departureAt: json.containsKey('departure_at') ? Omittable(json['departure_at'] != null ? (json['departure_at'] as num).toInt() : null) : const Omittable.absent(),
   passengerName: json.containsKey('passenger_name') ? Omittable(json['passenger_name'] as String?) : const Omittable.absent(),
   refundable: json.containsKey('refundable') ? Omittable(json['refundable'] as bool?) : const Omittable.absent(),
   segments: json.containsKey('segments') ? Omittable((json['segments'] as List<dynamic>?)?.map((e) => IssuingTransactionFlightDataLeg.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   travelAgency: json.containsKey('travel_agency') ? Omittable(json['travel_agency'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The time that the flight departed.
 final Omittable<int?> departureAt;
@@ -27,16 +27,16 @@ final Omittable<List<IssuingTransactionFlightDataLeg>?> segments;
 /// The travel agency that issued the ticket.
 final Omittable<String?> travelAgency;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (departureAt.isPresent) 'departure_at': departureAt.value,
   if (passengerName.isPresent) 'passenger_name': passengerName.value,
   if (refundable.isPresent) 'refundable': refundable.value,
   if (segments.isPresent) 'segments': segments.value?.map((e) => e.toJson()).toList(),
   if (travelAgency.isPresent) 'travel_agency': travelAgency.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'departure_at', 'passenger_name', 'refundable', 'segments', 'travel_agency'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'departure_at', 'passenger_name', 'refundable', 'segments', 'travel_agency'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final passengerName$ = passengerName.value;
 if (passengerName$ != null) {
   if (passengerName$.runes.length > 5000) { errors.add('passengerName: length must be <= 5000'); }
@@ -45,14 +45,14 @@ final travelAgency$ = travelAgency.value;
 if (travelAgency$ != null) {
   if (travelAgency$.runes.length > 5000) { errors.add('travelAgency: length must be <= 5000'); }
 }
-return errors; } 
-IssuingTransactionFlightData copyWith({Omittable<int?>? departureAt, Omittable<String?>? passengerName, Omittable<bool?>? refundable, Omittable<List<IssuingTransactionFlightDataLeg>?>? segments, Omittable<String?>? travelAgency, }) { return IssuingTransactionFlightData(
+return errors;}
+IssuingTransactionFlightData copyWith({Omittable<int?>? departureAt, Omittable<String?>? passengerName, Omittable<bool?>? refundable, Omittable<List<IssuingTransactionFlightDataLeg>?>? segments, Omittable<String?>? travelAgency, }) {return IssuingTransactionFlightData(
   departureAt: departureAt ?? this.departureAt,
   passengerName: passengerName ?? this.passengerName,
   refundable: refundable ?? this.refundable,
   segments: segments ?? this.segments,
   travelAgency: travelAgency ?? this.travelAgency,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionFlightData &&
           departureAt == other.departureAt &&
@@ -66,4 +66,4 @@ IssuingTransactionFlightData copyWith({Omittable<int?>? departureAt, Omittable<S
 
 @override String toString() => 'IssuingTransactionFlightData(departureAt: $departureAt, passengerName: $passengerName, refundable: $refundable, segments: $segments, travelAgency: $travelAgency)';
 
- }
+}

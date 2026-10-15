@@ -10,7 +10,7 @@ num toJson() => value;
 }
 @immutable final class AccessReusablePolicyResp {const AccessReusablePolicyResp({this.approvalGroups, this.approvalRequired, this.connectionRules, this.isolationRequired, this.mfaConfig, this.purposeJustificationPrompt, this.purposeJustificationRequired, this.sessionDuration, this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, this.appCount, this.reusable, });
 
-factory AccessReusablePolicyResp.fromJson(Map<String, dynamic> json) { return AccessReusablePolicyResp(
+factory AccessReusablePolicyResp.fromJson(Map<String, dynamic> json) {return AccessReusablePolicyResp(
   approvalGroups: (json['approval_groups'] as List<dynamic>?)?.map((e) => AccessApprovalGroup.fromJson(e as Map<String, dynamic>)).toList(),
   approvalRequired: json['approval_required'] != null ? AccessApprovalRequired.fromJson(json['approval_required'] as bool) : null,
   connectionRules: json['connection_rules'] != null ? AccessConnectionRules.fromJson(json['connection_rules'] as Map<String, dynamic>) : null,
@@ -29,7 +29,7 @@ factory AccessReusablePolicyResp.fromJson(Map<String, dynamic> json) { return Ac
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
   appCount: json['app_count'] != null ? AccessAppCount.fromJson(json['app_count'] as num) : null,
   reusable: json['reusable'] as bool?,
-); }
+);}
 
 /// Administrators who can approve a temporary authentication request.
 final List<AccessApprovalGroup>? approvalGroups;
@@ -76,7 +76,7 @@ final AccessAppCount? appCount;
 
 final bool? reusable;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (approvalGroups != null) 'approval_groups': approvalGroups?.map((e) => e.toJson()).toList(),
   if (approvalRequired != null) 'approval_required': approvalRequired?.toJson(),
   if (connectionRules != null) 'connection_rules': connectionRules?.toJson(),
@@ -95,9 +95,9 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (appCount != null) 'app_count': appCount?.toJson(),
   'reusable': ?reusable,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approval_groups', 'approval_required', 'connection_rules', 'isolation_required', 'mfa_config', 'purpose_justification_prompt', 'purpose_justification_required', 'session_duration', 'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'app_count', 'reusable'}.contains(key)); } 
-AccessReusablePolicyResp copyWith({List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, AccessAppCount? Function()? appCount, bool? Function()? reusable, }) { return AccessReusablePolicyResp(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'approval_groups', 'approval_required', 'connection_rules', 'isolation_required', 'mfa_config', 'purpose_justification_prompt', 'purpose_justification_required', 'session_duration', 'created_at', 'decision', 'exclude', 'id', 'include', 'name', 'require', 'updated_at', 'app_count', 'reusable'}.contains(key));}
+AccessReusablePolicyResp copyWith({List<AccessApprovalGroup>? Function()? approvalGroups, AccessApprovalRequired? Function()? approvalRequired, AccessConnectionRules? Function()? connectionRules, AccessIsolationRequired? Function()? isolationRequired, AccessMfaConfig? Function()? mfaConfig, AccessPurposeJustificationPrompt? Function()? purposeJustificationPrompt, AccessPurposeJustificationRequired? Function()? purposeJustificationRequired, AccessComponentsSchemasSessionDuration? Function()? sessionDuration, AccessTimestamp? Function()? createdAt, AccessDecision? Function()? decision, List<AccessRule>? Function()? exclude, AccessSchemasUuid? Function()? id, List<AccessRule>? Function()? include, AccessPolicyComponentsSchemasName? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, AccessAppCount? Function()? appCount, bool? Function()? reusable, }) {return AccessReusablePolicyResp(
   approvalGroups: approvalGroups != null ? approvalGroups() : this.approvalGroups,
   approvalRequired: approvalRequired != null ? approvalRequired() : this.approvalRequired,
   connectionRules: connectionRules != null ? connectionRules() : this.connectionRules,
@@ -116,7 +116,7 @@ AccessReusablePolicyResp copyWith({List<AccessApprovalGroup>? Function()? approv
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   appCount: appCount != null ? appCount() : this.appCount,
   reusable: reusable != null ? reusable() : this.reusable,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessReusablePolicyResp &&
           listEquals(approvalGroups, other.approvalGroups) &&
@@ -142,4 +142,4 @@ AccessReusablePolicyResp copyWith({List<AccessApprovalGroup>? Function()? approv
 
 @override String toString() => 'AccessReusablePolicyResp(\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  connectionRules: $connectionRules,\n  isolationRequired: $isolationRequired,\n  mfaConfig: $mfaConfig,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  sessionDuration: $sessionDuration,\n  createdAt: $createdAt,\n  decision: $decision,\n  exclude: $exclude,\n  id: $id,\n  include: $include,\n  name: $name,\n  require: $require,\n  updatedAt: $updatedAt,\n  appCount: $appCount,\n  reusable: $reusable,\n)';
 
- }
+}

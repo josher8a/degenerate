@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_customer_details_address.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';sealed class CustomerDetailsAddressSource {const CustomerDetailsAddressSource();
 
-factory CustomerDetailsAddressSource.fromJson(String json) { return switch (json) {
+factory CustomerDetailsAddressSource.fromJson(String json) {return switch (json) {
   'billing' => billing,
   'shipping' => shipping,
   _ => CustomerDetailsAddressSource$Unknown(json),
-}; }
+};}
 
 static const CustomerDetailsAddressSource billing = CustomerDetailsAddressSource$billing._();
 
@@ -16,30 +16,30 @@ static const CustomerDetailsAddressSource shipping = CustomerDetailsAddressSourc
 static const List<CustomerDetailsAddressSource> values = [billing, shipping];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'billing' => 'billing',
   'shipping' => 'shipping',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomerDetailsAddressSource$Unknown; } 
+bool get isUnknown {return this is CustomerDetailsAddressSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() billing, required W Function() shipping, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() billing, required W Function() shipping, required W Function(String value) $unknown, }) {return switch (this) {
       CustomerDetailsAddressSource$billing() => billing(),
       CustomerDetailsAddressSource$shipping() => shipping(),
       CustomerDetailsAddressSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? billing, W Function()? shipping, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billing, W Function()? shipping, W Function(String value)? $unknown, }) {return switch (this) {
       CustomerDetailsAddressSource$billing() => billing != null ? billing() : orElse(value),
       CustomerDetailsAddressSource$shipping() => shipping != null ? shipping() : orElse(value),
       CustomerDetailsAddressSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CustomerDetailsAddressSource($value)';
 
- }
+}
 @immutable final class CustomerDetailsAddressSource$billing extends CustomerDetailsAddressSource {const CustomerDetailsAddressSource$billing._();
 
 @override String get value => 'billing';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billing,
 
 @override int get hashCode => 'billing'.hashCode;
 
- }
+}
 @immutable final class CustomerDetailsAddressSource$shipping extends CustomerDetailsAddressSource {const CustomerDetailsAddressSource$shipping._();
 
 @override String get value => 'shipping';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billing,
 
 @override int get hashCode => 'shipping'.hashCode;
 
- }
+}
 @immutable final class CustomerDetailsAddressSource$Unknown extends CustomerDetailsAddressSource {const CustomerDetailsAddressSource$Unknown(this.value);
 
 @override final String value;
@@ -67,17 +67,17 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? billing,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Details about the customer, including address and tax IDs.
 @immutable final class PostTaxCalculationsRequestCustomerDetails {const PostTaxCalculationsRequestCustomerDetails({this.address, this.addressSource, this.ipAddress, this.taxIds, this.taxabilityOverride, });
 
-factory PostTaxCalculationsRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestCustomerDetails(
+factory PostTaxCalculationsRequestCustomerDetails.fromJson(Map<String, dynamic> json) {return PostTaxCalculationsRequestCustomerDetails(
   address: json['address'] != null ? PostTaxCalculationsRequestCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressSource: json['address_source'] != null ? CustomerDetailsAddressSource.fromJson(json['address_source'] as String) : null,
   ipAddress: json['ip_address'] as String?,
   taxIds: (json['tax_ids'] as List<dynamic>?)?.map((e) => CustomerDetailsTaxIds.fromJson(e as Map<String, dynamic>)).toList(),
   taxabilityOverride: json['taxability_override'] != null ? TaxabilityOverride.fromJson(json['taxability_override'] as String) : null,
-); }
+);}
 
 final PostTaxCalculationsRequestCustomerDetailsAddress? address;
 
@@ -89,21 +89,21 @@ final List<CustomerDetailsTaxIds>? taxIds;
 
 final TaxabilityOverride? taxabilityOverride;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (address != null) 'address': address?.toJson(),
   if (addressSource != null) 'address_source': addressSource?.toJson(),
   'ip_address': ?ipAddress,
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
   if (taxabilityOverride != null) 'taxability_override': taxabilityOverride?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_source', 'ip_address', 'tax_ids', 'taxability_override'}.contains(key)); } 
-PostTaxCalculationsRequestCustomerDetails copyWith({PostTaxCalculationsRequestCustomerDetailsAddress? Function()? address, CustomerDetailsAddressSource? Function()? addressSource, String? Function()? ipAddress, List<CustomerDetailsTaxIds>? Function()? taxIds, TaxabilityOverride? Function()? taxabilityOverride, }) { return PostTaxCalculationsRequestCustomerDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'address', 'address_source', 'ip_address', 'tax_ids', 'taxability_override'}.contains(key));}
+PostTaxCalculationsRequestCustomerDetails copyWith({PostTaxCalculationsRequestCustomerDetailsAddress? Function()? address, CustomerDetailsAddressSource? Function()? addressSource, String? Function()? ipAddress, List<CustomerDetailsTaxIds>? Function()? taxIds, TaxabilityOverride? Function()? taxabilityOverride, }) {return PostTaxCalculationsRequestCustomerDetails(
   address: address != null ? address() : this.address,
   addressSource: addressSource != null ? addressSource() : this.addressSource,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   taxIds: taxIds != null ? taxIds() : this.taxIds,
   taxabilityOverride: taxabilityOverride != null ? taxabilityOverride() : this.taxabilityOverride,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxCalculationsRequestCustomerDetails &&
           address == other.address &&
@@ -116,4 +116,4 @@ PostTaxCalculationsRequestCustomerDetails copyWith({PostTaxCalculationsRequestCu
 
 @override String toString() => 'PostTaxCalculationsRequestCustomerDetails(address: $address, addressSource: $addressSource, ipAddress: $ipAddress, taxIds: $taxIds, taxabilityOverride: $taxabilityOverride)';
 
- }
+}

@@ -8,11 +8,11 @@ const ApplicationFeeApplication({this.string = const Omittable.absent(), this.ap
 const ApplicationFeeApplication._({required this.rawValue, required this.string, required this.application, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory ApplicationFeeApplication.fromJson(Object? json) { return ApplicationFeeApplication._(
+factory ApplicationFeeApplication.fromJson(Object? json) {return ApplicationFeeApplication._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   application: json is Map<String, dynamic> && Application.canParse(json) ? parseAnyOfVariant<Application>(json, (value) => Application.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'ApplicationFeeApplication(${toJson()})';
 
- }
+}

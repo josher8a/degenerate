@@ -12,7 +12,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// * `upcoming`: Reserved for upcoming invoices created through the Create Preview Invoice API or when an `invoice.upcoming` event is generated for an upcoming invoice on a subscription.
 sealed class BillingReason {const BillingReason();
 
-factory BillingReason.fromJson(String json) { return switch (json) {
+factory BillingReason.fromJson(String json) {return switch (json) {
   'automatic_pending_invoice_item_invoice' => automaticPendingInvoiceItemInvoice,
   'manual' => manual,
   'quote_accept' => quoteAccept,
@@ -23,7 +23,7 @@ factory BillingReason.fromJson(String json) { return switch (json) {
   'subscription_update' => subscriptionUpdate,
   'upcoming' => upcoming,
   _ => BillingReason$Unknown(json),
-}; }
+};}
 
 static const BillingReason automaticPendingInvoiceItemInvoice = BillingReason$automaticPendingInvoiceItemInvoice._();
 
@@ -46,9 +46,9 @@ static const BillingReason upcoming = BillingReason$upcoming._();
 static const List<BillingReason> values = [automaticPendingInvoiceItemInvoice, manual, quoteAccept, subscription, subscriptionCreate, subscriptionCycle, subscriptionThreshold, subscriptionUpdate, upcoming];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'automatic_pending_invoice_item_invoice' => 'automaticPendingInvoiceItemInvoice',
   'manual' => 'manual',
   'quote_accept' => 'quoteAccept',
@@ -59,11 +59,11 @@ String get name { return switch (value) {
   'subscription_update' => 'subscriptionUpdate',
   'upcoming' => 'upcoming',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is BillingReason$Unknown; } 
+bool get isUnknown {return this is BillingReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() automaticPendingInvoiceItemInvoice, required W Function() manual, required W Function() quoteAccept, required W Function() subscription, required W Function() subscriptionCreate, required W Function() subscriptionCycle, required W Function() subscriptionThreshold, required W Function() subscriptionUpdate, required W Function() upcoming, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() automaticPendingInvoiceItemInvoice, required W Function() manual, required W Function() quoteAccept, required W Function() subscription, required W Function() subscriptionCreate, required W Function() subscriptionCycle, required W Function() subscriptionThreshold, required W Function() subscriptionUpdate, required W Function() upcoming, required W Function(String value) $unknown, }) {return switch (this) {
       BillingReason$automaticPendingInvoiceItemInvoice() => automaticPendingInvoiceItemInvoice(),
       BillingReason$manual() => manual(),
       BillingReason$quoteAccept() => quoteAccept(),
@@ -74,9 +74,9 @@ W when<W>({required W Function() automaticPendingInvoiceItemInvoice, required W 
       BillingReason$subscriptionUpdate() => subscriptionUpdate(),
       BillingReason$upcoming() => upcoming(),
       BillingReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? automaticPendingInvoiceItemInvoice, W Function()? manual, W Function()? quoteAccept, W Function()? subscription, W Function()? subscriptionCreate, W Function()? subscriptionCycle, W Function()? subscriptionThreshold, W Function()? subscriptionUpdate, W Function()? upcoming, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? automaticPendingInvoiceItemInvoice, W Function()? manual, W Function()? quoteAccept, W Function()? subscription, W Function()? subscriptionCreate, W Function()? subscriptionCycle, W Function()? subscriptionThreshold, W Function()? subscriptionUpdate, W Function()? upcoming, W Function(String value)? $unknown, }) {return switch (this) {
       BillingReason$automaticPendingInvoiceItemInvoice() => automaticPendingInvoiceItemInvoice != null ? automaticPendingInvoiceItemInvoice() : orElse(value),
       BillingReason$manual() => manual != null ? manual() : orElse(value),
       BillingReason$quoteAccept() => quoteAccept != null ? quoteAccept() : orElse(value),
@@ -87,10 +87,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
       BillingReason$subscriptionUpdate() => subscriptionUpdate != null ? subscriptionUpdate() : orElse(value),
       BillingReason$upcoming() => upcoming != null ? upcoming() : orElse(value),
       BillingReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'BillingReason($value)';
 
- }
+}
 @immutable final class BillingReason$automaticPendingInvoiceItemInvoice extends BillingReason {const BillingReason$automaticPendingInvoiceItemInvoice._();
 
 @override String get value => 'automatic_pending_invoice_item_invoice';
@@ -99,7 +99,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'automatic_pending_invoice_item_invoice'.hashCode;
 
- }
+}
 @immutable final class BillingReason$manual extends BillingReason {const BillingReason$manual._();
 
 @override String get value => 'manual';
@@ -108,7 +108,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'manual'.hashCode;
 
- }
+}
 @immutable final class BillingReason$quoteAccept extends BillingReason {const BillingReason$quoteAccept._();
 
 @override String get value => 'quote_accept';
@@ -117,7 +117,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'quote_accept'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscription extends BillingReason {const BillingReason$subscription._();
 
 @override String get value => 'subscription';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscriptionCreate extends BillingReason {const BillingReason$subscriptionCreate._();
 
 @override String get value => 'subscription_create';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription_create'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscriptionCycle extends BillingReason {const BillingReason$subscriptionCycle._();
 
 @override String get value => 'subscription_cycle';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription_cycle'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscriptionThreshold extends BillingReason {const BillingReason$subscriptionThreshold._();
 
 @override String get value => 'subscription_threshold';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription_threshold'.hashCode;
 
- }
+}
 @immutable final class BillingReason$subscriptionUpdate extends BillingReason {const BillingReason$subscriptionUpdate._();
 
 @override String get value => 'subscription_update';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'subscription_update'.hashCode;
 
- }
+}
 @immutable final class BillingReason$upcoming extends BillingReason {const BillingReason$upcoming._();
 
 @override String get value => 'upcoming';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => 'upcoming'.hashCode;
 
- }
+}
 @immutable final class BillingReason$Unknown extends BillingReason {const BillingReason$Unknown(this.value);
 
 @override final String value;
@@ -181,16 +181,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
 sealed class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt();
 
-factory InvoiceCustomerTaxExempt.fromJson(String json) { return switch (json) {
+factory InvoiceCustomerTaxExempt.fromJson(String json) {return switch (json) {
   'exempt' => exempt,
   'none' => none,
   'reverse' => reverse,
   _ => InvoiceCustomerTaxExempt$Unknown(json),
-}; }
+};}
 
 static const InvoiceCustomerTaxExempt exempt = InvoiceCustomerTaxExempt$exempt._();
 
@@ -201,33 +201,33 @@ static const InvoiceCustomerTaxExempt reverse = InvoiceCustomerTaxExempt$reverse
 static const List<InvoiceCustomerTaxExempt> values = [exempt, none, reverse];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'exempt' => 'exempt',
   'none' => 'none',
   'reverse' => 'reverse',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoiceCustomerTaxExempt$Unknown; } 
+bool get isUnknown {return this is InvoiceCustomerTaxExempt$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() exempt, required W Function() none, required W Function() reverse, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() exempt, required W Function() none, required W Function() reverse, required W Function(String value) $unknown, }) {return switch (this) {
       InvoiceCustomerTaxExempt$exempt() => exempt(),
       InvoiceCustomerTaxExempt$none() => none(),
       InvoiceCustomerTaxExempt$reverse() => reverse(),
       InvoiceCustomerTaxExempt$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, W Function()? none, W Function()? reverse, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, W Function()? none, W Function()? reverse, W Function(String value)? $unknown, }) {return switch (this) {
       InvoiceCustomerTaxExempt$exempt() => exempt != null ? exempt() : orElse(value),
       InvoiceCustomerTaxExempt$none() => none != null ? none() : orElse(value),
       InvoiceCustomerTaxExempt$reverse() => reverse != null ? reverse() : orElse(value),
       InvoiceCustomerTaxExempt$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoiceCustomerTaxExempt($value)';
 
- }
+}
 @immutable final class InvoiceCustomerTaxExempt$exempt extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$exempt._();
 
 @override String get value => 'exempt';
@@ -236,7 +236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, 
 
 @override int get hashCode => 'exempt'.hashCode;
 
- }
+}
 @immutable final class InvoiceCustomerTaxExempt$none extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$none._();
 
 @override String get value => 'none';
@@ -245,7 +245,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class InvoiceCustomerTaxExempt$reverse extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$reverse._();
 
 @override String get value => 'reverse';
@@ -254,7 +254,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, 
 
 @override int get hashCode => 'reverse'.hashCode;
 
- }
+}
 @immutable final class InvoiceCustomerTaxExempt$Unknown extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$Unknown(this.value);
 
 @override final String value;
@@ -264,18 +264,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`. [Learn more](https://docs.stripe.com/billing/invoices/workflow#workflow-overview)
 sealed class InvoiceStatus {const InvoiceStatus();
 
-factory InvoiceStatus.fromJson(String json) { return switch (json) {
+factory InvoiceStatus.fromJson(String json) {return switch (json) {
   'draft' => draft,
   'open' => open,
   'paid' => paid,
   'uncollectible' => uncollectible,
   'void' => $void,
   _ => InvoiceStatus$Unknown(json),
-}; }
+};}
 
 static const InvoiceStatus draft = InvoiceStatus$draft._();
 
@@ -290,39 +290,39 @@ static const InvoiceStatus $void = InvoiceStatus$$void._();
 static const List<InvoiceStatus> values = [draft, open, paid, uncollectible, $void];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'draft' => 'draft',
   'open' => 'open',
   'paid' => 'paid',
   'uncollectible' => 'uncollectible',
   'void' => r'$void',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InvoiceStatus$Unknown; } 
+bool get isUnknown {return this is InvoiceStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() draft, required W Function() open, required W Function() paid, required W Function() uncollectible, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() draft, required W Function() open, required W Function() paid, required W Function() uncollectible, required W Function() $void, required W Function(String value) $unknown, }) {return switch (this) {
       InvoiceStatus$draft() => draft(),
       InvoiceStatus$open() => open(),
       InvoiceStatus$paid() => paid(),
       InvoiceStatus$uncollectible() => uncollectible(),
       InvoiceStatus$$void() => $void(),
       InvoiceStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W Function()? open, W Function()? paid, W Function()? uncollectible, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W Function()? open, W Function()? paid, W Function()? uncollectible, W Function()? $void, W Function(String value)? $unknown, }) {return switch (this) {
       InvoiceStatus$draft() => draft != null ? draft() : orElse(value),
       InvoiceStatus$open() => open != null ? open() : orElse(value),
       InvoiceStatus$paid() => paid != null ? paid() : orElse(value),
       InvoiceStatus$uncollectible() => uncollectible != null ? uncollectible() : orElse(value),
       InvoiceStatus$$void() => $void != null ? $void() : orElse(value),
       InvoiceStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'InvoiceStatus($value)';
 
- }
+}
 @immutable final class InvoiceStatus$draft extends InvoiceStatus {const InvoiceStatus$draft._();
 
 @override String get value => 'draft';
@@ -331,7 +331,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'draft'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$open extends InvoiceStatus {const InvoiceStatus$open._();
 
 @override String get value => 'open';
@@ -340,7 +340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'open'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$paid extends InvoiceStatus {const InvoiceStatus$paid._();
 
 @override String get value => 'paid';
@@ -349,7 +349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'paid'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$uncollectible extends InvoiceStatus {const InvoiceStatus$uncollectible._();
 
 @override String get value => 'uncollectible';
@@ -358,7 +358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'uncollectible'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$$void extends InvoiceStatus {const InvoiceStatus$$void._();
 
 @override String get value => 'void';
@@ -367,7 +367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => 'void'.hashCode;
 
- }
+}
 @immutable final class InvoiceStatus$Unknown extends InvoiceStatus {const InvoiceStatus$Unknown(this.value);
 
 @override final String value;
@@ -377,7 +377,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Invoices are statements of amounts owed by a customer, and are either
 /// generated one-off, or generated periodically from a subscription.
 /// 
@@ -412,7 +412,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W
 /// Related guide: [Send invoices to customers](https://docs.stripe.com/billing/invoices/sending)
 @immutable final class Invoice {const Invoice({required this.object, required this.amountDue, required this.amountOverpaid, required this.amountPaid, required this.amountRemaining, required this.amountShipping, required this.attemptCount, required this.attempted, required this.autoAdvance, required this.automaticTax, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.prePaymentCreditNotesAmount, required this.total, required this.postPaymentCreditNotesAmount, required this.statusTransitions, required this.subtotal, required this.periodStart, required this.startingBalance, required this.periodEnd, required this.paymentSettings, required this.livemode, required this.lines, required this.issuer, required this.id, required this.discounts, required this.defaultTaxRates, this.defaultPaymentMethod = const Omittable.absent(), this.defaultSource = const Omittable.absent(), this.customerTaxIds = const Omittable.absent(), this.description = const Omittable.absent(), this.customerTaxExempt = const Omittable.absent(), this.dueDate = const Omittable.absent(), this.effectiveAt = const Omittable.absent(), this.endingBalance = const Omittable.absent(), this.footer = const Omittable.absent(), this.customerShipping = const Omittable.absent(), this.hostedInvoiceUrl = const Omittable.absent(), this.accountCountry = const Omittable.absent(), this.invoicePdf = const Omittable.absent(), this.customerPhone = const Omittable.absent(), this.lastFinalizationError = const Omittable.absent(), this.latestRevision = const Omittable.absent(), this.customerName = const Omittable.absent(), this.customerEmail = const Omittable.absent(), this.metadata = const Omittable.absent(), this.nextPaymentAttempt = const Omittable.absent(), this.number = const Omittable.absent(), this.webhooksDeliveredAt = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.parent = const Omittable.absent(), this.customerAddress = const Omittable.absent(), this.payments, this.customerAccount = const Omittable.absent(), this.customFields = const Omittable.absent(), this.confirmationSecret = const Omittable.absent(), this.billingReason = const Omittable.absent(), this.receiptNumber = const Omittable.absent(), this.rendering = const Omittable.absent(), this.shippingCost = const Omittable.absent(), this.shippingDetails = const Omittable.absent(), this.automaticallyFinalizesAt = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), this.status = const Omittable.absent(), this.application = const Omittable.absent(), this.accountTaxIds = const Omittable.absent(), this.subtotalExcludingTax = const Omittable.absent(), this.testClock = const Omittable.absent(), this.thresholdReason, this.accountName = const Omittable.absent(), this.totalDiscountAmounts = const Omittable.absent(), this.totalExcludingTax = const Omittable.absent(), this.totalPretaxCreditAmounts = const Omittable.absent(), this.totalTaxes = const Omittable.absent(), this.fromInvoice = const Omittable.absent(), });
 
-factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
+factory Invoice.fromJson(Map<String, dynamic> json) {return Invoice(
   accountCountry: json.containsKey('account_country') ? Omittable(json['account_country'] as String?) : const Omittable.absent(),
   accountName: json.containsKey('account_name') ? Omittable(json['account_name'] as String?) : const Omittable.absent(),
   accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map(InvoiceAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
@@ -490,7 +490,7 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   totalPretaxCreditAmounts: json.containsKey('total_pretax_credit_amounts') ? Omittable((json['total_pretax_credit_amounts'] as List<dynamic>?)?.map((e) => InvoicesResourcePretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   totalTaxes: json.containsKey('total_taxes') ? Omittable((json['total_taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   webhooksDeliveredAt: json.containsKey('webhooks_delivered_at') ? Omittable(json['webhooks_delivered_at'] != null ? (json['webhooks_delivered_at'] as num).toInt() : null) : const Omittable.absent(),
-); }
+);}
 
 /// The country of the business associated with this invoice, most often the business creating the invoice.
 final Omittable<String?> accountCountry;
@@ -726,7 +726,7 @@ final Omittable<List<BillingBillResourceInvoicingTaxesTax>?> totalTaxes;
 /// Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have [been exhausted](https://docs.stripe.com/billing/webhooks#understand). This field tracks the time when webhooks for this invoice were successfully delivered. If the invoice had no webhooks to deliver, this will be set while the invoice is being created.
 final Omittable<int?> webhooksDeliveredAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountCountry.isPresent) 'account_country': accountCountry.value,
   if (accountName.isPresent) 'account_name': accountName.value,
   if (accountTaxIds.isPresent) 'account_tax_ids': accountTaxIds.value?.map((e) => e.toJson()).toList(),
@@ -804,8 +804,8 @@ Map<String, dynamic> toJson() { return {
   if (totalPretaxCreditAmounts.isPresent) 'total_pretax_credit_amounts': totalPretaxCreditAmounts.value?.map((e) => e.toJson()).toList(),
   if (totalTaxes.isPresent) 'total_taxes': totalTaxes.value?.map((e) => e.toJson()).toList(),
   if (webhooksDeliveredAt.isPresent) 'webhooks_delivered_at': webhooksDeliveredAt.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_due') && json['amount_due'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_due') && json['amount_due'] is num &&
       json.containsKey('amount_overpaid') && json['amount_overpaid'] is num &&
       json.containsKey('amount_paid') && json['amount_paid'] is num &&
       json.containsKey('amount_remaining') && json['amount_remaining'] is num &&
@@ -833,9 +833,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('starting_balance') && json['starting_balance'] is num &&
       json.containsKey('status_transitions') &&
       json.containsKey('subtotal') && json['subtotal'] is num &&
-      json.containsKey('total') && json['total'] is num; } 
+      json.containsKey('total') && json['total'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountCountry$ = accountCountry.value;
 if (accountCountry$ != null) {
   if (accountCountry$.runes.length > 5000) { errors.add('accountCountry: length must be <= 5000'); }
@@ -889,8 +889,8 @@ final statementDescriptor$ = statementDescriptor.value;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
-return errors; } 
-Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accountName, Omittable<List<InvoiceAccountTaxIds>?>? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, Omittable<BillingPortalConfigurationApplication?>? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, Omittable<int?>? automaticallyFinalizesAt, Omittable<BillingReason?>? billingReason, InvoiceCollectionMethod? collectionMethod, Omittable<InvoicesResourceConfirmationSecret?>? confirmationSecret, int? created, String? currency, Omittable<List<InvoiceSettingCustomField>?>? customFields, BankAccountCustomer? customer, Omittable<String?>? customerAccount, Omittable<Address?>? customerAddress, Omittable<String?>? customerEmail, Omittable<String?>? customerName, Omittable<String?>? customerPhone, Omittable<Shipping?>? customerShipping, Omittable<InvoiceCustomerTaxExempt?>? customerTaxExempt, Omittable<List<InvoicesResourceInvoiceTaxId>?>? customerTaxIds, Omittable<DefaultPaymentMethod?>? defaultPaymentMethod, Omittable<CustomerDefaultSource?>? defaultSource, List<TaxRate>? defaultTaxRates, Omittable<String?>? description, List<InvoiceDiscounts>? discounts, Omittable<int?>? dueDate, Omittable<int?>? effectiveAt, Omittable<int?>? endingBalance, Omittable<String?>? footer, Omittable<InvoicesResourceFromInvoice?>? fromInvoice, Omittable<String?>? hostedInvoiceUrl, String? id, Omittable<String?>? invoicePdf, ConnectAccountReference? issuer, Omittable<Errors?>? lastFinalizationError, Omittable<LatestRevision?>? latestRevision, InvoiceLines? lines, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<int?>? nextPaymentAttempt, Omittable<String?>? number, DeletedInvoiceObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<BillingBillResourceInvoicingParentsInvoiceParent?>? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments? Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, Omittable<String?>? receiptNumber, Omittable<InvoicesResourceInvoiceRendering?>? rendering, Omittable<InvoicesResourceShippingCost?>? shippingCost, Omittable<Shipping?>? shippingDetails, int? startingBalance, Omittable<String?>? statementDescriptor, Omittable<InvoiceStatus?>? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, Omittable<int?>? subtotalExcludingTax, Omittable<TestClock?>? testClock, InvoiceThresholdReason? Function()? thresholdReason, int? total, Omittable<List<DiscountsResourceDiscountAmount>?>? totalDiscountAmounts, Omittable<int?>? totalExcludingTax, Omittable<List<InvoicesResourcePretaxCreditAmount>?>? totalPretaxCreditAmounts, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, Omittable<int?>? webhooksDeliveredAt, }) { return Invoice(
+return errors;}
+Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accountName, Omittable<List<InvoiceAccountTaxIds>?>? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, Omittable<BillingPortalConfigurationApplication?>? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, Omittable<int?>? automaticallyFinalizesAt, Omittable<BillingReason?>? billingReason, InvoiceCollectionMethod? collectionMethod, Omittable<InvoicesResourceConfirmationSecret?>? confirmationSecret, int? created, String? currency, Omittable<List<InvoiceSettingCustomField>?>? customFields, BankAccountCustomer? customer, Omittable<String?>? customerAccount, Omittable<Address?>? customerAddress, Omittable<String?>? customerEmail, Omittable<String?>? customerName, Omittable<String?>? customerPhone, Omittable<Shipping?>? customerShipping, Omittable<InvoiceCustomerTaxExempt?>? customerTaxExempt, Omittable<List<InvoicesResourceInvoiceTaxId>?>? customerTaxIds, Omittable<DefaultPaymentMethod?>? defaultPaymentMethod, Omittable<CustomerDefaultSource?>? defaultSource, List<TaxRate>? defaultTaxRates, Omittable<String?>? description, List<InvoiceDiscounts>? discounts, Omittable<int?>? dueDate, Omittable<int?>? effectiveAt, Omittable<int?>? endingBalance, Omittable<String?>? footer, Omittable<InvoicesResourceFromInvoice?>? fromInvoice, Omittable<String?>? hostedInvoiceUrl, String? id, Omittable<String?>? invoicePdf, ConnectAccountReference? issuer, Omittable<Errors?>? lastFinalizationError, Omittable<LatestRevision?>? latestRevision, InvoiceLines? lines, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<int?>? nextPaymentAttempt, Omittable<String?>? number, DeletedInvoiceObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<BillingBillResourceInvoicingParentsInvoiceParent?>? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments? Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, Omittable<String?>? receiptNumber, Omittable<InvoicesResourceInvoiceRendering?>? rendering, Omittable<InvoicesResourceShippingCost?>? shippingCost, Omittable<Shipping?>? shippingDetails, int? startingBalance, Omittable<String?>? statementDescriptor, Omittable<InvoiceStatus?>? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, Omittable<int?>? subtotalExcludingTax, Omittable<TestClock?>? testClock, InvoiceThresholdReason? Function()? thresholdReason, int? total, Omittable<List<DiscountsResourceDiscountAmount>?>? totalDiscountAmounts, Omittable<int?>? totalExcludingTax, Omittable<List<InvoicesResourcePretaxCreditAmount>?>? totalPretaxCreditAmounts, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? totalTaxes, Omittable<int?>? webhooksDeliveredAt, }) {return Invoice(
   accountCountry: accountCountry ?? this.accountCountry,
   accountName: accountName ?? this.accountName,
   accountTaxIds: accountTaxIds ?? this.accountTaxIds,
@@ -968,7 +968,7 @@ Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accoun
   totalPretaxCreditAmounts: totalPretaxCreditAmounts ?? this.totalPretaxCreditAmounts,
   totalTaxes: totalTaxes ?? this.totalTaxes,
   webhooksDeliveredAt: webhooksDeliveredAt ?? this.webhooksDeliveredAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Invoice &&
           accountCountry == other.accountCountry &&
@@ -1059,4 +1059,4 @@ Invoice copyWith({Omittable<String?>? accountCountry, Omittable<String?>? accoun
 
 @override String toString() => 'Invoice(\n  accountCountry: $accountCountry,\n  accountName: $accountName,\n  accountTaxIds: $accountTaxIds,\n  amountDue: $amountDue,\n  amountOverpaid: $amountOverpaid,\n  amountPaid: $amountPaid,\n  amountRemaining: $amountRemaining,\n  amountShipping: $amountShipping,\n  application: $application,\n  attemptCount: $attemptCount,\n  attempted: $attempted,\n  autoAdvance: $autoAdvance,\n  automaticTax: $automaticTax,\n  automaticallyFinalizesAt: $automaticallyFinalizesAt,\n  billingReason: $billingReason,\n  collectionMethod: $collectionMethod,\n  confirmationSecret: $confirmationSecret,\n  created: $created,\n  currency: $currency,\n  customFields: $customFields,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  customerAddress: $customerAddress,\n  customerEmail: $customerEmail,\n  customerName: $customerName,\n  customerPhone: $customerPhone,\n  customerShipping: $customerShipping,\n  customerTaxExempt: $customerTaxExempt,\n  customerTaxIds: $customerTaxIds,\n  defaultPaymentMethod: $defaultPaymentMethod,\n  defaultSource: $defaultSource,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  discounts: $discounts,\n  dueDate: $dueDate,\n  effectiveAt: $effectiveAt,\n  endingBalance: $endingBalance,\n  footer: $footer,\n  fromInvoice: $fromInvoice,\n  hostedInvoiceUrl: $hostedInvoiceUrl,\n  id: $id,\n  invoicePdf: $invoicePdf,\n  issuer: $issuer,\n  lastFinalizationError: $lastFinalizationError,\n  latestRevision: $latestRevision,\n  lines: $lines,\n  livemode: $livemode,\n  metadata: $metadata,\n  nextPaymentAttempt: $nextPaymentAttempt,\n  number: $number,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  parent: $parent,\n  paymentSettings: $paymentSettings,\n  payments: $payments,\n  periodEnd: $periodEnd,\n  periodStart: $periodStart,\n  postPaymentCreditNotesAmount: $postPaymentCreditNotesAmount,\n  prePaymentCreditNotesAmount: $prePaymentCreditNotesAmount,\n  receiptNumber: $receiptNumber,\n  rendering: $rendering,\n  shippingCost: $shippingCost,\n  shippingDetails: $shippingDetails,\n  startingBalance: $startingBalance,\n  statementDescriptor: $statementDescriptor,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  subtotal: $subtotal,\n  subtotalExcludingTax: $subtotalExcludingTax,\n  testClock: $testClock,\n  thresholdReason: $thresholdReason,\n  total: $total,\n  totalDiscountAmounts: $totalDiscountAmounts,\n  totalExcludingTax: $totalExcludingTax,\n  totalPretaxCreditAmounts: $totalPretaxCreditAmounts,\n  totalTaxes: $totalTaxes,\n  webhooksDeliveredAt: $webhooksDeliveredAt,\n)';
 
- }
+}

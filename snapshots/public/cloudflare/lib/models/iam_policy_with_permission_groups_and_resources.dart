@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_effect.dart';import 'package:pub_cloudflare/models/iam_permission_group.dart';import 'package:pub_cloudflare/models/iam_policy_identifier.dart';import 'package:pub_cloudflare/models/iam_resources.dart';@immutable final class IamPolicyWithPermissionGroupsAndResources {const IamPolicyWithPermissionGroupsAndResources({required this.effect, required this.id, required this.permissionGroups, required this.resources, });
 
-factory IamPolicyWithPermissionGroupsAndResources.fromJson(Map<String, dynamic> json) { return IamPolicyWithPermissionGroupsAndResources(
+factory IamPolicyWithPermissionGroupsAndResources.fromJson(Map<String, dynamic> json) {return IamPolicyWithPermissionGroupsAndResources(
   effect: IamEffect.fromJson(json['effect'] as String),
   id: IamPolicyIdentifier.fromJson(json['id'] as String),
   permissionGroups: (json['permission_groups'] as List<dynamic>).map((e) => IamPermissionGroup.fromJson(e as Map<String, dynamic>)).toList(),
   resources: OneOf2.parse(json['resources'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)))), greedy: const {0, 1},),
-); }
+);}
 
 /// Allow or deny operations against the resources.
 final IamEffect effect;
@@ -21,22 +21,22 @@ final List<IamPermissionGroup> permissionGroups;
 
 final IamResources resources;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'effect': effect.toJson(),
   'id': id.toJson(),
   'permission_groups': permissionGroups.map((e) => e.toJson()).toList(),
   'resources': resources.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('effect') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('effect') &&
       json.containsKey('id') &&
       json.containsKey('permission_groups') &&
-      json.containsKey('resources'); } 
-IamPolicyWithPermissionGroupsAndResources copyWith({IamEffect? effect, IamPolicyIdentifier? id, List<IamPermissionGroup>? permissionGroups, IamResources? resources, }) { return IamPolicyWithPermissionGroupsAndResources(
+      json.containsKey('resources');}
+IamPolicyWithPermissionGroupsAndResources copyWith({IamEffect? effect, IamPolicyIdentifier? id, List<IamPermissionGroup>? permissionGroups, IamResources? resources, }) {return IamPolicyWithPermissionGroupsAndResources(
   effect: effect ?? this.effect,
   id: id ?? this.id,
   permissionGroups: permissionGroups ?? this.permissionGroups,
   resources: resources ?? this.resources,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamPolicyWithPermissionGroupsAndResources &&
           effect == other.effect &&
@@ -48,4 +48,4 @@ IamPolicyWithPermissionGroupsAndResources copyWith({IamEffect? effect, IamPolicy
 
 @override String toString() => 'IamPolicyWithPermissionGroupsAndResources(effect: $effect, id: $id, permissionGroups: $permissionGroups, resources: $resources)';
 
- }
+}

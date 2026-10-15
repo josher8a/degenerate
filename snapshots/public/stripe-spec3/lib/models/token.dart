@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TokenObject {const TokenObject();
 
-factory TokenObject.fromJson(String json) { return switch (json) {
+factory TokenObject.fromJson(String json) {return switch (json) {
   'token' => token,
   _ => TokenObject$Unknown(json),
-}; }
+};}
 
 static const TokenObject token = TokenObject$token._();
 
 static const List<TokenObject> values = [token];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'token' => 'token',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TokenObject$Unknown; } 
+bool get isUnknown {return this is TokenObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() token, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() token, required W Function(String value) $unknown, }) {return switch (this) {
       TokenObject$token() => token(),
       TokenObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? token, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? token, W Function(String value)? $unknown, }) {return switch (this) {
       TokenObject$token() => token != null ? token() : orElse(value),
       TokenObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TokenObject($value)';
 
- }
+}
 @immutable final class TokenObject$token extends TokenObject {const TokenObject$token._();
 
 @override String get value => 'token';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? token, W
 
 @override int get hashCode => 'token'.hashCode;
 
- }
+}
 @immutable final class TokenObject$Unknown extends TokenObject {const TokenObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? token, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Tokenization is the process Stripe uses to collect sensitive card or bank
 /// account details, or personally identifiable information (PII), directly from
 /// your customers in a secure manner. A token representing this information is
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? token, W
 /// performs best with integrations that use client-side tokenization.
 @immutable final class Token {const Token({required this.created, required this.id, required this.livemode, required this.object, required this.type, required this.used, this.bankAccount, this.card, this.clientIp = const Omittable.absent(), });
 
-factory Token.fromJson(Map<String, dynamic> json) { return Token(
+factory Token.fromJson(Map<String, dynamic> json) {return Token(
   bankAccount: json['bank_account'] != null ? BankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
   card: json['card'] != null ? Card.fromJson(json['card'] as Map<String, dynamic>) : null,
   clientIp: json.containsKey('client_ip') ? Omittable(json['client_ip'] as String?) : const Omittable.absent(),
@@ -86,7 +86,7 @@ factory Token.fromJson(Map<String, dynamic> json) { return Token(
   object: TokenObject.fromJson(json['object'] as String),
   type: json['type'] as String,
   used: json['used'] as bool,
-); }
+);}
 
 final BankAccount? bankAccount;
 
@@ -113,7 +113,7 @@ final String type;
 /// Determines if you have already used this token (you can only use tokens once).
 final bool used;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bankAccount != null) 'bank_account': bankAccount?.toJson(),
   if (card != null) 'card': card?.toJson(),
   if (clientIp.isPresent) 'client_ip': clientIp.value,
@@ -123,23 +123,23 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'type': type,
   'used': used,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('used') && json['used'] is bool; } 
+      json.containsKey('used') && json['used'] is bool;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final clientIp$ = clientIp.value;
 if (clientIp$ != null) {
   if (clientIp$.runes.length > 5000) { errors.add('clientIp: length must be <= 5000'); }
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (type.runes.length > 5000) { errors.add('type: length must be <= 5000'); }
-return errors; } 
-Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, Omittable<String?>? clientIp, int? created, String? id, bool? livemode, TokenObject? object, String? type, bool? used, }) { return Token(
+return errors;}
+Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, Omittable<String?>? clientIp, int? created, String? id, bool? livemode, TokenObject? object, String? type, bool? used, }) {return Token(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,
   clientIp: clientIp ?? this.clientIp,
@@ -149,7 +149,7 @@ Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, Om
   object: object ?? this.object,
   type: type ?? this.type,
   used: used ?? this.used,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Token &&
           bankAccount == other.bankAccount &&
@@ -166,4 +166,4 @@ Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, Om
 
 @override String toString() => 'Token(\n  bankAccount: $bankAccount,\n  card: $card,\n  clientIp: $clientIp,\n  created: $created,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  type: $type,\n  used: $used,\n)';
 
- }
+}

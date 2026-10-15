@@ -14,7 +14,7 @@ final class MagicGreTunnelsApi with ApiExecutor {const MagicGreTunnelsApi(this.a
 /// Lists GRE tunnels associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<MagicTunnelsCollectionResponseResult, MagicGreTunnelsListGreTunnelsError>> magicGreTunnelsListGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTunnelsCollectionResponseResult, MagicGreTunnelsListGreTunnelsError>> magicGreTunnelsListGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -34,13 +34,13 @@ return await execute(
   },
   onError: MagicGreTunnelsListGreTunnelsError.fromResponse,
 );
- } 
+}
 /// Create a GRE tunnel
 ///
 /// Creates a new GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<MagicGreTunnel, MagicGreTunnelsCreateGreTunnelsError>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, required MagicCreateGreTunnelRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicGreTunnel, MagicGreTunnelsCreateGreTunnelsError>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, required MagicCreateGreTunnelRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -62,13 +62,13 @@ return await execute(
   },
   onError: MagicGreTunnelsCreateGreTunnelsError.fromResponse,
 );
- } 
+}
 /// Update multiple GRE tunnels
 ///
 /// Updates multiple GRE tunnels. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<MagicModifiedTunnelsCollectionResponseResult, MagicGreTunnelsUpdateMultipleGreTunnelsError>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicModifiedTunnelsCollectionResponseResult, MagicGreTunnelsUpdateMultipleGreTunnelsError>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -90,13 +90,13 @@ return await execute(
   },
   onError: MagicGreTunnelsUpdateMultipleGreTunnelsError.fromResponse,
 );
- } 
+}
 /// List GRE Tunnel Details
 ///
 /// Lists informtion for a specific GRE tunnel.
 ///
 /// `GET /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<MagicTunnelSingleResponseResult, MagicGreTunnelsListGreTunnelDetailsError>> magicGreTunnelsListGreTunnelDetails({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTunnelSingleResponseResult, MagicGreTunnelsListGreTunnelDetailsError>> magicGreTunnelsListGreTunnelDetails({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -116,13 +116,13 @@ return await execute(
   },
   onError: MagicGreTunnelsListGreTunnelDetailsError.fromResponse,
 );
- } 
+}
 /// Update GRE Tunnel
 ///
 /// Updates a specific GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<MagicTunnelModifiedResponseResult, MagicGreTunnelsUpdateGreTunnelError>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, required MagicGreTunnelAddSingleRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTunnelModifiedResponseResult, MagicGreTunnelsUpdateGreTunnelError>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, required MagicGreTunnelAddSingleRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -144,13 +144,13 @@ return await execute(
   },
   onError: MagicGreTunnelsUpdateGreTunnelError.fromResponse,
 );
- } 
+}
 /// Delete GRE Tunnel
 ///
 /// Disables and removes a specific static GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `DELETE /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<MagicTunnelDeletedResponseResult, MagicGreTunnelsDeleteGreTunnelError>> magicGreTunnelsDeleteGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTunnelDeletedResponseResult, MagicGreTunnelsDeleteGreTunnelError>> magicGreTunnelsDeleteGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -170,5 +170,5 @@ return await execute(
   },
   onError: MagicGreTunnelsDeleteGreTunnelError.fromResponse,
 );
- } 
- }
+}
+}

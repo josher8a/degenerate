@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones0_hold_delete_response/zones0_hold_delete_response_result.dart';import 'package:pub_cloudflare/models/zones_messages2.dart';@immutable final class Zones0HoldPostResponse {const Zones0HoldPostResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory Zones0HoldPostResponse.fromJson(Map<String, dynamic> json) { return Zones0HoldPostResponse(
+factory Zones0HoldPostResponse.fromJson(Map<String, dynamic> json) {return Zones0HoldPostResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<ZonesMessages2> errors;
 
@@ -21,22 +21,22 @@ final Zones0HoldDeleteResponseResult result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-Zones0HoldPostResponse copyWith({List<ZonesMessages2>? errors, List<ZonesMessages2>? messages, Zones0HoldDeleteResponseResult? result, bool? success, }) { return Zones0HoldPostResponse(
+      json.containsKey('success') && json['success'] is bool;}
+Zones0HoldPostResponse copyWith({List<ZonesMessages2>? errors, List<ZonesMessages2>? messages, Zones0HoldDeleteResponseResult? result, bool? success, }) {return Zones0HoldPostResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Zones0HoldPostResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ Zones0HoldPostResponse copyWith({List<ZonesMessages2>? errors, List<ZonesMessage
 
 @override String toString() => 'Zones0HoldPostResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

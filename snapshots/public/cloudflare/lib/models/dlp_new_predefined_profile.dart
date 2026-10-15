@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_predefined_profile_entry_update.dart';@immutable final class DlpNewPredefinedProfile {const DlpNewPredefinedProfile({required this.profileId, this.aiContextEnabled, this.allowedMatchCount = const Omittable.absent(), this.confidenceThreshold = const Omittable.absent(), this.contextAwareness, this.entries, this.ocrEnabled, });
 
-factory DlpNewPredefinedProfile.fromJson(Map<String, dynamic> json) { return DlpNewPredefinedProfile(
+factory DlpNewPredefinedProfile.fromJson(Map<String, dynamic> json) {return DlpNewPredefinedProfile(
   aiContextEnabled: json['ai_context_enabled'] as bool?,
   allowedMatchCount: json.containsKey('allowed_match_count') ? Omittable(json['allowed_match_count'] != null ? (json['allowed_match_count'] as num).toInt() : null) : const Omittable.absent(),
   confidenceThreshold: json.containsKey('confidence_threshold') ? Omittable(json['confidence_threshold'] as String?) : const Omittable.absent(),
@@ -11,7 +11,7 @@ factory DlpNewPredefinedProfile.fromJson(Map<String, dynamic> json) { return Dlp
   entries: (json['entries'] as List<dynamic>?)?.map((e) => DlpPredefinedProfileEntryUpdate.fromJson(e as Map<String, dynamic>)).toList(),
   ocrEnabled: json['ocr_enabled'] as bool?,
   profileId: json['profile_id'] as String,
-); }
+);}
 
 final bool? aiContextEnabled;
 
@@ -40,7 +40,7 @@ String? get confidenceThresholdOrDefault => confidenceThreshold.valueOr('low');
 /// The value of `ocrEnabled`, or its schema default when absent.
 bool get ocrEnabledOrDefault => ocrEnabled ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ai_context_enabled': ?aiContextEnabled,
   if (allowedMatchCount.isPresent) 'allowed_match_count': allowedMatchCount.value,
   if (confidenceThreshold.isPresent) 'confidence_threshold': confidenceThreshold.value,
@@ -48,17 +48,17 @@ Map<String, dynamic> toJson() { return {
   if (entries != null) 'entries': entries?.map((e) => e.toJson()).toList(),
   'ocr_enabled': ?ocrEnabled,
   'profile_id': profileId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('profile_id') && json['profile_id'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('profile_id') && json['profile_id'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final allowedMatchCount$ = allowedMatchCount.value;
 if (allowedMatchCount$ != null) {
   if (allowedMatchCount$ < 0) { errors.add('allowedMatchCount: must be >= 0'); }
   if (allowedMatchCount$ > 1000) { errors.add('allowedMatchCount: must be <= 1000'); }
 }
-return errors; } 
-DlpNewPredefinedProfile copyWith({bool? Function()? aiContextEnabled, Omittable<int?>? allowedMatchCount, Omittable<String?>? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpPredefinedProfileEntryUpdate>? Function()? entries, bool? Function()? ocrEnabled, String? profileId, }) { return DlpNewPredefinedProfile(
+return errors;}
+DlpNewPredefinedProfile copyWith({bool? Function()? aiContextEnabled, Omittable<int?>? allowedMatchCount, Omittable<String?>? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpPredefinedProfileEntryUpdate>? Function()? entries, bool? Function()? ocrEnabled, String? profileId, }) {return DlpNewPredefinedProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold ?? this.confidenceThreshold,
@@ -66,7 +66,7 @@ DlpNewPredefinedProfile copyWith({bool? Function()? aiContextEnabled, Omittable<
   entries: entries != null ? entries() : this.entries,
   ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
   profileId: profileId ?? this.profileId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewPredefinedProfile &&
           aiContextEnabled == other.aiContextEnabled &&
@@ -81,4 +81,4 @@ DlpNewPredefinedProfile copyWith({bool? Function()? aiContextEnabled, Omittable<
 
 @override String toString() => 'DlpNewPredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, ocrEnabled: $ocrEnabled, profileId: $profileId)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_platform.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_status.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timestamp.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_version.dart';@immutable final class Devices {const Devices({this.deviceId, this.deviceName, this.eligible, this.ineligibleReason, this.personEmail, this.platform, this.registrationId, this.status, this.timestamp, this.version, });
 
-factory Devices.fromJson(Map<String, dynamic> json) { return Devices(
+factory Devices.fromJson(Map<String, dynamic> json) {return Devices(
   deviceId: json['deviceId'] as String?,
   deviceName: json['deviceName'] as String?,
   eligible: json['eligible'] as bool?,
@@ -14,7 +14,7 @@ factory Devices.fromJson(Map<String, dynamic> json) { return Devices(
   status: json['status'] != null ? DigitalExperienceMonitoringStatus.fromJson(json['status'] as String) : null,
   timestamp: json['timestamp'] != null ? DigitalExperienceMonitoringTimestamp.fromJson(json['timestamp'] as String) : null,
   version: json['version'] != null ? DigitalExperienceMonitoringVersion.fromJson(json['version'] as String) : null,
-); }
+);}
 
 /// Device identifier (UUID v4)
 final String? deviceId;
@@ -42,7 +42,7 @@ final DigitalExperienceMonitoringTimestamp? timestamp;
 
 final DigitalExperienceMonitoringVersion? version;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deviceId': ?deviceId,
   'deviceName': ?deviceName,
   'eligible': ?eligible,
@@ -53,9 +53,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (timestamp != null) 'timestamp': timestamp?.toJson(),
   if (version != null) 'version': version?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deviceId', 'deviceName', 'eligible', 'ineligibleReason', 'personEmail', 'platform', 'registrationId', 'status', 'timestamp', 'version'}.contains(key)); } 
-Devices copyWith({String? Function()? deviceId, String? Function()? deviceName, bool? Function()? eligible, String? Function()? ineligibleReason, String? Function()? personEmail, DigitalExperienceMonitoringPlatform? Function()? platform, String? Function()? registrationId, DigitalExperienceMonitoringStatus? Function()? status, DigitalExperienceMonitoringTimestamp? Function()? timestamp, DigitalExperienceMonitoringVersion? Function()? version, }) { return Devices(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'deviceId', 'deviceName', 'eligible', 'ineligibleReason', 'personEmail', 'platform', 'registrationId', 'status', 'timestamp', 'version'}.contains(key));}
+Devices copyWith({String? Function()? deviceId, String? Function()? deviceName, bool? Function()? eligible, String? Function()? ineligibleReason, String? Function()? personEmail, DigitalExperienceMonitoringPlatform? Function()? platform, String? Function()? registrationId, DigitalExperienceMonitoringStatus? Function()? status, DigitalExperienceMonitoringTimestamp? Function()? timestamp, DigitalExperienceMonitoringVersion? Function()? version, }) {return Devices(
   deviceId: deviceId != null ? deviceId() : this.deviceId,
   deviceName: deviceName != null ? deviceName() : this.deviceName,
   eligible: eligible != null ? eligible() : this.eligible,
@@ -66,7 +66,7 @@ Devices copyWith({String? Function()? deviceId, String? Function()? deviceName, 
   status: status != null ? status() : this.status,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   version: version != null ? version() : this.version,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Devices &&
           deviceId == other.deviceId &&
@@ -84,4 +84,4 @@ Devices copyWith({String? Function()? deviceId, String? Function()? deviceName, 
 
 @override String toString() => 'Devices(\n  deviceId: $deviceId,\n  deviceName: $deviceName,\n  eligible: $eligible,\n  ineligibleReason: $ineligibleReason,\n  personEmail: $personEmail,\n  platform: $platform,\n  registrationId: $registrationId,\n  status: $status,\n  timestamp: $timestamp,\n  version: $version,\n)';
 
- }
+}

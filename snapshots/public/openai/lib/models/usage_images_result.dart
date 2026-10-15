@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageImagesResultObject {const UsageImagesResultObject();
 
-factory UsageImagesResultObject.fromJson(String json) { return switch (json) {
+factory UsageImagesResultObject.fromJson(String json) {return switch (json) {
   'organization.usage.images.result' => organizationUsageImagesResult,
   _ => UsageImagesResultObject$Unknown(json),
-}; }
+};}
 
 static const UsageImagesResultObject organizationUsageImagesResult = UsageImagesResultObject$organizationUsageImagesResult._();
 
 static const List<UsageImagesResultObject> values = [organizationUsageImagesResult];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'organization.usage.images.result' => 'organizationUsageImagesResult',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UsageImagesResultObject$Unknown; } 
+bool get isUnknown {return this is UsageImagesResultObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() organizationUsageImagesResult, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() organizationUsageImagesResult, required W Function(String value) $unknown, }) {return switch (this) {
       UsageImagesResultObject$organizationUsageImagesResult() => organizationUsageImagesResult(),
       UsageImagesResultObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageImagesResult, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageImagesResult, W Function(String value)? $unknown, }) {return switch (this) {
       UsageImagesResultObject$organizationUsageImagesResult() => organizationUsageImagesResult != null ? organizationUsageImagesResult() : orElse(value),
       UsageImagesResultObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'UsageImagesResultObject($value)';
 
- }
+}
 @immutable final class UsageImagesResultObject$organizationUsageImagesResult extends UsageImagesResultObject {const UsageImagesResultObject$organizationUsageImagesResult._();
 
 @override String get value => 'organization.usage.images.result';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => 'organization.usage.images.result'.hashCode;
 
- }
+}
 @immutable final class UsageImagesResultObject$Unknown extends UsageImagesResultObject {const UsageImagesResultObject$Unknown(this.value);
 
 @override final String value;
@@ -52,11 +52,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? organiza
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The aggregated images usage details of the specific time bucket.
 @immutable final class UsageImagesResult {const UsageImagesResult({required this.object, required this.images, required this.numModelRequests, this.source = const Omittable.absent(), this.size = const Omittable.absent(), this.projectId = const Omittable.absent(), this.userId = const Omittable.absent(), this.apiKeyId = const Omittable.absent(), this.model = const Omittable.absent(), });
 
-factory UsageImagesResult.fromJson(Map<String, dynamic> json) { return UsageImagesResult(
+factory UsageImagesResult.fromJson(Map<String, dynamic> json) {return UsageImagesResult(
   object: UsageImagesResultObject.fromJson(json['object'] as String),
   images: (json['images'] as num).toInt(),
   numModelRequests: (json['num_model_requests'] as num).toInt(),
@@ -66,7 +66,7 @@ factory UsageImagesResult.fromJson(Map<String, dynamic> json) { return UsageImag
   userId: json.containsKey('user_id') ? Omittable(json['user_id'] as String?) : const Omittable.absent(),
   apiKeyId: json.containsKey('api_key_id') ? Omittable(json['api_key_id'] as String?) : const Omittable.absent(),
   model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final UsageImagesResultObject object;
 
@@ -94,7 +94,7 @@ final Omittable<String?> apiKeyId;
 /// When `group_by=model`, this field provides the model name of the grouped usage result.
 final Omittable<String?> model;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'object': object.toJson(),
   'images': images,
   'num_model_requests': numModelRequests,
@@ -104,11 +104,11 @@ Map<String, dynamic> toJson() { return {
   if (userId.isPresent) 'user_id': userId.value,
   if (apiKeyId.isPresent) 'api_key_id': apiKeyId.value,
   if (model.isPresent) 'model': model.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] == 'organization.usage.images.result' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('object') && json['object'] == 'organization.usage.images.result' &&
       json.containsKey('images') && json['images'] is num &&
-      json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 
-UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? numModelRequests, Omittable<String?>? source, Omittable<String?>? size, Omittable<String?>? projectId, Omittable<String?>? userId, Omittable<String?>? apiKeyId, Omittable<String?>? model, }) { return UsageImagesResult(
+      json.containsKey('num_model_requests') && json['num_model_requests'] is num;}
+UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? numModelRequests, Omittable<String?>? source, Omittable<String?>? size, Omittable<String?>? projectId, Omittable<String?>? userId, Omittable<String?>? apiKeyId, Omittable<String?>? model, }) {return UsageImagesResult(
   object: object ?? this.object,
   images: images ?? this.images,
   numModelRequests: numModelRequests ?? this.numModelRequests,
@@ -118,7 +118,7 @@ UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? n
   userId: userId ?? this.userId,
   apiKeyId: apiKeyId ?? this.apiKeyId,
   model: model ?? this.model,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UsageImagesResult &&
           object == other.object &&
@@ -135,4 +135,4 @@ UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? n
 
 @override String toString() => 'UsageImagesResult(\n  object: $object,\n  images: $images,\n  numModelRequests: $numModelRequests,\n  source: $source,\n  size: $size,\n  projectId: $projectId,\n  userId: $userId,\n  apiKeyId: $apiKeyId,\n  model: $model,\n)';
 
- }
+}

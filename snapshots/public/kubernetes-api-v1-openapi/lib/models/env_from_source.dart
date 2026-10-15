@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/config_map_env_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_env_source.dart';/// EnvFromSource represents the source of a set of ConfigMaps or Secrets
 @immutable final class EnvFromSource {const EnvFromSource({this.configMapRef, this.prefix, this.secretRef, });
 
-factory EnvFromSource.fromJson(Map<String, dynamic> json) { return EnvFromSource(
+factory EnvFromSource.fromJson(Map<String, dynamic> json) {return EnvFromSource(
   configMapRef: json['configMapRef'] != null ? ConfigMapEnvSource.fromJson(json['configMapRef'] as Map<String, dynamic>) : null,
   prefix: json['prefix'] as String?,
   secretRef: json['secretRef'] != null ? SecretEnvSource.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The ConfigMap to select from
 final ConfigMapEnvSource? configMapRef;
@@ -19,17 +19,17 @@ final String? prefix;
 /// The Secret to select from
 final SecretEnvSource? secretRef;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (configMapRef != null) 'configMapRef': configMapRef?.toJson(),
   'prefix': ?prefix,
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configMapRef', 'prefix', 'secretRef'}.contains(key)); } 
-EnvFromSource copyWith({ConfigMapEnvSource? Function()? configMapRef, String? Function()? prefix, SecretEnvSource? Function()? secretRef, }) { return EnvFromSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'configMapRef', 'prefix', 'secretRef'}.contains(key));}
+EnvFromSource copyWith({ConfigMapEnvSource? Function()? configMapRef, String? Function()? prefix, SecretEnvSource? Function()? secretRef, }) {return EnvFromSource(
   configMapRef: configMapRef != null ? configMapRef() : this.configMapRef,
   prefix: prefix != null ? prefix() : this.prefix,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EnvFromSource &&
           configMapRef == other.configMapRef &&
@@ -40,4 +40,4 @@ EnvFromSource copyWith({ConfigMapEnvSource? Function()? configMapRef, String? Fu
 
 @override String toString() => 'EnvFromSource(configMapRef: $configMapRef, prefix: $prefix, secretRef: $secretRef)';
 
- }
+}

@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RegistryPackageRegistry {const RegistryPackageRegistry({this.aboutUrl, this.name, this.type, this.url, this.vendor, });
 
-factory RegistryPackageRegistry.fromJson(Map<String, dynamic> json) { return RegistryPackageRegistry(
+factory RegistryPackageRegistry.fromJson(Map<String, dynamic> json) {return RegistryPackageRegistry(
   aboutUrl: json['about_url'] as String?,
   name: json['name'] as String?,
   type: json['type'] as String?,
   url: json['url'] as String?,
   vendor: json['vendor'] as String?,
-); }
+);}
 
 final String? aboutUrl;
 
@@ -21,21 +21,21 @@ final String? url;
 
 final String? vendor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'about_url': ?aboutUrl,
   'name': ?name,
   'type': ?type,
   'url': ?url,
   'vendor': ?vendor,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'about_url', 'name', 'type', 'url', 'vendor'}.contains(key)); } 
-RegistryPackageRegistry copyWith({String? Function()? aboutUrl, String? Function()? name, String? Function()? type, String? Function()? url, String? Function()? vendor, }) { return RegistryPackageRegistry(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'about_url', 'name', 'type', 'url', 'vendor'}.contains(key));}
+RegistryPackageRegistry copyWith({String? Function()? aboutUrl, String? Function()? name, String? Function()? type, String? Function()? url, String? Function()? vendor, }) {return RegistryPackageRegistry(
   aboutUrl: aboutUrl != null ? aboutUrl() : this.aboutUrl,
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
   vendor: vendor != null ? vendor() : this.vendor,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RegistryPackageRegistry &&
           aboutUrl == other.aboutUrl &&
@@ -48,4 +48,4 @@ RegistryPackageRegistry copyWith({String? Function()? aboutUrl, String? Function
 
 @override String toString() => 'RegistryPackageRegistry(aboutUrl: $aboutUrl, name: $name, type: $type, url: $url, vendor: $vendor)';
 
- }
+}

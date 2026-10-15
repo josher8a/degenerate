@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_object.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_status.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_usage.dart';import 'package:pub_openai/models/realtime_beta_response/status_details.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/modalities.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_output_audio_format.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The response resource.
 @immutable final class RealtimeBetaResponse {const RealtimeBetaResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata = const Omittable.absent(), this.usage, this.conversationId, this.voice, this.modalities, this.outputAudioFormat, this.temperature, this.maxOutputTokens, });
 
-factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponse(
+factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) {return RealtimeBetaResponse(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeBetaResponseObject.fromJson(json['object'] as String) : null,
   status: json['status'] != null ? RealtimeBetaResponseStatus.fromJson(json['status'] as String) : null,
@@ -18,7 +18,7 @@ factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return Realti
   outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
-); }
+);}
 
 /// The unique ID of the response.
 final String? id;
@@ -88,7 +88,7 @@ final double? temperature;
 /// 
 final MaxOutputTokens? maxOutputTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (object != null) 'object': object?.toJson(),
   if (status != null) 'status': status?.toJson(),
@@ -102,9 +102,9 @@ Map<String, dynamic> toJson() { return {
   if (outputAudioFormat != null) 'output_audio_format': outputAudioFormat?.toJson(),
   'temperature': ?temperature,
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'usage', 'conversation_id', 'voice', 'modalities', 'output_audio_format', 'temperature', 'max_output_tokens'}.contains(key)); } 
-RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, StatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Omittable<Map<String,String>?>? metadata, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, VoiceIdsShared? Function()? voice, List<Modalities>? Function()? modalities, RealtimeBetaResponseCreateParamsOutputAudioFormat? Function()? outputAudioFormat, double? Function()? temperature, MaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'usage', 'conversation_id', 'voice', 'modalities', 'output_audio_format', 'temperature', 'max_output_tokens'}.contains(key));}
+RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, StatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Omittable<Map<String,String>?>? metadata, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, VoiceIdsShared? Function()? voice, List<Modalities>? Function()? modalities, RealtimeBetaResponseCreateParamsOutputAudioFormat? Function()? outputAudioFormat, double? Function()? temperature, MaxOutputTokens? Function()? maxOutputTokens, }) {return RealtimeBetaResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   status: status != null ? status() : this.status,
@@ -118,7 +118,7 @@ RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObjec
   outputAudioFormat: outputAudioFormat != null ? outputAudioFormat() : this.outputAudioFormat,
   temperature: temperature != null ? temperature() : this.temperature,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaResponse &&
           id == other.id &&
@@ -139,4 +139,4 @@ RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObjec
 
 @override String toString() => 'RealtimeBetaResponse(\n  id: $id,\n  object: $object,\n  status: $status,\n  statusDetails: $statusDetails,\n  output: $output,\n  metadata: $metadata,\n  usage: $usage,\n  conversationId: $conversationId,\n  voice: $voice,\n  modalities: $modalities,\n  outputAudioFormat: $outputAudioFormat,\n  temperature: $temperature,\n  maxOutputTokens: $maxOutputTokens,\n)';
 
- }
+}

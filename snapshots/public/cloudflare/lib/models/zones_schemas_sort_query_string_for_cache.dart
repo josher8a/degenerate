@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache_value.dart';/// Cloudflare will treat files with the same query strings as the same file in cache, regardless of the order of the query strings. This is limited to Enterprise Zones.
 @immutable final class ZonesSchemasSortQueryStringForCache {const ZonesSchemasSortQueryStringForCache({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
-factory ZonesSchemasSortQueryStringForCache.fromJson(Map<String, dynamic> json) { return ZonesSchemasSortQueryStringForCache(
+factory ZonesSchemasSortQueryStringForCache.fromJson(Map<String, dynamic> json) {return ZonesSchemasSortQueryStringForCache(
   editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesSortQueryStringForCacheValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -29,20 +29,20 @@ final ZonesSortQueryStringForCacheValue value;
 /// The value of `editable`, or its schema default when absent.
 bool get editableOrDefault => editable ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesSchemasSortQueryStringForCache copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesSortQueryStringForCacheValue? value, }) { return ZonesSchemasSortQueryStringForCache(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesSchemasSortQueryStringForCache copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesSortQueryStringForCacheValue? value, }) {return ZonesSchemasSortQueryStringForCache(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesSchemasSortQueryStringForCache &&
           editable == other.editable &&
@@ -54,4 +54,4 @@ ZonesSchemasSortQueryStringForCache copyWith({bool? Function()? editable, dynami
 
 @override String toString() => 'ZonesSchemasSortQueryStringForCache(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

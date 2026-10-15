@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_mandate.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/payment_flows_automatic_payment_methods_setup_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_method_config_biz_payment_method_configuration_details.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';import 'package:pub_stripe_spec3/models/setup_intent/latest_attempt.dart';import 'package:pub_stripe_spec3/models/setup_intent/single_use_mandate.dart';import 'package:pub_stripe_spec3/models/setup_intent_next_action.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
 sealed class SetupIntentCancellationReason {const SetupIntentCancellationReason();
 
-factory SetupIntentCancellationReason.fromJson(String json) { return switch (json) {
+factory SetupIntentCancellationReason.fromJson(String json) {return switch (json) {
   'abandoned' => abandoned,
   'duplicate' => duplicate,
   'requested_by_customer' => requestedByCustomer,
   _ => SetupIntentCancellationReason$Unknown(json),
-}; }
+};}
 
 static const SetupIntentCancellationReason abandoned = SetupIntentCancellationReason$abandoned._();
 
@@ -20,33 +20,33 @@ static const SetupIntentCancellationReason requestedByCustomer = SetupIntentCanc
 static const List<SetupIntentCancellationReason> values = [abandoned, duplicate, requestedByCustomer];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'abandoned' => 'abandoned',
   'duplicate' => 'duplicate',
   'requested_by_customer' => 'requestedByCustomer',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SetupIntentCancellationReason$Unknown; } 
+bool get isUnknown {return this is SetupIntentCancellationReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() abandoned, required W Function() duplicate, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() abandoned, required W Function() duplicate, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) {return switch (this) {
       SetupIntentCancellationReason$abandoned() => abandoned(),
       SetupIntentCancellationReason$duplicate() => duplicate(),
       SetupIntentCancellationReason$requestedByCustomer() => requestedByCustomer(),
       SetupIntentCancellationReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? duplicate, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? duplicate, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) {return switch (this) {
       SetupIntentCancellationReason$abandoned() => abandoned != null ? abandoned() : orElse(value),
       SetupIntentCancellationReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
       SetupIntentCancellationReason$requestedByCustomer() => requestedByCustomer != null ? requestedByCustomer() : orElse(value),
       SetupIntentCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SetupIntentCancellationReason($value)';
 
- }
+}
 @immutable final class SetupIntentCancellationReason$abandoned extends SetupIntentCancellationReason {const SetupIntentCancellationReason$abandoned._();
 
 @override String get value => 'abandoned';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'abandoned'.hashCode;
 
- }
+}
 @immutable final class SetupIntentCancellationReason$duplicate extends SetupIntentCancellationReason {const SetupIntentCancellationReason$duplicate._();
 
 @override String get value => 'duplicate';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'duplicate'.hashCode;
 
- }
+}
 @immutable final class SetupIntentCancellationReason$requestedByCustomer extends SetupIntentCancellationReason {const SetupIntentCancellationReason$requestedByCustomer._();
 
 @override String get value => 'requested_by_customer';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => 'requested_by_customer'.hashCode;
 
- }
+}
 @immutable final class SetupIntentCancellationReason$Unknown extends SetupIntentCancellationReason {const SetupIntentCancellationReason$Unknown(this.value);
 
 @override final String value;
@@ -83,41 +83,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandone
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class SetupIntentObject {const SetupIntentObject();
 
-factory SetupIntentObject.fromJson(String json) { return switch (json) {
+factory SetupIntentObject.fromJson(String json) {return switch (json) {
   'setup_intent' => setupIntent,
   _ => SetupIntentObject$Unknown(json),
-}; }
+};}
 
 static const SetupIntentObject setupIntent = SetupIntentObject$setupIntent._();
 
 static const List<SetupIntentObject> values = [setupIntent];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'setup_intent' => 'setupIntent',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SetupIntentObject$Unknown; } 
+bool get isUnknown {return this is SetupIntentObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() setupIntent, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() setupIntent, required W Function(String value) $unknown, }) {return switch (this) {
       SetupIntentObject$setupIntent() => setupIntent(),
       SetupIntentObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? setupIntent, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? setupIntent, W Function(String value)? $unknown, }) {return switch (this) {
       SetupIntentObject$setupIntent() => setupIntent != null ? setupIntent() : orElse(value),
       SetupIntentObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SetupIntentObject($value)';
 
- }
+}
 @immutable final class SetupIntentObject$setupIntent extends SetupIntentObject {const SetupIntentObject$setupIntent._();
 
 @override String get value => 'setup_intent';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? setupInt
 
 @override int get hashCode => 'setup_intent'.hashCode;
 
- }
+}
 @immutable final class SetupIntentObject$Unknown extends SetupIntentObject {const SetupIntentObject$Unknown(this.value);
 
 @override final String value;
@@ -136,11 +136,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? setupInt
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// [Status](https://docs.stripe.com/payments/intents#intent-statuses) of this SetupIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `canceled`, or `succeeded`.
 sealed class SetupIntentStatus {const SetupIntentStatus();
 
-factory SetupIntentStatus.fromJson(String json) { return switch (json) {
+factory SetupIntentStatus.fromJson(String json) {return switch (json) {
   'canceled' => canceled,
   'processing' => processing,
   'requires_action' => requiresAction,
@@ -148,7 +148,7 @@ factory SetupIntentStatus.fromJson(String json) { return switch (json) {
   'requires_payment_method' => requiresPaymentMethod,
   'succeeded' => succeeded,
   _ => SetupIntentStatus$Unknown(json),
-}; }
+};}
 
 static const SetupIntentStatus canceled = SetupIntentStatus$canceled._();
 
@@ -165,9 +165,9 @@ static const SetupIntentStatus succeeded = SetupIntentStatus$succeeded._();
 static const List<SetupIntentStatus> values = [canceled, processing, requiresAction, requiresConfirmation, requiresPaymentMethod, succeeded];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'canceled' => 'canceled',
   'processing' => 'processing',
   'requires_action' => 'requiresAction',
@@ -175,11 +175,11 @@ String get name { return switch (value) {
   'requires_payment_method' => 'requiresPaymentMethod',
   'succeeded' => 'succeeded',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SetupIntentStatus$Unknown; } 
+bool get isUnknown {return this is SetupIntentStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() canceled, required W Function() processing, required W Function() requiresAction, required W Function() requiresConfirmation, required W Function() requiresPaymentMethod, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() canceled, required W Function() processing, required W Function() requiresAction, required W Function() requiresConfirmation, required W Function() requiresPaymentMethod, required W Function() succeeded, required W Function(String value) $unknown, }) {return switch (this) {
       SetupIntentStatus$canceled() => canceled(),
       SetupIntentStatus$processing() => processing(),
       SetupIntentStatus$requiresAction() => requiresAction(),
@@ -187,9 +187,9 @@ W when<W>({required W Function() canceled, required W Function() processing, req
       SetupIntentStatus$requiresPaymentMethod() => requiresPaymentMethod(),
       SetupIntentStatus$succeeded() => succeeded(),
       SetupIntentStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? processing, W Function()? requiresAction, W Function()? requiresConfirmation, W Function()? requiresPaymentMethod, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? processing, W Function()? requiresAction, W Function()? requiresConfirmation, W Function()? requiresPaymentMethod, W Function()? succeeded, W Function(String value)? $unknown, }) {return switch (this) {
       SetupIntentStatus$canceled() => canceled != null ? canceled() : orElse(value),
       SetupIntentStatus$processing() => processing != null ? processing() : orElse(value),
       SetupIntentStatus$requiresAction() => requiresAction != null ? requiresAction() : orElse(value),
@@ -197,10 +197,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
       SetupIntentStatus$requiresPaymentMethod() => requiresPaymentMethod != null ? requiresPaymentMethod() : orElse(value),
       SetupIntentStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
       SetupIntentStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SetupIntentStatus($value)';
 
- }
+}
 @immutable final class SetupIntentStatus$canceled extends SetupIntentStatus {const SetupIntentStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -209,7 +209,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class SetupIntentStatus$processing extends SetupIntentStatus {const SetupIntentStatus$processing._();
 
 @override String get value => 'processing';
@@ -218,7 +218,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'processing'.hashCode;
 
- }
+}
 @immutable final class SetupIntentStatus$requiresAction extends SetupIntentStatus {const SetupIntentStatus$requiresAction._();
 
 @override String get value => 'requires_action';
@@ -227,7 +227,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'requires_action'.hashCode;
 
- }
+}
 @immutable final class SetupIntentStatus$requiresConfirmation extends SetupIntentStatus {const SetupIntentStatus$requiresConfirmation._();
 
 @override String get value => 'requires_confirmation';
@@ -236,7 +236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'requires_confirmation'.hashCode;
 
- }
+}
 @immutable final class SetupIntentStatus$requiresPaymentMethod extends SetupIntentStatus {const SetupIntentStatus$requiresPaymentMethod._();
 
 @override String get value => 'requires_payment_method';
@@ -245,7 +245,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'requires_payment_method'.hashCode;
 
- }
+}
 @immutable final class SetupIntentStatus$succeeded extends SetupIntentStatus {const SetupIntentStatus$succeeded._();
 
 @override String get value => 'succeeded';
@@ -254,7 +254,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => 'succeeded'.hashCode;
 
- }
+}
 @immutable final class SetupIntentStatus$Unknown extends SetupIntentStatus {const SetupIntentStatus$Unknown(this.value);
 
 @override final String value;
@@ -264,7 +264,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A SetupIntent guides you through the process of setting up and saving a customer's payment credentials for future payments.
 /// For example, you can use a SetupIntent to set up and save your customer's card without immediately collecting a payment.
 /// Later, you can use [PaymentIntents](https://api.stripe.com#payment_intents) to drive the payment flow.
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled
 /// Related guide: [Setup Intents API](https://docs.stripe.com/payments/setup-intents)
 @immutable final class SetupIntent {const SetupIntent({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethodTypes, required this.status, required this.usage, this.application = const Omittable.absent(), this.attachToSelf, this.automaticPaymentMethods = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.clientSecret = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.excludedPaymentMethodTypes = const Omittable.absent(), this.flowDirections = const Omittable.absent(), this.lastSetupError = const Omittable.absent(), this.latestAttempt = const Omittable.absent(), this.mandate = const Omittable.absent(), this.metadata = const Omittable.absent(), this.nextAction = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.paymentMethod = const Omittable.absent(), this.paymentMethodConfigurationDetails = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), this.singleUseMandate = const Omittable.absent(), });
 
-factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
+factory SetupIntent.fromJson(Map<String, dynamic> json) {return SetupIntent(
   application: json.containsKey('application') ? Omittable(json['application'] != null ? ApplicationFeeApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   attachToSelf: json['attach_to_self'] as bool?,
   automaticPaymentMethods: json.containsKey('automatic_payment_methods') ? Omittable(json['automatic_payment_methods'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -316,7 +316,7 @@ factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
   singleUseMandate: json.containsKey('single_use_mandate') ? Omittable(json['single_use_mandate'] != null ? SingleUseMandate.fromJson(json['single_use_mandate']) : null) : const Omittable.absent(),
   status: SetupIntentStatus.fromJson(json['status'] as String),
   usage: json['usage'] as String,
-); }
+);}
 
 /// ID of the Connect application that created the SetupIntent.
 final Omittable<ApplicationFeeApplication?> application;
@@ -411,7 +411,7 @@ final SetupIntentStatus status;
 /// Use `on_session` if you intend to only reuse the payment method when the customer is in your checkout flow. Use `off_session` if your customer may or may not be in your checkout flow. If not provided, this value defaults to `off_session`.
 final String usage;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (application.isPresent) 'application': application.value?.toJson(),
   'attach_to_self': ?attachToSelf,
   if (automaticPaymentMethods.isPresent) 'automatic_payment_methods': automaticPaymentMethods.value?.toJson(),
@@ -439,16 +439,16 @@ Map<String, dynamic> toJson() { return {
   if (singleUseMandate.isPresent) 'single_use_mandate': singleUseMandate.value?.toJson(),
   'status': status.toJson(),
   'usage': usage,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('payment_method_types') &&
       json.containsKey('status') &&
-      json.containsKey('usage') && json['usage'] is String; } 
+      json.containsKey('usage') && json['usage'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final clientSecret$ = clientSecret.value;
 if (clientSecret$ != null) {
   if (clientSecret$.runes.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
@@ -463,8 +463,8 @@ if (description$ != null) {
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (usage.runes.length > 5000) { errors.add('usage: length must be <= 5000'); }
-return errors; } 
-SetupIntent copyWith({Omittable<ApplicationFeeApplication?>? application, bool? Function()? attachToSelf, Omittable<PaymentFlowsAutomaticPaymentMethodsSetupIntent?>? automaticPaymentMethods, Omittable<SetupIntentCancellationReason?>? cancellationReason, Omittable<String?>? clientSecret, int? created, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, Omittable<List<PaymentIntentExcludedPaymentMethodTypes>?>? excludedPaymentMethodTypes, Omittable<List<FlowDirections>?>? flowDirections, String? id, Omittable<Errors?>? lastSetupError, Omittable<LatestAttempt?>? latestAttempt, bool? livemode, Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountMandate?>? mandate, Omittable<Map<String,String>?>? metadata, Omittable<SetupIntentNextAction?>? nextAction, SetupIntentObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod?>? paymentMethod, Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?>? paymentMethodConfigurationDetails, Omittable<SetupIntentPaymentMethodOptions?>? paymentMethodOptions, List<String>? paymentMethodTypes, Omittable<SingleUseMandate?>? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
+return errors;}
+SetupIntent copyWith({Omittable<ApplicationFeeApplication?>? application, bool? Function()? attachToSelf, Omittable<PaymentFlowsAutomaticPaymentMethodsSetupIntent?>? automaticPaymentMethods, Omittable<SetupIntentCancellationReason?>? cancellationReason, Omittable<String?>? clientSecret, int? created, Omittable<BankAccountCustomer?>? customer, Omittable<String?>? customerAccount, Omittable<String?>? description, Omittable<List<PaymentIntentExcludedPaymentMethodTypes>?>? excludedPaymentMethodTypes, Omittable<List<FlowDirections>?>? flowDirections, String? id, Omittable<Errors?>? lastSetupError, Omittable<LatestAttempt?>? latestAttempt, bool? livemode, Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountMandate?>? mandate, Omittable<Map<String,String>?>? metadata, Omittable<SetupIntentNextAction?>? nextAction, SetupIntentObject? object, Omittable<ChargeOnBehalfOf?>? onBehalfOf, Omittable<InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod?>? paymentMethod, Omittable<PaymentMethodConfigBizPaymentMethodConfigurationDetails?>? paymentMethodConfigurationDetails, Omittable<SetupIntentPaymentMethodOptions?>? paymentMethodOptions, List<String>? paymentMethodTypes, Omittable<SingleUseMandate?>? singleUseMandate, SetupIntentStatus? status, String? usage, }) {return SetupIntent(
   application: application ?? this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   automaticPaymentMethods: automaticPaymentMethods ?? this.automaticPaymentMethods,
@@ -492,7 +492,7 @@ SetupIntent copyWith({Omittable<ApplicationFeeApplication?>? application, bool? 
   singleUseMandate: singleUseMandate ?? this.singleUseMandate,
   status: status ?? this.status,
   usage: usage ?? this.usage,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntent &&
           application == other.application &&
@@ -529,4 +529,4 @@ SetupIntent copyWith({Omittable<ApplicationFeeApplication?>? application, bool? 
 
 @override String toString() => 'SetupIntent(\n  application: $application,\n  attachToSelf: $attachToSelf,\n  automaticPaymentMethods: $automaticPaymentMethods,\n  cancellationReason: $cancellationReason,\n  clientSecret: $clientSecret,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  description: $description,\n  excludedPaymentMethodTypes: $excludedPaymentMethodTypes,\n  flowDirections: $flowDirections,\n  id: $id,\n  lastSetupError: $lastSetupError,\n  latestAttempt: $latestAttempt,\n  livemode: $livemode,\n  mandate: $mandate,\n  metadata: $metadata,\n  nextAction: $nextAction,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  paymentMethod: $paymentMethod,\n  paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails,\n  paymentMethodOptions: $paymentMethodOptions,\n  paymentMethodTypes: $paymentMethodTypes,\n  singleUseMandate: $singleUseMandate,\n  status: $status,\n  usage: $usage,\n)';
 
- }
+}

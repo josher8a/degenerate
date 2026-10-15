@@ -5,9 +5,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Options for stre
 /// 
 @immutable final class ResponseStreamOptions {const ResponseStreamOptions({this.includeObfuscation});
 
-factory ResponseStreamOptions.fromJson(Map<String, dynamic> json) { return ResponseStreamOptions(
+factory ResponseStreamOptions.fromJson(Map<String, dynamic> json) {return ResponseStreamOptions(
   includeObfuscation: json['include_obfuscation'] as bool?,
-); }
+);}
 
 /// When true, stream obfuscation will be enabled. Stream obfuscation adds
 /// random characters to an `obfuscation` field on streaming delta events to
@@ -19,13 +19,13 @@ factory ResponseStreamOptions.fromJson(Map<String, dynamic> json) { return Respo
 /// 
 final bool? includeObfuscation;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'include_obfuscation': ?includeObfuscation,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include_obfuscation'}.contains(key)); } 
-ResponseStreamOptions copyWith({bool? Function()? includeObfuscation}) { return ResponseStreamOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'include_obfuscation'}.contains(key));}
+ResponseStreamOptions copyWith({bool? Function()? includeObfuscation}) {return ResponseStreamOptions(
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseStreamOptions &&
           includeObfuscation == other.includeObfuscation;
@@ -34,4 +34,4 @@ ResponseStreamOptions copyWith({bool? Function()? includeObfuscation}) { return 
 
 @override String toString() => 'ResponseStreamOptions(includeObfuscation: $includeObfuscation)';
 
- }
+}

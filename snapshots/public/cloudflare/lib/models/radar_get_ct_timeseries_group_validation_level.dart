@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetCtTimeseriesGroupValidationLevel {const RadarGetCtTimeseriesGroupValidationLevel();
 
-factory RadarGetCtTimeseriesGroupValidationLevel.fromJson(String json) { return switch (json) {
+factory RadarGetCtTimeseriesGroupValidationLevel.fromJson(String json) {return switch (json) {
   'DOMAIN' => domain,
   'ORGANIZATION' => organization,
   'EXTENDED' => extended,
   _ => RadarGetCtTimeseriesGroupValidationLevel$Unknown(json),
-}; }
+};}
 
 static const RadarGetCtTimeseriesGroupValidationLevel domain = RadarGetCtTimeseriesGroupValidationLevel$domain._();
 
@@ -19,33 +19,33 @@ static const RadarGetCtTimeseriesGroupValidationLevel extended = RadarGetCtTimes
 static const List<RadarGetCtTimeseriesGroupValidationLevel> values = [domain, organization, extended];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'DOMAIN' => 'domain',
   'ORGANIZATION' => 'organization',
   'EXTENDED' => 'extended',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetCtTimeseriesGroupValidationLevel$Unknown; } 
+bool get isUnknown {return this is RadarGetCtTimeseriesGroupValidationLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() domain, required W Function() organization, required W Function() extended, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() domain, required W Function() organization, required W Function() extended, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetCtTimeseriesGroupValidationLevel$domain() => domain(),
       RadarGetCtTimeseriesGroupValidationLevel$organization() => organization(),
       RadarGetCtTimeseriesGroupValidationLevel$extended() => extended(),
       RadarGetCtTimeseriesGroupValidationLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, W Function()? organization, W Function()? extended, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, W Function()? organization, W Function()? extended, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetCtTimeseriesGroupValidationLevel$domain() => domain != null ? domain() : orElse(value),
       RadarGetCtTimeseriesGroupValidationLevel$organization() => organization != null ? organization() : orElse(value),
       RadarGetCtTimeseriesGroupValidationLevel$extended() => extended != null ? extended() : orElse(value),
       RadarGetCtTimeseriesGroupValidationLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetCtTimeseriesGroupValidationLevel($value)';
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupValidationLevel$domain extends RadarGetCtTimeseriesGroupValidationLevel {const RadarGetCtTimeseriesGroupValidationLevel$domain._();
 
 @override String get value => 'DOMAIN';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'DOMAIN'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupValidationLevel$organization extends RadarGetCtTimeseriesGroupValidationLevel {const RadarGetCtTimeseriesGroupValidationLevel$organization._();
 
 @override String get value => 'ORGANIZATION';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'ORGANIZATION'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupValidationLevel$extended extends RadarGetCtTimeseriesGroupValidationLevel {const RadarGetCtTimeseriesGroupValidationLevel$extended._();
 
 @override String get value => 'EXTENDED';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => 'EXTENDED'.hashCode;
 
- }
+}
 @immutable final class RadarGetCtTimeseriesGroupValidationLevel$Unknown extends RadarGetCtTimeseriesGroupValidationLevel {const RadarGetCtTimeseriesGroupValidationLevel$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

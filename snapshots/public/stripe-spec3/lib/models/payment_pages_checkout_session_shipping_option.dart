@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost/invoices_resource_shipping_cost_shipping_rate.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionShippingOption {const PaymentPagesCheckoutSessionShippingOption({required this.shippingAmount, required this.shippingRate, });
 
-factory PaymentPagesCheckoutSessionShippingOption.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionShippingOption(
+factory PaymentPagesCheckoutSessionShippingOption.fromJson(Map<String, dynamic> json) {return PaymentPagesCheckoutSessionShippingOption(
   shippingAmount: (json['shipping_amount'] as num).toInt(),
   shippingRate: InvoicesResourceShippingCostShippingRate.fromJson(json['shipping_rate']),
-); }
+);}
 
 /// A non-negative integer in cents representing how much to charge.
 final int shippingAmount;
@@ -15,16 +15,16 @@ final int shippingAmount;
 /// The shipping rate.
 final InvoicesResourceShippingCostShippingRate shippingRate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'shipping_amount': shippingAmount,
   'shipping_rate': shippingRate.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('shipping_amount') && json['shipping_amount'] is num &&
-      json.containsKey('shipping_rate'); } 
-PaymentPagesCheckoutSessionShippingOption copyWith({int? shippingAmount, InvoicesResourceShippingCostShippingRate? shippingRate, }) { return PaymentPagesCheckoutSessionShippingOption(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('shipping_amount') && json['shipping_amount'] is num &&
+      json.containsKey('shipping_rate');}
+PaymentPagesCheckoutSessionShippingOption copyWith({int? shippingAmount, InvoicesResourceShippingCostShippingRate? shippingRate, }) {return PaymentPagesCheckoutSessionShippingOption(
   shippingAmount: shippingAmount ?? this.shippingAmount,
   shippingRate: shippingRate ?? this.shippingRate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionShippingOption &&
           shippingAmount == other.shippingAmount &&
@@ -34,4 +34,4 @@ PaymentPagesCheckoutSessionShippingOption copyWith({int? shippingAmount, Invoice
 
 @override String toString() => 'PaymentPagesCheckoutSessionShippingOption(shippingAmount: $shippingAmount, shippingRate: $shippingRate)';
 
- }
+}

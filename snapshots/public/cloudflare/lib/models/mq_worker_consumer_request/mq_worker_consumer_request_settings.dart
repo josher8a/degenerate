@@ -17,13 +17,13 @@ num toJson() => value;
 }
 @immutable final class MqWorkerConsumerRequestSettings {const MqWorkerConsumerRequestSettings({this.batchSize, this.maxConcurrency, this.maxRetries, this.maxWaitTimeMs, this.retryDelay, });
 
-factory MqWorkerConsumerRequestSettings.fromJson(Map<String, dynamic> json) { return MqWorkerConsumerRequestSettings(
+factory MqWorkerConsumerRequestSettings.fromJson(Map<String, dynamic> json) {return MqWorkerConsumerRequestSettings(
   batchSize: json['batch_size'] != null ? MqBatchSize.fromJson(json['batch_size'] as num) : null,
   maxConcurrency: json['max_concurrency'] != null ? MqMaxConcurrency.fromJson(json['max_concurrency'] as num) : null,
   maxRetries: json['max_retries'] != null ? MqMaxRetries.fromJson(json['max_retries'] as num) : null,
   maxWaitTimeMs: json['max_wait_time_ms'] != null ? MqMaxWaitTime.fromJson(json['max_wait_time_ms'] as num) : null,
   retryDelay: json['retry_delay'] != null ? MqRetryDelay.fromJson(json['retry_delay'] as num) : null,
-); }
+);}
 
 /// The maximum number of messages to include in a batch.
 final MqBatchSize? batchSize;
@@ -40,21 +40,21 @@ final MqMaxWaitTime? maxWaitTimeMs;
 /// The number of seconds to delay before making the message available for another attempt.
 final MqRetryDelay? retryDelay;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
   if (maxConcurrency != null) 'max_concurrency': maxConcurrency?.toJson(),
   if (maxRetries != null) 'max_retries': maxRetries?.toJson(),
   if (maxWaitTimeMs != null) 'max_wait_time_ms': maxWaitTimeMs?.toJson(),
   if (retryDelay != null) 'retry_delay': retryDelay?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'max_concurrency', 'max_retries', 'max_wait_time_ms', 'retry_delay'}.contains(key)); } 
-MqWorkerConsumerRequestSettings copyWith({MqBatchSize? Function()? batchSize, MqMaxConcurrency? Function()? maxConcurrency, MqMaxRetries? Function()? maxRetries, MqMaxWaitTime? Function()? maxWaitTimeMs, MqRetryDelay? Function()? retryDelay, }) { return MqWorkerConsumerRequestSettings(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'batch_size', 'max_concurrency', 'max_retries', 'max_wait_time_ms', 'retry_delay'}.contains(key));}
+MqWorkerConsumerRequestSettings copyWith({MqBatchSize? Function()? batchSize, MqMaxConcurrency? Function()? maxConcurrency, MqMaxRetries? Function()? maxRetries, MqMaxWaitTime? Function()? maxWaitTimeMs, MqRetryDelay? Function()? retryDelay, }) {return MqWorkerConsumerRequestSettings(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   maxConcurrency: maxConcurrency != null ? maxConcurrency() : this.maxConcurrency,
   maxRetries: maxRetries != null ? maxRetries() : this.maxRetries,
   maxWaitTimeMs: maxWaitTimeMs != null ? maxWaitTimeMs() : this.maxWaitTimeMs,
   retryDelay: retryDelay != null ? retryDelay() : this.retryDelay,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MqWorkerConsumerRequestSettings &&
           batchSize == other.batchSize &&
@@ -67,4 +67,4 @@ MqWorkerConsumerRequestSettings copyWith({MqBatchSize? Function()? batchSize, Mq
 
 @override String toString() => 'MqWorkerConsumerRequestSettings(batchSize: $batchSize, maxConcurrency: $maxConcurrency, maxRetries: $maxRetries, maxWaitTimeMs: $maxWaitTimeMs, retryDelay: $retryDelay)';
 
- }
+}

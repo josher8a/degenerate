@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigGetGatewayUrlResponse {const AigConfigGetGatewayUrlResponse({required this.result, required this.success, });
 
-factory AigConfigGetGatewayUrlResponse.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayUrlResponse(
+factory AigConfigGetGatewayUrlResponse.fromJson(Map<String, dynamic> json) {return AigConfigGetGatewayUrlResponse(
   result: json['result'] as String,
   success: json['success'] as bool,
-); }
+);}
 
 final String result;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') && json['result'] is String &&
-      json.containsKey('success') && json['success'] is bool; } 
-AigConfigGetGatewayUrlResponse copyWith({String? result, bool? success, }) { return AigConfigGetGatewayUrlResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') && json['result'] is String &&
+      json.containsKey('success') && json['success'] is bool;}
+AigConfigGetGatewayUrlResponse copyWith({String? result, bool? success, }) {return AigConfigGetGatewayUrlResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigGetGatewayUrlResponse &&
           result == other.result &&
@@ -31,4 +31,4 @@ AigConfigGetGatewayUrlResponse copyWith({String? result, bool? success, }) { ret
 
 @override String toString() => 'AigConfigGetGatewayUrlResponse(result: $result, success: $success)';
 
- }
+}

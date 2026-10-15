@@ -7,7 +7,7 @@ const AccessIdentityProvidersRequest({this.accessAzureAdRequest = const Omittabl
 const AccessIdentityProvidersRequest._({required this.rawValue, required this.accessAzureAdRequest, required this.accessCentrifyRequest, required this.accessFacebookRequest, required this.accessGithubRequest, required this.accessGoogleRequest, required this.accessGoogleAppsRequest, required this.accessLinkedinRequest, required this.accessOidcRequest, required this.accessOktaRequest, required this.accessOneloginRequest, required this.accessPingoneRequest, required this.accessSamlRequest, required this.accessYandexRequest, required this.accessOnetimepinRequest, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory AccessIdentityProvidersRequest.fromJson(Object? json) { return AccessIdentityProvidersRequest._(
+factory AccessIdentityProvidersRequest.fromJson(Object? json) {return AccessIdentityProvidersRequest._(
   rawValue: Omittable(json),
   accessAzureAdRequest: json is Map<String, dynamic> && AccessAzureAdRequest.canParse(json) ? parseAnyOfVariant<AccessAzureAdRequest>(json, (value) => AccessAzureAdRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessCentrifyRequest: json is Map<String, dynamic> && AccessCentrifyRequest.canParse(json) ? parseAnyOfVariant<AccessCentrifyRequest>(json, (value) => AccessCentrifyRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
@@ -23,7 +23,7 @@ factory AccessIdentityProvidersRequest.fromJson(Object? json) { return AccessIde
   accessSamlRequest: json is Map<String, dynamic> && AccessSamlRequest.canParse(json) ? parseAnyOfVariant<AccessSamlRequest>(json, (value) => AccessSamlRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessYandexRequest: json is Map<String, dynamic> && AccessYandexRequest.canParse(json) ? parseAnyOfVariant<AccessYandexRequest>(json, (value) => AccessYandexRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   accessOnetimepinRequest: json is Map<String, dynamic> && AccessOnetimepinRequest.canParse(json) ? parseAnyOfVariant<AccessOnetimepinRequest>(json, (value) => AccessOnetimepinRequest.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -101,4 +101,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'AccessIdentityProvidersRequest(${toJson()})';
 
- }
+}

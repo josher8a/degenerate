@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the card.
 sealed class IssuingCardType {const IssuingCardType();
 
-factory IssuingCardType.fromJson(String json) { return switch (json) {
+factory IssuingCardType.fromJson(String json) {return switch (json) {
   'physical' => physical,
   'virtual' => virtual,
   _ => IssuingCardType$Unknown(json),
-}; }
+};}
 
 static const IssuingCardType physical = IssuingCardType$physical._();
 
@@ -17,30 +17,30 @@ static const IssuingCardType virtual = IssuingCardType$virtual._();
 static const List<IssuingCardType> values = [physical, virtual];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'physical' => 'physical',
   'virtual' => 'virtual',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is IssuingCardType$Unknown; } 
+bool get isUnknown {return this is IssuingCardType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() physical, required W Function() virtual, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() physical, required W Function() virtual, required W Function(String value) $unknown, }) {return switch (this) {
       IssuingCardType$physical() => physical(),
       IssuingCardType$virtual() => virtual(),
       IssuingCardType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? physical, W Function()? virtual, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? physical, W Function()? virtual, W Function(String value)? $unknown, }) {return switch (this) {
       IssuingCardType$physical() => physical != null ? physical() : orElse(value),
       IssuingCardType$virtual() => virtual != null ? virtual() : orElse(value),
       IssuingCardType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'IssuingCardType($value)';
 
- }
+}
 @immutable final class IssuingCardType$physical extends IssuingCardType {const IssuingCardType$physical._();
 
 @override String get value => 'physical';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? physical
 
 @override int get hashCode => 'physical'.hashCode;
 
- }
+}
 @immutable final class IssuingCardType$virtual extends IssuingCardType {const IssuingCardType$virtual._();
 
 @override String get value => 'virtual';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? physical
 
 @override int get hashCode => 'virtual'.hashCode;
 
- }
+}
 @immutable final class IssuingCardType$Unknown extends IssuingCardType {const IssuingCardType$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? physical
 
 @override int get hashCode => value.hashCode;
 
- }
+}

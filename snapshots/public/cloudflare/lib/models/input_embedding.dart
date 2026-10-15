@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';@immutable final class InputEmbedding {const InputEmbedding({required this.text, this.truncateInputs, });
 
-factory InputEmbedding.fromJson(Map<String, dynamic> json) { return InputEmbedding(
+factory InputEmbedding.fromJson(Map<String, dynamic> json) {return InputEmbedding(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
   truncateInputs: json['truncate_inputs'] as bool?,
-); }
+);}
 
 final InputEmbeddingText text;
 
@@ -16,15 +16,15 @@ final bool? truncateInputs;
 /// The value of `truncateInputs`, or its schema default when absent.
 bool get truncateInputsOrDefault => truncateInputs ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text': text.toJson(),
   'truncate_inputs': ?truncateInputs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-InputEmbedding copyWith({InputEmbeddingText? text, bool? Function()? truncateInputs, }) { return InputEmbedding(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text');}
+InputEmbedding copyWith({InputEmbeddingText? text, bool? Function()? truncateInputs, }) {return InputEmbedding(
   text: text ?? this.text,
   truncateInputs: truncateInputs != null ? truncateInputs() : this.truncateInputs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InputEmbedding &&
           text == other.text &&
@@ -34,4 +34,4 @@ InputEmbedding copyWith({InputEmbeddingText? text, bool? Function()? truncateInp
 
 @override String toString() => 'InputEmbedding(text: $text, truncateInputs: $truncateInputs)';
 
- }
+}

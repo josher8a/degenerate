@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Traces {const Traces({required this.rootSpanName, required this.rootTransactionName, required this.service, required this.spans, required this.traceDurationMs, required this.traceEndMs, required this.traceId, required this.traceStartMs, this.errors, });
 
-factory Traces.fromJson(Map<String, dynamic> json) { return Traces(
+factory Traces.fromJson(Map<String, dynamic> json) {return Traces(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => e as String).toList(),
   rootSpanName: json['rootSpanName'] as String,
   rootTransactionName: json['rootTransactionName'] as String,
@@ -13,7 +13,7 @@ factory Traces.fromJson(Map<String, dynamic> json) { return Traces(
   traceEndMs: (json['traceEndMs'] as num).toDouble(),
   traceId: json['traceId'] as String,
   traceStartMs: (json['traceStartMs'] as num).toDouble(),
-); }
+);}
 
 final List<String>? errors;
 
@@ -33,7 +33,7 @@ final String traceId;
 
 final double traceStartMs;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': ?errors,
   'rootSpanName': rootSpanName,
   'rootTransactionName': rootTransactionName,
@@ -43,16 +43,16 @@ Map<String, dynamic> toJson() { return {
   'traceEndMs': traceEndMs,
   'traceId': traceId,
   'traceStartMs': traceStartMs,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('rootSpanName') && json['rootSpanName'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('rootSpanName') && json['rootSpanName'] is String &&
       json.containsKey('rootTransactionName') && json['rootTransactionName'] is String &&
       json.containsKey('service') &&
       json.containsKey('spans') && json['spans'] is num &&
       json.containsKey('traceDurationMs') && json['traceDurationMs'] is num &&
       json.containsKey('traceEndMs') && json['traceEndMs'] is num &&
       json.containsKey('traceId') && json['traceId'] is String &&
-      json.containsKey('traceStartMs') && json['traceStartMs'] is num; } 
-Traces copyWith({List<String>? Function()? errors, String? rootSpanName, String? rootTransactionName, List<String>? service, double? spans, double? traceDurationMs, double? traceEndMs, String? traceId, double? traceStartMs, }) { return Traces(
+      json.containsKey('traceStartMs') && json['traceStartMs'] is num;}
+Traces copyWith({List<String>? Function()? errors, String? rootSpanName, String? rootTransactionName, List<String>? service, double? spans, double? traceDurationMs, double? traceEndMs, String? traceId, double? traceStartMs, }) {return Traces(
   errors: errors != null ? errors() : this.errors,
   rootSpanName: rootSpanName ?? this.rootSpanName,
   rootTransactionName: rootTransactionName ?? this.rootTransactionName,
@@ -62,7 +62,7 @@ Traces copyWith({List<String>? Function()? errors, String? rootSpanName, String?
   traceEndMs: traceEndMs ?? this.traceEndMs,
   traceId: traceId ?? this.traceId,
   traceStartMs: traceStartMs ?? this.traceStartMs,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Traces &&
           listEquals(errors, other.errors) &&
@@ -79,4 +79,4 @@ Traces copyWith({List<String>? Function()? errors, String? rootSpanName, String?
 
 @override String toString() => 'Traces(\n  errors: $errors,\n  rootSpanName: $rootSpanName,\n  rootTransactionName: $rootTransactionName,\n  service: $service,\n  spans: $spans,\n  traceDurationMs: $traceDurationMs,\n  traceEndMs: $traceEndMs,\n  traceId: $traceId,\n  traceStartMs: $traceStartMs,\n)';
 
- }
+}

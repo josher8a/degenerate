@@ -5,13 +5,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class LocalShellToolCall {const LocalShellToolCall({required this.type, required this.id, required this.callId, required this.action, required this.status, });
 
-factory LocalShellToolCall.fromJson(Map<String, dynamic> json) { return LocalShellToolCall(
+factory LocalShellToolCall.fromJson(Map<String, dynamic> json) {return LocalShellToolCall(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
   action: LocalShellExecAction.fromJson(json['action'] as Map<String, dynamic>),
   status: ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// The type of the local shell call. Always `local_shell_call`.
 /// 
@@ -31,25 +31,25 @@ final LocalShellExecAction action;
 /// 
 final ComputerToolCallOutputResourceStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
   'action': action.toJson(),
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('action') &&
-      json.containsKey('status'); } 
-LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputResourceStatus? status, }) { return LocalShellToolCall(
+      json.containsKey('status');}
+LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputResourceStatus? status, }) {return LocalShellToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
   action: action ?? this.action,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LocalShellToolCall &&
           type == other.type &&
@@ -62,4 +62,4 @@ LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShel
 
 @override String toString() => 'LocalShellToolCall(type: $type, id: $id, callId: $callId, action: $action, status: $status)';
 
- }
+}

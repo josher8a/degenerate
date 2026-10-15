@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request/evidence_enhanced_evidence.dart';/// Evidence to upload, to respond to a dispute. Updating any field in the hash will submit all fields in the hash for review. The combined character count of all fields is limited to 150,000.
 @immutable final class PostChargesChargeDisputeRequestEvidence {const PostChargesChargeDisputeRequestEvidence({this.accessActivityLog, this.billingAddress, this.cancellationPolicy, this.cancellationPolicyDisclosure, this.cancellationRebuttal, this.customerCommunication, this.customerEmailAddress, this.customerName, this.customerPurchaseIp, this.customerSignature, this.duplicateChargeDocumentation, this.duplicateChargeExplanation, this.duplicateChargeId, this.enhancedEvidence, this.productDescription, this.receipt, this.refundPolicy, this.refundPolicyDisclosure, this.refundRefusalExplanation, this.serviceDate, this.serviceDocumentation, this.shippingAddress, this.shippingCarrier, this.shippingDate, this.shippingDocumentation, this.shippingTrackingNumber, this.uncategorizedFile, this.uncategorizedText, });
 
-factory PostChargesChargeDisputeRequestEvidence.fromJson(Map<String, dynamic> json) { return PostChargesChargeDisputeRequestEvidence(
+factory PostChargesChargeDisputeRequestEvidence.fromJson(Map<String, dynamic> json) {return PostChargesChargeDisputeRequestEvidence(
   accessActivityLog: json['access_activity_log'] as String?,
   billingAddress: json['billing_address'] as String?,
   cancellationPolicy: json['cancellation_policy'] as String?,
@@ -33,7 +33,7 @@ factory PostChargesChargeDisputeRequestEvidence.fromJson(Map<String, dynamic> js
   shippingTrackingNumber: json['shipping_tracking_number'] as String?,
   uncategorizedFile: json['uncategorized_file'] as String?,
   uncategorizedText: json['uncategorized_text'] as String?,
-); }
+);}
 
 final String? accessActivityLog;
 
@@ -91,7 +91,7 @@ final String? uncategorizedFile;
 
 final String? uncategorizedText;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_activity_log': ?accessActivityLog,
   'billing_address': ?billingAddress,
   'cancellation_policy': ?cancellationPolicy,
@@ -120,10 +120,10 @@ Map<String, dynamic> toJson() { return {
   'shipping_tracking_number': ?shippingTrackingNumber,
   'uncategorized_file': ?uncategorizedFile,
   'uncategorized_text': ?uncategorizedText,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_activity_log', 'billing_address', 'cancellation_policy', 'cancellation_policy_disclosure', 'cancellation_rebuttal', 'customer_communication', 'customer_email_address', 'customer_name', 'customer_purchase_ip', 'customer_signature', 'duplicate_charge_documentation', 'duplicate_charge_explanation', 'duplicate_charge_id', 'enhanced_evidence', 'product_description', 'receipt', 'refund_policy', 'refund_policy_disclosure', 'refund_refusal_explanation', 'service_date', 'service_documentation', 'shipping_address', 'shipping_carrier', 'shipping_date', 'shipping_documentation', 'shipping_tracking_number', 'uncategorized_file', 'uncategorized_text'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'access_activity_log', 'billing_address', 'cancellation_policy', 'cancellation_policy_disclosure', 'cancellation_rebuttal', 'customer_communication', 'customer_email_address', 'customer_name', 'customer_purchase_ip', 'customer_signature', 'duplicate_charge_documentation', 'duplicate_charge_explanation', 'duplicate_charge_id', 'enhanced_evidence', 'product_description', 'receipt', 'refund_policy', 'refund_policy_disclosure', 'refund_refusal_explanation', 'service_date', 'service_documentation', 'shipping_address', 'shipping_carrier', 'shipping_date', 'shipping_documentation', 'shipping_tracking_number', 'uncategorized_file', 'uncategorized_text'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accessActivityLog$ = accessActivityLog;
 if (accessActivityLog$ != null) {
   if (accessActivityLog$.runes.length > 20000) { errors.add('accessActivityLog: length must be <= 20000'); }
@@ -196,8 +196,8 @@ final uncategorizedText$ = uncategorizedText;
 if (uncategorizedText$ != null) {
   if (uncategorizedText$.runes.length > 20000) { errors.add('uncategorizedText: length must be <= 20000'); }
 }
-return errors; } 
-PostChargesChargeDisputeRequestEvidence copyWith({String? Function()? accessActivityLog, String? Function()? billingAddress, String? Function()? cancellationPolicy, String? Function()? cancellationPolicyDisclosure, String? Function()? cancellationRebuttal, String? Function()? customerCommunication, String? Function()? customerEmailAddress, String? Function()? customerName, String? Function()? customerPurchaseIp, String? Function()? customerSignature, String? Function()? duplicateChargeDocumentation, String? Function()? duplicateChargeExplanation, String? Function()? duplicateChargeId, EvidenceEnhancedEvidence? Function()? enhancedEvidence, String? Function()? productDescription, String? Function()? receipt, String? Function()? refundPolicy, String? Function()? refundPolicyDisclosure, String? Function()? refundRefusalExplanation, String? Function()? serviceDate, String? Function()? serviceDocumentation, String? Function()? shippingAddress, String? Function()? shippingCarrier, String? Function()? shippingDate, String? Function()? shippingDocumentation, String? Function()? shippingTrackingNumber, String? Function()? uncategorizedFile, String? Function()? uncategorizedText, }) { return PostChargesChargeDisputeRequestEvidence(
+return errors;}
+PostChargesChargeDisputeRequestEvidence copyWith({String? Function()? accessActivityLog, String? Function()? billingAddress, String? Function()? cancellationPolicy, String? Function()? cancellationPolicyDisclosure, String? Function()? cancellationRebuttal, String? Function()? customerCommunication, String? Function()? customerEmailAddress, String? Function()? customerName, String? Function()? customerPurchaseIp, String? Function()? customerSignature, String? Function()? duplicateChargeDocumentation, String? Function()? duplicateChargeExplanation, String? Function()? duplicateChargeId, EvidenceEnhancedEvidence? Function()? enhancedEvidence, String? Function()? productDescription, String? Function()? receipt, String? Function()? refundPolicy, String? Function()? refundPolicyDisclosure, String? Function()? refundRefusalExplanation, String? Function()? serviceDate, String? Function()? serviceDocumentation, String? Function()? shippingAddress, String? Function()? shippingCarrier, String? Function()? shippingDate, String? Function()? shippingDocumentation, String? Function()? shippingTrackingNumber, String? Function()? uncategorizedFile, String? Function()? uncategorizedText, }) {return PostChargesChargeDisputeRequestEvidence(
   accessActivityLog: accessActivityLog != null ? accessActivityLog() : this.accessActivityLog,
   billingAddress: billingAddress != null ? billingAddress() : this.billingAddress,
   cancellationPolicy: cancellationPolicy != null ? cancellationPolicy() : this.cancellationPolicy,
@@ -226,7 +226,7 @@ PostChargesChargeDisputeRequestEvidence copyWith({String? Function()? accessActi
   shippingTrackingNumber: shippingTrackingNumber != null ? shippingTrackingNumber() : this.shippingTrackingNumber,
   uncategorizedFile: uncategorizedFile != null ? uncategorizedFile() : this.uncategorizedFile,
   uncategorizedText: uncategorizedText != null ? uncategorizedText() : this.uncategorizedText,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesChargeDisputeRequestEvidence &&
           accessActivityLog == other.accessActivityLog &&
@@ -262,4 +262,4 @@ PostChargesChargeDisputeRequestEvidence copyWith({String? Function()? accessActi
 
 @override String toString() => 'PostChargesChargeDisputeRequestEvidence(\n  accessActivityLog: $accessActivityLog,\n  billingAddress: $billingAddress,\n  cancellationPolicy: $cancellationPolicy,\n  cancellationPolicyDisclosure: $cancellationPolicyDisclosure,\n  cancellationRebuttal: $cancellationRebuttal,\n  customerCommunication: $customerCommunication,\n  customerEmailAddress: $customerEmailAddress,\n  customerName: $customerName,\n  customerPurchaseIp: $customerPurchaseIp,\n  customerSignature: $customerSignature,\n  duplicateChargeDocumentation: $duplicateChargeDocumentation,\n  duplicateChargeExplanation: $duplicateChargeExplanation,\n  duplicateChargeId: $duplicateChargeId,\n  enhancedEvidence: $enhancedEvidence,\n  productDescription: $productDescription,\n  receipt: $receipt,\n  refundPolicy: $refundPolicy,\n  refundPolicyDisclosure: $refundPolicyDisclosure,\n  refundRefusalExplanation: $refundRefusalExplanation,\n  serviceDate: $serviceDate,\n  serviceDocumentation: $serviceDocumentation,\n  shippingAddress: $shippingAddress,\n  shippingCarrier: $shippingCarrier,\n  shippingDate: $shippingDate,\n  shippingDocumentation: $shippingDocumentation,\n  shippingTrackingNumber: $shippingTrackingNumber,\n  uncategorizedFile: $uncategorizedFile,\n  uncategorizedText: $uncategorizedText,\n)';
 
- }
+}

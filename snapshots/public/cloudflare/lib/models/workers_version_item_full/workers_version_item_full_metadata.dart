@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the version upload.
 sealed class MetadataSource {const MetadataSource();
 
-factory MetadataSource.fromJson(String json) { return switch (json) {
+factory MetadataSource.fromJson(String json) {return switch (json) {
   'unknown' => unknown,
   'api' => api,
   'wrangler' => wrangler,
@@ -16,7 +16,7 @@ factory MetadataSource.fromJson(String json) { return switch (json) {
   'playground' => playground,
   'workersci' => workersci,
   _ => MetadataSource$Unknown(json),
-}; }
+};}
 
 static const MetadataSource unknown = MetadataSource$unknown._();
 
@@ -41,9 +41,9 @@ static const MetadataSource workersci = MetadataSource$workersci._();
 static const List<MetadataSource> values = [unknown, api, wrangler, terraform, dash, dashTemplate, integration, quickEditor, playground, workersci];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'unknown' => 'unknown',
   'api' => 'api',
   'wrangler' => 'wrangler',
@@ -55,11 +55,11 @@ String get name { return switch (value) {
   'playground' => 'playground',
   'workersci' => 'workersci',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MetadataSource$Unknown; } 
+bool get isUnknown {return this is MetadataSource$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() unknown, required W Function() api, required W Function() wrangler, required W Function() terraform, required W Function() dash, required W Function() dashTemplate, required W Function() integration, required W Function() quickEditor, required W Function() playground, required W Function() workersci, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() unknown, required W Function() api, required W Function() wrangler, required W Function() terraform, required W Function() dash, required W Function() dashTemplate, required W Function() integration, required W Function() quickEditor, required W Function() playground, required W Function() workersci, required W Function(String value) $unknown, }) {return switch (this) {
       MetadataSource$unknown() => unknown(),
       MetadataSource$api() => api(),
       MetadataSource$wrangler() => wrangler(),
@@ -71,9 +71,9 @@ W when<W>({required W Function() unknown, required W Function() api, required W 
       MetadataSource$playground() => playground(),
       MetadataSource$workersci() => workersci(),
       MetadataSource$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? api, W Function()? wrangler, W Function()? terraform, W Function()? dash, W Function()? dashTemplate, W Function()? integration, W Function()? quickEditor, W Function()? playground, W Function()? workersci, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? api, W Function()? wrangler, W Function()? terraform, W Function()? dash, W Function()? dashTemplate, W Function()? integration, W Function()? quickEditor, W Function()? playground, W Function()? workersci, W Function(String value)? $unknown, }) {return switch (this) {
       MetadataSource$unknown() => unknown != null ? unknown() : orElse(value),
       MetadataSource$api() => api != null ? api() : orElse(value),
       MetadataSource$wrangler() => wrangler != null ? wrangler() : orElse(value),
@@ -85,10 +85,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
       MetadataSource$playground() => playground != null ? playground() : orElse(value),
       MetadataSource$workersci() => workersci != null ? workersci() : orElse(value),
       MetadataSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MetadataSource($value)';
 
- }
+}
 @immutable final class MetadataSource$unknown extends MetadataSource {const MetadataSource$unknown._();
 
 @override String get value => 'unknown';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'unknown'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$api extends MetadataSource {const MetadataSource$api._();
 
 @override String get value => 'api';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'api'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$wrangler extends MetadataSource {const MetadataSource$wrangler._();
 
 @override String get value => 'wrangler';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'wrangler'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$terraform extends MetadataSource {const MetadataSource$terraform._();
 
 @override String get value => 'terraform';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'terraform'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$dash extends MetadataSource {const MetadataSource$dash._();
 
 @override String get value => 'dash';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'dash'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$dashTemplate extends MetadataSource {const MetadataSource$dashTemplate._();
 
 @override String get value => 'dash_template';
@@ -142,7 +142,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'dash_template'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$integration extends MetadataSource {const MetadataSource$integration._();
 
 @override String get value => 'integration';
@@ -151,7 +151,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'integration'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$quickEditor extends MetadataSource {const MetadataSource$quickEditor._();
 
 @override String get value => 'quick_editor';
@@ -160,7 +160,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'quick_editor'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$playground extends MetadataSource {const MetadataSource$playground._();
 
 @override String get value => 'playground';
@@ -169,7 +169,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'playground'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$workersci extends MetadataSource {const MetadataSource$workersci._();
 
 @override String get value => 'workersci';
@@ -178,7 +178,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => 'workersci'.hashCode;
 
- }
+}
 @immutable final class MetadataSource$Unknown extends MetadataSource {const MetadataSource$Unknown(this.value);
 
 @override final String value;
@@ -188,7 +188,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Example:
 /// ```json
 /// {
@@ -201,14 +201,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown,
 /// ```
 @immutable final class WorkersVersionItemFullMetadata {const WorkersVersionItemFullMetadata({this.authorEmail, this.authorId, this.createdOn, this.hasPreview, this.modifiedOn, this.source, });
 
-factory WorkersVersionItemFullMetadata.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFullMetadata(
+factory WorkersVersionItemFullMetadata.fromJson(Map<String, dynamic> json) {return WorkersVersionItemFullMetadata(
   authorEmail: json['author_email'] as String?,
   authorId: json['author_id'] as String?,
   createdOn: json['created_on'] as String?,
   hasPreview: json['hasPreview'] as bool?,
   modifiedOn: json['modified_on'] as String?,
   source: json['source'] != null ? MetadataSource.fromJson(json['source'] as String) : null,
-); }
+);}
 
 /// Email of the user who created the version.
 /// 
@@ -238,23 +238,23 @@ final String? modifiedOn;
 /// Example: `'api'`
 final MetadataSource? source;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'author_email': ?authorEmail,
   'author_id': ?authorId,
   'created_on': ?createdOn,
   'hasPreview': ?hasPreview,
   'modified_on': ?modifiedOn,
   if (source != null) 'source': source?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'author_email', 'author_id', 'created_on', 'hasPreview', 'modified_on', 'source'}.contains(key)); } 
-WorkersVersionItemFullMetadata copyWith({String? Function()? authorEmail, String? Function()? authorId, String? Function()? createdOn, bool? Function()? hasPreview, String? Function()? modifiedOn, MetadataSource? Function()? source, }) { return WorkersVersionItemFullMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'author_email', 'author_id', 'created_on', 'hasPreview', 'modified_on', 'source'}.contains(key));}
+WorkersVersionItemFullMetadata copyWith({String? Function()? authorEmail, String? Function()? authorId, String? Function()? createdOn, bool? Function()? hasPreview, String? Function()? modifiedOn, MetadataSource? Function()? source, }) {return WorkersVersionItemFullMetadata(
   authorEmail: authorEmail != null ? authorEmail() : this.authorEmail,
   authorId: authorId != null ? authorId() : this.authorId,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   hasPreview: hasPreview != null ? hasPreview() : this.hasPreview,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   source: source != null ? source() : this.source,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionItemFullMetadata &&
           authorEmail == other.authorEmail &&
@@ -268,4 +268,4 @@ WorkersVersionItemFullMetadata copyWith({String? Function()? authorEmail, String
 
 @override String toString() => 'WorkersVersionItemFullMetadata(authorEmail: $authorEmail, authorId: $authorId, createdOn: $createdOn, hasPreview: $hasPreview, modifiedOn: $modifiedOn, source: $source)';
 
- }
+}

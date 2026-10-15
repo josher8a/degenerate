@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_public_schema.dart';import 'package:pub_cloudflare/models/shield_schema_issue_notification.dart';@immutable final class SchemaValidationCreateSchemaResponse {const SchemaValidationCreateSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory SchemaValidationCreateSchemaResponse.fromJson(Map<String, dynamic> json) { return SchemaValidationCreateSchemaResponse(
+factory SchemaValidationCreateSchemaResponse.fromJson(Map<String, dynamic> json) {return SchemaValidationCreateSchemaResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldSchemaIssueNotification.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldSchemaIssueNotification.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: ShieldPublicSchema.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 /// Describes errors in the schema that prohibited accepting the schema.
 final List<ShieldSchemaIssueNotification> errors;
@@ -23,22 +23,22 @@ final bool success;
 
 final ShieldPublicSchema result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-SchemaValidationCreateSchemaResponse copyWith({List<ShieldSchemaIssueNotification>? errors, List<ShieldSchemaIssueNotification>? messages, bool? success, ShieldPublicSchema? result, }) { return SchemaValidationCreateSchemaResponse(
+      json.containsKey('result');}
+SchemaValidationCreateSchemaResponse copyWith({List<ShieldSchemaIssueNotification>? errors, List<ShieldSchemaIssueNotification>? messages, bool? success, ShieldPublicSchema? result, }) {return SchemaValidationCreateSchemaResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SchemaValidationCreateSchemaResponse &&
           listEquals(errors, other.errors) &&
@@ -50,4 +50,4 @@ SchemaValidationCreateSchemaResponse copyWith({List<ShieldSchemaIssueNotificatio
 
 @override String toString() => 'SchemaValidationCreateSchemaResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

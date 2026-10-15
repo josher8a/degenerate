@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when there is a partial audio response.
 @immutable final class ResponseAudioDeltaEvent {const ResponseAudioDeltaEvent({required this.type, required this.sequenceNumber, required this.delta, });
 
-factory ResponseAudioDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseAudioDeltaEvent(
+factory ResponseAudioDeltaEvent.fromJson(Map<String, dynamic> json) {return ResponseAudioDeltaEvent(
   type: json['type'] as String,
   sequenceNumber: (json['sequence_number'] as num).toInt(),
   delta: json['delta'] as String,
-); }
+);}
 
 /// The type of the event. Always `response.audio.delta`.
 /// 
@@ -22,19 +22,19 @@ final int sequenceNumber;
 /// 
 final String delta;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'sequence_number': sequenceNumber,
   'delta': delta,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
-      json.containsKey('delta') && json['delta'] is String; } 
-ResponseAudioDeltaEvent copyWith({String? type, int? sequenceNumber, String? delta, }) { return ResponseAudioDeltaEvent(
+      json.containsKey('delta') && json['delta'] is String;}
+ResponseAudioDeltaEvent copyWith({String? type, int? sequenceNumber, String? delta, }) {return ResponseAudioDeltaEvent(
   type: type ?? this.type,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   delta: delta ?? this.delta,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseAudioDeltaEvent &&
           type == other.type &&
@@ -45,4 +45,4 @@ ResponseAudioDeltaEvent copyWith({String? type, int? sequenceNumber, String? del
 
 @override String toString() => 'ResponseAudioDeltaEvent(type: $type, sequenceNumber: $sequenceNumber, delta: $delta)';
 
- }
+}

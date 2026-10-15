@@ -8,11 +8,11 @@ const Location({this.string = const Omittable.absent(), this.terminalLocation = 
 const Location._({required this.rawValue, required this.string, required this.terminalLocation, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Location.fromJson(Object? json) { return Location._(
+factory Location.fromJson(Object? json) {return Location._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   terminalLocation: json is Map<String, dynamic> && TerminalLocation.canParse(json) ? parseAnyOfVariant<TerminalLocation>(json, (value) => TerminalLocation.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Location(${toJson()})';
 
- }
+}

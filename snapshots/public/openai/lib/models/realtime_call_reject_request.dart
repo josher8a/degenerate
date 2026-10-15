@@ -4,9 +4,9 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters used to decline an incoming SIP call handled by the Realtime API.
 @immutable final class RealtimeCallRejectRequest {const RealtimeCallRejectRequest({this.statusCode});
 
-factory RealtimeCallRejectRequest.fromJson(Map<String, dynamic> json) { return RealtimeCallRejectRequest(
+factory RealtimeCallRejectRequest.fromJson(Map<String, dynamic> json) {return RealtimeCallRejectRequest(
   statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,
-); }
+);}
 
 /// SIP response code to send back to the caller. Defaults to `603` (Decline)
 /// when omitted.
@@ -14,13 +14,13 @@ factory RealtimeCallRejectRequest.fromJson(Map<String, dynamic> json) { return R
 /// Example: `486`
 final int? statusCode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'status_code': ?statusCode,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status_code'}.contains(key)); } 
-RealtimeCallRejectRequest copyWith({int? Function()? statusCode}) { return RealtimeCallRejectRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status_code'}.contains(key));}
+RealtimeCallRejectRequest copyWith({int? Function()? statusCode}) {return RealtimeCallRejectRequest(
   statusCode: statusCode != null ? statusCode() : this.statusCode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCallRejectRequest &&
           statusCode == other.statusCode;
@@ -29,4 +29,4 @@ RealtimeCallRejectRequest copyWith({int? Function()? statusCode}) { return Realt
 
 @override String toString() => 'RealtimeCallRejectRequest(statusCode: $statusCode)';
 
- }
+}

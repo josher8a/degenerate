@@ -3,20 +3,20 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsFirewallDnsFirewallReverseDns {const DnsFirewallDnsFirewallReverseDns({this.ptr});
 
-factory DnsFirewallDnsFirewallReverseDns.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallReverseDns(
+factory DnsFirewallDnsFirewallReverseDns.fromJson(Map<String, dynamic> json) {return DnsFirewallDnsFirewallReverseDns(
   ptr: (json['ptr'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-); }
+);}
 
 /// Map of cluster IP addresses to PTR record contents
 final Map<String,String>? ptr;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ptr': ?ptr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ptr'}.contains(key)); } 
-DnsFirewallDnsFirewallReverseDns copyWith({Map<String, String>? Function()? ptr}) { return DnsFirewallDnsFirewallReverseDns(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ptr'}.contains(key));}
+DnsFirewallDnsFirewallReverseDns copyWith({Map<String, String>? Function()? ptr}) {return DnsFirewallDnsFirewallReverseDns(
   ptr: ptr != null ? ptr() : this.ptr,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsFirewallDnsFirewallReverseDns &&
           ptr == other.ptr;
@@ -25,4 +25,4 @@ DnsFirewallDnsFirewallReverseDns copyWith({Map<String, String>? Function()? ptr}
 
 @override String toString() => 'DnsFirewallDnsFirewallReverseDns(ptr: $ptr)';
 
- }
+}

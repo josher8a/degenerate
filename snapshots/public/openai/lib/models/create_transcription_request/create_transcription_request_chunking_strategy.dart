@@ -8,11 +8,11 @@ const CreateTranscriptionRequestChunkingStrategy({this.chunkingStrategyVariant1 
 const CreateTranscriptionRequestChunkingStrategy._({required this.rawValue, required this.chunkingStrategyVariant1, required this.vadConfig, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CreateTranscriptionRequestChunkingStrategy.fromJson(Object? json) { return CreateTranscriptionRequestChunkingStrategy._(
+factory CreateTranscriptionRequestChunkingStrategy.fromJson(Object? json) {return CreateTranscriptionRequestChunkingStrategy._(
   rawValue: Omittable(json),
   chunkingStrategyVariant1: parseAnyOfVariant<ChunkingStrategyVariant1>(json, (value) => ChunkingStrategyVariant1.fromJson(value! as String)),
   vadConfig: json is Map<String, dynamic> && VadConfig.canParse(json) ? parseAnyOfVariant<VadConfig>(json, (value) => VadConfig.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CreateTranscriptionRequestChunkingStrategy(${toJson()})';
 
- }
+}

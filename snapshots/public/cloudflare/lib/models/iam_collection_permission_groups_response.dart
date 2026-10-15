@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group.dart';import 'package:pub_cloudflare/models/iam_result_info.dart';import 'package:pub_cloudflare/models/iam_schemas_messages2.dart';@immutable final class IamCollectionPermissionGroupsResponse {const IamCollectionPermissionGroupsResponse({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
-factory IamCollectionPermissionGroupsResponse.fromJson(Map<String, dynamic> json) { return IamCollectionPermissionGroupsResponse(
+factory IamCollectionPermissionGroupsResponse.fromJson(Map<String, dynamic> json) {return IamCollectionPermissionGroupsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => IamSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => IamSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? IamResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   result: (json['result'] as List<dynamic>?)?.map((e) => IamPermissionGroup.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<IamSchemasMessages2> errors;
 
@@ -24,23 +24,23 @@ final IamResultInfo? resultInfo;
 
 final List<IamPermissionGroup>? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-IamCollectionPermissionGroupsResponse copyWith({List<IamSchemasMessages2>? errors, List<IamSchemasMessages2>? messages, bool? success, IamResultInfo? Function()? resultInfo, List<IamPermissionGroup>? Function()? result, }) { return IamCollectionPermissionGroupsResponse(
+      json.containsKey('success') && json['success'] is bool;}
+IamCollectionPermissionGroupsResponse copyWith({List<IamSchemasMessages2>? errors, List<IamSchemasMessages2>? messages, bool? success, IamResultInfo? Function()? resultInfo, List<IamPermissionGroup>? Function()? result, }) {return IamCollectionPermissionGroupsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is IamCollectionPermissionGroupsResponse &&
           listEquals(errors, other.errors) &&
@@ -53,4 +53,4 @@ IamCollectionPermissionGroupsResponse copyWith({List<IamSchemasMessages2>? error
 
 @override String toString() => 'IamCollectionPermissionGroupsResponse(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
 
- }
+}

@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer3TopIndustriesIpVersion {const RadarGetAttacksLayer3TopIndustriesIpVersion();
 
-factory RadarGetAttacksLayer3TopIndustriesIpVersion.fromJson(String json) { return switch (json) {
+factory RadarGetAttacksLayer3TopIndustriesIpVersion.fromJson(String json) {return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
   _ => RadarGetAttacksLayer3TopIndustriesIpVersion$Unknown(json),
-}; }
+};}
 
 static const RadarGetAttacksLayer3TopIndustriesIpVersion iPv4 = RadarGetAttacksLayer3TopIndustriesIpVersion$iPv4._();
 
@@ -16,30 +16,30 @@ static const RadarGetAttacksLayer3TopIndustriesIpVersion iPv6 = RadarGetAttacksL
 static const List<RadarGetAttacksLayer3TopIndustriesIpVersion> values = [iPv4, iPv6];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'IPv4' => 'iPv4',
   'IPv6' => 'iPv6',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetAttacksLayer3TopIndustriesIpVersion$Unknown; } 
+bool get isUnknown {return this is RadarGetAttacksLayer3TopIndustriesIpVersion$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() iPv4, required W Function() iPv6, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() iPv4, required W Function() iPv6, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TopIndustriesIpVersion$iPv4() => iPv4(),
       RadarGetAttacksLayer3TopIndustriesIpVersion$iPv6() => iPv6(),
       RadarGetAttacksLayer3TopIndustriesIpVersion$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W Function()? iPv6, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W Function()? iPv6, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetAttacksLayer3TopIndustriesIpVersion$iPv4() => iPv4 != null ? iPv4() : orElse(value),
       RadarGetAttacksLayer3TopIndustriesIpVersion$iPv6() => iPv6 != null ? iPv6() : orElse(value),
       RadarGetAttacksLayer3TopIndustriesIpVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetAttacksLayer3TopIndustriesIpVersion($value)';
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TopIndustriesIpVersion$iPv4 extends RadarGetAttacksLayer3TopIndustriesIpVersion {const RadarGetAttacksLayer3TopIndustriesIpVersion$iPv4._();
 
 @override String get value => 'IPv4';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W 
 
 @override int get hashCode => 'IPv4'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TopIndustriesIpVersion$iPv6 extends RadarGetAttacksLayer3TopIndustriesIpVersion {const RadarGetAttacksLayer3TopIndustriesIpVersion$iPv6._();
 
 @override String get value => 'IPv6';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W 
 
 @override int get hashCode => 'IPv6'.hashCode;
 
- }
+}
 @immutable final class RadarGetAttacksLayer3TopIndustriesIpVersion$Unknown extends RadarGetAttacksLayer3TopIndustriesIpVersion {const RadarGetAttacksLayer3TopIndustriesIpVersion$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

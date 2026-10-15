@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PendingDeploymentEnvironment {const PendingDeploymentEnvironment({this.id, this.nodeId, this.name, this.url, this.htmlUrl, });
 
-factory PendingDeploymentEnvironment.fromJson(Map<String, dynamic> json) { return PendingDeploymentEnvironment(
+factory PendingDeploymentEnvironment.fromJson(Map<String, dynamic> json) {return PendingDeploymentEnvironment(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
   name: json['name'] as String?,
   url: json['url'] as String?,
   htmlUrl: json['html_url'] as String?,
-); }
+);}
 
 /// The id of the environment.
 final int? id;
@@ -23,21 +23,21 @@ final String? url;
 
 final String? htmlUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   'node_id': ?nodeId,
   'name': ?name,
   'url': ?url,
   'html_url': ?htmlUrl,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'name', 'url', 'html_url'}.contains(key)); } 
-PendingDeploymentEnvironment copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? name, String? Function()? url, String? Function()? htmlUrl, }) { return PendingDeploymentEnvironment(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'node_id', 'name', 'url', 'html_url'}.contains(key));}
+PendingDeploymentEnvironment copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? name, String? Function()? url, String? Function()? htmlUrl, }) {return PendingDeploymentEnvironment(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   name: name != null ? name() : this.name,
   url: url != null ? url() : this.url,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PendingDeploymentEnvironment &&
           id == other.id &&
@@ -50,4 +50,4 @@ PendingDeploymentEnvironment copyWith({int? Function()? id, String? Function()? 
 
 @override String toString() => 'PendingDeploymentEnvironment(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl)';
 
- }
+}

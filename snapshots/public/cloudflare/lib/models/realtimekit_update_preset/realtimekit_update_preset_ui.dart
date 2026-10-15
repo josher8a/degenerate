@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_ui_design_tokens.dart';@immutable final class RealtimekitUpdatePresetUi {const RealtimekitUpdatePresetUi({this.configDiff, this.designTokens, });
 
-factory RealtimekitUpdatePresetUi.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUi(
+factory RealtimekitUpdatePresetUi.fromJson(Map<String, dynamic> json) {return RealtimekitUpdatePresetUi(
   configDiff: json['config_diff'] as Map<String, dynamic>?,
   designTokens: json['design_tokens'] != null ? RealtimekitUpdatePresetUiDesignTokens.fromJson(json['design_tokens'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final Map<String,dynamic>? configDiff;
 
 final RealtimekitUpdatePresetUiDesignTokens? designTokens;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'config_diff': ?configDiff,
   if (designTokens != null) 'design_tokens': designTokens?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config_diff', 'design_tokens'}.contains(key)); } 
-RealtimekitUpdatePresetUi copyWith({Map<String, dynamic>? Function()? configDiff, RealtimekitUpdatePresetUiDesignTokens? Function()? designTokens, }) { return RealtimekitUpdatePresetUi(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'config_diff', 'design_tokens'}.contains(key));}
+RealtimekitUpdatePresetUi copyWith({Map<String, dynamic>? Function()? configDiff, RealtimekitUpdatePresetUiDesignTokens? Function()? designTokens, }) {return RealtimekitUpdatePresetUi(
   configDiff: configDiff != null ? configDiff() : this.configDiff,
   designTokens: designTokens != null ? designTokens() : this.designTokens,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetUi &&
           configDiff == other.configDiff &&
@@ -30,4 +30,4 @@ RealtimekitUpdatePresetUi copyWith({Map<String, dynamic>? Function()? configDiff
 
 @override String toString() => 'RealtimekitUpdatePresetUi(configDiff: $configDiff, designTokens: $designTokens)';
 
- }
+}

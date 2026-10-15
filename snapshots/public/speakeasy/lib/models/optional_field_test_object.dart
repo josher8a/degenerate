@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/complex_optional_object.dart';import 'package:pub_speakeasy/models/nested_object.dart';import 'package:pub_speakeasy/models/non_empty_object.dart';@immutable final class OptionalFieldTestObject {const OptionalFieldTestObject({required this.requiredString, required this.requiredInt, required this.requiredBool, required this.requiredFloat, required this.requiredTime, required this.requiredObject, this.optionalString, this.optionalInt, this.optionalBool, this.optionalFloat, this.optionalTime, this.optionalBigDecimal, this.optionalNonEmptyObject, this.optionalAlwaysEmptyObject, this.optionalNestedObject, this.optionalComplexObject, this.optionalStringArray, this.optionalObjectArray, this.optionalStringMap, this.optionalObjectMap, this.optionalNullableInt = const Omittable.absent(), this.optionalNullableArray = const Omittable.absent(), this.optionalNullableDatetime = const Omittable.absent(), });
 
-factory OptionalFieldTestObject.fromJson(Map<String, dynamic> json) { return OptionalFieldTestObject(
+factory OptionalFieldTestObject.fromJson(Map<String, dynamic> json) {return OptionalFieldTestObject(
   requiredString: json['requiredString'] as String,
   requiredInt: (json['requiredInt'] as num).toInt(),
   requiredBool: json['requiredBool'] as bool,
@@ -27,7 +27,7 @@ factory OptionalFieldTestObject.fromJson(Map<String, dynamic> json) { return Opt
   optionalNullableInt: json.containsKey('optionalNullableInt') ? Omittable(json['optionalNullableInt'] != null ? (json['optionalNullableInt'] as num).toInt() : null) : const Omittable.absent(),
   optionalNullableArray: json.containsKey('optionalNullableArray') ? Omittable((json['optionalNullableArray'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   optionalNullableDatetime: json.containsKey('optionalNullableDatetime') ? Omittable(json['optionalNullableDatetime'] != null ? DateTime.parse(json['optionalNullableDatetime'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Required primitive field
 final String requiredString;
@@ -100,7 +100,7 @@ final Omittable<List<String>?> optionalNullableArray;
 /// Test tri-state behavior for date-time (OptionalNullable with complex value type)
 final Omittable<DateTime?> optionalNullableDatetime;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'requiredString': requiredString,
   'requiredInt': requiredInt,
   'requiredBool': requiredBool,
@@ -124,14 +124,14 @@ Map<String, dynamic> toJson() { return {
   if (optionalNullableInt.isPresent) 'optionalNullableInt': optionalNullableInt.value,
   if (optionalNullableArray.isPresent) 'optionalNullableArray': optionalNullableArray.value,
   if (optionalNullableDatetime.isPresent) 'optionalNullableDatetime': optionalNullableDatetime.value?.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('requiredString') && json['requiredString'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('requiredString') && json['requiredString'] is String &&
       json.containsKey('requiredInt') && json['requiredInt'] is num &&
       json.containsKey('requiredBool') && json['requiredBool'] is bool &&
       json.containsKey('requiredFloat') && json['requiredFloat'] is num &&
       json.containsKey('requiredTime') && json['requiredTime'] is String &&
-      json.containsKey('requiredObject'); } 
-OptionalFieldTestObject copyWith({String? requiredString, int? requiredInt, bool? requiredBool, double? requiredFloat, DateTime? requiredTime, NonEmptyObject? requiredObject, String? Function()? optionalString, int? Function()? optionalInt, bool? Function()? optionalBool, double? Function()? optionalFloat, DateTime? Function()? optionalTime, String? Function()? optionalBigDecimal, NonEmptyObject? Function()? optionalNonEmptyObject, Map<String, dynamic>? Function()? optionalAlwaysEmptyObject, NestedObject? Function()? optionalNestedObject, ComplexOptionalObject? Function()? optionalComplexObject, List<String>? Function()? optionalStringArray, List<NonEmptyObject>? Function()? optionalObjectArray, Map<String, String>? Function()? optionalStringMap, Map<String, NonEmptyObject>? Function()? optionalObjectMap, Omittable<int?>? optionalNullableInt, Omittable<List<String>?>? optionalNullableArray, Omittable<DateTime?>? optionalNullableDatetime, }) { return OptionalFieldTestObject(
+      json.containsKey('requiredObject');}
+OptionalFieldTestObject copyWith({String? requiredString, int? requiredInt, bool? requiredBool, double? requiredFloat, DateTime? requiredTime, NonEmptyObject? requiredObject, String? Function()? optionalString, int? Function()? optionalInt, bool? Function()? optionalBool, double? Function()? optionalFloat, DateTime? Function()? optionalTime, String? Function()? optionalBigDecimal, NonEmptyObject? Function()? optionalNonEmptyObject, Map<String, dynamic>? Function()? optionalAlwaysEmptyObject, NestedObject? Function()? optionalNestedObject, ComplexOptionalObject? Function()? optionalComplexObject, List<String>? Function()? optionalStringArray, List<NonEmptyObject>? Function()? optionalObjectArray, Map<String, String>? Function()? optionalStringMap, Map<String, NonEmptyObject>? Function()? optionalObjectMap, Omittable<int?>? optionalNullableInt, Omittable<List<String>?>? optionalNullableArray, Omittable<DateTime?>? optionalNullableDatetime, }) {return OptionalFieldTestObject(
   requiredString: requiredString ?? this.requiredString,
   requiredInt: requiredInt ?? this.requiredInt,
   requiredBool: requiredBool ?? this.requiredBool,
@@ -155,7 +155,7 @@ OptionalFieldTestObject copyWith({String? requiredString, int? requiredInt, bool
   optionalNullableInt: optionalNullableInt ?? this.optionalNullableInt,
   optionalNullableArray: optionalNullableArray ?? this.optionalNullableArray,
   optionalNullableDatetime: optionalNullableDatetime ?? this.optionalNullableDatetime,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is OptionalFieldTestObject &&
           requiredString == other.requiredString &&
@@ -187,4 +187,4 @@ OptionalFieldTestObject copyWith({String? requiredString, int? requiredInt, bool
 
 @override String toString() => 'OptionalFieldTestObject(\n  requiredString: $requiredString,\n  requiredInt: $requiredInt,\n  requiredBool: $requiredBool,\n  requiredFloat: $requiredFloat,\n  requiredTime: $requiredTime,\n  requiredObject: $requiredObject,\n  optionalString: $optionalString,\n  optionalInt: $optionalInt,\n  optionalBool: $optionalBool,\n  optionalFloat: $optionalFloat,\n  optionalTime: $optionalTime,\n  optionalBigDecimal: $optionalBigDecimal,\n  optionalNonEmptyObject: $optionalNonEmptyObject,\n  optionalAlwaysEmptyObject: $optionalAlwaysEmptyObject,\n  optionalNestedObject: $optionalNestedObject,\n  optionalComplexObject: $optionalComplexObject,\n  optionalStringArray: $optionalStringArray,\n  optionalObjectArray: $optionalObjectArray,\n  optionalStringMap: $optionalStringMap,\n  optionalObjectMap: $optionalObjectMap,\n  optionalNullableInt: $optionalNullableInt,\n  optionalNullableArray: $optionalNullableArray,\n  optionalNullableDatetime: $optionalNullableDatetime,\n)';
 
- }
+}

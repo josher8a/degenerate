@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hook_response.dart';import 'package:pub_github_rest_3_1/models/repos_create_webhook_request/repos_create_webhook_request_config.dart';/// The type of webhook. The only valid value is 'web'.
 sealed class HookName {const HookName();
 
-factory HookName.fromJson(String json) { return switch (json) {
+factory HookName.fromJson(String json) {return switch (json) {
   'web' => web,
   _ => HookName$Unknown(json),
-}; }
+};}
 
 static const HookName web = HookName$web._();
 
 static const List<HookName> values = [web];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'web' => 'web',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is HookName$Unknown; } 
+bool get isUnknown {return this is HookName$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() web, required W Function(String value) $unknown, }) {return switch (this) {
       HookName$web() => web(),
       HookName$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? web, W Function(String value)? $unknown, }) {return switch (this) {
       HookName$web() => web != null ? web() : orElse(value),
       HookName$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'HookName($value)';
 
- }
+}
 @immutable final class HookName$web extends HookName {const HookName$web._();
 
 @override String get value => 'web';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? web, W F
 
 @override int get hashCode => 'web'.hashCode;
 
- }
+}
 @immutable final class HookName$Unknown extends HookName {const HookName$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? web, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The webhook that is being pinged
 @immutable final class WebhookPingHook {const WebhookPingHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, this.appId, this.deliveriesUrl, this.lastResponse, this.pingUrl, this.testUrl, this.url, });
 
-factory WebhookPingHook.fromJson(Map<String, dynamic> json) { return WebhookPingHook(
+factory WebhookPingHook.fromJson(Map<String, dynamic> json) {return WebhookPingHook(
   active: json['active'] as bool,
   appId: json['app_id'] != null ? (json['app_id'] as num).toInt() : null,
   config: ReposCreateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>),
@@ -72,7 +72,7 @@ factory WebhookPingHook.fromJson(Map<String, dynamic> json) { return WebhookPing
   type: json['type'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-); }
+);}
 
 /// Determines whether the hook is actually triggered for the events it subscribes to.
 final bool active;
@@ -107,7 +107,7 @@ final DateTime updatedAt;
 
 final Uri? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': active,
   'app_id': ?appId,
   'config': config.toJson(),
@@ -122,16 +122,16 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'updated_at': updatedAt.toIso8601String(),
   if (url != null) 'url': url?.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('active') && json['active'] is bool &&
       json.containsKey('config') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('events') &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookPingHook copyWith({bool? active, int? Function()? appId, ReposCreateWebhookRequestConfig? config, DateTime? createdAt, Uri? Function()? deliveriesUrl, List<String>? events, int? id, HookResponse? Function()? lastResponse, HookName? name, Uri? Function()? pingUrl, Uri? Function()? testUrl, String? type, DateTime? updatedAt, Uri? Function()? url, }) { return WebhookPingHook(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+WebhookPingHook copyWith({bool? active, int? Function()? appId, ReposCreateWebhookRequestConfig? config, DateTime? createdAt, Uri? Function()? deliveriesUrl, List<String>? events, int? id, HookResponse? Function()? lastResponse, HookName? name, Uri? Function()? pingUrl, Uri? Function()? testUrl, String? type, DateTime? updatedAt, Uri? Function()? url, }) {return WebhookPingHook(
   active: active ?? this.active,
   appId: appId != null ? appId() : this.appId,
   config: config ?? this.config,
@@ -146,7 +146,7 @@ WebhookPingHook copyWith({bool? active, int? Function()? appId, ReposCreateWebho
   type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPingHook &&
           active == other.active &&
@@ -168,4 +168,4 @@ WebhookPingHook copyWith({bool? active, int? Function()? appId, ReposCreateWebho
 
 @override String toString() => 'WebhookPingHook(\n  active: $active,\n  appId: $appId,\n  config: $config,\n  createdAt: $createdAt,\n  deliveriesUrl: $deliveriesUrl,\n  events: $events,\n  id: $id,\n  lastResponse: $lastResponse,\n  name: $name,\n  pingUrl: $pingUrl,\n  testUrl: $testUrl,\n  type: $type,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
- }
+}

@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsAffirm {const PaymentMethodDetailsAffirm({this.location, this.reader, this.transactionId = const Omittable.absent(), });
 
-factory PaymentMethodDetailsAffirm.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAffirm(
+factory PaymentMethodDetailsAffirm.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsAffirm(
   location: json['location'] as String?,
   reader: json['reader'] as String?,
   transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// ID of the [location](https://docs.stripe.com/api/terminal/locations) that this transaction's reader is assigned to.
 final String? location;
@@ -19,14 +19,14 @@ final String? reader;
 /// The Affirm transaction ID associated with this payment.
 final Omittable<String?> transactionId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'location': ?location,
   'reader': ?reader,
   if (transactionId.isPresent) 'transaction_id': transactionId.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'reader', 'transaction_id'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'location', 'reader', 'transaction_id'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final location$ = location;
 if (location$ != null) {
   if (location$.runes.length > 5000) { errors.add('location: length must be <= 5000'); }
@@ -39,12 +39,12 @@ final transactionId$ = transactionId.value;
 if (transactionId$ != null) {
   if (transactionId$.runes.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsAffirm copyWith({String? Function()? location, String? Function()? reader, Omittable<String?>? transactionId, }) { return PaymentMethodDetailsAffirm(
+return errors;}
+PaymentMethodDetailsAffirm copyWith({String? Function()? location, String? Function()? reader, Omittable<String?>? transactionId, }) {return PaymentMethodDetailsAffirm(
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,
   transactionId: transactionId ?? this.transactionId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsAffirm &&
           location == other.location &&
@@ -55,4 +55,4 @@ PaymentMethodDetailsAffirm copyWith({String? Function()? location, String? Funct
 
 @override String toString() => 'PaymentMethodDetailsAffirm(location: $location, reader: $reader, transactionId: $transactionId)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_connector.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';@immutable final class MconnAdminConnectorDeleteResponse {const MconnAdminConnectorDeleteResponse({required this.messages, required this.success, required this.errors, required this.result, });
 
-factory MconnAdminConnectorDeleteResponse.fromJson(Map<String, dynamic> json) { return MconnAdminConnectorDeleteResponse(
+factory MconnAdminConnectorDeleteResponse.fromJson(Map<String, dynamic> json) {return MconnAdminConnectorDeleteResponse(
   messages: (json['messages'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   errors: (json['errors'] as List<dynamic>).map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: MconnAdminConnector.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<MconnCodedMessage> messages;
 
@@ -18,22 +18,22 @@ final List<MconnCodedMessage> errors;
 
 final MconnAdminConnector result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'errors': errors.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('errors') &&
-      json.containsKey('result'); } 
-MconnAdminConnectorDeleteResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, MconnAdminConnector? result, }) { return MconnAdminConnectorDeleteResponse(
+      json.containsKey('result');}
+MconnAdminConnectorDeleteResponse copyWith({List<MconnCodedMessage>? messages, bool? success, List<MconnCodedMessage>? errors, MconnAdminConnector? result, }) {return MconnAdminConnectorDeleteResponse(
   messages: messages ?? this.messages,
   success: success ?? this.success,
   errors: errors ?? this.errors,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminConnectorDeleteResponse &&
           listEquals(messages, other.messages) &&
@@ -45,4 +45,4 @@ MconnAdminConnectorDeleteResponse copyWith({List<MconnCodedMessage>? messages, b
 
 @override String toString() => 'MconnAdminConnectorDeleteResponse(messages: $messages, success: $success, errors: $errors, result: $result)';
 
- }
+}

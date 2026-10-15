@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_health_details/load_balancing_health_details_result.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';@immutable final class LoadBalancingHealthDetails {const LoadBalancingHealthDetails({required this.errors, required this.messages, required this.success, required this.result, });
 
-factory LoadBalancingHealthDetails.fromJson(Map<String, dynamic> json) { return LoadBalancingHealthDetails(
+factory LoadBalancingHealthDetails.fromJson(Map<String, dynamic> json) {return LoadBalancingHealthDetails(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: LoadBalancingHealthDetailsResult.fromJson(json['result'] as Map<String, dynamic>),
-); }
+);}
 
 final List<LoadBalancingMessages2> errors;
 
@@ -48,22 +48,22 @@ final bool success;
 /// Example: `{pool_id: 17b5962d775c646f3f9725cbc7a53df4, pop_health: {Amsterdam, NL: {healthy: true, origins: [{2001:DB8::5: {failure_reason: No failures, healthy: true, response_code: 401, rtt: 12.1ms}}]}}}`
 final LoadBalancingHealthDetailsResult result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   'result': result.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
-      json.containsKey('result'); } 
-LoadBalancingHealthDetails copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingHealthDetailsResult? result, }) { return LoadBalancingHealthDetails(
+      json.containsKey('result');}
+LoadBalancingHealthDetails copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingHealthDetailsResult? result, }) {return LoadBalancingHealthDetails(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result ?? this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingHealthDetails &&
           listEquals(errors, other.errors) &&
@@ -75,4 +75,4 @@ LoadBalancingHealthDetails copyWith({List<LoadBalancingMessages2>? errors, List<
 
 @override String toString() => 'LoadBalancingHealthDetails(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

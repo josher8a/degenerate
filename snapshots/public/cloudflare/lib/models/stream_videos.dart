@@ -66,7 +66,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class StreamVideos {const StreamVideos({this.allowedOrigins, this.created, this.creator, this.duration, this.input, this.liveInput, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.readyToStream, this.readyToStreamAt, this.requireSignedUrLs, this.scheduledDeletion, this.size, this.status, this.thumbnail, this.thumbnailTimestampPct, this.uid, this.uploadExpiry, this.uploaded, this.watermark, });
 
-factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
+factory StreamVideos.fromJson(Map<String, dynamic> json) {return StreamVideos(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
   created: json['created'] != null ? StreamCreated.fromJson(json['created'] as String) : null,
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
@@ -90,7 +90,7 @@ factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
   uploadExpiry: json['uploadExpiry'] != null ? StreamOneTimeUploadExpiry.fromJson(json['uploadExpiry'] as String) : null,
   uploaded: json['uploaded'] != null ? StreamUploaded.fromJson(json['uploaded'] as String) : null,
   watermark: json['watermark'] != null ? StreamWatermarks.fromJson(json['watermark'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
 final List<String>? allowedOrigins;
@@ -157,7 +157,7 @@ final StreamUploaded? uploaded;
 
 final StreamWatermarks? watermark;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowedOrigins': ?allowedOrigins,
   if (created != null) 'created': created?.toJson(),
   if (creator != null) 'creator': creator?.toJson(),
@@ -181,9 +181,9 @@ Map<String, dynamic> toJson() { return {
   if (uploadExpiry != null) 'uploadExpiry': uploadExpiry?.toJson(),
   if (uploaded != null) 'uploaded': uploaded?.toJson(),
   if (watermark != null) 'watermark': watermark?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowedOrigins', 'created', 'creator', 'duration', 'input', 'liveInput', 'maxDurationSeconds', 'meta', 'modified', 'playback', 'preview', 'readyToStream', 'readyToStreamAt', 'requireSignedURLs', 'scheduledDeletion', 'size', 'status', 'thumbnail', 'thumbnailTimestampPct', 'uid', 'uploadExpiry', 'uploaded', 'watermark'}.contains(key)); } 
-StreamVideos copyWith({List<String>? Function()? allowedOrigins, StreamCreated? Function()? created, StreamCreator? Function()? creator, StreamDuration? Function()? duration, StreamInput? Function()? input, StreamLiveInput2? Function()? liveInput, StreamMaxDurationSeconds? Function()? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamModified? Function()? modified, StreamPlayback? Function()? playback, StreamPreview? Function()? preview, StreamReadyToStream? Function()? readyToStream, StreamReadyToStreamAt? Function()? readyToStreamAt, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamScheduledDeletion? Function()? scheduledDeletion, StreamSize? Function()? size, StreamMediaStatus? Function()? status, StreamThumbnailUrl? Function()? thumbnail, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamIdentifier? Function()? uid, StreamOneTimeUploadExpiry? Function()? uploadExpiry, StreamUploaded? Function()? uploaded, StreamWatermarks? Function()? watermark, }) { return StreamVideos(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowedOrigins', 'created', 'creator', 'duration', 'input', 'liveInput', 'maxDurationSeconds', 'meta', 'modified', 'playback', 'preview', 'readyToStream', 'readyToStreamAt', 'requireSignedURLs', 'scheduledDeletion', 'size', 'status', 'thumbnail', 'thumbnailTimestampPct', 'uid', 'uploadExpiry', 'uploaded', 'watermark'}.contains(key));}
+StreamVideos copyWith({List<String>? Function()? allowedOrigins, StreamCreated? Function()? created, StreamCreator? Function()? creator, StreamDuration? Function()? duration, StreamInput? Function()? input, StreamLiveInput2? Function()? liveInput, StreamMaxDurationSeconds? Function()? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamModified? Function()? modified, StreamPlayback? Function()? playback, StreamPreview? Function()? preview, StreamReadyToStream? Function()? readyToStream, StreamReadyToStreamAt? Function()? readyToStreamAt, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamScheduledDeletion? Function()? scheduledDeletion, StreamSize? Function()? size, StreamMediaStatus? Function()? status, StreamThumbnailUrl? Function()? thumbnail, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamIdentifier? Function()? uid, StreamOneTimeUploadExpiry? Function()? uploadExpiry, StreamUploaded? Function()? uploaded, StreamWatermarks? Function()? watermark, }) {return StreamVideos(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   created: created != null ? created() : this.created,
   creator: creator != null ? creator() : this.creator,
@@ -207,7 +207,7 @@ StreamVideos copyWith({List<String>? Function()? allowedOrigins, StreamCreated? 
   uploadExpiry: uploadExpiry != null ? uploadExpiry() : this.uploadExpiry,
   uploaded: uploaded != null ? uploaded() : this.uploaded,
   watermark: watermark != null ? watermark() : this.watermark,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StreamVideos &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
@@ -238,4 +238,4 @@ StreamVideos copyWith({List<String>? Function()? allowedOrigins, StreamCreated? 
 
 @override String toString() => 'StreamVideos(\n  allowedOrigins: $allowedOrigins,\n  created: $created,\n  creator: $creator,\n  duration: $duration,\n  input: $input,\n  liveInput: $liveInput,\n  maxDurationSeconds: $maxDurationSeconds,\n  meta: $meta,\n  modified: $modified,\n  playback: $playback,\n  preview: $preview,\n  readyToStream: $readyToStream,\n  readyToStreamAt: $readyToStreamAt,\n  requireSignedUrLs: $requireSignedUrLs,\n  scheduledDeletion: $scheduledDeletion,\n  size: $size,\n  status: $status,\n  thumbnail: $thumbnail,\n  thumbnailTimestampPct: $thumbnailTimestampPct,\n  uid: $uid,\n  uploadExpiry: $uploadExpiry,\n  uploaded: $uploaded,\n  watermark: $watermark,\n)';
 
- }
+}

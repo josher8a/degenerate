@@ -14,7 +14,7 @@ final class HealthChecksApi with ApiExecutor {const HealthChecksApi(this.apiConf
 /// List configured health checks.
 ///
 /// `GET /zones/{zone_id}/healthchecks`
-Future<ApiResult<List<HealthchecksHealthchecks>, HealthChecksListHealthChecksError>> healthChecksListHealthChecks({required HealthchecksIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<HealthchecksHealthchecks>, HealthChecksListHealthChecksError>> healthChecksListHealthChecks({required HealthchecksIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,13 +42,13 @@ return await execute(
   },
   onError: HealthChecksListHealthChecksError.fromResponse,
 );
- } 
+}
 /// Create Health Check
 ///
 /// Create a new health check.
 ///
 /// `POST /zones/{zone_id}/healthchecks`
-Future<ApiResult<HealthchecksHealthchecks, HealthChecksCreateHealthCheckError>> healthChecksCreateHealthCheck({required HealthchecksIdentifier zoneId, required HealthchecksQueryHealthcheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HealthchecksHealthchecks, HealthChecksCreateHealthCheckError>> healthChecksCreateHealthCheck({required HealthchecksIdentifier zoneId, required HealthchecksQueryHealthcheck body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,13 +67,13 @@ return await execute(
   },
   onError: HealthChecksCreateHealthCheckError.fromResponse,
 );
- } 
+}
 /// Health Check Details
 ///
 /// Fetch a single configured health check.
 ///
 /// `GET /zones/{zone_id}/healthchecks/{healthcheck_id}`
-Future<ApiResult<HealthchecksHealthchecks, HealthChecksHealthCheckDetailsError>> healthChecksHealthCheckDetails({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HealthchecksHealthchecks, HealthChecksHealthCheckDetailsError>> healthChecksHealthCheckDetails({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -90,13 +90,13 @@ return await execute(
   },
   onError: HealthChecksHealthCheckDetailsError.fromResponse,
 );
- } 
+}
 /// Update Health Check
 ///
 /// Update a configured health check.
 ///
 /// `PUT /zones/{zone_id}/healthchecks/{healthcheck_id}`
-Future<ApiResult<HealthchecksHealthchecks, HealthChecksUpdateHealthCheckError>> healthChecksUpdateHealthCheck({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, required HealthchecksQueryHealthcheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HealthchecksHealthchecks, HealthChecksUpdateHealthCheckError>> healthChecksUpdateHealthCheck({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, required HealthchecksQueryHealthcheck body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,13 +115,13 @@ return await execute(
   },
   onError: HealthChecksUpdateHealthCheckError.fromResponse,
 );
- } 
+}
 /// Patch Health Check
 ///
 /// Patch a configured health check.
 ///
 /// `PATCH /zones/{zone_id}/healthchecks/{healthcheck_id}`
-Future<ApiResult<HealthchecksHealthchecks, HealthChecksPatchHealthCheckError>> healthChecksPatchHealthCheck({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, required HealthchecksQueryHealthcheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HealthchecksHealthchecks, HealthChecksPatchHealthCheckError>> healthChecksPatchHealthCheck({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, required HealthchecksQueryHealthcheck body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,13 +140,13 @@ return await execute(
   },
   onError: HealthChecksPatchHealthCheckError.fromResponse,
 );
- } 
+}
 /// Delete Health Check
 ///
 /// Delete a health check.
 ///
 /// `DELETE /zones/{zone_id}/healthchecks/{healthcheck_id}`
-Future<ApiResult<AaaIdResponseResult, HealthChecksDeleteHealthCheckError>> healthChecksDeleteHealthCheck({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult, HealthChecksDeleteHealthCheckError>> healthChecksDeleteHealthCheck({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -163,13 +163,13 @@ return await execute(
   },
   onError: HealthChecksDeleteHealthCheckError.fromResponse,
 );
- } 
+}
 /// Create Preview Health Check
 ///
 /// Create a new preview health check.
 ///
 /// `POST /zones/{zone_id}/healthchecks/preview`
-Future<ApiResult<HealthchecksHealthchecks, HealthChecksCreatePreviewHealthCheckError>> healthChecksCreatePreviewHealthCheck({required HealthchecksIdentifier zoneId, required HealthchecksQueryHealthcheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HealthchecksHealthchecks, HealthChecksCreatePreviewHealthCheckError>> healthChecksCreatePreviewHealthCheck({required HealthchecksIdentifier zoneId, required HealthchecksQueryHealthcheck body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -188,13 +188,13 @@ return await execute(
   },
   onError: HealthChecksCreatePreviewHealthCheckError.fromResponse,
 );
- } 
+}
 /// Health Check Preview Details
 ///
 /// Fetch a single configured health check preview.
 ///
 /// `GET /zones/{zone_id}/healthchecks/preview/{healthcheck_id}`
-Future<ApiResult<HealthchecksHealthchecks, HealthChecksHealthCheckPreviewDetailsError>> healthChecksHealthCheckPreviewDetails({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HealthchecksHealthchecks, HealthChecksHealthCheckPreviewDetailsError>> healthChecksHealthCheckPreviewDetails({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -211,13 +211,13 @@ return await execute(
   },
   onError: HealthChecksHealthCheckPreviewDetailsError.fromResponse,
 );
- } 
+}
 /// Delete Preview Health Check
 ///
 /// Delete a health check.
 ///
 /// `DELETE /zones/{zone_id}/healthchecks/preview/{healthcheck_id}`
-Future<ApiResult<AaaIdResponseResult, HealthChecksDeletePreviewHealthCheckError>> healthChecksDeletePreviewHealthCheck({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult, HealthChecksDeletePreviewHealthCheckError>> healthChecksDeletePreviewHealthCheck({required HealthchecksIdentifier healthcheckId, required HealthchecksIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -234,13 +234,13 @@ return await execute(
   },
   onError: HealthChecksDeletePreviewHealthCheckError.fromResponse,
 );
- } 
+}
 /// List Health Checks
 ///
 /// List configured health checks.
 ///
 /// `GET /zones/{zone_id}/smart_shield/healthchecks`
-Future<ApiResult<List<SmartshieldHealthchecks>, SmartShieldListHealthChecksError>> smartShieldListHealthChecks({required SmartshieldIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SmartshieldHealthchecks>, SmartShieldListHealthChecksError>> smartShieldListHealthChecks({required SmartshieldIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -268,13 +268,13 @@ return await execute(
   },
   onError: SmartShieldListHealthChecksError.fromResponse,
 );
- } 
+}
 /// Create Health Check
 ///
 /// Create a new health check.
 ///
 /// `POST /zones/{zone_id}/smart_shield/healthchecks`
-Future<ApiResult<SmartshieldHealthchecks, SmartShieldCreateHealthCheckError>> smartShieldCreateHealthCheck({required SmartshieldIdentifier zoneId, required SmartshieldQueryHealthcheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartshieldHealthchecks, SmartShieldCreateHealthCheckError>> smartShieldCreateHealthCheck({required SmartshieldIdentifier zoneId, required SmartshieldQueryHealthcheck body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -293,13 +293,13 @@ return await execute(
   },
   onError: SmartShieldCreateHealthCheckError.fromResponse,
 );
- } 
+}
 /// Health Check Details
 ///
 /// Fetch a single configured health check.
 ///
 /// `GET /zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}`
-Future<ApiResult<SmartshieldHealthchecks, SmartShieldHealthCheckDetailsError>> smartShieldHealthCheckDetails({required SmartshieldIdentifier healthcheckId, required SmartshieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartshieldHealthchecks, SmartShieldHealthCheckDetailsError>> smartShieldHealthCheckDetails({required SmartshieldIdentifier healthcheckId, required SmartshieldIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -316,13 +316,13 @@ return await execute(
   },
   onError: SmartShieldHealthCheckDetailsError.fromResponse,
 );
- } 
+}
 /// Update Health Check
 ///
 /// Update a configured health check.
 ///
 /// `PUT /zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}`
-Future<ApiResult<SmartshieldHealthchecks, SmartShieldUpdateHealthCheckError>> smartShieldUpdateHealthCheck({required SmartshieldIdentifier healthcheckId, required SmartshieldIdentifier zoneId, required SmartshieldSingleHcResponseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartshieldHealthchecks, SmartShieldUpdateHealthCheckError>> smartShieldUpdateHealthCheck({required SmartshieldIdentifier healthcheckId, required SmartshieldIdentifier zoneId, required SmartshieldSingleHcResponseRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -341,13 +341,13 @@ return await execute(
   },
   onError: SmartShieldUpdateHealthCheckError.fromResponse,
 );
- } 
+}
 /// Patch Health Check
 ///
 /// Patch a configured health check.
 ///
 /// `PATCH /zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}`
-Future<ApiResult<SmartshieldHealthchecks, SmartShieldPatchHealthCheckError>> smartShieldPatchHealthCheck({required SmartshieldIdentifier healthcheckId, required SmartshieldIdentifier zoneId, required SmartshieldQueryHealthcheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SmartshieldHealthchecks, SmartShieldPatchHealthCheckError>> smartShieldPatchHealthCheck({required SmartshieldIdentifier healthcheckId, required SmartshieldIdentifier zoneId, required SmartshieldQueryHealthcheck body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -366,13 +366,13 @@ return await execute(
   },
   onError: SmartShieldPatchHealthCheckError.fromResponse,
 );
- } 
+}
 /// Delete Health Check
 ///
 /// Delete a health check.
 ///
 /// `DELETE /zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}`
-Future<ApiResult<AaaIdResponseResult, SmartShieldDeleteHealthCheckError>> smartShieldDeleteHealthCheck({required SmartshieldIdentifier healthcheckId, required SmartshieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult, SmartShieldDeleteHealthCheckError>> smartShieldDeleteHealthCheck({required SmartshieldIdentifier healthcheckId, required SmartshieldIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -389,5 +389,5 @@ return await execute(
   },
   onError: SmartShieldDeleteHealthCheckError.fromResponse,
 );
- } 
- }
+}
+}

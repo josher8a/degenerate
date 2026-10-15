@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 sealed class RadarGetBgpPfx2asMoasFormat {const RadarGetBgpPfx2asMoasFormat();
 
-factory RadarGetBgpPfx2asMoasFormat.fromJson(String json) { return switch (json) {
+factory RadarGetBgpPfx2asMoasFormat.fromJson(String json) {return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
   _ => RadarGetBgpPfx2asMoasFormat$Unknown(json),
-}; }
+};}
 
 static const RadarGetBgpPfx2asMoasFormat $json = RadarGetBgpPfx2asMoasFormat$$json._();
 
@@ -17,30 +17,30 @@ static const RadarGetBgpPfx2asMoasFormat csv = RadarGetBgpPfx2asMoasFormat$csv._
 static const List<RadarGetBgpPfx2asMoasFormat> values = [$json, csv];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'JSON' => r'$json',
   'CSV' => 'csv',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetBgpPfx2asMoasFormat$Unknown; } 
+bool get isUnknown {return this is RadarGetBgpPfx2asMoasFormat$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetBgpPfx2asMoasFormat$$json() => $json(),
       RadarGetBgpPfx2asMoasFormat$csv() => csv(),
       RadarGetBgpPfx2asMoasFormat$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetBgpPfx2asMoasFormat$$json() => $json != null ? $json() : orElse(value),
       RadarGetBgpPfx2asMoasFormat$csv() => csv != null ? csv() : orElse(value),
       RadarGetBgpPfx2asMoasFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetBgpPfx2asMoasFormat($value)';
 
- }
+}
 @immutable final class RadarGetBgpPfx2asMoasFormat$$json extends RadarGetBgpPfx2asMoasFormat {const RadarGetBgpPfx2asMoasFormat$$json._();
 
 @override String get value => 'JSON';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'JSON'.hashCode;
 
- }
+}
 @immutable final class RadarGetBgpPfx2asMoasFormat$csv extends RadarGetBgpPfx2asMoasFormat {const RadarGetBgpPfx2asMoasFormat$csv._();
 
 @override String get value => 'CSV';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => 'CSV'.hashCode;
 
- }
+}
 @immutable final class RadarGetBgpPfx2asMoasFormat$Unknown extends RadarGetBgpPfx2asMoasFormat {const RadarGetBgpPfx2asMoasFormat$Unknown(this.value);
 
 @override final String value;
@@ -68,4 +68,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}

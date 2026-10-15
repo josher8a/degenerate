@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current status of the deployment.
 sealed class PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus();
 
-factory PagesDeploymentStatusStatus.fromJson(String json) { return switch (json) {
+factory PagesDeploymentStatusStatus.fromJson(String json) {return switch (json) {
   'deployment_in_progress' => deploymentInProgress,
   'syncing_files' => syncingFiles,
   'finished_file_sync' => finishedFileSync,
@@ -17,7 +17,7 @@ factory PagesDeploymentStatusStatus.fromJson(String json) { return switch (json)
   'deployment_lost' => deploymentLost,
   'succeed' => succeed,
   _ => PagesDeploymentStatusStatus$Unknown(json),
-}; }
+};}
 
 static const PagesDeploymentStatusStatus deploymentInProgress = PagesDeploymentStatusStatus$deploymentInProgress._();
 
@@ -44,9 +44,9 @@ static const PagesDeploymentStatusStatus succeed = PagesDeploymentStatusStatus$s
 static const List<PagesDeploymentStatusStatus> values = [deploymentInProgress, syncingFiles, finishedFileSync, updatingPages, purgingCdn, deploymentCancelled, deploymentFailed, deploymentContentFailed, deploymentAttemptError, deploymentLost, succeed];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'deployment_in_progress' => 'deploymentInProgress',
   'syncing_files' => 'syncingFiles',
   'finished_file_sync' => 'finishedFileSync',
@@ -59,11 +59,11 @@ String get name { return switch (value) {
   'deployment_lost' => 'deploymentLost',
   'succeed' => 'succeed',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PagesDeploymentStatusStatus$Unknown; } 
+bool get isUnknown {return this is PagesDeploymentStatusStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() deploymentInProgress, required W Function() syncingFiles, required W Function() finishedFileSync, required W Function() updatingPages, required W Function() purgingCdn, required W Function() deploymentCancelled, required W Function() deploymentFailed, required W Function() deploymentContentFailed, required W Function() deploymentAttemptError, required W Function() deploymentLost, required W Function() succeed, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() deploymentInProgress, required W Function() syncingFiles, required W Function() finishedFileSync, required W Function() updatingPages, required W Function() purgingCdn, required W Function() deploymentCancelled, required W Function() deploymentFailed, required W Function() deploymentContentFailed, required W Function() deploymentAttemptError, required W Function() deploymentLost, required W Function() succeed, required W Function(String value) $unknown, }) {return switch (this) {
       PagesDeploymentStatusStatus$deploymentInProgress() => deploymentInProgress(),
       PagesDeploymentStatusStatus$syncingFiles() => syncingFiles(),
       PagesDeploymentStatusStatus$finishedFileSync() => finishedFileSync(),
@@ -76,9 +76,9 @@ W when<W>({required W Function() deploymentInProgress, required W Function() syn
       PagesDeploymentStatusStatus$deploymentLost() => deploymentLost(),
       PagesDeploymentStatusStatus$succeed() => succeed(),
       PagesDeploymentStatusStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? deploymentInProgress, W Function()? syncingFiles, W Function()? finishedFileSync, W Function()? updatingPages, W Function()? purgingCdn, W Function()? deploymentCancelled, W Function()? deploymentFailed, W Function()? deploymentContentFailed, W Function()? deploymentAttemptError, W Function()? deploymentLost, W Function()? succeed, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deploymentInProgress, W Function()? syncingFiles, W Function()? finishedFileSync, W Function()? updatingPages, W Function()? purgingCdn, W Function()? deploymentCancelled, W Function()? deploymentFailed, W Function()? deploymentContentFailed, W Function()? deploymentAttemptError, W Function()? deploymentLost, W Function()? succeed, W Function(String value)? $unknown, }) {return switch (this) {
       PagesDeploymentStatusStatus$deploymentInProgress() => deploymentInProgress != null ? deploymentInProgress() : orElse(value),
       PagesDeploymentStatusStatus$syncingFiles() => syncingFiles != null ? syncingFiles() : orElse(value),
       PagesDeploymentStatusStatus$finishedFileSync() => finishedFileSync != null ? finishedFileSync() : orElse(value),
@@ -91,10 +91,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
       PagesDeploymentStatusStatus$deploymentLost() => deploymentLost != null ? deploymentLost() : orElse(value),
       PagesDeploymentStatusStatus$succeed() => succeed != null ? succeed() : orElse(value),
       PagesDeploymentStatusStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PagesDeploymentStatusStatus($value)';
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$deploymentInProgress extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentInProgress._();
 
 @override String get value => 'deployment_in_progress';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'deployment_in_progress'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$syncingFiles extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$syncingFiles._();
 
 @override String get value => 'syncing_files';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'syncing_files'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$finishedFileSync extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$finishedFileSync._();
 
 @override String get value => 'finished_file_sync';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'finished_file_sync'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$updatingPages extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$updatingPages._();
 
 @override String get value => 'updating_pages';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'updating_pages'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$purgingCdn extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$purgingCdn._();
 
 @override String get value => 'purging_cdn';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'purging_cdn'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$deploymentCancelled extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentCancelled._();
 
 @override String get value => 'deployment_cancelled';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'deployment_cancelled'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$deploymentFailed extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentFailed._();
 
 @override String get value => 'deployment_failed';
@@ -157,7 +157,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'deployment_failed'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$deploymentContentFailed extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentContentFailed._();
 
 @override String get value => 'deployment_content_failed';
@@ -166,7 +166,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'deployment_content_failed'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$deploymentAttemptError extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentAttemptError._();
 
 @override String get value => 'deployment_attempt_error';
@@ -175,7 +175,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'deployment_attempt_error'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$deploymentLost extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentLost._();
 
 @override String get value => 'deployment_lost';
@@ -184,7 +184,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'deployment_lost'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$succeed extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$succeed._();
 
 @override String get value => 'succeed';
@@ -193,7 +193,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => 'succeed'.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatusStatus$Unknown extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$Unknown(this.value);
 
 @override final String value;
@@ -203,23 +203,23 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployme
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PagesDeploymentStatus {const PagesDeploymentStatus({this.status});
 
-factory PagesDeploymentStatus.fromJson(Map<String, dynamic> json) { return PagesDeploymentStatus(
+factory PagesDeploymentStatus.fromJson(Map<String, dynamic> json) {return PagesDeploymentStatus(
   status: json['status'] != null ? PagesDeploymentStatusStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The current status of the deployment.
 final PagesDeploymentStatusStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-PagesDeploymentStatus copyWith({PagesDeploymentStatusStatus? Function()? status}) { return PagesDeploymentStatus(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+PagesDeploymentStatus copyWith({PagesDeploymentStatusStatus? Function()? status}) {return PagesDeploymentStatus(
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentStatus &&
           status == other.status;
@@ -228,4 +228,4 @@ PagesDeploymentStatus copyWith({PagesDeploymentStatusStatus? Function()? status}
 
 @override String toString() => 'PagesDeploymentStatus(status: $status)';
 
- }
+}

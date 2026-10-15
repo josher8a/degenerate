@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_account_id.dart';import 'package:pub_cloudflare/models/mcn_cloud_type.dart';import 'package:pub_cloudflare/models/mcn_provider_discovery_status.dart';import 'package:pub_cloudflare/models/mcn_provider_id.dart';import 'package:pub_cloudflare/models/mcn_provider_lifecycle_state.dart';import 'package:pub_cloudflare/models/mcn_provider_status.dart';@immutable final class McnProviderWithAccount {const McnProviderWithAccount({required this.cloudType, required this.friendlyName, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, required this.accountId, this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.gcpProjectId, this.gcpServiceAccountEmail, this.status, });
 
-factory McnProviderWithAccount.fromJson(Map<String, dynamic> json) { return McnProviderWithAccount(
+factory McnProviderWithAccount.fromJson(Map<String, dynamic> json) {return McnProviderWithAccount(
   awsArn: json['aws_arn'] as String?,
   azureSubscriptionId: json['azure_subscription_id'] as String?,
   azureTenantId: json['azure_tenant_id'] as String?,
@@ -19,7 +19,7 @@ factory McnProviderWithAccount.fromJson(Map<String, dynamic> json) { return McnP
   stateV2: McnProviderDiscoveryStatus.fromJson(json['state_v2'] as String),
   status: json['status'] != null ? McnProviderStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
   accountId: McnAccountId.fromJson(json['account_id'] as String),
-); }
+);}
 
 final String? awsArn;
 
@@ -51,7 +51,7 @@ final McnProviderStatus? status;
 
 final McnAccountId accountId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aws_arn': ?awsArn,
   'azure_subscription_id': ?azureSubscriptionId,
   'azure_tenant_id': ?azureTenantId,
@@ -67,16 +67,16 @@ Map<String, dynamic> toJson() { return {
   'state_v2': stateV2.toJson(),
   if (status != null) 'status': status?.toJson(),
   'account_id': accountId.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud_type') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('cloud_type') &&
       json.containsKey('friendly_name') && json['friendly_name'] is String &&
       json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('lifecycle_state') &&
       json.containsKey('state') &&
       json.containsKey('state_v2') &&
-      json.containsKey('account_id'); } 
-McnProviderWithAccount copyWith({String? Function()? awsArn, String? Function()? azureSubscriptionId, String? Function()? azureTenantId, McnCloudType? cloudType, String? Function()? description, String? friendlyName, String? Function()? gcpProjectId, String? Function()? gcpServiceAccountEmail, McnProviderId? id, String? lastUpdated, McnProviderLifecycleState? lifecycleState, McnProviderDiscoveryStatus? state, McnProviderDiscoveryStatus? stateV2, McnProviderStatus? Function()? status, McnAccountId? accountId, }) { return McnProviderWithAccount(
+      json.containsKey('account_id');}
+McnProviderWithAccount copyWith({String? Function()? awsArn, String? Function()? azureSubscriptionId, String? Function()? azureTenantId, McnCloudType? cloudType, String? Function()? description, String? friendlyName, String? Function()? gcpProjectId, String? Function()? gcpServiceAccountEmail, McnProviderId? id, String? lastUpdated, McnProviderLifecycleState? lifecycleState, McnProviderDiscoveryStatus? state, McnProviderDiscoveryStatus? stateV2, McnProviderStatus? Function()? status, McnAccountId? accountId, }) {return McnProviderWithAccount(
   awsArn: awsArn != null ? awsArn() : this.awsArn,
   azureSubscriptionId: azureSubscriptionId != null ? azureSubscriptionId() : this.azureSubscriptionId,
   azureTenantId: azureTenantId != null ? azureTenantId() : this.azureTenantId,
@@ -92,7 +92,7 @@ McnProviderWithAccount copyWith({String? Function()? awsArn, String? Function()?
   stateV2: stateV2 ?? this.stateV2,
   status: status != null ? status() : this.status,
   accountId: accountId ?? this.accountId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnProviderWithAccount &&
           awsArn == other.awsArn &&
@@ -115,4 +115,4 @@ McnProviderWithAccount copyWith({String? Function()? awsArn, String? Function()?
 
 @override String toString() => 'McnProviderWithAccount(\n  awsArn: $awsArn,\n  azureSubscriptionId: $azureSubscriptionId,\n  azureTenantId: $azureTenantId,\n  cloudType: $cloudType,\n  description: $description,\n  friendlyName: $friendlyName,\n  gcpProjectId: $gcpProjectId,\n  gcpServiceAccountEmail: $gcpServiceAccountEmail,\n  id: $id,\n  lastUpdated: $lastUpdated,\n  lifecycleState: $lifecycleState,\n  state: $state,\n  stateV2: $stateV2,\n  status: $status,\n  accountId: $accountId,\n)';
 
- }
+}

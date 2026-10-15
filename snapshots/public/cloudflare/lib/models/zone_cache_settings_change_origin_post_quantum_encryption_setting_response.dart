@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_messages2.dart';import 'package:pub_cloudflare/models/cache_rules_origin_post_quantum_encryption_response_value/cache_rules_origin_post_quantum_encryption_response_value_result.dart';@immutable final class ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse {const ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse(
+factory ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse.fromJson(Map<String, dynamic> json) {return ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? CacheRulesOriginPostQuantumEncryptionResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<CacheRulesMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final CacheRulesOriginPostQuantumEncryptionResponseValueResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, CacheRulesOriginPostQuantumEncryptionResponseValueResult? Function()? result, }) { return ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse(
+      json.containsKey('success') && json['success'] is bool;}
+ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse copyWith({List<CacheRulesMessages2>? errors, List<CacheRulesMessages2>? messages, bool? success, CacheRulesOriginPostQuantumEncryptionResponseValueResult? Function()? result, }) {return ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse copyWith({List
 
 @override String toString() => 'ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

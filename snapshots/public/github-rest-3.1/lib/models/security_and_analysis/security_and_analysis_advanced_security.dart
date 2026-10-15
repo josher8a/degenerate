@@ -7,19 +7,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class SecurityAndAnalysisAdvancedSecurity {const SecurityAndAnalysisAdvancedSecurity({this.status});
 
-factory SecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisAdvancedSecurity(
+factory SecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) {return SecurityAndAnalysisAdvancedSecurity(
   status: json['status'] != null ? AdvancedSecurityStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 final AdvancedSecurityStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-SecurityAndAnalysisAdvancedSecurity copyWith({AdvancedSecurityStatus? Function()? status}) { return SecurityAndAnalysisAdvancedSecurity(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'status'}.contains(key));}
+SecurityAndAnalysisAdvancedSecurity copyWith({AdvancedSecurityStatus? Function()? status}) {return SecurityAndAnalysisAdvancedSecurity(
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityAndAnalysisAdvancedSecurity &&
           status == other.status;
@@ -28,4 +28,4 @@ SecurityAndAnalysisAdvancedSecurity copyWith({AdvancedSecurityStatus? Function()
 
 @override String toString() => 'SecurityAndAnalysisAdvancedSecurity(status: $status)';
 
- }
+}

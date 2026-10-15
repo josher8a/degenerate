@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';@immutable final class AccountApplication {const AccountApplication({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.messageStatusCallback = const Omittable.absent(), this.sid = const Omittable.absent(), this.smsFallbackMethod = const Omittable.absent(), this.smsFallbackUrl = const Omittable.absent(), this.smsMethod = const Omittable.absent(), this.smsStatusCallback = const Omittable.absent(), this.smsUrl = const Omittable.absent(), this.statusCallback = const Omittable.absent(), this.statusCallbackMethod = const Omittable.absent(), this.uri = const Omittable.absent(), this.voiceCallerIdLookup = const Omittable.absent(), this.voiceFallbackMethod = const Omittable.absent(), this.voiceFallbackUrl = const Omittable.absent(), this.voiceMethod = const Omittable.absent(), this.voiceUrl = const Omittable.absent(), this.publicApplicationConnectEnabled = const Omittable.absent(), });
 
-factory AccountApplication.fromJson(Map<String, dynamic> json) { return AccountApplication(
+factory AccountApplication.fromJson(Map<String, dynamic> json) {return AccountApplication(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
   dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
@@ -25,7 +25,7 @@ factory AccountApplication.fromJson(Map<String, dynamic> json) { return AccountA
   voiceMethod: json.containsKey('voice_method') ? Omittable(json['voice_method'] != null ? AccountAddressDependentPhoneNumberVoiceMethod.fromJson(json['voice_method'] as String) : null) : const Omittable.absent(),
   voiceUrl: json.containsKey('voice_url') ? Omittable(json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null) : const Omittable.absent(),
   publicApplicationConnectEnabled: json.containsKey('public_application_connect_enabled') ? Omittable(json['public_application_connect_enabled'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Application resource.
 final Omittable<String?> accountSid;
@@ -90,7 +90,7 @@ final Omittable<Uri?> voiceUrl;
 /// Whether to allow other Twilio accounts to dial this applicaton using Dial verb. Can be: `true` or `false`.
 final Omittable<bool?> publicApplicationConnectEnabled;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
   if (dateCreated.isPresent) 'date_created': dateCreated.value,
@@ -112,10 +112,10 @@ Map<String, dynamic> toJson() { return {
   if (voiceMethod.isPresent) 'voice_method': voiceMethod.value?.toJson(),
   if (voiceUrl.isPresent) 'voice_url': voiceUrl.value?.toString(),
   if (publicApplicationConnectEnabled.isPresent) 'public_application_connect_enabled': publicApplicationConnectEnabled.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'friendly_name', 'message_status_callback', 'sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_status_callback', 'sms_url', 'status_callback', 'status_callback_method', 'uri', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'public_application_connect_enabled'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'friendly_name', 'message_status_callback', 'sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_status_callback', 'sms_url', 'status_callback', 'status_callback_method', 'uri', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'public_application_connect_enabled'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountSid$ = accountSid.value;
 if (accountSid$ != null) {
   if (accountSid$.runes.length < 34) { errors.add('accountSid: length must be >= 34'); }
@@ -128,8 +128,8 @@ if (sid$ != null) {
   if (sid$.runes.length > 34) { errors.add('sid: length must be <= 34'); }
   if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^AP[0-9a-fA-F]{32}$'); }
 }
-return errors; } 
-AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<Uri?>? messageStatusCallback, Omittable<String?>? sid, Omittable<AccountAddressDependentPhoneNumberSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountAddressDependentPhoneNumberSmsMethod?>? smsMethod, Omittable<Uri?>? smsStatusCallback, Omittable<Uri?>? smsUrl, Omittable<Uri?>? statusCallback, Omittable<AccountAddressDependentPhoneNumberStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? uri, Omittable<bool?>? voiceCallerIdLookup, Omittable<AccountAddressDependentPhoneNumberVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountAddressDependentPhoneNumberVoiceMethod?>? voiceMethod, Omittable<Uri?>? voiceUrl, Omittable<bool?>? publicApplicationConnectEnabled, }) { return AccountApplication(
+return errors;}
+AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? friendlyName, Omittable<Uri?>? messageStatusCallback, Omittable<String?>? sid, Omittable<AccountAddressDependentPhoneNumberSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountAddressDependentPhoneNumberSmsMethod?>? smsMethod, Omittable<Uri?>? smsStatusCallback, Omittable<Uri?>? smsUrl, Omittable<Uri?>? statusCallback, Omittable<AccountAddressDependentPhoneNumberStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? uri, Omittable<bool?>? voiceCallerIdLookup, Omittable<AccountAddressDependentPhoneNumberVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountAddressDependentPhoneNumberVoiceMethod?>? voiceMethod, Omittable<Uri?>? voiceUrl, Omittable<bool?>? publicApplicationConnectEnabled, }) {return AccountApplication(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   dateCreated: dateCreated ?? this.dateCreated,
@@ -151,7 +151,7 @@ AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>?
   voiceMethod: voiceMethod ?? this.voiceMethod,
   voiceUrl: voiceUrl ?? this.voiceUrl,
   publicApplicationConnectEnabled: publicApplicationConnectEnabled ?? this.publicApplicationConnectEnabled,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountApplication &&
           accountSid == other.accountSid &&
@@ -180,4 +180,4 @@ AccountApplication copyWith({Omittable<String?>? accountSid, Omittable<String?>?
 
 @override String toString() => 'AccountApplication(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  friendlyName: $friendlyName,\n  messageStatusCallback: $messageStatusCallback,\n  sid: $sid,\n  smsFallbackMethod: $smsFallbackMethod,\n  smsFallbackUrl: $smsFallbackUrl,\n  smsMethod: $smsMethod,\n  smsStatusCallback: $smsStatusCallback,\n  smsUrl: $smsUrl,\n  statusCallback: $statusCallback,\n  statusCallbackMethod: $statusCallbackMethod,\n  uri: $uri,\n  voiceCallerIdLookup: $voiceCallerIdLookup,\n  voiceFallbackMethod: $voiceFallbackMethod,\n  voiceFallbackUrl: $voiceFallbackUrl,\n  voiceMethod: $voiceMethod,\n  voiceUrl: $voiceUrl,\n  publicApplicationConnectEnabled: $publicApplicationConnectEnabled,\n)';
 
- }
+}

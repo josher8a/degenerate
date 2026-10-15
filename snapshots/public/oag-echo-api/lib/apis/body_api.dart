@@ -12,7 +12,7 @@ final class BodyApi with ApiExecutor {const BodyApi(this.apiConfig);
 /// Test body parameter(s)
 ///
 /// `POST /body/application/octetstream/binary`
-Future<ApiResult<String, Never>> testBodyApplicationOctetstreamBinary({Uint8List? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testBodyApplicationOctetstreamBinary({Uint8List? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
 
 final request = ApiRequest(
@@ -29,11 +29,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test body parameter(s)
 ///
 /// `POST /echo/body/Pet`
-Future<ApiResult<Pet, Never>> testEchoBodyPet({Pet? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Pet, Never>> testEchoBodyPet({Pet? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,11 +50,11 @@ return await execute(
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Test body parameter(s)
 ///
 /// `POST /echo/body/allOf/Pet`
-Future<ApiResult<Pet, Never>> testEchoBodyAllOfPet({Pet? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Pet, Never>> testEchoBodyAllOfPet({Pet? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,11 +71,11 @@ return await execute(
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Test empty response body
 ///
 /// `POST /echo/body/Pet/response_string`
-Future<ApiResult<String, Never>> testEchoBodyPetResponseString({Pet? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testEchoBodyPetResponseString({Pet? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,11 +92,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test empty json (request body)
 ///
 /// `POST /echo/body/Tag/response_string`
-Future<ApiResult<String, Never>> testEchoBodyTagResponseString({Tag? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testEchoBodyTagResponseString({Tag? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,11 +113,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test free form object
 ///
 /// `POST /echo/body/FreeFormObject/response_string`
-Future<ApiResult<String, Never>> testEchoBodyFreeFormObjectResponseString({Map<String,dynamic>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testEchoBodyFreeFormObjectResponseString({Map<String,dynamic>? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -134,11 +134,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test string enum response body
 ///
 /// `POST /echo/body/string_enum`
-Future<ApiResult<StringEnumRef, Never>> testEchoBodyStringEnum({StringEnumRef? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StringEnumRef, Never>> testEchoBodyStringEnum({StringEnumRef? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -155,11 +155,11 @@ return await execute(
     return StringEnumRef.fromJson(jsonDecode(response.body) as String);
   },
 );
- } 
+}
 /// Test binary (gif) response body
 ///
 /// `POST /binary/gif`
-Future<ApiResult<Uint8List, Never>> testBinaryGif({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Uint8List, Never>> testBinaryGif({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -174,11 +174,11 @@ return await execute(
     return Uint8List.fromList(response.bodyBytes);
   },
 );
- } 
+}
 /// Test single binary in multipart mime
 ///
 /// `POST /body/application/octetstream/single_binary`
-Future<ApiResult<String, Never>> testBodyMultipartFormdataSingleBinary({TestBodyMultipartFormdataSingleBinaryRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testBodyMultipartFormdataSingleBinary({TestBodyMultipartFormdataSingleBinaryRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -198,11 +198,11 @@ return await execute(
     return response.body;
   },
 );
- } 
+}
 /// Test array of binary in multipart mime
 ///
 /// `POST /body/application/octetstream/array_of_binary`
-Future<ApiResult<String, Never>> testBodyMultipartFormdataArrayOfBinary({TestBodyMultipartFormdataArrayOfBinaryRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, Never>> testBodyMultipartFormdataArrayOfBinary({TestBodyMultipartFormdataArrayOfBinaryRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -221,5 +221,5 @@ return await execute(
     return response.body;
   },
 );
- } 
- }
+}
+}

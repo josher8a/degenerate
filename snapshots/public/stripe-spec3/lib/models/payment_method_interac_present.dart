@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present/read_method.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present_networks.dart';/// 
 @immutable final class PaymentMethodInteracPresent {const PaymentMethodInteracPresent({required this.expMonth, required this.expYear, this.brand = const Omittable.absent(), this.cardholderName = const Omittable.absent(), this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.funding = const Omittable.absent(), this.issuer = const Omittable.absent(), this.last4 = const Omittable.absent(), this.networks = const Omittable.absent(), this.preferredLocales = const Omittable.absent(), this.readMethod = const Omittable.absent(), });
 
-factory PaymentMethodInteracPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodInteracPresent(
+factory PaymentMethodInteracPresent.fromJson(Map<String, dynamic> json) {return PaymentMethodInteracPresent(
   brand: json.containsKey('brand') ? Omittable(json['brand'] as String?) : const Omittable.absent(),
   cardholderName: json.containsKey('cardholder_name') ? Omittable(json['cardholder_name'] as String?) : const Omittable.absent(),
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
@@ -18,7 +18,7 @@ factory PaymentMethodInteracPresent.fromJson(Map<String, dynamic> json) { return
   networks: json.containsKey('networks') ? Omittable(json['networks'] != null ? PaymentMethodCardPresentNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   preferredLocales: json.containsKey('preferred_locales') ? Omittable((json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   readMethod: json.containsKey('read_method') ? Omittable(json['read_method'] != null ? ReadMethod.fromJson(json['read_method'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// Card brand. Can be `interac`, `mastercard` or `visa`.
 final Omittable<String?> brand;
@@ -61,7 +61,7 @@ final Omittable<List<String>?> preferredLocales;
 /// How card details were read in this transaction.
 final Omittable<ReadMethod?> readMethod;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (brand.isPresent) 'brand': brand.value,
   if (cardholderName.isPresent) 'cardholder_name': cardholderName.value,
   if (country.isPresent) 'country': country.value,
@@ -75,11 +75,11 @@ Map<String, dynamic> toJson() { return {
   if (networks.isPresent) 'networks': networks.value?.toJson(),
   if (preferredLocales.isPresent) 'preferred_locales': preferredLocales.value,
   if (readMethod.isPresent) 'read_method': readMethod.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
-      json.containsKey('exp_year') && json['exp_year'] is num; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('exp_month') && json['exp_month'] is num &&
+      json.containsKey('exp_year') && json['exp_year'] is num;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final brand$ = brand.value;
 if (brand$ != null) {
   if (brand$.runes.length > 5000) { errors.add('brand: length must be <= 5000'); }
@@ -112,8 +112,8 @@ final last4$ = last4.value;
 if (last4$ != null) {
   if (last4$.runes.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodInteracPresent copyWith({Omittable<String?>? brand, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? issuer, Omittable<String?>? last4, Omittable<PaymentMethodCardPresentNetworks?>? networks, Omittable<List<String>?>? preferredLocales, Omittable<ReadMethod?>? readMethod, }) { return PaymentMethodInteracPresent(
+return errors;}
+PaymentMethodInteracPresent copyWith({Omittable<String?>? brand, Omittable<String?>? cardholderName, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, Omittable<String?>? funding, Omittable<String?>? issuer, Omittable<String?>? last4, Omittable<PaymentMethodCardPresentNetworks?>? networks, Omittable<List<String>?>? preferredLocales, Omittable<ReadMethod?>? readMethod, }) {return PaymentMethodInteracPresent(
   brand: brand ?? this.brand,
   cardholderName: cardholderName ?? this.cardholderName,
   country: country ?? this.country,
@@ -127,7 +127,7 @@ PaymentMethodInteracPresent copyWith({Omittable<String?>? brand, Omittable<Strin
   networks: networks ?? this.networks,
   preferredLocales: preferredLocales ?? this.preferredLocales,
   readMethod: readMethod ?? this.readMethod,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodInteracPresent &&
           brand == other.brand &&
@@ -149,4 +149,4 @@ PaymentMethodInteracPresent copyWith({Omittable<String?>? brand, Omittable<Strin
 
 @override String toString() => 'PaymentMethodInteracPresent(\n  brand: $brand,\n  cardholderName: $cardholderName,\n  country: $country,\n  description: $description,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  issuer: $issuer,\n  last4: $last4,\n  networks: $networks,\n  preferredLocales: $preferredLocales,\n  readMethod: $readMethod,\n)';
 
- }
+}

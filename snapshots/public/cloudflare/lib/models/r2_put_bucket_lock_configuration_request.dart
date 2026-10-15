@@ -3,19 +3,19 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket_lock_rule.dart';@immutable final class R2PutBucketLockConfigurationRequest {const R2PutBucketLockConfigurationRequest({this.rules});
 
-factory R2PutBucketLockConfigurationRequest.fromJson(Map<String, dynamic> json) { return R2PutBucketLockConfigurationRequest(
+factory R2PutBucketLockConfigurationRequest.fromJson(Map<String, dynamic> json) {return R2PutBucketLockConfigurationRequest(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => R2BucketLockRule.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<R2BucketLockRule>? rules;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rules'}.contains(key)); } 
-R2PutBucketLockConfigurationRequest copyWith({List<R2BucketLockRule>? Function()? rules}) { return R2PutBucketLockConfigurationRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'rules'}.contains(key));}
+R2PutBucketLockConfigurationRequest copyWith({List<R2BucketLockRule>? Function()? rules}) {return R2PutBucketLockConfigurationRequest(
   rules: rules != null ? rules() : this.rules,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2PutBucketLockConfigurationRequest &&
           listEquals(rules, other.rules);
@@ -24,4 +24,4 @@ R2PutBucketLockConfigurationRequest copyWith({List<R2BucketLockRule>? Function()
 
 @override String toString() => 'R2PutBucketLockConfigurationRequest(rules: $rules)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_response/account_request_tracer_request_trace_response_result.dart';import 'package:pub_cloudflare/models/request_tracer_messages2.dart';@immutable final class AccountRequestTracerRequestTraceResponse {const AccountRequestTracerRequestTraceResponse({required this.errors, required this.messages, required this.success, this.result, });
 
-factory AccountRequestTracerRequestTraceResponse.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceResponse(
+factory AccountRequestTracerRequestTraceResponse.fromJson(Map<String, dynamic> json) {return AccountRequestTracerRequestTraceResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => RequestTracerMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => RequestTracerMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   result: json['result'] != null ? AccountRequestTracerRequestTraceResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<RequestTracerMessages2> errors;
 
@@ -22,21 +22,21 @@ final bool success;
 /// Trace result with an origin status code
 final AccountRequestTracerRequestTraceResponseResult? result;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (result != null) 'result': result?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AccountRequestTracerRequestTraceResponse copyWith({List<RequestTracerMessages2>? errors, List<RequestTracerMessages2>? messages, bool? success, AccountRequestTracerRequestTraceResponseResult? Function()? result, }) { return AccountRequestTracerRequestTraceResponse(
+      json.containsKey('success') && json['success'] is bool;}
+AccountRequestTracerRequestTraceResponse copyWith({List<RequestTracerMessages2>? errors, List<RequestTracerMessages2>? messages, bool? success, AccountRequestTracerRequestTraceResponseResult? Function()? result, }) {return AccountRequestTracerRequestTraceResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   result: result != null ? result() : this.result,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRequestTracerRequestTraceResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ AccountRequestTracerRequestTraceResponse copyWith({List<RequestTracerMessages2>?
 
 @override String toString() => 'AccountRequestTracerRequestTraceResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
 
- }
+}

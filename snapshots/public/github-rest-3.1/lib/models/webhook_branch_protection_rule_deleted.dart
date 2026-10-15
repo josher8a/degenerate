@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_rule.dart';@immutable final class WebhookBranchProtectionRuleDeleted {const WebhookBranchProtectionRuleDeleted({required this.action, required this.repository, required this.rule, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookBranchProtectionRuleDeleted.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleDeleted(
+factory WebhookBranchProtectionRuleDeleted.fromJson(Map<String, dynamic> json) {return WebhookBranchProtectionRuleDeleted(
   action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookBranchProtectionRuleDeleted.fromJson(Map<String, dynamic> json) {
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   rule: WebhooksRule.fromJson(json['rule'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemDeletedAction action;
 
@@ -27,7 +27,7 @@ final WebhooksRule rule;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'rule': rule.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('rule') &&
-      json.containsKey('sender'); } 
-WebhookBranchProtectionRuleDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) { return WebhookBranchProtectionRuleDeleted(
+      json.containsKey('sender');}
+WebhookBranchProtectionRuleDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) {return WebhookBranchProtectionRuleDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -48,7 +48,7 @@ WebhookBranchProtectionRuleDeleted copyWith({ItemDeletedAction? action, Enterpri
   repository: repository ?? this.repository,
   rule: rule ?? this.rule,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookBranchProtectionRuleDeleted &&
           action == other.action &&
@@ -63,4 +63,4 @@ WebhookBranchProtectionRuleDeleted copyWith({ItemDeletedAction? action, Enterpri
 
 @override String toString() => 'WebhookBranchProtectionRuleDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, rule: $rule, sender: $sender)';
 
- }
+}

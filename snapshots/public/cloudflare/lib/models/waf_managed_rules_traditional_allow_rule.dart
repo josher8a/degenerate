@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_anomaly_rule/waf_managed_rules_anomaly_rule_group.dart';import 'package:pub_cloudflare/models/waf_managed_rules_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_priority.dart';import 'package:pub_cloudflare/models/waf_managed_rules_rule_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_schemas_description.dart';/// When set to `on`, the current rule will be used when evaluating the request. Applies to traditional (allow) WAF rules.
 sealed class WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional();
 
-factory WafManagedRulesModeAllowTraditional.fromJson(String json) { return switch (json) {
+factory WafManagedRulesModeAllowTraditional.fromJson(String json) {return switch (json) {
   'on' => $on,
   'off' => off,
   _ => WafManagedRulesModeAllowTraditional$Unknown(json),
-}; }
+};}
 
 static const WafManagedRulesModeAllowTraditional $on = WafManagedRulesModeAllowTraditional$$on._();
 
@@ -17,30 +17,30 @@ static const WafManagedRulesModeAllowTraditional off = WafManagedRulesModeAllowT
 static const List<WafManagedRulesModeAllowTraditional> values = [$on, off];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'on' => r'$on',
   'off' => 'off',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WafManagedRulesModeAllowTraditional$Unknown; } 
+bool get isUnknown {return this is WafManagedRulesModeAllowTraditional$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) {return switch (this) {
       WafManagedRulesModeAllowTraditional$$on() => $on(),
       WafManagedRulesModeAllowTraditional$off() => off(),
       WafManagedRulesModeAllowTraditional$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) {return switch (this) {
       WafManagedRulesModeAllowTraditional$$on() => $on != null ? $on() : orElse(value),
       WafManagedRulesModeAllowTraditional$off() => off != null ? off() : orElse(value),
       WafManagedRulesModeAllowTraditional$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WafManagedRulesModeAllowTraditional($value)';
 
- }
+}
 @immutable final class WafManagedRulesModeAllowTraditional$$on extends WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional$$on._();
 
 @override String get value => 'on';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'on'.hashCode;
 
- }
+}
 @immutable final class WafManagedRulesModeAllowTraditional$off extends WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional$off._();
 
 @override String get value => 'off';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => 'off'.hashCode;
 
- }
+}
 @immutable final class WafManagedRulesModeAllowTraditional$Unknown extends WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional$Unknown(this.value);
 
 @override final String value;
@@ -68,11 +68,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// When triggered, traditional WAF rules cause the firewall to immediately act on the request based on the rule configuration. An 'allow' rule will immediately allow the request and no other rules will be processed.
 @immutable final class WafManagedRulesTraditionalAllowRule {const WafManagedRulesTraditionalAllowRule({required this.description, required this.group, required this.id, required this.packageId, required this.priority, required this.allowedModes, required this.mode, });
 
-factory WafManagedRulesTraditionalAllowRule.fromJson(Map<String, dynamic> json) { return WafManagedRulesTraditionalAllowRule(
+factory WafManagedRulesTraditionalAllowRule.fromJson(Map<String, dynamic> json) {return WafManagedRulesTraditionalAllowRule(
   description: WafManagedRulesSchemasDescription.fromJson(json['description'] as String),
   group: WafManagedRulesAnomalyRuleGroup.fromJson(json['group'] as Map<String, dynamic>),
   id: WafManagedRulesRuleComponentsSchemasIdentifier.fromJson(json['id'] as String),
@@ -80,7 +80,7 @@ factory WafManagedRulesTraditionalAllowRule.fromJson(Map<String, dynamic> json) 
   priority: WafManagedRulesPriority.fromJson(json['priority'] as String),
   allowedModes: (json['allowed_modes'] as List<dynamic>).map((e) => WafManagedRulesModeAllowTraditional.fromJson(e as String)).toList(),
   mode: WafManagedRulesModeAllowTraditional.fromJson(json['mode'] as String),
-); }
+);}
 
 /// Defines the public description of the WAF rule.
 final WafManagedRulesSchemasDescription description;
@@ -103,7 +103,7 @@ final List<WafManagedRulesModeAllowTraditional> allowedModes;
 /// When set to `on`, the current rule will be used when evaluating the request. Applies to traditional (allow) WAF rules.
 final WafManagedRulesModeAllowTraditional mode;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': description.toJson(),
   'group': group.toJson(),
   'id': id.toJson(),
@@ -111,15 +111,15 @@ Map<String, dynamic> toJson() { return {
   'priority': priority.toJson(),
   'allowed_modes': allowedModes.map((e) => e.toJson()).toList(),
   'mode': mode.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('description') &&
       json.containsKey('group') &&
       json.containsKey('id') &&
       json.containsKey('package_id') &&
       json.containsKey('priority') &&
       json.containsKey('allowed_modes') &&
-      json.containsKey('mode'); } 
-WafManagedRulesTraditionalAllowRule copyWith({WafManagedRulesSchemasDescription? description, WafManagedRulesAnomalyRuleGroup? group, WafManagedRulesRuleComponentsSchemasIdentifier? id, WafManagedRulesIdentifier? packageId, WafManagedRulesPriority? priority, List<WafManagedRulesModeAllowTraditional>? allowedModes, WafManagedRulesModeAllowTraditional? mode, }) { return WafManagedRulesTraditionalAllowRule(
+      json.containsKey('mode');}
+WafManagedRulesTraditionalAllowRule copyWith({WafManagedRulesSchemasDescription? description, WafManagedRulesAnomalyRuleGroup? group, WafManagedRulesRuleComponentsSchemasIdentifier? id, WafManagedRulesIdentifier? packageId, WafManagedRulesPriority? priority, List<WafManagedRulesModeAllowTraditional>? allowedModes, WafManagedRulesModeAllowTraditional? mode, }) {return WafManagedRulesTraditionalAllowRule(
   description: description ?? this.description,
   group: group ?? this.group,
   id: id ?? this.id,
@@ -127,7 +127,7 @@ WafManagedRulesTraditionalAllowRule copyWith({WafManagedRulesSchemasDescription?
   priority: priority ?? this.priority,
   allowedModes: allowedModes ?? this.allowedModes,
   mode: mode ?? this.mode,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WafManagedRulesTraditionalAllowRule &&
           description == other.description &&
@@ -142,4 +142,4 @@ WafManagedRulesTraditionalAllowRule copyWith({WafManagedRulesSchemasDescription?
 
 @override String toString() => 'WafManagedRulesTraditionalAllowRule(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority, allowedModes: $allowedModes, mode: $mode)';
 
- }
+}

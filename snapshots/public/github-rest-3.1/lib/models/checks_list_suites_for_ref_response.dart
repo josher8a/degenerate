@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite.dart';@immutable final class ChecksListSuitesForRefResponse {const ChecksListSuitesForRefResponse({required this.totalCount, required this.checkSuites, });
 
-factory ChecksListSuitesForRefResponse.fromJson(Map<String, dynamic> json) { return ChecksListSuitesForRefResponse(
+factory ChecksListSuitesForRefResponse.fromJson(Map<String, dynamic> json) {return ChecksListSuitesForRefResponse(
   totalCount: (json['total_count'] as num).toInt(),
   checkSuites: (json['check_suites'] as List<dynamic>).map((e) => CheckSuite.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int totalCount;
 
 final List<CheckSuite> checkSuites;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'total_count': totalCount,
   'check_suites': checkSuites.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
-      json.containsKey('check_suites'); } 
-ChecksListSuitesForRefResponse copyWith({int? totalCount, List<CheckSuite>? checkSuites, }) { return ChecksListSuitesForRefResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('check_suites');}
+ChecksListSuitesForRefResponse copyWith({int? totalCount, List<CheckSuite>? checkSuites, }) {return ChecksListSuitesForRefResponse(
   totalCount: totalCount ?? this.totalCount,
   checkSuites: checkSuites ?? this.checkSuites,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ChecksListSuitesForRefResponse &&
           totalCount == other.totalCount &&
@@ -31,4 +31,4 @@ ChecksListSuitesForRefResponse copyWith({int? totalCount, List<CheckSuite>? chec
 
 @override String toString() => 'ChecksListSuitesForRefResponse(totalCount: $totalCount, checkSuites: $checkSuites)';
 
- }
+}

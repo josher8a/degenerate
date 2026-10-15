@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_ship_from_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_transaction_resource_reversal.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_transaction_shipping_cost.dart';import 'package:pub_stripe_spec3/models/tax_transaction/tax_transaction_line_items.dart';import 'package:pub_stripe_spec3/models/tax_transaction_line_item/tax_transaction_line_item_type.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TaxTransactionObject {const TaxTransactionObject();
 
-factory TaxTransactionObject.fromJson(String json) { return switch (json) {
+factory TaxTransactionObject.fromJson(String json) {return switch (json) {
   'tax.transaction' => taxTransaction,
   _ => TaxTransactionObject$Unknown(json),
-}; }
+};}
 
 static const TaxTransactionObject taxTransaction = TaxTransactionObject$taxTransaction._();
 
 static const List<TaxTransactionObject> values = [taxTransaction];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'tax.transaction' => 'taxTransaction',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxTransactionObject$Unknown; } 
+bool get isUnknown {return this is TaxTransactionObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() taxTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() taxTransaction, required W Function(String value) $unknown, }) {return switch (this) {
       TaxTransactionObject$taxTransaction() => taxTransaction(),
       TaxTransactionObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTransaction, W Function(String value)? $unknown, }) {return switch (this) {
       TaxTransactionObject$taxTransaction() => taxTransaction != null ? taxTransaction() : orElse(value),
       TaxTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxTransactionObject($value)';
 
- }
+}
 @immutable final class TaxTransactionObject$taxTransaction extends TaxTransactionObject {const TaxTransactionObject$taxTransaction._();
 
 @override String get value => 'tax.transaction';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTrans
 
 @override int get hashCode => 'tax.transaction'.hashCode;
 
- }
+}
 @immutable final class TaxTransactionObject$Unknown extends TaxTransactionObject {const TaxTransactionObject$Unknown(this.value);
 
 @override final String value;
@@ -53,13 +53,13 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTrans
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Tax Transaction records the tax collected from or refunded to your customer.
 /// 
 /// Related guide: [Calculate tax in your custom payment flow](https://docs.stripe.com/tax/custom#tax-transaction)
 @immutable final class TaxTransaction {const TaxTransaction({required this.created, required this.currency, required this.customerDetails, required this.id, required this.livemode, required this.object, required this.postedAt, required this.reference, required this.taxDate, required this.type, this.customer = const Omittable.absent(), this.lineItems = const Omittable.absent(), this.metadata = const Omittable.absent(), this.reversal = const Omittable.absent(), this.shipFromDetails = const Omittable.absent(), this.shippingCost = const Omittable.absent(), });
 
-factory TaxTransaction.fromJson(Map<String, dynamic> json) { return TaxTransaction(
+factory TaxTransaction.fromJson(Map<String, dynamic> json) {return TaxTransaction(
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   customer: json.containsKey('customer') ? Omittable(json['customer'] as String?) : const Omittable.absent(),
@@ -76,7 +76,7 @@ factory TaxTransaction.fromJson(Map<String, dynamic> json) { return TaxTransacti
   shippingCost: json.containsKey('shipping_cost') ? Omittable(json['shipping_cost'] != null ? TaxProductResourceTaxTransactionShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxDate: (json['tax_date'] as num).toInt(),
   type: TaxTransactionLineItemType.fromJson(json['type'] as String),
-); }
+);}
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -125,7 +125,7 @@ final int taxDate;
 /// If `reversal`, this transaction reverses an earlier transaction.
 final TaxTransactionLineItemType type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created': created,
   'currency': currency,
   if (customer.isPresent) 'customer': customer.value,
@@ -142,8 +142,8 @@ Map<String, dynamic> toJson() { return {
   if (shippingCost.isPresent) 'shipping_cost': shippingCost.value?.toJson(),
   'tax_date': taxDate,
   'type': type.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('customer_details') &&
       json.containsKey('id') && json['id'] is String &&
@@ -152,9 +152,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('posted_at') && json['posted_at'] is num &&
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('tax_date') && json['tax_date'] is num &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (currency.runes.length > 5000) { errors.add('currency: length must be <= 5000'); }
 final customer$ = customer.value;
 if (customer$ != null) {
@@ -162,8 +162,8 @@ if (customer$ != null) {
 }
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (reference.runes.length > 5000) { errors.add('reference: length must be <= 5000'); }
-return errors; } 
-TaxTransaction copyWith({int? created, String? currency, Omittable<String?>? customer, TaxProductResourceCustomerDetails? customerDetails, String? id, Omittable<TaxTransactionLineItems?>? lineItems, bool? livemode, Omittable<Map<String,String>?>? metadata, TaxTransactionObject? object, int? postedAt, String? reference, Omittable<TaxProductResourceTaxTransactionResourceReversal?>? reversal, Omittable<TaxProductResourceShipFromDetails?>? shipFromDetails, Omittable<TaxProductResourceTaxTransactionShippingCost?>? shippingCost, int? taxDate, TaxTransactionLineItemType? type, }) { return TaxTransaction(
+return errors;}
+TaxTransaction copyWith({int? created, String? currency, Omittable<String?>? customer, TaxProductResourceCustomerDetails? customerDetails, String? id, Omittable<TaxTransactionLineItems?>? lineItems, bool? livemode, Omittable<Map<String,String>?>? metadata, TaxTransactionObject? object, int? postedAt, String? reference, Omittable<TaxProductResourceTaxTransactionResourceReversal?>? reversal, Omittable<TaxProductResourceShipFromDetails?>? shipFromDetails, Omittable<TaxProductResourceTaxTransactionShippingCost?>? shippingCost, int? taxDate, TaxTransactionLineItemType? type, }) {return TaxTransaction(
   created: created ?? this.created,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,
@@ -180,7 +180,7 @@ TaxTransaction copyWith({int? created, String? currency, Omittable<String?>? cus
   shippingCost: shippingCost ?? this.shippingCost,
   taxDate: taxDate ?? this.taxDate,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxTransaction &&
           created == other.created &&
@@ -204,4 +204,4 @@ TaxTransaction copyWith({int? created, String? currency, Omittable<String?>? cus
 
 @override String toString() => 'TaxTransaction(\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  customerDetails: $customerDetails,\n  id: $id,\n  lineItems: $lineItems,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  postedAt: $postedAt,\n  reference: $reference,\n  reversal: $reversal,\n  shipFromDetails: $shipFromDetails,\n  shippingCost: $shippingCost,\n  taxDate: $taxDate,\n  type: $type,\n)';
 
- }
+}

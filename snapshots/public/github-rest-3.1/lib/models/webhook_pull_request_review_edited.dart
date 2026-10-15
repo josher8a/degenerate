@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_edited/webhook_pull_request_review_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_edited/webhook_pull_request_review_edited_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_review.dart';@immutable final class WebhookPullRequestReviewEdited {const WebhookPullRequestReviewEdited({required this.action, required this.changes, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEdited(
+factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) {return WebhookPullRequestReviewEdited(
   action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookPullRequestReviewEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) { ret
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   review: WebhooksReview.fromJson(json['review'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemEditedAction action;
 
@@ -33,7 +33,7 @@ final WebhooksReview review;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
@@ -43,14 +43,14 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'review': review.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('review') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestReviewEdited copyWith({ItemEditedAction? action, WebhookPullRequestReviewEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewEditedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhooksReview? review, SimpleUser? sender, }) { return WebhookPullRequestReviewEdited(
+      json.containsKey('sender');}
+WebhookPullRequestReviewEdited copyWith({ItemEditedAction? action, WebhookPullRequestReviewEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewEditedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhooksReview? review, SimpleUser? sender, }) {return WebhookPullRequestReviewEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
@@ -60,7 +60,7 @@ WebhookPullRequestReviewEdited copyWith({ItemEditedAction? action, WebhookPullRe
   repository: repository ?? this.repository,
   review: review ?? this.review,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewEdited &&
           action == other.action &&
@@ -77,4 +77,4 @@ WebhookPullRequestReviewEdited copyWith({ItemEditedAction? action, WebhookPullRe
 
 @override String toString() => 'WebhookPullRequestReviewEdited(\n  action: $action,\n  changes: $changes,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  review: $review,\n  sender: $sender,\n)';
 
- }
+}

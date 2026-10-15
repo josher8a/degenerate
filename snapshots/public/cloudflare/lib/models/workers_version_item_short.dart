@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_version_item_full/workers_version_item_full_metadata.dart';@immutable final class WorkersVersionItemShort {const WorkersVersionItemShort({this.id, this.metadata, this.number, });
 
-factory WorkersVersionItemShort.fromJson(Map<String, dynamic> json) { return WorkersVersionItemShort(
+factory WorkersVersionItemShort.fromJson(Map<String, dynamic> json) {return WorkersVersionItemShort(
   id: json['id'] as String?,
   metadata: json['metadata'] != null ? WorkersVersionItemFullMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   number: json['number'] != null ? (json['number'] as num).toDouble() : null,
-); }
+);}
 
 /// Unique identifier for the version.
 /// 
@@ -33,17 +33,17 @@ final WorkersVersionItemFullMetadata? metadata;
 /// Example: `1`
 final double? number;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': ?id,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'number': ?number,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'number'}.contains(key)); } 
-WorkersVersionItemShort copyWith({String? Function()? id, WorkersVersionItemFullMetadata? Function()? metadata, double? Function()? number, }) { return WorkersVersionItemShort(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'metadata', 'number'}.contains(key));}
+WorkersVersionItemShort copyWith({String? Function()? id, WorkersVersionItemFullMetadata? Function()? metadata, double? Function()? number, }) {return WorkersVersionItemShort(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   number: number != null ? number() : this.number,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionItemShort &&
           id == other.id &&
@@ -54,4 +54,4 @@ WorkersVersionItemShort copyWith({String? Function()? id, WorkersVersionItemFull
 
 @override String toString() => 'WorkersVersionItemShort(id: $id, metadata: $metadata, number: $number)';
 
- }
+}

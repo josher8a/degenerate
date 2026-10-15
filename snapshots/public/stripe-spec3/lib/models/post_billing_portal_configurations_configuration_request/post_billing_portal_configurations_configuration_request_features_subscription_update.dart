@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update/trial_update_behavior.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/post_billing_portal_configurations_configuration_request_features_subscription_update_schedule_at_period_end.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/products.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/subscription_update_default_allowed_updates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request/post_customers_customer_subscriptions_subscription_exposed_id_request_billing_cycle_anchor.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate({this.billingCycleAnchor, this.defaultAllowedUpdates, this.enabled, this.products, this.prorationBehavior, this.scheduleAtPeriodEnd, this.trialUpdateBehavior, });
 
-factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
+factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
   defaultAllowedUpdates: json['default_allowed_updates'] != null ? SubscriptionUpdateDefaultAllowedUpdates.fromJson(json['default_allowed_updates']) : null,
   enabled: json['enabled'] as bool?,
@@ -11,7 +11,7 @@ factory PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionU
   prorationBehavior: json['proration_behavior'] != null ? DeleteSubscriptionItemsItemRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
   scheduleAtPeriodEnd: json['schedule_at_period_end'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd.fromJson(json['schedule_at_period_end'] as Map<String, dynamic>) : null,
   trialUpdateBehavior: json['trial_update_behavior'] != null ? TrialUpdateBehavior.fromJson(json['trial_update_behavior'] as String) : null,
-); }
+);}
 
 final PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor? billingCycleAnchor;
 
@@ -27,7 +27,7 @@ final PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpd
 
 final TrialUpdateBehavior? trialUpdateBehavior;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (billingCycleAnchor != null) 'billing_cycle_anchor': billingCycleAnchor?.toJson(),
   if (defaultAllowedUpdates != null) 'default_allowed_updates': defaultAllowedUpdates?.toJson(),
   'enabled': ?enabled,
@@ -35,9 +35,9 @@ Map<String, dynamic> toJson() { return {
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
   if (scheduleAtPeriodEnd != null) 'schedule_at_period_end': scheduleAtPeriodEnd?.toJson(),
   if (trialUpdateBehavior != null) 'trial_update_behavior': trialUpdateBehavior?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_cycle_anchor', 'default_allowed_updates', 'enabled', 'products', 'proration_behavior', 'schedule_at_period_end', 'trial_update_behavior'}.contains(key)); } 
-PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate copyWith({PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor? Function()? billingCycleAnchor, SubscriptionUpdateDefaultAllowedUpdates? Function()? defaultAllowedUpdates, bool? Function()? enabled, Products? Function()? products, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd? Function()? scheduleAtPeriodEnd, TrialUpdateBehavior? Function()? trialUpdateBehavior, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'billing_cycle_anchor', 'default_allowed_updates', 'enabled', 'products', 'proration_behavior', 'schedule_at_period_end', 'trial_update_behavior'}.contains(key));}
+PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate copyWith({PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor? Function()? billingCycleAnchor, SubscriptionUpdateDefaultAllowedUpdates? Function()? defaultAllowedUpdates, bool? Function()? enabled, Products? Function()? products, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd? Function()? scheduleAtPeriodEnd, TrialUpdateBehavior? Function()? trialUpdateBehavior, }) {return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
   defaultAllowedUpdates: defaultAllowedUpdates != null ? defaultAllowedUpdates() : this.defaultAllowedUpdates,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -45,7 +45,7 @@ PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate co
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
   scheduleAtPeriodEnd: scheduleAtPeriodEnd != null ? scheduleAtPeriodEnd() : this.scheduleAtPeriodEnd,
   trialUpdateBehavior: trialUpdateBehavior != null ? trialUpdateBehavior() : this.trialUpdateBehavior,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate &&
           billingCycleAnchor == other.billingCycleAnchor &&
@@ -60,4 +60,4 @@ PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate co
 
 @override String toString() => 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)';
 
- }
+}

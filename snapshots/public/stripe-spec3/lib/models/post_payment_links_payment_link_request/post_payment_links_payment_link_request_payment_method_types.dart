@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';sealed class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1();
 
-factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
+factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(String json) {return switch (json) {
   'affirm' => affirm,
   'afterpay_clearpay' => afterpayClearpay,
   'alipay' => alipay,
@@ -44,7 +44,7 @@ factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(St
   'wechat_pay' => wechatPay,
   'zip' => zip,
   _ => PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$Unknown(json),
-}; }
+};}
 
 static const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 affirm = PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$affirm._();
 
@@ -127,9 +127,9 @@ static const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 zip = 
 static const List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1> values = [affirm, afterpayClearpay, alipay, alma, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, eps, fpx, giropay, grabpay, ideal, klarna, konbini, link, mbWay, mobilepay, multibanco, oxxo, p24, payByBank, paynow, paypal, payto, pix, promptpay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'affirm' => 'affirm',
   'afterpay_clearpay' => 'afterpayClearpay',
   'alipay' => 'alipay',
@@ -170,11 +170,11 @@ String get name { return switch (value) {
   'wechat_pay' => 'wechatPay',
   'zip' => 'zip',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$Unknown; } 
+bool get isUnknown {return this is PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() klarna, required W Function() konbini, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() klarna, required W Function() konbini, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) {return switch (this) {
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$affirm() => affirm(),
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$afterpayClearpay() => afterpayClearpay(),
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$alipay() => alipay(),
@@ -215,9 +215,9 @@ W when<W>({required W Function() affirm, required W Function() afterpayClearpay,
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$wechatPay() => wechatPay(),
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$zip() => zip(),
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? klarna, W Function()? konbini, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? klarna, W Function()? konbini, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) {return switch (this) {
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$affirm() => affirm != null ? affirm() : orElse(value),
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$afterpayClearpay() => afterpayClearpay != null ? afterpayClearpay() : orElse(value),
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$alipay() => alipay != null ? alipay() : orElse(value),
@@ -258,10 +258,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$wechatPay() => wechatPay != null ? wechatPay() : orElse(value),
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$zip() => zip != null ? zip() : orElse(value),
       PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1($value)';
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$affirm extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$affirm._();
 
 @override String get value => 'affirm';
@@ -270,7 +270,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'affirm'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$afterpayClearpay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$afterpayClearpay._();
 
 @override String get value => 'afterpay_clearpay';
@@ -279,7 +279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'afterpay_clearpay'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$alipay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$alipay._();
 
 @override String get value => 'alipay';
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'alipay'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$alma extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$alma._();
 
 @override String get value => 'alma';
@@ -297,7 +297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'alma'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$auBecsDebit extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$auBecsDebit._();
 
 @override String get value => 'au_becs_debit';
@@ -306,7 +306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'au_becs_debit'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$bacsDebit extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$bacsDebit._();
 
 @override String get value => 'bacs_debit';
@@ -315,7 +315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'bacs_debit'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$bancontact extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$bancontact._();
 
 @override String get value => 'bancontact';
@@ -324,7 +324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'bancontact'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$billie extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$billie._();
 
 @override String get value => 'billie';
@@ -333,7 +333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'billie'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$blik extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$blik._();
 
 @override String get value => 'blik';
@@ -342,7 +342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'blik'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$boleto extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$boleto._();
 
 @override String get value => 'boleto';
@@ -351,7 +351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'boleto'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$card extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$card._();
 
 @override String get value => 'card';
@@ -360,7 +360,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$cashapp extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$cashapp._();
 
 @override String get value => 'cashapp';
@@ -369,7 +369,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'cashapp'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$eps extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$eps._();
 
 @override String get value => 'eps';
@@ -378,7 +378,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'eps'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$fpx extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$fpx._();
 
 @override String get value => 'fpx';
@@ -387,7 +387,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'fpx'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$giropay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$giropay._();
 
 @override String get value => 'giropay';
@@ -396,7 +396,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'giropay'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$grabpay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$grabpay._();
 
 @override String get value => 'grabpay';
@@ -405,7 +405,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'grabpay'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$ideal extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$ideal._();
 
 @override String get value => 'ideal';
@@ -414,7 +414,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'ideal'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$klarna extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$klarna._();
 
 @override String get value => 'klarna';
@@ -423,7 +423,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'klarna'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$konbini extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$konbini._();
 
 @override String get value => 'konbini';
@@ -432,7 +432,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'konbini'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$link extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$link._();
 
 @override String get value => 'link';
@@ -441,7 +441,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$mbWay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$mbWay._();
 
 @override String get value => 'mb_way';
@@ -450,7 +450,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'mb_way'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$mobilepay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$mobilepay._();
 
 @override String get value => 'mobilepay';
@@ -459,7 +459,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'mobilepay'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$multibanco extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$multibanco._();
 
 @override String get value => 'multibanco';
@@ -468,7 +468,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'multibanco'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$oxxo extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$oxxo._();
 
 @override String get value => 'oxxo';
@@ -477,7 +477,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'oxxo'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$p24 extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$p24._();
 
 @override String get value => 'p24';
@@ -486,7 +486,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'p24'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$payByBank extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$payByBank._();
 
 @override String get value => 'pay_by_bank';
@@ -495,7 +495,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'pay_by_bank'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$paynow extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$paynow._();
 
 @override String get value => 'paynow';
@@ -504,7 +504,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'paynow'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$paypal extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$paypal._();
 
 @override String get value => 'paypal';
@@ -513,7 +513,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'paypal'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$payto extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$payto._();
 
 @override String get value => 'payto';
@@ -522,7 +522,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'payto'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$pix extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$pix._();
 
 @override String get value => 'pix';
@@ -531,7 +531,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'pix'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$promptpay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$promptpay._();
 
 @override String get value => 'promptpay';
@@ -540,7 +540,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'promptpay'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$satispay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$satispay._();
 
 @override String get value => 'satispay';
@@ -549,7 +549,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'satispay'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$sepaDebit extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$sepaDebit._();
 
 @override String get value => 'sepa_debit';
@@ -558,7 +558,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'sepa_debit'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$sofort extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$sofort._();
 
 @override String get value => 'sofort';
@@ -567,7 +567,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'sofort'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$swish extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$swish._();
 
 @override String get value => 'swish';
@@ -576,7 +576,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'swish'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$twint extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$twint._();
 
 @override String get value => 'twint';
@@ -585,7 +585,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'twint'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$usBankAccount extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$usBankAccount._();
 
 @override String get value => 'us_bank_account';
@@ -594,7 +594,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'us_bank_account'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$wechatPay extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$wechatPay._();
 
 @override String get value => 'wechat_pay';
@@ -603,7 +603,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'wechat_pay'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$zip extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$zip._();
 
 @override String get value => 'zip';
@@ -612,7 +612,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => 'zip'.hashCode;
 
- }
+}
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$Unknown extends PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1$Unknown(this.value);
 
 @override final String value;
@@ -622,7 +622,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? affirm, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The list of payment method types that customers can use. Pass an empty string to enable dynamic payment methods that use your [payment method settings](https://dashboard.stripe.com/settings/payment_methods).
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypes {/// A value built from one or more typed views (at least one must be present).
 const PostPaymentLinksPaymentLinkRequestPaymentMethodTypes({this.listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
@@ -630,11 +630,11 @@ const PostPaymentLinksPaymentLinkRequestPaymentMethodTypes({this.listPostPayment
 const PostPaymentLinksPaymentLinkRequestPaymentMethodTypes._({required this.rawValue, required this.listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypes.fromJson(Object? json) { return PostPaymentLinksPaymentLinkRequestPaymentMethodTypes._(
+factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypes.fromJson(Object? json) {return PostPaymentLinksPaymentLinkRequestPaymentMethodTypes._(
   rawValue: Omittable(json),
   listPostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1: parseAnyOfVariant<List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(e as String)).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -664,4 +664,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypes(${toJson()})';
 
- }
+}

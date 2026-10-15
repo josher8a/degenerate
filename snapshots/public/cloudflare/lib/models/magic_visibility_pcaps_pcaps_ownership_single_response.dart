@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_messages2.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_response.dart';@immutable final class MagicVisibilityPcapsPcapsOwnershipSingleResponse {const MagicVisibilityPcapsPcapsOwnershipSingleResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsOwnershipSingleResponse(
+factory MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(Map<String, dynamic> json) {return MagicVisibilityPcapsPcapsOwnershipSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityPcapsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicVisibilityPcapsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<MagicVisibilityPcapsMessages2> errors;
 
@@ -21,22 +21,22 @@ final MagicVisibilityPcapsPcapsOwnershipResponse result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-MagicVisibilityPcapsPcapsOwnershipSingleResponse copyWith({List<MagicVisibilityPcapsMessages2>? errors, List<MagicVisibilityPcapsMessages2>? messages, MagicVisibilityPcapsPcapsOwnershipResponse? result, bool? success, }) { return MagicVisibilityPcapsPcapsOwnershipSingleResponse(
+      json.containsKey('success') && json['success'] is bool;}
+MagicVisibilityPcapsPcapsOwnershipSingleResponse copyWith({List<MagicVisibilityPcapsMessages2>? errors, List<MagicVisibilityPcapsMessages2>? messages, MagicVisibilityPcapsPcapsOwnershipResponse? result, bool? success, }) {return MagicVisibilityPcapsPcapsOwnershipSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityPcapsPcapsOwnershipSingleResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ MagicVisibilityPcapsPcapsOwnershipSingleResponse copyWith({List<MagicVisibilityP
 
 @override String toString() => 'MagicVisibilityPcapsPcapsOwnershipSingleResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

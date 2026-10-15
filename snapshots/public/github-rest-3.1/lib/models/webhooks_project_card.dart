@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';@immutable final class WebhooksProjectCard {const WebhooksProjectCard({required this.archived, required this.columnId, required this.columnUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, this.afterId = const Omittable.absent(), this.contentUrl, });
 
-factory WebhooksProjectCard.fromJson(Map<String, dynamic> json) { return WebhooksProjectCard(
+factory WebhooksProjectCard.fromJson(Map<String, dynamic> json) {return WebhooksProjectCard(
   afterId: json.containsKey('after_id') ? Omittable(json['after_id'] != null ? (json['after_id'] as num).toInt() : null) : const Omittable.absent(),
   archived: json['archived'] as bool,
   columnId: (json['column_id'] as num).toInt(),
@@ -17,7 +17,7 @@ factory WebhooksProjectCard.fromJson(Map<String, dynamic> json) { return Webhook
   projectUrl: Uri.parse(json['project_url'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final Omittable<int?> afterId;
 
@@ -47,7 +47,7 @@ final DateTime updatedAt;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (afterId.isPresent) 'after_id': afterId.value,
   'archived': archived,
   'column_id': columnId,
@@ -61,8 +61,8 @@ Map<String, dynamic> toJson() { return {
   'project_url': projectUrl.toString(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('archived') && json['archived'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('archived') && json['archived'] is bool &&
       json.containsKey('column_id') && json['column_id'] is num &&
       json.containsKey('column_url') && json['column_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
@@ -72,8 +72,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('note') && (json['note'] == null || json['note'] is String) &&
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhooksProjectCard copyWith({Omittable<int?>? afterId, bool? archived, int? columnId, Uri? columnUrl, Uri? Function()? contentUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, int? id, String? nodeId, String? Function()? note, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectCard(
+      json.containsKey('url') && json['url'] is String;}
+WebhooksProjectCard copyWith({Omittable<int?>? afterId, bool? archived, int? columnId, Uri? columnUrl, Uri? Function()? contentUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, int? id, String? nodeId, String? Function()? note, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) {return WebhooksProjectCard(
   afterId: afterId ?? this.afterId,
   archived: archived ?? this.archived,
   columnId: columnId ?? this.columnId,
@@ -87,7 +87,7 @@ WebhooksProjectCard copyWith({Omittable<int?>? afterId, bool? archived, int? col
   projectUrl: projectUrl ?? this.projectUrl,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksProjectCard &&
           afterId == other.afterId &&
@@ -108,4 +108,4 @@ WebhooksProjectCard copyWith({Omittable<int?>? afterId, bool? archived, int? col
 
 @override String toString() => 'WebhooksProjectCard(\n  afterId: $afterId,\n  archived: $archived,\n  columnId: $columnId,\n  columnUrl: $columnUrl,\n  contentUrl: $contentUrl,\n  createdAt: $createdAt,\n  creator: $creator,\n  id: $id,\n  nodeId: $nodeId,\n  note: $note,\n  projectUrl: $projectUrl,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
- }
+}

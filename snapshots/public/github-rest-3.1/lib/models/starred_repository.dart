@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository.dart';/// Starred Repository
 @immutable final class StarredRepository {const StarredRepository({required this.starredAt, required this.repo, });
 
-factory StarredRepository.fromJson(Map<String, dynamic> json) { return StarredRepository(
+factory StarredRepository.fromJson(Map<String, dynamic> json) {return StarredRepository(
   starredAt: DateTime.parse(json['starred_at'] as String),
   repo: Repository.fromJson(json['repo'] as Map<String, dynamic>),
-); }
+);}
 
 final DateTime starredAt;
 
 final Repository repo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'starred_at': starredAt.toIso8601String(),
   'repo': repo.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('starred_at') && json['starred_at'] is String &&
-      json.containsKey('repo'); } 
-StarredRepository copyWith({DateTime? starredAt, Repository? repo, }) { return StarredRepository(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('starred_at') && json['starred_at'] is String &&
+      json.containsKey('repo');}
+StarredRepository copyWith({DateTime? starredAt, Repository? repo, }) {return StarredRepository(
   starredAt: starredAt ?? this.starredAt,
   repo: repo ?? this.repo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is StarredRepository &&
           starredAt == other.starredAt &&
@@ -32,4 +32,4 @@ StarredRepository copyWith({DateTime? starredAt, Repository? repo, }) { return S
 
 @override String toString() => 'StarredRepository(starredAt: $starredAt, repo: $repo)';
 
- }
+}

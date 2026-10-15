@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';@immutable final class AsyncBatch2Requests {const AsyncBatch2Requests({this.externalReference, this.frequencyPenalty, this.maxTokens, this.presencePenalty, this.prompt, this.repetitionPenalty, this.responseFormat, this.seed, this.stream, this.temperature, this.topP, });
 
-factory AsyncBatch2Requests.fromJson(Map<String, dynamic> json) { return AsyncBatch2Requests(
+factory AsyncBatch2Requests.fromJson(Map<String, dynamic> json) {return AsyncBatch2Requests(
   externalReference: json['external_reference'] as String?,
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
@@ -15,7 +15,7 @@ factory AsyncBatch2Requests.fromJson(Map<String, dynamic> json) { return AsyncBa
   stream: json['stream'] as bool?,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
-); }
+);}
 
 /// User-supplied reference. This field will be present in the response as well it can be used to reference the request and response. It's NOT validated to be unique.
 final String? externalReference;
@@ -58,7 +58,7 @@ bool get streamOrDefault => stream ?? false;
 /// The value of `temperature`, or its schema default when absent.
 double get temperatureOrDefault => temperature ?? 0.6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'external_reference': ?externalReference,
   'frequency_penalty': ?frequencyPenalty,
   'max_tokens': ?maxTokens,
@@ -70,10 +70,10 @@ Map<String, dynamic> toJson() { return {
   'stream': ?stream,
   'temperature': ?temperature,
   'top_p': ?topP,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'external_reference', 'frequency_penalty', 'max_tokens', 'presence_penalty', 'prompt', 'repetition_penalty', 'response_format', 'seed', 'stream', 'temperature', 'top_p'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'external_reference', 'frequency_penalty', 'max_tokens', 'presence_penalty', 'prompt', 'repetition_penalty', 'response_format', 'seed', 'stream', 'temperature', 'top_p'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
   if (frequencyPenalty$ < 0) { errors.add('frequencyPenalty: must be >= 0'); }
@@ -108,8 +108,8 @@ if (topP$ != null) {
   if (topP$ < 0) { errors.add('topP: must be >= 0'); }
   if (topP$ > 2) { errors.add('topP: must be <= 2'); }
 }
-return errors; } 
-AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Function()? frequencyPenalty, int? Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, double? Function()? repetitionPenalty, MessagesResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, double? Function()? topP, }) { return AsyncBatch2Requests(
+return errors;}
+AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Function()? frequencyPenalty, int? Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, double? Function()? repetitionPenalty, MessagesResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, double? Function()? topP, }) {return AsyncBatch2Requests(
   externalReference: externalReference != null ? externalReference() : this.externalReference,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
@@ -121,7 +121,7 @@ AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Fun
   stream: stream != null ? stream() : this.stream,
   temperature: temperature != null ? temperature() : this.temperature,
   topP: topP != null ? topP() : this.topP,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AsyncBatch2Requests &&
           externalReference == other.externalReference &&
@@ -140,4 +140,4 @@ AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Fun
 
 @override String toString() => 'AsyncBatch2Requests(\n  externalReference: $externalReference,\n  frequencyPenalty: $frequencyPenalty,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  repetitionPenalty: $repetitionPenalty,\n  responseFormat: $responseFormat,\n  seed: $seed,\n  stream: $stream,\n  temperature: $temperature,\n  topP: $topP,\n)';
 
- }
+}

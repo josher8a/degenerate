@@ -12,7 +12,7 @@ final class ScansApi with ApiExecutor {const ScansApi(this.apiConfig);
 /// List Scan Configs
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<List<ScanConfig>?, DeleteDeleteScansError>> getConfigFetch({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ScanConfig>?, DeleteDeleteScansError>> getConfigFetch({required String accountId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,11 +29,11 @@ return await execute(
   },
   onError: DeleteDeleteScansError.fromResponse,
 );
- } 
+}
 /// Create a new Scan Config
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<ScanConfig?, DeleteDeleteScansError>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ScanConfig?, DeleteDeleteScansError>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,11 +52,11 @@ return await execute(
   },
   onError: DeleteDeleteScansError.fromResponse,
 );
- } 
+}
 /// Update an existing Scan Config
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<ScanConfig?, DeleteDeleteScansError>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ScanConfig?, DeleteDeleteScansError>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -75,11 +75,11 @@ return await execute(
   },
   onError: DeleteDeleteScansError.fromResponse,
 );
- } 
+}
 /// Delete a Scan Config
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<Map<String, dynamic>, DeleteDeleteScansError>> deleteDeleteScans({required String accountId, required String configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, DeleteDeleteScansError>> deleteDeleteScans({required String accountId, required String configId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -96,11 +96,11 @@ return await execute(
   },
   onError: DeleteDeleteScansError.fromResponse,
 );
- } 
+}
 /// Get the Latest Scan Result
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/results/{config_id}`
-Future<ApiResult<GetGetOpenPortsResponseResult, DeleteDeleteScansError>> getGetOpenPorts({required String accountId, required String configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetGetOpenPortsResponseResult, DeleteDeleteScansError>> getGetOpenPorts({required String accountId, required String configId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -117,5 +117,5 @@ return await execute(
   },
   onError: DeleteDeleteScansError.fromResponse,
 );
- } 
- }
+}
+}

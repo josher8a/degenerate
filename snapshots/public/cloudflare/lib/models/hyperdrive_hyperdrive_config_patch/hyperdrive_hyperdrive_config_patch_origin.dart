@@ -7,11 +7,11 @@ const HyperdriveHyperdriveConfigPatchOrigin({this.hyperdriveHyperdriveDatabase =
 const HyperdriveHyperdriveConfigPatchOrigin._({required this.rawValue, required this.hyperdriveHyperdriveDatabase, required this.originDatabase, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory HyperdriveHyperdriveConfigPatchOrigin.fromJson(Object? json) { return HyperdriveHyperdriveConfigPatchOrigin._(
+factory HyperdriveHyperdriveConfigPatchOrigin.fromJson(Object? json) {return HyperdriveHyperdriveConfigPatchOrigin._(
   rawValue: Omittable(json),
   hyperdriveHyperdriveDatabase: json is Map<String, dynamic> && HyperdriveHyperdriveDatabase.canParse(json) ? parseAnyOfVariant<HyperdriveHyperdriveDatabase>(json, (value) => HyperdriveHyperdriveDatabase.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   originDatabase: parseAnyOfVariant<OriginDatabase>(json, (value) => OneOf2.parse(value, fromA: (v) => HyperdriveInternetOrigin.fromJson(v as Map<String, dynamic>), fromB: (v) => HyperdriveOverAccessOrigin.fromJson(v as Map<String, dynamic>),)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'HyperdriveHyperdriveConfigPatchOrigin(${toJson()})';
 
- }
+}

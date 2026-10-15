@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotCreateOrUpdateRepoSecretRequest {const DependabotCreateOrUpdateRepoSecretRequest({this.encryptedValue, this.keyId, });
 
-factory DependabotCreateOrUpdateRepoSecretRequest.fromJson(Map<String, dynamic> json) { return DependabotCreateOrUpdateRepoSecretRequest(
+factory DependabotCreateOrUpdateRepoSecretRequest.fromJson(Map<String, dynamic> json) {return DependabotCreateOrUpdateRepoSecretRequest(
   encryptedValue: json['encrypted_value'] as String?,
   keyId: json['key_id'] as String?,
-); }
+);}
 
 /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/dependabot/secrets#get-a-repository-public-key) endpoint.
 final String? encryptedValue;
@@ -14,22 +14,22 @@ final String? encryptedValue;
 /// ID of the key you used to encrypt the secret.
 final String? keyId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'encrypted_value': ?encryptedValue,
   'key_id': ?keyId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'encrypted_value', 'key_id'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'encrypted_value', 'key_id'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final encryptedValue$ = encryptedValue;
 if (encryptedValue$ != null) {
   if (!RegExp(r'^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$').hasMatch(encryptedValue$)) { errors.add(r'encryptedValue: must match pattern ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$'); }
 }
-return errors; } 
-DependabotCreateOrUpdateRepoSecretRequest copyWith({String? Function()? encryptedValue, String? Function()? keyId, }) { return DependabotCreateOrUpdateRepoSecretRequest(
+return errors;}
+DependabotCreateOrUpdateRepoSecretRequest copyWith({String? Function()? encryptedValue, String? Function()? keyId, }) {return DependabotCreateOrUpdateRepoSecretRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId != null ? keyId() : this.keyId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotCreateOrUpdateRepoSecretRequest &&
           encryptedValue == other.encryptedValue &&
@@ -39,4 +39,4 @@ DependabotCreateOrUpdateRepoSecretRequest copyWith({String? Function()? encrypte
 
 @override String toString() => 'DependabotCreateOrUpdateRepoSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId)';
 
- }
+}

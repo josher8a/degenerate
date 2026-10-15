@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_mandate.dart';/// 
 @immutable final class PaymentMethodDetailsPaymentRecordUsBankAccount {const PaymentMethodDetailsPaymentRecordUsBankAccount({this.accountHolderType = const Omittable.absent(), this.accountType = const Omittable.absent(), this.bankName = const Omittable.absent(), this.expectedDebitDate, this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate, this.paymentReference = const Omittable.absent(), this.routingNumber = const Omittable.absent(), });
 
-factory PaymentMethodDetailsPaymentRecordUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
+factory PaymentMethodDetailsPaymentRecordUsBankAccount.fromJson(Map<String, dynamic> json) {return PaymentMethodDetailsPaymentRecordUsBankAccount(
   accountHolderType: json.containsKey('account_holder_type') ? Omittable(json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null) : const Omittable.absent(),
   accountType: json.containsKey('account_type') ? Omittable(json['account_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null) : const Omittable.absent(),
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
@@ -14,7 +14,7 @@ factory PaymentMethodDetailsPaymentRecordUsBankAccount.fromJson(Map<String, dyna
   mandate: json['mandate'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountMandate.fromJson(json['mandate']) : null,
   paymentReference: json.containsKey('payment_reference') ? Omittable(json['payment_reference'] as String?) : const Omittable.absent(),
   routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// The type of entity that holds the account. This can be either 'individual' or 'company'.
 final Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?> accountHolderType;
@@ -43,7 +43,7 @@ final Omittable<String?> paymentReference;
 /// The routing number for the bank account.
 final Omittable<String?> routingNumber;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountHolderType.isPresent) 'account_holder_type': accountHolderType.value?.toJson(),
   if (accountType.isPresent) 'account_type': accountType.value?.toJson(),
   if (bankName.isPresent) 'bank_name': bankName.value,
@@ -53,10 +53,10 @@ Map<String, dynamic> toJson() { return {
   if (mandate != null) 'mandate': mandate?.toJson(),
   if (paymentReference.isPresent) 'payment_reference': paymentReference.value,
   if (routingNumber.isPresent) 'routing_number': routingNumber.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type', 'bank_name', 'expected_debit_date', 'fingerprint', 'last4', 'mandate', 'payment_reference', 'routing_number'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_holder_type', 'account_type', 'bank_name', 'expected_debit_date', 'fingerprint', 'last4', 'mandate', 'payment_reference', 'routing_number'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final bankName$ = bankName.value;
 if (bankName$ != null) {
   if (bankName$.runes.length > 5000) { errors.add('bankName: length must be <= 5000'); }
@@ -81,8 +81,8 @@ final routingNumber$ = routingNumber.value;
 if (routingNumber$ != null) {
   if (routingNumber$.runes.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
-return errors; } 
-PaymentMethodDetailsPaymentRecordUsBankAccount copyWith({Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?>? accountHolderType, Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, String? Function()? expectedDebitDate, Omittable<String?>? fingerprint, Omittable<String?>? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, Omittable<String?>? paymentReference, Omittable<String?>? routingNumber, }) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
+return errors;}
+PaymentMethodDetailsPaymentRecordUsBankAccount copyWith({Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?>? accountHolderType, Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, String? Function()? expectedDebitDate, Omittable<String?>? fingerprint, Omittable<String?>? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, Omittable<String?>? paymentReference, Omittable<String?>? routingNumber, }) {return PaymentMethodDetailsPaymentRecordUsBankAccount(
   accountHolderType: accountHolderType ?? this.accountHolderType,
   accountType: accountType ?? this.accountType,
   bankName: bankName ?? this.bankName,
@@ -92,7 +92,7 @@ PaymentMethodDetailsPaymentRecordUsBankAccount copyWith({Omittable<InboundTransf
   mandate: mandate != null ? mandate() : this.mandate,
   paymentReference: paymentReference ?? this.paymentReference,
   routingNumber: routingNumber ?? this.routingNumber,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordUsBankAccount &&
           accountHolderType == other.accountHolderType &&
@@ -109,4 +109,4 @@ PaymentMethodDetailsPaymentRecordUsBankAccount copyWith({Omittable<InboundTransf
 
 @override String toString() => 'PaymentMethodDetailsPaymentRecordUsBankAccount(\n  accountHolderType: $accountHolderType,\n  accountType: $accountType,\n  bankName: $bankName,\n  expectedDebitDate: $expectedDebitDate,\n  fingerprint: $fingerprint,\n  last4: $last4,\n  mandate: $mandate,\n  paymentReference: $paymentReference,\n  routingNumber: $routingNumber,\n)';
 
- }
+}

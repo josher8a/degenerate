@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// NamespaceCondition contains details about state of namespace.
 @immutable final class NamespaceCondition {const NamespaceCondition({required this.status, required this.type, this.lastTransitionTime, this.message, this.reason, });
 
-factory NamespaceCondition.fromJson(Map<String, dynamic> json) { return NamespaceCondition(
+factory NamespaceCondition.fromJson(Map<String, dynamic> json) {return NamespaceCondition(
   lastTransitionTime: json['lastTransitionTime'] != null ? Time.fromJson(json['lastTransitionTime'] as String) : null,
   message: json['message'] as String?,
   reason: json['reason'] as String?,
   status: json['status'] as String,
   type: json['type'] as String,
-); }
+);}
 
 /// Last time the condition transitioned from one status to another.
 final Time? lastTransitionTime;
@@ -27,22 +27,22 @@ final String status;
 /// Type of namespace controller condition.
 final String type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (lastTransitionTime != null) 'lastTransitionTime': lastTransitionTime?.toJson(),
   'message': ?message,
   'reason': ?reason,
   'status': status,
   'type': type,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type') && json['type'] is String; } 
-NamespaceCondition copyWith({Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) { return NamespaceCondition(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('status') && json['status'] is String &&
+      json.containsKey('type') && json['type'] is String;}
+NamespaceCondition copyWith({Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) {return NamespaceCondition(
   lastTransitionTime: lastTransitionTime != null ? lastTransitionTime() : this.lastTransitionTime,
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,
   status: status ?? this.status,
   type: type ?? this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceCondition &&
           lastTransitionTime == other.lastTransitionTime &&
@@ -55,4 +55,4 @@ NamespaceCondition copyWith({Time? Function()? lastTransitionTime, String? Funct
 
 @override String toString() => 'NamespaceCondition(lastTransitionTime: $lastTransitionTime, message: $message, reason: $reason, status: $status, type: $type)';
 
- }
+}

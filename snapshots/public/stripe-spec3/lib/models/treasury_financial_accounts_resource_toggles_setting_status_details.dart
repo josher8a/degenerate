@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents the reason why the status is `pending` or `restricted`.
 sealed class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode();
 
-factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(String json) { return switch (json) {
+factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(String json) {return switch (json) {
   'activating' => activating,
   'capability_not_requested' => capabilityNotRequested,
   'financial_account_closed' => financialAccountClosed,
@@ -15,7 +15,7 @@ factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJso
   'restricted_by_platform' => restrictedByPlatform,
   'restricted_other' => restrictedOther,
   _ => TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown(json),
-}; }
+};}
 
 static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode activating = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating._();
 
@@ -38,9 +38,9 @@ static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode re
 static const List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode> values = [activating, capabilityNotRequested, financialAccountClosed, rejectedOther, rejectedUnsupportedBusiness, requirementsPastDue, requirementsPendingVerification, restrictedByPlatform, restrictedOther];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'activating' => 'activating',
   'capability_not_requested' => 'capabilityNotRequested',
   'financial_account_closed' => 'financialAccountClosed',
@@ -51,11 +51,11 @@ String get name { return switch (value) {
   'restricted_by_platform' => 'restrictedByPlatform',
   'restricted_other' => 'restrictedOther',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown; } 
+bool get isUnknown {return this is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() activating, required W Function() capabilityNotRequested, required W Function() financialAccountClosed, required W Function() rejectedOther, required W Function() rejectedUnsupportedBusiness, required W Function() requirementsPastDue, required W Function() requirementsPendingVerification, required W Function() restrictedByPlatform, required W Function() restrictedOther, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() activating, required W Function() capabilityNotRequested, required W Function() financialAccountClosed, required W Function() rejectedOther, required W Function() rejectedUnsupportedBusiness, required W Function() requirementsPastDue, required W Function() requirementsPendingVerification, required W Function() restrictedByPlatform, required W Function() restrictedOther, required W Function(String value) $unknown, }) {return switch (this) {
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating() => activating(),
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested() => capabilityNotRequested(),
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed() => financialAccountClosed(),
@@ -66,9 +66,9 @@ W when<W>({required W Function() activating, required W Function() capabilityNot
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform() => restrictedByPlatform(),
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther() => restrictedOther(),
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? activating, W Function()? capabilityNotRequested, W Function()? financialAccountClosed, W Function()? rejectedOther, W Function()? rejectedUnsupportedBusiness, W Function()? requirementsPastDue, W Function()? requirementsPendingVerification, W Function()? restrictedByPlatform, W Function()? restrictedOther, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? activating, W Function()? capabilityNotRequested, W Function()? financialAccountClosed, W Function()? rejectedOther, W Function()? rejectedUnsupportedBusiness, W Function()? requirementsPastDue, W Function()? requirementsPendingVerification, W Function()? restrictedByPlatform, W Function()? restrictedOther, W Function(String value)? $unknown, }) {return switch (this) {
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating() => activating != null ? activating() : orElse(value),
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested() => capabilityNotRequested != null ? capabilityNotRequested() : orElse(value),
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed() => financialAccountClosed != null ? financialAccountClosed() : orElse(value),
@@ -79,10 +79,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform() => restrictedByPlatform != null ? restrictedByPlatform() : orElse(value),
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther() => restrictedOther != null ? restrictedOther() : orElse(value),
       TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)';
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating._();
 
 @override String get value => 'activating';
@@ -91,7 +91,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'activating'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested._();
 
 @override String get value => 'capability_not_requested';
@@ -100,7 +100,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'capability_not_requested'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed._();
 
 @override String get value => 'financial_account_closed';
@@ -109,7 +109,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'financial_account_closed'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedOther extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedOther._();
 
 @override String get value => 'rejected_other';
@@ -118,7 +118,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'rejected_other'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedUnsupportedBusiness extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedUnsupportedBusiness._();
 
 @override String get value => 'rejected_unsupported_business';
@@ -127,7 +127,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'rejected_unsupported_business'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPastDue extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPastDue._();
 
 @override String get value => 'requirements_past_due';
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'requirements_past_due'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPendingVerification extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPendingVerification._();
 
 @override String get value => 'requirements_pending_verification';
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'requirements_pending_verification'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform._();
 
 @override String get value => 'restricted_by_platform';
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'restricted_by_platform'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther._();
 
 @override String get value => 'restricted_other';
@@ -163,7 +163,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => 'restricted_other'.hashCode;
 
- }
+}
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown(this.value);
 
 @override final String value;
@@ -173,16 +173,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? activati
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Represents what the user should do, if anything, to activate the Feature.
 sealed class Resolution {const Resolution();
 
-factory Resolution.fromJson(String json) { return switch (json) {
+factory Resolution.fromJson(String json) {return switch (json) {
   'contact_stripe' => contactStripe,
   'provide_information' => provideInformation,
   'remove_restriction' => removeRestriction,
   _ => Resolution$Unknown(json),
-}; }
+};}
 
 static const Resolution contactStripe = Resolution$contactStripe._();
 
@@ -193,33 +193,33 @@ static const Resolution removeRestriction = Resolution$removeRestriction._();
 static const List<Resolution> values = [contactStripe, provideInformation, removeRestriction];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'contact_stripe' => 'contactStripe',
   'provide_information' => 'provideInformation',
   'remove_restriction' => 'removeRestriction',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Resolution$Unknown; } 
+bool get isUnknown {return this is Resolution$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() contactStripe, required W Function() provideInformation, required W Function() removeRestriction, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() contactStripe, required W Function() provideInformation, required W Function() removeRestriction, required W Function(String value) $unknown, }) {return switch (this) {
       Resolution$contactStripe() => contactStripe(),
       Resolution$provideInformation() => provideInformation(),
       Resolution$removeRestriction() => removeRestriction(),
       Resolution$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? contactStripe, W Function()? provideInformation, W Function()? removeRestriction, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? contactStripe, W Function()? provideInformation, W Function()? removeRestriction, W Function(String value)? $unknown, }) {return switch (this) {
       Resolution$contactStripe() => contactStripe != null ? contactStripe() : orElse(value),
       Resolution$provideInformation() => provideInformation != null ? provideInformation() : orElse(value),
       Resolution$removeRestriction() => removeRestriction != null ? removeRestriction() : orElse(value),
       Resolution$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Resolution($value)';
 
- }
+}
 @immutable final class Resolution$contactStripe extends Resolution {const Resolution$contactStripe._();
 
 @override String get value => 'contact_stripe';
@@ -228,7 +228,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? contactS
 
 @override int get hashCode => 'contact_stripe'.hashCode;
 
- }
+}
 @immutable final class Resolution$provideInformation extends Resolution {const Resolution$provideInformation._();
 
 @override String get value => 'provide_information';
@@ -237,7 +237,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? contactS
 
 @override int get hashCode => 'provide_information'.hashCode;
 
- }
+}
 @immutable final class Resolution$removeRestriction extends Resolution {const Resolution$removeRestriction._();
 
 @override String get value => 'remove_restriction';
@@ -246,7 +246,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? contactS
 
 @override int get hashCode => 'remove_restriction'.hashCode;
 
- }
+}
 @immutable final class Resolution$Unknown extends Resolution {const Resolution$Unknown(this.value);
 
 @override final String value;
@@ -256,15 +256,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? contactS
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The `platform_restrictions` that are restricting this Feature.
 sealed class Restriction {const Restriction();
 
-factory Restriction.fromJson(String json) { return switch (json) {
+factory Restriction.fromJson(String json) {return switch (json) {
   'inbound_flows' => inboundFlows,
   'outbound_flows' => outboundFlows,
   _ => Restriction$Unknown(json),
-}; }
+};}
 
 static const Restriction inboundFlows = Restriction$inboundFlows._();
 
@@ -273,30 +273,30 @@ static const Restriction outboundFlows = Restriction$outboundFlows._();
 static const List<Restriction> values = [inboundFlows, outboundFlows];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'inbound_flows' => 'inboundFlows',
   'outbound_flows' => 'outboundFlows',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Restriction$Unknown; } 
+bool get isUnknown {return this is Restriction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inboundFlows, required W Function() outboundFlows, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inboundFlows, required W Function() outboundFlows, required W Function(String value) $unknown, }) {return switch (this) {
       Restriction$inboundFlows() => inboundFlows(),
       Restriction$outboundFlows() => outboundFlows(),
       Restriction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundFlows, W Function()? outboundFlows, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundFlows, W Function()? outboundFlows, W Function(String value)? $unknown, }) {return switch (this) {
       Restriction$inboundFlows() => inboundFlows != null ? inboundFlows() : orElse(value),
       Restriction$outboundFlows() => outboundFlows != null ? outboundFlows() : orElse(value),
       Restriction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Restriction($value)';
 
- }
+}
 @immutable final class Restriction$inboundFlows extends Restriction {const Restriction$inboundFlows._();
 
 @override String get value => 'inbound_flows';
@@ -305,7 +305,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundF
 
 @override int get hashCode => 'inbound_flows'.hashCode;
 
- }
+}
 @immutable final class Restriction$outboundFlows extends Restriction {const Restriction$outboundFlows._();
 
 @override String get value => 'outbound_flows';
@@ -314,7 +314,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundF
 
 @override int get hashCode => 'outbound_flows'.hashCode;
 
- }
+}
 @immutable final class Restriction$Unknown extends Restriction {const Restriction$Unknown(this.value);
 
 @override final String value;
@@ -324,15 +324,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundF
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Additional details on the FinancialAccount Features information.
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetails({required this.code, this.resolution = const Omittable.absent(), this.restriction, });
 
-factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
+factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(Map<String, dynamic> json) {return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(json['code'] as String),
   resolution: json.containsKey('resolution') ? Omittable(json['resolution'] != null ? Resolution.fromJson(json['resolution'] as String) : null) : const Omittable.absent(),
   restriction: json['restriction'] != null ? Restriction.fromJson(json['restriction'] as String) : null,
-); }
+);}
 
 /// Represents the reason why the status is `pending` or `restricted`.
 final TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode code;
@@ -343,17 +343,17 @@ final Omittable<Resolution?> resolution;
 /// The `platform_restrictions` that are restricting this Feature.
 final Restriction? restriction;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   if (resolution.isPresent) 'resolution': resolution.value?.toJson(),
   if (restriction != null) 'restriction': restriction?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'); } 
-TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Omittable<Resolution?>? resolution, Restriction? Function()? restriction, }) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code');}
+TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Omittable<Resolution?>? resolution, Restriction? Function()? restriction, }) {return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: code ?? this.code,
   resolution: resolution ?? this.resolution,
   restriction: restriction != null ? restriction() : this.restriction,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetails &&
           code == other.code &&
@@ -364,4 +364,4 @@ TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryF
 
 @override String toString() => 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(code: $code, resolution: $resolution, restriction: $restriction)';
 
- }
+}

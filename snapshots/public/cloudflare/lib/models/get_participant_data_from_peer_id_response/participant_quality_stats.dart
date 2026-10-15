@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ParticipantQualityStats {const ParticipantQualityStats({this.audioBandwidth, this.audioStats, this.averageQuality, this.end = const Omittable.absent(), this.firstAudioPacketReceived, this.firstVideoPacketReceived, this.lastAudioPacketReceived, this.lastVideoPacketReceived, this.peerIds, this.start = const Omittable.absent(), this.totalAudioPackets, this.totalAudioPacketsLost, this.totalVideoPackets, this.totalVideoPacketsLost, this.videoBandwidth, this.videoStats, });
 
-factory ParticipantQualityStats.fromJson(Map<String, dynamic> json) { return ParticipantQualityStats(
+factory ParticipantQualityStats.fromJson(Map<String, dynamic> json) {return ParticipantQualityStats(
   audioBandwidth: json['audio_bandwidth'] != null ? (json['audio_bandwidth'] as num).toInt() : null,
   audioStats: (json['audio_stats'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   averageQuality: json['average_quality'] != null ? (json['average_quality'] as num).toInt() : null,
@@ -20,7 +20,7 @@ factory ParticipantQualityStats.fromJson(Map<String, dynamic> json) { return Par
   totalVideoPacketsLost: json['total_video_packets_lost'] != null ? (json['total_video_packets_lost'] as num).toInt() : null,
   videoBandwidth: json['video_bandwidth'] != null ? (json['video_bandwidth'] as num).toInt() : null,
   videoStats: (json['video_stats'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
-); }
+);}
 
 final int? audioBandwidth;
 
@@ -54,7 +54,7 @@ final int? videoBandwidth;
 
 final List<Map<String,dynamic>>? videoStats;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'audio_bandwidth': ?audioBandwidth,
   if (audioStats != null) 'audio_stats': audioStats?.map((e) => e).toList(),
   'average_quality': ?averageQuality,
@@ -71,9 +71,9 @@ Map<String, dynamic> toJson() { return {
   'total_video_packets_lost': ?totalVideoPacketsLost,
   'video_bandwidth': ?videoBandwidth,
   if (videoStats != null) 'video_stats': videoStats?.map((e) => e).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_bandwidth', 'audio_stats', 'average_quality', 'end', 'first_audio_packet_received', 'first_video_packet_received', 'last_audio_packet_received', 'last_video_packet_received', 'peer_ids', 'start', 'total_audio_packets', 'total_audio_packets_lost', 'total_video_packets', 'total_video_packets_lost', 'video_bandwidth', 'video_stats'}.contains(key)); } 
-ParticipantQualityStats copyWith({int? Function()? audioBandwidth, List<Map<String, dynamic>>? Function()? audioStats, int? Function()? averageQuality, Omittable<String?>? end, String? Function()? firstAudioPacketReceived, String? Function()? firstVideoPacketReceived, String? Function()? lastAudioPacketReceived, String? Function()? lastVideoPacketReceived, List<String>? Function()? peerIds, Omittable<String?>? start, int? Function()? totalAudioPackets, int? Function()? totalAudioPacketsLost, int? Function()? totalVideoPackets, int? Function()? totalVideoPacketsLost, int? Function()? videoBandwidth, List<Map<String, dynamic>>? Function()? videoStats, }) { return ParticipantQualityStats(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'audio_bandwidth', 'audio_stats', 'average_quality', 'end', 'first_audio_packet_received', 'first_video_packet_received', 'last_audio_packet_received', 'last_video_packet_received', 'peer_ids', 'start', 'total_audio_packets', 'total_audio_packets_lost', 'total_video_packets', 'total_video_packets_lost', 'video_bandwidth', 'video_stats'}.contains(key));}
+ParticipantQualityStats copyWith({int? Function()? audioBandwidth, List<Map<String, dynamic>>? Function()? audioStats, int? Function()? averageQuality, Omittable<String?>? end, String? Function()? firstAudioPacketReceived, String? Function()? firstVideoPacketReceived, String? Function()? lastAudioPacketReceived, String? Function()? lastVideoPacketReceived, List<String>? Function()? peerIds, Omittable<String?>? start, int? Function()? totalAudioPackets, int? Function()? totalAudioPacketsLost, int? Function()? totalVideoPackets, int? Function()? totalVideoPacketsLost, int? Function()? videoBandwidth, List<Map<String, dynamic>>? Function()? videoStats, }) {return ParticipantQualityStats(
   audioBandwidth: audioBandwidth != null ? audioBandwidth() : this.audioBandwidth,
   audioStats: audioStats != null ? audioStats() : this.audioStats,
   averageQuality: averageQuality != null ? averageQuality() : this.averageQuality,
@@ -90,7 +90,7 @@ ParticipantQualityStats copyWith({int? Function()? audioBandwidth, List<Map<Stri
   totalVideoPacketsLost: totalVideoPacketsLost != null ? totalVideoPacketsLost() : this.totalVideoPacketsLost,
   videoBandwidth: videoBandwidth != null ? videoBandwidth() : this.videoBandwidth,
   videoStats: videoStats != null ? videoStats() : this.videoStats,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipantQualityStats &&
           audioBandwidth == other.audioBandwidth &&
@@ -114,4 +114,4 @@ ParticipantQualityStats copyWith({int? Function()? audioBandwidth, List<Map<Stri
 
 @override String toString() => 'ParticipantQualityStats(\n  audioBandwidth: $audioBandwidth,\n  audioStats: $audioStats,\n  averageQuality: $averageQuality,\n  end: $end,\n  firstAudioPacketReceived: $firstAudioPacketReceived,\n  firstVideoPacketReceived: $firstVideoPacketReceived,\n  lastAudioPacketReceived: $lastAudioPacketReceived,\n  lastVideoPacketReceived: $lastVideoPacketReceived,\n  peerIds: $peerIds,\n  start: $start,\n  totalAudioPackets: $totalAudioPackets,\n  totalAudioPacketsLost: $totalAudioPacketsLost,\n  totalVideoPackets: $totalVideoPackets,\n  totalVideoPacketsLost: $totalVideoPacketsLost,\n  videoBandwidth: $videoBandwidth,\n  videoStats: $videoStats,\n)';
 
- }
+}

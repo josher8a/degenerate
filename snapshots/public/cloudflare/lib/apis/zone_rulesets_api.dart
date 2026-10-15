@@ -14,7 +14,7 @@ final class ZoneRulesetsApi with ApiExecutor {const ZoneRulesetsApi(this.apiConf
 /// Fetches all rulesets at the zone level.
 ///
 /// `GET /zones/{zone_id}/rulesets`
-Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListZoneRulesetsError>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListZoneRulesetsError>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor.toJson();
@@ -42,13 +42,13 @@ return await execute(
   },
   onError: ListZoneRulesetsError.fromResponse,
 );
- } 
+}
 /// Create a zone ruleset
 ///
 /// Creates a ruleset at the zone level.
 ///
 /// `POST /zones/{zone_id}/rulesets`
-Future<ApiResult<CreateAccountRulesetResponseResult, CreateZoneRulesetError>> createZoneRuleset({required RulesetsZoneId zoneId, required CreateZoneRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, CreateZoneRulesetError>> createZoneRuleset({required RulesetsZoneId zoneId, required CreateZoneRulesetRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,13 +67,13 @@ return await execute(
   },
   onError: CreateZoneRulesetError.fromResponse,
 );
- } 
+}
 /// Get a zone ruleset
 ///
 /// Fetches the latest version of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<CreateAccountRulesetResponseResult, GetZoneRulesetError>> getZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, GetZoneRulesetError>> getZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -90,13 +90,13 @@ return await execute(
   },
   onError: GetZoneRulesetError.fromResponse,
 );
- } 
+}
 /// Update a zone ruleset
 ///
 /// Updates a zone ruleset, creating a new version.
 ///
 /// `PUT /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<CreateAccountRulesetResponseResult, UpdateZoneRulesetError>> updateZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required UpdateZoneRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, UpdateZoneRulesetError>> updateZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required UpdateZoneRulesetRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,13 +115,13 @@ return await execute(
   },
   onError: UpdateZoneRulesetError.fromResponse,
 );
- } 
+}
 /// Delete a zone ruleset
 ///
 /// Deletes all versions of an existing zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<void, DeleteZoneRulesetError>> deleteZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteZoneRulesetError>> deleteZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -135,13 +135,13 @@ return await execute(
   onSuccess: (_) {},
   onError: DeleteZoneRulesetError.fromResponse,
 );
- } 
+}
 /// Create a zone ruleset rule
 ///
 /// Adds a new rule to a zone ruleset. The rule will be added to the end of the existing list of rules in the ruleset by default.
 ///
 /// `POST /zones/{zone_id}/rulesets/{ruleset_id}/rules`
-Future<ApiResult<CreateAccountRulesetResponseResult, CreateZoneRulesetRuleError>> createZoneRulesetRule({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required CreateZoneRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, CreateZoneRulesetRuleError>> createZoneRulesetRule({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required CreateZoneRulesetRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -160,13 +160,13 @@ return await execute(
   },
   onError: CreateZoneRulesetRuleError.fromResponse,
 );
- } 
+}
 /// Update a zone ruleset rule
 ///
 /// Updates an existing rule in a zone ruleset.
 ///
 /// `PATCH /zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<CreateAccountRulesetResponseResult, UpdateZoneRulesetRuleError>> updateZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required UpdateZoneRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, UpdateZoneRulesetRuleError>> updateZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required UpdateZoneRulesetRuleRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -185,13 +185,13 @@ return await execute(
   },
   onError: UpdateZoneRulesetRuleError.fromResponse,
 );
- } 
+}
 /// Delete a zone ruleset rule
 ///
 /// Deletes an existing rule from a zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<CreateAccountRulesetResponseResult, DeleteZoneRulesetRuleError>> deleteZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, DeleteZoneRulesetRuleError>> deleteZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -208,13 +208,13 @@ return await execute(
   },
   onError: DeleteZoneRulesetRuleError.fromResponse,
 );
- } 
+}
 /// List a zone ruleset's versions
 ///
 /// Fetches the versions of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions`
-Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListZoneRulesetVersionsError>> listZoneRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListZoneRulesetVersionsError>> listZoneRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -231,13 +231,13 @@ return await execute(
   },
   onError: ListZoneRulesetVersionsError.fromResponse,
 );
- } 
+}
 /// Get a zone ruleset version
 ///
 /// Fetches a specific version of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<CreateAccountRulesetResponseResult, GetZoneRulesetVersionError>> getZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, GetZoneRulesetVersionError>> getZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -254,13 +254,13 @@ return await execute(
   },
   onError: GetZoneRulesetVersionError.fromResponse,
 );
- } 
+}
 /// Delete a zone ruleset version
 ///
 /// Deletes an existing version of a zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<void, DeleteZoneRulesetVersionError>> deleteZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteZoneRulesetVersionError>> deleteZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -274,13 +274,13 @@ return await execute(
   onSuccess: (_) {},
   onError: DeleteZoneRulesetVersionError.fromResponse,
 );
- } 
+}
 /// List a zone ruleset version's rules by tag
 ///
 /// Fetches the rules of a managed zone ruleset version for a given tag.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}`
-Future<ApiResult<CreateAccountRulesetResponseResult, ListZoneRulesetVersionRulesByTagError>> listZoneRulesetVersionRulesByTag({required RulesetsRuleCategory ruleTag, required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, ListZoneRulesetVersionRulesByTagError>> listZoneRulesetVersionRulesByTag({required RulesetsRuleCategory ruleTag, required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -297,13 +297,13 @@ return await execute(
   },
   onError: ListZoneRulesetVersionRulesByTagError.fromResponse,
 );
- } 
+}
 /// Get a zone entry point ruleset
 ///
 /// Fetches the latest version of the zone entry point ruleset for a given phase.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<CreateAccountRulesetResponseResult, GetZoneEntrypointRulesetError>> getZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, GetZoneEntrypointRulesetError>> getZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -320,13 +320,13 @@ return await execute(
   },
   onError: GetZoneEntrypointRulesetError.fromResponse,
 );
- } 
+}
 /// Update a zone entry point ruleset
 ///
 /// Updates a zone entry point ruleset, creating a new version.
 ///
 /// `PUT /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<CreateAccountRulesetResponseResult, UpdateZoneEntrypointRulesetError>> updateZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, required UpdateZoneEntrypointRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, UpdateZoneEntrypointRulesetError>> updateZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, required UpdateZoneEntrypointRulesetRequest body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -345,13 +345,13 @@ return await execute(
   },
   onError: UpdateZoneEntrypointRulesetError.fromResponse,
 );
- } 
+}
 /// List a zone entry point ruleset's versions
 ///
 /// Fetches the versions of a zone entry point ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions`
-Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListZoneEntrypointRulesetVersionsError>> listZoneEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListZoneEntrypointRulesetVersionsError>> listZoneEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -368,13 +368,13 @@ return await execute(
   },
   onError: ListZoneEntrypointRulesetVersionsError.fromResponse,
 );
- } 
+}
 /// Get a zone entry point ruleset version
 ///
 /// Fetches a specific version of a zone entry point ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}`
-Future<ApiResult<CreateAccountRulesetResponseResult, GetZoneEntrypointRulesetVersionError>> getZoneEntrypointRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, GetZoneEntrypointRulesetVersionError>> getZoneEntrypointRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -391,5 +391,5 @@ return await execute(
   },
   onError: GetZoneEntrypointRulesetVersionError.fromResponse,
 );
- } 
- }
+}
+}

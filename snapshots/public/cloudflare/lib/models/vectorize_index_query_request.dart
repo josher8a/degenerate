@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VectorizeIndexQueryRequest {const VectorizeIndexQueryRequest({required this.vector, this.filter, this.returnMetadata, this.returnValues, this.topK, });
 
-factory VectorizeIndexQueryRequest.fromJson(Map<String, dynamic> json) { return VectorizeIndexQueryRequest(
+factory VectorizeIndexQueryRequest.fromJson(Map<String, dynamic> json) {return VectorizeIndexQueryRequest(
   filter: json['filter'] as Map<String, dynamic>?,
   returnMetadata: json['returnMetadata'] as bool?,
   returnValues: json['returnValues'] as bool?,
   topK: json['topK'] != null ? (json['topK'] as num).toDouble() : null,
   vector: (json['vector'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
-); }
+);}
 
 /// A metadata filter expression used to limit nearest neighbor results.
 /// 
@@ -41,21 +41,21 @@ bool get returnValuesOrDefault => returnValues ?? false;
 /// The value of `topK`, or its schema default when absent.
 double get topKOrDefault => topK ?? 5.0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'filter': ?filter,
   'returnMetadata': ?returnMetadata,
   'returnValues': ?returnValues,
   'topK': ?topK,
   'vector': vector,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector'); } 
-VectorizeIndexQueryRequest copyWith({Map<String, dynamic>? Function()? filter, bool? Function()? returnMetadata, bool? Function()? returnValues, double? Function()? topK, List<double>? vector, }) { return VectorizeIndexQueryRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('vector');}
+VectorizeIndexQueryRequest copyWith({Map<String, dynamic>? Function()? filter, bool? Function()? returnMetadata, bool? Function()? returnValues, double? Function()? topK, List<double>? vector, }) {return VectorizeIndexQueryRequest(
   filter: filter != null ? filter() : this.filter,
   returnMetadata: returnMetadata != null ? returnMetadata() : this.returnMetadata,
   returnValues: returnValues != null ? returnValues() : this.returnValues,
   topK: topK != null ? topK() : this.topK,
   vector: vector ?? this.vector,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexQueryRequest &&
           filter == other.filter &&
@@ -68,4 +68,4 @@ VectorizeIndexQueryRequest copyWith({Map<String, dynamic>? Function()? filter, b
 
 @override String toString() => 'VectorizeIndexQueryRequest(filter: $filter, returnMetadata: $returnMetadata, returnValues: $returnValues, topK: $topK, vector: $vector)';
 
- }
+}

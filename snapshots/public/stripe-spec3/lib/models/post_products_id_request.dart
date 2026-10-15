@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/images.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_description.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/unit_label.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/url.dart';@immutable final class PostProductsIdRequest {const PostProductsIdRequest({this.active, this.defaultPrice, this.description, this.expand, this.images, this.marketingFeatures, this.metadata, this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
-factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostProductsIdRequest(
+factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) {return PostProductsIdRequest(
   active: json['active'] as bool?,
   defaultPrice: json['default_price'] as String?,
   description: json['description'] != null ? PostProductsIdRequestDescription.fromJson(json['description']) : null,
@@ -18,7 +18,7 @@ factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostP
   taxCode: json['tax_code'] != null ? PostInvoiceitemsInvoiceitemRequestTaxCode.fromJson(json['tax_code']) : null,
   unitLabel: json['unit_label'] != null ? UnitLabel.fromJson(json['unit_label']) : null,
   url: json['url'] != null ? Url.fromJson(json['url']) : null,
-); }
+);}
 
 /// Whether the product is available for purchase.
 final bool? active;
@@ -65,7 +65,7 @@ final UnitLabel? unitLabel;
 /// A URL of a publicly-accessible webpage for this product.
 final Url? url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'active': ?active,
   'default_price': ?defaultPrice,
   if (description != null) 'description': description?.toJson(),
@@ -80,10 +80,10 @@ Map<String, dynamic> toJson() { return {
   if (taxCode != null) 'tax_code': taxCode?.toJson(),
   if (unitLabel != null) 'unit_label': unitLabel?.toJson(),
   if (url != null) 'url': url?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'default_price', 'description', 'expand', 'images', 'marketing_features', 'metadata', 'name', 'package_dimensions', 'shippable', 'statement_descriptor', 'tax_code', 'unit_label', 'url'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'active', 'default_price', 'description', 'expand', 'images', 'marketing_features', 'metadata', 'name', 'package_dimensions', 'shippable', 'statement_descriptor', 'tax_code', 'unit_label', 'url'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final defaultPrice$ = defaultPrice;
 if (defaultPrice$ != null) {
   if (defaultPrice$.runes.length > 5000) { errors.add('defaultPrice: length must be <= 5000'); }
@@ -96,8 +96,8 @@ final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
   if (statementDescriptor$.runes.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
-return errors; } 
-PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, PostProductsIdRequestDescription? Function()? description, List<String>? Function()? expand, Images? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, Metadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, UnitLabel? Function()? unitLabel, Url? Function()? url, }) { return PostProductsIdRequest(
+return errors;}
+PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, PostProductsIdRequestDescription? Function()? description, List<String>? Function()? expand, Images? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, Metadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, UnitLabel? Function()? unitLabel, Url? Function()? url, }) {return PostProductsIdRequest(
   active: active != null ? active() : this.active,
   defaultPrice: defaultPrice != null ? defaultPrice() : this.defaultPrice,
   description: description != null ? description() : this.description,
@@ -112,7 +112,7 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
   url: url != null ? url() : this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostProductsIdRequest &&
           active == other.active &&
@@ -134,4 +134,4 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
 
 @override String toString() => 'PostProductsIdRequest(\n  active: $active,\n  defaultPrice: $defaultPrice,\n  description: $description,\n  expand: $expand,\n  images: $images,\n  marketingFeatures: $marketingFeatures,\n  metadata: $metadata,\n  name: $name,\n  packageDimensions: $packageDimensions,\n  shippable: $shippable,\n  statementDescriptor: $statementDescriptor,\n  taxCode: $taxCode,\n  unitLabel: $unitLabel,\n  url: $url,\n)';
 
- }
+}

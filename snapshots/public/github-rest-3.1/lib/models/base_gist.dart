@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/base_gist/base_gist_files_value.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Base Gist
 @immutable final class BaseGist {const BaseGist({required this.url, required this.forksUrl, required this.commitsUrl, required this.id, required this.nodeId, required this.gitPullUrl, required this.gitPushUrl, required this.htmlUrl, required this.files, required this.public, required this.createdAt, required this.updatedAt, required this.description, required this.comments, required this.user, required this.commentsUrl, this.commentsEnabled, this.owner, this.truncated, this.forks, this.history, });
 
-factory BaseGist.fromJson(Map<String, dynamic> json) { return BaseGist(
+factory BaseGist.fromJson(Map<String, dynamic> json) {return BaseGist(
   url: Uri.parse(json['url'] as String),
   forksUrl: Uri.parse(json['forks_url'] as String),
   commitsUrl: Uri.parse(json['commits_url'] as String),
@@ -26,7 +26,7 @@ factory BaseGist.fromJson(Map<String, dynamic> json) { return BaseGist(
   truncated: json['truncated'] as bool?,
   forks: (json['forks'] as List<dynamic>?)?.map((e) => e).toList(),
   history: (json['history'] as List<dynamic>?)?.map((e) => e).toList(),
-); }
+);}
 
 final Uri url;
 
@@ -70,7 +70,7 @@ final List<dynamic>? forks;
 
 final List<dynamic>? history;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'url': url.toString(),
   'forks_url': forksUrl.toString(),
   'commits_url': commitsUrl.toString(),
@@ -92,8 +92,8 @@ Map<String, dynamic> toJson() { return {
   'truncated': ?truncated,
   'forks': ?forks,
   'history': ?history,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('url') && json['url'] is String &&
       json.containsKey('forks_url') && json['forks_url'] is String &&
       json.containsKey('commits_url') && json['commits_url'] is String &&
       json.containsKey('id') && json['id'] is String &&
@@ -108,8 +108,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('user') &&
-      json.containsKey('comments_url') && json['comments_url'] is String; } 
-BaseGist copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,BaseGistFilesValue>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool? Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, SimpleUser? Function()? owner, bool? Function()? truncated, List<dynamic>? Function()? forks, List<dynamic>? Function()? history, }) { return BaseGist(
+      json.containsKey('comments_url') && json['comments_url'] is String;}
+BaseGist copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,BaseGistFilesValue>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool? Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, SimpleUser? Function()? owner, bool? Function()? truncated, List<dynamic>? Function()? forks, List<dynamic>? Function()? history, }) {return BaseGist(
   url: url ?? this.url,
   forksUrl: forksUrl ?? this.forksUrl,
   commitsUrl: commitsUrl ?? this.commitsUrl,
@@ -131,7 +131,7 @@ BaseGist copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String?
   truncated: truncated != null ? truncated() : this.truncated,
   forks: forks != null ? forks() : this.forks,
   history: history != null ? history() : this.history,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BaseGist &&
           url == other.url &&
@@ -160,4 +160,4 @@ BaseGist copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String?
 
 @override String toString() => 'BaseGist(\n  url: $url,\n  forksUrl: $forksUrl,\n  commitsUrl: $commitsUrl,\n  id: $id,\n  nodeId: $nodeId,\n  gitPullUrl: $gitPullUrl,\n  gitPushUrl: $gitPushUrl,\n  htmlUrl: $htmlUrl,\n  files: $files,\n  public: $public,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  description: $description,\n  comments: $comments,\n  commentsEnabled: $commentsEnabled,\n  user: $user,\n  commentsUrl: $commentsUrl,\n  owner: $owner,\n  truncated: $truncated,\n  forks: $forks,\n  history: $history,\n)';
 
- }
+}

@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/mobile_payment_element_features.dart';@immutable final class MobilePaymentElement {const MobilePaymentElement({required this.enabled, this.features, });
 
-factory MobilePaymentElement.fromJson(Map<String, dynamic> json) { return MobilePaymentElement(
+factory MobilePaymentElement.fromJson(Map<String, dynamic> json) {return MobilePaymentElement(
   enabled: json['enabled'] as bool,
   features: json['features'] != null ? MobilePaymentElementFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final bool enabled;
 
 final MobilePaymentElementFeatures? features;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   if (features != null) 'features': features?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-MobilePaymentElement copyWith({bool? enabled, MobilePaymentElementFeatures? Function()? features, }) { return MobilePaymentElement(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool;}
+MobilePaymentElement copyWith({bool? enabled, MobilePaymentElementFeatures? Function()? features, }) {return MobilePaymentElement(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MobilePaymentElement &&
           enabled == other.enabled &&
@@ -30,4 +30,4 @@ MobilePaymentElement copyWith({bool? enabled, MobilePaymentElementFeatures? Func
 
 @override String toString() => 'MobilePaymentElement(enabled: $enabled, features: $features)';
 
- }
+}

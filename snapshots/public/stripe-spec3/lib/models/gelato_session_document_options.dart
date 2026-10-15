@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/document_options/allowed_types.dart';/// 
 @immutable final class GelatoSessionDocumentOptions {const GelatoSessionDocumentOptions({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
 
-factory GelatoSessionDocumentOptions.fromJson(Map<String, dynamic> json) { return GelatoSessionDocumentOptions(
+factory GelatoSessionDocumentOptions.fromJson(Map<String, dynamic> json) {return GelatoSessionDocumentOptions(
   allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => AllowedTypes.fromJson(e as String)).toList(),
   requireIdNumber: json['require_id_number'] as bool?,
   requireLiveCapture: json['require_live_capture'] as bool?,
   requireMatchingSelfie: json['require_matching_selfie'] as bool?,
-); }
+);}
 
 /// Array of strings of allowed identity document types. If the provided identity document isn’t one of the allowed types, the verification check will fail with a document_type_not_allowed error code.
 final List<AllowedTypes>? allowedTypes;
@@ -23,19 +23,19 @@ final bool? requireLiveCapture;
 /// Capture a face image and perform a [selfie check](https://docs.stripe.com/identity/verification-checks?type=selfie) comparing a photo ID and a picture of your user’s face. [Learn more](https://docs.stripe.com/identity/selfie).
 final bool? requireMatchingSelfie;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowedTypes != null) 'allowed_types': allowedTypes?.map((e) => e.toJson()).toList(),
   'require_id_number': ?requireIdNumber,
   'require_live_capture': ?requireLiveCapture,
   'require_matching_selfie': ?requireMatchingSelfie,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_types', 'require_id_number', 'require_live_capture', 'require_matching_selfie'}.contains(key)); } 
-GelatoSessionDocumentOptions copyWith({List<AllowedTypes>? Function()? allowedTypes, bool? Function()? requireIdNumber, bool? Function()? requireLiveCapture, bool? Function()? requireMatchingSelfie, }) { return GelatoSessionDocumentOptions(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'allowed_types', 'require_id_number', 'require_live_capture', 'require_matching_selfie'}.contains(key));}
+GelatoSessionDocumentOptions copyWith({List<AllowedTypes>? Function()? allowedTypes, bool? Function()? requireIdNumber, bool? Function()? requireLiveCapture, bool? Function()? requireMatchingSelfie, }) {return GelatoSessionDocumentOptions(
   allowedTypes: allowedTypes != null ? allowedTypes() : this.allowedTypes,
   requireIdNumber: requireIdNumber != null ? requireIdNumber() : this.requireIdNumber,
   requireLiveCapture: requireLiveCapture != null ? requireLiveCapture() : this.requireLiveCapture,
   requireMatchingSelfie: requireMatchingSelfie != null ? requireMatchingSelfie() : this.requireMatchingSelfie,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoSessionDocumentOptions &&
           listEquals(allowedTypes, other.allowedTypes) &&
@@ -47,4 +47,4 @@ GelatoSessionDocumentOptions copyWith({List<AllowedTypes>? Function()? allowedTy
 
 @override String toString() => 'GelatoSessionDocumentOptions(allowedTypes: $allowedTypes, requireIdNumber: $requireIdNumber, requireLiveCapture: $requireLiveCapture, requireMatchingSelfie: $requireMatchingSelfie)';
 
- }
+}

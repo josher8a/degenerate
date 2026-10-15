@@ -14,7 +14,7 @@ final class WorkerCronTriggerApi with ApiExecutor {const WorkerCronTriggerApi(th
 /// Fetches Cron Triggers for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/schedules`
-Future<ApiResult<WorkerCronTriggerGetCronTriggersResponseResult, CreateWorkerVersionError>> workerCronTriggerGetCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerCronTriggerGetCronTriggersResponseResult, CreateWorkerVersionError>> workerCronTriggerGetCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
+}
 /// Update Cron Triggers
 ///
 /// Updates Cron Triggers for a Worker.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/schedules`
-Future<ApiResult<WorkerCronTriggerGetCronTriggersResponseResult, CreateWorkerVersionError>> workerCronTriggerUpdateCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required List<WorkersScheduleRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerCronTriggerGetCronTriggersResponseResult, CreateWorkerVersionError>> workerCronTriggerUpdateCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required List<WorkersScheduleRequest> body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,5 +56,5 @@ return await execute(
   },
   onError: CreateWorkerVersionError.fromResponse,
 );
- } 
- }
+}
+}

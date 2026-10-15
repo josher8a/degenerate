@@ -14,7 +14,7 @@ final class RadarOriginsApi with ApiExecutor {const RadarOriginsApi(this.apiConf
 /// Retrieves a list of origins with their regions.
 ///
 /// `GET /radar/origins`
-Future<ApiResult<RadarGetOriginsResponseResult, RadarGetOriginsError>> radarGetOrigins({int? limit, int? offset, RadarGetOriginsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsResponseResult, RadarGetOriginsError>> radarGetOrigins({int? limit, int? offset, RadarGetOriginsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -45,13 +45,13 @@ return await execute(
   },
   onError: RadarGetOriginsError.fromResponse,
 );
- } 
+}
 /// Get Origin details
 ///
 /// Retrieves the requested origin information with its regions.
 ///
 /// `GET /radar/origins/{slug}`
-Future<ApiResult<RadarGetOriginDetailsResponseResult, RadarGetOriginDetailsError>> radarGetOriginDetails({required RadarGetOriginDetailsSlug slug, RadarGetOriginDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginDetailsResponseResult, RadarGetOriginDetailsError>> radarGetOriginDetails({required RadarGetOriginDetailsSlug slug, RadarGetOriginDetailsFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -76,13 +76,13 @@ return await execute(
   },
   onError: RadarGetOriginDetailsError.fromResponse,
 );
- } 
+}
 /// Get origin metrics distribution by dimension
 ///
 /// Retrieves an aggregated summary of origin metrics grouped by the specified dimension.
 ///
 /// `GET /radar/origins/summary/{dimension}`
-Future<ApiResult<RadarGetAiBotsSummaryByUserAgentResponseResult, RadarGetOriginsSummaryError>> radarGetOriginsSummary({required RadarGetOriginsSummaryDimension dimension, required List<RadarGetOriginsSummaryOrigin> origin, required RadarGetOriginsSummaryMetric metric, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsSummaryByUserAgentResponseResult, RadarGetOriginsSummaryError>> radarGetOriginsSummary({required RadarGetOriginsSummaryDimension dimension, required List<RadarGetOriginsSummaryOrigin> origin, required RadarGetOriginsSummaryMetric metric, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsSummaryFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -139,13 +139,13 @@ return await execute(
   },
   onError: RadarGetOriginsSummaryError.fromResponse,
 );
- } 
+}
 /// Get origin metrics time series
 ///
 /// Retrieves the time series of origin metrics for the specified origin.
 ///
 /// `GET /radar/origins/timeseries`
-Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetOriginsTimeseriesError>> radarGetOriginsTimeseries({required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? region, RadarGetOriginsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetOriginsTimeseriesError>> radarGetOriginsTimeseries({required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? region, RadarGetOriginsTimeseriesFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -202,13 +202,13 @@ return await execute(
   },
   onError: RadarGetOriginsTimeseriesError.fromResponse,
 );
- } 
+}
 /// Get origin metrics time series grouped by dimension
 ///
 /// Retrieves the distribution of origin metrics grouped by the specified dimension over time.
 ///
 /// `GET /radar/origins/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetOriginsTimeseriesGroupError>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetOriginsTimeseriesGroupError>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -271,5 +271,5 @@ return await execute(
   },
   onError: RadarGetOriginsTimeseriesGroupError.fromResponse,
 );
- } 
- }
+}
+}

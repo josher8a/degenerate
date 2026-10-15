@@ -7,12 +7,12 @@ const RealtimeAudioFormats({this.pcmAudioFormat = const Omittable.absent(), this
 const RealtimeAudioFormats._({required this.rawValue, required this.pcmAudioFormat, required this.pcmuAudioFormat, required this.pcmaAudioFormat, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory RealtimeAudioFormats.fromJson(Object? json) { return RealtimeAudioFormats._(
+factory RealtimeAudioFormats.fromJson(Object? json) {return RealtimeAudioFormats._(
   rawValue: Omittable(json),
   pcmAudioFormat: json is Map<String, dynamic> && PcmAudioFormat.canParse(json) ? parseAnyOfVariant<PcmAudioFormat>(json, (value) => PcmAudioFormat.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   pcmuAudioFormat: json is Map<String, dynamic> && PcmuAudioFormat.canParse(json) ? parseAnyOfVariant<PcmuAudioFormat>(json, (value) => PcmuAudioFormat.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   pcmaAudioFormat: json is Map<String, dynamic> && PcmaAudioFormat.canParse(json) ? parseAnyOfVariant<PcmaAudioFormat>(json, (value) => PcmaAudioFormat.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -46,4 +46,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'RealtimeAudioFormats(${toJson()})';
 
- }
+}

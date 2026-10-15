@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup_options.dart';import 'package:pub_github_rest_3_1/models/code_scanning_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_alert_dismissal.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_extended_metadata.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_advanced_security.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_code_scanning_default_setup.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_code_security.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_dependabot_alerts.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_dependabot_security_updates.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_dependency_graph.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_dependency_graph_autosubmit_action.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_dependency_graph_autosubmit_action_options.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_enforcement.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_private_vulnerability_reporting.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_secret_scanning.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_secret_scanning_generic_secrets.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_secret_scanning_non_provider_patterns.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_secret_scanning_push_protection.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/code_security_create_configuration_for_enterprise_request_secret_scanning_validity_checks.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_for_enterprise_request/secret_protection.dart';import 'package:pub_github_rest_3_1/models/code_security_create_configuration_request/code_security_create_configuration_request_secret_scanning_delegated_bypass_options.dart';/// The enablement status of Dependabot delegated alert dismissal. Requires Dependabot alerts to be enabled.
 sealed class CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal();
 
-factory CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
+factory CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$Unknown(json),
-}; }
+};}
 
 static const CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal enabled = CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$enabled._();
 
@@ -20,33 +20,33 @@ static const CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismi
 static const List<CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal> values = [enabled, disabled, notSet];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   'not_set' => 'notSet',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$Unknown; } 
+bool get isUnknown {return this is CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) {return switch (this) {
       CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$enabled() => enabled(),
       CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$disabled() => disabled(),
       CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$notSet() => notSet(),
       CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) {return switch (this) {
       CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$enabled() => enabled != null ? enabled() : orElse(value),
       CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$disabled() => disabled != null ? disabled() : orElse(value),
       CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$notSet() => notSet != null ? notSet() : orElse(value),
       CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal($value)';
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$enabled extends CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$enabled._();
 
 @override String get value => 'enabled';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$disabled extends CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$disabled._();
 
 @override String get value => 'disabled';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$notSet extends CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$notSet._();
 
 @override String get value => 'not_set';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'not_set'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$Unknown extends CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal$Unknown(this.value);
 
 @override final String value;
@@ -83,16 +83,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The enablement status of code scanning delegated alert dismissal
 sealed class CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal();
 
-factory CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
+factory CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$Unknown(json),
-}; }
+};}
 
 static const CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal enabled = CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$enabled._();
 
@@ -103,33 +103,33 @@ static const CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDis
 static const List<CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal> values = [enabled, disabled, notSet];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   'not_set' => 'notSet',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$Unknown; } 
+bool get isUnknown {return this is CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) {return switch (this) {
       CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$enabled() => enabled(),
       CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$disabled() => disabled(),
       CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$notSet() => notSet(),
       CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) {return switch (this) {
       CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$enabled() => enabled != null ? enabled() : orElse(value),
       CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$disabled() => disabled != null ? disabled() : orElse(value),
       CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$notSet() => notSet != null ? notSet() : orElse(value),
       CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal($value)';
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$enabled extends CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$enabled._();
 
 @override String get value => 'enabled';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$disabled extends CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$disabled._();
 
 @override String get value => 'disabled';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$notSet extends CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$notSet._();
 
 @override String get value => 'not_set';
@@ -156,7 +156,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'not_set'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$Unknown extends CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal {const CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal$Unknown(this.value);
 
 @override final String value;
@@ -166,16 +166,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The enablement status of secret scanning delegated bypass
 sealed class CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass {const CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass();
 
-factory CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.fromJson(String json) { return switch (json) {
+factory CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.fromJson(String json) {return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   _ => CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$Unknown(json),
-}; }
+};}
 
 static const CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass enabled = CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$enabled._();
 
@@ -186,33 +186,33 @@ static const CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass
 static const List<CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass> values = [enabled, disabled, notSet];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'enabled' => 'enabled',
   'disabled' => 'disabled',
   'not_set' => 'notSet',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$Unknown; } 
+bool get isUnknown {return this is CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function(String value) $unknown, }) {return switch (this) {
       CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$enabled() => enabled(),
       CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$disabled() => disabled(),
       CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$notSet() => notSet(),
       CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function(String value)? $unknown, }) {return switch (this) {
       CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$enabled() => enabled != null ? enabled() : orElse(value),
       CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$disabled() => disabled != null ? disabled() : orElse(value),
       CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$notSet() => notSet != null ? notSet() : orElse(value),
       CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass($value)';
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$enabled extends CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass {const CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$enabled._();
 
 @override String get value => 'enabled';
@@ -221,7 +221,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'enabled'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$disabled extends CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass {const CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$disabled._();
 
 @override String get value => 'disabled';
@@ -230,7 +230,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'disabled'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$notSet extends CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass {const CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$notSet._();
 
 @override String get value => 'not_set';
@@ -239,7 +239,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => 'not_set'.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$Unknown extends CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass {const CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass$Unknown(this.value);
 
 @override final String value;
@@ -249,10 +249,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CodeSecurityCreateConfigurationRequest {const CodeSecurityCreateConfigurationRequest({required this.name, required this.description, this.advancedSecurity, this.codeSecurity, this.dependencyGraph, this.dependencyGraphAutosubmitAction, this.dependencyGraphAutosubmitActionOptions, this.dependabotAlerts, this.dependabotSecurityUpdates, this.dependabotDelegatedAlertDismissal, this.codeScanningOptions = const Omittable.absent(), this.codeScanningDefaultSetup, this.codeScanningDefaultSetupOptions = const Omittable.absent(), this.codeScanningDelegatedAlertDismissal, this.secretProtection, this.secretScanning, this.secretScanningPushProtection, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, this.secretScanningValidityChecks, this.secretScanningNonProviderPatterns, this.secretScanningGenericSecrets, this.secretScanningDelegatedAlertDismissal, this.secretScanningExtendedMetadata, this.privateVulnerabilityReporting, this.enforcement, });
 
-factory CodeSecurityCreateConfigurationRequest.fromJson(Map<String, dynamic> json) { return CodeSecurityCreateConfigurationRequest(
+factory CodeSecurityCreateConfigurationRequest.fromJson(Map<String, dynamic> json) {return CodeSecurityCreateConfigurationRequest(
   name: json['name'] as String,
   description: json['description'] as String,
   advancedSecurity: json['advanced_security'] != null ? CodeSecurityCreateConfigurationForEnterpriseRequestAdvancedSecurity.fromJson(json['advanced_security'] as String) : null,
@@ -279,7 +279,7 @@ factory CodeSecurityCreateConfigurationRequest.fromJson(Map<String, dynamic> jso
   secretScanningExtendedMetadata: json['secret_scanning_extended_metadata'] != null ? CodeSecurityConfigurationSecretScanningExtendedMetadata.fromJson(json['secret_scanning_extended_metadata'] as String) : null,
   privateVulnerabilityReporting: json['private_vulnerability_reporting'] != null ? CodeSecurityCreateConfigurationForEnterpriseRequestPrivateVulnerabilityReporting.fromJson(json['private_vulnerability_reporting'] as String) : null,
   enforcement: json['enforcement'] != null ? CodeSecurityCreateConfigurationForEnterpriseRequestEnforcement.fromJson(json['enforcement'] as String) : null,
-); }
+);}
 
 /// The name of the code security configuration. Must be unique within the organization.
 final String name;
@@ -409,7 +409,7 @@ CodeSecurityCreateConfigurationForEnterpriseRequestPrivateVulnerabilityReporting
 /// The value of `enforcement`, or its schema default when absent.
 CodeSecurityCreateConfigurationForEnterpriseRequestEnforcement get enforcementOrDefault => enforcement ?? CodeSecurityCreateConfigurationForEnterpriseRequestEnforcement.fromJson('enforced');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'name': name,
   'description': description,
   if (advancedSecurity != null) 'advanced_security': advancedSecurity?.toJson(),
@@ -436,14 +436,14 @@ Map<String, dynamic> toJson() { return {
   if (secretScanningExtendedMetadata != null) 'secret_scanning_extended_metadata': secretScanningExtendedMetadata?.toJson(),
   if (privateVulnerabilityReporting != null) 'private_vulnerability_reporting': privateVulnerabilityReporting?.toJson(),
   if (enforcement != null) 'enforcement': enforcement?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('description') && json['description'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (description.runes.length > 255) { errors.add('description: length must be <= 255'); }
-return errors; } 
-CodeSecurityCreateConfigurationRequest copyWith({String? name, String? description, CodeSecurityCreateConfigurationForEnterpriseRequestAdvancedSecurity? Function()? advancedSecurity, CodeSecurityCreateConfigurationForEnterpriseRequestCodeSecurity? Function()? codeSecurity, CodeSecurityCreateConfigurationForEnterpriseRequestDependencyGraph? Function()? dependencyGraph, CodeSecurityCreateConfigurationForEnterpriseRequestDependencyGraphAutosubmitAction? Function()? dependencyGraphAutosubmitAction, CodeSecurityCreateConfigurationForEnterpriseRequestDependencyGraphAutosubmitActionOptions? Function()? dependencyGraphAutosubmitActionOptions, CodeSecurityCreateConfigurationForEnterpriseRequestDependabotAlerts? Function()? dependabotAlerts, CodeSecurityCreateConfigurationForEnterpriseRequestDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal? Function()? dependabotDelegatedAlertDismissal, Omittable<CodeScanningOptions?>? codeScanningOptions, CodeSecurityCreateConfigurationForEnterpriseRequestCodeScanningDefaultSetup? Function()? codeScanningDefaultSetup, Omittable<CodeScanningDefaultSetupOptions?>? codeScanningDefaultSetupOptions, CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal? Function()? codeScanningDelegatedAlertDismissal, SecretProtection? Function()? secretProtection, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanning? Function()? secretScanning, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanningPushProtection? Function()? secretScanningPushProtection, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanningValidityChecks? Function()? secretScanningValidityChecks, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanningGenericSecrets? Function()? secretScanningGenericSecrets, CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, CodeSecurityConfigurationSecretScanningExtendedMetadata? Function()? secretScanningExtendedMetadata, CodeSecurityCreateConfigurationForEnterpriseRequestPrivateVulnerabilityReporting? Function()? privateVulnerabilityReporting, CodeSecurityCreateConfigurationForEnterpriseRequestEnforcement? Function()? enforcement, }) { return CodeSecurityCreateConfigurationRequest(
+return errors;}
+CodeSecurityCreateConfigurationRequest copyWith({String? name, String? description, CodeSecurityCreateConfigurationForEnterpriseRequestAdvancedSecurity? Function()? advancedSecurity, CodeSecurityCreateConfigurationForEnterpriseRequestCodeSecurity? Function()? codeSecurity, CodeSecurityCreateConfigurationForEnterpriseRequestDependencyGraph? Function()? dependencyGraph, CodeSecurityCreateConfigurationForEnterpriseRequestDependencyGraphAutosubmitAction? Function()? dependencyGraphAutosubmitAction, CodeSecurityCreateConfigurationForEnterpriseRequestDependencyGraphAutosubmitActionOptions? Function()? dependencyGraphAutosubmitActionOptions, CodeSecurityCreateConfigurationForEnterpriseRequestDependabotAlerts? Function()? dependabotAlerts, CodeSecurityCreateConfigurationForEnterpriseRequestDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal? Function()? dependabotDelegatedAlertDismissal, Omittable<CodeScanningOptions?>? codeScanningOptions, CodeSecurityCreateConfigurationForEnterpriseRequestCodeScanningDefaultSetup? Function()? codeScanningDefaultSetup, Omittable<CodeScanningDefaultSetupOptions?>? codeScanningDefaultSetupOptions, CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal? Function()? codeScanningDelegatedAlertDismissal, SecretProtection? Function()? secretProtection, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanning? Function()? secretScanning, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanningPushProtection? Function()? secretScanningPushProtection, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanningValidityChecks? Function()? secretScanningValidityChecks, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, CodeSecurityCreateConfigurationForEnterpriseRequestSecretScanningGenericSecrets? Function()? secretScanningGenericSecrets, CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, CodeSecurityConfigurationSecretScanningExtendedMetadata? Function()? secretScanningExtendedMetadata, CodeSecurityCreateConfigurationForEnterpriseRequestPrivateVulnerabilityReporting? Function()? privateVulnerabilityReporting, CodeSecurityCreateConfigurationForEnterpriseRequestEnforcement? Function()? enforcement, }) {return CodeSecurityCreateConfigurationRequest(
   name: name ?? this.name,
   description: description ?? this.description,
   advancedSecurity: advancedSecurity != null ? advancedSecurity() : this.advancedSecurity,
@@ -470,7 +470,7 @@ CodeSecurityCreateConfigurationRequest copyWith({String? name, String? descripti
   secretScanningExtendedMetadata: secretScanningExtendedMetadata != null ? secretScanningExtendedMetadata() : this.secretScanningExtendedMetadata,
   privateVulnerabilityReporting: privateVulnerabilityReporting != null ? privateVulnerabilityReporting() : this.privateVulnerabilityReporting,
   enforcement: enforcement != null ? enforcement() : this.enforcement,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityCreateConfigurationRequest &&
           name == other.name &&
@@ -504,4 +504,4 @@ CodeSecurityCreateConfigurationRequest copyWith({String? name, String? descripti
 
 @override String toString() => 'CodeSecurityCreateConfigurationRequest(\n  name: $name,\n  description: $description,\n  advancedSecurity: $advancedSecurity,\n  codeSecurity: $codeSecurity,\n  dependencyGraph: $dependencyGraph,\n  dependencyGraphAutosubmitAction: $dependencyGraphAutosubmitAction,\n  dependencyGraphAutosubmitActionOptions: $dependencyGraphAutosubmitActionOptions,\n  dependabotAlerts: $dependabotAlerts,\n  dependabotSecurityUpdates: $dependabotSecurityUpdates,\n  dependabotDelegatedAlertDismissal: $dependabotDelegatedAlertDismissal,\n  codeScanningOptions: $codeScanningOptions,\n  codeScanningDefaultSetup: $codeScanningDefaultSetup,\n  codeScanningDefaultSetupOptions: $codeScanningDefaultSetupOptions,\n  codeScanningDelegatedAlertDismissal: $codeScanningDelegatedAlertDismissal,\n  secretProtection: $secretProtection,\n  secretScanning: $secretScanning,\n  secretScanningPushProtection: $secretScanningPushProtection,\n  secretScanningDelegatedBypass: $secretScanningDelegatedBypass,\n  secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions,\n  secretScanningValidityChecks: $secretScanningValidityChecks,\n  secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns,\n  secretScanningGenericSecrets: $secretScanningGenericSecrets,\n  secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal,\n  secretScanningExtendedMetadata: $secretScanningExtendedMetadata,\n  privateVulnerabilityReporting: $privateVulnerabilityReporting,\n  enforcement: $enforcement,\n)';
 
- }
+}

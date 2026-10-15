@@ -3,22 +3,22 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementTargetVariant3 {const WorkersPlacementTargetVariant3({required this.host});
 
-factory WorkersPlacementTargetVariant3.fromJson(Map<String, dynamic> json) { return WorkersPlacementTargetVariant3(
+factory WorkersPlacementTargetVariant3.fromJson(Map<String, dynamic> json) {return WorkersPlacementTargetVariant3(
   host: json['host'] as String,
-); }
+);}
 
 /// TCP host:port for targeted placement.
 /// 
 /// Example: `'db.example.com:5432'`
 final String host;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': host,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String; } 
-WorkersPlacementTargetVariant3 copyWith({String? host}) { return WorkersPlacementTargetVariant3(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host') && json['host'] is String;}
+WorkersPlacementTargetVariant3 copyWith({String? host}) {return WorkersPlacementTargetVariant3(
   host: host ?? this.host,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersPlacementTargetVariant3 &&
           host == other.host;
@@ -27,4 +27,4 @@ WorkersPlacementTargetVariant3 copyWith({String? host}) { return WorkersPlacemen
 
 @override String toString() => 'WorkersPlacementTargetVariant3(host: $host)';
 
- }
+}

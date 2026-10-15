@@ -12,7 +12,7 @@ final class Api20100401KeyApi with ApiExecutor {const Api20100401KeyApi(this.api
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
-Future<ApiResult<AccountKey, Never>> fetchKey({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountKey, Never>> fetchKey({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,11 +27,11 @@ return await execute(
     return AccountKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
-Future<ApiResult<AccountKey, Never>> updateKey({required String accountSid, required String sid, UpdateKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountKey, Never>> updateKey({required String accountSid, required String sid, UpdateKeyRequest? body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -51,11 +51,11 @@ return await execute(
     return AccountKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
-Future<ApiResult<void, Never>> deleteKey({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, Never>> deleteKey({required String accountSid, required String sid, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -68,11 +68,11 @@ return await execute(
   request,
   onSuccess: (_) {},
 );
- } 
+}
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Keys.json`
-Future<ApiResult<ListKeyResponse, Never>> listKey({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListKeyResponse, Never>> listKey({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();
@@ -101,5 +101,5 @@ return await execute(
     return ListKeyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

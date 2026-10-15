@@ -25,12 +25,12 @@ String toJson() => value;
 /// The type of mechanism to which the notification has been dispatched. This can be email/pagerduty/webhook based on the mechanism configured.
 sealed class AaaMechanismType {const AaaMechanismType();
 
-factory AaaMechanismType.fromJson(String json) { return switch (json) {
+factory AaaMechanismType.fromJson(String json) {return switch (json) {
   'email' => email,
   'pagerduty' => pagerduty,
   'webhook' => webhook,
   _ => AaaMechanismType$Unknown(json),
-}; }
+};}
 
 static const AaaMechanismType email = AaaMechanismType$email._();
 
@@ -41,33 +41,33 @@ static const AaaMechanismType webhook = AaaMechanismType$webhook._();
 static const List<AaaMechanismType> values = [email, pagerduty, webhook];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'email' => 'email',
   'pagerduty' => 'pagerduty',
   'webhook' => 'webhook',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AaaMechanismType$Unknown; } 
+bool get isUnknown {return this is AaaMechanismType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() email, required W Function() pagerduty, required W Function() webhook, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() email, required W Function() pagerduty, required W Function() webhook, required W Function(String value) $unknown, }) {return switch (this) {
       AaaMechanismType$email() => email(),
       AaaMechanismType$pagerduty() => pagerduty(),
       AaaMechanismType$webhook() => webhook(),
       AaaMechanismType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W Function()? pagerduty, W Function()? webhook, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W Function()? pagerduty, W Function()? webhook, W Function(String value)? $unknown, }) {return switch (this) {
       AaaMechanismType$email() => email != null ? email() : orElse(value),
       AaaMechanismType$pagerduty() => pagerduty != null ? pagerduty() : orElse(value),
       AaaMechanismType$webhook() => webhook != null ? webhook() : orElse(value),
       AaaMechanismType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AaaMechanismType($value)';
 
- }
+}
 @immutable final class AaaMechanismType$email extends AaaMechanismType {const AaaMechanismType$email._();
 
 @override String get value => 'email';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'email'.hashCode;
 
- }
+}
 @immutable final class AaaMechanismType$pagerduty extends AaaMechanismType {const AaaMechanismType$pagerduty._();
 
 @override String get value => 'pagerduty';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'pagerduty'.hashCode;
 
- }
+}
 @immutable final class AaaMechanismType$webhook extends AaaMechanismType {const AaaMechanismType$webhook._();
 
 @override String get value => 'webhook';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => 'webhook'.hashCode;
 
- }
+}
 @immutable final class AaaMechanismType$Unknown extends AaaMechanismType {const AaaMechanismType$Unknown(this.value);
 
 @override final String value;
@@ -104,7 +104,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// Type of notification that has been dispatched.
 extension type const AaaSchemasAlertType(String value) {
 factory AaaSchemasAlertType.fromJson(String json) => AaaSchemasAlertType(json);
@@ -121,7 +121,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class AaaHistory {const AaaHistory({this.alertBody, this.alertType, this.description, this.id, this.mechanism, this.mechanismType, this.name, this.policyId, this.sent, });
 
-factory AaaHistory.fromJson(Map<String, dynamic> json) { return AaaHistory(
+factory AaaHistory.fromJson(Map<String, dynamic> json) {return AaaHistory(
   alertBody: json['alert_body'] != null ? AaaAlertBody.fromJson(json['alert_body'] as String) : null,
   alertType: json['alert_type'] != null ? AaaSchemasAlertType.fromJson(json['alert_type'] as String) : null,
   description: json['description'] != null ? AaaComponentsSchemasDescription.fromJson(json['description'] as String) : null,
@@ -131,7 +131,7 @@ factory AaaHistory.fromJson(Map<String, dynamic> json) { return AaaHistory(
   name: json['name'] != null ? AaaSchemasName.fromJson(json['name'] as String) : null,
   policyId: json['policy_id'] != null ? AaaPolicyId.fromJson(json['policy_id'] as String) : null,
   sent: json['sent'] != null ? AaaSent.fromJson(json['sent'] as String) : null,
-); }
+);}
 
 /// Message body included in the notification sent.
 final AaaAlertBody? alertBody;
@@ -153,7 +153,7 @@ final AaaPolicyId? policyId;
 
 final AaaSent? sent;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (alertBody != null) 'alert_body': alertBody?.toJson(),
   if (alertType != null) 'alert_type': alertType?.toJson(),
   if (description != null) 'description': description?.toJson(),
@@ -163,9 +163,9 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (policyId != null) 'policy_id': policyId?.toJson(),
   if (sent != null) 'sent': sent?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alert_body', 'alert_type', 'description', 'id', 'mechanism', 'mechanism_type', 'name', 'policy_id', 'sent'}.contains(key)); } 
-AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? Function()? alertType, AaaComponentsSchemasDescription? Function()? description, AaaUuid? Function()? id, AaaMechanism? Function()? mechanism, AaaMechanismType? Function()? mechanismType, AaaSchemasName? Function()? name, AaaPolicyId? Function()? policyId, AaaSent? Function()? sent, }) { return AaaHistory(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'alert_body', 'alert_type', 'description', 'id', 'mechanism', 'mechanism_type', 'name', 'policy_id', 'sent'}.contains(key));}
+AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? Function()? alertType, AaaComponentsSchemasDescription? Function()? description, AaaUuid? Function()? id, AaaMechanism? Function()? mechanism, AaaMechanismType? Function()? mechanismType, AaaSchemasName? Function()? name, AaaPolicyId? Function()? policyId, AaaSent? Function()? sent, }) {return AaaHistory(
   alertBody: alertBody != null ? alertBody() : this.alertBody,
   alertType: alertType != null ? alertType() : this.alertType,
   description: description != null ? description() : this.description,
@@ -175,7 +175,7 @@ AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? F
   name: name != null ? name() : this.name,
   policyId: policyId != null ? policyId() : this.policyId,
   sent: sent != null ? sent() : this.sent,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AaaHistory &&
           alertBody == other.alertBody &&
@@ -192,4 +192,4 @@ AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? F
 
 @override String toString() => 'AaaHistory(\n  alertBody: $alertBody,\n  alertType: $alertType,\n  description: $description,\n  id: $id,\n  mechanism: $mechanism,\n  mechanismType: $mechanismType,\n  name: $name,\n  policyId: $policyId,\n  sent: $sent,\n)';
 
- }
+}

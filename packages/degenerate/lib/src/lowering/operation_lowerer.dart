@@ -196,6 +196,12 @@ final class OperationLowerer {
     final responses = <int, IrResponse>{};
     IrResponse? defaultResponse;
     final rawResponses = op['responses'] as Map<String, dynamic>?;
+    final successKeys =
+        rawResponses?.keys
+            .where((key) => RegExp(r'^2(?:\d\d|XX)$').hasMatch(key))
+            .toList()
+          ?..sort();
+    final primarySuccess = successKeys?.firstOrNull;
     if (rawResponses != null) {
       for (final MapEntry(key: statusKey, value: responseMapRaw) in rawResponses.entries) {
         var responseMap = responseMapRaw;
@@ -206,7 +212,11 @@ final class OperationLowerer {
           if (resolved is Map<String, dynamic>) responseMap = resolved;
         }
 
-        final irResponse = _lowerResponse(responseMap, statusCode: statusKey);
+        final irResponse = _lowerResponse(
+          responseMap,
+          statusCode: statusKey,
+          isPrimarySuccess: statusKey == primarySuccess,
+        );
         if (statusKey == 'default') {
           defaultResponse = irResponse;
         } else {
@@ -441,6 +451,7 @@ final class OperationLowerer {
   IrResponse _lowerResponse(
     Map<String, dynamic> response, {
     String? statusCode,
+    bool isPrimarySuccess = false,
   }) {
     final description = response['description'] as String?;
     final content = response['content'] as Map<String, dynamic>?;
@@ -458,10 +469,11 @@ final class OperationLowerer {
         String? nameHint;
         if (_currentOperationId != null) {
           nameHint = '${_currentOpPascal!}Response';
-          if (statusCode != null &&
-              statusCode != '200' &&
-              statusCode != '201') {
-            nameHint = '${_currentOpPascal!}Response$statusCode';
+          if (statusCode != null && !isPrimarySuccess) {
+            final suffix = statusCode == 'default'
+                ? 'Default'
+                : statusCode.replaceAll('XX', 'xx');
+            nameHint = '${_currentOpPascal!}Response$suffix';
           }
         }
 
@@ -487,8 +499,10 @@ final class OperationLowerer {
                     '${_escapePointer(mediaType)}/schema',
               )
             : irItemSchema!;
-        irContent[SpecString(mediaType)] =
-            IrMediaType(irSchema, itemSchema: irItemSchema);
+        irContent[SpecString(mediaType)] = IrMediaType(
+          irSchema,
+          itemSchema: irItemSchema,
+        );
       }
     }
 
@@ -517,6 +531,7 @@ final class OperationLowerer {
     }
 
     return IrResponse(
+      statusKey: statusCode,
       description: SpecString.orNull(description),
       content: irContent,
       headers: headers,

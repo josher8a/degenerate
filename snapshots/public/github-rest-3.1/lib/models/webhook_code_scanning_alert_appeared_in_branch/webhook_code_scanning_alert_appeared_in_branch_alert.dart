@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_dismissed_comment.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/alert_dismissed_reason.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/dismissed_by.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/most_recent_instance.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_state.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_tool.dart';/// The code scanning alert involved in the event.
 @immutable final class WebhookCodeScanningAlertAppearedInBranchAlert {const WebhookCodeScanningAlertAppearedInBranchAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment = const Omittable.absent(), this.fixedAt = const Omittable.absent(), this.mostRecentInstance = const Omittable.absent(), });
 
-factory WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlert(
+factory WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(Map<String, dynamic> json) {return WebhookCodeScanningAlertAppearedInBranchAlert(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: DateTime.parse(json['created_at'] as String),
   dismissedAt: json['dismissed_at'] != null ? DateTime.parse(json['dismissed_at'] as String) : null,
@@ -19,7 +19,7 @@ factory WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(Map<String, dynam
   state: json['state'] != null ? WebhookCodeScanningAlertAppearedInBranchAlertState.fromJson(json['state'] as String) : null,
   tool: WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(json['tool'] as Map<String, dynamic>),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final List<SimpleUser>? assignees;
 
@@ -57,7 +57,7 @@ final WebhookCodeScanningAlertAppearedInBranchAlertTool tool;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
   'dismissed_at': dismissedAt?.toIso8601String(),
@@ -72,8 +72,8 @@ Map<String, dynamic> toJson() { return {
   'state': state?.toJson(),
   'tool': tool.toJson(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('dismissed_at') && (json['dismissed_at'] == null || json['dismissed_at'] is String) &&
       json.containsKey('dismissed_by') &&
       json.containsKey('dismissed_reason') &&
@@ -82,8 +82,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('rule') &&
       json.containsKey('state') &&
       json.containsKey('tool') &&
-      json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, DismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, AlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<MostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertAppearedInBranchAlertRule? rule, WebhookCodeScanningAlertAppearedInBranchAlertState? Function()? state, WebhookCodeScanningAlertAppearedInBranchAlertTool? tool, Uri? url, }) { return WebhookCodeScanningAlertAppearedInBranchAlert(
+      json.containsKey('url') && json['url'] is String;}
+WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? Function()? dismissedAt, DismissedBy? Function()? dismissedBy, Omittable<CodeScanningAlertDismissedComment?>? dismissedComment, AlertDismissedReason? Function()? dismissedReason, Omittable<dynamic>? fixedAt, Uri? htmlUrl, Omittable<MostRecentInstance?>? mostRecentInstance, int? number, WebhookCodeScanningAlertAppearedInBranchAlertRule? rule, WebhookCodeScanningAlertAppearedInBranchAlertState? Function()? state, WebhookCodeScanningAlertAppearedInBranchAlertTool? tool, Uri? url, }) {return WebhookCodeScanningAlertAppearedInBranchAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt != null ? dismissedAt() : this.dismissedAt,
@@ -98,7 +98,7 @@ WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Functi
   state: state != null ? state() : this.state,
   tool: tool ?? this.tool,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranchAlert &&
           listEquals(assignees, other.assignees) &&
@@ -120,4 +120,4 @@ WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Functi
 
 @override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAlert(\n  assignees: $assignees,\n  createdAt: $createdAt,\n  dismissedAt: $dismissedAt,\n  dismissedBy: $dismissedBy,\n  dismissedComment: $dismissedComment,\n  dismissedReason: $dismissedReason,\n  fixedAt: $fixedAt,\n  htmlUrl: $htmlUrl,\n  mostRecentInstance: $mostRecentInstance,\n  number: $number,\n  rule: $rule,\n  state: $state,\n  tool: $tool,\n  url: $url,\n)';
 
- }
+}

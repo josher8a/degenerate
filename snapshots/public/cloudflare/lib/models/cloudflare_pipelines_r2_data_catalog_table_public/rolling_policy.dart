@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Rolling policy for file sinks (when & why to close a file and open a new one).
 @immutable final class RollingPolicy {const RollingPolicy({this.fileSizeBytes, this.inactivitySeconds, this.intervalSeconds, });
 
-factory RollingPolicy.fromJson(Map<String, dynamic> json) { return RollingPolicy(
+factory RollingPolicy.fromJson(Map<String, dynamic> json) {return RollingPolicy(
   fileSizeBytes: json['file_size_bytes'] != null ? (json['file_size_bytes'] as num).toInt() : null,
   inactivitySeconds: json['inactivity_seconds'] != null ? (json['inactivity_seconds'] as num).toInt() : null,
   intervalSeconds: json['interval_seconds'] != null ? (json['interval_seconds'] as num).toInt() : null,
-); }
+);}
 
 /// Files will be rolled after reaching this number of bytes
 final int? fileSizeBytes;
@@ -19,14 +19,14 @@ final int? inactivitySeconds;
 /// Number of seconds to wait before rolling over to a new file
 final int? intervalSeconds;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'file_size_bytes': ?fileSizeBytes,
   'inactivity_seconds': ?inactivitySeconds,
   'interval_seconds': ?intervalSeconds,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_size_bytes', 'inactivity_seconds', 'interval_seconds'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'file_size_bytes', 'inactivity_seconds', 'interval_seconds'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final fileSizeBytes$ = fileSizeBytes;
 if (fileSizeBytes$ != null) {
   if (fileSizeBytes$ < 0) { errors.add('fileSizeBytes: must be >= 0'); }
@@ -39,12 +39,12 @@ final intervalSeconds$ = intervalSeconds;
 if (intervalSeconds$ != null) {
   if (intervalSeconds$ < 1) { errors.add('intervalSeconds: must be >= 1'); }
 }
-return errors; } 
-RollingPolicy copyWith({int? Function()? fileSizeBytes, int? Function()? inactivitySeconds, int? Function()? intervalSeconds, }) { return RollingPolicy(
+return errors;}
+RollingPolicy copyWith({int? Function()? fileSizeBytes, int? Function()? inactivitySeconds, int? Function()? intervalSeconds, }) {return RollingPolicy(
   fileSizeBytes: fileSizeBytes != null ? fileSizeBytes() : this.fileSizeBytes,
   inactivitySeconds: inactivitySeconds != null ? inactivitySeconds() : this.inactivitySeconds,
   intervalSeconds: intervalSeconds != null ? intervalSeconds() : this.intervalSeconds,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RollingPolicy &&
           fileSizeBytes == other.fileSizeBytes &&
@@ -55,4 +55,4 @@ RollingPolicy copyWith({int? Function()? fileSizeBytes, int? Function()? inactiv
 
 @override String toString() => 'RollingPolicy(fileSizeBytes: $fileSizeBytes, inactivitySeconds: $inactivitySeconds, intervalSeconds: $intervalSeconds)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/participant_peer_stats.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/participant_quality_stats.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/peer_report.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipant {const GetParticipantDataFromPeerIdResponseDataParticipant({this.createdAt, this.customParticipantId, this.displayName, this.duration, this.id, this.joinedAt, this.leftAt, this.peerReport, this.peerStats, this.qualityStats, this.role, this.updatedAt, this.userId, });
 
-factory GetParticipantDataFromPeerIdResponseDataParticipant.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipant(
+factory GetParticipantDataFromPeerIdResponseDataParticipant.fromJson(Map<String, dynamic> json) {return GetParticipantDataFromPeerIdResponseDataParticipant(
   createdAt: json['created_at'] as String?,
   customParticipantId: json['custom_participant_id'] as String?,
   displayName: json['display_name'] as String?,
@@ -17,7 +17,7 @@ factory GetParticipantDataFromPeerIdResponseDataParticipant.fromJson(Map<String,
   role: json['role'] as String?,
   updatedAt: json['updated_at'] as String?,
   userId: json['user_id'] as String?,
-); }
+);}
 
 final String? createdAt;
 
@@ -45,7 +45,7 @@ final String? updatedAt;
 
 final String? userId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': ?createdAt,
   'custom_participant_id': ?customParticipantId,
   'display_name': ?displayName,
@@ -59,9 +59,9 @@ Map<String, dynamic> toJson() { return {
   'role': ?role,
   'updated_at': ?updatedAt,
   'user_id': ?userId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'custom_participant_id', 'display_name', 'duration', 'id', 'joined_at', 'left_at', 'peer_report', 'peer_stats', 'quality_stats', 'role', 'updated_at', 'user_id'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipant copyWith({String? Function()? createdAt, String? Function()? customParticipantId, String? Function()? displayName, double? Function()? duration, String? Function()? id, String? Function()? joinedAt, String? Function()? leftAt, PeerReport? Function()? peerReport, ParticipantPeerStats? Function()? peerStats, ParticipantQualityStats? Function()? qualityStats, String? Function()? role, String? Function()? updatedAt, String? Function()? userId, }) { return GetParticipantDataFromPeerIdResponseDataParticipant(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'created_at', 'custom_participant_id', 'display_name', 'duration', 'id', 'joined_at', 'left_at', 'peer_report', 'peer_stats', 'quality_stats', 'role', 'updated_at', 'user_id'}.contains(key));}
+GetParticipantDataFromPeerIdResponseDataParticipant copyWith({String? Function()? createdAt, String? Function()? customParticipantId, String? Function()? displayName, double? Function()? duration, String? Function()? id, String? Function()? joinedAt, String? Function()? leftAt, PeerReport? Function()? peerReport, ParticipantPeerStats? Function()? peerStats, ParticipantQualityStats? Function()? qualityStats, String? Function()? role, String? Function()? updatedAt, String? Function()? userId, }) {return GetParticipantDataFromPeerIdResponseDataParticipant(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   customParticipantId: customParticipantId != null ? customParticipantId() : this.customParticipantId,
   displayName: displayName != null ? displayName() : this.displayName,
@@ -75,7 +75,7 @@ GetParticipantDataFromPeerIdResponseDataParticipant copyWith({String? Function()
   role: role != null ? role() : this.role,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   userId: userId != null ? userId() : this.userId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetParticipantDataFromPeerIdResponseDataParticipant &&
           createdAt == other.createdAt &&
@@ -96,4 +96,4 @@ GetParticipantDataFromPeerIdResponseDataParticipant copyWith({String? Function()
 
 @override String toString() => 'GetParticipantDataFromPeerIdResponseDataParticipant(\n  createdAt: $createdAt,\n  customParticipantId: $customParticipantId,\n  displayName: $displayName,\n  duration: $duration,\n  id: $id,\n  joinedAt: $joinedAt,\n  leftAt: $leftAt,\n  peerReport: $peerReport,\n  peerStats: $peerStats,\n  qualityStats: $qualityStats,\n  role: $role,\n  updatedAt: $updatedAt,\n  userId: $userId,\n)';
 
- }
+}

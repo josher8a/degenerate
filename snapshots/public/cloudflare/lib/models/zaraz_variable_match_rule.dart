@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule/zaraz_variable_match_rule_settings.dart';sealed class ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction();
 
-factory ZarazVariableMatchRuleAction.fromJson(String json) { return switch (json) {
+factory ZarazVariableMatchRuleAction.fromJson(String json) {return switch (json) {
   'variableMatch' => variableMatch,
   _ => ZarazVariableMatchRuleAction$Unknown(json),
-}; }
+};}
 
 static const ZarazVariableMatchRuleAction variableMatch = ZarazVariableMatchRuleAction$variableMatch._();
 
 static const List<ZarazVariableMatchRuleAction> values = [variableMatch];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'variableMatch' => 'variableMatch',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ZarazVariableMatchRuleAction$Unknown; } 
+bool get isUnknown {return this is ZarazVariableMatchRuleAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() variableMatch, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() variableMatch, required W Function(String value) $unknown, }) {return switch (this) {
       ZarazVariableMatchRuleAction$variableMatch() => variableMatch(),
       ZarazVariableMatchRuleAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? variableMatch, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? variableMatch, W Function(String value)? $unknown, }) {return switch (this) {
       ZarazVariableMatchRuleAction$variableMatch() => variableMatch != null ? variableMatch() : orElse(value),
       ZarazVariableMatchRuleAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ZarazVariableMatchRuleAction($value)';
 
- }
+}
 @immutable final class ZarazVariableMatchRuleAction$variableMatch extends ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction$variableMatch._();
 
 @override String get value => 'variableMatch';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? variable
 
 @override int get hashCode => 'variableMatch'.hashCode;
 
- }
+}
 @immutable final class ZarazVariableMatchRuleAction$Unknown extends ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction$Unknown(this.value);
 
 @override final String value;
@@ -52,14 +52,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? variable
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ZarazVariableMatchRule {const ZarazVariableMatchRule({required this.action, required this.id, required this.settings, });
 
-factory ZarazVariableMatchRule.fromJson(Map<String, dynamic> json) { return ZarazVariableMatchRule(
+factory ZarazVariableMatchRule.fromJson(Map<String, dynamic> json) {return ZarazVariableMatchRule(
   action: ZarazVariableMatchRuleAction.fromJson(json['action'] as String),
   id: json['id'] as String,
   settings: ZarazVariableMatchRuleSettings.fromJson(json['settings'] as Map<String, dynamic>),
-); }
+);}
 
 final ZarazVariableMatchRuleAction action;
 
@@ -67,19 +67,19 @@ final String id;
 
 final ZarazVariableMatchRuleSettings settings;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'id': id,
   'settings': settings.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] == 'variableMatch' &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') && json['action'] == 'variableMatch' &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('settings'); } 
-ZarazVariableMatchRule copyWith({ZarazVariableMatchRuleAction? action, String? id, ZarazVariableMatchRuleSettings? settings, }) { return ZarazVariableMatchRule(
+      json.containsKey('settings');}
+ZarazVariableMatchRule copyWith({ZarazVariableMatchRuleAction? action, String? id, ZarazVariableMatchRuleSettings? settings, }) {return ZarazVariableMatchRule(
   action: action ?? this.action,
   id: id ?? this.id,
   settings: settings ?? this.settings,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazVariableMatchRule &&
           action == other.action &&
@@ -90,4 +90,4 @@ ZarazVariableMatchRule copyWith({ZarazVariableMatchRuleAction? action, String? i
 
 @override String toString() => 'ZarazVariableMatchRule(action: $action, id: $id, settings: $settings)';
 
- }
+}

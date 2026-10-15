@@ -4,14 +4,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the level of the jurisdiction imposing the tax.
 sealed class TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel();
 
-factory TaxProductResourceJurisdictionLevel.fromJson(String json) { return switch (json) {
+factory TaxProductResourceJurisdictionLevel.fromJson(String json) {return switch (json) {
   'city' => city,
   'country' => country,
   'county' => county,
   'district' => district,
   'state' => state,
   _ => TaxProductResourceJurisdictionLevel$Unknown(json),
-}; }
+};}
 
 static const TaxProductResourceJurisdictionLevel city = TaxProductResourceJurisdictionLevel$city._();
 
@@ -26,39 +26,39 @@ static const TaxProductResourceJurisdictionLevel state = TaxProductResourceJuris
 static const List<TaxProductResourceJurisdictionLevel> values = [city, country, county, district, state];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'city' => 'city',
   'country' => 'country',
   'county' => 'county',
   'district' => 'district',
   'state' => 'state',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TaxProductResourceJurisdictionLevel$Unknown; } 
+bool get isUnknown {return this is TaxProductResourceJurisdictionLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() city, required W Function() country, required W Function() county, required W Function() district, required W Function() state, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() city, required W Function() country, required W Function() county, required W Function() district, required W Function() state, required W Function(String value) $unknown, }) {return switch (this) {
       TaxProductResourceJurisdictionLevel$city() => city(),
       TaxProductResourceJurisdictionLevel$country() => country(),
       TaxProductResourceJurisdictionLevel$county() => county(),
       TaxProductResourceJurisdictionLevel$district() => district(),
       TaxProductResourceJurisdictionLevel$state() => state(),
       TaxProductResourceJurisdictionLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W Function()? country, W Function()? county, W Function()? district, W Function()? state, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W Function()? country, W Function()? county, W Function()? district, W Function()? state, W Function(String value)? $unknown, }) {return switch (this) {
       TaxProductResourceJurisdictionLevel$city() => city != null ? city() : orElse(value),
       TaxProductResourceJurisdictionLevel$country() => country != null ? country() : orElse(value),
       TaxProductResourceJurisdictionLevel$county() => county != null ? county() : orElse(value),
       TaxProductResourceJurisdictionLevel$district() => district != null ? district() : orElse(value),
       TaxProductResourceJurisdictionLevel$state() => state != null ? state() : orElse(value),
       TaxProductResourceJurisdictionLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TaxProductResourceJurisdictionLevel($value)';
 
- }
+}
 @immutable final class TaxProductResourceJurisdictionLevel$city extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$city._();
 
 @override String get value => 'city';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'city'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceJurisdictionLevel$country extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$country._();
 
 @override String get value => 'country';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'country'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceJurisdictionLevel$county extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$county._();
 
 @override String get value => 'county';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'county'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceJurisdictionLevel$district extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$district._();
 
 @override String get value => 'district';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'district'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceJurisdictionLevel$state extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$state._();
 
 @override String get value => 'state';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => 'state'.hashCode;
 
- }
+}
 @immutable final class TaxProductResourceJurisdictionLevel$Unknown extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$Unknown(this.value);
 
 @override final String value;
@@ -113,16 +113,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class TaxProductResourceJurisdiction {const TaxProductResourceJurisdiction({required this.country, required this.displayName, required this.level, this.state = const Omittable.absent(), });
 
-factory TaxProductResourceJurisdiction.fromJson(Map<String, dynamic> json) { return TaxProductResourceJurisdiction(
+factory TaxProductResourceJurisdiction.fromJson(Map<String, dynamic> json) {return TaxProductResourceJurisdiction(
   country: json['country'] as String,
   displayName: json['display_name'] as String,
   level: TaxProductResourceJurisdictionLevel.fromJson(json['level'] as String),
   state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
 final String country;
@@ -136,30 +136,30 @@ final TaxProductResourceJurisdictionLevel level;
 /// [ISO 3166-2 subdivision code](https://en.wikipedia.org/wiki/ISO_3166-2), without country prefix. For example, "NY" for New York, United States.
 final Omittable<String?> state;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'country': country,
   'display_name': displayName,
   'level': level.toJson(),
   if (state.isPresent) 'state': state.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('country') && json['country'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&
-      json.containsKey('level'); } 
+      json.containsKey('level');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (country.runes.length > 5000) { errors.add('country: length must be <= 5000'); }
 if (displayName.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 final state$ = state.value;
 if (state$ != null) {
   if (state$.runes.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
-return errors; } 
-TaxProductResourceJurisdiction copyWith({String? country, String? displayName, TaxProductResourceJurisdictionLevel? level, Omittable<String?>? state, }) { return TaxProductResourceJurisdiction(
+return errors;}
+TaxProductResourceJurisdiction copyWith({String? country, String? displayName, TaxProductResourceJurisdictionLevel? level, Omittable<String?>? state, }) {return TaxProductResourceJurisdiction(
   country: country ?? this.country,
   displayName: displayName ?? this.displayName,
   level: level ?? this.level,
   state: state ?? this.state,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceJurisdiction &&
           country == other.country &&
@@ -171,4 +171,4 @@ TaxProductResourceJurisdiction copyWith({String? country, String? displayName, T
 
 @override String toString() => 'TaxProductResourceJurisdiction(country: $country, displayName: $displayName, level: $level, state: $state)';
 
- }
+}

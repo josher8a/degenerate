@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CreateSingleMemberStatus {const CreateSingleMemberStatus();
 
-factory CreateSingleMemberStatus.fromJson(String json) { return switch (json) {
+factory CreateSingleMemberStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'canceled' => canceled,
   _ => CreateSingleMemberStatus$Unknown(json),
-}; }
+};}
 
 static const CreateSingleMemberStatus active = CreateSingleMemberStatus$active._();
 
@@ -16,30 +16,30 @@ static const CreateSingleMemberStatus canceled = CreateSingleMemberStatus$cancel
 static const List<CreateSingleMemberStatus> values = [active, canceled];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'canceled' => 'canceled',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateSingleMemberStatus$Unknown; } 
+bool get isUnknown {return this is CreateSingleMemberStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() canceled, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() canceled, required W Function(String value) $unknown, }) {return switch (this) {
       CreateSingleMemberStatus$active() => active(),
       CreateSingleMemberStatus$canceled() => canceled(),
       CreateSingleMemberStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? canceled, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? canceled, W Function(String value)? $unknown, }) {return switch (this) {
       CreateSingleMemberStatus$active() => active != null ? active() : orElse(value),
       CreateSingleMemberStatus$canceled() => canceled != null ? canceled() : orElse(value),
       CreateSingleMemberStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CreateSingleMemberStatus($value)';
 
- }
+}
 @immutable final class CreateSingleMemberStatus$active extends CreateSingleMemberStatus {const CreateSingleMemberStatus$active._();
 
 @override String get value => 'active';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class CreateSingleMemberStatus$canceled extends CreateSingleMemberStatus {const CreateSingleMemberStatus$canceled._();
 
 @override String get value => 'canceled';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'canceled'.hashCode;
 
- }
+}
 @immutable final class CreateSingleMemberStatus$Unknown extends CreateSingleMemberStatus {const CreateSingleMemberStatus$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

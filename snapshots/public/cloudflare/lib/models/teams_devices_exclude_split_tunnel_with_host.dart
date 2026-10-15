@@ -10,24 +10,24 @@ String toJson() => value;
 }
 @immutable final class TeamsDevicesExcludeSplitTunnelWithHost {const TeamsDevicesExcludeSplitTunnelWithHost({required this.host, this.description, });
 
-factory TeamsDevicesExcludeSplitTunnelWithHost.fromJson(Map<String, dynamic> json) { return TeamsDevicesExcludeSplitTunnelWithHost(
+factory TeamsDevicesExcludeSplitTunnelWithHost.fromJson(Map<String, dynamic> json) {return TeamsDevicesExcludeSplitTunnelWithHost(
   description: json['description'] != null ? TeamsDevicesSplitTunnelDescription.fromJson(json['description'] as String) : null,
   host: TeamsDevicesSplitTunnelHost.fromJson(json['host'] as String),
-); }
+);}
 
 final TeamsDevicesSplitTunnelDescription? description;
 
 final TeamsDevicesSplitTunnelHost host;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   'host': host.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('host'); } 
-TeamsDevicesExcludeSplitTunnelWithHost copyWith({TeamsDevicesSplitTunnelDescription? Function()? description, TeamsDevicesSplitTunnelHost? host, }) { return TeamsDevicesExcludeSplitTunnelWithHost(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('host');}
+TeamsDevicesExcludeSplitTunnelWithHost copyWith({TeamsDevicesSplitTunnelDescription? Function()? description, TeamsDevicesSplitTunnelHost? host, }) {return TeamsDevicesExcludeSplitTunnelWithHost(
   description: description != null ? description() : this.description,
   host: host ?? this.host,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesExcludeSplitTunnelWithHost &&
           description == other.description &&
@@ -37,4 +37,4 @@ TeamsDevicesExcludeSplitTunnelWithHost copyWith({TeamsDevicesSplitTunnelDescript
 
 @override String toString() => 'TeamsDevicesExcludeSplitTunnelWithHost(description: $description, host: $host)';
 
- }
+}

@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The balance type of your Stripe balance to draw this payout from. Balances for different payment sources are kept separately. You can find the amounts with the Balances API. One of `bank_account`, `card`, or `fpx`.
 sealed class SourceType {const SourceType();
 
-factory SourceType.fromJson(String json) { return switch (json) {
+factory SourceType.fromJson(String json) {return switch (json) {
   'bank_account' => bankAccount,
   'card' => card,
   'fpx' => fpx,
   _ => SourceType$Unknown(json),
-}; }
+};}
 
 static const SourceType bankAccount = SourceType$bankAccount._();
 
@@ -20,33 +20,33 @@ static const SourceType fpx = SourceType$fpx._();
 static const List<SourceType> values = [bankAccount, card, fpx];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'bank_account' => 'bankAccount',
   'card' => 'card',
   'fpx' => 'fpx',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SourceType$Unknown; } 
+bool get isUnknown {return this is SourceType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() bankAccount, required W Function() card, required W Function() fpx, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() bankAccount, required W Function() card, required W Function() fpx, required W Function(String value) $unknown, }) {return switch (this) {
       SourceType$bankAccount() => bankAccount(),
       SourceType$card() => card(),
       SourceType$fpx() => fpx(),
       SourceType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAccount, W Function()? card, W Function()? fpx, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAccount, W Function()? card, W Function()? fpx, W Function(String value)? $unknown, }) {return switch (this) {
       SourceType$bankAccount() => bankAccount != null ? bankAccount() : orElse(value),
       SourceType$card() => card != null ? card() : orElse(value),
       SourceType$fpx() => fpx != null ? fpx() : orElse(value),
       SourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SourceType($value)';
 
- }
+}
 @immutable final class SourceType$bankAccount extends SourceType {const SourceType$bankAccount._();
 
 @override String get value => 'bank_account';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAcco
 
 @override int get hashCode => 'bank_account'.hashCode;
 
- }
+}
 @immutable final class SourceType$card extends SourceType {const SourceType$card._();
 
 @override String get value => 'card';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAcco
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class SourceType$fpx extends SourceType {const SourceType$fpx._();
 
 @override String get value => 'fpx';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAcco
 
 @override int get hashCode => 'fpx'.hashCode;
 
- }
+}
 @immutable final class SourceType$Unknown extends SourceType {const SourceType$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAcco
 
 @override int get hashCode => value.hashCode;
 
- }
+}

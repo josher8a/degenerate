@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_policy_summary.dart';import 'package:pub_cloudflare/models/teams_devices_registration_device_details.dart';import 'package:pub_cloudflare/models/teams_devices_user.dart';/// A WARP configuration tied to a single user. Multiple registrations can be created from a single WARP device.
 @immutable final class TeamsDevicesRegistration {const TeamsDevicesRegistration({required this.createdAt, required this.device, required this.id, required this.key, required this.lastSeenAt, required this.updatedAt, this.deletedAt = const Omittable.absent(), this.keyType = const Omittable.absent(), this.policy, this.revokedAt = const Omittable.absent(), this.tunnelType = const Omittable.absent(), this.user, });
 
-factory TeamsDevicesRegistration.fromJson(Map<String, dynamic> json) { return TeamsDevicesRegistration(
+factory TeamsDevicesRegistration.fromJson(Map<String, dynamic> json) {return TeamsDevicesRegistration(
   createdAt: json['created_at'] as String,
   deletedAt: json.containsKey('deleted_at') ? Omittable(json['deleted_at'] as String?) : const Omittable.absent(),
   device: TeamsDevicesRegistrationDeviceDetails.fromJson(json['device'] as Map<String, dynamic>),
@@ -17,7 +17,7 @@ factory TeamsDevicesRegistration.fromJson(Map<String, dynamic> json) { return Te
   tunnelType: json.containsKey('tunnel_type') ? Omittable(json['tunnel_type'] as String?) : const Omittable.absent(),
   updatedAt: json['updated_at'] as String,
   user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The RFC3339 timestamp when the registration was created.
 /// 
@@ -70,7 +70,7 @@ final String updatedAt;
 
 final TeamsDevicesUser? user;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'created_at': createdAt,
   if (deletedAt.isPresent) 'deleted_at': deletedAt.value,
   'device': device.toJson(),
@@ -83,14 +83,14 @@ Map<String, dynamic> toJson() { return {
   if (tunnelType.isPresent) 'tunnel_type': tunnelType.value,
   'updated_at': updatedAt,
   if (user != null) 'user': user?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('device') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('key') && json['key'] is String &&
       json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-TeamsDevicesRegistration copyWith({String? createdAt, Omittable<String?>? deletedAt, TeamsDevicesRegistrationDeviceDetails? device, String? id, String? key, Omittable<String?>? keyType, String? lastSeenAt, TeamsDevicesPolicySummary? Function()? policy, Omittable<String?>? revokedAt, Omittable<String?>? tunnelType, String? updatedAt, TeamsDevicesUser? Function()? user, }) { return TeamsDevicesRegistration(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+TeamsDevicesRegistration copyWith({String? createdAt, Omittable<String?>? deletedAt, TeamsDevicesRegistrationDeviceDetails? device, String? id, String? key, Omittable<String?>? keyType, String? lastSeenAt, TeamsDevicesPolicySummary? Function()? policy, Omittable<String?>? revokedAt, Omittable<String?>? tunnelType, String? updatedAt, TeamsDevicesUser? Function()? user, }) {return TeamsDevicesRegistration(
   createdAt: createdAt ?? this.createdAt,
   deletedAt: deletedAt ?? this.deletedAt,
   device: device ?? this.device,
@@ -103,7 +103,7 @@ TeamsDevicesRegistration copyWith({String? createdAt, Omittable<String?>? delete
   tunnelType: tunnelType ?? this.tunnelType,
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesRegistration &&
           createdAt == other.createdAt &&
@@ -123,4 +123,4 @@ TeamsDevicesRegistration copyWith({String? createdAt, Omittable<String?>? delete
 
 @override String toString() => 'TeamsDevicesRegistration(\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  device: $device,\n  id: $id,\n  key: $key,\n  keyType: $keyType,\n  lastSeenAt: $lastSeenAt,\n  policy: $policy,\n  revokedAt: $revokedAt,\n  tunnelType: $tunnelType,\n  updatedAt: $updatedAt,\n  user: $user,\n)';
 
- }
+}

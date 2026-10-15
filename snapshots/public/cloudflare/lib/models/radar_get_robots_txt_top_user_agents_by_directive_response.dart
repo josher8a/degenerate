@@ -3,26 +3,26 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_response/radar_get_robots_txt_top_user_agents_by_directive_response_result.dart';@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponse {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponse({required this.result, required this.success, });
 
-factory RadarGetRobotsTxtTopUserAgentsByDirectiveResponse.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse(
+factory RadarGetRobotsTxtTopUserAgentsByDirectiveResponse.fromJson(Map<String, dynamic> json) {return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse(
   result: RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult result;
 
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-RadarGetRobotsTxtTopUserAgentsByDirectiveResponse copyWith({RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult? result, bool? success, }) { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool;}
+RadarGetRobotsTxtTopUserAgentsByDirectiveResponse copyWith({RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult? result, bool? success, }) {return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse(
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRobotsTxtTopUserAgentsByDirectiveResponse &&
           result == other.result &&
@@ -32,4 +32,4 @@ RadarGetRobotsTxtTopUserAgentsByDirectiveResponse copyWith({RadarGetRobotsTxtTop
 
 @override String toString() => 'RadarGetRobotsTxtTopUserAgentsByDirectiveResponse(result: $result, success: $success)';
 
- }
+}

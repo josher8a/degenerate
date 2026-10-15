@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/access_messages2.dart';@immutable final class ResponseCollection3 {const ResponseCollection3({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
-factory ResponseCollection3.fromJson(Map<String, dynamic> json) { return ResponseCollection3(
+factory ResponseCollection3.fromJson(Map<String, dynamic> json) {return ResponseCollection3(
   errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final List<AccessMessages2> errors;
 
@@ -21,21 +21,21 @@ final bool success;
 
 final AccessActiveSessionsResponseResultInfo? resultInfo;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ResponseCollection3 copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, }) { return ResponseCollection3(
+      json.containsKey('success') && json['success'] is bool;}
+ResponseCollection3 copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, }) {return ResponseCollection3(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCollection3 &&
           listEquals(errors, other.errors) &&
@@ -47,4 +47,4 @@ ResponseCollection3 copyWith({List<AccessMessages2>? errors, List<AccessMessages
 
 @override String toString() => 'ResponseCollection3(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo)';
 
- }
+}

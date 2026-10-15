@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_mandate_options_payto/invoice_mandate_options_payto_purpose.dart';import 'package:pub_stripe_spec3/models/mandate_payto/mandate_payto_amount_type.dart';/// The periodicity at which payments will be collected. Defaults to `adhoc`.
 sealed class MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule();
 
-factory MandatePaytoPaymentSchedule.fromJson(String json) { return switch (json) {
+factory MandatePaytoPaymentSchedule.fromJson(String json) {return switch (json) {
   'adhoc' => adhoc,
   'annual' => annual,
   'daily' => daily,
@@ -14,7 +14,7 @@ factory MandatePaytoPaymentSchedule.fromJson(String json) { return switch (json)
   'semi_annual' => semiAnnual,
   'weekly' => weekly,
   _ => MandatePaytoPaymentSchedule$Unknown(json),
-}; }
+};}
 
 static const MandatePaytoPaymentSchedule adhoc = MandatePaytoPaymentSchedule$adhoc._();
 
@@ -35,9 +35,9 @@ static const MandatePaytoPaymentSchedule weekly = MandatePaytoPaymentSchedule$we
 static const List<MandatePaytoPaymentSchedule> values = [adhoc, annual, daily, fortnightly, monthly, quarterly, semiAnnual, weekly];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'adhoc' => 'adhoc',
   'annual' => 'annual',
   'daily' => 'daily',
@@ -47,11 +47,11 @@ String get name { return switch (value) {
   'semi_annual' => 'semiAnnual',
   'weekly' => 'weekly',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MandatePaytoPaymentSchedule$Unknown; } 
+bool get isUnknown {return this is MandatePaytoPaymentSchedule$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() adhoc, required W Function() annual, required W Function() daily, required W Function() fortnightly, required W Function() monthly, required W Function() quarterly, required W Function() semiAnnual, required W Function() weekly, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() adhoc, required W Function() annual, required W Function() daily, required W Function() fortnightly, required W Function() monthly, required W Function() quarterly, required W Function() semiAnnual, required W Function() weekly, required W Function(String value) $unknown, }) {return switch (this) {
       MandatePaytoPaymentSchedule$adhoc() => adhoc(),
       MandatePaytoPaymentSchedule$annual() => annual(),
       MandatePaytoPaymentSchedule$daily() => daily(),
@@ -61,9 +61,9 @@ W when<W>({required W Function() adhoc, required W Function() annual, required W
       MandatePaytoPaymentSchedule$semiAnnual() => semiAnnual(),
       MandatePaytoPaymentSchedule$weekly() => weekly(),
       MandatePaytoPaymentSchedule$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W Function()? annual, W Function()? daily, W Function()? fortnightly, W Function()? monthly, W Function()? quarterly, W Function()? semiAnnual, W Function()? weekly, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W Function()? annual, W Function()? daily, W Function()? fortnightly, W Function()? monthly, W Function()? quarterly, W Function()? semiAnnual, W Function()? weekly, W Function(String value)? $unknown, }) {return switch (this) {
       MandatePaytoPaymentSchedule$adhoc() => adhoc != null ? adhoc() : orElse(value),
       MandatePaytoPaymentSchedule$annual() => annual != null ? annual() : orElse(value),
       MandatePaytoPaymentSchedule$daily() => daily != null ? daily() : orElse(value),
@@ -73,10 +73,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
       MandatePaytoPaymentSchedule$semiAnnual() => semiAnnual != null ? semiAnnual() : orElse(value),
       MandatePaytoPaymentSchedule$weekly() => weekly != null ? weekly() : orElse(value),
       MandatePaytoPaymentSchedule$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'MandatePaytoPaymentSchedule($value)';
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$adhoc extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$adhoc._();
 
 @override String get value => 'adhoc';
@@ -85,7 +85,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => 'adhoc'.hashCode;
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$annual extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$annual._();
 
 @override String get value => 'annual';
@@ -94,7 +94,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => 'annual'.hashCode;
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$daily extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$daily._();
 
 @override String get value => 'daily';
@@ -103,7 +103,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => 'daily'.hashCode;
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$fortnightly extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$fortnightly._();
 
 @override String get value => 'fortnightly';
@@ -112,7 +112,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => 'fortnightly'.hashCode;
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$monthly extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$monthly._();
 
 @override String get value => 'monthly';
@@ -121,7 +121,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => 'monthly'.hashCode;
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$quarterly extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$quarterly._();
 
 @override String get value => 'quarterly';
@@ -130,7 +130,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => 'quarterly'.hashCode;
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$semiAnnual extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$semiAnnual._();
 
 @override String get value => 'semi_annual';
@@ -139,7 +139,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => 'semi_annual'.hashCode;
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$weekly extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$weekly._();
 
 @override String get value => 'weekly';
@@ -148,7 +148,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => 'weekly'.hashCode;
 
- }
+}
 @immutable final class MandatePaytoPaymentSchedule$Unknown extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$Unknown(this.value);
 
 @override final String value;
@@ -158,11 +158,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// 
 @immutable final class MandatePayto {const MandatePayto({required this.amountType, required this.paymentSchedule, this.amount = const Omittable.absent(), this.endDate = const Omittable.absent(), this.paymentsPerPeriod = const Omittable.absent(), this.purpose = const Omittable.absent(), this.startDate = const Omittable.absent(), });
 
-factory MandatePayto.fromJson(Map<String, dynamic> json) { return MandatePayto(
+factory MandatePayto.fromJson(Map<String, dynamic> json) {return MandatePayto(
   amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   amountType: MandatePaytoAmountType.fromJson(json['amount_type'] as String),
   endDate: json.containsKey('end_date') ? Omittable(json['end_date'] as String?) : const Omittable.absent(),
@@ -170,7 +170,7 @@ factory MandatePayto.fromJson(Map<String, dynamic> json) { return MandatePayto(
   paymentsPerPeriod: json.containsKey('payments_per_period') ? Omittable(json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null) : const Omittable.absent(),
   purpose: json.containsKey('purpose') ? Omittable(json['purpose'] != null ? InvoiceMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null) : const Omittable.absent(),
   startDate: json.containsKey('start_date') ? Omittable(json['start_date'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Amount that will be collected. It is required when `amount_type` is `fixed`.
 final Omittable<int?> amount;
@@ -193,7 +193,7 @@ final Omittable<InvoiceMandateOptionsPaytoPurpose?> purpose;
 /// Date, in YYYY-MM-DD format, from which payments will be collected. Defaults to confirmation time.
 final Omittable<String?> startDate;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (amount.isPresent) 'amount': amount.value,
   'amount_type': amountType.toJson(),
   if (endDate.isPresent) 'end_date': endDate.value,
@@ -201,11 +201,11 @@ Map<String, dynamic> toJson() { return {
   if (paymentsPerPeriod.isPresent) 'payments_per_period': paymentsPerPeriod.value,
   if (purpose.isPresent) 'purpose': purpose.value?.toJson(),
   if (startDate.isPresent) 'start_date': startDate.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_type') &&
-      json.containsKey('payment_schedule'); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount_type') &&
+      json.containsKey('payment_schedule');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final endDate$ = endDate.value;
 if (endDate$ != null) {
   if (endDate$.runes.length > 5000) { errors.add('endDate: length must be <= 5000'); }
@@ -214,8 +214,8 @@ final startDate$ = startDate.value;
 if (startDate$ != null) {
   if (startDate$.runes.length > 5000) { errors.add('startDate: length must be <= 5000'); }
 }
-return errors; } 
-MandatePayto copyWith({Omittable<int?>? amount, MandatePaytoAmountType? amountType, Omittable<String?>? endDate, MandatePaytoPaymentSchedule? paymentSchedule, Omittable<int?>? paymentsPerPeriod, Omittable<InvoiceMandateOptionsPaytoPurpose?>? purpose, Omittable<String?>? startDate, }) { return MandatePayto(
+return errors;}
+MandatePayto copyWith({Omittable<int?>? amount, MandatePaytoAmountType? amountType, Omittable<String?>? endDate, MandatePaytoPaymentSchedule? paymentSchedule, Omittable<int?>? paymentsPerPeriod, Omittable<InvoiceMandateOptionsPaytoPurpose?>? purpose, Omittable<String?>? startDate, }) {return MandatePayto(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   endDate: endDate ?? this.endDate,
@@ -223,7 +223,7 @@ MandatePayto copyWith({Omittable<int?>? amount, MandatePaytoAmountType? amountTy
   paymentsPerPeriod: paymentsPerPeriod ?? this.paymentsPerPeriod,
   purpose: purpose ?? this.purpose,
   startDate: startDate ?? this.startDate,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MandatePayto &&
           amount == other.amount &&
@@ -238,4 +238,4 @@ MandatePayto copyWith({Omittable<int?>? amount, MandatePaytoAmountType? amountTy
 
 @override String toString() => 'MandatePayto(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)';
 
- }
+}

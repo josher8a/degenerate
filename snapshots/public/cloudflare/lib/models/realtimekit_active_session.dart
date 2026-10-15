@@ -4,11 +4,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// current status of session
 sealed class RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus();
 
-factory RealtimekitActiveSessionStatus.fromJson(String json) { return switch (json) {
+factory RealtimekitActiveSessionStatus.fromJson(String json) {return switch (json) {
   'LIVE' => live,
   'ENDED' => ended,
   _ => RealtimekitActiveSessionStatus$Unknown(json),
-}; }
+};}
 
 static const RealtimekitActiveSessionStatus live = RealtimekitActiveSessionStatus$live._();
 
@@ -17,30 +17,30 @@ static const RealtimekitActiveSessionStatus ended = RealtimekitActiveSessionStat
 static const List<RealtimekitActiveSessionStatus> values = [live, ended];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'LIVE' => 'live',
   'ENDED' => 'ended',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimekitActiveSessionStatus$Unknown; } 
+bool get isUnknown {return this is RealtimekitActiveSessionStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() live, required W Function() ended, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() live, required W Function() ended, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimekitActiveSessionStatus$live() => live(),
       RealtimekitActiveSessionStatus$ended() => ended(),
       RealtimekitActiveSessionStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? live, W Function()? ended, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? live, W Function()? ended, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimekitActiveSessionStatus$live() => live != null ? live() : orElse(value),
       RealtimekitActiveSessionStatus$ended() => ended != null ? ended() : orElse(value),
       RealtimekitActiveSessionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimekitActiveSessionStatus($value)';
 
- }
+}
 @immutable final class RealtimekitActiveSessionStatus$live extends RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus$live._();
 
 @override String get value => 'LIVE';
@@ -49,7 +49,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? live, W 
 
 @override int get hashCode => 'LIVE'.hashCode;
 
- }
+}
 @immutable final class RealtimekitActiveSessionStatus$ended extends RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus$ended._();
 
 @override String get value => 'ENDED';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? live, W 
 
 @override int get hashCode => 'ENDED'.hashCode;
 
- }
+}
 @immutable final class RealtimekitActiveSessionStatus$Unknown extends RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus$Unknown(this.value);
 
 @override final String value;
@@ -68,16 +68,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? live, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// type of session
 sealed class RealtimekitActiveSessionType {const RealtimekitActiveSessionType();
 
-factory RealtimekitActiveSessionType.fromJson(String json) { return switch (json) {
+factory RealtimekitActiveSessionType.fromJson(String json) {return switch (json) {
   'meeting' => meeting,
   'livestream' => livestream,
   'participant' => participant,
   _ => RealtimekitActiveSessionType$Unknown(json),
-}; }
+};}
 
 static const RealtimekitActiveSessionType meeting = RealtimekitActiveSessionType$meeting._();
 
@@ -88,33 +88,33 @@ static const RealtimekitActiveSessionType participant = RealtimekitActiveSession
 static const List<RealtimekitActiveSessionType> values = [meeting, livestream, participant];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'meeting' => 'meeting',
   'livestream' => 'livestream',
   'participant' => 'participant',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimekitActiveSessionType$Unknown; } 
+bool get isUnknown {return this is RealtimekitActiveSessionType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() meeting, required W Function() livestream, required W Function() participant, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() meeting, required W Function() livestream, required W Function() participant, required W Function(String value) $unknown, }) {return switch (this) {
       RealtimekitActiveSessionType$meeting() => meeting(),
       RealtimekitActiveSessionType$livestream() => livestream(),
       RealtimekitActiveSessionType$participant() => participant(),
       RealtimekitActiveSessionType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? meeting, W Function()? livestream, W Function()? participant, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? meeting, W Function()? livestream, W Function()? participant, W Function(String value)? $unknown, }) {return switch (this) {
       RealtimekitActiveSessionType$meeting() => meeting != null ? meeting() : orElse(value),
       RealtimekitActiveSessionType$livestream() => livestream != null ? livestream() : orElse(value),
       RealtimekitActiveSessionType$participant() => participant != null ? participant() : orElse(value),
       RealtimekitActiveSessionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RealtimekitActiveSessionType($value)';
 
- }
+}
 @immutable final class RealtimekitActiveSessionType$meeting extends RealtimekitActiveSessionType {const RealtimekitActiveSessionType$meeting._();
 
 @override String get value => 'meeting';
@@ -123,7 +123,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meeting,
 
 @override int get hashCode => 'meeting'.hashCode;
 
- }
+}
 @immutable final class RealtimekitActiveSessionType$livestream extends RealtimekitActiveSessionType {const RealtimekitActiveSessionType$livestream._();
 
 @override String get value => 'livestream';
@@ -132,7 +132,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meeting,
 
 @override int get hashCode => 'livestream'.hashCode;
 
- }
+}
 @immutable final class RealtimekitActiveSessionType$participant extends RealtimekitActiveSessionType {const RealtimekitActiveSessionType$participant._();
 
 @override String get value => 'participant';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meeting,
 
 @override int get hashCode => 'participant'.hashCode;
 
- }
+}
 @immutable final class RealtimekitActiveSessionType$Unknown extends RealtimekitActiveSessionType {const RealtimekitActiveSessionType$Unknown(this.value);
 
 @override final String value;
@@ -151,10 +151,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? meeting,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class RealtimekitActiveSession {const RealtimekitActiveSession({required this.associatedId, required this.createdAt, required this.id, required this.liveParticipants, required this.maxConcurrentParticipants, required this.meetingDisplayName, required this.minutesConsumed, required this.organizationId, required this.startedAt, required this.status, required this.type, required this.updatedAt, this.breakoutRooms, this.endedAt, this.meta, });
 
-factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) { return RealtimekitActiveSession(
+factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) {return RealtimekitActiveSession(
   associatedId: json['associated_id'] as String,
   breakoutRooms: (json['breakout_rooms'] as List<dynamic>?)?.map((e) => RealtimekitActiveSession.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: json['created_at'] as String,
@@ -170,7 +170,7 @@ factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) { return Re
   status: RealtimekitActiveSessionStatus.fromJson(json['status'] as String),
   type: RealtimekitActiveSessionType.fromJson(json['type'] as String),
   updatedAt: json['updated_at'] as String,
-); }
+);}
 
 /// ID of the meeting this session is associated with. In the case of V2 meetings, it is always a UUID. In V1 meetings, it is a room name of the form `abcdef-ghijkl`
 final String associatedId;
@@ -216,7 +216,7 @@ final RealtimekitActiveSessionType type;
 /// timestamp when session was last updated
 final String updatedAt;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'associated_id': associatedId,
   if (breakoutRooms != null) 'breakout_rooms': breakoutRooms?.map((e) => e.toJson()).toList(),
   'created_at': createdAt,
@@ -232,8 +232,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'type': type.toJson(),
   'updated_at': updatedAt,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('associated_id') && json['associated_id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('associated_id') && json['associated_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('live_participants') && json['live_participants'] is num &&
@@ -244,8 +244,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('assoc
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
       json.containsKey('type') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveSession>? Function()? breakoutRooms, String? createdAt, String? Function()? endedAt, String? id, double? liveParticipants, double? maxConcurrentParticipants, String? meetingDisplayName, Map<String, dynamic>? Function()? meta, double? minutesConsumed, String? organizationId, String? startedAt, RealtimekitActiveSessionStatus? status, RealtimekitActiveSessionType? type, String? updatedAt, }) { return RealtimekitActiveSession(
+      json.containsKey('updated_at') && json['updated_at'] is String;}
+RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveSession>? Function()? breakoutRooms, String? createdAt, String? Function()? endedAt, String? id, double? liveParticipants, double? maxConcurrentParticipants, String? meetingDisplayName, Map<String, dynamic>? Function()? meta, double? minutesConsumed, String? organizationId, String? startedAt, RealtimekitActiveSessionStatus? status, RealtimekitActiveSessionType? type, String? updatedAt, }) {return RealtimekitActiveSession(
   associatedId: associatedId ?? this.associatedId,
   breakoutRooms: breakoutRooms != null ? breakoutRooms() : this.breakoutRooms,
   createdAt: createdAt ?? this.createdAt,
@@ -261,7 +261,7 @@ RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveS
   status: status ?? this.status,
   type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitActiveSession &&
           associatedId == other.associatedId &&
@@ -284,4 +284,4 @@ RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveS
 
 @override String toString() => 'RealtimekitActiveSession(\n  associatedId: $associatedId,\n  breakoutRooms: $breakoutRooms,\n  createdAt: $createdAt,\n  endedAt: $endedAt,\n  id: $id,\n  liveParticipants: $liveParticipants,\n  maxConcurrentParticipants: $maxConcurrentParticipants,\n  meetingDisplayName: $meetingDisplayName,\n  meta: $meta,\n  minutesConsumed: $minutesConsumed,\n  organizationId: $organizationId,\n  startedAt: $startedAt,\n  status: $status,\n  type: $type,\n  updatedAt: $updatedAt,\n)';
 
- }
+}

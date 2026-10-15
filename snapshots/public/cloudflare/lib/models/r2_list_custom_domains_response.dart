@@ -29,19 +29,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class R2ListCustomDomainsResponse {const R2ListCustomDomainsResponse({required this.domains});
 
-factory R2ListCustomDomainsResponse.fromJson(Map<String, dynamic> json) { return R2ListCustomDomainsResponse(
+factory R2ListCustomDomainsResponse.fromJson(Map<String, dynamic> json) {return R2ListCustomDomainsResponse(
   domains: (json['domains'] as List<dynamic>).map((e) => R2ListCustomDomainsResponseDomains.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final List<R2ListCustomDomainsResponseDomains> domains;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'domains': domains.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domains'); } 
-R2ListCustomDomainsResponse copyWith({List<R2ListCustomDomainsResponseDomains>? domains}) { return R2ListCustomDomainsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domains');}
+R2ListCustomDomainsResponse copyWith({List<R2ListCustomDomainsResponseDomains>? domains}) {return R2ListCustomDomainsResponse(
   domains: domains ?? this.domains,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2ListCustomDomainsResponse &&
           listEquals(domains, other.domains);
@@ -50,4 +50,4 @@ R2ListCustomDomainsResponse copyWith({List<R2ListCustomDomainsResponseDomains>? 
 
 @override String toString() => 'R2ListCustomDomainsResponse(domains: $domains)';
 
- }
+}

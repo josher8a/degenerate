@@ -98,4 +98,4 @@ late final SearchApi search = SearchApi(_config);
 
 late final UsersApi users = UsersApi(_config);
 
- }
+}

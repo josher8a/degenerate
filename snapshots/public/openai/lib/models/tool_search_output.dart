@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';sealed class FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum();
 
-factory FunctionCallOutputStatusEnum.fromJson(String json) { return switch (json) {
+factory FunctionCallOutputStatusEnum.fromJson(String json) {return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
   _ => FunctionCallOutputStatusEnum$Unknown(json),
-}; }
+};}
 
 static const FunctionCallOutputStatusEnum inProgress = FunctionCallOutputStatusEnum$inProgress._();
 
@@ -19,33 +19,33 @@ static const FunctionCallOutputStatusEnum incomplete = FunctionCallOutputStatusE
 static const List<FunctionCallOutputStatusEnum> values = [inProgress, completed, incomplete];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'in_progress' => 'inProgress',
   'completed' => 'completed',
   'incomplete' => 'incomplete',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionCallOutputStatusEnum$Unknown; } 
+bool get isUnknown {return this is FunctionCallOutputStatusEnum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) {return switch (this) {
       FunctionCallOutputStatusEnum$inProgress() => inProgress(),
       FunctionCallOutputStatusEnum$completed() => completed(),
       FunctionCallOutputStatusEnum$incomplete() => incomplete(),
       FunctionCallOutputStatusEnum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) {return switch (this) {
       FunctionCallOutputStatusEnum$inProgress() => inProgress != null ? inProgress() : orElse(value),
       FunctionCallOutputStatusEnum$completed() => completed != null ? completed() : orElse(value),
       FunctionCallOutputStatusEnum$incomplete() => incomplete != null ? incomplete() : orElse(value),
       FunctionCallOutputStatusEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FunctionCallOutputStatusEnum($value)';
 
- }
+}
 @immutable final class FunctionCallOutputStatusEnum$inProgress extends FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum$inProgress._();
 
 @override String get value => 'in_progress';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'in_progress'.hashCode;
 
- }
+}
 @immutable final class FunctionCallOutputStatusEnum$completed extends FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum$completed._();
 
 @override String get value => 'completed';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'completed'.hashCode;
 
- }
+}
 @immutable final class FunctionCallOutputStatusEnum$incomplete extends FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum$incomplete._();
 
 @override String get value => 'incomplete';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => 'incomplete'.hashCode;
 
- }
+}
 @immutable final class FunctionCallOutputStatusEnum$Unknown extends FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum$Unknown(this.value);
 
 @override final String value;
@@ -82,10 +82,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgre
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ToolSearchOutput {const ToolSearchOutput({required this.type, required this.id, required this.callId, required this.execution, required this.tools, required this.status, this.createdBy, });
 
-factory ToolSearchOutput.fromJson(Map<String, dynamic> json) { return ToolSearchOutput(
+factory ToolSearchOutput.fromJson(Map<String, dynamic> json) {return ToolSearchOutput(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String?,
@@ -93,7 +93,7 @@ factory ToolSearchOutput.fromJson(Map<String, dynamic> json) { return ToolSearch
   tools: (json['tools'] as List<dynamic>).map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   status: FunctionCallOutputStatusEnum.fromJson(json['status'] as String),
   createdBy: json['created_by'] as String?,
-); }
+);}
 
 /// The type of the item. Always `tool_search_output`.
 final String type;
@@ -116,7 +116,7 @@ final FunctionCallOutputStatusEnum status;
 /// The identifier of the actor that created the item.
 final String? createdBy;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   'call_id': callId,
@@ -124,14 +124,14 @@ Map<String, dynamic> toJson() { return {
   'tools': tools.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
   'created_by': ?createdBy,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && (json['call_id'] == null || json['call_id'] is String) &&
       json.containsKey('execution') &&
       json.containsKey('tools') &&
-      json.containsKey('status'); } 
-ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) { return ToolSearchOutput(
+      json.containsKey('status');}
+ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) {return ToolSearchOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId != null ? callId() : this.callId,
@@ -139,7 +139,7 @@ ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId,
   tools: tools ?? this.tools,
   status: status ?? this.status,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToolSearchOutput &&
           type == other.type &&
@@ -154,4 +154,4 @@ ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId,
 
 @override String toString() => 'ToolSearchOutput(type: $type, id: $id, callId: $callId, execution: $execution, tools: $tools, status: $status, createdBy: $createdBy)';
 
- }
+}

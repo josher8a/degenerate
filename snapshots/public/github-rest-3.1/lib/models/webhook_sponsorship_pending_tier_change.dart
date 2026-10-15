@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes8.dart';import 'package:pub_github_rest_3_1/models/webhooks_effective_date.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship.dart';sealed class WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction();
 
-factory WebhookSponsorshipPendingTierChangeAction.fromJson(String json) { return switch (json) {
+factory WebhookSponsorshipPendingTierChangeAction.fromJson(String json) {return switch (json) {
   'pending_tier_change' => pendingTierChange,
   _ => WebhookSponsorshipPendingTierChangeAction$Unknown(json),
-}; }
+};}
 
 static const WebhookSponsorshipPendingTierChangeAction pendingTierChange = WebhookSponsorshipPendingTierChangeAction$pendingTierChange._();
 
 static const List<WebhookSponsorshipPendingTierChangeAction> values = [pendingTierChange];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'pending_tier_change' => 'pendingTierChange',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookSponsorshipPendingTierChangeAction$Unknown; } 
+bool get isUnknown {return this is WebhookSponsorshipPendingTierChangeAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() pendingTierChange, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() pendingTierChange, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookSponsorshipPendingTierChangeAction$pendingTierChange() => pendingTierChange(),
       WebhookSponsorshipPendingTierChangeAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingTierChange, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingTierChange, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookSponsorshipPendingTierChangeAction$pendingTierChange() => pendingTierChange != null ? pendingTierChange() : orElse(value),
       WebhookSponsorshipPendingTierChangeAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookSponsorshipPendingTierChangeAction($value)';
 
- }
+}
 @immutable final class WebhookSponsorshipPendingTierChangeAction$pendingTierChange extends WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction$pendingTierChange._();
 
 @override String get value => 'pending_tier_change';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingT
 
 @override int get hashCode => 'pending_tier_change'.hashCode;
 
- }
+}
 @immutable final class WebhookSponsorshipPendingTierChangeAction$Unknown extends WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingT
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookSponsorshipPendingTierChange {const WebhookSponsorshipPendingTierChange({required this.action, required this.changes, required this.sender, required this.sponsorship, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, });
 
-factory WebhookSponsorshipPendingTierChange.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipPendingTierChange(
+factory WebhookSponsorshipPendingTierChange.fromJson(Map<String, dynamic> json) {return WebhookSponsorshipPendingTierChange(
   action: WebhookSponsorshipPendingTierChangeAction.fromJson(json['action'] as String),
   changes: WebhooksChanges8.fromJson(json['changes'] as Map<String, dynamic>),
   effectiveDate: json['effective_date'] != null ? WebhooksEffectiveDate.fromJson(json['effective_date'] as String) : null,
@@ -65,7 +65,7 @@ factory WebhookSponsorshipPendingTierChange.fromJson(Map<String, dynamic> json) 
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookSponsorshipPendingTierChangeAction action;
 
@@ -86,7 +86,7 @@ final SimpleUser sender;
 
 final WebhooksSponsorship sponsorship;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'changes': changes.toJson(),
   if (effectiveDate != null) 'effective_date': effectiveDate?.toJson(),
@@ -96,12 +96,12 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   'sender': sender.toJson(),
   'sponsorship': sponsorship.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('changes') &&
       json.containsKey('sender') &&
-      json.containsKey('sponsorship'); } 
-WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChangeAction? action, WebhooksChanges8? changes, WebhooksEffectiveDate? Function()? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipPendingTierChange(
+      json.containsKey('sponsorship');}
+WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChangeAction? action, WebhooksChanges8? changes, WebhooksEffectiveDate? Function()? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) {return WebhookSponsorshipPendingTierChange(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,
@@ -111,7 +111,7 @@ WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChang
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSponsorshipPendingTierChange &&
           action == other.action &&
@@ -128,4 +128,4 @@ WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChang
 
 @override String toString() => 'WebhookSponsorshipPendingTierChange(\n  action: $action,\n  changes: $changes,\n  effectiveDate: $effectiveDate,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n  sponsorship: $sponsorship,\n)';
 
- }
+}

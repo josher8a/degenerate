@@ -10,11 +10,11 @@ String toJson() => value;
 }
 @immutable final class CodeScanningAnalysisTool {const CodeScanningAnalysisTool({this.name, this.version = const Omittable.absent(), this.guid = const Omittable.absent(), });
 
-factory CodeScanningAnalysisTool.fromJson(Map<String, dynamic> json) { return CodeScanningAnalysisTool(
+factory CodeScanningAnalysisTool.fromJson(Map<String, dynamic> json) {return CodeScanningAnalysisTool(
   name: json['name'] != null ? CodeScanningAnalysisToolName.fromJson(json['name'] as String) : null,
   version: json.containsKey('version') ? Omittable(json['version'] != null ? CodeScanningAnalysisToolVersion.fromJson(json['version'] as String) : null) : const Omittable.absent(),
   guid: json.containsKey('guid') ? Omittable(json['guid'] != null ? CodeScanningAnalysisToolGuid.fromJson(json['guid'] as String) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The name of the tool used to generate the code scanning analysis.
 final CodeScanningAnalysisToolName? name;
@@ -25,17 +25,17 @@ final Omittable<CodeScanningAnalysisToolVersion?> version;
 /// The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
 final Omittable<CodeScanningAnalysisToolGuid?> guid;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (name != null) 'name': name?.toJson(),
   if (version.isPresent) 'version': version.value?.toJson(),
   if (guid.isPresent) 'guid': guid.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'version', 'guid'}.contains(key)); } 
-CodeScanningAnalysisTool copyWith({CodeScanningAnalysisToolName? Function()? name, Omittable<CodeScanningAnalysisToolVersion?>? version, Omittable<CodeScanningAnalysisToolGuid?>? guid, }) { return CodeScanningAnalysisTool(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'name', 'version', 'guid'}.contains(key));}
+CodeScanningAnalysisTool copyWith({CodeScanningAnalysisToolName? Function()? name, Omittable<CodeScanningAnalysisToolVersion?>? version, Omittable<CodeScanningAnalysisToolGuid?>? guid, }) {return CodeScanningAnalysisTool(
   name: name != null ? name() : this.name,
   version: version ?? this.version,
   guid: guid ?? this.guid,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAnalysisTool &&
           name == other.name &&
@@ -46,4 +46,4 @@ CodeScanningAnalysisTool copyWith({CodeScanningAnalysisToolName? Function()? nam
 
 @override String toString() => 'CodeScanningAnalysisTool(name: $name, version: $version, guid: $guid)';
 
- }
+}

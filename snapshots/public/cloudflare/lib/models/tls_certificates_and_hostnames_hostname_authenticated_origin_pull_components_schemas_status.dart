@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the certificate or the association.
 sealed class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus();
 
-factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus.fromJson(String json) { return switch (json) {
+factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus.fromJson(String json) {return switch (json) {
   'initializing' => initializing,
   'pending_deployment' => pendingDeployment,
   'pending_deletion' => pendingDeletion,
@@ -13,7 +13,7 @@ factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSche
   'deployment_timed_out' => deploymentTimedOut,
   'deletion_timed_out' => deletionTimedOut,
   _ => TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown(json),
-}; }
+};}
 
 static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing._();
 
@@ -32,9 +32,9 @@ static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponent
 static const List<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus> values = [initializing, pendingDeployment, pendingDeletion, active, deleted, deploymentTimedOut, deletionTimedOut];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'initializing' => 'initializing',
   'pending_deployment' => 'pendingDeployment',
   'pending_deletion' => 'pendingDeletion',
@@ -43,11 +43,11 @@ String get name { return switch (value) {
   'deployment_timed_out' => 'deploymentTimedOut',
   'deletion_timed_out' => 'deletionTimedOut',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown; } 
+bool get isUnknown {return this is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() initializing, required W Function() pendingDeployment, required W Function() pendingDeletion, required W Function() active, required W Function() deleted, required W Function() deploymentTimedOut, required W Function() deletionTimedOut, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() initializing, required W Function() pendingDeployment, required W Function() pendingDeletion, required W Function() active, required W Function() deleted, required W Function() deploymentTimedOut, required W Function() deletionTimedOut, required W Function(String value) $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing() => initializing(),
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeployment() => pendingDeployment(),
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeletion() => pendingDeletion(),
@@ -56,9 +56,9 @@ W when<W>({required W Function() initializing, required W Function() pendingDepl
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deploymentTimedOut() => deploymentTimedOut(),
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deletionTimedOut() => deletionTimedOut(),
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingDeployment, W Function()? pendingDeletion, W Function()? active, W Function()? deleted, W Function()? deploymentTimedOut, W Function()? deletionTimedOut, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingDeployment, W Function()? pendingDeletion, W Function()? active, W Function()? deleted, W Function()? deploymentTimedOut, W Function()? deletionTimedOut, W Function(String value)? $unknown, }) {return switch (this) {
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing() => initializing != null ? initializing() : orElse(value),
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeployment() => pendingDeployment != null ? pendingDeployment() : orElse(value),
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeletion() => pendingDeletion != null ? pendingDeletion() : orElse(value),
@@ -67,10 +67,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deploymentTimedOut() => deploymentTimedOut != null ? deploymentTimedOut() : orElse(value),
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deletionTimedOut() => deletionTimedOut != null ? deletionTimedOut() : orElse(value),
       TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus($value)';
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing._();
 
 @override String get value => 'initializing';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'initializing'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeployment extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeployment._();
 
 @override String get value => 'pending_deployment';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_deployment'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeletion extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeletion._();
 
 @override String get value => 'pending_deletion';
@@ -97,7 +97,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'pending_deletion'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$active extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$active._();
 
 @override String get value => 'active';
@@ -106,7 +106,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deleted extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deleted._();
 
 @override String get value => 'deleted';
@@ -115,7 +115,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deleted'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deploymentTimedOut extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deploymentTimedOut._();
 
 @override String get value => 'deployment_timed_out';
@@ -124,7 +124,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deployment_timed_out'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deletionTimedOut extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deletionTimedOut._();
 
 @override String get value => 'deletion_timed_out';
@@ -133,7 +133,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => 'deletion_timed_out'.hashCode;
 
- }
+}
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown(this.value);
 
 @override final String value;
@@ -143,4 +143,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiali
 
 @override int get hashCode => value.hashCode;
 
- }
+}

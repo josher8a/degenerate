@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityMoveResponseItem {const EmailSecurityMoveResponseItem({required this.completedTimestamp, required this.itemCount, required this.success, this.destination = const Omittable.absent(), this.messageId = const Omittable.absent(), this.operation = const Omittable.absent(), this.recipient = const Omittable.absent(), this.status = const Omittable.absent(), });
 
-factory EmailSecurityMoveResponseItem.fromJson(Map<String, dynamic> json) { return EmailSecurityMoveResponseItem(
+factory EmailSecurityMoveResponseItem.fromJson(Map<String, dynamic> json) {return EmailSecurityMoveResponseItem(
   completedTimestamp: DateTime.parse(json['completed_timestamp'] as String),
   destination: json.containsKey('destination') ? Omittable(json['destination'] as String?) : const Omittable.absent(),
   itemCount: (json['item_count'] as num).toInt(),
@@ -12,7 +12,7 @@ factory EmailSecurityMoveResponseItem.fromJson(Map<String, dynamic> json) { retu
   recipient: json.containsKey('recipient') ? Omittable(json['recipient'] as String?) : const Omittable.absent(),
   status: json.containsKey('status') ? Omittable(json['status'] as String?) : const Omittable.absent(),
   success: json['success'] as bool,
-); }
+);}
 
 final DateTime completedTimestamp;
 
@@ -30,7 +30,7 @@ final Omittable<String?> status;
 
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'completed_timestamp': completedTimestamp.toIso8601String(),
   if (destination.isPresent) 'destination': destination.value,
   'item_count': itemCount,
@@ -39,11 +39,11 @@ Map<String, dynamic> toJson() { return {
   if (recipient.isPresent) 'recipient': recipient.value,
   if (status.isPresent) 'status': status.value,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_timestamp') && json['completed_timestamp'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('completed_timestamp') && json['completed_timestamp'] is String &&
       json.containsKey('item_count') && json['item_count'] is num &&
-      json.containsKey('success') && json['success'] is bool; } 
-EmailSecurityMoveResponseItem copyWith({DateTime? completedTimestamp, Omittable<String?>? destination, int? itemCount, Omittable<String?>? messageId, Omittable<String?>? operation, Omittable<String?>? recipient, Omittable<String?>? status, bool? success, }) { return EmailSecurityMoveResponseItem(
+      json.containsKey('success') && json['success'] is bool;}
+EmailSecurityMoveResponseItem copyWith({DateTime? completedTimestamp, Omittable<String?>? destination, int? itemCount, Omittable<String?>? messageId, Omittable<String?>? operation, Omittable<String?>? recipient, Omittable<String?>? status, bool? success, }) {return EmailSecurityMoveResponseItem(
   completedTimestamp: completedTimestamp ?? this.completedTimestamp,
   destination: destination ?? this.destination,
   itemCount: itemCount ?? this.itemCount,
@@ -52,7 +52,7 @@ EmailSecurityMoveResponseItem copyWith({DateTime? completedTimestamp, Omittable<
   recipient: recipient ?? this.recipient,
   status: status ?? this.status,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityMoveResponseItem &&
           completedTimestamp == other.completedTimestamp &&
@@ -68,4 +68,4 @@ EmailSecurityMoveResponseItem copyWith({DateTime? completedTimestamp, Omittable<
 
 @override String toString() => 'EmailSecurityMoveResponseItem(completedTimestamp: $completedTimestamp, destination: $destination, itemCount: $itemCount, messageId: $messageId, operation: $operation, recipient: $recipient, status: $status, success: $success)';
 
- }
+}

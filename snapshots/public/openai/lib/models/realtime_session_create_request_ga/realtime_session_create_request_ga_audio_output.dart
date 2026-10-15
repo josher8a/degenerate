@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';@immutable final class RealtimeSessionCreateRequestGaAudioOutput {const RealtimeSessionCreateRequestGaAudioOutput({this.format, this.voice, this.speed, });
 
-factory RealtimeSessionCreateRequestGaAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGaAudioOutput(
+factory RealtimeSessionCreateRequestGaAudioOutput.fromJson(Map<String, dynamic> json) {return RealtimeSessionCreateRequestGaAudioOutput(
   format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   voice: json['voice'] != null ? VoiceIdsOrCustomVoice.fromJson(json['voice']) : null,
   speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
-); }
+);}
 
 /// The format of the output audio.
 final RealtimeAudioFormats? format;
@@ -32,25 +32,25 @@ final double? speed;
 /// The value of `speed`, or its schema default when absent.
 double get speedOrDefault => speed ?? 1.0;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (format != null) 'format': format?.toJson(),
   if (voice != null) 'voice': voice?.toJson(),
   'speed': ?speed,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final speed$ = speed;
 if (speed$ != null) {
   if (speed$ < 0.25) { errors.add('speed: must be >= 0.25'); }
   if (speed$ > 1.5) { errors.add('speed: must be <= 1.5'); }
 }
-return errors; } 
-RealtimeSessionCreateRequestGaAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsOrCustomVoice? Function()? voice, double? Function()? speed, }) { return RealtimeSessionCreateRequestGaAudioOutput(
+return errors;}
+RealtimeSessionCreateRequestGaAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsOrCustomVoice? Function()? voice, double? Function()? speed, }) {return RealtimeSessionCreateRequestGaAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,
   speed: speed != null ? speed() : this.speed,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateRequestGaAudioOutput &&
           format == other.format &&
@@ -61,4 +61,4 @@ RealtimeSessionCreateRequestGaAudioOutput copyWith({RealtimeAudioFormats? Functi
 
 @override String toString() => 'RealtimeSessionCreateRequestGaAudioOutput(format: $format, voice: $voice, speed: $speed)';
 
- }
+}

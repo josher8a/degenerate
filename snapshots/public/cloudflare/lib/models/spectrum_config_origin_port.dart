@@ -9,11 +9,11 @@ const SpectrumConfigOriginPort({this.$int = const Omittable.absent(), this.strin
 const SpectrumConfigOriginPort._({required this.rawValue, required this.$int, required this.string, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory SpectrumConfigOriginPort.fromJson(Object? json) { return SpectrumConfigOriginPort._(
+factory SpectrumConfigOriginPort.fromJson(Object? json) {return SpectrumConfigOriginPort._(
   rawValue: Omittable(json),
   $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -43,4 +43,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'SpectrumConfigOriginPort(${toJson()})';
 
- }
+}

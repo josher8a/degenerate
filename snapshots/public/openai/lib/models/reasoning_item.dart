@@ -8,14 +8,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ReasoningItem {const ReasoningItem({required this.type, required this.id, required this.summary, this.encryptedContent = const Omittable.absent(), this.content, this.status, });
 
-factory ReasoningItem.fromJson(Map<String, dynamic> json) { return ReasoningItem(
+factory ReasoningItem.fromJson(Map<String, dynamic> json) {return ReasoningItem(
   type: json['type'] as String,
   id: json['id'] as String,
   encryptedContent: json.containsKey('encrypted_content') ? Omittable(json['encrypted_content'] as String?) : const Omittable.absent(),
   summary: (json['summary'] as List<dynamic>).map((e) => SummaryTextContent.fromJson(e as Map<String, dynamic>)).toList(),
   content: (json['content'] as List<dynamic>?)?.map((e) => ReasoningTextContent.fromJson(e as Map<String, dynamic>)).toList(),
   status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
-); }
+);}
 
 /// The type of the object. Always `reasoning`.
 /// 
@@ -43,25 +43,25 @@ final List<ReasoningTextContent>? content;
 /// 
 final ComputerToolCallOutputResourceStatus? status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'id': id,
   if (encryptedContent.isPresent) 'encrypted_content': encryptedContent.value,
   'summary': summary.map((e) => e.toJson()).toList(),
   if (content != null) 'content': content?.map((e) => e.toJson()).toList(),
   if (status != null) 'status': status?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('summary'); } 
-ReasoningItem copyWith({String? type, String? id, Omittable<String?>? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ReasoningItem(
+      json.containsKey('summary');}
+ReasoningItem copyWith({String? type, String? id, Omittable<String?>? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputResourceStatus? Function()? status, }) {return ReasoningItem(
   type: type ?? this.type,
   id: id ?? this.id,
   encryptedContent: encryptedContent ?? this.encryptedContent,
   summary: summary ?? this.summary,
   content: content != null ? content() : this.content,
   status: status != null ? status() : this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ReasoningItem &&
           type == other.type &&
@@ -75,4 +75,4 @@ ReasoningItem copyWith({String? type, String? id, Omittable<String?>? encryptedC
 
 @override String toString() => 'ReasoningItem(type: $type, id: $id, encryptedContent: $encryptedContent, summary: $summary, content: $content, status: $status)';
 
- }
+}

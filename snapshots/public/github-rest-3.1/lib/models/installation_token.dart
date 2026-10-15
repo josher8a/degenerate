@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions.dart';import 'package:pub_github_rest_3_1/models/authentication_token/authentication_token_repository_selection.dart';import 'package:pub_github_rest_3_1/models/repository.dart';/// Authentication token for a GitHub App installed on a user or org.
 @immutable final class InstallationToken {const InstallationToken({required this.token, required this.expiresAt, this.permissions, this.repositorySelection, this.repositories, this.singleFile, this.hasMultipleSingleFiles, this.singleFilePaths, });
 
-factory InstallationToken.fromJson(Map<String, dynamic> json) { return InstallationToken(
+factory InstallationToken.fromJson(Map<String, dynamic> json) {return InstallationToken(
   token: json['token'] as String,
   expiresAt: json['expires_at'] as String,
   permissions: json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory InstallationToken.fromJson(Map<String, dynamic> json) { return Installat
   singleFile: json['single_file'] as String?,
   hasMultipleSingleFiles: json['has_multiple_single_files'] as bool?,
   singleFilePaths: (json['single_file_paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 final String token;
 
@@ -31,7 +31,7 @@ final bool? hasMultipleSingleFiles;
 
 final List<String>? singleFilePaths;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'token': token,
   'expires_at': expiresAt,
   if (permissions != null) 'permissions': permissions?.toJson(),
@@ -40,10 +40,10 @@ Map<String, dynamic> toJson() { return {
   'single_file': ?singleFile,
   'has_multiple_single_files': ?hasMultipleSingleFiles,
   'single_file_paths': ?singleFilePaths,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String; } 
-InstallationToken copyWith({String? token, String? expiresAt, AppPermissions? Function()? permissions, AuthenticationTokenRepositorySelection? Function()? repositorySelection, List<Repository>? Function()? repositories, String? Function()? singleFile, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, }) { return InstallationToken(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('token') && json['token'] is String &&
+      json.containsKey('expires_at') && json['expires_at'] is String;}
+InstallationToken copyWith({String? token, String? expiresAt, AppPermissions? Function()? permissions, AuthenticationTokenRepositorySelection? Function()? repositorySelection, List<Repository>? Function()? repositories, String? Function()? singleFile, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, }) {return InstallationToken(
   token: token ?? this.token,
   expiresAt: expiresAt ?? this.expiresAt,
   permissions: permissions != null ? permissions() : this.permissions,
@@ -52,7 +52,7 @@ InstallationToken copyWith({String? token, String? expiresAt, AppPermissions? Fu
   singleFile: singleFile != null ? singleFile() : this.singleFile,
   hasMultipleSingleFiles: hasMultipleSingleFiles != null ? hasMultipleSingleFiles() : this.hasMultipleSingleFiles,
   singleFilePaths: singleFilePaths != null ? singleFilePaths() : this.singleFilePaths,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InstallationToken &&
           token == other.token &&
@@ -68,4 +68,4 @@ InstallationToken copyWith({String? token, String? expiresAt, AppPermissions? Fu
 
 @override String toString() => 'InstallationToken(token: $token, expiresAt: $expiresAt, permissions: $permissions, repositorySelection: $repositorySelection, repositories: $repositories, singleFile: $singleFile, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths)';
 
- }
+}

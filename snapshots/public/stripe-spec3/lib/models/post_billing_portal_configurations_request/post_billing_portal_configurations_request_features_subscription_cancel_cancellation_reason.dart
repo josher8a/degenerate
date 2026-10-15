@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/cancellation_reason_options.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason({required this.enabled, required this.options, });
 
-factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(
+factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason.fromJson(Map<String, dynamic> json) {return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(
   enabled: json['enabled'] as bool,
   options: CancellationReasonOptions.fromJson(json['options']),
-); }
+);}
 
 final bool enabled;
 
 final CancellationReasonOptions options;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'enabled': enabled,
   'options': options.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
-      json.containsKey('options'); } 
-PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason copyWith({bool? enabled, CancellationReasonOptions? options, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('options');}
+PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason copyWith({bool? enabled, CancellationReasonOptions? options, }) {return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(
   enabled: enabled ?? this.enabled,
   options: options ?? this.options,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason &&
           enabled == other.enabled &&
@@ -31,4 +31,4 @@ PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReas
 
 @override String toString() => 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(enabled: $enabled, options: $options)';
 
- }
+}

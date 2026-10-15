@@ -10,7 +10,7 @@ String toJson() => value.toIso8601String();
 }
 @immutable final class DnsFirewallDnsFirewallClusterResponse {const DnsFirewallDnsFirewallClusterResponse({required this.deprecateAnyRequests, required this.ecsFallback, required this.maximumCacheTtl, required this.minimumCacheTtl, required this.name, required this.negativeCacheTtl, required this.ratelimit, required this.retries, required this.upstreamIps, required this.dnsFirewallIps, required this.id, required this.modifiedOn, this.attackMitigation = const Omittable.absent(), });
 
-factory DnsFirewallDnsFirewallClusterResponse.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallClusterResponse(
+factory DnsFirewallDnsFirewallClusterResponse.fromJson(Map<String, dynamic> json) {return DnsFirewallDnsFirewallClusterResponse(
   attackMitigation: json.containsKey('attack_mitigation') ? Omittable(json['attack_mitigation'] != null ? DnsFirewallAttackMitigation.fromJson(json['attack_mitigation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   deprecateAnyRequests: DnsFirewallDeprecateAnyRequests.fromJson(json['deprecate_any_requests'] as bool),
   ecsFallback: DnsFirewallEcsFallback.fromJson(json['ecs_fallback'] as bool),
@@ -24,7 +24,7 @@ factory DnsFirewallDnsFirewallClusterResponse.fromJson(Map<String, dynamic> json
   dnsFirewallIps: (json['dns_firewall_ips'] as List<dynamic>).map((e) => e).toList(),
   id: DnsFirewallIdentifier.fromJson(json['id'] as String),
   modifiedOn: DnsFirewallModifiedOn.fromJson(json['modified_on'] as String),
-); }
+);}
 
 final Omittable<DnsFirewallAttackMitigation?> attackMitigation;
 
@@ -53,7 +53,7 @@ final DnsFirewallIdentifier id;
 
 final DnsFirewallModifiedOn modifiedOn;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (attackMitigation.isPresent) 'attack_mitigation': attackMitigation.value?.toJson(),
   'deprecate_any_requests': deprecateAnyRequests.toJson(),
   'ecs_fallback': ecsFallback.toJson(),
@@ -67,8 +67,8 @@ Map<String, dynamic> toJson() { return {
   'dns_firewall_ips': dnsFirewallIps,
   'id': id.toJson(),
   'modified_on': modifiedOn.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deprecate_any_requests') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deprecate_any_requests') &&
       json.containsKey('ecs_fallback') &&
       json.containsKey('maximum_cache_ttl') &&
       json.containsKey('minimum_cache_ttl') &&
@@ -79,8 +79,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('depre
       json.containsKey('upstream_ips') &&
       json.containsKey('dns_firewall_ips') &&
       json.containsKey('id') &&
-      json.containsKey('modified_on'); } 
-DnsFirewallDnsFirewallClusterResponse copyWith({Omittable<DnsFirewallAttackMitigation?>? attackMitigation, DnsFirewallDeprecateAnyRequests? deprecateAnyRequests, DnsFirewallEcsFallback? ecsFallback, DnsFirewallMaximumCacheTtl? maximumCacheTtl, DnsFirewallMinimumCacheTtl? minimumCacheTtl, DnsFirewallName? name, DnsFirewallNegativeCacheTtl? Function()? negativeCacheTtl, DnsFirewallRatelimit? Function()? ratelimit, DnsFirewallRetries? retries, List<dynamic>? upstreamIps, List<dynamic>? dnsFirewallIps, DnsFirewallIdentifier? id, DnsFirewallModifiedOn? modifiedOn, }) { return DnsFirewallDnsFirewallClusterResponse(
+      json.containsKey('modified_on');}
+DnsFirewallDnsFirewallClusterResponse copyWith({Omittable<DnsFirewallAttackMitigation?>? attackMitigation, DnsFirewallDeprecateAnyRequests? deprecateAnyRequests, DnsFirewallEcsFallback? ecsFallback, DnsFirewallMaximumCacheTtl? maximumCacheTtl, DnsFirewallMinimumCacheTtl? minimumCacheTtl, DnsFirewallName? name, DnsFirewallNegativeCacheTtl? Function()? negativeCacheTtl, DnsFirewallRatelimit? Function()? ratelimit, DnsFirewallRetries? retries, List<dynamic>? upstreamIps, List<dynamic>? dnsFirewallIps, DnsFirewallIdentifier? id, DnsFirewallModifiedOn? modifiedOn, }) {return DnsFirewallDnsFirewallClusterResponse(
   attackMitigation: attackMitigation ?? this.attackMitigation,
   deprecateAnyRequests: deprecateAnyRequests ?? this.deprecateAnyRequests,
   ecsFallback: ecsFallback ?? this.ecsFallback,
@@ -94,7 +94,7 @@ DnsFirewallDnsFirewallClusterResponse copyWith({Omittable<DnsFirewallAttackMitig
   dnsFirewallIps: dnsFirewallIps ?? this.dnsFirewallIps,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsFirewallDnsFirewallClusterResponse &&
           attackMitigation == other.attackMitigation &&
@@ -115,4 +115,4 @@ DnsFirewallDnsFirewallClusterResponse copyWith({Omittable<DnsFirewallAttackMitig
 
 @override String toString() => 'DnsFirewallDnsFirewallClusterResponse(\n  attackMitigation: $attackMitigation,\n  deprecateAnyRequests: $deprecateAnyRequests,\n  ecsFallback: $ecsFallback,\n  maximumCacheTtl: $maximumCacheTtl,\n  minimumCacheTtl: $minimumCacheTtl,\n  name: $name,\n  negativeCacheTtl: $negativeCacheTtl,\n  ratelimit: $ratelimit,\n  retries: $retries,\n  upstreamIps: $upstreamIps,\n  dnsFirewallIps: $dnsFirewallIps,\n  id: $id,\n  modifiedOn: $modifiedOn,\n)';
 
- }
+}

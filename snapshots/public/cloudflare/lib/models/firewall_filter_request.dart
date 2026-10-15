@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_expression.dart';import 'package:pub_cloudflare/models/firewall_filters_components_schemas_description.dart';import 'package:pub_cloudflare/models/firewall_filters_components_schemas_paused.dart';import 'package:pub_cloudflare/models/firewall_schemas_ref.dart';@immutable final class FirewallFilterRequest {const FirewallFilterRequest({this.description, this.expression, this.paused, this.ref, });
 
-factory FirewallFilterRequest.fromJson(Map<String, dynamic> json) { return FirewallFilterRequest(
+factory FirewallFilterRequest.fromJson(Map<String, dynamic> json) {return FirewallFilterRequest(
   description: json['description'] != null ? FirewallFiltersComponentsSchemasDescription.fromJson(json['description'] as String) : null,
   expression: json['expression'] != null ? FirewallExpression.fromJson(json['expression'] as String) : null,
   paused: json['paused'] != null ? FirewallFiltersComponentsSchemasPaused.fromJson(json['paused'] as bool) : null,
   ref: json['ref'] != null ? FirewallSchemasRef.fromJson(json['ref'] as String) : null,
-); }
+);}
 
 /// An informative summary of the filter.
 final FirewallFiltersComponentsSchemasDescription? description;
@@ -22,19 +22,19 @@ final FirewallFiltersComponentsSchemasPaused? paused;
 /// A short reference tag. Allows you to select related filters.
 final FirewallSchemasRef? ref;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (description != null) 'description': description?.toJson(),
   if (expression != null) 'expression': expression?.toJson(),
   if (paused != null) 'paused': paused?.toJson(),
   if (ref != null) 'ref': ref?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'expression', 'paused', 'ref'}.contains(key)); } 
-FirewallFilterRequest copyWith({FirewallFiltersComponentsSchemasDescription? Function()? description, FirewallExpression? Function()? expression, FirewallFiltersComponentsSchemasPaused? Function()? paused, FirewallSchemasRef? Function()? ref, }) { return FirewallFilterRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'description', 'expression', 'paused', 'ref'}.contains(key));}
+FirewallFilterRequest copyWith({FirewallFiltersComponentsSchemasDescription? Function()? description, FirewallExpression? Function()? expression, FirewallFiltersComponentsSchemasPaused? Function()? paused, FirewallSchemasRef? Function()? ref, }) {return FirewallFilterRequest(
   description: description != null ? description() : this.description,
   expression: expression != null ? expression() : this.expression,
   paused: paused != null ? paused() : this.paused,
   ref: ref != null ? ref() : this.ref,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallFilterRequest &&
           description == other.description &&
@@ -46,4 +46,4 @@ FirewallFilterRequest copyWith({FirewallFiltersComponentsSchemasDescription? Fun
 
 @override String toString() => 'FirewallFilterRequest(description: $description, expression: $expression, paused: $paused, ref: $ref)';
 
- }
+}

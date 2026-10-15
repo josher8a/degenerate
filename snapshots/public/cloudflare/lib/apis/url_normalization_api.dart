@@ -14,7 +14,7 @@ final class UrlNormalizationApi with ApiExecutor {const UrlNormalizationApi(this
 /// Fetches the current URL Normalization settings.
 ///
 /// `GET /zones/{zone_id}/url_normalization`
-Future<ApiResult<RulesetsUrlNormalization, GetUrlNormalizationError>> getUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsUrlNormalization, GetUrlNormalizationError>> getUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: GetUrlNormalizationError.fromResponse,
 );
- } 
+}
 /// Update URL Normalization settings
 ///
 /// Updates the URL Normalization settings.
 ///
 /// `PUT /zones/{zone_id}/url_normalization`
-Future<ApiResult<RulesetsUrlNormalization, UpdateUrlNormalizationError>> updateUrlNormalization({required RulesetsZoneId zoneId, required RulesetsUrlNormalization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsUrlNormalization, UpdateUrlNormalizationError>> updateUrlNormalization({required RulesetsZoneId zoneId, required RulesetsUrlNormalization body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,13 +56,13 @@ return await execute(
   },
   onError: UpdateUrlNormalizationError.fromResponse,
 );
- } 
+}
 /// Delete URL Normalization settings
 ///
 /// Deletes the URL Normalization settings.
 ///
 /// `DELETE /zones/{zone_id}/url_normalization`
-Future<ApiResult<void, DeleteUrlNormalizationError>> deleteUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteUrlNormalizationError>> deleteUrlNormalization({required RulesetsZoneId zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -76,5 +76,5 @@ return await execute(
   onSuccess: (_) {},
   onError: DeleteUrlNormalizationError.fromResponse,
 );
- } 
- }
+}
+}

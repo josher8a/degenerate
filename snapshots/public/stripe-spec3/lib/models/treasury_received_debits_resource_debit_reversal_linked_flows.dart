@@ -4,27 +4,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasuryReceivedDebitsResourceDebitReversalLinkedFlows {const TreasuryReceivedDebitsResourceDebitReversalLinkedFlows({this.issuingDispute = const Omittable.absent()});
 
-factory TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(Map<String, dynamic> json) { return TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(
+factory TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(Map<String, dynamic> json) {return TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(
   issuingDispute: json.containsKey('issuing_dispute') ? Omittable(json['issuing_dispute'] as String?) : const Omittable.absent(),
-); }
+);}
 
 /// Set if there is an Issuing dispute associated with the DebitReversal.
 final Omittable<String?> issuingDispute;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (issuingDispute.isPresent) 'issuing_dispute': issuingDispute.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'issuing_dispute'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'issuing_dispute'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final issuingDispute$ = issuingDispute.value;
 if (issuingDispute$ != null) {
   if (issuingDispute$.runes.length > 5000) { errors.add('issuingDispute: length must be <= 5000'); }
 }
-return errors; } 
-TreasuryReceivedDebitsResourceDebitReversalLinkedFlows copyWith({Omittable<String?>? issuingDispute}) { return TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(
+return errors;}
+TreasuryReceivedDebitsResourceDebitReversalLinkedFlows copyWith({Omittable<String?>? issuingDispute}) {return TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(
   issuingDispute: issuingDispute ?? this.issuingDispute,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryReceivedDebitsResourceDebitReversalLinkedFlows &&
           issuingDispute == other.issuingDispute;
@@ -33,4 +33,4 @@ TreasuryReceivedDebitsResourceDebitReversalLinkedFlows copyWith({Omittable<Strin
 
 @override String toString() => 'TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(issuingDispute: $issuingDispute)';
 
- }
+}

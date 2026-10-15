@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CompanyOwnershipExemptionReason {const CompanyOwnershipExemptionReason();
 
-factory CompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
+factory CompanyOwnershipExemptionReason.fromJson(String json) {return switch (json) {
   '' => $empty,
   'qualified_entity_exceeds_ownership_threshold' => qualifiedEntityExceedsOwnershipThreshold,
   'qualifies_as_financial_institution' => qualifiesAsFinancialInstitution,
   _ => CompanyOwnershipExemptionReason$Unknown(json),
-}; }
+};}
 
 static const CompanyOwnershipExemptionReason $empty = CompanyOwnershipExemptionReason$$empty._();
 
@@ -19,33 +19,33 @@ static const CompanyOwnershipExemptionReason qualifiesAsFinancialInstitution = C
 static const List<CompanyOwnershipExemptionReason> values = [$empty, qualifiedEntityExceedsOwnershipThreshold, qualifiesAsFinancialInstitution];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   '' => r'$empty',
   'qualified_entity_exceeds_ownership_threshold' => 'qualifiedEntityExceedsOwnershipThreshold',
   'qualifies_as_financial_institution' => 'qualifiesAsFinancialInstitution',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CompanyOwnershipExemptionReason$Unknown; } 
+bool get isUnknown {return this is CompanyOwnershipExemptionReason$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $empty, required W Function() qualifiedEntityExceedsOwnershipThreshold, required W Function() qualifiesAsFinancialInstitution, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $empty, required W Function() qualifiedEntityExceedsOwnershipThreshold, required W Function() qualifiesAsFinancialInstitution, required W Function(String value) $unknown, }) {return switch (this) {
       CompanyOwnershipExemptionReason$$empty() => $empty(),
       CompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold() => qualifiedEntityExceedsOwnershipThreshold(),
       CompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution() => qualifiesAsFinancialInstitution(),
       CompanyOwnershipExemptionReason$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? qualifiedEntityExceedsOwnershipThreshold, W Function()? qualifiesAsFinancialInstitution, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? qualifiedEntityExceedsOwnershipThreshold, W Function()? qualifiesAsFinancialInstitution, W Function(String value)? $unknown, }) {return switch (this) {
       CompanyOwnershipExemptionReason$$empty() => $empty != null ? $empty() : orElse(value),
       CompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold() => qualifiedEntityExceedsOwnershipThreshold != null ? qualifiedEntityExceedsOwnershipThreshold() : orElse(value),
       CompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution() => qualifiesAsFinancialInstitution != null ? qualifiesAsFinancialInstitution() : orElse(value),
       CompanyOwnershipExemptionReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'CompanyOwnershipExemptionReason($value)';
 
- }
+}
 @immutable final class CompanyOwnershipExemptionReason$$empty extends CompanyOwnershipExemptionReason {const CompanyOwnershipExemptionReason$$empty._();
 
 @override String get value => '';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => ''.hashCode;
 
- }
+}
 @immutable final class CompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold extends CompanyOwnershipExemptionReason {const CompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold._();
 
 @override String get value => 'qualified_entity_exceeds_ownership_threshold';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'qualified_entity_exceeds_ownership_threshold'.hashCode;
 
- }
+}
 @immutable final class CompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution extends CompanyOwnershipExemptionReason {const CompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution._();
 
 @override String get value => 'qualifies_as_financial_institution';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => 'qualifies_as_financial_institution'.hashCode;
 
- }
+}
 @immutable final class CompanyOwnershipExemptionReason$Unknown extends CompanyOwnershipExemptionReason {const CompanyOwnershipExemptionReason$Unknown(this.value);
 
 @override final String value;
@@ -82,4 +82,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}

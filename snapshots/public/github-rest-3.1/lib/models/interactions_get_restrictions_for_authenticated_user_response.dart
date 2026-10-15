@@ -7,11 +7,11 @@ const InteractionsGetRestrictionsForAuthenticatedUserResponse({this.interactionL
 const InteractionsGetRestrictionsForAuthenticatedUserResponse._({required this.rawValue, required this.interactionLimitResponse, required this.interactionsGetRestrictionsForAuthenticatedUserResponseVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory InteractionsGetRestrictionsForAuthenticatedUserResponse.fromJson(Object? json) { return InteractionsGetRestrictionsForAuthenticatedUserResponse._(
+factory InteractionsGetRestrictionsForAuthenticatedUserResponse.fromJson(Object? json) {return InteractionsGetRestrictionsForAuthenticatedUserResponse._(
   rawValue: Omittable(json),
   interactionLimitResponse: json is Map<String, dynamic> && InteractionLimitResponse.canParse(json) ? parseAnyOfVariant<InteractionLimitResponse>(json, (value) => InteractionLimitResponse.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
   interactionsGetRestrictionsForAuthenticatedUserResponseVariant2: json is Map<String, dynamic> && InteractionsGetRestrictionsForAuthenticatedUserResponseVariant2.canParse(json) ? parseAnyOfVariant<InteractionsGetRestrictionsForAuthenticatedUserResponseVariant2>(json, (value) => InteractionsGetRestrictionsForAuthenticatedUserResponseVariant2.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -41,4 +41,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'InteractionsGetRestrictionsForAuthenticatedUserResponse(${toJson()})';
 
- }
+}

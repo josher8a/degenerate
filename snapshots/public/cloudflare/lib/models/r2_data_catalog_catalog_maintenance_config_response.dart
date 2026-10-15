@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_credential_status.dart';/// Contains maintenance configuration and credential status.
 @immutable final class R2DataCatalogCatalogMaintenanceConfigResponse {const R2DataCatalogCatalogMaintenanceConfigResponse({required this.credentialStatus, required this.maintenanceConfig, });
 
-factory R2DataCatalogCatalogMaintenanceConfigResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogMaintenanceConfigResponse(
+factory R2DataCatalogCatalogMaintenanceConfigResponse.fromJson(Map<String, dynamic> json) {return R2DataCatalogCatalogMaintenanceConfigResponse(
   credentialStatus: R2DataCatalogCredentialStatus.fromJson(json['credential_status'] as String),
   maintenanceConfig: R2DataCatalogCatalogMaintenanceConfig.fromJson(json['maintenance_config'] as Map<String, dynamic>),
-); }
+);}
 
 final R2DataCatalogCredentialStatus credentialStatus;
 
 final R2DataCatalogCatalogMaintenanceConfig maintenanceConfig;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'credential_status': credentialStatus.toJson(),
   'maintenance_config': maintenanceConfig.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('credential_status') &&
-      json.containsKey('maintenance_config'); } 
-R2DataCatalogCatalogMaintenanceConfigResponse copyWith({R2DataCatalogCredentialStatus? credentialStatus, R2DataCatalogCatalogMaintenanceConfig? maintenanceConfig, }) { return R2DataCatalogCatalogMaintenanceConfigResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('credential_status') &&
+      json.containsKey('maintenance_config');}
+R2DataCatalogCatalogMaintenanceConfigResponse copyWith({R2DataCatalogCredentialStatus? credentialStatus, R2DataCatalogCatalogMaintenanceConfig? maintenanceConfig, }) {return R2DataCatalogCatalogMaintenanceConfigResponse(
   credentialStatus: credentialStatus ?? this.credentialStatus,
   maintenanceConfig: maintenanceConfig ?? this.maintenanceConfig,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCatalogMaintenanceConfigResponse &&
           credentialStatus == other.credentialStatus &&
@@ -32,4 +32,4 @@ R2DataCatalogCatalogMaintenanceConfigResponse copyWith({R2DataCatalogCredentialS
 
 @override String toString() => 'R2DataCatalogCatalogMaintenanceConfigResponse(credentialStatus: $credentialStatus, maintenanceConfig: $maintenanceConfig)';
 
- }
+}

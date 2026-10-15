@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_ip_info/ipv4.dart';import 'package:pub_cloudflare/models/infra_ip_info/ipv6.dart';/// The IPv4/IPv6 address that identifies where to reach a target
 @immutable final class InfraIpInfo {const InfraIpInfo({this.ipv4, this.ipv6, });
 
-factory InfraIpInfo.fromJson(Map<String, dynamic> json) { return InfraIpInfo(
+factory InfraIpInfo.fromJson(Map<String, dynamic> json) {return InfraIpInfo(
   ipv4: json['ipv4'] != null ? Ipv4.fromJson(json['ipv4'] as Map<String, dynamic>) : null,
   ipv6: json['ipv6'] != null ? Ipv6.fromJson(json['ipv6'] as Map<String, dynamic>) : null,
-); }
+);}
 
 /// The target's IPv4 address
 final Ipv4? ipv4;
@@ -15,15 +15,15 @@ final Ipv4? ipv4;
 /// The target's IPv6 address
 final Ipv6? ipv6;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (ipv4 != null) 'ipv4': ipv4?.toJson(),
   if (ipv6 != null) 'ipv6': ipv6?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipv4', 'ipv6'}.contains(key)); } 
-InfraIpInfo copyWith({Ipv4? Function()? ipv4, Ipv6? Function()? ipv6, }) { return InfraIpInfo(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'ipv4', 'ipv6'}.contains(key));}
+InfraIpInfo copyWith({Ipv4? Function()? ipv4, Ipv6? Function()? ipv6, }) {return InfraIpInfo(
   ipv4: ipv4 != null ? ipv4() : this.ipv4,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InfraIpInfo &&
           ipv4 == other.ipv4 &&
@@ -33,4 +33,4 @@ InfraIpInfo copyWith({Ipv4? Function()? ipv4, Ipv6? Function()? ipv6, }) { retur
 
 @override String toString() => 'InfraIpInfo(ipv4: $ipv4, ipv6: $ipv6)';
 
- }
+}

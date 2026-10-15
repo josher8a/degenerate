@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Target langauge to translate to
 sealed class TargetLanguage {const TargetLanguage();
 
-factory TargetLanguage.fromJson(String json) { return switch (json) {
+factory TargetLanguage.fromJson(String json) {return switch (json) {
   'asm_Beng' => asmBeng,
   'awa_Deva' => awaDeva,
   'ben_Beng' => benBeng,
@@ -40,7 +40,7 @@ factory TargetLanguage.fromJson(String json) { return switch (json) {
   'urd_Arab' => urdArab,
   'unr_Deva' => unrDeva,
   _ => TargetLanguage$Unknown(json),
-}; }
+};}
 
 static const TargetLanguage asmBeng = TargetLanguage$asmBeng._();
 
@@ -113,9 +113,9 @@ static const TargetLanguage unrDeva = TargetLanguage$unrDeva._();
 static const List<TargetLanguage> values = [asmBeng, awaDeva, benBeng, bhoDeva, brxDeva, doiDeva, engLatn, gomDeva, gonDeva, gujGujr, hinDeva, hneDeva, kanKnda, kasArab, kasDeva, khaLatn, lusLatn, magDeva, maiDeva, malMlym, marDeva, mniBeng, mniMtei, npiDeva, oryOrya, panGuru, sanDeva, satOlck, sndArab, sndDeva, tamTaml, telTelu, urdArab, unrDeva];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asm_Beng' => 'asmBeng',
   'awa_Deva' => 'awaDeva',
   'ben_Beng' => 'benBeng',
@@ -151,11 +151,11 @@ String get name { return switch (value) {
   'urd_Arab' => 'urdArab',
   'unr_Deva' => 'unrDeva',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TargetLanguage$Unknown; } 
+bool get isUnknown {return this is TargetLanguage$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asmBeng, required W Function() awaDeva, required W Function() benBeng, required W Function() bhoDeva, required W Function() brxDeva, required W Function() doiDeva, required W Function() engLatn, required W Function() gomDeva, required W Function() gonDeva, required W Function() gujGujr, required W Function() hinDeva, required W Function() hneDeva, required W Function() kanKnda, required W Function() kasArab, required W Function() kasDeva, required W Function() khaLatn, required W Function() lusLatn, required W Function() magDeva, required W Function() maiDeva, required W Function() malMlym, required W Function() marDeva, required W Function() mniBeng, required W Function() mniMtei, required W Function() npiDeva, required W Function() oryOrya, required W Function() panGuru, required W Function() sanDeva, required W Function() satOlck, required W Function() sndArab, required W Function() sndDeva, required W Function() tamTaml, required W Function() telTelu, required W Function() urdArab, required W Function() unrDeva, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asmBeng, required W Function() awaDeva, required W Function() benBeng, required W Function() bhoDeva, required W Function() brxDeva, required W Function() doiDeva, required W Function() engLatn, required W Function() gomDeva, required W Function() gonDeva, required W Function() gujGujr, required W Function() hinDeva, required W Function() hneDeva, required W Function() kanKnda, required W Function() kasArab, required W Function() kasDeva, required W Function() khaLatn, required W Function() lusLatn, required W Function() magDeva, required W Function() maiDeva, required W Function() malMlym, required W Function() marDeva, required W Function() mniBeng, required W Function() mniMtei, required W Function() npiDeva, required W Function() oryOrya, required W Function() panGuru, required W Function() sanDeva, required W Function() satOlck, required W Function() sndArab, required W Function() sndDeva, required W Function() tamTaml, required W Function() telTelu, required W Function() urdArab, required W Function() unrDeva, required W Function(String value) $unknown, }) {return switch (this) {
       TargetLanguage$asmBeng() => asmBeng(),
       TargetLanguage$awaDeva() => awaDeva(),
       TargetLanguage$benBeng() => benBeng(),
@@ -191,9 +191,9 @@ W when<W>({required W Function() asmBeng, required W Function() awaDeva, require
       TargetLanguage$urdArab() => urdArab(),
       TargetLanguage$unrDeva() => unrDeva(),
       TargetLanguage$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng, W Function()? awaDeva, W Function()? benBeng, W Function()? bhoDeva, W Function()? brxDeva, W Function()? doiDeva, W Function()? engLatn, W Function()? gomDeva, W Function()? gonDeva, W Function()? gujGujr, W Function()? hinDeva, W Function()? hneDeva, W Function()? kanKnda, W Function()? kasArab, W Function()? kasDeva, W Function()? khaLatn, W Function()? lusLatn, W Function()? magDeva, W Function()? maiDeva, W Function()? malMlym, W Function()? marDeva, W Function()? mniBeng, W Function()? mniMtei, W Function()? npiDeva, W Function()? oryOrya, W Function()? panGuru, W Function()? sanDeva, W Function()? satOlck, W Function()? sndArab, W Function()? sndDeva, W Function()? tamTaml, W Function()? telTelu, W Function()? urdArab, W Function()? unrDeva, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng, W Function()? awaDeva, W Function()? benBeng, W Function()? bhoDeva, W Function()? brxDeva, W Function()? doiDeva, W Function()? engLatn, W Function()? gomDeva, W Function()? gonDeva, W Function()? gujGujr, W Function()? hinDeva, W Function()? hneDeva, W Function()? kanKnda, W Function()? kasArab, W Function()? kasDeva, W Function()? khaLatn, W Function()? lusLatn, W Function()? magDeva, W Function()? maiDeva, W Function()? malMlym, W Function()? marDeva, W Function()? mniBeng, W Function()? mniMtei, W Function()? npiDeva, W Function()? oryOrya, W Function()? panGuru, W Function()? sanDeva, W Function()? satOlck, W Function()? sndArab, W Function()? sndDeva, W Function()? tamTaml, W Function()? telTelu, W Function()? urdArab, W Function()? unrDeva, W Function(String value)? $unknown, }) {return switch (this) {
       TargetLanguage$asmBeng() => asmBeng != null ? asmBeng() : orElse(value),
       TargetLanguage$awaDeva() => awaDeva != null ? awaDeva() : orElse(value),
       TargetLanguage$benBeng() => benBeng != null ? benBeng() : orElse(value),
@@ -229,10 +229,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
       TargetLanguage$urdArab() => urdArab != null ? urdArab() : orElse(value),
       TargetLanguage$unrDeva() => unrDeva != null ? unrDeva() : orElse(value),
       TargetLanguage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TargetLanguage($value)';
 
- }
+}
 @immutable final class TargetLanguage$asmBeng extends TargetLanguage {const TargetLanguage$asmBeng._();
 
 @override String get value => 'asm_Beng';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'asm_Beng'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$awaDeva extends TargetLanguage {const TargetLanguage$awaDeva._();
 
 @override String get value => 'awa_Deva';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'awa_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$benBeng extends TargetLanguage {const TargetLanguage$benBeng._();
 
 @override String get value => 'ben_Beng';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'ben_Beng'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$bhoDeva extends TargetLanguage {const TargetLanguage$bhoDeva._();
 
 @override String get value => 'bho_Deva';
@@ -268,7 +268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'bho_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$brxDeva extends TargetLanguage {const TargetLanguage$brxDeva._();
 
 @override String get value => 'brx_Deva';
@@ -277,7 +277,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'brx_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$doiDeva extends TargetLanguage {const TargetLanguage$doiDeva._();
 
 @override String get value => 'doi_Deva';
@@ -286,7 +286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'doi_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$engLatn extends TargetLanguage {const TargetLanguage$engLatn._();
 
 @override String get value => 'eng_Latn';
@@ -295,7 +295,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'eng_Latn'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$gomDeva extends TargetLanguage {const TargetLanguage$gomDeva._();
 
 @override String get value => 'gom_Deva';
@@ -304,7 +304,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'gom_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$gonDeva extends TargetLanguage {const TargetLanguage$gonDeva._();
 
 @override String get value => 'gon_Deva';
@@ -313,7 +313,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'gon_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$gujGujr extends TargetLanguage {const TargetLanguage$gujGujr._();
 
 @override String get value => 'guj_Gujr';
@@ -322,7 +322,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'guj_Gujr'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$hinDeva extends TargetLanguage {const TargetLanguage$hinDeva._();
 
 @override String get value => 'hin_Deva';
@@ -331,7 +331,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'hin_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$hneDeva extends TargetLanguage {const TargetLanguage$hneDeva._();
 
 @override String get value => 'hne_Deva';
@@ -340,7 +340,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'hne_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$kanKnda extends TargetLanguage {const TargetLanguage$kanKnda._();
 
 @override String get value => 'kan_Knda';
@@ -349,7 +349,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'kan_Knda'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$kasArab extends TargetLanguage {const TargetLanguage$kasArab._();
 
 @override String get value => 'kas_Arab';
@@ -358,7 +358,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'kas_Arab'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$kasDeva extends TargetLanguage {const TargetLanguage$kasDeva._();
 
 @override String get value => 'kas_Deva';
@@ -367,7 +367,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'kas_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$khaLatn extends TargetLanguage {const TargetLanguage$khaLatn._();
 
 @override String get value => 'kha_Latn';
@@ -376,7 +376,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'kha_Latn'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$lusLatn extends TargetLanguage {const TargetLanguage$lusLatn._();
 
 @override String get value => 'lus_Latn';
@@ -385,7 +385,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'lus_Latn'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$magDeva extends TargetLanguage {const TargetLanguage$magDeva._();
 
 @override String get value => 'mag_Deva';
@@ -394,7 +394,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'mag_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$maiDeva extends TargetLanguage {const TargetLanguage$maiDeva._();
 
 @override String get value => 'mai_Deva';
@@ -403,7 +403,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'mai_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$malMlym extends TargetLanguage {const TargetLanguage$malMlym._();
 
 @override String get value => 'mal_Mlym';
@@ -412,7 +412,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'mal_Mlym'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$marDeva extends TargetLanguage {const TargetLanguage$marDeva._();
 
 @override String get value => 'mar_Deva';
@@ -421,7 +421,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'mar_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$mniBeng extends TargetLanguage {const TargetLanguage$mniBeng._();
 
 @override String get value => 'mni_Beng';
@@ -430,7 +430,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'mni_Beng'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$mniMtei extends TargetLanguage {const TargetLanguage$mniMtei._();
 
 @override String get value => 'mni_Mtei';
@@ -439,7 +439,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'mni_Mtei'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$npiDeva extends TargetLanguage {const TargetLanguage$npiDeva._();
 
 @override String get value => 'npi_Deva';
@@ -448,7 +448,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'npi_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$oryOrya extends TargetLanguage {const TargetLanguage$oryOrya._();
 
 @override String get value => 'ory_Orya';
@@ -457,7 +457,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'ory_Orya'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$panGuru extends TargetLanguage {const TargetLanguage$panGuru._();
 
 @override String get value => 'pan_Guru';
@@ -466,7 +466,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'pan_Guru'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$sanDeva extends TargetLanguage {const TargetLanguage$sanDeva._();
 
 @override String get value => 'san_Deva';
@@ -475,7 +475,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'san_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$satOlck extends TargetLanguage {const TargetLanguage$satOlck._();
 
 @override String get value => 'sat_Olck';
@@ -484,7 +484,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'sat_Olck'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$sndArab extends TargetLanguage {const TargetLanguage$sndArab._();
 
 @override String get value => 'snd_Arab';
@@ -493,7 +493,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'snd_Arab'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$sndDeva extends TargetLanguage {const TargetLanguage$sndDeva._();
 
 @override String get value => 'snd_Deva';
@@ -502,7 +502,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'snd_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$tamTaml extends TargetLanguage {const TargetLanguage$tamTaml._();
 
 @override String get value => 'tam_Taml';
@@ -511,7 +511,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'tam_Taml'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$telTelu extends TargetLanguage {const TargetLanguage$telTelu._();
 
 @override String get value => 'tel_Telu';
@@ -520,7 +520,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'tel_Telu'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$urdArab extends TargetLanguage {const TargetLanguage$urdArab._();
 
 @override String get value => 'urd_Arab';
@@ -529,7 +529,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'urd_Arab'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$unrDeva extends TargetLanguage {const TargetLanguage$unrDeva._();
 
 @override String get value => 'unr_Deva';
@@ -538,7 +538,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => 'unr_Deva'.hashCode;
 
- }
+}
 @immutable final class TargetLanguage$Unknown extends TargetLanguage {const TargetLanguage$Unknown(this.value);
 
 @override final String value;
@@ -548,4 +548,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asmBeng,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

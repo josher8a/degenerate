@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class LogType {const LogType();
 
-factory LogType.fromJson(String json) { return switch (json) {
+factory LogType.fromJson(String json) {return switch (json) {
   'migrationStart' => migrationStart,
   'migrationComplete' => migrationComplete,
   'migrationAbort' => migrationAbort,
@@ -20,7 +20,7 @@ factory LogType.fromJson(String json) { return switch (json) {
   'importSkippedInvalidMedia' => importSkippedInvalidMedia,
   'importSkippedRequiresRetrieval' => importSkippedRequiresRetrieval,
   _ => LogType$Unknown(json),
-}; }
+};}
 
 static const LogType migrationStart = LogType$migrationStart._();
 
@@ -55,9 +55,9 @@ static const LogType importSkippedRequiresRetrieval = LogType$importSkippedRequi
 static const List<LogType> values = [migrationStart, migrationComplete, migrationAbort, migrationError, migrationPause, migrationResume, migrationErrorFailedContinuation, importErrorRetryExhaustion, importSkippedStorageClass, importSkippedOversized, importSkippedEmptyObject, importSkippedUnsupportedContentType, importSkippedExcludedContentType, importSkippedInvalidMedia, importSkippedRequiresRetrieval];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'migrationStart' => 'migrationStart',
   'migrationComplete' => 'migrationComplete',
   'migrationAbort' => 'migrationAbort',
@@ -74,11 +74,11 @@ String get name { return switch (value) {
   'importSkippedInvalidMedia' => 'importSkippedInvalidMedia',
   'importSkippedRequiresRetrieval' => 'importSkippedRequiresRetrieval',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is LogType$Unknown; } 
+bool get isUnknown {return this is LogType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() migrationStart, required W Function() migrationComplete, required W Function() migrationAbort, required W Function() migrationError, required W Function() migrationPause, required W Function() migrationResume, required W Function() migrationErrorFailedContinuation, required W Function() importErrorRetryExhaustion, required W Function() importSkippedStorageClass, required W Function() importSkippedOversized, required W Function() importSkippedEmptyObject, required W Function() importSkippedUnsupportedContentType, required W Function() importSkippedExcludedContentType, required W Function() importSkippedInvalidMedia, required W Function() importSkippedRequiresRetrieval, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() migrationStart, required W Function() migrationComplete, required W Function() migrationAbort, required W Function() migrationError, required W Function() migrationPause, required W Function() migrationResume, required W Function() migrationErrorFailedContinuation, required W Function() importErrorRetryExhaustion, required W Function() importSkippedStorageClass, required W Function() importSkippedOversized, required W Function() importSkippedEmptyObject, required W Function() importSkippedUnsupportedContentType, required W Function() importSkippedExcludedContentType, required W Function() importSkippedInvalidMedia, required W Function() importSkippedRequiresRetrieval, required W Function(String value) $unknown, }) {return switch (this) {
       LogType$migrationStart() => migrationStart(),
       LogType$migrationComplete() => migrationComplete(),
       LogType$migrationAbort() => migrationAbort(),
@@ -95,9 +95,9 @@ W when<W>({required W Function() migrationStart, required W Function() migration
       LogType$importSkippedInvalidMedia() => importSkippedInvalidMedia(),
       LogType$importSkippedRequiresRetrieval() => importSkippedRequiresRetrieval(),
       LogType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? migrationStart, W Function()? migrationComplete, W Function()? migrationAbort, W Function()? migrationError, W Function()? migrationPause, W Function()? migrationResume, W Function()? migrationErrorFailedContinuation, W Function()? importErrorRetryExhaustion, W Function()? importSkippedStorageClass, W Function()? importSkippedOversized, W Function()? importSkippedEmptyObject, W Function()? importSkippedUnsupportedContentType, W Function()? importSkippedExcludedContentType, W Function()? importSkippedInvalidMedia, W Function()? importSkippedRequiresRetrieval, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? migrationStart, W Function()? migrationComplete, W Function()? migrationAbort, W Function()? migrationError, W Function()? migrationPause, W Function()? migrationResume, W Function()? migrationErrorFailedContinuation, W Function()? importErrorRetryExhaustion, W Function()? importSkippedStorageClass, W Function()? importSkippedOversized, W Function()? importSkippedEmptyObject, W Function()? importSkippedUnsupportedContentType, W Function()? importSkippedExcludedContentType, W Function()? importSkippedInvalidMedia, W Function()? importSkippedRequiresRetrieval, W Function(String value)? $unknown, }) {return switch (this) {
       LogType$migrationStart() => migrationStart != null ? migrationStart() : orElse(value),
       LogType$migrationComplete() => migrationComplete != null ? migrationComplete() : orElse(value),
       LogType$migrationAbort() => migrationAbort != null ? migrationAbort() : orElse(value),
@@ -114,10 +114,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
       LogType$importSkippedInvalidMedia() => importSkippedInvalidMedia != null ? importSkippedInvalidMedia() : orElse(value),
       LogType$importSkippedRequiresRetrieval() => importSkippedRequiresRetrieval != null ? importSkippedRequiresRetrieval() : orElse(value),
       LogType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'LogType($value)';
 
- }
+}
 @immutable final class LogType$migrationStart extends LogType {const LogType$migrationStart._();
 
 @override String get value => 'migrationStart';
@@ -126,7 +126,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'migrationStart'.hashCode;
 
- }
+}
 @immutable final class LogType$migrationComplete extends LogType {const LogType$migrationComplete._();
 
 @override String get value => 'migrationComplete';
@@ -135,7 +135,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'migrationComplete'.hashCode;
 
- }
+}
 @immutable final class LogType$migrationAbort extends LogType {const LogType$migrationAbort._();
 
 @override String get value => 'migrationAbort';
@@ -144,7 +144,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'migrationAbort'.hashCode;
 
- }
+}
 @immutable final class LogType$migrationError extends LogType {const LogType$migrationError._();
 
 @override String get value => 'migrationError';
@@ -153,7 +153,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'migrationError'.hashCode;
 
- }
+}
 @immutable final class LogType$migrationPause extends LogType {const LogType$migrationPause._();
 
 @override String get value => 'migrationPause';
@@ -162,7 +162,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'migrationPause'.hashCode;
 
- }
+}
 @immutable final class LogType$migrationResume extends LogType {const LogType$migrationResume._();
 
 @override String get value => 'migrationResume';
@@ -171,7 +171,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'migrationResume'.hashCode;
 
- }
+}
 @immutable final class LogType$migrationErrorFailedContinuation extends LogType {const LogType$migrationErrorFailedContinuation._();
 
 @override String get value => 'migrationErrorFailedContinuation';
@@ -180,7 +180,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'migrationErrorFailedContinuation'.hashCode;
 
- }
+}
 @immutable final class LogType$importErrorRetryExhaustion extends LogType {const LogType$importErrorRetryExhaustion._();
 
 @override String get value => 'importErrorRetryExhaustion';
@@ -189,7 +189,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'importErrorRetryExhaustion'.hashCode;
 
- }
+}
 @immutable final class LogType$importSkippedStorageClass extends LogType {const LogType$importSkippedStorageClass._();
 
 @override String get value => 'importSkippedStorageClass';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'importSkippedStorageClass'.hashCode;
 
- }
+}
 @immutable final class LogType$importSkippedOversized extends LogType {const LogType$importSkippedOversized._();
 
 @override String get value => 'importSkippedOversized';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'importSkippedOversized'.hashCode;
 
- }
+}
 @immutable final class LogType$importSkippedEmptyObject extends LogType {const LogType$importSkippedEmptyObject._();
 
 @override String get value => 'importSkippedEmptyObject';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'importSkippedEmptyObject'.hashCode;
 
- }
+}
 @immutable final class LogType$importSkippedUnsupportedContentType extends LogType {const LogType$importSkippedUnsupportedContentType._();
 
 @override String get value => 'importSkippedUnsupportedContentType';
@@ -225,7 +225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'importSkippedUnsupportedContentType'.hashCode;
 
- }
+}
 @immutable final class LogType$importSkippedExcludedContentType extends LogType {const LogType$importSkippedExcludedContentType._();
 
 @override String get value => 'importSkippedExcludedContentType';
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'importSkippedExcludedContentType'.hashCode;
 
- }
+}
 @immutable final class LogType$importSkippedInvalidMedia extends LogType {const LogType$importSkippedInvalidMedia._();
 
 @override String get value => 'importSkippedInvalidMedia';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'importSkippedInvalidMedia'.hashCode;
 
- }
+}
 @immutable final class LogType$importSkippedRequiresRetrieval extends LogType {const LogType$importSkippedRequiresRetrieval._();
 
 @override String get value => 'importSkippedRequiresRetrieval';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => 'importSkippedRequiresRetrieval'.hashCode;
 
- }
+}
 @immutable final class LogType$Unknown extends LogType {const LogType$Unknown(this.value);
 
 @override final String value;
@@ -262,16 +262,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? migratio
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class R2SlurperJobLogResponse {const R2SlurperJobLogResponse({this.createdAt, this.job, this.logType, this.message = const Omittable.absent(), this.objectKey = const Omittable.absent(), });
 
-factory R2SlurperJobLogResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobLogResponse(
+factory R2SlurperJobLogResponse.fromJson(Map<String, dynamic> json) {return R2SlurperJobLogResponse(
   createdAt: json['createdAt'] as String?,
   job: json['job'] as String?,
   logType: json['logType'] != null ? LogType.fromJson(json['logType'] as String) : null,
   message: json.containsKey('message') ? Omittable(json['message'] as String?) : const Omittable.absent(),
   objectKey: json.containsKey('objectKey') ? Omittable(json['objectKey'] as String?) : const Omittable.absent(),
-); }
+);}
 
 final String? createdAt;
 
@@ -283,21 +283,21 @@ final Omittable<String?> message;
 
 final Omittable<String?> objectKey;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'createdAt': ?createdAt,
   'job': ?job,
   if (logType != null) 'logType': logType?.toJson(),
   if (message.isPresent) 'message': message.value,
   if (objectKey.isPresent) 'objectKey': objectKey.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'createdAt', 'job', 'logType', 'message', 'objectKey'}.contains(key)); } 
-R2SlurperJobLogResponse copyWith({String? Function()? createdAt, String? Function()? job, LogType? Function()? logType, Omittable<String?>? message, Omittable<String?>? objectKey, }) { return R2SlurperJobLogResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'createdAt', 'job', 'logType', 'message', 'objectKey'}.contains(key));}
+R2SlurperJobLogResponse copyWith({String? Function()? createdAt, String? Function()? job, LogType? Function()? logType, Omittable<String?>? message, Omittable<String?>? objectKey, }) {return R2SlurperJobLogResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   job: job != null ? job() : this.job,
   logType: logType != null ? logType() : this.logType,
   message: message ?? this.message,
   objectKey: objectKey ?? this.objectKey,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperJobLogResponse &&
           createdAt == other.createdAt &&
@@ -310,4 +310,4 @@ R2SlurperJobLogResponse copyWith({String? Function()? createdAt, String? Functio
 
 @override String toString() => 'R2SlurperJobLogResponse(createdAt: $createdAt, job: $job, logType: $logType, message: $message, objectKey: $objectKey)';
 
- }
+}

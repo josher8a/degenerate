@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';sealed class OptionsVariant1 {const OptionsVariant1();
 
-factory OptionsVariant1.fromJson(String json) { return switch (json) {
+factory OptionsVariant1.fromJson(String json) {return switch (json) {
   'customer_service' => customerService,
   'low_quality' => lowQuality,
   'missing_features' => missingFeatures,
@@ -13,7 +13,7 @@ factory OptionsVariant1.fromJson(String json) { return switch (json) {
   'too_expensive' => tooExpensive,
   'unused' => unused,
   _ => OptionsVariant1$Unknown(json),
-}; }
+};}
 
 static const OptionsVariant1 customerService = OptionsVariant1$customerService._();
 
@@ -34,9 +34,9 @@ static const OptionsVariant1 unused = OptionsVariant1$unused._();
 static const List<OptionsVariant1> values = [customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'customer_service' => 'customerService',
   'low_quality' => 'lowQuality',
   'missing_features' => 'missingFeatures',
@@ -46,11 +46,11 @@ String get name { return switch (value) {
   'too_expensive' => 'tooExpensive',
   'unused' => 'unused',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OptionsVariant1$Unknown; } 
+bool get isUnknown {return this is OptionsVariant1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) {return switch (this) {
       OptionsVariant1$customerService() => customerService(),
       OptionsVariant1$lowQuality() => lowQuality(),
       OptionsVariant1$missingFeatures() => missingFeatures(),
@@ -60,9 +60,9 @@ W when<W>({required W Function() customerService, required W Function() lowQuali
       OptionsVariant1$tooExpensive() => tooExpensive(),
       OptionsVariant1$unused() => unused(),
       OptionsVariant1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) {return switch (this) {
       OptionsVariant1$customerService() => customerService != null ? customerService() : orElse(value),
       OptionsVariant1$lowQuality() => lowQuality != null ? lowQuality() : orElse(value),
       OptionsVariant1$missingFeatures() => missingFeatures != null ? missingFeatures() : orElse(value),
@@ -72,10 +72,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
       OptionsVariant1$tooExpensive() => tooExpensive != null ? tooExpensive() : orElse(value),
       OptionsVariant1$unused() => unused != null ? unused() : orElse(value),
       OptionsVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'OptionsVariant1($value)';
 
- }
+}
 @immutable final class OptionsVariant1$customerService extends OptionsVariant1 {const OptionsVariant1$customerService._();
 
 @override String get value => 'customer_service';
@@ -84,7 +84,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'customer_service'.hashCode;
 
- }
+}
 @immutable final class OptionsVariant1$lowQuality extends OptionsVariant1 {const OptionsVariant1$lowQuality._();
 
 @override String get value => 'low_quality';
@@ -93,7 +93,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'low_quality'.hashCode;
 
- }
+}
 @immutable final class OptionsVariant1$missingFeatures extends OptionsVariant1 {const OptionsVariant1$missingFeatures._();
 
 @override String get value => 'missing_features';
@@ -102,7 +102,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'missing_features'.hashCode;
 
- }
+}
 @immutable final class OptionsVariant1$$other extends OptionsVariant1 {const OptionsVariant1$$other._();
 
 @override String get value => 'other';
@@ -111,7 +111,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class OptionsVariant1$switchedService extends OptionsVariant1 {const OptionsVariant1$switchedService._();
 
 @override String get value => 'switched_service';
@@ -120,7 +120,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'switched_service'.hashCode;
 
- }
+}
 @immutable final class OptionsVariant1$tooComplex extends OptionsVariant1 {const OptionsVariant1$tooComplex._();
 
 @override String get value => 'too_complex';
@@ -129,7 +129,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'too_complex'.hashCode;
 
- }
+}
 @immutable final class OptionsVariant1$tooExpensive extends OptionsVariant1 {const OptionsVariant1$tooExpensive._();
 
 @override String get value => 'too_expensive';
@@ -138,7 +138,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'too_expensive'.hashCode;
 
- }
+}
 @immutable final class OptionsVariant1$unused extends OptionsVariant1 {const OptionsVariant1$unused._();
 
 @override String get value => 'unused';
@@ -147,7 +147,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => 'unused'.hashCode;
 
- }
+}
 @immutable final class OptionsVariant1$Unknown extends OptionsVariant1 {const OptionsVariant1$Unknown(this.value);
 
 @override final String value;
@@ -157,18 +157,18 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? customer
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class CancellationReasonOptions {/// A value built from one or more typed views (at least one must be present).
 const CancellationReasonOptions({this.listOptionsVariant1 = const Omittable.absent(), this.getPaymentMethodConfigurationsApplicationVariant2 = const Omittable.absent(), }) : rawValue = const Omittable.absent();
 
 const CancellationReasonOptions._({required this.rawValue, required this.listOptionsVariant1, required this.getPaymentMethodConfigurationsApplicationVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CancellationReasonOptions.fromJson(Object? json) { return CancellationReasonOptions._(
+factory CancellationReasonOptions.fromJson(Object? json) {return CancellationReasonOptions._(
   rawValue: Omittable(json),
   listOptionsVariant1: parseAnyOfVariant<List<OptionsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => OptionsVariant1.fromJson(e as String)).toList()),
   getPaymentMethodConfigurationsApplicationVariant2: parseAnyOfVariant<GetPaymentMethodConfigurationsApplicationVariant2>(json, (value) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(value! as String)),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -198,4 +198,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CancellationReasonOptions(${toJson()})';
 
- }
+}

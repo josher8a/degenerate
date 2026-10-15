@@ -8,11 +8,11 @@ const Until({this.string = const Omittable.absent(), this.$int = const Omittable
 const Until._({required this.rawValue, required this.string, required this.$int, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory Until.fromJson(Object? json) { return Until._(
+factory Until.fromJson(Object? json) {return Until._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'Until(${toJson()})';
 
- }
+}

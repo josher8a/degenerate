@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/certificate_record_type.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/revocation_status.dart';@immutable final class CertificateAuthorities {const CertificateAuthorities({required this.certificateRecordType, required this.country, required this.countryName, required this.name, required this.owner, required this.parentName, required this.parentSha256Fingerprint, required this.revocationStatus, required this.sha256Fingerprint, });
 
-factory CertificateAuthorities.fromJson(Map<String, dynamic> json) { return CertificateAuthorities(
+factory CertificateAuthorities.fromJson(Map<String, dynamic> json) {return CertificateAuthorities(
   certificateRecordType: CertificateRecordType.fromJson(json['certificateRecordType'] as String),
   country: json['country'] as String,
   countryName: json['countryName'] as String,
@@ -13,7 +13,7 @@ factory CertificateAuthorities.fromJson(Map<String, dynamic> json) { return Cert
   parentSha256Fingerprint: json['parentSha256Fingerprint'] as String,
   revocationStatus: RevocationStatus.fromJson(json['revocationStatus'] as String),
   sha256Fingerprint: json['sha256Fingerprint'] as String,
-); }
+);}
 
 /// Specifies the type of certificate in the trust chain.
 final CertificateRecordType certificateRecordType;
@@ -56,7 +56,7 @@ final RevocationStatus revocationStatus;
 /// Example: `'24EDD4E503A8D3FDB5FFB4AF66C887359901CBE687A5A0760D10A08EED99A7C3'`
 final String sha256Fingerprint;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'certificateRecordType': certificateRecordType.toJson(),
   'country': country,
   'countryName': countryName,
@@ -66,8 +66,8 @@ Map<String, dynamic> toJson() { return {
   'parentSha256Fingerprint': parentSha256Fingerprint,
   'revocationStatus': revocationStatus.toJson(),
   'sha256Fingerprint': sha256Fingerprint,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificateRecordType') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('certificateRecordType') &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('countryName') && json['countryName'] is String &&
       json.containsKey('name') && json['name'] is String &&
@@ -75,8 +75,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('parentName') && json['parentName'] is String &&
       json.containsKey('parentSha256Fingerprint') && json['parentSha256Fingerprint'] is String &&
       json.containsKey('revocationStatus') &&
-      json.containsKey('sha256Fingerprint') && json['sha256Fingerprint'] is String; } 
-CertificateAuthorities copyWith({CertificateRecordType? certificateRecordType, String? country, String? countryName, String? name, String? owner, String? parentName, String? parentSha256Fingerprint, RevocationStatus? revocationStatus, String? sha256Fingerprint, }) { return CertificateAuthorities(
+      json.containsKey('sha256Fingerprint') && json['sha256Fingerprint'] is String;}
+CertificateAuthorities copyWith({CertificateRecordType? certificateRecordType, String? country, String? countryName, String? name, String? owner, String? parentName, String? parentSha256Fingerprint, RevocationStatus? revocationStatus, String? sha256Fingerprint, }) {return CertificateAuthorities(
   certificateRecordType: certificateRecordType ?? this.certificateRecordType,
   country: country ?? this.country,
   countryName: countryName ?? this.countryName,
@@ -86,7 +86,7 @@ CertificateAuthorities copyWith({CertificateRecordType? certificateRecordType, S
   parentSha256Fingerprint: parentSha256Fingerprint ?? this.parentSha256Fingerprint,
   revocationStatus: revocationStatus ?? this.revocationStatus,
   sha256Fingerprint: sha256Fingerprint ?? this.sha256Fingerprint,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateAuthorities &&
           certificateRecordType == other.certificateRecordType &&
@@ -103,4 +103,4 @@ CertificateAuthorities copyWith({CertificateRecordType? certificateRecordType, S
 
 @override String toString() => 'CertificateAuthorities(\n  certificateRecordType: $certificateRecordType,\n  country: $country,\n  countryName: $countryName,\n  name: $name,\n  owner: $owner,\n  parentName: $parentName,\n  parentSha256Fingerprint: $parentSha256Fingerprint,\n  revocationStatus: $revocationStatus,\n  sha256Fingerprint: $sha256Fingerprint,\n)';
 
- }
+}

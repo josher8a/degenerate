@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/destination_payment_refund.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/source_refund.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class TransferReversalObject {const TransferReversalObject();
 
-factory TransferReversalObject.fromJson(String json) { return switch (json) {
+factory TransferReversalObject.fromJson(String json) {return switch (json) {
   'transfer_reversal' => transferReversal,
   _ => TransferReversalObject$Unknown(json),
-}; }
+};}
 
 static const TransferReversalObject transferReversal = TransferReversalObject$transferReversal._();
 
 static const List<TransferReversalObject> values = [transferReversal];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'transfer_reversal' => 'transferReversal',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TransferReversalObject$Unknown; } 
+bool get isUnknown {return this is TransferReversalObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() transferReversal, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() transferReversal, required W Function(String value) $unknown, }) {return switch (this) {
       TransferReversalObject$transferReversal() => transferReversal(),
       TransferReversalObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? transferReversal, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transferReversal, W Function(String value)? $unknown, }) {return switch (this) {
       TransferReversalObject$transferReversal() => transferReversal != null ? transferReversal() : orElse(value),
       TransferReversalObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TransferReversalObject($value)';
 
- }
+}
 @immutable final class TransferReversalObject$transferReversal extends TransferReversalObject {const TransferReversalObject$transferReversal._();
 
 @override String get value => 'transfer_reversal';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transfer
 
 @override int get hashCode => 'transfer_reversal'.hashCode;
 
- }
+}
 @immutable final class TransferReversalObject$Unknown extends TransferReversalObject {const TransferReversalObject$Unknown(this.value);
 
 @override final String value;
@@ -53,7 +53,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transfer
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// [Stripe Connect](https://docs.stripe.com/connect) platforms can reverse transfers made to a
 /// connected account, either entirely or partially, and can also specify whether
 /// to refund any related application fees. Transfer reversals add to the
@@ -69,7 +69,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transfer
 /// Related guide: [Reverse transfers](https://docs.stripe.com/connect/separate-charges-and-transfers#reverse-transfers)
 @immutable final class TransferReversal {const TransferReversal({required this.amount, required this.created, required this.currency, required this.id, required this.object, required this.transfer, this.balanceTransaction = const Omittable.absent(), this.destinationPaymentRefund = const Omittable.absent(), this.metadata = const Omittable.absent(), this.sourceRefund = const Omittable.absent(), });
 
-factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferReversal(
+factory TransferReversal.fromJson(Map<String, dynamic> json) {return TransferReversal(
   amount: (json['amount'] as num).toInt(),
   balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? ApplicationFeeBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
@@ -80,7 +80,7 @@ factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferRe
   object: TransferReversalObject.fromJson(json['object'] as String),
   sourceRefund: json.containsKey('source_refund') ? Omittable(json['source_refund'] != null ? SourceRefund.fromJson(json['source_refund']) : null) : const Omittable.absent(),
   transfer: ChargeTransfer.fromJson(json['transfer']),
-); }
+);}
 
 /// Amount, in cents (or local equivalent).
 final int amount;
@@ -112,7 +112,7 @@ final Omittable<SourceRefund?> sourceRefund;
 /// ID of the transfer that was reversed.
 final ChargeTransfer transfer;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'created': created,
@@ -123,18 +123,18 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   if (sourceRefund.isPresent) 'source_refund': sourceRefund.value?.toJson(),
   'transfer': transfer.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') && json['object'] == 'transfer_reversal' &&
-      json.containsKey('transfer'); } 
+      json.containsKey('transfer');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
-return errors; } 
-TransferReversal copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<DestinationPaymentRefund?>? destinationPaymentRefund, String? id, Omittable<Map<String,String>?>? metadata, TransferReversalObject? object, Omittable<SourceRefund?>? sourceRefund, ChargeTransfer? transfer, }) { return TransferReversal(
+return errors;}
+TransferReversal copyWith({int? amount, Omittable<ApplicationFeeBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<DestinationPaymentRefund?>? destinationPaymentRefund, String? id, Omittable<Map<String,String>?>? metadata, TransferReversalObject? object, Omittable<SourceRefund?>? sourceRefund, ChargeTransfer? transfer, }) {return TransferReversal(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   created: created ?? this.created,
@@ -145,7 +145,7 @@ TransferReversal copyWith({int? amount, Omittable<ApplicationFeeBalanceTransacti
   object: object ?? this.object,
   sourceRefund: sourceRefund ?? this.sourceRefund,
   transfer: transfer ?? this.transfer,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TransferReversal &&
           amount == other.amount &&
@@ -163,4 +163,4 @@ TransferReversal copyWith({int? amount, Omittable<ApplicationFeeBalanceTransacti
 
 @override String toString() => 'TransferReversal(\n  amount: $amount,\n  balanceTransaction: $balanceTransaction,\n  created: $created,\n  currency: $currency,\n  destinationPaymentRefund: $destinationPaymentRefund,\n  id: $id,\n  metadata: $metadata,\n  object: $object,\n  sourceRefund: $sourceRefund,\n  transfer: $transfer,\n)';
 
- }
+}

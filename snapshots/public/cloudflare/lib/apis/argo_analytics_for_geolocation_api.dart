@@ -12,7 +12,7 @@ final class ArgoAnalyticsForGeolocationApi with ApiExecutor {const ArgoAnalytics
 /// Argo Analytics for a zone at different PoPs
 ///
 /// `GET /zones/{zone_id}/analytics/latency/colos`
-Future<ApiResult<Map<String, dynamic>, ArgoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPsError>> argoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPs({required ArgoAnalyticsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, ArgoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPsError>> argoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPs({required ArgoAnalyticsIdentifier zoneId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,5 +29,5 @@ return await execute(
   },
   onError: ArgoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPsError.fromResponse,
 );
- } 
- }
+}
+}

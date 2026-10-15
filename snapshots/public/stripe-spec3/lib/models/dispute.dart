@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/dispute_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence_details.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details.dart';sealed class EnhancedEligibilityTypes {const EnhancedEligibilityTypes();
 
-factory EnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
+factory EnhancedEligibilityTypes.fromJson(String json) {return switch (json) {
   'visa_compelling_evidence_3' => visaCompellingEvidence3,
   'visa_compliance' => visaCompliance,
   _ => EnhancedEligibilityTypes$Unknown(json),
-}; }
+};}
 
 static const EnhancedEligibilityTypes visaCompellingEvidence3 = EnhancedEligibilityTypes$visaCompellingEvidence3._();
 
@@ -16,30 +16,30 @@ static const EnhancedEligibilityTypes visaCompliance = EnhancedEligibilityTypes$
 static const List<EnhancedEligibilityTypes> values = [visaCompellingEvidence3, visaCompliance];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'visa_compelling_evidence_3' => 'visaCompellingEvidence3',
   'visa_compliance' => 'visaCompliance',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EnhancedEligibilityTypes$Unknown; } 
+bool get isUnknown {return this is EnhancedEligibilityTypes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() visaCompellingEvidence3, required W Function() visaCompliance, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() visaCompellingEvidence3, required W Function() visaCompliance, required W Function(String value) $unknown, }) {return switch (this) {
       EnhancedEligibilityTypes$visaCompellingEvidence3() => visaCompellingEvidence3(),
       EnhancedEligibilityTypes$visaCompliance() => visaCompliance(),
       EnhancedEligibilityTypes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? visaCompellingEvidence3, W Function()? visaCompliance, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? visaCompellingEvidence3, W Function()? visaCompliance, W Function(String value)? $unknown, }) {return switch (this) {
       EnhancedEligibilityTypes$visaCompellingEvidence3() => visaCompellingEvidence3 != null ? visaCompellingEvidence3() : orElse(value),
       EnhancedEligibilityTypes$visaCompliance() => visaCompliance != null ? visaCompliance() : orElse(value),
       EnhancedEligibilityTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EnhancedEligibilityTypes($value)';
 
- }
+}
 @immutable final class EnhancedEligibilityTypes$visaCompellingEvidence3 extends EnhancedEligibilityTypes {const EnhancedEligibilityTypes$visaCompellingEvidence3._();
 
 @override String get value => 'visa_compelling_evidence_3';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? visaComp
 
 @override int get hashCode => 'visa_compelling_evidence_3'.hashCode;
 
- }
+}
 @immutable final class EnhancedEligibilityTypes$visaCompliance extends EnhancedEligibilityTypes {const EnhancedEligibilityTypes$visaCompliance._();
 
 @override String get value => 'visa_compliance';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? visaComp
 
 @override int get hashCode => 'visa_compliance'.hashCode;
 
- }
+}
 @immutable final class EnhancedEligibilityTypes$Unknown extends EnhancedEligibilityTypes {const EnhancedEligibilityTypes$Unknown(this.value);
 
 @override final String value;
@@ -67,41 +67,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? visaComp
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class DisputeObject {const DisputeObject();
 
-factory DisputeObject.fromJson(String json) { return switch (json) {
+factory DisputeObject.fromJson(String json) {return switch (json) {
   'dispute' => dispute,
   _ => DisputeObject$Unknown(json),
-}; }
+};}
 
 static const DisputeObject dispute = DisputeObject$dispute._();
 
 static const List<DisputeObject> values = [dispute];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'dispute' => 'dispute',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DisputeObject$Unknown; } 
+bool get isUnknown {return this is DisputeObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() dispute, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() dispute, required W Function(String value) $unknown, }) {return switch (this) {
       DisputeObject$dispute() => dispute(),
       DisputeObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? dispute, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dispute, W Function(String value)? $unknown, }) {return switch (this) {
       DisputeObject$dispute() => dispute != null ? dispute() : orElse(value),
       DisputeObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DisputeObject($value)';
 
- }
+}
 @immutable final class DisputeObject$dispute extends DisputeObject {const DisputeObject$dispute._();
 
 @override String get value => 'dispute';
@@ -110,7 +110,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dispute,
 
 @override int get hashCode => 'dispute'.hashCode;
 
- }
+}
 @immutable final class DisputeObject$Unknown extends DisputeObject {const DisputeObject$Unknown(this.value);
 
 @override final String value;
@@ -120,11 +120,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? dispute,
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
 sealed class DisputeStatus {const DisputeStatus();
 
-factory DisputeStatus.fromJson(String json) { return switch (json) {
+factory DisputeStatus.fromJson(String json) {return switch (json) {
   'lost' => lost,
   'needs_response' => needsResponse,
   'prevented' => prevented,
@@ -134,7 +134,7 @@ factory DisputeStatus.fromJson(String json) { return switch (json) {
   'warning_under_review' => warningUnderReview,
   'won' => won,
   _ => DisputeStatus$Unknown(json),
-}; }
+};}
 
 static const DisputeStatus lost = DisputeStatus$lost._();
 
@@ -155,9 +155,9 @@ static const DisputeStatus won = DisputeStatus$won._();
 static const List<DisputeStatus> values = [lost, needsResponse, prevented, underReview, warningClosed, warningNeedsResponse, warningUnderReview, won];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'lost' => 'lost',
   'needs_response' => 'needsResponse',
   'prevented' => 'prevented',
@@ -167,11 +167,11 @@ String get name { return switch (value) {
   'warning_under_review' => 'warningUnderReview',
   'won' => 'won',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DisputeStatus$Unknown; } 
+bool get isUnknown {return this is DisputeStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() lost, required W Function() needsResponse, required W Function() prevented, required W Function() underReview, required W Function() warningClosed, required W Function() warningNeedsResponse, required W Function() warningUnderReview, required W Function() won, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() lost, required W Function() needsResponse, required W Function() prevented, required W Function() underReview, required W Function() warningClosed, required W Function() warningNeedsResponse, required W Function() warningUnderReview, required W Function() won, required W Function(String value) $unknown, }) {return switch (this) {
       DisputeStatus$lost() => lost(),
       DisputeStatus$needsResponse() => needsResponse(),
       DisputeStatus$prevented() => prevented(),
@@ -181,9 +181,9 @@ W when<W>({required W Function() lost, required W Function() needsResponse, requ
       DisputeStatus$warningUnderReview() => warningUnderReview(),
       DisputeStatus$won() => won(),
       DisputeStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W Function()? needsResponse, W Function()? prevented, W Function()? underReview, W Function()? warningClosed, W Function()? warningNeedsResponse, W Function()? warningUnderReview, W Function()? won, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W Function()? needsResponse, W Function()? prevented, W Function()? underReview, W Function()? warningClosed, W Function()? warningNeedsResponse, W Function()? warningUnderReview, W Function()? won, W Function(String value)? $unknown, }) {return switch (this) {
       DisputeStatus$lost() => lost != null ? lost() : orElse(value),
       DisputeStatus$needsResponse() => needsResponse != null ? needsResponse() : orElse(value),
       DisputeStatus$prevented() => prevented != null ? prevented() : orElse(value),
@@ -193,10 +193,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
       DisputeStatus$warningUnderReview() => warningUnderReview != null ? warningUnderReview() : orElse(value),
       DisputeStatus$won() => won != null ? won() : orElse(value),
       DisputeStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DisputeStatus($value)';
 
- }
+}
 @immutable final class DisputeStatus$lost extends DisputeStatus {const DisputeStatus$lost._();
 
 @override String get value => 'lost';
@@ -205,7 +205,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => 'lost'.hashCode;
 
- }
+}
 @immutable final class DisputeStatus$needsResponse extends DisputeStatus {const DisputeStatus$needsResponse._();
 
 @override String get value => 'needs_response';
@@ -214,7 +214,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => 'needs_response'.hashCode;
 
- }
+}
 @immutable final class DisputeStatus$prevented extends DisputeStatus {const DisputeStatus$prevented._();
 
 @override String get value => 'prevented';
@@ -223,7 +223,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => 'prevented'.hashCode;
 
- }
+}
 @immutable final class DisputeStatus$underReview extends DisputeStatus {const DisputeStatus$underReview._();
 
 @override String get value => 'under_review';
@@ -232,7 +232,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => 'under_review'.hashCode;
 
- }
+}
 @immutable final class DisputeStatus$warningClosed extends DisputeStatus {const DisputeStatus$warningClosed._();
 
 @override String get value => 'warning_closed';
@@ -241,7 +241,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => 'warning_closed'.hashCode;
 
- }
+}
 @immutable final class DisputeStatus$warningNeedsResponse extends DisputeStatus {const DisputeStatus$warningNeedsResponse._();
 
 @override String get value => 'warning_needs_response';
@@ -250,7 +250,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => 'warning_needs_response'.hashCode;
 
- }
+}
 @immutable final class DisputeStatus$warningUnderReview extends DisputeStatus {const DisputeStatus$warningUnderReview._();
 
 @override String get value => 'warning_under_review';
@@ -259,7 +259,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => 'warning_under_review'.hashCode;
 
- }
+}
 @immutable final class DisputeStatus$won extends DisputeStatus {const DisputeStatus$won._();
 
 @override String get value => 'won';
@@ -268,7 +268,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => 'won'.hashCode;
 
- }
+}
 @immutable final class DisputeStatus$Unknown extends DisputeStatus {const DisputeStatus$Unknown(this.value);
 
 @override final String value;
@@ -278,7 +278,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A dispute occurs when a customer questions your charge with their card issuer.
 /// When this happens, you have the opportunity to respond to the dispute with
 /// evidence that shows that the charge is legitimate.
@@ -286,7 +286,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W 
 /// Related guide: [Disputes and fraud](https://docs.stripe.com/disputes)
 @immutable final class Dispute {const Dispute({required this.amount, required this.balanceTransactions, required this.charge, required this.created, required this.currency, required this.enhancedEligibilityTypes, required this.evidence, required this.evidenceDetails, required this.id, required this.isChargeRefundable, required this.livemode, required this.metadata, required this.object, required this.reason, required this.status, this.paymentIntent = const Omittable.absent(), this.paymentMethodDetails, });
 
-factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
+factory Dispute.fromJson(Map<String, dynamic> json) {return Dispute(
   amount: (json['amount'] as num).toInt(),
   balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
   charge: ApplicationFeeCharge.fromJson(json['charge']),
@@ -304,7 +304,7 @@ factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   paymentMethodDetails: json['payment_method_details'] != null ? DisputePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String,
   status: DisputeStatus.fromJson(json['status'] as String),
-); }
+);}
 
 /// Disputed amount. Usually the amount of the charge, but it can differ (usually because of currency fluctuation or because only part of the order is disputed).
 final int amount;
@@ -354,7 +354,7 @@ final String reason;
 /// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
 final DisputeStatus status;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'amount': amount,
   'balance_transactions': balanceTransactions.map((e) => e.toJson()).toList(),
   'charge': charge.toJson(),
@@ -372,8 +372,8 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodDetails != null) 'payment_method_details': paymentMethodDetails?.toJson(),
   'reason': reason,
   'status': status.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('balance_transactions') &&
       json.containsKey('charge') &&
       json.containsKey('created') && json['created'] is num &&
@@ -387,13 +387,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') && json['object'] == 'dispute' &&
       json.containsKey('reason') && json['reason'] is String &&
-      json.containsKey('status'); } 
+      json.containsKey('status');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (id.runes.length > 5000) { errors.add('id: length must be <= 5000'); }
 if (reason.runes.length > 5000) { errors.add('reason: length must be <= 5000'); }
-return errors; } 
-Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, ApplicationFeeCharge? charge, int? created, String? currency, List<EnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, Omittable<ChargePaymentIntent?>? paymentIntent, DisputePaymentMethodDetails? Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
+return errors;}
+Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, ApplicationFeeCharge? charge, int? created, String? currency, List<EnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, Omittable<ChargePaymentIntent?>? paymentIntent, DisputePaymentMethodDetails? Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) {return Dispute(
   amount: amount ?? this.amount,
   balanceTransactions: balanceTransactions ?? this.balanceTransactions,
   charge: charge ?? this.charge,
@@ -411,7 +411,7 @@ Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, Ap
   paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,
   reason: reason ?? this.reason,
   status: status ?? this.status,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Dispute &&
           amount == other.amount &&
@@ -436,4 +436,4 @@ Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, Ap
 
 @override String toString() => 'Dispute(\n  amount: $amount,\n  balanceTransactions: $balanceTransactions,\n  charge: $charge,\n  created: $created,\n  currency: $currency,\n  enhancedEligibilityTypes: $enhancedEligibilityTypes,\n  evidence: $evidence,\n  evidenceDetails: $evidenceDetails,\n  id: $id,\n  isChargeRefundable: $isChargeRefundable,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  paymentIntent: $paymentIntent,\n  paymentMethodDetails: $paymentMethodDetails,\n  reason: $reason,\n  status: $status,\n)';
 
- }
+}

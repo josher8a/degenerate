@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_deleted/webhook_project_card_deleted_project_card.dart';@immutable final class WebhookProjectCardDeleted {const WebhookProjectCardDeleted({required this.action, required this.projectCard, required this.sender, this.enterprise, this.installation, this.organization, this.repository = const Omittable.absent(), });
 
-factory WebhookProjectCardDeleted.fromJson(Map<String, dynamic> json) { return WebhookProjectCardDeleted(
+factory WebhookProjectCardDeleted.fromJson(Map<String, dynamic> json) {return WebhookProjectCardDeleted(
   action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -11,7 +11,7 @@ factory WebhookProjectCardDeleted.fromJson(Map<String, dynamic> json) { return W
   projectCard: WebhookProjectCardDeletedProjectCard.fromJson(json['project_card'] as Map<String, dynamic>),
   repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemDeletedAction action;
 
@@ -27,7 +27,7 @@ final Omittable<RepositoryWebhooks?> repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
@@ -35,11 +35,11 @@ Map<String, dynamic> toJson() { return {
   'project_card': projectCard.toJson(),
   if (repository.isPresent) 'repository': repository.value?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('project_card') &&
-      json.containsKey('sender'); } 
-WebhookProjectCardDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookProjectCardDeletedProjectCard? projectCard, Omittable<RepositoryWebhooks?>? repository, SimpleUser? sender, }) { return WebhookProjectCardDeleted(
+      json.containsKey('sender');}
+WebhookProjectCardDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookProjectCardDeletedProjectCard? projectCard, Omittable<RepositoryWebhooks?>? repository, SimpleUser? sender, }) {return WebhookProjectCardDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
@@ -47,7 +47,7 @@ WebhookProjectCardDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhook
   projectCard: projectCard ?? this.projectCard,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectCardDeleted &&
           action == other.action &&
@@ -62,4 +62,4 @@ WebhookProjectCardDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhook
 
 @override String toString() => 'WebhookProjectCardDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectCard: $projectCard, repository: $repository, sender: $sender)';
 
- }
+}

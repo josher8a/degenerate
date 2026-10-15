@@ -3,37 +3,37 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_synchronize/webhook_pull_request_synchronize_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';sealed class WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction();
 
-factory WebhookPullRequestSynchronizeAction.fromJson(String json) { return switch (json) {
+factory WebhookPullRequestSynchronizeAction.fromJson(String json) {return switch (json) {
   'synchronize' => synchronize,
   _ => WebhookPullRequestSynchronizeAction$Unknown(json),
-}; }
+};}
 
 static const WebhookPullRequestSynchronizeAction synchronize = WebhookPullRequestSynchronizeAction$synchronize._();
 
 static const List<WebhookPullRequestSynchronizeAction> values = [synchronize];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'synchronize' => 'synchronize',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebhookPullRequestSynchronizeAction$Unknown; } 
+bool get isUnknown {return this is WebhookPullRequestSynchronizeAction$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() synchronize, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() synchronize, required W Function(String value) $unknown, }) {return switch (this) {
       WebhookPullRequestSynchronizeAction$synchronize() => synchronize(),
       WebhookPullRequestSynchronizeAction$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? synchronize, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? synchronize, W Function(String value)? $unknown, }) {return switch (this) {
       WebhookPullRequestSynchronizeAction$synchronize() => synchronize != null ? synchronize() : orElse(value),
       WebhookPullRequestSynchronizeAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'WebhookPullRequestSynchronizeAction($value)';
 
- }
+}
 @immutable final class WebhookPullRequestSynchronizeAction$synchronize extends WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction$synchronize._();
 
 @override String get value => 'synchronize';
@@ -42,7 +42,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? synchron
 
 @override int get hashCode => 'synchronize'.hashCode;
 
- }
+}
 @immutable final class WebhookPullRequestSynchronizeAction$Unknown extends WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction$Unknown(this.value);
 
 @override final String value;
@@ -52,10 +52,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? synchron
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class WebhookPullRequestSynchronize {const WebhookPullRequestSynchronize({required this.action, required this.after, required this.before, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
-factory WebhookPullRequestSynchronize.fromJson(Map<String, dynamic> json) { return WebhookPullRequestSynchronize(
+factory WebhookPullRequestSynchronize.fromJson(Map<String, dynamic> json) {return WebhookPullRequestSynchronize(
   action: WebhookPullRequestSynchronizeAction.fromJson(json['action'] as String),
   after: json['after'] as String,
   before: json['before'] as String,
@@ -66,7 +66,7 @@ factory WebhookPullRequestSynchronize.fromJson(Map<String, dynamic> json) { retu
   pullRequest: WebhookPullRequestSynchronizePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final WebhookPullRequestSynchronizeAction action;
 
@@ -89,7 +89,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   'after': after,
   'before': before,
@@ -100,15 +100,15 @@ Map<String, dynamic> toJson() { return {
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('after') && json['after'] is String &&
       json.containsKey('before') && json['before'] is String &&
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
-      json.containsKey('sender'); } 
-WebhookPullRequestSynchronize copyWith({WebhookPullRequestSynchronizeAction? action, String? after, String? before, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestSynchronizePullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestSynchronize(
+      json.containsKey('sender');}
+WebhookPullRequestSynchronize copyWith({WebhookPullRequestSynchronizeAction? action, String? after, String? before, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestSynchronizePullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) {return WebhookPullRequestSynchronize(
   action: action ?? this.action,
   after: after ?? this.after,
   before: before ?? this.before,
@@ -119,7 +119,7 @@ WebhookPullRequestSynchronize copyWith({WebhookPullRequestSynchronizeAction? act
   pullRequest: pullRequest ?? this.pullRequest,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestSynchronize &&
           action == other.action &&
@@ -137,4 +137,4 @@ WebhookPullRequestSynchronize copyWith({WebhookPullRequestSynchronizeAction? act
 
 @override String toString() => 'WebhookPullRequestSynchronize(\n  action: $action,\n  after: $after,\n  before: $before,\n  enterprise: $enterprise,\n  installation: $installation,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  sender: $sender,\n)';
 
- }
+}

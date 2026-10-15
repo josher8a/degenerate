@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/nuget_metadata_value.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/value_variant4.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/id.dart';@immutable final class RegistryPackagePackageVersionNugetMetadata {const RegistryPackagePackageVersionNugetMetadata({this.id = const Omittable.absent(), this.name, this.value, });
 
-factory RegistryPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) { return RegistryPackagePackageVersionNugetMetadata(
+factory RegistryPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) {return RegistryPackagePackageVersionNugetMetadata(
   id: json.containsKey('id') ? Omittable(json['id'] != null ? OneOf3.parse(json['id'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, fromC: (v) => (v as num).toInt(), greedy: const {1},) : null) : const Omittable.absent(),
   name: json['name'] as String?,
   value: json['value'] != null ? OneOf4.parse(json['value'], fromA: (v) => v as bool, fromB: (v) => v as String, fromC: (v) => (v as num).toInt(), fromD: (v) => ValueVariant4.fromJson(v as Map<String, dynamic>),) : null,
-); }
+);}
 
 final Omittable<Id?> id;
 
@@ -15,17 +15,17 @@ final String? name;
 
 final NugetMetadataValue? value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (id.isPresent) 'id': id.value?.toJson(),
   'name': ?name,
   if (value != null) 'value': value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'value'}.contains(key)); } 
-RegistryPackagePackageVersionNugetMetadata copyWith({Omittable<Id?>? id, String? Function()? name, NugetMetadataValue? Function()? value, }) { return RegistryPackagePackageVersionNugetMetadata(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'id', 'name', 'value'}.contains(key));}
+RegistryPackagePackageVersionNugetMetadata copyWith({Omittable<Id?>? id, String? Function()? name, NugetMetadataValue? Function()? value, }) {return RegistryPackagePackageVersionNugetMetadata(
   id: id ?? this.id,
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RegistryPackagePackageVersionNugetMetadata &&
           id == other.id &&
@@ -36,4 +36,4 @@ RegistryPackagePackageVersionNugetMetadata copyWith({Omittable<Id?>? id, String?
 
 @override String toString() => 'RegistryPackagePackageVersionNugetMetadata(id: $id, name: $name, value: $value)';
 
- }
+}

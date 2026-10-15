@@ -22,7 +22,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// ```
 @immutable final class EmailSecurityCreateAllowPolicyResponseResult {const EmailSecurityCreateAllowPolicyResponseResult({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), this.isRecipient, this.isSender, this.isSpoof, });
 
-factory EmailSecurityCreateAllowPolicyResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateAllowPolicyResponseResult(
+factory EmailSecurityCreateAllowPolicyResponseResult.fromJson(Map<String, dynamic> json) {return EmailSecurityCreateAllowPolicyResponseResult(
   comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isAcceptableSender: json['is_acceptable_sender'] as bool,
   isExemptRecipient: json['is_exempt_recipient'] as bool,
@@ -37,7 +37,7 @@ factory EmailSecurityCreateAllowPolicyResponseResult.fromJson(Map<String, dynami
   createdAt: DateTime.parse(json['created_at'] as String),
   id: EmailSecurityAllowPolicyId.fromJson(json['id'] as num),
   lastModified: DateTime.parse(json['last_modified'] as String),
-); }
+);}
 
 final Omittable<String?> comments;
 
@@ -74,7 +74,7 @@ final EmailSecurityAllowPolicyId id;
 
 final DateTime lastModified;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (comments.isPresent) 'comments': comments.value,
   'is_acceptable_sender': isAcceptableSender,
   'is_exempt_recipient': isExemptRecipient,
@@ -89,8 +89,8 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),
   'last_modified': lastModified.toIso8601String(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&
       json.containsKey('is_exempt_recipient') && json['is_exempt_recipient'] is bool &&
       json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('is_trusted_sender') && json['is_trusted_sender'] is bool &&
@@ -99,17 +99,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_ac
       json.containsKey('verify_sender') && json['verify_sender'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') &&
-      json.containsKey('last_modified') && json['last_modified'] is String; } 
+      json.containsKey('last_modified') && json['last_modified'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final comments$ = comments.value;
 if (comments$ != null) {
   if (comments$.runes.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
 if (pattern.runes.length > 1024) { errors.add('pattern: length must be <= 1024'); }
-return errors; } 
-EmailSecurityCreateAllowPolicyResponseResult copyWith({Omittable<String?>? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) { return EmailSecurityCreateAllowPolicyResponseResult(
+return errors;}
+EmailSecurityCreateAllowPolicyResponseResult copyWith({Omittable<String?>? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) {return EmailSecurityCreateAllowPolicyResponseResult(
   comments: comments ?? this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,
@@ -124,7 +124,7 @@ EmailSecurityCreateAllowPolicyResponseResult copyWith({Omittable<String?>? comme
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateAllowPolicyResponseResult &&
           comments == other.comments &&
@@ -146,4 +146,4 @@ EmailSecurityCreateAllowPolicyResponseResult copyWith({Omittable<String?>? comme
 
 @override String toString() => 'EmailSecurityCreateAllowPolicyResponseResult(\n  comments: $comments,\n  isAcceptableSender: $isAcceptableSender,\n  isExemptRecipient: $isExemptRecipient,\n  isRecipient: $isRecipient,\n  isRegex: $isRegex,\n  isSender: $isSender,\n  isSpoof: $isSpoof,\n  isTrustedSender: $isTrustedSender,\n  pattern: $pattern,\n  patternType: $patternType,\n  verifySender: $verifySender,\n  createdAt: $createdAt,\n  id: $id,\n  lastModified: $lastModified,\n)';
 
- }
+}

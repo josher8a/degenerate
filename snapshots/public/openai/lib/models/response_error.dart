@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The error code f
 /// 
 sealed class ResponseErrorCode {const ResponseErrorCode();
 
-factory ResponseErrorCode.fromJson(String json) { return switch (json) {
+factory ResponseErrorCode.fromJson(String json) {return switch (json) {
   'server_error' => serverError,
   'rate_limit_exceeded' => rateLimitExceeded,
   'invalid_prompt' => invalidPrompt,
@@ -25,7 +25,7 @@ factory ResponseErrorCode.fromJson(String json) { return switch (json) {
   'failed_to_download_image' => failedToDownloadImage,
   'image_file_not_found' => imageFileNotFound,
   _ => ResponseErrorCode$Unknown(json),
-}; }
+};}
 
 static const ResponseErrorCode serverError = ResponseErrorCode$serverError._();
 
@@ -66,9 +66,9 @@ static const ResponseErrorCode imageFileNotFound = ResponseErrorCode$imageFileNo
 static const List<ResponseErrorCode> values = [serverError, rateLimitExceeded, invalidPrompt, vectorStoreTimeout, invalidImage, invalidImageFormat, invalidBase64Image, invalidImageUrl, imageTooLarge, imageTooSmall, imageParseError, imageContentPolicyViolation, invalidImageMode, imageFileTooLarge, unsupportedImageMediaType, emptyImageFile, failedToDownloadImage, imageFileNotFound];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'server_error' => 'serverError',
   'rate_limit_exceeded' => 'rateLimitExceeded',
   'invalid_prompt' => 'invalidPrompt',
@@ -88,11 +88,11 @@ String get name { return switch (value) {
   'failed_to_download_image' => 'failedToDownloadImage',
   'image_file_not_found' => 'imageFileNotFound',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseErrorCode$Unknown; } 
+bool get isUnknown {return this is ResponseErrorCode$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() serverError, required W Function() rateLimitExceeded, required W Function() invalidPrompt, required W Function() vectorStoreTimeout, required W Function() invalidImage, required W Function() invalidImageFormat, required W Function() invalidBase64Image, required W Function() invalidImageUrl, required W Function() imageTooLarge, required W Function() imageTooSmall, required W Function() imageParseError, required W Function() imageContentPolicyViolation, required W Function() invalidImageMode, required W Function() imageFileTooLarge, required W Function() unsupportedImageMediaType, required W Function() emptyImageFile, required W Function() failedToDownloadImage, required W Function() imageFileNotFound, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() serverError, required W Function() rateLimitExceeded, required W Function() invalidPrompt, required W Function() vectorStoreTimeout, required W Function() invalidImage, required W Function() invalidImageFormat, required W Function() invalidBase64Image, required W Function() invalidImageUrl, required W Function() imageTooLarge, required W Function() imageTooSmall, required W Function() imageParseError, required W Function() imageContentPolicyViolation, required W Function() invalidImageMode, required W Function() imageFileTooLarge, required W Function() unsupportedImageMediaType, required W Function() emptyImageFile, required W Function() failedToDownloadImage, required W Function() imageFileNotFound, required W Function(String value) $unknown, }) {return switch (this) {
       ResponseErrorCode$serverError() => serverError(),
       ResponseErrorCode$rateLimitExceeded() => rateLimitExceeded(),
       ResponseErrorCode$invalidPrompt() => invalidPrompt(),
@@ -112,9 +112,9 @@ W when<W>({required W Function() serverError, required W Function() rateLimitExc
       ResponseErrorCode$failedToDownloadImage() => failedToDownloadImage(),
       ResponseErrorCode$imageFileNotFound() => imageFileNotFound(),
       ResponseErrorCode$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? rateLimitExceeded, W Function()? invalidPrompt, W Function()? vectorStoreTimeout, W Function()? invalidImage, W Function()? invalidImageFormat, W Function()? invalidBase64Image, W Function()? invalidImageUrl, W Function()? imageTooLarge, W Function()? imageTooSmall, W Function()? imageParseError, W Function()? imageContentPolicyViolation, W Function()? invalidImageMode, W Function()? imageFileTooLarge, W Function()? unsupportedImageMediaType, W Function()? emptyImageFile, W Function()? failedToDownloadImage, W Function()? imageFileNotFound, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? rateLimitExceeded, W Function()? invalidPrompt, W Function()? vectorStoreTimeout, W Function()? invalidImage, W Function()? invalidImageFormat, W Function()? invalidBase64Image, W Function()? invalidImageUrl, W Function()? imageTooLarge, W Function()? imageTooSmall, W Function()? imageParseError, W Function()? imageContentPolicyViolation, W Function()? invalidImageMode, W Function()? imageFileTooLarge, W Function()? unsupportedImageMediaType, W Function()? emptyImageFile, W Function()? failedToDownloadImage, W Function()? imageFileNotFound, W Function(String value)? $unknown, }) {return switch (this) {
       ResponseErrorCode$serverError() => serverError != null ? serverError() : orElse(value),
       ResponseErrorCode$rateLimitExceeded() => rateLimitExceeded != null ? rateLimitExceeded() : orElse(value),
       ResponseErrorCode$invalidPrompt() => invalidPrompt != null ? invalidPrompt() : orElse(value),
@@ -134,10 +134,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
       ResponseErrorCode$failedToDownloadImage() => failedToDownloadImage != null ? failedToDownloadImage() : orElse(value),
       ResponseErrorCode$imageFileNotFound() => imageFileNotFound != null ? imageFileNotFound() : orElse(value),
       ResponseErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ResponseErrorCode($value)';
 
- }
+}
 @immutable final class ResponseErrorCode$serverError extends ResponseErrorCode {const ResponseErrorCode$serverError._();
 
 @override String get value => 'server_error';
@@ -146,7 +146,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'server_error'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$rateLimitExceeded extends ResponseErrorCode {const ResponseErrorCode$rateLimitExceeded._();
 
 @override String get value => 'rate_limit_exceeded';
@@ -155,7 +155,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'rate_limit_exceeded'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$invalidPrompt extends ResponseErrorCode {const ResponseErrorCode$invalidPrompt._();
 
 @override String get value => 'invalid_prompt';
@@ -164,7 +164,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'invalid_prompt'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$vectorStoreTimeout extends ResponseErrorCode {const ResponseErrorCode$vectorStoreTimeout._();
 
 @override String get value => 'vector_store_timeout';
@@ -173,7 +173,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'vector_store_timeout'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$invalidImage extends ResponseErrorCode {const ResponseErrorCode$invalidImage._();
 
 @override String get value => 'invalid_image';
@@ -182,7 +182,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'invalid_image'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$invalidImageFormat extends ResponseErrorCode {const ResponseErrorCode$invalidImageFormat._();
 
 @override String get value => 'invalid_image_format';
@@ -191,7 +191,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'invalid_image_format'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$invalidBase64Image extends ResponseErrorCode {const ResponseErrorCode$invalidBase64Image._();
 
 @override String get value => 'invalid_base64_image';
@@ -200,7 +200,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'invalid_base64_image'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$invalidImageUrl extends ResponseErrorCode {const ResponseErrorCode$invalidImageUrl._();
 
 @override String get value => 'invalid_image_url';
@@ -209,7 +209,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'invalid_image_url'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$imageTooLarge extends ResponseErrorCode {const ResponseErrorCode$imageTooLarge._();
 
 @override String get value => 'image_too_large';
@@ -218,7 +218,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'image_too_large'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$imageTooSmall extends ResponseErrorCode {const ResponseErrorCode$imageTooSmall._();
 
 @override String get value => 'image_too_small';
@@ -227,7 +227,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'image_too_small'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$imageParseError extends ResponseErrorCode {const ResponseErrorCode$imageParseError._();
 
 @override String get value => 'image_parse_error';
@@ -236,7 +236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'image_parse_error'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$imageContentPolicyViolation extends ResponseErrorCode {const ResponseErrorCode$imageContentPolicyViolation._();
 
 @override String get value => 'image_content_policy_violation';
@@ -245,7 +245,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'image_content_policy_violation'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$invalidImageMode extends ResponseErrorCode {const ResponseErrorCode$invalidImageMode._();
 
 @override String get value => 'invalid_image_mode';
@@ -254,7 +254,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'invalid_image_mode'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$imageFileTooLarge extends ResponseErrorCode {const ResponseErrorCode$imageFileTooLarge._();
 
 @override String get value => 'image_file_too_large';
@@ -263,7 +263,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'image_file_too_large'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$unsupportedImageMediaType extends ResponseErrorCode {const ResponseErrorCode$unsupportedImageMediaType._();
 
 @override String get value => 'unsupported_image_media_type';
@@ -272,7 +272,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'unsupported_image_media_type'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$emptyImageFile extends ResponseErrorCode {const ResponseErrorCode$emptyImageFile._();
 
 @override String get value => 'empty_image_file';
@@ -281,7 +281,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'empty_image_file'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$failedToDownloadImage extends ResponseErrorCode {const ResponseErrorCode$failedToDownloadImage._();
 
 @override String get value => 'failed_to_download_image';
@@ -290,7 +290,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'failed_to_download_image'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$imageFileNotFound extends ResponseErrorCode {const ResponseErrorCode$imageFileNotFound._();
 
 @override String get value => 'image_file_not_found';
@@ -299,7 +299,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => 'image_file_not_found'.hashCode;
 
- }
+}
 @immutable final class ResponseErrorCode$Unknown extends ResponseErrorCode {const ResponseErrorCode$Unknown(this.value);
 
 @override final String value;
@@ -309,15 +309,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverEr
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// An error object returned when the model fails to generate a Response.
 /// 
 @immutable final class ResponseError {const ResponseError({required this.code, required this.message, });
 
-factory ResponseError.fromJson(Map<String, dynamic> json) { return ResponseError(
+factory ResponseError.fromJson(Map<String, dynamic> json) {return ResponseError(
   code: ResponseErrorCode.fromJson(json['code'] as String),
   message: json['message'] as String,
-); }
+);}
 
 final ResponseErrorCode code;
 
@@ -325,16 +325,16 @@ final ResponseErrorCode code;
 /// 
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code.toJson(),
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
-      json.containsKey('message') && json['message'] is String; } 
-ResponseError copyWith({ResponseErrorCode? code, String? message, }) { return ResponseError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') &&
+      json.containsKey('message') && json['message'] is String;}
+ResponseError copyWith({ResponseErrorCode? code, String? message, }) {return ResponseError(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseError &&
           code == other.code &&
@@ -344,4 +344,4 @@ ResponseError copyWith({ResponseErrorCode? code, String? message, }) { return Re
 
 @override String toString() => 'ResponseError(code: $code, message: $message)';
 
- }
+}

@@ -4,25 +4,25 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';/// 
 @immutable final class CreditBalance {const CreditBalance({required this.availableBalance, required this.ledgerBalance, });
 
-factory CreditBalance.fromJson(Map<String, dynamic> json) { return CreditBalance(
+factory CreditBalance.fromJson(Map<String, dynamic> json) {return CreditBalance(
   availableBalance: BillingCreditGrantsResourceAmount.fromJson(json['available_balance'] as Map<String, dynamic>),
   ledgerBalance: BillingCreditGrantsResourceAmount.fromJson(json['ledger_balance'] as Map<String, dynamic>),
-); }
+);}
 
 final BillingCreditGrantsResourceAmount availableBalance;
 
 final BillingCreditGrantsResourceAmount ledgerBalance;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'available_balance': availableBalance.toJson(),
   'ledger_balance': ledgerBalance.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('available_balance') &&
-      json.containsKey('ledger_balance'); } 
-CreditBalance copyWith({BillingCreditGrantsResourceAmount? availableBalance, BillingCreditGrantsResourceAmount? ledgerBalance, }) { return CreditBalance(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('available_balance') &&
+      json.containsKey('ledger_balance');}
+CreditBalance copyWith({BillingCreditGrantsResourceAmount? availableBalance, BillingCreditGrantsResourceAmount? ledgerBalance, }) {return CreditBalance(
   availableBalance: availableBalance ?? this.availableBalance,
   ledgerBalance: ledgerBalance ?? this.ledgerBalance,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreditBalance &&
           availableBalance == other.availableBalance &&
@@ -32,4 +32,4 @@ CreditBalance copyWith({BillingCreditGrantsResourceAmount? availableBalance, Bil
 
 @override String toString() => 'CreditBalance(availableBalance: $availableBalance, ledgerBalance: $ledgerBalance)';
 
- }
+}

@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Object containing details of the error that occurred
 @immutable final class RealtimekitErrorResponseError {const RealtimekitErrorResponseError({required this.code, required this.message, });
 
-factory RealtimekitErrorResponseError.fromJson(Map<String, dynamic> json) { return RealtimekitErrorResponseError(
+factory RealtimekitErrorResponseError.fromJson(Map<String, dynamic> json) {return RealtimekitErrorResponseError(
   code: (json['code'] as num).toDouble(),
   message: json['message'] as String,
-); }
+);}
 
 /// Error code
 /// 
@@ -19,16 +19,16 @@ final double code;
 /// Example: `'Error: resource not found'`
 final String message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'message': message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
-      json.containsKey('message') && json['message'] is String; } 
-RealtimekitErrorResponseError copyWith({double? code, String? message, }) { return RealtimekitErrorResponseError(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String;}
+RealtimekitErrorResponseError copyWith({double? code, String? message, }) {return RealtimekitErrorResponseError(
   code: code ?? this.code,
   message: message ?? this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitErrorResponseError &&
           code == other.code &&
@@ -38,4 +38,4 @@ RealtimekitErrorResponseError copyWith({double? code, String? message, }) { retu
 
 @override String toString() => 'RealtimekitErrorResponseError(code: $code, message: $message)';
 
- }
+}

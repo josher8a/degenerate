@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldOldSchemaUploadLogEvent {const ShieldOldSchemaUploadLogEvent({required this.code, this.locations, this.message, });
 
-factory ShieldOldSchemaUploadLogEvent.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadLogEvent(
+factory ShieldOldSchemaUploadLogEvent.fromJson(Map<String, dynamic> json) {return ShieldOldSchemaUploadLogEvent(
   code: (json['code'] as num).toInt(),
   locations: (json['locations'] as List<dynamic>?)?.map((e) => e as String).toList(),
   message: json['message'] as String?,
-); }
+);}
 
 /// Code that identifies the event that occurred.
 /// 
@@ -22,17 +22,17 @@ final List<String>? locations;
 /// Example: `'unsupported media type: application/octet-stream'`
 final String? message;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'code': code,
   'locations': ?locations,
   'message': ?message,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num; } 
-ShieldOldSchemaUploadLogEvent copyWith({int? code, List<String>? Function()? locations, String? Function()? message, }) { return ShieldOldSchemaUploadLogEvent(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('code') && json['code'] is num;}
+ShieldOldSchemaUploadLogEvent copyWith({int? code, List<String>? Function()? locations, String? Function()? message, }) {return ShieldOldSchemaUploadLogEvent(
   code: code ?? this.code,
   locations: locations != null ? locations() : this.locations,
   message: message != null ? message() : this.message,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldSchemaUploadLogEvent &&
           code == other.code &&
@@ -43,4 +43,4 @@ ShieldOldSchemaUploadLogEvent copyWith({int? code, List<String>? Function()? loc
 
 @override String toString() => 'ShieldOldSchemaUploadLogEvent(code: $code, locations: $locations, message: $message)';
 
- }
+}

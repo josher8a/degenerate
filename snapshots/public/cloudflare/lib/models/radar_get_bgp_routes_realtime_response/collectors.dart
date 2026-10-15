@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Collectors {const Collectors({required this.collector, required this.latestRealtimeTs, required this.latestRibTs, required this.latestUpdatesTs, required this.peersCount, required this.peersV4Count, required this.peersV6Count, });
 
-factory Collectors.fromJson(Map<String, dynamic> json) { return Collectors(
+factory Collectors.fromJson(Map<String, dynamic> json) {return Collectors(
   collector: json['collector'] as String,
   latestRealtimeTs: json['latest_realtime_ts'] as String,
   latestRibTs: json['latest_rib_ts'] as String,
@@ -11,7 +11,7 @@ factory Collectors.fromJson(Map<String, dynamic> json) { return Collectors(
   peersCount: (json['peers_count'] as num).toInt(),
   peersV4Count: (json['peers_v4_count'] as num).toInt(),
   peersV6Count: (json['peers_v6_count'] as num).toInt(),
-); }
+);}
 
 /// Public route collector ID.
 final String collector;
@@ -34,7 +34,7 @@ final int peersV4Count;
 /// Total number of collector peers used from this collector for IPv6 prefixes.
 final int peersV6Count;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'collector': collector,
   'latest_realtime_ts': latestRealtimeTs,
   'latest_rib_ts': latestRibTs,
@@ -42,15 +42,15 @@ Map<String, dynamic> toJson() { return {
   'peers_count': peersCount,
   'peers_v4_count': peersV4Count,
   'peers_v6_count': peersV6Count,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('collector') && json['collector'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('collector') && json['collector'] is String &&
       json.containsKey('latest_realtime_ts') && json['latest_realtime_ts'] is String &&
       json.containsKey('latest_rib_ts') && json['latest_rib_ts'] is String &&
       json.containsKey('latest_updates_ts') && json['latest_updates_ts'] is String &&
       json.containsKey('peers_count') && json['peers_count'] is num &&
       json.containsKey('peers_v4_count') && json['peers_v4_count'] is num &&
-      json.containsKey('peers_v6_count') && json['peers_v6_count'] is num; } 
-Collectors copyWith({String? collector, String? latestRealtimeTs, String? latestRibTs, String? latestUpdatesTs, int? peersCount, int? peersV4Count, int? peersV6Count, }) { return Collectors(
+      json.containsKey('peers_v6_count') && json['peers_v6_count'] is num;}
+Collectors copyWith({String? collector, String? latestRealtimeTs, String? latestRibTs, String? latestUpdatesTs, int? peersCount, int? peersV4Count, int? peersV6Count, }) {return Collectors(
   collector: collector ?? this.collector,
   latestRealtimeTs: latestRealtimeTs ?? this.latestRealtimeTs,
   latestRibTs: latestRibTs ?? this.latestRibTs,
@@ -58,7 +58,7 @@ Collectors copyWith({String? collector, String? latestRealtimeTs, String? latest
   peersCount: peersCount ?? this.peersCount,
   peersV4Count: peersV4Count ?? this.peersV4Count,
   peersV6Count: peersV6Count ?? this.peersV6Count,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Collectors &&
           collector == other.collector &&
@@ -73,4 +73,4 @@ Collectors copyWith({String? collector, String? latestRealtimeTs, String? latest
 
 @override String toString() => 'Collectors(collector: $collector, latestRealtimeTs: $latestRealtimeTs, latestRibTs: $latestRibTs, latestUpdatesTs: $latestUpdatesTs, peersCount: $peersCount, peersV4Count: $peersV4Count, peersV6Count: $peersV6Count)';
 
- }
+}

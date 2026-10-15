@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ZonesReplaceInsecureJsRequest {const ZonesReplaceInsecureJsRequest({required this.id, required this.value, });
 
-factory ZonesReplaceInsecureJsRequest.fromJson(Map<String, dynamic> json) { return ZonesReplaceInsecureJsRequest(
+factory ZonesReplaceInsecureJsRequest.fromJson(Map<String, dynamic> json) {return ZonesReplaceInsecureJsRequest(
   id: json['id'],
   value: ZonesReplaceInsecureJsValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// ID of the zone setting.
 /// 
@@ -18,16 +18,16 @@ final dynamic id;
 /// Value of the zone setting.
 final ZonesReplaceInsecureJsValue value;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesReplaceInsecureJsRequest copyWith({dynamic Function()? id, ZonesReplaceInsecureJsValue? value, }) { return ZonesReplaceInsecureJsRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesReplaceInsecureJsRequest copyWith({dynamic Function()? id, ZonesReplaceInsecureJsValue? value, }) {return ZonesReplaceInsecureJsRequest(
   id: id != null ? id() : this.id,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesReplaceInsecureJsRequest &&
           id == other.id &&
@@ -37,4 +37,4 @@ ZonesReplaceInsecureJsRequest copyWith({dynamic Function()? id, ZonesReplaceInse
 
 @override String toString() => 'ZonesReplaceInsecureJsRequest(id: $id, value: $value)';
 
- }
+}

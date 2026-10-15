@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policy_response.dart';import 'package:pub_cloudflare/models/access_custom_deny_url.dart';import 'package:pub_cloudflare/models/access_custom_non_identity_deny_url.dart';import 'package:pub_cloudflare/models/access_schemas_aud.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_type.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// The policies that Access applies to the application.
 @immutable final class DeviceEnrollmentPermissionsApplication2 {const DeviceEnrollmentPermissionsApplication2({required this.type, this.aud, this.createdAt, this.id, this.updatedAt, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain = const Omittable.absent(), this.name = const Omittable.absent(), this.sessionDuration, this.policies, });
 
-factory DeviceEnrollmentPermissionsApplication2.fromJson(Map<String, dynamic> json) { return DeviceEnrollmentPermissionsApplication2(
+factory DeviceEnrollmentPermissionsApplication2.fromJson(Map<String, dynamic> json) {return DeviceEnrollmentPermissionsApplication2(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
@@ -19,7 +19,7 @@ factory DeviceEnrollmentPermissionsApplication2.fromJson(Map<String, dynamic> js
   sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: AccessType.fromJson(json['type'] as String),
   policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessAppPolicyResponse.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final AccessSchemasAud? aud;
 
@@ -52,7 +52,7 @@ final AccessType type;
 
 final List<AccessAppPolicyResponse>? policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (aud != null) 'aud': aud?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -67,9 +67,9 @@ Map<String, dynamic> toJson() { return {
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-DeviceEnrollmentPermissionsApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, List<AccessAppPolicyResponse>? Function()? policies, }) { return DeviceEnrollmentPermissionsApplication2(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+DeviceEnrollmentPermissionsApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, List<AccessAppPolicyResponse>? Function()? policies, }) {return DeviceEnrollmentPermissionsApplication2(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -84,7 +84,7 @@ DeviceEnrollmentPermissionsApplication2 copyWith({AccessSchemasAud? Function()? 
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
   policies: policies != null ? policies() : this.policies,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DeviceEnrollmentPermissionsApplication2 &&
           aud == other.aud &&
@@ -106,4 +106,4 @@ DeviceEnrollmentPermissionsApplication2 copyWith({AccessSchemasAud? Function()? 
 
 @override String toString() => 'DeviceEnrollmentPermissionsApplication2(\n  aud: $aud,\n  createdAt: $createdAt,\n  id: $id,\n  updatedAt: $updatedAt,\n  allowedIdps: $allowedIdps,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customDenyUrl: $customDenyUrl,\n  customNonIdentityDenyUrl: $customNonIdentityDenyUrl,\n  customPages: $customPages,\n  domain: $domain,\n  name: $name,\n  sessionDuration: $sessionDuration,\n  type: $type,\n  policies: $policies,\n)';
 
- }
+}

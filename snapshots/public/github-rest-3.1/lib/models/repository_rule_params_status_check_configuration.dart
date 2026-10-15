@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Required status check
 @immutable final class RepositoryRuleParamsStatusCheckConfiguration {const RepositoryRuleParamsStatusCheckConfiguration({required this.context, this.integrationId, });
 
-factory RepositoryRuleParamsStatusCheckConfiguration.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsStatusCheckConfiguration(
+factory RepositoryRuleParamsStatusCheckConfiguration.fromJson(Map<String, dynamic> json) {return RepositoryRuleParamsStatusCheckConfiguration(
   context: json['context'] as String,
   integrationId: json['integration_id'] != null ? (json['integration_id'] as num).toInt() : null,
-); }
+);}
 
 /// The status check context name that must be present on the commit.
 final String context;
@@ -15,15 +15,15 @@ final String context;
 /// The optional integration ID that this status check must originate from.
 final int? integrationId;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'context': context,
   'integration_id': ?integrationId,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('context') && json['context'] is String; } 
-RepositoryRuleParamsStatusCheckConfiguration copyWith({String? context, int? Function()? integrationId, }) { return RepositoryRuleParamsStatusCheckConfiguration(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('context') && json['context'] is String;}
+RepositoryRuleParamsStatusCheckConfiguration copyWith({String? context, int? Function()? integrationId, }) {return RepositoryRuleParamsStatusCheckConfiguration(
   context: context ?? this.context,
   integrationId: integrationId != null ? integrationId() : this.integrationId,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleParamsStatusCheckConfiguration &&
           context == other.context &&
@@ -33,4 +33,4 @@ RepositoryRuleParamsStatusCheckConfiguration copyWith({String? context, int? Fun
 
 @override String toString() => 'RepositoryRuleParamsStatusCheckConfiguration(context: $context, integrationId: $integrationId)';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';import 'package:pub_cloudflare/models/teams_devices_physical_device.dart';@immutable final class GetDeviceResponse {const GetDeviceResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory GetDeviceResponse.fromJson(Map<String, dynamic> json) { return GetDeviceResponse(
+factory GetDeviceResponse.fromJson(Map<String, dynamic> json) {return GetDeviceResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: TeamsDevicesPhysicalDevice.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<ResponseMessage> errors;
 
@@ -19,22 +19,22 @@ final TeamsDevicesPhysicalDevice result;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-GetDeviceResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, TeamsDevicesPhysicalDevice? result, bool? success, }) { return GetDeviceResponse(
+      json.containsKey('success') && json['success'] is bool;}
+GetDeviceResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, TeamsDevicesPhysicalDevice? result, bool? success, }) {return GetDeviceResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is GetDeviceResponse &&
           listEquals(errors, other.errors) &&
@@ -46,4 +46,4 @@ GetDeviceResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>
 
 @override String toString() => 'GetDeviceResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

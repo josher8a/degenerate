@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object.dart';import 'package:pub_speakeasy/models/deep_object/any.dart';import 'package:pub_speakeasy/models/enum.dart';import 'package:pub_speakeasy/models/simple_object.dart';sealed class StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType {const StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType();
 
-factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType.fromJson(String json) { return switch (json) {
+factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType.fromJson(String json) {return switch (json) {
   'simpleObjectWithNonStandardTypeName' => simpleObjectWithNonStandardTypeName,
   'deepObjectWithNonStandardTypeName' => deepObjectWithNonStandardTypeName,
   _ => StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$Unknown(json),
-}; }
+};}
 
 static const StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType simpleObjectWithNonStandardTypeName = StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$simpleObjectWithNonStandardTypeName._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$Unknown;
 
- }
+}
 @immutable final class StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$simpleObjectWithNonStandardTypeName extends StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType {const StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$simpleObjectWithNonStandardTypeName._();
 
 @override String get value => 'simpleObjectWithNonStandardTypeName';
@@ -31,7 +31,7 @@ bool get isUnknown => this is StronglyTypedOneOfObjectWithNonStandardDiscriminat
 
 @override String toString() => 'StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType(simpleObjectWithNonStandardTypeName)';
 
- }
+}
 @immutable final class StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$deepObjectWithNonStandardTypeName extends StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType {const StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$deepObjectWithNonStandardTypeName._();
 
 @override String get value => 'deepObjectWithNonStandardTypeName';
@@ -42,7 +42,7 @@ bool get isUnknown => this is StronglyTypedOneOfObjectWithNonStandardDiscriminat
 
 @override String toString() => 'StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType(deepObjectWithNonStandardTypeName)';
 
- }
+}
 @immutable final class StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$Unknown extends StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType {const StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is StronglyTypedOneOfObjectWithNonStandardDiscriminat
 
 @override String toString() => 'StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType($value)';
 
- }
+}
 sealed class StronglyTypedOneOfObjectWithNonStandardDiscriminatorName {const StronglyTypedOneOfObjectWithNonStandardDiscriminatorName();
 
 /// Deserialize from JSON, dispatching on the `obj.type` discriminator.
-factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorName.fromJson(Map<String, dynamic> json) { return switch (json['obj.type']) {
+factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorName.fromJson(Map<String, dynamic> json) {return switch (json['obj.type']) {
   'simpleObjectWithNonStandardTypeName' => StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName.fromJson(json),
   'deepObjectWithNonStandardTypeName' => StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName.fromJson(json),
   _ => StronglyTypedOneOfObjectWithNonStandardDiscriminatorName$Unknown(json),
-}; }
+};}
 
 /// Build the `simpleObjectWithNonStandardTypeName` variant.
-factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorName.simpleObjectWithNonStandardTypeName({required String str, required bool $bool, required int $int, required int int32, required double $num, required double float32, required Enum $enum, required String date, required DateTime dateTime, required dynamic any, required IntEnum intEnum, required Int32Enum int32Enum, String? strOpt, bool? boolOpt, int? intOptNull, double? numOptNull, int? bigint, String? bigintStr, double? decimal, String? decimalStr, Omittable<double?> decimalNullableOpt = const Omittable.absent(), String? int64Str, String? float64Str, }) { return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName(SimpleObject(str: str, $bool: $bool, $int: $int, int32: int32, $num: $num, float32: float32, $enum: $enum, date: date, dateTime: dateTime, any: any, strOpt: strOpt, boolOpt: boolOpt, intOptNull: intOptNull, numOptNull: numOptNull, intEnum: intEnum, int32Enum: int32Enum, bigint: bigint, bigintStr: bigintStr, decimal: decimal, decimalStr: decimalStr, decimalNullableOpt: decimalNullableOpt, int64Str: int64Str, float64Str: float64Str)); }
+factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorName.simpleObjectWithNonStandardTypeName({required String str, required bool $bool, required int $int, required int int32, required double $num, required double float32, required Enum $enum, required String date, required DateTime dateTime, required dynamic any, required IntEnum intEnum, required Int32Enum int32Enum, String? strOpt, bool? boolOpt, int? intOptNull, double? numOptNull, int? bigint, String? bigintStr, double? decimal, String? decimalStr, Omittable<double?> decimalNullableOpt = const Omittable.absent(), String? int64Str, String? float64Str, }) {return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName(SimpleObject(str: str, $bool: $bool, $int: $int, int32: int32, $num: $num, float32: float32, $enum: $enum, date: date, dateTime: dateTime, any: any, strOpt: strOpt, boolOpt: boolOpt, intOptNull: intOptNull, numOptNull: numOptNull, intEnum: intEnum, int32Enum: int32Enum, bigint: bigint, bigintStr: bigintStr, decimal: decimal, decimalStr: decimalStr, decimalNullableOpt: decimalNullableOpt, int64Str: int64Str, float64Str: float64Str));}
 
 /// Build the `deepObjectWithNonStandardTypeName` variant.
-factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorName.deepObjectWithNonStandardTypeName({required String str, required bool $bool, required int $int, required double $num, required SimpleObject obj, required Map<String,SimpleObject> map, required List<SimpleObject> arr, required Any any, String? type, }) { return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName(DeepObject(str: str, $bool: $bool, $int: $int, $num: $num, obj: obj, map: map, arr: arr, any: any, type: type)); }
+factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorName.deepObjectWithNonStandardTypeName({required String str, required bool $bool, required int $int, required double $num, required SimpleObject obj, required Map<String,SimpleObject> map, required List<SimpleObject> arr, required Any any, String? type, }) {return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName(DeepObject(str: str, $bool: $bool, $int: $int, $num: $num, obj: obj, map: map, arr: arr, any: any, type: type));}
 
 /// The discriminator value identifying this variant.
 StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameObjType get objType;
@@ -83,15 +83,15 @@ bool get $bool;
 int get $int;
 /// Shared by all variants of this union.
 double get $num;
-R when<R>({required R Function(StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName) simpleObjectWithNonStandardTypeName, required R Function(StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName) deepObjectWithNonStandardTypeName, required R Function(StronglyTypedOneOfObjectWithNonStandardDiscriminatorName$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName) simpleObjectWithNonStandardTypeName, required R Function(StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName) deepObjectWithNonStandardTypeName, required R Function(StronglyTypedOneOfObjectWithNonStandardDiscriminatorName$Unknown) unknown, }) {return switch (this) {
   final StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName v => simpleObjectWithNonStandardTypeName(v),
   final StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName v => deepObjectWithNonStandardTypeName(v),
   final StronglyTypedOneOfObjectWithNonStandardDiscriminatorName$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName extends StronglyTypedOneOfObjectWithNonStandardDiscriminatorName {const StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName(this.simpleObject);
 
-factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName.fromJson(Map<String, dynamic> json) { return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName(SimpleObject.fromJson(json)); }
+factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName.fromJson(Map<String, dynamic> json) {return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName(SimpleObject.fromJson(json));}
 
 final SimpleObject simpleObject;
 
@@ -99,7 +99,7 @@ final SimpleObject simpleObject;
 
 @override Map<String, dynamic> toJson() => {...simpleObject.toJson(), 'obj.type': objType.toJson()};
 
-StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName copyWith({String? str, bool? $bool, int? $int, int? int32, double? $num, double? float32, Enum? $enum, String? date, DateTime? dateTime, dynamic Function()? any, String? Function()? strOpt, bool? Function()? boolOpt, int? Function()? intOptNull, double? Function()? numOptNull, IntEnum? intEnum, Int32Enum? int32Enum, int? Function()? bigint, String? Function()? bigintStr, double? Function()? decimal, String? Function()? decimalStr, Omittable<double?>? decimalNullableOpt, String? Function()? int64Str, String? Function()? float64Str, }) { return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName(simpleObject.copyWith(
+StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName copyWith({String? str, bool? $bool, int? $int, int? int32, double? $num, double? float32, Enum? $enum, String? date, DateTime? dateTime, dynamic Function()? any, String? Function()? strOpt, bool? Function()? boolOpt, int? Function()? intOptNull, double? Function()? numOptNull, IntEnum? intEnum, Int32Enum? int32Enum, int? Function()? bigint, String? Function()? bigintStr, double? Function()? decimal, String? Function()? decimalStr, Omittable<double?>? decimalNullableOpt, String? Function()? int64Str, String? Function()? float64Str, }) {return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName(simpleObject.copyWith(
   str: str,
   $bool: $bool,
   $int: $int,
@@ -123,7 +123,7 @@ StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStand
   decimalNullableOpt: decimalNullableOpt,
   int64Str: int64Str,
   float64Str: float64Str,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStandardTypeName && simpleObject == other.simpleObject;
 
@@ -139,10 +139,10 @@ StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameSimpleObjectWithNonStand
 
 @override double get $num => simpleObject.$num;
 
- }
+}
 @immutable final class StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName extends StronglyTypedOneOfObjectWithNonStandardDiscriminatorName {const StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName(this.deepObject);
 
-factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName.fromJson(Map<String, dynamic> json) { return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName(DeepObject.fromJson(json)); }
+factory StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName.fromJson(Map<String, dynamic> json) {return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName(DeepObject.fromJson(json));}
 
 final DeepObject deepObject;
 
@@ -150,7 +150,7 @@ final DeepObject deepObject;
 
 @override Map<String, dynamic> toJson() => {...deepObject.toJson(), 'obj.type': objType.toJson()};
 
-StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName copyWith({String? str, bool? $bool, int? $int, double? $num, SimpleObject? obj, Map<String,SimpleObject>? map, List<SimpleObject>? arr, Any? any, String? Function()? type, }) { return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName(deepObject.copyWith(
+StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName copyWith({String? str, bool? $bool, int? $int, double? $num, SimpleObject? obj, Map<String,SimpleObject>? map, List<SimpleObject>? arr, Any? any, String? Function()? type, }) {return StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName(deepObject.copyWith(
   str: str,
   $bool: $bool,
   $int: $int,
@@ -160,7 +160,7 @@ StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandar
   arr: arr,
   any: any,
   type: type,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandardTypeName && deepObject == other.deepObject;
 
@@ -176,7 +176,7 @@ StronglyTypedOneOfObjectWithNonStandardDiscriminatorNameDeepObjectWithNonStandar
 
 @override double get $num => deepObject.$num;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class StronglyTypedOneOfObjectWithNonStandardDiscriminatorName$Unknown extends StronglyTypedOneOfObjectWithNonStandardDiscriminatorName {StronglyTypedOneOfObjectWithNonStandardDiscriminatorName$Unknown(this.json);
@@ -210,4 +210,4 @@ late final double _$num = (json['num'] as num).toDouble();
 
 @override double get $num => _$num;
 
- }
+}

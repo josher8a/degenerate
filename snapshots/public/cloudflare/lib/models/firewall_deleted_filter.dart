@@ -10,26 +10,26 @@ bool toJson() => value;
 }
 @immutable final class FirewallDeletedFilter {const FirewallDeletedFilter({required this.deleted, required this.id, });
 
-factory FirewallDeletedFilter.fromJson(Map<String, dynamic> json) { return FirewallDeletedFilter(
+factory FirewallDeletedFilter.fromJson(Map<String, dynamic> json) {return FirewallDeletedFilter(
   deleted: FirewallDeleted.fromJson(json['deleted'] as bool),
   id: FirewallFiltersComponentsSchemasId.fromJson(json['id'] as String),
-); }
+);}
 
 /// When true, indicates that the firewall rule was deleted.
 final FirewallDeleted deleted;
 
 final FirewallFiltersComponentsSchemasId id;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'deleted': deleted.toJson(),
   'id': id.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') &&
-      json.containsKey('id'); } 
-FirewallDeletedFilter copyWith({FirewallDeleted? deleted, FirewallFiltersComponentsSchemasId? id, }) { return FirewallDeletedFilter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('deleted') &&
+      json.containsKey('id');}
+FirewallDeletedFilter copyWith({FirewallDeleted? deleted, FirewallFiltersComponentsSchemasId? id, }) {return FirewallDeletedFilter(
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallDeletedFilter &&
           deleted == other.deleted &&
@@ -39,4 +39,4 @@ FirewallDeletedFilter copyWith({FirewallDeleted? deleted, FirewallFiltersCompone
 
 @override String toString() => 'FirewallDeletedFilter(deleted: $deleted, id: $id)';
 
- }
+}

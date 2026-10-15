@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ranking type.
 sealed class RadarGetRankingTopDomainsRankingType {const RadarGetRankingTopDomainsRankingType();
 
-factory RadarGetRankingTopDomainsRankingType.fromJson(String json) { return switch (json) {
+factory RadarGetRankingTopDomainsRankingType.fromJson(String json) {return switch (json) {
   'POPULAR' => popular,
   'TRENDING_RISE' => trendingRise,
   'TRENDING_STEADY' => trendingSteady,
   _ => RadarGetRankingTopDomainsRankingType$Unknown(json),
-}; }
+};}
 
 static const RadarGetRankingTopDomainsRankingType popular = RadarGetRankingTopDomainsRankingType$popular._();
 
@@ -20,33 +20,33 @@ static const RadarGetRankingTopDomainsRankingType trendingSteady = RadarGetRanki
 static const List<RadarGetRankingTopDomainsRankingType> values = [popular, trendingRise, trendingSteady];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'POPULAR' => 'popular',
   'TRENDING_RISE' => 'trendingRise',
   'TRENDING_STEADY' => 'trendingSteady',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RadarGetRankingTopDomainsRankingType$Unknown; } 
+bool get isUnknown {return this is RadarGetRankingTopDomainsRankingType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() popular, required W Function() trendingRise, required W Function() trendingSteady, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() popular, required W Function() trendingRise, required W Function() trendingSteady, required W Function(String value) $unknown, }) {return switch (this) {
       RadarGetRankingTopDomainsRankingType$popular() => popular(),
       RadarGetRankingTopDomainsRankingType$trendingRise() => trendingRise(),
       RadarGetRankingTopDomainsRankingType$trendingSteady() => trendingSteady(),
       RadarGetRankingTopDomainsRankingType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? popular, W Function()? trendingRise, W Function()? trendingSteady, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? popular, W Function()? trendingRise, W Function()? trendingSteady, W Function(String value)? $unknown, }) {return switch (this) {
       RadarGetRankingTopDomainsRankingType$popular() => popular != null ? popular() : orElse(value),
       RadarGetRankingTopDomainsRankingType$trendingRise() => trendingRise != null ? trendingRise() : orElse(value),
       RadarGetRankingTopDomainsRankingType$trendingSteady() => trendingSteady != null ? trendingSteady() : orElse(value),
       RadarGetRankingTopDomainsRankingType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'RadarGetRankingTopDomainsRankingType($value)';
 
- }
+}
 @immutable final class RadarGetRankingTopDomainsRankingType$popular extends RadarGetRankingTopDomainsRankingType {const RadarGetRankingTopDomainsRankingType$popular._();
 
 @override String get value => 'POPULAR';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? popular,
 
 @override int get hashCode => 'POPULAR'.hashCode;
 
- }
+}
 @immutable final class RadarGetRankingTopDomainsRankingType$trendingRise extends RadarGetRankingTopDomainsRankingType {const RadarGetRankingTopDomainsRankingType$trendingRise._();
 
 @override String get value => 'TRENDING_RISE';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? popular,
 
 @override int get hashCode => 'TRENDING_RISE'.hashCode;
 
- }
+}
 @immutable final class RadarGetRankingTopDomainsRankingType$trendingSteady extends RadarGetRankingTopDomainsRankingType {const RadarGetRankingTopDomainsRankingType$trendingSteady._();
 
 @override String get value => 'TRENDING_STEADY';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? popular,
 
 @override int get hashCode => 'TRENDING_STEADY'.hashCode;
 
- }
+}
 @immutable final class RadarGetRankingTopDomainsRankingType$Unknown extends RadarGetRankingTopDomainsRankingType {const RadarGetRankingTopDomainsRankingType$Unknown(this.value);
 
 @override final String value;
@@ -83,4 +83,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? popular,
 
 @override int get hashCode => value.hashCode;
 
- }
+}

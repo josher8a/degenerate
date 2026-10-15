@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_stats.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_stats_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/target_policies.dart';@immutable final class DigitalExperienceMonitoringHttpDetailsResponse {const DigitalExperienceMonitoringHttpDetailsResponse({this.host, this.httpStats = const Omittable.absent(), this.httpStatsByColo, this.interval, this.kind = const Omittable.absent(), this.method, this.name, this.targetPolicies = const Omittable.absent(), this.targeted, });
 
-factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringHttpDetailsResponse(
+factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dynamic> json) {return DigitalExperienceMonitoringHttpDetailsResponse(
   host: json['host'] as String?,
   httpStats: json.containsKey('httpStats') ? Omittable(json['httpStats'] != null ? HttpStats.fromJson(json['httpStats'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   httpStatsByColo: (json['httpStatsByColo'] as List<dynamic>?)?.map((e) => HttpStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
@@ -13,7 +13,7 @@ factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dyna
   name: json['name'] as String?,
   targetPolicies: json.containsKey('target_policies') ? Omittable((json['target_policies'] as List<dynamic>?)?.map((e) => TargetPolicies.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   targeted: json['targeted'] as bool?,
-); }
+);}
 
 /// The url of the HTTP synthetic application test
 /// 
@@ -45,7 +45,7 @@ final Omittable<List<TargetPolicies>?> targetPolicies;
 
 final bool? targeted;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'host': ?host,
   if (httpStats.isPresent) 'httpStats': httpStats.value?.toJson(),
   if (httpStatsByColo != null) 'httpStatsByColo': httpStatsByColo?.map((e) => e.toJson()).toList(),
@@ -55,9 +55,9 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (targetPolicies.isPresent) 'target_policies': targetPolicies.value?.map((e) => e.toJson()).toList(),
   'targeted': ?targeted,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'httpStats', 'httpStatsByColo', 'interval', 'kind', 'method', 'name', 'target_policies', 'targeted'}.contains(key)); } 
-DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? host, Omittable<HttpStats?>? httpStats, List<HttpStatsByColo>? Function()? httpStatsByColo, String? Function()? interval, Omittable<dynamic>? kind, String? Function()? method, String? Function()? name, Omittable<List<TargetPolicies>?>? targetPolicies, bool? Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'host', 'httpStats', 'httpStatsByColo', 'interval', 'kind', 'method', 'name', 'target_policies', 'targeted'}.contains(key));}
+DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? host, Omittable<HttpStats?>? httpStats, List<HttpStatsByColo>? Function()? httpStatsByColo, String? Function()? interval, Omittable<dynamic>? kind, String? Function()? method, String? Function()? name, Omittable<List<TargetPolicies>?>? targetPolicies, bool? Function()? targeted, }) {return DigitalExperienceMonitoringHttpDetailsResponse(
   host: host != null ? host() : this.host,
   httpStats: httpStats ?? this.httpStats,
   httpStatsByColo: httpStatsByColo != null ? httpStatsByColo() : this.httpStatsByColo,
@@ -67,7 +67,7 @@ DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? hos
   name: name != null ? name() : this.name,
   targetPolicies: targetPolicies ?? this.targetPolicies,
   targeted: targeted != null ? targeted() : this.targeted,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringHttpDetailsResponse &&
           host == other.host &&
@@ -85,4 +85,4 @@ DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? hos
 
 @override String toString() => 'DigitalExperienceMonitoringHttpDetailsResponse(\n  host: $host,\n  httpStats: $httpStats,\n  httpStatsByColo: $httpStatsByColo,\n  interval: $interval,\n  kind: $kind,\n  method: $method,\n  name: $name,\n  targetPolicies: $targetPolicies,\n  targeted: $targeted,\n)';
 
- }
+}

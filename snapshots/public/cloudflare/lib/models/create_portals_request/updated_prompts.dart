@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdatedPrompts {const UpdatedPrompts({required this.name, this.description, this.enabled, });
 
-factory UpdatedPrompts.fromJson(Map<String, dynamic> json) { return UpdatedPrompts(
+factory UpdatedPrompts.fromJson(Map<String, dynamic> json) {return UpdatedPrompts(
   description: json['description'] as String?,
   enabled: json['enabled'] as bool?,
   name: json['name'] as String,
-); }
+);}
 
 final String? description;
 
@@ -15,17 +15,17 @@ final bool? enabled;
 
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'description': ?description,
   'enabled': ?enabled,
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-UpdatedPrompts copyWith({String? Function()? description, bool? Function()? enabled, String? name, }) { return UpdatedPrompts(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('name') && json['name'] is String;}
+UpdatedPrompts copyWith({String? Function()? description, bool? Function()? enabled, String? name, }) {return UpdatedPrompts(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is UpdatedPrompts &&
           description == other.description &&
@@ -36,4 +36,4 @@ UpdatedPrompts copyWith({String? Function()? description, bool? Function()? enab
 
 @override String toString() => 'UpdatedPrompts(description: $description, enabled: $enabled, name: $name)';
 
- }
+}

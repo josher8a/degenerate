@@ -8,11 +8,11 @@ const PostCustomersCustomerSubscriptionsRequestTrialEnd({this.trialEndVariant1 =
 const PostCustomersCustomerSubscriptionsRequestTrialEnd._({required this.rawValue, required this.trialEndVariant1, required this.$int, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory PostCustomersCustomerSubscriptionsRequestTrialEnd.fromJson(Object? json) { return PostCustomersCustomerSubscriptionsRequestTrialEnd._(
+factory PostCustomersCustomerSubscriptionsRequestTrialEnd.fromJson(Object? json) {return PostCustomersCustomerSubscriptionsRequestTrialEnd._(
   rawValue: Omittable(json),
   trialEndVariant1: parseAnyOfVariant<TrialEndVariant1>(json, (value) => TrialEndVariant1.fromJson(value! as String)),
   $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'PostCustomersCustomerSubscriptionsRequestTrialEnd(${toJson()})';
 
- }
+}

@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnAzureSetup {const McnAzureSetup({required this.azureConsentUrl, required this.integrationIdentityTag, required this.itemType, required this.tagCliCommand, });
 
-factory McnAzureSetup.fromJson(Map<String, dynamic> json) { return McnAzureSetup(
+factory McnAzureSetup.fromJson(Map<String, dynamic> json) {return McnAzureSetup(
   azureConsentUrl: json['azure_consent_url'] as String,
   integrationIdentityTag: json['integration_identity_tag'] as String,
   itemType: json['item_type'] as String,
   tagCliCommand: json['tag_cli_command'] as String,
-); }
+);}
 
 final String azureConsentUrl;
 
@@ -18,22 +18,22 @@ final String itemType;
 
 final String tagCliCommand;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'azure_consent_url': azureConsentUrl,
   'integration_identity_tag': integrationIdentityTag,
   'item_type': itemType,
   'tag_cli_command': tagCliCommand,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('azure_consent_url') && json['azure_consent_url'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('azure_consent_url') && json['azure_consent_url'] is String &&
       json.containsKey('integration_identity_tag') && json['integration_identity_tag'] is String &&
       json.containsKey('item_type') && json['item_type'] is String &&
-      json.containsKey('tag_cli_command') && json['tag_cli_command'] is String; } 
-McnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag, String? itemType, String? tagCliCommand, }) { return McnAzureSetup(
+      json.containsKey('tag_cli_command') && json['tag_cli_command'] is String;}
+McnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag, String? itemType, String? tagCliCommand, }) {return McnAzureSetup(
   azureConsentUrl: azureConsentUrl ?? this.azureConsentUrl,
   integrationIdentityTag: integrationIdentityTag ?? this.integrationIdentityTag,
   itemType: itemType ?? this.itemType,
   tagCliCommand: tagCliCommand ?? this.tagCliCommand,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnAzureSetup &&
           azureConsentUrl == other.azureConsentUrl &&
@@ -45,4 +45,4 @@ McnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag,
 
 @override String toString() => 'McnAzureSetup(azureConsentUrl: $azureConsentUrl, integrationIdentityTag: $integrationIdentityTag, itemType: $itemType, tagCliCommand: $tagCliCommand)';
 
- }
+}

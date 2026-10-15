@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/simple_commit_status.dart';/// Combined Commit Status
 @immutable final class CombinedCommitStatus {const CombinedCommitStatus({required this.state, required this.statuses, required this.sha, required this.totalCount, required this.repository, required this.commitUrl, required this.url, });
 
-factory CombinedCommitStatus.fromJson(Map<String, dynamic> json) { return CombinedCommitStatus(
+factory CombinedCommitStatus.fromJson(Map<String, dynamic> json) {return CombinedCommitStatus(
   state: json['state'] as String,
   statuses: (json['statuses'] as List<dynamic>).map((e) => SimpleCommitStatus.fromJson(e as Map<String, dynamic>)).toList(),
   sha: json['sha'] as String,
@@ -12,7 +12,7 @@ factory CombinedCommitStatus.fromJson(Map<String, dynamic> json) { return Combin
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
   commitUrl: Uri.parse(json['commit_url'] as String),
   url: Uri.parse(json['url'] as String),
-); }
+);}
 
 final String state;
 
@@ -28,7 +28,7 @@ final Uri commitUrl;
 
 final Uri url;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'state': state,
   'statuses': statuses.map((e) => e.toJson()).toList(),
   'sha': sha,
@@ -36,15 +36,15 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'commit_url': commitUrl.toString(),
   'url': url.toString(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') && json['state'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('state') && json['state'] is String &&
       json.containsKey('statuses') &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('total_count') && json['total_count'] is num &&
       json.containsKey('repository') &&
       json.containsKey('commit_url') && json['commit_url'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
-CombinedCommitStatus copyWith({String? state, List<SimpleCommitStatus>? statuses, String? sha, int? totalCount, MinimalRepository? repository, Uri? commitUrl, Uri? url, }) { return CombinedCommitStatus(
+      json.containsKey('url') && json['url'] is String;}
+CombinedCommitStatus copyWith({String? state, List<SimpleCommitStatus>? statuses, String? sha, int? totalCount, MinimalRepository? repository, Uri? commitUrl, Uri? url, }) {return CombinedCommitStatus(
   state: state ?? this.state,
   statuses: statuses ?? this.statuses,
   sha: sha ?? this.sha,
@@ -52,7 +52,7 @@ CombinedCommitStatus copyWith({String? state, List<SimpleCommitStatus>? statuses
   repository: repository ?? this.repository,
   commitUrl: commitUrl ?? this.commitUrl,
   url: url ?? this.url,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CombinedCommitStatus &&
           state == other.state &&
@@ -67,4 +67,4 @@ CombinedCommitStatus copyWith({String? state, List<SimpleCommitStatus>? statuses
 
 @override String toString() => 'CombinedCommitStatus(state: $state, statuses: $statuses, sha: $sha, totalCount: $totalCount, repository: $repository, commitUrl: $commitUrl, url: $url)';
 
- }
+}

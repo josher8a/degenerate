@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ImageEditPartialImageEvent {const ImageEditPartialImageEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.partialImageIndex, });
 
-factory ImageEditPartialImageEvent.fromJson(Map<String, dynamic> json) { return ImageEditPartialImageEvent(
+factory ImageEditPartialImageEvent.fromJson(Map<String, dynamic> json) {return ImageEditPartialImageEvent(
   type: json['type'] as String,
   b64Json: json['b64_json'] as String,
   createdAt: (json['created_at'] as num).toInt(),
@@ -14,7 +14,7 @@ factory ImageEditPartialImageEvent.fromJson(Map<String, dynamic> json) { return 
   background: ImageEditCompletedEventBackground.fromJson(json['background'] as String),
   outputFormat: ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String),
   partialImageIndex: (json['partial_image_index'] as num).toInt(),
-); }
+);}
 
 /// The type of the event. Always `image_edit.partial_image`.
 /// 
@@ -48,7 +48,7 @@ final ImageEditCompletedEventOutputFormat outputFormat;
 /// 
 final int partialImageIndex;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type,
   'b64_json': b64Json,
   'created_at': createdAt,
@@ -57,16 +57,16 @@ Map<String, dynamic> toJson() { return {
   'background': background.toJson(),
   'output_format': outputFormat.toJson(),
   'partial_image_index': partialImageIndex,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] is String &&
       json.containsKey('b64_json') && json['b64_json'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('size') &&
       json.containsKey('quality') &&
       json.containsKey('background') &&
       json.containsKey('output_format') &&
-      json.containsKey('partial_image_index') && json['partial_image_index'] is num; } 
-ImageEditPartialImageEvent copyWith({String? type, String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageEditPartialImageEvent(
+      json.containsKey('partial_image_index') && json['partial_image_index'] is num;}
+ImageEditPartialImageEvent copyWith({String? type, String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, int? partialImageIndex, }) {return ImageEditPartialImageEvent(
   type: type ?? this.type,
   b64Json: b64Json ?? this.b64Json,
   createdAt: createdAt ?? this.createdAt,
@@ -75,7 +75,7 @@ ImageEditPartialImageEvent copyWith({String? type, String? b64Json, int? created
   background: background ?? this.background,
   outputFormat: outputFormat ?? this.outputFormat,
   partialImageIndex: partialImageIndex ?? this.partialImageIndex,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ImageEditPartialImageEvent &&
           type == other.type &&
@@ -91,4 +91,4 @@ ImageEditPartialImageEvent copyWith({String? type, String? b64Json, int? created
 
 @override String toString() => 'ImageEditPartialImageEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, partialImageIndex: $partialImageIndex)';
 
- }
+}

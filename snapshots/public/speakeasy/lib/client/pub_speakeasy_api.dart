@@ -82,11 +82,11 @@ late final CollisionApi collision = CollisionApi(_config);
 
 late final SkillsApi skills = SkillsApi(_config);
 
-PubSpeakeasyApi withBasicAuth({required String username, required String password, }) { return PubSpeakeasyApi(PubSpeakeasySecurity.applyBasicAuth(_config, username: username, password: password)); } 
-PubSpeakeasyApi withBasicHttp({required String username, required String password, }) { return PubSpeakeasyApi(PubSpeakeasySecurity.applyBasicHttp(_config, username: username, password: password)); } 
-PubSpeakeasyApi withApiKeyAuth(String value) { return PubSpeakeasyApi(PubSpeakeasySecurity.applyApiKeyAuth(_config, value)); } 
-PubSpeakeasyApi withBearerAuth(String token) { return PubSpeakeasyApi(PubSpeakeasySecurity.applyBearerAuth(_config, token)); } 
-PubSpeakeasyApi withApiKeyAuthNew(String value) { return PubSpeakeasyApi(PubSpeakeasySecurity.applyApiKeyAuthNew(_config, value)); } 
-PubSpeakeasyApi withPaginationAuth(String value) { return PubSpeakeasyApi(PubSpeakeasySecurity.applyPaginationAuth(_config, value)); } 
-PubSpeakeasyApi withAccessToken(String token) { return PubSpeakeasyApi(PubSpeakeasySecurity.applyAccessToken(_config, token)); } 
- }
+PubSpeakeasyApi withBasicAuth({required String username, required String password, }) {return PubSpeakeasyApi(PubSpeakeasySecurity.applyBasicAuth(_config, username: username, password: password));}
+PubSpeakeasyApi withBasicHttp({required String username, required String password, }) {return PubSpeakeasyApi(PubSpeakeasySecurity.applyBasicHttp(_config, username: username, password: password));}
+PubSpeakeasyApi withApiKeyAuth(String value) {return PubSpeakeasyApi(PubSpeakeasySecurity.applyApiKeyAuth(_config, value));}
+PubSpeakeasyApi withBearerAuth(String token) {return PubSpeakeasyApi(PubSpeakeasySecurity.applyBearerAuth(_config, token));}
+PubSpeakeasyApi withApiKeyAuthNew(String value) {return PubSpeakeasyApi(PubSpeakeasySecurity.applyApiKeyAuthNew(_config, value));}
+PubSpeakeasyApi withPaginationAuth(String value) {return PubSpeakeasyApi(PubSpeakeasySecurity.applyPaginationAuth(_config, value));}
+PubSpeakeasyApi withAccessToken(String token) {return PubSpeakeasyApi(PubSpeakeasySecurity.applyAccessToken(_config, token));}
+}

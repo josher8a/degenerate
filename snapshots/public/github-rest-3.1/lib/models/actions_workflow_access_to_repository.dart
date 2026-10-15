@@ -7,12 +7,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the leve
 /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
 sealed class AccessLevel {const AccessLevel();
 
-factory AccessLevel.fromJson(String json) { return switch (json) {
+factory AccessLevel.fromJson(String json) {return switch (json) {
   'none' => none,
   'user' => user,
   'organization' => organization,
   _ => AccessLevel$Unknown(json),
-}; }
+};}
 
 static const AccessLevel none = AccessLevel$none._();
 
@@ -23,33 +23,33 @@ static const AccessLevel organization = AccessLevel$organization._();
 static const List<AccessLevel> values = [none, user, organization];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'none' => 'none',
   'user' => 'user',
   'organization' => 'organization',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccessLevel$Unknown; } 
+bool get isUnknown {return this is AccessLevel$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() none, required W Function() user, required W Function() organization, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() none, required W Function() user, required W Function() organization, required W Function(String value) $unknown, }) {return switch (this) {
       AccessLevel$none() => none(),
       AccessLevel$user() => user(),
       AccessLevel$organization() => organization(),
       AccessLevel$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? user, W Function()? organization, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? user, W Function()? organization, W Function(String value)? $unknown, }) {return switch (this) {
       AccessLevel$none() => none != null ? none() : orElse(value),
       AccessLevel$user() => user != null ? user() : orElse(value),
       AccessLevel$organization() => organization != null ? organization() : orElse(value),
       AccessLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'AccessLevel($value)';
 
- }
+}
 @immutable final class AccessLevel$none extends AccessLevel {const AccessLevel$none._();
 
 @override String get value => 'none';
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'none'.hashCode;
 
- }
+}
 @immutable final class AccessLevel$user extends AccessLevel {const AccessLevel$user._();
 
 @override String get value => 'user';
@@ -67,7 +67,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'user'.hashCode;
 
- }
+}
 @immutable final class AccessLevel$organization extends AccessLevel {const AccessLevel$organization._();
 
 @override String get value => 'organization';
@@ -76,7 +76,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => 'organization'.hashCode;
 
- }
+}
 @immutable final class AccessLevel$Unknown extends AccessLevel {const AccessLevel$Unknown(this.value);
 
 @override final String value;
@@ -86,12 +86,12 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class ActionsWorkflowAccessToRepository {const ActionsWorkflowAccessToRepository({required this.accessLevel});
 
-factory ActionsWorkflowAccessToRepository.fromJson(Map<String, dynamic> json) { return ActionsWorkflowAccessToRepository(
+factory ActionsWorkflowAccessToRepository.fromJson(Map<String, dynamic> json) {return ActionsWorkflowAccessToRepository(
   accessLevel: AccessLevel.fromJson(json['access_level'] as String),
-); }
+);}
 
 /// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
 /// repository.
@@ -99,13 +99,13 @@ factory ActionsWorkflowAccessToRepository.fromJson(Map<String, dynamic> json) { 
 /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
 final AccessLevel accessLevel;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'access_level': accessLevel.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_level'); } 
-ActionsWorkflowAccessToRepository copyWith({AccessLevel? accessLevel}) { return ActionsWorkflowAccessToRepository(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('access_level');}
+ActionsWorkflowAccessToRepository copyWith({AccessLevel? accessLevel}) {return ActionsWorkflowAccessToRepository(
   accessLevel: accessLevel ?? this.accessLevel,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsWorkflowAccessToRepository &&
           accessLevel == other.accessLevel;
@@ -114,4 +114,4 @@ ActionsWorkflowAccessToRepository copyWith({AccessLevel? accessLevel}) { return 
 
 @override String toString() => 'ActionsWorkflowAccessToRepository(accessLevel: $accessLevel)';
 
- }
+}

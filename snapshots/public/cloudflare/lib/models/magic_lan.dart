@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_bond_id.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_lan_static_addressing.dart';import 'package:pub_cloudflare/models/magic_nat.dart';import 'package:pub_cloudflare/models/magic_port.dart';import 'package:pub_cloudflare/models/magic_routed_subnet.dart';import 'package:pub_cloudflare/models/magic_vlan_tag.dart';@immutable final class MagicLan {const MagicLan({this.bondId, this.haLink, this.id, this.isBreakout, this.isPrioritized, this.name, this.nat, this.physport, this.routedSubnets, this.siteId, this.staticAddressing, this.vlanTag, });
 
-factory MagicLan.fromJson(Map<String, dynamic> json) { return MagicLan(
+factory MagicLan.fromJson(Map<String, dynamic> json) {return MagicLan(
   bondId: json['bond_id'] != null ? MagicBondId.fromJson(json['bond_id'] as num) : null,
   haLink: json['ha_link'] as bool?,
   id: json['id'] != null ? MagicIdentifier.fromJson(json['id'] as String) : null,
@@ -16,7 +16,7 @@ factory MagicLan.fromJson(Map<String, dynamic> json) { return MagicLan(
   siteId: json['site_id'] != null ? MagicIdentifier.fromJson(json['site_id'] as String) : null,
   staticAddressing: json['static_addressing'] != null ? MagicLanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>) : null,
   vlanTag: json['vlan_tag'] != null ? MagicVlanTag.fromJson(json['vlan_tag'] as num) : null,
-); }
+);}
 
 final MagicBondId? bondId;
 
@@ -47,7 +47,7 @@ final MagicLanStaticAddressing? staticAddressing;
 
 final MagicVlanTag? vlanTag;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bondId != null) 'bond_id': bondId?.toJson(),
   'ha_link': ?haLink,
   if (id != null) 'id': id?.toJson(),
@@ -60,9 +60,9 @@ Map<String, dynamic> toJson() { return {
   if (siteId != null) 'site_id': siteId?.toJson(),
   if (staticAddressing != null) 'static_addressing': staticAddressing?.toJson(),
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bond_id', 'ha_link', 'id', 'is_breakout', 'is_prioritized', 'name', 'nat', 'physport', 'routed_subnets', 'site_id', 'static_addressing', 'vlan_tag'}.contains(key)); } 
-MagicLan copyWith({MagicBondId? Function()? bondId, bool? Function()? haLink, MagicIdentifier? Function()? id, bool? Function()? isBreakout, bool? Function()? isPrioritized, String? Function()? name, MagicNat? Function()? nat, MagicPort? Function()? physport, List<MagicRoutedSubnet>? Function()? routedSubnets, MagicIdentifier? Function()? siteId, MagicLanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) { return MagicLan(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bond_id', 'ha_link', 'id', 'is_breakout', 'is_prioritized', 'name', 'nat', 'physport', 'routed_subnets', 'site_id', 'static_addressing', 'vlan_tag'}.contains(key));}
+MagicLan copyWith({MagicBondId? Function()? bondId, bool? Function()? haLink, MagicIdentifier? Function()? id, bool? Function()? isBreakout, bool? Function()? isPrioritized, String? Function()? name, MagicNat? Function()? nat, MagicPort? Function()? physport, List<MagicRoutedSubnet>? Function()? routedSubnets, MagicIdentifier? Function()? siteId, MagicLanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) {return MagicLan(
   bondId: bondId != null ? bondId() : this.bondId,
   haLink: haLink != null ? haLink() : this.haLink,
   id: id != null ? id() : this.id,
@@ -75,7 +75,7 @@ MagicLan copyWith({MagicBondId? Function()? bondId, bool? Function()? haLink, Ma
   siteId: siteId != null ? siteId() : this.siteId,
   staticAddressing: staticAddressing != null ? staticAddressing() : this.staticAddressing,
   vlanTag: vlanTag != null ? vlanTag() : this.vlanTag,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is MagicLan &&
           bondId == other.bondId &&
@@ -95,4 +95,4 @@ MagicLan copyWith({MagicBondId? Function()? bondId, bool? Function()? haLink, Ma
 
 @override String toString() => 'MagicLan(\n  bondId: $bondId,\n  haLink: $haLink,\n  id: $id,\n  isBreakout: $isBreakout,\n  isPrioritized: $isPrioritized,\n  name: $name,\n  nat: $nat,\n  physport: $physport,\n  routedSubnets: $routedSubnets,\n  siteId: $siteId,\n  staticAddressing: $staticAddressing,\n  vlanTag: $vlanTag,\n)';
 
- }
+}

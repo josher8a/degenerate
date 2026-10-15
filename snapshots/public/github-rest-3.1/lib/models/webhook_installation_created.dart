@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookInstallationCreated {const WebhookInstallationCreated({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester = const Omittable.absent(), });
 
-factory WebhookInstallationCreated.fromJson(Map<String, dynamic> json) { return WebhookInstallationCreated(
+factory WebhookInstallationCreated.fromJson(Map<String, dynamic> json) {return WebhookInstallationCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
@@ -12,7 +12,7 @@ factory WebhookInstallationCreated.fromJson(Map<String, dynamic> json) { return 
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   requester: json.containsKey('requester') ? Omittable(json['requester'] != null ? WebhooksUser.fromJson(json['requester'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-); }
+);}
 
 final ItemCreatedAction action;
 
@@ -31,7 +31,7 @@ final Omittable<WebhooksUser?> requester;
 
 final SimpleUser sender;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'action': action.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'installation': installation.toJson(),
@@ -40,11 +40,11 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
   if (requester.isPresent) 'requester': requester.value?.toJson(),
   'sender': sender.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('action') &&
       json.containsKey('installation') &&
-      json.containsKey('sender'); } 
-WebhookInstallationCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositories2>? Function()? repositories, RepositoryWebhooks? Function()? repository, Omittable<WebhooksUser?>? requester, SimpleUser? sender, }) { return WebhookInstallationCreated(
+      json.containsKey('sender');}
+WebhookInstallationCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositories2>? Function()? repositories, RepositoryWebhooks? Function()? repository, Omittable<WebhooksUser?>? requester, SimpleUser? sender, }) {return WebhookInstallationCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,
@@ -53,7 +53,7 @@ WebhookInstallationCreated copyWith({ItemCreatedAction? action, EnterpriseWebhoo
   repository: repository != null ? repository() : this.repository,
   requester: requester ?? this.requester,
   sender: sender ?? this.sender,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationCreated &&
           action == other.action &&
@@ -69,4 +69,4 @@ WebhookInstallationCreated copyWith({ItemCreatedAction? action, EnterpriseWebhoo
 
 @override String toString() => 'WebhookInstallationCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)';
 
- }
+}

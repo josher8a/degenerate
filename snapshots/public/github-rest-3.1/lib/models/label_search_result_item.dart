@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';/// Label Search Result Item
 @immutable final class LabelSearchResultItem {const LabelSearchResultItem({required this.id, required this.nodeId, required this.url, required this.name, required this.color, required this.$default, required this.description, required this.score, this.textMatches, });
 
-factory LabelSearchResultItem.fromJson(Map<String, dynamic> json) { return LabelSearchResultItem(
+factory LabelSearchResultItem.fromJson(Map<String, dynamic> json) {return LabelSearchResultItem(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
@@ -14,7 +14,7 @@ factory LabelSearchResultItem.fromJson(Map<String, dynamic> json) { return Label
   description: json['description'] as String?,
   score: (json['score'] as num).toDouble(),
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
-); }
+);}
 
 final int id;
 
@@ -34,7 +34,7 @@ final double score;
 
 final List<SearchResultTextMatches2>? textMatches;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
@@ -44,16 +44,16 @@ Map<String, dynamic> toJson() { return {
   'description': description,
   'score': score,
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('color') && json['color'] is String &&
       json.containsKey('default') && json['default'] is bool &&
       json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
-      json.containsKey('score') && json['score'] is num; } 
-LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name, String? color, bool? $default, String? Function()? description, double? score, List<SearchResultTextMatches2>? Function()? textMatches, }) { return LabelSearchResultItem(
+      json.containsKey('score') && json['score'] is num;}
+LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name, String? color, bool? $default, String? Function()? description, double? score, List<SearchResultTextMatches2>? Function()? textMatches, }) {return LabelSearchResultItem(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -63,7 +63,7 @@ LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name,
   description: description != null ? description() : this.description,
   score: score ?? this.score,
   textMatches: textMatches != null ? textMatches() : this.textMatches,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is LabelSearchResultItem &&
           id == other.id &&
@@ -80,4 +80,4 @@ LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name,
 
 @override String toString() => 'LabelSearchResultItem(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  name: $name,\n  color: $color,\n  \$default: ${$default},\n  description: $description,\n  score: $score,\n  textMatches: $textMatches,\n)';
 
- }
+}

@@ -2,19 +2,19 @@
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure69.dart';sealed class AddAudioTrackError {const AddAudioTrackError();
 
-factory AddAudioTrackError.fromResponse(ApiResponse response) {     try {
+factory AddAudioTrackError.fromResponse(ApiResponse response) {    try {
       return switch (response.statusCode) {
         _ when response.statusCode >= 400 && response.statusCode <= 499 => AddAudioTrackError$4XX(ResponseCommonFailure69.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => AddAudioTrackError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return AddAudioTrackError$Unknown(response.statusCode, response.body);
-    } }
+    }}
 
 int get statusCode;
 Object? get typedError => null;
 
- }
+}
 final class AddAudioTrackError$4XX extends AddAudioTrackError {const AddAudioTrackError$4XX(this.error, this.statusCode, );
 
 final ResponseCommonFailure69 error;
@@ -23,14 +23,14 @@ final ResponseCommonFailure69 error;
 
 @override Object get typedError => error;
 
- }
+}
 final class AddAudioTrackError$Unknown extends AddAudioTrackError {const AddAudioTrackError$Unknown(this.statusCode, this.rawBody, );
 
 @override final int statusCode;
 
 final String? rawBody;
 
- }
+}
 typedef EditAudioTracksError = AddAudioTrackError;
 typedef ListAudioTracksError = AddAudioTrackError;
 typedef StreamDownloadsCreateTypeSpecificDownloadsError = AddAudioTrackError;

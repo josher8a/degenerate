@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// A filter object 
 /// 
 @immutable final class McpToolFilter {const McpToolFilter({this.toolNames, this.readOnly, });
 
-factory McpToolFilter.fromJson(Map<String, dynamic> json) { return McpToolFilter(
+factory McpToolFilter.fromJson(Map<String, dynamic> json) {return McpToolFilter(
   toolNames: (json['tool_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readOnly: json['read_only'] as bool?,
-); }
+);}
 
 /// List of allowed tool names.
 final List<String>? toolNames;
@@ -19,15 +19,15 @@ final List<String>? toolNames;
 /// 
 final bool? readOnly;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'tool_names': ?toolNames,
   'read_only': ?readOnly,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tool_names', 'read_only'}.contains(key)); } 
-McpToolFilter copyWith({List<String>? Function()? toolNames, bool? Function()? readOnly, }) { return McpToolFilter(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tool_names', 'read_only'}.contains(key));}
+McpToolFilter copyWith({List<String>? Function()? toolNames, bool? Function()? readOnly, }) {return McpToolFilter(
   toolNames: toolNames != null ? toolNames() : this.toolNames,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McpToolFilter &&
           listEquals(toolNames, other.toolNames) &&
@@ -37,4 +37,4 @@ McpToolFilter copyWith({List<String>? Function()? toolNames, bool? Function()? r
 
 @override String toString() => 'McpToolFilter(toolNames: $toolNames, readOnly: $readOnly)';
 
- }
+}

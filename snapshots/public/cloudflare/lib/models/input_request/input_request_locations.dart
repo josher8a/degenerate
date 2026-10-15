@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum();
 
-factory TeamsDevicesTrustStoresEnum.fromJson(String json) { return switch (json) {
+factory TeamsDevicesTrustStoresEnum.fromJson(String json) {return switch (json) {
   'system' => system,
   'user' => user,
   _ => TeamsDevicesTrustStoresEnum$Unknown(json),
-}; }
+};}
 
 static const TeamsDevicesTrustStoresEnum system = TeamsDevicesTrustStoresEnum$system._();
 
@@ -16,30 +16,30 @@ static const TeamsDevicesTrustStoresEnum user = TeamsDevicesTrustStoresEnum$user
 static const List<TeamsDevicesTrustStoresEnum> values = [system, user];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'system' => 'system',
   'user' => 'user',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is TeamsDevicesTrustStoresEnum$Unknown; } 
+bool get isUnknown {return this is TeamsDevicesTrustStoresEnum$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() system, required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() system, required W Function() user, required W Function(String value) $unknown, }) {return switch (this) {
       TeamsDevicesTrustStoresEnum$system() => system(),
       TeamsDevicesTrustStoresEnum$user() => user(),
       TeamsDevicesTrustStoresEnum$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, W Function()? user, W Function(String value)? $unknown, }) {return switch (this) {
       TeamsDevicesTrustStoresEnum$system() => system != null ? system() : orElse(value),
       TeamsDevicesTrustStoresEnum$user() => user != null ? user() : orElse(value),
       TeamsDevicesTrustStoresEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'TeamsDevicesTrustStoresEnum($value)';
 
- }
+}
 @immutable final class TeamsDevicesTrustStoresEnum$system extends TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum$system._();
 
 @override String get value => 'system';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, 
 
 @override int get hashCode => 'system'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesTrustStoresEnum$user extends TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum$user._();
 
 @override String get value => 'user';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, 
 
 @override int get hashCode => 'user'.hashCode;
 
- }
+}
 @immutable final class TeamsDevicesTrustStoresEnum$Unknown extends TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum$Unknown(this.value);
 
 @override final String value;
@@ -67,27 +67,27 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class InputRequestLocations {const InputRequestLocations({this.paths, this.trustStores, });
 
-factory InputRequestLocations.fromJson(Map<String, dynamic> json) { return InputRequestLocations(
+factory InputRequestLocations.fromJson(Map<String, dynamic> json) {return InputRequestLocations(
   paths: (json['paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
   trustStores: (json['trust_stores'] as List<dynamic>?)?.map((e) => TeamsDevicesTrustStoresEnum.fromJson(e as String)).toList(),
-); }
+);}
 
 final List<String>? paths;
 
 final List<TeamsDevicesTrustStoresEnum>? trustStores;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'paths': ?paths,
   if (trustStores != null) 'trust_stores': trustStores?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'paths', 'trust_stores'}.contains(key)); } 
-InputRequestLocations copyWith({List<String>? Function()? paths, List<TeamsDevicesTrustStoresEnum>? Function()? trustStores, }) { return InputRequestLocations(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'paths', 'trust_stores'}.contains(key));}
+InputRequestLocations copyWith({List<String>? Function()? paths, List<TeamsDevicesTrustStoresEnum>? Function()? trustStores, }) {return InputRequestLocations(
   paths: paths != null ? paths() : this.paths,
   trustStores: trustStores != null ? trustStores() : this.trustStores,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is InputRequestLocations &&
           listEquals(paths, other.paths) &&
@@ -97,4 +97,4 @@ InputRequestLocations copyWith({List<String>? Function()? paths, List<TeamsDevic
 
 @override String toString() => 'InputRequestLocations(paths: $paths, trustStores: $trustStores)';
 
- }
+}

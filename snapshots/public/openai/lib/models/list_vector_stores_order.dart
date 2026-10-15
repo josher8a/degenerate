@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListVectorStoresOrder {const ListVectorStoresOrder();
 
-factory ListVectorStoresOrder.fromJson(String json) { return switch (json) {
+factory ListVectorStoresOrder.fromJson(String json) {return switch (json) {
   'asc' => asc,
   'desc' => desc,
   _ => ListVectorStoresOrder$Unknown(json),
-}; }
+};}
 
 static const ListVectorStoresOrder asc = ListVectorStoresOrder$asc._();
 
@@ -16,30 +16,30 @@ static const ListVectorStoresOrder desc = ListVectorStoresOrder$desc._();
 static const List<ListVectorStoresOrder> values = [asc, desc];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'asc' => 'asc',
   'desc' => 'desc',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ListVectorStoresOrder$Unknown; } 
+bool get isUnknown {return this is ListVectorStoresOrder$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) {return switch (this) {
       ListVectorStoresOrder$asc() => asc(),
       ListVectorStoresOrder$desc() => desc(),
       ListVectorStoresOrder$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) {return switch (this) {
       ListVectorStoresOrder$asc() => asc != null ? asc() : orElse(value),
       ListVectorStoresOrder$desc() => desc != null ? desc() : orElse(value),
       ListVectorStoresOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ListVectorStoresOrder($value)';
 
- }
+}
 @immutable final class ListVectorStoresOrder$asc extends ListVectorStoresOrder {const ListVectorStoresOrder$asc._();
 
 @override String get value => 'asc';
@@ -48,7 +48,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'asc'.hashCode;
 
- }
+}
 @immutable final class ListVectorStoresOrder$desc extends ListVectorStoresOrder {const ListVectorStoresOrder$desc._();
 
 @override String get value => 'desc';
@@ -57,7 +57,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => 'desc'.hashCode;
 
- }
+}
 @immutable final class ListVectorStoresOrder$Unknown extends ListVectorStoresOrder {const ListVectorStoresOrder$Unknown(this.value);
 
 @override final String value;
@@ -67,4 +67,4 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}

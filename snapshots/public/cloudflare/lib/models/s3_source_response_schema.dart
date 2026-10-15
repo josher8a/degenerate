@@ -3,13 +3,13 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_source_schema/r2_slurper_s3_source_schema_vendor.dart';@immutable final class S3SourceResponseSchema {const S3SourceResponseSchema({this.bucket, this.endpoint = const Omittable.absent(), this.keys = const Omittable.absent(), this.pathPrefix = const Omittable.absent(), this.vendor, });
 
-factory S3SourceResponseSchema.fromJson(Map<String, dynamic> json) { return S3SourceResponseSchema(
+factory S3SourceResponseSchema.fromJson(Map<String, dynamic> json) {return S3SourceResponseSchema(
   bucket: json['bucket'] as String?,
   endpoint: json.containsKey('endpoint') ? Omittable(json['endpoint'] as String?) : const Omittable.absent(),
   keys: json.containsKey('keys') ? Omittable((json['keys'] as List<dynamic>?)?.map((e) => e as String).toList()) : const Omittable.absent(),
   pathPrefix: json.containsKey('pathPrefix') ? Omittable(json['pathPrefix'] as String?) : const Omittable.absent(),
   vendor: json['vendor'] != null ? R2SlurperS3SourceSchemaVendor.fromJson(json['vendor'] as String) : null,
-); }
+);}
 
 final String? bucket;
 
@@ -21,21 +21,21 @@ final Omittable<String?> pathPrefix;
 
 final R2SlurperS3SourceSchemaVendor? vendor;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'bucket': ?bucket,
   if (endpoint.isPresent) 'endpoint': endpoint.value,
   if (keys.isPresent) 'keys': keys.value,
   if (pathPrefix.isPresent) 'pathPrefix': pathPrefix.value,
   if (vendor != null) 'vendor': vendor?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'endpoint', 'keys', 'pathPrefix', 'vendor'}.contains(key)); } 
-S3SourceResponseSchema copyWith({String? Function()? bucket, Omittable<String?>? endpoint, Omittable<List<String>?>? keys, Omittable<String?>? pathPrefix, R2SlurperS3SourceSchemaVendor? Function()? vendor, }) { return S3SourceResponseSchema(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bucket', 'endpoint', 'keys', 'pathPrefix', 'vendor'}.contains(key));}
+S3SourceResponseSchema copyWith({String? Function()? bucket, Omittable<String?>? endpoint, Omittable<List<String>?>? keys, Omittable<String?>? pathPrefix, R2SlurperS3SourceSchemaVendor? Function()? vendor, }) {return S3SourceResponseSchema(
   bucket: bucket != null ? bucket() : this.bucket,
   endpoint: endpoint ?? this.endpoint,
   keys: keys ?? this.keys,
   pathPrefix: pathPrefix ?? this.pathPrefix,
   vendor: vendor != null ? vendor() : this.vendor,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is S3SourceResponseSchema &&
           bucket == other.bucket &&
@@ -49,4 +49,4 @@ S3SourceResponseSchema copyWith({String? Function()? bucket, Omittable<String?>?
 
 @override String toString() => 'S3SourceResponseSchema(bucket: $bucket, endpoint: $endpoint, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)';
 
- }
+}

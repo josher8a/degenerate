@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_reference.dart';/// Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
 @immutable final class RbdPersistentVolumeSource {const RbdPersistentVolumeSource({required this.image, required this.monitors, this.fsType, this.keyring, this.pool, this.readOnly, this.secretRef, this.user, });
 
-factory RbdPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return RbdPersistentVolumeSource(
+factory RbdPersistentVolumeSource.fromJson(Map<String, dynamic> json) {return RbdPersistentVolumeSource(
   fsType: json['fsType'] as String?,
   image: json['image'] as String,
   keyring: json['keyring'] as String?,
@@ -13,7 +13,7 @@ factory RbdPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return R
   readOnly: json['readOnly'] as bool?,
   secretRef: json['secretRef'] != null ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
   user: json['user'] as String?,
-); }
+);}
 
 /// fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#rbd
 final String? fsType;
@@ -48,7 +48,7 @@ String get poolOrDefault => pool ?? 'rbd';
 /// The value of `user`, or its schema default when absent.
 String get userOrDefault => user ?? 'admin';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'fsType': ?fsType,
   'image': image,
   'keyring': ?keyring,
@@ -57,10 +57,10 @@ Map<String, dynamic> toJson() { return {
   'readOnly': ?readOnly,
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
   'user': ?user,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
-      json.containsKey('monitors'); } 
-RbdPersistentVolumeSource copyWith({String? Function()? fsType, String? image, String? Function()? keyring, List<String>? monitors, String? Function()? pool, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? Function()? user, }) { return RbdPersistentVolumeSource(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('image') && json['image'] is String &&
+      json.containsKey('monitors');}
+RbdPersistentVolumeSource copyWith({String? Function()? fsType, String? image, String? Function()? keyring, List<String>? monitors, String? Function()? pool, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? Function()? user, }) {return RbdPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   image: image ?? this.image,
   keyring: keyring != null ? keyring() : this.keyring,
@@ -69,7 +69,7 @@ RbdPersistentVolumeSource copyWith({String? Function()? fsType, String? image, S
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   user: user != null ? user() : this.user,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RbdPersistentVolumeSource &&
           fsType == other.fsType &&
@@ -85,4 +85,4 @@ RbdPersistentVolumeSource copyWith({String? Function()? fsType, String? image, S
 
 @override String toString() => 'RbdPersistentVolumeSource(fsType: $fsType, image: $image, keyring: $keyring, monitors: $monitors, pool: $pool, readOnly: $readOnly, secretRef: $secretRef, user: $user)';
 
- }
+}

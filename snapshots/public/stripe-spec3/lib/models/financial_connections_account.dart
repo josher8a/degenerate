@@ -4,13 +4,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_account_number_details.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_ownership_refresh.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_transaction_refresh.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/ownership.dart';/// The type of the account. Account category is further divided in `subcategory`.
 sealed class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory();
 
-factory FinancialConnectionsAccountCategory.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountCategory.fromJson(String json) {return switch (json) {
   'cash' => cash,
   'credit' => credit,
   'investment' => investment,
   'other' => $other,
   _ => FinancialConnectionsAccountCategory$Unknown(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountCategory cash = FinancialConnectionsAccountCategory$cash._();
 
@@ -23,36 +23,36 @@ static const FinancialConnectionsAccountCategory $other = FinancialConnectionsAc
 static const List<FinancialConnectionsAccountCategory> values = [cash, credit, investment, $other];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'cash' => 'cash',
   'credit' => 'credit',
   'investment' => 'investment',
   'other' => r'$other',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinancialConnectionsAccountCategory$Unknown; } 
+bool get isUnknown {return this is FinancialConnectionsAccountCategory$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() cash, required W Function() credit, required W Function() investment, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() cash, required W Function() credit, required W Function() investment, required W Function() $other, required W Function(String value) $unknown, }) {return switch (this) {
       FinancialConnectionsAccountCategory$cash() => cash(),
       FinancialConnectionsAccountCategory$credit() => credit(),
       FinancialConnectionsAccountCategory$investment() => investment(),
       FinancialConnectionsAccountCategory$$other() => $other(),
       FinancialConnectionsAccountCategory$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? cash, W Function()? credit, W Function()? investment, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cash, W Function()? credit, W Function()? investment, W Function()? $other, W Function(String value)? $unknown, }) {return switch (this) {
       FinancialConnectionsAccountCategory$cash() => cash != null ? cash() : orElse(value),
       FinancialConnectionsAccountCategory$credit() => credit != null ? credit() : orElse(value),
       FinancialConnectionsAccountCategory$investment() => investment != null ? investment() : orElse(value),
       FinancialConnectionsAccountCategory$$other() => $other != null ? $other() : orElse(value),
       FinancialConnectionsAccountCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinancialConnectionsAccountCategory($value)';
 
- }
+}
 @immutable final class FinancialConnectionsAccountCategory$cash extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$cash._();
 
 @override String get value => 'cash';
@@ -61,7 +61,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cash, W 
 
 @override int get hashCode => 'cash'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountCategory$credit extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$credit._();
 
 @override String get value => 'credit';
@@ -70,7 +70,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cash, W 
 
 @override int get hashCode => 'credit'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountCategory$investment extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$investment._();
 
 @override String get value => 'investment';
@@ -79,7 +79,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cash, W 
 
 @override int get hashCode => 'investment'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountCategory$$other extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$$other._();
 
 @override String get value => 'other';
@@ -88,7 +88,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cash, W 
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountCategory$Unknown extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$Unknown(this.value);
 
 @override final String value;
@@ -98,41 +98,41 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? cash, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// String representing the object's type. Objects of the same type share the same value.
 sealed class FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject();
 
-factory FinancialConnectionsAccountObject.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountObject.fromJson(String json) {return switch (json) {
   'financial_connections.account' => financialConnectionsAccount,
   _ => FinancialConnectionsAccountObject$Unknown(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountObject financialConnectionsAccount = FinancialConnectionsAccountObject$financialConnectionsAccount._();
 
 static const List<FinancialConnectionsAccountObject> values = [financialConnectionsAccount];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'financial_connections.account' => 'financialConnectionsAccount',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinancialConnectionsAccountObject$Unknown; } 
+bool get isUnknown {return this is FinancialConnectionsAccountObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() financialConnectionsAccount, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() financialConnectionsAccount, required W Function(String value) $unknown, }) {return switch (this) {
       FinancialConnectionsAccountObject$financialConnectionsAccount() => financialConnectionsAccount(),
       FinancialConnectionsAccountObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialConnectionsAccount, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialConnectionsAccount, W Function(String value)? $unknown, }) {return switch (this) {
       FinancialConnectionsAccountObject$financialConnectionsAccount() => financialConnectionsAccount != null ? financialConnectionsAccount() : orElse(value),
       FinancialConnectionsAccountObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinancialConnectionsAccountObject($value)';
 
- }
+}
 @immutable final class FinancialConnectionsAccountObject$financialConnectionsAccount extends FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject$financialConnectionsAccount._();
 
 @override String get value => 'financial_connections.account';
@@ -141,7 +141,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? financia
 
 @override int get hashCode => 'financial_connections.account'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountObject$Unknown extends FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject$Unknown(this.value);
 
 @override final String value;
@@ -151,16 +151,16 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? financia
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The status of the link to the account.
 sealed class FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus();
 
-factory FinancialConnectionsAccountStatus.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountStatus.fromJson(String json) {return switch (json) {
   'active' => active,
   'disconnected' => disconnected,
   'inactive' => inactive,
   _ => FinancialConnectionsAccountStatus$Unknown(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountStatus active = FinancialConnectionsAccountStatus$active._();
 
@@ -171,33 +171,33 @@ static const FinancialConnectionsAccountStatus inactive = FinancialConnectionsAc
 static const List<FinancialConnectionsAccountStatus> values = [active, disconnected, inactive];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'active' => 'active',
   'disconnected' => 'disconnected',
   'inactive' => 'inactive',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinancialConnectionsAccountStatus$Unknown; } 
+bool get isUnknown {return this is FinancialConnectionsAccountStatus$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() active, required W Function() disconnected, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() active, required W Function() disconnected, required W Function() inactive, required W Function(String value) $unknown, }) {return switch (this) {
       FinancialConnectionsAccountStatus$active() => active(),
       FinancialConnectionsAccountStatus$disconnected() => disconnected(),
       FinancialConnectionsAccountStatus$inactive() => inactive(),
       FinancialConnectionsAccountStatus$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? disconnected, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? disconnected, W Function()? inactive, W Function(String value)? $unknown, }) {return switch (this) {
       FinancialConnectionsAccountStatus$active() => active != null ? active() : orElse(value),
       FinancialConnectionsAccountStatus$disconnected() => disconnected != null ? disconnected() : orElse(value),
       FinancialConnectionsAccountStatus$inactive() => inactive != null ? inactive() : orElse(value),
       FinancialConnectionsAccountStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinancialConnectionsAccountStatus($value)';
 
- }
+}
 @immutable final class FinancialConnectionsAccountStatus$active extends FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus$active._();
 
 @override String get value => 'active';
@@ -206,7 +206,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'active'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountStatus$disconnected extends FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus$disconnected._();
 
 @override String get value => 'disconnected';
@@ -215,7 +215,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'disconnected'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountStatus$inactive extends FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus$inactive._();
 
 @override String get value => 'inactive';
@@ -224,7 +224,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => 'inactive'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountStatus$Unknown extends FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus$Unknown(this.value);
 
 @override final String value;
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// If `category` is `cash`, one of:
 /// 
 ///  - `checking`
@@ -251,7 +251,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, 
 /// If `category` is `investment` or `other`, this will be `other`.
 sealed class Subcategory {const Subcategory();
 
-factory Subcategory.fromJson(String json) { return switch (json) {
+factory Subcategory.fromJson(String json) {return switch (json) {
   'checking' => checking,
   'credit_card' => creditCard,
   'line_of_credit' => lineOfCredit,
@@ -259,7 +259,7 @@ factory Subcategory.fromJson(String json) { return switch (json) {
   'other' => $other,
   'savings' => savings,
   _ => Subcategory$Unknown(json),
-}; }
+};}
 
 static const Subcategory checking = Subcategory$checking._();
 
@@ -276,9 +276,9 @@ static const Subcategory savings = Subcategory$savings._();
 static const List<Subcategory> values = [checking, creditCard, lineOfCredit, mortgage, $other, savings];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'checking' => 'checking',
   'credit_card' => 'creditCard',
   'line_of_credit' => 'lineOfCredit',
@@ -286,11 +286,11 @@ String get name { return switch (value) {
   'other' => r'$other',
   'savings' => 'savings',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Subcategory$Unknown; } 
+bool get isUnknown {return this is Subcategory$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() checking, required W Function() creditCard, required W Function() lineOfCredit, required W Function() mortgage, required W Function() $other, required W Function() savings, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() checking, required W Function() creditCard, required W Function() lineOfCredit, required W Function() mortgage, required W Function() $other, required W Function() savings, required W Function(String value) $unknown, }) {return switch (this) {
       Subcategory$checking() => checking(),
       Subcategory$creditCard() => creditCard(),
       Subcategory$lineOfCredit() => lineOfCredit(),
@@ -298,9 +298,9 @@ W when<W>({required W Function() checking, required W Function() creditCard, req
       Subcategory$$other() => $other(),
       Subcategory$savings() => savings(),
       Subcategory$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? creditCard, W Function()? lineOfCredit, W Function()? mortgage, W Function()? $other, W Function()? savings, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? creditCard, W Function()? lineOfCredit, W Function()? mortgage, W Function()? $other, W Function()? savings, W Function(String value)? $unknown, }) {return switch (this) {
       Subcategory$checking() => checking != null ? checking() : orElse(value),
       Subcategory$creditCard() => creditCard != null ? creditCard() : orElse(value),
       Subcategory$lineOfCredit() => lineOfCredit != null ? lineOfCredit() : orElse(value),
@@ -308,10 +308,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
       Subcategory$$other() => $other != null ? $other() : orElse(value),
       Subcategory$savings() => savings != null ? savings() : orElse(value),
       Subcategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'Subcategory($value)';
 
- }
+}
 @immutable final class Subcategory$checking extends Subcategory {const Subcategory$checking._();
 
 @override String get value => 'checking';
@@ -320,7 +320,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'checking'.hashCode;
 
- }
+}
 @immutable final class Subcategory$creditCard extends Subcategory {const Subcategory$creditCard._();
 
 @override String get value => 'credit_card';
@@ -329,7 +329,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'credit_card'.hashCode;
 
- }
+}
 @immutable final class Subcategory$lineOfCredit extends Subcategory {const Subcategory$lineOfCredit._();
 
 @override String get value => 'line_of_credit';
@@ -338,7 +338,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'line_of_credit'.hashCode;
 
- }
+}
 @immutable final class Subcategory$mortgage extends Subcategory {const Subcategory$mortgage._();
 
 @override String get value => 'mortgage';
@@ -347,7 +347,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'mortgage'.hashCode;
 
- }
+}
 @immutable final class Subcategory$$other extends Subcategory {const Subcategory$$other._();
 
 @override String get value => 'other';
@@ -356,7 +356,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'other'.hashCode;
 
- }
+}
 @immutable final class Subcategory$savings extends Subcategory {const Subcategory$savings._();
 
 @override String get value => 'savings';
@@ -365,7 +365,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => 'savings'.hashCode;
 
- }
+}
 @immutable final class Subcategory$Unknown extends Subcategory {const Subcategory$Unknown(this.value);
 
 @override final String value;
@@ -375,40 +375,40 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions();
 
-factory FinancialConnectionsAccountSubscriptions.fromJson(String json) { return switch (json) {
+factory FinancialConnectionsAccountSubscriptions.fromJson(String json) {return switch (json) {
   'transactions' => transactions,
   _ => FinancialConnectionsAccountSubscriptions$Unknown(json),
-}; }
+};}
 
 static const FinancialConnectionsAccountSubscriptions transactions = FinancialConnectionsAccountSubscriptions$transactions._();
 
 static const List<FinancialConnectionsAccountSubscriptions> values = [transactions];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'transactions' => 'transactions',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FinancialConnectionsAccountSubscriptions$Unknown; } 
+bool get isUnknown {return this is FinancialConnectionsAccountSubscriptions$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() transactions, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() transactions, required W Function(String value) $unknown, }) {return switch (this) {
       FinancialConnectionsAccountSubscriptions$transactions() => transactions(),
       FinancialConnectionsAccountSubscriptions$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? transactions, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transactions, W Function(String value)? $unknown, }) {return switch (this) {
       FinancialConnectionsAccountSubscriptions$transactions() => transactions != null ? transactions() : orElse(value),
       FinancialConnectionsAccountSubscriptions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'FinancialConnectionsAccountSubscriptions($value)';
 
- }
+}
 @immutable final class FinancialConnectionsAccountSubscriptions$transactions extends FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions$transactions._();
 
 @override String get value => 'transactions';
@@ -417,7 +417,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transact
 
 @override int get hashCode => 'transactions'.hashCode;
 
- }
+}
 @immutable final class FinancialConnectionsAccountSubscriptions$Unknown extends FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions$Unknown(this.value);
 
 @override final String value;
@@ -427,14 +427,14 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? transact
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes();
 
-factory SupportedPaymentMethodTypes.fromJson(String json) { return switch (json) {
+factory SupportedPaymentMethodTypes.fromJson(String json) {return switch (json) {
   'link' => link,
   'us_bank_account' => usBankAccount,
   _ => SupportedPaymentMethodTypes$Unknown(json),
-}; }
+};}
 
 static const SupportedPaymentMethodTypes link = SupportedPaymentMethodTypes$link._();
 
@@ -443,30 +443,30 @@ static const SupportedPaymentMethodTypes usBankAccount = SupportedPaymentMethodT
 static const List<SupportedPaymentMethodTypes> values = [link, usBankAccount];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'link' => 'link',
   'us_bank_account' => 'usBankAccount',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SupportedPaymentMethodTypes$Unknown; } 
+bool get isUnknown {return this is SupportedPaymentMethodTypes$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() link, required W Function() usBankAccount, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() link, required W Function() usBankAccount, required W Function(String value) $unknown, }) {return switch (this) {
       SupportedPaymentMethodTypes$link() => link(),
       SupportedPaymentMethodTypes$usBankAccount() => usBankAccount(),
       SupportedPaymentMethodTypes$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? link, W Function()? usBankAccount, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? link, W Function()? usBankAccount, W Function(String value)? $unknown, }) {return switch (this) {
       SupportedPaymentMethodTypes$link() => link != null ? link() : orElse(value),
       SupportedPaymentMethodTypes$usBankAccount() => usBankAccount != null ? usBankAccount() : orElse(value),
       SupportedPaymentMethodTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SupportedPaymentMethodTypes($value)';
 
- }
+}
 @immutable final class SupportedPaymentMethodTypes$link extends SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes$link._();
 
 @override String get value => 'link';
@@ -475,7 +475,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? link, W 
 
 @override int get hashCode => 'link'.hashCode;
 
- }
+}
 @immutable final class SupportedPaymentMethodTypes$usBankAccount extends SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes$usBankAccount._();
 
 @override String get value => 'us_bank_account';
@@ -484,7 +484,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? link, W 
 
 @override int get hashCode => 'us_bank_account'.hashCode;
 
- }
+}
 @immutable final class SupportedPaymentMethodTypes$Unknown extends SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes$Unknown(this.value);
 
 @override final String value;
@@ -494,11 +494,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? link, W 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// A Financial Connections Account represents an account that exists outside of Stripe, to which you have been granted some degree of access.
 @immutable final class FinancialConnectionsAccount {const FinancialConnectionsAccount({required this.category, required this.created, required this.id, required this.institutionName, required this.livemode, required this.object, required this.status, required this.subcategory, required this.supportedPaymentMethodTypes, this.accountHolder = const Omittable.absent(), this.accountNumbers = const Omittable.absent(), this.balance = const Omittable.absent(), this.balanceRefresh = const Omittable.absent(), this.displayName = const Omittable.absent(), this.last4 = const Omittable.absent(), this.ownership = const Omittable.absent(), this.ownershipRefresh = const Omittable.absent(), this.permissions = const Omittable.absent(), this.subscriptions = const Omittable.absent(), this.transactionRefresh = const Omittable.absent(), });
 
-factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccount(
+factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) {return FinancialConnectionsAccount(
   accountHolder: json.containsKey('account_holder') ? Omittable(json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   accountNumbers: json.containsKey('account_numbers') ? Omittable((json['account_numbers'] as List<dynamic>?)?.map((e) => BankConnectionsResourceAccountNumberDetails.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   balance: json.containsKey('balance') ? Omittable(json['balance'] != null ? BankConnectionsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -519,7 +519,7 @@ factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return
   subscriptions: json.containsKey('subscriptions') ? Omittable((json['subscriptions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountSubscriptions.fromJson(e as String)).toList()) : const Omittable.absent(),
   supportedPaymentMethodTypes: (json['supported_payment_method_types'] as List<dynamic>).map((e) => SupportedPaymentMethodTypes.fromJson(e as String)).toList(),
   transactionRefresh: json.containsKey('transaction_refresh') ? Omittable(json['transaction_refresh'] != null ? BankConnectionsResourceTransactionRefresh.fromJson(json['transaction_refresh'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-); }
+);}
 
 /// The account holder that this account belongs to.
 final Omittable<BankConnectionsResourceAccountholder?> accountHolder;
@@ -594,7 +594,7 @@ final List<SupportedPaymentMethodTypes> supportedPaymentMethodTypes;
 /// The state of the most recent attempt to refresh the account transactions.
 final Omittable<BankConnectionsResourceTransactionRefresh?> transactionRefresh;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (accountHolder.isPresent) 'account_holder': accountHolder.value?.toJson(),
   if (accountNumbers.isPresent) 'account_numbers': accountNumbers.value?.map((e) => e.toJson()).toList(),
   if (balance.isPresent) 'balance': balance.value?.toJson(),
@@ -615,8 +615,8 @@ Map<String, dynamic> toJson() { return {
   if (subscriptions.isPresent) 'subscriptions': subscriptions.value?.map((e) => e.toJson()).toList(),
   'supported_payment_method_types': supportedPaymentMethodTypes.map((e) => e.toJson()).toList(),
   if (transactionRefresh.isPresent) 'transaction_refresh': transactionRefresh.value?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('category') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('institution_name') && json['institution_name'] is String &&
@@ -624,9 +624,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('subcategory') &&
-      json.containsKey('supported_payment_method_types'); } 
+      json.containsKey('supported_payment_method_types');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final displayName$ = displayName.value;
 if (displayName$ != null) {
   if (displayName$.runes.length > 5000) { errors.add('displayName: length must be <= 5000'); }
@@ -637,8 +637,8 @@ final last4$ = last4.value;
 if (last4$ != null) {
   if (last4$.runes.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
-return errors; } 
-FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountholder?>? accountHolder, Omittable<List<BankConnectionsResourceAccountNumberDetails>?>? accountNumbers, Omittable<BankConnectionsResourceBalance?>? balance, Omittable<BankConnectionsResourceBalanceRefresh?>? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, Omittable<String?>? displayName, String? id, String? institutionName, Omittable<String?>? last4, bool? livemode, FinancialConnectionsAccountObject? object, Omittable<Ownership?>? ownership, Omittable<BankConnectionsResourceOwnershipRefresh?>? ownershipRefresh, Omittable<List<FinancialConnectionsAccountPermissions>?>? permissions, FinancialConnectionsAccountStatus? status, Subcategory? subcategory, Omittable<List<FinancialConnectionsAccountSubscriptions>?>? subscriptions, List<SupportedPaymentMethodTypes>? supportedPaymentMethodTypes, Omittable<BankConnectionsResourceTransactionRefresh?>? transactionRefresh, }) { return FinancialConnectionsAccount(
+return errors;}
+FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountholder?>? accountHolder, Omittable<List<BankConnectionsResourceAccountNumberDetails>?>? accountNumbers, Omittable<BankConnectionsResourceBalance?>? balance, Omittable<BankConnectionsResourceBalanceRefresh?>? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, Omittable<String?>? displayName, String? id, String? institutionName, Omittable<String?>? last4, bool? livemode, FinancialConnectionsAccountObject? object, Omittable<Ownership?>? ownership, Omittable<BankConnectionsResourceOwnershipRefresh?>? ownershipRefresh, Omittable<List<FinancialConnectionsAccountPermissions>?>? permissions, FinancialConnectionsAccountStatus? status, Subcategory? subcategory, Omittable<List<FinancialConnectionsAccountSubscriptions>?>? subscriptions, List<SupportedPaymentMethodTypes>? supportedPaymentMethodTypes, Omittable<BankConnectionsResourceTransactionRefresh?>? transactionRefresh, }) {return FinancialConnectionsAccount(
   accountHolder: accountHolder ?? this.accountHolder,
   accountNumbers: accountNumbers ?? this.accountNumbers,
   balance: balance ?? this.balance,
@@ -659,7 +659,7 @@ FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountho
   subscriptions: subscriptions ?? this.subscriptions,
   supportedPaymentMethodTypes: supportedPaymentMethodTypes ?? this.supportedPaymentMethodTypes,
   transactionRefresh: transactionRefresh ?? this.transactionRefresh,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is FinancialConnectionsAccount &&
           accountHolder == other.accountHolder &&
@@ -690,4 +690,4 @@ FinancialConnectionsAccount copyWith({Omittable<BankConnectionsResourceAccountho
 
 @override String toString() => 'FinancialConnectionsAccount(\n  accountHolder: $accountHolder,\n  accountNumbers: $accountNumbers,\n  balance: $balance,\n  balanceRefresh: $balanceRefresh,\n  category: $category,\n  created: $created,\n  displayName: $displayName,\n  id: $id,\n  institutionName: $institutionName,\n  last4: $last4,\n  livemode: $livemode,\n  object: $object,\n  ownership: $ownership,\n  ownershipRefresh: $ownershipRefresh,\n  permissions: $permissions,\n  status: $status,\n  subcategory: $subcategory,\n  subscriptions: $subscriptions,\n  supportedPaymentMethodTypes: $supportedPaymentMethodTypes,\n  transactionRefresh: $transactionRefresh,\n)';
 
- }
+}

@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_response/origin_regions.dart';@immutable final class ResultOrigin {const ResultOrigin({required this.regions, required this.slug, });
 
-factory ResultOrigin.fromJson(Map<String, dynamic> json) { return ResultOrigin(
+factory ResultOrigin.fromJson(Map<String, dynamic> json) {return ResultOrigin(
   regions: (json['regions'] as List<dynamic>).map((e) => OriginRegions.fromJson(e as Map<String, dynamic>)).toList(),
   slug: json['slug'] as String,
-); }
+);}
 
 final List<OriginRegions> regions;
 
@@ -15,16 +15,16 @@ final List<OriginRegions> regions;
 /// Example: `'amazon'`
 final String slug;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'regions': regions.map((e) => e.toJson()).toList(),
   'slug': slug,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('regions') &&
-      json.containsKey('slug') && json['slug'] is String; } 
-ResultOrigin copyWith({List<OriginRegions>? regions, String? slug, }) { return ResultOrigin(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('regions') &&
+      json.containsKey('slug') && json['slug'] is String;}
+ResultOrigin copyWith({List<OriginRegions>? regions, String? slug, }) {return ResultOrigin(
   regions: regions ?? this.regions,
   slug: slug ?? this.slug,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultOrigin &&
           listEquals(regions, other.regions) &&
@@ -34,4 +34,4 @@ ResultOrigin copyWith({List<OriginRegions>? regions, String? slug, }) { return R
 
 @override String toString() => 'ResultOrigin(regions: $regions, slug: $slug)';
 
- }
+}

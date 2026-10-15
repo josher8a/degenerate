@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_allow_iframe.dart';import 'package:pub_cloudflare/models/access_app_launcher_visible.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_cors_headers.dart';import 'package:pub_cloudflare/models/access_custom_deny_message.dart';import 'package:pub_cloudflare/models/access_custom_deny_url.dart';import 'package:pub_cloudflare/models/access_custom_non_identity_deny_url.dart';import 'package:pub_cloudflare/models/access_destinations2.dart';import 'package:pub_cloudflare/models/access_domain.dart';import 'package:pub_cloudflare/models/access_enable_binding_cookie.dart';import 'package:pub_cloudflare/models/access_http_only_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_mfa_config.dart';import 'package:pub_cloudflare/models/access_oauth_configuration.dart';import 'package:pub_cloudflare/models/access_options_preflight_bypass.dart';import 'package:pub_cloudflare/models/access_path_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_read_service_tokens_from_header.dart';import 'package:pub_cloudflare/models/access_same_site_cookie_attribute.dart';import 'package:pub_cloudflare/models/access_schemas_allow_authenticate_via_warp.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_scim_config.dart';import 'package:pub_cloudflare/models/access_service_auth401_redirect.dart';import 'package:pub_cloudflare/models/access_skip_interstitial.dart';import 'package:pub_cloudflare/models/access_type.dart';import 'package:pub_cloudflare/models/access_use_clientless_isolation_app_launcher_url.dart';import 'package:pub_cloudflare/models/private_destination.dart';import 'package:pub_cloudflare/models/public_destination.dart';import 'package:pub_cloudflare/models/via_mcp_server_portal_destination.dart';@immutable final class AccessVncProps {const AccessVncProps({required this.domain, required this.type, this.allowAuthenticateViaWarp, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.destinations, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.mfaConfig, this.name, this.oauthConfiguration, this.optionsPreflightBypass, this.pathCookieAttribute, this.readServiceTokensFromHeader, this.sameSiteCookieAttribute, this.scimConfig, this.selfHostedDomains, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.tags, this.useClientlessIsolationAppLauncherUrl, });
 
-factory AccessVncProps.fromJson(Map<String, dynamic> json) { return AccessVncProps(
+factory AccessVncProps.fromJson(Map<String, dynamic> json) {return AccessVncProps(
   allowAuthenticateViaWarp: json['allow_authenticate_via_warp'] != null ? AccessSchemasAllowAuthenticateViaWarp.fromJson(json['allow_authenticate_via_warp'] as bool) : null,
   allowIframe: json['allow_iframe'] != null ? AccessAllowIframe.fromJson(json['allow_iframe'] as bool) : null,
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -34,7 +34,7 @@ factory AccessVncProps.fromJson(Map<String, dynamic> json) { return AccessVncPro
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: AccessType.fromJson(json['type'] as String),
   useClientlessIsolationAppLauncherUrl: json['use_clientless_isolation_app_launcher_url'] != null ? AccessUseClientlessIsolationAppLauncherUrl.fromJson(json['use_clientless_isolation_app_launcher_url'] as bool) : null,
-); }
+);}
 
 /// When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
 final AccessSchemasAllowAuthenticateViaWarp? allowAuthenticateViaWarp;
@@ -134,7 +134,7 @@ final AccessType type;
 /// 
 final AccessUseClientlessIsolationAppLauncherUrl? useClientlessIsolationAppLauncherUrl;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (allowAuthenticateViaWarp != null) 'allow_authenticate_via_warp': allowAuthenticateViaWarp?.toJson(),
   if (allowIframe != null) 'allow_iframe': allowIframe?.toJson(),
   'allowed_idps': ?allowedIdps,
@@ -165,10 +165,10 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
   'type': type.toJson(),
   if (useClientlessIsolationAppLauncherUrl != null) 'use_clientless_isolation_app_launcher_url': useClientlessIsolationAppLauncherUrl?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
-      json.containsKey('type'); } 
-AccessVncProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessMfaConfig? Function()? mfaConfig, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessPathCookieAttribute? Function()? pathCookieAttribute, AccessReadServiceTokensFromHeader? Function()? readServiceTokensFromHeader, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, List<String>? Function()? selfHostedDomains, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, List<String>? Function()? tags, AccessType? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, }) { return AccessVncProps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('domain') &&
+      json.containsKey('type');}
+AccessVncProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()? allowAuthenticateViaWarp, AccessAllowIframe? Function()? allowIframe, List<String>? Function()? allowedIdps, AccessAppLauncherVisible? Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCorsHeaders? Function()? corsHeaders, AccessCustomDenyMessage? Function()? customDenyMessage, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, List<AccessDestinations2>? Function()? destinations, AccessDomain? domain, AccessEnableBindingCookie? Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute? Function()? httpOnlyCookieAttribute, AccessLogoUrl? Function()? logoUrl, AccessMfaConfig? Function()? mfaConfig, AccessAppsComponentsSchemasName? Function()? name, AccessOauthConfiguration? Function()? oauthConfiguration, AccessOptionsPreflightBypass? Function()? optionsPreflightBypass, AccessPathCookieAttribute? Function()? pathCookieAttribute, AccessReadServiceTokensFromHeader? Function()? readServiceTokensFromHeader, AccessSameSiteCookieAttribute? Function()? sameSiteCookieAttribute, AccessScimConfig? Function()? scimConfig, List<String>? Function()? selfHostedDomains, AccessServiceAuth401Redirect? Function()? serviceAuth401Redirect, AccessSchemasSessionDuration? Function()? sessionDuration, AccessSkipInterstitial? Function()? skipInterstitial, List<String>? Function()? tags, AccessType? type, AccessUseClientlessIsolationAppLauncherUrl? Function()? useClientlessIsolationAppLauncherUrl, }) {return AccessVncProps(
   allowAuthenticateViaWarp: allowAuthenticateViaWarp != null ? allowAuthenticateViaWarp() : this.allowAuthenticateViaWarp,
   allowIframe: allowIframe != null ? allowIframe() : this.allowIframe,
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
@@ -199,7 +199,7 @@ AccessVncProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()? allo
   tags: tags != null ? tags() : this.tags,
   type: type ?? this.type,
   useClientlessIsolationAppLauncherUrl: useClientlessIsolationAppLauncherUrl != null ? useClientlessIsolationAppLauncherUrl() : this.useClientlessIsolationAppLauncherUrl,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccessVncProps &&
           allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
@@ -237,4 +237,4 @@ AccessVncProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()? allo
 
 @override String toString() => 'AccessVncProps(\n  allowAuthenticateViaWarp: $allowAuthenticateViaWarp,\n  allowIframe: $allowIframe,\n  allowedIdps: $allowedIdps,\n  appLauncherVisible: $appLauncherVisible,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  corsHeaders: $corsHeaders,\n  customDenyMessage: $customDenyMessage,\n  customDenyUrl: $customDenyUrl,\n  customNonIdentityDenyUrl: $customNonIdentityDenyUrl,\n  customPages: $customPages,\n  destinations: $destinations,\n  domain: $domain,\n  enableBindingCookie: $enableBindingCookie,\n  httpOnlyCookieAttribute: $httpOnlyCookieAttribute,\n  logoUrl: $logoUrl,\n  mfaConfig: $mfaConfig,\n  name: $name,\n  oauthConfiguration: $oauthConfiguration,\n  optionsPreflightBypass: $optionsPreflightBypass,\n  pathCookieAttribute: $pathCookieAttribute,\n  readServiceTokensFromHeader: $readServiceTokensFromHeader,\n  sameSiteCookieAttribute: $sameSiteCookieAttribute,\n  scimConfig: $scimConfig,\n  selfHostedDomains: $selfHostedDomains,\n  serviceAuth401Redirect: $serviceAuth401Redirect,\n  sessionDuration: $sessionDuration,\n  skipInterstitial: $skipInterstitial,\n  tags: $tags,\n  type: $type,\n  useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl,\n)';
 
- }
+}

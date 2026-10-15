@@ -8,11 +8,11 @@ const DnsRecordsTtl({this.$double = const Omittable.absent(), this.dnsRecordsTtl
 const DnsRecordsTtl._({required this.rawValue, required this.$double, required this.dnsRecordsTtlVariant2, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory DnsRecordsTtl.fromJson(Object? json) { return DnsRecordsTtl._(
+factory DnsRecordsTtl.fromJson(Object? json) {return DnsRecordsTtl._(
   rawValue: Omittable(json),
   $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
   dnsRecordsTtlVariant2: parseAnyOfVariant<DnsRecordsTtlVariant2>(json, (value) => DnsRecordsTtlVariant2.fromJson((value! as num).toDouble())),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'DnsRecordsTtl(${toJson()})';
 
- }
+}

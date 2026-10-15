@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/create_chat_completion_request/prompt_cache_retention.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_stream_options.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/service_tier.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';@immutable final class CreateResponse {const CreateResponse({this.metadata = const Omittable.absent(), this.topLogprobs, this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), this.previousResponseId = const Omittable.absent(), this.model, this.reasoning = const Omittable.absent(), this.background = const Omittable.absent(), this.maxOutputTokens = const Omittable.absent(), this.maxToolCalls = const Omittable.absent(), this.text, this.tools, this.toolChoice, this.prompt = const Omittable.absent(), this.truncation = const Omittable.absent(), this.input, this.include = const Omittable.absent(), this.parallelToolCalls = const Omittable.absent(), this.store = const Omittable.absent(), this.instructions = const Omittable.absent(), this.stream = const Omittable.absent(), this.streamOptions = const Omittable.absent(), this.conversation = const Omittable.absent(), this.contextManagement = const Omittable.absent(), });
 
-factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateResponse(
+factory CreateResponse.fromJson(Map<String, dynamic> json) {return CreateResponse(
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
@@ -33,7 +33,7 @@ factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateRespon
   streamOptions: json.containsKey('stream_options') ? Omittable(json['stream_options'] != null ? ResponseStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   conversation: json.containsKey('conversation') ? Omittable(json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationParam2.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   contextManagement: json.containsKey('context_management') ? Omittable((json['context_management'] as List<dynamic>?)?.map((e) => ContextManagementParam.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<Map<String,String>?> metadata;
 
@@ -172,7 +172,7 @@ final Omittable<ConversationParam?> conversation;
 /// 
 final Omittable<List<ContextManagementParam>?> contextManagement;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (metadata.isPresent) 'metadata': metadata.value,
   'top_logprobs': ?topLogprobs,
   if (temperature.isPresent) 'temperature': temperature.value,
@@ -202,10 +202,10 @@ Map<String, dynamic> toJson() { return {
   if (streamOptions.isPresent) 'stream_options': streamOptions.value?.toJson(),
   if (conversation.isPresent) 'conversation': conversation.value?.toJson(),
   if (contextManagement.isPresent) 'context_management': contextManagement.value?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention', 'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation', 'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention', 'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation', 'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final topLogprobs$ = topLogprobs;
 if (topLogprobs$ != null) {
   if (topLogprobs$ < 0) { errors.add('topLogprobs: must be >= 0'); }
@@ -229,8 +229,8 @@ final contextManagement$ = contextManagement.value;
 if (contextManagement$ != null) {
   if (contextManagement$.isEmpty) { errors.add('contextManagement: must have >= 1 items'); }
 }
-return errors; } 
-CreateResponse copyWith({Omittable<Map<String,String>?>? metadata, int? Function()? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<PromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? Function()? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Omittable<Prompt?>? prompt, Omittable<Truncation?>? truncation, InputParam? Function()? input, Omittable<List<IncludeEnum>?>? include, Omittable<bool?>? parallelToolCalls, Omittable<bool?>? store, Omittable<String?>? instructions, Omittable<bool?>? stream, Omittable<ResponseStreamOptions?>? streamOptions, Omittable<ConversationParam?>? conversation, Omittable<List<ContextManagementParam>?>? contextManagement, }) { return CreateResponse(
+return errors;}
+CreateResponse copyWith({Omittable<Map<String,String>?>? metadata, int? Function()? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<PromptCacheRetention?>? promptCacheRetention, Omittable<String?>? previousResponseId, ModelIdsResponses? Function()? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Omittable<Prompt?>? prompt, Omittable<Truncation?>? truncation, InputParam? Function()? input, Omittable<List<IncludeEnum>?>? include, Omittable<bool?>? parallelToolCalls, Omittable<bool?>? store, Omittable<String?>? instructions, Omittable<bool?>? stream, Omittable<ResponseStreamOptions?>? streamOptions, Omittable<ConversationParam?>? conversation, Omittable<List<ContextManagementParam>?>? contextManagement, }) {return CreateResponse(
   metadata: metadata ?? this.metadata,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
   temperature: temperature ?? this.temperature,
@@ -260,7 +260,7 @@ CreateResponse copyWith({Omittable<Map<String,String>?>? metadata, int? Function
   streamOptions: streamOptions ?? this.streamOptions,
   conversation: conversation ?? this.conversation,
   contextManagement: contextManagement ?? this.contextManagement,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateResponse &&
           metadata == other.metadata &&
@@ -299,4 +299,4 @@ CreateResponse copyWith({Omittable<Map<String,String>?>? metadata, int? Function
 
 @override String toString() => 'CreateResponse(\n  metadata: $metadata,\n  topLogprobs: $topLogprobs,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n  safetyIdentifier: $safetyIdentifier,\n  promptCacheKey: $promptCacheKey,\n  serviceTier: $serviceTier,\n  promptCacheRetention: $promptCacheRetention,\n  previousResponseId: $previousResponseId,\n  model: $model,\n  reasoning: $reasoning,\n  background: $background,\n  maxOutputTokens: $maxOutputTokens,\n  maxToolCalls: $maxToolCalls,\n  text: $text,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  prompt: $prompt,\n  truncation: $truncation,\n  input: $input,\n  include: $include,\n  parallelToolCalls: $parallelToolCalls,\n  store: $store,\n  instructions: $instructions,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  conversation: $conversation,\n  contextManagement: $contextManagement,\n)';
 
- }
+}

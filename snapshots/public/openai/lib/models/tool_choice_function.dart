@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ToolChoiceFunction {const ToolChoiceFunction({required this.type, required this.name, });
 
-factory ToolChoiceFunction.fromJson(Map<String, dynamic> json) { return ToolChoiceFunction(
+factory ToolChoiceFunction.fromJson(Map<String, dynamic> json) {return ToolChoiceFunction(
   type: AssistantToolsFunctionType.fromJson(json['type'] as String),
   name: json['name'] as String,
-); }
+);}
 
 /// For function calling, the type is always `function`.
 final AssistantToolsFunctionType type;
@@ -16,16 +16,16 @@ final AssistantToolsFunctionType type;
 /// The name of the function to call.
 final String name;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'type': type.toJson(),
   'name': name,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] == 'function' &&
-      json.containsKey('name') && json['name'] is String; } 
-ToolChoiceFunction copyWith({AssistantToolsFunctionType? type, String? name, }) { return ToolChoiceFunction(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type') && json['type'] == 'function' &&
+      json.containsKey('name') && json['name'] is String;}
+ToolChoiceFunction copyWith({AssistantToolsFunctionType? type, String? name, }) {return ToolChoiceFunction(
   type: type ?? this.type,
   name: name ?? this.name,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ToolChoiceFunction &&
           type == other.type &&
@@ -35,4 +35,4 @@ ToolChoiceFunction copyWith({AssistantToolsFunctionType? type, String? name, }) 
 
 @override String toString() => 'ToolChoiceFunction(type: $type, name: $name)';
 
- }
+}

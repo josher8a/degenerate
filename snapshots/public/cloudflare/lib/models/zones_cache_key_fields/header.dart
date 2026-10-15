@@ -6,11 +6,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls which h
 /// 
 @immutable final class Header {const Header({this.checkPresence, this.exclude, this.include, });
 
-factory Header.fromJson(Map<String, dynamic> json) { return Header(
+factory Header.fromJson(Map<String, dynamic> json) {return Header(
   checkPresence: (json['check_presence'] as List<dynamic>?)?.map((e) => e as String).toList(),
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => e as String).toList(),
   include: (json['include'] as List<dynamic>?)?.map((e) => e as String).toList(),
-); }
+);}
 
 /// A list of headers to check for the presence of, without
 /// including their actual values.
@@ -31,14 +31,14 @@ final List<String>? exclude;
 /// Example: `[foo, bar]`
 final List<String>? include;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'check_presence': ?checkPresence,
   'exclude': ?exclude,
   'include': ?include,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'exclude', 'include'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'check_presence', 'exclude', 'include'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final checkPresence$ = checkPresence;
 if (checkPresence$ != null) {
   if (checkPresence$.isEmpty) { errors.add('checkPresence: must have >= 1 items'); }
@@ -54,12 +54,12 @@ if (include$ != null) {
   if (include$.isEmpty) { errors.add('include: must have >= 1 items'); }
   if (include$.length > 50) { errors.add('include: must have <= 50 items'); }
 }
-return errors; } 
-Header copyWith({List<String>? Function()? checkPresence, List<String>? Function()? exclude, List<String>? Function()? include, }) { return Header(
+return errors;}
+Header copyWith({List<String>? Function()? checkPresence, List<String>? Function()? exclude, List<String>? Function()? include, }) {return Header(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Header &&
           listEquals(checkPresence, other.checkPresence) &&
@@ -70,4 +70,4 @@ Header copyWith({List<String>? Function()? checkPresence, List<String>? Function
 
 @override String toString() => 'Header(checkPresence: $checkPresence, exclude: $exclude, include: $include)';
 
- }
+}

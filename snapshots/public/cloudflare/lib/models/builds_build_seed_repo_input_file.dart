@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsBuildSeedRepoInputFile {const BuildsBuildSeedRepoInputFile({required this.content, required this.filename, this.isBase64, this.replace, });
 
-factory BuildsBuildSeedRepoInputFile.fromJson(Map<String, dynamic> json) { return BuildsBuildSeedRepoInputFile(
+factory BuildsBuildSeedRepoInputFile.fromJson(Map<String, dynamic> json) {return BuildsBuildSeedRepoInputFile(
   content: json['content'] as String,
   filename: json['filename'] as String,
   isBase64: json['isBase64'] as bool?,
   replace: json['replace'] as String?,
-); }
+);}
 
 /// Example: `'name = "my-worker"`
 /// main = "src/index.js"
@@ -26,20 +26,20 @@ final String? replace;
 /// The value of `isBase64`, or its schema default when absent.
 bool get isBase64OrDefault => isBase64 ?? false;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'content': content,
   'filename': filename,
   'isBase64': ?isBase64,
   'replace': ?replace,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
-      json.containsKey('filename') && json['filename'] is String; } 
-BuildsBuildSeedRepoInputFile copyWith({String? content, String? filename, bool? Function()? isBase64, String? Function()? replace, }) { return BuildsBuildSeedRepoInputFile(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('content') && json['content'] is String &&
+      json.containsKey('filename') && json['filename'] is String;}
+BuildsBuildSeedRepoInputFile copyWith({String? content, String? filename, bool? Function()? isBase64, String? Function()? replace, }) {return BuildsBuildSeedRepoInputFile(
   content: content ?? this.content,
   filename: filename ?? this.filename,
   isBase64: isBase64 != null ? isBase64() : this.isBase64,
   replace: replace != null ? replace() : this.replace,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildSeedRepoInputFile &&
           content == other.content &&
@@ -51,4 +51,4 @@ BuildsBuildSeedRepoInputFile copyWith({String? content, String? filename, bool? 
 
 @override String toString() => 'BuildsBuildSeedRepoInputFile(content: $content, filename: $filename, isBase64: $isBase64, replace: $replace)';
 
- }
+}

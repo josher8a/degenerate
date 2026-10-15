@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/single_select_options/single_select_options_description.dart';import 'package:pub_github_rest_3_1/models/single_select_options/single_select_options_name.dart';/// An option for a single select field
 @immutable final class SingleSelectOptions {const SingleSelectOptions({required this.id, required this.name, required this.description, required this.color, });
 
-factory SingleSelectOptions.fromJson(Map<String, dynamic> json) { return SingleSelectOptions(
+factory SingleSelectOptions.fromJson(Map<String, dynamic> json) {return SingleSelectOptions(
   id: json['id'] as String,
   name: SingleSelectOptionsName.fromJson(json['name'] as Map<String, dynamic>),
   description: SingleSelectOptionsDescription.fromJson(json['description'] as Map<String, dynamic>),
   color: json['color'] as String,
-); }
+);}
 
 /// The unique identifier of the option.
 final String id;
@@ -23,22 +23,22 @@ final SingleSelectOptionsDescription description;
 /// The color associated with the option.
 final String color;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'id': id,
   'name': name.toJson(),
   'description': description.toJson(),
   'color': color,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') &&
       json.containsKey('description') &&
-      json.containsKey('color') && json['color'] is String; } 
-SingleSelectOptions copyWith({String? id, SingleSelectOptionsName? name, SingleSelectOptionsDescription? description, String? color, }) { return SingleSelectOptions(
+      json.containsKey('color') && json['color'] is String;}
+SingleSelectOptions copyWith({String? id, SingleSelectOptionsName? name, SingleSelectOptionsDescription? description, String? color, }) {return SingleSelectOptions(
   id: id ?? this.id,
   name: name ?? this.name,
   description: description ?? this.description,
   color: color ?? this.color,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is SingleSelectOptions &&
           id == other.id &&
@@ -50,4 +50,4 @@ SingleSelectOptions copyWith({String? id, SingleSelectOptionsName? name, SingleS
 
 @override String toString() => 'SingleSelectOptions(id: $id, name: $name, description: $description, color: $color)';
 
- }
+}

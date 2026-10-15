@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_messages2.dart';import 'package:pub_cloudflare/models/d1_time_travel_restore_response.dart';@immutable final class D1TimeTravelRestoreResponse2 {const D1TimeTravelRestoreResponse2({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory D1TimeTravelRestoreResponse2.fromJson(Map<String, dynamic> json) { return D1TimeTravelRestoreResponse2(
+factory D1TimeTravelRestoreResponse2.fromJson(Map<String, dynamic> json) {return D1TimeTravelRestoreResponse2(
   errors: (json['errors'] as List<dynamic>).map((e) => D1Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => D1Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: D1TimeTravelRestoreResponse.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-); }
+);}
 
 final List<D1Messages2> errors;
 
@@ -21,22 +21,22 @@ final D1TimeTravelRestoreResponse result;
 /// Example: `true`
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-D1TimeTravelRestoreResponse2 copyWith({List<D1Messages2>? errors, List<D1Messages2>? messages, D1TimeTravelRestoreResponse? result, bool? success, }) { return D1TimeTravelRestoreResponse2(
+      json.containsKey('success') && json['success'] is bool;}
+D1TimeTravelRestoreResponse2 copyWith({List<D1Messages2>? errors, List<D1Messages2>? messages, D1TimeTravelRestoreResponse? result, bool? success, }) {return D1TimeTravelRestoreResponse2(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is D1TimeTravelRestoreResponse2 &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ D1TimeTravelRestoreResponse2 copyWith({List<D1Messages2>? errors, List<D1Message
 
 @override String toString() => 'D1TimeTravelRestoreResponse2(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

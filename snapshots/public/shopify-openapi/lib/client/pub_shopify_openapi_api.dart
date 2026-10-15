@@ -46,4 +46,4 @@ late final StorePropertiesApi storeProperties = StorePropertiesApi(_config);
 
 late final TendertransactionApi tendertransaction = TendertransactionApi(_config);
 
- }
+}

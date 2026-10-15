@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cc_messages2.dart';@immutable final class BaseErrorResponse {const BaseErrorResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
-factory BaseErrorResponse.fromJson(Map<String, dynamic> json) { return BaseErrorResponse(
+factory BaseErrorResponse.fromJson(Map<String, dynamic> json) {return BaseErrorResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CcMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CcMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
-); }
+);}
 
 /// Example: `[{code: 7003, message: No route for the URI}]`
 final List<CcMessages2> errors;
@@ -21,22 +21,22 @@ final Map<String,dynamic>? result;
 /// Whether the API call was successful.
 final bool success;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result,
   'success': success,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-BaseErrorResponse copyWith({List<CcMessages2>? errors, List<CcMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return BaseErrorResponse(
+      json.containsKey('success') && json['success'] is bool;}
+BaseErrorResponse copyWith({List<CcMessages2>? errors, List<CcMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) {return BaseErrorResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,
   success: success ?? this.success,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BaseErrorResponse &&
           listEquals(errors, other.errors) &&
@@ -48,4 +48,4 @@ BaseErrorResponse copyWith({List<CcMessages2>? errors, List<CcMessages2>? messag
 
 @override String toString() => 'BaseErrorResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
 
- }
+}

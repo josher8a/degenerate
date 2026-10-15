@@ -12,7 +12,7 @@ final class ProjectGroupsApi with ApiExecutor {const ProjectGroupsApi(this.apiCo
 /// Lists the groups that have access to a project.
 ///
 /// `GET /organization/projects/{project_id}/groups`
-Future<ApiResult<ProjectGroupListResource, Never>> listProjectGroups({required String projectId, int? limit, String? after, ListProjectGroupsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ProjectGroupListResource, Never>> listProjectGroups({required String projectId, int? limit, String? after, ListProjectGroupsOrder? order, RequestOptions? options, }) async {final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -41,11 +41,11 @@ return await execute(
     return ProjectGroupListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Grants a group access to a project.
 ///
 /// `POST /organization/projects/{project_id}/groups`
-Future<ApiResult<ProjectGroup, Never>> addProjectGroup({required String projectId, required InviteProjectGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectGroup, Never>> addProjectGroup({required String projectId, required InviteProjectGroupBody body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,11 +62,11 @@ return await execute(
     return ProjectGroup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
+}
 /// Revokes a group's access to a project.
 ///
 /// `DELETE /organization/projects/{project_id}/groups/{group_id}`
-Future<ApiResult<ProjectGroupDeletedResource, Never>> removeProjectGroup({required String projectId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProjectGroupDeletedResource, Never>> removeProjectGroup({required String projectId, required String groupId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -81,5 +81,5 @@ return await execute(
     return ProjectGroupDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
- } 
- }
+}
+}

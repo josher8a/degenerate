@@ -3,10 +3,10 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 {const RadarGetHttpSummaryByOperatingSystemResponseResultSummary0({required this.android, required this.ios, });
 
-factory RadarGetHttpSummaryByOperatingSystemResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(
+factory RadarGetHttpSummaryByOperatingSystemResponseResultSummary0.fromJson(Map<String, dynamic> json) {return RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(
   android: json['ANDROID'] as String,
   ios: json['IOS'] as String,
-); }
+);}
 
 /// A numeric string.
 /// 
@@ -18,21 +18,21 @@ final String android;
 /// Example: `'10'`
 final String ios;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'ANDROID': android,
   'IOS': ios,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('ANDROID') && json['ANDROID'] is String &&
-      json.containsKey('IOS') && json['IOS'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('ANDROID') && json['ANDROID'] is String &&
+      json.containsKey('IOS') && json['IOS'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (!RegExp(r'^\d+$').hasMatch(android)) { errors.add(r'android: must match pattern ^\d+$'); }
 if (!RegExp(r'^\d+$').hasMatch(ios)) { errors.add(r'ios: must match pattern ^\d+$'); }
-return errors; } 
-RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 copyWith({String? android, String? ios, }) { return RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(
+return errors;}
+RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 copyWith({String? android, String? ios, }) {return RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(
   android: android ?? this.android,
   ios: ios ?? this.ios,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 &&
           android == other.android &&
@@ -42,4 +42,4 @@ RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 copyWith({String? and
 
 @override String toString() => 'RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(android: $android, ios: $ios)';
 
- }
+}

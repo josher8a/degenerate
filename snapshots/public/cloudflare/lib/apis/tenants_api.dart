@@ -14,7 +14,7 @@ final class TenantsApi with ApiExecutor {const TenantsApi(this.apiConfig);
 /// Retrieves a Tenant by Tenant ID.
 ///
 /// `GET /tenants/{tenant_id}`
-Future<ApiResult<Tenant, AccountsBatchMoveAccountsError>> tenantsRetrieveTenant({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Tenant, AccountsBatchMoveAccountsError>> tenantsRetrieveTenant({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,13 +31,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// Get tenant account types
 ///
 /// List of account types available for the Tenant to provision accounts.
 ///
 /// `GET /tenants/{tenant_id}/account_types`
-Future<ApiResult<List<String>, AccountsBatchMoveAccountsError>> tenantsValidAccountTypes({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>, AccountsBatchMoveAccountsError>> tenantsValidAccountTypes({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,13 +54,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// List tenant accounts
 ///
 /// List of accounts for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/accounts`
-Future<ApiResult<List<Account>, AccountsBatchMoveAccountsError>> tenantsListAccounts({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Account>, AccountsBatchMoveAccountsError>> tenantsListAccounts({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -77,13 +77,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// List tenant entitlements
 ///
 /// List of innate entitlements available for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/entitlements`
-Future<ApiResult<InnateEntitlements, AccountsBatchMoveAccountsError>> tenantsListEntitlements({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InnateEntitlements, AccountsBatchMoveAccountsError>> tenantsListEntitlements({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -100,13 +100,13 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
+}
 /// List tenant memberships
 ///
 /// List of active members (Cloudflare users) for the Tenant.
 ///
 /// `GET /tenants/{tenant_id}/memberships`
-Future<ApiResult<List<TenantMembership>, AccountsBatchMoveAccountsError>> tenantsListMemberships({required String tenantId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TenantMembership>, AccountsBatchMoveAccountsError>> tenantsListMemberships({required String tenantId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -123,5 +123,5 @@ return await execute(
   },
   onError: AccountsBatchMoveAccountsError.fromResponse,
 );
- } 
- }
+}
+}

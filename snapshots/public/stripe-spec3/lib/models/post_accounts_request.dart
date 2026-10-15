@@ -4,12 +4,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request/post_accounts_account_bank_accounts_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/capabilities.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/groups.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_business_profile.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_business_type.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_company.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_documents.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_individual.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_tos_acceptance.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/controller.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/post_accounts_request_settings.dart';/// The type of Stripe account to create. May be one of `custom`, `express` or `standard`.
 sealed class PostAccountsRequestType {const PostAccountsRequestType();
 
-factory PostAccountsRequestType.fromJson(String json) { return switch (json) {
+factory PostAccountsRequestType.fromJson(String json) {return switch (json) {
   'custom' => custom,
   'express' => express,
   'standard' => standard,
   _ => PostAccountsRequestType$Unknown(json),
-}; }
+};}
 
 static const PostAccountsRequestType custom = PostAccountsRequestType$custom._();
 
@@ -20,33 +20,33 @@ static const PostAccountsRequestType standard = PostAccountsRequestType$standard
 static const List<PostAccountsRequestType> values = [custom, express, standard];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'custom' => 'custom',
   'express' => 'express',
   'standard' => 'standard',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PostAccountsRequestType$Unknown; } 
+bool get isUnknown {return this is PostAccountsRequestType$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() custom, required W Function() express, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() custom, required W Function() express, required W Function() standard, required W Function(String value) $unknown, }) {return switch (this) {
       PostAccountsRequestType$custom() => custom(),
       PostAccountsRequestType$express() => express(),
       PostAccountsRequestType$standard() => standard(),
       PostAccountsRequestType$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? express, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? express, W Function()? standard, W Function(String value)? $unknown, }) {return switch (this) {
       PostAccountsRequestType$custom() => custom != null ? custom() : orElse(value),
       PostAccountsRequestType$express() => express != null ? express() : orElse(value),
       PostAccountsRequestType$standard() => standard != null ? standard() : orElse(value),
       PostAccountsRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'PostAccountsRequestType($value)';
 
- }
+}
 @immutable final class PostAccountsRequestType$custom extends PostAccountsRequestType {const PostAccountsRequestType$custom._();
 
 @override String get value => 'custom';
@@ -55,7 +55,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'custom'.hashCode;
 
- }
+}
 @immutable final class PostAccountsRequestType$express extends PostAccountsRequestType {const PostAccountsRequestType$express._();
 
 @override String get value => 'express';
@@ -64,7 +64,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'express'.hashCode;
 
- }
+}
 @immutable final class PostAccountsRequestType$standard extends PostAccountsRequestType {const PostAccountsRequestType$standard._();
 
 @override String get value => 'standard';
@@ -73,7 +73,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => 'standard'.hashCode;
 
- }
+}
 @immutable final class PostAccountsRequestType$Unknown extends PostAccountsRequestType {const PostAccountsRequestType$Unknown(this.value);
 
 @override final String value;
@@ -83,10 +83,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostAccountsRequest {const PostAccountsRequest({this.accountToken, this.bankAccount, this.businessProfile, this.businessType, this.capabilities, this.company, this.controller, this.country, this.defaultCurrency, this.documents, this.email, this.expand, this.externalAccount, this.groups, this.individual, this.metadata, this.settings, this.tosAcceptance, this.type, });
 
-factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsRequest(
+factory PostAccountsRequest.fromJson(Map<String, dynamic> json) {return PostAccountsRequest(
   accountToken: json['account_token'] as String?,
   bankAccount: json['bank_account'] != null ? PostAccountsAccountBankAccountsRequestBankAccount.fromJson(json['bank_account']) : null,
   businessProfile: json['business_profile'] != null ? PostAccountsAccountRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
@@ -106,7 +106,7 @@ factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAcc
   settings: json['settings'] != null ? PostAccountsRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? PostAccountsRequestType.fromJson(json['type'] as String) : null,
-); }
+);}
 
 /// An [account token](https://api.stripe.com#create_account_token), used to securely provide details to the account.
 final String? accountToken;
@@ -172,7 +172,7 @@ final PostAccountsAccountRequestTosAcceptance? tosAcceptance;
 /// The type of Stripe account to create. May be one of `custom`, `express` or `standard`.
 final PostAccountsRequestType? type;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'account_token': ?accountToken,
   if (bankAccount != null) 'bank_account': bankAccount?.toJson(),
   if (businessProfile != null) 'business_profile': businessProfile?.toJson(),
@@ -192,10 +192,10 @@ Map<String, dynamic> toJson() { return {
   if (settings != null) 'settings': settings?.toJson(),
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
   if (type != null) 'type': type?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_token', 'bank_account', 'business_profile', 'business_type', 'capabilities', 'company', 'controller', 'country', 'default_currency', 'documents', 'email', 'expand', 'external_account', 'groups', 'individual', 'metadata', 'settings', 'tos_acceptance', 'type'}.contains(key)); } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'account_token', 'bank_account', 'business_profile', 'business_type', 'capabilities', 'company', 'controller', 'country', 'default_currency', 'documents', 'email', 'expand', 'external_account', 'groups', 'individual', 'metadata', 'settings', 'tos_acceptance', 'type'}.contains(key));}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 final accountToken$ = accountToken;
 if (accountToken$ != null) {
   if (accountToken$.runes.length > 5000) { errors.add('accountToken: length must be <= 5000'); }
@@ -208,8 +208,8 @@ final externalAccount$ = externalAccount;
 if (externalAccount$ != null) {
   if (externalAccount$.runes.length > 5000) { errors.add('externalAccount: length must be <= 5000'); }
 }
-return errors; } 
-PostAccountsRequest copyWith({String? Function()? accountToken, PostAccountsAccountBankAccountsRequestBankAccount? Function()? bankAccount, PostAccountsAccountRequestBusinessProfile? Function()? businessProfile, PostAccountsAccountRequestBusinessType? Function()? businessType, Capabilities? Function()? capabilities, PostAccountsAccountRequestCompany? Function()? company, Controller? Function()? controller, String? Function()? country, String? Function()? defaultCurrency, PostAccountsAccountRequestDocuments? Function()? documents, String? Function()? email, List<String>? Function()? expand, String? Function()? externalAccount, Groups? Function()? groups, PostAccountsAccountRequestIndividual? Function()? individual, Metadata? Function()? metadata, PostAccountsRequestSettings? Function()? settings, PostAccountsAccountRequestTosAcceptance? Function()? tosAcceptance, PostAccountsRequestType? Function()? type, }) { return PostAccountsRequest(
+return errors;}
+PostAccountsRequest copyWith({String? Function()? accountToken, PostAccountsAccountBankAccountsRequestBankAccount? Function()? bankAccount, PostAccountsAccountRequestBusinessProfile? Function()? businessProfile, PostAccountsAccountRequestBusinessType? Function()? businessType, Capabilities? Function()? capabilities, PostAccountsAccountRequestCompany? Function()? company, Controller? Function()? controller, String? Function()? country, String? Function()? defaultCurrency, PostAccountsAccountRequestDocuments? Function()? documents, String? Function()? email, List<String>? Function()? expand, String? Function()? externalAccount, Groups? Function()? groups, PostAccountsAccountRequestIndividual? Function()? individual, Metadata? Function()? metadata, PostAccountsRequestSettings? Function()? settings, PostAccountsAccountRequestTosAcceptance? Function()? tosAcceptance, PostAccountsRequestType? Function()? type, }) {return PostAccountsRequest(
   accountToken: accountToken != null ? accountToken() : this.accountToken,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,
@@ -229,7 +229,7 @@ PostAccountsRequest copyWith({String? Function()? accountToken, PostAccountsAcco
   settings: settings != null ? settings() : this.settings,
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
   type: type != null ? type() : this.type,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsRequest &&
           accountToken == other.accountToken &&
@@ -256,4 +256,4 @@ PostAccountsRequest copyWith({String? Function()? accountToken, PostAccountsAcco
 
 @override String toString() => 'PostAccountsRequest(\n  accountToken: $accountToken,\n  bankAccount: $bankAccount,\n  businessProfile: $businessProfile,\n  businessType: $businessType,\n  capabilities: $capabilities,\n  company: $company,\n  controller: $controller,\n  country: $country,\n  defaultCurrency: $defaultCurrency,\n  documents: $documents,\n  email: $email,\n  expand: $expand,\n  externalAccount: $externalAccount,\n  groups: $groups,\n  individual: $individual,\n  metadata: $metadata,\n  settings: $settings,\n  tosAcceptance: $tosAcceptance,\n  type: $type,\n)';
 
- }
+}

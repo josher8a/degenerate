@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextClassification {const TextClassification({required this.text});
 
-factory TextClassification.fromJson(Map<String, dynamic> json) { return TextClassification(
+factory TextClassification.fromJson(Map<String, dynamic> json) {return TextClassification(
   text: json['text'] as String,
-); }
+);}
 
 /// The text that you want to classify
 final String text;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'text': text,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('text') && json['text'] is String;}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (text.isEmpty) { errors.add('text: length must be >= 1'); }
-return errors; } 
-TextClassification copyWith({String? text}) { return TextClassification(
+return errors;}
+TextClassification copyWith({String? text}) {return TextClassification(
   text: text ?? this.text,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TextClassification &&
           text == other.text;
@@ -29,4 +29,4 @@ TextClassification copyWith({String? text}) { return TextClassification(
 
 @override String toString() => 'TextClassification(text: $text)';
 
- }
+}

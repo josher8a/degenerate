@@ -7,12 +7,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 @immutable final class ZonesSchemasMirage {const ZonesSchemasMirage({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
-factory ZonesSchemasMirage.fromJson(Map<String, dynamic> json) { return ZonesSchemasMirage(
+factory ZonesSchemasMirage.fromJson(Map<String, dynamic> json) {return ZonesSchemasMirage(
   editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesMirageValue.fromJson(json['value'] as String),
-); }
+);}
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
 final bool? editable;
@@ -33,20 +33,20 @@ final ZonesMirageValue value;
 /// The value of `editable`, or its schema default when absent.
 bool get editableOrDefault => editable ?? true;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('value'); } 
-ZonesSchemasMirage copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesMirageValue? value, }) { return ZonesSchemasMirage(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('id') &&
+      json.containsKey('value');}
+ZonesSchemasMirage copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesMirageValue? value, }) {return ZonesSchemasMirage(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesSchemasMirage &&
           editable == other.editable &&
@@ -58,4 +58,4 @@ ZonesSchemasMirage copyWith({bool? Function()? editable, dynamic Function()? id,
 
 @override String toString() => 'ZonesSchemasMirage(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
 
- }
+}

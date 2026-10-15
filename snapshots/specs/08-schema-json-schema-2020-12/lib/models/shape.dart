@@ -3,11 +3,11 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_08_schema_json_schema_2020_12/models/shape/shape_circle.dart';import 'package:spec_08_schema_json_schema_2020_12/models/shape/shape_rectangle.dart';sealed class ShapeKind {const ShapeKind();
 
-factory ShapeKind.fromJson(String json) { return switch (json) {
+factory ShapeKind.fromJson(String json) {return switch (json) {
   'circle' => circle,
   'rectangle' => rectangle,
   _ => ShapeKind$Unknown(json),
-}; }
+};}
 
 static const ShapeKind circle = ShapeKind$circle._();
 
@@ -20,7 +20,7 @@ String toJson() => value;
 
 bool get isUnknown => this is ShapeKind$Unknown;
 
- }
+}
 @immutable final class ShapeKind$circle extends ShapeKind {const ShapeKind$circle._();
 
 @override String get value => 'circle';
@@ -31,7 +31,7 @@ bool get isUnknown => this is ShapeKind$Unknown;
 
 @override String toString() => 'ShapeKind(circle)';
 
- }
+}
 @immutable final class ShapeKind$rectangle extends ShapeKind {const ShapeKind$rectangle._();
 
 @override String get value => 'rectangle';
@@ -42,7 +42,7 @@ bool get isUnknown => this is ShapeKind$Unknown;
 
 @override String toString() => 'ShapeKind(rectangle)';
 
- }
+}
 @immutable final class ShapeKind$Unknown extends ShapeKind {const ShapeKind$Unknown(this.value);
 
 @override final String value;
@@ -53,21 +53,21 @@ bool get isUnknown => this is ShapeKind$Unknown;
 
 @override String toString() => 'ShapeKind($value)';
 
- }
+}
 sealed class Shape {const Shape();
 
 /// Deserialize from JSON, dispatching on the `kind` discriminator.
-factory Shape.fromJson(Map<String, dynamic> json) { return switch (json['kind']) {
+factory Shape.fromJson(Map<String, dynamic> json) {return switch (json['kind']) {
   'circle' => ShapeCircle$Variant.fromJson(json),
   'rectangle' => ShapeRectangle$Variant.fromJson(json),
   _ => Shape$Unknown(json),
-}; }
+};}
 
 /// Build the `circle` variant.
-factory Shape.circle({required double radius, required String id, Omittable<String?> color = const Omittable.absent(), DateTime? createdAt, }) { return ShapeCircle$Variant(ShapeCircle(kind: 'circle', radius: radius, color: color, id: id, createdAt: createdAt)); }
+factory Shape.circle({required double radius, required String id, Omittable<String?> color = const Omittable.absent(), DateTime? createdAt, }) {return ShapeCircle$Variant(ShapeCircle(kind: 'circle', radius: radius, color: color, id: id, createdAt: createdAt));}
 
 /// Build the `rectangle` variant.
-factory Shape.rectangle({required double width, required double height, required String id, Omittable<dynamic> meta = const Omittable.absent(), DateTime? createdAt, }) { return ShapeRectangle$Variant(ShapeRectangle(kind: 'rectangle', width: width, height: height, meta: meta, id: id, createdAt: createdAt)); }
+factory Shape.rectangle({required double width, required double height, required String id, Omittable<dynamic> meta = const Omittable.absent(), DateTime? createdAt, }) {return ShapeRectangle$Variant(ShapeRectangle(kind: 'rectangle', width: width, height: height, meta: meta, id: id, createdAt: createdAt));}
 
 /// The discriminator value identifying this variant.
 ShapeKind get kind;
@@ -79,15 +79,15 @@ bool get isUnknown => this is Shape$Unknown;
 String get id;
 /// Shared by all variants of this union.
 DateTime? get createdAt;
-R when<R>({required R Function(ShapeCircle$Variant) circle, required R Function(ShapeRectangle$Variant) rectangle, required R Function(Shape$Unknown) unknown, }) { return switch (this) {
+R when<R>({required R Function(ShapeCircle$Variant) circle, required R Function(ShapeRectangle$Variant) rectangle, required R Function(Shape$Unknown) unknown, }) {return switch (this) {
   final ShapeCircle$Variant v => circle(v),
   final ShapeRectangle$Variant v => rectangle(v),
   final Shape$Unknown v => unknown(v),
-}; } 
- }
+};}
+}
 @immutable final class ShapeCircle$Variant extends Shape {const ShapeCircle$Variant(this.shapeCircle);
 
-factory ShapeCircle$Variant.fromJson(Map<String, dynamic> json) { return ShapeCircle$Variant(ShapeCircle.fromJson(json)); }
+factory ShapeCircle$Variant.fromJson(Map<String, dynamic> json) {return ShapeCircle$Variant(ShapeCircle.fromJson(json));}
 
 final ShapeCircle shapeCircle;
 
@@ -95,12 +95,12 @@ final ShapeCircle shapeCircle;
 
 @override Map<String, dynamic> toJson() => {...shapeCircle.toJson(), 'kind': kind.toJson()};
 
-ShapeCircle$Variant copyWith({double? radius, Omittable<String?>? color, String? id, DateTime? Function()? createdAt, }) { return ShapeCircle$Variant(shapeCircle.copyWith(
+ShapeCircle$Variant copyWith({double? radius, Omittable<String?>? color, String? id, DateTime? Function()? createdAt, }) {return ShapeCircle$Variant(shapeCircle.copyWith(
   radius: radius,
   color: color,
   id: id,
   createdAt: createdAt,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ShapeCircle$Variant && shapeCircle == other.shapeCircle;
 
@@ -112,10 +112,10 @@ ShapeCircle$Variant copyWith({double? radius, Omittable<String?>? color, String?
 
 @override DateTime? get createdAt => shapeCircle.createdAt;
 
- }
+}
 @immutable final class ShapeRectangle$Variant extends Shape {const ShapeRectangle$Variant(this.shapeRectangle);
 
-factory ShapeRectangle$Variant.fromJson(Map<String, dynamic> json) { return ShapeRectangle$Variant(ShapeRectangle.fromJson(json)); }
+factory ShapeRectangle$Variant.fromJson(Map<String, dynamic> json) {return ShapeRectangle$Variant(ShapeRectangle.fromJson(json));}
 
 final ShapeRectangle shapeRectangle;
 
@@ -123,13 +123,13 @@ final ShapeRectangle shapeRectangle;
 
 @override Map<String, dynamic> toJson() => {...shapeRectangle.toJson(), 'kind': kind.toJson()};
 
-ShapeRectangle$Variant copyWith({double? width, double? height, Omittable<dynamic>? meta, String? id, DateTime? Function()? createdAt, }) { return ShapeRectangle$Variant(shapeRectangle.copyWith(
+ShapeRectangle$Variant copyWith({double? width, double? height, Omittable<dynamic>? meta, String? id, DateTime? Function()? createdAt, }) {return ShapeRectangle$Variant(shapeRectangle.copyWith(
   width: width,
   height: height,
   meta: meta,
   id: id,
   createdAt: createdAt,
-)); } 
+));}
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ShapeRectangle$Variant && shapeRectangle == other.shapeRectangle;
 
@@ -141,7 +141,7 @@ ShapeRectangle$Variant copyWith({double? width, double? height, Omittable<dynami
 
 @override DateTime? get createdAt => shapeRectangle.createdAt;
 
- }
+}
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
 @immutable final class Shape$Unknown extends Shape {Shape$Unknown(this.json);
@@ -167,4 +167,4 @@ late final DateTime? _createdAt = json['createdAt'] != null ? DateTime.parse(jso
 
 @override DateTime? get createdAt => _createdAt;
 
- }
+}

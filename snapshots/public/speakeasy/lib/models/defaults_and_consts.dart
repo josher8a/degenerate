@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ConstEnumStr {const ConstEnumStr();
 
-factory ConstEnumStr.fromJson(String json) { return switch (json) {
+factory ConstEnumStr.fromJson(String json) {return switch (json) {
   'one' => one,
   'two' => two,
   'three' => three,
   _ => ConstEnumStr$Unknown(json),
-}; }
+};}
 
 static const ConstEnumStr one = ConstEnumStr$one._();
 
@@ -19,33 +19,33 @@ static const ConstEnumStr three = ConstEnumStr$three._();
 static const List<ConstEnumStr> values = [one, two, three];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'one' => 'one',
   'two' => 'two',
   'three' => 'three',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConstEnumStr$Unknown; } 
+bool get isUnknown {return this is ConstEnumStr$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) {return switch (this) {
       ConstEnumStr$one() => one(),
       ConstEnumStr$two() => two(),
       ConstEnumStr$three() => three(),
       ConstEnumStr$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) {return switch (this) {
       ConstEnumStr$one() => one != null ? one() : orElse(value),
       ConstEnumStr$two() => two != null ? two() : orElse(value),
       ConstEnumStr$three() => three != null ? three() : orElse(value),
       ConstEnumStr$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ConstEnumStr($value)';
 
- }
+}
 @immutable final class ConstEnumStr$one extends ConstEnumStr {const ConstEnumStr$one._();
 
 @override String get value => 'one';
@@ -54,7 +54,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'one'.hashCode;
 
- }
+}
 @immutable final class ConstEnumStr$two extends ConstEnumStr {const ConstEnumStr$two._();
 
 @override String get value => 'two';
@@ -63,7 +63,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'two'.hashCode;
 
- }
+}
 @immutable final class ConstEnumStr$three extends ConstEnumStr {const ConstEnumStr$three._();
 
 @override String get value => 'three';
@@ -72,7 +72,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'three'.hashCode;
 
- }
+}
 @immutable final class ConstEnumStr$Unknown extends ConstEnumStr {const ConstEnumStr$Unknown(this.value);
 
 @override final String value;
@@ -82,15 +82,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class ConstEnumInt {const ConstEnumInt();
 
-factory ConstEnumInt.fromJson(int json) { return switch (json) {
+factory ConstEnumInt.fromJson(int json) {return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
   _ => ConstEnumInt$Unknown(json),
-}; }
+};}
 
 static const ConstEnumInt $1 = ConstEnumInt$$1._();
 
@@ -101,33 +101,33 @@ static const ConstEnumInt $3 = ConstEnumInt$$3._();
 static const List<ConstEnumInt> values = [$1, $2, $3];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   1 => r'$1',
   2 => r'$2',
   3 => r'$3',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConstEnumInt$Unknown; } 
+bool get isUnknown {return this is ConstEnumInt$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) {return switch (this) {
       ConstEnumInt$$1() => $1(),
       ConstEnumInt$$2() => $2(),
       ConstEnumInt$$3() => $3(),
       ConstEnumInt$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) {return switch (this) {
       ConstEnumInt$$1() => $1 != null ? $1() : orElse(value),
       ConstEnumInt$$2() => $2 != null ? $2() : orElse(value),
       ConstEnumInt$$3() => $3 != null ? $3() : orElse(value),
       ConstEnumInt$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'ConstEnumInt($value)';
 
- }
+}
 @immutable final class ConstEnumInt$$1 extends ConstEnumInt {const ConstEnumInt$$1._();
 
 @override int get value => 1;
@@ -136,7 +136,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 1.hashCode;
 
- }
+}
 @immutable final class ConstEnumInt$$2 extends ConstEnumInt {const ConstEnumInt$$2._();
 
 @override int get value => 2;
@@ -145,7 +145,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 2.hashCode;
 
- }
+}
 @immutable final class ConstEnumInt$$3 extends ConstEnumInt {const ConstEnumInt$$3._();
 
 @override int get value => 3;
@@ -154,7 +154,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 3.hashCode;
 
- }
+}
 @immutable final class ConstEnumInt$Unknown extends ConstEnumInt {const ConstEnumInt$Unknown(this.value);
 
 @override final int value;
@@ -164,15 +164,15 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class DefaultEnumStr {const DefaultEnumStr();
 
-factory DefaultEnumStr.fromJson(String json) { return switch (json) {
+factory DefaultEnumStr.fromJson(String json) {return switch (json) {
   'one' => one,
   'two' => two,
   'three' => three,
   _ => DefaultEnumStr$Unknown(json),
-}; }
+};}
 
 static const DefaultEnumStr one = DefaultEnumStr$one._();
 
@@ -183,33 +183,33 @@ static const DefaultEnumStr three = DefaultEnumStr$three._();
 static const List<DefaultEnumStr> values = [one, two, three];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'one' => 'one',
   'two' => 'two',
   'three' => 'three',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DefaultEnumStr$Unknown; } 
+bool get isUnknown {return this is DefaultEnumStr$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) {return switch (this) {
       DefaultEnumStr$one() => one(),
       DefaultEnumStr$two() => two(),
       DefaultEnumStr$three() => three(),
       DefaultEnumStr$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) {return switch (this) {
       DefaultEnumStr$one() => one != null ? one() : orElse(value),
       DefaultEnumStr$two() => two != null ? two() : orElse(value),
       DefaultEnumStr$three() => three != null ? three() : orElse(value),
       DefaultEnumStr$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DefaultEnumStr($value)';
 
- }
+}
 @immutable final class DefaultEnumStr$one extends DefaultEnumStr {const DefaultEnumStr$one._();
 
 @override String get value => 'one';
@@ -218,7 +218,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'one'.hashCode;
 
- }
+}
 @immutable final class DefaultEnumStr$two extends DefaultEnumStr {const DefaultEnumStr$two._();
 
 @override String get value => 'two';
@@ -227,7 +227,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'two'.hashCode;
 
- }
+}
 @immutable final class DefaultEnumStr$three extends DefaultEnumStr {const DefaultEnumStr$three._();
 
 @override String get value => 'three';
@@ -236,7 +236,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => 'three'.hashCode;
 
- }
+}
 @immutable final class DefaultEnumStr$Unknown extends DefaultEnumStr {const DefaultEnumStr$Unknown(this.value);
 
 @override final String value;
@@ -246,15 +246,15 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W F
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 sealed class DefaultEnumInt {const DefaultEnumInt();
 
-factory DefaultEnumInt.fromJson(int json) { return switch (json) {
+factory DefaultEnumInt.fromJson(int json) {return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
   _ => DefaultEnumInt$Unknown(json),
-}; }
+};}
 
 static const DefaultEnumInt $1 = DefaultEnumInt$$1._();
 
@@ -265,33 +265,33 @@ static const DefaultEnumInt $3 = DefaultEnumInt$$3._();
 static const List<DefaultEnumInt> values = [$1, $2, $3];
 
 int get value;
-int toJson() { return value; } 
+int toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   1 => r'$1',
   2 => r'$2',
   3 => r'$3',
   _ => '$value',
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is DefaultEnumInt$Unknown; } 
+bool get isUnknown {return this is DefaultEnumInt$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) {return switch (this) {
       DefaultEnumInt$$1() => $1(),
       DefaultEnumInt$$2() => $2(),
       DefaultEnumInt$$3() => $3(),
       DefaultEnumInt$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) {return switch (this) {
       DefaultEnumInt$$1() => $1 != null ? $1() : orElse(value),
       DefaultEnumInt$$2() => $2 != null ? $2() : orElse(value),
       DefaultEnumInt$$3() => $3 != null ? $3() : orElse(value),
       DefaultEnumInt$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'DefaultEnumInt($value)';
 
- }
+}
 @immutable final class DefaultEnumInt$$1 extends DefaultEnumInt {const DefaultEnumInt$$1._();
 
 @override int get value => 1;
@@ -300,7 +300,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 1.hashCode;
 
- }
+}
 @immutable final class DefaultEnumInt$$2 extends DefaultEnumInt {const DefaultEnumInt$$2._();
 
 @override int get value => 2;
@@ -309,7 +309,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 2.hashCode;
 
- }
+}
 @immutable final class DefaultEnumInt$$3 extends DefaultEnumInt {const DefaultEnumInt$$3._();
 
 @override int get value => 3;
@@ -318,7 +318,7 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => 3.hashCode;
 
- }
+}
 @immutable final class DefaultEnumInt$Unknown extends DefaultEnumInt {const DefaultEnumInt$Unknown(this.value);
 
 @override final int value;
@@ -328,10 +328,10 @@ W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Funct
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class DefaultsAndConsts {const DefaultsAndConsts({required this.constDateTime, required this.constStr, required this.constStrDQuotes, required this.constStrSQuotes, required this.constStrBackticks, required this.constStrBrackets, required this.constStrNull, required this.constInt, required this.constNum, required this.constBool, required this.constDate, required this.normalField, required this.constEnumStr, required this.constEnumInt, required this.constBigInt, required this.constBigIntStr, required this.constDecimal, required this.constDecimalStr, required this.defaultStr, required this.defaultStrDQuotes, required this.defaultStrSQuotes, required this.defaultDecimal, required this.defaultBigIntStr, required this.defaultDecimalStr, required this.defaultBigInt, required this.defaultInt, required this.defaultNum, required this.defaultBool, required this.defaultDate, required this.defaultDateTime, required this.defaultEnumStr, required this.defaultEnumInt, required this.defaultStrNullable, this.defaultStrBrackets, this.defaultStrBackticks, this.defaultStrOptional, });
 
-factory DefaultsAndConsts.fromJson(Map<String, dynamic> json) { return DefaultsAndConsts(
+factory DefaultsAndConsts.fromJson(Map<String, dynamic> json) {return DefaultsAndConsts(
   normalField: json['normalField'] as String,
   constStr: json['constStr'] as String,
   constStrDQuotes: json['constStrDQuotes'] as String,
@@ -368,7 +368,7 @@ factory DefaultsAndConsts.fromJson(Map<String, dynamic> json) { return DefaultsA
   defaultBigIntStr: json['defaultBigIntStr'] as String,
   defaultDecimal: (json['defaultDecimal'] as num).toDouble(),
   defaultDecimalStr: json['defaultDecimalStr'] as String,
-); }
+);}
 
 /// Example: `'test'`
 final String normalField;
@@ -452,7 +452,7 @@ String get defaultStrBracketsOrDefault => defaultStrBrackets ?? r'default with $
 /// The value of `defaultStrOptional`, or its schema default when absent.
 String get defaultStrOptionalOrDefault => defaultStrOptional ?? 'default';
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'normalField': normalField,
   'constStr': constStr,
   'constStrDQuotes': constStrDQuotes,
@@ -489,8 +489,8 @@ Map<String, dynamic> toJson() { return {
   'defaultBigIntStr': defaultBigIntStr,
   'defaultDecimal': defaultDecimal,
   'defaultDecimalStr': defaultDecimalStr,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('normalField') && json['normalField'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('normalField') && json['normalField'] is String &&
       json.containsKey('constStr') && json['constStr'] is String &&
       json.containsKey('constStrDQuotes') && json['constStrDQuotes'] is String &&
       json.containsKey('constStrSQuotes') && json['constStrSQuotes'] is String &&
@@ -522,8 +522,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('norma
       json.containsKey('defaultBigInt') && json['defaultBigInt'] is num &&
       json.containsKey('defaultBigIntStr') && json['defaultBigIntStr'] is String &&
       json.containsKey('defaultDecimal') && json['defaultDecimal'] is num &&
-      json.containsKey('defaultDecimalStr') && json['defaultDecimalStr'] is String; } 
-DefaultsAndConsts copyWith({String? normalField, String? constStr, String? constStrDQuotes, String? constStrSQuotes, String? constStrBackticks, String? constStrBrackets, String? Function()? constStrNull, int? constInt, double? constNum, bool? constBool, String? constDate, DateTime? constDateTime, ConstEnumStr? constEnumStr, ConstEnumInt? constEnumInt, int? constBigInt, String? constBigIntStr, double? constDecimal, String? constDecimalStr, String? defaultStr, String? defaultStrDQuotes, String? defaultStrSQuotes, String? Function()? defaultStrBackticks, String? Function()? defaultStrBrackets, String? Function()? defaultStrNullable, String? Function()? defaultStrOptional, int? defaultInt, double? defaultNum, bool? defaultBool, String? defaultDate, DateTime? defaultDateTime, DefaultEnumStr? defaultEnumStr, DefaultEnumInt? defaultEnumInt, int? defaultBigInt, String? defaultBigIntStr, double? defaultDecimal, String? defaultDecimalStr, }) { return DefaultsAndConsts(
+      json.containsKey('defaultDecimalStr') && json['defaultDecimalStr'] is String;}
+DefaultsAndConsts copyWith({String? normalField, String? constStr, String? constStrDQuotes, String? constStrSQuotes, String? constStrBackticks, String? constStrBrackets, String? Function()? constStrNull, int? constInt, double? constNum, bool? constBool, String? constDate, DateTime? constDateTime, ConstEnumStr? constEnumStr, ConstEnumInt? constEnumInt, int? constBigInt, String? constBigIntStr, double? constDecimal, String? constDecimalStr, String? defaultStr, String? defaultStrDQuotes, String? defaultStrSQuotes, String? Function()? defaultStrBackticks, String? Function()? defaultStrBrackets, String? Function()? defaultStrNullable, String? Function()? defaultStrOptional, int? defaultInt, double? defaultNum, bool? defaultBool, String? defaultDate, DateTime? defaultDateTime, DefaultEnumStr? defaultEnumStr, DefaultEnumInt? defaultEnumInt, int? defaultBigInt, String? defaultBigIntStr, double? defaultDecimal, String? defaultDecimalStr, }) {return DefaultsAndConsts(
   normalField: normalField ?? this.normalField,
   constStr: constStr ?? this.constStr,
   constStrDQuotes: constStrDQuotes ?? this.constStrDQuotes,
@@ -560,7 +560,7 @@ DefaultsAndConsts copyWith({String? normalField, String? constStr, String? const
   defaultBigIntStr: defaultBigIntStr ?? this.defaultBigIntStr,
   defaultDecimal: defaultDecimal ?? this.defaultDecimal,
   defaultDecimalStr: defaultDecimalStr ?? this.defaultDecimalStr,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DefaultsAndConsts &&
           normalField == other.normalField &&
@@ -604,4 +604,4 @@ DefaultsAndConsts copyWith({String? normalField, String? constStr, String? const
 
 @override String toString() => 'DefaultsAndConsts(\n  normalField: $normalField,\n  constStr: $constStr,\n  constStrDQuotes: $constStrDQuotes,\n  constStrSQuotes: $constStrSQuotes,\n  constStrBackticks: $constStrBackticks,\n  constStrBrackets: $constStrBrackets,\n  constStrNull: $constStrNull,\n  constInt: $constInt,\n  constNum: $constNum,\n  constBool: $constBool,\n  constDate: $constDate,\n  constDateTime: $constDateTime,\n  constEnumStr: $constEnumStr,\n  constEnumInt: $constEnumInt,\n  constBigInt: $constBigInt,\n  constBigIntStr: $constBigIntStr,\n  constDecimal: $constDecimal,\n  constDecimalStr: $constDecimalStr,\n  defaultStr: $defaultStr,\n  defaultStrDQuotes: $defaultStrDQuotes,\n  defaultStrSQuotes: $defaultStrSQuotes,\n  defaultStrBackticks: $defaultStrBackticks,\n  defaultStrBrackets: $defaultStrBrackets,\n  defaultStrNullable: $defaultStrNullable,\n  defaultStrOptional: $defaultStrOptional,\n  defaultInt: $defaultInt,\n  defaultNum: $defaultNum,\n  defaultBool: $defaultBool,\n  defaultDate: $defaultDate,\n  defaultDateTime: $defaultDateTime,\n  defaultEnumStr: $defaultEnumStr,\n  defaultEnumInt: $defaultEnumInt,\n  defaultBigInt: $defaultBigInt,\n  defaultBigIntStr: $defaultBigIntStr,\n  defaultDecimal: $defaultDecimal,\n  defaultDecimalStr: $defaultDecimalStr,\n)';
 
- }
+}

@@ -4,37 +4,37 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/source_code_verification_flow.dart';import 'package:pub_stripe_spec3/models/source_order.dart';import 'package:pub_stripe_spec3/models/source_owner.dart';import 'package:pub_stripe_spec3/models/source_receiver_flow.dart';import 'package:pub_stripe_spec3/models/source_redirect_flow.dart';import 'package:pub_stripe_spec3/models/source_type_ach_credit_transfer.dart';import 'package:pub_stripe_spec3/models/source_type_ach_debit.dart';import 'package:pub_stripe_spec3/models/source_type_acss_debit.dart';import 'package:pub_stripe_spec3/models/source_type_alipay.dart';import 'package:pub_stripe_spec3/models/source_type_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/source_type_bancontact.dart';import 'package:pub_stripe_spec3/models/source_type_card.dart';import 'package:pub_stripe_spec3/models/source_type_card_present.dart';import 'package:pub_stripe_spec3/models/source_type_eps.dart';import 'package:pub_stripe_spec3/models/source_type_giropay.dart';import 'package:pub_stripe_spec3/models/source_type_ideal.dart';import 'package:pub_stripe_spec3/models/source_type_klarna.dart';import 'package:pub_stripe_spec3/models/source_type_multibanco.dart';import 'package:pub_stripe_spec3/models/source_type_p24.dart';import 'package:pub_stripe_spec3/models/source_type_sepa_debit.dart';import 'package:pub_stripe_spec3/models/source_type_sofort.dart';import 'package:pub_stripe_spec3/models/source_type_three_d_secure.dart';import 'package:pub_stripe_spec3/models/source_type_wechat.dart';/// String representing the object's type. Objects of the same type share the same value.
 sealed class SourceObject {const SourceObject();
 
-factory SourceObject.fromJson(String json) { return switch (json) {
+factory SourceObject.fromJson(String json) {return switch (json) {
   'source' => source,
   _ => SourceObject$Unknown(json),
-}; }
+};}
 
 static const SourceObject source = SourceObject$source._();
 
 static const List<SourceObject> values = [source];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'source' => 'source',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SourceObject$Unknown; } 
+bool get isUnknown {return this is SourceObject$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() source, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() source, required W Function(String value) $unknown, }) {return switch (this) {
       SourceObject$source() => source(),
       SourceObject$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? source, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? source, W Function(String value)? $unknown, }) {return switch (this) {
       SourceObject$source() => source != null ? source() : orElse(value),
       SourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SourceObject($value)';
 
- }
+}
 @immutable final class SourceObject$source extends SourceObject {const SourceObject$source._();
 
 @override String get value => 'source';
@@ -43,7 +43,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? source, 
 
 @override int get hashCode => 'source'.hashCode;
 
- }
+}
 @immutable final class SourceObject$Unknown extends SourceObject {const SourceObject$Unknown(this.value);
 
 @override final String value;
@@ -53,11 +53,11 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? source, 
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// The `type` of the source. The `type` is a payment method, one of `ach_credit_transfer`, `ach_debit`, `alipay`, `bancontact`, `card`, `card_present`, `eps`, `giropay`, `ideal`, `multibanco`, `klarna`, `p24`, `sepa_debit`, `sofort`, `three_d_secure`, or `wechat`. An additional hash is included on the source with a name matching this value. It contains additional information specific to the [payment method](https://docs.stripe.com/sources) used.
 sealed class SourceType$1 {const SourceType$1();
 
-factory SourceType$1.fromJson(String json) { return switch (json) {
+factory SourceType$1.fromJson(String json) {return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
   'ach_debit' => achDebit,
   'acss_debit' => acssDebit,
@@ -77,7 +77,7 @@ factory SourceType$1.fromJson(String json) { return switch (json) {
   'three_d_secure' => threeDSecure,
   'wechat' => wechat,
   _ => SourceType$1$Unknown(json),
-}; }
+};}
 
 static const SourceType$1 achCreditTransfer = SourceType$1$achCreditTransfer._();
 
@@ -118,9 +118,9 @@ static const SourceType$1 wechat = SourceType$1$wechat._();
 static const List<SourceType$1> values = [achCreditTransfer, achDebit, acssDebit, alipay, auBecsDebit, bancontact, card, cardPresent, eps, giropay, ideal, klarna, multibanco, p24, sepaDebit, sofort, threeDSecure, wechat];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'ach_credit_transfer' => 'achCreditTransfer',
   'ach_debit' => 'achDebit',
   'acss_debit' => 'acssDebit',
@@ -140,11 +140,11 @@ String get name { return switch (value) {
   'three_d_secure' => 'threeDSecure',
   'wechat' => 'wechat',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is SourceType$1$Unknown; } 
+bool get isUnknown {return this is SourceType$1$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() achCreditTransfer, required W Function() achDebit, required W Function() acssDebit, required W Function() alipay, required W Function() auBecsDebit, required W Function() bancontact, required W Function() card, required W Function() cardPresent, required W Function() eps, required W Function() giropay, required W Function() ideal, required W Function() klarna, required W Function() multibanco, required W Function() p24, required W Function() sepaDebit, required W Function() sofort, required W Function() threeDSecure, required W Function() wechat, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() achCreditTransfer, required W Function() achDebit, required W Function() acssDebit, required W Function() alipay, required W Function() auBecsDebit, required W Function() bancontact, required W Function() card, required W Function() cardPresent, required W Function() eps, required W Function() giropay, required W Function() ideal, required W Function() klarna, required W Function() multibanco, required W Function() p24, required W Function() sepaDebit, required W Function() sofort, required W Function() threeDSecure, required W Function() wechat, required W Function(String value) $unknown, }) {return switch (this) {
       SourceType$1$achCreditTransfer() => achCreditTransfer(),
       SourceType$1$achDebit() => achDebit(),
       SourceType$1$acssDebit() => acssDebit(),
@@ -164,9 +164,9 @@ W when<W>({required W Function() achCreditTransfer, required W Function() achDeb
       SourceType$1$threeDSecure() => threeDSecure(),
       SourceType$1$wechat() => wechat(),
       SourceType$1$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCreditTransfer, W Function()? achDebit, W Function()? acssDebit, W Function()? alipay, W Function()? auBecsDebit, W Function()? bancontact, W Function()? card, W Function()? cardPresent, W Function()? eps, W Function()? giropay, W Function()? ideal, W Function()? klarna, W Function()? multibanco, W Function()? p24, W Function()? sepaDebit, W Function()? sofort, W Function()? threeDSecure, W Function()? wechat, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCreditTransfer, W Function()? achDebit, W Function()? acssDebit, W Function()? alipay, W Function()? auBecsDebit, W Function()? bancontact, W Function()? card, W Function()? cardPresent, W Function()? eps, W Function()? giropay, W Function()? ideal, W Function()? klarna, W Function()? multibanco, W Function()? p24, W Function()? sepaDebit, W Function()? sofort, W Function()? threeDSecure, W Function()? wechat, W Function(String value)? $unknown, }) {return switch (this) {
       SourceType$1$achCreditTransfer() => achCreditTransfer != null ? achCreditTransfer() : orElse(value),
       SourceType$1$achDebit() => achDebit != null ? achDebit() : orElse(value),
       SourceType$1$acssDebit() => acssDebit != null ? acssDebit() : orElse(value),
@@ -186,10 +186,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
       SourceType$1$threeDSecure() => threeDSecure != null ? threeDSecure() : orElse(value),
       SourceType$1$wechat() => wechat != null ? wechat() : orElse(value),
       SourceType$1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'SourceType\$1($value)';
 
- }
+}
 @immutable final class SourceType$1$achCreditTransfer extends SourceType$1 {const SourceType$1$achCreditTransfer._();
 
 @override String get value => 'ach_credit_transfer';
@@ -198,7 +198,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'ach_credit_transfer'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$achDebit extends SourceType$1 {const SourceType$1$achDebit._();
 
 @override String get value => 'ach_debit';
@@ -207,7 +207,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'ach_debit'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$acssDebit extends SourceType$1 {const SourceType$1$acssDebit._();
 
 @override String get value => 'acss_debit';
@@ -216,7 +216,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'acss_debit'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$alipay extends SourceType$1 {const SourceType$1$alipay._();
 
 @override String get value => 'alipay';
@@ -225,7 +225,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'alipay'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$auBecsDebit extends SourceType$1 {const SourceType$1$auBecsDebit._();
 
 @override String get value => 'au_becs_debit';
@@ -234,7 +234,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'au_becs_debit'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$bancontact extends SourceType$1 {const SourceType$1$bancontact._();
 
 @override String get value => 'bancontact';
@@ -243,7 +243,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'bancontact'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$card extends SourceType$1 {const SourceType$1$card._();
 
 @override String get value => 'card';
@@ -252,7 +252,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'card'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$cardPresent extends SourceType$1 {const SourceType$1$cardPresent._();
 
 @override String get value => 'card_present';
@@ -261,7 +261,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'card_present'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$eps extends SourceType$1 {const SourceType$1$eps._();
 
 @override String get value => 'eps';
@@ -270,7 +270,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'eps'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$giropay extends SourceType$1 {const SourceType$1$giropay._();
 
 @override String get value => 'giropay';
@@ -279,7 +279,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'giropay'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$ideal extends SourceType$1 {const SourceType$1$ideal._();
 
 @override String get value => 'ideal';
@@ -288,7 +288,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'ideal'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$klarna extends SourceType$1 {const SourceType$1$klarna._();
 
 @override String get value => 'klarna';
@@ -297,7 +297,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'klarna'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$multibanco extends SourceType$1 {const SourceType$1$multibanco._();
 
 @override String get value => 'multibanco';
@@ -306,7 +306,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'multibanco'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$p24 extends SourceType$1 {const SourceType$1$p24._();
 
 @override String get value => 'p24';
@@ -315,7 +315,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'p24'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$sepaDebit extends SourceType$1 {const SourceType$1$sepaDebit._();
 
 @override String get value => 'sepa_debit';
@@ -324,7 +324,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'sepa_debit'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$sofort extends SourceType$1 {const SourceType$1$sofort._();
 
 @override String get value => 'sofort';
@@ -333,7 +333,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'sofort'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$threeDSecure extends SourceType$1 {const SourceType$1$threeDSecure._();
 
 @override String get value => 'three_d_secure';
@@ -342,7 +342,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'three_d_secure'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$wechat extends SourceType$1 {const SourceType$1$wechat._();
 
 @override String get value => 'wechat';
@@ -351,7 +351,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => 'wechat'.hashCode;
 
- }
+}
 @immutable final class SourceType$1$Unknown extends SourceType$1 {const SourceType$1$Unknown(this.value);
 
 @override final String value;
@@ -361,7 +361,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 /// `Source` objects allow you to accept a variety of payment methods. They
 /// represent a customer's payment instrument, and can be used with the Stripe API
 /// just like a `Card` object: once chargeable, they can be charged, or can be
@@ -374,7 +374,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCredi
 /// Related guides: [Sources API](https://docs.stripe.com/sources) and [Sources & Customers](https://docs.stripe.com/sources/customers).
 @immutable final class Source {const Source({required this.id, required this.created, required this.status, required this.livemode, required this.object, required this.flow, required this.type, required this.clientSecret, this.card, this.cardPresent, this.bancontact, this.codeVerification, this.achCreditTransfer, this.currency = const Omittable.absent(), this.customer, this.eps, this.amount = const Omittable.absent(), this.giropay, this.allowRedisplay = const Omittable.absent(), this.ideal, this.klarna, this.alipay, this.metadata = const Omittable.absent(), this.multibanco, this.wechat, this.owner = const Omittable.absent(), this.p24, this.receiver, this.redirect, this.sepaDebit, this.sofort, this.sourceOrder, this.statementDescriptor = const Omittable.absent(), this.acssDebit, this.threeDSecure, this.achDebit, this.usage = const Omittable.absent(), this.auBecsDebit, });
 
-factory Source.fromJson(Map<String, dynamic> json) { return Source(
+factory Source.fromJson(Map<String, dynamic> json) {return Source(
   achCreditTransfer: json['ach_credit_transfer'] != null ? SourceTypeAchCreditTransfer.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>) : null,
   achDebit: json['ach_debit'] != null ? SourceTypeAchDebit.fromJson(json['ach_debit'] as Map<String, dynamic>) : null,
   acssDebit: json['acss_debit'] != null ? SourceTypeAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
@@ -413,7 +413,7 @@ factory Source.fromJson(Map<String, dynamic> json) { return Source(
   type: SourceType$1.fromJson(json['type'] as String),
   usage: json.containsKey('usage') ? Omittable(json['usage'] as String?) : const Omittable.absent(),
   wechat: json['wechat'] != null ? SourceTypeWechat.fromJson(json['wechat'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final SourceTypeAchCreditTransfer? achCreditTransfer;
 
@@ -507,7 +507,7 @@ final Omittable<String?> usage;
 
 final SourceTypeWechat? wechat;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (achCreditTransfer != null) 'ach_credit_transfer': achCreditTransfer?.toJson(),
   if (achDebit != null) 'ach_debit': achDebit?.toJson(),
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
@@ -546,17 +546,17 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (usage.isPresent) 'usage': usage.value,
   if (wechat != null) 'wechat': wechat?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret') && json['client_secret'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('client_secret') && json['client_secret'] is String &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('flow') && json['flow'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') && json['object'] == 'source' &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('type'); } 
+      json.containsKey('type');}
 /// Constraint violations for this value (empty when valid).
-List<String> validate() { final errors = <String>[];
+List<String> validate() {final errors = <String>[];
 if (clientSecret.runes.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
 final customer$ = customer;
 if (customer$ != null) {
@@ -573,8 +573,8 @@ final usage$ = usage.value;
 if (usage$ != null) {
   if (usage$.runes.length > 5000) { errors.add('usage: length must be <= 5000'); }
 }
-return errors; } 
-Source copyWith({SourceTypeAchCreditTransfer? Function()? achCreditTransfer, SourceTypeAchDebit? Function()? achDebit, SourceTypeAcssDebit? Function()? acssDebit, SourceTypeAlipay? Function()? alipay, Omittable<CardAllowRedisplay?>? allowRedisplay, Omittable<int?>? amount, SourceTypeAuBecsDebit? Function()? auBecsDebit, SourceTypeBancontact? Function()? bancontact, SourceTypeCard? Function()? card, SourceTypeCardPresent? Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow? Function()? codeVerification, int? created, Omittable<String?>? currency, String? Function()? customer, SourceTypeEps? Function()? eps, String? flow, SourceTypeGiropay? Function()? giropay, String? id, SourceTypeIdeal? Function()? ideal, SourceTypeKlarna? Function()? klarna, bool? livemode, Omittable<Map<String,String>?>? metadata, SourceTypeMultibanco? Function()? multibanco, SourceObject? object, Omittable<SourceOwner?>? owner, SourceTypeP24? Function()? p24, SourceReceiverFlow? Function()? receiver, SourceRedirectFlow? Function()? redirect, SourceTypeSepaDebit? Function()? sepaDebit, SourceTypeSofort? Function()? sofort, SourceOrder? Function()? sourceOrder, Omittable<String?>? statementDescriptor, String? status, SourceTypeThreeDSecure? Function()? threeDSecure, SourceType$1? type, Omittable<String?>? usage, SourceTypeWechat? Function()? wechat, }) { return Source(
+return errors;}
+Source copyWith({SourceTypeAchCreditTransfer? Function()? achCreditTransfer, SourceTypeAchDebit? Function()? achDebit, SourceTypeAcssDebit? Function()? acssDebit, SourceTypeAlipay? Function()? alipay, Omittable<CardAllowRedisplay?>? allowRedisplay, Omittable<int?>? amount, SourceTypeAuBecsDebit? Function()? auBecsDebit, SourceTypeBancontact? Function()? bancontact, SourceTypeCard? Function()? card, SourceTypeCardPresent? Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow? Function()? codeVerification, int? created, Omittable<String?>? currency, String? Function()? customer, SourceTypeEps? Function()? eps, String? flow, SourceTypeGiropay? Function()? giropay, String? id, SourceTypeIdeal? Function()? ideal, SourceTypeKlarna? Function()? klarna, bool? livemode, Omittable<Map<String,String>?>? metadata, SourceTypeMultibanco? Function()? multibanco, SourceObject? object, Omittable<SourceOwner?>? owner, SourceTypeP24? Function()? p24, SourceReceiverFlow? Function()? receiver, SourceRedirectFlow? Function()? redirect, SourceTypeSepaDebit? Function()? sepaDebit, SourceTypeSofort? Function()? sofort, SourceOrder? Function()? sourceOrder, Omittable<String?>? statementDescriptor, String? status, SourceTypeThreeDSecure? Function()? threeDSecure, SourceType$1? type, Omittable<String?>? usage, SourceTypeWechat? Function()? wechat, }) {return Source(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,
   achDebit: achDebit != null ? achDebit() : this.achDebit,
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
@@ -613,7 +613,7 @@ Source copyWith({SourceTypeAchCreditTransfer? Function()? achCreditTransfer, Sou
   type: type ?? this.type,
   usage: usage ?? this.usage,
   wechat: wechat != null ? wechat() : this.wechat,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Source &&
           achCreditTransfer == other.achCreditTransfer &&
@@ -659,4 +659,4 @@ Source copyWith({SourceTypeAchCreditTransfer? Function()? achCreditTransfer, Sou
 
 @override String toString() => 'Source(\n  achCreditTransfer: $achCreditTransfer,\n  achDebit: $achDebit,\n  acssDebit: $acssDebit,\n  alipay: $alipay,\n  allowRedisplay: $allowRedisplay,\n  amount: $amount,\n  auBecsDebit: $auBecsDebit,\n  bancontact: $bancontact,\n  card: $card,\n  cardPresent: $cardPresent,\n  clientSecret: $clientSecret,\n  codeVerification: $codeVerification,\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  eps: $eps,\n  flow: $flow,\n  giropay: $giropay,\n  id: $id,\n  ideal: $ideal,\n  klarna: $klarna,\n  livemode: $livemode,\n  metadata: $metadata,\n  multibanco: $multibanco,\n  object: $object,\n  owner: $owner,\n  p24: $p24,\n  receiver: $receiver,\n  redirect: $redirect,\n  sepaDebit: $sepaDebit,\n  sofort: $sofort,\n  sourceOrder: $sourceOrder,\n  statementDescriptor: $statementDescriptor,\n  status: $status,\n  threeDSecure: $threeDSecure,\n  type: $type,\n  usage: $usage,\n  wechat: $wechat,\n)';
 
- }
+}

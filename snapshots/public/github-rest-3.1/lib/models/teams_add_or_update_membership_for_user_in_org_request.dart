@@ -3,9 +3,9 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_membership/team_membership_role.dart';@immutable final class TeamsAddOrUpdateMembershipForUserInOrgRequest {const TeamsAddOrUpdateMembershipForUserInOrgRequest({this.role});
 
-factory TeamsAddOrUpdateMembershipForUserInOrgRequest.fromJson(Map<String, dynamic> json) { return TeamsAddOrUpdateMembershipForUserInOrgRequest(
+factory TeamsAddOrUpdateMembershipForUserInOrgRequest.fromJson(Map<String, dynamic> json) {return TeamsAddOrUpdateMembershipForUserInOrgRequest(
   role: json['role'] != null ? TeamMembershipRole.fromJson(json['role'] as String) : null,
-); }
+);}
 
 /// The role that this user should have in the team.
 final TeamMembershipRole? role;
@@ -13,13 +13,13 @@ final TeamMembershipRole? role;
 /// The value of `role`, or its schema default when absent.
 TeamMembershipRole get roleOrDefault => role ?? TeamMembershipRole.fromJson('member');
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (role != null) 'role': role?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
-TeamsAddOrUpdateMembershipForUserInOrgRequest copyWith({TeamMembershipRole? Function()? role}) { return TeamsAddOrUpdateMembershipForUserInOrgRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'role'}.contains(key));}
+TeamsAddOrUpdateMembershipForUserInOrgRequest copyWith({TeamMembershipRole? Function()? role}) {return TeamsAddOrUpdateMembershipForUserInOrgRequest(
   role: role != null ? role() : this.role,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsAddOrUpdateMembershipForUserInOrgRequest &&
           role == other.role;
@@ -28,4 +28,4 @@ TeamsAddOrUpdateMembershipForUserInOrgRequest copyWith({TeamMembershipRole? Func
 
 @override String toString() => 'TeamsAddOrUpdateMembershipForUserInOrgRequest(role: $role)';
 
- }
+}

@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policy_link.dart';import 'package:pub_cloudflare/models/access_app_req_embedded_policies/access_app_req_embedded_policies_policies.dart';import 'package:pub_cloudflare/models/access_app_req_embedded_policies/policies_variant3.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_custom_deny_url.dart';import 'package:pub_cloudflare/models/access_custom_non_identity_deny_url.dart';import 'package:pub_cloudflare/models/access_domain.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';import 'package:pub_cloudflare/models/access_type.dart';@immutable final class BrowserIsolationPermissionsApplication4 {const BrowserIsolationPermissionsApplication4({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain, this.name, this.sessionDuration, this.policies, });
 
-factory BrowserIsolationPermissionsApplication4.fromJson(Map<String, dynamic> json) { return BrowserIsolationPermissionsApplication4(
+factory BrowserIsolationPermissionsApplication4.fromJson(Map<String, dynamic> json) {return BrowserIsolationPermissionsApplication4(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
   customDenyUrl: json['custom_deny_url'] != null ? AccessCustomDenyUrl.fromJson(json['custom_deny_url'] as String) : null,
@@ -14,7 +14,7 @@ factory BrowserIsolationPermissionsApplication4.fromJson(Map<String, dynamic> js
   sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: AccessType.fromJson(json['type'] as String),
   policies: (json['policies'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessAppPolicyLink.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasUuid.fromJson(v as String), fromC: (v) => PoliciesVariant3.fromJson(v as Map<String, dynamic>),)).toList(),
-); }
+);}
 
 /// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
 final List<String>? allowedIdps;
@@ -46,7 +46,7 @@ final AccessType type;
 /// The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application.
 final List<AccessAppReqEmbeddedPoliciesPolicies>? policies;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'allowed_idps': ?allowedIdps,
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
   if (customDenyUrl != null) 'custom_deny_url': customDenyUrl?.toJson(),
@@ -57,9 +57,9 @@ Map<String, dynamic> toJson() { return {
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-BrowserIsolationPermissionsApplication4 copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, AccessDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, List<AccessAppReqEmbeddedPoliciesPolicies>? Function()? policies, }) { return BrowserIsolationPermissionsApplication4(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('type');}
+BrowserIsolationPermissionsApplication4 copyWith({List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, AccessDomain? Function()? domain, AccessAppsComponentsSchemasName? Function()? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, List<AccessAppReqEmbeddedPoliciesPolicies>? Function()? policies, }) {return BrowserIsolationPermissionsApplication4(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
   customDenyUrl: customDenyUrl != null ? customDenyUrl() : this.customDenyUrl,
@@ -70,7 +70,7 @@ BrowserIsolationPermissionsApplication4 copyWith({List<String>? Function()? allo
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
   policies: policies != null ? policies() : this.policies,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is BrowserIsolationPermissionsApplication4 &&
           listEquals(allowedIdps, other.allowedIdps) &&
@@ -88,4 +88,4 @@ BrowserIsolationPermissionsApplication4 copyWith({List<String>? Function()? allo
 
 @override String toString() => 'BrowserIsolationPermissionsApplication4(\n  allowedIdps: $allowedIdps,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customDenyUrl: $customDenyUrl,\n  customNonIdentityDenyUrl: $customNonIdentityDenyUrl,\n  customPages: $customPages,\n  domain: $domain,\n  name: $name,\n  sessionDuration: $sessionDuration,\n  type: $type,\n  policies: $policies,\n)';
 
- }
+}

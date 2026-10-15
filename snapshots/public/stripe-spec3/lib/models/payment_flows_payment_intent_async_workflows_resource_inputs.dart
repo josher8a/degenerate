@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_async_workflows_resource_inputs_resource_tax.dart';/// 
 @immutable final class PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs {const PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs({this.tax});
 
-factory PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs.fromJson(Map<String, dynamic> json) { return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(
+factory PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs.fromJson(Map<String, dynamic> json) {return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(
   tax: json['tax'] != null ? PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax? tax;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (tax != null) 'tax': tax?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax'}.contains(key)); } 
-PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs copyWith({PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax? Function()? tax}) { return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'tax'}.contains(key));}
+PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs copyWith({PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax? Function()? tax}) {return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(
   tax: tax != null ? tax() : this.tax,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs &&
           tax == other.tax;
@@ -25,4 +25,4 @@ PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs copyWith({PaymentFlowsPaym
 
 @override String toString() => 'PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(tax: $tax)';
 
- }
+}

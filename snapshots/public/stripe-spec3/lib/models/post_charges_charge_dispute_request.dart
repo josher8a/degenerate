@@ -3,12 +3,12 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request/post_charges_charge_dispute_request_evidence.dart';@immutable final class PostChargesChargeDisputeRequest {const PostChargesChargeDisputeRequest({this.evidence, this.expand, this.metadata, this.submit, });
 
-factory PostChargesChargeDisputeRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeDisputeRequest(
+factory PostChargesChargeDisputeRequest.fromJson(Map<String, dynamic> json) {return PostChargesChargeDisputeRequest(
   evidence: json['evidence'] != null ? PostChargesChargeDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null,
   submit: json['submit'] as bool?,
-); }
+);}
 
 /// Evidence to upload, to respond to a dispute. Updating any field in the hash will submit all fields in the hash for review. The combined character count of all fields is limited to 150,000.
 final PostChargesChargeDisputeRequestEvidence? evidence;
@@ -22,19 +22,19 @@ final Metadata? metadata;
 /// Whether to immediately submit evidence to the bank. If `false`, evidence is staged on the dispute. Staged evidence is visible in the API and Dashboard, and can be submitted to the bank by making another request with this attribute set to `true` (the default).
 final bool? submit;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (evidence != null) 'evidence': evidence?.toJson(),
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
   'submit': ?submit,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'evidence', 'expand', 'metadata', 'submit'}.contains(key)); } 
-PostChargesChargeDisputeRequest copyWith({PostChargesChargeDisputeRequestEvidence? Function()? evidence, List<String>? Function()? expand, Metadata? Function()? metadata, bool? Function()? submit, }) { return PostChargesChargeDisputeRequest(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'evidence', 'expand', 'metadata', 'submit'}.contains(key));}
+PostChargesChargeDisputeRequest copyWith({PostChargesChargeDisputeRequestEvidence? Function()? evidence, List<String>? Function()? expand, Metadata? Function()? metadata, bool? Function()? submit, }) {return PostChargesChargeDisputeRequest(
   evidence: evidence != null ? evidence() : this.evidence,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   submit: submit != null ? submit() : this.submit,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesChargeDisputeRequest &&
           evidence == other.evidence &&
@@ -46,4 +46,4 @@ PostChargesChargeDisputeRequest copyWith({PostChargesChargeDisputeRequestEvidenc
 
 @override String toString() => 'PostChargesChargeDisputeRequest(evidence: $evidence, expand: $expand, metadata: $metadata, submit: $submit)';
 
- }
+}

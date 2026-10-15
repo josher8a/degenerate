@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EpsBank {const EpsBank();
 
-factory EpsBank.fromJson(String json) { return switch (json) {
+factory EpsBank.fromJson(String json) {return switch (json) {
   'arzte_und_apotheker_bank' => arzteUndApothekerBank,
   'austrian_anadi_bank_ag' => austrianAnadiBankAg,
   'bank_austria' => bankAustria,
@@ -33,7 +33,7 @@ factory EpsBank.fromJson(String json) { return switch (json) {
   'volkskreditbank_ag' => volkskreditbankAg,
   'vr_bank_braunau' => vrBankBraunau,
   _ => EpsBank$Unknown(json),
-}; }
+};}
 
 static const EpsBank arzteUndApothekerBank = EpsBank$arzteUndApothekerBank._();
 
@@ -94,9 +94,9 @@ static const EpsBank vrBankBraunau = EpsBank$vrBankBraunau._();
 static const List<EpsBank> values = [arzteUndApothekerBank, austrianAnadiBankAg, bankAustria, bankhausCarlSpangler, bankhausSchelhammerUndSchatteraAg, bawagPskAg, bksBankAg, brullKallmusBankAg, btvVierLanderBank, capitalBankGraweGruppeAg, deutscheBankAg, dolomitenbank, easybankAg, ersteBankUndSparkassen, hypoAlpeadriabankInternationalAg, hypoBankBurgenlandAktiengesellschaft, hypoNoeLbFurNiederosterreichUWien, hypoOberosterreichSalzburgSteiermark, hypoTirolBankAg, hypoVorarlbergBankAg, marchfelderBank, oberbankAg, raiffeisenBankengruppeOsterreich, schoellerbankAg, spardaBankWien, volksbankGruppe, volkskreditbankAg, vrBankBraunau];
 
 String get value;
-String toJson() { return value; } 
+String toJson() {return value;}
 /// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
+String get name {return switch (value) {
   'arzte_und_apotheker_bank' => 'arzteUndApothekerBank',
   'austrian_anadi_bank_ag' => 'austrianAnadiBankAg',
   'bank_austria' => 'bankAustria',
@@ -126,11 +126,11 @@ String get name { return switch (value) {
   'volkskreditbank_ag' => 'volkskreditbankAg',
   'vr_bank_braunau' => 'vrBankBraunau',
   _ => value,
-}; } 
+};}
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is EpsBank$Unknown; } 
+bool get isUnknown {return this is EpsBank$Unknown;}
 /// Exhaustive match on the enum value.
-W when<W>({required W Function() arzteUndApothekerBank, required W Function() austrianAnadiBankAg, required W Function() bankAustria, required W Function() bankhausCarlSpangler, required W Function() bankhausSchelhammerUndSchatteraAg, required W Function() bawagPskAg, required W Function() bksBankAg, required W Function() brullKallmusBankAg, required W Function() btvVierLanderBank, required W Function() capitalBankGraweGruppeAg, required W Function() deutscheBankAg, required W Function() dolomitenbank, required W Function() easybankAg, required W Function() ersteBankUndSparkassen, required W Function() hypoAlpeadriabankInternationalAg, required W Function() hypoBankBurgenlandAktiengesellschaft, required W Function() hypoNoeLbFurNiederosterreichUWien, required W Function() hypoOberosterreichSalzburgSteiermark, required W Function() hypoTirolBankAg, required W Function() hypoVorarlbergBankAg, required W Function() marchfelderBank, required W Function() oberbankAg, required W Function() raiffeisenBankengruppeOsterreich, required W Function() schoellerbankAg, required W Function() spardaBankWien, required W Function() volksbankGruppe, required W Function() volkskreditbankAg, required W Function() vrBankBraunau, required W Function(String value) $unknown, }) { return switch (this) {
+W when<W>({required W Function() arzteUndApothekerBank, required W Function() austrianAnadiBankAg, required W Function() bankAustria, required W Function() bankhausCarlSpangler, required W Function() bankhausSchelhammerUndSchatteraAg, required W Function() bawagPskAg, required W Function() bksBankAg, required W Function() brullKallmusBankAg, required W Function() btvVierLanderBank, required W Function() capitalBankGraweGruppeAg, required W Function() deutscheBankAg, required W Function() dolomitenbank, required W Function() easybankAg, required W Function() ersteBankUndSparkassen, required W Function() hypoAlpeadriabankInternationalAg, required W Function() hypoBankBurgenlandAktiengesellschaft, required W Function() hypoNoeLbFurNiederosterreichUWien, required W Function() hypoOberosterreichSalzburgSteiermark, required W Function() hypoTirolBankAg, required W Function() hypoVorarlbergBankAg, required W Function() marchfelderBank, required W Function() oberbankAg, required W Function() raiffeisenBankengruppeOsterreich, required W Function() schoellerbankAg, required W Function() spardaBankWien, required W Function() volksbankGruppe, required W Function() volkskreditbankAg, required W Function() vrBankBraunau, required W Function(String value) $unknown, }) {return switch (this) {
       EpsBank$arzteUndApothekerBank() => arzteUndApothekerBank(),
       EpsBank$austrianAnadiBankAg() => austrianAnadiBankAg(),
       EpsBank$bankAustria() => bankAustria(),
@@ -160,9 +160,9 @@ W when<W>({required W Function() arzteUndApothekerBank, required W Function() au
       EpsBank$volkskreditbankAg() => volkskreditbankAg(),
       EpsBank$vrBankBraunau() => vrBankBraunau(),
       EpsBank$Unknown(:final value) => $unknown(value),
-    }; } 
+    };}
 /// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUndApothekerBank, W Function()? austrianAnadiBankAg, W Function()? bankAustria, W Function()? bankhausCarlSpangler, W Function()? bankhausSchelhammerUndSchatteraAg, W Function()? bawagPskAg, W Function()? bksBankAg, W Function()? brullKallmusBankAg, W Function()? btvVierLanderBank, W Function()? capitalBankGraweGruppeAg, W Function()? deutscheBankAg, W Function()? dolomitenbank, W Function()? easybankAg, W Function()? ersteBankUndSparkassen, W Function()? hypoAlpeadriabankInternationalAg, W Function()? hypoBankBurgenlandAktiengesellschaft, W Function()? hypoNoeLbFurNiederosterreichUWien, W Function()? hypoOberosterreichSalzburgSteiermark, W Function()? hypoTirolBankAg, W Function()? hypoVorarlbergBankAg, W Function()? marchfelderBank, W Function()? oberbankAg, W Function()? raiffeisenBankengruppeOsterreich, W Function()? schoellerbankAg, W Function()? spardaBankWien, W Function()? volksbankGruppe, W Function()? volkskreditbankAg, W Function()? vrBankBraunau, W Function(String value)? $unknown, }) { return switch (this) {
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUndApothekerBank, W Function()? austrianAnadiBankAg, W Function()? bankAustria, W Function()? bankhausCarlSpangler, W Function()? bankhausSchelhammerUndSchatteraAg, W Function()? bawagPskAg, W Function()? bksBankAg, W Function()? brullKallmusBankAg, W Function()? btvVierLanderBank, W Function()? capitalBankGraweGruppeAg, W Function()? deutscheBankAg, W Function()? dolomitenbank, W Function()? easybankAg, W Function()? ersteBankUndSparkassen, W Function()? hypoAlpeadriabankInternationalAg, W Function()? hypoBankBurgenlandAktiengesellschaft, W Function()? hypoNoeLbFurNiederosterreichUWien, W Function()? hypoOberosterreichSalzburgSteiermark, W Function()? hypoTirolBankAg, W Function()? hypoVorarlbergBankAg, W Function()? marchfelderBank, W Function()? oberbankAg, W Function()? raiffeisenBankengruppeOsterreich, W Function()? schoellerbankAg, W Function()? spardaBankWien, W Function()? volksbankGruppe, W Function()? volkskreditbankAg, W Function()? vrBankBraunau, W Function(String value)? $unknown, }) {return switch (this) {
       EpsBank$arzteUndApothekerBank() => arzteUndApothekerBank != null ? arzteUndApothekerBank() : orElse(value),
       EpsBank$austrianAnadiBankAg() => austrianAnadiBankAg != null ? austrianAnadiBankAg() : orElse(value),
       EpsBank$bankAustria() => bankAustria != null ? bankAustria() : orElse(value),
@@ -192,10 +192,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
       EpsBank$volkskreditbankAg() => volkskreditbankAg != null ? volkskreditbankAg() : orElse(value),
       EpsBank$vrBankBraunau() => vrBankBraunau != null ? vrBankBraunau() : orElse(value),
       EpsBank$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
+    };}
 @override String toString() => 'EpsBank($value)';
 
- }
+}
 @immutable final class EpsBank$arzteUndApothekerBank extends EpsBank {const EpsBank$arzteUndApothekerBank._();
 
 @override String get value => 'arzte_und_apotheker_bank';
@@ -204,7 +204,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'arzte_und_apotheker_bank'.hashCode;
 
- }
+}
 @immutable final class EpsBank$austrianAnadiBankAg extends EpsBank {const EpsBank$austrianAnadiBankAg._();
 
 @override String get value => 'austrian_anadi_bank_ag';
@@ -213,7 +213,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'austrian_anadi_bank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$bankAustria extends EpsBank {const EpsBank$bankAustria._();
 
 @override String get value => 'bank_austria';
@@ -222,7 +222,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'bank_austria'.hashCode;
 
- }
+}
 @immutable final class EpsBank$bankhausCarlSpangler extends EpsBank {const EpsBank$bankhausCarlSpangler._();
 
 @override String get value => 'bankhaus_carl_spangler';
@@ -231,7 +231,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'bankhaus_carl_spangler'.hashCode;
 
- }
+}
 @immutable final class EpsBank$bankhausSchelhammerUndSchatteraAg extends EpsBank {const EpsBank$bankhausSchelhammerUndSchatteraAg._();
 
 @override String get value => 'bankhaus_schelhammer_und_schattera_ag';
@@ -240,7 +240,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'bankhaus_schelhammer_und_schattera_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$bawagPskAg extends EpsBank {const EpsBank$bawagPskAg._();
 
 @override String get value => 'bawag_psk_ag';
@@ -249,7 +249,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'bawag_psk_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$bksBankAg extends EpsBank {const EpsBank$bksBankAg._();
 
 @override String get value => 'bks_bank_ag';
@@ -258,7 +258,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'bks_bank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$brullKallmusBankAg extends EpsBank {const EpsBank$brullKallmusBankAg._();
 
 @override String get value => 'brull_kallmus_bank_ag';
@@ -267,7 +267,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'brull_kallmus_bank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$btvVierLanderBank extends EpsBank {const EpsBank$btvVierLanderBank._();
 
 @override String get value => 'btv_vier_lander_bank';
@@ -276,7 +276,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'btv_vier_lander_bank'.hashCode;
 
- }
+}
 @immutable final class EpsBank$capitalBankGraweGruppeAg extends EpsBank {const EpsBank$capitalBankGraweGruppeAg._();
 
 @override String get value => 'capital_bank_grawe_gruppe_ag';
@@ -285,7 +285,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'capital_bank_grawe_gruppe_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$deutscheBankAg extends EpsBank {const EpsBank$deutscheBankAg._();
 
 @override String get value => 'deutsche_bank_ag';
@@ -294,7 +294,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'deutsche_bank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$dolomitenbank extends EpsBank {const EpsBank$dolomitenbank._();
 
 @override String get value => 'dolomitenbank';
@@ -303,7 +303,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'dolomitenbank'.hashCode;
 
- }
+}
 @immutable final class EpsBank$easybankAg extends EpsBank {const EpsBank$easybankAg._();
 
 @override String get value => 'easybank_ag';
@@ -312,7 +312,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'easybank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$ersteBankUndSparkassen extends EpsBank {const EpsBank$ersteBankUndSparkassen._();
 
 @override String get value => 'erste_bank_und_sparkassen';
@@ -321,7 +321,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'erste_bank_und_sparkassen'.hashCode;
 
- }
+}
 @immutable final class EpsBank$hypoAlpeadriabankInternationalAg extends EpsBank {const EpsBank$hypoAlpeadriabankInternationalAg._();
 
 @override String get value => 'hypo_alpeadriabank_international_ag';
@@ -330,7 +330,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'hypo_alpeadriabank_international_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$hypoBankBurgenlandAktiengesellschaft extends EpsBank {const EpsBank$hypoBankBurgenlandAktiengesellschaft._();
 
 @override String get value => 'hypo_bank_burgenland_aktiengesellschaft';
@@ -339,7 +339,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'hypo_bank_burgenland_aktiengesellschaft'.hashCode;
 
- }
+}
 @immutable final class EpsBank$hypoNoeLbFurNiederosterreichUWien extends EpsBank {const EpsBank$hypoNoeLbFurNiederosterreichUWien._();
 
 @override String get value => 'hypo_noe_lb_fur_niederosterreich_u_wien';
@@ -348,7 +348,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'hypo_noe_lb_fur_niederosterreich_u_wien'.hashCode;
 
- }
+}
 @immutable final class EpsBank$hypoOberosterreichSalzburgSteiermark extends EpsBank {const EpsBank$hypoOberosterreichSalzburgSteiermark._();
 
 @override String get value => 'hypo_oberosterreich_salzburg_steiermark';
@@ -357,7 +357,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'hypo_oberosterreich_salzburg_steiermark'.hashCode;
 
- }
+}
 @immutable final class EpsBank$hypoTirolBankAg extends EpsBank {const EpsBank$hypoTirolBankAg._();
 
 @override String get value => 'hypo_tirol_bank_ag';
@@ -366,7 +366,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'hypo_tirol_bank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$hypoVorarlbergBankAg extends EpsBank {const EpsBank$hypoVorarlbergBankAg._();
 
 @override String get value => 'hypo_vorarlberg_bank_ag';
@@ -375,7 +375,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'hypo_vorarlberg_bank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$marchfelderBank extends EpsBank {const EpsBank$marchfelderBank._();
 
 @override String get value => 'marchfelder_bank';
@@ -384,7 +384,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'marchfelder_bank'.hashCode;
 
- }
+}
 @immutable final class EpsBank$oberbankAg extends EpsBank {const EpsBank$oberbankAg._();
 
 @override String get value => 'oberbank_ag';
@@ -393,7 +393,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'oberbank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$raiffeisenBankengruppeOsterreich extends EpsBank {const EpsBank$raiffeisenBankengruppeOsterreich._();
 
 @override String get value => 'raiffeisen_bankengruppe_osterreich';
@@ -402,7 +402,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'raiffeisen_bankengruppe_osterreich'.hashCode;
 
- }
+}
 @immutable final class EpsBank$schoellerbankAg extends EpsBank {const EpsBank$schoellerbankAg._();
 
 @override String get value => 'schoellerbank_ag';
@@ -411,7 +411,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'schoellerbank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$spardaBankWien extends EpsBank {const EpsBank$spardaBankWien._();
 
 @override String get value => 'sparda_bank_wien';
@@ -420,7 +420,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'sparda_bank_wien'.hashCode;
 
- }
+}
 @immutable final class EpsBank$volksbankGruppe extends EpsBank {const EpsBank$volksbankGruppe._();
 
 @override String get value => 'volksbank_gruppe';
@@ -429,7 +429,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'volksbank_gruppe'.hashCode;
 
- }
+}
 @immutable final class EpsBank$volkskreditbankAg extends EpsBank {const EpsBank$volkskreditbankAg._();
 
 @override String get value => 'volkskreditbank_ag';
@@ -438,7 +438,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'volkskreditbank_ag'.hashCode;
 
- }
+}
 @immutable final class EpsBank$vrBankBraunau extends EpsBank {const EpsBank$vrBankBraunau._();
 
 @override String get value => 'vr_bank_braunau';
@@ -447,7 +447,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => 'vr_bank_braunau'.hashCode;
 
- }
+}
 @immutable final class EpsBank$Unknown extends EpsBank {const EpsBank$Unknown(this.value);
 
 @override final String value;
@@ -457,22 +457,22 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? arzteUnd
 
 @override int get hashCode => value.hashCode;
 
- }
+}
 @immutable final class PostPaymentMethodsRequestEps {const PostPaymentMethodsRequestEps({this.bank});
 
-factory PostPaymentMethodsRequestEps.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestEps(
+factory PostPaymentMethodsRequestEps.fromJson(Map<String, dynamic> json) {return PostPaymentMethodsRequestEps(
   bank: json['bank'] != null ? EpsBank.fromJson(json['bank'] as String) : null,
-); }
+);}
 
 final EpsBank? bank;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (bank != null) 'bank': bank?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostPaymentMethodsRequestEps copyWith({EpsBank? Function()? bank}) { return PostPaymentMethodsRequestEps(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'bank'}.contains(key));}
+PostPaymentMethodsRequestEps copyWith({EpsBank? Function()? bank}) {return PostPaymentMethodsRequestEps(
   bank: bank != null ? bank() : this.bank,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestEps &&
           bank == other.bank;
@@ -481,4 +481,4 @@ PostPaymentMethodsRequestEps copyWith({EpsBank? Function()? bank}) { return Post
 
 @override String toString() => 'PostPaymentMethodsRequestEps(bank: $bank)';
 
- }
+}

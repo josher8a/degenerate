@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Bot {const Bot({required this.category, required this.description, required this.kind, required this.name, required this.$operator, required this.operatorUrl, required this.slug, required this.userAgentPatterns, required this.userAgents, });
 
-factory Bot.fromJson(Map<String, dynamic> json) { return Bot(
+factory Bot.fromJson(Map<String, dynamic> json) {return Bot(
   category: json['category'] as String,
   description: json['description'] as String,
   kind: json['kind'] as String,
@@ -13,7 +13,7 @@ factory Bot.fromJson(Map<String, dynamic> json) { return Bot(
   slug: json['slug'] as String,
   userAgentPatterns: (json['userAgentPatterns'] as List<dynamic>).map((e) => e as String).toList(),
   userAgents: (json['userAgents'] as List<dynamic>).map((e) => e as String).toList(),
-); }
+);}
 
 /// The category of the bot.
 /// 
@@ -54,7 +54,7 @@ final List<String> userAgentPatterns;
 
 final List<String> userAgents;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'category': category,
   'description': description,
   'kind': kind,
@@ -64,8 +64,8 @@ Map<String, dynamic> toJson() { return {
   'slug': slug,
   'userAgentPatterns': userAgentPatterns,
   'userAgents': userAgents,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') && json['category'] is String &&
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('category') && json['category'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('name') && json['name'] is String &&
@@ -73,8 +73,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('operatorUrl') && json['operatorUrl'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('userAgentPatterns') &&
-      json.containsKey('userAgents'); } 
-Bot copyWith({String? category, String? description, String? kind, String? name, String? $operator, String? operatorUrl, String? slug, List<String>? userAgentPatterns, List<String>? userAgents, }) { return Bot(
+      json.containsKey('userAgents');}
+Bot copyWith({String? category, String? description, String? kind, String? name, String? $operator, String? operatorUrl, String? slug, List<String>? userAgentPatterns, List<String>? userAgents, }) {return Bot(
   category: category ?? this.category,
   description: description ?? this.description,
   kind: kind ?? this.kind,
@@ -84,7 +84,7 @@ Bot copyWith({String? category, String? description, String? kind, String? name,
   slug: slug ?? this.slug,
   userAgentPatterns: userAgentPatterns ?? this.userAgentPatterns,
   userAgents: userAgents ?? this.userAgents,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is Bot &&
           category == other.category &&
@@ -101,4 +101,4 @@ Bot copyWith({String? category, String? description, String? kind, String? name,
 
 @override String toString() => 'Bot(\n  category: $category,\n  description: $description,\n  kind: $kind,\n  name: $name,\n  \$operator: ${$operator},\n  operatorUrl: $operatorUrl,\n  slug: $slug,\n  userAgentPatterns: $userAgentPatterns,\n  userAgents: $userAgents,\n)';
 
- }
+}

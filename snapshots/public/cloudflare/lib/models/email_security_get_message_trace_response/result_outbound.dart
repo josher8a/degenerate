@@ -3,24 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_trace_line.dart';@immutable final class ResultOutbound {const ResultOutbound({this.lines = const Omittable.absent(), this.pending = const Omittable.absent(), });
 
-factory ResultOutbound.fromJson(Map<String, dynamic> json) { return ResultOutbound(
+factory ResultOutbound.fromJson(Map<String, dynamic> json) {return ResultOutbound(
   lines: json.containsKey('lines') ? Omittable((json['lines'] as List<dynamic>?)?.map((e) => EmailSecurityTraceLine.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   pending: json.containsKey('pending') ? Omittable(json['pending'] as bool?) : const Omittable.absent(),
-); }
+);}
 
 final Omittable<List<EmailSecurityTraceLine>?> lines;
 
 final Omittable<bool?> pending;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (lines.isPresent) 'lines': lines.value?.map((e) => e.toJson()).toList(),
   if (pending.isPresent) 'pending': pending.value,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lines', 'pending'}.contains(key)); } 
-ResultOutbound copyWith({Omittable<List<EmailSecurityTraceLine>?>? lines, Omittable<bool?>? pending, }) { return ResultOutbound(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'lines', 'pending'}.contains(key));}
+ResultOutbound copyWith({Omittable<List<EmailSecurityTraceLine>?>? lines, Omittable<bool?>? pending, }) {return ResultOutbound(
   lines: lines ?? this.lines,
   pending: pending ?? this.pending,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ResultOutbound &&
           lines.isPresent == other.lines.isPresent &&
@@ -31,4 +31,4 @@ ResultOutbound copyWith({Omittable<List<EmailSecurityTraceLine>?>? lines, Omitta
 
 @override String toString() => 'ResultOutbound(lines: $lines, pending: $pending)';
 
- }
+}

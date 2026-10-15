@@ -3,25 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnAwsTrustPolicy {const McnAwsTrustPolicy({required this.awsTrustPolicy, required this.itemType, });
 
-factory McnAwsTrustPolicy.fromJson(Map<String, dynamic> json) { return McnAwsTrustPolicy(
+factory McnAwsTrustPolicy.fromJson(Map<String, dynamic> json) {return McnAwsTrustPolicy(
   awsTrustPolicy: json['aws_trust_policy'] as String,
   itemType: json['item_type'] as String,
-); }
+);}
 
 final String awsTrustPolicy;
 
 final String itemType;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   'aws_trust_policy': awsTrustPolicy,
   'item_type': itemType,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('aws_trust_policy') && json['aws_trust_policy'] is String &&
-      json.containsKey('item_type') && json['item_type'] is String; } 
-McnAwsTrustPolicy copyWith({String? awsTrustPolicy, String? itemType, }) { return McnAwsTrustPolicy(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.containsKey('aws_trust_policy') && json['aws_trust_policy'] is String &&
+      json.containsKey('item_type') && json['item_type'] is String;}
+McnAwsTrustPolicy copyWith({String? awsTrustPolicy, String? itemType, }) {return McnAwsTrustPolicy(
   awsTrustPolicy: awsTrustPolicy ?? this.awsTrustPolicy,
   itemType: itemType ?? this.itemType,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is McnAwsTrustPolicy &&
           awsTrustPolicy == other.awsTrustPolicy &&
@@ -31,4 +31,4 @@ McnAwsTrustPolicy copyWith({String? awsTrustPolicy, String? itemType, }) { retur
 
 @override String toString() => 'McnAwsTrustPolicy(awsTrustPolicy: $awsTrustPolicy, itemType: $itemType)';
 
- }
+}

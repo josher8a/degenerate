@@ -4,19 +4,19 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Alipay is a digital wallet in China that has more than a billion active users worldwide. Alipay users can pay on the web or on a mobile device using login credentials or their Alipay app. Alipay has a low dispute rate and reduces fraud by authenticating payments using the customer's login credentials. Check this [page](https://docs.stripe.com/payments/alipay) for more details.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestAlipay {const PostPaymentMethodConfigurationsConfigurationRequestAlipay({this.displayPreference});
 
-factory PostPaymentMethodConfigurationsConfigurationRequestAlipay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAlipay(
+factory PostPaymentMethodConfigurationsConfigurationRequestAlipay.fromJson(Map<String, dynamic> json) {return PostPaymentMethodConfigurationsConfigurationRequestAlipay(
   displayPreference: json['display_preference'] != null ? DisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
-); }
+);}
 
 final DisplayPreference? displayPreference;
 
-Map<String, dynamic> toJson() { return {
+Map<String, dynamic> toJson() {return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsConfigurationRequestAlipay copyWith({DisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestAlipay(
+};}
+static bool canParse(Map<String, dynamic> json) {return json.keys.any((key) => const {'display_preference'}.contains(key));}
+PostPaymentMethodConfigurationsConfigurationRequestAlipay copyWith({DisplayPreference? Function()? displayPreference}) {return PostPaymentMethodConfigurationsConfigurationRequestAlipay(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
-); } 
+);}
 @override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestAlipay &&
           displayPreference == other.displayPreference;
@@ -25,4 +25,4 @@ PostPaymentMethodConfigurationsConfigurationRequestAlipay copyWith({DisplayPrefe
 
 @override String toString() => 'PostPaymentMethodConfigurationsConfigurationRequestAlipay(displayPreference: $displayPreference)';
 
- }
+}

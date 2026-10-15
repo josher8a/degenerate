@@ -8,11 +8,11 @@ const CheckoutSessionPaymentLink({this.string = const Omittable.absent(), this.p
 const CheckoutSessionPaymentLink._({required this.rawValue, required this.string, required this.paymentLink, });
 
 /// Decodes every variant the payload matches, keeping the raw value.
-factory CheckoutSessionPaymentLink.fromJson(Object? json) { return CheckoutSessionPaymentLink._(
+factory CheckoutSessionPaymentLink.fromJson(Object? json) {return CheckoutSessionPaymentLink._(
   rawValue: Omittable(json),
   string: parseAnyOfVariant<String>(json, (value) => value! as String),
   paymentLink: json is Map<String, dynamic> && PaymentLink.canParse(json) ? parseAnyOfVariant<PaymentLink>(json, (value) => PaymentLink.fromJson(value! as Map<String, dynamic>)) : const Omittable.absent(),
-); }
+);}
 
 /// The original wire value when decoded. Typed views never replace it.
 final Omittable<Object?> rawValue;
@@ -42,4 +42,4 @@ Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
 
 @override String toString() => 'CheckoutSessionPaymentLink(${toJson()})';
 
- }
+}
